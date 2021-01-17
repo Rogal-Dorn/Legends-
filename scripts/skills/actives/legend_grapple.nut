@@ -1,6 +1,6 @@
 this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	m = {
-		StunChance = 75
+		StunChance = 50
 	},
 	function setStunChance( _c )
 	{
@@ -11,7 +11,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_grapple";
 		this.m.Name = "Grapple";
-		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. Offhand must be free to use.";
+		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. One hand must be free to use.";
 		this.m.Icon = "skills/grapple_square.png";
 		this.m.IconDisabled = "skills/grapple_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -45,8 +45,41 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 0;
 	}
 
+
+	function getStunChance( _user, _targetTile )
+	{
+		local ret = {
+			stunChance = 50,
+			HasOffhand = false,
+			HasMainhand = false,
+			HasTraining = false
+		}
+	
+		stunChance = this.m.Stunchance;
+		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+	
+		if( mainhand != null)
+		stunChance -= 25;
+		HasMainhand = true;
+		}
+		
+		if( offhand != null)
+		stunChance -= 25;
+		HasOffhand = true;
+		}		
+	
+		if (_user.getCurrentProperties().IsSpecializedInFists)
+		stunChance += 50;
+		HasTraining = true;
+		}
+		
+		return ret;
+	}
+
 	function getTooltip()
 	{
+		local chance = this.getStunChance();
 		local ret = this.skill.getDefaultTooltip();
 		ret.push({
 			id = 6,
@@ -54,23 +87,31 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] fatigue on an enemy"
 		});
+		
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Has a " + chance.stunChance + " to hit"
+		});
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists)
+		if (chance.HasTraining)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to grapple on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
 			});
 		}
-		else
+
+		if (chance.HasTraining)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to grapple on a hit"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
 			});
 		}
 
@@ -83,10 +124,14 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
 	}
 
+
+
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());
+	
+			
 
 		if (!_user.isAlive() || _user.isDying())
 		{
