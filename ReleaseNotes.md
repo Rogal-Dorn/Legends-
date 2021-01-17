@@ -4774,11 +4774,18 @@ Fixes gravedigger perk not applying to all two handed maces
 
 15.0.0.27
 
+**unarmed changes**
+Hand to hand does halved damage when holding something in your offhand 
+Choke does halved damage if either hand is full , does +50% damage if you have unarmed training. chance to hit lowered if target has no negative status effect. Ap and fatigue cost increased 
+Grapple chance to hit starts at 50% now. has -25% chance if either hand is holding something. Gains +50% chance to hit if you have unarmed mastery. 
+
+
 **changes**
 Spawning of magic backgrounds changed from attached locations to thematic settlement situations.  Rarity decreased to compensate. This should make it clearer why you found the person 
 Heavy armor perk groups gauranteed to barbarians, caravan hands, disowned nobles, ironmongers and swordmasters. this should make it easier to find frontline troops
 increases minium view distance when camped 
-
+Cat o nine tails durabilioty increased to 30 
+Net Repair perk also grants +10 melee defense if holding a net in your offhand , including broken nets 
 
 **fixes**
 crash on entering town with a woolspinner location 
