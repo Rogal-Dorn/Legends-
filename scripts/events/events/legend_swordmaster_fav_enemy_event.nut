@@ -65,8 +65,8 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 					}
 
 				});
-				_event.m.Champion = _event.m.Candidates[$[stack offset 0].Math.rand(0, _event.m.Candidates.len() - 1)];
-				_event.m.Flags.set("EnemyChampionName", $[stack offset 0].Const.Strings.BarbarianNames[$[stack offset 0].Math.rand(0, $[stack offset 0].Const.Strings.BarbarianNames.len() - 1)] + " " + $[stack offset 0].Const.Strings.BarbarianTitles[$[stack offset 0].Math.rand(0, $[stack offset 0].Const.Strings.BarbarianTitles.len() - 1)]);
+				_event.m.Champion = _event.m.Candidates[this.Math.rand(0, _event.m.Candidates.len() - 1)];
+				_event.m.Flags.set("EnemyChampionName", this.Const.Strings.BarbarianNames[this.Math.rand(0, this.Const.Strings.BarbarianNames.len() - 1)] + " " + this.Const.Strings.BarbarianTitles[this.Math.rand(0, this.Const.Strings.BarbarianTitles.len() - 1)]);
 			}
 
 		});
@@ -123,8 +123,8 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 					}
 
 				});
-				_event.m.Champion = _event.m.Candidates[$[stack offset 0].Math.rand(0, _event.m.Candidates.len() - 1)];
-				_event.m.Flags.set("EnemyChampionName", $[stack offset 0].Const.Strings.KnightNames[$[stack offset 0].Math.rand(0, $[stack offset 0].Const.Strings.KnightNames.len() - 1)]);
+				_event.m.Champion = _event.m.Candidates[this.Math.rand(0, _event.m.Candidates.len() - 1)];
+				_event.m.Flags.set("EnemyChampionName", this.Const.Strings.KnightNames[this.Math.rand(0, this.Const.Strings.KnightNames.len() - 1)]);
 			}
 
 		});
