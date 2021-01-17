@@ -1,11 +1,11 @@
 this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 	m = {
-	Veteran = null,
-	IsActive = false
+		Veteran = null,
+		IsActive = false
 	},
 	function create()
 	{
-		this.logInfo("Creating tournament event")
+		this.logInfo("Creating tournament event");
 		this.m.ID = "event.location.legend_tournament_enter";
 		this.m.Title = "As you approach...";
 		this.m.Cooldown = 100;
@@ -28,8 +28,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
-
 			}
 
 		});
@@ -51,8 +49,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
-
 			}
 
 		});
@@ -74,8 +70,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
-
 			}
 
 		});
@@ -126,7 +120,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D2",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{You return to the main hall and find Artemesia talking with a ground of foreign fighters while they watch a bout of the Grand Melee through the viewing windows.  She see\'s you return, sks her leave from the fighters and greets you with a smile. %SPEECH_ON% So the %companyname% is not satisfied with mere Show Matches. I thought I saw a spark of something more in you. Which will it be, the Grand Melee or the Gauntlet? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{You return to the main hall and find Artemesia talking with a ground of foreign fighters while they watch a bout of the Grand Melee through the viewing windows.  She sees you return, asks her leave from the fighters and greets you with a smile. %SPEECH_ON% So the %companyname% is not satisfied with mere Show Matches. I thought I saw a spark of something more in you. Which will it be, the Grand Melee or the Gauntlet? %SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -163,16 +157,16 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia smiles and excitedly recites the rules of the Grand Melee %SPEECH_ON%These are the mandated rules of the Grand Melee, \n\n 1. Your company will fight round after round, of both humans and beasts of all kinds, without combat rules.  \n\n 2. The prize begins at 1000 gold, each battle the difficulty will increase and the prize will double. \n\n 3. You may keep any loot you find after the battle.%SPEECH_OFF% \n\n She smiles again, with genuine interest. %SPEECH_ON%This is the most glorious of the tournament events and I am delighted to personally watch your performance.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia smiles and excitedly recites the rules of the Grand Melee %SPEECH_ON%These are the mandated rules of the Grand Melee, \n\n 1. Your company will fight round after round, of both humans and beasts of all kinds, without combat rules.  \n\n 2. The prize begins at 1000 gold. With each battle, the difficulty will increase and the prize will double. \n\n 3. You may keep any loot you find after the battle.%SPEECH_OFF% \n\n She smiles again, with genuine interest. %SPEECH_ON%This is the most glorious of the tournament events and I am delighted to personally watch your performance.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "The Grand Melee is for us, lets begin at once",
+					Text = "The Grand Melee is for us, let\'s begin at once",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false);
 						_event.registerToShowAfterCombat("F", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -206,7 +200,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
 
 		});
@@ -221,7 +214,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Another round",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandMelee, false);
 						_event.registerToShowAfterCombat("F", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -242,7 +235,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
-
 		this.m.Screens.push({
 			ID = "F2",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{After the battle you are led to the warrior hall where you are congratulated by the other warriors. A tournament official congratulates you on a round well fought and offers you a choice to keep going with the Gauntlet or take your prize}",
@@ -254,7 +246,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Another round",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true);
 						_event.registerToShowAfterCombat("F2", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -275,7 +267,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			}
 
 		});
-
 		this.m.Screens.push({
 			ID = "G",
 			Text = "[img]gfx/ui/events/event_04.png[/img]{Having completed the Melee you are led as champions from the field. Artemisia personally brings you a chest full of your rewards and walks you out to the door %SPEECH_ON%What an excellent performance, I do hope we see you again soon! Take your rest well weary warrior, you have earned your place in these halls.%SPEECH_OFF%}",
@@ -283,7 +274,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			List = [],
 			Characters = [],
 			Options = [
-
 				{
 					Text = "Fare well",
 					function getResult( _event )
@@ -297,20 +287,23 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
 				local payment = 1000;
-				for( local i = 0; i < round && i < 5; i = ++i )
+
+				for( local i = 0; i < round && i < 5; i = i )
 				{
-					payment *= 2;
+					payment = payment * 2;
+					i = ++i;
 				}
+
 				this.World.Assets.addMoney(payment);
-					this.List.push({
+				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
 				this.World.Flags.set("LegendTournamentRound", 1);
 			}
-		});
 
+		});
 		this.m.Screens.push({
 			ID = "G2",
 			Text = "[img]gfx/ui/events/event_04.png[/img]{Having completed the Gauntlet you are led through the main hall. Artemisia throws you a bag of coins. %SPEECH_ON%Well fought! I hope we see you in the tournament again, though I imagine you need some rest after that performance. %SPEECH_OFF%}",
@@ -318,7 +311,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			List = [],
 			Characters = [],
 			Options = [
-
 				{
 					Text = "Fare well",
 					function getResult( _event )
@@ -332,18 +324,22 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
 				local payment = 500;
-				for( local i = 0; i < round && i < 5; i = ++i )
+
+				for( local i = 0; i < round && i < 5; i = i )
 				{
-					payment *= 2;
+					payment = payment * 2;
+					i = ++i;
 				}
+
 				this.World.Assets.addMoney(payment);
-					this.List.push({
+				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
 				this.World.Flags.set("LegendTournamentRound", 1);
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "G3",
@@ -352,7 +348,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			List = [],
 			Characters = [],
 			Options = [
-
 				{
 					Text = "Fare well",
 					function getResult( _event )
@@ -366,22 +361,26 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
 				local payment = 250;
-				for( local i = 0; i < round && i < 5; i = ++i )
+
+				for( local i = 0; i < round && i < 5; i = i )
 				{
-					payment *= 2;
+					payment = payment * 2;
+					i = ++i;
 				}
+
 				this.World.Assets.addMoney(payment);
-					this.List.push({
+				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
 				this.World.Flags.set("LegendTournamentRound", 1);
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n 1. fight as many battles in a row as you can. \n\n 2. You will fight a mix of human competitors from across the lands without combat rules \n\n 2. The prize begins at 250 gold, each battle the difficulty will increase and the prize will double.  %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n 1. Fight as many battles in a row as you can. \n\n 2. You will fight a mix of human competitors from across the lands without combat rules \n\n 2. The prize begins at 250 gold, each battle the difficulty will increase and the prize will double.  %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -390,7 +389,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Lets begin the Gauntlet",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GrandGauntlet, true);
 						_event.registerToShowAfterCombat("F2", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -424,15 +423,12 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
 
 		});
-
-
 		this.m.Screens.push({
 			ID = "I",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artermisia nods at your choice, though you detect some disapointment. %SPEECH_ON%Show Matches are our most basic format, \n\n 1. fight as many battles in a row as you can.  \n\n  2. Each round you choose what kind of enemy you\'ll fight against \n\n 3. The prize begins at 100 gold, each battle the difficulty will increase and the prize will double. \n\n 4. No looting %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artermisia nods at your choice, though you detect some disapointment. %SPEECH_ON%Show Matches are our most basic format, \n\n 1. Fight as many battles in a row as you can.  \n\n  2. Each round you choose what kind of enemy you\'ll fight against \n\n 3. The prize begins at 100 gold, each battle the difficulty will increase and the prize will double. \n\n 4. No looting %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -472,10 +468,9 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
-		});
 
+		});
 		this.m.Screens.push({
 			ID = "J",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia leads you to one of the smaller tournament fields, she seems distracted or perhaps a little bored.%SPEECH_ON%Good luck with your Show, I must return to the Grand Melee, I will leave you in the capable hands of an attendent.%SPEECH_OFF% \n\n She turns quickly and heads back to the grand hall towards the cheering crowds. An attendant had been standing so still by the wall you had not noticed them, they step forward with the neutral expression of one long wearied by a repeatitive task and asks very matter of factly.%SPEECH_ON% Which enemy would you like to fight?%SPEECH_OFF%}",
@@ -489,6 +484,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					{
 						return "K";
 					}
+
 				},
 				{
 					Text = "Just choose for me",
@@ -524,12 +520,13 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 							this.Const.World.Spawn.Necromancer,
 							this.Const.World.Spawn.BountyHunters,
 							this.Const.World.Spawn.GreenskinHorde
-						]
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
+						];
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() - 1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
+
 				},
 				{
 					Text = "I\'d prefer to return to Artemisia",
@@ -537,14 +534,14 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					{
 						return "D2";
 					}
+
 				}
 			],
 			function start( _event )
 			{
-
 			}
-		});
 
+		});
 		this.m.Screens.push({
 			ID = "J2",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant is unphased by your decision and merely repeats %SPEECH_ON% Which enemy would you like to fight?%SPEECH_OFF%}",
@@ -558,6 +555,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					{
 						return "K";
 					}
+
 				},
 				{
 					Text = "The Undead",
@@ -594,8 +592,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "J3",
@@ -647,15 +645,15 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 							this.Const.World.Spawn.BountyHunters,
 							this.Const.World.Spawn.GreenskinHorde
 						];
-
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() - 1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
 					}
+
 				},
 				{
-					Text = "We're done here",
+					Text = "We\'re done here",
 					function getResult( _event )
 					{
 						return "G2";
@@ -665,10 +663,9 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
-		});
 
+		});
 		this.m.Screens.push({
 			ID = "K",
 			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{The attendant appears unmoved by your choice %SPEECH_ON%Very good, any preference to the kind of Greenskins?%SPEECH_OFF%}",
@@ -680,7 +677,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Goblins",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GoblinBoss, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GoblinBoss, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -691,7 +688,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Berserkers",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BerserkersOnly, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BerserkersOnly, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -702,7 +699,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Warriors",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.OrcBoss, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.OrcBoss, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -713,7 +710,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "You decide, any will do",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GreenskinHorde, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.GreenskinHorde, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -731,7 +728,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
 
 		});
@@ -746,7 +742,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Ancient Legions",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadArmy, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadArmy, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -757,7 +753,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Wiedergangers",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Necromancer, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Necromancer, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -768,7 +764,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "The Embalmed",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mummies, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mummies, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -779,7 +775,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "You decide, any will do",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadScourge, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.UndeadScourge, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -797,8 +793,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "M",
@@ -811,7 +807,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "An unhold",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRockUnhold, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRockUnhold, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -822,7 +818,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A spider",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRedbackSpider, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendRedbackSpider, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -833,7 +829,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A wolf",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendWhiteDirewolf, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendWhiteDirewolf, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -844,7 +840,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A wyrm",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendStollwurm, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendStollwurm, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -855,7 +851,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "You decide, any will do",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendHexeLeader, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.LegendHexeLeader, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -873,7 +869,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
 
 		});
@@ -909,9 +904,9 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 							this.Const.World.Spawn.Southern,
 							this.Const.World.Spawn.Mercenaries,
 							this.Const.World.Spawn.Militia,
-							this.Const.World.Spawn.BountyHunters,
-						]
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
+							this.Const.World.Spawn.BountyHunters
+						];
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() - 1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -929,8 +924,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "O",
@@ -943,7 +938,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A Noble House",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Noble, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Noble, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -954,7 +949,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A City State",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Southern, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Southern, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -965,7 +960,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Mercenaries",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mercenaries, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Mercenaries, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -985,8 +980,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 							this.Const.World.Spawn.BanditBoss,
 							this.Const.World.Spawn.Barbarians,
 							this.Const.World.Spawn.NomadDefenders
-						]
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true)
+						];
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() - 1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1004,8 +999,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
+
 		});
 		this.m.Screens.push({
 			ID = "P",
@@ -1018,7 +1013,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A Bandit Gang",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BanditBoss, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.BanditBoss, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1029,7 +1024,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A Barbarian Tribe",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Barbarians, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.Barbarians, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1040,7 +1035,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "A Nomad Tribe",
 					function getResult( _event )
 					{
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.NomadDefenders, true)
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), this.Const.World.Spawn.NomadDefenders, true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1055,8 +1050,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 							this.Const.World.Spawn.BanditBoss,
 							this.Const.World.Spawn.Barbarians,
 							this.Const.World.Spawn.NomadDefenders
-						]
-						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() -1)], true);
+						];
+						local p = _event.selectFight(_event.getReputationToDifficultyLightMult(), SpawnGroups[this.Math.rand(0, SpawnGroups.len() - 1)], true);
 						_event.registerToShowAfterCombat("J3", "null");
 						this.World.State.startScriptedCombat(p, false, false, false);
 						return 0;
@@ -1074,25 +1069,21 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
 			}
 
 		});
 	}
 
- 	function selectFight(scale, type, lootingStopped)
+	function selectFight( scale, type, lootingStopped )
 	{
 		local round = this.World.Flags.get("LegendTournamentRound");
-		local roundDifficulty = 0.7 + (round * 0.3);
+		local roundDifficulty = 0.7 + round * 0.3;
 		this.World.Flags.increment("LegendTournamentRound", 1);
 		local p = this.Const.Tactical.CombatInfo.getClone();
 		p.LocationTemplate = clone this.Const.Tactical.LocationTemplate;
-		//p.TerrainTemplate = "tactical.arena";
 		p.TerrainTemplate = "tactical.tournament";
 		p.LocationTemplate.Template[0] = "tactical.legend_tournament_floor";
-		//p.LocationTemplate.Template[0] = "tactical.arena_floor";
 		p.CombatID = "Legend Tournament";
-
 		local tracks = [
 			this.Const.Music.OrcsTracks,
 			this.Const.Music.NobleTracks,
@@ -1105,7 +1096,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			this.Const.Music.OrientalCityStateTracks,
 			this.Const.Music.BarbarianTracks,
 			this.Const.Music.BattleTracks
-		]
+		];
 		p.Music = tracks[this.Math.rand(0, tracks.len() - 1)];
 		p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Arena;
 		p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Arena;
@@ -1118,13 +1109,13 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		p.IsAutoAssigningBases = false;
 		p.Players = [];
 		p.Entities = [];
-		this.Const.World.Common.addUnitsToCombat(p.Entities, type, (this.Math.pow(scale,roundDifficulty)), this.Const.Faction.Enemy);
+		this.Const.World.Common.addUnitsToCombat(p.Entities, type, this.Math.pow(scale, roundDifficulty), this.Const.Faction.Enemy);
 		p.AfterDeploymentCallback = function ()
 		{
 			this.Tactical.getWeather().setAmbientLightingPreset(1);
 			this.Tactical.getWeather().setAmbientLightingSaturation(1.1);
 		};
-		return p
+		return p;
 	}
 
 	function onUpdateScore()
@@ -1140,7 +1131,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		this.World.Flags.set("LegendTournamentRound", 1);
 		local candidate_veteran = [];
 
-		foreach (bro in this.World.getPlayerRoster().getAll())
+		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
 			if (bro.getSkills().hasSkill("trait.arena_veteran"))
 			{
@@ -1150,17 +1141,17 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 		if (candidate_veteran.len() == 0)
 		{
-			return "A";
+			return "C";
 		}
 
-		this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)]
+		this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)];
 
-		if ( candidate_veteran.len() < 3 )
+		if (candidate_veteran < 3)
 		{
 			return "B";
 		}
 
-		return "C"
+		return "C";
 	}
 
 	function onPrepareVariables( _vars )
@@ -1169,7 +1160,6 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			"veteran",
 			this.m.Veteran != null ? this.m.Veteran.getNameOnly() : ""
 		]);
-
 	}
 
 	function onClear()

@@ -31,21 +31,21 @@ this.legend_camp_unlock_gather <- this.inherit("scripts/events/event", {
 
 	function getText()
 	{
-		local text = "On your way out of town, you pass by the herbalist's grove. An impressive expanse of colorful flowers and herbs lay before you, the surrounding air made almost oppresively antiseptic. You recognize some of the plants, a few of them grow wild on the countryside. You pause to make firm mental notes of the various herbs; the smells, the colors, the sheen of the leaves in the sunlight.  Even if you remember a select few, it'd be enough to concoct a couple amateur curatives."
-		text += "\n\n"
-		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Gatherer).getDescription();
+		local text = "On your way out of town, you pass by the herbalist\'s grove. An impressive expanse of colorful flowers and herbs lay before you, the surrounding air made almost oppresively antiseptic. You recognize some of the plants, a few of them grow wild on the countryside. You pause to make firm mental notes of the various herbs; the smells, the colors, the sheen of the leaves in the sunlight. Even if you remember a select few, it would be enough to concoct a couple amateur curatives.";
+		text = text + "\n\n";
+		text = text + this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Gatherer).getDescription();
 		return text;
 	}
 
-	function setTownName(_v)
+	function setTownName( _v )
 	{
 		this.m.TownName = _v;
-		this.m.Screens[0].Text += this.getText()
+		this.m.Screens[0].Text += this.getText();
 	}
 
 	function onUpdateScore()
 	{
-		return
+		return;
 	}
 
 	function onPrepare()
@@ -61,3 +61,4 @@ this.legend_camp_unlock_gather <- this.inherit("scripts/events/event", {
 	}
 
 });
+

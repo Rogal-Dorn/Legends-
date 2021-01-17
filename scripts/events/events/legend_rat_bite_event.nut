@@ -10,7 +10,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_33.png[/img] You wake to a {piercing shriek | blood curdling scream | gutteral roar}, and run outside to find %bitten% holding a bloody wound, kicking and swearing at another mercenary while backing away. %SPEECH_ON% That beastly knave bit me! I woke to a giant rat gnawing on my {wrist|finger|thumb|hand}, i kicked it across the tent and by the time i stood up this bastard was in my tent%SPEECH_OFF%. He gestures to %ratman% who is looking guilty with a blood lined mouth. %SPEECH_ON% I don\'t know what happen sir, i was minding my own business when i started to feel a bit hungry.. i didn\'t mean to hurt anyone! %SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_33.png[/img] You wake to a {piercing shriek | blood curdling scream | gutteral roar}, and run outside to find %bitten% holding a bloody wound, kicking and swearing at another mercenary while backing away. %SPEECH_ON% That beastly knave bit me! I woke to a giant rat gnawing on my {wrist|finger|thumb|hand}, i kicked it across the tent and by the time I stood up this bastard was in my tent%SPEECH_OFF%. He gestures to %ratman% who is looking guilty with a blood lined mouth. %SPEECH_ON% I don\'t know what happened sir, I was minding my own business when I started to feel a bit hungry.. I didn\'t mean to hurt anyone! %SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -30,6 +30,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Bitten.getImagePath());
 				_event.m.Ratman.worsenMood(-0.5, "Hurt someone without realising");
 				_event.m.Bitten.worsenMood(-1.0, "Was bitten ");
+
 				if (_event.m.Bitten.getMoodState() >= this.Const.MoodState.Neutral)
 				{
 					this.List.push({
@@ -38,10 +39,10 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Bitten.getName() + this.Const.MoodStateEvent[_event.m.NightOwl.getMoodState()]
 					});
 				}
-				_event.m.Bitten.TherianthropeInfection(_event.m.Ratman );
+
+				_event.m.Bitten.TherianthropeInfection(_event.m.Ratman);
 				local injury = this.new("scripts/skills/injury/split_hand_injury");
 				_event.m.Ratman.getSkills().add(injury);
-
 			}
 
 		});
@@ -71,8 +72,6 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-
-
 		if (!this.World.getTime().IsDaytime)
 		{
 			return;
@@ -85,7 +84,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local hedge_knight_candidates = [];
+		local ratman_candidates = [];
 
 		foreach( bro in brothers )
 		{
@@ -121,7 +120,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 		}
 
 		this.m.Ratman = ratman_candidates[this.Math.rand(0, hedge_knight_candidates.len() - 1)];
-		this.m.Bitten = bitten_candidates[this.Math.rand(0, raider_candidates.len() - 1)];
+		this.m.Bitten = bitten_candidates[this.Math.rand(0, this.raider_candidates.len() - 1)];
 		this.m.Score = ratman_candidates.len() * 3;
 	}
 
@@ -135,7 +134,6 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			"ratman",
 			this.m.Ratman.getNameOnly()
 		]);
-
 		_vars.push([
 			"bitten",
 			this.m.Bitten.getNameOnly()

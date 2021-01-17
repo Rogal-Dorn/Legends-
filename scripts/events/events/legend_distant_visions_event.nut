@@ -1,7 +1,7 @@
 this.legend_distant_visions_event <- this.inherit("scripts/events/event", {
 	m = {
-        Bro = null
-    },
+		Bro = null
+	},
 	function create()
 	{
 		this.m.ID = "event.legend_distant_visions";
@@ -36,18 +36,20 @@ this.legend_distant_visions_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-        local Characters = [];
-        foreach(bro in brothers)
-        {
-            if (bro.getSkills().hasSkill("perk.legend_distant_visions"))
-            {
-                Characters.push(bro);
-            }
-        }
-        if (Characters.len() != 0)
-        {
-            this.m.Bro = Characters[this.Math.rand(0, Characters.len() - 1)];
-        }
+		local Characters = [];
+
+		foreach( bro in this.brothers )
+		{
+			if (bro.getSkills().hasSkill("perk.legend_distant_visions"))
+			{
+				Characters.push(bro);
+			}
+		}
+
+		if (Characters.len() != 0)
+		{
+			this.m.Bro = Characters[this.Math.rand(0, Characters.len() - 1)];
+		}
 	}
 
 	function onPrepareVariables( _vars )

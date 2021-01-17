@@ -9,7 +9,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_82.png[/img]While setting for a camp %blacksmith% takes you aside, the staunch musclebound man looks unusually concerned.%SPEECH_ON%Sir, this equipment of ours is in really bad shape! it\'s a disgrace to be seen fighting in. It is high time we bring it back to working condition again!%SPEECH_OFF% The brute of a man rolls up his sleeves and swings around his hammer, seemingly eager to spend a whole night working his anvil.",
+			Text = "[img]gfx/ui/events/event_82.png[/img]While setting for a camp %blacksmith% takes you aside, the staunch musclebound man looking unusually concerned.%SPEECH_ON%Sir, this equipment of ours is in really bad shape! It\'s a disgrace to be seen fighting in this. It is high time we bring it back to working condition!%SPEECH_OFF% The brute of a man rolls up his sleeves and swings around his hammer, seemingly eager to spend a whole night working his anvil.",
 			Image = "",
 			List = [],
 			Options = [
@@ -82,7 +82,6 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 							text = "Your " + item.getName() + " is repaired"
 						});
 						items = ++items;
-						items = items;
 
 						if (items > 4)
 						{
@@ -95,7 +94,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Bad",
-			Text = "[img]gfx/ui/events/event_13.png[/img]{While you leave %blacksmith% to start working on equipment, you hear a crack and all the sudden a loud scream. You rush to the smithy to see what happen only to find the blacksmith bleeding from a fresh impact wound. It seems too long off the tools has left him rusty. }",
+			Text = "[img]gfx/ui/events/event_13.png[/img]{While you leave %blacksmith% to start working on the equipment, you hear a crack and a loud scream. You rush to the smithy to see what happen only to find the blacksmith bleeding from a fresh impact wound. It seems too long off the tools has left him rusty. }",
 			Image = "",
 			List = [],
 			Characters = [],

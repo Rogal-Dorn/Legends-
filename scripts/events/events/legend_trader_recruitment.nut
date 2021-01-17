@@ -9,7 +9,7 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 120 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_41.png[/img]{Travelling along the road %companyname% passes by various ordinary people. Usually they step aside as soonest at they spot company of grim looking men armed to the teeth. Very few are bold enough to risk direct interaction with a mercenary band. This time it is one of these bold ones. This time wayfarer is courageous enough to approach %companyname%.%SPEECH_ON% Oh, hello there! Isn\'t this a famous %companyname% ! \n\n I have heard many stories about your famous deeds ! So many glorious battles ! So many enemies defeated ! … spoils collected. \n\n Anyhow, party of strong warriors like You could use some help outside the fight. Getting supplies at best price possible ! Selling excessive equipment even when nobody is interested in it ! I can make it happen ! \n\n I’m not much a warrior … but You don’t need more of these !  What You need is ME. %SPEECH_OFF% Trader is smiling cheerfully. You notice quick glances over supply wagon and more fancy pieces of your equipment. Looks like total value of %companyname%  possessions already has been evaluated at back of trader\'s mind.}",
+			Text = "[img]gfx/ui/events/event_41.png[/img]{Travelling along the road %companyname% passes by various ordinary people. Usually they step aside as soon as they spot a company of grim looking men armed to the teeth. Very few are bold enough to risk direct interaction with a mercenary band. This time, it is one of the bold ones. This time, a wayfarer is courageous enough to approach %companyname%.%SPEECH_ON% Oh, hello there! Isn\'t this the famous %companyname% ! \n\n I have heard many stories about your famous deeds ! So many glorious battles ! So many enemies defeated ! And so many spoils collected! \n\n Anyhow, surely a party of strong warriors like you could use some help outside the fight. Getting supplies at the best possible price ! Selling excessive equipment even when nobody is interested in it ! I can make it happen ! \n\n I’m not much a warrior, it is true, but you certainly don’t need more of these ! What you need is someone like me. %SPEECH_OFF% The trader is smiling cheerfully. You notice his quick glances over the supply wagon and the fancier pieces of your equipment. Looks like the total value of the company\'s possessions has akready been evaluated at the back of the trader\'s mind.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -23,6 +23,7 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 						_event.m.Trader.onHired();
 						return 0;
 					}
+
 				},
 				{
 					Text = "We\'d rather not take you in.",
@@ -31,23 +32,26 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 						this.World.getTemporaryRoster().clear();
 						return 0;
 					}
+
 				}
 			],
 			function start( _event )
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Trader = roster.create("scripts/entity/tactical/player");
-				_event.m.Trader.setStartValuesEx(["legend_trader_background"]);
+				_event.m.Trader.setStartValuesEx([
+					"legend_trader_background"
+				]);
 				local trait = this.new("scripts/skills/traits/greedy_trait");
 				_event.m.Trader.getSkills().add(trait);
 				this.Characters.push(_event.m.Trader.getImagePath());
 			}
+
 		});
 	}
 
 	function onUpdateScore()
 	{
-		
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;
@@ -57,42 +61,42 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
-		
+
 		if (this.World.Assets.getMoney() <= 30000)
 		{
 			return;
 		}
-	
+
 		local playerTile = this.World.State.getPlayer().getTile();
-		
+
 		if (!playerTile.HasRoad)
 		{
 			return;
 		}
-		
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
-		foreach (bro in brothers)
+
+		foreach( bro in brothers )
 		{
-			switch (bro.getBackground().getID())
+			switch(bro.getBackground().getID())
 			{
-				case "background.legend_trader":
-				case "background.legend_commander_trader":
-					return;
-				default:
-				totalbrothers += 1;
-				brotherlevels += bro.getLevel();
+			case "background.legend_trader":
+			case "background.legend_commander_trader":
+				return;
 			}
+
+			totalbrothers = totalbrothers + 1;
+			brotherlevels = brotherlevels + bro.getLevel();
 		}
-		
+
 		if (totalbrothers < 1 || brotherlevels < 30)
 		{
 			return;
 		}
 
-		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
-		// this.m.Score = 9999;
+		this.m.Score = 20.0 + brotherlevels / totalbrothers * 10.0 / this.Const.LevelXP.len();
 	}
 
 	function onPrepare()
@@ -107,4 +111,6 @@ this.legend_trader_recruitment <- this.inherit("scripts/events/event", {
 	{
 		this.m.Trader = null;
 	}
+
 });
+

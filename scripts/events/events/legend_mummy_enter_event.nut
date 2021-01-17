@@ -63,7 +63,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/event_89.png[/img]{As you inch closer you begin to realise that fingers have smudged and flailed against the inside enclosure of the sarcophagus, some caskets have been opened from inside, while others had outside assistance. \n\n However, all of them are empty. \n\n The air begins to feel warm again suddenly, there is more in this chamber than you suspected. A figure of a man catches your eye, it opens it\'s mouth as it plods from the darkness. \n\n Words do not come, only a trickle of sand and skin.}",
+			Text = "[img]gfx/ui/events/event_89.png[/img]{As you inch closer you begin to realise that fingers have smudged and flailed against the inside enclosure of the sarcophagus, some caskets have been opened from inside, while others had outside assistance. \n\n However, all of them are empty. \n\n The air begins to feel warm again suddenly, there is more in this chamber than you suspected. A figure of a man catches your eye, it opens its mouth as it plods from the darkness. \n\n Words do not come, only a trickle of sand and skin.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -88,16 +88,18 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 						p.IsWithoutAmbience = true;
 						p.Entities = [];
 
-						for( local i = 0; i < 4; i = ++i )
+						for( local i = 0; i < 4; i = i )
 						{
 							p.Entities.push(clone this.Const.World.Spawn.Troops.LegendMummyHeavy);
+							i = ++i;
 						}
 
 						local f = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID();
 
-						for( local i = 0; i < p.Entities.len(); i = ++i )
+						for( local i = 0; i < p.Entities.len(); i = i )
 						{
 							p.Entities[i].Faction <- f;
+							i = ++i;
 						}
 
 						p.BeforeDeploymentCallback = function ()
@@ -132,12 +134,11 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									}
 									else
 									{
-
-									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
-									e.setFaction(f);
-									e.assignRandomEquipment();										
-						
+										local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", tile.Coords);
+										e.setFaction(f);
+										e.assignRandomEquipment();
 										light = --light;
+										light = light;
 										light_tiles.push(tile);
 									}
 								}
@@ -155,6 +156,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								{
 									p.Level = 1;
 									toRise = --toRise;
+									toRise = toRise;
 								}
 
 								light_tiles.remove(r);
@@ -178,6 +180,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									e.setFaction(f);
 									e.assignRandomEquipment();
 									queen = --queen;
+									queen = queen;
 								}
 							}
 							while (queen > 0);
@@ -199,6 +202,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									e.setFaction(f);
 									e.assignRandomEquipment();
 									treasureHunters = --treasureHunters;
+									treasureHunters = treasureHunters;
 								}
 							}
 							while (treasureHunters > 0);
@@ -216,11 +220,11 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 								}
 								else
 								{
-
 									local e = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_mummy_light", tile.Coords);
 									e.setFaction(f);
-									e.assignRandomEquipment();	
+									e.assignRandomEquipment();
 									medium = --medium;
+									medium = medium;
 								}
 							}
 							while (medium > 0);
@@ -242,6 +246,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 									e.setFaction(f);
 									e.assignRandomEquipment();
 									heavy = --heavy;
+									heavy = heavy;
 								}
 							}
 							while (heavy > 0);
@@ -303,7 +308,7 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Defeat",
-			Text = "[img]gfx/ui/events/event_173.png[/img]The mercenaries run out into the blazing sun again again.%SPEECH_ON%Perhaps another time?%SPEECH_OFF%One sellsword says. %randombrother% nods.%SPEECH_ON%Another time, aye. Maybe a time far away from now, when I\'m out retired and farkin\' whoors, then y\'all can dip down into the darkness and go gallivanting with dead wizards. Does that time work for y\'all?%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_173.png[/img]The mercenaries run out into the blazing sun again.%SPEECH_ON%Perhaps another time?%SPEECH_OFF%One sellsword says. %randombrother% nods.%SPEECH_ON%Another time, aye. Maybe a time far away from now, when I\'m out retired and farkin\' whoors, then y\'all can dip down into the darkness and go gallivanting with dead wizards. Does that time work for y\'all?%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
