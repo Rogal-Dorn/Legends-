@@ -83,7 +83,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				local disallowedTerrain = [];
 
-				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = i )
 				{
 					if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
 					{
@@ -92,6 +92,8 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 					{
 						disallowedTerrain.push(i);
 					}
+
+					i = ++i;
 				}
 
 				local playerTile = this.World.State.getPlayer().getTile();
@@ -111,12 +113,15 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 						if (tile.Type == this.Const.World.TerrainType.Forest || tile.Type == this.Const.World.TerrainType.LeaveForest || tile.Type == this.Const.World.TerrainType.AutumnForest)
 						{
 							numWoods = ++numWoods;
+							numWoods = numWoods;
 						}
 
 						y = ++y;
+						y = y;
 					}
 
 					x = ++x;
+					x = x;
 				}
 
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 9, disallowedTerrain);
@@ -126,7 +131,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
 
-				for( local i = 0; i < 2; i = ++i )
+				for( local i = 0; i < 2; i = i )
 				{
 					local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 5);
 
@@ -134,6 +139,8 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 					{
 						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
 					}
+
+					i = ++i;
 				}
 
 				this.Contract.m.Target = this.WeakTableRef(party);
@@ -243,7 +250,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{As you approach the keep of %employer% you pass through a courtyard filled with broken down carts and barking dogs pulling at their chains, a guard in a stained jerkin sits drinking on the stair, he nods you past. As you enter the keep itself you hear children yelling at each other, before a nasal woman\'s voice cuts through their chatter.%SPEECH_ON%Oi! you lot knock it off, we\'ve got company%SPEECH_OFF% The children protest a little but calm down. A large man waves you over, he is sitting topless by a fireplace eating a large hunk of meat, that has spilled juices on his huge hairy belly %SPEECH_ON%You came then? I thought maybe you were as weak as the rest of them spider hunters. Well I guess you've heard then, we've got a nest of them big black blighters. They are drawn in by the midden, that pile of filth has bugs the size of my fist and the spiders love it. I told the guards to clean it out, but they must have been mistaken for bugs, because none came back. %SPEECH_OFF%  He wipes his mouth with a hairy arm and takes a huge swig from an ale cask before burping loudly.  %SPEECH_ON%These ain\'t ordinary spiders mind you, a single bite could fell a giant. I know it is a big job, and I\'m prepared to pay you well for it. Interested? %SPEECH_OFF%  | You find %employer% behind the main keep, stretched out on his back under a catapult. You don\'t think he could have seen you from under there, but while still tinkering away he calls out. %SPEECH_ON%Ah, the spider hunter, just the one I wanted to see. We have a bit of a nasty problem.%SPEECH_OFF% He slides out from under the catapult and you see his uncovered chest is smeared with dirt, he pats the device affectionately. %SPEECH_ON%Not the kind of problem Bertha here can fix %SPEECH_OFF%. He pulls a robe over his shoulders and continues as he walks you back to the keep. %SPEECH_ON%We have had spiders in these parts for a long time, absolute bastards if they get a hold on you, but easy enough for the boys to scare off. Recently though we have been visited by spiders of a different kind. Giant black things with a huge gash of red upon their back. A single bite has enough poison enough to fell a knight. I hear you are the one for the job, and I am prepared to pay handsomely. Are you Interested? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{As you approach the keep of %employer% you pass through a courtyard filled with broken down carts and barking dogs pulling at their chains, a guard in a stained jerkin sits drinking on the stair, he nods you past. When you enter the keep itself you hear children yelling at each other, before a nasal woman\'s voice cuts through their chatter.%SPEECH_ON%Oi! you lot knock it off, we\'ve got company%SPEECH_OFF% The children protest a little but calm down. A large man waves you over, he is sitting topless by a fireplace eating a large hunk of meat, that has spilled juices on his huge hairy belly %SPEECH_ON%You came then? I thought maybe you were as weak as the rest of them spider hunters. Well I guess you\'ve heard then, we\'ve got a nest of them big black blighters. They are drawn in by the midden, that pile of filth has bugs the size of my fist and the spiders love it. I told the guards to clean it out, but they must have been mistaken for bugs, because none came back. %SPEECH_OFF%  He wipes his mouth with a hairy arm and takes a huge swig from an ale cask before burping loudly.  %SPEECH_ON%These ain\'t ordinary spiders mind you, a single bite could fell a giant. I know it is a big job, and I\'m prepared to pay you well for it. Interested? %SPEECH_OFF%  | You find %employer% behind the main keep, stretched out on his back under a catapult. You don\'t think he could have seen you from under there, but while still tinkering away he calls out. %SPEECH_ON%Ah, the spider hunter, just the one I wanted to see. We have a bit of a nasty problem.%SPEECH_OFF% He slides out from under the catapult and you see his uncovered chest is smeared with dirt, he pats the device affectionately. %SPEECH_ON%Not the kind of problem Bertha here can fix %SPEECH_OFF%. He pulls a robe over his shoulders and continues as he walks you back to the keep. %SPEECH_ON%We have had spiders in these parts for a long time, absolute bastards if they get a hold on you, but easy enough for the boys to scare off. Recently though we have been visited by spiders of a different kind. Giant black things with a huge gash of red upon their back. A single bite has enough poison enough to fell a knight. I hear you are the one for the job and I am prepared to pay handsomely. Are you interested? %SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -327,7 +334,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Screens.push({
 			ID = "OldArmor",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_redback_dead.png[/img]{With the webknechts dispatched you have the company briefly search the creatures\' nest, though the mercenaries are ordered to never wander alone. You muck about as well, %randombrother% at your side. Together, you spot a tree that\'s remarkably untouched by the webs. As you circle around, you find a knight\'s corpse leaning against its trunk. His hand rests atop a broken sword\'s pommel, the other hand is missing altogether, nothing but sleeve at the wrist with the mutilated arm couched at his belly. The corpse rests in a nest of its own making, a thicket of what look like spoiled rhubarb stalks and decayed carapaces, the broken bodies caverned and smelling of poison. %randombrother% nods.%SPEECH_ON%That\'s a right shame. I\'d wager he would have made a sound addition to the %companyname%, whoever he was.%SPEECH_OFF%Indeed, it has all the look of a great fighter\'s end. You\'ve mind to bury him, but you\'ve no time. You tell %randombrother% to fetch what he can from the corpse and to ready a return to %employer%.}",
+			Text = "[img]gfx/ui/events/legend_redback_dead.png[/img]{With the webknechts dispatched you have the company briefly search the creatures\' nest, though the mercenaries are ordered to never wander alone. You muck about as well, %randombrother% at your side. Together, you spot a tree that is remarkably untouched by the webs. As you circle around, you find a knight\'s corpse leaning against its trunk. His hand rests atop a broken sword\'s pommel, the other hand is missing altogether, nothing but sleeve at the wrist with the mutilated arm couched at his belly. The corpse rests in a nest of its own making, a thicket of what look like spoiled rhubarb stalks and decayed carapaces, the broken bodies caverned and smelling of poison. %randombrother% nods.%SPEECH_ON%That\'s a right shame. I\'d wager he would have made a sound addition to the %companyname%, whoever he was.%SPEECH_OFF%Indeed, it has all the look of a great fighter\'s end. You\'ve mind to bury him, but you\'ve no time. You tell %randombrother% to fetch what he can from the corpse and to ready a return to %employer%.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -343,10 +350,15 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 			function start()
 			{
 				local item = this.Const.World.Common.pickArmor([
-					[1, "mail_hauberk"],
-					[1, "coat_of_scales"],
+					[
+						1,
+						"mail_hauberk"
+					],
+					[
+						1,
+						"coat_of_scales"
+					]
 				]);
-
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -433,7 +445,7 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% meets you at the town entrance and there\'s a crowd of folks beside him. He welcomes you warmly, stating he had a scout following you who saw the whole battle unfold. After he hands you your reward, the townsfolk come forward one by one, many of which are reluctant to stare a sellsword in the eyes, but they offer a few gifts as thanks for relieving them of the webknecht horrors. | You have to track down %employer%, ultimately finding the man in a stable livery with a peasant girl. He saws upward from the hay, startling the horses which whinny and stamp their feet. Half-dressed, the man states he already has your pay and forks it over. Eyeing you eyeing the girl, he then starts to grab whatever\'s in reach, including from the saddlebags of stabled mounts, and hands them over.%SPEECH_ON%The, uh, townsfolk also sought to pitch in. You know, as thanks.%SPEECH_OFF%Right. For further \'thanks\' you ask if he\'ll give you whatever\'s in a nearby satchel. | %employer% welcomes you back with a great clap and rub of his hands, as though you\'d just brought in a turkey and not the horrifying evidence of your victory. After paying you the agreed reward, you hear some surprising news. The mayor states that the estate of a lost townsman could not be properly divvied up and, as further thanks, you\'re free to take what\'s left of it.}",
+			Text = "[img]gfx/ui/events/event_85.png[/img]{%employer% meets you at the town entrance and there is a crowd of folks beside him. He welcomes you warmly, stating he had a scout following you who saw the whole battle unfold. After he hands you your reward, the townsfolk come forward one by one, many of which are reluctant to stare a sellsword in the eyes, but they offer a few gifts as thanks for relieving them of the webknecht horrors. | You have to track down %employer%, ultimately finding the man in a stable livery with a peasant girl. He saws upward from the hay, startling the horses which whinny and stamp their feet. Half-dressed, the man states he already has your pay and forks it over. Eyeing you eyeing the girl, he then starts to grab whatever\'s in reach, including from the saddlebags of stabled mounts, and hands them over.%SPEECH_ON%The, uh, townsfolk also sought to pitch in. You know, as thanks.%SPEECH_OFF%Right. For further \'thanks\' you ask if he\'ll give you whatever\'s in a nearby satchel. | %employer% welcomes you back with a great clap and rub of his hands, as though you\'d just brought in a turkey and not the horrifying evidence of your victory. After paying you the agreed reward, you hear some surprising news. The mayor states that the estate of a lost townsman could not be properly divvied up and, as further thanks, you\'re free to take what\'s left of it.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -537,11 +549,13 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

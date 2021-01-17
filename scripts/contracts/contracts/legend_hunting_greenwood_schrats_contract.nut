@@ -84,7 +84,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				local disallowedTerrain = [];
 
-				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = i )
 				{
 					if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
 					{
@@ -93,6 +93,8 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 					{
 						disallowedTerrain.push(i);
 					}
+
+					i = ++i;
 				}
 
 				local playerTile = this.World.State.getPlayer().getTile();
@@ -127,7 +129,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.85);
 
-				for( local i = 0; i < 2; i = ++i )
+				for( local i = 0; i < 2; i = i )
 				{
 					local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 7, disallowedTerrain);
 
@@ -135,6 +137,8 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 					{
 						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.85);
 					}
+
+					i = ++i;
 				}
 
 				this.Contract.m.Target = this.WeakTableRef(party);
@@ -242,7 +246,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{ %employer% greets you at the front door of his keep and invites you in. %SPEECH_ON%We\'re glad you could come trapper, when i received word there was a Schrat hunter in town I sent for you at once. Folks keep going missing in the woods and I\'ve no recourse in getting them back. I\'ve heard tales of trees on the move before, but this time is worse. We sent axemen in to take out the treemen before, but these ones just will not stay dead. They seem to glow with a life force, and aach swing of our axes just makes these trees grow stronger. I understand you have fought them before, and i am sure your axes are sharp, but this contract is different. If you manage to return with your life, and without theirs, i will reward you handsomely for your efforts.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{ %employer% greets you at the front door of his keep and invites you in. %SPEECH_ON%We\'re glad you could come trapper. When I received word there was a Schrat hunter in town I sent for you at once. Folks keep going missing in the woods and I\'ve no recourse in getting them back. I\'ve heard tales of trees on the move before, but this time is worse. We sent axemen in to take out the treemen before, but these ones just will not stay dead. They seem to glow with a life force, and each swing of our axes just makes these trees grow stronger. I understand you have fought them before, and I am sure your axes are sharp, but this contract is different. If you manage to return with your life, and without theirs, I will reward you handsomely for your efforts.%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -291,7 +295,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_heartwood.png[/img]{The undergrowth has grown thick and hard to walk through, a tangle of roots, vines and branches. Your men hack through the wood, sending shudders reverberating through the forest and birds squaking off into the air. Suddenly one of branches rears back as you strike it in half. The leafy bough pulls away as a nearby trunk turns to face you, revealing a glowing face made from the gnarled burls of wood. The eyes seem to dance with a playful green fire and its other branches turn towards you, ready to strike. }",
+			Text = "[img]gfx/ui/events/legend_heartwood.png[/img]{The undergrowth has grown thick and hard to walk through, a tangle of roots, vines and branches. Your men hack through the wood, sending shudders reverberating through the forest and birds squaking off into the air. Suddenly one of the branches rears back as you strike it in half. The leafy bough pulls away as a nearby trunk turns to face you, revealing a glowing face made from the gnarled burls of wood. The eyes seem to dance with a playful green fire and its other branches turn towards you, ready to strike. }",
 			Image = "",
 			List = [],
 			Options = [
@@ -309,7 +313,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Screens.push({
 			ID = "Direwolves",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_heartwood_ritual.png[/img]{You spot pairs of green eyes glowing in the distance. No doubt a sight of the schrats themselves, and so you order your men to clamber toward them quietly.\n\nCresting a hill you find the trunk of one tree is surrounded by a group of beautiful women. They have laid out offerings before the tree, taken off their clothes and they are chanting softly while dancing naked in the dappled light filtering through the canopy.  Your arrival has not gone unnoticed as the schrat leans forward with a seemingly ancient crooning. The women at its root turn and hiss insults at you, schriveling into hags as they shout. You\'re not sure what to make of such arboreal allegiance, but those hags will die at the feet of %companyname% .}",
+			Text = "[img]gfx/ui/events/legend_heartwood_ritual.png[/img]{You spot pairs of green eyes glowing in the distance. No doubt a sight of the schrats themselves, and so you order your men to clamber toward them quietly.\n\nCresting a hill you find the trunk of one tree is surrounded by a group of beautiful women. They have laid out offerings before the tree, taken off their clothes and they are chanting softly while dancing naked in the dappled light filtering through the canopy. Your arrival has not gone unnoticed as the schrat leans forward with a seemingly ancient crooning. The women at its root turn and hiss insults at you, schriveling into hags as they shout. You\'re not sure what to make of such arboreal allegiance, but those hags will die at the feet of %companyname% .}",
 			Image = "",
 			List = [],
 			Options = [
@@ -356,7 +360,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Screens.push({
 			ID = "Glade",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_heartwood_dead.png[/img]{As you\'re departing the battlefield, %randombrother% remarks that the surrounding area looks rather ripe. You turn around to see that he\'s indeed correct: a beautiful crop of trees served host to the schrats, presumably chosen for good reason. And if the schrats took it for a good home, then it surely means the wood is very fine. You order the men to make use of this quality glade and chop as many trees down as time and energy permits. The harvested timber is very fine indeed.\n\n It begins to rain as you depart the impromptu lumbermill.}",
+			Text = "[img]gfx/ui/events/legend_heartwood_dead.png[/img]{As you are departing the battlefield, %randombrother% remarks that the surrounding area looks rather ripe. You turn around to see that he is indeed correct: a beautiful crop of trees served host to the schrats, presumably chosen for good reason. And if the schrats took it for a good home, then it surely means the wood is very fine. You order the men to make use of this quality glade and chop as many trees down as time and energy permits. The harvested timber is very fine indeed.\n\n It begins to rain as you depart the impromptu lumbermill.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -405,7 +409,7 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.m.Screens.push({
 			ID = "DeadWoodcutter",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_heartwood_dead.png[/img]{Just as you\'re departing a glint catches your eye. You turn around and come to one of the schrats\' trunk. An axe is embedded in the wood. Moss has long since overgrown the handle, and yet the metal of the tool is without error, not a smidge of rust upon it. Scraping the moss away, you uncover wooden fingertips still at full grip. Tracing the fingers ends at the tree trunk where the wrist becomes a vein of wood. You follow that along to a wooden face with a twisted maw, like a face of brown wax melted by time alone. The frame of a helmet twists around the face and there\'s a chest plate cresting below like the reservoir of a deerchaser.\n\nYou shake your head and retrieve the axe, breaking it free and throwing the wooden fingers off its handle. The misshapen face blankly observes your theft, its stare preserved in the very annihilation from which it is eons removed. You don\'t dwell on the sight and return to the company with the axe.}",
+			Text = "[img]gfx/ui/events/legend_heartwood_dead.png[/img]{Just as you are departing, a glint catches your eye. You turn around and come to one of the schrats\' trunk. An axe is embedded in the wood. Moss has long since overgrown the handle, and yet the metal of the tool is without error, not a smidge of rust upon it. Scraping the moss away, you uncover wooden fingertips still at full grip. Tracing the fingers ends at the tree trunk where the wrist becomes a vein of wood. You follow that along to a wooden face with a twisted maw, like a face of brown wax melted by time alone. The frame of a helmet twists around the face and there\'s a chest plate cresting below like the reservoir of a deerchaser.\n\nYou shake your head and retrieve the axe, breaking it free and throwing the wooden fingers off its handle. The misshapen face blankly observes your theft, its stare preserved in the very annihilation from which it is eons removed. You do not dwell on the sight and return to the company with the axe.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -443,7 +447,6 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 				{
 					item = this.new("scripts/items/weapons/legend_infantry_axe");
 				}
-
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -543,11 +546,13 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

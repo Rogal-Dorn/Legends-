@@ -67,18 +67,16 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 			{
 				this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 				local r = this.Math.rand(1, 100);
-
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
 				local playerTile = this.World.State.getPlayer().getTile();
 				local tile = this.Contract.getTileToSpawnLocation(playerTile, 5, 10);
-
 				local party;
 				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Skin Ghouls", false, this.Const.World.Spawn.LegendSkinGhouls, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
 				party.setDescription("A horde of terrorizing skin ghouls.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
 
-				for( local i = 0; i < 2; i = ++i )
+				for( local i = 0; i < 2; i = i )
 				{
 					local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 5);
 
@@ -86,6 +84,8 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 					{
 						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, 0.75);
 					}
+
+					i = ++i;
 				}
 
 				this.Contract.m.Target = this.WeakTableRef(party);
@@ -123,18 +123,15 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 				if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 				{
 					this.Contract.setScreen("Victory");
-
 					this.World.Contracts.showActiveContract();
 					this.Contract.setState("Return");
 				}
 				else if (!this.Flags.get("IsBanterShown") && this.Contract.m.Target.isHiddenToPlayer() && this.Math.rand(1, 1000) <= 1 && this.Flags.get("StartTime") + 10.0 <= this.Time.getVirtualTimeF())
 				{
 					local tileType = this.World.State.getPlayer().getTile().Type;
-
 					this.Flags.set("IsBanterShown", true);
 					this.Contract.setScreen("Banter");
 					this.World.Contracts.showActiveContract();
-
 				}
 			}
 
@@ -182,14 +179,14 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/legend_skin_ghoul.png[/img]{The exterior of %employer%\'s grand manse near the centre of town looks as though it's seen better days, crusty old paint flaking off some of the walls and ancient sunbleached ivy having long since reclaimed some others. Approaching the front entrance, one of his household guard stops you to give you the once over, grinning toothlessly. %SPEECH_ON%Ohhh, yer %employer%\'s latest meat for the thresher I take it, by the looks of ya. Eh? Heheh. Get ye on in, then. Might be ye\'ll have more luck than the last lot. Hyeheh.%SPEECH_OFF% He carries on chuckling to himself annoyingly as you head inside. On entering, it strikes you that the exterior of the huge house was likely left to rot intentionally – probably to distract from the immense wealth collected indoors, with everything from paintings to door handles gilded and polished, and every wall adorned with fine oak paneling and expensive ornaments. A bit garish for your tastes. The housemaster orders a nervous little servant boy to take you to %employer%. You accompany the boy up three overly large flights of carpeted stairs to an engraved wooden door where he knocks once, tepidly, to no response. He knocks again, a little harder this time, and you hear %employer%\'s muffled voice furiously bellow through the door, %SPEECH_ON%WHAT?%SPEECH_OFF% The door bursts open and %employer%, a corpulent red-faced man clothed in very fine linens of the extra-large variety, storms through the door and roars at the flinching servant boy. %SPEECH_ON%Boy, I am NOT to be interrupted at my work. IF I am to be interrupted, which I am NOT, the signal that the knock is of importance is to knock THRICE. Do you know what THRICE means? It means THREE. THREE knocks if the knock is one of importance. Do you understand?%SPEECH_OFF% The boy, looking on the verge of tears, mumbles %SPEECH_ON%Yessir, yes, yes sir, sorry sir,%SPEECH_OFF% and quickly scurries off. %employer% regards you with an ugly frown, sizing you up. His face softens a little when he notices the knock was, in fact, of importance. %SPEECH_ON%Ah ... the mercenaries I ordered. Mm. Very good.%SPEECH_OFF% He thumbs over his shoulder, gesturing you enter the room, which is a large and well-lit study filled with trophies and clutter. Every shelf and surface is covered in papers, notes, coins, quills and inks. %SPEECH_ON%There is … an issue. With employees of mine.%SPEECH_OFF% He clears his throat. %SPEECH_ON%Ex-employees, I should perhaps say, since they\'ve been torn to a thousand ribbons and eaten, by what I am told is the most numerous and fearsome lot of devouring beasts these parts have seen in memory.%SPEECH_OFF% He opens his bureau and pulls out a roll of parchment. He unfurls it and presents it to you. It\'s a rather scary-looking sketch of a huge horned Nachzehrer, its maw open to bare its enormous jagged fangs. %SPEECH_ON%Know you this sight?%SPEECH_OFF% he asks, the parchment beginning to shake with anger in his fat fingers. You tell him you know it, more or less. %SPEECH_ON%Well, this monster and its foul friends are costing my … operation. Costing my operation very dearly. It cannot continue and must be dealt with. With extreme expedition. It is not a small matter and I am prepared to compensate extremely well the one who accepts this opportunity from me. Will it be you?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_skin_ghoul.png[/img]{The exterior of %employer%\'s grand manse near the centre of town looks as though it\'s seen better days, crusty old paint flaking off some of the walls and ancient sunbleached ivy having long since reclaimed some others. Approaching the front entrance, one of his household guard stops you to give you the once over, grinning toothlessly. %SPEECH_ON%Ohhh, yer %employer%\'s latest meat for the thresher I take it, by the looks of ya. Eh? Heheh. Get ye on in, then. Might be ye\'ll have more luck than the last lot. Hyeheh.%SPEECH_OFF% He carries on chuckling to himself annoyingly as you head inside. On entering, it strikes you that the exterior of the huge house was likely left to rot intentionally – probably to distract from the immense wealth collected indoors, with everything from paintings to door handles gilded and polished, and every wall adorned with fine oak paneling and expensive ornaments. A bit garish for your taste. The housemaster orders a nervous little servant boy to take you to %employer%. You accompany the boy up three overly large flights of carpeted stairs to an engraved wooden door where he knocks once, tepidly, to no response. He knocks again, a little harder this time, and you hear %employer%\'s muffled voice furiously bellow through the door, %SPEECH_ON%WHAT?%SPEECH_OFF% The door bursts open and %employer%, a corpulent red-faced man clothed in very fine linens of the extra-large variety, storms through the door and roars at the flinching servant boy. %SPEECH_ON%Boy, I am NOT to be interrupted at my work. IF I am to be interrupted, which I am NOT, the signal that the knock is of importance is to knock THRICE. Do you know what THRICE means? It means THREE. THREE knocks if the knock is one of importance. Do you understand?%SPEECH_OFF% The boy, looking on the verge of tears, mumbles %SPEECH_ON%Yessir, yes, yes sir, sorry sir,%SPEECH_OFF% and quickly scurries off. %employer% regards you with an ugly frown, sizing you up. His face softens a little when he notices the knock was, in fact, of importance. %SPEECH_ON%Ah ... the mercenaries I ordered. Mm. Very good.%SPEECH_OFF% He thumbs over his shoulder, gesturing you enter the room, a large and well-lit study filled with trophies and clutter. Every shelf and surface is covered in papers, notes, coins, quills and inks. %SPEECH_ON%There is … an issue. With employees of mine.%SPEECH_OFF% He clears his throat. %SPEECH_ON%Ex-employees, I should perhaps say, since they\'ve been torn to a thousand ribbons and eaten, by what I am told is the most numerous and fearsome lot of devouring beasts these parts have seen in memory.%SPEECH_OFF% He opens his bureau and pulls out a roll of parchment. He unfurls it and presents it to you. It\'s a rather scary-looking sketch of a huge horned Nachzehrer, its maw open to bare its enormous jagged fangs. %SPEECH_ON%Know you this sight?%SPEECH_OFF% he asks, the parchment beginning to shake with anger in his fat fingers. You tell him you know it, more or less. %SPEECH_ON%Well, this monster and its foul friends are costing my … operation. Costing my operation very dearly. It cannot continue and must be dealt with. With extreme expedition. It is not a small matter and I am prepared to compensate extremely well the one who accepts this opportunity from me. Will it be you?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Accepting your \'opportunity\' could cost my company dearly as well. What will you pay? | It appears you can afford it. Let's talk money. | About that \'compensation\'...}",
+					Text = "{Accepting your \'opportunity\' could cost my company dearly as well. What will you pay? | It appears you can afford it. Let\'s talk money. | About that \'compensation\'...}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -231,7 +228,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_skin_ghoul.png[/img]{The horde of skin ghouls suddenly turn as one. They let out a screech unlike anything you've ever heard before. Claws raised before them, the began to swarm towards the company.}",
+			Text = "[img]gfx/ui/events/legend_skin_ghoul.png[/img]{The horde of skin ghouls suddenly turn as one. They let out a screech unlike anything you\'ve ever heard before. Claws raised before them, the began to swarm towards the company.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -348,11 +345,13 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 
