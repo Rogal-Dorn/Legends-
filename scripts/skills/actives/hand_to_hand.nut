@@ -43,13 +43,23 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			Max = 10,
 			HasMusc = false,
 			HasBro = false,
+			HasOffhand = false,
 			HasTraining = false
 		}
 		local actor = this.getContainer().getActor();
-
+		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		
+			
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
 			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
+			
+			if (offhand != null)
+			{
+				average *= 0.5;
+				HasOffhand = true;
+			}
+			
 			ret.Min = average - 10;
 			ret.Max = average + 10;
 			ret.HasTraining = true;
@@ -88,6 +98,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		
 		local mods = this.getMods();
 		local ret = [
 			{
@@ -124,6 +135,16 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
+			});
+		}
+
+		if (mods.HasOffhand)
+		{
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Damage halved due to holding something in your off hand"
 			});
 		}
 

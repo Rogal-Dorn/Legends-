@@ -66,7 +66,23 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
-		_draftList.push("legend_death_summoner_background");
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_berserker")
+			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_berserker_background");
+				}
+			}
+			else
+			{
+			r = this.Math.rand(0, 90);
+				if (r == 1)
+				{
+				_list.push("legend_berserker_background");
+				}
+			}
 		}
 	}
 

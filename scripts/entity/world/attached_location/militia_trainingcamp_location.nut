@@ -121,6 +121,9 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 		_list.push("militia_background");
 		_list.push("militia_background");
 		_list.push("retired_soldier_background");
+		_list.push("militia_background");
+		_list.push("militia_background");
+		_list.push("retired_soldier_background");
 	}
 
 	function onUpdateShopList( _id, _list )

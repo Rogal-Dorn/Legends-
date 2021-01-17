@@ -124,27 +124,28 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("hedge_knight_background");
 		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
 		{
-			r = this.Math.rand(0, 19);
+			local r = this.Math.rand(0, 9);
 			if (r == 1)
 				{
 				_list.push("legend_master_archer_background");
 				}
-			r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_shield");
-				}
-			r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_2h");
-				}
-			r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_ranged");
-				}
 		}
+		
+		local r = this.Math.rand(0, 9);
+		if (r == 1)
+			{
+			_list.push("legend_noble_shield");
+			}
+		r = this.Math.rand(0, 9);
+		if (r == 1)
+			{
+			_list.push("legend_noble_2h");
+			}
+		r = this.Math.rand(0, 9);
+		if (r == 1)
+			{
+			_list.push("legend_noble_ranged");
+			}		
 		if (_gender)
 		{
 

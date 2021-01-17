@@ -65,8 +65,34 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_draftList.push("female_minstrel_background");
 		_draftList.push("female_minstrel_background");
 		_draftList.push("female_minstrel_background");
-
 		}
+		
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_list.push("legend_entrancer_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+			{
+			
+			_list.push("legend_entrancer_background");
+
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_entrancer_background");
+				}
+			}
+		}		
 	}
 
 });
