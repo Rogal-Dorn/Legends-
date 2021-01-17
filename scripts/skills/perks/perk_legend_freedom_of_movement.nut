@@ -24,7 +24,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Gain hit point damage reduction proportional to the difference between your current initiative and your attacker\'s, up to 75% for 100 initiative."
+			text = "Gain hit point damage reduction proportional to the difference between your current initiative and your attacker\'s, up to 80% for 100 initiative."
 		});
 		return tooltip;
 	}
@@ -43,7 +43,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 		if (ourCurrentInitiative > enemyCurrentInitiative)
 		{
 			local diff = (ourCurrentInitiative - enemyCurrentInitiative) / 100;
-			local diffPoint = this.Math.min(1, this.Math.pow(diff, 0.4)) * 0.8;
+			local diffPoint = this.Math.min(1, this.Math.pow(diff, 0.4)) * 0.80;
 			bonus = 1 - diffPoint;
 		}
 

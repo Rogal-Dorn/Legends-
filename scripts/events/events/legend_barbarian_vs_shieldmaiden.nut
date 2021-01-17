@@ -119,7 +119,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned"))
+			if ((bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned")))
 			{
 				Barbarian_candidates.push(bro);
 				break;
