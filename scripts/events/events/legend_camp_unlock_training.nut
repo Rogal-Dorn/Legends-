@@ -31,24 +31,24 @@ this.legend_camp_unlock_training <- this.inherit("scripts/events/event", {
 
 	function getText()
 	{
-		local text = "{As you leave %townname% the talk is of the training hall. Each mercenary claims they are more skilled than the next, "
-		text += "and will prove it in the training hall. Some claim they are more skilled than the trainer himself. "
-		text += "As you walk %randombrother% says %SPEECH_ON%Each time we come here I talk to the trainer. It dont take much to train, "
-		text += "the weight of your body and some sticks is enough. I bet we could train ourselves and save some coin.%SPEECH_OFF%}"
-		text += "\n\n"
-		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Training).getDescription();
+		local text = "{As you leave %townname% the talk is of the training hall. Each mercenary claims they are more skilled than the next, ";
+		text = text + "and will prove it in the training hall. Some claim they are more skilled than the trainer himself. ";
+		text = text + "As you walk %randombrother% says %SPEECH_ON%Each time we come here I talk to the trainer. It don\'t take much to train, ";
+		text = text + "the weight of your body and some sticks is enough. I bet we could train ourselves and save some coin.%SPEECH_OFF%}";
+		text = text + "\n\n";
+		text = text + this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Training).getDescription();
 		return text;
 	}
 
-	function setTownName(_v)
+	function setTownName( _v )
 	{
 		this.m.TownName = _v;
-		this.m.Screens[0].Text += this.getText()
+		this.m.Screens[0].Text += this.getText();
 	}
 
 	function onUpdateScore()
 	{
-		return
+		return;
 	}
 
 	function onPrepare()
@@ -64,3 +64,4 @@ this.legend_camp_unlock_training <- this.inherit("scripts/events/event", {
 	}
 
 });
+

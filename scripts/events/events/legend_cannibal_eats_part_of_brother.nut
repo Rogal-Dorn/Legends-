@@ -21,13 +21,15 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 					{
 						return 0;
 					}
+
 				}
 			],
 			function start( _event )
 			{
 				local potential = [];
 				local injuries = this.Const.Injury.Cannibal;
-				foreach (inj in injuries)
+
+				foreach( inj in injuries )
 				{
 					if (inj.ID == "injury.broken_elbow_joint" && !_event.m.Dinner.getSkills().hasSkill("injury.broken_elbow_joint") && !_event.m.Dinner.getSkills().hasSkill("trait.legend_prosthetic_forearm"))
 					{
@@ -72,9 +74,9 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 					local cannibal_injury = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 					_event.m.Dinner.getSkills().add(cannibal_injury);
 					this.List.push({
-							id = 10,
-							icon = cannibal_injury.getIcon(),
-							text = _event.m.Dinner.m.Name + " suffers " + cannibal_injury.m.Name
+						id = 10,
+						icon = cannibal_injury.getIcon(),
+						text = _event.m.Dinner.m.Name + " suffers " + cannibal_injury.m.Name
 					});
 					_event.m.Cannibal.improveMood(2.0, "Enjoyed a good meal");
 					_event.m.Dinner.worsenMood(4.0, "Got partially eaten by " + _event.m.Cannibal.m.Name);
@@ -87,6 +89,7 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 
 				this.Characters.push(_event.m.Dinner.getImagePath());
 			}
+
 		});
 	}
 
@@ -96,34 +99,34 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 		local cannibal_candidates = [];
 		local dinner_candidates = [];
 
-
 		if (this.World.Assets.getFood() > 0 || this.World.getTime().IsDaytime)
 		{
 			return;
 		}
 
-
-		foreach (bro in brothers)
+		foreach( bro in brothers )
 		{
 			if (bro.getBackground().getID() == "background.legend_cannibal")
 			{
 				cannibal_candidates.push(bro);
 			}
 		}
+
 		if (cannibal_candidates.len() < 1)
 		{
 			return;
 		}
+
 		this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
 
-
-		foreach (bro in brothers)
+		foreach( bro in brothers )
 		{
 			if (bro.getID() != this.m.Cannibal.getID())
 			{
 				local potential = [];
 				local injuries = this.Const.Injury.Cannibal;
-				foreach (inj in injuries)
+
+				foreach( inj in injuries )
 				{
 					if (inj.ID == "injury.broken_elbow_joint" && !bro.getSkills().hasSkill("injury.broken_elbow_joint") && !bro.getSkills().hasSkill("trait.legend_prosthetic_forearm"))
 					{
@@ -169,14 +172,14 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 				}
 			}
 		}
+
 		if (dinner_candidates.len() < 1)
 		{
 			return;
 		}
 
-
 		this.m.Dinner = dinner_candidates[this.Math.rand(0, dinner_candidates.len() - 1)];
-		this.m.Score = 5.5 + (dinner_candidates.len() / 2.00);
+		this.m.Score = 5.5 + dinner_candidates.len() / 2.0;
 	}
 
 	function onPrepare()
@@ -205,4 +208,6 @@ this.legend_cannibal_eats_part_of_brother <- this.inherit("scripts/events/event"
 		this.m.Cannibal = null;
 		this.m.Dinner = null;
 	}
+
 });
+
