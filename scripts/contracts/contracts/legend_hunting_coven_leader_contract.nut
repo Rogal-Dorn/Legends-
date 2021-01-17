@@ -235,7 +235,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_79.png[/img]{You enter the keep of %employer% and are ushured down corridors and into a darkened bedroom lit by candles. The whole room appears to be arranged as some kind of lover\'s nest, centred around a huge canopied bed, the largest you have ever seen. The side tables are arrayed with wine bottles, and the floor sprinkled with rose petals. You begin to imagine what must have happened in this space, but your thoughts are cut off by a gruff voice from a large man in rich robes. %SPEECH_ON%Disgusting isn\'t it? A den of debauchery and heresy, in my own house! Performed by my own blood no less. I tried to raise my kin right, gave them all the opportunity in the world. How do they repay me? With hedonous acts that tarnish our good name! Can you believe the youth of today?%SPEECH_OFF% You shift in place, thinking of the best way to reply, but he continues. %SPEECH_ON%Its a disgrace. The sex and alcohol is not the worst of it though, the boy has terrible taste in prostitutes and fell in with witches.  Now they are saying he agreed to give up the town in exchange for some debaucherous act with the leader of the coven. Well I am not giving up the town my ancestors built up from dirt. You are to accompany him out to meet the leader, and \'negotiate\' a new \'deal\'.%SPEECH_OFF%   | Unusually your employer %protectee% meets you outside of town in a grove of trees.%SPEECH_ON% Thank the gods you came, I was worried my dad %employer% would see you first.  You see I have gotten in some trouble, and I would prefer to resolve it before he does, perhaps win back some respect. %SPEECH_OFF% You ask what kind of trouble. %SPEECH_ON%One night while out carousing, I met a group of women, the most beautiful i have ever seen. They looked at me from across the crowded inn, and we drunk and danced the night away, winding up in my room at the keep. There were five of them, and we were joking around playing games, the kind where you end up with less clothes and more alcohol. It sounds foolish now, but they were so suple and inviting. They offered to let me have my way with all of them, if I would offer them the keys to the town. I was so drunk and my manhood was so enraged, that I would offer anything for a chance to sleep with five gorgeous women at once. They danced and masssaged, they did such unspeakable things to me, and to each other. It grew to a fever pitch, until at the very height of the moment as I climaxed, it all started to go wrong. The one who was atop me seemed to lose weight in an instant, her bosom shriveled and her skin fell in wrinkles, spotted and crusted. It was foul. Before I knew it, I was completely surrounded by the fetid stench of five disgusting old women. They cackled, with maddening glee. Then they held up the contract I had signed. %SPEECH_OFF%  The man looks deflated, and looks up at you pleadingly %SPEECH_ON%   I have to make this right. I am sure I can negotiate a better deal, perhaps plead with them for mercy. Will you accompany me out to see the coven? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_79.png[/img]{You enter the keep of %employer% and are ushured down corridors and into a darkened bedroom lit by candles. The whole room appears to be arranged as some kind of lover\'s nest, centred around a huge canopied bed, the largest you have ever seen. The side tables are arrayed with wine bottles and the floor sprinkled with rose petals. You begin to imagine what must have happened in this space, but your thoughts are cut off by a gruff voice from a large man in rich robes. %SPEECH_ON%Disgusting isn\'t it? A den of debauchery and heresy, in my own house! Performed by my own blood no less. I tried to raise my kin right, gave them all the opportunity in the world. How do they repay me? With hedonous acts that tarnish our good name! Can you believe the youth of today?%SPEECH_OFF% You shift in place, thinking of the best way to reply, but he continues. %SPEECH_ON%It\'s a disgrace. The sex and alcohol is not the worst of it though, the boy has terrible taste in prostitutes and fell in with witches.  Now they are saying he agreed to give up the town in exchange for some debaucherous act with the leader of the coven. Well I am not giving up the town my ancestors built up from dirt. You are to accompany him out to meet the leader, and \'negotiate\' a new \'deal\'.%SPEECH_OFF%   | Unusually your employer %protectee% meets you outside of town in a grove of trees.%SPEECH_ON% Thank the gods you came, I was worried my dad %employer% would see you first.  You see I have gotten in some trouble, and I would prefer to resolve it before he does, perhaps win back some respect. %SPEECH_OFF% You ask what kind of trouble. %SPEECH_ON%One night while out carousing, I met a group of women, the most beautiful i have ever seen. They looked at me from across the crowded inn, and we drunk and danced the night away, winding up in my room at the keep. There were five of them, and we were joking around playing games, the kind where you end up with less clothes and more alcohol. It sounds foolish now, but they were so suple and inviting. They offered to let me have my way with all of them, if I would offer them the keys to the town. I was so drunk and my manhood was so enraged, that I would offer anything for a chance to sleep with five gorgeous women at once. They danced and masssaged, they did such unspeakable things to me, and to each other. It grew to a fever pitch, until at the very height of the moment as I climaxed, it all started to go wrong. The one who was atop me seemed to lose weight in an instant, her bosom shriveled and her skin fell in wrinkles, spotted and crusted. It was foul. Before I knew it, I was completely surrounded by the fetid stench of five disgusting old women. They cackled, with maddening glee. Then they held up the contract I had signed. %SPEECH_OFF%  The man looks deflated, and looks up at you pleadingly %SPEECH_ON%   I have to make this right. I am sure I can negotiate a better deal, perhaps plead with them for mercy. Will you accompany me out to see the coven? %SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -284,7 +284,7 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "SpiderQueen",
 			Title = "Near %townname%",
-			Text = "[img]gfx/ui/events/event_106.png[/img]{A lone woman crosses your path and approaches between a gap of trees. She saunters with her thighs slipping in and out of a silk dress. Her skin is spotless and emerald eyes stare between locks of red with licentiousness you haven\'t seen since you were just a lad. You know this woman is a witch for such perfection can\'t stand in this world and in these parts it\'s like putting on makeup to go to the grave. Which is what she\'s done. You draw your sword and tell her to face her doom with honor. The witch\'s skin wrinkles to true, ghastly form, and she cackles with delight.%SPEECH_ON%Ah, for a moment I had you, but the cock slackens, and the pride returns. You\'ve such delightful scents, sellsword. I\'ll make sure they save you just for me.%SPEECH_OFF%Before you can ask what she means, the two trees she stand between blossom with the stretching of spider legs. Great black bulbs emerge from the thicket and scuttle to the terra below, the webknechts clacking their mandibles with imago hunger. The witch\'s hands go up and her fingers dance like a puppeteer in command of the clouds above.}",
+			Text = "[img]gfx/ui/events/event_106.png[/img]{A lone woman crosses your path and approaches between a gap of trees. She saunters with her thighs slipping in and out of a silk dress. Her skin is spotless and emerald eyes stare between locks of red with licentiousness you haven\'t seen since you were just a lad. You know this woman is a witch for such perfection cannot stand in this world and in these parts it is like putting on makeup to go to the grave. Which is what she has done. You draw your sword and tell her to face her doom with honor. The witch\'s skin wrinkles to true, ghastly form, and she cackles with delight.%SPEECH_ON%Ah, for a moment I had you, but the cock slackens, and the pride returns. You\'ve such delightful scents, sellsword. I\'ll make sure they save you just for me.%SPEECH_OFF%Before you can ask what she means, the two trees she stand between blossom with the stretching of spider legs. Great black bulbs emerge from the thicket and scuttle to the terra below, the webknechts clacking their mandibles with imago hunger. The witch\'s hands go up and her fingers dance like a puppeteer in command of the clouds above.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -298,34 +298,6 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 						p.Music = this.Const.Music.CivilianTracks;
 						p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Line;
 						p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Line;
-						// p.Entities.push({
-						// 	ID = this.Const.EntityType.Spider,
-						// 	Variant = 0,
-						// 	Row = 1,
-						// 	Script = "scripts/entity/tactical/enemies/spider_bodyguard",
-						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-						// 	Callback = null
-						// });
-						// p.Entities.push({
-						// 	ID = this.Const.EntityType.Spider,
-						// 	Variant = 0,
-						// 	Row = 1,
-						// 	Script = "scripts/entity/tactical/enemies/spider_bodyguard",
-						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-						// 	Callback = null
-						// });
-						// p.Entities.push({
-						// 	ID = this.Const.EntityType.Hexe,
-						// 	Variant = 0,
-						// 	Row = 2,
-						// 	Script = "scripts/entity/tactical/enemies/legend_redback_spider",
-						// 	Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
-						// 	function Callback( _e, _t )
-						// 	{
-						// 		_e.m.Name = "Spider Queen";
-						// 	}
-
-						// });
 						this.Const.World.Common.addUnitsToCombat(p.Entities, this.Const.World.Spawn.LegendHexeLeader, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 						this.World.Contracts.startScriptedCombat(p, false, true, true);
 						return 0;
@@ -648,11 +620,13 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

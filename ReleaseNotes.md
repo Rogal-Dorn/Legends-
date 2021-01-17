@@ -4794,6 +4794,9 @@ Net Repair perk also grants +10 melee defense if holding a net in your offhand ,
 **fixes**
 Fixes crash on entering town with a woolspinner location
 Fixes crash on entering grand tournament
+Updates text on all legend hunting contracts (Thanks @SireGoodman)
 
+
+https://drive.google.com/file/d/1GJrnuMTNvRL-QwrlFnoNrU9oL3DohutF/view?usp=sharing
 
 
