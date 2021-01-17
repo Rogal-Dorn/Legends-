@@ -53,7 +53,6 @@ declare -a BRUSHES=(
 "entity_blood"
 "legend_characters"
 "legend_enemies"
-"legend_runed"
 "legend_weapons"
 "legend_world"
 "legends_ui"
