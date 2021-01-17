@@ -54,26 +54,29 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			HasMainhand = false,
 			HasTraining = false
 		}
-	
+
 		stunChance = this.m.Stunchance;
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-	
-		if( mainhand != null)
-		stunChance -= 25;
-		HasMainhand = true;
+
+		if ( mainhand != null)
+		{
+			stunChance -= 25;
+			HasMainhand = true;
 		}
-		
-		if( offhand != null)
-		stunChance -= 25;
-		HasOffhand = true;
-		}		
-	
+
+		if (offhand != null)
+		{
+			stunChance -= 25;
+			HasOffhand = true;
+		}
+
 		if (_user.getCurrentProperties().IsSpecializedInFists)
-		stunChance += 50;
-		HasTraining = true;
+		{
+			stunChance += 50;
+			HasTraining = true;
 		}
-		
+
 		return ret;
 	}
 
@@ -87,7 +90,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] fatigue on an enemy"
 		});
-		
+
 		ret.push({
 			id = 7,
 			type = "text",
@@ -130,8 +133,8 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());
-	
-			
+
+
 
 		if (!_user.isAlive() || _user.isDying())
 		{
