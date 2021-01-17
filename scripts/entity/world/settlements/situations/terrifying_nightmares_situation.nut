@@ -47,5 +47,23 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 		_modifiers.RecruitsMult *= 0.75;
 	}
 
+	function onUpdateDraftList( _draftList, _gender )
+	{
+	
+		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_vampire_background");
+				}
+			}		
+		
+		}
+	
+	}
+	
 });
 

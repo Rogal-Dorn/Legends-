@@ -38,5 +38,31 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 	{
 	}
 
+	function onUpdateDraftList( _draftList, _gender )
+	{
+	
+	if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+					_list.push("legend_illusionist_background");
+				}
+			}
+			else
+			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+					_list.push("legend_illusionist_background");
+				}
+			}
+		}	
+	
+	}
+
 });
 

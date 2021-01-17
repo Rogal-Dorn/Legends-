@@ -54,6 +54,8 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 		if (_gender)
 		{
 			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
 		}
 
 	}

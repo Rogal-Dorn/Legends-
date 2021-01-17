@@ -32,35 +32,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			local r;
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
-			{
-			r = this.Math.rand(0, 250);
-				if (r == 1)
-				{
-			     _list.push("legend_death_summoner_background");
-				}
-			}
-			else
-			{
-			r = this.Math.rand(0, 500);
-				if (r == 1)
-				{
-				  _list.push("legend_death_summoner_background");
-				}
-			}
 
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
-			{
-				r = this.Math.rand(0, 9);
-				if (r == 1)
-				{
-			 	_list.push("legend_death_summoner_background");
-				}
-			}
-		}
 	}
 
 

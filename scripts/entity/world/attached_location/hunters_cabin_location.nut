@@ -54,24 +54,6 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 				}
 			}
 
-			local r;
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
-			{
-			r = this.Math.rand(0, 50);
-				if (r == 1)
-				{
-					_list.push("legend_conjurer_background");
-				}
-			}
-			else
-			{
-				r = this.Math.rand(0, 90);
-				if (r == 1)
-				{
-					_list.push("legend_conjurer_background");
-				}
-			}
-
 		}
 	}
 

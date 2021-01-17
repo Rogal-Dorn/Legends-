@@ -132,20 +132,20 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		}
 		
 		local r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_shield");
-				}
-			r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_2h");
-				}
-			r = this.Math.rand(0, 9);
-			if (r == 1)
-				{
-				_list.push("legend_noble_ranged");
-				}		
+		if (r == 1)
+			{
+			_list.push("legend_noble_shield");
+			}
+		r = this.Math.rand(0, 9);
+		if (r == 1)
+			{
+			_list.push("legend_noble_2h");
+			}
+		r = this.Math.rand(0, 9);
+		if (r == 1)
+			{
+			_list.push("legend_noble_ranged");
+			}		
 		if (_gender)
 		{
 
