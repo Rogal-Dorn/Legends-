@@ -4775,7 +4775,10 @@ Fixes gravedigger perk not applying to all two handed maces
 15.0.0.27
 
 **changes**
+Spawning of magic backgrounds changed from attached locations to thematic settlement situations.  Rarity decreased to compensate. This should make it clearer why you found the person 
+Heavy armor perk groups gauranteed to barbarians, caravan hands, disowned nobles, ironmongers and swordmasters. this should make it easier to find frontline troops
 increases minium view distance when camped 
+
 
 **fixes**
 crash on entering town with a woolspinner location 
