@@ -49,7 +49,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,
