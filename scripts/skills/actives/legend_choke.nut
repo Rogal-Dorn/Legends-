@@ -53,9 +53,9 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		
+
 		local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
-			
+
 		if (offhand != null)
 		{
 			average *= 0.5;
@@ -66,16 +66,16 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		{
 			average *= 0.5;
 			HasMainhand = true;
-		}			
-			
+		}
+
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
 			average *= 1.5;
 			ret.HasTraining = true;
 		}
-		
+
 			ret.Min = average - 10;
-			ret.Max = average + 10;		
+			ret.Max = average + 10;
 
 		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
 		{
@@ -113,7 +113,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 
 function getTooltip()
 	{
-		
+
 		local mods = this.getMods();
 		local ret = [
 			{
@@ -260,18 +260,18 @@ function getTooltip()
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		local chance = this.getHitChance(_targetEntity)
 		if (_skill != this)
 		{
 			return;
 		}
-		
+
+		local chance = this.getHitChance(_targetEntity);
+		local mods = this.getMods();
 		if (!mods.HasTraining)
 		{
 			chance += 15;
 		}
-		
-		local mods = this.getMods();
+
 		_properties.DamageRegularMin += mods.Min;
 		_properties.DamageRegularMax += mods.Max
 		_properties.IsIgnoringArmorOnAttack = true;
