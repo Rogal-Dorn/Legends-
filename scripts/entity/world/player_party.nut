@@ -38,6 +38,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
+
+		local count = 0;
 		foreach( i, bro in roster )
 		{
 			if (i >= 27)
@@ -88,11 +90,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-				this.m.Strength += (6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)))) * broScale;
+				this.m.Strength += (6 + (count / 2) + ((brolevel / 2) + (pow(brolevel,1.2)))) * broScale;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-				this.m.Strength +=  (i + (brolevel + (pow(brolevel,1.2)))) * broScale;
+				this.m.Strength += (count + (brolevel + (pow(brolevel,1.2)))) * broScale;
 			}
 
 			if (this.World.LegendsMod.Configs().LegendItemScalingEnabled())
@@ -129,6 +131,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
 				this.m.Strength += gearvalue ;
 			}
+
+			count++;
 
 		}
 

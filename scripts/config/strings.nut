@@ -2402,8 +2402,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor",
 	LegendHerbcraft = "Knowledge of the properties of various roots and herbs lets you construct medicines from base ingredients. Allows the creation of medicine, antidotes and poisons in the crafting tent [color=#0b0084]From the Apothecary perk group[/color]",
 	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent [color=#0b0084]From the Woodaxe perk group[/color]",
-	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies while transformed by effects like lycanthropy [color=#0b0084]From the Therianthropy perk group[/color]",
-	LegendControlInstincts = "Further improves this character\'s self control while transformed, no longer deliberately striking allies while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies and foes alike while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
+	LegendControlInstincts = "Gives character self control while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
 	MageLegendMagicBurningHands = "Unleash a cone of blistering heat from your palms, can hit up to 9 targets for 10-15 damage.",
 	MageLegendMagicChainLightning = "Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
