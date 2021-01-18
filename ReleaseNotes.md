@@ -4800,3 +4800,11 @@ Updates text on all legend hunting contracts (Thanks @SireGoodman)
 https://drive.google.com/file/d/1GJrnuMTNvRL-QwrlFnoNrU9oL3DohutF/view?usp=sharing
 
 
+15.0.0.28
+
+**Changes**
+Updates trader background perk tree to match the BarterClass tree perk positions.
+
+**Fixes**
+Missing noble crown image.
+Crash when trying to get southern slave background
