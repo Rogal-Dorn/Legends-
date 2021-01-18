@@ -22,8 +22,8 @@ this.legend_drums_of_war_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 15;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -91,6 +91,8 @@ function getTooltip()
 			if (a.getFaction() == _user.getFaction())
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
+				a.setFatigue(this.Math.max(0, a.getFatigue() - 5));
+				this.spawnIcon(this.m.Overlay, a.getTile());
 			}
 		}
 
