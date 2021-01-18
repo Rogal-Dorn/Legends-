@@ -218,6 +218,16 @@ this.serpent <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		this.m.Skills.add(this.new("scripts/skills/actives/serpent_hook_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/serpent_bite_skill"));
+		
+		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_alert"));
+		this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		this.m.Skills.add(this.new("scripts/skills/traits/weasel_trait"));
+		}			
+		
 		this.Tactical.getTemporaryRoster().add(this);
 	}
 

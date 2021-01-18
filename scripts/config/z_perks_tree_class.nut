@@ -27,9 +27,12 @@ gt.Const.Perks.BardClassTree <- {
 		"entertaining"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendCheerOn],
+		[
+		gt.Const.Perks.PerkDefs.LegendCheerOn,
+		gt.Const.Perks.PerkDefs.LegendSpecialistLuteSkill
+		],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistLuteDamage],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[gt.Const.Perks.PerkDefs.LegendPush],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfWar],

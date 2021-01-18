@@ -81,6 +81,10 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 					if (!a.getBackground().isCultist())
 					{
 						a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+						local resolve = a.getBaseProperties().Bravery;
+						local bonus = this.Math.floor(resolve * 0.20);
+						a.setHitpoints(this.Math.max(0, a.getHitpoints() + bonus));
+						this.spawnIcon(this.m.Overlay, a.getTile());
 					}
 				}
 				
@@ -88,10 +92,23 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 				if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
 				{					
 					a.getSkills().add(this.new("scripts/skills/effects/disintegrating_effect"));
+					this.spawnIcon("status_effect_01", a.getTile());
+					local hitInfo = clone this.Const.Tactical.HitInfo;
+					hitInfo.DamageRegular = 10;
+					hitInfo.DamageDirect = 1.0;
+					hitInfo.BodyPart = this.Const.BodyPart.Body;
+					hitInfo.BodyDamageMult = 1.0;
+					hitInfo.FatalityChanceMult = 0.0;
+					a.onDamageReceived(this.getAttacker(), this, hitInfo);					
 				}
 			}
 		}
-		this.getContainer().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+		local me = this.getContainer()
+		me.add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+		local resolve = me.getBaseProperties().Bravery;
+		local bonus = this.Math.floor(resolve * 0.20);
+		me.setHitpoints(this.Math.max(0, me.getHitpoints() + bonus));
+		this.spawnIcon(this.m.Overlay, me.getTile());		
 		return true;
 	}
 

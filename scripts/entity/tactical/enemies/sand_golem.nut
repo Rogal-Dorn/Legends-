@@ -301,6 +301,15 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/merge_golem_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/throw_golem_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/headbutt_skill"));
+		
+		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		this.m.Hitpoints = b.Hitpoints * 1.5;
+		this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		this.m.Skills.add(this.new("scripts/skills/traits/determined_trait"));
+		}			
+		
 	}
 
 	function grow( _instant = false )

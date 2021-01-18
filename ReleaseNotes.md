@@ -4799,6 +4799,20 @@ Updates text on all legend hunting contracts (Thanks @SireGoodman)
 
 https://drive.google.com/file/d/1GJrnuMTNvRL-QwrlFnoNrU9oL3DohutF/view?usp=sharing
 
+15.0.0.28
+
+**chanages** 
+Troupe scenario - each starting member begins with an aitional ability unlocked.  
+Lute perks added back to minstrel trees 
+*Lute solo buffed to 20 damage 
+*entrancing song now grants +10 to melee skill and defense while using a musical instrument 
+Drums of Life, prayer of life and Drums of war both take effect immediately, but retain their delayed effect. AP and fatigue costs increased  
+Druid scenario has a small chance of recruiting any background, but they will be infected  with therianthrop year
+Entice fatigue cost reduced  
+Legendary difficulty perks added to bandit poachers, hyunas, sand golems and serpents 
+
+
+
 
 15.0.0.28
 
