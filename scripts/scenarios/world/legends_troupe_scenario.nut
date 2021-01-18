@@ -27,7 +27,9 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx(this.Const.CharacterMagicBackgrounds);
+		bros[0].setStartValuesEx([
+			"legend_illusionist_background"
+		]);
 		bros[0].getBackground().m.RawDescription = "{%name% learned how to entertain on the streets, using slight of hand and magic tricks to dupe unwitting punters out of their coin. Illusion is easier with a distraction, so the choice to join others was easy.}";
 		bros[0].m.PerkPoints = 2;
 		bros[0].m.LevelUps = 2;
@@ -35,6 +37,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_entice"));
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -49,6 +52,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_life"));
+		
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -66,6 +71,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].m.Level = 4;
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_war"));
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -81,6 +87,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[3].m.LevelUps = 1;
 		bros[3].m.Level = 2;
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
 		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));

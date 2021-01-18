@@ -17,9 +17,12 @@ this.legend_prayer_of_life_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local resolve = actor.getBaseProperties().Bravery;
-		local bonus = this.Math.floor(resolve * 0.20);
+		local bonus = this.Math.floor(resolve * 0.10);
+		if (actor.getHitpoints() < actor.getHitpointsMax())
+		{
 		actor.setHitpoints(this.Math.max(0, actor.getHitpoints() + bonus));
 		this.spawnIcon(this.m.Overlay, actor.getTile());
+		}
 
 		this.removeSelf();
 	}
