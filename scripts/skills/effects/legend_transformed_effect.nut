@@ -81,31 +81,35 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!actor.isPlayerControlled())
 		{
-			return;
+			return false;
 		}
 
-		if (!actor.getSkills().hasSkill("perk.legend_control_instincts"))
+		if (actor.getSkills().hasSkill("perk.legend_control_instincts"))
 		{
-			return;
+			return false;
 		}
 
 		if (actor.getSkills().hasSkill("perk.legend_surpress_urges"))
 		{
+			actor.setFaction(this.Const.Faction.PlayerAnimals);
 			this.logDebug(this.getName() + " AI set to " + this.m.Agent2);
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/" + this.m.Agent2));
+			local agent = this.new("scripts/ai/tactical/agents/" + this.m.Agent2);
+			actor.setAIAgent(agent)
+			this.m.AgentID = agent.getID();
 		}
 		else
 		{
 			actor.setFaction(this.Const.Faction.Beasts);
 			actor.getSprite("socket").setBrush("bust_base_beasts");
-			actor.setDirty(true);
 			local agent = this.new("scripts/ai/tactical/agents/" + this.m.Agent1);
 			actor.setAIAgent(agent);
+			this.logDebug(this.getName() + " AI set to " + this.m.Agent1);
 			this.m.AgentID = agent.getID();
 		}
 
 		actor.getAIAgent().setActor(actor);
 		actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
+		return true;
 	}
 
 	function removeItemsOnTransform()
@@ -166,7 +170,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		//show the transformation
-		this.transformEffect();
+		//this.transformEffect();
 
 
 		local actor = this.getContainer().getActor();
@@ -175,7 +179,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		this.m.OriginalAgent = actor.getAIAgent();
 		this.m.OriginalFaction = actor.getFaction();
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
-		this.setAgents();
+		local nextTurn = this.setAgents();
 
 		//remove items
 		this.removeItemsOnTransform();
@@ -213,6 +217,12 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.setSkills();
+		actor.setDirty(true);
+		this.Tactical.State.onUpdate();
+		if (nextTurn)
+		{
+			this.Tactical.TurnSequenceBar.initNextTurn();
+		}
 	}
 
 	function onRemoved()
@@ -268,13 +278,14 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 
 		this.resetSprites();
 
-		this.transformEffect();
+		//this.transformEffect();
 		this.removeSkills();
 
 		local items = actor.getItems();
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
+		actor.setDirty(true);
 		//Todo, don't loose armor if Master?
 	}
 
@@ -302,7 +313,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("injury").setHorizontalFlipping(1);
 		}
 		actor.setBrushAlpha(10);
-		actor.setDirty(true);
 	}
 
 	function resetSprites()
@@ -337,7 +347,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		local appearance = actor.getItems().getAppearance();
 		appearance.HideBeard = false;
 		appearance.HideHair = false;
-		actor.setDirty(true);
 
 		if (actor.isPlayerControlled())
 		{

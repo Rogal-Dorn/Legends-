@@ -4818,3 +4818,6 @@ Missing noble crown image.
 Crash when trying to get southern slave background
 Fixes magic missle not selecting on perk tree
 Fixes borked up text in drunkard looses stuff event.
+Player party strength correctly calculated with pacificst in party.
+For milita start, each bro correctly only counts as 2/3rd for party strength.
+Fixes AI control of therianthropic changes.
