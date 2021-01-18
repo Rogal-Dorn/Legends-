@@ -51,8 +51,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.Lookout,
-				this.Const.Perks.PerkDefs.LegendBribe
+				this.Const.Perks.PerkDefs.Lookout
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -81,8 +80,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
-				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing
+				this.Const.Perks.PerkDefs.LegendToolsDrawers
 
 			],
 			[
@@ -90,20 +88,24 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.ReachAdvantage,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.Underdog
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.LegendBarterTrustworthy
 			],
 			[
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Rebound
+				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendDangerPay,
+				this.Const.Perks.PerkDefs.LegendPaymaster,
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Indomitable,
 				this.Const.Perks.PerkDefs.LegendSkillfulStacking,
-				this.Const.Perks.PerkDefs.LegendBarterTrustworthy
+				this.Const.Perks.PerkDefs.LegendBribe,
+				this.Const.Perks.PerkDefs.LegendBarterGreed
 			],
 			[],
 			[],

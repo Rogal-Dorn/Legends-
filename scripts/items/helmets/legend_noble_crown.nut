@@ -22,15 +22,16 @@ this.legend_noble_crown <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 50;
 		this.m.StaminaModifier = 0;
 	}
-	
+
 		function updateVariant()
 	{
+
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "noble_crown_" + variant;
-		this.m.SpriteDamaged = "noble_crown_" + variant + "_damaged";
-		this.m.SpriteCorpse = "noble_crown_" + variant + "_dead";
-		this.m.IconLarge = "legend_helmets/noble_crown_" + variant + ".png";
-		this.m.Icon = "legend_helmets/noble_crown_" + variant + ".png";
+		this.m.Sprite = "legendhelms_crown" + "_" + variant;
+		this.m.SpriteDamaged = "legendhelms_crown" + "_" + variant + "_damaged";
+		this.m.SpriteCorpse = "legendhelms_crown" + "_" + variant + "_dead";
+		this.m.Icon = "legend_helmets/inventory_crown" + "_" + variant + ".png";
+        this.m.IconLarge = this.m.Icon;
 	}
 
 });
