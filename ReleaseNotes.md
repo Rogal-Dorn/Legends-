@@ -4817,3 +4817,4 @@ Legendary difficulty perks added to bandit poachers, hyenas, sand golems and ser
 Missing noble crown image.
 Crash when trying to get southern slave background
 Fixes magic missle not selecting on perk tree
+Fixes borked up text in drunkard looses stuff event.
