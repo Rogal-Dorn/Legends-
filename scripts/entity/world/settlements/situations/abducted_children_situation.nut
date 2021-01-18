@@ -50,7 +50,7 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdateDraftList( _draftList, _gender )
 	{
-	_draftList.push("witchunter_background");
+	_draftList.push("witchhunter_background");
 	}
 
 });
