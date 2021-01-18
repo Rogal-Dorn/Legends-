@@ -744,7 +744,11 @@
 	local oacFn = o.onAppearanceChanged;
 	o.onAppearanceChanged = function( _appearance, _setDirty = true )
 	{
-		oacFn(_appearance, _setDirty);
+
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
 
 		if (this.hasSprite("helmet_vanity_lower"))
 		{
@@ -872,7 +876,7 @@
 			this.getSprite("permanent_injury_burned").Visible = !_appearance.HideHead;
 		}
 
-
+		oacFn(_appearance, _setDirty);
 	}
 
 	o.kill <- function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false)
