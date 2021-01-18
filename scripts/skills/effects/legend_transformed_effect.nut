@@ -170,8 +170,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		//show the transformation
-		//this.transformEffect();
-
+		this.transformEffect();
 
 		local actor = this.getContainer().getActor();
 
@@ -181,16 +180,12 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
 		local nextTurn = this.setAgents();
 
-		//remove items
-		this.removeItemsOnTransform();
-
 		//set new sprites
 		this.m.OriginalBody = actor.getSprite("body").getBrush().Name;
 		this.m.OriginalHead = actor.getSprite("head").getBrush().Name;
 		if (actor.getSprite("injury").HasBrush) {
 			this.m.OriginalInjury = actor.getSprite("injury").getBrush().Name;
 		}
-
 
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
@@ -209,6 +204,9 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		appearance.HideHair = true;
 		this.setSprites();
 
+		//remove items
+		this.removeItemsOnTransform();
+
 		this.m.TurnsLeft = 3;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
@@ -218,6 +216,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 
 		this.setSkills();
 		actor.setDirty(true);
+
 		this.Tactical.State.onUpdate();
 		if (nextTurn)
 		{
@@ -245,21 +244,9 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (--this.m.TurnsLeft <= 0)
 		{
-			this.removeSelf();
 			this.removeEffect();
+			this.removeSelf();
 			return;
-		}
-
-		local actor = this.getContainer().getActor();
-		if (actor.isPlayerControlled())
-		{
-			return;
-		}
-
-		if (actor.getAIAgent().getID() != this.m.AgentID)
-		{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/" + this.m.Agent1));
-			actor.getAIAgent().setActor(actor);
 		}
 	}
 
@@ -274,11 +261,9 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		}
 		actor.setFaction(this.m.OriginalFaction);
 
-
-
 		this.resetSprites();
 
-		//this.transformEffect();
+		this.transformEffect();
 		this.removeSkills();
 
 		local items = actor.getItems();
@@ -300,19 +285,18 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("injury").setBrush(this.m.Injury);
 		}
 
-		if (!actor.isPlayerControlled())
-		{
-			actor.getSprite("body").setHorizontalFlipping(0);
-			actor.getSprite("head").setHorizontalFlipping(0);
-			actor.getSprite("injury").setHorizontalFlipping(0);
-		}
-		else
+		if (actor.isPlayerControlled() || actor.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			actor.getSprite("body").setHorizontalFlipping(1);
 			actor.getSprite("head").setHorizontalFlipping(1);
 			actor.getSprite("injury").setHorizontalFlipping(1);
 		}
-		actor.setBrushAlpha(10);
+		else
+		{
+			actor.getSprite("body").setHorizontalFlipping(0);
+			actor.getSprite("head").setHorizontalFlipping(0);
+			actor.getSprite("injury").setHorizontalFlipping(0);
+		}
 	}
 
 	function resetSprites()
@@ -330,7 +314,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("injury").setBrush("");
 		}
 
-		actor.setBrushAlpha(255);
 		actor.getSprite("hair").Visible = true;
 		actor.getSprite("beard").Visible = true;
 		actor.getSprite("beard_top").Visible = false;
@@ -348,7 +331,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		appearance.HideBeard = false;
 		appearance.HideHair = false;
 
-		if (actor.isPlayerControlled())
+		if (actor.isPlayerControlled() || actor.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			actor.getSprite("body").setHorizontalFlipping(0);
 			actor.getSprite("head").setHorizontalFlipping(0);
