@@ -4813,7 +4813,7 @@ Druid scenario has a small chance of recruiting any background, but they will be
 Entice fatigue cost reduced
 Legendary difficulty perks added to bandit poachers, hyenas, sand golems and serpents
 
-
 **Fixes**
 Missing noble crown image.
 Crash when trying to get southern slave background
+Fixes magic missle not selecting on perk tree
