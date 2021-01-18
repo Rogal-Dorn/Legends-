@@ -23,7 +23,8 @@ this.perk_legend_specialist_lute_skill <- this.inherit("scripts/skills/skill", {
 		}
 		if (this.Const.Items.MusicalItems.find(item.getID()) != null)
 		{
-			_properties.MeleeSkill += 15;
+			_properties.MeleeSkill += 10;
+			_properties.MeleeDefense += 10;
 			_properties.DamageArmorMult += 0.5;
 		}
 	}
