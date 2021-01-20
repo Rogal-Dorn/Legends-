@@ -5,7 +5,7 @@ this.bread_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.bread";
 		this.m.Name = "Bread";
-		this.m.Description = "Provisions. Light bread made from wheat makes for a filling meal.";
+		this.m.Description = "Provisions. Light bread made from wheat makes for a filling meal. Can be eaten in battle to provide up to 2 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
 		this.m.Icon = "supplies/inventory_provisions_05.png";
 		this.m.Value = 65;
 		this.m.Amount = 20.0;

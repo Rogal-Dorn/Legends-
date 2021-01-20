@@ -67,7 +67,7 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local rate = this.Math.floor(this.m.Amount / 20);
+		local rate = this.Math.floor(this.m.Amount / 10);
 		_properties.MoraleCheckBravery[1] += 10;
 		_properties.FatigueRecoveryRate += rate;
 	}
@@ -80,7 +80,7 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		local rate = this.Math.floor(this.m.Amount / 20);
+		local rate = this.Math.floor(this.m.Amount / 10);
 		local actor = this.getContainer().getActor();
 		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + rate));
 		if (--this.m.TurnsLeft <= 0)
