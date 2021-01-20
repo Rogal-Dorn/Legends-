@@ -4822,3 +4822,10 @@ Player party strength correctly calculated with pacificst in party.
 For milita start, each bro correctly only counts as 2/3rd for party strength.
 Fixes AI control of therianthropic changes.
 Fixes inivisble therianthropic change on first turn.
+
+
+15.0.0.28
+
+**fixes**
+dates, rice and dried lamb correctly provide benefits when eaten in battle 
+tooltips updated for all consumable food and drink to explain the effect if consumed. 
