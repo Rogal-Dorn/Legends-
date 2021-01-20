@@ -4829,3 +4829,4 @@ Fixes inivisble therianthropic change on first turn.
 **fixes**
 dates, rice and dried lamb correctly provide benefits when eaten in battle 
 tooltips updated for all consumable food and drink to explain the effect if consumed. 
+Companion backgrounds have appropriate perk trees for vanilla starts 

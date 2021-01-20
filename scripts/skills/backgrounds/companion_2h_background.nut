@@ -53,6 +53,29 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.GreatSwordTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.LargeTree
+			],
+			Enemy = [],
+			Class = [],
+			Magic = []
+		}		
 	}
 
 	function getTooltip()
