@@ -168,7 +168,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 	{
 		this.character_background.onAdded();
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 50) == 1)
 			{

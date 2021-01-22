@@ -9,7 +9,7 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 	function onInit()
 	{
 		this.bandit_raider.onInit();
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 10) == 1)
 			{
