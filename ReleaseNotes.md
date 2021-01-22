@@ -4816,5 +4816,6 @@ Dates, rice and dried lamb correctly provide benefits when eaten in battle
 Tooltips updated for all consumable food and drink to explain the effect if consumed.
 Companion backgrounds have appropriate perk trees for vanilla starts
 
-**PLEASE DO NOT INSTALL FASTER MOD ANYMORE
-**PLEASE DO NOT USE THE REMOVE FASTER MOD ANYMORE
+\*\*UNINSTALL THE REMOVE FASTER MOD patch
+
+Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view?usp=sharing
