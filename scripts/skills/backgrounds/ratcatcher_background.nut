@@ -172,7 +172,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			actor.setTitle(this.Const.Strings.RatcatcherTitles[this.Math.rand(0, this.Const.Strings.RatcatcherTitles.len() - 1)]);
 		}
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 50) == 1)
 			{

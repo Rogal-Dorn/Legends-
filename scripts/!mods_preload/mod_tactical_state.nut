@@ -10,16 +10,6 @@
 		}
 	}
 
-	local fnInit = o.init
-	o.init = function()
-	{
-		if (!("LegendsMod" in this.World))
-		{
-			this.World.LegendsMod <- this.new("scripts/mods/legends_mod");
-		}
-		fnInit();
-	}
-
 	o.onBattleEnded = function()
 	{
 		if (this.m.IsExitingToMenu)

@@ -380,7 +380,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		}
 
 		this.getContainer().getActor().TherianthropeInfectionRandom();
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
 		}
