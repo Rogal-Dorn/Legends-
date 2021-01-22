@@ -4806,7 +4806,9 @@ Old method of increasing speed of battles using faster mod has been replaced (ho
 *Battle speed can now be dynamically changed at any point during the battle
 *Access from the Options -> Gameplay -> AI Battle Speed slider
 
-_Fixes_
+**Fixes**
+Fixes spiders not using webs
+Fixes T3 Nachos not swallowing bros
 Fixes crashes entering grand tournament
 Fixes mummy battle crash from bad helmet item
 Fixes crash from eating porridge
