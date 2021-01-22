@@ -57,7 +57,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.DirectDamageMult = 0.75;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 17;
-		this.m.MinRange = 3;
+		this.m.MinRange = 4;
 		this.m.MaxRange = 9;
 		this.m.MaxLevelDifference = 8;
 		this.m.ProjectileType = this.Const.ProjectileType.Stone;
