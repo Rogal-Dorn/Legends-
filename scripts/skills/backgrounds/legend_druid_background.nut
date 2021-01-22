@@ -87,7 +87,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			0.05, //stepps
 			0.0, //ocean
 			0.0, //desert
-			0.0 //oasis			
+			0.0 //oasis
 		];
 	this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -124,7 +124,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

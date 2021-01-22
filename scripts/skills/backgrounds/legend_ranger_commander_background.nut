@@ -103,7 +103,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendNightvision,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendSpecialistShortbowDamage,
@@ -127,7 +127,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SpecAxe,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecDagger,
-                this.Const.Perks.PerkDefs.SpecThrowing,				
+                this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasterySlings,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing
@@ -189,7 +189,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

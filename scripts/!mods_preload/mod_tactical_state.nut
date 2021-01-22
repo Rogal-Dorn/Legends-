@@ -1,7 +1,16 @@
 ::mods_hookNewObject("states/tactical_state", function(o) {
 
-	local fnInit = o.init
+	local updateCurrentEntity = o.updateCurrentEntity;
+	o.updateCurrentEntity = function()
+	{
+		updateCurrentEntity();
+		if (this.Time.getVirtualSpeed != this.LegendsMod.Configs().AISpeed())
+		{
+			this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
+		}
+	}
 
+	local fnInit = o.init
 	o.init = function()
 	{
 		if (!("LegendsMod" in this.World))

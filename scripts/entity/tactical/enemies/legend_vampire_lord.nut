@@ -74,7 +74,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			loot.drop(_tile);
 		}
 
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled()) {
+		if (this.LegendsMod.Configs().LegendMagicEnabled()) {
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
 				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);

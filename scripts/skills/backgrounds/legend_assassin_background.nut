@@ -45,7 +45,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.loyal",
 			"trait.dumb",
 			"trait.pragmatic",
-			"trait.predictable"			
+			"trait.predictable"
 		];
 		this.m.Titles = [
 			"the Assassin",
@@ -161,7 +161,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -297,7 +297,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 			[1, "hood"]
 		]));
 	}
-	
+
 	function onSerialize( _out )
 	{
 		this.character_background.onSerialize(_out);

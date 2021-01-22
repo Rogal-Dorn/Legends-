@@ -75,7 +75,7 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 	function onAdded()
 	{
 		this.m.TurnsLeft = 5;
-		actor.improveMood(0.2, "Ate pudding");
+		this.getContainer().getActor().improveMood(0.2, "Ate pudding");
 	}
 
 	function onTurnEnd()

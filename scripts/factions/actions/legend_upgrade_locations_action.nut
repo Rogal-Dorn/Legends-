@@ -12,7 +12,7 @@ this.legend_upgrade_locations_action <- this.inherit("scripts/factions/faction_a
 
 	function onUpdate( _faction )
 	{
-		if(!this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(!this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			return;
 		}

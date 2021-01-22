@@ -27,7 +27,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 		local bros = roster.getAll();
 
-		// Noble Commander Create 
+		// Noble Commander Create
 
 		bros[0].setStartValuesEx([
 			"legend_noble_commander_background"
@@ -137,7 +137,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]));
 		items.equip(this.new("scripts/items/supplies/legend_pudding_item"));
 		items.addToBag(this.new("scripts/items/supplies/wine_item"));
-		
+
 		// End Noble Servant Create
 		// Arbalester Create
 
@@ -227,12 +227,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local banner = f.getBanner();
 
 		local brothers = this.World.getPlayerRoster().getAll();
-		
+
 		//1, 3 are shield brothers
 		brothers[1].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 		brothers[3].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			foreach( bro in brothers )
 			{

@@ -49,7 +49,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			65 -7
@@ -93,7 +93,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			65 -7
@@ -135,7 +135,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			95 -10

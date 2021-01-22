@@ -65,7 +65,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 
-		if (!this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (!this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 				this.m.CustomPerkTree = [
 				[
@@ -254,7 +254,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -336,7 +336,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+		//if (this.LegendsMod.Configs().LegendMagicEnabled())
 		//{
 		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
 		//}

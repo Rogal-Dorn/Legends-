@@ -6,10 +6,10 @@ this.legend_hexe_leader_cloak_blueprint <- this.inherit("scripts/crafting/bluepr
 		this.m.ID = "blueprint.legend_hexe_leader_cloak";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/legend_hexe_leader_cloak_upgrade");
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor/legend_armor_hexe_leader_cloak_upgrade");
-		}		
+		}
 		this.m.Cost = 2500;
 		local ingredients = [
 			{
@@ -39,7 +39,7 @@ this.legend_hexe_leader_cloak_blueprint <- this.inherit("scripts/crafting/bluepr
 	function onCraft( _stash )
 	{
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor/legend_armor_hexe_leader_cloak_upgrade"));
 		}

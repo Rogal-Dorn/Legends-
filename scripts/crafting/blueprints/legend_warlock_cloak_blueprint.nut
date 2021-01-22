@@ -6,7 +6,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.m.ID = "blueprint.legend_warlock_cloak";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}
@@ -58,7 +58,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 	function onCraft( _stash )
 	{
 		local item
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			item = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}

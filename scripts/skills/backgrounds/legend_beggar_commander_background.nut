@@ -152,7 +152,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -191,7 +191,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Can evolve by defeating strong enemies."
-			}			
+			}
 		];
 	}
 
@@ -245,7 +245,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		local dirt = actor.getSprite("dirt");
 		dirt.Visible = true;
 	}
-	
+
 	function onTargetKilled( _targetEntity, _skill )
 	{
 		local actor = this.getContainer().getActor();
@@ -254,7 +254,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		{
 			return;
 		}
-		
+
 		actor.getBaseProperties().Hitpoints += (actor.getBaseProperties().Hitpoints < _targetEntity.getBaseProperties().Hitpoints ? 1 : 0);
 		actor.getBaseProperties().Bravery += (actor.getBaseProperties().Bravery < _targetEntity.getBaseProperties().Bravery ? 1 : 0);
 		actor.getBaseProperties().Stamina += (actor.getBaseProperties().Stamina < _targetEntity.getBaseProperties().Stamina ? 1 : 0);
@@ -263,13 +263,13 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		actor.getBaseProperties().MeleeDefense += (actor.getBaseProperties().MeleeDefense < _targetEntity.getBaseProperties().MeleeDefense ? 1 : 0);
 		actor.getBaseProperties().RangedDefense += (actor.getBaseProperties().RangedDefense < _targetEntity.getBaseProperties().RangedDefense ? 1 : 0);
 		actor.getBaseProperties().Initiative += (actor.getBaseProperties().Initiative < _targetEntity.getBaseProperties().Initiative ? 1 : 0);
-		
+
 		local target_skills = _targetEntity.getSkills().query(this.Const.SkillType.Perk);
 		local allperks = [];
 		for( local i = 0; i != target_skills.len(); i = ++i )
 		{
 			local perk = target_skills[i];
-		
+
 			if (!actor.getSkills().hasSkill(perk.getID()))
 			{
 				allperks.push(perk);
@@ -278,7 +278,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		if (allperks.len() == 0)
 		{
 			return;
-		}		
+		}
 		local perk = allperks[this.Math.rand(0, allperks.len() - 1)];
 		local name = "";
 		foreach( i, v in this.getroottable().Const.Perks.PerkDefObjects )
@@ -295,5 +295,5 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			return;
 		}
 		actor.getSkills().add(this.new(name));
-	}	
+	}
 });

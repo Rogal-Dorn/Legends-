@@ -60,7 +60,7 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			return;
 		}

@@ -92,7 +92,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			r = 0;
 
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

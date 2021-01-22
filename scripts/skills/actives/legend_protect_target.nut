@@ -9,8 +9,8 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_protect_target";
 		this.m.Name = "Defend! Good boy!";
 		this.m.Description = "Order your pets to protect a target.";
-		this.m.Icon = "skills/active_175.png";
-		this.m.IconDisabled = "skills/active_175_sw.png";
+		this.m.Icon = "skills/houndeffend.png";
+		this.m.IconDisabled = "skills/houndeffend_bw.png";
 		this.m.Overlay = "active_175";
 		this.m.SoundOnUse = [
 			"sounds/enemies/wardog_idle_01.wav",

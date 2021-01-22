@@ -121,7 +121,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

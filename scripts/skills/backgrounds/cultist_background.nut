@@ -91,7 +91,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -259,7 +259,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[1, "leather_wraps"],
 			[1, "monk_robe"],
 			[1, "cultist_leather_robe"]
-		]));	
+		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "cultist_hood"],
 			[1, "hood"],

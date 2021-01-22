@@ -9,8 +9,8 @@ this.legend_attack_target <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_attack_target";
 		this.m.Name = "Chopper sick balls!";
 		this.m.Description = "Orders your pet to prioritize attacking a specific target.";
-		this.m.Icon = "ui/perks/perk_38_active.png";
-		this.m.IconDisabled = "ui/perks/perk_38_active_sw.png";
+		this.m.Icon = "skills/houndattack.png";
+		this.m.IconDisabled = "skills/houndattack_bw.png";
 		this.m.Overlay = "perk_38_active";
 		this.m.SoundOnUse = [
 			"sounds/enemies/wardog_charge_00.wav",

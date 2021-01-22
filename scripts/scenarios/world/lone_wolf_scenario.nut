@@ -53,7 +53,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			/*
 			260 -32

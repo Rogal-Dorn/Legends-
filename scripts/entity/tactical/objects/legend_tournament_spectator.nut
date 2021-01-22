@@ -152,7 +152,7 @@ this.legend_tournament_spectator <- this.inherit("scripts/entity/tactical/entity
 			"faction_helmet_11"
 		];
 
-		if (this.World.LegendsMod.Configs().LegendGenderEnabled() && this.Math.rand(1, 100) >= 50)
+		if (this.LegendsMod.Configs().LegendGenderEnabled() && this.Math.rand(1, 100) >= 50)
 		{
 			beards = null;
 		}
