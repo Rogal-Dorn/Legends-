@@ -25,23 +25,11 @@
 	o.queryBestMeleeTarget = function( _entity, _skill, _targets )
 	{
 		local bestTarget;
-		local hasPriority = false;
 		local bestScore = -9000;
 		local ret = {
 			Score = 0.0,
 			Target = null
 		};
-
-		if (this.getAgent().getForcedOpponent() != null)
-		{
-			foreach (target in _targets)
-			{
-				if (this.getAgent().getForcedOpponent().getID() == target.getID())
-				{
-					hasPriority = true;
-				}
-			}
-		}
 
 		foreach( target in _targets )
 		{
@@ -52,7 +40,7 @@
 
 			local score = this.queryTargetValue(_entity, target, _skill);
 
-			if (!hasPriority)
+			if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == target.getID())
 			{
 				score = score * 1000;
 			}
