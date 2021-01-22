@@ -92,10 +92,6 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 		this.setSpriteOffset("injury", offset);
 		//local hoffset = this.createVec(8, 6);
 		this.setSpriteOffset("helmet", offset);
-		// this.setSpriteOffset("helmet_vanity_lower", hoffset);
-		// this.setSpriteOffset("helmet_helm", hoffset);
-		// this.setSpriteOffset("helmet_top", hoffset);
-		// this.setSpriteOffset("helmet_vanity", hoffset);
 		this.setSpriteOffset("helmet_damage", offset);
 
 		this.setSpriteOffset("body_blood", offset);

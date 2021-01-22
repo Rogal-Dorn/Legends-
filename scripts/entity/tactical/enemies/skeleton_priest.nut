@@ -88,12 +88,14 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 	{
 		this.skeleton.onFactionChanged();
 		local flip = this.isAlliedWithPlayer();
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
 	}
 
 });

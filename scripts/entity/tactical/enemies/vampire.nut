@@ -106,12 +106,14 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("dirt").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(!flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(!flip);
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(!flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(!flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(!flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(!flip);
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
 	}
 
 	function onDamageReceived( _attacker, _skill, _hitInfo )
@@ -227,22 +229,16 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		this.setSpriteOffset("hair", this.createVec(0, -3));
-		this.addSprite("helmet");
-		this.addSprite("helmet_damage");
-		this.addSprite("helmet_helm");
-		this.addSprite("helmet_top");
-		this.addSprite("helmet_vanity");
-		this.addSprite("helmet_vanity_lower");
-		this.addSprite("accessory");
-		this.addSprite("accessory_special");
 		local v = -3;
 		local v2 = 0;
-		this.setSpriteOffset("helmet", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_top", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_damage", this.createVec(v2, v)); //please work :)
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			this.addSprite(a)
+			this.setSpriteOffset(a, this.createVec(v2, v));
+		}
+		this.addSprite("accessory");
+		this.addSprite("accessory_special");
+
 		local beard_top = this.addSprite("beard_top");
 
 		if (beard.HasBrush && this.doesBrushExist(beard.getBrush().Name + "_top"))
