@@ -5,7 +5,7 @@ this.dried_fish_item <- this.inherit("scripts/items/supplies/legend_usable_food"
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.dried_fish";
 		this.m.Name = "Dried Fish";
-		this.m.Description = "Provisions. Fish is a common and filling food in coastal regions. It is dried to preserve it.";
+		this.m.Description = "Provisions. Fish is a common and filling food in coastal regions. It is dried to preserve it. Can be eaten in battle to provide up to 2 healing and fatigue recovery over ten turns, based on the amount remaining. Will be used as provisions if left in the company stash.";
 		this.m.Icon = "supplies/inventory_provisions_06.png";
 		this.m.Value = 70;
 		this.m.Amount = 20.0;

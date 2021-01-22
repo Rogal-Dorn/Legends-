@@ -54,6 +54,29 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.BowTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [],
+			Class = [],
+			Magic = []
+		}		
 	}
 
 	function getTooltip()

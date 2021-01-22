@@ -5,7 +5,7 @@ this.smoked_ham_item <- this.inherit("scripts/items/supplies/legend_usable_food"
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.smoked_ham";
 		this.m.Name = "Smoked Ham";
-		this.m.Description = "Provisions. There are many ways to preserve food. This piece of ham has been treated in a smoking hut.";
+		this.m.Description = "Provisions. There are many ways to preserve food. This piece of ham has been treated in a smoking hut. Can be eaten in battle to provide up to 3 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
 		this.m.Icon = "supplies/inventory_provisions_11.png";
 		this.m.Value = 90;
 		this.m.Amount = 30.0;

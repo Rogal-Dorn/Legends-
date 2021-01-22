@@ -5,7 +5,7 @@ this.dried_fruits_item <- this.inherit("scripts/items/supplies/legend_usable_foo
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.dried_fruits";
 		this.m.Name = "Dried Fruits";
-		this.m.Description = "Provisions. Fruits from orchards are both tasty and nutritious. They are dried to preserve them longer.";
+		this.m.Description = "Provisions. Fruits from orchards are both tasty and nutritious. They are dried to preserve them longer. Can be eaten in battle to provide up to 3 healing and fatigue recovery over ten turns, based on the amount remaining. Will be used as provisions if left in the company stash.";
 		this.m.Icon = "supplies/inventory_provisions_08.png";
 		this.m.Value = 110;
 		this.m.Amount = 30.0;

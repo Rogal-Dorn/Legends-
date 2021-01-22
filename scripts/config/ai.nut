@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.AI <- {
-	VerboseMode = false,
+	VerboseMode = true,
 	BenchmarkMode = false,
 	PathfindingDebugMode = false,
 	SecretSpectatorMode = false,
