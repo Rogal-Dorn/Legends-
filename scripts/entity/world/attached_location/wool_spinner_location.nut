@@ -32,7 +32,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("female_tailor_background");
 
 		}
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r = this.Math.rand(0, 90);
 			if (r == 1)
@@ -87,7 +87,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "trade/cloth_rolls_item"
 			});
 
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				_list.push({
 					R = 10,

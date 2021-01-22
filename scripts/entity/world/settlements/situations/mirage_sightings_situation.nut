@@ -26,7 +26,7 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.015);
 		}
@@ -40,8 +40,8 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onUpdateDraftList( _draftList, _gender )
 	{
-	
-	if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+
+	if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -60,8 +60,8 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 					_list.push("legend_illusionist_background");
 				}
 			}
-		}	
-	
+		}
+
 	}
 
 });

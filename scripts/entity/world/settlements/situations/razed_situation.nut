@@ -27,7 +27,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.20);
 		}
@@ -64,7 +64,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_berserker")

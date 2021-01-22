@@ -166,11 +166,11 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -210,7 +210,7 @@ this.blueprint <- {
 			return false
 		}
 
-		if (this.World.LegendsMod.Configs().LegendAllBlueprintsEnabled())
+		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
 		{
 			return true;
 		}
@@ -296,11 +296,11 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -340,11 +340,11 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
@@ -382,11 +382,11 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
-				if (!c.LegendsArmor && this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}

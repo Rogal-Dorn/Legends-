@@ -67,8 +67,8 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 		_draftList.push("cultist_background");
 		_draftList.push("flagellant_background");
 		_draftList.push("butcher_background");
-		
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -94,8 +94,8 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 			 	_list.push("legend_ancient_summoner_background");
 
 			}
-		}		
-		
+		}
+
 	}
 
 });

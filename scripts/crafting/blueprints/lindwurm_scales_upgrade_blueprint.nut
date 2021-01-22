@@ -22,7 +22,7 @@ this.lindwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting/bluepri
 
 	function onCraft( _stash )
 	{
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_lindwurm_scales_upgrade"));
 		}

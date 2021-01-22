@@ -160,7 +160,7 @@ this.receive_ship_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			local success = this.onLegendExecute( _faction)
 			if (success != false)

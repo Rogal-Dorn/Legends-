@@ -59,7 +59,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 			this.m.Target = candidates[this.Math.rand(0, candidates.len() - 1)].getRealName();
 		}
 
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -141,9 +141,9 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 			{
 				_draftList.push("female_daytaler_background");
 			}
-			
 
-			if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+
+			if(this.LegendsMod.Configs().LegendMagicEnabled())
 			{
 				local r;
 				if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -162,8 +162,8 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 					_list.push("legend_transmuter_background");
 					}
 				}
-			}			
-			
+			}
+
 		}
 
 		_draftList.push("legend_blacksmith_background");

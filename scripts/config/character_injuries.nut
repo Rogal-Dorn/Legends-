@@ -348,7 +348,7 @@ gt.Const.Injury.Permanent <- [
 	},
 	{
 		ID = "injury.legend_burned_injury",
-		Script = "injury_permanent/legend_scarred_injury"
+		Script = "injury_permanent/legend_burned_injury"
 	}
 ];
 gt.Const.Injury.Flagellation <- [

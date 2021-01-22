@@ -27,7 +27,7 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}
@@ -52,7 +52,7 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 		_draftList.push("legend_nun_background");
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")

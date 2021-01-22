@@ -132,7 +132,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.Sprint,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecMace,
@@ -201,7 +201,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -380,10 +380,10 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		}
 
 		this.getContainer().getActor().TherianthropeInfectionRandom();
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
-		}		
+		}
 	}
 
 	function onSerialize( _out )

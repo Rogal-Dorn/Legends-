@@ -81,7 +81,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		DebugMap = false,
 		Campaign = "",
 		CommanderDied = null,
-		LegendsMod = null,
 		Camp = null,
 		IDToRef = array(27, -1),
 		DistantVisionBonus = false,
@@ -499,8 +498,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.setOnBeforeLoadCallback(this.onBeforeDeserialize.bindenv(this));
 		this.World.setOnSaveCallback(this.onSerialize.bindenv(this));
 		this.World.setOnBeforeSaveCallback(this.onBeforeSerialize.bindenv(this));
-		this.m.LegendsMod = this.new("scripts/mods/legends_mod");
-		this.World.LegendsMod <- this.WeakTableRef(this.m.LegendsMod);
 		this.m.Entities = this.new("scripts/entity/world/entity_manager");
 		this.World.EntityManager <- this.WeakTableRef(this.m.Entities);
 		this.m.Factions = this.new("scripts/factions/faction_manager");
@@ -674,8 +671,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.EntityManager = null;
 		this.World.State = null;
 		this.Root.setBackgroundTaskCallback(null);
-		this.m.LegendsMod = null;
-		this.World.LegendsMod = null;
 		this.m.Camp.destroy();
 		this.m.Camp = null;
 		this.World.Camp = null;
@@ -1147,7 +1142,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}.bindenv(this), null);
 
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
-		this.World.LegendsMod.Configs().Update(this.m.CampaignSettings);
+		this.LegendsMod.Configs().Update(this.m.CampaignSettings);
 		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
@@ -3983,7 +3978,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			_out.writeI16(r.Center.Coords.Y);
 			_out.writeF32(r.Discovered);
 		}
-		this.World.LegendsMod.onSerialize(_out)
+		this.LegendsMod.onSerialize(_out)
 		this.World.Flags.onSerialize(_out);
 		this.World.FactionManager.onSerialize(_out);
 		this.World.EntityManager.onSerialize(_out);
@@ -4034,8 +4029,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Regions.push(region);
 			}
 		}
-		this.World.LegendsMod.onDeserialize(_in)
-		if (this.World.LegendsMod.Configs().LegendHelmetEnabled())
+		this.LegendsMod.onDeserialize(_in)
+		if (this.LegendsMod.Configs().LegendHelmetEnabled())
 		{
 			_in.readBool();
 		}

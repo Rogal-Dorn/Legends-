@@ -297,7 +297,7 @@
 
 		if (s != null)
 		{
-			if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+			if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 			{
 				ret = _settlement.resolveSituationByInstance(_situationInstance);
 			}

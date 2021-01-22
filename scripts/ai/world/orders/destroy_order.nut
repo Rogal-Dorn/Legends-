@@ -99,7 +99,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
-					if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+					if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 					{
 						//Level
 						if (e.getSize() == 1 && !e.isSouthern())

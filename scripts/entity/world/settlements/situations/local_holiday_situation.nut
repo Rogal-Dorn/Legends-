@@ -28,7 +28,7 @@ this.local_holiday_situation <- this.inherit("scripts/entity/world/settlements/s
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}

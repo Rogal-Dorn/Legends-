@@ -90,7 +90,7 @@ this.send_orc_roamers_action <- this.inherit("scripts/factions/faction_action", 
 	//			rand *=  nearestOrcs / 28.0;
 	//		}
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 				 rand *= distanceToNextSettlement / 14.0;
 			}

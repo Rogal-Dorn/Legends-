@@ -47,7 +47,7 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 	function getLighting()
 	{
 		local prefix = ""
-		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			prefix ="legend_";
 		}
@@ -58,7 +58,7 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 	function getSpriteName()
 	{
 		local prefix = ""
-		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			prefix ="legend_";
 		}
@@ -141,7 +141,7 @@ this.legends_fort <- this.inherit("scripts/entity/world/settlement", {
 	function getDraftList()
 	{
 		local L = clone this.m.DraftLists[this.m.Size - 1];
-		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+		if (this.LegendsMod.Configs().LegendGenderEnabled())
 		{
 			L.extend(this.m.FemaleDraftLists[this.m.Size - 1]);
 		}

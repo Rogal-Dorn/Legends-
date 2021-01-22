@@ -1210,9 +1210,9 @@ this.asset_manager <- {
 			}
 		}
 
-		if (this.World.LegendsMod.Configs().m.IsHelmets == 1)
+		if (this.LegendsMod.Configs().m.IsHelmets == 1)
 		{
-			this.World.LegendsMod.Configs().m.IsHelmets += (this.Const.DLC.Wildmen && this.Const.DLC.Desert) ? 1 : 0
+			this.LegendsMod.Configs().m.IsHelmets += (this.Const.DLC.Wildmen && this.Const.DLC.Desert) ? 1 : 0
 		}
 
 		// Adds Taro's Turn it in Mod

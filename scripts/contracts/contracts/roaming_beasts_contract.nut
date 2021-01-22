@@ -61,7 +61,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					this.Flags.set("IsHumans", true);
 				}
-				else if (r == 100 && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+				else if (r == 100 && this.LegendsMod.Configs().LegendTherianthropyEnabled())
 				{
 					this.Flags.set("IsVermes", true);
 				}

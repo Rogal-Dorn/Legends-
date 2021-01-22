@@ -274,7 +274,7 @@
     o.resetPerks <- function ()
     {
         local perks =  0;
-		local skills = _actor.getSkills();
+		local skills = this.getSkills();
 
 		foreach( skill in skills.m.Skills)
 		{
@@ -389,7 +389,7 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 1;
 				freePerkPointsSpentFromOrigin = 1;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
@@ -445,7 +445,7 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 2;
 				freePerkPointsSpentFromOrigin = 2;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 					perks = perks - 1;
@@ -492,7 +492,7 @@
 		}
 
 		// Witch gets
-		if (this.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;

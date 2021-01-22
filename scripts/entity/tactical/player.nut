@@ -1970,7 +1970,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-		if (this.World.LegendsMod.Configs().LegendGenderLevel() == 2)
+		if (this.LegendsMod.Configs().LegendGenderLevel() == 2)
 		{
 			background.setGender(_gender);
 		}
@@ -2725,7 +2725,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function TherianthropeInfection(_killer)
 	{
-		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			return;
 		}
@@ -2783,7 +2783,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function TherianthropeInfectionRandom()
 	{
 
-		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			return;
 		}

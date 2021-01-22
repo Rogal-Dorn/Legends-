@@ -18,7 +18,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 	function onAdded( _settlement )
 	{
 		_settlement.removeSituationByID("situation.ambushed_trade_routes");
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
 		}
@@ -66,8 +66,8 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_draftList.push("female_minstrel_background");
 		_draftList.push("female_minstrel_background");
 		}
-		
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -80,7 +80,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
 			{
-			
+
 			_list.push("legend_entrancer_background");
 
 			}
@@ -92,7 +92,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 				_list.push("legend_entrancer_background");
 				}
 			}
-		}		
+		}
 	}
 
 });

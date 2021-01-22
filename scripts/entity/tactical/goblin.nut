@@ -165,7 +165,7 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		// if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		// {
 		// 	flip = !flip
 		// }

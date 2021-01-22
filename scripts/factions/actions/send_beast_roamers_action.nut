@@ -457,7 +457,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					distanceToNextSettlement *= 2;
 				}
@@ -511,7 +511,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					distanceToNextSettlement *= 2;
 				}
@@ -565,7 +565,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					 distanceToNextSettlement *= 2;
 				}
@@ -621,7 +621,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -729,7 +729,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -795,7 +795,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -848,7 +848,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -902,7 +902,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -956,7 +956,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -1011,7 +1011,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -1064,7 +1064,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}

@@ -6,10 +6,10 @@ this.legend_lindwurm_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.m.ID = "blueprint.legend_lindwurm_armor";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor/named/lindwurm_armor");
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor");
-		}		
+		}
 		this.m.Cost = 3500;
 		local ingredients = [
 			{
@@ -54,14 +54,14 @@ this.legend_lindwurm_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/legendary/legend_lindwurm_armor"));
 		}
 		else
 		{
 			_stash.add(this.new("scripts/items/armor/named/lindwurm_armor"));
-		}		
+		}
 	}
 
 });

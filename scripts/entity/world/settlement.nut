@@ -87,7 +87,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getDraftList()
 	{
 		local L = clone this.m.DraftList;
-		if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+		if (this.LegendsMod.Configs().LegendGenderEnabled())
 		{
 			L.extend(this.m.FemaleDraftList)
 		}
@@ -439,7 +439,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 
-		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.World.LegendsMod.Configs().LegendWorldEconomyEnabled()))
+		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.LegendsMod.Configs().LegendWorldEconomyEnabled()))
 		{
 			ret.push({
 				id = 6,
@@ -488,7 +488,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getSpriteName()
 	{
 		local s = this.m.Sprite;
-		if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -1667,7 +1667,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local draftList;
 		draftList = this.getDraftList();
 
-		local gender = this.World.LegendsMod.Configs().LegendGenderEnabled();
+		local gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		foreach( loc in this.m.AttachedLocations )
 		{
 			loc.onUpdateDraftList(draftList, gender);
@@ -1881,7 +1881,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (building != null)
 			{
-				// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				// if (this.LegendsMod.Configs().LegendArmorsEnabled())
 				// {
 				// 	building.onUpdateShopList();
 				// }
@@ -2216,7 +2216,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (loc.isActive())
 			{
-				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					loc.onUpdateShopList(_id, _list);
 				}
@@ -2374,7 +2374,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
-		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return;
 		}

@@ -32,7 +32,7 @@ this.legend_stollwurm_helmet_layered_blueprint <- this.inherit("scripts/crafting
 
 	function isQualified()
 	{
-		return this.World.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
+		return this.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

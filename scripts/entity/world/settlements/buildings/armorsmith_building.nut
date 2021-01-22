@@ -360,7 +360,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			S = "helmets/legend_enclave_vanilla_kettle_sallet_01"
 		});
 
-		if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			list.push({
 				R = 80,
@@ -385,7 +385,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 
 		}
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			foreach( i in this.Const.Items.LegendNamedArmorLayers )
 			{
@@ -509,7 +509,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "misc/paint_white_green_yellow_item"
 			});
 
-			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				list.push({
 					R = 85,

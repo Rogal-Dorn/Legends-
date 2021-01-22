@@ -36,7 +36,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		cleave.m.FatigueCost = 15;
 		this.addSkill(cleave);
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local actor = this.getContainer().getActor();
 			if (actor == null || actor.isNull())
@@ -48,22 +48,22 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 			{
 				this.addSkill(this.new("scripts/skills/actives/curseofyears_skill"));
 			}
-		}		
+		}
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )
 	{
 		this.weapon.onDamageDealt(_target, _skill, _hitInfo);
-		
+
 		local actor = this.getContainer().getActor();
-		
+
 		if (actor == null || actor.isNull())
 		{
 			return;
 		}
 
 		local Skills = actor.getSkills();
-		
+
 		if (!Skills.hasSkill("background.legend_commander_necro") && !Skills.hasSkill("background.legend_necromancer") && !Skills.hasSkill("background.legend_ancient_summoner") && !Skills.hasSkill("background.legend_death_summoner"))
 		{
 			return;
@@ -83,7 +83,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		{
 			local corpse = _hitInfo.Tile.Properties.get("Corpse");
 			corpse.Faction = this.Const.Faction.PlayerAnimals;
-			corpse.Hitpoints = 1.0;			
+			corpse.Hitpoints = 1.0;
 			corpse.Items = _target.getItems();
 			corpse.IsConsumable = false;
 			corpse.IsResurrectable = false;

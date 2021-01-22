@@ -130,7 +130,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -223,7 +223,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 			[1, "sackcloth"],
 			[1, "monk_robe"]
 		]));
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "hood"],
 			[4, ""]

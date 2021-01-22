@@ -76,7 +76,7 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 		_draftList.push("legend_master_archer_background");
 		}

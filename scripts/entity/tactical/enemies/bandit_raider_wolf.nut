@@ -9,7 +9,7 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 	function onInit()
 	{
 		this.bandit_raider.onInit();
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 10) == 1)
 			{
@@ -116,7 +116,7 @@ this.bandit_raider_wolf <- this.inherit("scripts/entity/tactical/enemies/bandit_
 			[20, "basic_mail_shirt"]
 		])
 		item.setUpgrade(this.new("scripts/items/" +
-			(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade" : "armor_upgrades/direwolf_pelt_upgrade")
+			(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade" : "armor_upgrades/direwolf_pelt_upgrade")
 		))
 		this.m.Items.equip(item);
 

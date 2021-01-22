@@ -50,7 +50,7 @@ this.nomad_tent_city_location <- this.inherit("scripts/entity/world/location", {
 			treasure.extend(treasure);
 			treasure.extend(treasure);
 			treasure.extend(treasure);
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 			treasure.push("legend_armor/armor_upgrades/legend_metal_plating_upgrade");
 			treasure.push("legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade");

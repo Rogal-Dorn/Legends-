@@ -923,7 +923,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				{
 					mins = this.m.PerkTreeDynamicMinsBeast;
 				}
-				else if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				else if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					mins = this.m.PerkTreeDynamicMinsMagic;
 				}
@@ -1164,7 +1164,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function calculateAdditionalRecruitmentLevels()
 	{
-		if (this.World.LegendsMod.Configs().LegendRecruitScalingEnabled())
+		if (this.LegendsMod.Configs().LegendRecruitScalingEnabled())
 		{
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;

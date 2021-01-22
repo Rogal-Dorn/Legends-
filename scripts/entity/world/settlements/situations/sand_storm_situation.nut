@@ -28,7 +28,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 	function onAdded( _settlement )
 	{
 		_settlement.resetShop();
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}
@@ -40,10 +40,10 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.SellPriceMult *= 1.1;
 		_modifiers.RarityMult *= 0.75;
 	}
-	
+
 	function onUpdateDraftList( _draftList, _gender )
 	{
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -70,8 +70,8 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 				_list.push("legend_diviner_background");
 				}
 			}
-		}	
-	}	
+		}
+	}
 
 });
 

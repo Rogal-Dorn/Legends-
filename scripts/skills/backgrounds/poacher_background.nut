@@ -93,7 +93,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -231,7 +231,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[1, "leather_wraps"],
 			[1, "ragged_surcoat"]
 		]))
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "hood"]
 		]));

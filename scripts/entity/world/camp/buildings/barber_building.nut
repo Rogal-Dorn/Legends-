@@ -93,7 +93,7 @@ this.barber_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function isHidden()
 	{
 
-		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}

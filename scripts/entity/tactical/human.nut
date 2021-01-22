@@ -34,7 +34,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	function setGender( _v, _reroll = true)
 	{
 
-		if ("LegendMod" in this.World && !this.World.LegendsMod.Configs().LegendGenderEnabled())
+		if ("LegendMod" in this.World && !this.LegendsMod.Configs().LegendGenderEnabled())
 		{
 			_v = 0;
 		}

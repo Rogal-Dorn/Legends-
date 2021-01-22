@@ -97,7 +97,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				this.m.Strength += (count + (brolevel + (pow(brolevel,1.2)))) * broScale;
 			}
 
-			if (this.World.LegendsMod.Configs().LegendItemScalingEnabled())
+			if (this.LegendsMod.Configs().LegendItemScalingEnabled())
 			{
 				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);

@@ -26,7 +26,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -42,7 +42,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender )
 	{
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
@@ -69,7 +69,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 				_list.push("legend_diviner_background");
 				}
 			}
-		}	
+		}
 	}
 
 });

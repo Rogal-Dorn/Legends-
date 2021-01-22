@@ -93,7 +93,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -213,7 +213,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/knife"));
-		
+
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, "padded_surcoat"],
 			[1, "basic_mail_shirt"]

@@ -85,7 +85,7 @@ this.send_goblin_roamers_action <- this.inherit("scripts/factions/faction_action
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(50, 110);
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 
 				rand *= distanceToNextSettlement / 14.0;

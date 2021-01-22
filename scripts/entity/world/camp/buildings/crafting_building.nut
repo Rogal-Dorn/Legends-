@@ -157,7 +157,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return true;
 		}
 
-		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}

@@ -216,7 +216,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 					loot.drop(_tile);
 
 					local chance = 1;
-					if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+					if (this.LegendsMod.Configs().LegendMagicEnabled())
 					{
 					 chance = 10;
 					}
