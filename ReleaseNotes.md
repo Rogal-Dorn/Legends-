@@ -4816,6 +4816,13 @@ Dates, rice and dried lamb correctly provide benefits when eaten in battle
 Tooltips updated for all consumable food and drink to explain the effect if consumed.
 Companion backgrounds have appropriate perk trees for vanilla starts
 
+
+**Changes**
+Increases tabard and cloak spawns in shops
+
 \*\*UNINSTALL THE REMOVE FASTER MOD patch
 
 Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view?usp=sharing
+
+
+15.0.0.29

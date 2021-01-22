@@ -145,6 +145,29 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 					S = "legend_armor/cloak/legend_armor_cloak_common"
 				});
 				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_sash"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/tabard/legend_common_tabard"
+				});
+			}
+
+
+		}
+		else if (_id == "building.armorsmith")
+		{
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_common"
+				});
+				_list.push({
 					R = 95,
 					P = 1.0,
 					S = "legend_armor/cloak/legend_armor_cloak_noble"
@@ -160,12 +183,12 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 					S = "legend_armor/named/legend_armor_cloak_rich"
 				});
 				_list.push({
-					R = 50,
+					R = 45,
 					P = 1.0,
 					S = "legend_armor/cloak/legend_sash"
 				});
 				_list.push({
-					R = 50,
+					R = 45,
 					P = 1.0,
 					S = "legend_armor/tabard/legend_common_tabard"
 				});
@@ -175,8 +198,6 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 					S = "legend_armor/named/legend_armor_named_tabard"
 				});
 			}
-
-
 		}
 		else if (_id == "building.specialized_trader")
 		{
