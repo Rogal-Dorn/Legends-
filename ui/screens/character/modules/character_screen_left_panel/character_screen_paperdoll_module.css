@@ -304,7 +304,14 @@
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove3 {
+	left: -1.8rem;
 	top: 1.9rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.h-remove5 {
+	left: 0.4rem;
+	top: 1.9rem;
+
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove2 {

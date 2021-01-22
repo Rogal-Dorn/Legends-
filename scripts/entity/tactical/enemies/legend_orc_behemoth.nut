@@ -190,12 +190,15 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			flip = !flip
 		}
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
+
 	}
 
 	function onInit()
@@ -236,20 +239,22 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("legend_orc_behemoth_head_01_bloodied");
 
-		this.addSprite("helmet");
-		this.addSprite("helmet_vanity_lower");
-		this.addSprite("helmet_helm");
-		this.addSprite("helmet_top");
-		this.addSprite("helmet_vanity");
-		this.addSprite("helmet_damage");
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			this.addSprite(a)
+		}
 		local v = 15;
 		local v2 = -5;
-		this.setSpriteOffset("helmet", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_vanity_lower", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_helm", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_top", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_vanity", this.createVec(v2, v));
-		this.setSpriteOffset("helmet_damage", this.createVec(v2, v));
+
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.setSpriteOffset(a, this.createVec(v2, v));
+		}
+
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_orc_03_body_bloodied");
 		body_blood.Visible = false;

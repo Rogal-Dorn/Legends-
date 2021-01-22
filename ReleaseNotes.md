@@ -4826,3 +4826,6 @@ Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view
 
 
 15.0.0.29
+
+**Changes**
+Vanity layer on helmets now has two slots

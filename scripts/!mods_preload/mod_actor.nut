@@ -765,6 +765,22 @@
 			}
 		}
 
+
+		if (this.hasSprite("helmet_vanity_lower_2"))
+		{
+			if (_appearance.HelmetLayerVanity2Lower.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity_lower_2");
+				helmet.setBrush(_appearance.HelmetLayerVanity2Lower);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity_lower_2").Visible = false;
+			}
+		}
+
 		if (this.hasSprite("helmet_helm"))
 		{
 			if (_appearance.HelmetLayerHelm.len() != 0 && !this.m.IsHidingHelmet)
@@ -807,6 +823,21 @@
 			else
 			{
 				this.getSprite("helmet_vanity").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_vanity_2"))
+		{
+			if (_appearance.HelmetLayerVanity2.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity_2");
+				helmet.setBrush(_appearance.HelmetLayerVanity2);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity_2").Visible = false;
 			}
 		}
 
