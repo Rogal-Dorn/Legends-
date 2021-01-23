@@ -2652,7 +2652,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			break;
 
 		case 4:
-			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Vanity Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Second Vanity Layer";
 			break;
 
 		case 5:
