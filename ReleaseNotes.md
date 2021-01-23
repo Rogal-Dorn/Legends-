@@ -4827,4 +4827,8 @@ heavy trait renamed to Lumbering to avoid confusion with similar traits
 Firm  trait renamed to Firm hands 
 Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get light armor perks 
 
+**fixes**
+Tournament conversation flow when selecting enemies in show matches 
+Tournament map freezing on entry  due to a null error
+Large parts of the tournament map being impassable forest 
 
