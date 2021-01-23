@@ -4819,3 +4819,12 @@ Companion backgrounds have appropriate perk trees for vanilla starts
 \*\*UNINSTALL THE REMOVE FASTER MOD patch
 
 Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view?usp=sharing
+
+
+15.0.0.29
+
+heavy trait renamed to Lumbering to avoid confusion with similar traits 
+Firm  trait renamed to Firm hands 
+Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get light armor perks 
+
+

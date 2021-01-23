@@ -72,10 +72,10 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 			Weapon = [
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.BowTree
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.AgileTree,
