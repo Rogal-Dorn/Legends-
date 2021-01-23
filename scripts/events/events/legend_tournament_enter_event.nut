@@ -482,7 +482,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					Text = "Let me pick",
 					function getResult( _event )
 					{
-						return "K";
+						return "J2";
 					}
 
 				},
@@ -1139,17 +1139,17 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			}
 		}
 
-		if (candidate_veteran.len() == 0)
-		{
-			return "A";
-		}
+		//if (candidate_veteran.len() == 0)
+		//{
+		//	return "A";
+		//}
 
-		this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)];
+		//this.m.Veteran = candidate_veteran[this.Math.rand(0, candidate_veteran.len() - 1)];
 
-		if (candidate_veteran.len() < 3)
-		{
-			return "B";
-		}
+		//if (candidate_veteran.len() < 3)
+		//{
+		//	return "B";
+		//}
 
 		return "C";
 	}
