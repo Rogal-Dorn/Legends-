@@ -4823,6 +4823,19 @@ Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view
 
 15.0.0.29
 
+**price changes** 
+A number of backgrounds had their prices changed to reflect the value their stats and perks provide 
+blacksmith hiring cost lowered and daily cost raised, in line with a hedge knight 
+canibal daily cost raised 
+herbalist hiring cost lowered, daily rate raised 
+ironmonger hiring cost lowered, daily cost raised 
+Noble warrior and foot soldier price increased, in line with a barbarian 
+Arbalester stats improved and price increased 
+Shieldmaiden price reduced 
+
+
+**changes**
+Double strike nerfed to 20%, only lasts until end of turn or a miss 
 heavy trait renamed to Lumbering to avoid confusion with similar traits 
 Firm  trait renamed to Firm hands 
 Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get light armor perks 
