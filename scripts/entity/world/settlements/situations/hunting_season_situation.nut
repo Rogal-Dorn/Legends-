@@ -65,7 +65,7 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 			r = this.Math.rand(0, 50);
 				if (r == 1)
 				{
-					_list.push("legend_conjurer_background");
+					_draftList.push("legend_conjurer_background");
 				}
 			}
 			else
@@ -73,7 +73,7 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 				r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
-					_list.push("legend_conjurer_background");
+					_draftList.push("legend_conjurer_background");
 				}
 			}
 		}

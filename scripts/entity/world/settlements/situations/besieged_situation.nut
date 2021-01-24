@@ -69,7 +69,7 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 			r = this.Math.rand(0, 2);
 				if (r == 1)
 				{
-			     _list.push("legend_death_summoner_background");
+			     _draftList.push("legend_death_summoner_background");
 				}
 			}
 			else
@@ -77,14 +77,14 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-				  _list.push("legend_death_summoner_background");
+				  _draftList.push("legend_death_summoner_background");
 				}
 			}
 
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
 			{
 
-			 	_list.push("legend_death_summoner_background");
+			 	_draftList.push("legend_death_summoner_background");
 
 			}
 		}

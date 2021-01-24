@@ -49,7 +49,7 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-					_list.push("legend_illusionist_background");
+					_draftList.push("legend_illusionist_background");
 				}
 			}
 			else
@@ -57,7 +57,7 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 				r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-					_list.push("legend_illusionist_background");
+					_draftList.push("legend_illusionist_background");
 				}
 			}
 		}
