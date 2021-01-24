@@ -4844,4 +4844,5 @@ Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get
 Tournament conversation flow when selecting enemies in show matches 
 Tournament map freezing on entry  due to a null error
 Large parts of the tournament map being impassable forest 
-
+Unable to enter town due to _list error 
+Makes cult robes into layered armor 
