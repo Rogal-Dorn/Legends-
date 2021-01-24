@@ -32,7 +32,7 @@ this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Affected by injuries, losing hitpoints, bleeding and poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns."
+				text = "Loses any immunity to injuries, bleeding and poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns."
 			}
 		];
 	}

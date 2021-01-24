@@ -13,6 +13,39 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 
+	function getBonus()
+	{
+		local actor = this.getContainer().getActor();
+		local resolve = actor.getBaseProperties().Bravery;
+		local bonus = this.Math.floor(resolve * 0.20);
+		
+		return bonus;
+	}
+
+	function getTooltip()
+	{
+		local bonus = this.getBonus();
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/health.png",
+				text = "Melee and ranged defense increased by [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color]"
+			}
+		];
+	}
+
+
 	function onAdded()
 	{
 	}
@@ -24,10 +57,9 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local resolve = actor.getBaseProperties().Bravery;
-		_properties.MeleeDefense += this.Math.floor(resolve * 0.20);
-		_properties.RangedDefense += this.Math.floor(resolve * 0.20);
+		local bonus = this.getBonus();
+		_properties.MeleeDefense += bonus;
+		_properties.RangedDefense += bonus;
 
 	}
 

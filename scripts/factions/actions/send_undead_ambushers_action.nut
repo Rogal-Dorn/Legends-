@@ -53,6 +53,12 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		}
 
 		this.m.Score = 10;
+	
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+		{
+		this.m.Score = 15;
+		}	
+		
 	}
 
 	function onClear()
