@@ -10,6 +10,22 @@
 		}
 	}
 
+	o.setPause = function (_f)
+	{
+		this.m.IsGamePaused = _f;
+
+		if (_f)
+		{
+			this.Time.setVirtualSpeed(0.0);
+			this.m.IsAIPaused = true;
+		}
+		else
+		{
+			this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
+			this.m.IsAIPaused = false;
+		}
+	}
+
 	o.onBattleEnded = function()
 	{
 		if (this.m.IsExitingToMenu)
