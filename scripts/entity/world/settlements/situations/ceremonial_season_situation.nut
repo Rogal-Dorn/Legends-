@@ -60,14 +60,14 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-				_list.push("legend_spiritualist_background");
-				_list.push("legend_druid_background");
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
 				}
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
 			{
-				_list.push("legend_spiritualist_background");
-				_list.push("legend_druid_background");
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
 
 			}
 			else
@@ -75,8 +75,8 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 			r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-				_list.push("legend_spiritualist_background");
-				_list.push("legend_druid_background");
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
 				}
 			}
 		}

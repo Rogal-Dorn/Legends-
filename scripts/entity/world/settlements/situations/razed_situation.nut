@@ -72,7 +72,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 				r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-				_list.push("legend_berserker_background");
+				_draftList.push("legend_berserker_background");
 				}
 			}
 			else
@@ -80,7 +80,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 			r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
-				_list.push("legend_berserker_background");
+				_draftList.push("legend_berserker_background");
 				}
 			}
 		}

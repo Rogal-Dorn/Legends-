@@ -75,13 +75,13 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-				_list.push("legend_entrancer_background");
+				_draftList.push("legend_entrancer_background");
 				}
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
 			{
 
-			_list.push("legend_entrancer_background");
+				_draftList.push("legend_entrancer_background");
 
 			}
 			else
@@ -89,7 +89,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 			r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-				_list.push("legend_entrancer_background");
+				_draftList.push("legend_entrancer_background");
 				}
 			}
 		}

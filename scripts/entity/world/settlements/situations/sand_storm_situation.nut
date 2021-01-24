@@ -51,7 +51,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 			r = this.Math.rand(0, 50);
 				if (r == 1)
 				{
-				_list.push("legend_diviner_background");
+				_draftList.push("legend_diviner_background");
 				}
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
@@ -59,7 +59,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 				r = this.Math.rand(0, 9);
 				if (r == 1)
 				{
-				_list.push("legend_diviner_background");
+				_draftList.push("legend_diviner_background");
 				}
 			}
 			else
@@ -67,7 +67,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 			r = this.Math.rand(0, 90);
 				if (r == 1)
 				{
-				_list.push("legend_diviner_background");
+				_draftList.push("legend_diviner_background");
 				}
 			}
 		}

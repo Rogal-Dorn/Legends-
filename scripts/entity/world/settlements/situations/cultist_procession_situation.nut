@@ -76,7 +76,7 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 			r = this.Math.rand(0, 2);
 				if (r == 1)
 				{
-			     _list.push("legend_ancient_summoner_background");
+			     _draftList.push("legend_ancient_summoner_background");
 				}
 			}
 			else
@@ -84,14 +84,14 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 			r = this.Math.rand(0, 5);
 				if (r == 1)
 				{
-				  _list.push("legend_ancient_summoner_background");
+				  _draftList.push("legend_ancient_summoner_background");
 				}
 			}
 
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
 			{
 
-			 	_list.push("legend_ancient_summoner_background");
+			 	_draftList.push("legend_ancient_summoner_background");
 
 			}
 		}

@@ -523,6 +523,11 @@ layers = [
     "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.", \
     "adesc" : "Includes armor of overlapping leather plates."
 },
+{"name": "legend_armor_cult_armor",                 "layer": "plate", "min": 1, "max": 1, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Cultish Leather Armor", \
+    "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.", \
+    "adesc" : "Includes an occult armor of overlapping leather plates."
+},
 {"name": "legend_armor_leather_lamellar_harness_heavy",   "layer": "plate", "min": 1, "max": 1, "value" : 1750, "con" : 130, "stam" : -20, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Lamellar Harness", \
     "desc" :  "A body armor made of thick overlapping metal plates that cover most of the upper body.", \
@@ -823,12 +828,12 @@ layers = [
     "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.", \
     "adesc" : "Has a stout wool cloak"
 },
-{"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 1000, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35], \
+{"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 500, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35], \
     "title" :  "Heavy Cloak", \
     "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
     "adesc" : "Has a heavy thick cloak"
 },
-{"name": "legend_armor_cloak_crusader",           "layer": "cloak", "min": 36, "max": 36, "value" : 1200, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak",\
+{"name": "legend_armor_cloak_crusader",           "layer": "cloak", "min": 36, "max": 36, "value" : 500, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak",\
     "title" :  "Crusader Cloak", \
     "desc" :  "A holy cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty.", \
     "adesc" : "Has a holy cloak"
