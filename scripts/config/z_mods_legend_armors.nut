@@ -173,7 +173,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         Chain = [
         ],
         Plate = [
-		   [1, "armor/legend_armor_cult_armor"]
+		   [1, "plate/legend_armor_cult_armor"]
         ],
         Cloak = [
         ],
