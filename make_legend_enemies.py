@@ -345,21 +345,23 @@ enemies = r"""
   <sprite id="mummy_royal_plate_01_damaged" offsetY="35" ic="FF19222C" width="104" height="142" img="entity\undead\armor\mummy_royal_plate_01_damaged.png" left="-42" right="44" top="-50" bottom="10" />
   <sprite id="mummy_royal_plate_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF1B252F" width="191" height="185" img="entity\undead\armor\mummy_royal_plate_01_dead.png" left="-41" right="43" top="-45" bottom="11" />
 
-<sprite id="bust_unhold_body_04_injured" offsetX="-5" offsetY="35" ic="FF181946" width="174" height="214" img="entity\beasts\bust_unhold_body_04_injured.png" left="-78" right="50" top="-48" bottom="62" />
-<sprite id="bust_unhold_body_04" offsetX="-5" offsetY="35" ic="FF272C3A" width="174" height="214" img="entity\beasts\bust_unhold_body_04.png" left="-64" right="70" top="-67" bottom="83" />
-<sprite id="bust_unhold_body_04_dead" offsetY="30" f="6403" ic="FF23283B" width="169" height="139" img="entity\beasts\bust_unhold_body_04_dead.png" left="-83" right="79" top="-70" bottom="62" />
-<sprite id="bust_unhold_head_04" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_04.png" left="-69" right="21" top="-24" bottom="68" />
-<sprite id="bust_unhold_head_04_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead.png" left="4" right="76" top="-62" bottom="8" />
-<sprite id="bust_unhold_head_04_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
-<sprite id="bust_unhold_body_04_dead_arrows" offsetY="30" f="6401" ic="FF444B4F" width="169" height="139" img="entity\beasts\bust_unhold_rock_body_01_dead_arrows.png" left="-19" right="53" top="-19" bottom="37" />
-<sprite id="bust_unhold_body_04_dead_javelin" offsetY="30" f="6401" ic="FF141B29" width="169" height="139" img="entity\beasts\bust_unhold_rock_body_01_dead_javelin.png" left="-14" right="78" top="-2" bottom="54" />
-<sprite id="bust_unhold_head_05" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_05.png" left="-69" right="21" top="-24" bottom="68" />
-<sprite id="bust_unhold_head_05_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_05_dead.png" left="4" right="76" top="-62" bottom="8" />
-<sprite id="bust_unhold_head_05_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
-<sprite id="bust_unhold_head_06" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_06.png" left="-69" right="21" top="-24" bottom="68" />
-<sprite id="bust_unhold_head_06_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_06_dead.png" left="4" right="76" top="-62" bottom="8" />
-<sprite id="bust_unhold_head_06_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
+    <sprite id="bust_unhold_body_04_injured" offsetX="-5" offsetY="35" ic="FF181946" width="174" height="214" img="entity\beasts\bust_unhold_body_04_injured.png" left="-78" right="50" top="-48" bottom="62" />
+    <sprite id="bust_unhold_body_04" offsetX="-5" offsetY="35" ic="FF272C3A" width="174" height="214" img="entity\beasts\bust_unhold_body_04.png" left="-64" right="70" top="-67" bottom="83" />
+    <sprite id="bust_unhold_body_04_dead" offsetY="30" f="6403" ic="FF23283B" width="169" height="139" img="entity\beasts\bust_unhold_body_04_dead.png" left="-83" right="79" top="-70" bottom="62" />
+    <sprite id="bust_unhold_head_04" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_04.png" left="-69" right="21" top="-24" bottom="68" />
+    <sprite id="bust_unhold_head_04_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead.png" left="4" right="76" top="-62" bottom="8" />
+    <sprite id="bust_unhold_head_04_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
+    <sprite id="bust_unhold_body_04_dead_arrows" offsetY="30" f="6401" ic="FF444B4F" width="169" height="139" img="entity\beasts\bust_unhold_rock_body_01_dead_arrows.png" left="-19" right="53" top="-19" bottom="37" />
+    <sprite id="bust_unhold_body_04_dead_javelin" offsetY="30" f="6401" ic="FF141B29" width="169" height="139" img="entity\beasts\bust_unhold_rock_body_01_dead_javelin.png" left="-14" right="78" top="-2" bottom="54" />
+    <sprite id="bust_unhold_head_05" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_05.png" left="-69" right="21" top="-24" bottom="68" />
+    <sprite id="bust_unhold_head_05_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_05_dead.png" left="4" right="76" top="-62" bottom="8" />
+    <sprite id="bust_unhold_head_05_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
+    <sprite id="bust_unhold_head_06" offsetX="-5" offsetY="35" f1="-30" f2="10" ic="FF39455B" width="174" height="214" img="entity\beasts\bust_unhold_head_06.png" left="-69" right="21" top="-24" bottom="68" />
+    <sprite id="bust_unhold_head_06_dead" offsetY="30" f1="40" f2="-20" ic="FF343E56" width="169" height="139" img="entity\beasts\bust_unhold_head_06_dead.png" left="4" right="76" top="-62" bottom="8" />
+    <sprite id="bust_unhold_head_06_dead_bloodpool" offsetY="30" f="6420" f1="40" f2="-20" width="169" height="139" img="entity\beasts\bust_unhold_head_04_dead_bloodpool.png" left="-9" right="85" top="-64" bottom="16" />
 
+    <sprite id="bust_skeleton_body_01_injured" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\bust_skeleton_body_injured.png" left="-37" right="33" top="-45" bottom="3" />
+    <sprite id="bust_skeleton_body_02_injured" offsetY="35" ic="FF3C6073" width="104" height="142" img="entity\undead\bust_skeleton_body_injured.png" left="-37" right="33" top="-45" bottom="3" />
 """
 
 def makeBrushes():
