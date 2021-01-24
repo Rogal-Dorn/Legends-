@@ -4,7 +4,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.legends_inquisition";
 		this.m.Name = "The Inquisition";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. The holy must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. A Witchunter, nun and flagellant must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
 		this.m.Difficulty = 2;
 		this.m.Order = 280;
 		this.m.IsFixedLook = true;
@@ -19,7 +19,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 	local roster = this.World.getPlayerRoster();
 
-		for( local i = 0; i < 4; i = ++i )
+		for( local i = 0; i < 3; i = ++i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -28,95 +28,79 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_crusader_background"
-		]);
-		bros[0].getBackground().m.RawDescription = "{%name% lost everything to the undead filth, property, lives and loves. There is nothing left in their life but the quest to bring holy justice to the world and end the tide of darkness. What better way to find the undead than in the service of a witch hunter.}";
-		bros[0].m.PerkPoints = 1;
-		bros[0].m.LevelUps = 1;
-		bros[0].m.Level = 2;
-		bros[0].setPlaceInFormation(3);
+			"flagellant_background"
+		]);	
+		bros[0].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
+		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
+		bros[0].getBaseProperties().Hitpoints += 10;
+		bros[0].getBaseProperties().MeleeDefense += 5;
+		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_inquisition_disciple_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[0].m.PerkPointsSpent += 1;
-		bros[1].setStartValuesEx([
-			"flagellant_background"
-		]);
-		bros[1].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
-		bros[1].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
-		bros[1].m.PerkPointsSpent += 1;
-		local items = bros[1].getItems();
+		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]]));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/armor/cultist_leather_robe"));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/barbarians/thorned_whip"));
-		bros[2].setStartValuesEx([
+		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+		local talents = bros[0].getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = 3;
+		talents[this.Const.Attributes.Hitpoints] = 3;
+		bros[0].fillTalentValues(1, true);			
+		bros[1].setStartValuesEx([
 			"witchhunter_background"
 		]);
-		local items = bros[2].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "witchhunter_hat"]]));
-		items.equip(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
-		bros[2].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
-		bros[2].improveMood(1.0, "Recently purged the unworthy");
-		bros[2].setPlaceInFormation(12);
-		bros[2].m.PerkPoints = 3;
-		bros[2].m.LevelUps = 3;
-		bros[2].m.Level = 4;
-		bros[2].setVeteranPerks(2);
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
-		bros[2].m.PerkPointsSpent += 1;
-		bros[3].setStartValuesEx([
+		local talents = bros[1].getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Bravery] = 3;
+		talents[this.Const.Attributes.RangedSkill] = 3;	
+		bros[0].getBaseProperties().RangedSkill += 5;
+		bros[0].getBaseProperties().Bravery += 10;		
+		bros[1].fillTalentValues(1, true);	
+		bros[1].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
+		bros[1].improveMood(1.0, "Recently purged the unworthy");
+		bros[1].setPlaceInFormation(3);
+		bros[1].m.PerkPoints = 1;
+		bros[1].m.LevelUps = 1;
+		bros[1].m.Level = 2;
+		bros[1].setVeteranPerks(2);
+		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[1].m.PerkPointsSpent += 1;
+		bros[2].setStartValuesEx([
 			"legend_nun_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "{%name% spent many years in a temple healing the sick, but it was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world.}";
-		bros[3].setPlaceInFormation(13);
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
-		bros[3].m.PerkPointsSpent += 1;
-		local items = bros[3].getItems();
+		local talents = bros[2].getTalents();
+		talents.resize(this.Const.Attributes.COUNT, 0);
+		talents[this.Const.Attributes.Fatigue] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 3;	
+		bros[0].getBaseProperties().Hitpoints += 10;
+		bros[0].getBaseProperties().MeleeSkill += 5;	
+		bros[2].fillTalentValues(1, true);	
+		bros[2].getBackground().m.RawDescription = "{%name% is a huge figure, who spent many years in a temple healing and carrying the sick, learning the power of both strength and compassion. It was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world. }";
+		bros[2].setPlaceInFormation(5);
+		bros[2].getSkills().add(this.new("scripts/skills/traits/heavy_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		bros[2].m.PerkPointsSpent += 1;
+		local items = bros[2].getItems();
+
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/flail"));
-		local shield = this.new("scripts/items/shields/legend_tower_shield");
+		items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
+		local shield = this.new("scripts/items/shields/heater_shield");
 		shield.onPaintSpecificColor(23);
 		items.equip(shield);
-local cloths = [
-            [0, ""],
-			[0, "cloth/legend_gambeson"],
-			[0, "cloth/legend_gambeson_plain"],
-			[0, "cloth/legend_gambeson_wolf"],
-			[0, "cloth/legend_padded_surcoat"],
-			[0, "cloth/legend_robes"],
-			[0, "cloth/legend_apron_butcher"],
-			[1, "cloth/legend_robes_nun"],
-			[0, "cloth/legend_apron_smith"],
-			[0, "cloth/legend_robes_wizard"],
-			[0, "cloth/legend_sackcloth"],
-			[0, "cloth/legend_sackcloth_patched"],
-			[0, "cloth/legend_sackcloth_tattered"],
+		local cloths = [
+			[1, "cloth/legend_robes_nun"]
 		];
 		local armor = this.Const.World.Common.pickLegendArmor(cloths)
 
 		if (armor != null)
 		{
 			local chains = [
-                [0, ""],
                 [1, "chain/legend_armor_mail_shirt"],
 				[1, "chain/legend_armor_mail_shirt_simple"],
-				[0, "chain/legend_armor_rusty_mail_shirt"],
-				[0, "chain/legend_armor_ancient_double_mail"],
-				[0, "chain/legend_armor_ancient_mail"],
-				[0, "chain/legend_armor_basic_mail"],
-				[0, "chain/legend_armor_hauberk"],
-				[0, "chain/legend_armor_hauberk_full"],
-				[0, "chain/legend_armor_hauberk_sleevless"],
-				[0, "chain/legend_armor_reinforced_mail"],
-				[0, "chain/legend_armor_reinforced_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_rotten_mail_shirt"],
-				[0, "chain/legend_armor_reinforced_worn_mail"],
-				[0, "chain/legend_armor_reinforced_worn_mail_shirt"],
 				[1, "chain/legend_armor_short_mail"]
 			]
 			local chain = this.Const.World.Common.pickLegendArmor(chains)
@@ -126,36 +110,8 @@ local cloths = [
 			}
 
 			local plates = [
-                [0, ""],
-				[0, "plate/legend_armor_leather_brigandine"],
-				[0, "plate/legend_armor_leather_brigandine_hardened"],
-				[0, "plate/legend_armor_leather_brigandine_hardened_full"],
 				[1, "plate/legend_armor_leather_jacket"],
-				[1, "plate/legend_armor_leather_jacket_simple"],
-				[0, "plate/legend_armor_leather_lamellar"],
-				[0, "plate/legend_armor_leather_lamellar_harness_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-				[0, "plate/legend_armor_leather_lamellar_heavy"],
-				[0, "plate/legend_armor_leather_lamellar_reinforced"],
-				[0, "plate/legend_armor_leather_noble"],
-				[0, "plate/legend_armor_leather_padded"],
-				[0, "plate/legend_armor_leather_riveted"],
-				[0, "plate/legend_armor_leather_riveted_light"],
-				[0, "plate/legend_armor_leather_scale"],
-				[0, "plate/legend_armor_plate_ancient_chest"],
-				[0, "plate/legend_armor_plate_ancient_harness"],
-				[0, "plate/legend_armor_plate_ancient_mail"],
-				[0, "plate/legend_armor_plate_ancient_scale"],
-				[0, "plate/legend_armor_plate_ancient_scale_coat"],
-				[0, "plate/legend_armor_plate_ancient_scale_harness"],
-				[0, "plate/legend_armor_plate_chest"],
-				[0, "plate/legend_armor_plate_chest_rotten"],
-				[0, "plate/legend_armor_plate_cuirass"],
-				[0, "plate/legend_armor_plate_full"],
-				[0, "plate/legend_armor_scale"],
-				[0, "plate/legend_armor_scale_coat"],
-				[0, "plate/legend_armor_scale_coat_rotten"],
-				[0, "plate/legend_armor_scale_shirt"]
+				[1, "plate/legend_armor_leather_jacket_simple"]
 			]
 			local plate = this.Const.World.Common.pickLegendArmor(plates)
 			if (plate != null)
@@ -172,18 +128,26 @@ local cloths = [
 				tabard.setVariant(113)
 				armor.setUpgrade(tabard)
 			}
-			local cloaks = [
-						[0, ""],
-						[1, "cloak/legend_armor_cloak_crusader"]
-					]
-			local cloak = this.Const.World.Common.pickLegendArmor(cloaks)
-			if (tabard != null && armor != null)
-			{
-				armor.setUpgrade(cloak)
-			}
 			items.equip(armor);
 		}
-
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			foreach( bro in bros )
+			{
+				local items = bro.getItems();
+				local armor = items.getItemAtSlot(this.Const.ItemSlot.Body)
+				local tabards = [
+						[0, ""],
+						[1, "tabard/legend_noble_tabard"]
+					]
+					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+					if (tabard != null && armor != null)
+					{
+						tabard.setVariant(102)
+						armor.setUpgrade(tabard)
+					}
+			}
+		}
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));

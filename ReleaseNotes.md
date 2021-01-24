@@ -4823,6 +4823,13 @@ Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view
 
 15.0.0.29
 
+
+**inquisition** 
+reduced to three starting characters, with lower levels. They have better starting stats, traits and stars 
+frequency of undead contracts increased while playing this scenario 
+improves tooltips and fixes errors in prayer skills 
+
+
 **price changes** 
 A number of backgrounds had their prices changed to reflect the value their stats and perks provide 
 blacksmith hiring cost lowered and daily cost raised, in line with a hedge knight 
@@ -4839,6 +4846,7 @@ Double strike nerfed to 20%, only lasts until end of turn or a miss
 heavy trait renamed to Lumbering to avoid confusion with similar traits 
 Firm  trait renamed to Firm hands 
 Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get light armor perks 
+witch hunters have light armor perks 
 
 **fixes**
 Tournament conversation flow when selecting enemies in show matches 
@@ -4846,3 +4854,5 @@ Tournament map freezing on entry  due to a null error
 Large parts of the tournament map being impassable forest 
 Unable to enter town due to _list error 
 Makes cult robes into layered armor 
+polishes and shrinks some low tier weapons 
+
