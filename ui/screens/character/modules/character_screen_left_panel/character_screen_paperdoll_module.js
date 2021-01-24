@@ -38,14 +38,14 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
     Head: {
       Container: null,
       ContainerIsBig: false,
-      ContainerClasses: "is-top-small-offset",
+      ContainerClasses: "helm-is-top-small-offset",
       SlotType: CharacterScreenIdentifier.ItemSlot.Head,
       BackgroundImage: Path.GFX + Asset.SLOT_BACKGROUND_HELMET
     },
     Body: {
       Container: null,
       ContainerIsBig: true,
-      ContainerClasses: "is-big is-in-between-offset",
+      ContainerClasses: "is-big body-is-in-between-offset",
       SlotType: CharacterScreenIdentifier.ItemSlot.Body,
       BackgroundImage: Path.GFX + Asset.SLOT_BACKGROUND_BODY
     }
