@@ -6,8 +6,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_ranged";
 		this.m.Name = "Arbalester";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 150;
-		this.m.DailyCost = 16;
+		this.m.HiringCost = 300;
+		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -147,36 +147,36 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-5,
+				0
 			],
 			Bravery = [
 				5,
 				5
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeSkill = [
-				0,
-				3
+				3,
+				6
 			],
 			RangedSkill = [
 				23,
 				20
 			],
 			MeleeDefense = [
-				0,
-				4
-			],
-			RangedDefense = [
 				3,
 				6
 			],
+			RangedDefense = [
+				8,
+				12
+			],
 			Initiative = [
-				0,
-				0
+				5,
+				5
 			]
 		};
 		return c;
