@@ -334,8 +334,7 @@ gt.Const.Tactical.Common <- {
 			{
 
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
 			}
 		}
 

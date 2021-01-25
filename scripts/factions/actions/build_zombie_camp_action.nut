@@ -24,6 +24,11 @@ this.build_zombie_camp_action <- this.inherit("scripts/factions/faction_action",
 		}
 
 		this.m.Score = 2;
+	
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+		{
+		this.m.Score = 5;
+		}
 	}
 
 	function onClear()
