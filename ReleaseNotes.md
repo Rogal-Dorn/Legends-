@@ -4831,7 +4831,7 @@ Download: https://drive.google.com/file/d/1G4uxDTPpnVAdp6_UunKnA_QCLu5cNQIa/view
 Vanity layer on helmets now has two slots
 Double strike nerfed to 20%, only lasts until end of turn or a miss
 Heavy trait renamed to Lumbering to avoid confusion with similar traits
-Firm  trait renamed to Firm hands
+Firm trait renamed to Firm hands
 Lumberjacks have throwing instead of crossbow, so they can throw axes.  Also get light armor perks
 Witch hunters have light armor perks
 
@@ -4859,3 +4859,6 @@ Makes cult robes into layered armor
 Fixes missing injured skeleton brushes
 Fixes faster resetting to 1.0 on pause
 Polishes and shrinks some low tier weapons
+Fixes issues with Hand to Hand, Grapple and Choke (Leonin)
+Fixes rare crash with healer building
+Fixes rare crash on generating tournament spectator

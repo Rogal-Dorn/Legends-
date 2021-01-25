@@ -82,6 +82,10 @@ this.tactical_arena_floor <- this.inherit("scripts/mapgen/tactical_template", {
 					local tile = this.Tactical.getTileSquare(x, y);
 					local o = tile.spawnObject("entity/tactical/objects/arena_spectator");
 
+					if (o == null)
+					{
+						continue;
+					}
 					if (tile.Coords.X > (_rect.X + _rect.W) / 2)
 					{
 						o.setFlipped(true);
