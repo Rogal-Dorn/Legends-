@@ -1,4 +1,4 @@
-this.legend_grapple<- this.inherit("scripts/skills/skill", {
+this.legend_grapple <- this.inherit("scripts/skills/skill", {
 	m = {
 		StunChance = 50
 	},
@@ -45,36 +45,34 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 0;
 	}
 
-
-	function getStunChance( _user, _targetTile )
+	function getStunChance()
 	{
 		local ret = {
-			stunChance = 50,
+			StunChance = 50,
 			HasOffhand = false,
 			HasMainhand = false,
 			HasTraining = false
-		}
-
-		stunChance = this.m.Stunchance;
+		};
+		ret.StunChance = this.m.StunChance;
 		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
-		if ( mainhand != null)
+		if (mainhand != null)
 		{
-			stunChance -= 25;
-			HasMainhand = true;
+			ret.StunChance -= 25;
+			ret.HasMainhand = true;
 		}
 
 		if (offhand != null)
 		{
-			stunChance -= 25;
-			HasOffhand = true;
+			ret.StunChance -= 25;
+			ret.HasOffhand = true;
 		}
 
-		if (_user.getCurrentProperties().IsSpecializedInFists)
+		if (this.m.Container.getActor().getCurrentProperties().IsSpecializedInFists)
 		{
-			stunChance += 50;
-			HasTraining = true;
+			ret.StunChance += 50;
+			ret.HasTraining = true;
 		}
 
 		return ret;
@@ -90,12 +88,11 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] fatigue on an enemy"
 		});
-
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Has a " + chance.stunChance + " to hit"
+			text = "Has a " + chance.StunChance + " to grapple"
 		});
 
 		if (chance.HasTraining)
@@ -104,17 +101,17 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
 			});
 		}
 
-		if (chance.HasTraining)
+		if (chance.HasMainhand || chance.HasOffhand)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] chance to grapple on a hit due to holding stuff in a hand"
 			});
 		}
 
@@ -123,18 +120,13 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
 	}
-
-
 
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 		local success = this.attackEntity(_user, _targetTile.getEntity());
-
-
 
 		if (!_user.isAlive() || _user.isDying())
 		{
@@ -145,14 +137,25 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !target.getSkills().hasSkill("effects.legend_grappled"))
+			if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+			{
+				return success;
+			}
+
+			if (target.getSkills().hasSkill("effects.legend_grappled"))
+			{
+				return success;
+			}
+
+			local mods = this.getStunChance();
+			if (_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= mods.StunChance)
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_grappled_effect"));
+
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has grappled " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
 				}
-
 			}
 		}
 
