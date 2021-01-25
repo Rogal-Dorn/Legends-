@@ -177,6 +177,9 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			if(this.Math.rand(1, 50) == 1)
 			{
 				this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+				this.addPerkGroup(TherianthropyGroup);
+
+				
 			}
 		}
 	}
