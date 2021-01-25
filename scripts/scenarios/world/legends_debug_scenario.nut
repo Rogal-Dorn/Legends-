@@ -53,8 +53,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().resize(2000);
 
 		local bros = roster.getAll();
-		// bros[0].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_burned_injury"));
-		// bros[1].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_scarred_injury"));
+		bros[0].m.Skills.add(this.new("scripts/skills/injury/cut_arm_injury"));
+		bros[1].m.Skills.add(this.new("scripts/skills/injury/deep_chest_cut_injury"));
 
 		this.World.Assets.m.Money = 50000;
 		this.World.Assets.m.ArmorParts = 200;
