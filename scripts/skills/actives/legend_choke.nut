@@ -38,7 +38,6 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-
 	function getMods()
 	{
 		local ret = {
@@ -49,33 +48,32 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			HasOffhand = false,
 			HasMainhand = false,
 			HasTraining = false
-		}
+		};
 		local actor = this.getContainer().getActor();
 		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
 		local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
 
 		if (offhand != null)
 		{
-			average *= 0.5;
-			HasOffhand = true;
+			average = average * 0.5;
+			ret.HasOffhand = true;
 		}
 
 		if (mainhand != null)
 		{
-			average *= 0.5;
-			HasMainhand = true;
+			average = average * 0.5;
+			ret.HasMainhand = true;
 		}
 
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
-			average *= 1.5;
+			average = average * 1.5;
 			ret.HasTraining = true;
 		}
 
-			ret.Min = average - 10;
-			ret.Max = average + 10;
+		ret.Min = average - 10;
+		ret.Max = average + 10;
 
 		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
 		{
@@ -91,12 +89,13 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			"background.legend_berserker"
 		];
 
-		foreach (bg in backgrounds)
+		foreach( bg in backgrounds )
 		{
 			if (!actor.getSkills().hasSkill(bg))
 			{
 				continue;
 			}
+
 			ret.Min *= 1.25;
 			ret.Max *= 1.25;
 			ret.HasBro = true;
@@ -108,12 +107,8 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-
-
-
-function getTooltip()
+	function getTooltip()
 	{
-
 		local mods = this.getMods();
 		local ret = [
 			{
@@ -141,7 +136,6 @@ function getTooltip()
 				icon = "ui/icons/regular_damage.png",
 				text = "+15% chance to hit due to unarmed training"
 			});
-
 		}
 		else
 		{
@@ -169,7 +163,7 @@ function getTooltip()
 				id = 5,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Damage halved due to holding something in your off hand"
+				text = "Damage halved due to holding something in your main hand"
 			});
 		}
 
@@ -209,37 +203,46 @@ function getTooltip()
 		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		return mainhand != null && offhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
-	function getHitChance(_targetEntity)
+
+	function getHitChance( _targetEntity )
 	{
 		if (_targetEntity == null)
 		{
 			return 0;
 		}
+
 		local mod = 0;
+
 		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
 		{
-		mod += 10;
+			mod = mod + 10;
 		}
+
 		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
 		{
-		mod += 10;
+			mod = mod + 10;
 		}
+
 		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
 		{
-		mod += 50;
+			mod = mod + 50;
 		}
+
 		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
-		mod += 25;
+			mod = mod + 25;
 		}
+
 		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
 		{
-		mod += 50;
+			mod = mod + 50;
 		}
+
 		if (_targetEntity.getSkills().hasSkill("effects.net"))
 		{
-		mod += 25;
+			mod = mod + 25;
 		}
+
 		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
 		return mod - this.Math.round(chance);
 	}
@@ -267,18 +270,18 @@ function getTooltip()
 
 		local chance = this.getHitChance(_targetEntity);
 		local mods = this.getMods();
+
 		if (!mods.HasTraining)
 		{
-			chance += 15;
+			chance = chance + 15;
 		}
 
 		_properties.DamageRegularMin += mods.Min;
-		_properties.DamageRegularMax += mods.Max
+		_properties.DamageRegularMax += mods.Max;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.MeleeSkill += chance;
 		_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;
 		_properties.HitChanceMult[this.Const.BodyPart.Body] = 1.0;
-
 	}
 
 });
