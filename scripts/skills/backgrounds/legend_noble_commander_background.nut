@@ -298,7 +298,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 3;
-		this.getContainer().getActor().fillTalentValues(2, true);
+		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "noble_tunic"]
