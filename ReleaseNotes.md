@@ -4862,3 +4862,7 @@ Polishes and shrinks some low tier weapons
 Fixes issues with Hand to Hand, Grapple and Choke (Leonin)
 Fixes rare crash with healer building
 Fixes rare crash on generating tournament spectator
+
+15.0.0.30
+**Fixes**
+Fixes noble commander having 6+ stars on noble start
