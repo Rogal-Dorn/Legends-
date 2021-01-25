@@ -75,7 +75,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.AgileTree,

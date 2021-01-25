@@ -94,9 +94,9 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (!this.getContainer().getSkills().hasSkill("effects.legend_prayer_of_life"))
+		if (!_user.getSkills().hasSkill("effects.legend_prayer_of_life"))
 		{
-			this.getContainer().getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+			_user.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
 		}
 
 		return true;

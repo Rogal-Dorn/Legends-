@@ -91,9 +91,11 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
-
-		this.getContainer().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
+		if (!_user.getSkills().hasSkill("effects.legend_prayer_of_faith"))
+		{
+		_user.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
 		return true;
+		}
 	}
 
 });
