@@ -4887,4 +4887,6 @@ Fixes noble commander having 6+ stars on noble start
 New trait images (von krolock)
 descriptions updated for perfect focus and wither
 Spelling errors fixed for female crusader and caravan hand backgrounds
+Gender neutral text on starts (@SireGoodman)
+Fixes Ifrits spawning 6 sibilings on death
 
