@@ -4872,6 +4872,7 @@ Economic difficulty now impacts recruit frequency.
 - 1x on hard
 - 0.5x on legendary  
 AI will use slings a bit more intelligently, they should hit more now 
+Swordmasters are gauranteed light armor again 
 
 **fixes** 
 fixes knockback prepared effect not finding target 
