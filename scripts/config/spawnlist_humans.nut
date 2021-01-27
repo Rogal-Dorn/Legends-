@@ -54,7 +54,6 @@ gt.Const.World.Spawn.Peasants <-
 		},
 		{
 			Weight = 12,
-			MinR = 0.50 * 160,
 			Types =
 			[
 				{
@@ -81,7 +80,6 @@ gt.Const.World.Spawn.Peasants <-
 		},
 		{
 			Weight = 3,
-			MinR = 0.50 * 160,
 			Types =
 			[
 				{
@@ -344,17 +342,17 @@ gt.Const.World.Spawn.Militia <-
 			]
 		},
 		{
-			Weight = 9,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.MilitiaCaptain,
-					Cost = 20
+					Cost = 20,
+					Roll = true
 				}
 			]
 		},
 		{
-			Weight = 1,
-			MinR = 0.50 * 585,
+			Weight = 5,
 			Types =
 			[
 				{
@@ -375,7 +373,7 @@ gt.Const.World.Spawn.Militia <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantMonk,
-					Cost = 20,
+					Cost = 15,
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,

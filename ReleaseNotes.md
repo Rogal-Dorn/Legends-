@@ -4864,5 +4864,13 @@ Fixes rare crash with healer building
 Fixes rare crash on generating tournament spectator
 
 15.0.0.30
+
+**Changes**
+Tweaked spawn rate for Noble parties (overall they are going to be a bit more dangerous)
+Tweaked spwan rates for Bandits (overall they are going to be a bit more dangerous)
+Tweaked spawn rates for Peasants
+Increased cap of beast spawns
+Fixed beast spawns not maxing out - World should have more beasts roaming and will be a bit more dangerous now.
+
 **Fixes**
 Fixes noble commander having 6+ stars on noble start

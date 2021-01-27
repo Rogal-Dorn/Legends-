@@ -65,7 +65,7 @@ gt.Const.World.Spawn.Noble <- {
 		},
 		{
 			Weight = 3,
-			MinR = 0.85 * 300,
+			MinR = 0.25 * 555,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
@@ -76,7 +76,7 @@ gt.Const.World.Spawn.Noble <- {
 		},
 		{
 			Weight = 3,
-			MinR = 0.85 * 400,
+			MinR = 0.4 * 555,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Knight,
@@ -86,8 +86,7 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
-			Weight = 6,
-			MinR = 0.85 * 200,
+			Weight = 5,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.ArmoredWardog,
@@ -97,7 +96,7 @@ gt.Const.World.Spawn.Noble <- {
 		},
 		{
 			Weight = 3,
-			MinR = 0.85 * 500,
+			MinR = 0.5 * 555,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
@@ -107,7 +106,7 @@ gt.Const.World.Spawn.Noble <- {
 		},
 		{
 			Weight = 3,
-			MinR = 0.85 * 600,
+			MinR = 0.5 * 555,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendFencer,
@@ -117,7 +116,7 @@ gt.Const.World.Spawn.Noble <- {
 		},
 		{
 			Weight = 4,
-			MinR = 0.85 * 700,
+			MinR = 0.5 * 555,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSlinger,
@@ -186,7 +185,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 		},
 		{
 			Weight = 2,
-			MinR = 0.85 * 300,
+			MinR = 0.6 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
@@ -197,7 +196,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 500,
+			MinR = 0.6 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
@@ -207,7 +206,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 600,
+			MinR = 0.5 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendFencer,
@@ -217,7 +216,7 @@ gt.Const.World.Spawn.NobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 700,
+			MinR = 0.5 * 300,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSlinger,
@@ -331,7 +330,7 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 		}
 		{
 			Weight = 2,
-			MinR = 0.85 * 300,
+			MinR = 0.5 * 365,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Sergeant,
@@ -342,7 +341,7 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 500,
+			MinR = 0.5 * 365,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHalberdier,
@@ -352,7 +351,7 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 600,
+			MinR = 0.5 * 365,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendFencer,
@@ -362,7 +361,7 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 		},
 		{
 			Weight = 1,
-			MinR = 0.85 * 700,
+			MinR = 0.5 * 365,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendSlinger,
