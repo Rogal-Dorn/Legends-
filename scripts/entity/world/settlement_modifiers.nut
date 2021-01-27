@@ -30,10 +30,23 @@ this.settlement_modifiers <- {
 		this.RecruitsMult = 1.25;
 		this.StablesMult = 1.0;
 
-		if (this.RecruitsMult != 1.25)
+		if (this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Easy)
 		{
-		this.RecruitsMult = 1.25;
+			this.RecruitsMult = 2.0;
 		}
+		if (this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Normal)
+		{
+			this.RecruitsMult = 1.5;
+		}		
+		if (this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Hard)
+		{
+			this.RecruitsMult = 1.0;
+		}
+		if (this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
+		{
+			this.RecruitsMult = 0.5;
+		}		
+
 	}
 
 	function create()

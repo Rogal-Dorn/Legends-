@@ -4871,6 +4871,20 @@ Tweaked spwan rates for Bandits (overall they are going to be a bit more dangero
 Tweaked spawn rates for Peasants
 Increased cap of beast spawns
 Fixed beast spawns not maxing out - World should have more beasts roaming and will be a bit more dangerous now.
+Economic difficulty now impacts recruit frequency.
+- 2x on easy
+- 1.5x on normal
+- 1x on hard
+- 0.5x on legendary
+AI will use slings a bit more intelligently, they should hit more now
+Swordmasters are gauranteed light armor again
 
 **Fixes**
+fixes knockback prepared effect not finding target
+fixes ratcatcher having an infection without the perks
+fixes bug in turn it in with gradually disapearing selections (taro)
 Fixes noble commander having 6+ stars on noble start
+New trait images (von krolock)
+descriptions updated for perfect focus and wither
+Spelling errors fixed for female crusader and caravan hand backgrounds
+

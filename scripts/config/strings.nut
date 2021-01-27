@@ -2139,7 +2139,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for one whole turn without incurring any free attacks. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendRust = "Unlocks a ranged attack that can deform, rip and otherwise render the target\'s armor unusable with great effect. Although the impact will be felt through the thickest of armor, it won\'t greatly injure the wearer.",
-	LegendWither = "Wither and age a target for three turns, reducing their damage, initiative and fatigeu by [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color], the effect lessens by 10% each turn.",
+	LegendWither = "Wither and age a target for three turns, reducing their damage, initiative and fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color], the effect lessens by 10% each turn.",
 	LegendDeathtouch = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim",
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
 	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
