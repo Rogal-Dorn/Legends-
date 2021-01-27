@@ -4862,3 +4862,21 @@ Polishes and shrinks some low tier weapons
 Fixes issues with Hand to Hand, Grapple and Choke (Leonin)
 Fixes rare crash with healer building
 Fixes rare crash on generating tournament spectator
+
+15.0.0.30
+
+**changes**
+Economic difficulty now impacts recruit frequency. 
+- 2x on easy
+- 1.5x on normal 
+- 1x on hard
+- 0.5x on legendary  
+AI will use slings a bit more intelligently, they should hit more now 
+
+((fixes** 
+fixes knockback prepared effect not finding target 
+fixes ratcatcher having an infection without the perks 
+fixes bug in turn it in with gradually disapearing selections (taro)
+
+
+
