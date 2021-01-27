@@ -46,7 +46,7 @@ this.perfect_focus <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The Action Point cost for using skills is reduced by half for the remainder of this round, but Fatigue costs are doubled."
+				text = "The Action Point cost for using skills is reduced by half for the remainder of this round, but at +75% fatigue cost"
 			}
 		];
 		return ret;

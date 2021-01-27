@@ -4879,4 +4879,6 @@ fixes knockback prepared effect not finding target
 fixes ratcatcher having an infection without the perks 
 fixes bug in turn it in with gradually disapearing selections (taro)
 Fixes noble commander having 6+ stars on noble start
-
+New trait images (von krolock) 
+descriptions updated for perfect focus and wither 
+Spelling errors fixed for female crusader and caravan hand backgrounds 
