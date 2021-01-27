@@ -1045,7 +1045,7 @@ gt.Const.Strings.BanditLeaderNames <- [
 	"Handsome %randomname%",
 	"%randomname% the Chopper",
 	"Despicable Dick",
-	"Kiiller %randomname% of %randomtown%",
+	"Killer %randomname% of %randomtown%",
 	"Funny %randomname%",
 	"%randomname% Priestkiller",
 	"%randomname% Firestarter",

@@ -4,7 +4,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.beast_hunters";
 		this.m.Name = "Beast Slayers";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your men make your living by hunting down the many beasts that beset villages on the fringes of civilization. It\'s dangerous work, but it pays well enough, and there\'s always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people don\'t trust your kind, so you get 10% worse prices.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your kind make your living by hunting down the many beasts that beset villages on the fringes of civilization. It is dangerous work, but it pays well enough and there is always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people do not trust your kind, so you get 10% worse prices.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 40;
 		this.m.IsFixedLook = true;
@@ -35,13 +35,14 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 			names.push(bro.getNameOnly());
 			i = ++i;
+			i = i;
 		}
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"beast_hunter_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "%name% saved you in the brigand\'s ambush that destroyed your band of slayers. He does not hang this fact over you, for you have saved him many a times yourself. The man suffers no emotion that does not bid him well in this world, and that alone makes him a sound slayer.";
+		bros[0].getBackground().m.RawDescription = "%name% saved you in the brigand\'s ambush that destroyed your band of slayers. The mercenary does not hang this fact over you, for you have saved %name% many a times yourself. The beast hunter suffers no emotion that does not bid well in this world and that alone makes for a sound slayer.";
 		bros[0].setPlaceInFormation(3);
 		bros[0].addLightInjury();
 		bros[0].m.Talents = [];
@@ -60,7 +61,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].setStartValuesEx([
 			"beast_hunter_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "A young lad from the city, %name% got his start in beast slaying by rooting out the warrens of \'vicious rabbits\', as he puts it. You\'re not sure how true that is, but regardless he has proven himself on the field of battle more times than you can count.";
+		bros[1].getBackground().m.RawDescription = "A young whelp from the city, %name% got a start in beast slaying by rooting out the warrens of \'vicious rabbits\', as one puts it. You are not sure how true that is, but regardless %name% has demonstrated greats feats of arms on the battlefield more times than you can count.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].addLightInjury();
 		bros[1].setVeteranPerks(2);
@@ -78,7 +79,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setStartValuesEx([
 			"beast_hunter_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, he\'s an intelligent man who started his foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is his study and preparation that gives him the edge in battle.";
+		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, the \'slayer\' started the foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is the study and preparation that gives %name% the edge in battle.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].addInjury(this.Const.Injury.Brawl);
 		bros[2].setVeteranPerks(2);
@@ -128,6 +129,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			}
 
 			i = ++i;
+			i = i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -186,7 +188,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
 		if (_list.len() < 10)
 		{

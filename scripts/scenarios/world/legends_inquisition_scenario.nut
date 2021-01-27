@@ -4,7 +4,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.legends_inquisition";
 		this.m.Name = "The Inquisition";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. A Witchunter, nun and flagellant must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Can not recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_40.png[/img][/p]There is a great evil in the world, the undead walk the earth and cultists hide in every town. The holy must purge the filth. \n\n[color=#bcad8c]Righteous Cause:[/color] Cannot recruit outlaw backgrounds; however, the pious will flock to join your cause. \n[color=#bcad8c]Penitence:[/color] Anyone you hire gains the Mind over Body perk.\n";
 		this.m.Difficulty = 2;
 		this.m.Order = 280;
 		this.m.IsFixedLook = true;
@@ -29,7 +29,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"flagellant_background"
-		]);	
+		]);
 		bros[0].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
@@ -47,17 +47,17 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
-		bros[0].fillTalentValues(1, true);			
+		bros[0].fillTalentValues(1, true);
 		bros[1].setStartValuesEx([
 			"witchhunter_background"
 		]);
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
-		talents[this.Const.Attributes.RangedSkill] = 3;	
+		talents[this.Const.Attributes.RangedSkill] = 3;
 		bros[0].getBaseProperties().RangedSkill += 5;
-		bros[0].getBaseProperties().Bravery += 10;		
-		bros[1].fillTalentValues(1, true);	
+		bros[0].getBaseProperties().Bravery += 10;
+		bros[1].fillTalentValues(1, true);
 		bros[1].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[1].improveMood(1.0, "Recently purged the unworthy");
 		bros[1].setPlaceInFormation(3);
@@ -74,10 +74,10 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Fatigue] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 3;	
+		talents[this.Const.Attributes.MeleeSkill] = 3;
 		bros[0].getBaseProperties().Hitpoints += 10;
-		bros[0].getBaseProperties().MeleeSkill += 5;	
-		bros[2].fillTalentValues(1, true);	
+		bros[0].getBaseProperties().MeleeSkill += 5;
+		bros[2].fillTalentValues(1, true);
 		bros[2].getBackground().m.RawDescription = "{%name% is a huge figure, who spent many years in a temple healing and carrying the sick, learning the power of both strength and compassion. It was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world. }";
 		bros[2].setPlaceInFormation(5);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/heavy_trait"));

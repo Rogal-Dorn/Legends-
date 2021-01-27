@@ -53,12 +53,24 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		local armor = this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk", 28],
-			[1, "mail_shirt"],
-			[1, "gambeson"],
-			[2, "basic_mail_shirt"]
-		])
-
+			[
+				1,
+				"mail_hauberk",
+				28
+			],
+			[
+				1,
+				"mail_shirt"
+			],
+			[
+				1,
+				"gambeson"
+			],
+			[
+				2,
+				"basic_mail_shirt"
+			]
+		]);
 		armor.setCondition(armor.getConditionMax() * this.Math.rand(25, 100) * 0.01);
 		items.equip(armor);
 	}
@@ -75,7 +87,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -83,6 +95,8 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -128,11 +142,10 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.World.Assets.updateLook(12);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
-
 		f.addPlayerRelation(-200.0, "You and your men deserted");
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 3; i = i )
 		{
 			while (true)
 			{
@@ -144,20 +157,23 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 					break;
 				}
 			}
+
+			i = ++i;
 		}
 
 		local roster = this.World.getPlayerRoster();
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 3; i = i )
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.setName(names[i]);
 			bro.setPlaceInFormation(3 + i);
 			this.setupBro(bro, f);
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
-		bros[0].getBackground().m.RawDescription = "{Prior to his conscription into the army, %name% was a failed, illiterate baker. His poor work and frequent dessert errors made him prone to being pulled into military ranks. Having always hated the life, the deserter was quick to join your cause and company.}";
+		bros[0].getBackground().m.RawDescription = "{Prior to conscription into the army, %name% was a failed, illiterate baker. Poor work and frequent dessert errors made it prone to pull %name% into military ranks. Having always hated the life, the deserter was quick to join your cause and company.}";
 		bros[0].getBackground().buildDescription(true);
 		local talents = bros[0].getTalents();
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -173,7 +189,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/hatchet"));
-		bros[1].getBackground().m.RawDescription = "{A fine fighter by any judgment, %name% simply hated the low pay of being a soldier in the army. His pursuit of the sellsword\'s life makes sense. Though he is quite flighty, you believe his transient sense of allegiance will be buffered by a steady flow of good coin.}";
+		bros[1].getBackground().m.RawDescription = "{A fine fighter by any judgment, %name% simply hated the low pay of being a soldier in the army. The pursuit of the sellsword\'s life makes sense. Though quite flighty, you believe %name%\'s transient sense of allegiance will be buffered by a steady flow of good coin.}";
 		bros[1].getBackground().buildDescription(true);
 		bros[1].setVeteranPerks(2);
 		local talents = bros[1].getTalents();
@@ -190,7 +206,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/shortsword"));
-		bros[2].getBackground().m.RawDescription = "{%name% is like many deserters. You can see the spirit of a fighter in him, but the heart for it is withering. It doesn\'t make him a coward, as many assume deserters to be, but instead simply a man who may need change. Hopefully the coin of mercenary work can provide it.}";
+		bros[2].getBackground().m.RawDescription = "{%name% is like many deserters. You can see the spirit of a fighter, but the heart for it is withering. It doesn\'t make %name% a coward, as many assume deserters to be, but instead simply someone who may need change. Hopefully the coin of mercenary work can provide it.}";
 		bros[2].getBackground().buildDescription(true);
 		bros[2].setVeteranPerks(2);
 		local talents = bros[2].getTalents();
@@ -208,7 +224,6 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-
 		this.World.Flags.set("HasLegendCampScouting", true);
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
@@ -219,27 +234,34 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		}, null);
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
 		if (_list.len() >= 10)
 		{
 			local r;
 			r = this.Math.rand(0, 1);
+
 			if (r == 0)
 			{
 				_list.push("deserter_background");
 			}
+
 			r = this.Math.rand(0, 3);
+
 			if (r == 0)
 			{
 				_list.push("militia_background");
 			}
+
 			r = this.Math.rand(0, 9);
+
 			if (r == 0)
 			{
 				_list.push("disowned_noble_background");
 			}
+
 			r = this.Math.rand(0, 9);
+
 			if (r == 0 && _gender)
 			{
 				_list.push("female_disowned_noble_background");
@@ -249,30 +271,37 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			local r;
 			r = this.Math.rand(0, 1);
+
 			if (r == 0)
 			{
 				_list.push("deserter_background");
 			}
+
 			r = this.Math.rand(0, 3);
+
 			if (r == 0)
 			{
 				_list.push("retired_soldier_background");
 			}
+
 			r = this.Math.rand(0, 19);
+
 			if (r == 0)
 			{
 				_list.push("swordmaster_background");
 			}
+
 			r = this.Math.rand(0, 19);
+
 			if (r == 0)
 			{
 				_list.push("bastard_background");
 			}
 		}
 	}
+
 	function onUpdateHiringRoster( _roster )
 	{
-
 		local bros = _roster.getAll();
 
 		foreach( i, bro in bros )
@@ -283,22 +312,27 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
 			}
+
 			if (r == 1)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/craven_trait"));
 			}
+
 			if (r == 2)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/fear_nobles_trait"));
 			}
+
 			if (r == 3)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/pessimist_trait"));
 			}
+
 			if (r == 4)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
 			}
+
 			if (r == 5)
 			{
 				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
@@ -306,14 +340,12 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 			if (!bro.getBackground().isCombatBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-				bro.improveMood(1.5, "Is excited at becoming a deserter")
+				bro.improveMood(1.5, "Is excited at becoming a deserter");
 			}
-
 		}
-
-
 	}
+
 });
 

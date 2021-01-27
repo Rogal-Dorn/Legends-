@@ -1,4 +1,3 @@
-// TODO a lot
 this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
@@ -28,7 +27,6 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_mage_legend_magic_missile"));
-
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getFlags().set("IsPlayerCharacter", true);
@@ -36,7 +34,6 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
-
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 	}
 
@@ -54,14 +51,15 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 			}
 
 			i = ++i;
+			i = i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
 
 		do
 		{
-			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X  1), this.Math.min(this.Const.World.Settings.SizeX  2, randomVillageTile.SquareCoords.X + 1));
-			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y  1), this.Math.min(this.Const.World.Settings.SizeY  2, randomVillageTile.SquareCoords.Y + 1));
+			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X, 1), this.Math.min(this.Const.World.Settings.SizeX, 2, randomVillageTile.SquareCoords.X + 1));
+			local y = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.Y, 1), this.Math.min(this.Const.World.Settings.SizeY, 2, randomVillageTile.SquareCoords.Y + 1));
 
 			if (!this.World.isValidTileSquare(x, y))
 			{
@@ -135,7 +133,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		if (bro.getBackground().isEducatedBackground())
 		{
-			bro.improveMood(1.0, "Excited to study from you");
+			bro.improveMood(1.0, "Excited to study under you");
 		}
 		else
 		{
@@ -197,3 +195,4 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 	}
 
 });
+
