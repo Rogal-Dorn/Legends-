@@ -257,6 +257,9 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
 	{
+		// foreach (k,v in t) {
+		//  	this.logInfo("K " + k + ": " +v)
+		// }
 		//Don't pick if resources are greater than threshold
 		if ("MaxR" in t && _resources > t.MaxR)
 		{
