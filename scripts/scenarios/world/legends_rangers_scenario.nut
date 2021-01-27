@@ -20,7 +20,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 1; i = ++i )
+		for( local i = 0; i < 1; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -32,6 +32,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
@@ -39,7 +40,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].setStartValuesEx([
 			"legend_ranger_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
+		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies}";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
@@ -47,19 +48,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
-
-	//	bros[1].setStartValuesEx([
-	//		"legend_ranger_background"
-	//	]);
-	//	bros[1].getBackground().m.RawDescription = "{%name% grew up in the rangers, taught the ways of the forest by his father. Running through the woods his whole life has made him particularly good at tracking enemies}";
-	//	bros[1].setPlaceInFormation(4);
-	//	bros[1].setVeteranPerks(2);
-	//	bros[2].setStartValuesEx([
-	//		"legend_ranger_background"
-	//	]);
-	//	bros[2].getBackground().m.RawDescription = "{%name% was woodsman, captured by the rangers for destroying a sacred grove. He recognised their cause as just and joined on the spot, he is deeply commited and driven}";
-	//	bros[2].setPlaceInFormation(5);
-	//	bros[2].setVeteranPerks(2);
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
@@ -127,10 +115,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 		while (1);
 
-
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
 		this.World.Assets.updateLook(103);
-		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_ranger");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		local f = nearestVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-20.0, "Heard rumors of you poaching in their woods");
@@ -144,10 +130,12 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-        if (this.World.State.getPlayer() != null)
-        {
-            this.World.State.getPlayer().m.BaseMovementSpeed = 111;
-        }
+
+		if (this.World.State.getPlayer() != null)
+		{
+			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
+		}
+
 		this.World.Assets.m.BrothersMax = 3;
 		this.World.Flags.set("IsLegendsHunter", true);
 	}
@@ -167,23 +155,27 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		return false;
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
-
 		local r;
 		r = this.Math.rand(0, 1);
+
 		if (r == 0)
 		{
 			_list.push("poacher_background");
 		}
+
 		local r;
 		r = this.Math.rand(0, 9);
+
 		if (r == 0)
 		{
 			_list.push("hunter_background");
 		}
+
 		local r;
 		r = this.Math.rand(0, 999);
+
 		if (r == 0)
 		{
 			_list.push("legend_ranger_background");
@@ -200,6 +192,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		{
 			bro.worsenMood(1.5, "Does not like sleeping in the woods");
 		}
+
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
@@ -218,17 +211,18 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			else
 			{
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 			}
 		}
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _tree )
 	{
-		if  (_tree == null)
+		if (_tree == null)
 		{
 			return;
 		}
+
 		_tree[0].push(this.Const.Perks.PerkDefs.Pathfinder);
 	}
 

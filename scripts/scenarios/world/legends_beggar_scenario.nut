@@ -4,7 +4,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.m.ID = "scenario.legends_beggar";
 		this.m.Name = "Beggar Challenge";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run with a very weak starting character, can you arouse the true power of your avatar? \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Learning in battles[/color]:  The beggar can gain stats and perks by defeating enemies.\n[color=#bcad8c]Begin alone Avatar[/color]:  If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: You can only hire lowerborn backgrounds.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run with a very weak starting character. Can you awaken the true power of your avatar? \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Learning in battles[/color]:  The beggar can gain stats and perks by defeating enemies.\n[color=#bcad8c]Begin alone Avatar[/color]: If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: You can only hire lowerborn backgrounds.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 50;
 	}
@@ -19,7 +19,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 1; i = ++i )
+		for( local i = 0; i < 1; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -32,12 +32,13 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
-
 		local r;
 		r = this.Math.rand(0, 3);
+
 		if (r == 0)
 		{
 			bros[0].setStartValuesEx([
@@ -53,20 +54,19 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-
 		this.World.Assets.m.BusinessReputation = -200;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
-		this.World.Assets.m.Money = (this.World.Assets.m.Money / 2) + 2;
-		this.World.Assets.m.ArmorParts = 0;	//this.World.Assets.m.ArmorParts / 2;
-		this.World.Assets.m.Medicine = 0;	//this.World.Assets.m.Medicine / 2;
-		this.World.Assets.m.Ammo = 0;	//this.World.Assets.m.Ammo / 2;
+		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 + 2;
+		this.World.Assets.m.ArmorParts = 0;
+		this.World.Assets.m.Medicine = 0;
+		this.World.Assets.m.Ammo = 0;
 	}
 
 	function onSpawnPlayer()
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -74,6 +74,8 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -82,6 +84,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Flat;
 		local f = randomVillage.getFactionOfType(this.Const.FactionType.NobleHouse);
 		f.addPlayerRelation(-200.0, "You know too much");
+
 		do
 		{
 			local x = this.Math.rand(this.Math.max(2, randomVillageTile.SquareCoords.X - 4), this.Math.min(this.Const.World.Settings.SizeX - 2, randomVillageTile.SquareCoords.X + 4));
@@ -128,7 +131,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_beggar_scenario_intro");
 		}, null);
-
 	}
 
 	function onInit()
@@ -138,7 +140,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.World.Assets.m.BrothersMaxInCombat = 27;
 		this.World.Assets.m.BrothersScaleMax = 27;
 	}
-
 
 	function onCombatFinished()
 	{
@@ -182,7 +183,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			_roster.remove(g);
 		}
 	}
-
 
 });
 

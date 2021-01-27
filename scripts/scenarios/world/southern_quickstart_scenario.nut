@@ -4,7 +4,7 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		this.m.ID = "scenario.southern_quickstart";
 		this.m.Name = "Southern Mercenaries";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_156.png[/img][/p][p]You and your small band of mercenaries have done the dirty work of small-time merchants for years, yet you\'re barely a step above brigands. You want to be bigger than that. You want it all. And the Gilder will reveal to you the way.\n\n[color=#bcad8c]A quick start into the southern part of the world, without any particular advantages or disadvantages.[/color][/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_156.png[/img][/p][p]You and your small band of mercenaries have done the dirty work of small-time merchants for years, yet you are barely a step above brigands. You want to be bigger than that. You want it all. And the Gilder will reveal the way to you.\n\n[color=#bcad8c]A quick start into the southern part of the world, without any particular advantages or disadvantages.[/color][/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 270;
 	}
@@ -19,7 +19,7 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 3; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -32,23 +32,24 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"companion_1h_southern_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{%name% was once in a Vizier\'s elite vanguard. A pitched battle saw his entire legion annihilated and himself buried underneath their bodies. He was abandoned to the desert and survived by means that even to this day he will not tell you. But his unerring loyalty to you speaks more than any war story ever could.}";
+		bros[0].getBackground().m.RawDescription = "{%name% was once in a Vizier\'s elite vanguard. A pitched battle saw the entire legion annihilated and %name% buried beneath their bodies. Abandoned to the desert, %name% survived by means that even to this day shall not be told. But the unerring loyalty to you speaks more than any war story ever could.}";
 		bros[0].setPlaceInFormation(3);
 		bros[1].setStartValuesEx([
 			"companion_2h_southern_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "{If loyalty was gold, %name% might be the wealthiest man to stand beneath the Gilder\'s eye. You found the man being ambushed in an alley. Helping him fight off the thieves, he swore allegiance to you for one year. And it has been many since. Despite getting his ass kicked at first sight, %name% is a very formidable fighter when not getting bushwhacked.}";
+		bros[1].getBackground().m.RawDescription = "{If loyalty was gold, this might be the wealthiest person to stand beneath the Gilder\'s eye. You found %name% being ambushed in an alley and promptly fought off the thieves. The southerner swore allegiance to you for one year. And it has been many since. Despite a lousy first fighting impression, %name% is a formidable warrior when not getting bushwhacked.}";
 		bros[1].setPlaceInFormation(4);
 		bros[2].setStartValuesEx([
 			"companion_ranged_southern_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "{You\'re not entirely sure of %name%\'s past, only that his path has not had as much shine as one would hope. He says he\'s filled many roles, but the army won\'t have him, and the city guard won\'t have him, and the women certainly won\'t have him, so he\'s taken the life as a Crownling. He thinks a glorious and hastened death will bring him to the Gilder\'s eye so he can ask Him why exactly He\'s treated his life so harshly. When he\'s not moping about, %name% can be cheerful and funny. Just keep him away from drinks and priests.}";
+		bros[2].getBackground().m.RawDescription = "{You are not entirely sure of %name%\'s past, only that the path traveled has not had as much shine as one would hope. %name% has attempted to live many lives, but the army said no, the city guard refused and the brothels closed their doors shut. A life as a Crownling it is then. %name% thinks a glorious and hastened death will mean a faster trip to the Gilder\'s eye so the two of them can discuss why exactly the life lived was so troublesome. When the southerner is not moping about, %name% can be cheerful and funny. Just keep the mercenary away from drinks and priests.}";
 		bros[2].setPlaceInFormation(5);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
@@ -59,7 +60,7 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -67,6 +68,8 @@ this.southern_quickstart_scenario <- this.inherit("scripts/scenarios/world/start
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();

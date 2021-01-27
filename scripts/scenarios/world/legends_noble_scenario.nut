@@ -66,7 +66,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 		items.equip(shield);
 
-		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
+		bros[1].getBackground().m.RawDescription = "Though a lowly foot soldier %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
 		bros[1].getBackground().buildDescription(true);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
 		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));

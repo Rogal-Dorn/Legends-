@@ -4,7 +4,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_party";
 		this.m.Name = "Adventuring Party";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers have formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of six overpowered adventurers, each with their own skills.[/color][/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_134.png[/img][/p][p]After an unlikely meeting in a tavern, an unlikely group of strangers has formed an adventuring party. They have set out in search of both dragons and dungeons.\n\n[color=#bcad8c]A party of six overpowered adventurers, each with their own skills.[/color][/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 10;
 	}
@@ -19,7 +19,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 6; i = ++i )
+		for( local i = 0; i < 6; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -32,13 +32,14 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
 			"legend_berserker_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{%name% was drunk when they agreed to join the party, now that they hae sobered up you aren\'t sure if hiring this brute was a good idea. The mercenary seems disturbed, unstable and prone to extreme violence. On the other hand, that could be very useful.}";
+		bros[0].getBackground().m.RawDescription = "{%name% was drunk when they agreed to join the party, now that they have sobered up you are not sure if hiring this brute was a good idea. The mercenary seems disturbed, unstable and prone to extreme violence. On the other hand, that could be very useful.}";
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/mad_trait"));
@@ -46,7 +47,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].setStartValuesEx([
 			"assassin_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "{%name% was weird when you met him. After some time traveling with your party you found out %name% was hired to assassinate local lord. %name%  wanted to use your company just for temporary disguise but decided to stay. }";
+		bros[1].getBackground().m.RawDescription = "{%name% was acting weird when you met the hooded figure. After some time traveling with your party you found out %name% was hired to assassinate a local lord. %name% wanted to use your company as a temporary disguise but decided to stay.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/aggressive_trait"));
@@ -54,7 +55,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setStartValuesEx([
 			"legend_crusader_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "%name% is a righteous man, constantly chanting religious hymns and passages. He exists to fight the undead and has a burning passion against any kind of necromancy. How he ever agreed to join forces with those who do not share his zeal remains a mystery.";
+		bros[2].getBackground().m.RawDescription = "%name% is a righteous fighter, constantly chanting religious hymns and psalms. The crusader exists to fight the undead and has a burning passion against any kind of necromancy. How the holy warrior ever agreed to join forces with those who do not share a similar zeal remains a mystery.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
@@ -62,7 +63,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].setStartValuesEx([
 			"legend_witch_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "%name% is a cunning woman, knowledgable on nearly ever subject. She spends her time gathering ingredients and tinkering with concoctions to use in battle, she assures you nothing she does is magic, but it sure looks like it.";
+		bros[3].getBackground().m.RawDescription = "%name% is a cunning savant, a well of knowledge on nearly ever subject. Spending hours gathering ingredients and tinkering with concoctions to use in battle, %name% assures you no magic is involved, but it sure looks like it.";
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/bright_trait"));
@@ -70,7 +71,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[4].setStartValuesEx([
 			"legend_noble_commander_background"
 		]);
-		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The way he holds himself, his upper class mannerisms, and his uncanny ability to never get dirty as the rest of the party. He is also a conniving selfish liar with a silver tongue, like any noble. Despite this, he denies all connections to nobility and claims he is a commoner like everyone else.";
+		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The posture, the upper class mannerisms and the uncanny ability to never get as dirty as the rest of the party. A conniving, selfish liar with a silver tongue to boot, like any noble. Despite this, the blue-blood denies all connections to nobility and claims to be a commoner like everyone else.";
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
@@ -78,12 +79,11 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].setStartValuesEx([
 			"legend_ranger_background"
 		]);
-		bros[5].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more detail than anyone else. He speaks little of himself, but it is clear he holds a deep affinity with the land, and sees orcs as a symbol of all that is wrong with the world.";
+		bros[5].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more details than anyone else. A person of few words, it is clear the ranger holds a deep affinity with the land and sees orcs as a symbol of all that is wrong with the world.";
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
-
 		this.World.Assets.m.ChampionChanceAdditional = 5;
 	}
 
@@ -94,12 +94,11 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Flags.set("IsLegendsParty", true);
 	}
 
-
 	function onSpawnPlayer()
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -107,6 +106,8 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -147,7 +148,6 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(109);
-		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_party");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
