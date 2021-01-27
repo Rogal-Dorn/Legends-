@@ -2211,7 +2211,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contracts will pay more, and you\'ll be able to carry more resources at once. \n\n 100%  heal and repair rate outside camp. +5% buy + 5% sell + 10% payments \n\nRecommended for players new to the game."
+					text = "Contracts will pay more, there will be more recruits available, and you\'ll be able to carry more resources at once. \n\n 100% heal and repair rate outside camp. prices are 5%% better when buying and selling, +10% from contract payments, recruits are twice as common. \n\nRecommended for players new to the game."
 				}
 			];
 
@@ -2225,7 +2225,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. \n\nRecommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. +50% more recruits avaialable. \n\nRecommended for veterans of the game or the genre."
 				}
 			];
 
@@ -2253,7 +2253,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Contract pay will be pitiful.\n\n  10% heal and repair rate outside camp. -10% buy, -10% sell, -10% payments  \n\nRecommended for those who want the most challenging experience."
+					text = "Contract pay will be pitiful.\n\n  10% heal and repair rate outside camp. -10% buy, -10% sell, -10% payments -50% less recruits avaialable. \n\nRecommended for those who want the most challenging experience."
 				}
 			];
 		case "menu-screen.new-campaign.EasyDifficultyBudget":
