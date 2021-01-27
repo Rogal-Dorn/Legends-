@@ -4873,10 +4873,9 @@ Economic difficulty now impacts recruit frequency.
 - 0.5x on legendary  
 AI will use slings a bit more intelligently, they should hit more now 
 
-((fixes** 
+**fixes** 
 fixes knockback prepared effect not finding target 
 fixes ratcatcher having an infection without the perks 
 fixes bug in turn it in with gradually disapearing selections (taro)
-
-
+Fixes noble commander having 6+ stars on noble start
 

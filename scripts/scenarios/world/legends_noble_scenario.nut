@@ -23,7 +23,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-			bro.fillTalentValues(3);
+			if (i != 0)
+			{
+				bro.fillTalentValues(3); //quick way to skip noble commander's fill talent values
+			}
 		}
 		local bros = roster.getAll();
 
