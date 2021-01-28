@@ -74,7 +74,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 
 		// this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
 
-		// if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		// if ("LegendsMod" in this.World && this.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		// {
 		// 	if(this.Math.rand(1, 20) == 1)
 		// 	{
