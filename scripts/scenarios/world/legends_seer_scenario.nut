@@ -29,7 +29,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		bro.m.PerkPointsSpent += 3;
 
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			bro.m.PerkPointsSpent += 1;

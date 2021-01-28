@@ -54,7 +54,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson");
 			local chains = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");

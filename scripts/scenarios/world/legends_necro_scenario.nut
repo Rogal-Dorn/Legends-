@@ -42,7 +42,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 			bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));

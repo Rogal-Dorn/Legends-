@@ -3,11 +3,11 @@ this.legends_brother_statistics_manager <- {
         ActorInteractions = null,
         IDToRef = array(27, -1)
     },
-    
+
     function create()
     {
         this.m.IDToRef <- array(27);
-        this.m.ActorInteractions <- array(27); //suposedly this is how u do 2d arrays in squirrel, code from https://forums.electricimp.com/t/2d-array/2788 
+        this.m.ActorInteractions <- array(27); //suposedly this is how u do 2d arrays in squirrel, code from https://forums.electricimp.com/t/2d-array/2788
         foreach (subarr in this.m.ActorInteractions)
         {
             subarr = array(27);
@@ -49,8 +49,8 @@ this.legends_brother_statistics_manager <- {
 		return val;
 	}
 
-    //i.e. we can call `this.World.LegendsMod.getStatistics().incrementForAll("BattlesTogether")`
-    //or to change specific ones this.World.LegendsMod.getStatistics().getInteractionBetween(id1,id2).incrementKey("BattlesTogether", 1)
+    //i.e. we can call `this.LegendsMod.getStatistics().incrementForAll("BattlesTogether")`
+    //or to change specific ones this.LegendsMod.getStatistics().getInteractionBetween(id1,id2).incrementKey("BattlesTogether", 1)
     function incrementForAll( _key, _val = 1 )
     {
         for(local i = 0; i < 27; ++i)
@@ -62,16 +62,16 @@ this.legends_brother_statistics_manager <- {
         }
     }
 
-    function addInteraction( _id ) 
-    {  
+    function addInteraction( _id )
+    {
         //goes across and adds new tables -> i.e. addInteraction(3) adds [0][2], [1][2] -> [2][3], [2][4], ... [2][n], assuming the id exists
-        for (local i = 0; i < _id - 1; ++i) 
+        for (local i = 0; i < _id - 1; ++i)
         {
             if (idExists(i))
             {
-                this.m.ActorInteractions[_id - 1][i] = this.new("scripts/statistics/legends_actor_interaction");   
+                this.m.ActorInteractions[_id - 1][i] = this.new("scripts/statistics/legends_actor_interaction");
             }
-            
+
         }
         for (local i = _id; i < 27; ++i)
         {
@@ -86,8 +86,8 @@ this.legends_brother_statistics_manager <- {
     {
         for (local i = 0; i < 27; ++i) //clear's the column & row of ID
         {
-            this.m.ActorInteractions[i][_id - 1] = null; 
-            this.m.ActorInteractions[_id - 1][i] = null; 
+            this.m.ActorInteractions[i][_id - 1] = null;
+            this.m.ActorInteractions[_id - 1][i] = null;
         }
     }
 
@@ -114,7 +114,7 @@ this.legends_brother_statistics_manager <- {
             this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
         }
     }
-    
+
     function onSerialize( _out )
     {
 
@@ -133,6 +133,6 @@ this.legends_brother_statistics_manager <- {
         }
         _out.writeU8(0);
         _out.writeU8(0);
-       
+
     }
 };

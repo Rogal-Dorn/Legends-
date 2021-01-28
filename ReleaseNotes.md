@@ -4890,3 +4890,6 @@ Spelling errors fixed for female crusader and caravan hand backgrounds
 Gender neutral text on starts (@SireGoodman)
 Fixes Ifrits spawning 6 sibilings on death
 
+
+Fixes a few scenarios from not starting
+
