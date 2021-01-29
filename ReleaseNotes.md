@@ -4899,3 +4899,9 @@ Fixes a few scenarios from not starting
 Fixes Faction Helmet and Armor not correctly being built (Thanks @Leonion)
 Fixes error in prepare knockback skill
 
+15.0.0.31
+
+**Scenario Fixes**
+Inquisition 1st character now doesn't get the extra stats the 2nd and 3rd characters should get
+Fixes inquisition nun possibly getting Lumbering with an excluded perk
+Fixes inquisition characters having 5-6 talents with stars
