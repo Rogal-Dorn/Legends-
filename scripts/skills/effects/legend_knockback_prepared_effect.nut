@@ -76,7 +76,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 
 		this.applyFatigueDamage(_targetEntity, 10);
 
-		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
 			return;
 		}

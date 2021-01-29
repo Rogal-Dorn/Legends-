@@ -93,7 +93,7 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
                 break
             case 10:
                 gambesons = [4,5,10];
-                break  
+                break
         }
 
         this.setVariant(this.Math.rand(0, gambesons.len() - 1));
@@ -159,7 +159,7 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
         {
             this.setUpgrade(plate)
         }
-        local tabard = this.new("scripts/items/legend_armor/tabard/legend_armor_noble_tabard");
+		local tabard = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
         tabard.setVariant(_variant);
         this.setUpgrade(tabard);
     }
