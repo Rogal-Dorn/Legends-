@@ -4891,5 +4891,11 @@ Gender neutral text on starts (@SireGoodman)
 Fixes Ifrits spawning 6 sibilings on death
 
 
+
+15.0.0.30a
+
+**Fixes**
 Fixes a few scenarios from not starting
+Fixes Faction Helmet and Armor not correctly being built (Thanks @Leonion)
+Fixes error in prepare knockback skill
 

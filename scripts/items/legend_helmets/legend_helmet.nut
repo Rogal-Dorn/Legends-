@@ -1113,6 +1113,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	// 	return basePrice;
 	// }
 
+	function setupArmor(_variant)
+	{
+
+	}
+
 	function onSerialize( _out )
 	{
 		this.helmet.onSerialize(_out);
