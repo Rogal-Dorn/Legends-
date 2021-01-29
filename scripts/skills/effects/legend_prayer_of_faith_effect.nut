@@ -9,7 +9,7 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "prayer_purple";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
-		this.m.IsHidden = true;
+		this.m.IsHidden = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
 
@@ -18,7 +18,7 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local resolve = actor.getBaseProperties().Bravery;
 		local bonus = this.Math.floor(resolve * 0.20);
-		
+
 		return bonus;
 	}
 
@@ -48,6 +48,8 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		local actor = this.getContainer().getActor();
+		this.spawnIcon(this.m.Overlay, actor.getTile());
 	}
 
 	function onTurnEnd()
