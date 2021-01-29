@@ -2107,14 +2107,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	// 	this.m.CompanyID = _num;
 	// }
 
-	function removeStars()
-	{
-		for (local i = 0; i < this.m.Talents.len(); i++)
-		{
-			this.m.Talents[i] = 0;
-		}
-	}
-
 	function fillTalentValues( _num, _force = false )
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);

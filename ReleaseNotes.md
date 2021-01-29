@@ -4899,4 +4899,3 @@ Fixes a few scenarios from not starting
 Inquisition 1st character now doesn't get the extra stats the 2nd and 3rd characters should get
 Fixes inquisition nun possibly getting Lumbering with an excluded perk
 Fixes inquisition characters having 5-6 talents with stars
-
