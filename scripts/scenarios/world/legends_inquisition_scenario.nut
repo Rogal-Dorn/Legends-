@@ -45,19 +45,24 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
+		bros[0].removeStars();
+		bros[0].fillTalentValues(1, true);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
-		bros[0].fillTalentValues(1, true);
+		
+
+
 		bros[1].setStartValuesEx([
 			"witchhunter_background"
 		]);
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
+		bros[1].removeStars();
+		bros[1].fillTalentValues(1, true);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.RangedSkill] = 3;
-		bros[0].getBaseProperties().RangedSkill += 5;
-		bros[0].getBaseProperties().Bravery += 10;
-		bros[1].fillTalentValues(1, true);
+		bros[1].getBaseProperties().RangedSkill += 5;
+		bros[1].getBaseProperties().Bravery += 10;
 		bros[1].getBackground().m.RawDescription = "{%name% has seen well the damage magic can bring to the world. The witches who steal the minds of men, the nightmares that end lives, and the necromancers who bring them back again. Hunting these foul creatures is the duty of all who serve the good of the gods. If the war is to be won, %name% will need a witch hunter army.}";
 		bros[1].improveMood(1.0, "Recently purged the unworthy");
 		bros[1].setPlaceInFormation(3);
@@ -68,23 +73,29 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[1].m.PerkPointsSpent += 1;
+
 		bros[2].setStartValuesEx([
 			"legend_nun_background"
 		]);
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
+		bros[2].removeStars();
+		bros[2].fillTalentValues(1, true);
 		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 3;
-		bros[0].getBaseProperties().Hitpoints += 10;
-		bros[0].getBaseProperties().MeleeSkill += 5;
-		bros[2].fillTalentValues(1, true);
+		bros[2].getBaseProperties().Hitpoints += 10;
+		bros[2].getBaseProperties().MeleeSkill += 5;
 		bros[2].getBackground().m.RawDescription = "{%name% is a huge figure, who spent many years in a temple healing and carrying the sick, learning the power of both strength and compassion. It was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world. }";
 		bros[2].setPlaceInFormation(5);
-		bros[2].getSkills().add(this.new("scripts/skills/traits/heavy_trait"));
+		local heavy = this.new("scripts/skills/traits/heavy_trait");
+		foreach(skill in heavy.m.Excluded)
+		{
+			bros[2].getSkills().removeByID(skill);
+		}
+		bros[2].getSkills().add(heavy);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
-
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/reinforced_wooden_flail"));
