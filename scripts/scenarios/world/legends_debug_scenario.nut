@@ -28,7 +28,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(["houndmaster_background"])//this.Const.CharacterBackgroundsRandom);
+			bro.setStartValuesEx(["legend_crusader_commander_background"])//this.Const.CharacterBackgroundsRandom);
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;

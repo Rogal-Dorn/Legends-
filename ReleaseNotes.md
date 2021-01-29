@@ -4898,8 +4898,7 @@ Fixes Ifrits spawning 6 sibilings on death
 Fixes a few scenarios from not starting
 Fixes Faction Helmet and Armor not correctly being built (Thanks @Leonion)
 Fixes error in prepare knockback skill
-
-15.0.0.31
+Fixes not showing prayer of hope and life effects on bros
 
 **Scenario Fixes**
 Inquisition 1st character now doesn't get the extra stats the 2nd and 3rd characters should get
