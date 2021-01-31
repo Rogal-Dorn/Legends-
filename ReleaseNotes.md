@@ -4903,6 +4903,8 @@ Fixes incorrect tower shield icon dimensions
 Adjusted sprites for named glaive and named sword to better fit the character
 Fixes default vision radius for scout camp
 Fixes ratcatcher random chance for Therianthropy
+Fixed some character names.
+Fixed duplicate trained group in hedgeknight, and replaced Xbow with Hammer group.
 
 **Scenario Fixes**
 Inquisition 1st character now doesn't get the extra stats the 2nd and 3rd characters should get
