@@ -64,7 +64,7 @@ this.send_refugees_action <- this.inherit("scripts/factions/faction_action", {
 		party.getFlags().set("IsRandomlySpawned", true);
 		party.getLoot().Money = this.Math.rand(0, 50);
 
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			local resources = this.Math.max(1, this.Math.round(0.01 * this.m.Start.getResources()));
 			this.m.Start.setResources(this.m.Start.getResources() - resources);

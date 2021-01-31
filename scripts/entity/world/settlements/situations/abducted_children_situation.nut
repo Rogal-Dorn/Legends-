@@ -27,7 +27,7 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.015);
 		}
@@ -35,7 +35,7 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onResolved( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.03);
 		}
@@ -46,6 +46,11 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 		_modifiers.BuyPriceMult *= 1.25;
 		_modifiers.SellPriceMult *= 0.75;
 		_modifiers.RecruitsMult *= 0.5;
+	}
+
+	function onUpdateDraftList( _draftList, _gender )
+	{
+	_draftList.push("witchhunter_background");
 	}
 
 });

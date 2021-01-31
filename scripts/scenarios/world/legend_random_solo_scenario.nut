@@ -1,10 +1,10 @@
-this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/starting_scenario", {
+this.legend_random_solo_scenario <- this.inherit("scripts/scenarios/world/starting_scenario", {
 	m = {},
 	function create()
 	{
 		this.m.ID = "scenario.legend_random_solo";
 		this.m.Name = "Random Solo";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Striking out on your own, who knows what the world has in store?\n\n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Avatar:[/color] If you die, its game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Striking out on your own, who knows what the world has in store?\n\n[color=#bcad8c]Random Backgrounds:[/color] Your background will be different each time you start.\n[color=#bcad8c]Random equipment:[/color] The equipment you begin with is different each time.\n[color=#bcad8c]Avatar:[/color] If you die, it is game over.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 210;
 		this.m.IsFixedLook = true;
@@ -14,16 +14,18 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 	{
 		return this.Const.DLC.Wildmen;
 	}
+
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
 
-		for( local i = 0; i < 1; i = ++i )
+		for( local i = 0; i < 1; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
@@ -33,19 +35,17 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
-
 	function onSpawnPlayer()
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -53,6 +53,8 @@ this.legend_random_solo_scenario<- this.inherit("scripts/scenarios/world/startin
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();

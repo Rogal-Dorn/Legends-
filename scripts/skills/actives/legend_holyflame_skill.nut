@@ -102,9 +102,11 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 		local p = {
 			Type = "legend_holyflame",
 			Tooltip = "This is hallowed ground. Our allies shall be sanctified, becoming immune to injury. The undead shall be consecrated, able to gain injury and unable to resurrect.",
+			IsPositive = false,
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
+			IsAppliedOnEnter = true,
 			IsByPlayer = _user.isPlayerControlled(),
 			Timeout = this.Time.getRound() + 2,
 			Callback = this.Const.Tactical.Common.onApplyHolyFlame

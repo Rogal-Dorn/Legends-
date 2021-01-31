@@ -36,7 +36,7 @@ this.snake_oil_07_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
-		if (this.World.LegendsMod.Configs().LegendAllBlueprintsEnabled())
+		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
 		{
 			return true;
 		}

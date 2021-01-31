@@ -170,7 +170,7 @@ this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambiti
 	function onUpdateScore()
 	{
 
-		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			this.m.IsDone = true;
 			return;

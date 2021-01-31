@@ -97,7 +97,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -265,13 +265,13 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (r == 1)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+				(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
 			))
 		}
 		else if (r == 2)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(this.World.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+				(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 			))
 		}
 		items.equip(a);

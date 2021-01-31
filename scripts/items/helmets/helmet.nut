@@ -362,6 +362,11 @@ this.helmet <- this.inherit("scripts/items/item", {
 	{
 		local staminaMult = 1.0;
 
+		if (this.getContainer() == null || this.getContainer().getActor() == null || this.getContainer().getActor().isNull())
+		{
+			return;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.brawny"))
 		{
 			staminaMult = 0.7;

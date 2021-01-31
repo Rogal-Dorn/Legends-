@@ -17,7 +17,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
@@ -25,7 +25,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 
 	function onResolved( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}
@@ -45,6 +45,24 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 	function onUpdate( _modifiers )
 	{
 		_modifiers.RecruitsMult *= 0.75;
+	}
+
+	function onUpdateDraftList( _draftList, _gender )
+	{
+
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_list.push("legend_vampire_background");
+				}
+			}
+
+		}
+
 	}
 
 });

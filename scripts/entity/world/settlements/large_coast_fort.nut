@@ -61,7 +61,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background",
-			 "apprentice_background",
+			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",
 			"caravan_hand_background",
@@ -94,7 +94,13 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"swordmaster_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"beast_hunter_background",
+			"manhunter_background",
+			"female_thief_background",
+			"legend_taxidermist_background",
+			"legend_blacksmith_background",
+			"legend_noble_ranged"
 		];
 		this.m.StablesList = [
 			"legend_horse_destrier",

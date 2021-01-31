@@ -18,7 +18,7 @@ this.unhold_attacks_situation <- this.inherit("scripts/entity/world/settlements/
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
@@ -26,7 +26,7 @@ this.unhold_attacks_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onResolved( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}

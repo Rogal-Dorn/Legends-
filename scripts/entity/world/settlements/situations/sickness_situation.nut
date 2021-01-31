@@ -27,7 +27,7 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -58,7 +58,7 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 		_draftList.push("legend_diviner_background");
 		}

@@ -234,7 +234,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_23.png[/img]The mercenary\'s drinking must be a result of something. You set out to find out what the cause was. You give some water and food to the drunkard and have them excercise until they sober up. You You (walk a short way|site for a time|wander around the camp perimeter|sit in your tent|sit around the fire after others fall asleep|walk a long time through the surrounding lands|stare at the sky together|gaze into the fire)  and talk on the (issues|memories|concerns|worries|fears) that (plague|haunt|hunt|pursue|govern|tarry|gnaw at|consume) them, %drunkard% tells you their story of (family abuse|lost love|tyrantical injustice|infidelity|brutal employment|childhood neglect|a wartorn hometown|natural disaster|family tradgedy|a witch curse|the cruelty of the gods|a lost child|a backstabbing business parter|abandonment|loss|tragedy|brutality). You talk for a time about not letting the past (influence|govern|control|infect|overcome|outweigh|shade|color|undo|replace|undermine) the future. Something stirs deep inside them, and they swear they\'ll never make this mistake again.",
+			Text = "[img]gfx/ui/events/event_23.png[/img]The mercenary\'s drinking must be a result of something. You set out to find out what the cause was. You give some water and food to the drunkard and have them excercise until they sober up. You {walk a short way|sit for a time|wander around the camp perimeter|sit in your tent|sit around the fire after others fall asleep|walk a long time through the surrounding lands|stare at the sky together|gaze into the fire} and talk on the {issues|memories|concerns|worries|fears} that }plague|haunt|hunt|pursue|govern|tarry|gnaw at|consume} them, %drunkard% tells you their story of {family abuse|lost love|tyrantical injustice|infidelity|brutal employment|childhood neglect|a wartorn hometown|natural disaster|family tradgedy|a witch curse|the cruelty of the gods|a lost child|a backstabbing business parter|abandonment|loss|tragedy|brutality}. You talk for a time about not letting the past {influence|govern|control|infect|overcome|outweigh|shade|color|undo|replace|undermine} the future. Something stirs deep inside them, and they swear they\'ll never make this mistake again.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -261,7 +261,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 					id = 10,
 					icon = "skills/status_effect_62.png",
 					text = _event.m.Drunkard.getName() + " is hungover"
-				});	
+				});
 				_event.m.Drunkard.worsenMood(2.5, "Relived the past and realised the error of their ways");
 				this.List.push({
 					id = 10,
@@ -273,7 +273,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "G",
-			Text = "[img]gfx/ui/events/event_23.png[/img]The mercenary\'s drinking must be a result of something. You set out to find out what the cause was. You give some water and food to the drunkard and have them excercise until they sober up. You (walk a short way|site for a time|wander around the camp perimeter|sit in your tent|sit around the fire after others fall asleep|walk a long time through the surrounding lands|stare at the sky together|gaze into the fire) and talk on the (issues|memories|concerns|worries|fears) that (plague|haunt|hunt|pursue|govern|tarry|gnaw at|consume) them, %drunkard% tells you their story of (family abuse|lost love|tyrantical injustice|infidelity|brutal employment|childhood neglect|a wartorn hometown|natural disaster|family tradgedy|a witch curse|the cruelty of the gods|a lost child|a backstabbing business parter|abandonment|loss|tragedy|brutality|hopelessness|tyrany|injustice|unrequited love|unfulfilled ambition). You talk for a time about not letting the past (influence|govern|control|infect|overcome|outweigh|shade|color|undo|replace|undermine) the future. Despite the in depth conversation, you fear the issue is not yet resolved.",
+			Text = "[img]gfx/ui/events/event_23.png[/img]The mercenary\'s drinking must be a result of something. You set out to find out what the cause was. You give some water and food to the drunkard and have them excercise until they sober up. You {walk a short way|site for a time|wander around the camp perimeter|sit in your tent|sit around the fire after others fall asleep|walk a long time through the surrounding lands|stare at the sky together|gaze into the fire} and talk on the {issues|memories|concerns|worries|fears} that {plague|haunt|hunt|pursue|govern|tarry|gnaw at|consume} them, %drunkard% tells you their story of {family abuse|lost love|tyrantical injustice|infidelity|brutal employment|childhood neglect|a wartorn hometown|natural disaster|family tradgedy|a witch curse|the cruelty of the gods|a lost child|a backstabbing business parter|abandonment|loss|tragedy|brutality|hopelessness|tyrany|injustice|unrequited love|unfulfilled ambition}. You talk for a time about not letting the past {influence|govern|control|infect|overcome|outweigh|shade|color|undo|replace|undermine} the future. Despite the in depth conversation, you fear the issue is not yet resolved.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -294,7 +294,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 					id = 10,
 					icon = "skills/status_effect_62.png",
 					text = _event.m.Drunkard.getName() + " is hungover"
-				});	
+				});
 				_event.m.Drunkard.worsenMood(1.0, "Lost an item and relived the past");
 				this.List.push({
 					id = 10,
@@ -303,7 +303,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 				});
 				local brothers = this.World.getPlayerRoster().getAll();
 			}
-		
+
 		});
 	}
 

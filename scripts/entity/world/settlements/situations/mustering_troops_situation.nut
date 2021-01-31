@@ -28,7 +28,7 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.1);
 		}
@@ -53,6 +53,8 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 		if (_gender)
 		{
+			_draftList.push("female_beggar_background");
+			_draftList.push("female_beggar_background");
 			_draftList.push("female_beggar_background");
 		}
 

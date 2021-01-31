@@ -118,12 +118,12 @@ this.send_greenskin_army_action <- this.inherit("scripts/factions/faction_action
 		}
 		local rand = this.Math.rand(80, 120);
 		local nearestOrcs = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
-	//		if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && nearestOrcs > 28)
+	//		if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && nearestOrcs > 28)
 	//		{
 	//			rand *= nearestOrcs / 28.0;
 	//		}
 		local distanceToNextSettlement = this.getDistanceToSettlements(best_settlement.getTile());
-			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 				rand *=  distanceToNextSettlement / 14.0;
 			}

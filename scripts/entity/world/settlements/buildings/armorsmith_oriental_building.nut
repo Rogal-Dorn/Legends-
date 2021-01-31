@@ -135,7 +135,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		];
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			foreach( i in this.Const.Items.LegendNamedSouthernArmorLayers )
 			{
@@ -211,7 +211,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
-			if (!this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				list.push({
 					R = 85,
@@ -261,7 +261,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 					P = 1.25,
 					S = "legend_armor/armor_upgrades/legend_metal_plating_upgrade"
 				});
-				list.push({	
+				list.push({
 					R = 85,
 					P = 1.25,
 					S = "legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade"

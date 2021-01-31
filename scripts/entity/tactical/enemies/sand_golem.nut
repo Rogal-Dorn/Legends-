@@ -117,16 +117,15 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 			if (freeTiles.len() != 0)
 			{
 				local n = 2;
-				n = --n;
 
-				while (n >= 0 && freeTiles.len() >= 1)
+				while (n != 0 && freeTiles.len() >= 1)
 				{
 					local r = this.Math.rand(0, freeTiles.len() - 1);
 					local tile = freeTiles[r];
 					freeTiles.remove(r);
 					local rock = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/sand_golem", tile.Coords.X, tile.Coords.Y);
 					rock.setFaction(this.getFaction());
-
+					n = n - 1;
 					if (this.getWorldTroop() != null && ("Party" in this.getWorldTroop()) && this.getWorldTroop().Party != null && !this.m.WorldTroop.Party.isNull())
 					{
 						local e;
@@ -143,7 +142,6 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 								Type = this.Const.World.Spawn.Troops.SandGolem
 							}, false);
 						}
-
 						rock.setWorldTroop(e);
 					}
 
@@ -301,6 +299,15 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/merge_golem_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/throw_golem_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/headbutt_skill"));
+
+		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		this.m.Hitpoints = b.Hitpoints * 1.5;
+		this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		this.m.Skills.add(this.new("scripts/skills/traits/determined_trait"));
+		}
+
 	}
 
 	function grow( _instant = false )

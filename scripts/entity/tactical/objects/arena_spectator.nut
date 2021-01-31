@@ -60,7 +60,7 @@ this.arena_spectator <- this.inherit("scripts/entity/tactical/entity", {
 			"helmet_desert_noble_03"
 		];
 
-		if (this.World.LegendsMod.Configs().LegendGenderEnabled() && this.Math.rand(1, 100) >= 50)
+		if (this.LegendsMod.Configs().LegendGenderEnabled() && this.Math.rand(1, 100) >= 50)
 		{
 			bodies = this.Const.Bodies.SouthernFemale;
 			heads = this.Const.Faces.SouthernFemale;

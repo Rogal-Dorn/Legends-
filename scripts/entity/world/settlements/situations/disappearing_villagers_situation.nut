@@ -26,7 +26,7 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.02);
 		}
@@ -34,7 +34,7 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 
 	function onResolved( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.04);
 		}

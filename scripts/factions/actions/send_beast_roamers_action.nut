@@ -167,6 +167,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				return true;
 			};
 			this.m.Options.push(beast);
+			this.m.BeastsLow.push(beast)
 			beast = function ( _action, _nearTile = null )
 			{
 				local disallowedTerrain = [];
@@ -457,7 +458,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					distanceToNextSettlement *= 2;
 				}
@@ -511,7 +512,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					distanceToNextSettlement *= 2;
 				}
@@ -565,7 +566,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 				{
 					 distanceToNextSettlement *= 2;
 				}
@@ -621,7 +622,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -729,7 +730,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -795,7 +796,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -848,7 +849,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -902,7 +903,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -956,7 +957,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -1011,7 +1012,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -1064,7 +1065,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 				}
 
 				local distanceToNextSettlement = _action.getDistanceToSettlements(tile);
-				if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled())
+				if (this.LegendsMod.Configs().LegendLocationScalingEnabled())
 					{
 					 distanceToNextSettlement *= 2;
 					}
@@ -1087,8 +1088,6 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			this.m.Options.push(beast);
 			this.m.BeastsHigh.push(beast);
 			//Demon alps skipped and just kept in normal alp spawns, might want to be changed(?)
-
-
 	}
 
 	function onUpdate( _faction )
@@ -1102,7 +1101,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 			}
 		}
 
-		if (_faction.getUnits().len() >= 15 + (this.Const.DLC.Desert ? 3 : 0))
+		if (_faction.getUnits().len() >= 15 + (this.Const.DLC.Desert ? 5 : 0))
 		{
 			return;
 		}
@@ -1120,32 +1119,25 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 		if (this.World.getTime().Days <= 9)
 		{
-			local r_max = 1;
-
-			if (this.Const.DLC.Desert)
-			{
-				r_max = r_max + 2;
-			}
-
-			if (this.Const.DLC.Unhold)
-			{
-				r_max = r_max + 1;
-			}
-
-			r = this.Math.rand(0, r_max);
+			r = this.Math.rand(0, this.m.BeastsLow.len() - 1);
 		}
 
-		for( local i = 0; i < 15 - _faction.getUnits().len(); i = ++i )
+		local cap = 15 + (this.Const.DLC.Desert ? 5 : 0);
+		for( local i = 0; i < cap - _faction.getUnits().len(); i = ++i )
 		{
+			this.m.Cooldown = 0.0;
 			if (this.m.Options[r](this))
 			{
 				this.m.Cooldown = 5.0;
 				break;
 			}
-			else
+
+			r = this.Math.rand(0, this.m.Options.len() - 1);
+			if (this.World.getTime().Days <= 9)
 			{
-				this.m.Cooldown = 0.0;
+				r = this.Math.rand(0, this.m.BeastsLow.len() - 1);
 			}
+
 		}
 	}
 

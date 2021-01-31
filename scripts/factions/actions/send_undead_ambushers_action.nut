@@ -53,6 +53,12 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 		}
 
 		this.m.Score = 10;
+	
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+		{
+		this.m.Score = 15;
+		}	
+		
 	}
 
 	function onClear()
@@ -90,7 +96,7 @@ this.send_undead_ambushers_action <- this.inherit("scripts/factions/faction_acti
 			}
 		local rand = this.Math.rand(75, 120)
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.World.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
 			{
 			 rand *= distanceToNextSettlement / 14.0;
 			}

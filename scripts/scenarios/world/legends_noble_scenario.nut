@@ -23,11 +23,14 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
-			bro.fillTalentValues(3);
+			if (i != 0)
+			{
+				bro.fillTalentValues(3); //quick way to skip noble commander's fill talent values
+			}
 		}
 		local bros = roster.getAll();
 
-		// Noble Commander Create 
+		// Noble Commander Create
 
 		bros[0].setStartValuesEx([
 			"legend_noble_commander_background"
@@ -63,7 +66,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 		items.equip(shield);
 
-		bros[1].getBackground().m.RawDescription = "Though a lowly footman %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
+		bros[1].getBackground().m.RawDescription = "Though a lowly foot soldier %name% has one of the most upbeat outlooks on life you\'ve ever encountered. Unfortunately that extends to an over evaluation of self worth, expecting more pay than most.";
 		bros[1].getBackground().buildDescription(true);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
 		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
@@ -137,7 +140,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		]));
 		items.equip(this.new("scripts/items/supplies/legend_pudding_item"));
 		items.addToBag(this.new("scripts/items/supplies/wine_item"));
-		
+
 		// End Noble Servant Create
 		// Arbalester Create
 
@@ -227,12 +230,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local banner = f.getBanner();
 
 		local brothers = this.World.getPlayerRoster().getAll();
-		
+
 		//1, 3 are shield brothers
 		brothers[1].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 		brothers[3].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			foreach( bro in brothers )
 			{

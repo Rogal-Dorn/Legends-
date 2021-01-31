@@ -274,7 +274,7 @@
     o.resetPerks <- function ()
     {
         local perks =  0;
-		local skills = _actor.getSkills();
+		local skills = this.getSkills();
 
 		foreach( skill in skills.m.Skills)
 		{
@@ -389,7 +389,7 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 1;
 				freePerkPointsSpentFromOrigin = 1;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
@@ -445,7 +445,7 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 2;
 				freePerkPointsSpentFromOrigin = 2;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 					perks = perks - 1;
@@ -492,7 +492,7 @@
 		}
 
 		// Witch gets
-		if (this.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;
@@ -744,7 +744,11 @@
 	local oacFn = o.onAppearanceChanged;
 	o.onAppearanceChanged = function( _appearance, _setDirty = true )
 	{
-		oacFn(_appearance, _setDirty);
+
+		if (!this.m.IsAlive || this.m.IsDying)
+		{
+			return;
+		}
 
 		if (this.hasSprite("helmet_vanity_lower"))
 		{
@@ -758,6 +762,22 @@
 			else
 			{
 				this.getSprite("helmet_vanity_lower").Visible = false;
+			}
+		}
+
+
+		if (this.hasSprite("helmet_vanity_lower_2"))
+		{
+			if (_appearance.HelmetLayerVanity2Lower.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity_lower_2");
+				helmet.setBrush(_appearance.HelmetLayerVanity2Lower);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity_lower_2").Visible = false;
 			}
 		}
 
@@ -803,6 +823,21 @@
 			else
 			{
 				this.getSprite("helmet_vanity").Visible = false;
+			}
+		}
+
+		if (this.hasSprite("helmet_vanity_2"))
+		{
+			if (_appearance.HelmetLayerVanity2.len() != 0 && !this.m.IsHidingHelmet)
+			{
+				local helmet = this.getSprite("helmet_vanity_2");
+				helmet.setBrush(_appearance.HelmetLayerVanity2);
+				helmet.Color = _appearance.HelmetColor;
+				helmet.Visible = true;
+			}
+			else
+			{
+				this.getSprite("helmet_vanity_2").Visible = false;
 			}
 		}
 
@@ -872,7 +907,7 @@
 			this.getSprite("permanent_injury_burned").Visible = !_appearance.HideHead;
 		}
 
-
+		oacFn(_appearance, _setDirty);
 	}
 
 	o.kill <- function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false)

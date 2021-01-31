@@ -122,13 +122,25 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
 		_list.push("hedge_knight_background");
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
-			_list.push("legend_master_archer_background");
+			if (this.Math.rand(0, 9) == 1)
+			{
+				_list.push("legend_master_archer_background");
+			}
 		}
-		if (_gender)
-		{
 
+		if (this.Math.rand(0, 9) == 1)
+		{
+			_list.push("legend_noble_shield");
+		}
+		if (this.Math.rand(0, 9) == 1)
+		{
+			_list.push("legend_noble_2h");
+		}
+		if (this.Math.rand(0, 9) == 1)
+		{
+			_list.push("legend_noble_ranged");
 		}
 	}
 
@@ -331,6 +343,44 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		}
 		else if (_id == "building.armorsmith")
 		{
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_common"
+				});
+				_list.push({
+					R = 95,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_noble"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_heavy"
+				});
+				_list.push({
+					R = 99,
+					P = 2.0,
+					S = "legend_armor/named/legend_armor_cloak_rich"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_sash"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/tabard/legend_common_tabard"
+				});
+				_list.push({
+					R = 99,
+					P = 2.0,
+					S = "legend_armor/named/legend_armor_named_tabard"
+				});
+			}
 		}
 	}
 

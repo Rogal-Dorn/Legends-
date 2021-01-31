@@ -1,4 +1,4 @@
-this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
+this.legend_unleash_white_wolf <- this.inherit("scripts/skills/actives/unleash_animal", {
 	m = {
 		Item = null,
 		Sounds0 = [
@@ -72,7 +72,7 @@ this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
 
 	function addResources()
 	{
-		this.skill.addResources();
+		this.unleash_animal.addResources();
 
 		foreach( r in this.m.Sounds0 )
 		{
@@ -119,7 +119,7 @@ this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.m.Item.isUnleashed() || !this.skill.isUsable())
+		if (this.m.Item.isUnleashed() || !this.unleash_animal.isUsable())
 		{
 			return false;
 		}
@@ -130,7 +130,7 @@ this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
 	function onVerifyTarget( _originTile, _targetTile )
 	{
 		local actor = this.getContainer().getActor();
-		return this.skill.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
+		return this.unleash_animal.onVerifyTarget(_originTile, _targetTile) && _targetTile.IsEmpty;
 	}
 
 	function onUpdate( _properties )
@@ -151,12 +151,7 @@ this.legend_unleash_white_wolf <- this.inherit("scripts/skills/skill", {
 			entity.setMoraleState(this.Const.MoraleState.Confident);
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
-		{
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_colossus"));
-			entity.getSkills().add(this.new("scripts/skills/perks/perk_underdog"));
-		}
+		this.addAnimalSkills(entity);
 
 		if (!this.World.getTime().IsDaytime)
 		{

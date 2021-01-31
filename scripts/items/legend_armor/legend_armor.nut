@@ -973,6 +973,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	// 	return basePrice;
 	// }
 
+	function setupArmor(_variant)
+	{
+	}
+
 	function onSerialize( _out )
 	{
 		this.armor.onSerialize(_out);

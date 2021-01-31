@@ -64,18 +64,5 @@ this.goblin_leader <- this.inherit("scripts/entity/tactical/goblin", {
 		this.m.Items.equip(item);
 	}
 
-
-	// function onFactionChanged()
-	// {
-	// 	this.goblin.onFactionChanged();
-	// 	local flip = this.isAlliedWithPlayer();
-	// 	this.getSprite("helmet").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_top").setHorizontalFlipping(flip);
-	// 	this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
-	// }
-
 });
 

@@ -12,7 +12,7 @@ this.legend_degrade_settlement_action <- this.inherit("scripts/factions/faction_
 
 	function onUpdate( _faction )
 	{
-		if(!this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(!this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			return;
 		}

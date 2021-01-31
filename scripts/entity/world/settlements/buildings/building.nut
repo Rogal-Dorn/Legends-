@@ -116,7 +116,7 @@ this.building <- {
 				local isUpgrade = false;
 				local script = i.S;
 
-				if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+				if (this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					local index = script.find("helmets/");
 					if (index != null && script.find("legend_helmets") == null)

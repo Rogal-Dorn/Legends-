@@ -72,6 +72,8 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"squire_background",
 			"cripple_background",
+			"legend_blacksmith_background",
+			"legend_shieldmaiden_background",
 			"legend_shieldmaiden_background"
 		];
 		this.m.StablesList = [

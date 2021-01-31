@@ -87,6 +87,11 @@
 	margin-top: 1.0rem;
 }
 
+.character-screen-container .paperdoll-module .l-slot-container.helm-is-top-small-offset {
+	padding-top: 2.0rem;
+}
+
+
 .character-screen-container .paperdoll-module .l-slot-container.is-top-big-offset {
 	margin-top: 1.8rem;
 }
@@ -95,6 +100,9 @@
 	margin-top: 1.0rem;
 }
 
+.character-screen-container .paperdoll-module .l-slot-container.body-is-in-between-offset {
+	margin-top: 3.0rem;
+}
 
 /*
 .character-screen-container .paperdoll-module .equipment-slot-container-small .equipment-slot-background-layer,
@@ -300,41 +308,45 @@
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove4 {
-	top: -0.3rem;
+	top: -0.6rem;
+}
+
+.character-screen-container .paperdoll-module .l-button.h-remove5 {
+	top: 1.6rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove3 {
-	top: 1.9rem;
+	top: 3.8rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove2 {
-	top: 4.1rem;
+	top: 6.0rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.h-remove1 {
-	top: 6.3rem;
+	top: 8.2rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove6 {
-	top: 9.4rem;
+	top: 11.4rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove5 {
-	top: 11.8rem;
+	top: 13.6rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove4 {
-	top: 14.2rem;
+	top: 15.8rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove3 {
-	top: 16.6rem;
+	top: 18.0rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove2 {
-	top: 19.0rem;
+	top: 20.2rem;
 }
 
 .character-screen-container .paperdoll-module .l-button.remove1 {
-	top: 21.4rem;
+	top: 22.4rem;
 }

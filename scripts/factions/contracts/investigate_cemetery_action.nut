@@ -47,6 +47,11 @@ this.investigate_cemetery_action <- this.inherit("scripts/factions/faction_actio
 		}
 
 		this.m.Score = 1;
+		
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+		{
+		this.m.Score = 10;
+		}
 	}
 
 	function onClear()

@@ -46,7 +46,7 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 			this.updateAchievement("Atheist", 1, 1);
 		}
 
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled()) {
+		if (this.LegendsMod.Configs().LegendMagicEnabled()) {
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
 				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
@@ -88,12 +88,14 @@ this.skeleton_priest <- this.inherit("scripts/entity/tactical/skeleton", {
 	{
 		this.skeleton.onFactionChanged();
 		local flip = this.isAlliedWithPlayer();
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
 	}
 
 });

@@ -27,9 +27,12 @@ gt.Const.Perks.BardClassTree <- {
 		"entertaining"
 	],
 	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendCheerOn],
+		[
+		gt.Const.Perks.PerkDefs.LegendCheerOn,
+		gt.Const.Perks.PerkDefs.LegendSpecialistLuteSkill
+		],
 		[gt.Const.Perks.PerkDefs.LegendDaze],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistLuteDamage],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
 		[gt.Const.Perks.PerkDefs.LegendPush],
 		[gt.Const.Perks.PerkDefs.LegendDrumsOfWar],
@@ -127,7 +130,7 @@ gt.Const.Perks.BarterClassTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy,],
+		[gt.Const.Perks.PerkDefs.LegendBarterTrustworthy],
 		[
 		gt.Const.Perks.PerkDefs.LegendDangerPay,
 		gt.Const.Perks.PerkDefs.LegendPaymaster
@@ -340,8 +343,8 @@ gt.Const.Perks.HoundmasterClassTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendDogWhisperer],
-		[],//gt.Const.Perks.PerkDefs.LegendDogHandling],
 		[gt.Const.Perks.PerkDefs.LegendDogBreeder],
+		[gt.Const.Perks.PerkDefs.LegendDogHandling],
 		[gt.Const.Perks.PerkDefs.LegendPackleader],
 		[gt.Const.Perks.PerkDefs.LegendDogMaster]
 	]

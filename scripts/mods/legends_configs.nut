@@ -13,6 +13,7 @@ this.legends_configs <- {
         IsWorldEconomy = false,
         IsHelmets = 0,
         IsTherian = false
+        AISpeed = 1.0
     },
 
 
@@ -31,6 +32,16 @@ this.legends_configs <- {
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
         this.m.IsHelmets = _settings.LegendIsHelmet;
         this.m.IsTherian = _settings.LegendTherian;
+    }
+
+    function AISpeed()
+    {
+        return this.m.AISpeed;
+    }
+
+    function setAISpeed(val)
+    {
+        this.m.AISpeed = val;
     }
 
     function LegendArmorsEnabled()
@@ -118,6 +129,7 @@ this.legends_configs <- {
         _out.writeBool(this.m.IsWorldEconomy);
         _out.writeU8(this.m.IsHelmets);
         _out.writeBool(this.m.IsTherian);
+        _out.writeF32(this.m.AISpeed);
     }
 
     function onDeserialize(_in)
@@ -135,6 +147,7 @@ this.legends_configs <- {
         this.m.IsWorldEconomy = _in.readBool();
         this.m.IsHelmets = _in.readU8();
         this.m.IsTherian = _in.readBool();
+        this.m.AISpeed = _in.readF32()
     }
 }
 

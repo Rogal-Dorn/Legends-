@@ -216,7 +216,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 							{
 								this.World.Statistics.getFlags().increment("TradeGoodsSold");
 
-								if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+								if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 								{
 									this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
 								}
@@ -244,7 +244,7 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					{
 						this.World.Statistics.getFlags().increment("TradeGoodsSold");
 
-						if (this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 						{
 							this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
 						}

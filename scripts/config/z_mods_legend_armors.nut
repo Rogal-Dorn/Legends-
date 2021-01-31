@@ -168,12 +168,12 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     Script = "",
     Sets = [{
         Cloth = [
-            [3, "armor/legend_armor_robes_cultist"],
-            [1, "cloth/legend_robes"],
+            [1, "cloth/legend_robes"]
         ],
         Chain = [
         ],
         Plate = [
+		   [1, "plate/legend_armor_cult_armor"]
         ],
         Cloak = [
         ],

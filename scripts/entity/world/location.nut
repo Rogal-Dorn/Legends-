@@ -494,7 +494,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 							helmets.extend(this.m.NamedHelmetsList);
 						}
 
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+						if (this.LegendsMod.Configs().LegendArmorsEnabled())
 						{
 							local weightName = this.Const.World.Common.convNameToList(helmets);
 							this.m.Loot.add(this.Const.World.Common.pickHelmet(weightName));
@@ -507,7 +507,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 					else if (type <= 100)
 					{
 						local armor = clone this.Const.Items.NamedArmors;
-						if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+						if (this.LegendsMod.Configs().LegendArmorsEnabled())
 						{
 							armor = clone this.Const.Items.LegendNamedArmorLayers;
 							armor.extend(this.Const.Items.LegendNamedHelmetLayers);

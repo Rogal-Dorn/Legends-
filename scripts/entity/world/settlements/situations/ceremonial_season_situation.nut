@@ -27,7 +27,7 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}
@@ -37,6 +37,50 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 	function onUpdate( _modifiers )
 	{
 		_modifiers.IncensePriceMult *= 1.5;
+	}
+
+
+	function onUpdateDraftList( _draftList, _gender )
+	{
+		_draftList.push("monk_background");
+		_draftList.push("monk_background");
+		_draftList.push("cultist_background");
+		_draftList.push("flagellant_background");
+		if (_gender)
+		{
+		_draftList.push("legend_nun_background");
+		_draftList.push("legend_nun_background");
+		}
+
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+			{
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
+
+			}
+			else
+			{
+			r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_draftList.push("legend_spiritualist_background");
+				_draftList.push("legend_druid_background");
+				}
+			}
+		}
+
 	}
 
 });

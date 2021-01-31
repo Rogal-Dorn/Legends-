@@ -77,6 +77,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 				{
 					this.Flags.set("IsDriveOff", true);
 				}
+
 				if (r <= 70)
 				{
 					this.Flags.set("IsSignsOfAFight", true);
@@ -90,7 +91,6 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 8);
 				local party;
 				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "White Wolf Pack", false, this.Const.World.Spawn.LegendWhiteDirewolf, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
-
 				party.setDescription("The wolf pack of the legendary White Wolf.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.75);
@@ -159,7 +159,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.wildman"  || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_ranger" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_commander_vala" || bro.getBackground().getID() == "background.legend_commander_ranger" || bro.getSkills().hasSkill("perk.legend_favoured_enemy_direwolf"))
+						if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_ranger" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_commander_vala" || bro.getBackground().getID() == "background.legend_commander_ranger" || bro.getSkills().hasSkill("perk.legend_favoured_enemy_direwolf"))
 						{
 							candidates.push(bro);
 						}
@@ -226,7 +226,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{When you arrive at %employer%\'s keep the sky is dark and the mood is ominous, you hear howling in the distance. The population are on edge and everyone keeps looking over their shoulders for an unseen assailant.%SPEECH_ON%Thank the gods you came!%SPEECH_OFF% A booming voice echoes around the courtyard and a man in resplendent finery claps his hands together as he shuffles down the stairs towards you %SPEECH_ON%The wolves are at our door, without a word of a lie. They grow bolder by the day, just this morning one crept into the town and took off with a toddler. Her mother is distraught and the villagers are terrified, they demanded i do something. I have already sent half my men out, but only a handful have returned, each burdened with having seen their friends feasted upon.%SPEECH_OFF% %employer% quietens his voice, only now realising the whole town is listening in. %SPEECH_ON%I know you have fought wolves before sellsword, but these are different. They are led by the king of the wolves, the legendary white wolf himself. He is huge, vicious, and cunning beyond measure. Each week he gathers more wolf packs under his rule, driving them into a rabid fervor while orchestrating their campaign of terror. %SPEECH_OFF% %employer% looks around sheepishly, as if scared his words are about to manifest in flesh. %SPEECH_ON% A task like this can not be entered into lightly, others have tried and failed, the reward has grown large. If you should suceed, you will be rich my friend. Are you up to the deed?%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{When you arrive at %employer%\'s keep the sky is dark and the mood is ominous, you hear howling in the distance. The populace is on edge and everyone keeps looking over their shoulders for an unseen assailant.%SPEECH_ON%Thank the gods you came!%SPEECH_OFF% A booming voice echoes around the courtyard and a man in resplendent finery claps his hands together as he shuffles down the stairs towards you %SPEECH_ON%The wolves are at our door, without a word of a lie. They grow bolder by the day, just this morning one crept into the town and took off with a toddler. Her mother is distraught and the villagers are terrified, they demanded I do something. I have already sent half my men out, but only a handful have returned, each burdened with having seen their friends feasted upon.%SPEECH_OFF% %employer% quietens his voice, only now realising the whole town is listening in. %SPEECH_ON%I know you have fought wolves before sellsword, but these are different. They are led by the king of the wolves, the legendary white wolf himself. He is huge, vicious, and cunning beyond measure. Each week he gathers more wolf packs under his rule, driving them into a rabid fervor while orchestrating their campaign of terror. %SPEECH_OFF% %employer% looks around sheepishly, as if scared his words are about to manifest in flesh. %SPEECH_ON% A task like this can not be entered into lightly, others have tried and failed, the reward has grown large. If you should suceed, you will be rich my friend. Are you up to the deed?%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -258,7 +258,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_75.png[/img]{%randombrother% has been intently scanning for tracks, with an urgency you can\'t place. At last he speaks %SPEECH_ON% My grandmother told me stories of the Wolf King when I was a child. She said he is half human from eating human brains, he walks on two legs, wears armor and even understand speech. It was meant to make me do my chores, but it only ever gave me nightmares. He can\'t be real, can he? %SPEECH_OFF%.}",
+			Text = "[img]gfx/ui/events/event_75.png[/img]{%randombrother% has been intently scanning for tracks, with an urgency you cannot place. At last he speaks %SPEECH_ON% My grandmother told me stories of the Wolf King when I was a child. She said he is half human from eating human brains, he walks on two legs, wears armor and even understand speech. It was meant to make me do my chores, but it only ever gave me nightmares. He can\'t be real, can he? %SPEECH_OFF%.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -275,7 +275,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "Encounter",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{You stop in your tracks, the hairs on the back of your neck are bristling. You feel something watching you, and turn to see wolves emerging from the tree line at full charge. The Wolf King has found you. }",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{You stop in your tracks, the hairs on the back of your neck bristling. You feel something watching you and turn to see wolves emerging from the tree line at full charge. The Wolf King has found you. }",
 			Image = "",
 			List = [],
 			Options = [
@@ -293,7 +293,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "DriveThemOff",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Tracking quietly you come over a small hill, and look down on a large group of wolves in a clearing. The wind is on your face, so they haven\'t caught your sent. You crouch low and creep forward to get a better view. To your amazement you see two white wolves. Each is leading a pack, and they are arrayed on either side of the clearing, with the two leaders in the middle. It appears as if some kind of parlay is underway, played out in a complex series of movements, growls and sniffs. Their stances feel as if they may start fighting at any moment, but then after one last sniff they face up, and to your amazement they bow to each other. With that the show is over, and one of the packs turns and leaves.  No sooner has the second pack left, than you notice %shouter% walking down the hill in front of you calmly and deliberately, making no attempt to hide and looking straight at the White Wolf.  }",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Tracking quietly you come over a small hill and look down on a large group of wolves in a clearing. The wind is on your face, so they have not caught your sent. You crouch low and creep forward to get a better view. To your amazement you see two white wolves. Each is leading a pack, and they are arrayed on either side of the clearing, with the two leaders in the middle. It appears as if some kind of parlay is underway, played out in a complex series of movements, growls and sniffs. Their stances feel as if they may start fighting at any moment, but then after one last sniff they face up, and to your amazement they bow to each other. With that the show is over, and one of the packs turns and leaves.  No sooner has the second pack left, than you notice %shouter% walking down the hill in front of you calmly and deliberately, making no attempt to hide and looking straight at the White Wolf.  }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -332,7 +332,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "DriveThemOffSuccess",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against better judgment, you let it play out. %shouter% reaches the clearing and then bows down to the ground in front of the white wolf. Unbelievably the white wolf bows as well, and then the two of them begin growling and sniffing each other. %shouter% lets out a series of crooning hums, like a drawn out melodic growl that seems to entrance the wolves. %shouter% uses the moment of calm to do the most foolhardy thing you have ever seen. %shouter% drops trousers and pisses onto the head of the white wolf.  In that moment the whole scene changes, the white wolf rolls onto its back and wimpers, and the rest of the pack turn and disapear into the woods.  }",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against your better judgment, you let it play out. %shouter% reaches the clearing and then bows down to the ground in front of the white wolf. Unbelievably the white wolf bows as well and the two of them begin growling and sniffing each other. %shouter% lets out a series of crooning hums, like a drawn out melodic growl that seems to entrance the wolves. %shouter% uses the moment of calm to do the most foolhardy thing you have ever seen. %shouter% drops trousers and pisses onto the head of the white wolf. In that moment the whole scene changes, the white wolf rolls onto its back and wimpers, and the rest of the pack turn and disapear into the woods.  }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -341,7 +341,6 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 					Text = "We still need to catch the other wolf",
 					function getResult()
 					{
-
 						return 0;
 					}
 
@@ -369,7 +368,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "DriveThemOffFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against better judgment, you let it play out. %shouter% reaches the edge of the clearing and begins to make some bizarre crooning noises like an injured dog. The white wolf tilts it\'s head for a moment quizically, before letting out a howl and charging towards %shouter%. The wolf grabs %shouter% in its jaws, shakes them viciously before throwing shouter back towards the wolves. If that weren\'t bad enough, just then you notice the other wolf pack returning, it looks like you\'ll be fighting two wolf kings. }",
+			Text = "[img]gfx/ui/events/legend_white_wolf.png[/img]{Against your better judgment, you let it play out. %shouter% reaches the edge of the clearing and begins to make some bizarre crooning noises like an injured dog. The white wolf tilts it\'s head for a moment quizically, before letting out a howl and charging towards %shouter%. The wolf grabs %shouter% in its jaws, shakes them viciously before throwing shouter back towards the wolves. If that weren\'t bad enough, just then you notice the other wolf pack returning, it looks like you\'ll be fighting two wolf kings. }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -390,9 +389,9 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 				this.Characters.push(this.Contract.m.Dude.getImagePath());
 				local injury1;
 				local injury2;
+
 				if (this.Math.rand(1, 100) <= 90)
 				{
-
 					injury1 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 					injury2 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 				}
@@ -440,7 +439,7 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.m.Screens.push({
 			ID = "SignsOfAFight",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain you take a moment to rest, one of your mercenaries asks you. %SPEECH_ON%So if you just killed the king of the wolves, does that make you the new king?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_white_wolf_dead.png[/img]{With the beasts slain, you take a moment to rest. One of your mercenaries asks you: %SPEECH_ON%So if you just killed the king of the wolves, does that make you the new king?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
@@ -552,11 +551,13 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

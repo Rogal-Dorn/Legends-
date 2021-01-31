@@ -111,7 +111,10 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"cripple_background",
 			"hedge_knight_background",
 			"hedge_knight_background",
+			"legend_ironmonger_background",
+			"legend_blacksmith_background",
 			"assassin_background"
+			
 		];
 		this.m.StablesList = [
 			"legend_donkey",

@@ -102,7 +102,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[1, "top/legend_helmet_mummy_beard"]
         ],
         Vanity = [
-			
+
         ]
     }]
 },{
@@ -196,7 +196,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
 },{
-    ID = "ancient_wig",
+    ID = "ancient/ancient_wig",
     Script = "scripts/items/legend_helmets/helmets/legend_ancient_wig",
     Sets = []
 },{

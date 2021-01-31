@@ -60,7 +60,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"squire_background",
 			"swordmaster_background",
-			  "apprentice_background",
+			"apprentice_background",
 			"gambler_background",
 			"female_farmhand_background",
 			"female_farmhand_background",
@@ -90,7 +90,9 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"squire_background",
 			"squire_background",
-			"swordmaster_background"
+			"swordmaster_background",
+			"legend_ironmonger_background",
+			"legend_noble_shield"	
 		];
 		this.m.StablesList = [
 			"legend_donkey",

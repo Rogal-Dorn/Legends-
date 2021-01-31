@@ -185,7 +185,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 1;
 				freePerkPointsSpentFromOrigin = 1;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
@@ -241,7 +241,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 2;
 				freePerkPointsSpentFromOrigin = 2;
-				if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+				if (this.LegendsMod.Configs().LegendMagicEnabled())
 				{
 					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 					perks = perks - 1;
@@ -288,7 +288,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 		}
 
 		// Witch gets
-		if (_actor.getBackground().getID() == "background.legend_witch" && this.World.LegendsMod.Configs().LegendMagicEnabled())
+		if (_actor.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			perks = perks - 1;

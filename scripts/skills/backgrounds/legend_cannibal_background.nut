@@ -9,8 +9,8 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.BackgroundDescription = "Cannibals have a thing for human flesh.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.HiringCost = 100;
+		this.m.DailyCost = 8;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",

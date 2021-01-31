@@ -1,14 +1,29 @@
 ::mods_hookNewObject("states/tactical_state", function(o) {
 
-	local fnInit = o.init
-
-	o.init = function()
+	local updateCurrentEntity = o.updateCurrentEntity;
+	o.updateCurrentEntity = function()
 	{
-		if (!("LegendsMod" in this.World))
+		updateCurrentEntity();
+		if (this.Time.getVirtualSpeed != this.LegendsMod.Configs().AISpeed())
 		{
-			this.World.LegendsMod <- this.new("scripts/mods/legends_mod");
+			this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
 		}
-		fnInit();
+	}
+
+	o.setPause = function (_f)
+	{
+		this.m.IsGamePaused = _f;
+
+		if (_f)
+		{
+			this.Time.setVirtualSpeed(0.0);
+			this.m.IsAIPaused = true;
+		}
+		else
+		{
+			this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
+			this.m.IsAIPaused = false;
+		}
 	}
 
 	o.onBattleEnded = function()

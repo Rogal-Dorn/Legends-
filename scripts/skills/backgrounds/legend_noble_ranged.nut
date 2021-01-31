@@ -6,8 +6,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_ranged";
 		this.m.Name = "Arbalester";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 150;
-		this.m.DailyCost = 16;
+		this.m.HiringCost = 300;
+		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -56,13 +56,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.IsCombatBackground = true;
 		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
-		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
-		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
-		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
-		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -93,7 +87,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -153,36 +147,36 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-5,
+				0
 			],
 			Bravery = [
 				5,
 				5
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeSkill = [
-				0,
-				3
+				3,
+				6
 			],
 			RangedSkill = [
 				23,
 				20
 			],
 			MeleeDefense = [
-				0,
-				4
-			],
-			RangedDefense = [
 				3,
 				6
 			],
+			RangedDefense = [
+				8,
+				12
+			],
 			Initiative = [
-				0,
-				0
+				5,
+				5
 			]
 		};
 		return c;
@@ -205,7 +199,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		local r;
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hunters_hat"],
+			[3, "hunters_hat"],
 			[1, "aketon_cap"],
 			[1, "open_leather_cap"]
 		]));
@@ -213,7 +207,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/knife"));
-		
+
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, "padded_surcoat"],
 			[1, "basic_mail_shirt"]

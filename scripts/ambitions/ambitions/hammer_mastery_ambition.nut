@@ -101,9 +101,9 @@ this.hammer_mastery_ambition <- this.inherit("scripts/ambitions/ambition", {
 			}
 		}
 
-		if (not_candidates.len() == 0)
+		if (candidates.len() == 0)
 		{
-			this.candiates = not_candidates;
+			candidates = not_candidates;
 		}
 
 		_vars.push([

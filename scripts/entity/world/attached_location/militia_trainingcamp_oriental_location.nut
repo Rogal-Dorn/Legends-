@@ -185,6 +185,19 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		}
 		else if (_id == "building.armorsmith")
 		{
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				_list.push({
+					R = 60,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_common"
+				});
+				_list.push({
+					R = 40,
+					P = 1.0,
+					S = "legend_armor/tabard/legend_southern_tabard"
+				});
+			}
 		}
 	}
 

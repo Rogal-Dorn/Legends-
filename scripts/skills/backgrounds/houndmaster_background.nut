@@ -61,7 +61,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			Magic = []
 		}
 	}
-	
+
 	//Default Male
 	function setGender(_gender = -1)
 	{
@@ -69,7 +69,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -122,7 +122,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		else
 		{
 			return "{%name%\'s fondness for dogs started after his father won a pup in a shooting contest. | When a dog saved him from a bear, %name% dedicated his life to the canine lot. | Seeing a dog stave off a would-be robber, %name%\'s fondness for the mutts only grew. | A young, bird-hunting %name% quickly saw the honor, loyalty, and workmanship of a dog. | Once bitten by a wild dog, %name% confronted his fear of canines by learning to train them.} {The houndmaster spent many years working for a local lord. He gave up the post after the liege struck a dog down just for sport. | Quick with training his mongrels, the houndmaster put his dogs into a lucrative traveling tradeshow. | The man made a great deal of money on the dog-fighting circuits, his mutts renowned for their easily commanded - and unleashed - ferocity. | Employed by lawmen, the houndmaster used his strong-nosed dogs to hunt down many a criminal element. | Used by a local lord, many of the houndmaster\'s dogs found their way onto the battlefield. | For many years, the houndmaster used his dogs to help lift the spirits of orphaned children and the crippled.} {Now, though, %name% seeks a change of vocation. | When he heard word of a mercenary\'s pay, %name% decided to try his hand at being a sellsword. | Approached by a sellsword to buy one of his dogs, %name% became more interested in the prospect of he, himself, becoming a mercenary. | Tired of training dogs for this purpose or that, %name% seeks to train himself for... well, this purpose or that. | An interesting prospect, you can only hope %name% is as loyal as the dogs he once commanded.}";
-		}	
+		}
 	}
 
 	function onChangeAttributes()
@@ -168,7 +168,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 	{
 		this.character_background.onAdded();
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 50) == 1)
 			{

@@ -34,7 +34,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	function setGender( _v, _reroll = true)
 	{
 
-		if ("LegendMod" in this.World && !this.World.LegendsMod.Configs().LegendGenderEnabled())
+		if ("LegendMod" in this.World && !this.LegendsMod.Configs().LegendGenderEnabled())
 		{
 			_v = 0;
 		}
@@ -503,12 +503,16 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("injury").setHorizontalFlipping(flip);
 		this.getSprite("beard").setHorizontalFlipping(flip);
 		this.getSprite("hair").setHorizontalFlipping(flip);
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
+
 		this.getSprite("beard_top").setHorizontalFlipping(flip);
 		this.getSprite("body_blood").setHorizontalFlipping(flip);
 		this.getSprite("accessory").setHorizontalFlipping(flip);
@@ -594,12 +598,12 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		local hair = this.addSprite("hair");
 		this.addSprite("permanent_injury_4");
 		this.addSprite("permanent_injury_1");
-		this.addSprite("helmet_vanity_lower");
-		this.addSprite("helmet");
-		this.addSprite("helmet_damage");
-		this.addSprite("helmet_helm");
-		this.addSprite("helmet_top");
-		this.addSprite("helmet_vanity");
+
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			this.addSprite(a)
+		}
+
 		this.addSprite("accessory");
 		this.addSprite("accessory_special");
 		local beard_top = this.addSprite("beard_top");

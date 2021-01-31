@@ -43,13 +43,22 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			Max = 10,
 			HasMusc = false,
 			HasBro = false,
+			HasOffhand = false,
 			HasTraining = false
-		}
+		};
 		local actor = this.getContainer().getActor();
+		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
 			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
+
+			if (offhand != null)
+			{
+				average = average * 0.5;
+				ret.HasOffhand = true;
+			}
+
 			ret.Min = average - 10;
 			ret.Max = average + 10;
 			ret.HasTraining = true;
@@ -69,20 +78,21 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			"background.legend_berserker"
 		];
 
-		foreach (bg in backgrounds)
+		foreach( bg in backgrounds )
 		{
 			if (!actor.getSkills().hasSkill(bg))
 			{
 				continue;
 			}
+
 			ret.Min *= 1.25;
 			ret.Max *= 1.25;
 			ret.HasBro = true;
 			break;
 		}
 
-		ret.Min = this.Math.floor(ret.Min);
-		ret.Max = this.Math.floor(ret.Max);
+		ret.Min = this.Math.max(5, this.Math.floor(ret.Min * 0.5));
+		ret.Max = this.Math.max(10, this.Math.floor(ret.Max * 0.5));
 		return ret;
 	}
 
@@ -115,7 +125,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/regular_damage.png",
 				text = "Unarmed Training inflicts half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
-
 		}
 		else
 		{
@@ -124,6 +133,16 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
+			});
+		}
+
+		if (mods.HasOffhand)
+		{
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Damage halved due to holding something in your off hand"
 			});
 		}
 
@@ -175,7 +194,8 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 		local mods = this.getMods();
 		_properties.DamageRegularMin += mods.Min;
-		_properties.DamageRegularMax += mods.Max
+		_properties.DamageRegularMax += mods.Max;
+
 		if (!mods.HasTraining)
 		{
 			_properties.DamageArmorMult = 0.5;
@@ -186,7 +206,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
-
 	}
 
 	function onUse( _user, _targetTile )

@@ -9,8 +9,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.BackgroundDescription = "Shieldmaidens are fierce female warriors from the northern settlements.";
 		this.m.GoodEnding = null;
 		this.m.BadEnding = null;
-		this.m.HiringCost = 600;
-		this.m.DailyCost = 36;
+		this.m.HiringCost = 300;
+		this.m.DailyCost = 35;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",

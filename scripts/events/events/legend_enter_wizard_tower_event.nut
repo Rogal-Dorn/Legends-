@@ -1,4 +1,4 @@
-this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
+this.legend_enter_wizard_tower_event <- this.inherit("scripts/events/event", {
 	m = {
 		Observer = null
 	},
@@ -44,7 +44,7 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_125.png[/img]{As you approach the tower door you hear a voice call out as if far away. Looking up you see a person waving from the tallest room in the tower. They yell and gesture that they will be with you in a moment. Barely an instant later the door opens, and the same person is standing before you in long flowing robes and a floopy hat.  %SPEECH_ON% Ah a visitor, not often we get visitors these days. %SPEECH_OFF%  As he speaks a younger person in the same robes pokes their head throug the door behind him. %SPEECH_ON% You must have a reason for coming all this way. %SPEECH_OFF%  he continues %SPEECH_ON% Perhaps you're here to buy an apprentice? %SPEECH_OFF%  The young apprentice looks shocked and blurts out %SPEECH_ON% Buy? You're not selling me are you master? %SPEECH_OFF% The old man looks dismissive and rebuffs %SPEECH_ON% Buy? Why I meant Hire! Every apprentice must go out on a workplace trial in the real world to become a journeyman. Yes Yes its decided then. Now all that is needed is to negotiate the wage %SPEECH_OFF%  The apprentice looks scared and confused but the old man continues. %SPEECH_ON% If you give me 20,000 crowns I will let you keep the kid, but no refunds.%SPEECH_OFF%  The apprentice meekly asks %SPEECH_ON%  Shouldn\'t the wage be a daily stipend to the journeyman doing the work? %SPEECH_OFF%  The old man dimisses the suggestion with a wave %SPEECH_ON% Of course not! this is the fee to cover your training. How else am I meant to buy another apprentice? Hopefully one who complains less. So do we have a deal? Remember, no returns. %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_125.png[/img]{As you approach the tower door you hear a voice call out as if far away. Looking up you see a person waving from the tallest room in the tower. They yell and gesture that they will be with you in a moment. Barely an instant later the door opens, and the same person is standing before you in long flowing robes and a floopy hat.  %SPEECH_ON% Ah a visitor, not often we get visitors these days. %SPEECH_OFF%  As he speaks a younger person in the same robes pokes their head throug the door behind him. %SPEECH_ON% You must have a reason for coming all this way. %SPEECH_OFF%  he continues %SPEECH_ON% Perhaps you\'re here to buy an apprentice? %SPEECH_OFF%  The young apprentice looks shocked and blurts out %SPEECH_ON% Buy? You\'re not selling me, are you master? %SPEECH_OFF% The old man looks dismissive and rebuffs %SPEECH_ON% Buy? Why I meant Hire! Every apprentice must go out on a workplace trial in the real world to become a journeyman. Yes, yes it\'s decided then. Now all that is needed is to negotiate the wage %SPEECH_OFF%  The apprentice looks scared and confused but the old man continues. %SPEECH_ON% If you give me 20,000 crowns I will let you keep the kid, but no refunds.%SPEECH_OFF% The apprentice meekly asks %SPEECH_ON%  Shouldn\'t the wage be a daily stipend to the journeyman doing the work? %SPEECH_OFF%  The old man dimisses the suggestion with a wave %SPEECH_ON% Of course not! This is the fee to cover your training. How else am I meant to buy another apprentice? Hopefully one who complains less. So do we have a deal? Remember, no returns. %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -101,7 +101,7 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/event_125.png[/img]{%observer% heads back to the company with the apprentice, who is squinting and looking about as if they haven't been outside the tower in a long time. You wonder if the mercenary life is any better. }",
+			Text = "[img]gfx/ui/events/event_125.png[/img]{%observer% heads back to the company with the apprentice, who is squinting and looking about as if they haven\'t been outside the tower in a long time. You wonder if the mercenary life is any better. }",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -114,7 +114,6 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 						this.World.getTemporaryRoster().clear();
 						_event.m.Dude.onHired();
 						_event.m.Dude = null;
-						
 						return 0;
 					}
 
@@ -122,8 +121,7 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
-							local roster = this.World.getTemporaryRoster();
+				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
 					"wildman_background"
@@ -132,11 +130,6 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 				_event.m.Dude.getBackground().m.RawDescription = "%name% was \'hired\' by you from an old man in a tall tower";
 				_event.m.Dude.getBackground().buildDescription(true);
 				this.Characters.push(_event.m.Dude.getImagePath());
-
-
-
-
-
 			}
 
 		});
@@ -188,3 +181,4 @@ this.legend_enter_wizard_tower_event<- this.inherit("scripts/events/event", {
 	}
 
 });
+

@@ -31,7 +31,6 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.importSettlementIntro();
 	}
 
-
 	function start()
 	{
 		this.m.Payment.Pool = 1500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
@@ -91,7 +90,6 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 8);
 				local party;
 				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Unholds", false, this.Const.World.Spawn.LegendRockUnhold, 200 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
-
 				party.setDescription("One or more lumbering giants.");
 				party.setAttackableByAI(false);
 				party.setFootprintSizeOverride(0.85);
@@ -232,7 +230,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{When you enter %employer%\'s keep he runs out to greet you, he looks wracked with fear. He has clearly run too fast for his fat lungs and has to catch his breath before burbling out a slew of words.%SPEECH_ON%Thank the gods you came! The mountains have come alive! I have seen it, boulders the size of a house stiring up from their slumber, standing tall like a man and then crushing a horse in a single blow.%SPEECH_OFF% He throws you a huge lump of bluish crystaline rock, %employer% continues on %SPEECH_ON%My best men chopped this off the gaint, that stone you hold is its flesh. The beast is so armored that most weapons glance right off. It took four men with axes to carve that tiny chunk off, and as soon as they had finished, the rock grew right back. The beast barely noticed we were there, it crushed three men in a single blow. We fled, and we know not where it hides now. Search the surrounding lands, it is slow and huge, so it should not be hard to track. My tracker tells me you specialise in hunting unholds, so undoubtedly you already have poison with you to stop the creature regenerating. Even so, this beast may be impossible to kill, worse than a dozen unholds. If you do manage to kill a mountain, and I will reward you like a king.%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{When you enter %employer%\'s keep he runs out to greet you, he looks wracked with fear. He has clearly run too fast for his fat lungs and has to catch his breath before burbling out a slew of words.%SPEECH_ON%Thank the gods you came! The mountains have come alive! I have seen it, boulders the size of a house stiring up from their slumber, standing tall like a man and then crushing a horse in a single blow.%SPEECH_OFF% He throws you a huge lump of bluish crystaline rock, %employer% continues on %SPEECH_ON%My best men chopped this off the gaint, that stone you hold is its flesh. The beast is so armored that most weapons glance right off. It took four men with axes to carve that tiny chunk off, and as soon as they had finished, the rock grew right back. The beast barely noticed we were there, it crushed three men in a single blow. We fled, and we know not where it hides now. Search the surrounding lands, it is slow and huge, so it should not be hard to track. My tracker tells me you specialise in hunting unholds, so undoubtedly you already have poison with you to stop the creature regenerating. Even so, this beast may be impossible to kill, worse than a dozen unholds. If you do manage to kill a mountain, I will reward you like a king.%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -264,7 +262,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "Banter",
 			Title = "Along the way...",
-			Text = "[img]gfx/ui/events/event_71.png[/img]{%randombrother% returns from scouting, he has a harrowed look of a man who has passed by death. %SPEECH_ON%I climbed a hill to survey the landscape, couldn't see it in any direction. Then the earth shook something powerful and I was thrown off my feet and slid down the side of the hill landing in a bush. When i looked back up the hill was gone, and it was walking away.%SPEECH_OFF%.}",
+			Text = "[img]gfx/ui/events/event_71.png[/img]{%randombrother% returns from scouting, he has a harrowed look of a man who has passed by death. %SPEECH_ON%I climbed a hill to survey the landscape, couldn\'t see it in any direction. Then the earth shook something powerful, I was thrown off my feet and slid down the side of the hill, landing in a bush. When I looked back up, the hill was gone and it was walking away.%SPEECH_OFF%.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -338,7 +336,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "DriveThemOffSuccess",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face as though to shield it, then starts stepping back, further and further until it\'s gone! They\'re all gone!}",
+			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against your better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face as though to shield it, then starts stepping back, further and further until it\'s gone! They\'re all gone!}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -359,7 +357,8 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 			{
 				this.Characters.push(this.Contract.m.Dude.getImagePath());
 				this.Contract.m.Dude.improveMood(3.0, "Managed to drive off unholds all by himself");
-				this.Contract.m.Dude.addXP(1000, false)
+				this.Contract.m.Dude.addXP(1000, false);
+
 				if (this.Contract.m.Dude.getMoodState() >= this.Const.MoodState.Neutral)
 				{
 					this.List.push({
@@ -374,7 +373,7 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.m.Screens.push({
 			ID = "DriveThemOffFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face and then throws it down and swats %shouter% away. The man goes cartwheeling through the air and his screams go with him like a rabbit stolen up by a hawk. His shouts somersault back to earth in an echo of dizzying whoops and he lands with a hardy thud. The giant jiggles with an earthen chuckle. It\'s amusement catches the attention of the departed unholds who all turn around and start to return.}",
+			Text = "[img]gfx/ui/events/legend_rock_unhold.png[/img]{Against your better judgment, you let %shouter% go. He doesn\'t stop for nothing, like he was chasing down a throng of beautiful women undressing just for him. Shockingly, the unholds take a step back. They start to retreat one by one until only a lone giant remains.\n\n%shouter% runs up to its feet like a yapping dog and lets forth some atavistic scream so hoarsely made that you wonder if every ancestor of the earth buried or otherwise had heard it. The unhold slings an arm before its face and then throws it down and swats %shouter% away. The man goes cartwheeling through the air and his screams go with him like a rabbit stolen up by a hawk. His shouts somersault back to earth in an echo of dizzying whoops and he lands with a hardy thud. The giant jiggles with an earthen chuckle. It\'s amusement catches the attention of the departed unholds who all turn around and start to return.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -394,9 +393,9 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 				this.Characters.push(this.Contract.m.Dude.getImagePath());
 				local injury1;
 				local injury2;
+
 				if (this.Math.rand(1, 100) <= 90)
 				{
-
 					injury1 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 					injury2 = this.Contract.m.Dude.addInjury(this.Const.Injury.BluntBody);
 				}
@@ -589,11 +588,13 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

@@ -9,12 +9,24 @@ gt.Const.CharacterSprites <- {
 		"armor_upgrade_back",
 		"armor_upgrade_front",
 		"helmet_vanity_lower",
+		"helmet_vanity_lower_2",
 		"helmet",
 		"helmet_damage",
 		"helmet_helm",
 		"helmet_top",
 		"helmet_vanity",
+		"helmet_vanity_2",
 		"shield_icon"
+	],
+	Helmets = [
+		"helmet_vanity_lower",
+		"helmet_vanity_lower_2",
+		"helmet",
+		"helmet_damage",
+		"helmet_helm",
+		"helmet_top",
+		"helmet_vanity",
+		"helmet_vanity_2"
 	],
 	Human = [
 		"arms_icon",

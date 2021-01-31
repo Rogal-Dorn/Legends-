@@ -81,31 +81,35 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!actor.isPlayerControlled())
 		{
-			return;
+			return false;
 		}
 
-		if (!actor.getSkills().hasSkill("perk.legend_control_instincts"))
+		if (actor.getSkills().hasSkill("perk.legend_control_instincts"))
 		{
-			return;
+			return false;
 		}
 
 		if (actor.getSkills().hasSkill("perk.legend_surpress_urges"))
 		{
+			actor.setFaction(this.Const.Faction.PlayerAnimals);
 			this.logDebug(this.getName() + " AI set to " + this.m.Agent2);
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/" + this.m.Agent2));
+			local agent = this.new("scripts/ai/tactical/agents/" + this.m.Agent2);
+			actor.setAIAgent(agent)
+			this.m.AgentID = agent.getID();
 		}
 		else
 		{
 			actor.setFaction(this.Const.Faction.Beasts);
 			actor.getSprite("socket").setBrush("bust_base_beasts");
-			actor.setDirty(true);
 			local agent = this.new("scripts/ai/tactical/agents/" + this.m.Agent1);
 			actor.setAIAgent(agent);
+			this.logDebug(this.getName() + " AI set to " + this.m.Agent1);
 			this.m.AgentID = agent.getID();
 		}
 
 		actor.getAIAgent().setActor(actor);
 		actor.getAIAgent().removeBehavior(this.Const.AI.Behavior.ID.Retreat);
+		return true;
 	}
 
 	function removeItemsOnTransform()
@@ -168,17 +172,13 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		//show the transformation
 		this.transformEffect();
 
-
 		local actor = this.getContainer().getActor();
 
 		//change the AI
 		this.m.OriginalAgent = actor.getAIAgent();
 		this.m.OriginalFaction = actor.getFaction();
 		this.m.OriginalSocket = actor.getSprite("socket").getBrush().Name;
-		this.setAgents();
-
-		//remove items
-		this.removeItemsOnTransform();
+		local nextTurn = this.setAgents();
 
 		//set new sprites
 		this.m.OriginalBody = actor.getSprite("body").getBrush().Name;
@@ -186,7 +186,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		if (actor.getSprite("injury").HasBrush) {
 			this.m.OriginalInjury = actor.getSprite("injury").getBrush().Name;
 		}
-
 
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
@@ -205,6 +204,9 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		appearance.HideHair = true;
 		this.setSprites();
 
+		//remove items
+		this.removeItemsOnTransform();
+
 		this.m.TurnsLeft = 3;
 
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_true_form"))
@@ -213,6 +215,13 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.setSkills();
+		actor.setDirty(true);
+
+		this.Tactical.State.onUpdate();
+		if (nextTurn)
+		{
+			this.Tactical.TurnSequenceBar.initNextTurn();
+		}
 	}
 
 	function onRemoved()
@@ -235,21 +244,9 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (--this.m.TurnsLeft <= 0)
 		{
-			this.removeSelf();
 			this.removeEffect();
+			this.removeSelf();
 			return;
-		}
-
-		local actor = this.getContainer().getActor();
-		if (actor.isPlayerControlled())
-		{
-			return;
-		}
-
-		if (actor.getAIAgent().getID() != this.m.AgentID)
-		{
-			actor.setAIAgent(this.new("scripts/ai/tactical/agents/" + this.m.Agent1));
-			actor.getAIAgent().setActor(actor);
 		}
 	}
 
@@ -264,8 +261,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		}
 		actor.setFaction(this.m.OriginalFaction);
 
-
-
 		this.resetSprites();
 
 		this.transformEffect();
@@ -275,6 +270,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
 		items.getData()[this.Const.ItemSlot.Mainhand][0] = null;
 
+		actor.setDirty(true);
 		//Todo, don't loose armor if Master?
 	}
 
@@ -289,20 +285,18 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("injury").setBrush(this.m.Injury);
 		}
 
-		if (!actor.isPlayerControlled())
-		{
-			actor.getSprite("body").setHorizontalFlipping(0);
-			actor.getSprite("head").setHorizontalFlipping(0);
-			actor.getSprite("injury").setHorizontalFlipping(0);
-		}
-		else
+		if (actor.isPlayerControlled() || actor.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			actor.getSprite("body").setHorizontalFlipping(1);
 			actor.getSprite("head").setHorizontalFlipping(1);
 			actor.getSprite("injury").setHorizontalFlipping(1);
 		}
-		actor.setBrushAlpha(10);
-		actor.setDirty(true);
+		else
+		{
+			actor.getSprite("body").setHorizontalFlipping(0);
+			actor.getSprite("head").setHorizontalFlipping(0);
+			actor.getSprite("injury").setHorizontalFlipping(0);
+		}
 	}
 
 	function resetSprites()
@@ -320,7 +314,6 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 			actor.getSprite("injury").setBrush("");
 		}
 
-		actor.setBrushAlpha(255);
 		actor.getSprite("hair").Visible = true;
 		actor.getSprite("beard").Visible = true;
 		actor.getSprite("beard_top").Visible = false;
@@ -337,9 +330,8 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		local appearance = actor.getItems().getAppearance();
 		appearance.HideBeard = false;
 		appearance.HideHair = false;
-		actor.setDirty(true);
 
-		if (actor.isPlayerControlled())
+		if (actor.isPlayerControlled() || actor.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			actor.getSprite("body").setHorizontalFlipping(0);
 			actor.getSprite("head").setHorizontalFlipping(0);

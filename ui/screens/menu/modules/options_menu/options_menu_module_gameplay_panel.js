@@ -3,7 +3,7 @@
  *	@Company:		Overhype Studios
  *
  *	@Copyright:		(c) Overhype Studios | 2013 - 2020
- * 
+ *
  *  @Author:		Overhype Studios
  *  @Date:			12.04.2017 (refactored: 03.10.2017)
  *  @Description:	Options Menu Module - Gameplay Panel JS
@@ -14,10 +14,10 @@
 var OptionsMenuModuleGameplayPanel = function(_dataSource)
 {
 	this.mDataSource = _dataSource;
- 
+
 	// container
 	this.mContainer = null;
-	
+
 	// controls
 	this.mCameraFollowCheckbox			= null;
 	this.mCameraAdjustLevelCheckbox		= null;
@@ -42,6 +42,18 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAutoEndTurnLabel				= null;
     this.mRestoreEquipmentLabel         = null;
     this.mAutoPauseAfterCityLabel       = null;
+
+	this.mOptions = {
+		AISpeed: {
+			Control: null,
+			Title: null,
+			OptionsKey: 'legend.aispeed',
+			Min: 0.5,
+			Max: 4,
+			Value: 1.0,
+			Step: 0.5
+		}
+	}
 
     this.registerDatasourceListener();
 };
@@ -109,7 +121,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 	rightColumn.append(row);
 	displayTile = $('<div class="title title-font-big font-color-title">Overlays</div>');
 	row.append(displayTile);
-	
+
 	control = $('<div class="control"></div>');
 	row.append(control);
 	this.mStatsOverlaysCheckbox = $('<input type="checkbox" id="cb-stats-overlays" name="stats-overlays" />');
@@ -220,7 +232,38 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
         increaseArea: '30%'
     });
 
+	this.createSliderControlDIV(this.mOptions.AISpeed, 'AI Battle Speed', rightColumn);
+
     this.setupEventHandler();
+};
+
+OptionsMenuModuleGameplayPanel.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
+{
+    var self = this;
+	var row = $('<div class="row"></div>');
+	_parentDiv.append(row);
+	_definition.Title = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
+	row.append(_definition.Title);
+
+	var control = $('<div class="scale-control"></div>');
+	row.append(control);
+
+	_definition.Control = $('<input class="scale-slider" type="range"/>');
+	_definition.Control.attr('min', _definition.Min);
+	_definition.Control.attr('max', _definition.Max);
+	_definition.Control.attr('step', _definition.Step);
+	_definition.Control.val(_definition.Value);
+	control.append(_definition.Control);
+
+	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
+	control.append(_definition.Label);
+
+	_definition.Control.on("change", function ()
+	{
+		_definition.Value = parseFloat(_definition.Control.val());
+		_definition.Label.text('' + _definition.Value);
+		self.mDataSource.updateGameplayOption("AISpeed", _definition.Value);
+	});
 };
 
 OptionsMenuModuleGameplayPanel.prototype.destroyDIV = function ()
@@ -320,7 +363,8 @@ OptionsMenuModuleGameplayPanel.prototype.setupEventHandler = function ()
     {
         var self = _event.data;
         self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity, self.mAutoPauseAfterCityCheckbox.prop('checked') === true);
-    });
+	});
+
 };
 
 /*
@@ -345,7 +389,9 @@ OptionsMenuModuleGameplayPanel.prototype.bindTooltips = function ()
 	this.mAlwaysHideTreesLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AlwaysHideTrees });
 	this.mAutoEndTurnLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoEndTurns });
     this.mRestoreEquipmentLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.RestoreEquipment });
-    this.mAutoPauseAfterCityLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoPauseAfterCity });
+	this.mAutoPauseAfterCityLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoPauseAfterCity });
+	this.mOptions.AISpeed.Control.bindTooltip({ contentType: 'ui-element', elementId: 'legend.aispeed' });
+	this.mOptions.AISpeed.Title.bindTooltip({ contentType: 'ui-element', elementId: 'legend.aispeed' });
 };
 
 OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
@@ -360,7 +406,9 @@ OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
 	this.mAlwaysHideTreesLabel.unbindTooltip();
 	this.mAutoEndTurnLabel.unbindTooltip();
     this.mRestoreEquipmentLabel.unbindTooltip();
-    this.mAutoPauseAfterCityLabel.unbindTooltip();
+	this.mAutoPauseAfterCityLabel.unbindTooltip();
+	this.mOptions.AISpeed.Control.unbindTooltip();
+	this.mOptions.AISpeed.Title.unbindTooltip();
 };
 
 
@@ -450,7 +498,7 @@ OptionsMenuModuleGameplayPanel.prototype.onOptionsLoaded = function (_dataSource
 {
 	// get controls options
 	var gameplayOptions = _dataSource.getGameplayOptions();
-	
+
 	if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode in gameplayOptions)
 	{
 		this.selectCheckboxOption(this.mCameraFollowCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode]);
@@ -504,7 +552,10 @@ OptionsMenuModuleGameplayPanel.prototype.onOptionsLoaded = function (_dataSource
     if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity in gameplayOptions)
     {
         this.selectCheckboxOption(this.mAutoPauseAfterCityCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity]);
-    }
+	}
+
+	this.mOptions.AISpeed.Value = gameplayOptions["AISpeed"]
+
 };
 
 OptionsMenuModuleGameplayPanel.prototype.onDefaultsLoaded = function (_dataSource, _data)

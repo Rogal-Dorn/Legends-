@@ -28,7 +28,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(["legend_blacksmith_background"])//this.Const.CharacterBackgroundsRandom);
+			bro.setStartValuesEx(["legend_crusader_commander_background"])//this.Const.CharacterBackgroundsRandom);
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
@@ -53,8 +53,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().resize(2000);
 
 		local bros = roster.getAll();
-		bros[0].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_burned_injury"));
-		bros[1].m.Skills.add(this.new("scripts/skills/injury_permanent/legend_scarred_injury"));
+		bros[0].m.Skills.add(this.new("scripts/skills/injury/cut_arm_injury"));
+		bros[1].m.Skills.add(this.new("scripts/skills/injury/deep_chest_cut_injury"));
 
 		this.World.Assets.m.Money = 50000;
 		this.World.Assets.m.ArmorParts = 200;
@@ -641,7 +641,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_orc_scale_helm",
 			"helm/legend_helmet_orc_great_helm",
 			"helm/legend_helmet_orc_behemoth_helmet",
-			"helm/legend_helmet_enclave_skullcap",
 			"helm/legend_helmet_crude_metal_helm",
 			"helm/legend_helmet_crude_cylinder_helm",
 			"helm/legend_helmet_heavy_plate_helm",
@@ -791,6 +790,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_noble_feather",
 			"vanity/legend_helmet_noble_floppy_hat",
 			"vanity/legend_helmet_noble_hat",
+			"vanity/legend_helmet_ancient_wig",
 			"vanity/legend_helmet_noble_hood",
 			"vanity/legend_helmet_wreath",
 			"vanity/legend_helmet_orc_bones",
@@ -861,9 +861,12 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		"helmets/legend_ancient_lich_headpiece",
 		"helmets/legend_goblin_leader_helmet",
 		"helmets/legend_goblin_shaman_helmet",
+		"helmets/legend_goblin_light_helmet",
+		"helmets/legend_goblin_skirmisher_helmet",
 		"helmets/legend_unhold_helmet_heavy",
 		"helmets/legend_unhold_helmet_light",
-		"helmets/legend_orc_berserker_helmet"
+		"helmets/legend_orc_berserker_helmet",
+		"helmets/legend_ancient_wig"
 		]
 
 		foreach(h in asloots)

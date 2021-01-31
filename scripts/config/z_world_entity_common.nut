@@ -257,6 +257,9 @@ gt.Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale,
 	//Go through each Item in the spawn list (which are structures defining enemies)
 	foreach (t in _list)
 	{
+		// foreach (k,v in t) {
+		//  	this.logInfo("K " + k + ": " +v)
+		// }
 		//Don't pick if resources are greater than threshold
 		if ("MaxR" in t && _resources > t.MaxR)
 		{
@@ -671,7 +674,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	}
 	// return this.new("scripts/items/helmets/" + helm);
 
-	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		if (helm == "")
 		{
@@ -688,7 +691,12 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	local layersObj = this.Const.LegendMod.Helmets[helm];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObj.Script);
+		local helmet = this.new(layersObj.Script);
+		if (variant != null)
+		{
+			helmet.setupArmor(variant);
+		}
+		return helmet;
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
@@ -765,7 +773,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		return null;
 	}
 
-	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		local item = this.new("scripts/items/armor/" + armorID);
 		if (faction != null)
@@ -781,13 +789,19 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (!(armorID in this.Const.LegendMod.Armors))
 	{
+
 		return this.new("scripts/items/armor/" + armorID);
 	}
 
 	local layersObj = this.Const.LegendMod.Armors[armorID];
 	if (layersObj.Script != "")
 	{
-		return this.new(layersObj.Script);
+		local item = this.new(layersObj.Script);
+		if (faction != null)
+		{
+			item.setupArmor(faction);
+		}
+		return item;
 	}
 
 	local set = layersObj.Sets[this.Math.rand(0, layersObj.Sets.len() -1)]
@@ -872,7 +886,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		break;
 	}
 
-	if ( !("LegendsMod" in this.World) || !this.World.LegendsMod.Configs().LegendArmorsEnabled())
+	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 	{
 		if (armorID == "")
 		{

@@ -21,6 +21,7 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 					{
 						return 0;
 					}
+
 				}
 			],
 			function start( _event )
@@ -29,13 +30,14 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 				local cannibalistic_trait = this.new("scripts/skills/traits/legend_cannibalistic");
 				_event.m.Butcher.getSkills().add(cannibalistic_trait);
 				this.List.push({
-						id = 10,
-						icon = cannibalistic_trait.getIcon(),
-						text = _event.m.Butcher.m.Name + " now enjoys forbidden meat"
+					id = 10,
+					icon = cannibalistic_trait.getIcon(),
+					text = _event.m.Butcher.m.Name + " now enjoys forbidden meat"
 				});
 				_event.m.Cannibal.improveMood(2.0, "Spread the joys of cannibalism");
 				_event.m.Butcher.improveMood(2.0, "Started appreciating forbidden meat");
 			}
+
 		});
 	}
 
@@ -45,32 +47,32 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 		local cannibal_candidates = [];
 		local butcher_candidates = [];
 
-
-		foreach (bro in brothers)
+		foreach( bro in brothers )
 		{
 			if (bro.getBackground().getID() == "background.legend_cannibal")
 			{
 				cannibal_candidates.push(bro);
 			}
+
 			if (bro.getBackground().getID() == "background.butcher" && !bro.getSkills().hasSkill("trait.legend_cannibalistic"))
 			{
 				butcher_candidates.push(bro);
 			}
+
 			if (bro.getBackground().getID() == "background.female_butcher" && !bro.getSkills().hasSkill("trait.legend_cannibalistic"))
 			{
 				butcher_candidates.push(bro);
 			}
-
 		}
+
 		if (cannibal_candidates.len() < 1 || butcher_candidates.len() < 1)
 		{
 			return;
 		}
 
-
 		this.m.Cannibal = cannibal_candidates[this.Math.rand(0, cannibal_candidates.len() - 1)];
 		this.m.Butcher = butcher_candidates[this.Math.rand(0, butcher_candidates.len() - 1)];
-		this.m.Score = 5 + (((this.m.Cannibal.getLevel() + this.m.Butcher.getLevel() + 0.00) * 5.00) / this.Const.LevelXP.len());
+		this.m.Score = 5 + (this.m.Cannibal.getLevel() + this.m.Butcher.getLevel() + 0.0) * 5.0 / this.Const.LevelXP.len();
 	}
 
 	function onPrepare()
@@ -99,4 +101,6 @@ this.legend_cannibal_corrupts_butcher <- this.inherit("scripts/events/event", {
 		this.m.Cannibal = null;
 		this.m.Butcher = null;
 	}
+
 });
+

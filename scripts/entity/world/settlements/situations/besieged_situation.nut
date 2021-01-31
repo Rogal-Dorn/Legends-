@@ -27,7 +27,7 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.50);
 		}
@@ -59,6 +59,34 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("female_beggar_background");
 		_draftList.push("female_beggar_background");
 
+		}
+
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 2);
+				if (r == 1)
+				{
+			     _draftList.push("legend_death_summoner_background");
+				}
+			}
+			else
+			{
+			r = this.Math.rand(0, 5);
+				if (r == 1)
+				{
+				  _draftList.push("legend_death_summoner_background");
+				}
+			}
+
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
+			{
+
+			 	_draftList.push("legend_death_summoner_background");
+
+			}
 		}
 	}
 

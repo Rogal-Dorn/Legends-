@@ -31,31 +31,6 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 
 		}
 
-		if(this.World.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			local r;
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
-			{
-			r = this.Math.rand(0, 5);
-				if (r == 1)
-				{
-					_list.push("legend_illusionist_background");
-				}
-			}
-			else
-			{
-				r = this.Math.rand(0, 9);
-				if (r == 1)
-				{
-					_list.push("legend_illusionist_background");
-				}
-			}
-
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_warlock")
-			{
-				_list.push("legend_vampire_background");
-			}
-		}
 	}
 
 	function onUpdateShopList( _id, _list )

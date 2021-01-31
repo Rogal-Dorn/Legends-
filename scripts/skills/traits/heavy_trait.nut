@@ -4,9 +4,9 @@ this.heavy_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.heavy";
-		this.m.Name = "Heavy";
+		this.m.Name = "Lumbering";
 		this.m.Icon = "ui/traits/heavy_trait.png";
-		this.m.Description = "Being exceptionally heavy, this character\'s strikes hurt plenty, but they\'re also slower.";
+		this.m.Description = "Being exceptionally purposeful, this character\'s strikes hurt plenty, but they\'re also slower.";
 		this.m.Titles = [
 			"the Mountain",
 			"the Ox",

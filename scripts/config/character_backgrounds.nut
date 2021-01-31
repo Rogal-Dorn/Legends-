@@ -284,7 +284,7 @@ gt.Const.CharacterPartyBackgrounds <- [
 	"legend_conjurer_background"
 ];
 
-gt.Const.CharacterMagicBackgrounds <- [ 
+gt.Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
 	"legend_conjurer_background",
 	"legend_death_summoner_background",
@@ -403,7 +403,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_noble_event_background",
 	"legend_conjurer_background",
 	"slave_background",
-	"slave_soutern_background",
+	"slave_southern_background",
 	"assassin_southern_background"
 ];
 gt.Const.HorseBackgrounds <- [

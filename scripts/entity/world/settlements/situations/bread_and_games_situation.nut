@@ -28,7 +28,7 @@ this.bread_and_games_situation <- this.inherit("scripts/entity/world/settlements
 
 	function onAdded( _settlement )
 	{
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.02);
 		}

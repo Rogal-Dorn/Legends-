@@ -5,6 +5,6 @@ gt.Const.World.SpeedSettings.LightSpeedMult <- 4.0; // 4x when the 3 key is pres
 gt.Const.World.SpeedSettings.LudicrousSpeedMult <- 8.0; // 8x when the 4 key is pressed
 
 // reduce some combat delays
-foreach(v in ["Action","MinorAction"]) gt.Const.AI.Agent[v + "Delay"] *= 0.5;
-foreach(v in ["NewEvaluation","CameraAdditional"]) gt.Const.AI.Agent[v + "Delay"] *= 0.25;
+// foreach(v in ["Action","MinorAction"]) gt.Const.AI.Agent[v + "Delay"] *= 0.5;
+// foreach(v in ["NewEvaluation","CameraAdditional"]) gt.Const.AI.Agent[v + "Delay"] *= 0.25;
 

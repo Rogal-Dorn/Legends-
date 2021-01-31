@@ -4,7 +4,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You\'re running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there\'s rumors of even worse things out there.\n\n [color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate. Every non-combat recruit gains the Pacifist perk. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Combat backgrounds cost more to hire, peddlers and donkeys cost less.";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate. Every non-combat recruit gains the Pacifist perk. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Combat backgrounds cost more to hire, peddlers and donkeys cost less.";
 		this.m.Difficulty = 2;
 		this.m.Order = 300;
 	}
@@ -19,7 +19,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 2; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -32,6 +32,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
@@ -45,14 +46,19 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_staff"));
-		items.equip(this.Const.World.Common.pickHelmet([[1, "feathered_hat"]]));
-
+		items.equip(this.Const.World.Common.pickHelmet([
+			[
+				1,
+				"feathered_hat"
+			]
+		]));
 		bros[1].setStartValuesEx([
 			"caravan_hand_background"
 		]);
 		bros[1].setPlaceInFormation(5);
 		bros[1].setVeteranPerks(2);
-		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance was little more than a drunken miscreant. But you watched as he fought off three would-be muggers. They managed to take his boots in the end, sure, but they couldn\'t truly defeat his spirit. Impressed, you took him on as a caravan hand.";
+		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance thought that was little more than a drunken miscreant. But you watched as off three would-be muggers were soon on the ground. They still managed to take off with a coin purse in the end, sure, but they could not truly defeat %name%. Impressed, you took the newly-impoverished fighter on as a caravan hand.";
+		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -61,7 +67,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
-
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
@@ -78,7 +83,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -86,6 +91,8 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -149,7 +156,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		this.World.Flags.set("IsLegendsTrader", true);
 	}
 
-
 	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().isCombatBackground())
@@ -159,11 +165,9 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		else if (!bro.getBackground().isCombatBackground())
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
-		    bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
-		    bro.m.PerkPointsSpent += 1;
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+			bro.m.PerkPointsSpent += 1;
 		}
-
-
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -172,7 +176,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 		foreach( i, bro in bros )
 		{
-
 			if (bro.getBackground().isCombatBackground())
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
@@ -183,42 +186,46 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 			}
 
-			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey" )
+			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey")
 			{
-					bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
-					bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 			}
 		}
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
 		if (_list.len() < 10)
 		{
 			return;
 		}
+
 		local r;
 		r = this.Math.rand(0, 4);
+
 		if (r == 0)
 		{
 			_list.push("peddler_background");
 		}
+
 		r = this.Math.rand(0, 2);
+
 		if (r == 0)
 		{
 			_list.push("caravan_hand_background");
 		}
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _tree )
 	{
-		if  (_tree == null)
+		if (_tree == null)
 		{
 			return;
 		}
 
-		_tree[0].push(this.Const.Perks.PerkDefs.LegendPacifist)
+		_tree[0].push(this.Const.Perks.PerkDefs.LegendPacifist);
 	}
 
-
 });
+

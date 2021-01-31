@@ -165,7 +165,7 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		// if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		// if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		// {
 		// 	flip = !flip
 		// }
@@ -203,11 +203,6 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 		injury.Visible = false;
 		injury.setBrush("bust_goblin_01_head_injured");
 		this.addSprite("helmet");
-
-		// this.addSprite("helmet_vanity_lower");
-		// this.addSprite("helmet_helm");
-		// this.addSprite("helmet_top");
-		// this.addSprite("helmet_vanity");
 		this.addSprite("helmet_damage");
 
 		local body_blood = this.addSprite("body_blood");

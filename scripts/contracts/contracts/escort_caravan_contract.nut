@@ -337,7 +337,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					if (this.Flags.get("IsCaravanHalfDestroyed"))
 					{
-						if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 						{
 							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
 							local L = this.m.Caravan.getInventory();
@@ -1010,7 +1010,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 						this.World.Contracts.finishActiveContract();
 
-						if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 						{
 							local origin = this.Contract.getOrigin();
 							if (origin != null)
@@ -1188,7 +1188,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			local produce = 3
 			local L = this.m.Home.getProduce();
 
-			if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+			if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 			{
 				local min = 1;
 				switch (this.m.Home.getSize()) {

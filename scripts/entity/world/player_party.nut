@@ -24,25 +24,33 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		}
 
 
-		if (this.World.Assets.getOrigin() == null || this.World.Assets.getOrigin().getID() == "scenario.militia")
+		if (this.World.Assets.getOrigin() == null)
 		{
 			this.m.Strength * 0.8;
 			return;
 		}
 
+		local broScale = 1.0
+		if (this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			broScale = 0.66;
+		}
+
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
+
+		local count = 0;
 		foreach( i, bro in roster )
 		{
 			if (i >= 27)
 			{
 				break;
 			}
-			
+
 			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 			{
-				break;
-			}			
+				continue;
+			}
 
 			if (bro.getSkills().hasSkill("perk.legend_spawn_zombie_high"))
 			{
@@ -72,29 +80,24 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 			local brolevel = bro.getLevel();
 
-			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
-			{
-				brolevel = brolevel / 2;
-			}
-
 			if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Easy)
 			{
-				this.m.Strength +=  3 + ((brolevel / 4) + (brolevel - 1)) * 1.5;
+				this.m.Strength += (3 + ((brolevel / 4) + (brolevel - 1)) * 1.5) * broScale;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Normal)
 			{
-				this.m.Strength +=  10 + ((brolevel / 2) + (brolevel - 1)) * 2;
+				this.m.Strength += (10 + ((brolevel / 2) + (brolevel - 1)) * 2) * broScale;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Hard)
 			{
-				this.m.Strength +=  6 + (i / 2) + ((brolevel / 2) + (pow(brolevel,1.2)));
+				this.m.Strength += (6 + (count / 2) + ((brolevel / 2) + (pow(brolevel,1.2)))) * broScale;
 			}
 			else if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary )
 			{
-				this.m.Strength +=  i + (brolevel + (pow(brolevel,1.2)));
+				this.m.Strength += (count + (brolevel + (pow(brolevel,1.2)))) * broScale;
 			}
 
-			if (this.World.LegendsMod.Configs().LegendItemScalingEnabled())
+			if (this.LegendsMod.Configs().LegendItemScalingEnabled())
 			{
 				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -128,6 +131,8 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
 				this.m.Strength += gearvalue ;
 			}
+
+			count++;
 
 		}
 
@@ -567,12 +572,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			local s = this.Const.LegendMod.MaxResources[this.World.Assets.getEconomicDifficulty()].Stash
 			s += this.World.Assets.getOrigin().getStashModifier();
 			s += this.World.Retinue.getInventoryUpgrades() * 27;
-	
+
 			foreach( bro in this.World.getPlayerRoster().getAll())
 			{
 				s += bro.getStashModifier();
 			}
-	
+
 			if (s != this.Stash.getCapacity())
 			{
 				this.Stash.resize(s);

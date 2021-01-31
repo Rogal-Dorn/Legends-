@@ -10,7 +10,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_06.png[/img]You find %barbarian% and %shieldmaiden% arguing with one another. The Barbarian\'s voice is raised.%SPEECH_ON%The best defense is the good offence! That\'s why I rush to a battle first!%SPEECH_OFF%Also raising her voice, and clenching a shield at her side, the Shieldmaiden shakes her head.%SPEECH_ON%Why are you even talking to me? I have no desire to get to know someone who is only going to get killed by rushing into battle before thinking!%SPEECH_OFF%The fighting words kick off a scuffle.\n\n",
+			Text = "[img]gfx/ui/events/event_06.png[/img]You find %barbarian% and %shieldmaiden% arguing with one another. The Barbarian\'s voice is raised.%SPEECH_ON%The best defence is the good offence! That\'s why I rush to a battle first!%SPEECH_OFF%Also raising her voice, and clenching a shield at her side, the Shieldmaiden shakes her head.%SPEECH_ON%Why are you even talking to me? I have no desire to get to know someone who is only going to get killed by rushing into battle before thinking!%SPEECH_OFF%The fighting words kick off a scuffle.\n\n",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -30,7 +30,7 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 				if (this.Math.rand(1, 100) <= 50)
 				{
-					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% with a full swing of a weapon, as if trying to cut her in half,  but she raises her shield to deftly deflect the blow and immedietly counters with a quick jab of her shield that stuns and knocks %barbarian% back.%SPEECH_ON%See I told you! you rush without thinking and now you are laying on the ground...%SPEECH_OFF%";
+					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% with a full swing of a weapon, as if trying to cut her in half, but she raises her shield to deftly deflect the blow and immedietly counters with a quick jab of her shield that stuns and knocks %barbarian% back.%SPEECH_ON%See I told you! you rush without thinking and now you are laying on the ground...%SPEECH_OFF%";
 					local MeleeDefense = this.Math.rand(2, 4);
 					_event.m.Shieldmaiden.getBaseProperties().MeleeDefense += MeleeDefense;
 					_event.m.Shieldmaiden.getSkills().update();
@@ -40,32 +40,31 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 					local injury1 = _event.m.Barbarian.addInjury(this.Const.Injury.Brawl);
 					_event.m.Barbarian.worsenMood(0.5, "Overpowered by " + _event.m.Shieldmaiden.getName());
 					this.List = [
-							{
-								id = 16,
-								icon = "ui/icons/melee_defense.png",
-								text = _event.m.Shieldmaiden.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + MeleeDefense + "[/color] Melee Defense"
-							},
-							{
-								id = 10,
-								icon = "ui/icons/days_wounded.png",
-								text = _event.m.Shieldmaiden.getName() + " suffers light wounds"
-							},
-							{
-								id = 10,
-								icon = injury1.getIcon(),
-								text = _event.m.Barbarian.getName() + " suffers " + injury1.getNameOnly()
-							},
-							{
-								id = 10,
-								icon = this.Const.MoodStateIcon[_event.m.Barbarian.getMoodState()],
-								text = _event.m.Barbarian.getName() + this.Const.MoodStateEvent[_event.m.Barbarian.getMoodState()]
-							}
-						];
+						{
+							id = 16,
+							icon = "ui/icons/melee_defense.png",
+							text = _event.m.Shieldmaiden.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + MeleeDefense + "[/color] Melee Defense"
+						},
+						{
+							id = 10,
+							icon = "ui/icons/days_wounded.png",
+							text = _event.m.Shieldmaiden.getName() + " suffers light wounds"
+						},
+						{
+							id = 10,
+							icon = injury1.getIcon(),
+							text = _event.m.Barbarian.getName() + " suffers " + injury1.getNameOnly()
+						},
+						{
+							id = 10,
+							icon = this.Const.MoodStateIcon[_event.m.Barbarian.getMoodState()],
+							text = _event.m.Barbarian.getName() + this.Const.MoodStateEvent[_event.m.Barbarian.getMoodState()]
+						}
+					];
 				}
 				else
 				{
-					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% who and tries to react by blocking the blow with her shield but the barbarian easily avoids the blow and knocks her back to the ground, before stopping a strike an inch from her head.%SPEECH_ON%See I told you! Best defence is a good offence%SPEECH_OFF%";
-
+					this.Text = this.Text + " %barbarian% rushes at %shieldmaiden% who tries to react by blocking the blow with her shield but the Barbarian easily circumvents her defence and knocks her to the ground, before stopping a strike an inch from her head.%SPEECH_ON%See I told you! Best defence is a good offence%SPEECH_OFF%";
 					local meleeSkill = this.Math.rand(2, 4);
 					_event.m.Barbarian.getBaseProperties().MeleeSkill += meleeSkill;
 					_event.m.Barbarian.getSkills().update();
@@ -75,31 +74,28 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 					_event.m.Shieldmaiden.worsenMood(0.5, "Overpowered by " + _event.m.Barbarian.getName());
 					_event.m.Barbarian.addLightInjury();
 					this.List = [
-							{
-								id = 16,
-								icon = "ui/icons/melee_skill.png",
-								text = _event.m.Barbarian.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + meleeSkill + "[/color] Melee Skill"
-							},
-							{
-								id = 10,
-								icon = "ui/icons/days_wounded.png",
-								text = _event.m.Barbarian.getName() + " suffers light wounds"
-							},
-							{
-								id = 10,
-								icon = injury2.getIcon(),
-								text = _event.m.Shieldmaiden.getName() + " suffers " + injury2.getNameOnly()
-							},
-							{
-								id = 10,
-								icon = this.Const.MoodStateIcon[_event.m.Shieldmaiden.getMoodState()],
-								text = _event.m.Shieldmaiden.getName() + this.Const.MoodStateEvent[_event.m.Shieldmaiden.getMoodState()]
-							}
-						];
-
+						{
+							id = 16,
+							icon = "ui/icons/melee_skill.png",
+							text = _event.m.Barbarian.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + meleeSkill + "[/color] Melee Skill"
+						},
+						{
+							id = 10,
+							icon = "ui/icons/days_wounded.png",
+							text = _event.m.Barbarian.getName() + " suffers light wounds"
+						},
+						{
+							id = 10,
+							icon = injury2.getIcon(),
+							text = _event.m.Shieldmaiden.getName() + " suffers " + injury2.getNameOnly()
+						},
+						{
+							id = 10,
+							icon = this.Const.MoodStateIcon[_event.m.Shieldmaiden.getMoodState()],
+							text = _event.m.Shieldmaiden.getName() + this.Const.MoodStateEvent[_event.m.Shieldmaiden.getMoodState()]
+						}
+					];
 				}
-
-
 			}
 
 		});
@@ -118,7 +114,12 @@ this.legend_barbarian_vs_shieldmaiden <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() > 3 && (bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned")))
+			if (bro.getLevel() <= 3)
+			{
+				continue;
+			}
+
+			if ((bro.getBackground().getID() == "background.barbarian" && !bro.getFlags().has("learned")) || (bro.getBackground().getID() == "background.raider" && !bro.getFlags().has("learned")))
 			{
 				Barbarian_candidates.push(bro);
 				break;

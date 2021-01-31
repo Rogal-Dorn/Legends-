@@ -17,7 +17,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function setActor( _a )
 	{
-		this.m.Actor = (typeof _a == "instance" ? _a.get() : _a);	
+		this.m.Actor = (typeof _a == "instance" ? _a.get() : _a);
 	}
 
 	function create()
@@ -41,7 +41,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function getAttacker()
 	{
-		if (!this.World.LegendsMod.Configs().LegendBleedKillerEnabled())
+		if (!this.LegendsMod.Configs().LegendBleedKillerEnabled())
 		{
 			return this.getContainer().getActor();
 		}

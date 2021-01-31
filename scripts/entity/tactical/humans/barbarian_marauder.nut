@@ -69,7 +69,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 
 
-		if ("LegendsMod" in this.World && this.World.LegendsMod != null && this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			if(this.Math.rand(1, 20) == 1)
 			{
@@ -166,7 +166,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 			[33, "barbarians/reinforced_animal_hide_armor"]
 		];
 
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			armor.push(
 				[5, "barbarians/legend_barbarian_southern_armor"]

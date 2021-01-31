@@ -193,7 +193,7 @@ this.world_screen <- {
 
 	function onDevConsoleCommand( _data )
 	{
-		this.World.LegendsMod.onDevConsole(_data[0], _data[1])
+		this.LegendsMod.onDevConsole(_data[0], _data[1])
 	}
 
 	function onDevConsoleIsVisible( _data )

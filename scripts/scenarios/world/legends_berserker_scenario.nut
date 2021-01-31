@@ -4,7 +4,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		this.m.ID = "scenario.legends_berserker";
 		this.m.Name = "Berserker";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family slaughtered drove you into a self destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker Madness:[/color] Unlock powerful abilities that allow you to fight naked and bare-handed.\n[color=#bcad8c]Infectious Rage:[/color] Only the insane, violent or desperate will join you. You will grant the Berserk perk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_139.png[/img][/p][p]You are a barbarian berserker, driven by an unbound rage. Watching your family be slaughtered drove you into a self-destructive frenzy of violence and revenge.\n\n[color=#bcad8c]Berserker Madness:[/color] Unlock powerful abilities that allow you to fight naked and bare-handed.\n[color=#bcad8c]Infectious Rage:[/color] Only the insane, violent or desperate will join you. You will grant the Berserk perk to anyone who joins you in battle. You have a tiny chance of finding other berserkers for hire.\n[color=#bcad8c]Avatar:[/color] Begin alone. If you die, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 60;
 		this.m.IsFixedLook = true;
@@ -19,43 +19,20 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	{
 		local roster = this.World.getPlayerRoster();
 
-		for( local i = 0; i < 1; i = ++i )
+		for( local i = 0; i < 1; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
-
 		bros[0].setStartValuesEx([
 			"legend_berserker_commander_background"
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
-
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_bearform"));
-
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_direwolf"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_ghoul"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_hexen"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_alps"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_unhold"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_lindwurm"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_spider"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_schrat"));
-
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_bandit"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_barbarian"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_caravan"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_master_archer"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_mercenary"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_noble"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_skeleton"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_vampire"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
-
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
@@ -67,7 +44,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		local randomVillage;
 		local northernmostY = 0;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			local v = this.World.EntityManager.getSettlements()[i];
 
@@ -76,6 +53,8 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 				northernmostY = v.getTile().SquareCoords.Y;
 				randomVillage = v;
 			}
+
+			i = ++i;
 		}
 
 		randomVillage.setLastSpawnTimeToNow();
@@ -176,15 +155,15 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			return 0;
 		});
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 2; i = i )
 		{
 			houses[i].Faction.addPlayerRelation(-30.0, "You are considered a barbarian");
+			i = ++i;
 		}
 
 		houses[1].Faction.addPlayerRelation(18.0);
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(106);
-		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_berserker");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
@@ -217,13 +196,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		return false;
 	}
 
-
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
 		if (_list.len() <= 5)
 		{
 			local r;
 			r = this.Math.rand(0, 9);
+
 			if (r == 0)
 			{
 				_list.push("barbarian_background");
@@ -232,6 +211,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		local r;
 		r = this.Math.rand(0, 999);
+
 		if (r == 0)
 		{
 			_list.push("legend_berserker_background");
@@ -247,12 +227,12 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		{
 			if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
 			else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
 			}
 		}
@@ -266,20 +246,22 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		}
 		else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
 		{
-			bro.improveMood(1.0, "Excited by your lust for battle")
+			bro.improveMood(1.0, "Excited by your lust for battle");
 		}
+
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _tree )
 	{
-		if  (_tree == null)
+		if (_tree == null)
 		{
 			return;
 		}
 
-		_tree[0].push(this.Const.Perks.PerkDefs.Berserk)
+		_tree[0].push(this.Const.Perks.PerkDefs.Berserk);
 	}
+
 });
 

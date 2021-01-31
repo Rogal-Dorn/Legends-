@@ -192,6 +192,14 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "ammo/quiver_of_bolts"
 			});
 
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/tabard/legend_common_tabard"
+				});
+			}
 
 			if (this.Const.DLC.Unhold)
 			{
@@ -217,6 +225,44 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		}
 		else if (_id == "building.armorsmith")
 		{
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_common"
+				});
+				_list.push({
+					R = 95,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_noble"
+				});
+				_list.push({
+					R = 50,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_armor_cloak_heavy"
+				});
+				_list.push({
+					R = 99,
+					P = 2.0,
+					S = "legend_armor/named/legend_armor_cloak_rich"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/cloak/legend_sash"
+				});
+				_list.push({
+					R = 45,
+					P = 1.0,
+					S = "legend_armor/tabard/legend_common_tabard"
+				});
+				_list.push({
+					R = 99,
+					P = 2.0,
+					S = "legend_armor/named/legend_armor_named_tabard"
+				});
+			}
 		}
 	}
 

@@ -1,6 +1,6 @@
-this.legend_grapple<- this.inherit("scripts/skills/skill", {
+this.legend_grapple <- this.inherit("scripts/skills/skill", {
 	m = {
-		StunChance = 75
+		StunChance = 50
 	},
 	function setStunChance( _c )
 	{
@@ -11,7 +11,7 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_grapple";
 		this.m.Name = "Grapple";
-		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. Offhand must be free to use.";
+		this.m.Description = "Grab hold and restrain a target, heavily fatiguing them. Grappled targets can not keep up their Shieldwall, Spearwall or similar defensive skills. One hand must be free to use.";
 		this.m.Icon = "skills/grapple_square.png";
 		this.m.IconDisabled = "skills/grapple_square_bw.png";
 		this.m.Overlay = "active_32";
@@ -45,8 +45,42 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 0;
 	}
 
+	function getStunChance()
+	{
+		local ret = {
+			StunChance = 50,
+			HasOffhand = false,
+			HasMainhand = false,
+			HasTraining = false
+		};
+		ret.StunChance = this.m.StunChance;
+		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+
+		if (mainhand != null)
+		{
+			ret.StunChance -= 25;
+			ret.HasMainhand = true;
+		}
+
+		if (offhand != null)
+		{
+			ret.StunChance -= 25;
+			ret.HasOffhand = true;
+		}
+
+		if (this.m.Container.getActor().getCurrentProperties().IsSpecializedInFists)
+		{
+			ret.StunChance += 50;
+			ret.HasTraining = true;
+		}
+
+		return ret;
+	}
+
 	function getTooltip()
 	{
+		local chance = this.getStunChance();
 		local ret = this.skill.getDefaultTooltip();
 		ret.push({
 			id = 6,
@@ -54,23 +88,30 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 8 + "[/color] fatigue on an enemy"
 		});
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Has a " + chance.StunChance + " to grapple"
+		});
 
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists)
+		if (chance.HasTraining)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to grapple on a hit"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] chance to grapple on a hit due to unarmed mastery"
 			});
 		}
-		else
+
+		if (chance.HasMainhand || chance.HasOffhand)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to grapple on a hit"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] chance to grapple on a hit due to holding stuff in a hand"
 			});
 		}
 
@@ -79,7 +120,6 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
 	}
 
@@ -97,14 +137,25 @@ this.legend_grapple<- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToKnockBackAndGrab && !target.getSkills().hasSkill("effects.legend_grappled"))
+			if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+			{
+				return success;
+			}
+
+			if (target.getSkills().hasSkill("effects.legend_grappled"))
+			{
+				return success;
+			}
+
+			local mods = this.getStunChance();
+			if (_user.getCurrentProperties().IsSpecializedInFists || this.Math.rand(1, 100) <= mods.StunChance)
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_grappled_effect"));
+
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has grappled " + this.Const.UI.getColorizedEntityName(target) + " for two turns");
 				}
-
 			}
 		}
 

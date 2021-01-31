@@ -211,16 +211,18 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			flip = !flip
 		}
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip)
-		this.getSprite("helmet_vanity_lower").setHorizontalFlipping(flip);
-		this.getSprite("helmet_helm").setHorizontalFlipping(flip);
-		this.getSprite("helmet_top").setHorizontalFlipping(flip);
-		this.getSprite("helmet_vanity").setHorizontalFlipping(flip);
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			if (!this.hasSprite(a))
+			{
+				continue;
+			}
+			this.getSprite(a).setHorizontalFlipping(flip);
+		}
 	}
 
 	function onInit()
@@ -263,20 +265,13 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		local injury = this.addSprite("injury");
 		injury.Visible = false;
 		injury.setBrush("bust_orc_01_head_injured");
-		this.addSprite("helmet");
-		this.addSprite("helmet_vanity_lower");
-		this.addSprite("helmet_helm");
-		this.addSprite("helmet_top");
-		this.addSprite("helmet_vanity");
-		this.addSprite("helmet_damage");
 		local v = -7;
 		local v2 = 0;
-		this.setSpriteOffset("helmet", this.createVec(v, v2));
-		this.setSpriteOffset("helmet_vanity_lower", this.createVec(v, v2));
-		this.setSpriteOffset("helmet_helm", this.createVec(v, v2));
-		this.setSpriteOffset("helmet_top", this.createVec(v, v2));
-		this.setSpriteOffset("helmet_vanity", this.createVec(v, v2));
-		this.setSpriteOffset("helmet_damage", this.createVec(v, v2));
+		foreach (a in this.Const.CharacterSprites.Helmets)
+		{
+			this.addSprite(a)
+			this.setSpriteOffset(a, this.createVec(v2, v));
+		}
 		local body_blood = this.addSprite("body_blood");
 		body_blood.setBrush("bust_orc_01_body_bloodied");
 		body_blood.Visible = false;

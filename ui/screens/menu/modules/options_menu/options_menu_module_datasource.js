@@ -28,7 +28,7 @@ var OptionsMenuModuleDatasource = function()
 
 	// Caches
 	this.mOptions = null;
-	
+
 	// init the datasource
 	this.init();
 };
@@ -145,7 +145,7 @@ OptionsMenuModuleDatasource.prototype.getVideoOptions = function()
 	{
 		return this.mOptions[OptionsMenuModuleIdentifier.QueryResult.Video.Key];
 	}
-	
+
 	return {};
 };
 
@@ -169,7 +169,7 @@ OptionsMenuModuleDatasource.prototype.getAudioOptions = function()
 	{
 		return this.mOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.Key];
 	}
-	
+
 	return {};
 };
 
@@ -193,7 +193,7 @@ OptionsMenuModuleDatasource.prototype.getControlsOptions = function()
 	{
 		return this.mOptions[OptionsMenuModuleIdentifier.QueryResult.Controls.Key];
 	}
-	
+
 	return {};
 };
 
@@ -218,7 +218,7 @@ OptionsMenuModuleDatasource.prototype.getGameplayOptions = function()
 	{
 		return this.mOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.Key];
 	}
-	
+
 	return {};
 };
 
@@ -256,7 +256,7 @@ OptionsMenuModuleDatasource.prototype.updateVideoOption = function (_key, _value
 	{
 		return;
 	}
-	
+
 	this.updateOption(OptionsMenuModuleIdentifier.QueryResult.Video.Key, _key, _value);
 };
 
@@ -266,7 +266,7 @@ OptionsMenuModuleDatasource.prototype.updateAudioOption = function (_key, _value
 	{
 		return;
 	}
-	
+
 	this.updateOption(OptionsMenuModuleIdentifier.QueryResult.Audio.Key, _key, _value);
 };
 
@@ -276,7 +276,7 @@ OptionsMenuModuleDatasource.prototype.updateControlsOption = function (_key, _va
 	{
 		return;
 	}
-	
+
 	this.updateOption(OptionsMenuModuleIdentifier.QueryResult.Controls.Key, _key, _value);
 };
 
@@ -286,7 +286,7 @@ OptionsMenuModuleDatasource.prototype.updateGameplayOption = function (_key, _va
 	{
 		return;
 	}
-	
+
 	this.updateOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.Key, _key, _value);
 };
 
@@ -386,7 +386,7 @@ OptionsMenuModuleDatasource.prototype.applyGameplayOptions = function ()
 
 	var value = this.getGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AlwaysHideTrees);
 	options.push(value);
-	
+
 	value = this.getGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.StatsOverlays);
 	options.push(value);
 
@@ -410,6 +410,9 @@ OptionsMenuModuleDatasource.prototype.applyGameplayOptions = function ()
 
     value = this.getGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity);
     options.push(value);
+
+	value = this.getGameplayOption("AISpeed");
+	options.push(value * 10);
 
 	this.notifyBackendApplyGameplayOptions(options);
 };

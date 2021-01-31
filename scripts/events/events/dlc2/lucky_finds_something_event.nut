@@ -137,7 +137,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 12)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_joint_cover_upgrade");
 			}
@@ -171,7 +171,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 18)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				item = this.new("scripts/items/legend_armor/armor_upgrades/legend_mail_patch_upgrade");
 			}

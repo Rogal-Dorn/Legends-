@@ -28,7 +28,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 	function onAdded( _settlement )
 	{
 		_settlement.resetShop();
-		if(this.World.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}
@@ -39,6 +39,38 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.BuyPriceMult *= 1.2;
 		_modifiers.SellPriceMult *= 1.1;
 		_modifiers.RarityMult *= 0.75;
+	}
+
+	function onUpdateDraftList( _draftList, _gender )
+	{
+		if(this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			local r;
+			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
+			{
+			r = this.Math.rand(0, 50);
+				if (r == 1)
+				{
+				_draftList.push("legend_diviner_background");
+				}
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
+			{
+				r = this.Math.rand(0, 9);
+				if (r == 1)
+				{
+				_draftList.push("legend_diviner_background");
+				}
+			}
+			else
+			{
+			r = this.Math.rand(0, 90);
+				if (r == 1)
+				{
+				_draftList.push("legend_diviner_background");
+				}
+			}
+		}
 	}
 
 });

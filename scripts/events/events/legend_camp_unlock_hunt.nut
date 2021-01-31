@@ -31,21 +31,21 @@ this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
 
 	function getText()
 	{
-		local text = "You notice food stocks are running low, perhaps it is time to camp and go hunting?"
-		text += "\n\n"
-		text += this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Hunter).getDescription();
+		local text = "You notice the food stocks are running low, perhaps it is time to camp and go hunting?";
+		text = text + "\n\n";
+		text = text + this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Hunter).getDescription();
 		return text;
 	}
 
-	function setTownName(_v)
+	function setTownName( _v )
 	{
 		this.m.TownName = _v;
-		this.m.Screens[0].Text += this.getText()
+		this.m.Screens[0].Text += this.getText();
 	}
 
 	function onUpdateScore()
 	{
-		return
+		return;
 	}
 
 	function onPrepare()
@@ -61,3 +61,4 @@ this.legend_camp_unlock_hunt <- this.inherit("scripts/events/event", {
 	}
 
 });
+
