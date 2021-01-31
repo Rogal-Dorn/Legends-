@@ -1,6 +1,6 @@
 this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Radius = 5,
+		Radius = 250,
 		Rate = 0,
         Results = [],
         NumBros = 0
@@ -102,7 +102,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
     function init()
     {
-		this.m.Radius = 5;
+		this.m.Radius = 250;
 		local mod = this.getModifiers()
 		this.m.Rate = mod.Craft;
         this.m.Results = [];
@@ -262,7 +262,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
 	function updateTick ( _hours )
     {
-		this.m.Radius = this.Math.pow(this.m.Rate, 0.5) * 300.0 * this.Math.pow(_hours, 0.5 - (0.1 * this.m.Rate));
+		this.m.Radius = 250 + this.Math.pow(this.m.Rate, 0.5) * 300.0 * this.Math.pow(_hours, 0.5 - (0.1 * this.m.Rate));
     }
 
 	function onClicked( _campScreen )
