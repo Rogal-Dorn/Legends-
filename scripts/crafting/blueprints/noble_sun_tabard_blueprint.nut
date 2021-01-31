@@ -26,7 +26,7 @@ this.noble_sun_tabard_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
-		return this.World.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
+		return this.LegendsMod.Configs().LegendArmorsEnabled() && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

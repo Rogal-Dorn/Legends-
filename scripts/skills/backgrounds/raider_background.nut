@@ -79,8 +79,8 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Magic = []
 		}
 	}
-	
-	
+
+
 	//Default Male
 	function setGender(_gender = -1)
 	{
@@ -88,7 +88,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -244,7 +244,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			[1, "leather_lamellar"],
 			[1, "worn_mail_shirt"]
 		]))
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ""],
 			[1, "dented_nasal_helmet"],

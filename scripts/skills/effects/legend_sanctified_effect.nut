@@ -32,7 +32,7 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Not affected by injuries, losing hitpoints, bleeding or poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns"
+				text = "Not psychologically affected by injuries, losing hitpoints. Immune to bleeding or poison for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns"
 			}
 		];
 	}

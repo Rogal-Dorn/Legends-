@@ -9,7 +9,7 @@ this.legend_camp_unlock_heal <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 1.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_camp_heal.png[/img]There you were, minding your own business in the marketplace, shopping for supplies when two shop patron started throwing fists over the last melon. One of the local monks was in the shop as well and took an unlucky elbow to the face. You picked up the monk and carried him to the local temple. In gratitude for your help, the monks showed you some basic skills for treating wounds that could come in handy!",
+			Text = "[img]gfx/ui/events/legend_camp_heal.png[/img]There you were, minding your own business in the marketplace, shopping for supplies when two shop patrons started throwing fists over the last melon. One of the local monks was in the shop as well and took an unlucky elbow to the face. You picked up the monk and carried him to the local temple. In gratitude for your help, the monks showed you some basic skills for treating wounds that could come in handy!",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -30,14 +30,14 @@ this.legend_camp_unlock_heal <- this.inherit("scripts/events/event", {
 		});
 	}
 
-	function setTownName(_v)
+	function setTownName( _v )
 	{
 		this.m.TownName = _v;
 	}
 
 	function onUpdateScore()
 	{
-		return
+		return;
 	}
 
 	function onPrepare()
@@ -53,3 +53,4 @@ this.legend_camp_unlock_heal <- this.inherit("scripts/events/event", {
 	}
 
 });
+

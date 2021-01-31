@@ -179,7 +179,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{How many crowns can you muster? | And how many coins are in that coffer?. | What is the total? | How much is left?}",
+					Text = "{How many crowns can you muster? | And how many coins are in that coffer? | What is the total? | How much is left?}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -262,7 +262,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Success",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% asks to see the demon\'s remains. You take it out of the bag. The flesh has deflated and you hold the head more like a scalp than a skull. %employer% reaches out to touch it and the demon skin twists away like fire made solid. He asks how they fought %SPEECH_ON% Like the brimstone of hell itself, I pray we need not see another so brutal %SPEECH_OFF%The man nods slowly.%SPEECH_ON% That is a prayer i can second. Well, I am a man of my word, my treasury is yours%SPEECH_OFF% | You dump the alp\'s head onto %employer%\'s desk. It flops over the wood until its maw rests wide, its emptied eyescokets drooping sadly at the world above. %employer% takes a fire iron and fishes around the skull before hanging its shapelessness in the air.%SPEECH_ON%What an awful thing this is. I should let you know that many folks came to me just hours ago stating they\'d visions of fields being bathed in a glorious light. Like they\'d dreamt the renewal of the world whole. So I don\'t know if every last one of these monsters is gone, but it seems %townname%\'s plight has been well taken care of. I\'ll see to it that you get your reward as promised.%SPEECH_OFF% | %employer% meets you in his room and laughs at the knapsack you\'ve brought. He shakes his head as he pours a drink.%SPEECH_ON%You need not show me that foul thing\'s face, sellsword. It visited me just hours ago, while I was sitting right there writing notes, an intrusion that was a dream, a sight of its death as though its spirit had been severed from mine and I was forced to see it go. And in its leaving I saw you standing there, sword in hand, victorious..%SPEECH_OFF%You nod and ask if you looked good. He laughs.%SPEECH_ON%You looked a slayer of worlds, certainly a slayer of that creature\'s world and, I must fear, perhaps a bit of mine as well. Stolen, permanently. Well, no matter, I as a man whole or a man sundered, I\'ve promised you a good pay and here it is.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_31.png[/img]{%employer% asks to see the demon\'s remains. You take it out of the bag. The flesh has deflated and you hold the head more like a scalp than a skull. %employer% reaches out to touch it and the demon skin twists away like fire made solid. He asks how they fought %SPEECH_ON% Like the brimstone of hell itself, I pray we need not see another so brutal %SPEECH_OFF%The man nods slowly.%SPEECH_ON% That is a prayer I can second. Well, I am a man of my word, my treasury is yours%SPEECH_OFF% | You dump the alp\'s head onto %employer%\'s desk. It flops over the wood until its maw rests wide, its emptied eyescokets drooping sadly at the world above. %employer% takes a fire iron and fishes around the skull before hanging its shapelessness in the air.%SPEECH_ON%What an awful thing this is. I should let you know that many folks came to me just hours ago stating they\'d visions of fields being bathed in a glorious light. Like they\'d dreamt the renewal of the world whole. So I don\'t know if every last one of these monsters is gone, but it seems %townname%\'s plight has been well taken care of. I\'ll see to it that you get your reward as promised.%SPEECH_OFF% | %employer% meets you in his room and laughs at the knapsack you\'ve brought. He shakes his head as he pours a drink.%SPEECH_ON%You need not show me that foul thing\'s face, sellsword. It visited me just hours ago, while I was sitting right there writing notes, an intrusion that was a dream, a sight of its death as though its spirit had been severed from mine and I was forced to see it go. And in its leaving I saw you standing there, sword in hand, victorious..%SPEECH_OFF%You nod and ask if you looked good. He laughs.%SPEECH_ON%You looked a slayer of worlds, certainly a slayer of that creature\'s world and, I must fear, perhaps a bit of mine as well. Stolen, permanently. Well, no matter, I as a man whole or a man sundered, I\'ve promised you a good pay and here it is.%SPEECH_OFF%}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -276,6 +276,7 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 						this.World.Assets.addMoney(this.Contract.m.Payment.getOnCompletion());
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Rid the town of unnatural nightmares");
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Saviour of the lands");
+
 						if (this.Flags.get("IsGoodNightsSleep"))
 						{
 							return "GoodNightsSleep";
@@ -404,11 +405,13 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 			}
 
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.m.ValidTypes);
+
 			if (stats.Strength >= this.m.MinStrength)
 			{
 				return true;
 			}
 		}
+
 		return false;
 	}
 

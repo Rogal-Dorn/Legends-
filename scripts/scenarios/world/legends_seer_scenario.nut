@@ -28,17 +28,18 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 		bro.m.PerkPointsSpent += 3;
-		if (this.World.LegendsMod.Configs().LegendMagicEnabled())
+
+		if (this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
 			bro.m.PerkPointsSpent += 1;
 		}
+
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.m.Ammo = 0;
 	}
@@ -47,7 +48,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 	{
 		local randomVillage;
 
-		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = ++i )
+		for( local i = 0; i != this.World.EntityManager.getSettlements().len(); i = i )
 		{
 			randomVillage = this.World.EntityManager.getSettlements()[i];
 
@@ -55,6 +56,8 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			{
 				break;
 			}
+
+			i = ++i;
 		}
 
 		local randomVillageTile = randomVillage.getTile();
@@ -91,7 +94,6 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", randomVillageTile.Coords.X, randomVillageTile.Coords.Y);
 		this.World.Assets.updateLook(105);
-		//this.World.State.m.Player.getSprite("body").setBrush("figure_player_seer");
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
@@ -100,8 +102,6 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.legend_seer_scenario_intro");
 		}, null);
-
-
 	}
 
 	function onInit()
@@ -126,12 +126,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		return false;
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender )
 	{
 		if (_list.len() < 10)
 		{
 			return;
 		}
+
 		_list.push("apprentice_background");
 	}
 
@@ -158,7 +159,6 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
-
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -178,13 +178,12 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.1);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
 			}
-
 		}
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _tree )
 	{
-		if  (_tree == null)
+		if (_tree == null)
 		{
 			return;
 		}

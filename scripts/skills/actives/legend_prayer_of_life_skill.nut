@@ -30,7 +30,6 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local value = this.Math.round(this.Math.minf(0.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.005) * 100);
 		local ret = [
 			{
 				id = 1,
@@ -51,7 +50,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 		return ret;
 	}
-	
+
 	function isUsable()
 	{
 		return this.skill.isUsable();
@@ -60,38 +59,38 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local myTile = _user.getTile();
-		local actors = this.Tactical.Entities.getAllInstances();  //no use in only requesting instances of player's faction because we need to debuff hostile undead
+		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
-		foreach( i in actors )
+		foreach( a in actors )
 		{
-			foreach( a in i )
+			if (a.getID() == _user.getID())
 			{
-				if (a.getID() == _user.getID())
-				{
-					continue;
-				}
+				continue;
+			}
 
-				if (myTile.getDistanceTo(a.getTile()) > 1)
-				{
-					continue;
-				}
+			if (myTile.getDistanceTo(a.getTile()) > 1)
+			{
+				continue;
+			}
 
-				if (a.getFaction() == _user.getFaction())
+			if (a.getFaction() == _user.getFaction())
+			{
+				if (!a.getBackground().isCultist() && !a.getSkills().hasSkill("effects.legend_prayer_of_life"))
 				{
-					if (!a.getBackground().isCultist())
-					{
-						a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
-					}
+					a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
 				}
-				
-				local skills = a.getSkills();
-				if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
-				{					
-					a.getSkills().add(this.new("scripts/skills/effects/disintegrating_effect"));
+			}
+
+			local skills = a.getSkills();
+			if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
+			{
+				if (!skills.hasSkill("effects.disintegrating"))
+				{
+					skills.add(this.new("scripts/skills/effects/disintegrating_effect"));
 				}
 			}
 		}
-		this.getContainer().add(this.new("scripts/skills/effects/legend_prayer_of_life_effect"));
+
 		return true;
 	}
 

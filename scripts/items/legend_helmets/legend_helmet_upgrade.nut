@@ -333,20 +333,41 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				break;
 
 			case this.Const.Items.HelmetUpgrades.Vanity:
-				if (this.m.IsLowerVanity)
+				if (_app.HelmLayer == this.Const.Items.HelmetUpgrades.ExtraVanity)
 				{
-					_app.HelmetLayerVanity = "";
-					_app.HelmetLayerVanityCorpse = "";
-					_app.HelmetLayerVanityLower = sprite;
-					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					if (this.m.IsLowerVanity)
+					{
+						_app.HelmetLayerVanity2 = "";
+						_app.HelmetLayerVanity2Corpse = "";
+						_app.HelmetLayerVanity2Lower = sprite;
+						_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					}
+					else
+					{
+						_app.HelmetLayerVanity2 = sprite;
+						_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+						_app.HelmetLayerVanity2Lower = "";
+						_app.HelmetLayerVanity2LowerCorpse = "";
+					}
 				}
 				else
 				{
-					_app.HelmetLayerVanity = sprite;
-					_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					_app.HelmetLayerVanityLower = "";
-					_app.HelmetLayerVanityLowerCorpse = "";
+					if (this.m.IsLowerVanity)
+					{
+						_app.HelmetLayerVanity = "";
+						_app.HelmetLayerVanityCorpse = "";
+						_app.HelmetLayerVanityLower = sprite;
+						_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					}
+					else
+					{
+						_app.HelmetLayerVanity = sprite;
+						_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+						_app.HelmetLayerVanityLower = "";
+						_app.HelmetLayerVanityLowerCorpse = "";
+					}
 				}
+
 				break;
 		}
 
@@ -385,6 +406,10 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 					_app.HelmetLayerVanityCorpse = "";
 					_app.HelmetLayerVanityLower = ""
 					_app.HelmetLayerVanityLowerCorpse = ""
+					_app.HelmetLayerVanity2 = "";
+					_app.HelmetLayerVanity2Corpse = "";
+					_app.HelmetLayerVanity2Lower = ""
+					_app.HelmetLayerVanity2LowerCorpse = ""
 				break;
 		}
 

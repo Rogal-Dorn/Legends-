@@ -50,7 +50,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				this.Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,

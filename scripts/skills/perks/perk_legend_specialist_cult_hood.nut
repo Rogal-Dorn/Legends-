@@ -20,7 +20,7 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 		local resolve = actor.getCurrentProperties().Bravery;
 		if (item != null)
 		{
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local layers = item.getIDAsArray();
 				foreach(l in layers)

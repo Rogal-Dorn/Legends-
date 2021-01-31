@@ -6,7 +6,7 @@ this.predictable_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		this.m.ID = "trait.predictable";
 		this.m.Name = "Predictable";
 		this.m.Icon = "ui/traits/predictable_trait.png";
-		this.m.Description = "It is alwasy quite clear what this character is about to do, announcing hits before they come and looking intently for a moment before deciding to move. This gives time for enemies to dodge away";
+		this.m.Description = "It is always quite clear what this character is about to do, announcing hits before they come and looking intently for a moment before deciding to move. This gives time for enemies to dodge away.";
 		this.m.Excluded = [
 			"trait.bright",
 			"trait.dexterous",

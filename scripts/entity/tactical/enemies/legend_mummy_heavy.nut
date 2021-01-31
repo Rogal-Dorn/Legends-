@@ -58,11 +58,11 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			[5, "ancient/legend_mummy_bandages"],
 			[80, "ancient/legend_mummy_royal_plate"]
 		];
-		local item = this.Const.World.Common.pickArmor(armor); 		
+		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[2, "ancient/legend_ancient_wig"],
+			[2, "ancient/ancient_wig"],
 			[5, "ancient/legend_mummy_headband"],
 			[1, "ancient/legend_mummy_crown_king"]
 		])

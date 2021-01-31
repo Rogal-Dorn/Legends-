@@ -12,8 +12,8 @@ this.legend_rune_endurance <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "layers/glow_runed_icon.png";
 		this.m.OverlayIconLarge = "layers/glow_runed_inventory.png";
-		this.m.SpriteFront = "bust_legend_runed";
-		this.m.SpriteBack = "bust_legend_runed";
+		this.m.SpriteFront = "";
+		this.m.SpriteBack = "";
 		this.m.SpriteDamagedFront = "";
 		this.m.SpriteDamagedBack = "";
 		this.m.SpriteCorpseFront = "";

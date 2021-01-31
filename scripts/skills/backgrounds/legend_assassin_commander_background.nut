@@ -45,7 +45,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.loyal",
 			"trait.dumb",
 			"trait.pragmatic",
-			"trait.predictable"			
+			"trait.predictable"
 		];
 		this.m.Titles = [
 			"the Assassin",
@@ -68,7 +68,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.CustomPerkTree = [
-			[		
+			[
 				this.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
@@ -94,7 +94,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Bullseye,
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan	
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
 			],
 			[
 				this.Const.Perks.PerkDefs.BoondockBlade,
@@ -131,10 +131,10 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
-				this.Const.Perks.PerkDefs.LoneWolf,	
-				this.Const.Perks.PerkDefs.Overwhelm,	
+				this.Const.Perks.PerkDefs.LoneWolf,
+				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Vengeance,
-				this.Const.Perks.PerkDefs.LegendLithe,	
+				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 				this.Const.Perks.PerkDefs.LegendRoster4
 			],
@@ -175,7 +175,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -311,7 +311,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			[1, "hood"]
 		]));
 	}
-	
+
 	function onSerialize( _out )
 	{
 		this.character_background.onSerialize(_out);

@@ -5,7 +5,7 @@ this.legend_pudding_item <- this.inherit("scripts/items/supplies/legend_usable_f
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.legend_pudding";
 		this.m.Name = "Pudding";
-		this.m.Description = "Provisions. A huge pudding made from fresh ingredients. Can be eaten in battle to restore fatigue";
+		this.m.Description = "Provisions. A huge pudding made from fresh ingredients. Can be eaten in battle to grant morale, and gradually restore health and fatigue over ten turns. The amount restored per turn is determined by how much of the pudding remains when eaten.";
 		this.m.Icon = "supplies/legend_pudding.png";
 		this.m.Value = 200;
 		this.m.Amount = 40.0;

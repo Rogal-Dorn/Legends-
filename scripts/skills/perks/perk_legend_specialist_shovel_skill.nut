@@ -37,7 +37,12 @@ this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill",
 				"weapon.goedendag",
 				"weapon.legend_military_goedendag",
 				"weapon.legend_two_handed_club",
-				"weapon.two_handed_spiked_mace"
+				"weapon.two_handed_spiked_mace",
+				"weapon.legend_bough",
+				"weapon.named_polemace",
+				"weapon.polemace",
+				"weapon.legend_military_goedendag",
+				"weapon.legend_named_military_goedendag"
 			]
 			if (item.getID() in ids)
 			{

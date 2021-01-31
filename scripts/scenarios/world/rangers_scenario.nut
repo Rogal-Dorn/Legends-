@@ -4,7 +4,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.rangers";
 		this.m.Name = "Band of Poachers";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]For years you\'ve made a decent living by poaching in the local woods, evading your lord\'s men by being quick on your feet. But pickings have become slimmer and slimmer, and you\'re faced with a decision - how to make a living when all you know is how to use a bow?\n\n[color=#bcad8c]Hunters:[/color] Start with a group of three woodsmen.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Travel Light:[/color] You can carry fewer items in your company\'s inventory.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]For years you have made a decent living by poaching in the local woods, evading your lord\'s men by being quick on your feet. But pickings have become slimmer and slimmer, and you are faced with a decision - how to make a living when all you know is how to use a bow?\n\n[color=#bcad8c]Hunters:[/color] Start with a group of three woodsmen.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Travel Light:[/color] You can carry fewer items in your company\'s inventory.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 30;
 	}
@@ -19,7 +19,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 3; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -31,6 +31,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			}
 
 			names.push(bro.getNameOnly());
+			i = ++i;
 		}
 
 		local bros = roster.getAll();
@@ -38,7 +39,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].setStartValuesEx([
 			"hunter_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{A bit of a devious runt, though a good man at heart. %name% used to hunt for his local liege, but when the nobleman died falling into an unseen ravine the hunter was blamed and kicked out of court. With some guile, he turned his hunting talents into poaching and fur trade. He is of a merchant\'s mind and was quick to engender the idea of mercenary work because of it.}";
+		bros[0].getBackground().m.RawDescription = "{A bit of a devious runt, though a good person at heart. %name% used to hunt for the local liege, but when the nobleman died falling into an unseen ravine the hunter was blamed and kicked out of court. With some guile, %name% turned hunting talents into poaching and fur trade. Has a merchant\'s mind and was quick to engender the idea of mercenary work because of it.}";
 		bros[0].setPlaceInFormation(3);
 		bros[0].m.Talents = [];
 		talents = bros[0].getTalents();
@@ -53,7 +54,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].setStartValuesEx([
 			"poacher_background"
 		]);
-		bros[1].getBackground().m.RawDescription = "{%name% fell into poaching after a drought ravaged his farmstead. Like most poachers, he is not truly of the criminal mind. Long grouped together in the hunting gangs, %name% was quick to nominate you as captain of the new sellsword outfit.}";
+		bros[1].getBackground().m.RawDescription = "{%name% fell into poaching after a drought ravaged the personal farmstead. Like most poachers, %name% is not truly of the criminal mind. Long grouped together in the hunting gangs, the poacher was quick to nominate you as captain of the new sellsword outfit.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.Talents = [];
 		bros[1].setVeteranPerks(2);
@@ -70,7 +71,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].setStartValuesEx([
 			"poacher_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "{A former jester whose gag was to shoot three water jugs out of the sky. You don\'t know how he got into poaching, and in fact seems rather bitter about some jester-related drama, but he is an excellent archer. He also likes to remind you that he is a far better shot than you.}";
+		bros[2].getBackground().m.RawDescription = "{A former jester whose gag was to shoot three water jugs out of the sky. You do not know how %name% got into poaching and you sense bitterness about some jester-related drama, but an excellent archer nonetheless. Likes to pretend being a far better shot than you. Nonsense, of course.}";
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.Talents = [];
 		bros[2].setVeteranPerks(2);
@@ -83,7 +84,6 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
-		//this.World.Assets.getStash().resize(this.Math.min(15, this.World.Assets.getStash().getCapacity() / 2));
 		this.World.Flags.set("HasLegendCampHunting", true);
 		this.World.Assets.m.BusinessReputation = 100;
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
@@ -163,12 +163,12 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			this.Music.setTrackList(this.Const.Music.IntroTracks, this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.rangers_scenario_intro");
 		}, null);
-
 	}
 
 	function onInit()
 	{
 		this.starting_scenario.onInit();
+
 		if (this.World.State.getPlayer() != null)
 		{
 			this.World.State.getPlayer().m.BaseMovementSpeed = 111;

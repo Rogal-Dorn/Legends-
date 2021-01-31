@@ -74,19 +74,19 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		this.applyFatigueDamage(target, 10);
+		this.applyFatigueDamage(_targetEntity, 10);
 
-		if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab)
+		if (_targetEntity.getCurrentProperties().IsImmuneToKnockBackAndGrab)
 		{
 			return;
 		}
 
 		if (!user.isHiddenToPlayer() && (targetTile.IsVisibleForPlayer || knockToTile.IsVisibleForPlayer))
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has knocked back " + this.Const.UI.getColorizedEntityName(target));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has knocked back " + this.Const.UI.getColorizedEntityName(_targetEntity));
 		}
 
-		local skills = target.getSkills();
+		local skills = _targetEntity.getSkills();
 		skills.removeByID("effects.shieldwall");
 		skills.removeByID("effects.spearwall");
 		skills.removeByID("effects.riposte");
@@ -96,13 +96,13 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 			this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, user.getPos());
 		}
 
-		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
+		_targetEntity.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
 		local hasShieldBash = user.getSkills().hasSkill("perk.shield_bash");
 		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
 
 		if (damage == 0 && !hasShieldBash)
 		{
-			this.Tactical.getNavigator().teleport(target, knockToTile, null, null, true);
+			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, null, null, true);
 		}
 		else
 		{
@@ -143,7 +143,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 				tag.HitInfoBash.FatalityChanceMult = 0.0;
 			}
 
-			this.Tactical.getNavigator().teleport(target, knockToTile, this.onKnockedDown, tag, true);
+			this.Tactical.getNavigator().teleport(_targetEntity, knockToTile, this.onKnockedDown, tag, true);
 		}
 	}
 
@@ -155,17 +155,6 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 		{
 			this.removeSelf();
 		}
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		local target = _targetEntity;
-		local targetTile = _targetEntity.getTile();
-		local user = this.getContainer().getActor();
-
-		
-
-		return true;
 	}
 
 	function findTileToKnockBackTo( _userTile, _targetTile )

@@ -14,5 +14,20 @@ this.perk_legend_net_repair <- this.inherit("scripts/skills/skill", {
 	}
 
 
+	function onUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local resolve = actor.getCurrentProperties().Bravery;
+
+		if (item != null)
+		{
+			if(item.getID() == "tool.throwing_net" || item.getID() == "tool.reinforced_throwing_net" || item.getID() == "tool.legend_broken_throwing_net")
+			{
+			_properties.MeleeDefense += 10;		
+			}
+
+		}
+	}
 
 });

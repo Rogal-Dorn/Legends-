@@ -40,7 +40,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 					return
 			}
 
-			if (this.World.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				local validLayers = [
 					"legend_armor.body.legend_animal_hide_armor",

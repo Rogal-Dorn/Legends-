@@ -38,21 +38,21 @@ var CharacterScreenPaperdollModule = function (_parent, _dataSource) {
     Head: {
       Container: null,
       ContainerIsBig: false,
-      ContainerClasses: "is-top-small-offset",
+      ContainerClasses: "helm-is-top-small-offset",
       SlotType: CharacterScreenIdentifier.ItemSlot.Head,
       BackgroundImage: Path.GFX + Asset.SLOT_BACKGROUND_HELMET
     },
     Body: {
       Container: null,
       ContainerIsBig: true,
-      ContainerClasses: "is-big is-in-between-offset",
+      ContainerClasses: "is-big body-is-in-between-offset",
       SlotType: CharacterScreenIdentifier.ItemSlot.Body,
       BackgroundImage: Path.GFX + Asset.SLOT_BACKGROUND_BODY
     }
   };
 
   this.mUpgradeButtons = [null, null, null, null, null, null];
-  this.mHelmetUpgradeButtons = [null, null, null, null];
+  this.mHelmetUpgradeButtons = [null, null, null, null, null];
 
   this.mRightEquipmentSlots = {
     Ammo: {
@@ -127,6 +127,17 @@ CharacterScreenPaperdollModule.prototype.createDIV = function (_parentDiv) {
     "3",
     function (_event) {
       self.mDataSource.notifyBackendRemoveHelmetUpgrade(2);
+    },
+    "display-block",
+    11
+  );
+
+  var layout = $('<div class="l-button h-remove5"/>');
+  middleEquipmentColumn.append(layout);
+  this.mHelmetUpgradeButtons[4] = layout.createTextButton(
+    "3",
+    function (_event) {
+      self.mDataSource.notifyBackendRemoveHelmetUpgrade(4);
     },
     "display-block",
     11
@@ -1476,6 +1487,9 @@ CharacterScreenPaperdollModule.prototype.assignEquipment = function (
       var tLabel = index + 1;
       if (tLabel === 4) {
         tLabel = "R";
+      } else if (tLabel === 5)
+      {
+        tLabel = "3"
       }
       switch (_upgrades[index]) {
         case 0:

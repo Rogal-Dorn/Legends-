@@ -176,7 +176,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -215,7 +215,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		if (this.m.IsFemaleBackground == true)
 		{
-			return "%name% lives to fight the undead scourge. Little is known about her and she almost never talks save for the occasional grunt while swinging her sword. Hr language seems to be codified into one simple structure: killing creatures of evil.";
+			return "%name% lives to fight the undead scourge. Little is known about her and she almost never talks save for the occasional grunt while swinging her sword. Her language seems to be codified into one simple structure: killing creatures of evil.";
 		}
 		else
 		{
@@ -321,7 +321,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
 		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
-		
+
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "legend_crusader_armor"]
 		]));

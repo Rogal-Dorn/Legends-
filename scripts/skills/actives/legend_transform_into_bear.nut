@@ -63,9 +63,7 @@ this.legend_transform_into_bear <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-
-			this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
-
+		this.m.Container.add(this.new("scripts/skills/effects/legend_transformed_bear_effect"));
 	}
 
 	function onTurnStart()
@@ -75,7 +73,7 @@ this.legend_transform_into_bear <- this.inherit("scripts/skills/skill", {
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("effect.legend_transformed_bear"); 
+		this.m.Container.removeByID("effect.legend_transformed_bear");
 	}
 
 });

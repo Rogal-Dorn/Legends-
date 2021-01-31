@@ -44,7 +44,7 @@ this.therianthropic_potion_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function isQualified()
 	{
-		if (!this.World.LegendsMod.Configs().LegendTherianthropyEnabled())
+		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
 		{
 			return false;
 		}

@@ -6,8 +6,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.ID = "background.legend_noble_2h";
 		this.m.Name = "Warrior";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
-		this.m.HiringCost = 200;
-		this.m.DailyCost = 18;
+		this.m.HiringCost = 300;
+		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -55,14 +55,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.IsCombatBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
-		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
-		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
-		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -93,7 +87,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -214,8 +208,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "legend_enclave_vanilla_armet_01"],
-			[1, "legend_enclave_vanilla_skullcap_01"],
-			[1, "greatsword_hat"]
+			[10, "legend_enclave_vanilla_skullcap_01"],
+			[50, "greatsword_hat"]
 		]));
 
 	}

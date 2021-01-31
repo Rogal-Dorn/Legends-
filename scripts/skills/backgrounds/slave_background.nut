@@ -83,7 +83,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0.0, //stepps
 				0.0, //ocean
 				0.01, //desert
-				0.01 //oasis				
+				0.01 //oasis
 			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -170,7 +170,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 		return "{You can tell %name% is a northerner simply by appearance. And his servitude in the south has come by way of being indebted to the Gilder whom he has transgressed with his faith in the heretical old gods. | %name% bears the features of a northerner, easily capturing the eye of passing men or women. It also happened to catch the attention of a priest who claimed the northerner was indebted to the Gilder and promptly sold the interloper into servitude. | A northerner, %name% was once a soldier sent south on patrol. Lost in the desert, his troop slowly dwindled until he was the last survivor. Manhunters caught him and brought him back from the brink, and of course sold him into servitude once his healed body was worth something. | Despite being a northerner and thus easily spotted, %name% unwisely sought the criminal life and was caught thieving pomegranates from a Vizier\'s garden. He\'s lucky to have his head, but now serves as a commodity of labor on the slave markets.}";
 		}
-	
+
 	}
 
 	function setGender(_gender = -1)
@@ -179,7 +179,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 19);
 			}

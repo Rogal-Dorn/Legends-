@@ -111,7 +111,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			],
 			// Level 6
 			[
-				
+
 				this.Const.Perks.PerkDefs.MageLegendMagicSoothingWind,
 				this.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
 				this.Const.Perks.PerkDefs.LegendScry,
@@ -153,7 +153,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 		{
 			r = 1;
 
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}

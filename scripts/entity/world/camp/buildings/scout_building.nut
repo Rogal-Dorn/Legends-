@@ -1,6 +1,6 @@
 this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-		Radius = 0,
+		Radius = 5,
 		Rate = 0,
         Results = [],
         NumBros = 0
@@ -66,7 +66,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	function isHidden()
 	{
 
-		if (this.World.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
 		{
 			return false;
 		}
@@ -102,7 +102,7 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 
     function init()
     {
-		this.m.Radius = 0;
+		this.m.Radius = 5;
 		local mod = this.getModifiers()
 		this.m.Rate = mod.Craft;
         this.m.Results = [];

@@ -123,7 +123,7 @@ this.female_slave_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (_gender == -1)
 		{
 			r = 1;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 19);
 			}
@@ -215,7 +215,7 @@ this.female_slave_background <- this.inherit("scripts/skills/backgrounds/charact
 			[1, "oriental/cloth_sash"],
 			[2, ""]
 		]))
-		
+
 			items.equip(this.Const.World.Common.pickHelmet([
 			[1, ""],
 			[1, "legend_headband_coin"],
@@ -224,9 +224,9 @@ this.female_slave_background <- this.inherit("scripts/skills/backgrounds/charact
 			[5, "legend_southern_veil"],
 			[1, "legend_southern_veil_coin"],
 			[1, "legend_southern_cloth_headress"]
-		]));		
+		]));
 	}
-	
+
 	function onUpdate( _properties )
 	{
 		this.character_background.onUpdate(_properties);

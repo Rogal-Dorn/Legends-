@@ -51,7 +51,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 
 		return ret;
 	}
-	
+
 	function isUsable()
 	{
 		return this.skill.isUsable();
@@ -60,39 +60,35 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local myTile = _user.getTile();
-		local actors = this.Tactical.Entities.getAllInstances(); //no use in only requesting instances of player's faction because we need to debuff hostile undead
+		local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
-		foreach( i in actors )
+		foreach( a in actors )
 		{
-			foreach( a in i )
+			if (a.getID() == _user.getID())
 			{
-				if (a.getID() == _user.getID())
-				{
-					continue;
-				}
+				continue;
+			}
 
-				if (myTile.getDistanceTo(a.getTile()) > 1)
-				{
-					continue;
-				}
-				
-				if (a.getFaction() == _user.getFaction())
-				{
-					if (!a.getBackground().isCultist())
-					{
-						a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
-					}
-				}
+			if (myTile.getDistanceTo(a.getTile()) > 1)
+			{
+				continue;
+			}
 
-				local skills = a.getSkills();
-				if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
+			if (a.getFaction() == _user.getFaction())
+			{
+				if (!a.getBackground().isCultist())
 				{
-					a.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
+					a.getSkills().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
 				}
+			}
+
+			local skills = a.getSkills();
+			if (skills.hasSkill("racial.skeleton") || skills.hasSkill("actives.zombie_bite") || skills.hasSkill("racial.vampire") || skills.hasSkill("racial.ghost"))
+			{
+				a.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_prayer_of_faith_effect"));
 		return true;
 	}
 

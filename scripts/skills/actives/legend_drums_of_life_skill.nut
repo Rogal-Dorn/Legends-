@@ -22,8 +22,8 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 15;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -88,6 +88,11 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 			if (a.getFaction() == _user.getFaction())
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
+				if (a.getHitpoints() < a.getHitpointsMax())
+				{
+					a.setHitpoints(this.Math.max(0, this.Math.min(a.getHitpointsMax(), a.getHitpoints() + 4)) );
+					this.spawnIcon(this.m.Overlay, a.getTile());
+				}
 			}
 		}
 

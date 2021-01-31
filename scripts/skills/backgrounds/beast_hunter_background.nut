@@ -114,7 +114,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.World.LegendsMod.Configs().LegendGenderEnabled())
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -259,7 +259,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			[1, "thick_tunic"],
 			[1, "leather_tunic"]
 		]))
-		
+
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "hunters_hat"],
 			[1, "hood"]

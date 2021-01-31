@@ -468,8 +468,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			return false;
 		}
 
-		if (this.m.Upgrades[_upgrade.getType()] != null)
+
+		local index = _upgrade.getType();
+
+		if (index == this.Const.Items.HelmetUpgrades.Vanity && this.m.Upgrades[this.Const.Items.HelmetUpgrades.Vanity] != null)
 		{
+			index = this.Const.Items.HelmetUpgrades.ExtraVanity;
+		}
+
+		if (this.m.Upgrades[index] != null)
+		{
+
 			local app;
 
 			if (this.getContainer() != null && this.isEquipped())
@@ -477,7 +486,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				app = this.getContainer().getAppearance();
 			}
 
-			local item = this.m.Upgrades[_upgrade.getType()];
+			local item = this.m.Upgrades[index];
 			item.onRemoved(app);
 
 			if (!item.isDestroyedOnRemove())
@@ -486,9 +495,9 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			}
 		}
 
-		this.m.Upgrades[_upgrade.getType()] = _upgrade;
-		this.m.Upgrades[_upgrade.getType()].setArmor(this);
-		this.m.Upgrades[_upgrade.getType()].onAdded();
+		this.m.Upgrades[index] = _upgrade;
+		this.m.Upgrades[index].setArmor(this);
+		this.m.Upgrades[index].onAdded();
 		this.updateAppearance();
 		return true;
 	}
@@ -775,15 +784,19 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				app.HelmetColor = this.createColor("#ffffff");
 				app.HelmetDamage = "";
 				app.HelmetLayerVanityLower = "";
+				app.HelmetLayerVanity2Lower = "";
 				app.Helmet = "";
 				app.HelmetLayerHelm = "";
 				app.HelmetLayerTop = "";
 				app.HelmetLayerVanity = "";
+				app.HelmetLayerVanity2 = "";
 				app.HelmetLayerVanityLowerCorpse = "";
+				app.HelmetLayerVanity2LowerCorpse = "";
 				app.HelmetCorpse = "";
 				app.HelmetLayerHelmCorpse = "";
 				app.HelmetLayerTopCorpse = "";
 				app.HelmetLayerVanityCorpse = "";
+				app.HelmetLayerVanity2Corpse = "";
 				app.HideHead = false;
 				app.HideHair = false;
 				app.HideBeard = false;
@@ -813,8 +826,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		app.HideCorpseHead = this.m.HideCorpseHead;
 
 		local changed = false;
-		foreach( u in this.m.Upgrades )
+		app.HelmLayer <- 0;
+		foreach( i, u in this.m.Upgrades )
 		{
+			app.HelmLayer = i;
+
 			if (u == null)
 			{
 				continue;
@@ -879,15 +895,19 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			app.HelmetColor = this.createColor("#ffffff");
 			app.HelmetDamage = "";
 			app.HelmetLayerVanityLower = "";
+			app.HelmetLayerVanity2Lower = "";
 			app.Helmet = "";
 			app.HelmetLayerHelm = "";
 			app.HelmetLayerTop = "";
 			app.HelmetLayerVanity = "";
+			app.HelmetLayerVanity2 = "";
 			app.HelmetLayerVanityLowerCorpse = "";
+			app.HelmetLayerVanity2LowerCorpse = "";
 			app.HelmetCorpse = "";
 			app.HelmetLayerHelmCorpse = "";
 			app.HelmetLayerTopCorpse = "";
 			app.HelmetLayerVanityCorpse = "";
+			app.HelmetLayerVanity2Corpse = "";
 			app.HideHead = false;
 			app.HideCorpseHead = false;
 			app.HideHair = false;
@@ -1092,6 +1112,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	// 	return basePrice;
 	// }
+
+	function setupArmor(_variant)
+	{
+
+	}
 
 	function onSerialize( _out )
 	{

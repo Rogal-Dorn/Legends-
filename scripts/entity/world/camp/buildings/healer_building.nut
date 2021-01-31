@@ -13,7 +13,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         this.camp_building.create();
         this.m.ID = this.Const.World.CampBuildings.Healer;
 		this.m.BaseCraft = 1.0;
-        this.m.ModName = "Healing";   
+        this.m.ModName = "Healing";
 		this.m.Escorting = true;
         this.m.Slot = "heal";
         this.m.Name = "Healing";
@@ -83,7 +83,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -120,7 +120,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
 				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.ceil(this.m.PointsNeeded / this.getRate()) + "[/color] hours to heal all healthpoints."
-			},					
+			},
 			{
 				id = 6,
 				type = "text",
@@ -145,7 +145,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function isHidden()
 	{
 		return false;
-	}	
+	}
 
 	function getUpgraded()
 	{
@@ -161,7 +161,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
@@ -171,8 +171,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getCost(_injury)
 	{
 		local cost = _injury.getCost();
-		if (this.getUpgraded()) 
-        {  
+		if (this.getUpgraded())
+        {
             cost = this.Math.floor(cost * 0.75);
         }
 		return cost;
@@ -206,11 +206,20 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				local allInjuries = b.getSkills().query(this.Const.SkillType.TemporaryInjury);
 				foreach (i in allInjuries)
 				{
+
+					if (i.isTreated() || !i.isTreatable())
+					{
+						continue;
+					}
+
 					if (i.getQueue() == 0)
 					{
 						continue
 					}
-					q.push(i);
+					q.push({
+						Injury = i,
+						Bro = b.getID()
+					});
 				}
 			}
 			q.sort(this.onSortQueue);
@@ -224,7 +233,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					continue
 				}
 
-				if (this.m.Queue[i].getQueue() == 0)
+				if (this.m.Queue[i].Injury.getQueue() == 0)
 				{
 					continue
 				}
@@ -232,17 +241,17 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				q.push(this.m.Queue[i])
 			}
 		}
-		
+
 		this.m.Queue = q
     }
 
 	function onSortQueue( _a, _b )
 	{
-		if (_a.getQueue() < _b.getQueue())
+		if (_a.Injury.getQueue() < _b.Injury.getQueue())
 		{
 			return -1;
 		}
-		else if (_a.getQueue() > _b.getQueue())
+		else if (_a.Injury.getQueue() > _b.Injury.getQueue())
 		{
 			return 1;
 		}
@@ -275,7 +284,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 			++id;
 		}
-        
+
 		local roster = this.World.getPlayerRoster().getAll();
         foreach( b in roster )
         {
@@ -288,7 +297,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
                 })
 				++id
             }
-        }		
+        }
 		return res;
     }
 
@@ -330,7 +339,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return "Injuries Treated ... 100%";
 		}
-		
+
 		local text =  "Injuries Treated ... " + percent + "%";
 
 		return text;
@@ -344,7 +353,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return "Health points ... 100%";
 		}
-		
+
 		return "Health points ... " + percent + "%";
 	}
 
@@ -355,12 +364,14 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			this.init();
 		}
-        foreach (i, r in this.m.Queue)
+        foreach (i, obj in this.m.Queue)
         {
-            if (r == null)
+            if (obj == null)
             {
                 continue;
             }
+
+			local r = obj.Injury;
 
 			if (r.isTreated())
 			{
@@ -397,26 +408,16 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				r.setTreated(true);
 				r.setQueue(0);
-				local cont = r.getContainer();
-				if (cont != null) //was gettng rare error that said index getActor DNE, should fix that assuming it's a null container somehow(?) 
+				this.m.InjuriesHealed.push(r);
+				this.m.Queue[i] = null;
+				local bro = this.Tactical.getEntityByID(obj.Bro);
+				if (bro != null)
 				{
-					if (r.getContainer().getActor() != null)
-					{
-						r.getContainer().getActor().updateInjuryVisuals();
-					}
-					this.m.InjuriesHealed.push(r);
-					this.m.Queue[i] = null;
+					bro.updateInjuryVisuals()
 				}
-				else
-				{
-					this.logWarning("Healer building container was null");
-					//can use this if we want to forceit and see if that was the problem(?)
-					//local forceActorBugInLog = cont.getAtor();
-				}
-				
 			}
 
-            if (modifiers.Craft <= 0) 
+            if (modifiers.Craft <= 0)
             {
                 break
             }
@@ -445,20 +446,21 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getQueue()
 	{
 		local ret = [];
-		foreach( b in this.m.Queue )
+		foreach( obj in this.m.Queue )
 		{
-			if (b == null)
+			if (obj == null)
 			{
 				continue
 			}
-			
+
+			local b = obj.Injury
 			local r = {
 				ID = b.getID(),
 				Name = b.getName(),
 				Description = b.getDescription(),
 				ImagePath = b.getIcon(),
 				Percentage = b.getTreatedPercentage() * 100
-			};			
+			};
 			ret.push(r);
 		}
 		return ret;
@@ -520,8 +522,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             {
                 continue;
             }
-            
-            points += this.getCost(r);
+
+            points += this.getCost(r.Injury);
         }
 		return points;
     }
@@ -533,15 +535,15 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         {
             return 0;
         }
-				
+
         foreach (r in this.m.Queue)
         {
             if (r == null)
             {
                 continue;
             }
-            
-            points += this.getCost(r);
+
+            points += this.getCost(r.Injury);
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)
@@ -572,7 +574,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		local entity = this.Tactical.getEntityByID(_entityID);
 		local injury = entity.getSkills().getSkillByID(_injuryID);
-		this.m.Queue.push(injury)
+		this.m.Queue.push({
+			Injury = injury,
+			Bro = _entityID
+		})
 		injury.setQueue(this.m.Queue.len());
 		local sound = this.m.InjurySounds[this.Math.rand(0, this.m.InjurySounds.len() - 1)];
 		this.Sound.play(sound.File, sound.Volume)
@@ -585,7 +590,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			if (i == _idx)
 			{
-				this.m.Queue[_idx].setQueue(0);
+				this.m.Queue[_idx].Injury.setQueue(0);
 				continue
 			}
 			q.push(this.m.Queue[i])
@@ -596,8 +601,8 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function onSwap( _source, _target)
 	{
 		local item = this.m.Queue[_source];
-		item.setQueue(_target + 1);
-		this.m.Queue[_target].setQueue(_source + 1);
+		item.Injury.setQueue(_target + 1);
+		this.m.Queue[_target].Injury.setQueue(_source + 1);
 		this.m.Queue[_source] = this.m.Queue[_target];
 		this.m.Queue[_target] = item;
 		local sound = this.m.InjurySounds[this.Math.rand(0, this.m.InjurySounds.len() - 1)];
@@ -618,7 +623,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
         _campScreen.showHealerDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.camp_building.onSerialize(_out);

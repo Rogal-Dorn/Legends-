@@ -106,9 +106,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Destination = this.WeakTableRef(candidates[this.Math.rand(0, candidates.len() - 1)]);
 		local distance = this.getDistanceOnRoads(this.m.Origin.getTile(), this.m.Destination.getTile());
 		local days = this.getDaysRequiredToTravel(distance, this.Const.World.MovementSettings.Speed * 0.6, true);
-
 		local modrate = this.World.State.getPlayer().getBarterMult();
-
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		this.m.Payment.Pool = this.Math.max(100, 3 * distance * (4 + modrate) * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult());
 		this.m.Payment.Completion = 0.75;
@@ -405,13 +403,15 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 						local money = this.Contract.m.Payment.getOnCompletion();
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractSuccess);
 						this.World.Assets.addMoney(money);
-						local xp = money * 0.50;
+						local xp = money * 0.5;
 						local playerRoster = this.World.getPlayerRoster().getAll();
+
 						foreach( bro in playerRoster )
 						{
 							bro.addXP(xp);
 							bro.updateLevel();
 						}
+
 						this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractSuccess, "Protected a prisoner wagon as promised");
 						this.World.Contracts.finishActiveContract();
 						return 0;
@@ -436,7 +436,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "TheBattle",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {This battle was more bloody than the usual easy skirmishes your men are involved in. %randombrother% looks over wounded companions. %randombrother2% checks out the prison cart to ensure the recent enounter left it in a decent condition to resume the journey.  %randombrother2% approaches you after a while. %SPEECH_ON% Damn… these barbarians were serious business. This big brute we have in custody must be someone important… Just maybe … I don’t know boss…  but maybe lets see what prisoner has to say ? This might be their king or some kind of famed warrior! Who cares about %employer%\'s opinion on the matter? We got paid already and I don’t think we're going to get one coin more in %objective%. %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {This battle was more bloody than the usual easy skirmishes your men are involved in. %randombrother% looks over wounded companions. %randombrother2% checks out the prison cart to ensure the recent enounter left it in a decent condition to resume the journey.  %randombrother2% approaches you after a while. %SPEECH_ON% Damn… these barbarians were serious business. This big brute we have in custody must be someone important… Just maybe … I don’t know boss…  but maybe lets see what prisoner has to say ? This might be their king or some kind of famed warrior! Who cares about %employer%\'s opinion on the matter? We got paid already and I don’t think we\'re going to get one coin more in %objective%. %SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -464,7 +464,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "ThePrisoner",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_139.png[/img] {Those of the company who are still strong enough to fight gather around the wagon. %randombrother% holds a weapon tight, ready to strike if need be. As you approach, the presence of the half naked northerner grows more and more menacing.  What is left of %employer% \'s men are upset about this but after the recent battle they aren\'t looking for another fight. Finally the prisoner speaks.  %SPEECH_ON% HAHA!! That was an impressive brawl there! I didn’t expect you\'d manage to kill them all. Maybe a few, then I was ready to finish off the rest over your dead bodies and continue my revenge later. You look surprised ? HA! You think these rookies were sent to rescue me? Those were my enemies and there is more of them left to behead. Killing these warriors was proof you\'re not just a bunch of milk drinking weaklings like all these noble baby boys. I have a score to settle with the chieftain of Reaver\'s Hold. Hell… after that I even might join your band!  Let’s finish these %employer% \'s farmhands in fancy armor and go to fight real warriors! You can fight rest of clan, but the chieftain is my kill! What say you? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_139.png[/img] {Those of the company who are still strong enough to fight gather around the wagon. %randombrother% holds a weapon tight, ready to strike if need be. As you approach, the presence of the half naked northerner grows more and more menacing.  What is left of %employer% \'s men are upset about this but after the recent battle they aren\'t looking for another fight. Finally the prisoner speaks.  %SPEECH_ON% HAHA!! That was an impressive brawl there! I didn’t expect you\'d manage to kill them all. Maybe a few, then I was ready to finish off the rest over your dead bodies and continue my revenge later. You look surprised ? HA! You think these rookies were sent to rescue me? Those were my enemies and there is more of them left to behead. Killing these warriors was proof you\'re not just a bunch of milk drinking weaklings like all these noble baby boys. I have a score to settle with the chieftain of Reaver\'s Hold. Hell… after that I even might join your band!  Let’s finish these %employer% \'s farmhands in fancy armor and go to fight real warriors! You can fight the rest of the clan, but the chieftain is my kill! What say you? %SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -495,7 +495,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Failure1",
 			Title = "Retreat...",
-			Text = "[img]gfx/ui/events/event_60.png[/img] {The prison cart is opened. there is no sight of the prisoner anywhere. You failed.}",
+			Text = "[img]gfx/ui/events/event_60.png[/img] {The prison cart is opened. There is no sight of the prisoner anywhere. You failed.}",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -517,7 +517,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Success2",
 			Title = "After the battle",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {The battle was hard fought, but you prevailed. Your mercenaries finish all those who have not reached the afterlife yet. While plundering begins the comrade who convinced you to betray %employer% emerges victorious from the chieftain\'s hut. Carying over a bloody head with a fancy helm still on top of it. Too fancy for ordinary barbarians. The warrior throws the gruesome head to your feet, the helm slips off and rolls aside leaving the ragged bloody stump facing up at you. By the state of the wound, this head was ripped off with bare hands. %SPEECH_ON%I am done here. I hope I can count on you to find better challenges for me than this.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {The battle was hard fought, but you prevailed. Your mercenaries finish all those who have not reached the afterlife yet. While plundering begins, the comrade who convinced you to betray %employer% emerges victorious from the chieftain\'s hut. Carying over a bloody head with a fancy helm still on top of it. Too fancy for ordinary barbarians. The warrior throws the gruesome head to your feet, the helm slips off and rolls aside leaving the ragged bloody stump facing up at you. By the state of the wound, this head was ripped off with bare hands. %SPEECH_ON%I am done here. I hope I can count on you to find better challenges for me than this.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [],
@@ -627,7 +627,6 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 					this.Contract.m.Dude.getBackground().buildDescription(true);
 				}
 
-
 				if (this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 				{
 					this.Contract.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).removeSelf();
@@ -676,7 +675,6 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		c.addOrder(despawn);
 		this.m.Caravan = this.WeakTableRef(party);
 	}
-
 
 	function onPrepareVariables( _vars )
 	{

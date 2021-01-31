@@ -40,7 +40,7 @@ this.legend_RSW_bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function getAttacker()
 	{
-		if (!this.World.LegendsMod.Configs().LegendBleedKillerEnabled())
+		if (!this.LegendsMod.Configs().LegendBleedKillerEnabled())
 		{
 			return this.getContainer().getActor();
 		}
