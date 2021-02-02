@@ -1683,6 +1683,40 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
+    },{
+        ID = "scale_helm", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_scale_helm"] //75. -5. 1
+        ],
+        Tops = [
+        ],
+        Vanity = [
+        ]
+    }]
+    },{
+        ID = "rondel_helm", //170, -10, -2, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_rondel_helm"] //75. -5. 1
+        ],
+        Tops = [
+        ],
+        Vanity = [
+        ]
+    }]
     },
 	{
         ID = "wallace_sallet", //170, -10, -2, 1000

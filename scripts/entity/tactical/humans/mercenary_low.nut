@@ -160,6 +160,8 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "padded_nasal_helmet"],
+				[1, "rondel_helm"],
+				[1, "scale_helm"],
 				[1, "nasal_helmet"],
 				[1, "closed_mail_coif"],
 				[1, "mail_coif"],

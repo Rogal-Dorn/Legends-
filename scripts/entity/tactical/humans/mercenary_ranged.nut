@@ -120,6 +120,8 @@ this.mercenary_ranged <- this.inherit("scripts/entity/tactical/human", {
 				[1, "full_leather_cap"],
 				[1, "headscarf"],
 				[1, "kettle_hat"],
+				[1, "rondel_helm"],
+				[1, "scale_helm"],
 				[1, "mail_coif"]
 			]))
 		}

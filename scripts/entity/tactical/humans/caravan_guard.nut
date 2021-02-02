@@ -110,6 +110,8 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 				[1, "full_aketon_cap"],
 				[1, "headscarf"],
 				[1, "nasal_helmet"],
+				[1, "rondel_helm"],
+				[1, "scale_helm"],
 				[1, "padded_nasal_helmet"]
 			])
 			if (item != null)

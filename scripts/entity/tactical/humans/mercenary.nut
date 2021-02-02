@@ -188,6 +188,8 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				[1, "headscarf"],
 				[1, "kettle_hat"],
 				[1, "kettle_hat_with_mail"],
+				[1, "rondel_helm"],
+				[1, "scale_helm"],
 				[1, "flat_top_helmet"],
 				[1, "flat_top_with_mail"],
 				[1, "closed_flat_top_helmet"],
