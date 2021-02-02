@@ -4917,3 +4917,6 @@ Fixes inquisition characters having 5-6 talents with stars
 
 **Weapons**
 Adds several weapon named variants (Warscythe, Warhammer, Bardiche)
+
+**Armor**
+Reworked "Kettle_sallet" to look better
