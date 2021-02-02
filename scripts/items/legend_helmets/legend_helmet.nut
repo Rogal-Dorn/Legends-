@@ -1079,6 +1079,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return (this.m.ItemType & _t) != 0;
 	}
 
+	function setName( _n ) //only called when arena selects a base layer for its named helmet, no clue how to properly fix that issue. this is one option
+	{
+		return;
+	}
+
 	// function getBuyPrice()
 	// {
 	// 	local basePrice = this.helmet.getBuyPrice();
