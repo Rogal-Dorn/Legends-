@@ -587,7 +587,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 				this.World.Retinue.getFollower("follower.cartographer").onLocationDiscovered(this);
 			}
 
-			if (!"IsNew" in this) {
+			if (!"IsNew" in this.m) {
 				this.World.Ambitions.onLocationDiscovered(this);
 			}
 		}
