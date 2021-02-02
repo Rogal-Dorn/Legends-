@@ -635,13 +635,21 @@ layers = [
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
 },
-{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 160, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "enclave_kettle"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 160, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 460, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
+},
+{"name" : "scale_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 460, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
+ "title" :  "Scale Skullcap", \
+ "desc" :  "A skullcap composed of several overlapping metal scales." \
+},
+{"name" : "rondel_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 95, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "false",  \
+ "title" :  "Rondel Helm", \
+ "desc" :  "A short skullcap with two rondels afixed to each side, providing extra protection to the wearer's head." \
 },
 {"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 150, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \

@@ -669,6 +669,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_kettle_helm_named",
 			"helm/legend_helmet_enclave_kettle",
 			"helm/legend_helmet_enclave_skullcap",
+			"helm/legend_helmet_scale_helm",
+			"helm/legend_helmet_rondel_helm",
 			"helm/legend_helmet_wallace_sallet",
 			"helm/legend_helmet_wallace_sallet_named",
 			"helm/legend_helmet_flat_top_face_plate",
