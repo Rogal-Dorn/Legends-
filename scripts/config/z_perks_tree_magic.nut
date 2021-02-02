@@ -422,7 +422,7 @@ gt.Const.Perks.AlchemyMagicTree <- {
 gt.Const.Perks.TherianthropyTree <- {
 	ID = "TherianthropyMagicTree",
 	Descriptions = [
-		"divination"
+		"therianthropy"
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendTrueForm],
