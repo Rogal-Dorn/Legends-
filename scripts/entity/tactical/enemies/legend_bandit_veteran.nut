@@ -411,6 +411,10 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "nasal_helmet"],
+				[1, "rondel_helm"],
+				[1, "legend_enclave_vanilla_skullcap_01"],
+				[1, "legend_enclave_vanilla_kettle_sallet_01"],
+				[1, "scale_helm"],
 				[1, "dented_nasal_helmet"],
 				[1, "nasal_helmet_with_rusty_mail"],
 				[1, "rusty_mail_coif"],
