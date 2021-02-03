@@ -651,6 +651,14 @@ layers = [
  "title" :  "Rondel Helm", \
  "desc" :  "A short skullcap with two rondels afixed to each side, providing extra protection to the wearer's head." \
 },
+{"name" : "deep_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 150, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Deep Sallet", \
+ "desc" :  "A metal sallet with a deep skull as well as tall sides, providing good protection." \
+},
+{"name" : "deep_sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3200, "con" : 180, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  "named" : True, "rminViz" : -0, "rmaxViz" : -1, "rminStam" : -4, "rmaxStam" : -7, "rminCond" : 180, "rmaxCond" : 205, "names" : Names,  \
+ "title" :  "Deep Sallet", \
+ "desc" :  "A decorated deep sallet. It bears a gilded trim with decorative leaf plates pinned to the front ridge." \
+},
 {"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 150, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \
  "desc" :  "A deep sallet covering the head protectively." \
@@ -1249,6 +1257,10 @@ layers = [
 {"name" : "wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Wolf Helm", \
  "desc" :  "An impressive wolf head covering" \
+},
+{"name" : "lion_pelt"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Lion Pelt", \
+ "desc" :  "A luxurious lion's pelt, worn atop one's head." \
 },
 # {"name" : "white_wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "White Wolf Helm", \

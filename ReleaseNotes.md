@@ -4920,4 +4920,4 @@ Adds several weapon named variants (Warscythe, Warhammer, Bardiche)
 
 **Armor**
 Reworked "Kettle_sallet" to look better
-Added helmets (Scale helm, Rondel Helm)
+Added helmets (Scale helm, Rondel Helm, Deep Sallet, Deep Sallet Named, Lion Pelt)
