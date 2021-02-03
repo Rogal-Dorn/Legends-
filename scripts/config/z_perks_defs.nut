@@ -2905,7 +2905,7 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendLeap"
 	},
 	{
-		ID = "perk.perk_legend_tumble",
+		ID = "perk.legend_tumble",
 		Script = "scripts/skills/perks/perk_legend_tumble",
 		Name = this.Const.Strings.PerkName.LegendTumble,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTumble,
