@@ -379,11 +379,11 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 		}
 
-		this.getContainer().getActor().TherianthropeInfectionRandom();
-		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
-			items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
-		}
+		// this.getContainer().getActor().TherianthropeInfectionRandom();
+		// if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		// {
+		// 	items.equip(this.new("scripts/items/accessory/legend_wolfsbane_necklace_item"));
+		// }
 	}
 
 	function onSerialize( _out )

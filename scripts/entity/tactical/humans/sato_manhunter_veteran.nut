@@ -171,7 +171,8 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 			{
 				helmets.extend([
 					[1, "conic_helmet_with_closed_mail"],
-					[1, "conic_helmet_with_faceguard"]
+					[1, "conic_helmet_with_faceguard"],
+					[1, "barbute_helmet"],
 				]);
 			}
 

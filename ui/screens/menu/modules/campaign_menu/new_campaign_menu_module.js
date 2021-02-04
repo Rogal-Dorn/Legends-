@@ -1233,19 +1233,19 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 		increaseArea: '30%'
 	});
 
-	var row = $('<div class="row"></div>');
-	rightColumn.append(row);
-	var control = $('<div class="control"/>');
-	row.append(control);
-	this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
-	control.append(this.mLegendMagicCheckbox);
-	this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic (Experimental)</label>');
-	control.append(this.mLegendMagicCheckboxLabel);
-	this.mLegendMagicCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
+	// var row = $('<div class="row"></div>');
+	// rightColumn.append(row);
+	// var control = $('<div class="control"/>');
+	// row.append(control);
+	// this.mLegendMagicCheckbox = $('<input type="checkbox" id="cb-legendmagic"/>');
+	// control.append(this.mLegendMagicCheckbox);
+	// this.mLegendMagicCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendmagic">Legend Magic (Experimental)</label>');
+	// control.append(this.mLegendMagicCheckboxLabel);
+	// this.mLegendMagicCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
 
 	// var row = $('<div class="row"></div>');
 	// rightColumn.append(row);
@@ -1261,19 +1261,19 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	// 	increaseArea: '30%'
 	// });
 
-	var row = $('<div class="row"></div>');
-	rightColumn.append(row);
-	var control = $('<div class="control"/>');
-	row.append(control);
-	this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendtherian"/>');
-	control.append(this.mLegendTherianCheckbox);
-	this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendtherian">Therianthropy</label>');
-	control.append(this.mLegendTherianCheckboxLabel);
-	this.mLegendTherianCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
+	// var row = $('<div class="row"></div>');
+	// rightColumn.append(row);
+	// var control = $('<div class="control"/>');
+	// row.append(control);
+	// this.mLegendTherianCheckbox = $('<input type="checkbox" id="cb-legendtherian"/>');
+	// control.append(this.mLegendTherianCheckbox);
+	// this.mLegendTherianCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendtherian">Therianthropy</label>');
+	// control.append(this.mLegendTherianCheckboxLabel);
+	// this.mLegendTherianCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
 
 
 };

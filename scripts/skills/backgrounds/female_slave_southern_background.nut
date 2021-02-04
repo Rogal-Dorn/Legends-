@@ -12,8 +12,6 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 		this.m.Beards = null
 		this.m.BeardChance = 0;
 		this.m.Ethnicity = 1;
-		this.m.Names = this.Const.Strings.SouthernNames;
-		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Titles = [
 			"the Enslaved",
 			"the Prisoner",

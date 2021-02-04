@@ -4914,3 +4914,18 @@ Hedge now gets Hammer perkgroup instead of crossbow.
 Inquisition 1st character now doesn't get the extra stats the 2nd and 3rd characters should get
 Fixes inquisition nun possibly getting Lumbering with an excluded perk
 Fixes inquisition characters having 5-6 talents with stars
+
+
+
+15.0.1.1
+
+**Helmets**
+Major rebalance on all helmet layers. (Nerf Hammer - no more super boi helmet values)
+
+**Changes**
+Removed Magic Option (Was experimental, will most likely move magic into specifc scenario/orgins)
+Removed Therianthropic Option (Not happy with gameplay, needs to be reworked/reinvented to make it more compelling and interesting)
+
+**Fixes**
+Increase delays on rotation to prevent rotation crashes
+Fix male names on southern females

@@ -166,7 +166,9 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 				[1, "headscarf"],
 				[1, "kettle_hat"],
 				[1, "kettle_hat_with_mail"],
-				[1, "nordic_helmet"]
+				[1, "nordic_helmet"],
+				[1, "nordic_helmet_with_closed_mail"],
+				[1, "barbute_helmet"]
 			])
 			if (item != null)
 			{

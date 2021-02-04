@@ -172,16 +172,16 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			actor.setTitle(this.Const.Strings.RatcatcherTitles[this.Math.rand(0, this.Const.Strings.RatcatcherTitles.len() - 1)]);
 		}
 
-		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
-			if(this.Math.rand(1, 50) == 1)
-			{
-				this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
-				this.addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
+		// if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
+		// {
+		// 	if(this.Math.rand(1, 50) == 1)
+		// 	{
+		// 		this.m.Container.add(this.new("scripts/skills/injury_permanent/legend_vermesthropy_injury"));
+		// 		this.addPerkGroup(this.Const.Perks.TherianthropyTree.Tree);
 
 
-			}
-		}
+		// 	}
+		// }
 	}
 
 	function onAddEquipment()

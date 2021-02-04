@@ -194,10 +194,13 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				[1, "closed_mail_coif"],
 				[1, "bascinet_with_mail"],
 				[1, "nordic_helmet"],
+				[1, "nordic_helmet_with_closed_mail"],
 				[1, "legend_enclave_vanilla_kettle_sallet_02"],
 				[1, "legend_enclave_vanilla_kettle_sallet_03"],
 				[1, "legend_enclave_vanilla_skullcap_01"],
-				[1, "steppe_helmet_with_mail"]
+				[1, "steppe_helmet_with_mail"],
+				[1, "barbute_helmet"]
+
 			]))
 		}
 	}
