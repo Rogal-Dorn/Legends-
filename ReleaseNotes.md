@@ -4927,5 +4927,7 @@ Removed Magic Option (Was experimental, will most likely move magic into specifc
 Removed Therianthropic Option (Not happy with gameplay, needs to be reworked/reinvented to make it more compelling and interesting)
 
 **Fixes**
+Find location ambition should now update number of locations discovered
 Increase delays on rotation to prevent rotation crashes
-Fix male names on southern females
+Fixes male names on southern females
+Fixes tumble perk from being selected
