@@ -1,12 +1,17 @@
 this.legend_cloak_noble_blueprint <- this.inherit("scripts/crafting/blueprint", {
-	m = {},
+	m = {
+		Variants = 0,
+		Variant = 1
+	},
 	function create()
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_cloak_noble_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble");
-		this.m.Cost = 1000;
+		this.m.Variants = this.m.PreviewCraftable.m.Variants.len();
+		this.m.PreviewCraftable.setVariant(this.m.PreviewCraftable.m.Variants[0]);
+		this.m.Cost = 3000;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/spider_silk_item",
@@ -20,18 +25,25 @@ this.legend_cloak_noble_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/backgrounds/female_tailor_background",
-							"scripts/skills/backgrounds/tailor_background"]
+				Scripts = [
+					"scripts/skills/backgrounds/female_tailor_background",
+					"scripts/skills/backgrounds/tailor_background"
+				]
 			}
-		]
-		this.initSkills(skills);			
-
+		];
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble"));
+		local item = this.new("scripts/items/legend_armor/cloak/legend_armor_cloak_noble");
+		item.setVariant(item.m.Variants[this.m.Variant-1]);
+		_stash.add(item);
 	}
 
+	function setVariant( _variant )
+	{
+		this.m.Variant = _variant;
+	}
 });
 

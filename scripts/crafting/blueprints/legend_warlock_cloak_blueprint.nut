@@ -58,6 +58,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 	function onCraft( _stash )
 	{
 		local item
+
 		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			item = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");

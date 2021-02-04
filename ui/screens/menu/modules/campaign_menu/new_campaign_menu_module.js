@@ -1680,14 +1680,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 	});
 
 
-	this.mLegendMagicCheckbox.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legendmagic'
-	});
-	this.mLegendMagicCheckboxLabel.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legendmagic'
-	});
+	// this.mLegendMagicCheckbox.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendmagic'
+	// });
+	// this.mLegendMagicCheckboxLabel.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendmagic'
+	// });
 
 	this.mLegendArmorCheckbox.bindTooltip({
 		contentType: 'ui-element',
@@ -1761,14 +1761,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legendallblueprints'
 	});
 
-	this.mLegendTherianCheckbox.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legendtherian'
-	});
-	this.mLegendTherianCheckboxLabel.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legendtherian'
-	});
+	// this.mLegendTherianCheckbox.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendtherian'
+	// });
+	// this.mLegendTherianCheckboxLabel.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legendtherian'
+	// });
 
 	this.mEvilUndeadLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
     this.mEvilUndeadCheckbox.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilUndead });
@@ -1919,8 +1919,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.highGenderControlCheckbox.unbindTooltip();
 	this.highGenderControlLabel.unbindTooltip();
 
-	this.mLegendMagicCheckbox.unbindTooltip();
-	this.mLegendMagicCheckboxLabel.unbindTooltip();
+	// this.mLegendMagicCheckbox.unbindTooltip();
+	// this.mLegendMagicCheckboxLabel.unbindTooltip();
 
 	this.mLegendArmorCheckbox.unbindTooltip();
 	this.mLegendArmorCheckboxLabel.unbindTooltip();
@@ -1946,8 +1946,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mLegendAllBlueprintsCheckbox.unbindTooltip();
 	this.mLegendAllBlueprintsCheckboxLabel.unbindTooltip();
 
-	this.mLegendTherianCheckbox.unbindTooltip();
-	this.mLegendTherianCheckboxLabel.unbindTooltip();
+	// this.mLegendTherianCheckbox.unbindTooltip();
+	// this.mLegendTherianCheckboxLabel.unbindTooltip();
 };
 
 
@@ -2286,7 +2286,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
 	//settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
 	settings.push(this.mGenderLevel);
-	settings.push(this.mLegendMagicCheckbox.is(":checked"));
+	settings.push(false);//settings.push(this.mLegendMagicCheckbox.is(":checked"));
 	settings.push(this.mLegendArmorCheckbox.is(":checked"));
 	settings.push(this.mDebugCheckbox.is(":checked"));
 	settings.push(this.mAutosaveCheckbox.is(':checked'));
@@ -2298,7 +2298,7 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
 	settings.push(false); //settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
 	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
-	settings.push(this.mLegendTherianCheckbox.is(":checked"));
+	settings.push(false);//settings.push(this.mLegendTherianCheckbox.is(":checked"));
 
 	return settings;
 }

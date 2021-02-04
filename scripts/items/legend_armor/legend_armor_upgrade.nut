@@ -438,5 +438,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.item.onDeserialize(_in);
 	}
 
+
 });
 

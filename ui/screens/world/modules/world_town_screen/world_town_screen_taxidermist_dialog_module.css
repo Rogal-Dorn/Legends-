@@ -519,7 +519,7 @@
     right: 2.0rem;
     position: absolute;
 
-    width: 40.0rem;
+    width: 45.0rem;
     height: 20.0rem;
 }
 
@@ -527,8 +527,8 @@
 {
     position: relative;
     float: left;
-    width: 7.0rem;
-    height: 7.0rem;
+    width: 6.3rem;
+    height: 6.3rem;
     margin: 0.5rem;
 }
 
@@ -608,6 +608,29 @@
 
     text-align: left;
     line-height: 3.2rem;
+}
+
+.world-town-screen > .l-taxidermist-dialog-container .content .details-container .row.is-costs-container > .row .variant-label
+{
+    top: 0;
+    left: 11.0rem;
+    bottom: 0;
+    width: 10.0rem;
+    height: 3.0rem;
+    position: absolute;
+    margin: auto;
+
+    text-align: left;
+    line-height: 3.2rem;
+}
+
+.world-town-screen > .l-taxidermist-dialog-container .content .details-container .row.is-costs-container > .row .variant-input
+{
+    top: 1px;
+    left: 20.5rem; /*4.5rem*/
+	width: 12.4rem;
+    height: 2.8rem;
+    position: absolute;
 }
 
 .world-town-screen > .l-taxidermist-dialog-container .content .details-container .row.is-costs-container > .row .l-costs-container
