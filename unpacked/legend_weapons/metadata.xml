@@ -512,5 +512,20 @@
  <sprite id="icon_cleaver_02_named" offsetY="35" ic="FF535559" width="104" height="142" img="icons\icon_cleaver_02_named.png" left="1" right="43" top="-62" bottom="-8" />
  <sprite id="icon_cleaver_02_named_bloodied" offsetY="35" ic="FF404352" width="104" height="142" img="icons\icon_cleaver_02_named_bloodied.png" left="1" right="43" top="-62" bottom="-8" />
 
+  <sprite id="icon_warscythe_named_02" offsetY="35" ic="FF3B404A" width="79" height="191" img="icons\icon_warscythe_named_02.png" left="-54" right="5" top="-63" bottom="80" />
+  <sprite id="icon_warscythe_named_02_bloodied" offsetY="35" ic="FF3B404A" width="79" height="191" img="icons\icon_warscythe_named_02_bloodied.png" left="-54" right="5" top="-63" bottom="80" />
+  
+  <sprite id="icon_warscythe_named_03" offsetY="35" ic="FF3B404A" width="86" height="224" img="icons\icon_warscythe_named_03.png" left="-60" right="6" top="-64" bottom="104" />
+  <sprite id="icon_warscythe_named_03_bloodied" offsetY="35" ic="FF3B404A" width="86" height="224" img="icons\icon_warscythe_named_03_bloodied.png" left="-60" right="6" top="-64" bottom="104" />
+  
+  <sprite id="icon_bardiche_01_named_03" offsetY="35" ic="FF3B404A" width="93" height="166" img="icons\icon_bardiche_01_named_03.png" left="-60" right="10" top="-60" bottom="65" />
+  <sprite id="icon_bardiche_01_named_03_bloodied" offsetY="35" ic="FF3B404A" width="93" height="166" img="icons\icon_bardiche_01_named_03_bloodied.png" left="-60" right="10" top="-60" bottom="65" />
+
+  <sprite id="icon_named_warhammer_04" offsetY="35" ic="FF3B404A" width="49" height="109" img="icons\icon_named_warhammer_04.png" left="0" right="47" top="-70" bottom="12" />
+  <sprite id="icon_named_warhammer_04_bloodied" offsetY="35" ic="FF3B404A" width="49" height="109" img="icons\icon_named_warhammer_04_bloodied.png" left="0" right="47" top="-70" bottom="12" />
+ 
+  <sprite id="icon_named_warhammer_05" offsetY="35" ic="FF3B404A" width="65" height="108" img="icons\icon_named_warhammer_05.png" left="0" right="49" top="-70" bottom="11" />
+  <sprite id="icon_named_warhammer_05_bloodied" offsetY="35" ic="FF3B404A" width="65" height="108" img="icons\icon_named_warhammer_05_bloodied.png" left="0" right="49" top="-70" bottom="11" />
+ 
  
  </brush>
