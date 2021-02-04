@@ -587,14 +587,8 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 				this.World.Retinue.getFollower("follower.cartographer").onLocationDiscovered(this);
 			}
 
-<<<<<<< HEAD
 			this.World.Ambitions.onLocationDiscovered(this);
 
-=======
-			if (!"IsNew" in this.m) {
-				this.World.Ambitions.onLocationDiscovered(this);
-			}
->>>>>>> v15MwahBug
 		}
 
 		if (this.m.OnDiscovered != null)

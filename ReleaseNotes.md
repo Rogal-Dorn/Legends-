@@ -4921,6 +4921,11 @@ Fixes inquisition characters having 5-6 talents with stars
 
 **Helmets**
 Major rebalance on all helmet layers. (Nerf Hammer - no more super boi helmet values)
+Reworked "Kettle_sallet" to look better
+Added helmets (Scale helm, Rondel Helm, Deep Sallet, Deep Sallet Named, Lion Pelt)
+
+**Weapons**
+Adds several weapon named variants (Warscythe, Warhammer, Bardiche)
 
 **Changes**
 Removed Magic Option (Was experimental, will most likely move magic into specifc scenario/orgins)

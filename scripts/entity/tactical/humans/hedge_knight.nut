@@ -140,6 +140,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[5, "legend_helm_short"],
 				[5, "legend_helm_curved"],
 				[2, "wallace_sallet"],
+				[2, "deep_sallet"],
 				[2, "italo_norman_helm"],
 				[2, "legend_enclave_vanilla_great_helm_01"],
 				[2, "legend_enclave_vanilla_armet_01"],
@@ -205,13 +206,15 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		// 	[1, "named/green_coat_of_plates_armor"]
 		// ]));
 
-		//this.m.Items.equip(this.Const.World.Common.pickHelmet([
-        //    [3, "named/bascinet_named"],
-        //   [3, "named/kettle_helm_named"],
-        //    [3, "named/barbute_named"],
-        //    [3, "named/italo_norman_helm_named"],
-        //    [3, "named/wallace_sallet_named"],
-		//]));
+		this.m.Items.equip(this.Const.World.Common.pickHelmet([
+            [3, "named/bascinet_named"],
+            [3, "named/kettle_helm_named"],
+            [3, "named/deep_sallet_named"],
+            [3, "named/barbute_named"],
+			[3, "named/italo_norman_helm_named"],
+			[3, "named/wallace_sallet_named"],
+			[3, "named/named_helm_with_lion_pelt"]
+		]));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		return true;
 	}

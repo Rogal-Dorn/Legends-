@@ -100,6 +100,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
 					[1, "mail_coif"],
+					[1, "rondel_helm"],
+					[1, "scale_helm"],
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
 					[1, "legend_enclave_vanilla_kettle_sallet_03"]
 				]))
@@ -123,6 +125,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "padded_nasal_helmet"],
 					[1, "nasal_helmet_with_mail"],
 					[1, "mail_coif"],
+					[1, "rondel_helm"],
+					[1, "scale_helm"],
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
 					[1, "legend_enclave_vanilla_kettle_sallet_02"]
 

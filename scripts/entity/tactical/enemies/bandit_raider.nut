@@ -362,6 +362,8 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
+			[1, "rondel_helm"],
+			[1, "scale_helm"],
 			[1, "dented_nasal_helmet"],
 			[1, "rusty_mail_coif"],
 			[1, "headscarf"],

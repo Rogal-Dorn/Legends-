@@ -653,15 +653,31 @@ layers = [
  "title" :  "Kettle Sallet", \
  "desc" :  "A full-metal sallet with a broad rim." \
 },
-{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
+{"name" : "enclave_skullcap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 460, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Skullcap", \
  "desc" :  "A metal cap that covers the head." \
 },
-{"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 155, "stam" : -11, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "scale_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 460, "con" : 80, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "false",  \
+ "title" :  "Scale Skullcap", \
+ "desc" :  "A skullcap composed of several overlapping metal scales." \
+},
+{"name" : "rondel_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 95, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "false",  \
+ "title" :  "Rondel Helm", \
+ "desc" :  "A short skullcap with two rondels afixed to each side, providing extra protection to the wearer's head." \
+},
+{"name" : "deep_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 155, "stam" : -11, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Deep Sallet", \
+ "desc" :  "A metal sallet with a deep skull as well as tall sides, providing good protection." \
+},
+{"name" : "deep_sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3200, "con" : 165, "stam" : -12, "vis" : -1, "hair" : "true", "beard" : "false",  "named" : True, "rminViz" : -0, "rmaxViz" : -1, "rminStam" : -11, "rmaxStam" : -12, "rminCond" : 165, "rmaxCond" : 185, "names" : Names,  \
+ "title" :  "Deep Sallet", \
+ "desc" :  "A decorated deep sallet. It bears a gilded trim with decorative leaf plates pinned to the front ridge." \
+},
+{"name" : "wallace_sallet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1900, "con" : 160, "stam" : -11, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \
  "desc" :  "A deep sallet covering the head protectively." \
 },
-{"name" : "wallace_sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3200, "con" : 180, "stam" : -13, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -0, "rmaxViz" : -1, "rminStam" : -12, "rmaxStam" : -14, "rminCond" : 180, "rmaxCond" : 205, "names" : Names, \
+{"name" : "wallace_sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3200, "con" : 175, "stam" : -12, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rminViz" : -0, "rmaxViz" : -1, "rminStam" : -11, "rmaxStam" : -12, "rminCond" : 175, "rmaxCond" : 185, "names" : Names, \
  "title" :  "Sallet", \
  "desc" :  "A skillfully painted sallet. It is made of strong steel and should protect one's skull from all kinds of trauma." \
 },
@@ -1251,6 +1267,10 @@ layers = [
 {"name" : "wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Wolf Helm", \
  "desc" :  "An impressive wolf head covering" \
+},
+{"name" : "lion_pelt"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Lion Pelt", \
+ "desc" :  "A luxurious lion's pelt, worn atop one's head." \
 },
 # {"name" : "white_wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "White Wolf Helm", \

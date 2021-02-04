@@ -492,6 +492,51 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
+        ID = "named/deep_sallet_named", //180, -10, -1, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_deep_sallet_named"] //180, -7, -1
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [10, ""],
+            [1, "vanity/legend_helmet_noble_feather"],
+            [1, "vanity/legend_helmet_side_feather"],
+            [1, "vanity/legend_helmet_plait"], //10
+            [1, "vanity/legend_helmet_noble_feather"],
+
+            [1, "vanity/legend_helmet_top_feather"],
+        ]
+    }]
+    },{
+        ID = "named/named_helm_with_lion_pelt", //180, -10, -1, 1000
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"], //50, -2, 0
+            [1, "hood/legend_helmet_chain_hood_full"], //90, -6, 0
+            [1, "hood/legend_helmet_southern_chain_hood"] //90, -6, 0
+        ],
+        Helms = [
+             [1, "helm/legend_helmet_deep_sallet_named"], //180, -7, -1
+            [1, "helm/legend_helmet_italo_norman_helm_named"],
+             [1, "helm/legend_helmet_barbute_named"],
+             [1, "helm/legend_helmet_bascinet_named"]
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_lion_pelt"]
+        ]
+    }]
+    },{
         ID = "named/legend_helm_full_named", //350, -21, -3, 3500
         Script = "",
         Sets = [{

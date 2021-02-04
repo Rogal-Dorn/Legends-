@@ -359,6 +359,26 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			P = 1.0,
 			S = "helmets/legend_enclave_vanilla_kettle_sallet_01"
 		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/wallace_sallet"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/deep_sallet"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/scale_helm"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/rondel_helm"
+		});
 
 		if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 		{

@@ -120,6 +120,8 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 			{
 				helmet = this.Const.World.Common.pickHelmet([
 					[1, "kettle_hat"],
+					[1, "rondel_helm"],
+					[1, "scale_helm"],
 					[1, "padded_kettle_hat"],
 					[1, "kettle_hat_with_mail"],
 					[1, "mail_coif"],
@@ -132,6 +134,8 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "flat_top_helmet"],
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
+					[1, "rondel_helm"],
+					[1, "scale_helm"],
 					[1, "mail_coif"],
 					[1, "legend_enclave_vanilla_skullcap_01"]
 				])
