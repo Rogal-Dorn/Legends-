@@ -79,5 +79,20 @@ this.legend_armor_tabard <- this.inherit("scripts/items/legend_armor/legend_armo
 		_properties.Bravery += this.m.Bravery;
 	}
 
+	function onSerialize( _out )
+	{
+		_out.writeString(this.m.Name);
+		this.legend_armor_upgrade.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		if (_in.getMetaData().getVersion() >= 64)
+		{
+			this.m.Name = _in.readString();
+		}
+		this.legend_armor_upgrade.onDeserialize(_in);
+	}
+
 });
 

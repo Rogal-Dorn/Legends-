@@ -1,9 +1,8 @@
-
 this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Crafting",
 		Description = "While encamped, craft all manner of useful items.",
-		InventoryFilter = this.Const.Items.ItemFilter.All
+		InventoryFilter = this.Const.Items.ItemFilter.Weapons
 	},
 	function create()
 	{
@@ -15,7 +14,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	{
 		return this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Crafting);
 	}
-	
+
 	function onShow()
 	{
 		this.getTent().onInit();
@@ -53,7 +52,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 
 	function loadCraftList()
 	{
-		local result = this.queryQueue()
+		local result = this.queryQueue();
 		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
 
@@ -62,21 +61,21 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		this.ui_module.destroy();
 	}
 
-	function onSwap ( _data )
+	function onSwap( _data )
 	{
-		this.getTent().onSwap( _data[0], _data[1] );
+		this.getTent().onSwap(_data[0], _data[1]);
 		this.loadCraftList();
 	}
 
-	function onRemove ( _idx)
+	function onRemove( _idx )
 	{
-		this.getTent().onRemove( _idx );
+		this.getTent().onRemove(_idx);
 		this.loadCraftList();
 	}
 
-	function onAdd( _blueprintID )
+	function onAdd( _result )
 	{
-		this.getTent().onAdd( _blueprintID );
+		this.getTent().onAdd(_result.ID);
 		this.loadCraftList();
 	}
 
@@ -93,7 +92,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	function loadBlueprints()
 	{
 		local result = {
-			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter),
+			Blueprints = this.World.Crafting.getQualifiedBlueprintsForUI(this.m.InventoryFilter)
 		};
 		this.m.JSHandle.asyncCall("loadFromData", result);
 	}
@@ -143,5 +142,5 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 		}
 	}
 
-
 });
+

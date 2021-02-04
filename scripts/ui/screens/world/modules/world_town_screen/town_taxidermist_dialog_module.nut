@@ -1,6 +1,6 @@
 this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		InventoryFilter = this.Const.Items.ItemFilter.All
+		InventoryFilter = this.Const.Items.ItemFilter.Weapons
 	},
 	function create()
 	{
@@ -82,10 +82,39 @@ this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_modul
 			this.loadBlueprints();
 		}
 	}
-
-	function onCraft( _blueprintID )
+	
+	function FixVariantImage( _result )
 	{
-		local blueprint = this.World.Crafting.getBlueprint(_blueprintID);
+		local result = null;
+		if (_result.ItemPath != 0)
+		{
+			local item = this.new(_result.ItemPath);
+			if ("m" in item && "Faction" in item.m)
+			{
+				item.setFaction(_result.Variant);
+			}
+			else
+			{
+				item.setVariant(item.m.Variants[_result.Variant-1]);
+			}
+			if (item.m.ID == "shield.faction_kite_shield" || item.m.ID == "shield.heater_kite_shield")
+			{
+				local blueprint = this.World.Crafting.getBlueprint(_result.ID);
+				blueprint.m.PreviewCraftable = item;
+			}
+			result = item.m.IconLarge != null ? item.m.IconLarge : item.m.Icon;
+		}
+		
+		return result;
+	}
+
+	function onCraft( _result )
+	{
+		local blueprint = this.World.Crafting.getBlueprint(_result.ID);
+		if (_result.Variant != 0)
+		{
+			blueprint.setVariant(_result.Variant);
+		}
 		blueprint.craft();
 		this.World.Assets.addMoney(-blueprint.getCost());
 

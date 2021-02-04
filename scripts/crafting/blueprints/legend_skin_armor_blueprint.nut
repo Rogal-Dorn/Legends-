@@ -50,15 +50,9 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		local item;
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
-		{
-			item = this.new("scripts/items/legend_armor/legendary/legend_armor_skin");
-		}
-		else
-		{
-			item = this.new("scripts/items/armor/legendary/legend_skin_armor");
-		}
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "legendary/legend_skin_armor"]
+		])
 		item.m.Name = "";
 		_stash.add(item);
 	}

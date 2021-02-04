@@ -65,16 +65,17 @@ this.blueprint <- {
 		if (_idx > this.m.PreviewComponents.len() - 1)
 		{
 			this.logError("Out of bound error on blueprint :: " + this.m.ID);
-			return null
+			return null;
 		}
+
 		return this.m.PreviewComponents[_idx].Instance.getTooltip();
 	}
 
 	function getTooltipForSkill( _idx )
 	{
-		foreach (c in this.m.PreviewSkills)
+		foreach( c in this.m.PreviewSkills )
 		{
-			foreach (s in c.Instances)
+			foreach( s in c.Instances )
 			{
 				if (s.getID() == _idx)
 				{
@@ -82,6 +83,7 @@ this.blueprint <- {
 				}
 			}
 		}
+
 		return null;
 	}
 
@@ -98,11 +100,13 @@ this.blueprint <- {
 				Name = i.Script,
 				Num = i.Num,
 				Instance = c
-			}
+			};
+
 			if ("LegendsArmor" in i)
 			{
-				pc.LegendsArmor <- i.LegendsArmor
+				pc.LegendsArmor <- i.LegendsArmor;
 			}
+
 			this.m.PreviewComponents.push(pc);
 		}
 	}
@@ -111,11 +115,13 @@ this.blueprint <- {
 	{
 		foreach( i in _skills )
 		{
-			local C = []
-			foreach ( s in i.Scripts )
+			local C = [];
+
+			foreach( s in i.Scripts )
 			{
 				C.push(this.new(s));
 			}
+
 			this.m.PreviewSkills.push({
 				Instances = C
 			});
@@ -130,24 +136,26 @@ this.blueprint <- {
 	function requirementsMet( _ids )
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-			foreach ( id in _ids)
+
+		foreach( bro in roster )
+		{
+			foreach( id in _ids )
 			{
 				if (bro.getSkills().hasSkill(id))
 				{
-					return true
+					return true;
 				}
 			}
 		}
+
 		return false;
 	}
 
-
 	function isCraftable()
 	{
-		local itemsMap = {}
-		foreach( item in this.World.Assets.getStash().getItems())
+		local itemsMap = {};
+
+		foreach( item in this.World.Assets.getStash().getItems() )
 		{
 			if (item == null)
 			{
@@ -158,18 +166,19 @@ this.blueprint <- {
 			{
 				itemsMap[item.getID()] <- 0;
 			}
-			itemsMap[item.getID()] = itemsMap[item.getID()] + 1
+
+			itemsMap[item.getID()] = itemsMap[item.getID()] + 1;
 		}
 
 		foreach( c in this.m.PreviewComponents )
 		{
-
 			if ("LegendsArmor" in c)
 			{
 				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
+
 				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
@@ -177,6 +186,7 @@ this.blueprint <- {
 			}
 
 			local num = 0;
+
 			if (c.Instance.getID() in itemsMap)
 			{
 				num = itemsMap[c.Instance.getID()];
@@ -191,9 +201,12 @@ this.blueprint <- {
 		foreach( c in this.m.PreviewSkills )
 		{
 			local ids = [];
-			foreach (s in c.Instances) {
+
+			foreach( s in c.Instances )
+			{
 				ids.push(s.getID());
 			}
+
 			if (!this.requirementsMet(ids))
 			{
 				return false;
@@ -207,7 +220,7 @@ this.blueprint <- {
 	{
 		if (this.m.Enchanter)
 		{
-			return false
+			return false;
 		}
 
 		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
@@ -235,6 +248,14 @@ this.blueprint <- {
 
 	function getUIData()
 	{
+		if (this.m.PreviewCraftable.m.ID == "shield.heater_shield" || this.m.PreviewCraftable.m.ID == "shield.kite_shield" || this.m.PreviewCraftable.m.ID == "shield.legend_tower_shield")
+		{
+			this.m.PreviewCraftable.onPaintInCompanyColors();
+		}
+		else if (this.m.PreviewCraftable.m.ID == "shield.faction_kite_shield" || this.m.PreviewCraftable.m.ID == "shield.heater_kite_shield")
+		{
+			this.m.PreviewCraftable.setFaction(1);
+		}
 		local ret = {
 			ID = this.getID(),
 			Name = this.getName(),
@@ -246,14 +267,25 @@ this.blueprint <- {
 			IsCraftable = this.isCraftable(),
 			Type = this.getItemType()
 		};
+		if ("Variants" in this.m && this.m.Variants > 0)
+		{
+			ret.Variants <- this.m.Variants;
+			ret.ItemPath <- this.IO.scriptFilenameByHash(this.m.PreviewCraftable.ClassNameHash); //this.m.PreviewCraftable;
+		}
+		else
+		{
+			ret.Variants <- 0;
+			ret.ItemPath <- 0;
+		}
 		return ret;
 	}
 
 	function getIngredients()
 	{
 		local ret = [];
-		local itemsMap = {}
-		foreach( item in this.World.Assets.getStash().getItems())
+		local itemsMap = {};
+
+		foreach( item in this.World.Assets.getStash().getItems() )
 		{
 			if (item == null)
 			{
@@ -264,17 +296,20 @@ this.blueprint <- {
 			{
 				itemsMap[item.getID()] <- 0;
 			}
-			itemsMap[item.getID()] = itemsMap[item.getID()] + 1
+
+			itemsMap[item.getID()] = itemsMap[item.getID()] + 1;
 		}
 
-		foreach(c in this.m.PreviewSkills )
+		foreach( c in this.m.PreviewSkills )
 		{
-			foreach (s in c.Instances)
+			foreach( s in c.Instances )
 			{
 				ret.push({
 					InstanceID = s.getID(),
 					ImagePath = s.getIconColored(),
-					IsMissing = !this.requirementsMet([s.getID()]),
+					IsMissing = !this.requirementsMet([
+						s.getID()
+					]),
 					IsSkill = 1
 				});
 			}
@@ -283,14 +318,17 @@ this.blueprint <- {
 		foreach( i, c in this.m.PreviewComponents )
 		{
 			local num = 0;
+
 			if (c.Instance == null)
 			{
 				local name = "";
+
 				if (c.Name != null)
 				{
 					name = c.Name;
 				}
-				this.logInfo("ERROR, blueprint instance is null. item name = " + name)
+
+				this.logInfo("ERROR, blueprint instance is null. item name = " + name);
 				continue;
 			}
 
@@ -300,6 +338,7 @@ this.blueprint <- {
 				{
 					continue;
 				}
+
 				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
@@ -311,7 +350,7 @@ this.blueprint <- {
 				num = itemsMap[c.Instance.getID()];
 			}
 
-			for( local j = 1; j <= c.Num; j = ++j )
+			for( local j = 1; j <= c.Num; j = j )
 			{
 				ret.push({
 					InstanceID = i,
@@ -319,6 +358,7 @@ this.blueprint <- {
 					IsMissing = j > num,
 					IsSkill = 0
 				});
+				j = ++j;
 			}
 		}
 
@@ -344,13 +384,14 @@ this.blueprint <- {
 				{
 					continue;
 				}
+
 				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
 			}
 
-			for( local j = 0; j < c.Num; j = ++j )
+			for( local j = 0; j < c.Num; j = j )
 			{
 				local item = stash.getItemByID(c.Instance.getID());
 
@@ -362,6 +403,8 @@ this.blueprint <- {
 				{
 					item.setMagicNumber(this.Math.rand(1, 100));
 				}
+
+				j = ++j;
 			}
 		}
 
@@ -386,15 +429,17 @@ this.blueprint <- {
 				{
 					continue;
 				}
+
 				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
 				{
 					continue;
 				}
 			}
 
-			for( local j = 0; j < c.Num; j = ++j )
+			for( local j = 0; j < c.Num; j = j )
 			{
 				stash.removeByID(c.Instance.getID());
+				j = ++j;
 			}
 		}
 

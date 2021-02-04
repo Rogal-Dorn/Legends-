@@ -35,14 +35,15 @@ this.crafting_manager <- {
 		return ret;
 	}
 
-	function getQualifiedBlueprintsForUI(_filter)
+	function getQualifiedBlueprintsForUI( _filter )
 	{
 		local ret = [];
+
 		foreach( b in this.m.Blueprints )
 		{
 			if ((b.getItemType() & _filter) == 0)
 			{
-				continue
+				continue;
 			}
 
 			if (b.isQualified())
@@ -115,7 +116,7 @@ this.crafting_manager <- {
 		this.clear();
 		local num = _in.readU16();
 
-		for( local i = 0; i < num; i = ++i )
+		for( local i = 0; i < num; i = i )
 		{
 			local blueprint = this.getBlueprint(_in.readString());
 
@@ -127,6 +128,8 @@ this.crafting_manager <- {
 			{
 				_in.readU32();
 			}
+
+			i = ++i;
 		}
 	}
 
@@ -147,7 +150,7 @@ this.crafting_manager <- {
 		else if (_b1.Type < _b2.Type)
 		{
 			return -1;
-		}		
+		}
 		else if (_b1.Name > _b2.Name)
 		{
 			return 1;

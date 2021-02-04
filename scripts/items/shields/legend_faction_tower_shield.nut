@@ -1,7 +1,7 @@
 this.legend_faction_tower_shield <- this.inherit("scripts/items/shields/shield", {
 	m = {
 		Faction = 1
-		},
+	},
 	function create()
 	{
 		this.shield.create();
@@ -41,9 +41,9 @@ this.legend_faction_tower_shield <- this.inherit("scripts/items/shields/shield",
 	function setFaction( _f )
 	{
 		this.m.Faction = _f;
+		this.m.Variant = _f;
 		this.updateVariant();
 	}
-
 
 });
 
