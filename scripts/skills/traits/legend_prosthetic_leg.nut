@@ -6,7 +6,7 @@ this.legend_prosthetic_leg <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.legend_prosthetic_leg";
 		this.m.Name = "Prosthetic Leg";
 		this.m.Icon = "ui/traits/legend_prosthetic_leg.png";
-		this.m.Description = "A fake leg of wood and metal. Not much to run on, but at least it’ll let a man hobble. While it makes the most annoying clanking noise you’ve ever heard, it’ll ensure a mercenary is able to walk.";
+		this.m.Description = "A fake leg of wood and metal. Not much to run on, but at least it\'ll let a man hobble. While it makes the most annoying clanking noise you\'ve ever heard, it\'ll ensure a mercenary is able to walk.";
 	}
 
 	function getTooltip()

@@ -358,7 +358,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_100.png[/img] {%employer%\'s crosses his arms and purses his lips.%SPEECH_ON%Ordinarily I wouldn\'t ask some sellswords to guard a caravan, but my usual crew is a little out of it - sickness, drunkenness, licentiousness... I think you understand. What\'s important is that I have important cargo going to %objective% about %days% to the %direction% and I need someone watching it... someone specialized in that sort of \'cargo\'. What I’ve heard is your funny company has \'individuals\' that are extra skilled in handling such savage beasts. The mountain of muscles visiting my dungeon is the most wanted bastard in %objective%. Rumor is this beast killed a whole patrol with bare hands only. Let us not dwell on those grisly details, are you interested or not?%SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_100.png[/img] {%employer%\'s crosses his arms and purses his lips.%SPEECH_ON%Ordinarily I wouldn\'t ask some sellswords to guard a caravan, but my usual crew is a little out of it - sickness, drunkenness, licentiousness... I think you understand. What\'s important is that I have important cargo going to %objective% about %days% to the %direction% and I need someone watching it... someone specialized in that sort of \'cargo\'. I\'ve heard your particular company has \'individuals\' that are skilled in handling savages. The mountain of muscles in my dungeon is the most wanted bastard in %objective%. Rumor is they killed a whole patrol with their bare hands...but come, let\'s not dwell on those grisly details. Are you interested or not?%SPEECH_OFF% }",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -436,7 +436,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "TheBattle",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {This battle was more bloody than the usual easy skirmishes your men are involved in. %randombrother% looks over wounded companions. %randombrother2% checks out the prison cart to ensure the recent enounter left it in a decent condition to resume the journey.  %randombrother2% approaches you after a while. %SPEECH_ON% Damn… these barbarians were serious business. This big brute we have in custody must be someone important… Just maybe … I don’t know boss…  but maybe lets see what prisoner has to say ? This might be their king or some kind of famed warrior! Who cares about %employer%\'s opinion on the matter? We got paid already and I don’t think we\'re going to get one coin more in %objective%. %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {This battle was more bloody than the usual skirmishes your men are involved in. %randombrother% looks over wounded companions. %randombrother2% inspects the prison cart to ensure the recent enounter left it in a decent condition to resume the journey, then approaches you. %SPEECH_ON%These barbarians were serious business, cap - that big brute we have in custody must be someone important. Maybe… I don\'t know boss… but maybe let\'s see what the prisoner has to say? This might be their king or some kind of famed warrior! Who cares about %employer%\'s opinion on the matter? We got paid already and I don\'t think we\'ll find any more crowns waiting for us in %objective%.%SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -451,7 +451,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Good idea. Let\'s talk with the prisoner (Decrease Morals)",
+					Text = "Good idea. Let\'s speak with the prisoner. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-3);
@@ -464,7 +464,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "ThePrisoner",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_139.png[/img] {Those of the company who are still strong enough to fight gather around the wagon. %randombrother% holds a weapon tight, ready to strike if need be. As you approach, the presence of the half naked northerner grows more and more menacing.  What is left of %employer% \'s men are upset about this but after the recent battle they aren\'t looking for another fight. Finally the prisoner speaks.  %SPEECH_ON% HAHA!! That was an impressive brawl there! I didn’t expect you\'d manage to kill them all. Maybe a few, then I was ready to finish off the rest over your dead bodies and continue my revenge later. You look surprised ? HA! You think these rookies were sent to rescue me? Those were my enemies and there is more of them left to behead. Killing these warriors was proof you\'re not just a bunch of milk drinking weaklings like all these noble baby boys. I have a score to settle with the chieftain of Reaver\'s Hold. Hell… after that I even might join your band!  Let’s finish these %employer% \'s farmhands in fancy armor and go to fight real warriors! You can fight the rest of the clan, but the chieftain is my kill! What say you? %SPEECH_OFF% }",
+			Text = "[img]gfx/ui/events/event_139.png[/img] {Those of the company who are still strong enough to fight gather around the wagon. %randombrother% holds a weapon tight, ready to strike if need be. As you approach, the presence of the half naked northerner grows more and more menacing. What is left of %employer%\'s men are upset about this but after the recent battle they aren\'t looking for another fight. Finally the prisoner speaks. %SPEECH_ON%HAHA!! That was an impressive brawl! I didn\'t expect you\'d manage to kill them all. A few, maybe, but here I thought I\'d have to deal with the bulk of them myself, and I nary lifted a finger! Ha!%SPEECH_OFF%Seeing the surprise on your face, the barbarian raises an eyebrow and explains.%SPEECH_ON%You look surprised. Did you think those curs were here to rescue me? No, those were my enemies - and I assure you, there are more of them, and deadlier ones too. Still, killing these warriors was proof you\'re not just a bunch of milk drinking rabble like these so-called \'nobles\'.%SPEECH_OFF%The barbarian pauses, spits, eyes your for a moment longer. They continue.%SPEECH_ON%I have a score to settle with the chieftain of Reaver\'s Hold. Kill the guards. Free me. Take me there. It will be a worthy battle against real warriors, not some piddling skirmish surrounded by a bunch of fops in fancy armor. The chieftain is my kill, but the rest are fair game. You do that, and I\'d consider it an honor to join your band. What say you?%SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -479,7 +479,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 
 				},
 				{
-					Text = "Fine we will kill them. (Decrease Morals)",
+					Text = "Very well, you have a deal. (Decrease Morals)",
 					function getResult()
 					{
 						this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnContractFail);
@@ -517,7 +517,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.Screens.push({
 			ID = "Success2",
 			Title = "After the battle",
-			Text = "[img]gfx/ui/events/event_145.png[/img] {The battle was hard fought, but you prevailed. Your mercenaries finish all those who have not reached the afterlife yet. While plundering begins, the comrade who convinced you to betray %employer% emerges victorious from the chieftain\'s hut. Carying over a bloody head with a fancy helm still on top of it. Too fancy for ordinary barbarians. The warrior throws the gruesome head to your feet, the helm slips off and rolls aside leaving the ragged bloody stump facing up at you. By the state of the wound, this head was ripped off with bare hands. %SPEECH_ON%I am done here. I hope I can count on you to find better challenges for me than this.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_145.png[/img] {The battle was hard fought, but you prevailed. Your mercenaries finish all those who have not reached the afterlife yet. As the plundering begins, the barbarian who convinced you to betray %employer% emerges victorious from the chieftain\'s hut, carrying a helmet with a bloody head still inside it. A fancy helm - too fancy for ordinary barbarians. The warrior tosses the gruesome trophy to your feet. The helm slips off and rolls aside, leaving the bloody stump facing up at you. From the wound you can tell the head was not cut off with a weapon, but ripped off by hand.%SPEECH_ON%I am done here. I hope I can count on you to find better challenges for me than this.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [],
