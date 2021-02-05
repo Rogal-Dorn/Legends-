@@ -215,18 +215,18 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.8);
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.8);
 			}
-			
+
 			local r;
 			r = this.Math.rand(0, 19);
 			if (r == 0)
 			{
-			bro.TherianthropeInfectionRandom()
+				bro.TherianthropeInfectionRandom()
 			}
 			else
 			{
 				garbage.push(bro);
 			}
-	
+
 		}
 
 		foreach( g in garbage )

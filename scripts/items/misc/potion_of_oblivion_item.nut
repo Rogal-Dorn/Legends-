@@ -185,13 +185,11 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 1;
 				freePerkPointsSpentFromOrigin = 1;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
-					perks = perks - 2;
-					freePerkPointsSpentFromOrigin = 3;
-				}
+				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
+				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
+				perks = perks - 2;
+				freePerkPointsSpentFromOrigin = 3;
+
 
 			}
 			else if (_actor.getSkills().hasSkill("injury.legend_rotten_flesh"))
@@ -241,13 +239,9 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 2;
 				freePerkPointsSpentFromOrigin = 2;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-					perks = perks - 1;
-					freePerkPointsSpentFromOrigin = 3;
-				}
-
+				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+				perks = perks - 1;
+				freePerkPointsSpentFromOrigin = 3;
 			}
 			if (_actor.getLevel() < 11)
 			{

@@ -389,13 +389,12 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 1;
 				freePerkPointsSpentFromOrigin = 1;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
-					perks = perks - 2;
-					freePerkPointsSpentFromOrigin = 3;
-				}
+
+				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
+				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
+				perks = perks - 2;
+				freePerkPointsSpentFromOrigin = 3;
+
 
 			}
 			else if (this.getSkills().hasSkill("injury.legend_rotten_flesh"))
@@ -445,12 +444,9 @@
 				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
 				perks = perks - 2;
 				freePerkPointsSpentFromOrigin = 2;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-					perks = perks - 1;
-					freePerkPointsSpentFromOrigin = 3;
-				}
+				this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+				perks = perks - 1;
+				freePerkPointsSpentFromOrigin = 3;
 
 			}
 			if (this.getLevel() < 11)
