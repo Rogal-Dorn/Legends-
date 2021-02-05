@@ -52,7 +52,7 @@ var CampScreenCraftingDialogModule = function(_parent)
     this.mFilterArmorButton = null;
     this.mFilterMiscButton = null;
     this.mFilterUsableButton = null;
-    
+
 };
 
 
@@ -196,7 +196,7 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
     this.mDetailsPanel.Container = $('<div class="details-container display-none"/>');
     detailsFrame.append(this.mDetailsPanel.Container);
 
-    
+
     // details: character container
     var detailsRow = $('<div class="row is-character-container"/>');
     this.mDetailsPanel.Container.append(detailsRow);
@@ -235,7 +235,7 @@ CampScreenCraftingDialogModule.prototype.createDIV = function (_parentDiv)
             var data = self.mSelectedEntry.data('entry');
             if ('ID' in data && data['ID'] !== null)
             {
-                self.notifyBackendCraft(data['ID'], null);
+                self.notifyBackendCraft({ID: data['ID'], Variant: 1}, null)
             }
         }
     }, '', 1);
@@ -279,7 +279,7 @@ CampScreenCraftingDialogModule.prototype.destroyDIV = function ()
     this.mQueueContainer.destroyList();
     this.mQueueContainer.remove();
     this.mQueueContainer= null;
-    
+
     this.mLeaveButton.remove();
     this.mLeaveButton = null;
 
@@ -533,7 +533,7 @@ CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
             icon = $('<img src="' + Path.GFX + _data.Ingredients[i].ImagePath + '"/>');
             icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprintskill' });
         }
-        else 
+        else
         {
             icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
             icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
@@ -545,7 +545,7 @@ CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
             icon.css({ '-webkit-filter': 'brightness(60%)' });
             var overlay = $('<img src="' + Path.ITEMS + 'missing_component.png" class="component-overlay" />');
             iconContainer.append(overlay);
-        }        
+        }
     }
 };
 
@@ -603,9 +603,9 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
     if(_element !== null && _element.length > 0)
     {
         var data = _element.data('entry');
-        
-        // this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);     
-        // this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0); 
+
+        // this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);
+        // this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0);
         // this.mDetailsPanel.CharacterImage.bindTooltip({ contentType: 'ui-item', itemId: data.ID, itemOwner: 'craft' });
 
         // this.mDetailsPanel.CharacterName.html(data['Name']);
@@ -622,7 +622,7 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
                 icon = $('<img src="' + Path.GFX + data.Ingredients[i].ImagePath + '"/>');
                 icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprintskill' });
             }
-            else 
+            else
             {
                 icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
                 icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
@@ -634,7 +634,7 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
                 icon.css({ '-webkit-filter': 'brightness(60%)' });
                 var overlay = $('<img src="' + Path.ITEMS + 'missing_component.png" class="component-overlay" />');
                 iconContainer.append(overlay);
-            }            
+            }
         }
 
         this.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
@@ -659,7 +659,7 @@ CampScreenCraftingDialogModule.prototype.updateDetailsPanel = function(_element)
 CampScreenCraftingDialogModule.prototype.bindTooltips = function ()
 {
     this.mTimeAsset.bindTooltip({ contentType: 'ui-element', elementId:  'crafting.Time' });
-    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'crafting.Bros' });    
+    this.mBrothersAsset.bindTooltip({ contentType: 'ui-element', elementId: 'crafting.Bros' });
     this.mDetailsPanel.CraftButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.TaxiDermistDialogModule.CraftButton });
     this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
     this.mFilterAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FilterAllButton });
@@ -834,7 +834,7 @@ CampScreenCraftingDialogModule.prototype.loadFromData = function (_data)
 	{
 		 this.mDialogContainer.findDialogSubTitle().html(_data.SubTitle);
 	}
-    
+
 	if('Assets' in _data && _data.Assets !== null)
 	{
 		this.updateAssets(_data.Assets);
@@ -845,16 +845,16 @@ CampScreenCraftingDialogModule.prototype.loadFromData = function (_data)
 		this.loadQueueData(_data.Queue);
     }
 
-    if ('Blueprints' in _data && _data.Blueprints !== null) 
+    if ('Blueprints' in _data && _data.Blueprints !== null)
     {
         this.mBlueprints = _data.Blueprints;
 
         this.mListScrollContainer.empty();
-    
+
         if (_data.Blueprints.length != 0)
         {
             this.mNoCraftablesLabel.addClass('display-none');
-    
+
             for (var i = 0; i < _data.Blueprints.length; ++i)
             {
                 this.addListEntry(_data.Blueprints[i]);
@@ -864,8 +864,8 @@ CampScreenCraftingDialogModule.prototype.loadFromData = function (_data)
         {
             this.mNoCraftablesLabel.removeClass('display-none');
         }
-    
-        this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);    
+
+        this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
     }
 
 

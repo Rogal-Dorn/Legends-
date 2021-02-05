@@ -4917,6 +4917,7 @@ Fixes inquisition characters having 5-6 talents with stars
 
 
 15.0.1.1
+*Save Game compatible with 15.0.1*
 
 **Helmets**
 Major rebalance on all helmet layers. (Nerf Hammer - no more super boi helmet values)
@@ -4928,7 +4929,7 @@ Adds several weapon named variants (Warscythe, Warhammer, Bardiche)
 
 **Crafting**
 Crafing UI improvements
-*Faction related crafting items no longer have a separate entry for each variant. Just one recipe with a new Variant button to cycle through possible variants to craft (@Leonion)
+*Faction related crafting items no longer have a separate entry for each variant. Just one recipe with a new Variant button to cycle through possible variants to craft. Only taxidermist can do this though. (@Leonion)
 
 **Changes**
 Removed Magic Option (Was experimental, will most likely move magic into specifc scenario/orgins)
@@ -4942,3 +4943,10 @@ Fixes tumble perk from being selected
 Fixes unable to enter town
 Fixes cheer on perk
 Rabble no longer have mismatched body and face ethnicities
+
+**Download**
+https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=sharing
+
+
+15.0.1.2
+

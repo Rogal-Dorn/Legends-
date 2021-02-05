@@ -7,7 +7,7 @@ this.noble_tabard_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.noble_tabard_blueprint";
-		this.m.Type = this.Const.Items.ArmorUpgrades.Tabbard;
+		this.m.Type = this.Const.Items.ItemType.Armor ;
 		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
 		this.m.Variants = this.m.PreviewCraftable.m.Variants.len();
 		this.m.PreviewCraftable.setVariant(1);

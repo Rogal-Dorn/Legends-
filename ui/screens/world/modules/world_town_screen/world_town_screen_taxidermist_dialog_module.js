@@ -43,7 +43,7 @@ var WorldTownScreenTaxidermistDialogModule = function(_parent)
     // selected entry
     this.mSelectedEntry = null;
 	this.mVariant = 0;
-    
+
     // buttons
     this.mFilterPanel = null;
     this.mFilterAllButton = null;
@@ -51,7 +51,7 @@ var WorldTownScreenTaxidermistDialogModule = function(_parent)
     this.mFilterArmorButton = null;
     this.mFilterMiscButton = null;
     this.mFilterUsableButton = null;
-    
+
 };
 
 
@@ -120,6 +120,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.createDIV = function (_parentDi
         self.mFilterUsableButton.removeClass('is-active');
         self.notifyBackendFilterAllButtonClicked();
     }, '', 3);
+    this.mFilterAllButton.addClass('is-active');
 
     var layout = $('<div class="l-button is-weapons-filter"/>');
     this.mFilterPanel.append(layout);
@@ -132,7 +133,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.createDIV = function (_parentDi
         self.mFilterUsableButton.removeClass('is-active');
         self.notifyBackendFilterWeaponsButtonClicked();
     }, '', 3);
-	this.mFilterWeaponsButton.addClass('is-active');
+
 
     var layout = $('<div class="l-button is-armor-filter"/>');
     this.mFilterPanel.append(layout);
@@ -260,7 +261,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.createDIV = function (_parentDi
     costsImage.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Assets.Fee });
     this.mDetailsPanel.Cost = $('<div class="label text-font-normal font-bottom-shadow font-color-description"/>');
     costsContainer.append(this.mDetailsPanel.Cost);
-	
+
 	this.mDetailsPanel.VariantText = $('<div class="variant-label title-font-normal font-bold font-bottom-shadow font-color-title">Variant:</div>');
 	costsContainer.append(this.mDetailsPanel.VariantText);
 	var inputLayout = $('<div class="variant-input"/>');
@@ -281,6 +282,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.createDIV = function (_parentDi
 			_input.setInputText(iText);
 		}
 	});
+
 
     // details: buttons
     detailsRow = $('<div class="row is-button-container"/>');
@@ -334,7 +336,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.destroyDIV = function ()
 
 	this.mSelectedEntry = null;
     this.mVariant = null;
-	
+
     this.mFilterPanel.empty();
     this.mFilterPanel.remove();
     this.mFilterPanel = null;
@@ -425,7 +427,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.addListEntry = function (_data)
             icon = $('<img src="' + Path.GFX + _data.Ingredients[i].ImagePath + '"/>');
             icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprintskill' });
         }
-        else 
+        else
         {
             icon = $('<img src="' + Path.ITEMS + _data.Ingredients[i].ImagePath + '"/>');
             icon.bindTooltip({ contentType: 'ui-item', itemId: _data.Ingredients[i].InstanceID, entityId: _data.ID, itemOwner: 'blueprint' });
@@ -437,7 +439,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.addListEntry = function (_data)
             icon.css({ '-webkit-filter': 'brightness(60%)' });
             var overlay = $('<img src="' + Path.ITEMS + 'missing_component.png" class="component-overlay" />');
             iconContainer.append(overlay);
-        }        
+        }
     }
 };
 
@@ -474,9 +476,9 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
     {
         var currentMoney = this.mAssets.getValues().Money;
         var data = _element.data('entry');
-        
-        this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);     
-        this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0); 
+
+        this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);
+        this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0);
         this.mDetailsPanel.CharacterImage.bindTooltip({ contentType: 'ui-item', itemId: data.ID, itemOwner: 'craft' });
 
         this.mDetailsPanel.CharacterName.html(data['Name']);
@@ -494,12 +496,12 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
                 icon = $('<img src="' + Path.GFX + data.Ingredients[i].ImagePath + '"/>');
                 icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprintskill' });
             }
-            else 
+            else
             {
                 icon = $('<img src="' + Path.ITEMS + data.Ingredients[i].ImagePath + '"/>');
                 icon.bindTooltip({ contentType: 'ui-item', itemId: data.Ingredients[i].InstanceID, entityId: data.ID, itemOwner: 'blueprint' });
             }
-            
+
             iconContainer.append(icon);
 
             if(data.Ingredients[i].IsMissing)
@@ -507,7 +509,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
                 icon.css({ '-webkit-filter': 'brightness(60%)' });
                 var overlay = $('<img src="' + Path.ITEMS + 'missing_component.png" class="component-overlay" />');
                 iconContainer.append(overlay);
-            }            
+            }
         }
 
         this.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
@@ -515,7 +517,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
         this.mDetailsPanel.Cost.html(Helper.numberWithCommas(data['Cost']));
         if(currentMoney < data['Cost'])
         {
-            this.mDetailsPanel.Cost.removeClass('font-color-description').addClass('font-color-assets-negative-value');           
+            this.mDetailsPanel.Cost.removeClass('font-color-description').addClass('font-color-assets-negative-value');
         }
         else
         {
@@ -530,7 +532,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.updateDetailsPanel = function(_
         {
             this.mDetailsPanel.CraftButton.enableButton(true);
         }
-		
+
 		if (data['Variants'] > 0)
 		{
 			this.mVariant = 1;
@@ -560,10 +562,10 @@ WorldTownScreenTaxidermistDialogModule.prototype.ProcessChangingVariant = functi
     {
 		SQ.call(self.mSQHandle, 'FixVariantImage', {ItemPath: data['ItemPath'], Variant: inputtext, ID: data['ID']}, function(_result)
 		{if (typeof(_result) == "string")
-		{	
+		{
 			self.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + _result);
 		}
-		}); 
+		});
 		this.mVariant = inputtext;
 		this.mDetailsPanel.VariantInput.setInputTextBP(inputtext+"/"+data['Variants']);
     }
@@ -571,9 +573,9 @@ WorldTownScreenTaxidermistDialogModule.prototype.ProcessChangingVariant = functi
 	{
 		this.mVariant = 1;
 		this.mDetailsPanel.VariantInput.setInputTextBP("1/"+data['Variants']);
-		this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);     
+		this.mDetailsPanel.CharacterImage.attr('src', Path.ITEMS + data.LargeImagePath);
 	}
-}; 
+};
 
 WorldTownScreenTaxidermistDialogModule.prototype.bindTooltips = function ()
 {
@@ -597,7 +599,7 @@ WorldTownScreenTaxidermistDialogModule.prototype.unbindTooltips = function ()
     this.mFilterWeaponsButton.unbindTooltip();
     this.mFilterArmorButton.unbindTooltip();
     this.mFilterMiscButton.unbindTooltip();
-    this.mFilterUsableButton.unbindTooltip();    
+    this.mFilterUsableButton.unbindTooltip();
 };
 
 

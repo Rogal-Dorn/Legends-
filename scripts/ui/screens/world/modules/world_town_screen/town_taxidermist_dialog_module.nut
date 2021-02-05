@@ -1,6 +1,6 @@
 this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
-		InventoryFilter = this.Const.Items.ItemFilter.Weapons
+		InventoryFilter = this.Const.Items.ItemFilter.All
 	},
 	function create()
 	{
@@ -82,7 +82,7 @@ this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_modul
 			this.loadBlueprints();
 		}
 	}
-	
+
 	function FixVariantImage( _result )
 	{
 		local result = null;
@@ -104,7 +104,7 @@ this.town_taxidermist_dialog_module <- this.inherit("scripts/ui/screens/ui_modul
 			}
 			result = item.m.IconLarge != null ? item.m.IconLarge : item.m.Icon;
 		}
-		
+
 		return result;
 	}
 
