@@ -24,8 +24,8 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	function updateVariant()
 	{
 		this.m.Sprite = "icon_legend_parrying_dagger_0" + this.m.Variant;
-		this.m.SpriteDamaged = "icon_legend_parrying_dagger_0" + this.m.Variant + "_damaged.png";
-		this.m.ShieldDecal = "icon_legend_parrying_dagger_0" + this.m.Variant + "_destroyed.png";
+		this.m.SpriteDamaged = "icon_legend_parrying_dagger_0" + this.m.Variant + "_damaged";
+		this.m.ShieldDecal = "icon_legend_parrying_dagger_0" + this.m.Variant + "_destroyed";
 		this.m.IconLarge = "weapons/melee/legend_parrying_dagger_0" + this.m.Variant + ".png";
 		this.m.Icon = "weapons/melee/legend_parrying_dagger_0" + this.m.Variant + "_70x70.png";
 	}

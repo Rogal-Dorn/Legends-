@@ -2,7 +2,7 @@ this.camp_crafting_dialog_module <- this.inherit("scripts/ui/screens/ui_module",
 	m = {
 		Title = "Crafting",
 		Description = "While encamped, craft all manner of useful items.",
-		InventoryFilter = this.Const.Items.ItemFilter.Weapons
+		InventoryFilter = this.Const.Items.ItemFilter.All
 	},
 	function create()
 	{
