@@ -4916,7 +4916,6 @@ Fixes inquisition nun possibly getting Lumbering with an excluded perk
 Fixes inquisition characters having 5-6 talents with stars
 
 
-
 15.0.1.1
 
 **Helmets**
@@ -4936,3 +4935,5 @@ Find location ambition should now update number of locations discovered
 Increase delays on rotation to prevent rotation crashes
 Fixes male names on southern females
 Fixes tumble perk from being selected
+Fixes unable to enter town
+Fixes cheer on perk
