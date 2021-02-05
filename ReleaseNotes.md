@@ -4926,6 +4926,10 @@ Added helmets (Scale helm, Rondel Helm, Deep Sallet, Deep Sallet Named, Lion Pel
 **Weapons**
 Adds several weapon named variants (Warscythe, Warhammer, Bardiche)
 
+**Crafting**
+Crafing UI improvements
+*Faction related crafting items no longer have a separate entry for each variant. Just one recipe with a new Variant button to cycle through possible variants to craft (@Leonion)
+
 **Changes**
 Removed Magic Option (Was experimental, will most likely move magic into specifc scenario/orgins)
 Removed Therianthropic Option (Not happy with gameplay, needs to be reworked/reinvented to make it more compelling and interesting)
@@ -4937,3 +4941,4 @@ Fixes male names on southern females
 Fixes tumble perk from being selected
 Fixes unable to enter town
 Fixes cheer on perk
+Rabble no longer have mismatched body and face ethnicities
