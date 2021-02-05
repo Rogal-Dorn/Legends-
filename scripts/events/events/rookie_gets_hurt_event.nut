@@ -9,7 +9,7 @@ this.rookie_gets_hurt_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_22.png[/img]After the battle is over, you find %noncombat% on their knees, body swaying back and forth, nursing a wound. You hear muffled cries in between all-too-loud moans. Approaching, you ask the if everything is alright. %noncombat%\'s head shakes and explains that this was the first taste of real, vicious combat. %SPEECH_ON%It was not what I expected and I am not sure if i can continue.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_22.png[/img]After the battle is over, you find %noncombat% on their knees, body swaying back and forth, nursing a wound. You hear muffled cries in between all-too-loud moans. Approaching, you ask the if everything is alright. %noncombat%\'s head shakes and explains that this was the first taste of real, vicious combat. %SPEECH_ON%It was not what I expected and I am not sure if I can continue.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],

@@ -2183,7 +2183,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpawnZombieMed = "Organize the remains before you raise it so that your creation is better suited to the work it is given. Sturdier in both form and function. Requires a minor flesh sacrifice to perform the ritual.",
 	LegendSpawnZombieHigh = "Stitch the body together with such precision so that, once raised, it could pass as alive. A magnum opus of flesh, unsurpassed in power. Requires a moderate flesh sacrifice to perform the ritual.",
 	LegendSpawnSkeletonLow = "Raise a ramshackle thrall from some bones only barely ordered. Though lacking in strength or bodily integrity, it shall obey. Requires a small flesh sacrifice to perform the ritual.",
-	LegendSpawnSkeletonMed = "Place the bones where they belong before you raise them so that it’s less liable to fall apart. Sturdier in both form and function. Requires a minor flesh sacrifice to perform the ritual.",
+	LegendSpawnSkeletonMed = "Place the bones where they belong before you raise them so that it\'s less liable to fall apart. Sturdier in both form and function. Requires a minor flesh sacrifice to perform the ritual.",
 	LegendSpawnSkeletonHigh = "Painstakingly reorganize each bone such that, once raised, no tarsus is out of place. A magnum opus of bone, unsurpassed in power. Requires a moderate flesh sacrifice to perform the ritual.",
 	LegendExtendendAura = "Yield to the dark power, let it ooze from your pores. With the fell energy now unrestrained, you can further project your art of rousing the dead. Increases range of all skills that raise dead by one tile.",
 	LegendChanneledPower = "Learn to better focus your art so it is less draining on your body. All skills that raise dead build up 30% less Fatigue.",

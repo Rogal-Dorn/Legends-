@@ -224,7 +224,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "X",
-			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock their pay: for some time to come, the mercenary\'s earnings will be halved. %vandal%  doesn’t take this information lightly. As his face starts to express evergrowing anger, you start to question yourself whether it was good idea to discipline such a volatile brute. Eventually %vandal%\'s  restrain breaks, and he jumps at you with fists eager to smash your face. Before rest of %companyname% finally  manage to restrain %vandal%, captain almost fainted. This time compensation for damage caused by wildlings of %companyname% was paid both with crowns and blood of your men.",
+			Text = "[img]gfx/ui/events/event_20.png[/img]Surveying the damage, you agree to compensate the businessman. But this isn\'t your fault, it\'s the wildling\'s. You dock their pay: for some time to come, the mercenary\'s earnings will be halved. %vandal% doesn\'t take this information lightly, and as their face starts to contort in anger, you question whether it was good idea to discipline such a volatile brute. %vandal% quickly reaches the limit of their restraint and jumps at you, fists eager to smash your face! You almost faint before rest of %companyname% manages to restrain %vandal%. This time compensation for damage caused by wildlings of %companyname% was paid both with crowns and blood of your men.",
 			Image = "",
 			List = [],
 			Characters = [],

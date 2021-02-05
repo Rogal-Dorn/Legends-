@@ -6,7 +6,7 @@ this.legend_prosthetic_ear <- this.inherit("scripts/skills/traits/character_trai
 		this.m.ID = "trait.legend_prosthetic_ear";
 		this.m.Name = "Prosthetic Ear";
 		this.m.Icon = "ui/traits/legend_prosthetic_ear.png";
-		this.m.Description = "A wax ear stitched into one’s head. Hardly a proper replacement, but some sense of balance is returned and very faint noises can be heard.";
+		this.m.Description = "A wax ear stitched into one\'s head. Hardly a proper replacement, but some sense of balance is returned and very faint noises can be heard.";
 	}
 
 	function getTooltip()
