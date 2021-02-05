@@ -4950,3 +4950,5 @@ https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=shari
 
 15.0.1.2
 
+**Changes**
+Magic orgin commanders have their magic perks back.
