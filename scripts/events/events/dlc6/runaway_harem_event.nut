@@ -90,7 +90,7 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 		
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/legend_harem_slave.png[/img]{ You draw your sword and tell the Vizier\'s men to lose themselves before they lose their lives. The declaration shifts the balance of power in favour of the nomads, and the vizier\'s men retreat.  The nomads thank you, as do the freed harem. One woman steps forward %SPEECH_ON% You have shown bravery stranger. We hate that man of the Vizier. He lies, and worse. If you have set your blade against him, then i wish to join you. I have a score to settle. %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_harem_slave.png[/img]{ You draw your sword and tell the Vizier\'s men to lose themselves before they lose their lives. The declaration shifts the balance of power in favour of the nomads, and the vizier\'s men retreat.  The nomads thank you, as do the freed harem. One woman steps forward.%SPEECH_ON%You have shown bravery stranger. We hate that man of the Vizier. He lies, and worse. If you have set your blade against him, then I wish to join you. I have a score to settle.%SPEECH_OFF% }",
 			Banner = "",
 			List = [],
 			Characters = [],
