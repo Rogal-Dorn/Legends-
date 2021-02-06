@@ -15,7 +15,7 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 		this.m.CombatLocation.CutDownTrees = false;
 		this.m.CombatLocation.ForceLineBattle = true;
 		this.m.CombatLocation.AdditionalRadius = 5;
-		local r = this.Math.rand(1, 2);
+		local r = this.Math.rand(1, 3);
 
 		if (r == 1)
 		{
@@ -24,6 +24,10 @@ this.undead_vampire_coven_location <- this.inherit("scripts/entity/world/locatio
 		else if (r == 2)
 		{
 			this.setDefenderSpawnList(this.Const.World.Spawn.VampiresAndSkeletons);
+		}
+		else if (r == 3)
+		{
+			this.setDefenderSpawnList(this.Const.World.Spawn.Mummies);
 		}
 
 		this.m.Resources = 250;

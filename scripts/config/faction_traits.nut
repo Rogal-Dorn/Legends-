@@ -176,6 +176,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/escort_caravan_action",
 			"scripts/factions/contracts/hunting_serpents_action",
 			"scripts/factions/contracts/hunting_sand_golems_action",
+			"scripts/factions/contracts/hunting_mummies_action",
 			"scripts/factions/contracts/conquer_holy_site_action",
 			"scripts/factions/contracts/defend_holy_site_action",
 			"scripts/factions/contracts/hold_chokepoint_action",

@@ -42,7 +42,6 @@ gt.Const.World.Spawn.UndeadArmy <-
 		},
 		{
 			Weight = 35,
-			MinR = 250,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonMediumPolearm,
@@ -50,19 +49,18 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm,
-					MinR = 800,
+					MinR = 450,
 					Cost = 35
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonGladiator,
-					MinR = 1200,
+					MinR = 650,
 					Cost = 40
 				}
 			]
 		},
 		{
 			Weight = 3,
-			MinR = 0.75 * 1200,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonPriest,
@@ -85,7 +83,6 @@ gt.Const.World.Spawn.UndeadArmy <-
 		},
 		{
 			Weight = 5
-			MinR = 0.20 * 800,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.VampireLOW,
@@ -93,23 +90,22 @@ gt.Const.World.Spawn.UndeadArmy <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					MinR = 400,
+					MinR = 450,
 					Cost = 50
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					MinR = 1200,
-					Cost = 70
+					MinR = 650,
+					Cost = 70,
+					Roll = true
 				}
 			]
 		},
 		{
 			Weight = 5,
-			MinR = 0.15 * 625,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonHound,
-					MinR = 800,
 					Cost = 40
 				}
 			]
@@ -125,7 +121,7 @@ gt.Const.World.Spawn.Vampires <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_vampire_02",
-	MaxR = 340,
+	MaxR = 650,
 	MinR = 40,
 	Troops = [
 		{
@@ -137,18 +133,19 @@ gt.Const.World.Spawn.Vampires <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Vampire,
-					Cost = 40
-					MinR = 400,
+					Cost = 50
+					MinR = 450,
 				}
 			]
 		},
 		{
 			Weight = 10,
-			MinR = 1200,
+			MinR = 650,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					Cost = 70
+					Cost = 70,
+					Roll = true
 				}
 			]
 		}
@@ -163,7 +160,7 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_vampire_01",
-	MaxR = 521,
+	MaxR = 600,
 	MinR = 108,
 	Troops = [
 		{
@@ -180,7 +177,7 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.SkeletonHeavy,
-					MinR = 600,
+					MinR = 450,
 					Cost = 35
 				}
 			]
@@ -198,9 +195,10 @@ gt.Const.World.Spawn.VampiresAndSkeletons <-
 					Cost = 40
 				},
 				{
-					MinR = 1200,
+					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					Cost = 70
+					Cost = 70,
+					Roll = true
 				}
 			]
 		}
@@ -233,7 +231,7 @@ gt.Const.World.Spawn.Mummies <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
-					Cost = 23
+					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyMedium,
@@ -242,8 +240,8 @@ gt.Const.World.Spawn.Mummies <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
-					MinR = 600,
-					Cost = 45
+					MinR = 500,
+					Cost = 40
 				}
 			]
 		},
@@ -260,9 +258,68 @@ gt.Const.World.Spawn.Mummies <-
 					Cost = 40
 				},
 				{
-					MinR = 1200,
+					MinR = 650,
 					Type = this.Const.World.Spawn.Troops.LegendMummyQueen,
-					Cost = 70
+					Cost = 70,
+					Roll = true
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.MummiesPatrol <-
+{
+	Name = "Mummies",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_vampire_01",
+	MaxR = 650,
+	MinR = 100,
+	Troops = [
+		{
+			Weight = 75,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
+					Cost = 25
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyMedium,
+					MinR = 200,
+					Cost = 30
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
+					MinR = 500,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 22,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.VampireLOW,
+					Cost = 30
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.Vampire,
+					MinR = 400,
+					Cost = 40
+				}
+			]
+		},
+		{
+			Weight = 3,
+			MinR = 650,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
+					Cost = 70,
+					Roll = true
 				}
 			]
 		}

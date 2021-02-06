@@ -109,7 +109,8 @@ gt.Const.World.Spawn.UndeadScourge <-
 				{
 					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.LegendVampireLord,
-					Cost = 60
+					Cost = 70,
+					Roll = true
 				}
 			]
 		},
