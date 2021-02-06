@@ -32,6 +32,11 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("poacher_background");
 		_list.push("legend_taxidermist_background");
 
+		if (this.Math.rand(0, 9) == 1)
+		{
+			_list.push("legend_master_archer_background");
+		}
+
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

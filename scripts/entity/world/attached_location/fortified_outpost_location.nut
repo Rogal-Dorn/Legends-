@@ -122,12 +122,9 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
 		_list.push("hedge_knight_background");
-		if(this.LegendsMod.Configs().LegendMagicEnabled())
+		if (this.Math.rand(0, 9) == 1)
 		{
-			if (this.Math.rand(0, 9) == 1)
-			{
-				_list.push("legend_master_archer_background");
-			}
+			_list.push("legend_master_archer_background");
 		}
 
 		if (this.Math.rand(0, 9) == 1)

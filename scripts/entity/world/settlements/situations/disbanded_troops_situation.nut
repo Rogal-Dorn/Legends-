@@ -85,6 +85,7 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_draftList.push("legend_noble_ranged");
 		_draftList.push("legend_noble_shield");
 		_draftList.push("legend_noble_shield");
+		_draftList.push("legend_master_archer_background");
 
 		if (_gender)
 		{
@@ -99,7 +100,6 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		{
 		_draftList.push("legend_noble_event_background");
 		_draftList.push("legend_noble_event_background");
-		_draftList.push("legend_master_archer_background");
 		_draftList.push("legend_crusader_background");
 		}
 	}
