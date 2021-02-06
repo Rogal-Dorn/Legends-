@@ -11,16 +11,16 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Icon = "weapons/melee/legend_swordstaff_01_legendary_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.MagicStaff;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.MagicStaff | this.Const.Items.ItemType.Legendary;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_swordstaff_legendary_01";
-		this.m.Value = 750;
+		this.m.Value = 7500;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 60.0;
-		this.m.ConditionMax = 60.0;
-		this.m.StaminaModifier = -12;
+		this.m.Condition = 90.0;
+		this.m.ConditionMax = 90.0;
+		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 1.0;
@@ -35,6 +35,10 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/spearwall"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
+		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
+		this.addSkill(this.new("scripts/skills/actives/swing"));
+		this.addSkill(this.new("scripts/skills/actives/split"));
+		this.addSkill(this.new("scripts/skills/actives/overhead_strike"));
 	}
 
 });

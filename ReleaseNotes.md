@@ -4948,7 +4948,11 @@ Rabble no longer have mismatched body and face ethnicities
 https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=sharing
 
 
-15.0.1.2
+16.0.0.1
+
+**New Contracts**
+New southern city state contract : Hunt down Mummies
 
 **Changes**
+Tweaked legendary location Mastaba - The reward is a legendary SwordStaff that is a weapon any company would envy.
 Magic orgin commanders have their magic perks back.
