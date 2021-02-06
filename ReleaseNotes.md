@@ -4953,6 +4953,11 @@ https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=shari
 **New Contracts**
 New southern city state contract : Hunt down Mummies
 
+
+**Helmet Layers**
+More balancing across all helmet layers. Overall conditions lowered so Flails and Axes are going to be more deadly. Headshots are scary again!
+
+
 **Changes**
 Tweaked legendary location Mastaba - The reward is a legendary SwordStaff that is a weapon any company would envy.
 Magic orgin commanders have their magic perks back.
