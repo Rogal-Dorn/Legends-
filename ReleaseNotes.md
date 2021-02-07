@@ -4921,3 +4921,4 @@ Fixes inquisition characters having 5-6 talents with stars
 **Fixes**
 Fixes unable to enter town
 Fixes cheer on perk
+Fixes hand to hand lowered damage
