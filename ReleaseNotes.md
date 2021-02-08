@@ -4942,6 +4942,7 @@ Fixes male names on southern females
 Fixes tumble perk from being selected
 Fixes unable to enter town
 Fixes cheer on perk
+<<<<<<< HEAD
 Rabble no longer have mismatched body and face ethnicities
 
 **Download**
@@ -4969,3 +4970,5 @@ Master archers are added back into the recruitable pool.
 
 **Fixes**
 Fixed typo in italo norman helmet mapping causing errors.
+Fixes incorrect hand to hand damage
+Double strike tooltip fix

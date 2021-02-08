@@ -91,8 +91,9 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			break;
 		}
 
-		ret.Min = this.Math.max(5, this.Math.floor(ret.Min * 0.5));
-		ret.Max = this.Math.max(10, this.Math.floor(ret.Max * 0.5));
+		ret.Min = this.Math.max(5, this.Math.floor(ret.Min));
+		ret.Max = this.Math.max(10, this.Math.floor(ret.Max));
+
 		return ret;
 	}
 
@@ -123,7 +124,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Unarmed Training inflicts half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
+				text = "Unarmed Training inflicts on a range of damage around half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
 		}
 		else
