@@ -37,6 +37,8 @@ gt.Const.LegendMod.HelmObjs.extend([
         Helms = [
         ],
         Tops = [
+			[1, "top/legend_helmet_mummy_beard"],
+			[1, ""]
         ],
         Vanity = [
         ]
@@ -49,12 +51,13 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_mummy_bandage"]
         ],
         Helms = [
-			[1, "helm/legend_helmet_mummy_crown"]
         ],
         Tops = [
-			[1, "top/legend_helmet_mummy_mask"]
+			[1, "top/legend_helmet_mummy_mask"],
+            [1, ""]
         ],
         Vanity = [
+            [1, "vanity/legend_helmet_mummy_crown"]
         ]
     }]
 },{
@@ -65,13 +68,13 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "hood/legend_helmet_mummy_bandage"]
         ],
         Helms = [
-			[1, "helm/legend_helmet_mummy_crown_king"]
         ],
         Tops = [
 			[1, "top/legend_helmet_mummy_beard"],
 			[1, ""]
         ],
         Vanity = [
+            [1, "vanity/legend_helmet_mummy_crown_king"]
         ]
     }]
 },{
@@ -102,7 +105,8 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[1, "top/legend_helmet_mummy_beard"]
         ],
         Vanity = [
-
+            [1, ""],
+            [1, "vanity/legend_helmet_mummy_headband"]
         ]
     }]
 },{

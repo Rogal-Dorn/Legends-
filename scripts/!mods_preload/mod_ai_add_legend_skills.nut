@@ -22,6 +22,7 @@
 	o.m.PossibleSkills.push("actives.legend_rat_claws");
 	o.m.PossibleSkills.push("actives.legend_rat_bite");
 	o.m.PossibleSkills.push("actives.legend_en_garde");
+	o.m.PossibleSkills.push("actives.lunge");
 });
 
 ::mods_hookNewObject("ai/tactical/behaviors/ai_attack_bow", function(o) {

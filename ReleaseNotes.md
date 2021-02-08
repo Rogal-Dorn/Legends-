@@ -4953,12 +4953,19 @@ https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=shari
 **New Contracts**
 New southern city state contract : Hunt down Mummies
 
-
 **Helmet Layers**
 More balancing across all helmet layers. Overall conditions lowered so Flails and Axes are going to be more deadly. Headshots are scary again!
 
+**New Weapons**
+Katar - new weapon favored by assassins, particularily effective against armor.
 
 **Changes**
 Tweaked legendary location Mastaba - The reward is a legendary SwordStaff that is a weapon any company would envy.
+Rebalanced all the new mummy enemies with new art, weapons and stats.
+New art for Hexen Leader
+New art for demon alps
 Magic orgin commanders have their magic perks back.
 Master archers are added back into the recruitable pool.
+
+**Fixes**
+Fixed typo in italo norman helmet mapping causing errors.

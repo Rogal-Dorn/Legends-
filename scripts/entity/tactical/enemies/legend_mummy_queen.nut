@@ -7,7 +7,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		this.m.ResurrectionValue = 5.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_queen";
 		this.legend_mummy.create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/vampire_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_mummy_queen_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -61,15 +61,14 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 		this.m.Items.equip(this.new("scripts/items/weapons/named/named_royal_lance"));
 
-
 		local armor = [
 			[1, "ancient/legend_mummy_dress"]
 		];
-		local item = this.Const.World.Common.pickArmor(armor); 		
+		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[66, "ancient/legend_mummy_crown"]
+			[1, "ancient/legend_mummy_crown"]
 		])
 		if (item != null)
 		{

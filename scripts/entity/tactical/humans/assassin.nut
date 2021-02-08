@@ -69,14 +69,19 @@ this.assassin <- this.inherit("scripts/entity/tactical/human", {
 		local r;
 		r = this.Math.rand(1, 3);
 
-		if (r <= 2)
+		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/oriental/qatal_dagger"));
 		}
-		else if (r == 3)
+		else if (r == 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/shamshir"));
 		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_katar"));
+		}
+
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 				[1, "oriental/assassin_robe"]
 		]));

@@ -420,7 +420,7 @@ gt.Const.World.Spawn.HexenAndMore <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 1000,
+					MinR = 600,
 					Cost = 400,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -578,7 +578,7 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 3000,
+					MinR = 650,
 					Cost = 200,
 					MinGuards = 2,
 					MaxGuards = 3,
@@ -776,7 +776,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-					MinR = 1.0 * 2000,
+					MinR = 650,
 					Cost = 300,
 					MinGuards = 2,
 					MaxGuards = 3,

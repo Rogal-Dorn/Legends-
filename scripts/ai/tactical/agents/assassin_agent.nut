@@ -32,6 +32,7 @@ this.assassin_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_deathblow"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_puncture"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_throw_bomb"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_adrenaline"));

@@ -430,9 +430,6 @@ gt.Const.EntityType <- {
 		case 8:
 			return this.Const.EntityType.Vampire;
 
-		case 8:
-			return this.Const.EntityType.Vampire;
-
 		case 9:
 			return this.Const.EntityType.Ghost;
 

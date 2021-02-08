@@ -84,7 +84,7 @@ this.hunting_mummies_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				this.Contract.m.Target = this.WeakTableRef(party);
-				local nearestUndead = this.getNearestLocationTo(this.Contract.m.Home, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getSettlements());
+				local nearestUndead = this.Contract.getNearestLocationTo(this.Contract.m.Home, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getSettlements());
 				party.getSprite("banner").setBrush(nearestUndead.getBanner());
 				local c = party.getController();
 				c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);

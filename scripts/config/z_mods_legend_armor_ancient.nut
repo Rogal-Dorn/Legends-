@@ -342,22 +342,5 @@ gt.Const.LegendMod.ArmorObjs.extend([
         Attachments =[
         ]
     }]
-},{
-    ID = "legend_wrap", // 10
-    Script = "scripts/items/armor/legend_wrap",
-    Sets = [{
-        Cloth = [
-        ],
-        Chain = [
-        ],
-        Plate = [
-        ],
-        Cloak = [
-        ],
-        Tabard = [
-        ],
-        Attachments =[
-        ]
-    }]
 }
 ])

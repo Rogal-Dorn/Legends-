@@ -464,7 +464,7 @@ gt.Const.Tactical.Actor.LegendMummyLight <- {
 	MoraleEffectMult = 0.0,
 	Armor = [
 		0,
-		0
+		35
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyMedium <- {
@@ -481,8 +481,8 @@ gt.Const.Tactical.Actor.LegendMummyMedium <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		0,
-		0
+		50,
+		50
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyHeavy <- {
@@ -499,8 +499,8 @@ gt.Const.Tactical.Actor.LegendMummyHeavy <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		0,
-		0
+		125,
+		100
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyQueen <- {
@@ -517,8 +517,8 @@ gt.Const.Tactical.Actor.LegendMummyQueen <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		0,
-		0
+		75,
+		75
 	],
 	DamageTotalMult = 1.35
 };

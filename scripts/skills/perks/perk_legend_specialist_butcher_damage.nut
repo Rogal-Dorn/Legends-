@@ -24,7 +24,7 @@ this.perk_legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;
 			}
-			if(item.getID() == "weapon.scramasax" || item.getID() == "weapon.military_cleaver" || item.getID() == "weapon.orc_cleaver"  || item.getID() == "weapon.falx"   || item.getID() == "weapon.khopesh"  || item.getID() == "weapon.antler_cleaver"  || item.getID() == "weapon.named_cleaver"  || item.getID() == "weapon.named_kopesh"  || item.getID() == "weapon.named_kopesh" || item.getID() == "weapon.named_orc_cleaver")
+			if(item.getID() == "weapon.scramasax" || item.getID() == "weapon.military_cleaver" || item.getID() == "weapon.orc_cleaver"  || item.getID() == "weapon.falx"   || item.getID() == "weapon.khopesh"  || item.getID() == "weapon.antler_cleaver"  || item.getID() == "weapon.named_cleaver"  || item.getID() == "weapon.named_khopesh"  || item.getID() == "weapon.legend_great_khopesh" || item.getID() == "weapon.named_orc_cleaver" || item.getID() == "weapon.legend_khopesh")
 			{
 			_properties.DamageRegularMin += 1;
 			_properties.DamageRegularMax += 3;
