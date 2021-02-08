@@ -314,7 +314,7 @@ BLayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="FF222933"
 
 brush_only_layers = [
     {"name": "hunter_cap", "min" : 1, "max" : 1, "layer": "vanity"},
-    {"name": "jester_hat", "min" : 1, "max" : 65, "layer": "vanity"},
+    {"name": "jester_hat", "min" : 1, "max" : 12, "layer": "vanity"},
     {"name": "witchhunter_helm", "min" : 1, "max" : 7, "layer" : "vanity"},
     {"name": "white_wolf_helm", "min" : 1, "max" : 1, "layer": "vanity"},
     {"name": "lindwurm_helm", "min" : 1, "max" : 1, "layer": "vanity"},
@@ -818,18 +818,6 @@ layers = [
  "title" :  "Rusted Metal Helm", \
  "desc" :  "A rusted and dented metal cap that provides protection against bumps to the head" \
 },
-{"name" : "mummy_crown"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 180, "stam" : -14, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Ancient Southern Crown", \
- "desc" :  "A tall crown of a long dead civilisation" \
-},
-{"name" : "mummy_crown_king"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 200, "stam" : -18, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Ancient Southern Crested Crown", \
- "desc" :  "A crested crown of a long dead civilisation" \
-},
-
-
-
-
 
 
 {"name" : "hood_cloth_round"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
@@ -1010,7 +998,7 @@ layers = [
  "title" :  "Southern Bearded Faceplate", \
  "desc" :  "A faceplate in the southern bearded style" \
 },
-{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
+{"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Facemask", \
  "desc" :  "A facemask from a long dead civilisation" \
 },
@@ -1358,6 +1346,16 @@ layers = [
 "title" :  "Fencer Hat", \
 "desc" :  "The floppy hat of a swordsman" \
 },
+
+{"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 800, "con" : 25, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crown", \
+ "desc" :  "A tall crown of a long dead civilisation" \
+},
+{"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 250, "con" : 25, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Ancient Southern Crested Crown", \
+ "desc" :  "A crested crown of a long dead civilisation" \
+},
+
 
 {"name" : "back_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Crest", \
@@ -1838,7 +1836,7 @@ def makeBrushes():
                 text.replace("/", "\\")
                 F.write(text)
                 imageCount += 1
-                if (imageCount > 500):
+                if (imageCount > 700):
                     F.write('</brush>\n')
                     F.close()
                     imageCount = 0
@@ -1874,7 +1872,7 @@ def makeBrushes():
                 text.replace("/", "\\")
                 F.write(text)
                 imageCount += 1
-                if (imageCount > 500):
+                if (imageCount > 700):
                     F.write('</brush>\n')
                     F.close()
                     imageCount = 0

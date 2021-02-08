@@ -17,25 +17,26 @@ this.named_royal_lance <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_royal_lance_01";
+		this.m.Variant = 1;
+		this.updateVariant();
 		this.m.Value = 4800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
-		this.m.StaminaModifier = -14;
+		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.0;
-		this.m.DirectDamageMult = 0.25;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
 	}
 
 	function updateVariant()
 	{
-		this.m.IconLarge = "weapons/melee/swordlance_01_named_0" + this.m.Variant + ".png";
-		this.m.Icon = "weapons/melee/swordlance_01_named_0" + this.m.Variant + "_70x70.png";
-		this.m.ArmamentIcon = "icon_swordlance_01_named_0" + this.m.Variant;
+		this.m.IconLarge = "weapons/melee/legend_royal_lance_0" + this.m.Variant + ".png";
+		this.m.Icon = "weapons/melee/legend_royal_lance_0" + this.m.Variant + "_70x70.png";
+		this.m.ArmamentIcon = "icon_legend_royal_lance_0" + this.m.Variant;
 	}
 
 	function createRandomName()
@@ -67,6 +68,7 @@ this.named_royal_lance <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.addSkill(this.new("scripts/skills/actives/thrust"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
+		this.addSkill(this.new("scripts/skills/actives/spearwall"));
 	}
 
 });

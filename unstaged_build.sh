@@ -51,7 +51,6 @@ handleExit
 declare -a ArmorBrushes=(
 "legend_armor/0"
 "legend_armor/1"
-"legend_armor/2"
 )
 
 declare -a HelmetBrushes=(
@@ -59,8 +58,6 @@ declare -a HelmetBrushes=(
 "legend_helmets/0"
 "legend_helmets/1"
 "legend_helmets/2"
-"legend_helmets/3"
-"legend_helmets/4"
 )
 
 FILES=$(git status -s)

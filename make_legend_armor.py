@@ -865,11 +865,6 @@ layers = [
 },
 
 
-{"name": "legend_wrap",                              "layer": "cloth", "min": 1, "max": 1, "value" : 15, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Ceremonial Wrap", \
-    "desc" :  "A cloth wrap of ancient design", \
-    "adesc" :""
-},
 {"name": "legend_common_tabard",           "layer": "tabard", "min": 101, "max": 113, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tabard",\
     "title" :  "Tabard", \
     "desc" :  "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.", \
@@ -1424,7 +1419,7 @@ def main():
                 text.replace("/", "\\")
                 Brush.write(text)
                 imageCount += 1
-                if (imageCount > 1000):
+                if (imageCount > 2500):
                     Brush.write('</brush>\n')
                     Brush.close()
                     imageCount = 0
@@ -1476,7 +1471,7 @@ def main():
                 text.replace("/", "\\")
                 Brush.write(text)
                 imageCount += 1
-                if (imageCount > 1000):
+                if (imageCount > 2500):
                     Brush.write('</brush>\n')
                     Brush.close()
                     imageCount = 0

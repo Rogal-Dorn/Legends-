@@ -54,9 +54,8 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 
 		local armor = [
-			[15, "legend_wrap"],
-			[5, "ancient/legend_mummy_bandages"],
-			[80, "ancient/legend_mummy_royal_plate"]
+			[1, "ancient/legend_mummy_bandages"],
+			[4, "ancient/legend_mummy_royal_plate"]
 		];
 		local item = this.Const.World.Common.pickArmor(armor);
 		this.m.Items.equip(item);

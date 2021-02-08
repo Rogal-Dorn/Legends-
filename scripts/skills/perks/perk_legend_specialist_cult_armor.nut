@@ -33,7 +33,6 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				case "legend_armor.body.legend_sackcloth_patched":
 				case "legend_armor.body.legend_sackcloth_tattered":
 				case "legend_armor.body.legend_sackcloth":
-				case "legend_armor.body.legend_wrap":
 				case "legend_armor.body.cultist_leather_robe":
 				case "legend_armor.body.legend_robes":
 					_properties.Bravery += this.Math.floor(healthMissing * 0.5);
