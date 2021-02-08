@@ -59,43 +59,26 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 			Max = 20,
 			HasMusc = false,
 			HasBro = false,
-			HasTraining = false
+			HasTraining = false,
+			HasOffhand = false
 		}
 
 		local actor = this.getContainer().getActor();
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
-			ret.Min = 5;
-			ret.Max = 10;
 			ret.HasTraining = true;
-			local average = (actor.getInitiative() +  actor.getHitpointsMax()) / 4;
-			local avgMin = average - 10;
-			local avgMax = average + 10;
+			local average = (actor.getInitiative() +  actor.getHitpointsMax()) * 0.25;
 
-			if ((average - 100) > 0)
+
+			if (offhand != null)
 			{
-				ret.Min += avgMin;
+				average = average * 0.5;
+				ret.HasOffhand = true;
 			}
 
-			if ((average - 90) > 0)
-			{
-				ret.Max += avgMax;
-			}
-
-
-			if (ret.Min > 50)
-			{
-				local minMod = (ret.Min - 50);
-				local minFalloff = this.Math.pow(minMod, 0.5);
-				ret.Min = 50 + minFalloff;
-			}
-
-			if (ret.Max > 50)
-			{
-				local maxMod = (ret.Max - 50);
-				local maxFalloff = this.Math.pow(maxMod, 0.5);
-				ret.Max = 50 + maxFalloff;
-			}
+			ret.Min = average - 10;
+			ret.Max = average + 10;
+			ret.HasTraining = true;
 		}
 
 
@@ -125,8 +108,8 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 			break;
 		}
 
-		ret.Min = this.Math.floor(ret.Min * 0.5);
-		ret.Max = this.Math.floor(ret.Max * 0.5);
+		ret.Min = this.Math.floor(ret.Min);
+		ret.Max = this.Math.floor(ret.Max);
 		return ret;
 	}
 
@@ -152,6 +135,16 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
+			});
+		}
+
+		if (mods.HasOffhand)
+		{
+			ret.push({
+				id = 5,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "Damage halved due to holding something in your off hand"
 			});
 		}
 
