@@ -4970,5 +4970,6 @@ Master archers are added back into the recruitable pool.
 
 **Fixes**
 Fixed typo in italo norman helmet mapping causing errors.
-Fixes incorrect hand to hand damage
-Double strike tooltip fix
+Fixes incorrect hand to hand damage.
+Fixes incorrect unarmed lunge damage.
+Double strike tooltip fix.
