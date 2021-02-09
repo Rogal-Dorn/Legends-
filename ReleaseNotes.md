@@ -4923,3 +4923,4 @@ Fixes unable to enter town
 Fixes cheer on perk
 Fixes hand to hand lowered damage
 Double strike tooltip fix
+Fixes arrow quiver fatigue costs + tooltips

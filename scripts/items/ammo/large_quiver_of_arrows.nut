@@ -16,8 +16,9 @@ this.large_quiver_of_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		this.m.Value = 400;
 		this.m.Ammo = 14;
 		this.m.AmmoMax = 14;
-		this.m.StaminaModifier = 2;
+		this.m.StaminaModifier = -2;
 		this.m.IsDroppedAsLoot = true;
+		this.m.AddGenericSkill = true;
 	}
 
 	function getTooltip()
@@ -77,6 +78,13 @@ this.large_quiver_of_arrows <- this.inherit("scripts/items/ammo/ammo", {
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Is empty and useless[/color]"
 			});
 		}
+
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-" + this.m.StaminaModifier + "[/color] fatigue"
+		});
 
 		return result;
 	}
