@@ -4925,3 +4925,4 @@ Fixes hand to hand lowered damage
 Double strike tooltip fix
 Fixes arrow quiver fatigue costs + tooltips
 Fixes parried effect's tooltip
+Fixes travler's sashes large and small not applying fatigue
