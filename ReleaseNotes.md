@@ -4943,6 +4943,7 @@ Fixes tumble perk from being selected
 Fixes unable to enter town
 Fixes cheer on perk
 <<<<<<< HEAD
+<<<<<<< HEAD
 Rabble no longer have mismatched body and face ethnicities
 
 **Download**
@@ -4961,15 +4962,19 @@ More balancing across all helmet layers. Overall conditions lowered so Flails an
 Katar - new weapon favored by assassins, particularily effective against armor.
 
 **Changes**
-Tweaked legendary location Mastaba - The reward is a legendary SwordStaff that is a weapon any company would envy.
+Tweaked legendary location Mastaba - The reward is a legendary SwordStaff, a weapon any company would envy.
 Rebalanced all the new mummy enemies with new art, weapons and stats.
 New art for Hexen Leader
 New art for demon alps
 Magic orgin commanders have their magic perks back.
 Master archers are added back into the recruitable pool.
-
-**Fixes**
 Fixed typo in italo norman helmet mapping causing errors.
 Fixes incorrect hand to hand damage.
 Fixes incorrect unarmed lunge damage.
 Double strike tooltip fix.
+Fixes hand to hand lowered damage
+Double strike tooltip fix
+Fixes arrow quiver fatigue costs + tooltips
+Fixes parried effect's tooltip
+Fixes travler's sashes large and small not applying fatigue.
+Reduced the number of armor brushes - hopefully helps some of the lower end gfx cards having issues loading all the sprites.
