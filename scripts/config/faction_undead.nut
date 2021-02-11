@@ -463,7 +463,7 @@ gt.Const.Tactical.Actor.LegendMummyLight <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		0,
+		35,
 		35
 	]
 };

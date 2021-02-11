@@ -23,7 +23,6 @@ this.ancient_wig <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 70;
 		this.m.StaminaModifier = -2;
 		this.m.Vision = 0;
-	}
 
 
 	function updateVariant()
@@ -36,6 +35,7 @@ this.ancient_wig <- this.inherit("scripts/items/helmets/helmet", {
         this.m.IconLarge = this.m.Icon;
 	}
 
+	}
 	function getLootLayers()
 	{
 		return [this.new("scripts/items/legend_helmets/vanity/legend_helmet_ancient_wig")];
