@@ -3,7 +3,7 @@ this.legend_white_wolf_pelt_item <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.ID = "misc.legend_white_wolf_pelt";
-		this.m.Name = "white Wolf Pelt";
+		this.m.Name = "White Wolf Pelt";
 		this.m.Description = "A valuable pelt from the rare white wolf";
 		this.m.Icon = "misc/inventory_white_wolfpelt_01.png";
 		this.m.SlotType = this.Const.ItemSlot.None;

@@ -9,10 +9,10 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 			"Kravlund",
 			"Bola",
 			"Ravestad",
-                        "Plyndring,"
-                        "Koldjord,"
-                        "Naturlegeme,"
-                        "Klogflygte,"
+                        "Plyndring",
+                        "Koldjord",
+                        "Naturlegeme",
+                        "Klogflygte",
 			"Alsliv",
 			"Hellevad",
 			"Heimstad",

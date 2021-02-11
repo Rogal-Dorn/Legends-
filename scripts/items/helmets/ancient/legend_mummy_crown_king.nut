@@ -5,7 +5,7 @@ this.legend_mummy_crown_king <- this.inherit("scripts/items/helmets/helmet", {
 		this.helmet.create();
 		this.m.ID = "armor.head.legend_mummy_crown_king";
 		this.m.Name = "Embalmed Headress";
-		this.m.Description = "the headress of an ancient embalmed corpse";
+		this.m.Description = "The headress of an ancient embalmed corpse";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = false;
 		this.m.HideHair = false;

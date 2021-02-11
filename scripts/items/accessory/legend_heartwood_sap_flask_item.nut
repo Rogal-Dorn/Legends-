@@ -23,7 +23,7 @@ this.legend_heartwood_sap_flask_item <- this.inherit("scripts/items/accessory/ac
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "grants perfect focus, halving the action point costs of all skills for three turns"
+				text = "Grants perfect focus, halving the action point costs of all skills for three turns"
 			})
 		return result;
 	}
