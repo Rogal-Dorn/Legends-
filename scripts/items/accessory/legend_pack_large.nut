@@ -14,6 +14,7 @@ this.legend_pack_large <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.Sprite = "legend_pack_large";
 		this.m.StaminaModifier = -2;
 		this.m.StashModifier = 6;
+		this.m.AddGenericSkill = true;
 		this.m.Value = 1000;
 	}
 
