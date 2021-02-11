@@ -431,28 +431,19 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 		local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 		this.addSprite("socket").setBrush("bust_base_undead");
 		local body = this.addSprite("body");
-
-		if (this.Math.rand(1, 2) == 1)
-		{
-			body.setBrush("bust_skeleton_body_03");
-		}
-		else
-		{
-			body.setBrush("bust_skeleton_body_04");
-		}
-
+		body.setBrush("bust_skeleton_body_03");
 		body.setHorizontalFlipping(true);
-		body.Saturation = 0.8;
+		// body.Saturation = 0.8;
 
-		if (this.Math.rand(0, 100) < 75)
-		{
-			body.varySaturation(0.2);
-		}
+		// if (this.Math.rand(0, 100) < 75)
+		// {
+		// 	body.varySaturation(0.2);
+		// }
 
-		if (this.Math.rand(0, 100) < 90)
-		{
-			body.varyColor(0.025, 0.025, 0.025);
-		}
+		// if (this.Math.rand(0, 100) < 90)
+		// {
+		// 	body.varyColor(0.025, 0.025, 0.025);
+		// }
 
 		this.m.BloodColor = body.Color;
 		this.m.BloodSaturation = body.Saturation;

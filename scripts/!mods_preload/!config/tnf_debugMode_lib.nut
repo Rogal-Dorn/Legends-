@@ -213,7 +213,6 @@ gt.tnf_debug.actors <- {
     "LegendMummyMedium",
     "LegendMummyHeavy",
     "LegendMummyQueen"
-
     //"SkeletonGladiator",
     // "KoboldFighter",
     // "KoboldWolfrider"
