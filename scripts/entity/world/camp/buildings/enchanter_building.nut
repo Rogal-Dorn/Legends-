@@ -166,7 +166,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		if (this.getUpgraded())
 		{
 			return this.m.Name + " *Upgraded*"
-		} 
+		}
 		return this.m.Name +  " *Not Upgraded*"
 	}
 
@@ -198,7 +198,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 				type = "text",
 				icon = "ui/buttons/icon_time.png",
 				text = "It will take [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getRequiredTime() + "[/color] hours to inscribe all runes."
-			},				
+			},
 			{
 				id = 5,
 				type = "text",
@@ -226,7 +226,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		this.m.ItemsCrafted = [];
 		this.m.PointsNeeded = 0;
 		this.m.PointsCrafted = 0;
-		
+
 		local mod = this.getModifiers()
 		this.m.NumBros = mod.Assigned;
         foreach (i, r in this.m.Queue)
@@ -235,9 +235,9 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
             {
                 continue;
             }
-            
+
             this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
-        }		
+        }
     }
 
 	function isHidden()
@@ -250,7 +250,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
                 return false
             }
 		}
-		return true;		
+		return true;
 	}
 
     function onInit()
@@ -273,7 +273,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
     function getModifiers()
     {
-        local ret = 
+        local ret =
         {
             Craft = 0.0,
             Assigned = 0,
@@ -294,11 +294,11 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			}
             ret.Craft += rm
             ++ret.Assigned
-			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);	
+			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
         }
 
-        if (this.getUpgraded()) 
-        {  
+        if (this.getUpgraded())
+        {
             ret.Craft *= 1.15;
         }
 
@@ -335,13 +335,13 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		}
 
 		local sub = "empty";
-		
+
 		if (this.getAssignedBros() > 0) {
 			sub =  "full";
 		}
 		return pro + "_" + sub;
 	}
-	
+
 	function getUpdateText()
 	{
 		if (this.m.Queue.len() <= 0)
@@ -359,7 +359,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		{
 			return "Enchanted ... 100%";
 		}
-		
+
 		return "Enchanted ... " + percent + "%";
 	}
 
@@ -400,7 +400,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 				this.m.Queue[i] = null;
 			}
 
-            if (modifiers.Craft <= 0) 
+            if (modifiers.Craft <= 0)
             {
                 break
             }
@@ -442,14 +442,14 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         {
             return 0;
         }
-        
+
         foreach (r in this.m.Queue)
         {
             if (r == null)
             {
                 continue;
             }
-            
+
             points += (r.Blueprint.getCost() - r.Points);
         }
         local modifiers = this.getModifiers();
@@ -472,9 +472,9 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 	}
 
 
-	function onAdd ( _blueprintID )
+	function onAdd ( _result )
 	{
-		local blueprint = this.World.Crafting.getBlueprint(_blueprintID);
+		local blueprint = this.World.Crafting.getBlueprint(_result.ID);
 		if (!blueprint.isCraftable())
 		{
 			return;
@@ -519,7 +519,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
         _campScreen.showEnchanterDialog();
         this.camp_building.onClicked(_campScreen);
 	}
-        
+
 	function onSerialize( _out )
 	{
 		this.onInit(); //clear out null queue items
@@ -542,5 +542,5 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			})
 		}
 	}
-    
+
 });

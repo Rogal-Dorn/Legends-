@@ -1,5 +1,4 @@
 gfx/entity_blood.png
-gfx/legend_runed.png
 gfx/legend_characters.png
 gfx/legends_ui.png
 gfx/legend_world.png
