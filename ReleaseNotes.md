@@ -4950,7 +4950,8 @@ Rabble no longer have mismatched body and face ethnicities
 https://drive.google.com/file/d/1jDw6K-o9aq-GERufqVn6BNvuhUg3yVeN/view?usp=sharing
 
 
-16.0.0.1
+15.0.1.2
+*Save Game compatible with 15.0.1.1*
 
 **New Contracts**
 New southern city state contract : Hunt down Mummies
@@ -4968,6 +4969,8 @@ New art for Hexen Leader
 New art for demon alps
 Magic orgin commanders have their magic perks back.
 Master archers are added back into the recruitable pool.
+
+**Fixes**
 Fixed typo in italo norman helmet mapping causing errors.
 Fixes incorrect hand to hand damage.
 Fixes incorrect unarmed lunge damage.
@@ -4978,3 +4981,6 @@ Fixes arrow quiver fatigue costs + tooltips
 Fixes parried effect's tooltip
 Fixes travler's sashes large and small not applying fatigue.
 Reduced the number of armor brushes - hopefully helps some of the lower end gfx cards having issues loading all the sprites.
+
+**Download**
+https://drive.google.com/file/d/1UBglJMURv54uh59C2VKrjYWuKNZJ3rIX/view?usp=sharing
