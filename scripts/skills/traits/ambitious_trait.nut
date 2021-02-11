@@ -6,7 +6,7 @@ this.ambitious_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.ambitious";
 		this.m.Name = "Ambitious";
 		this.m.Icon = "ui/traits/ambitious_trait.png";
-		this.m.Description = "Determined to be a hero";
+		this.m.Description = "Determined to be a hero.";
 		this.m.Titles = [
 			"the Talented",
 			"the Smart",

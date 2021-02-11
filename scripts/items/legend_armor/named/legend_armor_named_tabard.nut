@@ -14,8 +14,8 @@ this.legend_armor_named_tabard <- this.inherit("scripts/items/legend_armor/legen
 			"Pageantry",
 			"Swanky",
 			"Noble",
-			"Elegence",
-			"Oppulence",
+			"Elegance",
+			"Opulence",
 			"Excess",
 			"Resplendence",
 			"Glorious"

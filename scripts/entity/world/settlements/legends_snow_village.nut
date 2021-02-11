@@ -9,12 +9,12 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 			"Kravlund",
 			"Bola",
 			"Ravestad",
-                        "Gammeljord,"
-                        "Tabtmennesker,"
-                        "Morktoppe,"
-                        "Lysdal,"
-                        "Narredod,"
-                        "Forsvinde,"
+                        "Gammeljord",
+                        "Tabtmennesker",
+                        "Morktoppe",
+                        "Lysdal",
+                        "Narredod",
+                        "Forsvinde",
 			"Alsliv",
 			"Hellevad",
 			"Heimstad",

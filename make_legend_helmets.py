@@ -332,7 +332,7 @@ aLayer = '''$stats
 layers = [
 {"name" : "goblin_scarf"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Scarf", \
- "desc" :  "Goblin Scarf" \
+ "desc" :  "Goblin Scarf." \
 },
 {"name" : "barb_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 125, "con" : 55, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rusted Aventail", \
@@ -344,11 +344,11 @@ layers = [
 },
 {"name" : "rotten_chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 80, "con" : 50, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Rotten Aventail", \
- "desc" :  "A rotten mail aventail that extends from below the eyeline to cover the neck" \
+ "desc" :  "A rotten mail aventail that extends from below the eyeline to cover the neck." \
 },
 {"name" : "cloth_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 10, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Cloth Scarf", \
- "desc" :  "Cloth Scarf" \
+ "desc" :  "Cloth Scarf." \
 },
 {"name" : "cloth_bandana"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 20, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Headscarf", \
@@ -356,7 +356,7 @@ layers = [
 },
 {"name" : "patched_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 45, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Patched Hood", \
- "desc" :  "Patched Hood" \
+ "desc" :  "Patched Hood." \
 },
 {"name" : "simple_hood"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 50, "con" : 30, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Simple Hood", \
@@ -382,19 +382,19 @@ layers = [
 },
 {"name" : "southern_cap"                     , "layer" : "hood", "min" : 1, "max" : 8, "base" : True, "value" : 30, "con" : 20, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Cap", \
- "desc" :  "A simple cap of rough fibres" \
+ "desc" :  "A simple cap of rough fibres." \
 },
 {"name" : "southern_cap_dark"                , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 30, "con" : 20, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Cap", \
- "desc" :  "A simple cap of rough fibres" \
+ "desc" :  "A simple cap of rough fibres." \
 },
 {"name" : "southern_turban_light_hood"       , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 90, "con" : 40, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern light hood", \
- "desc" :  "A southern hood made of light materials" \
+ "desc" :  "A southern hood made of light materials." \
 },
 {"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 115, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Niqaab", \
- "desc" :  "A headwrap, protects from the sun and light blows" \
+ "desc" :  "A headwrap, protects from the sun and light blows." \
 },
 {"name" : "open_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 225, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Chain Mail Hood", \
@@ -402,11 +402,11 @@ layers = [
 },
 {"name" : "chain_scarf"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 150, "con" : 55, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Aventail", \
- "desc" :  "A mail aventail that extends from below the eyeline to cover the neck" \
+ "desc" :  "A mail aventail that extends from below the eyeline to cover the neck." \
 },
 {"name" : "aventail"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 60, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Aventail", \
- "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face" \
+ "desc" :  "A mail aventail that extends from below the eyeline to cover the neck and lower face." \
 },
 {"name" : "rusty_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 70, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusty Mail Coif", \
@@ -414,7 +414,7 @@ layers = [
 },
 {"name" : "chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 300, "con" : 75, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Mail Coif", \
- "desc" :  "A sturdy chain hood" \
+ "desc" :  "A sturdy chain hood." \
 },
 {"name" : "chain_hood_full"                     , "layer" : "hood", "min" : 1, "max" : 6, "base" : True, "value" : 450, "con" : 85, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Full Mail Coif", \
@@ -422,19 +422,19 @@ layers = [
 },
 {"name" : "bronze_chain"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 600, "con" : 90, "stam" : -6, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Bronze Chain", \
- "desc" :  "Bronze Chain" \
+ "desc" :  "Bronze Chain." \
 },
 {"name" : "enclave_bevor"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 750, "con" : 95, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Bevor", \
- "desc" :  "A solid metal bevor" \
+ "desc" :  "A solid metal bevor." \
 },
 {"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 260, "con" : 75, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Mail Hood", \
- "desc" :  "A Mail Hood of southern design" \
+ "desc" :  "A Mail Hood of southern design." \
 },
 {"name" : "southern_open_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 200, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Chain Mail Hood", \
- "desc" :  "An open mail hood of southern design" \
+ "desc" :  "An open mail hood of southern design." \
 },
 {"name" : "southern_open_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 90, "con" : 40, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Hood", \
@@ -450,11 +450,11 @@ layers = [
 },
 {"name" : "southern_headband_coin"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Headband", \
- "desc" :  "A southern headband of coins strung together" \
+ "desc" :  "A southern headband of coins strung together." \
 },
 {"name" : "mummy_bandage"                     , "layer" : "hood", "min" : 1, "max" : 2, "base" : True, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Facemask", \
- "desc" :  "Wrappings from a long dead embalmed corpse" \
+ "desc" :  "Wrappings from a long dead embalmed corpse." \
 },
 
 
@@ -462,65 +462,65 @@ layers = [
 
 {"name" : "ancient_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Conic Helm", \
- "desc" :  "Conic Helm of an ancient household guard" \
+ "desc" :  "Conic Helm of an ancient household guard." \
 },
 {"name" : "ancient_kettle"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Kettle", \
- "desc" :  "A kettle helm from an ancient honor guard" \
+ "desc" :  "A kettle helm from an ancient honor guard." \
 },
 {"name" : "ancient_dome"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Dome", \
- "desc" :  "A domed helm of an ancient household guard" \
+ "desc" :  "A domed helm of an ancient household guard." \
 },
 {"name" : "ancient_crested"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Crested Helm", \
- "desc" :  "Crested Helm of an ancient honor guard" \
+ "desc" :  "Crested Helm of an ancient honor guard." \
 },
 {"name" : "ancient_dome_tailed"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 95, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Tailed Ancient Dome", \
- "desc" :  "A domed and tailed helm of an ancient household guard" \
+ "desc" :  "A domed and tailed helm of an ancient household guard." \
 },
 {"name" : "ancient_face_plate"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 95, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Face Plate", \
- "desc" :  "The protective helm of an ancient legionary" \
+ "desc" :  "The protective helm of an ancient legionary." \
 },
 {"name" : "ancient_legionaire"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 95, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Legionaire Helm", \
- "desc" :  "The helm of an ancient legionary" \
+ "desc" :  "The helm of an ancient legionary." \
 },
 {"name" : "ancient_side_hawk"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 95, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Side Hawk", \
- "desc" :  "The conic helm of an ancient legionary" \
+ "desc" :  "The conic helm of an ancient legionary." \
 },
 {"name" : "ancient_tailed_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 95, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Tailed Ancient Conic Helm", \
- "desc" :  "The tailed conic helm of an ancient legionary" \
+ "desc" :  "The tailed conic helm of an ancient legionary." \
 },
 
 {"name" : "ancient_beard_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Ancient Bearded Mask", \
- "desc" :  "Bearded Mask of an ancient honor guard" \
+ "desc" :  "Bearded Mask of an ancient honor guard." \
 },
 {"name" : "ancient_lion_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Ancient Lion Mask", \
- "desc" :  "A Lion Mask of an ancient honor guard" \
+ "desc" :  "A Lion Mask of an ancient honor guard." \
 },
 {"name" : "ancient_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Ancient Mask", \
- "desc" :  "A masked helm of an ancient honor guard" \
+ "desc" :  "A masked helm of an ancient honor guard." \
 },
 {"name" : "ancient_face_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Face Helm", \
- "desc" :  "A helm of an ancient honor guard" \
+ "desc" :  "A helm of an ancient honor guard." \
 },
 
 {"name" : "orc_strapped_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 400, "con" : 160, "stam" : -18, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Looted Nasal Helm", \
- "desc" :  "An orc helm made of a looted nasal helm" \
+ "desc" :  "An orc helm made of a looted nasal helm." \
 },
 {"name" : "orc_double_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" :1000, "con" : 190, "stam" : -22, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" : "Orc Looted Kettle Hat", \
- "desc" :  "A simplistic orc helm made from two kettle hats tied together and reinforced with additional chain" \
+ "desc" :  "A simplistic orc helm made from two kettle hats tied together and reinforced with additional chain." \
 },
 {"name" : "orc_elite_double_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 225, "stam" : -25, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Reinforced Looted Kettle Hat", \
@@ -528,15 +528,15 @@ layers = [
 },
 {"name" : "orc_scale_helm"                     , "layer" : "helm", "min" : 1, "max" : 2, "value" : 1200, "con" : 250, "stam" : -30, "vis" : -3, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Looted Scale Plate Helm", \
- "desc" :  "An orc helm made from looted heavy plated helmets, patched and forged together" \
+ "desc" :  "An orc helm made from looted heavy plated helmets, patched and forged together." \
 },
 {"name" : "orc_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 280, "stam" : -32, "vis" : -4, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Great Helm", \
- "desc" :  "The distinctive helm of an orc warlord" \
+ "desc" :  "The distinctive helm of an orc warlord." \
 },
 {"name" : "orc_behemoth_helmet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 180, "stam" : -20, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Behemoth Helm", \
- "desc" :  "The distinctive helm of an orc behemoth" \
+ "desc" :  "The distinctive helm of an orc behemoth." \
 },
 {"name" : "crude_metal_helm"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" :500, "con" : 110, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Crude Metal Helm", \
@@ -568,7 +568,7 @@ layers = [
 },
 {"name" : "southern_leather_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 60, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather helm", \
- "desc" :  "A traditional southern leather helm" \
+ "desc" :  "A traditional southern leather helm." \
 },
 {"name" : "southern_studded_leather_helm"                     , "layer" : "helm", "min" : 1, "max" : 4, "value" : 125, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Nomad Leather Cap", \
@@ -576,15 +576,15 @@ layers = [
 },
 {"name" : "southern_cap_smooth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Smooth Cap", \
- "desc" :  "A smooth metal cap" \
+ "desc" :  "A smooth metal cap." \
 },
 {"name" : "southern_cap_spiked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Spiked Cap", \
- "desc" :  "A metal skull cap with a fashionable spike" \
+ "desc" :  "A metal skull cap with a fashionable spike." \
 },
 {"name" : "viking_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 200, "con" : 55, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Viking Helm", \
- "desc" :  "A nordic helmet guarding face and neck with additional metal plates" \
+ "desc" :  "A nordic helmet guarding face and neck with additional metal plates." \
 },
 {"name" : "norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 150, "con" : 50, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Nasal Helmet", \
@@ -592,7 +592,7 @@ layers = [
 },
 {"name" : "flat_top_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusted Flat Top Helm", \
- "desc" :  "A flat top helm that is worn out, rusted, dented and will never be fully repairable" \
+ "desc" :  "A flat top helm that is worn out, rusted, dented and will never be fully repairable." \
 },
 {"name" : "flat_top_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 325, "con" : 85, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Flat Top Helm", \
@@ -616,7 +616,7 @@ layers = [
 },
 {"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1250, "con" : 80, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Basinet", \
- "desc" :  "A well made metal bascinet" \
+ "desc" :  "A well made metal bascinet." \
 },
 {"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 90, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 2, "rminStam" : 4, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,  \
  "title" :  "Bascinet", \
@@ -624,7 +624,7 @@ layers = [
 },
 {"name" : "enclave_great_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2800, "con" : 180, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Peaked Bascinet", \
- "desc" :  "A well made peaked bascinet" \
+ "desc" :  "A well made peaked bascinet." \
 },
 {"name" : "enclave_venitian_bascinet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 185, "stam" : -14, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Bascinet", \
@@ -688,11 +688,11 @@ layers = [
 },
 {"name" : "carthaginian"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 1600, "con" : 105, "stam" : -5, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Carthaginian Helm", \
- "desc" :  "A sturdy alloy helmet of foreign design" \
+ "desc" :  "A sturdy alloy helmet of foreign design." \
 },
 {"name" : "conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 700, "con" : 110, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Conic Helm", \
- "desc" :  "A heavy conic helmet" \
+ "desc" :  "A heavy conic helmet." \
 },
 {"name" : "sallet"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 800, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Sallet", \
@@ -712,7 +712,7 @@ layers = [
 },
 {"name" : "bronze_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1000, "con" : 115, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Bronze Helm", \
- "desc" :  "Bronze Helm" \
+ "desc" :  "Bronze Helm." \
 },
 {"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2500, "con" : 175, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Helm", \
@@ -724,27 +724,27 @@ layers = [
 },
 {"name" : "legend_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1750, "con" : 155, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
- "desc" :  "A finely crafted close helm of outstanding workmanship" \
+ "desc" :  "A finely crafted close helm of outstanding workmanship." \
 },
 {"name" : "enclave_armet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1400, "con" : 140, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Armet", \
- "desc" :  "A finely crafted armet of outstanding workmanship" \
+ "desc" :  "A finely crafted armet of outstanding workmanship." \
 },
 {"name" : "legend_frogmouth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Frogmouth", \
- "desc" :  "A gloriously frogmouth helm of excellent construction" \
+ "desc" :  "A gloriously frogmouth helm of excellent construction." \
 },
 {"name" : "southern_gladiator_helm_crested"                     , "layer" : "helm", "min" : 1, "max" : 13, "value" : 2500, "con" : 130, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Crested Gladiator Helm", \
- "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states" \
+ "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states." \
 },
 {"name" : "southern_gladiator_helm_split"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 130, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Split Gladiator Helm", \
- "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states" \
+ "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states." \
 },
 {"name" : "southern_gladiator_helm_masked"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 130, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Masked Gladiator Helm", \
- "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states" \
+ "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states." \
 },
 {"name" : "southern_helmet_nasal"                     , "layer" : "helm", "min" : 1, "max" : 8, "value" : 750, "con" : 125, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Heavy Lamellar Helmet", \
@@ -752,7 +752,7 @@ layers = [
 },
 {"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 425, "con" : 90, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Italio Norman Helm", \
- "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front" \
+ "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front." \
 },
 {"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 110, "stam" : -5, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 4, "rminStam" : 5, "rminCond" : 110, "rmaxCond" : 135, "names" : Names,  \
  "title" :  "Italio Conic Helm", \
@@ -760,11 +760,11 @@ layers = [
 },
 {"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 75, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Conic Helm", \
- "desc" :  "A conic helm from the south" \
+ "desc" :  "A conic helm from the south." \
 },
 {"name" : "southern_named_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 85, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 1, "rmaxStam" : 3, "rminStam" : 4, "rminCond" : 85, "rmaxCond" : 105, "names" : Names,  \
  "title" :  "Southern Conic", \
- "desc" :  "an expertly crafted southern helm" \
+ "desc" :  "An expertly crafted southern helm." \
 },
 {"name" : "southern_peaked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 115, "stam" : -8, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Peaked Helmet", \
@@ -776,15 +776,15 @@ layers = [
 },
 {"name" : "legend_ancient_gladiator"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1200, "con" : 150, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Ancient Gladiator Helm", \
- "desc" :  "The distinctive helm of an ancient gladiator" \
+ "desc" :  "The distinctive helm of an ancient gladiator." \
 },
 {"name" : "legend_ancient_legionaire_restored"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 800, "con" : 140, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Restored Ancient Legionaire", \
- "desc" :  "A restored helm from a long dead legionaire" \
+ "desc" :  "A restored helm from a long dead legionaire." \
 },
 {"name" : "dentist_helmet"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1200, "con" : 70, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 2, "rmaxStam" : 1, "rminStam" : 3, "rminCond" : 70, "rmaxCond" : 95, "names" : Names,  \
  "title" :  "Dentist Helmet", \
- "desc" :  "Dentist Helmet" \
+ "desc" :  "Dentist Helmet." \
 },
 {"name" : "tailed_conic"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 140, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 140, "rmaxCond" : 165, "names" : Names,  \
  "title" :  "Feathered Nasal Helmet", \
@@ -792,15 +792,15 @@ layers = [
 },
 {"name" : "legend_armet_01_named"                     , "layer" : "helm", "min" : 1, "max" : 3, "value" : 4000, "con" : 170, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 11, "rminStam" : 13, "rminCond" : 170, "rmaxCond" : 195, "names" : Names,  \
  "title" :  "Armet", \
- "desc" :  "A finely crafted close helm of outstanding workmanship" \
+ "desc" :  "A finely crafted close helm of outstanding workmanship." \
 },
 {"name" : "stag_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 5000, "con" : 200, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 2, "rminViz" : 3, "rmaxStam" : 14, "rminStam" : 16, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
  "title" :  "Stag Helm", \
- "desc" :  "The helm of a noble house champion bearing the design of the stag, unparralled craftmanship but quite unweildy" \
+ "desc" :  "The helm of a noble house champion bearing the design of the stag, unparralled craftmanship but quite unweildy." \
 },
 {"name" : "swan_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 5000, "con" : 200, "stam" : -15, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 2, "rminViz" : 3, "rmaxStam" : 14, "rminStam" : 16, "rminCond" : 200, "rmaxCond" : 225, "names" : Names,  \
  "title" :  "Swan Helm", \
- "desc" :  "The helm of a noble house champion bearing the design of the swan, beautiful design but quite impractical" \
+ "desc" :  "The helm of a noble house champion bearing the design of the swan, beautiful design but quite impractical." \
 },
 {"name" : "skin_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 20000, "con" : 105, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Glimpse of Davkul", \
@@ -808,15 +808,15 @@ layers = [
 },
 {"name" : "rotten_flat_top_face_mask"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 400, "con" : 110, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Rotten Flat Top Face Mask", \
- "desc" :  "Rotten Flat Top Face Mask" \
+ "desc" :  "Rotten Flat Top Face Mask." \
 },
 {"name" : "rotten_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 4, "value" : 750, "con" : 150, "stam" : -14, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Rotten Great Helm", \
- "desc" :  "Rotten Great Helm" \
+ "desc" :  "Rotten Great Helm." \
 },
 {"name" : "barb_metal_cap"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusted Metal Helm", \
- "desc" :  "A rusted and dented metal cap that provides protection against bumps to the head" \
+ "desc" :  "A rusted and dented metal cap that provides protection against bumps to the head." \
 },
 
 
@@ -839,36 +839,36 @@ layers = [
 
 {"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 150, "con" : 45, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Leather Mask", \
- "desc" :  "A basic leather mask worn by young orcs" \
+ "desc" :  "A basic leather mask worn by young orcs." \
 },
 {"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Horn Mask", \
- "desc" :  "A rough horned facemask worn by young orcs" \
+ "desc" :  "A rough horned facemask worn by young orcs." \
 },
 {"name" : "orc_metal_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 400, "con" : 75, "stam" : -11, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Metal Plated Mask", \
- "desc" :  "A simple construction of metal plates, worn by young orcs" \
+ "desc" :  "A simple construction of metal plates, worn by young orcs." \
 },
 
 {"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaves", \
- "desc" :  "A set of leaves used by goblins to disguise themselves" \
+ "desc" :  "A set of leaves used by goblins to disguise themselves." \
 },
 {"name" : "goblin_leaf_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaf Mask", \
- "desc" :  "A goblin mask made for blending in with cover" \
+ "desc" :  "A goblin mask made for blending in with cover." \
 },
 {"name" : "goblin_gillie"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 80, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Gillie", \
- "desc" :  "Helmet camouflague used by goblin ambushers" \
+ "desc" :  "Helmet camouflague used by goblin ambushers." \
 },
 {"name" : "goblin_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Goblin Mask", \
- "desc" :  "A simple goblin face covering" \
+ "desc" :  "A simple goblin face covering." \
 },
 {"name" : "goblin_leather_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 105, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Goblin Helm", \
- "desc" :  "A basic leather helm of goblin design" \
+ "desc" :  "A basic leather helm of goblin design." \
 },
 {"name" : "goblin_chain_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 125, "con" : 30, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Chain Helm", \
@@ -876,7 +876,7 @@ layers = [
 },
 {"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 125, "con" : 35, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Spiked Goblin Helm", \
- "desc" :  "The distinctive spiked helm of a goblin overseer" \
+ "desc" :  "The distinctive spiked helm of a goblin overseer." \
 },
 {"name" : "vampire_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Crown", \
@@ -884,79 +884,79 @@ layers = [
 },
 {"name" : "ancient_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Diadem", \
- "desc" :  "An ancient crown from ages past" \
+ "desc" :  "An ancient crown from ages past." \
 },
 {"name" : "leather_hood_barb"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 45, "stam" : -4, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Hood Barb", \
- "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective" \
+ "desc" :  "The crude padded leather hood of a barbarian, it is heavy and surprisingly protective." \
 },
 {"name" : "nose_plate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 60, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Nose Plate", \
- "desc" :  "A strip of metal tied on with a leather band, used for protecting the face from frontal blows" \
+ "desc" :  "A strip of metal tied on with a leather band, used for protecting the face from frontal blows." \
 },
 {"name" : "headband_side"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Headband Side", \
- "desc" :  "A rugged leather headband" \
+ "desc" :  "A rugged leather headband." \
 },
 {"name" : "headband_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 30, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Headband Nose", \
- "desc" :  "A rough leather headband with a small nose protection" \
+ "desc" :  "A rough leather headband with a small nose protection." \
 },
 {"name" : "eyemask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 125, "con" : 15, "stam" : 0, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Eyemask", \
- "desc" :  "A metal mask covering the eyes and nose from blows" \
+ "desc" :  "A metal mask covering the eyes and nose from blows." \
 },
 {"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 250, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Chain Attachment", \
- "desc" :  "A piece of mail used for hanging over the mouth and nose" \
+ "desc" :  "A piece of mail used for hanging over the mouth and nose." \
 },
 {"name" : "faceplate_flat"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Flat Faceplate", \
- "desc" :  "Flat Faceplate" \
+ "desc" :  "Flat Faceplate." \
 },
 {"name" : "faceplate_curved"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Curved Faceplate", \
- "desc" :  "Curved Faceplate" \
+ "desc" :  "Curved Faceplate." \
 },
 {"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 140, "con" : 30, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Short Faceplate", \
- "desc" :  "A short squat faceplate" \
+ "desc" :  "A short squat faceplate." \
 },
 {"name" : "cult_hood"                     , "layer" : "top", "min" : 1, "max" : 7, "value" : 60, "con" : 15, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Cult Leather Hood", \
- "desc" :  "A leather hood used in cultist ceremonies" \
+ "desc" :  "A leather hood used in cultist ceremonies." \
 },
 {"name" : "faceplate_long"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 180, "con" : 35, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Long Faceplate", \
- "desc" :  "A long faceplate" \
+ "desc" :  "A long faceplate." \
 },
 {"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 600, "con" : 45, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Winged Faceplate", \
- "desc" :  "A glorious faceplate formed into the shape of wings" \
+ "desc" :  "A glorious faceplate formed into the shape of wings." \
 },
 {"name" : "faceplate_snub_nose"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Snub Nose Faceplate", \
- "desc" :  "A round nosed faceplate" \
+ "desc" :  "A round nosed faceplate." \
 },
 {"name" : "faceplate_snub_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 45, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Slitted Snub Faceplate", \
- "desc" :  "Slitted Snub Faceplate" \
+ "desc" :  "Slitted Snub Faceplate." \
 },
 {"name" : "faceplate_sharp"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Sharp Faceplate", \
- "desc" :  "Sharp Faceplate" \
+ "desc" :  "Sharp Faceplate." \
 },
 {"name" : "enclave_great_jaw"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 350, "con" : 50, "stam" : -5, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "A rough metal bevor", \
- "desc" :  "A rough metal bevor" \
+ "desc" :  "A rough metal bevor." \
 },
 {"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 150, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Facemask", \
- "desc" :  "A metal faceplate in the shape of a mask" \
+ "desc" :  "A metal faceplate in the shape of a mask." \
 },
 {"name" : "faceplate_pointed"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 600, "con" : 50, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Pointed Faceplate", \
- "desc" :  "A long nosed faceplate designed to deflect glancing blows" \
+ "desc" :  "A long nosed faceplate designed to deflect glancing blows." \
 },
 {"name" : "enclave_armet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Armet Visor", \
@@ -980,11 +980,11 @@ layers = [
 },
 {"name" : "faceplate_pointed_slit"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 600, "con" : 50, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Slit Pointed Faceplate", \
- "desc" :  "Slit Pointed Faceplate" \
+ "desc" :  "Slit Pointed Faceplate." \
 },
 {"name" : "faceplate_full"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 800, "con" : 60, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Full Faceplate", \
- "desc" :  "A very well crafted full faceplate" \
+ "desc" :  "A very well crafted full faceplate." \
 },
 {"name" : "bascinet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1000, "con" : 50, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 1, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 50, "rmaxCond" : 70, "names" : Names,  \
  "title" :  "Pointed Visor", \
@@ -996,21 +996,21 @@ layers = [
 # },
 {"name" : "southern_faceplate_bearded"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 700, "con" : 60, "stam" : -5, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Southern Bearded Faceplate", \
- "desc" :  "A faceplate in the southern bearded style" \
+ "desc" :  "A faceplate in the southern bearded style." \
 },
 {"name" : "mummy_mask"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 450, "con" : 40, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Facemask", \
- "desc" :  "A facemask from a long dead civilisation" \
+ "desc" :  "A facemask from a long dead civilisation." \
 },
 
 {"name" : "mummy_beard"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Ancient Southern Beard", \
- "desc" :  "A beard cover from a long dead civilisation" \
+ "desc" :  "A beard cover from a long dead civilisation." \
 },
 
 {"name" : "faceplate_full_breaths"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Breathed Faceplate", \
- "desc" :  "A faceplate filled with breathes for easy breathing and increased sight" \
+ "desc" :  "A faceplate filled with breathes for easy breathing and increased sight." \
 },
 {"name" : "unhold_head_chain"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 240, "con" : 45, "stam" : -7, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Unhold Head Chain", \
@@ -1018,15 +1018,15 @@ layers = [
 },
 {"name" : "unhold_head_spike"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 800, "con" : 90, "stam" : -13, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Unhold head Spike", \
- "desc" :  "The heavy spiked armor used by barbarian unholds" \
+ "desc" :  "The heavy spiked armor used by barbarian unholds." \
 },
 {"name" : "faceplate_gold"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 1600, "con" : 65, "stam" : -5, "vis" : -1, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 4, "rminStam" : 5, "rminCond" : 65, "rmaxCond" : 85, "names" : Names,  \
  "title" :  "Gold Faceplate", \
- "desc" :  "A gilded faceplate of excellent quality" \
+ "desc" :  "A gilded faceplate of excellent quality." \
 },
 {"name" : "faceplate_full_gold"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1000, "con" : 65, "stam" : -4, "vis" : -2, "hair" : "false", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 3, "rminStam" : 4, "rminCond" : 65, "rmaxCond" : 90, "names" : Names,  \
  "title" :  "Golden Full Faceplate", \
- "desc" :  "Golden Full Faceplate" \
+ "desc" :  "Golden Full Faceplate." \
 },
 
 {"name" : "golden_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 3000, "con" : 90, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 6, "rminStam" : 7, "rminCond" : 90, "rmaxCond" : 120, "names" : Names,  \
@@ -1035,62 +1035,62 @@ layers = [
 },
 {"name" : "faceplate_raised"                     , "layer" : "top", "min" : 1, "max" : 2, "value" :800, "con" : 50, "stam" : -3, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rminViz" : 0, "rmaxViz" : 0, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 50, "rmaxCond" : 70, "names" : Names,  \
  "title" :  "Raised Faceplate", \
- "desc" :  "A faceplate raised up to give more air and vision" \
+ "desc" :  "A faceplate raised up to give more air and vision." \
 },
 {"name" : "faceplate_full_01_named"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 2000, "con" : 75, "stam" : -6, "vis" : -2, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 5, "rminStam" : 6, "rminCond" : 75, "rmaxCond" : 100, "names" : Names,  \
  "title" :  "Full Faceplate", \
- "desc" :  "An exceptionally well crafted faceplate of high worksmanship" \
+ "desc" :  "An exceptionally well crafted faceplate of high worksmanship." \
 },
 {"name" : "golden_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1500, "con" : 60, "stam" : -4, "vis" : -1, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 1, "rmaxStam" : 3, "rminStam" : 4, "rminCond" : 60, "rmaxCond" : 80, "names" : Names,  \
  "title" :  "Golden Mask", \
- "desc" :  "An exquisit golden mask from distant royalty, exceptional craftmanship" \
+ "desc" :  "An exquisit golden mask from distant royalty, exceptional craftmanship." \
 },
 {"name" : "warlock_skull"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 2000, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 1, "rminStam" : 2, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,  \
  "title" :  "Warlock Skill Helm", \
- "desc" :  "Warlock Skill Helm" \
+ "desc" :  "Warlock Skill Helm." \
 },
 {"name" : "fencer_hat"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 225, "con" : 15, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
 "title" :  "Fencer Hat", \
-"desc" :  "The floppy hat of a swordsman" \
+"desc" :  "The floppy hat of a swordsman." \
 },
 
 
 
 {"name" : "noble_southern_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Peak", \
- "desc" :  "The crown of a southern vizier" \
+ "desc" :  "The crown of a southern vizier." \
 },
 {"name" : "noble_southern_hat"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Hat", \
- "desc" :  "The hat of a southern vizier" \
+ "desc" :  "The hat of a southern vizier." \
 },
 {"name" : "southern_noble_turban"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 400, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Vizier Turban", \
- "desc" :  "The turban of a southern vizier" \
+ "desc" :  "The turban of a southern vizier." \
 },
 {"name" : "southern_helm_tailed"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 50, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Tailed Helmet", \
- "desc" :  "A helmet tail from the southern lands" \
+ "desc" :  "A helmet tail from the southern lands." \
 },
 {"name" : "southern_silk_headscarf"                     , "layer" : "vanity", "min" : 1, "max" : 13, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Headscarf", \
- "desc" :  "A headscarf made of exotic materials" \
+ "desc" :  "A headscarf made of exotic materials." \
 },
 {"name" : "southern_feathered_turban"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 60, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Feathered Turban", \
- "desc" :  "A feathered blade dancer turban" \
+ "desc" :  "A feathered blade dancer turban." \
 },
 {"name" : "southern_turban_open"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 60, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Open Turban", \
- "desc" :  "A turban with open face" \
+ "desc" :  "A turban with open face." \
 },
 {"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 50, "con" : 5, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Sack", \
- "desc" :  "A rough hewn hession sack with two holes in it" \
+ "desc" :  "A rough hewn hession sack with two holes in it." \
 },
 {"name" : "antler"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Antlers", \
- "desc" :  "The wide antlers of a beast, often a mark of distinction in northern tribes" \
+ "desc" :  "The wide antlers of a beast, often a mark of distinction in northern tribes." \
 },
 {"name" : "bear_head"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Bear Headpiece", \
@@ -1098,7 +1098,7 @@ layers = [
 },
 {"name" : "beret"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Beret", \
- "desc" :  "A beret typically worn by nobles" \
+ "desc" :  "A beret typically worn by nobles." \
 },
 {"name" : "bull_horns"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Bull Horns", \
@@ -1106,39 +1106,39 @@ layers = [
 },
 {"name" : "crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 300, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Crown", \
- "desc" :  "An ornately designed symbol of authority" \
+ "desc" :  "An ornately designed symbol of authority." \
 },
 {"name" : "faction_helmet"                     , "layer" : "vanity", "min" : 1, "max" : 10, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Faction Helmet Ornament", \
- "desc" :  "Ornament top of a noble house" \
+ "desc" :  "Ornament top of a noble house." \
 },
 {"name" : "faction_decayed_helmet"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Decayed Faction Helmet Ornament", \
- "desc" :  "Decayed ornament top of a noble house" \
+ "desc" :  "Decayed ornament top of a noble house." \
 },
 {"name" : "faction_helmet_2"                     , "layer" : "vanity", "min" : 1, "max" : 10, "value" : 200, "con" : 20, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Zweihander\'s Hat", \
- "desc" :  "The feathered hat of a noble swordsman" \
+ "desc" :  "The feathered hat of a noble swordsman." \
 },
 {"name" : "feather_band"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Feather Band", \
- "desc" :  "A band holding a feather, purely for decoration" \
+ "desc" :  "A band holding a feather, purely for decoration." \
 },
 {"name" : "feathered_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Feathered Hat", \
- "desc" :  "A feathered hat as is the latest fashion among the courtisans" \
+ "desc" :  "A feathered hat as is the latest fashion among the courtisans." \
 },
 {"name" : "goat_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Goat Horns", \
- "desc" :  "The tall horns of a barbarian beastmaster" \
+ "desc" :  "The tall horns of a barbarian beastmaster." \
 },
 {"name" : "headband"                     , "layer" : "vanity", "min" : 1, "max" : 16, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Headband", \
- "desc" :  "A simple leather headband from a northern tribe" \
+ "desc" :  "A simple leather headband from a northern tribe." \
 },
 {"name" : "horn_decorations"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Horn Decorations", \
- "desc" :  "Decorative horns, fashionable in the northern tribes" \
+ "desc" :  "Decorative horns, fashionable in the northern tribes." \
 },
 # {"name" : "hunter_cap"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Hunter Cap", \
@@ -1146,7 +1146,7 @@ layers = [
 # },
 {"name" : "impaled_head"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 3, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Impaled Head", \
- "desc" :  "A rotting and withered human head, quite disgusting" \
+ "desc" :  "A rotting and withered human head, quite disgusting." \
 },
 # {"name" : "jester_hat"                     , "layer" : "vanity", "min" : 1, "max" : 65, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Jester Hat", \
@@ -1154,43 +1154,43 @@ layers = [
 # },
 {"name" : "metal_bird"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 30, "con" : 3, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Metal Bird", \
- "desc" :  "An ancient metal bird statue" \
+ "desc" :  "An ancient metal bird statue." \
 },
 {"name" : "noble_buckle"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Noble Buckle", \
- "desc" :  "A decorative buckle used on noble hats" \
+ "desc" :  "A decorative buckle used on noble hats." \
 },
 {"name" : "noble_feather"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Noble Feather", \
- "desc" :  "A decorative feature found on the hats of nobles" \
+ "desc" :  "A decorative feature found on the hats of nobles." \
 },
 {"name" : "noble_floppy_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Floppy Noble Hat", \
- "desc" :  "A fashionable hat for aristocrats" \
+ "desc" :  "A fashionable hat for aristocrats." \
 },
 {"name" : "noble_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Noble Hat", \
- "desc" :  "A fashionable hat for courtesans" \
+ "desc" :  "A fashionable hat for courtesans." \
 },
 {"name" : "ancient_wig"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Wig", \
- "desc" :  "A wig from an ancient embalmed noble" \
+ "desc" :  "A wig from an ancient embalmed noble." \
 },
 {"name" : "noble_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Noble Hood", \
- "desc" :  "A hood made of high quality materials" \
+ "desc" :  "A hood made of high quality materials." \
 },
 {"name" : "wreath"                     , "layer" : "vanity", "min" : 1, "max" : 2, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Wreath", \
- "desc" :  "A metallic wreath in the ancient style" \
+ "desc" :  "A metallic wreath in the ancient style." \
 },
 {"name" : "orc_bones"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 40, "con" : 5, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Orc Bones", \
- "desc" :  "Decorative bones, fashionable among orcs" \
+ "desc" :  "Decorative bones, fashionable among orcs." \
 },
 {"name" : "orc_great_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 40, "con" : 5, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Orc Great Horns", \
- "desc" :  "The horns of a massive beast, worn by the largest of orcs" \
+ "desc" :  "The horns of a massive beast, worn by the largest of orcs." \
 },
 {"name" : "plait"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Plait", \
@@ -1198,7 +1198,7 @@ layers = [
 },
 {"name" : "ponytail"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ponytail", \
- "desc" :  "A long tail of hair used to adorn helms" \
+ "desc" :  "A long tail of hair used to adorn helms." \
 },
 {"name" : "ram_horns"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ram Horns", \
@@ -1206,47 +1206,47 @@ layers = [
 },
 {"name" : "side_feather"                     , "layer" : "vanity", "min" : 1, "max" : 5, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Side Feather", \
- "desc" :  "A decorative feather used on hats" \
+ "desc" :  "A decorative feather used on hats." \
 },
 {"name" : "southern_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Headband", \
- "desc" :  "A beautiful headband from southern lands where dyes are plentiful" \
+ "desc" :  "A beautiful headband from southern lands where dyes are plentiful." \
 },
 {"name" : "southern_patterned_headband"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Patterned Headband", \
- "desc" :  "A gorgeous patterned headband from southern merchants" \
+ "desc" :  "A gorgeous patterned headband from southern merchants." \
 },
 {"name" : "southern_patterned_headwrap"                     , "layer" : "vanity", "min" : 1, "max" : 10, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Patterned Headwrap", \
- "desc" :  "A beautiful patterned headwrap from the south" \
+ "desc" :  "A beautiful patterned headwrap from the south." \
 },
 {"name" : "southern_turban_open"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Open Turban", \
- "desc" :  "A turban with open face" \
+ "desc" :  "A turban with open face." \
 },
 {"name" : "southern_turban_full"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Full Turban", \
- "desc" :  "A full turban" \
+ "desc" :  "A full turban." \
 },
 {"name" : "southern_turban_light"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Light Turban", \
- "desc" :  "A turban made of light materials, perfect for desert heat" \
+ "desc" :  "A turban made of light materials, perfect for desert heat." \
 },
 {"name" : "southern_turban_feather"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 15, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Head Wrap", \
- "desc" :  "A southern feathered head wrap" \
+ "desc" :  "A southern feathered head wrap." \
 },
 {"name" : "southern_top_tail"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Top Tail", \
- "desc" :  "A decorative tail made of desert animal hair" \
+ "desc" :  "A decorative tail made of desert animal hair." \
 },
 {"name" : "straw_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Straw Hat", \
- "desc" :  "A simple straw hat, often used by farmers and peasants" \
+ "desc" :  "A simple straw hat, often used by farmers and peasants." \
 },
 {"name" : "top_feather"                     , "layer" : "vanity", "min" : 1, "max" : 5, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Top Feather", \
- "desc" :  "A decorative feather used on hats" \
+ "desc" :  "A decorative feather used on hats." \
 },
 # {"name" : "witchhunter_helm"                     , "layer" : "vanity", "min" : 1, "max" : 7, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Witchhunter Helm", \
@@ -1258,7 +1258,7 @@ layers = [
 },
 {"name" : "wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Wolf Helm", \
- "desc" :  "An impressive wolf head covering" \
+ "desc" :  "An impressive wolf head covering." \
 },
 {"name" : "lion_pelt"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Lion Pelt", \
@@ -1274,35 +1274,35 @@ layers = [
 },
 {"name" : "mummy_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 500, "con" : 20, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Headress", \
- "desc" :  "A headress of a long dead civilisation" \
+ "desc" :  "A headress of a long dead civilisation." \
 },
 {"name" : "mummy_headband"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Southern Headband", \
- "desc" :  "A serpent headband from a long dead civlisation" \
+ "desc" :  "A serpent headband from a long dead civlisation." \
 },
 {"name" : "southern_cloth_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Cloth Headress", \
- "desc" :  "A southern headress made of soft fabrics" \
+ "desc" :  "A southern headress made of soft fabrics." \
 },
 {"name" : "southern_veil"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Veil", \
- "desc" :  "A thin wispy southern veil" \
+ "desc" :  "A thin wispy southern veil." \
 },
 
 {"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 250, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Veil", \
- "desc" :  "A southern veil made of coins threaded togther" \
+ "desc" :  "A southern veil made of coins threaded togther." \
 },
 {"name" : "southern_earings"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Earings", \
- "desc" :  "Delicate southern metal earings" \
+ "desc" :  "Delicate southern metal earings." \
 },
 
 
 
 {"name" : "southern_headress_coin"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Headress", \
- "desc" :  "A southern headress of coins strung together" \
+ "desc" :  "A southern headress of coins strung together." \
 },
 
 
@@ -1316,7 +1316,7 @@ layers = [
 # },
 {"name" : "nun_habit"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 30, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Nun Habit", \
- "desc" :  "A characteristic head covering of the convent" \
+ "desc" :  "A characteristic head covering of the convent." \
 },
 # {"name" : "nach_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 #  "title" :  "Nacho Helm", \
@@ -1332,62 +1332,62 @@ layers = [
 # },
 {"name" : "warlock_hood"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Warlock Hood", \
- "desc" :  "Warlock Hood" \
+ "desc" :  "Warlock Hood." \
 },
 {"name" : "goblin_bones"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Bones", \
- "desc" :  "Skull ornament used by greenskin shamans" \
+ "desc" :  "Skull ornament used by greenskin shamans." \
 },
 {"name" : "ancient_priest_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Lich Crown", \
- "desc" :  "Cermonial crown of an ancient Lich Priests" \
+ "desc" :  "Cermonial crown of an ancient Lich Priests." \
 },
 {"name" : "fencerhat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 125, "con" : 20, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
 "title" :  "Fencer Hat", \
-"desc" :  "The floppy hat of a swordsman" \
+"desc" :  "The floppy hat of a swordsman." \
 },
 
 {"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 800, "con" : 25, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crown", \
- "desc" :  "A tall crown of a long dead civilisation" \
+ "desc" :  "A tall crown of a long dead civilisation." \
 },
 {"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 250, "con" : 25, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crested Crown", \
- "desc" :  "A crested crown of a long dead civilisation" \
+ "desc" :  "A crested crown of a long dead civilisation." \
 },
 
 
 {"name" : "back_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Crest", \
- "desc" :  "A huge crest of feathers arrayed behind a helm" \
+ "desc" :  "A huge crest of feathers arrayed behind a helm." \
 },
 {"name" : "back_feathers"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Feathers", \
- "desc" :  "A set of feathers displayed behind a helm" \
+ "desc" :  "A set of feathers displayed behind a helm." \
 },
 {"name" : "feather_crest"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 5, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Feather Crest", \
- "desc" :  "A fan of feathers displayed behind a helm" \
+ "desc" :  "A fan of feathers displayed behind a helm." \
 },
 {"name" : "knotted_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 4, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Knotted Tail", \
- "desc" :  "A knotted pony tail, used as a sign of prowess in foreign lands" \
+ "desc" :  "A knotted pony tail, used as a sign of prowess in foreign lands." \
 },
 {"name" : "orc_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 2, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Orc Tail", \
- "desc" :  "A knotted tail of hair used as decoration by an orc, there is still a scalp attached" \
+ "desc" :  "A knotted tail of hair used as decoration by an orc, there is still a scalp attached." \
 },
 {"name" : "top_plume"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 1, "value" : 20, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Top Plume", \
- "desc" :  "Top Plume" \
+ "desc" :  "Top Plume." \
 },
 {"name" : "wings"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 6, "value" : 10, "con" : 1, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Wings", \
- "desc" :  "A set of feathers arrayed on supports to form wings" \
+ "desc" :  "A set of feathers arrayed on supports to form wings." \
 },
 {"name" : "goblin_tail"                     , "layer" : "vanity", "lowervanity" : True, "min" : 1, "max" : 1, "value" : 20, "con" : 2, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Goblin Tail", \
- "desc" :  "A knotted tail of hair used as decoration by an goblin" \
+ "desc" :  "A knotted tail of hair used as decoration by an goblin." \
 }
 ]
 
