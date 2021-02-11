@@ -168,6 +168,7 @@ enemies = r"""
   <sprite id="demon_alp_wounds" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\demon_alp_wounds.png" left="-32" right="50" top="-47" bottom="23" />
 
 
+
   <sprite id="bust_demonalp_01_injured" offsetY="35" ic="FF242636" width="174" height="214" img="entity\beasts\bust_demonalp_01_injured.png" left="-39" right="53" top="-45" bottom="51" />
   <sprite id="bust_demonalp_body_01" offsetY="35" ic="FF697792" width="174" height="214" img="entity\beasts\bust_demonalp_body_01.png" left="-50" right="48" top="-55" bottom="23" />
   <sprite id="bust_demonalp_body_01_dead" offsetY="20" f="6403" ic="FF515C75" width="169" height="139" img="entity\beasts\bust_demonalp_body_01_dead.png" left="-72" right="80" top="-61" bottom="39" />
