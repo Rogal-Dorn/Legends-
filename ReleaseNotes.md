@@ -4984,3 +4984,8 @@ Reduced the number of armor brushes - hopefully helps some of the lower end gfx 
 
 **Download**
 https://drive.google.com/file/d/1UBglJMURv54uh59C2VKrjYWuKNZJ3rIX/view?usp=sharing
+
+15.0.1.3
+
+**Changes**
+Vala recruitment event now works again
