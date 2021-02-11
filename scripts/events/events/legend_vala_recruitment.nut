@@ -95,10 +95,10 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			return;
-		}
+		// if (!this.LegendsMod.Configs().LegendMagicEnabled())
+		// {
+		// 	return;
+		// }
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
