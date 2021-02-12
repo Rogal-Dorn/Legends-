@@ -21,5 +21,9 @@ this.paint_red_blueprint_dye <- this.inherit("scripts/crafting/blueprint", {
 		_stash.add(this.new("scripts/items/misc/paint_red_item"));
 	}
 
+	function isQualified()
+	{
+		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+	}
 });
 

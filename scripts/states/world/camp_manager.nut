@@ -315,6 +315,11 @@ this.camp_manager <- {
 
 				i = ++i;
 			}
+
+			if (_in.getMetaData().getVersion() < 65)
+			{
+				this.addBuilding(this.new("scripts/entity/world/camp/buildings/painter_building"));
+			}
 		}
 
 		_in.readBool();

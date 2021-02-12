@@ -101,7 +101,7 @@ CampScreenMainDialogModule.prototype.createDIV = function (_parentDiv)
         self.notifyBackendLeaveButtonPressed();
     }, '', 1);
 
-	
+
     this.mIsVisible = false;
 };
 
@@ -111,7 +111,7 @@ CampScreenMainDialogModule.prototype.destroyDIV = function ()
 
 	this.mLeaveButton.remove();
 	this.mLeaveButton = null;
-	
+
 	this.mCampButton.remove();
 	this.mCampButton = null;
 
@@ -297,7 +297,7 @@ CampScreenMainDialogModule.prototype.loadFromData = function (_data)
 
     if ('Background' in _data && _data['Background'] !== null && _data['Background'] != '')
     {
-		
+
 		content.createImage(Path.GFX + _data['Background'], null, null, 'display-block background');
     }
 
@@ -357,7 +357,7 @@ CampScreenMainDialogModule.prototype.createSlot = function (_data, _i, _content)
 	{
 		return;
 	}
-	
+
 	var self = this;
 	var isUsable = 'CanEnter' in _data && _data.CanEnter == true;
 	var slot_placeholder = null;
@@ -377,7 +377,7 @@ CampScreenMainDialogModule.prototype.createSlot = function (_data, _i, _content)
 	slot.bindTooltip({ contentType: 'ui-element', elementId: _data.Tooltip });
 
 	if(isUsable)
-	{	
+	{
 		slot.click(function(_event)
 		{
 			self.mParent.notifyBackendSlotClicked(_data.Tooltip);

@@ -41,11 +41,11 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 					if (value != null)
 					{
 						bodyarmorfinal[key] <- {
-							Link = this.IO.scriptFilenameByHash(value.ClassNameHash), 
+							Link = this.IO.scriptFilenameByHash(value.ClassNameHash),
 							ID = value.m.ID,
-							Value = 50 + value.m.Value/100, 
-							Variant = value.m.Variant, 
-							Variants = this.Math.max(value.m.Variants.len(), 1), 
+							Value = this.Math.max(120, value.m.Value * 0.50),
+							Variant = value.m.Variant,
+							Variants = this.Math.max(value.m.Variants.len(), 1),
 							Icon = value.m.Icon,
 							IconLarge = (value == bodyarmorbase) ? value.m.IconLarge : value.m.OverlayIconLarge
 						};
@@ -65,6 +65,10 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 				};
 			}
 			local helmetbase = b.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+			if (helmetbase != null && helmetbase.getID() == "armor.head.fangshire")
+			{
+				helmetbase = null
+			}
 			local helmet = null;
 			local helmetfinal = {};
 			if (helmetbase != null && this.LegendsMod.Configs().LegendArmorsEnabled())
@@ -81,11 +85,11 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 					if (value != null)
 					{
 						helmetfinal[key] <- {
-							Link = this.IO.scriptFilenameByHash(value.ClassNameHash), 
+							Link = this.IO.scriptFilenameByHash(value.ClassNameHash),
 							ID = value.m.ID,
-							Value = 50 + value.m.Value/100, 
-							Variant = value.m.Variant, 
-							Variants = this.Math.max(value.m.Variants.len(), 1), 
+							Value = this.Math.max(120, value.m.Value * 0.50),
+							Variant = value.m.Variant,
+							Variants = this.Math.max(value.m.Variants.len(), 1),
 							Icon = value.m.Icon,
 							IconLarge = value.m.IconLarge
 						};
@@ -109,11 +113,11 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 			{
 				local shielditem = b.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 				shield.Shield <- {
-					Link = this.IO.scriptFilenameByHash(shielditem.ClassNameHash), 
+					Link = this.IO.scriptFilenameByHash(shielditem.ClassNameHash),
 					ID = shielditem.m.ID,
-					Value = 50 + shielditem.m.Value/100, 
-					Variant = shielditem.m.Variant, 
-					Variants = this.Math.max(shielditem.m.Variants.len(), 1), 
+					Value = this.Math.max(120, shielditem.m.Value * 0.50),
+					Variant = shielditem.m.Variant,
+					Variants = this.Math.max(shielditem.m.Variants.len(), 1),
 					Icon = shielditem.m.IconLarge,
 					IconLarge = shielditem.m.IconLarge
 				};
@@ -123,7 +127,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 			}
 			else
 			{shield.Shield <- null;}
-			
+
 			local e = {
 				ID = b.getID(),
 				Name = b.getName(),
@@ -165,7 +169,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 		while (itemdelegate != null)
 		{
 			if (itemdelegate.ClassName == "legend_armor_upgrade") {isbodyarmorupgrade = true; break;}
-			else 
+			else
 			{
 				if ("SuperName" in itemdelegate) {itemdelegate = itemdelegate[itemdelegate.SuperName]}
 				else {break}
@@ -186,7 +190,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 			};
 		}
 	}
-	
+
 	function onChangeAppearance( _result )
 	{
 		local result = null;
@@ -244,7 +248,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 					}
 					helmetbase.updateAppearance();
 				}
-				
+
 				local shield = b.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 				if (shield != null)
 				{
@@ -266,20 +270,20 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 						}
 					}
 				}
-				
+
 				this.World.Assets.addMoney(-_result.Cost);
 				//b.getSkills().update();
 				result = this.queryRosterInformation();
-				
+
 				break;
 			}
 		};
 		return result;
 	}
-	
+
 	function PrintFrontEndReport( _result )
 	{
-		this.logDebug(_result); 
+		this.logDebug(_result);
 		//  SQ.call(this.mSQHandle, 'PrintFrontEndReport', "oilala");
 		//  SQ.call(self.mSQHandle, 'PrintFrontEndReport', "oilala");
 	}
