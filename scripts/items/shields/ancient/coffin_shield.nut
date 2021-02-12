@@ -8,7 +8,13 @@ this.coffin_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "An octagonal shield made of wood and reinforced with bronze. Time has taken its toll and the wood has become brittle.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 4);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 100;
 		this.m.MeleeDefense = 15;

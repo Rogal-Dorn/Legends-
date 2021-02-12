@@ -8,7 +8,14 @@ this.worn_heater_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "A rotten triangular wooden shield covered with leather, canvas and moss.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 5);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 150;
 		this.m.MeleeDefense = 20;

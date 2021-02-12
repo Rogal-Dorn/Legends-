@@ -8,7 +8,11 @@ this.goblin_light_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "A wooden shield made by goblins. Light but also small, offering little protection against attacks for a human using it.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variants = [
+			1,
+			2
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 45;
 		this.m.MeleeDefense = 10;

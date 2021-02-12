@@ -10,7 +10,11 @@ this.faction_kite_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "An elongated wooden shield covered in leather that offers good protection also to the lower body. Somewhat bulky to handle in close combat engagements.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variants = [
+			1,
+			2
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 200;
 		this.m.MeleeDefense = 15;

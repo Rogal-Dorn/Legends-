@@ -9,7 +9,12 @@ this.metal_round_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
 		this.m.SoundOnHit = this.Const.Sound.ShieldHitMetal;
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variants = [
+			1,
+			2,
+			3
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 250;
 		this.m.MeleeDefense = 18;

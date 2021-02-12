@@ -8,7 +8,51 @@ this.kite_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "An elongated wooden shield covered in leather that offers good protection also to the lower body. Somewhat bulky to handle in close combat engagements.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(0, 9);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+/* 			10,
+			11, */
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			21,
+			22,
+			23,
+			24,
+			25,
+			26,
+			27,
+			28,
+			29,
+			30,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			41,
+			42
+		];
+		this.m.Variant = this.Math.rand(0, 9); //random one is only 1-9 though
 		this.updateVariant();
 		this.m.Value = 200;
 		this.m.MeleeDefense = 15;
@@ -37,7 +81,7 @@ this.kite_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function onPaintSpecificColor( _color )
 	{
-		this.setVariant( _color );
+		this.setVariant(_color);
 		this.updateAppearance();
 	}
 

@@ -1,5 +1,4 @@
 local gt = this.getroottable();
-
 gt.Const.World.CampBuildings <- {
 	Commander = "camp.commander",
 	Barber = "camp.barber",
@@ -13,9 +12,9 @@ gt.Const.World.CampBuildings <- {
 	Rest = "camp.rest",
 	Scout = "camp.scout",
 	Training = "camp.training",
-	Workshop = "camp.workshop"
-}
-
+	Workshop = "camp.workshop",
+	Painter = "camp.painter" //PaintingTent
+};
 gt.Const.World.TerrainCampImages <- [
 	{},
 	{
@@ -98,3 +97,4 @@ gt.Const.World.TerrainCampImages <- [
 		Mood = "ui/settlements/mood_steppe"
 	}
 ];
+

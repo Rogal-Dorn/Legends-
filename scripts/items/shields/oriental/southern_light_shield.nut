@@ -8,7 +8,12 @@ this.southern_light_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "A light wooden shield with a metal frame, covered in leather. Offers good protection against ranged attacks due to its size, but is not very sturdy.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variants = [
+			1,
+			2,
+			3
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 100;
 		this.m.MeleeDefense = 15;

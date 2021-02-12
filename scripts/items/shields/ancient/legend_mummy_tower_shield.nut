@@ -8,7 +8,14 @@ this.legend_mummy_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "A tall and heavy southern tower shield that offers good protection, but is very bulky to handle.";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 5);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 800;
 		this.m.MeleeDefense = 25;

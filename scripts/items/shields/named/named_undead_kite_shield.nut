@@ -3,7 +3,12 @@ this.named_undead_kite_shield <- this.inherit("scripts/items/shields/named/named
 	function create()
 	{
 		this.named_shield.create();
-		this.m.Variant = this.Math.rand(1, 3);
+		this.m.Variants = [
+			1,
+			2,
+			3
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ID = "shield.named_undead_kite_shield";
 		this.m.NameList = this.Const.Strings.ShieldNames;

@@ -11,7 +11,11 @@ this.named_sipar_shield <- this.inherit("scripts/items/shields/named/named_shiel
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
 		this.m.SoundOnHit = this.Const.Sound.ShieldHitMetal;
-		this.m.Variant = this.Math.rand(1, 2);
+		this.m.Variants = [
+			1,
+			2
+		];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.Value = 1500;
 		this.m.MeleeDefense = 18;

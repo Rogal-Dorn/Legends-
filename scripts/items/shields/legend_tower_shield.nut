@@ -8,7 +8,51 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Description = "A large square shield that offers excellent protection for yourself and others, very heavy and hard to maneuver";
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
-		this.m.Variant = this.Math.rand(1, 21);
+		this.m.Variants = [
+			1,
+			2,
+			3,
+			4,
+			5,
+			6,
+			7,
+			8,
+			9,
+			10,
+			11,
+			12,
+			13,
+			14,
+			15,
+			16,
+			17,
+			18,
+			19,
+			20,
+			21,
+			22,
+			23,
+			24,
+			25,
+			26,
+			27,
+			28,
+			29,
+			30,
+			31,
+			32,
+			33,
+			34,
+			35,
+			36,
+			37,
+			38,
+			39,
+			40,
+			41,
+			42
+		];
+		this.m.Variant = this.Math.rand(1, 21); //random one is only 1-21 though
 		this.updateVariant();
 		this.m.Value = 1000;
 		this.m.MeleeDefense = 25;
@@ -38,7 +82,7 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 
 	function onPaintSpecificColor( _color )
 	{
-		this.setVariant( _color );
+		this.setVariant(_color);
 		this.updateAppearance();
 	}
 

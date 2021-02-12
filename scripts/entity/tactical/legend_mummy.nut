@@ -447,7 +447,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.BloodColor = body.Color;
 		this.m.BloodSaturation = body.Saturation;
-		this.addSprite("body_injury").setBrush("bust_skeleton_body_injured");
+		//this.addSprite("body_injury").setBrush("bust_skeleton_body_injured");
 		this.addSprite("armor");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");

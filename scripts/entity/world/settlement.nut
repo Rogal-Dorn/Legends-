@@ -51,8 +51,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		IsActive = true,
 		IsUpgrading = false
 	},
-
-	function setUpgrading (_v)
+	function setUpgrading( _v )
 	{
 		this.m.IsUpgrading = _v;
 	}
@@ -62,34 +61,37 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return this.m.IsUpgrading;
 	}
 
-	function setSize(_v)
+	function setSize( _v )
 	{
 		this.m.Size = _v;
+
 		if (this.m.Name == "")
 		{
 			this.m.Name = this.getRandomName(this.m.Names[_v - 1]);
+
 			if (this.hasLabel("name"))
 			{
 				this.getLabel("name").Text = this.m.Name;
 			}
 		}
-		this.updateSprites()
+
+		this.updateSprites();
 	}
 
-	function changeSize(_v)
+	function changeSize( _v )
 	{
 		this.setUpgrading(false);
 		_v = this.Math.max(1, _v);
 		this.setSize(this.Math.min(3, _v));
-		//this.setActive(true, false, true);
 	}
 
 	function getDraftList()
 	{
 		local L = clone this.m.DraftList;
+
 		if (this.LegendsMod.Configs().LegendGenderEnabled())
 		{
-			L.extend(this.m.FemaleDraftList)
+			L.extend(this.m.FemaleDraftList);
 		}
 
 		return L;
@@ -338,7 +340,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				type = "description",
 				text = this.getDescription()
 			}
-		]
+		];
 
 		if (this.m.IsVisited && this.isUpgrading())
 		{
@@ -417,6 +419,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					text = "Has current event: " + s.getName()
 				});
 			}
+
 			this.World.State.setDistantVisionBonus(false);
 		}
 
@@ -438,8 +441,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-
-		if (this.Const.LegendMod.DebugMode || (this.m.IsVisited && this.LegendsMod.Configs().LegendWorldEconomyEnabled()))
+		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			ret.push({
 				id = 6,
@@ -457,27 +459,30 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (this.isMilitary())
 		{
-			baseLevel += 50.0;
+			baseLevel = baseLevel + 50.0;
 		}
 
 		if (this.isKindOf(this, "city_state"))
 		{
-			baseLevel += 100;
+			baseLevel = baseLevel + 100;
 		}
 
-		switch (this.getSize())
+		switch(this.getSize())
 		{
-			case 1:
-				baseLevel += 100.0;
-				break;
-			case 2:
-				baseLevel += 150.0;
-				break;
-			case 3:
-				baseLevel += 200.0;
-				break;
+		case 1:
+			baseLevel = baseLevel + 100.0;
+			break;
+
+		case 2:
+			baseLevel = baseLevel + 150.0;
+			break;
+
+		case 3:
+			baseLevel = baseLevel + 200.0;
+			break;
 		}
-		return this.Math.round(100.0 * ((1.0 * this.getResources()) / baseLevel));
+
+		return this.Math.round(100.0 * (1.0 * this.getResources() / baseLevel));
 	}
 
 	function getImagePath()
@@ -488,17 +493,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getSpriteName()
 	{
 		local s = this.m.Sprite;
+
 		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
+
 		if (this.isUpgrading())
 		{
-			s += "_upgrade"
+			s = s + "_upgrade";
 		}
-		return s
-	}
 
+		return s;
+	}
 
 	function getUIContractInformation()
 	{
@@ -592,7 +599,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getLighting()
 	{
-		return this.m.Lighting
+		return this.m.Lighting;
 	}
 
 	function getUIInformation()
@@ -845,11 +852,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function addImportedProduce( _p )
 	{
-		// if (this.m.ProduceImported.len() >= 6)
-		// {
-		// 	this.m.ProduceImported.remove(0);
-		// }
-
 		this.m.ProduceImported.push(_p);
 	}
 
@@ -882,6 +884,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local p = this.getPriceMult() * this.World.Assets.getBuyPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
+
 		if (r < 50)
 		{
 			p = p + (50.0 - r) * 0.006;
@@ -893,20 +896,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local barterMult = this.World.State.getPlayer().getBarterMult();
 
-		if ((this.m.Modifiers.BuyPriceMult - barterMult) >= 0.01)
+		if (this.m.Modifiers.BuyPriceMult - barterMult >= 0.01)
 		{
-		p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
+			p = p * (this.m.Modifiers.BuyPriceMult - barterMult);
 		}
 
-		// this.logInfo("final buy price is " + p + " multiplier");
 		return p;
 	}
 
 	function getSellPriceMult()
 	{
-
 		local p = this.getPriceMult() * this.World.Assets.getSellPriceMult();
 		local r = this.World.FactionManager.getFaction(this.m.Factions[0]).getPlayerRelation();
+
 		if (r < 50)
 		{
 			p = p - (50.0 - r) * 0.006;
@@ -917,9 +919,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local barterMult = this.World.State.getPlayer().getBarterMult();
-
 		p = p * (this.m.Modifiers.SellPriceMult + barterMult);
-
 		return p;
 	}
 
@@ -1130,12 +1130,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function hasFreeBuildingSlot()
 	{
-		for( local i = 0; i < this.m.Buildings.len(); i = ++i )
+		for( local i = 0; i < this.m.Buildings.len(); i = i )
 		{
 			if (this.m.Buildings[i] == null)
 			{
 				return true;
 			}
+
+			i = ++i;
 		}
 
 		return false;
@@ -1153,12 +1155,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			local candidates = [];
 
-			for( local i = 0; i < this.m.Buildings.len(); i = ++i )
+			for( local i = 0; i < this.m.Buildings.len(); i = i )
 			{
 				if (this.m.Buildings[i] == null)
 				{
 					candidates.push(i);
 				}
+
+				i = ++i;
 			}
 
 			if (candidates.len() != 0)
@@ -1218,7 +1222,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return null;
 	}
 
-	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false)
+	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
 	{
 		_num = this.Math.min(_num, this.getAttachedLocationsMax() - this.m.AttachedLocations.len());
 
@@ -1230,6 +1234,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local tries = 0;
 		local myTile = this.getTile();
 		local entity;
+
 		while (_num > 0 && tries++ < 1000)
 		{
 			local x = this.Math.rand(myTile.SquareCoords.X - 2 - _additionalDistance, myTile.SquareCoords.X + 2 + _additionalDistance);
@@ -1269,7 +1274,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					}
 					else
 					{
-						for( local i = 0; i < 6; i = ++i )
+						for( local i = 0; i < 6; i = i )
 						{
 							if (!tile.hasNextTile(i))
 							{
@@ -1305,6 +1310,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 									}
 								}
 							}
+
+							i = ++i;
 						}
 					}
 
@@ -1348,6 +1355,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				this.m.AttachedLocations.push(entity);
 				_num = --_num;
+				_num = _num;
 				tries = 0;
 
 				if (entity.isUsable() && !entity.isMilitary() && this.Math.rand(1, 100) <= 8)
@@ -1433,7 +1441,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return name;
 	}
 
-	function build( _settings = null)
+	function build( _settings = null )
 	{
 		if (this.m.IsCoastal && (this.m.Buildings[3] == null || this.m.Buildings[3].getID() != "building.port"))
 		{
@@ -1441,7 +1449,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.UIBackgroundLeft = "ui/settlements/water_01";
 		}
 
-		this.onBuild( _settings );
+		this.onBuild(_settings);
 
 		if (this.m.Size <= 1)
 		{
@@ -1472,7 +1480,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			local candidates = [];
 			local poorCandidates = [];
 
-			for( local i = 0; i < 6; i = ++i )
+			for( local i = 0; i < 6; i = i )
 			{
 				if (!tile.hasNextTile(i))
 				{
@@ -1493,11 +1501,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 						poorCandidates.push(nextTile);
 					}
 				}
+
+				i = ++i;
 			}
 
 			local houses = this.Math.min(this.Math.rand(this.getHousesMin(), this.getHousesMax()), candidates.len() + poorCandidates.len());
 
-			for( local c; houses != 0; houses = --houses )
+			for( local c; houses != 0; houses = houses )
 			{
 				local c = candidates.len() != 0 ? candidates : poorCandidates;
 				local i = this.Math.rand(0, c.len() - 1);
@@ -1512,6 +1522,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				local d = c[i].spawnDetail("world_houses_0" + this.getHousesType() + "_0" + v, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
 				d.Scale = 0.85;
 				c.remove(i);
+				houses = --houses;
 			}
 		}
 	}
@@ -1603,14 +1614,21 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local roster = this.World.getRoster(this.getID());
 		local allbros = roster.getAll();
 		local current = [];
-		for (local i = 0; i < allbros.len(); i = ++i)
+
+		for( local i = 0; i < allbros.len(); i = i )
 		{
 			if (allbros[i].isStabled())
 			{
-				continue;
+				continue
 			}
-			current.push(allbros[i]);
+			else
+			{
+				current.push(allbros[i]);
+			}
+
+			i = ++i;
 		}
+
 		local iterations = this.Math.max(1, daysPassed / 2);
 		local activeLocations = 0;
 
@@ -1619,6 +1637,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (loc.isActive())
 			{
 				activeLocations = ++activeLocations;
+				activeLocations = activeLocations;
 			}
 		}
 
@@ -1644,7 +1663,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (iterations < 7)
 		{
-			for( local i = 0; i < iterations; i = ++i )
+			for( local i = 0; i < iterations; i = i )
 			{
 				for( local maxRecruits = this.Math.rand(this.Math.max(0, rosterMax / 2 - 1), rosterMax - 1); current.len() > maxRecruits;  )
 				{
@@ -1652,22 +1671,26 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					roster.remove(current[n]);
 					current.remove(n);
 				}
+
+				i = ++i;
 			}
 		}
 		else
 		{
-			for (local i = 0; i < current.len(); i = ++i)
+			for( local i = 0; i < current.len(); i = i )
 			{
 				roster.remove(current[i]);
+				i = ++i;
 			}
+
 			current = [];
 		}
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-
 		local gender = this.LegendsMod.Configs().LegendGenderEnabled();
+
 		foreach( loc in this.m.AttachedLocations )
 		{
 			loc.onUpdateDraftList(draftList, gender);
@@ -1695,8 +1718,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			current.push(bro);
 		}
 
-		this.updateStables( _force )
-
+		this.updateStables(_force);
 		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
 	}
 
@@ -1724,13 +1746,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local roster = this.World.getRoster(this.getID());
 		local allbros = roster.getAll();
 		local current = [];
-		for (local i = 0; i < allbros.len(); i = ++i)
+
+		for( local i = 0; i < allbros.len(); i = i )
 		{
 			if (!allbros[i].isStabled())
 			{
-				continue;
 			}
-			current.push(allbros[i]);
+			else
+			{
+				current.push(allbros[i]);
+			}
+
+			i = ++i;
 		}
 
 		local iterations = this.Math.max(1, daysPassed / 2);
@@ -1741,6 +1768,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			if (loc.isActive())
 			{
 				activeLocations = ++activeLocations;
+				activeLocations = activeLocations;
 			}
 		}
 
@@ -1764,7 +1792,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (iterations < 5)
 		{
-			for( local i = 0; i < iterations; i = ++i )
+			for( local i = 0; i < iterations; i = i )
 			{
 				for( local maxRecruits = this.Math.rand(this.Math.max(0, rosterMax / 2 - 1), rosterMax - 1); current.len() > maxRecruits;  )
 				{
@@ -1772,17 +1800,23 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					roster.remove(current[n]);
 					current.remove(n);
 				}
+
+				i = ++i;
 			}
 		}
 		else
 		{
-			for (local i = 0; i < current.len(); i = ++i)
+			for( local i = 0; i < current.len(); i = i )
 			{
 				if (current[i].isStabled())
 				{
-					continue;
 				}
-				current = [];
+				else
+				{
+					current = [];
+				}
+
+				i = ++i;
 			}
 		}
 
@@ -1809,9 +1843,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
-
-		//TODO this currently being used to disable any horses from being added to the game.
-		draftList = ["legend_donkey"];
+		draftList = [
+			"legend_donkey"
+		];
 
 		while (maxRecruits > current.len())
 		{
@@ -1881,15 +1915,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (building != null)
 			{
-				// if (this.LegendsMod.Configs().LegendArmorsEnabled())
-				// {
-				// 	building.onUpdateShopList();
-				// }
-				// else
-				// {
-				// 	building.onUpdateShopList();
-				// }
 				building.onUpdateShopList();
+
 				if (building.getStash() != null)
 				{
 					foreach( s in this.m.Situations )
@@ -1950,7 +1977,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.m.IsCoastal = false;
 
-		for( local i = 0; i < 6; i = ++i )
+		for( local i = 0; i < 6; i = i )
 		{
 			if (!myTile.hasNextTile(i))
 			{
@@ -1960,6 +1987,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				this.m.IsCoastal = true;
 				break;
 			}
+
+			i = ++i;
 		}
 
 		if (this.m.IsCoastal)
@@ -2006,9 +2035,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Ship;
 		local tiles = [];
 
-		for( local x = _minX; x < _maxX; x = ++x )
+		for( local x = _minX; x < _maxX; x = x )
 		{
-			for( local y = _minY; y < _maxY; y = ++y )
+			for( local y = _minY; y < _maxY; y = y )
 			{
 				if (!this.World.isValidTileSquare(x, y))
 				{
@@ -2024,13 +2053,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					{
 						local isDeepSea = true;
 
-						for( local i = 0; i != 6; i = ++i )
+						for( local i = 0; i != 6; i = i )
 						{
 							if (tile.hasNextTile(i) && tile.getNextTile(i).Type != this.Const.World.TerrainType.Ocean)
 							{
 								isDeepSea = false;
 								break;
 							}
+
+							i = ++i;
 						}
 
 						if (!isDeepSea)
@@ -2042,7 +2073,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 						}
 					}
 				}
+
+				y = ++y;
 			}
+
+			x = ++x;
 		}
 
 		while (tiles.len() != 0)
@@ -2076,7 +2111,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
-	function updateSprites(_burn = true)
+	function updateSprites( _burn = true )
 	{
 		if (this.m.IsActive)
 		{
@@ -2090,7 +2125,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				local tile = this.World.getTileSquare(h.X, h.Y);
 				tile.clear(this.Const.World.DetailType.Houses);
 				local d = tile.spawnDetail("world_houses_0" + this.getHousesType() + "_0" + h.V, this.Const.World.ZLevel.Object - 3, this.Const.World.DetailType.Houses);
-				if (d == null) continue;
+
+				if (d == null)
+				{
+					continue;
+				}
+
 				d.Scale = 0.85;
 			}
 		}
@@ -2129,7 +2169,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
-	function setActive( _a, _burn = true)
+	function setActive( _a, _burn = true )
 	{
 		if (_a == this.m.IsActive)
 		{
@@ -2137,7 +2177,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.m.IsActive = _a;
-		this.updateSprites(_burn)
+		this.updateSprites(_burn);
 	}
 
 	function destroy()
@@ -2271,16 +2311,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				local smoke = this.Const.World.SmokeParticles;
 
-				for( local i = 0; i < smoke.len(); i = ++i )
+				for( local i = 0; i < smoke.len(); i = i )
 				{
 					this.World.spawnParticleEffect(smoke[i].Brushes, smoke[i].Delay, smoke[i].Quantity, smoke[i].LifeTime, smoke[i].SpawnRate, smoke[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), this.Const.World.ZLevel.Particles);
+					i = ++i;
 				}
 
 				local fire = this.Const.World.FireParticles;
 
-				for( local i = 0; i < fire.len(); i = ++i )
+				for( local i = 0; i < fire.len(); i = i )
 				{
 					this.World.spawnParticleEffect(fire[i].Brushes, fire[i].Delay, fire[i].Quantity, fire[i].LifeTime, fire[i].SpawnRate, fire[i].Stages, this.createVec(this.getPos().X, this.getPos().Y - 30), this.Const.World.ZLevel.Particles - 3);
+					i = ++i;
 				}
 			}
 
@@ -2301,6 +2343,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				if (a.isActive() && a.isMilitary())
 				{
 					units = ++units;
+					units = units;
 				}
 			}
 
@@ -2316,7 +2359,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local terrain = [];
 		terrain.resize(this.Const.World.TerrainType.COUNT, 0);
 
-		for( local i = 0; i < 6; i = ++i )
+		for( local i = 0; i < 6; i = i )
 		{
 			if (!tile.hasNextTile(i))
 			{
@@ -2325,6 +2368,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				++terrain[tile.getNextTile(i).Type];
 			}
+
+			i = ++i;
 		}
 
 		terrain[this.Const.World.TerrainType.Plains] = this.Math.max(0, terrain[this.Const.World.TerrainType.Plains] - 1);
@@ -2341,7 +2386,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local highest = 0;
 
-		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = i )
 		{
 			if (i == this.Const.World.TerrainType.Ocean || i == this.Const.World.TerrainType.Shore)
 			{
@@ -2350,6 +2395,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				highest = i;
 			}
+
+			i = ++i;
 		}
 
 		this.m.UIBackground = this.Const.World.TerrainSettlementImages[highest].Background;
@@ -2380,6 +2427,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local eventID = "";
+
 		if (!this.World.Flags.get("HasLegendCampTraining") && this.hasBuilding("building.training_hall"))
 		{
 			eventID = "event.legend_camp_unlock_training";
@@ -2404,9 +2452,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			eventID = "event.legend_camp_unlock_hunt";
 		}
-		else if (!this.World.Flags.get("HasLegendCampScraping") &&  (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental")))
+		else if (!this.World.Flags.get("HasLegendCampScraping") && (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental")))
 		{
 			eventID = "event.legend_camp_unlock_scrap";
+		}
+		else if (!this.World.Flags.get("HasLegendCampPainter") && (this.hasAttachedLocation("attached_location.workshop") || this.hasBuilding("building.armorsmith") || this.hasBuilding("building.armorsmith_oriental"))) //PaintingTent
+		{
+			eventID = "event.legend_camp_unlock_painter";
 		}
 		else if (!this.World.Flags.get("HasLegendCampScouting") && (this.hasAttachedLocation("attached_location.wooden_watchtower") || this.hasAttachedLocation("attached_location.stone_watchtower") || this.hasAttachedLocation("attached_location.fortified_outpost")))
 		{
@@ -2437,45 +2489,48 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function isBuilding()
 	{
-		foreach (s in this.getSituations())
+		foreach( s in this.getSituations() )
 		{
-			switch (s.getID())
+			switch(s.getID())
 			{
-				case "situation.rebuilding_effort":
-				case "situation.legend_degrading_effort":
-				case "situation.legend_upgrading_effort":
-				case "situation.legend_upgrading_locations_effort":
-					return true;
+			case "situation.rebuilding_effort":
+			case "situation.legend_degrading_effort":
+			case "situation.legend_upgrading_effort":
+			case "situation.legend_upgrading_locations_effort":
+				return true;
 			}
 		}
-		return false
-	}
 
+		return false;
+	}
 
 	function getBaseResourceLevel()
 	{
 		local minResources = 50;
+
 		if (this.isMilitary())
 		{
-			minResources += 50;
+			minResources = minResources + 50;
 		}
 
 		if (this.isKindOf(this, "city_state"))
 		{
-			minResources += 100;
+			minResources = minResources + 100;
 		}
 
-		switch (this.m.Size)
+		switch(this.m.Size)
 		{
-			case 1:
-				minResources += 100;
-				break;
-			case 2:
-				minResources += 150;
-				break;
-			case 3:
-				minResources += 200;
-				break;
+		case 1:
+			minResources = minResources + 100;
+			break;
+
+		case 2:
+			minResources = minResources + 150;
+			break;
+
+		case 3:
+			minResources = minResources + 200;
+			break;
 		}
 
 		return minResources;
@@ -2511,7 +2566,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function canBuildLocation()
 	{
-
 		if (this.isUpgrading())
 		{
 			return false;
@@ -2540,7 +2594,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function canUpgradeLocations()
 	{
-
 		if (this.isUpgrading())
 		{
 			return false;
@@ -2569,33 +2622,38 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function numShips()
 	{
-		local f = this.World.FactionManager.getFaction(this.m.Factions[0])
+		local f = this.World.FactionManager.getFaction(this.m.Factions[0]);
+
 		if (f == null)
 		{
 			return 0;
 		}
+
 		local num = 0;
-		foreach (u in f.getUnits())
+
+		foreach( u in f.getUnits() )
 		{
 			if (u.m.Name != "Ship")
 			{
 				continue;
 			}
+
 			num++;
 		}
+
 		return num;
 	}
 
 	function getNewResources()
 	{
 		local resources = 0;
-		foreach (loc in this.getAttachedLocations())
+
+		foreach( loc in this.getAttachedLocations() )
 		{
-			resources += loc.getNewResources();
+			resources = resources + loc.getNewResources();
 		}
 
-		resources += this.m.HousesTiles.len();
-
+		resources = resources + this.m.HousesTiles.len();
 		return resources;
 	}
 
@@ -2681,13 +2739,13 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		_out.writeU8(this.m.HousesTiles.len());
 
-		for( local i = 0; i != this.m.HousesTiles.len(); i = ++i )
+		for( local i = 0; i != this.m.HousesTiles.len(); i = i )
 		{
 			_out.writeI16(this.m.HousesTiles[i].X);
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
+			i = ++i;
 		}
-
 	}
 
 	function onDeserialize( _in )
@@ -2695,7 +2753,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.location.onDeserialize(_in);
 		this.m.Size = _in.readU8();
 		this.m.IsUpgrading = _in.readBool();
-		this.m.IsActive = _in.readBool()
+		this.m.IsActive = _in.readBool();
 		this.m.IsCoastal = _in.readBool();
 
 		if (_in.getMetaData().getVersion() >= 52)
@@ -2705,16 +2763,20 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.m.LastShopUpdate = _in.readF32();
 		this.m.LastRosterUpdate = _in.readF32();
+
 		if (_in.getMetaData().getVersion() >= 58)
 		{
 			this.m.LastStablesUpdate = _in.readF32();
 		}
+
 		this.m.ShopSeed = _in.readI32();
 		this.m.RosterSeed = _in.readI32();
+
 		if (_in.getMetaData().getVersion() >= 58)
 		{
 			this.m.StablesSeed = _in.readI32();
 		}
+
 		local x = _in.readI16();
 		local y = _in.readI16();
 
@@ -2727,7 +2789,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.Buildings.resize(9, null);
 		local numBuildings = _in.readU8();
 
-		for( local i = 0; i < numBuildings; i = ++i )
+		for( local i = 0; i < numBuildings; i = i )
 		{
 			local id = _in.readU32();
 
@@ -2737,6 +2799,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				this.m.Buildings[i].setSettlement(this);
 				this.m.Buildings[i].onDeserialize(_in);
 			}
+
+			i = ++i;
 		}
 
 		if (this.m.IsCoastal && this.m.Buildings[3] != null && this.m.Buildings[3].getID() == "building.port")
@@ -2747,10 +2811,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local numSituations = _in.readU8();
 		this.m.Situations.resize(numSituations);
 
-		for( local i = 0; i < numSituations; i = ++i )
+		for( local i = 0; i < numSituations; i = i )
 		{
 			this.m.Situations[i] = this.new(this.IO.scriptFilenameByHash(_in.readU32()));
 			this.m.Situations[i].onDeserialize(_in);
+			i = ++i;
 		}
 
 		this.m.Modifiers.reset();
@@ -2762,28 +2827,31 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local numProduce = _in.readU8();
 
-		for( local i = 0; i != numProduce; i = ++i )
+		for( local i = 0; i != numProduce; i = i )
 		{
 			this.m.ProduceImported.push(_in.readString());
+			i = ++i;
 		}
 
 		local numConnectedTo = _in.readU8();
 
-		for( local i = 0; i != numConnectedTo; i = ++i )
+		for( local i = 0; i != numConnectedTo; i = i )
 		{
 			this.m.ConnectedTo.push(_in.readU32());
+			i = ++i;
 		}
 
 		local numConnectedToByRoads = _in.readU8();
 
-		for( local i = 0; i != numConnectedToByRoads; i = ++i )
+		for( local i = 0; i != numConnectedToByRoads; i = i )
 		{
 			this.m.ConnectedToByRoads.push(_in.readU32());
+			i = ++i;
 		}
 
 		local numHouses = _in.readU8();
 
-		for( local i = 0; i != numHouses; i = ++i )
+		for( local i = 0; i != numHouses; i = i )
 		{
 			local x = _in.readI16();
 			local y = _in.readI16();
@@ -2793,9 +2861,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Y = y,
 				V = v
 			});
+			i = ++i;
 		}
-		this.updateSprites();
 
+		this.updateSprites();
 	}
 
 });

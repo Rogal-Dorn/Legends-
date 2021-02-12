@@ -2,6 +2,7 @@ this.shield <- this.inherit("scripts/items/item", {
 	m = {
 		AddGenericSkill = true,
 		ShowOnCharacter = true,
+		Variants = [],
 		Sprite = "",
 		SpriteDamaged = "",
 		SoundOnDestroyed = this.Const.Sound.ShieldDestroyed,
@@ -69,20 +70,30 @@ this.shield <- this.inherit("scripts/items/item", {
 
 	function getIconOverlay()
 	{
-		if (this.isRuned()) {
-			return ["layers/glow_runed_icon.png"];
+		if (this.isRuned())
+		{
+			return [
+				"layers/glow_runed_icon.png"
+			];
 		}
-		return  [""];
 
+		return [
+			""
+		];
 	}
 
 	function getIconLargeOverlay()
 	{
-		if (this.isRuned()) {
-			return ["layers/glow_runed_inventory.png"];
+		if (this.isRuned())
+		{
+			return [
+				"layers/glow_runed_inventory.png"
+			];
 		}
-		return  [""];
 
+		return [
+			""
+		];
 	}
 
 	function getTooltip()
@@ -251,7 +262,7 @@ this.shield <- this.inherit("scripts/items/item", {
 				local ourTile = this.getContainer().getActor().getTile();
 				local candidates = [];
 
-				for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+				for( local i = 0; i < this.Const.Direction.COUNT; i = i )
 				{
 					if (!ourTile.hasNextTile(i))
 					{
@@ -265,6 +276,8 @@ this.shield <- this.inherit("scripts/items/item", {
 							candidates.push(tile);
 						}
 					}
+
+					i = ++i;
 				}
 
 				if (candidates.len() != 0)
@@ -287,8 +300,6 @@ this.shield <- this.inherit("scripts/items/item", {
 			local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
 			this.m.Container.unequip(this);
 			this.m.Condition = Condition;
-
-			// if (this.isItemType(this.Const.Items.ItemType.Legendary) || this.isItemType(this.Const.Items.ItemType.Named)) this.drop(actor.getTile());
 
 			if (isBlacksmithed)
 			{
@@ -452,6 +463,7 @@ this.shield <- this.inherit("scripts/items/item", {
 	{
 		this.item.onDeserialize(_in);
 		this.m.Condition = this.Math.minf(this.m.ConditionMax, this.m.Condition);
+
 		if (this.isRuned())
 		{
 			this.updateRuneSigil();
