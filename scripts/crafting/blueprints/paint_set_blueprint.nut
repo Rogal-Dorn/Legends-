@@ -29,5 +29,9 @@ this.paint_set_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		_stash.add(this.new("scripts/items/misc/paint_set_item"));
 	}
 
+	function isQualified()
+	{
+		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+	}
 });
 

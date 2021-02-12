@@ -21,5 +21,9 @@ this.paint_remover_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		_stash.add(this.new("scripts/items/misc/paint_remover_item"));
 	}
 
+	function isQualified()
+	{
+		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+	}
 });
 

@@ -165,7 +165,7 @@
 .camp-screen > .l-main-dialog-container .slot-craft {
     -webkit-transform: scale(-0.7, 0.7);
     position: absolute;
-    left: 5.0rem;
+    left: 7.0rem;
     top: 42.0rem;
 }
 
@@ -199,7 +199,7 @@
 .camp-screen > .l-main-dialog-container .slot-scrap {
 	-webkit-transform: scale(1.0, 1.0);
 	position: absolute;
-	left: 12.0rem;
+	left: 10.0rem;
 	top: 34.0rem;
 }
 
@@ -256,13 +256,15 @@
 		left: 45.0rem;
 		top: 23.0rem;
 	}
-	
+
 .camp-screen > .l-main-dialog-container .slot-painter {
     -webkit-transform: scale(0.7, 0.7);
     position: absolute;
-    left: 62.0rem;
-    top: 29.0rem;
+    left: -1.0rem;
+    top: 36.0rem;
 }
+
+
 
 .camp-screen > .l-main-dialog-container .slot-scout
 {
@@ -303,7 +305,7 @@
 
 .camp-screen > .l-main-dialog-container .is-negotiated
 {
-   
+
 }
 
 .camp-screen > .l-main-dialog-container .is-disabled
@@ -580,7 +582,7 @@
 
 .camp-screen > .l-barber-dialog-container .content .l-row .row.is-top
 {
-    top: 1.0rem;   
+    top: 1.0rem;
     height: 3.8rem;
 
     /*border-bottom: 1px rgba(130, 130, 130, 1) solid;*/

@@ -49,7 +49,7 @@ this.nomad_tents_location <- this.inherit("scripts/entity/world/location", {
 		], _lootTable);
 		this.dropTreasure(1, treasure, _lootTable);
 
-		if (this.Const.DLC.Unhold && this.Math.rand(1, 100) <= 10)
+		if (this.Const.DLC.Unhold && !this.LegendsMod.Configs().LegendArmorsEnabled() && this.Math.rand(1, 100) <= 10)
 		{
 			local treasure = [];
 			treasure.push("misc/paint_set_item");

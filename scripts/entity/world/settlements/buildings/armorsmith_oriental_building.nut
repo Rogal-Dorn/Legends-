@@ -174,7 +174,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		}
 
-		if (this.Const.DLC.Unhold)
+		if (this.Const.DLC.Unhold && !this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
 			list.push({
 				R = 60,

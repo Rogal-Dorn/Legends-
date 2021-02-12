@@ -25,5 +25,9 @@ this.paint_white_green_yellow_blueprint <- this.inherit("scripts/crafting/bluepr
 		_stash.add(this.new("scripts/items/misc/paint_white_green_yellow_item"));
 	}
 
+	function isQualified()
+	{
+		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+	}
 });
 

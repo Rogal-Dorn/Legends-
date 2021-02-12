@@ -25,5 +25,9 @@ this.paint_white_blue_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		_stash.add(this.new("scripts/items/misc/paint_white_blue_item"));
 	}
 
+	function isQualified()
+	{
+		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+	}
 });
 

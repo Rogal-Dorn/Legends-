@@ -271,7 +271,7 @@ this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlem
 			});
 		}
 
-		if (this.Const.DLC.Unhold && (this.m.Settlement.isMilitary() && this.m.Settlement.getSize() >= 3 || this.m.Settlement.getSize() >= 2))
+		if (this.Const.DLC.Unhold && !this.LegendsMod.Configs().LegendArmorsEnabled() && (this.m.Settlement.isMilitary() && this.m.Settlement.getSize() >= 3 || this.m.Settlement.getSize() >= 2))
 		{
 			list.push({
 				R = 65,

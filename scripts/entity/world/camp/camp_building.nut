@@ -13,6 +13,7 @@ this.camp_building <- {
 		UIImageNightFull = null,
 		Tooltip = null,
 		TooltipIcon = "",
+		TerrainLabel = "",
 		Sounds = [
 			{
 				File = "ambience/camp/camp_rest_campfire.wav",
@@ -290,7 +291,11 @@ this.camp_building <- {
 	function getUIImage( _terrain )
 	{
 		local terrainlabel = _terrain;
-		if (_terrain < 10)
+		if (this.m.TerrainLabel != "")
+		{
+			terrainlabel = this.m.TerrainLabel
+		}
+		else if (_terrain < 10)
 		{
 			terrainlabel = "0" + _terrain;
 		}
