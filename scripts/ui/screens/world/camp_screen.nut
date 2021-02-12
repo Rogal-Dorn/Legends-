@@ -9,6 +9,7 @@ this.camp_screen <- {
 		FletcherDialogModule = null,
 		HealerDialogModule = null,
 		HunterDialogModule = null,
+		PainterDialogModule = null,
 		RepairDialogModule = null,
 		RestDialogModule = null,
 		ScoutDialogModule = null,
@@ -23,8 +24,8 @@ this.camp_screen <- {
 		OnDisconnectedListener = null,
 		OnBrothersButtonPressedListener = null,
 		OnCommanderButtonPressedListener = null,
-		OnTentButtonPressedListener = null,			
-		OnModuleClosedListener = null
+		OnTentButtonPressedListener = null,
+		OnModuleClosedListener = null,
 		OnCampListener = null
 	},
 	function isVisible()
@@ -77,6 +78,11 @@ this.camp_screen <- {
 		return this.m.HunterDialogModule;
 	}
 
+	function getPainterDialogModule()
+	{
+		return this.m.PainterDialogModule;
+	}
+	
 	function getRepairDialogModule()
 	{
 		return this.m.RepairDialogModule;
@@ -148,7 +154,7 @@ this.camp_screen <- {
 		this.m.OnDisconnectedListener = null;
 		this.m.OnBrothersButtonPressedListener = null;
 		this.m.OnCommanderButtonPressedListener = null;
-		this.m.OnTentButtonPressedListener = null;		
+		this.m.OnTentButtonPressedListener = null;
 		this.m.OnModuleClosedListener = null;
 		this.m.OnCampListener = null;
 	}
@@ -175,13 +181,16 @@ this.camp_screen <- {
 		this.m.EnchanterDialogModule.connectUI(this.m.JSHandle);
 		this.m.FletcherDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_fletcher_dialog_module");
 		this.m.FletcherDialogModule.setParent(this);
-		this.m.FletcherDialogModule.connectUI(this.m.JSHandle);			
+		this.m.FletcherDialogModule.connectUI(this.m.JSHandle);
 		this.m.HealerDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_healer_dialog_module");
 		this.m.HealerDialogModule.setParent(this);
 		this.m.HealerDialogModule.connectUI(this.m.JSHandle);
 		this.m.HunterDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_hunter_dialog_module");
 		this.m.HunterDialogModule.setParent(this);
-		this.m.HunterDialogModule.connectUI(this.m.JSHandle);	
+		this.m.HunterDialogModule.connectUI(this.m.JSHandle);
+		this.m.PainterDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_painter_dialog_module");
+		this.m.PainterDialogModule.setParent(this);
+		this.m.PainterDialogModule.connectUI(this.m.JSHandle);
 		this.m.RepairDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_repair_dialog_module");
 		this.m.RepairDialogModule.setParent(this);
 		this.m.RepairDialogModule.connectUI(this.m.JSHandle);
@@ -199,7 +208,7 @@ this.camp_screen <- {
 		this.m.GathererDialogModule.connectUI(this.m.JSHandle);
 		this.m.WorkshopDialogModule = this.new("scripts/ui/screens/world/modules/camp_screen/camp_workshop_dialog_module");
 		this.m.WorkshopDialogModule.setParent(this);
-		this.m.WorkshopDialogModule.connectUI(this.m.JSHandle);		
+		this.m.WorkshopDialogModule.connectUI(this.m.JSHandle);
 	}
 
 	function destroy()
@@ -207,21 +216,20 @@ this.camp_screen <- {
 		this.clearEventListener();
 		this.m.MainDialogModule.destroy();
 		this.m.MainDialogModule = null;
-		
 		this.m.CommanderDialogModule.destroy();
 		this.m.BarberDialogModule.destroy();
 		this.m.CraftingDialogModule.destroy();
 		this.m.EnchanterDialogModule.destroy();
 		this.m.FletcherDialogModule.destroy();
 		this.m.HealerDialogModule.destroy();
-		this.m.HunterDialogModule.destroy();		
-		this.m.RepairDialogModule.destroy();	
+		this.m.HunterDialogModule.destroy();
+		this.m.PainterDialogModule.destroy();
+		this.m.RepairDialogModule.destroy();
 		this.m.RestDialogModule.destroy();
 		this.m.ScoutDialogModule.destroy();
 		this.m.TrainingDialogModule.destroy();
 		this.m.GathererDialogModule.destroy();
 		this.m.WorkshopDialogModule.destroy();
-		
 		this.m.CommanderDialogModule = null;
 		this.m.BarberDialogModule = null;
 		this.m.CraftingDialogModule = null;
@@ -229,13 +237,13 @@ this.camp_screen <- {
 		this.m.FletcherDialogModule = null;
 		this.m.HealerDialogModule = null;
 		this.m.HunterDialogModule = null;
+		this.m.PainterDialogModule = null;
 		this.m.RepairDialogModule = null;
 		this.m.RestDialogModule = null;
 		this.m.ScoutDialogModule = null;
 		this.m.TrainingDialogModule = null;
 		this.m.GathererDialogModule = null;
-		this.m.WorkshopDialogModule = null;		
-
+		this.m.WorkshopDialogModule = null;
 		this.m.JSHandle = this.UI.disconnect(this.m.JSHandle);
 	}
 
@@ -248,8 +256,9 @@ this.camp_screen <- {
 		this.m.EnchanterDialogModule.clear();
 		this.m.FletcherDialogModule.clear();
 		this.m.HealerDialogModule.clear();
-		this.m.HunterDialogModule.clear();		
-		this.m.RepairDialogModule.clear();	
+		this.m.HunterDialogModule.clear();
+		this.m.PainterDialogModule.clear();
+		this.m.RepairDialogModule.clear();
 		this.m.RestDialogModule.clear();
 		this.m.ScoutDialogModule.clear();
 		this.m.TrainingDialogModule.clear();
@@ -333,6 +342,10 @@ this.camp_screen <- {
 		{
 			this.showHunterDialog();
 		}
+		else if (this.m.LastActiveModule == this.m.PainterDialogModule)
+		{
+			this.showPainterDialog();
+		}
 		else if (this.m.LastActiveModule == this.m.RepairDialogModule)
 		{
 			this.showRepairDialog();
@@ -375,62 +388,66 @@ this.camp_screen <- {
 
 	function showTentBuildingDialog( _id )
 	{
-		switch (_id)
+		switch(_id)
 		{
-			case this.Const.World.CampBuildings.Commander:
+		case this.Const.World.CampBuildings.Commander:
 			this.showCommanderDialog();
-				break;
+			break;
 
-			case this.Const.World.CampBuildings.Barber:
-				this.showBarberDialog();
-				break;
+		case this.Const.World.CampBuildings.Barber:
+			this.showBarberDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Crafting:
-				this.showCraftingDialog();
-				break;
+		case this.Const.World.CampBuildings.Crafting:
+			this.showCraftingDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Enchanter:
-				this.showEnchanterDialog();
-				break;
+		case this.Const.World.CampBuildings.Enchanter:
+			this.showEnchanterDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Fletcher:
-				this.showFletcherDialog();
-				break;
+		case this.Const.World.CampBuildings.Fletcher:
+			this.showFletcherDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Gatherer:
-				this.showGathererDialog();
-				break;
+		case this.Const.World.CampBuildings.Gatherer:
+			this.showGathererDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Healer:
-				this.showHealerDialog();
-				break;
+		case this.Const.World.CampBuildings.Healer:
+			this.showHealerDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Hunter:
-				this.showHunterDialog();
-				break;
+		case this.Const.World.CampBuildings.Hunter:
+			this.showHunterDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Repair:
-				this.showRepairDialog();
-				break;
+		case this.Const.World.CampBuildings.Painter:
+			this.showPainterDialog();
+			break;
+			
+		case this.Const.World.CampBuildings.Repair:
+			this.showRepairDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Rest:
-				this.showRestDialog();
-				break;
+		case this.Const.World.CampBuildings.Rest:
+			this.showRestDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Scout:
-				this.showScoutDialog();
-				break;
+		case this.Const.World.CampBuildings.Scout:
+			this.showScoutDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Training:
-				this.showTrainingDialog();
-				break;
+		case this.Const.World.CampBuildings.Training:
+			this.showTrainingDialog();
+			break;
 
-			case this.Const.World.CampBuildings.Workshop:
-				this.showWorkshopDialog();
-				break;
+		case this.Const.World.CampBuildings.Workshop:
+			this.showWorkshopDialog();
+			break;
+			
 		}
-	}		
-
+	}
 
 	function showCommanderDialog()
 	{
@@ -440,7 +457,7 @@ this.camp_screen <- {
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("showCommanderDialog", this.m.CommanderDialogModule.queryLoad());
 		}
-	}		
+	}
 
 	function showBarberDialog()
 	{
@@ -502,6 +519,16 @@ this.camp_screen <- {
 		}
 	}
 
+	function showPainterDialog()
+	{
+		if (this.m.JSHandle != null && this.isVisible())
+		{
+			this.m.LastActiveModule = this.m.PainterDialogModule;
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("showPainterDialog", this.m.PainterDialogModule.queryRosterInformation());
+		}
+	}
+	
 	function showRepairDialog()
 	{
 		if (this.m.JSHandle != null && this.isVisible())
@@ -617,15 +644,15 @@ this.camp_screen <- {
 
 		if (this.m.OnCommanderButtonPressedListener == null)
 		{
-			return false
+			return false;
 		}
 
 		this.m.returnModule = this.m.LastActiveModule;
 		this.m.OnCommanderButtonPressedListener();
-		return true
+		return true;
 	}
 
-	function onShowTentBuilding ( _id )
+	function onShowTentBuilding( _id )
 	{
 		if (this.m.returnModule != null)
 		{
@@ -634,15 +661,14 @@ this.camp_screen <- {
 
 		if (this.m.OnTentButtonPressedListener == null)
 		{
-			return false
+			return false;
 		}
 
 		this.m.returnModule = this.m.LastActiveModule;
-		this.m.OnTentButtonPressedListener( _id );
-		return true
-		
+		this.m.OnTentButtonPressedListener(_id);
+		return true;
 	}
-	
+
 	function onModuleClosed()
 	{
 		if (this.m.OnModuleClosedListener != null)
@@ -650,7 +676,7 @@ this.camp_screen <- {
 			this.m.OnModuleClosedListener();
 		}
 	}
-	
+
 	function onCampClosed()
 	{
 		if (this.m.OnCampListener != null)
@@ -665,8 +691,9 @@ this.camp_screen <- {
 		{
 			return;
 		}
-		
+
 		local building = this.World.Camp.getBuildingByID(_data);
+
 		if (building == null)
 		{
 			return;
@@ -677,7 +704,7 @@ this.camp_screen <- {
 
 	function getTimeRequired()
 	{
-		return "No camp tasks have been scheduled..."
+		return "No camp tasks have been scheduled...";
 	}
 
 	function getUITerrain()
@@ -686,13 +713,17 @@ this.camp_screen <- {
 		local terrain = [];
 		terrain.resize(this.Const.World.TerrainType.COUNT, 0);
 
-		for( local i = 0; i < 6; i = ++i )
+		for( local i = 0; i < 6; i = i )
 		{
 			if (!tile.hasNextTile(i))
 			{
-				continue;
 			}
-			++terrain[tile.getNextTile(i).Type];
+			else
+			{
+				++terrain[tile.getNextTile(i).Type];
+			}
+
+			i = ++i;
 		}
 
 		terrain[this.Const.World.TerrainType.Plains] = this.Math.max(0, terrain[this.Const.World.TerrainType.Plains] - 1);
@@ -709,25 +740,24 @@ this.camp_screen <- {
 
 		local highest = 0;
 
-		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
+		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = i )
 		{
 			if (i == this.Const.World.TerrainType.Ocean || i == this.Const.World.TerrainType.Shore)
 			{
-				continue;
 			}
-			
-			if (terrain[i] >= terrain[highest])
+			else if (terrain[i] >= terrain[highest])
 			{
 				highest = i;
 			}
+
+			i = ++i;
 		}
 
-		return highest
+		return highest;
 	}
 
 	function queryCampInformation()
 	{
-
 		return this.getUIInformation();
 	}
 
@@ -746,32 +776,35 @@ this.camp_screen <- {
 			SubTitle = this.getTimeRequired(),
 			Assets = this.queryAssetsInformation(),
 			HeaderImagePath = null,
-			Background =  this.Const.World.TerrainCampImages[highest].Background + (night ? "_night" : "") + ".jpg",
-			Mood =this.Const.World.TerrainCampImages[highest].Mood  + ".png",
+			Background = this.Const.World.TerrainCampImages[highest].Background + (night ? "_night" : "") + ".jpg",
+			Mood = this.Const.World.TerrainCampImages[highest].Mood + ".png",
 			Foreground = foreground != null ? foreground + (night ? "_night" : "") + ".png" : null,
 			Slots = [],
 			Situations = []
 		};
-		local slots = this.World.Camp.getBuildings()
-		foreach( building in slots)
+		local slots = this.World.Camp.getBuildings();
+
+		foreach( building in slots )
 		{
 			if (building == null || building.isHidden())
 			{
 				result.Slots.push(null);
-				continue
+				continue;
 			}
-			local image
 
-			switch (highest) 
+			local image;
+
+			switch(highest)
 			{
-				case 9:
-				case 8:
-				case 4:
-					image =  building.getUIImage(highest)
-					break;
-				default:
-					image = building.getUIImage(0)
-					break;
+			case 9:
+			case 8:
+			case 4:
+				image = building.getUIImage(highest);
+				break;
+
+			default:
+				image = building.getUIImage(0);
+				break;
 			}
 
 			local b = {
@@ -782,7 +815,9 @@ this.camp_screen <- {
 			};
 			result.Slots.push(b);
 		}
+
 		return result;
 	}
 
 };
+

@@ -28,6 +28,7 @@ var CampScreen = function()
 	this.mHealerDialogModule	    = null;
     this.mTrainingDialogModule      = null;
     this.mHunterDialogModule   = null;
+    this.mPainterDialogModule	    = null;
     this.mRepairDialogModule   = null;
     this.mRestDialogModule   = null;
     this.mScoutDialogModule   = null;
@@ -65,6 +66,7 @@ CampScreen.prototype.onDisconnection = function ()
     this.mHealerDialogModule.onDisconnection();
     this.mTrainingDialogModule.onDisconnection();
     this.mHunterDialogModule.onDisconnection();
+    this.mPainterDialogModule.onDisconnection();
     this.mRepairDialogModule.onDisconnection();
     this.mRestDialogModule.onDisconnection();
     this.mScoutDialogModule.onDisconnection();
@@ -85,6 +87,7 @@ CampScreen.prototype.onModuleOnConnectionCalled = function (_module)
         (this.mHealerDialogModule !== null && this.mHealerDialogModule.isConnected()) &&
         (this.mTrainingDialogModule !== null && this.mTrainingDialogModule.isConnected()) &&
         (this.mHunterDialogModule !== null && this.mHunterDialogModule.isConnected()) &&
+        (this.mPainterDialogModule !== null && this.mPainterDialogModule.isConnected()) &&
         (this.mRepairDialogModule !== null && this.mRepairDialogModule.isConnected()) &&
         (this.mRestDialogModule !== null && this.mRestDialogModule.isConnected()) &&
         (this.mScoutDialogModule !== null && this.mScoutDialogModule.isConnected()) &&
@@ -107,6 +110,7 @@ CampScreen.prototype.onModuleOnDisconnectionCalled = function (_module)
         (this.mHealerDialogModule === null && !this.mHealerDialogModule.isConnected()) &&
         (this.mTrainingDialogModule === null && !this.mTrainingDialogModule.isConnected()) &&
         (this.mHunterDialogModule === null && !this.mHunterDialogModule.isConnected()) &&
+        (this.mPainterDialogModule === null && !this.mPainterDialogModule.isConnected()) &&
         (this.mRepairDialogModule === null && !this.mRepairDialogModule.isConnected()) &&
         (this.mRestDialogModule === null && !this.mRestDialogModule.isConnected()) &&
         (this.mScoutDialogModule === null && !this.mScoutDialogModule.isConnected()) &&
@@ -142,6 +146,7 @@ CampScreen.prototype.createModules = function()
 	this.mHealerDialogModule = new CampScreenHealerDialogModule(this);
     this.mTrainingDialogModule = new CampScreenTrainingDialogModule(this);
     this.mHunterDialogModule = new CampScreenHunterDialogModule(this);
+    this.mPainterDialogModule = new CampScreenPainterDialogModule(this);
     this.mRepairDialogModule  = new CampScreenRepairDialogModule(this);
     this.mRestDialogModule  = new CampScreenRestDialogModule(this);
     this.mScoutDialogModule = new CampScreenScoutDialogModule(this);
@@ -161,6 +166,7 @@ CampScreen.prototype.registerModules = function ()
     this.mHealerDialogModule.register(this.mContainer);
     this.mTrainingDialogModule.register(this.mContainer);
     this.mHunterDialogModule.register(this.mContainer);
+    this.mPainterDialogModule.register(this.mContainer);
     this.mRepairDialogModule.register(this.mContainer);
     this.mRestDialogModule.register(this.mContainer);
     this.mScoutDialogModule.register(this.mContainer);
@@ -179,6 +185,7 @@ CampScreen.prototype.unregisterModules = function ()
     this.mHealerDialogModule.unregister();
     this.mTrainingDialogModule.unregister();
     this.mHunterDialogModule.unregister();
+    this.mPainterDialogModule.unregister();
     this.mRepairDialogModule.unregister();
     this.mRestDialogModule.unregister();
     this.mScoutDialogModule.unregister();
@@ -552,6 +559,28 @@ CampScreen.prototype.showHunterDialog = function (/*_withSlideAnimation,*/ _data
     this.mHunterDialogModule.show(_withSlideAnimation);
 };
 
+CampScreen.prototype.showPainterDialog = function (/*_withSlideAnimation,*/ _data)
+{
+	var _withSlideAnimation = true;
+
+	this.mContainer.addClass('display-block').removeClass('display-none');
+
+	if(this.mActiveModule != null)
+		this.mActiveModule.hide(_withSlideAnimation);
+	else
+		this.mMainDialogModule.hide();
+
+	this.mActiveModule = this.mPainterDialogModule;
+
+	if(_data !== undefined && _data !== null && typeof(_data) === 'object')
+    {
+		this.loadAssetData(_data.Assets);
+		this.mPainterDialogModule.loadFromData(_data);
+    }
+
+    this.mPainterDialogModule.show(_withSlideAnimation);
+};
+
 CampScreen.prototype.showRepairDialog = function (/*_withSlideAnimation,*/ _data)
 {
 	var _withSlideAnimation = true;
@@ -666,12 +695,13 @@ CampScreen.prototype.getModule = function (_name)
         case 'CampGathererDialogModule': return this.mGathererDialogModule;
         case 'CampHealerDialogModule': return this.mHealerDialogModule;
         case 'CampHunterDialogModule': return this.mHunterDialogModule;
+        case 'CampPainterDialogModule': return this.mPainterDialogModule;
         case 'CampRepairDialogModule': return this.mRepairDialogModule;
         case 'CampRestDialogModule': return this.mRestDialogModule;
         case 'CampScoutDialogModule': return this.mScoutDialogModule;
         case 'CampTrainingDialogModule': return this.mTrainingDialogModule;
         case 'CampWorkshopDialogModule': return this.mWorkshopDialogModule;
-
+		
         default: return null;
 	}
 };
@@ -688,6 +718,7 @@ CampScreen.prototype.getModules = function ()
         { name:  'CampGathererDialogModule', module: this.mGathererDialogModule },
         { name:  'CampHealerDialogModule', module: this.mHealerDialogModule },
         { name:  'CampHunterDialogModule', module:  this.mHunterDialogModule },
+        { name:  'CampPainterDialogModule', module: this.mPainterDialogModule },
         { name:  'CampRepairDialogModule', module:  this.mRepairDialogModule },
         { name:  'CampRestDialogModule', module:  this.mRestDialogModule },
         { name:  'CampScoutDialogModule', module:  this.mScoutDialogModule },

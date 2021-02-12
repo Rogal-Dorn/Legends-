@@ -253,9 +253,16 @@
 .camp-screen > .l-main-dialog-container .slot-hunt {
 		-webkit-transform: scale(0.7, 0.7);
 		position: absolute;
-		left: 55.0rem;
+		left: 45.0rem;
 		top: 23.0rem;
 	}
+	
+.camp-screen > .l-main-dialog-container .slot-painter {
+    -webkit-transform: scale(0.7, 0.7);
+    position: absolute;
+    left: 62.0rem;
+    top: 29.0rem;
+}
 
 .camp-screen > .l-main-dialog-container .slot-scout
 {
@@ -264,8 +271,6 @@
     left: 75.0rem;
     top: 25.0rem;
 }
-
-
 
 
 
