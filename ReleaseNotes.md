@@ -4988,4 +4988,7 @@ https://drive.google.com/file/d/1UBglJMURv54uh59C2VKrjYWuKNZJ3rIX/view?usp=shari
 15.0.1.3
 
 **Changes**
-Vala recruitment event now works again
+Vala recruitment works again, excluded by turned-off magic
+
+**Fixes**
+Fixes unarmed lunge skill
