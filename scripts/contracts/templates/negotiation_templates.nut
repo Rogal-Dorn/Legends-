@@ -48,6 +48,27 @@ gt.Const.Contracts.Overview <- [
 		ShowDifficulty = true,
 		function start()
 		{
+			this.Contract.m.BulletpointsPayment = [];
+
+			if (this.Contract.m.Payment.Advance != 0)
+			{
+				this.Contract.m.BulletpointsPayment.push("Get " + this.Contract.m.Payment.getInAdvance() + " crowns in advance");
+			}
+
+			if (this.Contract.m.Payment.Count != 0)
+			{
+				this.Contract.m.BulletpointsPayment.push("Get " + this.Contract.m.Payment.getPerCount() + " crowns per head you bring back, up to " + this.Contract.m.Payment.MaxCount + " total");
+			}
+
+			if (this.Contract.m.Payment.Completion != 0)
+			{
+				this.Contract.m.BulletpointsPayment.push("Get " + this.Contract.m.Payment.getOnCompletion() + " crowns on completion");
+			}
+
+			if (this.Contract.m.Payment.IsFinal)
+			{
+				this.Text = "[img]gfx/ui/events/event_04.png[/img]{%SPEECH_START%I refuse to pay any more for this.  | %SPEECH_START%Be reasonable.  | %SPEECH_START%No, no, no.  | %SPEECH_START%Who do you think you are? I tell you how you\'re getting paid.  | He just looks at you sternly and shakes his head.%SPEECH_ON% | %SPEECH_START%No way!%SPEECH_OFF%He shouts, bursting with anger.%SPEECH_ON% | %SPEECH_START%No, you are already getting more than you\'re worth.  | %SPEECH_START%No. Do not push me too far!  | %SPEECH_START%I don\'t think you quite understand how this works. We need to come to terms if you want to be paid for this. My offer still stands. }%SPEECH_OFF%";
+			}
 			this.Contract.m.IsNegotiated = true;
 		}
 
@@ -115,6 +136,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 					else if (this.Math.rand(1, 100) <= failChance)
 					{
 						this.Contract.m.Payment.IsFinal = true;
+						return "Overview"
 					}
 					else
 					{
@@ -156,6 +178,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 						if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -198,6 +221,7 @@ gt.Const.Contracts.NegotiationDefault <- [
 						if (this.Math.rand(1, 100) <= failChance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -353,6 +377,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 					else if (this.Math.rand(1, 100) <= failChance)
 					{
 						this.Contract.m.Payment.IsFinal = true;
+						return "Overview"
 					}
 					else
 					{
@@ -402,6 +427,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 						else if (this.Math.rand(1, 100) <= failChance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -450,6 +476,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 						if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -498,6 +525,7 @@ gt.Const.Contracts.NegotiationPerHead <- [
 						if (this.Math.rand(1, 100) <= failChance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -675,6 +703,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 					else if (this.Math.rand(1, 100) <= failChance)
 					{
 						this.Contract.m.Payment.IsFinal = true;
+						return "Overview"
 					}
 					else
 					{
@@ -726,6 +755,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 						else if (this.Math.rand(1, 100) <= failChance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -774,6 +804,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 						if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
@@ -822,6 +853,7 @@ gt.Const.Contracts.NegotiationPerHeadAtDestination <- [
 						if (this.Math.rand(1, 100) <= failChance)
 						{
 							this.Contract.m.Payment.IsFinal = true;
+							return "Overview"
 						}
 						else
 						{
