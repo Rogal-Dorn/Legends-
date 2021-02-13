@@ -9,7 +9,8 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Image = "ui/campfire/negotiator_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
-			"Allows for more rounds of contract negotiations with your potential employers before they abort, and without any hit to relations"
+			"Allows for more rounds of contract negotiations with your potential employers before they abort, and with only a 10% chance on a hit to relations",
+			"Greater contract payment if negotiations are successfull"
 		];
 		this.m.Requirements = [
 			{
@@ -35,7 +36,7 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local brothers = this.World.getPlayerRoster().getAll();
-		
+
 		foreach( bro in brothers )
 		{
 			if (bro.getSkills().hasSkill("perk.legend_pacifist"))

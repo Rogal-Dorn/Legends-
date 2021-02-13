@@ -4987,9 +4987,29 @@ https://drive.google.com/file/d/1UBglJMURv54uh59C2VKrjYWuKNZJ3rIX/view?usp=shari
 
 
 15.0.1.3
+*Save Game compatible with 15.0.1.2*
 
 **New Painter Tent**
 Paint system has been replaced with a new Painter tent found in your camp screen
 
+**Contract Negotiations**
+In Vanilla, when negotiating a contract, the default meta action was to always negotiate once, and then accept because there was a no harm. No more!
+
+When negotiating for more pay:
+*There is a 66% chance that relations will be hurt (10% if you have negotiator follower) (It was 100% chance in Vanilla)
+*There is always a chance that negotiations will completely fail and the contract is lost. Starts out 10% chance and increases to 90% chance over time. (in Vanilla, this was guarenteed to always happen after either 2 or 3 rounds)
+*If fail doesn't happen, there is the same incremental 10-90% chance negotations are ended or successfull.
+*The negotiator retinue member slows that 10% to 90% climb in half.
+*If successfull, 3% to 10% increase in pay (6% to 15% if negotiator)
+
+When negotiating for advanced pay:
+*If you don't have negotiator retinue, there is a 10% chance of relation hit.
+*Higher chance of ending negotiations, but no longer can the contract be completley failed.
+*If successfull, a 15% to 30% advanced in pay (30%-60% with negotiator).
+*If over 50% increase, negotiations are completed. (75% with negotiator)
+
 **Changes**
-Vala recruitment event now works again
+Vala recruitment event now works again.
+
+**Download**
+https://drive.google.com/file/d/1IhoXpkXt-UNgmpMuUF43sJ7gRJFy9HIA/view?usp=sharing
