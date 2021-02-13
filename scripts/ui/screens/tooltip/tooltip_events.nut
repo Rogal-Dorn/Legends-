@@ -2649,19 +2649,33 @@ this.tooltip_events <- {
 				}
 			];
 
-		case "menu-screen.options.MovementAI":
+		case "legend.aispeed":
 			return [
 				{
 					id = 1,
 					type = "title",
-					text = "Faster AI Movement"
+					text = "Faster Mod"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Speed up the movement of any characters controlled by the AI in combat significantly.  Does not affect movement-related skills."
+					text = "Increases the overal speed of all tactical engagmenets."
 				}
 			];
+
+	case "legend.enemytooltip":
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = "Enhanced Enemy Tooltips"
+			},
+			{
+				id = 2,
+				type = "description",
+				text = "Enemy tooltips in tactical battles will show more information, like perks and statuses"
+			}
+		];
 
 		case "menu-screen.options.AutoLoot":
 			return [
