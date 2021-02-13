@@ -5010,6 +5010,7 @@ When negotiating for advanced pay:
 
 **Changes**
 Vala recruitment event now works again.
+
 **Fixes**
 Fixes unarmed lunge skill
 
