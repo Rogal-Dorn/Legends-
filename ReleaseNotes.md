@@ -5020,16 +5020,17 @@ https://drive.google.com/file/d/1IhoXpkXt-UNgmpMuUF43sJ7gRJFy9HIA/view?usp=shari
 
 15.0.1.4
 
-*Patrol Tent*
-And upgraded patrol tent will now has the chance to reveal the number of defenders in an enemy camp within the patrol radius.
+**Patrol Tent**
+An upgraded patrol tent now has the chance to reveal the number of defenders in an enemy camp within the patrol radius.
 
 **Mod integrations**
 Integrated Vazl's Veteran ranges into the character background tooltip
 -Shows projection of the character's base attribute ranges calculated as if that attribute is improved on every level up from its current level to 11.
 
 Integrated @MrBrut tactical tooltips mod.
--This extends tactical tooltips to show a bro's perks and items in the bag
+-This extends tactical tooltips to show a bro's perks, status, and items in the bag
 -There is a new option in Options -> Gameplay -> Enhanced Enemy Tooltips that will extend the new tooltips to enemies as well.
 
 **Fixes**
-Fixes incorrect brush dimensions for damaged armor layers
+Fixes incorrect brush dimensions for damaged armor layers (damaged armor looks correct now)
+Fixes invalid jesterhat variants (full effect fixed on new games or once existing ones from saves are removed)
