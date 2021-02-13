@@ -450,6 +450,32 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
+		if (this.World.Retinue.hasFollower("follower.agent"))
+		{
+			local contracts = this.getContracts();
+			local situations = this.getSituations();
+			local addedSituations = {};
+
+			foreach( i, s in situations )
+			{
+				if (s.isValid() && !(s.getValidUntil() == 0 && !this.World.Contracts.hasContractWithSituation(s.getInstanceID())))
+				{
+					local id = s.getID();
+
+					if (!(id in addedSituations))
+					{
+						ret.push({
+							id = 10 + contracts.len() + i,
+							type = "text",
+							icon = s.getIcon(),
+							text = s.getName()
+						});
+						addedSituations[id] <- true;
+					}
+				}
+			}
+		}
+
 		return ret;
 	}
 
