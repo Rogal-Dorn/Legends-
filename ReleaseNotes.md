@@ -5016,3 +5016,12 @@ Fixes unarmed lunge skill
 
 **Download**
 https://drive.google.com/file/d/1IhoXpkXt-UNgmpMuUF43sJ7gRJFy9HIA/view?usp=sharing
+
+
+15.0.1.4
+
+*Patrol Tent*
+And upgraded patrol tent will now has the chance to reveal the number of defenders in an enemy camp within the patrol radius.
+
+**Fixes**
+Fixes incorrect brush dimensions for damaged armor layers
