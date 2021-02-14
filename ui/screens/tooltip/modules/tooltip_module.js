@@ -340,6 +340,10 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 	var posLeft = (targetOffset.left + (elementWidth / 2)) - (containerWidth / 2);
 	var posTop  = targetOffset.top - containerHeight - offsetY;
 
+	var posLeft = targetOffset.left - elementWidth
+	var posTop  = targetOffset.top - containerHeight - offsetY;
+
+
 	if (posLeft < 0)
 	{
 		posLeft = targetOffset.left;
@@ -355,28 +359,35 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 		posTop = targetOffset.top + elementHeight + offsetY;
 	}
 
+	var clearanceNeeded = wnd.height() - targetOffset.top
+
+	//tooltip is going to overflow, Shift Left and center
+	if (containerHeight > wnd.height() - posTop)
+	{
+		posTop = targetOffset.top - containerHeight / 2;
+		posLeft = targetOffset.left - containerWidth;
+	}
 	// TODO: Remove
-	/*
-	if (_targetDIV !== undefined && _targetDIV !== null)
-	{
-		if (this.mCurrentData !== null && this.mCurrentData.contentType === 'ui-item')
-		{
-			console.log('containerHeight: ' + containerHeight);
-			console.log('DEBUG: setupUITooltip:(targetTop: ' + targetOffset.top + ' targetLeft:' + targetOffset.left + ' top: ' + posTop + ' left:' + posLeft + ' elementWidth: ' + elementWidth + ' elementHeight:' + elementHeight +  ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
-		}
-		//console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
-	}
-	*/
-	/*
-	else
-	{
-		console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - ERROR: _targetDIV NOT assigned)');
-	}
-	*/
+
+	// if (_targetDIV !== undefined && _targetDIV !== null)
+	// {
+	// 	console.log('containerHeight: ' + containerHeight);
+	// 	if (this.mCurrentData !== null && this.mCurrentData.contentType === 'ui-item')
+	// 	{
+
+	// 		console.log('DEBUG: setupUITooltip:(targetTop: ' + targetOffset.top + ' targetLeft:' + targetOffset.left + ' top: ' + posTop + ' left:' + posLeft + ' elementWidth: ' + elementWidth + ' elementHeight:' + elementHeight +  ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
+	// 	}
+	// 	//console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
+	// }
+	// else
+	// {
+	// 	console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - ERROR: _targetDIV NOT assigned)');
+	// }
+
 
 	// show & position tooltip & animate
 	this.mContainer.removeClass('display-none').addClass('display-block');
-	this.mContainer.css({ left: posLeft, top: posTop });
+	this.mContainer.css({ left: posLeft, top: posTop});
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0.99 }, { duration: this.mFadeInTime }); // Anti Alias Fix
 };
 
