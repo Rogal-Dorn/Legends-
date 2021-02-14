@@ -108,6 +108,7 @@ this.camp_painter_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 					ExtraVanity = null
 				};
 			}
+
 			local shield = {};
 			if (b.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
 			{

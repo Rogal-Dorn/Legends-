@@ -2,7 +2,6 @@ local modTacticalTooltip = function ( tooltip, _targetedWithSkill )
 {
 	if (!this.isPlayerControlled() && !this.LegendsMod.Configs().EnemeyTooltips())
 	{
-		this.logInfo("skipping enemy tooltip")
 		return tooltip;
 	}
 
