@@ -5044,6 +5044,8 @@ Integrates Sato's Retinue changes
 *The Negotiator: In addition to his current effects, he gets the Agent's old relations growth/decay boost. His cost has been bumped to 3500 crowns (up from 3000) to compensate. This felt thematic and helps make him a more attractive retinue member late game.
 *The Scout: Renamed to "the Guide", because that's what he does. Instead of increasing your speed by 15% on all terrain, he now reduces the speed penalty of "rough terrain" (forests, swamps, etc. and not snow or desert) by 15%. To help explain this a bit more: the old ability made you move 7.5% faster on swamps, 9.75% faster on forests, and 15% faster on plains  - the new one is 15%, 15%, and 0%. In practice, this should make the Scout/Guide more relevant for difficult terrain, but make him less of an auto-pick for every map and point of the campaign.
 
+Integrates MrBrut's Tactical Hit factors mod
+*Adds enhanced hit chance and resistance info when aiming at an opponent
 
 **Fixes**
 Fixes tooltips that overflow and prevent seeing and reading all the info
