@@ -362,7 +362,7 @@ local patchGetTooltip = function ( obj )
 		  // [008]  OP_CLOSE          0      2    0    0
 	}
 };
-::mods_queue(null, null, function ()
+::mods_queue("mod_legends", null, function ()
 {
 	::mods_hookBaseClass("entity/tactical/entity", function ( obj )
 	{

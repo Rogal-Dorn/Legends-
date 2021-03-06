@@ -1,4 +1,4 @@
-local g_modHooks = { }, g_newHooks = null, g_inheritHooks = null, g_inheritAllHooks = null, g_oneTimeHooks = { }, g_parents = { }, g_states = { };
+local g_modHooks = { }, g_newHooks = null, g_exactHooks = null, g_inheritHooks = null, g_inheritAllHooks = null, g_oneTimeHooks = { }, g_parents = { }, g_states = { };
 local g_cssFiles = [ ], g_jsFiles = [ ], g_mods = [ ], g_queue = [ ];
 
 local varcall = function(func, args)
@@ -39,7 +39,7 @@ local wrapInstance = function(o)
 
 ::mods_callHookCore <- function(hooks, name, args)
 {
-  if(name in hooks)
+  if(hooks != null && name in hooks)
   {
     local funcs = hooks[name];
     for(local i = 0; i < funcs.len(); )
@@ -65,7 +65,7 @@ local wrapInstance = function(o)
   }
 }
 
-::mods_removeHook <- function(name, func) { ::mods_removeHook(g_modHooks, name, func); }
+::mods_removeHook <- function(name, func) { ::mods_removeHookCore(g_modHooks, name, func); }
 
 ::mods_hookNewObject <- function(name, func, once = false)
 {
@@ -93,43 +93,27 @@ local wrapInstance = function(o)
 
 ::mods_hookNewObjectOnce <- function(name, func) { ::mods_hookNewObject(name, func, true); }
 
-local callAncestorHooks = null;
-callAncestorHooks = function(scriptName, obj)
-{
-  if(scriptName in g_parents)
-  {
-    local parentScript = g_parents[scriptName];
-    obj = ::mods_callHookCore(g_inheritAllHooks, parentScript, [callAncestorHooks(parentScript, obj)]) || obj;
-  }
-  return obj;
-}
-
 ::mods_hookClass <- function(name, func, abstract = false, childrenOnly = true)
 {
   if(!abstract) ::mods_hookNewObject(name, func);
 
-  name = "scripts/" + name;
-  if(childrenOnly)
+  local hooks = childrenOnly ? g_inheritHooks : g_inheritAllHooks;
+  if(hooks == null)
   {
-    if(g_inheritHooks == null)
-    {
-      g_inheritHooks = { };
-      ::mods_addHook("inherit", @(bn,n,o) ::mods_callHookCore(g_inheritHooks, bn, [o]));
-    }
-    ::mods_addHookCore(g_inheritHooks, name, func);
+    if(childrenOnly) hooks = g_inheritHooks = { };
+    else hooks = g_inheritAllHooks = { };
   }
-  else
-  {
-    if(g_inheritAllHooks == null)
-    {
-      g_inheritAllHooks = { };
-      ::mods_addHook("inherit", @(bn,n,o) callAncestorHooks(n, o));
-    }
-    ::mods_addHookCore(g_inheritAllHooks, name, func);
-  }
+  ::mods_addHookCore(hooks, "scripts/" + name, func);
 }
 
 ::mods_hookBaseClass <- function(name, func) { ::mods_hookClass(name, func, true); }
+
+::mods_hookExactClass <- function(name, func)
+{
+  if(g_exactHooks == null) g_exactHooks = { };
+  ::mods_addHookCore(g_exactHooks, "scripts/" + name, func);
+}
+
 ::mods_hookChildren <- function(name, func) { ::mods_hookBaseClass(name, func); }
 ::mods_hookDescendants <- function(name, func) { ::mods_hookClass(name, func, true, false); }
 
@@ -279,6 +263,23 @@ World.getRoster = function(id)
   return rosterWrapper[id];
 }
 
+local callClassHooks = null;
+callClassHooks = function(baseName, scriptName, obj)
+{
+  if(scriptName in g_parents)
+  {
+    local parentScript = g_parents[scriptName];
+    ::mods_callHookCore(g_inheritAllHooks, parentScript, [callClassHooks(null, parentScript, obj)]);
+  }
+  if(baseName)
+  {
+    obj = ::mods_callHookCore(g_inheritHooks, baseName, [obj]) || obj;
+    obj = ::mods_callHookCore(g_exactHooks, scriptName, [obj]);
+  }
+  return obj;
+}
+::mods_addHook("inherit", callClassHooks);
+
 ::mods_addHook("beforeCampaignLoad", function() // executed once per campaign load
 {
   foreach(k,L in g_oneTimeHooks) // restore one-time hooks
@@ -416,7 +417,7 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
     {
       local e = strip(expr[i]), m = g_exprRe.capture(e);
       if(m == null) throw "Invalid queue expression '" + e + "'.";
-      expr[i] = { op = m[1].end != 0 ? e[0] : null, name = match(e, m, 2), verOp = match(e, m, 3), version = match(e, m, 4) };
+      expr[i] = { op = m[1].end != 0 ? e[0] : null, modName = match(e, m, 2), verOp = match(e, m, 3), version = match(e, m, 4) };
       if(expr[i].version != null)
       {
         expr[i].version = expr[i].version.tofloat();
@@ -427,7 +428,14 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
       }
     }
   }
-  g_queue.append({name=codeName, expr=expr, func=func});
+
+  local id = "", alphabet = "0123456789abcdefghijklmnopqrstuvwxyz";
+  for(local i = 0; i < 16; i++)
+  {
+    local idx = ::rng.next(alphabet.len());
+    id += alphabet.slice(idx-1, idx);
+  }
+  g_queue.append({id=id, modName=codeName, expr=expr, func=func});
 }
 
 ::_mods_runQueue <- function()
@@ -452,32 +460,31 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
   };
 
   local deps = { }, mods = { }, errors = [ ];
-  foreach(i in g_queue) mods[i.name] <- i;
-  foreach(i in g_queue)
+  foreach(q in g_queue)
   {
-    foreach(e in i.expr)
+    foreach(e in q.expr)
     {
       if(e.op == '!')
       {
-        local mod = ::mods_getRegisteredMod(e.name);
+        local mod = ::mods_getRegisteredMod(e.modName);
         if(mod != null && matchVersion(mod, e))
         {
           local vmsg = e.version != null ?
             " version " + mod.Version + " (requires version " + invertOp(e.verOp) + " " + e.version + ")" : "";
-          errors.append("Mod " + i.name + " is incompatible with " + modName(mod) + vmsg + ".");
+          errors.append("Mod " + q.modName + " is incompatible with " + modName(mod) + vmsg + ".");
         }
       }
       else
       {
-        local before = e.name, after = i.name;
-        if(e.op == '<') { before = after; after = e.name; }
+        local before = e.modName, after = q.modName;
+        if(e.op == '<') { before = after; after = e.modName; }
         else if(e.op == null)
         {
           local mod = ::mods_getRegisteredMod(before);
           if(mod == null || !matchVersion(mod, e))
           {
             local vmsg = e.version != null ? " with version " + (e.verOp != null ? e.verOp : "") + " " + e.version : "";
-            errors.append("Mod " + modName(i.name) + " requires mod " + modName(mod || before) + vmsg + ", but " +
+            errors.append("Mod " + modName(q.modName) + " requires mod " + modName(mod || before) + vmsg + ", but " +
               (mod == null ? "it was not found" : "version " + mod.Version + " was found") + ".");
           }
         }
@@ -486,6 +493,9 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
         deps[after].append(before);
       }
     }
+
+    if(!(q.modName in mods)) mods[q.modName] <- [ ];
+    mods[q.modName].append(q);
   }
 
   if(errors.len() != 0)
@@ -496,42 +506,45 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
   }
 
   local sets = [ ], heights = { }, visit = null;
-  visit = function(name, chain)
+  visit = function(q, chain)
   {
-    chain.push(name);
-
+    chain.push(q.modName);
     local height;
-    if(name in heights)
+    if(q.id in heights)
     {
-      height = heights[name];
+      height = heights[q.id];
       if(height == 0)
       {
         local modList = "";
-        for(local i = 0; i < chain.len(); ++i) modList = (i == 0 ? chain[i] : modList + " < " + chain[i]);
+        for(local i = 0; i < chain.len(); ++i) modList = (i == 0 ? chain[i] : modList + " -> " + chain[i]);
         throw "Dependency conflict involving mod(s) " + modList + ".";
       }
-      return height;
     }
-
-    heights[name] <- 0;
-    height = 0;
-    if(name in deps)
+    else
     {
-      foreach(dep in deps[name]) height = Math.max(height, visit(dep, chain));
+      heights[q.id] <- 0;
+      height = 0;
+      if(q.modName in deps)
+      {
+        foreach(dep in deps[q.modName])
+        {
+          if(dep in mods)
+          {
+            foreach(depq in mods[dep]) height = Math.max(height, visit(depq, chain));
+          }
+        }
+      }
+
+      if(height == sets.len()) sets.append([]);
+      sets[height].append([q.modName, q.func]);
+      ++height;
+      heights[q.id] = height;
     }
     chain.pop();
-
-    if(height == sets.len()) sets.append([]);
-    if(name in mods)
-    {
-      local func = mods[name].func;
-      if(func != null) sets[height].append([name, mods[name].func]);
-    }
-    ++height;
-    heights[name] = height;
     return height;
   };
-  foreach(i in g_queue) visit(i.name, [ ]);
+  
+  foreach(q in g_queue) visit(q, [ ]);
   foreach(set in sets)
   {
     foreach(f in set)
@@ -585,4 +598,4 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
 
 ::rng <- ::rng_new();
 
-::mods_registerMod("mod_hooks", 19.2, "modding script hooks");
+::mods_registerMod("mod_hooks", 20, "modding script hooks");
