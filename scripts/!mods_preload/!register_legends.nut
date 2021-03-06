@@ -1,0 +1,1 @@
+::mods_registerMod("mod_legends", 1.0, "Legends Mod");
