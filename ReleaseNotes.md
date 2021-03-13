@@ -5049,6 +5049,7 @@ Integrates MrBrut's Tactical Hit factors mod
 
 **Fixes**
 Fixes tooltips that overflow and prevent seeing and reading all the info
+Fixes some favoured enemy perks screwing up with legendary location enemies (Skeleton Lich, Zombie Treasure Hunters, etc)
 
 **Changes**
 Reduces cost of painter tent changes
