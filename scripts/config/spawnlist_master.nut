@@ -1501,6 +1501,54 @@ gt.Const.World.Spawn.Troops <- {
 		NameList = this.Const.Strings.SouthernFemaleNames,
 		TitleList = this.Const.Strings.FallenHeroTitles,
 		Script = "scripts/entity/tactical/enemies/legend_mummy_queen"
+	},
+	SkeletonLich = {
+		ID = this.Const.EntityType.SkeletonLich,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/skeleton_lich"
+	},
+	SkeletonLichMirrorImage = {
+		ID = this.Const.EntityType.SkeletonLichMirrorImage,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/skeleton_lich_mirror_image"
+	},
+	SkeletonGladiator = {
+		ID = this.Const.EntityType.SkeletonGladiator,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_skeleton_gladiator"
+	},
+	SkeletonPhylactery = {
+		ID = this.Const.EntityType.SkeletonPhylactery,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/phylactery"
+	},
+	ZombieTreasureHunter = {
+		ID = this.Const.EntityType.ZombieTreasureHunter,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/zombie_treasure_hunter"
+	},
+	FlyingSkull = {
+		ID = this.Const.EntityType.FlyingSkull,
+		Variant = 0,
+		Strength = 0,
+		Cost = 0,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/flying_skull"
 	}
 };
 
