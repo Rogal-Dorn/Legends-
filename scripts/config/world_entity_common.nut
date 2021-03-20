@@ -268,7 +268,7 @@ gt.Const.World.Common <- {
 		}
 	}
 
-	function addFootprintsFromTo( _from, _to, _type, _infoType, _scale = 0.5, _visibility = 1.0 )
+	function addFootprintsFromTo( _from, _to, _type, _infoType, _scale = 0.5, _visibility = 1.0, _additionalStayTime = 0.0 )
 	{
 		local navSettings = this.World.getNavigator().createSettings();
 		navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost_Sneak;
@@ -308,7 +308,7 @@ gt.Const.World.Common <- {
 
 			if (!tile.IsOccupied)
 			{
-				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0, _visibility * this.World.Assets.getFootprintVision(), _infoType);
+				this.World.spawnFootprint(pos, _type[this.World.getDirection8FromTo(pos, dest)] + "_0" + (left ? "1" : "2"), _scale, 30.0 + _additionalStayTime, _visibility * this.World.Assets.getFootprintVision(), _infoType);
 				left = !left;
 			}
 		}

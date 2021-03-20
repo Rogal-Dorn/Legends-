@@ -70,7 +70,7 @@ this.standard_bearer <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/basic_mail_shirt"));
 		}
 
-		if (this.Math.rand(1, 100) <= 75)
+		if (this.Math.rand(1, 100) <= 90)
 		{
 			local helmet;
 

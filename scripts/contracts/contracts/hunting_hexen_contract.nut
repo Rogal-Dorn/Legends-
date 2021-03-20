@@ -155,10 +155,8 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 
 					this.World.Contracts.showActiveContract();
 				}
-				else if (!this.TempFlags.has("IsEncounterShown") && this.Flags.get("StartTime") + this.Flags.get("Delay") <= this.Time.getVirtualTimeF())
+				else if (this.Flags.get("StartTime") + this.Flags.get("Delay") <= this.Time.getVirtualTimeF())
 				{
-					this.TempFlags.set("IsEncounterShown", true);
-
 					if (this.Flags.get("IsSpiderQueen"))
 					{
 						this.Contract.setScreen("SpiderQueen");
@@ -266,6 +264,11 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 					Text = "Stay focused, lads.",
 					function getResult()
 					{
+						if (this.Flags.get("StartTime") + this.Flags.get("Delay") - 3.0 <= this.Time.getVirtualTimeF())
+						{
+							this.Flags.set("Delay", this.Flags.get("Delay") + 5.0);
+						}
+
 						return 0;
 					}
 

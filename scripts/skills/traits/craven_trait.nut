@@ -18,6 +18,7 @@ this.craven_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.brave",
 			"trait.determined",
 			"trait.fainthearted",
+			"trait.deathwish",
 			"trait.cocky",
 			"trait.bloodthirsty",
 			"trait.hate_greenskins",

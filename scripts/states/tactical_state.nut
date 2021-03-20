@@ -3434,7 +3434,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			break;
 
-		case 17:
+		case 12:
 			if (!this.m.IsDeveloperModeEnabled)
 			{
 				break;
@@ -3449,7 +3449,7 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 
 			break;
 
-		case 12:
+		case 17:
 			if (!this.m.IsDeveloperModeEnabled)
 			{
 			}
@@ -3457,9 +3457,9 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				if (this.m.LastTileHovered != null && !this.m.LastTileHovered.IsEmpty)
 				{
-					if ("shrink" in this.m.LastTileHovered.getEntity())
+					if ("grow" in this.m.LastTileHovered.getEntity())
 					{
-						this.m.LastTileHovered.getEntity().shrink();
+						this.m.LastTileHovered.getEntity().grow();
 					}
 				}
 

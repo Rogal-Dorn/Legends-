@@ -1267,6 +1267,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 						this.Flags.set("IsSecretPassage", false);
 						this.Flags.set("IsReliefAttackForced", true);
 						this.Flags.set("WaitUntil", this.Time.getVirtualTimeF() + this.Math.rand(15, 30));
+						this.Contract.setState("Running_Wait");
 						return 0;
 					}
 

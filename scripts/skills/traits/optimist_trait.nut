@@ -10,6 +10,7 @@ this.optimist_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.pessimist",
+			"trait.irrational",
 			"trait.insecure",
 			"trait.dastard",
 			"trait.paranoid"

@@ -35,6 +35,7 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 66;
@@ -78,10 +79,21 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageRegularMin += 60;
+			_properties.DamageRegularMax += 120;
+			_properties.DamageArmorMult *= 1.5;
+		}
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSplit);
 		local ret = this.attackEntity(_user, _targetTile.getEntity());
+		local ret2 = false;
 
 		if (!_user.isAlive() || _user.isDying())
 		{
@@ -102,33 +114,21 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 
 			if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAttackable() && this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
 			{
-				ret = this.attackEntity(_user, forwardTile.getEntity()) || ret;
+				ret2 = this.attackEntity(_user, forwardTile.getEntity());
 			}
 
-			if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
+			if (!_user.isAlive() || _user.isDying())
 			{
-				this.applyEffectToTarget(_user, _targetTile.getEntity(), _targetTile);
+				return ret || ret2;
+			}
+
+			if (ret2 && forwardTile.IsOccupiedByActor && forwardTile.getEntity().isAlive() && !forwardTile.getEntity().isDying())
+			{
+				this.applyEffectToTarget(_user, forwardTile.getEntity(), forwardTile);
 			}
 		}
 
-		return ret;
-	}
-
-	function onTargetSelected( _targetTile )
-	{
-		this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, _targetTile, _targetTile.Pos.X, _targetTile.Pos.Y);
-		local ownTile = this.m.Container.getActor().getTile();
-		local dir = ownTile.getDirectionTo(_targetTile);
-
-		if (_targetTile.hasNextTile(dir))
-		{
-			local forwardTile = _targetTile.getNextTile(dir);
-
-			if (this.Math.abs(forwardTile.Level - ownTile.Level) <= 1)
-			{
-				this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, forwardTile, forwardTile.Pos.X, forwardTile.Pos.Y);
-			}
-		}
+		return ret || ret2;
 	}
 
 });

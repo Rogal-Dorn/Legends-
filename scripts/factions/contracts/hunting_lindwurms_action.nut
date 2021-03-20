@@ -26,7 +26,7 @@ this.hunting_lindwurms_action <- this.inherit("scripts/factions/faction_action",
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 20)
+		if (this.Math.rand(1, 100) > 10)
 		{
 			return;
 		}

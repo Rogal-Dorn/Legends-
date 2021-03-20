@@ -610,6 +610,34 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 8
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.Billman,
 				Num = 5
 			},
@@ -804,6 +832,38 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Arbalester,
 				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_02",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
+				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Sergeant,
@@ -1210,6 +1270,10 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 4
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
@@ -1220,10 +1284,70 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Greatsword,
 				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 4
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Knight,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 5
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 3
 			}
 		]
 	},
@@ -1291,6 +1415,46 @@ gt.Const.World.Spawn.Noble <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 2
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 9
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
 				Num = 2
 			}
 		]
@@ -1438,6 +1602,10 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 6
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
@@ -1452,10 +1620,6 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Greatsword,
 				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.Knight,
-				Num = 1
 			}
 		]
 	},
@@ -1474,16 +1638,16 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 7
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Arbalester,
 				Num = 5
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.Knight,
-				Num = 1
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
@@ -1506,6 +1670,10 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 7
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
@@ -1519,10 +1687,6 @@ gt.Const.World.Spawn.Noble <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Greatsword,
-				Num = 1
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.Knight,
 				Num = 1
 			},
 			{
@@ -1639,6 +1803,42 @@ gt.Const.World.Spawn.Noble <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 7
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
 				Num = 8
 			},
 			{
@@ -1718,6 +1918,10 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 8
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 2
 			},
@@ -1732,10 +1936,6 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Sergeant,
 				Num = 2
-			},
-			{
-				Type = this.Const.World.Spawn.Troops.Knight,
-				Num = 1
 			}
 		]
 	},
@@ -2102,6 +2302,10 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 7
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 1
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
@@ -2111,10 +2315,42 @@ gt.Const.World.Spawn.Noble <- [
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 8
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
 				Num = 2
 			},
 			{
-				Type = this.Const.World.Spawn.Troops.Knight,
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
 				Num = 1
 			},
 			{
@@ -2144,6 +2380,10 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Arbalester,
@@ -2302,6 +2542,42 @@ gt.Const.World.Spawn.Noble <- [
 				Num = 8
 			},
 			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 2
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.ArmoredWardog,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 8
+			},
+			{
 				Type = this.Const.World.Spawn.Troops.StandardBearer,
 				Num = 1
 			},
@@ -2384,6 +2660,42 @@ gt.Const.World.Spawn.Noble <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Knight,
 				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Arbalester,
+				Num = 4
+			}
+		]
+	},
+	{
+		MovementSpeedMult = 1.0,
+		VisibilityMult = 1.0,
+		VisionMult = 1.0,
+		Body = "figure_noble_03",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Footman,
+				Num = 10
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Billman,
+				Num = 6
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.StandardBearer,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Greatsword,
+				Num = 3
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Sergeant,
+				Num = 1
+			},
+			{
+				Type = this.Const.World.Spawn.Troops.Knight,
+				Num = 2
 			},
 			{
 				Type = this.Const.World.Spawn.Troops.Arbalester,

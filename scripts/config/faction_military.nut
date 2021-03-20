@@ -109,7 +109,7 @@ gt.Const.Tactical.Actor.StandardBearer <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 80,
-	Bravery = 80,
+	Bravery = 90,
 	Stamina = 130,
 	MeleeSkill = 65,
 	RangedSkill = 50,

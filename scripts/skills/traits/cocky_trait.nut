@@ -15,7 +15,6 @@ this.cocky_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.weasel",
 			"trait.hesitant",
 			"trait.pessimist",
-			"trait.conservative",
 			"trait.dastard",
 			"trait.insecure",
 			"trait.craven",

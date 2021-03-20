@@ -20,7 +20,8 @@ this.fat_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.quick",
 			"trait.strong",
 			"trait.spartan",
-			"trait.swift"
+			"trait.swift",
+			"trait.iron_lungs"
 		];
 	}
 

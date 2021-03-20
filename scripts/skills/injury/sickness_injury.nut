@@ -6,7 +6,7 @@ this.sickness_injury <- this.inherit("scripts/skills/injury/injury", {
 		this.m.ID = "injury.sickness";
 		this.m.Name = "Sick";
 		this.m.Description = "Struck with sickness and disease, this character isn\'t feeling well at all and hardly in a condition to fight. If the fever doesn\'t take him, it\'ll probably pass in time.";
-		this.m.Type = this.m.Type | this.Const.SkillType.TemporaryInjury;
+		this.m.Type = this.m.Type | this.Const.SkillType.StatusEffect | this.Const.SkillType.SemiInjury;
 		this.m.DropIcon = "injury_icon_25";
 		this.m.Icon = "ui/injury/injury_icon_25.png";
 		this.m.IconMini = "injury_icon_25_mini";

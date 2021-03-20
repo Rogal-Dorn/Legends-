@@ -8,7 +8,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 
 	function onExecute( _entity, _hasChanged )
 	{
-		local entities = this.World.getAllEntitiesAtPos(_entity.getPos(), 1.0);
+		local entities = this.World.getAllEntitiesAndOneLocationAtPos(_entity.getPos(), 1.0);
 
 		foreach( settlement in entities )
 		{
@@ -17,9 +17,9 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				foreach( item in _entity.getInventory() )
 				{
 					settlement.addImportedProduce(item);
-					_entity.clearInventory();
 				}
 
+				_entity.clearInventory();
 				break;
 			}
 		}

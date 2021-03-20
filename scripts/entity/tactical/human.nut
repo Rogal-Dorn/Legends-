@@ -397,7 +397,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.getItems().dropAll(_tile, _killer, !flip);
 		}
 
-		if (_tile != null && !this.Tactical.State.isScenarioMode() && this.World.FactionManager.isUndeadScourge() && isResurrectable && this.Math.rand(1, 100) <= 33)
+		if (_tile != null && !this.Tactical.State.isScenarioMode() && !this.Tactical.State.getStrategicProperties().IsArenaMode && this.World.FactionManager.isUndeadScourge() && isResurrectable && this.Math.rand(1, 100) <= 33)
 		{
 			local corpse = _tile.Properties.get("Corpse");
 			corpse.Faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID();

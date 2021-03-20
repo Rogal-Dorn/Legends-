@@ -50,6 +50,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 	}
@@ -87,7 +88,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			r = this.Math.rand(1, 2);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
@@ -96,6 +97,14 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			else if (r == 2)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/noble_sword"));
+			}
+			else if (r == 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
+			}
+			else if (r == 4)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/warhammer"));
 			}
 		}
 

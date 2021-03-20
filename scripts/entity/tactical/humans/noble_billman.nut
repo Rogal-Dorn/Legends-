@@ -113,7 +113,7 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/armor/gambeson"));
 		}
 
-		if (this.Math.rand(1, 100) <= 33)
+		if (this.Math.rand(1, 100) <= 50)
 		{
 			local helmet;
 
@@ -186,7 +186,7 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			r = this.Math.rand(1, 5);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
