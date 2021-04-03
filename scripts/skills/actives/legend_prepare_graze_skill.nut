@@ -10,7 +10,7 @@ this.legend_prepare_graze_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_prepare_graze_skill";
-		this.m.Name = "Prepare to graze";
+		this.m.Name = "Prepare to Graze";
 		this.m.Description = "Evaluate your enemy, preparing your next attack to leave them bleeding from multiple grazes";
 		this.m.Icon = "skills/graze_square.png";
 		this.m.IconDisabled = "skills/graze_square_bw.png";
@@ -67,13 +67,28 @@ this.legend_prepare_graze_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		local poison = _user.getSkills().getSkillByID("effects.legend_graze_prepared");
+
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && poison == null;
 	}
 
 	function onUse( _user, _targetTile )
 	{
+		local poison = _user.getSkills().getSkillByID("effects.legend_graze_prepared");
 
- 	 _user.getSkills().add(this.new("scripts/skills/effects/legend_graze_prepared_effect"));
+		if (poison != null)
+		{
+			poison.resetTime();
+		}
+		else
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/legend_graze_prepared_effect"));
+		}
+
+		if (this.m.Item != null && !this.m.Item.isNull())
+		{
+			this.m.Item.removeSelf();
+		}
 
 		return true;
 	}

@@ -10,7 +10,7 @@ this.legend_prepare_bleed_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_prepare_bleed_skill";
-		this.m.Name = "Prepare to bleed";
+		this.m.Name = "Prepare to Bleed";
 		this.m.Description = "Evaluate your enemy, preparing your next attack to leave them bleeding";
 		this.m.Icon = "skills/bleed_square.png";
 		this.m.IconDisabled = "skills/bleed_square_bw.png";
@@ -67,7 +67,9 @@ this.legend_prepare_bleed_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		local poison = _user.getSkills().getSkillByID("effects.legend_bleed_prepared");
+
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && poison == null;
 	}
 
 	function onUse( _user, _targetTile )

@@ -67,14 +67,29 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		local poison = _user.getSkills().getSkillByID("effects.legend_knockback_prepared");
+
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && poison == null;
 	}
 
 	function onUse( _user, _targetTile )
 	{
+		local poison = _user.getSkills().getSkillByID("effects.legend_knockback_prepared");
 
- 	 _user.getSkills().add(this.new("scripts/skills/effects/legend_knockback_prepared_effect"));
+		if (poison != null)
+		{
+			poison.resetTime();
+		}
+		else
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/legend_knockback_prepared_effect"));
+		}
 
+		if (this.m.Item != null && !this.m.Item.isNull())
+		{
+			this.m.Item.removeSelf();
+		}
+ 	 	
 		return true;
 	}
 
