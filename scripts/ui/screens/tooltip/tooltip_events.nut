@@ -2659,7 +2659,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Increases the overal speed of all tactical engagmenets."
+					text = "Increases the overal speed of all tactical engagemenets."
 				}
 			];
 
