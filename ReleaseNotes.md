@@ -5051,6 +5051,7 @@ Integrates MrBrut's Tactical Hit factors mod
 Fixes tooltips that overflow and prevent seeing and reading all the info
 Fixes some favoured enemy perks screwing up with legendary location enemies (Skeleton Lich, Zombie Treasure Hunters, etc)
 Fixes the prepared Knockback, Graze, and Bleed skills to not be repeatedly usable, effectively wasting Fatigue & AP
+Fixes necromancers losing possessed undead effects too early
 
 **Changes**
 Reduces cost of painter tent changes
