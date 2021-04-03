@@ -62,6 +62,7 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 			HasTraining = false,
 			HasOffhand = false
 		}
+		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		local actor = this.getContainer().getActor();
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
