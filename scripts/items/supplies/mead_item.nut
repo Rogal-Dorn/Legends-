@@ -5,7 +5,7 @@ this.mead_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.mead";
 		this.m.Name = "Mead";
-		this.m.Description = "Provisions. An alcoholic beverage made from honey. Both durable and tasty. Can be drunk in battle to grant +9% resolve, melee and ranged skill. At the expects of -36% initiative and -18% melee defense and ranged defense, the effect lasts for three turns. Will be used as provisions while travelling if left in the company stash.";
+		this.m.Description = "Provisions. An alcoholic beverage made from honey. Both durable and tasty. Can be drunk in battle to grant +9% resolve, melee and ranged skill. At the expense of -36% initiative and -18% melee defense and ranged defense, the effect lasts for three turns. Will be used as provisions while travelling if left in the company stash.";
 		this.m.Icon = "supplies/inventory_provisions_12.png";
 		this.m.Value = 90;
 		this.m.GoodForDays = 11;
