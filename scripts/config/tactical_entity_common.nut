@@ -313,32 +313,9 @@ gt.Const.Tactical.Common <- {
 			return;
 		}
 
-		if (_entity.getFaction() == this.Const.Faction.Player || _entity.getFaction() == this.Const.Faction.Civilian || _entity.getFaction() == this.Const.Faction.NobleHouse)
-		{
-			local sanctify = _entity.getSkills().getSkillByID("effects.legend_sanctified_effect");
-			if (sanctify != null)
-			{
-				sanctify.onRefresh();
-			}
-			else if (_entity.getBackground().isCultist())
-			{
-				local hitInfo = clone this.Const.Tactical.HitInfo;
-				hitInfo.DamageRegular = this.Math.rand(10, 20);
-				hitInfo.DamageDirect = 1.0;
-				hitInfo.BodyPart = this.Const.BodyPart.Body;
-				hitInfo.BodyDamageMult = 1.0;
-				hitInfo.FatalityChanceMult = 0.0;
-				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
-			}
-			else
-			{
+		local faction = _entity.getFaction();
 
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
-			}
-		}
-
-		if (_entity.getFaction() == this.Const.Faction.Undead || _entity.getFaction() == this.Const.Faction.Zombies )
+		if (faction == this.Const.Faction.Undead || faction == this.Const.Faction.Zombies )
 		{
 			local consecrate = _entity.getSkills().getSkillByID("effects.legend_consecrated_effect");
 			if (consecrate != null)
@@ -366,8 +343,34 @@ gt.Const.Tactical.Common <- {
 				hitInfo.FatalityChanceMult = 0.0;
 				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
 			}
-
+			return;
 		}
+
+		if (faction == this.Const.Faction.Player || faction == this.Const.Faction.Civilian || faction == this.Const.Faction.NobleHouse)
+		{
+			local sanctify = _entity.getSkills().getSkillByID("effects.legend_sanctified_effect");
+			if (sanctify != null)
+			{
+				sanctify.onRefresh();
+			}
+			else if (faction == this.Const.Faction.Player && _entity.getBackground().isCultist())
+			{
+				local hitInfo = clone this.Const.Tactical.HitInfo;
+				hitInfo.DamageRegular = this.Math.rand(10, 20);
+				hitInfo.DamageDirect = 1.0;
+				hitInfo.BodyPart = this.Const.BodyPart.Body;
+				hitInfo.BodyDamageMult = 1.0;
+				hitInfo.FatalityChanceMult = 0.0;
+				_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
+			}
+			else
+			{
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
+				_entity.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
+			}
+		}
+
+		
 	}
 
 };
