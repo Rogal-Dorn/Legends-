@@ -6,7 +6,7 @@ this.aggressive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.ID = "trait.aggressive";
 		this.m.Name = "Aggressive";
 		this.m.Icon = "ui/traits/aggressive_trait.png";
-		this.m.Description = "This character is pretty aggressive, even to their own detriment";
+		this.m.Description = "This character is pretty aggressive, even to their own detriment.";
 		this.m.Titles = [
 			"the Boar",
 			"the Fire",

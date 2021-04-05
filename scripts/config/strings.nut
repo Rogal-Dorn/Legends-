@@ -2175,7 +2175,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRelax = "Sooth an ally, halving their fatigue",
 	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants",
 	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage, up to 50. \n[color=#0b0084]From the Large perk group[/color]",
-	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer effects this character\'s defences at all. Upgraded version of underdog, immune to Backstabber",
+	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you in the heart of the battle. Being surrounded no longer affects this character\'s defences at all. Upgraded version of Underdog, immune to Backstabber.",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. This character gains 5% resolve for every fleeing character on the field, friend or foe.  Taking this perk also removes the superstitious, insecure and dastard traits. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
 	LegendSummonCat = "Summon feline familiar to your aide. Don\'t worry, this particular cat has nine times a million lives.",
