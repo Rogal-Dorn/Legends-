@@ -5053,6 +5053,9 @@ Fixes some favoured enemy perks screwing up with legendary location enemies (Ske
 Fixes the prepared Knockback, Graze, and Bleed skills to not be repeatedly usable, effectively wasting Fatigue & AP
 Fixes necromancers losing possessed undead effects too early
 Fixes the Unarmed Lunge skill tooltip not working
+Stables tryout fixed (Thanks Leonion)
+Gruesome Feast Fixed (Thanks LordMidas)
+Fixes layered helmets+armors not dropping when your brothers die while you have a blacksmith
 
 **Changes**
 Reduces cost of painter tent changes
