@@ -707,11 +707,12 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
 		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
+		local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
 
 		local repair = this.getRepair();
 		local repairMax = this.getRepairMax();
 
-		if (this.getArmor() > 15 && isPlayer || this.getArmor() > 30 && this.getArmor() / this.getArmorMax() >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary))
+		if (this.getArmor() > 15 && isPlayer || this.getArmor() > 30 && this.getArmor() / this.getArmorMax() >= 0.25 && (isLucky || this.Math.rand(1, 100) <= 70) || this.isItemType(this.Const.Items.ItemType.Named) || this.isItemType(this.Const.Items.ItemType.Legendary) || isBlacksmithed)
 		{
 			return true;
 		}

@@ -150,7 +150,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 		{
 			s.removeSelf();
 		}		
-		
+
 		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
 		foreach( a in actors )
 		{
@@ -159,7 +159,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (myTile.getDistanceTo(a.getTile()) > 4)
+			if (this.getTile().getDistanceTo(a.getTile()) > 4)
 			{
 				continue;
 			}
@@ -168,7 +168,7 @@ this.legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 			{
 				continue;
 			}	
-			
+
 			a.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 			a.worsenMood(2.0, "Witnessed someone eat a corpse");
 		}

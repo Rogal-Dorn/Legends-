@@ -109,7 +109,7 @@ this.town_stables_dialog_module <- this.inherit("scripts/ui/screens/ui_module", 
 			this.World.Assets.addMoney(-tryoutCost);
 			return {
 				Result = 0,
-				Roster = this.UIDataHelper.convertHireRosterToUIData(this.m.RosterID),
+				Roster = this.UIDataHelper.convertStablesRosterToUIData(this.m.RosterID),
 				Assets = this.m.Parent.queryAssetsInformation()
 			};
 		}
