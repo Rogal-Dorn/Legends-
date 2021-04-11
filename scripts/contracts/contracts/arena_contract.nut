@@ -196,7 +196,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				this.m.Flags.set(t.F, true);
 				pay = pay + t.P;
-				  // [460]  OP_JMP            0      5    0    0
+				break;
 			}
 			else
 			{
