@@ -15,7 +15,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have someone with the Camp Cook perk. Guaranteed on Bakers, Fishwives, Cannibals and Butchers, may be rarely found on many others"
+				Text = "Have someone who's learned the Camp Cook perk. Guaranteed on Bakers, Fishwives, Cannibals and Butchers, may be rarely found on many others"
 			}
 		];
 	}
