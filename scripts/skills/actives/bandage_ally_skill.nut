@@ -11,7 +11,7 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.bandage_ally";
 		this.m.Name = "Use Bandages";
-		this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee.";
+		this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee, unless the character using this skill has Bandage Mastery.";
 		this.m.Icon = "skills/active_105.png";
 		this.m.IconDisabled = "skills/active_105_sw.png";
 		this.m.Overlay = "active_105";
@@ -92,7 +92,7 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local tile = this.getContainer().getActor().getTile();
-		return this.skill.isUsable() && !tile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return this.skill.isUsable() && (!tile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) || !this.m.Container.hasSkill("perk.legend_mastery_bandage"));
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -109,7 +109,7 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetTile.hasZoneOfControlOtherThan(this.m.Container.getActor().getAlliedFactions()))
+		if (_targetTile.hasZoneOfControlOtherThan(this.m.Container.getActor().getAlliedFactions()) && !this.m.Container.hasSkill("perk.legend_mastery_bandage"))
 		{
 			return false;
 		}

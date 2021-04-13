@@ -11,7 +11,7 @@ this.legend_bandage <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_bandage";
 		this.m.Name = "Use Bandages";
-		this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee.";
+		this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee. Neither the character using this skill nor the patient may be engaged in melee, unless the character using this skill has Bandage Mastery.";
 		this.m.Icon = "skills/active_105.png";
 		this.m.IconDisabled = "skills/active_105_sw.png";
 		this.m.Overlay = "active_105";
@@ -89,7 +89,7 @@ this.legend_bandage <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetTile.hasZoneOfControlOtherThan(this.m.Container.getActor().getAlliedFactions()))
+		if (_targetTile.hasZoneOfControlOtherThan(this.m.Container.getActor().getAlliedFactions()) && !this.m.Container.hasSkill("perk.legend_mastery_bandage"))
 		{
 			return false;
 		}
