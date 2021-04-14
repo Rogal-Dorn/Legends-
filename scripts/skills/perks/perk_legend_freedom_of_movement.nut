@@ -42,7 +42,7 @@ this.perk_legend_freedom_of_movement <- this.inherit("scripts/skills/skill", {
 
 		if (ourCurrentInitiative > enemyCurrentInitiative)
 		{
-			local diff = (ourCurrentInitiative - enemyCurrentInitiative) / 100;
+			local diff = (ourCurrentInitiative - enemyCurrentInitiative) / 100.0;
 			local diffPoint = this.Math.minf(1, this.Math.pow(diff, 0.4)) * 0.80;
 			bonus = 1 - diffPoint;
 		}
