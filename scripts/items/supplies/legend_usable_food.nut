@@ -46,7 +46,7 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 
 	function getBestBeforeTime()
 	{
-		return this.m.BestBefore;
+		return this.m.BestBefore + (("State" in this.World) && this.World.State != null ? this.World.Assets.m.FoodAdditionalDays * this.World.getTime().SecondsPerDay : 0);
 	}
 
 	function randomizeAmount()
@@ -72,11 +72,11 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 		{
 			if (("State" in this.World) && this.World.State != null && this.World.State.getCombatStartTime() != 0)
 			{
-				return this.Math.max(1, (this.m.BestBefore - this.World.State.getCombatStartTime()) / this.World.getTime().SecondsPerDay);
+				return this.Math.max(1, (this.getBestBeforeTime() - this.World.State.getCombatStartTime()) / this.World.getTime().SecondsPerDay);
 			}
 			else
 			{
-				return this.Math.max(1, (this.m.BestBefore - this.Time.getVirtualTimeF()) / this.World.getTime().SecondsPerDay);
+				return this.Math.max(1, (this.getBestBeforeTime() - this.Time.getVirtualTimeF()) / this.World.getTime().SecondsPerDay);
 			}
 		}
 		else
