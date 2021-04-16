@@ -14,10 +14,10 @@ this.juggler_southern_background <- this.inherit("scripts/skills/backgrounds/jug
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 	}
 
-	function onBuildDescription()
-	{
-		return "";
-	}
+	// function onBuildDescription()
+	// {
+	// 	return "";
+	// }
 
 	function onAddEquipment()
 	{
