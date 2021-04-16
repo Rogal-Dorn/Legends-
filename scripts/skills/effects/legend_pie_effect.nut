@@ -6,7 +6,7 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 
 	function setAmount( _a )
 	{
-	this.m.Amount = _a;
+		this.m.Amount = _a;
 	}
 
 	function create()
@@ -29,7 +29,7 @@ this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local rate = this.Math.floor(this.m.Amount / 20);
+		local rate = this.Math.floor(this.m.Amount / 10);
 		local turns = this.m.TurnsLeft;
 		local ret = [
 			{
