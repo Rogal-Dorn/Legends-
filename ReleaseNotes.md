@@ -5058,6 +5058,8 @@ Gruesome Feast Fixed (Thanks LordMidas)
 Fixes layered helmets+armors not dropping when your brothers die while you have a blacksmith
 Fixes pie tooltip for when you eat in combat
 Fixes cook to properly increase all food duration by 3 days
+Southern juggler now has a background
+CCA now mentions 
 
 **Changes**
 Reduces cost of painter tent changes
