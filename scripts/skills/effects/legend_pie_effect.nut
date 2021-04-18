@@ -1,7 +1,7 @@
 this.legend_pie_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 5,
-		Amount = 0
+		Amount = 10
 	},
 
 	function setAmount( _a )

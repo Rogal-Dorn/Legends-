@@ -1,7 +1,7 @@
 this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 10,
-		Amount = 0
+		Amount = 100
 	},
 
 	function setAmount( _a )
@@ -59,7 +59,7 @@ this.legend_pudding_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "] + 20 [/color] to morale checks for " + turns + " turns"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] to morale checks for " + turns + " turns"
 			}
 		];
 		return ret;

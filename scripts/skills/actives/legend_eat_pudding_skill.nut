@@ -54,7 +54,19 @@ this.legend_eat_pudding_skill <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/health.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health "
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Health per turn for 10 turns"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5[/color] Fatigue per turn for 10 turns"
+			},
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] to morale checks for 10 turns"
 			}
 		];
 

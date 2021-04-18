@@ -54,7 +54,7 @@ this.legend_eat_porridge_skill <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health "
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health per turn for 10 turns"
 			}
 		];
 
