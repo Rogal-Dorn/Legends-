@@ -193,6 +193,19 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		//Untested fix, theoretically should fix being disarmed and getting extra weapon damage
+		if (this.m.Container.hasSkill("disarmed_effect"))
+		{
+			local items = this.m.Container.getActor().getItems();
+			local mhand = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			if (mhand != null)
+			{
+				_properties.DamageRegularMin -= mhand.m.RegularDamage;
+				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
+			}
+			
+		}
+
 		local mods = this.getMods();
 		_properties.DamageRegularMin += mods.Min;
 		_properties.DamageRegularMax += mods.Max;

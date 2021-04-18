@@ -5060,6 +5060,7 @@ Fixes pie tooltip for when you eat in combat
 Fixes cook to properly increase all food duration by 3 days
 Southern juggler now has a background
 CCA now mentions 
+Fixes goblin light helmet to properly drop
 
 **Changes**
 Reduces cost of painter tent changes
