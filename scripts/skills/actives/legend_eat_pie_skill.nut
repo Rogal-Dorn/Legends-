@@ -53,8 +53,14 @@ this.legend_eat_pie_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 11,
 				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Health "
+				icon = "ui/icons/hitpoints.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Health per turn for 10 turns"
+			},
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/fatigue.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] Fatigue per turn for 10 turns"
 			}
 		];
 
