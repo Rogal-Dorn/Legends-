@@ -208,13 +208,39 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 					chance = 10;
 				}
 
-				if (this.Math.rand(1, 100) < chance)
+				if (this.Math.rand(1, 100) <= chance)
 				{
-					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					token.setRuneVariant(this.Math.rand(11, 13));
-					token.setRuneBonus(true);
-					token.updateRuneSigilToken();
-					token.drop(_tile);
+					if (this.LegendsMod.Configs().LegendArmorsEnabled())
+					{
+						local rune;
+						local selected = this.Math.rand(11,13);
+						switch(selected)
+						{
+							case 11:
+								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_clarity");
+								break;
+
+							case 12:
+								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_bravery");
+								break;
+
+							case 13:
+								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_luck");
+								break;
+						}
+						rune.setRuneVariant(selected);
+						rune.setRuneBonus(false);
+						// rune.setRuneVariant(0);
+						rune.drop(_tile);
+					}
+					else
+					{
+						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+						token.setRuneVariant(this.Math.rand(11, 13));
+						token.setRuneBonus(true);
+						token.updateRuneSigilToken();
+						token.drop(_tile);
+					}
 				}
 			}
 		}
