@@ -5061,6 +5061,8 @@ Fixes cook to properly increase all food duration by 3 days
 Southern juggler now has a background
 CCA now mentions 
 Fixes goblin light helmet to properly drop
+Fixes misspelling in belly dancer event -> "Sde" to "She"
+Fixes so Hedge Knights can't get 20 armor -> Slightly increases avg armor of HKs by small amount because of this
 
 **Changes**
 Reduces cost of painter tent changes

@@ -321,30 +321,25 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
-    ID = "heavy_lamellar_armor",
+    ID = "heavy_lamellar_armor", //285 ; 262 avg
     Script = "",
     Sets = [{
-        Cloth = [
-            [1, "cloth/legend_gambeson"],
-            [1, "cloth/legend_padded_surcoat"],
-            [1, "cloth/legend_robes"],
-            [1, "cloth/legend_tunic"],
+        Cloth = [ //avg of 60
+            [1, "cloth/legend_gambeson"], // 65
+            [1, "cloth/legend_padded_surcoat"] //55
         ],
-        Chain = [
-            [1, ""],
-            [1, "chain/legend_armor_basic_mail"],
-            [1, "chain/legend_armor_mail_shirt"],
-            [1, "chain/legend_armor_mail_shirt_simple"],
-            [1, "chain/legend_armor_reinforced_mail"],
-            [1, "chain/legend_armor_reinforced_mail_shirt"],
-            [1, "chain/legend_armor_short_mail"],
+        Chain = [ //77avg
+            [1, "chain/legend_armor_basic_mail"], //85
+            [1, "chain/legend_armor_mail_shirt"], //50
+            [1, "chain/legend_armor_reinforced_mail"], //110
+            [1, "chain/legend_armor_reinforced_mail_shirt"], //80
+            [1, "chain/legend_armor_short_mail"] //60
         ],
-        Plate = [
-            [1, ""],
-            [1, "plate/legend_armor_leather_lamellar_harness_heavy"],
-            [1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
-            [1, "plate/legend_armor_leather_lamellar_heavy"],
-            [1, "plate/legend_armor_leather_lamellar_reinforced"],
+        Plate = [//125
+            [1, "plate/legend_armor_leather_lamellar_harness_heavy"], //130
+            [1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
+            [1, "plate/legend_armor_leather_lamellar_heavy"], //165
+            [1, "plate/legend_armor_leather_lamellar_reinforced"] //55
         ],
         Cloak = [
         ],
