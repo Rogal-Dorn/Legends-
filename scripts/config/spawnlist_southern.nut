@@ -22,7 +22,7 @@ gt.Const.World.Spawn.Southern <-
 	Troops = 
 	[
 		{
-			Weight = 55,
+			Weight = 50,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Slave, //might weight slaves too heavily early on but maybe is fine
@@ -45,7 +45,7 @@ gt.Const.World.Spawn.Southern <-
 			]
 		},
 		{
-			Weight = 4,
+			Weight = 5,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Gunner,
@@ -55,7 +55,7 @@ gt.Const.World.Spawn.Southern <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 6,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Engineer,
@@ -77,7 +77,7 @@ gt.Const.World.Spawn.Southern <-
 			]
 		},
 		{
-			Weight = 8,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Officer,
@@ -87,7 +87,7 @@ gt.Const.World.Spawn.Southern <-
 			]
 		},
 		{
-			Weight = 8,
+			Weight = 9,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Assassin,

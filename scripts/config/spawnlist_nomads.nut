@@ -67,7 +67,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 	Troops =
 	[
 		{
-			Weight = 63,
+			Weight = 60,
 			Types =
 			[
 				{
@@ -82,7 +82,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 26,
+			Weight = 24,
 			Types =
 			[
 				{
@@ -103,7 +103,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 7,
+			Weight = 10,
 			MinR = 140,
 			Types =
 			[
@@ -115,7 +115,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 2,
+			Weight = 3,
 			MinR = 300,
 			Types =
 			[
@@ -127,7 +127,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 2,
+			Weight = 3,
 			MinR = 310,
 			Types =
 			[
@@ -155,7 +155,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 	Troops =
 	[
 		{
-			Weight = 67,
+			Weight = 60,
 			Types =
 			[
 				{
@@ -169,7 +169,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 24,
+			Weight = 21,
 			Types =
 			[
 				{
@@ -190,7 +190,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 8,
 			MinR = 140,
 			Types =
 			[
@@ -202,7 +202,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 2,
+			Weight = 5,
 			MinR = 365,
 			Types =
 			[
@@ -214,8 +214,8 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 2,
-			MinR = 425,
+			Weight = 6,
+			MinR = 420,
 			Types =
 			[
 				{
