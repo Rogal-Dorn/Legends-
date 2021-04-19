@@ -5065,6 +5065,7 @@ Fixes misspelling in belly dancer event -> "Sde" to "She"
 Fixes so Hedge Knights can't get 20 armor -> Slightly increases avg armor of HKs by small amount because of this
 Staff knockout has a space after the word "dazed" in the combat log
 Fixes hexen being able to drop unlayered runes & letting you double-rune a helmet, screwing up the save
+Fixes the drunk nobleman event
 
 **Changes**
 Reduces cost of painter tent changes
