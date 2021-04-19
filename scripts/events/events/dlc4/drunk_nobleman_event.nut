@@ -42,7 +42,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				if (_event.m.Thief != null)
+				if (_event.m.Thief == null)
 				{
 					this.Options.push({
 						Text = "Perhaps %thief% can ease his burden.",
@@ -54,7 +54,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 					});
 				}
 				
-				if (_event.m.Noble != null)
+				if (_event.m.Noble == null)
 				{
 					this.Options.push({
 						Text = "Hey that\'s %noble%\'s cousin.",
@@ -306,7 +306,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "%terrainImage%{As you approach the drunkard, a sharp whistle cracks across the path. You and the drunkard both look to see %thief% the thief standing there with a weapon to the back of another man.%SPEECH_ON%That feller\'s no nobleman, and probably aint no drunk neither. They\'re working together to either ambush travelers or threaten them with blackmail. They\'re robbers, sir.%SPEECH_OFF%You look back to see the man smiling nervously. He explains with suddenly sharpened clarity.%SPEECH_ON%We\'d no interest in robbing sellswords, sir, I-I-I swear I was about to explain myself soon as I sawr yer swords.%SPEECH_OFF%%thief% yells out, asking where the cache is. You look back at the man and tell him to hand over everything he\'s stolen. He nods and asks if you\'ll gut him if he refuses. You nod and tell him the gutting will come last, and by that point it\'ll be a relief. The man puts a little pep in his step.%SPEECH_ON%Yessir gotcha sir, right this way.%SPEECH_OFF%}",
+			Text = "%terrainImage%As you approach the drunkard, a sharp whistle cracks across the path. You and the drunkard both look to see %thief% the thief standing there with a weapon to the back of another man.%SPEECH_ON%That feller\'s no nobleman, and probably aint no drunk neither. They\'re working together to either ambush travelers or threaten them with blackmail. They\'re robbers, sir.%SPEECH_OFF%You look back to see the man smiling nervously. He explains with suddenly sharpened clarity.%SPEECH_ON%We\'d no interest in robbing sellswords, sir, I-I-I swear I was about to explain myself soon as I sawr yer swords.%SPEECH_OFF%%thief% yells out, asking where the cache is. You look back at the man and tell him to hand over everything he\'s stolen. He nods and asks if you\'ll gut him if he refuses. You nod and tell him the gutting will come last, and by that point it\'ll be a relief. The man puts a little pep in his step.%SPEECH_ON%Yessir gotcha sir, right this way.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -350,7 +350,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "I",
-			Text = "%terrainImage%{As you approach the drunkard, he immediately recognises %noble% and runs up sobbing. %SPEECH_ON%Cousin! Oh my gentile and cultured cousin, my favourite second cousin, you would not believe the outrageous injustice perpetrated against one\'s self!%SPEECH_OFF%You look on sceptically as the obviously drunken and slightly bedraggled nobleman continues %SPEECH_ON%I was due to be wed you see, to the love of my life. It was to the richest, wealthiest, prosperous, bountiful, most affluent, most.. well endowed..%SPEECH_OFF% The noble\'s mind wanders off, as if in fantasy. You prompt again and the speach continues somewhat more deflated %SPEECH_ON%Alas it was not to be, they discovered that (I am not a marquess from the border lands but only a viscount heir.| My winnings at the table were not as grand as perhaps I had let on | My horrible father disowned me for having too much fun with wine and women ).  They turned me out on the road, perhaps I could come on a travelling adventure with you? %SPEECH_OFF%}",
+			Text = "%terrainImage%As you approach the drunkard, he immediately recognises %noble% and runs up sobbing. %SPEECH_ON%Cousin! Oh my gentile and cultured cousin, my favourite second cousin, you would not believe the outrageous injustice perpetrated against one\'s self!%SPEECH_OFF%You look on sceptically as the obviously drunken and slightly bedraggled nobleman continues %SPEECH_ON%I was due to be wed you see, to the love of my life. It was to the richest, wealthiest, prosperous, bountiful, most affluent, most.. well endowed..%SPEECH_OFF% The noble\'s mind wanders off, as if in fantasy. You prompt again and the speach continues somewhat more deflated %SPEECH_ON%Alas it was not to be, they discovered that (I am not a marquess from the border lands but only a viscount heir | My winnings at the table were not as grand as perhaps I had let on | My horrible father disowned me for having too much fun with wine and women). They turned me out on the road, perhaps I could come on a travelling adventure with you? %SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -381,8 +381,8 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx(["legend_noble_background"]);
-				_event.m.Vala.getSkills().add(this.new("scripts/skills/traits/addict_trait"));
-				_event.m.Vala.getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/addict_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 
