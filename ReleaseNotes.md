@@ -5064,3 +5064,4 @@ Fixes goblin light helmet to properly drop
 
 **Changes**
 Reduces cost of painter tent changes
+Mummy racial now only applies on the killer for that battle, instead of all entities within 2 tiles
