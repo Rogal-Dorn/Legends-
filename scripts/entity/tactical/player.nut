@@ -2019,6 +2019,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				background
 			];
 
+			if (background.m.IsGuaranteed.len() > 0)
+			{
+				maxTraits = maxTraits - background.m.IsGuaranteed.len();
+				foreach(trait in background.m.IsGuaranteed)
+				{
+					traits.push(this.new("scripts/skills/traits/" + trait));
+				}
+			}
+
 			for( local i = 0; i < maxTraits; i = ++i )
 			{
 				while (true)

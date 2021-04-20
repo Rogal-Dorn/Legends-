@@ -132,7 +132,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		},
 		CustomPerkTree = null,
 		PerkTreeMap = null,
-		PerkTree = null
+		PerkTree = null,
+		IsGuaranteed = []
 	},
 	function isExcluded( _id )
 	{
@@ -1471,6 +1472,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			actor.m.Level = this.m.Level;
 			actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
 		}
+		
 	}
 
 	function onBuildDescription()
