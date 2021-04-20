@@ -98,33 +98,33 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
-    ID = "coat_of_plates",
+    ID = "coat_of_plates", //320 : 297 average, 65 + 110 + 170 + 10 = 355 absolute max, 240 absolute min
     Script = "",
     Sets = [{
-        Cloth = [
-            [1, "cloth/legend_gambeson"],
-            [5, "cloth/legend_padded_surcoat"],
-            [5, "cloth/legend_tunic"]
+        Cloth = [ //60
+            [1, "cloth/legend_gambeson"], //65 
+            [5, "cloth/legend_padded_surcoat"] //55
+            // [5, "cloth/legend_tunic"]
         ],
-        Chain = [
-            [2, ""],
-            [1, "chain/legend_armor_mail_shirt"],
-			[1, "chain/legend_armor_mail_shirt_simple"],
-            [1, "chain/legend_armor_reinforced_mail"],
-			[1, "chain/legend_armor_reinforced_mail_shirt"],
+        Chain = [ //66.25 if [2,""] removed : 44 with : 80 with commented things
+            // [2, ""],
+            [1, "chain/legend_armor_mail_shirt"], //50
+			// [1, "chain/legend_armor_mail_shirt_simple"], //25
+            [1, "chain/legend_armor_reinforced_mail"], //110
+			[1, "chain/legend_armor_reinforced_mail_shirt"] //80
         ],
-        Plate = [
-            [1, "plate/legend_armor_plate_chest"],
+        Plate = [ //157 avg
+            [1, "plate/legend_armor_plate_chest"], //125
             [0, "plate/legend_armor_plate_chest_rotten"],
-            [1, "plate/legend_armor_plate_cuirass"],
-            [1, "plate/legend_armor_plate_full"],
-			[1, "plate/legend_armor_plate_milanese"],
-			[1, "plate/legend_armor_plate_krastenbrust"],
-			[1, "plate/legend_armor_plate_triangle"],
+            [1, "plate/legend_armor_plate_cuirass"], //150
+            [1, "plate/legend_armor_plate_full"], //160
+			[1, "plate/legend_armor_plate_milanese"], //170
+			[1, "plate/legend_armor_plate_krastenbrust"], //170
+			[1, "plate/legend_armor_plate_triangle"] //170
         ],
         Cloak = [
             [20, ""],
-            [1, "cloak/legend_armor_cloak_common"],
+            [1, "cloak/legend_armor_cloak_common"]
         ],
         Tabard = [
 
@@ -133,28 +133,28 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
-    ID = "coat_of_scales",
+    ID = "coat_of_scales", //300 : new max of 290ish, new avg of 240 ish, 
     Script = "",
     Sets = [{
-        Cloth = [
-            [1, "cloth/legend_gambeson"],
-            [1, "cloth/legend_padded_surcoat"],
-            [1, "cloth/legend_tunic"]
+        Cloth = [ //60
+            [1, "cloth/legend_gambeson"], //65
+            [1, "cloth/legend_padded_surcoat"] //55
+            // [1, "cloth/legend_tunic"] //20
         ],
-        Chain = [
-            [2, ""],
-            [1, "chain/legend_armor_mail_shirt"],
-			[1, "chain/legend_armor_mail_shirt_simple"],
-            [1, "chain/legend_armor_reinforced_mail"],
-			[1, "chain/legend_armor_reinforced_mail_shirt"],
+        Chain = [ //66.25 if [2,""] removed : 44 with : 80 with commented things
+            // [2, ""], //0
+            [1, "chain/legend_armor_mail_shirt"], //50
+			// [1, "chain/legend_armor_mail_shirt_simple"], //25
+            [1, "chain/legend_armor_reinforced_mail"], //110
+			[1, "chain/legend_armor_reinforced_mail_shirt"] //80
         ]
-        Plate = [
-            [1, "plate/legend_armor_scale"],
-            [1, "plate/legend_armor_scale_coat"],
+        Plate = [ //100
+            [1, "plate/legend_armor_scale"],  //100
+            [1, "plate/legend_armor_scale_coat"], //120
             [0, "plate/legend_armor_scale_coat_rotten"],
-            [1, "plate/legend_armor_scale_shirt"]
+            [1, "plate/legend_armor_scale_shirt"] //85
         ],
-        Cloak = [
+        Cloak = [ //1
             [20, ""],
             [1, "cloak/legend_armor_cloak_common"],
         ],
