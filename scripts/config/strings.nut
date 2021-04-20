@@ -239,7 +239,6 @@ gt.Const.Strings.EntityName <- [
 	"Phylactery",
 	"Lost Treasure Hunter",
 	"Screaming Skull",
-
 	"Bandit Rabble",
 	"Cat",
 	"Orc Elite",
@@ -280,14 +279,13 @@ gt.Const.Strings.EntityName <- [
 	"Bandit Rabble Poacher",
 	"Infected Bandit",
 	"Manhunter",
-	"Manhunter Veteran"
+	"Manhunter Veteran",
 	"Embalmed Slave",
 	"Embalmed Soldier",
 	"Embalmed Noble",
 	"Embalmed Queen",
 	"Kobold Fighter",
 	"Kobold Wolfrider"
-
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -396,7 +394,6 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Phylacteries",
 	"Lost Treasure Hunters",
 	"Screaming Skulls",
-
 	"Bandit Rabble",
 	"Cats",
 	"Orc Elites",
@@ -437,14 +434,13 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Bandit Rabble Poachers",
 	"Bandit Vermes",
 	"Manhunters",
-	"Manhunter Veterans"
+	"Manhunter Veterans",
 	"Embalmed Slaves",
 	"Embalmed Soldiers",
 	"Embalmed Nobles",
 	"Embalmed Queens",
 	"Kobold Fighters",
 	"Kobold Wolfriders"
-
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -659,7 +655,6 @@ gt.Const.Strings.MercenaryCompanyNames <- [
 	"Red Regiment",
 	"Invincibles",
 	"Order of the Fist"
-
 ];
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
@@ -692,7 +687,7 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Krieger",
 	"Steinwall",
 	"Harkon",
-	"Osten"
+	"Osten",
 	"Boswell",
 	"Olfer",
 	"Frankenmuth",
@@ -1414,7 +1409,6 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Devil\'s Claws",
 		"Kilgore Range",
 		"Cloudmaker"
-
 	],
 	[],
 	[],
@@ -1562,7 +1556,7 @@ gt.Const.Strings.TerrainRegionNames <- [
 		"Caskain",
 		"Maraman",
 		"Jundland",
-		"The Borderlands"
+		"The Borderlands",
 		"The Ashwild",
 		"Sanguine Frontier",
 		"The Sly Barrens",
@@ -2044,7 +2038,6 @@ gt.Const.Strings.PerkName <- {
 	LegendUnarmedLunge = "Unarmed Lunge",
 	LegendThrowSand = "Throw Sand"
 };
-
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.\n[color=#0b0084]From the Fit perk group[/color]",
 	ReturnFavor = "Unlocks the \'Return Favor\' skill which when active has a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun and stagger any opponent missing a melee attack against this character in retaliation. Immunities and resistances against being stunned still apply. [color=#0b0084]From the Mace perk group[/color]",
@@ -2071,7 +2064,7 @@ gt.Const.Strings.PerkDescription <- {
 	Dodge = "Too fast for you! Gain [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] of the character\'s current Initiative as a bonus to Melee and Ranged Defense. \n[color=#0b0084]From the Light Armor perk group[/color]",
 	Nimble = "Specialize in light armor! By nimbly dodging or deflecting blows, convert any hits to glancing hits. Hitpoint damage taken is reduced by up to [color=" + this.Const.UI.Color.PositiveValue + "]60%[/color], but lowered exponentially by the total penalty to Maximum Fatigue from body and head armor above 15. The lighter your armor and helmet, the more you benefit.\n\nBrawny does not affect this perk.\n\nDoes not affect damage from mental attacks or status effects, but can help to avoid receiving them. \n[color=#0b0084]From the Light Armor perk group[/color]",
 	BattleForged = "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.\n\nDoes not affect damage from mental attacks or status effects, but can help to avoid receiving them. \n[color=#0b0084]From the Heavy Armor perk group[/color]",
-	DoubleStrike = "After landing a hit, the next attacks this turn do [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] overall damage. If the attack misses, the effect is wasted. \n[color=#0b0084]From the Dagger perk group[/color]",
+	DoubleStrike = "After landing a hit, the next attack this turn does [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] overall damage. If the attack misses, the effect is lost. \n[color=#0b0084]From the Dagger perk group[/color]",
 	Vengeance = "After receiving a blow, the next attack of this character will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] damage to both hitpoints and armor. If the attack misses, the effect is wasted. \n[color=#0b0084]From the Martyr perk group[/color]",
 	Duelist = "Become one with your weapon and go for the weak spots! With the offhand free, an additional [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] of any damage ignores armor. Does not work with two-handed weapons. \n[color=#0b0084]From the One Handed Sword perk group[/color]",
 	CripplingStrikes = "Cripple your enemies! Lowers the threshold to inflict injuries by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] for both melee and ranged attacks. Undead cannot be injured, but you gain [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against them. \n[color=#0b0084]From the Vicious perk group[/color]",
@@ -2175,7 +2168,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRelax = "Sooth an ally, halving their fatigue",
 	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants",
 	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional maximum damage, up to 50. \n[color=#0b0084]From the Large perk group[/color]",
-	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you in the heart of the battle. Being surrounded no longer affects this character\'s defences at all. Upgraded version of Underdog, immune to Backstabber.",
+	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer affects this character\'s defences at all. Upgraded version of Underdog, immune to Backstabber",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. This character gains 5% resolve for every fleeing character on the field, friend or foe.  Taking this perk also removes the superstitious, insecure and dastard traits. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
 	LegendSummonCat = "Summon feline familiar to your aide. Don\'t worry, this particular cat has nine times a million lives.",
@@ -2209,7 +2202,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, up to a maximum of 50%. The Warden also gains a scaling damage bonus.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and then each attack has a chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
 	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
-	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prothetic body parts to help your mercanaries resolve their permanent injuries",
+	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prosthetic body parts to help your mercanaries resolve their permanent injuries",
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you take damage, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. Lose [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] rage stacks per turn. ",
 	LegendAssuredConquest = "[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] melee skill, melee defense and ranged defense when at confident morale. \n[color=#0b0084]From the Vicious perk group[/color]",
@@ -2221,7 +2214,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendAmmoBundles = "Using blankets and ropes to group large bundles of ammunition together you are able to carry far more. These bundles can also be used to shield yourself from enemy fire. Increases maximum ammunition storage by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] and Ranged Defense by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color]",
 	LegendMedPackages = "Not all of a plant is required for healing, your knowledge of the active ingredients lets you throw away excess leaves and roots.Your knowledge of medicines lets you repack them into more efficient packages. Increases maximum medicine storage by 30 and resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] \n[color=#0b0084]From the Healer perk group[/color]",
 	LegendMedIngredients = "Learning the plants of the healing trade allows you to fashion crude healing supplies from common ingredients. Unlocks crafting bandages and medicine. Also increases maximum medicine storage by 10 and resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] \n[color=#0b0084]From the Healer perk group[/color]",
-	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "] 10 [/color], reduces tool usage by [color=" + this.Const.UI.Color.PositiveValue + "] 4% [/color], and increases Stamina by [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] \n[color=#0b0084]From the Repair perk group[/color]",
+	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "] 10 [/color], reduces tool usage by [color=" + this.Const.UI.Color.PositiveValue + "] 4% [/color], and increases Fatigue by [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] \n[color=#0b0084]From the Repair perk group[/color]",
 	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color], reduces tool usage by [color=" + this.Const.UI.Color.PositiveValue + "] 6% [/color] and increases fatigue by [color=" + this.Const.UI.Color.PositiveValue + "]+6[/color].  \n[color=#0b0084]From the Repair perk group[/color]",
 	LegendBarterConvincing = "This characters skill with words makes their trade proposals more acceptable. Grants +1% barter skill, increasing sell prices, reducing buy prices and increasing pay for delivery contracts. Barter skill begins falling off at higher total rates.  \n[color=#0b0084]From the Barter perk group[/color]",
 	LegendBarterTrustworthy = "This characters body language makes people believe them, leading to more favourable trade agreements. Grants +2% barter skill increasing sell prices, reducing buy prices and increasing pay for delivery contracts. Barter skill begins falling off at higher total rates.  \n[color=#0b0084]From the Barter perk group[/color]",
@@ -2271,10 +2264,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color]. \n[color=#0b0084]From the Nets perk group[/color]",
 	LegendSpecialistScytheSkill = "Practicing with the unwieldy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while wielding a scythe",
 	LegendSpecialistScytheDamage = "There is a trick to sharpening the blades of scythes, and shifting the position of the handles turns it from a farming tool into a weapon. Mastering these tricks increases the damage output of scythes by [color=" + this.Const.UI.Color.PositiveValue + "]+10-15[/color]",
-	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. \n[color=#0b0084]From the Sling perk group[/color]",
+	LegendMasterySlings = "Master the difficult angles and timings of slinging rocks from afar. \n\n Accuracy with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] and maximum firing range with slings is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. Fatigue cost for Slings reduced by 25% \n[color=#0b0084]From the Sling perk group[/color]",
 	LegendSpecialistNinetailsDamage = "Use your strength of will to turn the tips of the cattail to inflict horrible injuries. While wielding a cat of nine tails this skill increases damage by [color=" + this.Const.UI.Color.PositiveValue + "]+5-10%[/color] of your resolve. 50% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
 	LegendSpecialistNinetailsSkill = "Practice in the arts of punishment grants greater accuracy with the unwieldy weapon. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your resolve as melee skill while using the cat o nine tails. 50% of this perk applies to other whips. \n[color=#0b0084]From the Ninetails perk group[/color]",
-	LegendFavouredEnemyGhoul = "Studying these monstrosities has given you insights into the strengths and weaknesses of the palid necrophilic flesh devourers. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting nachzehrers. Bonus increases the more Nachzehrer you kill.  The bonus depends on how powerful the Nachzehrer is, between [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color] per Nachzherer, and [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] per Skin Ghoul you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt elite nachzehrers, also known as Skin Ghouls",
+	LegendFavouredEnemyGhoul = "Studying these monstrosities has given you insights into the strengths and weaknesses of the palid necrophilic flesh devourers. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting nachzehrers. Bonus increases the more Nachzehrer you kill.  The bonus depends on how powerful the Nachzehrer is, between [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color] per Nachzherer, and [color=" + this.Const.UI.Color.PositiveValue + "]+1.5%[/color] per Skin Ghoul you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt elite nachzehrers, also known as Skin Ghouls",
 	LegendFavouredEnemyHexen = "Understanding the techniques of the malevolent crones gives you protection against their coven.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting hexe. Bonus increases the more Hexe you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] per Hexe you kill. Taking this perk unlocks a difficult legendary contract to hunt a coven leader",
 	LegendFavouredEnemyAlps = "Preparing for the nightmare creepers gives you techniques against their haggard curses.  Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and resolve while fighting alps. Bonus increases the more Alps you kill, at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.35%[/color] per Alp you kill. Taking this perk unlocks an extremely difficult legendary contract to hunt a fire breathing nightmare demon.",
 	LegendFavouredEnemyUnhold = "These gigantic ravenous creatures are dangerous but stupid, that can be used to your advantage. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] bonus to melee skill, ranged skill and maximum damage while fighting unholds. Bonus increases the more Unholds you kill at a rate of [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] damage per unhold killed. Taking this perk unlocks an extremely difficult legendary contract to hunt a stone skinned Mountain Unhold.",
@@ -2300,7 +2293,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage. \n[color=#0b0084]From the Two Handed Sword perk group[/color]",
 	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] less fatigue, [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Action Points and does [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage. Stacks with Spear Mastery. \n[color=#0b0084]From the Spear perk group[/color] ",
 	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust does [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage, also removes the hitchance penalty per tile when throwing spears and javelins. \n[color=#0b0084]From the Spear perk group[/color]",
-    LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance of protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] bonus melee defense, ranged defense and % armor damage reduction.  The bonus is at maximum when your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5. \n[color=#0b0084]From the Medium Armor perk group[/color]",
+	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance of protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] bonus melee defense, ranged defense and % armor damage reduction.  The bonus is at maximum when your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5. \n[color=#0b0084]From the Medium Armor perk group[/color]",
 	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your current helmet and armor values match. Decreases by 1 for every 10 points difference. Armor that is too heavy can not be balanced, does not work if their combined durability is above 400. \n[color=#0b0084]From the Medium Armor perk group[/color]",
 	LegendLithe = "Not as nimble as some, but more lithe than most. You gain a [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] chance to have any attacker require two successful attack rolls in order to hit, but lowered by the total penalty to Maximum Fatigue from body and head armor above 30.\n\nStacks with other sources of this effect.\n\nBrawny does not affect this perk. \n[color=#0b0084]From the Medium Armor perk group[/color]",
 	LegendHidden = "Master the art of concealment. Blend in with your surroundings and remain hidden from the enemy for 3 turns, or until your next attack \n[color=#0b0084]From the Devious perk group[/color]",
@@ -2354,7 +2347,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDrumsOfLife = "Learn powerful rythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] health to every ally within eight tiles. Can only be used with hands empty, or with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity that intensifies as you bleed. Gain a chance to inflict bleeding with every strike, equal to your percentage of missing health.",
 	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character gains [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] resolve [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] experience gain, in exchange for [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] melee skill and ranged skill. Becomes content with being in reserve, and consumes half rations while there. [color=#0b0084]From the Calm perk group[/color]",
-	LegendSummonHound = "Forming close bonds with hounds grants to the ability to call to them. Summon a loyal hound to your side in battle.",
+	LegendSummonHound = "Forming close bonds with hounds grants the ability to call to them. Summon a loyal hound to your side in battle.",
 	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
 	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
 	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. Adds a pet bear to your stash, make sure you have space before taking this perk. Unlocks an event to tame bears in the woods",
@@ -2364,7 +2357,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of extreme violence.  This character does not count towards your party strength when determining game difficulty. They will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] resolve. They become content with being in reserve, and will grow unhappy if they are placed in battle more than once per week. [color=#0b0084]From the Organised perk group[/color]",
 	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiave, accuracy based on ranged attack skill.",
 	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains",
-	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making. [color=#0b0084]From the Chef perk group[/color]"
+	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making. [color=#0b0084]From the Chef perk group[/color]",
 	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack. Unlocks the ability to store aditional dog items in your bags and use them in battle. [color=#0b0084]From the Dog Handling perk group[/color]",
 	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog. [color=#0b0084]From the Dog Handling perk group[/color]",
 	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs. [color=#0b0084]From the Dog Handling perk group[/color]",
@@ -2372,9 +2365,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendDogMaster = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food. [color=#0b0084]From the Dog Handling perk group[/color]",
 	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain your base Ranged Defence as Initiative, with a minimum bonus of 3. [color=#0b0084]From the Crossbow perk group[/color]",
 	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your Ranged Defence as Ranged Skill, with a minimum bonus of 3.  [color=#0b0084]From the Bow perk group[/color]",
-	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%. [color=#0b0084]From the Unarmed perk group[/color] "
-	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usuary it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company. [color=#0b0084]From the Barter perk group[/color] ",
-	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]"
+	LegendChoke = "Once an opponent is in a weakened state, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%. [color=#0b0084]From the Unarmed perk group[/color] ",
+	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usury it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company. [color=#0b0084]From the Barter perk group[/color] ",
+	LegendQuartermaster = "Meal planning and preperation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company. [color=#0b0084]From the Chef perk group[/color]",
 	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources including your own. [color=#0b0084]From the Barter perk group[/color]",
 	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as hitpoints at the end of their turn. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
 	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
@@ -2394,9 +2387,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit withing 4 tiles. Must have empty hands and it must be raining.",
 	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
-	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town's current events and buildings.",
+	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town\'s current events and buildings.",
 	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.",
-	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met."
+	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met.",
 	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",
 	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
 	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor",
@@ -2404,7 +2397,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent [color=#0b0084]From the Woodaxe perk group[/color]",
 	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies and foes alike while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
 	LegendControlInstincts = "Gives character self control while transformed [color=#0b0084]From the Therianthropy perk group[/color]",
-	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]"
+	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle [color=#0b0084]From the Therianthropy perk group[/color]",
 	MageLegendMagicBurningHands = "Unleash a cone of blistering heat from your palms, can hit up to 9 targets for 10-15 damage.",
 	MageLegendMagicChainLightning = "Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
 	MageLegendMagicCircleOfProtection = "A magic circle that protects all allies within at casting. Leaving the circle breaks the protection.",
