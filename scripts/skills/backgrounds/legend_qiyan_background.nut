@@ -6,7 +6,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.legend_qiyan";
 		this.m.Name = "Qiyan";
 		this.m.Icon = "ui/backgrounds/background_qiyan.png";
-		this.m.BackgroundDescription = "";
+		this.m.BackgroundDescription = "The qiyan is a slave, seductive and knowledgeable.";
 		this.m.GoodEnding = "This is a good ending";
 		this.m.BadEnding = "This is a bad ending";
 		this.m.HiringCost = 500;
@@ -105,6 +105,11 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			]
 		};
 		return c;
+	}
+
+	function onBuildDescription()
+	{
+		return "{%name% caught your eye during a festival held on a street corner, her singing voice was the most serene thing you had ever heard yet the chains around her ankles rattled and clattered, masking her falsettos. | Her owners keep her at a distance, despite the chains and delicate demeanour. | After verifying her claims that she stabbed a man twice her size to death in the street only a few weeks ago, you may think that she has what it takes to work in more gainful employment. }{%name% talks at length about her routine as a slave girl - she always wore as little clothing as she could get away with and her dances enthralled men and women alike. | She would dance for hours in public or private, normally for the wealthiest men in the land. | She also goes into great depth about how she killed each and every one of them with mundane objects like incense sticks, candles and even her own clothes. | This would explain why %name% wears broken shackles and is currently on the run from her employers. }{%name% used to be a slave girl, she is very particular on using the past tense when describing her past involving \'the rice and that stupid noble boy\'. | When pushed for more answers, she simply motions to the flowers and herbs adorning her hair. | While you are no expert, you do recognise at least two types that could kill a donkey in just a few bites. }{%name% is a mysterious character, under their clothing you can hear the occasional rattle of chains and the flash of a knife. | While all the hallmarks of a slave and assassin, %name% prefers to recite political treatise and poetry, almost word for word, to anyone who will listen. | Either a political captive or perhaps a recently learned woman, %name% can sit down with anyone and explain how to effectively, silently and efficiently kill any man with nothing but a scrap of metal and the element of surprise. | Almost word for word.}"
 	}
 
 	function onAdded()
