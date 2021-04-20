@@ -7,8 +7,8 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Name = "Muladí";
 		this.m.Icon = "ui/backgrounds/background_muladi.png";
 		this.m.BackgroundDescription = "A muladi is accustomed to the south, although not entirely accepted by the locals.";
-		this.m.GoodEnding = "todo ";
-		this.m.BadEnding = "todo";
+		this.m.GoodEnding = "Ever an outcast, %name% returned home and used the crowns gained from their adventures to buy caged and abused animals from local merchants and nobles. Soon their home was flourishing with exotic birds, dogs and other creatures. Looking for a home and a place to belong as they once did.";
+		this.m.BadEnding = "Living on the divide was a dangerous business, in attempting to return home they were driven out by northern militia on a border town with the desert. Alone, hungry and desperate. %name% was easy prey for the wild animals they once called kin.";
 		this.m.HiringCost = 100;
 		this.m.DailyCost = 10;
 		this.m.Excluded = [

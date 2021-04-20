@@ -7,8 +7,8 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Name = "Qiyan";
 		this.m.Icon = "ui/backgrounds/background_qiyan.png";
 		this.m.BackgroundDescription = "The qiyan is a slave, seductive and knowledgeable.";
-		this.m.GoodEnding = "This is a good ending";
-		this.m.BadEnding = "This is a bad ending";
+		this.m.GoodEnding = "%name% took what they had learned from their time in the company and headed north with the intention of getting as far away from the south as possible. They found good work and few questions awaiting them at a northern settlement in the tundra where they quickly rose the ranks of the local militia to become captain.";
+		this.m.BadEnding = "With the commander gone %name%\'s future was uncertain, but her old masters were not. Manhunters came for %name% a few nights after the commander leaving. Without your guidance the remaining mercenaries did not attempt to stop the manhunters. What became of %name% is a mystery, she was last seen on a slave caravan heading south, but after that is anyone\'s guess.";
 		this.m.HiringCost = 500;
 		this.m.DailyCost = 10;
 		this.m.Excluded = [
