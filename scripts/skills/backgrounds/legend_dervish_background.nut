@@ -29,7 +29,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BeardChance = 50;
 		this.m.Ethnicity = 1;
 		this.m.IsFemaleBackground = false;
-		this.m.IsCombatBackground = false;
+		this.m.IsCombatBackground = true;
 		this.m.IsPerformingBackground = false;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Healing[2];
