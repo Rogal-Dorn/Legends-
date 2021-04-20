@@ -273,7 +273,7 @@ this.wardogs_fight_each_other_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.houndmaster")
+			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_muladi" )
 			{
 				candidates_houndmaster.push(bro);
 			}

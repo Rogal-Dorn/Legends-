@@ -74,7 +74,7 @@ this.messenger_vs_houndmaster_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.houndmaster")
+			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_muladi")
 			{
 				houndmaster_candidates.push(bro);
 			}

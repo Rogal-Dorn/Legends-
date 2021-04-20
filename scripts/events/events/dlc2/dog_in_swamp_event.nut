@@ -288,7 +288,7 @@ this.dog_in_swamp_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.houndmaster")
+			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_muladi" )
 			{
 				candidates_houndmaster.push(bro);
 			}

@@ -488,7 +488,7 @@ this.confront_warlord_contract <- this.inherit("scripts/contracts/contract", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.houndmaster")
+					if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_muladi")
 					{
 						bro.worsenMood(1.0, "You didn\'t help wardogs being eaten by orcs");
 

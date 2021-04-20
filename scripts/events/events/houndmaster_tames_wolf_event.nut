@@ -63,7 +63,7 @@ this.houndmaster_tames_wolf_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 5 && (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_druid" || bro.getBackground().getID() == "background.legend_druid_commander"))
+			if (bro.getLevel() >= 5 && (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.legend_druid" || bro.getBackground().getID() == "background.legend_druid_commander" || bro.getBackground().getID() == "background.legend_muladi"))
 			{
 				candidates.push(bro);
 			}

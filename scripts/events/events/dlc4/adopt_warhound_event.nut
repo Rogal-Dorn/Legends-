@@ -154,7 +154,7 @@ this.adopt_warhound_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.barbarian")
+			if (bro.getBackground().getID() == "background.houndmaster" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.legend_muladi" )
 			{
 				candidates.push(bro);
 			}
