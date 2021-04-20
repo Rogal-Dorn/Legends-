@@ -15,6 +15,7 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"female_slave_southern_background",
 			"female_slave_southern_background",
 			"female_slave_southern_background",
+			"legend_qiyan_background"
 		],
 		this.m.DraftList = [
 			"beggar_southern_background",
@@ -56,7 +57,9 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"nomad_background",
 			"nomad_ranged_background",
 			"juggler_southern_background",
-			"assassin_southern_background"
+			"assassin_southern_background",
+			"legend_muladi_background",
+			"legend_dervish_background"
 		];
 
 		if (this.Const.DLC.Unhold)

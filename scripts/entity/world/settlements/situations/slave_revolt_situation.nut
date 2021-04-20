@@ -49,6 +49,7 @@ this.slave_revolt_situation <- this.inherit("scripts/entity/world/settlements/si
 				_draftList.remove(i);
 			}
 		}
+		_draftList.push("legend_muladi_background");
 	}
 
 });

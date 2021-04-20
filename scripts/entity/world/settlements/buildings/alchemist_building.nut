@@ -225,6 +225,8 @@ this.alchemist_building <- this.inherit("scripts/entity/world/settlements/buildi
 
 	function onUpdateDraftList( _list, _gender)
 	{
+		_list.push("legend_alchemist_background");
+		_list.push("legend_alchemist_background");
 	}
 
 	function onSerialize( _out )

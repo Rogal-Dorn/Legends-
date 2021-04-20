@@ -12,6 +12,7 @@ this.temple_oriental_building <- this.inherit("scripts/entity/world/settlements/
 	function onUpdateDraftList( _list, _gender)
 	{
 		_list.push("cripple_southern_background");
+		_list.push("legend_dervish_background");
 	}
 
 });
