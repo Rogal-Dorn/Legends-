@@ -500,7 +500,7 @@ gt.Const.Perks.FastTree <- {
 		"runs quickly",
 		"is quick as a flash",
 		"has fleet feet",
-		"maneuverss rapidly",
+		"maneuvers rapidly",
 		"steps briskly",
 		"is a speedy sprinter"
 	],
