@@ -4,7 +4,7 @@ this.firm_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.firm";
-		this.m.Name = "Firm Grip";
+		this.m.Name = "Martial";
 		this.m.Icon = "ui/traits/firm_trait.png";
 		this.m.Description = "Better not shake a hand with this one.";
 		this.m.Titles = [
