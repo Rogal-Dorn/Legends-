@@ -38,13 +38,13 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		local bros = roster.getAll();
 		local talents;
 		bros[0].setStartValuesEx([
-			"legend_dervish_background"
+			"legend_ranger_commander_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies}";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
-		// bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
