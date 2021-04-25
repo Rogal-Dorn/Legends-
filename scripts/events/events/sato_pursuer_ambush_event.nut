@@ -35,7 +35,7 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.SatoManhunters, (120 + _event.m.ResourceBoost) * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy, _event.m.ChampionChance);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.SatoManhunters, (100 + _event.m.ResourceBoost) * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy, _event.m.ChampionChance);
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}
@@ -99,7 +99,7 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.SatoManhunters, (125 + _event.m.ResourceBoost) * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy, _event.m.ChampionChance);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.SatoManhunters, (115 + _event.m.ResourceBoost) * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy, _event.m.ChampionChance);
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}
@@ -160,7 +160,7 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 						properties.Entities = [];
 						properties.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Center;
 						properties.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Assassins, 100 * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy);
+						this.Const.World.Common.addUnitsToCombat(properties.Entities, this.Const.World.Spawn.Assassins, 90 * _event.m.DifficultyMult * _event.m.DifficultyMultScale, this.Const.Faction.Enemy);
 						this.World.State.startScriptedCombat(properties, false, false, true);
 						return 0;
 					}
@@ -365,7 +365,7 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 		{
 			r = this.Math.rand(1, 30);
 		}
-		else if (this.World.getTime().Days < 35)
+		else if (this.World.getTime().Days < 40)
 		{
 			r = this.Math.rand(1, 80);
 		}
@@ -411,7 +411,7 @@ this.sato_pursuer_ambush_event <- this.inherit("scripts/events/event", {
 
 	function getScaledDifficultyMult()
 	{
-		local s = this.Math.maxf(0.75, 0.94 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.89));
+		local s = this.Math.maxf(0.75, 0.90 * this.Math.pow(0.01 * this.World.State.getPlayer().getStrength(), 0.85));
 		local d = this.Math.minf(5.0, s);
 		return d * this.Const.Difficulty.EnemyMult[this.World.Assets.getCombatDifficulty()];
 	}
