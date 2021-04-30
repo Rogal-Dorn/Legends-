@@ -5,7 +5,7 @@ this.legend_skin_ghoul_blood_flask_item <- this.inherit("scripts/items/accessory
 		this.accessory.create();
 		this.m.ID = "accessory.legend_skin_ghoul_blood_flask";
 		this.m.Name = "Flask of Skin Ghoul Blood";
-		this.m.Description = "This flask holds the blood of a skin ghoul, it will heal to any skin it touches. If taken internally it will spread through your body, knitting flesh and closing wounds, and who knows what else.";
+		this.m.Description = "This flask holds the blood of a skin ghoul, it will heal any skin it touches. If taken internally it will spread through your body, knitting flesh and closing wounds, and who knows what else.";
 		this.m.SlotType = this.Const.ItemSlot.Bag;
 		this.m.IsAllowedInBag = true;
 		this.m.IsDroppedAsLoot = true;

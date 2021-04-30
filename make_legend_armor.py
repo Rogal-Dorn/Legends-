@@ -887,8 +887,8 @@ layers = [
 },
 {"name": "legend_southern_wrap_left",           "layer": "tabard", "min": 1, "max": 14, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_wrap_left",\
     "title" :  "Left Sided Wrap", \
-    "desc" :  "A southern wrapped cloth drapped over the left shoulder", \
-    "adesc" : "Has a right sided southern wrap"
+    "desc" :  "A southern wrapped cloth draped over the left shoulder", \
+    "adesc" : "Has a left sided southern wrap"
 },
 {"name": "legend_southern_wide_belt",           "layer": "tabard", "min": 1, "max": 1, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_wide_belt",\
     "title" :  "Souther Wide Belt", \

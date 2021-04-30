@@ -564,7 +564,7 @@ layers = [
 },
 {"name" : "heavy_spiked_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1800, "con" : 165, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 8, "rminStam" : 10, "rminCond" : 165, "rmaxCond" : 185, "names" : Names,  \
  "title" :  "Heavy Spiked Helm", \
- "desc" :  "his helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks." \
+ "desc" :  "This helmet must have belonged to a distinct warrior of the barbarians. Its size and design appear alien to all southern folks." \
 },
 {"name" : "southern_leather_helm"                     , "layer" : "helm", "min" : 1, "max" : 5, "value" : 60, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather helm", \

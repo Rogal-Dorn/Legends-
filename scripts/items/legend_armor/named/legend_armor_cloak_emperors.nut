@@ -16,7 +16,7 @@ this.legend_armor_cloak_emperors <- this.inherit("scripts/items/legend_armor/leg
 			"Noble",
 			"Undead"
 		];
-		this.m.Description = "A cloak of the finest material that was rumored to have been worn by the last emporer";
+		this.m.Description = "A cloak of the finest material that was rumored to have been worn by the last emperor";
 		this.m.ArmorDescription = "Has a flowing embroidered cloak";
 		this.m.Variants = [
 			1,

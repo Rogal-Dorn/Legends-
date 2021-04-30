@@ -12,7 +12,7 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_staff_knock_out";
 		this.m.Name = "Staff Daze";
-		this.m.Description = "A heavy blow intended to daze anyone unlucky enough to be hit for one turn, but not to do the most damage. Dazed targets have tier damage, initiative and stamina reduced by 35%";
+		this.m.Description = "A heavy blow intended to daze anyone unlucky enough to be hit for one turn, but not to do the most damage. Dazed targets have their damage, initiative and stamina reduced by 35%";
 		this.m.Icon = "skills/staff_knock_out.png";
 		this.m.IconDisabled = "skills/staff_knock_out_bw.png";
 		this.m.Overlay = "active_32";
@@ -103,21 +103,19 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 
 				if (_user.getCurrentProperties().IsSpecializedInStaffStun)
 				{
-				target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
-				target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
+					target.getSkills().add(this.new("scripts/skills/effects/stunned_effect"));
+					target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
 				}
-
 
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has dazed " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
 				}
-				
+
 				if (this.m.IsFromLute && _user.isPlayerControlled())
 				{
 					this.updateAchievement("LuteStun", 1, 1);
-				}				
-				
+				}
 			}
 		}
 
@@ -134,3 +132,4 @@ this.legend_staff_knock_out <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+

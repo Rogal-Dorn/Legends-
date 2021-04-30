@@ -1,4 +1,3 @@
-// TODO
 this.mage_legend_effect_imbue <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 3,
@@ -21,7 +20,7 @@ this.mage_legend_effect_imbue <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character has been imbued with magical strength. Increase hit chance and damage by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ImbueAmount + "[/color]%. for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "This character has been imbued with magical strength. Increase hit chance and damage by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ImbueAmount + "%[/color]. for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function setImbueAmount( _amount )
@@ -35,7 +34,7 @@ this.mage_legend_effect_imbue <- this.inherit("scripts/skills/skill", {
 
 	function applyEffect()
 	{
-		(100 + this.m.ImbueAmount) / 100.0
+		(100 + this.m.ImbueAmount) / 100.0;
 	}
 
 	function onTurnEnd()
@@ -44,7 +43,6 @@ this.mage_legend_effect_imbue <- this.inherit("scripts/skills/skill", {
 		{
 			this.removeSelf();
 		}
-
 	}
 
 	function onCombatFinished()
