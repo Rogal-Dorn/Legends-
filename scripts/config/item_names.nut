@@ -674,10 +674,14 @@ gt.Const.Strings.SouthernSuffix <- [
 	"of the Oasis",
 	"of the Stars",
 	"of the Moon",
-	"of Splendor",
+	"of Splendour",
 	"of Magnificence",
 	"of Cleansing Fire",
-	"of Divine Will"
+	"of Divine Will",
+	"of the Serpent",
+	"of the Lion",
+	"of the Bear",
+	"of the Eagle"
 ];
 gt.Const.Strings.GoblinWeaponPrefix <- [
 	"Razor-sharp",
@@ -729,8 +733,7 @@ gt.Const.Strings.RandomWeaponPrefix <- [
 	"Gruesome",
 	"Grisly",
 	"Magnificent",
-	"Exquisite",
-	"Brutal"
+	"Exquisite"
 ];
 gt.Const.Strings.RandomArmorPrefix <- [
 	"Captain\'s",
@@ -854,8 +857,7 @@ gt.Const.Strings.WardogNames <- [
 	"Snapper",
 	"Catchaser",
 	"Quickpaw",
-	"Stormtail",
-	"Beagle"
+	"Stormtail"
 ];
 
 gt.Const.Strings.WarbearNames <- [

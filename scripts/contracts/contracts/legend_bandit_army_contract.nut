@@ -23,7 +23,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
-		this.m.Name = "Brigands Army (Legendary)";
+		this.m.Name = "Brigand Army (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
 
@@ -156,7 +156,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 				this.Contract.m.Destination.getSprite("selection").Visible = false;
 				this.Contract.m.NextObjective = this.Contract.m.Location1;
 				this.Contract.m.BulletpointsObjectives = [
-					"Gather intel at " + this.Contract.m.Location1.getName()
+					"Gather rumors at " + this.Contract.m.Location1.getName()
 				];
 			}
 
@@ -380,7 +380,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Task",
 			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_20.png[/img]{ %employer% looks on as you fumble for somewhere to sit.%SPEECH_ON%Hoy, mercenary, how long has it been since you\'ve slaked your sword with the blood of evil, cruel men?%SPEECH_OFF%He drops the sarcasm and you figure you\'ll be standing now.%SPEECH_ON%We here at %townname% are having a bit of a tiff with some local brigands. Local to us, that is, with their little rat\'s hole must be somewhere not far from here. Peasants bother me every day about this. They panic like it was whole army of these little troublemakers! Can you believe it? Obviously, I think the answer to this issue is to hire some finely armed men such as your little company of good folk. So, does that pique your interest, mercenary, or do I need to find sturdier types for the task?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_20.png[/img]{ %employer% looks on as you fumble for somewhere to sit.%SPEECH_ON%Mercenary, how long has it been since you\'ve slaked your sword with the blood of evil, cruel men?%SPEECH_OFF% He theatrically raises his fist, shaking it ever so slightly as if he was centre stage of a stage performance. By the time you have parsed this, you realise that you have been simply standing there, dumbfounded, looking for a reply. After a moment his face reverts to a more normal state, it looks like you\'ll be standing from now on.%SPEECH_ON%We are having a bit of a problem with some local brigands. Local to us, that is. They must be somewhere not far from here — they come frequently and grow in number by the day. The Smallfolk bother me every day about this, they panic as if there were a whole army of these troublemakers! Can you believe it? Obviously, I think the answer to this issue is to hire some of my own brigands, such as your little company of good folk. So, does that pique your interest, mercenary? Or do I need to find sturdier types for the task?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
@@ -412,7 +412,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "AttackDest",
 			Title = "Before the attack...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] At this point there is no negotiating with these outlaws.",
+			Text = "[img]gfx/ui/events/event_54.png[/img] Diplomacy has failed; the bandits arm themselves and are organised as well as a proper army. They seem well drilled and come from a mix of backgrounds — some professional, others less so.",
 			Image = "",
 			List = [],
 			Options = [
@@ -431,13 +431,13 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Bribe",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] As you approach bandit encampment you notice they do not seem like any raiders you\'ve encountered. You expected to be attacked instantly, but they hesitate. Some of outlaw scum, even though well equipped, do not seem eager for a fight. %shouter% notices some familiar faces, trader folk from former dealings. Deals that are not exactly inside boundries of local law. Before any hostilities starts, %shouter% aproaches you with a risky idea, if you\'re willing to try.",
+			Text = "[img]gfx/ui/events/event_54.png[/img] As you approach bandit encampment you notice they do not seem like any raiders you\'ve encountered. You expected to be attacked instantly, but they hesitate. Some bandits, even though well equipped, do not seem eager for a fight. %shouter% notices some familiar faces, folk not built for combat but are instead malnourished and desperate. Before any hostilities starts, %shouter% aproaches you with a risky idea, if you\'re willing to try.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Attack them!",
+					Text = "I would rather we not waste the crowns",
 					function getResult()
 					{
 						this.Contract.addUnitsToEntity(this.Contract.m.Destination, this.Const.World.Spawn.BanditDefenders, 50 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
@@ -448,7 +448,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "%shouter% knows how to bargain with these people...",
+					Text = "Perhaps %shouter% knows how to bargain with these people...",
 					function getResult()
 					{
 						if (this.Math.rand(1, 100) <= 80)
@@ -471,8 +471,8 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "BribeSuccess",
-			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] %shouter% starts negotiations with some of the less bloodthristy looking bandits. Promises of great wealth without spiling blood appeal to sizeable part of outlaw gathering. You notice quite few of raiders taking the coins %shouter% offers and preparing to leave the encampemt. This situation while acceptable for the greedy, does not sit well with the ones looking for blood. The camp Atmosphere grows more tense with every minute, as those intrested in bribery leave and all you are left looking at is hungry people with violence in thier eyes. The last moment of peacefull negotiations is interrupted when one of bandit leaders approches %shouter% and yells %SPEECH_ON%We aint interested in petty kickbacks. We take all the gold, after we take your lives. KILL THEM ALL!!%SPEECH_OFF%",
+			Title = "An enemy divided...",
+			Text = "[img]gfx/ui/events/event_54.png[/img] %shouter% starts negotiations with some of the less bloodthristy looking bandits — wevaing their way through the crowd looking for the weakest and least angry of the group first. Promises of great wealth without spilling blood appeal to sizeable part of the mob. You notice quite a few of the raiders taking the coins %shouter% offers and preparing to leave the camp. This situation, while acceptable for the greedy, does not sit well with the ones looking for blood. The camp atmosphere grows more tense with every minute, as those intrested in money gradually filter out of the camp — some are left clutching their weapons and ready to fight. The last moment of peaceful negotiations is interrupted when one of bandit leaders approches %shouter% and yells %SPEECH_ON%We aint interested in petty kickbacks. We take all the gold, after we take your lives. KILL THEM ALL!%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -507,13 +507,13 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "BribeFailure",
 			Title = "As you approach...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] At first it looked like great idea. For a moment few of raiders seems to be swayed by the coins in %shouter% purse. Suddenly a grim looking brute strikes %shouter% with a weapon. %shouter% throws coins on ground and escapes to back your group. Instead of chasing, the raider only laughs and shouts %SPEECH_ON%Look at the wee babe running back to the apron strings. You dropped something coward!!%SPEECH_OFF% as a group cackle and descend on gold dropped by %shouter%. You heara  shout comming from criminal that appears to be thier leader %SPEECH_ON%SHOW\'S OVER!!  KILL THEM!!%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_54.png[/img] At first it looked like great idea. For a moment a few of raiders seemed to be swayed by the coins in %shouter% purse. Suddenly a grim looking brute strikes %shouter% with a weapon. %shouter% throws coins on ground and escapes to back your group. Instead of chasing, the raider only laughs and shouts %SPEECH_ON%Look at the wee babe running back to the apron strings. You dropped something coward!%SPEECH_OFF% as a group cackle and descend on gold dropped by %shouter%. You hear a shout comming from beyond the crowd that appears to be the leader %SPEECH_ON%SHOW\'S OVER!  KILL THEM!%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "There goes nothnig...",
+					Text = "It was worth a try",
 					function getResult()
 					{
 						this.Flags.set("BribeEventDone", true);
@@ -562,7 +562,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "LootTime",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img] {You look around battleground. Everywhere you see slain bodies... some missing an arm or leg, others without head cut off in with what was most likely one powerful swing. Most of the equipment carries marks of heavy fighting not long ago. You start looking over your crew to assess situation. With as many spoils as your company can carry, it is time to get paid at %Home% }",
+			Text = "[img]gfx/ui/events/event_22.png[/img] The silence rolls in after the battle gradually concludes, those or are not dead are writhing in pain or struggling to crawl to safety, out of the corner of your eye you can see Nachzehrers skulking around in the brush, presumbly waiting until you depart to begin their meal. Before you have even finished, nature is already descending to clean the battlefield - crows start to finish off those alive who can't defend themselves, stray dogs pull away corpses at the edges of the battle before the more dangerous predators can arrive. A robed man, unknown to either party involved, begins taking what trinkets he can from the dead, no doubt to be sold in a market you will end up visiting later. With as many spoils as your company can carry, it is time to get paid at %Home% ",
 			Image = "",
 			List = [],
 			Options = [
@@ -579,13 +579,13 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "FirstIntel",
 			Title = "At %location1%...",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{You reach %location1% and order your mercenaries to start gathering any informations related to bandit activities. News of your arrival spreads, and commoners begin to ask you if the threat of bandit hordes is real. With your agenda in mind and little care for the safety of locals, you tell them the main force of outlaws has already been defeated. Locals are told you were hired to hunt down the remaining bandits that most likely retreated back to their encampment.  Thanks to this strategy you are able to collect a few hints about where their main force operate from. Due to the misinformation you seeded into villagers minds, some of them are more willing to trade as you prepare to head out from %location1%.    }",
+			Text = "[img]gfx/ui/events/event_45.png[/img]You reach %location1% and order everyone to start gathering any information related to these local bandits. News of your arrival spreads and commoners begin to ask you if the threat of bandit horde is real. With your agenda in mind and little care for the safety of every individual here, you tell them the main force of the bandits has already been defeated. Locals are told you were hired to hunt down the remaining bandits that most likely retreated back to their encampment. Being small folk with small minds, you are able to collect a few hints about where their main force operates from. Due to the misinformation you have seeded, some of them are more willing to trade as you prepare to head out from %location1%.",
 			Image = "",
 			Characters = [],
 			List = [],
 			Options = [
 				{
-					Text = "Rumors mostly but we will take it anyway.",
+					Text = "Every rumour helps.",
 					function getResult()
 					{
 						this.Contract.setState("MoreIntel");
@@ -606,7 +606,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "SecondIntel",
 			Title = "At %location2%...",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{%location2% is where you were told to find more clues. Your mercenaries approach locals with the same lies that worked last time. To your amusement these people seems to take the bait and are soon spilling rumors that could be helpful in your main objective. Spirits among %location2% inhabitants are noticeably raised. Hoping all the gossip you were able to get is enough to find the bandit army you head back to consult with you employer about the next move. }",
+			Text = "[img]gfx/ui/events/event_45.png[/img]%location2% is where you were told to find more clues. Your mercenaries approach locals with the same lies that worked last time. To your amusement these people seem to take the bait and are soon spreading gossip that could be helpful in your main objective. Spirits at %location2% are noticeably raised. Hopefully all the gossip you were able to get is enough to find the bandit army. You head back to consult with you employer about the next move.",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -633,7 +633,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "ISEEYOU",
 			Title = "At %Home%...",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{ Not long after you enter %Home%, your employer summons you. This time you enter meeting that is more war council than tea party. All local militia captains are present, discussing the defensive capabilities of %Home% and outlying farms in case of siege. With the rumours you gathered you brought and information from other agents, the location of the bandit army is finally determined. You begin to wondering if this job is worth the risk. With the threat confirmed, your hesitance clearly terrifies your employer greatly. He assures you money he promised will be paid to the last crown if threat is eliminated. Food, wine and company are offered if you success, anything to convince you to stop the bandits or die trying, anything to slow the bandit army down.  Preparing to move out from %Home% you notice unusual mobilization of local levies.  }",
+			Text = "[img]gfx/ui/events/event_45.png[/img]{ Not long after you enter %Home%, your employer summons you. This time you enter meeting that is more war council than tea party. All local militia captains are present, discussing the defensive capabilities of %Home% and outlying farms in case of a siege. With the rumours you gathered and information from other agents, the location of the bandit army is finally determined. You begin to wondering if this job is worth the risk. With the threat confirmed, your hesitance clearly terrifies your employer greatly. He assures you money he promised will be paid to the last crown if threat is eliminated. Food, wine and company are offered if you succeed; anything to convince you to stop the bandits or die trying, or at least to slow it down. Preparing to move out from %Home% you notice unusual mobilization of the locals.  }",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -659,14 +659,14 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		});
 		this.m.Screens.push({
 			ID = "Shortcut",
-			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_22.png[/img] { With the skirmish over. %randombrother% collects weapons from dead bandits while %randombrother2% tends wounded members of your company. When all required medical assistance to your company is complete, any surviving bandits get a little attention. %randombrother% approaches you. %SPEECH_ON% These scum bleeding out might know something. What if we convince them enough to speak up ? I would rather torture these bastards  until they either share their little secrets or die then running around asking peasants for god damn directions. What ya say boss? %SPEECH_OFF% }",
+			Title = "The violence settles...",
+			Text = "[img]gfx/ui/events/event_22.png[/img] With the patrol destroyed %randombrother% collects weapons from those unable to fight back while %randombrother2% waltzs between corpses, poking at each body with a stick in one hand and a sword in the other, occasionally plunging the blade into the ribcage of a squirming corpse who failed to play dead. When everyone has reported in and spoils are organised the surviving bandits get a little attention. %randombrother% approaches you. %SPEECH_ON% These scum bleeding out might know something. What if we convince them to speak up? I would rather torture these bastards until they either share their little secrets than running around asking peasants for god damn directions. %SPEECH_OFF% }",
 			Image = "",
 			Characters = [],
 			List = [],
 			Options = [
 				{
-					Text = "We are not like that (Increase Morals)",
+					Text = "The first one to talk gets their freedom",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(5);
@@ -674,7 +674,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					}
 				},
 				{
-					Text = "Good idea (Decrease Morals)",
+					Text = "We have wasted enough time, kill them",
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-5);
@@ -688,7 +688,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "On your return...",
-			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %townname% to meet with %employer%. Claiming your reward for all the troubles your company had to endure is your main priority. While you are being summoned to %employer% your mercenaries are already trading away spoils of war acquired through this adventure. You head off to the meeting, accompanied by personal guards of %employer% and local militia captains. Everyone present at meeting with %employer% can clearly sense mixed feelings coming from him. On one side relief with the threat eliminated, but on the other anger due to giving away the small fortune that was promised. Finally you are given the reward. Walking around %townname% you notice it has been well prepared for eventuality of siege. This adventure did not come cheap. }",
+			Text = "[img]gfx/ui/events/event_04.png[/img]{You return to %townname% to meet with %employer%. Claiming your reward for all the troubles your company had to endure is your main priority. While you are being summoned to %employer% your mercenaries are already trading away spoils of war acquired though this adventure. You head off to the meeting, accompanied by the personal guards of %employer% and local militia captains. Everyone present at meeting with %employer% can clearly sense mixed feelings coming from him. On one side relief with the threat eliminated, but in the other anger due to giving away the small fortune that was promised. Walking around %townname% you notice it has been well prepared for eventuality of siege. This adventure did not come cheap. }",
 			Image = "",
 			Characters = [],
 			List = [],

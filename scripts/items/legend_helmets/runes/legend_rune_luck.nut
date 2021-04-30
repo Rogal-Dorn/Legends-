@@ -7,7 +7,7 @@ this.legend_rune_luck <- this.inherit("scripts/items/legend_helmets/legend_helme
 		this.m.Type = this.Const.Items.HelmetUpgrades.Rune;
 		this.m.Name = "Helmet Rune Sigil: Clarity";
 		this.m.Description = "An inscribed rock that can be attached to a character\'s helmet.";
-		this.m.ArmorDescription = "Includes An inscribed rock that grants additional vision and XP bonuses.";
+		this.m.ArmorDescription = "Includes an inscribed rock that grants additional vision and XP bonuses.";
 		this.m.Icon = "rune_sigils/rune_stone_2.png";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "layers/glow_runed_icon.png";

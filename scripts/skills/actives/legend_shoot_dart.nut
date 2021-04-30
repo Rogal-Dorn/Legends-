@@ -7,7 +7,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_shoot_dart";
 		this.m.Name = "Shoot Dart";
-		this.m.Description = "a quick puff of air to propel a dart";
+		this.m.Description = "A quick puff of air to propel a dart";
 		this.m.KilledString = "Darted";
 		this.m.Icon = "skills/blowgun_square.png";
 		this.m.IconDisabled = "skills/blowgun_square_sw.png";

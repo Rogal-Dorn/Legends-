@@ -736,7 +736,18 @@ gt.Const.Strings.CityStateNames <- [
 	"Quadim",
 	"Hikma",
 	"El-Hadet",
-	"Al-Anwar"
+	"Al-Anwar",
+	"Hadiqat Musawara",
+    "Fakhar Jildur",
+    "Sharie",
+    "Biwatiqa",
+    "Sahat Almaerakat",
+    "Sanaruk",
+    "Makan Muqadas",
+    "Zula",
+    "Nuqtat Alnakhas",
+    "Ghalumsandis",
+    "Madinat Alzamard"
 ];
 gt.Const.Strings.CityStateTitles <- [
 	"City State of",
@@ -2202,7 +2213,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead, up to a maximum of 50%. The Warden also gains a scaling damage bonus.\n\nThis perk does nothing unless the Vala has the Warden perk.",
 	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and then each attack has a chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
 	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
-	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prosthetic body parts to help your mercanaries resolve their permanent injuries",
+	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prothetic body parts to help your mercanaries resolve their permanent injuries that are presented through random events",
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies",
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you take damage, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. Lose [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] rage stacks per turn. ",
 	LegendAssuredConquest = "[color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] melee skill, melee defense and ranged defense when at confident morale. \n[color=#0b0084]From the Vicious perk group[/color]",
@@ -2389,7 +2400,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit",
 	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town\'s current events and buildings.",
 	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.",
-	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met.",
+	LegendScholar = "Allows the user to be counted as educated for events, regardless if other conditions are met. Educated backgrounds are Masons, Inventors, Historians and do not need this perk unless they have the dumb trait.",
 	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn",
 	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target",
 	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to disolves their armor",

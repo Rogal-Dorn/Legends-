@@ -4,7 +4,7 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.uproot";
 		this.m.Name = "Uproot";
-		this.m.Description = "Send out roots to stab and crush your enemies";
+		this.m.Description = "Send out roots to hold and damage an enemy";
 		this.m.KilledString = "Crushed";
 		this.m.Icon = "skills/active_122.png";
 		this.m.IconDisabled = "skills/active_122_bw.png";
@@ -100,9 +100,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 		local dir = myTile.getDirectionTo(_targetTile);
 		this.Tactical.spawnAttackEffect("uproot", _targetTile, 0, -50, 100, 300, 100, this.createVec(0, 90), 200, this.createVec(0, -90), true);
 
-		for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = ++i )
+		for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = i )
 		{
 			this.Tactical.spawnParticleEffect(false, this.Const.Tactical.DustParticles[i].Brushes, _targetTile, this.Const.Tactical.DustParticles[i].Delay, this.Const.Tactical.DustParticles[i].Quantity * 0.5, this.Const.Tactical.DustParticles[i].LifeTimeQuantity * 0.5, this.Const.Tactical.DustParticles[i].SpawnRate, this.Const.Tactical.DustParticles[i].Stages, this.createVec(0, -30));
+			i = ++i;
 		}
 
 		if (_targetTile.IsOccupiedByActor && _targetTile.getEntity().isAttackable() && !(_targetTile.getEntity().getType() == this.Const.EntityType.Schrat || _targetTile.getEntity().getType() == this.Const.EntityType.SchratSmall || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchrat || _targetTile.getEntity().getType() == this.Const.EntityType.LegendGreenwoodSchratSmall))
@@ -129,9 +130,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 			{
 				this.Tactical.spawnAttackEffect("uproot", forwardTile, 0, -50, 100, 300, 100, this.createVec(0, 90), 200, this.createVec(0, -90), true);
 
-				for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = ++i )
+				for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = i )
 				{
 					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.DustParticles[i].Brushes, forwardTile, this.Const.Tactical.DustParticles[i].Delay, this.Const.Tactical.DustParticles[i].Quantity * 0.5, this.Const.Tactical.DustParticles[i].LifeTimeQuantity * 0.5, this.Const.Tactical.DustParticles[i].SpawnRate, this.Const.Tactical.DustParticles[i].Stages, this.createVec(0, -30));
+					i = ++i;
 				}
 
 				if (forwardTile.IsOccupiedByActor && forwardTile.getEntity().m.IsShakingOnHit)
@@ -159,9 +161,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 				{
 					this.Tactical.spawnAttackEffect("uproot", furtherForwardTile, 0, -50, 100, 300, 100, this.createVec(0, 90), 200, this.createVec(0, -90), true);
 
-					for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = ++i )
+					for( local i = 0; i < this.Const.Tactical.DustParticles.len(); i = i )
 					{
 						this.Tactical.spawnParticleEffect(false, this.Const.Tactical.DustParticles[i].Brushes, furtherForwardTile, this.Const.Tactical.DustParticles[i].Delay, this.Const.Tactical.DustParticles[i].Quantity * 0.5, this.Const.Tactical.DustParticles[i].LifeTimeQuantity * 0.5, this.Const.Tactical.DustParticles[i].SpawnRate, this.Const.Tactical.DustParticles[i].Stages, this.createVec(0, -30));
+						i = ++i;
 					}
 
 					if (furtherForwardTile.IsOccupiedByActor && furtherForwardTile.getEntity().m.IsShakingOnHit)
@@ -182,10 +185,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 					}.bindenv(this), null);
 				}
 
-				  // [284]  OP_CLOSE          0      6    0    0
+				  // [325]  OP_CLOSE          0      6    0    0
 			}
 
-			  // [285]  OP_CLOSE          0      5    0    0
+			  // [326]  OP_CLOSE          0      5    0    0
 		}
 
 		return true;

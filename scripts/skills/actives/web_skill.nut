@@ -6,7 +6,7 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.web";
 		this.m.Name = "Weave Web";
-		this.m.Description = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative";
+		this.m.Description = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative. Does no damage.";
 		this.m.Icon = "skills/active_114.png";
 		this.m.IconDisabled = "skills/active_114.png";
 		this.m.Overlay = "active_114";
@@ -40,7 +40,7 @@ this.web_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 1;
 	}
 
-			function getTooltip()
+	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
 		if (this.m.Cooldown != 0)

@@ -56,11 +56,10 @@ this.mage_legend_magic_circle_of_protection <- this.inherit("scripts/skills/acti
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "All allies currently within range [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Range + "[/color] gain [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getDefBonus() + "[/color] melee/ranged defense and [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getResolveBonus() + "[/color] resolve for 2 turns or until they leave the circle.."
+			text = "All allies currently within range [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Range + "[/color] gain [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getDefBonus() + "[/color] melee/ranged defense and [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getResolveBonus() + "[/color] resolve for 2 turns or until they leave the circle."
 		});
 		return ret;
 	}
-
 	function tileInCircleRange(_targetTile)
 	{
 		if (this.m.Tile == null)

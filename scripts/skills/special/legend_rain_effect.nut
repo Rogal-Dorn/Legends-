@@ -4,7 +4,7 @@ this.legend_rain_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "special.legend_rain";
 		this.m.Name = "Raining";
-		this.m.Description = "the rain obscures vision and makes everything slippery";
+		this.m.Description = "The rain obscures vision and makes everything slippery";
 		this.m.Icon = "skills/rain_circle.png";
 		this.m.IconMini = "status_effect_35_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.Special;

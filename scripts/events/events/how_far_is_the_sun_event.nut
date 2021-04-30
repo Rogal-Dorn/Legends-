@@ -13,7 +13,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]While resting, the company start a conversation about how far away the sun is. %otherbrother% looks up at it, wincing and gritting teeth, just about blinded by measuring. Finally, looking back down the conclusion comes. %SPEECH_ON%I\'d wager it\'s about ten to fifteen miles away.%SPEECH_OFF%Nodding at the presumably accurate summation.%SPEECH_ON%Aye, probably not even that far. I heard a story about an archer in a faraway land hitting it with an arrow.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_05.png[/img]While resting, the men start a conversation about how far away the sun is. %otherbrother% looks up at it, wincing and gritting his teeth as he just about blinds himself in his measuring. Finally, he looks back down.%SPEECH_ON%I\'d wager it\'s about ten to fifteen miles away.%SPEECH_OFF%He nods at his own presumably accurate summation.%SPEECH_ON%Aye, probably not even that far. I heard a story about an archer in a faraway land hitting it with an arrow.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Options = [],
@@ -80,7 +80,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Historian",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%historian% the learned one starts in on the conversation.%SPEECH_ON%I doubt the veracity of that claim about shooting it with a bow. Here\'s a much more truthful tale I\'ve read of: there are men in the mountains of the east who have big spyglasses to stare up at the night sky. They think the sun is quite far away. At least ten thousand miles, even. They also think the nightlights are other suns and not the souls of dead heroes.%SPEECH_OFF%%otherbrother% gets up.%SPEECH_ON%Watch yer mouth, fool, and don\'t speak ill of our ancestors.%SPEECH_OFF%The historian nods.%SPEECH_ON%Of course! It was only an idea.%SPEECH_OFF%What hogwash. Pretty dumb shite for a supposed \'smart\' man like %historian%. A few of the brothers have a laugh at the silly notions.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%historian% the historian starts in on the conversation.%SPEECH_ON%I doubt the veracity of that claim about shooting it with a bow. Here\'s a much more truthful tale I\'ve read of: there are men in the mountains of the east who have big spyglasses to stare up at the night sky. They think the sun is quite far away. At least ten thousand miles, even. They also think the nightlights are other suns and not the souls of dead heroes.%SPEECH_OFF%%otherbrother% gets up.%SPEECH_ON%Watch yer mouth, fool, and don\'t speak ill of our ancestors.%SPEECH_OFF%The historian nods.%SPEECH_ON%Of course! It was only an idea.%SPEECH_OFF%What hogwash. Pretty dumb shite for a supposed \'smart\' man like %historian%. A few of the brothers have a laugh at the historian\'s silly notions.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -125,7 +125,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Monk",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%monk% the holy one starts in on the conversation.%SPEECH_ON%The sun is neither far nor close. It is the eye of many of the gods, the scope through which they use to watch over us.%SPEECH_OFF%%otherbrother% nods, but then, curious, asks about the moon. The religious figure smiles confidently.%SPEECH_ON%Do you think the gods would shine upon us for all hours? Of course they dim the lights a bit, to give us mortals a nice night to sleep in.%SPEECH_OFF%You nod. Truly the old gods are always looking out for us.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%monk% the monk starts in on the conversation.%SPEECH_ON%The sun is neither far nor close. It is the eye of many of the gods, the scope through which they use to watch over us.%SPEECH_OFF%%otherbrother% nods, but then, curious, asks about the moon. The monk smiles confidently.%SPEECH_ON%Do you think the gods would shine upon us for all hours? Of course they dim the lights a bit, to give us mortals a nice night to sleep in.%SPEECH_OFF%You nod. Truly the old gods are always looking out for us.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -170,7 +170,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Cultist",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%cultist% the cultist gets up and looks at the sun. While staring at it, their face is slowly covered by shadow, as though some entity were shielding the believer from the light. Suddenly, %cultist% raises a hand and starts drawing some aerial rites. You swear the darkness on their face is moving as though an imprint of the drawings, a sort of shifting tattoo. When finished, the cultist sits.%SPEECH_ON%The sun is dying.%SPEECH_OFF%The mercenaries look concerned. One interjects.%SPEECH_ON%Dying? What do you mean?%SPEECH_OFF%%cultist% stares at the interjector.%SPEECH_ON%Davkul wills it that all may die.%SPEECH_OFF%Another sellsword asks if this supposed \'Davkul\' will die too. The cultist nods.%SPEECH_ON%When there is nothing left to die, Davkul may finally rest. A crueler god would have departed already. It is by Davkul\'s good graces that he will go last, and for that we praise him.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%cultist% the cultist gets up and looks at the sun. As he continues to stare at it, a shadow slowly emerges over his face, as though some entity were shielding him from the light. Suddenly, he raises a hand and starts drawing some aerial rites with his hand. You swear the darkness on his face is moving as though an imprint of his drawings, a sort of shifting tattoo. When he\'s finished, he takes a seat.%SPEECH_ON%The sun is dying.%SPEECH_OFF%The men look concerned. One interjects.%SPEECH_ON%Dying? What do you mean?%SPEECH_OFF%%cultist% stares at him.%SPEECH_ON%Davkul wills it that all may die.%SPEECH_OFF%One man asks if this supposed \'Davkul\' will die too. The cultist nods.%SPEECH_ON%When there is nothing left to die, Davkul may finally rest. A crueler god would have departed already. It is by Davkul\'s good graces that he will go last, and for that we praise him.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -249,7 +249,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Archer",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%archer% takes the challenge, grabbing a bow and a couple of arrows.Licking fingers and and then holding the weapon up.%SPEECH_ON%Wind\'s right for a good star shootin\'.%SPEECH_OFF%The archer nocks an arrow, draws, and takes aim. The blistering light is instantly blinding.%SPEECH_ON%Fark, I can\'t see shit.%SPEECH_OFF% The archer\'s aim wobbles as dark spots cloud their vision. The arrow is loosed and sails wide of the sun. Real wide. Looks at the company, eyes dimmed, hands out as he tries to steady themself while sight returns.%SPEECH_ON%Did I hit it?%SPEECH_OFF%%otherbrother% hides their chuckling.%SPEECH_ON%Right on the button!%SPEECH_OFF%The company burst into laughter.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%archer% takes the challenge, grabbing his bow and a couple of arrows. He licks his finger and holds it up.%SPEECH_ON%Wind\'s right for a good star shootin\'.%SPEECH_OFF%The archer nocks an arrow, draws, and takes aim. The blistering light is instantly blinding.%SPEECH_ON%Fark, I can\'t see shit.%SPEECH_OFF%His aim wobbles as dark spots take over his vision. The arrow is loosed and sails wide of the sun. Real wide. They look at the company, eyes dimmed, hands out as he tries to steady himself while his sight returns.%SPEECH_ON%Did I hit it?%SPEECH_OFF%%otherbrother% hides his chuckling.%SPEECH_ON%Right on the button!%SPEECH_OFF%The men burst into laughter.",
 			Image = "",
 			List = [],
 			Characters = [],

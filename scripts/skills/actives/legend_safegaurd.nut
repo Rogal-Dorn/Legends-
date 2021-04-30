@@ -4,7 +4,7 @@ this.legend_safegaurd <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.legend_safegaurd";
-		this.m.Name = "Safegaurd";
+		this.m.Name = "Safeguard";
 		this.m.Description = "Use your shield to protect an ally, leaving yourself exposed";
 		this.m.Icon = "skills/fortify_square.png";
 		this.m.IconDisabled = "skills/fortify_square_bw.png";

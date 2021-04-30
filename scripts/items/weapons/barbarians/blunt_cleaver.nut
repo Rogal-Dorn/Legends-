@@ -5,7 +5,7 @@ this.blunt_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.blunt_cleaver";
 		this.m.Name = "Blunt Cleaver";
-		this.m.Description = "This blunt cleaver is heavy and blunt, but can still cause terrible wounds.";
+		this.m.Description = "This cleaver is heavy and blunt, but can still cause terrible wounds.";
 		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_04.png";
 		this.m.Icon = "weapons/melee/wildmen_04_70x70.png";
