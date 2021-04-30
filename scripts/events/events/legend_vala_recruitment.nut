@@ -6,11 +6,12 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	function create()
 	{
 		this.m.ID = "event.legend_vala_recruitment";
-		this.m.Title = "Along the way...";
+		this.m.Title = "From the bushes...";
 		this.m.Cooldown = 60 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_vala_recruitment.png[/img]You run into a mysterious staff-wielding woman.",
+			Text = "[img]gfx/ui/events/legend_vala_recruitment.png[/img]The forests of the north are a primeval place, the span of a life is measured in months and the climate is a perpetual state of autumn or winter where the wildlife is as deadly as the weather. Walking through these forests is humbling — the trees here have outlived but the gods themselves, or so some would say.\n Your thoughts begin to wander further as the bridle path begins to feel endless and the trees curl inwards. The pressure builds in your head as you fall to the ground.\n\n The brush parts for a woman clad in furs holding a staff, focusing intently on you as you try to regain your balance. The noise stops and your mind clears. The woman speaks.\n %SPEECH_ON%Why are you here, outsider?%SPEECH_OFF% Her brow furrows and she hums, but her lips part again. %SPEECH_ON%I know what you are, and I know what you have done. Not just in this life — but the ones that have come before.%SPEECH_OFF%\n\n Her gaze lifts as she loses focus with you and looks down the path, deep in contemplation. The weight in your mind begins to lift as a tide ebbs before it comes crashing back. However, as she fixes her gaze with yours, the wave doesn\'t come crashing back. It is still there, at the back of your head — restrained like a warhound on a chain\n\n %SPEECH_ON%Something is changing outsider — something is coming that we can\'t stand alone and face. I do not care for your work, your motivations or hardships. I care about stopping the cataclysm of what is to come.%SPEECH_OFF% She purses her lips %SPEECH_ON%Shall we begin?%SPEECH_OFF%\n\n The humming stops — the pain lifts as fast as it came. Despite what the people of the south say, the grip of the old gods remains firm here.",
+
 			Image = "",
 			List = [],
 			Characters = [],
@@ -27,7 +28,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					}
 				},
 				{
-					Text = "We\'d rather not take you in.",
+					Text = "Keep your distance!",
 					function getResult( _event )
 					{
 						this.World.getTemporaryRoster().clear();
@@ -46,7 +47,9 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 					_event.m.Vala.getFlags().add("undead");
 					_event.m.Vala.getFlags().add("skeleton");
 				}
-				_event.m.Vala.setStartValuesEx(["legend_vala_background"]);
+				_event.m.Vala.setStartValuesEx([
+					"legend_vala_background"
+				]);
 				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 				{
 					_event.m.Vala.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
@@ -94,11 +97,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		{
 			return;
 		}
-
-		// if (!this.LegendsMod.Configs().LegendMagicEnabled())
-		// {
-		// 	return;
-		// }
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;

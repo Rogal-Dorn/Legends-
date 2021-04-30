@@ -193,7 +193,11 @@ gt.Const.TipOfTheDay <- [
 	"Just because a brother can\'t deal damage, doesn\'t mean they can\'t be useful.",
 	"There are things more sinister in the sands than the old empire...",
 	"Consider that enemy encampments on hills are harder to assault, especially if they are fortified.",
-	"In the Inventory/Character Screen page, \'A\' key selects previous bro, \'D\' key selects next bro, \'S\' key toggles reserve status."
+	"In the Inventory/Character Screen page, \'A\' key selects previous bro, \'D\' key selects next bro, \'S\' key toggles reserve status.",
+	"The \'Perfect Focus\' perk is a good way to deal a lot of damage quickly, for a price.",
+	"Nimble only protects hitpoints, not armour.",
+	"At 15 points of intensive training will reward that brother with a free perk point and trait",
+	"The \'Intensive Training\' trait can be increased by spending time training with that brother"
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",
