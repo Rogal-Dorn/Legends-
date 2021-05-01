@@ -1225,7 +1225,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [10, ""],
             [5, "plate/legend_animal_hide_armor"], // 30
             [4, "plate/legend_armor_leather_jacket"], // 25
-            [1, "plate/legend_armor_leather_jacket_named"], // 30
+            // [1, "plate/legend_armor_leather_jacket_named"], // 30
             [4, "plate/legend_armor_leather_jacket_simple"], // 15
         ],
         Cloak = [
