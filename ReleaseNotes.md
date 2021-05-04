@@ -5070,3 +5070,4 @@ Fixes the drunk nobleman event
 **Changes**
 Reduces cost of painter tent changes
 Mummy racial now only applies on the killer for that battle, instead of all entities within 2 tiles
+Removes vala warden from the random magic pool
