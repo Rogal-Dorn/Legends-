@@ -17,7 +17,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.ModName = "Salvage";
 		this.m.ID = this.Const.World.CampBuildings.Workshop;
 		this.m.Slot = "scrap";
-		this.m.Name = "Workshop";
+		this.m.Name = "Salvage Tent";
 		this.m.Description = "Turn scrap into useable parts";
 		this.m.BannerImage = "ui/buttons/banner_scrap.png";
 		this.m.Sounds = [
