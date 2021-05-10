@@ -141,7 +141,7 @@ this.belly_dancer_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/event_163.png[/img]{You tell the dancer that she is one of the best you\'ve seen with a blade. She laughs.%SPEECH_ON%A truly well intentioned attempt on your part, Crownling, to drag me to your ways of life. But you know well that there is nothing you could say or do that would take me away from this life. Yes, the blade suits me well, but so does flittering about for the crowd, earning praise without spilling blood to do it. You go play gladiator on the sands and earn you coin, Crownling, and I will be here earning mine.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_163.png[/img]{You tell the dancer that she is one of the best you\'ve seen with a blade. She laughs.%SPEECH_ON%A truly well intentioned attempt on your part, Crownling, to drag me to your ways of life. But you know well that there is nothing you could say or do that would take me away from this life. Yes, the blade suits me well, but so does flittering about for the crowd, earning praise without spilling blood to do it. You go play gladiator on the sands and earn your coin, Crownling, and I will be here earning mine.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
