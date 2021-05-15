@@ -138,14 +138,12 @@ this.unleash_wolf <- this.inherit("scripts/skills/actives/unleash_animal", {
 		this.m.IsHidden = this.m.Item.isUnleashed();
 	}
 
-
 	function onUse( _user, _targetTile )
 	{
 		local entity = this.Tactical.spawnEntity(this.m.Item.getScript(), _targetTile.Coords.X, _targetTile.Coords.Y);
 		entity.setFaction(this.Const.Faction.PlayerAnimals);
 		entity.setItem(this.m.Item);
 		entity.setName(this.m.Item.getName());
-		entity.setVariant(this.m.Item.getVariant());
 		this.m.Item.setEntity(entity);
 
 		if (this.getContainer().hasSkill("background.houndmaster"))
