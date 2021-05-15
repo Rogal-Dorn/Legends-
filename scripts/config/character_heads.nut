@@ -111,6 +111,7 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
+	"bust_head_34",
 	"bust_head_50",
 	"bust_head_51",
 	"bust_head_female_01",
@@ -129,6 +130,7 @@ gt.Const.Faces.AllHuman <- [
 	"bust_head_female_14",
 	"bust_head_female_15",
 	"bust_head_female_16",
+	"bust_head_female_17",
 	"bust_head_southern_01",
 	"bust_head_southern_02",
 	"bust_head_southern_03",
@@ -169,6 +171,7 @@ gt.Const.Faces.AllWhiteHuman <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
+	"bust_head_34",
 	"bust_head_50",
 	"bust_head_51",
 	"bust_head_female_01",
@@ -186,7 +189,8 @@ gt.Const.Faces.AllWhiteHuman <- [
 	"bust_head_female_13",
 	"bust_head_female_14",
 	"bust_head_female_15",
-	"bust_head_female_16"
+	"bust_head_female_16",
+	"bust_head_female_17"
 ];
 
 gt.Const.Faces.AllWhiteMale <- [
@@ -210,6 +214,7 @@ gt.Const.Faces.AllWhiteMale <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
+	"bust_head_34",
 	"bust_head_50",
 	"bust_head_51"
 ];
@@ -254,6 +259,7 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_18",
 	"bust_head_19",
 	"bust_head_20",
+	"bust_head_34",
 	"bust_head_50",
 	"bust_head_51"
 ];
@@ -274,7 +280,8 @@ gt.Const.Faces.AllFemale <- [
 	"bust_head_female_13",
 	"bust_head_female_14",
 	"bust_head_female_15",
-	"bust_head_female_16"
+	"bust_head_female_16",
+	"bust_head_female_17"
 ];
 
 gt.Const.Faces.PrettyFemale <- [
@@ -293,7 +300,8 @@ gt.Const.Faces.PrettyFemale <- [
 	"bust_head_female_13",
 	"bust_head_female_14",
 	"bust_head_female_15",
-	"bust_head_female_16"
+	"bust_head_female_16",
+	"bust_head_female_17"
 ];
 
 gt.Const.Faces.Donkey <- [
@@ -368,7 +376,8 @@ gt.Const.Faces.WildFemale <- [
 	"bust_head_female_13",
 	"bust_head_female_14",
 	"bust_head_female_15",
-	"bust_head_female_16"
+	"bust_head_female_16",
+	"bust_head_female_17"
 ];
 
 gt.Const.Faces.SouthernMale <- [
