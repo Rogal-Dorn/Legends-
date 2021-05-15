@@ -102,7 +102,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 					if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 					{
 						//Level
-						if (e.getSize() == 1 && !e.isSouthern())
+						if (e.getSize() == 1 && !e.isSouthern() && this.World.Assets.isPermanentDestruction())
 						{
 							local news = this.World.Statistics.createNews();
 							news.set("City", e.getName());
