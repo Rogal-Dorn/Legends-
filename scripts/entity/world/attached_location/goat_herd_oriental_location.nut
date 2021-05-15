@@ -38,7 +38,7 @@ this.goat_herd_oriental_location <- this.inherit("scripts/entity/world/attached_
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "weapons/staff_sling"
+				S = "weapons/legend_slingstaff"
 			});
 		}
 	}
