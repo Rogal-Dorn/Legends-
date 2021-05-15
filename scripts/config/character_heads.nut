@@ -255,15 +255,7 @@ gt.Const.Faces.AllMale <- [
 	"bust_head_19",
 	"bust_head_20",
 	"bust_head_50",
-	"bust_head_51",
-	"bust_head_southern_01",
-	"bust_head_southern_02",
-	"bust_head_southern_03",
-	"bust_head_southern_04",
-	"bust_head_southern_05",
-	"bust_head_southern_06",
-	"bust_head_southern_07",
-	"bust_head_southern_08"
+	"bust_head_51"
 ];
 
 gt.Const.Faces.AllFemale <- [
