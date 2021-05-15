@@ -62,8 +62,8 @@
 <sprite id="bust_head_female_15_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_female_15_dead.png" left="-45" right="15" top="-56" bottom="0" />
 <sprite id="bust_head_female_16_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_female_16_dead.png" left="-45" right="15" top="-56" bottom="0" />
 
-<sprite id="bust_head_female_17" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_female_14.png" left="-22" right="30" top="-20" bottom="46" />
-<sprite id="bust_head_female_17_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_female_14_dead.png" left="-45" right="15" top="-56" bottom="0" />
+<sprite id="bust_head_female_17" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\heads\bust_head_female_17.png" left="-22" right="30" top="-20" bottom="46" />
+<sprite id="bust_head_female_17_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F6C9D" width="131" height="125" img="entity\heads\bust_head_female_17_dead.png" left="-45" right="15" top="-56" bottom="0" />
 
 <sprite id="bust_head_34" offsetY="35" ic="FF5877A6" width="104" height="142" img="entity\heads\bust_head_34.png" left="-20" right="30" top="-21" bottom="47" />
 <sprite id="bust_head_34_dead" offsetX="6" offsetY="10" f="64F6" f1="-15" f2="-15" ic="FF4F699A" width="131" height="125" img="entity\heads\bust_head_34_dead.png" left="-44" right="14" top="-56" bottom="0" />
