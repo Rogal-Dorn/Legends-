@@ -124,7 +124,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 							e.changeSize(1);
 							foreach( a in e.getAttachedLocations() )
 							{
-								e.setActive(false, true);
+								a.setActive(false, true);
 							}
 						}
 					}
