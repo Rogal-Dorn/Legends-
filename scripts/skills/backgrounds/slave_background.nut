@@ -48,7 +48,8 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.hate_greenskins",
 			"trait.hate_nobles",
 			"trait.aggressive",
-			"trait.ambitious"
+			"trait.ambitious",
+			"trait.slack"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
