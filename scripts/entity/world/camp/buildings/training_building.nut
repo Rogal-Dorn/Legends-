@@ -573,10 +573,6 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/skills/traits/athletic_trait"
 			],
 			[
-				"trait.brute",
-				"scripts/skills/traits/brute_trait"
-			],
-			[
 				"trait.iron_jaw",
 				"scripts/skills/traits/iron_jaw_trait"
 			],
