@@ -5066,6 +5066,9 @@ Fixes so Hedge Knights can't get 20 armor -> Slightly increases avg armor of HKs
 Staff knockout has a space after the word "dazed" in the combat log
 Fixes hexen being able to drop unlayered runes & letting you double-rune a helmet, screwing up the save
 Fixes the drunk nobleman event
+Fixes towns staying dead when permanent destruction is OFF and world economy is ON
+Adds a new female and male head
+Fixes enemies having mixed head/body racial combination
 
 **Changes**
 Reduces cost of painter tent changes
