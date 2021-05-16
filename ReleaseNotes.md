@@ -5038,6 +5038,8 @@ Fixes invalid jesterhat variants (full effect fixed on new games or once existin
 
 15.0.1.5
 
+Merges in newest builds
+
 **Mod integrations**
 Integrates Sato's Retinue changes
 *The Agent: Instead of affecting faction relation growth/decay, the Agent instead reveals active settlement situations (e.g. Ambushed Trade Routes) as well as contracts when you hover over one on the world map. It's thematic, keeps her relevant for planning your next move when you're not doing contracts, and helps justify her really difficult unlock requirements and high price.
