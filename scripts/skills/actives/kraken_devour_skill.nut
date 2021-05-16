@@ -93,7 +93,7 @@ this.kraken_devour_skill <- this.inherit("scripts/skills/skill", {
 
 	function onRemoveTarget( _targetTile )
 	{
-		_targetTile.getEntity().kill(this.getContainer().getActor(), this);
+		_targetTile.getEntity().kill(this.getContainer().getActor(), this, this.Const.FatalityType.Kraken);
 		this.Tactical.Entities.removeCorpse(_targetTile);
 		_targetTile.clear(this.Const.Tactical.DetailFlag.Corpse);
 		_targetTile.Properties.remove("Corpse");

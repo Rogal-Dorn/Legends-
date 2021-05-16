@@ -276,6 +276,7 @@ this.lindwurm <- this.inherit("scripts/entity/tactical/actor", {
 		b.IsImmuneToKnockBackAndGrab = true;
 		b.IsImmuneToStun = true;
 		b.IsMovable = false;
+		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
 		b.IsAffectedByRain = false;
 

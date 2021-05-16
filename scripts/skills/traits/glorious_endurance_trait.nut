@@ -73,7 +73,7 @@ this.glorious_endurance_trait <- this.inherit("scripts/skills/traits/character_t
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageReceivedTotalMult = 1.0 - this.m.DamageReduction;
+		_properties.DamageReceivedTotalMult *= 1.0 - this.m.DamageReduction;
 	}
 
 });

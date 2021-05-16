@@ -70,7 +70,7 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (r <= 10)
 				{
-					if (this.Contract.getDifficultyMult() >= 0.95 && this.World.Assets.getBusinessReputation() > 500)
+					if (this.Contract.getDifficultyMult() >= 0.95 && this.World.Assets.getBusinessReputation() > 700)
 					{
 						this.Flags.set("IsSandGolems", true);
 					}

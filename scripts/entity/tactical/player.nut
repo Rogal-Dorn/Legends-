@@ -1353,13 +1353,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.World.Assets.addScore(-5 * this.getLevel());
 		}
 
-		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode() && _fatalityType != this.Const.FatalityType.Unconscious && (_skill != null && _killer != null || _fatalityType == this.Const.FatalityType.Devoured))
+		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode() && _fatalityType != this.Const.FatalityType.Unconscious && (_skill != null && _killer != null || _fatalityType == this.Const.FatalityType.Devoured || _fatalityType == this.Const.FatalityType.Kraken))
 		{
 			local killedBy;
 
 			if (_fatalityType == this.Const.FatalityType.Devoured)
 			{
 				killedBy = "Devoured by a Nachzehrer";
+			}
+			else if (_fatalityType == this.Const.FatalityType.Kraken)
+			{
+				killedBy = "Devoured by a Kraken";
 			}
 			else if (_fatalityType == this.Const.FatalityType.Suicide)
 			{

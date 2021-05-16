@@ -54,7 +54,7 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getSkills().hasSkill("trait.player") || bro.getSkills().hasSkill("trait.fabulous") || bro.getBackground().getID() == "background.slave")
+					if (bro.getSkills().hasSkill("trait.player") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.slave")
 					{
 						continue;
 					}
@@ -96,7 +96,7 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getSkills().hasSkill("trait.player") || bro.getSkills().hasSkill("trait.fabulous") || bro.getBackground().getID() == "background.slave")
+					if (bro.getSkills().hasSkill("trait.player") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.slave")
 					{
 						continue;
 					}

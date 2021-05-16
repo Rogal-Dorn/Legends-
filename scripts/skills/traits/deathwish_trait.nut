@@ -14,9 +14,7 @@ this.deathwish_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		];
 		this.m.Excluded = [
 			"trait.weasel",
-			"trait.conservative",
 			"trait.hesitant",
-			"trait.callous",
 			"trait.dastard",
 			"trait.fainthearted",
 			"trait.craven",

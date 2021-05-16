@@ -17,9 +17,9 @@ this.faction_helm <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 4000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300;
-		this.m.StaminaModifier = -20;
+		this.m.Condition = 320;
+		this.m.ConditionMax = 320;
+		this.m.StaminaModifier = -21;
 		this.m.Vision = -3;
 	}
 

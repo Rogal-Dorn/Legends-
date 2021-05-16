@@ -123,6 +123,11 @@ this.ignite_firelance_skill <- this.inherit("scripts/skills/skill", {
 
 		foreach( t in targets )
 		{
+			if (!t.isAlive() || t.isDying())
+			{
+				continue;
+			}
+
 			local success = this.attackEntity(user, t, false);
 
 			if (success && t.isAlive() && !t.isDying() && t.getTile().IsVisibleForPlayer)
@@ -144,7 +149,6 @@ this.ignite_firelance_skill <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin = 40;
 			_properties.DamageRegularMax = 60;
 			_properties.DamageArmorMult = 0.9;
-			_properties.DamageDirectMult = 0.2;
 		}
 	}
 

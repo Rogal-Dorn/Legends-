@@ -63,6 +63,11 @@ this.holywar_ill_southerners_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isCultist())
+					{
+						continue;
+					}
+
 					if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.improveMood(1.0, "Approved of your decision to end the suffering of fellow Gilded");
@@ -123,6 +128,11 @@ this.holywar_ill_southerners_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
+					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
+					{
+						continue;
+					}
+
 					if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.worsenMood(1.0, "Disliked that you left fellow Gilded to suffer a slow death");

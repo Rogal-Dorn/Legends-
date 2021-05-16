@@ -143,7 +143,6 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-
 			this.m.Items.equip(this.Const.World.Common.pickHelmet([
 				[1, "full_aketon_cap"],
 				[2, "aketon_cap"],

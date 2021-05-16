@@ -100,7 +100,7 @@ this.ai_defend_knock_back <- this.inherit("scripts/ai/tactical/behavior", {
 
 		foreach( t in targets )
 		{
-			if (t.getCurrentProperties().IsImmuneToKnockBackAndGrab || t.getMoraleState() == this.Const.MoraleState.Fleeing)
+			if (t.getCurrentProperties().IsImmuneToKnockBackAndGrab || t.getCurrentProperties().IsRooted || t.getMoraleState() == this.Const.MoraleState.Fleeing)
 			{
 				continue;
 			}

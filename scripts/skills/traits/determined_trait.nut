@@ -12,6 +12,7 @@ this.determined_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.dastard",
 			"trait.insecure",
 			"trait.fainthearted",
+			"trait.craven",
 			"trait.paranoid",
 			"trait.fear_beasts",
 			"trait.fear_undead",

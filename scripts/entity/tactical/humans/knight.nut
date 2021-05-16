@@ -50,6 +50,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -108,10 +109,11 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local weapons = [
 				"weapons/fighting_axe",
-				"weapons/noble_sword"
+				"weapons/noble_sword",
+				"weapons/winged_mace",
+				"weapons/warhammer"
 			];
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
-
 		}
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))

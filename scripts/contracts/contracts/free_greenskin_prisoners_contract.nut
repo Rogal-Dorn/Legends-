@@ -386,6 +386,9 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 							party.setFootprintSizeOverride(0.75);
 							local c = party.getController();
 							c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
+							local wait = this.new("scripts/ai/world/orders/wait_order");
+							wait.setTime(15.0);
+							c.addOrder(wait);
 							local roam = this.new("scripts/ai/world/orders/roam_order");
 							roam.setPivot(camp);
 							roam.setMinRange(5);
@@ -420,7 +423,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 							}
 						}
 
-						this.Const.World.Common.addFootprintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.OrcFootprints, this.Const.World.FootprintsType.Orcs, 0.75);
+						this.Const.World.Common.addFootprintsFromTo(playerTile, this.Contract.m.Destination.getTile(), this.Const.OrcFootprints, this.Const.World.FootprintsType.Orcs, 0.75, 10.0);
 						this.Contract.setState("Pursuit");
 						return 0;
 					}

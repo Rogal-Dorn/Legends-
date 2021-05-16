@@ -1,6 +1,7 @@
 this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	m = {
-		Tiles = []
+		Tiles = [],
+		WorldTiles = []
 	},
 	function init()
 	{
@@ -12,7 +13,6 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 	function fill( _rect, _properties, _pass = 1 )
 	{
 		this.Const.World.Buildings.reset();
-		this.m.Tiles = [];
 		this.m.Tiles.resize(this.Const.World.TerrainType.COUNT);
 
 		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
@@ -20,6 +20,19 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			if (this.Const.World.TerrainScript[i].len() != 0)
 			{
 				this.m.Tiles[i] = this.MapGen.get(this.Const.World.TerrainScript[i]);
+			}
+		}
+
+		this.m.WorldTiles.resize(_rect.W);
+
+		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		{
+			this.m.WorldTiles[x] = [];
+			this.m.WorldTiles[x].resize(_rect.H);
+
+			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
+			{
+				this.m.WorldTiles[x][y] = this.World.getTileSquare(x, y);
 			}
 		}
 
@@ -81,51 +94,25 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		}
 
 		this.__ping();
+		this.m.Tiles = [];
+		this.m.WorldTiles = [];
 	}
 
 	function isWorldAcceptable( _rect )
 	{
-		local ocean = 0;
-		local nonOcean = 0;
-
-		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
-		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.Type == this.Const.World.TerrainType.Ocean)
-				{
-					ocean = ++ocean;
-				}
-				else
-				{
-					nonOcean = ++nonOcean;
-				}
-			}
-		}
-
-		return nonOcean * 1.0 / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
+		local ocean = this.World.getNumOfTilesWithType([
+			this.Const.World.TerrainType.Ocean
+		]);
+		return (_rect.W * _rect.H - ocean * 1.0) / (ocean * 1.0) >= this.Const.World.Settings.MinLandToWaterRatio;
 	}
 
 	function isDesertAcceptable( _rect )
 	{
-		local desert = 0;
-
-		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
-		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-			{
-				local tile = this.World.getTileSquare(x, y);
-
-				if (tile.Type == this.Const.World.TerrainType.Desert || tile.Type == this.Const.World.TerrainType.Oasis || tile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
-				{
-					desert = ++desert;
-				}
-			}
-		}
-
-		this.logInfo("desert tiles: " + desert);
+		local desert = this.World.getNumOfTilesWithType([
+			this.Const.World.TerrainType.Desert,
+			this.Const.World.TerrainType.Oasis,
+			this.Const.World.TerrainTacticalType.DesertHills
+		]);
 		return desert >= this.Const.World.Settings.MinDesertTiles;
 	}
 
@@ -135,7 +122,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 				tile.Type = 0;
 				tile.Subregion = 0;
 			}
@@ -163,7 +150,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 				local landChance = x < _rect.W * 0.5 ? x : _rect.W - x;
 				landChance = landChance + (y < _rect.H * 0.5 ? y : _rect.H - y);
 
@@ -220,7 +207,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type == this.Const.World.TerrainType.Ocean)
 					{
@@ -258,7 +245,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type == this.Const.World.TerrainType.Ocean)
 					{
@@ -299,7 +286,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type == this.Const.World.TerrainType.Ocean)
 					{
@@ -335,13 +322,11 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function buildElevation( _rect )
 	{
-		this.logInfo("Building elevation...");
-
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type == this.Const.World.TerrainType.Ocean)
 				{
@@ -374,7 +359,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type == this.Const.World.TerrainType.Ocean || tile.Type == this.Const.World.TerrainType.Mountains)
 					{
@@ -412,7 +397,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type == this.Const.World.TerrainType.Ocean || tile.Type == this.Const.World.TerrainType.Mountains)
 					{
@@ -449,7 +434,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -485,7 +470,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -520,14 +505,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function buildTerrainDLC( _rect )
 	{
-		this.logInfo("Building terrain...");
 		local isAutumnLeft = this.Math.rand(0, 1) == 1;
 
 		for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.2; y = ++y )
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -587,7 +571,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -646,7 +630,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.3; y < _rect.Y + _rect.H * 0.8; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -701,7 +685,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.7; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -750,7 +734,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.75; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -805,7 +789,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.43; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -865,7 +849,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.H * this.Const.World.Settings.Snowline - 5; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -909,7 +893,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.H * 0.7; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -958,7 +942,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Desert)
 				{
@@ -1000,7 +984,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Steppe)
 				{
@@ -1042,7 +1026,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.15; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Plains)
 				{
@@ -1071,7 +1055,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1126,7 +1110,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.2; y < _rect.Y + _rect.H * 0.8; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1181,7 +1165,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.7; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1230,7 +1214,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.75; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1285,7 +1269,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y + _rect.H * 0.4; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1345,7 +1329,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.H * this.Const.World.Settings.Snowline - 5; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1389,7 +1373,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.H * 0.7; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Land)
 				{
@@ -1438,7 +1422,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H * 0.65; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Steppe)
 				{
@@ -1479,15 +1463,13 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function defragmentTerrain( _rect )
 	{
-		this.logInfo("Defragmenting terrain...");
-
 		for( local j = 0; j < 2; j = ++j )
 		{
 			for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 			{
 				for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type != this.Const.World.TerrainType.Land && tile.Type != this.Const.World.TerrainType.Steppe)
 					{
@@ -1562,7 +1544,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			{
 				for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 				{
-					local tile = this.World.getTileSquare(x, y);
+					local tile = this.m.WorldTiles[x][y];
 
 					if (tile.Type != this.Const.World.TerrainType.Ocean)
 					{
@@ -1718,13 +1700,11 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function refineTerrain( _rect, _properties )
 	{
-		this.logInfo("Refining Terrain...");
-
 		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (this.m.Tiles[tile.Type] != null)
 				{
@@ -1743,7 +1723,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (this.m.Tiles[tile.Type] != null)
 				{
@@ -1770,7 +1750,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type != this.Const.World.TerrainType.Shore)
 				{
@@ -1867,7 +1847,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Type == this.Const.World.TerrainType.Ocean)
 				{
@@ -1904,7 +1884,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 				tile.Region = 0;
 			}
 		}
@@ -2025,7 +2005,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.Region != 0 || tile.Type == this.Const.World.TerrainType.Ocean)
 				{
@@ -2075,7 +2055,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 
 				y = this.Math.rand(5, _rect.H * 0.95);
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (used.find(tile.ID) != null)
 				{
@@ -2335,7 +2315,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				foreach( s in settlements )
 				{
@@ -2585,7 +2565,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (!tile.HasRoad)
 				{
@@ -2652,7 +2632,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (!tile.HasRoad)
 				{
@@ -2747,7 +2727,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 		{
 			for( local y = 28; y <= 38; y = ++y )
 			{
-				local tile = this.World.getTileSquare(x, y);
+				local tile = this.m.WorldTiles[x][y];
 
 				if (tile.IsOccupied)
 				{

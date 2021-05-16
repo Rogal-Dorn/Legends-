@@ -15,8 +15,9 @@ this.dastard_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Excluded = [
 			"trait.determined",
 			"trait.brave",
+			"trait.deathwish",
+			"trait.bloodthirsty",
 			"trait.fearless",
-			"trait.hard_boiled",
 			"trait.cocky",
 			"trait.optimist",
 			"trait.hate_greenskins",
