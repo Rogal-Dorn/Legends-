@@ -387,60 +387,26 @@
 
 			if(friendlyRanged || enemyRanged)
 			{
-					for( local i = this.Const.Faction.Player; i != this.m.Instances.len(); i = ++i )
+				for( local i = this.Const.Faction.Player; i != this.m.Instances.len(); i = ++i )
+				{
+					if(this.m.Instances[i].len() == 0) continue; // most factions are empty
+					local faction = this.World.FactionManager.getFaction(i);
+					local factionType = faction != null ? faction.getType() : this.Const.FactionType.Player;
+					if(factionType == this.Const.FactionType.Zombies || factionType == this.Const.FactionType.Orcs)
 					{
-						if(this.m.Instances[i].len() == 0) continue; // most factions are empty
-						local faction = this.World.FactionManager.getFaction(i);
-						local factionType = faction != null ? faction.getType() : this.Const.FactionType.Player;
-						if(factionType == this.Const.FactionType.Zombies || factionType == this.Const.FactionType.Orcs)
-							{
-							continue; // zombies are too dumb. orcs are too confident
-							}
-							else if(factionType == this.Const.FactionType.Bandits)
-							{
-							local hasLeader = false; // bandits are too undisciplined unless there's a leader
-							foreach(e in this.m.Instances[i])
-							if(e.getType() == this.Const.EntityType.BanditLeader)
-								{
-								hasLeader = true; break;
-								}
-							if(!hasLeader) continue;
-							}
-
-					  local friendly = i == this.Const.Faction.Player || this.World.FactionManager.isAlliedWithPlayer(i);
-					  if(friendly ? enemyRanged : friendlyRanged)
-					  {
-							if (hasSheildsUpPerk == true)
-							{
-								foreach(e in this.m.Instances[i])
-			  						  {
-									  if(e.isArmedWithShield())
-											{
-											local skill = e.getSkills().getSkillByID("actives.shieldwall");
-											if (skill != null && skill.isUsable())
-												{
-												e.getSkills().add(this.new("scripts/skills/effects/shieldwall_effect"));
-												e.setFatigue(e.getFatigue() + skill.getFatigueCost());
-												}
-											}
-			  						  }
-							}
-							else if (hasSheildsUpPerk == false)
-							{
-								foreach(e in this.m.Instances[i])
-			  						  {
-									  if(e.isArmedWithShield() && e.getSkills().hasSkill("perk.legend_specialist_shield_skill"))
-											{
-											local skill = e.getSkills().getSkillByID("actives.shieldwall");
-											if (skill != null && skill.isUsable())
-												{
-												e.getSkills().add(this.new("scripts/skills/effects/shieldwall_effect"));
-												e.setFatigue(e.getFatigue() + skill.getFatigueCost());
-												}
-											}
-			  						  }
-							}
-					  }
+						continue; // zombies are too dumb. orcs are too confident
+					}
+					else if(factionType == this.Const.FactionType.Bandits)
+					{
+						local hasLeader = false; // bandits are too undisciplined unless there's a leader
+						foreach(e in this.m.Instances[i])
+						if(e.getType() == this.Const.EntityType.BanditLeader)
+						{
+							hasLeader = true; 
+							break;
+						}
+						if(!hasLeader) continue;
+					}
 				}
 			}
 		}
