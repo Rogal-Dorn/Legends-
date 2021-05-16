@@ -5038,7 +5038,7 @@ Fixes invalid jesterhat variants (full effect fixed on new games or once existin
 
 15.0.1.5
 
-Merges in newest builds
+Merges in newest builds 
 
 **Mod integrations**
 Integrates Sato's Retinue changes
