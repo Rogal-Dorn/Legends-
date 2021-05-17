@@ -49,7 +49,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 		else
 		{
 			local nameList = [];
-			if (item.isItemType(this.Const.Items.ItemType.Named)) //if base layer named
+			if ( (item.m.ItemType & this.Const.Items.ItemType.Named) != 0) //if base layer named
 			{
 				nameList.push(item)
 			}
@@ -61,7 +61,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				local u = item.getUpgrade(i)
-				if (u.isItemType(this.Const.Items.ItemType.Named))
+				if (u != null && u.isItemType(this.Const.Items.ItemType.Named))
 				{
 					nameList.push(u)
 				}
@@ -528,7 +528,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			});
 		}
 
-		if (_index >= 0)
+		if ( "bool" == typeof _index || _index >= 0)
 		{
 			return {
 				I = _index,

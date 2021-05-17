@@ -171,7 +171,7 @@ gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedTopLay
 gt.Const.Items.LegendNamedHelmetLayers.extend(this.Const.Items.LegendNamedVanityLayers)
 
 gt.Const.Items.NamedHelmets <- [
-	"helmets/named/golden_feathers_helmet",
+	// "helmets/named/golden_feathers_helmet",
 	"helmets/named/heraldic_mail_helmet",
 	"helmets/named/nasal_feather_helmet",
 	"helmets/named/sallet_green_helmet",

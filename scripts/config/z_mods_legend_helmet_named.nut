@@ -40,20 +40,22 @@ gt.Const.LegendMod.HelmObjs.extend([
     Tops = [],
     Vanity = []
 }]
-},{ //todo
-    ID = "named/golden_feathers_helmet", //240
-    Script = "", //TODO
-    Sets = [{
-     Hoods = [
-    ],
-    Helms = [
-    ],
-    Tops = [
-    ],
-    Vanity = [
-    ]
-}]
-},{
+},
+// { //todo
+//     ID = "named/golden_feathers_helmet", //240
+//     Script = "", //TODO
+//     Sets = [{
+//      Hoods = [
+//     ],
+//     Helms = [
+//     ],
+//     Tops = [
+//     ],
+//     Vanity = [
+//     ]
+// }]
+// },
+{
     ID = "named/heraldic_mail_helmet", //280
     Script = "",
     Sets = [{
