@@ -1,12 +1,12 @@
 this.debilitated_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-	TurnsLeft = 3
+		TurnsLeft = 3
 	},
 	function create()
 	{
 		this.m.ID = "effects.debilitated";
 		this.m.Name = "Debilitated";
-		this.m.Description = "This character has is debilitated";
+		this.m.Description = "This character has been debilitated";
 		this.m.Icon = "ui/perks/perk_34.png";
 		this.m.IconMini = "perk_34_mini";
 		this.m.Overlay = "perk_34";
