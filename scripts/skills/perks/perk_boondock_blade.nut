@@ -16,7 +16,7 @@ this.perk_boondock_blade <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().getActor().getTile().IsHidingEntity)
+		if (this.getContainer().getActor().isHidden())
 		{
 			_properties.MeleeDefense += 10;
 			_properties.RangedDefense += 10;
