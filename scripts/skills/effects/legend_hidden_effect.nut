@@ -109,6 +109,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.setBrushAlpha(10);
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
+		actor.setHidden(true);
 	}
 
 	function onRemoved()
@@ -153,6 +154,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.setBrushAlpha(10);
 		actor.getSprite("hair").Visible = false;
 		actor.getSprite("beard").Visible = false;
+		actor.setHidden(true);
 	}
 
 	function onTurnEnd()

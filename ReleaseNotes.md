@@ -5071,6 +5071,8 @@ Fixes the drunk nobleman event
 Fixes towns staying dead when permanent destruction is OFF and world economy is ON
 Adds a new female and male head
 Fixes enemies having mixed head/body racial combination
+Fixes boondock blade perk
+Assassin's hide perk now actually hides the character
 
 **Changes**
 Reduces cost of painter tent changes
