@@ -5081,7 +5081,7 @@ this.tooltip_events <- {
 			return ret;
 
 		case "healer.Time":
-			local desc = "Total number of hours required to treat all the the selected injuries. Assign more people to this task to decrease the amout of time required. Some backgrounds are better than others!";
+			local desc = "Total number of hours required to treat all the selected injuries. Assign more people to this task to decrease the amout of time required. Some backgrounds are better than others!";
 			local ret = [
 				{
 					id = 1,

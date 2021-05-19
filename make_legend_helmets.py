@@ -972,7 +972,7 @@ layers = [
 },
 {"name" : "enclave_venitian_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 45, "stam" : -3, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Great Bascinet Visor", \
- "desc" :  "A visor that fits on the great bascinet, covering the the only hole for the face, it increases the wearer's defense greatly." \
+ "desc" :  "A visor that fits on the great bascinet, covering the only hole for the face, it increases the wearer's defense greatly." \
 },
 {"name" : "enclave_great_bascinet_visor"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 900, "con" : 65, "stam" : -6, "vis" : -1, "hair" : "false", "beard" : "true",  \
  "title" :  "Great Bascinet Visor", \
