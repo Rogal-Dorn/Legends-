@@ -719,8 +719,8 @@ gt.Const.EntityIcon <- [
 	"rabble_poacher_orientation",
 	"bandit_raider_orientation",
 
-	"poacher_orientation",
-	"officer_orientation",
+	"nomad_02",
+	"nomad_05",
 
 	"mummy_light_orientation",
 	"mummy_medium_orientation",
