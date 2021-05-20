@@ -124,7 +124,8 @@ gt.Const.LegendMod.FavoriteSwordmaster <- [
 	this.Const.EntityType.Assassin,
 	this.Const.EntityType.NomadLeader,
     this.Const.EntityType.Executioner,
-	this.Const.EntityType.DesertDevil
+	this.Const.EntityType.DesertDevil,
+	this.Const.EntityType.LegendFencer
 ];
 
 gt.Const.LegendMod.FavoriteArcher <- [
@@ -388,7 +389,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type )
 		case "this.Const.EntityType.Militia":
 		value = 10;
 		break;
-		case "this.Const.EntityType.MilitiaArcher":
+		case "this.Const.EntityType.MilitiaRanged":
 		value = 8;
 		break;
 		case "this.Const.EntityType.MilitiaCaptain":
