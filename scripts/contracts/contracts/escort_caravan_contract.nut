@@ -337,16 +337,6 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				{
 					if (this.Flags.get("IsCaravanHalfDestroyed"))
 					{
-						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
-						{
-							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
-							local L = this.m.Caravan.getInventory();
-							this.m.Caravan.clearInventory();
-							for (local i = 0; i < (L.len() - 1) / 2; i = ++i)
-							{
-								this.m.Caravan.addToInventory(L[i]);
-							}
-						}
 						this.Contract.setScreen("Success2");
 					}
 					else
@@ -1064,6 +1054,17 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						else
 						{
 							this.World.FactionManager.getFaction(this.Contract.getFaction()).addPlayerRelation(this.Const.World.Assets.RelationCivilianContractPoor, "Protected a caravan, albeit poorly");
+						}
+
+						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						{
+							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
+							local L = this.m.Caravan.getInventory();
+							this.m.Caravan.clearInventory();
+							for (local i = 0; i < (L.len() - 1) / 2; i = ++i)
+							{
+								this.m.Caravan.addToInventory(L[i]);
+							}
 						}
 
 						this.World.Contracts.finishActiveContract();

@@ -5089,3 +5089,4 @@ Fixes barbershops not giving southern + northern heads/bodies
 Fixes painter tents (leonion fixes cheers)
 Fixes net perks both doing what the other one says it does
 Fixes mummy racial bug
+Test fix for caravan contract, half implemenets Kvothe's fix
