@@ -8,7 +8,7 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.PreviewCraftable = this.new("scripts/items/armor/legendary/legend_skin_armor");
 		if (this.LegendsMod.Configs().LegendArmorsEnabled())
 		{
-			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_skin");
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_skin_armor");
 		}
 		this.m.Cost = 2500;
 		local ingredients = [
@@ -17,7 +17,6 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Num = 6
 			}
 		];
-
 		ingredients.push({
 			Script = "scripts/items/legend_armor/cloth/legend_gambeson",
 			Num = 1,
@@ -50,10 +49,13 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		local item = this.Const.World.Common.pickHelmet([
+		local item;
+		
+		local item = this.Const.World.Common.pickArmor([
 			[1, "legendary/legend_skin_armor"]
 		])
-		item.m.Name = "";
+		
+		// item.m.Name = "";
 		_stash.add(item);
 	}
 
