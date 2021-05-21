@@ -73,6 +73,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 
 		local bros = this.World.getPlayerRoster().getAll();
 		local isFemale = false;
+		local ethnicity = 0;
 
 		//for somereason, the World.getEntityByID isn't working here??
 		//So we are iterating over all bros...
@@ -81,6 +82,7 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			if (bro.getID() == _entityID)
 			{
 				isFemale = bro.getBackground().isFemaleBackground();
+				ethnicity = bro.getBackground().getEthnicity();
 				break;
 			}
 		}
@@ -169,24 +171,55 @@ this.camp_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 		{
 			if (isFemale)
 			{
-				this.changeIndex(this.Const.Bodies.AllFemale, temp.getSprite("body"), _change);
-				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				if (ethnicity == 1)
+				{
+					this.changeIndex(this.Const.Bodies.BarberSouthernFemale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
+				}
+				else
+				{
+					this.changeIndex(this.Const.Bodies.BarberNorthernFemale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				}
+				
 			}
 			else
 			{
-				this.changeIndex(this.Const.Bodies.AllMale, temp.getSprite("body"), _change);
-				this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				if (ethnicity == 1)
+				{
+					this.changeIndex(this.Const.Bodies.BarberSouthernMale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
+				}
+				else
+				{
+					this.changeIndex(this.Const.Bodies.BarberNorthernMale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);			
+				}
 			}
 		}
 		else if (_layerID == "head")
 		{
 			if (isFemale)
 			{
-				this.changeIndex(this.Const.Faces.AllFemale, temp.getSprite("head"), _change);
+				if (ethnicity == 1)
+				{
+					this.changeIndex(this.Const.Faces.SouthernFemale, temp.getSprite("head"), _change);
+				}
+				else
+				{
+					this.changeIndex(this.Const.Faces.AllFemale, temp.getSprite("head"), _change);
+				}
 			}
 			else
 			{
-				this.changeIndex(this.Const.Faces.AllMale, temp.getSprite("head"), _change);
+				if (ethnicity == 1)
+				{
+					this.changeIndex(this.Const.Faces.SouthernMale, temp.getSprite("head"), _change);
+				}
+				else
+				{
+					this.changeIndex(this.Const.Faces.AllMale, temp.getSprite("head"), _change);
+				}
 			}
 		}
 		else if (_layerID == "hair")

@@ -304,6 +304,29 @@ gt.Const.Faces.PrettyFemale <- [
 	"bust_head_female_17"
 ];
 
+gt.Const.Faces.SouthernMale <- [
+	"bust_head_southern_01",
+	"bust_head_southern_02",
+	"bust_head_southern_03",
+	"bust_head_southern_04",
+	"bust_head_southern_05",
+	"bust_head_southern_06",
+	"bust_head_southern_07",
+	"bust_head_southern_08"
+]
+
+gt.Const.Faces.SouthernFemale <- [
+	"bust_head_southern_female_01",
+	"bust_head_southern_female_02",
+	"bust_head_southern_female_03",
+	"bust_head_southern_female_04",
+	"bust_head_southern_female_05",
+	"bust_head_southern_female_06",
+	"bust_head_southern_female_07",
+	"bust_head_southern_female_08",
+	"bust_head_southern_female_09"
+]
+
 gt.Const.Faces.Donkey <- [
 	"bust_head_donkey_01"
 ];
@@ -1000,7 +1023,7 @@ gt.Const.Bodies.AllMale <- [
 	"bust_naked_body_01",
 	"bust_naked_body_02"
 ];
-gt.Const.Bodies.Barber <- clone this.Const.Bodies.AllMale;
+
 gt.Const.Bodies.SouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
@@ -1074,6 +1097,29 @@ gt.Const.Bodies.NorthernFemale <- [
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02"
 ];
+
+gt.Const.Bodies.BarberSouthernFemale <- [
+	"bust_female_southern_body_00",
+	"bust_female_southern_body_01",
+	"bust_female_southern_body_02"
+]
+gt.Const.Bodies.BarberNorthernFemale <- [
+	"bust_naked_body_03",
+	"bust_female_northern_body_00",
+	"bust_female_northern_body_01",
+	"bust_female_northern_body_02"
+]
+gt.Const.Bodies.BarberSouthernMale <- [
+	"bust_naked_body_southern_00",
+	"bust_naked_body_southern_01",
+	"bust_naked_body_southern_02"
+]
+gt.Const.Bodies.BarberNorthernMale <- [
+	"bust_naked_body_00",
+	"bust_naked_body_01",
+	"bust_naked_body_02"
+]
+
 
 
 
