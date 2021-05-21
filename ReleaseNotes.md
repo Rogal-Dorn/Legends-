@@ -5087,3 +5087,4 @@ Removes vala warden from the random magic pool
 Fixes skin ghoul armor blueprint 
 Fixes barbershops not giving southern + northern heads/bodies
 Fixes painter tents (leonion fixes cheers)
+Fixes net perks both doing what the other one says it does
