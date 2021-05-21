@@ -5081,10 +5081,11 @@ Removes vala warden from the random magic pool
 
 
 
-## 15.0.1.6
+## 15.0.1.5b
 
 **Fixes**
 Fixes skin ghoul armor blueprint 
 Fixes barbershops not giving southern + northern heads/bodies
 Fixes painter tents (leonion fixes cheers)
 Fixes net perks both doing what the other one says it does
+Fixes mummy racial bug
