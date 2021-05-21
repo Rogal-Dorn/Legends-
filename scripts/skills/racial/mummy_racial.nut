@@ -46,7 +46,7 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 
 	}
 
-	function onDamageReceived(_attacker, _skill, _hitInfo)
+	function onDamageReceived(_attacker, _damageHitpoints, _damageArmor)
 	{
 		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
 		{
