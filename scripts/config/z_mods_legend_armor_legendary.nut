@@ -113,7 +113,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
     }]
 },{
     ID = "legendary/legend_skin_armor", // 160
-    Script = "scripts/items/legend_armor/legendary/legend_armor_skin",
+    Script = "scripts/items/legend_armor/legendary/legend_skin_armor",
     Sets = [{
         Cloth = [
 

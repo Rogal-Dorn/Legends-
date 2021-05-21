@@ -269,7 +269,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 			"legendary/legend_armor_mountain",
 			"legendary/legend_armor_of_davkul",
-			"legendary/legend_armor_skin",
+			"legendary/legend_skin_armor",
 			"legendary/legend_emperors_armor",
 			"legendary/legend_emperors_armor_fake",
 			"legendary/legend_ijirok_armor",
