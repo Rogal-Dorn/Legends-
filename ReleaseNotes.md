@@ -5078,3 +5078,12 @@ Assassin's hide perk now actually hides the character
 Reduces cost of painter tent changes
 Mummy racial now only applies on the killer for that battle, instead of all entities within 2 tiles
 Removes vala warden from the random magic pool
+
+
+
+## 15.0.1.6
+
+**Fixes**
+Fixes skin ghoul armor blueprint 
+Fixes barbershops not giving southern + northern heads/bodies
+Fixes painter tents (leonion fixes cheers)
