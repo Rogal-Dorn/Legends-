@@ -1098,6 +1098,12 @@ gt.Const.Bodies.NorthernFemale <- [
 	"bust_female_northern_body_02"
 ];
 
+
+//this is a dummy for dlc
+gt.Const.Bodies.Barber <- [
+
+];
+
 gt.Const.Bodies.BarberSouthernFemale <- [
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",

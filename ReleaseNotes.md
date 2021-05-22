@@ -5090,3 +5090,8 @@ Fixes painter tents (leonion fixes cheers)
 Fixes net perks both doing what the other one says it does
 Fixes mummy racial bug
 Test fix for caravan contract, half implemenets Kvothe's fix
+
+## 15.0.1.6
+
+**Fixes**
+Fixes issue where desert dlc couldn't find barber array
