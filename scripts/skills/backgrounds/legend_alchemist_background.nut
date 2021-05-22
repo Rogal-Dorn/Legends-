@@ -36,9 +36,9 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.IsCombatBackground = false;
 		this.m.IsPerformingBackground = false;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Healing[1];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Injury[1];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Crafting[3];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
