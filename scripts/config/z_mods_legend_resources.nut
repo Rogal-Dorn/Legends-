@@ -83,6 +83,6 @@ gt.Const.LegendMod.ResourceModifiers <- {
 	Hunting = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
 	Fletching = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
 	Scout = [0.0, 0.1, 0.2, 0.3], // = BasePoints + BasePoints * Modifier
-	Gather = [0., 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
+	Gather = [0.0, 0.30, 0.50, 1.0], // = BasePoints + BasePoints * Modifier
 	Training = [0.0, 0.1, 0.2, 0.3] // = BasePoints + BasePoints * Modifier
 }
