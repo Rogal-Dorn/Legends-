@@ -21,7 +21,9 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.fearless",
 			"trait.brave",
 			"trait.bright",
-			"trait.seductive"
+			"trait.seductive",
+			"trait.fear_beasts",
+			"trait.hate_beasts"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
@@ -107,8 +109,8 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
 		this.m.IsFemaleBackground = true;
-		this.m.GoodEnding = "todo endings";
-		this.m.BadEnding = "todo endings";
+		// this.m.GoodEnding = "todo endings";
+		// this.m.BadEnding = "todo endings";
 
 	}
 
