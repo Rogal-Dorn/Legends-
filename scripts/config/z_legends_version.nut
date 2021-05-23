@@ -8,7 +8,7 @@ if (!("LegendMod" in gt.Const))
 	gt.Const.LegendMod <- {};
 }
 
-gt.Const.LegendMod.Version <- "Legends Beta 15.0.1.5";
+gt.Const.LegendMod.Version <- "Legends Beta 15.0.1.6";
 
 
 
