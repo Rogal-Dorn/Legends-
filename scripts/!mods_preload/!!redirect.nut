@@ -188,10 +188,32 @@ local wrapInstance = function(o)
 
 this.logInfo("mod_hooks: Redirecting core functions");
 
+local function replace(str, sub, rep)
+{
+  local s, i;
+  for(i = 0; i < str.len(); )
+  {
+    local e = str.find(sub, i);
+    if(e == null) break;
+    if(s == null) s = "";
+    s += str.slice(i, e) + rep;
+    i = e + sub.len();
+  }
+  if(s == null) return str;
+  return s + str.slice(i);
+}
+
 local inheritFunc = inherit;
 inherit = function(baseScript, newMembers)
 {
   local currentScript = getstackinfos(2).src.slice(0, -4);
+  // some people compile scripts incorrectly so the embedded path does not start with "scripts/". try to fix it. first, replace
+  // backslashes with forward slashes and then chop off anything before the last "scripts/" within the path
+  currentScript = replace(currentScript, "\\", "/");
+  local i = -8; // 8 is the length of "scripts/"
+  for(local j; (j = currentScript.find("scripts/", i+8)) != null; i = j) { }
+  if(i > 0) currentScript = currentScript.slice(i);
+
   g_parents[currentScript] <- baseScript;
   local c = inheritFunc(baseScript, newMembers);
   return ::mods_callHook("inherit", baseScript, currentScript, c) || c;
@@ -200,18 +222,23 @@ inherit = function(baseScript, newMembers)
 local newFunc = new;
 new = function(scriptName)
 {
-  local i = newFunc(scriptName);
-  return ::mods_callHook("new", scriptName, i) || i;
+  local o = newFunc(scriptName);
+  return ::mods_callHook("new", scriptName, o) || o;
 }
 
-local spawnEntityFunc = World.spawnEntity;
-World.spawnEntity = function(scriptName, ...)
+local wrapSpawnFunc = function(func)
 {
-  local args = [ scriptName ];
-  args.extend(vargv);
-  local i = varcall(spawnEntityFunc, args);
-  return ::mods_callHook("new", scriptName, i) || i;
+  return function(scriptName, ...) {
+    local args = [ scriptName ];
+    args.extend(vargv);
+    local o = varcall(func, args);
+    return ::mods_callHook("new", scriptName, o) || o;
+  }
 }
+
+Tactical.spawnEntity = wrapSpawnFunc(Tactical.spawnEntity);
+World.spawnEntity = wrapSpawnFunc(World.spawnEntity);
+World.spawnLocation = wrapSpawnFunc(World.spawnLocation);
 
 local getPlayerEntityFunc = World.getPlayerEntity, lastPlayer = null;
 World.getPlayerEntity = function()
@@ -238,30 +265,39 @@ local wrapRoster = function(roster)
   return wrapper;
 }
 
-local getPlayerRosterFunc = World.getPlayerRoster;
-local lastPlayerRoster = null, playerRosterWrapper = null;
-World.getPlayerRoster = function()
+local wrapRosterFunc = function(func)
 {
-  local roster = getPlayerRosterFunc();
-  if(roster != (lastPlayerRoster != null ? lastPlayerRoster.ref() : null))
-  {
-    lastPlayerRoster = roster.weakref();
-    playerRosterWrapper = wrapRoster(roster);
+  local lastRoster, wrapper;
+  return function() {
+    local roster = func();
+    if(roster != (lastRoster != null ? lastRoster.ref() : null))
+    {
+      lastRoster = roster.weakref();
+      wrapper = wrapRoster(roster);
+    }
+    return wrapper;
   }
-  return playerRosterWrapper;
 }
 
-local getRosterFunc = World.getRoster, lastRoster = { }, rosterWrapper = { };
-World.getRoster = function(id)
+local wrapRosterFunc1 = function(func)
 {
-  local roster = getRosterFunc(id);
-  if(!(id in lastRoster) || roster != lastRoster[id])
-  {
-    lastRoster[id] <- roster.weakref();
-    rosterWrapper[id] <- wrapRoster(roster);
+  local lastRoster = { }, wrapper = { };
+  return function(id) {
+    local roster = func(id);
+    if(roster != (id in roster ? lastRoster[id] : null)) // weakrefs inside tables magically evaluate to the .ref()
+    {
+      lastRoster[id] <- roster.weakref();
+      wrapper[id] <- wrapRoster(roster);
+    }
+    return wrapper[id];
   }
-  return rosterWrapper[id];
 }
+
+Tactical.getCasualtyRoster = wrapRosterFunc(Tactical.getCasualtyRoster);
+World.getGuestRoster = wrapRosterFunc(World.getGuestRoster);
+World.getPlayerRoster = wrapRosterFunc(World.getPlayerRoster);
+World.getTemporaryRoster = wrapRosterFunc(World.getTemporaryRoster);
+World.getRoster = wrapRosterFunc1(World.getRoster);
 
 local callClassHooks = null;
 callClassHooks = function(baseName, scriptName, obj)
@@ -411,7 +447,8 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
   }
   else
   {
-    local match = @(s,m,i) m[i].end > 0 ? s.slice(m[i].begin, m[i].end) : null;
+    // NOTE: the m[i].begin < s.len() check exists to work around a bug in Squirrel that causes bogus match results sometimes
+    local match = @(s,m,i) m[i].end > 0 && m[i].begin < s.len() ? s.slice(m[i].begin, m[i].end) : null;
     expr = split(expr, ",");
     for(local i = 0; i < expr.len(); ++i)
     {
@@ -598,4 +635,4 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
 
 ::rng <- ::rng_new();
 
-::mods_registerMod("mod_hooks", 20, "modding script hooks");
+::mods_registerMod("mod_hooks", 21.1, "modding script hooks");
