@@ -42,8 +42,8 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.IsCombatBackground = false;
 		this.m.IsPerformingBackground = true;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Stash[2];
-		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Scout[1];
+		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
