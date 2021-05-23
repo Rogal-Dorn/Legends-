@@ -1059,12 +1059,12 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						//moved from up above when we actually call this screen -> supposedly this is the issue where it makes it fail the contract but here it shouldn't
 						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 						{
-							this.m.Caravan.setResources(this.Math.round(this.m.Caravan.getResources() / 2));
-							local L = this.m.Caravan.getInventory();
-							this.m.Caravan.clearInventory();
+							this.Contract.m.Caravan.setResources(this.Math.round(this.Contract.m.Caravan.getResources() / 2));
+							local L = this.Contract.m.Caravan.getInventory();
+							this.Contract.m.Caravan.clearInventory();
 							for (local i = 0; i < (L.len() - 1) / 2; i = ++i)
 							{
-								this.m.Caravan.addToInventory(L[i]);
+								this.Contract.m.Caravan.addToInventory(L[i]);
 							}
 						}
 
