@@ -57,10 +57,10 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 	
 	function onDeath()
 	{
-	
+		this.skill.onDeath();
 		if (this.m.Killer != null)
 		{
-			this.m.Killer.getSkills().addSkill("mummy_curse_effect");
+			this.m.Killer.getSkills().add(this.new("scripts/skills/effects/mummy_curse_effect"));
 		}
 
 		// local user = this.getContainer().getActor();
