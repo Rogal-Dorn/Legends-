@@ -81,7 +81,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			Magic = []
 		}
 	}
-
+	/*
 	function getTooltip()
 	{
 		local ret = this.character_background.getTooltip()
@@ -95,6 +95,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 		)
 		return ret
 	}
+	*/
 
 	function onBuildDescription()
 	{
