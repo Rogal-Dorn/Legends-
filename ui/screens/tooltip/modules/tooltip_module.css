@@ -1,15 +1,13 @@
 /*
- *  @Project:		Battle Brothers
- *	@Company:		Overhype Studios
- *
- *	@Copyright:		(c) Overhype Studios | 2013 - 2020
- *
- *  @Author:		Overhype Studios
- *  @Date:			20.09.2013 (refactored: 16.03.2017)
- *  @Description:	Global Tooltip Module CSS
- */
-
-
+*  @Project:		Battle Brothers
+*	@Company:		Overhype Studios
+*
+*	@Copyright:		(c) Overhype Studios | 2013 - 2020
+*
+*  @Author:		Overhype Studios
+*  @Date:			20.09.2013 (refactored: 16.03.2017)
+*  @Description:	Global Tooltip Module CSS
+*/
 .tooltip-module
 {
 	max-width: 24.0rem;
@@ -22,8 +20,8 @@
 	overflow: hidden;
 	/*pointer-events: none;*/
 
-    background-image: url("coui://gfx/ui/skin/mod_tooltip_255_bottom.png");
-    background-size: 25.5rem 100rem;
+    background-image: url("coui://gfx/ui/skin/tooltip_255_bottom.png");
+    background-size: 25.5rem 55.3rem;
     background-position: bottom;
 }
 
@@ -33,7 +31,7 @@
     width: 30.0rem;
 
     background-image: url("coui://gfx/ui/skin/tooltip_315_bottom.png");
-    background-size: 31.5rem 85.3rem;
+    background-size: 31.5rem 55.3rem;
     background-position: bottom;
 }
 
@@ -555,17 +553,3 @@
 {
 	width: 21.5rem;
 }
-
-
-/* Do not trim children in the text rows at the right border. */
-.tooltip-module.is-entity-content .content-child-container .l-right-column
-{
-    width: 16.5rem;
-}
-
-/* Move the margin 1rem to the left. */
-.tooltip-module.is-entity-content .row.content-child-container
-{
-    margin-left: 3rem;
-}
-
