@@ -5098,6 +5098,8 @@ Fixes issue where desert dlc couldn't find barber array
 
 ## 15.0.1.6
 
+Mod hooks updated to latest version
+
 **Fixes**
 Fixes alchemist, dervish, qiyan background modifiers (Barter in particular)
 Fixes female servant (handmaid) tooltip for modifiers
