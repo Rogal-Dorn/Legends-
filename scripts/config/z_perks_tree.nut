@@ -359,20 +359,36 @@ gt.Const.Perks.GetDynamicPerkTree <- function (_mins, _map)
 	}
 
 	//Handle overlow of perks in a row
-	local _direction = 1
+	// local _direction = 1
 	foreach (index, L in _overflows)
 	{
 		local nextIndex = index
+		local foundIndexToSlot = true
 		for (local i = 0; i < L.len(); i = ++i)
 		{
-			while (_totals[nextIndex] >= 13) {
-				nextIndex++
-				if (nextIndex > 6) {
-					_totals[nextIndex] <- 0
+			while (nextIndex < 7 && _totals[nextIndex] >= 13 ) { //assume we start index 6, last row
+				nextIndex++; //attatch to row 7, actually tier 8 of perk tree 
+				if (nextIndex > 6) { //adds new index to our tree for this
+					foundIndexToSlot = false //if this is ever false than our starting row and everything past it is overflowed, so we go back one
 				}
 			}
-			tree[nextIndex].push(L[i])
-			_totals[nextIndex]++
+			if (foundIndexToSlot == false)
+			{
+				nextIndex = index
+				foundIndexToSlot = true;
+				while(nextIndex > 0 && _totals[nextIndex] >= 13) { //if nextIndex is ever somehow -1 that means everything past the row it tried was overflow and everything before it, so we just drop the perk then
+					nextIndex--;
+					if (nextIndex < 0) {
+						foundIndexToSlot = false;
+					}
+				}
+			}
+			if (foundIndexToSlot) //if we somehow haven't found an index to slot a perk it just gets junked because the entire tree is max perk, guarantees an overflow. can change this
+			{
+				// this.logWarning("Originally had a perk on index: " + index + ", put it on index: " + nextIndex);
+				tree[nextIndex].push(L[i])
+				_totals[nextIndex]++
+			}
 		}
 	}
 
