@@ -5097,9 +5097,14 @@ Test fix for caravan contract, half implemenets Kvothe's fix
 Fixes issue where desert dlc couldn't find barber array
 
 ## 15.0.1.6
+
+**Fixes**
 Fixes alchemist, dervish, qiyan background modifiers (Barter in particular)
 Fixes female servant (handmaid) tooltip for modifiers
 Incorporates leonion tooltip module fix
 Fixes overflow perks rarely going out of bounds to a tier 8 perk row that doesn't exist, instead they now properly go back on the list if everything after it is an overflow
 Fixes mummy racial causing crash to desktops
 Fixes caravan escort contracts
+
+**Changes**
+Muladi background can't have hate-for/fear-of beasts traits anymore
