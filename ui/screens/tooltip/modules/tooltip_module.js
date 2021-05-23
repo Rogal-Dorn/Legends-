@@ -197,7 +197,6 @@ TooltipModule.prototype.setCursorOffsets = function(_offsets)
 **/
 TooltipModule.prototype.bindToElement = function(_targetDIV, _data)
 {
-	var baseself = this;
 	if (_targetDIV === null || typeof(_targetDIV) != 'object')
 	{
 		console.error('ERROR: Failed to bind Tooltip to element. Reason: Element is not valid.');
@@ -340,7 +339,10 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 
 	var posLeft = (targetOffset.left + (elementWidth / 2)) - (containerWidth / 2);
 	var posTop  = targetOffset.top - containerHeight - offsetY;
-	var monitorheight = screen.height;
+
+	var posLeft = targetOffset.left - elementWidth
+	var posTop  = targetOffset.top - containerHeight - offsetY;
+
 
 	if (posLeft < 0)
 	{
@@ -355,37 +357,38 @@ TooltipModule.prototype.setupUITooltip = function(_targetDIV, _data)
 	if (posTop < 0)
 	{
 		posTop = targetOffset.top + elementHeight + offsetY;
-
-		if ((posTop + containerHeight) > monitorheight && posTop > 100)
-		{
-			var TCenter = Math.max(Math.min(((targetOffset.top + (elementHeight / 2)) - (containerHeight/2)), monitorheight - containerHeight), offsetY);
-			
-			posTop = TCenter;
-			if ((posLeft - (containerWidth / 2) - (elementWidth / 2)) > 10)
-			{
-				posLeft = posLeft - (containerWidth / 2) - (elementWidth / 2);
-			}
-			else
-			{
-				posLeft = posLeft + (containerWidth / 2) + (elementWidth / 2);
-			}
-		}
 	}
+
+	var clearanceNeeded = wnd.height() - targetOffset.top
+
+	//tooltip is going to overflow, Shift Left and center
+	if (containerHeight > wnd.height() - posTop)
+	{
+		posTop = targetOffset.top - containerHeight / 2;
+		posLeft = targetOffset.left - containerWidth;
+	}
+	// TODO: Remove
+
+	// if (_targetDIV !== undefined && _targetDIV !== null)
+	// {
+	// 	console.log('containerHeight: ' + containerHeight);
+	// 	if (this.mCurrentData !== null && this.mCurrentData.contentType === 'ui-item')
+	// 	{
+
+	// 		console.log('DEBUG: setupUITooltip:(targetTop: ' + targetOffset.top + ' targetLeft:' + targetOffset.left + ' top: ' + posTop + ' left:' + posLeft + ' elementWidth: ' + elementWidth + ' elementHeight:' + elementHeight +  ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
+	// 	}
+	// 	//console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - Element in DOM: ' + _targetDIV.isInDOM() + ')');
+	// }
+	// else
+	// {
+	// 	console.log('DEBUG: setupUITooltip:(top: ' + posTop + ' left:' + posLeft + ' - ERROR: _targetDIV NOT assigned)');
+	// }
+
+
 	// show & position tooltip & animate
 	this.mContainer.removeClass('display-none').addClass('display-block');
-	this.mContainer.css({ left: posLeft, top: posTop });
-	this.mContainer.css({ 'background-size' : (containerWidth*0.1) + 'rem ' + Math.max((containerHeight*0.1), 55) + 'rem' });
+	this.mContainer.css({ left: posLeft, top: posTop});
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0.99 }, { duration: this.mFadeInTime }); // Anti Alias Fix
-	if (containerHeight > monitorheight)
-	{
-		var scrollingdur = 30 * (containerHeight - monitorheight);
-		var finaltop = ((monitorheight - containerHeight)*0.1) + "rem";
-		this.mContainer.velocity("finish", true).velocity({ top:  finaltop}, { duration: scrollingdur });
-	}
-	else
-	{
-		this.mContainer.velocity("finish", true).velocity({ top:  posTop}, { duration: 10 });
-	}
 };
 
 
@@ -745,7 +748,7 @@ TooltipModule.prototype.setupTileTooltip = function()
 	var containerHeight = this.mContainer.outerHeight(true);
 
 	var posLeft = this.mLastMouseX + (this.mCursorXOffset === 0 ? (this.mCursorWidth / 2) : (this.mCursorWidth - ((this.mCursorWidth / 2) - this.mCursorXOffset)) );
-	var posTop = this.mLastMouseY + (this.mCursorYOffset === 0 ? (this.mCursorHeight / 2) : (this.mCursorHeight - ((this.mCursorHeight / 2) - this.mCursorYOffset)));
+	var posTop = this.mLastMouseY + (this.mCursorYOffset === 0 ? (this.mCursorHeight / 2) : (this.mCursorHeight - ((this.mCursorHeight / 2) - this.mCursorYOffset)) );
 
 	if (posLeft < 0)
 	{
@@ -759,32 +762,21 @@ TooltipModule.prototype.setupTileTooltip = function()
 
 	if ((posTop + containerHeight) > wnd.height())
 	{
-		if (containerHeight > wnd.height())
-		{
-			posTop = 10;
-		}
-		else
-		{
 		posTop = this.mLastMouseY - (this.mCursorYOffset === 0 ? ((this.mCursorHeight / 2) + containerHeight) : (this.mCursorYOffset + containerHeight));
 	}
+
+	// mod_tactical_tooltip by MrBrut: Constrain the tooltip within visible screen.
+	// https://www.nexusmods.com/battlebrothers/mods/266
+	if (posTop < 0) {
+		posTop = (wnd.height() - containerHeight) / 2;
+		if (posTop < 0) {posTop = 10;}
 	}
-	var posTop = Math.max(posTop, 10);
+	// end of mod_tactical_tooltip.
 
 	// show & position tooltip & animate
 	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.mContainer.css({ left: posLeft, top: posTop });
-	this.mContainer.css({ 'background-size' : (containerWidth*0.1) + 'rem ' + Math.max((containerHeight*0.1), 55) + 'rem' });
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0.99 }, { duration: this.mFadeInTime }); // Anti Alias Fix
-	if (containerHeight > wnd.height())
-	{
-		var scrollingdur = 30 * (containerHeight - wnd.height());
-		var finaltop = ((wnd.height() - containerHeight)*0.1) + "rem";
-		this.mContainer.velocity("finish", true).velocity({ top:  finaltop}, { duration: scrollingdur });
-	}
-	else
-	{
-		this.mContainer.velocity("finish", true).velocity({ top:  posTop}, { duration: 10 });
-	}
 };
 
 

@@ -8,62 +8,64 @@
 *  @Date:			20.09.2013 (refactored: 16.03.2017)
 *  @Description:	Global Tooltip Module CSS
 */
+
+
 .tooltip-module
 {
 	max-width: 24.0rem;
-    width: 24.0rem;
+	width: 24.0rem;
 
 	padding  : 0.6rem;
-    padding-bottom: 1.0rem;
+	padding-bottom: 1.0rem;
 	position : absolute;
 
 	overflow: hidden;
 	/*pointer-events: none;*/
 
-    background-image: url("coui://gfx/ui/skin/tooltip_255_bottom.png");
-    background-size: 25.5rem 55.3rem;
-    background-position: bottom;
+	background-image: url("coui://gfx/ui/skin/mod_tooltip_255_bottom.png");
+	background-size: 25.5rem 100rem;
+	background-position: bottom;
 }
 
 .tooltip-module.is-full-width
 {
 	max-width: 30.0rem;
-    width: 30.0rem;
+	width: 30.0rem;
 
-    background-image: url("coui://gfx/ui/skin/tooltip_315_bottom.png");
-    background-size: 31.5rem 55.3rem;
-    background-position: bottom;
+	background-image: url("coui://gfx/ui/skin/tooltip_315_bottom.png");
+	background-size: 31.5rem 85.3rem;
+	background-position: bottom;
 }
 
 .tooltip-module .top-ornament
 {
 	width: 31.5rem;
 	height: 1.3rem;
-    top: -0.3rem;
-    left: -0.3rem;
-    position: absolute;
-    background-image: url("coui://gfx/ui/skin/tooltip_255_top.png");
-    background-size: 25.5rem 1.3rem;
-    background-position: bottom;
+	top: -0.3rem;
+	left: -0.3rem;
+	position: absolute;
+	background-image: url("coui://gfx/ui/skin/tooltip_255_top.png");
+	background-size: 25.5rem 1.3rem;
+	background-position: bottom;
 }
 
 .tooltip-module.is-full-width .top-ornament
 {
 	width: 31.5rem;
 	height: 1.3rem;
-    top: -0.3rem;
-    left: -0.3rem;
-    position: absolute;
-    background-image: url("coui://gfx/ui/skin/tooltip_315_top.png");
-    background-size: 31.5rem 1.3rem;
-    background-position: bottom;
+	top: -0.3rem;
+	left: -0.3rem;
+	position: absolute;
+	background-image: url("coui://gfx/ui/skin/tooltip_315_top.png");
+	background-size: 31.5rem 1.3rem;
+	background-position: bottom;
 }
 
 .tooltip-module .header-container
 {
 	width: 100%;
 	float: left;
-    padding-top: 0.2rem;
+	padding-top: 0.2rem;
 }
 
 .tooltip-module .content-container
@@ -553,3 +555,17 @@
 {
 	width: 21.5rem;
 }
+
+
+/* Do not trim children in the text rows at the right border. */
+.tooltip-module.is-entity-content .content-child-container .l-right-column
+{
+	width: 16.5rem;
+}
+
+/* Move the margin 1rem to the left. */
+.tooltip-module.is-entity-content .row.content-child-container
+{
+	margin-left: 3rem;
+}
+
