@@ -5110,3 +5110,8 @@ Fixes caravan escort contracts
 
 **Changes**
 Muladi background can't have hate-for/fear-of beasts traits anymore
+
+## 15.0.1.7
+
+**Fixes**
+Economic Difficulty spelling fix

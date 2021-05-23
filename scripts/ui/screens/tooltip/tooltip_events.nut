@@ -2239,7 +2239,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. +50% more recruits avaialable. \n\nRecommended for veterans of the game or the genre."
+					text = "Provides for a balanced playing experience that can be quite challenging. 66% heal and repair rate outside camp. +50% more recruits available. \n\nRecommended for veterans of the game or the genre."
 				}
 			];
 
