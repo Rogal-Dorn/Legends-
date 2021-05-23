@@ -5099,3 +5099,4 @@ Fixes issue where desert dlc couldn't find barber array
 ## 15.0.1.6
 Fixes alchemist background modifiers (Barter, Crafting, etc)
 Fixes female servant (handmaid) tooltip for modifiers
+Incorporates leonion tooltip module fix
