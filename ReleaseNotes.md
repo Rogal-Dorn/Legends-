@@ -5102,3 +5102,4 @@ Fixes female servant (handmaid) tooltip for modifiers
 Incorporates leonion tooltip module fix
 Fixes overflow perks rarely going out of bounds to a tier 8 perk row that doesn't exist, instead they now properly go back on the list if everything after it is an overflow
 Fixes mummy racial causing crash to desktops
+Fixes caravan escort contracts
