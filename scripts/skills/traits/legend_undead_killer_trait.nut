@@ -32,7 +32,7 @@ this.legend_undead_killer_trait <- this.inherit("scripts/skills/traits/character
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/bravery.png",
+				icon = "ui/icons/melee_skill.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill when in battle with undead"
 			}
 		];
