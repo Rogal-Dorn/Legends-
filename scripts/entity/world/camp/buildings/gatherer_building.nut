@@ -170,6 +170,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_vala":
 				case "background.legend_vala_commander":
 				case "background.legend_herbalist":
+				case "background.legend_alchemist":
 					apothecaryLevel += bro.getLevel()
 			}
 

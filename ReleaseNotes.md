@@ -5116,3 +5116,4 @@ Muladi background can't have hate-for/fear-of beasts traits anymore
 **Fixes**
 Economic Difficulty spelling fix
 Undead killer trait description icon fix
+Adds new alchemist background to count towards apothecary levels like vala + herbalist
