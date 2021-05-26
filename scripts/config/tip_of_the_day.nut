@@ -23,7 +23,6 @@ gt.Const.TipOfTheDay <- [
 	"Consider putting injured characters in reserve until their wounds have healed.",
 	"Have you assigned all your brothers to camp tasks recently?",
 	"Training in camp will give you raw experience points - the longer you train the bigger the rewards.",
-	"Have you assigned all your brothers to camp tasks recently?",
 	"Consider building up a reserve roster and rotating your mercenaries, so you can more easily deal with losses down the road.",
 	"Ranged weapon accuracy drops with distance, unless you are using a slingstaff.",
 	"Female professions have more fatigue but less health than their male counterparts",
