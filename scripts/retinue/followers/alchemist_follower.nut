@@ -19,7 +19,7 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			},
 			{
 				IsSatisfied = false,
-				Text = "Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid"
+				Text = "Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid, Alchemist"
 			}
 		];
 	}
@@ -42,7 +42,8 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			"background.legend_herbalist",
 			"background.legend_taxidermist",
 			"background.legend_druid",
-			"background.legend_commander_druid"
+			"background.legend_commander_druid",
+			"background.legend_alchemist"
 		];
 
 		foreach( bro in brothers )
