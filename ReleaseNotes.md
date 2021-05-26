@@ -5117,3 +5117,4 @@ Muladi background can't have hate-for/fear-of beasts traits anymore
 Economic Difficulty spelling fix
 Undead killer trait description icon fix
 Adds new alchemist background to count towards apothecary levels like vala + herbalist
+Fixes characters staying hidden for an extra until-movement or next-turn when using the Hide skill
