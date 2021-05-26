@@ -36,7 +36,7 @@ this.italo_norman_helm_named <- this.inherit("scripts/items/helmets/named/named_
 		this.m.SpriteDamaged = "italo_norman_helm_named_01_damaged";
 		this.m.SpriteCorpse = "italo_norman_helm_named_01_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/italo_norman_helm_named_01.png";
+		this.m.Icon = "legend_helmets/italo_norman_helm_named_01.png"
 	}
 
 });
