@@ -95,7 +95,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local desc = "";
 		desc += "Repair damaged items in your stash and equipped bros. Equipment is repaired in a linear fashion (unlike in parallel in vanilla), so "
 		desc += "order in the queue has significance. Each brother assigned to the tent repairs an amount of durability each hour. "
-		desc += "The more people assigned to the tent, the quicker items will be repaired. Unlike vanilla, repairs only occur while encamped."
+		desc += "The more people assigned to the tent, the quicker items will be repaired. Items will repair when not camped at a slow rate."
 		desc += "\n\n"
         desc += "Any equipped gear that is damaged will automatically be added to the front of the queue at the end of all battles. "
         desc += "If no brothers are assigned to the repair tent, repairs will still be made, albeit at a slower rate. "
