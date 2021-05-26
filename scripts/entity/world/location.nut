@@ -518,8 +518,15 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 							armor.extend(this.m.NamedArmorsList);
 							armor.extend(this.m.NamedArmorsList);
 						}
-
-						this.m.Loot.add(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+						if (this.LegendsMod.Configs().LegendArmorsEnabled())
+						{
+							local weightName = this.Const.World.Common.convNameToList(armor);
+							this.m.Loot.add(this.Const.World.Common.pickArmor(weightName));
+						}
+						else
+						{
+							this.m.Loot.add(this.new("scripts/items/" + armor[this.Math.rand(0, armor.len() - 1)]));
+						}
 					}
 				}
 				else

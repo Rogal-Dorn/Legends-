@@ -5118,3 +5118,4 @@ Economic Difficulty spelling fix
 Undead killer trait description icon fix
 Adds new alchemist background to count towards apothecary levels like vala + herbalist
 Fixes characters staying hidden for an extra until-movement or next-turn when using the Hide skill
+Fixes rarely getting unlayered armor from a camp drop
