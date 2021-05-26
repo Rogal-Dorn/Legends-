@@ -3148,7 +3148,7 @@ gt.Const.Tactical.SmokeParticles <- [
 	{
 		Delay = 0,
 		Quantity = 250,
-		LifeTime = 90000,
+		LifeTimeQuantity = 90000,
 		SpawnRate = 25,
 		Brushes = [
 			"ash_01",
