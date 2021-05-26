@@ -4,7 +4,7 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 	{
 		this.legend_named_armor.create();
 		this.m.ID = "legend_armor.body.legend_named_warlock_cloak";
-		this.m.Description = "A cloak made from the skin of dead men and dark magic. +10% melee skill and defense when at confident morale. Also grants +20 hitpoints";
+		this.m.Description = "A cloak made from the skin of dead men and dark magic.";
 		this.m.Name = "Warlock cloak"
 		this.m.NameList = [
 			"Dead Man\'s Skin",
@@ -12,7 +12,7 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 			"Seance\'s Skin",
 			"Warlock\'s Cloak",
 			"Deathcloak",
-			"Sorceror\'s Hood"
+			"Sorceror\'s Cloak"
 		];
 		this.m.Variant = 508;
 		this.updateVariant();
