@@ -1229,6 +1229,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.World.setFogOfWar(!this.m.DebugMap);
+		this.World.Crafting.resetAllBlueprints();
 	}
 
 	function showIntroductionScreen( _tag = null )
@@ -1277,6 +1278,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		// 	this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
 		// }
 		this.setWorldmapMusic(false);
+		this.World.Crafting.resetAllBlueprints();
 		this.setPause(true);
 	}
 

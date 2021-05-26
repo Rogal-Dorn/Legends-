@@ -92,6 +92,21 @@ this.crafting_manager <- {
 		}
 	}
 
+	function deleteAllBlueprints()
+	{
+		foreach ( bp in this.m.Blueprints )
+		{
+			bp = null;
+		}
+		this.m.Blueprints = [];
+	}
+
+	function resetAllBlueprints()
+	{
+		this.deleteAllBlueprints();
+		this.create();
+	}
+
 	function clear()
 	{
 		foreach( b in this.m.Blueprints )
