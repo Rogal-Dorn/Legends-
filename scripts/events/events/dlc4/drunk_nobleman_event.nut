@@ -42,7 +42,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 					});
 				}
 
-				if (_event.m.Thief == null)
+				if (_event.m.Thief != null)
 				{
 					this.Options.push({
 						Text = "Perhaps %thief% can ease his burden.",
@@ -54,7 +54,7 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 					});
 				}
 				
-				if (_event.m.Noble == null)
+				if (_event.m.Noble != null)
 				{
 					this.Options.push({
 						Text = "Hey that\'s %noble%\'s cousin.",
