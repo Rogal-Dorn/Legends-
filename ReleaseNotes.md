@@ -5113,11 +5113,15 @@ Muladi background can't have hate-for/fear-of beasts traits anymore
 
 ## 15.0.1.7
 
+**Changes**
+Adds alchemist background to alchemist retinue possible bg list
+Adds alchemist background to count towards apothecary levels like vala + herbalist
+
 **Fixes**
 Economic Difficulty spelling fix
 Undead killer trait description icon fix
-Adds new alchemist background to count towards apothecary levels like vala + herbalist
 Fixes characters staying hidden for an extra until-movement or next-turn when using the Hide skill
 Fixes rarely getting unlayered armor from a camp drop
 Changes peaceful perk to indicate current way the perk works, brother can't take more than 50% of the fights of total company fights
 Fixes noble background getting 4 perks & sometimes getting perks that conflict becuase of it
+Fixes throwing smoke bombs
