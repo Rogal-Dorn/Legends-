@@ -66,7 +66,7 @@ this.legend_eat_pudding_skill <- this.inherit("scripts/skills/skill", {
 				id = 13,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] to morale checks for 10 turns"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve to morale checks for 10 turns"
 			}
 		];
 
