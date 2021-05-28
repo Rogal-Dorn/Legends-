@@ -499,6 +499,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Upgrades[index].setArmor(this);
 		this.m.Upgrades[index].onAdded();
 		this.updateAppearance();
+		if (this.m.Container != null) this.getContainer().getActor().getSkills().update()
 		return true;
 	}
 
@@ -518,6 +519,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		item.onRemoved(app);
 		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();
+		if (this.m.Container != null) this.getContainer().getActor().getSkills().update()
 		return item;
 	}
 
