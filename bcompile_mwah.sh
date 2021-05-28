@@ -19,3 +19,4 @@ echo "Cleaning up ..."
 rm -rf  "$BBDir\\brushes" "$BBDir\\gfx" "$BBDir\\preload" "$BBDir\\scripts" "$BBDir\\sounds" "$BBDir\\ui"
 mkdir -p "$BBDir\\gfx\\fonts"
 cp -R ../fonts "$BBDir\\gfx"
+$SHELL
