@@ -920,7 +920,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 
 gt.Const.World.Common.convNameToList <- function ( _named )
 {
-	local findString = ["helmets/", "armor/", "legend_armor/"];
+	local findString = ["helmets/", "armor/", "legend_armor/", "legend_helmets/"];
 	local list = clone _named; //iirc we have to clone this because this is the actual array & we don't want to edit it
 	local retArr = [];
 	foreach( search in findString )
