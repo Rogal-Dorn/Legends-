@@ -16,7 +16,7 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 	function getBonus()
 	{
 		local actor = this.getContainer().getActor();
-		local resolve = actor.getBaseProperties().Bravery;
+		local resolve = actor.getCurrentProperties().Bravery;
 		local bonus = this.Math.floor(resolve * 0.20);
 
 		return bonus;
