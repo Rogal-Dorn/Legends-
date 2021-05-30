@@ -320,7 +320,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.drunkard"))
+			if (bro.getSkills().hasSkill("trait.drunkard") && bro.getBackground().getID() != "background.legend_commander_noble")
 			{
 				candidates.push(bro);
 			}

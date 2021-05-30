@@ -1240,6 +1240,43 @@ this.skill <- {
 		local user = this.m.Container.getActor();
 		local myTile = user.getTile();
 		local targetEntity = _targetTile.IsOccupiedByActor ? _targetTile.getEntity() : null;
+		local getBadTerrainFactor = function ( attributeIcon ) {
+
+			if (!attributeIcon)
+			{
+				return false;
+			}
+
+			local badTerrains = [
+				"terrain.swamp"
+			];
+
+			for( local i = 0; i < badTerrains.len(); i++ )
+			{
+				local terrainEffect = targetEntity.getSkills().getSkillByID(badTerrains[i]);
+
+				if (!(terrainEffect && "getTooltip" in terrainEffect))
+				{
+				}
+				else
+				{
+					local tooltip = terrainEffect.getTooltip();
+
+					foreach( i, r in tooltip )
+					{
+						if (("type" in r) && r.type == "text" && ("icon" in r) && "text" in r)
+						{
+							if (isIn(attributeIcon, r.icon))
+							{
+								return r.text;
+							}
+						}
+					}
+				}
+			}
+
+			return null;
+		};
 		local attackingEntity = user;
 		local thisSkill = this;
 		local modifier = {};
@@ -1287,57 +1324,27 @@ this.skill <- {
 			local malus = this.Const.Combat.LevelDifferenceToHitMalus * levelDifference;
 			row.text = red(malus + "%") + " " + description;
 		};
-		function getBadTerrainFactor( attributeIcon )
-		{
-			local badTerrains = [
-				"terrain.swamp"
-			];
-
-			for( local i = 0; i < badTerrains.len(); i++ )
-			{
-				local terrainEffect = targetEntity.getSkills().getSkillByID(badTerrains[i]);
-
-				if (!(terrainEffect && "getTooltip" in terrainEffect))
-				{
-				}
-				else
-				{
-					local tooltip = terrainEffect.getTooltip();
-
-					foreach( _, r in tooltip )
-					{
-						if (("type" in r) && r.type == "text" && ("icon" in r) && "text" in r)
-						{
-							if (isIn(attributeIcon, r.icon))
-							{
-								return r.text;
-							}
-						}
-					}
-				}
-			}
-
-			return null;
-		}
 
 		modifier["Target on bad terrain"] <- function ( row, description )
 		{
 			local defenseIcon = thisSkill.m.IsRanged ? "ranged_defense" : "melee_defense";
-			local terrainFactor = this.getBadTerrainFactor(defenseIcon);
+			local terrainFactor = getBadTerrainFactor(defenseIcon);
 
 			if (terrainFactor)
 			{
-				row.text = description + "\n(" + terrainFactor + ")";
+				// row.text = green(terrainFactor + "%") + " " + description;
+				row.text = description + " (" + terrainFactor + ")";
 			}
 		};
 		modifier["On bad terrain"] <- function ( row, description )
 		{
 			local attackIcon = thisSkill.m.IsRanged ? "ranged_skill" : "melee_skill";
-			local terrainFactor = this.getBadTerrainFactor(attackIcon);
+			local terrainFactor = getBadTerrainFactor(attackIcon);
 
 			if (terrainFactor)
 			{
-				row.text = description + "\n(" + terrainFactor + ")";
+				// row.text = red(terrainFactor + "%") + " " + description;
+				row.text = description + " (" + terrainFactor + ")";
 			}
 		};
 		modifier["Fast Adaption"] <- function ( row, description )

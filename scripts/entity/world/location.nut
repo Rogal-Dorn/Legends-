@@ -510,7 +510,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 						if (this.LegendsMod.Configs().LegendArmorsEnabled())
 						{
 							armor = clone this.Const.Items.LegendNamedArmorLayers;
-							armor.extend(this.Const.Items.LegendNamedHelmetLayers);
+							// armor.extend(this.Const.Items.LegendNamedArmorLayers);
 						}
 
 						if (this.m.NamedArmorsList != null && this.m.NamedArmorsList.len() != 0)
