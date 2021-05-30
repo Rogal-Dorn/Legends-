@@ -722,7 +722,7 @@ this.item <- {
 	function onUnequip()
 	{
 		this.clearSkills();
-		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
+		if (this.m.Container != null && ("getSkills" in this.getContainer().getActor())) this.getContainer().getActor().getSkills().update();
 	}
 
 	function onEquip()
@@ -730,7 +730,7 @@ this.item <- {
 		if (this.m.Container != null)
 		{
 			if (this.m.Container.getActor() != null) this.m.LastEquippedByFaction = this.m.Container.getActor().getFaction();
-			this.getContainer().getActor().getSkills().update();
+			if ("getSkills" in this.getContainer().getActor()) this.getContainer().getActor().getSkills().update();
 
 		}
 		if (this.isRuned())
