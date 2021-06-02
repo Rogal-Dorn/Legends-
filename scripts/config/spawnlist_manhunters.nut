@@ -19,7 +19,7 @@ gt.Const.World.Spawn.SatoManhunters <-
 	VisionMult = 1.0,
 	Body = "figure_nomad_01",
 	MaxR = 530,
-	MinR = 65,
+	MinR = 55,
 	Troops = [
 		{
 			Weight = 60,
@@ -30,6 +30,7 @@ gt.Const.World.Spawn.SatoManhunters <-
 					Cost = 15
 				},
 				{
+					MinR = 220,
 					Type = this.Const.World.Spawn.Troops.SatoManhunterVeteran,
 					Cost = 20
 				}
@@ -44,6 +45,7 @@ gt.Const.World.Spawn.SatoManhunters <-
 					Cost = 20
 				},
 				{
+					MinR = 240,
 					Type = this.Const.World.Spawn.Troops.SatoManhunterVeteranRanged,
 					Cost = 28
 				}
