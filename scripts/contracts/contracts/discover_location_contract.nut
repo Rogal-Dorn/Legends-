@@ -455,7 +455,7 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 
 				},
 				{
-					Text = "We have a deal. You and noone else will learn where it is.",
+					Text = "We have a deal. You and no one else will learn where it is.",
 					function getResult()
 					{
 						return "AnotherParty4";

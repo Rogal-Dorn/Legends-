@@ -41,7 +41,7 @@ this.dodge_effect <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-	function onUpdate( _properties )
+	function onAfterUpdate( _properties )
 	{
 		local initiative = this.Math.floor(this.getContainer().getActor().getInitiative() * 0.15);
 		_properties.MeleeDefense += this.Math.max(0, initiative);

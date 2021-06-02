@@ -1523,7 +1523,40 @@ gt.Const.World.Spawn.Lindwurm <- [
 		Troops = [
 			{
 				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 1
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.75,
+		Body = "figure_lindwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
 				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.75,
+		Body = "figure_lindwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 2
+			}
+		]
+	},
+	{
+		Cost = 0,
+		MovementSpeedMult = 0.75,
+		Body = "figure_lindwurm_01",
+		Troops = [
+			{
+				Type = this.Const.World.Spawn.Troops.Lindwurm,
+				Num = 3
 			}
 		]
 	},
@@ -1601,17 +1634,6 @@ gt.Const.World.Spawn.Lindwurm <- [
 			{
 				Type = this.Const.World.Spawn.Troops.Lindwurm,
 				Num = 9
-			}
-		]
-	},
-	{
-		Cost = 0,
-		MovementSpeedMult = 0.75,
-		Body = "figure_lindwurm_01",
-		Troops = [
-			{
-				Type = this.Const.World.Spawn.Troops.Lindwurm,
-				Num = 10
 			}
 		]
 	}

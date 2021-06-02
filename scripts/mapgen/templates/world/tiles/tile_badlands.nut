@@ -25,23 +25,7 @@ this.tile_badlands <- this.inherit("scripts/mapgen/map_template", {
 	function onSecondPass( _rect )
 	{
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
-		local mountain = 0;
-
-		for( local i = 0; i != 6; i = ++i )
-		{
-			if (!tile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local nextTile = tile.getNextTile(i);
-
-				if (nextTile.Type == this.Const.World.TerrainType.Mountains)
-				{
-					mountain = ++mountain;
-				}
-			}
-		}
+		local mountain = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Mountains);
 
 		if (mountain != 0)
 		{

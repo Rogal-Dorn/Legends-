@@ -24,23 +24,7 @@ this.tile_forest_leaves <- this.inherit("scripts/mapgen/map_template", {
 	function onSecondPass( _rect )
 	{
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
-		local urban = 0;
-
-		for( local i = 0; i != 6; i = ++i )
-		{
-			if (!tile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local nextTile = tile.getNextTile(i);
-
-				if (nextTile.Type == this.Const.World.TerrainType.Urban)
-				{
-					urban = ++urban;
-				}
-			}
-		}
+		local urban = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Urban);
 
 		if (urban != 0)
 		{

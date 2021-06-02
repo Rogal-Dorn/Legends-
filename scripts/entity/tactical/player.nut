@@ -882,7 +882,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	function kill( _killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false )
 	{
-		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground() != null && this.getBackground().getID() != "background.slave"))
+		if (!this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsSurvivalGuaranteed && _fatalityType != this.Const.FatalityType.Kraken && _fatalityType != this.Const.FatalityType.Devoured && !this.m.Skills.hasSkillOfType(this.Const.SkillType.PermanentInjury) && (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground() != null && this.getBackground().getID() != "background.slave"))
 		{
 			_fatalityType = this.Const.FatalityType.None;
 		}
@@ -1256,6 +1256,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		if (_scale)
 		{
 			_xp = _xp * this.Const.Combat.GlobalXPMult;
+		}
+
+		if (_scale && !isScenarioMode)
+		{
+			_xp = _xp * this.Const.Difficulty.XPMult[this.World.Assets.getDifficulty()];
 		}
 
 		if (this.m.Level >= 11)

@@ -61,9 +61,14 @@ this.tile_snow <- this.inherit("scripts/mapgen/map_template", {
 			if (!tile.hasNextTile(i))
 			{
 			}
-			else if (tile.getNextTile(i).Type == this.Const.World.TerrainType.Forest || tile.getNextTile(i).Type == this.Const.World.TerrainType.SnowyForest)
+			else
 			{
-				forest = ++forest;
+				local type = tile.getNextTile(i).Type;
+
+				if (type == this.Const.World.TerrainType.Forest || type == this.Const.World.TerrainType.SnowyForest)
+				{
+					forest = ++forest;
+				}
 			}
 		}
 

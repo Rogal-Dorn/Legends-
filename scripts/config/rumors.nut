@@ -269,7 +269,7 @@ gt.Const.Strings.RumorsItemsNomads <- [
 	],
 	[
 		"I used to be first quartermaster to a Vizier. When the famed armor I ordered for a guest of honor did not arrive, I lost my position. The caravan with it was ambushed by nomads, I later learned, %direction% of here.",
-		"An oppulent armor is said to be hidden out %terrain% %direction% from here. Many treasure seekers failed to claim it so far but maybe you have more luck?",
+		"An opulent armor is said to be hidden out %terrain% %direction% from here. Many treasure seekers failed to claim it so far but maybe you have more luck?",
 		"The most skilled armorsmith around, who happens to be a friend of mine, got tricked by those damned nomads and they made off with one of his prize armors. If you come across any nomads %direction% of here, search their bodies thoroughly!"
 	]
 ];

@@ -16,6 +16,7 @@ this.ai_lightning_storm <- this.inherit("scripts/ai/tactical/behavior", {
 	function onEvaluate( _entity )
 	{
 		this.m.Skill = null;
+		this.m.Target = null;
 
 		if (this.Time.getRound() == 1)
 		{
