@@ -5123,7 +5123,7 @@ Economic Difficulty spelling fix
 Undead killer trait description icon fix
 Fixes characters staying hidden for an extra until-movement or next-turn when using the Hide skill
 Fixes rarely getting unlayered armor from a camp drop
-Changes peaceful perk to indicate current way the perk works, brother can't take more than 50% of the fights of total company fights
+Fixes the pacifist perk to properly make people upset for fighting every week instead of if they fought in 50% of the companies total battles
 Fixes noble background getting 4 perks & sometimes getting perks that conflict becuase of it
 Fixes throwing smoke bombs
 Fixes magic missile mastery ap costs not reducing properly
