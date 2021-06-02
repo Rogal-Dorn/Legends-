@@ -4,7 +4,7 @@ this.throw_dirt_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_dirt";
 		this.m.Name = "Throw Dirt";
-		this.m.Description = "";
+		this.m.Description = "Throws dirt to distract the enemy. ";
 		this.m.Icon = "skills/active_215.png";
 		this.m.IconDisabled = "skills/active_215.png";
 		this.m.Overlay = "active_215";
