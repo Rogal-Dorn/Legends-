@@ -43,23 +43,20 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+
+		local hitChanceBonus = this.m.HitChanceBonus;
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
+		{
+			hitChanceBonus += 5;
+		}
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + hitChanceBonus + "%[/color] chance to hit"
 			}
 		]);
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue  + "]+5%[/color] chance to hit due to spear specialisation"
-			});
-		}
 
 		return ret;
 	}

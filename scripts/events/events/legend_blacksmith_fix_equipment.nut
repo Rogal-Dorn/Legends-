@@ -44,7 +44,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Good",
-			Text = "[img]gfx/ui/events/event_82.png[/img]{%blacksmith% spends a whole night in his workshop working his anvil. He pulls steel together and works his magic on his own, mending the weapons back into excellent condition. After the work is done he walks out, wiping a huge torrent of sweat from his brow. %SPEECH_ON%It is done, as best as I can do in these conditions%SPEECH_OFF%.}",
+			Text = "[img]gfx/ui/events/event_82.png[/img]{%blacksmith% spends a whole night in his workshop working his anvil. He pulls steel together and works his magic on his own, mending the weapons back into excellent condition. After the work is done he walks out, wiping a huge torrent of sweat from his brow. %SPEECH_ON%It is done, as best as I can do in these conditions.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
