@@ -34,12 +34,13 @@ this.tile_farmland <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Heath)
+				if (type == this.Const.World.TerrainType.Heath)
 				{
 					heath = ++heath;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
+				else if (type == this.Const.World.TerrainType.Tundra)
 				{
 					highlands = ++highlands;
 				}

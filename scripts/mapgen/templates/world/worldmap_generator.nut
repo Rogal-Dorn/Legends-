@@ -118,15 +118,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function clearWorld( _rect )
 	{
-		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
-		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-			{
-				local tile = this.m.WorldTiles[x][y];
-				tile.Type = 0;
-				tile.Subregion = 0;
-			}
-		}
+		this.World.clearTiles();
 	}
 
 	function buildLandAndSea( _rect )
@@ -214,15 +206,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						local n = 0;
-
-						for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-						{
-							if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Ocean)
-							{
-								n = ++n;
-							}
-						}
+						local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 
 						if (this.Math.rand(1, 100) <= n * this.Const.World.Settings.WaterConnectivity)
 						{
@@ -252,15 +236,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						local n = 0;
-
-						for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-						{
-							if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Ocean)
-							{
-								n = ++n;
-							}
-						}
+						local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 
 						if (this.Math.rand(1, 100) <= n * this.Const.World.Settings.WaterConnectivity)
 						{
@@ -293,15 +269,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						local n = 0;
-
-						for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-						{
-							if (tile.hasNextTile(i) && tile.getNextTile(i).Type != this.Const.World.TerrainType.Ocean)
-							{
-								n = ++n;
-							}
-						}
+						local n = tile.getSurroundingTilesNotOfType(this.Const.World.TerrainType.Ocean);
 
 						if (n <= 1)
 						{
@@ -366,15 +334,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						local n = 0;
-
-						for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-						{
-							if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Mountains)
-							{
-								n = ++n;
-							}
-						}
+						local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Mountains);
 
 						if (this.Math.rand(1, 100) <= n * 30)
 						{
@@ -404,15 +364,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						local n = 0;
-
-						for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-						{
-							if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Mountains)
-							{
-								n = ++n;
-							}
-						}
+						local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Mountains);
 
 						if (this.Math.rand(1, 100) <= n * 30)
 						{
@@ -441,15 +393,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local n = 0;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Mountains)
-						{
-							n = ++n;
-						}
-					}
+					local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Mountains);
 
 					if (this.Math.rand(1, 100) <= n * 25)
 					{
@@ -477,15 +421,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local n = 0;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (tile.hasNextTile(i) && tile.getNextTile(i).Type == this.Const.World.TerrainType.Hills)
-						{
-							n = ++n;
-						}
-					}
+					local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Hills);
 
 					if (this.Math.rand(1, 100) <= n * 30)
 					{
@@ -518,38 +454,20 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local chance = 50;
-					chance = chance + y * -0.8;
+					local chance = 0;
 
-					if (y > _rect.Y + _rect.H * 0.19)
+					if (tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp) == 0)
 					{
-						chance = chance * 0.25;
-					}
+						chance = 50;
+						chance = chance + y * -0.8;
 
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
+						if (y > _rect.Y + _rect.H * 0.19)
 						{
+							chance = chance * 0.25;
 						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
 
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = 0;
-								break;
-							}
-
-							if (nextTile.Type == this.Const.World.TerrainType.Desert)
-							{
-								chance = chance + 50;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Steppe)
-							{
-								chance = chance + 25;
-							}
-						}
+						chance = chance + 50 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Desert);
+						chance = chance + 25 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Steppe);
 					}
 
 					if (this.Math.rand(1, 100) <= chance)
@@ -578,37 +496,15 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local chance = 16;
-					chance = chance + y * -0.4;
+					local chance = 0;
 
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					if (tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp) == 0)
 					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = 0;
-								break;
-							}
-
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
-							{
-								chance = chance + 50;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Desert)
-							{
-								chance = chance + 25;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance + 5;
-							}
-						}
+						chance = 16;
+						chance = chance + y * -0.4;
+						chance = chance + 50 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Steppe);
+						chance = chance + 25 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Desert);
+						chance = chance + 5 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 					}
 
 					if (this.Math.rand(1, 100) <= chance)
@@ -637,33 +533,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local chance = y < _rect.H * 0.5 ? y : _rect.H - y;
-					chance = chance * 0.025;
+					local chance = 0;
 
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					if (tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Steppe) == 0)
 					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
-							{
-								chance = 0;
-								break;
-							}
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = chance + 30;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance + 10;
-							}
-						}
+						chance = y < _rect.H * 0.5 ? y : _rect.H - y;
+						chance = chance * 0.025;
+						chance = chance + 30 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp);
+						chance = chance + 10 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 					}
 
 					if (this.Math.rand(1, 100) <= chance)
@@ -694,26 +571,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				{
 					local chance = !isAutumnLeft ? _rect.W - x : x;
 					chance = chance * 0.025;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
-							{
-								chance = chance + 30;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance - 10;
-							}
-						}
-					}
+					chance = chance + 30 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.LeaveForest);
+					chance = chance - 10 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 
 					if (this.Math.rand(1, 100) <= chance)
 					{
@@ -752,18 +611,19 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						else
 						{
 							local nextTile = tile.getNextTile(i);
+							local type = nextTile.Type;
 
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							if (type == this.Const.World.TerrainType.Steppe)
 							{
 								chance = -100;
 								break;
 							}
 
-							if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+							if (type == this.Const.World.TerrainType.AutumnForest)
 							{
 								chance = chance + 30;
 							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							else if (type == this.Const.World.TerrainType.Ocean)
 							{
 								chance = chance - 10;
 							}
@@ -812,18 +672,19 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						else
 						{
 							local nextTile = tile.getNextTile(i);
+							local type = nextTile.Type;
 
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							if (type == this.Const.World.TerrainType.Steppe)
 							{
 								chance = -100;
 								break;
 							}
 
-							if (nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest)
+							if (type == this.Const.World.TerrainType.Forest || type == this.Const.World.TerrainType.SnowyForest)
 							{
 								chance = chance + 30;
 							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							else if (type == this.Const.World.TerrainType.Ocean)
 							{
 								chance = chance - 20;
 							}
@@ -856,23 +717,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local n = 0;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Snow)
-							{
-								n = ++n;
-							}
-						}
-					}
+					local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Snow);
 
 					if (n >= 4 || y >= _rect.H * this.Const.World.Settings.Snowline - this.Math.rand(0, 5))
 					{
@@ -902,26 +747,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				{
 					local chance = y;
 					chance = chance * 0.2;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = chance + -200;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
-							{
-								chance = chance + 100;
-							}
-						}
-					}
+					chance = chance - 200 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp);
+					chance = chance + 100 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Tundra);
 
 					if (this.Math.rand(1, 100) <= chance)
 					{
@@ -1062,33 +889,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local chance = 12;
-					chance = chance + y * -0.5;
+					local chance = 0;
 
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					if (tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp) == 0)
 					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = 0;
-								break;
-							}
-
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
-							{
-								chance = chance + 50;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance + 5;
-							}
-						}
+						chance = 12;
+						chance = chance + y * -0.5;
+						chance = chance + 50 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Steppe);
+						chance = chance + 5 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 					}
 
 					if (this.Math.rand(1, 100) <= chance)
@@ -1117,33 +925,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local chance = y < _rect.H * 0.5 ? y : _rect.H - y;
-					chance = chance * 0.025;
+					local chance = 0;
 
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
+					if (tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Steppe) == 0)
 					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
-							{
-								chance = 0;
-								break;
-							}
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = chance + 30;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance + 10;
-							}
-						}
+						chance = y < _rect.H * 0.5 ? y : _rect.H - y;
+						chance = chance * 0.025;
+						chance = chance + 30 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp);
+						chance = chance + 10 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 					}
 
 					if (this.Math.rand(1, 100) <= chance)
@@ -1174,26 +963,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				{
 					local chance = !isAutumnLeft ? _rect.W - x : x;
 					chance = chance * 0.025;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
-							{
-								chance = chance + 30;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
-							{
-								chance = chance - 10;
-							}
-						}
-					}
+					chance = chance + 30 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.LeaveForest);
+					chance = chance - 10 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Ocean);
 
 					if (this.Math.rand(1, 100) <= chance)
 					{
@@ -1232,18 +1003,19 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						else
 						{
 							local nextTile = tile.getNextTile(i);
+							local type = nextTile.Type;
 
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							if (type == this.Const.World.TerrainType.Steppe)
 							{
 								chance = -100;
 								break;
 							}
 
-							if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+							if (type == this.Const.World.TerrainType.AutumnForest)
 							{
 								chance = chance + 30;
 							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							else if (type == this.Const.World.TerrainType.Ocean)
 							{
 								chance = chance - 10;
 							}
@@ -1292,18 +1064,19 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						else
 						{
 							local nextTile = tile.getNextTile(i);
+							local type = nextTile.Type;
 
-							if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+							if (type == this.Const.World.TerrainType.Steppe)
 							{
 								chance = -100;
 								break;
 							}
 
-							if (nextTile.Type == this.Const.World.TerrainType.Forest || nextTile.Type == this.Const.World.TerrainType.SnowyForest)
+							if (type == this.Const.World.TerrainType.Forest || type == this.Const.World.TerrainType.SnowyForest)
 							{
 								chance = chance + 30;
 							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+							else if (type == this.Const.World.TerrainType.Ocean)
 							{
 								chance = chance - 20;
 							}
@@ -1336,23 +1109,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					local n = 0;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Snow)
-							{
-								n = ++n;
-							}
-						}
-					}
+					local n = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Snow);
 
 					if (n >= 4 || y >= _rect.H * this.Const.World.Settings.Snowline - this.Math.rand(0, 5))
 					{
@@ -1382,26 +1139,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 				{
 					local chance = y;
 					chance = chance * 0.2;
-
-					for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-					{
-						if (!tile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = tile.getNextTile(i);
-
-							if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-							{
-								chance = chance + -200;
-							}
-							else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
-							{
-								chance = chance + 100;
-							}
-						}
-					}
+					chance = chance - 200 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp);
+					chance = chance + 100 * tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Tundra);
 
 					if (this.Math.rand(1, 100) <= chance)
 					{
@@ -2311,25 +2050,14 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 			s.build();
 		}
 
-		for( local x = _rect.X; x < _rect.X + _rect.W; x = ++x )
+		local tiles = [];
+
+		foreach( s in settlements )
 		{
-			for( local y = _rect.Y; y < _rect.Y + _rect.H; y = ++y )
-			{
-				local tile = this.m.WorldTiles[x][y];
-
-				foreach( s in settlements )
-				{
-					local d = s.getTile().getDistanceTo(tile);
-
-					if (d > 6)
-					{
-						continue;
-					}
-
-					tile.HeatFromSettlements = tile.HeatFromSettlements + (6 - d);
-				}
-			}
+			tiles.push(s.getTile());
 		}
+
+		this.World.updateTilesWithHeat(tiles, 6);
 	}
 
 	function buildRoads( _rect, _properties )
@@ -2886,16 +2614,8 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 
 	function fillWithTile( _x, _y, _type, _template, _baseChance, _vicinityChance, _xChance = 0.0, _yChance = 0.0, _inVicinityOnly = false )
 	{
-		local tile = this.World.getTileSquare(_x, _y);
-		local n = 0;
-
-		for( local i = 0; i < this.Const.Direction.COUNT; i = ++i )
-		{
-			if (tile.hasNextTile(i) && tile.getNextTile(i).Type == _type)
-			{
-				n = ++n;
-			}
-		}
+		local tile = this.m.WorldTiles[_x][_y];
+		local n = tile.getSurroundingTilesOfType(_type);
 
 		if (_inVicinityOnly && n == 0)
 		{

@@ -229,11 +229,11 @@ this.behavior <- {
 			{
 				hpVSarmor = this.Math.minf(1.0, _target.getHitpoints() / armorValue);
 			}
-			else if (armorValue > 0 && _target.getHitpoints() < armorValue)
+			else if (armorValue > 0 && armorValue < _target.getHitpoints())
 			{
 				hpVSarmor = 1.0 - this.Math.minf(1.0, armorValue / _target.getHitpoints());
 			}
-			else if (armorValue > 0 && _target.getHitpoints() == armorValue)
+			else if (armorValue > 0 && armorValue == _target.getHitpoints())
 			{
 				hpVSarmor = 0.5;
 			}
@@ -309,7 +309,7 @@ this.behavior <- {
 			{
 				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
 			}
-			else if (_target.getHitpoints() <= 10 && (_target.getArmor(this.Const.BodyPart.Body) == 0 || _target.getArmor(this.Const.BodyPart.Head)))
+			else if (_target.getHitpoints() <= 10 && (_target.getArmor(this.Const.BodyPart.Body) == 0 || _target.getArmor(this.Const.BodyPart.Head) == 0))
 			{
 				score = score * (_skill != null ? this.getProperties().TargetPriorityFinishOpponentMult : this.Math.maxf(1.0, this.getProperties().TargetPriorityFinishOpponentMult * 0.66));
 			}
@@ -330,7 +330,7 @@ this.behavior <- {
 			score = score * this.getProperties().EngageTargetArmedWithRangedWeaponMult;
 		}
 
-		score = score * _entity.getCurrentProperties().TargetAttractionMult;
+		score = score * _target.getCurrentProperties().TargetAttractionMult;
 
 		if (this.getAgent().getForcedOpponent() != null && this.getAgent().getForcedOpponent().getID() == _target.getID())
 		{

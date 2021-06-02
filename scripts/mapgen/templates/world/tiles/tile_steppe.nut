@@ -100,24 +100,25 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Plains)
+				if (type == this.Const.World.TerrainType.Plains)
 				{
 					plains = ++plains;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Oasis)
+				else if (type == this.Const.World.TerrainType.Oasis)
 				{
 					oasis = ++oasis;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
+				else if (type == this.Const.World.TerrainType.LeaveForest)
 				{
 					forest_leave = ++forest_leave;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+				else if (type == this.Const.World.TerrainType.AutumnForest)
 				{
 					forest_autumn = ++forest_autumn;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion != 99)
+				else if (type == this.Const.World.TerrainType.Hills && nextTile.Subregion != 99)
 				{
 					hills = ++hills;
 				}
@@ -125,7 +126,7 @@ this.tile_steppe <- this.inherit("scripts/mapgen/map_template", {
 				{
 					brown_hills = ++brown_hills;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Shore)
+				else if (type == this.Const.World.TerrainType.Shore)
 				{
 					shore = ++shore;
 				}

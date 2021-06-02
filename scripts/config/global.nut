@@ -190,6 +190,11 @@ gt.Const.Difficulty <- {
 		20,
 		10
 	],
+	XPMult = [
+		1.1,
+		1.0,
+		1.0
+	],
 	MaxResources = [
 		{
 			Ammo = 500,

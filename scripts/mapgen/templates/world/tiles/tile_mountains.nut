@@ -122,24 +122,25 @@ this.tile_mountains <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = _tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
+				if (type == this.Const.World.TerrainType.Tundra || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
 				{
 					tundra = ++tundra;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Snow || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Snow)
+				else if (type == this.Const.World.TerrainType.Snow || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Snow)
 				{
 					snow = ++snow;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Steppe)
+				else if (type == this.Const.World.TerrainType.Steppe || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Steppe)
 				{
 					steppe = ++steppe;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Desert || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Desert)
+				else if (type == this.Const.World.TerrainType.Desert || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Desert)
 				{
 					desert = ++desert;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Mountains)
+				else if (type == this.Const.World.TerrainType.Mountains)
 				{
 					mountains.push(nextTile);
 				}

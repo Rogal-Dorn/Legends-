@@ -53,29 +53,30 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Hills)
+				if (type == this.Const.World.TerrainType.Hills)
 				{
 					hills = ++hills;
 				}
 
-				if (nextTile.Type == this.Const.World.TerrainType.Steppe || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Steppe)
+				if (type == this.Const.World.TerrainType.Steppe || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Steppe)
 				{
 					steppe = ++steppe;
 				}
-				else if ((nextTile.Type == this.Const.World.TerrainType.Desert || nextTile.Type == this.Const.World.TerrainType.Oasis) || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Desert)
+				else if ((type == this.Const.World.TerrainType.Desert || type == this.Const.World.TerrainType.Oasis) || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Desert)
 				{
 					desert = ++desert;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Tundra || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
+				else if (type == this.Const.World.TerrainType.Tundra || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Tundra)
 				{
 					tundra = ++tundra;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Snow || nextTile.Type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Snow)
+				else if (type == this.Const.World.TerrainType.Snow || type == this.Const.World.TerrainType.Hills && nextTile.Subregion == this.Const.World.TerrainType.Snow)
 				{
 					snow = ++snow;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Mountains)
+				else if (type == this.Const.World.TerrainType.Mountains)
 				{
 					mountains.push(nextTile);
 				}

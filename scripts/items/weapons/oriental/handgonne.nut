@@ -45,7 +45,7 @@ this.handgonne <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RangeMaxBonus = 1;
-		this.m.StaminaModifier = -12;
+		this.m.StaminaModifier = -14;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.RegularDamage = 35;
