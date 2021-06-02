@@ -255,6 +255,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
 		local XPbonus = this.Math.floor(this.m.Camp.getCampTimeHours() * (this.getUpgraded() ? 10 : 5) * (inTraining == null ? 1 : (1 + inTraining.getBonusXP())));
+		local originalXP = bro.m.XP;
 		bro.addXP(XPbonus);
 		bro.updateLevel();
 		local mod = this.getModifiers();
@@ -328,7 +329,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 		this.m.Results.push({
 			Icon = "ui/icons/xp_received.png",
-			Text = adjectives[this.Math.rand(0, adjectives.len() - 1)] + " and gains [color=" + this.Const.UI.Color.PositiveEventValue + "]" + XPbonus + "[/color] XP."
+			Text = adjectives[this.Math.rand(0, adjectives.len() - 1)] + " and gains [color=" + this.Const.UI.Color.PositiveEventValue + "]" + (bro.m.XP - originalXP) + "[/color] XP."
 		});
 		return true;
 	}

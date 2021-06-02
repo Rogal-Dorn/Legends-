@@ -400,6 +400,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
+		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
 		return true;
 	}
 
@@ -415,6 +416,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Upgrades[_slot] = null;
 		item.onRemoved(app);
 		this.updateAppearance();
+		if (this.m.Container != null) this.getContainer().getActor().getSkills().update()
 		return item;
 	}
 

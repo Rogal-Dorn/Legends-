@@ -52,20 +52,25 @@ this.round_swing <- this.inherit("scripts/skills/skill", {
 			hitchanceBonus = hitchanceBonus + 5;
 		}
 
-		ret.extend([
-			{
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.bloody_harvest")) hitchanceBonus += 10;
+
+		if (hitchanceBonus != 0)
+		{
+			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
 				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + hitchanceBonus + "%[/color] chance to hit"
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Can hit up to 6 targets"
-			}
-		]);
+			});
+		}
+
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Can hit up to 6 targets"
+		});
+
 		return ret;
 	}
 

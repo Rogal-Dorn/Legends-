@@ -194,7 +194,7 @@ gt.Const.FactionArchetypes <- [
 				this.Const.FactionTrait.Collector,
 				this.Const.FactionTrait.Warmonger
 			],
-			Description = "The house of %noblehousename% always has their eyes on the horizon. Always chasing riches from foreign lands, and willing to take them by force.  Missions are launched from %factionfortressname% out to claim a world they believe to be rightfully theirs",
+			Description = "The house of %noblehousename% always has their eyes on the horizon. Always chasing riches from foreign lands, and willing to take them by force.  Missions are launched from %factionfortressname% out to claim a world they believe to be rightfully theirs.",
 			Mottos = [
 				"Seize it",
 				"The thrill of the hunt",
@@ -236,7 +236,7 @@ gt.Const.FactionArchetypes <- [
 				this.Const.FactionTrait.Schemer,
 				this.Const.FactionTrait.Sheriff
 			],
-			Description = "House %noblehousename% works in the dark to protect its lands. the agents of %noblehousename%  have eyes in every shady corner and ears in every wall, inside and outside their borders. Peace is maintained through their lands, because %noblehousename% is always watching",
+			Description = "House %noblehousename% works in the dark to protect its lands. the agents of %noblehousename%  have eyes in every shady corner and ears in every wall, inside and outside their borders. Peace is maintained through their lands, because %noblehousename% is always watching.",
 			Mottos = [
 				"Eyes on all",
 				"Security through surveilence",
@@ -257,7 +257,7 @@ gt.Const.FactionArchetypes <- [
 				this.Const.FactionTrait.Collector,
 				this.Const.FactionTrait.Tyrant
 			],
-			Description = "The house of %noblehousename% is well known for its jealously guarded horde of treasures. The horded treasures of %noblehousename% are whispered through the lands, and still they crave more",
+			Description = "The house of %noblehousename% is well known for its jealously guarded horde of treasures. The horded treasures of %noblehousename% are whispered through the lands, and still they crave more.",
 			Mottos = [
 				"One of everything",
 				"To the zoo",

@@ -278,7 +278,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			if (perk.getID() == v.ID)
 			{
 				name = v.Script;
-				this.Tactical.EventLog.log("The framed beggar learned " + perk.getName() + "from his enemy!");
+				this.Tactical.EventLog.log("The framed beggar learned " + perk.getName() + " from his enemy!");
 				break;
 			}
 		}
