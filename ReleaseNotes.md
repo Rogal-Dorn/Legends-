@@ -5116,6 +5116,7 @@ Muladi background can't have hate-for/fear-of beasts traits anymore
 **Changes**
 Adds alchemist background to alchemist retinue possible bg list
 Adds alchemist background to count towards apothecary levels like vala + herbalist
+Temporarily disables the stables in the formation tab, you can still put people in there but it won't do anything
 
 **Fixes**
 Economic Difficulty spelling fix
