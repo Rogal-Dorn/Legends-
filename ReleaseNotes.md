@@ -5141,3 +5141,4 @@ Fixes a lot of minor typos
 Thrust master description notes Prong is affected
 Fixes prepare to bleed skill
 Fixes EXP gain from training building in camp
+Fixes an issue people were having with cheer on lute
