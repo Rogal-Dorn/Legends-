@@ -5,7 +5,7 @@ this.preserved_mead_item <- this.inherit("scripts/items/supplies/legend_usable_f
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.preserved_mead";
 		this.m.Name = "Preserved Mead";
-		this.m.Description = "Provisions. This ashen liquid has small sparkles of silver swirrling about. The taste is off, but it hardly ever spoils. Can be drunk in battle to grant +9% resolve, melee and ranged skill. At the expects of -36% initiative and -18% melee defense and ranged defense, the effect lasts for three turns.";
+		this.m.Description = "Provisions. This ashen liquid has small sparkles of silver swirrling about. The taste is off, but it hardly ever spoils. Can be drunk in battle to grant +9% resolve, melee and ranged skill in exchange for -36% initiative, and -18% melee defense and ranged defense. The effect lasts for three turns.";
 		this.m.Icon = "supplies/inventory_provisions_18.png";
 		this.m.Value = 120;
 		this.m.Amount = 20.0;
