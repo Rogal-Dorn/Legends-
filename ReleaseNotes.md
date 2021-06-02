@@ -5113,6 +5113,14 @@ Muladi background can't have hate-for/fear-of beasts traits anymore
 
 ## 15.0.1.7
 
+Updates to newest version of the base game v1.4.0.49
+**Notable Base Game Changes**
++2 fatigue on handgonnes
+Typos in contracts
+Minstrel retinue slightly improved shows dummy rumors less often
+Dodge moved to apply after other effects have updated, e.g. after heightened_reflexes
+Surgeon can't res kraken killed people
+
 **Changes**
 Adds alchemist background to alchemist retinue possible bg list
 Adds alchemist background to count towards apothecary levels like vala + herbalist
