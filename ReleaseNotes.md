@@ -5125,3 +5125,5 @@ Fixes rarely getting unlayered armor from a camp drop
 Changes peaceful perk to indicate current way the perk works, brother can't take more than 50% of the fights of total company fights
 Fixes noble background getting 4 perks & sometimes getting perks that conflict becuase of it
 Fixes throwing smoke bombs
+Fixes magic missile mastery ap costs not reducing properly
+Signifies 'Base' ranged defense in wind reader description
