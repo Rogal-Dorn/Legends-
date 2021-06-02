@@ -428,7 +428,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "I",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artermisia nods at your choice, though you detect some disapointment. %SPEECH_ON%Show Matches are our most basic format, \n\n 1. Fight as many battles in a row as you can.  \n\n  2. Each round you choose what kind of enemy you\'ll fight against \n\n 3. The prize begins at 100 gold, each battle the difficulty will increase and the prize will double. \n\n 4. No looting %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia nods at your choice, though you detect some disapointment. %SPEECH_ON%Show Matches are our most basic format, \n\n 1. Fight as many battles in a row as you can.  \n\n  2. Each round you choose what kind of enemy you\'ll fight against \n\n 3. The prize begins at 100 gold, each battle the difficulty will increase and the prize will double. \n\n 4. No looting %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
