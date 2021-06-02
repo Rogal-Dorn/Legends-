@@ -58,9 +58,11 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 1;
 		talents[this.Const.Attributes.RangedDefense] = 3;
+		bros[0].setVeteranPerks(2);
 		bros[0].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[0].getItems();
 		this.addRandomEquipment(items);
+
 		bros[1].setStartValuesEx([
 			"slave_barbarian_background"
 		]);
@@ -129,9 +131,11 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 		}
 
+		bros[1].setVeteranPerks(2);
 		bros[1].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[1].getItems();
 		this.addRandomEquipment(items);
+
 		bros[2].setStartValuesEx([
 			"slave_southern_background"
 		]);
@@ -148,6 +152,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Initiative] = 2;
 		talents[this.Const.Attributes.Bravery] = 2;
 		talents[this.Const.Attributes.RangedSkill] = 2;
+		bros[2].setVeteranPerks(2);
 		bros[2].worsenMood(0.5, "Misses life in the army");
 		bros[2].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[2].getItems();
@@ -159,6 +164,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 				"oriental/gunner_hat"
 			]
 		]));
+
 		bros[3].setStartValuesEx([
 			"slave_southern_background"
 		]);
@@ -170,11 +176,13 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.setRetireText(bros[3]);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
+		bros[3].setVeteranPerks(2);
 		bros[3].worsenMood(1.5, "Feels he deserves better in life");
 		bros[3].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		this.addRandomEquipment(items);
+
 		bros[4].setStartValuesEx([
 			"slave_southern_background"
 		]);
@@ -228,140 +236,141 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 		}
 
+		bros[4].setVeteranPerks(2);
 		bros[4].improveMood(2.5, "Escaped a life of slavery");
 		bros[4].getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
 		local items = bros[4].getItems();
 		this.addRandomEquipment(items, true);
+
 		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
-		this.World.Assets.m.Money = this.Math.max(this.World.Assets.m.Money - 600, 0);
+		this.World.Assets.m.Money = this.Math.max(this.World.Assets.m.Money - 600, 150);
 	}
 
 	function addRandomEquipment( items, shieldSpecific = false )
 	{
-		items.equip(this.Const.World.Common.pickArmor([
-			[
-				40,
-				""
-			],
-			[
-				10,
-				"oriental/nomad_robe"
-			],
-			[
-				10,
-				"oriental/thick_nomad_robe"
-			],
-			[
-				10,
-				"oriental/padded_vest"
-			],
-			[
-				5,
-				"oriental/stitched_nomad_armor"
-			],
-			[
-				5,
-				"oriental/plated_nomad_mail"
-			],
-			[
-				5,
-				"oriental/linothorax"
-			],
-			[
-				5,
-				"legend_rabble_fur"
-			],
-			[
-				5,
-				"legend_rabble_tunic"
-			]
-		]));
-		local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
+		local getsArmor = this.Math.rand(1, 100) <= 50 ? true : false;
+		local getsHelmet = this.Math.rand(1, 100) <= (50 + (getsArmor ? -17 : 17)) ? true : false;
+		local getsWeapon = this.Math.rand(1, 100) <= (50 + (getsArmor ? -17 : 17) + (getsHelmet ? -17 : 17)) ? true : false;
 
-		if (armor != null)
-		{
-			armor.setCondition(this.Math.rand(armor.getConditionMax() * 0.4, armor.getConditionMax()) * 1.0);
+		if (getsArmor) {
+			items.equip(this.Const.World.Common.pickArmor([
+				[
+					10,
+					"oriental/nomad_robe"
+				],
+				[
+					10,
+					"oriental/thick_nomad_robe"
+				],
+				[
+					10,
+					"oriental/padded_vest"
+				],
+				[
+					5,
+					"oriental/stitched_nomad_armor"
+				],
+				[
+					5,
+					"oriental/plated_nomad_mail"
+				],
+				[
+					5,
+					"oriental/linothorax"
+				],
+				[
+					5,
+					"legend_rabble_fur"
+				],
+				[
+					5,
+					"legend_rabble_tunic"
+				]
+			]));
+			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body);
+
+			if (armor != null)
+			{
+				armor.setCondition(this.Math.rand(armor.getConditionMax() * 0.4, armor.getConditionMax()) * 1.0);
+			}
 		}
 
-		items.equip(this.Const.World.Common.pickHelmet([
-			[
-				40,
-				""
-			],
-			[
-				5,
-				"oriental/nomad_reinforced_helmet"
-			],
-			[
-				5,
-				"oriental/wrapped_southern_helmet"
-			],
-			[
-				5,
-				"oriental/spiked_skull_cap_with_mail"
-			],
-			[
-				20,
-				"oriental/nomad_head_wrap"
-			],
-			[
-				15,
-				"oriental/nomad_leather_cap"
-			],
-			[
-				15,
-				"oriental/nomad_light_helmet"
-			]
-		]));
-		local helmet = items.getItemAtSlot(this.Const.ItemSlot.Head);
+		if (getsHelmet) {
+			items.equip(this.Const.World.Common.pickHelmet([
+				[
+					5,
+					"oriental/nomad_reinforced_helmet"
+				],
+				[
+					5,
+					"oriental/wrapped_southern_helmet"
+				],
+				[
+					5,
+					"oriental/spiked_skull_cap_with_mail"
+				],
+				[
+					20,
+					"oriental/nomad_head_wrap"
+				],
+				[
+					15,
+					"oriental/nomad_leather_cap"
+				],
+				[
+					15,
+					"oriental/nomad_light_helmet"
+				]
+			]));
+			local helmet = items.getItemAtSlot(this.Const.ItemSlot.Head);
 
-		if (helmet != null)
-		{
-			helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
+			if (helmet != null)
+			{
+				helmet.setCondition(this.Math.rand(helmet.getConditionMax() * 0.4, helmet.getConditionMax()) * 1.0);
+			}
 		}
 
-		local weaponRoll = this.Math.rand(1, 100);
-		local weapons = [];
+		if (getsWeapon) {
+			local weaponRoll = this.Math.rand(1, 100);
+			local weapons = [];
 
-		if (weaponRoll <= 5)
-		{
-			weapons.extend([
-				"shields/oriental/metal_round_shield",
-				"weapons/scimitar",
-				"weapons/boar_spear",
-				"weapons/pitchfork",
-				"weapons/oriental/light_southern_mace",
-				"weapons/oriental/firelance"
-			]);
-		}
-		else if (weaponRoll >= 6 && weaponRoll <= 50)
-		{
-			weapons.extend([
-				"shields/oriental/southern_light_shield",
-				"weapons/oriental/saif",
-				"weapons/militia_spear",
-				"weapons/oriental/nomad_mace",
-				"weapons/legend_chain"
-			]);
-		}
-		else if (weaponRoll >= 51 && weaponRoll <= 90)
-		{
-			weapons.extend([
-				"weapons/legend_shovel",
-				"weapons/legend_shiv",
-				"weapons/legend_hoe",
-				"weapons/legend_saw",
-				"weapons/legend_hammer",
-				"weapons/legend_wooden_pitchfork",
-				"weapons/legend_wooden_spear",
-				"weapons/legend_chain"
-			]);
-		}
+			if (weaponRoll <= 10)
+			{
+				weapons.extend([
+					"shields/oriental/metal_round_shield",
+					"weapons/scimitar",
+					"weapons/boar_spear",
+					"weapons/pitchfork",
+					"weapons/oriental/light_southern_mace",
+					"weapons/oriental/firelance"
+				]);
+			}
+			else if (weaponRoll >= 11 && weaponRoll <= 60)
+			{
+				weapons.extend([
+					"shields/oriental/southern_light_shield",
+					"weapons/oriental/saif",
+					"weapons/militia_spear",
+					"weapons/oriental/nomad_mace",
+					"weapons/legend_chain"
+				]);
+			}
+			else
+			{
+				weapons.extend([
+					"weapons/legend_shovel",
+					"weapons/legend_shiv",
+					"weapons/legend_hoe",
+					"weapons/legend_saw",
+					"weapons/legend_hammer",
+					"weapons/legend_wooden_pitchfork",
+					"weapons/legend_wooden_spear",
+					"weapons/legend_chain"
+				]);
+			}
 
-		if (weapons.len() != 0)
-		{
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 			local weapon = this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]);
@@ -488,8 +497,8 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onInit()
 	{
-		this.World.Assets.m.RelationDecayGoodMult = 1.15;
-		this.World.Assets.m.RelationDecayBadMult = 0.85;
+		this.World.Assets.m.RelationDecayGoodMult += 0.15;
+		this.World.Assets.m.RelationDecayBadMult -= 0.15;
 		local sergeant = this.World.Retinue.getFollower("follower.drill_sergeant");
 		sergeant.m.Requirements = [
 			{
