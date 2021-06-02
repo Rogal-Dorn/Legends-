@@ -5129,3 +5129,7 @@ Fixes throwing smoke bombs
 Fixes magic missile mastery ap costs not reducing properly
 Signifies 'Base' ranged defense in wind reader description
 Should fix Grand Arena rarely spawning impassable terrain (or at least make it MUCH more rare)
+Fixes a lot of minor typos
+Thrust master description notes Prong is affected
+Fixes prepare to bleed skill
+Fixes EXP gain from training building in camp
