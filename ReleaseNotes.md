@@ -5128,3 +5128,4 @@ Fixes noble background getting 4 perks & sometimes getting perks that conflict b
 Fixes throwing smoke bombs
 Fixes magic missile mastery ap costs not reducing properly
 Signifies 'Base' ranged defense in wind reader description
+Should fix Grand Arena rarely spawning impassable terrain (or at least make it MUCH more rare)

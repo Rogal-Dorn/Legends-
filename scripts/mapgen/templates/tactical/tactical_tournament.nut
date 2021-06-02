@@ -85,7 +85,7 @@ this.tactical_tournament <- this.inherit("scripts/mapgen/tactical_template", {
 		this.MapGen.get("tactical.patch.forest"),
 		this.MapGen.get("tactical.patch.forest_fern_sea"),
 		this.MapGen.get("tactical.patch.forest_leaves"),
-		this.MapGen.get("tactical.patch.forest_leaves_thick"),
+		// this.MapGen.get("tactical.patch.forest_leaves_thick"), //this one patch in particular can often cause the map to be completely impassable
 		this.MapGen.get("tactical.patch.forest_mushrooms"),
 		this.MapGen.get("tactical.patch.forest_snow"),
 		this.MapGen.get("tactical.patch.hill"),
