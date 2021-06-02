@@ -297,7 +297,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			}
 
 			local candidates = [];
-			local r = this.World.Assets.m.IsNonFlavorRumorsOnly ? this.Math.rand(2, 6) : this.Math.rand(1, 6);
+			local r = this.World.Assets.m.IsNonFlavorRumorsOnly ? this.Math.rand(3, 6) : this.Math.rand(1, 6);
 
 			if (r <= 2)
 			{

@@ -124,7 +124,7 @@ this.sword_eater_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (!this.Const.DLC.Desert)
+		if (!this.Const.DLC.Desert || !this.Const.DLC.Unhold)
 		{
 			return;
 		}

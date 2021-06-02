@@ -53,24 +53,7 @@ this.tile_swamp <- this.inherit("scripts/mapgen/map_template", {
 	function onSecondPass( _rect )
 	{
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
-		local swamp = 0;
-
-		for( local i = 0; i != 6; i = ++i )
-		{
-			if (!tile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local nextTile = tile.getNextTile(i);
-
-				if (nextTile.Type == this.Const.World.TerrainType.Swamp)
-				{
-					swamp = ++swamp;
-				}
-			}
-		}
-
+		local swamp = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Swamp);
 		tile.spawnDetail(this.m.Details[this.Math.rand(0, this.m.Details.len() - 1)], this.Const.World.ZLevel.Object, this.Const.World.DetailType.Swamp | this.Const.World.DetailType.NotCompatibleWithRoad);
 
 		if (swamp >= 1)

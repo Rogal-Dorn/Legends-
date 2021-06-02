@@ -44,12 +44,13 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Urban)
+				if (type == this.Const.World.TerrainType.Urban)
 				{
 					urban = ++urban;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Snow)
+				else if (type == this.Const.World.TerrainType.Snow)
 				{
 					snow = ++snow;
 				}

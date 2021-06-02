@@ -2169,7 +2169,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "You\'ll face fewer and less challenging opponents, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game.\n\nEnemy scaling is same as normal, but 25% easier per bro."
+					text = "You\'ll face fewer and less challenging opponents, your men will gain bonus experience, and retreating from battle is easier.\n\nYour men get a small bonus to hit chance, and the enemy gets a small penalty, to ease you into the game.\n\nRecommended for players new to the game.\n\nEnemy scaling is same as normal, but 25% easier per bro."
 				}
 			];
 

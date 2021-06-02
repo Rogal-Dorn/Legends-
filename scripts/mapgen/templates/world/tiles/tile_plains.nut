@@ -99,52 +99,53 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Forest)
+				if (type == this.Const.World.TerrainType.Forest)
 				{
 					forest = ++forest;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
+				else if (type == this.Const.World.TerrainType.LeaveForest)
 				{
 					forest_leave = ++forest_leave;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Mountains)
+				else if (type == this.Const.World.TerrainType.Mountains)
 				{
 					mountain = ++mountain;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Hills)
+				else if (type == this.Const.World.TerrainType.Hills)
 				{
 					hills = ++hills;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Plains)
+				else if (type == this.Const.World.TerrainType.Plains)
 				{
 					plains = ++plains;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+				else if (type == this.Const.World.TerrainType.Swamp)
 				{
 					swamp = ++swamp;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Urban)
+				else if (type == this.Const.World.TerrainType.Urban)
 				{
 					urban = ++urban;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Tundra)
+				else if (type == this.Const.World.TerrainType.Tundra)
 				{
 					highlands = ++highlands;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Steppe)
+				else if (type == this.Const.World.TerrainType.Steppe)
 				{
 					steppe = ++steppe;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Desert)
+				else if (type == this.Const.World.TerrainType.Desert)
 				{
 					desert = ++desert;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Oasis)
+				else if (type == this.Const.World.TerrainType.Oasis)
 				{
 					oasis = ++oasis;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+				else if (type == this.Const.World.TerrainType.AutumnForest)
 				{
 					forest_autumn = ++forest_autumn;
 				}

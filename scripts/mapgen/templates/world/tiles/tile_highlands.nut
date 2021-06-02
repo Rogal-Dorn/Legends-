@@ -86,48 +86,49 @@ this.tile_highlands <- this.inherit("scripts/mapgen/map_template", {
 			else
 			{
 				local nextTile = tile.getNextTile(i);
+				local type = nextTile.Type;
 
-				if (nextTile.Type == this.Const.World.TerrainType.Mountains)
+				if (type == this.Const.World.TerrainType.Mountains)
 				{
 					mountain = ++mountain;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Hills)
+				else if (type == this.Const.World.TerrainType.Hills)
 				{
 					hills = ++hills;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Forest)
+				else if (type == this.Const.World.TerrainType.Forest)
 				{
 					forest = ++forest;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.LeaveForest)
+				else if (type == this.Const.World.TerrainType.LeaveForest)
 				{
 					forest_leave = ++forest_leave;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Swamp)
+				else if (type == this.Const.World.TerrainType.Swamp)
 				{
 					swamp = ++swamp;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Plains)
+				else if (type == this.Const.World.TerrainType.Plains)
 				{
 					plains = ++plains;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Hills)
+				else if (type == this.Const.World.TerrainType.Hills)
 				{
 					hills = ++hills;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Snow)
+				else if (type == this.Const.World.TerrainType.Snow)
 				{
 					snow = ++snow;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Ocean)
+				else if (type == this.Const.World.TerrainType.Ocean)
 				{
 					ocean = ++ocean;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.Shore)
+				else if (type == this.Const.World.TerrainType.Shore)
 				{
 					shore = ++shore;
 				}
-				else if (nextTile.Type == this.Const.World.TerrainType.AutumnForest)
+				else if (type == this.Const.World.TerrainType.AutumnForest)
 				{
 					forest_autumn = ++forest_autumn;
 				}

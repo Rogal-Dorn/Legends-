@@ -48,24 +48,25 @@ this.tile_ocean <- this.inherit("scripts/mapgen/map_template", {
 				{
 					dir = dir | this.Const.DirectionBit[i];
 					surrounding_land = ++surrounding_land;
+					local type = land.TacticalType;
 
-					if (land.TacticalType == this.Const.World.TerrainTacticalType.Plains || land.TacticalType == this.Const.World.TerrainTacticalType.Hills)
+					if (type == this.Const.World.TerrainTacticalType.Plains || type == this.Const.World.TerrainTacticalType.Hills)
 					{
 						plains = ++plains;
 					}
-					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Steppe || land.TacticalType == this.Const.World.TerrainTacticalType.SteppeHills)
+					else if (type == this.Const.World.TerrainTacticalType.Steppe || type == this.Const.World.TerrainTacticalType.SteppeHills)
 					{
 						steppe = ++steppe;
 					}
-					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Desert || land.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
+					else if (type == this.Const.World.TerrainTacticalType.Desert || type == this.Const.World.TerrainTacticalType.DesertHills)
 					{
 						desert = ++desert;
 					}
-					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Highlands || land.TacticalType == this.Const.World.TerrainTacticalType.HighlandsHills)
+					else if (type == this.Const.World.TerrainTacticalType.Highlands || type == this.Const.World.TerrainTacticalType.HighlandsHills)
 					{
 						tundra = ++tundra;
 					}
-					else if (land.TacticalType == this.Const.World.TerrainTacticalType.Snow || land.TacticalType == this.Const.World.TerrainTacticalType.SnowyHills)
+					else if (type == this.Const.World.TerrainTacticalType.Snow || type == this.Const.World.TerrainTacticalType.SnowyHills)
 					{
 						snow = ++snow;
 					}

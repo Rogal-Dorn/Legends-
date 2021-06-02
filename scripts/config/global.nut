@@ -220,6 +220,12 @@ gt.Const.Difficulty <- {
 		10,
 		0
 	],
+	XPMult = [
+		1.1,
+		1.0,
+		1.0,
+		1.0
+	],
 	MaxResources = [
 		{
 			Food = 300,

@@ -32,6 +32,54 @@ this.skeleton_lich <- this.inherit("scripts/entity/tactical/skeleton", {
 		this.getSprite("blur_2").Visible = _s != 0;
 	}
 
+	function loadResources()
+	{
+		this.actor.loadResources();
+		local a = [];
+		a.extend([
+			"sounds/enemies/dlc6/skull_move_01.wav",
+			"sounds/enemies/dlc6/skull_move_02.wav",
+			"sounds/enemies/dlc6/skull_move_03.wav",
+			"sounds/enemies/dlc6/skull_move_04.wav"
+		]);
+		a.extend([
+			"sounds/enemies/dlc6/skull_bang_01.wav",
+			"sounds/enemies/dlc6/skull_bang_02.wav",
+			"sounds/enemies/dlc6/skull_bang_03.wav",
+			"sounds/enemies/dlc6/skull_bang_04.wav"
+		]);
+		a.extend([
+			"sounds/enemies/dlc6/skull_death_01.wav",
+			"sounds/enemies/dlc6/skull_death_02.wav",
+			"sounds/enemies/dlc6/skull_death_03.wav",
+			"sounds/enemies/dlc6/skull_death_04.wav"
+		]);
+		a.extend([
+			"sounds/enemies/geist_idle_13.wav",
+			"sounds/enemies/geist_idle_14.wav",
+			"sounds/enemies/geist_idle_15.wav",
+			"sounds/enemies/geist_idle_16.wav",
+			"sounds/enemies/geist_idle_17.wav"
+		]);
+		a.extend([
+			"sounds/enemies/ghost_death_01.wav",
+			"sounds/enemies/ghost_death_02.wav"
+		]);
+		a.extend([
+			"sounds/enemies/ghastly_touch_01.wav"
+		]);
+		a.extend([
+			"sounds/enemies/dlc6/wither_01.wav",
+			"sounds/enemies/dlc6/wither_02.wav",
+			"sounds/enemies/dlc6/wither_03.wav"
+		]);
+
+		for( local i = 0; i != a.len(); i = ++i )
+		{
+			this.Tactical.addResource(a[i]);
+		}
+	}
+
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
 		local entities = this.Tactical.Entities.getInstancesOfFaction(this.getFaction());
