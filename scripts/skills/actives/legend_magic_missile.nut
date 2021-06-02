@@ -95,26 +95,13 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 		
 		if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_focus"))
 		{
-			if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_mastery"))
-			{
-				this.m.ActionPointCost = 4;
-				this.m.FatigueCost = 14;
-			}
-			else
-			{
-				this.m.ActionPointCost = 5;
-				this.m.FatigueCost = 20;
-			}
+			this.m.ActionPointCost -= 1;	
 		}
-		else
+		if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_mastery"))
 		{
-			if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_mastery"))
-			{
-				this.m.ActionPointCost = 5;
-				this.m.FatigueCost = 14;
-			}
-		}		
-		
+			this.m.ActionPointCost -= 1;
+			this.m.FatigueCost -= 6;
+		}
 	}
 
 });
