@@ -230,7 +230,15 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		hair.Color = beard.Color;
 		if (this.Math.rand(1, 100) <= 60)
 		{
-			hair.setBrush("bust_vampire_lord_hair_01")
+			local idx = this.Math.rand(0, this.Const.Hair.Vampire.len());
+			if (idx = this.Const.Hair.Vampire.len())
+			{
+				hair.setBrush("bust_vampire_lord_hair_01")
+			}
+			else
+			{
+				hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.Vampire[idx]);
+			}
 		}
 		this.setSpriteOffset("hair", this.createVec(0, -3));
 		this.addSprite("helmet");
@@ -254,7 +262,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			// }
 			this.getSprite("body").setBrush("bust_vampire_lady_body_02");
 			this.getSprite("head").setBrush("bust_vampire_lady_head_02");
-			hair.Alpha = 0;
+			// hair.Alpha = 0;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
 		}
 
