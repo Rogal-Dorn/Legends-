@@ -1,6 +1,7 @@
 this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		WasInjured = false
+		WasInjured = false,
+		IsLady
 	},
 	function create()
 	{
@@ -8,6 +9,10 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.MoraleState = this.Const.MoraleState.Ignore;
 		this.m.XP = this.Const.Tactical.Actor.Vampire.XP;
+		if(this.Math.rand(1, 100) <= 25)
+		 {
+			 this.m.IsLady = true;
+		 }
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
 			"sounds/enemies/vampire_hurt_01.wav",
@@ -257,6 +262,15 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		body_dirt.Visible = this.Math.rand(1, 100) <= 33;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
+
+		if (this.m.IsLady) //hides the beard if it's a female
+		{
+			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
+			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			beard.Alpha = 0;
+			beard_top.Alpha = 0;
+		}
+
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/racial/vampire_racial"));
 		this.m.Skills.add(this.new("scripts/skills/actives/darkflight"));
