@@ -5147,3 +5147,4 @@ Fixes an issue people were having with cheer on lute
 
 **Fixes**
 Fixes named armors sometimes not being found 
+Healer building properly shows %s when healing injuries
