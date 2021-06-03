@@ -930,10 +930,7 @@ gt.Const.World.Common.convNameToList <- function ( _named )
 				if (item.find(search) != null)
 				{
 					retArr.push([1, item.slice(item.find(search) + search.len())]);
-				}
-				else
-				{
-					retArr.push([1, item])
+					break;
 				}
 			}
 			break; //can skip 1-2 list[0].finds with this
