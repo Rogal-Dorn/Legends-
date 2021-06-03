@@ -5149,3 +5149,5 @@ Fixes an issue people were having with cheer on lute
 Fixes named armors sometimes not being found 
 Healer building properly shows %s when healing injuries
 Female vampires have von's intended body/head pairing + removes their beard/hair
+Fixes prepare graze skill
+Updates piercing shot tooltip to mention doesn't work with throwing weapons
