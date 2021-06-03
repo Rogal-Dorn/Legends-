@@ -5151,7 +5151,6 @@ Changes the injury healing update text when camping (This might be too long or l
 
 **Fixes**
 Fixes named armors sometimes not being found 
-Healer building properly shows %s when healing injuries
 Female vampires have von's intended body/head pairing + removes their beard/hair
 Fixes prepare graze skill
 Updates piercing shot tooltip to mention doesn't work with throwing weapons
