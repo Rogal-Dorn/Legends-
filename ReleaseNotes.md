@@ -5142,3 +5142,8 @@ Thrust master description notes Prong is affected
 Fixes prepare to bleed skill
 Fixes EXP gain from training building in camp
 Fixes an issue people were having with cheer on lute
+
+## 15.0.1.8
+
+**Fixes**
+Fixes named armors sometimes not being found 
