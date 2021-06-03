@@ -314,14 +314,17 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getUpdateText()
 	{
-		if (this.getRequiredTime() <= 0 && this.m.InjuriesTreated > 0)
-		{
-			return "Injuries Treated ... 100%";
-		}
+		local injTotal = this.m.Queue.len();
+		local healedTotal = this.m.InjuriesHealed.len();
 
-		if (this.getRequiredTime() <= 0)
+		if (injTotal <= 0)
 		{
 			return "";
+		}
+
+		if (injTotal == healedTotal && injTotal > 0)
+		{
+			return "Injuries Treated ... " + healedTotal + " of " + injTotal;
 		}
 
 		if (this.World.Assets.getMedicine() <= 0)
@@ -329,18 +332,19 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return "No injuries being treated (Out of medicine!)"
 		}
 
-		if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
-		{
-			return "Injuries Treated ... 100%";
-		}
+		// if (this.m.Camp.getElapsedHours() > this.getRequiredTime())
+		// {
+		// 	return "Injuries Treated ... 100%";
+		// }
 
-		local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
-		if (percent >= 100)
-		{
-			return "Injuries Treated ... 100%";
-		}
-
-		local text =  "Injuries Treated ... " + percent + "%";
+		// local percent = (this.m.Camp.getElapsedHours() / this.getRequiredTime()) * 100.0;
+		// if (percent >= 100)
+		// {
+		// 	return "Injuries Treated ... 100%";
+		// }
+		local injPercent = this.m.Queue[this.m.InjuriesHealed.len()].Injury.getTreatedPercentage() * 100;
+		local injName = this.m.Queue[this.m.InjuriesHealed.len()].Injury.getName();
+		local text =  "Injuries Treated ... " + healedTotal + " of " + injTotal + "\n" +  injPercent + "% of " + injName + " healed";
 
 		return text;
 	}
