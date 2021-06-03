@@ -2,7 +2,8 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	m = {
 		Results = [],
 		NumBros = 0,
-		UnTrained = 0
+		UnTrained = 0,
+		BaseCraft = 1.0
 	},
 	function create()
 	{
