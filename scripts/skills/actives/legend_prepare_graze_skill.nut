@@ -67,7 +67,7 @@ this.legend_prepare_graze_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local poison = _user.getSkills().getSkillByID("effects.legend_graze_prepared");
+		local poison = this.getContainer().getSkillByID("effects.legend_graze_prepared");
 
 		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && poison == null;
 	}
