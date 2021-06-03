@@ -2267,7 +2267,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTeacher = "The technqiues you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body or skeleton from the battlefied, if you are already collecting them.",
 	LegendScry = "Use your extrodinary senses to notice things no one else can. Reveals everything within 12 tiles",
-	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line. \n[color=#0b0084]From the Crossbow perk group[/color]",
+	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line. Does not work with throwing weapons. \n[color=#0b0084]From the Crossbow perk group[/color]",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile",
 	LegendTeleport = "Step through the world, disapearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Begin each battle with your shieldwall activated and gain [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Ranged Defense while using a shield. \n[color=#0b0084]From the Shield perk group[/color]",
