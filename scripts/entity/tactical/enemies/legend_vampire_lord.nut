@@ -252,8 +252,9 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			// {
 			// 	hair.setBrush("hair_black_25")
 			// }
-			this.getSprite("body").setBrush("bust_vampire_lady_body_01");
-			this.getSprite("head").setBrush("bust_vampire_lady_head_01");
+			this.getSprite("body").setBrush("bust_vampire_lady_body_02");
+			this.getSprite("head").setBrush("bust_vampire_lady_head_02");
+			hair.Alpha = 0;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
 		}
 
