@@ -5145,6 +5145,10 @@ Fixes an issue people were having with cheer on lute
 
 ## 15.0.1.8
 
+**Changes**
+Changes the injury healing update text when camping (This might be too long or look odd, let me know)
+  Similarly, the injury healing update text is now fixed to properly show the progress of injuries being healed
+
 **Fixes**
 Fixes named armors sometimes not being found 
 Healer building properly shows %s when healing injuries
