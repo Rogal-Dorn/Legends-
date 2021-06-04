@@ -136,6 +136,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNomad,
 				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],

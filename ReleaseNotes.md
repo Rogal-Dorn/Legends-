@@ -5155,3 +5155,4 @@ Female vampires have von's intended body/head pairing + removes their beard/hair
 Fixes prepare graze skill
 Updates piercing shot tooltip to mention doesn't work with throwing weapons
 Fixes training modifiers doing literally nothing in the training camp
+Gives the infinite scaling beggar commander background the nomad favoured enemy perk
