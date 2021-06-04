@@ -295,6 +295,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				r.Blueprint.craft();
 				this.m.ItemsCrafted.push(r.Blueprint)
 				this.m.Queue[i] = null;
+				this.World.Statistics.getFlags().increment("ItemsCrafted");
 			}
 
             if (modifiers.Craft <= 0)
