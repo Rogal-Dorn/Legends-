@@ -35,7 +35,7 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 
 	function onEvaluate()
 	{
-		this.m.Requirements[0].Text = "Crafted " + this.Math.min(15, this.World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/10 items";
+		this.m.Requirements[0].Text = "Crafted " + this.Math.min(10, this.World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/10 items";
 
 		local brothers = this.World.getPlayerRoster().getAll();
 		local availableBGs = [
