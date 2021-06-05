@@ -92,7 +92,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 	{
 		this.m.FatigueCost = this.m.BaseFatigueCost;
 		this.m.MaxRange = this.m.Range - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
-		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
+		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 		
 		if (this.m.Container.hasSkill("perk.mage_legend_mastery_magic_missile_focus"))
