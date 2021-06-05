@@ -5160,3 +5160,4 @@ Fixes alchemist retinue not being able to be hired from crafting using the craft
 Fixes magic missile going to 0 fatigue
 Fixes fountain of youth item removing donkey injury
 Fixes issue with zombies when playing necromancer
+Fixes freeze when destroying a caravan you escorted
