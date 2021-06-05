@@ -5150,6 +5150,7 @@ Changes the injury healing update text when camping (This might be too long or l
   Similarly, the injury healing update text is now fixed to properly show the progress of injuries being healed
 
 **Fixes**
+Fixes there being no warhound blueprint. To breed dogs it still requires 2 of the same kind (wardog vs warhound)
 Fixes named armors sometimes not being found 
 Female vampires have von's intended body/head pairing + removes their beard/hair
 Fixes prepare graze skill
