@@ -1,6 +1,7 @@
 this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 	m = {
-		Range = 6
+		Range = 6,
+		BaseFatigueCost = 20
 	},
 	function create()
 	{
@@ -50,7 +51,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.4;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = this.m.BaseFatigueCost;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 6;
 		this.m.MaxLevelDifference = 6;
@@ -89,6 +90,7 @@ this.legend_magic_missile <- this.inherit("scripts/skills/legend_magic_skill", {
 
 	function onAfterUpdate( _properties )
 	{
+		this.m.FatigueCost = this.m.BaseFatigueCost;
 		this.m.MaxRange = this.m.Range - 1 + (_properties.IsSpecializedInStaves ? 1 : 0);
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 0.8;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
