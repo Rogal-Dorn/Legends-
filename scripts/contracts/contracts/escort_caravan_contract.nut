@@ -1188,11 +1188,11 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		if (this.m.Home.getProduce().len() != 0)
 		{
 			local produce = 3
+			local min = 1;
 			local L = this.m.Home.getProduce();
 
 			if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 			{
-				local min = 1;
 				switch (this.m.Home.getSize()) {
 					case 1:
 						min = 1;
@@ -1255,12 +1255,22 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					items.push([5, item]);
 				}
 				L = items;
+
+				for( local j = 0; j < produce; j = ++j )
+				{
+					local item = this.Const.World.Common.pickItem(items)
+					party.addToInventory(item);
+				}
+			}
+			else
+			{
+				for( local j = 0; j < produce; j = ++j )
+				{
+					party.addToInventory(L[this.Math.rand(0, L.len() - 1)]);
+				}
 			}
 
-			for( local j = 0; j < produce; j = ++j )
-			{
-				party.addToInventory(L[this.Math.rand(0, L.len() - 1)]);
-			}
+			
 		}
 
 		party.getLoot().Money = this.Math.rand(0, 100);
