@@ -292,17 +292,17 @@ layers = [
     "adesc" :""
 },
 {"name": "legend_tunic_wrap",                                  "layer": "cloth", "min": 1, "max": 11, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Linen Tunic", \
+    "title" :  "Linen Tunic Wrap", \
     "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.", \
     "adesc" :""
 },
 {"name": "legend_tunic_collar_thin",                                  "layer": "cloth", "min": 1, "max": 5, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Linen Tunic", \
+    "title" :  "Thin Collar Linen Tunic", \
     "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.", \
     "adesc" :""
 },
 {"name": "legend_tunic_collar_deep",                                  "layer": "cloth", "min": 1, "max": 1, "value" : 25, "con" : 20, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", \
-    "title" :  "Linen Tunic", \
+    "title" :  "Deep Collar Linen Tunic", \
     "desc" :  "A simple cloth tunic. Fashionable but offering little in protection.", \
     "adesc" :""
 },
