@@ -5157,3 +5157,4 @@ Updates piercing shot tooltip to mention doesn't work with throwing weapons
 Fixes training modifiers doing literally nothing in the training camp
 Gives the infinite scaling beggar commander background the nomad favoured enemy perk
 Fixes alchemist retinue not being able to be hired from crafting using the crafting tent in camp
+Fixes magic missile going to 0 fatigue
