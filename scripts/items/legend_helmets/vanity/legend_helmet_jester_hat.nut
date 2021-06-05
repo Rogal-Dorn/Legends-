@@ -13,7 +13,11 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Name = "Jester Hat";
 		this.m.Description = "The quintisential hat of performing folk in noble court";
 		this.m.ArmorDescription = this.m.Description;
-		this.m.Variants = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+		this.m.Variants = [];
+		for(local i = 1; i < 65; i++)
+		{
+			this.m.Variants.push(i);
+		}
         this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
