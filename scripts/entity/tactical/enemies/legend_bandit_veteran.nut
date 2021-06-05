@@ -398,8 +398,8 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local item = this.Const.World.Common.pickArmor([
-			[1, "ragged_surcoat"],
-			[1, "padded_leather"],
+			// [1, "ragged_surcoat"],
+			// [1, "padded_leather"],
 			[1, "worn_mail_shirt"],
 			[1, "patched_mail_shirt"],
 			[1, "leather_lamellar"],
