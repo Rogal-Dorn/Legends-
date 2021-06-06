@@ -179,6 +179,11 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					this.changeIndex(this.Const.Bodies.BarberSouthernFemale, temp.getSprite("body"), _change);
 					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 				}
+				else if (ethnicity == 2)
+				{
+					this.changeIndex(this.Const.Bodies.BarberAfricanFemale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
+				}
 				else
 				{
 					this.changeIndex(this.Const.Bodies.BarberNorthernFemale, temp.getSprite("body"), _change);
@@ -191,6 +196,11 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				if (ethnicity == 1)
 				{
 					this.changeIndex(this.Const.Bodies.BarberSouthernMale, temp.getSprite("body"), _change);
+					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
+				}
+				else if (ethnicity == 2)
+				{
+					this.changeIndex(this.Const.Bodies.BarberAfricanMale, temp.getSprite("body"), _change);
 					this.changeIndexEx(this.Const.Tattoos.All, temp.getSprite("tattoo_body"), 0, "", "", temp.getSprite("body").getBrush().Name);
 				}
 				else
@@ -208,6 +218,10 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				{
 					this.changeIndex(this.Const.Faces.SouthernFemale, temp.getSprite("head"), _change);
 				}
+				else if (ethnicity == 2)
+				{
+					this.changeIndex(this.Const.Faces.BarberAfricanFemale, temp.getSprite("head"), _change);
+				}
 				else
 				{
 					this.changeIndex(this.Const.Faces.AllFemale, temp.getSprite("head"), _change);
@@ -218,6 +232,10 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 				if (ethnicity == 1)
 				{
 					this.changeIndex(this.Const.Faces.SouthernMale, temp.getSprite("head"), _change);
+				}
+				else if (ethnicity == 2)
+				{
+					this.changeIndex(this.Const.Faces.BarberAfricanMale, temp.getSprite("head"), _change);
 				}
 				else
 				{
