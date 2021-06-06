@@ -1041,10 +1041,7 @@ gt.Const.Bodies.AllMale <- [
 gt.Const.Bodies.SouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02",
-	"bust_naked_african_body_00",
-	"bust_naked_african_body_01",
-	"bust_naked_african_body_02"
+	"bust_naked_body_southern_02"
 ];
 gt.Const.Bodies.Skinny <- [
 	"bust_naked_body_00"
@@ -1053,12 +1050,10 @@ gt.Const.Bodies.FemaleSkinny <- [
 	"bust_female_northern_body_00"
 ];
 gt.Const.Bodies.SouthernSkinny <- [
-	"bust_naked_body_southern_00",
-	"bust_naked_african_body_00"
+	"bust_naked_body_southern_00"
 ];
 gt.Const.Bodies.SouthernFemaleSkinny <- [
-	"bust_female_southern_body_00",
-	"bust_female_southern_body_03"
+	"bust_female_southern_body_00"
 ];
 gt.Const.Bodies.Muscular <- [
 	"bust_naked_body_01"
@@ -1067,12 +1062,10 @@ gt.Const.Bodies.FemaleMuscular <- [
 	"bust_female_northern_body_01"
 ];
 gt.Const.Bodies.SouthernMuscular <- [
-	"bust_naked_body_southern_01",
-	"bust_naked_african_body_01"
+	"bust_naked_body_southern_01"
 ];
 gt.Const.Bodies.SouthernFemaleMuscular <- [
-	"bust_female_southern_body_01",
-	"bust_female_southern_body_04"
+	"bust_female_southern_body_01"
 ];
 gt.Const.Bodies.Thick <- [
 	"bust_naked_body_02"
@@ -1081,8 +1074,7 @@ gt.Const.Bodies.FemaleThick <- [
 	"bust_female_northern_body_02"
 ];
 gt.Const.Bodies.SouthernThick <- [
-	"bust_naked_body_southern_01",
-	"bust_naked_african_body_02"
+	"bust_naked_body_southern_01"
 ];
 gt.Const.Bodies.SouthernFemaleThick <- [
 	"bust_female_southern_body_02",
@@ -1090,13 +1082,10 @@ gt.Const.Bodies.SouthernFemaleThick <- [
 ];
 gt.Const.Bodies.Gladiator <- [
 	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02",
-	"bust_naked_african_body_01",
-	"bust_naked_african_body_02"
+	"bust_naked_body_southern_02"
 ];
 gt.Const.Bodies.SouthernSlave <- [
-	"bust_naked_body_southern_00",
-	"bust_naked_african_body_00"
+	"bust_naked_body_southern_00"
 ];
 gt.Const.Bodies.NorthernSlave <- [
 	"bust_naked_body_00"
@@ -1118,10 +1107,7 @@ gt.Const.Bodies.AllFemale <- [
 gt.Const.Bodies.SouthernFemale <- [
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",
-	"bust_female_southern_body_02",
-	"bust_female_southern_body_03",
-	"bust_female_southern_body_04",
-	"bust_female_southern_body_05"
+	"bust_female_southern_body_02"
 ];
 
 gt.Const.Bodies.NorthernFemale <- [
@@ -1206,18 +1192,49 @@ gt.Const.Hair.SouthernFemale <- [
 	"30"
 ]
 
-// gt.Const.Bodies.NewBodies <- [
-// 	"bust_female_southern_body_03",
-// 	"bust_female_southern_body_04",
-// 	"bust_female_southern_body_05",
-// 	"bust_naked_african_body_00",
-// 	"bust_naked_african_body_01",
-// 	"bust_naked_african_body_02",
-// ]
+gt.Const.Bodies.BarberAfricanFemale <- [
+	"bust_female_southern_body_03",
+	"bust_female_southern_body_04",
+	"bust_female_southern_body_05",
+]
 
-// gt.Const.Faces.NewHeads <- [
-// 	"bust_head_southern_female_10",
-// 	"bust_head_southern_female_11",
-// 	"bust_head_southern_female_12",
-// 	"bust_head_southern_female_13"
-// ]
+gt.Const.Bodies.BarberAfricanMale <- [
+	"bust_naked_body_african_00",
+	"bust_naked_body_african_01",
+	"bust_naked_body_african_02"
+]
+
+gt.Const.Bodies.AfricanFemaleSkinny <- [
+	"bust_female_southern_body_03"
+]
+gt.Const.Bodies.AfricanFemaleMuscular <- [
+	"bust_female_southern_body_04"
+
+]
+gt.Const.Bodies.AfricanFemaleThick <- [
+	"bust_female_southern_body_05"
+]
+
+gt.Const.Faces.AfricanFemale <- [
+	"bust_head_southern_female_10",
+	"bust_head_southern_female_11",
+	"bust_head_southern_female_12",
+	"bust_head_southern_female_13"
+]
+
+gt.Const.Faces.AfricanMale <- [
+	"bust_head_african_03"
+	"bust_head_african_06",
+	"bust_head_african_07",
+	"bust_head_african_10",
+	"bust_head_african_11",
+	"bust_head_african_12",
+	"bust_head_african_13",
+	"bust_head_african_14",
+	"bust_head_african_15",
+	"bust_head_african_16",
+	"bust_head_african_17"
+]
+
+gt.Const.Faces.BarberAfricanFemale <- gt.Const.Faces.AfricanFemale
+gt.Const.Faces.BarberAfricanMale <- gt.Const.Faces.AfricanMale
