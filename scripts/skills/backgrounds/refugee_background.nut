@@ -38,11 +38,26 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Derelict",
 			"the Surbated"
 		];
-		this.m.Faces = this.Const.Faces.AllWhiteMale;
-		this.m.Hairs = this.Const.Hair.UntidyMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Bodies = this.Const.Bodies.Skinny;
+		
+		if (this.Math.rand(1,2))
+		{
+			this.m.Ethnicity = 0; 
+			this.m.Faces = this.Const.Faces.AllWhiteMale;
+			this.m.Hairs = this.Const.Hair.UntidyMale;
+			this.m.HairColors = this.Const.HairColors.All;
+			this.m.Beards = this.Const.Beards.Untidy;
+			this.m.Bodies = this.Const.Bodies.Skinny;
+		}
+		else
+		{
+			this.m.Ethnicity = 2;
+			this.m.Bodies = this.Const.Bodies.AfricanMale;
+			this.m.Faces = this.Const.Faces.AfricanMale;
+			this.m.Hairs = this.Const.Hair.SouthernMale;
+			this.m.HairColors = this.Const.HairColors.African;
+			this.m.Beards = this.Const.Beards.Untidy;
+		}
+		
 		this.m.IsOffendedByViolence = true;
 		this.m.IsLowborn = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;

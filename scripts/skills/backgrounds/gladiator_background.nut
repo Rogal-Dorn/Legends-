@@ -33,13 +33,27 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dastard",
 			"trait.insecure"
 		];
-		this.m.Bodies = this.Const.Bodies.Gladiator;
-		this.m.Faces = this.Const.Faces.SouthernMale;
-		this.m.Hairs = this.Const.Hair.SouthernMale;
-		this.m.HairColors = this.Const.HairColors.Southern;
-		this.m.Beards = this.Const.Beards.Southern;
-		this.m.BeardChance = 60;
-		this.m.Ethnicity = 1;
+		if (this.Math.rand(1, 2))
+		{
+			this.m.Bodies = this.Const.Bodies.Gladiator;
+			this.m.Faces = this.Const.Faces.SouthernMale;
+			this.m.Hairs = this.Const.Hair.SouthernMale;
+			this.m.HairColors = this.Const.HairColors.Southern;
+			this.m.Beards = this.Const.Beards.Southern;
+			this.m.BeardChance = 60;
+			this.m.Ethnicity = 1;
+		}
+		else
+		{
+			this.m.Bodies = this.Const.Bodies.AfricanGladiator;
+			this.m.Faces = this.Const.Faces.AfricanMale;
+			this.m.Hairs = this.Const.Hair.AfricanMale;
+			this.m.HairColors = this.Const.HairColors.African;
+			this.m.Beards = this.Const.Beards.Southern;
+			this.m.BeardChance = 60;
+			this.m.Ethnicity = 2;
+		}
+		
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
@@ -93,12 +107,22 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.SouthernFemale;
-		this.m.Hairs = this.Const.Hair.SouthernFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
+		if (this.m.Ethnicity == 1)
+		{
+			this.m.Faces = this.Const.Faces.SouthernFemale;
+			this.m.Hairs = this.Const.Hair.SouthernFemale;
+			this.m.HairColors = this.Const.HairColors.Young;
+		}
+		else
+		{
+			this.m.Faces = this.Const.Faces.AfricanFemale;
+			this.m.Hairs = this.Const.Hair.AfricanFemale;
+			this.m.HairColors = this.Const.HairColors.African;
+		}
+		
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.SouthernFemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.AfricanFemaleMuscular;
 		this.m.IsFemaleBackground = true;
 	}
 

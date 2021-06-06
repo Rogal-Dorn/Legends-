@@ -45,13 +45,23 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"the Wanderer",
 			"the Waylayer"
 		];
-		this.m.Bodies = this.Const.Bodies.SouthernMuscular;
-		this.m.Faces = this.Const.Faces.SouthernMale;
-		this.m.Hairs = this.Const.Hair.SouthernMale;
-		this.m.HairColors = this.Const.HairColors.Southern;
+		this.m.Ethnicity = this.Math.rand(1,2);
+		if (this.m.Ethnicity == 1)
+		{
+			this.m.Bodies = this.Const.Bodies.SouthernMuscular;
+			this.m.Faces = this.Const.Faces.SouthernMale;
+			this.m.Hairs = this.Const.Hair.SouthernMale;
+			this.m.HairColors = this.Const.HairColors.Southern;
+		}
+		else
+		{
+			this.m.Bodies = this.Const.Bodies.AfricanMale;
+			this.m.Faces = this.Const.Faces.AfricanMale;
+			this.m.Hairs = this.Const.Hair.SouthernMale;
+			this.m.HairColors = this.Const.HairColors.African;
+		}
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 1;
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
