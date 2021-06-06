@@ -5163,3 +5163,4 @@ Fixes fountain of youth item removing donkey injury
 Fixes issue with zombies when playing necromancer
 Fixes freeze when destroying a caravan you escorted
 Champion mummified nobles get a famed weapon now
+Spelling fixes from Luft
