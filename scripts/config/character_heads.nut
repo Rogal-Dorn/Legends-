@@ -1192,6 +1192,12 @@ gt.Const.Hair.SouthernFemale <- [
 	"30"
 ]
 
+gt.Const.HairColors.African <- [
+	"black",
+	"brown",
+	"grey"
+]
+
 gt.Const.Bodies.BarberAfricanFemale <- [
 	"bust_female_southern_body_03",
 	"bust_female_southern_body_04",
