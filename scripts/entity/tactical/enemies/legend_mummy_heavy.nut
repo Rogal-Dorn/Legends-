@@ -71,5 +71,26 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 	}
 
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		local weapons = [
+			[1, "named_billhook"],
+			[1, "named_crypt_cleaver"],
+			[1, "named_khopesh"],
+			[1, "named_legend_great_khopesh"],
+			[1, "named_rusty_warblade"]
+
+		]
+
+		local weaponAdd = this.Const.World.Common.pickItem(weapons, "scripts/items/weapons/named/");
+		this.m.Items.equip(weaponAdd);
+
+	}
+
 });
 
