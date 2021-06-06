@@ -5164,3 +5164,4 @@ Fixes issue with zombies when playing necromancer
 Fixes freeze when destroying a caravan you escorted
 Champion mummified nobles get a famed weapon now
 Spelling fixes from Luft
+Goes back to Leonion's tooltip fix, old issue was because of other mod incompats
