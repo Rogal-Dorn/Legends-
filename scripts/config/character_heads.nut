@@ -1193,7 +1193,7 @@ gt.Const.Hair.SouthernFemale <- [
 ]
 
 gt.Const.HairColors.African <- [
-	"black",
+	"brown",
 	"brown",
 	"grey"
 ]
