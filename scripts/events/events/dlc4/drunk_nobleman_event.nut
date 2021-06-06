@@ -414,6 +414,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
+		{
+			return;
+		}
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local candidates_servant = [];
 		local candidates_thief = [];

@@ -5149,6 +5149,8 @@ Fixes an issue people were having with cheer on lute
 Changes the injury healing update text when camping (This might be too long or look odd, let me know)
   Similarly, the injury healing update text is now fixed to properly show the progress of injuries being healed
 
+Gladiator, Indebted, Refugee, and Nomad backgrounds can all be african now w/ von krolock's new art
+
 **Fixes**
 Fixes there being no warhound blueprint. To breed dogs it still requires 2 of the same kind (wardog vs warhound)
 Fixes named armors sometimes not being found 
@@ -5165,3 +5167,4 @@ Fixes freeze when destroying a caravan you escorted
 Champion mummified nobles get a famed weapon now
 Spelling fixes from Luft
 Goes back to Leonion's tooltip fix, old issue was because of other mod incompats
+Drunk nobleman can't be obtained if you have party slots already all filled
