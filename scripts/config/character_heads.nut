@@ -1198,13 +1198,13 @@ gt.Const.HairColors.African <- [
 	"grey"
 ]
 
-gt.Const.Bodies.BarberAfricanFemale <- [
+gt.Const.Bodies.AfricanFemale <- [
 	"bust_female_southern_body_03",
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05",
 ]
 
-gt.Const.Bodies.BarberAfricanMale <- [
+gt.Const.Bodies.AfricanMale <- [
 	"bust_naked_body_african_00",
 	"bust_naked_body_african_01",
 	"bust_naked_body_african_02"
@@ -1215,10 +1215,17 @@ gt.Const.Bodies.AfricanFemaleSkinny <- [
 ]
 gt.Const.Bodies.AfricanFemaleMuscular <- [
 	"bust_female_southern_body_04"
-
 ]
 gt.Const.Bodies.AfricanFemaleThick <- [
 	"bust_female_southern_body_05"
+]
+
+gt.Const.Bodies.AfricanGladiator <- [
+	"bust_naked_body_african_01",
+	"bust_naked_body_african_02"
+]
+gt.Const.Bodies.AfricanSlave <- [
+	"bust_naked_body_african_00"
 ]
 
 gt.Const.Faces.AfricanFemale <- [
