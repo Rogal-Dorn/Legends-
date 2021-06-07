@@ -5143,7 +5143,7 @@ Fixes prepare to bleed skill
 Fixes EXP gain from training building in camp
 Fixes an issue people were having with cheer on lute
 
-## 15.0.1.8
+15.0.1.8
 
 **Changes**
 Changes the injury healing update text when camping (This might be too long or look odd, let me know)
@@ -5171,3 +5171,5 @@ Drunk nobleman can't be obtained if you have party slots already all filled
 Fixes ancient laurens being backwards
 Firepot active tooltip notes that the damage is only on end of enemy turns
 Inspired allies with the clarity perk should now properly get 14 AP instead of 13
+
+## 15.0.1.9
