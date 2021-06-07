@@ -110,7 +110,7 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 		{
 			this.m.Bodies = this.Const.Bodies.AfricanSlave;
 			this.m.Faces = this.Const.Faces.AfricanMale;
-			this.m.Hairs = this.Const.Hair.AfricanMale;
+			this.m.Hairs = this.Const.Hair.SouthernMale;
 			this.m.HairColors = this.Const.HairColors.African;
 		}
 
