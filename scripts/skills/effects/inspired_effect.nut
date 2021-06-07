@@ -23,7 +23,7 @@ this.inspired_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPoints = 9 + 4;
+		_properties.ActionPoints = this.getContainer().getActor().getActionPointsMax() + 4;
 	}
 
 	function onTurnStart()
