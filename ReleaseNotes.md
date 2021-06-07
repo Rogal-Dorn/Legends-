@@ -5170,3 +5170,4 @@ Goes back to Leonion's tooltip fix, old issue was because of other mod incompats
 Drunk nobleman can't be obtained if you have party slots already all filled
 Fixes ancient laurens being backwards
 Firepot active tooltip notes that the damage is only on end of enemy turns
+Inspired allies with the clarity perk should now properly get 14 AP instead of 13
