@@ -1027,9 +1027,9 @@ gt.Const.Bodies.AllHuman <- [
 	"bust_female_northern_body_00",
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02",
-	"bust_naked_african_body_00",
-	"bust_naked_african_body_01",
-	"bust_naked_african_body_02"
+	"bust_naked_body_african_00",
+	"bust_naked_body_african_01",
+	"bust_naked_body_african_02"
 ];
 
 gt.Const.Bodies.AllMale <- [
@@ -1251,3 +1251,6 @@ gt.Const.Faces.AfricanMale <- [
 
 gt.Const.Faces.BarberAfricanFemale <- gt.Const.Faces.AfricanFemale
 gt.Const.Faces.BarberAfricanMale <- gt.Const.Faces.AfricanMale
+
+gt.Const.Bodies.BarberAfricanFemale <- gt.Const.Bodies.AfricanFemale
+gt.Const.Bodies.BarberAfricanMale <- gt.Const.Bodies.AfricanMale
