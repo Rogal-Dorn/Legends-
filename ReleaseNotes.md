@@ -5168,3 +5168,4 @@ Champion mummified nobles get a famed weapon now
 Spelling fixes from Luft
 Goes back to Leonion's tooltip fix, old issue was because of other mod incompats
 Drunk nobleman can't be obtained if you have party slots already all filled
+Fixes ancient laurens being backwards
