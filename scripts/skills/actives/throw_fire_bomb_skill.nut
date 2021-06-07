@@ -59,6 +59,12 @@ this.throw_fire_bomb_skill <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Burns away existing tile effects like Smoke or Miasma"
 		});
+		ret.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "This damage shown only occurs when an enemy ends turn inside of the area, it does not affect the enemy when thrown"
+		})
 		return ret;
 	}
 
