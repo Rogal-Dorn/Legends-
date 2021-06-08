@@ -114,6 +114,11 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 				S = "helmets/oriental/southern_helmet_with_coif"
 			},
 			{
+				R = 30,
+				P = 1.0,
+				S = "helmets/oriental/kamy_southern_helmet"
+			},
+			{
 				R = 20,
 				P = 1.0,
 				S = "helmets/oriental/spiked_skull_cap_with_mail"

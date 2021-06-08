@@ -140,10 +140,15 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local helmet = [
-				[1, "oriental/southern_helmet_with_coif"],
-				[1, "oriental/nomad_reinforced_helmet"],
-				[1, "oriental/nomad_reinforced_helmet"]
+				[4, "oriental/southern_helmet_with_coif"],
+				[8, "oriental/nomad_reinforced_helmet"]
 			];
+
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				helmet.push([1, "oriental/kamy_southern_helmet"])
+			}
+
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}
 	}

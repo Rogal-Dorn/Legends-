@@ -301,6 +301,22 @@ gt.Const.LegendMod.HelmObjs.extend([
     ]
 }]
 },{
+    ID = "oriental/kamy_southern_helmet", //175
+    Script = "",
+    Sets = [{
+    Hoods = [
+      [1, "hood/legend_helmet_southern_niqaab"]
+    ],
+    Helms = [
+		  [1, "helm/legend_helmet_ancient_side_hawk"]
+    ],
+    Tops = [
+    ],
+    Vanity = [
+      [1, "vanity/legend_helmet_southern_turban_open"]
+    ]
+}]
+},{
     ID = "oriental/spiked_skull_cap_with_mail", //125
     Script = "",
     Sets = [{
