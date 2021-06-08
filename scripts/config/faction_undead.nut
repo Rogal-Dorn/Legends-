@@ -456,7 +456,7 @@ gt.Const.Tactical.Actor.LegendMummyLight <- {
 	Bravery = 60,
 	Stamina = 100,
 	MeleeSkill = 55,
-	RangedSkill = 0,
+	RangedSkill = 55,
 	MeleeDefense = 10,
 	RangedDefense = 5,
 	Initiative = 65,
@@ -524,16 +524,16 @@ gt.Const.Tactical.Actor.LegendMummyQueen <- {
 };
 
 gt.Const.Tactical.Actor.LegendMummyPriest <- {
-	XP = 450,
+	XP = 475,
 	ActionPoints = 9,
-	Hitpoints = 65,
+	Hitpoints = 120,
 	Bravery = 100,
 	Stamina = 100,
-	MeleeSkill = 40,
+	MeleeSkill = 75,
 	RangedSkill = 0,
-	MeleeDefense = 0,
-	RangedDefense = 5,
-	Initiative = 5,
+	MeleeDefense = 20,
+	RangedDefense = 10,
+	Initiative = 85,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [

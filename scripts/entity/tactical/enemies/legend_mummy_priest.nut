@@ -7,7 +7,7 @@ this.legend_mummy_priest <- this.inherit("scripts/entity/tactical/legend_mummy",
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyPriest.XP;
 		this.m.ResurrectionValue = 10.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_priest";
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_priest_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_mummy_queen_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -28,19 +28,32 @@ this.legend_mummy_priest <- this.inherit("scripts/entity/tactical/legend_mummy",
 		this.m.CurrentProperties = clone b;
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
-		this.m.Skills.add(this.new("scripts/skills/actives/horror_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/miasma_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
+		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloodbath"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_slaughter"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 			}
 
 	}
 
 	function assignRandomEquipment()
 	{
+
+		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
+		
 		local armor = [
 			[1, "ancient/legend_mummy_dress"]
 		];

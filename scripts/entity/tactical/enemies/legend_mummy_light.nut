@@ -1,13 +1,20 @@
 this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", {
-	m = {},
+	m = {
+		IsRanged = false
+	},
 	function create()
 	{
+		this.m.IsRanged = this.Math.rand(1, 5) == 1 ? true : false;
 		this.m.Type = this.Const.EntityType.LegendMummyLight;
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyLight.XP;
 		this.m.ResurrectionValue = 2.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_light";
 		this.legend_mummy.create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
+
+		if (!this.m.IsRanged)
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
+		else
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
@@ -37,13 +44,32 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 	function assignRandomEquipment()
 	{
 
-
-		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_khopesh"));
-
-
-		if (this.Math.rand(1, 100) <= 66)
+		if (!this.m.IsRanged)
 		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_shield"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_khopesh"));
+
+
+			if (this.Math.rand(1, 100) <= 66)
+			{
+				this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_shield"));
+			}
+		}
+		else
+		{
+			local weapons = [
+				[
+					"weapons/short_bow",
+					"ammo/quiver_of_arrows"
+				]
+			];
+			local n = this.Math.rand(0, weapons.len() - 1);
+
+			foreach( w in weapons[n] )
+			{
+				this.m.Items.equip(this.new("scripts/items/" + w));
+			}
+
+			this.m.Items.addToBag(this.new("scripts/items/weapons/ancient/legend_khopesh"));
 		}
 
 		local armor = [
