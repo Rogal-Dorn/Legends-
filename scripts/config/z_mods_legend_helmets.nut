@@ -47,6 +47,23 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },{
+        ID = "theamson_barbute_helmet", //172 ish, -10, -2
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_enclave_bevor"] //95, -7, 0
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barbute"] //75, -3, -2
+        ],
+        Tops = [],
+        Vanity = [
+            [5, ""],
+            [1, "vanity/legend_helmet_headband"],
+            [1, "vanity/legend_helmet_plait"] //10
+        ]
+    }]
+    },{
         ID = "bascinet_with_mail", //210, -13, -2, 1400
         Script = "",
         Sets = [{

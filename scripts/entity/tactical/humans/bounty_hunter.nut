@@ -159,7 +159,7 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
-			local item = this.Const.World.Common.pickHelmet([
+			local helm = [
 				[1, "nasal_helmet"],
 				[1, "nasal_helmet_with_mail"],
 				[1, "reinforced_mail_coif"],
@@ -169,7 +169,13 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 				[1, "nordic_helmet"],
 				[1, "nordic_helmet_with_closed_mail"],
 				[1, "barbute_helmet"]
-			])
+			];
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				helm.push([1, "theamson_barbute_helmet"])
+			}
+			local item = this.Const.World.Common.pickHelmet(helm)
+			
 			if (item != null)
 			{
 				this.m.Items.equip(item);

@@ -238,13 +238,20 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			[1, "worn_mail_shirt"]
 		]));
 
-		items.equip(this.Const.World.Common.pickHelmet([
+		local helm = [
 			[1, "nasal_helmet"],
 			[1, "nasal_helmet_with_mail"],
 			[1, "mail_coif"],
 			[1, "bascinet_with_mail"],
 			[1, "closed_flat_top_helmet"]
-		]));
+		];
+
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			helm.push([1, "theamson_barbute_helmet"])
+		}
+
+		items.equip(this.Const.World.Common.pickHelmet(helm));
 	}
 });
 
