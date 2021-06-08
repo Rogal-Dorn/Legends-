@@ -40,8 +40,7 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 		bros[0].setStartValuesEx([
 			"legend_beggar_commander_op_background"
 		]);
-		
-
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		this.World.Assets.m.BusinessReputation = -200;
