@@ -34,7 +34,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 
 		function getTooltip( )
 	{
-		local ret = this.getDefaultTooltip();
+		// local ret = this.getDefaultTooltip();
 		ret.extend([
 			{
 				id = 6,
