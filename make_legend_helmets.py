@@ -992,7 +992,7 @@ layers = [
 },
 # {"name" : "southern_faceplate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
 #  "title" :  "Southern Faceplate", \
-#  "desc" :  "A faceplate in the southern style" \
+#  "desc" :  "A faceplate in the southern style" \ 
 # },
 {"name" : "southern_faceplate_bearded"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 700, "con" : 60, "stam" : -5, "vis" : -2, "hair" : "false", "beard" : "true",  \
  "title" :  "Southern Bearded Faceplate", \
@@ -1675,24 +1675,28 @@ helmets = r"""
  <sprite id="jester_hat_64" offsetY="35" ic="FF5D5D5B" width="104" height="142" img="entity\legend_helmets\jester_hat_64.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="jester_hat_64_damaged" offsetY="35" ic="FF555552" width="104" height="142" img="entity\legend_helmets\jester_hat_64_damaged.png" left="-38" right="50" top="-14" bottom="70" />
  <sprite id="jester_hat_64_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF585854" width="191" height="185" img="entity\legend_helmets\jester_hat_64_dead.png" left="-70" right="20" top="-76" bottom="4" />
-  <sprite id="witchhunter_helm_01" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_01.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_01_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_01_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_01_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  <sprite id="witchhunter_helm_02" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_02.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_02_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_02_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_02_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  <sprite id="witchhunter_helm_03" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_03.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_03_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_03_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_03_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  <sprite id="witchhunter_helm_04" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_04.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_04_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_04_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_04_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  <sprite id="witchhunter_helm_05" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_05.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_05_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_05_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_05_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_05_dead.png" left="-49" right="25" top="-63" bottom="5" />
-  <sprite id="witchhunter_helm_06" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_06.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_06_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\witchhunter_helm_06_damaged.png" left="-29" right="31" top="-32" bottom="50" />
-  <sprite id="witchhunter_helm_06_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\witchhunter_helm_06_dead.png" left="-49" right="25" top="-63" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_01" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_01.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_01_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_01_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_01_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_02" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_02.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_02_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_02_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_02_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_03" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_03.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_03_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_03_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_03_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_04" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_04.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_04_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_04_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_04_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_04_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_05" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_05.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_05_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_05_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_05_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_05_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_06" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_06.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_06_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_06_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_06_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_06_dead.png" left="-49" right="25" top="-68" bottom="5" />
+  <sprite id="legendhelms_witchhunter_helm_07" offsetY="35" ic="FF19212F" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_07.png" left="-59" right="68" top="-24" bottom="112" />
+  <sprite id="legendhelms_witchhunter_helm_07_damaged" offsetY="35" ic="FF1A212E" width="104" height="142" img="entity\legend_helmets\layers\witchhunter_helm_07_damaged.png" left="-38" right="50" top="-14" bottom="70" />
+  <sprite id="legendhelms_witchhunter_helm_07_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF1A212E" width="131" height="125" img="entity\legend_helmets\layers\witchhunter_helm_07_dead.png" left="-49" right="25" top="-68" bottom="5" />
+
 
   <sprite id="jester_helm_01" offsetY="35" ic="FF2E5B82" width="184" height="222" img="entity\legend_helmets\jester_helm_01.png" left="-34" right="42" top="-28" bottom="100" />
   <sprite id="jester_helm_01_damaged" offsetY="35" ic="FF2E5374" width="184" height="222" img="entity\legend_helmets\jester_helm_01_damaged.png" left="-34" right="42" top="-29" bottom="87" />
