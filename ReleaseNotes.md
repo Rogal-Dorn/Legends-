@@ -5174,6 +5174,9 @@ Inspired allies with the clarity perk should now properly get 14 AP instead of 1
 
 ## 15.0.1.9
 
+**Changes**
+Lowers cannibal recruitment proc chance
+
 **Fixes**
 Witchhunter helms not showing up fix
 Chain lightning now doesn't signify it's supposed to have reduced costs in rain
