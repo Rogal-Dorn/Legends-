@@ -180,7 +180,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 
 		if (this.Math.rand(1, 100) <= 95)
 		{
-			this.m.Items.equip(this.Const.World.Common.pickHelmet([
+			local helm = [
 				[1, "nasal_helmet_with_mail"],
 				[1, "nasal_helmet"],
 				[1, "mail_coif"],
@@ -203,8 +203,14 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				[1, "legend_enclave_vanilla_skullcap_01"],
 				[1, "steppe_helmet_with_mail"],
 				[1, "barbute_helmet"]
+			];
 
-			]))
+			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			{
+				helm.push([1, "theamson_barbute_helmet"])
+			}
+
+			this.m.Items.equip(this.Const.World.Common.pickHelmet())
 		}
 	}
 
