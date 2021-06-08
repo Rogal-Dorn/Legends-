@@ -163,7 +163,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Plate = [
             [1, "plate/legend_armor_plate_full_greaves"],
-            [1, "plate/legend_armor_plate_full_greaves_named"]
+            [1, "plate/legend_armor_plate_full_greaves_named"],
+            [1, "plate/legend_armor_plate_full_greaves_painted"]
         ],
         Cloak = [
             [1, "cloak/legend_shoulder_cloth"], //5
@@ -263,7 +264,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ],
         Plate = [
             [1, "plate/legend_armor_plate_full_greaves"],
-            [1, "plate/legend_armor_plate_full_greaves_named"]
+            [1, "plate/legend_armor_plate_full_greaves_named"],
+            [1, "plate/legend_armor_plate_full_greaves_painted"]
         ],
         Cloak = [
             [1, "cloak/legend_shoulder_cloth"], //5
