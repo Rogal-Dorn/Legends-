@@ -13,7 +13,7 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_chain_lightning";
 		this.m.Name = "Chain Lightning";
-        this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs reduced while it is raining, and from staff mastery. ";
+        this.m.Description = "Unleash an arcing barrage that strikes an opponent, sending sparks from opponent to opponent. Fatigue and action costs from staff mastery. ";
 		this.m.KilledString = "Electrocuted";
 		this.m.Icon = "skills/lightning_square.png";
 		this.m.IconDisabled = "skills/lightning_square_bw.png";
@@ -121,11 +121,11 @@ this.legend_chain_lightning <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInStaves ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.ActionPointCost = _properties.IsSpecializedInStaves ? 5 : 6;
 
-        if (this.getContainer().hasSkill("special.legend_rain"))
-        {
-        this.m.FatigueCost -= 20;
-        this.m.ActionPointCost -= 1;
-        }
+        // if (this.getContainer().hasSkill("special.legend_rain"))
+        // {
+        // this.m.FatigueCost -= 20;
+        // this.m.ActionPointCost -= 1;
+        // }
 
 	}
 

@@ -11,7 +11,7 @@ this.legend_tower_shield_blueprint <- this.inherit("scripts/crafting/blueprint",
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/quality_wood_item",
-				Num = 2
+				Num = 3
 			}
 		];
 		this.init(ingredients);
