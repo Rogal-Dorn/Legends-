@@ -428,7 +428,7 @@ layers = [
  "title" :  "Bevor", \
  "desc" :  "A solid metal bevor." \
 },
-{"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 260, "con" : 75, "stam" : -4, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 260, "con" : 75, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Southern Mail Hood", \
  "desc" :  "A Mail Hood of southern design." \
 },
