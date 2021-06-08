@@ -5176,6 +5176,7 @@ Inspired allies with the clarity perk should now properly get 14 AP instead of 1
 
 **Changes**
 Lowers cannibal recruitment proc chance
+Adds back in the original beggar challenge, with the 'scaling' beggar challenge right below it
 
 **Fixes**
 Witchhunter helms not showing up fix
