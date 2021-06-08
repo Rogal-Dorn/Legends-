@@ -5173,3 +5173,9 @@ Firepot active tooltip notes that the damage is only on end of enemy turns
 Inspired allies with the clarity perk should now properly get 14 AP instead of 13
 
 ## 15.0.1.9
+
+**Fixes**
+Witchhunter helms not showing up fix
+Chain lightning now doesn't signify it's supposed to have reduced costs in rain
+Assassin has some bg text now
+Removes a bunch of blueprints that aren't used, due to them being repaintable in the tent. (e.g. Heraldic Tabards, etc)
