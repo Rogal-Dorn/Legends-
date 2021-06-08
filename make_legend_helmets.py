@@ -1080,10 +1080,10 @@ layers = [
  "title" :  "Feathered Turban", \
  "desc" :  "A feathered blade dancer turban." \
 },
-{"name" : "southern_turban_open"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 60, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
- "title" :  "Open Turban", \
- "desc" :  "A turban with open face." \
-},
+# {"name" : "southern_turban_open"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 60, "con" : 3, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+#  "title" :  "Open Turban", \
+#  "desc" :  "A turban with open face." \
+# },
 {"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 50, "con" : 5, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Sack", \
  "desc" :  "A rough hewn hession sack with two holes in it." \
