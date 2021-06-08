@@ -174,7 +174,12 @@ this.sato_manhunter_veteran <- this.inherit("scripts/entity/tactical/human", {
 					[1, "conic_helmet_with_faceguard"],
 					[1, "barbute_helmet"],
 				]);
+				if (this.LegendsMod.Configs().LegendArmorsEnabled())
+				{
+					helmets.push([1, "theamson_barbute_helmet"])
+				}
 			}
+			
 
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmets));
 		}

@@ -5177,7 +5177,7 @@ Inspired allies with the clarity perk should now properly get 14 AP instead of 1
 **Changes**
 Lowers cannibal recruitment proc chance
 Adds back in the original beggar challenge, with the 'scaling' beggar challenge right below it
-Adds one of Kamy's southern helmets into nomad leaders pool from fashion channel
+Adds armors from fashion show (Thank you Kamy, Theamson)
 
 **Fixes**
 Witchhunter helms not showing up fix
