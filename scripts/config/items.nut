@@ -145,6 +145,8 @@ gt.Const.Items.LegendNamedHelmLayers <- [
 	"legend_helmets/helm/legend_helmet_kettle_helm_named",
 	"legend_helmets/helm/legend_helmet_wallace_sallet_named",
 	"legend_helmets/helm/legend_helmet_deep_sallet_named",
+	"legend_helmets/helm/legend_helmet_stag_helm",
+	"legend_helmets/helm/legend_helmet_swan_helm"
 ];
 
 gt.Const.Items.LegendNamedTopLayers <- [
@@ -182,7 +184,9 @@ gt.Const.Items.NamedHelmets <- [
 	"helmets/named/barbute_named",
 	"helmets/named/bascinet_named",
 	"helmets/named/kettle_helm_named",
-	"helmets/named/italo_norman_helm_named"
+	"helmets/named/italo_norman_helm_named",
+	"helmets/named/legend_helm_stag_named",
+	"helmets/named/legend_helm_swan_named",
 ];
 
 

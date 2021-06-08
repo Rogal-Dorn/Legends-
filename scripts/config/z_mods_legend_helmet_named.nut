@@ -557,5 +557,41 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[3, ""] //10
 		]
     }]
+    },{
+        ID = "named/legend_helm_stag_named", //290
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_stag_helm"] //200, -15, -3, 3000
+        ],
+        Tops = [
+		],
+        Vanity = [
+			[1, "vanity/legend_helmet_noble_feather"], //10
+			[1, "vanity/legend_helmet_noble_buckle"], //10
+			[3, ""] //10
+		]
+    }]
+    },{
+        ID = "named/legend_helm_swan_named", //290, -21, -3, 3500
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"] //80, -5, 0, 310
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_swan_helm"] //200, -15, -3, 3000
+        ],
+        Tops = [
+		],
+        Vanity = [
+			[1, "vanity/legend_helmet_noble_feather"], //10
+			[1, "vanity/legend_helmet_noble_buckle"], //10
+			[3, ""] //10
+		]
+    }]
     }
 ])
