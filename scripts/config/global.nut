@@ -417,6 +417,8 @@ gt.Const.EntityType <- {
 	KoboldFighter = 151,
 	KoboldWolfrider = 152,
 
+	LegendMummyPriest = 153,
+
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -733,6 +735,7 @@ gt.Const.EntityIcon <- [
 	"mummy_heavy_orientation",
 	"mummy_queen_orientation",
 	"kobold_fighter_orientation",
-	"kobold_wolfrider_orientation"
+	"kobold_wolfrider_orientation",
+	"mummy_priest_orientation"
 ];
 

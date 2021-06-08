@@ -522,3 +522,22 @@ gt.Const.Tactical.Actor.LegendMummyQueen <- {
 	],
 	DamageTotalMult = 1.35
 };
+
+gt.Const.Tactical.Actor.LegendMummyPriest <- {
+	XP = 450,
+	ActionPoints = 9,
+	Hitpoints = 65,
+	Bravery = 100,
+	Stamina = 100,
+	MeleeSkill = 40,
+	RangedSkill = 0,
+	MeleeDefense = 0,
+	RangedDefense = 5,
+	Initiative = 5,
+	FatigueEffectMult = 0.0,
+	MoraleEffectMult = 0.0,
+	Armor = [
+		0,
+		0
+	]
+};

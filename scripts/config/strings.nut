@@ -285,7 +285,8 @@ gt.Const.Strings.EntityName <- [
 	"Embalmed Noble",
 	"Embalmed Queen",
 	"Kobold Fighter",
-	"Kobold Wolfrider"
+	"Kobold Wolfrider",
+	"Embalmed Priest"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -440,7 +441,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Embalmed Nobles",
 	"Embalmed Queens",
 	"Kobold Fighters",
-	"Kobold Wolfriders"
+	"Kobold Wolfriders",
+	"Embalmed Priests"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

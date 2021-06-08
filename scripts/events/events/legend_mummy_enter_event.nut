@@ -93,6 +93,12 @@ this.legend_mummy_enter_event <- this.inherit("scripts/events/event", {
 							p.Entities.push(clone this.Const.World.Spawn.Troops.LegendMummyHeavy);
 							i = ++i;
 						}
+						
+						for( local i = 0; i < 4; i = i )
+						{
+							p.Entities.push(clone this.Const.World.Spawn.Troops.LegendMummyPriest);
+							i = ++i;
+						}
 
 						local f = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID();
 

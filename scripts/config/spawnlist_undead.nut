@@ -248,19 +248,24 @@ gt.Const.World.Spawn.Mummies <-
 		{
 			Weight = 30,
 			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.VampireLOW,
-					Cost = 30
-				},
-				{
-					Type = this.Const.World.Spawn.Troops.Vampire,
-					MinR = 400,
-					Cost = 40
-				},
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.VampireLOW,
+				// 	Cost = 30
+				// },
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.Vampire,
+				// 	MinR = 400,
+				// 	Cost = 40
+				// },
 				{
 					MinR = 650,
 					Type = this.Const.World.Spawn.Troops.LegendMummyQueen,
 					Cost = 70,
+					Roll = true
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyPriest,
+					Cost = 40,
 					Roll = true
 				}
 			]

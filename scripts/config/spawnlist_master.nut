@@ -1549,7 +1549,15 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 0,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/flying_skull"
-	}
+	},
+	LegendMummyPriest = {
+		ID = this.Const.EntityType.LegendMummyPriest,
+		Variant = 0,
+		Strength = 40,
+		Cost = 40,
+		Row = 2,
+		Script = "scripts/entity/tactical/enemies/legend_mummy_priest"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-
