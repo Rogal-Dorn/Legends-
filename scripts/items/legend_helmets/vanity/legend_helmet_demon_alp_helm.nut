@@ -59,21 +59,19 @@ this.legend_helmet_demon_alp_helm <- this.inherit("scripts/items/legend_helmets/
 	{
 		this.legend_helmet_upgrade.onAdded();
 		local skills = this.getContainer().getActor().getSkills();
-        local hasPerk = skills.hasSkill("perk.legend_horrify");
-        if (!hasPerk && !skills.hasSkill("actives.legend_horrific_scream"))
+        local hasPerk = skills.hasSkill("perk.legend_item_horrify");
+        if (!hasPerk) //sloppy i'm literally just assuming people won't wear two of these at once please god 
         {
-		   	skills.add(this.new("scripts/skills/actives/legend_horrific_scream"));
+		   	skills.add(this.new("scripts/skills/perks/perk_legend_item_horrify"));
         }
 	}
 
     function onRemoved(_app)
     {
 		local skills = this.getContainer().getActor().getSkills();
-        local hasPerk = skills.hasSkill("perk.legend_horrify");
-        if (!hasPerk)
-        {
-            skills.removeByID("actives.legend_horrific_scream");
-        }
+        local hasPerk = skills.hasSkill("perk.legend_item_horrify");
+        skills.removeByID("actives.legend_horrific_scream");
+
 		this.legend_helmet_upgrade.onRemoved(_app);
     }
 

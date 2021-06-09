@@ -24,7 +24,10 @@ this.perk_legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 	
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.legend_gruesome_feast");
+		if (!this.m.Container.hasSkill("perk.legend_item_gruesome_feast"))
+        {
+            this.m.Container.removeByID("actives.legend_horrific_scream");
+        }
 	}
 
 });
