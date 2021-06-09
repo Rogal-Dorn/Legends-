@@ -17,22 +17,24 @@ this.legend_warlock_hood_blueprint <- this.inherit("scripts/crafting/blueprint",
 				Num = 2
 			},
 			{
-				Script = "scripts/items/helmets/dark_cowl",
+				Script = "scripts/items/spawns/skeleton_item",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/supplies/strange_meat_item",
+				Script = "scripts/items/legend_helmets/hood/legend_helmet_simple_hood",
 				Num = 1
 			}
 		];
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/backgrounds/female_tailor_background",
-							"scripts/skills/backgrounds/tailor_background"]
+				Scripts = [
+					"scripts/skills/backgrounds/female_tailor_background",
+					"scripts/skills/backgrounds/tailor_background"
+				]
 			}
-		]
-		this.initSkills(skills);	
+		];
+		this.initSkills(skills);
 	}
 
 	function isQualified()

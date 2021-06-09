@@ -5174,7 +5174,7 @@ Inspired allies with the clarity perk should now properly get 14 AP instead of 1
 
 ## 15.0.1.9
 
-**Perk balance**
+**Poss's Perk balance**
 Full force increases melee defense instead of damage 
 Muscularity buffs both minimum and maximum damage
 Entice and Push use your resolve to hit 
@@ -5195,6 +5195,19 @@ Blend in also grants +5 ranged defense and +3 melee defense
 Evasion costs 8AP and 30 fat, and lasts two turns instead of 1 
 Clarity now also increases fatigue costs by 20% 
 Battleforged damaged reduction reduced from 5% to 3.5% of armor. To reflect the super heavy armors in legends 
+
+**Luft's Recipe Changes**
+Redback Dagger -> now requires 3 (up from 2) redback poison glands - This weapon is incredibly powerful and far too easy to get right now.
+Heraldic Tabard -> REMOVED - Can just make a normal tabard and repaint it in the painting tent. Removed due to bloat.
+Redback Silk Cloak -> now requires 2 redback poison glands (up from 1) - Same as dagger, very powerful item.
+Warlock's Cloak -> no longer requires dark tunic. Strange meat (x1) now replaced with human carrion (x1) as it was before - Meat often expired before crafting completed, it also made it a powerful unique item any run could get.
+Warlock's Hood -> no longer requires dark hood (x1), now needs a simple hood (x1). No longer requires strange meat (x1), requires human bones instead - See warlock cloak for rationale on this change.
+Heraldic Helmet Ornament -> REMOVED - same as tabard.
+Redback Helmet -> Changed from 1 redback poison gland to 3 - Very powerful item and too easy to get.
+White Wolf Helmet -> changed from 2 white wolf pelts to 3 - Same reasoning as redback items. Too powerful to be so easily accessible.
+Company Tower Shield -> changed from 2 quality wood to 3 - expensive item that could be resold for significant profit as an exploit. Heater and kite shield unchanged.
+Heraldic Tower/Kite/Heater shield -> REMOVED - can repaint shields in camp. Removed due to bloat.
+
 
 **Changes**
 Lowers cannibal recruitment proc chance 
