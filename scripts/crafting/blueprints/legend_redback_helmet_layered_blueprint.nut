@@ -10,7 +10,7 @@ this.legend_redback_helmet_layered_blueprint <- this.inherit("scripts/crafting/b
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_redback_poison_gland_item",
-				Num = 1
+				Num = 3
 			},
 			{
 				Script = "scripts/items/legend_helmets/helm/legend_helmet_barbute",
@@ -32,7 +32,6 @@ this.legend_redback_helmet_layered_blueprint <- this.inherit("scripts/crafting/b
 	function onCraft( _stash )
 	{
 		local item = this.new("scripts/items/legend_helmets/vanity/legend_helmet_redback_helm");
-		//item.m.Name = "";
 		_stash.add(item);
 	}
 

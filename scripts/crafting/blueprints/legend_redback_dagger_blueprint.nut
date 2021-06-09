@@ -10,7 +10,7 @@ this.legend_redback_dagger_blueprint <- this.inherit("scripts/crafting/blueprint
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_redback_poison_gland_item",
-				Num = 2
+				Num = 3
 			},
 			{
 				Script = "scripts/items/weapons/rondel_dagger",
