@@ -5182,7 +5182,7 @@ Changes the noble's perks that grant temporary defense or attacks to lose the bo
 Noble Footmen/Billman have actual armor values now (Thank you CitreneKing, Seedmaster)
 
 **Fixes**
-Witchhunter helms not showing up fix
+Fixes some helmets not showing up when they should
 Chain lightning now doesn't signify it's supposed to have reduced costs in rain
 Assassin has some bg text now
 Removes a bunch of blueprints that aren't used, due to them being repaintable in the tent. (e.g. Heraldic Tabards, etc)
