@@ -77,11 +77,15 @@ function isUsable()
 
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.legend_coordinating_volleys"))
 			{
-				a.getSkills().add(this.new("scripts/skills/effects/legend_coordinating_volleys"));
+				local effect = this.new("scripts/skills/effects/legend_coordinating_volleys")
+				effect.setCommander(this.getContainer().getActor());
+				a.getSkills().add(effect);
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_coordinating_volleys"));
+		local effect = this.new("scripts/skills/effects/legend_coordinating_volleys")
+		effect.setCommander(this.getContainer().getActor());
+		this.getContainer().add(effect);
 		return true;
 	}
 

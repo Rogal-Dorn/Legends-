@@ -1,4 +1,4 @@
-this.legend_pushing_forward <- this.inherit("scripts/skills/skill", {
+this.legend_pushing_forward <- this.inherit("scripts/skills/effects/legend_commander_abstract_effect", {
 	m = {},
 	function create()
 	{
@@ -38,12 +38,6 @@ this.legend_pushing_forward <- this.inherit("scripts/skills/skill", {
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Attack"
 		});
 		return ret;
-	}
-
-
-	function onTurnEnd()
-	{
-		this.removeSelf();
 	}
 
 });

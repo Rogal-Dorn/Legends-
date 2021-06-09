@@ -1,5 +1,6 @@
-this.legend_holding_the_line <- this.inherit("scripts/skills/skill", {
-	m = {},
+this.legend_holding_the_line <- this.inherit("scripts/skills/effects/legend_commander_abstract_effect", {
+	m = {
+	},
 	function create()
 	{
 		this.m.ID = "effects.legend_holding_the_line";
@@ -11,18 +12,9 @@ this.legend_holding_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
-	
-
 
 	function onUpdate( _properties )
 	{
 		_properties.MeleeDefense += 10;
 	}
-
-
-	function onTurnEnd()
-	{
-		this.removeSelf();
-	}
-
 });

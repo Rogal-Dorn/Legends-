@@ -78,12 +78,16 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.legend_pushing_forward"))
 			{
 
-			a.getSkills().add(this.new("scripts/skills/effects/legend_pushing_forward"));
+				local effect = this.new("scripts/skills/effects/legend_pushing_forward")
+				effect.setCommander(this.getContainer().getActor());
+				a.getSkills().add(effect);
 
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_pushing_forward"));
+		local effect = this.new("scripts/skills/effects/legend_pushing_forward")
+		effect.setCommander(this.getContainer().getActor());
+		this.getContainer().add(effect);
 		return true;
 	}
 
