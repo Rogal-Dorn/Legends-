@@ -19,11 +19,13 @@ this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
 		if (!actor.getSkills().hasSkill("perk.berserk") && !actor.getSkills().hasSkill("effects.dazed") && !actor.getSkills().hasSkill("effects.drunk") && !actor.getSkills().hasSkill("effects.taunted") && !actor.getSkills().hasSkill("effects.hangover") && !actor.getSkills().hasSkill("effects.staggered") && !actor.getSkills().hasSkill("effects.horrified") && !actor.getSkills().hasSkill("injury.severe_concussion") && this.getContainer().getActor().getMoraleState() >= this.Const.MoraleState.Wavering)
 		{
 		_properties.ActionPoints += 1;
+		_properties.FatigueEffectMult *= 1.2;
 		}
 
 		if (actor.getSkills().hasSkill("effects.iron_will") || actor.getSkills().hasSkill("effects.recovery_potion") || actor.getSkills().hasSkill("effects.lionheart_potion") || actor.getSkills().hasSkill("effects.cat_potion") || actor.getSkills().hasSkill("effects.legend_hexe_ichor_potion"))
 		{
 		_properties.ActionPoints += 1;
+		_properties.FatigueEffectMult *= 1.2;
 		}
 	}
 

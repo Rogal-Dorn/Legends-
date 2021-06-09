@@ -6,7 +6,7 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_evasion";
 		this.m.Name = "Evasion";
-		this.m.Description = "Enables the character for one turn to move swiftly and safely through any Zone of Control without incurring any free attacks.";
+		this.m.Description = "Prepares the character safely through any Zone of Control next turn without incurring any free attacks.";
 		this.m.Icon = "skills/evasion.png";
 		this.m.IconDisabled = "skills/evasion_bw.png";
 		this.m.Overlay = "evasion";
@@ -17,8 +17,8 @@ this.legend_evasion <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
-		this.m.ActionPointCost = 2;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}

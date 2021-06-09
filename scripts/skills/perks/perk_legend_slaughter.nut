@@ -22,8 +22,8 @@ this.perk_legend_slaughter <- this.inherit("scripts/skills/skill", {
 
 		if (_targetEntity.getSkills().hasSkill("effects.bleeding") || _targetEntity.getSkills().hasSkill("effects.legend_grazed_effect") && !_targetEntity.isAlliedWith(this.getContainer().getActor()))
 		{
-			_properties.DamageRegularMin *= 1.2;
-			_properties.DamageRegularMax *= 1.2;
+			_properties.DamageRegularMin *= 1.1;
+			_properties.DamageRegularMax *= 1.1;
 		}
 	}
 

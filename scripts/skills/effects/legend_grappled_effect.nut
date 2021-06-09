@@ -84,6 +84,7 @@ this.legend_grappled_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		_properties.StaminaMult *= 0.5;
+		_properties.MeleeDefense *= 0.5;
 		_properties.FatigueRecoveryRate -= 20;
 
 		if (!actor.hasSprite("status_stunned") && !this.getContainer().hasSkill("effects.stunned"))

@@ -137,7 +137,7 @@ this.legend_entice <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-		if (this.Math.rand(1, 100) > this.getHitchance(target))
+		if (this.Math.rand(1, 100) > _user.getBravery())
 		{
 			return false;
 		}

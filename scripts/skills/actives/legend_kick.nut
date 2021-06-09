@@ -243,6 +243,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 				{
 					local muscularity = this.Math.floor(bodyHealth * 0.1);
+					damagemin += muscularity;
 					damagemax += muscularity;
 				}
 			
