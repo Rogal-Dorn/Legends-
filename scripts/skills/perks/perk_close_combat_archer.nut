@@ -21,8 +21,8 @@ this.perk_close_combat_archer <- this.inherit("scripts/skills/skill", {
 		}
 
 		local rdef = this.getContainer().getActor().getCurrentProperties().getRangedDefense()
-		local bonus = 1 + (rdef / 100);
-		local negbonus = 1 - (rdef / 100);
+		local bonus = 1.0 + (rdef / 100);
+		local negbonus = 1.0 - (rdef / 100);
 
 		if (_skill.isRanged())
 		{
