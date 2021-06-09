@@ -5172,7 +5172,7 @@ Fixes ancient laurens being backwards
 Firepot active tooltip notes that the damage is only on end of enemy turns
 Inspired allies with the clarity perk should now properly get 14 AP instead of 13
 
-## 15.0.1.9
+15.0.1.9
 
 **Poss's Perk balance**
 Full force increases melee defense instead of damage 
@@ -5224,3 +5224,9 @@ Assassin has some bg text now
 Removes a bunch of blueprints that aren't used, due to them being repaintable in the tent. (e.g. Heraldic Tabards, etc)
 Damage indicator removed from danger pay perk
 Redback daggers won't apply poison when using the regular stab skill
+
+
+## 15.0.1.10
+
+**Changes**
+Noble Fencers/Halberdiers now get the new armor too
