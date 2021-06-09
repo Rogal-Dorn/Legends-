@@ -1,4 +1,4 @@
-this.legend_coordinating_volleys <- this.inherit("scripts/skills/skill", {
+this.legend_coordinating_volleys <- this.inherit("scripts/skills/effects/legend_commander_abstract_effect", {
 	m = {},
 	function create()
 	{
@@ -11,18 +11,9 @@ this.legend_coordinating_volleys <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
-	
-
 
 	function onUpdate( _properties )
 	{
 		_properties.RangedSkill += 10;
 	}
-
-
-	function onTurnEnd()
-	{
-		this.removeSelf();
-	}
-
 });

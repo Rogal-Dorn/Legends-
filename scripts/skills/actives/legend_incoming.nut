@@ -78,12 +78,16 @@ function isUsable()
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.legend_dodging_incoming"))
 			{
 
-			a.getSkills().add(this.new("scripts/skills/effects/legend_dodging_incoming"));
+			local effect = this.new("scripts/skills/effects/legend_dodging_incoming")
+				effect.setCommander(this.getContainer().getActor());
+				a.getSkills().add(effect);
 
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_dodging_incoming"));
+		local effect = this.new("scripts/skills/effects/legend_dodging_incoming")
+		effect.setCommander(this.getContainer().getActor());
+		this.getContainer().add(effect);
 		return true;
 	}
 

@@ -53,7 +53,7 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
-function isUsable()
+	function isUsable()
 	{
 		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_holding_the_line");
 	}
@@ -77,13 +77,17 @@ function isUsable()
 
 			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("effects.holding_the_line"))
 			{
-
-			a.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
+				local effect = this.new("scripts/skills/effects/legend_holding_the_line")
+				effect.setCommander(this.getContainer().getActor());
+				a.getSkills().add(effect);
 
 			}
 		}
 
-		this.getContainer().add(this.new("scripts/skills/effects/legend_holding_the_line"));
+		local effect = this.new("scripts/skills/effects/legend_holding_the_line")
+		effect.setCommander(this.getContainer().getActor());
+		this.getContainer().add(effect);
+
 		return true;
 	}
 

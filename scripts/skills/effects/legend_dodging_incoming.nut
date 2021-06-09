@@ -1,4 +1,4 @@
-this.legend_dodging_incoming <- this.inherit("scripts/skills/skill", {
+this.legend_dodging_incoming <- this.inherit("scripts/skills/effects/legend_commander_abstract_effect", {
 	m = {},
 	function create()
 	{
@@ -12,17 +12,8 @@ this.legend_dodging_incoming <- this.inherit("scripts/skills/skill", {
 		this.m.IsRemovedAfterBattle = true;
 	}
 	
-
-
 	function onUpdate( _properties )
 	{
 		_properties.RangedDefense += 10;
 	}
-
-
-	function onTurnEnd()
-	{
-		this.removeSelf();
-	}
-
 });
