@@ -5180,6 +5180,7 @@ Adds back in the original beggar challenge, with the 'scaling' beggar challenge 
 Adds armors from fashion show (Thank you Kamy, Theamson)
 Changes the noble's perks that grant temporary defense or attacks to lose the bonuses when the noble's next turn starts
 Noble Footmen/Billman have actual armor values now (Thank you CitreneKing, Seedmaster)
+1/100k chance of a champion bandit rabble, named Poss
 
 **Fixes**
 Fixes some helmets not showing up when they should
