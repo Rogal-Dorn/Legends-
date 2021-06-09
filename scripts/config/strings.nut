@@ -1719,7 +1719,7 @@ gt.Const.Strings.PerkName <- {
 	SteelBrow = "Steel Brow",
 	CoupDeGrace = "Executioner",
 	Weaponmaster = "Weaponmaster",
-	FullForce = "Full Force",
+	FullForce = "Unstoppable Force",
 	FastAdaption = "Fast Adaptation",
 	BloodyHarvest = "Bloody Harvest",
 	SunderingStrikes = "Sundering Strikes",

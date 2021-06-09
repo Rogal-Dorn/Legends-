@@ -5228,9 +5228,10 @@ Redback daggers won't apply poison when using the regular stab skill
 
 ## 15.0.1.10
 
-**Changes**
+**Fixes**
 Noble Fencers/Halberdiers now get the new armor too
 Fixes original beggar commander perk tree
 Fixes muscularity tooltip
 Fixes back to basics making things unhittable
 Fixes peaceful perk
+Full Force renamed to Unstoppable Force
