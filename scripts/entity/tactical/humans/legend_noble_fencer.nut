@@ -86,10 +86,8 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "mail_shirt"],
-			[1, "basic_mail_shirt"],
-			[1, "gambeson"]
+			[1, "seedmaster_noble_armor"],
+			[1, "citreneking_noble_armor"],
 		]));
 
 		if (this.Math.rand(1, 100) <= 33)
