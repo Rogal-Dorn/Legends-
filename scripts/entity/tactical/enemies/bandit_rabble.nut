@@ -267,4 +267,12 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(item);
 		}
 	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+	}
 });
