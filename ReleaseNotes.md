@@ -5188,3 +5188,4 @@ Chain lightning now doesn't signify it's supposed to have reduced costs in rain
 Assassin has some bg text now
 Removes a bunch of blueprints that aren't used, due to them being repaintable in the tent. (e.g. Heraldic Tabards, etc)
 Damage indicator removed from danger pay perk
+Redback daggers won't apply poison when using the regular stab skill
