@@ -90,10 +90,8 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "padded_surcoat"],
-			[1, "mail_shirt"],
-			[1, "basic_mail_shirt"],
-			[1, "gambeson"]
+			[1, "seedmaster_noble_armor"],
+			[1, "citreneking_noble_armor"],
 		]));
 
 		if (this.Math.rand(1, 100) <= 33)

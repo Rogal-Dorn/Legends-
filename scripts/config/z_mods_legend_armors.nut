@@ -1301,6 +1301,68 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "seedmaster_noble_armor", // 110
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_tunic"],
+            [1, "cloth/legend_robes"],
+            [1, "cloth/legend_tunic_noble"]
+        ],
+        Chain = [
+            [4, "chain/legend_armor_mail_shirt"], // 50
+            [2, "chain/legend_armor_reinforced_mail"], // 50
+            [4, "chain/legend_armor_reinforced_mail_shirt"]
+            
+        ],
+        Plate = [
+            [4, "plate/legend_armor_leather_riveted_light"],
+            [6, "plate/legend_armor_leather_scale"],
+            [6, "plate/legend_armor_scale_shirt"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+            [15, ""],
+            [5, "armor_upgrades/legend_leather_neckguard_upgrade"],
+            [5, "armor_upgrades/legend_mail_patch_upgrade"],
+            [2, "armor_upgrades/legend_metal_paldrons_upgrade"]
+        ]
+    }]
+},{
+    ID = "citreneking_noble_armor", // 110
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_gambeson_plain"],
+            [1, "cloth/legend_robes"],
+            [1, "cloth/legend_tunic_noble"]
+        ],
+        Chain = [
+            [4, "chain/legend_armor_basic_mail"], // 50
+            [2, "chain/legend_armor_reinforced_mail"], // 50
+            [4, "chain/legend_armor_reinforced_mail_shirt"]
+            
+        ],
+        Plate = [
+            [4, ""],
+            [1, "plate/legend_armor_leather_riveted"],
+            [1, "plate/legend_armor_leather_riveted_light"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+            [15, ""],
+            [5, "armor_upgrades/legend_leather_neckguard_upgrade"],
+            [5, "armor_upgrades/legend_mail_patch_upgrade"],
+            [2, "armor_upgrades/legend_joint_cover_upgrade"]
+        ]
+    }]
+},{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{

@@ -5179,6 +5179,7 @@ Lowers cannibal recruitment proc chance
 Adds back in the original beggar challenge, with the 'scaling' beggar challenge right below it
 Adds armors from fashion show (Thank you Kamy, Theamson)
 Changes the noble's perks that grant temporary defense or attacks to lose the bonuses when the noble's next turn starts
+Noble Footmen/Billman have actual armor values now (Thank you CitreneKing, Seedmaster)
 
 **Fixes**
 Witchhunter helms not showing up fix

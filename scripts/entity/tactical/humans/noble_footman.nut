@@ -110,10 +110,14 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(shield);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "mail_hauberk", 28],
-			[1, "mail_shirt"],
-			[1, "basic_mail_shirt"]
+			[1, "seedmaster_noble_armor"],
+			[1, "citreneking_noble_armor"]
 		]));
+		// this.m.Items.equip(this.Const.World.Common.pickArmor([
+		// 	[1, "mail_hauberk", 28],
+		// 	[1, "mail_shirt"],
+		// 	[1, "basic_mail_shirt"]
+		// ]));
 
 		local helmet;
 		if (banner <= 4)
