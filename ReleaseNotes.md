@@ -5181,7 +5181,7 @@ entice and push  use your resolve to hit
 Field triage max heal raised from 20 to 40 
 Camouflage requires yo uto be out of sight range of enemies to use it 
 Bakc to basics when you take damage, you gain +5 melee defense until the start of your next run 
-Peaceful - when in battle, grants +3 resolve and +1% xp to all allies 
+Peaceful also grants:  when in battle, grants +3 resolve and +1% xp to all allies 
 Net casting increases range to 5 instead of 4 
 Assured conquest bonus now scales down with each morale state until negative when breaking or fleeing 
 Slaughter damage bonus lowered to 10% 
@@ -5194,6 +5194,7 @@ Ballistics bonus per tile doubled
 Blend in also grants +5 ranged defense and +3 melee defense 
 Evasion costs 8AP and 30 fat, and lasts two turns instead of 1 
 Clarity now also increases fatigue costs by 20% 
+Battleforged damaged reduction reduced from 5% to 3.5% of armor. To reflect the super heavy armors in legends 
 
 **Changes**
 
