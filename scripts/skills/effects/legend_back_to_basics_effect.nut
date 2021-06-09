@@ -1,4 +1,4 @@
-this.legend_back_to_basics_effect <- this.inherit("scripts/skills/effects/legend_commander_abstract_effect", {
+this.legend_back_to_basics_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
@@ -9,6 +9,7 @@ this.legend_back_to_basics_effect <- this.inherit("scripts/skills/effects/legend
 		this.m.IconMini = "mini_incoming_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
+		this.m.IsStacking = true;
 		this.m.IsRemovedAfterBattle = true;
 	}
 	

@@ -27,7 +27,7 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 
 		local a = this.getContainer().getActor();
 
-		a.getSkills().add(this.new("scripts/skills/effects/legend_back_to_basics_effect "));
+		a.getSkills().add(this.new("scripts/skills/effects/legend_back_to_basics_effect"));
 		
 		if (!a.getSkills().hasSkill("effects.rallied"))
 			{

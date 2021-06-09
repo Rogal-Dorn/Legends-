@@ -27,10 +27,10 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 	
 	function onCombatStarted()
 	{
-		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		local actors = this.Tactical.Entities.getInstancesOfFaction(this.getContainer().getActor().getFaction());
 		foreach( a in actors )
 		{
-			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("peaceful_reassured_effect"))
+			if (a.getFaction() == this.getContainer().getActor().getFaction() && !a.getSkills().hasSkill("peaceful_reassured_effect"))
 			{
 				local effect = this.new("scripts/skills/effects/peaceful_reassured_effect")
 				a.getSkills().add(effect);
