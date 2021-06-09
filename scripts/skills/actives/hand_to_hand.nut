@@ -51,7 +51,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
-			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
+			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.5;
 
 			if (offhand != null)
 			{

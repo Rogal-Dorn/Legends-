@@ -5174,8 +5174,32 @@ Inspired allies with the clarity perk should now properly get 14 AP instead of 1
 
 ## 15.0.1.9
 
+**Perk balance**
+Full force increases melee defense instead of damage 
+Muscularit ybuffs both minimum and maximum damage
+entice and push  use your resolve to hit 
+Field triage max heal raised from 20 to 40 
+Camouflage requires yo uto be out of sight range of enemies to use it 
+Bakc to basics when you take damage, you gain +5 melee defense until the start of your next run 
+Peaceful - when in battle, grants +3 resolve and +1% xp to all allies 
+Net casting increases range to 5 instead of 4 
+Assured conquest bonus now scales down with each morale state until negative when breaking or fleeing 
+Slaughter damage bonus lowered to 10% 
+Bloodbath now also counts temporary injuries 
+Grappled now also halves melee defense 
+Unarmed mastery does significantly more damage 
+Push the advantage reduced to +10 skill 
+Overwhelm stacks reduce skills by half as much 
+Ballistics bonus per tile doubled
+Blend in also grants +5 ranged defense and +3 melee defense 
+Evasion costs 8AP and 30 fat, and lasts two turns instead of 1 
+Clarity now also increases fatigue costs by 20% 
+
 **Changes**
+
+
 Lowers cannibal recruitment proc chance
+ 
 Adds back in the original beggar challenge, with the 'scaling' beggar challenge right below it
 Adds armors from fashion show (Thank you Kamy, Theamson)
 Changes the noble's perks that grant temporary defense or attacks to lose the bonuses when the noble's next turn starts

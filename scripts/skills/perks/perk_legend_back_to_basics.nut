@@ -27,7 +27,8 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 
 		local a = this.getContainer().getActor();
 
-
+		a.getSkills().add(this.new("scripts/skills/effects/legend_back_to_basics_effect "));
+		
 		if (!a.getSkills().hasSkill("effects.rallied"))
 			{
 				local difficulty = this.Math.floor(a.getCurrentProperties().getBravery() * 0.5);
@@ -43,6 +44,7 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 					a.getSkills().add(this.new("scripts/skills/effects/rallied_effect"));
 				}
 			}
+		
 	}
 
 

@@ -31,7 +31,7 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemy.";
+		return "Blend into the terrain and remain unseen until attacking or moving adjacent to an enemy. Not usable if visible to opponents";
 	}
 
 	function getTooltip()
@@ -110,6 +110,19 @@ this.legend_hidden_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
+		
+
+		local actor = this.getContainer().getActor();
+		local opponents = actor.getAIAgent().getKnownOpponents();
+
+		foreach( o in opponents )
+		{
+			if (_actor.getTile().IsVisibleForEntity )
+			{
+				return false;
+			}
+		}
+		
 		return true;
 	}
 

@@ -69,7 +69,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = (_properties.IsSpecializedInNets) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		if (_properties.IsSpecializedInNetCasting)
 		{
-			this.m.MaxRange = 4;
+			this.m.MaxRange = 5;
 			this.m.ActionPointCost = 3;
 		}
 	}

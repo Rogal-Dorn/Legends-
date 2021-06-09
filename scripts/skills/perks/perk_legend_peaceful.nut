@@ -24,7 +24,19 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 		_properties.XPGainMult *= 1.05;
 			
 	}
-
+	
+	function onCombatStarted()
+	{
+		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
+		foreach( a in actors )
+		{
+			if (a.getFaction() == _user.getFaction() && !a.getSkills().hasSkill("peaceful_reassured_effect"))
+			{
+				local effect = this.new("scripts/skills/effects/peaceful_reassured_effect")
+				a.getSkills().add(effect);
+			}
+		}
+	}
 
 
 });

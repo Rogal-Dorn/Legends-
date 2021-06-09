@@ -15,7 +15,7 @@ this.perk_ballistics <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.HitChanceAdditionalWithEachTile += 1;
+		_properties.HitChanceAdditionalWithEachTile += 2;
 	}
 
 });

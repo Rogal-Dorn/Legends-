@@ -43,9 +43,7 @@ this.perk_legend_full_force <- this.inherit("scripts/skills/skill", {
 			}
 
 			local bonus = this.Math.abs(fat / 10);
-			_properties.DamageRegularMin += this.Math.floor(bonus);
-			_properties.DamageRegularMax += this.Math.floor(bonus);
-
+			_properties.MeleeDefense += this.Math.floor(bonus);
 	}
 
 });

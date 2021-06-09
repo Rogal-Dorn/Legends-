@@ -21,7 +21,7 @@ this.legend_dog_handling <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 0;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;

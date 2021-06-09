@@ -1,6 +1,7 @@
 this.legend_evasion_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		IsSpent = false
+		IsSpent = false,
+		TurnsLeft = 2
 	},
 	function create()
 	{
@@ -38,7 +39,10 @@ this.legend_evasion_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.removeSelf();
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 
 });
