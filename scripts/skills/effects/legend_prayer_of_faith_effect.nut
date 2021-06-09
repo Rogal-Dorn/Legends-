@@ -1,5 +1,7 @@
 this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Resolve = 0
+	},
 	function create()
 	{
 		this.m.ID = "effects.legend_prayer_of_faith";
@@ -15,8 +17,8 @@ this.legend_prayer_of_faith_effect <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		local actor = this.getContainer().getActor();
-		local resolve = actor.getCurrentProperties().Bravery;
+		// local actor = this.getContainer().getActor();
+		local resolve = this.m.Resolve;
 		local bonus = this.Math.floor(resolve * 0.20);
 
 		return bonus;

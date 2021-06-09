@@ -5235,3 +5235,11 @@ Fixes muscularity tooltip
 Fixes back to basics making things unhittable
 Fixes peaceful perk
 Full Force renamed to Unstoppable Force
+
+15.0.1.11
+
+**Changes**
+Prayer of Life + Faith both work off of the casters resolve
+
+**Fixes**
+Skin ghouls now have Attacks of Opportunity so you can't just walk around them
