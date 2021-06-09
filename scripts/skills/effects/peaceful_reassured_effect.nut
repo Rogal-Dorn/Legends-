@@ -22,8 +22,8 @@ this.peaceful_reassured_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local peacefuls = this.getPeacefuls();
-		local peaceBravery = peacefuls * 3;
+		// local peacefuls = this.getPeacefuls();
+		// local peaceBravery = peacefuls * 3;
 		local ret = [
 			{
 				id = 1,
@@ -39,59 +39,59 @@ this.peaceful_reassured_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + peaceBravery + "[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"
 			},
 			{
 				id = 7,
 				type = "hint",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + peacefuls+ "[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color] Experience Gain"
 			}
 		];
 		return ret;
 	}
 
 
-	function getPeacefuls()
-	{
-		if (!("Entities" in this.Tactical))
-		{
-			return 0;
-		}
-		if (this.Tactical.Entities == null)
-		{
-			return 0;
-		}
+	// function getPeacefuls()
+	// {
+	// 	if (!("Entities" in this.Tactical))
+	// 	{
+	// 		return 0;
+	// 	}
+	// 	if (this.Tactical.Entities == null)
+	// 	{
+	// 		return 0;
+	// 	}
 
-		if (!this.Tactical.isActive())
-		{
-			return 0;
-		}
-		local count = 0.0;
-		local hippies = 0.0;
+	// 	if (!this.Tactical.isActive())
+	// 	{
+	// 		return 0;
+	// 	}
+	// 	local count = 0.0;
+	// 	local hippies = 0.0;
 
-		local actors = this.Tactical.Entities.getAllInstancesAsArray();
+	// 	local actors = this.Tactical.Entities.getAllInstancesAsArray();
 
-		foreach( a in actors )
-		{
-			if (a.getSkills().hasSkill("perk.legend_peaceful") )
-			{
-				hippies += 1.0;
+	// 	foreach( a in actors )
+	// 	{
+	// 		if (a.getSkills().hasSkill("perk.legend_peaceful") )
+	// 		{
+	// 			hippies += 1.0;
 
-			}
-			count += 1.0;
-		}
+	// 		}
+	// 		count += 1.0;
+	// 	}
 
-		return (count == 0) ? 0 : bleeders / count;
-	}
+	// 	return (count == 0) ? 0 : hippies / count;
+	// }
 	
 	function onUpdate( _properties )
 	{
-		local peacefuls = this.getPeacefuls();
-		local peaceBravery = peacefuls * 3;
-		local peaceXP = (100 + peacefuls) * 0.01; 
-		_properties.Bravery += peaceBravery;
-		_properties.XPGainMult *= peaceXP;
+		// local peacefuls = this.getPeacefuls();
+		// local peaceBravery = peacefuls * 3;
+		// local peaceXP = (100 + peacefuls) * 0.01; 
+		_properties.Bravery += 3;
+		_properties.XPGainMult *= 1.01;
 	}
 	
 
