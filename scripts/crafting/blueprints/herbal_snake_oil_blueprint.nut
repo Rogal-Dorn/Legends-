@@ -32,7 +32,7 @@ this.herbal_snake_oil_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/misc/snake_oil_itemm"));
+		_stash.add(this.new("scripts/items/misc/snake_oil_item"));
 	}
 
 });
