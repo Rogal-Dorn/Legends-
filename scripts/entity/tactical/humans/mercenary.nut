@@ -210,7 +210,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				helm.push([1, "theamson_barbute_helmet"])
 			}
 
-			this.m.Items.equip(this.Const.World.Common.pickHelmet())
+			this.m.Items.equip(this.Const.World.Common.pickHelmet(helm))
 		}
 	}
 
