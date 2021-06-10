@@ -48,6 +48,11 @@ this.missing_hand_injury <- this.inherit("scripts/skills/injury_permanent/perman
 		items.getData()[this.Const.ItemSlot.Offhand][0] = -1;
 	}
 
+	function onRemoved()
+	{
+		items.getData()[this.Const.ItemSlot.Offhand][0] = null;
+	}
+
 	function onUpdate (_properties)
 	{
 	}
