@@ -307,8 +307,8 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hood"],
-			[1, "hunters_hat"]
+			[1, "hood"]
+			// [1, "hunters_hat"]
 		]));
 
 	}
