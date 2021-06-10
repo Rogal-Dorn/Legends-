@@ -5248,3 +5248,4 @@ Skin ghouls now have Attacks of Opportunity so you can't just walk around them
 Fixes parrying dagger freezing ai
 Fixes throwing net tooltip
 Fixes zweihander really low armor value
+Fixes kick having 75 fatigue costs lol
