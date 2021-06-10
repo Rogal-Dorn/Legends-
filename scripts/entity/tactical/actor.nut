@@ -332,7 +332,7 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 
 		for( local i = 0; i < c.len(); i = ++i )
 		{
-			c[i] = this.Math.round((c[i] + this.m.CurrentProperties.MovementFatigueCostAdditional) * this.m.CurrentProperties.MovementFatigueCostMult);
+			c[i] = this.Math.round((c[i] + this.m.CurrentProperties.MovementFatigueCostAdditional) * this.m.CurrentProperties.MovementFatigueCostMult * this.m.CurrentProperties.FatigueEffectMult);
 		}
 
 		return c;
