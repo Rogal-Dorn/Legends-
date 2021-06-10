@@ -113,7 +113,7 @@ this.reinforced_throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(skill);
         if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
         {
-            this.m.RangeMax = 4;
+            this.m.RangeMax = 5;
         }
 	}
 

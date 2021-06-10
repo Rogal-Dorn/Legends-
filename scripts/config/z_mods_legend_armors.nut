@@ -1328,7 +1328,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [15, ""],
             [5, "armor_upgrades/legend_leather_neckguard_upgrade"],
             [5, "armor_upgrades/legend_mail_patch_upgrade"],
-            [2, "armor_upgrades/legend_metal_paldrons_upgrade"]
+            [2, "armor_upgrades/legend_metal_pauldrons_upgrade"]
         ]
     }]
 },{
