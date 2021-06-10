@@ -5253,3 +5253,4 @@ Fixes hidden skill
 Fixes skeleton priest backwards helmet
 Fixes mercenaries
 Fixes tile tooltip being wrong when you have clarity
+Fixes missing hand not working with water skin
