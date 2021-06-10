@@ -5252,3 +5252,4 @@ Fixes kick having 75 fatigue costs lol
 Fixes hidden skill
 Fixes skeleton priest backwards helmet
 Fixes mercenaries
+Fixes tile tooltip being wrong when you have clarity
