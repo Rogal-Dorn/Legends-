@@ -245,7 +245,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		]))
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "hunters_hat"],
+			// [1, "hunters_hat"],
 			[1, "hood"]
 		]))
 	}

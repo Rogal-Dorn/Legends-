@@ -14,7 +14,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
+		this.m.Value = 1500;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
