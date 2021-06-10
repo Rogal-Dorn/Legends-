@@ -39,6 +39,11 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
 	}
 
+	function getAmmoMax()
+	{
+		return 0;
+	}
+
 
 
 });
