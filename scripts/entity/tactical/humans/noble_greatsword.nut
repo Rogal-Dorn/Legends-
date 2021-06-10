@@ -91,10 +91,10 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[2, "mail_hauberk", 28],
-			[1, "scale_armor"],
-			[1, "reinforced_mail_hauberk"],
-			[2, "footman_armor"],
+			// [2, "mail_hauberk", 28],
+			// [1, "scale_armor"],
+			// [1, "reinforced_mail_hauberk"],
+			// [2, "footman_armor"],
 			[2, "seedmaster_noble_armor"],
 			[2, "citreneking_noble_armor"]
 		]));
