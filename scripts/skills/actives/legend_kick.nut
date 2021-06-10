@@ -268,7 +268,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		if ("IsSpecializedInFists" in _properties && _properties.IsSpecializedInFists)
 		{
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
-			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? 3 : 4;
+			this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
 		}
 	}
 	
