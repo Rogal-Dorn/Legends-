@@ -5249,3 +5249,6 @@ Fixes parrying dagger freezing ai
 Fixes throwing net tooltip
 Fixes zweihander really low armor value
 Fixes kick having 75 fatigue costs lol
+Fixes hidden skill
+Fixes skeleton priest backwards helmet
+Fixes mercenaries

@@ -1,4 +1,4 @@
-this.perk_legend_clarity<- this.inherit("scripts/skills/skill", {
+this.perk_legend_clarity <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
