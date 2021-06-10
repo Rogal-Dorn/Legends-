@@ -5240,6 +5240,7 @@ Full Force renamed to Unstoppable Force
 
 **Changes**
 Prayer of Life + Faith both work off of the casters resolve
+Adds faction ornaments to Armoursmiths in towns that have Stone Watchtowers
 
 **Fixes**
 Skin ghouls now have Attacks of Opportunity so you can't just walk around them
