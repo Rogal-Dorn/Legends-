@@ -28,7 +28,7 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
-		local fatReduc = actor.getActionPoints() * 5.5
+		local fatReduc = actor.getActionPoints() * 3.0
 		local ret = [
 			{
 				id = 1,
@@ -49,7 +49,7 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Current Fatigue is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + fatReduc + "%[/color]"
+				text = "Current Fatigue is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + fatReduc + "% of maximum fatigue[/color]"
 			}
 		];
 		return ret;
@@ -80,9 +80,9 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local actor = this.getContainer().getActor();
-		local fatMult = this.m.AP * 0.055;
+		local fatMult = this.m.AP * 0.03;
 
-		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigue() );
+		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigueMax() );
 		
 		if (!_user.isHiddenToPlayer())
 		{

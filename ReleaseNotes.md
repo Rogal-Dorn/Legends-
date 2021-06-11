@@ -5238,8 +5238,11 @@ Full Force renamed to Unstoppable Force
 
 15.0.1.11
 
+**Merc's Test Tweaks**
+Prayer of Life/Faith both off of caster's resolve
+Recover Skill works off max fatigue (seriously who uses this perk?)
+
 **Changes**
-Prayer of Life + Faith both work off of the casters resolve
 Adds faction ornaments to Armoursmiths in towns that have Stone Watchtowers
 Adds back a single noble tabard, repaintable using painters tent 
 Hand to Hand with unarmed training made to be (hitpoints + initiative)/3
