@@ -51,7 +51,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
 		{
-			local average = (actor.getInitiative() + actor.getHitpoints()) * 0.5;
+			local average = (actor.getInitiative() + actor.getHitpoints()) / 3;
 
 			if (offhand != null)
 			{
@@ -67,6 +67,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
 		{
 			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
+			ret.Min += this.Math.floor(actor.getHitpoints() * 0.1);
 			ret.HasMusc = true;
 		}
 
@@ -124,13 +125,13 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Unarmed Training inflicts on a range of damage around half the average of your hitpoints and initiative. This will deal [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
 			});
 		}
 		else
 		{
 			ret.push({
-				id = 4,
+				id = 5,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
@@ -140,7 +141,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (mods.HasOffhand)
 		{
 			ret.push({
-				id = 5,
+				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Damage halved due to holding something in your off hand"
@@ -150,7 +151,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (mods.HasBro)
 		{
 			ret.push({
-				id = 5,
+				id = 7,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Includes +25% damage due to background"
@@ -160,7 +161,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		if (mods.HasMusc)
 		{
 			ret.push({
-				id = 6,
+				id = 8,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"

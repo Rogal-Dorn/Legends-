@@ -2430,7 +2430,7 @@ gt.Const.Strings.PerkDescription <- {
 	MageLegendMasteryHailstone = "Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
 	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
 	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile by 6.",
-	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by four. [color=#0b0084]From the Unarmed perk group[/color]",
+	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three. [color=#0b0084]From the Unarmed perk group[/color]",
 	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble. [color=#0b0084]From the Unarmed perk group[/color]",
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight."
 
