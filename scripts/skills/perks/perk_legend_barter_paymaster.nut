@@ -21,6 +21,7 @@ this.perk_legend_barter_paymaster <- this.inherit("scripts/skills/skill", {
 				return;
 			}
 
+		this.World.State.getPlayer().calculateBarterMult();
 		this.World.State.getPlayer().calculateWageModifier();
 	}
 
