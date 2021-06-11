@@ -531,13 +531,13 @@ gt.Const.Tactical.Actor.LegendMummyPriest <- {
 	Stamina = 100,
 	MeleeSkill = 75,
 	RangedSkill = 0,
-	MeleeDefense = 20,
+	MeleeDefense = 25,
 	RangedDefense = 10,
 	Initiative = 85,
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		0,
-		0
+		50,
+		50
 	]
 };
