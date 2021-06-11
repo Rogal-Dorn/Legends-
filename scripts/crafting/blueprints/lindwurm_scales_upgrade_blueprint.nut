@@ -6,6 +6,10 @@ this.lindwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting/bluepri
 		this.m.ID = "blueprint.lindwurm_scales_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/lindwurm_scales_upgrade");
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_lindwurm_scales_upgrade");
+		}
 		this.m.Cost = 350;
 		local ingredients = [
 			{
