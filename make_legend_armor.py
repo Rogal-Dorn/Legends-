@@ -891,7 +891,7 @@ layers = [
     "adesc" : "Has a left sided southern wrap"
 },
 {"name": "legend_southern_wide_belt",           "layer": "tabard", "min": 1, "max": 1, "value" : 50, "con" : 2, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_wide_belt",\
-    "title" :  "Souther Wide Belt", \
+    "title" :  "Southern Wide Belt", \
     "desc" :  "A southern belt", \
     "adesc" : "Has a southern belt"
 },
