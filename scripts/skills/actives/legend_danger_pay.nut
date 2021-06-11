@@ -17,7 +17,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 			"sounds/coins_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -35,6 +35,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 		function getTooltip( )
 	{
 		// local ret = this.getDefaultTooltip();
+		local ret = []
 		ret.extend([
 			{
 				id = 6,
@@ -61,6 +62,12 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 		}
 
 		local target = _targetTile.getEntity();
+
+		if (!this.getContainer().getActor().isAlliedWith(target))
+		{
+			return false;
+		}	
+
 		local wage = target.getBaseProperties().DailyWage;
 		this.m.Cost = this.Math.pow(wage, 1.3);
 		local money = this.World.Assets.getMoney();
