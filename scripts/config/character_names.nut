@@ -1740,4 +1740,4 @@ gt.Const.Strings.PeasantButcherTitles <- [
 	"The Hash-Slinging Slasher"
 ]
 
-gt.Const.Strings.BanditRabbleNames <- [ "Poss" ]
+gt.Const.Strings.BanditRabbleNames <- [ "Poss", "Qetnaf", "Gomon", "Grafmg" ]
