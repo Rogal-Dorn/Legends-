@@ -5226,7 +5226,7 @@ Damage indicator removed from danger pay perk
 Redback daggers won't apply poison when using the regular stab skill
 
 
-## 15.0.1.10
+15.0.1.10
 
 **Fixes**
 Noble Fencers/Halberdiers now get the new armor too
@@ -5262,3 +5262,8 @@ Fixes missing hand not working with water skin
 Fixes mummy curse being 20% damage increase when it should've been 25%
 Danger pay can't select enemies + tooltip fix
 Fixes embalmed priests
+
+## 15.0.1.12
+
+**Fixes**
+Skeleton Lich/Loremaster having backwards helmet fix
