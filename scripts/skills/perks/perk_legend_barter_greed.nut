@@ -28,6 +28,7 @@ this.perk_legend_barter_greed <- this.inherit("scripts/skills/skill", {
 			}
 
 		this.World.State.getPlayer().calculateBarterMult();
+		this.World.State.getPlayer().calculateWageModifier(); 
 	}
 
 	function onRemoved()
