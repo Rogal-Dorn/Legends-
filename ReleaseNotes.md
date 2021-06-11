@@ -5267,3 +5267,4 @@ Fixes embalmed priests
 
 **Fixes**
 Skeleton Lich/Loremaster having backwards helmet fix
+Fixes 'specia' champion units like the Butcher or the Rabble from incorrectly having 1/100 chance of being named
