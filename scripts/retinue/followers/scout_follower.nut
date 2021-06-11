@@ -15,7 +15,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger"
+				Text = "Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger, Master Archer"
 			}
 		];
 	}
@@ -41,7 +41,8 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 			"background.hunter",
 			"background.lumberjack",
 			"background.legend_ranger",
-			"background.legend_commander_ranger"
+			"background.legend_commander_ranger",
+			"background.legend_master_archer"
 		];
 
 		foreach( bro in brothers )
