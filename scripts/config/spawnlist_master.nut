@@ -1492,7 +1492,7 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 45,
 		Row = 0,
 		Script = "scripts/entity/tactical/enemies/legend_mummy_heavy",
-		NameList = this.Const.Strings.AncientSouthernNames,
+		NameList = this.Const.Strings.EmbalmedNobleNames,
 		TitleList = null
 	},
 	LegendMummyQueen = {

@@ -142,6 +142,9 @@ gt.Const.Strings.SouthernNames <- ["Jamil","Uthman","Sayid","Radwan","Yazid","Sa
 
 gt.Const.Strings.AncientSouthernNames <- ["Aahotepre","Achillas","Addaya","Agathocies","Ebana","Ahmose","Amenmose","Amenemhat","Ankhkherednefer","Ankhmakis","Ankherfenedjef","Ankhreshet","Amenemhatankh","Ahmose","Sapair","Amenemhat","Amenemopet","Amenhotep","Amunherkhepeshef","Ankhhaf","Meritamon","Nebetta","Tumerisy","Henutemipet","Sitamun","Tasherit","Anen","Pairy","Huy","Aperei","Amethu","Bay Irsu","Bakenkhonsu","Baqet","Babaef","Bebi","Bakenrenef","Charmian","Duaenre","Djau","Dagi","Djaty","Djedefhor","Djedi","Duaenhor","Djediufankh","Dedi","Djehuty","Gemenefkhonsbak","Harkhebi","Harwa","Hui","Hannu","Herihor","Harkhuf","Hapuseneb","Haremakhet","Harsiese","Hori","Hsekiu","Horbaef","Hornakht","Hakor","Hunefer","Hepu","Hewernef","Ineni","Intef","Isesi","Iuput","Ini Menkhepere","Inkaef","Isu","Itisen","Iunre","Iynefer","Ibiaw","Ibi","Iunmin","Iuty","Iymeru","Kaaper","Kagemni","Khabash","Khabekhnet","Mentuherkhopshef","Mentuhotep","Menna","Merneptah","Minmose","Nahkt","Nakhtmin","Nakhtpaaten",];
 
+gt.Const.Strings.EmbalmedNobleNames <- AncientSouthernNames;
+gt.Const.Strings.EmbalmedNobleNames.push("Von Krolock");
+
 gt.Const.Strings.SouthernNamesLast <- [
 	"Ibn Sahr",
 	"Al-Dani",
