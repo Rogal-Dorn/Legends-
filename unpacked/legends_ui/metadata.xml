@@ -125,6 +125,7 @@
 <sprite id="halberdier_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\halberdier_orientation.png" />
 <sprite id="mummy_light_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_light_orientation.png" />
 <sprite id="mummy_medium_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
+<sprite id="mummy_priest_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
 <sprite id="mummy_heavy_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_heavy_orientation.png" />
 <sprite id="mummy_queen_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_queen_orientation.png" />
 <sprite id="kobold_fighter_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\kobold_fighter_orientation.png" />

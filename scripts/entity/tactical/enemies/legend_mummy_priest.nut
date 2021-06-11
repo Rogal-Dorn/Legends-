@@ -2,10 +2,10 @@ this.legend_mummy_priest <- this.inherit("scripts/entity/tactical/legend_mummy",
 	m = {},
 	function create()
 	{
-        this.legend_mummy.create();
 		this.m.Type = this.Const.EntityType.LegendMummyPriest;
+		this.legend_mummy.create();
 		this.m.XP = this.Const.Tactical.Actor.LegendMummyPriest.XP;
-		this.m.ResurrectionValue = 10.0;
+		this.m.ResurrectionValue = 2.0;
 		this.m.ResurrectWithScript = "scripts/entity/tactical/enemies/legend_mummy_priest";
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_mummy_queen_agent");
 		this.m.AIAgent.setActor(this);
@@ -51,7 +51,6 @@ this.legend_mummy_priest <- this.inherit("scripts/entity/tactical/legend_mummy",
 
 	function assignRandomEquipment()
 	{
-
 		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_kopis"));
 		
 		local armor = [

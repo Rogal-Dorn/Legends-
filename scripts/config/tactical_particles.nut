@@ -2624,7 +2624,7 @@ gt.Const.Tactical.LightningParticles <- [
 		]
 	}
 ];
-gt.Const.Tactical.SmokeParticles <- [
+gt.Const.Tactical.SmokeParticles <- [ 
 	{
 		Delay = 0,
 		Quantity = 50,
@@ -2692,8 +2692,8 @@ gt.Const.Tactical.SmokeParticles <- [
 		LifeTimeQuantity = 0,
 		SpawnRate = 2,
 		Brushes = [
-			"dust_light_01",
-			"dust_light_02"
+			"dust_01",
+			"dust_02"
 		],
 		Stages = [
 			{
