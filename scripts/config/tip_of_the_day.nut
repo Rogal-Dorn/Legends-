@@ -91,7 +91,7 @@ gt.Const.TipOfTheDay <- [
 	"You can zoom in and out using the mouse wheel or Page Up and Page Down keys.",
 	"Spears are good defensive weapons due to their Spearwall ability.",
 	"Expect to lose some mercenaries.",
-	"Estocs are versitle two handed swords, but are quite frgaile in comparison.",
+	"Estocs are versitle two handed swords, but are quite fragile in comparison.",
 	"Consider using warbrands or longswords to better benefit from double strike or reach advantage.",
 	"All legendary beasts have weaknesses. Except Stollwurms. Stollwurms don\'t care.",
 	"Losing is fun.",
