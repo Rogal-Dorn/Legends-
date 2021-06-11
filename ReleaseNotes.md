@@ -5243,6 +5243,7 @@ Prayer of Life + Faith both work off of the casters resolve
 Adds faction ornaments to Armoursmiths in towns that have Stone Watchtowers
 Adds back a single noble tabard, repaintable using painters tent 
 Hand to Hand with unarmed training made to be (hitpoints + initiative)/3
+Scout follower now gets master archer as a possible background
 
 **Fixes**
 Skin ghouls now have Attacks of Opportunity so you can't just walk around them
