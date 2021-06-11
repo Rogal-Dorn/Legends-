@@ -210,7 +210,8 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 
 			if (unit.Variant > 0)
 			{
-				if (!this.Const.DLC.Wildmen || this.Math.rand(1, 100) > unit.Variant + mb + (this.World.getTime().Days > 100 ? 0 : -1))
+				local upperBound = ("DieRoll" in unit) ? unit.DieRoll : 100;
+				if (!this.Const.DLC.Wildmen || this.Math.rand(1, upperBound) > unit.Variant + mb + (this.World.getTime().Days > 100 ? 0 : -1))
 				{
 					unit.Variant = 0;
 				}
