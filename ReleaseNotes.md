@@ -5257,3 +5257,4 @@ Fixes tile tooltip being wrong when you have clarity
 Fixes missing hand not working with water skin
 Fixes mummy curse being 20% damage increase when it should've been 25%
 Danger pay can't select enemies + tooltip fix
+Fixes embalmed priests
