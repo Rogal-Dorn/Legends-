@@ -1775,6 +1775,63 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_top_feather"],
         ]
     }]
+    },
+	{
+        ID = "red_bandit_leader_helmet", //215
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barbute"] //140, -7, -2
+        ],
+        Tops = [
+            [1, "top/legend_helmet_wallace_sallet_visor"] //60, -2, -1
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_headband", 1],
+        ]
+    }]
+    },
+	{
+        ID = "brown_hedgeknight_helmet", //179
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_nordic_helm_low"] //140, -7, -2
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_plait", 7],
+        ]
+    }]
+    },
+	{
+        ID = "southern_knight_helmet", //200 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_southern_chain_hood"],
+            [1, "hood/legend_helmet_southern_open_chain_hood"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_conic_helm"] //140, -7, -2
+        ],
+        Tops = [
+            [1, "helm_legend_helmet_facemask"]
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_southern_patterned_headwrap"],
+            [1, "vanity/legend_helmet_southern_turban_open"],
+            [1, "vanity/legend_helmet_southern_turban_full"],
+            [1, "vanity/legend_helmet_southern_turban_feather"]
+        ]
+    }]
     }
 ])
 

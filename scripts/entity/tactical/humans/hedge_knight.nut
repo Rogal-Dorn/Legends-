@@ -118,7 +118,8 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[1, "coat_of_plates"],
 				[1, "coat_of_scales"],
 				[1, "reinforced_mail_hauberk"],
-				[1, "heavy_lamellar_armor"]
+				[1, "heavy_lamellar_armor"],
+				[1, "brown_hedgeknight_armor"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
 				armor
@@ -151,6 +152,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[2, "legend_enclave_vanilla_kettle_sallet_01"],
 				[2, "legend_enclave_vanilla_kettle_sallet_02"],
 				[2, "legend_enclave_vanilla_kettle_sallet_03"]
+				[2, "brown_hedgeknight_helmet"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				helmet

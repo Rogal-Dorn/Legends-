@@ -132,7 +132,8 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
 				[1, "oriental/plated_nomad_mail"],
-				[1, "oriental/southern_long_mail_with_padding"]
+				[1, "oriental/southern_long_mail_with_padding"],
+				[1, "southern_knight_armor"]
 			]));
 		}
 
@@ -146,7 +147,8 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
-				helmet.push([1, "oriental/kamy_southern_helmet"])
+				helmet.push([4, "oriental/kamy_southern_helmet"])
+				helmet.push([4, "southern_knight_helmet"])
 			}
 
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));

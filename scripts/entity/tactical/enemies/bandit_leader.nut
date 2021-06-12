@@ -148,7 +148,8 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				armor.extend([
 					[1, "footman_armor"],
 					[1, "leather_scale_armor"],
-					[1, "light_scale_armor"]
+					[1, "light_scale_armor"],
+					[1, "red_bandit_leader_armor"]
 				]);
 			}
 
@@ -166,7 +167,8 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 				[1, "nasal_helmet_with_mail"],
 				[1, "flat_top_with_mail"],
 				[1, "padded_nasal_helmet"],
-				[1, "bascinet_with_mail"]
+				[1, "bascinet_with_mail"],
+				[1, "red_bandit_leader_helmet"]
 			])
 			if (item != null)
 			{

@@ -1363,6 +1363,88 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "brown_hedgeknight_armor", // 292
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_gambeson_plain"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_basic_mail"]
+            
+        ],
+        Plate = [
+            [1, "plate/legend_armor_plate_chest"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_wrap_left", 6]
+        ],
+        Attachments =[
+            [1, "armor_upgrades/legend_double_mail_upgrade"]
+        ]
+    }]
+},{
+    ID = "red_bandit_leader_armor", // 215
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_padded_surcoat_plain", 41],
+            [1, "cloth/legend_padded_surcoat_plain", 17]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_basic_mail"]
+        ],
+        Plate = [
+            [1, "plate/legend_armor_scale"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_wrap_left", 6]
+        ],
+        Attachments =[
+            [1, "armor_upgrades/legend_mail_patch_upgrade"]
+        ]
+    }]
+},{
+    ID = "southern_knight_armor", // 215
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [10, "cloth/legend_southern_robe"],
+            [10, "cloth/legend_southern_split_gambeson"],
+            [10, "cloth/legend_southern_gambeson"],
+            [5, "cloth/legend_southern_tunic"],
+            [5, "cloth/legend_gambeson"],
+            [2, "cloth/legend_gambeson_plain"],
+            [2, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_southern_mail"]
+        ],
+        Plate = [
+            [1, "plate/legend_southern_plate_full"]
+        ],
+        Cloak = [
+            [1, ""]
+            [1, "cloak/legend_southern_scarf"],
+            [1, "cloak/legend_animal_pelt"],
+            [1, "cloak/legend_southern_scarf_wrap"]
+        ],
+        Tabard = [
+            [3, ""]
+            [2, "tabard/legend_southern_wrap_left"],
+            [1, "tabard/legend_southern_wrap"],
+            [1, "tabard/legend_southern_shoulder_cloth"]
+        ],
+        Attachments =[
+            [6, ""],
+            [4, "armor_upgrades/legend_mail_patch_upgrade"]
+        ]
+    }]
+},{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{
