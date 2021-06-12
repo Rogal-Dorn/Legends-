@@ -53,7 +53,7 @@ this.legend_hexe_leader_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 			foreach( a in allies )
 			{
-				if (a.getType() != this.Const.EntityType.Hexe && !a.isNonCombatant() && !a.getSkills().hasSkill("effects.fake_charmed") && !a.getSkills().hasSkill("effects.charmed"))
+				if (a.getType() != this.Const.EntityType.Hexe && a.getType() != this.Const.EntityType.LegendHexeLeader && !a.isNonCombatant() && !a.getSkills().hasSkill("effects.fake_charmed") && !a.getSkills().hasSkill("effects.charmed"))
 				{
 					a.getSkills().add(this.new("scripts/skills/effects/fake_charmed_effect"));
 				}

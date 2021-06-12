@@ -79,7 +79,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 				{
 					local effect = this.new("scripts/skills/effects/legend_prayer_of_life_effect");
 					effect.m.Resolve = this.getContainer().getActor().getBravery();
-					a.getSkills().add();
+					a.getSkills().add(effect);
 				}
 			}
 

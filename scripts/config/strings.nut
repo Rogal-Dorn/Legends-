@@ -740,16 +740,16 @@ gt.Const.Strings.CityStateNames <- [
 	"El-Hadet",
 	"Al-Anwar",
 	"Hadiqat Musawara",
-    "Fakhar Jildur",
-    "Sharie",
-    "Biwatiqa",
-    "Sahat Almaerakat",
-    "Sanaruk",
-    "Makan Muqadas",
-    "Zula",
-    "Nuqtat Alnakhas",
-    "Ghalumsandis",
-    "Madinat Alzamard"
+	"Fakhar Jildur",
+	"Sharie",
+	"Biwatiqa",
+	"Sahat Almaerakat",
+	"Sanaruk",
+	"Makan Muqadas",
+	"Zula",
+	"Nuqtat Alnakhas",
+	"Ghalumsandis",
+	"Madinat Alzamard"
 ];
 gt.Const.Strings.CityStateTitles <- [
 	"City State of",
@@ -2313,7 +2313,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies less likely to attack you instead of an ally, also grants +5 Ranged Defense and +3 Melee Defense. \n[color=#0b0084]From the Devious perk group[/color]",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers. \n[color=#0b0084]From the Staff perk group[/color]",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a staff. 50% of this bonus is applied to swordstaves and instruments. \n[color=#0b0084]From the Staff perk group[/color]",
-	LegendDrumsOfWar = "Learn powerful rythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
+	LegendDrumsOfWar = "Learn powerful rhythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped. \n[color=#0b0084]From the Bard perk group[/color]",
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the AP and fatigue costs of Hand to Hand, Kick and Grapple. Increases armor penetration and increases chance to hit for Hand to Hand, adds damage to Kick. \n[color=#0b0084]From the Unarmed perk group[/color]",
 	LegendKick = "Put all your force into a lunging kick, pushing your opponent away and inflicting fatigue. Grants the \'Kick\' ability. Targets will take damage if falling off an edge.  A successful kick cancels Shieldwall, Spearwall and Riposte. \n[color=#0b0084]From the Unarmed perk group[/color] ",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns. Grants the \'Grapple\' ability, which can only be used with your offhand free. \n[color=#0b0084]From the Unarmed perk group[/color]",
@@ -2384,7 +2384,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendBarterGreed = "Lust for gold and self interest can be a double edged sword, an immediate benefit in one place, may come at the expense of others. Gain 7.5% barter, but halve the barter bonus from all other sources including your own. [color=#0b0084]From the Barter perk group[/color]",
 	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as hitpoints at the end of their turn. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
 	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. Does not work on cultists. [color=#0b0084]From the Faith perk group[/color] ",
-	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurect for two turns.  [color=#0b0084]From the Faith perk group[/color] ",
+	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurrect for two turns.  [color=#0b0084]From the Faith perk group[/color] ",
 	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle. ",
 	LegendIncoming = "Providing advanced warning of an incoming volley can allow your troops to find cover or step aside. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn",
 	LegendZombieBite = "braaaains",
@@ -2433,7 +2433,6 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three. [color=#0b0084]From the Unarmed perk group[/color]",
 	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble. [color=#0b0084]From the Unarmed perk group[/color]",
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight."
-
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

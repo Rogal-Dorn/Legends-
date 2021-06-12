@@ -52,7 +52,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_life"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_life"));
 		
 		bros[1].m.PerkPointsSpent += 1;
 		local items = bros[1].getItems();
@@ -87,7 +87,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[3].m.LevelUps = 1;
 		bros[3].m.Level = 2;
 		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
 		bros[3].m.PerkPointsSpent += 1;
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
