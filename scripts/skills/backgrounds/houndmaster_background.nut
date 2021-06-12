@@ -178,7 +178,14 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		{
 			items.equip(this.new("scripts/items/tools/throwing_net"));
 		}
-
+		if (this.Math.rand(1, 100) >= 50)
+		{
+			items.equip(this.new("scripts/items/accessory/wardog_item"))
+		}
+		else
+		{
+			items.equip(this.new("scripts/items/accessory/warhound_item"))
+		}
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "ragged_surcoat"]
 		]));
