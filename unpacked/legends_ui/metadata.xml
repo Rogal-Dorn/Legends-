@@ -83,6 +83,8 @@
 <sprite id="mini_dog_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_dog_circle.png" />
 <sprite id="mini_falcon_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_falcon_circle.png" />
 <sprite id="mini_catapult_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_catapult_circle.png" />
+<sprite id="mini_incoming_circle" ic="FF23165B" img="skills\mini\mini_incoming_circle.png" />
+
 
 <sprite id="cat_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\cat_orientation.png" />
 <sprite id="rabble_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\rabble_orientation.png" />
