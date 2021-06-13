@@ -1434,7 +1434,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [1, "cloak/legend_southern_scarf_wrap"]
         ],
         Tabard = [
-            [3, ""]
+            [3, ""],
             [2, "tabard/legend_southern_wrap_left"],
             [1, "tabard/legend_southern_wrap"],
             [1, "tabard/legend_southern_shoulder_cloth"]
