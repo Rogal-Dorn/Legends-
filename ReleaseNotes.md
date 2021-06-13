@@ -5271,3 +5271,6 @@ Fixes 'specia' champion units like the Butcher or the Rabble from incorrectly ha
 Fixes hexe leaders being charmed by other hexe (lol)
 Fixes prayer of faith/life skills
 Fixes some troupe scenario skills being swapped
+Donkeys are not content with reserves
+Should fix southerners not having legendary armors
+Kopis icon fixed
