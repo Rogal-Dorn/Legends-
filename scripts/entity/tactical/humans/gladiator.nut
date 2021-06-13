@@ -132,7 +132,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.getSprite("miniboss").setBrush("bust_miniboss");
-		local r = this.Math.rand(1, 4);
+		local r = this.Math.rand(1, 3);
 
 		local armor = clone this.Const.Items.NamedSouthernArmors;
 		local helmets = clone this.Const.Items.NamedSouthernHelmets;
@@ -171,39 +171,13 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else
 			{
-				this.m.Items.equip(this.Const.World.Common.pickArmor(
+				this.m.Items.equip(this.Const.World.Common.pickHelmet(
 					this.Const.World.Common.convNameToList(
 						helmets
 					)
 				));
 			}
 
-		}
-		else if (this.Math.rand(0, 1) == 0)
-		{
-			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
-			foreach(h in this.Const.Items.NamedSouthernHelmets)
-			{
-				helms.push(
-					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ]
-				);
-			}
-			//helms is an array of arrays so should work (:
-			local helm = this.Const.World.Common.pickHelmet(helms)
-			this.m.Items.equip(helm);
-		}
-		else
-		{
-			local helms = []; //honestly just easier to slice the helmets/ from the beginning lol
-			foreach(h in this.Const.Items.NamedHelmets)
-			{
-				helms.push(
-					[ 1, h.slice(h.find("helmets/") + "helmets/".len()) ]
-				);
-			}
-			//helms is an array of arrays so should work (:
-			local helm = this.Const.World.Common.pickHelmet(helms)
-			this.m.Items.equip(helm);
 		}
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
