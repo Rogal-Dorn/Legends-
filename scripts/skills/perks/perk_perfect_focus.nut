@@ -5,8 +5,8 @@ this.perk_perfect_focus <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.perfect_focus";
 		this.m.Name = this.Const.Strings.PerkName.PerfectFocus;
 		this.m.Description = this.Const.Strings.PerkDescription.PerfectFocus;
-		this.m.Icon = "ui/perks/perfect_focus.png";
-		this.m.IconDisabled = "ui/perks/perfect_focus_bw.png"
+		this.m.Icon = "ui/perks/perfectfocus_circle.png";
+		this.m.IconDisabled = "ui/perks/perfectfocus_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
