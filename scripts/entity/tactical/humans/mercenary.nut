@@ -175,7 +175,10 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 			[1, "lamellar_harness"],
 			[1, "footman_armor"],
 			[1, "light_scale_armor"],
-			[1, "leather_scale_armor"]
+			[1, "leather_scale_armor"],
+			[1, "northern_mercenary_armor_00"],
+			[1, "northern_mercenary_armor_01"],
+			[1, "northern_mercenary_armor_02"]
 		]));
 
 		if (this.Math.rand(1, 100) <= 95)
@@ -208,6 +211,9 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 			if (this.LegendsMod.Configs().LegendArmorsEnabled())
 			{
 				helm.push([1, "theamson_barbute_helmet"])
+				helm.push([1, "northern_mercenary_helmet_00"])
+				helm.push([1, "northern_mercenary_helmet_01"])
+				helm.push([1, "northern_mercenary_helmet_02"])
 			}
 
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helm))

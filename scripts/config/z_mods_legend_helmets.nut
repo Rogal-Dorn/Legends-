@@ -1823,13 +1823,84 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "helm/legend_helmet_conic_helm"] //140, -7, -2
         ],
         Tops = [
-            [1, "helm_legend_helmet_facemask"]
+            [1, "top/legend_helmet_facemask"]
         ],
         Vanity = [
             [1, "vanity/legend_helmet_southern_patterned_headwrap"],
             [1, "vanity/legend_helmet_southern_turban_open"],
             [1, "vanity/legend_helmet_southern_turban_full"],
             [1, "vanity/legend_helmet_southern_turban_feather"]
+        ]
+    }]
+    },
+	{
+        ID = "northern_mercenary_helmet_00", //200 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_open_chain_hood"],
+            [1, "hood/legend_helmet_rusty_chain_hood"],
+            [1, "hood/legend_helmet_chain_hood"],
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_nordic_helm_low"], 
+            [1, "helm/legend_helmet_nordic_helm"], 
+            [1, "helm/legend_helmet_nordic_helm_high"] 
+        ],
+        Tops = [
+            [0, "top/legend_helmet_facemask"]
+        ],
+        Vanity = [
+            [0, "vanity/legend_helmet_southern_patterned_headwrap"],
+            [0, "vanity/legend_helmet_southern_turban_open"],
+            [0, "vanity/legend_helmet_southern_turban_full"],
+            [0, "vanity/legend_helmet_southern_turban_feather"]
+        ]
+    }]
+    },
+	{
+        ID = "northern_mercenary_helmet_01", //160 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"],
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_viking_helm"]
+        ],
+        Tops = [
+            [1, ""],
+            [1, "top/legend_helmet_chain_attachment"], //40
+        ],
+        Vanity = [
+            [2, ""],
+            [1, "vanity/legend_helmet_antler"],
+            [1, "vanity/legend_helmet_bull_horns"],
+            [1, "vanity/legend_helmet_goat_horns"],
+            [1, "vanity/legend_helmet_horn_decorations"]
+        ]
+    }]
+    },
+	{
+        ID = "northern_mercenary_helmet_02", //160 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"],
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_nordic_helm"], //185
+        ],
+        Tops = [
+            [1, ""],
+            [1, "top/legend_helmet_eyemask"]
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_orc_bones"],
+            [1, "vanity/legend_helmet_orc_great_horns"]
         ]
     }]
     }

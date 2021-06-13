@@ -1445,6 +1445,97 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "northern_mercenary_armor_00", // heavier than 01 ~200
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [2, "cloth/legend_gambeson"],
+            [2, "cloth/legend_gambeson_plain"],
+            [5, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_hauberk"],
+            [1, "chain/legend_armor_hauberk_full"]
+        ],
+        Plate = [
+            [8, ""],
+            [1, "plate/legend_armor_scale_coat_rotten"],
+            [1, "plate/legend_armor_scale_shirt"]
+        ],
+        Cloak = [
+            [1, ""],
+            [2, "tabard/legend_shoulder_cloth", 2]
+        ],
+        Tabard = [
+            
+        ],
+        Attachments =[
+            [0, ""],
+            [4, "armor_upgrades/legend_double_mail_upgrade"],
+            [4, "armor_upgrades/legend_direwolf_pelt_upgrade"]
+        ]
+    }]
+},{
+    ID = "northern_mercenary_armor_01", // lighter than 00 ~170
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [2, "cloth/legend_gambeson"],
+            [2, "cloth/legend_gambeson_plain"],
+            [5, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_reinforced_mail"],
+            [1, "chain/legend_armor_reinforced_mail_shirt"],
+            [1, "chain/legend_armor_reinforced_worn_mail"]
+        ],
+        Plate = [
+            [0, "plate/legend_southern_plate_full"]
+        ],
+        Cloak = [
+            [1, ""],
+            [2, "tabard/legend_shoulder_cloth", 2]
+        ],
+        Tabard = [
+            
+        ],
+        Attachments =[
+            [0, ""],
+            [4, "armor_upgrades/legend_metal_plating_upgrade"],
+            [4, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
+        ]
+    }]
+},{
+    ID = "northern_mercenary_armor_02", // ~~250
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [2, "cloth/legend_gambeson"],
+            [2, "cloth/legend_gambeson_plain"],
+            [5, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_reinforced_mail"],
+            [1, "chain/legend_armor_reinforced_mail_shirt"],
+            [1, "chain/legend_armor_reinforced_worn_mail"]
+        ],
+        Plate = [
+            [0, "plate/legend_southern_plate_full"]
+        ],
+        Cloak = [
+            [1, ""],
+            [2, "tabard/legend_shoulder_cloth", 2]
+        ],
+        Tabard = [
+            
+        ],
+        Attachments =[
+            [0, ""],
+            [4, "armor_upgrades/legend_metal_plating_upgrade"],
+            [4, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
+        ]
+    }]
+},{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{
