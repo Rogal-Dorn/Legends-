@@ -7,8 +7,8 @@ this.legend_kopis <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = "Kopis";
 		this.m.Description = "A lightweight, curved sword good at piercing armor";
 		this.m.Categories = "Sword, One-Handed";
-		this.m.IconLarge = "weapons/melee/sword_02.png";
-		this.m.Icon = "weapons/melee/sword_02_70x70.png";
+		this.m.IconLarge = "weapons/melee/legend_kopis_01.png";
+		this.m.Icon = "weapons/melee/legend_kopis_01_70x70.png";
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
