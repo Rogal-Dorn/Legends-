@@ -39,5 +39,6 @@ this.legend_donkey_injury <- this.inherit("scripts/skills/injury_permanent/perma
 
 	function onUpdate (_properties)
 	{
+		_properties.IsContentWithBeingInReserve = true;
 	}
 });
