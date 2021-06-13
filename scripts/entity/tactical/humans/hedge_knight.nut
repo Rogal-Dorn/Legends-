@@ -151,7 +151,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 				[2, "legend_enclave_vanilla_great_bascinet_03"],
 				[2, "legend_enclave_vanilla_kettle_sallet_01"],
 				[2, "legend_enclave_vanilla_kettle_sallet_02"],
-				[2, "legend_enclave_vanilla_kettle_sallet_03"]
+				[2, "legend_enclave_vanilla_kettle_sallet_03"],
 				[2, "brown_hedgeknight_helmet"]
 			];
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
@@ -200,7 +200,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			"shields/named/named_bandit_kite_shield",
 			"shields/named/named_bandit_heater_shield"
 		]);
-
+		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		//we just dont give these guys famed items? dno, just uncomment this if we decide to do so
 		// this.m.Items.equip(this.Const.World.Common.pickArmor([
 		// 	[1, "named/brown_coat_of_plates_armor"],
