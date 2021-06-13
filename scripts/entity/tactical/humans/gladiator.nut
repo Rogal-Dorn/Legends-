@@ -134,6 +134,9 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local r = this.Math.rand(1, 4);
 
+		local armor = clone this.Const.Items.NamedSouthernArmors;
+		local helmets = clone this.Const.Items.NamedSouthernHelmets;
+
 		if (r == 1)
 		{
 			if (this.Math.rand(0, 1) == 0)
@@ -162,7 +165,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Items.equip(this.Const.World.Common.pickArmor(
 					this.Const.World.Common.convNameToList(
-						this.Const.Items.NamedSouthernArmors
+						armor
 					)
 				));
 			}
@@ -170,7 +173,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Items.equip(this.Const.World.Common.pickArmor(
 					this.Const.World.Common.convNameToList(
-						this.Const.Items.NamedArmors
+						helmets
 					)
 				));
 			}

@@ -139,7 +139,7 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 			]);
 		}
 
-		local armor = this.Const.Items.NamedSouthernArmors;
+		local armor = clone this.Const.Items.NamedSouthernArmors;
 		local r = this.Math.rand(1, 2);
 
 		if (r == 1)
@@ -149,7 +149,7 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 		else
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				this.Const.World.Common.convNameToList(this.Const.Items.NamedSouthernArmors)
+				this.Const.World.Common.convNameToList(armor)
 			));
 		}
 

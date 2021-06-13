@@ -196,7 +196,7 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 				"ammo/powder_bag"
 			]
 		];
-		local armors = this.Const.Items.NamedSouthernArmors;
+		local armors = clone this.Const.Items.NamedSouthernArmors;
 
 		armors.push("armor/named/golden_scale_armor");
 		if (this.Const.DLC.Wildmen)
@@ -204,7 +204,7 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 			armors.push("armor/named/named_golden_lamellar_armor");
 		}
 
-		local helmets = this.Const.Items.NamedSouthernHelmets;
+		local helmets = clone this.Const.Items.NamedSouthernHelmets;
 
 		local r = this.Math.rand(1, 3);
 

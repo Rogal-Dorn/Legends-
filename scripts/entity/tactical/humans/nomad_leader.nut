@@ -165,6 +165,9 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("miniboss").setBrush("bust_miniboss");
 		local r = this.Math.rand(1, 4);
 
+		local armor = clone this.Const.Items.NamedSouthernArmors;
+		local helmets = clone this.Const.Items.NamedSouthernHelmets;
+
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/" + this.Const.Items.NamedSouthernMeleeWeapons[this.Math.rand(0, this.Const.Items.NamedSouthernMeleeWeapons.len() - 1)]));
@@ -177,7 +180,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor(
 				this.Const.World.Common.convNameToList(
-					this.Const.Items.NamedSouthernArmors
+					armor
 				)
 				));
 		}
@@ -185,7 +188,7 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(
 				this.Const.World.Common.convNameToList(
-					this.Const.Items.NamedSouthernHelmets
+					helmets
 				)
 			));
 		}
