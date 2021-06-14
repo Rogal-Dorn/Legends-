@@ -233,6 +233,19 @@
         this.m.BaseProperties.Armor[_bodyPart] = _value;
     }
 
+
+	o.getFatigueCosts = function ()
+	{
+		local c = clone this.m.FatigueCosts;
+
+		for( local i = 0; i < c.len(); i = ++i )
+		{
+			c[i] = this.Math.round((c[i] + this.m.CurrentProperties.MovementFatigueCostAdditional) * this.m.CurrentProperties.MovementFatigueCostMult * this.m.CurrentProperties.FatigueEffectMult);
+		}
+
+		return c;
+	}
+
 	o.onMissed = function ( _attacker, _skill, _dontShake = false )
 	{
 		if (!_dontShake && !this.isHiddenToPlayer() && this.m.IsShakingOnHit && (!_skill.isRanged() || _attacker.getTile().getDistanceTo(this.getTile()) == 1) && !this.Tactical.getNavigator().isTravelling(this))
