@@ -61,9 +61,9 @@ this.asset_manager <- {
 		ExtraLootChance = 0,
 		FootprintVision = 1.0,
 		AverageMoodState = this.Const.MoodState.Neutral,
-		BrothersMax = 27,
-		BrothersMaxInCombat = 27,
-		BrothersScaleMax = 27,
+		BrothersMax = 25,
+		BrothersMaxInCombat = 25,
+		BrothersScaleMax = 25,
 		BrothersScaleMin = 1,
 		LastDayPaid = 1,
 		LastDayResourcesUpdated = 0,
@@ -722,9 +722,9 @@ this.asset_manager <- {
 
 	function resetToDefaults()
 	{
-		this.m.BrothersMax = 27;
-		this.m.BrothersMaxInCombat = 27;
-		this.m.BrothersScaleMax = 27;
+		this.m.BrothersMax = 25;
+		this.m.BrothersMaxInCombat = 25;
+		this.m.BrothersScaleMax = 25;
 		this.m.BrothersScaleMin = 1;
 		this.m.BusinessReputationRate = 1.0;
 		this.m.BuyPriceMult = 1.0;

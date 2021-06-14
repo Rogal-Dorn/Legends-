@@ -5285,3 +5285,4 @@ Fixes mercenaries not getting clarity perk on legendary
 ## 15.0.1.13
 
 Overall lowers mummy hitpoints
+Makes 25 the max hire limit for origins now, way easier fix for some weird bugs happening

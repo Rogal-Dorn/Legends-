@@ -42,7 +42,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		local count = 0;
 		foreach( i, bro in roster )
 		{
-			if (i >= 27)
+			if (i >= 25)
 			{
 				break;
 			}
