@@ -167,7 +167,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		}
-		this.World.Assets.m.BrothersMax = 27;
+		this.World.Assets.m.BrothersMax = 25;
 		this.World.Flags.set("IsLegendsDruid", true);
 	}
 
