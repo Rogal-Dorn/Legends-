@@ -20,7 +20,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [1, "hood/legend_helmet_chain_hood"] //80
     ],
     Helms = [
-        [1, "helm/legend_helmet_great_helm"] //220
+        [1, "helm/legend_helmet_heavy_plate_helm_named"] //220
     ],
     Tops = [],
     Vanity = [
@@ -41,20 +41,21 @@ gt.Const.LegendMod.HelmObjs.extend([
     Vanity = []
 }]
 },
-// { //todo
-//     ID = "named/golden_feathers_helmet", //240
-//     Script = "", //TODO
-//     Sets = [{
-//      Hoods = [
-//     ],
-//     Helms = [
-//     ],
-//     Tops = [
-//     ],
-//     Vanity = [
-//     ]
-// }]
-// },
+{ //todo
+    ID = "named/golden_feathers_helmet", //240
+    Script = "", //TODO
+    SScript = "",
+    Sets = [{
+    Hoods = [
+        [1, "hood/legend_helmet_open_chain_hood"] //65
+    ],
+    Helms = [
+        [1, "helm/legend_helmet_tailed_conic"] //185
+    ],
+    Tops = [],
+    Vanity = []
+}]
+},
 {
     ID = "named/heraldic_mail_helmet", //280
     Script = "",
@@ -193,7 +194,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         [1, "hood/legend_helmet_open_chain_hood"] //65
     ],
     Helms = [
-        [1, "helm/legend_helmet_basinet"] //130
+        [1, "helm/legend_helmet_crude_skull_helm"] //130
     ],
     Tops = [
         [1, "top/legend_helmet_facemask"] //90
@@ -314,16 +315,16 @@ gt.Const.LegendMod.HelmObjs.extend([
 }]
 },{
     ID = "named/red_and_gold_band_helmet", //255
-    Script = "", //TODO
+    Script = "",
     Sets = [{
     Hoods = [
+        [1, "hood/legend_helmet_open_chain_hood"] //65
     ],
     Helms = [
+        [1, "helm/legend_helmet_tailed_conic"] //185
     ],
-    Tops = [
-    ],
-    Vanity = [
-    ]
+    Tops = [],
+    Vanity = []
 }]
 },{
     ID = "named/sallet_green_helmet", //265
@@ -366,7 +367,9 @@ gt.Const.LegendMod.HelmObjs.extend([
         [1, "hood/legend_helmet_chain_hood"], //80
         [1, "hood/legend_helmet_chain_hood_full"], //90
     ],
-    Helms = [],
+    Helms = [
+        [1, "helm/legend_helmet_wallace_sallet_named"] //140, -7, -2
+    ],
     Tops = [],
     Vanity = [
         [1, "vanity/legend_helmet_wolf_helm"] //10
