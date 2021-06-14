@@ -463,8 +463,8 @@ gt.Const.Tactical.Actor.LegendMummyLight <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		35,
-		35
+		20,
+		20
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyMedium <- {
@@ -481,14 +481,14 @@ gt.Const.Tactical.Actor.LegendMummyMedium <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		50,
-		50
+		30,
+		30
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyHeavy <- {
 	XP = 500,
 	ActionPoints = 9,
-	Hitpoints = 130,
+	Hitpoints = 120,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 75,
@@ -499,14 +499,14 @@ gt.Const.Tactical.Actor.LegendMummyHeavy <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		125,
-		100
+		75,
+		75
 	]
 };
 gt.Const.Tactical.Actor.LegendMummyQueen <- {
 	XP = 1500,
 	ActionPoints = 9,
-	Hitpoints = 450,
+	Hitpoints = 200,
 	Bravery = 130,
 	Stamina = 100,
 	MeleeSkill = 90,
@@ -517,8 +517,8 @@ gt.Const.Tactical.Actor.LegendMummyQueen <- {
 	FatigueEffectMult = 0.0,
 	MoraleEffectMult = 0.0,
 	Armor = [
-		75,
-		75
+		40,
+		40
 	],
 	DamageTotalMult = 1.35
 };
@@ -526,7 +526,7 @@ gt.Const.Tactical.Actor.LegendMummyQueen <- {
 gt.Const.Tactical.Actor.LegendMummyPriest <- {
 	XP = 475,
 	ActionPoints = 9,
-	Hitpoints = 120,
+	Hitpoints = 85,
 	Bravery = 100,
 	Stamina = 100,
 	MeleeSkill = 75,
