@@ -1536,6 +1536,66 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "barbarian_chosen_armor_00", // ~~186
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [2, "cloth/legend_gambeson"],
+            [5, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_ancient_mail"]
+        ],
+        Plate = [
+            [1, "plate/legend_hide_and_bone_armor"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            
+        ],
+        Attachments =[
+            [0, ""],
+            [4, "armor_upgrades/legend_bone_platings_upgrade"]
+        ]
+    }]
+},{
+    ID = "barbarian_chosen_armor_01", // ~~186
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_gambeson"],
+            [4, "cloth/legend_padded_surcoat"],
+            [4, "cloth/legend_padded_surcoat_plain"],
+            [1, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_reinforced_worn_mail_shirt"],
+            [1, "chain/legend_armor_ancient_double_mail", 1],
+        ],
+        Plate = [
+            [1, "plate/legend_scrap_metal_armor"],
+            [1, "plate/legend_rugged_scale_armor"],
+            [1, "plate/legend_heavy_iron_armor"],
+        ],
+        Cloak = [
+            [1, ""],
+            [1, "cloak/legend_southern_shoulder_cloth", 7],
+            [1, "cloak/legend_southern_wrap"]
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_scarf", 7],
+            [1, "tabard/legend_southern_scarf", 6],
+            [1, "tabard/legend_southern_scarf", 13],
+            [1, "tabard/legend_dark_wooly_cloak", 13],
+        ],
+        Attachments =[
+            [4, ""],
+            [1, "armor_upgrades/legend_bone_platings_upgrade"],
+            [1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
+        ]
+    }]
+},{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{

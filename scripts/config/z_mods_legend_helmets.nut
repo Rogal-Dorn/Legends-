@@ -1903,6 +1903,51 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_orc_great_horns"]
         ]
     }]
+    },
+	{
+        ID = "barbarian_chosen_helmet_00", //150 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_barb_chain_scarf"],
+            [1, "hood/legend_helmet_barb_open_chain"],
+            [1, "hood/legend_helmet_rotten_chain_scarf"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barb_metal_cap"],
+        ],
+        Tops = [
+            [1, "top/legend_helmet_leather_hood_barb"]
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_orc_bones"],
+            [1, "vanity/legend_helmet_ponytail"]
+        ]
+    }]
+    },
+	{
+        ID = "barbarian_chosen_helmet_01", //190 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood"],
+            [1, "hood/legend_helmet_chain_hood_full"],
+            [1, "hood/legend_helmet_bronze_chain"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barb_metal_cap"],
+        ],
+        Tops = [
+            [1, "top/legend_helmet_orc_horn_mask"],
+            [1, "top/legend_helmet_leather_hood_barb"],
+            [1, "top/legend_helmet_orc_metal_mask"],
+            [1, "top/legend_helmet_headband_nose"],
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_wolf_helm"],
+            [1, "vanity/legend_helmet_lion_pelt"]
+        ]
+    }]
     }
 ])
 
