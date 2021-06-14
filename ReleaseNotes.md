@@ -5274,3 +5274,5 @@ Fixes some troupe scenario skills being swapped
 Donkeys are not content with reserves
 Should fix southerners not having legendary armors
 Kopis icon fixed
+Fixes some named helmets not having layered armor
+FIxes some missing perk icons
