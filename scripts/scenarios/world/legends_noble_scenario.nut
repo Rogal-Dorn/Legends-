@@ -365,10 +365,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 
 
-	function onUpdateHiringRoster( _roster )
-	{
-
-	}
 
 	function onBuildPerkTree( _tree)
 	{
