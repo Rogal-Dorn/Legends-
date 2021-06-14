@@ -31,6 +31,7 @@
 <sprite id="status_spears_circle" ic="FF23165B" img="skills\status_spears_circle.png" />
 <sprite id="mini_spears_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_spears_circle.png" />
 <sprite id="revolt_square" ic="FF23165B" img="skills\revolt_square.png" />
+<sprite id="relax_square" ic="FF23165B" img="skills\relax_square.png" />
 <sprite id="rebuild_skeleton" ic="FF23165B" img="skills\rebuild_skeleton.png" />
 <sprite id="rust" ic="FF23165B" img="skills\rust56.png" />
 <sprite id="skeleton_archer_01_square" ic="FF23165B" img="skills\skeleton_archer_01_square.png" />
