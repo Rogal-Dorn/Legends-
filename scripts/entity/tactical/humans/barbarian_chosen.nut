@@ -152,6 +152,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 				[1, "barbarians/heavy_horned_plate_helmet"],
 				[1, "barbarian_chosen_helmet_00"],
 				[1, "barbarian_chosen_helmet_01"],
+				[1, "barbarian_chosen_helmet_02"],
 			];
 
 			// if (this.LegendsMod.Configs().LegendArmorsEnabled())

@@ -1948,6 +1948,25 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_lion_pelt"]
         ]
     }]
+    },
+	{
+        ID = "barbarian_chosen_helmet_02", //190 ish
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_cloth_scarf", 1]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_heavy_plate_helm"], //170
+        ],
+        Tops = [
+            [1, "top/legend_helmet_headband_side"], //20
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_ponytail", 1], //10
+            [1, "vanity/legend_helmet_ponytail", 4], //10
+        ]
+    }]
     }
 ])
 
