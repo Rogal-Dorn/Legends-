@@ -5265,6 +5265,9 @@ Fixes embalmed priests
 
 ## 15.0.1.12
 
+**Armor Set Additions**
+Adds new armor sets to Barb Chosen, Mercenaries, Hedgeknights, Southerner, Nomad Leaders
+
 **Fixes**
 Skeleton Lich/Loremaster having backwards helmet fix
 Fixes 'specia' champion units like the Butcher or the Rabble from incorrectly having 1/100 chance of being named
