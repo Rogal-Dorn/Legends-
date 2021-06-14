@@ -906,7 +906,7 @@ layers = [
     "adesc" : "Has a southern cloth wrap"
 },
 {"name": "legend_southern_shoulder_cloth",           "layer": "tabard", "min": 1, "max": 8, "value" : 100, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_shoulder_cloth",\
-    "title" :  "Southern Shoulder cloth", \
+    "title" :  "Southern Shoulder Cloth", \
     "desc" :  "A cloth wrap worn by southerners", \
     "adesc" : "Has a southern shoulder cloth"
 },
