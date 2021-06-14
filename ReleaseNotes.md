@@ -5283,3 +5283,5 @@ Should actually fix movement on tiles when you have Clarity
 Fixes mercenaries not getting clarity perk on legendary
 
 ## 15.0.1.13
+
+Overall lowers mummy hitpoints
