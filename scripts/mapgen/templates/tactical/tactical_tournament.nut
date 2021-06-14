@@ -68,6 +68,11 @@ this.tactical_tournament <- this.inherit("scripts/mapgen/tactical_template", {
 		local Tile3 = tiles[this.Math.rand(0, tiles.len() - 1)];
 		local Tile4 = tiles[this.Math.rand(0, tiles.len() - 1)];
 		
+
+		this.logWarning("Grand Tournament Tile 1: " + Tile1.getName());
+		this.logWarning("Grand Tournament Tile 2: " + Tile2.getName());
+		this.logWarning("Grand Tournament Tile 3: " + Tile3.getName());
+		this.logWarning("Grand Tournament Tile 4: " + Tile4.getName());
 		
 		this.addRoads(_rect, _properties);
 		local templates = [	];
