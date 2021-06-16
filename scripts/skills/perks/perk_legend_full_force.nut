@@ -3,8 +3,8 @@ this.perk_legend_full_force <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_full_force";
-		this.m.Name = this.Const.Strings.PerkName.FullForce;
-		this.m.Description = this.Const.Strings.PerkDescription.FullForce;
+		this.m.Name = this.Const.Strings.PerkName.LegendFullForce;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendFullForce;
 		this.m.Icon = "ui/perks/fullforce_circle.png";
 		this.m.IconDisabled = "ui/perks/fullforce_circle_bw.png"
 		this.m.Type = this.Const.SkillType.Perk;
