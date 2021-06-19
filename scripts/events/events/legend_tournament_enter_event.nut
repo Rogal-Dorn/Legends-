@@ -157,7 +157,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "E",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia smiles and excitedly recites the rules of the Grand Melee %SPEECH_ON%These are the mandated rules of the Grand Melee, \n\n 1. Your company will fight round after round, of both humans and beasts of all kinds, without combat rules.  \n\n 2. The prize begins at 1000 gold. With each battle, the difficulty will increase and the prize will double. \n\n 3. You may keep any loot you find after the battle.%SPEECH_OFF% \n\n She smiles again, with genuine interest. %SPEECH_ON%This is the most glorious of the tournament events and I am delighted to personally watch your performance.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia smiles and excitedly recites the rules of the Grand Melee %SPEECH_ON%These are the mandated rules of the Grand Melee, \n\n 1. Your company will fight round after round, of both humans and beasts of all kinds, without combat rules.  \n\n 2. The prize begins at 1000 gold. With each battle, the difficulty will increase and the prize will double. \n\n 3. You may keep any loot you find after the battle.%SPEECH_OFF%She smiles again, with genuine interest. %SPEECH_ON%This is the most glorious of the tournament events and I am delighted to personally watch your performance.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
