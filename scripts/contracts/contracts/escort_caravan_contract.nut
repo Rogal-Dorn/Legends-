@@ -1236,7 +1236,6 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 					[1, "supplies/beer_item"],
 					[1, "supplies/bread_item"],
 					[1, "supplies/goat_cheese_item"],
-					[1, "supplies/legend_cooking_spices_item"],
 					[1, "supplies/legend_fresh_fruit_item"],
 					[1, "supplies/legend_fresh_meat_item"],
 					[1, "supplies/legend_pie_item"],

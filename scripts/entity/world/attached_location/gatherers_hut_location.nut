@@ -13,6 +13,7 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/roots_and_berries_item");
+		_list.push("trade/legend_cooking_spices_trade_item");
 	}
 
 	function onUpdateDraftList( _list, _gender)
@@ -25,9 +26,6 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("legend_herbalist_background");
 		_list.push("daytaler_background");
 		_list.push("daytaler_background");
-
-	
-
 	}
 
 	function onUpdateShopList( _id, _list )

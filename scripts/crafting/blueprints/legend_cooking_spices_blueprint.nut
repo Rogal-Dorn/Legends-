@@ -4,9 +4,9 @@ this.legend_cooking_spices_blueprint <- this.inherit("scripts/crafting/blueprint
 	{
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_cooking_spices";
-		this.m.Type = this.Const.Items.ItemType.Food;
-		this.m.PreviewCraftable = this.new("scripts/items/supplies/legend_cooking_spices_item");
-		this.m.Cost = 10;
+		this.m.Type = this.Const.Items.ItemType.TradeGood | this.Const.Items.ItemType.Misc;
+		this.m.PreviewCraftable = this.new("scripts/items/trade/legend_cooking_spices_trade_item");
+		this.m.Cost = 40;
 		local ingredients = [
 			{
 				Script = "scripts/items/supplies/roots_and_berries_item",
@@ -29,14 +29,7 @@ this.legend_cooking_spices_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
-		_stash.add(this.new("scripts/items/supplies/legend_cooking_spices_item"));
+		_stash.add(this.new("scripts/items/trade/legend_cooking_spices_trade_item"));
 	}
 
 });

@@ -50,6 +50,13 @@ this.blueprint <- {
 		return this.Math.ceil(this.m.Cost * this.World.Assets.m.TaxidermistPriceMult);
 	}
 
+	function getCostForCraft () 
+	{
+	    local mult = 1.0;
+	    if (this.m.PreviewCraftable.m.Type == this.Const.Items.ItemType.Food) mult *= 0.2;
+	    return getCost() * mult;
+	}
+
 	function getSounds()
 	{
 		return this.m.Sounds;
@@ -397,7 +404,14 @@ this.blueprint <- {
 
 				if (!hasAlchemist || item.getMagicNumber() > 25)
 				{
-					stash.remove(item);
+					if ("Uses" in item.m && item.m.Uses > 1)
+					{
+						item.m.Uses -= 1;
+					}
+					else
+					{
+						stash.remove(item);
+					}
 				}
 				else
 				{
