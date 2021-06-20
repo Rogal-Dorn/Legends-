@@ -9,7 +9,7 @@ this.legend_cooking_spices_trade_item <- this.inherit("scripts/items/trade/tradi
 		this.m.Name = "Cooking Spices";
 		this.m.Description = "Combining salts, dried herbs and roots provides spices perfect for cooking.";
 		this.m.Icon = "supplies/legend_cooking_spices.png";
-		this.m.Value = 400;
+		this.m.Value = 380;
 		this.m.Uses = 8;
 		this.m.ProducingBuildings = [
 			"attached_location.gatherers_hut"
@@ -19,7 +19,6 @@ this.legend_cooking_spices_trade_item <- this.inherit("scripts/items/trade/tradi
 	function getTooltip()
 	{
 		local result = this.trading_good_item.getTooltip();
-
 
 		if (this.m.Uses == 8)
 		{

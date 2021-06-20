@@ -6,7 +6,7 @@ this.legend_beer_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.legend_beer";
 		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/beer_item");
-		this.m.Cost = 10;
+		this.m.Cost = 40;
 		local ingredients = [
 			{
 				Script = "scripts/items/supplies/ground_grains_item",
