@@ -8,7 +8,8 @@ this.blueprint <- {
 		Cost = 0,
 		TimesCrafted = 0,
 		Enchanter = false,
-		Type = this.Const.Items.ItemType.None
+		Type = this.Const.Items.ItemType.None,
+		CraftMultiplier = 1.0
 	},
 	function isValid()
 	{
@@ -52,9 +53,7 @@ this.blueprint <- {
 
 	function getCostForCraft () 
 	{
-	    local mult = 1.0;
-	    if (this.m.PreviewCraftable.m.Type == this.Const.Items.ItemType.Food) mult *= 0.2;
-	    return getCost() * mult;
+	    return getCost() * this.m.CraftMultiplier;
 	}
 
 	function getSounds()

@@ -1,12 +1,10 @@
-this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/food_blueprint", {
 	m = {},
 	function create()
 	{
-		this.blueprint.create();
+		this.food_blueprint.create();
 		this.m.ID = "blueprint.legend_cured_rations";
-		this.m.Type = this.Const.Items.ItemType.Food;
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/cured_rations_item");
-		this.m.Cost = 40;
 		local ingredients = [
 			{
 				Script = "scripts/items/supplies/dried_fruits_item",
