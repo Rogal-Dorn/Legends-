@@ -3465,7 +3465,7 @@ gt.Const.Perks.PerkDefObjects <- [
 ];
 gt.Const.Perks.PerkDefs <- {};
 
-gt.Const.Perks.TempIToConst <- {};
+gt.Const.Perks.TempiToConst <- {};
 
 foreach( i, v in gt.Const.Perks.PerkDefObjects )
 {
