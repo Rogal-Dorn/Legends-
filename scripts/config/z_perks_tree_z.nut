@@ -1,36 +1,40 @@
 local gt = this.getroottable();
 
-local treeNameTable = {};
-local getTreeName = function( _treeName )
+local map = {};
+
+foreach (name, group in gt.Const.Perks)
 {
-    if (_treeName in treeNameTable) return treeNameTable[_treeName];
-
-    local name = _treeName.slice(0,_treeName.len()-4);
-    local result = "";
-    foreach (c in name)
-    {
-        if (c < 91) result += " ";
-        result += c.tochar();
-    }
-    result = result.slice(1);
-    treeNameTable[_treeName] <- result;
-    return result;
-}
-
-foreach (treeName, perkTree in gt.Const.Perks)
-{
-	if (!("Tree" in perkTree)) continue;
-
-	local name = getTreeName(treeName);
-
-	for (local i = 0; i < perkTree.Tree.len(); ++i) 
+	if (!("Name" in group)) continue;
+	for (local i = 0; i < group.Tree.len(); ++i) 
 	{
-		for (local j = 0; j < perkTree.Tree[i].len(); ++j) 
+		for (local j = 0; j < group.Tree[i].len(); ++j) 
 		{
-			local c = gt.Const.Perks.TempIToConst[perkTree.Tree[i][j]];
-			
+			//this.logInfo(name);
+			local c = gt.Const.Perks.TempiToConst[group.Tree[i][j]];
+
+			if (!(c in map)) map[c] <- {Groups = [], Const = group.Tree[i][j]};
+			map[c].Groups.push(group.Name);
 		}
 	}
 }
 
-delete gt.Const.Perks.TempIToConst;
+foreach (perk, table in map)
+{
+	local array = table.Groups;
+	local pre = "\n[color=#0b0084]From the ";
+	local ap = "perk group[/color]";
+	local mid = "";
+	if (array.len() == 1) mid += array[0] + " ";
+	else
+	{
+		for (local i = 0; i < array.len() - 2; i++) {
+			mid += array[i] + ", ";
+		}
+		mid += array[array.len()-2] + " or ";
+		mid += array[array.len()-1] + " ";
+	}
+	gt.Const.Strings.PerkDescription[perk] += pre + mid + ap;
+	gt.Const.Perks.PerkDefObjects[table.Const].Tooltip += pre + mid + ap;
+}
+
+delete gt.Const.Perks.TempiToConst;
