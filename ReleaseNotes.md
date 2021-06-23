@@ -5289,7 +5289,7 @@ Makes 25 the max hire limit for origins now, way easier fix for some weird bugs 
 Cascade shouldn't cause errors when it kills something due to an attack of opportunity
 Should fix named item spawns again but this time for Southerners
 
-## 15.0.1.14
+## 15.0.1.14 (Endy's Build)
 
 Changes some perk descriptions to indicate what trees they're from
 Cooking spices are now a trade good and usable in 8 separate crafts (i.e. 1 trade good used 8 times instead of having 8 salts to use 1 time)
@@ -5297,3 +5297,5 @@ Bunch of typo fixes/icon fixes
 Fixes full force
 Fixes tail slam split skill
 Mage swordstaff now part of staff spec
+
+https://drive.google.com/file/d/1HSWHITgKyjbZr4QpLyaQZS8Y0AsQrT1c/view?usp=sharing
