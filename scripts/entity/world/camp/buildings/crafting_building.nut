@@ -201,7 +201,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            this.m.PointsNeeded += r.Blueprint.getCost() - r.Points;
+            this.m.PointsNeeded += r.Blueprint.getCostForCraft() - r.Points;
         }
     }
 
@@ -280,7 +280,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue;
 			}
 
-            local needed = r.Blueprint.getCost() - r.Points;
+            local needed = r.Blueprint.getCostForCraft() - r.Points;
 
             if (modifiers.Craft < needed)
             {
@@ -290,7 +290,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			this.m.PointsCrafted += needed
             modifiers.Craft -= needed;
 
-			if (r.Points >= r.Blueprint.getCost())
+			if (r.Points >= r.Blueprint.getCostForCraft())
 			{
 				r.Blueprint.craft();
 				this.m.ItemsCrafted.push(r.Blueprint)
@@ -317,7 +317,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue
 			}
 			local r = b.Blueprint.getUIData();
-			r.Percentage <- (b.Points / (b.Blueprint.getCost() * 1.0)) * 100
+			r.Percentage <- (b.Points / (b.Blueprint.getCostForCraft() * 1.0)) * 100
 			ret.push(r);
 		}
 		return ret;
@@ -348,7 +348,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
                 continue;
             }
 
-            points += (r.Blueprint.getCost() - r.Points);
+            points += (r.Blueprint.getCostForCraft() - r.Points);
         }
         local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)
