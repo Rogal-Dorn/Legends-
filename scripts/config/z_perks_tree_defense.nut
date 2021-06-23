@@ -34,7 +34,7 @@ gt.Const.Perks.HeavyArmorTree <- {
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.BattleForged],
-		[gt.Const.Perks.PerkDefs.FullForce]
+		[gt.Const.Perks.PerkDefs.LegendFullForce]
 	]
 };
 

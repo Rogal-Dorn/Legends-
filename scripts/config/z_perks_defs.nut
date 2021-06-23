@@ -583,13 +583,13 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendSleep"
 	},
 	{
-		ID = "perk.full_force",
-		Script = "scripts/skills/perks/perk_full_force",
-		Name = this.Const.Strings.PerkName.FullForce,
-		Tooltip = this.Const.Strings.PerkDescription.FullForce,
+		ID = "perk.legend_full_force",
+		Script = "scripts/skills/perks/legend_perk_full_force",
+		Name = this.Const.Strings.PerkName.LegendFullForce,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFullForce,
 		Icon = "ui/perks/fullforce_circle.png",
 		IconDisabled = "ui/perks/fullforce_circle_bw.png",
-		Const = "FullForce"
+		Const = "LegendFullForce"
 	},
 	{
 		ID = "perk.return_favor",

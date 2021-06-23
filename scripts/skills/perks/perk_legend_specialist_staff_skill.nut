@@ -27,7 +27,7 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 			_properties.RangedDefense += 16;
 		}
 
-		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff" || item.getID() == "weapon.legend_named_slingstaff" || item.getID() == "weapon.legend_slingstaff")
+		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff" || item.getID() == "weapon.legend_named_slingstaff" || item.getID() == "weapon.legend_slingstaff" || item.getID() == "weapon.legend_mage_swordstaff")
 		{
 			_properties.MeleeDefense += 8;
 			_properties.RangedDefense += 8;

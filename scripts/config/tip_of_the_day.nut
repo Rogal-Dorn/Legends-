@@ -180,7 +180,7 @@ gt.Const.TipOfTheDay <- [
 	"Higher renown will unlock more difficult contracts and better pay.",
 	"If your plan can fail with bad luck, maybe it isn\'t good enough of a plan.",
 	"Do the job. Survive. Get paid.",
-	"You need a minimum of 10% bonus arcoss all your brothers for a favoured enemy perk to spawn champions or legendary beasts more frequently",
+	"You need a minimum of 10% bonus across all your brothers for a favoured enemy perk to spawn champions or legendary beasts more frequently",
 	"You can change the styles of items in the painting tent, located in your camp. For a price, of course.",
 	"Tower shields are cumbersome, but can be used to protect others in addition to the user.",
 	"If a character waits their turn, their position in the turn order of the next round is determined with a penalty of 25% to Initiative.",

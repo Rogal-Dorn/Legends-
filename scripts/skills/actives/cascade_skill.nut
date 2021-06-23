@@ -72,7 +72,7 @@ this.cascade_skill <- this.inherit("scripts/skills/skill", {
 		local target = _targetTile.getEntity();
 		local ret = this.attackEntity(_user, target);
 
-		if (!target.isAlive()) //very rarely something will die to a cascade due to an AOO this should fix it
+		if (!target.isAlive() || target.isDying()) //very rarely something will die to a cascade due to an AOO this should fix it
 		{
 			return ret;
 		}

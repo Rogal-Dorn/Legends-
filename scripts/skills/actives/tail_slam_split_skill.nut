@@ -100,7 +100,7 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 			return ret;
 		}
 
-		if (ret && _targetTile.IsOccupiedByActor && target.isAlive() && !target.isDying())
+		if (ret && _targetTile.IsOccupiedByActor && _targetTile.getEntity().isAlive() && !_targetTile.getEntity().isDying())
 		{
 			this.applyEffectToTarget(_user, target, _targetTile);
 		}
