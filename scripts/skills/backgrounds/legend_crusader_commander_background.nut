@@ -128,7 +128,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendForcefulSwing,
-				this.Const.Perks.PerkDefs.FullForce,
+				this.Const.Perks.PerkDefs.LegendFullForce,
 				this.Const.Perks.PerkDefs.ReturnFavor,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySkeleton,
 				this.Const.Perks.PerkDefs.LegendSpecialistShieldSkill,
