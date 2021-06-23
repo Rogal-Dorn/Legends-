@@ -1753,8 +1753,11 @@ this.skill <- {
 			}
 			if (r >= 7 && r < 9)
 			{
-				local loot = this.new("scripts/items/supplies/legend_cooking_spices_item");
-				loot.drop(_targetEntity.getTile());
+				if (this.Math.rand(1, 8) == 8)
+				{
+					local loot = this.new("scripts/items/supplies/legend_cooking_spices_item");
+					loot.drop(_targetEntity.getTile());
+				}
 			}
 			if (r == 10)
 			{

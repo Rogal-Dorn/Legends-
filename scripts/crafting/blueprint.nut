@@ -8,7 +8,8 @@ this.blueprint <- {
 		Cost = 0,
 		TimesCrafted = 0,
 		Enchanter = false,
-		Type = this.Const.Items.ItemType.None
+		Type = this.Const.Items.ItemType.None,
+		CraftMultiplier = 1.0
 	},
 	function isValid()
 	{
@@ -48,6 +49,11 @@ this.blueprint <- {
 	function getCost()
 	{
 		return this.Math.ceil(this.m.Cost * this.World.Assets.m.TaxidermistPriceMult);
+	}
+
+	function getCostForCraft () 
+	{
+	    return getCost() * this.m.CraftMultiplier;
 	}
 
 	function getSounds()
@@ -397,7 +403,14 @@ this.blueprint <- {
 
 				if (!hasAlchemist || item.getMagicNumber() > 25)
 				{
-					stash.remove(item);
+					if ("Uses" in item.m && item.m.Uses > 1)
+					{
+						item.m.Uses -= 1;
+					}
+					else
+					{
+						stash.remove(item);
+					}
 				}
 				else
 				{
