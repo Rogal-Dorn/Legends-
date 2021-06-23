@@ -83,7 +83,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"accessory/legend_warbear_item",
 			"supplies/roots_and_berries_item",
 			"supplies/legend_fresh_fruit_item",
-			"supplies/legend_cooking_spices_item",
+			"trade/legend_cooking_spices_trade_item",
 			"supplies/ground_grains_item",
 			"ammo/large_quiver_of_bolts",
 			"ammo/legend_large_broad_head_bolts",
