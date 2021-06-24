@@ -9,6 +9,12 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Type = "contract.return_item";
 		this.m.Name = "Return Item";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		local orig = this.getDifficultyMult();
+		if (this.getDifficultyMult() >= 1.45 && this.getDifficultyMult() <= 1.65) //lazy man's tweak to make the 4 skull return item contract a bit harder
+		{
+			local dm = this.Math.rand(155, 175) * 0.1;
+			this.m.DifficultyMult = (dm > orig) ? dm : orig
+		}
 	}
 
 	function onImportIntro()
