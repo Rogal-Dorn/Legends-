@@ -5309,3 +5309,5 @@ Swordmaster favoured enemy typos
 Slightly increases the 4 skull return item contract difficulty
 Witchhunter hat is turned into a named layer & drops off champion necromancers now
 (Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
+
+Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
