@@ -734,6 +734,10 @@ layers = [
  "title" :  "Frogmouth", \
  "desc" :  "A gloriously frogmouth helm of excellent construction." \
 },
+{"name" : "legend_frogmouth_close"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  "named" : True, "rmaxViz" : 2, "rminViz" : 3, "rmaxStam" : 5, "rminStam" : 10, "rminCond" : 165, "rmaxCond" : 180, "names" : Names, \
+ "title" :  "Frogmouth", \
+ "desc" :  "A gloriously frogmouth helm of excellent construction." \
+},
 {"name" : "southern_gladiator_helm_crested"                     , "layer" : "helm", "min" : 1, "max" : 13, "value" : 2500, "con" : 130, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Crested Gladiator Helm", \
  "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states." \
@@ -1411,9 +1415,9 @@ helmets = r"""
 <sprite id="legend_frogmouth_01" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="legend_frogmouth_01_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_01_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="legend_frogmouth_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_01_dead.png" left="-88" right="22" top="-92" bottom="10" />
-<sprite id="legend_frogmouth_02" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_02.png" left="-41" right="43" top="-28" bottom="106" />
-<sprite id="legend_frogmouth_02_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_02_damaged.png" left="-41" right="43" top="-29" bottom="105" />
-<sprite id="legend_frogmouth_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_02_dead.png" left="-88" right="22" top="-92" bottom="10" />
+<sprite id="legend_frogmouth_close_01" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_04.png" left="-41" right="43" top="-28" bottom="106" />
+<sprite id="legend_frogmouth_close_01_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_04_damaged.png" left="-41" right="43" top="-29" bottom="105" />
+<sprite id="legend_frogmouth_close_01_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_04_dead.png" left="-88" right="22" top="-92" bottom="10" />
 <sprite id="legend_frogmouth_03" offsetY="35" ic="FF383D5F" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_03.png" left="-41" right="43" top="-28" bottom="106" />
 <sprite id="legend_frogmouth_03_damaged" offsetY="35" ic="FF353857" width="184" height="222" img="entity\legend_helmets\legend_frogmouth_03_damaged.png" left="-41" right="43" top="-29" bottom="105" />
 <sprite id="legend_frogmouth_03_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="191" height="185" img="entity\legend_helmets\legend_frogmouth_03_dead.png" left="-88" right="22" top="-92" bottom="10" />
