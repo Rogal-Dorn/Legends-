@@ -5311,3 +5311,5 @@ Witchhunter hat is turned into a named layer & drops off champion necromancers n
 (Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
 
 Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
+
+Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
