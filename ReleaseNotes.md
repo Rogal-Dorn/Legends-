@@ -5306,3 +5306,4 @@ Adds some trade goods to the Southern 'Noble' Parties also
 > Both of the above are holy war and non-holy war parties
 
 Swordmaster favoured enemy typos
+Slightly increases the 4 skull return item contract difficulty
