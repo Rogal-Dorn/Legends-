@@ -9,6 +9,7 @@ echo $resp
 if [ $resp -ne "0" ]
 then
     echo "Failed to build Legends!"
+    $SHELL
     exit 1
 fi
 
