@@ -5304,3 +5304,5 @@ Mage swordstaff now part of staff spec
 Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
 Adds some trade goods to the Southern 'Noble' Parties also
 > Both of the above are holy war and non-holy war parties
+
+Swordmaster favoured enemy typos
