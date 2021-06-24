@@ -5307,3 +5307,5 @@ Adds some trade goods to the Southern 'Noble' Parties also
 
 Swordmaster favoured enemy typos
 Slightly increases the 4 skull return item contract difficulty
+Witchhunter hat is turned into a named layer & drops off champion necromancers now
+(Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost

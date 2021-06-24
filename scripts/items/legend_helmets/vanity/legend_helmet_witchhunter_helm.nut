@@ -1,9 +1,9 @@
 
-this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
+this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upgrade", {
 	m = {},
 	function create()
 	{
-		this.legend_helmet_upgrade.create();
+		this.legend_named_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_witchhunter_helm";
 		this.m.Name = "Witchhunter Helm";

@@ -926,7 +926,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "top/legend_helmet_cloth_long_hood"], //10
         ],
         Vanity = [
-            [1, "vanity/legend_helmet_witchhunter_helm"] //10
+            // [1, "vanity/legend_helmet_witchhunter_helm"] //10
         ]
     }]
     },{
@@ -1279,7 +1279,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "top/legend_helmet_cloth_long_hood"], //10
         ],
         Vanity = [
-            [1, "vanity/legend_helmet_witchhunter_helm"] //10
+            // [1, "vanity/legend_helmet_witchhunter_helm"] //10
         ]
     }]
     },{
