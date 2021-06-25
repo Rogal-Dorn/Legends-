@@ -2670,7 +2670,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			break;
 
 		case 4:
-			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Second Vanity Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Aesthetic Vanity Layer";
 			break;
 
 		case 5:
@@ -2722,7 +2722,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		tt.push({
 			id = 1,
 			type = "hint",
-			icon = "ui/icons/mouse_right_button.png",
+			icon = "ui/icons/mouse_left_button.png",
 			text = "UnEquip layer"
 		});
 
