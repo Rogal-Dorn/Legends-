@@ -929,7 +929,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local totalDamage = _damage;
 
-		for (local i = this.m.Upgrades.len(); i >= 0 ; --i)
+		for (local i = this.m.Upgrades.len() - 1; i >= 0 ; --i)
 		{
 			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
