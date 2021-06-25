@@ -5263,7 +5263,7 @@ Fixes mummy curse being 20% damage increase when it should've been 25%
 Danger pay can't select enemies + tooltip fix
 Fixes embalmed priests
 
-## 15.0.1.12
+15.0.1.12
 
 **Armor Set Additions**
 Adds new armor sets to Barb Chosen, Mercenaries, Hedgeknights, Southerner, Nomad Leaders
@@ -5282,14 +5282,14 @@ FIxes some missing perk icons
 Should actually fix movement on tiles when you have Clarity
 Fixes mercenaries not getting clarity perk on legendary
 
-## 15.0.1.13
+15.0.1.13
 
 Overall lowers mummy hitpoints
 Makes 25 the max hire limit for origins now, way easier fix for some weird bugs happening
 Cascade shouldn't cause errors when it kills something due to an attack of opportunity
 Should fix named item spawns again but this time for Southerners
 
-## 15.0.1.14 (Endy's Build)
+15.0.1.14 (Endy's Build)
 
 Changes some perk descriptions to indicate what trees they're from
 Cooking spices are now a trade good and usable in 8 separate crafts (i.e. 1 trade good used 8 times instead of having 8 salts to use 1 time)
@@ -5298,4 +5298,18 @@ Fixes full force
 Fixes tail slam split skill
 Mage swordstaff now part of staff spec
 
-https://drive.google.com/file/d/1HSWHITgKyjbZr4QpLyaQZS8Y0AsQrT1c/view?usp=sharing
+## 15.0.1.15
+
+**Changes**
+Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
+Adds some trade goods to the Southern 'Noble' Parties also
+> Both of the above are holy war and non-holy war parties
+
+Swordmaster favoured enemy typos
+Slightly increases the 4 skull return item contract difficulty
+Witchhunter hat is turned into a named layer & drops off champion necromancers now
+(Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
+
+Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
+
+Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets

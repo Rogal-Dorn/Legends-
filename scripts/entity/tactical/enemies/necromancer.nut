@@ -100,6 +100,11 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 			"weapons/named/named_dagger"
 		];
 
+		local item = this.Const.World.Common.pickHelmet([
+			[1, "named/witchhunter_helm"],
+		])
+		this.m.Items.equip(item);
+
 		if (this.Const.DLC.Desert)
 		{
 			weapons.extend([
