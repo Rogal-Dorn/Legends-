@@ -283,6 +283,8 @@ this.blueprint <- {
 			ret.Variants <- 0;
 			ret.ItemPath <- 0;
 		}
+		ret.isAmountShown <- this.m.PreviewCraftable.isAmountShown();
+		if(this.m.PreviewCraftable.isAmountShown()) ret.Amount <- this.m.PreviewCraftable.getAmountString();
 		return ret;
 	}
 

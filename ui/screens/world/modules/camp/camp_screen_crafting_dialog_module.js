@@ -495,7 +495,16 @@ CampScreenCraftingDialogModule.prototype.addListEntry = function (_data)
         _image.removeClass('opacity-none');
     }, null, 'opacity-none');
     image.bindTooltip({ contentType: 'ui-item', itemId: _data.ID, itemOwner: 'craft' });
-
+    if(_data.isAmountShown) 
+    {
+        var amountLayer =$('<div class="amount-layer display-block"/>');
+        column.append(amountLayer);
+        var amountLabel = $('<div class="label text-font-very-small font-shadow-outline"/>');
+        amountLayer.append(amountLabel);
+        amountLabel.text(_data.Amount);
+        amountLayer.removeClass('display-none').addClass('display-block');
+        amountLabel.css({'color' : "#ffffff"});
+    }
     // right column
     column = $('<div class="column is-right"/>');
     entry.append(column);
