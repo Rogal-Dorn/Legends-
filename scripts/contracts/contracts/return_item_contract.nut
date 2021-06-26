@@ -12,7 +12,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 		local orig = this.getDifficultyMult();
 		if (this.getDifficultyMult() >= 1.45 && this.getDifficultyMult() <= 1.65) //lazy man's tweak to make the 4 skull return item contract a bit harder
 		{
-			local dm = this.Math.rand(155, 175) * 0.1;
+			local dm = this.Math.rand(155, 175) * 0.01;
 			this.m.DifficultyMult = (dm > orig) ? dm : orig
 		}
 	}
