@@ -5313,6 +5313,11 @@ Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore s
 
 Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
 
+Shows the amount (nutrition/ammo) of an item crafted in taxidermist/crafting tent.
+
+Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives any stats or abilities.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
+Ranged damage multiplier is now applied in character screen
