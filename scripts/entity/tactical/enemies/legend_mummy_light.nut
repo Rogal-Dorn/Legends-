@@ -14,7 +14,11 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		if (!this.m.IsRanged)
 			this.m.AIAgent = this.new("scripts/ai/tactical/agents/skeleton_melee_agent");
 		else
+		{
 			this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat)
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Flee)
+		}
 		this.m.AIAgent.setActor(this);
 	}
 
