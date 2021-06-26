@@ -5321,3 +5321,8 @@ Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
 Ranged damage multiplier is now applied in character screen
+Integrates patch to fix full force (for real this time)
+Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
+Now properly displays Barter Modifier in Money tooltip
+
+Other minor typos and fixes
