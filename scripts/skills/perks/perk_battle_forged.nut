@@ -22,7 +22,7 @@ this.perk_battle_forged <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.";
+		return "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=" + this.Const.UI.Color.PositiveValue + "]3.5%[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.";
 	}
 
 	function getTooltip()
