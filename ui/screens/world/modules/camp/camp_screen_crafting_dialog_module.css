@@ -112,6 +112,31 @@
     text-shadow: 1px 1px 1px #000;
 }
 
+.camp-screen > .l-crafting-dialog-container .content .l-list-container .ui-control.list .list-entry .column.is-left .amount-layer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0.4rem;
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.camp-screen > .l-crafting-dialog-container .content .l-list-container .ui-control.list .list-entry .column.is-left .amount-layer .label
+{
+    left: 2.4rem;
+    right: 0;
+    bottom: 3.2rem;
+    height: 1.2rem;
+    position: absolute;
+
+    text-align: left;
+    line-height: 1.2rem;
+
+    pointer-events: none;
+}
+
 .camp-screen > .l-crafting-dialog-container .content .l-list-container .scroll-container
 {
     margin-top: 0.4rem;
