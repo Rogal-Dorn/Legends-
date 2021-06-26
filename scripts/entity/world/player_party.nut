@@ -484,13 +484,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (!bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
+			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
 			{
-				continue;
+				this.m.WageMultiplier = bro.getBarterModifier();
+				return;
 			}
-
-			this.m.WageMultiplier = bro.getBarterModifier();
-			break;
 		}
 	}
 

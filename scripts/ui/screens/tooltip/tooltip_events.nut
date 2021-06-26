@@ -1133,6 +1133,16 @@ this.tooltip_events <- {
 			local dailyMoney = 0;
 			local barterMult = 0.0;
 			local brolist = [];
+			local greed = 1;
+
+			foreach(bro in this.World.getPlayerRoster().getAll())
+			{
+				if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+				{
+					greed = 2;
+					break;
+				}
+			}
 
 			foreach( bro in this.World.getPlayerRoster().getAll() )
 			{
@@ -1143,7 +1153,7 @@ this.tooltip_events <- {
 					bro.getName(),
 					bro.getBackground().getNameOnly()
 				];
-				local bm = bro.getBarterModifier() * 100.0;
+				local bm = bro.getBarterModifier() * 100.0 / greed;
 
 				if (bm > 0)
 				{
