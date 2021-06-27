@@ -5317,6 +5317,8 @@ Shows the amount (nutrition/ammo) of an item crafted in taxidermist/crafting ten
 
 Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives any stats or abilities.
 
+Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
