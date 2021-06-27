@@ -304,8 +304,8 @@ this.blueprint <- {
 			{
 				itemsMap[item.getID()] <- 0;
 			}
-
-			itemsMap[item.getID()] = itemsMap[item.getID()] + 1;
+			if ("Uses" in item.m) itemsMap[item.getID()] = itemsMap[item.getID()] + item.m.Uses;
+			else itemsMap[item.getID()] = itemsMap[item.getID()] + 1;
 		}
 
 		foreach( c in this.m.PreviewSkills )
@@ -358,16 +358,14 @@ this.blueprint <- {
 				num = itemsMap[c.Instance.getID()];
 			}
 
-			for( local j = 1; j <= c.Num; j = j )
-			{
-				ret.push({
-					InstanceID = i,
-					ImagePath = c.Instance.getIcon(),
-					IsMissing = j > num,
-					IsSkill = 0
-				});
-				j = ++j;
-			}
+			ret.push({
+				InstanceID = i,
+				ImagePath = c.Instance.getIcon(),
+				IsMissing = c.Num > num,
+				Num = c.Num,
+				InvTotal = num,
+				IsSkill = 0
+			});
 		}
 
 		return ret;
