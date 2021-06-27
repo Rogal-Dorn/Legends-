@@ -5313,6 +5313,8 @@ Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore s
 
 Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
 
+Daggers now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
