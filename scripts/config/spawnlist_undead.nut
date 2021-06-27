@@ -285,7 +285,7 @@ gt.Const.World.Spawn.MummiesPatrol <-
 	MinR = 100,
 	Troops = [
 		{
-			Weight = 75,
+			Weight = 85,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendMummyLight,
@@ -300,6 +300,24 @@ gt.Const.World.Spawn.MummiesPatrol <-
 					Type = this.Const.World.Spawn.Troops.LegendMummyHeavy,
 					MinR = 500,
 					Cost = 40
+				}
+			]
+		},{
+			Weight = 15,
+			Types = [
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.VampireLOW,
+				// 	Cost = 30
+				// },
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.Vampire,
+				// 	MinR = 400,
+				// 	Cost = 40
+				// },
+				{
+					Type = this.Const.World.Spawn.Troops.LegendMummyPriest,
+					Cost = 40,
+					Roll = true
 				}
 			]
 		}
