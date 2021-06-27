@@ -310,7 +310,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 			this.m.Skills.add(this.new("scripts/skills/actives/legend_magic_missile"));
-			b.IsImmuneToStun = true;
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			b.Initiative += 50;
 			b.RangedSkill += 75;
 			b.Stamina += 70;
