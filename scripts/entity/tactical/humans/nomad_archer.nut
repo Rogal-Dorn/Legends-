@@ -116,7 +116,8 @@ this.nomad_archer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/nomad_robe"],
 			[1, "oriental/thick_nomad_robe"],
-			[1, "oriental/cloth_sash"]
+			[1, "oriental/cloth_sash"],
+			[1, "nomad_archer_armor_00"]
 		]));
 		local helms = [
 			[1, "oriental/nomad_head_wrap"],
