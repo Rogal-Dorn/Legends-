@@ -5318,6 +5318,8 @@ Daggers now have a +50 chance to hit on fleeing targets, mostly for end of fight
 Slight buff to two handed chain mace because of direct damage oddity -> had 20% reduced armor pen
 Slight nerf to ranged flail, -10 damage on average
 
+Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
