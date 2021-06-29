@@ -694,7 +694,21 @@
 .camp-screen > .l-crafting-dialog-container .content .details-container .row.is-button-container .l-hire-button
 {
     top: 0;
-    left: 0;
+    left: -20.0rem;
+    right: 0;
+    bottom: 0;
+    width: 17.0rem;
+    height: 4.3rem;
+    position: absolute;
+    margin: auto;
+
+    line-height: 3.0rem;
+}
+
+.camp-screen > .l-crafting-dialog-container .content .details-container .row.is-button-container .l-craft-forever-button
+{
+    top: 0;
+    left: 20.0rem;
     right: 0;
     bottom: 0;
     width: 17.0rem;
@@ -841,4 +855,65 @@
 .camp-screen .filter-panel .l-button.is-misc-filter
 {
     left: 25.0rem;
+}
+
+.camp-screen .ui-control .list .scroll-container .item > .amount-layer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0.4rem;
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.camp-screen .ui-control .list .scroll-container .item > .amount-layer .label
+{
+    left: 0.5rem;
+    right: 0;
+    bottom: 0.4rem;
+    height: 1.2rem;
+    position: absolute;
+
+    text-align: left;
+    line-height: 1.2rem;
+
+    pointer-events: none;
+}
+
+.camp-screen .ui-control .list .scroll-container .item > .infinity-layer
+{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding: 0.4rem;
+    z-index: 3;
+
+    pointer-events: none;
+}
+
+.camp-screen .ui-control .list .scroll-container .item > .infinity-layer img
+{
+    left: 4.4rem;
+    bottom: 5.5rem;
+    width: 2.7rem;
+    height: 1.8rem;
+    position: absolute;
+
+    pointer-events: none;
+}
+
+.camp-screen .ui-control .list .scroll-container .item > .infinity-layer .label
+{
+    left: 0;
+    right: 1.7rem;
+    bottom: 5.5rem;
+    height: 2.8rem;
+    position: absolute;
+
+    text-align: right;
+    line-height: 2.8rem;
+
+    pointer-events: none;
 }
