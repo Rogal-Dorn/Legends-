@@ -32,6 +32,8 @@ var WorldScreenTopbarDayTimeModule = function(_dataSource)
 	this.mTimePauseButton = null;
 	this.mTimeNormalButton = null;
 	this.mTimeFastButton = null;
+	this.mTimeVeryfastButton = null;
+	this.mTimeLudicrousButton = null;
 
     this.registerDatasourceListener();
 };
@@ -100,6 +102,8 @@ WorldScreenTopbarDayTimeModule.prototype.createDIV = function (_parentDiv)
     	self.mTimePauseButton.changeButtonImage(Path.GFX + Asset.BUTTON_PAUSE);
     	self.mTimeNormalButton.changeButtonImage(Path.GFX + Asset.BUTTON_PLAY_DISABLED);
     	self.mTimeFastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
     }, '', 10);
 
     var layout = $('<div class="l-normal-time-button"/>');
@@ -111,6 +115,8 @@ WorldScreenTopbarDayTimeModule.prototype.createDIV = function (_parentDiv)
     	self.mTimePauseButton.changeButtonImage(Path.GFX + Asset.BUTTON_PAUSE_DISABLED);
     	self.mTimeNormalButton.changeButtonImage(Path.GFX + Asset.BUTTON_PLAY);
     	self.mTimeFastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
     }, '', 10);
 
     var layout = $('<div class="l-fast-time-button"/>');
@@ -122,6 +128,35 @@ WorldScreenTopbarDayTimeModule.prototype.createDIV = function (_parentDiv)
     	self.mTimePauseButton.changeButtonImage(Path.GFX + Asset.BUTTON_PAUSE_DISABLED);
     	self.mTimeNormalButton.changeButtonImage(Path.GFX + Asset.BUTTON_PLAY_DISABLED);
     	self.mTimeFastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD);
+    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    }, '', 10);
+
+
+    var layout = $('<div class="l-veryfast-time-button"/>');
+    this.mContainer.append(layout);
+    this.mTimeVeryfastButton = layout.createImageButton(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED, function ()
+    {
+    	self.notifyBackendTimeVeryfastButtonPressed();
+
+    	self.mTimePauseButton.changeButtonImage(Path.GFX + Asset.BUTTON_PAUSE_DISABLED);
+    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Asset.BUTTON_PLAY_DISABLED);
+    	self.mTimeFastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD);
+    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    }, '', 10);
+
+    var layout = $('<div class="l-ludicrous-time-button"/>');
+    this.mContainer.append(layout);
+    this.mTimeLudicrousButton = layout.createImageButton(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED, function ()
+    {
+    	self.notifyBackendTimeLudicrousButtonPressed();
+
+    	self.mTimePauseButton.changeButtonImage(Path.GFX + Asset.BUTTON_PAUSE_DISABLED);
+    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Asset.BUTTON_PLAY_DISABLED);
+    	self.mTimeFastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD_DISABLED);
+    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Asset.BUTTON_FAST_FORWARD);
     }, '', 10);
     
     this.mPausedDiv = $('<div class="display-none title-font-very-big paused-label font-color-title font-shadow-silhouette">PAUSED</div>');
@@ -154,6 +189,8 @@ WorldScreenTopbarDayTimeModule.prototype.bindTooltips = function ()
 	this.mTimePauseButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.TimePauseButton });
 	this.mTimeNormalButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.TimeNormalButton });
 	this.mTimeFastButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldScreen.Topbar.TimeFastButton });
+	this.mTimeVeryfastButton.bindTooltip({ contentType: 'ui-element', elementId: "world-screen.topbar.TimeVeryfastButton" });
+	this.mTimeLudicrousButton.bindTooltip({ contentType: 'ui-element', elementId: "world-screen.topbar.TimeLudicrousButton" });
 };
 
 WorldScreenTopbarDayTimeModule.prototype.unbindTooltips = function ()
@@ -161,6 +198,8 @@ WorldScreenTopbarDayTimeModule.prototype.unbindTooltips = function ()
 	this.mTimePauseButton.unbindTooltip();
 	this.mTimeNormalButton.unbindTooltip();
 	this.mTimeFastButton.unbindTooltip();
+	this.mTimeVeryfastButton.unbindTooltip();
+	this.mTimeLudicrousButton.unbindTooltip();
 };
 
 
@@ -273,6 +312,8 @@ WorldScreenTopbarDayTimeModule.prototype.updateButtons = function (_state)
 	this.mTimePauseButton.changeButtonImage(Path.GFX + (_state == 0 ? Asset.BUTTON_PAUSE : Asset.BUTTON_PAUSE_DISABLED));
 	this.mTimeNormalButton.changeButtonImage(Path.GFX + (_state == 1 ? Asset.BUTTON_PLAY : Asset.BUTTON_PLAY_DISABLED));
 	this.mTimeFastButton.changeButtonImage(Path.GFX + (_state == 2 ? Asset.BUTTON_FAST_FORWARD : Asset.BUTTON_FAST_FORWARD_DISABLED));
+	this.mTimeVeryfastButton.changeButtonImage(Path.GFX + (_state == 3 ? Asset.BUTTON_FAST_FORWARD : Asset.BUTTON_FAST_FORWARD_DISABLED));
+	this.mTimeLudicrousButton.changeButtonImage(Path.GFX + (_state == 4 ? Asset.BUTTON_FAST_FORWARD : Asset.BUTTON_FAST_FORWARD_DISABLED));
 };
 
 
@@ -303,4 +344,14 @@ WorldScreenTopbarDayTimeModule.prototype.notifyBackendTimeNormalButtonPressed = 
 WorldScreenTopbarDayTimeModule.prototype.notifyBackendTimeFastButtonPressed = function ()
 {
 	SQ.call(this.mSQHandle, 'onTimeFastButtonPressed');
+};
+
+WorldScreenTopbarDayTimeModule.prototype.notifyBackendTimeVeryfastButtonPressed = function ()
+{
+	SQ.call(this.mSQHandle, 'onTimeVeryfastButtonPressed');
+};
+
+WorldScreenTopbarDayTimeModule.prototype.notifyBackendTimeLudicrousButtonPressed = function ()
+{
+	SQ.call(this.mSQHandle, 'onTimeLudicrousButtonPressed');
 };
