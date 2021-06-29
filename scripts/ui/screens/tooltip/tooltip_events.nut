@@ -3522,7 +3522,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Set time to pass normally."
+					text = "Set time to pass normally. (1x Speed)"
 				}
 			];
 
@@ -3536,7 +3536,35 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Set time to pass faster than normal."
+					text = "Set time to pass faster than normal. (2x Speed)"
+				}
+			];
+
+		case "world-screen.topbar.TimeVeryfastButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Very Fast Speed (3)"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Set time to pass much faster than normal. (4x Speed)"
+				}
+			];
+		
+		case "world-screen.topbar.TimeLudicrousButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Ludicrous Speed (4)"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Set time to pass insanely quickly. (8x Speed)"
 				}
 			];
 

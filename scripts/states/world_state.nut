@@ -390,6 +390,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 			{
 				this.World.TopbarDayTimeModule.updateTimeButtons(1);
 			}
+			else if (this.World.getSpeedMult() == 4.0)
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(3);
+			}
+			else if (this.World.getSpeedMult() == 8.0)
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(4);
+			}
 			else
 			{
 				this.World.TopbarDayTimeModule.updateTimeButtons(2);
@@ -543,6 +551,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		dayTimeModule.setOnTimePausePressedListener(this.setPausedTime.bindenv(this));
 		dayTimeModule.setOnTimeNormalPressedListener(this.setNormalTime.bindenv(this));
 		dayTimeModule.setOnTimeFastPressedListener(this.setFastTime.bindenv(this));
+		dayTimeModule.setOnTimeVeryfastPressedListener(this.setVeryfastTime.bindenv(this));
+		dayTimeModule.setOnTimeLudicrousPressedListener(this.setLudicrousTime.bindenv(this));
 		this.m.CombatDialog <- this.new("scripts/ui/screens/world/world_combat_dialog");
 		this.m.CombatDialog.setOnEngageButtonPressedListener(this.combat_dialog_module_onEngagePressed.bindenv(this));
 		this.m.CombatDialog.setOnCancelButtonPressedListener(this.combat_dialog_module_onCancelPressed.bindenv(this));
@@ -2089,6 +2099,30 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 
 			this.setPause(false);
+		}
+	}
+
+	function setVeryfastTime()
+	{
+		if (!this.m.MenuStack.hasBacksteps())
+		{
+			this.setPause(false);
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
+			{
+				this.World.setSpeedMult(this.Const.World.SpeedSettings.LightSpeedMult);
+			}
+		}
+	}
+
+	function setLudicrousTime()
+	{
+		if (!this.m.MenuStack.hasBacksteps())
+		{
+			this.setPause(false);
+			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
+			{
+				this.World.setSpeedMult(this.Const.World.SpeedSettings.LudicrousSpeedMult);
+			}
 		}
 	}
 
