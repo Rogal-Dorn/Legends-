@@ -240,14 +240,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			return "No one assigned to craft";
 		}
-		/*
-		local percent = (this.m.PointsCrafted / this.m.PointsNeeded) * 100.0;
-		if (percent >= 100)
-		{
-			return "Crafted ... 100%";
-		}
 
-		return "Crafted ... " + percent + "%";*/
 		local numToCraft = this.getCraftableQueue().len() + this.m.ItemsCrafted.len();
 		local crafted = this.m.ItemsCrafted.len();
 
