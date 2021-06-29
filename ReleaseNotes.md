@@ -5320,6 +5320,9 @@ Slight nerf to ranged flail, -10 damage on average
 
 Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
 
+New blade dancer armor+helmet set
+New nomad archer armor
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
