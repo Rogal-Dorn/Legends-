@@ -241,14 +241,16 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return "No one assigned to craft";
 		}
 
-		local numToCraft = this.getCraftableQueue().len() + this.m.ItemsCrafted.len();
+		local craftableQueue = this.getCraftableQueue()
+
+		local numToCraft = craftableQueue.len() + this.m.ItemsCrafted.len();
 		local crafted = this.m.ItemsCrafted.len();
 
 		local progress = this.Math.floor(100 * this.m.CurrentProgress);
 
-		if (numToCraft == 0) return "Crafted ..." + crafted + " / " + crafted;
+		if (craftableQueue.len() == 0) return "Crafted ..." + crafted + " / " + crafted;
 
-		return "Crafted ... " + crafted + "/" + numToCraft + " " + progress + "% of " + this.m.CurrentCraft;
+		return "Crafted ... " + crafted + "/" + numToCraft + " ... " + progress + "% of " + this.m.CurrentCraft;
 	}
 
 	function getCraftableQueue()
