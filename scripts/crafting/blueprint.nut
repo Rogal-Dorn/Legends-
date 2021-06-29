@@ -159,22 +159,7 @@ this.blueprint <- {
 
 	function isCraftable()
 	{
-		local itemsMap = {};
-
-		foreach( item in this.World.Assets.getStash().getItems() )
-		{
-			if (item == null)
-			{
-				continue;
-			}
-
-			if (!(item.getID() in itemsMap))
-			{
-				itemsMap[item.getID()] <- 0;
-			}
-
-			itemsMap[item.getID()] = itemsMap[item.getID()] + 1;
-		}
+		local itemsMap = this.World.Assets.getStash().getNumItemsMap(true);
 
 		foreach( c in this.m.PreviewComponents )
 		{

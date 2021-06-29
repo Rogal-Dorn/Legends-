@@ -5023,6 +5023,7 @@ this.tooltip_events <- {
 			local ret = [
 				{
 					id = 1,
+					type = "title",
 					text = "Time Required"
 				},
 				{
@@ -5031,6 +5032,21 @@ this.tooltip_events <- {
 					text = desc
 				}
 			];
+			return ret;
+
+		case "crafting.CraftForeverButton":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Continuously Craft"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Sets this item to be crafted repeatedly as long as there are enough ingredients."
+				}
+			]
 			return ret;
 
 		case "healer.Supplies":
