@@ -5328,6 +5328,8 @@ Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for en
 Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
 Remove mod_faster except for config file as all of it's functionality is now handled inside of world_state.
 
+Nerf greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos

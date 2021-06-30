@@ -506,7 +506,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			barterMult += bro.getBarterModifier();
 			if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
 			{
-				greed = 2;
+				greed += 1;
 			}
 		}
 

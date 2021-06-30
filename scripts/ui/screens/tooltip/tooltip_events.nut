@@ -1139,8 +1139,7 @@ this.tooltip_events <- {
 			{
 				if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
 				{
-					greed = 2;
-					break;
+					greed += 1;
 				}
 			}
 
@@ -1153,7 +1152,7 @@ this.tooltip_events <- {
 					bro.getName(),
 					bro.getBackground().getNameOnly()
 				];
-				local bm = bro.getBarterModifier() * 100.0 / greed;
+				local bm = this.Math.floor(bro.getBarterModifier() * 10000.0 / greed) / 100;
 
 				if (bm > 0)
 				{
