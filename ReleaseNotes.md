@@ -5300,6 +5300,12 @@ Mage swordstaff now part of staff spec
 
 ## 15.0.1.15
 
+**Crafting System Improvements**
+You can now set an item to be crafted whenever enough ingredients are available.
+Crafting menu now shows in stash/required amounts for ingredients.
+You can now queue an item to craft in the crafting tent even if you don't have the required ingredients.
+Other minor optimizations and UI fixes/improvements.
+
 **Changes**
 Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
 Adds some trade goods to the Southern 'Noble' Parties also
