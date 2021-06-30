@@ -5326,3 +5326,4 @@ New nomad archer armor
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
+Once again fixes special die roll units spawning too frequently (Butcher/Rabble)
