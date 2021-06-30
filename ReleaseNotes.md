@@ -5319,6 +5319,8 @@ Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives
 
 Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
 
+Nerf greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
