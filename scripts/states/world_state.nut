@@ -264,33 +264,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.m.EscortedEntity = this.WeakTableRef(_e);
 		}
-
-		if (this.m.EscortedEntity != null && !this.m.EscortedEntity.isNull() && this.m.EscortedEntity.isAlive())
-		{
-			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
-
-			if (!this.isPaused())
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(2);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
-		}
-		else
-		{
-			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
-
-			if (!this.isPaused())
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(1);
-			}
-			else
-			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
-		}
 	}
 
 	function autosave()
@@ -766,11 +739,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (this.World.Camp.isCamping())
 		{
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
+			//this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 
 			if (!this.isPaused())
 			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+				//this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
 				this.m.Camp.update(this);
 			}
 		}
@@ -1790,11 +1763,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.Player.setPath(null);
 			this.m.AutoEnterLocation = null;
 			this.m.AutoAttack = null;
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
+			/*this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
 			this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
 			this.World.TopbarDayTimeModule.updateTimeButtons(2);
-			this.setPause(false);
+			this.setPause(false);*/
 		}
 		else
 		{
@@ -2080,11 +2053,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
-			{
-				this.m.LastWorldSpeedMult = 1.0;
-			}
-
+			this.m.LastWorldSpeedMult = 1.0;
 			this.setPause(false);
 		}
 	}
@@ -2093,11 +2062,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
-			{
-				this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
-			}
-
+			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
 			this.setPause(false);
 		}
 	}
@@ -2106,11 +2071,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
+			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.VeryfastSpeedMult;
 			this.setPause(false);
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
-			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.LightSpeedMult);
-			}
 		}
 	}
 
@@ -2118,11 +2080,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
+			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.LudicrousSpeedMult;
 			this.setPause(false);
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
-			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.LudicrousSpeedMult);
-			}
 		}
 	}
 
@@ -3703,18 +3662,20 @@ this.world_state <- this.inherit("scripts/states/state", {
 				break;
 
 			case 1:
-				if (!this.m.MenuStack.hasBacksteps())
-				{
-					this.setNormalTime();
-					break;
-				}
+				this.setNormalTime();
+				break;
 
 			case 2:
-				if (!this.m.MenuStack.hasBacksteps())
-				{
-					this.setFastTime();
-					break;
-				}
+				this.setFastTime();
+				break;
+
+			case 3:
+				this.setVeryfastTime();
+				break;
+
+			case 4:
+				this.setLudicrousTime();
+				break;
 
 			case 16:
 				if (!this.m.MenuStack.hasBacksteps())
