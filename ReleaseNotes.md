@@ -5325,6 +5325,9 @@ Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives
 
 Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
 
+Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
+Remove mod_faster except for config file as all of it's functionality is now handled inside of world_state.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
@@ -5333,4 +5336,4 @@ Integrates patch to fix full force (for real this time)
 Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
 Now properly displays Barter Modifier in Money tooltip
 
-Other minor typos and fixes
+Other minor typos, fixes, and cleanup
