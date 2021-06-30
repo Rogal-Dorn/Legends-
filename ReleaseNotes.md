@@ -5319,6 +5319,8 @@ Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives
 
 Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
 
+Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
