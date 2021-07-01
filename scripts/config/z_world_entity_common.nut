@@ -956,6 +956,97 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 	return null;
 }
 
+/*
+
+	_outfitArr
+	[
+		[1, "my outfit"]
+		[1, "my outfit"]
+	]
+
+	_armorArr same
+	_helmetArr same
+
+
+*/
+
+//Operating assuming that if we have chance not -1 we sent in an armor and helmet array that aren't null
+gt.Const.World.Common.pickOutfit <- function ( _outfitArr, _armorArr = null, _helmetArr = null, _chance = 0)
+{
+	if (chance != 0)
+	{
+		if (this.Math.rand(1, 100) >= _chance)
+		{
+			// this.logInfo("Pick outfit rolled against a chance and returned two things")
+			return [this.Const.World.Common.pickArmor(_armorArr), this.Const.World.Common.pickHelmet(_helmetArr)]
+		}
+	}
+	else if (_armorArr != null && _helmetArr != null && _armorArr.len() > 0 && _helmetArr.len() > 0)
+	{
+		local armorCount = 0
+		local helmCount = 0
+		local outfitCount = 0
+
+		foreach (t in _armorArr)
+		{
+			if (t[0] > 0)
+			{
+				armorCount += 1
+			}
+		}
+		foreach (t in _helmetArr)
+		{
+			if (t[0] > 0)
+			{
+				helmCount += 1
+			}
+		}
+		foreach (t in _outfitArr)
+		{
+			if (t[0] > 0)
+			{
+				outfitCount += 1
+			}
+		}
+
+		if (this.Math.rand(1, armorCount * helmCount) > outfitCount)
+		{
+			// this.logInfo("Pick outfit rolled against an armor*helmcount and returned two things")
+			return [this.Const.World.Common.pickArmor(_armorArr), this.Const.World.Common.pickHelmet(_helmetArr)]
+		}
+	}
+
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _outfitArr)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local r = this.Math.rand(0, totalWeight);
+	local outfitID = "";
+	foreach (t in candidates)
+	{
+		r = r - t[0];
+		if (r > 0)
+		{
+			continue;
+		}
+		outfitID = t[1];
+		break;
+	}
+
+	local layersObj = this.Const.LegendMod.Outfits[outfitID];
+	// this.logInfo("Pick outfit picked an outfit")
+	return [this.Const.World.Common.pickArmor(layersObj.Body), this.Const.World.Common.pickHelmet(layersObj.Helmet)]
+
+}
+
 gt.Const.World.Common.convNameToList <- function ( _named )
 {
 	local findString = ["helmets/", "armor/", "legend_armor/", "legend_helmets/"];
