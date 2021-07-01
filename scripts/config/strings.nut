@@ -2150,7 +2150,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendHex = "You tie your soul to your enemy, your pain becomes their pain",
 	LegendMiasma = "Release a cloud of noxious gasses that are harmful to any living being",
 	LegendDarkflight = "Disapparate from your current location and reappear on the other side of the battlefield up to 6 tiles away",
-	LegendDaze = "Assault the senses of your target with a flurry of colorful movement and sounds. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Uses Ranged skill, chance to hit doubled if you have the Taunt perk. does no damage. ",
+	LegendDaze = "Assault the senses of your target with a flurry of colorful movement and sounds. Such an astonishing display is sure to leave anyone too bewildered to fight effectively. Uses Ranged skill, chance to hit doubled if you have the Taunt perk. Does no damage. ",
 	LegendStunned = "Unleash a brilliant flash of white light aimed directly at the eyes of your target in an attempt to blind and incapacitate.",
 	LegendHorrify = "Blare out a piercing, unworldly sound that is more than likely to distress anyone unfortunate enough to hear it.",
 	LegendPush = "Concoct a mixture of smells so fetid and noxious, you force your target to retreat just so they can breathe.",
