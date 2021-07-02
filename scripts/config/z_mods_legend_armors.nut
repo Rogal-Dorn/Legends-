@@ -1559,7 +1559,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [4, "armor_upgrades/legend_bone_platings_upgrade"]
         ]
     }]
-},{
+},
+{
     ID = "barbarian_chosen_armor_01", // ~~186
     Script = "",
     Sets = [{
@@ -1595,7 +1596,35 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [1, "armor_upgrades/legend_direwolf_pelt_upgrade"],
         ]
     }]
-},{
+},
+{
+    ID = "brown_monk_armor_00", // ~~186
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_robes", 1]
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [2, ""],
+            [1, "plate/legend_armor_leather_jacket_simple"]
+        ],
+        Cloak = [
+            [2, ""],
+            [1, "cloak/legend_southern_shoulder_cloth", 7],
+            [1, "cloak/legend_southern_shoulder_cloth", 6]
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_wrap_left", 6]
+        ],
+        Attachments =[
+            [9, ""],
+            [1, "armor_upgrades/legend_leather_neckguard_upgrade"]
+        ]
+    }]
+},
+{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{

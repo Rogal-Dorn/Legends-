@@ -96,6 +96,15 @@ gt.Const.LegendMod.OutfitObjs.extend([
         [1, "red_bandit_leader_helmet"]
     ]
 },
+{
+    ID = "brown_monk_outfit_00",
+    Body = [
+        [1, "brown_monk_armor_00"]
+    ],
+    Helmet = [
+        [1, "brown_monk_helmet_00"]
+    ]
+},
 
 ]);
 

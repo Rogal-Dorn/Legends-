@@ -1997,6 +1997,24 @@ gt.Const.LegendMod.HelmObjs.extend([
             ]
         }]
     }
+    ,
+	{
+        ID = "brown_monk_helmet_00", //190 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_cloth_cap"],
+            ],
+            Helms = [
+            ],
+            Tops = [
+                [3, ""],
+                [1, "top/legend_helmet_cloth_long_hood", 3] //20
+            ],
+            Vanity = [
+            ]
+        }]
+    }
 ])
 
 gt.Const.LegendMod.Helmets <- {};
