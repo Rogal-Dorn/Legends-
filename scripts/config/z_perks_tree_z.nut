@@ -27,9 +27,7 @@ foreach (perk, table in map)
 	if (array.len() == 1) mid += array[0] + " ";
 	else
 	{
-		for (local i = 0; i < array.len() - 2; i++) {
-			mid += array[i] + ", ";
-		}
+		for (local i = 0; i < array.len() - 2; i++) mid += array[i] + ", ";
 		mid += array[array.len()-2] + " or ";
 		mid += array[array.len()-1] + " ";
 	}
