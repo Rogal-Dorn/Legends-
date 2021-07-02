@@ -142,7 +142,8 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 			];
 
 			local outfits = [
-				[1, "southern_knight_outfit_00"]
+				[1, "southern_knight_outfit_00"],
+				[1, "white_nomad_leader_outfit_00"]
 			]
 
 			foreach( item in this.Const.World.pickOutfit(outfits, armor, helmet) ) 

@@ -2030,6 +2030,27 @@ gt.Const.LegendMod.HelmObjs.extend([
             Vanity = [
             ]
         }]
+    },
+	{
+        ID = "white_nomad_leader_helmet_00", //190 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_southern_open_chain_hood"], //6
+                [1, "hood/legend_helmet_chain_hood"], //80, -5
+                [1, "hood/legend_helmet_chain_hood"] //80, -5
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_enclave_skullcap"] //120, -12, -1
+                [1, "helm/legend_helmet_southern_conic_helm"] //120, -12, -1
+            ],
+            Tops = [
+                [1, ""], //20, -1
+                [1, "top/legend_helmet_nose_plate"] //20, -1, 0
+            ],
+            Vanity = [
+            ]
+        }]
     }
 ])
 

@@ -1651,6 +1651,40 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     }]
 },
 {
+    ID = "white_nomad_leader_armor_00", // ~~186
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_thick_tunic"],
+            [1, "cloth/legend_tunic"],
+            [1, "cloth/legend_tunic_wrap"],
+            [1, "cloth/legend_tunic_collar_thin"],
+            [1, "cloth/legend_tunic_collar_deep"]
+        ],
+        Chain = [
+            [1, "chain/legend_southern_mail"],
+        ],
+        Plate = [
+            
+            [1, "plate/legend_armor_leather_lamellar_harness_heavy"], //130
+            [1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
+            [1, "plate/legend_southern_scale"],// 155
+        ],
+        Cloak = [
+            [3, ""],
+            [1, "cloak/legend_southern_scarf"],// 5
+        ],
+        Tabard = [
+            [2, ""]
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+            [1, "tabard/legend_southern_wrap"],// 5
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{
