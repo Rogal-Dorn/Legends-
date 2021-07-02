@@ -107,7 +107,8 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "padded_kettle_hat"],
 					[1, "kettle_hat_with_mail"],
 					[1, "mail_coif"],
-					[2, "legend_enclave_vanilla_skullcap_01"]
+					[2, "legend_enclave_vanilla_skullcap_01"],
+					[5, "heavy_noble_house_helmet_00"]
 				])
 			}
 			else if (banner <= 7)
@@ -119,7 +120,8 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "scale_helm"],
 					[1, "flat_top_with_mail"],
 					[1, "mail_coif"],
-					[1, "legend_enclave_vanilla_skullcap_01"]
+					[1, "legend_enclave_vanilla_skullcap_01"],
+					[5, "heavy_noble_house_helmet_00"]
 				])
 			}
 			else
@@ -131,7 +133,8 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 					[1, "rondel_helm"],
 					[1, "scale_helm"],
 					[1, "mail_coif"],
-					[2, "legend_enclave_vanilla_skullcap_01"]
+					[2, "legend_enclave_vanilla_skullcap_01"],
+					[5, "heavy_noble_house_helmet_00"]
 
 				])
 			}

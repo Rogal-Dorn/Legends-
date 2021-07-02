@@ -101,7 +101,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "rondel_helm"],
 					[1, "scale_helm"],
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
-					[1, "legend_enclave_vanilla_kettle_sallet_03"]
+					[1, "legend_enclave_vanilla_kettle_sallet_03"],
+					[5, "heavy_noble_house_helmet_00"]
 				]))
 			}
 			else if (banner <= 7)
@@ -112,7 +113,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "flat_top_with_mail"],
 					[1, "mail_coif"],
 					[1, "legend_enclave_vanilla_kettle_sallet_02"],
-					[1, "legend_enclave_vanilla_kettle_sallet_03"]
+					[1, "legend_enclave_vanilla_kettle_sallet_03"],
+					[5, "heavy_noble_house_helmet_00"]
 
 				]))
 			}
@@ -126,7 +128,8 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "rondel_helm"],
 					[1, "scale_helm"],
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
-					[1, "legend_enclave_vanilla_kettle_sallet_02"]
+					[1, "legend_enclave_vanilla_kettle_sallet_02"],
+					[5, "heavy_noble_house_helmet_00"]
 
 				]))
 			}

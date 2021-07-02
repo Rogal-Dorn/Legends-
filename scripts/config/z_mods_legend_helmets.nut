@@ -1966,7 +1966,36 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "vanity/legend_helmet_ponytail", 1], //10
             [1, "vanity/legend_helmet_ponytail", 4], //10
         ]
-    }]
+        }]
+    },
+	{
+        ID = "heavy_noble_house_helmet_00", //190 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_aventail"],
+                [1, "hood/legend_helmet_enclave_bevor"],
+                [1, "hood/legend_helmet_chain_hood_full"],
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_rondel_helm"], //170
+                [1, "helm/legend_helmet_norman_helm"], //170
+                [1, "helm/legend_helmet_barbute"], //170
+                [1, "helm/legend_helmet_sallet"], //170
+                [1, "helm/legend_helmet_deep_sallet"] //170
+            ],
+            Tops = [
+                [1, "top/legend_helmet_faceplate_winged"], //20
+                [1, "top/legend_helmet_faceplate_snub_nose"], //20
+                [1, "top/legend_helmet_faceplate_snub_slit"], //20
+                [1, "top/legend_helmet_faceplate_short"], //20
+                [1, "top/legend_helmet_faceplate_full"], //20
+                [1, "top/legend_helmet_faceplate_curved"], //20
+                [1, "top/legend_helmet_faceplate_full_breaths"], //20
+            ],
+            Vanity = [
+            ]
+        }]
     }
 ])
 

@@ -124,8 +124,8 @@ this.noble_sergeant <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "reinforced_mail_hauberk"],
-			[1, "mail_hauberk", 30]
+			[2, "seedmaster_noble_armor"],
+			[2, "citreneking_noble_armor"]
 		]));
 	}
 
