@@ -2013,6 +2013,23 @@ gt.Const.LegendMod.HelmObjs.extend([
             Vanity = [
             ]
         }]
+    },
+	{
+        ID = "dark_southern_helmet_00", //190 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_chain_hood"], //80, -5
+		        [1, "hood/legend_helmet_southern_niqaab"] //100
+            ],
+            Helms = [
+            ],
+            Tops = [
+                [1, "top/legend_helmet_cloth_long_hood", 4] //20
+            ],
+            Vanity = [
+            ]
+        }]
     }
 ])
 

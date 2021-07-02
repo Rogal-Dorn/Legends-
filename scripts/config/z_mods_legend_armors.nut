@@ -1625,6 +1625,32 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     }]
 },
 {
+    ID = "dark_southern_armor_00", // ~~186
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_thick_tunic"],
+            [1, "cloth/legend_tunic"],
+            [1, "cloth/legend_tunic_wrap"],
+            [1, "cloth/legend_tunic_collar_thin"],
+            [1, "cloth/legend_tunic_collar_deep"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_short_mail"]
+        ],
+        Plate = [
+        ],
+        Cloak = [
+            [1, "cloak/legend_animal_pelt", 4]
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_overcloth"]
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
     ID = "special/heraldic_armor", // 250
     Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
     Sets = [{

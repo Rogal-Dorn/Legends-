@@ -349,18 +349,17 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		local item = this.Const.World.Common.pickArmor([
-			[20, "ragged_surcoat"],
-			[20, "padded_leather"],
-			[20,"worn_mail_shirt"],
-			[20,"patched_mail_shirt"],
-			[20, "worn_mail_shirt"],
-			[20, "patched_mail_shirt"]
-		])
-		this.m.Items.equip(item);
 
+		local armor = [
+			[1, "ragged_surcoat"],
+			[1, "padded_leather"],
+			[1, "worn_mail_shirt"],
+			[1, "patched_mail_shirt"],
+			[1, "worn_mail_shirt"],
+			[1, "patched_mail_shirt"]
+		]
 
-		local item = this.Const.World.Common.pickHelmet([
+		local helmet = [
 			[1, "nasal_helmet"],
 			[1, "rondel_helm"],
 			[1, "scale_helm"],
@@ -368,10 +367,15 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			[1, "rusty_mail_coif"],
 			[1, "headscarf"],
 			[1, "nasal_helmet_with_rusty_mail"]
-		])
-		if (item != null)
+		]
+
+		local outfits = [
+			[1, "dark_southern_outfit_00"]
+		]
+
+		foreach( item in this.Const.World.pickOutfit(outfits, armor, helmet) ) 
 		{
-			this.m.Items.equip(item);
+			this.m.Items.equip(item)
 		}
 	}
 
