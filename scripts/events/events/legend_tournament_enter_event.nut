@@ -442,7 +442,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Sounds too predictable, tell me of the Gauntlet instead".,
+					Text = "Sounds too predictable, tell me of the Gauntlet instead.",
 					function getResult( _event )
 					{
 						return "H";

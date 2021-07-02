@@ -180,7 +180,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		]
 
 		local helm = [
-			[1, ""]
+			[1, ""],
 			[5, "nasal_helmet_with_mail"],
 			[5, "nasal_helmet"],
 			[5, "mail_coif"],
@@ -211,7 +211,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local outfits = [
-			[1, "northern_mercenary_outfit_00",]
+			[1, "northern_mercenary_outfit_00"],
 			[1, "northern_mercenary_outfit_01"],
 			[1, "northern_mercenary_outfit_02"]
 		]

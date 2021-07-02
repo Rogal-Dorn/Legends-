@@ -505,7 +505,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Helms = [
     ],
     Tops = [ //only want black or grey face masks
-      [1, "top/legend_helmet_facemask", 1] //20
+      [1, "top/legend_helmet_facemask", 1], //20
       [1, "top/legend_helmet_facemask", 2] //20
     ],
     Vanity = [

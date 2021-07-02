@@ -2041,7 +2041,7 @@ gt.Const.LegendMod.HelmObjs.extend([
                 [1, "hood/legend_helmet_chain_hood"] //80, -5
             ],
             Helms = [
-                [1, "helm/legend_helmet_enclave_skullcap"] //120, -12, -1
+                [1, "helm/legend_helmet_enclave_skullcap"], //120, -12, -1
                 [1, "helm/legend_helmet_southern_conic_helm"] //120, -12, -1
             ],
             Tops = [
