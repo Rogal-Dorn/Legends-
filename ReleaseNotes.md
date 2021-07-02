@@ -5300,28 +5300,41 @@ Mage swordstaff now part of staff spec
 
 ## 15.0.1.15
 
+**Balance Changes**
+Slight buff to two handed chain mace because of direct damage oddity -> had 20% reduced armor pen
+Slight nerf to ranged flail, -10 damage on average
+Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
+Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
+
 **Changes**
 Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
 Adds some trade goods to the Southern 'Noble' Parties also
 > Both of the above are holy war and non-holy war parties
-
 Slightly increases the 4 skull return item contract difficulty
 Witchhunter hat is turned into a named layer & drops off champion necromancers now
 (Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
 
-Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
 
-Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
 
 Daggers now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
 
-Slight buff to two handed chain mace because of direct damage oddity -> had 20% reduced armor pen
-Slight nerf to ranged flail, -10 damage on average
+**Armor Sets Added**
+ Armor sets can now actually spawn as a set rather than individual pieces from a set with other random pieces
 
-Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
+Adds armor sets for the following enemies:
+  Nomad Archer
+  Bandit Raider
+  Monks
+  Hedgeknights
+  Bandit Leaders
+  Barb Chosen
+  Mercenaries
 
-New blade dancer armor+helmet set
-New nomad archer armor
+Adds individual helmets for:
+ Most noble units
+
+Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
+
 
 **Fixes**
 Mummies don't retreat anymore
