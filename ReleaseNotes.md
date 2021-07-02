@@ -5340,3 +5340,4 @@ Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously 
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
 Once again fixes special die roll units spawning too frequently (Butcher/Rabble)
+Bunch of tournament typos
