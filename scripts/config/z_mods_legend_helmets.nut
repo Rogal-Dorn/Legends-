@@ -1996,8 +1996,7 @@ gt.Const.LegendMod.HelmObjs.extend([
             Vanity = [
             ]
         }]
-    }
-    ,
+    },
 	{
         ID = "brown_monk_helmet_00", //190 ish
         Script = "",
