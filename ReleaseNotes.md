@@ -5346,6 +5346,8 @@ Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously 
 Adds in the Rough Metal Bevor to blast furnace armory locations
 
 
+Fixes all the perks allowing for passive production at a tent by reworking the backend of the gatherer and hunter tents.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
