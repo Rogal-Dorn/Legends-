@@ -5334,6 +5334,7 @@ Adds individual helmets for:
  Most noble units
 
 Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
+Adds in the Rough Metal Bevor to blast furnace armory locations
 
 
 **Fixes**
