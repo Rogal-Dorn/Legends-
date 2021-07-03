@@ -41,3 +41,8 @@ unpacked/legend_helmets/4
 unpacked/legend_helmets/4/metadata.xml
 
 .vscode
+
+bbrushes_end.sh
+build_compile_end.sh
+unstaged_build_end.sh
+end_todo.txt

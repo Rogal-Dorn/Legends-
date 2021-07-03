@@ -1133,6 +1133,15 @@ this.tooltip_events <- {
 			local dailyMoney = 0;
 			local barterMult = 0.0;
 			local brolist = [];
+			local greed = 1;
+
+			foreach(bro in this.World.getPlayerRoster().getAll())
+			{
+				if (bro.getSkills().hasSkill("perk.legend_barter_greed"))
+				{
+					greed += 1;
+				}
+			}
 
 			foreach( bro in this.World.getPlayerRoster().getAll() )
 			{
@@ -1143,7 +1152,7 @@ this.tooltip_events <- {
 					bro.getName(),
 					bro.getBackground().getNameOnly()
 				];
-				local bm = bro.getBarterModifier() * 100.0;
+				local bm = this.Math.floor(bro.getBarterModifier() * 10000.0 / greed) / 100;
 
 				if (bm > 0)
 				{
@@ -3512,7 +3521,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Set time to pass normally."
+					text = "Set time to pass normally. (1x Speed)"
 				}
 			];
 
@@ -3526,7 +3535,35 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Set time to pass faster than normal."
+					text = "Set time to pass faster than normal. (2x Speed)"
+				}
+			];
+
+		case "world-screen.topbar.TimeVeryfastButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Very Fast Speed (3)"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Set time to pass much faster than normal. (4x Speed)"
+				}
+			];
+		
+		case "world-screen.topbar.TimeLudicrousButton":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Ludicrous Speed (4)"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Set time to pass insanely quickly. (8x Speed)"
 				}
 			];
 
@@ -5013,6 +5050,7 @@ this.tooltip_events <- {
 			local ret = [
 				{
 					id = 1,
+					type = "title",
 					text = "Time Required"
 				},
 				{
@@ -5021,6 +5059,21 @@ this.tooltip_events <- {
 					text = desc
 				}
 			];
+			return ret;
+
+		case "crafting.CraftForeverButton":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Continuously Craft"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "Sets this item to be crafted repeatedly as long as there are enough ingredients."
+				}
+			]
 			return ret;
 
 		case "healer.Supplies":

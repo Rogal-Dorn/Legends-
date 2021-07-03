@@ -207,13 +207,6 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 				this.World.Assets.setUseProvisions(false);
 				this.World.getCamera().moveTo(this.World.State.getPlayer());
 
-				if (!this.World.State.isPaused())
-				{
-					this.World.setSpeedMult(this.Const.World.SpeedSettings.EscortMult);
-				}
-
-				this.World.State.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.EscortMult;
-
 				if (this.Flags.get("IsFleeing"))
 				{
 					this.Contract.setScreen("Failure1");

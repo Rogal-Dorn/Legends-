@@ -47,7 +47,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants the wearer a +" + this.m.BonusHeadChance +"% chance to hit the head"
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BonusHeadChance + "%[/color] Chance To Hit Head"
 		});
 		return result
 	}

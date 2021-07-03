@@ -5306,6 +5306,13 @@ Slight nerf to ranged flail, -10 damage on average
 Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
 Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
 
+
+**Crafting System Improvements**
+You can now set an item to be crafted whenever enough ingredients are available.
+Crafting menu now shows in stash/required amounts for ingredients.
+You can now queue an item to craft in the crafting tent even if you don't have the required ingredients.
+Other minor optimizations and UI fixes/improvements.
+
 **Changes**
 Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
 Adds some trade goods to the Southern 'Noble' Parties also
@@ -5313,10 +5320,11 @@ Adds some trade goods to the Southern 'Noble' Parties also
 Slightly increases the 4 skull return item contract difficulty
 Witchhunter hat is turned into a named layer & drops off champion necromancers now
 (Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
-
-
-
-Daggers now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
+Shows the amount (nutrition/ammo) of an item crafted in taxidermist/crafting tent.
+Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives any stats or abilities.
+Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
+Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
+Changes greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
 
 **Armor Sets Added**
  Armor sets can now actually spawn as a set rather than individual pieces from a set with other random pieces
@@ -5343,3 +5351,7 @@ Swordmaster favoured enemy typos
 Once again fixes special die roll units spawning too frequently (Butcher/Rabble)
 Bunch of tournament typos
 Temporarily removes tournament spectators from grand tournament
+Ranged damage multiplier is now applied in character screen
+Integrates patch to fix full force (for real this time)
+Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
+Now properly displays Barter Modifier in Money tooltip
