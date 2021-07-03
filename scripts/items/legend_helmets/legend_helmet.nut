@@ -218,14 +218,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local value = this.m.Vision;
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			value = value + u.getVision();
+			value += this.m.Upgrades[i].getVision();
 		}
 
 		return value;
@@ -235,14 +234,14 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local value = this.m.Condition;
 
-		foreach( u in this.m.Upgrades )
+
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			value = value + u.getCondition();
+			value += this.m.Upgrades[i].getCondition();
 		}
 
 		return value;
@@ -252,14 +251,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local value = this.m.ConditionMax;
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			value = value + u.getConditionMax();
+			value += this.m.Upgrades[i].getConditionMax();
 		}
 
 		return value;
@@ -287,19 +285,16 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = this.m.ConditionMax;
 		local delta = _a - (this.m.ConditionMax - this.m.Condition);
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
 
-			delta = u.addArmor(delta);
+			delta = this.m.Upgrades[i].addArmor(delta);
 
-			if (delta <= 0)
-			{
-				break;
-			}
+			if (delta <= 0) break;
 		}
 	}
 
@@ -396,14 +391,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local value = this.m.StaminaModifier;
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			value = value + u.getStaminaModifier();
+			value += this.m.Upgrades[i].getStaminaModifier();
 		}
 
 		return value;
@@ -876,14 +870,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			local app = this.getContainer().getAppearance();
 			app.ImpactSound[this.Const.BodyPart.Head] = this.m.ImpactSound;
 			this.updateAppearance();
-			foreach( u in this.m.Upgrades )
+			for (local i = 0; i < this.m.Upgrades.len(); ++i)
 			{
-				if (u == null)
+				if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 				{
 					continue;
 				}
-
-				u.onEquip();
+				this.m.Upgrades[i].onEquip();
 			}
 		}
 	}
@@ -922,14 +915,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			u.onBeforeDamageReceived(_attacker, _skill, _hitInfo, _properties);
+			this.m.Upgrades[i].onBeforeDamageReceived(_attacker, _skill, _hitInfo, _properties);
 		}
 	}
 
@@ -937,15 +929,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		local totalDamage = _damage;
 
-		for( local i = this.Const.Items.HelmetUpgrades.COUNT - 1; i >= 0; i = --i )
+		for (local i = this.m.Upgrades.len() - 1; i >= 0 ; --i)
 		{
-			local u = this.m.Upgrades[i];
-
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-			totalDamage = u.onDamageReceived(totalDamage, _fatalityType, _attacker);
+			totalDamage = this.m.Upgrades[i].onDamageReceived(totalDamage, _fatalityType, _attacker);
 		}
 
 		if (this.m.Condition == 0)
@@ -991,68 +981,64 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		_properties.Stamina += this.Math.ceil(this.getStaminaModifier() * staminaMult);
 		_properties.Vision += this.getVision();
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			u.onUpdateProperties(_properties);
+			this.m.Upgrades[i].onUpdateProperties(_properties);
 		}
-
 	}
 
 	function onTurnStart()
 	{
 		this.helmet.onTurnStart();
 
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-			u.onTurnStart();
+			this.m.Upgrades[i].onTurnStart();
 		}
+
 	}
 
 	function onTotalArmorChanged()
 	{
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			u.onTotalArmorChanged();
+			this.m.Upgrades[i].onTotalArmorChanged();
 		}
 	}
 
 	function onCombatFinished()
 	{
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			u.onCombatFinished();
+			this.m.Upgrades[i].onCombatFinished();
 		}
 	}
 
 	function onActorDied( _onTile )
 	{
-		foreach( u in this.m.Upgrades )
+		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (u == null)
+			if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 			{
 				continue;
 			}
-
-			u.onActorDied(_onTile);
+			this.m.Upgrades[i].onActorDied(_onTile);
 		}
 	}
 
@@ -1064,18 +1050,15 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				return true
 			}
 
-			foreach( u in this.m.Upgrades )
+			for (local i = 0; i < this.m.Upgrades.len(); ++i)
 			{
-				if (u == null)
+				if (this.m.Upgrades[i] == null || i == this.Const.Items.HelmetUpgrades.ExtraVanity)
 				{
 					continue;
 				}
 
-				if (u.isItemType(_t)) {
-					return true
-				}
+				if (this.m.Upgrades[i].isItemType(_t)) return true;
 			}
-
 			return false
 		}
 
