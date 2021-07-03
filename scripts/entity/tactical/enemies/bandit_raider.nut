@@ -373,7 +373,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 			[1, "dark_southern_outfit_00"]
 		]
 
-		foreach( item in this.Const.World.pickOutfit(outfits, armor, helmet) ) 
+		foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) ) 
 		{
 			this.m.Items.equip(item)
 		}

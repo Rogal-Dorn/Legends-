@@ -143,7 +143,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 				[1, "barbarian_chosen_outfit_02"]
 			]
 
-			foreach( item in this.Const.World.pickOutfit(outfits, armor, helmet) ) 
+			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) ) 
 			{
 				this.m.Items.equip(item)
 			}

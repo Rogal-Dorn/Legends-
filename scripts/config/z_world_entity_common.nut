@@ -971,9 +971,9 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 */
 
 //Operating assuming that if we have chance not -1 we sent in an armor and helmet array that aren't null
-gt.Const.World.Common.pickOutfit <- function ( _outfitArr, _armorArr = null, _helmetArr = null, _chance = 0)
+gt.Const.World.Common.pickOutfit <- function ( _outfitArr, _armorArr = null, _helmetArr = null, _chance = 0) 
 {
-	if (chance != 0)
+	if (_chance != 0)
 	{
 		if (this.Math.rand(1, 100) >= _chance)
 		{
