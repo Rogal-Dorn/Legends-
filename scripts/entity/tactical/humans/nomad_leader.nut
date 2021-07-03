@@ -128,6 +128,31 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 
+
+		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body) && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
+		{
+			local armor = [
+				[1, "oriental/plated_nomad_mail"],
+				[1, "oriental/southern_long_mail_with_padding"],
+			]
+
+			local helmet = [
+				[4, "oriental/southern_helmet_with_coif"],
+				[8, "oriental/nomad_reinforced_helmet"]
+			];
+
+			local outfits = [
+				[1, "southern_knight_outfit_00"],
+				[1, "white_nomad_leader_outfit_00"]
+			]
+
+			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) ) 
+			{
+				this.m.Items.equip(item)
+			}
+			return;
+		}
+
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([

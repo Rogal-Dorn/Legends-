@@ -951,7 +951,7 @@ layers = [
  "desc" :  "Sharp Faceplate." \
 },
 {"name" : "enclave_great_jaw"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 350, "con" : 50, "stam" : -5, "vis" : 0, "hair" : "false", "beard" : "false",  \
- "title" :  "A rough metal bevor", \
+ "title" :  "Rough Metal Bevor", \
  "desc" :  "A rough metal bevor." \
 },
 {"name" : "facemask"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 150, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "false", "beard" : "true",  \

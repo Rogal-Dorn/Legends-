@@ -91,9 +91,9 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "mail_shirt"],
-				[1, "mail_hauberk"],
-				[1, "basic_mail_shirt"],
+				// [1, "mail_shirt"],
+				// [1, "mail_hauberk"],
+				// [1, "basic_mail_shirt"],
 				[1, "footman_armor"],
 				[1, "leather_scale_armor"],
 				[1, "light_scale_armor"]

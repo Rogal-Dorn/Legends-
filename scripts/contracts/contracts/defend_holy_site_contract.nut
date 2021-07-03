@@ -155,7 +155,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 					local arr = ["trade/silk_item", "trade/silk_item", "trade/incense_item", "trade/spices_item"]
 					for(local i = 0; i < r; i++) //adds either 1 silk, 2 silk, 3 incense, 4 spices
 					{
-						party.addToInventory(arr[r])
+						party.addToInventory(arr[r-1])
 					}
 
 					local c = party.getController();
@@ -1313,7 +1313,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		local arr = ["trade/silk_item", "trade/silk_item", "trade/incense_item", "trade/spices_item"]
 		for(local i = 0; i < r; i++) //adds either 1 silk, 2 silk, 3 incense, 4 spices
 		{
-			party.addToInventory(arr[r])
+			party.addToInventory(arr[r-1])
 		}
 
 		local c = party.getController();

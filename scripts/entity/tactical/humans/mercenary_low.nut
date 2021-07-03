@@ -151,8 +151,8 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 			[1, "padded_leather"],
 			[1, "ragged_surcoat"],
 			[1, "padded_surcoat"],
-			[1, "basic_mail_shirt"],
-			[1, "mail_shirt"],
+			// [1, "basic_mail_shirt"],
+			// [1, "mail_shirt"],
 			[1, "mail_hauberk"]
 		]));
 
