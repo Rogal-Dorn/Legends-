@@ -40,6 +40,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_shields_up"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
