@@ -5325,6 +5325,7 @@ Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives
 Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
 Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
 Changes greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
+Swordmasters don't only spawn with 20 armor tunics anymore, but can still spawn with really bad helmets
 
 **Armor Sets Added**
  Armor sets can now actually spawn as a set rather than individual pieces from a set with other random pieces
