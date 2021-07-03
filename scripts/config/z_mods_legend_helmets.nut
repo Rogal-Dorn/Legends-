@@ -2051,6 +2051,23 @@ gt.Const.LegendMod.HelmObjs.extend([
             Vanity = [
             ]
         }]
+    },
+	{
+        ID = "great_jaw_helmet_00", //190 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_chain_hood"]
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_nordic_helm_high"] //120, -12, -1
+            ],
+            Tops = [
+                [1, "top/legend_helmet_enclave_great_jaw"] //20, -1, 0
+            ],
+            Vanity = [
+            ]
+        }]
     }
 ])
 
