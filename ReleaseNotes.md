@@ -5356,3 +5356,4 @@ Integrates patch to fix full force (for real this time)
 Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
 Now properly displays Barter Modifier in Money tooltip
 Fixes all the perks allowing for passive production at a tent (e.g. hunter building dropping alcohol)
+Unstoppable Force renamed to Immovable Object (lol)
