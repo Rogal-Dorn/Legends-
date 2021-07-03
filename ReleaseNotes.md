@@ -5300,6 +5300,13 @@ Mage swordstaff now part of staff spec
 
 ## 15.0.1.15
 
+**Balance Changes**
+Slight buff to two handed chain mace because of direct damage oddity -> had 20% reduced armor pen
+Slight nerf to ranged flail, -10 damage on average
+Leather neckguard moved to 5 durability (from 8) and cost lowered accordingly
+Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
+
+
 **Crafting System Improvements**
 You can now set an item to be crafted whenever enough ingredients are available.
 Crafting menu now shows in stash/required amounts for ingredients.
@@ -5310,34 +5317,43 @@ Other minor optimizations and UI fixes/improvements.
 Increases the amt. of tools & supplies you can gain when fighting Southern 'Noble' Parties
 Adds some trade goods to the Southern 'Noble' Parties also
 > Both of the above are holy war and non-holy war parties
-
 Slightly increases the 4 skull return item contract difficulty
 Witchhunter hat is turned into a named layer & drops off champion necromancers now
 (Old change but previously unmentioned) -> Hunters Cap (+1 vis) are now 2000 gold base cost
+Shows the amount (nutrition/ammo) of an item crafted in taxidermist/crafting tent.
+Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives any stats or abilities.
+Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
+Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
+Changes greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
+Swordmasters don't only spawn with 20 armor tunics anymore, but can still spawn with really bad helmets
 
-Clarity now doesn't have bonus AP attatched to it, now has a +10% armor ignore similar to duelist. When you use a potion like before it adds another +10%. Might be too strong, might be too weak.
+**Armor Sets Added**
+ Armor sets can now actually spawn as a set rather than individual pieces from a set with other random pieces
+
+Adds armor sets for the following enemies:
+  Nomad Archer
+  Bandit Raider
+  Monks
+  Hedgeknights
+  Bandit Leaders
+  Barb Chosen
+  Mercenaries
+
+Adds individual helmets for:
+ Most noble units
 
 Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
-
-Shows the amount (nutrition/ammo) of an item crafted in taxidermist/crafting tent.
-
-Second Vanity layer is now renamed to Aesthetic Vanity layer and no longer gives any stats or abilities.
-
-Daggers and choke now have a +50 chance to hit on fleeing targets, mostly for end of fight farming convenience but also opens up some interesting ways to get knife punctures out mid-fight
-
-Add 2 more speed buttons to the top of the worldmap and label them with their appropriate speeds.
-Remove mod_faster except for config file as all of it's functionality is now handled inside of world_state.
-
-Nerf greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
-
-Fixes all the perks allowing for passive production at a tent by reworking the backend of the gatherer and hunter tents.
+Adds in the Rough Metal Bevor to blast furnace armory locations
 
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
+Once again fixes special die roll units spawning too frequently (Butcher/Rabble)
+Bunch of tournament typos
+Temporarily removes tournament spectators from grand tournament
 Ranged damage multiplier is now applied in character screen
 Integrates patch to fix full force (for real this time)
 Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
 Now properly displays Barter Modifier in Money tooltip
-
-Other minor typos, fixes, and cleanup
+Fixes all the perks allowing for passive production at a tent (e.g. hunter building dropping alcohol)
+Unstoppable Force renamed to Immovable Object (lol)

@@ -854,12 +854,12 @@ layers = [
     "adesc" : "Includes a dark wooly cloak"
 },
 {"name": "legend_animal_pelt",           "layer": "cloak", "min": 1, "max": 8, "value" : 250, "con" : 15, "stam" : -2, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "animal_pelt",\
-    "title" :  "Southern Scarf", \
+    "title" :  "Animal Pelt", \
     "desc" :  "A cloak of dark wool that wraps around the shoulders.", \
     "adesc" : "Includes a dark wooly cloak"
 },
 {"name": "legend_southern_scarf_wrap",           "layer": "cloak", "min": 1, "max": 17, "value" : 150, "con" : 15, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_scarf_wrap",\
-    "title" :  "Southern Scarf", \
+    "title" :  "Southern Scarf Wrap", \
     "desc" :  "A cloak of dark wool that wraps around the shoulders.", \
     "adesc" : "Includes a dark wooly cloak"
 },
