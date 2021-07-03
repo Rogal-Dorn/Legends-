@@ -5330,6 +5330,8 @@ Remove mod_faster except for config file as all of it's functionality is now han
 
 Nerf greed to make it divide barter by 1 + the number of mercenaries with barter rather than just by 2 no matter how many mercenaries had barter.
 
+Fixes all the perks allowing for passive production at a tent by reworking the backend of the gatherer and hunter tents.
+
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
