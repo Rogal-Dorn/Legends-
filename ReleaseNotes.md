@@ -5345,9 +5345,6 @@ Adds individual helmets for:
 Adds in a famed frogmouth layer, the darker black frogmouth variant. Previously only the unnamed grey variant would show up, even on supposed-to-be-named helmets
 Adds in the Rough Metal Bevor to blast furnace armory locations
 
-
-Fixes all the perks allowing for passive production at a tent by reworking the backend of the gatherer and hunter tents.
-
 **Fixes**
 Mummies don't retreat anymore
 Swordmaster favoured enemy typos
@@ -5358,3 +5355,4 @@ Ranged damage multiplier is now applied in character screen
 Integrates patch to fix full force (for real this time)
 Fix bandage ally being usable if in enemy ZoC and not having bandage mastery
 Now properly displays Barter Modifier in Money tooltip
+Fixes all the perks allowing for passive production at a tent (e.g. hunter building dropping alcohol)
