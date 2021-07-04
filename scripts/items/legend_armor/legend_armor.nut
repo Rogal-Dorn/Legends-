@@ -411,6 +411,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return null;
 		}
 
+		if (this.Stash.getNumberOfEmptySlots() == 0) return null;
+
 		local app = this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
 		this.m.Upgrades[_slot] = null;
