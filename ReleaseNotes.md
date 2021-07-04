@@ -5298,7 +5298,7 @@ Fixes full force
 Fixes tail slam split skill
 Mage swordstaff now part of staff spec
 
-## 15.0.1.15
+15.0.1.15
 
 **Balance Changes**
 Slight buff to two handed chain mace because of direct damage oddity -> had 20% reduced armor pen
@@ -5358,3 +5358,5 @@ Now properly displays Barter Modifier in Money tooltip
 Fixes all the perks allowing for passive production at a tent (e.g. hunter building dropping alcohol)
 Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
+
+## 15.0.1.16
