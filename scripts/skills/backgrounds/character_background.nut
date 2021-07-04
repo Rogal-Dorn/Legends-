@@ -443,7 +443,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				text = this.getDescription()
 			}
 		];
-		ret.extend(this.getAttributesTooltip())
+		if (this.getContainer() != null) ret.extend(this.getAttributesTooltip())
 		return ret
 	}
 
