@@ -800,6 +800,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (this.m.Condition == 0 && !this.m.IsIndestructible)
 		{
 			this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + "\'s " + this.makeName() + " is hit for [b]" + this.Math.floor(_damage) + "[/b] damage and has been destroyed!");
+			if (_attacker != null && _attacker.isPlayerControlled())
+			{
+				this.Tactical.Entities.addArmorParts(this.getArmorMax());
+			}
 		}
 		else
 		{
