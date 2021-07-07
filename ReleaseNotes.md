@@ -5360,3 +5360,7 @@ Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
 
 ## 15.0.1.16
+
+**Fixes**
+Fixes the scavenger to work with layered armors
+Fixes mercenary failed to find helmet
