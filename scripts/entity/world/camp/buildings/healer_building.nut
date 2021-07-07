@@ -377,9 +377,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 			local r = obj.Injury;
 
-			if (r == null) continue;
-
-			if (r.m.IsGarbage) continue;
+			if (r == null || r.isGarbage()) continue;
 
 			if (r.isTreated()) continue;
 
