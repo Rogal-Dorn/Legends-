@@ -16,28 +16,20 @@ this.perk_last_stand <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local maxHP = this.getContainer().getActor().getHitpointsMax();
-		local percentHP = maxHP * 0.01;
-		local currentHP = this.getContainer().getActor().getHitpoints();
-		local currentPercent = currentHP / percentHP;
-		local missingPercent = (100 - currentPercent);
+		local currentPercent = this.getContainer().getActor().getHitpointsPct();
 		local bonus = 0;
-		
-		if( missingPercent >= 34)
+		if (currentPercent < 0.66)
 		{
-			bonus = this.Math.floor(missingPercent - 34) / 2.0;
+			bonus = this.Math.floor(100 * (0.66 - currentPercent) / 2.0);
 		}
-
-		if( missingPercent >= 66)
+		if (currentPercent < 0.33)
 		{
 			_properties.IsAffectedByFreshInjuries = false;
 			_properties.IsAffectedByLosingHitpoints = false;
 		}
-	
 
 		_properties.MeleeDefense += bonus;
 		_properties.RangedDefense += bonus;
 	}
-
 });
 
