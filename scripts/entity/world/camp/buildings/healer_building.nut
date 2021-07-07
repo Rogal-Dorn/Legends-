@@ -377,27 +377,17 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 			local r = obj.Injury;
 
-			if (r == null || r.m.IsGarbage) continue;
+			if (r == null) continue;
 
-			if (r.isTreated())
-			{
-				continue;
-			}
+			if (r.m.IsGarbage) continue;
 
-			if (!r.isTreatable())
-			{
-				continue;
-			}
+			if (r.isTreated()) continue;
 
-			if (r.getQueue() == 0)
-			{
-				continue;
-			}
+			if (!r.isTreatable()) continue;
 
-			if (this.World.Assets.getMedicine() <= 0 )
-			{
-				continue
-			}
+			if (r.getQueue() == 0) continue;
+
+			if (this.World.Assets.getMedicine() <= 0 ) continue;
 
             local needed = this.getCost(r) - r.getPoints();
 

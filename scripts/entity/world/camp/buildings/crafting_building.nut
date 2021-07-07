@@ -264,6 +264,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	
 			local currentCosts = {};
 			local canCraft = true;
+			if(r == null) continue;
 			foreach(c in r.Blueprint.m.PreviewComponents)
 			{
 				if ("LegendsArmor" in c)
