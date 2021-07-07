@@ -261,10 +261,11 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		for (local i = 0; i < this.m.Queue.len(); ++i) 
 		{
 			local r = this.m.Queue[i];
-	
+			if(r == null) continue;
+			
 			local currentCosts = {};
 			local canCraft = true;
-			if(r == null) continue;
+			
 			foreach(c in r.Blueprint.m.PreviewComponents)
 			{
 				if ("LegendsArmor" in c)
