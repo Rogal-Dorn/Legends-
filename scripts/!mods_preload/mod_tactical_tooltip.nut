@@ -42,18 +42,10 @@ local modTacticalTooltip = function ( tooltip, _targetedWithSkill )
 			});
 		}
 	};
-	local isPerk = function ( _, item )
-	{
-		return item.getIcon().len() > 8 && item.getIcon().slice(0, 8) == "ui/perks";
-	};
-	local isInjury = function ( _, injury )
-	{
-		return injury.m.Order == this.Const.SkillOrder.TemporaryInjury;
-	};
-	local isTextRow = function ( _, row )
-	{
-		return ("type" in row) && row.type == "text";
-	};
+	local isPerk = @( _, _skill ) _skill.isType(this.Const.SkillType.Perk)
+	local isInjury = @( _, _skill ) _skill.isType(this.Const.SkillType.TemporaryInjury);
+	local isTextRow = @( _, row ) ("type" in row) && row.type == "text";
+
 	local pushSection = function ( items, title, startID, filter = 0, prependIcon = "", stackInOneLine = false )
 	{
 		if (!items)
