@@ -1766,16 +1766,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 			/*this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
 			this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-			this.World.TopbarDayTimeModule.updateTimeButtons(2);
-			this.setPause(false);*/
+			this.World.TopbarDayTimeModule.updateTimeButtons(2);*/
+			this.setPause(false);
 		}
 		else
 		{
 			this.updateTopbarAssets();
-			this.m.LastWorldSpeedMult = 1.0;
+			/*this.m.LastWorldSpeedMult = 1.0;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
 			this.World.setSpeedMult(1.0);
-			this.World.TopbarDayTimeModule.updateTimeButtons(1);
+			this.World.TopbarDayTimeModule.updateTimeButtons(1);*/
 			this.setPause(true);
 		}
 
