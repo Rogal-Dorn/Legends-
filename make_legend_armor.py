@@ -926,6 +926,7 @@ layers = [
 
 brush_only_layers = [
     #{"name": "legend_runed", "layer": "rune"},
+    {"name": "cloak_hexe", "layer": "cloak"},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name" :"named_emperors_cloak", "min" : 1, "max" : 1, "layer" : "cloak"},
     {"name": "cloak_rich", "min" : 1, "max" : 5, "layer": "cloak"},
