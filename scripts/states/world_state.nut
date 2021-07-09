@@ -1754,9 +1754,9 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			return;
 		}
-
+		local speed = this.m.LastWorldSpeedMult;
 		this.World.Camp.onCamp();
-
+		this.m.LastWorldSpeedMult = speed;
 		if (this.World.Camp.isCamping())
 		{
 			this.m.Player.setDestination(null);
