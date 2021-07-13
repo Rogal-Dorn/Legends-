@@ -1,6 +1,6 @@
 this.getroottable().Const.LegendMod.hookTacticalState <- function()
 {
-	::mods_hookNewObject("states/tactical_state", function(o) 
+	::mods_hookExactClass("states/tactical_state", function(o) 
 	{
 		local updateCurrentEntity = o.updateCurrentEntity;
 		o.updateCurrentEntity = function()
