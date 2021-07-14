@@ -138,7 +138,7 @@ this.send_ship_action <- this.inherit("scripts/factions/faction_action", {
 				[3, "trade/cloth_rolls_item"],
 				[1, "trade/copper_ingots_item"],
 				[2, "trade/dies_item"],
-				[2, "trade/legend_cooking_spices_trade_item"],
+				[1, "trade/legend_cooking_spices_trade_item"],
 				[1, "trade/furs_item"],
 				[1, "trade/peat_bricks_item"],
 				[3, "trade/quality_wood_item"],

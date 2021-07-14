@@ -38,11 +38,6 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "supplies/roots_and_berries_item"
 			});
 			_list.push({
-				R = 0,
-				P = 1.0,
-				S = "trade/legend_cooking_spices_trade_item"
-			});
-			_list.push({
 				R = 10,
 				P = 1.0,
 				S = "misc/legend_wolfsbane_item"
