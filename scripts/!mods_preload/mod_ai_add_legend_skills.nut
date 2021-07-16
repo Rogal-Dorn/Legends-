@@ -223,7 +223,7 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 				return true;
 			}
 
-			local getBestTarget = fn(_entity, _skill, _targets);
+			local getBestTarget = getBestTarget(_entity, _skill, _targets);
 			
 			while( resume getBestTarget == null)
 			{
