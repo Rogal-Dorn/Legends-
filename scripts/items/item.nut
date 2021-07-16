@@ -509,6 +509,10 @@ this.item <- {
 
 		return result;
 	}
+	function setGarbage()
+	{
+		this.m.IsGarbage = true;
+	}
 
 	function removeSelf()
 	{
