@@ -1351,11 +1351,11 @@ layers = [
 "desc" :  "The floppy hat of a swordsman." \
 },
 
-{"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 105, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "mummy_crown"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crown", \
  "desc" :  "A tall crown of a long dead civilisation." \
 },
-{"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 105, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "mummy_crown_king"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Crested Crown", \
  "desc" :  "A crested crown of a long dead civilisation." \
 },
