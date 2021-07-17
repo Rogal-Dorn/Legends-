@@ -1293,7 +1293,7 @@ layers = [
  "desc" :  "A thin wispy southern veil." \
 },
 
-{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 105, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
+{"name" : "southern_veil_coin"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Southern Coin Veil", \
  "desc" :  "A southern veil made of coins threaded togther." \
 },
