@@ -724,11 +724,8 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		{
 			return null;
 		}
-		if (!checkscript("scripts/items/helmets/", helm))
-		{
-			return null;
-		}
 		local item = this.new("scripts/items/helmets/" + helm);
+		if (item == null) return null;
 		if (variant != null && "setVariant" in item)
 		{
 			item.setVariant(variant);
@@ -823,12 +820,9 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 	{
-		if (armorID == "seedmaster_noble_armor" || armorID == "citreneking_noble_armor" ) {armorID = "mail_hauberk"};
-		if (!checkscript("scripts/items/armor/", armorID))
-		{
-			return null;
-		}		
+		if (armorID == "seedmaster_noble_armor" || armorID == "citreneking_noble_armor" ) {armorID = "mail_hauberk"};	
 		local item = this.new("scripts/items/armor/" + armorID);
+		if (item == null) return null;
 		if (faction != null && "setFaction" in item)
 		{
 			item.setFaction(faction);
