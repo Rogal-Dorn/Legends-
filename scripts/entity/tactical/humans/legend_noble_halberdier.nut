@@ -93,7 +93,7 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 
 			if (banner <= 4)
 			{
-				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				helmet = this.Const.World.Common.pickHelmet([
 					[1, "flat_top_helmet"],
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
@@ -103,11 +103,11 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
 					[1, "legend_enclave_vanilla_kettle_sallet_03"],
 					[5, "heavy_noble_house_helmet_00"]
-				]))
+				])
 			}
 			else if (banner <= 7)
 			{
-				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				helmet = this.Const.World.Common.pickHelmet([
 					[1, "flat_top_helmet"],
 					[1, "padded_flat_top_helmet"],
 					[1, "flat_top_with_mail"],
@@ -115,12 +115,11 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_kettle_sallet_02"],
 					[1, "legend_enclave_vanilla_kettle_sallet_03"],
 					[5, "heavy_noble_house_helmet_00"]
-
-				]))
+				])
 			}
 			else
 			{
-				this.m.Items.equip(this.Const.World.Common.pickHelmet([
+				helmet = this.Const.World.Common.pickHelmet([
 					[1, "nasal_helmet"],
 					[1, "padded_nasal_helmet"],
 					[1, "nasal_helmet_with_mail"],
@@ -130,12 +129,14 @@ this.legend_noble_halberdier <- this.inherit("scripts/entity/tactical/human", {
 					[1, "legend_enclave_vanilla_kettle_sallet_01"],
 					[1, "legend_enclave_vanilla_kettle_sallet_02"],
 					[5, "heavy_noble_house_helmet_00"]
-
-				]))
+				])
 			}
 
-			this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head).setPlainVariant();
-			this.m.Items.equip(helmet);
+			if (helmet != null)
+			{
+				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
+				this.m.Items.equip(helmet);
+			}
 		}
 		else
 		{
