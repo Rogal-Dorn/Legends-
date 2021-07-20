@@ -139,8 +139,11 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 				])
 			}
 
-			helmet.setPlainVariant();
-			this.m.Items.equip(helmet);
+			if (helmet != null)
+			{
+				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
+				this.m.Items.equip(helmet);
+			}
 		}
 		else
 		{

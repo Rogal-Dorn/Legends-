@@ -672,6 +672,19 @@ gt.Const.World.Common.pickItem <- function (_list, _script = "")
 	return null;
 }
 
+local checkscript = function (_path, _script)
+{
+	local scripts = this.IO.enumerateFiles(_path);
+	foreach(s in scripts)
+	{
+		if (s == _path + _script)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
 gt.Const.World.Common.pickHelmet <- function (_helms)
 {
 	local candidates = [];
@@ -718,8 +731,12 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		{
 			return null;
 		}
+		if (!checkscript("scripts/items/helmets/", helm))
+		{
+			return null;
+		}
 		local item = this.new("scripts/items/helmets/" + helm);
-		if (variant != null)
+		if (variant != null && "setVariant" in item)
 		{
 			item.setVariant(variant);
 		}
@@ -813,12 +830,17 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 
 	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
 	{
+		if (armorID == "seedmaster_noble_armor" || armorID == "citreneking_noble_armor" ) {armorID = "mail_hauberk"};
+		if (!checkscript("scripts/items/armor/", armorID))
+		{
+			return null;
+		}		
 		local item = this.new("scripts/items/armor/" + armorID);
-		if (faction != null)
+		if (faction != null && "setFaction" in item)
 		{
 			item.setFaction(faction);
 		}
-		else if (variant != null)
+		else if (variant != null && "setVariant" in item)
 		{
 			item.setVariant(variant);
 		}
