@@ -675,14 +675,7 @@ gt.Const.World.Common.pickItem <- function (_list, _script = "")
 local checkscript = function (_path, _script)
 {
 	local scripts = this.IO.enumerateFiles(_path);
-	foreach(s in scripts)
-	{
-		if (s == _path + _script)
-		{
-			return true;
-		}
-	}
-	return false;
+	return (scripts.find(_path + _script) != null);
 }
 
 gt.Const.World.Common.pickHelmet <- function (_helms)
