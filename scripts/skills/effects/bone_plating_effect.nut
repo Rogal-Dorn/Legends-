@@ -36,8 +36,7 @@ this.bone_plating_effect <- this.inherit("scripts/skills/skill", {
 			local actor = this.getContainer().getActor();
 			local sound = this.m.Sounds[this.Math.rand(0, 4)];
 
-			actor.playSound(sound, this.Const.Sound.Volume.Actor * actor.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] * actor.m.SoundVolumeOverall, actor.m.SoundPitch)
-
+			this.Sound.play(sound, this.Const.Sound.Volume.Actor * actor.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] * actor.m.SoundVolumeOverall, actor.getPos(), actor.m.SoundPitch);
 			this.removeSelf();
 		}
 	}
