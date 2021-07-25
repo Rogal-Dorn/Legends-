@@ -684,7 +684,6 @@ this.skill_container <- {
 
 	function onCombatStarted()
 	{
-		this.logInfo("onCombatStarted");
 		this.doOnFunction("onCombatStarted");
 	}
 
