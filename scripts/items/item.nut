@@ -703,6 +703,10 @@ this.item <- {
 	{
 	}
 
+	function onCombatStarted()
+	{
+	}
+
 	function onCombatFinished()
 	{
 	}
