@@ -278,6 +278,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		}
 	}
 
+	function getContainer()
+	{
+		return this.m.Armor == null ? this.item.getContainer() : this.m.Armor.getContainer();
+	}
+
 	function getRepair()
 	{
 		return this.Math.floor(this.getCondition());
