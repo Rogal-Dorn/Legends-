@@ -6,8 +6,13 @@ this.arena_champion_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.arena_champion";
 		this.m.Name = "Arena Champion";
 		this.m.Icon = "ui/traits/trait_icon_75.png";
-		this.m.Description = "%name% has become a household name, families, friends and enemies alike gossip about the champion of the arena and all their latest matches.";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
+	}
+
+	function getDescription()
+	{
+		local actor = this.getContainer().getActor();
+		return "Every man and woman in the area stand secretly wants to be " + actor.getName() + ", children play in streets dressed and fighting like " + actor.getPronoun("they") + " does. As they should."
 	}
 
 	function getTooltip()
