@@ -31,6 +31,11 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.getFlags().add("human");
 	}
 
+	function getGender()
+	{
+		return this.m.Gender;
+	}
+
 	function setGender( _v, _reroll = true)
 	{
 
