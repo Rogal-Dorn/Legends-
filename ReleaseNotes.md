@@ -5364,3 +5364,5 @@ Witch burn event can't happen if you have max roster
 **Fixes**
 Fixes the scavenger to work with layered armors
 Fixes mercenary failed to find helmet
+Vanity layer 105 armor fixes
+Removes +2 roster upgrade from noble commander
