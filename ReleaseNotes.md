@@ -5370,7 +5370,7 @@ Adds Mummies to necrosavant favorite enemies list
 Adds Boneplating effect indicator gfx and sfx
 Adds peacable specific gfx
 Adds Hyenas and Serpents to Big Game Hunt contract
-Adds onCombatStarted function to items (for modders)
+Adds Last Stand as a status effect, making its effects visible to the player, and cleans up the code
 Adds a warning popup when exiting a roster and items would get deleted due to losing troops
 
 Buffs Battleforged perk back to 5% (from 3.5%)
@@ -5379,11 +5379,17 @@ Reworks Witch and berserker for adventuring party. No more magic missile :)
 Reworks Estoc
 Reworks Mummy, mummy tower and tower shield 
 
+Reverts some of the speed changes for a more vanilla experience
 Removes +2 roster upgrade from noble commander
 Nerfs Brass khopesh 
 Nerfs Kopis 
 Nerfs named gladius to be in line with other named items and gladius progression
+Decreases drop rates of cooking spices
 
+*For Modders*
+Adds onCombatStarted function to items
+Makes all legends hooks queue and improves the hook types
+Adds new handling for onXYZ functions for item_container and skill_container
 
 **Fixes**
 Fixes the scavenger to work with layered armors
@@ -5400,5 +5406,11 @@ Fixes back to basics not working as intended
 Fixes hairsplitter using wrong gfx
 Fixes gravedigger perks
 Fixes food not spoiling in character bag slots
+Fixes movement after camping not remembering speed
+Fixes bug with formation buttons appearing in other inventory menus
+Fixes hexe cloak not having a brush
+Fixes bad healer tent handling
+Fixes camouflage skill using the wrong icon for tactical tooltips.
+Fixes crafting camp screen % alignment
 Should fix goblin light helmet dropping
 Lots of typos
