@@ -5359,10 +5359,28 @@ Fixes all the perks allowing for passive production at a tent (e.g. hunter build
 Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
 
-## 15.0.1.16
+## 15.0.1.16 
+Died from too many patches
+
+## 15.0.1.17
+
+**Changes**
+Changes named gladius to be in line with other named items and gladius progression
+Witch and berserker changes for adventuring party. No more magic missile :)
+Estoc rework by Luft
+Mummies now added to necrosavant favorite enemies list
+Battleforged perk back to 5% (from 3.5%)
+Vala commander has her warden and spirit bond perk back (sisterhood origin)
+Mummy, mummy tower and tower shield rebalance
+Brass khopesh nerf
+Kopis nerf
 
 **Fixes**
 Fixes the scavenger to work with layered armors
 Fixes mercenary failed to find helmet
-Vanity layer 105 armor fixes
+Fixes Noble battles not loading with unlayered armor
+Fixes druid commander not getting hand to hand bonus
+Fixes Vanity layer 105 armor 
 Removes +2 roster upgrade from noble commander
+Should fix goblin light helmet dropping
+Lots of typos
