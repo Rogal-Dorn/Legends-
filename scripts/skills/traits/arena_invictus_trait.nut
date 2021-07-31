@@ -9,7 +9,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.character_trait.create();
 		this.m.ID = "trait.arena_invictus";
 		this.m.Name = "Invictus";
-		this.m.Icon = "ui/traits/trait_icon_75.png";
+		this.m.Icon = "ui/traits/trait_invictus.png";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 
@@ -29,7 +29,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 			won = "all";
 		}
 
-		return [
+		local ret = [
 			{
 				id = 1,
 				type = "title",
@@ -65,6 +65,27 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to survive if struck down and not killed by a fatality"
 			}
 		];
+
+		if (this.getContainer().getActor().hasSkill("perk.fearsome"))
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Increases the penalty to resolve for fearsome by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of your arena wins"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Any attack that inflicts at least 1 point of damage to hitpoints triggers a morale check for the opponent with a penalty equal to [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of your arena wins"
+			});
+		}
+
+		return ret;
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
@@ -79,12 +100,12 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 		{
 			if (_damageInflictedHitpoints >= this.Const.Morale.OnHitMinDamage)
 			{
-				this.spawnIcon("perk_28", _targetEntity.getTile());
+				this.spawnIcon("trait_invictus", _targetEntity.getTile());
 			}
 			return;
 		}
 
-		if (_damageInflictedHitpoints >= 1) this.spawnIcon("perk_28", _targetEntity.getTile());
+		if (_damageInflictedHitpoints >= 1) this.spawnIcon("trait_invictus", _targetEntity.getTile());
 
 		this.m.LastFrameApplied = this.Time.getFrame();
 		this.m.LastEnemyAppliedTo = _targetEntity.getID();
