@@ -128,7 +128,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 	function onAfterUpdate( _properties )
 	{
 		local won = this.getContainer().getActor().getFlags().getAsInt("ArenaFightsWon");
-		_properties.ThreatOnHit += this.Math.min(10, this.Mat.floor(won * 0.1));
+		_properties.ThreatOnHit += this.Math.min(10, this.Math.floor(won * 0.1));
 	}
 
 	function onCombatStarted()
