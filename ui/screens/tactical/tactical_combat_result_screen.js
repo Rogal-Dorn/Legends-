@@ -152,11 +152,7 @@ TacticalCombatResultScreen.prototype.createStashResizeHeader = function ()
 
 TacticalCombatResultScreen.prototype.destroyDIV = function ()
 {
-    if(this.mCurrentPopupDialog !== null)
-    {
-        this.mCurrentPopupDialog.destroyPopupDialog();
-        this.mCurrentPopupDialog = null;
-    }
+    this.mCurrentPopupDialog = null;
 
     this.mSwitchToStatisticsButton.remove();
     this.mSwitchToStatisticsButton = null;

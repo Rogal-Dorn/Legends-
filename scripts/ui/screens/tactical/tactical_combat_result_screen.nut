@@ -451,8 +451,6 @@ this.tactical_combat_result_screen <- {
 			}
 			ret.popup = ret.deletedNum != 0; 
 		}
-		this.logInfo(capacity + " | " + current);
-		this.logInfo("getStashChangeData " + ret.popup + " | " + ret.deletedNum);
 
 		return ret;
 	}

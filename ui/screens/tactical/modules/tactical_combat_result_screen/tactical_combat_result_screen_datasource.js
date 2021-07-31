@@ -555,7 +555,6 @@ TacticalCombatResultScreenDatasource.prototype.notifyBackendLootAllItemsButtonPr
 TacticalCombatResultScreenDatasource.prototype.getStashChangeData = function(_callback)
 {
     var self = this;
-    console.error("notifyBackendGetStashChangeData");
     this.notifyBackendGetStashChangeData(function(res)
     {
         self.mStashData = res;
