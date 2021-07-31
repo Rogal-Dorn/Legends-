@@ -66,13 +66,13 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 			}
 		];
 
-		if (this.getContainer().getActor().hasSkill("perk.fearsome"))
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.fearsome"))
 		{
 			ret.push({
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Increases the penalty to resolve for fearsome by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of your arena wins"
+				text = "Increases the penalty to the morale check from fearsome by [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] of your arena wins"
 			});
 		}
 		else
@@ -90,7 +90,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (this.getContainer().getActor().hasSkill("perk.fearsome")) return;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.fearsome")) return;
 
 		if (_targetEntity == null || !_targetEntity.isAlive()) return;
 
@@ -128,7 +128,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 	function onAfterUpdate( _properties )
 	{
 		local won = this.getContainer().getActor().getFlags().getAsInt("ArenaFightsWon");
-		_properties.ThreatOnHit += this.Math.min(10, won * 0.1);
+		_properties.ThreatOnHit += this.Math.min(10, this.Mat.floor(won * 0.1));
 	}
 
 	function onCombatStarted()
