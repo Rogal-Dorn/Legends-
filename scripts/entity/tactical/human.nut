@@ -117,6 +117,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		}
 	}
 
+	// -1 = Default Male, 0 = Male, 1 = Female
 	function getGender()
 	{
 		return this.m.Gender;

@@ -90,7 +90,7 @@ this.legend_noble_slinger <- this.inherit("scripts/entity/tactical/human", {
 
 		if (helmet != null)
 		{
-			helmet.setPlainVariant();
+			if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
 			this.m.Items.equip(helmet);
 		}
 	}

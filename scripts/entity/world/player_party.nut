@@ -563,7 +563,7 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 		this.m.MedsMultiplier = s;
 	}
 
-	function calculateStashModifier()
+	function calculateStashModifier(resize = true)
 	{
 		if (this.World.State.m.AppropriateTimeToRecalc == 1)	////Leonion's fix
 		{
@@ -576,10 +576,12 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				s += bro.getStashModifier();
 			}
 
-			if (s != this.Stash.getCapacity())
+			if (resize && s != this.Stash.getCapacity())
 			{
 				this.Stash.resize(s);
 			}
+			
+			return s;
 		}
 	}
 
