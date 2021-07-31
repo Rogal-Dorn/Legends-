@@ -6,9 +6,9 @@ this.bone_plating_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.bone_plating";
 		this.m.Name = "Bone Plating";
-		this.m.Icon = "ui/perks/perk_37.png";
-		this.m.IconMini = "perk_37_mini";
-		this.m.Overlay = "perk_37";
+		this.m.Icon = "skills/boneplating_effect.png";
+		this.m.IconMini = "mini_boneplating_effect";
+		this.m.Overlay = "boneplating_effect";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
@@ -37,6 +37,8 @@ this.bone_plating_effect <- this.inherit("scripts/skills/skill", {
 			local sound = this.m.Sounds[this.Math.rand(0, 4)];
 
 			this.Sound.play(sound, this.Const.Sound.Volume.Actor * actor.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] * actor.m.SoundVolumeOverall, actor.getPos(), actor.m.SoundPitch);
+			this.spawnIcon(this.m.Overlay, actor.getTile());
+			
 			this.removeSelf();
 		}
 	}
