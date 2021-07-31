@@ -72,7 +72,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		}
 
 		local backgrounds = [
-			"background.legend_druid_commander",
+			"background.legend_commander_druid",
 			"background.legend_druid",
 			"background.brawler",
 			"background.legend_commander_berserker",

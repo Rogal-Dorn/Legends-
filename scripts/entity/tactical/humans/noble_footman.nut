@@ -133,7 +133,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[5, "heavy_noble_house_helmet_00"]
 				])
 			}
-			else if (banner <= 7)
+		else if (banner <= 7)
 			{
 				helmet = this.Const.World.Common.pickHelmet([
 					[1, "flat_top_helmet"],
@@ -146,7 +146,7 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 					[5, "heavy_noble_house_helmet_00"]
 				])
 			}
-			else
+		else
 			{
 				helmet = this.Const.World.Common.pickHelmet([
 					[1, "nasal_helmet"],
@@ -159,10 +159,10 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 			}
 
 		if (helmet != null)
-		{
-			// helmet.setPlainVariant();
-			this.m.Items.equip(helmet);
-		}
+			{
+				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
+				this.m.Items.equip(helmet);
+			}
 	}
 
 });
