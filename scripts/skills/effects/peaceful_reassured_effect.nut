@@ -4,9 +4,9 @@ this.peaceful_reassured_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.peaceful_reassured";
 		this.m.Name = "Reassured";
-		this.m.Icon = "skills/status_effect_90.png";
-		this.m.IconMini = "status_effect_90_mini";
-		this.m.Overlay = "status_effect_90";
+		this.m.Icon = "skills/peaceful_reassured.png";
+		this.m.IconMini = "mini_peaceful_reassured";
+		this.m.Overlay = "peaceful_reassured";
 		this.m.Type = this.Const.SkillType.StatusEffect | this.Const.SkillType.DrugEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
