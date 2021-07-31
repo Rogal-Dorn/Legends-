@@ -123,7 +123,7 @@ TacticalCombatResultScreen.prototype.createDIV = function (_parentDiv)
                     self.mCurrentPopupDialog = null;
                     _dialog.destroyPopupDialog();
                 });
-                self.mCurrentPopupDialog.addPopupDialogContent(self.createStashResizeHeader())
+                self.mCurrentPopupDialog.addPopupDialogContent(self.createStashResizeHeader());
             }
             else
             {
@@ -152,8 +152,6 @@ TacticalCombatResultScreen.prototype.createStashResizeHeader = function ()
 
 TacticalCombatResultScreen.prototype.destroyDIV = function ()
 {
-    this.mCurrentPopupDialog = null;
-
     this.mSwitchToStatisticsButton.remove();
     this.mSwitchToStatisticsButton = null;
     this.mSwitchToLootButton.remove();
