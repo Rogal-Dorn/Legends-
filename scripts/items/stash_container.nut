@@ -516,6 +516,23 @@ this.stash_container <- {
 		return false;
 	}
 
+	function collectGarbage()
+	{
+		if (this.m.IsUpdating) return;
+
+		this.m.IsUpdating = true;
+
+		for(local i = 0; i < this.m.Items.len(); i = ++i)
+		{
+			if (this.m.Items[i] != null && this.m.Items[i].isGarbage())
+			{
+				this.removeByIndex(i);
+			}
+		}
+
+		this.m.IsUpdating = false;
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeU16(this.m.Items.len());

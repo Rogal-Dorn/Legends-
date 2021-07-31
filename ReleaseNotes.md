@@ -5362,18 +5362,28 @@ Witch burn event can't happen if you have max roster
 ## 15.0.1.16 
 Died from too many patches
 
-## 15.0.1.17
+## 15.0.1.17 (Did someone say FIXES?!)
 
 **Changes**
-Changes named gladius to be in line with other named items and gladius progression
-Witch and berserker changes for adventuring party. No more magic missile :)
-Estoc rework by Luft
-Mummies now added to necrosavant favorite enemies list
-Battleforged perk back to 5% (from 3.5%)
-Vala commander has her warden and spirit bond perk back (sisterhood origin)
-Mummy, mummy tower and tower shield rebalance
-Brass khopesh nerf
-Kopis nerf
+Adds Warden and Spirit bond perk back to vala commander (sisterhood origin)
+Adds Mummies to necrosavant favorite enemies list
+Adds Boneplating effect indicator gfx and sfx
+Adds peacable specific gfx
+Adds Hyenas and Serpents to Big Game Hunt contract
+Adds onCombatStarted function to items (for modders)
+Adds a warning popup when exiting a roster and items would get deleted due to losing troops
+
+Buffs Battleforged perk back to 5% (from 3.5%)
+
+Reworks Witch and berserker for adventuring party. No more magic missile :)
+Reworks Estoc
+Reworks Mummy, mummy tower and tower shield 
+
+Removes +2 roster upgrade from noble commander
+Nerfs Brass khopesh 
+Nerfs Kopis 
+Nerfs named gladius to be in line with other named items and gladius progression
+
 
 **Fixes**
 Fixes the scavenger to work with layered armors
@@ -5381,6 +5391,14 @@ Fixes mercenary failed to find helmet
 Fixes Noble battles not loading with unlayered armor
 Fixes druid commander not getting hand to hand bonus
 Fixes Vanity layer 105 armor 
-Removes +2 roster upgrade from noble commander
+Fixes peacable not working as in description
+Fixes ethnicity changing for characters in barbershop
+Fixes voulge being considered one-handed
+Fixes vala staff having incorrect range for AI
+Fixes miller not being lowborn
+Fixes back to basics not working as intended
+Fixes hairsplitter using wrong gfx
+Fixes gravedigger perks
+Fixes food not spoiling in character bag slots
 Should fix goblin light helmet dropping
 Lots of typos
