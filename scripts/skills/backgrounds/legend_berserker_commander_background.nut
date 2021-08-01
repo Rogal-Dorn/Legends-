@@ -211,12 +211,12 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.PrettyFemale;
+		this.m.Faces = this.Const.Faces.AfricanFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.HairColors = this.Const.HairColors.African;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AfricanFemale;
 		this.m.IsFemaleBackground = true;
 	}
 
