@@ -5410,7 +5410,9 @@ Fixes movement after camping not remembering speed
 Fixes bug with formation buttons appearing in other inventory menus
 Fixes hexe cloak not having a brush
 Fixes bad healer tent handling
-Fixes camouflage skill using the wrong icon for tactical tooltips.
+Fixes camouflage skill using the wrong icon for tactical tooltips
 Fixes crafting camp screen % alignment
+Fixes wolfsbane appearing when all therianthropy has been removed
+Fixes warlock cloak stats to match description
 Should fix goblin light helmet dropping
 Lots of typos
