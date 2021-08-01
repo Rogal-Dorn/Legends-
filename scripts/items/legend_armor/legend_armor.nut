@@ -744,7 +744,18 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		local totalDamage = _damage;
 
-		this.doOnFunction("onDamageReceived", [_damage, _fatalityType, _attacker]);
+		for( local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = --i )
+		{
+			local u = this.m.Upgrades[i];
+
+			if (u == null)
+			{
+			}
+			else
+			{
+				totalDamage = u.onDamageReceived(totalDamage, _fatalityType, _attacker);
+			}
+		}
 
 		if (this.m.Condition == 0)
 		{
