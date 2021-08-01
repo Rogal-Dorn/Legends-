@@ -75,6 +75,7 @@
 <sprite id="incoming_circle" ic="FF23165B" img="skills\incoming_circle.png" />
 <sprite id="throw_sand" ic="FF23165B" img="skills\throw_sand_01.png" />
 <sprite id="boneplating_effect" ic="FF23165B" img="skills\boneplating_effect.png" />
+<sprite id="trait_invictus" ic="FF23165B" img="skills\trait_invictus.png" />
 
 <sprite id="mini_boneplating_effect" offsetY="35" ic="FF344955" img="skills\mini\mini_boneplating_effect.png" />
 <sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
