@@ -5417,3 +5417,7 @@ Fixes warlock cloak stats to match description
 Fixes throw being usable every turn instead of once per battle
 Should fix goblin light helmet dropping
 Lots of typos
+
+# 15.0.1.17a
+
+Fixes armor damage getting calculated per layer resulting in damage getting increased substantially
