@@ -5,7 +5,7 @@ this.arena_champion_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.character_trait.create();
 		this.m.ID = "trait.arena_champion";
 		this.m.Name = "Arena Champion";
-		this.m.Icon = "ui/traits/trait_icon_75.png";
+		this.m.Icon = "ui/traits/trait_arena_champion.png";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 
