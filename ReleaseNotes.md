@@ -5414,5 +5414,6 @@ Fixes camouflage skill using the wrong icon for tactical tooltips
 Fixes crafting camp screen % alignment
 Fixes wolfsbane appearing when all therianthropy has been removed
 Fixes warlock cloak stats to match description
+Fixes throw being usable every turn instead of once per battle
 Should fix goblin light helmet dropping
 Lots of typos
