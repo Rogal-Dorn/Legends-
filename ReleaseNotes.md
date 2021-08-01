@@ -5372,6 +5372,7 @@ Adds peacable specific gfx
 Adds Hyenas and Serpents to Big Game Hunt contract
 Adds Last Stand as a status effect, making its effects visible to the player, and cleans up the code
 Adds a warning popup when exiting a roster and items would get deleted due to losing troops
+Adds 2 new arena traits
 
 Buffs Battleforged perk back to 5% (from 3.5%)
 
@@ -5421,3 +5422,7 @@ Lots of typos
 # 15.0.1.17a
 
 Fixes armor damage getting calculated per layer resulting in damage getting increased substantially
+
+# 15.0.1.17b
+
+Fixes Kopis typo causing it to prevent fights with embalmed priests from loading

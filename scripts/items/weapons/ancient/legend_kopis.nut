@@ -30,7 +30,7 @@ this.legend_kopis <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
-		this.addSkill(this.new("scripts/skills/actives/gash"));
+		this.addSkill(this.new("scripts/skills/actives/gash_skill"));
 	}
 
 	function onUpdateProperties( _properties )
