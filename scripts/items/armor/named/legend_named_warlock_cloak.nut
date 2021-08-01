@@ -60,35 +60,12 @@ this.legend_named_warlock_cloak <- this.inherit("scripts/items/armor/named/named
 	{
 		this.named_armor.onUpdateProperties(_properties);
 		_properties.Hitpoints += 20;
-	}
 
-
-	function onEquip()
-	{
-		this.named_armor.onEquip();
-		local a = this.getContainer().getActor();
-		if (a == null)
+		if (this.getContainer().getActor().getMoraleState() == this.Const.MoraleState.Confident)
 		{
-			return;
-		}
-
-		if (!a.getSkills().hasSkill("perk.legend_assured_conquest"))
-		{
-			a.getSkills().add(this.new("scripts/skills/perks/perk_legend_assured_conquest"));
+			_properties.MeleeSkill *= 1.1;
+			_properties.MeleeDefense *= 1.1;
+			_properties.RangedDefense *= 1.1;
 		}
 	}
-
-	function onUnequip()
-	{
-		local a = this.getContainer().getActor();
-		if (a == null)
-		{
-			return;
-			
-		}
-		a.getSkills().removeByID("perk.legend_assured_conquest");
-		this.named_armor.onUnequip();
-	}
-
 });
-
