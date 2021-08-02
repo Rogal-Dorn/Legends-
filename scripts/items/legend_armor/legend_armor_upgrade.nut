@@ -250,6 +250,13 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return delta;
 	}
 
+	function addSkill( _skill )
+	{
+		_skill.setItem( (this.m.Armor != null) ? this.m.Armor : this );
+		this.m.SkillPtrs.push(_skill);
+		this.getContainer().getActor().getSkills().add(_skill, this.m.SkillPtrs.len());
+	}
+
 	function onRepair( _a)
 	{
 		this.setCondition(_a);
