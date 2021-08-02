@@ -1045,7 +1045,7 @@ this.conquer_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		}
 
 		local arr = ["trade/silk_item", "trade/silk_item", "trade/incense_item", "trade/spices_item"]
-		for(local i = 0; i < r; i++) //adds either 1 silk, 2 silk, 3 incense, 4 spices
+		for(local i = 0; i < this.Math.round(r/2); i++) //adds either 1 silk, 1 silk, 2 incense, 2 spices
 		{
 			party.addToInventory(arr[r-1])
 		}

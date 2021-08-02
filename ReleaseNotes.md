@@ -5439,3 +5439,4 @@ Reverts changes to speed to once again allow changing of escort speed
 **Changes**
 Assassin start changed to only give the Hide active to the commander, now grants backstabber to other backgrounds
 Removes a few magic perk groups from the random pool (Notably Premonition tree)
+Halves the amount of free trade goods you get for beating up southern armies (from //adds either 1 silk, 2 silk, 3 incense, 4 spices to //adds either 1 silk, 1 silk, 2 incense, 2 spices)
