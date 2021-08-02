@@ -5426,3 +5426,11 @@ Fixes armor damage getting calculated per layer resulting in damage getting incr
 # 15.0.1.17b
 
 Fixes Kopis typo causing it to prevent fights with embalmed priests from loading
+
+# 15.0.1.17c
+
+Fixes being unable to fight witches
+Fixes battleforged tooltip
+Fixes "return to camp" button letting world run for a second
+
+Reverts changes to speed to once again allow changing of escort speed
