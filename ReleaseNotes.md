@@ -5417,3 +5417,8 @@ Fixes warlock cloak stats to match description
 Fixes throw being usable every turn instead of once per battle
 Should fix goblin light helmet dropping
 Lots of typos
+
+## 15.0.1.18
+**Changes**
+Assassin start changed to only give the Hide active to the commander, now grants backstabber to other backgrounds
+**Fixes**
