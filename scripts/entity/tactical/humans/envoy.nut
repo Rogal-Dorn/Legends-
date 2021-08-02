@@ -2,7 +2,7 @@ this.envoy <- this.inherit("scripts/entity/tactical/player", {
 	m = {},
 	function getPlaceInFormation()
 	{
-		return 27;
+		return 21;
 	}
 
 	function isReallyKilled( _fatalityType )

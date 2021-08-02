@@ -5372,6 +5372,7 @@ Adds peacable specific gfx
 Adds Hyenas and Serpents to Big Game Hunt contract
 Adds Last Stand as a status effect, making its effects visible to the player, and cleans up the code
 Adds a warning popup when exiting a roster and items would get deleted due to losing troops
+Adds 2 new arena traits
 
 Buffs Battleforged perk back to 5% (from 3.5%)
 
@@ -5418,9 +5419,23 @@ Fixes throw being usable every turn instead of once per battle
 Should fix goblin light helmet dropping
 Lots of typos
 
+# 15.0.1.17a
+
+Fixes armor damage getting calculated per layer resulting in damage getting increased substantially
+
+# 15.0.1.17b
+
+Fixes Kopis typo causing it to prevent fights with embalmed priests from loading
+
+# 15.0.1.17c
+
+Fixes being unable to fight witches
+Fixes battleforged tooltip
+Fixes "return to camp" button letting world run for a second
+
+Reverts changes to speed to once again allow changing of escort speed
+
 ## 15.0.1.18
 **Changes**
 Assassin start changed to only give the Hide active to the commander, now grants backstabber to other backgrounds
 Removes a few magic perk groups from the random pool (Notably Premonition tree)
-
-**Fixes**
