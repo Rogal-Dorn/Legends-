@@ -2658,7 +2658,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return
 		}
 		//this.Music.setTrackList(this.m.LastEnteredTown.getMusic(), this.Const.Music.CrossFadeTime);
-		//this.setPause(true);
+		this.setPause(true);
 		this.setAutoPause(true);
 		this.Tooltip.hide();
 		this.m.WorldScreen.hide();
