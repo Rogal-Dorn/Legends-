@@ -5421,4 +5421,6 @@ Lots of typos
 ## 15.0.1.18
 **Changes**
 Assassin start changed to only give the Hide active to the commander, now grants backstabber to other backgrounds
+Removes a few magic perk groups from the random pool (Notably Premonition tree)
+
 **Fixes**
