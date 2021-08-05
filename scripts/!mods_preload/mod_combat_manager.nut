@@ -1,6 +1,6 @@
 this.getroottable().Const.LegendMod.hookCombatManager <- function()
 {
-	::mods_hookNewObject("entity/world/combat_manager", function(o) 
+	::mods_hookNewObjectOnce("entity/world/combat_manager", function(o) 
 	{
 	    o.startCombat = function( _p1, _p2 )
 		{
