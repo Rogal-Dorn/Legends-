@@ -5444,3 +5444,4 @@ Halves the amount of free trade goods you get for beating up southern armies (fr
 
 **Fixes**
 Cant open inventory in combat with bone plating on someone
+"Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
