@@ -1,6 +1,6 @@
 this.getroottable().Const.LegendMod.hookItemContainer <- function()
 {
-	::mods_hookNewObjectOnce("items/item_container", function(o) 
+	::mods_hookNewObject("items/item_container", function(o) 
 	{
 	    o.drop <- function( item )
 		{
