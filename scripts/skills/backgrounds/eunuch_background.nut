@@ -19,7 +19,8 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.brute",
 			"trait.bloodthirsty",
 			"trait.deathwish",
-			"trait.impatient"
+			"trait.impatient",
+			"trait.seductive"
 		];
 		this.m.Titles = [
 			"the Eunuch",
