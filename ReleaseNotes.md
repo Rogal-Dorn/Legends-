@@ -5442,7 +5442,7 @@ Removes a few magic perk groups from the random pool (Notably Premonition tree)
 Halves the amount of free trade goods you get for beating up southern armies (from //adds either 1 silk, 2 silk, 3 incense, 4 spices to //adds either 1 silk, 1 silk, 2 incense, 2 spices)
 "Regular" Orc Young now can't roll the Chain weapon, only "Low" Orc Young
 Goblins outside of the greenskin invasion should be *slightly* less in numbers now
-Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Eunuch)
+Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
 
 **Fixes**
 Cant open inventory in combat with bone plating on someone
