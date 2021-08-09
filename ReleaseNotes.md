@@ -5443,6 +5443,7 @@ Halves the amount of free trade goods you get for beating up southern armies (fr
 "Regular" Orc Young now can't roll the Chain weapon, only "Low" Orc Young
 Goblins outside of the greenskin invasion should be *slightly* less in numbers now
 Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
+Testing some extra upward push on town resources, makes every town's tile give slightly more base wealth to a town
 
 **Fixes**
 Cant open inventory in combat with bone plating on someone

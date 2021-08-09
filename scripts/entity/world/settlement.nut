@@ -2666,7 +2666,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			resources = resources + loc.getNewResources();
 		}
 
-		resources = resources + this.m.HousesTiles.len();
+		resources = resources + (this.m.HousesTiles.len() * 2);
+		// this.logWarning("Adding a total of: " + resources + " : to a town that has " + this.m.HousesTiles.len() + " total tiles.")
 		return resources;
 	}
 
