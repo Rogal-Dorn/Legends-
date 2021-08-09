@@ -5447,3 +5447,4 @@ Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
 **Fixes**
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
+Teleport gets a tooltip properly
