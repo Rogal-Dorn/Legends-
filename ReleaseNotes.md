@@ -5434,3 +5434,115 @@ Fixes battleforged tooltip
 Fixes "return to camp" button letting world run for a second
 
 Reverts changes to speed to once again allow changing of escort speed
+
+## 15.0.1.18
+
+====Some armour attachments rebalanced;====
+Barbarian horn;
+Durability: 40
+Fatigue: -4 -> -3
+
+Double mail
+Durability: 20
+Fatigue: -2 -> -3
+
+Heavy gladiator
+Durability: 60
+Fatigue: -5 -> -6
+
+Heraldic plates
+Durability: 40
+Fatigue: -4 -> -5
+
+Joint cover
+Durability: 30
+Fatigue: -3 -> -4
+
+Light gladiator
+Durability: 30 -> 35
+Fatigue: 2
+
+Mail patch
+Durability: 20
+Fatigue: -2 -> -3
+
+Metal pauldrons
+Durability: 40
+Fatigue: -4 -> -5
+
+Metal plating
+Durability: 30 -> 15
+Fatigue: -3 -> -1
+
+Serpent skin
+Durability: 20
+Fatigue: -2 -> -3
+
+====Bandit spawnlist changes;====
+* Bandit rabble should now be less of a human wave and more of a supporting element for thugs and raiders.
+* The backline ranged spam of bandit rabble has also been capped off to you should see fewer groups of 10+ rabble poachers.
+* Early game groups now have a weaker backline, resulting in fewer units to chase down and kill - making solo starts less painful to grind through.
+
+====Nomad spawnlist changes;====
+* Slaves will spawn in roaming pods, but not in defences. Slaves now make up the bulk of easy pods
+* Outlaws are dialed back overall, as are the spawns of bandit leaders and specials
+* Nomad groups should now be smaller and less impossible for early game or solo origins
+* Slingers should appear more frequently in roaming pods, less so in harder pods and garrisons
+* Reduced the amount of backline ranged spam across all roaming groups
+* Garrisons will now have more elite enemies in them, as opposed to hordes of weaker ones
+
+====Mummy contract;====
+* New flavour text
+* Narritive meanders less now
+
+====Named barbarian weapons/armour tweaks;====
+(was->current)
+* Plated Fur
+ConditionMax = 130; -> 155
+StaminaModifier = -14; -> -17
+
+* Skull and Chain
+ConditionMax = 190; -> 210
+StaminaModifier = -24; -> -27
+
+* Bronze Armour
+ConditionMax = 280; -> 300
+StaminaModifier = -35; -> -38
+
+* Skullhammer (weapon)
+StaminaModifier = -16; -> -17
+RegularDamage = 45; -> 50
+RegularDamageMax = 65; -> 70
+
+====Southern city state attached location overhaul;====
+* Fishing huts
+Now produces 1 small tools
+Now produces 1 qiyan
+
+* Goat herder
+Now produces 1 tipstaff and staff
+Now produces 2 muladi
+
+* Incense dryer
+Now produces 1 alchemist
+Now produces 1 dervish
+Now produces 1 small tools
+Now produces 1 small medicine
+
+* Militia training camp
+Now produces 2 dervish
+Now produces 3 small ammo
+
+* Plantation
+Now produces 1 small medicine
+Now produces 1 qiyan
+
+* Silk Farm
+Now produces 1 muladi
+Now produces 2 qiyan
+
+* Stone watchtower
+Now produces 3 nomads (up from 1)
+
+====Background art;====
+New background art added for; Noble Footman, Noble Arbalist, Noble Warrior and Fletcher
