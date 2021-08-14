@@ -11,7 +11,6 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_vala_recruitment.png[/img]The forests of the north are a primeval place, the span of a life is measured in months and the climate is a perpetual state of autumn or winter where the wildlife is as deadly as the weather. Walking through these forests is humbling — the trees here have outlived but the gods themselves, or so some would say.\nYour thoughts begin to wander further as the bridle path begins to feel endless and the trees curl inwards. The pressure builds in your head as you fall to the ground.\n The brush parts for a woman clad in furs holding a staff, focusing intently on you as you try to regain your balance. The noise stops and your mind clears. The woman speaks.\n%SPEECH_ON%Why are you here, outsider?%SPEECH_OFF% Her brow furrows and she hums, but her lips part again. %SPEECH_ON%I know what you are, and I know what you have done. Not just in this life — but the ones that have come before.%SPEECH_OFF%\nHer gaze lifts as she loses focus with you and looks down the path, deep in contemplation. The weight in your mind begins to lift as a tide ebbs before it comes crashing back. However, as she fixes her gaze with yours, the wave doesn\'t come crashing back. It is still there, at the back of your head — restrained like a warhound on a chain\n%SPEECH_ON%Something is changing outsider — something is coming that we can\'t stand alone and face. I do not care for your work, your motivations or hardships. I care about stopping the cataclysm of what is to come.%SPEECH_OFF% She purses her lips %SPEECH_ON%Shall we begin?%SPEECH_OFF%\nThe humming stops — the pain lifts as fast as it came. Despite what the people of the south say, the grip of the old gods remains firm here.",
-			
 			Image = "",
 			List = [],
 			Characters = [],
@@ -81,7 +80,7 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		local town;
 		local playerTile = this.World.State.getPlayer().getTile();
 
-		foreach( t in towns )
+		foreach (t in towns)
 		{
 			if (t.getTile().getDistanceTo(playerTile) <= 7 && !t.isIsolatedFromRoads())
 			{
@@ -104,21 +103,18 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		local brothers = this.World.getPlayerRoster().getAll();
 		local totalbrothers = 0;
 		local brotherlevels = 0;
-
-		foreach( bro in brothers )
+		foreach (bro in brothers)
 		{
 			if (bro.getBackground().getID() == "background.legend_vala")
 			{
 				return;
 			}
-
 			if (bro.getBackground().getID() == "background.legend_commander_vala")
 			{
 				return;
 			}
-
-			totalbrothers = totalbrothers + 1;
-			brotherlevels = brotherlevels + bro.getLevel();
+			totalbrothers += 1;
+			brotherlevels += bro.getLevel();
 		}
 
 		if (totalbrothers < 1 || brotherlevels < 30)
@@ -126,8 +122,9 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+
 		this.m.Town = town;
-		this.m.Score = 20.0 + brotherlevels / totalbrothers * 10.0 / this.Const.LevelXP.len();
+		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
 	}
 
 	function onPrepare()
@@ -143,6 +140,4 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 		this.m.Vala = null;
 		this.m.Town = null;
 	}
-
 });
-

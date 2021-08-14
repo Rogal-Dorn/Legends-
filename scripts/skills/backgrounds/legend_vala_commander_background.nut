@@ -26,12 +26,12 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Titles = [
 			"the Vala"
 		];
-		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Faces = this.Const.Faces.AfricanFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.All;
+		this.m.HairColors = this.Const.HairColors.African;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AfricanFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -228,16 +228,8 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/legend_staff_vala"));
 		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"legend_vala_cloak"
-			],
-			[
-				1,
-				"legend_vala_dress"
-			]
+			[1, "legend_vala_cloak"],
+			[1, "legend_vala_dress"]
 		]));
 	}
-
 });
-

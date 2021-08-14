@@ -713,7 +713,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_rotten_flat_top_face_mask",
 			"helm/legend_helmet_rotten_great_helm",
 			"helm/legend_helmet_barb_metal_cap",
-			"helm/legend_helmet_mummy_crown",
 			"helm/legend_helmet_mummy_crown_king",
 			"top/legend_helmet_hood_cloth_round",
 			"top/legend_helmet_hood_cloth_wide",
