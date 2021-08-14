@@ -1,5 +1,5 @@
 BBDir="${1-"c:\\Program Files (x86)\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
-RepoDir="${2-"battlebrothers"}"
+RepoDir="${2-"Legends"}"
 
 rm -rf  "$BBDir\\brushes" "$BBDir\\gfx" "$BBDir\\preload" "$BBDir\\scripts" "$BBDir\\sounds" "$BBDir\\ui"
 

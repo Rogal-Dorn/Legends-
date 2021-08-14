@@ -52,12 +52,12 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Wild",
 			"the Barbarian"
 		];
-		this.m.Faces = this.Const.Faces.AllWhiteMale;
+		this.m.Faces = this.Const.Faces.AfricanMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = this.Const.Beards.Wild;
+		this.m.HairColors = this.Const.HairColors.African;
+		this.m.Beards = this.Const.Beards.Berserker;
 		this.m.BeardChance = 100;
-		this.m.Bodies = this.Const.Bodies.LegendTattos
+		this.m.Bodies = this.Const.Bodies.AfricanMale;
 		this.m.Ethnicity = 2;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
@@ -138,12 +138,12 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		{
 			return
 		}
-		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Faces = this.Const.Faces.AfricanFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.HairColors = this.Const.HairColors.African;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
+		this.m.Bodies = this.Const.Bodies.AfricanFemale;
 		this.m.IsFemaleBackground = true;
 
 	}

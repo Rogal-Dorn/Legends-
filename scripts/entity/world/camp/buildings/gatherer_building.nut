@@ -202,7 +202,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/items/accessory/poison_item",
 				"scripts/items/misc/mysterious_herbs_item",
 				"scripts/items/misc/legend_mistletoe_item",
-				"scripts/items/misc/legend_wolfsbane_item",
+				//"scripts/items/misc/legend_wolfsbane_item",
 				"scripts/items/supplies/medicine_item"
 			]);
 

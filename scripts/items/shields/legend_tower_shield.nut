@@ -52,7 +52,7 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 			41,
 			42
 		];
-		this.m.Variant = this.Math.rand(1, 21);
+		this.m.Variant = this.Math.rand(1, 21); //random one is only 1-21 though
 		this.updateVariant();
 		this.m.Value = 1000;
 		this.m.MeleeDefense = 30;

@@ -5359,8 +5359,78 @@ Fixes all the perks allowing for passive production at a tent (e.g. hunter build
 Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
 
-## 15.0.1.16
+## 15.0.1.16 
+Died from too many patches
+
+## 15.0.1.17 (Did someone say FIXES?!)
+
+**Changes**
+Adds Warden and Spirit bond perk back to vala commander (sisterhood origin)
+Adds Mummies to necrosavant favorite enemies list
+Adds Boneplating effect indicator gfx and sfx
+Adds peacable specific gfx
+Adds Hyenas and Serpents to Big Game Hunt contract
+Adds Last Stand as a status effect, making its effects visible to the player, and cleans up the code
+Adds a warning popup when exiting a roster and items would get deleted due to losing troops
+Adds 2 new arena traits
+
+Buffs Battleforged perk back to 5% (from 3.5%)
+
+Reworks Witch and berserker for adventuring party. No more magic missile :)
+Reworks Estoc
+Reworks Mummy, mummy tower and tower shield 
+
+Reverts some of the speed changes for a more vanilla experience
+Removes +2 roster upgrade from noble commander
+Nerfs Brass khopesh 
+Nerfs Kopis 
+Nerfs named gladius to be in line with other named items and gladius progression
+Decreases drop rates of cooking spices
+
+*For Modders*
+Adds onCombatStarted function to items
+Makes all legends hooks queue and improves the hook types
+Adds new handling for onXYZ functions for item_container and skill_container
 
 **Fixes**
 Fixes the scavenger to work with layered armors
 Fixes mercenary failed to find helmet
+Fixes Noble battles not loading with unlayered armor
+Fixes druid commander not getting hand to hand bonus
+Fixes Vanity layer 105 armor 
+Fixes peacable not working as in description
+Fixes ethnicity changing for characters in barbershop
+Fixes voulge being considered one-handed
+Fixes vala staff having incorrect range for AI
+Fixes miller not being lowborn
+Fixes back to basics not working as intended
+Fixes hairsplitter using wrong gfx
+Fixes gravedigger perks
+Fixes food not spoiling in character bag slots
+Fixes movement after camping not remembering speed
+Fixes bug with formation buttons appearing in other inventory menus
+Fixes hexe cloak not having a brush
+Fixes bad healer tent handling
+Fixes camouflage skill using the wrong icon for tactical tooltips
+Fixes crafting camp screen % alignment
+Fixes wolfsbane appearing when all therianthropy has been removed
+Fixes warlock cloak stats to match description
+Fixes throw being usable every turn instead of once per battle
+Should fix goblin light helmet dropping
+Lots of typos
+
+# 15.0.1.17a
+
+Fixes armor damage getting calculated per layer resulting in damage getting increased substantially
+
+# 15.0.1.17b
+
+Fixes Kopis typo causing it to prevent fights with embalmed priests from loading
+
+# 15.0.1.17c
+
+Fixes being unable to fight witches
+Fixes battleforged tooltip
+Fixes "return to camp" button letting world run for a second
+
+Reverts changes to speed to once again allow changing of escort speed
