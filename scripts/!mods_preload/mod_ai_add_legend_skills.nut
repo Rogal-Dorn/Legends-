@@ -11,7 +11,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 			"actives.legend_great_slash",
 			"actives.legend_glaive_slash",
 			"actives.legend_spear_lunge_skill",
-			"actives.legend_chain_thresh",
 			"actives.legend_chain_flail_skill",
 			"actives.legend_demon_hound_bite",
 			"actives.legend_ranged_flail",
@@ -60,6 +59,11 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_lash", function(o) 
 	{
 		o.m.PossibleSkills.push("actives.legend_ranged_lash");
+	});
+
+	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_thresh", function(o)
+	{
+		o.m.PossibleSkills.push("actives.legend_chain_thresh");
 	});
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_swallow_whole", function(o) 
@@ -112,7 +116,7 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 	::mods_hookExactClass("ai/tactical/behaviors/ai_darkflight", function(o) 
 	{
 		o.m.PossibleSkills.push("actives.legend_teleport");
-	})
+	});
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_defend_knock_back", function ( o ) 
 	{
