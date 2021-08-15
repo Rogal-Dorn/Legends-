@@ -452,9 +452,12 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		this.m.Upgrades[slot] = _upgrade;
 		this.m.Upgrades[slot].setArmor(this);
-		if (slot != this.Const.Items.HelmetUpgrades.ExtraVanity) this.m.Upgrades[slot].onEquip();
 		this.updateAppearance();
-		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
+		if (this.m.Container != null) 
+		{
+			if (slot != this.Const.Items.HelmetUpgrades.ExtraVanity) this.m.Upgrades[slot].onEquip();
+			this.getContainer().getActor().getSkills().update();
+		}
 		return true;
 	}
 

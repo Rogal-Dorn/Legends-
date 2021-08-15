@@ -398,9 +398,12 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
-		this.m.Upgrades[_upgrade.getType()].onEquip();
 		this.updateAppearance();
-		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
+		if (this.m.Container != null) 
+		{
+			this.m.Upgrades[_upgrade.getType()].onEquip();
+			this.getContainer().getActor().getSkills().update();
+		}
 		return true;
 	}
 

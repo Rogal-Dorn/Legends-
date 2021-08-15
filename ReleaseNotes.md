@@ -5571,3 +5571,7 @@ Now produces 3 nomads (up from 1)
 
 ====Background art;====
 New background art added for; Noble Footman, Noble Arbalist, Noble Warrior and Fletcher
+
+# 15.0.1.18a
+
+Fixes error with layered armor causing infinite loading
