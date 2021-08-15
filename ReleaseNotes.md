@@ -5444,8 +5444,20 @@ Halves the amount of free trade goods you get for beating up southern armies (fr
 Goblins outside of the greenskin invasion should be *slightly* less in numbers now
 Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
 Testing some extra upward push on town resources, makes every town's tile give slightly more base wealth to a town
+Tweaks Roster ambitions so only the next one has a chance of showing up.
+Adds new allow flee button skin for when the enemies is retreating
+Limits map sliders to more reasonable thresholds
+
+
+**For Modders**
+Layers' skills can now be added with a simple this.addSkill()
+Removes onAdded/onRemoved functions from layers, all layers now use onEquip/onUnequip.
+Changes script_container roll() function to return script and not object
 
 **Fixes**
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
 Teleport gets a tooltip properly
+Fixed demon alp helm horrifying scream not being added/removed properly
+Fixes exploiting buyback for trade ambition & achievements
+Fixes hexe runes drops not being upgraded
