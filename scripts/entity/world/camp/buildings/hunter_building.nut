@@ -245,7 +245,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				]);
 			}
 
-			item = brewerLoot.roll(); 
+			item = this.new(brewerLoot.roll()); 
 			this.m.Items.push(item);
 			this.Stash.add(item);
 			if(--emptySlots == 0) return this.getUpdateText();
@@ -275,7 +275,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				]);
 			}
 
-			item = chefLoot.roll(); 
+			item = this.new(chefLoot.roll()); 
 			this.m.Items.push(item);
 			this.Stash.add(item);
 			if(--emptySlots == 0) return this.getUpdateText();
@@ -331,7 +331,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		if (this.Math.rand(1, 5) == 1)
 		{
-			item = huntingLoot.roll();
+			item = this.new(huntingLoot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
 		}
