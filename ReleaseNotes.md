@@ -5575,3 +5575,7 @@ New background art added for; Noble Footman, Noble Arbalist, Noble Warrior and F
 # 15.0.1.18a
 
 Fixes error with layered armor causing infinite loading
+
+# 15.0.1.18b
+
+Fixes combat continuing on forever on worldmap due to hookObjectOnce not working on combat_manager
