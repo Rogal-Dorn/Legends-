@@ -19,10 +19,10 @@ this.legend_serpent_skin_upgrade <- this.inherit("scripts/items/legend_armor/leg
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_27_back_dead";
 		this.m.Value = 600;
-		this.m.ConditionModifier = 30;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.StaminaModifier = -2;
+		this.m.ConditionModifier = 20;
+		this.m.Condition = 20;
+		this.m.ConditionMax = 20;
+		this.m.StaminaModifier = -3;
 	}
 
 	function getTooltip()

@@ -22,7 +22,7 @@ this.legend_barbarian_horn_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
-		this.m.StaminaModifier = -4;
+		this.m.StaminaModifier = -3;
 	}
 
 

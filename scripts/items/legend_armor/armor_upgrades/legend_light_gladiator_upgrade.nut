@@ -19,10 +19,10 @@ this.legend_light_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteCorpseFront = "upgrade_24_front_dead";
 		this.m.SpriteCorpseBack = null;
 		this.m.Value = 200;
-		this.m.ConditionModifier = 60;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
-		this.m.StaminaModifier = -4;
+		this.m.ConditionModifier = 35;
+		this.m.Condition = 35;
+		this.m.ConditionMax = 35;
+		this.m.StaminaModifier = -2;
 	}
 
 
