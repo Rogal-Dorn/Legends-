@@ -11,10 +11,10 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.Variant = this.Math.rand(14, 18);
 		this.updateVariant();
 		this.m.Value = 2700;
-		this.m.Condition = 30;
-		this.m.ConditionMax = 30;
-		this.m.ConditionModifier = 30;
-		this.m.StaminaModifier = -3;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
+		this.m.ConditionModifier = 40;
+		this.m.StaminaModifier = -5;
 	}
 
 	function updateVariant()
