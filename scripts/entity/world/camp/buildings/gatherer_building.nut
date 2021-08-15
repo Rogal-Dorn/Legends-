@@ -231,7 +231,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					]);
 				}
 			}
-			item = loot.roll();
+			item = this.new(loot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
 			if(--emptySlots == 0) return this.getUpdateText();

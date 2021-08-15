@@ -13,4 +13,6 @@ var Legends =
 	BUTTON_4X_SPEED_DISABLED: 	'ui/buttons/time_x4_sw.png',
 	BUTTON_8X_SPEED: 			'ui/buttons/time_x8.png',
 	BUTTON_8X_SPEED_DISABLED: 	'ui/buttons/time_x8_sw.png',
+
+	BUTTON_ALLOW_RETREAT: 		'ui/skin/icon_allow_flee.png',
 };
