@@ -89,21 +89,5 @@ this.getroottable().Const.LegendMod.loadBuyback <- function()
 			}
 		}
 	});
-
-	::mods_hookExactClass("entity/world/settlement", function  ( o )
-	{
-		local onLeave = o.onLeave;
-		o.onLeave = function () 
-		{
-			onLeave();
-			foreach(item in this.World.Assets.getStash().getItems())
-			{
-				if(item != null)
-				{
-					item.setBought(false);
-				}
-			}
-		}
-	});
 	delete this.Const.LegendMod.loadBuyback;
 }

@@ -5434,3 +5434,30 @@ Fixes battleforged tooltip
 Fixes "return to camp" button letting world run for a second
 
 Reverts changes to speed to once again allow changing of escort speed
+
+## 15.0.1.18
+**Changes**
+Assassin start changed to only give the Hide active to the commander, now grants backstabber to other backgrounds
+Removes a few magic perk groups from the random pool (Notably Premonition tree)
+Halves the amount of free trade goods you get for beating up southern armies (from //adds either 1 silk, 2 silk, 3 incense, 4 spices to //adds either 1 silk, 1 silk, 2 incense, 2 spices)
+"Regular" Orc Young now can't roll the Chain weapon, only "Low" Orc Young
+Goblins outside of the greenskin invasion should be *slightly* less in numbers now
+Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
+Testing some extra upward push on town resources, makes every town's tile give slightly more base wealth to a town
+Tweaks Roster ambitions so only the next one has a chance of showing up.
+Adds new allow flee button skin for when the enemies is retreating
+Limits map sliders to more reasonable thresholds
+
+
+**For Modders**
+Layers' skills can now be added with a simple this.addSkill()
+Removes onAdded/onRemoved functions from layers, all layers now use onEquip/onUnequip.
+Changes script_container roll() function to return script and not object
+
+**Fixes**
+Cant open inventory in combat with bone plating on someone
+"Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
+Teleport gets a tooltip properly
+Fixed demon alp helm horrifying scream not being added/removed properly
+Fixes exploiting buyback for trade ambition & achievements
+Fixes hexe runes drops not being upgraded

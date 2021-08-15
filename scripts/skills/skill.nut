@@ -10,6 +10,7 @@ this.skill <- {
 		KilledString = "Killed",
 		Delay = 0,
 		HitChanceBonus = 0,
+		Sound = [],
 		SoundOnUse = [],
 		SoundOnHit = [],
 		SoundOnMiss = [],
@@ -987,7 +988,7 @@ this.skill <- {
 		this.Tactical.spawnAttackEffect(_effect[dir].Brush, _tile, _effect[dir].Offset.X + this.Const.Tactical.Settings.AttackEffectOffsetX, _effect[dir].Offset.Y + this.Const.Tactical.Settings.AttackEffectOffsetY, this.Const.Tactical.Settings.AttackEffectFadeInDuration, this.Const.Tactical.Settings.AttackEffectStayDuration, this.Const.Tactical.Settings.AttackEffectFadeOutDuration, _effect[dir].Movement0, secondMovementDelay, _effect[dir].Movement1, false);
 	}
 
-	function spawnIcon( _brush, _tile )
+	function spawnIcon(_brush, _tile)
 	{
 		if (!_tile.IsVisibleForPlayer)
 		{
@@ -2227,6 +2228,12 @@ this.skill <- {
 	function onPlayHitSound( _data )
 	{
 		this.Sound.play(_data.Sound, this.Const.Sound.Volume.Skill, _data.Pos);
+	}
+
+	function playSound()
+	{
+		local sound = this.m.Sound[this.Math.rand(0, this.m.Sound.len() - 1)];
+		this.Sound.play(sound, this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
 	}
 
 	function divertAttack( _user, _targetEntity )

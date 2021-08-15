@@ -399,7 +399,6 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 			return false;
 		}
 
-		this.actor.makeMiniboss();
 		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
 		local weapons = [
 			"weapons/named/named_orc_cleaver",

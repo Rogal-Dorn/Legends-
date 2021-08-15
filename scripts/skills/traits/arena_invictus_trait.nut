@@ -10,6 +10,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.arena_invictus";
 		this.m.Name = "Invictus";
 		this.m.Icon = "ui/traits/trait_invictus.png";
+		this.m.Overlay = "trait_invictus";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
 
@@ -100,12 +101,12 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 		{
 			if (_damageInflictedHitpoints >= this.Const.Morale.OnHitMinDamage)
 			{
-				this.spawnIcon("trait_invictus", _targetEntity.getTile());
+				this.spawnIcon(this.m.Overlay, _targetEntity.getTile());
 			}
 			return;
 		}
 
-		if (_damageInflictedHitpoints >= 1) this.spawnIcon("trait_invictus", _targetEntity.getTile());
+		if (_damageInflictedHitpoints >= 1) this.spawnIcon(this.m.Overlay, _targetEntity.getTile());
 
 		this.m.LastFrameApplied = this.Time.getFrame();
 		this.m.LastEnemyAppliedTo = _targetEntity.getID();
@@ -133,14 +134,6 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 
 	function onCombatStarted()
 	{
-		this.m.SkillCount = 0;
-		this.m.LastEnemyAppliedTo = 0;
-		this.m.LastFrameApplied = 0;
-	}
-
-	function onCombatFinished()
-	{
-		this.skill.onCombatFinished();
 		this.m.SkillCount = 0;
 		this.m.LastEnemyAppliedTo = 0;
 		this.m.LastFrameApplied = 0;

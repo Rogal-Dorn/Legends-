@@ -20,7 +20,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	},
 	function create()
 	{
-		this.m.SlotType = this.Const.ItemSlot.None;
+		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.ItemType = this.Const.Items.ItemType.Armor;
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsAllowedInBag = false;
@@ -57,12 +57,53 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return this.m.Type;
 	}
 
+	function getOverlayIcon()
+	{
+		return this.m.OverlayIcon;
+	}
+
+	function getOverlayIconLarge()
+	{
+		return this.m.OverlayIconLarge;
+	}
+
+	function isUsed()
+	{
+		return this.m.Armor != null;
+	}
+
+	function isDestroyedOnRemove()
+	{
+		return this.m.IsDestroyedOnRemove;
+	}
+
+	function getArmor()
+	{
+		return this.m.Armor;
+	}
+
+	function setArmor( _a )
+	{
+		this.m.Armor = _a == null ? null : this.WeakTableRef(_a);
+	}
+
+	function getArmorDescription()
+	{
+		return this.m.ArmorDescription;
+	}
+
+	function getStaminaModifier()
+	{
+		return this.m.StaminaModifier;
+	}
+
 	function getIconOverlay()
 	{
 
 		local L = [];
 
-		if (this.isNamed()) {
+		if (this.isNamed())
+		{
 			L.push("layers/named_icon_glow.png")
 		}
 
@@ -97,44 +138,9 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return L;
 	}
 
-	function getOverlayIcon()
+	function getIconLargeOverlay()
 	{
-		return this.m.OverlayIcon;
-	}
-
-	function getOverlayIconLarge()
-	{
-		return this.m.OverlayIconLarge;
-	}
-
-	function isUsed()
-	{
-		return this.m.Armor != null;
-	}
-
-	function isDestroyedOnRemove()
-	{
-		return this.m.IsDestroyedOnRemove;
-	}
-
-	function getArmor()
-	{
-		return this.m.Armor;
-	}
-
-	function setArmor( _a )
-	{
-		this.m.Armor = this.WeakTableRef(_a);
-	}
-
-	function getArmorDescription()
-	{
-		return this.m.ArmorDescription;
-	}
-
-	function getStaminaModifier()
-	{
-		return this.m.StaminaModifier;
+		return this.getIconOverlay();
 	}
 
 	function getTooltip()
@@ -345,19 +351,23 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		}
 	}
 
-	function onAdded()
+	function onEquip()
 	{
+		this.item.onEquip();
+		this.setCurrentSlotType(this.m.SlotType);
 	}
 
-	function onRemoved( _app )
+	function onUnequip()
+	{
+		this.item.onUnequip()
+		this.setCurrentSlotType(this.Const.ItemSlot.None);
+	}
+
+	function clearAppearance( _app )
 	{
 		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
-		this.m.Armor = null;
 
-		if (_app == null)
-		{
-			return;
-		}
+		if (_app == null) return;
 
 		switch(this.m.Type)
 		{
@@ -394,17 +404,11 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function onUse( _actor, _item = null )
 	{
-		if (this.isUsed())
-		{
-			return false;
-		}
+		if (this.isUsed()) return false;
 
 		local armor = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body) : _item;
 
-		if (armor == null)
-		{
-			return false;
-		}
+		if (armor == null) return false;
 
 		local success = armor.setUpgrade(this);
 
@@ -442,7 +446,4 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	{
 		this.item.onDeserialize(_in);
 	}
-
-
 });
-
