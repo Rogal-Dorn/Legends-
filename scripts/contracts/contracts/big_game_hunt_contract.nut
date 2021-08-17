@@ -325,35 +325,38 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 				}
 
 				local beasts = [[
-				        this.Const.EntityType.Ghoul,
-				        this.Const.EntityType.LegendSkinGhoul,
-				        this.Const.EntityType.Direwolf,
-				        this.Const.EntityType.LegendWhiteDirewolf,
-				        this.Const.EntityType.Spider,
-				        this.Const.EntityType.LegendRedbackSpider,
-				        this.Const.EntityType.Hyena,
-				        this.Const.EntityType.Serpent
-				    ],
-				    [
-				        this.Const.EntityType.Lindwurm,
-				        this.Const.EntityType.Schrat,
-				        this.Const.EntityType.LegendGreenwoodSchrat,
-				        this.Const.EntityType.LegendGreenwoodSchratSmall,
-				        this.Const.EntityType.LegendStollwurm
-				    ],
-				    [
-				        this.Const.EntityType.Lindwurm,
-				        this.Const.EntityType.Schrat,
-				        this.Const.EntityType.LegendGreenwoodSchrat,
-				        this.Const.EntityType.LegendGreenwoodSchratSmall,
-				        this.Const.EntityType.LegendStollwurm
-				    ]
+						this.Const.EntityType.Ghoul,
+						this.Const.EntityType.LegendSkinGhoul,
+						this.Const.EntityType.Direwolf,
+						this.Const.EntityType.LegendWhiteDirewolf,
+						this.Const.EntityType.Spider,
+						this.Const.EntityType.LegendRedbackSpider,
+						this.Const.EntityType.Hyena,
+						this.Const.EntityType.Serpent
+					],
+					[
+						this.Const.EntityType.Alp,
+						this.Const.EntityType.LegendDemonAlp,
+						this.Const.EntityType.Unhold,
+						this.Const.EntityType.UnholdFrost,
+						this.Const.EntityType.UnholdBog,
+						this.Const.EntityType.LegendRockUnhold,
+						this.Const.EntityType.Hexe,
+						this.Const.EntityType.LegendHexeLeader
+					],
+					[
+						this.Const.EntityType.Lindwurm,
+						this.Const.EntityType.Schrat,
+						this.Const.EntityType.LegendGreenwoodSchrat,
+						this.Const.EntityType.LegendGreenwoodSchratSmall,
+						this.Const.EntityType.LegendStollwurm
+					]
 				];
 				
 				if (beasts[this.Contract.m.Size].find(_actor.getType()) != null && !this.isKindOf(_actor, "lindwurm_tail"))
-			    {
-			        this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
-			    }
+				{
+					this.Flags.set("HeadsCollected", this.Flags.get("HeadsCollected") + 1);
+				}
 			}
 
 			function onCombatVictory( _combatID )
