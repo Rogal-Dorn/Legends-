@@ -5449,3 +5449,6 @@ Testing some extra upward push on town resources, makes every town's tile give s
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
 Teleport gets a tooltip properly
+
+## 15.0.1.19
+**Changes** Stollwurms get Battle Flow
