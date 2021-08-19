@@ -218,7 +218,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 							"scripts/items/legend_helmets/runes/legend_rune_bravery",
 							"scripts/items/legend_helmets/runes/legend_rune_luck"
 						]);
-						local rune = options.roll();
+						local rune = this.new(options.roll());
 						rune.setRuneVariant(selected);
 						rune.setRuneBonus(true);
 						// rune.setRuneVariant(0);

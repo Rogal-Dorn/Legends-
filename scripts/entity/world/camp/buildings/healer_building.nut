@@ -342,7 +342,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// {
 		// 	return "Injuries Treated ... 100%";
 		// }
-		local injPercent = this.m.Queue[this.m.InjuriesHealed.len()].Injury.getTreatedPercentage() * 100;
+		local injPercent = this.Math.floor(this.m.Queue[this.m.InjuriesHealed.len()].Injury.getTreatedPercentage() * 10000) / 100.0;
 		local injName = this.m.Queue[this.m.InjuriesHealed.len()].Injury.getName();
 		local text =  "Injuries Treated ... " + healedTotal + " of " + injTotal + "\n" +  injPercent + "% of " + injName + " healed";
 

@@ -601,6 +601,13 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 				}
 			}
 		}
+
+		local showRetreatScreen = o.showRetreatScreen
+		o.showRetreatScreen = function (_tag = null)
+		{
+			this.m.TacticalScreen.getTopbarOptionsModule().changeFleeButtonToAllowRetreat(true);
+			showRetreatScreen();
+		}
 	});
 	delete this.Const.LegendMod.hookTacticalState;
 }
