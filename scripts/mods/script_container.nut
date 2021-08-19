@@ -24,7 +24,7 @@ this.script_container <- {
 		foreach (pair in this.m.Array)
 		{
 			weight += pair[0];
-			if (weight >= i) return this.new(pair[1]);
+			if (weight >= i) return pair[1];
 		}
 		return null;
 	}

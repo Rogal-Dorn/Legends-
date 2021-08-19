@@ -5444,11 +5444,142 @@ Halves the amount of free trade goods you get for beating up southern armies (fr
 Goblins outside of the greenskin invasion should be *slightly* less in numbers now
 Removes Seductive from religious/celibate backgrounds. (Nun, Monk, Dervish)
 Testing some extra upward push on town resources, makes every town's tile give slightly more base wealth to a town
+Tweaks Roster ambitions so only the next one has a chance of showing up.
+Adds new allow flee button skin for when the enemies is retreating
+Limits map sliders to more reasonable thresholds
+
+
+**For Modders**
+Layers' skills can now be added with a simple this.addSkill()
+Removes onAdded/onRemoved functions from layers, all layers now use onEquip/onUnequip.
+Changes script_container roll() function to return script and not object
 
 **Fixes**
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
 Teleport gets a tooltip properly
+<<<<<<< HEAD
 
 ## 15.0.1.19
 **Changes** Stollwurms get Battle Flow
+Fixed demon alp helm horrifying scream not being added/removed properly
+Fixes exploiting buyback for trade ambition & achievements
+Fixes hexe runes drops not being upgraded
+
+====Some armour attachments rebalanced;====
+Barbarian horn;
+Durability: 40
+Fatigue: -4 -> -3
+
+Double mail
+Durability: 20
+Fatigue: -2 -> -3
+
+Heavy gladiator
+Durability: 60
+Fatigue: -5 -> -6
+
+Heraldic plates
+Durability: 40
+Fatigue: -4 -> -5
+
+Joint cover
+Durability: 30
+Fatigue: -3 -> -4
+
+Light gladiator
+Durability: 30 -> 35
+Fatigue: 2
+
+Mail patch
+Durability: 20
+Fatigue: -2 -> -3
+
+Metal pauldrons
+Durability: 40
+Fatigue: -4 -> -5
+
+Metal plating
+Durability: 30 -> 15
+Fatigue: -3 -> -1
+
+Serpent skin
+Durability: 20
+Fatigue: -2 -> -3
+
+====Bandit spawnlist changes;====
+* Bandit rabble should now be less of a human wave and more of a supporting element for thugs and raiders.
+* The backline ranged spam of bandit rabble has also been capped off to you should see fewer groups of 10+ rabble poachers.
+* Early game groups now have a weaker backline, resulting in fewer units to chase down and kill - making solo starts less painful to grind through.
+
+====Nomad spawnlist changes;====
+* Slaves will spawn in roaming pods, but not in defences. Slaves now make up the bulk of easy pods
+* Outlaws are dialed back overall, as are the spawns of bandit leaders and specials
+* Nomad groups should now be smaller and less impossible for early game or solo origins
+* Slingers should appear more frequently in roaming pods, less so in harder pods and garrisons
+* Reduced the amount of backline ranged spam across all roaming groups
+* Garrisons will now have more elite enemies in them, as opposed to hordes of weaker ones
+
+====Mummy contract;====
+* New flavour text
+* Narritive meanders less now
+
+====Named barbarian weapons/armour tweaks;====
+(was->current)
+* Plated Fur
+ConditionMax = 130; -> 155
+StaminaModifier = -14; -> -17
+
+* Skull and Chain
+ConditionMax = 190; -> 210
+StaminaModifier = -24; -> -27
+
+* Bronze Armour
+ConditionMax = 280; -> 300
+StaminaModifier = -35; -> -38
+
+* Skullhammer (weapon)
+StaminaModifier = -16; -> -17
+RegularDamage = 45; -> 50
+RegularDamageMax = 65; -> 70
+
+====Southern city state attached location overhaul;====
+* Fishing huts
+Now produces 1 small tools
+Now produces 1 qiyan
+
+* Goat herder
+Now produces 1 tipstaff and staff
+Now produces 2 muladi
+
+* Incense dryer
+Now produces 1 alchemist
+Now produces 1 dervish
+Now produces 1 small tools
+Now produces 1 small medicine
+
+* Militia training camp
+Now produces 2 dervish
+Now produces 3 small ammo
+
+* Plantation
+Now produces 1 small medicine
+Now produces 1 qiyan
+
+* Silk Farm
+Now produces 1 muladi
+Now produces 2 qiyan
+
+* Stone watchtower
+Now produces 3 nomads (up from 1)
+
+====Background art;====
+New background art added for; Noble Footman, Noble Arbalist, Noble Warrior and Fletcher
+
+# 15.0.1.18a
+
+Fixes error with layered armor causing infinite loading
+
+# 15.0.1.18b
+
+Fixes combat continuing on forever on worldmap due to hookObjectOnce not working on combat_manager
