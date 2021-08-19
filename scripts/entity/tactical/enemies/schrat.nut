@@ -263,7 +263,6 @@ function makeMiniboss()
 			return false;
 		}
 
-		this.actor.makeMiniboss();
 		this.m.Skills.add(this.new("scripts/skills/racial/legend_greenwood_schrat_racial"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_grow_greenwood_shield_skill"));
 		this.m.BaseProperties.setValues(this.Const.Tactical.Actor.LegendGreenwoodSchrat);

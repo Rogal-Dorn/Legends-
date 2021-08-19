@@ -31,6 +31,13 @@ this.silk_farm_location <- this.inherit("scripts/entity/world/attached_location"
 
 		_list.push("daytaler_southern_background");
 		_list.push("daytaler_southern_background");
+		_list.push("legend_muladi_background");
+
+		if (_gender)
+		{
+			_list.push("legend_qiyan_background");
+			_list.push("legend_qiyan_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )

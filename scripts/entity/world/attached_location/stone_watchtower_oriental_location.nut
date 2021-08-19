@@ -69,6 +69,8 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 		}
 
 		_list.push("nomad_background");
+		_list.push("nomad_background");
+		_list.push("nomad_background");
 	}
 
 	function onUpdateShopList( _id, _list )

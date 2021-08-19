@@ -212,24 +212,15 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 				{
 					if (this.LegendsMod.Configs().LegendArmorsEnabled())
 					{
-						local rune;
-						local selected = this.Math.rand(11,13);
-						switch(selected)
-						{
-							case 11:
-								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_clarity");
-								break;
-
-							case 12:
-								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_bravery");
-								break;
-
-							case 13:
-								rune = this.new("scripts/items/legend_helmets/runes/legend_rune_luck");
-								break;
-						}
+						local options = this.new("scripts/mods/script_container");
+						options.extend([
+							"scripts/items/legend_helmets/runes/legend_rune_clarity",
+							"scripts/items/legend_helmets/runes/legend_rune_bravery",
+							"scripts/items/legend_helmets/runes/legend_rune_luck"
+						]);
+						local rune = options.roll();
 						rune.setRuneVariant(selected);
-						rune.setRuneBonus(false);
+						rune.setRuneBonus(true);
 						// rune.setRuneVariant(0);
 						rune.drop(_tile);
 					}

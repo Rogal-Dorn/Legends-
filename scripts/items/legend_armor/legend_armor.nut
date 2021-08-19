@@ -11,11 +11,101 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.SlotType = this.Const.ItemSlot.Body;
 		this.m.Upgrades = [];
 
-		for( local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i )
+		for (local i = 0; i < this.Const.Items.ArmorUpgrades.COUNT; i = ++i)
 		{
 			this.m.Upgrades.push(null);
 			this.m.Blocked.push(false);
 		}
+	}
+
+	function isArmorNamed()
+	{
+		if (this.isNamed()) {
+			return true;
+		}
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u != null && u.isNamed())
+			{
+				return true;
+			}
+		}
+
+		return false
+	}
+
+	function getIcon()
+	{
+		if (this.isArmorNamed()) 
+		{
+			return "layers/named_icon_glow.png"
+		}
+		return this.m.Icon;
+	}
+
+
+	function getIconOverlay()
+	{
+		local L = [];
+
+		if (this.isArmorNamed()) 
+		{
+			L.push(this.m.Icon);
+		}
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u != null)
+			{
+				L.push(u.getOverlayIcon());
+			}
+		}
+
+		if (L.len() == 0)
+		{
+			return [
+				""
+			];
+		}
+
+		return L;
+	}
+
+	function getIconLarge()
+	{
+		if (this.isArmorNamed()) {
+			return "layers/named_inventory_glow.png"
+		}
+
+		return this.m.IconLarge != "" ? this.m.IconLarge : null;
+	}
+
+	function getIconLargeOverlay()
+	{
+		local L = [];
+
+		if (this.isArmorNamed()) 
+		{
+			L.push(this.m.IconLarge);
+		}
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u != null)
+			{
+				L.push(u.getOverlayIconLarge());
+			}
+		}
+
+		if (L.len() == 0)
+		{
+			return [
+				""
+			];
+		}
+
+		return L;
 	}
 
 	function blockUpgrades()
@@ -24,10 +114,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			this.m.Blocked[i] = true;
 		}
-	}
-
-	function onAddedToStash( _stashID )
-	{
 	}
 
 	function getRepair()
@@ -40,41 +126,104 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return this.Math.floor(this.getArmorMax());
 	}
 
-	function getArmor()
+	function getAddedValue(_function, _base, _all = false)
 	{
-		local value = this.m.Condition;
+		local value = _base;
 
-		foreach( u in this.m.Upgrades )
+		foreach (i, upgrade in this.m.Upgrades)
 		{
-			if (u == null)
+			if (upgrade != null)
 			{
-				continue;
+				value += upgrade[_function](); 
 			}
-
-			value = value + u.getCondition();
 		}
 
 		return value;
+	}
+
+	function getArmor()
+	{
+		return this.getAddedValue("getCondition", this.m.Condition);
 	}
 
 	function getArmorMax()
 	{
-		local value = this.m.ConditionMax;
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			value = value + u.getConditionMax();
-		}
-
-		return value;
+		return this.getAddedValue("getConditionMax", this.m.ConditionMax);
 	}
 
-	function addArmor( _a)
+	function getStaminaModifier()
+	{
+		return this.getAddedValue("getStaminaModifier", this.m.StaminaModifier);
+	}
+
+	function getValue()
+	{
+		return this.getAddedValue("getValue", this.m.Value * (1.0 * this.m.Condition / (1.0 * this.m.ConditionMax)));
+	}
+
+	function doOnFunction(_function, _argsArray = null)
+	{
+		if (_argsArray == null) _argsArray = [];
+		_argsArray.insert(0, null);
+
+		foreach (u in this.m.Upgrades)
+		{
+			if (u != null)
+			{
+				_argsArray[0] = u;
+				u[_function].acall(_argsArray);
+			}
+		}
+	}
+
+	function onTurnStart()
+	{
+		this.doOnFunction("onTurnStart");
+	}
+
+	function onUse( _skill )
+	{
+		this.doOnFunction("onUse", [_skill]);
+	}
+
+	function onTotalArmorChanged()
+	{
+		this.doOnFunction("onTotalArmorChanged");
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		this.doOnFunction("onBeforeDamageReceived", [_attacker, _skill, _hitInfo, _properties]);
+	}
+
+	function onCombatStarted()
+	{
+		this.doOnFunction("onCombatStarted");
+	}
+
+	function onCombatFinished()
+	{
+		this.doOnFunction("onCombatFinished");
+	}
+
+	function onActorDied( _onTile )
+	{
+		this.doOnFunction("onActorDied", [_onTile]);
+	}
+
+	function setCurrentSlotType( _slotType )
+	{
+		this.m.CurrentSlotType = _slotType;
+		this.doOnFunction("setCurrentSlotType", [_slotType]);
+	}
+
+	function clearSkills()
+	{
+		this.item.clearSkills();
+		this.doOnFunction("clearSkills");
+	}
+
+	function addArmor( _a )
 	{
 		if (_a + this.m.Condition <= this.m.ConditionMax)
 		{
@@ -85,18 +234,13 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = this.m.ConditionMax;
 		local delta = _a - (this.m.ConditionMax - this.m.Condition);
 
-		foreach( u in this.m.Upgrades )
+		foreach (u in this.m.Upgrades)
 		{
-			if (u == null)
+			if (u != null)
 			{
-				continue;
-			}
+				delta = u.addArmor(delta);
 
-			delta = u.addArmor(delta);
-
-			if (delta <= 0)
-			{
-				break;
+				if (delta <= 0) break;
 			}
 		}
 	}
@@ -106,16 +250,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local delta = _a
 		for (local i = this.Const.Items.ArmorUpgrades.COUNT - 1; i >= 0; i = --i)
 		{
-			if (this.m.Upgrades[i] == null)
+			if (this.m.Upgrades[i] != null)
 			{
-				continue;
-			}
+				delta = this.m.Upgrades[i].removeArmor(delta);
 
-			delta = this.m.Upgrades[i].removeArmor(delta);
-
-			if (delta <= 0)
-			{
-				break;
+				if (delta <= 0) break;
 			}
 		}
 
@@ -123,6 +262,17 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			this.m.Condition = this.Math.maxf(0, this.m.Condition - delta);
 		}
+	}
+
+	function setArmor( _a )
+	{
+		this.setCondition( _a)
+	}
+
+	function onRepair( _a)
+	{
+		this.setArmor(_a);
+		return 0;
 	}
 
 	function setCondition( _a )
@@ -139,17 +289,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 
 		this.updateAppearance();
-	}
-
-	function setArmor( _a )
-	{
-		this.setCondition( _a)
-	}
-
-	function onRepair( _a)
-	{
-		this.setArmor(_a);
-		return 0;
 	}
 
 	function isAmountShown()
@@ -181,12 +320,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		foreach( u in this.m.Upgrades )
 		{
-			if (u == null)
+			if (u != null)
 			{
-				continue;
+				return u;
 			}
-
-			return u;
 		}
 
 		return null;
@@ -215,37 +352,29 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return slots;
 	}
 
-	function isArmorNamed()
+	function getUpgradeIDs()
 	{
-		if (this.isNamed()) {
-			return true;
-		}
-
-		foreach( u in this.m.Upgrades )
+		local ids = [];
+		foreach (i, u in this.m.Upgrades)
 		{
-			if (u == null)
+			if (this.m.Blocked[i] || u == null)
 			{
-				continue;
+				ids.push(null);
 			}
-
-			if (u.isNamed()) {
-				return true
+			else
+			{
+				ids.push(u.getID());
 			}
 		}
-
-		return false
+		return ids
 	}
 
 	function getUpgradesNamed() {
 
-		foreach( u in this.m.Upgrades )
+		foreach(u in this.m.Upgrades)
 		{
-			if (u == null)
+			if (u != null && u.isNamed())
 			{
-				continue;
-			}
-
-			if (u.isNamed()) {
 				return u.getName()
 			}
 		}
@@ -253,143 +382,14 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return ""
 	}
 
-	function getIcon()
-	{
-		if (this.isArmorNamed()) {
-			return "layers/named_icon_glow.png"
-		}
-		return this.m.Icon;
-	}
-
-
-	function getIconOverlay()
-	{
-		local L = [];
-
-		if (this.isArmorNamed()) {
-			L.push(this.m.Icon)
-		}
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			L.push(u.getOverlayIcon());
-		}
-
-		if (L.len() == 0)
-		{
-			return [
-				""
-			];
-		}
-
-		return L;
-	}
-
-	function getIconLarge()
-	{
-		if (this.isArmorNamed()) {
-			return "layers/named_inventory_glow.png"
-		}
-
-		return this.m.IconLarge != "" ? this.m.IconLarge : null;
-	}
-
-	function getIconLargeOverlay()
-	{
-		local L = [];
-
-		if (this.isArmorNamed()) {
-			L.push(this.m.IconLarge)
-		}
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			L.push(u.getOverlayIconLarge());
-		}
-
-		if (L.len() == 0)
-		{
-			return [
-				""
-			];
-		}
-
-		return L;
-	}
-
-	function getStaminaModifier()
-	{
-		local value = this.m.StaminaModifier;
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			value = value + u.getStaminaModifier();
-		}
-
-		return value;
-	}
-
-	function getValue()
-	{
-		local value = this.m.Value * (1.0 * this.m.Condition / (1.0 * this.m.ConditionMax));
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			value = value + u.getValue();
-		}
-
-		return this.Math.floor(value);
-	}
-
 	function setUpgrade( _upgrade )
 	{
-		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen)
-		{
-			return false;
-		}
-
-		if (_upgrade == null)
-		{
-			return true;
-		}
-
-		if (_upgrade != null && this.m.Blocked[_upgrade.getType()])
-		{
-			return false;
-		}
+		if (_upgrade == null) return true;
+		if (_upgrade != null && this.m.Blocked[_upgrade.getType()]) return false;
 
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
-			local app;
-
-			if (this.getContainer() != null && this.isEquipped())
-			{
-				app = this.getContainer().getAppearance();
-			}
-
-			local item = this.m.Upgrades[_upgrade.getType()];
-			item.onRemoved(app);
-
+			local item = this.removeUpgrade(_upgrade.getType());
 			if (!item.isDestroyedOnRemove())
 			{
 				this.World.Assets.getStash().add(item);
@@ -398,25 +398,25 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
-		this.m.Upgrades[_upgrade.getType()].onAdded();
 		this.updateAppearance();
-		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
+		if (this.m.Container != null) 
+		{
+			this.m.Upgrades[_upgrade.getType()].onEquip();
+			this.getContainer().getActor().getSkills().update();
+		}
 		return true;
 	}
 
 	function removeUpgrade( _slot )
 	{
-		if (this.m.Upgrades[_slot] == null)
-		{
-			return null;
-		}
+		if (this.m.Upgrades[_slot] == null || this.Stash.getNumberOfEmptySlots() == 0) return null;
 
-		if (this.Stash.getNumberOfEmptySlots() == 0) return null;
-
-		local app = this.getContainer().getAppearance();
+		local app = this.getContainer() == null ? null : this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
+		item.clearAppearance(app);
+		item.onUnequip();
+		item.setArmor(null);
 		this.m.Upgrades[_slot] = null;
-		item.onRemoved(app);
 		this.updateAppearance();
 		if (this.m.Container != null) this.getContainer().getActor().getSkills().update()
 		return item;
@@ -459,12 +459,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		foreach( u in this.m.Upgrades )
 		{
-			if (u == null)
+			if (u != null)
 			{
-				continue;
+				description += " " + u.getArmorDescription();
 			}
-
-			description = description + (" " + u.getArmorDescription());
 		}
 
 		local result = [
@@ -495,27 +493,25 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		foreach( u in this.m.Upgrades )
 		{
-			if (u == null)
+			if (u != null)
 			{
-				continue;
-			}
-
-			if (u.getIconLarge() != null)
-			{
-				result.push({
-					id = 3,
-					type = "image",
-					image = u.getIconLarge(),
-					isLarge = true
-				});
-			}
-			else
-			{
-				result.push({
-					id = 3,
-					type = "image",
-					image = u.getIcon()
-				});
+				if (u.getIconLarge() != null)
+				{
+					result.push({
+						id = 3,
+						type = "image",
+						image = u.getIconLarge(),
+						isLarge = true
+					});
+				}
+				else
+				{
+					result.push({
+						id = 3,
+						type = "image",
+						image = u.getIcon()
+					});
+				}
 			}
 		}
 
@@ -539,15 +535,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			});
 		}
 
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			u.getArmorTooltip(result);
-		}
+		this.doOnFunction("getArmorTooltip", [result]);
 
 		if (this.isRuned())
 		{
@@ -697,14 +685,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 
 		this.updateAppearance();
-
 		this.doOnFunction("onEquip");
 	}
 
 	function onUnequip()
 	{
-		this.item.onUnequip();
-
 		this.doOnFunction("onUnequip");
 
 		if (this.m.ShowOnCharacter)
@@ -733,12 +718,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				this.getContainer().getActor().resetBloodied();
 			}
 		}
+
+		this.item.onUnequip();
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
-		this.doOnFunction("onBeforeDamageReceived", [_attacker, _skill, _hitInfo, _properties]);
-	}
+	
 
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
@@ -806,126 +790,29 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.doOnFunction("onUpdateProperties", [_properties]);
 	}
 
-	function doOnFunction(_function, _argsArray = null)
-	{
-		if (_argsArray == null) _argsArray = [];
-		_argsArray.insert(0, null);
 
-		foreach (u in this.m.Upgrades)
-		{
-			if (u != null)
-			{
-				_argsArray[0] = u;
-				u[_function].acall(_argsArray);
-			}
-		}
-	}
-
-	function onTurnStart()
-	{
-		this.doOnFunction("onTurnStart");
-	}
-
-	function onUse( _skill )
-	{
-		this.doOnFunction("onUse", [_skill]);
-	}
-
-	function onTotalArmorChanged()
-	{
-		this.doOnFunction("onTotalArmorChanged");
-	}
-
-	function onCombatStarted()
-	{
-		this.doOnFunction("onCombatStarted");
-	}
-
-	function onCombatFinished()
-	{
-		this.doOnFunction("onCombatFinished");
-	}
-
-	function onActorDied( _onTile )
-	{
-		this.doOnFunction("onActorDied", [_onTile]);
-	}
 
 	function isItemType( _t )
 	{
 		if (_t == this.Const.Items.ItemType.Named || _t == this.Const.Items.ItemType.Legendary)
 		{
-			if ((this.m.ItemType & _t) != 0) {
+			if ((this.m.ItemType & _t) != 0) 
+			{
 				return true
 			}
 
 			foreach( u in this.m.Upgrades )
 			{
-				if (u == null)
+				if (u != null && u.isItemType(_t))
 				{
-					continue;
-				}
-
-				if (u.isItemType(_t)) {
 					return true
 				}
 			}
-
 			return false
 		}
 
 		return (this.m.ItemType & _t) != 0;
 	}
-
-	function hasLayerID(_id)
-	{
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			if (u.getID() == _id) {
-				return true
-			}
-		}
-		return false
-	}
-
-	// function getBuyPrice()
-	// {
-	// 	local basePrice = this.armor.getBuyPrice();
-
-	// 	foreach( u in this.m.Upgrades )
-	// 	{
-	// 		if (u == null)
-	// 		{
-	// 			continue;
-	// 		}
-
-	// 		basePrice = basePrice + u.getBuyPrice();
-	// 	}
-
-	// 	return basePrice;
-	// }
-
-	// function getSellPrice()
-	// {
-	// 	local basePrice = this.armor.getSellPrice();
-
-	// 	foreach( u in this.m.Upgrades )
-	// 	{
-	// 		if (u == null)
-	// 		{
-	// 			continue;
-	// 		}
-
-	// 		basePrice = basePrice + u.getSellPrice();
-	// 	}
-
-	// 	return basePrice;
-	// }
 
 	function setupArmor(_variant)
 	{
@@ -936,19 +823,17 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		this.armor.onSerialize(_out);
 		_out.writeU8(this.m.Upgrades.len());
 
-		for( local i = 0; i != this.m.Upgrades.len(); i = ++i )
+		foreach (i, upgrade in this.m.Upgrades)
 		{
-			local item = this.m.Upgrades[i];
-
-			if (item == null)
+			if (upgrade == null)
 			{
 				_out.writeBool(false);
 			}
 			else
 			{
 				_out.writeBool(true);
-				_out.writeI32(item.ClassNameHash);
-				item.onSerialize(_out);
+				_out.writeI32(upgrade.ClassNameHash);
+				upgrade.onSerialize(_out);
 			}
 		}
 	}
@@ -962,20 +847,15 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		for( local i = 0; i < count; i = ++i )
 		{
 			this.m.Upgrades.push(null);
-			local hasItem = _in.readBool();
 
-			if (!hasItem)
+			if (_in.readBool()) //has item
 			{
-				continue
+				local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
+				item.onDeserialize(_in);
+				this.m.Upgrades[i] = item;
+				this.m.Upgrades[i].setArmor(this);
 			}
-
-			local item = this.new(this.IO.scriptFilenameByHash(_in.readI32()));
-			item.onDeserialize(_in);
-			this.m.Upgrades[i] = item;
-			this.m.Upgrades[i].setArmor(this);
-
 		}
 	}
-
 });
 

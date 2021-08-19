@@ -315,7 +315,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			if (this.Math.rand(1, 100) <= 75)
 			{
-				local r = this.Math.rand(1, 2);
+				r = this.Math.rand(1, 3);
 
 				if (r == 1)
 				{
@@ -332,7 +332,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else
 			{
-
+				r = this.Math.rand(1, 2);
 				if (r == 1)
 				{
 					weapon = this.new("scripts/items/weapons/greenskins/orc_wooden_club");

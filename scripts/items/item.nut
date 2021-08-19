@@ -739,7 +739,6 @@ this.item <- {
 		{
 			if (this.m.Container.getActor() != null) this.m.LastEquippedByFaction = this.m.Container.getActor().getFaction();
 			if ("getSkills" in this.getContainer().getActor()) this.getContainer().getActor().getSkills().update();
-
 		}
 		if (this.isRuned())
 		{
