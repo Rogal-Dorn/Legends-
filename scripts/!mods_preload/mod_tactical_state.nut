@@ -608,6 +608,11 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 			this.m.TacticalScreen.getTopbarOptionsModule().changeFleeButtonToAllowRetreat(true);
 			showRetreatScreen();
 		}
+
+		o.isEnemyRetreatDialogShown <- function ()
+		{
+			return this.m.IsEnemyRetreatDialogShown;
+		}
 	});
 	delete this.Const.LegendMod.hookTacticalState;
 }
