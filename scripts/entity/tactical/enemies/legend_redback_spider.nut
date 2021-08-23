@@ -284,9 +284,9 @@ this.legend_redback_spider <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSize(this.Math.rand(70, 90) * 0.01);
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_redback_spider_bite_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/web_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
-		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
-		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
