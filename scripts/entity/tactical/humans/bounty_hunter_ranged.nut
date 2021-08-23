@@ -35,9 +35,9 @@ this.bounty_hunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
-		this.m.Skills.add(this.new("scripts/skills/actives/rotation"));
-		this.m.Skills.add(this.new("scripts/skills/actives/footwork"));
-		this.m.Skills.add(this.new("scripts/skills/actives/recover_skill"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
