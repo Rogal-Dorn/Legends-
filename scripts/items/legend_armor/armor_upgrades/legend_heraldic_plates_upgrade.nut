@@ -10,7 +10,7 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.ArmorDescription = "Large protective plates have been fixed at the shoulders of this armor.";
 		this.m.Variant = this.Math.rand(14, 18);
 		this.updateVariant();
-		this.m.Value = 2700;
+		this.m.Value = 200;
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
