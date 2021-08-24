@@ -17,7 +17,7 @@ this.metal_plating_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 		this.m.SpriteDamagedBack = "upgrade_12_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_12_back_dead";
-		this.m.Value = 300;
+		this.m.Value = 150;
 		this.m.ConditionModifier = 15;
 		this.m.StaminaModifier = 1;
 	}
