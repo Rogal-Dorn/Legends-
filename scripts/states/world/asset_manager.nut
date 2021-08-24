@@ -2153,6 +2153,8 @@ this.asset_manager <- {
 			]
 		];
 
+		this.Const.LegendMod.extendVarsWithPronouns(vars, bro.Bro.getGender());
+
 		if (_isPositive)
 		{
 			return "\n\n" + this.buildTextFromTemplate(bro.Bro.getBackground().getGoodEnding(), vars);
