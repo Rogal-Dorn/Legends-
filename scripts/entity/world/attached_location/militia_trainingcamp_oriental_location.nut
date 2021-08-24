@@ -177,6 +177,11 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 				P = 1.0,
 				S = "supplies/ammo_small_item"
 			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_fletcher"
+			});
 
 			if (this.Const.DLC.Unhold)
 			{

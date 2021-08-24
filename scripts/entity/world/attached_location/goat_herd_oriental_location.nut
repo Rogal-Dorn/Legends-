@@ -52,6 +52,11 @@ this.goat_herd_oriental_location <- this.inherit("scripts/entity/world/attached_
 				P = 1.0,
 				S = "weapons/legend_slingstaff"
 			});
+				_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_hunter"
+			});
 		}
 	}
 
