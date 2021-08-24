@@ -18,7 +18,7 @@ this.legend_metal_pauldrons_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.SpriteDamagedBack = "upgrade_11_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_11_back_dead";
-		this.m.Value = 4000;
+		this.m.Value = 200;
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.ConditionModifier = 40;
