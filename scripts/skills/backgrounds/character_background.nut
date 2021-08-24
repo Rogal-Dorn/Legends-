@@ -779,6 +779,31 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			"title",
 			this.getContainer().getActor().getTitle()
 		]);
+		
+		local pronouns = [
+			"They",
+			"they",
+			"Them",
+			"them",
+			"Their",
+			"their",
+			"Theirs",
+			"theirs",
+			"Themselves",
+			"themselves",
+			"Person",
+			"person",
+			"People",
+			"people"
+		];
+		foreach (pronoun in pronouns)
+		{
+			vars.push([
+				pronoun,
+				this.getContainer().getActor().getPronoun(pronoun)
+			]);
+		}
+
 		this.m.Description = this.buildTextFromTemplate(this.m.RawDescription, vars);
 	}
 

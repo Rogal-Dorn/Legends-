@@ -34,12 +34,12 @@ this.necromancer <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("body").Saturation = 0.6;
 		this.m.Skills.add(this.new("scripts/skills/actives/raise_undead"));
 		this.m.Skills.add(this.new("scripts/skills/actives/possess_undead_skill"));
-		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		}
 
 	}
 

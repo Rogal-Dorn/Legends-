@@ -77,7 +77,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 					case 0:
 						return "his";
 					case 1:
-						return "hers";
+						return "her";
 					default:
 						return "their";
 				}
@@ -110,6 +110,16 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 						return "woman";
 					default:
 						return "person";
+				}
+			case "people":
+				switch (this.getGender())
+				{
+					case 0:
+						return "men";
+					case 1:
+						return "women";
+					default:
+						return "people";
 				}
 			default:
 				this.logError("Unable to handle pronoun: " + _neuter);

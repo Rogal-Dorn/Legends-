@@ -19,12 +19,12 @@ this.zombie_player <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
-		b.IsImmuneToPoison = true;
 		b.FatigueDealtPerHitMult = 2.0;
 		this.m.ActionPoints = b.ActionPoints;
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.m.InjuryType = 1;
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
 		local injury = this.getSprite("injury");
 		injury.setBrush("zombify_01");
 	}

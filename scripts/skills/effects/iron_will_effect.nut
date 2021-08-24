@@ -16,7 +16,7 @@ this.iron_will_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "I feel invincible! Well, feelings may betray this character, but as he doesn\'t feel any injuries suffered, old or new, he also won\'t be affected by them until after combat ends and the adrenaline fades.";
+		return "I feel invincible! Well, feelings may betray this character, but as they don\'t feel any injuries suffered, old or new, they also won\'t be affected by them until after combat ends and the adrenaline fades.";
 	}
 
 	function getTooltip()

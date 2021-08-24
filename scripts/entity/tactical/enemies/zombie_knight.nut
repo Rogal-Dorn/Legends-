@@ -33,7 +33,6 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
-		b.IsImmuneToPoison = true;
 		b.FatigueDealtPerHitMult = 2.0;
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 90)
@@ -61,6 +60,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

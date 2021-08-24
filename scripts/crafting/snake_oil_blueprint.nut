@@ -20,15 +20,14 @@ this.snake_oil_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
+		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
+		{
+			return true;
+		}
 
 		if (!this.World.Retinue.hasFollower("follower.alchemist"))
 		{
 			return false;
-		}
-
-		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
-		{
-			return true;
 		}
 
 		return this.blueprint.isQualified();

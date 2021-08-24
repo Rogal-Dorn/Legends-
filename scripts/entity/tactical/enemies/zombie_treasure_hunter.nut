@@ -20,7 +20,6 @@ this.zombie_treasure_hunter <- this.inherit("scripts/entity/tactical/enemies/zom
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
-		b.IsImmuneToPoison = true;
 		b.FatigueDealtPerHitMult = 2.0;
 		b.DamageTotalMult = 1.25;
 		b.DamageReceivedArmorMult = 0.75;
