@@ -33,7 +33,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 	function getPronoun(_neuter)
 	{
-		this.Const.LegendMod.getPronoun(this.getGender(), _neuter);
+		return this.Const.LegendMod.getPronoun(this.getGender(), _neuter);
 	}
 
 	// -1 = Default Male, 0 = Male, 1 = Female
@@ -172,6 +172,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disemboweled;
 		local appearance = this.getItems().getAppearance();
+		appearance.HideHair = false;
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
 

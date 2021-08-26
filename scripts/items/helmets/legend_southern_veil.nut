@@ -4,7 +4,7 @@ this.legend_southern_veil <- this.inherit("scripts/items/helmets/helmet", {
 	{
 		this.helmet.create();
 		this.m.ID = "armor.head.legend_southern_veil";
-		this.m.Name = "southern Veil";
+		this.m.Name = "Southern Veil";
 		this.m.Description = "A translucent southern veil made of soft material";
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = false;
