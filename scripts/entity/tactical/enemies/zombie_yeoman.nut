@@ -16,7 +16,6 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.zombie.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.ZombieYeoman);
-		b.SurroundedBonus = 10;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
@@ -35,6 +34,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;

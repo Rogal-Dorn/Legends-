@@ -29,7 +29,6 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.zombie.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.ZombieKnight);
-		b.SurroundedBonus = 10;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
@@ -61,6 +60,7 @@ this.zombie_knight <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )

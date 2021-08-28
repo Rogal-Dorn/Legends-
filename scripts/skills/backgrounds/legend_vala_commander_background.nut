@@ -11,7 +11,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.BadEnding = null;
 		this.m.HiringCost = 240;
 		this.m.DailyCost = 0;
-		this.m.Ethnicity = 2;
+		this.m.Ethnicity = 0;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -26,12 +26,12 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 		this.m.Titles = [
 			"the Vala"
 		];
-		this.m.Faces = this.Const.Faces.AfricanFemale;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.African;
+		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AfricanFemale;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.IsFemaleBackground = true;
 		this.m.IsUntalented = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;

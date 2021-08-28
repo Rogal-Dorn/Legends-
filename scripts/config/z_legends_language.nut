@@ -33,6 +33,7 @@ gt.Const.LegendMod.PronounTable <- {
 	noble = ["noble", "nobleman", "noblewoman"]
 }
 
+// _gender = -1 for neuter, 0 for male, 1 for female
 gt.Const.LegendMod.getPronoun <- function( _gender, _neuter )
 {
 	local capitalized = _neuter[0] < 96;

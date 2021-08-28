@@ -38,8 +38,8 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Derelict",
 			"the Surbated"
 		];
-		
-		if (this.Math.rand(1,2))
+		this.m.Ethnicity = this.Math.rand(1, 2);
+		if ()
 		{
 			this.m.Ethnicity = 0; 
 			this.m.Faces = this.Const.Faces.AllWhiteMale;

@@ -16,13 +16,13 @@ this.zombie_betrayer <- this.inherit("scripts/entity/tactical/enemies/zombie_kni
 		this.zombie_knight.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.ZombieBetrayer);
-		b.SurroundedBonus = 10;
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsImmuneToBleeding = true;
 		b.DamageTotalMult = 1.25;
 		b.DamageReceivedArmorMult = 0.75;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			b.MeleeSkill += 5;
