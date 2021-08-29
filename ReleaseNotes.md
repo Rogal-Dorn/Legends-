@@ -5458,6 +5458,10 @@ Changes script_container roll() function to return script and not object
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
 Teleport gets a tooltip properly
+<<<<<<< HEAD
+
+## 15.0.1.19
+**Changes** Stollwurms get Battle Flow
 Fixed demon alp helm horrifying scream not being added/removed properly
 Fixes exploiting buyback for trade ambition & achievements
 Fixes hexe runes drops not being upgraded
