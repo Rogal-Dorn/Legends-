@@ -1016,6 +1016,10 @@ this.tooltip_events <- {
 		local player = this.Tactical.getEntityByID(_entityId);
 		local perk = player.getBackground().getPerk(_perkId);
 
+		local vars = [];
+		this.Const.LegendMod.extendVarsWithPronouns(vars, player.getGender());
+		local tooltip = this.buildTextFromTemplate(perk.Tooltip, vars);
+
 		if (perk != null)
 		{
 			local ret = [
@@ -1027,7 +1031,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = perk.Tooltip
+					text = tooltip
 				}
 			];
 
@@ -2897,18 +2901,38 @@ this.tooltip_events <- {
 			];
 
 		case "tactical-screen.topbar.options-bar-module.FleeButton":
-			local ret = [
-				{
-					id = 1,
-					type = "title",
-					text = "Retreat from combat"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Retreat from combat and run for your lives. Better to fight another day than to die here pointlessly."
-				}
-			];
+			local ret = [];
+
+			if (this.Tactical.State.isEnemyRetreatDialogShown())
+			{
+				ret.extend([
+					{
+						id = 1,
+						type = "title",
+						text = "End combat"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "The enemy is fleeing the battle. There is no point in running them down."
+					}
+				]);
+			}
+			else
+			{
+				ret.extend([
+					{
+						id = 1,
+						type = "title",
+						text = "Retreat from combat"
+					},
+					{
+						id = 2,
+						type = "description",
+						text = "Retreat from combat and run for your lives. Better to fight another day than to die here pointlessly."
+					}
+				]);
+			}
 
 			if (!this.Tactical.State.isScenarioMode() && this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsFleeingProhibited)
 			{

@@ -32,7 +32,7 @@ this.bone_plating_effect <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.logEx("Damage absorbed by Bone Plating");
 
 			this.playSound();
-			this.spawnIcon(this.m.Overlay, this.getContainer.getActor().getTile());
+			this.spawnIcon(this.m.Overlay, this.getContainer().getActor().getTile());
 			
 			this.removeSelf();
 		}

@@ -33,88 +33,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 
 	function getPronoun(_neuter)
 	{
-		local capitalized = _neuter[0] < 96;
-		if (capitalized) _neuter = _neuter.tolower()
-		local pronoun = this.getPronounRaw(_neuter);
-
-		if (capitalized)
-		{
-			local first = pronoun.slice(0, 1);
-			first = first.toupper();
-			local second = pronoun.slice(1);
-			pronoun = first + second;
-		}
-		return pronoun
-	}
-
-	function getPronounRaw(_neuter)
-	{
-		switch (_neuter)
-		{
-			case "they":
-				switch (this.getGender())
-				{
-					case 0:
-						return "he";
-					case 1:
-						return "she";
-					default:
-						return "they";
-				}
-			case "them":
-				switch (this.getGender())
-				{
-					case 0:
-						return "him";
-					case 1:
-						return "her";
-					default:
-						return "them";
-				}
-			case "their":
-				switch (this.getGender())
-				{
-					case 0:
-						return "his";
-					case 1:
-						return "hers";
-					default:
-						return "their";
-				}
-			case "theirs":
-				switch (this.getGender())
-				{
-					case 0:
-						return "his";
-					case 1:
-						return "hers";
-					default:
-						return "theirs";
-				}
-			case "themselves":
-				switch (this.getGender())
-				{
-					case 0:
-						return "himself";
-					case 1:
-						return "herself";
-					default:
-						return "themselves";
-				}
-			case "person":
-				switch (this.getGender())
-				{
-					case 0:
-						return "man";
-					case 1:
-						return "woman";
-					default:
-						return "person";
-				}
-			default:
-				this.logError("Unable to handle pronoun: " + _neuter);
-				return "ERROR, POST YOUR LOG IN THE DISCORD";
-		}
+		return this.Const.LegendMod.getPronoun(this.getGender(), _neuter);
 	}
 
 	// -1 = Default Male, 0 = Male, 1 = Female
@@ -253,6 +172,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local isResurrectable = _fatalityType == this.Const.FatalityType.None || _fatalityType == this.Const.FatalityType.Disemboweled;
 		local appearance = this.getItems().getAppearance();
+		appearance.HideHair = false;
 		local flip = this.Math.rand(0, 100) < 50;
 		this.m.IsCorpseFlipped = flip;
 

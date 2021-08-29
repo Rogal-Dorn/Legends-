@@ -239,4 +239,3 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		items.equip(helm);
 	}
 });
-

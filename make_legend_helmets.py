@@ -732,11 +732,11 @@ layers = [
 },
 {"name" : "legend_frogmouth"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Frogmouth", \
- "desc" :  "A gloriously frogmouth helm of excellent construction." \
+ "desc" :  "A glorious frogmouth helm of excellent construction." \
 },
 {"name" : "legend_frogmouth_close"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2250, "con" : 160, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "true",  "named" : True, "rmaxViz" : 2, "rminViz" : 3, "rmaxStam" : 5, "rminStam" : 10, "rminCond" : 165, "rmaxCond" : 180, "names" : Names, \
  "title" :  "Frogmouth", \
- "desc" :  "A gloriously frogmouth helm of excellent construction." \
+ "desc" :  "A glorious frogmouth helm of excellent construction." \
 },
 {"name" : "southern_gladiator_helm_crested"                     , "layer" : "helm", "min" : 1, "max" : 13, "value" : 2500, "con" : 130, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
  "title" :  "Crested Gladiator Helm", \
@@ -992,7 +992,7 @@ layers = [
 },
 {"name" : "bascinet_visor_named"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 1000, "con" : 50, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 1, "rmaxStam" : 2, "rminStam" : 3, "rminCond" : 50, "rmaxCond" : 70, "names" : Names,  \
  "title" :  "Pointed Visor", \
- "desc" :  "A gilded visor with a pointed snout and plenty of holes to breath through." \
+ "desc" :  "A gilded visor with a pointed snout and plenty of holes to breathe through." \
 },
 # {"name" : "southern_faceplate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 450, "con" : 50, "stam" : -3, "vis" : -2, "hair" : "false", "beard" : "true",  \
 #  "title" :  "Southern Faceplate", \

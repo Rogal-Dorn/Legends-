@@ -2459,6 +2459,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			foreach (item in bro.getItems().getAllItems())
+			{
+				if (item.isBought())
+				{
+					item.setBought(false);
+				}
+			}
+		}
+
 		foreach (building in this.getBuildings())
 		{
 			local stash = building.getStash()

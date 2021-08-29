@@ -2306,7 +2306,6 @@ this.tactical_state <- this.inherit("scripts/states/state", {
 			{
 				this.m.IsEnemyRetreatDialogShown = true;
 				this.showRetreatScreen();
-				this.m.TacticalScreen.getTopbarOptionsModule().changeFleeButtonToAllowRetreat(true);
 			}
 			else
 			{

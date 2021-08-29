@@ -310,7 +310,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
             return "No repairs queued";
         }
 
-		local percent = (this.m.PointsRepaired / this.m.PointsNeeded) * 100.0;
+		local percent = this.Math.floor((this.m.PointsRepaired / this.m.PointsNeeded) * 10000) / 100.0;
 		if (percent >= 100)
 		{
 			return "Repaired ... 100%";

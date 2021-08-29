@@ -39,7 +39,7 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 			_properties.DamageReceivedRegularMult *= 0.75;
 		}
 
-		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			_properties.DamageReceivedRegularMult *= 0.75;
 		}
