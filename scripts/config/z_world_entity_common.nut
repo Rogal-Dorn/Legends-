@@ -718,6 +718,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 		{
 			return null;
 		}
+		if (helm == "named/legend_helm_stag_named" || helm == "named/legend_helm_swan_named") {helm = "named/legend_helm_full_named"};
 		local item = this.new("scripts/items/helmets/" + helm);
 		if (item == null) return null;
 		if (variant != null && "setVariant" in item)
