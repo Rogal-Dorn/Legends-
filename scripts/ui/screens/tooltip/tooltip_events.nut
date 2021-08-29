@@ -1016,6 +1016,10 @@ this.tooltip_events <- {
 		local player = this.Tactical.getEntityByID(_entityId);
 		local perk = player.getBackground().getPerk(_perkId);
 
+		local vars = [];
+		this.Const.LegendMod.extendVarsWithPronouns(vars, player.getGender());
+		local tooltip = this.buildTextFromTemplate(perk.Tooltip, vars);
+
 		if (perk != null)
 		{
 			local ret = [
@@ -1027,7 +1031,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = perk.Tooltip
+					text = tooltip
 				}
 			];
 

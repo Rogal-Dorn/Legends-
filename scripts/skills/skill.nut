@@ -101,6 +101,13 @@ this.skill <- {
 
 	function getDescription()
 	{
+		local actor = this.getContainer().getActor();
+		if (actor != null && "getGender" in  actor)
+		{
+			local vars = [];
+			this.Const.LegendMod.extendVarsWithPronouns(vars, actor.getGender());
+			return this.buildTextFromTemplate(this.m.Description, vars);
+		}
 		return this.m.Description;
 	}
 
