@@ -5588,6 +5588,51 @@ Stollwurms get Battle Flow
 Integrate Leonion's bigger log mod (top version for now, as bottom version has problems with scaling)
 Return item contracts with a bribe will show original contract reward when the bribe is offered
 
+===Katar dagger;===
+Now has deathblow instead of puncture, damage increased by 5
+Has 15 more durability (now 75)
+Has 10% more direct damage
+
+===Caravan AI;===
+Caravan hands will be more eager to engage enemies in melee (or chase down ranged units), however they will not break formation.
+Caravan hands will stay in formation a little more often (and will split up less)
+Caravan hands have a stronger desire to finish opponents off that are near death or fleeing (which means they spread their damage out less)
+Caravan hands will avoid engaging multiple opponents at once (no more rushing headfirst into 3 orc warriors), unless the donkey is in danger
+Caravan hands will dogpile enemies engaged by allies more often (this increases their effectiveness by a large margin)
+
+Typical behaviour is now;
+Is the donkey in danger? if not, stay.
+Is another caravan hand in combat or a donkey engaged? If so, engage.
+Are all nearby enemies dead and no caravan hands engaged? If so, return to donkey.
+Am I (or the donkey) being hit with a ranged weapon by an enemy within a distance I can reach in a turn? If so, engage unit.
+
+* Caravan hands are still very defensive but only on legendary combat difficulty
+
+===Attachments;===
+Gladiator attachments;
+Light attachment dura up from 35 to 45
+Heavy attachment dura up from 60 to 75
+
+All attachments halfed in price, except for gladiator attachments and attachments made from beasts (unhold fur cloak, whitewolf cloak, etc.)
+
+===Named Shields;===
+Undead heater shield durability improved from 32 to 35
+Undead kite shield durability improved from 48 to 51
+Result: undead named shields and item farming made marginally less pointless.
+- undead shields are now much stronger in durability but still weak statsically.
+
+===Southern Attached locations, pt.2;===
+Southern attached locations now spawn related tents for legends...
+Incense Dryer = enchanting + crafting tents
+Plantation = healing + gathering tents
+Silk Farm = repair + salvage tents
+Stone Watchtower (Southern) = scouting + training tents
+Miltia barracks = fletching tent
+Goat farm = hunting tent
+
+===Tumble and Lunge;===
+Tumble now increases AP cost of lunge to 3, not 2.
+
 **For modders**
 Perks, skills, backgrounds & endings can now all use a new shared gendered pronoun system. Look at adventurous noble for an example on how to use it. z_legends_language.nut for source
 
