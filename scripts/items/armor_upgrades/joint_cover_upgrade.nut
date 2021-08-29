@@ -17,7 +17,7 @@ this.joint_cover_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upg
 		this.m.SpriteDamagedBack = "upgrade_10_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_10_back_dead";
-		this.m.Value = 300;
+		this.m.Value = 150;
 		this.m.ConditionModifier = 30;
 		this.m.StaminaModifier = 4;
 	}

@@ -18,7 +18,7 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteDamagedBack = "upgrade_13_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_13_back_dead";
-		this.m.Value = 100;
+		this.m.Value = 50;
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
 		this.m.ConditionModifier = 5;

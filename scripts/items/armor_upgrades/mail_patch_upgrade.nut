@@ -17,7 +17,7 @@ this.mail_patch_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgr
 		this.m.SpriteDamagedBack = "upgrade_09_back_damaged";
 		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_09_back_dead";
-		this.m.Value = 200;
+		this.m.Value = 100;
 		this.m.ConditionModifier = 20;
 		this.m.StaminaModifier = 3;
 	}

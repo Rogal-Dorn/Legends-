@@ -45,6 +45,16 @@ this.silk_farm_location <- this.inherit("scripts/entity/world/attached_location"
 		if (_id == "building.marketplace")
 		{
 			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_scrap"
+			});
+			_list.push({
+				R = 90,
+				P = 1.0,
+				S = "tents/tent_repair"
+			});
+			_list.push({
 				R = 0,
 				P = 1.0,
 				S = "trade/silk_item"

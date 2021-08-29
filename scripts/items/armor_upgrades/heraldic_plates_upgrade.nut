@@ -9,7 +9,7 @@ this.heraldic_plates_upgrade <- this.inherit("scripts/items/armor_upgrades/armor
 		this.m.ArmorDescription = "Large protective plates have been fixed at the shoulders of this armor.";
 		this.m.Variant = this.Math.rand(14, 18);
 		this.updateVariant();
-		this.m.Value = 500;
+		this.m.Value = 250;
 		this.m.ConditionModifier = 40;
 		this.m.StaminaModifier = 5;
 	}
