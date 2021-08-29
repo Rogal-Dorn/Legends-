@@ -39,9 +39,9 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Surbated"
 		];
 		this.m.Ethnicity = this.Math.rand(1, 2);
-		if ()
+		if (this.m.Ethnicity == 1)
 		{
-			this.m.Ethnicity = 0; 
+			this.m.Ethnicity = 0;
 			this.m.Faces = this.Const.Faces.AllWhiteMale;
 			this.m.Hairs = this.Const.Hair.UntidyMale;
 			this.m.HairColors = this.Const.HairColors.All;
@@ -50,7 +50,6 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		}
 		else
 		{
-			this.m.Ethnicity = 2;
 			this.m.Bodies = this.Const.Bodies.AfricanMale;
 			this.m.Faces = this.Const.Faces.AfricanMale;
 			this.m.Hairs = this.Const.Hair.SouthernMale;
