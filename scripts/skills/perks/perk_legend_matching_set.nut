@@ -42,6 +42,7 @@ this.perk_legend_matching_set <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local tooltip = this.skill.getTooltip();
 		local bonus = this.getBonus();
 
 		if (bonus > 0)
