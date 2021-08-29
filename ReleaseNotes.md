@@ -5646,6 +5646,8 @@ Fixes mismatched ethnicities for certain backgrounds
 Fixes infinite boneplating
 Fixes some healer tent issues
 Fixes 2 skull big game hunt contract not working
+Fixes multiple issues with bribe
+Fixes named lute being one-handed
 Makes matching set effect visible as a status effect (like nimble and battleforged)
 Other minor fixes
 A lot of Typos and Syntax fixes in this build, hopefully no more missing full stops
