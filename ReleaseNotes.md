@@ -5458,10 +5458,7 @@ Changes script_container roll() function to return script and not object
 Cant open inventory in combat with bone plating on someone
 "Fixes" Debilitates ordering, just lowers it for immediately after the Reload skills, given these mess up fire/reload easily
 Teleport gets a tooltip properly
-<<<<<<< HEAD
 
-## 15.0.1.19
-**Changes** Stollwurms get Battle Flow
 Fixed demon alp helm horrifying scream not being added/removed properly
 Fixes exploiting buyback for trade ambition & achievements
 Fixes hexe runes drops not being upgraded
@@ -5583,3 +5580,27 @@ Fixes error with layered armor causing infinite loading
 # 15.0.1.18b
 
 Fixes combat continuing on forever on worldmap due to hookObjectOnce not working on combat_manager
+
+
+## 15.0.1.19
+**Changes** 
+Stollwurms get Battle Flow
+Integrate Leonion's bigger log mod (top version for now, as bottom version has problems with scaling)
+Return item contracts with a bribe will show original contract reward when the bribe is offered
+
+**For modders**
+Perks, skills, backgrounds & endings can now all use a new shared gendered pronoun system. Look at adventurous noble for an example on how to use it. z_legends_language.nut for source
+
+
+**Fixes**
+Makes the new green retreat flag work properly with a variable tooltip
+Changes a lot of enemies from having innate resistances or skills to having the appropriate perk
+Fixes potential crash after hexe fight
+Fixes buyback exploit
+Fixes mismatched ethnicities for certain backgrounds
+Fixes infinite boneplating
+Fixes some healer tent issues
+Fixes 2 skull big game hunt contract not working
+Makes matching set effect visible as a status effect (like nimble and battleforged)
+Other minor fixes
+A lot of Typos and Syntax fixes in this build, hopefully no more missing full stops

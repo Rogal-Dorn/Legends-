@@ -341,7 +341,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return "No salvage queued";
 		}
 
-		local percent = this.m.PointsSalvaged / this.m.PointsNeeded * 100.0;
+		local percent = this.Math.floor(this.m.PointsSalvaged / this.m.PointsNeeded * 10000) / 100.0;
 
 		if (percent >= 100)
 		{

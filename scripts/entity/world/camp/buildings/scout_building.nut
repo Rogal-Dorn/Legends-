@@ -156,11 +156,10 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		foreach (b in this.m.Results)
 		{
 			res.push({
-		 		id = id,
+		 		id = id++,
 		 		icon = b.Icon,
 		 		text = b.Text
 			})
-			++id;
 		}
         return res;
     }

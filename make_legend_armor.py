@@ -46,7 +46,7 @@ Names = [
 "Redemption",
 "Pennance",
 "Rapture",
-"Gaurdian",
+"Guardian",
 "Hope",
 "Bullwark",
 "Bastion",

@@ -346,7 +346,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 		local crafted = this.m.ItemsCrafted.len();
 		local numToCraft = this.m.Queue.len();
-		local progress = this.Math.floor(100 * this.m.CurrentProgress);
+		local progress = this.Math.floor(10000 * this.m.CurrentProgress) / 100.0;
 
 		if (crafted == numToCraft) return "Crafted ..." + crafted + " / " + crafted;
 

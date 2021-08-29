@@ -278,8 +278,8 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_perfect_focus"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
-		 if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
 			this.m.Hitpoints = 1.5 * b.Hitpoints;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
