@@ -5,14 +5,9 @@ this.arena_champion_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.character_trait.create();
 		this.m.ID = "trait.arena_champion";
 		this.m.Name = "Arena Champion";
+		this.m.Description = "Every man and woman in the area stand secretly wants to be %fullname%, children play in streets dressed and fighting like %they% does. As they should."
 		this.m.Icon = "ui/traits/trait_arena_champion.png";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
-	}
-
-	function getDescription()
-	{
-		local actor = this.getContainer().getActor();
-		return "Every man and woman in the area stand secretly wants to be " + actor.getName() + ", children play in streets dressed and fighting like " + actor.getPronoun("they") + " does. As they should."
 	}
 
 	function getTooltip()

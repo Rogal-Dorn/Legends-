@@ -116,7 +116,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		else
 		{
 			this.m.Faces = this.Const.Faces.AfricanFemale;
-			this.m.Hairs = this.Const.Hair.AfricanFemale;
+			this.m.Hairs = this.Const.Hair.SouthernFemale;
 			this.m.HairColors = this.Const.HairColors.African;
 			this.m.Bodies = this.Const.Bodies.AfricanFemaleMuscular;
 		}
