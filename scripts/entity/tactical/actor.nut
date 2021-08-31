@@ -123,6 +123,11 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 		return this.m.Items;
 	}
 
+	function getGender()
+	{
+		return -1;
+	}
+
 	function getOverwhelmCount()
 	{
 		return this.m.OverwhelmCount.len();

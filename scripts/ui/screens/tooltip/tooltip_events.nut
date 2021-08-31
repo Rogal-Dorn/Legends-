@@ -1016,7 +1016,20 @@ this.tooltip_events <- {
 		local player = this.Tactical.getEntityByID(_entityId);
 		local perk = player.getBackground().getPerk(_perkId);
 
-		local vars = [];
+		local vars = [
+			[
+				"name",
+				player.getNameOnly()
+			],
+			[
+				"fullname",
+				player.getName()
+			],
+			[
+				"title",
+				player.getTitle()
+			]
+		];
 		this.Const.LegendMod.extendVarsWithPronouns(vars, player.getGender());
 		local tooltip = this.buildTextFromTemplate(perk.Tooltip, vars);
 

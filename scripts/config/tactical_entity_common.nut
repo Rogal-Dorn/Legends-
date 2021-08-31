@@ -296,7 +296,6 @@ gt.Const.Tactical.Common <- {
 
 	function onApplyHolyFlame( _tile, _entity )
 	{
-		this.Tactical.spawnIconEffect("bluefire_circle", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 		local sounds = [
 				"sounds/combat/fire_01.wav",
 				"sounds/combat/fire_02.wav",
@@ -366,11 +365,8 @@ gt.Const.Tactical.Common <- {
 			else
 			{
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_sanctified_effect"));
-				_entity.getSkills().add(this.new("scripts/skills/effects/legend_holding_the_line"));
 			}
 		}
-
-		
 	}
 
 };
