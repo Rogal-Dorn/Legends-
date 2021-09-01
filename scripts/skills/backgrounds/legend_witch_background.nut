@@ -51,7 +51,7 @@ this.legend_witch_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 
-				this.m.PerkTreeDynamic = {
+		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.StavesTree,
