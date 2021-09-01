@@ -574,39 +574,6 @@ this.skill_container <- {
 		}
 	}
 
-	// New not stupid way of running the onXYZ functions
-	function doOnFunction(_function, _argsArray = null, aliveOnly = false)
-	{
-		if (_argsArray == null) _argsArray = [];
-		_argsArray.insert(0, null);
-
-		this.m.IsUpdating = true;
-		this.m.IsBusy = false;
-		this.m.BusyStack = 0;
-
-		foreach(skill in this.m.Skills)
-		{
-			if (!skill.isGarbage())
-			{
-				_argsArray[0] = skill;
-				skill[_function].acall(_argsArray);
-			}
-
-			if (aliveOnly && !this.m.Actor.isAlive())
-			{
-				break;
-			}
-		}
-
-		this.m.IsUpdating = false;
-		this.update();
-	}
-
-	function doOnFunctionWhenAlive(_function, _argsArray = null)
-	{
-		this.doOnFunction(_function, _argsArray, true);
-	}
-
 	function onBeforeActivation()
 	{
 		this.doOnFunctionWhenAlive("onBeforeActivation");
