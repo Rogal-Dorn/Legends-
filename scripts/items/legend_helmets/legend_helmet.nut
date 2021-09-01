@@ -157,16 +157,6 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 	}
 
-	function getRepair()
-	{
-		return this.Math.floor(this.getArmor());
-	}
-
-	function getRepairMax()
-	{
-		return this.Math.floor(this.getArmorMax());
-	}
-
 	function getAddedValue(_function, _base, _all = false)
 	{
 		local value = _base;
@@ -185,6 +175,16 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 	function getVision()
 	{
 		return this.getAddedValue("getVision", this.m.Vision);
+	}
+
+	function getRepair()
+	{
+		return this.Math.floor(this.getAddedValue("getCondition", this.m.Condition, true));
+	}
+
+	function getRepairMax()
+	{
+		return this.Math.floor(this.getAddedValue("getConditionMax", this.m.ConditionMax, true));
 	}
 
 	function getArmor()
@@ -282,7 +282,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		for (local i = 0; i < this.m.Upgrades.len(); ++i)
 		{
-			if (this.m.Upgrades[i] != null && i != this.Const.Items.HelmetUpgrades.ExtraVanity)
+			if (this.m.Upgrades[i] != null)
 			{
 				delta = this.m.Upgrades[i].addArmor(delta);
 

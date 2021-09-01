@@ -59,15 +59,7 @@ this.legend_raise_undead <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (!_targetTile.IsCorpseSpawned)
-		{
-			return false;
-		}
-
-		if (!_targetTile.Properties.get("Corpse").IsResurrectable)
-		{
-			return false;
-		}
+		if (!this.Const.TileUtils.canResurrectOnTile(_targetTile)) return false;
 
 		if (!_targetTile.IsEmpty)
 		{

@@ -66,7 +66,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (_tile != null)
 		{
-			local decal = _tile.spawnDetail("bust_skeleton_vampire_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
+			local decal = _tile.spawnDetail("mummy_dead", this.Const.Tactical.DetailFlag.Corpse, flip, false, this.Const.Combat.HumanCorpseOffset);
 			decal.Color = sprite_body.Color;
 			decal.Saturation = sprite_body.Saturation;
 			decal.Scale = 0.9;
@@ -431,7 +431,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 		local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 		this.addSprite("socket").setBrush("bust_base_undead");
 		local body = this.addSprite("body");
-		body.setBrush("bust_skeleton_body_03");
+		body.setBrush("mummy_body_01");
 		body.setHorizontalFlipping(true);
 		// body.Saturation = 0.8;
 
