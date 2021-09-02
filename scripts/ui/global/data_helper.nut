@@ -431,7 +431,7 @@ this.data_helper <- {
 		_target.moraleMax <- this.Const.MoraleState.COUNT - 1;
 		_target.moraleLabel <- this.Const.MoraleStateName[_entity.getMoraleState()];
 		local dm = 1.0;
-		dm *= _entity.isArmedWithMeleeWeapon() ? properties.MeleeDamageMult : 1.0;
+		dm *= _entity.isArmedWithMeleeOrUnarmed() ? properties.MeleeDamageMult : 1.0;
 		dm *= _entity.isArmedWithRangedWeapon() ? properties.RangedDamageMult : 1.0;
 		_target.regularDamage <- properties.getRegularDamageAverage() * dm;
 		_target.regularDamageMax <- this.Const.CharacterMaxValue.RegularDamage;

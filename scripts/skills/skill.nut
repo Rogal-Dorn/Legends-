@@ -2356,7 +2356,7 @@ this.skill <- {
 
 		if (this.m.InjuriesOnBody != null && bodyPart == this.Const.BodyPart.Body)
 		{
-		if (_info.TargetEntity.getFlags().has("skeleton"))
+			if (_info.TargetEntity.getFlags().has("skeleton"))
 			{
 				injuries = this.Const.Injury.SkeletonBody;
 			}
