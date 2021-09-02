@@ -20,25 +20,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		BackgroundDescription = "",
 		GoodEnding = null,
 		BadEnding = null,
-		IsScenarioOnly = false,
-		IsNew = true,
-		IsUntalented = false,
-		IsOffendedByViolence = false,
-		IsCombatBackground = false,
-		IsEducatedBackground = false,
 		Name = "",
-		IsNoble = false,
-		IsLowborn = false,
-		IsFemaleBackground = false,
-		IsRangerRecruitBackground = false,
-		IsDruidRecruitBackground = false,
-		IsCrusaderRecruitBackground = false,
-		IsPerformingBackground = false,
-		IsOutlawBackground = false,
+		BackgroundType = this.Const.BackgroundType.None,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
-		IsStabled = false,
-		IsConverted = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -140,72 +125,27 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Excluded.find(_id) != null;
 	}
 
-	function isUntalented()
+	function isBackgroundType( _type )
 	{
-		return this.m.IsUntalented;
+		return (this.m.BackgroundType & _type) != 0
 	}
 
-	function setScenarioOnly( _f )
+	function addBackgroundType( _type )
 	{
-		this.m.IsScenarioOnly = _f;
-	}
-
-	function isOffendedByViolence()
-	{
-		return this.m.IsOffendedByViolence;
+		if (this.Const.isBackgroundType(_type))
+		{
+			this.m.BackgroundType = this.m.BackgroundType | _type;
+		}
+		else
+		{
+			this.logError(_type + " is not a known BackgroundType");
+		}
 	}
 
 	function isFemaleBackground()
 	{
 		return this.m.IsFemaleBackground;
 	}
-
-	function isCombatBackground()
-	{
-		return this.m.IsCombatBackground;
-	}
-
-	function isNoble()
-	{
-		return this.m.IsNoble;
-	}
-
-	function isLowborn()
-	{
-		return this.m.IsLowborn;
-	}
-
-	function isRangerRecruitBackground()
-	{
-		return this.m.IsRangerRecruitBackground;
-	}
-
-	function isCrusaderRecruitBackground()
-	{
-		return this.m.IsCrusaderRecruitBackground;
-	}
-
-	function isPerformingBackground()
-	{
-		return this.m.IsPerformingBackground;
-	}
-
-	function isEducatedBackground()
-	{
-		return this.m.IsEducatedBackground;
-	}
-
-	function isOutlawBackground()
-	{
-		return this.m.IsOutlawBackground;
-	}
-
-	function isCultist()
-	{
-		return this.m.IsConverted;
-	}
-
-
 
 	function getEthnicity()
 	{
@@ -242,7 +182,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
 	function getIconColored()
 	{
-		if(this.m.IsConverted) {
+		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
 			return "ui/backgrounds/background_34.png";
 		}
 		return this.m.Icon;
@@ -250,12 +190,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		return this.skill.isHidden() || this.m.IsScenarioOnly;
+		return this.skill.isHidden() || this.isBackgroundType(this.Const.BackgroundType.Scenario);
 	}
 
 	function getName()
 	{
-		if(this.m.IsConverted) {
+		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
 			return "Background: Cultist " + this.m.Name;
 		}
 		return "Background: " + this.m.Name;
@@ -699,7 +639,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function buildDescription( _isFinal = false )
 	{
-		if (this.m.IsScenarioOnly)
+		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
 		{
 			return;
 		}
@@ -1160,7 +1100,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if(isCultist()) {
+			if(this.isBackgroundType(this.Const.BackgroundType.Converted))
+			{
 				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
 			}
 			local level = this.getContainer().getActor().getLevel();

@@ -241,7 +241,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isLowborn())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
 				garbage.push(bro);
 			}

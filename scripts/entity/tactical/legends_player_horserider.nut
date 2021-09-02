@@ -147,7 +147,7 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		this.setName(newName);
 
 		local background = this.new("scripts/skills/backgrounds/legend_horserider");
-		background.setScenarioOnly(true);
+		background.addBackgroundType(this.Const.BackgroundType.Scenario);
 		this.m.Skills.add(background);
 
 		//add horse skills

@@ -352,7 +352,7 @@ gt.Const.Tactical.Common <- {
 			{
 				sanctify.onRefresh();
 			}
-			else if (faction == this.Const.Faction.Player && _entity.getBackground().isCultist())
+			else if (faction == this.Const.Faction.Player && _entity.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 			{
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = this.Math.rand(10, 20);

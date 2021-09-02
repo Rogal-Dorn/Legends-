@@ -71,7 +71,7 @@ this.cultist_origin_hood_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isCultist())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 			{
 				candidates.push(bro);
 			}

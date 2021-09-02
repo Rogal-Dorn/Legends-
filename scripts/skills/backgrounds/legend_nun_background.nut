@@ -47,9 +47,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
-		this.m.IsEducatedBackground = true;
-		this.m.IsCrusaderRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Educated | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];

@@ -49,9 +49,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsOffendedByViolence = true;
-		this.m.IsCrusaderRecruitBackground = true;
-		this.m.IsEducatedBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {

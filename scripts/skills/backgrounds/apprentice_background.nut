@@ -41,9 +41,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.IsCrusaderRecruitBackground = true;
-		this.m.IsRangerRecruitBackground = true;
-		this.m.IsEducatedBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Educated;
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[0];
@@ -95,7 +93,7 @@ this.apprentice_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function getTooltip()

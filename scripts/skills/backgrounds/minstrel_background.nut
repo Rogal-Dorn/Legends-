@@ -43,8 +43,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.IsCrusaderRecruitBackground = true;
-		this.m.IsPerformingBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

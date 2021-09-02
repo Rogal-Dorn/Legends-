@@ -338,7 +338,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
 			}
 
-			if (!bro.getBackground().isCombatBackground())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);

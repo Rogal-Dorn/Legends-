@@ -131,7 +131,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isEducatedBackground())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated))
 		{
 			bro.improveMood(1.0, "Excited to study under you");
 		}
@@ -171,12 +171,12 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.bright") || bro.getSkills().hasSkill("trait.pragmatic"))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.bright") || bro.getSkills().hasSkill("trait.pragmatic"))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.8);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.8);
 			}
-			else if (!bro.getBackground().isEducatedBackground() || bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("trait.superstitious"))
+			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.dumb") || bro.getSkills().hasSkill("trait.superstitious"))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.3);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.3);

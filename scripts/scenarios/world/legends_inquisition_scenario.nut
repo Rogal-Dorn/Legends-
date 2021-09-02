@@ -237,7 +237,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isCrusaderRecruitBackground())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
 		{
 			bro.improveMood(1.0, "Joined a righteous cause");
 		}
@@ -256,7 +256,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isCrusaderRecruitBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
@@ -268,7 +268,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
 
-			if (bro.getBackground().isOutlawBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				garbage.push(bro);
 			}

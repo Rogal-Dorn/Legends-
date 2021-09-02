@@ -158,11 +158,11 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isCombatBackground())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 		{
 			bro.worsenMood(1.0, "Unhappy they will need to do all the fighting");
 		}
-		else if (!bro.getBackground().isCombatBackground())
+		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
@@ -176,12 +176,12 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isCombatBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
-			else if (!bro.getBackground().isCombatBackground())
+			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 			}

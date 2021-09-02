@@ -158,7 +158,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onHiredByScenario( bro )
 	{
-		if (!bro.getBackground().isLowborn())
+		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
 			bro.getSkills().add(this.new("scripts/skills/injury/sickness_injury"));
 			bro.worsenMood(1.0, "Fell sick after joining you");
@@ -172,7 +172,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isLowborn())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
 				garbage.push(bro);
 			}

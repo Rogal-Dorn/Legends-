@@ -181,7 +181,7 @@ this.brawler_teaches_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_brawler.push(bro);
 			}
-			else if (bro.getLevel() < 3 && !bro.getBackground().isCombatBackground())
+			else if (bro.getLevel() < 3 && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				candidates_student.push(bro);
 			}

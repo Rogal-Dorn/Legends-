@@ -406,6 +406,42 @@ gt.Const.MoodStateIcon <- [
 	"skills/status_effect_48.png",
 	"skills/status_effect_49.png"
 ];
+gt.Const.BackgroundType <- {
+	None = 0,
+	Crusader = 1,
+	Combat = 2,
+	Converted = 4,
+	Druid = 8,
+	Educated = 16,
+	Female = 32,
+	Noble = 64,
+	Lowborn = 128,
+	OffendedByViolence = 256,
+	Outlaw = 512,
+	Performing = 1024,
+	Scenario = 2048,
+	Ranger = 4096,
+	Stabled = 8192,
+	Untalented = 18384,
+};
+
+gt.Const.isBackgroundType <- function( _type )
+{
+	foreach (key, value in this.Const.BackgroundType)
+	{
+		if (value == _type)
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+gt.Const.addNewBackgroundType <- function( _typeKey )
+{
+	this.Const.BackgroundType[_typeKey] <- this.Math.Pow(2, this.Const.BackgroundType.len());
+}
+
 gt.Const.SkillType <- {
 	None = 0,
 	Active = 1,

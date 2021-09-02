@@ -135,7 +135,7 @@ this.combat_drill_event <- this.inherit("scripts/events/event", {
 						injuryChance = injuryChance * 2.0;
 					}
 
-					if (bro.getBackground().isCombatBackground())
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 					{
 						injuryChance = injuryChance * 0.5;
 					}
@@ -381,11 +381,11 @@ this.combat_drill_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 6 && bro.getBackground().isCombatBackground() && !bro.getBackground().isNoble())
+			if (bro.getLevel() >= 6 && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
 				candidates.push(bro);
 			}
-			else if (bro.getLevel() <= 3 && !bro.getBackground().isCombatBackground())
+			else if (bro.getLevel() <= 3 && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				numRecruits = ++numRecruits;
 			}
