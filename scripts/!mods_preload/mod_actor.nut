@@ -154,6 +154,11 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			}
 		}
 
+		o.getGender <- function()
+		{
+			return -1;
+		}
+
 		o.onOtherActorDeath <- function ( _killer, _victim, _skill )
 		{
 			if (!this.m.IsAlive || this.m.IsDying)
