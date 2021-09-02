@@ -75,7 +75,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction())
 			{
-				if (!a.getBackground().isCultist() && !a.getSkills().hasSkill("effects.legend_prayer_of_life"))
+				if (!a.getBackground().isBackgroundType(this.Const.BackgroundType.Converted) && !a.getSkills().hasSkill("effects.legend_prayer_of_life"))
 				{
 					local effect = this.new("scripts/skills/effects/legend_prayer_of_life_effect");
 					effect.m.Resolve = this.getContainer().getActor().getBravery();

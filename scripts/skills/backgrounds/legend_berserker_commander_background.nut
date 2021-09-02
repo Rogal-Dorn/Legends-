@@ -60,9 +60,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Bodies = this.Const.Bodies.LegendTattos;
 		this.m.Ethnicity = 0;
 		this.m.Level = 3;
-		this.m.IsCombatBackground = true;
-		this.m.IsLowborn = true;
-		this.m.IsUntalented = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Untalented;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
@@ -217,7 +215,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function getTooltip()

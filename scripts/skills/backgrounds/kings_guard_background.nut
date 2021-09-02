@@ -11,7 +11,7 @@ this.kings_guard_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BadEnding = "You never truly found out which king %name% supposedly \'guarded\' in his days before joining the %companyname%, but it matters not now. After your abrupt retirement, the King\'s Guard took himself to the southern deserts. He served a Vizier for a time but failed to protect the royal from a concubine\'s poison. For punishment, %name%\'s equipment was melted into a pot and poured down his throat.";
 		this.m.HiringCost = 0;
 		this.m.DailyCost = 30;
-		this.m.IsCrusaderRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];

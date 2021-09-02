@@ -44,7 +44,7 @@ this.caravan_hand_southern_background <- this.inherit("scripts/skills/background
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.SouthernFemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}	
 

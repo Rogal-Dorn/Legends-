@@ -55,8 +55,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsLowborn = true;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];

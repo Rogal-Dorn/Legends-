@@ -41,9 +41,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Bodies = this.Const.Bodies.Muscular;
-		this.m.IsCombatBackground = true;
-		this.m.IsOutlawBackground = true;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Lowborn;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Ammo[1];
 		this.m.PerkTreeDynamic = {
