@@ -1779,7 +1779,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Shows the current and maximium number of men out of reserves, ready to fight in the next battle."
+					text = "Shows the current and maximum number of men out of reserves and ready to fight in the next battle."
 				}
 			];
 		case "ground.Slots":

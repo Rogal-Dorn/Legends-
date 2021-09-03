@@ -457,69 +457,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendDaze"
 	},
 	{
-		ID = "perk.legend_roster_1",
-		Script = "scripts/skills/perks/perk_legend_roster_1",
-		Name = this.Const.Strings.PerkName.LegendRoster1,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster1,
-		Icon = "ui/perks/recruit1.png",
-		IconDisabled = "ui/perks/recruit1_bw.png",
-		Const = "LegendRoster1"
-	},
-	{
-		ID = "perk.legend_roster_2",
-		Script = "scripts/skills/perks/perk_legend_roster_2",
-		Name = this.Const.Strings.PerkName.LegendRoster2,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster2,
-		Icon = "ui/perks/recruit2.png",
-		IconDisabled = "ui/perks/recruit2_bw.png",
-		Const = "LegendRoster2"
-	},
-	{
-		ID = "perk.legend_roster_3",
-		Script = "scripts/skills/perks/perk_legend_roster_3",
-		Name = this.Const.Strings.PerkName.LegendRoster3,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster3,
-		Icon = "ui/perks/recruit3.png",
-		IconDisabled = "ui/perks/recruit3_bw.png",
-		Const = "LegendRoster3"
-	},
-	{
-		ID = "perk.legend_roster_4",
-		Script = "scripts/skills/perks/perk_legend_roster_4",
-		Name = this.Const.Strings.PerkName.LegendRoster4,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster4,
-		Icon = "ui/perks/recruit4.png",
-		IconDisabled = "ui/perks/recruit4_bw.png",
-		Const = "LegendRoster4"
-	},
-	{
-		ID = "perk.legend_roster_5",
-		Script = "scripts/skills/perks/perk_legend_roster_5",
-		Name = this.Const.Strings.PerkName.LegendRoster5,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster5,
-		Icon = "ui/perks/recruit5.png",
-		IconDisabled = "ui/perks/recruit5_bw.png",
-		Const = "LegendRoster5"
-	},
-	{
-		ID = "perk.legend_roster_6",
-		Script = "scripts/skills/perks/perk_legend_roster_6",
-		Name = this.Const.Strings.PerkName.LegendRoster6,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster6,
-		Icon = "ui/perks/recruit6.png",
-		IconDisabled = "ui/perks/recruit6_bw.png",
-		Const = "LegendRoster6"
-	},
-	{
-		ID = "perk.legend_roster_7",
-		Script = "scripts/skills/perks/perk_legend_roster_7",
-		Name = this.Const.Strings.PerkName.LegendRoster7,
-		Tooltip = this.Const.Strings.PerkDescription.LegendRoster7,
-		Icon = "ui/perks/recruit7.png",
-		IconDisabled = "ui/perks/recruit7_bw.png",
-		Const = "LegendRoster7"
-	},
-	{
 		ID = "perk.legend_stun",
 		Script = "scripts/skills/perks/perk_legend_stun",
 		Name = this.Const.Strings.PerkName.LegendStunned,
