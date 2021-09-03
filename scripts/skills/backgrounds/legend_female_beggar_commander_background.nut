@@ -97,7 +97,7 @@ this.legend_female_beggar_commander_background <- this.inherit("scripts/skills/b
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecDagger,
-				this.Const.Perks.PerkDefs.SpecThrowing,,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,

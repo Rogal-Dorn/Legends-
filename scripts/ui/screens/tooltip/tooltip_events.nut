@@ -1761,15 +1761,27 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Men in formation"
+					text = "Men in Company"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Shows the current and maximium number of men placed in formation to fight in the next battle.\n\nDrag and drop your men to where you want them to be; the top row is the front facing the enemy, the second row is your middle row, and the bottom row is your back row. All characters will partake in battle. There are no reserves slots but you can toggle anyone into reserves using the button near their portrait."
+					text = "The total number of characters in your company. There are no reserves slots but you can toggle anyone into reserves using the button near their portrait."
 				}
 			];
-
+		case "stash.CurrentRoster":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Men in Front Line"
+				}
+				{
+					id = 2,
+					type = "description",
+					text = "Shows the current and maximium number of men out of reserves, ready to fight in the next battle."
+				}
+			];
 		case "ground.Slots":
 			return [
 				{

@@ -4,8 +4,18 @@ gt.Const.RosterSize <- [
 	1,
 	6,
 	9,
+	13,
+	18,
+	21,
+	25
+];
+
+gt.Const.FrontlineSize <- [
+	1,
+	6,
+	9,
 	12,
 	16,
 	18,
-	25,
-]
+	25
+];

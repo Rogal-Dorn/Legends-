@@ -33,6 +33,42 @@
     margin-bottom: 0.4rem;
 }
 
+.character-screen-container .brothers-list-module .frontline-count-container
+{
+    top: -3.0rem;
+    right: 3.0rem;
+    bottom: 0;
+    width: 12.6rem;
+    height: 2.4rem;
+    position: absolute;
+
+    z-index: 10;
+}
+
+.character-screen-container .brothers-list-module .frontline-count-container img
+{
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    position: absolute;
+    margin: auto;
+}
+
+.character-screen-container .brothers-list-module .frontline-count-container .label
+{
+    top: 0;
+    left: 2.6rem;
+    bottom: 0;
+    width: 10.0rem;
+    height: 2.0rem;
+    position: absolute;
+    margin: auto;
+
+    line-height: 2.0rem;
+    text-align: left;
+}
 
 .character-screen-container .brothers-list-module .roster-count-container
 {

@@ -915,6 +915,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			inTraining.addRandomSkills(this, addSkills);
 		}
 
+		if (this.World.State.getBrothersInFrontline() > this.World.Assets.getBrothersMaxInCombat())
+		{
+			this.setInReserves(true);
+		}
+
 		if (this.World.getPlayerRoster().getSize() == 25 && this.World.Assets.getOrigin().getID() == "scenario.militia")
 		{
 			this.updateAchievement("HumanWave", 1, 1);

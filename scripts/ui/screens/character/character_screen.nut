@@ -71,7 +71,7 @@ this.character_screen <- {
 
 	function show()
 	{
-		this.setRosterLimit(("State" in this.World) && this.World.State != null ? this.World.Assets.getBrothersMaxInCombat() : 12);
+		this.setRosterLimit();
 
 		if (this.m.JSHandle != null)
 		{
@@ -154,11 +154,11 @@ this.character_screen <- {
 		}
 	}
 
-	function setRosterLimit( _limit )
+	function setRosterLimit(_shake = false)
 	{
 		if (this.m.JSDataSourceHandle != null)
 		{
-			this.m.JSDataSourceHandle.asyncCall("setRosterLimit", _limit);
+			this.m.JSDataSourceHandle.asyncCall("setRosterLimit", this.queryRosterSizeData(_shake));
 		}
 	}
 
@@ -400,17 +400,41 @@ this.character_screen <- {
 	function onToggleReserveCharacter( _id )
 	{
 		local bro = this.Tactical.getEntityByID(_id);
-		if (bro == null)
+		if (bro != null && (this.World.State.getBrothersInFrontline() < this.World.Assets.getBrothersMaxInCombat() || !bro.isInReserves()))
 		{
-			return this.UIDataHelper.convertEntityToUIData(bro, null);
+			bro.setInReserves(!bro.isInReserves());
+			this.setRosterLimit();
 		}
-		bro.setInReserves(!bro.isInReserves());
+		else
+		{
+			this.setRosterLimit(true);
+		}
 		return this.UIDataHelper.convertEntityToUIData(bro, null);
 	}
 
 	function onDiceThrow()
 	{
 		this.Sound.play(this.Const.Sound.DiceThrow[this.Math.rand(0, this.Const.Sound.DiceThrow.len() - 1)], this.Const.Sound.Volume.Inventory);
+	}
+
+	function queryRosterSizeData(_shake = false)
+	{
+
+		local result = {
+			brothersInCombat = this.World.State.getBrothersInFrontline(),
+			brothersMaxInCombat = 25,
+			brothers = this.World.getPlayerRoster().getSize(),
+			brothersMax = 25,
+			shake = _shake,
+		};
+
+		if (("Assets" in this.World) && this.World.Assets != null)
+		{
+			result.brothersMaxInCombat = this.World.Assets.getBrothersMaxInCombat();
+			result.brothersMax = this.World.Assets.getBrothersMax();
+		}
+		
+		return result;
 	}
 
 	function queryData()
@@ -424,6 +448,10 @@ this.character_screen <- {
 			result.formationIndex <- this.World.Assets.getFormationIndex();
 			result.formationName <- this.World.Assets.getFormationName();
 			result.maxBrothers <- this.World.Assets.getBrothersMax();
+			result.frontlineData <- [
+				this.World.State.getBrothersInFrontline(),
+				this.World.Assets.getBrothersMaxInCombat()
+			];
 		}
 
 		if (this.m.InventoryMode != this.Const.CharacterScreen.InventoryMode.Ground)

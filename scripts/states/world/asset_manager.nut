@@ -242,7 +242,14 @@ this.asset_manager <- {
 
 	function getBrothersMaxInCombat()
 	{
-		return this.m.BrothersMaxInCombat;
+		if (this.World.Assets.getOrigin().getRosterTier() == 6)
+		{
+			return this.Const.FrontlineSize[6];
+		}
+		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local max = this.Const.FrontlineSize[tier];
+
+		return max;
 	}
 
 	function getBrothersScaleMax()
@@ -2537,6 +2544,8 @@ this.asset_manager <- {
 		{
 			this.m.Origin = this.Const.ScenarioManager.getScenario("scenario.tutorial");
 		}
+
+		this.logInfo(this.getOrigin().getID());
 
 		if (_in.getMetaData().getVersion() >= 41)
 		{

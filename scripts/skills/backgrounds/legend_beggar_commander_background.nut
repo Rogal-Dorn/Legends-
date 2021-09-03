@@ -65,7 +65,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecDagger,
-				this.Const.Perks.PerkDefs.SpecThrowing,,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 			],
 			[
 				this.Const.Perks.PerkDefs.LoneWolf,

@@ -21,6 +21,9 @@ var CharacterScreenBrothersListModule = function(_parent, _dataSource)
     this.mListContainer                 = null;
     this.mListScrollContainer           = null;
 
+    this.mFrontlineCountLabel           = null
+    this.mFrontlineCountContainer       = null;
+
     this.mRosterCountLabel              = null;
     this.mRosterCountContainer          = null;
 
@@ -48,6 +51,16 @@ CharacterScreenBrothersListModule.prototype.createDIV = function (_parentDiv)
     var listContainerLayout = $('<div class="l-list-container"/>');
     this.mContainer.append(listContainerLayout);
     this.mListScrollContainer = listContainerLayout;
+
+
+    this.mFrontlineCountContainer = $('<div class = "frontline-count-container"/>');
+    this.mContainer.append(this.mFrontlineCountContainer);
+    var frontlineSizeImage = $('<img/>');
+    frontlineSizeImage.attr('src', Path.GFX + Asset.ICON_ASSET_BROTHERS);
+    this.mFrontlineCountContainer.append(frontlineSizeImage);
+    this.mFrontlineCountLabel = $('<div class="label text-font-small font-bold font-color-value"/>');
+    this.mFrontlineCountContainer.append(this.mFrontlineCountLabel);
+    this.mFrontlineCountContainer.bindTooltip({ contentType: 'ui-element', elementId: "stash.CurrentRoster" });
 
     this.mRosterCountContainer = $('<div class="roster-count-container"/>');
     this.mContainer.append(this.mRosterCountContainer);
@@ -299,9 +312,23 @@ CharacterScreenBrothersListModule.prototype.addBrotherSlotDIV = function (_paren
 };
 
 
-CharacterScreenBrothersListModule.prototype.updateRosterLabel = function ()
+CharacterScreenBrothersListModule.prototype.updateRosterLabel = function (_data)
 {
-    this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mDataSource.getMaxBrothers());
+    if (_data === undefined)
+    {
+        this.mRosterCountLabel.html('' + this.mNumActive + '/' + this.mDataSource.getMaxBrothers());
+        this.mFrontlineCountLabel.html('' + this.mDataSource.getFrontlineData()[0] + '/' + this.mDataSource.getFrontlineData()[1])
+    }
+    else
+    {
+        this.mRosterCountLabel.html('' + _data.brothers + '/' + _data.brothersMax);
+        this.mFrontlineCountLabel.html('' + _data.brothersInCombat + '/' + _data.brothersMaxInCombat);
+        console.error(_data.shake)
+        if (_data.shake)
+        {
+            this.mFrontlineCountLabel.shakeLeftRight();
+        }
+    }
 };
 
 
@@ -672,10 +699,9 @@ CharacterScreenBrothersListModule.prototype.updateBrotherSlotLocks = function(_i
 	}
 };
 
-CharacterScreenBrothersListModule.prototype.onBrothersSettingsChanged = function (_dataSource, _brothers)
+CharacterScreenBrothersListModule.prototype.onBrothersSettingsChanged = function (_dataSource, _data)
 {
-    this.mNumActiveMax = _brothers;
-    this.updateRosterLabel();
+    this.updateRosterLabel(_data);
 };
 
 CharacterScreenBrothersListModule.prototype.onBrothersListLoaded = function (_dataSource, _brothers)
