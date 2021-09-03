@@ -207,9 +207,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 25;
-		this.World.Assets.m.BrothersMaxInCombat = 25;
-		this.World.Assets.m.BrothersScaleMax = 25;
+		this.m.RosterTier = 2;
 	}
 
 });
