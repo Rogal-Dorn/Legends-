@@ -7,7 +7,7 @@ gt.Const.RosterSize <- [
 	13,
 	18,
 	21,
-	25
+	27
 ];
 
 gt.Const.FrontlineSize <- [
