@@ -66,6 +66,8 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.IsCombatBackground = true;
+		this.m.IsOutlawBackground = true;
+		this.m.IsRangerRecruitBackground = true;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Terrain = [
 				0.0, // ?

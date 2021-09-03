@@ -60,7 +60,8 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(3, 5);
 		this.m.IsCombatBackground = true;
-		this.m.IsRangerRecruitBackground = true;
+		this.m.IsRangerRecruitBackground = false;
+		this.m.IsEducatedBackground = true;
 		this.m.IsCrusaderRecruitBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;

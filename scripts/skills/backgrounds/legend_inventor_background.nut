@@ -33,7 +33,7 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.IsCrusaderRecruitBackground = true;
-		this.m.IsRangerRecruitBackground = true;
+		this.m.IsRangerRecruitBackground = false;
 		this.m.IsEducatedBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Notorious;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
