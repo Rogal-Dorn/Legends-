@@ -192,7 +192,7 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 
 	function onInit()
 	{
-		this.World.Assets.m.BrothersMax = 12;
+		this.m.RosterTier = 2;
 	}
 
 	function onCombatFinished()

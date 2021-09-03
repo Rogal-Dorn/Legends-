@@ -56,8 +56,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Adrenalin,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.Student,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.Student
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -67,8 +66,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.Gifted
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
@@ -83,7 +81,6 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecMace,
@@ -111,7 +108,6 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.HeadHunter,
@@ -126,7 +122,6 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyArcher,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySoutherner,
-				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
@@ -136,8 +131,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNomad,
-				this.Const.Perks.PerkDefs.LegendRoster7
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNomad
 			],
 			[],
 			[],

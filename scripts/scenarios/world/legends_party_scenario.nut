@@ -90,7 +90,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onInit()
     {
         this.starting_scenario.onInit();
-        this.World.Assets.m.BrothersMax = 6;
+		this.m.RosterTier = 1;
         this.World.Assets.m.ChampionChanceAdditional += 5;
         this.World.Flags.set("IsLegendsParty", true);
     }

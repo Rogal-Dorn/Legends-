@@ -7,6 +7,7 @@ this.starting_scenario <- {
 		Order = 0,
 		IsFixedLook = false,
 		StashModifier = 0,
+		RosterTier = 1,
 		StaticRelationsToFaction = array(this.Const.FactionType.len(), false) 	//Something defined here won't have relations normalized over time in faction_manager
 										//I think this would be better if we instead automatically set the size to be
 	}									//equal to length of factiontypes and then we can skip if len() > 0 in
@@ -119,6 +120,11 @@ this.starting_scenario <- {
 	function onCombatFinished()
 	{
 		return true;
+	}
+
+	function getRosterTier()
+	{
+		return this.m.RosterTier;
 	}
 
 };

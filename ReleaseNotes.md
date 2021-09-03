@@ -5651,3 +5651,21 @@ Fixes named lute being one-handed
 Makes matching set effect visible as a status effect (like nimble and battleforged)
 Other minor fixes
 A lot of Typos and Syntax fixes in this build, hopefully no more missing full stops
+
+
+
+## 15.X.X.X
+
+**Roster Changes**
+Roster size is now tied to the scenario's "roster tier" and your amount of active retinue hires
+  Noble starts at tier 2, Beggars start at tier 0, Peasant Militia at tier 6, everything else at tier 1
+  T0 : 1,
+	T1 : 6,
+	T2 : 9,
+	T3 : 12,
+	T4 : 16,
+	T5 : 18,
+	T6 : 25
+  Only peasant militia can get tier 6
+  Numbers might be tweaked later
+Removes +Roster perks from player characters

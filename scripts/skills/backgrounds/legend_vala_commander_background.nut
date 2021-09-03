@@ -51,16 +51,14 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 					this.Const.Perks.PerkDefs.Pathfinder,
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.LegendValaInscribeShield,
-					this.Const.Perks.PerkDefs.LegendRoster1
+					this.Const.Perks.PerkDefs.LegendValaInscribeShield
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
 					this.Const.Perks.PerkDefs.FastAdaption,
 					this.Const.Perks.PerkDefs.Colossus,
 					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.LegendRoster2
+					this.Const.Perks.PerkDefs.Backstabber
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantSenses,
@@ -68,8 +66,7 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 					this.Const.Perks.PerkDefs.Backstabber,
 					this.Const.Perks.PerkDefs.RallyTheTroops,
 					this.Const.Perks.PerkDefs.HoldOut,
-					this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
-					this.Const.Perks.PerkDefs.LegendRoster3
+					this.Const.Perks.PerkDefs.LegendValaInscribeHelmet
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantMastery,
@@ -80,22 +77,19 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
 					this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
-					this.Const.Perks.PerkDefs.LegendGatherer,
-					this.Const.Perks.PerkDefs.LegendRoster4
+					this.Const.Perks.PerkDefs.LegendGatherer
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaThreads,
 					this.Const.Perks.PerkDefs.LegendMindOverBody,
 					this.Const.Perks.PerkDefs.LegendValaSpiritualBond
-					this.Const.Perks.PerkDefs.LegendRoster5
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantFury,
 					this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.PerfectFocus,
-					this.Const.Perks.PerkDefs.LegendPotionBrewer,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.LegendPotionBrewer
 				],
 				[],
 				[],
@@ -112,24 +106,21 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 					this.Const.Perks.PerkDefs.Pathfinder,
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.LegendValaInscribeShield,
-					this.Const.Perks.PerkDefs.LegendRoster1
+					this.Const.Perks.PerkDefs.LegendValaInscribeShield
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaTranceMalevolent,
 					this.Const.Perks.PerkDefs.FastAdaption,
 					this.Const.Perks.PerkDefs.Colossus,
 					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.LegendRoster2
+					this.Const.Perks.PerkDefs.Backstabber
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantSenses,
 					this.Const.Perks.PerkDefs.LegendValaPremonition,
 					this.Const.Perks.PerkDefs.RallyTheTroops,
 					this.Const.Perks.PerkDefs.HoldOut,
-					this.Const.Perks.PerkDefs.LegendValaInscribeHelmet,
-					this.Const.Perks.PerkDefs.LegendRoster3
+					this.Const.Perks.PerkDefs.LegendValaInscribeHelmet
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantMastery,
@@ -139,21 +130,18 @@ this.legend_vala_commander_background <- this.inherit("scripts/skills/background
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantDisharmony,
-					this.Const.Perks.PerkDefs.LegendValaInscribeArmor,
-					this.Const.Perks.PerkDefs.LegendRoster4
+					this.Const.Perks.PerkDefs.LegendValaInscribeArmor
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaThreads,
 					this.Const.Perks.PerkDefs.LegendValaSpiritualBond,
-					this.Const.Perks.PerkDefs.LegendMindOverBody,
-					this.Const.Perks.PerkDefs.LegendRoster5
+					this.Const.Perks.PerkDefs.LegendMindOverBody
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendValaChantFury,
 					this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
-					this.Const.Perks.PerkDefs.PerfectFocus,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.PerfectFocus
 				],
 				[],
 				[],

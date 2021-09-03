@@ -81,8 +81,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.Student,
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.LegendSummonCat,
-					this.Const.Perks.PerkDefs.LegendDaze,
-					this.Const.Perks.PerkDefs.LegendRoster1
+					this.Const.Perks.PerkDefs.LegendDaze
 				],
 				[
 					this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -91,8 +90,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.FortifiedMind,
 					this.Const.Perks.PerkDefs.HoldOut,
 					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendStunned,
-					this.Const.Perks.PerkDefs.LegendRoster2
+					this.Const.Perks.PerkDefs.LegendStunned
 				],
 				[
 					this.Const.Perks.PerkDefs.Backstabber,
@@ -101,8 +99,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.RallyTheTroops,
 					this.Const.Perks.PerkDefs.Taunt,
 					this.Const.Perks.PerkDefs.LegendHorrify,
-					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendRoster3
+					this.Const.Perks.PerkDefs.LegendSpecStaffSkill
 
 				],
 				[
@@ -111,8 +108,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendMasteryStaves,
 					this.Const.Perks.PerkDefs.LegendEntice,
 					this.Const.Perks.PerkDefs.LegendSpecBandage,
-					this.Const.Perks.PerkDefs.LegendPush,
-					this.Const.Perks.PerkDefs.LegendRoster4
+					this.Const.Perks.PerkDefs.LegendPush
 				],
 				[
 					this.Const.Perks.PerkDefs.LoneWolf,
@@ -121,8 +117,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendAlert,
 					this.Const.Perks.PerkDefs.LegendChainLightning,
 					this.Const.Perks.PerkDefs.LegendMedIngredients
-					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-					this.Const.Perks.PerkDefs.LegendRoster5
+					this.Const.Perks.PerkDefs.LegendSpecStaffStun
 				],
 				[
 					this.Const.Perks.PerkDefs.Nimble,
@@ -143,8 +138,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendTeleport,
-					this.Const.Perks.PerkDefs.LegendFirefield,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.LegendFirefield
 				],
 				[],
 				[],

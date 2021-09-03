@@ -108,8 +108,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
 			],
 			[
 
@@ -122,7 +121,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
 				this.Const.Perks.PerkDefs.LegendBarterConvincing,
 				this.Const.Perks.PerkDefs.LegendShieldsUp,
-				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
@@ -135,7 +133,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine,
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -148,7 +145,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
-				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
@@ -164,8 +160,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.LegendFieldRepairs,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
-				//this.Const.Perks.PerkDefs.LegendPreparedForAnything,
-				this.Const.Perks.PerkDefs.LegendRoster7
+				//this.Const.Perks.PerkDefs.LegendPreparedForAnything
 			],
 			[],
 			[],

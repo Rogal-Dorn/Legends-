@@ -162,8 +162,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BrothersMax = 25;
-
+		this.m.RosterTier = 1;
 	}
 
 
