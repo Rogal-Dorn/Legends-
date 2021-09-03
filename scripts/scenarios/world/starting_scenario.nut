@@ -128,4 +128,3 @@ this.starting_scenario <- {
 	}
 
 };
-

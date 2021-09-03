@@ -137,8 +137,6 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.starting_scenario.onInit();
 		this.m.RosterTier = 0;
-		this.World.Assets.m.BrothersMaxInCombat = 25;
-		this.World.Assets.m.BrothersScaleMax = 25;
 	}
 
 	function onCombatFinished()
