@@ -4,8 +4,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	{
 		this.m.ID = "scenario.legends_rangers";
 		this.m.Name = "Ranger";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions led the rangers to these lands. \n\n[color=#bcad8c]Outdoorsmen:[/color] Not everyone is cut out for the Rangers, some love nature and are eager to join, others will need more coin to convince. All recruits gain Pathfinder.\n[color=#bcad8c]Expert Scouts:[/color] You move faster on the campaign map and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Avatar:[/color] If your ranger dies, its game over.[/p]";
-		this.m.Difficulty = 2;
+		this.m.Description = "[p=c][img]gfx/ui/events/event_115.png[/img][/p][p]Originally hailing from far afield, the rangers are sworn to protect their ancestral woodlands. Increasing intrusions have led the rangers to these lands. \n\n[color=#bcad8c]Outdoorsmen:[/color] Not everyone is cut out for the Rangers, some love nature and are eager to join, others will need more coin to convince. Outdoor recruits gain Pathfinder.\n[color=#bcad8c]Expert Scouts:[/color] You move faster on the campaign map and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Guardians:[/color] If your ranger and druid die, its game over.[/p]";
+		this.m.Difficulty = 1;
 		this.m.Order = 230;
 		this.m.IsFixedLook = true;
 	}
@@ -20,10 +20,12 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 1; i = i )
+		for( local i = 0; i < 2; i = i ) //party size = 2 and bust for starters
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
+ 			bro.getSprite("socket").setBrush("bust_base_wildmen_01");
+			bro.getSprite("miniboss").setBrush("bust_miniboss");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
@@ -35,19 +37,32 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			i = ++i;
 		}
 
-		local bros = roster.getAll();
+		local bros = roster.getAll(); //starting party
 		local talents;
 		bros[0].setStartValuesEx([
 			"legend_ranger_commander_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies}";
+		bros[0].getBackground().m.RawDescription = "{%name% grew up in the rangers and was taught the ways of the forest by veteran foresters. Running through the woods for a lifetime has made %name% particularly good at tracking enemies, or tumbling into the homes of wild druids trying to escape from the modern world}";
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_footwork"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
+		bros[0].improveMood(1.5, "Narrowly escaped a bear");
+		bros[0].addLightInjury();
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
+
+		bros[1].setStartValuesEx([
+			"legend_druid_commander_background"
+		]);
+		bros[1].getBackground().m.RawDescription = "{%name% was the bastard of a noblewoman who left them in a ditch at the edge of the forest to be taken by wolves. It worked, but instead left %name% being cared for by a wolfmother with no cubs of her own. When the she-wolf was slain by vengeful poachers %name% took it upon themselves to be as far away from society as possible. Right up until a certain ranger fell headfirst into their hovel}";
+		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_roots"));
+		bros[1].worsenMood(1.5, "Had my home destroyed by an idiot");
+		bros[1].getFlags().set("IsPlayerCharacter", true);
+		bros[1].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);
 		this.World.Assets.m.BusinessReputation = 50;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
@@ -55,7 +70,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		this.World.Assets.m.Ammo = this.World.Assets.m.Ammo * 2;
 	}
 
-	function onSpawnPlayer()
+	function onSpawnPlayer() //forest spawn
 	{
 		local spawnTile;
 		local settlements = this.World.EntityManager.getSettlements();
@@ -138,21 +153,37 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsHunter", true);
+		this.World.Flags.set("IsLegendsDruid", true);
 	}
 
 	function onCombatFinished()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
+		local rangers = 0;
 
 		foreach( bro in roster )
 		{
 			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
-				return true;
+				rangers = ++rangers;
 			}
 		}
 
-		return false;
+		if (rangers == 1 && !this.World.Flags.get("rangersOriginDeath1"))
+		{
+			this.World.Flags.set("rangersOriginDeath1", true);
+
+			foreach( bro in roster )
+			{
+				if (bro.getFlags().get("IsPlayerCharacter"))
+				{
+					bro.getBackground().m.RawDescription = "{We didn\'t start on the best of terms but I feel as if I have lost a part of myself. The forest is quiet and the nights are darker without my companion...}";
+					bro.getBackground().buildDescription(true);
+				}
+			}
+		}
+
+		return rangers != 0;
 	}
 
 	function onUpdateDraftList( _list, _gender )
@@ -166,11 +197,35 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			_list.push("wildwoman_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			_list.push("wildman_background");
+		}
+
+		local r;
 		r = this.Math.rand(0, 9);
 
 		if (r == 0)
 		{
 			_list.push("hunter_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 9);
+
+		if (r == 0)
+		{
+			_list.push("legend_herbalist_background");
 		}
 
 		local r;
@@ -180,21 +235,29 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		{
 			_list.push("legend_ranger_background");
 		}
+
+		local r;
+		r = this.Math.rand(0, 999);
+
+		if (r == 0)
+		{
+			_list.push("legend_druid_background");
+		}
 	}
 
-	function onHiredByScenario( bro )
+	function onHiredByScenario( bro ) //give pathfinder
 	{
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+		//needs to be fixed
+		if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.retired_soldier" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.legend_taxidermist" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.legend_master_archer" || bro.getBackground().getID() == "background.lumberjack" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.female_disowned_noble" || bro.getBackground().getID() == "background.female_bowyer" || bro.getBackground().getID() == "background.bowyer" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.assassin" || bro.getBackground().getID() == "background.legend_noble_ranged" || bro.getBackground().getID() == "background.apprentice" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.houndmaster"  || bro.getBackground().getID() == "background.legend_muladi" || bro.getBackground().getID() == "background.legend_donkey")
 		{
 			bro.improveMood(1.0, "Supports the ranger cause");
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
+			bro.getSprite("socket").setBrush("bust_base_beasts");
 		}
 		else
 		{
-			bro.worsenMood(1.5, "Does not like sleeping in the woods");
+			bro.worsenMood(2.0, "Does not like sleeping in the woods");
 		}
-
-		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_pathfinder"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -203,10 +266,11 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+			//needs to be fixed
+			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.retired_soldier" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.legend_taxidermist" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.legend_master_archer" || bro.getBackground().getID() == "background.lumberjack" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.female_disowned_noble" || bro.getBackground().getID() == "background.female_bowyer" || bro.getBackground().getID() == "background.bowyer" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.assassin" || bro.getBackground().getID() == "background.legend_noble_ranged" || bro.getBackground().getID() == "background.apprentice" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.raider" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_druid"  || bro.getBackground().getID() == "background.houndmaster"  || bro.getBackground().getID() == "background.legend_muladi" || bro.getBackground().getID() == "background.legend_donkey")
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 			}
 			else
 			{
