@@ -3,6 +3,7 @@ local gt = this.getroottable();
 gt.MSU.modWeapon <- function ()
 {
 	gt.Const.Items.WeaponType <- {
+		None = 0,
 		Axe = 1,
 		Bow = 2,
 		Cleaver = 4,
@@ -17,10 +18,12 @@ gt.MSU.modWeapon <- function ()
 		Spear = 2048,
 		Sword = 4096,
 		Staff = 8192,
-		Throwing = 16384
+		Throwing = 16384,
+		Musical = 32768
 	}
 
 	gt.Const.Items.WeaponTypeName <- [
+		"No Weapon Type",
 		"Axe",
 		"Bow",
 		"Cleaver",
@@ -35,7 +38,8 @@ gt.MSU.modWeapon <- function ()
 		"Spear",
 		"Sword",
 		"Staff",
-		"Throwing"
+		"Throwing Weapon",
+		"Musical Instrument"
 	]
 
 	gt.Const.Items.getWeaponTypeName <- function(_weaponType)
@@ -44,7 +48,7 @@ gt.MSU.modWeapon <- function ()
 		{
 			if (w == _weaponType)
 			{
-				return this.Const.Items.WeaponTypeName[log(w)/log(2)];
+				return this.Const.Items.WeaponTypeName[log(w)/log(2) + 1];
 			}
 		}
 
@@ -53,13 +57,15 @@ gt.MSU.modWeapon <- function ()
 
 	gt.Const.Items.addNewWeaponType <- function(_weaponType, _weaponTypeName = "")
 	{
-		local n = 0;
-		foreach (w in this.Const.Items.WeaponType)
+		local max = 0;
+		foreach (w, value in Const.Items.WeaponType)
 		{
-			n = this.Math.max(n, w);
+			if (value > max)
+			{
+				max = value;
+			}
 		}
-
-		gt.Const.Items.WeaponType[_weaponType] <- n * 2;
+		gt.Const.Items.WeaponType[_weaponType] <- max << 1;
 
 		if (_weaponTypeName == "")
 		{
@@ -78,7 +84,7 @@ gt.MSU.modWeapon <- function ()
 				create();
 				if (this.getCategories() == "")
 				{
-					if (this.m.WeaponType != null)
+					if (this.m.WeaponType != this.Const.Items.WeaponType.None)
 					{
 						this.setupCategories();
 					}
@@ -92,7 +98,7 @@ gt.MSU.modWeapon <- function ()
 	});
 
 	::mods_hookExactClass("items/weapons/weapon", function(o) {
-		o.m.WeaponType <- null;
+		o.m.WeaponType <- this.Const.Items.WeaponType.None;
 
 		local addSkill = o.addSkill;
 		o.addSkill = function(_skill)
@@ -105,15 +111,19 @@ gt.MSU.modWeapon <- function ()
 			addSkill(_skill);
 		}
 
-		o.setCategories <- function(_s)
+		o.setCategories <- function(_s, _setupWeaponType = true)
 		{
 			this.m.Categories = _s;
-			this.setupWeaponType();
+
+			if (_setupWeaponType)
+			{
+				this.setupWeaponType();
+			}
 		}
 
 		o.setupWeaponType <- function()
 		{
-			this.m.WeaponType = null;
+			this.m.WeaponType = this.Const.Items.WeaponType.None;
 
 			local categories = this.getCategories();
 			if (categories.len() == 0)
@@ -125,7 +135,7 @@ gt.MSU.modWeapon <- function ()
 			{
 				if (categories.find(k) != null)
 				{
-					if (this.m.WeaponType == null)
+					if (this.m.WeaponType == this.Const.Items.WeaponType.None)
 					{
 						this.m.WeaponType = w;
 					}
@@ -138,7 +148,7 @@ gt.MSU.modWeapon <- function ()
 
 			if (categories.find("One-Handed") != null && !this.isItemType(this.Const.Items.ItemType.OneHanded))
 			{
-				this.m.ItemType = this.m.ItemType == null ? this.Const.Items.ItemType.OneHanded : this.m.ItemType | this.Const.Items.ItemType.OneHanded;
+				this.m.ItemType = this.m.ItemType == this.Const.Items.ItemType.None ? this.Const.Items.ItemType.OneHanded : this.m.ItemType | this.Const.Items.ItemType.OneHanded;
 				if (this.isItemType(this.Const.Items.ItemType.TwoHanded))
 				{
 					this.m.ItemType -= this.Const.Items.ItemType.TwoHanded;
@@ -147,7 +157,7 @@ gt.MSU.modWeapon <- function ()
 
 			if (categories.find("Two-Handed") != null && !this.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
-				this.m.ItemType = this.m.ItemType == null ? this.Const.Items.ItemType.TwoHanded : this.m.ItemType | this.Const.Items.ItemType.TwoHanded;
+				this.m.ItemType = this.m.ItemType == this.Const.Items.ItemType.None ? this.Const.Items.ItemType.TwoHanded : this.m.ItemType | this.Const.Items.ItemType.TwoHanded;
 				if (this.isItemType(this.Const.Items.ItemType.OneHanded))
 				{
 					this.m.ItemType -= this.Const.Items.ItemType.OneHanded;
@@ -155,26 +165,45 @@ gt.MSU.modWeapon <- function ()
 			}
 		}
 
-		o.isWeaponType <- function( _t )
+		o.isWeaponType <- function( _t, _only = false )
 		{
-			return (this.m.WeaponType & _t) != 0;
+			return _only ? this.m.WeaponType == _t : (this.m.WeaponType & _t) != 0;
 		}
 
-		o.addWeaponType <- function(_weaponType)
+		o.addWeaponType <- function(_weaponType, _setupCategories = true)
 		{
-			this.m.WeaponType = this.m.WeaponType == null ? _weaponType : this.m.WeaponType | _weaponType;
-			this.setupCategories();
+			if (!this.isWeaponType(_weaponType))
+			{
+				this.m.WeaponType = this.m.WeaponType == this.Const.Items.WeaponType.None ? _weaponType : this.m.WeaponType | _weaponType;
+
+				if (_setupCategories)
+				{
+					this.setupCategories();
+				}
+			}
 		}
 
-		o.removeWeaponType <- function(_weaponType)
+		o.setWeaponType <- function(_t, _setupCategories = true)
+		{
+			this.m.WeaponType = _t;
+
+			if (_setupCategories)
+			{
+				this.setupCategories();
+			}
+			
+		}
+
+		o.removeWeaponType <- function(_weaponType, _setupCategories = true)
 		{
 			if (this.isWeaponType(_weaponType))
 			{
-				this.m.WeaponType -= _weaponType;
-				if (this.m.WeaponType == 0)
-				{
-					this.m.WeaponType = null;
-				}
+				this.m.WeaponType -= _weaponType;				
+			}
+
+			if (_setupCategories)
+			{
+				this.setupCategories();
 			}
 		}
 
