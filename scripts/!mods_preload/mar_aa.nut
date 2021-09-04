@@ -86,6 +86,6 @@ local modID = "mod_mediumArmorRework";
 	}
 	gt.Const.Perks.MediumArmorTree.Tree[1] = [gt.Const.Perks.PerkDefs.LegendBalance];
 	gt.Const.Perks.MediumArmorTree.Tree[2] = [gt.Const.Perks.PerkDefs.LegendMatchingSet];
-	gt.Const.Perks.MediumArmorTree.Tree[4] = [gt.Const.Perks.PerkDefs.LegendLithe];
+	gt.Const.Perks.MediumArmorTree.Tree[5] = [gt.Const.Perks.PerkDefs.LegendLithe];
 	gt.Const.Perks.MediumArmorTree.Tree[6] = [gt.Const.Perks.PerkDefs.MARInTheZone];
 });
