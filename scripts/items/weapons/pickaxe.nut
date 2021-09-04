@@ -6,9 +6,9 @@ this.pickaxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.pickaxe";
 		this.m.Name = "Pickaxe";
 		this.m.Description = "A hard head made from metal attached to a wooden handle, the Pickaxe is a miner\'s tool used to break up rocks. As an improvised weapon it\'s unwieldy but can deliver fatal injuries even through armor.";
-		this.m.Categories = "Hammer, One-Handed";
 		this.m.IconLarge = "weapons/melee/miners_pick_01.png";
 		this.m.Icon = "weapons/melee/miners_pick_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -12,7 +12,7 @@ this.named_polemace <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.PrefixList = this.Const.Strings.SouthernPrefix;
 		this.m.SuffixList = this.Const.Strings.SouthernSuffix;
 		this.m.Description = "A crude weapon like a polemace can also be crafted with passion, skill and attention to detail, as this exemplar showcases impressively.";
-		this.m.Categories = "Mace, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

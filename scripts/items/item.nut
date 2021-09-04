@@ -257,7 +257,7 @@ this.item <- {
 
 	function canBeSalvaged()
 	{
-		return (this.getItemType() & (this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MagicStaff)) != 0 || (this.getItemType() & this.Const.Items.ItemFilter.Armor) != 0
+		return (this.getItemType() & this.Const.Items.ItemType.Weapon != 0) || (this.getItemType() & this.Const.Items.ItemFilter.Armor) != 0
 	}
 
 	function getVariant()

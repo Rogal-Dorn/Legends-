@@ -6,9 +6,9 @@ this.legend_glaive <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_glaive";
 		this.m.Name = "Glaive";
 		this.m.Description = "A sturdy glaive, suitable for keeping the foe at bay and slashing in close quarters.";
-		this.m.Categories = "Spear, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_glaive_01.png";
 		this.m.Icon = "weapons/melee/legend_glaive_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

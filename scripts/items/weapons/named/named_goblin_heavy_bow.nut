@@ -9,10 +9,10 @@ this.named_goblin_heavy_bow <- this.inherit("scripts/items/weapons/named/named_w
 		this.m.NameList = this.Const.Strings.BowNames;
 		this.m.UseRandomName = false;
 		this.m.Description = "Goblins know how to craft efficient and light bows. This piece, made from some unknown pale wood, has surprising pulling power despite its small size.";
-		this.m.Categories = "Bow, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

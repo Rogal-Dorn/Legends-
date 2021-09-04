@@ -6,12 +6,12 @@ this.staff_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.staff_sling";
 		this.m.Name = "Staff Sling";
 		this.m.Description = "A leather sling on a staff, used to hurl stones at the enemy. With stones abundant everywhere, it will never run out of ammunition.";
-		this.m.Categories = "Throwing Weapon, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/sling_01.png";
 		this.m.Icon = "weapons/ranged/sling_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sling;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
@@ -37,4 +37,3 @@ this.staff_sling <- this.inherit("scripts/items/weapons/weapon", {
 	}
 
 });
-

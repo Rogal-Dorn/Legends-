@@ -9,6 +9,7 @@ this.legend_wooden_pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_wooden_pitchfork_01.png";
 		this.m.Icon = "weapons/melee/legend_wooden_pitchfork_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

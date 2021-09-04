@@ -11,7 +11,7 @@ this.named_heavy_southern_mace <- this.inherit("scripts/items/weapons/named/name
 		this.m.ID = "weapon.named_mace";
 		this.m.NameList = this.Const.Strings.MaceNames;
 		this.m.Description = "A heavy winged mace. The smith who forged this weapon certainly knew what he was doing.";
-		this.m.Categories = "Mace, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

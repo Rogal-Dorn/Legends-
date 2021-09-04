@@ -6,9 +6,9 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.woodcutters_axe";
 		this.m.Name = "Woodcutter\'s Axe";
 		this.m.Description = "A long, two-handed axe that bears down heavy with every swing. Held with both hands it is used to cut down large trees, but will cut down men just as well.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/axe_two_handed_02.png";
 		this.m.Icon = "weapons/melee/axe_two_handed_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

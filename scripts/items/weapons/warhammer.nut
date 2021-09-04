@@ -6,9 +6,9 @@ this.warhammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.warhammer";
 		this.m.Name = "Warhammer";
 		this.m.Description = "A short iron warhammer that easily batters through armor plates.";
-		this.m.Categories = "Hammer, One-Handed";
 		this.m.IconLarge = "weapons/melee/warhammer_01.png";
 		this.m.Icon = "weapons/melee/warhammer_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -10,7 +10,7 @@ this.named_crypt_cleaver <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.PrefixList = this.Const.Strings.OldWeaponPrefix;
 		this.m.UseRandomName = false;
 		this.m.Description = "A massive cleaver that can cut through flesh and armor alike. This piece is in good condition despite its old age.";
-		this.m.Categories = "Cleaver, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

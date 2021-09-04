@@ -6,9 +6,9 @@ this.orc_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.orc_cleaver";
 		this.m.Name = "Head Chopper";
 		this.m.Description = "A sharp and crude shard of metal with a wrapped grip resembling a sword but a lot heavier. Not made for human hands.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/orc_cleaver.png";
 		this.m.Icon = "weapons/melee/orc_cleaver_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

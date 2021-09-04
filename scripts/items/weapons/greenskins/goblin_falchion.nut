@@ -6,9 +6,9 @@ this.goblin_falchion <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goblin_falchion";
 		this.m.Name = "Cruel Falchion";
 		this.m.Description = "A lightweight goblin falchion made for cutting.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/goblin_weapon_02.png";
 		this.m.Icon = "weapons/melee/goblin_weapon_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

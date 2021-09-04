@@ -12,7 +12,7 @@ this.named_qatal_dagger <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.PrefixList = this.Const.Strings.SouthernPrefix;
 		this.m.SuffixList = this.Const.Strings.SouthernSuffix;
 		this.m.Description = "An exquisitely crafted curved blade, notoriously used by assassins of the southern deserts. Particularly effective against targets already debilitated.";
-		this.m.Categories = "Dagger, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

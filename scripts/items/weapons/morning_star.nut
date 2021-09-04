@@ -8,9 +8,9 @@ this.morning_star <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.morning_star";
 		this.m.Name = "Morning Star";
 		this.m.Description = "A wooden shaft with a spiked metal head used to deliver a combination of blunt-force and puncturing blows.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/morning_star_01.png";
 		this.m.Icon = "weapons/melee/morning_star_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

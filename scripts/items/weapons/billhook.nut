@@ -6,9 +6,9 @@ this.billhook <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.billhook";
 		this.m.Name = "Billhook";
 		this.m.Description = "A pike-like weapon with a blade for striking over some distance and a hook attached for pulling in targets.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/bill_01.png";
 		this.m.Icon = "weapons/melee/bill_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

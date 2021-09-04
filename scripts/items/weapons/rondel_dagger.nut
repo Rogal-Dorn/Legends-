@@ -6,9 +6,9 @@ this.rondel_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.rondel_dagger";
 		this.m.Name = "Rondel Dagger";
 		this.m.Description = "A long, quadrangular spike designed to pierce through weakpoints in armor.";
-		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/dagger_02.png";
 		this.m.Icon = "weapons/melee/dagger_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

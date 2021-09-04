@@ -6,11 +6,11 @@ this.legend_skullsmasher <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_skullsmasher";
 		this.m.Name = "Skull Smasher";
 		this.m.Description = "A massive crude hammer with a head fashioned from a chunk of solid iron. Too heavy to be used effectively by the average human.";
-		this.m.Categories = "Hammer, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_skullsmasher_01.png";
 		this.m.Icon = "weapons/melee/legend_skullsmasher_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsAgainstShields = true;
 		this.m.IsAoE = true;
 		this.m.AddGenericSkill = true;

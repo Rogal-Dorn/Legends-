@@ -6,9 +6,9 @@ this.named_orc_axe_2h <- this.inherit("scripts/items/weapons/named/named_weapon"
 		this.m.ID = "weapon.named_orc_axe_2h";
 		this.m.Name = "Unhold Splitter";
 		this.m.Description = "A huge and sturdy double headed battleaxe too heavy to be used effectively by the average human.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/named_orc_axe_two_handed.png";
 		this.m.Icon = "weapons/melee/named_orc_axe_two_handed_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

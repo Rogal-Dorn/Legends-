@@ -6,9 +6,9 @@ this.two_handed_scimitar <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.two_handed_scimitar";
 		this.m.Name = "Two-Handed Scimitar";
 		this.m.Description = "A large scimitar wielded with both hands. The curved blade cleaves right through any enemy.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/two_handed_scimitar_01.png";
 		this.m.Icon = "weapons/melee/two_handed_scimitar_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

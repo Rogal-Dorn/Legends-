@@ -6,9 +6,9 @@ this.knife <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.knife";
 		this.m.Name = "Knife";
 		this.m.Description = "A short knife, not made for combat.";
-		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/knife_01.png";
 		this.m.Icon = "weapons/melee/knife_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

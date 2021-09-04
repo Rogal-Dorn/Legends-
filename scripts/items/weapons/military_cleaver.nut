@@ -9,6 +9,7 @@ this.military_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/cleaver_01.png";
 		this.m.Icon = "weapons/melee/cleaver_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

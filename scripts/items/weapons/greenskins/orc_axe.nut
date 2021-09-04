@@ -6,9 +6,9 @@ this.orc_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.orc_axe";
 		this.m.Name = "Head Splitter";
 		this.m.Description = "A heavy piece of metal with a sharp head. Not made for human hands.";
-		this.m.Categories = "Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/orc_axe.png";
 		this.m.Icon = "weapons/melee/orc_axe_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

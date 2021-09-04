@@ -6,9 +6,9 @@ this.rusty_warblade <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.rusty_warblade";
 		this.m.Name = "Rusty Warblade";
 		this.m.Description = "A heavy blade with a curved end combining sword and axe into a devastating two-handed cleaver.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_08.png";
 		this.m.Icon = "weapons/melee/wildmen_08_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

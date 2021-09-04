@@ -6,9 +6,9 @@ this.warbrand <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.warbrand";
 		this.m.Name = "Warbrand";
 		this.m.Description = "A two-handed variant of the sword with a long and thin blade, sharpened only on one side, and no crossguard. Can be used both for quick slashes and sweeping strikes.";
-		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/warbrand_01.png";
 		this.m.Icon = "weapons/melee/warbrand_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

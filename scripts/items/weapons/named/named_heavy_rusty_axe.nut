@@ -11,7 +11,7 @@ this.named_heavy_rusty_axe <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.SuffixList = this.Const.Strings.BarbarianSuffix;
 		this.m.UseRandomName = false;
 		this.m.Description = "This heavy and ornated axe belonged to a valued member of a barbarian tribe. Its decorations and relatively high craftsmanship are a rare find among the wild warriors of the north.";
-		this.m.Categories = "Axe, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

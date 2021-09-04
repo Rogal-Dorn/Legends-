@@ -6,9 +6,9 @@ this.goblin_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goblin_spear";
 		this.m.Name = "Goblin Skewer";
 		this.m.Description = "A long shaft with a sharp metal blade at the top.";
-		this.m.Categories = "Spear, One-Handed";
 		this.m.IconLarge = "weapons/melee/goblin_weapon_03.png";
 		this.m.Icon = "weapons/melee/goblin_weapon_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

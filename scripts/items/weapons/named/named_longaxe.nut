@@ -9,7 +9,7 @@ this.named_longaxe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_longaxe";
 		this.m.NameList = this.Const.Strings.LongaxeNames;
 		this.m.Description = "A relatively thin blade on a very long shaft used for devastating cutting attacks over some distance, and to render shields unusable from behind the frontline. This longaxe must be the work of an extraordinary craftsman.";
-		this.m.Categories = "Axe, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

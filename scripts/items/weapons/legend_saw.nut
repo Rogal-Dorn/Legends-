@@ -6,9 +6,9 @@ this.legend_saw <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_saw";
 		this.m.Name = "Handsaw";
 		this.m.Description = "A toothed blade attached to a wooden grip used to saw through timber. While it is difficult to cut through flesh, the teeth leave a nasty gash.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_saw_01.png";
 		this.m.Icon = "weapons/melee/legend_saw_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

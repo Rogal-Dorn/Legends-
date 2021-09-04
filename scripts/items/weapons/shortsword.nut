@@ -6,9 +6,9 @@ this.shortsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.shortsword";
 		this.m.Name = "Shortsword";
 		this.m.Description = "A short raw iron sword with some dents and notches, easy to wield in one hand.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/sword_01.png";
 		this.m.Icon = "weapons/melee/sword_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

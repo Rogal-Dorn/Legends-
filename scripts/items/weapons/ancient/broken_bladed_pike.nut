@@ -6,9 +6,9 @@ this.broken_bladed_pike <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.broken_bladed_pike";
 		this.m.Name = "Broken Ancient Bladed Pike";
 		this.m.Description = "A bladed pike with a broken tip. Not all weapons stand the test of time. Once used to attack over some distance and keeping the enemy at bay.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/broken_pike_01.png";
 		this.m.Icon = "weapons/melee/broken_pike_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

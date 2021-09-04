@@ -9,7 +9,7 @@ this.named_dagger <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_dagger";
 		this.m.NameList = this.Const.Strings.DaggerNames;
 		this.m.Description = "A short and hardened dagger, masterfully crafted with a pointed blade for piercing through the smallest gaps in armor.";
-		this.m.Categories = "Dagger, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

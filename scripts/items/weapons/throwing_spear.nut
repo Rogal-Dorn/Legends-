@@ -6,11 +6,11 @@ this.throwing_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.throwing_spear";
 		this.m.Name = "Throwing Spear";
 		this.m.Description = "Lighter than a common spear, but heavier than a javelin, this weapon is intended to be thrown over short distances. The tip will bend on impact, potentially rendering shields unusable. Can be used against unshielded opponents as well for great effect.";
-		this.m.Categories = "Throwing Weapon, One-Handed";
 		this.m.IconLarge = "weapons/ranged/throwing_spear_01.png";
 		this.m.Icon = "weapons/ranged/throwing_spear_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Throwing;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Tool;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Tool | this.Const.Items.ItemType.OneHanded;
 		this.m.IsAgainstShields = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;

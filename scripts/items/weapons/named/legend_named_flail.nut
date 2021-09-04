@@ -6,9 +6,9 @@ this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.ID = "weapon.legend_named_flail";
 		this.m.NameList = this.Const.Strings.TwoHandedFlailNames;
 		this.m.Description = "A metal weight attached with a short chain to a long pole, the War Flail is a brutal weapon. Deadly enough to fell most men with a good hit to the head, and useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_flail_ranged_02_named_01.png";
 		this.m.Icon = "weapons/melee/legend_flail_ranged_02_named_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

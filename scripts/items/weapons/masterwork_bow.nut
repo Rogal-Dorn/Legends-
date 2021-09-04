@@ -9,6 +9,7 @@ this.masterwork_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Bow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/bow_03.png";
 		this.m.Icon = "weapons/ranged/bow_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;

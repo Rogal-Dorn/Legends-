@@ -9,7 +9,7 @@ this.named_flail <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_flail";
 		this.m.NameList = this.Const.Strings.FlailNames;
 		this.m.Description = "A separate striking head attached to a handle by a chain. A rather unpredictable weapon, but useful to strike over or around shield cover. This particular flail seems even more terrifying due to its unique characteristics.";
-		this.m.Categories = "Flail, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;

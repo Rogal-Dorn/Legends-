@@ -6,9 +6,9 @@ this.lightbringer_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.lightbringer_sword";
 		this.m.Name = "Reproach of the Old Gods";
 		this.m.Description = "The crepuscular sword bends purples and oranges until it seemingly carries twilight itself in its fuller. Held to the touch, one cannot tell if they are being burned or chilled. Magic or well-crafted, whatever the weapon is it vibrates as though it were fighting off power immense and you need only swing it to find the steel\'s true charge.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/sword_legendary_01.png";
 		this.m.Icon = "weapons/melee/sword_legendary_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Legendary;
 		this.m.IsDoubleGrippable = true;

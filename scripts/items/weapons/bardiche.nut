@@ -6,9 +6,9 @@ this.bardiche <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.bardiche";
 		this.m.Name = "Bardiche";
 		this.m.Description = "A large axe with a long head that can be brought down on the enemy with devastating effect.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/bardiche_01.png";
 		this.m.Icon = "weapons/melee/bardiche_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

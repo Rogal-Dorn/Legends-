@@ -10,7 +10,7 @@ this.named_polehammer <- this.inherit("scripts/items/weapons/named/named_weapon"
 		this.m.ID = "weapon.named_polehammer";
 		this.m.NameList = this.Const.Strings.PolehammerNames;
 		this.m.Description = "A crude weapon like a polehammer can also be crafted with passion, skill and attention to detail, as this exemplar showcases impressively.";
-		this.m.Categories = "Hammer, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

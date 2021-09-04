@@ -6,9 +6,9 @@ this.militia_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.militia_spear";
 		this.m.Name = "Militia Spear";
 		this.m.Description = "A simple wooden spear with a metal tip.";
-		this.m.Categories = "Spear, One-Handed";
 		this.m.IconLarge = "weapons/melee/spear_02.png";
 		this.m.Icon = "weapons/melee/spear_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

@@ -9,6 +9,7 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_staff_02.png";
 		this.m.Icon = "weapons/melee/legend_staff_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Staff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

@@ -6,9 +6,9 @@ this.broken_ancient_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.broken_ancient_sword";
 		this.m.Name = "Broken Ancient Sword";
 		this.m.Description = "An ancient sword with a broken blade, severely limiting its reach.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/ancient_broken_sword_01.png";
 		this.m.Icon = "weapons/melee/ancient_broken_sword_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

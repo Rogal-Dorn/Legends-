@@ -9,7 +9,7 @@ this.named_bardiche <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.ID = "weapon.named_bardiche";
 		this.m.NameList = this.Const.Strings.AxeNames;
 		this.m.Description = "This heavy bardiche made from a rare alloy is vastly superior to similar weapons.";
-		this.m.Categories = "Axe, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

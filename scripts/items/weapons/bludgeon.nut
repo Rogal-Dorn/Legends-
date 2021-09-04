@@ -8,9 +8,9 @@ this.bludgeon <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.bludgeon";
 		this.m.Name = "Bludgeon";
 		this.m.Description = "A spiked metal head on a wooden shaft, crude but effective in bashing in heads.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/mace_02.png";
 		this.m.Icon = "weapons/melee/mace_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -18,12 +18,12 @@ this.heavy_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.heavy_crossbow";
 		this.m.Name = "Heavy Crossbow";
 		this.m.Description = "A heavy crossbow with a crank that can propel bolts over medium distances and is effective even against heavily armored targets. Requires almost a full turn to reload.";
-		this.m.Categories = "Crossbow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/crossbow_03.png";
 		this.m.Icon = "weapons/ranged/crossbow_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Crossbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

@@ -8,9 +8,9 @@ this.greatsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.greatsword";
 		this.m.Name = "Zweihander";
 		this.m.Description = "A massive two-handed blade as good for carving swathes through the enemy as for battering them into submission."; //Let's get this working
-		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/sword_two_hand_02.png";
 		this.m.Icon = "weapons/melee/sword_two_hand_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

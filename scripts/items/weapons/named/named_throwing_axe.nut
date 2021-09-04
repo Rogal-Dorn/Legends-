@@ -22,9 +22,9 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.ID = "weapon.named_throwing_axe";
 		this.m.NameList = this.Const.Strings.ThrowingAxeNames;
 		this.m.Description = "Small axes to be thrown in an overhand motion towards a target. These ones are especially well-balanced and hardy enough to inflict serious damage to armor and shields from range.";
-		this.m.Categories = "Throwing Weapon, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Throwing;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.OneHanded;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
 		this.m.IsDroppedAsLoot = true;

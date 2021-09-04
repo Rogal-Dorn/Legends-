@@ -6,9 +6,9 @@ this.shamshir <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.shamshir";
 		this.m.Name = "Shamshir";
 		this.m.Description = "This well-crafted exotic blade from the south has a curved edge that allows it to cut deep wounds with ease, but makes it less suited for thrusting and penetrating armor. A rare find in these lands.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/scimitar_01.png";
 		this.m.Icon = "weapons/melee/scimitar_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

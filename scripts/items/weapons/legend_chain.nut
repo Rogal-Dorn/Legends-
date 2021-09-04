@@ -6,9 +6,9 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_chain";
 		this.m.Name = "Chain";
 		this.m.Description = "A length of intertwined metal links. As a weapon it's ungainly and rather unpredictable but useful to spin, strike around shield cover and pull in enemies.";
-		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_chain_01.png";
 		this.m.Icon = "weapons/melee/legend_chain_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

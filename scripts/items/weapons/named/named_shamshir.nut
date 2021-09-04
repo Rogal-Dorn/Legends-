@@ -12,7 +12,7 @@ this.named_shamshir <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.PrefixList = this.Const.Strings.SouthernPrefix;
 		this.m.SuffixList = this.Const.Strings.SouthernSuffix;
 		this.m.Description = "A Shamshir already is an exquisite and exotic weapon in these parts, but this piece is of extraordinary quality. It will cut through flesh and bone just as easily as through a ripe melon.";
-		this.m.Categories = "Sword, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -6,9 +6,9 @@ this.two_handed_spiked_mace <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.two_handed_spiked_mace";
 		this.m.Name = "Two-Handed Spiked Mace";
 		this.m.Description = "A huge club fitted with a skull for good measure. Receiving a blow from this weapon will leave anyone dazed and gasping for air, no matter their armor.";
-		this.m.Categories = "Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_06.png";
 		this.m.Icon = "weapons/melee/wildmen_06_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

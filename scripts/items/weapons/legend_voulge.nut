@@ -9,6 +9,7 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.Variant = 1
 		this.updateVariant();
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

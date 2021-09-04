@@ -11,6 +11,7 @@ this.wooden_stick <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/club_01.png";
 		this.m.Icon = "weapons/melee/club_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

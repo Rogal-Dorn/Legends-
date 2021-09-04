@@ -6,9 +6,9 @@ this.scramasax <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.scramasax";
 		this.m.Name = "Scramasax";
 		this.m.Description = "A long and heavy knife with a one sided blade used more for hacking than slashing.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/sax_01.png";
 		this.m.Icon = "weapons/melee/sax_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

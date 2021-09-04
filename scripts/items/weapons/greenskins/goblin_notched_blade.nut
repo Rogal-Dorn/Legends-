@@ -6,9 +6,9 @@ this.goblin_notched_blade <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goblin_notched_blade";
 		this.m.Name = "Notched Blade";
 		this.m.Description = "A long curved knife with a one sided blade used for slashing, hacking and stabbing at weak spots.";
-		this.m.Categories = "Sword/Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/goblin_weapon_01.png";
 		this.m.Icon = "weapons/melee/goblin_weapon_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

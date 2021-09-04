@@ -6,9 +6,9 @@ this.legend_skin_flayer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_skin_flayer";
 		this.m.Name = "Skin Flayer";
 		this.m.Description = "A razor sharp length of crude metal with a wrapped grip. Not well suited for human hands.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_skin_flayer_01.png";
 		this.m.Icon = "weapons/melee/legend_skin_flayer_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

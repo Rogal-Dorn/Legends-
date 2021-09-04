@@ -6,9 +6,9 @@ this.swordlance <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.swordlance";
 		this.m.Name = "Swordlance";
 		this.m.Description = "A long pole attached to a sharp curved blade, used to deliver deep sweeping strikes over some distance.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/swordlance_01.png";
 		this.m.Icon = "weapons/melee/swordlance_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

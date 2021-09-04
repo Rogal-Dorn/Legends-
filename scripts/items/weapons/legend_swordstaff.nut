@@ -6,9 +6,9 @@ this.legend_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_swordstaff";
 		this.m.Name = "Swordstaff";
 		this.m.Description = "A cross between a spear and a sword, making for a good dueling weapon. Used for both keeping the enemy at bay, and the closing the gap.";
-		this.m.Categories = "Sword/Spear/Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_swordstaff_01.png";
 		this.m.Icon = "weapons/melee/legend_swordstaff_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Spear | this.Const.Items.WeaponType.Staff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

@@ -6,12 +6,12 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_slingstaff";
 		this.m.Name = "Slingstaff";
 		this.m.Description = "A sturdy sling staff, for catapulting rocks at armored foes";
-		this.m.Categories = "Throwing Weapon, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/sling_01.png";
 		this.m.Icon = "weapons/ranged/sling_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sling;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
