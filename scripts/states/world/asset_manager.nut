@@ -260,19 +260,19 @@ this.asset_manager <- {
 			{
 				max += 7;
 			}
-
 		}
-		return  this.Math.min(27, max);
+		return this.Math.min(25, max);
 	}
 
 	function getBrothersMaxInCombat()
 	{
-		return this.m.BrothersMaxInCombat;
+
+		return this.Math.min(25, this.m.BrothersMaxInCombat);
 	}
 
 	function getBrothersScaleMax()
 	{
-		return this.m.BrothersScaleMax;
+		return this.Math.min(25, this.m.BrothersScaleMax);
 	}
 
 	function getBrothersScaleMin()

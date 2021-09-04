@@ -44,60 +44,7 @@ this.split_man <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().buildPropertiesForUse(this, null);
-		local mult = 1.5;
-		local damage_regular_min = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * mult * p.MeleeDamageMult);
-		local damage_regular_max = this.Math.floor(p.DamageRegularMax * p.DamageRegularMult * p.DamageTotalMult * mult * p.MeleeDamageMult);
-		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * p.DamageTotalMult * mult * p.MeleeDamageMult);
-		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * p.DamageTotalMult * mult * p.MeleeDamageMult);
-		local damage_direct_max = this.Math.floor(damage_regular_max * (this.m.DirectDamageMult + p.DamageDirectAdd));
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
-
-		if (this.m.DirectDamageMult > 0.0)
-		{
-			ret.push({
-				id = 4,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints, of which [color=" + this.Const.UI.Color.DamageValue + "]0[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_direct_max + "[/color] can ignore armor"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 4,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints"
-			});
-		}
-
-		if (damage_armor_max > 0)
-		{
-			ret.push({
-				id = 5,
-				type = "text",
-				icon = "ui/icons/armor_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_armor_max + "[/color] damage to armor"
-			});
-		}
-
+		local ret = this.getDefaultTooltip();
 		ret.push({
 			id = 6,
 			type = "text",
@@ -149,6 +96,15 @@ this.split_man <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			this.m.ApplyBonusToBodyPart = _bodyPart == this.Const.BodyPart.Body ? this.Const.BodyPart.Head : this.Const.BodyPart.Body;
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageTooltipMinMult *= 1.5
+			_properties.DamageTooltipMaxMult *= 1.5
 		}
 	}
 

@@ -116,16 +116,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
-	function getRepair()
-	{
-		return this.Math.floor(this.getArmor());
-	}
-
-	function getRepairMax()
-	{
-		return this.Math.floor(this.getArmorMax());
-	}
-
 	function getAddedValue(_function, _base, _all = false)
 	{
 		local value = _base;
@@ -134,11 +124,21 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			if (upgrade != null)
 			{
-				value += upgrade[_function](); 
+				value += upgrade[_function]();
 			}
 		}
 
 		return value;
+	}
+
+	function getRepair()
+	{
+		return this.Math.floor(this.getAddedValue("getCondition", this.m.Condition));
+	}
+
+	function getRepairMax()
+	{
+		return this.Math.floor(this.getAddedValue("getConditionMax", this.m.ConditionMax));
 	}
 
 	function getArmor()
