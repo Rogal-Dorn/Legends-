@@ -34,14 +34,10 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
-		this.m.IsFemaleBackground = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
+		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Educated;
 		this.m.Level = this.Math.rand(1, 3);
-		this.m.IsCombatBackground = true;
-		this.m.IsNoble = true;
-		this.m.IsRangerRecruitBackground = true;
-		this.m.IsEducatedBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];

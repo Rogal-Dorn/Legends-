@@ -41,7 +41,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Level = 2;
-		//this.m.IsUntalented = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Educated;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[4];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[4];
 		this.m.CustomPerkTree = [
@@ -138,7 +138,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

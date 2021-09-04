@@ -225,12 +225,12 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
-			else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
@@ -240,11 +240,11 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onHiredByScenario( bro )
 	{
-		if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
+		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.worsenMood(1.5, "Disturbed by your wild and erratic nature");
 		}
-		else if (bro.getBackground().isCombatBackground() || bro.getBackground().isOutlawBackground())
+		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.improveMood(1.0, "Excited by your lust for battle");
 		}

@@ -38,8 +38,7 @@ this.legend_necromancer_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Beards = this.Const.Beards.Raider;
 
 		this.m.Level = 1;
-		this.m.IsUntalented = true;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];

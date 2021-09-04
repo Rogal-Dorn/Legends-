@@ -57,8 +57,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			this.m.Beards = this.Const.Beards.Untidy;
 		}
 		
-		this.m.IsOffendedByViolence = true;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
@@ -106,7 +105,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

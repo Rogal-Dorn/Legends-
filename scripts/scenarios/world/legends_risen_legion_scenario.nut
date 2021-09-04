@@ -484,7 +484,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 
 		local r = this.Math.rand(0, 2);
 
-		if (bro.getBackground().isOutlawBackground())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.improveMood(0.5, "Finds perverse joy in your actions");
 
@@ -493,7 +493,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
 			}
 		}
-		else if (bro.getBackground().isCrusaderRecruitBackground())
+		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
 		{
 			bro.worsenMood(1.5, "Is deeply disturbed by you");
 

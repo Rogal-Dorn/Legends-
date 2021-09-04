@@ -32,7 +32,7 @@ this.cripple_southern_background <- this.inherit("scripts/skills/backgrounds/cri
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.SouthernFemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}	
 
@@ -70,7 +70,7 @@ this.cripple_southern_background <- this.inherit("scripts/skills/backgrounds/cri
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}	
 
