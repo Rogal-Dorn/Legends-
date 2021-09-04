@@ -1,8 +1,6 @@
 local gt = this.getroottable();
 
-::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.3");
-
-gt.Const.MSU <- {};
+::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.4");
 
 gt.MSU <- {};
 
@@ -15,24 +13,33 @@ gt.MSU <- {};
 		Enemy = 3
 	}
 
-	gt.Const.MSU.modInjuries();
-	delete gt.Const.MSU.modInjuries;
-	gt.Const.MSU.setupDamageTypeSystem();
-	delete gt.Const.MSU.setupDamageTypeSystem;
-	gt.Const.MSU.setupTileUtils();
-	delete gt.Const.MSU.setupTileUtils;
+	gt.MSU.modInjuries();
+	delete gt.MSU.modInjuries;
+	gt.MSU.setupDamageTypeSystem();
+	delete gt.MSU.setupDamageTypeSystem;
+	gt.MSU.setupTileUtils();
+	delete gt.MSU.setupTileUtils;
 	gt.MSU.setupLoggingUtils();
 	delete gt.MSU.setupLoggingUtils;
 	gt.MSU.setupStringUtils();
 	delete gt.MSU.setupStringUtils;
 
-	gt.Const.MSU.modActor();
-	delete gt.Const.MSU.modActor;
-	gt.Const.MSU.modSkillContainer();
-	delete gt.Const.MSU.modSkillContainer;
-	gt.Const.MSU.modSkill();
-	delete gt.Const.MSU.modSkill;
-	gt.Const.MSU.modWeapon();
-	delete gt.Const.MSU.modWeapon;
-	
+	gt.MSU.modItemContainer();
+	delete gt.MSU.modItemContainer;
+
+	gt.MSU.modSkills();
+	delete gt.MSU.modSkills;
+
+	gt.MSU.modAssetManager();
+	delete gt.MSU.modAssetManager;
+
+	gt.MSU.modActor();
+	delete gt.MSU.modActor;
+	gt.MSU.modSkillContainer();
+	delete gt.MSU.modSkillContainer;
+	gt.MSU.modSkill();
+	delete gt.MSU.modSkill;
+	gt.MSU.modWeapon();
+	delete gt.MSU.modWeapon;
+
 });

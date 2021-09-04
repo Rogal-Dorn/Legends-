@@ -37,10 +37,10 @@ this.legend_southern_cloth_headress <- this.inherit("scripts/items/helmets/helme
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.Sprite = "southern_cloth_headress_0" + variant;
-		this.m.SpriteDamaged = "southern_cloth_headress_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "southern_cloth_headress_0" + variant + "_dead";
+		this.m.SpriteDamaged = "southern_cloth_headress_" + variant + "_damaged";
+		this.m.SpriteCorpse = "southern_cloth_headress_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/icon_southern_cloth_headress_0" + variant + ".png";
+		this.m.Icon = "helmets/icon_southern_cloth_headress_" + variant + ".png";
 	}
 
 });

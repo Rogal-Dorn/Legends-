@@ -29,11 +29,11 @@ this.legend_earings <- this.inherit("scripts/items/helmets/helmet", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "earings_0" + variant;
-		this.m.SpriteDamaged = "earings_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "earings_0" + variant + "_dead";
+		this.m.Sprite = "earings_" + variant;
+		this.m.SpriteDamaged = "earings_" + variant + "_damaged";
+		this.m.SpriteCorpse = "earings_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/icon_earings_0" + variant + ".png";
+		this.m.Icon = "helmets/icon_earings_" + variant + ".png";
 	}
 
 });
