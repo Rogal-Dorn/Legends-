@@ -1,8 +1,7 @@
 this.perk_quick_hands <- this.inherit("scripts/skills/skill", {
 	//THIS PERK IS MODIFIED BY MSU, CHECK msu_mod_skills.nut for up to date code (I have mirrored it here 2021/09/04)
-	m = {
-		IsSpent = false
-	},
+
+	m = {},
 	function create()
 	{
 		this.m.ID = "perk.quick_hands";
@@ -11,32 +10,38 @@ this.perk_quick_hands <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/perk_39.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk | this.Const.SkillOrder.Any;
-		this.m.ItemActionOrder = this.Const.ItemActionOrder.Any
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
 
-	function isHidden()
+	function onUpdate( _properties )
 	{
-		return this.m.IsSpent;
-	}
-
-	function getItemActionCost( _item )
-	{
-		return this.m.IsSpent ? null : 0;
-	}
-
-	function onPayForItemAction( _skill, _items )
-	{
-		if (_skill == this)
+		if (this.getContainer().getActor().isPlayerControlled() && this.getContainer().getActor().isPlacedOnMap() && this.getContainer().getActor().getItems().m.ActionCost == 0)
 		{
-			this.m.IsSpent = true;
+			this.m.IsHidden = false;
+		}
+		else
+		{
+			this.m.IsHidden = true;
 		}
 	}
 
-	function onTurnStart()
+	function onCombatStarted()
 	{
-		this.m.IsSpent = false;
+		this.skill.onCombatStarted();
+
+		if (this.getContainer().getActor().isPlayerControlled())
+		{
+			this.m.IsHidden = false;
+		}
 	}
+
+	function onCombatFinished()
+	{
+		this.skill.onCombatFinished();
+		this.m.IsHidden = true;
+	}
+
 });
+
