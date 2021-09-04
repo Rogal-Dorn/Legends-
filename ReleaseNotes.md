@@ -5710,7 +5710,7 @@ these changes influence recruitment for specfic origins. They are being rolled o
 - Blacksmith is now marked as a noble (they serve nobles and armies)
 - Swordmaster is now educated (due to their experience and wisdom)
 
-*Integrates MAR (Medium Armor Rework)*
+*Integrates MAR (Medium Armor Rework by  LordMidas and Lukas Tenschouko)*
 Balance (tier 2) - Gain up to +15 Melee and +5 Ranged Defense. The bonus increases as you wear armor of heavier weight (penalty to Maximum Fatigue) but slowly drops when your Current Initiative is less than twice your armor weight. This drop is faster for heavier armors.
 
 Perfect Fit (tier 3) - The penalty to Initiative from head and body armor is reduced by 30% and all skills build up 15% less Fatigue. These bonuses drop exponentially when your armor weight (penalty to Maximum Fatigue) is greater than half of your Maximum Fatigue after gear.
@@ -5721,8 +5721,9 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 **For Modders**
 - Adds new BackgroundType system which replaces isNoble/isCultist/etc, read the pinned post in #submod-chat for more info (THIS WILL BREAK MODS THAT MODIFY BACKGROUNDS)
-- Adds new WeaponType system which automates this.m.Categories creation for weapons and allows for SIGNIFICANT simplification of how perks like Legends weapon specialist skills work (look at perk_legend_specialist_butcher_damage or similar) as well as increased reliability
+- Adds new BackgroundType system which replaces isNoble/isCultist/etc, read the pinned post in #submod-chat for more info (THIS WILL BREAK MODS THAT MODIFY BACKGROUNDS)
 - Now requires and integrates the Modding Standards & Utilities (MSU) mod. Submodders should get in touch for important changes and questions. A documentation will be released soon(tm).
+- MSU adds a new WeaponType system which automates this.m.Categories creation for weapons and allows for SIGNIFICANT simplification of how perks like Legends weapon specialist skills work (look at perk_legend_specialist_butcher_damage or similar) as well as increased reliability
 
 **Fixes**
 - Fixes any inconsistencies between Weapon Categories and specialist perks thanks to new WeaponType System.

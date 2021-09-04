@@ -31,7 +31,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.BackgroundType = this.Const.BackgroundType.Crusader this.Const.BackgroundType.Noble;
+		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Noble;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
