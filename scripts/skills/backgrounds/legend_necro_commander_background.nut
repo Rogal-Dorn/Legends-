@@ -88,8 +88,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendRust,
 					this.Const.Perks.PerkDefs.LegendMedPackages,
 					this.Const.Perks.PerkDefs.LegendPrepareBleed,
-					this.Const.Perks.PerkDefs.LegendPrepareGraze,
-					this.Const.Perks.PerkDefs.LegendRoster1
+					this.Const.Perks.PerkDefs.LegendPrepareGraze
 				],
 				[
 					this.Const.Perks.PerkDefs.Backstabber,
@@ -100,8 +99,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendBloodbath,
-					this.Const.Perks.PerkDefs.LegendRoster2
+					this.Const.Perks.PerkDefs.LegendBloodbath
 				],
 				[
 					this.Const.Perks.PerkDefs.SpecDagger,
@@ -123,8 +121,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
-					this.Const.Perks.PerkDefs.LegendSlaughter,
-					this.Const.Perks.PerkDefs.LegendRoster3
+					this.Const.Perks.PerkDefs.LegendSlaughter
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendClarity,
@@ -133,8 +130,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 					this.Const.Perks.PerkDefs.LegendHidden,
 					this.Const.Perks.PerkDefs.LegendChanneledPower,
-					this.Const.Perks.PerkDefs.LegendPossession,
-					this.Const.Perks.PerkDefs.LegendRoster5
+					this.Const.Perks.PerkDefs.LegendPossession
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
@@ -143,8 +139,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendBalance,
 					this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh
 				],
 				[],
 				[],
@@ -177,8 +172,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendRust,
 					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendPrepareGraze,
-					this.Const.Perks.PerkDefs.LegendMedPackages,
-					this.Const.Perks.PerkDefs.LegendRoster1
+					this.Const.Perks.PerkDefs.LegendMedPackages
 				],
 				[
 					this.Const.Perks.PerkDefs.Backstabber,
@@ -190,8 +184,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendBloodbath,
-					this.Const.Perks.PerkDefs.LegendRoster2
+					this.Const.Perks.PerkDefs.LegendBloodbath
 				],
 				[
 					this.Const.Perks.PerkDefs.SpecDagger,
@@ -213,8 +206,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
-					this.Const.Perks.PerkDefs.LegendSlaughter,
-					this.Const.Perks.PerkDefs.LegendRoster3
+					this.Const.Perks.PerkDefs.LegendSlaughter
 				],
 				[
 					this.Const.Perks.PerkDefs.LegendClarity,
@@ -224,8 +216,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 					this.Const.Perks.PerkDefs.LegendHidden,
 					this.Const.Perks.PerkDefs.LegendChanneledPower,
-					this.Const.Perks.PerkDefs.LegendPossession,
-					this.Const.Perks.PerkDefs.LegendRoster5
+					this.Const.Perks.PerkDefs.LegendPossession
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
@@ -237,8 +228,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFieldTriage,
 					this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh,
-					this.Const.Perks.PerkDefs.LegendRoster6
+					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh
 				],
 				[],
 				[],

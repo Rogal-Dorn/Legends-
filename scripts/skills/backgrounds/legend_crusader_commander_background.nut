@@ -77,8 +77,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
-				this.Const.Perks.PerkDefs.Adrenalin,
-				this.Const.Perks.PerkDefs.LegendRoster1
+				this.Const.Perks.PerkDefs.Adrenalin
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -105,8 +104,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendSpecialistShieldPush,
-				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecMace,
@@ -119,7 +117,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.SpecCrossbow,
 				this.Const.Perks.PerkDefs.ShieldExpert,
-				this.Const.Perks.PerkDefs.LegendRoster4
 
 			],
 			[
@@ -134,7 +131,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendSpecialistShieldSkill,
 				this.Const.Perks.PerkDefs.LegendToolsSpares,
 				this.Const.Perks.PerkDefs.LegendPrayerOfFaith,
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
@@ -146,7 +142,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife,
 				this.Const.Perks.PerkDefs.InspiringPresence,
-				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,

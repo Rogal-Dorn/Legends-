@@ -101,7 +101,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BrothersMax = 8;
+		this.m.RosterTier = 1;
 	}
 
 	function onCombatFinished()

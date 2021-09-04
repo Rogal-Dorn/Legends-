@@ -96,7 +96,6 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
-				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			// Level 5
 			[
@@ -107,7 +106,6 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			// Level 6
 			[
@@ -136,7 +134,6 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFieldTriage,
-				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[],
 			[],

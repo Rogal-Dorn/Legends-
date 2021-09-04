@@ -121,8 +121,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
 				this.Const.Perks.PerkDefs.LegendHidden,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendGrapple,
@@ -136,7 +135,6 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
-				this.Const.Perks.PerkDefs.LegendRoster4
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendChoke,
@@ -149,7 +147,6 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMatchingSet,
 				this.Const.Perks.PerkDefs.LegendSecondWind
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendAssassinate,
@@ -163,7 +160,6 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.PerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
-				this.Const.Perks.PerkDefs.LegendRoster6
 			]
 		];
 	}

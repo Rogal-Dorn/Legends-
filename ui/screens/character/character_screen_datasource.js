@@ -80,7 +80,8 @@ var CharacterScreenDatasource = function(_isTacticalMode)
     this.mFormationIndex = 0;
     this.mFormationName = "";
 
-    this.mMaxBrothers = 27;
+    this.mMaxBrothers = 25;
+    this.mFrontlineData = [25, 25];
 	// init the datasource
 	this.init();
 };
@@ -280,6 +281,8 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
 
     if ('maxBrothers' in _data)
         this.mMaxBrothers = _data.maxBrothers;
+   	if ('frontlineData' in _data)
+   		this.mFrontlineData = _data.frontlineData;
 
     if ('stashSpaceUsed' in _data)
         this.mStashSpaceUsed = _data.stashSpaceUsed;
@@ -1698,6 +1701,11 @@ CharacterScreenDatasource.prototype.updateFormationName = function(_src, _name)
 CharacterScreenDatasource.prototype.getMaxBrothers = function ()
 {
 	return this.mMaxBrothers;
+}
+
+CharacterScreenDatasource.prototype.getFrontlineData = function()
+{
+	return this.mFrontlineData;
 }
 
 /*CharacterScreenDatasource.prototype.notifyBackendQueryBrothersList = function ()
