@@ -8,7 +8,7 @@ this.legend_mage_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Description = "While the nature of its construction remains a myth, this unique mage's swordstaff is permeated with magic.";
 		this.m.IconLarge = "weapons/melee/legend_swordstaff_01_legendary_01.png";
 		this.m.Icon = "weapons/melee/legend_swordstaff_01_legendary_01_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Spear | this.Const.Items.WeaponType.MagicStaff;
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Spear | this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Legendary;

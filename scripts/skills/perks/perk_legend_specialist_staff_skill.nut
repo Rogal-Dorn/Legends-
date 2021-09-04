@@ -17,23 +17,19 @@ this.perk_legend_specialist_staff_skill <- this.inherit("scripts/skills/skill", 
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
+		if (item != null)
 		{
-			return;
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff, true) || item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff, true))
+			{
+				_properties.MeleeDefense += 16;
+				_properties.RangedDefense += 16;
+			}
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.Musical))
+			{
+				_properties.MeleeDefense += 8;
+				_properties.RangedDefense += 8;
+			}
 		}
-		if (item.getID() == "weapon.legend_staff" || item.getID() == "weapon.legend_tipstaff" || item.getID() == "weapon.legend_staff_gnarled" || item.getID() == "weapon.legend_mystic_staff" || item.getID() == "weapon.legend_staff_vala")
-		{
-			_properties.MeleeDefense += 16;
-			_properties.RangedDefense += 16;
-		}
-
-		if (item.getID() == "weapon.legend_swordstaff" || item.getID() == "weapon.legend_named_swordstaff" || item.getID() == "weapon.legend_named_slingstaff" || item.getID() == "weapon.legend_slingstaff" || item.getID() == "weapon.legend_mage_swordstaff" || item.getID() == "weapon.lute" || item.getID() == "weapon.named_lute" || item.getID() == "weapon.drum_item" || item.getID() == "weapon.legend_drum")
-		{
-			_properties.MeleeDefense += 8;
-			_properties.RangedDefense += 8;
-		}
-
-
 	}
 
 });

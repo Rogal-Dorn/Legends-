@@ -6,7 +6,6 @@ this.legend_tipstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_tipstaff";
 		this.m.Name = "Tipstaff";
 		this.m.Description = "A sturdy staff with metal tips, good for walking and whacking";
-		this.m.Categories = "Staff, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_staff_02.png";
 		this.m.Icon = "weapons/melee/legend_staff_02_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Staff;

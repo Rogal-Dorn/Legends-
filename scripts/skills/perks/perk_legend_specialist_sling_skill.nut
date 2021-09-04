@@ -15,10 +15,8 @@ this.perk_legend_specialist_sling_skill <- this.inherit("scripts/skills/skill", 
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if (item != null && (item.getID() == "weapon.legend_sling" || item.getID() == "weapon.legend_slingstaff" || item.getID() == "weapon.staff_sling" || item.getID() == "weapon.nomad_sling"))
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null && item.isWeaponType(this.Const.Items.WeaponType.Sling))
 		{
 			_properties.RangedSkill += 12;
 			if (item.getID() != "weapon.legend_slingstaff")
