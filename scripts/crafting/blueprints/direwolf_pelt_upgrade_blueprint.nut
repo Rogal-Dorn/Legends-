@@ -5,7 +5,14 @@ this.direwolf_pelt_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.blueprint.create();
 		this.m.ID = "blueprint.direwolf_pelt_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/direwolf_pelt_upgrade");
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade");
+		}
+		else
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/direwolf_pelt_upgrade");
+		}
 		this.m.Cost = 250;
 		local ingredients = [
 			{

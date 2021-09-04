@@ -59,7 +59,7 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(3, 5);
-		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Crusader;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];

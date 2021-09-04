@@ -9,8 +9,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Name = "Druid Commander";
 		this.m.Icon = "ui/backgrounds/druid_background.png";
 		this.m.BackgroundDescription = "Druids are from the wild lands, defenders of nature.";
-		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
-		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
+		this.m.GoodEnding = "While the %companyname% visited a settlement in the far north %name% bit off more than they could chew with an Unhold contract. Dazed and injured they were taken by a particularly large Unhold for unknown purposes. Months later %name% was found eating, sleeping and even fighting with the giants to defend their home. Sellswords today still joke about the 'giant farker' in the woods, but who is the pet and who is the master is quite the mystery to this day.";
+		this.m.BadEnding = "%name% stayed for a little while longer with the company after your departure, then without notice they simply vanished from the company records entirely. Some say they were tired of what the company had become - obsessed with gold and trinkets and straying too far from what it was founded on.";
 		this.m.HiringCost = 10000;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
@@ -51,15 +51,15 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			"the Feral",
 			"the Wild",
 			"the Barbarian",
-			"The Green thumb",
+			"the Green thumb",
 			"Oakheart",
 			"Treebeard",
-			"The flower",
-			"The Pollenator",
+			"the flower",
+			"the Pollenator",
 			"Nature's Wrath",
-			"The Bear",
-			"The Wolf",
-			"The Sapling"
+			"the Bear",
+			"the Wolf",
+			"the Sapling"
 		];
 		this.m.Faces = this.Const.Faces.AfricanMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
@@ -109,7 +109,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.LegendAlert
+				this.Const.Perks.PerkDefs.LegendAlert,
+				this.Const.Perks.PerkDefs.LegendRoster1
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendScryTrance,
@@ -135,7 +136,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.LegendSecondWind
+				this.Const.Perks.PerkDefs.LegendSecondWind,
+				this.Const.Perks.PerkDefs.LegendRoster2
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
@@ -159,7 +161,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
+				this.Const.Perks.PerkDefs.LegendRoster3
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
@@ -184,7 +187,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendFreedomOfMovement
+				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
+				this.Const.Perks.PerkDefs.LegendRoster5
 
 			]
 		];
