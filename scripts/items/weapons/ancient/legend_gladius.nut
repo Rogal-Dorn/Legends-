@@ -6,9 +6,9 @@ this.legend_gladius <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_gladius";
 		this.m.Name = "Ancient Gladius";
 		this.m.Description = "A straight blade of ancient origin. The grip and pomel are very plain, from a simpler time.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_gladius_01.png";
 		this.m.Icon = "weapons/melee/legend_gladius_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

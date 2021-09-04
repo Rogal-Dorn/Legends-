@@ -6,9 +6,9 @@ this.legend_meat_hacker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_meat_hacker";
 		this.m.Name = "Meat Hacker";
 		this.m.Description = "A long shard of sharpened rock firmly wedged into a massive bone. Not well suited for human hands";
-		this.m.Categories = "Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_meat_hacker_01.png";
 		this.m.Icon = "weapons/melee/legend_meat_hacker_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAoE = true;

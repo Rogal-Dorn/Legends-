@@ -10,7 +10,7 @@ this.named_lute <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_lute";
 		this.m.NameList = this.Const.Strings.LuteNames;
 		this.m.Description = "A beautiful lute with a ornate body and strong neck. The artisan who made this instrument certainly knew what they were doing.";
-		this.m.Categories = "Musical Instrument, Mace, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

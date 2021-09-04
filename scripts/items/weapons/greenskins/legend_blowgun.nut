@@ -7,12 +7,12 @@ this.legend_blowgun <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_blowgun";
 		this.m.Name = "Blowgun";
 		this.m.Description = "A hollowed out reed used to shoot (toxic) darts.";
-		this.m.Categories = "Crossbow, One-Handed";
 		this.m.IconLarge = "weapons/ranged/blowgun_01.png";
 		this.m.Icon = "weapons/ranged/blowgun_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Crossbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

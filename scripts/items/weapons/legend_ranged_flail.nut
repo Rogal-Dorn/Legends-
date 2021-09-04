@@ -6,9 +6,9 @@ this.legend_ranged_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_pole_flail";
 		this.m.Name = "Pole Flail";
 		this.m.Description = "A separate striking head attached to a pole by a chain. A rather unpredictable weapon, but useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_flail_ranged_02.png";
 		this.m.Icon = "weapons/melee/legend_flail_ranged_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
