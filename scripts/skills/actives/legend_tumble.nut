@@ -82,11 +82,6 @@ this.legend_tumble <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsFleetfooted ? 0.5 : 1.0;
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		this.Tactical.getNavigator().teleport(_user, _targetTile, null, null, false);

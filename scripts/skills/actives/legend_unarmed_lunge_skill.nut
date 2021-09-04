@@ -110,13 +110,13 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (this.getContainer().getActor().getCurrentProperties().IsFleetfooted)
+		if (this.getContainer().hasSkill("perk.legend_tumble"))
 		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Costs [color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] Action Point due to being Fleet Footed"
+				text = "Costs [color=" + this.Const.UI.Color.PositiveValue + "]-1[/color] Action Point due to Tumble"
 			});
 		}
 
@@ -177,16 +177,10 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if (_properties.IsFleetfooted)
-		{
-			this.m.ActionPointCost -= 1;
-		}
-
 		if (_properties.IsSpecializedInFists)
 		{
 			this.m.ActionPointCost -= 1;
 		}
-
 	}
 
 	function onUse( _user, _targetTile )
