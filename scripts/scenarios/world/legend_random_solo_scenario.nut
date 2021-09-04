@@ -104,7 +104,6 @@ this.legend_random_solo_scenario <- this.inherit("scripts/scenarios/world/starti
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BrothersMax = 25;
 	}
 
 	function onCombatFinished()

@@ -134,7 +134,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BrothersMax = 6;
+		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsVala", true);
 	}
 

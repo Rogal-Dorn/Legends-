@@ -92,6 +92,24 @@ this.world_state <- this.inherit("scripts/states/state", {
 		return this.m.Player;
 	}
 
+	function getBrothersInReserves()
+	{
+		local count = 0;
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (bro.isInReserves())
+			{
+				count++;
+			}
+		}
+		return count;
+	}
+
+	function getBrothersInFrontline()
+	{
+		return this.World.getPlayerRoster().getSize() - this.getBrothersInReserves();
+	}
+
 	function getCurrentTown()
 	{
 		return this.m.LastEnteredTown == null ? null : this.m.LastEnteredTown.get();

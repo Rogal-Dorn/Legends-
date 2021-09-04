@@ -229,45 +229,27 @@ this.asset_manager <- {
 
 	function getBrothersMax()
 	{
-		local max = this.m.BrothersMax;
-		foreach( bro in this.World.getPlayerRoster().getAll() )
+		if (this.World.Assets.getOrigin().getRosterTier() == 6)
 		{
-			if (bro.getSkills().hasSkill("perk.legend_roster_1"))
-			{
-				max += 1;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_2"))
-			{
-				max += 2;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_3"))
-			{
-				max += 3;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_4"))
-			{
-				max += 4;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_5"))
-			{
-				max += 5;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_6"))
-			{
-				max += 6;
-			}
-			if (bro.getSkills().hasSkill("perk.legend_roster_7"))
-			{
-				max += 7;
-			}
+			return this.Const.RosterSize[6];
 		}
-		return this.Math.min(25, max);
+		
+		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local max = this.Const.RosterSize[tier];
+		
+		return max; 
 	}
 
 	function getBrothersMaxInCombat()
 	{
+		if (this.World.Assets.getOrigin().getRosterTier() == 6)
+		{
+			return this.Const.FrontlineSize[6];
+		}
+		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local max = this.Const.FrontlineSize[tier];
 
-		return this.Math.min(25, this.m.BrothersMaxInCombat);
+		return max;
 	}
 
 	function getBrothersScaleMax()
@@ -2562,6 +2544,8 @@ this.asset_manager <- {
 		{
 			this.m.Origin = this.Const.ScenarioManager.getScenario("scenario.tutorial");
 		}
+
+		this.logInfo(this.getOrigin().getID());
 
 		if (_in.getMetaData().getVersion() >= 41)
 		{

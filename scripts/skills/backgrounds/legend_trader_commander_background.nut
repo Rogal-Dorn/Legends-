@@ -62,8 +62,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.LegendComposure
 
 			],
 			[
@@ -72,8 +71,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendDangerPay,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendDangerPay
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecCrossbow,
@@ -84,7 +82,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.LegendMedPackages,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendRoster4
 
 			],
 			[
@@ -94,7 +91,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
-				this.Const.Perks.PerkDefs.LegendRoster5
 			],
 			[
 				this.Const.Perks.PerkDefs.HeadHunter,
@@ -103,7 +99,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendDangerPay,
 				this.Const.Perks.PerkDefs.LegendPaymaster,
-				this.Const.Perks.PerkDefs.LegendRoster6
 			],
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
@@ -112,7 +107,6 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendSkillfulStacking,
 				this.Const.Perks.PerkDefs.LegendBribe,
 				this.Const.Perks.PerkDefs.LegendBarterGreed
-				this.Const.Perks.PerkDefs.LegendRoster7
 			],
 			[],
 			[],

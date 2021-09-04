@@ -738,4 +738,3 @@ gt.Const.EntityIcon <- [
 	"kobold_wolfrider_orientation",
 	"mummy_priest_orientation"
 ];
-
