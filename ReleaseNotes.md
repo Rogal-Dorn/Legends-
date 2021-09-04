@@ -5651,3 +5651,44 @@ Fixes named lute being one-handed
 Makes matching set effect visible as a status effect (like nimble and battleforged)
 Other minor fixes
 A lot of Typos and Syntax fixes in this build, hopefully no more missing full stops
+
+
+## 15.0.1.20
+Ranger origin rework;
+Druid scenario now changed to "Legacy" - is currently marked for deletion or complete rework and is no longer supported. Druid now merged into ranger origin.
+
+Difficulty dropped from 2 to 1
+Now starts with a Druid - the druid and ranger are friends and both count as player characters. If one dies the game will continue. If both die the game will end.
+Druid and ranger are both commanders and share the burden of increasing roster size. If one dies the other may still expand the company but only at half the total sum.
+Intro re-written
+Druid now has a good and bad ending
+Starting druid and ranger backgrounds for this scenario have new flavour text
+All outdoor recruits gain pathfinder and cost 25% less
+Recruits that do not like the outdoors will instead have the default baseplate and not get pathfinder. They also have a 25% increased cost
+Small chance of finding rangers and druids in recruitment pools
+Average chance of finding a herbalist in recruitment pools
+Good chance of finding wildmen/women in recruitment pools
+
+Recruitment;=
+If a background is tagged as a ranger or druid they will gain 25% less upkeep and cost when hired.
+Everyone else costs 25% more
+Backgrounds that are not ranger or druid tagged will not gain pathfinder
+  - see the legends wiki on backgrounds to see who is tagged as a ranger or druid
+
+Lone wolf rework;
+Lone wolf now has 16 recruit slots, not 12.
+Lone wolf now starts with the "favoured enemy: swordmaster" perk
+Squires, blacksmiths and hedge knights spawn more frequently
+Blacksmiths, squires and hedge knights have a 15% upkeep and purchase reduction
+
+Throwing axes;
+Normal/named: armour damage increased from 1.1 to 1.3
+Heavy: armour damage increased from 1.15 to 1.35
+ - this should make throwing axes more viable at destroying armour rather than being inferior to throwing javelins
+
+Background type changes;
+- these changes influence recruitment for specfic origins. They are being rolled out slowly so there will be more to come.
+Nomad is now a ranger and outlaw recruit
+Blacksmith, Inventor and Swordmaster are no longer ranger recruits
+Blacksmith is now marked as a noble (they serve nobles and armies)
+Swordmaster is now educated (due to their experience and wisdom)
