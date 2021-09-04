@@ -1965,7 +1965,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		b.Initiative = 115;
 		this.setName(this.Const.Tactical.Common.getRandomPlayerName());
 		local background = this.new("scripts/skills/backgrounds/" + this.Const.CharacterFemaleBackgrounds[this.Math.rand(0, this.Const.CharacterFemaleBackgrounds.len() - 1)]);
-		background.setScenarioOnly(true);
+		background.addBackgroundType(this.Const.BackgroundType.Scenario);
 		this.m.Skills.add(background);
 		background.buildDescription();
 		background.setAppearance();
@@ -2043,7 +2043,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		*/
 		background.buildDescription();
 
-		if (background.isFemaleBackground())
+		if (background.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			this.setGender(1);
 		}
@@ -2151,7 +2151,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
 
-		if (this.getBackground() != null && this.getBackground().isUntalented() && !_force)
+		if (this.getBackground() != null && this.getBackground().isBackgroundType(this.Const.BackgroundType.Untalented) && !_force)
 		{
 			return;
 		}
@@ -2652,7 +2652,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local volume = 1.0;
 
-		if (this.getBackground() != null && this.getBackground().isFemaleBackground())
+		if (this.getBackground() != null && this.getBackground().isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			if (this.m.VoiceSet > this.Const.WomanSounds.len() - 1)
 			{
@@ -2971,7 +2971,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Background.adjustHiringCostBasedOnEquipment();
 			this.m.Background.buildDescription(true);
 
-			if (this.m.Background.isFemaleBackground())
+			if (this.m.Background.isBackgroundType(this.Const.BackgroundType.Female))
 			{
 				this.m.Gender = 1;
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);

@@ -68,7 +68,7 @@ this.shortsighted_shoots_bro_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (!bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.short_sighted") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble) && bro.getSkills().hasSkill("trait.short_sighted") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				candidates_shortsighted.push(bro);
 			}

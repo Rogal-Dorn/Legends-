@@ -105,7 +105,7 @@ this.corpses_in_forest_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (!bro.getBackground().isOffendedByViolence() || bro.getLevel() >= 7)
+					if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getLevel() >= 7)
 					{
 						continue;
 					}

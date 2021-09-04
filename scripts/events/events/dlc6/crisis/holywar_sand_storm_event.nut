@@ -63,7 +63,7 @@ this.holywar_sand_storm_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isCultist())
+					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 					{
 						continue;
 					}

@@ -118,7 +118,7 @@ this.addict_steals_potion_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (!bro.getBackground().isOffendedByViolence() || bro.getLevel() >= 7)
+					if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getLevel() >= 7)
 					{
 						continue;
 					}

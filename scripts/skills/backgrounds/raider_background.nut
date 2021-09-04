@@ -48,8 +48,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Beards = this.Const.Beards.Raider;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.IsCombatBackground = true;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -103,7 +102,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "A former raider, %name% fit in well with the %companyname% and proved herself an excellent fighter. Having saved a veritable mountain of crowns, she retired from the company and returned from whence she came. She was last seen sailing a riverboat toward a small village.";
 		this.m.BadEnding = "As the %companyname% speedily declined, %name% the raider departed from the company and went on her own way again. She returned to raiding, taking her greedy violence along the shorelines of river villages. You\'re not sure if it\'s true, but word has it that she was impaled with a pitchfork by a stable boy. Word has it that the town hoisted her body parts along the outer walls as a warning to future would-be raiders.";
 	}

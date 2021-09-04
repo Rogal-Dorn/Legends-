@@ -32,9 +32,7 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.Ethnicity = 0;
 		this.m.Level = this.Math.rand(1, 2);
-		this.m.IsCombatBackground = true;
-		this.m.IsFemaleBackground = true;
-		this.m.IsCrusaderRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Female | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];

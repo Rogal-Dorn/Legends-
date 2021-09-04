@@ -202,7 +202,7 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
                 continue;
             }
 
-			if (bro.getDailyCost() < lowestPay && bro.getBackground().isNoble())
+			if (bro.getDailyCost() < lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
 				lowestNoble = bro;
 				lowestPay = bro.getDailyCost();
@@ -218,7 +218,7 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getDailyCost() > lowestPay && bro.getBackground().isLowborn())
+			if (bro.getDailyCost() > lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
 				lowborn_candidates.push(bro);
 			}

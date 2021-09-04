@@ -90,7 +90,7 @@ this.oldguard_becomes_drunkard_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isCultist() || bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted) || bro.getBackground().getID() == "background.slave")
 			{
 				continue;
 			}

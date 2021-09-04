@@ -515,7 +515,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 				freePerkPointsSpentFromOrigin = 1;
 				break;
 			case "scenario.trader":
-				if (!this.getBackground().isCombatBackground())
+				if (!this.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 					perks = perks - 1;

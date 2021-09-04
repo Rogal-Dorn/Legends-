@@ -56,7 +56,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.IsCombatBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0];
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];
@@ -123,7 +123,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

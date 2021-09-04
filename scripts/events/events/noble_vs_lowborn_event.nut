@@ -163,7 +163,7 @@ this.noble_vs_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() < 7 && bro.getBackground().isNoble())
+			if (bro.getLevel() < 7 && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
 				noble_candidates.push(bro);
 			}
@@ -178,7 +178,7 @@ this.noble_vs_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (!bro.getSkills().hasSkill("trait.hesitant") && bro.getBackground().isLowborn() && bro.getBackground().getID() != "background.slave")
+			if (!bro.getSkills().hasSkill("trait.hesitant") && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && bro.getBackground().getID() != "background.slave")
 			{
 				lowborn_candidates.push(bro);
 			}

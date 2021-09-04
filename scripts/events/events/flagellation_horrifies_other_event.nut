@@ -101,7 +101,7 @@ this.flagellation_horrifies_other_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() != "background.flagellant" && bro.getBackground().getID() != "background.monk_turned_flagellant" && (bro.getBackground().isOffendedByViolence() || bro.getSkills().hasSkill("trait.fainthearted")))
+			if (bro.getBackground().getID() != "background.flagellant" && bro.getBackground().getID() != "background.monk_turned_flagellant" && (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getSkills().hasSkill("trait.fainthearted")))
 			{
 				candidate_other.push(bro);
 			}

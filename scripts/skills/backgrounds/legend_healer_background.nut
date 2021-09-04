@@ -71,6 +71,8 @@ this.legend_healer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.Level = 2;
 
+		this.m.BackgroundType = this.Const.BackgroundType.Educated;
+
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[3];

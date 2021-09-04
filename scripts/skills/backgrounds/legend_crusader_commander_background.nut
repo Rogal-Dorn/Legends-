@@ -53,9 +53,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 
 
 		this.m.Level = 3;
-		this.m.IsCombatBackground = true;
-		this.m.IsOffendedByViolence = true;
-		this.m.IsUntalented = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Untalented;
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -187,7 +185,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

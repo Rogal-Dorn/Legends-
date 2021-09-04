@@ -361,7 +361,7 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 
 				foreach( bro in playerRoster )
 				{
-					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 33)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && this.Math.rand(1, 100) <= 33)
 					{
 						bro.improveMood(0.5, "The company\'s champion won an impressive duel");
 					}

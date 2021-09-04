@@ -251,7 +251,7 @@ this.raid_farmstead_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 75)
+					else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && this.Math.rand(1, 100) <= 75)
 					{
 						bro.worsenMood(1.0, "Was appalled by the company\'s conduct");
 
@@ -305,7 +305,7 @@ this.raid_farmstead_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.bloodthirsty") || !bro.getBackground().isOffendedByViolence())
+			if (bro.getSkills().hasSkill("trait.bloodthirsty") || !bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence))
 			{
 				candidates.push(bro);
 			}

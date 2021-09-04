@@ -50,8 +50,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Bodies = this.Const.Bodies.Thick;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMin;
-		this.m.IsOutlawBackground = true;
-		this.m.IsPerformingBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
@@ -98,7 +97,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleThick;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "It was perhaps a risk to take a gambler like %name% into your ranks. Now, many days later it\'s obvious you made the right choice. Last you heard, she was still with the company and uses her earnings to enrich her habits. Rumor has it that, through all her winnings, she\'s secretly become one of the richest women in all the land. You think it\'s a bunch of hogwash, but a surprising number of mayors have become suddenly lax on gaming...";
 		this.m.BadEnding = "%name% the gambler retired from the declining company and returned to her gambling ways. She quickly acquired great debts she could not pay. You saw her begging on a street corner with one of her hands missing and gaps in her teeth. You dropped a few crowns into her tin and said a few words, but she did not recognize you.";
 
