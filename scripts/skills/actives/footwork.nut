@@ -123,12 +123,6 @@ this.footwork <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsFleetfooted ? 0.5 : 1.0;
-		this.m.ActionPointCost = _properties.IsFleetfooted ? 1 : 3;
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		this.Tactical.getNavigator().teleport(_user, _targetTile, null, null, false);
