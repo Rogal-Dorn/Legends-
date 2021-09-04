@@ -22,38 +22,22 @@ this.legend_vala_premonition <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		if (!this.isHidden())
-		{
-			local bonus = this.Math.round(11.0 + ((this.getContainer().getActor().getLevel() * 22.0) / this.Const.LevelXP.len()));
+		local bonus = this.Math.round(11.0 + ((this.getContainer().getActor().getLevel() * 22.0) / this.Const.LevelXP.len()));
 
-			if (bonus > 33)
-			{
-				bonus = 33;
-			}
-
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = this.getName()
-				},
-				{
-					id = 2,
-					type = "description",
-					text = this.getDescription()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
-				}
-			];
-		}
-		else
+		if (bonus > 33)
 		{
-			return;
+			bonus = 33;
 		}
+		local ret = this.skill.getTooltip();
+
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance to have any attacker require two successful attack rolls in order to hit."
+		});
+		
+		return ret;
 	}
 
 

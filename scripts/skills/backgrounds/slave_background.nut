@@ -150,7 +150,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 	function onBuildDescription()
 	{
-		if(this.m.IsFemaleBackground == true)
+		if(this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 
 		return "{You can tell %name% is a northerner simply by appearance. Servitude in the south has come by way of being indebted to the Gilder transgressed against through faith in the heretical old gods. | %name% bears the features of a northerner, easily capturing the eye of passing men or women. It also happened to catch the attention of a priest who claimed the northerner was indebted to the Gilder and promptly sold the interloper into servitude. | A northerner, %name% was once a soldier sent south on patrol. Lost in the desert, troop slowly dwindling until %name% was the last survivor. Caught by slavers and brought back from the brink, and of course sold into servitude once %name%\'s healed body was worth something. | Despite being a northerner and thus easily spotted, %name% unwisely sought the criminal life and was caught thieving pomegranates from a Vizier\'s garden. %name%\'s lucky to have a head, but now serves as a commodity of labor on the slave markets.}";

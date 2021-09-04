@@ -19,7 +19,6 @@ this.perk_crippling_strikes <- this.inherit("scripts/skills/skill", {
 
 	}
 
-	
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null)

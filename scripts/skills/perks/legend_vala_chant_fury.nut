@@ -47,12 +47,12 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		if (actor.getMainhandItem() == null)
 		{
 			return false;
 		}
 
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
+		if (actor.getMainhandItem().getID() != "weapon.legend_staff_vala")
 		{
 			return false;
 		}
@@ -64,32 +64,16 @@ this.legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
+		local ret = this.getDefaultUtilityTooltip();
 
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Until the start of her next turn all allies within 3 tiles of the Vala receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range. Being closer to the Vala increases bonus amount and retaliation chance."
-			},
-		];
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Until the start of her next turn all allies within 3 tiles of the Vala receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range. Being closer to the Vala increases bonus amount and retaliation chance."
+		});
 
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
+		if (actor.getMainhandItem() == null || (actor.getMainhandItem() != null && actor.getMainhandItem() != "weapon.legend_staff_vala"))
 		{
 			ret.push({
 				id = 9,

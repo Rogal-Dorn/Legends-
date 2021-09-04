@@ -12,7 +12,6 @@ this.perk_crusher <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-
-
+	
 });
 

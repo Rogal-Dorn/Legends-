@@ -109,7 +109,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{When one needs tools repaired but cannot afford a blacksmith, they seek out their local ironmonger. | A self taught smith working from scrap metal, the ironmonger works mostly with farm tools and horseshoes.}{ No ironmonger can compare to the skills of a full fledged blacksmith, but it can be a lucrative profession in smaller villages. | Though lacking the skills of a fully trained blacksmith, ironmongers are vital for some settlements, too small or remote to merit a resident blacksmith.} {%name% was an ironmonger in %townname%. | %name% served for many years as an ironmonger in %townname%. | %name% was an ironmonger, like her father. | Urged by her parents to join the craft, %name% was an ironmonger for many years. | Not to be outdone by her overachieving militia sister, %name% learned to smith and served as the local ironmonger.}{ Unfortunately, a trained blacksmith arrived in town, and %name%\'s skills were quickly rendered obsolete. Facing poverty, she left home to join a company of sellswords. | %name%\'s clients eventually dried up, and she was forced to leave home and seek new work. | %name% eventually left home due to a tragedy that she refused to speak of. Face grim, she seeks new employment.}";
 		}

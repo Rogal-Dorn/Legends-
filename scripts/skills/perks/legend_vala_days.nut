@@ -107,18 +107,7 @@ this.legend_vala_days <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		this.updateDay();
-		local ret = [];
-
-		ret.push({
-			id = 1,
-			type = "title",
-			text = this.getName()
-		});
-		ret.push({
-			id = 2,
-			type = "description",
-			text = this.getDescription()
-		});
+		local ret = this.skill.getTooltip();
 
 		if (this.getWeekDay() == "sunday")
 		{

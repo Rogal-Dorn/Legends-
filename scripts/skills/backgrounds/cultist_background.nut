@@ -164,7 +164,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onSetAppearance()
 	{
-		if (this.m.IsFemaleBackground == false)
+		if (!this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			local actor = this.getContainer().getActor();
 			local tattoo_body = actor.getSprite("tattoo_body");
@@ -187,7 +187,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function updateAppearance()
 	{
-		if (this.m.IsFemaleBackground == false)
+		if (!this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			local actor = this.getContainer().getActor();
 			local tattoo_body = actor.getSprite("tattoo_body");

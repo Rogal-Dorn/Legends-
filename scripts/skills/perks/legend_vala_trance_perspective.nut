@@ -60,12 +60,12 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null)
+		if (actor.getMainhandItem() == null)
 		{
 			return false;
 		}
 
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala")
+		if (actor.getMainhandItem().getID() != "weapon.legend_staff_vala")
 		{
 			return false;
 		}
@@ -74,7 +74,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function getTranceCostString()
+	function getCostString()
 	{
 		return "[i]Costs [b][color=" + this.Const.UI.Color.NegativeValue + "]all (at least 6) AP[/color][/b] to use and builds up " + (this.isAffordableBasedOnFatiguePreview() ? "[b][color=" + this.Const.UI.Color.PositiveValue + "]" + this.getFatigueCost() : "[b][color=" + this.Const.UI.Color.NegativeValue + "]" + this.getFatigueCost()) + " Fatigue[/color][/b][/i]\n";
 	}
@@ -83,32 +83,15 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
+		local ret = this.getDefaultUtilityTooltip();
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Enter a trance and bla bla bla."
+		});
 
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getTranceCostString()
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Enter a trance and bla bla bla."
-			},
-		];
-
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null || (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null && actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getID() != "weapon.legend_staff_vala"))
+		if (actor.getMainhandItem() == null || (actor.getMainhandItem() != null && actor.getMainhandItem().getID() != "weapon.legend_staff_vala"))
 		{
 			ret.push({
 				id = 9,

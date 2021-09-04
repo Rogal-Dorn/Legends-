@@ -113,7 +113,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "%name% is not known to be a big talker, but she has every right to be. {She\'s saved the lives of many of the company. | She once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this woman. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | She once pushed two men off a cliff using only her shield and two strong legs. | She learned how to fight from her father, a vanguard at the Battle of Many Names. | Sacrificing her family\'s heirloom - an old shield of wood and studded iron - she saved the local noble\'s life. | A woman of rather consistent heroism, she pulled a drunken captain from a pub fire. | Faced with a horde of goblins, she used her shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of her shield, the woman\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
 		}

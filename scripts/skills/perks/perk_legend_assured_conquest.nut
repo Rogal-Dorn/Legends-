@@ -31,7 +31,6 @@ this.perk_legend_assured_conquest <- this.inherit("scripts/skills/skill", {
 			_properties.RangedDefense *= 1.05;
 		}
 		
-		
 	
 		if (this.getContainer().getActor().getMoraleState() == this.Const.MoraleState.Breaking)
 		{

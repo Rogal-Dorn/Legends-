@@ -112,7 +112,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "%name% is one of the more talented markswoman you\'ve encountered in your travels. {After she saved your life with an arrow into the heart of a would-be assassin, you hired the woman on the spot. | Learning of the woman was easy - you just had to find the winner of a local shooting competition. | She once won an archery contest that had over a hundred participants from all the lands. | It is said that she can split an arrow - mid-flight. | You found the woman on a farm where, obviously, you thought her shooting talents were going to waste. | A poacher, a bowyer, an archer, the woman\'s skills have gotten plenty of use. You suspect she readily accepted your offer for mercenary work just to say \'she\'s done it all\'. | You once saw her shoot the moon, but that may have been some sort of trick. | A clever bowman, she once loosed two arrows simultaneously to kill a charging set of brigands.} While she has a fondness for killing from afar, %name%\'s no slouch in close-quarters combat.";
 		}

@@ -169,7 +169,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 
-		this.m.IsFemaleBackground = false;
+		this.removeBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

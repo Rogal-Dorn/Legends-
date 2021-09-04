@@ -142,9 +142,23 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function isFemaleBackground()
+	function removeBackgroundType( _type )
 	{
-		return this.m.IsFemaleBackground;
+		if (this.Const.isBackgroundType(_type))
+		{
+			if (this.isBackgroundType(_type))
+			{
+				this.m.BackgroundType -= _type;
+			}
+			else
+			{
+				this.logError(_type + " is not contained in " + this.getID());
+			}
+		}
+		else
+		{
+			this.logError(_type + " is not a known BackgroundType");
+		}
 	}
 
 	function getEthnicity()
@@ -630,11 +644,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				this.addPerk(perkAdd, index);
 			}
 		}
-	}
-
-	function isStabled()
-	{
-		return this.m.IsStabled;
 	}
 
 	function buildDescription( _isFinal = false )
@@ -1374,7 +1383,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					names = this.Const.Strings.BarbarianNames
 				}
 
-				if (this.m.IsFemaleBackground)
+				if (this.isBackgroundType(this.Const.BackgroundType.Female))
 				{
 					names = this.Const.Strings.CharacterNamesFemale;
 					if (this.m.Ethnicity == 1)
@@ -1429,7 +1438,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
 				"sounds/humans/legends/woman_light_01.wav",
@@ -1539,8 +1548,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
-		_out.writeBool(this.m.IsFemaleBackground);
-		_out.writeBool(this.m.IsConverted);
+		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Female));
+		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Converted));
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1576,17 +1585,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.m.DailyCostMult = 1.0;
 		}
 
-		this.m.IsFemaleBackground = _in.readBool();
-		if (this.m.IsFemaleBackground)
+		if(_in.readBool())
 		{
-			this.setGender(1);
+			this.addBackgroundType(this.Const.BackgroundType.Female);
+			this.setGender(1)
 		}
 		else
 		{
-			this.setGender(0);
+			this.setGender(0)
 		}
 
-		this.m.IsConverted = _in.readBool();
+		if (_in.readBool())
+		{
+			this.addBackgroundType(this.Const.BackgroundType.Converted);
+		}
+
 		this.m.CustomPerkTree = [];
 		local numRows = _in.readU8();
 		for( local i = 0; i < numRows; i = ++i )
