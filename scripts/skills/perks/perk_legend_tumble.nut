@@ -1,5 +1,14 @@
 this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Skills = [
+			"actives.lunge",
+			"actives.footwork",
+			"actives.legend_unarmed_lunge",
+			"actives.legend_tumble",
+			"actives.legend_leap",
+			"actives.legend_horse_pirouette"
+		]
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_tumble";
@@ -13,9 +22,26 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onUpdate( _properties )
+	function onAfterUpdate(_properties)
 	{
-		_properties.IsFleetfooted = true;
+		local skills = this.getContainer().getAllSkillsOfType(this.Const.SkillType.Active);
+		foreach (skill in skills)
+		{
+			if (this.m.Skills.find(skill.getID()) != null)
+			{
+				skill.m.FatigueCostMult *= 0.5;				
+			}
+
+			if (skill.getID() == "actives.lunge" || skill.getID() == "actives.legend_unarmed_lunge")
+			{
+				skill.m.ActionPointCost -= 1;
+			}
+
+			if (skill.getID() == "actives.legend_leap")
+			{
+				skill.m.ActionPointCost /= 2;
+			}
+		}
 	}
 });
 
