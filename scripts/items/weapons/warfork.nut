@@ -6,7 +6,6 @@ this.warfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.warfork";
 		this.m.Name = "Warfork";
 		this.m.Description = "A pitchfork re-forged into a battlefield weapon that is a cross between a spear and a pike. Used for thrusting over some distance and keeping the enemy at bay.";
-		this.m.Categories = "Spear, Two-Handed";
 		this.m.IconLarge = "weapons/melee/warfork_01.png";
 		this.m.Icon = "weapons/melee/warfork_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;

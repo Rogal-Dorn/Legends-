@@ -6,7 +6,6 @@ this.two_handed_wooden_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.two_handed_wooden_hammer";
 		this.m.Name = "Two-Handed Mallet";
 		this.m.Description = "A large wooden mallet that is held with both hands. Can deal devastating blows that may knock even armored enemies away or to the ground.";
-		this.m.Categories = "Hammer, Two-Handed";
 		this.m.IconLarge = "weapons/melee/hammer_two_handed_02.png";
 		this.m.Icon = "weapons/melee/hammer_two_handed_02_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;

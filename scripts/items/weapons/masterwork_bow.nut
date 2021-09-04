@@ -6,7 +6,6 @@ this.masterwork_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.masterwork_bow";
 		this.m.Name = "Masterwork Bow";
 		this.m.Description = "A finely crafted bow, light in grip and perfectly balanced for accuracy. Constructed from different woods, it has colors of this tree and that spiral through the curve of the weapon, looking arboreally damascened. Truly the work of a master bowyer.";
-		this.m.Categories = "Bow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/bow_03.png";
 		this.m.Icon = "weapons/ranged/bow_03_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Bow;

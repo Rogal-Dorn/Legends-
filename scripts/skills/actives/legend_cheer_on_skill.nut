@@ -56,21 +56,17 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand == null)
+		local mainhand = this.m.Container.getActor().getMainhandItem();
+		if (mainhand == null || !this.skill.isUsable())
 		{
-			return false;
-		}
-		if (!this.skill.isUsable()) {
 			return false;
 		}
 
-		local i = this.Const.Items.MusicalBannerItems.find(mainhand.getID());
-		if (i == null)
+		if (item.isWeaponType(this.Const.Items.WeaponType.Musical) || item.getID() == "weapon.player_banner")
 		{
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

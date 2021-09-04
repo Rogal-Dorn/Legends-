@@ -6,7 +6,6 @@ this.military_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.military_cleaver";
 		this.m.Name = "Military Cleaver";
 		this.m.Description = "A large, sharpened metal blade designed to deal devastating blows.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/cleaver_01.png";
 		this.m.Icon = "weapons/melee/cleaver_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;

@@ -15,19 +15,18 @@ this.perk_legend_specialist_pickaxe_damage <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if(item.getID() == "weapon.pickaxe")
+			if (item.getID() == "weapon.pickaxe")
 			{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 4;
+				_properties.DamageRegularMax += 12;
 			}
-			if(item.getID() == "weapon.skull_hammer" || item.getID() == "weapon.two_handed_wooden_hammer" || item.getID() == "weapon.named_two_handed_hammer"  || item.getID() == "weapon.two_handed_hammer"   || item.getID() == "weapon.polehammer" )
+			if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 1;
+				_properties.DamageRegularMax += 3;
 			}
 		}
 	}

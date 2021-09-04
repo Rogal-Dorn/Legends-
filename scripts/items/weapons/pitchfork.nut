@@ -6,7 +6,6 @@ this.pitchfork <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.pitchfork";
 		this.m.Name = "Pitchfork";
 		this.m.Description = "An agricultural tool with a long handle and thick pointed tines used to lift and pitch straw. As an improvised weapon it can be used to keep an opponent at bay, but it won\'t inflict the deadliest of injuries and will perform poorly against armor.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/pitchfork_01.png";
 		this.m.Icon = "weapons/melee/pitchfork_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;

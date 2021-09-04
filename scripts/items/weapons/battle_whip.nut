@@ -8,7 +8,7 @@ this.battle_whip <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Description = "A long whip with a barbed tip that can tear terrible bleeding wounds over significant range, but is very inefficient against armor.";
 		this.m.IconLarge = "weapons/melee/whip_01.png";
 		this.m.Icon = "weapons/melee/whip_01_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver | this.Const.Items.WeaponType.Whip;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

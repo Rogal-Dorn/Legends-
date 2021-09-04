@@ -6,7 +6,6 @@ this.flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.flail";
 		this.m.Name = "Chain mace";
 		this.m.Description = "A separate striking head attached to a handle by a chain. A rather unpredictable weapon, but useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, One-Handed";
 		this.m.IconLarge = "weapons/melee/flail_01.png";
 		this.m.Icon = "weapons/melee/flail_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Flail;

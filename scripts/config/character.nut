@@ -1074,7 +1074,6 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInAxes = false,
 	IsSpecializedInFlails = false,
 	IsSpecializedInSpears = false,
-	IsSpecializedInSpearWall = false,
 	IsSpecializedInSpearThrust = false,
 	IsSpecializedInPolearms = false,
 	IsSpecializedInDaggers = false,

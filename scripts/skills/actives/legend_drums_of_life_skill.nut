@@ -52,15 +52,12 @@ this.legend_drums_of_life_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (mainhand == null)
+		local mainhand = this.m.Container.getActor().getMainhandItem();
+		if (mainhand == null || !this.skill.isUsable())
 		{
 			return false;
 		}
-		if (!this.skill.isUsable()) {
-			return false;
-		}
-		return this.Const.Items.MusicalItems.find(mainhand.getID()) != null;
+		return mainhand.isWeaponType(this.Const.Items.WeaponType.Musical);
 	}
 
 	function onUse( _user, _targetTile )

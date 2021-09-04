@@ -15,17 +15,14 @@ this.perk_legend_specialist_scythe_damage <- this.inherit("scripts/skills/skill"
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.legend_grisly_scythe")
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null)
 		{
-			_properties.DamageRegularMin += 10;
-			_properties.DamageRegularMax += 15;
-		}
-		if (item != null && item.getID() == "weapon.legend_scythe")
-		{
-			_properties.DamageRegularMin += 10;
-			_properties.DamageRegularMax += 15;
+			if (item.getID() == "weapon.legend_grisly_scythe" || item.getID() == "weapon.legend_scythe")
+			{
+				_properties.DamageRegularMin += 10;
+				_properties.DamageRegularMax += 15;
+			}
 		}
 	}
 

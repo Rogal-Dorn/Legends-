@@ -15,13 +15,20 @@ this.perk_legend_specialist_sling_damage <- this.inherit("scripts/skills/skill",
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-
-		if (item != null && (item.getID() == "weapon.legend_sling" || item.getID() == "weapon.staff_sling" || item.getID() == "weapon.nomad_sling")) // || item.getID() == "weapon.legend_slingstaff"
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null && item.isWeaponType(this.Const.Items.WeaponType.Sling))
 		{
 			_properties.DamageRegularMin += 4;
 			_properties.DamageRegularMax += 12;
+		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill.getID() == "actives.legend_slingstaff_bash")
+		{
+			_properties.DamageRegularMin -= 4;
+			_properties.DamageRegularMax -= 12;
 		}
 	}
 

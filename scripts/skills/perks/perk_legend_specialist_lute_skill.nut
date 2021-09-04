@@ -15,17 +15,15 @@ this.perk_legend_specialist_lute_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null)
 		{
-			return
-		}
-		if (this.Const.Items.MusicalItems.find(item.getID()) != null)
-		{
-			_properties.MeleeSkill += 10;
-			_properties.MeleeDefense += 10;
-			_properties.DamageArmorMult += 0.5;
+			if (item.isWeaponType(this.Const.Items.WeaponType.Musical))
+			{
+				_properties.MeleeSkill += 10;
+				_properties.MeleeDefense += 10;
+				_properties.DamageArmorMult += 0.5;
+			}
 		}
 	}
 

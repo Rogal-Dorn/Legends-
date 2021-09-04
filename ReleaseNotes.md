@@ -5654,55 +5654,87 @@ A lot of Typos and Syntax fixes in this build, hopefully no more missing full st
 
 
 ## 15.0.1.20
-Ranger origin rework;
+
+**Changes**
+
+*Roster Changes*
+Roster size is now tied to the scenario's "roster tier" and your amount of active retinue hires
+Noble starts at tier 2, Beggars start at tier 0, Peasant Militia at tier 6, everything else at tier 1
+  T0 : 1,
+  T1 : 6,
+  T2 : 9,
+  T3 : 12 / 13,
+  T4 : 16 / 19,
+  T5 : 18 / 21,
+  T6 : 25 / 27
+Only peasant militia can get tier 6
+Removes +Roster perks from player characters
+
+*Ranger origin rework*
 Druid scenario now changed to "Legacy" - is currently marked for deletion or complete rework and is no longer supported. Druid now merged into ranger origin.
 
-Difficulty dropped from 2 to 1
-Now starts with a Druid - the druid and ranger are friends and both count as player characters. If one dies the game will continue. If both die the game will end.
-Druid and ranger are both commanders and share the burden of increasing roster size. If one dies the other may still expand the company but only at half the total sum.
-Intro re-written
-Druid now has a good and bad ending
-Starting druid and ranger backgrounds for this scenario have new flavour text
-All outdoor recruits gain pathfinder and cost 25% less
-Recruits that do not like the outdoors will instead have the default baseplate and not get pathfinder. They also have a 25% increased cost
-Small chance of finding rangers and druids in recruitment pools
-Average chance of finding a herbalist in recruitment pools
-Good chance of finding wildmen/women in recruitment pools
+- Difficulty dropped from 2 to 1
+- Now starts with a Druid - the druid and ranger are friends and both count as player characters. If one dies the game will continue. If both die the game will end.
+- Druid and ranger are both commanders and share the burden of increasing roster size. If one dies the other may still expand the company but only at half the total sum.
+- Intro re-written
+- Druid now has a good and bad ending
+- Starting druid and ranger backgrounds for this scenario have new flavour text
+- All outdoor recruits gain pathfinder and cost 25% less
+- Recruits that do not like the outdoors will instead have the default baseplate and not get pathfinder. They also have a 25% increased cost
+- Small chance of finding rangers and druids in recruitment pools
+- Average chance of finding a herbalist in recruitment pools
+- Good chance of finding wildmen/women in recruitment pools
 
-Recruitment;=
-If a background is tagged as a ranger or druid they will gain 25% less upkeep and cost when hired.
-Everyone else costs 25% more
-Backgrounds that are not ranger or druid tagged will not gain pathfinder
-  - see the legends wiki on backgrounds to see who is tagged as a ranger or druid
+*Recruitment*
+- If a background is tagged as a ranger or druid they will gain 25% less upkeep and cost when hired.
+- Everyone else costs 25% more
+- Backgrounds that are not ranger or druid tagged will not gain pathfinder
 
-Lone wolf rework;
-Lone wolf now has 16 recruit slots, not 12.
-Lone wolf now starts with the "favoured enemy: swordmaster" perk
-Squires, blacksmiths and hedge knights spawn more frequently
-Blacksmiths, squires and hedge knights have a 15% upkeep and purchase reduction
+see the legends wiki on backgrounds to see who is tagged as a ranger or druid
 
-Throwing axes;
-Normal/named: armour damage increased from 1.1 to 1.3
-Heavy: armour damage increased from 1.15 to 1.35
- - this should make throwing axes more viable at destroying armour rather than being inferior to throwing javelins
+*Lone wolf rework*
+- Lone wolf now starts with the "favoured enemy: swordmaster" perk
+- Squires, blacksmiths and hedge knights spawn more frequently
+- Blacksmiths, squires and hedge knights have a 15% upkeep and purchase reduction
 
-Background type changes;
-- these changes influence recruitment for specfic origins. They are being rolled out slowly so there will be more to come.
-Nomad is now a ranger and outlaw recruit
-Blacksmith, Inventor and Swordmaster are no longer ranger recruits
-Blacksmith is now marked as a noble (they serve nobles and armies)
-Swordmaster is now educated (due to their experience and wisdom)
+*Throwing axes*
+- Normal/named: armour damage increased from 1.1 to 1.3
+- Heavy: armour damage increased from 1.15 to 1.35
 
-**Roster Changes**
-Roster size is now tied to the scenario's "roster tier" and your amount of active retinue hires
-  Noble starts at tier 2, Beggars start at tier 0, Peasant Militia at tier 6, everything else at tier 1
-  T0 : 1,
-	T1 : 6,
-	T2 : 9,
-	T3 : 12,
-	T4 : 16,
-	T5 : 18,
-	T6 : 25
-  Only peasant militia can get tier 6
-  Numbers might be tweaked later
-Removes +Roster perks from player characters
+this should make throwing axes more viable at destroying armour rather than being inferior to throwing javelins
+
+*Background type changes*
+these changes influence recruitment for specfic origins. They are being rolled out slowly so there will be more to come.
+- Nomad is now a ranger and outlaw recruit
+- Blacksmith, Inventor and Swordmaster are no longer ranger recruits
+- Blacksmith is now marked as a noble (they serve nobles and armies)
+- Swordmaster is now educated (due to their experience and wisdom)
+
+*Integrates MAR (Medium Armor Rework)*
+Balance (tier 2) - Gain up to +15 Melee and +5 Ranged Defense. The bonus increases as you wear armor of heavier weight (penalty to Maximum Fatigue) but slowly drops when your Current Initiative is less than twice your armor weight. This drop is faster for heavier armors.
+
+Perfect Fit (tier 3) - The penalty to Initiative from head and body armor is reduced by 30% and all skills build up 15% less Fatigue. These bonuses drop exponentially when your armor weight (penalty to Maximum Fatigue) is greater than half of your Maximum Fatigue after gear.
+
+Lithe (tier 6) - Damage to hitpoints and armor is reduced by 30% when the total penalty to Maximum Fatigue from head and body armor is between -25 and -35. Outside this range the bonus drops exponentially. As your armor takes damage, this bonus drops slowly to half its maximum value at 0 armor remaining.
+
+In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every time you dodge a melee attack, up to a maximum of 25%. The bonus drops by 2% whenever you get hit. If your initiative is greater than twice your armor weight (penalty to Maximum Fatigue) you start the battle with a pre-applied bonus equal to your armor weight above 15.
+
+**For Modders**
+- Adds new BackgroundType system which replaces isNoble/isCultist/etc, read the pinned post in #submod-chat for more info (THIS WILL BREAK MODS THAT MODIFY BACKGROUNDS)
+- Adds new WeaponType system which automates this.m.Categories creation for weapons and allows for SIGNIFICANT simplification of how perks like Legends weapon specialist skills work (look at perk_legend_specialist_butcher_damage or similar) as well as increased reliability
+- Now requires and integrates the Modding Standards & Utilities (MSU) mod. Submodders should get in touch for important changes and questions. A documentation will be released soon(tm).
+
+**Fixes**
+- Fixes any inconsistencies between Weapon Categories and specialist perks thanks to new WeaponType System.
+- Fixes named helmets randomly switching between different vision numbers
+- Fixes unarmed not being affected by traits and perks that should affect it
+- Fixes a bunch of crafting recipes not showing layered icon
+- Fixes Holy Flame not blocking resurrections
+- Fixes worn items not getting repaired
+- Fixes helmet aesthetic vanity layer not getting repaired
+- Fixes missing tooltips for non-humans
+- Fixes field repairs
+- Fixes hunting big game
+
+- Lowers tent resell value
+- Removes unarmed weapon tree (not class tree)

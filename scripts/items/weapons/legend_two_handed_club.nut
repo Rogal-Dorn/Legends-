@@ -6,7 +6,6 @@ this.legend_two_handed_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_two_handed_club";
 		this.m.Name = "Two-Handed Club";
 		this.m.Description = "A massive wooden club with a spiked head. Receiving a blow from this weapon will leave anyone dazed and gasping for air.";
-		this.m.Categories = "Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_two_handed_club_01.png";
 		this.m.Icon = "weapons/melee/legend_two_handed_club_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
