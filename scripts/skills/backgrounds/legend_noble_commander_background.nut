@@ -200,7 +200,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	function onBuildDescription()
 	{
 
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "This is the commander, when they die, it is game over. {A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordswoman}, %name%\'s life at court {had grown stale for her | was not exciting enough for her with endless studying of court etiquette and family lineage | felt like wasting the best time of her life | was not half as exciting to her as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of her brother | To the frustration of her mother | Finally making a decision to change things}, %name% rode out to {prove herself | make a name for herself | earn glory on the battlefield | test her skills in battle} and {live life to its fullest as she imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn her place in the world | be knighted for her valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 		}
@@ -260,7 +260,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_fortified_mind"));
 
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			actor.setName(this.Const.Strings.LadyNames[this.Math.rand(0, this.Const.Strings.LadyNames.len() - 1)]);
 		}

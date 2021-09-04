@@ -13,7 +13,6 @@ this.perk_bloody_harvest <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 	 
-
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
 		if (_skill.isAOE() && _skill.isAttack())

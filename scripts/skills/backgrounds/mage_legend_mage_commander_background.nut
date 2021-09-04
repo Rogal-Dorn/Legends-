@@ -34,7 +34,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.BackgroundType = this.Const.BackgroundType.Female; | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Educated
+		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Educated;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Level = 3;
@@ -163,7 +163,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.IsFemaleBackground = false;
+		this.removeBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

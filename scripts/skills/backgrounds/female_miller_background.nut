@@ -82,7 +82,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;
 
-			this.m.IsFemaleBackground = false;
+			this.removeBackgroundType(this.Const.BackgroundType.Female);
 			this.m.GoodEnding = "%name% the once-baker stayed with the %companyname% for a time, collecting enough crowns to start his own bakery. Last you heard, his sword-shaped desserts have been a hit with the nobility and he makes more money selling to them than he ever did with the company.";
 			this.m.BadEnding = "As the %companyname% fell on hard times, %name% the baker saw fit to go ahead and leave while he could still walk. He helped a nobleman test out a new way of grinding grains with mules and waterwheels working in tandem. Unfortunately, by \'helping\' he managed to fall into the contraption and was brutally crushed to death.";
 		}
@@ -92,7 +92,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{The life as a baker had always been lacking something for %name%, yet the hard work kept her from making any big plans. | Continuing the family tradition, %name% learned the bakers trade from her father. | Although just a simple baker, %name% always dreamed about wandering out into the world and bring home tales and pockets full of crowns. | Being a simple lass, %name% did not mind working hard in the bakery every day. | %name% always was more ambitious than other people. While her brother was content with running their family\'s bakery, she could not shake the feeling that she was destined for more.} {One night she was awoken by a loud thunderstorm. Rushing outside, %name% realised that her bakery had been ignited by a lightning strike. | When she caught her promised husband in bed with another woman, she was furious, battering both of them with a hail of blows. Her fists were bruised, people were shouting at her, but the only thing she felt was emptyness where once was her heart. As if in a dream she quickly packed her belongings and set out, never to return. | When her young and handsome husband was found dead, torn apart by wild beasts in the woods, she did not say a word. Silently she packed her belongings and set out into the world, to start a new life somewhere far away. | After hearing wild tales from a hedge knight in the tavern of %townname%, her imagination was running wild with all the possibilities out there in the world waiting for her. | A drought meant business was running slow for her. When %name% was not able to pay her debts any more her life was threatened by ruthless money collectors. She had to disappear.} {Remembering her cousin, %randomname%, who has made a decent living in the mercenary business, %name% decided to do the same. | While looking for opportunities she met a mercenary recruiter who promised her fame and fortune. | Although she does not know the next thing about fighting, %name% is eager to sign up with a mercenary company hooked by the promise of adventure. | Whether by lack of alternatives or by her free will, %name% stands before you now, ready to swear fealty.}";
 		}
