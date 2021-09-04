@@ -13,6 +13,14 @@ this.perk_dodge <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
+	function onAdded()
+	{
+		if (("State" in this.Tactical) && this.Tactical.State != null)
+		{
+			this.onCombatStarted();
+		}
+	}
+
 	function onCombatStarted()
 	{
 		this.getContainer().add(this.new("scripts/skills/effects/dodge_effect"));

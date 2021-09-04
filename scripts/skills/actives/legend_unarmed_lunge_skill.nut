@@ -1,7 +1,6 @@
 this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		APCost = 6,
-		FatMult = 1.0,
+		Backgrounds = [],
 		SoundOnAttack = [
 			"sounds/combat/dlc2/lunge_attack_01.wav",
 			"sounds/combat/dlc2/lunge_attack_02.wav",
@@ -31,7 +30,7 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/dlc2/lunge_attack_hit_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.First + 1;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -42,75 +41,19 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.HitChanceBonus = 0;
 		this.m.DirectDamageMult = 0.25;
-		this.m.ActionPointCost = this.m.APCost;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 2;
 		this.m.ChanceDecapitate = 0;
 		this.m.ChanceDisembowel = 0;
 		this.m.ChanceSmash = 33;
-	}
-
-	function getMods()
-	{
-		local ret = {
-			Min = 10,
-			Max = 20,
-			HasMusc = false,
-			HasBro = false,
-			HasTraining = false,
-			HasOffhand = false
-		}
-		local offhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		local actor = this.getContainer().getActor();
-		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
-		{
-			ret.HasTraining = true;
-			local average = (actor.getInitiative() +  actor.getHitpointsMax()) * 0.25;
-
-
-			if (offhand != null)
-			{
-				average = average * 0.5;
-				ret.HasOffhand = true;
-			}
-
-			ret.Min = average - 10;
-			ret.Max = average + 10;
-			ret.HasTraining = true;
-		}
-
-
-		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
-		{
-			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
-			ret.HasMusc = true;
-		}
-
-		local backgrounds = [
-			"background.legend_druid_commander",
+		this.m.Backgrounds = [
+			"background.legend_commander_druid",
 			"background.legend_druid",
 			"background.brawler",
 			"background.legend_commander_berserker",
 			"background.legend_berserker"
 		];
-
-		foreach (bg in backgrounds)
-		{
-			if (!actor.getSkills().hasSkill(bg))
-			{
-				continue;
-			}
-			ret.Min *= 1.25;
-			ret.Max *= 1.25;
-			ret.HasBro = true;
-			break;
-		}
-
-		ret.Min = this.Math.floor(ret.Min);
-		ret.Max = this.Math.floor(ret.Max);
-		return ret;
 	}
 
 	function getTooltip()
@@ -118,33 +61,23 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		local mods = this.getMods();
 		local ret = this.getDefaultTooltip();
 
-		if (mods.HasBro)
-		{
-			ret.push({
-				id = 5,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Includes +25% damage due to background"
-			});
-		}
-
-		if (mods.HasMusc)
+		if (actor.getOffhandItem() != null)
 		{
 			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
+				text = "Damage halved due to holding something in your off hand"
 			});
 		}
 
-		if (mods.HasOffhand)
+		if (this.m.Backgrounds.find(actor.getBackground()) != null)
 		{
 			ret.push({
-				id = 5,
+				id = 7,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Damage halved due to holding something in your off hand"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage (from background)"
 			});
 		}
 
@@ -154,12 +87,6 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Moves the user next to the target, ignoring Zone of Control"
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Inflicts additional damage, the higher the user\'s current Initiative and Hitpoints"
 			}
 		]);
 
@@ -250,14 +177,6 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-
-		this.m.ActionPointCost = this.m.APCost;
-		this.m.FatigueCostMult = this.m.FatMult;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unarmed_training"))
-		{
-			this.m.FatigueCostMult *= 0.5;
-		}
-
 		if (_properties.IsFleetfooted)
 		{
 			this.m.ActionPointCost -= 1;
@@ -394,14 +313,14 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
+		_properties.DamageRegularMin += 10;
+		_properties.DamageRegularMax += 20;
 
-		local mods = this.getMods()
-		_properties.DamageRegularMin += mods.Min;
-		_properties.DamageRegularMax += mods.Max;
+		_properties.DamageArmorMult *= 0.5;
 
-		if (!mods.HasTraining)
+		if (this.m.Backgrounds.find(actor.getBackground()) != null)
 		{
-			_properties.DamageArmorMult = 0.5;
+			_properties.DamageTotalMult *= 1.25;	
 		}
 
 	}

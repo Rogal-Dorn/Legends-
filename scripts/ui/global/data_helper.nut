@@ -430,12 +430,39 @@ this.data_helper <- {
 		_target.morale <- _entity.getMoraleState();
 		_target.moraleMax <- this.Const.MoraleState.COUNT - 1;
 		_target.moraleLabel <- this.Const.MoraleStateName[_entity.getMoraleState()];
+
 		local dm = 1.0;
 		dm *= _entity.isArmedWithMeleeOrUnarmed() ? properties.MeleeDamageMult : 1.0;
 		dm *= _entity.isArmedWithRangedWeapon() ? properties.RangedDamageMult : 1.0;
-		_target.regularDamage <- properties.getRegularDamageAverage() * dm;
-		_target.regularDamageMax <- this.Const.CharacterMaxValue.RegularDamage;
-		_target.regularDamageLabel <- this.Math.floor(properties.getDamageRegularMin() * dm) + " - " + this.Math.floor(properties.getDamageRegularMax() * dm);
+
+		local damageMin = properties.getRegularDamageAverage() * dm;
+		local damageMax = this.Const.CharacterMaxValue.RegularDamage;
+
+		local shouldbreak = false;
+		foreach (slot in _entity.getSkills().getSkillsSortedByItems(this.Const.SkillType.Active))
+		{
+			foreach (active in slot)
+			{
+				if (active.isAttack() && !active.isHidden())
+				{
+					local p = _entity.getSkills().buildPropertiesForUse(active, null);
+					damageMin = this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * (active.isRanged() ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMinMult);
+					damageMax = this.Math.floor(p.DamageRegularMax * p.DamageRegularMult * p.DamageTotalMult * (active.isRanged() ? p.RangedDamageMult : p.MeleeDamageMult) * p.DamageTooltipMaxMult);
+					this.Math.floor(p.DamageRegularMin * p.DamageRegularMult * p.DamageTotalMult * p.MeleeDamageMult);
+					shouldbreak = true;
+					break;
+				}
+			}
+			if (shouldbreak)
+			{
+				break;
+			}
+		}
+		
+		
+		_target.regularDamage <- damageMin;
+		_target.regularDamageMax <- damageMax;
+		_target.regularDamageLabel <- damageMin + " - " + damageMax;
 		_target.armorHead <- _entity.getArmor(this.Const.BodyPart.Head);
 		_target.armorHeadMax <- _entity.getArmorMax(this.Const.BodyPart.Head);
 		_target.armorHeadTalent <- 0;

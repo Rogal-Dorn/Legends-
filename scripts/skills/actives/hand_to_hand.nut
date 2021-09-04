@@ -1,5 +1,7 @@
 this.hand_to_hand <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Backgrounds = []
+	},
 	function create()
 	{
 		this.m.ID = "actives.hand_to_hand";
@@ -20,7 +22,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/hand_hit_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.First;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -34,109 +36,21 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
-	}
-
-	function getMods()
-	{
-		local ret = {
-			Min = 5,
-			Max = 10,
-			HasMusc = false,
-			HasBro = false,
-			HasOffhand = false,
-			HasTraining = false
-		};
-		local actor = this.getContainer().getActor();
-		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-
-		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
-		{
-			local average = (actor.getInitiative() + actor.getHitpoints()) / 3;
-
-			if (offhand != null)
-			{
-				average = average * 0.5;
-				ret.HasOffhand = true;
-			}
-
-			ret.Min = average - 10;
-			ret.Max = average + 10;
-			ret.HasTraining = true;
-		}
-
-		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
-		{
-			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
-			ret.Min += this.Math.floor(actor.getHitpoints() * 0.1);
-			ret.HasMusc = true;
-		}
-
-		local backgrounds = [
+		this.m.Backgrounds = [
 			"background.legend_commander_druid",
 			"background.legend_druid",
 			"background.brawler",
 			"background.legend_commander_berserker",
 			"background.legend_berserker"
 		];
-
-		foreach( bg in backgrounds )
-		{
-			if (actor.getSkills().hasSkill(bg))
-			{
-				ret.Min *= 1.25;
-				ret.Max *= 1.25;
-				ret.HasBro = true;
-				break;
-			}
-		}
-
-		ret.Min = this.Math.max(5, this.Math.floor(ret.Min));
-		ret.Max = this.Math.max(10, this.Math.floor(ret.Max));
-
-		return ret;
 	}
 
 	function getTooltip()
 	{
-		local mods = this.getMods();
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
+		local ret = this.getDefaultTooltip();
+		local actor = this.getContainer().getActor();
 
-		if (mods.HasTraining)
-		{
-			ret.push({
-				id = 4,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 5,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
-			});
-		}
-
-		if (mods.HasOffhand)
+		if (actor.getOffhandItem() != null)
 		{
 			ret.push({
 				id = 6,
@@ -146,23 +60,13 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (mods.HasBro)
+		if (this.m.Backgrounds.find(actor.getBackground()) != null)
 		{
 			ret.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Includes +25% damage due to background"
-			});
-		}
-
-		if (mods.HasMusc)
-		{
-			ret.push({
-				id = 8,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage (from background)"
 			});
 		}
 
@@ -171,14 +75,12 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return (mainhand == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
+		return (this.m.Container.getActor().getMainhandItem() == null || this.getContainer().hasSkill("effects.disarmed")) && this.skill.isUsable();
 	}
 
 	function isHidden()
 	{
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		return mainhand != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.m.Container.getActor().isStabled() || this.getContainer().hasSkill("effect.legend_transformed_bear") || this.getContainer().hasSkill("effect.legend_transformed_wolf") || this.getContainer().hasSkill("effect.legend_transformed_tree");
+		return this.m.Container.getActor().getMainhandItem() != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
 	function onUpdate( _properties )
@@ -192,33 +94,27 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		local actor = this.getContainer().getActor();
+
+		_properties.DamageRegularMin += 5;
+		_properties.DamageRegularMax += 10;
+		_properties.DamageArmorMult = 0.5;
+
 		//Untested fix, theoretically should fix being disarmed and getting extra weapon damage
 		if (this.m.Container.hasSkill("disarmed_effect"))
 		{
-			local items = this.m.Container.getActor().getItems();
-			local mhand = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			local mhand = actor.getMainhandItem();
 			if (mhand != null)
 			{
 				_properties.DamageRegularMin -= mhand.m.RegularDamage;
 				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
 			}
-			
 		}
 
-		local mods = this.getMods();
-		_properties.DamageRegularMin += mods.Min;
-		_properties.DamageRegularMax += mods.Max;
-
-		if (!mods.HasTraining)
+		if (this.m.Backgrounds.find(actor.getBackground()) != null)
 		{
-			_properties.DamageArmorMult = 0.5;
+			_properties.DamageTotalMult *= 1.25;	
 		}
-	}
-
-	function onAfterUpdate( _properties )
-	{
-		this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
 	}
 
 	function onUse( _user, _targetTile )
