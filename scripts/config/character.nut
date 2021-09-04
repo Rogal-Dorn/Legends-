@@ -439,7 +439,16 @@ gt.Const.isBackgroundType <- function( _type )
 
 gt.Const.addNewBackgroundType <- function( _typeKey )
 {
-	this.Const.BackgroundType[_typeKey] <- this.Math.Pow(2, this.Const.BackgroundType.len());
+	local max = 0;
+	foreach (btype, value in this.Const.BackgroundType)
+	{
+		if (max < value)
+		{
+			max = value;
+		}
+	}
+
+	this.Const.BackgroundType[_typeKey] <- max << 1;
 }
 
 gt.Const.SkillType <- {
