@@ -177,7 +177,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 0;
+		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsBerserker", true);
 	}
 
