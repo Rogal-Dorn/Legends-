@@ -5744,3 +5744,8 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 **Fixes**
 - Fixes a lot more backgrounds being identified as untalented than there should have been.
+
+## 15.0.1.20b
+
+**Fixes**
+- Fixes necromancer being unable to resurrect
