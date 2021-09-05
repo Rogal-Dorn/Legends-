@@ -10,7 +10,7 @@ gt.Const.LegendMod.hookMSU <- function()
 			return false;
 		}
 
-		if (_tile.Properties.Effect.Type == "legend_holyflame") 
+		if (_tile.Properties.Effect.Type != null && _tile.Properties.Effect.Type == "legend_holyflame") 
 		{
 			return false;
 		}
