@@ -1644,7 +1644,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Show the roster of the fighting force of your mercenary company."
+					text = "Show the roster of the fighting force of your mercenary company. Hire more Retinue Members to increase your roster capacity!"
 				}
 			];
 			local data = this.World.Assets.getRosterDescription();
