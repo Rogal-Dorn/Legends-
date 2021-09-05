@@ -422,7 +422,7 @@ gt.Const.BackgroundType <- {
 	Scenario = 2048,
 	Ranger = 4096,
 	Stabled = 8192,
-	Untalented = 18384,
+	Untalented = 16384,
 };
 
 gt.Const.isBackgroundType <- function( _type )

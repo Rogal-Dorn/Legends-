@@ -5739,3 +5739,8 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 - Lowers tent resell value
 - Removes unarmed weapon tree (not class tree)
+
+## 15.0.1.20a
+
+**Fixes**
+- Fixes a lot more backgrounds being identified as untalented than there should have been.
