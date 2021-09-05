@@ -5760,3 +5760,8 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 **Fixes**
 - Fixes necromancer being unable to resurrect (hopefully for real)
+
+## 15.0.1.20f
+
+**Fixes**
+- Fixes necromancer being unable to resurrect (real real)
