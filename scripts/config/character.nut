@@ -422,20 +422,8 @@ gt.Const.BackgroundType <- {
 	Scenario = 2048,
 	Ranger = 4096,
 	Stabled = 8192,
-	Untalented = 16384,
+	Untalented = 16384
 };
-
-gt.Const.isBackgroundType <- function( _type )
-{
-	foreach (key, value in this.Const.BackgroundType)
-	{
-		if (value == _type)
-		{
-			return true;
-		}
-	}
-	return false;
-}
 
 gt.Const.addNewBackgroundType <- function( _typeKey )
 {
