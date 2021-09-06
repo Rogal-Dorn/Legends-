@@ -109,8 +109,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendRoster1
+				this.Const.Perks.PerkDefs.LegendAlert
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendScryTrance,
@@ -136,8 +135,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.Feint,
 				this.Const.Perks.PerkDefs.Relentless,
-				this.Const.Perks.PerkDefs.LegendSecondWind,
-				this.Const.Perks.PerkDefs.LegendRoster2
+				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendPoisonImmunity,
@@ -161,8 +159,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Vengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
-				this.Const.Perks.PerkDefs.LegendRoster3
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendDrumsOfLife,
@@ -187,8 +184,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendRoster5
+				this.Const.Perks.PerkDefs.LegendFreedomOfMovement
 
 			]
 		];
