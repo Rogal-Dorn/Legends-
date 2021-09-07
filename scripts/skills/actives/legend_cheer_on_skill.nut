@@ -62,10 +62,11 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (item.isWeaponType(this.Const.Items.WeaponType.Musical) || item.getID() == "weapon.player_banner")
+		if (mainhand.isWeaponType(this.Const.Items.WeaponType.Musical) || mainhand.getID() == "weapon.player_banner")
 		{
 			return true;
 		}
+		
 		return false;
 	}
 
