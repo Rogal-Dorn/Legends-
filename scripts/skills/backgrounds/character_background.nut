@@ -1010,9 +1010,25 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.PerkTreeMap = pT.Map;
 	}
 
+	function getPerkTreeDynamicMins()
+	{
+		local mins = this.m.PerkTreeDynamicMins;
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+		{
+			mins = this.m.PerkTreeDynamicMinsBeast;
+		}
+		else if (this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			mins = this.m.PerkTreeDynamicMinsMagic;
+		}
+
+		return mins;
+	}
+
 	function buildPerkTree()
 	{
-	local a = {
+		local a = {
 			Hitpoints = [
 				0,
 				0
@@ -1046,6 +1062,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				0
 			]
 		};
+		
 		if (this.m.PerkTree != null)
 		{
 			return a;
@@ -1056,15 +1073,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			if (this.World.Assets.isLegendPerkTrees())
 			{
 
-				local mins = this.m.PerkTreeDynamicMins;
-				if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
-				{
-					mins = this.m.PerkTreeDynamicMinsBeast;
-				}
-				else if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					mins = this.m.PerkTreeDynamicMinsMagic;
-				}
+				local mins = this.getPerkTreeDynamicMins();
 
 				local result  = this.Const.Perks.GetDynamicPerkTree(mins, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
