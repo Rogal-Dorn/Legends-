@@ -5770,3 +5770,11 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 **Fixes**
 - Fixes necromancer being unable to resurrect (really real)
+
+## MIDAS
+- Added info about how to expand roster size in the roster tooltip
+- Fixed magic staves not working
+- Fixed Cheer On being unusable
+- Fixed Malevolent Spirits not being usable with Vala Staff
+- Fixed Shovel showing up as One Handed.
+- Fixed Unarmed Lunge skill not being usable.
