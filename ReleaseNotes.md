@@ -5770,3 +5770,17 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 **Fixes**
 - Fixes necromancer being unable to resurrect (really real)
+
+## 15.0.1.20h
+
+**Fixes**
+Cleaned up arena champion trait - image had a few pixels that shouldn't be there
+Embalmed priest now has a portrait
+**QoL Changes**
+Golden goose output raised from 30 to 50 crowns daily
+Undead & noble killer traits give +10 to ranged skill in addition to +10 to melee skill
+Added new art for "appitite of a donkey" trait
+New loading screen tip about retinue and roster sizes
+Slingstaff now renamed to "Northern Sling"
+Staff Sling now renamed to "Nomad Sling"
+Both slings now have their descriptions updated to highlight their differences
