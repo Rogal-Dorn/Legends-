@@ -335,6 +335,14 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return true;
 	}
 
+	function getFailed( _bro )
+	{
+		this.m.Results.push({
+			Icon = "", //Should get an icon for failed training
+			Text = _bro.getName() + " didn't learn anything useful."
+		});
+	}
+
 	function getBonus( bro )
 	{
 		if (!bro.getSkills().hasSkill("trait.intensive_training_trait"))
@@ -469,6 +477,10 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			if (this.Math.rand(1, 100) < r)
 			{
 				this.getTrained(bro);
+			}
+			else
+			{
+				this.getFailed(bro);
 			}
 
 			local injuryMin = 5;
