@@ -5784,3 +5784,14 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Fixes 27th slot not allowing brothers into battle #65
 - Fixes tent sell price not rounding
 - Fixes some Typos
+- Cleans up arena champion trait - image had a few pixels that shouldn't be there
+- Fixes embalmed priest missing portrait
+
+**QoL Changes**
+- Golden goose output raised from 30 to 50 crowns daily
+- Undead & noble killer traits give +10 to ranged skill in addition to +10 to melee skill
+- Added new art for "appitite of a donkey" trait
+- New loading screen tip about retinue and roster sizes
+- Slingstaff now renamed to "Northern Sling"
+- Staff Sling now renamed to "Nomad Sling"
+- Both slings now have their descriptions updated to highlight their differences
