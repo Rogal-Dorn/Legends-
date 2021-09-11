@@ -5784,3 +5784,7 @@ New loading screen tip about retinue and roster sizes
 Slingstaff now renamed to "Northern Sling"
 Staff Sling now renamed to "Nomad Sling"
 Both slings now have their descriptions updated to highlight their differences
+**Balancing**
+Made some minor changes to the "skin flayer" weapon
+Made minor edits to the volume of ranged bandits in garrisons (should see less ranged spam now)
+Made minor edits to nomad spawns overall (should see fewer clusters of specials and leaders now)
