@@ -5796,3 +5796,8 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Staff Sling now renamed to "Nomad Sling"
 - Both slings now have their descriptions updated to highlight their differences
 - Add failed to learn anything info to the training tent.
+
+**Minor Balancing**
+- Made some minor changes to the "skin flayer" weapon
+- Made minor edits to the volume of ranged bandits in garrisons (should see less ranged spam now)
+- Made minor edits to nomad spawns overall (should see fewer clusters of specials and leaders now)
