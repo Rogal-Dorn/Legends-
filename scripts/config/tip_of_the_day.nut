@@ -199,7 +199,8 @@ gt.Const.TipOfTheDay <- [
 	"At 15 points of intensive training will reward that brother with a free perk point and trait",
 	"Larger groups on the world map move more slowly - regardless of terrain",
 	"Staffs and slings are ideal supporting weapons for those brothers who are not fit for direct combat",
-	"The \'Intensive Training\' trait can be increased by spending time training with that brother"
+	"The \'Intensive Training\' trait can be increased by spending time training with that brother",
+	"Increase your roster size by hiring more retinue members, the more you have the more brothers and sisters you can have!"
 ];
 gt.Const.LoadingScreens <- [
 	"ui/screens/loading_screen_01.jpg",
