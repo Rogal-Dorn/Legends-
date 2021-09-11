@@ -16,13 +16,13 @@ this.legend_skin_flayer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_skin_flayer_01";
-		this.m.Value = 1200;
+		this.m.Value = 1100;
 		this.m.Condition = 52.0;
 		this.m.ConditionMax = 52.0;
-		this.m.StaminaModifier = -18;
-		this.m.RegularDamage = 40;
+		this.m.StaminaModifier = -16;
+		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 60;
-		this.m.ArmorDamageMult = 0.8;
+		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.2;
 	}
 
