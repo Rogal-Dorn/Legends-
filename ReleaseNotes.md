@@ -5780,3 +5780,7 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Fixes Malevolent Spirits not usable with Vala Staff #63
 - Fixes Shovel showing up as OneHanded. Now is TwoHanded as intended
 - Fixes unarmed lunge not working
+- Fixes Decayed Breastplate Armor has shoulder pieces #55
+- Fixes 27th slot not allowing brothers into battle #65
+- Fixes tent sell price not rounding
+- Fixes some Typos
