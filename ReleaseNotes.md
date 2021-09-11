@@ -5795,3 +5795,4 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Slingstaff now renamed to "Northern Sling"
 - Staff Sling now renamed to "Nomad Sling"
 - Both slings now have their descriptions updated to highlight their differences
+- Add failed to learn anything info to the training tent.
