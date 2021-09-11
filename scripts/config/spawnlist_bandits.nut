@@ -423,13 +423,13 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 18,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
-					MaxR = 125,
-					Cost = 9
+					MaxR = 110,
+					Cost = 14
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
