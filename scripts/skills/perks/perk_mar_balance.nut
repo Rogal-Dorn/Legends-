@@ -33,9 +33,9 @@ this.perk_mar_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus/3 + "[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + (bonus / 3).tointeger() + "[/color] Ranged Defense"
 			});
-		}
+		} 
 		else if (this.getContainer().getActor().getBodyItem() == null)
 		{
 			tooltip.push({
@@ -87,6 +87,6 @@ this.perk_mar_balance <- this.inherit("scripts/skills/skill", {
 	{
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus/3;
+		_properties.RangedDefense += (bonus / 3).tointeger();
 	}
 });
