@@ -4,8 +4,8 @@ this.staff_sling <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.create();
 		this.m.ID = "weapon.staff_sling";
-		this.m.Name = "Staff Sling";
-		this.m.Description = "A leather sling on a staff, used to hurl stones at the enemy. With stones abundant everywhere, it will never run out of ammunition.";
+		this.m.Name = "Nomad Sling";
+		this.m.Description = "A leather sling on a staff, used to hurl stones at the enemy. It is lighter than its northern cousin and with stones abundant everywhere, it will never run out of ammunition.";
 		this.m.IconLarge = "weapons/ranged/sling_01.png";
 		this.m.Icon = "weapons/ranged/sling_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sling;
