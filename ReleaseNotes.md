@@ -5739,3 +5739,44 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 - Lowers tent resell value
 - Removes unarmed weapon tree (not class tree)
+
+## 15.0.1.20a
+
+**Fixes**
+- Fixes a lot more backgrounds being identified as untalented than there should have been.
+
+## 15.0.1.20b
+
+**Fixes**
+- Fixes necromancer being unable to resurrect
+
+## 15.0.1.20d
+
+**Fixes**
+- Fixes necromancer being unable to resurrect (for real this time)
+- Fixes freeze when AI characters have to use Hand-to-Hand attacks
+
+## 15.0.1.20e
+
+**Fixes**
+- Fixes necromancer being unable to resurrect (hopefully for real)
+
+## 15.0.1.20f
+
+**Fixes**
+- Fixes necromancer being unable to resurrect (real real)
+
+## 15.0.1.20g
+
+**Fixes**
+- Fixes necromancer being unable to resurrect (really real)
+
+## 15.0.1.20h
+
+**Fixes**
+- Fixes index 'item' does not exist causing Cheer On to be unusable
+- Improves roster tooltip - now tells you how to increase capacity #66
+- Fixes MagicStaff not working #64
+- Fixes Malevolent Spirits not usable with Vala Staff #63
+- Fixes Shovel showing up as OneHanded. Now is TwoHanded as intended
+- Fixes unarmed lunge not working

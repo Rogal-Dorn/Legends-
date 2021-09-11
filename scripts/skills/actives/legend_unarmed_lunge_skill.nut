@@ -312,11 +312,10 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 
 		_properties.DamageArmorMult *= 0.5;
 
-		if (this.m.Backgrounds.find(actor.getBackground()) != null)
+		if (this.m.Backgrounds.find(this.getContainer().getActor().getBackground()) != null)
 		{
 			_properties.DamageTotalMult *= 1.25;	
 		}
-
 	}
 
 });

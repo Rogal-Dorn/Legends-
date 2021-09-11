@@ -219,7 +219,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 		o.isArmedWithMagicStaff <- function()
 		{
 			local item = this.getMainhandItem();
-			return item != null && item.isWeaponType(this.Const.Items.ItemType.MagicStaff);
+			return item != null && item.isWeaponType(this.Const.Items.WeaponType.MagicStaff);
 		}
 
 		o.equipItem <- function( _item)
