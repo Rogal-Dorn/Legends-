@@ -225,6 +225,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.starting_scenario.onInit();
 		this.m.RosterTier = 6;
+		this.m.MaxRosterTier = 6;
 	}
 
 	function onHiredByScenario( bro )

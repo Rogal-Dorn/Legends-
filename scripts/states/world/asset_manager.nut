@@ -229,27 +229,16 @@ this.asset_manager <- {
 
 	function getBrothersMax()
 	{
-		if (this.World.Assets.getOrigin().getRosterTier() == 6)
-		{
-			return this.Const.RosterSize[6];
-		}
-		
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
-		local max = this.Const.RosterSize[tier];
-		
-		return max; 
+		local tier = this.Math.min(this.World.Assets.getOrigin().getMaxRosterTier(), this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+
+		return this.Const.RosterSize[tier]; 
 	}
 
 	function getBrothersMaxInCombat()
 	{
-		if (this.World.Assets.getOrigin().getRosterTier() == 6)
-		{
-			return this.Const.FrontlineSize[6];
-		}
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
-		local max = this.Const.FrontlineSize[tier];
-
-		return max;
+		local tier = this.Math.min(this.World.Assets.getOrigin().getMaxRosterTier(), this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		
+		return this.Const.FrontlineSize[tier];
 	}
 
 	function getBrothersScaleMax()

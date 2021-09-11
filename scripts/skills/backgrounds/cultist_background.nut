@@ -110,14 +110,6 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	}
 
-	// Should overwrite the "character_backgrounds" isCultist() check
-	function isCultist()
-	{
-		return true;
-	}
-
-
-
 	function onBuildDescription()
 	{
 		return "{The cultist stands with a placard hanging from their neck. | Their face is wreathed in garish tattoos. They carry a note. | The face is hidden inside a deep cowl, an islanded tip of a nose all that you see in the darkness. They carry a placard around their neck. | Clothed in rags, it is strange they neither sweat nor shake in heat or cold. Clutching a scroll as if it protects from the very elements. | Scripture is written across their arm in scars, the coda of madness. | The stranger writes in the dirt as quick as someone who has done it a thousand times. The message is clear to see. | They stand with a tome nestled behind a crooked arm. They hand it to you. Opening it, the leather feels like none you\'ve ever touched before. There is only one passage inside, written over and over.} It reads: \"Ph\'nglui mglw\'nafh Davkul R\'lyeh wgah\'nagl fhtagn. Nn\'nilgh\'ri, nn\'nglui. Sgn\'wahl sll\'ha ep\'shogg.\" Hmm... quaint.";

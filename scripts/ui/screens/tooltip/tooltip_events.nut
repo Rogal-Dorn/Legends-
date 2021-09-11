@@ -4535,7 +4535,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Minimum land to water ratio for an acceptable map. Default is 40. Going either extremes on this slider can result in map never getting generated."
+					text = "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated."
 				}
 			];
 
