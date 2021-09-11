@@ -87,7 +87,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.NomadOutlaw,
 					MinR = 100,
-					Cost = 27
+					Cost = 25
 				}
 			]
 		},
@@ -107,7 +107,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.DesertStalker, //looks like M.Archer
 					MinR = 420,
-					Cost = 50,
+					Cost = 65,
 					Roll = true
 				}
 			]
@@ -119,7 +119,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.NomadLeader,
-					Cost = 40,
+					Cost = 55,
 					Roll = true
 				}
 			]
@@ -131,7 +131,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.Executioner,
-					Cost = 50,
+					Cost = 65,
 					Roll = true
 				}
 			]
@@ -143,7 +143,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.DesertDevil,
-					Cost = 50,
+					Cost = 65,
 					Roll = true
 				}
 			]
@@ -170,11 +170,11 @@ gt.Const.World.Spawn.NomadDefenders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.NomadCutthroat,
-					Cost = 12
+					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.NomadOutlaw,
-					Cost = 25
+					Cost = 24
 				}
 			]
 		},
@@ -206,19 +206,19 @@ gt.Const.World.Spawn.NomadDefenders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.NomadLeader,
-					Cost = 30,
+					Cost = 35,
 					Roll = true
 				}
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 3,
 			MinR = 365,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.Executioner,
-					Cost = 50,
+					Cost = 55,
 					Roll = true
 				}
 			]
