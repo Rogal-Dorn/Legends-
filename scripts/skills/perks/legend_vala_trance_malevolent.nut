@@ -66,12 +66,9 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (actor.getMainhandItem() == null)
-		{
-			return false;
-		}
+		local weapon = actor.getMainhandItem();
 
-		if (actor.getMainhandItem() != "weapon.legend_staff_vala")
+		if (weapon == null || weapon.getID() != "weapon.legend_staff_vala")
 		{
 			return false;
 		}
@@ -98,7 +95,9 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 			text = "If the Vala is successful in her dealings with these harmful spirits, they will haunt and weaken her opponents. Lowers damage, lowers maximum fatigue, increases fatigue cost for skills."
 		})
 
-		if (actor.getMainhandItem() == null || (actor.getMainhandItem() != null && actor.getMainhandItem() != "weapon.legend_staff_vala"))
+		local weapon = actor.getMainhandItem();
+
+		if (weapon == null || weapon.getID() != "weapon.legend_staff_vala")
 		{
 			ret.push({
 				id = 9,

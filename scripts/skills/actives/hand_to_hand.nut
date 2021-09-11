@@ -1,6 +1,12 @@
 this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 	m = {
-		Backgrounds = []
+		Backgrounds = [
+			"background.legend_commander_druid",
+			"background.legend_druid",
+			"background.brawler",
+			"background.legend_commander_berserker",
+			"background.legend_berserker"
+		]
 	},
 	function create()
 	{
@@ -36,13 +42,6 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
-		this.m.Backgrounds = [
-			"background.legend_commander_druid",
-			"background.legend_druid",
-			"background.brawler",
-			"background.legend_commander_berserker",
-			"background.legend_berserker"
-		];
 	}
 
 	function getTooltip()
@@ -111,9 +110,13 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (this.m.Backgrounds.find(actor.getBackground()) != null)
+		foreach (bg in this.m.Backgrounds)
 		{
-			_properties.DamageTotalMult *= 1.25;	
+			if (actor.getSkills().hasSkill(bg))
+			{
+				_properties.DamageTotalMult *= 1.25;
+				break;
+			}
 		}
 	}
 
