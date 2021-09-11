@@ -5801,3 +5801,6 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Made some minor changes to the "skin flayer" weapon
 - Made minor edits to the volume of ranged bandits in garrisons (should see less ranged spam now)
 - Made minor edits to nomad spawns overall (should see fewer clusters of specials and leaders now)
+
+**For Modders**
+- Update MSU https://github.com/Battle-Brothers-Legends/mod_MSU
