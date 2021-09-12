@@ -422,7 +422,8 @@ gt.Const.BackgroundType <- {
 	Scenario = 2048,
 	Ranger = 4096,
 	Stabled = 8192,
-	Untalented = 16384
+	Untalented = 16384,
+	Cultist = 32768
 };
 
 gt.Const.addNewBackgroundType <- function( _typeKey )
