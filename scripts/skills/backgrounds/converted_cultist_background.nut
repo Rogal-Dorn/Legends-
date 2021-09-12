@@ -15,6 +15,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.dastard",
 			"trait.gluttonous",
 			"trait.insecure",
+			"trait.slack",
 			"trait.disloyal",
 			"trait.hesitant",
 			"trait.fat",
@@ -33,7 +34,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-
+		this.m.BackgroundType = this.Const.BackgroundType.Converted;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.PerkTreeDynamic = {
@@ -59,7 +60,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		return "Who this man once was no longer matters. He now bears the mark of Davkul on his forehead and while his lips do not yet know the words of his newfound religion, they speak of the cult\'s fascination in a familiar tongue. Darkness, he says, is coming.";
+		return "Who this figure was no longer matters. They now bear the mark of Davkul on their forehead and while their lips do not yet know the words of his newfound religion, they speak of the cult\'s fascination in a familiar tongue. Darkness, they say, is coming.";
 	}
 
 	function onSetAppearance()

@@ -33,6 +33,9 @@ this.cultist_origin_flock_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
 					"cultist_background"
+					"cultist_darksoul_background"
+					"cultist_lurker_background"
+					"cultist_magister_background"
 				]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}

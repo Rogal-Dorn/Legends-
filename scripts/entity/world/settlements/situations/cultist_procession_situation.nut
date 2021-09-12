@@ -59,14 +59,30 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
-		_draftList.push("cultist_background");
 		_draftList.push("flagellant_background");
 		_draftList.push("butcher_background");
+	}
+	if  ( this.World.Assets.getOrigin().getID() == "scenario.cultists")
+	{
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_darksoul_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_background");
+		_draftList.push("cultist_background");
+		_draftList.push("cultist_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_lurker_background");
+		_draftList.push("cultist_magister_background");
+		_draftList.push("cultist_magister_background");
+		_draftList.push("cultist_magister_background");
+	}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
