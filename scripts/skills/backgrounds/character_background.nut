@@ -132,32 +132,25 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function addBackgroundType( _type )
 	{
-		if (this.Const.isBackgroundType(_type))
+		if (!this.isBackgroundType(_type))
 		{
 			this.m.BackgroundType = this.m.BackgroundType | _type;
 		}
 		else
 		{
-			this.logError(_type + " is not a known BackgroundType");
+			this.logError(_type + " is already contained in " + this.getID());
 		}
 	}
 
 	function removeBackgroundType( _type )
 	{
-		if (this.Const.isBackgroundType(_type))
+		if (this.isBackgroundType(_type))
 		{
-			if (this.isBackgroundType(_type))
-			{
-				this.m.BackgroundType -= _type;
-			}
-			else
-			{
-				this.logError(_type + " is not contained in " + this.getID());
-			}
+			this.m.BackgroundType -= _type;
 		}
 		else
 		{
-			this.logError(_type + " is not a known BackgroundType");
+			this.logError(_type + " is not contained in " + this.getID());
 		}
 	}
 
