@@ -5878,6 +5878,10 @@ Brothers that are not pious or squires will cost 25% more to buy and upkeep and 
 A few typos corrected overall.
 New backgrounds will get custom background art eventually.
 Fixes an issue where cultists do not count as cultists for sacrifice events
+Gnarly staff renamed goblin staff to avoid confusion with gnarled staff
+Fixed "cultist makes leather robe (or hood)" event by making these events into crafting recipies.
+- Cultist robe requires 1 sacksloth and 1 furs the "Penance" perk.
+- Cultist leather hood (not sack hood) requires 2 bolts of cloth and the "Dedication" perk.
 
 **Modding;**
 Cultist rework is fully compatible with Taro's Davkul rising mod.
