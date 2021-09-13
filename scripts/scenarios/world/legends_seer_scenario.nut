@@ -178,14 +178,13 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		}
 	}
 
-	function onBuildPerkTree( _tree )
+	function onBuildPerkTree( _background )
 	{
-		if (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.Student);
+		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Student);
 	}
 
 });

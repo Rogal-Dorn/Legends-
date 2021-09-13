@@ -36,7 +36,7 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 					hasSheildsUpPerk = true;
 				}
 
-				if (_properties.IsPlayerInitiated && p.isInReserves() && all_players.len() > 1)
+				if (_properties.IsPlayerInitiated && p.isInReserves() && all_players.len() > 1 && this.World.State.getBrothersInFrontline() != 0)
 				{
 					continue;
 				}

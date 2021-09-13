@@ -279,14 +279,13 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _background )
 	{
-		if  (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
+		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
 	function onUpdateDraftList( _list, _gender)

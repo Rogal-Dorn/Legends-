@@ -1,7 +1,7 @@
 this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
-		AdditionalHitChance = 0,
+		AdditionalAccuracy = 10,
+		AdditionalHitChance = -10,
 		SoundOnFire = []
 	},
 	function onItemSet()
@@ -59,38 +59,13 @@ this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = this.getDefaultRangedTooltip();
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Can hit up to 6 targets"
 		});
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on flat ground and [color=" + this.Const.UI.Color.PositiveValue + "]" + (this.getMaxRange() + this.m.MaxRangeBonus) + "[/color] tiles if shooting downhill"
-		});
-
-		if (10 + this.m.AdditionalAccuracy >= 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance. This chance is unaffected by objects or characters in the line of fire."
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance. This chance is unaffected by objects or characters in the line of fire."
-			});
-		}
 
 		local ammo = this.getAmmo();
 
@@ -263,8 +238,8 @@ this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += 10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -10 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
 	}
 

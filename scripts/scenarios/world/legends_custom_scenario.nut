@@ -116,13 +116,12 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		}, null);
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _background )
 	{
-		if  (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
 	}
 
 });

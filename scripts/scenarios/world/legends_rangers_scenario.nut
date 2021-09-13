@@ -280,14 +280,13 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 	}
 
-	function onBuildPerkTree( _tree )
+	function onBuildPerkTree( _background )
 	{
-		if (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.Pathfinder);
+		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Pathfinder);
 	}
 
 });

@@ -766,14 +766,15 @@
 	<sprite id="enclave_vanilla_armet_02_dead" offsetX="6" offsetY="10" f="64F0" f1="-15" f2="-15" ic="FF353957" width="131" height="125" img="entity\helmets\armet_2_dead.png" left="-56" right="13" top="-60" bottom="8" />
 
 
-	<!-- Baseplates
+	<!-- Baseplates -->
 	<sprite id="bust_base_beasthunters" offsetY="35" ic="FF48616F" width="104" height="142" img="legend_characters\entity\misc\bust_base_beasthunters.png" left="-49" right="51" top="-71" bottom="-5" />
 	<sprite id="bust_base_crusader" offsetY="35" ic="FF48616F" width="104" height="142" img="legend_characters\entity\misc\bust_base_crusader.png" left="-49" right="51" top="-71" bottom="-5" />
-	-->
+	<sprite id="bust_base_assassin" offsetY="35" ic="FF48616F" width="104" height="142" img="legend_characters\entity\misc\bust_base_assassin.png" left="-49" right="51" top="-71" bottom="-5" />
 
-	<!-- Miniboss Accents
+	<!-- Baseplate Accents -->
 	<sprite id="bust_miniboss_crusader" offsetY="35" ic="FF4F647A" width="140" height="248" img="legend_characters\entity\misc\bust_miniboss_crusader.png" left="-48" right="50" top="-67" bottom="-25" />
 	<sprite id="bust_miniboss_trader" offsetY="35" ic="FF4F647A" width="140" height="248" img="legend_characters\entity\misc\bust_miniboss_trader.png" left="-48" right="50" top="-67" bottom="-25" />
 	<sprite id="bust_miniboss_undead" offsetY="35" ic="FF4F647A" width="140" height="248" img="legend_characters\entity\misc\bust_miniboss_undead.png" left="-48" right="50" top="-67" bottom="-25" />
-	-->
+	<sprite id="bust_miniboss_assassin" offsetY="35" ic="FF4F647A" width="140" height="248" img="legend_characters\entity\misc\bust_miniboss_assassin.png" left="-48" right="50" top="-67" bottom="-25" />
+	
 </brush>
