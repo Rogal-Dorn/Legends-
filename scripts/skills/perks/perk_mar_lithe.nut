@@ -79,6 +79,11 @@ this.perk_mar_lithe <- this.inherit("scripts/skills/skill", {
 
 		local bodyitem = actor.getBodyItem();
 
+		if (bodyitem == null)
+		{
+			return 0;
+		}
+
 		local armorFatMult = this.getArmorFatPenMult(actor.getTotalArmorStaminaModifier());
 
 		local totalArmorDurability = actor.getArmor(this.Const.BodyPart.Head) + actor.getArmor(this.Const.BodyPart.Body);
