@@ -6,15 +6,10 @@ this.perk_legend_back_to_basics <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.legend_back_to_basics";
 		this.m.Name = this.Const.Strings.PerkName.LegendBackToBasics;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendBackToBasics;
+		this.m.Description = "Years of practice lead this character to fall back to %their% instincts and basic training under extreme stress."
 		this.m.Icon = "ui/perks/back_to_basics_circle.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
-	}
-
-	function getDescription()
-	{
-		return "Years of practice lead this character to fall back to their instincts and basic training under extreme stress."
 	}
 
 	function getTooltip()
