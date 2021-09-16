@@ -37,7 +37,33 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		local actor = this.getContainer().getActor();
+
+		if (!actor.isPlacedOnMap())
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = "These bonuses will be [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] when not engaged in melee"
+			});
+		}
+		else if (!actor.isEngagedInMelee())
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/warning.png",
+				text = "Bonuses [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] due to not being engaged in melee"
+			});
+		}
+
 		return tooltip;
+	}
+
+	function getBonus()
+	{
+		return this.getContainer().getActor().isEngagedInMelee() ? this.m.Stacks : this.m.Stacks / 2;		
 	}
 
 	function onAfterUpdate( _properties )
@@ -56,8 +82,9 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.Stacks > 0)
 		{
-			_properties.MeleeDamageMult *= 1 + this.m.Stacks * 0.01;
-			_properties.MeleeDefenseMult *= 1 + this.m.Stacks * 0.01;
+			local bonus = this.getBonus();
+			_properties.MeleeDamageMult *= 1 + bonus * 0.01;
+			_properties.MeleeDefenseMult *= 1 + bonus * 0.01;
 		}
 	}
 

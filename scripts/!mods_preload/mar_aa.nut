@@ -1,6 +1,6 @@
 local modID = "mod_mediumArmorRework";
 
-::mods_registerMod(modID, 1.4, "Medium Armor Rework (MAR) 1.4.0");
+::mods_registerMod(modID, 1.4, "Medium Armor Rework (MAR) 1.4.1");
 
 ::mods_queue(modID, "mod_legends,mod_MSU", function ()
 {
@@ -16,7 +16,7 @@ local modID = "mod_mediumArmorRework";
 	gt.Const.Strings.PerkDescription.MARLithe <- "Specialize in Medium Armor! Damage to Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the total penalty to Maximum Fatigue from head and body armor is between [color=" + this.Const.UI.Color.NegativeValue + "]-25[/color] and [color=" + this.Const.UI.Color.NegativeValue + "]-35[/color]. Outside this range, the bonus drops exponentially.\n\nAs your armor takes damage, the bonus drops slowly to half its maximum value at 0 armor remaining.\n[color=#0b0084]From the Medium Armor perk group[/color]";
 
 	gt.Const.Strings.PerkName.MARInTheZone <- "In the Zone";
-	gt.Const.Strings.PerkDescription.MARInTheZone <- "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Damage and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color] when you get hit by any attack.\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with pre-applied bonus equal to your armor\'s weight above 15.\n[color=#0b0084]From the Medium Armor perk group[/color]";
+	gt.Const.Strings.PerkDescription.MARInTheZone <- "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Damage and Melee Defense by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color] when you get hit by any attack.\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with pre-applied bonus equal to your armor\'s weight above 15.\n\nThese bonuses are halved while you are not engaged in melee.\n[color=#0b0084]From the Medium Armor perk group[/color]";
 	gt.Const.Perks.PerkDefObjects.push({
 		ID = "perk.mar_in_the_zone",
 		Script = "scripts/skills/perks/perk_mar_in_the_zone",
@@ -86,6 +86,6 @@ local modID = "mod_mediumArmorRework";
 	}
 	gt.Const.Perks.MediumArmorTree.Tree[1] = [gt.Const.Perks.PerkDefs.LegendBalance];
 	gt.Const.Perks.MediumArmorTree.Tree[2] = [gt.Const.Perks.PerkDefs.LegendMatchingSet];
-	gt.Const.Perks.MediumArmorTree.Tree[5] = [gt.Const.Perks.PerkDefs.LegendLithe];
+	gt.Const.Perks.MediumArmorTree.Tree[4] = [gt.Const.Perks.PerkDefs.LegendLithe];
 	gt.Const.Perks.MediumArmorTree.Tree[6] = [gt.Const.Perks.PerkDefs.MARInTheZone];
 });
