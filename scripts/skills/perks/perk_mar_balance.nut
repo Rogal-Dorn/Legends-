@@ -80,7 +80,7 @@ this.perk_mar_balance <- this.inherit("scripts/skills/skill", {
 			currIniMult = this.Math.maxf(0, 1 - 0.01 * this.Math.pow((2*armorFatPen - currIni) * armorFatPen/50.0, 1.06));
 		}
 
-		return this.Math.floor(this.Math.maxf(this.m.BonusMin, maxPossibleBonus * currIniMult));
+		return this.Math.floor(this.Math.maxf(this.m.BonusMin, maxPossibleBonus * currIniMult)).tointeger();
 	}
 
 	function onAfterUpdate( _properties )
