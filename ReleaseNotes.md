@@ -5807,3 +5807,7 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 ## 15.0.1.20i
 - Fixes critical crash when loading saved games.
+
+## 15.0.1.21
+
+- Roster sizes increased by +3 across the board, now based on unlocked retinue
