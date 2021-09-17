@@ -234,7 +234,7 @@ this.asset_manager <- {
 			return this.Const.RosterSize[6];
 		}
 		
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local tier = this.Math.min(5, this.World.Retinue.getNumberOfUnlockedSlots() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
 		local max = this.Const.RosterSize[tier];
 		
 		return max; 
@@ -246,7 +246,7 @@ this.asset_manager <- {
 		{
 			return this.Const.FrontlineSize[6];
 		}
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local tier = this.Math.min(5, this.World.Retinue.getNumberOfUnlockedSlots() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
 		local max = this.Const.FrontlineSize[tier];
 
 		return max;
