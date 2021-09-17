@@ -1,0 +1,79 @@
+this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
+	m = {
+		Stacks = 0,
+		MaxStacks = 25,
+		IsInCombat = false
+	},
+	function create()
+	{
+		this.m.ID = "perk.mar_in_the_zone";
+		this.m.Name = this.Const.Strings.PerkName.MARInTheZone;
+		this.m.Description = "%name% utilizes %their% armor\'s blend of protection and mobility to deal increased damage and gain increased defense when foes miss attacks against %them%.";
+		this.m.Icon = "ui/perks/in_the_zone.png";
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
+		this.m.Order = this.Const.SkillOrder.Perk;
+		this.m.IsActive = false;
+		this.m.IsStacking = false;
+		this.m.IsHidden = false;
+	}
+
+	function getTooltip()
+	{
+		local tooltip = this.skill.getTooltip();
+
+		if (this.m.Stacks > 0)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Stacks + "%[/color] Melee Damage"
+			});
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Stacks + "%[/color] Melee Defense"
+			});
+		}
+
+		return tooltip;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			this.m.Stacks = 0;
+			local actor = this.getContainer().getActor();
+			local armorFat = actor.getTotalArmorStaminaModifier() * -1;
+
+			if (actor.getInitiative() >= 2*armorFat)
+			{
+				this.m.Stacks = this.Math.min(this.m.MaxStacks, this.Math.max(0, armorFat - 15));
+			}
+		}
+
+		if (this.m.Stacks > 0)
+		{
+			_properties.MeleeDamageMult *= 1 + this.m.Stacks * 0.01;
+			_properties.MeleeDefenseMult *= 1 + this.m.Stacks * 0.01;
+		}
+	}
+
+	function onMissed( _attacker, _skill )
+	{
+		if (_attacker != null && _skill != null && _skill.isAttack() && !_skill.isRanged())
+		{
+			this.m.Stacks = this.Math.min(this.m.MaxStacks, this.m.Stacks + 1);
+		}
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_attacker != null && _skill != null && _skill.isAttack())
+		{
+			this.m.Stacks -= 2;
+		}
+	}
+});

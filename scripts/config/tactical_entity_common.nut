@@ -297,13 +297,13 @@ gt.Const.Tactical.Common <- {
 	function onApplyHolyFlame( _tile, _entity )
 	{
 		local sounds = [
-				"sounds/combat/fire_01.wav",
-				"sounds/combat/fire_02.wav",
-				"sounds/combat/fire_03.wav",
-				"sounds/combat/fire_04.wav",
-				"sounds/combat/fire_05.wav",
-				"sounds/combat/fire_06.wav"
-			];
+			"sounds/combat/fire_01.wav",
+			"sounds/combat/fire_02.wav",
+			"sounds/combat/fire_03.wav",
+			"sounds/combat/fire_04.wav",
+			"sounds/combat/fire_05.wav",
+			"sounds/combat/fire_06.wav"
+		];
 
 		this.Sound.play(sounds[this.Math.rand(0, sounds.len() - 1)], this.Const.Sound.Volume.Actor, _entity.getPos());
 
@@ -352,7 +352,7 @@ gt.Const.Tactical.Common <- {
 			{
 				sanctify.onRefresh();
 			}
-			else if (faction == this.Const.Faction.Player && _entity.getBackground().isCultist())
+			else if (faction == this.Const.Faction.Player && _entity.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 			{
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = this.Math.rand(10, 20);

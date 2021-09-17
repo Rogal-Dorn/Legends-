@@ -25,7 +25,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Cruel;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Outlaw;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

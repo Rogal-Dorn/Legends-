@@ -6,9 +6,9 @@ this.crude_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.crude_axe";
 		this.m.Name = "Crude Axe";
 		this.m.Description = "This axe is crudely made, but heavy and jagged.";
-		this.m.Categories = "Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_05.png";
 		this.m.Icon = "weapons/melee/wildmen_05_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -6,9 +6,9 @@ this.hooked_blade <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.hooked_blade";
 		this.m.Name = "Hooked Blade";
 		this.m.Description = "An agricultural tool adapted for use in battle, this polearm has a hooked blade for striking over some distance and pulling in targets.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/hooked_blade_01.png";
 		this.m.Icon = "weapons/melee/hooked_blade_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

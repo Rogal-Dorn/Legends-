@@ -15,8 +15,6 @@ this.perk_battle_flow <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-
-
 	function onTargetKilled( _targetEntity, _skill )
 	{
 		if (!this.m.IsSpent)

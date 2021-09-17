@@ -6,9 +6,9 @@ this.longaxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.longaxe";
 		this.m.Name = "Longaxe";
 		this.m.Description = "A relatively thin blade on a very long shaft used for devastating cutting attacks over some distance, and to render shields unusable from behind the frontline.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/longaxe_01.png";
 		this.m.Icon = "weapons/melee/longaxe_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

@@ -30,10 +30,9 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.YoungMale;
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.IsCrusaderRecruitBackground = true;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
@@ -87,7 +86,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "A more reliable sellsword than most, %name%\'s background as an ironmonger helped her to keep the %companyname%\'s equipment functioning. Having saved more than enough crowns, %name% retired and returned to blacksmithing, learning from a true master and becoming a paragon of the craft. Last you heard of her she was living in luxury, making custom weapons and armor for nobles.";
 		this.m.BadEnding = "%name% the ironmonger stayed with the %companyname% for some time after your departure, but after a particularly nasty stretch of bad luck she saw the rot for what it was and jumped ship. Bad luck seemed to follow her, however, and she never managed to settle down. She burned through her leftover crowns in a few years. She died in poverty one winter, freezing overnight.";
 
@@ -110,7 +109,7 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{When one needs tools repaired but cannot afford a blacksmith, they seek out their local ironmonger. | A self taught smith working from scrap metal, the ironmonger works mostly with farm tools and horseshoes.}{ No ironmonger can compare to the skills of a full fledged blacksmith, but it can be a lucrative profession in smaller villages. | Though lacking the skills of a fully trained blacksmith, ironmongers are vital for some settlements, too small or remote to merit a resident blacksmith.} {%name% was an ironmonger in %townname%. | %name% served for many years as an ironmonger in %townname%. | %name% was an ironmonger, like her father. | Urged by her parents to join the craft, %name% was an ironmonger for many years. | Not to be outdone by her overachieving militia sister, %name% learned to smith and served as the local ironmonger.}{ Unfortunately, a trained blacksmith arrived in town, and %name%\'s skills were quickly rendered obsolete. Facing poverty, she left home to join a company of sellswords. | %name%\'s clients eventually dried up, and she was forced to leave home and seek new work. | %name% eventually left home due to a tragedy that she refused to speak of. Face grim, she seeks new employment.}";
 		}

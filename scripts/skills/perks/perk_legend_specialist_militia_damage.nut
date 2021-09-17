@@ -15,34 +15,19 @@ this.perk_legend_specialist_militia_damage <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null)
 		{
-			return;
-		}
-
-		switch (item.getID())
-		{
-			case "weapon.militia_spear":
-			case "weapon.legend_wooden_spear":
-			case "weapon.ancient_spear":
+			if (item.getID() == "weapon.militia_spear" || item.getID() == "weapon.legend_wooden_spear" || item.getID() == "weapon.ancient_spear")
+			{
 				_properties.DamageRegularMin += 4;
 				_properties.DamageRegularMax += 12;
-				break;
-			case "weapon.goblin_spear":
-			case "weapon.fighting_spear":
-			case "weapon.named_spear":
-			case "weapon.boar_spear":
-			case "weapon.named_goblin_spear":
-			case "weapon.throwing_spear":
-			case "weapon.legend_glaive":
-			case "weapon.legend_named_glaive":
-			case "weapon.legend_militia_glaive":
-			case "weapon.legend_battle_glaive":
+			}
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Spear))
+			{
 				_properties.DamageRegularMin += 1;
 				_properties.DamageRegularMax += 3;
-				break;
+			}
 		}
 	}
 

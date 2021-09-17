@@ -12,7 +12,7 @@ this.named_three_headed_flail <- this.inherit("scripts/items/weapons/named/named
 		this.m.ID = "weapon.named_three_headed_flail";
 		this.m.NameList = this.Const.Strings.ThreeHeadedFlailNames;
 		this.m.Description = "An very rare weapon built from valuable and strong materials. Despite its ceremonial look it makes for a terrifying tool of destruction.";
-		this.m.Categories = "Flail, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;

@@ -6,9 +6,9 @@ this.skull_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.skull_hammer";
 		this.m.Name = "Two-Handed Skull Hammer";
 		this.m.Description = "A crude metal hammer used with two hands to crush both armor and its wearer alike.";
-		this.m.Categories = "Hammer, Two-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_07.png";
 		this.m.Icon = "weapons/melee/wildmen_07_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

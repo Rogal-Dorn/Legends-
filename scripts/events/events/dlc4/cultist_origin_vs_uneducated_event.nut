@@ -147,12 +147,12 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				continue;
 			}
 
-			if (bro.getBackground().isCultist())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 			{
 				cultist_candidates.push(bro);
 			}
-			else if ((bro.getBackground().isLowborn() && !bro.getSkills().hasSkill("trait.bright")) ||
-						(!bro.getBackground().isNoble() && bro.getSkills().hasSkill("trait.dumb"))	   ||
+			else if ((bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getSkills().hasSkill("trait.bright")) ||
+						(!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble) && bro.getSkills().hasSkill("trait.dumb"))	   ||
 						bro.getSkills().hasSkill("injury.brain_damage") )
 					{
 						//this.logInfo("1");

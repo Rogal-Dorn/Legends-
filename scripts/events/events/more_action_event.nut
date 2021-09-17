@@ -86,7 +86,7 @@ this.more_action_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 50)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && this.Math.rand(1, 100) <= 50)
 					{
 						bro.worsenMood(1.0, "Lost confidence in your leadership");
 
@@ -127,7 +127,7 @@ this.more_action_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 25)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && this.Math.rand(1, 100) <= 25)
 					{
 						bro.improveMood(1.0, "Was promised a battle soon");
 
@@ -169,7 +169,7 @@ this.more_action_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isCombatBackground() && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				candidates.push(bro);
 			}

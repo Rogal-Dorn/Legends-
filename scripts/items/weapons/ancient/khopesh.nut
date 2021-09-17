@@ -6,9 +6,9 @@ this.khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.khopesh";
 		this.m.Name = "Khopesh";
 		this.m.Description = "An ancient curved sword on a long handle with strange ornamentations. Its shape makes it particularly effective against armor.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/kopesh_01.png";
 		this.m.Icon = "weapons/melee/kopesh_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

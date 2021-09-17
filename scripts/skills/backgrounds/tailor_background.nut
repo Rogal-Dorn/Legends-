@@ -45,7 +45,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Bodies = this.Const.Bodies.Thick;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];

@@ -10,7 +10,7 @@ this.named_goblin_spear <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.PrefixList = this.Const.Strings.GoblinWeaponPrefix;
 		this.m.UseRandomName = false;
 		this.m.Description = "A masterfully crafted goblin glaive. Accurate, fast and deadly in the hands of any skilled fighter.";
-		this.m.Categories = "Spear, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

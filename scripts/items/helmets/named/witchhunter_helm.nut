@@ -57,9 +57,7 @@ this.witchhunter_helm <- this.inherit("scripts/items/helmets/named/named_helmet"
 		_properties.IsAffectedByNight = false;
 	}
 
-
-
-		function updateVariant()
+	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
 		this.m.Sprite = "witchhunter_helm_" + variant;

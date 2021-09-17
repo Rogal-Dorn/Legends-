@@ -45,7 +45,7 @@ this.ratcatcher_catches_food_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (bro.getBackground().isNoble())
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 					{
 						bro.worsenMood(1.0, "Lost confidence in your leadership");
 						bro.worsenMood(2.0, "Was served rat for dinner");
@@ -59,7 +59,7 @@ this.ratcatcher_catches_food_event <- this.inherit("scripts/events/event", {
 					{
 						local r = this.Math.rand(1, 5);
 
-						if (r == 1 && !bro.getBackground().isLowborn())
+						if (r == 1 && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 						{
 							bro.worsenMood(1.0, "Was served rat for dinner");
 

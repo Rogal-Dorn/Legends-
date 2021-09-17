@@ -6,9 +6,9 @@ this.reinforced_wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.reinforced_wooden_flail";
 		this.m.Name = "Reinforced Wooden Flail";
 		this.m.Description = "Two large sticks attached with a short chain and reinforced with metal, the Reinforced Wooden Flail is an agricultural tool turned weapon. A rather unpredictable one at that, but deadly enough to fell most men with a good hit to the head, and useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, One-Handed";
 		this.m.IconLarge = "weapons/melee/flail_03.png";
 		this.m.Icon = "weapons/melee/flail_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;

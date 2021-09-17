@@ -140,7 +140,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isFemaleBackground())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			bro.improveMood(1.0, "Joined the righteous cause of the Sisterhood");
 			bro.getSkills().add(this.new("scripts/skills/perks/perk_hold_out"));
@@ -160,7 +160,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 				continue;
 			}
 
-			if (!bro.getBackground().isFemaleBackground())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Female))
 			{
 				garbage.push(bro);
 			}

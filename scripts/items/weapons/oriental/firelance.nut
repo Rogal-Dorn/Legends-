@@ -6,11 +6,11 @@ this.firelance <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.firelance";
 		this.m.Name = "Fire Lance";
 		this.m.Description = "A spear of southern design with an explosive charge that will spew fire over two tiles when ignited. The charge is only usable once per battle, but automatically refilled after battle.";
-		this.m.Categories = "Spear/Firearm, One-Handed";
 		this.m.IconLarge = "weapons/ranged/firelance_01.png";
 		this.m.Icon = "weapons/ranged/firelance_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear | this.Const.Items.WeaponType.Firearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Ammo;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDroppedAsLoot = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;

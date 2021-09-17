@@ -27,7 +27,7 @@ this.no_food_variety_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isLowborn() || bro.getSkills().hasSkill("trait.spartan"))
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) || bro.getSkills().hasSkill("trait.spartan"))
 					{
 						continue;
 					}
@@ -78,7 +78,7 @@ this.no_food_variety_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isLowborn() || bro.getSkills().hasSkill("trait.spartan"))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) || bro.getSkills().hasSkill("trait.spartan"))
 			{
 				continue;
 			}

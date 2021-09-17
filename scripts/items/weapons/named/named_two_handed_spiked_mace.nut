@@ -11,7 +11,7 @@ this.named_two_handed_spiked_mace <- this.inherit("scripts/items/weapons/named/n
 		this.m.SuffixList = this.Const.Strings.BarbarianSuffix;
 		this.m.UseRandomName = false;
 		this.m.Description = "A heavy spiked mace crafted to resemble a human skull. Despite its crude appearance, this is a well balanced and deadly weapon.";
-		this.m.Categories = "Mace, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

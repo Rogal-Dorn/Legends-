@@ -188,7 +188,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isOutlawBackground())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
@@ -203,11 +203,11 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onHiredByScenario( bro )
 	{
-		if (!bro.getBackground().isLowborn() && !bro.getBackground().isOutlawBackground())
+		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.worsenMood(1.0, "Is uncomfortable with joining an assassin");
 		}
-		else if (bro.getBackground().isCombatBackground() && bro.getBackground().isOutlawBackground())
+		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 		{
 			bro.improveMood(1.0, "Is excited at becoming part of outlaw company");
 		}

@@ -90,6 +90,8 @@ this.legend_named_helmet_upgrade <- this.inherit("scripts/items/legend_helmets/l
 		_out.writeString(this.m.Name);
 		_out.writeF32(this.m.ConditionMax);
 		_out.writeI8(this.m.StaminaModifier);
+		_out.writeI8(this.m.Vision);
+
 		this.legend_helmet_upgrade.onSerialize(_out);
 	}
 
@@ -98,6 +100,10 @@ this.legend_named_helmet_upgrade <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Name = _in.readString();
 		this.m.ConditionMax = _in.readF32();
 		this.m.StaminaModifier = _in.readI8();
+		if (_in.getMetaData().getVersion() >= 68)
+		{
+			this.m.Vision = _in.readI8();
+		}
 		this.legend_helmet_upgrade.onDeserialize(_in);
 	}
 

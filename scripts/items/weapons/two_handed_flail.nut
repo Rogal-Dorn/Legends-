@@ -6,9 +6,9 @@ this.two_handed_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.two_handed_flail";
 		this.m.Name = "Two-handed Chain Mace";
 		this.m.Description = "A large and heavy metal flail that required two hands to use. Useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/flail_two_handed_02.png";
 		this.m.Icon = "weapons/melee/flail_two_handed_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

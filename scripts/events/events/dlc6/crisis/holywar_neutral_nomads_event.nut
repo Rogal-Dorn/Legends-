@@ -137,7 +137,7 @@ this.holywar_neutral_nomads_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 75)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && this.Math.rand(1, 100) <= 75)
 					{
 						bro.worsenMood(0.75, "Disliked that you killed and robbed your hosts");
 

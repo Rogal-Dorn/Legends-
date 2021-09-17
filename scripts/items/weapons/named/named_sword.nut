@@ -10,7 +10,7 @@ this.named_sword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_sword";
 		this.m.NameList = this.Const.Strings.SwordNames;
 		this.m.Description = "A well-balanced long sword with a double-edged blade. A weapon crafted as well as this one is hard to find.";
-		this.m.Categories = "Sword, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

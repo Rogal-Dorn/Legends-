@@ -16,11 +16,11 @@ this.heavy_javelin <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.heavy_javelin";
 		this.m.Name = "Bundle of Heavy Javelins";
 		this.m.Description = "A set of heavy, rugged-looking javelins. Harder to throw and hit with, but more impactful.";
-		this.m.Categories = "Throwing Weapon, One-Handed";
 		this.m.IconLarge = "weapons/ranged/javelins_heavy_01.png";
 		this.m.Icon = "weapons/ranged/javelins_heavy_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Throwing;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Ammo | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.OneHanded;
 		this.m.AddGenericSkill = true;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_javelins_heavy_01";

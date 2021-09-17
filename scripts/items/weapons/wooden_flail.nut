@@ -6,9 +6,9 @@ this.wooden_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.wooden_flail";
 		this.m.Name = "Wooden Flail";
 		this.m.Description = "Two large sticks attached with a short chain, the Wooden Flail is an agricultural tool used to strike piles of grain to loosen the husks. As an improvised weapon it\'s rather unpredictable but useful to strike over or around shield cover.";
-		this.m.Categories = "Flail, One-Handed";
 		this.m.IconLarge = "weapons/melee/flail_02.png";
 		this.m.Icon = "weapons/melee/flail_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;

@@ -6,9 +6,9 @@ this.goedendag <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goedendag";
 		this.m.Name = "Goedendag";
 		this.m.Description = "A metal-reinforced club with a spike at the top. Can be used to thrust at the enemy, or pummel them into submission.";
-		this.m.Categories = "Spear/Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/goedendag_01.png";
 		this.m.Icon = "weapons/melee/goedendag_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear | this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

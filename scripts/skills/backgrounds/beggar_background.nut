@@ -52,8 +52,7 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsLowborn = true;
-		this.m.IsPerformingBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];
 		this.m.PerkTreeDynamic = {

@@ -10,7 +10,7 @@ this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/name
 		this.m.ID = "weapon.legend_named_bastardsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
 		this.m.Description = "This longsword is a true masterpiece, with a blade that is both flexible yet extremely durable.";
-		this.m.Categories = "Sword, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

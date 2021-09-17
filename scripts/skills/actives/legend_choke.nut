@@ -1,5 +1,7 @@
 this.legend_choke <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		Backgrounds = []
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_choke";
@@ -20,7 +22,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			"sounds/combat/puncture_hit_03.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Order = this.Const.SkillOrder.First + 1;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -36,118 +38,20 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = 40;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
-	}
-
-	function getMods()
-	{
-		local ret = {
-			Min = 5,
-			Max = 10,
-			HasMusc = false,
-			HasBro = false,
-			HasOffhand = false,
-			HasMainhand = false,
-			HasTraining = false
-		};
-		local actor = this.getContainer().getActor();
-		local offhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local mainhand = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		local average = (actor.getInitiative() + actor.getHitpoints()) * 0.25;
-
-		if (offhand != null)
-		{
-			average = average * 0.5;
-			ret.HasOffhand = true;
-		}
-
-		if (mainhand != null)
-		{
-			average = average * 0.5;
-			ret.HasMainhand = true;
-		}
-
-		if (actor.getSkills().hasSkill("perk.legend_unarmed_training"))
-		{
-			average = average * 1.5;
-			ret.HasTraining = true;
-		}
-
-		ret.Min = average - 10;
-		ret.Max = average + 10;
-
-		if (actor.getSkills().hasSkill("perk.legend_muscularity"))
-		{
-			ret.Max += this.Math.floor(actor.getHitpoints() * 0.1);
-			ret.HasMusc = true;
-		}
-
-		local backgrounds = [
-			"background.legend_druid_commander",
+		this.m.Backgrounds = [
+			"background.legend_commander_druid",
 			"background.legend_druid",
 			"background.brawler",
 			"background.legend_commander_berserker",
 			"background.legend_berserker"
 		];
-
-		foreach( bg in backgrounds )
-		{
-			if (!actor.getSkills().hasSkill(bg))
-			{
-				continue;
-			}
-
-			ret.Min *= 1.25;
-			ret.Max *= 1.25;
-			ret.HasBro = true;
-			break;
-		}
-
-		ret.Min = this.Math.floor(ret.Min * 0.5);
-		ret.Max = this.Math.floor(ret.Max * 0.5);
-		return ret;
 	}
 
 	function getTooltip()
 	{
-		local mods = this.getMods();
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
-
-		if (mods.HasTraining)
-		{
-			ret.push({
-				id = 4,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "+15% chance to hit due to unarmed training"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 4,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + mods.Max + "[/color] damage"
-			});
-		}
-
-		if (mods.HasOffhand)
+		local ret = this.getDefaultTooltip();
+		local actor = this.getContainer().getActor();
+		if (actor.getOffhandItem() != null)
 		{
 			ret.push({
 				id = 5,
@@ -157,7 +61,7 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (mods.HasMainhand)
+		if (actor.getMainhandItem() != null)
 		{
 			ret.push({
 				id = 5,
@@ -167,23 +71,13 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		if (mods.HasBro)
+		if (this.m.Backgrounds.find(actor.getBackground()) != null)
 		{
 			ret.push({
-				id = 5,
+				id = 7,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Includes +25% damage due to background"
-			});
-		}
-
-		if (mods.HasMusc)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "Includes [color=" + this.Const.UI.Color.DamageValue + "]+10%[/color] of your hitpoints as damage due to Muscularity"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage (from background)"
 			});
 		}
 
@@ -215,32 +109,32 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 
 		if (_targetEntity.getSkills().hasSkill("effects.legend_dazed"))
 		{
-			mod = mod + 10;
+			mod += 10;
 		}
 
 		if (_targetEntity.getSkills().hasSkill("effects.legend_parried"))
 		{
-			mod = mod + 10;
+			mod += 10;
 		}
 
 		if (_targetEntity.getSkills().hasSkill("effects.legend_grappled"))
 		{
-			mod = mod + 50;
+			mod += 50;
 		}
 
 		if (_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
-			mod = mod + 25;
+			mod += 25;
 		}
 
 		if (_targetEntity.getSkills().hasSkill("effects.sleeping"))
 		{
-			mod = mod + 50;
+			mod += 50;
 		}
 
 		if (_targetEntity.getSkills().hasSkill("effects.net"))
 		{
-			mod = mod + 25;
+			mod += 25;
 		}
 
 		if (_targetEntity.getMoraleState() == this.Const.MoraleState.Fleeing)
@@ -274,15 +168,17 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 		}
 
 		local chance = this.getHitChance(_targetEntity);
-		local mods = this.getMods();
+		local actor = this.getContainer().getActor();
 
-		if (!mods.HasTraining)
+		local average = (actor.getInitiative() + actor.getHitpoints()) / 4;
+
+		if (actor.getOffhandItem() != null || actor.getMainhandItem() != null)
 		{
-			chance = chance + 15;
+			average *= 0.5;
 		}
 
-		_properties.DamageRegularMin += mods.Min;
-		_properties.DamageRegularMax += mods.Max;
+		_properties.DamageRegularMin += average - 10;
+		_properties.DamageRegularMax += average + 10;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.MeleeSkill += chance;
 		_properties.HitChanceMult[this.Const.BodyPart.Head] = 0.0;

@@ -429,7 +429,7 @@ this.camp_building <- {
 
 	function onBroEnter ( _bro )
 	{
-		return !_bro.getBackground().isStabled()
+		return !_bro.isStabled()
 	}
 
 	function onSerialize( _out )

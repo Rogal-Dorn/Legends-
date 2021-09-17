@@ -6,9 +6,9 @@ this.legend_limb_lopper <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_limb_lopper";
 		this.m.Name = "Limb Lopper";
 		this.m.Description = "A colossal cleaving weapon made of several overlapping crude blades wedged into a tree limb. Too heavy to be used effectively by the average human.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_limb_lopper_01.png";
 		this.m.Icon = "weapons/melee/legend_limb_lopper_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

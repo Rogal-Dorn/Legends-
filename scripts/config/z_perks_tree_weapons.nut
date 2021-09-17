@@ -259,26 +259,9 @@ gt.Const.Perks.StavesTree <- {
 	]
 };
 
-gt.Const.Perks.FistTree <- {
-	ID = "FistTree",
-	Descriptions = [
-		"unarmed combat"
-	],
-	Tree = [
-		[gt.Const.Perks.PerkDefs.LegendUnarmedTraining],
-		[gt.Const.Perks.PerkDefs.LegendKick],
-		[gt.Const.Perks.PerkDefs.LegendGrapple],
-		[gt.Const.Perks.PerkDefs.LegendSpecFists],
-		[],
-		[],
-		[]
-	]
-};
-
 gt.Const.Perks.WeaponTrees <- {
 	Tree = [
 		gt.Const.Perks.MaceTree,
-		gt.Const.Perks.FistTree,
 		gt.Const.Perks.FlailTree,
 		gt.Const.Perks.HammerTree,
 		gt.Const.Perks.AxeTree,

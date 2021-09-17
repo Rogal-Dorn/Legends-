@@ -8,9 +8,9 @@ this.three_headed_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.three_headed_flail";
 		this.m.Name = "Three-Headed Flail";
 		this.m.Description = "Three separate striking heads attached to a handle by chains. Each head can hit or miss a target separately and strike over or around shield cover.";
-		this.m.Categories = "Flail, One-Handed";
 		this.m.IconLarge = "weapons/melee/flail_three_headed_01.png";
 		this.m.Icon = "weapons/melee/flail_three_headed_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.ItemProperty = this.Const.Items.Property.IgnoresShieldwall;

@@ -6,9 +6,9 @@ this.axehammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.axehammer";
 		this.m.Name = "Axehammer";
 		this.m.Description = "A massive, rusty hybrid of hammer and axe. Due to its blunt edge more of the former than the latter.";
-		this.m.Categories = "Hammer/Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_03.png";
 		this.m.Icon = "weapons/melee/wildmen_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer | this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

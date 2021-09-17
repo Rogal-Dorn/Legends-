@@ -6,9 +6,9 @@ this.legend_skullbreaker <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_skullbreaker";
 		this.m.Name = "Skull Breaker";
 		this.m.Description = "A massive crude hammer with a head fashioned from a chunk of solid iron. Too heavy to be used effectively by the average human.";
-		this.m.Categories = "Hammer, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_skullbreaker_01.png";
 		this.m.Icon = "weapons/melee/legend_skullbreaker_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

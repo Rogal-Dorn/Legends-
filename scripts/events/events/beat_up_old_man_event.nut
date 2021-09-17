@@ -94,7 +94,7 @@ this.beat_up_old_man_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (!bro.getBackground().isOffendedByViolence() && !bro.getBackground().isNoble() || bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute"))
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble) || bro.getSkills().hasSkill("trait.bloodthirsty") || bro.getSkills().hasSkill("trait.brute"))
 			{
 				candidates.push(bro);
 			}

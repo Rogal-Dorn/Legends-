@@ -386,7 +386,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isCombatBackground() && this.Math.rand(1, 100) <= 33)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) && this.Math.rand(1, 100) <= 33)
 					{
 						bro.worsenMood(1.0, "The company backed down from a fight");
 					}

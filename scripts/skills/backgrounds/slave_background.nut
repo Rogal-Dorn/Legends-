@@ -60,7 +60,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[3];
@@ -150,7 +150,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 	function onBuildDescription()
 	{
-		if(this.m.IsFemaleBackground == true)
+		if(this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 
 		return "{You can tell %name% is a northerner simply by appearance. Servitude in the south has come by way of being indebted to the Gilder transgressed against through faith in the heretical old gods. | %name% bears the features of a northerner, easily capturing the eye of passing men or women. It also happened to catch the attention of a priest who claimed the northerner was indebted to the Gilder and promptly sold the interloper into servitude. | A northerner, %name% was once a soldier sent south on patrol. Lost in the desert, troop slowly dwindling until %name% was the last survivor. Caught by slavers and brought back from the brink, and of course sold into servitude once %name%\'s healed body was worth something. | Despite being a northerner and thus easily spotted, %name% unwisely sought the criminal life and was caught thieving pomegranates from a Vizier\'s garden. %name%\'s lucky to have a head, but now serves as a commodity of labor on the slave markets.}";
@@ -186,7 +186,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found her as a slave in the south, far from family and home. You \'hired\' her essentially for free and worked her as an enslaved sellsword. After you left the %companyname%, her name was removed from the ledger of indebted and she was for all intents and purposes a free woman. She stayed with the company and has been rising through its ranks ever since. You stand at an odd relation to the woman. She\'s never thanked you, nor has she expressed ill.";
 		this.m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into financial troubles and was selling off \'man and material\' to make ends meet. It seems %name%\'s time with the company presumably ended sometime there, and her time as a slave started again.";
 	}

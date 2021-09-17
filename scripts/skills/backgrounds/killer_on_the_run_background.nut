@@ -48,8 +48,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsCombatBackground = true;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
@@ -102,7 +101,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "Always a risk taker, you accepted %name% into the %companyname%\'s ranks despite her being a killer on the run. It worked in your favor as she proved herself an able and brave sellsword. As far as you know, she is still with the company, thoroughly enjoying every \'business\' opportunity it affords her.";
 		this.m.BadEnding = "While many doubted the risk of hiring a killer on the run such as %name%, the woman did prove herself a very capable sellsword. Unfortunately, an old life never trails far behind and bounty hunters kidnapped her in the night. You can find her skeleton squatting in a gibbet fifty feet in the air.";
 
@@ -124,7 +123,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{%fullname% has a face that no one desires - one fit for a wanted poster. | With blood on her hands, %name% resembles a woman recently described to you by bounty hunters. | %name% looks about ready to join any outfit - or disappear into its ranks. | Upon meeting people, %name% stammers out her name as if reluctant to part with it.} {Recognizing %name% is no hard feat: this woman is a known-murderer, the blood of both her cuckolding husband and his lover on her hands. | Her eyes are dark and shifting. There is a crime behind them, but also a sense of humanity, as if she knows she has done wrong and is looking to make amends. | Mud stands up to her legs. She\'s been running for a long time. Her hands tremble, too, for her legs run from what her hands have done. | They say she killed her newborn daughter, having always wanted a son instead. | Some believe she struck down a man in self-defense. | Being blackmailed with scandalous information, it\'s hard to blame the woman for what she has done.} {Even if she has done wrong, a party of killers could use a woman such as she. But can the woman be trusted? | %name%\'s eyes skirt from yours. When you ask how she is with a weapon, she mumbles about only having to hit \'the man\' once. | A woman of %name%\'s physique could be useful, but how much can you depend upon a woman whose former life was one of being on the run? | The woman chamfers on her fingernails like a beaver would a tree. She\'s jumpy, but maybe that\'s a good thing in this world. | Mercenary bands are just the thing for a woman like her.}";
 		}

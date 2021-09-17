@@ -271,7 +271,7 @@ this.potion_of_oblivion_item <- this.inherit("scripts/items/item", {
 			freePerkPointsSpentFromOrigin = 1;
 			break;
 		case "scenario.trader":
-			if (!_actor.getBackground().isCombatBackground())
+			if (!_actor.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				_actor.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 				perks = perks - 1;

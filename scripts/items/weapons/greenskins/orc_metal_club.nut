@@ -6,9 +6,9 @@ this.orc_metal_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.orc_metal_club";
 		this.m.Name = "Cudgel";
 		this.m.Description = "A massive wooden club studded with metal plates. Not made for human hands.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/orc_club_02_140x70.png";
 		this.m.Icon = "weapons/melee/orc_club_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

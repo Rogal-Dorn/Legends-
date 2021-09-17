@@ -5,7 +5,14 @@ this.horn_plate_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		this.blueprint.create();
 		this.m.ID = "blueprint.horn_plate_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/horn_plate_upgrade");
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_horn_plate_upgrade");
+		}
+		else
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/horn_plate_upgrade");
+		}
 		this.m.Cost = 650;
 		local ingredients = [
 			{

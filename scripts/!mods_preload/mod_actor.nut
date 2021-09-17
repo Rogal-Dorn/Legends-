@@ -154,6 +154,11 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			}
 		}
 
+		o.getGender <- function()
+		{
+			return -1;
+		}
+
 		o.onOtherActorDeath <- function ( _killer, _victim, _skill )
 		{
 			if (!this.m.IsAlive || this.m.IsDying)
@@ -213,8 +218,8 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 		o.isArmedWithMagicStaff <- function()
 		{
-			local item = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
-			return item != null && item.isItemType(this.Const.Items.ItemType.MagicStaff);
+			local item = this.getMainhandItem();
+			return item != null && item.isWeaponType(this.Const.Items.WeaponType.MagicStaff);
 		}
 
 		o.equipItem <- function( _item)
@@ -510,7 +515,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 				freePerkPointsSpentFromOrigin = 1;
 				break;
 			case "scenario.trader":
-				if (!this.getBackground().isCombatBackground())
+				if (!this.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 				{
 					this.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 					perks = perks - 1;
@@ -1134,7 +1139,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 					{
 						if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
 						{
-							if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave" || bro.getBackground().getID() == "background.slave")
+							if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave")
 							{
 								bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
 							}

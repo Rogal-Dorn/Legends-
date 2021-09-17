@@ -6,9 +6,9 @@ this.heavy_rusty_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.heavy_rusty_axe";
 		this.m.Name = "Heavy Rusty Axe";
 		this.m.Description = "This heavy rusty axe works more by its weight than its sharpness, but it gets the job done nevertheless.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_09.png";
 		this.m.Icon = "weapons/melee/wildmen_09_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

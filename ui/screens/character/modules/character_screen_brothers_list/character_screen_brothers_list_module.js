@@ -323,7 +323,6 @@ CharacterScreenBrothersListModule.prototype.updateRosterLabel = function (_data)
     {
         this.mRosterCountLabel.html('' + _data.brothers + '/' + _data.brothersMax);
         this.mFrontlineCountLabel.html('' + _data.brothersInCombat + '/' + _data.brothersMaxInCombat);
-        console.error(_data.shake)
         if (_data.shake)
         {
             this.mFrontlineCountLabel.shakeLeftRight();

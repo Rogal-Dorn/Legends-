@@ -6,12 +6,12 @@ this.wonky_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.wonky_bow";
 		this.m.Name = "Wonky Bow";
 		this.m.Description = "An ill-conceived bow if you ever saw one. The wood cricks and cracks when bent, the string frizzes and goes wiry every time you draw it back.";
-		this.m.Categories = "Bow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/bow_04.png";
 		this.m.Icon = "weapons/ranged/bow_04_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

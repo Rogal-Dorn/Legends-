@@ -8,9 +8,9 @@ this.heavy_southern_mace <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.heavy_southern_mace";
 		this.m.Name = "Heavy Southern Mace";
 		this.m.Description = "A heavy winged mace commonly used by well equipped soldiers of the southern reaches.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/heavy_southern_mace_01.png";
 		this.m.Icon = "weapons/melee/heavy_southern_mace_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

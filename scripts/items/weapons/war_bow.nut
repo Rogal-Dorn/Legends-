@@ -6,12 +6,12 @@ this.war_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.war_bow";
 		this.m.Name = "War Bow";
 		this.m.Description = "A long bow with massive pulling power. Distinctively designed for battle.";
-		this.m.Categories = "Bow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/bow_05.png";
 		this.m.Icon = "weapons/ranged/bow_05_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

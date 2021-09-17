@@ -15,19 +15,18 @@ this.perk_legend_specialist_hammer_skill <- this.inherit("scripts/skills/skill",
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if(item.getID() == "weapon.legend_hammer" || item.getID() == "weapon.legend_named_blacksmith_hammer")
+			if (item.getID() == "weapon.legend_hammer" || item.getID() == "weapon.legend_named_blacksmith_hammer")
 			{
-			_properties.MeleeSkill += 12;
-			_properties.DamageArmorMult += 0.4;
+				_properties.MeleeSkill += 12;
+				_properties.DamageArmorMult += 0.4;
 			}
-			if(item.getID() == "weapon.warhammer" ||  item.getID() == "weapon.military_pick" ||  item.getID() == "weapon.axehammer" || item.getID() == "weapon.named_warhammer" ||  item.getID() == "weapon.pickaxe" )
+			if (item.isItemType(this.Const.Items.ItemType.OneHanded) && item.isWeaponType(this.Const.Items.WeaponType.Hammer))
 			{
-			_properties.MeleeSkill += 3;
-			_properties.DamageArmorMult += 0.1;
+				_properties.MeleeSkill += 3;
+				_properties.DamageArmorMult += 0.1;
 			}
 		}
 	}

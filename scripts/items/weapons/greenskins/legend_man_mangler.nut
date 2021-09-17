@@ -8,9 +8,9 @@ this.legend_man_mangler <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_man_mangler";
 		this.m.Name = "Man Mangler";
 		this.m.Description = "A massive, crudely sharpened shard of metal that makes up for its stunted length through sheer weight. So heavy no average human can use it effectively. Attacks cost +5 fatigue per use";
-		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_man_mangler_01.png";
 		this.m.Icon = "weapons/melee/legend_man_mangler_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

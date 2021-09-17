@@ -8,10 +8,10 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.lute";
 		this.m.Name = "Lute";
 		this.m.Description = "A musical instrument that, if in the right hands, is capable of producing pleasant sounds with its vibrating strings.";
-		this.m.Categories = "Musical Instrument, Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/lute_01.png";
 		this.m.Icon = "weapons/melee/lute_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
+		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

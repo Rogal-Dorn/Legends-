@@ -6,14 +6,14 @@ this.legend_ranger_intro_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-        	Text = "[img]gfx/ui/events/event_24.png[/img]The council sent us out three months ago, in all directions from the grove. They wouldn't tell us what we were looking for exactly, only that we would know the signs of destruction when we saw them. For weeks we have followed the tracks and watched the skies. The birds are migrating the wrong direction. The rabbits only run one way down their bramble paths. The animals abandon their ranges, as if they know what is coming.  So you pushed on in the other direction, past deserted fields and burned homesteads, past rivers, lakes and mountains.  As you pass the last rise you pause, this is the place. These valleys have no deer, smoke hangs in the air and clings to the hills, the light is harsh and the air is bitter. Whatever is coming, it is coming from here. ",
+        	Text = "[img]gfx/ui/events/event_44.png[/img]The council sent us out three months ago, in all directions from the grove. They wouldn't tell us what we were looking for exactly, only that we would know the signs of destruction when we saw them.\n\n Before you can finish your thoughts a snapping of twigs and branches precedes a hulking mass barreling from the treeline. A bear almost double the height of your own lunges at your body, only to knock you off balance and down the slope. Pinecones batter your clothes and sharp branches lance your body. As the bear clumsily gives chase you spy a broken wall built into the bottom of the slope and make a leap for the platform above it.\n\n A sudden creak and snap reveals it\'s true nature. This is not flat ground, this is a roof. A very old one at that.\n\n You fall with the grace of a drunk bird through the roof and onto a table where a very angry wildman locks eyes with yours. You motion for silence and the bear peers through the hole.\n With a huff the beast turns and goes in search of an easier meal.\n\n After a heated arguement that almost comes to blows you offer the disgrunted druid information on your cause. With a similar huff and snort the druid wanders towards the door, gathering what little they have along the way. Perhaps more ground can be covered with two of nature\'s guardians?\n\n\n [color=#bcad8c]How this origin works;[/color]\n Backgrounds that have an affinity for outdoor life like wildmen, poachers, donkeys, bowyers, beastslayers, etc. cost 25% less to buy and maintain.\n The druid and ranger and both avatars and can split the roster upgrades between one another. Each has a total of 11 total roster unlocks, combined with the 3 you start with to make 25 total.\n If either avatar dies, the game is not over. You may continue to play with just one - but if both die the game will end.\n There is a bonus chance to find wildmen/women in settlements along with a few other backgrounds\n Brothers that do not like being with the ranger company will not get pathfinder and will cost 25% more to hire and upkeep.",
 			Image = "",
 			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "To arms!",
+					Text = "Where did that bear go...?",
 					function getResult( _event )
 					{
 						return 0;
@@ -40,7 +40,7 @@ this.legend_ranger_intro_event <- this.inherit("scripts/events/event", {
 
 	function onPrepare()
 	{
-		this.m.Title = "Legend Ranger";
+		this.m.Title = "A chance meeting";
 	}
 
 	function onPrepareVariables( _vars )

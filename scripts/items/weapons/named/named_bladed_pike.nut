@@ -10,7 +10,7 @@ this.named_bladed_pike <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.PrefixList = this.Const.Strings.OldWeaponPrefix;
 		this.m.UseRandomName = false;
 		this.m.Description = "This pike with a swerved blade hails from the legions of the ancient empire. Very few weapons have been preserved as well as this piece.";
-		this.m.Categories = "Polearm, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

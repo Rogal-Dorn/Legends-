@@ -4,7 +4,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.lone_wolf";
 		this.m.Name = "Lone Wolf";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 12 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends.\n[color=#c90000]The Best:[/color] Hunt other swordsmen to become the best in the lands.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling alone for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 16 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends.\n[color=#c90000]The Best:[/color] Hunt other swordsmen to become the best in the lands.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 150;
 		this.m.IsFixedLook = true;
@@ -30,6 +30,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bro.getSkills().removeByID("trait.greedy");
 		bro.getSkills().removeByID("trait.loyal");
 		bro.getSkills().removeByID("trait.disloyal");
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.setPlaceInFormation(4);
 		bro.getFlags().set("IsPlayerCharacter", true);
@@ -163,6 +164,61 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		}
 
 		return false;
+	}
+	function onUpdateDraftList( _list, _gender )
+	{
+		local r;
+		r = this.Math.rand(0, 1);
+
+		if (r == 0)
+		{
+			_list.push("squire_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 9);
+
+		if (r == 0)
+		{
+			_list.push("legend_blacksmith_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 9);
+
+		if (r == 0)
+		{
+			_list.push("hedge_knight_background");
+		}
+	}
+	function onHiredByScenario( bro )
+	{
+		if (bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.legend_blacksmith")
+		{
+			bro.improveMood(2.0, "Respects your profession");
+		}
+		else
+		{
+			bro.improveMood(1.0, "Joined a mercenary company");
+		}
+	}
+	function onUpdateHiringRoster( _roster )
+	{
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.legend_blacksmith")
+			{
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.85);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85);
+			}
+			else
+			{
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.00);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00);
+			}
+		}
 	}
 
 });

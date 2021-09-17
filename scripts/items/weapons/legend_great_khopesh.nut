@@ -6,9 +6,9 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_great_khopesh";
 		this.m.Name = "Great Khopesh";
 		this.m.Description = "With the weight and size like the leg of a large animal this mysterious weapon is both large as it is intimidating. Its outside curved edge bares a sharpness that makes it whistle through the air when swung.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_great_khopesh.png";
 		this.m.Icon = "weapons/melee/legend_great_khopesh_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

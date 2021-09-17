@@ -79,7 +79,7 @@ this.civilwar_savagery_event <- this.inherit("scripts/events/event", {
 					});
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 75)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && this.Math.rand(1, 100) <= 75)
 					{
 						bro.improveMood(0.5, "Helped save some peasants");
 
@@ -131,7 +131,7 @@ this.civilwar_savagery_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 75)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && this.Math.rand(1, 100) <= 75)
 					{
 						bro.improveMood(0.5, "Helped save some peasants");
 

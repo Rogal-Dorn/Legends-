@@ -8,9 +8,9 @@ this.legend_crusader_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_crusader_sword";
 		this.m.Name = "Crusader Sword";
 		this.m.Description = "A two-handed holy sword, versatile and deadly it hunts the heads of the wicked.";
-		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_crusader_sword_01.png";
 		this.m.Icon = "weapons/melee/legend_crusader_sword_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

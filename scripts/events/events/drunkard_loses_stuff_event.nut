@@ -152,7 +152,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (!bro.getBackground().isOffendedByViolence() || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
+					if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
 					{
 						continue;
 					}
@@ -213,7 +213,7 @@ this.drunkard_loses_stuff_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (!bro.getBackground().isOffendedByViolence() || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
+					if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) || bro.getBackground().getID() == "background.flagellant"  || bro.getBackground().getID() == "background.cultist"  || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.monk_turned_flagellant" )
 					{
 						continue;
 					}

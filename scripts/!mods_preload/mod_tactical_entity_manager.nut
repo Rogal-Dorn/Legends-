@@ -26,7 +26,7 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 
 			foreach( p in all_players )
 			{
-				if (p.getPlaceInFormation() > 25)
+				if (p.getPlaceInFormation() > 26)
 				{
 					continue;
 				}

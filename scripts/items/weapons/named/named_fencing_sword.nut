@@ -9,7 +9,7 @@ this.named_fencing_sword <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.ID = "weapon.named_fencing_sword";
 		this.m.NameList = this.Const.Strings.FencingSwordNames;
 		this.m.Description = "Crafting a proper fencing sword, both delicate and flexible, is no less difficult than wielding it. The smith that brought this particular weapon into existence must have been among the best in his trade.";
-		this.m.Categories = "Sword, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

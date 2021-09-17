@@ -6,9 +6,9 @@ this.obsidian_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.obsidian_dagger";
 		this.m.Name = "Obsidian Dagger";
 		this.m.Description = "A hermit witch gave you this stone dagger after tempering it with your blood. Reflections in its glass seem to move on their own, but this is clearly a trick of the eye. Very curiously, however, blood never seems to dry if it rests upon the obsidian.";
-		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/obsidian_dagger_01.png";
 		this.m.Icon = "weapons/melee/obsidian_dagger_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Legendary;
 		this.m.IsDoubleGrippable = true;

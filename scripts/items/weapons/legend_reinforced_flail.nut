@@ -6,9 +6,9 @@ this.legend_reinforced_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_reinforced_flail";
 		this.m.Name = "Reinforced Wooden Flail";
 		this.m.Description = "A heavy two-handed wooden flail bound with metal that can strike over or around shield cover.";
-		this.m.Categories = "Flail, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_reinforced_flail_01.png";
 		this.m.Icon = "weapons/melee/legend_reinforced_flail_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Flail;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

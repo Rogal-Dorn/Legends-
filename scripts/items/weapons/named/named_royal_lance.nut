@@ -8,9 +8,9 @@ this.named_royal_lance <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.PrefixList = this.Const.Strings.SouthernPrefix;
 		this.m.SuffixList = this.Const.Strings.SouthernSuffix;
 		this.m.Description = "This Swordstaff is especially well-crafted, and its blade would be worthy of even a noble";
-		this.m.Categories = "Sword/Spear, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_royal_lance_01.png";
 		this.m.Icon = "weapons/melee/legend_royal_lance_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

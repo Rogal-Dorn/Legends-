@@ -6,9 +6,9 @@ this.antler_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.antler_cleaver";
 		this.m.Name = "Antler Cleaver";
 		this.m.Description = "A very crude cleaver crafted from a sharpened antler. Heavy and blunt, but still dangerous.";
-		this.m.Categories = "Cleaver, One-Handed";
 		this.m.IconLarge = "weapons/melee/wildmen_01.png";
 		this.m.Icon = "weapons/melee/wildmen_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

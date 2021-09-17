@@ -6,9 +6,9 @@ this.polehammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.polehammer";
 		this.m.Name = "Polehammer";
 		this.m.Description = "A warhammer mounted on a long pole, used against armored targets over some distance and from behind the frontline.";
-		this.m.Categories = "Hammer, Two-Handed";
 		this.m.IconLarge = "weapons/melee/polehammer_01.png";
 		this.m.Icon = "weapons/melee/polehammer_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

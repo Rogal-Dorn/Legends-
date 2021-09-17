@@ -10,7 +10,7 @@ this.named_goblin_falchion <- this.inherit("scripts/items/weapons/named/named_we
 		this.m.PrefixList = this.Const.Strings.GoblinWeaponPrefix;
 		this.m.UseRandomName = false;
 		this.m.Description = "Fashioned from sharpened black rock, this cruel blade can tear wounds faster than the eye can see. A truly remarkable piece.";
-		this.m.Categories = "Sword, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

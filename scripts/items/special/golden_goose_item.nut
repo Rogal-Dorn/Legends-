@@ -56,7 +56,7 @@ this.golden_goose_item <- this.inherit("scripts/items/item", {
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Generates [color=" + this.Const.UI.Color.PositiveValue + "]30[/color] crowns daily."
+			text = "Generates [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] crowns daily."
 		});
 		return result;
 	}

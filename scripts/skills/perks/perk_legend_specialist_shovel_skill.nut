@@ -15,58 +15,26 @@ this.perk_legend_specialist_shovel_skill <- this.inherit("scripts/skills/skill",
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (this.hasShovel(item))
+			if (item.getID() == "weapon.legend_shovel" || item.getID() == "weapon.legend_named_shovel")
 			{
 				_properties.MeleeSkill += 12;
 			}
-
-			local ids = [
-				"weapon.two_handed_mace",
-				"weapon.two_handed_flanged_mace",
-				"weapon.named_two_handed_mace",
-				"weapon.named_two_handed_spiked_mace",
-				"weapon.goedendag",
-				"weapon.legend_military_goedendag",
-				"weapon.legend_two_handed_club",
-				"weapon.two_handed_spiked_mace",
-				"weapon.legend_bough",
-				"weapon.named_polemace",
-				"weapon.polemace",
-				"weapon.legend_military_goedendag",
-				"weapon.legend_named_military_goedendag"
-			];
-
-			if (ids.find(item.getID()) != null)
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Mace) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
 				_properties.MeleeSkill += 3;
 			}
 		}
 	}
 
-	function hasShovel(_item)
-	{
-		local ids = [
-			"weapon.legend_shovel",
-			"weapon.legend_named_shovel"
-		];
-
-		if (_item != null && ids.find(_item.getID()) != null)
-		{
-			return true;
-		}
-		return false;
-	}
-
 	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = actor.getMainhandItem();
 
-		if (this.hasShovel(item) && !actor.getSkills().hasSkill("actives.knock_out"))
+		if ((item.getID() == "weapon.legend_shovel" || item.getID() == "weapon.legend_named_shovel") && !actor.getSkills().hasSkill("actives.knock_out"))
 		{
 			item.addSkill(this.new("scripts/skills/actives/knock_out"));
 		}

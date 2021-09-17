@@ -6,9 +6,9 @@ this.legend_katar <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_katar";
 		this.m.Name = "Katar";
 		this.m.Description = "An H-shaped horizontal blade sitting above the knuckles. Has a thickened tip that is particularily effective at piercing armor but its construction prevents it from being gripped with two hands.";
-		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_katar_01.png";
 		this.m.Icon = "weapons/melee/legend_katar_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = false;

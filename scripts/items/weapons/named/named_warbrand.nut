@@ -10,7 +10,7 @@ this.named_warbrand <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.ID = "weapon.named_warbrand";
 		this.m.NameList = this.Const.Strings.WarbrandNames;
 		this.m.Description = "A masterfully crafted and somewhat uncommon variant of the sword with a long and thin blade, sharpened only on one side, and no crossguard. Can be used both for quick slashes and sweeping strikes.";
-		this.m.Categories = "Sword, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

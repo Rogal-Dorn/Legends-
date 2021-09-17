@@ -62,9 +62,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 
 		this.m.Level = 3;
-		this.m.IsOutlawBackground = true;
-		this.m.IsCombatBackground = true;
-		this.m.IsUntalented = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Untalented;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.CustomPerkTree = [
@@ -177,7 +175,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

@@ -5,7 +5,14 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 		this.blueprint.create();
 		this.m.ID = "blueprint.additional_padding_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/additional_padding_upgrade");
+		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_additional_padding_upgrade");
+		}
+		else
+		{
+			this.m.PreviewCraftable = this.new("scripts/items/armor_upgrades/additional_padding_upgrade");
+		}
 		this.m.Cost = 400;
 		local ingredients = [
 			{

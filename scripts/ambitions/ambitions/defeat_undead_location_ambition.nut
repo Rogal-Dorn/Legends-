@@ -78,7 +78,7 @@ this.defeat_undead_location_ambition <- this.inherit("scripts/ambitions/ambition
 			{
 				fearful.push(bro);
 			}
-			else if (bro.getBackground().isLowborn())
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
 				lowborn.push(bro);
 			}

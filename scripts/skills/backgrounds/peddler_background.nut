@@ -38,7 +38,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.Bodies = this.Const.Bodies.Thick;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -94,7 +94,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleThick;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
 

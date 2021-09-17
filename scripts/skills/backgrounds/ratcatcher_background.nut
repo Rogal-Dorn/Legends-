@@ -39,7 +39,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
@@ -90,7 +90,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
 
@@ -98,7 +98,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 
 	function onBuildDescription()
 	{
-		if(this.m.IsFemaleBackground == true)
+		if(this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 		return "{Catcher of rats, that\'s the title %name% once preferred. | With perhaps misplaced pride, %name% fashions herself as a woman of the sewers. | Bowlegged and scrawny, %name%\'s career of hunting rats has seemingly turned her into one.} She grew up in %townname%, surviving {in the alleys | on rat, the fruit of the sewers | alongside the furry and scuttling, as well as some rats}. {For cheap entertainment, her father taught hr the ways of snaring tiny rodents | Her fallen brother\'s body was eaten by rats, forging an angry future of rodent-revenge | Her mother demanded the finest meats she could find, and she didn\'t mean from the market}. But %townname% wears on people, and it wore on %name% like a giant, nibbling creature. {Hearing of greater rats in the world | Sensing that there must be more to life than rats | Trusting her rat-whispering skills}, %name% now seeks to {put her shriveled nose, odd gnawing habits, and quick but kind of gross hands to better use. | crush every rat, see them driven before her, and to hear the squeals of their kin. She has a thousand-yard stare and a clenched fist as she tells you this. | perhaps graduate her skills from rats to dogs and maybe humans, so she says. She doesn\'t appear to know what she\'s in for, but perhaps it is best to not tell her. | dish up some rat soup, rat salad, rat kebab, rat bread, rat stew, rat chicken, rat wine... after a while, you just stop listening.}";
 		}

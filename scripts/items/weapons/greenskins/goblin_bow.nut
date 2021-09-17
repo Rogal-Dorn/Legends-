@@ -6,12 +6,12 @@ this.goblin_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goblin_bow";
 		this.m.Name = "Boondock Bow";
 		this.m.Description = "A very light short bow used by Goblins.";
-		this.m.Categories = "Bow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/bow_goblin_01.png";
 		this.m.Icon = "weapons/ranged/bow_goblin_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

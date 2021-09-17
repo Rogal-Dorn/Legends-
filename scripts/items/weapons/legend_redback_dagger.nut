@@ -6,9 +6,9 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_redback_dagger";
 		this.m.Name = "Redback Dagger";
 		this.m.Description = "A dagger made from the fang and poison gland of a redback spider, it is can inject redback poison into a target";
-		this.m.Categories = "Dagger, One-Handed";
 		this.m.IconLarge = "weapons/melee/legend_redback_dagger.png";
 		this.m.Icon = "weapons/melee/legend_redback_dagger_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Dagger;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

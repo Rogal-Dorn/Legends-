@@ -73,19 +73,10 @@ this.legend_staffwall <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = 1;
-
 		if (_properties.IsSpecializedInSpears )
 		{
-		this.m.FatigueCostMult *= 0.75;
+			this.m.FatigueCostMult *= 0.75;
 		}
-		
-		if (_properties.IsSpecializedInSpearWall )
-		{
-		this.m.FatigueCostMult *= 0.5;
-		this.m.ActionPointCost = 3;
-		}
-		
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

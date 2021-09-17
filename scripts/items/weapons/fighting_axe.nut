@@ -6,9 +6,9 @@ this.fighting_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.fighting_axe";
 		this.m.Name = "Fighting Axe";
 		this.m.Description = "An axe explicitly designed for fighting armored opponents. Quite sturdy.";
-		this.m.Categories = "Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/axe_03.png";
 		this.m.Icon = "weapons/melee/axe_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

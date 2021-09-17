@@ -6,9 +6,9 @@ this.greataxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.greataxe";
 		this.m.Name = "Greataxe";
 		this.m.Description = "A heavy and long two-handed axe designed for battle that bears down heavy with every swing and can easily cut a man in two.";
-		this.m.Categories = "Axe, Two-Handed";
 		this.m.IconLarge = "weapons/melee/axe_two_handed_01.png";
 		this.m.Icon = "weapons/melee/axe_two_handed_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

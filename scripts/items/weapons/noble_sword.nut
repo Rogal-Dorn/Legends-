@@ -6,9 +6,9 @@ this.noble_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.noble_sword";
 		this.m.Name = "Noble Sword";
 		this.m.Description = "A well-balanced long sword with a double-edged blade.";
-		this.m.Categories = "Sword, One-Handed";
 		this.m.IconLarge = "weapons/melee/sword_03.png";
 		this.m.Icon = "weapons/melee/sword_03_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

@@ -38,9 +38,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
 		this.m.BeardChance = 1;
 		this.m.Ethnicity = 1;
-		this.m.IsFemaleBackground = true;
-		this.m.IsCombatBackground = false;
-		this.m.IsPerformingBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [

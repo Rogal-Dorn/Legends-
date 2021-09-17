@@ -61,7 +61,7 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleThick;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
 

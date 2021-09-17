@@ -180,7 +180,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isPerformingBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Performing))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);

@@ -6,9 +6,9 @@ this.rhomphaia <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.rhomphaia";
 		this.m.Name = "Rhomphaia";
 		this.m.Description = "A long and curved blade, sharpened only on one side, on a large handle. Can be used both for quick slashes and sweeping strikes.";
-		this.m.Categories = "Sword, Two-Handed";
 		this.m.IconLarge = "weapons/melee/romphaia_01.png";
 		this.m.Icon = "weapons/melee/romphaia_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

@@ -35,10 +35,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(1, 3);
-		this.m.IsCombatBackground = true;
-		this.m.IsRangerRecruitBackground = true;
-		this.m.IsCrusaderRecruitBackground = true;
-		this.m.IsEducatedBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
@@ -139,7 +136,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function onSetAppearance()

@@ -47,8 +47,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Level = this.Math.rand(2, 3);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
-		this.m.IsCombatBackground = true;
-		this.m.IsRangerRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
@@ -130,7 +129,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "%name% retired from the company and bought the deed to an abandoned castle. There she commands a troop of fellow beast slayers who journey the land protecting it from monsters. Last you spoke to her she had a raven-haired lady friend who did not take kindly to your presence, nor the presence of anyone else for that matter. You\'re sure she\'s happy.";
 		this.m.BadEnding = "After leaving the %companyname%, %name% retired from beast slaying altogether and last you heard she was mother of an albino daughter. Unfortunately, rumors spread quickly about the girl having supernatural powers and her father was executed by fire. The mother and child were never caught nor seen again.";
 
@@ -138,7 +137,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{{%name%\'s past is hardly an extravagant one. | %name% has been traveling these parts for some time, but not always in her current vocation. | Despite her grisly job, %name% did not come from an extraordinary life. | A long list of defeated beasts and the pelts to prove it misleads one as to %name%\'s background.} {The beast slayer was once a mere hunter, armed with both bow and wisdom. However, upon discovering a monstrous direwolf in one of his traps she acquired a taste for hunting more dangerous foes. | When her village kept getting attacked by webknechts, the woman took to learning all she could about hunting beasts. And then doing just that to much success. | It\'s said she was a village\'s miller until alps haunted the town whole. Never much of a sleeper herself, she spent nights learning about the monsters until she bettered them. | She served as prey finder for a local lord. But when a hunt went awry and into the jaws of an unhold, the woman turned to studying beasts and how to slay them. | A mere lumberjack, the beast slayer came into true being when all her peers were slaughtered at the hands of a schrat, a living tree. She avenged her friends and vowed to learn all she could of monsters. | A former nun, the woman turned to studying beasts and swords alike after nachzehrers ravaged her monastery.} {Times are changing, though, and not even this skilled monstrum hunter can go it alone. She seeks to join a company and kill as many beasts as she can. | The days are uncharacteristically short and the moon blooms bright every night. This slayer feels a change in the air, and if she\'s going to fight what\'s coming she\'ll need more than just herself to do it. | While not fond of company, the beast slayer wants to kill as many creatures as she can, and she\'ll need the help of some fine comrades to do just that. | In a world becoming more dangerous and desperate, the beast slayer seeks coin and company both. | A professional journeywoman such as this woman could be of great use to a mercenary company and you\'ve little doubt she\'ll be diligent in her death dealing. | Unfortunately, the woman took an apprentice under her wings only for the kid to be slaughtered by a direwolf. The broken beast slayer now seeks sturdier company.}}";
 		}

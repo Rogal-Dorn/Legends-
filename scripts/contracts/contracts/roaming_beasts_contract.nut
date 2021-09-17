@@ -686,7 +686,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isLowborn() && !bro.getBackground().isOffendedByViolence() && !bro.getSkills().hasSkill("trait.bright") && bro.getBackground().getID() != "background.hunter")
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getSkills().hasSkill("trait.bright") && bro.getBackground().getID() != "background.hunter")
 			{
 				candidates_helpful.push(bro);
 			}
@@ -695,7 +695,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 			{
 				candidates_bro1.push(bro);
 
-				if (!bro.getBackground().isOffendedByViolence() && bro.getBackground().isCombatBackground())
+				if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 				{
 					candidates_bro2.push(bro);
 				}

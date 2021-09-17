@@ -29,11 +29,11 @@ this.legend_headband_coin <- this.inherit("scripts/items/helmets/helmet", {
 	function updateVariant()
 	{
 		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.Sprite = "headband_coin_0" + variant;
-		this.m.SpriteDamaged = "headband_coin_0" + variant + "_damaged";
-		this.m.SpriteCorpse = "headband_coin_0" + variant + "_dead";
+		this.m.Sprite = "headband_coin_" + variant;
+		this.m.SpriteDamaged = "headband_coin_" + variant + "_damaged";
+		this.m.SpriteCorpse = "headband_coin_" + variant + "_dead";
 		this.m.IconLarge = "";
-		this.m.Icon = "helmets/icon_headband_coin_0" + variant + ".png";
+		this.m.Icon = "helmets/icon_headband_coin_" + variant + ".png";
 	}
 
 });

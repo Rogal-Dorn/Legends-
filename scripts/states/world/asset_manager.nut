@@ -254,7 +254,7 @@ this.asset_manager <- {
 
 	function getBrothersScaleMax()
 	{
-		return this.m.BrothersScaleMax;
+		return this.Math.min(25, this.m.BrothersScaleMax);
 	}
 
 	function getBrothersScaleMin()
@@ -2544,8 +2544,6 @@ this.asset_manager <- {
 		{
 			this.m.Origin = this.Const.ScenarioManager.getScenario("scenario.tutorial");
 		}
-
-		this.logInfo(this.getOrigin().getID());
 
 		if (_in.getMetaData().getVersion() >= 41)
 		{

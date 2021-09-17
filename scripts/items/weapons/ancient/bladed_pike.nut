@@ -6,9 +6,9 @@ this.bladed_pike <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.bladed_pike";
 		this.m.Name = "Ancient Bladed Pike";
 		this.m.Description = "A long, ancient pike used to attack over some distance and keeping the enemy at bay.";
-		this.m.Categories = "Polearm, Two-Handed";
 		this.m.IconLarge = "weapons/melee/bladed_pike_01.png";
 		this.m.Icon = "weapons/melee/bladed_pike_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Polearm;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Defensive;

@@ -6,9 +6,9 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_grisly_scythe";
 		this.m.Name = "Grisly Scythe";
 		this.m.Description = "While looking like a regular agricultural tool from a distance, this scythe has an otherworldy aura that draws you in. Resurrects humans it kills, if they aren\'t too damaged.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.IconLarge = "weapons/melee/legend_scythe_02.png";
 		this.m.Icon = "weapons/melee/legend_scythe_02_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

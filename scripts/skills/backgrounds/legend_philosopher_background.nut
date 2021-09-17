@@ -18,6 +18,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 
+		this.m.BackgroundType = this.Const.BackgroundType.Educated;
 		this.m.Level = 1;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;

@@ -16,18 +16,18 @@ this.perk_legend_specialist_ninetails_skill <- this.inherit("scripts/skills/skil
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = actor.getMainhandItem();
 		local resolve = actor.getCurrentProperties().Bravery;
 
 		if (item != null)
 		{
-			if(item.getID() == "weapon.legend_cat_o_nine_tails")
+			if (item.getID() == "weapon.legend_cat_o_nine_tails")
 			{
 				_properties.MeleeSkill += this.Math.floor(resolve * 0.1);
 			}
-			if(item.getID() == "weapon.battle_whip" || item.getID() == "weapon.thorned_whip" || item.getID() == "weapon.named_battle_whip" || item.getID() == "weapon.flail" || item.getID() == "weapon.two_handed_flail" || item.getID() == "weapon.two_handed_wooden_flail" || item.getID() == "weapon.legend_pole_flail" || item.getID() == "weapon.legend_ranged_reinforced_flail" || item.getID() == "weapon.legend_ranged_wooden_flail")
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Whip | this.Const.Items.WeaponType.Flail))
 			{
-				_properties.MeleeSkill += this.Math.floor(resolve * 0.05	);
+				_properties.MeleeSkill += this.Math.floor(resolve * 0.05);
 			}
 		}
 	}

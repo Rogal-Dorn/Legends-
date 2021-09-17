@@ -6,9 +6,9 @@ this.ancient_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.ancient_spear";
 		this.m.Name = "Ancient Spear";
 		this.m.Description = "An ancient wooden spear of simple design. Time has taken its toll on this weapon.";
-		this.m.Categories = "Spear, One-Handed";
 		this.m.IconLarge = "weapons/melee/ancient_spear_01.png";
 		this.m.Icon = "weapons/melee/ancient_spear_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Spear;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Defensive;
 		this.m.IsDoubleGrippable = true;

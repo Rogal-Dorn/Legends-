@@ -33,9 +33,7 @@ this.legend_noble_event_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Beards = this.Const.Beards.All;
 
 		this.m.Level = 1;
-		this.m.IsCombatBackground = true;
-		this.m.IsNoble = true;
-		this.m.IsUntalented = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Untalented;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Chivalrous;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];

@@ -8,9 +8,9 @@ this.nomad_mace <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.nomad_mace";
 		this.m.Name = "Nomad Mace";
 		this.m.Description = "A simple wooden mace with a metal head. Weapons like this are popular among the nomads of the deserts.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/wooden_nomad_mace_01.png";
 		this.m.Icon = "weapons/melee/wooden_nomad_mace_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

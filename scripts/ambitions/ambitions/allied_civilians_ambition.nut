@@ -94,7 +94,7 @@ this.allied_civilians_ambition <- this.inherit("scripts/ambitions/ambition", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isCombatBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				_vars.push([
 					"brawler",

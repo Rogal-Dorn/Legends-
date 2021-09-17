@@ -31,8 +31,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsOffendedByViolence = true;
-		this.m.IsCrusaderRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
@@ -133,8 +132,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
-
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function onSetAppearance()

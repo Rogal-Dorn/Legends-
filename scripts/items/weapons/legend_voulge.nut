@@ -6,9 +6,9 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_voulge";
 		this.m.Name = "Voulge";
 		this.m.Description = "A polearm with a heavy knife blade, reminiscent of a butcher\'s cleaver on a stick.";
-		this.m.Categories = "Cleaver, Two-Handed";
 		this.m.Variant = 1
 		this.updateVariant();
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

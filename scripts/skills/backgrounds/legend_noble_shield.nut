@@ -50,7 +50,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 
-		this.m.IsCombatBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[1];
@@ -104,7 +104,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "Supporting your cause from the start, %name% was with you in retirement, leaving the company not long after you did. Though she was a lowly peasant, she proved herself in battle after battle and slowly became as trusted and valued a friend as one can have in a mercenary company.";
 		this.m.BadEnding = "A supporter of your cause from the start, %name% was as loyal as she was talented. She stayed with the company for a time before eventually leaving to forge out a path for himself. The other day, you received a letter from the mercenary stating that she had started her own company and was in dire need of help. Unfortunately, the message was dated to nearly a full year ago. When you investigated the existence of her company, you learned that it had been completely annihilated in a battle between nobles.";
 	}
@@ -113,7 +113,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 
 	function onBuildDescription()
 	{
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "%name% is not known to be a big talker, but she has every right to be. {She\'s saved the lives of many of the company. | She once spared you from an orc\'s wicked chain. | An assassin would have killed the local noble in a pub were it not for this woman. | A misfired crossbow nearly took out your eye - hadn\'t %name%\'s shield been there to stop it. | She once pushed two men off a cliff using only her shield and two strong legs. | She learned how to fight from her father, a vanguard at the Battle of Many Names. | Sacrificing her family\'s heirloom - an old shield of wood and studded iron - she saved the local noble\'s life. | A woman of rather consistent heroism, she pulled a drunken captain from a pub fire. | Faced with a horde of goblins, she used her shield and strength to push a hole in their lines, opening the way for the rest of her company to kill them all.} With quick whirls and whips of her shield, the woman\'s deflected all manner of mortal danger. Although rather quiet, you\'ve found %name%\'s place in a shield-wall to be rather indispensable.";
 		}

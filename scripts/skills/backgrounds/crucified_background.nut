@@ -33,8 +33,7 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.BeardChance = 100;
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.IsCombatBackground = true;
-		this.m.IsCrusaderRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];

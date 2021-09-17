@@ -6,9 +6,9 @@ this.orc_wooden_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.orc_wooden_club";
 		this.m.Name = "Tree Limb";
 		this.m.Description = "A big and heavy branch torn from a tree. Not well suited for human hands.";
-		this.m.Categories = "Mace, One-Handed";
 		this.m.IconLarge = "weapons/melee/orc_club_01_140x70.png";
 		this.m.Icon = "weapons/melee/orc_club_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

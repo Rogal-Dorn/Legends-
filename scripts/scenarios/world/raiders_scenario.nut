@@ -364,7 +364,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isOutlawBackground())
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);

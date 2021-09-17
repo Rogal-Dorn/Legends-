@@ -48,16 +48,14 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Fanatic",
 			"the Zealot"
 		];
-
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-
 		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
@@ -108,17 +106,9 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
-
-	// Should overwrite the "character_backgrounds" isCultist() check
-	function isCultist()
-	{
-		return true;
-	}
-
-
 
 	function onBuildDescription()
 	{
@@ -166,7 +156,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function onSetAppearance()
 	{
-		if (this.m.IsFemaleBackground == false)
+		if (!this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			local actor = this.getContainer().getActor();
 			local tattoo_body = actor.getSprite("tattoo_body");
@@ -189,7 +179,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 	function updateAppearance()
 	{
-		if (this.m.IsFemaleBackground == false)
+		if (!this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			local actor = this.getContainer().getActor();
 			local tattoo_body = actor.getSprite("tattoo_body");

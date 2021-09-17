@@ -763,7 +763,7 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isOffendedByViolence() && !bro.getBackground().isCombatBackground())
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 					{
 						bro.worsenMood(0.5, "You let a crucified man die a slow death");
 

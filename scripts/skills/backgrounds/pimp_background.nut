@@ -37,7 +37,7 @@ this.pimp_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
 
-		this.m.IsOutlawBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[2];

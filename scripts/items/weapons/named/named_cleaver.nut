@@ -9,7 +9,7 @@ this.named_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ID = "weapon.named_cleaver";
 		this.m.NameList = this.Const.Strings.CleaverNames;
 		this.m.Description = "A masterful smith managed to create this military cleaver in a way that it handles almost like a regular sword but loses nothing of its devastating power.";
-		this.m.Categories = "Cleaver, One-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

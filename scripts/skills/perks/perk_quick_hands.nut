@@ -1,4 +1,6 @@
 this.perk_quick_hands <- this.inherit("scripts/skills/skill", {
+	//THIS PERK IS MODIFIED BY MSU, CHECK msu_mod_skills.nut for up to date code (I have mirrored it here 2021/09/04)
+
 	m = {},
 	function create()
 	{

@@ -20,25 +20,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		BackgroundDescription = "",
 		GoodEnding = null,
 		BadEnding = null,
-		IsScenarioOnly = false,
-		IsNew = true,
-		IsUntalented = false,
-		IsOffendedByViolence = false,
-		IsCombatBackground = false,
-		IsEducatedBackground = false,
 		Name = "",
-		IsNoble = false,
-		IsLowborn = false,
-		IsFemaleBackground = false,
-		IsRangerRecruitBackground = false,
-		IsDruidRecruitBackground = false,
-		IsCrusaderRecruitBackground = false,
-		IsPerformingBackground = false,
-		IsOutlawBackground = false,
+		BackgroundType = this.Const.BackgroundType.None,
 		AlignmentMin = this.Const.LegendMod.Alignment.Dreaded,
 		AlignmentMax = this.Const.LegendMod.Alignment.Saintly,
-		IsStabled = false,
-		IsConverted = false,
 		Modifiers = {
 			Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[0],
 			ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0],
@@ -140,72 +125,34 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.Excluded.find(_id) != null;
 	}
 
-	function isUntalented()
+	function isBackgroundType( _type )
 	{
-		return this.m.IsUntalented;
+		return (this.m.BackgroundType & _type) != 0
 	}
 
-	function setScenarioOnly( _f )
+	function addBackgroundType( _type )
 	{
-		this.m.IsScenarioOnly = _f;
+		if (!this.isBackgroundType(_type))
+		{
+			this.m.BackgroundType = this.m.BackgroundType | _type;
+		}
+		else
+		{
+			this.logError(_type + " is already contained in " + this.getID());
+		}
 	}
 
-	function isOffendedByViolence()
+	function removeBackgroundType( _type )
 	{
-		return this.m.IsOffendedByViolence;
+		if (this.isBackgroundType(_type))
+		{
+			this.m.BackgroundType -= _type;
+		}
+		else
+		{
+			this.logError(_type + " is not contained in " + this.getID());
+		}
 	}
-
-	function isFemaleBackground()
-	{
-		return this.m.IsFemaleBackground;
-	}
-
-	function isCombatBackground()
-	{
-		return this.m.IsCombatBackground;
-	}
-
-	function isNoble()
-	{
-		return this.m.IsNoble;
-	}
-
-	function isLowborn()
-	{
-		return this.m.IsLowborn;
-	}
-
-	function isRangerRecruitBackground()
-	{
-		return this.m.IsRangerRecruitBackground;
-	}
-
-	function isCrusaderRecruitBackground()
-	{
-		return this.m.IsCrusaderRecruitBackground;
-	}
-
-	function isPerformingBackground()
-	{
-		return this.m.IsPerformingBackground;
-	}
-
-	function isEducatedBackground()
-	{
-		return this.m.IsEducatedBackground;
-	}
-
-	function isOutlawBackground()
-	{
-		return this.m.IsOutlawBackground;
-	}
-
-	function isCultist()
-	{
-		return this.m.IsConverted;
-	}
-
-
 
 	function getEthnicity()
 	{
@@ -242,7 +189,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
 	function getIconColored()
 	{
-		if(this.m.IsConverted) {
+		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
 			return "ui/backgrounds/background_34.png";
 		}
 		return this.m.Icon;
@@ -250,12 +197,12 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		return this.skill.isHidden() || this.m.IsScenarioOnly;
+		return this.skill.isHidden() || this.isBackgroundType(this.Const.BackgroundType.Scenario);
 	}
 
 	function getName()
 	{
-		if(this.m.IsConverted) {
+		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
 			return "Background: Cultist " + this.m.Name;
 		}
 		return "Background: " + this.m.Name;
@@ -692,14 +639,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function isStabled()
-	{
-		return this.m.IsStabled;
-	}
-
 	function buildDescription( _isFinal = false )
 	{
-		if (this.m.IsScenarioOnly)
+		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
 		{
 			return;
 		}
@@ -1061,9 +1003,25 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		this.m.PerkTreeMap = pT.Map;
 	}
 
+	function getPerkTreeDynamicMins()
+	{
+		local mins = this.m.PerkTreeDynamicMins;
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
+		{
+			mins = this.m.PerkTreeDynamicMinsBeast;
+		}
+		else if (this.LegendsMod.Configs().LegendMagicEnabled())
+		{
+			mins = this.m.PerkTreeDynamicMinsMagic;
+		}
+
+		return mins;
+	}
+
 	function buildPerkTree()
 	{
-	local a = {
+		local a = {
 			Hitpoints = [
 				0,
 				0
@@ -1097,6 +1055,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				0
 			]
 		};
+		
 		if (this.m.PerkTree != null)
 		{
 			return a;
@@ -1107,15 +1066,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			if (this.World.Assets.isLegendPerkTrees())
 			{
 
-				local mins = this.m.PerkTreeDynamicMins;
-				if (this.World.Assets.getOrigin().getID() == "scenario.beast_hunters")
-				{
-					mins = this.m.PerkTreeDynamicMinsBeast;
-				}
-				else if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					mins = this.m.PerkTreeDynamicMinsMagic;
-				}
+				local mins = this.getPerkTreeDynamicMins();
 
 				local result  = this.Const.Perks.GetDynamicPerkTree(mins, this.m.PerkTreeDynamic);
 				this.m.CustomPerkTree = result.Tree
@@ -1160,7 +1111,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if(isCultist()) {
+			if(this.isBackgroundType(this.Const.BackgroundType.Converted))
+			{
 				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
 			}
 			local level = this.getContainer().getActor().getLevel();
@@ -1433,7 +1385,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					names = this.Const.Strings.BarbarianNames
 				}
 
-				if (this.m.IsFemaleBackground)
+				if (this.isBackgroundType(this.Const.BackgroundType.Female))
 				{
 					names = this.Const.Strings.CharacterNamesFemale;
 					if (this.m.Ethnicity == 1)
@@ -1488,7 +1440,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (this.m.IsFemaleBackground == true)
+		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			actor.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = [
 				"sounds/humans/legends/woman_light_01.wav",
@@ -1598,8 +1550,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeU8(this.m.Level);
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
-		_out.writeBool(this.m.IsFemaleBackground);
-		_out.writeBool(this.m.IsConverted);
+		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Female));
+		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Converted));
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1635,17 +1587,21 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.m.DailyCostMult = 1.0;
 		}
 
-		this.m.IsFemaleBackground = _in.readBool();
-		if (this.m.IsFemaleBackground)
+		if(_in.readBool())
 		{
-			this.setGender(1);
+			this.addBackgroundType(this.Const.BackgroundType.Female);
+			this.setGender(1)
 		}
 		else
 		{
-			this.setGender(0);
+			this.setGender(0)
 		}
 
-		this.m.IsConverted = _in.readBool();
+		if (_in.readBool())
+		{
+			this.addBackgroundType(this.Const.BackgroundType.Converted);
+		}
+
 		this.m.CustomPerkTree = [];
 		local numRows = _in.readU8();
 		for( local i = 0; i < numRows; i = ++i )

@@ -29,7 +29,7 @@ this.sato_slaves_vs_soldiers_event <- this.inherit("scripts/events/event", {
 				{
 					if (bro.getSkills().hasSkill("trait.loyal")) {
 						bro.worsenMood(1.5, "Had his loyalty called into question");
-					} else if (bro.getBackground().isCombatBackground()) {
+					} else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat)) {
 						if (this.Math.rand(1, 100) <= 50) {
 							bro.worsenMood(1.0, "Was accused of being too mercenary")
 						}
@@ -91,7 +91,7 @@ this.sato_slaves_vs_soldiers_event <- this.inherit("scripts/events/event", {
 			{
 				slaves = ++slaves;
 			}
-			else if (bro.getBackground().isCombatBackground())
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				soldiers = ++soldiers;
 			}

@@ -51,15 +51,14 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Ethnicity = 1;
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
-		this.m.IsLowborn = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[1];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.FistTree
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -101,7 +100,7 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 

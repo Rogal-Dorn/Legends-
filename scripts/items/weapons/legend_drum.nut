@@ -8,10 +8,10 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.legend_drum";
 		this.m.Name = "Drum";
 		this.m.Description = "A musical instrument, can produce inspiring rythms, if you have the skill. The drum sticks make weak maces in a pinch.";
-		this.m.Categories = "Musical Instrument, Mace, Two-Handed";
 		this.m.IconLarge = "weapons/melee/drum_01.png";
 		this.m.Icon = "weapons/melee/drum_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
+		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

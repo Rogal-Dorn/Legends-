@@ -32,9 +32,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.IsLowborn = true;
-		this.m.IsRangerRecruitBackground = true;
-		this.m.IsDruidRecruitBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Druid;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
@@ -85,7 +83,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "Dogs were not simply \'hounds\' to %name%, despite her title as \'houndmaster.\' To her, they were the most loyal friends of her life. After leaving the company, she discovered an ingenious way to breed the animals specifically tailored to the desires of the nobility. Wanted a brutish beast for a guard dog? She could do it. Wanted something small and cuddly for the children? She could do that, too. The former mercenary now earns an incredible earning doing what she loves - working with dogs.";
 		this.m.BadEnding = "What\'s merely a hound to some folks is a loyal beast to %name%. After leaving the company, the houndmaster went out to work for the nobility. Unfortunately, she refused to let hundreds of her dogs be used as a battle vanguard to be thrown away for some short-lived tactical advantage. She was hanged for her \'traitorous ideals\'.";
 
@@ -107,7 +105,7 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onBuildDescription()
 	{
-		if(this.m.IsFemaleBackground == true)
+		if(this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{%name%\'s fondness for dogs started after her father won a pup in a shooting contest. | When a dog saved her from a bear, %name% dedicated her life to the canine lot. | Seeing a dog stave off a would-be robber, %name%\'s fondness for the mutts only grew. | A young, bird-hunting %name% quickly saw the honor, loyalty, and workmanship of a dog. | Once bitten by a wild dog, %name% confronted her fear of canines by learning to train them.} {The houndmaster spent many years working for a local lord. She gave up the post after the liege struck a dog down just for sport. | Quick with training her mongrels, the houndmaster put her dogs into a lucrative traveling tradeshow. | The woman made a great deal of money on the dog-fighting circuits, her mutts renowned for their easily commanded - and unleashed - ferocity. | Employed by lawmen, the houndmaster used her strong-nosed dogs to hunt down many a criminal element. | Used by a local lord, many of the houndmaster\'s dogs found their way onto the battlefield. | For many years, the houndmaster used her dogs to help lift the spirits of orphaned children and the crippled.} {Now, though, %name% seeks a change of vocation. | When she heard word of a mercenary\'s pay, %name% decided to try her hand at being a sellsword. | Approached by a sellsword to buy one of her dogs, %name% became more interested in the prospect of she, herself, becoming a mercenary. | Tired of training dogs for this purpose or that, %name% seeks to train herself for... well, this purpose or that. | An interesting prospect, you can only hope %name% is as loyal as the dogs she once commanded.}";
 		}

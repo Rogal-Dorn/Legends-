@@ -294,11 +294,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isNoble())
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 		{
 			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
-		else if (!bro.getBackground().isLowborn())
+		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
 			bro.worsenMood(0.5, "Resents you as nobility, will try to squeeze money from you.");
 		}
@@ -313,18 +313,18 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isNoble())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 			}
-			else if (!bro.getBackground().isLowborn())
+			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
 
 			}
-			if (bro.getBackground().isOutlawBackground())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				garbage.push(bro);
 			}

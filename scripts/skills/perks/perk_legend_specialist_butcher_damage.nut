@@ -15,19 +15,18 @@ this.perk_legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if(item.getID() == "weapon.butchers_cleaver" || item.getID() == "weapon.legend_named_butchers_cleaver")
+			if (item.getID() == "weapon.butchers_cleaver" || item.getID() == "weapon.legend_named_butchers_cleaver")
 			{
-			_properties.DamageRegularMin += 4;
-			_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 4;
+				_properties.DamageRegularMax += 12;
 			}
-			if(item.getID() == "weapon.scramasax" || item.getID() == "weapon.military_cleaver" || item.getID() == "weapon.orc_cleaver"  || item.getID() == "weapon.falx"   || item.getID() == "weapon.khopesh"  || item.getID() == "weapon.antler_cleaver"  || item.getID() == "weapon.named_cleaver"  || item.getID() == "weapon.named_khopesh"  || item.getID() == "weapon.legend_great_khopesh" || item.getID() == "weapon.named_orc_cleaver" || item.getID() == "weapon.legend_khopesh")
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver))
 			{
-			_properties.DamageRegularMin += 1;
-			_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 1;
+				_properties.DamageRegularMax += 3;
 			}
 		}
 	}

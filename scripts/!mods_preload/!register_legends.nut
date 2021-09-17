@@ -1,5 +1,5 @@
 ::mods_registerMod("mod_legends", 15, "Legends Mod");
-::mods_queue(null, null, function()
+::mods_queue(null, "mod_MSU", function()
 {
 	::mods_registerJS("legends_assets.js");
 	this.Const.LegendMod.hookActor();
@@ -17,6 +17,8 @@
 	this.Const.LegendMod.hookTacticalState();
 	this.Const.LegendMod.hookWorldmapGenerator();
 	this.Const.LegendMod.hookGhoul();
+
+	this.Const.LegendMod.hookMSU();
 
 	this.Const.LegendMod.loadBuyback();
 	this.Const.LegendMod.loadTacticalTooltip();

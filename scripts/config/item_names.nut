@@ -417,7 +417,6 @@ gt.Const.Strings.LuteNames <- [
 	"Gittern",
 	"Vielle",
 	"Grater",
-	"Axe",
 	"Banger",
 	"Paddle",
 	"Flat Top",

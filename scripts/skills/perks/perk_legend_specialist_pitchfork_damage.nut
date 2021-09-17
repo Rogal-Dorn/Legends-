@@ -15,17 +15,15 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			local itemID = item.getID();
-			if(itemID == "weapon.pitchfork" || itemID == "weapon.legend_wooden_pitchfork"  || itemID == "weapon.legend_hoe"  || itemID == "weapon.legend_scythe"  || itemID == "weapon.wooden_flail")
+			if (item.getID() == "weapon.pitchfork" || item.getID() == "weapon.legend_wooden_pitchfork"  || item.getID() == "weapon.legend_hoe"  || item.getID() == "weapon.legend_scythe"  || item.getID() == "weapon.wooden_flail")
 			{
 				_properties.DamageRegularMin += 4;
 				_properties.DamageRegularMax += 12;
 			}
-			if(itemID == "weapon.pike" || itemID == "weapon.hooked_blade" || itemID == "weapon.billhook"  || itemID == "weapon.goblin_pike"   || itemID == "weapon.bladed_pike"  || itemID == "weapon.broken_bladed_pike" || itemID == "weapon.named_pike" || itemID == "weapon.named_billhook" || itemID == "weapon.warscythe" || itemID == "weapon.legend_halberd" || itemID == "weapon.legend_military_voulge" || itemID == "weapon.legend_voulge" || itemID == "weapon.legend_named_halberd" || itemID == "weapon.legend_named_voulge" || itemID == "weapon.swordlance" || itemID == "weapon.named_swordlance" || itemID == "weapon.player_banner")
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Polearm))
 			{
 				_properties.DamageRegularMin += 1;
 				_properties.DamageRegularMax += 3;

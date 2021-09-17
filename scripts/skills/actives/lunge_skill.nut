@@ -138,17 +138,7 @@ this.lunge_skill <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		//this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		//this.m.FatigueCostMult *= _properties.IsFleetfooted ? 0.5 : 1.0;
-		if (_properties.IsFleetfooted)
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult * 0.5 : 0.5;
-		}
-		else
-		{
-			this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		}
-		this.m.ActionPointCost = _properties.IsFleetfooted ? 3 : 4;
+		this.m.FatigueCostMult = _properties.IsSpecializedInSwords ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onUse( _user, _targetTile )

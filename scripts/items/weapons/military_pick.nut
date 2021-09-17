@@ -6,9 +6,9 @@ this.military_pick <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.military_pick";
 		this.m.Name = "Military Pick";
 		this.m.Description = "A wooden shaft with a long and pointy metal head designed to puncture the sturdiest of armors.";
-		this.m.Categories = "Hammer, One-Handed";
 		this.m.IconLarge = "weapons/melee/military_pick_01.png";
 		this.m.Icon = "weapons/melee/military_pick_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;

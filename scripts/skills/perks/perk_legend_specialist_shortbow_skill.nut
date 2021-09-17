@@ -15,52 +15,19 @@ this.perk_legend_specialist_shortbow_skill <- this.inherit("scripts/skills/skill
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item != null && item.getID() == "weapon.short_bow")
+		local item = this.getContainer().getActor().getMainhandItem();
+		if (item != null)
 		{
-			_properties.RangedSkill += 12;
-			_properties.DamageDirectMult *= 1.25;
-		}
-		if (item != null && item.getID() == "weapon.goblin_bow")
-		{
-			_properties.RangedSkill += 12;
-			_properties.DamageDirectMult *= 1.25;
-		}
-		if (item != null && item.getID() == "weapon.wonky_bow")
-		{
-			_properties.RangedSkill += 12;
-			_properties.DamageDirectMult *= 1.25;
-		}
-		if (item != null && item.getID() == "weapon.hunting_bow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
-		}
-		if (item != null && item.getID() == "weapon.masterwork_bow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
-		}
-		if (item != null && item.getID() == "weapon.war_bow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
-		}
-		if (item != null && item.getID() == "weapon.goblin_heavy_bow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
-		}
-		if (item != null && item.getID() == "weapon.named_goblin_heavy_bow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
-		}
-		if (item != null && item.getID() == "weapon.named_warbow")
-		{
-			_properties.RangedSkill += 3;
-			_properties.DamageDirectMult *= 1.08;
+			if (item.getID() == "weapon.short_bow" || item.getID() == "weapon.goblin_bow" || item.getID() == "weapon.wonky_bow")
+			{
+				_properties.RangedSkill += 12;
+				_properties.DamageDirectMult *= 1.25;
+			}
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Bow))
+			{
+				_properties.RangedSkill += 3;
+				_properties.DamageDirectMult *= 1.08;
+			}
 		}
 	}
 

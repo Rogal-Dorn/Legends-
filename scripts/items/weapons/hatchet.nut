@@ -6,9 +6,9 @@ this.hatchet <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.hatchet";
 		this.m.Name = "Hatchet";
 		this.m.Description = "A crude axe with a short shaft and an iron head.";
-		this.m.Categories = "Axe, One-Handed";
 		this.m.IconLarge = "weapons/melee/axe_01.png";
 		this.m.Icon = "weapons/melee/axe_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
 		this.m.IsDoubleGrippable = true;
@@ -35,7 +35,7 @@ this.hatchet <- this.inherit("scripts/items/weapons/weapon", {
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
-this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 	function onUpdateProperties( _properties )

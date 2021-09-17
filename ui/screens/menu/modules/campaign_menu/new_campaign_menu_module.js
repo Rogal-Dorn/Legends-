@@ -1553,14 +1553,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.height'
 	});
 
-	// this.mMapOptions.LandMassMult.Control.bindTooltip({
-	// 	contentType: 'ui-element',
-	// 	elementId: 'mapconfig.landmass'
-	// });
-	// this.mMapOptions.LandMassMult.Title.bindTooltip({
-	// 	contentType: 'ui-element',
-	// 	elementId: 'mapconfig.landmass'
-	// });
+	this.mMapOptions.LandMassMult.Control.bindTooltip({
+	 	contentType: 'ui-element',
+		elementId: 'mapconfig.landmass'
+	});
+	this.mMapOptions.LandMassMult.Title.bindTooltip({
+	 	contentType: 'ui-element',
+	 	elementId: 'mapconfig.landmass'
+	});
 
 	this.mMapOptions.WaterConnectivity.Control.bindTooltip({
 		contentType: 'ui-element',

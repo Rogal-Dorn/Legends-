@@ -37,7 +37,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.IsCombatBackground = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
@@ -96,7 +96,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.IsFemaleBackground = true;
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.BackgroundDescription = "Sellswords are expensive, but a life of warfare has forged them into skilled fighters.";
 		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started her own mercenary company. As far as you know, it\'s a very successful venture and she often buddies up with the mercenaries of the %companyname% to work together.";
 		this.m.BadEnding = "%name% left the %companyname% and started her own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove her head in with a hedge knight\'s helmet.";
@@ -107,7 +107,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 
 	function onBuildDescription()
 	{
-		if(this.m.IsFemaleBackground == true)
+		if(this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
 			return "{%fullname%\'s worked as a sellsword since her father handed down his equipment. | %fullname% can\'t remember a time when she wasn\'t a sword for hire. | As a mercenary, %fullname% has never had to look long for work. | The literate talk about letting loose the dogs of war. %fullname% is one such hound. | In war, there is death and profit. %fullname% causes the former to earn the latter. | There has never been a better time for mercenaries like %name% to earn a crown or two. | After her husband ran off with her children, an angry %name% made a steady career as a nasty sellsword. | A decade ago %name% lost everything in a fire. She\'s been working as a sellsword ever since. | %name% always had the mind for violence and has pursued a long career as a sellsword. | Once dirt poor, %name% has earned a very tidy sum over the years as a sellsword. | %fullname% prefers to keep for herself whence she came, but her reputation as a sword for hire speaks for itself.} {Well experienced, she has traveled in the company of many outfits in her time. | Military campaigns are but notches in her belt. | From work as a lord\'s bodyguard to being an enforcer for a skeevy merchant, %name% has seen it all. | She once made a living off slaying the wild beasts that encroach on human settlements. | With a grim grin, she boasts she has slain all manner of living creatures. | Through plenty of use, the mercenary has learned a thing or two about weapons you didn\'t even know existed. | The sellsword is counting how many she has slain to this day and she appears to not be stopping any time soon. | With a sword and shield in hand, the mercenary appears to do what she does best for a living.} {The woman is no stranger to the fields of battle. | The woman is no stranger to the cruelties of war. | She is used to the harsh realities of mercenary life. | She is said to be a reliable cog in any shield wall. | Some say she can hold a battle line as well as an oak tree. | Rumors abound that the woman enjoys the sight of blood. | Without shame, she takes an uneasy pleasure in the misery of others on the battlefield. | Strangely, she seldom joins others around the campfire, instead keeping to herself. | The woman loves to tell a good tale about how she killed this thing or that. | Given a chance, the woman is quick to showcase a wide variety of fighting styles.} {As long as you have the coin, %name% is yours to command. | A true mercenary, %name% will fight anyone for the right price. | Displaying some fine sword skills, %name% says she can run any man through. | With but a hint of a nod, %name% agrees to join you if you have the crowns. | Excited for an opportunity to earn coin, %name% knocks her mug on the table.}";
 		}

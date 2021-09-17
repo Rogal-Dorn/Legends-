@@ -18,12 +18,12 @@ this.goblin_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ID = "weapon.goblin_crossbow";
 		this.m.Name = "Spiked Impaler";
 		this.m.Description = "A large and heavy crossbow with menacing spikes in front. More like a minitature ballista, it shoots stakes with enough force to knock back a target hit. Deals +100 damage to vampires.";
-		this.m.Categories = "Crossbow, Two-Handed";
 		this.m.IconLarge = "weapons/ranged/crossbow_goblin_01.png";
 		this.m.Icon = "weapons/ranged/crossbow_goblin_01_70x70.png";
+		this.m.WeaponType = this.Const.Items.WeaponType.Crossbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
 		this.m.EquipSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;

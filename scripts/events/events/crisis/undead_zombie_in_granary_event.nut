@@ -81,7 +81,7 @@ this.undead_zombie_in_granary_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isOffendedByViolence() && this.Math.rand(1, 100) <= 50)
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.OffendedByViolence) && this.Math.rand(1, 100) <= 50)
 					{
 						bro.worsenMood(0.5, "You had a boy burned by accident");
 

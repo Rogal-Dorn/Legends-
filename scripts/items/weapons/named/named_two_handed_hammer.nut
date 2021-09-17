@@ -10,7 +10,7 @@ this.named_two_handed_hammer <- this.inherit("scripts/items/weapons/named/named_
 		this.m.ID = "weapon.named_two_handed_hammer";
 		this.m.NameList = this.Const.Strings.HammerNames;
 		this.m.Description = "A massive hammer that is surprisingly well-balanced, despite its huge weight. What it lacks in grace, it makes up for in raw force as it is used to shatter even heavily-armored enemy lines by knocking people away or to the ground.";
-		this.m.Categories = "Hammer, Two-Handed";
+		this.m.WeaponType = this.Const.Items.WeaponType.Hammer;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

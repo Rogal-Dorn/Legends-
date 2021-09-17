@@ -236,7 +236,7 @@ this.sacrificed_man_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().isCultist())
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
 			{
 				candidates_cultist.push(bro);
 			}

@@ -22,10 +22,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.HairColors = this.Const.HairColors.None;
 		this.m.Beards = null
 
-		this.m.IsFemaleBackground = false;
-		this.m.IsLowborn = false;
-		this.m.IsUntalented = true;
-		this.m.IsStabled = true;
+		this.m.BackgroundType = this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Stabled;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[3];
