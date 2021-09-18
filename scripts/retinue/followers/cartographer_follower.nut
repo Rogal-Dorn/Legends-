@@ -4,9 +4,9 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.cartographer";
-		this.m.Name = "The Cartographer";
-		this.m.Description = "The Cartographer is a man of culture and knowledge, but he also realizes that traveling in the company of well-armed mercenaries is one of the best ways to safely see the world and explore places that few visited before.";
-		this.m.Image = "ui/campfire/cartographer_01";
+		this.m.Name = "Mapping Supplies";
+		this.m.Description = "Learning to read is a rare skill and can take some a lifetime to master. Reading maps on the other head can be a little less taxing on the average mercenary. Giving the best and brightest of the company what they need to draw could prove useful.";
+		this.m.Image = "ui/campfire/legend_cartographer_01";
 		this.m.Cost = 1250;
 		this.m.Effects = [
 			"Pays you between 100 and 400 crowns for every location you discover on your own. The further away from civilization, the more you\'re paid. Legendary locations pay double."
