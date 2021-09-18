@@ -5871,17 +5871,25 @@ Squires cost 15% less to buy and upkeep and get fortified mind
 Higher chance of finding pious backgrounds in settlements
 Monks, nuns, witch hunters and other pious backgrounds (including crusaders) cost 25% less to buy and upkeep and get fortified mind
 
-You cannot hire outlaws
-Brothers that are not pious or squires will cost 25% more to buy and upkeep and not get fortified mind
+You cannot hire outlaws, Brothers that are not pious or squires will cost 25% more to buy and upkeep and not get fortified mind
+
+**Retinue**
+Retinue now has new art.
+Retinue members are now tools and resources that you buy to give your brothers better use out of their perks or backgrounds needed to unlock them.
 
 **Fixes**
 A few typos corrected overall.
+Lone wolf and gladiators now capped at tier 2 recruitment again.
 New backgrounds will get custom background art eventually.
+"Appitite of a donkey" now has a new icon.
 Fixes an issue where cultists do not count as cultists for sacrifice events
 Gnarly staff renamed goblin staff to avoid confusion with gnarled staff
 Fixed "cultist makes leather robe (or hood)" event by making these events into crafting recipies.
 - Cultist robe requires 1 sacksloth and 1 furs the "Penance" perk.
 - Cultist leather hood (not sack hood) requires 2 bolts of cloth and the "Dedication" perk.
+
+**Misc**
+Lone wolf now has an event where they can find and recruit a semi unique squire.
 
 **Modding;**
 Cultist rework is fully compatible with Taro's Davkul rising mod.
