@@ -192,7 +192,8 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 
 	function onInit()
 	{
-		this.m.MaxRosterTier = 2
+		this.starting_scenario.onInit();
+		this.m.MaxRosterTier = 3
 	}
 
 	function onCombatFinished()
