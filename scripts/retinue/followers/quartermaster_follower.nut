@@ -4,9 +4,9 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.quartermaster";
-		this.m.Name = "The Quartermaster";
+		this.m.Name = "Ordered Inventory";
 		this.m.Description = "With years of experience from traveling with caravans, the Quartermaster is able to squeeze and rotate any piece of gear, luggage or armor into the perfect spot to use space as efficiently as possible.";
-		this.m.Image = "ui/campfire/quartermaster_01";
+		this.m.Image = "ui/campfire/legend_quartermaster_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Increases the amount of ammunition you can carry by 100",

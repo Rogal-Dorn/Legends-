@@ -4,9 +4,9 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.scavenger";
-		this.m.Name = "The Scavenger";
-		this.m.Description = "Whether the son of one of your men or an urchin you took pity on, the Scavenger pulls their weight by collecting bits and pieces from every battlefield.";
-		this.m.Image = "ui/campfire/scavenger_01";
+		this.m.Name = "Scavenger's Cart";
+		this.m.Description = "While mundane, the act of taking everything not nailed down after a battle can save a lot of money later down the road. Comes with pliars to open deathgrips.";
+		this.m.Image = "ui/campfire/legend_scavenger_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Recovers a part of all ammo you use during battle",

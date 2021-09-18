@@ -4,9 +4,9 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.blacksmith";
-		this.m.Name = "The Blacksmith";
-		this.m.Description = "Mercenaries are good at getting arms and armor destroyed, but not at maintaining them. Promoting someone to the Blacksmith role will take care of this tedious task quickly and efficiently, and can mend even equipment otherwise thought lost.";
-		this.m.Image = "ui/campfire/blacksmith_01";
+		this.m.Name = "Blacksmith's Tools";
+		this.m.Description = "Mercenaries are good at getting arms and armor destroyed, but not at maintaining them. Promoting someone to the Blacksmith role and buying them the needed equipment will take care of this tedious task quickly and efficiently, and can mend even equipment otherwise thought lost.";
+		this.m.Image = "ui/campfire/legend_blacksmith_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Repairs all armor, helmets, weapons and shields worn by your men even if they\'re broken or lost because your man died",
