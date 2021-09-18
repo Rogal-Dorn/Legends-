@@ -148,7 +148,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
+		this.m.MaxRosterTier = 2
 	}
 
 	function onCombatFinished()
