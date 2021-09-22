@@ -5889,9 +5889,10 @@ Fixed "cultist makes leather robe (or hood)" event by making these events into c
 - Cultist leather hood (not sack hood) requires 2 bolts of cloth and the "Dedication" perk.
 
 **Misc**
-Lone wolf now has an event where they can find and recruit a semi unique squire.
+Lone wolf is no longer so lonely - they start with a squire now.
 
 **Modding;**
 Cultist rework is fully compatible with Taro's Davkul rising mod.
 Delz's & Luft's cultist tweaks integrated into cultist rework.
+New baseplates and busts are now availible to be called.
 
