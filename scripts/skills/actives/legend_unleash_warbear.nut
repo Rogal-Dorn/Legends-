@@ -52,7 +52,7 @@ this.legend_unleash_warbear <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/wolf_idle_09.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
+		this.m.Order = this.Const.SkillOrder.Last + 5;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
