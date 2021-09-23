@@ -4,9 +4,9 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.trader";
-		this.m.Name = "The Trader";
-		this.m.Description = "Southern traders are renowned for their bartering skills. Lucky you that you could convince one such master of haggling to join your company. And at such a bargain!";
-		this.m.Image = "ui/campfire/trader_01";
+		this.m.Name = "Secure Chests";
+		this.m.Description = "While not common, some companies have special goods stashed away to tell on the road to travellers. These goods are always kept in the most fortified chests the company has to offer, to prevent prying fingers from outside and inside the camp.";
+		this.m.Image = "ui/campfire/legend_trader_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [
 			"Increases the amount of trade goods for sale by 1 for each location that produces them, like salt near salt mines, allowing you to trade at higher volumes"

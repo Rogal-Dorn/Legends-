@@ -4,9 +4,9 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.bounty_hunter";
-		this.m.Name = "The Bounty Hunter";
-		this.m.Description = "This colorful Bounty Hunter has a pocket full of contracts on the most dangerous individuals. He knows how to get them from hiding and will pay handsomely for any bounty fulfilled.";
-		this.m.Image = "ui/campfire/bounty_hunter_01";
+		this.m.Name = "Bounty Board";
+		this.m.Description = "A well maintained bounty board can keep everyone up to date on which heads they should be taking after a battle.";
+		this.m.Image = "ui/campfire/legend_bounty_hunter_01";
 		this.m.Cost = 4000;
 		this.m.Effects = [
 			"Significantly increases the chance of encountering champions",

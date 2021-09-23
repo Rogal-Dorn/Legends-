@@ -4,8 +4,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_crusader";
 		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to anyone who joins you in battle.\n[color=#bcad8c]Begin alone. Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
-		this.m.Difficulty = 3;
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background or squire who joins you. Find pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Difficulty = 1;
 		this.m.Order = 70;
 		this.m.IsFixedLook = true;
 	}
@@ -22,19 +22,20 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro = roster.create("scripts/entity/tactical/player");
 		bro.setStartValuesEx([
 			"legend_crusader_commander_background"
-		]);
+		]); //skills on start
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
+		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
 		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getFlags().set("IsPlayerCharacter", true);
-		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
+ 		bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
+		bro.getSprite("miniboss").setBrush("bust_miniboss_crusader"); //custom bust
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.addMoralReputation(20);
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.m.BusinessReputation = 150;
 		this.World.Assets.m.Ammo = 0;
 
 		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
@@ -43,7 +44,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/tabard/legend_armor_tabard_10"));
 	}
 
-	function onSpawnPlayer()
+	function onSpawnPlayer() //spawn location
 	{
 		local randomVillage;
 
@@ -103,14 +104,14 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	}
 
-	function onInit()
+	function onInit() //starting slots
 	{
 		this.starting_scenario.onInit();
 		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsCrusader", true);
 	}
 
-	function onCombatFinished()
+	function onCombatFinished() //is crusader kill?
 	{
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -127,16 +128,16 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
+		if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
 		{
-			bro.improveMood(1.0, "Joined a righteous cause");
+			bro.improveMood(1.5, "Joined a righteous cause");
+ 			bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
+			bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		}
 		else
 		{
-			bro.worsenMood(1.0, "Dislikes your sermons");
+			bro.worsenMood(2.0, "Dislikes your sermons");
 		}
-		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -146,11 +147,16 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
+			if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
 
+			}
+			else if (bro.getBackground().getID() == "background.squire")
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85);
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.85);
 			}
 			else
 			{
@@ -158,10 +164,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
 			}
 
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
-			{
-				garbage.push(bro);
-			}
+            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+            {
+                garbage.push(bro);
+            }
 		}
 
 		foreach( g in garbage )
@@ -192,6 +198,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			r = this.Math.rand(0, 4);
 			if (r == 0)
 			{
+			_list.push("pilgrim_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
 			_list.push("monk_background");
 			}
 			r = this.Math.rand(0, 6);
@@ -217,6 +228,11 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			if (r == 0)
 			{
 				_list.push("flagellant_background");
+			}
+			r = this.Math.rand(0, 5);
+			if (r == 0)
+			{
+				_list.push("pilgrim_background");
 			}
 			r = this.Math.rand(0, 6);
 			if (r == 0)

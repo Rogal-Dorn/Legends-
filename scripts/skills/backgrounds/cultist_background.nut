@@ -10,13 +10,14 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
 		this.m.HiringCost = 50;
-		this.m.DailyCost = 6;
+		this.m.DailyCost = 5;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
 			"trait.fear_nobles",
 			"trait.hate_beasts",
 			"trait.hate_undead",
+			"trait.slack",
 			"trait.hate_greenskins",
 			"trait.hate_nobles",
 			"trait.night_blind",
@@ -53,9 +54,9 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.BackgroundType = this.Const.BackgroundType.Cultist | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.BackgroundType = this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
@@ -76,8 +77,14 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.FastTree,
 				this.Const.Perks.IndestructibleTree
 			],
-			Enemy = [],
-			Class = [this.Const.Perks.NinetailsClassTree],
+			Enemy = [
+				this.Const.Perks.CaravanTree,
+				this.Const.Perks.NoblesTree
+			],
+			Class = [
+				this.Const.Perks.NinetailsClassTree,
+				this.Const.Perks.BeastClassTree
+			],
 			Magic = []
 		}
 	}
@@ -109,6 +116,14 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
+
+	// Should overwrite the "character_backgrounds" isCultist() check
+	function isCultist()
+	{
+		return true;
+	}
+
+
 
 	function onBuildDescription()
 	{
