@@ -227,6 +227,21 @@ this.asset_manager <- {
 		return this.m.FootprintVision;
 	}
 
+	function getTierFromReputation()
+	{
+		local tier = 0;
+
+		for( local i = 0; i < this.Const.RosterReputationRequirements.len(); i = ++i )
+		{
+			if (this.World.Assets.getBusinessReputation() >= this.Const.BusinessReputation[this.Const.RosterReputationRequirements[i]])
+			{
+				tier = ++tier;
+			}
+		}
+
+		return tier;	
+	}
+
 	function getBrothersMax()
 	{
 		if (this.World.Assets.getOrigin().getRosterTier() == 6)
@@ -234,7 +249,7 @@ this.asset_manager <- {
 			return this.Const.RosterSize[6];
 		}
 		
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfUnlockedSlots() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local tier = this.Math.min(5, this.getTierFromReputation() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
 		local max = this.Const.RosterSize[tier];
 		
 		return max; 
@@ -246,7 +261,7 @@ this.asset_manager <- {
 		{
 			return this.Const.FrontlineSize[6];
 		}
-		local tier = this.Math.min(5, this.World.Retinue.getNumberOfUnlockedSlots() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local tier = this.Math.min(5, this.getTierFromReputation() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
 		local max = this.Const.FrontlineSize[tier];
 
 		return max;
