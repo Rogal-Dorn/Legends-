@@ -4,9 +4,9 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.alchemist";
-		this.m.Name = "The Alchemist";
-		this.m.Description = "The Alchemist is knowledgeable in crafting all kinds of mysterious contraptions and concoctions from exotic ingredients when given access to taxidermist equipment, and uses less material to do so.";
-		this.m.Image = "ui/campfire/alchemist_01";
+		this.m.Name = "Alchemy Tools";
+		this.m.Description = "An Alchemist is knowledgeable in crafting all kinds of mysterious contraptions and concoctions from exotic ingredients when given access to taxidermist equipment, and uses less material to do so.";
+		this.m.Image = "ui/campfire/legend_alchemist_01";
 		this.m.Cost = 1250;
 		this.m.Effects = [
 			"Has a 25% chance of not consuming any crafting component used by you",

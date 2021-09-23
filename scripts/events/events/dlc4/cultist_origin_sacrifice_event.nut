@@ -92,9 +92,9 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 
 
-					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted) || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted | this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
 					{
-						bro.improveMood(2.0, "Appeased Davkul");
+						bro.improveMood(3.0, "Appeased Davkul");
 
 						if (bro.getMoodState() >= this.Const.MoodState.Neutral)
 						{
@@ -173,7 +173,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 					}
 					else if (!bro.getSkills().hasSkill("trait.mad"))
 					{
-						bro.worsenMood(4.0, "Horrified by the sacrifice of " + _event.m.Sacrifice.getName());
+						bro.worsenMood(2.5, "Horrified by the sacrifice of " + _event.m.Sacrifice.getName());
 
 						if (bro.getMoodState() < this.Const.MoodState.Neutral)
 						{
@@ -214,7 +214,23 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		brothers.sort(function ( _a, _b )
+		local candidates = [];
+		foreach (bro in brothers)
+		{
+		  if (bro.getSkills().hasSkill("background.cultist_magister")  || bro.getSkills().hasSkill("background.cultist_lurker") || bro.getSkills().hasSkill("background.cultist_darksoul"))
+		  {
+		    continue;
+		  }
+
+		  candidates.push(bro);
+		}
+		
+		if (candidates.len() < 4)
+		{
+			return;
+		}
+
+		candidates.sort(function ( _a, _b )
 		{
 			if (_a.getXP() < _b.getXP())
 			{
@@ -227,11 +243,11 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 			return 0;
 		});
-		local r = this.Math.rand(0, this.Math.min(2, brothers.len() - 1));
-		this.m.Sacrifice1 = brothers[r];
-		brothers.remove(r);
-		r = this.Math.rand(0, this.Math.min(2, brothers.len() - 1));
-		this.m.Sacrifice2 = brothers[r];
+		local r = this.Math.rand(0, this.Math.min(2, candidates.len() - 1));
+		this.m.Sacrifice1 = candidates[r];
+		candidates.remove(r);
+		r = this.Math.rand(0, this.Math.min(2, candidates.len() - 1));
+		this.m.Sacrifice2 = candidates[r];
 		this.m.Score = 50 + (this.World.getTime().Days - this.m.LastTriggeredOnDay);
 	}
 

@@ -4,9 +4,9 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.recruiter";
-		this.m.Name = "The Recruiter";
-		this.m.Description = "The Recruiter is a sleazy jawsmith that tricks desperate people into joining a mercenary company to escape their poor lives, only to find their demise. Quite useful for anyone running a mercenary company.";
-		this.m.Image = "ui/campfire/recruiter_01";
+		this.m.Name = "Pre-filled Contracts";
+		this.m.Description = "The deviousness of a pre-filled contract that needs a single signiture can make the labours of arguing about pay a thing of the past. Just simply sign on the line and you are ready to go! Just don't let them read the small print.";
+		this.m.Image = "ui/campfire/legend_recruiter_01";
 		this.m.Cost = 1500;
 		this.m.Effects = [
 			"Makes you pay 10% less up front for hiring new men, and 50% less for tryouts",

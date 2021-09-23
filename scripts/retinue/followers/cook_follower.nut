@@ -4,9 +4,9 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.cook";
-		this.m.Name = "The Cook";
-		this.m.Description = "A good warm meal goes a long way towards healing body and mind. The Cook makes sure that no provisions go to waste, and provides the men with invigorating meals.";
-		this.m.Image = "ui/campfire/cook_01";
+		this.m.Name = "Cooking Equipment";
+		this.m.Description = "A good warm meal goes a long way towards healing body and mind. A cook can only do so much with whatever there is to hand in the wilderness, Having the proper equipment to prepare meals makes sure that no provisions go to waste.";
+		this.m.Image = "ui/campfire/legend_cook_01";
 		this.m.Cost = 1000;
 		this.m.Effects = [
 			"Makes all provisions last 3 extra days",
