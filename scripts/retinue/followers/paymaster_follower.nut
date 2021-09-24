@@ -19,26 +19,15 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have a mercenary who has taken the Paymaster perk. Guaranteed on Peddlers, Eunuchs and Servants"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_barter_paymaster"
+		];
 	}
 	
 	function onUpdate()
 	{
 		if ("DailyWageMult" in this.World.Assets.m)
 			this.World.Assets.m.DailyWageMult *= 0.85;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_barter_paymaster"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

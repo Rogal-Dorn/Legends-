@@ -18,21 +18,7 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Slave"
 			}
 		];
-	}
-
-	function onUpdate()
-	{
-		if ("IsRecoveringAmmo" in this.World.Assets.m)
-			this.World.Assets.m.IsRecoveringAmmo = true;
-		if ("IsRecoveringArmor" in this.World.Assets.m)
-			this.World.Assets.m.IsRecoveringArmor = true;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-
-		local availableBGs = [
+		this.m.RequiredSkills = [
 			"background.beggar",
 			"background.cripple",
 			"background.refugee",
@@ -41,17 +27,14 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 			"background.legend_commander_beggar",
 			"background.legend_commander_beggar_female"
 		];
+	}
 
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
+	function onUpdate()
+	{
+		if ("IsRecoveringAmmo" in this.World.Assets.m)
+			this.World.Assets.m.IsRecoveringAmmo = true;
+		if ("IsRecoveringArmor" in this.World.Assets.m)
+			this.World.Assets.m.IsRecoveringArmor = true;
 	}
 
 });

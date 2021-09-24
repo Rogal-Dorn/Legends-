@@ -18,26 +18,15 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have someone with the Field Triage perk. Guaranteed on Monks and Nuns"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_field_triage"
+		];
 	}
 
 	function onUpdate()
 	{
 		if ("IsSurvivalGuaranteed" in this.World.Assets.m)
 			this.World.Assets.m.IsSurvivalGuaranteed = true;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_field_triage"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

@@ -315,14 +315,14 @@ WorldCampfireScreenMainDialogModule.prototype.loadFromData = function (_data)
 	    {
 		    this.classList.add('is-highlighted');
 
-            cart.attr('src', Path.GFX + _data['Cart'] + '_b.png');
+            //cart.attr('src', Path.GFX + _data['Cart'] + '_b.png');
 		    placeholder.removeClass('opacity-almost-none');
 	    });
         cart.mouseout(function()
 	    {
 		    this.classList.remove('is-highlighted');
 
-            cart.attr('src', Path.GFX + _data['Cart'] + '.png');
+            //cart.attr('src', Path.GFX + _data['Cart'] + '.png');
 		    placeholder.removeClass('opacity-almost-none');
 	    });
     }
@@ -361,13 +361,14 @@ WorldCampfireScreenMainDialogModule.prototype.createSlot = function (_data, _i, 
 	var self = this;
     var isUsable = _data.ID != 'locked';
 
-	var slot_placeholder =  _content.createImage(Path.GFX + _data.Image + '_b.png', null, null, 'slot' + _i + ' opacity-almost-none no-pointer-events');
+	var slot_placeholder =  _content.createImage(Path.GFX + _data.Image + '.png', null, null, 'slot' + _i + ' opacity-almost-none no-pointer-events is-highlighted');
 
 	var slot = _content.createImage(Path.GFX + _data.Image + '.png', function (_image)
 	{
 		if (isUsable)
 		{
 			slot_placeholder.addClass('opacity-almost-none');
+            slot_placeholder.removeClass('is-highlighted');
 			slot_placeholder.attr('src', Path.GFX + _data.Image + '.png');
 		}
 	}, null, 'slot' + _i);
@@ -386,14 +387,14 @@ WorldCampfireScreenMainDialogModule.prototype.createSlot = function (_data, _i, 
 	{
 		this.classList.add('is-highlighted');
 
-		slot.attr('src', Path.GFX + _data.Image + '_b.png');
+		//slot.attr('src', Path.GFX + _data.Image + '_b.png');
 		slot_placeholder.removeClass('opacity-almost-none');
 	});
 	slot.mouseout(function()
 	{
 		this.classList.remove('is-highlighted');
 
-		slot.attr('src', Path.GFX + _data.Image + '.png');
+		//slot.attr('src', Path.GFX + _data.Image + '.png');
 		slot_placeholder.removeClass('opacity-almost-none');
 	});
 }
