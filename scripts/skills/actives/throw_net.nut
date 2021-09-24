@@ -141,7 +141,6 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 			if (this.m.IsReinforced)
 			{
-				local r = this.Math.rand(1, 2);
 				breakFree.setDecal("net_destroyed_02");
 				breakFree.setChanceBonus(-15);
 				local r = this.Math.rand(1, 2);
@@ -161,7 +160,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				breakFree.setChanceBonus(0);
 				local chance = this.Math.rand(1, 100);
 
-				if (chance > 50)
+				if (chance > 25)
 				{
 					this.World.Assets.getStash().add(this.new("scripts/items/tools/legend_broken_throwing_net"));
 				}

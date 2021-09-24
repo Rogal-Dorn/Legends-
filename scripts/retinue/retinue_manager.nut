@@ -2,7 +2,8 @@ this.retinue_manager <- {
 	m = {
 		Followers = [],
 		Slots = [],
-		InventoryUpgrades = 0
+		InventoryUpgrades = 0,
+		OwnedFollowerIDs = []
 	},
 	function getInventoryUpgrades()
 	{
@@ -31,7 +32,7 @@ this.retinue_manager <- {
 	{
 		foreach( a in this.m.Slots )
 		{
-			if (a != null && a.getID() == _id)
+			if (a != null && a.getID() == _id && a.isEnabled())
 			{
 				return true;
 			}
@@ -143,9 +144,51 @@ this.retinue_manager <- {
 		return ret;
 	}
 
+	function hasFollowersToRemove()
+	{
+		foreach (slot in this.m.Slots)
+		{
+			if (slot != null && !slot.isEnabled())
+			{
+				return true;
+			}
+		}
+		return false;
+	}
+
+	function getFollowersToRemove()
+	{
+		local ret = []
+		foreach (slot in this.m.Slots)
+		{
+			if (slot != null && !slot.isEnabled())
+			{
+				ret.push(slot)
+			}
+		}
+		return ret;
+	}
+
+	function removeDisabledFollowers()
+	{
+		foreach (idx, slot in this.m.Slots)
+		{
+			if (slot != null && !slot.isEnabled())
+			{
+				slot.resetLinkedBro();
+				this.m.Slots[idx] = null;
+			}
+		}
+	}
+
 	function setFollower( _slot, _follower )
 	{
 		this.m.Slots[_slot] = _follower;
+		if (!(_follower.getID() in this.m.OwnedFollowerIDs))
+		{
+			this.m.OwnedFollowerIDs.push(_follower.getID());
+		}
+		_follower.setOwned();
 		this.update();
 
 		if (this.getNumberOfCurrentFollowers() == this.m.Slots.len())
@@ -184,6 +227,10 @@ this.retinue_manager <- {
 			if (f.isValid())
 			{
 				this.m.Followers.push(f);
+				if (f.getID() in this.m.OwnedFollowerIDs)
+				{
+					f.setOwned();
+				}
 			}
 		}
 
@@ -193,8 +240,7 @@ this.retinue_manager <- {
 	function update()
 	{
 		this.World.Assets.resetToDefaults();
-
-		foreach( p in this.m.Slots )
+		foreach (p in this.m.Slots)
 		{
 			if (p != null)
 			{
@@ -270,6 +316,12 @@ this.retinue_manager <- {
 			}
 		}
 
+		_out.writeU8(this.m.OwnedFollowerIDs.len())
+		foreach (id in this.m.OwnedFollowerIDs)
+		{
+			_out.writeString(id);
+		}
+
 		_out.writeU8(this.m.InventoryUpgrades);
 	}
 
@@ -291,9 +343,28 @@ this.retinue_manager <- {
 					p.onDeserialize(_in);
 					this.m.Slots[i] = p;
 				}
-				else
+			}
+		}
+
+		if (_in.getMetaData().getVersion() <= 68)
+		{
+			foreach (slot in this.m.Slots)
+			{
+				if (slot != null)
 				{
+					this.m.OwnedFollowerIDs.push(slot.getID());
+					slot.setOwned();
 				}
+			}
+		}
+		else
+		{
+			local ownedFollowerCount = _in.readU8()
+			for (local i = 0; i < ownedFollowerCount; ++i)
+			{
+				local id = _in.readString();
+				this.m.OwnedFollowerIDs.push(id);
+				this.getFollower(id).setOwned();
 			}
 		}
 

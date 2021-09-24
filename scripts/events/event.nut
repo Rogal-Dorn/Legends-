@@ -479,6 +479,11 @@ this.event <- {
 		return true;
 	}
 
+	function canFire()
+	{
+		return true;
+	}
+
 	function onUpdateScore()
 	{
 	}

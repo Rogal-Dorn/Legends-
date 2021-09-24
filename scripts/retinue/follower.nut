@@ -6,7 +6,10 @@ this.follower <- {
 		Effects = [],
 		Requirements = [],
 		Image = "",
-		Cost = 0
+		Cost = 0,
+		RequiredSkills = [],
+		LinkedBro = null,
+		WasOwned = false
 	},
 	function getID()
 	{
@@ -38,9 +41,19 @@ this.follower <- {
 		return this.m.Effects;
 	}
 
+	function getLinkedBro()
+	{
+		return this.m.LinkedBro;
+	}
+
+	function setOwned()
+	{
+		this.m.WasOwned = true;
+	}
+
 	function getCost()
 	{
-		return this.m.Cost;
+		return this.m.WasOwned ? 0 : this.m.Cost;
 	}
 
 	function getRequirements()
@@ -114,6 +127,21 @@ this.follower <- {
 		this.onUpdate();
 	}
 
+	function isEnabled()
+	{
+		if (this.m.RequiredSkills.len() == 0)
+		{
+			return true;
+		}
+		this.checkRequiredSkills();
+		return this.m.LinkedBro != null && this.m.LinkedBro.isAlive();
+	}
+
+	function resetLinkedBro()
+	{
+		this.m.LinkedBro = null;
+	}
+
 	function evaluate()
 	{
 		for( local i = 0; i < this.m.Requirements.len(); i = ++i )
@@ -130,7 +158,28 @@ this.follower <- {
 
 	function onEvaluate()
 	{
-		this.m.IsUnlocked = false;
+		this.m.Requirements[this.m.Requirements.len() - 1].IsSatisfied = this.isEnabled()
+	}
+
+	function checkRequiredSkills()
+	{
+		local isCorrectSkill = function( _skill )
+		{
+			if (this.m.RequiredSkills.find(_skill.getID()) != null)
+			{
+				return true;
+			}
+			return false;
+		}
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0)
+			{
+				this.m.LinkedBro = bro;
+				break;
+			}
+		}
 	}
 
 	function onUpdate()

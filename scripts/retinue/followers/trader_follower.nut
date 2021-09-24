@@ -21,35 +21,17 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Caravan Hand, Peddler, Trader, Donkey"
 			}
 		];
-	}
-
-	function onUpdate()
-	{
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-
-		local availableBGs = [
+		this.m.RequiredSkills = [
 			"background.caravan_hand",
 			"background.legend_trader",
 			"background.legend_commander_trader",
 			"background.legend_donkey",
 			"background.peddler"
 		];
+	}
 
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-			
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[1].IsSatisfied = true;
-				break;
-			}
-		}			
-
+	function onEvaluate()
+	{
 		this.m.Requirements[0].Text = "Sold " + this.Math.min(25, this.World.Statistics.getFlags().getAsInt("TradeGoodsSold")) + "/25 trade goods.";
 
 		if (this.World.Statistics.getFlags().getAsInt("TradeGoodsSold") >= 25)

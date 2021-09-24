@@ -56,7 +56,7 @@ CharacterScreenBrothersListModule.prototype.createDIV = function (_parentDiv)
     this.mFrontlineCountContainer = $('<div class = "frontline-count-container"/>');
     this.mContainer.append(this.mFrontlineCountContainer);
     var frontlineSizeImage = $('<img/>');
-    frontlineSizeImage.attr('src', Path.GFX + Asset.ICON_ASSET_BROTHERS);
+    frontlineSizeImage.attr('src', Path.GFX + Legends.ICON_ASSET_FRONTLINE);
     this.mFrontlineCountContainer.append(frontlineSizeImage);
     this.mFrontlineCountLabel = $('<div class="label text-font-small font-bold font-color-value"/>');
     this.mFrontlineCountContainer.append(this.mFrontlineCountLabel);
