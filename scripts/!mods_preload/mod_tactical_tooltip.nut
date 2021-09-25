@@ -185,9 +185,24 @@ this.getroottable().Const.LegendMod.loadTacticalTooltip <- function()
 			}
 		}
 
-		if (_targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
-		{
-			local tile = this.getTile();
+	local pushRemainingAP = function ()
+	{
+		local turnsToGo = this.Tactical.TurnSequenceBar.getTurnsUntilActive(this.getID());
+		local remainingAP = this.m.IsTurnDone || turnsToGo == null ? 0 : this.getActionPoints();
+		tooltip.push({
+			id = 10,
+			type = "progressbar",
+			icon = "ui/icons/action_points.png",
+			value = remainingAP,
+			valueMax = this.getActionPointsMax(),
+			text = "" + this.getActionPoints() + " / " + this.getActionPointsMax() + "",
+			style = "action-points-slim"
+		});
+	};
+
+	if (_targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
+	{
+		local tile = this.getTile();
 
 			if (tile.IsVisibleForEntity && _targetedWithSkill.isUsableOn(tile))
 			{
@@ -209,6 +224,7 @@ this.getroottable().Const.LegendMod.loadTacticalTooltip <- function()
 			if (tooltip[count].text == statusEffects[0].getName())
 			{
 				tooltip.resize(count);
+				pushRemainingAP();
 				statusEffects = statusEffects.filter(function ( _, item )
 				{
 					return !isInjury(_, item);
@@ -283,6 +299,10 @@ this.getroottable().Const.LegendMod.loadTacticalTooltip <- function()
 					}
 				}
 			}
+		}
+		else if (!statusEffects.len())
+		{
+			pushRemainingAP();
 		}
 
 		local activePerks = this.getSkills().query(this.Const.SkillType.Active, false, true);
