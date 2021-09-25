@@ -8,7 +8,7 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "perk.mar_in_the_zone";
 		this.m.Name = this.Const.Strings.PerkName.MARInTheZone;
-		this.m.Description = "%name% utilizes %their% armor\'s blend of protection and mobility to deal increased damage and gain increased defense when foes miss attacks against %them%.";
+		this.m.Description = "%name% utilizes %their% armor\'s blend of protection and mobility to deal increased damage and gain increased accuracy when foes miss attacks against %them%.";
 		this.m.Icon = "ui/perks/in_the_zone.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -21,19 +21,21 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 	{
 		local tooltip = this.skill.getTooltip();
 
-		if (this.m.Stacks > 0)
+		local bonus = this.getBonus();
+
+		if (bonus > 0)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Stacks + "%[/color] Melee Damage"
+				icon = "ui/icons/melee_skill.png",
+				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Skill"
 			});
 			tooltip.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Stacks + "%[/color] Melee Defense"
+				icon = "ui/icons/regular_damage.png",
+				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Damage"
 			});
 		}
 
@@ -63,7 +65,7 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		return this.getContainer().getActor().isEngagedInMelee() ? this.m.Stacks : this.m.Stacks / 2;		
+		return (this.getContainer().getActor().isPlacedOnMap() && !this.getContainer().getActor().isEngagedInMelee()) ? this.m.Stacks / 2 : this.m.Stacks;		
 	}
 
 	function onAfterUpdate( _properties )
@@ -84,7 +86,7 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 		{
 			local bonus = this.getBonus();
 			_properties.MeleeDamageMult *= 1 + bonus * 0.01;
-			_properties.MeleeDefenseMult *= 1 + bonus * 0.01;
+			_properties.MeleeSkillMult *= 1 + bonus * 0.01;
 		}
 	}
 

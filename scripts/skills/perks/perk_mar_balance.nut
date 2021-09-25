@@ -71,16 +71,10 @@ this.perk_mar_balance <- this.inherit("scripts/skills/skill", {
 
 		local armorFatPen = actor.getTotalArmorStaminaModifier() * -1;
 
-		local maxPossibleBonus = this.Math.floor(this.Math.minf(this.m.BonusMax, 0.01 * this.Math.pow(armorFatPen, 2.05)));
+		local maxPossibleBonus = this.m.BonusMax - this.Math.abs(armorFatPen - 35) / 2;
+		local currIni = actor.getInitiative();		
 
-		local currIniMult = 1;
-		local currIni = actor.getInitiative();
-		if (currIni < 2 * armorFatPen)
-		{
-			currIniMult = this.Math.maxf(0, 1 - 0.01 * this.Math.pow((2*armorFatPen - currIni) * armorFatPen/50.0, 1.06));
-		}
-
-		return this.Math.floor(this.Math.maxf(this.m.BonusMin, maxPossibleBonus * currIniMult)).tointeger();
+		return this.Math.max(this.m.BonusMin, maxPossibleBonus * this.Math.abs(armorFatPen * 2 - currIni)/10);
 	}
 
 	function onAfterUpdate( _properties )
