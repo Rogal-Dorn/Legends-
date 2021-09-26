@@ -5879,6 +5879,7 @@ Retinue members are now tools and resources that you buy to give your brothers b
 
 **Fixes**
 A few typos corrected overall.
+Golden Goose now actually gives 50 gold rather than 30.
 Lone wolf and gladiators now capped at tier 3 roster recruitment again.
 New backgrounds will get custom background art eventually.
 "Appitite of a donkey" now has a new icon.
