@@ -5882,6 +5882,7 @@ A few typos corrected overall.
 Lone wolf and gladiators now capped at tier 3 roster recruitment again.
 New backgrounds will get custom background art eventually.
 "Appitite of a donkey" now has a new icon.
+Vala's warden should now be immune to mental attacks. It should now also disprefer friendly fire much more strongly.
 Fixes an issue where cultists do not count as cultists for sacrifice events
 Gnarly staff renamed goblin staff to avoid confusion with gnarled staff
 Fixed "cultist makes leather robe (or hood)" event by making these events into crafting recipies.
