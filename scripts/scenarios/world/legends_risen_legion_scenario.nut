@@ -509,5 +509,11 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		}
 	}
 
+	function onInit()
+	{
+		this.starting_scenario.onInit();
+		this.m.RosterTier = 4;
+	}
+
 });
 

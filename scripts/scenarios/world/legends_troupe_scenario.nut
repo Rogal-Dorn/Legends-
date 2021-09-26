@@ -159,11 +159,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	}
 
-	function onInit()
-	{
-		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
-	}
 
 
 	function onHiredByScenario( bro )
