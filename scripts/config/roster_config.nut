@@ -1,36 +1,41 @@
 local gt = this.getroottable();
 
 gt.Const.RosterReputationRequirements <- [
-	//4, //+1
-	5, //+2
-	6, //+3
-	7, //prof renown
-	8, //+5
-	9, //+6
-	10,//2250 renown
-	11,//2750 renown
+	5, //500
+	6, //750
+	7, //1050 
+	8, //1400 
+	9, //1800 
+	10,//2250
+	11,//2750
+	12,//3350
+	13,//4000
 ]
 
 gt.Const.RosterSize <- [
 	1, 
-	8,  //start here normally
-	10, //4
-	12, //5
-	15, //6 
-	18, //7 
-	21, //8
-	24, //9
-	27  //10
+	3,  //start here normally
+	6,  //rank 5
+	8,  //rank 6
+	10, //rank 7 //prof renown
+	12, //rank 8
+	15, //rank 9
+	18, //rank 10
+	21, //rank 11
+	25, //rank 12
+	27, //rank 13
 ];
 
 gt.Const.FrontlineSize <- [
 	1,
-	8, //shn
-	10,//4
-	12,//5
-	14,//6
-	16,//7
-	18,//8
-	20,//9
-	22,//10
+	3,  //shn
+	6,  //rank 5
+	8,  //rank 6
+	10, //rank 7 //prof renown
+	12, //rank 8
+	14, //rank 9
+	16, //rank 10
+	18, //rank 11
+	20, //rank 12
+	22, //rank 13
 ];

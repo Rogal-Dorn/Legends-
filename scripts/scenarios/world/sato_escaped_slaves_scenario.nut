@@ -14,6 +14,12 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		return this.Const.DLC.Desert;
 	}
 
+	function onInit()
+	{
+		this.starting_scenario.onInit();
+		this.m.RosterTier = 4;
+	}
+
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();

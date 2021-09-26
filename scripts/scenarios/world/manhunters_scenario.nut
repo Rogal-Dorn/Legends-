@@ -207,7 +207,8 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 
 	function onInit()
 	{
-		this.m.RosterTier = 2;
+		this.starting_scenario.onInit();
+		this.m.RosterTier = 4;
 	}
 
 });
