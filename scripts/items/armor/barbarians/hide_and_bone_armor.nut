@@ -17,6 +17,7 @@ this.hide_and_bone_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 95;
 		this.m.ConditionMax = 95;
 		this.m.StaminaModifier = -10;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

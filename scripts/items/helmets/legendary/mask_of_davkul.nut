@@ -25,6 +25,7 @@ this.mask_of_davkul <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 270.0;
 		this.m.StaminaModifier = -10;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 	function getTooltip()

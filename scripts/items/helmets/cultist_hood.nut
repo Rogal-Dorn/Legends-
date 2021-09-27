@@ -20,6 +20,7 @@ this.cultist_hood <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 30;
 		this.m.StaminaModifier = 0;
 		this.m.Vision = -1;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

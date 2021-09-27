@@ -16,6 +16,7 @@ this.cultist_leather_robe <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 88;
 		this.m.ConditionMax = 88;
 		this.m.StaminaModifier = -9;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

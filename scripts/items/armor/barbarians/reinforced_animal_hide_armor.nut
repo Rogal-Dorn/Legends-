@@ -17,6 +17,7 @@ this.reinforced_animal_hide_armor <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 65;
 		this.m.ConditionMax = 65;
 		this.m.StaminaModifier = -7;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

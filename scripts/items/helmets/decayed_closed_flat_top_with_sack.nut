@@ -22,6 +22,7 @@ this.decayed_closed_flat_top_with_sack <- this.inherit("scripts/items/helmets/he
 		this.m.ConditionMax = 230;
 		this.m.StaminaModifier = -19;
 		this.m.Vision = -3;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

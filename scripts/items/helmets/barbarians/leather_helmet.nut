@@ -20,6 +20,7 @@ this.leather_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 105;
 		this.m.StaminaModifier = -6;
 		this.m.Vision = -1;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

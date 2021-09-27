@@ -16,6 +16,7 @@ this.leather_wraps <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
 		this.m.StaminaModifier = 0;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

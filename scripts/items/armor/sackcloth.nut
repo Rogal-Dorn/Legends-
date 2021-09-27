@@ -16,6 +16,7 @@ this.sackcloth <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = 0;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

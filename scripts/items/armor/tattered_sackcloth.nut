@@ -16,6 +16,7 @@ this.tattered_sackcloth <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 5;
 		this.m.ConditionMax = 5;
 		this.m.StaminaModifier = 0;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 });

@@ -23,6 +23,7 @@ this.armor_of_davkul <- this.inherit("scripts/items/armor/armor", {
 		this.m.ConditionMax = 270;
 		this.m.StaminaModifier = -18;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
+		this.addItemType(this.Const.Items.ItemType.Cultist);
 	}
 
 	function getTooltip()
