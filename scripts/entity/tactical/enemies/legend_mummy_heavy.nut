@@ -47,16 +47,36 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 	}
 
-	function assignRandomEquipment()
+	function assignRandomEquipment() //pick a weapon
 	{
-		local r = this.Math.rand(1, 2);
+		r = this.Math.rand(0, 4);
 
-		this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_fan_axe"));
-
-		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		if (r == 0)
 		{
-			this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_tower_shield"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_fan_axe"));
 		}
+		else if (r == 1)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_great_khopesh"));
+		}
+		else if (r == 4)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/rhomphaia"));
+		}
+		// this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_fan_axe"));
+
+		// if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
+		// {
+		// 	this.m.Items.equip(this.new("scripts/items/shields/ancient/legend_mummy_tower_shield"));
+		// }
 
 		local armor = [
 			[1, "ancient/legend_mummy_bandages"],

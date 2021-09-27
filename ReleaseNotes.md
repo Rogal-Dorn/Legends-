@@ -5877,6 +5877,9 @@ You cannot hire outlaws, Brothers that are not pious or squires will cost 25% mo
 Retinue now has new art.
 Retinue members are now tools and resources that you buy to give your brothers better use out of their perks or backgrounds needed to unlock them.
 
+**Balance**
+Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
+
 **Fixes**
 A few typos corrected overall.
 Golden Goose now actually gives 50 gold rather than 30.
@@ -5892,7 +5895,7 @@ Fixed "cultist makes leather robe (or hood)" event by making these events into c
 
 **Misc**
 Lone wolf is no longer so lonely - they start with a squire now.
-The "loyal" trait now stipulates that it makes brothers who ahve it immune to charmed effects.
+The "loyal" trait now stipulates that it makes brothers who have it immune to charmed effects.
 
 **Modding;**
 Cultist rework is fully compatible with Taro's Davkul rising mod.
