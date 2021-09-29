@@ -5810,4 +5810,16 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 ## 15.0.1.21
 
-- Roster sizes increased by +3 across the board, now based on unlocked retinue
+- Roster sizes changed to work off of Renown -> 
+Reputation | Full Roster | In Combat Roster
+500        | 6           | 6
+750        | 8           | 8
+1050       | 10          | 10
+1400       | 12          | 12
+1800       | 15          | 14
+2250       | 18          | 16
+2750       | 21          | 18
+3350       | 25          | 20
+4000       | 27          | 22
+
+Solo starts start at 3 instead of 6
