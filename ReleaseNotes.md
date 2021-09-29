@@ -5820,7 +5820,9 @@ Husk, Magister and Lurker
 New Backgrounds;
 Husks are cultists who have had the presence of another being ripped from their mind - they are erratic, fast and incredibly strong fighters - if you can control them.
 Magisters are the older and wiser cultists - typically leaders of sects and organised groups. They are revered by other cultists and are often parential figures of cultist groups. Their bond with their god is much stronger.
-Lurkers prefer keeping their enemies at arm's reach - skulking at the corners of your vision and waiting until for the right time to strike. They are proficent in ranged combat and scouting but are very weak.
+Lurkers prefer keeping their enemies at arm's reach - skulking at the corners of your vision and waiting until for the right time to strike. They are proficent in ranged combat and scouting but are very weak physically.
+
+These backgrounds are unique to the cultist origin and cannot be found outside of it.
 
 Events;
 Cultist events for sacrifice are now significantly more spaced apart and require 4 valid candidates to trigger (as opposed to 2).
@@ -5843,7 +5845,6 @@ Cultist starting roster changed, now starts with;
 2 normal cultists 
 
 Starting cultists now also start with better weapons than before.
-Cultists start with 9 roster slots.
 Cultists and husks have the net perktree.
 Cultists, husks, magisters and lurkers all have favoured enemy noble (and caravan) perks.
 All cultists cannot roll the "slack" trait.
@@ -5854,16 +5855,18 @@ Scouring - now 20% of resolve (up from 10%) 50% applies to other whips, flails a
 Dedication - now 25% of resolve (up from 10%). Works with Cultist leather hood, leather helmet, decayed sack helm, warlock hood or mask of davkul.
 Flesh Mortification - chain added to benefit from this perk
 Penance - Now gain +75% (up from +50%) of missing health as resolve  while wearing cultist robes, sackcloth, hide, warlock robe or leather wraps
-
 Players can now craft a sack hood vanity layer in crafting, the cost for this item is the dedication perk on a brother and 1 bolt of cloth.
 
 **Crusader**
 Crusader origin dropped from difficulty 3 to difficulty 1.
 Crusaders can now meet pilgrims.
 New background: pilgrim.
-Pilgrims are followers which range from farmers to nobles. Some are better equipped than others but all of them are resolute in their faith. While unreliable in combat the sight of a fellow pilgrim falling in battle only strengths the resolve of their fellow pilgrims.
-You may find pilgrims in settlements, they cost nothing to hire and a fraction of gold to upkeep. Pilgrims do not trigger morale checks for non pilgrims when they die.
+Pilgrims are followers which range from farmers to nobles. Some are better equipped than others but all of them are resolute in their faith. While unreliable in combat the sight of a fellow pilgrim falling in battle is nothing to worry about.
+You may find pilgrims in settlements, they cost nothing to hire and a fraction of gold to upkeep. Pilgrims do not trigger morale checks for non pilgrims when they die, however they are weak fighters.
 
+Pilgrims are unique to this origin and cannot be found outside of it.
+
+Crusader commander; 
 Crusader starts with rebound, fortified mind and favoured enemy: zombies
 
 Recruitment;
@@ -5879,6 +5882,7 @@ Retinue members are now tools and resources that you buy to give your brothers b
 
 **Balance**
 Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
+Swordstaff; was 56 durability. Now 65.
 
 **Fixes**
 A few typos corrected overall.
