@@ -21,8 +21,9 @@ gt.Const.World.Spawn.Kraken <-
 	MaxR = 1,
 	Fixed = [
 		{
-			Type = this.Const.World.Spawn.Troops.Kraken
-			Cost = 1
+			Type = this.Const.World.Spawn.Troops.Kraken,
+			Cost = 1,
+			Weight = 100
 		}
 	],
 	Troops = []
