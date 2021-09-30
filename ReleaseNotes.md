@@ -5900,6 +5900,7 @@ Fixed "cultist makes leather robe (or hood)" event by making these events into c
 **Misc**
 Lone wolf is no longer so lonely - they start with a squire now.
 The "loyal" trait now stipulates that it makes brothers who have it immune to charmed effects.
+World economy settlement status effects for adding or losing locations now have new art, which should allow them to be recognised more easily.
 
 **Modding;**
 Cultist rework is fully compatible with Taro's Davkul rising mod.
