@@ -6,7 +6,7 @@ this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity
 		this.m.ID = "situation.legend_upgrading_locations_effort";
 		this.m.Name = "Upgrading Max Locations Effort";
 		this.m.Description = "This settlement is in the process of upgrading, building materials are in high demand and low supply.";
-		this.m.Icon = "ui/settlement_status/settlement_effect_15.png";
+		this.m.Icon = "ui/settlement_status/upgrading_locations_effect.png";
 		this.m.IsStacking = false;
 		this.m.ValidDays = 10;
 	}
