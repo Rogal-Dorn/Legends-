@@ -5883,6 +5883,7 @@ Retinue members are now tools and resources that you buy to give your brothers b
 **Balance**
 Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
 Swordstaff; was 56 durability. Now 65.
+Longsword rebalanced; longsword now has 10% chance to hit the head (up from 5%), and costs 2 less stamina to equip (is now -8, not -10). This also applies to the named varient.
 
 **Fixes**
 A few typos corrected overall.
@@ -5899,7 +5900,7 @@ Fixed "cultist makes leather robe (or hood)" event by making these events into c
 
 **Misc**
 Lone wolf is no longer so lonely - they start with a squire now.
-The "loyal" trait now stipulates that it makes brothers who have it immune to charmed effects.
+The "loyal" trait now stipulates that it makes brothers who have it are immune to charmed effects.
 World economy settlement status effects for adding or losing locations now have new art, which should allow them to be recognised more easily.
 
 **Modding;**
