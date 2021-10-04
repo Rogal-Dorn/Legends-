@@ -24,12 +24,12 @@ this.named_longsword <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.m.ShieldDamage = 12;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
-		this.m.StaminaModifier = -10;
+		this.m.StaminaModifier = -8;
 		this.m.RegularDamage = 65;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
-		this.m.ChanceToHitHead = 5;
+		this.m.ChanceToHitHead = 10;
 		this.randomizeValues();
 	}
 
