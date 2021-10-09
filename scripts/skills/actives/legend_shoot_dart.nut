@@ -1,7 +1,7 @@
 this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -10,
-		AdditionalHitChance = 0
+		AdditionalAccuracy = 0,
+		AdditionalHitChance = -5
 	},
 	function create()
 	{
@@ -70,43 +70,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
-			}
-		]);
-
-		if (this.m.AdditionalAccuracy == 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-5 + this.m.AdditionalHitChance) + "%[/color] chance to hit per tile of distance"
-			});
-		}
-		else if (this.m.AdditionalAccuracy > 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.AdditionalAccuracy + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
+		local ret = this.getDefaultRangedTooltip();
 
 		ret.push({
 			id = 7,
@@ -114,8 +78,6 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 			icon = "ui/icons/special.png",
 			text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
 		});
-
-
 
 		return ret;
 	}
@@ -163,7 +125,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += -5 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
 	}
 

@@ -18,6 +18,9 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have someone with the Lookout perk. Guaranteed on Thief, Poacher, Nomad and many others"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.lookout"
+		];
 	}
 
 	function onUpdate()
@@ -26,20 +29,6 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 			this.World.Assets.m.VisionRadiusMult = 1.25;
 		if ("IsShowingExtendedFootprints" in this.World.Assets.m)
 			this.World.Assets.m.IsShowingExtendedFootprints = true;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.lookout"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

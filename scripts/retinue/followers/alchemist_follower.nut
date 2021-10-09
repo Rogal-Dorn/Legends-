@@ -22,6 +22,13 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid, Alchemist"
 			}
 		];
+		this.m.RequiredSkills = [
+			"background.legend_herbalist",
+			"background.legend_taxidermist",
+			"background.legend_druid",
+			"background.legend_commander_druid",
+			"background.legend_alchemist"
+		];
 	}
 
 	function isValid()
@@ -29,39 +36,16 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 		return this.Const.DLC.Unhold;
 	}
 
-	function onUpdate()
-	{
-	}
-
 	function onEvaluate()
 	{
 		this.m.Requirements[0].Text = "Crafted " + this.Math.min(10, this.World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/10 items";
-
-		local brothers = this.World.getPlayerRoster().getAll();
-		local availableBGs = [
-			"background.legend_herbalist",
-			"background.legend_taxidermist",
-			"background.legend_druid",
-			"background.legend_commander_druid",
-			"background.legend_alchemist"
-		];
-
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-			
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[1].IsSatisfied = true;
-				break;
-			}
-		}	
 
 		if (this.World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
-		
+
+		this.follower.onEvaluate();
 	}
 
 });

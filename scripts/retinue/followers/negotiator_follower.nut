@@ -19,6 +19,9 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_pacifist"
+		];
 	}
 
 	function onUpdate()
@@ -48,20 +51,6 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 	function onNewDay()
 	{
 		this.onUpdate();
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_pacifist"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

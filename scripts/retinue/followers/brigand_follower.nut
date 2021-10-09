@@ -17,35 +17,17 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Raider, Barbarian, Deserter"
 			}
 		];
+		this.m.RequiredSkills = [
+			"background.raider",
+			"background.barbarian",
+			"background.deserter"
+		];
 	}
 
 	function onUpdate()
 	{
 		if ("IsBrigand" in this.World.Assets.m)
 			this.World.Assets.m.IsBrigand = true;
-	}
-
-	function onEvaluate()
-	{		
-
-		local brothers = this.World.getPlayerRoster().getAll();
-		local availableBGs = [
-			"background.raider",
-			"background.barbarian",
-			"background.deserter"
-		];
-
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-			
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				break;
-			}
-		}	
-
 	}
 
 });

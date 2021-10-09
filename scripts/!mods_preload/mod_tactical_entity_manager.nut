@@ -12,7 +12,6 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 			this.Time.setRound(0);
 			this.World.Assets.updateFormation();
 			local all_players = _properties.IsUsingSetPlayers ? _properties.Players : this.World.getPlayerRoster().getAll();
-			local players = [];
 
 			foreach( e in _properties.TemporaryEnemies )
 			{
@@ -21,47 +20,40 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 					this.World.FactionManager.getFaction(e).setIsTemporaryEnemy(true);
 				}
 			}
-			// local riderMap = {}
-			local hasSheildsUpPerk = false;
 
-			foreach( p in all_players )
+			local frontline = [];
+			local reserves = [];
+
+			foreach (p in all_players)
 			{
 				if (p.getPlaceInFormation() > 26)
 				{
 					continue;
 				}
 
-				if (p.getSkills().hasSkill("perk.legend_shields_up"))
+				if (!p.isInReserves())
 				{
-					hasSheildsUpPerk = true;
+					frontline.push(p);
+				}
+				else
+				{
+					reserves.push(p);
+				}
+			}
+
+			foreach (r in reserves)
+			{
+				if (_properties.IsPlayerInitiated && this.World.State.getBrothersInFrontline() != 0 || this.World.Assets.getBrothersMaxInCombat() <= frontline.len())
+				{
+					break;
 				}
 
-				if (_properties.IsPlayerInitiated && p.isInReserves() && all_players.len() > 1)
-				{
-					continue;
-				}
+				frontline.push(r);
+			}
 
-				// if (p.getRiderID() != "")
-				// {
-				// 	local key = "" + p.getRiderID();
-				// 	if (!(key in riderMap))
-				// 	{
-				// 		riderMap[key] <- [null, null] //horse, rider
-				// 	}
-				// 	local pair = riderMap[key]
-				// 	if (p.isStabled())
-				// 	{
-				// 		pair[0] = p
-				// 	}
-				// 	else
-				// 	{
-				// 		pair[1] = p
-				// 	}
-				// 	continue
-				// }
-
-				players.push(p);
-				local items = p.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
+			foreach (f in frontline)
+			{
+				local items = f.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
 
 				foreach( item in items )
 				{
@@ -72,41 +64,9 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 				}
 			}
 
-			// foreach(k, v in riderMap)
-			// {
-			// 	local p
-			// 	if (v[0] != null && v[1] != null)
-			// 	{
-			// 		p = this.World.getPlayerRoster().create("scripts/entity/tactical/legends_player_horserider");
-			// 		p.setHorse(v[0]);
-			// 		p.setRider(v[1]);
-			// 		p.setScenarioValues();
-			// 	}
-			// 	else if (v[0] != null)
-			// 	{
-			// 		p = v[0];
-			// 	}
-			// 	else
-			// 	{
-			// 		p = v[1];
-			// 	}
-
-			// 	players.push(p);
-			// 	local items = p.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
-
-			// 	foreach( item in items )
-			// 	{
-			// 		if ("setLoaded" in item)
-			// 		{
-			// 			item.setLoaded(false);
-			// 		}
-			// 	}
-
-			// }
-
 			if (this.World.State.isUsingGuests() && this.World.getGuestRoster().getSize() != 0)
 			{
-				players.extend(this.World.getGuestRoster().getAll());
+				frontline.extend(this.World.getGuestRoster().getAll());
 			}
 
 			if (_properties.BeforeDeploymentCallback != null)
@@ -227,40 +187,40 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 			switch(_properties.PlayerDeploymentType)
 			{
 			case this.Const.Tactical.DeploymentType.Line:
-				this.placePlayersInFormation(players);
+				this.placePlayersInFormation(frontline);
 				break;
 
 			case this.Const.Tactical.DeploymentType.LineBack:
 				if (_properties.InCombatAlready)
 				{
-					this.placePlayersInFormation(players, -10);
+					this.placePlayersInFormation(frontline, -10);
 				}
 				else
 				{
-					this.placePlayersInFormation(players, -10 + shiftX);
+					this.placePlayersInFormation(frontline, -10 + shiftX);
 				}
 
 				break;
 
 			case this.Const.Tactical.DeploymentType.LineForward:
-				this.placePlayersInFormation(players, 8 + shiftX);
+				this.placePlayersInFormation(frontline, 8 + shiftX);
 				break;
 
 			case this.Const.Tactical.DeploymentType.Arena:
-				this.placePlayersInFormation(players, -4, -3);
+				this.placePlayersInFormation(frontline, -4, -3);
 				break;
 
 			case this.Const.Tactical.DeploymentType.Center:
-				this.placePlayersAtCenter(players);
+				this.placePlayersAtCenter(frontline);
 				break;
 
 			case this.Const.Tactical.DeploymentType.Edge:
-				this.placePlayersAtBorder(players);
+				this.placePlayersAtBorder(frontline);
 				break;
 
 			case this.Const.Tactical.DeploymentType.Random:
 			case this.Const.Tactical.DeploymentType.Circle:
-				this.placePlayersInCircle(players);
+				this.placePlayersInCircle(frontline);
 				break;
 
 			case this.Const.Tactical.DeploymentType.Custom:

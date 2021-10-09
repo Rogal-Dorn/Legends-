@@ -18,6 +18,9 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have someone with the Skillful Stacking perk. Guaranteed on Vagabonds, Millers, Donkeys and many others"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_skillful_stacking"
+		];
 	}
 
 	function onUpdate()
@@ -29,20 +32,5 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 		if ("ArmorPartsMaxAdditional" in this.World.Assets.m)
 			this.World.Assets.m.ArmorPartsMaxAdditional = 50;
 	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_skillful_stacking"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
-	}
-
 });
 

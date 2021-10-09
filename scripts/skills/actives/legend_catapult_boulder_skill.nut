@@ -1,7 +1,7 @@
 this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = -60,
-		AdditionalHitChance = 0
+		AdditionalAccuracy = -70,
+		AdditionalHitChance = 5
 	},
 	function create()
 	{
@@ -70,43 +70,7 @@ this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
-			}
-		]);
-
-		if (this.m.AdditionalAccuracy == 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] chance to hit per tile of distance"
-			});
-		}
-		else if (this.m.AdditionalAccuracy > 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (-10 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (5 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
+		local ret = this.getDefaultRangedTooltip();
 
 		ret.push({
 			id = 7,
@@ -145,7 +109,7 @@ this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? -60 : -70;
-		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? 5 : 0;
+		this.m.AdditionalHitChance = _properties.IsSpecializedInSlings ? 10 : 5;
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
@@ -186,7 +150,7 @@ this.legend_catapult_boulder_skill <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.RangedSkill += -10 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile += 5 + this.m.AdditionalHitChance;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}
 	}
 

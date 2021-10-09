@@ -22,6 +22,11 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Manhunter, Witch Hunter, Beast Slayer"
 			}
 		];
+		this.m.RequiredSkills = [
+			"background.witchhunter",
+			"background.beast_slayer",
+			"background.manhunter"
+		]
 	}
 
 	function isValid()
@@ -44,28 +49,8 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		} 
-		else 
-		{
-			return;
-		}
 
-
-		local brothers = this.World.getPlayerRoster().getAll();
-		local availableBGs = [
-			"background.witchhunter",
-			"background.beast_slayer",
-			"background.manhunter"
-		];
-
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[1].IsSatisfied = true;
-				break;
-			}
-		}
+		this.follower.onEvaluate();
 	}
 
 	function onChampionKilled( _champion )

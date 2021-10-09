@@ -217,14 +217,13 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		}
 	}
 
-	function onBuildPerkTree( _tree )
+	function onBuildPerkTree( _background )
 	{
-		if (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.LegendPacifist);
+		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendPacifist);
 	}
 
 });

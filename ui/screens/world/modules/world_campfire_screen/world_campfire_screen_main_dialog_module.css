@@ -267,7 +267,7 @@
 
 .world-campfire-screen > .l-main-dialog-container .is-highlighted
 {
-	/*-webkit-filter: brightness(125%);*/
+	-webkit-filter: brightness(120%);
 }
 
 .world-campfire-screen > .l-main-dialog-container .is-negotiated

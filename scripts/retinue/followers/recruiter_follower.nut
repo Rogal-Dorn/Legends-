@@ -18,6 +18,7 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have a mercenary who has taken the Inspiring Presence perk. Guaranteed on Cultists, Pimps, Retired Soldiers and many others."
 			}
 		];
+		this.m.RequiredSkills = "perk.inspiring_presence";
 	}
 
 	function onUpdate()
@@ -30,20 +31,6 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 			this.World.Assets.m.HiringCostMult *= 0.9;
 		if ("TryoutPriceMult" in this.World.Assets.m)
 			this.World.Assets.m.TryoutPriceMult *= 0.5;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.inspiring_presence"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });
