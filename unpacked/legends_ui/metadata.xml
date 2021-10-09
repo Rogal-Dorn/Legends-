@@ -1,4 +1,6 @@
 <brush name="gfx/legends_ui.png" version="17" >
+<sprite id="legend_halberd_impale" ic="FF23165B" img="skills\legend_halberd_impale.png" />
+<sprite id="legend_halberd_smite" ic="FF23165B" img="skills\legend_halberd_smite.png" />
 <sprite id="cat_bite" ic="FF23165B" img="skills\cat_bite.png" />
 <sprite id="stone_aim_square" ic="FF23165B" img="skills\stone_aim_square.png" />
 <sprite id="coordinated_volleys_square" ic="FF23165B" img="skills\coordinated_volleys_square.png" />

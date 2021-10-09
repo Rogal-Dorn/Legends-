@@ -6,9 +6,9 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Name = "Smite";
 		this.m.Description = "A slow overhead strike performed with full force to smash a target to bits.";
 		this.m.KilledString = "Chopped";
-		this.m.Icon = "skills/active_89.png";
-		this.m.IconDisabled = "skills/active_89_sw.png";
-		this.m.Overlay = "active_89";
+		this.m.Icon = "skills/legend_halberd_smite.png";
+		this.m.IconDisabled = "skills/legend_halberd_smite_bw.png";
+		this.m.Overlay = "legend_halberd_smite";
 		this.m.SoundOnUse = [
 			"sounds/combat/strike_01.wav",
 			"sounds/combat/strike_02.wav",
