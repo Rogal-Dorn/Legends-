@@ -5933,3 +5933,17 @@ New baseplates and busts are now availible to be called.
 - Goblin Skirmisher: Removed Nimble, added dodge/relentless
 - Webknecht: Removed Nimble, added dodge
 - Frost Unhold - Removed Muscularity
+
+- Roster sizes changed to work off of Renown -> 
+Reputation | Full Roster | In Combat Roster
+500        | 6           | 6
+750        | 8           | 8
+1050       | 10          | 10
+1400       | 12          | 12
+1800       | 15          | 14
+2250       | 18          | 16
+2750       | 21          | 18
+3350       | 25          | 20
+4000       | 27          | 22
+
+Solo starts start at 3 instead of 6

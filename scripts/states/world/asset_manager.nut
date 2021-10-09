@@ -52,6 +52,7 @@ this.asset_manager <- {
 		IsShowingExtendedFootprints = false,
 		BusinessReputation = 0,
 		BusinessReputationRate = 1.0,
+		BusinessReputationMax = 0,
 		MoralReputation = 50.0,
 		Score = 0.0,
 		BuyPriceMult = 1.0,
@@ -202,6 +203,11 @@ this.asset_manager <- {
 		return this.m.BusinessReputation;
 	}
 
+	function getBusinessReputationMax()
+	{
+		return this.m.BusinessReputationMax;
+	}
+
 	function getMoralReputation()
 	{
 		return this.m.MoralReputation;
@@ -227,18 +233,44 @@ this.asset_manager <- {
 		return this.m.FootprintVision;
 	}
 
+	function getTierFromReputation()
+	{
+		local tier = 0;
+
+		for( local i = 0; i < this.Const.RosterReputationRequirements.len(); i = ++i )
+		{
+			if (this.World.Assets.getBusinessReputationMax() >= this.Const.BusinessReputation[this.Const.RosterReputationRequirements[i]])
+			{
+				tier = ++tier;
+			}
+		}
+
+		return tier;	
+	}
+
 	function getBrothersMax()
 	{
-		local tier = this.Math.min(this.World.Assets.getOrigin().getMaxRosterTier(), this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
-
-		return this.Const.RosterSize[tier]; 
+		if (this.World.Assets.getOrigin().getRosterTier() == 6)
+		{
+			return this.Const.RosterSize[this.Const.RosterSize.len()-1];
+		}
+		
+		local tier = this.Math.min(this.Const.RosterSize.len()-1, this.getTierFromReputation() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local max = this.Const.RosterSize[tier];
+		
+		return max; 
 	}
 
 	function getBrothersMaxInCombat()
 	{
-		local tier = this.Math.min(this.World.Assets.getOrigin().getMaxRosterTier(), this.World.Retinue.getNumberOfCurrentFollowers() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
-		
-		return this.Const.FrontlineSize[tier];
+		if (this.World.Assets.getOrigin().getRosterTier() == 6)
+		{
+			return this.Const.FrontlineSize[6];
+		}
+		local tier = this.Math.min(5, this.getTierFromReputation() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
+		local max = this.Const.FrontlineSize[tier];
+
+		return max;
 	}
 
 	function getBrothersScaleMax()
@@ -410,6 +442,7 @@ this.asset_manager <- {
 	function addBusinessReputation( _f )
 	{
 		this.m.BusinessReputation += this.Math.ceil(_f * this.m.BusinessReputationRate);
+		this.m.BusinessReputationMax = this.Math.max(this.m.BusinessReputation, this.m.BusinessReputationMax);
 
 		if (this.m.BusinessReputation >= 1000)
 		{
