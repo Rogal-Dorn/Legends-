@@ -1,8 +1,7 @@
 this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 	m = {
 		Stacks = 0,
-		MaxStacks = 25,
-		IsInCombat = false
+		MaxStacks = 25
 	},
 	function create()
 	{
@@ -22,6 +21,7 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 		local tooltip = this.skill.getTooltip();
 
 		local bonus = this.getBonus();
+		local actor = this.getContainer().getActor();
 
 		if (bonus > 0)
 		{
@@ -31,6 +31,12 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/melee_skill.png",
 				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Skill"
 			});
+
+			if (!actor.isPlacedOnMap() || actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() > 0)
+			{
+				bonus *= 2;
+			}
+
 			tooltip.push({
 				id = 6,
 				type = "text",
@@ -39,24 +45,22 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		local actor = this.getContainer().getActor();
-
 		if (!actor.isPlacedOnMap())
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "These bonuses will be [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] when not engaged in melee"
+				text = "The Melee Damage bonus will be [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] when not engaged in melee"
 			});
 		}
-		else if (!actor.isEngagedInMelee())
+		else if (actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() == 0)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/warning.png",
-				text = "Bonuses [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] due to not being engaged in melee"
+				text = "Melee Damage bonus [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] due to not being engaged in melee"
 			});
 		}
 
@@ -65,15 +69,16 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		return (this.getContainer().getActor().isPlacedOnMap() && !this.getContainer().getActor().isEngagedInMelee()) ? this.m.Stacks / 2 : this.m.Stacks;		
+		return this.m.Stacks * 0.5;
 	}
 
 	function onAfterUpdate( _properties )
 	{
-		if (!this.getContainer().getActor().isPlacedOnMap())
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap())
 		{
 			this.m.Stacks = 0;
-			local actor = this.getContainer().getActor();
+			
 			local armorFat = actor.getTotalArmorStaminaModifier() * -1;
 
 			if (actor.getInitiative() >= 2*armorFat)
@@ -85,8 +90,14 @@ this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
 		if (this.m.Stacks > 0)
 		{
 			local bonus = this.getBonus();
-			_properties.MeleeDamageMult *= 1 + bonus * 0.01;
 			_properties.MeleeSkillMult *= 1 + bonus * 0.01;
+
+			if (!actor.isPlacedOnMap() || actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() > 0)
+			{
+				bonus *= 2;
+			}
+
+			_properties.MeleeDamageMult *= 1 + bonus * 0.01;			
 		}
 	}
 
