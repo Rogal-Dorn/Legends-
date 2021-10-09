@@ -107,26 +107,8 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 			return success;
 		}
 
-		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant() && target.isAlive() && !target.isDying())
-		{
-			target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
-
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has staggered " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-		}
 
 		return success;
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		if (_skill == this)
-		{
-			_properties.DamageRegularMin += 20;
-			_properties.DamageRegularMax += 20;
-		}
 	}
 
 });

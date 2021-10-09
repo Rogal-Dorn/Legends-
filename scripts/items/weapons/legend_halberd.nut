@@ -20,7 +20,7 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 85.0;
 		this.m.ConditionMax = 85.0;
-		this.m.StaminaModifier = -14;
+		this.m.StaminaModifier = -16;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
