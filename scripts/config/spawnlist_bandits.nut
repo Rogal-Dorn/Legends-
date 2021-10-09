@@ -33,20 +33,24 @@ gt.Const.World.Spawn.BanditRoamers <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
+					MinR = 80,
 					Cost = 8
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
-					MinR = 200,
+					//MinR = 200,
+					MinR = 160,					
 					Cost = 16
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
-					MinR = 400,
+					//MinR = 400,					
+					MinR = 320,
 					Cost = 20
 				},
 				{
-					MinR = 800,
+					//MinR = 800,
+					MinR = 480,					
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -134,15 +138,18 @@ gt.Const.World.Spawn.BanditScouts <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 120,
+					//MaxR = 120,
+					MaxR = 100,
 					Cost = 5
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
+					MinR = 80,					
 					Cost = 8
 				},
 				{
-					MinR = 200,
+					//MinR = 200,
+					MinR = 160,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
@@ -195,7 +202,8 @@ gt.Const.World.Spawn.BanditScouts <-
 		},
 		{
 			Weight = 10,
-			MinR = 340,
+			MinR = 170,
+			//MinR = 340,
 			Types =
 			[
 				{
@@ -246,20 +254,24 @@ gt.Const.World.Spawn.BanditRaiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					// MaxR = 0.15 * 400,
-					MaxR = 60,
+					//MaxR = 60, Luft change
+					MaxR = 100,
 					Cost = 9
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
+					MinR = 80,					
 					Cost = 8
 				},
 				{
-					MinR = 200,
+					//MinR = 200,					
+					MinR = 160,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
-					MinR = 400,
+					//MinR = 400,					
+					MinR = 320,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
@@ -404,6 +416,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
+					MinR = 80,					
 					Cost = 8
 				},
 				{
@@ -411,7 +424,8 @@ gt.Const.World.Spawn.BanditDefenders <-
 					Cost = 16
 				},
 				{
-					MinR = 400,
+					//MinR = 400,					
+					MinR = 320,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
 				},
@@ -574,8 +588,9 @@ gt.Const.World.Spawn.BanditBoss <-
 					Cost = 16
 				},
 				{
-					MinR = 400,
+					//MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
+					MinR = 320,
 					Cost = 20
 				},
 				{
