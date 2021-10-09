@@ -52,7 +52,8 @@ this.goblin_fighter <- this.inherit("scripts/entity/tactical/goblin", {
 			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 			b.RangedSkill += 10;
 			}

@@ -20,12 +20,12 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 85.0;
 		this.m.ConditionMax = 85.0;
-		this.m.StaminaModifier = -14;
+		this.m.StaminaModifier = -16;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 60;
-		this.m.RegularDamageMax = 90;
+		this.m.RegularDamageMax = 80;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
@@ -33,12 +33,13 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
+		this.weapon.onEquip();		
 		this.addSkill(this.new("scripts/skills/actives/legend_halberd_smite_skill"));
-		this.weapon.onEquip();
 		local impale = this.new("scripts/skills/actives/impale");
 		impale.m.Icon = "skills/active_54.png";
 		impale.m.IconDisabled = "skills/active_54_sw.png";
 		impale.m.Overlay = "active_54";
+		impale.m.IsIgnoredAsAOO = true; 		
 		this.addSkill(impale);
 	}
 

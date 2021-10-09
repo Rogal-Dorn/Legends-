@@ -5807,3 +5807,28 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 
 ## 15.0.1.20i
 - Fixes critical crash when loading saved games.
+
+## 15.0.1.21
+**Brigand Spawnlist changes:**
+- Rabble transition into thugs more smoothly.
+- Raider_low and raiders appear earlier.
+- Peasant bandits appear earlier in some cases.
+
+**Changes**
+- Training tent cost increased to 10,000
+- Minstrel daily wage increased to 19 from 6
+
+**Halberd Rebalance**
+- Damage reduced to 60-80 (from 60-90)
+- Fatigue penalty increased to 16 from 14
+- Smite skill no longer staggers but retains its +20 min/max damage bonus
+- Smite is now the attack of opportunity skill
+
+**Enemy Rebalance**
+- Conscript: Removed Nimble, added Dodge/Relentless
+
+**Legendary Enemy Rebalance**
+- Orc Berserker: Removed Nimble/Muscularity, added colossus
+- Goblin Skirmisher: Removed Nimble, added dodge/relentless
+- Webknecht: Removed Nimble, added dodge
+- Frost Unhold - Removed Muscularity
