@@ -5884,6 +5884,7 @@ Retinue members are now tools and resources that you buy to give your brothers b
 Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
 Swordstaff; was 56 durability. Now 65.
 Longsword rebalanced; longsword now has 10% chance to hit the head (up from 5%), and costs 2 less stamina to equip (is now -8, not -10). This also applies to the named varient.
+Nomads have been rebalanced again. You should see more outlaws and fewer cutthroats lategame. Possibly also fixes the issue with trios of executioners showing up frequently.
 
 **Fixes**
 A few typos corrected overall.

@@ -38,7 +38,7 @@ gt.Const.World.Spawn.NomadRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.NomadOutlaw,
 					MinR = 400,
-					Cost = 30
+					Cost = 20
 				}
 			]
 		},
@@ -82,12 +82,12 @@ gt.Const.World.Spawn.NomadRaiders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.NomadCutthroat,
-					Cost = 14
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.NomadOutlaw,
 					MinR = 100,
-					Cost = 25
+					Cost = 20
 				}
 			]
 		},
@@ -113,7 +113,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 10,
+			Weight = 8,
 			MinR = 140,
 			Types =
 			[
@@ -125,8 +125,8 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 4,
-			MinR = 140,
+			Weight = 3,
+			MinR = 160,
 			Types =
 			[
 				{
@@ -174,7 +174,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.NomadOutlaw,
-					Cost = 24
+					Cost = 18
 				}
 			]
 		},
@@ -200,7 +200,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 4,
 			MinR = 140,
 			Types =
 			[
@@ -212,7 +212,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 3,
+			Weight = 2,
 			MinR = 365,
 			Types =
 			[
