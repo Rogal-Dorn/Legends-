@@ -70,7 +70,6 @@ this.unhold_frost <- this.inherit("scripts/entity/tactical/enemies/unhold", {
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			b.MeleeSkill += 10;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_battleheart"));
 			this.m.Hitpoints = 2 * b.Hitpoints;
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
