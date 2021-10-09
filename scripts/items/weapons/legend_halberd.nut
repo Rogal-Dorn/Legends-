@@ -33,12 +33,13 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onEquip()
 	{
+		this.weapon.onEquip();		
 		this.addSkill(this.new("scripts/skills/actives/legend_halberd_smite_skill"));
-		this.weapon.onEquip();
 		local impale = this.new("scripts/skills/actives/impale");
 		impale.m.Icon = "skills/active_54.png";
 		impale.m.IconDisabled = "skills/active_54_sw.png";
 		impale.m.Overlay = "active_54";
+		impale.m.IsIgnoredAsAOO = true; 		
 		this.addSkill(impale);
 	}
 
