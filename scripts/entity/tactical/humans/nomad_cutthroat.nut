@@ -53,7 +53,7 @@ this.nomad_cutthroat <- this.inherit("scripts/entity/tactical/human", {
 
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 35)
 		{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+			this.m.Skills.add(this.new("scripts/skills/effects/dodge_effect"));
 		}
 	}
 
