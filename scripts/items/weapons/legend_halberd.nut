@@ -36,9 +36,9 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();		
 		this.addSkill(this.new("scripts/skills/actives/legend_halberd_smite_skill"));
 		local impale = this.new("scripts/skills/actives/impale");
-		impale.m.Icon = "skills/active_54.png";
-		impale.m.IconDisabled = "skills/active_54_sw.png";
-		impale.m.Overlay = "active_54";
+		impale.m.Icon = "skills/legend_halberd_impale.png";
+		impale.m.IconDisabled = "skills/legend_halberd_impale_bw.png";
+		impale.m.Overlay = "legend_halberd_impale";
 		impale.m.IsIgnoredAsAOO = true; 		
 		this.addSkill(impale);
 	}
