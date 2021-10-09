@@ -76,7 +76,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction())
 			{
-				if (!a.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
+				if (!a.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 				{
 					local effect = this.new("scripts/skills/effects/legend_prayer_of_faith_effect");
 					effect.m.Resolve = this.getContainer().getActor().getBravery();

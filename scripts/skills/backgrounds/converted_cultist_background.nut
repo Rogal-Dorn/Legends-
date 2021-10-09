@@ -34,7 +34,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.BackgroundType = this.Const.BackgroundType.Converted;
+		this.m.BackgroundType = this.Const.BackgroundType.ConvertedCultist;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.PerkTreeDynamic = {

@@ -161,7 +161,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 			{
 				cultist_candidates.push(bro);
 			}

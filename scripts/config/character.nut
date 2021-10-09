@@ -410,7 +410,7 @@ gt.Const.BackgroundType <- {
 	None = 0,
 	Crusader = 1,
 	Combat = 2,
-	Converted = 4,
+	ConvertedCultist = 4,
 	Druid = 8,
 	Educated = 16,
 	Female = 32,

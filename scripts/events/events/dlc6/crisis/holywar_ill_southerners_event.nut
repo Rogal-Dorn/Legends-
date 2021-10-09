@@ -63,7 +63,7 @@ this.holywar_ill_southerners_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
+					if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 					{
 						continue;
 					}

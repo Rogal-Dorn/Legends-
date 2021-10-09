@@ -396,7 +396,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Cultist.getID() && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
+					if (bro.getID() != _event.m.Cultist.getID() && bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 					{
 						bro.improveMood(1.0, "Witnessed Davkul\'s power");
 
@@ -466,7 +466,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			 {
 			 	candidate_monk.push(bro);
 			 }
-			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Converted))
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 			{
 				candidate_cultist.push(bro);
 			}

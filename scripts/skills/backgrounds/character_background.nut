@@ -189,7 +189,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	// This is used to overwrite the general skill "getIconColored()" so that converted cultists always have their background icon show as converted.
 	function getIconColored()
 	{
-		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
+		if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {
 			return "ui/backgrounds/background_34.png";
 		}
 		return this.m.Icon;
@@ -202,7 +202,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getName()
 	{
-		if(this.isBackgroundType(this.Const.BackgroundType.Converted)) {
+		if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {
 			return "Background: Cultist " + this.m.Name;
 		}
 		return "Background: " + this.m.Name;
@@ -1111,7 +1111,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			if(this.isBackgroundType(this.Const.BackgroundType.Converted))
+			if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 			{
 				this.m.DailyCost = 4; // Converted cultists only cost 4, this is instead of saving the value for all bros.
 			}
@@ -1551,7 +1551,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		_out.writeBool(this.m.IsNew);
 		_out.writeF32(this.m.DailyCostMult);
 		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Female));
-		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.Converted));
+		_out.writeBool(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist));
 		if (this.m.CustomPerkTree == null)
 		{
 			_out.writeU8(0);
@@ -1599,7 +1599,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (_in.readBool())
 		{
-			this.addBackgroundType(this.Const.BackgroundType.Converted);
+			this.addBackgroundType(this.Const.BackgroundType.ConvertedCultist);
 		}
 
 		this.m.CustomPerkTree = [];

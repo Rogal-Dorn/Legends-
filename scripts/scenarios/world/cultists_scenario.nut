@@ -264,7 +264,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 	function isCultist( _background )
 	{
-		return _background.isBackgroundType(this.Const.BackgroundType.Converted | this.Const.BackgroundType.Cultist);
+		return _background.isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist);
 	}
 
 	function onHiredByScenario( _bro ) //cultist hire
