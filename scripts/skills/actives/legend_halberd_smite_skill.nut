@@ -4,7 +4,7 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_halberd_smite";
 		this.m.Name = "Smite";
-		this.m.Description = "A slow overhead strike performed with full force to smash a target to bits. Anyone hit will be staggered and lose initiative.";
+		this.m.Description = "A slow overhead strike performed with full force to smash a target to bits.";
 		this.m.KilledString = "Chopped";
 		this.m.Icon = "skills/active_89.png";
 		this.m.IconDisabled = "skills/active_89_sw.png";
@@ -82,12 +82,6 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
-		});
 		return ret;
 	}
 
@@ -98,26 +92,8 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-		local target = _targetTile.getEntity();
-		local success = this.attackEntity(_user, target);
-
-		if (!_user.isAlive() || _user.isDying())
-		{
-			return success;
-		}
-
-		if (success && _targetTile.IsOccupiedByActor && !target.isNonCombatant() && target.isAlive() && !target.isDying())
-		{
-			target.getSkills().add(this.new("scripts/skills/effects/staggered_effect"));
-
-			if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " has staggered " + this.Const.UI.getColorizedEntityName(target) + " for one turn");
-			}
-		}
-
-		return success;
+	    this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+	    return this.attackEntity(_user, _targetTile.getEntity());        
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -128,6 +104,7 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMax += 20;
 		}
 	}
+	
 
 });
 
