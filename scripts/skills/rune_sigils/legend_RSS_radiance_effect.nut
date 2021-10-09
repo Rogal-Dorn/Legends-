@@ -162,7 +162,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate(_properties)
 	{
 		local actor = this.getContainer().getActor();
-		if (actor == null)
+		if (actor == null || actor.m.IsMoving)
 		{
 			return;
 		}
