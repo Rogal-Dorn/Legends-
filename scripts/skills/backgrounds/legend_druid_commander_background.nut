@@ -178,7 +178,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendMiasma,
 				this.Const.Perks.PerkDefs.LegendFieldTriage,
 				this.Const.Perks.PerkDefs.LegendTumble,
-				this.Const.Perks.PerkDefs.LegendSummonBear,
+			//	this.Const.Perks.PerkDefs.LegendSummonBear,
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.KillingFrenzy,

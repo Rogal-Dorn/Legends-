@@ -1083,7 +1083,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			local origin = this.World.Assets.getOrigin()
 			if (origin != null)
 			{
-				this.World.Assets.getOrigin().onBuildPerkTree(this.m.CustomPerkTree);
+				this.World.Assets.getOrigin().onBuildPerkTree(this);
 			}
 		}
 

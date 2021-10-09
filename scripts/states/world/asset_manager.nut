@@ -908,7 +908,7 @@ this.asset_manager <- {
 
 			if (this.World.Flags.get("IsGoldenGoose") == true)
 			{
-				this.addMoney(30);
+				this.addMoney(50);
 			}
 
 			local roster = this.World.getPlayerRoster().getAll();

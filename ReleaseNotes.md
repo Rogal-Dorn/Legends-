@@ -5809,6 +5809,107 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Fixes critical crash when loading saved games.
 
 ## 15.0.1.21
+
+Two new origin reworks.
+**Cultists**
+Three new backgrounds;
+Husk, Magister and Lurker
+ - only availble to the cultist origin
+ - the purpose of these backgrounds are to give cultists better cohesion while staying on theme
+
+New Backgrounds;
+Husks are cultists who have had the presence of another being ripped from their mind - they are erratic, fast and incredibly strong fighters - if you can control them.
+Magisters are the older and wiser cultists - typically leaders of sects and organised groups. They are revered by other cultists and are often parential figures of cultist groups. Their bond with their god is much stronger.
+Lurkers prefer keeping their enemies at arm's reach - skulking at the corners of your vision and waiting until for the right time to strike. They are proficent in ranged combat and scouting but are very weak physically.
+
+These backgrounds are unique to the cultist origin and cannot be found outside of it.
+
+Events;
+Cultist events for sacrifice are now significantly more spaced apart and require 4 valid candidates to trigger (as opposed to 2).
+Husks, lurkers and magisters cannot be sacrificed. But are valid for other cultist events.
+The Cultist conversion event has not been changed in terms of requirements. However the 3 new backgrounds may convert others.
+3 new cultist backgrounds added to cultist joiner events
+Bros that are not cultists who witness sacrifice events will not immediatly turn angry and leave, unless they were unhappy already.
+
+Skills & recruitment;
+Buffs and clarifications to the ninetails perktree
+All Cultists are 25% cheaper to hire and maintain. Non cultists are scared of you and cost 25% more to maintain and recruit.
+You may now find more cultists in all towns. Magisters, Husks and lurkers may also be found in towns or during settlement events like the cultist procession. However they are more rare than normal cultists
+Cultists you recruit now gain the "true believer" perk. Backgrounds that are not cultists do not gain this perk.
+Cultists now start at tier 2. Giving them 9 total recruitment slots on day 1.
+
+Cultist starting roster changed, now starts with;
+1 husk
+1 magister
+1 lurker
+2 normal cultists 
+
+Starting cultists now also start with better weapons than before.
+Cultists and husks have the net perktree.
+Cultists, husks, magisters and lurkers all have favoured enemy noble (and caravan) perks.
+All cultists cannot roll the "slack" trait.
+
+Crafting & ninetails perktree;
+Changes to items, crafting and ninetails perk tree;
+Scouring - now 20% of resolve (up from 10%) 50% applies to other whips, flails and chains including; two handed flails, two handed wooden flails, pole flails, chain and reinforced flails. Does not apply to orc chains.
+Dedication - now 25% of resolve (up from 10%). Works with Cultist leather hood, leather helmet, decayed sack helm, warlock hood or mask of davkul.
+Flesh Mortification - chain added to benefit from this perk
+Penance - Now gain +75% (up from +50%) of missing health as resolve  while wearing cultist robes, sackcloth, hide, warlock robe or leather wraps
+Players can now craft a sack hood vanity layer in crafting, the cost for this item is the dedication perk on a brother and 1 bolt of cloth.
+
+**Crusader**
+Crusader origin dropped from difficulty 3 to difficulty 1.
+Crusaders can now meet pilgrims.
+New background: pilgrim.
+Pilgrims are followers which range from farmers to nobles. Some are better equipped than others but all of them are resolute in their faith. While unreliable in combat the sight of a fellow pilgrim falling in battle is nothing to worry about.
+You may find pilgrims in settlements, they cost nothing to hire and a fraction of gold to upkeep. Pilgrims do not trigger morale checks for non pilgrims when they die, however they are weak fighters.
+
+Pilgrims are unique to this origin and cannot be found outside of it.
+
+Crusader commander; 
+Crusader starts with rebound, fortified mind and favoured enemy: zombies
+
+Recruitment;
+Squires cost 15% less to buy and upkeep and get fortified mind
+Higher chance of finding pious backgrounds in settlements
+Monks, nuns, witch hunters and other pious backgrounds (including crusaders) cost 25% less to buy and upkeep and get fortified mind
+
+You cannot hire outlaws, Brothers that are not pious or squires will cost 25% more to buy and upkeep and not get fortified mind
+
+**Retinue**
+Retinue now has new art.
+Retinue members are now tools and resources that you buy to give your brothers better use out of their perks or backgrounds needed to unlock them.
+
+**Balance**
+Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
+Swordstaff; was 56 durability. Now 65.
+Longsword rebalanced; longsword now has 10% chance to hit the head (up from 5%), and costs 2 less stamina to equip (is now -8, not -10). This also applies to the named varient.
+Nomads have been rebalanced again. You should see more outlaws and fewer cutthroats lategame. Possibly also fixes the issue with trios of executioners showing up frequently.
+Summon bear removed from druid commander due to ranger origin having issues with spawning 2 bears at once.
+
+**Fixes**
+A few typos corrected overall.
+Golden Goose now actually gives 50 gold rather than 30.
+Lone wolf and gladiators now capped at tier 3 roster recruitment again.
+New backgrounds will get custom background art eventually.
+"Appitite of a donkey" now has a new icon.
+Vala's warden should now be immune to mental attacks. It should now also disprefer friendly fire much more strongly.
+Fixes an issue where cultists do not count as cultists for sacrifice events
+Gnarly staff renamed goblin staff to avoid confusion with gnarled staff
+Fixed "cultist makes leather robe (or hood)" event by making these events into crafting recipies.
+- Cultist robe requires 1 sacksloth and 1 furs and the "Penance" perk.
+- Cultist leather hood (not sack hood) requires 2 bolts of cloth and the "Dedication" perk.
+
+**Misc**
+Lone wolf is no longer so lonely - they start with a squire now.
+The "loyal" trait now stipulates that it makes brothers who have it are immune to charmed effects.
+World economy settlement status effects for adding or losing locations now have new art, which should allow them to be recognised more easily.
+
+**Modding;**
+Cultist rework is fully compatible with Taro's Davkul rising mod.
+Delz's & Luft's cultist tweaks integrated into cultist rework.
+New baseplates and busts are now availible to be called.
+
 **Brigand Spawnlist changes:**
 - Rabble transition into thugs more smoothly.
 - Raider_low and raiders appear earlier.
