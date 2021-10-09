@@ -1669,7 +1669,7 @@ this.tooltip_events <- {
 			ret.push({
 				id = id,
 				type = "hint",
-				text = "Company:"
+				text = "Company Strength: " + this.World.State.getPlayer().getStrength()
 			});
 			id = ++id;
 

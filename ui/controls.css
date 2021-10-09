@@ -221,6 +221,15 @@
     background-size: 30.5rem 2.6rem;
 }
 
+/* Add slim stripe for remaining action points */
+.ui-control-stats-progressbar.action-points-slim,
+.ui-control-stats-progressbar-preview.action-points-slim
+{
+	background-image: url("coui://gfx/ui/skin/bar_fill_action_196.png");
+    background-repeat: no-repeat;
+    background-size: 19.6rem 2.0rem;
+}
+
 /*
 	Dialog Specific
 */
