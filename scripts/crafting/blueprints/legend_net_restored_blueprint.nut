@@ -10,7 +10,7 @@ this.legend_net_restored_blueprint <- this.inherit("scripts/crafting/blueprint",
 		local ingredients = [
 			{
 				Script = "scripts/items/tools/legend_broken_throwing_net",
-				Num = 2
+				Num = 1
 			}
 		];
 		this.init(ingredients);

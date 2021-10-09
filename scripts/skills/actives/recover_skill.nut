@@ -28,7 +28,7 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local actor = this.getContainer().getActor();
-		local fatReduc = actor.getActionPoints() * 3.0
+		local fatReduc = actor.getActionPoints() * 3.0;
 		local ret = [
 			{
 				id = 1,

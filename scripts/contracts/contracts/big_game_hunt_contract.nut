@@ -210,7 +210,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 					this.Contract.m.BulletpointsObjectives.push("Hunt for Schrats and Lindwurms");
 				}
 
-				this.Contract.m.BulletpointsObjectives.push("Hunt around the %regiontype% region of %worldmapregion% and other regions");
+				this.Contract.m.BulletpointsObjectives.push("Hunt around the %regiontype% region of %worldmapregion% %distance% to the %direction% and other regions");
 				this.Contract.m.BulletpointsObjectives.push("Return to %townname% at any time to get paid");
 
 				if (this.Contract.m.Size == 0)

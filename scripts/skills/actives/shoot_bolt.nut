@@ -1,7 +1,7 @@
 this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
-		AdditionalHitChance = 0
+		AdditionalAccuracy = 15,
+		AdditionalHitChance = -3
 	},
 	function onItemSet()
 	{
@@ -63,34 +63,7 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
-			}
-		]);
-
-		if (15 + this.m.AdditionalAccuracy >= 0)
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + (15 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-3 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
-		else
-		{
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]" + (15 + this.m.AdditionalAccuracy) + "%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]" + (-3 + this.m.AdditionalHitChance) + "%[/color] per tile of distance"
-			});
-		}
+		local ret = this.getDefaultRangedTooltip();
 
 		local ammo = this.getAmmo();
 
@@ -150,7 +123,7 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
-		this.m.AdditionalAccuracy = this.m.Item.getAdditionalAccuracy();
+		this.m.AdditionalAccuracy = 15 + this.m.Item.getAdditionalAccuracy();
 	}
 
 	function onUse( _user, _targetTile )
@@ -168,8 +141,8 @@ this.shoot_bolt <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += 15 + this.m.AdditionalAccuracy;
-			_properties.HitChanceAdditionalWithEachTile -= 3 + this.m.AdditionalHitChance;
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile -= this.m.AdditionalHitChance;
 		}
 	}
 

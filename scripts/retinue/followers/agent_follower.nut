@@ -21,10 +21,12 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Eunuch, Messenger, Assassin (Southern or Northern)"
 			}
 		];
-	}
-
-	function onUpdate()
-	{
+		this.m.RequiredSkills = [
+			"background.eunuch",
+			"background.messenger",
+			"background.assassin",
+			"background.assassin_southern"
+		];
 	}
 
 	function onEvaluate()
@@ -32,27 +34,7 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 		local allied = false;
 		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 
-		local availableBGs = [
-			"background.eunuch",
-			"background.messenger",
-			"background.assassin",
-			"background.assassin_southern"
-		];
-
-		local brothers = this.World.getPlayerRoster().getAll();
-		foreach( bro in brothers )
-		{
-
-			local id = bro.getBackground().getID();
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[1].IsSatisfied = true;
-				break;
-			}
-
-		}
-
-		foreach( n in nobles )
+		foreach (n in nobles)
 		{
 			if (n.getPlayerRelation() >= 90.0 )
 			{
@@ -63,7 +45,7 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 
 		local citystates = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState);
 
-		foreach( c in citystates )
+		foreach (c in citystates)
 		{
 			if (c.getPlayerRelation() >= 90.0)
 			{
@@ -71,6 +53,8 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 				return;
 			}
 		}
+
+		this.follower.onEvaluate();
 	}
 
 });

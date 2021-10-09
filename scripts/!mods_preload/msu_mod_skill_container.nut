@@ -33,6 +33,7 @@ gt.MSU.modSkillContainer <- function ()
 			}
 
 			_argsArray.insert(0, null);
+			local updating = this.m.IsUpdating;
 			this.m.IsUpdating = true;
 			this.m.IsBusy = false;
 			this.m.BusyStack = 0;
@@ -51,7 +52,7 @@ gt.MSU.modSkillContainer <- function ()
 				}
 			}
 
-			this.m.IsUpdating = false;
+			this.m.IsUpdating = updating;
 			this.update();
 		}
 

@@ -501,6 +501,7 @@ this.skill_container <- {
 	function buildPropertiesForUse( _caller, _targetEntity )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
+		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -508,13 +509,14 @@ this.skill_container <- {
 			skill.onAnySkillUsed(_caller, _targetEntity, superCurrent);
 		}
 
-		this.m.IsUpdating = false;
+		this.m.IsUpdating = updating;
 		return superCurrent;
 	}
 
 	function buildPropertiesForDefense( _attacker, _skill )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
+		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -522,13 +524,14 @@ this.skill_container <- {
 			skill.onBeingAttacked(_attacker, _skill, superCurrent);
 		}
 
-		this.m.IsUpdating = false;
+		this.m.IsUpdating = updating;
 		return superCurrent;
 	}
 
 	function buildPropertiesForBeingHit( _attacker, _skill, _hitInfo )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
+		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -536,7 +539,7 @@ this.skill_container <- {
 			skill.onBeforeDamageReceived(_attacker, _skill, _hitInfo, superCurrent);
 		}
 
-		this.m.IsUpdating = false;
+		this.m.IsUpdating = updating;
 		return superCurrent;
 	}
 

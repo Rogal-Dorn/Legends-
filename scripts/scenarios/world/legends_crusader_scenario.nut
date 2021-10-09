@@ -176,14 +176,13 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _background )
 	{
-		if  (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
+		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
 	function onUpdateDraftList( _list, _gender)

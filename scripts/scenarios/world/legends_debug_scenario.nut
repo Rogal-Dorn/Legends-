@@ -995,9 +995,9 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}, null);
 	}
 
-	function onBuildPerkTree( _tree)
+	function onBuildPerkTree( _background )
 	{
-		if (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}

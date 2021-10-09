@@ -218,7 +218,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 					local chance = 1;
 					if (this.LegendsMod.Configs().LegendMagicEnabled())
 					{
-					 chance = 10;
+						chance = 10;
 					}
 
 					if (this.Math.rand(1, 100) <= chance )

@@ -18,28 +18,18 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have a mercenary who has taken the Field Repairs perk. Guaranteed on Blacksmiths, Ironmongers, and Crusaders"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_field_repairs"
+		];
 	}
 
 	function onUpdate()
 	{
+		this.follower.onUpdate();
 		if ("RepairSpeedMult" in this.World.Assets.m)
 			this.World.Assets.m.RepairSpeedMult *= 1.33;
 		if ("IsBlacksmithed" in this.World.Assets.m)
 			this.World.Assets.m.IsBlacksmithed = true;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		local BGs = 0;
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_field_repairs"))
-			{
-                this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

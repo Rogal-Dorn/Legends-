@@ -64,7 +64,7 @@ this.unleash_wardog <- this.inherit("scripts/skills/actives/unleash_animal", {
 			"sounds/combat/unleash_wardog_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
+		this.m.Order = this.Const.SkillOrder.Last + 5;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;

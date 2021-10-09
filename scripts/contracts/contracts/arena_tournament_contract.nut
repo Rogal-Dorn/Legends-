@@ -785,7 +785,11 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 					}
 
 				}
-			]
+			],
+			function start()
+			{
+				this.Text += "\n\n\n\n\n\nThe following characters will enter the arena:\n\n%bro1name%\n%bro2name%\n%bro3name%\n%bro4name%\n%bro5name%"
+			}
 		});
 		this.m.Screens.push({
 			ID = "Won2",
@@ -1203,6 +1207,40 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 		}
 	}
 
+	/*Adds the following vars:
+		bro1name = "Bro Name" 
+		bro2name = "2nd Bro Name" (if bro exists)
+		bro3name = "" (if bro doesn't exist)
+		bro4name
+		bro5name
+	*/
+	function prepareBroVariables( _maxNumBros, _vars)
+	{
+		local currentBro = 1
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+
+			if (item != null && item.getID() == "accessory.arena_collar")
+			{
+				_vars.push([
+					"bro" + currentBro++ + "name",
+					" - " + bro.getName()
+				]);
+			}
+
+		}
+
+		for (local i = currentBro; i <= _maxNumBros; ++i)
+		{
+			_vars.push([
+				"bro" + i + "name",
+				""
+			])
+		}
+	}
+
 	function onPrepareVariables( _vars )
 	{
 		_vars.push([
@@ -1213,6 +1251,8 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 			"prizetype",
 			this.m.Flags.get("PrizeType")
 		]);
+
+		this.prepareBroVariables(5, _vars);		
 	}
 
 	function onClear()

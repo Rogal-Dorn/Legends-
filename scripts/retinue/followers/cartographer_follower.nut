@@ -21,40 +21,23 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have at least one of the following backgrounds: Adventurous Noble/Lady, Noble Commander, Philosopher, Historian"
 			}
 		];
-	}
-
-	function onUpdate()
-	{
-	}
-
-	function onEvaluate()
-	{
-	
-		local hasHistorian = false;
-		local brothers = this.World.getPlayerRoster().getAll();
-		local availableBGs = [
+		this.m.RequiredSkills = [
 			"background.adventurous_noble",
 			"background.historian",
 			"background.legend_philosopher",
 			"background.female_adventurous_noble",
 			"background.legend_commander_noble"
 		];
+	}
 
-		foreach( bro in brothers )
-		{
-			local id = bro.getBackground().getID();
-			
-			if (availableBGs.find(id) != null)
-			{
-				this.m.Requirements[1].IsSatisfied = true;
-				break;
-			}
-		}	
-		
+	function onEvaluate()
+	{
 		if (this.World.Flags.getAsInt("LegendaryLocationsDiscovered") >= 1)
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
+
+		this.follower.onEvaluate();
 	}
 
 	function onLocationDiscovered( _location )

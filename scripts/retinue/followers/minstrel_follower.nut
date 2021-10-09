@@ -18,6 +18,9 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have someone with the Entice perk. Guaranteed on Minstrels and Troubadours"
 			}
 		];
+		this.m.RequiredSkills = [
+			"perk.legend_entice"
+		];
 	}
 
 	function onUpdate()
@@ -26,20 +29,6 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 			this.World.Assets.m.BusinessReputationRate *= 1.15;
 		if ("IsNonFlavorRumorsOnly" in this.World.Assets.m)
 			this.World.Assets.m.IsNonFlavorRumorsOnly = true;
-	}
-
-	function onEvaluate()
-	{
-		local brothers = this.World.getPlayerRoster().getAll();
-		
-		foreach( bro in brothers )
-		{
-			if (bro.getSkills().hasSkill("perk.legend_entice"))
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
 	}
 
 });

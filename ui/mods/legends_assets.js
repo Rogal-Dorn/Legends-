@@ -15,4 +15,5 @@ var Legends =
 	BUTTON_8X_SPEED_DISABLED: 	'ui/buttons/time_x8_sw.png',
 
 	BUTTON_ALLOW_RETREAT: 		'ui/skin/icon_allow_flee.png',
+	ICON_ASSET_FRONTLINE:		'ui/icons/asset_frontline.png'
 };

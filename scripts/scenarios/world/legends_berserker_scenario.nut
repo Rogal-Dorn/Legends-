@@ -253,14 +253,13 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 	}
 
-	function onBuildPerkTree( _tree )
+	function onBuildPerkTree( _background )
 	{
-		if (_tree == null)
+		if (_background.m.CustomPerkTree == null)
 		{
 			return;
 		}
-
-		_tree[0].push(this.Const.Perks.PerkDefs.Berserk);
+		_background.m.CustomPerkTree.push(this.Const.Perks.PerkDefs.Berserk);
 	}
 
 });
