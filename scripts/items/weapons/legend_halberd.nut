@@ -25,7 +25,7 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 60;
-		this.m.RegularDamageMax = 90;
+		this.m.RegularDamageMax = 80;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
