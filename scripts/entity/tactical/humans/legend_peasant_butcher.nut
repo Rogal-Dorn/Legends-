@@ -51,7 +51,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			local r = this.Math.rand(1, 5);
+			local r = this.Math.rand(1, 4);
 
 			if (r <= 3)
 			{
@@ -61,10 +61,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/knife"));
 			}
-			else if (r == 5)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
-			}
+
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
