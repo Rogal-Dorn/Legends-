@@ -4,9 +4,9 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.brigand";
-		this.m.Name = "The Brigand";
-		this.m.Description = "The Brigand may be old and weak now, but at one point his name was feared across the land. In exchange for a hot meal he happily shares with you what he learns from his contacts about caravans on the road.";
-		this.m.Image = "ui/campfire/brigand_01";
+		this.m.Name = "Stolen Documents";
+		this.m.Description = "The nobles and merchants are sloppy with their security and their underlings are easily intimidated. A well placed bribe, brawl or a set of light fingers can keep you informed on who is taking what where.";
+		this.m.Image = "ui/campfire/legend_brigand_01";
 		this.m.Cost = 2500;
 		this.m.Effects = [
 			"Makes you see the position of some caravans at all times and even if outside your sight radius"

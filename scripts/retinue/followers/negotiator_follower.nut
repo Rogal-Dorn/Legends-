@@ -4,9 +4,9 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 	{
 		this.follower.create();
 		this.m.ID = "follower.negotiator";
-		this.m.Name = "The Negotiator";
-		this.m.Description = "The Negotiator is home to noble courts and fancy halls, and not used to travelling with a band of sellswords with muddy boots, but he is an expert on traversing the mire of social relations and contract negotiations.";
-		this.m.Image = "ui/campfire/negotiator_01";
+		this.m.Name = "Meeting Point";
+		this.m.Description = "The Negotiator plays a vital role in the future of the company. Having a dedicated meeting place where they can talk, barter and trade insults with prominant figures or their lackeys can help.";
+		this.m.Image = "ui/campfire/legend_negotiator_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [
 			"Allows for more rounds of contract negotiations with your potential employers before they abort, and with only a 10% chance on a hit to relations",

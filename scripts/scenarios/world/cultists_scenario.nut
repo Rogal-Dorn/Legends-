@@ -4,7 +4,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 	{
 		this.m.ID = "scenario.cultists";
 		this.m.Name = "Davkul Cultists";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p]Davkul awaits. You lead a small flock devoted to the elder god, and it is time to spread the word. Find more followers, acquire riches, and please Davkul with sacrifices.\n\n[color=#bcad8c]Cultists:[/color] Start with a group of four cultists with poor equipment. More cultists may flock to you for free.\n[color=#bcad8c]Sacrifices:[/color] Davkul will occasionally demand sacrifices from you, but also bestow boons upon those loyal to him.\n[color=#c90000]Let the Blood Flow:[/color] Cult events happen twice as often, and cultist gain whip skills.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_140.png[/img][/p][p]Davkul awaits. You lead a small flock devoted to the elder god, and it is time to spread the word. Find more followers, acquire riches, and please Davkul with sacrifices.\n\n[color=#bcad8c]Cultists:[/color] Start with a group of five cultists. Encounter fanatical special cultists in towns.\n[color=#bcad8c]Sacrifices:[/color] Davkul will occasionally demand sacrifices from you, but also bestow boons upon those loyal to him. Davkul will not sacrifice his chosen elite. Cultists cost 25% less to buy and maintain.\n[color=#c90000]Let the Blood Flow:[/color] All cultists gain whip skills and favour fighting nobles and caravans.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 90;
 		this.m.IsFixedLook = true;
@@ -20,10 +20,11 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 4; i = i )
+		for( local i = 0; i < 5; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
+			bro.getSprite("socket").setBrush("bust_base_orcs");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
 
@@ -37,17 +38,19 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}
 
 		local bros = roster.getAll();
-		bros[0].setStartValuesEx([
-			"cultist_background"
+		bros[0].setStartValuesEx([ // discount Alastair Crowley
+			"cultist_magister_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "When %name% joined, the cultist warmly called you captain, saying \"tis a proper manner to pursue the path into the Black from whence we came\".";
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));		
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+		items.equip(this.new("scripts/items/weapons/battle_whip"));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[
 				1,
@@ -60,10 +63,11 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 				"leather_wraps"
 			]
 		]));
-		bros[1].setStartValuesEx([
-			"cultist_background"
+		bros[1].setStartValuesEx([ //heavy hitter
+			"cultist_darksoul_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "%name% found you upon the road, stating with certainty you were a mercenary captain. You wore but ordinary cloth at that moment, but %name% said that by Davkul\'s darkness you had an aura of wanted Black about you.";
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
@@ -83,34 +87,66 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 				"hood"
 			]
 		]));
-		bros[2].setStartValuesEx([
+		bros[2].setStartValuesEx([ //edgyboy 1, hitchance
 			"cultist_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "A quiet figure, %name% has shadows beneath the fingerprints, running like the brine beneath a pallid shore. When you exchanged a handshake, it was as though you could hear the hissing of your sanity.";
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.equip(this.new("scripts/items/weapons/battle_whip"));
+		items.equip(this.new("scripts/items/weapons/militia_spear"));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[
 				1,
 				"cultist_leather_hood"
 			]
 		]));
-		bros[3].setStartValuesEx([
+		items.equip(this.Const.World.Common.pickArmor([
+			[
+				1,
+				"leather_wraps"
+			]
+		]));
+		bros[3].setStartValuesEx([ //edgyboy 2, armour
 			"cultist_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw the cultist, there were scars running up %name%\'s arms and across veins that could not be survived. But each morning it appears as though the scars move, slowly creeping in one direction: toward the forehead.";
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		local items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+		items.equip(this.new("scripts/items/weapons/pickaxe"));
+		items.equip(this.Const.World.Common.pickHelmet([
+			[
+				1,
+				"cultist_hood"
+			]
+		]));
+		items.equip(this.Const.World.Common.pickArmor([
+			[
+				1,
+				"leather_wraps"
+			]
+		]));
+		bros[4].setStartValuesEx([ //ranged support
+			"cultist_lurker_background"
+		]);
+		bros[4].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw the cultist, there were scars running up %name%\'s arms and across veins that could not be survived. But each morning it appears as though the scars move, slowly creeping in one direction: toward the forehead.";
+		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));		
+		bros[4].setPlaceInFormation(6);
+		bros[4].setVeteranPerks(2);
+		local items = bros[4].getItems();
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
+		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
+		items.equip(this.new("scripts/items/weapons/legend_sling"));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[
 				1,
@@ -124,7 +160,8 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			]
 		]));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money + 400;
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		this.World.Assets.m.Money = this.World.Assets.m.Money + 300;
 	}
 
 	function onSpawnPlayer()
@@ -194,11 +231,91 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 	function onUpdateDraftList( _list, _gender )
 	{
-		if (_list.len() >= 5)
+		if (_list.len() < 5)
 		{
+			local r;
+			r = this.Math.rand(0, 2);
+			if (r == 0)
+			{
 			_list.push("cultist_background");
+			}
+			r = this.Math.rand(0, 4);
+			if (r == 0)
+			{
+			_list.push("cultist_background");
+			}
+			r = this.Math.rand(0, 6);
+			if (r == 0 && _gender)
+			{
+			_list.push("cultist_lurker_background");
+			}
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("cultist_darksoul_background");
+			}
+			r = this.Math.rand(0, 49);
+			if (r == 0)
+			{
+				_list.push("cultist_magister_background");
+			}
 		}
 	}
 
+	function isCultist( _background )
+	{
+		return _background.isBackgroundType(this.Const.BackgroundType.Converted | this.Const.BackgroundType.Cultist);
+	}
+
+	function onHiredByScenario( _bro ) //cultist hire
+	{
+		if (this.isCultist(_bro.getBackground()))
+		{
+			_bro.improveMood(2.0, "Embraced by Davkul");
+			_bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
+			_bro.getSprite("socket").setBrush("bust_base_orcs");
+		}
+		else
+		{
+			_bro.worsenMood(2.0, "What madness have I walked into!?");
+		}
+	}
+		//starting roster size; T2 = 9
+	function onInit()
+	{
+		this.starting_scenario.onInit();
+		this.m.RosterTier = 2;
+	}
+
+	function onUpdateHiringRoster( _roster ) //hiring
+	{
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.cultist_lurker" || bro.getBackground().getID() == "background.cultist_darksoul" || bro.getBackground().getID() == "background.cultist_magister")
+			{
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+			}
+			else
+			{
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
+			}
+		}
+	}
+	function onBuildPerkTree( _background ) //give true believer
+	{
+		if  (_background.m.CustomPerkTree == null)
+		{
+			return;
+		}
+		
+		if (this.isCultist(_background))
+		{
+			_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendTrueBeliever);
+		}
+	}
 });
 

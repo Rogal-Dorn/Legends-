@@ -10,7 +10,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = false; 
 	}
 
 	function onAfterUpdate( _properties )
@@ -18,25 +18,28 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
+
 		if (item != null)
 		{
-			switch (item.getID())
+			switch(item.getID())
 			{
-				case "armor.body.leather_wraps":
-				case "armor.body.cultist_leather_robe":
-				case "armor.body.sackcloth":
-				case "armor.body.tattered_sackcloth":
-				case "armor.body.armor_of_davkul":
-				case "armor.body.reinforced_animal_hide_armor":
-				case "armor.body.hide_and_bone_armor":
-				case "armor.body.animal_hide_armor":
-				case "legend_armor.body.legend_sackcloth_patched":
-				case "legend_armor.body.legend_sackcloth_tattered":
-				case "legend_armor.body.legend_sackcloth":
-				case "legend_armor.body.cultist_leather_robe":
-				case "legend_armor.body.legend_robes":
-					_properties.Bravery += this.Math.floor(healthMissing * 0.5);
-					return
+			case "armor.body.leather_wraps":
+			case "armor.body.cultist_leather_robe":
+			case "armor.body.sackcloth":
+			case "armor.body.tattered_sackcloth":
+			case "armor.body.armor_of_davkul":
+			case "armor.body.reinforced_animal_hide_armor":
+			case "armor.body.hide_and_bone_armor":
+			case "armor.body.animal_hide_armor":
+			case "legend_armor.body.legend_sackcloth_patched":
+			case "legend_armor.body.legend_sackcloth_tattered":
+			case "legend_armor.body.legend_sackcloth":
+			case "legend_armor.body.cultist_leather_robe":
+			case "legend_armor.body.legend_armor_warlock_cloak":
+			case "legend_armor.body.legend_named_warlock_cloak":
+			case "legend_armor.body.legend_robes":
+				_properties.Bravery += this.Math.floor(healthMissing * 0.75);
+				return;
 			}
 
 			if (this.LegendsMod.Configs().LegendArmorsEnabled())
@@ -45,13 +48,13 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 					"legend_armor.body.legend_animal_hide_armor",
 					"legend_armor.body.legend_hide_and_bone_armor",
 					"legend_armor.body.legend_reinforced_animal_hide_armor"
-				]
+				];
 
-				foreach (l in item.getUpgradeIDs())
+				foreach( v in validLayers )
 				{
-					if (validLayers.find(l) != null)
+					if (item.hasLayerID(v))
 					{
-						_properties.Bravery += this.Math.floor(healthMissing * 0.5);
+						_properties.Bravery += this.Math.floor(healthMissing * 0.75);
 						return;
 					}
 				}
@@ -60,3 +63,4 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	}
 
 });
+
