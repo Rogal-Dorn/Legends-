@@ -39,7 +39,8 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 			"background.slave",
 			"background.female_beggar",
 			"background.legend_commander_beggar",
-			"background.legend_commander_beggar_female"
+			"background.legend_commander_beggar_female",
+			"background.legend_commander_beggar_op"
 		];
 
 		foreach( bro in brothers )
