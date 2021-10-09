@@ -289,7 +289,7 @@ this.ghoul <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/swallow_whole_skill"));
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
