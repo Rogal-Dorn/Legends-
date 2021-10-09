@@ -98,17 +98,8 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-		local target = _targetTile.getEntity();
-		local success = this.attackEntity(_user, target);
-
-		if (!_user.isAlive() || _user.isDying())
-		{
-			return success;
-		}
-
-
-		return success;
+	    this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+	    return this.attackEntity(_user, _targetTile.getEntity());        
 	}
 
 });
