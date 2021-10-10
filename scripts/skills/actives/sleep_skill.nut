@@ -51,7 +51,7 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (_targetTile.getEntity().getCurrentProperties().IsStunned)
+		if (_targetTile.getEntity().getCurrentProperties().IsStunned || _targetTile.getEntity().getMoraleState() == this.Const.MoraleState.Ignore)
 		{
 			return false;
 		}
