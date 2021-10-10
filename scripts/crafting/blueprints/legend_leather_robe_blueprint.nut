@@ -5,7 +5,7 @@ this.legend_leather_robe_blueprint <- this.inherit("scripts/crafting/blueprint",
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_leather_robe_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/armor/armor/cultist_leather_robe");
+		this.m.PreviewCraftable = this.new("scripts/items/armor/cultist_leather_robe");
 		this.m.Cost = 200;
 		local ingredients = [
 			{
@@ -13,7 +13,7 @@ this.legend_leather_robe_blueprint <- this.inherit("scripts/crafting/blueprint",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/armor/armor/sackcloth",
+				Script = "scripts/items/armor/sackcloth",
 				Num = 1
 			}
 		];
@@ -30,7 +30,7 @@ this.legend_leather_robe_blueprint <- this.inherit("scripts/crafting/blueprint",
 
 	function onCraft( _stash )
 	{
-		local item = this.new("scripts/items/armor/armor/cultist_leather_robe");
+		local item = this.new("scripts/items/armor/cultist_leather_robe");
 		item.setVariant(this.m.PreviewCraftable.m.Variant);
 		_stash.add(item);
 	}
