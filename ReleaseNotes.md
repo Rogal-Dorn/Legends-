@@ -5962,3 +5962,8 @@ Recruitment:
 - Removed the redundant perk_full_force file (the actual one used right now is perk_legend_full_force).
 - Changed scenarios from getting customPerkTrees to the entire background, allowing for some additional checks.
 - Modified all ranged skills with AdditionalAccuracy/Hitchance to use getDefaultRangedTooltip
+
+## 15.0.1.21a
+- Fixed the game bugging out and being unable to kill some enemies.
+- Fixed Magic Staves not working.
+- Fixed Lone Wolf and Gladiator origins not starting (currently they don't have a roster limit of 12, will be patched in the future).
