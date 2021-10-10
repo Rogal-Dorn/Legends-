@@ -8,6 +8,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		this.m.Difficulty = 2;
 		this.m.Order = 260;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(6);
 	}
 
 	function isValid()
@@ -134,7 +135,6 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 2;
 		this.World.Flags.set("IsLegendsVala", true);
 	}
 

@@ -8,6 +8,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.m.Difficulty = 2;
 		this.m.Order = 20;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -104,7 +105,6 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsAssassin", true);
 	}
 

@@ -8,6 +8,8 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		this.m.Difficulty = 3;
 		this.m.Order = 130;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
+		this.m.RosterTierMax = this.Const.Roster.getTierForSize(12);
 	}
 
 	function isValid()
@@ -122,7 +124,8 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		bros[2].getBackground().m.RawDescription = "{Why are you looking at %fullname%? Captain, it is I, " + bros[1].getName() + ", who is your greatest gladiator. I am the one who swept the legs of a lindwurm and choked it out with its own tail! What you bastards say? You call that a tall tale? Pah! \'Tis a horizontal lizard at best.}";
 		bros[2].getBackground().buildDescription(true);
 
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 9);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/dried_lamb_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
@@ -193,7 +196,6 @@ this.gladiators_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		// this.m.MaxRosterTier = 3;
 	}
 
 	function onCombatFinished()

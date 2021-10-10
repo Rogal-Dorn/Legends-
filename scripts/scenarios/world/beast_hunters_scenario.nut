@@ -104,7 +104,8 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = 2;
 		}
 
-		this.World.Assets.m.BusinessReputation = 200;
+		this.World.Assets.addBusinessReputation(200);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Flags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));

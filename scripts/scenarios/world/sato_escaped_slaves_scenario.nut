@@ -7,6 +7,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.Description = "[p=c][img]gfx/ui/events/event_166.png[/img][/p][p]You lead a group of slaves trying to escape their cruel fate, but you cannot run forever. Can you keep your band intact and start a new life as mercenaries?\n\n[color=#bcad8c]Escapees:[/color] Start with five escaped Indebted and find others held in captivity.\n[color=#bcad8c]Brothers in Chains:[/color] Your newfound family of Indebted are stronger together and gain skill based on how many you field.\n[color=#bcad8c]Downtrodden and Discarded:[/color] Good relations with any faction decay 15% faster and bad relations recover 15% slower.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 120;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(12);
 	}
 
 	function isValid()
@@ -17,7 +18,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 4;
 	}
 
 	function onSpawnAssets()
@@ -247,8 +247,7 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[4].getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
 		local items = bros[4].getItems();
 		this.addRandomEquipment(items, true);
-
-		this.World.Assets.m.BusinessReputation = 0;
+		
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.m.Money = this.Math.max(this.World.Assets.m.Money - 600, 150);

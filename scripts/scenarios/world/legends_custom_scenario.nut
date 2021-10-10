@@ -22,7 +22,8 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
 
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;

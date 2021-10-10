@@ -8,6 +8,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		this.m.Difficulty = 1;
 		this.m.Order = 230;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -63,7 +64,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		bros[1].getFlags().set("IsPlayerCharacter", true);
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
-		this.World.Assets.m.BusinessReputation = 50;
+		this.World.Assets.addBusinessReputation(50);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
@@ -151,7 +153,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		}
 
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsHunter", true);
 		this.World.Flags.set("IsLegendsDruid", true);
 	}

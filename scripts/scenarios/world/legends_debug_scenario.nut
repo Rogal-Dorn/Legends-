@@ -61,7 +61,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Medicine = 200;
 		this.World.Assets.m.Ammo = 200;
 		this.World.Assets.m.Food = 200;
-		this.World.Assets.m.BusinessReputation = 1000;
+		this.World.Assets.addBusinessReputation(1000);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 
 		local banner = this.new("scripts/items/tools/player_banner");
 		banner.setVariant(2);

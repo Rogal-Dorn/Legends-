@@ -8,6 +8,7 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		this.m.Difficulty = 3;
 		this.m.Order = 250;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -37,7 +38,8 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.m.Ammo = 0;
 	}
 
@@ -104,7 +106,6 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsSeer", true);
 	}
 

@@ -8,6 +8,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.m.Difficulty = 1;
 		this.m.Order = 70;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -36,6 +37,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.addMoralReputation(20);
 		this.World.Assets.addBusinessReputation(1150);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.m.Ammo = 0;
 
 		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
@@ -107,7 +109,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	function onInit() //starting slots
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsCrusader", true);
 	}
 

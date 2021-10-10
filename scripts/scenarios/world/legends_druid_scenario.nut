@@ -8,6 +8,7 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Difficulty = 3;
 		this.m.Order = 110;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -167,7 +168,6 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
 		}
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsDruid", true);
 	}
 
