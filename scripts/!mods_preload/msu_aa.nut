@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.7");
+::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.12");
 
 gt.MSU <- {};
 
@@ -23,6 +23,8 @@ gt.MSU <- {};
 	delete gt.MSU.setupLoggingUtils;
 	gt.MSU.setupStringUtils();
 	delete gt.MSU.setupStringUtils;
+	gt.MSU.setupMathUtils();
+	delete gt.MSU.setupMathUtils;
 
 	gt.MSU.modItemContainer();
 	delete gt.MSU.modItemContainer;
@@ -39,6 +41,8 @@ gt.MSU <- {};
 	delete gt.MSU.modSkillContainer;
 	gt.MSU.modSkill();
 	delete gt.MSU.modSkill;
+	gt.MSU.modItem();
+	delete gt.MSU.modItem;
 	gt.MSU.modWeapon();
 	delete gt.MSU.modWeapon;
 	gt.MSU.modWeapons();

@@ -45,7 +45,7 @@ gt.MSU.setupDamageTypeSystem <- function ()
 
 		function getDamageTypeName( _damageType )
 		{
-			local idx = log(_damageType)/log(2) + 1;
+			local idx = this.MSU.Math.log2int(_damageType) + 1;
 			if (idx == idx.tointeger() && idx < this.DamageTypeName.len())
 			{
 				return this.DamageTypeName[idx];
@@ -58,7 +58,7 @@ gt.MSU.setupDamageTypeSystem <- function ()
 
 		function getDamageTypeInjuries ( _damageType )
 		{	
-			local idx = log(_damageType)/log(2) + 1;
+			local idx = this.MSU.Math.log2int(_damageType) + 1;
 			if (idx == idx.tointeger() && idx < this.DamageTypeInjuries.len())
 			{
 				return this.DamageTypeInjuries[idx].Injuries;
