@@ -55,7 +55,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		this.World.Assets.m.BusinessReputation = -200;
+		this.World.Assets.addBusinessReputation(-200); // Still use default reputation tiers even if starting at negative reputation
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 + 2;
 		this.World.Assets.m.ArmorParts = 0;
