@@ -39,8 +39,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 		}
 		this.m.Skills.update();
 

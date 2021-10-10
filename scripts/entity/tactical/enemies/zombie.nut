@@ -754,12 +754,8 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-
-			if(!this.m.IsResurrected)
-			{
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-			}
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));			
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 		}
 	}
 
