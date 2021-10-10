@@ -7,6 +7,7 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 		this.m.Description = "[p=c][img]gfx/ui/events/event_70.png[/img][/p][p]A lowly unskilled beggar, you witnessed something in an alley and now a noble house wants you dead. This is a challenge run with a very weak starting character. Can you awaken the true power of your avatar? \n\n[color=#bcad8c]Knows Too Much:[/color] All noble houses hate you.\n[color=#bcad8c]Learning in battles[/color]:  The beggar can gain stats and perks by defeating enemies.\n[color=#bcad8c]Begin alone Avatar[/color]: If the beggar dies, the campaign ends.\n[color=#bcad8c]Dirty Peasant[/color]: You can only hire lowerborn backgrounds.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 51;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(1);
 	}
 
 	function isValid()
@@ -43,7 +44,8 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		this.World.Assets.m.BusinessReputation = -200;
+		this.World.Assets.addBusinessReputation(-200);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 + 2;
 		this.World.Assets.m.ArmorParts = 0;
@@ -125,7 +127,6 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 0;
 	}
 
 	function onCombatFinished()

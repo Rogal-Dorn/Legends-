@@ -7,6 +7,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p][p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n[color=#bcad8c]Caravan:[/color] Start with a trader and a donkey.\n[color=#bcad8c]Trader:[/color] Get 10% better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate.\n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 11;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -57,7 +58,6 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
-		this.World.Assets.m.BusinessReputation = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
@@ -142,7 +142,6 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.BusinessReputationRate = 0.5;
 		this.World.Assets.m.BuyPriceMult = 0.9;
 		this.World.Assets.m.SellPriceMult = 1.1;
-		this.m.RosterTier = 1;
 		this.World.Flags.set("IsLegendsTrader", true);
 	}
 

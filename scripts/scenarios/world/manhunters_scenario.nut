@@ -8,6 +8,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		this.m.Difficulty = 3;
 		this.m.Order = 89;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(12);
 	}
 
 	function isValid()
@@ -132,7 +133,8 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/wooden_stick"));
 
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
@@ -208,7 +210,6 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 4;
 	}
 
 });

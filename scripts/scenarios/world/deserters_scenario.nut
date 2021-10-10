@@ -79,7 +79,8 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.m.BusinessReputation = 150;
+		this.World.Assets.addBusinessReputation(150);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 

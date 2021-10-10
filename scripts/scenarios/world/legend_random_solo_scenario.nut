@@ -35,7 +35,8 @@ this.legend_random_solo_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;

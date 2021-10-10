@@ -8,6 +8,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		this.m.Difficulty = 2;
 		this.m.Order = 280;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 	}
 
 	function isValid()
@@ -230,7 +231,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 1;
 	}
 
 

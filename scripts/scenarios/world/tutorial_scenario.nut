@@ -43,7 +43,8 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		]);
 		bros[2].setPlaceInFormation(5);
 
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(100);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;

@@ -8,6 +8,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.m.Difficulty = 2;
 		this.m.Order = 90;
 		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(8);
 	}
 
 	function isValid()
@@ -284,7 +285,6 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 2;
 	}
 
 	function onUpdateHiringRoster( _roster ) //hiring

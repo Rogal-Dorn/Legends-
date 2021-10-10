@@ -155,7 +155,8 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		local talents = bros[3].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
-		this.World.Assets.m.BusinessReputation = -50;
+		this.World.Assets.addBusinessReputation(-50);
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.m.MoralReputation = -30;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/goat_cheese_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));

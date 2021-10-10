@@ -7,6 +7,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]From a noble family, you were born to rule. With your trusted company at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers.\n[color=#bcad8c]Highborn:[/color] Nobles will cost 25% less, lowborns will cost 50% more, can\'t hire outlaws\n[color=#bcad8c]Trained leader:[/color] Your studies at the academy gave tactical and campaign skills, everyone begins with Rotation.\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 170;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(6);
 	}
 
 	function isValid()
@@ -164,7 +165,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
-		this.World.Assets.addBusinessReputation(1100);
+		this.World.Assets.addBusinessReputation(1100);		
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
@@ -288,7 +290,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.m.RosterTier = 2;
 		this.World.Flags.set("IsLegendsNoble", true);
 	}
 
