@@ -6,8 +6,10 @@ this.starting_scenario <- {
 		Difficulty = 1,
 		Order = 0,
 		IsFixedLook = false,
-		StashModifier = 0,
-		RosterTier = 2,
+		StashModifier = 0,		
+		StartingRosterTier = this.Const.Roster.DefaultTier,
+		RosterTierMax = this.Const.Roster.DefaultTierMax,
+		RosterReputationTiers = this.Const.Roster.DefaultReputationTiers,
 		StaticRelationsToFaction = array(this.Const.FactionType.len(), false) 	//Something defined here won't have relations normalized over time in faction_manager
 										//I think this would be better if we instead automatically set the size to be
 	}									//equal to length of factiontypes and then we can skip if len() > 0 in
@@ -122,8 +124,43 @@ this.starting_scenario <- {
 		return true;
 	}
 
+	function getStartingRosterTier()
+	{
+		return this.m.StartingRosterTier;
+	}
+
 	function getRosterTier()
 	{
-		return this.m.RosterTier;
+		return this.Math.min(this.getRosterTierMax(), this.getRosterTierFromReputation() + this.getStartingRosterTier());
+	}
+
+	function getRosterTierMax()
+	{
+		return this.m.RosterTierMax;
+	}
+
+	function getRosterTierFromReputation()
+	{
+		local tier = 0;
+
+		for( local i = 0; i < this.m.RosterReputationTiers.len(); i++ )
+		{
+			if (this.World.Assets.getBusinessReputation() >= this.m.RosterReputationTiers[i])
+			{
+				tier++;
+			}
+		}
+
+		return tier;
+	}
+
+	function getRosterReputationTiers()
+	{
+		return this.m.RosterReputationTiers;
+	}
+
+	function setRosterReputationTiers( _tiers )
+	{
+		this.m.RosterReputationTiers = _tiers;
 	}
 };

@@ -1644,11 +1644,43 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Show the roster of the fighting force of your mercenary company. Hire more Retinue Members to increase your roster capacity!"
+					text = "Show the roster of the fighting force of your mercenary company. Increase your Renown to increase the Roster Size!"
 				}
-			];
+			]; 
+
+
 			local data = this.World.Assets.getRosterDescription();
 			local id = 4;
+
+			if (this.World.Assets.getOrigin().getRosterTier() < this.World.Assets.getOrigin().getRosterTierMax())
+			{
+				local nextRenown = 0;
+				foreach (rep in this.World.Assets.getOrigin().getRosterReputationTiers())
+				{
+					if (this.World.Assets.getBusinessReputation() < rep)
+					{
+						nextRenown = rep;
+						break;
+					}
+				}
+
+				ret.push({
+					id = id,
+					type = "description",
+					text = "Next Roster Size increase at Renown: " + nextRenown
+				});
+				id = ++id;
+			}
+			else
+			{
+				ret.push({
+					id = id,
+					type = "description",
+					text = "Maximum Roster Size achieved!"
+				});
+				id = ++id;
+			}
+			
 			ret.push({
 				id = id,
 				type = "text",
@@ -1671,7 +1703,7 @@ this.tooltip_events <- {
 				type = "hint",
 				text = "Company Strength: " + this.World.State.getPlayer().getStrength()
 			});
-			id = ++id;
+			id = ++id;			
 
 			foreach( bro in data.Brothers )
 			{
@@ -1774,7 +1806,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Men in Front Line"
+					text = "Men in Fighting Line"
 				}
 				{
 					id = 2,
