@@ -5967,3 +5967,4 @@ Recruitment:
 - Fixed the game bugging out and being unable to kill some enemies.
 - Fixed Magic Staves not working.
 - Fixed Lone Wolf and Gladiator origins not starting (currently they don't have a roster limit of 12, will be patched in the future).
+- Fixed Peasant Militia origin being locked to maximum 14 bros in battle.
