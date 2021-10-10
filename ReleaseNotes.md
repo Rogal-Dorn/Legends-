@@ -5924,7 +5924,8 @@ Recruitment:
 - Cultist leather hood (not sack hood) requires 2 bolts of cloth and the "Dedication" perk.
 - "Appitite of a donkey" now has a new icon.
 - New backgrounds will get custom background art eventually.
-- Vala's warden should now be immune to mental attacks. It should now also disprefer friendly fire much more strongly.
+- Vala's warden should now also disprefer friendly fire much more strongly.
+- Alp Sleep skill is no longer usable on targets with MoraleState Ignore (Unbreakable Morale) e.g. Vala Warden and Undead.
 - Allowed scaling beggar to hire scavenger.
 - Company strength is now shown in the roster tooltip.
 - Tactical tooltip updated to v7.2.
