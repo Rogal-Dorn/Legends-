@@ -164,7 +164,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
-		this.World.Assets.m.BusinessReputation = 100;
+		this.World.Assets.addBusinessReputation(1100);
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 

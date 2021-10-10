@@ -35,7 +35,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSprite("miniboss").setBrush("bust_miniboss_crusader"); //custom bust
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.addMoralReputation(20);
-		this.World.Assets.m.BusinessReputation = 150;
+		this.World.Assets.addBusinessReputation(1150);
 		this.World.Assets.m.Ammo = 0;
 
 		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
