@@ -5833,9 +5833,9 @@ Reputation | Full Roster | In Combat Roster
 
 Two new origin reworks.
 **Cultists**
-- Three new backgrounds: Husk, Magister and Lurker
- - only availble to the cultist origin
- - the purpose of these backgrounds is to give cultists better cohesion while staying on theme
+- Three new backgrounds: Husk, Magister and Lurker.
+ - Only available to the cultist origin.
+ - The purpose of these backgrounds is to give cultists better cohesion while staying on theme.
 
 New Backgrounds explained:
 - Husks are cultists who have had the presence of another being ripped from their mind - they are erratic, fast and incredibly strong fighters - if you can control them.
@@ -5856,7 +5856,7 @@ Skills & recruitment:
 - You may now find more cultists in all towns. Magisters, Husks and lurkers may also be found in towns or during settlement events like the cultist procession. However they are more rare than normal cultists
 - Cultists you recruit now gain the "true believer" perk. Backgrounds that are not cultists do not gain this perk.
 - Cultists now start at tier 2. Giving them 9 total recruitment slots on day 1.
-- Cultist starting roster changed, now starts with: 1 Husk, 1 Magister, 1 Lurker, 2 normal cultists 
+- Cultist starting roster changed, now starts with: 1 Husk, 1 Magister, 1 Lurker, 2 normal cultists.
 
 - Starting cultists now also start with better weapons than before.
 - Cultists and husks have the net perktree.
@@ -5867,8 +5867,8 @@ Crafting & ninetails perktree:
 - Changes to items, crafting and ninetails perk tree;
 - Scouring: now 20% of resolve (up from 10%) 50% applies to other whips, flails and chains including; two handed flails, two handed wooden flails, pole flails, chain and reinforced flails. Does not apply to orc chains.
 - Dedication: now 25% of resolve (up from 10%). Works with Cultist leather hood, leather helmet, decayed sack helm, warlock hood or mask of davkul.
-- Flesh Mortification: chain added to benefit from this perk
-- Penance: Now gain +75% (up from +50%) of missing health as resolve  while wearing cultist robes, sackcloth, hide, warlock robe or leather wraps
+- Flesh Mortification: chain added to benefit from this perk.
+- Penance: Now gain +75% (up from +50%) of missing health as resolve  while wearing cultist robes, sackcloth, hide, warlock robe or leather wraps.
 - Players can now craft a sack hood vanity layer in crafting, the cost for this item is the dedication perk on a brother and 1 bolt of cloth.
 
 **Crusader**
@@ -5876,13 +5876,13 @@ Crafting & ninetails perktree:
 - Crusaders can now meet pilgrims.
 - New background: Pilgrim. Pilgrims are followers which range from farmers to nobles. Some are better equipped than others but all of them are resolute in their faith. While unreliable in combat the sight of a fellow pilgrim falling in battle is nothing to worry about. You may find pilgrims in settlements, they cost nothing to hire and a fraction of gold to upkeep. Pilgrims do not trigger morale checks for non pilgrims when they die, however they are weak fighters.
 - Pilgrims are unique to this origin and cannot be found outside of it.
-- Crusader commander starts with rebound, fortified mind and favoured enemy: zombies
+- Crusader commander starts with rebound, fortified mind and favoured enemy: zombies.
 
 Recruitment:
-- Squires cost 15% less to buy and upkeep and get fortified mind
-- Higher chance of finding pious backgrounds in settlements
-- Monks, nuns, witch hunters and other pious backgrounds (including crusaders) cost 25% less to buy and upkeep and get fortified mind
-- You cannot hire outlaws, Brothers that are not pious or squires will cost 25% more to buy and upkeep and not get fortified mind
+- Squires cost 15% less to buy and upkeep and get fortified mind.
+- Higher chance of finding pious backgrounds in settlements.
+- Monks, nuns, witch hunters and other pious backgrounds (including crusaders) cost 25% less to buy and upkeep and get fortified mind.
+- You cannot hire outlaws, Brothers that are not pious or squires will cost 25% more to buy and upkeep and not get fortified mind.
 
 **Balance**
 - Heavy tier embalmed can spawn with a variety of weapons now - not just rows of fan axes.
@@ -5898,17 +5898,17 @@ Recruitment:
   - Raider_low and raiders appear earlier.
   - Peasant bandits appear earlier in some cases.
 - Cost Changes:
-  - Training tent cost increased to 10,000
-  - Minstrel daily wage increased to 19 from 6
+  - Training tent cost increased to 10,000.
+  - Minstrel daily wage increased to 19 from 6.
 - Halberd:
-  - Damage reduced to 60-80 (from 60-90)
-  - Fatigue penalty increased to 16 from 14
-  - Smite skill no longer staggers but retains its +20 min/max damage bonus
+  - Damage reduced to 60-80 (from 60-90).
+  - Fatigue penalty increased to 16 from 14.
+  - Smite skill no longer staggers but retains its +20 min/max damage bonus.
 - Legendary Difficulty Balance:
-  - Orc Berserker: Removed Nimble/Muscularity, added colossus
-  - Goblin Skirmisher: Removed Nimble, added dodge/relentless
-  - Webknecht: Removed Nimble, added dodge
-  - Frost Unhold - Removed Muscularity
+  - Orc Berserker: Removed Nimble/Muscularity, added colossus.
+  - Goblin Skirmisher: Removed Nimble, added dodge/relentless.
+  - Webknecht: Removed Nimble, added dodge.
+  - Frost Unhold - Removed Muscularity.
 - Medium Armor:
   - Medium armor "Balance" perk reworked: Gain +15 Melee Defense when wearing head and body armor with a total weight (penalty to Maximum Fatigue) of 35. The bonus drops by 1 for every 2 points of deviation from this value, and for every 10 points that your Initiative is below twice your armor weight. Gain a third of the Melee Defense bonus as Ranged Defense.
   - Medium armor "In the Zone" perk tweaked: Now grants 0.5% bonus per stack to Melee Skill and Melee Damage per enemy miss against you, up to a maximum of 12.5%. The Melee Damage bonus is doubled when engaged in melee up to maximum of 25%. If your Initiative is higher than 2x your armor weight (penalty to maximum fatigue) you start the battle with stacks equal to your armor weight above 15.
@@ -5933,8 +5933,8 @@ Recruitment:
 - Implemented a Warning or better Information when you try to enter the Arena with less than three brothers.
 - Changed the description of the 'Wait' command to reflect the exact penalty to Initiative.
 - Changed the way characters are selected in combat to both prioritize characters meant to be fighting, while also not allowing the player to use more than the max number of frontline troops.
-- Add new baseplates by Luft
-- Included a rough compass direction in the Beast-Hunting contracts in addition to the region name
+- Add new baseplates by Luft.
+- Included a rough compass direction in the Beast-Hunting contracts in addition to the region name.
 
 **Fixes**
 - A few typos corrected overall.
@@ -5948,7 +5948,8 @@ Recruitment:
 - Fixed incorrect path for some sprites.
 - Hopefully fixed skill_container recursion errors.
 - Fixed attacking a camp with all brothers in reserve revealing its defenders instantly with no risk.
-- Duelist is no longer disabled by missing hand injury
+- Duelist is no longer disabled by missing hand injury.
+- Hopefully fixed the Radiance rune crash.
 
 **Modding**
 - Integrated MSU updated to v0.6.12. See MSU changelog on Github for details.
