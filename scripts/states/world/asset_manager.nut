@@ -265,7 +265,7 @@ this.asset_manager <- {
 	{
 		if (this.World.Assets.getOrigin().getRosterTier() == 6)
 		{
-			return this.Const.FrontlineSize[6];
+			return this.Const.FrontlineSize[this.Const.RosterSize.len()-1];
 		}
 		local tier = this.Math.min(5, this.getTierFromReputation() + this.World.Assets.getOrigin().getRosterTier()); //peasant militia is reserved slot 6
 		local max = this.Const.FrontlineSize[tier];
