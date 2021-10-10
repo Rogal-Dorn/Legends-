@@ -5969,3 +5969,43 @@ Recruitment:
 - Fixed Magic Staves not working.
 - Fixed Lone Wolf and Gladiator origins not starting (currently they don't have a roster limit of 12, will be patched in the future).
 - Fixed Peasant Militia origin being locked to maximum 14 bros in battle.
+
+## 15.0.1.21b
+**Roster**
+- Roster Size changes:
+  - Each origin now starts with a set Roster Tier.
+  - For every Renown level you gain above your starting Renown, the Roster Tier increases by 1.
+  - The Renown needed for the next Roster Size increase is shown in the tooltip of the Roster button.
+
+| Roster Tier | Max Bros | Fighting Bros |
+| ----------- | -------- | ------------- |
+| 0 | 1 | 1 |
+| 1 | 3 | 3 |
+| 2 | 6 | 6 |
+| 3 | 8 | 8 |
+| 4 | 10 | 10 |
+| 5 | 12 | 12 |
+| 6 | 15 | 14 |
+| 7 | 18 | 16 |
+| 8 | 21 | 18 |
+| 9 | 25 | 20 |
+| 10 | 27 | 22 |
+
+**Legendary Difficulty Balance**
+- Removed Nine Lives from all zombies except Rachegeist
+- Removed Last Stand from Fallen Heroes, Fallen Betrayers, and Armored Wiedergangers.
+- Removed Last Stands from all Barbarians.
+
+**Fixes**
+- Fixed the crafting menu / taxidermist not opening.
+- Fixed the Dedication perk not being pickable.
+- Fixed the Scry skill not being usable.
+- Fixed the Dediation perk sometimes underestimating the Resolve of the character.
+- Fixed the tooltip of ranged skills not appearing.
+
+**PSA**
+- The following was already done in the 15.0.1.21 update:
+  - Hopefully fixed the Radiance rune crash when enemies use Rotation.
+
+**Modding**
+- Updated MSU to v0.6.13
