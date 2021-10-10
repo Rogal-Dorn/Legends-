@@ -49,7 +49,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 	function assignRandomEquipment() //pick a weapon
 	{
-		r = this.Math.rand(0, 4);
+		local r = this.Math.rand(0, 4);
 
 		if (r == 0)
 		{
