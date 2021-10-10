@@ -23,8 +23,8 @@ this.legend_noble_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.logInfo("Making you well known");
-				this.World.Assets.addBusinessReputation(1000);
+				// this.logInfo("Making you well known");
+				// this.World.Assets.addBusinessReputation(1000);
 				this.logInfo("Making a noble house like you");
 				//this.World.FactionManager.makeRandomNoblesFriendlyToPlayer();
 				this.logInfo("Making a noble house hate you");
