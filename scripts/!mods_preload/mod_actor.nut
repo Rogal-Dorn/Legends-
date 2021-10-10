@@ -219,7 +219,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 		o.isArmedWithMagicStaff <- function()
 		{
 			local item = this.getMainhandItem();
-			return item != null && item.isWeaponType(this.Const.Items.ItemType.MagicStaff);
+			return item != null && item.isWeaponType(this.Const.Items.WeaponType.MagicStaff);
 		}
 
 		o.equipItem <- function( _item)
@@ -1129,11 +1129,22 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 				}
 			}
 
-			if (isReallyDead) //is affected by morale from specfic backgrounds dying?
+			if (isReallyDead)
 			{
-				if ((this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave") && (this.World.Assets.getOrigin().getID() != "scenario.crusader?" || this.getBackground().getID() != "background.pilgrim?"))
+				if (!this.Tactical.State.isScenarioMode() && this.isPlayerControlled() && !this.isGuest())
 				{
-				    bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+					local roster = this.World.getPlayerRoster().getAll();
+
+					foreach( bro in roster )
+					{
+						if (bro.isAlive() && !bro.isDying() && bro.getCurrentProperties().IsAffectedByDyingAllies)
+						{
+							if (this.World.Assets.getOrigin().getID() != "scenario.manhunters" || this.getBackground().getID() != "background.slave")
+							{
+								bro.worsenMood(this.Const.MoodChange.BrotherDied, this.getName() + " died in battle");
+							}
+						}
+					}
 				}
 
 				this.die();
