@@ -11,7 +11,6 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "ui/perks/legend_vala_warden.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast + 10;
-		this.m.MoraleState = this.Const.MoraleState.Ignore; //cannot be slept, terrified, etc.
 		this.m.IsSerialized = true;
 		this.m.IsActive = false;
 		this.m.IsTargeted = false;
