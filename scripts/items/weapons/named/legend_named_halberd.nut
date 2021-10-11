@@ -18,14 +18,14 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 		this.m.ShowArmamentIcon = true;
 		this.m.Value = 3800;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 72.0;
-		this.m.ConditionMax = 72.0;
+		this.m.Condition = 85.0;
+		this.m.ConditionMax = 85.0;
 		this.m.StaminaModifier = -14;
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 2;
 		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 60;
-		this.m.RegularDamageMax = 90;
+		this.m.RegularDamageMax = 80;
 		this.m.ArmorDamageMult = 1.5;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ChanceToHitHead = 5;
@@ -42,12 +42,13 @@ this.legend_named_halberd <- this.inherit("scripts/items/weapons/named/named_wea
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		local impale = this.new("scripts/skills/actives/impale");
-		impale.m.Icon = "skills/active_54.png";
-		impale.m.IconDisabled = "skills/active_54_sw.png";
-		impale.m.Overlay = "active_54";
-		this.addSkill(impale);
 		this.addSkill(this.new("scripts/skills/actives/legend_halberd_smite_skill"));
+		local impale = this.new("scripts/skills/actives/impale");
+		impale.m.Icon = "skills/legend_halberd_impale.png";
+		impale.m.IconDisabled = "skills/legend_halberd_impale_bw.png";
+		impale.m.Overlay = "legend_halberd_impale";
+		impale.m.IsIgnoredAsAOO = true;
+		this.addSkill(impale);
 	}
 
 });
