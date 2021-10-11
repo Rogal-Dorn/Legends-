@@ -211,6 +211,7 @@ this.pilgrim_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (this.Math.rand(1, 100) <= 66)
 		{
 			local body = actor.getSprite("body");
+			local tattoo_body = actor.getSprite("tattoo_body");
 			tattoo_body.setBrush("scar_01_" + body.getBrush().Name);
 			tattoo_body.Color = body.Color;
 			tattoo_body.Saturation = body.Saturation;
