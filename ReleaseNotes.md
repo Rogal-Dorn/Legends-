@@ -6009,3 +6009,16 @@ Recruitment:
 
 **Modding**
 - Updated MSU to v0.6.13
+
+## 15.0.1.21c
+- Parrying Dagger no longer provides Ranged Defense.
+- The Action Point cost of the Halberd Smite skill is now reduced by 1 when using Polearm Mastery, just like other polearm skills.
+- Fixed the renown requirements for roster size upgrades for origins starting at higher than normal renown resetting on loading a saved game.
+- Fixed fights with heavy mummies not loading.
+- Fixed hexen sometimes not dying.
+- Fixed a crash when trying to enter a city with the Crusader origin if the city had a Pilgrim recruit.
+- Fixed Berserker origin not being able to enter cities.
+- Hopefully fixed the crash with Radiance rune when enemy uses Rotation.
+- Fixed Named Halberds not using the new changes made to regular Halberds.
+- Updated Named Swordstaff and Royal Lance durability based on the recent changes to Swordstaff durability. 
+- Hopefully fixed the crash with Radiance rune when enemy uses Rotation.
