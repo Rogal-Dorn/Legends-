@@ -18,8 +18,8 @@ this.legend_named_swordstaff <- this.inherit("scripts/items/weapons/named/named_
 		this.m.ArmamentIcon = "icon_legend_named_swordstaff_01";
 		this.m.Value = 4800;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 56.0;
-		this.m.ConditionMax = 56.0;
+		this.m.Condition = 65.0;
+		this.m.ConditionMax = 65.0;
 		this.m.StaminaModifier = -14;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 70;

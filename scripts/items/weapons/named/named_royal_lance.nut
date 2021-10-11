@@ -21,8 +21,8 @@ this.named_royal_lance <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.updateVariant();
 		this.m.Value = 4800;
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 60.0;
-		this.m.ConditionMax = 60.0;
+		this.m.Condition = 65.0;
+		this.m.ConditionMax = 65.0;
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 55;
 		this.m.RegularDamageMax = 70;
