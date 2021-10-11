@@ -16,7 +16,7 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		this.updateVariant();
 		this.m.Value = 500;
 		this.m.MeleeDefense = 5;
-		this.m.RangedDefense = 5;
+		this.m.RangedDefense = 0;
 		this.m.StaminaModifier = -2;
 		this.m.Condition = 36;
 		this.m.ConditionMax = 36;
