@@ -7,6 +7,8 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.m.Description = "[p=c][img]gfx/ui/events/event_88.png[/img][/p][p]For too long have you been dragged from one bloody battle to another at the whim of lords sitting in high towers. Last night, you absconded from camp together with three others. You\'re dressed like soldiers still, but you\'re deserters, and the noose will be your end if you stay here for too long.\n[color=#bcad8c]Deserters:[/color] Start with three deserters and decent armor, but lower funds, you can only be joined by outlaws or combat backgrounds, and a noble house that wants to hunt you down.\n[color=#bcad8c]First to Run:[/color] Your men always are first to act in the very first round of combat.\n[color=#c90000]Like Minded:[/color] Increased chance of finding craven dastards, deserters and the disowned. [/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 100;
+		this.m.StartingBusinessReputation = 150;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -79,8 +81,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.addBusinessReputation(150);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);		
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
 	}
 

@@ -9,6 +9,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.m.Order = 190; 
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(27);
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
+		this.m.StartingBusinessReputation = -100; // Still use default reputation tiers even if starting at negative reputation
 	}
 
 	function isValid()
@@ -144,7 +145,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[11].setVeteranPerks(3);
 		bros[11].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 
-		this.World.Assets.addBusinessReputation(-100); // Still use default reputation tiers even if starting at negative reputation		
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));

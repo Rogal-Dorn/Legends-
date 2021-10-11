@@ -7,6 +7,8 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.m.Description = "[p=c][img]gfx/ui/events/event_10.png[/img][/p][p]For years you have made a decent living by poaching in the local woods, evading your lord\'s men by being quick on your feet. But pickings have become slimmer and slimmer, and you are faced with a decision - how to make a living when all you know is how to use a bow?\n\n[color=#bcad8c]Hunters:[/color] Start with a group of three woodsmen.\n[color=#bcad8c]Expert Scouts:[/color] You move faster and can always get a scouting report for any enemies near you.\n[color=#bcad8c]Travel Light:[/color] You can carry fewer items in your company\'s inventory.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 30;
+		this.m.StartingBusinessReputation = 100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -85,8 +87,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
 		this.World.Flags.set("HasLegendCampHunting", true);
-		this.World.Assets.addBusinessReputation(100);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));

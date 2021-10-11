@@ -8,6 +8,8 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Difficulty = 2;
 		this.m.Order = 170;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(6);
+		this.m.StartingBusinessReputation = 1100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -165,8 +167,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_rations_item"));
 
-		this.World.Assets.addBusinessReputation(1100);		
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 

@@ -7,8 +7,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background or squire who joins you. Find pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 70;
-		this.m.IsFixedLook = true;
+		this.m.IsFixedLook = true;		
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
+		this.m.StartingBusinessReputation = 1150;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -36,8 +38,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.getSprite("miniboss").setBrush("bust_miniboss_crusader"); //custom bust
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		this.World.Assets.addMoralReputation(20);
-		this.World.Assets.addBusinessReputation(1150);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);		
 		this.World.Assets.m.Ammo = 0;
 
 		// this.World.Assets.getStash().add(this.new("scripts/items/legend_armor/legend_gambeson"));
