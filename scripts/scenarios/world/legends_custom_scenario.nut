@@ -7,6 +7,8 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.m.Description = "[p=c][img]gfx/ui/events/event_80.png[/img][/p]Build and customize your company roster (Your very own pick and choose adventure!)";
 		this.m.Difficulty = 3;
 		this.m.Order = 99;
+		this.m.StartingBusinessReputation = 100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -22,8 +24,7 @@ this.legends_custom_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bro.m.HireTime = this.Time.getVirtualTimeF();
 		bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
 
-		this.World.Assets.addBusinessReputation(100);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/beer_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;

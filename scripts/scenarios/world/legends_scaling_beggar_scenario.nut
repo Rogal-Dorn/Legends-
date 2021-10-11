@@ -8,6 +8,7 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 		this.m.Difficulty = 1;
 		this.m.Order = 51;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(1);
+		this.m.StartingBusinessReputation = -200; // Still use default reputation tiers even if starting at negative reputation
 	}
 
 	function isValid()
@@ -44,7 +45,7 @@ this.legends_scaling_beggar_scenario <- this.inherit("scripts/scenarios/world/st
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
-		this.World.Assets.addBusinessReputation(-200); // Still use default reputation tiers even if starting at negative reputation		
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 + 2;
 		this.World.Assets.m.ArmorParts = 0;

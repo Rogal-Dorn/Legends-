@@ -8,6 +8,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Difficulty = 2;
 		this.m.Order = 999;
 		this.m.StashModifier = 2000;
+		this.m.StartingBusinessReputation = 1000;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -61,8 +63,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.Medicine = 200;
 		this.World.Assets.m.Ammo = 200;
 		this.World.Assets.m.Food = 200;
-		this.World.Assets.addBusinessReputation(1000);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 
 		local banner = this.new("scripts/items/tools/player_banner");
 		banner.setVariant(2);

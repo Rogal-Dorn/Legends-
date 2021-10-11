@@ -10,6 +10,8 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(12);
+		this.m.StartingBusinessReputation = 200;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -107,8 +109,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		local talents = bros[1].getTalents();
 		talents[this.Const.Attributes.Bravery] = 2;
 		//---
-		this.World.Assets.addBusinessReputation(200);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Flags.set("HasLegendCampTraining", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 2 - (this.World.Assets.getEconomicDifficulty() == 0 ? 0 : 100);

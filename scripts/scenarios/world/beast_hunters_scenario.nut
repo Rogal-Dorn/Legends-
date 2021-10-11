@@ -8,6 +8,8 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Difficulty = 3;
 		this.m.Order = 40;
 		this.m.IsFixedLook = true;
+		this.m.StartingBusinessReputation = 100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -104,8 +106,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = 2;
 		}
 
-		this.World.Assets.addBusinessReputation(200);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);		
 		this.World.Flags.set("HasLegendCampCrafting", true);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/witch_hair_item"));

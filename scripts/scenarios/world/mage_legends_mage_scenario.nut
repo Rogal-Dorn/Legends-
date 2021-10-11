@@ -9,6 +9,8 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		this.m.Order = 160;
 		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
+		this.m.StartingBusinessReputation = 100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -33,8 +35,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		bro.getFlags().set("IsPlayerCharacter", true);
 		bro.getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");
 		bro.m.HireTime = this.Time.getVirtualTimeF();
-		this.World.Assets.addBusinessReputation(100);
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.World.Assets.getBusinessReputation()));
+		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.m.Ammo = 0;
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 	}
