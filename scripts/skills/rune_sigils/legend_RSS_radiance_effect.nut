@@ -1,7 +1,9 @@
 this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		MalusOne = 0,
-		MalusTwo = 0
+		MalusTwo = 0,
+		BeforeSkillExecutedTile = null,
+		IsUsingMoveSkill = false
 	},
 	function setMalus(_m1, _m2)
 	{
@@ -158,14 +160,33 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 		this.updateEffect();
 	}
 
+	function onBeforeAnySkillExecuted( _skill, _targetTile, _targetEntity )
+	{
+		this.m.BeforeSkillExecutedTile = this.getContainer().getActor().getTile();
+	}
+
+	function onAnySkillExecuted( _skill, _targetTile, _targetEntity )
+	{
+		if (!this.getContainer().getActor().getTile().isSameTileAs(this.m.BeforeSkillExecutedTile))
+		{
+			this.m.IsUsingMoveSkill = true;
+		}
+		else
+		{
+			this.m.IsUsingMoveSkill = false;
+		}
+	}
+
 
 	function onUpdate(_properties)
 	{
 		local actor = this.getContainer().getActor();
-		if (actor == null || actor.m.IsMoving)
+		if (actor == null || this.m.IsUsingMoveSkill)
 		{
+			this.m.IsUsingMoveSkill = false;
 			return;
 		}
+
 		local targets = this.Tactical.Entities.getAllInstances();
 		local BlindAdjacent = false;
 
@@ -187,7 +208,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeDefenseMult *= (1.0 - ((this.m.MalusTwo * 1.0) / 100.0));
 		}
 
-		this.updateEffect();
+		this.updateEffect();		
 	}
 
 
