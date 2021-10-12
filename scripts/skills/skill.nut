@@ -1402,7 +1402,7 @@ this.skill <- {
 			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange && _targetTile.IsOccupiedByActor;
 		};
 
-		if (isRangedRelevant)
+		if (isRangedRelevant())
 		{
 			local distanceToTarget = _targetTile.getDistanceTo(user.getTile());
 			local propertiesWithSkill = thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity);
@@ -1543,7 +1543,7 @@ this.skill <- {
 			return propsWithSkill[_property] - props[_property];
 		};
 
-		if (!thisSkill.m.HitChanceBonus && isRangedRelevant)
+		if (!thisSkill.m.HitChanceBonus && isRangedRelevant())
 		{
 			local diff = getDifferenceInProperty("RangedSkill", targetEntity);
 
