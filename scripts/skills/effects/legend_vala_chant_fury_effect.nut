@@ -4,6 +4,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 	{
 		this.legend_vala_chant.create();
 		this.m.ID = "effects.legend_vala_chant_fury_effect";
+		this.m.Description = "This character has been invigorated by the Vala\'s Chant of Fury!"
 		this.m.Range = 3;
 	}
 	function getWardenDamage()
@@ -11,48 +12,51 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		return (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
 	}
 
+	function getDamageBonus()
+	{
+		local bonus = (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
+		return this.Math.max(0, this.Math.floor(bonus * this.getMasteryMult() * this.getDistanceMult()));
+	}
+
+	function getPayBackChance()
+	{
+		local chance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
+		return this.Math.min(95, this.Math.max(5, chance * this.getMasteryMult() * this.getDistanceMult()));
+	}
+
+	function getPayBackDamage()
+	{
+		local damage = (this.m.Vala.getBravery() / 3.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 4.0);
+		return this.Math.min(100, damage * this.getMasteryMult() * this.getDistanceMult());
+	}
+
+	function getDistanceMult()
+	{
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
+		if (distance == 3)
+		{
+			return 0.5;
+		}
+		else if (distance == 2)
+		{
+			return 0.75;
+		}
+		
+		return 1.0;
+	}
+
+	function getMasteryMult()
+	{
+		return this.isMastered() ? 1.1 : 1.0;
+	}
+
 	function getTooltip()
 	{
 		if (!this.isHidden())
 		{
-			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-			local regulardamage = (this.m.Vala.getBravery() / 30.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 30.0);
-			local paybackchance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
-			local paybackdamage = (this.m.Vala.getBravery() / 3.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 4.0);
-
-			if (this.isMastered())
-			{
-				regulardamage *= 1.1;
-				paybackchance *= 1.1;
-				paybackdamage *= 1.1;
-			}
-
-			if (distance == 2)
-			{
-				regulardamage *= 0.75;
-				paybackchance *= 0.75;
-				paybackdamage *= 0.75;
-			}
-			else if (distance == 3)
-			{
-				regulardamage *= 0.5;
-				paybackchance *= 0.5;
-				paybackdamage *= 0.5;
-			}
-
-			if (paybackchance > 95)
-			{
-				paybackchance = 95;
-			}
-			if (paybackchance < 5)
-			{
-				paybackchance = 5;
-			}
-
-			if (paybackdamage > 100)
-			{
-				paybackdamage = 100;
-			}
+			local regulardamage = this.getDamageBonus();
+			local paybackchance = this.getPayBackChance();
+			local paybackdamage = this.getPayBackDamage();
 
 			return [
 				{
@@ -61,22 +65,23 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 					text = this.getName()
 				},
 				{
+					id = 1,
+					type = "description",
+					text = this.getDescription()
+				},
+				{
 					id = 10,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(regulardamage) + "%[/color] damage inflicted."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + regulardamage + "%[/color] damage inflicted"
 				},
 				{
 					id = 11,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(paybackchance) + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.round(paybackdamage) + "%[/color] damage."
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + paybackdamage + "%[/color] damage"
 				}
 			];
-		}
-		else
-		{
-			return;
 		}
 	}
 
@@ -87,29 +92,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
 			{
 				local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-				local damage = (this.m.Vala.getBravery() / 300.0) + (this.getContainer().getActor().getCurrentProperties().getMeleeSkill() / 400.0);
-
-				if (this.isMastered())
-				{
-					damage *= 1.1;
-				}
-
-				if (distance == 2)
-				{
-					damage *= 0.75;
-				}
-				else if (distance == 3)
-				{
-					damage *= 0.5;
-				}
-
-				if (damage > 1)
-				{
-					damage = 1;
-				}
-
-				_properties.DamageTotalMult *= damage;
-				_properties.FatigueEffectMult *= 0.0;
+				local paybackdamage = this.getPayBackDamage();
+				
+				_properties.DamageTotalMult *= damageBonus * 0.01;
 			}
 		}
 	}
@@ -117,56 +102,12 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (_attacker == null)
+		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID() || !this.isInRange() || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
 		{
 			return;
 		}
-
-		if (_attacker.isAlliedWith(this.getContainer().getActor()))
-		{
-			return;
-		}
-
-		if (this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID())
-		{
-			return;
-		}
-
-		if (!this.isInRange())
-		{
-			return;
-		}
-
-		if (this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
-		{
-			return;
-		}
-
-		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-		local chance = (this.m.Vala.getBravery() / 4.0) + (this.getContainer().getActor().getHitpoints() / 3.0);
-
-		if (this.isMastered())
-		{
-			chance *= 1.1;
-		}
-
-		if (distance == 2)
-		{
-			chance *= 0.75;
-		}
-		else if (distance == 3)
-		{
-			chance *= 0.5;
-		}
-
-		if (chance > 95)
-		{
-			chance = 95;
-		}
-		if (chance < 5)
-		{
-			chance = 5;
-		}
+		
+		local chance = this.getPayBackChance();
 
 		if (this.Math.rand(1, 100) <= chance)
 		{
@@ -253,30 +194,10 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		}
 
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-		local bonus = (this.m.Vala.getBravery() / 3000.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 3000.0);
+		local damageBonus = this.getDamageBonus();
 
-		if (this.isMastered())
-		{
-			bonus *= 1.1;
-		}
-
-		if (distance == 2)
-		{
-			bonus *= 0.75;
-		}
-		else if (distance == 3)
-		{
-			bonus *= 0.5;
-		}
-
-		if (bonus < 0)
-		{
-			bonus = 0;
-		}
-
-		_properties.DamageTotalMult *= 1.0 + bonus;
+		_properties.DamageTotalMult *= 1.0 + bonus * 0.01;
 
 		this.updateEffect(true);
 	}
-
 });
