@@ -1139,12 +1139,13 @@ this.skill <- {
 			});
 		}
 
-		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
+		// if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
+		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange)
 		{
 			if (_targetTile.IsOccupiedByActor)
 			{
 				ret.push({
-					icon = "ui/tooltips/negative.png",
+					icon = this.m.AdditionalHitChance > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
 					text = "Distance of " + _targetTile.getDistanceTo(user.getTile())
 				});
 			}
@@ -1397,7 +1398,8 @@ this.skill <- {
 		};
 		local isRangedRelevant = function ()
 		{
-			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1 && _targetTile.IsOccupiedByActor;
+			// return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1 && _targetTile.IsOccupiedByActor;
+			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange && _targetTile.IsOccupiedByActor;
 		};
 
 		if (isRangedRelevant)
@@ -1406,8 +1408,8 @@ this.skill <- {
 			local propertiesWithSkill = thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity);
 			modifier["Distance of " + distanceToTarget] <- function ( row, description )
 			{
-				local hitDistancePenalty = (distanceToTarget - thisSkill.m.MinRange) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;
-				row.text = red(-hitDistancePenalty + "%") + " " + description;
+				local hitDistancePenalty = (distanceToTarget - thisSkill.m.MinRange) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;				
+				row.text = (hitDistancePenalty > 0 ? green(hitDistancePenalty + "%") : red(-hitDistancePenalty + "%")) + " " + description;
 			};
 			modifier["Line of fire blocked"] <- function ( row, description )
 			{
