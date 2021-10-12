@@ -18,7 +18,7 @@ this.perk_vengeance <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (!_attacker.isAlliedWith(actor) && !actor.getSkills().hasSkill("effect.vengeance"))
+		if (_attacker != null && !_attacker.isAlliedWith(actor) && !actor.getSkills().hasSkill("effect.vengeance"))
 		{
 			actor.getSkills().add(this.new("scripts/skills/effects/vengeance_effect"));
 		}
