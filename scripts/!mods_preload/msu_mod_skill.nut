@@ -189,6 +189,14 @@ gt.MSU.modSkill <- function ()
 		{
 		}
 
+		o.onGetHitFactors <- function( _skill, _targetTile, _tooltip ) 
+		{
+		}
+
+		o.onQueryTooltip <- function( _skill, _tooltip )
+		{			
+		}
+
 		local use = o.use;
 		o.use = function( _targetTile, _forFree = false )
 		{
@@ -387,6 +395,14 @@ gt.MSU.modSkill <- function ()
 			return ret;
 		}
 
+		local getHitFactors = o.getHitFactors;
+		o.getHitFactors = function( _targetTile )
+		{
+			local ret = getHitFactors(_targetTile);			
+			this.getContainer().onGetHitFactors(this, _targetTile, ret);
+			return ret;
+		}
+
 		o.getDefaultRangedTooltip <- function()
 		{
 			local ret = this.getDefaultTooltip();
@@ -406,8 +422,10 @@ gt.MSU.modSkill <- function ()
 
 			if (this.m.AdditionalHitChance != 0)
 			{
-				accuText += accuText.len() == 0 ? "Has" : ", and";
-				accuText += "[color=" + (this.m.AdditionalHitChance > 0 ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue) + "]" + this.m.AdditionalHitChance + "%[/color] per tile of distance";
+				accuText += this.m.AdditionalAccuracy == 0 ? "Has" : ", and";
+				accuText += " [color=" + (this.m.AdditionalHitChance > 0 ? this.Const.UI.Color.PositiveValue : this.Const.UI.Color.NegativeValue) + "]" + this.m.AdditionalHitChance + "%[/color]";
+				accuText += this.m.AdditionalAccuracy == 0 ? " chance to hit " : "";
+				accuText += " per tile of distance";
 			}
 
 			if (accuText.len() != 0)
