@@ -6022,3 +6022,16 @@ Recruitment:
 - Fixed Named Halberds not using the new changes made to regular Halberds.
 - Updated Named Swordstaff and Royal Lance durability based on the recent changes to Swordstaff durability. 
 - Hopefully fixed the crash with Radiance rune when enemy uses Rotation.
+
+## 15.0.1.21d
+- Ranged abilities with positive chance to hit (e.g. sling heavy stone) will now show up with positive numbers in the hitchance tooltip.
+- The Cultists Flock event now has a higher chance of gaining lower ranked cultists e.g. normal cultists, lurkers etc. But can still give higher ranking ones e.g. Magister.
+- Fixed the Penance perk not being pickable.
+- Fixed the AI not using the Flail skill of the Chain (e.g. goblins).
+- Fixed Crossbows gaining accuracy over distance rather than losing.
+- Fixed Sling Heavy Stone having a -60% base chance to hit rather than -40%.
+- Fixed Fury Chant effect reducing damage rather than increasing in some cases.
+- Fixed Unarmed Lunge costing 0 AP by default. Now has 6.
+- Fixed the Vengeance perk causing erros with character's skills when this character is hit by a mortar.
+- Modding: Updated MSU to v0.6.14.
+
