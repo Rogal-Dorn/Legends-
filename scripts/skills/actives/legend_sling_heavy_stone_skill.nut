@@ -150,7 +150,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += -20 + this.m.AdditionalAccuracy;
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 			if (this.getContainer().hasSkill("perk.legend_specialist_sling_damage"))
 			{
