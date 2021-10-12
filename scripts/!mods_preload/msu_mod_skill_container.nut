@@ -25,7 +25,7 @@ gt.MSU.modSkillContainer <- function ()
 			}
 		}
 
-		o.doOnFunction <- function( _function, _argsArray = null, aliveOnly = false )
+		o.doOnFunction <- function( _function, _argsArray = null, _aliveOnly = false )
 		{
 			if (_argsArray == null)
 			{
@@ -40,7 +40,7 @@ gt.MSU.modSkillContainer <- function ()
 
 			foreach( skill in this.m.Skills )
 			{
-				if (aliveOnly && !this.m.Actor.isAlive())
+				if (_aliveOnly && !this.m.Actor.isAlive())
 				{
 					break;
 				}
@@ -136,14 +136,28 @@ gt.MSU.modSkillContainer <- function ()
 			this.doOnFunctionWhenAlive("onNewMorning");
 		}
 
-		//Vanilla Overwrites start
+		o.onGetHitFactors <- function( _skill, _targetTile, _tooltip )
+		{
+			this.doOnFunction("onGetHitFactors", [
+				_skill,
+				_targetTile,
+				_tooltip
+			]);
+		}
 
-		local onAfterDamageReceived = o.onAfterDamageReceived;
+		o.onQueryTooltip <- function( _skill, _tooltip )
+		{
+			this.doOnFunction("onQueryTooltip", [
+				_skill,
+				_tooltip
+			]);
+		}
+
+		//Vanilla Overwrites start
+		
 		o.onAfterDamageReceived = function()
 		{
 			this.doOnFunctionWhenAlive("onAfterDamageReceived");
-
-			onAfterDamageReceived();
 		}
 
 		o.buildPropertiesForUse = function( _caller, _targetEntity )
@@ -262,11 +276,6 @@ gt.MSU.modSkillContainer <- function ()
 				_attacker,
 				_skill
 			]);
-		}
-
-		o.onAfterDamageReceived = function()
-		{
-			this.update();
 		}
 
 		o.onCombatStarted = function()
