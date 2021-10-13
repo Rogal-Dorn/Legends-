@@ -6035,3 +6035,8 @@ Recruitment:
 - Fixed the Vengeance perk causing erros with character's skills when this character is hit by a mortar.
 - Modding: Updated MSU to v0.6.14.
 
+## 15.0.1.21e
+
+**Balance**
+Toned down special cultist recruit generation from settlement events.
+The Cultist Lurker now counts as an elligible sacrifice.
