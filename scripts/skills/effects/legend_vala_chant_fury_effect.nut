@@ -94,7 +94,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 				local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 				local paybackdamage = this.getPayBackDamage();
 				
-				_properties.DamageTotalMult *= damageBonus * 0.01;
+				_properties.DamageTotalMult *= paybackdamage * 0.01;
 			}
 		}
 	}
@@ -196,7 +196,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
 		local damageBonus = this.getDamageBonus();
 
-		_properties.DamageTotalMult *= 1.0 + bonus * 0.01;
+		_properties.DamageTotalMult *= 1.0 + damageBonus * 0.01;
 
 		this.updateEffect(true);
 	}
