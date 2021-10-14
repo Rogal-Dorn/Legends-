@@ -38,6 +38,8 @@ this.trader_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			this.m.Requirements[0].IsSatisfied = true;
 		}
+
+		this.follower.onEvaluate();
 	}
 
 });
