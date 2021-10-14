@@ -33,13 +33,13 @@ gt.Const.Roster <- {
 		}
 	}
 
-	function createReputationTiers( _firstTierReputation = 500 )
+	function createReputationTiers( _startingReputation )
 	{
 		local tiers = [];
 
 		foreach (rep in gt.Const.BusinessReputation)
 		{
-			if (rep >= _firstTierReputation && tiers.len() < gt.Const.Roster.Tier.len())
+			if (rep > _startingReputation && tiers.len() < gt.Const.Roster.Tier.len())
 			{
 				tiers.push(rep);
 			}
@@ -102,5 +102,5 @@ gt.Const.Roster.InCombatSize <- [
 gt.Const.Roster.DefaultTierMax <- gt.Const.Roster.Tier[gt.Const.Roster.Tier.len() - 2];
 gt.Const.Roster.DefaultTier <- 2;
 
-gt.Const.Roster.DefaultReputationTiers <- gt.Const.Roster.createReputationTiers();
+gt.Const.Roster.DefaultReputationTiers <- gt.Const.Roster.createReputationTiers(0);
 
