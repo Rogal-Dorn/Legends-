@@ -6036,16 +6036,23 @@ Recruitment:
 - Modding: Updated MSU to v0.6.14.
 
 ## 15.0.1.21e
-
 **Balance**
-Toned down special cultist recruit generation from settlement events.
-The Cultist Lurker now counts as an elligible sacrifice.
-Magister upkeep reduced from 40 to 32.
-Husk upkeep reduced from 25 to 21.
+- Toned down special cultist recruit generation from settlement events.
+- The Cultist Lurker now counts as an eligible sacrifice.
+- Magister upkeep reduced from 40 to 32.
+- Husk upkeep reduced from 25 to 21.
+- Lone wolf and gladiator origins now are capped at 16 total fighters.
 
 **Fixes**
-Lone wolf and gladiator origins now are capped at 16 total fighters, as intended.
-Fixed a few errors with some flails not counting towards ninetail skills. Updated the string to be more clear
+- Fixed the infamous save corruption error (hopefully).
+- Fixed the Radiance rune crash with enemy using Rotation (hopefully for real this time).
+- Fixed an error with some ranged skills which didn't have distance-based hitchance.
+- Fixed vala Fury Chant causing errors.
+- Fixed the Trader retinue (Secure Chests) not being hireable.
+- Fixed the Drill Sergeant retinue (Training Dummies) becoming inactive after the bro healed his injury.
+- Fixed a few errors with some flails not counting towards ninetail skills. Updated the perk tooltip to be more clear.
+- Fixed typo in witchunter background.
 
-**Misc**
-Typo fixed in witchunter background
+**Modding**
+- Updated MSU to v.0.6.16.
+- `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of _firstTierReputation. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 500.
