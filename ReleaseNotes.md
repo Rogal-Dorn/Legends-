@@ -6044,6 +6044,7 @@ Magister upkeep reduced from
 
 **Fixes**
 Lone wolf and gladiator origins now are capped at 16 total fighters, as intended.
+Fixed a few errors with some flails not counting towards ninetail skills. Updated the string to be more clear
 
 **Misc**
 Typo fixed in witchunter background
