@@ -1142,7 +1142,7 @@ this.skill <- {
 		// if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
 		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange)
 		{
-			if (_targetTile.IsOccupiedByActor)
+			if (_targetTile.IsOccupiedByActor && ("AdditionalHitChance" in this.m))
 			{
 				ret.push({
 					icon = this.m.AdditionalHitChance > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
