@@ -184,7 +184,7 @@ this.retinue_manager <- {
 	function setFollower( _slot, _follower )
 	{
 		this.m.Slots[_slot] = _follower;
-		if (!(_follower.getID() in this.m.OwnedFollowerIDs))
+		if (this.m.OwnedFollowerIDs.find(_follower.getID()) == null)
 		{
 			this.m.OwnedFollowerIDs.push(_follower.getID());
 		}
@@ -227,10 +227,6 @@ this.retinue_manager <- {
 			if (f.isValid())
 			{
 				this.m.Followers.push(f);
-				if (f.getID() in this.m.OwnedFollowerIDs)
-				{
-					f.setOwned();
-				}
 			}
 		}
 
@@ -253,6 +249,7 @@ this.retinue_manager <- {
 	{
 		this.m.Slots = [];
 		this.m.Slots.resize(5);
+		this.m.OwnedFollowerIDs = [];
 	}
 
 	function onNewDay()
