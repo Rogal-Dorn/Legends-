@@ -6040,7 +6040,8 @@ Recruitment:
 **Balance**
 Toned down special cultist recruit generation from settlement events.
 The Cultist Lurker now counts as an elligible sacrifice.
-Magister upkeep reduced from 
+Magister upkeep reduced from 40 to 32.
+Husk upkeep reduced from 25 to 21.
 
 **Fixes**
 Lone wolf and gladiator origins now are capped at 16 total fighters, as intended.
