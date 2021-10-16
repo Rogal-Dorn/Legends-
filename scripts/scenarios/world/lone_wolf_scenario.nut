@@ -4,12 +4,12 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.lone_wolf";
 		this.m.Name = "Lone Wolf";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling with your squire for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 16 men in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends. Start with an enthusiastic squire.\n[color=#c90000]The Best:[/color] Hunt other swordsmen to become the best in the lands.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling with your squire for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 16 fighters in your roster.\n[color=#bcad8c]Avatar:[/color] If your hedge knight dies, the campaign ends. Start with an enthusiastic squire.\n[color=#c90000]The Best:[/color] Hunt other swordsmen to become the best in the lands.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 150;
 		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
-		this.m.RosterTierMax = this.Const.Roster.getTierForSize(12);
+		this.m.RosterTierMax = this.Const.Roster.getTierForSize(16);
 		this.m.StartingBusinessReputation = 200;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}

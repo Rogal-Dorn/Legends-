@@ -55,13 +55,9 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 	{
 		_draftList.push("cultist_darksoul_background");
 		_draftList.push("cultist_darksoul_background");
-		_draftList.push("cultist_darksoul_background");
 		_draftList.push("cultist_lurker_background");
 		_draftList.push("cultist_lurker_background");
 		_draftList.push("cultist_lurker_background");
-		_draftList.push("cultist_lurker_background");
-		_draftList.push("cultist_magister_background");
-		_draftList.push("cultist_magister_background");
 		_draftList.push("cultist_magister_background");
 	}
 	if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
