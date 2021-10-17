@@ -6063,3 +6063,6 @@ Pilgrim now benefits from fortified mind when recruited by the crusader
 
 **Misc**
 Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
+
+**Art**
+Noble origin now has a new map marker
