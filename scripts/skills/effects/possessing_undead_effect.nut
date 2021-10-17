@@ -70,11 +70,6 @@ this.possessing_undead_effect <- this.inherit("scripts/skills/skill", {
 		actor.setDirty(true);
 	}
 
-	// function onTurnEnd()
-	// {
-	// 	this.removeSelf();
-	// }
-
 	function onRemoved()
 	{
 		if (this.getContainer() != null)
