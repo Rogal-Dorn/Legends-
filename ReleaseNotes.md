@@ -6056,3 +6056,7 @@ Recruitment:
 **Modding**
 - Updated MSU to v.0.6.16.
 - `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of _firstTierReputation. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 500.
+
+## 15.0.1.21e
+**Fixes**
+Pilgrim now benefits from fortified mind when recruited by the crusader
