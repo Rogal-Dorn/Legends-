@@ -130,7 +130,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.legend_pilgrim" || bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
+		if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.pilgrim" || bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
 		{
 			bro.improveMood(1.5, "Joined a righteous cause");
  			bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
@@ -149,7 +149,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.legend_pilgrim" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
+			if (bro.getBackground().getID() == "background.flagellant" || bro.getBackground().getID() == "background.pilgrim" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.witchhunter")
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
