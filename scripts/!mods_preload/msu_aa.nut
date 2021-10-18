@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.16");
+::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.17");
 
 gt.MSU <- {};
 
@@ -37,6 +37,8 @@ gt.MSU <- {};
 
 	gt.MSU.modActor();
 	delete gt.MSU.modActor;
+	gt.MSU.modPlayer();
+	delete gt.MSU.modPlayer;
 	gt.MSU.modSkillContainer();
 	delete gt.MSU.modSkillContainer;
 	gt.MSU.modSkill();
