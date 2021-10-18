@@ -1423,6 +1423,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
+		this.m.Skills.add(this.new("scripts/skills/effects/legend_veteran_levels_effect"));
 
 		if (this.Const.DLC.Unhold)
 		{
@@ -1693,14 +1694,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			if (this.m.Level == 11)
 			{
 				this.updateAchievement("OldAndWise", 1, 1);
-			}
-
-			if (this.m.Level > 11 && this.m.VeteranPerks > 0)
-			{
-				if ((this.m.Level - 1) % this.m.VeteranPerks == 0)
-				{
-					++this.m.PerkPoints;
-				}
 			}
 
 			if (this.m.Level == 11 && this.m.Skills.hasSkill("trait.player"))
