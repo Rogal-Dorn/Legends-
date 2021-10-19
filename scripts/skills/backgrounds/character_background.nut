@@ -136,10 +136,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.BackgroundType = this.m.BackgroundType | _type;
 		}
-		else
-		{
-			this.logError(_type + " is already contained in " + this.getID());
-		}
+		// else
+		// {
+		// 	this.logError(_type + " is already contained in " + this.getID());
+		// }
 	}
 
 	function removeBackgroundType( _type )
