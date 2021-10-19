@@ -1528,7 +1528,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function Convert()
 	{
-		this.m.IsConverted = true;
+		this.addBackgroundType(this.Const.BackgroundType.ConvertedCultist);
 		local cultistGroup = [
 						[this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill],
 						[this.Const.Perks.PerkDefs.LegendSpecCultHood],
