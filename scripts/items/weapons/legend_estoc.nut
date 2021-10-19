@@ -23,7 +23,7 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 45;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.60;
-		this.m.DirectDamageMult = 0.3;
+		this.m.DirectDamageMult = 0.2;
 		this.m.DirectDamageAdd = 0.3;
 		this.m.ChanceToHitHead = 5;
 	}
