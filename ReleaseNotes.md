@@ -6064,6 +6064,7 @@ Minor typo fixes to ranger
 
 **Misc**
 Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
+Made the Hollenhund debuff effect less huge
 
 **Art**
 Noble origin now has a new map marker
