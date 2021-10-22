@@ -6068,3 +6068,4 @@ Made the Hollenhund debuff effect less huge
 
 **Art**
 Noble origin now has a new map marker
+Some retinue graphics have been tweaked. Mostly shadows.
