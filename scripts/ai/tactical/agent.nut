@@ -217,10 +217,15 @@ this.agent <- {
 			return;
 		}
 
+		if (this.m.Actor.m.Skills.m.IsExecutingMoveSkill)
+		{
+			return;
+		}
+
 		if (this.Settings.getGameplaySettings().AlwaysFocusCamera && !this.m.Actor.isPlayerControlled() && !this.m.Actor.isHiddenToPlayer())
 		{
 			this.Tactical.getCamera().moveToExactly(this.m.Actor);
-		}
+		}		
 
 		if (this.m.IsEvaluating)
 		{
