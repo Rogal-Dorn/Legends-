@@ -18,7 +18,7 @@ this.two_handed_flail <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_flail_two_handed_02";
-		this.m.Value = 1200;
+		this.m.Value = 2800;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;

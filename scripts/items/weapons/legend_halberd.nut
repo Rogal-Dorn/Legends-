@@ -16,7 +16,7 @@ this.legend_halberd <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_halberd_01";
-		this.m.Value = 2200;
+		this.m.Value = 2900;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 85.0;
 		this.m.ConditionMax = 85.0;

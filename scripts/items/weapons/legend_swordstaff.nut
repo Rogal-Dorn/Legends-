@@ -16,7 +16,7 @@ this.legend_swordstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_swordstaff_01";
-		this.m.Value = 3200;
+		this.m.Value = 2750;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 65.0;
 		this.m.ConditionMax = 65.0;

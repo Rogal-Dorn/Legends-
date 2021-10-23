@@ -20,7 +20,7 @@ this.military_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;
 		this.m.StaminaModifier = -12;
-		this.m.Value = 1900;
+		this.m.Value = 2500;
 		this.m.RegularDamage = 40;
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 0.9;

@@ -16,7 +16,7 @@ this.billhook <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_bill_01";
-		this.m.Value = 1400;
+		this.m.Value = 1875;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;

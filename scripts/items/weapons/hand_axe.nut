@@ -17,7 +17,7 @@ this.hand_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_axe_02";
-		this.m.Value = 900;
+		this.m.Value = 1000;
 		this.m.ShieldDamage = 12;
 		this.m.Condition = 68.0;
 		this.m.ConditionMax = 68.0;

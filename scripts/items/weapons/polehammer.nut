@@ -16,7 +16,7 @@ this.polehammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_polehammer_01";
-		this.m.Value = 1500;
+		this.m.Value = 1600;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 100.0;
 		this.m.ConditionMax = 100.0;

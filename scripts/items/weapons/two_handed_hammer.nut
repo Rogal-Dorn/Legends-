@@ -18,7 +18,7 @@ this.two_handed_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_hammer_01";
-		this.m.Value = 2000;
+		this.m.Value = 3000;
 		this.m.ShieldDamage = 26;
 		this.m.Condition = 120.0;
 		this.m.ConditionMax = 120.0;
