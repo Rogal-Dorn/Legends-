@@ -106,7 +106,7 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 
 	function isInRange()
 	{
-		if (!this.getContainer().getActor().isPlacedOnMap() || this.getContainer().getActor().getFlags().get("Devoured") == true)
+		if (!this.getContainer().getActor().isPlacedOnMap() || this.getContainer().getActor().getFlags().get("Devoured") == true || !this.m.Vala.isPlacedOnMap() || this.m.Vala.getFlags().get("Devoured") == true)
 		{
 			return false;
 		}
