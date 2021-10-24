@@ -102,5 +102,5 @@ gt.Const.Roster.InCombatSize <- [
 gt.Const.Roster.DefaultTierMax <- gt.Const.Roster.Tier[gt.Const.Roster.Tier.len() - 2];
 gt.Const.Roster.DefaultTier <- 2;
 
-gt.Const.Roster.DefaultReputationTiers <- gt.Const.Roster.createReputationTiers(0);
+gt.Const.Roster.DefaultReputationTiers <- gt.Const.Roster.createReputationTiers(250);
 
