@@ -6061,6 +6061,7 @@ Recruitment:
 **Fixes**
 Pilgrim now benefits from fortified mind when recruited by the crusader
 Minor typo fixes to ranger and enbalmed contract
+Cultist hood blueprint should be layered now when crafted
 
 **Balance**
 Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. max tier weapons should now be higher in value and weapons before that should have better spacing and consistances regarding their value and place in the progression of weapons.
