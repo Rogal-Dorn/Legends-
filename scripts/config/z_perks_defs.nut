@@ -5,7 +5,107 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-gt.Const.Perks.PerkDefObjects <- [
+gt.Const.Perks.PerkDefObjects <- [];
+gt.Const.Perks.PerkDefs <- {};
+
+gt.Const.Perks.addPerkDefObjects <- function( _perkDefObjects )
+{
+	local i = gt.Const.Perks.PerkDefObjects.len();
+
+	gt.Const.Perks.PerkDefObjects.extend(_perkDefObjects);
+	
+	foreach (perkDefObject in _perkDefObjects)
+	{
+		gt.Const.Perks.PerkDefs[perkDefObject.Const] <- i;		
+		gt.Const.Perks.LookupMap[perkDefObject.ID] <- perkDefObject;
+		i++;
+	}
+}
+
+gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [] )
+{
+	local map = {};
+
+	foreach (group in gt.Const.Perks)
+	{
+		if (!("Name" in group))
+		{
+			continue;
+		}
+
+		foreach (row in group.Tree)
+		{
+			foreach (perkDef in row)
+			{
+				if (_perkDef != null && perkDef != _perkDef)
+				{
+					continue;
+				}
+
+				if (!(perkDef in map))
+				{
+					map[perkDef] <- { Groups = [], Const = perkDef };
+				}
+				map[perkDef].Groups.push(group.Name);
+			}
+		}
+	}
+
+	foreach (perk, table in map)
+	{
+		local desc = gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const];
+		
+		local pre = "\n\n[color=#0b0084]From the ";
+		local mid = "";
+		local ap = "perk group[/color]";
+		local array = _groups.len() == 0 ? table.Groups : _groups;
+		if (array.len() == 1)
+		{
+			mid += array[0] + " ";	
+		} 
+		else
+		{
+			for (local i = 0; i < array.len() - 2; i++)
+			{
+				 mid += array[i] + ", ";
+			}
+			mid += array[array.len()-2] + " or ";
+			mid += array[array.len()-1] + " ";
+			ap = "perk groups[/color]";
+		}
+
+		if (desc.find(pre) == null)
+		{
+			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] += pre + mid + ap;
+			gt.Const.Perks.PerkDefObjects[table.Const].Tooltip += pre + mid + ap;
+		}
+		else
+		{
+			local strArray = split(desc, "[");
+
+			strArray.pop();
+			strArray.apply(@(a) a += "[" );
+
+			strArray[strArray.len()-1] = "color=#0b0084]From the " + mid + ap;
+
+			if (strArray[0].find("color=") != null)
+			{
+				strArray[0] = "[" + strArray[0];
+			}
+
+			local ret = "";
+			foreach (s in strArray)
+			{
+				ret += s;
+			}
+
+			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] = ret;
+			gt.Const.Perks.PerkDefObjects[table.Const].Tooltip = ret;
+		}		
+	}
+}
+
+local perkDefObjects = [
 	{
 		ID = "perk.fast_adaption",
 		Script = "scripts/skills/perks/perk_fast_adaption",
@@ -3463,13 +3563,6 @@ gt.Const.Perks.PerkDefObjects <- [
 		Const = "LegendThrowSand"
 	}
 ];
-gt.Const.Perks.PerkDefs <- {};
 
-gt.Const.Perks.TempiToConst <- {};
-
-foreach( i, v in gt.Const.Perks.PerkDefObjects )
-{
-	gt.Const.Perks.PerkDefs[v.Const] <- i;
-
-	gt.Const.Perks.TempiToConst[i] <- v.Const;
-}
+gt.Const.Perks.addPerkDefObjects(perkDefObjects);
+gt.Const.Perks.updatePerkGroupTooltips();
