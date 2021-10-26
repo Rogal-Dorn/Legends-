@@ -6064,6 +6064,7 @@ Minor typo fixes to ranger and enbalmed contract
 
 **Balance**
 Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. max tier weapons should now be higher in value and weapons before that should have better spacing and consistances regarding their value and place in the progression of weapons.
+Jester hat rework - loses 10% chance to hit the head. Equipping gives the user the "taunt" perk. Makes AI target you more often and increases the surrounded malus effect when worn.
 
 **Misc**
 Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
