@@ -6,7 +6,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 		this.m.Name = this.Const.Strings.PerkName.LegendBloodbath;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendBloodbath;
 		this.m.Icon = "ui/perks/bloodbath_circle.png";
-		this.m.Type = this.Const.SkillType.Perk;
+		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
@@ -16,7 +16,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	function isHidden()
 	{
 		local bleeders = this.getBleeders();
-		return bleeders < 1;
+		return bleeders == 0;
 	}
 
 	function getTooltip()
