@@ -1,17 +1,13 @@
 
 this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
-	m = {
-		BonusHeadChance = 10,
-		HCMin = 10,
-		HCMax = 30
-	},
+	m = {},
 	function create()
 	{
 		this.legend_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_jester_hat";
 		this.m.Name = "Jester Hat";
-		this.m.Description = "The quintessential hat of performing folk in noble court";
+		this.m.Description = "The quintessential hat of performing folk in noble court. Wearing it makes you feel like a fool, but the jingling bells make you an irritating target for all.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [];
 		for(local i = 1; i < 65; i++)
@@ -47,15 +43,27 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.BonusHeadChance + "%[/color] Chance To Hit Head"
+			text = "Adds the \'Taunt\' skill."
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Makes adjacent enemies more likely to hit you."
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "You feel like the centre of attention to all things, including projeciles..."
 		});
 		return result
 	}
 
     function onUpdateProperties(_properties)
     {
-        this.legend_helmet_upgrade.onUpdateProperties(_properties);
-        _properties.HitChance[this.Const.BodyPart.Head] += this.m.BonusHeadChance;
+  		_properties.SurroundedDefense -= 3; // -3 defence per enemy surrounding this unit while equipped
+		_properties.TargetAttractionMult *= 1.2; // 1.0 = normal aggression, 0.1 = minimal aggression
     }
 
 	function updateVariant()
@@ -68,5 +76,14 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = this.m.Icon;
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
+	}
+
+	function onEquip()
+	{
+	  this.helmet.onEquip()
+	  if (!this.m.Container.getActor().getSkills().hasSkill("perk.taunt"))
+	  {
+	      this.addSkill(this.new("scripts/skills/actives/taunt"));
+	  }
 	}
 });
