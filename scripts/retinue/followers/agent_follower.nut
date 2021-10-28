@@ -32,25 +32,16 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 	function onEvaluate()
 	{
 		local allied = false;
-		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 
-		foreach (n in nobles)
+		local factions = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
+		factions.extend(this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState));		
+
+		foreach (f in factions)
 		{
-			if (n.getPlayerRelation() >= 90.0 )
+			if (f.getPlayerRelation() >= 90.0 )
 			{
 				this.m.Requirements[0].IsSatisfied = true;
-				return;
-			}
-		}
-
-		local citystates = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.OrientalCityState);
-
-		foreach (c in citystates)
-		{
-			if (c.getPlayerRelation() >= 90.0)
-			{
-				this.m.Requirements[0].IsSatisfied = true;
-				return;
+				break;
 			}
 		}
 
