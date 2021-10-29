@@ -104,7 +104,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
 					{
 						bro.improveMood(2.0, "Appeased Davkul");
 
@@ -157,7 +157,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
 					{
 						bro.worsenMood(2.0, "Was denied the chance to appease Davkul");
 
@@ -216,7 +216,7 @@ this.cultist_origin_finale_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
 			{
 				cultist_candidates.push(bro);
 				// This requires a Cultist, that isn't a convert.
