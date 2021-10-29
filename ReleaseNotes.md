@@ -6075,7 +6075,7 @@ Is now a dedicated background.
 Can be "hired" in town for nothing. If zombies are not fed they will wander off in search of prey.
 Trait: Rotting flesh - only on zombies, consumes 3 food a day per zombie. Zombies will quickly desert if food is not availible. However they have much more health and no talent stars. Excluded from having most traits.
 Can bite enemies, causing large amounts of damage directly to health and making humans raise from the dead if killed by a bite.
-Puppets are mostly immune to mental, health and fatigue related injuries.
+Puppets are mostly immune to mental, health and fatigue related injuries (however they can still be charmed).
 
 Skill changes;
 Scythe perks now apply to warscythes (and their named varients)
