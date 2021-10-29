@@ -4,9 +4,10 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.militia";
 		this.m.Name = "Peasant Militia";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. Perhaps the militia\'s services could be rented out?\n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to [color=#c90000]25[/color] men into battle at once.\n[color=#bcad8c]Dirty Peasants[/color]: Can only hire lowborn peasants. \n[color=#c90000]Reduced scaling:[/color] Each member of your company only counts for two thirds of a person in scaling. \n[color=#c90000]Class warfare:[/color]Each person you hire gains a hatred of nobles[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. \n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to [color=#c90000]27[/color] men into battle at once.\n[color=#bcad8c]Dirty Peasants[/color]: Can only hire lowborn peasants, lose reputation with nobles faster. \n[color=#c90000]Reduced scaling:[/color] Each member of your company only counts for two thirds of a person in scaling. \n[color=#c90000]Class warfare: [/color]Each person you hire gains a hatred of nobles[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 190; 
+		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(27);
 		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
 		this.m.StartingBusinessReputation = -100; // Still use default reputation tiers even if starting at negative reputation
@@ -28,6 +29,11 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.worsenMood(1.5, "Lost many a friend in battle");
 			bro.improveMood(0.5, "Part of a militia");
+			///---
+			bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
+			bro.getSprite("accessory_special").setBrush("bust_militia_band_01");
+			bro.getSprite("socket").setBrush("bust_base_militia");
+			///---
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
@@ -38,13 +44,13 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			names.push(bro.getNameOnly());
 		}
 
-		local bros = roster.getAll();
+		local bros = roster.getAll(); //does anyone else really fucking hate this format!?
 		bros[0].setStartValuesEx([
 			"farmhand_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% is a farmer\'s son, and presumably wishes to be the father of his own son at some point. For now, he\'s with you which is quite a regrettable clash between dreams and reality.";
 		bros[0].improveMood(3.0, "Has recently fallen in love");
-		bros[0].setVeteranPerks(3);
+		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -54,7 +60,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].worsenMood(0.5, "Was involved in a brawl");
 		bros[1].addLightInjury();
 		bros[1].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
-		bros[1].setVeteranPerks(3);
+		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/warfork"));
@@ -64,7 +70,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].getBackground().m.RawDescription = "It is a common joke that %name% is in fact a nobleman hiding away from the world, but to the best of your knowledge he was a simple poacher. The grind of the world got him to where he is today, not much else need be said other than you hope he gets back on his feet.";
 		bros[2].worsenMood(0.5, "Was involved in a brawl");
 		bros[2].addLightInjury();
-		bros[2].setVeteranPerks(3);
+		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -77,23 +83,25 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		]);
 		bros[3].getBackground().m.RawDescription = "You notice that %name% hides from certain noblemen. It is likely that he is a common criminal at large for some petty crime, but so long as he fights well it is no business to you.";
 		bros[3].improveMood(1.5, "Stole someone\'s scramasax");
-		bros[3].setVeteranPerks(3);
+		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scramasax"));
 		bros[4].setStartValuesEx([
-			"daytaler_background"
+			"daytaler_background",
+			"vagabond_background",
+			"legend_leech_peddler_background"
 		]);
 		bros[4].getBackground().m.RawDescription = "A daytaler and common laborer, %name% would rather join your outfit than go back to wasting his body building some nobleman\'s new fancy foyer.";
 		bros[4].worsenMood(0.5, "Was involved in a brawl");
 		bros[4].addLightInjury();
-		bros[4].setVeteranPerks(3);
+		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bros[5].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[5].getBackground().m.RawDescription = "Seeking riches, %name% has come to the right place in your newfound mercenary band. Unfortunately, his background is in farming, milling, and laying stone, particularly none of which he was any good at.";
 		bros[5].improveMood(1.0, "Looks forward to becoming rich as a sellsword");
-		bros[5].setVeteranPerks(3);
+		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[5].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -103,7 +111,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		]);
 		bros[6].getBackground().m.RawDescription = "%name% states he was a sailor prior to coming inland and falling in with the militia and now your mercenary band. He hopes to eventually own a boat and put its sails to the open ocean. You hope he can do that someday, truly.";
 		bros[6].worsenMood(0.25, "Feels somewhat sickly of late");
-		bros[6].setVeteranPerks(3);
+		bros[6].setVeteranPerks(2);
 		bros[6].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bros[7].setStartValuesEx([
 			"militia_background"
@@ -113,13 +121,13 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[7].m.PerkPoints = 0;
 		bros[7].m.LevelUps = 0;
 		bros[7].m.Level = 1;
-		bros[7].setVeteranPerks(3);
+		bros[7].setVeteranPerks(2);
 		bros[7].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bros[8].setStartValuesEx([
 			"minstrel_background"
 		]);
 		bros[8].getBackground().m.RawDescription = "A proper lad, %name% enjoys carousing ladies at the pub and chasing skirt in the church. You get the sense he\'s only tagged along to spread his sense of \'fun\' around the world.";
-		bros[8].setVeteranPerks(3);
+		bros[8].setVeteranPerks(2);
 		bros[8].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[8].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -127,7 +135,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[9].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[9].getBackground().m.RawDescription = "Daytaler, laborer, caravan hand, sailor, militiaman, %name%\'s done a bit of it all. Hopefully this new foray into mercenary work will stick for him.";
 		bros[9].worsenMood(1.0, "Had his trusty scramasax stolen");
-		bros[9].setVeteranPerks(3);
+		bros[9].setVeteranPerks(2);
 		bros[9].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bros[10].setStartValuesEx([
 			"militia_background"
@@ -137,15 +145,16 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[10].m.PerkPoints = 0;
 		bros[10].m.LevelUps = 0;
 		bros[10].m.Level = 1;
-		bros[10].setVeteranPerks(3);
+		bros[10].setVeteranPerks(2);
 		bros[10].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bros[11].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[11].getBackground().m.RawDescription = "%name% is, ostensibly, running away from his wife. You met her once and approve his escape plan entirely, and not just because it affords you another body on the front line.That wench is genuinely crazy.";
 		bros[11].improveMood(1.0, "Managed to get away from his wife");
-		bros[11].setVeteranPerks(3);
+		bros[11].setVeteranPerks(2);
 		bros[11].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -229,9 +238,31 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.starting_scenario.onInit();
 	}
 
+	function onUpdateDraftList( _list, _gender ) //unique backgrounds
+	{
+		local r;
+		r = this.Math.rand(0, 3);
+
+		if (r == 0)
+		{
+			_list.push("legend_leech_peddler_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 8);
+
+		if (r == 0)
+		{
+			_list.push("legend_nightwatch_background");
+		}
+	}
+
 	function onHiredByScenario( bro )
 	{
 		bro.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
+		bro.getSprite("accessory_special").setBrush("bust_militia_band_01");
+		bro.getSprite("socket").setBrush("bust_base_militia");
 	}
 
 	function onUpdateHiringRoster( _roster )
