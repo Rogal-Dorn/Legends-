@@ -6119,6 +6119,7 @@ Few pieces of incorrect info in militia origin corrected.
 
 **Art**
 Noble origin now has a new map marker.
+Legion origin now has a higher quality map marker.
 Some retinue graphics have been tweaked. Mostly shadows.
 
 **For modders**
