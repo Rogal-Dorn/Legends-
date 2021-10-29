@@ -27,7 +27,7 @@ this.perk_legend_spawn_zombie_high <- this.inherit("scripts/skills/skill", {
 		if (!this.m.Container.hasSkill("actives.legend_spawn_zombie_high_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_high_skill"));
-			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_high_xbow_skill"));
+			//this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_high_xbow_skill"));
 
 		}
 	}
@@ -35,7 +35,7 @@ this.perk_legend_spawn_zombie_high <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_zombie_high_skill");
-		this.m.Container.removeByID("actives.legend_spawn_zombie_high_xbow_skill");
+		//this.m.Container.removeByID("actives.legend_spawn_zombie_high_xbow_skill");
 	}
 
 });

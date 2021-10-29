@@ -5,7 +5,7 @@ this.legend_spawn_zombie_med_skill <- this.inherit("scripts/skills/actives/legen
 		this.legend_spawn_skill.create();
 		this.m.ID = "actives.legend_spawn_zombie_med_skill";
 		this.m.Name = "Summon Medium Zombie";
-		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
+		this.m.Description = "Summon a fallen yeoman and send it charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/fashion_body.png",
 		this.m.IconDisabled = "skills/fashion_body_bw.png",
 		this.m.Overlay = "fashion_body";
@@ -22,12 +22,12 @@ this.legend_spawn_zombie_med_skill <- this.inherit("scripts/skills/actives/legen
 		];
 		this.m.SpawnItem =  "spawns.zombie",
 		this.m.Script = "scripts/entity/tactical/legends_zombie_med"
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
+		this.m.ActionPointCost = 5;
+		this.m.FatigueCost = 25;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 7;
-		this.m.HPCost = 20;
-		this.m.APStartMult = 0.5;
+		this.m.HPCost = 25;
+		this.m.APStartMult = 0.0;
 	}
 
 });

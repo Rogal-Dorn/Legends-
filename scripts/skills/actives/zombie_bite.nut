@@ -4,7 +4,7 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.zombie_bite";
 		this.m.Name = "Wiederganger Bite";
-		this.m.Description = "A vicious bite with a 15% increased chance to hit the head. Infects on legendary difficulty";
+		this.m.Description = "A vicious bite with a 15% increased chance to hit the head. Infects on legendary difficulty. Will revive humanoid enemies as allied Wiedergangers if dealt as a killing blow.";
 		this.m.KilledString = "Bitten";
 		this.m.Icon = "skills/active_24.png";
 		this.m.IconDisabled = "skills/active_24_bw.png";
@@ -31,73 +31,91 @@ this.zombie_bite <- this.inherit("scripts/skills/skill", {
 		this.m.MaxRange = 1;
 	}
 
-	function onUpdate( _properties )
+	function getTooltip()
 	{
-		if (this.isUsable())
-		{
-			if ( _properties.DamageRegularMin < 15)
-				{
-					_properties.DamageRegularMin = 15;
-				}
-			if ( _properties.DamageRegularMin < 15)
-				{
-				_properties.DamageRegularMax = 35;
-				}
-
-		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-				{
-				_properties.HitChance[this.Const.BodyPart.Head] += 15;
-				}
-		}
+		return this.getDefaultTooltip();
 	}
 
 	function onUse( _user, _targetTile )
 	{
-
 		local target = _targetTile.getEntity();
 		local hp = target.getHitpoints();
 		local success = this.attackEntity(_user, _targetTile.getEntity());
 
 		if (success)
 		{
-			if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && hp - target.getHitpoints() >= this.Const.Combat.PoisonEffectMinDamage)
-				{
-					local effect = this.new("scripts/skills/effects/zombie_poison_effect");
-					target.getSkills().add(effect);
-				}
+			if (!target.getCurrentProperties().IsImmuneToPoison && ("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && hp - target.getHitpoints() >= this.Const.Combat.PoisonEffectMinDamage)
+			{
+				local effect = this.new("scripts/skills/effects/zombie_poison_effect");
+				target.getSkills().add(effect);
+			}
 
-		return success;
+			return success;
 		}
 	}
 
-function onDamageDealt( _target, _skill, _hitInfo )
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (!target.getCurrentProperties().IsImmuneToPoison && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if (_skill == this)
 		{
-			this.weapon.onDamageDealt(_target, _skill, _hitInfo);
+			local items = this.m.Container.getActor().getItems();
+			local mhand = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-			if (!this.isKindOf(_target, "player") && !this.isKindOf(_target, "human"))
+			if (mhand != null)
 			{
-				return;
+				_properties.DamageRegularMin -= mhand.m.RegularDamage;
+				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
+				_properties.DamageDirectAdd -= mhand.m.DirectDamageAdd;
 			}
 
-			if (_target.getHitpoints() > 0)
+			_properties.DamageRegularMin += 15;
+			_properties.DamageRegularMax += 35;
+			_properties.DamageArmorMult = 0.5;
+			_properties.HitChance[this.Const.BodyPart.Head] += 15;
+			
+			if (this.canDoubleGrip())
 			{
-				return;
-			}
-
-			if (_hitInfo.Tile.IsCorpseSpawned && _hitInfo.Tile.Properties.get("Corpse").IsResurrectable)
-			{
-				local corpse = _hitInfo.Tile.Properties.get("Corpse");
-				corpse.Faction = this.Const.Faction.PlayerAnimals;
-				corpse.Hitpoints = 1.0;
-				corpse.Items = _target.getItems();
-				corpse.IsConsumable = false;
-				corpse.IsResurrectable = false;
-				this.Time.scheduleEvent(this.TimeUnit.Rounds, this.Math.rand(1, 1), this.Tactical.Entities.resurrect, corpse);
+				_properties.DamageTotalMult /= 1.25;
 			}
 		}
 	}
 
+	function onTargetKilled( _targetEntity, _skill )
+	{
+		if (_skill != this)
+		{
+			return;
+		}
+
+		if (!this.isKindOf(_targetEntity, "player") && !this.isKindOf(_targetEntity, "human"))
+		{
+			return;
+		}
+
+		local actor = this.getContainer().getActor();
+
+		if (!this.isKindOf(actor.get(), "player"))
+		{
+			return;
+		}
+
+		if (_targetEntity.getTile().IsCorpseSpawned && _targetEntity.getTile().Properties.get("Corpse").IsResurrectable)
+		{
+			local corpse = _targetEntity.getTile().Properties.get("Corpse");
+			corpse.Faction = actor.getFaction() == this.Const.Faction.Player ? this.Const.Faction.PlayerAnimals : actor.getFaction();
+			corpse.Hitpoints = 1.0;
+			corpse.Items = _targetEntity.getItems();
+			corpse.IsConsumable = false;
+			corpse.IsResurrectable = false;
+			this.Time.scheduleEvent(this.TimeUnit.Rounds, this.Math.rand(1, 1), this.Tactical.Entities.resurrect, corpse);
+		}
+	}
+
+	function canDoubleGrip()
+	{
+		local main = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local off = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		return main != null && off == null && main.isDoubleGrippable();
+	}
 });
 

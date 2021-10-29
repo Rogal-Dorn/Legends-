@@ -5,7 +5,7 @@ this.legend_spawn_zombie_high_skill <- this.inherit("scripts/skills/actives/lege
 		this.legend_spawn_skill.create();
 		this.m.ID = "actives.legend_spawn_zombie_high_skill";
 		this.m.Name = "Summon Heavy Zombie";
-		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
+		this.m.Description = "Summon a fallen knight and send them charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/remake_man.png",
 		this.m.IconDisabled = "skills/remake_man_bw.png",
 		this.m.Overlay = "remake_man";
@@ -22,11 +22,11 @@ this.legend_spawn_zombie_high_skill <- this.inherit("scripts/skills/actives/lege
 		];
 		this.m.SpawnItem =  "spawns.zombie",
 		this.m.Script = "scripts/entity/tactical/legends_zombie_high"
-		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 20;
+		this.m.ActionPointCost = 8;
+		this.m.FatigueCost = 35;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 9;
-		this.m.HPCost = 30;
+		this.m.HPCost = 35;
 		this.m.APStartMult = 0.0;
 
 	}
