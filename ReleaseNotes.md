@@ -6058,20 +6058,72 @@ Recruitment:
 - `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of _firstTierReputation. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 500.
 
 ## 15.0.1.21e
+**New origin rework: The Cabal**
+Replaces Warlock origin
+Difficulty increased from 2 to 3
+Some warlock skills pulled from rotation (not removed)
+New story given
+
+Composed of 4 (new) backgrounds;
+Summoner - Sickly since they were a child, is the only one of the trio that is skilled enough to summon undead.
+Preserver - Spry and fast she has dedicated her life to mending and preserving corpses.
+Possessor - Lazy and has mastered the use of controling the dead to carry out mundane tasks. Focuses on possession and offensive spells.
+Puppet - mindless undead. But still useful. You may find them in town recruitment pools.
+
+Puppet mechanics;
+Is now a dedicated background.
+Can be "hired" in town for nothing. If zombies are not fed they will wander off in search of prey.
+Trait: Rotting flesh - only on zombies, consumes 3 food a day per zombie. Zombies will quickly desert if food is not availible. However they have much more health and no talent stars. Excluded from having most traits.
+Can bite enemies, causing large amounts of damage directly to health and making humans raise from the dead if killed by a bite.
+Puppets are mostly immune to mental, health and fatigue related injuries.
+
+Skill changes;
+Scythe perks now apply to warscythes (and their named varients)
+Possession now costs more to perform.
+Zombie summons now changed; zombies do not have a ranged varient anymore.
+Low zombie; now costs 4 AP, 18 fatigue and costs 15 HP to summon. Needs 1 human carrion to summon. Taking this perk grants +10 health.
+Medium zombie; now costs 5 AP, 25 fatigue and costs 25 HP to summon. Needs 1 human carrion to summon. Taking this perk adds 30 medicine to your stash and increases medicine stash total by 30.
+High zombie; now costs 8 AP, 35 fatigue and costs 35 HP to summon. Needs 1 human carrion to summon.
+
+**Second new origin rework: peasent militia**
+Mostly unchanged in premise.
+Two new backgrounds; leech peddler and night watch.
+
+Recruiting rules;
+Can only hire lowborns.
+Start with the full roster size without having to raise renown.
+Veteran perks were 3, now they are 2 for starters - this should make your starters more important.
+Militia gain "hate for nobles" trait on start and on hire. 
+
+General changes;
+Militia lose reputation with noble houses more quickly than other origins. But cannot fall below "cold" unless done intentionally. The loss is based off how many lowborns you have in your current roster at midday (when they get paid).
+Militia origin now spawn and are hired with armbands, regardless of their outfit.
+Militia now remain as a fixed look on the worldmap when they hit professional and complete the related ambition.
+Militia now start with an extra bag of grain, which should give them one more day of rations.
+Militia now use militia baseplates in battle.
+
 **Fixes**
-Pilgrim now benefits from fortified mind when recruited by the crusader
+Pilgrim now benefits from fortified mind when recruited by the crusader, does not hate being recruited anymore.
 Minor typo fixes to ranger and enbalmed contract
 Cultist hood blueprint should be layered now when crafted
 
 **Balance**
-Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. max tier weapons should now be higher in value and weapons before that should have better spacing and consistances regarding their value and place in the progression of weapons.
-Jester hat rework - loses 10% chance to hit the head. Equipping gives the user the "taunt" perk. Makes AI target you more often and increases the surrounded malus effect when worn.
+Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. Max tier weapons should now be higher in value and weapons before that should have better spacing and consistancies regarding their value and place in the progression of weapons.
+Jester hat rework - loses 10% chance to hit the head. Equipping gives the user the "taunt" perk. Makes AI target you more often and increases the surrounded malus effect when worn (lol, lmao).
 Skeleton gladiators have been reworked slightly, they now has less AP, better defence and more armour.
 
 **Misc**
 Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
-Made the Hollenhund debuff effect less huge
+Made the Hollenhund debuff effect less huge.
+Few pieces of incorrect info in militia origin corrected.
 
 **Art**
-Noble origin now has a new map marker
+Noble origin now has a new map marker.
 Some retinue graphics have been tweaked. Mostly shadows.
+
+**For modders**
+Militia now have a hidden trait that effects daily reputation loss (currently set to -0.2 noble/citystate relations per head per cycle), however it connot fall below 30. Use this information as you will.
+
+**KNOWN ISSUES**
+Puppets can get permament injuries they should not have (brain damage, trauma, etc.), this will be addressed in a later update.
+Night watch needs new flavour text for background. Current one is a placeholder.
