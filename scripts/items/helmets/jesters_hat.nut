@@ -67,7 +67,7 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 	function onEquip()
 	{
 	  this.helmet.onEquip()
-	  if (!this.m.Container.getActor().getSkills().hasSkill("perk.taunt"))
+	  if (!this.getContainer().getActor().getSkills().hasSkill("perk.taunt"))
 	  {
 	      this.addSkill(this.new("scripts/skills/actives/taunt"));
 	  }

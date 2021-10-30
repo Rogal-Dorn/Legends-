@@ -82,10 +82,10 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 
 	function onEquip()
 	{
-	  this.legend_helmet_upgrade.onEquip();
-	  if (!this.m.Container.getActor().getSkills().hasSkill("perk.taunt"))
-	  {
-	      this.addSkill(this.new("scripts/skills/actives/taunt"));
-	  }
+		this.legend_helmet_upgrade.onEquip();
+		if (!this.getContainer().getActor().getSkills().hasSkill("perk.taunt"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/taunt"));
+		}
 	}
 });
