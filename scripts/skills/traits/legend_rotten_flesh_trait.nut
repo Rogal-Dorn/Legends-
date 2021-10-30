@@ -74,8 +74,11 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 		local rage = actor.addSprite("status_rage");
 		rage.setBrush("mind_control");
 		rage.Visible = false;
-		actor.improveMood = function( _change, _text = "" ) {}; //ignores mood changes
-		actor.worsenMood = function( _change, _text = "" ) {}; //ignores mood changes
+		if (this.isKindOf(actor, "player"))
+		{
+			actor.improveMood = function( _change, _text = "" ) {}; //ignores mood changes
+			actor.worsenMood = function( _change, _text = "" ) {}; //ignores mood changes
+		}
 		actor.onUpdateInjuryLayer = function()
 		{
 			local injury = this.getSprite("injury");

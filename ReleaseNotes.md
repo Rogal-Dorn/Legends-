@@ -6121,10 +6121,10 @@ Few pieces of incorrect info in militia origin corrected.
 Noble origin now has a new map marker.
 Legion origin now has a higher quality map marker.
 Some retinue graphics have been tweaked. Mostly shadows.
+Lurker, Husk and Magister now have temp. art backgrounds to identify them better - these are not intended to stay.
 
 **For modders**
 Militia now have a hidden trait that effects daily reputation loss (currently set to -0.2 noble/citystate relations per head per cycle), however it connot fall below 30. Use this information as you will.
 
 **KNOWN ISSUES**
 Puppets can get permament injuries they should not have (brain damage, trauma, etc.), this will be addressed in a later update.
-Night watch needs new flavour text for background. Current one is a placeholder.
