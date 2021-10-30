@@ -6055,77 +6055,100 @@ Recruitment:
 
 **Modding**
 - Updated MSU to v.0.6.16.
-- `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of _firstTierReputation. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 500.
+- `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of `_firstTierReputation`. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 250.
 
 ## 15.0.1.21e
 **New origin rework: The Cabal**
-Replaces Warlock origin
-Difficulty increased from 2 to 3
-Some warlock skills pulled from rotation (not removed)
-New story given
+- Replaces Warlock origin.
+- Difficulty increased from 2 to 3.
+- Some warlock skills pulled from rotation (not removed).
+- New story given.
+- Composed of 4 (new) backgrounds
+  - Summoner - Sickly since they were a child, is the only one of the trio that is skilled enough to summon undead.
+  - Preserver - Spry and fast she has dedicated her life to mending and preserving corpses.
+  - Possessor - Lazy and has mastered the use of controling the dead to carry out mundane tasks. Focuses on possession and offensive spells.
+  - Puppet - mindless undead. But still useful. You may find them in town recruitment pools.
+- Puppet mechanics
+  - Is now a dedicated background.
+  - Can be "hired" in town for nothing. If zombies are not fed they will wander off in search of prey.
+  - Trait: Rotting flesh - only on zombies, consumes 3 food a day per zombie. Zombies will quickly desert if food is not availible. However they have much more health and no talent stars. Excluded from having most traits.
+  - Can bite enemies, causing large amounts of damage directly to health and making humans raise from the dead if killed by a bite.
+  - Puppets are mostly immune to mental, health and fatigue related injuries (however they can still be charmed).
+- Skill changes
+  - Scythe perks now apply to warscythes (and their named variants).
+  - Possession now costs more to perform.
+  - Zombie summons now changed; zombies do not have a ranged varient anymore.
+  - Low zombie: now costs 4 AP, 18 fatigue and costs 15 HP to summon. Needs 1 human carrion to summon. Taking this perk grants +10 health.
+  - Medium zombie: now costs 5 AP, 25 fatigue and costs 25 HP to summon. Needs 1 human carrion to summon. Taking this perk adds 30 medicine to your stash and increases medicine stash total by 30.
+  - High zombie: now costs 8 AP, 35 fatigue and costs 35 HP to summon. Needs 1 human carrion to summon.
 
-Composed of 4 (new) backgrounds;
-Summoner - Sickly since they were a child, is the only one of the trio that is skilled enough to summon undead.
-Preserver - Spry and fast she has dedicated her life to mending and preserving corpses.
-Possessor - Lazy and has mastered the use of controling the dead to carry out mundane tasks. Focuses on possession and offensive spells.
-Puppet - mindless undead. But still useful. You may find them in town recruitment pools.
-
-Puppet mechanics;
-Is now a dedicated background.
-Can be "hired" in town for nothing. If zombies are not fed they will wander off in search of prey.
-Trait: Rotting flesh - only on zombies, consumes 3 food a day per zombie. Zombies will quickly desert if food is not availible. However they have much more health and no talent stars. Excluded from having most traits.
-Can bite enemies, causing large amounts of damage directly to health and making humans raise from the dead if killed by a bite.
-Puppets are mostly immune to mental, health and fatigue related injuries (however they can still be charmed).
-
-Skill changes;
-Scythe perks now apply to warscythes (and their named varients)
-Possession now costs more to perform.
-Zombie summons now changed; zombies do not have a ranged varient anymore.
-Low zombie; now costs 4 AP, 18 fatigue and costs 15 HP to summon. Needs 1 human carrion to summon. Taking this perk grants +10 health.
-Medium zombie; now costs 5 AP, 25 fatigue and costs 25 HP to summon. Needs 1 human carrion to summon. Taking this perk adds 30 medicine to your stash and increases medicine stash total by 30.
-High zombie; now costs 8 AP, 35 fatigue and costs 35 HP to summon. Needs 1 human carrion to summon.
-
-**Second new origin rework: peasent militia**
-Mostly unchanged in premise.
-Two new backgrounds; leech peddler and night watch.
-
-Recruiting rules;
-Can only hire lowborns.
-Start with the full roster size without having to raise renown.
-Veteran perks were 3, now they are 2 for starters - this should make your starters more important.
-Militia gain "hate for nobles" trait on start and on hire. 
-
-General changes;
-Militia lose reputation with noble houses more quickly than other origins. But cannot fall below "cold" unless done intentionally. The loss is based off how many lowborns you have in your current roster at midday (when they get paid).
-Militia origin now spawn and are hired with armbands, regardless of their outfit.
-Militia now remain as a fixed look on the worldmap when they hit professional and complete the related ambition.
-Militia now start with an extra bag of grain, which should give them one more day of rations.
-Militia now use militia baseplates in battle.
+**New origin rework: Peasant Militia**
+- Mostly unchanged in premise.
+- Two new backgrounds: Leech Peddler and Night Watch.
+- Recruiting rules
+  - Can only hire lowborns.
+  - Start with the full roster size without having to raise renown.
+  - Veteran perks were 3, now they are 2 for starters - this should make your starters more important.
+  - Militia gain "hate for nobles" trait on start and on hire.
+- General changes
+  - Militia lose reputation with noble houses more quickly than other origins. But cannot fall below "cold" unless done intentionally. The loss is based off how many lowborns you have in your current roster at midday (when they get paid).
+  - Militia origin now spawn and are hired with armbands, regardless of their outfit.
+  - Militia now remain as a fixed look on the worldmap when they hit professional and complete the related ambition.
+  - Militia now start with an extra bag of grain, which should give them one more day of rations.
+  - Militia now use militia baseplates in battle.
 
 **Fixes**
-Pilgrim now benefits from fortified mind when recruited by the crusader, does not hate being recruited anymore. A few other Crusader backgrounds did not work as intended when recruited and should now be fixed.
-Minor typo fixes to ranger and enbalmed contract
-Cultist hood blueprint should be layered now when crafted
+- Pilgrim now benefits from fortified mind when recruited by the crusader, does not hate being recruited anymore. A few other Crusader backgrounds did not work as intended when recruited and should now be fixed.
+- Minor typo fixes to ranger and enbalmed contract.
+- Cultist hood blueprint should be layered now when crafted
+- Fixed Unarmed Lunge skill tooltip not appearing.
+- Hopefully fixed possessed undead effect not wearing off of Necromancers.
+- Fixed Estoc tooltip saying it has 60% armor ignore when it actually has 50%.
+- Fixed Cultist Conversion not working.
+- Fixed gladiators spawning without gladiator armor upgrade attachments.
+- Fixed crash when Vala got swallowed during a chant.
+- Fixed the first roster size increase being at 250 Renown instead of 500 as intended.
+- Fixed the agent follower not recognizing the presence of the required backgrounds.
+- Fixed Cultist events only working with ConvertedCultists and not regular Cultists.
+- Fixed Tumble not reducing the AP cost of some skills that it should.
+- Fixed Throw Javelin having 20% more hit chance than intended.
+- Fixed a typo in a cultist armor item name.
+- Hopefully fixed Rotation crash by disabling the think function during IsExecutingSkillMove of skill_container (MSU).
 
 **Balance**
-Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. Max tier weapons should now be higher in value and weapons before that should have better spacing and consistancies regarding their value and place in the progression of weapons.
-Jester hat rework - loses 10% chance to hit the head. Equipping gives the user the "taunt" perk. Makes AI target you more often and increases the surrounded malus effect when worn (lol, lmao).
+- Multiple weapon prices have been rebalanced - although over 20 weapons have been tweaked, the key offenders were 2 handed max tier weapons that were often the same price or lower of their one handed counterparts. Max tier weapons should now be higher in value and weapons before that should have better spacing and consistancies regarding their value and place in the progression of weapons.
+- Jester hat rework - loses 10% chance to hit the head. Equipping gives the user the "taunt" perk. Makes AI target you more often and increases the surrounded malus effect when worn (lol, lmao).
 Skeleton gladiators have been reworked slightly, they now has less AP, better defence and more armour.
+- Butcher enemy will no longer spawn with a Knife.
+- Increased the Lurker daily wage from 10 to 20.
+- Moved Lithe from row 5 to row 6 in the Medium Armor perk group.
 
 **Misc**
-Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
-Made the Hollenhund debuff effect less huge.
-Few pieces of incorrect info in militia origin corrected.
-Squire is no longer tagged as a crusader recruit.
+- Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
+- Made the Hollenhund debuff effect less huge.
+- Few pieces of incorrect info in militia origin corrected.
+- Squire is no longer tagged as a crusader recruit.
+- The change to hitchance penalty per tile from Ballistics is now reflected in the tooltip of ranged skills.
+- Ranged skills with negative base chance to hit (e.g. sling heavy stone) will now properly show negative chance to hit in the tooltip when hovering over an enemy.
 
 **Art**
-Noble origin now has a new map marker.
-Legion origin now has a higher quality map marker.
-Some retinue graphics have been tweaked. Mostly shadows.
-Lurker, Husk and Magister now have temp. art backgrounds to identify them better - these are not intended to stay.
+- Noble origin now has a new map marker.
+- Legion origin now has a higher quality map marker.
+- Some retinue graphics have been tweaked. Mostly shadows.
+- Lurker, Husk and Magister now have temp. art backgrounds to identify them better - these are not intended to stay.
 
 **For modders**
-Militia now have a hidden trait that effects daily reputation loss (currently set to -0.2 noble/citystate relations per head per cycle), however it connot fall below 30. Use this information as you will.
+- Added a standardized system for adding more perks for submods, and for automated listing of perk groups in tooltips. This is accomplished via the function `addPerkDefObjects` and `updatePerkGroupTooltips` in `this.Const.Perks`(see z_perks_defs.nut). You should use the `addPerkDefObjects` function to add your perks when making a Legends submod, and if you change the perk trees in Legends, you should additionally call the `updatePerkGroupTooltips` function at the end of such changes.
+- Added `removePerk( _perk )` and `removePerkGroup( _group )` functions to character_background to remove perks from the character's perk tree. Note: removing the perk from the perk tree doesn't actually remove the perk skill from the character. For that you should additionally use the removeByID of the skill_container.
+- Added `hasPerk( _perk )` function to character_background. This can be used to check if the character has a certain perk in their perk tree.
+- Added `findPerk( perk )` function to character_background. Checks if the character has the given perk in their perk tree and returns a table containing the Perk and the Row that it belongs to. The return value is a table contaning 3 entries: Row, Perk, PerkDefObject. Returns null if the character doesn't have the given perk.
+- Added gender pronouns to Event variables for %randombrother% and %randombrother2%. You can use %they1% for randombrother and %they2% for randombrother2. Similarly for other pronounse like their, theirs, themselves etc.
+- Added `addPronounVars( _vars, _bro, _suffix )` function to event.nut which allows you to generate pronoun vars for your event specific bros. You can use this function during onPrepareVars function of your event. For example you can use `this.addPronounVars( _vars, this.m.Candidate, "candidate")` and this will allow you to use gender pronouns for this particular bro like %theycandidate%, %theircandidate% etc. to generate the appropriate gender pronoun "he", "his" or "she", "her" etc.
+- Missing DLC now adds error entries to the log during queued script execution.
+- Veteran levels are now handled via the onUpdateLevel function of MSU via a veteran levels effect.
+- Disabled the `32` is already contained in xyz errors showing up in log.
+- Militia now have a hidden trait that effects daily reputation loss (currently set to -0.2 noble/citystate relations per head per cycle), however it connot fall below 30. Use this information as you will.
+- Updated MSU to v0.6.20. See MSU Changelog.
 
 **KNOWN ISSUES**
-Puppets can get permament injuries they should not have (brain damage, trauma, etc.), this will be addressed in a later update.
+- Puppets can get permament injuries they should not have (brain damage, trauma, etc.), this will be addressed in a later update.
