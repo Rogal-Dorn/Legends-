@@ -468,6 +468,58 @@ this.event <- {
 		return this.buildTextFromTemplate(_text, vars);
 	}
 
+	function addPronounVars( _vars, _bro, _suffix )
+	{
+		if (_suffix == "1" || _suffix == "2")
+		{
+			this.logError ("addPronounVars: Cannot use 1 or 2 as suffix");
+			return;
+		}
+
+		_vars.extend([
+			[
+				"they" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "they")
+			],
+			[
+				"them" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "them")
+			],
+			[
+				"their" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "their")
+			],
+			[
+				"theirs" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "theirs")
+			],
+			[
+				"themselves" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "themselves")
+			],		
+			[
+				"They" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "They")
+			],
+			[
+				"Them" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "Them")
+			],
+			[
+				"Their" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "Their")
+			],
+			[
+				"Theirs" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "Theirs")
+			],
+			[
+				"Themselves" + _suffix,
+				this.Const.LegendMod.getPronoun(_bro.getGender(), "Themselves")
+			]
+		]);
+	}
+
 	function getUITitle()
 	{
 		return this.buildText(this.m.Title);
