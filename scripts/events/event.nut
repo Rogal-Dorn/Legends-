@@ -172,6 +172,9 @@ this.event <- {
 		local notnagel;
 		local slaves = [];
 
+		local bro1;
+		local bro2;
+
 		for( local i = 0; i < brothers.len(); i = ++i )
 		{
 			if (brothers[i].getSkills().hasSkill("trait.player"))
@@ -191,25 +194,28 @@ this.event <- {
 		}
 
 		local r = this.Math.rand(0, brothers.len() - 1);
-		brother1 = brothers[r].getName();
+		bro1 = brothers[r];
+		brother1 = bro1.getName();
 		brothers.remove(r);
 
 		if (brothers.len() != 0)
 		{
-			brother2 = brothers[this.Math.rand(0, brothers.len() - 1)].getName();
+			bro2 = brothers[this.Math.rand(0, brothers.len() - 1)];			
 		}
 		else if (slaves.len() != 0)
 		{
-			brother2 = slaves[this.Math.rand(0, slaves.len() - 1)].getName();
+			bro2 = slaves[this.Math.rand(0, slaves.len() - 1)];			
 		}
 		else if (notnagel != null)
 		{
-			brother2 = notnagel.getName();
+			bro2 = notnagel;			
 		}
 		else
 		{
-			brother2 = brother1;
+			bro2 = bro1;			
 		}
+
+		brother2 = bro2.getName();
 
 		local villages = this.World.EntityManager.getSettlements();
 		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
@@ -358,9 +364,89 @@ this.event <- {
 				brother1
 			],
 			[
+				"they1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "they")
+			],
+			[
+				"them1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "them")
+			],
+			[
+				"their1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "their")
+			],
+			[
+				"theirs1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "theirs")
+			],
+			[
+				"themselves1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "themselves")
+			],		
+			[
+				"They1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "They")
+			],
+			[
+				"Them1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "Them")
+			],
+			[
+				"Their1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "Their")
+			],
+			[
+				"Theirs1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "Theirs")
+			],
+			[
+				"Themselves1",
+				this.Const.LegendMod.getPronoun(bro1.getGender(), "Themselves")
+			],
+			[
 				"randombrother2",
 				brother2
 			],
+			[
+				"they2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "they")
+			],
+			[
+				"them2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "them")
+			],
+			[
+				"their2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "their")
+			],
+			[
+				"theirs2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "theirs")
+			],
+			[
+				"themselves2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "themselves")
+			],
+			[
+				"They2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "They")
+			],
+			[
+				"Them2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "Them")
+			],
+			[
+				"Their2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "Their")
+			],
+			[
+				"Theirs2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "Theirs")
+			],
+			[
+				"Themselves2",
+				this.Const.LegendMod.getPronoun(bro2.getGender(), "Themselves")
+			],	
 			[
 				"randomtown",
 				northern[this.Math.rand(0, northern.len() - 1)].getNameOnly()
