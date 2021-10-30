@@ -3,11 +3,15 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function create()
 	{
 		this.m.ID = "scenario.legends_necro";
-		this.m.Name = "Warlock";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_46.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but you embrace the other side. \n\n[color=#bcad8c]Necromancy:[/color] Start with undead companions and a scythe that summons the dead.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies\n[color=#bcad8c]Blood magic:[/color] Drain blood, feast on corpses and use your own blood in rituals.\n[color=#bcad8c]Avatar:[/color] When the warlock dies, the spells fade and the game ends.[/p]";
-		this.m.Difficulty = 2;
+		this.m.Name = "The Cabal";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but we embrace the other side. \n\n[color=#bcad8c]Dark arts:[/color] Start with three apprentice necromancers - all focusing on differant cornerstones of necromancy.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies.\n[color=#bcad8c]Blood magic:[/color] Cultists and other macabre backgrounds will flock to join you and cost 25% less to maintain. Including the undead. Cannot hire pious backgrounds. Everyone else costs 50% more to upkeep\n[color=#bcad8c]Avatars:[/color] If all three necromancers die, the spell is broken and the story ends.[/p]";
+		this.m.Difficulty = 3;
 		this.m.Order = 310;
-		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(3);
+		this.m.IsFixedLook = true;
+		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(4);
+		this.m.RosterTierMax = this.Const.Roster.getTierForSize(27);
+		this.m.StartingBusinessReputation = 100;
+		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -20,10 +24,11 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 
-		for( local i = 0; i < 3; i = i )
+		for( local i = 0; i < 4; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
+ 			bro.getSprite("socket").setBrush("bust_base_undead"); //base bust for starters
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
@@ -37,37 +42,48 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"legend_necro_commander_background"
+			"legend_preserver_background" //light and fast healer
 		]);
-		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_siphon"));
-
-		bros[0].getFlags().set("IsPlayerCharacter", true);
-		bros[0].setPlaceInFormation(2);
+		bros[0].setPlaceInFormation(3);
 		bros[0].setVeteranPerks(2);
-		bros[1].setPlaceInFormation(3);
-		bros[1].getFlags().add("PlayerSkeleton");
-		bros[1].getFlags().add("undead");
-		bros[1].getFlags().add("skeleton");
-		bros[1].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
-		bros[1].getBackground().m.RawDescription = "You found %name% starved to death on the road. You tease the skeleton endlessly about being skin and bones. You enjoy the ribbing, but this feeling is not reciprocated.";
-		bros[1].getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
-		bros[1].getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-		bros[1].setVeteranPerks(3);
-		bros[2].setPlaceInFormation(4);
-		bros[2].getFlags().add("PlayerZombie");
-		bros[2].getFlags().add("undead");
-		bros[2].getFlags().add("zombie_minion");
-		bros[2].setStartValuesEx(this.Const.CharacterBackgroundsAnimated);
-		bros[2].getBackground().m.RawDescription = "You cannot remember much about who %name% was in life, it is probably for the best that the undead cannot either. All that matters is that %name% is yours now.";
-		bros[2].getSkills().add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
-		bros[2].setVeteranPerks(3);
-		this.World.Assets.m.Money = this.World.Assets.m.Money / 2;
+		bros[0].getSprite("miniboss").setBrush("bust_miniboss_undead");
+		bros[0].getFlags().set("IsPlayerCharacter", true); //player character
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_bags_and_belts"));
+
+		bros[1].setStartValuesEx([
+			"legend_warlock_summoner_background" //sickly but good def. summons.
+		]);
+		bros[1].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);
+		bros[1].getSprite("miniboss").setBrush("bust_miniboss_undead");
+		bros[1].getSkills().add(this.new("scripts/skills/traits/ailing_trait"));
+		bros[1].getFlags().set("IsPlayerCharacter", true); //player character
+		bros[1].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_nine_lives"));
+
+		bros[2].setStartValuesEx([
+			"legend_puppet_master_background" //strong but slow tank
+		]);
+		bros[2].setPlaceInFormation(5);
+		bros[2].setVeteranPerks(2);
+		bros[2].getSprite("miniboss").setBrush("bust_miniboss_undead");
+		bros[2].getFlags().set("IsPlayerCharacter", true); //player character
+		bros[2].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_possession"));
+
+		bros[3].setStartValuesEx([
+			"legend_puppet_background" //poor fucking infantry (tm)
+		]);
+		bros[3].getBackground().m.RawDescription = "Once a proud necromancer, %name% took three pupils under their wing to train the next generation of great necromancers. What %name% did not seeing coming is a heart attack - one that left them like a corpse like they used to command. With this macabre irony in mind, they now serve their students in unlife as little more than fodder.";
+		bros[3].setPlaceInFormation(12);
+		bros[3].setVeteranPerks(2);
+
+		//Starting stash
+		this.World.Assets.m.Money = this.World.Assets.m.Money / 1;
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_human_parts"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_human_parts"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
 	function onSpawnPlayer()
@@ -131,7 +147,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
 			this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
-			this.World.Events.fire("event.legend_necro_scenario_intro");
+			this.World.Events.fire("event.legend_necro_intro_event"); //starting event
 		}, null);
 	}
 
@@ -141,58 +157,122 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Flags.set("IsLegendsNecro", true);
 	}
 
-	function onCombatFinished()
+	function onCombatFinished() //trio avatar checks
 	{
 		local roster = this.World.getPlayerRoster().getAll();
+		local necros = 0;
 
 		foreach( bro in roster )
 		{
 			if (bro.getFlags().get("IsPlayerCharacter"))
 			{
-				return true;
+				necros = ++necros;
 			}
 		}
 
-		return false;
+		if (necros == 2 && !this.World.Flags.get("NecrosOriginDeath2"))
+		{
+			this.World.Flags.set("NecrosOriginDeath2", true);
+
+			foreach( bro in roster )
+			{
+				if (bro.getFlags().get("IsPlayerCharacter"))
+				{
+					bro.getBackground().m.RawDescription = "{While a death like any other, %name% cannot help but feel a greater sense of loss at their fallen friend - should we raise them like we do everyone else? How are we supposed to know? One thing is for sure, this time it feels differant... }";
+					bro.getBackground().buildDescription(true);
+				}
+			}
+		}
+		else if (necros == 1 && !this.World.Flags.get("NecrosOriginDeath1"))
+		{
+			this.World.Flags.set("NecrosOriginDeath1", true);
+
+			foreach( bro in roster )
+			{
+				if (bro.getFlags().get("IsPlayerCharacter"))
+				{
+					bro.getBackground().m.RawDescription = "{And then there was one, alone and adrift in a merciless world. %name% mourns the passing of their two closest friends. Maybe they weren\'t cut out for this...maybe none of them were? What if this is just one giant mistake?}";
+					bro.getBackground().buildDescription(true);
+				}
+			}
+		}
+
+		return necros != 0;
 	}
 
 	function onUpdateDraftList( _list, _gender )
 	{
-		local r = this.Math.rand(0, 2);
+		local r;
+		r = this.Math.rand(0, 3);
+
+		if (r == 0)
+		{
+			_list.push("legend_puppet_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 5);
 
 		if (r == 0)
 		{
 			_list.push("graverobber_background");
 		}
+
+		local r;
+		r = this.Math.rand(0, 5);
+
+		if (r == 0)
+		{
+			_list.push("gravedigger_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 7);
+
+		if (r == 0)
+		{
+			_list.push("cultist_background");
+		}
 	}
 
-	function onHiredByScenario( bro )
+	function onHiredByScenario( bro ) //give pathfinder
 	{
-		bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
-		local r = this.Math.rand(0, 2);
-
-		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
 		{
-			bro.improveMood(0.5, "Finds perverse joy in your actions");
-
-			if (r == 0)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
-			}
+			bro.improveMood(1.5, "These people really understand me!");
+			bro.getSprite("socket").setBrush("bust_base_undead");
 		}
-		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
+		else if (bro.getBackground().getID() == "background.puppet")
 		{
-			bro.worsenMood(1.5, "Is deeply disturbed by you");
+			bro.getSprite("socket").setBrush("bust_base_undead");
+		}
+		else
+		{
+			bro.worsenMood(2.0, "Something doesn't feel right here...");
+		}
+	}
 
-			if (r == 0)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
-			}
+	function onUpdateHiringRoster( _roster )
+	{
+		local garbage = [];
+		local bros = _roster.getAll();
 
-			if (r == 1)
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
 			{
-				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
 			}
+			else
+			{
+				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.50);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.50);
+			}
+            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
+            {
+                garbage.push(bro);
+            }
 		}
 	}
 

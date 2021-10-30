@@ -5,7 +5,7 @@ this.legend_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legen
 		this.legend_spawn_skill.create();
 		this.m.ID = "actives.legend_spawn_zombie_low_skill";
 		this.m.Name = "Summon Light Zombie";
-		this.m.Description = "Unleash your zombie and send him charging into the enemy. Needs a free tile adjacent.";
+		this.m.Description = "Summon a fallen peasant and send it charging into the enemy. Needs a free tile adjacent.";
 		this.m.Icon = "skills/mold_carrion.png",
 		this.m.IconDisabled = "skills/mold_carrion_bw.png",
 		this.m.Overlay = "mold_carrion";
@@ -22,11 +22,11 @@ this.legend_spawn_zombie_low_skill <- this.inherit("scripts/skills/actives/legen
 		];
 		this.m.SpawnItem =  "spawns.zombie",
 		this.m.Script = "scripts/entity/tactical/legends_zombie_low"
-		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 10;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 18;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
-		this.m.HPCost = 10;
+		this.m.HPCost = 15;
 	}
 
 });
