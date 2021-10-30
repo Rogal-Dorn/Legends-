@@ -6057,7 +6057,7 @@ Recruitment:
 - Updated MSU to v.0.6.16.
 - `createReputationTiers( _startingReputation )` now takes the scenario's starting reputation as an argument instead of `_firstTierReputation`. The first reputation tier it will create will be the one **above** the provided starting reputation. For example, if you provide 0, the first tier will be at 250.
 
-## 15.0.1.21e
+## 15.0.1.21f
 **New origin rework: The Cabal**
 - Replaces Warlock origin.
 - Difficulty increased from 2 to 3.
@@ -6157,6 +6157,6 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Necromancer joined as programmer.
 - Theplahunter joined as writer.
 
-## 15.0.1.21f
+## 15.0.1.21g
 - Fixed not being able to enter settlements where a hireable recruit was wearing jester hat.
 - Fixed not being able to wear jester hat.
