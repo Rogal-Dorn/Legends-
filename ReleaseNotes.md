@@ -6156,3 +6156,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 **Team Changes**
 - Necromancer joined as programmer.
 - Theplahunter joined as writer.
+
+## 15.0.1.21f
+- Fixed not being able to enter settlements where a hireable recruit was wearing jester hat.
+- Fixed not being able to wear jester hat.
