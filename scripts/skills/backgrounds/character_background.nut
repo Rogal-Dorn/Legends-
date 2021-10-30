@@ -639,6 +639,51 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function removePerk( _perk )
+	{
+		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
+		if (!(perkDefObject.ID in this.m.PerkTreeMap))
+		{
+			return false;
+		}
+
+		local row = this.m.PerkTreeMap[perkDefObject.ID].Row;
+
+		local perkTree = this.getPerkTree();
+		foreach (i, perk in perkTree[row])
+		{
+			if (perk.ID == perkDefObject.ID)
+			{
+				perkTree[row].remove(i);
+				break;
+			}
+		}
+
+		foreach (i, perk in this.m.CustomPerkTree[row])
+		{
+			if (perk == _perk)
+			{
+				this.m.CustomPerkTree[row].remove(i);
+				break;
+			}
+		}
+
+		delete this.m.PerkTreeMap[perkDefObject.ID];
+		
+		return true;
+	}
+
+	function removePerkGroup( _group )
+	{
+		foreach (i, row in _group.Tree)
+		{
+			foreach (perk in row)
+			{
+				this.removePerk(perk);
+			}
+		}
+	}
+
 	function buildDescription( _isFinal = false )
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
