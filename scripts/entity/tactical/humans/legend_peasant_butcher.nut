@@ -51,17 +51,7 @@ this.legend_peasant_butcher <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Mainhand))
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r <= 3)
-			{
 				this.m.Items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
-			}
-			else if (r == 4)
-			{
-				this.m.Items.equip(this.new("scripts/items/weapons/knife"));
-			}
-
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
