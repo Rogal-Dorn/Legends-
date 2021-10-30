@@ -524,7 +524,7 @@ layers = [
     "adesc" : "Includes armor of overlapping leather plates."
 },
 {"name": "legend_armor_cult_armor",                 "layer": "plate", "min": 1, "max": 1, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Cultish Leather Armor", \
+    "title" :  "Cultist Leather Armor", \
     "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.", \
     "adesc" : "Includes an occult armor of overlapping leather plates."
 },
