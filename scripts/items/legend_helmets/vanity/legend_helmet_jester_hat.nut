@@ -37,31 +37,33 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		return result;
 	}
 
-	function onArmorTooltip( result )
+	function onArmorTooltip( _result )
 	{
-		result.push({
+		_result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Adds the \'Taunt\' skill."
+			text = "Adds the \'Taunt\' skill"
 		});
-		result.push({
+		_result.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Makes adjacent enemies more likely to hit you."
+			text = "Makes enemies more likely to attack you"
 		});
-		result.push({
+		_result.push({
 			id = 7,
 			type = "text",
-			icon = "ui/icons/special.png",
-			text = "You feel like the centre of attention to all things, including projeciles..."
+			icon = "ui/icons/melee_defense.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Melee Defense per surrounding enemy"
 		});
-		return result
+
+		return _result;
 	}
 
     function onUpdateProperties(_properties)
     {
+    	this.legend_helmet_upgrade.onUpdateProperties(_properties);
   		_properties.SurroundedDefense -= 3; // -3 defence per enemy surrounding this unit while equipped
 		_properties.TargetAttractionMult *= 1.2; // 1.0 = normal aggression, 0.1 = minimal aggression
     }
@@ -80,7 +82,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 
 	function onEquip()
 	{
-	  this.helmet.onEquip()
+	  this.legend_helmet_upgrade.onEquip();
 	  if (!this.m.Container.getActor().getSkills().hasSkill("perk.taunt"))
 	  {
 	      this.addSkill(this.new("scripts/skills/actives/taunt"));
