@@ -685,6 +685,39 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function hasPerk( _perk )
+	{
+		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
+		return perkDefObject.ID in this.m.PerkTreeMap;
+	}
+
+	function findPerk( _perk )
+	{
+		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
+		if (!(perkDefObject.ID in this.m.PerkTreeMap))
+		{
+			return null;
+		}
+
+		local ret = {
+			Perk = null,
+			Row = 0,
+			PerkDefObject = perkDefObject;
+		};
+
+		ret.Row = this.m.PerkTreeMap[perkDefObject.ID].Row;
+		foreach (i, perk in this.m.CustomPerkTree[row])
+		{
+			if (perk == _perk)
+			{
+				ret.Perk = perk;
+				break;
+			}
+		}
+
+		return ret;
+	}
+
 	function buildDescription( _isFinal = false )
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Scenario))
