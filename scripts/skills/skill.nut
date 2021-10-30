@@ -1547,12 +1547,22 @@ this.skill <- {
 		{
 			local diff = getDifferenceInProperty("RangedSkill", targetEntity);
 
-			if (diff != null && diff > 0)
+			if (diff != null)
 			{
-				ret.insert(0, {
-					icon = "ui/tooltips/positive.png",
-					text = green(diff + "%") + " " + thisSkill.getName()
-				});
+				if (diff > 0)
+				{
+					ret.insert(0, {
+						icon = "ui/tooltips/positive.png",
+						text = green(diff + "%") + " " + thisSkill.getName()
+					});
+				}
+				else if (diff < 0)
+				{
+					ret.insert(0, {
+						icon = "ui/tooltips/negative.png",
+						text = red(diff + "%") + " " + thisSkill.getName()
+					});
+				}
 			}
 		}
 
