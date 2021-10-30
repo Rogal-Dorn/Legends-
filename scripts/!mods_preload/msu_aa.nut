@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.17");
+::mods_registerMod("mod_MSU", 1.0, "Modding Standards and Utils 0.6.20");
 
 gt.MSU <- {};
 
@@ -52,4 +52,7 @@ gt.MSU <- {};
 
 	gt.MSU.modTooltipEvents();
 	delete gt.MSU.modTooltipEvents;
+
+	gt.MSU.modMisc();
+	delete gt.MSU.modMisc;
 });
