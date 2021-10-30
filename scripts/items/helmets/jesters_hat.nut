@@ -22,7 +22,6 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.StaminaModifier = 0;
 	}
 
-
 	function getTooltip()
 	{
 		local result = this.helmet.getTooltip();
@@ -30,18 +29,29 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Grants the wearer a +10% chance to hit the head"
+			text = "Adds the \'Taunt\' skill"
 		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Makes enemies more likely to attack you"
+		});
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/melee_defense.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Melee Defense per surrounding enemy"
+		});
+		
 		return result;
 	}
 
 	function onUpdateProperties( _properties )
 	{
-
-		this.helmet.onUpdateProperties(_properties);
-		_properties.HitChance[this.Const.BodyPart.Head] += 10;
-		
-
+		this.helmet.onUpdateProperties(_properties);		
+  		_properties.SurroundedDefense -= 3; // -3 defence per enemy surrounding this unit while equipped
+		_properties.TargetAttractionMult *= 1.2; // 1.0 = normal aggression, 0.1 = minimal aggression
 	}
 
 	function updateVariant()
@@ -52,5 +62,14 @@ this.jesters_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteCorpse = "jester_hat_" + variant + "_dead";
 		this.m.IconLarge = "";
 		this.m.Icon = "helmets/inventory_jester_hat_" + variant + ".png";
+	}
+
+	function onEquip()
+	{
+	  this.helmet.onEquip()
+	  if (!this.m.Container.getActor().getSkills().hasSkill("perk.taunt"))
+	  {
+	      this.addSkill(this.new("scripts/skills/actives/taunt"));
+	  }
 	}
 });
