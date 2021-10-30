@@ -6152,3 +6152,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **KNOWN ISSUES**
 - Puppets can get permament injuries they should not have (brain damage, trauma, etc.), this will be addressed in a later update.
+
+**Team Changes**
+- Necromancer joined as programmer.
+- Theplahunter joined as writer.
