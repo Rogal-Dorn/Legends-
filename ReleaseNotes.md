@@ -6103,7 +6103,7 @@ Militia now start with an extra bag of grain, which should give them one more da
 Militia now use militia baseplates in battle.
 
 **Fixes**
-Pilgrim now benefits from fortified mind when recruited by the crusader, does not hate being recruited anymore.
+Pilgrim now benefits from fortified mind when recruited by the crusader, does not hate being recruited anymore. A few other Crusader backgrounds did not work as intended when recruited and should now be fixed.
 Minor typo fixes to ranger and enbalmed contract
 Cultist hood blueprint should be layered now when crafted
 
@@ -6116,6 +6116,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 Added in a 'how they play' section to cultist intro event which should answer most questions about the origin.
 Made the Hollenhund debuff effect less huge.
 Few pieces of incorrect info in militia origin corrected.
+Squire is no longer tagged as a crusader recruit.
 
 **Art**
 Noble origin now has a new map marker.
