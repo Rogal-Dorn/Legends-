@@ -18,7 +18,7 @@ this.legend_infantry_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_footman_axe_01";
-		this.m.Value = 1400;
+		this.m.Value = 1750;
 		this.m.ShieldDamage = 40;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;

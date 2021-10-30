@@ -18,7 +18,7 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_axe_two_handed_02";
-		this.m.Value = 400;
+		this.m.Value = 450;
 		this.m.ShieldDamage = 30;
 		this.m.Condition = 48.0;
 		this.m.ConditionMax = 48.0;

@@ -28,7 +28,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
-		}
+		} 
 	}
 
 
@@ -49,6 +49,12 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 
 	function onUpdateDraftList( _draftList, _gender )
 	{
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			_draftList.push("legend_nightwatch_background");
+			_draftList.push("legend_nightwatch_background");
+			_draftList.push("legend_nightwatch_background");
+		}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{

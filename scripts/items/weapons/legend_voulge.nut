@@ -15,7 +15,7 @@ this.legend_voulge <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 900;
+		this.m.Value = 2500;
 		this.m.Condition = 56.0;
 		this.m.ConditionMax = 56.0;
 		this.m.StaminaModifier = -10;

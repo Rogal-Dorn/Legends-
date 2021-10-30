@@ -18,7 +18,7 @@ this.greataxe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_axe_two_handed_01";
-		this.m.Value = 2400;
+		this.m.Value = 2725;
 		this.m.ShieldDamage = 36;
 		this.m.Condition = 80.0;
 		this.m.ConditionMax = 80.0;

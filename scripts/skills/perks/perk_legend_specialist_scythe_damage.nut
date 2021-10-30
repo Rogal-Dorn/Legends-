@@ -18,7 +18,7 @@ this.perk_legend_specialist_scythe_damage <- this.inherit("scripts/skills/skill"
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.legend_grisly_scythe" || item.getID() == "weapon.legend_scythe")
+			if (item.getID() == "weapon.legend_grisly_scythe" || item.getID() == "weapon.legend_scythe" || item.getID() == "weapon.warscythe" || item.getID() == "weapon.named_warscythe")
 			{
 				_properties.DamageRegularMin += 10;
 				_properties.DamageRegularMax += 15;

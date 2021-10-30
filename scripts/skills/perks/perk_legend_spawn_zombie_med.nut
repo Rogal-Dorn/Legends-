@@ -20,6 +20,7 @@ this.perk_legend_spawn_zombie_med <- this.inherit("scripts/skills/skill", {
 		stash.add(this.new("scripts/items/spawns/zombie_item"));
 		stash.add(this.new("scripts/items/spawns/zombie_item"));
 		stash.add(this.new("scripts/items/spawns/zombie_item"));
+		this.World.Assets.addMedicine(30);
 	}
 
 	function onAdded()
@@ -27,14 +28,14 @@ this.perk_legend_spawn_zombie_med <- this.inherit("scripts/skills/skill", {
 		if (!this.m.Container.hasSkill("actives.legend_spawn_zombie_med_skill"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_med_skill"));
-			this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_med_xbow_skill"));
+			//this.m.Container.add(this.new("scripts/skills/actives/legend_spawn_zombie_med_xbow_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_spawn_zombie_med_skill");
-		this.m.Container.removeByID("actives.legend_spawn_zombie_med_xbow_skill");
+		//this.m.Container.removeByID("actives.legend_spawn_zombie_med_xbow_skill");
 	}
 
 });

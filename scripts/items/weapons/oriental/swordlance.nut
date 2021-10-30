@@ -17,7 +17,7 @@ this.swordlance <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_swordlance_01";
-		this.m.Value = 1300;
+		this.m.Value = 1600;
 		this.m.ShieldDamage = 0;
 		this.m.Condition = 52.0;
 		this.m.ConditionMax = 52.0;
