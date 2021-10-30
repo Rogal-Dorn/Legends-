@@ -702,7 +702,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		local ret = {
 			Perk = null,
 			Row = 0,
-			PerkDefObject = perkDefObject;
+			PerkDefObject = perkDefObject
 		};
 
 		ret.Row = this.m.PerkTreeMap[perkDefObject.ID].Row;
