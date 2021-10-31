@@ -6161,12 +6161,14 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Fixed not being able to enter settlements where a hireable recruit was wearing jester hat.
 - Fixed not being able to wear jester hat.
 
-## 15.0.1.???????
-
+## 15.0.1.21h
 **Fixes**
-"tiny" trait did not have the correct damage modifier applied, now fixed (was -10%, should be -15%).
-Cultist lurker terrain increase fixed.
-Dedication now stipulates a normal sack works with the skill. Dedication benefit reduced from 25% to 15%.
+- Fixed the battle freezing in combat with alps, unholds etc.
+- Fixed the Orc "Bough" weapon not having the Split Shield skill.
+- Fixed the "Tiny" trait not having the correct damage modifier applied (was -10%, should be -15%).
+- Cultist lurker terrain speed increase fixed.
+- Dedication now stipulates a normal sack works with the skill. Dedication benefit reduced from 25% to 15%.
+- Fixed a typo in the cultist intro.
 
-**Typo Fixes**
-Fixed a typo in the cultist intro.
+**Modding**
+- Updated to MSU v0.6.21. See MSU changelog.
