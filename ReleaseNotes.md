@@ -6165,3 +6165,8 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Fixes**
 "tiny" trait did not have the correct damage modifier applied, now fixed (was -10%, should be -15%).
+Cultist lurker terrain increase fixed.
+Dedication now stipulates a normal sack works with the skill. Dedication benefit reduced from 25% to 15%.
+
+**Typo Fixes**
+Fixed a typo in the cultist intro.

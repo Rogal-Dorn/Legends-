@@ -29,8 +29,8 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 				{
 					if (l != null && (l == "armor.head.legend_helmet_sack" || l == "armor.head.legend_helmet_cult_hood"))
 					{
-						_properties.MeleeDefense += this.Math.floor(resolve * 0.25);
-						_properties.RangedDefense += this.Math.floor(resolve * 0.25);
+						_properties.MeleeDefense += this.Math.floor(resolve * 0.15);
+						_properties.RangedDefense += this.Math.floor(resolve * 0.15);
 						return;
 					}
 				}
@@ -47,8 +47,8 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 				case "armor.head.legend_named_warlock_hood":
 				case "armor.head.decayed_closed_flat_top_with_sack":
 				case "armor.head.mask_of_davkul":
-					_properties.MeleeDefense += this.Math.floor(resolve * 0.25);
-					_properties.RangedDefense += this.Math.floor(resolve * 0.25);
+					_properties.MeleeDefense += this.Math.floor(resolve * 0.15);
+					_properties.RangedDefense += this.Math.floor(resolve * 0.15);
 					break;
 				}
 			}
