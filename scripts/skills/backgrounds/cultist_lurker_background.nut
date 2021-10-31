@@ -76,13 +76,13 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 				0.00,//plains
 				0.10, //swamp
 				0.0, //hills
-				0.25, //forest
-				0.25, //forest
-				0.25, //forest_leaves
-				0.25, //autumn_forest
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
 				0.0, //mountains
 				0.0, // ?
-				0.25, //farmland
+				0.05, //farmland
 				0.0, // snow
 				0.0, // badlands
 				0.0, //highlands
