@@ -6160,3 +6160,8 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 ## 15.0.1.21g
 - Fixed not being able to enter settlements where a hireable recruit was wearing jester hat.
 - Fixed not being able to wear jester hat.
+
+## 15.0.1.???????
+
+**Fixes**
+"tiny" trait did not have the correct damage modifier applied, now fixed (was -10%, should be -15%).
