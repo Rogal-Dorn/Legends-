@@ -35,6 +35,7 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 			"the Shackled",
 			"the Bound"
 		]
+		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function onBuildDescription()
