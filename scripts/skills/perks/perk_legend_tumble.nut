@@ -29,16 +29,16 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 		{
 			if (this.m.Skills.find(skill.getID()) != null)
 			{
-				skill.m.FatigueCostMult *= 0.5;				
-			}
+				skill.m.FatigueCostMult *= 0.5;
 
-			if (skill.getID() == "actives.legend_leap")
-			{
-				skill.m.ActionPointCost /= 2;
-			}
-			else
-			{
-				skill.m.ActionPointCost -= 1;
+				if (skill.getID() == "actives.legend_leap")
+				{
+					skill.m.ActionPointCost /= 2;
+				}
+				else
+				{
+					skill.m.ActionPointCost -= 1;
+				}		
 			}
 		}
 	}
