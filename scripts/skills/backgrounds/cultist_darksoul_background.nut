@@ -131,7 +131,19 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 		return true;
 	}
 
-
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/campfire.png",
+				text = "Davkul sees this one as spent goods without any value and will never ask you to sacrifice them."
+			}
+		)
+		return ret
+	}
 
 	function onBuildDescription()
 	{
