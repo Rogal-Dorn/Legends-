@@ -798,7 +798,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 			self.mConfigPanel.removeClass('display-block').addClass('display-none');
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Previous");
-			self.mRandomButton.removeClass('display-none').addClass('display-block');
+			//self.mRandomButton.removeClass('display-none').addClass('display-block');
 		}
 
 	}, '', 1);
@@ -905,7 +905,7 @@ NewCampaignMenuModule.prototype.advanceScreen = function () {
 		this.mConfigPanel.removeClass('display-block').addClass('display-none');
 		this.mStartButton.changeButtonText("Next");
 		this.mCancelButton.changeButtonText("Previous");
-		this.mRandomButton.addClass('display-block').removeClass('display-none');
+		//this.mRandomButton.addClass('display-block').removeClass('display-none');
 	} else if (this.mMapPanel.hasClass('display-block')) {
 		this.mFirstPanel.removeClass('display-block').addClass('display-none');
 		this.mSecondPanel.removeClass('display-block').addClass('display-none');
@@ -927,6 +927,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	var rightColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(rightColumn);
 
+	/*
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
@@ -938,7 +939,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	//this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
-
+	*/
 	// this.mMapOptions.ForestsMult.Control.addClass('display-none');
 	// this.mMapOptions.ForestsMult.Title.addClass('display-none');
 	// this.mMapOptions.ForestsMult.Label.addClass('display-none');
