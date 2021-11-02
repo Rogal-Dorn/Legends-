@@ -42,7 +42,6 @@ this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/name
 	{
 		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
-		this.addSkill(this.new("scripts/skills/actives/split"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
