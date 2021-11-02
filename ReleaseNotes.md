@@ -6172,3 +6172,15 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.21. See MSU changelog.
+
+
+
+## 15.0.1.??????????????????????????????
+**Fixes**
+Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs.
+Same goes for cultist leather armour with penance.
+Penance and dedication perks now state they unlock crafting recipies if taken.
+Cultist requirement for sacrifice dropped from 4 valid members to 3.
+Magisters and husks now have a tooltip on their background intro that says they are not elligible sacrifice members.
+
+

@@ -209,7 +209,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 		local brothers = this.World.getPlayerRoster().getAll();
 
-		if (brothers.len() < 4)
+		if (brothers.len() < 3)
 		{
 			return;
 		}
@@ -225,7 +225,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		  candidates.push(bro);
 		}
 		
-		if (candidates.len() < 4)
+		if (candidates.len() < 3)
 		{
 			return;
 		}
