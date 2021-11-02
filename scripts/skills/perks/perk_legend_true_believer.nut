@@ -67,6 +67,10 @@ this.perk_legend_true_believer <- this.inherit("scripts/skills/skill", {
 		if (this.m.Container.hasSkill("trait.insecure"))
 		{
 			this.m.Container.removeByID("trait.insecure");
+		}	
+		if (this.m.Container.hasSkill("trait.craven"))
+		{
+			this.m.Container.removeByID("trait.craven");
 		}		
 	}
 });

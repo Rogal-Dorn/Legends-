@@ -6182,5 +6182,6 @@ Same goes for cultist leather armour with penance.
 Penance and dedication perks now state they unlock crafting recipies if taken.
 Cultist requirement for sacrifice dropped from 4 valid members to 3.
 Magisters and husks now have a tooltip on their background intro that says they are not elligible sacrifice members.
+Craven is now removed by true believer
 
 
