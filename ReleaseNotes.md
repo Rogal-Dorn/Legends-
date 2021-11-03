@@ -6177,11 +6177,13 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 ## 15.0.1.??????????????????????????????
 **Fixes**
-Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs.
-Same goes for cultist leather armour with penance.
+Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs, same goes for cultist leather armour with penance.
 Penance and dedication perks now state they unlock crafting recipies if taken.
 Cultist requirement for sacrifice dropped from 4 valid members to 3.
-Magisters and husks now have a tooltip on their background intro that says they are not elligible sacrifice members.
+Magisters and husks now have a tooltip on their background hover that says they are not elligible sacrifice members.
 Craven is now removed by true believer
+Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png")
 
+**Art**
+Widow, master archer and berserker now have new background art
 
