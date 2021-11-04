@@ -209,7 +209,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		}
 
 		target.setCurrentMovementType(this.Const.Tactical.MovementType.Involuntary);
-		local hasFistMastery = _user.getSkills().hasSkill("perk.perk_mastery_fist");
+		local hasFistMastery = _user.getSkills().hasSkill("perk.mastery_fist");
 		local damage = this.Math.max(0, this.Math.abs(knockToTile.Level - _targetTile.Level) - 1) * this.Const.Combat.FallingDamage;
 
 		if (damage == 0 && !hasFistMastery)
@@ -265,9 +265,9 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		if ("IsSpecializedInFists" in _properties && _properties.IsSpecializedInFists)
+		if ("IsSpecializedInFists" in _properties)
 		{
-			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 			this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
 		}
 	}
