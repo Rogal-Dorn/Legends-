@@ -40,11 +40,8 @@ this.legend_crusader_sword <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd.setStunChance(this.m.StunChance);
 		this.addSkill(skillToAdd);
 		this.addSkill(this.new("scripts/skills/actives/slash"));
-		this.addSkill(this.new("scripts/skills/actives/split"));
-		this.addSkill(this.new("scripts/skills/actives/swing"));
-		local skillToAdd = this.new("scripts/skills/actives/split_shield");
-		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
-		this.addSkill(skillToAdd);
+		this.addSkill(this.new("scripts/skills/actives/swing"));		
+		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
 
 });
