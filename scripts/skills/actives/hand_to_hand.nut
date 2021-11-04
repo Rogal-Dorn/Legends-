@@ -82,8 +82,13 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		return this.m.Container.getActor().getMainhandItem() != null && !this.getContainer().hasSkill("effects.disarmed") || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
-	function onUpdate( _properties )
+	function onAfterUpdate( _properties )
 	{
+		if ("IsSpecializedInFists" in _properties)
+		{
+			this.m.FatigueCostMult = _properties.IsSpecializedInFists ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+			this.m.ActionPointCost = _properties.IsSpecializedInFists ? 3 : 4;
+		}
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
@@ -117,6 +122,11 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				_properties.DamageTotalMult *= 1.25;
 				break;
 			}
+		}
+
+		if ("IsSpecializedInFists" in _properties && _properties.IsSpecializedInFists)
+		{
+			_properties.DamageDirectMult *= 1.15;
 		}
 	}
 
