@@ -6187,3 +6187,8 @@ Widow, master archer and berserker background .pngs were not named as they shoul
 **Art**
 Widow, master archer and berserker now have new background art
 
+**Misc**
+"Reinforced flail" (from file; legend_reinforced_flail) has be renamed to "Reinforced Improvised Warflail" and had its description updated to match to avoid confusion with the vanilla reinforced flail.
+
+**For Modders**
+perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.
