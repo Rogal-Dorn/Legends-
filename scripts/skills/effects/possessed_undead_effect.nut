@@ -93,7 +93,7 @@ this.possessed_undead_effect <- this.inherit("scripts/skills/skill", {
 					local sprite = actor.getSprite("status_rage");
 					sprite.fadeOutAndHide(1500);
 
-					if (actor.isAlive())
+					if (this.m.IsAlive)
 					{
 						this.Time.scheduleEvent(this.TimeUnit.Real, 1800, function ( _d )
 						{
