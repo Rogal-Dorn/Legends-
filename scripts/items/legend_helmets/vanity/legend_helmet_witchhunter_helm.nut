@@ -14,7 +14,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 600;
+		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
@@ -36,8 +36,8 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		result.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Wearer is not affected by night penalties"
+			icon = "ui/icons/bravery.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}
@@ -45,7 +45,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
     function onUpdateProperties(_properties)
     {
         this.legend_helmet_upgrade.onUpdateProperties(_properties);
-        _properties.IsAffectedByNight = false;
+		_properties.MoraleCheckBravery[1] += 5;
     }
 
 	function updateVariant()
@@ -62,8 +62,6 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 
 	function onDeserialize( _in )
 	{
-		if ( _in.getMetaData().getVersion() < 67) this.legend_helmet_upgrade.onDeserialize( _in );
-		else this.legend_named_helmet_upgrade.onDeserialize( _in );
 	}
 
 });
