@@ -6189,7 +6189,7 @@ Fixed typo in nightwatch background that caused some towns to not load.
 Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
 Cabal puppets now have a few more outfits to draw from.
 Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
-Witchhunter's helm increased from 200 to 600 in value.
+Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
 
 **Art**
 Widow, master archer and berserker now have new background art.
