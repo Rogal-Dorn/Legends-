@@ -125,7 +125,6 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 					this.Const.Perks.PerkDefs.Taunt,
-					this.Const.Perks.PerkDefs.LegendReclamation,
 					this.Const.Perks.PerkDefs.LegendHidden
 				],
 				[
