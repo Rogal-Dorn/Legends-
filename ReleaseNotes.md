@@ -6188,12 +6188,16 @@ Fixed typo in nightwatch background that caused some towns to not load.
 **Balance**
 Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
 Cabal puppets now have a few more outfits to draw from.
+Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
+Witchhunter's helm increased from 200 to 600 in value.
 
 **Art**
-Widow, master archer and berserker now have new background art
+Widow, master archer and berserker now have new background art.
 
 **Misc**
 "Reinforced flail" (from file; legend_reinforced_flail) has be renamed to "Reinforced Improvised Warflail" and had its description updated to match to avoid confusion with the vanilla reinforced flail.
+Witchunter helm now named witchhunter's capotain (its not a helmet).
+Changed a few icons on jester, witchunter and hunter hat tooltips to make them more visually descriptive.
 
 **For Modders**
 perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.

@@ -6,15 +6,15 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.legend_named_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_witchhunter_helm";
-		this.m.Name = "Witchhunter Helm";
-		this.m.Description = "A tough leather hat that provides decent protection against scratches.";
+		this.m.Name = "Witchhunter\'s Capotain";
+		this.m.Description = "A tough leather hat that provides decent protection against scratches. It also allows the user to see more clearly in gloomy conditions.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];
         this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
-		this.m.Value = 200;
+		this.m.Value = 600;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
@@ -36,7 +36,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		result.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/vision.png",
 			text = "Wearer is not affected by night penalties"
 		});
 		return result;

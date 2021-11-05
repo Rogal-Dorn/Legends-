@@ -48,7 +48,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		_result.push({
 			id = 7,
 			type = "text",
-			icon = "ui/icons/special.png",
+			icon = "ui/icons/chance_to_hit_head.png",
 			text = "Makes enemies more likely to attack you"
 		});
 		_result.push({
