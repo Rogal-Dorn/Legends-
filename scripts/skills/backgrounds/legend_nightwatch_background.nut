@@ -161,7 +161,7 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/traits/night_owl"));
+		this.m.Container.add(this.new("scripts/skills/traits/night_owl_trait"));
 	}
 
 	function onAddEquipment()

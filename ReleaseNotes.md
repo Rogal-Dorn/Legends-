@@ -6183,6 +6183,8 @@ Cultist requirement for sacrifice dropped from 4 valid members to 3.
 Magisters and husks now have a tooltip on their background hover that says they are not elligible sacrifice members.
 Craven is now removed by true believer
 Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png")
+Fixed typo in nightwatch background that caused some towns to not load.
+
 
 **Art**
 Widow, master archer and berserker now have new background art
