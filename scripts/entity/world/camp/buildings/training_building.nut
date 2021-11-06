@@ -3,7 +3,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		Results = [],
 		NumBros = 0,
 		UnTrained = 0,
-		BaseCraft = 1.0
+		BaseCraft = 0.3 // was 1.0, changed 6/11/21 - Luft
 	},
 	function create()
 	{
@@ -173,7 +173,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 			if (bro.getSkills().hasSkill("perk.legend_back_to_basics"))
 			{
-				mod = mod * 1.1;
+				mod = mod * 0.4;
 			}
 
 			++ret.Assigned;

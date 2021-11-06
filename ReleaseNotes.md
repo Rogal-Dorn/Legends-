@@ -6191,6 +6191,9 @@ Cabal puppets now have a few more outfits to draw from.
 Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
 Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
 
+Poss' changes to training;
+Basecraft value of training grounds reduced from 1.0 or 0.3. Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
+
 **Art**
 Widow, master archer and berserker now have new background art.
 
