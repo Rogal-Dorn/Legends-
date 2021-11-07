@@ -53,8 +53,12 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 			_draftList.push("female_butcher_background");
 			_draftList.push("female_butcher_background");
 			_draftList.push("female_butcher_background");
-		}
 
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		{
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+		}
 	}
 
 });

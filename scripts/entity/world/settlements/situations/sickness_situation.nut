@@ -55,7 +55,14 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("female_beggar_background");
 		_draftList.push("legend_nun_background");
 		_draftList.push("legend_herbalist_background");
+		}
 
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		{
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
 		}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())

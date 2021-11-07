@@ -47,5 +47,14 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 		_modifiers.RecruitsMult *= 0.5;
 	}
 
+	function onUpdateDraftList( _draftList, _gender )
+	{
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		{
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+		}
+	}
+
 });
 

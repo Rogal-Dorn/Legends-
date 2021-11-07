@@ -6172,3 +6172,35 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.21. See MSU changelog.
+
+
+
+## 15.0.1.??????????????????????????????
+**Fixes**
+Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs, same goes for cultist leather armour with penance.
+Penance and dedication perks now state they unlock crafting recipies if taken.
+Cultist requirement for sacrifice dropped from 4 valid members to 3.
+Magisters and husks now have a tooltip on their background hover that says they are not elligible sacrifice members.
+Craven is now removed by true believer
+Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png")
+Fixed typo in nightwatch background that caused some towns to not load.
+
+**Balance**
+Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
+Cabal puppets now have a few more outfits to draw from.
+Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
+Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
+
+Poss' changes to training;
+Basecraft value of training grounds reduced from 1.0 or 0.3. Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
+
+**Art**
+Widow, master archer and berserker now have new background art.
+
+**Misc**
+"Reinforced flail" (from file; legend_reinforced_flail) has be renamed to "Reinforced Improvised Warflail" and had its description updated to match to avoid confusion with the vanilla reinforced flail.
+Witchunter helm now named witchhunter's capotain (its not a helmet).
+Changed a few icons on jester, witchunter and hunter hat tooltips to make them more visually descriptive.
+
+**For Modders**
+perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.

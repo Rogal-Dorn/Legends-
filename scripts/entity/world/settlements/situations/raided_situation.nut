@@ -57,7 +57,14 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 		_draftList.push("gravedigger_background");
 		_draftList.push("beggar_background");
 
-
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		{
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+			_draftList.push("legend_puppet_background");
+		}
 	}
 
 });
