@@ -173,7 +173,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 			if (bro.getSkills().hasSkill("perk.legend_back_to_basics"))
 			{
-				mod = mod * 0.4;
+				mod += 0.1;
 			}
 
 			++ret.Assigned;
