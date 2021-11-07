@@ -615,7 +615,7 @@ layers = [
  "desc" :  "A nasal helmet witch an attached mail neck guard fashioned in the way of the steppe folks." \
 },
 {"name" : "basinet"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1250, "con" : 80, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
- "title" :  "Basinet", \
+ "title" :  "Bascinet", \
  "desc" :  "A well made metal bascinet." \
 },
 {"name" : "bascinet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2500, "con" : 90, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 2, "rminStam" : 4, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,  \
@@ -750,7 +750,7 @@ layers = [
  "title" :  "Masked Gladiator Helm", \
  "desc" :  "An impressive metal helmet crafted to intimidate the opponents of pit fighters in arenas of the southern city states." \
 },
-{"name" : "southern_helmet_nasal"                     , "layer" : "helm", "min" : 1, "max" : 8, "value" : 750, "con" : 125, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_helmet_nasal"                     , "layer" : "helm", "min" : 1, "max" : 8, "value" : 1000, "con" : 125, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Heavy Lamellar Helmet", \
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
@@ -762,7 +762,7 @@ layers = [
  "title" :  "Italio Conic Helm", \
  "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
 },
-{"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 350, "con" : 75, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1000, "con" : 75, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Southern Conic Helm", \
  "desc" :  "A conic helm from the south." \
 },
