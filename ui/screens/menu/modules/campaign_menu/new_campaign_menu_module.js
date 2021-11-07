@@ -405,7 +405,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 
 		var extraLateControl = $('<div class="control permanent-destruction-control"/>');
 		row.append(extraLateControl);
-		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late" checked/>');
+		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late"/>');
 		extraLateControl.append(this.mEvilPermanentDestructionCheckbox);
 		this.mEvilPermanentDestructionLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-extra-late">Permanent Destruction</label>');
 		extraLateControl.append(this.mEvilPermanentDestructionLabel);
@@ -798,7 +798,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 			self.mConfigPanel.removeClass('display-block').addClass('display-none');
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Previous");
-			self.mRandomButton.removeClass('display-none').addClass('display-block');
+			//self.mRandomButton.removeClass('display-none').addClass('display-block');
 		}
 
 	}, '', 1);
@@ -905,7 +905,7 @@ NewCampaignMenuModule.prototype.advanceScreen = function () {
 		this.mConfigPanel.removeClass('display-block').addClass('display-none');
 		this.mStartButton.changeButtonText("Next");
 		this.mCancelButton.changeButtonText("Previous");
-		this.mRandomButton.addClass('display-block').removeClass('display-none');
+		//this.mRandomButton.addClass('display-block').removeClass('display-none');
 	} else if (this.mMapPanel.hasClass('display-block')) {
 		this.mFirstPanel.removeClass('display-block').addClass('display-none');
 		this.mSecondPanel.removeClass('display-block').addClass('display-none');
@@ -1342,6 +1342,7 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.attr('max', _definition.Max);
 	_definition.Control.attr('step', _definition.Step);
 	_definition.Control.val(_definition.Value);
+	_definition.Control.prop('disabled', true)
 	control.append(_definition.Control);
 
 	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' + _definition.Value + '</div>');

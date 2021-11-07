@@ -4539,7 +4539,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Number of tiles in wide. Default is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
+					text = "Width of the map in number of tiles. Default is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
 				}
 			];
 
@@ -4553,7 +4553,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Number of tiles in hieght. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
+					text = "Height of the map in number of tiles. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
 				}
 			];
 
@@ -4581,7 +4581,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Impacts how much of the map is water. Small value results in patchy water around corners of map. larger numbers can create a single large island given a low enough land mass ratio."
+					text = "Impacts how much of the map is water. Small value results in patchy water around the corners of the map. Larger numbers can create a single large island given a low enough land mass ratio."
 				}
 			];
 
@@ -4595,7 +4595,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "Determines where the snowline is generated. Default is 90. This value is inverted. a value of 10 would mean the top 90% of the map is snow."
+					text = "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow."
 				}
 			];
 

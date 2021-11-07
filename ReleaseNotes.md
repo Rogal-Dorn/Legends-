@@ -6204,3 +6204,6 @@ Changed a few icons on jester, witchunter and hunter hat tooltips to make them m
 
 **For Modders**
 perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.
+
+- Disabled map sliders for the time being
+- Fixed map generation typos
