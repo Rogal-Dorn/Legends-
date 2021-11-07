@@ -310,13 +310,16 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		//	[1, "decayed_coat_of_plates"],
 		//	[1, "southern_knight_armor"],		
 			[1, "decayed_coat_of_scales"],
-			[2, "decayed_reinforced_mail_hauberk"],
-			[3, "basic_mail_shirt"],
-			[4, "apron"],
-			[2, "cultist_leather_robe"],
-			[4, "gambeson"],
-			[2, "dark_southern_armor_00"],
+			[1, "dark_southern_armor_00"],
 			[2, ""],
+			[2, "decayed_reinforced_mail_hauberk"],
+			[2, "cultist_leather_robe"],
+			[3, "basic_mail_shirt"],
+			[3, "gambeson"],
+			[4, "apron"],
+			[4, "butcher_apron"],
+			[4, "leather_tunic"],
+			[5, "leather_wraps"],
 			[5, "linen_tunic", this.Math.rand(6, 7)]
 		]));
 
@@ -327,10 +330,11 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		//	[1, "decayed_full_helm"],
 		//	[2, "legend_noble_southern_hat"],			
 			[2, "full_aketon_cap"],
+			[2, "kettle_hat"],			
 		//	[2, "dark_southern_helmet_00"],
-			[4, ""],
 			[3, "open_leather_cap"],
-			[3, "full_leather_cap"]
+			[3, "full_leather_cap"],
+			[4, ""]
 		]));
 	}
 });

@@ -6,8 +6,8 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.legend_named_helmet_upgrade.create();
 		this.m.Type = this.Const.Items.HelmetUpgrades.Vanity;
 		this.m.ID = "armor.head.legend_helmet_witchhunter_helm";
-		this.m.Name = "Witchhunter Helm";
-		this.m.Description = "A tough leather hat that provides decent protection against scratches.";
+		this.m.Name = "Witchhunter\'s Capotain";
+		this.m.Description = "A tough leather hat that provides decent protection against scratches. It also allows the user to see more clearly in gloomy conditions.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];
         this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
@@ -36,8 +36,8 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		result.push({
 			id = 6,
 			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Wearer is not affected by night penalties"
+			icon = "ui/icons/bravery.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve at morale checks against fear, panic or mind control effects"
 		});
 		return result;
 	}
@@ -45,7 +45,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
     function onUpdateProperties(_properties)
     {
         this.legend_helmet_upgrade.onUpdateProperties(_properties);
-        _properties.IsAffectedByNight = false;
+		_properties.MoraleCheckBravery[1] += 5;
     }
 
 	function updateVariant()
@@ -62,8 +62,6 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 
 	function onDeserialize( _in )
 	{
-		if ( _in.getMetaData().getVersion() < 67) this.legend_helmet_upgrade.onDeserialize( _in );
-		else this.legend_named_helmet_upgrade.onDeserialize( _in );
 	}
 
 });
