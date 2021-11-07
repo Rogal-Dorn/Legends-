@@ -405,7 +405,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv) {
 
 		var extraLateControl = $('<div class="control permanent-destruction-control"/>');
 		row.append(extraLateControl);
-		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late" checked/>');
+		this.mEvilPermanentDestructionCheckbox = $('<input type="checkbox" id="cb-extra-late"/>');
 		extraLateControl.append(this.mEvilPermanentDestructionCheckbox);
 		this.mEvilPermanentDestructionLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-extra-late">Permanent Destruction</label>');
 		extraLateControl.append(this.mEvilPermanentDestructionLabel);
@@ -927,7 +927,6 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	var rightColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(rightColumn);
 
-	/*
 	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
@@ -939,7 +938,7 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	//this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
 	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
-	*/
+
 	// this.mMapOptions.ForestsMult.Control.addClass('display-none');
 	// this.mMapOptions.ForestsMult.Title.addClass('display-none');
 	// this.mMapOptions.ForestsMult.Label.addClass('display-none');
@@ -1343,6 +1342,7 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.attr('max', _definition.Max);
 	_definition.Control.attr('step', _definition.Step);
 	_definition.Control.val(_definition.Value);
+	_definition.Control.prop('disabled', true)
 	control.append(_definition.Control);
 
 	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' + _definition.Value + '</div>');
