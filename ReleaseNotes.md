@@ -6172,3 +6172,8 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.21. See MSU changelog.
+
+
+## 15.0.1.21i (Taro)
+- Disabled map sliders for the time being
+- Fixed map generation typos
