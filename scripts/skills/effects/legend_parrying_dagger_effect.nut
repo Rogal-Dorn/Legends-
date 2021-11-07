@@ -40,6 +40,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.IsParrying = true;
+
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
 			this.m.IsHidden = true;
@@ -47,45 +48,15 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		local actor = this.getContainer().getActor();
-		local myTile = actor.getTile();
-		local myFaction = actor.getFaction();
-		local nearbyEnemies = 0;
-		local actors = this.Tactical.Entities.getAllInstances();
-		local bonus = 0;
+		local numAdjacentEnemies = actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len();
 
-		foreach( i in actors )
-		{
-			foreach( a in i )
-			{
-				if (a.getFaction() != myFaction)
-				{
-					if (a.getTile().getDistanceTo(myTile) <= 1)
-						{
-							++nearbyEnemies;
-							break;
-						}
-
-				}
-			}
-		}
-		if (nearbyEnemies == 1)
-		{
-		this.m.Bonus = 20;
-		}
-		if (nearbyEnemies == 2)
-		{
-		this.m.Bonus = 5;
-		}
+		this.m.Bonus = numAdjacentEnemies == 1 ? 20 : 5;
 
 		_properties.MeleeDefense += this.m.Bonus;
-
-
-
 	}
 
 	function onCombatFinished()
 	{
 		this.m.IsHidden = true;
 	}
-
 });
