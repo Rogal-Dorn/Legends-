@@ -113,20 +113,6 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.BadEnding = "The fighting life is a rough one, and %name% the once-beggar saw fit to retire from it before it became a deadly one. Unfortunately, she went back to beggaring. Word has it that a nobleman cleaned a city of riff-raff and sent them marching north despite it being winter. Cold and hungry, %name% died on the side of a road, a tin cup frozen to her finger.";
 	}
 
-	function getTooltip()
-	{
-		local ret = this.character_background.getTooltip()
-		ret.push(
-			{
-				id = 12,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Can evolve by defeating strong enemies."
-			}
-		)
-		return ret
-	}
-
 	function onBuildDescription()
 	{
 		return "{Having stolen gold from a dead noble, and being framed for the murder, this beggar is on the run!}";
