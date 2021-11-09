@@ -6186,6 +6186,7 @@ Craven is now removed by true believer
 Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png")
 Fixed typo in nightwatch background that caused some towns to not load.
 Removed a named leather jacket spawning from "ragged_dark_surcoat" itemlist
+Double mail attachment had the wrong durability. Now fixed.
 
 **Balance**
 Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
