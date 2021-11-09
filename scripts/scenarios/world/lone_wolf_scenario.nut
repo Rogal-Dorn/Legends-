@@ -242,13 +242,15 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		{
 			if (bro.getBackground().getID() == "background.squire" || bro.getBackground().getID() == "background.hedge_knight" || bro.getBackground().getID() == "background.legend_blacksmith")
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.85);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.85)
+				bro.getBaseProperties().DailyWageMult *= 0.85;
+				bro.getSkills().update();
 			}
 			else
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.00);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00)
+				bro.getBaseProperties().DailyWageMult *= 1.00;
+				bro.getSkills().update();
 			}
 		}
 	}

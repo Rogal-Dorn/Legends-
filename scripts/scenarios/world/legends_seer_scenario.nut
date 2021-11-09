@@ -169,13 +169,15 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.bright"))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.9; //1.0 = default
+				bro.getSkills().update();
 			}
 			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.dumb"))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.1);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.1);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.1) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.1; //1.0 = default
+				bro.getSkills().update();
 			}
 		}
 	}
