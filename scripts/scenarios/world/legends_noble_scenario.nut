@@ -317,14 +317,15 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getSkills().update();
 			}
 			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost  * 1.5);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
-
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+				bro.getSkills().update();
 			}
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{

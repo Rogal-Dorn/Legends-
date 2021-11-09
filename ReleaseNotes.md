@@ -6177,6 +6177,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 ## 15.0.1.??????????????????????????????
 **Fixes**
+Major fixes with hiring and upkeep cost code across all backgrounds - loading a save was causing hiring cost to be reset, which voided the reductions. This is now fixed.
 Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs, same goes for cultist leather armour with penance.
 Penance and dedication perks now state they unlock crafting recipies if taken.
 Cultist requirement for sacrifice dropped from 4 valid members to 3.
