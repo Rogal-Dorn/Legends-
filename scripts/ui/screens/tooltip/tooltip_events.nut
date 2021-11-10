@@ -4786,12 +4786,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Armors are split into layers"
+					text = "Armors are NOT split into layers"
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "If enabled, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer.\n\nHelmet is made up of a base hood layer, helmet layer, top layer, vanity layer and finally a rune layer.\n\nEach layer can be upgraded individually, allowing flexible armor builds and aesthetics"
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]LEGACY OPTION, NOT RECOMMENDED.[/color]\n\nIn Legends, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer.\n\nHelmet is made up of a base hood layer, helmet layer, top layer, vanity layer and finally a rune layer.\n\nEach layer can be upgraded individually, allowing flexible armor builds and aesthetics\n\nIf this option is checked, layered armor is disabled."
 				}
 			];
 
