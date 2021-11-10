@@ -6193,6 +6193,7 @@ Cabal puppets were very low in frequency for higher difficulties. They will now 
 Cabal puppets now have a few more outfits to draw from.
 Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
 Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
+Noble footmen's helmet selection is unchanged, however the weight of their higher tier helmets is now much less. This means that noble footmen should spawn with the heavist helment less and have more helmet variety.
 
 Poss' changes to training;
 Basecraft value of training grounds reduced from 1.0 or 0.3. Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
