@@ -238,8 +238,8 @@ var NewCampaignMenuModule = function () {
 	this.mLegendMagicCheckboxLabel = null;
 	this.mLegendArmorCheckbox = null;
 	this.mLegendArmorCheckboxLabel = null;
-	this.mLegendItemScalingCheckbox = null;
-	this.mLegendItemScalingCheckboxLabel = null;
+	//this.mLegendItemScalingCheckbox = null;
+	//this.mLegendItemScalingCheckboxLabel = null;
 	this.mLegendLocationScalingCheckbox = null;
 	this.mLegendLocationScalingCheckboxLabel = null;
 	this.mLegendCampUnlockCheckbox = null;
@@ -1120,29 +1120,29 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 	row.append(control);
 	this.mLegendArmorCheckbox = $('<input type="checkbox" id="cb-legendarmor"/>');
 	control.append(this.mLegendArmorCheckbox);
-	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Layered Armor</label>');
+	this.mLegendArmorCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legendarmor">Unlayered Armor [LEGACY]</label>');
 	control.append(this.mLegendArmorCheckboxLabel);
 	this.mLegendArmorCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
 	});
-	this.mLegendArmorCheckbox.iCheck('check');
+	//this.mLegendArmorCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
 	var control = $('<div class="control"/>');
 	row.append(control);
-	this.mLegendItemScalingCheckbox = $('<input type="checkbox" id="cb-legenditemscaling"/>');
-	control.append(this.mLegendItemScalingCheckbox);
-	this.mLegendItemScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legenditemscaling">Equipment Scaling</label>');
-	control.append(this.mLegendItemScalingCheckboxLabel);
-	this.mLegendItemScalingCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-	});
-	this.mLegendItemScalingCheckbox.iCheck('check');
+	// this.mLegendItemScalingCheckbox = $('<input type="checkbox" id="cb-legenditemscaling"/>');
+	// control.append(this.mLegendItemScalingCheckbox);
+	// this.mLegendItemScalingCheckboxLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-legenditemscaling">Equipment Scaling</label>');
+	// control.append(this.mLegendItemScalingCheckboxLabel);
+	// this.mLegendItemScalingCheckbox.iCheck({
+	// 	checkboxClass: 'icheckbox_flat-orange',
+	// 	radioClass: 'iradio_flat-orange',
+	// 	increaseArea: '30%'
+	// });
+	// this.mLegendItemScalingCheckbox.iCheck('check');
 
 	var row = $('<div class="row"></div>');
 	leftColumn.append(row);
@@ -1707,14 +1707,14 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 		elementId: 'mapconfig.legenddebug'
 	});
 
-	this.mLegendItemScalingCheckbox.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legenditemscaling'
-	});
-	this.mLegendItemScalingCheckboxLabel.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.legenditemscaling'
-	});
+	// this.mLegendItemScalingCheckbox.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legenditemscaling'
+	// });
+	// this.mLegendItemScalingCheckboxLabel.bindTooltip({
+	// 	contentType: 'ui-element',
+	// 	elementId: 'mapconfig.legenditemscaling'
+	// });
 
 	this.mLegendLocationScalingCheckbox.bindTooltip({
 		contentType: 'ui-element',
@@ -1928,8 +1928,8 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mDebugCheckbox.unbindTooltip();
 	this.mDebugCheckboxLabel.unbindTooltip();
 
-	this.mLegendItemScalingCheckbox.unbindTooltip();
-	this.mLegendItemScalingCheckboxLabel.unbindTooltip();
+	// this.mLegendItemScalingCheckbox.unbindTooltip();
+	// this.mLegendItemScalingCheckboxLabel.unbindTooltip();
 
 	this.mLegendLocationScalingCheckbox.unbindTooltip();
 	this.mLegendLocationScalingCheckboxLabel.unbindTooltip();
@@ -2251,54 +2251,48 @@ NewCampaignMenuModule.prototype.setConfigOpts = function (_data) {
 
 
 NewCampaignMenuModule.prototype.collectSettings = function () {
-	var settings = [];
-
-	// company name
-	settings.push(this.mCompanyName.getInputText());
-
-	// banner
-	settings.push(this.mBanners[this.mCurrentBannerIndex]);
-
-	// difficulty
-	settings.push(this.mDifficulty);
-	settings.push(this.mEconomicDifficulty);
-	settings.push(this.mBudgetDifficulty);
-    settings.push(this.mIronmanCheckbox.is(':checked'));
-	settings.push(this.mEvil);
-	settings.push(this.mEvilPermanentDestructionCheckbox.is(':checked'));
-	settings.push(this.mSeed.getInputText());
-	settings.push(this.mMapOptions.Width.Value);
-	settings.push(this.mMapOptions.Height.Value);
-	settings.push(this.mMapOptions.LandMassMult.Value);
-	settings.push(this.mMapOptions.WaterConnectivity.Value);
-	settings.push(this.mMapOptions.MinLandToWaterRatio.Value);
-	settings.push(this.mMapOptions.Snowline.Value);
-	settings.push(this.mMapOptions.NumSettlements.Value);
-	settings.push(this.mMapOptions.NumFactions.Value);
-	//settings.push(this.mExplorationCheckbox.is(':checked'));
-	settings.push(this.mFogofWarCheckbox.is(':checked'));
-	settings.push(this.mMapOptions.ForestsMult.Value);
-	settings.push(this.mMapOptions.SwampsMult.Value);
-	settings.push(this.mMapOptions.MountainsMult.Value);
-	settings.push(this.mStackCitadelsCheckbox.is(':checked'));
-	settings.push(this.mAllTradeLocationsCheckbox.is(':checked'));
-	settings.push(this.mScenarios[this.mSelectedScenario].ID);
-	settings.push(this.mLegendPerkTreesCheckbox.is(":checked"));
-	//settings.push(this.mLegendGenderEqualityCheckbox.is(":checked"));
-	settings.push(this.mGenderLevel);
-	settings.push(false);//settings.push(this.mLegendMagicCheckbox.is(":checked"));
-	settings.push(this.mLegendArmorCheckbox.is(":checked"));
-	settings.push(this.mDebugCheckbox.is(":checked"));
-	settings.push(this.mAutosaveCheckbox.is(':checked'));
-	settings.push(this.mLegendItemScalingCheckbox.is(":checked"));
-	settings.push(this.mLegendLocationScalingCheckbox.is(":checked"));
-	settings.push(this.mLegendCampUnlockCheckbox.is(":checked"));
-	settings.push(this.mLegendRecruitScalingCheckbox.is(":checked"));
-	settings.push(this.mLegendBleedKillerCheckbox.is(":checked"));
-	settings.push(this.mLegendAllBlueprintsCheckbox.is(":checked"));
-	settings.push(false); //settings.push(this.mLegendRelationshipCheckbox.is(":checked"));
-	settings.push(this.mLegendWorldEconomyCheckbox.is(":checked"));
-	settings.push(false);//settings.push(this.mLegendTherianCheckbox.is(":checked"));
+	var settings = {};
+	settings["Name"] = this.mCompanyName.getInputText()
+	settings["Banner"] = this.mBanners[this.mCurrentBannerIndex]
+	settings["Difficulty"] = this.mDifficulty
+	settings["EconomicDifficulty"] = this.mEconomicDifficulty
+	settings["BudgetDifficulty"] = this.mBudgetDifficulty
+	settings["Ironman"] = this.mIronmanCheckbox.is(':checked')
+	settings["GreaterEvil"] = this.mEvil
+	settings["PermanentDestruction"] = this.mEvilPermanentDestructionCheckbox.is(':checked')
+	settings["Seed"] = this.mSeed.getInputText()
+	settings["Width"] = this.mMapOptions.Width.Value
+	settings["Height"] = this.mMapOptions.Height.Value
+	settings["LandMassMult"] = this.mMapOptions.LandMassMult.Value
+	settings["WaterConnectivity"] = this.mMapOptions.WaterConnectivity.Value
+	settings["MinLandToWaterRatio"] = this.mMapOptions.MinLandToWaterRatio.Value
+	settings["Snowline"] = this.mMapOptions.Snowline.Value
+	settings["NumSettlements"] = this.mMapOptions.NumSettlements.Value
+	settings["NumFactions"] = this.mMapOptions.NumFactions.Value
+	settings["FOW"] = this.mFogofWarCheckbox.is(':checked'),
+	settings["ExplorationMode"] = this.mFogofWarCheckbox.is(':checked'),
+	settings["ForestsMult"] = this.mMapOptions.ForestsMult.Value
+	settings["SwampsMult"] = this.mMapOptions.SwampsMult.Value
+	settings["MountainsMult"] = this.mMapOptions.MountainsMult.Value
+	settings["StackCitadels"] = this.mStackCitadelsCheckbox.is(':checked')
+	settings["AllTradeLocations"] = this.mAllTradeLocationsCheckbox.is(':checked')
+	settings["StartingScenario"] = this.mScenarios[this.mSelectedScenario].ID
+	settings["LegendPerkTrees"] = this.mLegendPerkTreesCheckbox.is(":checked")
+	settings["LegendGenderEquality"] = this.mGenderLevel
+	settings["LegendMagic"] = false
+	settings["LegendArmor"] = !this.mLegendArmorCheckbox.is(":checked")
+	settings["Debug"] = this.mDebugCheckbox.is(":checked")
+	settings["Autosave"] = this.mAutosaveCheckbox.is(':checked')
+	//settings["LegendItemScaling"] = this.mLegendItemScalingCheckbox.is(":checked")
+	settings["LegendItemScaling"] = true
+	settings["LegendLocationScaling"] = this.mLegendLocationScalingCheckbox.is(":checked")
+	settings["LegendCampUnlock"] = this.mLegendCampUnlockCheckbox.is(":checked")
+	settings["LegendRecruitScaling"] = this.mLegendRecruitScalingCheckbox.is(":checked")
+	settings["LegendBleedKiller"] = this.mLegendBleedKillerCheckbox.is(":checked")
+	settings["LegendAllBlueprints"] = this.mLegendAllBlueprintsCheckbox.is(":checked")
+	settings["LegendRelationship"] = false
+	settings["LegendWorldEconomy"] = this.mLegendWorldEconomyCheckbox.is(":checked")
+	settings["LegendTherian"] = false
 
 	return settings;
 }
