@@ -113,19 +113,19 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 8,
+			Weight = 6,
 			MinR = 140,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.NomadLeader,
-					Cost = 55,
+					Cost = 60,
 					Roll = true
 				}
 			]
 		},
 		{
-			Weight = 3,
+			Weight = 1,
 			MinR = 160,
 			Types =
 			[
@@ -137,7 +137,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 3,
+			Weight = 1,
 			MinR = 310,
 			Types =
 			[
@@ -194,19 +194,19 @@ gt.Const.World.Spawn.NomadDefenders <-
 				{
 					Type = this.Const.World.Spawn.Troops.DesertStalker, //looks like M.Archer
 					MinR = 420,
-					Cost = 40,
+					Cost = 45,
 					Roll = true
 				}
 			]
 		},
 		{
-			Weight = 4,
+			Weight = 5,
 			MinR = 140,
 			Types =
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.NomadLeader,
-					Cost = 35,
+					Cost = 40,
 					Roll = true
 				}
 			]
@@ -224,7 +224,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 9,
+			Weight = 2,
 			MinR = 420,
 			Types =
 			[
