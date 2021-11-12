@@ -109,7 +109,7 @@ this.legend_large_broad_head_arrows <- this.inherit("scripts/items/ammo/ammo", {
 			case "weapon.goblin_bow":
 			case "weapon.goblin_heavy_bow":
 			case "weapon.named_goblin_heavy_bow":	
-				_properties.DamageDirectMult *= 0.7;
+				_properties.DamageDirectMult *= 0.9;
 				_properties.RangedDamageMult *= 1.1;
 					break;
 		}

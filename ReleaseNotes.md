@@ -6174,5 +6174,8 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Updated to MSU v0.6.21. See MSU changelog.
 
 UBER Changes
--Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
--Leech Peddler - Flavor text typo and clarity fixes.
+- Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
+- Leech Peddler - Flavor text typo and clarity fixes.
+- Special Ammo changes:
+  - Armor piercing is now +10% armor piercing, -10% damage.
+  - Broad Head is now -10% armor piercing, +10% damage.
