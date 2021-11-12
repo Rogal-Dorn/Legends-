@@ -6179,4 +6179,7 @@ UBER Changes
 - Special Ammo changes:
   - Armor piercing is now +10% armor piercing, -10% damage.
   - Broad Head is now -10% armor piercing, +10% damage.
-- Spider and Goblin Poison can now be applied for 0 action points.
+
+  **Poison Balance**
+- Spider Poison, Goblin Poison can now be applied for 0 action points.
+- Apply Poison from Poison Mastery can now be applied for 0 action points.
