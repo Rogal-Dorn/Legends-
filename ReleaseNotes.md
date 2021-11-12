@@ -6172,3 +6172,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.21. See MSU changelog.
+
+UBER Changes
+-Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
+-Leech Peddler - Flavor text typo and clarity fixes.
