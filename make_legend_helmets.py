@@ -392,7 +392,7 @@ layers = [
  "title" :  "Southern light hood", \
  "desc" :  "A southern hood made of light materials." \
 },
-{"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 115, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 300, "con" : 45, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Niqaab", \
  "desc" :  "A headwrap, protects from the sun and light blows." \
 },
