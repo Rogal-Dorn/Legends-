@@ -268,16 +268,17 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 		foreach( i, bro in bros )
 		{
-			//needs to be fixed
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid | this.Const.BackgroundType.Ranger))
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getSkills().update();
 			}
 			else
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
+				bro.getSkills().update();
 			}
 		}
 	}

@@ -123,38 +123,38 @@ this.noble_footman <- this.inherit("scripts/entity/tactical/human", {
 		if (banner <= 4)
 			{
 				helmet = this.Const.World.Common.pickHelmet([
-					[1, "kettle_hat"],
-					[1, "rondel_helm"],
-					[1, "scale_helm"],
-					[1, "padded_kettle_hat"],
-					[1, "kettle_hat_with_mail"],
-					[1, "mail_coif"],
-					[1, "legend_enclave_vanilla_skullcap_01"],
-					[5, "heavy_noble_house_helmet_00"]
+					[5, "kettle_hat"],
+					[5, "rondel_helm"],
+					[4, "scale_helm"],
+					[4, "kettle_hat_with_mail"],
+					[3, "padded_kettle_hat"],
+					[3, "legend_enclave_vanilla_skullcap_01"],
+					[2, "mail_coif"],
+					[1, "heavy_noble_house_helmet_00"]
 				])
 			}
 		else if (banner <= 7)
 			{
 				helmet = this.Const.World.Common.pickHelmet([
-					[1, "flat_top_helmet"],
-					[1, "padded_flat_top_helmet"],
+					[5, "rondel_helm"],
+					[4, "padded_flat_top_helmet"],
+					[3, "legend_enclave_vanilla_skullcap_01"],
+					[3, "mail_coif"],
+					[2, "flat_top_helmet"],
+					[2, "scale_helm"],
 					[1, "flat_top_with_mail"],
-					[1, "rondel_helm"],
-					[1, "scale_helm"],
-					[1, "mail_coif"],
-					[1, "legend_enclave_vanilla_skullcap_01"],
-					[5, "heavy_noble_house_helmet_00"]
+					[1, "heavy_noble_house_helmet_00"]
 				])
 			}
 		else
 			{
 				helmet = this.Const.World.Common.pickHelmet([
-					[1, "nasal_helmet"],
-					[1, "padded_nasal_helmet"],
-					[1, "nasal_helmet_with_mail"],
-					[1, "mail_coif"],
-					[1, "legend_enclave_vanilla_skullcap_01"],
-					[5, "heavy_noble_house_helmet_00"]
+					[5, "nasal_helmet"],
+					[5, "padded_nasal_helmet"],
+					[4, "nasal_helmet_with_mail"],
+					[3, "mail_coif"],
+					[2, "legend_enclave_vanilla_skullcap_01"],
+					[1, "heavy_noble_house_helmet_00"]
 				])
 			}
 

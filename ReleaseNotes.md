@@ -6220,3 +6220,11 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.
 - Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png").
 - Updated MSU to v0.6.22.
+
+Major fixes with hiring and upkeep cost code across all backgrounds - loading a save was causing hiring cost to be reset, which voided the reductions. This is now fixed.
+Removed a named leather jacket spawning from "ragged_dark_surcoat" itemlist
+Double mail attachment had the wrong durability. Now fixed.
+Noble footmen's helmet selection is unchanged, however the weight of their higher tier helmets is now much less. This means that noble footmen should spawn with the heavist helment less and have more helmet variety.
+Concripts (polearms) should now have strictier spawnrates and not be in every battle in overwhelming numbers anymore.
+Nomads should have fewer instances of spawning elite units without outlaws/cutthroats.
+Cannibals now have a much better stat line, outperforming their butcher counterpart.

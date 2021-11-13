@@ -75,36 +75,36 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				2,
+				8
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				7
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				10
 			],
 			MeleeSkill = [
-				0,
-				0
+				5,
+				10
 			],
 			RangedSkill = [
-				0,
+				-3,
 				0
 			],
 			MeleeDefense = [
 				0,
-				0
+				4
 			],
 			RangedDefense = [
 				0,
-				0
+				4
 			],
 			Initiative = [
-				0,
-				0
+				5,
+				12
 			]
 		};
 		return c;
@@ -115,6 +115,7 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("the Cannibal");
+		//this.m.Container.add(this.new("scripts/skills/traits/taste_for_blood_trait")); //to finish
 	}
 
 	function onAddEquipment()

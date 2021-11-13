@@ -294,14 +294,16 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.cultist_lurker" || bro.getBackground().getID() == "background.cultist_darksoul" || bro.getBackground().getID() == "background.cultist_magister")
-			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+			{				
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getSkills().update();
 			}
 			else
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
+				bro.getBaseProperties().DailyWageMult *= 1.25;
+				bro.getSkills().update();
 			}
 		}
 	}

@@ -177,8 +177,9 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
+				bro.getBaseProperties().DailyWageMult *= 1.25;
+				bro.getSkills().update();
 			}
 			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
@@ -187,8 +188,9 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey")
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75)
+				bro.getBaseProperties().DailyWageMult *= 0.75;
+				bro.getSkills().update();
 			}
 		}
 	}
