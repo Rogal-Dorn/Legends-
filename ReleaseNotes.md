@@ -6173,8 +6173,49 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 **Modding**
 - Updated to MSU v0.6.21. See MSU changelog.
 
-## 15.0.1.21i
+## 15.0.1.22
+**Balance**
+- Equipment Scaling is now always enabled. The option to disable it has been removed from the new campaign settings menu.
+- Base speed of the Training Grounds camp reduced by 70% of what it was before (from 1.0 to 0.3). Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
+- Removed Split from Longsword (legend_bastardsword) and its named version.
+- Crusader Sword changes: Removed Split Shield. Removed Split. Added Riposte.
+- Cultist requirement for sacrifice dropped from 4 valid members to 3.
+- Craven is now removed by True Believer.
+- Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
+- Cabal puppets now have a few more outfits to draw from.
+- Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
+- Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
+- Removed Reclamation perk from Summoner.
+- Increased Heavy Lamellar Helmet Value from 750 to 1000.
+- Increased Southern Conic Helm Value from 350 to 1000.
+- Noble footmen's helmet selection is unchanged, however the weight of their higher tier helmets is now much less. This means that noble footmen should spawn with the heavist helment less often and have more helmet variety.
+- Concripts (polearms) should now have strictier spawnrates and not be in every battle in overwhelming numbers anymore.
+- Nomads should have fewer instances of spawning elite units without outlaws/cutthroats.
+- Cannibals now have a much better stat line, outperforming their butcher counterpart.
+- Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
+- Trader origin now starts with a roster size of 6.
+- Special Ammo changes:
+  - Armor piercing is now +10% armor piercing, -10% damage.
+  - Broad Head is now -10% armor piercing, +10% damage.
+- Poison balance:
+  - Spider Poison, Goblin Poison can now be applied for 0 action points during the first round of combat.
+  - Apply Poison from Poison Mastery can now be applied for 0 action points during the first round of combats.
+- Great Khopesh:
+  - Now has +5 Fatigue built on skill usage just like Orc Weapons.
+  - Reduceed the base fatigue cost of its Cleave skill from 18 to 15 (will now be 20 total with the +5).
+
+**Art**
+- Widow, Master Archer and Berserker now have new background art.
+
+**Misc**
+- Disabled map sliders for the time being. This is a temporary change to help us assess what is causing the crash during saving bug.
+- "Reinforced flail" (from file: legend_reinforced_flail) has be renamed to "Reinforced Improvised Warflail" and had its description updated to match to avoid confusion with the vanilla reinforced flail.
+- Witchunter helm now named Witchhunter's Capotain (its not a helmet).
+- Changed a few icons on Jester, Witchunter and Hunter Hat tooltips to make them more visually descriptive.
+- Removed a named leather jacket spawning from "ragged_dark_surcoat" itemlist.
+
 **Fixes**
+- Major fixes with hiring and upkeep cost code across all backgrounds - loading a save was causing Daily Wage changed by Origin to be reset, which voided the reductions. This is now fixed.
 - Cultist hood crafting is now tweaked - they should now craft correctly and at the correct costs, same goes for cultist leather armour with penance.
 - Penance and dedication perks now state they unlock crafting recipies if taken.
 - Magisters and husks now have a tooltip on their background hover that says they are not eligible sacrifice members.
@@ -6191,51 +6232,13 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Fixed map generation typos.
 - Fixed a typo Bascinet name.
 - Fixed an error in using the Scry skill.
+- Fixed Double Mail Attachment having the wrong durability.
+- Fixed the Fatigue Cost reduction/increase from items e.g. orc weapons or named weapons not being applied properly.
 - The normal beggar commander background tooltip no longer says that the beggar can evolve by killing enemies (as this mechanic is only in the Scaling Beggar).
-
-**Balance**
-- Base speed of the Training Grounds camp reduced by 70% of what it was before (from 1.0 to 0.3). Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
-- Removed Split from Longsword (legend_bastardsword) and its named version.
-- Crusader Sword changes: Removed Split Shield. Removed Split. Added Riposte.
-- Cultist requirement for sacrifice dropped from 4 valid members to 3.
-- Craven is now removed by True Believer.
-- Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.
-- Cabal puppets now have a few more outfits to draw from.
-- Hunter's cap now encourages other archers to attack you more often, price reduced from 1500 to 1200. Still grants +1 vision.
-- Witchhunter's helm no longer grants night vision, it instead proves +5 resolve when attacked mentally (sleep, charm, horrify, etc.), this stacks with other effects of the same type.
-- Removed Reclamation perk from Summoner.
-- Increased Heavy Lamellar Helmet Value from 750 to 1000.
-- Increased Southern Conic Helm Value from 350 to 1000.
-
-**Art**
-- Widow, Master Archer and Berserker now have new background art.
-
-**Misc**
-- Disabled map sliders for the time being. This is a temporary change to help us assess what is causing the crash during saving bug.
-- "Reinforced flail" (from file: legend_reinforced_flail) has be renamed to "Reinforced Improvised Warflail" and had its description updated to match to avoid confusion with the vanilla reinforced flail.
-- Witchunter helm now named Witchhunter's Capotain (its not a helmet).
-- Changed a few icons on Jester, Witchunter and Hunter Hat tooltips to make them more visually descriptive.
+- Leech Peddler: flavor text typo and clarity fixes.
 
 **For Modders**
 - perk_legend_specialist_ninetails_skill & perk_legend_specialist_ninetails_damage files now use this.Const.Items.ItemType.Cultist in all flails and items they affect, rather than listing the items one-by-one.
 - Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png").
-- Updated MSU to v0.6.22.
-
-Major fixes with hiring and upkeep cost code across all backgrounds - loading a save was causing hiring cost to be reset, which voided the reductions. This is now fixed.
-Removed a named leather jacket spawning from "ragged_dark_surcoat" itemlist
-Double mail attachment had the wrong durability. Now fixed.
-Noble footmen's helmet selection is unchanged, however the weight of their higher tier helmets is now much less. This means that noble footmen should spawn with the heavist helment less and have more helmet variety.
-Concripts (polearms) should now have strictier spawnrates and not be in every battle in overwhelming numbers anymore.
-Nomads should have fewer instances of spawning elite units without outlaws/cutthroats.
-Cannibals now have a much better stat line, outperforming their butcher counterpart.
-
-UBER Changes
-- Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
-- Leech Peddler - Flavor text typo and clarity fixes.
-- Special Ammo changes:
-  - Armor piercing is now +10% armor piercing, -10% damage.
-  - Broad Head is now -10% armor piercing, +10% damage.
-
-  **Poison Balance**
-- Spider Poison, Goblin Poison can now be applied for 0 action points.
-- Apply Poison from Poison Mastery can now be applied for 0 action points.
+- Changed the code of how Legends Settings are handled (settings are now in a table instead of array). See `new_campaign_menu_module.nut` and `new_campaign_menu_module.js`.
+- Updated MSU to v0.6.23.
