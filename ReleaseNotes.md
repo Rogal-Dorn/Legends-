@@ -6187,7 +6187,6 @@ Widow, master archer and berserker background .pngs were not named as they shoul
 Fixed typo in nightwatch background that caused some towns to not load.
 Removed a named leather jacket spawning from "ragged_dark_surcoat" itemlist
 Double mail attachment had the wrong durability. Now fixed.
-(Tenetitive) Demon Alp should now use its shadow attacks again.
 
 **Balance**
 Cabal puppets were very low in frequency for higher difficulties. They will now spawn more frequently in settlements which have situations relating to missing people, death, sickness, famine, etc. The more severe the event, the more puppets can be found.

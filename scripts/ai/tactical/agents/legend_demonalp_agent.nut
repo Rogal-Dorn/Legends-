@@ -35,13 +35,11 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.PreferCarefulEngage = true;
 	}
 
-	function onAddBehaviors() //Demon alp has shadows but is not using them, I have added in melee AI but kept the range the same. Will see if this fixes it. - Luft
+	function onAddBehaviors()
 	{
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_roam"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee")); //added to test 11/11/21 - Luft
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default")); // added to test	11/11/21 - Luft	
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
-		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
 		// this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
