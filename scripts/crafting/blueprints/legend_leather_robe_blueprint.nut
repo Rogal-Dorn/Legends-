@@ -5,7 +5,7 @@ this.legend_leather_robe_blueprint <- this.inherit("scripts/crafting/blueprint",
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_leather_robe_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		this.m.PreviewCraftable = this.new("scripts/items/armor/plate/cultist_leather_robe");
+		this.m.PreviewCraftable = this.new("scripts/items/legend_armor/plate/legend_armor_cult_armor");
 		this.m.Cost = 200;
 		local ingredients = [
 			{
