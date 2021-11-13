@@ -6228,3 +6228,14 @@ Noble footmen's helmet selection is unchanged, however the weight of their highe
 Concripts (polearms) should now have strictier spawnrates and not be in every battle in overwhelming numbers anymore.
 Nomads should have fewer instances of spawning elite units without outlaws/cutthroats.
 Cannibals now have a much better stat line, outperforming their butcher counterpart.
+
+UBER Changes
+- Niqaab - Value, Durability, Fat penalty changed from 115, 50, 2 to 300, 45, 1.
+- Leech Peddler - Flavor text typo and clarity fixes.
+- Special Ammo changes:
+  - Armor piercing is now +10% armor piercing, -10% damage.
+  - Broad Head is now -10% armor piercing, +10% damage.
+
+  **Poison Balance**
+- Spider Poison, Goblin Poison can now be applied for 0 action points.
+- Apply Poison from Poison Mastery can now be applied for 0 action points.

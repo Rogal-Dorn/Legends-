@@ -98,7 +98,7 @@ function onUpdateProperties( _properties )
 			case "weapon.crossbow":
 			case "weapon.heavy_crossbow":
 			case "weapon.named_crossbow":	
-				_properties.DamageDirectMult *= 0.7;
+				_properties.DamageDirectMult *= 0.9;
 				_properties.RangedDamageMult *= 1.1;
 					break;
 		}
