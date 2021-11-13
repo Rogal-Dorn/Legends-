@@ -1637,43 +1637,24 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function updateRoster( _force = false )
 	{
 		local daysPassed = (this.Time.getVirtualTimeF() - this.m.LastRosterUpdate) / this.World.getTime().SecondsPerDay;
-
-		if (!_force && this.m.LastRosterUpdate != 0 && daysPassed < 2)
-		{
-			return;
+		if (daysPassed > 7){
+			this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
+			this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
+			daysPassed = 0;
+			
 		}
-
-		if (this.m.RosterSeed != 0)
-		{
-			this.Math.seedRandom(this.m.RosterSeed);
-		}
-
-		this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
-		this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
+		this.Math.seedRandom(this.m.RosterSeed); 
+		
 		local roster = this.World.getRoster(this.getID());
 		local allbros = roster.getAll();
 		local current = [];
-		for( local i = 0; i < allbros.len(); i = ++i )
-		{
-			if (allbros[i].isStabled())
-			{
-				continue
-			}
-			else
-			{
-				current.push(allbros[i]);
-			}
-		}
 
-		local iterations = this.Math.max(1, daysPassed / 2);
 		local activeLocations = 0;
-
 		foreach( loc in this.m.AttachedLocations )
 		{
 			if (loc.isActive())
 			{
-				activeLocations = ++activeLocations;
-				activeLocations = activeLocations;
+				activeLocations++
 			}
 		}
 
@@ -1697,65 +1678,52 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		rosterMin = rosterMin + this.World.Assets.m.RosterSizeAdditionalMin;
 		rosterMax = rosterMax + this.World.Assets.m.RosterSizeAdditionalMax;
 
-		if (iterations < 7)
-		{
-			for( local i = 0; i < iterations; i = i )
-			{
-				for( local maxRecruits = this.Math.rand(this.Math.max(0, rosterMax / 2 - 1), rosterMax - 1); current.len() > maxRecruits;  )
-				{
-					local n = this.Math.rand(0, current.len() - 1);
-					roster.remove(current[n]);
-					current.remove(n);
-				}
-
-				i = ++i;
-			}
-		}
-		else
-		{
-			for( local i = 0; i < current.len(); i = i )
-			{
-				roster.remove(current[i]);
-				i = ++i;
-			}
-
-			current = [];
-		}
-
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-		local gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		local isGenderEnabled = this.LegendsMod.Configs().LegendGenderEnabled();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
-			loc.onUpdateDraftList(draftList, gender);
+			this.Math.seedRandom(this.m.RosterSeed); 
+
+			loc.onUpdateDraftList(draftList, isGenderEnabled);
 		}
 
 		foreach( b in this.m.Buildings )
 		{
+			this.Math.seedRandom(this.m.RosterSeed); 
+
 			if (b != null)
 			{
-				b.onUpdateDraftList(draftList, gender);
+				b.onUpdateDraftList(draftList, isGenderEnabled);
 			}
 		}
 
 		foreach( s in this.m.Situations )
 		{
-			s.onUpdateDraftList(draftList, gender);
+			this.Math.seedRandom(this.m.RosterSeed); 
+			s.onUpdateDraftList(draftList, isGenderEnabled);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList, gender);
-
-		while (maxRecruits > current.len())
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList, isGenderEnabled);
+		
+		this.Math.seedRandom(this.m.RosterSeed); 
+		for (local i = 0; i < maxRecruits + daysPassed; ++i)
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx(draftList);
 			current.push(bro);
 		}
+		for( local i = 0; i < daysPassed; i++ )
+		{
+			local n = this.Math.rand(0, current.len() - 1);
+			roster.remove(current[n]);
+			current.remove(n);
+		}
 
-		this.updateStables(_force);
 		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
+		this.updateStables(_force);
 	}
 
 	function updateStables( _force = false )
@@ -2447,6 +2415,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
+		local roster = this.World.getRoster(this.getID())
+		roster.clear()
+
 		foreach (item in this.World.Assets.getStash().getItems())
 		{
 			if (item != null && item.isBought())
