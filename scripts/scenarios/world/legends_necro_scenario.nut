@@ -261,13 +261,15 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.75);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getSkills().update();
 			}
 			else
 			{
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.50);
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.50);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+				bro.getSkills().update();
 			}
             if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
             {

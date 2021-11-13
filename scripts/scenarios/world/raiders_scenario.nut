@@ -367,14 +367,16 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		{
 			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.5);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5)
+				bro.getBaseProperties().DailyWageMult *= 1.5;
+				bro.getSkills().update();
 				bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
 			}
 			else
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9)
+				bro.getBaseProperties().DailyWageMult *= 0.9;
+				bro.getSkills().update();
 				bro.improveMood(1.5, "Is excited at becoming a raider");
 				local r;
 				r = this.Math.rand(0, 9);

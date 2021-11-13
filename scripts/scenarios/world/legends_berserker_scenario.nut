@@ -227,13 +227,15 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		{
 			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.25);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
+				bro.getSkills().update();
 			}
 			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.9; //1.0 = default
+				bro.getSkills().update();
 			}
 		}
 	}
