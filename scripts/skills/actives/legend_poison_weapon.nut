@@ -27,7 +27,7 @@ this.legend_poison_weapon<- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 0;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;

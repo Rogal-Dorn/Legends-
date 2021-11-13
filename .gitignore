@@ -47,3 +47,6 @@ endcompile.sh
 endstaged_build.sh
 end_todo.txt
 savebreaks.txt
+
+unstaged_build_uber.sh
+bcompile_uber.sh
