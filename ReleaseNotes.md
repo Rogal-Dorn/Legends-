@@ -6197,6 +6197,7 @@ Witchhunter's helm no longer grants night vision, it instead proves +5 resolve w
 Noble footmen's helmet selection is unchanged, however the weight of their higher tier helmets is now much less. This means that noble footmen should spawn with the heavist helment less and have more helmet variety.
 Concripts (polearms) should now have strictier spawnrates and not be in every battle in overwhelming numbers anymore.
 Nomads should have fewer instances of spawning elite units without outlaws/cutthroats.
+Cannibals now have a much better stat line, outperforming their butcher counterpart.
 
 Poss' changes to training;
 Basecraft value of training grounds reduced from 1.0 or 0.3. Back to basics still increases this by 10% (0.4). Tent upgrade and other factors are unchanged.
