@@ -28,7 +28,7 @@ this.coat_with_spider_poison_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = true;
-		this.m.ActionPointCost = 0;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -71,6 +71,14 @@ this.coat_with_spider_poison_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		if (this.Time.getRound() == 1)
+		{
+			this.m.ActionPointCost = 0;
+		}
 	}
 
 	function isUsable()
