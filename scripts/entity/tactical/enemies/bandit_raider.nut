@@ -362,6 +362,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		local helmet = [
 			[1, "nasal_helmet"],
 			[1, "rondel_helm"],
+			[1, "barbute_helmet"],
 			[1, "scale_helm"],
 			[1, "dented_nasal_helmet"],
 			[1, "rusty_mail_coif"],
