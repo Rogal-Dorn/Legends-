@@ -6242,3 +6242,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Widow, master archer and berserker background .pngs were not named as they should be, now corrected. (EG. Was: "widow.png" | Now: "background_widow.png").
 - Changed the code of how Legends Settings are handled (settings are now in a table instead of array). See `new_campaign_menu_module.nut` and `new_campaign_menu_module.js`.
 - Updated MSU to v0.6.23.
+
+## 15.0.1.23
+**Fixes**
+- Slave units spawn less in southern armies (lowered the maximum party power for them to stop spawning)
