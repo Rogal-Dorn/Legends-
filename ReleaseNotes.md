@@ -6246,3 +6246,5 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 ## 15.0.1.23
 **Fixes**
 - Slave units spawn less in southern armies (lowered the maximum party power for them to stop spawning)
+**Misc**
+Bandit raiders and veterans now can spawn with barbute helmets
