@@ -6244,7 +6244,15 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Updated MSU to v0.6.23.
 
 ## 15.0.1.23
-**Fixes**
-- Slave units spawn less in southern armies (lowered the maximum party power for them to stop spawning)
 **Misc**
-Bandit raiders and veterans now can spawn with barbute helmets
+- Bandit Raiders and Veterans now can spawn with Barbute helmets.
+
+**Fixes**
+- Lowered the spawn rate of slave units spawn in southern armies (lowered the maximum party power for them to stop spawning).
+- Fixed Recruited/Dismissed bros reappearing in the town's roster after leaving the town and entering again.
+- Fixed the Try Out status of recruits resetting after leaving the town and entering again.
+- Fixed the bonuses from the Flesh Mortification perk being swapped between min and max.
+- Added missing mini icon for the omens effect.
+
+**Modding**
+- Updated to MSU v0.6.24. See MSU Changelog and Documentation.
