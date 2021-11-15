@@ -25,10 +25,9 @@ gt.Const.World.Spawn.Southern <-
 			Weight = 50,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.Slave, //might weight slaves too heavily early on but maybe is fine
-					MaxR = 400,
+					Type = this.Const.World.Spawn.Troops.Slave,
+					MaxR = 150,
 					Cost = 7
-				},
 				{
 					Type = this.Const.World.Spawn.Troops.Conscript,
 					Cost = 18
