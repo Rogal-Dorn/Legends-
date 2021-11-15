@@ -28,6 +28,7 @@ gt.Const.World.Spawn.Southern <-
 					Type = this.Const.World.Spawn.Troops.Slave,
 					MaxR = 150,
 					Cost = 7
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.Conscript,
 					Cost = 18
