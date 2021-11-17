@@ -6263,3 +6263,5 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
   - 2 star in Stamina as opposed to 3 in matk and hp.
 - Cannibal event score halved and now will only trigger once.
 - Fixed tooltip descriptions for armor piercing and broad head bolts and arrows.
+Improved tooltip of poison actives to state that it costs 0AP if used on round one of combat.
+Removed halberd from Billman spawn.
