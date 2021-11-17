@@ -6256,3 +6256,10 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.24. See MSU Changelog and Documentation.
+
+## Uber Changes
+- Druid rebalance - Now fills a support role rather than frontline powerhouse.
+  - Starting stats reduced. Stamina favored for spellcasting.
+  - 2 star in Stamina as opposed to 3 in matk and hp.
+- Cannibal event score halved and now will only trigger once.
+- Fixed tooltip descriptions for armor piercing and broad head bolts and arrows.
