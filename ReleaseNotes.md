@@ -6261,3 +6261,4 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 ## 15.0.1.????????
 **Fixes**
 Appetite of a donkey graphic had the wrong filepath and wouldn't be displayed
+Witchhunter typo fixed in background
