@@ -6256,3 +6256,8 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 **Modding**
 - Updated to MSU v0.6.24. See MSU Changelog and Documentation.
+
+
+## 15.0.1.????????
+**Fixes**
+Appetite of a donkey graphic had the wrong filepath and wouldn't be displayed

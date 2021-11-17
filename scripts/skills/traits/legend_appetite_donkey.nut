@@ -5,7 +5,7 @@ this.legend_appetite_donkey <- this.inherit("scripts/skills/traits/character_tra
 		this.character_trait.create();
 		this.m.ID = "trait.legend_appetite_donkey";
 		this.m.Name = "Appetite of a donkey";
-		this.m.Icon = "ui/traits/legend_appetite_donkey";
+		this.m.Icon = "ui/traits/legend_appetite_donkey.png";
 		this.m.Description = "This character has a huge appetite and will eat anything. Better bring extra provisions when traveling with this character and expect them to leave fast if you ever run out of provisions entirely.";
 		this.m.Titles = [
 			"the Ass",
