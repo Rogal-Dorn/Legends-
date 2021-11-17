@@ -172,35 +172,35 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		local c = {
 			Hitpoints = [
 				0,
-				15
+				0
 			],
 			Bravery = [
 				0,
-				5
+				0
 			],
 			Stamina = [
-				-5,
-				5
+				5,
+				10
 			],
 			MeleeSkill = [
-				-5,
-				10
+				0,
+				5
 			],
 			RangedSkill = [
-				-15,
-				-5
-			],
-			MeleeDefense = [
-				-10,
-				10
-			],
-			RangedDefense = [
 				-10,
 				0
 			],
+			MeleeDefense = [
+				0,
+				0
+			],
+			RangedDefense = [
+				0,
+				0
+			],
 			Initiative = [
-				-10,
-				-15
+				0,
+				0
 			]
 		};
 		return c;
@@ -238,8 +238,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 3;
+		talents[this.Const.Attributes.Fatigue] = 2;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
