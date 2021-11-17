@@ -4,7 +4,7 @@ this.legend_armor_piercing_bolts <- this.inherit("scripts/items/ammo/ammo", {
 	{
 		this.m.ID = "ammo.bolts";
 		this.m.Name = "Armor Piercing Bolts";
-		this.m.Description = "A large quiver of bolts with thin piercing tips, designed for piercing armor, but doing less damage to flesh. Is automatically refilled after each battle if you have enough global ammunition. Grants +30% armor piercing damage, but -10% damage";
+		this.m.Description = "A large quiver of bolts with thin piercing tips, designed for piercing armor, but doing less damage to flesh. Is automatically refilled after each battle if you have enough global ammunition. Grants +10% armor piercing damage, but -10% damage";
 		this.m.Icon = "ammo/quiver_02_dark.png";
 		this.m.IconEmpty = "ammo/quiver_02_empty.png";
 		this.m.SlotType = this.Const.ItemSlot.Ammo;
