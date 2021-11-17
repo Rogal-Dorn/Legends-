@@ -11,7 +11,7 @@ this.coat_with_poison_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.coat_with_poison";
 		this.m.Name = "Use Poison";
-		this.m.Description = "Coat your weapons and arrowtips with poison. Can not be used while engaged in melee.";
+		this.m.Description = "Coat your weapons and arrowtips with poison. Can not be used while engaged in melee. Costs 0 action points on round 1 of combat.";
 		this.m.Icon = "skills/active_95.png";
 		this.m.IconDisabled = "skills/active_95_sw.png";
 		this.m.Overlay = "active_95";
