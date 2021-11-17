@@ -250,36 +250,36 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				25
+				0,
+				0
 			],
 			Bravery = [
-				-5,
-				5
+				0,
+				0
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				5,
-				10
+				0,
+				5
 			],
 			RangedSkill = [
 				-10,
 				0
 			],
 			MeleeDefense = [
-				5,
-				15
+				0,
+				0
 			],
 			RangedDefense = [
-				-5,
-				5
+				0,
+				0
 			],
 			Initiative = [
-				-5,
-				-10
+				0,
+				0
 			]
 		};
 		return c;
@@ -317,15 +317,13 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle("The Druid");
-		this.m.Container.add(this.new("scripts/skills/traits/tough_trait"));
 	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		talents[this.Const.Attributes.Hitpoints] = 3;
+		talents[this.Const.Attributes.Fatigue] = 2;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 		local stash = this.World.Assets.getStash()
