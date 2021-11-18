@@ -6265,3 +6265,4 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Fixed tooltip descriptions for armor piercing and broad head bolts and arrows.
 Improved tooltip of poison actives to state that it costs 0AP if used on round one of combat.
 Removed halberd from Billman spawn.
+Removed an armor set from Knights that was only 200 body armor.
