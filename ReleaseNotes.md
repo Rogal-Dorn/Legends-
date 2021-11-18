@@ -6267,3 +6267,5 @@ Improved tooltip of poison actives to state that it costs 0AP if used on round o
 Removed halberd from Billman spawn.
 Removed an armor set from Knights that was only 200 body armor.
 Removed a helm set from enemy Zweihanders that was only 70 armor.
+Increased Minstrel and Troubadour hiring cost to 665 from 65.
+Increased Troubadour daily cost to 19 to match with Minstrel.
