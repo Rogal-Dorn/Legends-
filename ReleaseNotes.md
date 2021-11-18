@@ -6266,3 +6266,4 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 Improved tooltip of poison actives to state that it costs 0AP if used on round one of combat.
 Removed halberd from Billman spawn.
 Removed an armor set from Knights that was only 200 body armor.
+Removed a helm set from enemy Zweihanders that was only 70 armor.
