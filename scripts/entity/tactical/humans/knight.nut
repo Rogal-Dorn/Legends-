@@ -136,8 +136,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "coat_of_plates"],
-			[1, "coat_of_scales"],
-			[1, "reinforced_mail_hauberk"]
+			[1, "coat_of_scales"]
 		]));
 
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Head))
