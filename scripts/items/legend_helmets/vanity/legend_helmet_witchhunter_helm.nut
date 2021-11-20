@@ -60,8 +60,4 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.OverlayIconLarge = this.m.OverlayIcon;
 	}
 
-	function onDeserialize( _in )
-	{
-	}
-
 });
