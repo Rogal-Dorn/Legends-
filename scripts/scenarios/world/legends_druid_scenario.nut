@@ -164,13 +164,11 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		if (this.World.State.getPlayer() != null)
-		{
-			this.World.State.getPlayer().m.BaseMovementSpeed = 111;
-		}
 		this.World.Flags.set("IsLegendsDruid", true);
 	}
-
+	function getMovementSpeedMult(){
+		return 1.057;
+	}
 	function onCombatFinished()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
