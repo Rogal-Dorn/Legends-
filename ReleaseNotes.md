@@ -6262,3 +6262,4 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 **Fixes**
 Appetite of a donkey graphic had the wrong filepath and wouldn't be displayed
 Witchhunter typo fixed in background
+Drunk nobleman event for Noble origin typo fixed
