@@ -1859,6 +1859,23 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
     },
+    {
+        ID = "traze_northern_mercenary_cap", //120
+        Script = "",
+        Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_padded_hood"],
+            [1, "hood/legend_helmet_padded_cap"],
+        ],
+        Helms = [
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [1, "vanity/legend_helmet_fencerhat"]
+        ]
+    }]
+    },
 	{
         ID = "northern_mercenary_helmet_01", //160 ish
         Script = "",
@@ -2049,6 +2066,123 @@ gt.Const.LegendMod.HelmObjs.extend([
                 [1, "top/legend_helmet_nose_plate"] //20, -1, 0
             ],
             Vanity = [
+            ]
+        }]
+    },
+    {
+        ID = "citrene_nomad_cutthroat_helmet_00", //50
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_cloth_scarf"], 
+            ],
+            Helms = [
+                [1, "hood/legend_helmet_southern_cap"], 
+                [1, "hood/legend_helmet_southern_cap_dark"] 
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_headband"], 
+                [4, "vanity/legend_helmet_southern_headband"], 
+                [10, "vanity/legend_helmet_southern_patterned_headband"] 
+            ]
+        }]
+    },
+    {
+        ID = "citrene_nomad_cutthroat_helmet_01", //115
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_southern_open_chain_hood"] 
+            ],
+            Helms = [
+                [1, "hood/legend_helmet_southern_cap"], 
+                [1, "hood/legend_helmet_southern_cap_dark"] 
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_headband"], 
+                [4, "vanity/legend_helmet_southern_headband"], 
+                [10, "vanity/legend_helmet_southern_patterned_headband"] 
+            ]
+        }]
+    },
+    {
+        ID = "citrene_nomad_ranged_helmet_00", //50 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_southern_open_chain_hood"] 
+            ],
+            Helms = [
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_southern_helm_tailed"], 
+            ]
+        }]
+    },
+    {
+        ID = "theamson_nomad_leader_helmet_heavy", //146-161-196
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_barb_chain_scarf"],
+                [1, "hood/legend_helmet_barb_open_chain"],
+                [1, "hood/legend_helmet_rotten_chain_scarf"]
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_horsetail"],
+                [1, "helm/legend_helmet_southern_conic_helm"],
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_southern_headband"], //15
+            ]
+        }]
+    },
+    {
+        ID = "theamson_nomad_leader_helmet_facemask", //43-123
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_cloth_scarf"],
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_southern_leather_helm"],
+                [1, "helm/legend_helmet_southern_cap"],
+                [1, "helm/legend_helmet_horsetail"],
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [15, "vanity/legend_helmet_southern_headband"], //15
+                [4, "vanity/legend_helmet_southern_patterned_headband"], //15
+            ]
+        }]
+    },
+    {
+        ID = "theamson_nomad_outlaw_helmet", //66-141 ish
+        Script = "",
+        Sets = [{
+            Hoods = [
+                [1, "hood/legend_helmet_southern_open_chain_hood"], 
+                [2, "hood/legend_helmet_chain_hood"], 
+                [1, "hood/legend_helmet_southern_niqaab"],
+            ],
+            Helms = [
+                [1, "helm/legend_helmet_enclave_skullcap"], //120, -12, -1
+                [4, "helm/legend_helmet_southern_conic_helm"] //120, -12, -1
+            ],
+            Tops = [
+            ],
+            Vanity = [
+                [1, "vanity/legend_helmet_headband"], //10
+                [4, "vanity/legend_helmet_southern_patterned_headband"], //15
             ]
         }]
     },

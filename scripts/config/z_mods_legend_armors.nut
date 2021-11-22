@@ -1476,6 +1476,32 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ]
     }]
 },{
+    ID = "traze_northern_mercenary_armor", // around 240
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [2, "cloth/legend_gambeson"],
+            [2, "cloth/legend_gambeson_plain"],
+            [5, "cloth/legend_gambeson_wolf"]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_hauberk"],
+            [1, "chain/legend_armor_hauberk_full"],
+        ],
+        Plate = [
+            [1, "plate/legend_armor_plate_cuirass"],
+        ],
+        Cloak = [
+            [1, ""],
+            [2, "tabard/legend_shoulder_cloth"],
+        ],
+        Tabard = [
+            
+        ],
+        Attachments =[
+        ]
+    }]
+},{
     ID = "northern_mercenary_armor_01", // lighter than 00 ~170
     Script = "",
     Sets = [{
@@ -1651,6 +1677,77 @@ gt.Const.LegendMod.ArmorObjs.extend([{
     }]
 },
 {
+    ID = "citrene_nomad_cutthroat_armor_00", // ~~160-195
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_southern_tunic"],// 25
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [5, "plate/legend_armor_leather_lamellar_harness_heavy"],// 130
+            [3, "plate/legend_armor_leather_lamellar_harness_reinforced"],// 150
+            [1, "plate/legend_armor_leather_lamellar_heavy"],// 165
+        ],
+        Cloak = [
+            [0, "cloak/legend_southern_scarf_wrap"],// 15
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
+    ID = "citrene_nomad_cutthroat_armor_01", // ~~177
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_southern_gambeson"],// 65
+            [1, "cloth/legend_southern_split_gambeson"],// 65
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [1, "plate/legend_armor_plate_ancient_chest_restored"],// 110
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_wrap_right"],// 2
+            [1, "tabard/legend_southern_wrap_left"],// 2
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
+    ID = "citrene_nomad_leader_armor_00", // ~~165 ish
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_gladiator_harness"],// 40
+        ],
+        Chain = [
+            [0, "chain/legend_southern_mail"],// 100
+        ],
+        Plate = [
+            [1, "plate/legend_southern_arm_guards"],
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+            [2, "tabard/legend_noble_vest"],// 10
+            [1, "tabard/legend_southern_wrap"],// 5
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+            [1, "tabard/legend_southern_overcloth"],// 10
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
     ID = "white_nomad_leader_armor_00", // ~~186
     Script = "",
     Sets = [{
@@ -1677,6 +1774,79 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         Tabard = [
             [2, ""],
             [1, "tabard/legend_southern_shoulder_cloth"],// 5
+            [1, "tabard/legend_southern_wrap"],// 5
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
+    ID = "theamson_nomad_outlaw_armor", // ~~145-175
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_southern_tunic"],
+        ],
+        Chain = [
+            [1, "chain/legend_armor_hauberk_full"],
+        ],
+        Plate = [
+            [1, "plate/legend_southern_arm_guards"],
+        ],
+        Cloak = [
+            [1, "cloth/legend_sackcloth"],
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
+    ID = "theamson_nomad_leader_armor_heavy", // ~~210-240-280
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_southern_tunic"],
+        ],
+        Chain = [
+            [1, "chain/legend_armor_basic_mail"],
+        ],
+        Plate = [
+            [1, "plate/legend_southern_leather_plates"],
+        ],
+        Cloak = [
+            [1, "cloak/legend_southern_shoulder_cloth"],// 5
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_shoulder_cloth"],// 5
+        ],
+        Attachments =[
+        ]
+    }]
+},
+{
+    ID = "indebted_armor_rags", // ~~BOSS OF THIS GYM
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_sackcloth"],
+            [1, "cloth/legend_sackcloth_tattered"],
+            [1, "cloth/legend_sackcloth_patched"],
+        ],
+        Chain = [
+        ],
+        Plate = [
+        ],
+        Cloak = [
+            [1, ""],
+            [1, "cloak/legend_southern_shoulder_cloth"],// 5
+        ],
+        Tabard = [
+            [1, "tabard/legend_southern_wrap_left"],
+            [1, "tabard/legend_southern_wrap_right"],
             [1, "tabard/legend_southern_wrap"],// 5
             [1, "tabard/legend_southern_shoulder_cloth"],// 5
         ],
