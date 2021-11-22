@@ -251,8 +251,9 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 	{
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "tattered_sackcloth"],
-			[1, "leather_wraps"],
+			[3, "tattered_sackcloth"],
+			[2, "leather_wraps"],
+			[1, "indebted_armor_rags"],
 			[2, ""]
 		]))
 	}

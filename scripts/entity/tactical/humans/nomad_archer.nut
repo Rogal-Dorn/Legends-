@@ -115,16 +115,19 @@ this.nomad_archer <- this.inherit("scripts/entity/tactical/human", {
 
 
 		local armor = [
-			[1, "oriental/nomad_robe"],
-			[1, "oriental/thick_nomad_robe"],
+			[2, "oriental/nomad_robe"],
+			[2, "oriental/thick_nomad_robe"],
 			[1, "oriental/cloth_sash"],
-			[1, "nomad_archer_armor_00"]
+			[1, "citrene_nomad_cutthroat_armor_00"],
+			[1, "citrene_nomad_cutthroat_armor_01"],
+			[3, "nomad_archer_armor_00"]
 		]
 
 		local helmet = [
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/nomad_leather_cap"]
+			[2, "oriental/nomad_head_wrap"],
+			[3, "oriental/nomad_head_wrap"],
+			[1, "citrene_nomad_ranged_helmet_00"],
+			[3, "oriental/nomad_leather_cap"]
 		]
 
 		local outfits = [

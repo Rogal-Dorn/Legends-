@@ -136,15 +136,18 @@ this.nomad_outlaw <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "oriental/stitched_nomad_armor"],
+			[2, "oriental/stitched_nomad_armor"],
 			[1, "oriental/plated_nomad_mail"],
-			[1, "oriental/leather_nomad_robe"]
+			[1, "theamson_nomad_outlaw_armor"],
+			[3, "oriental/leather_nomad_robe"]
 		]));
 
 		local helmet = [
-			[1, "oriental/nomad_leather_cap"],
-			[1, "oriental/nomad_light_helmet"],
-			[1, "oriental/nomad_reinforced_helmet"],
+			[3, "oriental/nomad_leather_cap"],
+			[2, "oriental/nomad_light_helmet"],
+			[3, "citrene_nomad_cutthroat_helmet_01"],
+			[1, "theamson_nomad_outlaw_helmet"],
+			[2, "oriental/nomad_reinforced_helmet"],
 			[1, "oriental/leather_head_wrap"]
 		];
 		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));

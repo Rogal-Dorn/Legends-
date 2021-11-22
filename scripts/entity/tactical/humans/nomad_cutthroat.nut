@@ -104,13 +104,17 @@ this.nomad_cutthroat <- this.inherit("scripts/entity/tactical/human", {
 			[2, "oriental/nomad_robe"],
 			[2, "oriental/thick_nomad_robe"],
 			[2, "oriental/cloth_sash"],
+			[1, "citrene_nomad_cutthroat_armor_00"],
+			[1, "citrene_nomad_cutthroat_armor_01"],
 			[1, "leather_wraps"]
 		]));
 
 		local helmet = [
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/nomad_head_wrap"],
-			[1, "oriental/leather_head_wrap"],
+			[2, "oriental/nomad_head_wrap"],
+			[1, "citrene_nomad_cutthroat_helmet_00"],
+			[1, "citrene_nomad_cutthroat_helmet_01"],
+			[2, "oriental/nomad_head_wrap"],
+			[2, "oriental/leather_head_wrap"],
 			[1, "oriental/nomad_leather_cap"]
 		];
 		this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));

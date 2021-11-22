@@ -116,8 +116,9 @@ this.slave <- this.inherit("scripts/entity/tactical/human", {
 		if (this.Math.rand(1, 100) <= 66)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "sackcloth"],
-				[1, "tattered_sackcloth"]
+				[2, "sackcloth"],
+				[1, "indebted_armor_rags"],
+				[2, "tattered_sackcloth"]
 			]));
 		}
 

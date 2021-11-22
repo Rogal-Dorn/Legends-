@@ -156,17 +156,20 @@ this.nomad_leader <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
-				[1, "oriental/plated_nomad_mail"],
-				[1, "oriental/southern_long_mail_with_padding"],
+				[3, "oriental/plated_nomad_mail"],
+				[2, "oriental/southern_long_mail_with_padding"],
+				[1, "theamson_nomad_leader_armor_heavy"],
+				[2, "citrene_nomad_leader_armor_00"],
 				[1, "southern_knight_armor"]
 			]));
 		}
-
 
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local helmet = [
 				[4, "oriental/southern_helmet_with_coif"],
+				[1, "theamson_nomad_leader_helmet_facemask"],
+				[1, "theamson_nomad_leader_helmet_heavy"],
 				[8, "oriental/nomad_reinforced_helmet"]
 			];
 
