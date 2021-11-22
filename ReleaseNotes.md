@@ -6279,3 +6279,25 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Witchhunter typo fixed in background.
 - Drunk nobleman event for Noble origin typo fixed.
 - Fixed the missing mini icon brush for the Legends graze effect.
+
+
+## 15.0.1.?????????
+**Armours**
+New armours made for southerners thanks to @Theamson, @traze and @citreneking, these outfits have been assigned to their related groups.
+
+**For Modders**
+New armour sets can now be used, their titles are;
+theamson_nomad_outlaw_armor
+theamson_nomad_outlaw_helmet
+theamson_nomad_leader_helmet_facemask
+theamson_nomad_leader_helmet_heavy
+theamson_nomad_leader_armor_heavy
+traze_northern_mercenary_armor
+traze_northern_mercenary_cap
+indebted_armor_rags
+citrene_nomad_cutthroat_helmet_00
+citrene_nomad_cutthroat_armor_00
+citrene_nomad_cutthroat_helmet_01
+citrene_nomad_cutthroat_armor_01
+citrene_nomad_ranged_helmet_00
+citrene_nomad_leader_armor_00
