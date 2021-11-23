@@ -6301,3 +6301,7 @@ citrene_nomad_cutthroat_helmet_01
 citrene_nomad_cutthroat_armor_01
 citrene_nomad_ranged_helmet_00
 citrene_nomad_leader_armor_00
+
+**Typo Corrections**
+Push forward skill now no longer states it gives 10 ranged skill
+Ironmonger background had a few typos, that are now corrected
