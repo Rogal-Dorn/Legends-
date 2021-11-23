@@ -23,7 +23,7 @@ this.legend_named_blacksmith_hammer <- this.inherit("scripts/items/weapons/named
 		this.m.StaminaModifier = -8;
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 30;
-		this.m.ArmorDamageMult = 4.0;
+		this.m.ArmorDamageMult = 2.5;
 		this.m.DirectDamageMult = 0.7;
 		this.randomizeValues();
 	}

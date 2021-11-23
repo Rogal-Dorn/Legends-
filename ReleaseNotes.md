@@ -6317,3 +6317,6 @@ Goblin leader & shaman bravery changed from 70 to 95
 
 All the above should stop goblins from routing in such large numbers so easily
 
+
+Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5
+
