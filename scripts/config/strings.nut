@@ -2172,7 +2172,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendRoster6 = "Manage the company logistics. Supply rationing, camp structure and waste disposal. Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]6[/color]",
 	LegendRoster7 = "Implement platoon organisation techniques. Balancing interteam dynamics, clarifying role responsibilities, creating conflict resolution processes and creating strategic plans.  Increases the company roster size by [color=" + this.Const.UI.Color.PositiveValue + "]7[/color]",
 	LegendInsects = "Unleash a horde of insects on your enemy, halving their melee skill, melee defense, ranged skill, ranged defense and initiative.",
-	LegendForwardPush = "Direct your troops to attack at once, granting either [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee or ranged skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn.",
+	LegendForwardPush = "Direct your troops to attack at once, granting either [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn.",
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff.",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun.",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies.",
