@@ -6305,3 +6305,15 @@ citrene_nomad_leader_armor_00
 **Typo Corrections**
 Push forward skill now no longer states it gives 10 ranged skill
 Ironmonger background had a few typos, that are now corrected
+
+**Balance**
+Goblin overseers now have true believer as standard
+Goblin shamans now have true believer as standard
+
+Goblin ambusher bravery changed from 45 to 55
+Goblin fighter bravery changed from 55 to 65
+Goblin wolfrider bravery unchanged
+Goblin leader & shaman bravery changed from 70 to 95
+
+All the above should stop goblins from routing in such large numbers so easily
+
