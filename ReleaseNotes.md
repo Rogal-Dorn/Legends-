@@ -6282,6 +6282,10 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 
 
 ## 15.0.1.?????????
+**Fixes**
+Husk background had two items that would not appear and cause errors, these are now fixed.
+
+
 **Armours**
 New armours made for southerners thanks to @Theamson, @traze and @citreneking, these outfits have been assigned to their related groups.
 
@@ -6317,6 +6321,6 @@ Goblin leader & shaman bravery changed from 70 to 95
 
 All the above should stop goblins from routing in such large numbers so easily
 
-
+Husk background nerfed slightly
 Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5
 
