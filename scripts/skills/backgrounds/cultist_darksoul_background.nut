@@ -10,7 +10,7 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
 		this.m.HiringCost = 150;
-		this.m.DailyCost = 21;
+		this.m.DailyCost = 24;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
@@ -154,20 +154,20 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local c = {
 			Hitpoints = [
-				8,
-				15
+				5,
+				9
 			],
 			Bravery = [
 				-5,
 				-8
 			],
 			Stamina = [
-				8,
-				15
+				5,
+				8
 			],
 			MeleeSkill = [
 				5,
-				10
+				5
 			],
 			RangedSkill = [
 				-10,
@@ -182,8 +182,8 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 				3
 			],
 			Initiative = [
-				10,
-				15
+				5,
+				5
 			]
 		};
 		return c;
@@ -239,7 +239,7 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_bone_carver"));
+			items.equip(this.new("scripts/items/weapons/greenskins/legend_bone_carver"));
 		}
 		else if (r == 1)
 		{
@@ -273,7 +273,7 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 			[1, "tattered_sackcloth"],
 			[1, "leather_wraps"],
 			[1, "decayed_reinforced_mail_hauberk"],
-			[1, "decaying_coat_of_plates"]
+			[1, "decayed_coat_of_plates"]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "cultist_hood"],
