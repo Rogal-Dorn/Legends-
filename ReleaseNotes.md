@@ -6309,6 +6309,7 @@ citrene_nomad_leader_armor_00
 **Typo Corrections**
 Push forward skill now no longer states it gives 10 ranged skill
 Ironmonger background had a few typos, that are now corrected
+Blacksmith typos corrected
 
 **Balance**
 Goblin overseers now have true believer as standard
@@ -6323,4 +6324,7 @@ All the above should stop goblins from routing in such large numbers so easily
 
 Husk background nerfed slightly
 Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5
+
+**MISC**
+There are now new tavern rumors to read
 
