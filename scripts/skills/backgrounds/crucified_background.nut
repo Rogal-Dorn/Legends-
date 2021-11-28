@@ -47,13 +47,13 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.HammerTree,
+				this.Const.Perks.CleaverTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HeavyArmorTree
+				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
@@ -103,20 +103,20 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				5,
+				5
 			],
 			Bravery = [
 				5,
 				5
 			],
 			Stamina = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeSkill = [
-				13,
-				10
+				5,
+				7
 			],
 			RangedSkill = [
 				12,
@@ -124,15 +124,15 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			MeleeDefense = [
 				5,
-				8
+				5
 			],
 			RangedDefense = [
 				5,
-				8
+				5
 			],
 			Initiative = [
-				0,
-				0
+				5,
+				5
 			]
 		};
 		return c;
