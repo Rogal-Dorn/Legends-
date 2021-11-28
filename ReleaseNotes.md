@@ -6285,6 +6285,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 **Fixes**
 Husk background had two items that would not appear and cause errors, these are now fixed.
 Greater evil strength set to 0 when a town is destroyed (was 20), this is a temporary fix for the greenskin crisis becoming too big to handle. WIll be revisited later.
+Hunter's cap no longer has two lines about it granting +1 to vision
 
 **Armours**
 New armours made for southerners thanks to @Theamson, @traze and @citreneking, these outfits have been assigned to their related groups.

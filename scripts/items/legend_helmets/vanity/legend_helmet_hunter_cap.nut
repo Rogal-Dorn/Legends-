@@ -39,12 +39,6 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 			icon = "ui/icons/chance_to_hit_head.png",
 			text = "Makes enemies much more likely to attack you"
 		});
-		_result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision"
-		});
 
 		return _result;
 	}
