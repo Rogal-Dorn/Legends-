@@ -1342,7 +1342,6 @@ NewCampaignMenuModule.prototype.createSliderControlDIV = function (_definition, 
 	_definition.Control.attr('max', _definition.Max);
 	_definition.Control.attr('step', _definition.Step);
 	_definition.Control.val(_definition.Value);
-	_definition.Control.prop('disabled', true)
 	control.append(_definition.Control);
 
 	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' + _definition.Value + '</div>');
