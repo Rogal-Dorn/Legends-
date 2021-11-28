@@ -14,7 +14,7 @@ gt.Const.Factions <- {
 	GreaterEvilStrengthOnCriticalContract = -12.0,
 	GreaterEvilStrengthOnCommonContract = -6.0,
 	GreaterEvilStrengthOnFailedContract = 6.0,
-	GreaterEvilStrengthOnTownDestroyed = 20.0
+	GreaterEvilStrengthOnTownDestroyed = 0.0 //was 20, set to 0 due to greenskin crisis becoming uncontrollable. Currently a quick fix and will need to be looked at further!! (28/11/21 by Luft)
 };
 gt.Const.FactionType <- {
 	None = 0,
