@@ -11,7 +11,7 @@ this.coat_with_spider_poison_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.coat_with_spider_poison";
 		this.m.Name = "Use Poisoned Oil";
-		this.m.Description = "Coat your weapons and arrowtips with poison. Can not be used while engaged in melee.";
+		this.m.Description = "Coat your weapons and arrowtips with poison. Can not be used while engaged in melee. Costs 0 Action Points during the first round of combat.";
 		this.m.Icon = "skills/active_139.png";
 		this.m.IconDisabled = "skills/active_139_sw.png";
 		this.m.Overlay = "active_139";

@@ -50,6 +50,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		IsMilitary = false,
 		IsActive = true,
 		IsUpgrading = false
+		RecruitRoster = {
+			Previous = [],
+			Tryout = [],
+			ClearRoster = function(){
+				this.Previous = [];
+				this.Tryout = [];
+			}
+		}
 	},
 	function setUpgrading( _v )
 	{
@@ -1633,6 +1641,22 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.LastRosterUpdate = -9000.0;
 		}
 	}
+	function getRosterIdentifier(_bro){
+		local id = _bro.getName()
+		local b = _bro.getBaseProperties();
+		local bstats = [
+			b.Hitpoints,
+			b.Stamina,
+			b.Bravery,
+			b.Initiative,
+			b.MeleeSkill,
+			b.RangedSkill,
+			b.MeleeDefense,
+			b.RangedDefense
+		];
+		foreach(stat in bstats) id += stat.tostring()
+		return id
+	}
 
 	function updateRoster( _force = false )
 	{
@@ -1640,6 +1664,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		if (daysPassed > 7){
 			this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
 			this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
+			this.m.RecruitRoster.ClearRoster()
 			daysPassed = 0;
 			
 		}
@@ -1722,6 +1747,22 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			current.remove(n);
 		}
 
+		local previousRecruits = this.m.RecruitRoster.Previous
+		local tryoutCompleted = this.m.RecruitRoster.Tryout
+		for( local i = 0; i < current.len(); i++ )
+		{
+			local bro = current[i]
+			local broID = this.getRosterIdentifier(bro)
+			if (tryoutCompleted.find(broID) != null){
+				bro.setTryoutDone(true);
+			}
+			if (previousRecruits.find(broID) != null){
+				roster.remove(bro);
+			}
+		}
+		
+
+		
 		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
 		this.updateStables(_force);
 	}
@@ -2724,6 +2765,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onSerialize( _out )
 	{
+		this.getFlags().set("TemporaryRecruitRoster", true)
 		this.location.onSerialize(_out);
 		_out.writeU8(this.m.Size);
 		_out.writeBool(this.m.IsUpgrading);
@@ -2800,6 +2842,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
 			i = ++i;
+		}
+		
+		_out.writeU8(this.m.RecruitRoster.Previous.len());
+		foreach(bro in this.m.RecruitRoster.Previous){
+			_out.writeString(bro)
+		}
+		_out.writeU8(this.m.RecruitRoster.Tryout.len());
+		foreach(bro in this.m.RecruitRoster.Tryout){
+			_out.writeString(bro)
 		}
 	}
 
@@ -2917,6 +2968,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				V = v
 			});
 			i = ++i;
+		}
+		if(this.getFlags().has("TemporaryRecruitRoster")){
+			local previouslen = _in.readU8()
+			for (local i = 0; i != previouslen; ++i)
+			{
+				this.m.RecruitRoster.Previous.push(_in.readString())
+			}
+			previouslen = _in.readU8()
+			for (local i = 0; i !=  previouslen; ++i)
+			{
+				this.m.RecruitRoster.Tryout.push(_in.readString())
+			}
 		}
 
 		this.updateSprites();

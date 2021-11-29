@@ -6244,5 +6244,38 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Updated MSU to v0.6.23.
 
 ## 15.0.1.23
+**Misc**
+- Bandit Raiders and Veterans now can spawn with Barbute helmets.
+
 **Fixes**
-- Slave units spawn less in southern armies (lowered the maximum party power for them to stop spawning)
+- Lowered the spawn rate of slave units spawn in southern armies (lowered the maximum party power for them to stop spawning).
+- Fixed Recruited/Dismissed bros reappearing in the town's roster after leaving the town and entering again.
+- Fixed the Try Out status of recruits resetting after leaving the town and entering again.
+- Fixed the bonuses from the Flesh Mortification perk being swapped between min and max.
+- Added missing mini icon for the omens effect.
+
+**Modding**
+- Updated to MSU v0.6.24. See MSU Changelog and Documentation.
+
+## 15.0.1.24
+**Balance**
+- Druid tweaked:
+  - Now fills a support role rather than frontline powerhouse.
+  - Starting stats reduced. Stamina favored for spellcasting.
+  - 2 stars in Stamina as opposed to 3 in Melee Skill and Hitpoints.
+- Cannibal event score halved and now will only trigger once.
+- Removed halberd from Billman spawn.
+- Removed an armor set from Knights that was only 200 body armor.
+- Removed a helm set from enemy Zweihanders that was only 70 armor.
+- Increased Minstrel and Troubadour hiring cost from 65 to 665.
+- Increased Troubadour daily cost to 19 to match with that of Minstrel.
+
+**Fixes**
+- Fixed equipping a Witchhunter Helmet making it impossible to load saves.
+- Fixed the Ranger and the Druid scenarios not having the correct world map movement speed.
+- Fixed tooltip descriptions for armor piercing and broad head bolts and arrows.
+- Improved tooltip of poison actives to state that it costs 0 AP if used on round 1 of combat.
+- Appetite of a donkey graphic had the wrong filepath and wouldn't be displayed.
+- Witchhunter typo fixed in background.
+- Drunk nobleman event for Noble origin typo fixed.
+- Fixed the missing mini icon brush for the Legends graze effect.

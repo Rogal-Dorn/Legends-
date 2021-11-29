@@ -76,8 +76,7 @@ this.noble_billman <- this.inherit("scripts/entity/tactical/human", {
 		local weapons = [
 			"weapons/billhook",
 			"weapons/pike",
-			"weapons/legend_military_voulge",
-			"weapons/legend_halberd"
+			"weapons/legend_military_voulge"
 		];
 
 		if (this.Const.DLC.Unhold)

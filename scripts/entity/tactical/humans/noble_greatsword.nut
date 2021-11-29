@@ -101,7 +101,7 @@ this.noble_greatsword <- this.inherit("scripts/entity/tactical/human", {
 
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-			[1, "greatsword_hat"],
+			//[1, "greatsword_hat"],  Only 70 durability
 			[1, "rondel_helm"],
 			[1, "scale_helm"],
 			[1, "greatsword_faction_helm", banner],
