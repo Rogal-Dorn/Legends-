@@ -20,13 +20,13 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 		{
 			if (item.getID() == "weapon.pitchfork" || item.getID() == "weapon.legend_wooden_pitchfork"  || item.getID() == "weapon.legend_hoe"  || item.getID() == "weapon.legend_scythe"  || item.getID() == "weapon.wooden_flail")
 			{
-				_properties.DamageRegularMin += 4;
-				_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 6;
+				_properties.DamageRegularMax += 16;
 			}
 			else if (item.isWeaponType(this.Const.Items.WeaponType.Polearm))
 			{
-				_properties.DamageRegularMin += 1;
-				_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 2;
+				_properties.DamageRegularMax += 7;
 			}
 		}
 	}

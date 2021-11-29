@@ -20,13 +20,13 @@ this.perk_legend_specialist_shortbow_damage <- this.inherit("scripts/skills/skil
 		{
 			if (item.getID() == "weapon.short_bow" || item.getID() == "weapon.goblin_bow" || item.getID() == "weapon.wonky_bow")
 			{
-				_properties.DamageRegularMin += 4;
-				_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 6;
+				_properties.DamageRegularMax += 16;
 			}
 			else if (item.isWeaponType(this.Const.Items.WeaponType.Bow))
 			{
-				_properties.DamageRegularMin += 1;
-				_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 2;
+				_properties.DamageRegularMax += 7;
 			}
 		}
 	}

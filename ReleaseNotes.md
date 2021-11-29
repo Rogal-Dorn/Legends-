@@ -6285,13 +6285,13 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 **Fixes**
 Husk background had two items that would not appear and cause errors, these are now fixed.
 Greater evil strength gain set to 0 when a town is destroyed (was 20), this is a temporary fix for the greenskin crisis becoming too big to handle. Will be revisited later.
-Hunter's cap no longer has two lines about it granting +1 to vision
+Hunter's cap no longer has two lines about it granting +1 to vision.
 
 **Armours**
 New armours made for southerners thanks to @Theamson, @traze and @citreneking, these outfits have been assigned to their related groups.
 
 **Art**
-Invictus trait now has a new art asset
+Invictus trait now has a new art asset.
 
 **For Modders**
 New armour sets can now be used, their titles are;
@@ -6311,26 +6311,30 @@ citrene_nomad_ranged_helmet_00
 citrene_nomad_leader_armor_00
 
 **Typo Corrections**
-Push forward skill now no longer states it gives 10 ranged skill
-Ironmonger background had a few typos, that are now corrected
-Blacksmith typos corrected
+Push forward skill now no longer states it gives 10 ranged skill.
+Ironmonger background had a few typos, that are now corrected.
+Blacksmith typos corrected.
+Specialist weapon skill write-ups have been tweaked slightly to be less confusing.
 
 **Balance**
-Goblin overseers now have true believer as standard
-Goblin shamans now have true believer as standard
+Goblin overseers now have true believer as standard.
+Goblin shamans now have true believer as standard.
 
-Goblin ambusher bravery changed from 45 to 55
-Goblin fighter bravery changed from 55 to 65
-Goblin wolfrider bravery unchanged
-Goblin leader & shaman bravery changed from 70 to 95
+Goblin ambusher bravery changed from 45 to 55.
+Goblin fighter bravery changed from 55 to 65.
+Goblin wolfrider bravery unchanged.
+Goblin leader & shaman bravery changed from 70 to 95.
 
-All the above should stop goblins from routing in such large numbers so easily
+All the above should stop goblins from routing in such large numbers so easily.
 
-Husk background nerfed slightly
-Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5
+Husk background nerfed slightly.
+Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5.
 Crucified crusader now loses battleforged & hammer perks, gains medium armour perks and has cleaver mastery, small stat changes to compensate.
 Harvest rock, tree and bush skills removed - they proved hard to balance and could cause crashes. You can still gain materials by assigning bros with these specialist perks to the gathering tent.
 
+Changes to specialist weapon skills;
+Damage specialist skills (milita spears, pickaxes, shivs, etc.) up from 4-12 to 6-16 skill with the specified weapon, applies 35% bonus (2-7) instead of 25% to similar weapons (does not apply to whips, instruments or slings).
+
 **MISC**
-There are now new tavern rumors to read
+There are now new tavern rumors to read.
 
