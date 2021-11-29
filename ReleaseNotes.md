@@ -6327,6 +6327,7 @@ Goblin leader & shaman bravery changed from 70 to 95.
 
 All the above should stop goblins from routing in such large numbers so easily.
 
+Orc elites no longer randomly spawn with named weapons, however they can still spawn with named heavy shields at random.
 Husk background nerfed slightly.
 Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5.
 Crucified crusader now loses battleforged & hammer perks, gains medium armour perks and has cleaver mastery, small stat changes to compensate.
