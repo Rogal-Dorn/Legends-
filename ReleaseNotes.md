@@ -6340,3 +6340,8 @@ Damage specialist skills (milita spears, pickaxes, shivs, etc.) up from 4-12 to 
 There are now new tavern rumors to read.
 
 - Fixed max of 25 units even though it should allow up to 27 units
+
+== Uber Changes
+- Swapped Longsword and Greatsword durabilities to make more sense according to the tiers of the weapons.
+  - Longsword now 60, Greatsword 64. 
+- Fencing Sword durability buffed to 56 from 48.
