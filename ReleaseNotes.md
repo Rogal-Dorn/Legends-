@@ -6303,7 +6303,7 @@ Invictus trait now has a new art asset.
 - Harvest rock, tree and bush skills removed - they proved hard to balance and could cause crashes. You can still gain materials by assigning bros with these specialist perks to the gathering tent.
 - Damage specialist skills (milita spears, pickaxes, shivs, etc.) up from 4-12 to 6-16 skill with the specified weapon, applies 35% bonus (2-7) instead of 25% to similar weapons (does not apply to whips, instruments or slings).
 - Swapped Longsword and Greatsword durabilities to make more sense according to the tiers of the weapons. Longsword now 60, Greatsword 64. 
-- Fencing Sword durability buffed to 56 from 48.
+- Fencing Sword durability buffed from 48 to 56.
 
 **Fixes**
 - Husk background had two items that would not appear and cause errors, these are now fixed.
@@ -6318,7 +6318,8 @@ Invictus trait now has a new art asset.
 - Specialist weapon skill write-ups have been tweaked slightly to be less confusing.
 
 **MISC**
-There are now new tavern rumors to read.
+- There are now new tavern rumors to read.
+- Re-enabled map sliders.
 
 **For Modders**
 New armour sets can now be used, their titles are:
