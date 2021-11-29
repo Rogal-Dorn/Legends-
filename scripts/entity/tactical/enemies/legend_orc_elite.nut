@@ -339,11 +339,11 @@ this.legend_orc_elite <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (r == 1)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_cleaver"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_cleaver"));
 			}
 			else if (r == 2)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/named/named_orc_axe"));
+				this.m.Items.equip(this.new("scripts/items/weapons/greenskins/orc_axe"));
 			}
 
 		}
