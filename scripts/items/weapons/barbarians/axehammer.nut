@@ -39,8 +39,8 @@ this.axehammer <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
-		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
-		this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
 
 	}
 

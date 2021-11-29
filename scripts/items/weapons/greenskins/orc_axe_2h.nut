@@ -43,7 +43,7 @@ this.orc_axe_2h <- this.inherit("scripts/items/weapons/weapon", {
 		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
 
-		this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
 	}
 
 	function onUpdateProperties( _properties )
