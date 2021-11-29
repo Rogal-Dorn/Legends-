@@ -6284,7 +6284,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 ## 15.0.1.?????????
 **Fixes**
 Husk background had two items that would not appear and cause errors, these are now fixed.
-Greater evil strength set to 0 when a town is destroyed (was 20), this is a temporary fix for the greenskin crisis becoming too big to handle. WIll be revisited later.
+Greater evil strength gain set to 0 when a town is destroyed (was 20), this is a temporary fix for the greenskin crisis becoming too big to handle. Will be revisited later.
 Hunter's cap no longer has two lines about it granting +1 to vision
 
 **Armours**
@@ -6329,6 +6329,7 @@ All the above should stop goblins from routing in such large numbers so easily
 Husk background nerfed slightly
 Named blacksmith hammer armour damage multiplier reduced from 4.0 to 2.5
 Crucified crusader now loses battleforged & hammer perks, gains medium armour perks and has cleaver mastery, small stat changes to compensate.
+Harvest rock, tree and bush skills removed - they proved hard to balance and could cause crashes. You can still gain materials by assigning bros with these specialist perks to the gathering tent.
 
 **MISC**
 There are now new tavern rumors to read
