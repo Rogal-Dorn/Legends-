@@ -20,13 +20,13 @@ this.perk_legend_specialist_militia_damage <- this.inherit("scripts/skills/skill
 		{
 			if (item.getID() == "weapon.militia_spear" || item.getID() == "weapon.legend_wooden_spear" || item.getID() == "weapon.ancient_spear")
 			{
-				_properties.DamageRegularMin += 4;
-				_properties.DamageRegularMax += 12;
+				_properties.DamageRegularMin += 6;
+				_properties.DamageRegularMax += 16;
 			}
 			else if (item.isWeaponType(this.Const.Items.WeaponType.Spear))
 			{
-				_properties.DamageRegularMin += 1;
-				_properties.DamageRegularMax += 3;
+				_properties.DamageRegularMin += 2;
+				_properties.DamageRegularMax += 7;
 			}
 		}
 	}
