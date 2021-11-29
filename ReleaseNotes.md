@@ -6279,3 +6279,9 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Witchhunter typo fixed in background.
 - Drunk nobleman event for Noble origin typo fixed.
 - Fixed the missing mini icon brush for the Legends graze effect.
+
+== Uber Changes
+- Swapped Longsword and Greatsword durabilities to make more sense according to the tiers of the weapons.
+  - Longsword now 60, Greatsword 64. 
+- Estoc durability buffed to 64 from 56.
+- Fencing Sword durability buffed to 56 from 48.

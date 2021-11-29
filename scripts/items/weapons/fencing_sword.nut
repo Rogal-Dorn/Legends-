@@ -16,8 +16,8 @@ this.fencing_sword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_sword_fencing_01";
-		this.m.Condition = 48.0;
-		this.m.ConditionMax = 48.0;
+		this.m.Condition = 56.0;
+		this.m.ConditionMax = 56.0;
 		this.m.StaminaModifier = -4;
 		this.m.Value = 1550;
 		this.m.RegularDamage = 35;
