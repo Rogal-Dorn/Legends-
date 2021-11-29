@@ -6290,6 +6290,9 @@ Hunter's cap no longer has two lines about it granting +1 to vision
 **Armours**
 New armours made for southerners thanks to @Theamson, @traze and @citreneking, these outfits have been assigned to their related groups.
 
+**Art**
+Invictus trait now has a new art asset
+
 **For Modders**
 New armour sets can now be used, their titles are;
 theamson_nomad_outlaw_armor
