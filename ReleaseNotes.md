@@ -6279,3 +6279,7 @@ Skeleton gladiators have been reworked slightly, they now has less AP, better de
 - Witchhunter typo fixed in background.
 - Drunk nobleman event for Noble origin typo fixed.
 - Fixed the missing mini icon brush for the Legends graze effect.
+
+## 15.0.1.25
+**Fixes**
+- Fixed max of 25 units even though it should allow up to 27 units
