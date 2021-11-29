@@ -422,9 +422,9 @@ this.character_screen <- {
 
 		local result = {
 			brothersInCombat = this.World.State.getBrothersInFrontline(),
-			brothersMaxInCombat = 25,
+			brothersMaxInCombat = 27,
 			brothers = this.World.getPlayerRoster().getSize(),
-			brothersMax = 25,
+			brothersMax = 27,
 			shake = _shake,
 		};
 

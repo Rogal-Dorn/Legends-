@@ -6339,3 +6339,4 @@ Damage specialist skills (milita spears, pickaxes, shivs, etc.) up from 4-12 to 
 **MISC**
 There are now new tavern rumors to read.
 
+- Fixed max of 25 units even though it should allow up to 27 units
