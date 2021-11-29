@@ -21,8 +21,8 @@ this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_longsword_01";
 		this.m.Value = 2000;
-		this.m.Condition = 64.0;
-		this.m.ConditionMax = 64.0;
+		this.m.Condition = 60.0;
+		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
