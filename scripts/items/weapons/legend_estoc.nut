@@ -16,8 +16,8 @@ this.legend_estoc <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Condition = 64.0;
-		this.m.ConditionMax = 64.0;
+		this.m.Condition = 56.0;
+		this.m.ConditionMax = 56.0;
 		this.m.StaminaModifier = -14;
 		this.m.Value = 3200;
 		this.m.RegularDamage = 45;
