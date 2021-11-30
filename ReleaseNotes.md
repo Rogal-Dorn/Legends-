@@ -6337,3 +6337,8 @@ citrene_nomad_cutthroat_helmet_01
 citrene_nomad_cutthroat_armor_01
 citrene_nomad_ranged_helmet_00
 citrene_nomad_leader_armor_00
+
+## 15.0.2.1
+
+**Fixes**
+- Fixes some issues with outfits causing lockups

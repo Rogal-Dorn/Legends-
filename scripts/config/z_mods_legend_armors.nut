@@ -1607,14 +1607,14 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [1, "cloak/legend_southern_shoulder_cloth", 7],
-            [1, "cloak/legend_southern_wrap"]
+            [1, "cloak/legend_dark_wooly_cloak", 13],
+            [1, "cloak/legend_southern_scarf", 7],
+            [1, "cloak/legend_southern_scarf", 6],
+            [1, "cloak/legend_southern_scarf", 13],
         ],
         Tabard = [
-            [1, "tabard/legend_southern_scarf", 7],
-            [1, "tabard/legend_southern_scarf", 6],
-            [1, "tabard/legend_southern_scarf", 13],
-            [1, "tabard/legend_dark_wooly_cloak", 13],
+            [1, "tabard/legend_southern_shoulder_cloth", 7],
+            [1, "tabard/legend_southern_wrap"],
         ],
         Attachments =[
             [4, ""],
@@ -1637,12 +1637,12 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [1, "plate/legend_armor_leather_jacket_simple"]
         ],
         Cloak = [
-            [2, ""],
-            [1, "cloak/legend_southern_shoulder_cloth", 7],
-            [1, "cloak/legend_southern_shoulder_cloth", 6]
         ],
         Tabard = [
-            [1, "tabard/legend_southern_wrap_left", 6]
+            [1, "tabard/legend_southern_wrap_left", 6],
+            
+            [1, "tabard/legend_southern_shoulder_cloth", 7],
+            [1, "tabard/legend_southern_shoulder_cloth", 6]
         ],
         Attachments =[
             [9, ""],
@@ -1818,7 +1818,6 @@ gt.Const.LegendMod.ArmorObjs.extend([{
             [1, "plate/legend_southern_leather_plates"],
         ],
         Cloak = [
-            [1, "cloak/legend_southern_shoulder_cloth"],// 5
         ],
         Tabard = [
             [1, "tabard/legend_southern_shoulder_cloth"],// 5
@@ -1842,7 +1841,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [1, "cloak/legend_southern_shoulder_cloth"],// 5
+            
         ],
         Tabard = [
             [1, "tabard/legend_southern_wrap_left"],
