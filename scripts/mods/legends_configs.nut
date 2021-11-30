@@ -1,6 +1,6 @@
 this.legends_configs <- {
 	m = {
-        IsArmor = false,
+        IsArmor = true,
         IsMagic = false,
         IsGender = 0,
         IsItemScaling = false,
