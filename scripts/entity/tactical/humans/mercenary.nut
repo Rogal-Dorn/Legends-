@@ -215,7 +215,8 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		local outfits = [
 			[1, "northern_mercenary_outfit_00"],
 			[1, "northern_mercenary_outfit_01"],
-			[1, "northern_mercenary_outfit_02"]
+			[1, "northern_mercenary_outfit_02"],
+			[1, "traze_northern_mercenary_outfit_00"],
 		]
 
 		foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helm) ) 

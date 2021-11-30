@@ -123,6 +123,16 @@ gt.Const.LegendMod.OutfitObjs.extend([
         [1, "white_nomad_leader_helmet_00"]
     ]
 },
+{
+  ID = "traze_northern_mercenary_outfit_00" //00 unneeded but nice if you want to add a second one in the future maybe
+  Body = [ 
+      [1, "traze_northern_mercenary_armor"] 
+    ],
+  Helmet = [ 
+      [1, "traze_northern_mercenary_cap"] 
+    ]
+}
+
 
 ]);
 
