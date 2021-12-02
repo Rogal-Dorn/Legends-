@@ -91,10 +91,7 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 						}
 						else if (bro.getSkills().hasSkill("perk.legend_pacifist"))
 						{
-							local r = this.Math.rand(1, 10);
-							local levelRequired = 10 - bro.getLevel();
-
-							if (bro.getLifetimeStats().BattlesWithoutMe < (bro.getLifetimeStats().Battles / 2))
+							if (bro.getLifetimeStats().BattlesWithoutMe > (bro.getLifetimeStats().Battles / 2))
 							{
 								bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Forced into battle against their wishes");
 							}

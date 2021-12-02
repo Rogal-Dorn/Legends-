@@ -970,17 +970,21 @@ this.asset_manager <- {
 					}
 				}
 
-				if (bro.getSkills().hasSkill("perk.legend_pacifist"))
-				{
-					local hireTime = bro.getHireTime();
-					local currentTime =  this.World.getTime().Time;
-					local servedTime = currentTime - hireTime;
-					local servedDays = servedTime / this.World.getTime().SecondsPerDay;
-					if ((servedDays * 7) < bro.getLifetimeStats().Kills)
-						{
-							bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
-						}
-				}
+				// if (bro.getSkills().hasSkill("perk.legend_pacifist"))
+				// {
+					// local hireTime = bro.getHireTime();
+					// local currentTime =  this.World.getTime().Time;
+					// local servedTime = currentTime - hireTime;
+					// local servedDays = servedTime / this.World.getTime().SecondsPerDay;
+					// if ((servedDays * 7) < bro.getLifetimeStats().Kills)
+					// 	{
+					// 		bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Remembers being forced to kill against their wishes");
+					// 	}
+					// if (bro.getLifetimeStats().Battles > bro.getLifetimeStats().BattlesWithoutMe)
+					// {
+					// 	bro.worsenMood(this.Const.MoodChange.BattleWithoutMe, "Took part in too many battles");
+					// }
+				// }
 
 				if (this.m.IsUsingProvisions && this.m.Food < bro.getDailyFood())
 				{
