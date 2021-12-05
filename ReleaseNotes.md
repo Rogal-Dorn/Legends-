@@ -6342,6 +6342,7 @@ citrene_nomad_leader_armor_00
 ## 15.0.2.???????????
 **Typos**
 Female thief (pickpocket) background typos corrected
+Recruiting ambition not longer refers to pre signed contracts retinue equipment as "recruiter".
 
 **Balance**
 Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
