@@ -6346,3 +6346,4 @@ Recruiting ambition not longer refers to pre signed contracts retinue equipment 
 
 **Balance**
 Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
+Cultist sacrifice event minimum cooldown increased from 10 days to 15.
