@@ -138,6 +138,8 @@ this.nomad_outlaw <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[2, "oriental/stitched_nomad_armor"],
 			[1, "oriental/plated_nomad_mail"],
+			[1, "citrene_nomad_cutthroat_armor_00"],
+			[1, "citrene_nomad_cutthroat_armor_01"],
 			[1, "theamson_nomad_outlaw_armor"],
 			[3, "oriental/leather_nomad_robe"]
 		]));

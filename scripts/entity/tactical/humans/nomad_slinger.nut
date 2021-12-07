@@ -94,8 +94,8 @@ this.nomad_slinger <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.addToBag(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[3, "oriental/nomad_robe"],
-			[1, "citrene_nomad_cutthroat_armor_00"],
-			[1, "citrene_nomad_cutthroat_armor_01"],
+			// [1, "citrene_nomad_cutthroat_armor_00"],
+			// [1, "citrene_nomad_cutthroat_armor_01"],
 			[2, "oriental/thick_nomad_robe"],
 			[3, "oriental/cloth_sash"]
 		]));

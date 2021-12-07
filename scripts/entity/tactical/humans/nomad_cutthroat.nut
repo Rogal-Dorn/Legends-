@@ -104,8 +104,8 @@ this.nomad_cutthroat <- this.inherit("scripts/entity/tactical/human", {
 			[2, "oriental/nomad_robe"],
 			[2, "oriental/thick_nomad_robe"],
 			[2, "oriental/cloth_sash"],
-			[1, "citrene_nomad_cutthroat_armor_00"],
-			[1, "citrene_nomad_cutthroat_armor_01"],
+			// [1, "citrene_nomad_cutthroat_armor_00"],
+			// [1, "citrene_nomad_cutthroat_armor_01"],
 			[1, "leather_wraps"]
 		]));
 
