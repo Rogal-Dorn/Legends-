@@ -9,8 +9,7 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Image = "ui/campfire/legend_cook_01";
 		this.m.Cost = 1000;
 		this.m.Effects = [
-			"Makes all provisions last 3 extra days",
-			"Increases hitpoint healing rate by 33%"
+			"Makes all provisions last 4 extra days"
 		];
 		this.m.Requirements = [
 			{
@@ -26,9 +25,9 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 	function onUpdate()
 	{
 		if ("FoodAdditionalDays" in this.World.Assets.m)
-			this.World.Assets.m.FoodAdditionalDays = 3;
-		if ("HitpointsPerHourMult" in this.World.Assets.m)
-			this.World.Assets.m.HitpointsPerHourMult = 1.33;
+			this.World.Assets.m.FoodAdditionalDays = 4;
+		//if ("HitpointsPerHourMult" in this.World.Assets.m)
+			//this.World.Assets.m.HitpointsPerHourMult = 1.33;
 	}
 
 });
