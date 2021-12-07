@@ -60,6 +60,7 @@ this.legend_unarmed_lunge_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+		local actor = this.getContainer().getActor();
 
 		if (actor.getOffhandItem() != null)
 		{
