@@ -6349,3 +6349,4 @@ Typo corrections to miner specialist perktree.
 Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
 Cultist sacrifice event minimum cooldown increased from 10 days to 15.
 Pies, pudding, porridge, beer, wine, mead and preserved mead now cannot be sold at a direct profit. This should balance out issues with players making upwards of 1K a day just by hunting and gathering.
+Injury (not healing) rates while in camp have been reduced somewhat. The multipliers are (before/after); 0.0/0.0, 0.10/0.08, 0.30/0.15, 0.50/0.25. - This will put greater need on temples for fixing injuries rather than them becoming a useless fixture.
