@@ -6350,3 +6350,4 @@ Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should
 Cultist sacrifice event minimum cooldown increased from 10 days to 15.
 Pies, pudding, porridge, beer, wine, mead and preserved mead now cannot be sold at a direct profit. This should balance out issues with players making upwards of 1K a day just by hunting and gathering.
 Injury (not healing) rates while in camp have been reduced somewhat. The multipliers are (before/after); 0.0/0.0, 0.10/0.08, 0.30/0.15, 0.50/0.25. - This will put greater need on temples for fixing injuries rather than them becoming a useless fixture.
+Cooking equipment follower no longer gives a healing boost. Provision lifetime is increased by 1 (from 3 days to 4 days).
