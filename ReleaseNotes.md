@@ -6346,6 +6346,9 @@ Recruiting ambition not longer refers to pre signed contracts retinue equipment 
 Typo corrections to miner specialist perktree.
 Lurker background typos fixed.
 
+**Crafting**
+Witch hunter backgrounds can teach your party how to make wooden stakes. All you need is to have a witch hunter in your party and 1 raw wood (which can be gained from gathering in camp).
+
 **Balance**
 Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
 Cultist sacrifice event minimum cooldown increased from 10 days to 15.
