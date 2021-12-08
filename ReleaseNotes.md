@@ -6351,3 +6351,12 @@ Cultist sacrifice event minimum cooldown increased from 10 days to 15.
 Pies, pudding, porridge, beer, wine, mead and preserved mead now cannot be sold at a direct profit. This should balance out issues with players making upwards of 1K a day just by hunting and gathering.
 Injury (not healing) rates while in camp have been reduced somewhat. The multipliers are (before/after); 0.0/0.0, 0.10/0.08, 0.30/0.15, 0.50/0.25. - This will put greater need on temples for fixing injuries rather than them becoming a useless fixture.
 Cooking equipment follower no longer gives a healing boost. Provision lifetime is increased by 1 (from 3 days to 4 days).
+
+**Origins**
+Militia origin now have access to a new background; The Man(woman)-At-Arms.
+The Man-At-Arms is a hardened veteran of many battles, or rather, many battles by militia standards. They're strong fighters with a much wider skillset than their militia counterparts with the stronger resolve to boot. But some fights have taken a toll on their body...
+
+This background can turn up in any town, but is quite rare to find. Only availible to the militia origin.
+
+**Art**
+New background art for the Man-At-Arms

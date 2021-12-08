@@ -4,7 +4,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	{
 		this.m.ID = "scenario.militia";
 		this.m.Name = "Peasant Militia";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. \n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave[/color]: Take up to [color=#c90000]27[/color] men into battle at once.\n[color=#bcad8c]Dirty Peasants[/color]: Can only hire lowborn peasants, lose reputation with nobles faster. \n[color=#c90000]Reduced scaling:[/color] Each member of your company only counts for two thirds of a person in scaling. \n[color=#c90000]Class warfare: [/color]Each person you hire gains a hatred of nobles[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_141.png[/img][/p][p]It started as a ragtag militia made up of anyone brave or desperate enough to volunteer for defending their homes, but has grown into a small army. An army that needs to be fed each day. \n[color=#bcad8c]Peasant Army:[/color] Start with a roster of 12 poorly equipped peasants.\n[color=#bcad8c]Human Wave:[/color] Take up to [color=#c90000]27[/color] men into battle at once.\n[color=#bcad8c]Dirty Peasants:[/color] Can only hire lowborn peasants, lose reputation with nobles faster. \n[color=#c90000]Reduced scaling:[/color] Each member of your company only counts for two thirds of a person in scaling. \n[color=#c90000]Class warfare:[/color] Each person you hire gains a hatred of nobles[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 190; 
 		this.m.IsFixedLook = true;
@@ -158,7 +158,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item")); //extra
 		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() + 9);
 		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;
@@ -254,6 +254,14 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		if (r == 0)
 		{
 			_list.push("legend_nightwatch_background");
+		}
+
+		local r;
+		r = this.Math.rand(0, 10);
+
+		if (r == 0)
+		{
+			_list.push("legend_man_at_arms_background");
 		}
 	}
 
