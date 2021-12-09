@@ -346,7 +346,7 @@ $.fn.assignListItemDragAndDrop = function(_parent, _dragStartCallback, _dragEndC
             var drop = $(dd.drop);
             var proxy = $(dd.proxy);
 
-            _dropCallback(drag, drop, proxy, dd);
+            _dropCallback(drag, drop, proxy, dd, ev);
 
             // workaround if the source container was removed before we got here
             if (drag.parent().length === 0)

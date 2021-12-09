@@ -408,6 +408,17 @@ this.stash_container <- {
 		return false;
 	}
 
+	function upgrade( _sourceIndex, _targetIndex )
+	{
+		if (this.isValidSlot(_sourceIndex) && this.isValidSlot(_targetIndex))
+		{
+			local sourceItem = this.m.Items[_sourceIndex];
+			local targetItem = this.m.Items[_targetIndex];
+			return sourceItem.onUse(null, targetItem)
+		}
+		return false;
+	}
+
 	function clear()
 	{
 		if (this.m.IsResizable)

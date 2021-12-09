@@ -691,14 +691,14 @@ this.data_helper <- {
 
 		if (item != null)
 		{
-			_target.body <- this.convertItemToUIData(item, false);
+			_target.body <- this.convertItemToUIData(item, true);
 		}
 
 		item = _items.getItemAtSlot(this.Const.ItemSlot.Head);
 
 		if (item != null)
 		{
-			_target.head <- this.convertItemToUIData(item, false);
+			_target.head <- this.convertItemToUIData(item, true);
 		}
 
 		item = _items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
