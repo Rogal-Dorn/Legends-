@@ -6340,6 +6340,9 @@ citrene_nomad_leader_armor_00
 
 
 ## 15.0.2.???????????
+**Fixes**
+Fix for 'holy flame' skill causing hangs due to being unable to find convertedcultist background type (Thank H707).
+
 **Typos**
 Female thief (pickpocket) background typos corrected.
 Recruiting ambition not longer refers to pre signed contracts retinue equipment as "recruiter".
