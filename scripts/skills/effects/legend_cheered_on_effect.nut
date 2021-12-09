@@ -31,7 +31,7 @@ this.legend_cheered_on_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.m.IsApplied)
 		{
 			local actor = this.getContainer().getActor();
-			actor.setActionPoints(actor.getActionPoints() + 1);
+			actor.setActionPoints(actor.getActionPoints() + 2);
 			this.m.IsApplied = true;
 		}
 	}
@@ -41,7 +41,7 @@ this.legend_cheered_on_effect <- this.inherit("scripts/skills/skill", {
 		if (!this.m.IsApplied)
 		{
 			local actor = this.getContainer().getActor();
-			actor.setActionPoints(actor.getActionPoints() + 1);
+			actor.setActionPoints(actor.getActionPoints() + 2);
 			this.m.IsApplied = true;
 		}
 	}
