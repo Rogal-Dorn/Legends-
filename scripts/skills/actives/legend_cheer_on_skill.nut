@@ -20,8 +20,8 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 15;
+		this.m.ActionPointCost = 1;
+		this.m.FatigueCost = 5;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
 	}
@@ -47,8 +47,8 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 7,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Grants the target 1 additional Action Point for their next turn."
+				icon = "ui/icons/action_points.png",
+				text = "Grants the target 2 additional Action Points for their next turn."
 			}
 		];
 		return ret;

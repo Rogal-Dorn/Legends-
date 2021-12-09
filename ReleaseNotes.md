@@ -6356,6 +6356,7 @@ Pies, pudding, porridge, beer, wine, mead and preserved mead now cannot be sold 
 Injury (not healing) rates while in camp have been reduced somewhat. The multipliers are (before/after); 0.0/0.0, 0.10/0.08, 0.30/0.15, 0.50/0.25. - This will put greater need on temples for fixing injuries rather than them becoming a useless fixture.
 Cooking equipment follower no longer gives a healing boost. Provision lifetime is increased by 1 (from 3 days to 4 days).
 Great khopesh durability changed from 50 to 54.
+'Cheer on' perk now gives 2 action points. The user now only uses 1 action point to cheer on an ally (was 3) and costs 5 fatigue (was 15).
 
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.
