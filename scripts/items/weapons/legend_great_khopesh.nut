@@ -18,8 +18,8 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_great_khopesh";
 		this.m.ShieldDamage = 0;
-		this.m.Condition = 50.0;
-		this.m.ConditionMax = 50.0;
+		this.m.Condition = 54.0;
+		this.m.ConditionMax = 54.0;
 		this.m.StaminaModifier = -18;
 		this.m.Value = 2000;
 		this.m.RegularDamage = 75;
