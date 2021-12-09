@@ -6342,6 +6342,7 @@ citrene_nomad_leader_armor_00
 ## 15.0.2.???????????
 **Fixes**
 Fix for 'holy flame' skill causing hangs due to being unable to find convertedcultist background type (Thank H707).
+Adv. noble background now has proper female background text is spawning as a woman, thanks to @Theplahunter for the writing.
 
 **Typos**
 Female thief (pickpocket) background typos corrected.
