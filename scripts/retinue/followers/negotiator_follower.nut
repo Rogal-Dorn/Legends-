@@ -5,13 +5,12 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.follower.create();
 		this.m.ID = "follower.negotiator";
 		this.m.Name = "Meeting Point";
-		this.m.Description = "The Negotiator plays a vital role in the future of the company. Having a dedicated meeting place where they can talk, barter and trade insults with prominant figures or their lackeys can help.";
+		this.m.Description = "Having a dedicated meeting place where negotiators can talk, barter and trade insults with prominant figures or their lackeys can help in finding work.";
 		this.m.Image = "ui/campfire/legend_negotiator_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [
 			"Allows for more rounds of contract negotiations with your potential employers before they abort, and with only a 10% chance on a hit to relations",
-			"Greater contract payment if negotiations are successful",
-			"Makes good relations with any faction decay slower and bad relations recover faster"
+			"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
 		];
 		this.m.Requirements = [
 			{

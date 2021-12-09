@@ -6345,6 +6345,7 @@ Female thief (pickpocket) background typos corrected.
 Recruiting ambition not longer refers to pre signed contracts retinue equipment as "recruiter".
 Typo corrections to miner specialist perktree.
 Lurker background typos fixed.
+Negotiator retinue text condensed somewhat - should alleviate some text overlap.
 
 **Crafting**
 Witch hunter backgrounds can teach your party how to make wooden stakes. All you need is to have a witch hunter in your party and 1 raw wood (which can be gained from gathering in camp).
