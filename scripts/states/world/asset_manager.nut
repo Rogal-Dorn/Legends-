@@ -240,7 +240,7 @@ this.asset_manager <- {
 
 	function getBrothersMaxInCombat()
 	{
-		return this.Const.Roster.getInCombatSizeForTier(this.World.Assets.getOrigin().getRosterTier());
+		return this.Const.Roster.getInCombatSizeForTier(this.World.Assets.getOrigin().getRosterTierCombat());
 	}
 
 	function getBrothersScaleMax()
