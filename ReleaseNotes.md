@@ -6354,6 +6354,8 @@ Negotiator retinue text condensed somewhat - should alleviate some text overlap.
 
 **Crafting**
 Witch hunter backgrounds can teach your party how to make wooden stakes. All you need is to have a witch hunter in your party and 1 raw wood (which can be gained from gathering in camp).
+Warlock hood recipie changed to include human carrion instead of bones, allowing it to be craftable again for the cabal origin.
+Warlock hood and cloak have been slightly tweaked in cost for crafting.
 
 **Balance**
 Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
