@@ -13,6 +13,11 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false; 
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.Hitpoints += 10;
+	}
+
 	function onAfterUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
