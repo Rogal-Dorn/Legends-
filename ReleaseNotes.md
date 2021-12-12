@@ -6365,6 +6365,7 @@ Injury (not healing) rates while in camp have been reduced somewhat. The multipl
 Cooking equipment follower no longer gives a healing boost. Provision lifetime is increased by 1 (from 3 days to 4 days).
 Great khopesh durability changed from 50 to 54.
 'Cheer on' perk now gives 2 action points. The user now only uses 1 action point to cheer on an ally (was 3) and costs 5 fatigue (was 15).
+Cabal origin spawnrates for permitted recruits evened out a little more - cultists will spawn more often and puppets slightly less often. Graverobbers/diggers are between the two.
 
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.
@@ -6374,3 +6375,6 @@ This background can turn up in any town, but is quite rare to find. Only availib
 
 **Art**
 New background art for the Man-At-Arms
+
+**MISC**
+Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it.)
