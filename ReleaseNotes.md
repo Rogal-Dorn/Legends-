@@ -6344,6 +6344,7 @@ citrene_nomad_leader_armor_00
 Fix for 'holy flame' skill causing hangs due to being unable to find convertedcultist background type (Thank H707).
 Adv. noble background now has proper female background text is spawning as a woman, thanks to @Theplahunter for the writing.
 Magisters and Lurkers now have flail perktrees, which makes them more in-line with all the other cultist backgrounds.
+All crafting items added by legends had a bug that caused them to not display the "is used in crafting tag", this is now resolved.
 
 **Typos**
 Female thief (pickpocket) background typos corrected.
