@@ -6366,6 +6366,7 @@ Cooking equipment follower no longer gives a healing boost. Provision lifetime i
 Great khopesh durability changed from 50 to 54.
 'Cheer on' perk now gives 2 action points. The user now only uses 1 action point to cheer on an ally (was 3) and costs 5 fatigue (was 15).
 Cabal origin spawnrates for permitted recruits evened out a little more - cultists will spawn more often and puppets slightly less often. Graverobbers/diggers are between the two.
+'Penance' perk now adds +10 health in addition to it's other effects.
 
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.
