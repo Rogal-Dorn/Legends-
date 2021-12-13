@@ -6383,3 +6383,4 @@ New background art for the Man-At-Arms
 **MISC**
 Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it.)
 Brigand veterans and raiders now have a chance to spawn with a two handed club in addition to their normal weapon rolls
+Cultist is now a Lowborn, in addition to being an outlaw and cultist type
