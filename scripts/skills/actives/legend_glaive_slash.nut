@@ -44,19 +44,14 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 	{
 		local ret = this.getDefaultTooltip();
 
-		local hitChanceBonus = this.m.HitChanceBonus;
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
-		{
-			hitChanceBonus += 5;
-		}
-		ret.extend([
+		ret.push(
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + hitChanceBonus + "%[/color] chance to hit"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitChanceBonus	+ "%[/color] chance to hit"
 			}
-		]);
+		);
 
 		return ret;
 	}
@@ -77,9 +72,13 @@ this.legend_glaive_slash <- this.inherit("scripts/skills/skill", {
 		if (_skill == this)
 		{
 			_properties.MeleeSkill += 10;
+
+			_skill.resetField("HitChanceBonus");
+
 			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
 			{
 				_properties.MeleeSkill += 5;
+				this.m.HitChanceBonus += 5;
 			}
 		}
 		
