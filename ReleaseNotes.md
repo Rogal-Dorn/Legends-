@@ -6372,6 +6372,7 @@ Cabal origin spawnrates for permitted recruits evened out a little more - cultis
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.
 The Man-At-Arms is a hardened veteran of many battles, or rather, many battles by militia standards. They're strong fighters with a much wider skillset than their militia counterparts with the stronger resolve to boot. But some fights have taken a toll on their body...
+Militia origin malus for relationships with nobles decreased from 0.2 reputation loss to 0.1 reputation loss, which should make getting noble related ambitions completed more easily and less of a slog.
 
 This background can turn up in any town, but is quite rare to find. Only availible to the militia origin.
 
