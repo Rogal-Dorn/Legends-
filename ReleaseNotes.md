@@ -6344,3 +6344,4 @@ citrene_nomad_leader_armor_00
 - Fixes some issues with outfits causing lockups
 - Moves some new cutthroat armor to outlaws for being too heavy
 - Fixes unarmed lunge skill tooltip
+- Fixes the ability to equip a non-base armor/helmet layer 
