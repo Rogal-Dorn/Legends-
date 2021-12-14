@@ -2075,10 +2075,10 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
             Hoods = [
                 [1, "hood/legend_helmet_cloth_scarf"], 
+                [1, "hood/legend_helmet_southern_cap"], 
+                [1, "hood/legend_helmet_southern_cap_dark"]
             ],
             Helms = [
-                [1, "helm/legend_helmet_southern_cap_smooth"], 
-                [1, "helm/legend_helmet_southern_cap_spiked"] 
             ],
             Tops = [
             ],
@@ -2094,11 +2094,11 @@ gt.Const.LegendMod.HelmObjs.extend([
         Script = "",
         Sets = [{
             Hoods = [
-                [1, "hood/legend_helmet_southern_open_chain_hood"] 
+                [1, "hood/legend_helmet_southern_open_chain_hood"],
+                [1, "hood/legend_helmet_southern_cap"], 
+                [1, "hood/legend_helmet_southern_cap_dark"]
             ],
             Helms = [
-                [1, "helm/legend_helmet_southern_cap_smooth"], 
-                [1, "helm/legend_helmet_southern_cap_spiked"] 
             ],
             Tops = [
             ],
@@ -2151,10 +2151,10 @@ gt.Const.LegendMod.HelmObjs.extend([
         Sets = [{
             Hoods = [
                 [1, "hood/legend_helmet_cloth_scarf"],
+                [1, "helm/legend_helmet_southern_cap"],
             ],
             Helms = [
                 [1, "helm/legend_helmet_southern_leather_helm"],
-                [1, "helm/legend_helmet_southern_cap_smooth"],
                 [1, "helm/legend_helmet_horsetail"],
             ],
             Tops = [
