@@ -6346,6 +6346,7 @@ Adv. noble background now has proper female background text is spawning as a wom
 Magisters and Lurkers now have flail perktrees, which makes them more in-line with all the other cultist backgrounds.
 All crafting items added by legends had a bug that caused them to not display the "is used in crafting tag", this is now resolved.
 Violent decomposition skill possibly fixed and has been put back into puppet master background for the cabal origin (Thanks H707).
+Necrosavants and necrosavant lords were not spawning with named weapons properly. They should now be registered as champions correctly.
 
 **Typos**
 Female thief (pickpocket) background typos corrected.
@@ -6370,6 +6371,8 @@ Great khopesh durability changed from 50 to 54.
 Cabal origin spawnrates for permitted recruits evened out a little more - cultists will spawn more often and puppets slightly less often. Graverobbers/diggers are between the two.
 'Penance' perk now adds +5% maximum damage for every hostile entity you are engaged with adjacent to you.
 Penance now no longer works with sackcloths, leather wraps and robes.
+Necrosavant champions now have the potential to get 2 handed named cleavers (low chance) in stead of 1 handed named cleavers.
+Necrosavant lords will now spawn with named cleavers correctly, they also gain terrifying visage if they are a champion (lol, lmao).
 
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.

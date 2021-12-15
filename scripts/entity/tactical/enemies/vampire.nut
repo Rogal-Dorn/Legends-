@@ -303,5 +303,23 @@ this.vampire <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.equip(this.new("scripts/items/weapons/ancient/khopesh"));
 	}
 
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		if (this.Math.rand(1, 100) <= 66)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/named_khopesh"));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
+		}
+	}
+
 });
 
