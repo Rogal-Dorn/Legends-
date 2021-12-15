@@ -6340,6 +6340,9 @@ citrene_nomad_leader_armor_00
 
 ## 15.0.2.1
 
+**Changes**
+- Makes the 'cost' of a spider slightly higher, so you should see *very slightly* less of them
+
 **Fixes**
 - Fixes some issues with outfits causing lockups
 - Moves some new cutthroat armor to outlaws for being too heavy
