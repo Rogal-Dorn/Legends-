@@ -2051,7 +2051,7 @@ gt.Const.Strings.PerkName <- {
 
 	//AI SKILLS - skills used by AI specfically
 	Bruiser = "Bruiser", //increases armour penetration by 10%, is an AI skill
-	BatteringRam = "Battering Ram", //orc charge skill
+	BatteringRam = "Battering Ram", //gives orcs stun immunity, similar to composure skill
 	Captain = "Sergeant", //used by leaders, sergents and other AI to boost resolve as an area effect
 
 
@@ -2083,7 +2083,7 @@ gt.Const.Strings.PerkName <- {
 	LegendNigredo = "Nigredo", //alchemist skill, currently not working/implemented
 	LegendSummonCatapult = "Summon Catapult" //pulled due to issues with deployment, could work in the future.
 
-//MUST END EITHOUT AN , //MUST END EITHOUT AN , //MUST END EITHOUT AN , //MUST END EITHOUT AN ,
+//MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN ,
 
 };
 gt.Const.Strings.PerkDescription <- {
