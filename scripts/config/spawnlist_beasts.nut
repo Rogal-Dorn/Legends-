@@ -197,7 +197,7 @@ gt.Const.World.Spawn.Spiders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Spider,
-					Cost = 12
+					Cost = 15
 				}
 			]
 		}
