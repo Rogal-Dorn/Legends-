@@ -346,17 +346,17 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(item);
 		}
 
-		local r = this.Math.rand(1, 100);
+		local r = this.Math.rand(1, 2);
 
-		if (r <= 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
-		}
-		else if (r <= 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
-		}
-		else if (r <= 25)
+		// if (r == 1)
+		// {
+		// 	this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
+		// }
+		// else if (r <= 4)
+		// {
+		// 	this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
+		// }
+		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
 		}
@@ -365,5 +365,29 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_great_khopesh"));
 		}
 	}
+
+	function makeMiniboss()
+	{
+		if (!this.actor.makeMiniboss())
+		{
+			return false;
+		}
+
+		this.getSprite("miniboss").setBrush("bust_miniboss");
+		if (this.Math.rand(1, 100) <= 33)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/named_khopesh"));
+		}
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
+		}
+
+		{
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_terrifying_visage"));
+		return true;
+		}
+	}
+
 });
 
