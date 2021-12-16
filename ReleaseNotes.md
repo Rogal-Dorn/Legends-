@@ -6373,11 +6373,11 @@ Cabal origin spawnrates for permitted recruits evened out a little more - cultis
 Penance now no longer works with sackcloths, leather wraps and robes.
 Necrosavant champions now have the potential to get 2 handed named cleavers (low chance) instead of 1 handed named cleavers.
 Necrosavant lords will now spawn with named cleavers correctly, they also gain terrifying visage if they are a champion (lol, lmao).
-Low zombie spawn decreased from 4 AP to 3 AP, now costs 10 fatigue.
+Low zombie spawn decreased from 4 AP to 3 AP, now costs 10 fatigue. Has a better selction of equipment. Has nine lives.
 Medium zombie spawn decreased from 5 AP to 4, costs 20 fatigue (from 25) and 20 hp to summon (from 25).
 High zombie spawn decreased from 8 action points to 6. Now costs 25 fatigue (from 35) and costs 30 hp to summon (from 35). 
-High zombies will no longer have a chance to spawn without a helmet, have slightly better selection of weapons
-Medium zombies have a better variety of gear to choose from when spawned
+High zombies will no longer have a chance to spawn without a helmet, have slightly better selection of weapons.
+Medium zombies have a better variety of gear to choose from when spawned.
 
 **Origins**
 Militia origin now have access to a new background; The Man(woman)-At-Arms.
