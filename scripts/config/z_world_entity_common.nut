@@ -666,8 +666,10 @@ gt.Const.World.Common.pickItem <- function (_list, _script = "")
 		{
 			return null
 		}
-
-		return this.new(_script + t[1]);
+		local ret = this.new(_script + t[1]);
+		if (t.len() == 3)
+			ret.setVariant(t[2])
+		return ret;
 	}
 	return null;
 }
