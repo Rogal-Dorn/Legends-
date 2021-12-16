@@ -10,7 +10,7 @@ this.arena_invictus_trait <- this.inherit("scripts/skills/traits/character_trait
 		this.m.ID = "trait.arena_invictus";
 		this.m.Name = "Invictus";
 		this.m.Icon = "ui/traits/trait_invictus.png";
-		this.m.Description = "With a single fist raised, %fullname% stops the crowd cheering. With both raised, they shout %their% name from the stands. Gladiators rather wrestle a Lindwum than fight %them% in the arena.";
+		this.m.Description = "With a single fist raised, %fullname% stops the crowd cheering. With both raised, they shout %their% name from the stands. Gladiators rather wrestle a Lindwurm than fight %them% in the arena.";
 		this.m.Overlay = "trait_invictus";
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 	}
