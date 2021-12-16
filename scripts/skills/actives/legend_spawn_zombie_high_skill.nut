@@ -22,11 +22,11 @@ this.legend_spawn_zombie_high_skill <- this.inherit("scripts/skills/actives/lege
 		];
 		this.m.SpawnItem =  "spawns.zombie",
 		this.m.Script = "scripts/entity/tactical/legends_zombie_high"
-		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 35;
+		this.m.ActionPointCost = 6;
+		this.m.FatigueCost = 25;
 		this.m.MaxLevelDifference = 4;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 9;
-		this.m.HPCost = 35;
+		this.m.HPCost = 30;
 		this.m.APStartMult = 0.0;
 
 	}
