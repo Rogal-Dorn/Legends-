@@ -21,7 +21,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 	},
 	function create()
 	{
-		this.m.SlotType = this.Const.ItemSlot.None;
+		this.m.SlotType = this.Const.ItemSlot.Helmet;
 		this.m.ItemType = this.Const.Items.ItemType.Helmet;
 		this.m.IsDroppedAsLoot = true;
 		this.m.IsAllowedInBag = false;
