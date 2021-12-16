@@ -65,7 +65,7 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			}
 			else if (r == 3)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
 			}
 			else if (r == 4)
 			{
@@ -120,7 +120,6 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		);
 
 		local item = this.Const.World.Common.pickHelmet([
-			[1, ""],
 			[2, "decayed_closed_flat_top_with_mail"],
 			[1, "decayed_closed_flat_top_with_sack"],
 			[3, "decayed_full_helm"],
