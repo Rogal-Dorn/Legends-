@@ -62,6 +62,14 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 		}
+		else if (r == 2)
+		{
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield_old"));
+		}
+		else if (r == 3)
+		{
+			this.m.Items.equip(this.new(""));
+		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[4, "leather_tunic"],
