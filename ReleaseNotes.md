@@ -6340,6 +6340,7 @@ citrene_nomad_leader_armor_00
 
 ## 15.0.2.1
 
+
 **Free Companies**
 - Adds in a "Free Company", essentially a company like the player company that scales with the player party's strength.
 - These are hostile to the player and considered rival companies, and non hostile to noble houses, etc
@@ -6354,11 +6355,68 @@ citrene_nomad_leader_armor_00
   Should they spawn much later in the game? i.e. the first one appears at day 100/after first crisis instead of on spawn? Maybe if we add an even lower tier of units it can spawn early?
   Anything else you can think of that helps me out
 
+**Fixes**
+Fix for 'holy flame' skill causing hangs due to being unable to find convertedcultist background type (Thanks H707).
+Adv. noble background now has proper female background text is spawning as a woman, thanks to @Theplahunter for the writing.
+Magisters and Lurkers now have flail perktrees, which makes them more in-line with all the other cultist backgrounds.
+All crafting items added by legends had a bug that caused them to not display the "is used in crafting tag", this is now resolved.
+Violent decomposition skill possibly fixed and has been put back into puppet master background for the cabal origin (Thanks H707).
+Necrosavants and necrosavant lords were not spawning with named weapons properly. They should now be registered as champions correctly.
+Doublestrike effect now has new art.
+- Fixes some issues with outfits causing lockups
+- Moves some new cutthroat armor to outlaws for being too heavy
+- Fixes unarmed lunge skill tooltip
+
 **Changes**
 - Makes the 'cost' of a spider slightly higher, so you should see *very slightly* less of them
 - Adds a few new champion bandit rabble names
 
-**Fixes**
-- Fixes some issues with outfits causing lockups
-- Moves some new cutthroat armor to outlaws for being too heavy
-- Fixes unarmed lunge skill tooltip
+**Typos**
+Female thief (pickpocket) background typos corrected.
+Recruiting ambition not longer refers to pre signed contracts retinue equipment as "recruiter".
+Typo corrections to miner specialist perktree.
+Lurker background typos fixed.
+Negotiator retinue text condensed somewhat - should alleviate some text overlap.
+
+**Crafting**
+Witch hunter backgrounds can teach your party how to make wooden stakes. All you need is to have a witch hunter in your party and 1 raw wood (which can be gained from gathering in camp).
+Warlock hood recipie changed to include human carrion instead of bones, allowing it to be craftable again for the cabal origin.
+Warlock hood and cloak have been slightly tweaked in cost for crafting.
+
+**Balance**
+Bear aggression for hitting allies with aoe attacks halfed (1.0 --> 0.5), should stop more serious issues like bear claws being used when 2 allies are in the strike zone.
+Cultist sacrifice event minimum cooldown increased from 10 days to 15.
+Pies, pudding, porridge, beer, wine, mead and preserved mead now cannot be sold at a direct profit. This should balance out issues with players making upwards of 1K a day just by hunting and gathering.
+Injury (not healing) rates while in camp have been reduced somewhat. The multipliers are (before/after); 0.0/0.0, 0.10/0.08, 0.30/0.15, 0.50/0.25. - This will put greater need on temples for fixing injuries rather than them becoming a useless fixture.
+Cooking equipment follower no longer gives a healing boost. Provision lifetime is increased by 1 (from 3 days to 4 days).
+Great khopesh durability changed from 50 to 54.
+'Cheer on' perk now gives 2 action points. The user now only uses 1 action point to cheer on an ally (was 3) and costs 5 fatigue (was 15).
+Cabal origin spawnrates for permitted recruits evened out a little more - cultists will spawn more often and puppets slightly less often. Graverobbers/diggers are between the two.
+'Penance' perk now adds +5% maximum damage for every hostile entity you are engaged with adjacent to you.
+Penance now no longer works with sackcloths, leather wraps and robes.
+Necrosavant champions now have the potential to get 2 handed named cleavers (low chance) instead of 1 handed named cleavers.
+Necrosavant lords will now spawn with named cleavers correctly, they also gain terrifying visage if they are a champion (lol, lmao).
+Low zombie spawn decreased from 4 AP to 3 AP, now costs 10 fatigue. Has a better selction of equipment. Has nine lives.
+Medium zombie spawn decreased from 5 AP to 4, costs 20 fatigue (from 25) and 20 hp to summon (from 25).
+High zombie spawn decreased from 8 action points to 6. Now costs 25 fatigue (from 35) and costs 30 hp to summon (from 35). 
+High zombies will no longer have a chance to spawn without a helmet, have slightly better selection of weapons.
+Medium zombies have a better variety of gear to choose from when spawned.
+
+**Origins**
+Militia origin now have access to a new background; The Man(woman)-At-Arms.
+The Man-At-Arms is a hardened veteran of many battles, or rather, many battles by militia standards. They're strong fighters with a much wider skillset than their militia counterparts with the stronger resolve to boot. But some fights have taken a toll on their body...
+Militia origin malus for relationships with nobles decreased from 0.2 reputation loss to 0.1 reputation loss, which should make getting noble related ambitions completed more easily and less of a slog.
+
+This background can turn up in any town, but is quite rare to find. Only availible to the militia origin.
+
+**Art**
+New background art for the Man-At-Arms.
+New art for doublestrike effect, contains mini also.
+
+**FOR MODDERS**
+Strings.nut has now been reordered to hopefully be more helpful to navigate. Perk names have been filed by category with comments as needed.
+
+**MISC**
+Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it).
+Brigand veterans and raiders now have a chance to spawn with a two handed club in addition to their normal weapon rolls.
+Cultist is now a Lowborn, in addition to being an outlaw and cultist type.

@@ -16,7 +16,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/witch_hair_item",
-				Num = 2
+				Num = 4
 			},
 			{
 				Script = "scripts/items/misc/parched_skin_item",

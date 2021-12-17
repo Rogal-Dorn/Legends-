@@ -26,11 +26,11 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
+			this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/hatchet"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/falx"));
 		}
 		else if (r == 3)
 		{
@@ -42,7 +42,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/militia_spear"));
+			this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
 		}
 		else if (r == 6)
 		{
@@ -52,6 +52,8 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "padded_leather"],
+			[1, "leather_lamellar"],
+			[1, "leather_scale_armor"],
 			[1, "worn_mail_shirt"],
 			[1, "patched_mail_shirt"],
 			[1, "ragged_surcoat"],

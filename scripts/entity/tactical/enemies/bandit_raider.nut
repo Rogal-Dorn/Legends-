@@ -82,7 +82,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 		{
 			if (this.Const.DLC.Unhold)
 			{
-				r = this.Math.rand(0, 9);
+				r = this.Math.rand(0, 10);
 
 				if (r == 0)
 				{
@@ -178,6 +178,15 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					{
 						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
+					}
+				}
+				else if (r == 10)
+				{
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_two_handed_club"));
+
+					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+					{
+						this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 					}
 				}
 			}
