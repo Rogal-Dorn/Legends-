@@ -6347,6 +6347,7 @@ Magisters and Lurkers now have flail perktrees, which makes them more in-line wi
 All crafting items added by legends had a bug that caused them to not display the "is used in crafting tag", this is now resolved.
 Violent decomposition skill possibly fixed and has been put back into puppet master background for the cabal origin (Thanks H707).
 Necrosavants and necrosavant lords were not spawning with named weapons properly. They should now be registered as champions correctly.
+Doublestrike effect now has new art.
 
 **Typos**
 Female thief (pickpocket) background typos corrected.
@@ -6387,12 +6388,13 @@ Militia origin malus for relationships with nobles decreased from 0.2 reputation
 This background can turn up in any town, but is quite rare to find. Only availible to the militia origin.
 
 **Art**
-New background art for the Man-At-Arms
+New background art for the Man-At-Arms.
+New art for doublestrike effect, contains mini also.
 
 **FOR MODDERS**
 Strings.nut has now been reordered to hopefully be more helpful to navigate. Perk names have been filed by category with comments as needed.
 
 **MISC**
-Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it.)
-Brigand veterans and raiders now have a chance to spawn with a two handed club in addition to their normal weapon rolls
-Cultist is now a Lowborn, in addition to being an outlaw and cultist type
+Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it).
+Brigand veterans and raiders now have a chance to spawn with a two handed club in addition to their normal weapon rolls.
+Cultist is now a Lowborn, in addition to being an outlaw and cultist type.

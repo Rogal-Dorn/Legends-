@@ -5,8 +5,8 @@ this.double_strike_effect <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "effects.double_strike";
 		this.m.Name = "Double Strike!";
-		this.m.Icon = "skills/status_effect_01.png";
-		this.m.IconMini = "status_effect_01_mini";
+		this.m.Icon = "skills/status_effect_doublestrike.png";
+		this.m.IconMini = "mini_doublestrike_circle.png";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
