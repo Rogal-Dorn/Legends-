@@ -203,7 +203,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onUpdateDraftList( _list, _gender )
 	{
 		local r;
-		r = this.Math.rand(0, 3);
+		r = this.Math.rand(0, 5);
 
 		if (r == 0)
 		{
@@ -211,7 +211,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local r;
-		r = this.Math.rand(0, 5);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -219,7 +219,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local r;
-		r = this.Math.rand(0, 5);
+		r = this.Math.rand(0, 3);
 
 		if (r == 0)
 		{
@@ -227,7 +227,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local r;
-		r = this.Math.rand(0, 7);
+		r = this.Math.rand(0, 4);
 
 		if (r == 0)
 		{
@@ -235,7 +235,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-	function onHiredByScenario( bro ) //give pathfinder
+	function onHiredByScenario( bro )
 	{
 		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
 		{

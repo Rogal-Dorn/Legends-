@@ -7,7 +7,7 @@ this.peasant_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		this.m.Name = "Peasant";
 		this.m.Icon = "ui/traits/trait_icon_00.png";
 		this.m.Description = "This trait is used to alter daily reputation decline for noble factions.";
-		this.m.IsHidden = true;
+		this.m.IsHidden = true; //should not be shown.
 	}
 
 	function getTooltip()
@@ -46,7 +46,7 @@ this.peasant_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		{ //Relations: 0 = hostile, 100 = allied
 			if (f.m.PlayerRelation > 30)
 			{
-		    f.m.PlayerRelation = this.Math.minf(100.0, this.Math.max(0.0, f.m.PlayerRelation - 0.2));  //-0.2 reputation per day per unit in company.
+		    f.m.PlayerRelation = this.Math.minf(100.0, this.Math.max(0.0, f.m.PlayerRelation - 0.1));  //-0.2 reputation per day per unit in company.
 			f.updatePlayerRelation();
 			}
 		}

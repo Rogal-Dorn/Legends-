@@ -1,5 +1,10 @@
 this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		// base damage of the explosion
+		MinDamage = 15,
+		MaxDamage = 35,
+		ArmorDamageMult = 0.65,
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_violent_decomposition_skill";
@@ -25,6 +30,7 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 2;
@@ -39,7 +45,16 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 
 	function getTooltip()
 	{
-		return this.skill.getDefaultUtilityTooltip();
+		local ret = this.skill.getDefaultTooltip();
+
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles"
+		});
+
+		return ret;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -51,12 +66,13 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 
 		local target = _targetTile.getEntity();
 
-		if (!this.m.Container.getActor().isAlliedWith(target))
+		if (!this.getContainer().getActor().isAlliedWith(target))
 		{
 			return false;
 		}
 
-		if (!target.getFlags().has("IsSummoned")){
+		if (!target.getFlags().has("IsSummoned") || !target.getFlags().has("undead"))
+		{
 			return false;
 		}
 
@@ -71,9 +87,30 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
-		target.getSkills().add(this.new("scripts/skills/effects/legend_violent_decomposition_effect"));
+		local properties = this.getContainer().buildPropertiesForUse(this, null);
+		local effect = this.new("scripts/skills/effects/legend_violent_decomposition_effect");
+		effect.setDamage({
+			MaxDamage = this.m.MaxDamage,
+			MinDamage = this.m.MinDamage,
+			DirectDamageMult = this.m.DirectDamageMult,
+			ArmorDamageMult = this.m.ArmorDamageMult,
+			TotalDamageMult = properties.DamageTotalMult, // you can remove this line if you don't want total damage multiplier to be applied in damage calculation
+		});
+		effect.setActorID(_user.getID());
+		target.getSkills().add(effect);
 		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " sets " + this.Const.UI.getColorizedEntityName(target) + "to violently explode next turn");
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.DamageRegularMax = this.m.MaxDamage;
+			_properties.DamageRegularMin = this.m.MinRange;
+			_properties.DamageArmorMult = this.m.ArmorDamageMult;
+			// properties.DamageTotalMult = 1.0;
+			// remove comment of the line above to make this skill no longer be affected by total damage multiplier 
+		}
+	}
 
 });

@@ -13,6 +13,48 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false; 
 	}
 
+//constant passive
+	function getDescription()
+	{
+		local bonus = this.getBonus() * 100;
+		return "This character gains [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] maximum damage because of adjacent opponents.";
+	}
+
+	function isOpponent( _actor, _tag )
+	{
+		if (this.Math.abs(_actor.getTile().Level - _tag.Actor.getTile().Level) > 1)
+		{
+			return;
+		}
+
+		if (!_actor.isAlliedWith)
+		{
+			++_tag.Opponents;
+		}
+	}
+
+	function getBonus()
+	{
+		this.result <- {
+			Opponents = 0,
+			Actor = this.m.Container.getActor()
+		};
+		this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
+		return this.result.Opponents * 0.05;
+	}
+
+	function onUpdate( _properties )
+	{
+		this.m.IsHidden = this.getBonus() == 0;
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		_properties.DamageRegularMax += this.getBonus();
+	}
+
+
+//equipment check
 	function onAfterUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
@@ -23,21 +65,21 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		{
 			switch(item.getID())
 			{
-				case "armor.body.leather_wraps":
+				//case "armor.body.leather_wraps":
 				case "armor.body.cultist_leather_robe":
-				case "armor.body.sackcloth":
-				case "armor.body.tattered_sackcloth":
+				//case "armor.body.sackcloth":
+				//case "armor.body.tattered_sackcloth":
 				case "armor.body.armor_of_davkul":
 				case "armor.body.reinforced_animal_hide_armor":
 				case "armor.body.hide_and_bone_armor":
 				case "armor.body.animal_hide_armor":
-				case "legend_armor.body.legend_sackcloth_patched":
-				case "legend_armor.body.legend_sackcloth_tattered":
-				case "legend_armor.body.legend_sackcloth":
+				//case "legend_armor.body.legend_sackcloth_patched":
+				//case "legend_armor.body.legend_sackcloth_tattered":
+				//case "legend_armor.body.legend_sackcloth":
 				case "legend_armor.body.cultist_leather_robe":
 				case "legend_armor.body.legend_armor_warlock_cloak":
 				case "legend_armor.body.legend_named_warlock_cloak":
-				case "legend_armor.body.legend_robes":
+				//case "legend_armor.body.legend_robes":
 					_properties.Bravery += this.Math.floor(healthMissing * 0.75);
 					return;
 			}
