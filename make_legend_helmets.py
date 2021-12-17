@@ -755,11 +755,11 @@ layers = [
  "desc" :  "A heavy helmet made from overlapping metal plates." \
 },
 {"name" : "italo_norman_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 425, "con" : 90, "stam" : -6, "vis" : -2, "hair" : "true", "beard" : "true",  \
- "title" :  "Italio Norman Helm", \
+ "title" :  "Italo Norman Helm", \
  "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front." \
 },
 {"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 110, "stam" : -5, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 4, "rminStam" : 5, "rminCond" : 110, "rmaxCond" : 135, "names" : Names,  \
- "title" :  "Italio Conic Helm", \
+ "title" :  "Italo Conic Helm", \
  "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
 },
 {"name" : "southern_conic_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1000, "con" : 75, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \

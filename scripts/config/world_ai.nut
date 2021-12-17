@@ -41,7 +41,8 @@ gt.Const.World.AI <- {
 			Occupy = 19,
 			Sleep = 20,
 			Dock = 21,
-			COUNT = 22
+			FreeCompany = 22,
+			COUNT = 23
 		},
 		Name = [
 			"Idle",
@@ -65,7 +66,8 @@ gt.Const.World.AI <- {
 			"Patrol",
 			"Occupy",
 			"Sleep",
-			"Dock"
+			"Dock",
+			"Free Company"
 		],
 		Score = {
 			Zero = 0,

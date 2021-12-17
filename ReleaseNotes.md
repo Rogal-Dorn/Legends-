@@ -6340,11 +6340,25 @@ citrene_nomad_leader_armor_00
 
 ## 15.0.2.1
 
+**Free Companies**
+- Adds in a "Free Company", essentially a company like the player company that scales with the player party's strength.
+- These are hostile to the player and considered rival companies, and non hostile to noble houses, etc
+- Very first run thru stuff, could use things like stat tweaks/reward tweaks/new outfits/etc
+- The map starts with 1 free company and after 150 days a second will appear. There's only one tier of each unit right now
+- As your party grows they get more points to buy units with, but their armor starts high given there's only one tier currently
+  (In relative need of some more outfits I'm currently reusing outfits, but it's tedious to put in too. Might add lower/upper tiered units if the reception of the idea is good)
+- They run slightly slower + see/are seen from slightly higher ranges
+- Would like specific feedback on:
+  The idea of free companies like this
+  Spawning too many units at once? Not enough? (Remember there currently is no higher or lower equipment tiers on each unit, i.e. no light archer it's just archer)
+  Should they spawn much later in the game? i.e. the first one appears at day 100/after first crisis instead of on spawn? Maybe if we add an even lower tier of units it can spawn early?
+  Anything else you can think of that helps me out
+
 **Changes**
 - Makes the 'cost' of a spider slightly higher, so you should see *very slightly* less of them
+- Adds a few new champion bandit rabble names
 
 **Fixes**
 - Fixes some issues with outfits causing lockups
 - Moves some new cutthroat armor to outlaws for being too heavy
 - Fixes unarmed lunge skill tooltip
-- Fixes the ability to equip a non-base armor/helmet layer 

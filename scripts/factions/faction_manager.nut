@@ -207,6 +207,7 @@ this.faction_manager <- {
 		local undead = this.getFactionOfType(this.Const.FactionType.Undead);
 		local zombies = this.getFactionOfType(this.Const.FactionType.Zombies);
 		local beasts = this.getFactionOfType(this.Const.FactionType.Beasts);
+		local freecompanies = this.getFactionOfType(this.Const.FactionType.FreeCompany);
 
 		for( local i = 0; i < this.Const.Factions.CyclesOnNewCampaign; i = ++i )
 		{
@@ -226,6 +227,7 @@ this.faction_manager <- {
 			undead.update(true, true);
 			zombies.update(true, true);
 			beasts.update(true, true);
+			freecompanies.update(true, true);
 			if (i % 20 == 0)
 			{
 				local progress = (i * 1.0) / (this.Const.Factions.CyclesOnNewCampaign * 1.0);
@@ -269,6 +271,7 @@ this.faction_manager <- {
 		this.createGoblins();
 		this.createUndead();
 		this.createZombies();
+		this.createFreeCompany();
 		this.createAlliances();
 
 		foreach( f in this.m.Factions )
@@ -322,6 +325,16 @@ this.faction_manager <- {
 		f.setName("Bandits");
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Bandit);
+		this.m.Factions.push(f);
+	}
+	
+	function createFreeCompany()
+	{
+		local f = this.new("scripts/factions/free_company_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Free Companies");
+		f.setDiscovered(true);
+		f.addTrait(this.Const.FactionTrait.FreeCompany);
 		this.m.Factions.push(f);
 	}
 
@@ -728,6 +741,30 @@ this.faction_manager <- {
 						this.m.Factions[i].addAlly(j);
 					}
 					else if (this.m.Factions[i].getType() == this.Const.FactionType.Zombies && this.m.Factions[j].getType() == this.Const.FactionType.Undead)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.FreeCompany && this.m.Factions[j].getType() == this.Const.FactionType.Settlement)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.FreeCompany && this.m.Factions[j].getType() == this.Const.FactionType.NobleHouse)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.FreeCompany && this.m.Factions[j].getType() == this.Const.FactionType.OrientalCityState)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.Settlement && this.m.Factions[j].getType() == this.Const.FactionType.FreeCompany)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.NobleHouse && this.m.Factions[j].getType() == this.Const.FactionType.FreeCompany)
+					{
+						this.m.Factions[i].addAlly(j);
+					}
+					else if (this.m.Factions[i].getType() == this.Const.FactionType.OrientalCityState && this.m.Factions[j].getType() == this.Const.FactionType.FreeCompany)
 					{
 						this.m.Factions[i].addAlly(j);
 					}

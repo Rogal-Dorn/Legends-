@@ -131,7 +131,102 @@ gt.Const.LegendMod.OutfitObjs.extend([
   Helmet = [ 
       [1, "traze_northern_mercenary_cap"] 
     ]
-}
+},
+{
+  ID = "mercenary_archer_outfit_00" //00 unneeded but nice if you want to add a second one in the future maybe
+  Body = [ 
+      [1, "mercenary_archer_armor_00"],
+      [1, "mercenary_archer_armor_01"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_archer_helmet_00"] 
+    ]
+},
+{
+  ID = "mercenary_infantry_outfit_00" 
+  Body = [ 
+      [1, "mercenary_infantry_armor_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_infantry_helmet_00"] 
+    ]
+},
+{
+  ID = "mercenary_infantry_outfit_01" 
+  Body = [ 
+      [1, "mercenary_infantry_armor_01"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_infantry_helmet_01"] 
+    ]
+},
+{
+  ID = "mercenary_crossbow_outfit_00" 
+  Body = [ 
+      [1, "mercenary_crossbow_armor_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_crossbow_helmet_00"], 
+      [1, "mercenary_crossbow_helmet_01"],
+      [1, "mercenary_crossbow_helmet_02"] 
+    ]
+},
+{
+  ID = "mercenary_spearman_outfit_00" 
+  Body = [ 
+      [1, "mercenary_spearman_armor_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_spearman_helmet_00"]
+    ]
+},
+{
+  ID = "mercenary_spearman_outfit_01" 
+  Body = [ 
+      [1, "mercenary_spearman_armor_01"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_spearman_helmet_01"]
+    ]
+},
+{
+  ID = "mercenary_leader_outfit_uncommon_00" 
+  Body = [ 
+      [1, "mercenary_leader_armor_uncommon_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_leader_helmet_uncommon_00"]
+    ]
+},
+{
+  ID = "mercenary_leader_outfit_00" 
+  Body = [ 
+      [1, "mercenary_leader_armor_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_leader_helmet_00"]
+    ]
+},
+{
+  ID = "mercenary_longbow_outfit_00"  //todo lazy
+  Body = [
+      [1, "patched_mail_shirt"]
+    ],
+  Helmet = [ 
+      [1, "reinforced_mail_coif"],
+      [1, "sallet_helmet"]
+    ]
+},
+{
+  ID = "mercenary_billman_outfit_00"  //todo lazy
+  Body = [
+      [1, "lamellar_harness"]
+    ],
+  Helmet = [ 
+      [1, "dented_nasal_helmet"],
+      [1, "flat_top_helmet"]
+    ]
+},
 
 
 ]);

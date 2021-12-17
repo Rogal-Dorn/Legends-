@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 gt.Const.Serialization <- {
-	Version = 69
+	Version = 70
 };
 gt.Const.DLC <- {
 	Mask = 0,
@@ -419,6 +419,17 @@ gt.Const.EntityType <- {
 
 	LegendMummyPriest = 153,
 
+	FreeCompanySpearman = 154,
+	FreeCompanySlayer = 155,
+	FreeCompanyFootman = 156,
+	FreeCompanyArcher = 157,
+	FreeCompanyCrossbow = 158,
+	FreeCompanyLongbow = 159,
+	FreeCompanyBillman = 160,
+	FreeCompanyPikeman = 161,
+	FreeCompanyInfantry = 162,
+	FreeCompanyLeader = 163,
+
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -736,5 +747,16 @@ gt.Const.EntityIcon <- [
 	"mummy_queen_orientation",
 	"kobold_fighter_orientation",
 	"kobold_wolfrider_orientation",
-	"mummy_priest_orientation"
+	"mummy_priest_orientation",
+
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation",
+	"mercenary_orientation"
 ];

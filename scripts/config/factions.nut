@@ -34,7 +34,8 @@ gt.Const.FactionType <- {
 	OrientalCityState = 13,
 	OrientalBandits = 14,
 	Arena = 15,
-	COUNT = 16
+	FreeCompany = 16,
+	COUNT = 17
 };
 gt.Const.Faction <- {
 	None = 0,
@@ -53,7 +54,8 @@ gt.Const.Faction <- {
 	OrientalCityState = 13,
 	OrientalBandits = 14,
 	Arena = 15,
-	COUNT = 16
+	FreeCompany = 16,
+	COUNT = 17
 };
 gt.Const.FactionColor <- [
 	this.createColor("#ffffff"),
@@ -72,7 +74,8 @@ gt.Const.FactionColor <- [
 	this.createColor("#ff9595"),
 	this.createColor("#ffffff"),
 	this.createColor("#ff9595"),
-	this.createColor("#b75a00")
+	this.createColor("#b75a00"),
+	this.createColor("#ffffff"),
 ];
 gt.Const.FactionBase <- [
 	"",
@@ -90,7 +93,8 @@ gt.Const.FactionBase <- [
 	"bust_base_wildmen_01",
 	"bust_base_militia",
 	"bust_base_militia",
-	"bust_base_beasts"
+	"bust_base_beasts",
+	"bust_base_militia"
 ];
 gt.Const.FactionAlliance <- [
 	[
@@ -125,13 +129,15 @@ gt.Const.FactionAlliance <- [
 		this.Const.Faction.Civilian,
 		this.Const.Faction.NobleHouse,
 		this.Const.Faction.Player,
-		this.Const.Faction.PlayerAnimals
+		this.Const.Faction.PlayerAnimals,
+		this.Const.Faction.FreeCompany
 	],
 	[
 		this.Const.Faction.NobleHouse,
 		this.Const.Faction.Civilian,
 		this.Const.Faction.Player,
-		this.Const.Faction.PlayerAnimals
+		this.Const.Faction.PlayerAnimals,
+		this.Const.Faction.FreeCompany
 	],
 	[
 		this.Const.Faction.Bandits
@@ -163,13 +169,20 @@ gt.Const.FactionAlliance <- [
 		this.Const.Faction.NobleHouse,
 		this.Const.Faction.Civilian,
 		this.Const.Faction.Player,
-		this.Const.Faction.PlayerAnimals
+		this.Const.Faction.PlayerAnimals,
+		this.Const.Faction.FreeCompany
 	],
 	[
 		this.Const.Faction.OrientalBandits
 	],
 	[
 		this.Const.Faction.Arena
+	],
+	[
+		this.Const.Faction.FreeCompany,
+		this.Const.Faction.Civilian,
+		this.Const.Faction.OrientalCityState,
+		this.Const.Faction.NobleHouse,
 	]
 ];
 gt.Const.GenericFootprints <- [

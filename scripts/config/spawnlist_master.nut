@@ -1561,6 +1561,86 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 2,
 		Script = "scripts/entity/tactical/enemies/legend_mummy_priest"
 	},
+	FreeCompanySpearman = {
+		ID = this.Const.EntityType.FreeCompanySpearman,
+		Variant = 0,
+		Strength = 17,
+		Cost = 17,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_spearman"
+	},
+	FreeCompanySlayer = {
+		ID = this.Const.EntityType.FreeCompanySlayer,
+		Variant = 0,
+		Strength = 2215,
+		Cost = 2215,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_slayer"
+	},
+	FreeCompanyFootman = {
+		ID = this.Const.EntityType.FreeCompanyFootman,
+		Variant = 0,
+		Strength = 2215,
+		Cost = 2215,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/free_company_footman"
+	},
+	FreeCompanyArcher = {
+		ID = this.Const.EntityType.FreeCompanyArcher,
+		Variant = 0,
+		Strength = 15,
+		Cost = 15,
+		Row = 3,
+		Script = "scripts/entity/tactical/humans/free_company_archer"
+	},
+	FreeCompanyCrossbow = {
+		ID = this.Const.EntityType.FreeCompanyCrossbow,
+		Variant = 0,
+		Strength = 15,
+		Cost = 15,
+		Row = 3,
+		Script = "scripts/entity/tactical/humans/free_company_crossbow"
+	},
+	FreeCompanyLongbow = {
+		ID = this.Const.EntityType.FreeCompanyLongbow,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 3,
+		Script = "scripts/entity/tactical/humans/free_company_longbow"
+	},
+	FreeCompanyBillman = {
+		ID = this.Const.EntityType.FreeCompanyBillman,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/free_company_billman"
+	},
+	FreeCompanyPikeman = {
+		ID = this.Const.EntityType.FreeCompanyPikeman,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/free_company_pikeman"
+	},
+	FreeCompanyInfantry = {
+		ID = this.Const.EntityType.FreeCompanyInfantry,
+		Variant = 0,
+		Strength = 25,
+		Cost = 25,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_infantry"
+	},
+	FreeCompanyLeader = {
+		ID = this.Const.EntityType.FreeCompanyLeader,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_leader"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-

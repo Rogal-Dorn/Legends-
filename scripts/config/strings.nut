@@ -286,7 +286,17 @@ gt.Const.Strings.EntityName <- [
 	"Embalmed Queen",
 	"Kobold Fighter",
 	"Kobold Wolfrider",
-	"Embalmed Priest"
+	"Embalmed Priest",
+	"Free Company Spearman",
+	"Free Company Slayer",
+	"Free Company Footman",
+	"Free Company Archer",
+	"Free Company Crossbow",
+	"Free Company Longbow",
+	"Free Company Billman",
+	"Free Company Pikeman",
+	"Free Company Infantry",
+	"Free Company Leader"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -442,7 +452,17 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Embalmed Queens",
 	"Kobold Fighters",
 	"Kobold Wolfriders",
-	"Embalmed Priests"
+	"Embalmed Priests",
+	"Free Company Spearmen",
+	"Free Company Slayers",
+	"Free Company Footmen",
+	"Free Company Archers",
+	"Free Company Crossbows",
+	"Free Company Longbows",
+	"Free Company Billmen",
+	"Free Company Pikemen",
+	"Free Company Infantry",
+	"Free Company Leaders"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -656,8 +676,45 @@ gt.Const.Strings.MercenaryCompanyNames <- [
 	"Trusty Troops",
 	"Red Regiment",
 	"Invincibles",
-	"Order of the Fist"
+	"Order of the Fist",
+	"The Swiftshards",
+	"The Bulwark",
+	"The Youngbloods",
+	"Iron Hands",
+	"Hagbane Company",
+	"Silver Hands",
+	"Kingslayer Company",
+	"The Lucky Few",
+	"Crypt Keepers",
+	"Mossy Men",
+	"Children of the Stones",
+	"Might and Mayhem",
+	"The Black Mothers",
+	"The Last Men"
 ];
+gt.Const.Strings.FreeCompanyNames <- clone gt.Const.Strings.MercenaryCompanyNames;
+gt.Const.Strings.FreeCompanyNames.extend([
+	"Iron Brigade",
+	"The Ubermensche",
+	"Bottle Brothers",
+	"Not the Developer Team",
+	"Mordhau Brigands",
+	"Rules of Poss",
+	"The Elder Ones",
+	"Goldfingers",
+	"Enduring Eels",
+	"Rat Petters",
+	"Placid Hunters",
+	"Vonk\'s Rolocks",
+	"Heartpiercers",
+	"Silver Company",
+	"Kraken Band",
+	"Sons of Talos",
+	"Steel Born",
+	"Stormtaken",
+	"Unhold Breakers",
+	"Tunnel Snakes, and I\'m not even kidding"
+])
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
 	"Weilburg",

@@ -5,7 +5,9 @@ this.entity_manager <- {
 		Locations = [],
 		RoadAmbushTiles = [],
 		Mercenaries = [],
+		FreeCompanies = [],
 		LastMercUpdateTime = 0,
+		LastFreeCompanyUpdateTime = 0,
 		LastSnowSpawnTime = this.Time.getVirtualTimeF() + 5.0,
 		LastWaveSpawnTime = this.Time.getVirtualTimeF() + 5.0
 	},
@@ -74,6 +76,7 @@ this.entity_manager <- {
 
 	function update()
 	{
+		this.manageAIFreeCompanies();
 		this.manageAIMercenaries();
 	}
 
@@ -84,6 +87,7 @@ this.entity_manager <- {
 		this.m.RoadAmbushTiles = [];
 		this.m.Mercenaries = [];
 		this.m.LastMercUpdateTime = 0.0;
+		this.m.LastFreeCompanyUpdateTime = 0.0;
 		this.m.LastSnowSpawnTime = 0.0;
 	}
 
@@ -432,6 +436,196 @@ this.entity_manager <- {
 		}
 	}
 
+	function manageAIFreeCompanies() //we update these at the same time as Mercenaries, for now they mostly just do the same thing Mercenaries do
+	{
+		local garbage = [];
+
+		foreach( i, fc in this.m.FreeCompanies )
+		{
+			if (fc.isNull() || !fc.isAlive())
+			{
+				garbage.push(i);
+			}
+		}
+
+		garbage.reverse();
+
+		foreach( g in garbage )
+		{
+			this.m.FreeCompanies.remove(g);
+		}
+
+		if (this.m.LastFreeCompanyUpdateTime + 3.0 > this.Time.getVirtualTimeF())
+		{
+			return;
+		}
+
+		this.m.LastFreeCompanyUpdateTime = this.Time.getVirtualTimeF();
+
+		local companies = 1;
+		if (this.World.getTime().Days > 150)
+			companies = 2;
+
+		if (this.m.FreeCompanies.len() < companies)
+		{
+			local playerTile = this.World.State.getPlayer().getTile();
+			local candidates = [];
+
+			foreach( s in this.World.EntityManager.getSettlements() )
+			{
+				if (s.isIsolated())
+				{
+					continue;
+				}
+
+				if (s.getTile().getDistanceTo(playerTile) <= 10)
+				{
+					continue;
+				}
+
+				candidates.push(s);
+			}
+
+			local start = candidates[this.Math.rand(0, candidates.len() - 1)];
+			local party = this.World.spawnEntity("scripts/entity/world/party", start.getTile().Coords);
+			party.setPos(this.createVec(party.getPos().X - 50, party.getPos().Y - 50));
+			party.setDescription("A free company, out for their own share of crowns.");
+			party.setFootprintType(this.Const.World.FootprintsType.Mercenaries);
+			party.getFlags().set("IsFreeCompany", true);
+			party.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
+
+			// local r = this.Math.min(330, 150 + this.World.getTime().Days);
+			local r = this.World.State.getPlayer().getStrength() + 50;
+			this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.FreeCompany, this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
+			party.getLoot().Money = this.Math.rand(400, 800);
+			party.getLoot().ArmorParts = this.Math.rand(10, 30);
+			party.getLoot().Medicine = this.Math.rand(5, 15);
+			party.getLoot().Ammo = this.Math.rand(10, 50);
+
+			local items = ["amber_shards_item", "furs_item", "tin_ingots_item", "spices_item", "silk_item", "peat_bricks_item", "cloth_rolls_item"]
+			
+
+			for( local i = 0; i < 2; i = ++i ) //change to some trade goods, and lower money amount if it picks them
+			{
+				party.addToInventory("trade/" + items[this.Math.rand(0, items.len() - 1)]);
+			}
+
+			party.getSprite("base").setBrush("world_base_07");
+			party.getSprite("body").setBrush("figure_mercenary_0" + this.Math.rand(1, 2));
+
+			while (true)
+			{
+				local name = this.Const.Strings.FreeCompanyNames[this.Math.rand(0, this.Const.Strings.FreeCompanyNames.len() - 1)];
+
+				if (name == this.World.Assets.getName())
+				{
+					continue;
+				}
+
+				local abort = false;
+
+				foreach( p in this.m.FreeCompanies )
+				{
+					if (p.getName() == name)
+					{
+						abort = true;
+						break;
+					}
+				}
+
+				if (abort)
+				{
+					continue;
+				}
+
+				party.setName(name);
+				break;
+			}
+
+			while (true)
+			{
+				local banner = this.Const.PlayerBanners[this.Math.rand(0, this.Const.PlayerBanners.len() - 1)];
+
+				if (banner == this.World.Assets.getBanner())
+				{
+					continue;
+				}
+
+				local abort = false;
+
+				foreach( p in this.m.FreeCompanies )
+				{
+					if (p.getBanner() == banner)
+					{
+						abort = true;
+						break;
+					}
+				}
+
+				if (abort)
+				{
+					continue;
+				}
+
+				party.getSprite("banner").setBrush(banner);
+				break;
+			}
+
+			this.m.FreeCompanies.push(this.WeakTableRef(party));
+		}
+		foreach( fc in this.m.FreeCompanies )
+		{
+			this.logInfo("There is an FC called: " + fc.getName())
+			fc.updatePlayerRelation();
+
+			if (!fc.getController().hasOrders())
+			{
+				local candidates = [];
+
+				foreach( s in this.m.Settlements )
+				{
+					if (!s.isAlive() || s.isIsolated())
+					{
+						continue;
+					}
+
+					if (!s.isAlliedWith(fc))
+					{
+						continue;
+					}
+
+					if (s.getTile().ID == fc.getTile().ID)
+					{
+						continue;
+					}
+
+					candidates.push(s);
+				}
+
+				if (candidates.len() == 0)
+				{
+					continue;
+				}
+
+				local dest = candidates[this.Math.rand(0, candidates.len() - 1)];
+				local c = fc.getController();
+				local wait1 = this.new("scripts/ai/world/orders/wait_order");
+				wait1.setTime(this.Math.rand(10, 60) * 1.0);
+				c.addOrder(wait1);
+				local move = this.new("scripts/ai/world/orders/move_order");
+				move.setDestination(dest.getTile());
+				move.setRoadsOnly(false);
+				c.addOrder(move);
+				local wait2 = this.new("scripts/ai/world/orders/wait_order");
+				wait2.setTime(this.Math.rand(10, 60) * 1.0);
+				c.addOrder(wait2);
+				local fco = this.new("scripts/ai/world/orders/free_company_order");
+				fco.setSettlement(dest);
+				c.addOrder(fco);
+			}
+		}
+	}
+
 	function manageAIMercenaries()
 	{
 		local garbage = [];
@@ -661,6 +855,25 @@ this.entity_manager <- {
 				_out.writeU32(merc.getID());
 			}
 		}
+		
+		local numMercs = 0;
+		foreach( merc in this.m.FreeCompanies )
+		{
+			if (merc != null && !merc.isNull() && merc.isAlive())
+			{
+				numMercs = ++numMercs;
+			}
+		}
+
+		_out.writeU8(numMercs);
+
+		foreach( merc in this.m.FreeCompanies )
+		{
+			if (merc != null && !merc.isNull() && merc.isAlive())
+			{
+				_out.writeU32(merc.getID());
+			}
+		}
 	}
 
 	function onDeserialize( _in )
@@ -675,6 +888,20 @@ this.entity_manager <- {
 			if (merc != null)
 			{
 				this.m.Mercenaries.push(this.WeakTableRef(merc));
+			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 70) {
+			local numMercs = _in.readU8();
+
+			for( local i = 0; i != numMercs; i = ++i )
+			{
+				local merc = this.World.getEntityByID(_in.readU32());
+
+				if (merc != null)
+				{
+					this.m.FreeCompanies.push(this.WeakTableRef(merc));
+				}
 			}
 		}
 
