@@ -6431,3 +6431,6 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 
 **Typos**
 Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
+
+**MISC**
+Traveler's bags no longer use the resolve icon on their stash capacity tooltip line
