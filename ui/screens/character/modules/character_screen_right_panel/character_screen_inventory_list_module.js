@@ -207,7 +207,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
     result.data('item', itemData);
 
     // add event handler
-    var dropHandler = function (_source, _target, _proxy, _dd)
+    var dropHandler = function (_source, _target, _proxy, _dd, _event)
     {        
         if (_proxy.data('item') === undefined || _target.data('item') === undefined)
         {
@@ -279,7 +279,9 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
             _proxy.data('item', sourceData);
 
             console.info('Stash -> Stash (swap)');
-            self.mDataSource.swapInventoryItem(sourceItemIdx, targetItemIdx);
+            var shiftPressed = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true)
+            var tryToUpgrade = shiftPressed && ((sourceData.slotType == "body" || sourceData.slotType == "head") && targetData.slotType == sourceData.slotType)
+            self.mDataSource.swapInventoryItem(sourceItemIdx, targetItemIdx, tryToUpgrade);
             return;
         }
 
@@ -527,6 +529,7 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
         var sourceItemIdx = (data !== null && 'index' in data) ? data.index : null;
         var dropIntoBag = (KeyModiferConstants.CtrlKey in _event && _event[KeyModiferConstants.CtrlKey] === true);
         var repairItem = (KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
+        var removeUpgrades = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true);
         var sourceSlotType = (data !== null && 'slotType' in data) ? data.slotType : null;
 
         if (isEmpty === false && /*owner !== null &&*/ itemId !== null /*&& itemIdx !== null*/)
@@ -541,6 +544,10 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
                 }
 
                 self.mDataSource.dropInventoryItemIntoBag(entityId, itemId, sourceItemIdx, null);
+            }
+            else if (removeUpgrades === true)
+            {
+                self.mDataSource.notifyBackendRemoveInventoryItemUpgrades(sourceItemIdx);
             }
             else
             {
@@ -993,7 +1000,7 @@ CharacterScreenInventoryListModule.prototype.onDataSourceError  = function (_dat
     {
         case ErrorCode.NotEnoughStashSpace:
         {
-            this.mSlotCountContainer.shakeLeftRight();
+            this.mSlotCountLabel.shakeLeftRight();
         } break;
     }
 
