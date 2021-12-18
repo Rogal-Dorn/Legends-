@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-local ver = "15.0.2.0"
+local ver = "15.0.2.1c"
 
 gt.logInfo("Legends Mod Version " + ver)
 
