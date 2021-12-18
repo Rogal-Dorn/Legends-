@@ -6426,3 +6426,9 @@ Cultist is now a Lowborn, in addition to being an outlaw and cultist type.
 Free companies now show up after day 100 : This will be changed back a bit further later maybe
   (Only one shows up at all now, instead of showing up a second one on day 100)
 Potion brewer perk description now correctly notes the amount of apothecary levels for upper level potions, notes the difference between brewing and apothecary leveling
+
+## 15.0.2.1c
+**Fixes**
+- Free companies no longer throw a ton of errors when they haven't spawned yet (lol? oops)
+- Penance perk no longer crashes when leaving combat
+- Layers aren't split in half anymore
