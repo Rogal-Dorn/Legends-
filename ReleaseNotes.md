@@ -6420,3 +6420,8 @@ Strings.nut has now been reordered to hopefully be more helpful to navigate. Per
 Risen legion scenario is now marked as [Beta] (so stop fucking asking me about it).
 Brigand veterans and raiders now have a chance to spawn with a two handed club in addition to their normal weapon rolls.
 Cultist is now a Lowborn, in addition to being an outlaw and cultist type.
+
+## 15.0.2.1b
+**Free Companies**
+Free companies now show up after day 75 : This will be changed back a bit further later maybe
+Potion brewer perk description now correctly notes the amount of apothecary levels for upper level potions, notes the difference between brewing and apothecary leveling

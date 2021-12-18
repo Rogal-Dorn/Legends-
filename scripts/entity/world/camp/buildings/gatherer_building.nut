@@ -221,7 +221,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					"scripts/items/accessory/recovery_potion_item",
 					"scripts/items/accessory/cat_potion_item"
 				]);
-				if (levels.Brewer >= 20 && levels.Apothecary >= 60)
+				if (levels.Brewer >= 20 && levels.Apothecary >= 30)
 				{
 					loot.extend([
 						"scripts/items/misc/miracle_drug_item",
@@ -267,6 +267,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				case "background.legend_herbalist":
 				case "background.legend_alchemist":
 				case "background.legend_druid":
+				case "background.legend_druid_commander":
 					map.Apothecary += bro.getLevel()
 			}
 
