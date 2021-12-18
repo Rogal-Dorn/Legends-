@@ -10,6 +10,7 @@ this.starting_scenario <- {
 		StartingBusinessReputation = 0,
 		StartingRosterTier = this.Const.Roster.DefaultTier,
 		RosterTierMax = this.Const.Roster.DefaultTierMax,
+		RosterTierMaxCombat = null,
 		RosterReputationTiers = this.Const.Roster.DefaultReputationTiers,
 		StaticRelationsToFaction = array(this.Const.FactionType.len(), false) 	//Something defined here won't have relations normalized over time in faction_manager
 										//I think this would be better if we instead automatically set the size to be
@@ -133,6 +134,12 @@ this.starting_scenario <- {
 	function getRosterTier()
 	{
 		return this.Math.min(this.getRosterTierMax(), this.getRosterTierFromReputation() + this.getStartingRosterTier());
+	}
+
+	function getRosterTierCombat()
+	{
+		local tierMax = this.m.RosterTierMaxCombat == null ? this.Math.min(this.getRosterTierMax(), this.m.RosterTierMaxCombat) : this.m.RosterTierMaxCombat;
+		return this.Math.min(tierMax, this.getRosterTierFromReputation() + this.getStartingRosterTier());
 	}
 
 	function getRosterTierMax()
