@@ -35,12 +35,15 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		this.result <- {
-			Opponents = 0,
-			Actor = this.m.Container.getActor()
-		};
-		this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
-		return this.result.Opponents * 0.05;
+		if ("State" in this.Tactical && this.Tactical.State != null) {
+			this.result <- {
+				Opponents = 0,
+				Actor = this.m.Container.getActor()
+			};
+			this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
+			return this.result.Opponents * 0.05;
+		}
+		return 0;
 	}
 
 	function onUpdate( _properties )

@@ -575,7 +575,7 @@ this.entity_manager <- {
 		}
 		foreach( fc in this.m.FreeCompanies )
 		{
-			this.logInfo("There is an FC called: " + fc.getName())
+			// this.logInfo("There is an FC called: " + fc.getName())
 			fc.updatePlayerRelation();
 
 			if (!fc.getController().hasOrders())
