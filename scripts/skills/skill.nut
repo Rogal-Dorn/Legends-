@@ -101,26 +101,32 @@ this.skill <- {
 
 	function getDescription()
 	{
-		local actor = this.getContainer().getActor();
 		local gender = -1;
-		if (actor != null)
+		local vars = [];
+		if (this.getContainer() == null || this.getContainer().getActor() == null)
 		{
-			gender = actor.getGender()
+			this.logError("Skill: " + this.getName() + " is missing a " + (this.getContainer() == null ? "Container" : "Actor") + "when getting description");
+			this.MSU.Log.printStackTrace();
 		}
-		local vars = [
-			[
-				"name",
-				actor.getNameOnly()
-			],
-			[
-				"fullname",
-				actor.getName()
-			],
-			[
-				"title",
-				actor.getTitle()
-			]
-		];
+		else
+		{
+			local actor = this.getContainer().getActor();
+			gender = actor.getGender();
+			vars.extend([
+				[
+					"name",
+					actor.getNameOnly()
+				],
+				[
+					"fullname",
+					actor.getName()
+				],
+				[
+					"title",
+					actor.getTitle()
+				]
+			]);
+		}
 		this.Const.LegendMod.extendVarsWithPronouns(vars, gender);
 		return this.buildTextFromTemplate(this.m.Description, vars);
 	}
