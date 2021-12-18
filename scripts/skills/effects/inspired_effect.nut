@@ -23,7 +23,7 @@ this.inspired_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPoints = (this.getContainer().hasSkill("perk.legend_clarity") ? 10 : 9) + 4;
+		_properties.ActionPoints += 4;
 	}
 
 	function onTurnStart()

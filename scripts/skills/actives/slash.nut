@@ -43,23 +43,15 @@ this.slash <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		ret.extend([
+
+		ret.push(
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit"
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.HitChanceBonus	+ "%[/color] chance to hit"
 			}
-		]);
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
-		{
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/hitchance.png",
-				text = "Has [color=" + this.Const.UI.Color.PositiveValue  + "]+5%[/color] chance to hit due to sword specialisation"
-			});
-		}
+		);
 
 		return ret;
 	}
@@ -81,12 +73,14 @@ this.slash <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.MeleeSkill += 10;
 
+			_skill.resetField("HitChanceBonus");
+
 			if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSwords)
 			{
 				_properties.MeleeSkill += 5;
+				this.m.HitChanceBonus += 5;
 			}
 		}
 	}
-
 });
 

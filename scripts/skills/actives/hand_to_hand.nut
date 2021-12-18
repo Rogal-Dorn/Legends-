@@ -105,7 +105,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		_properties.DamageArmorMult = 0.5;
 
 		//Untested fix, theoretically should fix being disarmed and getting extra weapon damage
-		if (this.m.Container.hasSkill("disarmed_effect"))
+		if (this.m.Container.hasSkill("effects.disarmed"))
 		{
 			local mhand = actor.getMainhandItem();
 			if (mhand != null)

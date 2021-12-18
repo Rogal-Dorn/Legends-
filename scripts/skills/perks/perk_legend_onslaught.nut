@@ -43,7 +43,7 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		local user = _skill.getContainer().getActor();
+		local user = this.getContainer().getActor();
 		local ourInit =  user.getInitiative();
 		local targetInit = _targetEntity.getInitiative()
 

@@ -72,6 +72,11 @@ this.root_skill <- this.inherit("scripts/skills/skill", {
 
 	}
 
+	function isUsable()
+	{
+		return this.skill.isUsable() && !this.getContainer().getActor().isEngagedInMelee();
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targets = [];
