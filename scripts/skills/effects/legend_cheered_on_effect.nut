@@ -23,7 +23,7 @@ this.legend_cheered_on_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.ActionPoints += 1;
+		_properties.ActionPoints += 2;
 	}
 
 	function onTurnStart()

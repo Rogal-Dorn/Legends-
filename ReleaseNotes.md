@@ -6432,3 +6432,4 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Free companies no longer throw a ton of errors when they haven't spawned yet (lol? oops)
 - Penance perk no longer crashes when leaving combat
 - Layers aren't split in half anymore
+- Fixes cheer on only giving 1 ap
