@@ -56,7 +56,7 @@ this.legend_vala_inscription_token <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "text",
-			text = "Right-click to permanently attach this inscribed rock to the selected character\'s equipment. This item will be consumed in the process to give the following effect(s):"
+			text = "Right-click to attach this inscribed rune to the selected character\'s equipment. Weapon and shield runes cannot be detached, this rune gives the following effect(s):"
 		});
 		result.push({
 			id = 66,
