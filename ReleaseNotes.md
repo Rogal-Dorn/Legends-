@@ -6423,5 +6423,6 @@ Cultist is now a Lowborn, in addition to being an outlaw and cultist type.
 
 ## 15.0.2.1b
 **Free Companies**
-Free companies now show up after day 75 : This will be changed back a bit further later maybe
+Free companies now show up after day 100 : This will be changed back a bit further later maybe
+  (Only one shows up at all now, instead of showing up a second one on day 100)
 Potion brewer perk description now correctly notes the amount of apothecary levels for upper level potions, notes the difference between brewing and apothecary leveling
