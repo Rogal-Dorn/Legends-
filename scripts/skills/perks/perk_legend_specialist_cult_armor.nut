@@ -27,7 +27,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!_actor.isAlliedWith)
+		if (!_actor.isAlliedWithPlayer())
 		{
 			++_tag.Opponents;
 		}
@@ -35,13 +35,13 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		if ("State" in this.Tactical && this.Tactical.State != null) {
+		if ("State" in this.Tactical && this.Tactical.State != null && "Entities" in this.Tactical && !this.Tactical.Entities.isCombatFinished()) {
 			this.result <- {
 				Opponents = 0,
 				Actor = this.m.Container.getActor()
 			};
-			this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
-			return this.result.Opponents * 0.05;
+			this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 1, 1, this.isOpponent, result);
+			return result.Opponents * 0.05;
 		}
 		return 0;
 	}
