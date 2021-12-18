@@ -39,7 +39,7 @@ this.perk_legend_spawn_zombie_low <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.Hitpoints += 10;
+		_properties.Hitpoints += 20;
 	}
 
 });
