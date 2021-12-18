@@ -508,7 +508,31 @@ this.character_screen <- {
 
 	function onSwapInventoryItem( _data )
 	{
+		if(_data[2]) return this.general_onUpgradeInventoryItem(_data);
 		return this.general_onSwapInventoryItem(_data);
+	}
+
+	function general_onUpgradeInventoryItem( _data )
+	{
+		local data = this.helper_queryStashItemDataByIndex(_data[0], _data[1]);
+
+		if ("error" in data)
+		{
+			return data;
+		}
+
+		if (data.stash.upgrade(data.sourceIndex, data.targetIndex))
+		{
+			data.stash.removeByIndex(data.sourceIndex);
+			return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
+		}
+		else
+		{
+			this.logError("general_onUpgradeInventoryItem(stash)");
+			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToAcquireStash);
+		}
+
+		return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
 	}
 
 	function onDestroyInventoryItem( _data )
@@ -2462,8 +2486,36 @@ this.character_screen <- {
 		this.loadData();
 	}
 
+	function removeInventoryItemUpgrades(_data)
+	{
+		local armor  = this.Stash.getItemAtIndex(_data[0]).item;
+		if (armor != null)
+		{
+			foreach (idx, value in armor.getUpgrades())
+			{
+				if (this.Stash.getNumberOfEmptySlots() <= 0){
+					return {
+						error = this.Const.UI.Error.NotEnoughStashSpace,
+						code = this.Const.UI.Error.NotEnoughStashSpace
+					};
+				}
+				if (value != 1) continue
+				local upgrade = armor.getUpgrade(idx)
+				if (upgrade.isDestroyedOnRemove()) continue
+				this.Stash.add(armor.removeUpgrade( idx ))		
+			}
+		}
+		return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
+	}
+
 	function removeUpgrade( _slot, _data)
 	{
+		if (this.Stash.getNumberOfEmptySlots() <= 0){
+			return {
+				error = this.Const.UI.Error.NotEnoughStashSpace,
+				code = this.Const.UI.Error.NotEnoughStashSpace
+			};
+		}
 		local bro = this.Tactical.getEntityByID(_data[1]);
 		local upgrade = bro.removeArmorUpgrade(_slot, _data[0]);
 		if (upgrade != null && !upgrade.isDestroyedOnRemove())

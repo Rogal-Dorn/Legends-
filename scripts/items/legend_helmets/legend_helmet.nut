@@ -88,29 +88,45 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 	function getIconOverlay()
 	{
-		local L = [];
+		local layers = [];
+		local upgrades = [];
 
 		if (this.isArmorNamed())
 		{
-			L.push(this.m.Icon);
+			layers.push(this.m.Icon);
 		}
 
-		foreach (u in this.m.Upgrades)
+
+		foreach (upgrade in this.m.Upgrades)
 		{
-			if (u != null)
+			if (upgrade == null) continue;
+			upgrades.push([upgrade.m.Type + (upgrade.m.IsLowerVanity ? 3 : 0), upgrade.getOverlayIcon()])
+		}
+		upgrades.sort(function ( _a, _b )
+		{
+			if (_a[0] > _b[0])
 			{
-				L.push(u.getOverlayIcon());
+				return -1;
 			}
+			else if (_a[0] < _b[0])
+			{
+				return 1;
+			}
+
+			return 0;
+		});
+		foreach (upgrade in upgrades)
+		{
+			layers.push(upgrade[1])
 		}
 
-		if (L.len() == 0)
+		if (layers.len() == 0)
 		{
 			return [
 				""
 			];
 		}
-
-		return L;
+		return layers;
 	}
 
 	function getIconLarge()
@@ -452,12 +468,12 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		this.m.Upgrades[slot] = _upgrade;
 		this.m.Upgrades[slot].setArmor(this);
-		this.updateAppearance();
 		if (this.m.Container != null) 
 		{
 			if (slot != this.Const.Items.HelmetUpgrades.ExtraVanity) this.m.Upgrades[slot].onEquip();
 			this.getContainer().getActor().getSkills().update();
 		}
+		this.updateAppearance();
 		return true;
 	}
 

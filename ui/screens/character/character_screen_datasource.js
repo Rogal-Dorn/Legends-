@@ -808,10 +808,10 @@ CharacterScreenDatasource.prototype.hasEnoughAPToEquip = function ()
 };
 
 
-CharacterScreenDatasource.prototype.swapInventoryItem = function (_sourceItemIdx, _targetItemIdx)
+CharacterScreenDatasource.prototype.swapInventoryItem = function (_sourceItemIdx, _targetItemIdx, tryToUpgrade)
 {
     var self = this;
-    this.notifyBackendSwapInventoryItem(_sourceItemIdx, _targetItemIdx, function (data)
+    this.notifyBackendSwapInventoryItem(_sourceItemIdx, _targetItemIdx, tryToUpgrade, function (data)
     {
         if (data === undefined || data == null || typeof (data) !== 'object')
         {
@@ -837,6 +837,9 @@ CharacterScreenDatasource.prototype.swapInventoryItem = function (_sourceItemIdx
             if (CharacterScreenIdentifier.QueryResult.Stash in data)
             {
                 var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+                if(tryToUpgrade === true){
+                	stashData.forceUpdate = _targetItemIdx;
+                }
                 if (stashData !== null && jQuery.isArray(stashData))
                 {
                     self.updateStash(stashData);
@@ -937,6 +940,76 @@ CharacterScreenDatasource.prototype.toggleInventoryItem = function(_itemId, _ent
 
 
 CharacterScreenDatasource.prototype.equipInventoryItem = function(_brotherId, _sourceItemId, _sourceItemIdx)
+{
+	// if the _brotherId is null, this means we are trying to equip a stash item which is NOT brother bound
+	// thus we have to use the current selected one
+	var brotherId = _brotherId;
+	if (brotherId === null)
+	{
+		var selectedBrother = this.getSelectedBrother();
+		if (selectedBrother === null || !(CharacterScreenIdentifier.Entity.Id in selectedBrother))
+		{
+			console.error('ERROR: Failed to equip inventory item. No entity selected.');
+			return;
+		}
+
+		brotherId = selectedBrother[CharacterScreenIdentifier.Entity.Id];
+	}
+
+	var self = this;
+	this.notifyBackendEquipInventoryItem(brotherId, _sourceItemId, _sourceItemIdx, function (data)
+	{
+	    if (data === undefined || data == null || typeof (data) !== 'object')
+	    {
+	        console.error('ERROR: Failed to equip inventory item. Invalid data result.');
+	        return;
+	    }
+
+	    // check if we have an error
+	    if (ErrorCode.Key in data)
+	    {
+	        self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+	    }
+	    else
+	    {
+	        if ('stashSpaceUsed' in data)
+	            self.mStashSpaceUsed = data.stashSpaceUsed;
+
+	        if ('stashSpaceMax' in data)
+	            self.mStashSpaceMax = data.stashSpaceMax;
+
+	        self.mInventoryModule.updateSlotsLabel();
+
+	        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+	        {
+	            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+	            if (stashData !== null && jQuery.isArray(stashData))
+	            {
+	                self.updateStash(stashData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
+	            }
+	        }
+
+	        if (CharacterScreenIdentifier.QueryResult.Brother in data)
+	        {
+	            var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
+	            if (CharacterScreenIdentifier.Entity.Id in brotherData)
+	            {
+	                self.updateBrother(brotherData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
+	            }
+	        }
+	    }
+	});
+};
+
+CharacterScreenDatasource.prototype.addLayerToItem = function(_brotherId, _sourceItemId, _sourceItemIdx)
 {
 	// if the _brotherId is null, this means we are trying to equip a stash item which is NOT brother bound
 	// thus we have to use the current selected one
@@ -1547,6 +1620,10 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 		//this.mStashList = _data;
 		// return;
 	}
+	var forceUpdateSlot = -1;
+	if (_data["forceUpdate"] != null){
+		forceUpdateSlot = _data["forceUpdate"]
+	}
 
 	// check stash for changes
 	for (var i = 0; i < numItems; ++i)
@@ -1571,6 +1648,10 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 			this.mStashList[i] = targetItem;
 			this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: sourceItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Removed });
 		}
+		else if(i == forceUpdateSlot)
+		{
+			this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: targetItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Updated });
+		}
 		// item might have changed within stash slot
 		else
 		{
@@ -1584,6 +1665,7 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
                 console.info('STASH: Item updated trgType: ' + targetItem[CharacterScreenIdentifier.Item.Slot]);
 */
                 //console.log('STASH: Item updated (Index: ' + i + ')');
+				
 				this.mStashList[i] = targetItem;
 				this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: targetItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Updated });
 			}
@@ -1776,9 +1858,9 @@ CharacterScreenDatasource.prototype.notifyBackendCommitStatIncreaseValues = func
     SQ.call(this.mSQHandle, 'onCommitStatsIncreaseValues', [_brotherId, increaseValues], _callback);
 };
 
-CharacterScreenDatasource.prototype.notifyBackendSwapInventoryItem = function (_sourceItemIdx, _targetItemIdx, _callback)
+CharacterScreenDatasource.prototype.notifyBackendSwapInventoryItem = function (_sourceItemIdx, _targetItemIdx, tryToUpgrade, _callback)
 {
-    SQ.call(this.mSQHandle, 'onSwapInventoryItem', [_sourceItemIdx, _targetItemIdx], _callback);
+    SQ.call(this.mSQHandle, 'onSwapInventoryItem', [_sourceItemIdx, _targetItemIdx, tryToUpgrade], _callback);
 };
 
 /*CharacterScreenDatasource.prototype.notifyBackendDestroyInventoryItem = function (_brotherId, _sourceItemId)
@@ -1902,13 +1984,48 @@ CharacterScreenDatasource.prototype.notifyBackendFormationClicked = function (_f
 CharacterScreenDatasource.prototype.notifyBackendClearFormationButtonClicked = function (_formationIndex) {
     SQ.call(this.mSQHandle, 'onFormationClear', [_formationIndex]);
 };
+CharacterScreenDatasource.prototype.notifyBackendRemoveInventoryItemUpgrades = function (_slot)
+{
+    var self = this;
+    SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
+    	if (data === null) return
+		{
+		    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+		}
+        if ('stashSpaceUsed' in data)
+            self.mStashSpaceUsed = data.stashSpaceUsed;
 
+        if ('stashSpaceMax' in data)
+            self.mStashSpaceMax = data.stashSpaceMax;
+
+        self.mInventoryModule.updateSlotsLabel();
+
+        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+        {
+            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+            if (stashData !== null && jQuery.isArray(stashData))
+            {
+            	stashData.forceUpdate = _slot;
+                self.updateStash(stashData);
+            }
+            else
+            {
+                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
+            }
+        }
+    });
+};
 CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (_slot)
 {
     var self = this;
     var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
     SQ.call(this.mSQHandle, 'onRemoveArmorUpgrade', [_slot, activeCharacterID], function (data) {
     	if (data === null) return
+		if (ErrorCode.Key in data)
+		{
+
+		    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+		}
         if ('stashSpaceUsed' in data)
             self.mStashSpaceUsed = data.stashSpaceUsed;
 
@@ -1952,6 +2069,12 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function 
     SQ.call(this.mSQHandle, 'onRemoveHelmetUpgrade', [_slot, activeCharacterID], function (data) {
 
         if (data === null) { return; }
+        if (ErrorCode.Key in data)
+        {
+        	console.error(ErrorCode.Key)
+        	console.error("should print the error thing")
+            self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+        }
         if ('stashSpaceUsed' in data)
             self.mStashSpaceUsed = data.stashSpaceUsed;
 

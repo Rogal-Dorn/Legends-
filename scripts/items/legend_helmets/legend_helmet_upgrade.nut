@@ -450,7 +450,6 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		if (this.isUsed()) return false;
 
 		local armor = _item == null ? _actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head) : _item;
-
 		if (armor == null) return false;
 
 		local success = armor.setUpgrade(this);
