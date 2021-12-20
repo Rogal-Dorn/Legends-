@@ -468,6 +468,9 @@ this.entity_manager <- {
 		// if (this.World.getTime().Days > 150)
 		// 	companies = 2;
 
+		if (companies == 0)
+			return;
+
 		if (this.m.FreeCompanies.len() < companies)
 		{
 			local playerTile = this.World.State.getPlayer().getTile();
