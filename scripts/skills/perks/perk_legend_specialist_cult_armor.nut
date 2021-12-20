@@ -13,7 +13,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false; 
 	}
 
-//constant passive
+	//constant passive
 	function getDescription()
 	{
 		local bonus = this.getBonus() * 100;
@@ -27,7 +27,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (!_actor.isAlliedWith)
+		if (!_actor.isAlliedWithPlayer())
 		{
 			++_tag.Opponents;
 		}
@@ -35,20 +35,12 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		if ("State" in this.Tactical && this.Tactical.State != null) {
-			this.result <- {
-				Opponents = 0,
-				Actor = this.m.Container.getActor()
-			};
-			this.Tactical.queryActorsInRange(this.getContainer().getActor().getTile(), 0, 1, this.isOpponent, this.result);
-			return this.result.Opponents * 0.05;
-		}
-		return 0;
+		return this.getContainer().getActor().getActorsWithinDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() * 0.05;
 	}
 
 	function onUpdate( _properties )
 	{
-		this.m.IsHidden = this.getBonus() == 0;
+		this.m.IsHidden = this.getBonus() == 0.0;
 	}
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
@@ -57,7 +49,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	}
 
 
-//equipment check
+	//equipment check
 	function onAfterUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
@@ -92,7 +84,8 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 				local validLayers = [
 					"legend_armor.body.legend_animal_hide_armor",
 					"legend_armor.body.legend_hide_and_bone_armor",
-					"legend_armor.body.legend_reinforced_animal_hide_armor"
+					"legend_armor.body.legend_reinforced_animal_hide_armor",
+					"legend_armor.body.legend_armor_cult_armor",
 				];
 
 				foreach (l in item.getUpgradeIDs())
