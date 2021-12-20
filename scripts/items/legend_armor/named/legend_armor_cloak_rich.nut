@@ -1,6 +1,6 @@
 this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrade", {
 	m = {
-		BraveryMult = 1.03
+		BraveryMult = 1.02
 	},
 	function create()
 	{
@@ -38,7 +38,7 @@ this.legend_armor_cloak_rich <- this.inherit("scripts/items/legend_armor/legend_
 	{
 		this.m.Condition = this.Math.rand(30, 40);
 		this.m.ConditionMax = this.m.Condition;
-		this.m.BraveryMult = this.Math.rand(104, 110) * 0.01;
+		this.m.BraveryMult = this.Math.rand(102, 105) * 0.01;
 	}
 
 	function updateVariant()

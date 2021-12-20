@@ -6433,3 +6433,8 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Penance perk no longer crashes when leaving combat
 - Layers aren't split in half anymore
 - Fixes cheer on only giving 1 ap
+
+## 15.0.2.2
+
+**Changes**
+Nerfs the possible resolve roll on the cheaper named cloak
