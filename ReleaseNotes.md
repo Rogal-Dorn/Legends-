@@ -6433,3 +6433,16 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Penance perk no longer crashes when leaving combat
 - Layers aren't split in half anymore
 - Fixes cheer on only giving 1 ap
+
+
+## 15.0.2.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+**Typos**
+Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
+Zombie summon tooltips updated to match the previous build.
+
+**Balance**
+Mold carrion skill now grants 20 health (up from 10).
+
+**MISC**
+Traveler's bags no longer use the resolve icon on their stash capacity tooltip line
