@@ -6449,3 +6449,4 @@ Mold carrion skill now grants 20 health (up from 10).
 
 **MISC**
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line
+Men-at-arms now have blue armbands
