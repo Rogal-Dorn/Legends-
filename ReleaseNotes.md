@@ -6433,3 +6433,6 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Penance perk no longer crashes when leaving combat
 - Layers aren't split in half anymore
 - Fixes cheer on only giving 1 ap
+
+## Uber Changes
+- Removed darkened equipment on Brigand Warlords.

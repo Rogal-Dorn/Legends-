@@ -121,13 +121,6 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
-	function onAppearanceChanged( _appearance, _setDirty = true )
-	{
-		this.actor.onAppearanceChanged(_appearance, false);
-		this.setArmorBrightness(0.6);
-		this.setDirty(true);
-	}
-
 	function assignRandomEquipment()
 	{
 		local shields = clone this.Const.Items.NamedShields;
