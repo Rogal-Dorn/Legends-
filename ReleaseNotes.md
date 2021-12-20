@@ -6441,6 +6441,9 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
 Zombie summon tooltips updated to match the previous build.
 
+**Fixes**
+Fixes issues with Penance
+
 **Balance**
 Mold carrion skill now grants 20 health (up from 10).
 
