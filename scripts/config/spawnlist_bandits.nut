@@ -28,25 +28,25 @@ gt.Const.World.Spawn.BanditRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					// MaxR = 0.25 * 420,
-					MaxR = 100,
+					MaxR = 90,
 					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 80,
+					MinR = 55,
 					Cost = 8
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					//MinR = 200,
-					MinR = 160,					
-					Cost = 16
+					MinR = 125,					
+					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					//MinR = 400,					
 					MinR = 320,
-					Cost = 20
+					Cost = 18
 				},
 				{
 					//MinR = 800,
@@ -72,7 +72,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
 					// MaxR = 0.20 * 420,
-					MaxR = 70,
+					MaxR = 45,
 					Cost = 8
 				},
 				{
@@ -139,13 +139,13 @@ gt.Const.World.Spawn.BanditScouts <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					//MaxR = 120,
-					MaxR = 100,
-					Cost = 5
+					MaxR = 105,
+					Cost = 11
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
 					MinR = 80,					
-					Cost = 8
+					Cost = 7
 				},
 				{
 					//MinR = 200,
@@ -251,16 +251,16 @@ gt.Const.World.Spawn.BanditRaiders <-
 		{
 			Weight = 54,
 			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					// MaxR = 0.15 * 400,
-					//MaxR = 60, Luft change
-					MaxR = 100,
-					Cost = 9
-				},
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.BanditRabble,
+				// 	// MaxR = 0.15 * 400,
+				// 	//MaxR = 60, Luft change
+				// 	MaxR = 100,
+				// 	Cost = 9
+				// },
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 80,					
+					//MinR = 80,					
 					Cost = 8
 				},
 				{
@@ -288,7 +288,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 			[
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabblePoacher,
-					MaxR = 110,
+					MaxR = 90,
 					Cost = 10
 				},
 				{
@@ -411,12 +411,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 85,
+					MaxR = 65,
 					Cost = 5
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 80,					
+					MinR = 70,					
 					Cost = 8
 				},
 				{
@@ -676,7 +676,7 @@ gt.Const.World.Spawn.BanditBoss <-
 
 gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 {
-	Name = "BanditsDisguisedAsDireWolves",
+	Name = "BanditsDisguisedAsDireWolves", //furry convention
 	IsDynamic = true,
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
@@ -699,7 +699,7 @@ gt.Const.World.Spawn.BanditsDisguisedAsDirewolves <-
 	]
 }
 
-gt.Const.World.Spawn.BanditVermes <-
+gt.Const.World.Spawn.BanditVermes <- //unused
 {
 	Name = "BanditsVermes",
 	IsDynamic = true,

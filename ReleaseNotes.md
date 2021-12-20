@@ -6442,11 +6442,12 @@ Runes no longer state that they will be consumed on being used with equipment, u
 Zombie summon tooltips updated to match the previous build.
 
 **Fixes**
-Fixes issues with Penance
+Fixes issues with Penance.
 
 **Balance**
 Mold carrion skill now grants 20 health (up from 10).
+Bandit spawns have been rebalanced somewhat.
 
 **MISC**
-Traveler's bags no longer use the resolve icon on their stash capacity tooltip line
-Men-at-arms now have blue armbands
+Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
+Men-at-arms now have blue armbands.
