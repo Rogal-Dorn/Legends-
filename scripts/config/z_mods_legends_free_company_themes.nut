@@ -27,10 +27,10 @@ gt.Const.FreeCompanyCoordinationList <- [
         Spawn = "FreeCompany",                                                     //custom spawnlist
         LootTable = clone this.Const.FreeCompanyDefaultLootTable                   //Custom loot tables
         UnitOutfits = [
-            {
-                Type = this.Const.EntityType.FreeCompanyLeader,
-                Outfits = [ [1, "mercenary_archer_outfit_00"] ]
-            }
+            // {
+            //     Type = this.Const.EntityType.FreeCompanyLeader,
+            //     Outfits = [ [1, "mercenary_archer_outfit_00"] ]
+            // }
         ]                                                           //Leave this for default outfits
     }
 	// {
