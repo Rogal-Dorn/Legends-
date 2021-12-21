@@ -6450,6 +6450,9 @@ Bandit spawns have been rebalanced somewhat.
 Man-at-arms daily upkeep decreased from 18 to 15.
 Man-at-arms initial cost decreased from 165 to 130.
 
+**Events**
+Man-at-arms and leech peddler have been added to some settlement events when playing as the militia origin.
+
 **MISC**
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
 Men-at-arms now have blue armbands.
