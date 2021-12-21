@@ -6456,3 +6456,4 @@ Man-at-arms and leech peddler have been added to some settlement events when pla
 **MISC**
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
 Men-at-arms now have blue armbands.
+Donkeys now cost no upkeep
