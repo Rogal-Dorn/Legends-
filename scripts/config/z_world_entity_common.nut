@@ -1272,11 +1272,21 @@ gt.Const.World.Common.pickPerks <- function (_perks, _power)
 			{
 				continue;
 			}
-			this.logInfo("Our randomized r was: " + r);
-			this.logInfo("Our total weight was  " + totalWeight)
-			this.logInfo("Our script is " + t[1])
-			local skill = this.new("scripts/skills/perks/" + t[1]);
-			ret.push(skill);
+			local skill = null;
+			if (typeof t[1] == "string")
+			{
+				skill = this.new("scripts/skills/perks/" + t[1]);
+				ret.push(skill);
+			}
+			else if (typeof t[1] == "array")
+			{
+				foreach(s in t[1])
+				{
+					skill = this.new("scripts/skills/perks/" + s);
+					ret.push(skill);
+				}
+			}
+			else { logWarning("Attempted to select perks from something that isn't a string or an array") }
 
 			totalWeight -= t[0];
 			_power -= t[2];
@@ -1299,12 +1309,13 @@ gt.Const.World.Common.pickPerks <- function (_perks, _power)
 
 //testing for perk selector
 // local testArray = [
-// 	[1, "perk_nimble", 2],
+// 	// [1, "perk_nimble", 2],
 // 	[1, "perk_relentless", 1],
 // 	[1, "perk_brawny", 1],
 // 	[1, "perk_steel_brow", 3],
-// 	[1, "perk_battle_forged", 2],
+// 	// [1, "perk_battle_forged", 2],
 // 	[1, "perk_lookout", 1],
+// 	[1, ["perk_battle_forged", "perk_nimble"], 3] 
 // ]
 
 // local perksPicked = this.Const.World.Common.pickPerks(testArray, 5)
@@ -1313,11 +1324,11 @@ gt.Const.World.Common.pickPerks <- function (_perks, _power)
 // 	this.logInfo("Selected the perk: " + p.getID())
 // }
 // this.logInfo("----------------------")
-// local perksPicked = this.Const.World.Common.pickPerks(testArray, 20)
-// foreach(p in perksPicked)
-// {
-// 	this.logInfo("Selected the perk: " + p.getID())
-// }
+local perksPicked = this.Const.World.Common.pickPerks(testArray, 20)
+foreach(p in perksPicked)
+{
+	this.logInfo("Selected the perk: " + p.getID())
+}
 // this.logInfo("----------------------")
 // local perksPicked = this.Const.World.Common.pickPerks(testArray, 0)
 // foreach(p in perksPicked)
