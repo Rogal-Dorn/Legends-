@@ -6434,5 +6434,25 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Layers aren't split in half anymore
 - Fixes cheer on only giving 1 ap
 
+<<<<<<< HEAD
 ## Uber Changes
 - Removed darkened equipment on Brigand Warlords.
+=======
+
+## 15.0.2.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+**Typos**
+Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
+Zombie summon tooltips updated to match the previous build.
+
+**Fixes**
+Fixes issues with Penance.
+
+**Balance**
+Mold carrion skill now grants 20 health (up from 10).
+Bandit spawns have been rebalanced somewhat.
+
+**MISC**
+Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
+Men-at-arms now have blue armbands.
+>>>>>>> origin/Luft's-Writing-Dungeon
