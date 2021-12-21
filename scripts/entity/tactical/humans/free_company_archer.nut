@@ -2,7 +2,9 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_a
 	m = {
 		Outfits = [
             [1, "mercenary_archer_outfit_00"]
-		]
+		],
+		PerkList = this.Const.EnemyPerks.FreeCompanyArcher,
+		PerkPower = 5
 	},
 	function create()
 	{
