@@ -1225,6 +1225,107 @@ foreach(k,v in this.Const.World.Spawn)
 	}
 
 }
+
+
+//Perks array is [weight, perk name, cost]
+//Returns array of perks
+//You could modify this too by changing the perk name to be an array of perks (which is what trees are), and add that for a cost instead + iterate thru that tree
+//This has no "smart" selecting meaning you could theoretically get wildly random perks, but because I'm using this currently for themed units it's not an issue in that scenario
+//THIS CANNOT AND WILL NOT CHECK IF THE PERK ALREADY EXISTS ON THE ENTITY YOU SHOULD PROBABLY NOT THROW IN RANDOMIZED PERKS THAT THE UNIT ALREADY HAS BE ETHICAL PLEASE
+gt.Const.World.Common.pickPerks <- function (_perks, _power)
+{
+	if (_perks.len() == 0)
+	{
+		return [];
+	}
+	if (_power == 0)
+	{
+		return [];
+	}
+
+	local candidates = [];
+	local totalWeight = 0;
+	foreach (t in _perks)
+	{
+		if (t[0] == 0)
+		{
+			continue;
+		}
+		if (t[2] > _power)
+		{
+			continue; //no need to add stuff that's a cost higher than our power selector
+		}
+		candidates.push(t);
+		totalWeight += t[0];
+	}
+
+	local ret = [];
+	while (_power > 0) {
+
+		if (candidates.len() == 0) { return ret; }
+
+		local r = this.Math.rand(0, totalWeight);
+		foreach (i, t in candidates)
+		{
+			r = r - t[0];
+			if (r > 0)
+			{
+				continue;
+			}
+			this.logInfo("Our randomized r was: " + r);
+			this.logInfo("Our total weight was  " + totalWeight)
+			this.logInfo("Our script is " + t[1])
+			local skill = this.new("scripts/skills/perks/" + t[1]);
+			ret.push(skill);
+
+			totalWeight -= t[0];
+			_power -= t[2];
+			candidates.remove(i);
+		}
+		//we necessarily had to have selected something to get here so we check if anything has a higher power + remove it
+		local garbage = [];
+		foreach (i, t in candidates)
+		{
+			if (t[2] > _power) { this.logInfo("putting script into garbage: " + t[1]); garbage.push(i) } //checking like this means if we only have 2 power costs left and have 1 it won't put us negative
+		}
+		garbage.reverse();
+		foreach (i in garbage)
+		{
+			candidates.remove(i)
+		}
+	}
+	return ret;
+}
+
+//testing for perk selector
+// local testArray = [
+// 	[1, "perk_nimble", 2],
+// 	[1, "perk_relentless", 1],
+// 	[1, "perk_brawny", 1],
+// 	[1, "perk_steel_brow", 3],
+// 	[1, "perk_battle_forged", 2],
+// 	[1, "perk_lookout", 1],
+// ]
+
+// local perksPicked = this.Const.World.Common.pickPerks(testArray, 5)
+// foreach(p in perksPicked)
+// {
+// 	this.logInfo("Selected the perk: " + p.getID())
+// }
+// this.logInfo("----------------------")
+// local perksPicked = this.Const.World.Common.pickPerks(testArray, 20)
+// foreach(p in perksPicked)
+// {
+// 	this.logInfo("Selected the perk: " + p.getID())
+// }
+// this.logInfo("----------------------")
+// local perksPicked = this.Const.World.Common.pickPerks(testArray, 0)
+// foreach(p in perksPicked)
+// {
+// 	this.logInfo("Selected the perk: " + p.getID())
+// }
+
+
 // TESTING
 // foreach(k,v in this.Const.World.Spawn)
 // {
