@@ -5,6 +5,8 @@ if (!("EnemyPerks" in gt.Const))
     gt.Const.EnemyPerks <- {};
 }
 
+gt.Const.EnemyPerks.Default <- []
+
 gt.Const.EnemyPerks.FreeCompanySpearman <- [ 
     [3, ["perk_legend_specialist_militia_skill", "perk_legend_specialist_militia_damage"], 4],
     [2, "perk_shield_expert", 2],

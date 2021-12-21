@@ -713,7 +713,8 @@ gt.Const.Strings.FreeCompanyNames.extend([
 	"Steel Born",
 	"Stormtaken",
 	"Unhold Breakers",
-	"Tunnel Snakes, and I\'m not even kidding"
+	"Tunnel Snakes, and I\'m not even kidding",
+	"Moronic Plungers"
 ])
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",

@@ -1324,11 +1324,11 @@ gt.Const.World.Common.pickPerks <- function (_perks, _power)
 // 	this.logInfo("Selected the perk: " + p.getID())
 // }
 // this.logInfo("----------------------")
-local perksPicked = this.Const.World.Common.pickPerks(testArray, 20)
-foreach(p in perksPicked)
-{
-	this.logInfo("Selected the perk: " + p.getID())
-}
+// local perksPicked = this.Const.World.Common.pickPerks(testArray, 20)
+// foreach(p in perksPicked)
+// {
+// 	this.logInfo("Selected the perk: " + p.getID())
+// }
 // this.logInfo("----------------------")
 // local perksPicked = this.Const.World.Common.pickPerks(testArray, 0)
 // foreach(p in perksPicked)

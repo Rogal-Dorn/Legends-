@@ -1,4 +1,4 @@
-this.free_company_infantry <- this.inherit("scripts/entity/tactical/human", {
+this.free_company_infantry <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
             [1, "mercenary_infantry_outfit_00"],
@@ -17,6 +17,10 @@ this.free_company_infantry <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
@@ -84,10 +88,7 @@ this.free_company_infantry <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		foreach( item in this.Const.World.Common.pickOutfit(this.m.Outfits) ) 
-        {
-            this.m.Items.equip(item)
-        }
+		this.free_company_abstract.assignRandomEquipment();
 	}
 
 });

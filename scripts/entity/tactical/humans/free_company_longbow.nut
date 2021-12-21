@@ -1,4 +1,4 @@
-this.free_company_longbow <- this.inherit("scripts/entity/tactical/human", {
+this.free_company_longbow <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
             [1, "mercenary_longbow_outfit_00"]
@@ -16,6 +16,10 @@ this.free_company_longbow <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
@@ -67,10 +71,7 @@ this.free_company_longbow <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
 
-		foreach( item in this.Const.World.Common.pickOutfit(this.m.Outfits) ) 
-        {
-            this.m.Items.equip(item)
-        }
+		this.free_company_abstract.assignRandomEquipment();
 	}
 
 });
