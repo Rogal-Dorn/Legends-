@@ -1,5 +1,10 @@
 this.free_company_infantry <- this.inherit("scripts/entity/tactical/human", {
-	m = {},
+	m = {
+		Outfits = [
+            [1, "mercenary_infantry_outfit_00"],
+            [1, "mercenary_infantry_outfit_01"]
+		]
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.FreeCompanyInfantry;
@@ -79,11 +84,7 @@ this.free_company_infantry <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-        local outfits = [
-            [1, "mercenary_infantry_outfit_00"],
-            [1, "mercenary_infantry_outfit_01"]
-		]
-		foreach( item in this.Const.World.Common.pickOutfit(outfits) ) 
+		foreach( item in this.Const.World.Common.pickOutfit(this.m.Outfits) ) 
         {
             this.m.Items.equip(item)
         }

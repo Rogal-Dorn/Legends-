@@ -758,6 +758,25 @@ this.world_entity <- {
 			_out.writeF32(t.Strength);
 			_out.writeI8(t.Row);
 			_out.writeString(t.Name);
+			if ("Outfits" in t)
+			{
+				this.logInfo("Outfit was true")
+				_out.writeBool(true);
+				_out.writeU8(t.Outfits.len());
+				
+				foreach (o in t.Outfits) 
+				{
+					_out.writeU8(o.len());
+					_out.writeU8(o[0])
+					_out.writeString(o[1])
+					if (o.len() == 3)
+						_out.writeString(o[2])
+				}
+			}
+			else
+			{
+				_out.writeBool(false)
+			}
 			_out.writeI32(this.IO.scriptHashByFilename(t.Script));
 		}
 
@@ -819,6 +838,28 @@ this.world_entity <- {
 			else if (_in.getMetaData().getVersion() < 40)
 			{
 				troop.ID = this.Const.EntityType.convertOldToNew(troop.ID);
+			}
+
+			if (_in.getMetaData().getVersion() >= 71)
+			{
+				local hasOutfits = _in.readBool();
+				if (hasOutfits)
+				{
+					local outfits = []
+					local outfitLength = _in.readU8();
+					for (local i = 0; i < outfitLength; i++)
+					{
+						if (_in.readU8() == 2)
+						{
+							outfits.push( [_in.readU8(), _in.readString()] )
+						}
+						else
+						{
+							outfits.push( [_in.readU8(), _in.readString(), _in.readU8()] )
+						}
+					}
+					troop.Outfits <- clone outfits
+				}
 			}
 
 			local hash = _in.readI32();
