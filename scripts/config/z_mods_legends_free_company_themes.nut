@@ -26,7 +26,7 @@ gt.Const.FreeCompanyCoordinationList <- [
         FootprintsType = "Mercenaries",                                            //custom footprints type (think raiders having beast tracks)
         Spawn = "FreeCompany",                                                     //custom spawnlist
         LootTable = clone this.Const.FreeCompanyDefaultLootTable                   //Custom loot tables
-        UnitOutfits = [
+        UnitOutfits = [                                                            //Unit outfits each need a type and an array of outfits
             // {
             //     Type = this.Const.EntityType.FreeCompanyLeader,
             //     Outfits = [ [1, "mercenary_archer_outfit_00"] ]
