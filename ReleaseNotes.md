@@ -6447,6 +6447,8 @@ Fixes issues with Penance.
 **Balance**
 Mold carrion skill now grants 20 health (up from 10).
 Bandit spawns have been rebalanced somewhat.
+Man-at-arms daily upkeep decreased from 18 to 15.
+Man-at-arms initial cost decreased from 165 to 130.
 
 **MISC**
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
