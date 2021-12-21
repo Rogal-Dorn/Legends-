@@ -67,6 +67,15 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 			_draftList.push("pilgrim_background");
 			_draftList.push("pilgrim_background");
 		}
+
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			_draftList.push("legend_man_at_arms_background");
+			_draftList.push("legend_leech_peddler_background");
+			_draftList.push("legend_leech_peddler_background");
+			_draftList.push("legend_leech_peddler_background");
+			_draftList.push("legend_leech_peddler_background");
+		}
 	}
 });
 
