@@ -491,8 +491,14 @@ this.entity_manager <- {
 				candidates.push(s);
 			}
 
-			local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
-			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect];
+			// local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
+			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
+			local themeSelect = 0;
+			// if (this.Math.rand(0, 99) == 0)
+			// {
+			// 	themeSelect = this.Math.rand(1, this.Const.FreeCompanyCoordinationList.len() - 1);
+			// }
+			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect]; //array 0 is our "default"/"example" one
 
 			local start = candidates[this.Math.rand(0, candidates.len() - 1)];
 			local party = this.World.spawnEntity("scripts/entity/world/party", start.getTile().Coords);
