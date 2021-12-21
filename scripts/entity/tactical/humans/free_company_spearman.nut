@@ -4,6 +4,8 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/human", {
             [1, "mercenary_spearman_outfit_00"]
             // [1, "mercenary_spearman_outfit_01"]
 		]
+		PerkList = this.Const.EnemyPerks.FreeCompanySpearman,
+		PerkPower = 6
 	},
 	function create()
 	{
@@ -100,6 +102,10 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/human", {
         {
             this.m.Items.equip(item)
         }
+		foreach(perk in this.Const.World.Common.pickPerks(this.m.PerkList, this.m.PerkPower)) //this is technically out of place when considering where the other perks are added but we can't randomize when it's put into the init
+		{
+			this.m.Skills.add(perk);
+		}
 	}
 
 });
