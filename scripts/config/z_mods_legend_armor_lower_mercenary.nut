@@ -246,5 +246,26 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },
+{
+    ID = "mercenary_leader_armor_gilded_00",
+    Script = "",
+    Sets = [{
+        Cloth = [
+            [1, "cloth/legend_gladiator_harness"]
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [1, "plate/legend_armor_plate_full_greaves_named"]
+        ],
+        Cloak = [
+            [1, "cloak/legend_noble_vest"]
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+        ]
+    }]
+},
 
 ]);

@@ -203,4 +203,21 @@ gt.Const.LegendMod.HelmObjs.extend([
         ]
     }]
 },
+{
+    ID = "mercenary_leader_helmet_gilded_00",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood_full"]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barbute", 3]
+        ],
+        Tops = [
+            [1, "top/legend_helmet_faceplate_full_01_named"],
+        ],
+        Vanity = [
+        ]
+    }]
+},
 ])

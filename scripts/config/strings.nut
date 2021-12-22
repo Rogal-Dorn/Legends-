@@ -701,7 +701,6 @@ gt.Const.Strings.FreeCompanyNames.extend([
 	"Mordhau Brigands",
 	"Rules of Poss",
 	"The Elder Ones",
-	"Goldfingers",
 	"Enduring Eels",
 	"Rat Petters",
 	"Placid Hunters",

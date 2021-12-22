@@ -208,6 +208,15 @@ gt.Const.LegendMod.OutfitObjs.extend([
     ]
 },
 {
+  ID = "mercenary_leader_outfit_gilded_00" 
+  Body = [ 
+      [1, "mercenary_leader_armor_gilded_00"]
+    ],
+  Helmet = [ 
+      [1, "mercenary_leader_helmet_gilded_00"]
+    ]
+},
+{
   ID = "mercenary_longbow_outfit_00"  //todo lazy
   Body = [
       [1, "patched_mail_shirt"]

@@ -33,26 +33,27 @@ gt.Const.FreeCompanyCoordinationList <- [
             // }
         ]                                                           //Leave this for default outfits
     },
-	{
-		ID = "BanditRoamers",
-		Names = ["Bandits1", "Bandits2", "Bandits3", "Bandits4"],
-		Description = "A group of ex-bandits looking for extra coin.",
-		FootprintsType = "Brigands",
-		Spawn = "BanditRoamers"
-	}
 	// {
-	// 	ID = "gilded",
-	// 	Names = [
-	// 		"Gilded Wraiths", "Golden Showers", "I don\'t know but it should have 4 total", "The fourth one"
-	// 	], //Alternatively can store this in a const in strings
-	// 	UnitOutfits = [
-	// 		{
-	// 			Type = this.Const.EntityType.FreeCompanyLeader,
-	// 			Outfits = [ "gilded_leader_outfit_00" ]
-	// 			// Outfits = this.Const.Outfits.GildedFreeCompanyLeader //alternatively can store the outfits elsewhere to keep this clean
-	// 		}
-	// 	]
+	// 	ID = "BanditRoamers",
+	// 	Names = ["Bandits1", "Bandits2", "Bandits3", "Bandits4"],
+	// 	Description = "A group of ex-bandits looking for extra coin.",
+	// 	FootprintsType = "Brigands",
+	// 	Spawn = "BanditRoamers"
 	// },
+	{
+		ID = "Gilded",
+		Names = [
+			"Gilded Wraiths"
+		], //Alternatively can store this in a const in strings
+		Spawn = "GildedCompany",
+		UnitOutfits = [
+			{
+				Type = this.Const.EntityType.FreeCompanyLeader,
+				Outfits = [ "mercenary_leader_outfit_gilded_00" ]
+				// Outfits = this.Const.Outfits.GildedFreeCompanyLeader //alternatively can store the outfits elsewhere to keep this clean
+			}
+		]
+	},
 	// {
 	// 	ID = "green",
 	// 	Names = [
