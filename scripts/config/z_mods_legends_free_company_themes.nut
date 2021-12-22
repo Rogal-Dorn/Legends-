@@ -32,7 +32,14 @@ gt.Const.FreeCompanyCoordinationList <- [
             //     Outfits = [ [1, "mercenary_archer_outfit_00"] ]
             // }
         ]                                                           //Leave this for default outfits
-    }
+    },
+	{
+		ID = "BanditRoamers",
+		Names = ["Bandits1", "Bandits2", "Bandits3", "Bandits4"],
+		Description = "A group of ex-bandits looking for extra coin.",
+		FootprintsType = "Brigands",
+		Spawn = "BanditRoamers"
+	}
 	// {
 	// 	ID = "gilded",
 	// 	Names = [

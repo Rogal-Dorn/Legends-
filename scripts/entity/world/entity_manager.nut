@@ -517,26 +517,28 @@ this.entity_manager <- {
 			local spawntype = ("Spawn" in themeTable) ? themeTable.Spawn : "FreeCompany"
 			local r = this.World.State.getPlayer().getStrength() + 50;
 			this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
-			foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
-			{	
-				foreach (uo in themeTable.UnitOutfits)
-				{
-					if (troop.ID == uo.Type)
+			if ("UnitOutfits" in themeTable) {
+				foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
+				{	
+					foreach (uo in themeTable.UnitOutfits)
 					{
-						troop.Outfits <- clone uo.Outfits
+						if (troop.ID == uo.Type)
+						{
+							troop.Outfits <- clone uo.Outfits
+						}
 					}
+					// if ("Outfits" in troop.m)
+					// {
+					// 	local type = troop.getType();
+					// 	foreach (uo in themeTable.UnitOutfits)
+					// 	{
+					// 		if (uo.Type == type)
+					// 		{
+					// 			troop.m.Outfits = uo.Outfits;
+					// 		}
+					// 	}
+					// }
 				}
-				// if ("Outfits" in troop.m)
-				// {
-				// 	local type = troop.getType();
-				// 	foreach (uo in themeTable.UnitOutfits)
-				// 	{
-				// 		if (uo.Type == type)
-				// 		{
-				// 			troop.m.Outfits = uo.Outfits;
-				// 		}
-				// 	}
-				// }
 			}
 
 			party.getLoot().Money = this.Math.rand(400, 800);
@@ -555,13 +557,21 @@ this.entity_manager <- {
 			party.getSprite("base").setBrush("world_base_07");
 			party.getSprite("body").setBrush("figure_mercenary_0" + this.Math.rand(1, 2));
 
+			local nameList = clone themeTable.Names;
+
 			while (true)
 			{	
+				if (nameList.len() == 0)
+				{
+					nameList = clone this.Const.Strings.FreeCompanyNames;
+					break;
+				}
 				local idx = this.Math.rand(0, themeTable.Names.len() - 1);
-				local name = themeTable.Names[idx]
+				local name = nameList[idx]
 
 				if (name == this.World.Assets.getName())
 				{
+					nameList.remove(idx);
 					continue;
 				}
 
@@ -571,6 +581,7 @@ this.entity_manager <- {
 				{
 					if (p.getName() == name)
 					{
+						nameList.remove(idx)
 						abort = true;
 						break;
 					}
