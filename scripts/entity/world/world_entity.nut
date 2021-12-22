@@ -760,7 +760,6 @@ this.world_entity <- {
 			_out.writeString(t.Name);
 			if ("Outfits" in t)
 			{
-				this.logInfo("Outfit was true")
 				_out.writeBool(true);
 				_out.writeU8(t.Outfits.len());
 				

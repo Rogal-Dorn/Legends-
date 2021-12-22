@@ -1296,7 +1296,7 @@ gt.Const.World.Common.pickPerks <- function (_perks, _power)
 		local garbage = [];
 		foreach (i, t in candidates)
 		{
-			if (t[2] > _power) { this.logInfo("putting script into garbage: " + t[1]); garbage.push(i) } //checking like this means if we only have 2 power costs left and have 1 it won't put us negative
+			if (t[2] > _power) { garbage.push(i) } //checking like this means if we only have 2 power costs left and have 1 it won't put us negative
 		}
 		garbage.reverse();
 		foreach (i in garbage)
