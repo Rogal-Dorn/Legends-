@@ -6436,5 +6436,15 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 
 ## 15.0.2.2
 
+**Free Companies**
+The first company now spawns on day 80
+A second company spawns on day 100
+[There's some reasonably undocumented ways to make your own if you really want to jump the gun right now and add themed companies]
+Free company units now have randomized perks available to their own class, e.g. spearmen can roll the early game spear perks
+Added in a few more free company names
+
 **Changes**
 Nerfs the possible resolve roll on the cheaper named cloak
+
+**Fixes**
+Adds some capitalization in to some perks names
