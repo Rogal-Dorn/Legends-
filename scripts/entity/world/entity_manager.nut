@@ -6,6 +6,7 @@ this.entity_manager <- {
 		RoadAmbushTiles = [],
 		Mercenaries = [],
 		FreeCompanies = [],
+		NonDefaultFreeCompanies = [],
 		LastMercUpdateTime = 0,
 		LastFreeCompanyUpdateTime = 0,
 		LastSnowSpawnTime = this.Time.getVirtualTimeF() + 5.0,
@@ -86,6 +87,7 @@ this.entity_manager <- {
 		this.m.Locations = [];
 		this.m.RoadAmbushTiles = [];
 		this.m.Mercenaries = [];
+		this.m.FreeCompanies = [];
 		this.m.LastMercUpdateTime = 0.0;
 		this.m.LastFreeCompanyUpdateTime = 0.0;
 		this.m.LastSnowSpawnTime = 0.0;
@@ -495,9 +497,16 @@ this.entity_manager <- {
 			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
 			local themeSelect = 0;
 			if (this.Math.rand(0, 199) == 0)
-			{
-				themeSelect = this.Math.rand(1, this.Const.FreeCompanyCoordinationList.len() - 1);
+			{	
+				do {
+					themeSelect = this.Math.rand(1, this.Const.FreeCompanyCoordinationList.len() - 1);
+				} while (this.m.NonDefaultFreeCompanies.find(themeSelect) && !(this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyCoordinationList.len() - 1))
 			}
+			if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyCoordinationList.len() - 1) //dude it's like 5am and im writing this
+			{
+				themeSelect = 0; //if we have only 1 custom free company and we roll twice, on custom companies, then we can't respawn the same custom one
+			}
+			this.m.NonDefaultFreeCompanies.push(themeSelect)
 			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect]; //array 0 is our "default"/"example" one
 
 			local start = candidates[this.Math.rand(0, candidates.len() - 1)];
