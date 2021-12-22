@@ -88,6 +88,7 @@ this.entity_manager <- {
 		this.m.RoadAmbushTiles = [];
 		this.m.Mercenaries = [];
 		this.m.FreeCompanies = [];
+		this.m.NonDefaultFreeCompanies = [];
 		this.m.LastMercUpdateTime = 0.0;
 		this.m.LastFreeCompanyUpdateTime = 0.0;
 		this.m.LastSnowSpawnTime = 0.0;
