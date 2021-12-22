@@ -939,6 +939,12 @@ this.entity_manager <- {
 				_out.writeU32(merc.getID());
 			}
 		}
+
+		_out.writeU8(this.m.NonDefaultFreeCompanies.len());
+		foreach(fc in this.m.NonDefaultFreeCompanies)
+		{
+			_out.writeU8(fc);
+		}
 	}
 
 	function onDeserialize( _in )
@@ -967,6 +973,15 @@ this.entity_manager <- {
 				{
 					this.m.FreeCompanies.push(this.WeakTableRef(merc));
 				}
+			}
+		}
+
+		if (_in.getMetaData().getVersion() >= 72) 
+		{
+			local numFC = _in.readU8();
+			for (local i = 0; i != numFC; i = ++i)
+			{
+				this.m.NonDefaultFreeCompanies.push(_in.readU8());
 			}
 		}
 
