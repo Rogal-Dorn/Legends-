@@ -463,10 +463,10 @@ this.entity_manager <- {
 		this.m.LastFreeCompanyUpdateTime = this.Time.getVirtualTimeF();
 
 		local companies = 0;
-		if (this.World.getTime().Days > -1)
-			companies = 3
-		// if (this.World.getTime().Days > 150)
-		// 	companies = 2;
+		if (this.World.getTime().Days > 80)
+			companies = 1;
+		if (this.World.getTime().Days > 130)
+			companies = 2;
 
 		if (companies == 0)
 			return;
