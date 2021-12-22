@@ -40,20 +40,6 @@ gt.Const.FreeCompanyCoordinationList <- [
 	// 	FootprintsType = "Brigands",
 	// 	Spawn = "BanditRoamers"
 	// },
-	{
-		ID = "Gilded",
-		Names = [
-			"Gilded Wraiths"
-		], //Alternatively can store this in a const in strings
-		Spawn = "GildedCompany",
-		UnitOutfits = [
-			{
-				Type = this.Const.EntityType.FreeCompanyLeader,
-				Outfits = [ "mercenary_leader_outfit_gilded_00" ]
-				// Outfits = this.Const.Outfits.GildedFreeCompanyLeader //alternatively can store the outfits elsewhere to keep this clean
-			}
-		]
-	},
 	// {
 	// 	ID = "green",
 	// 	Names = [
@@ -67,4 +53,22 @@ gt.Const.FreeCompanyCoordinationList <- [
 	// 		}
 	// 	]
 	// }
+]
+
+gt.Const.FreeCompanyOneTimeList <-
+[
+	{
+		ID = "Gilded",
+		Names = [
+			"Gilded Wraiths"
+		], //Alternatively can store this in a const in strings
+		Spawn = "GildedCompany",
+		UnitOutfits = [
+			{
+				Type = this.Const.EntityType.FreeCompanyLeader,
+				Outfits = [ "mercenary_leader_outfit_gilded_00" ]
+				// Outfits = this.Const.Outfits.GildedFreeCompanyLeader //alternatively can store the outfits elsewhere to keep this clean
+			}
+		]
+	}
 ]

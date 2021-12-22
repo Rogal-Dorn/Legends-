@@ -495,16 +495,17 @@ this.entity_manager <- {
 
 			// local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
 			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
-			local themeSelect = 0;
+			local themeSelect;
 			if (this.Math.rand(0, 199) == 0)
 			{	
 				do {
-					themeSelect = this.Math.rand(1, this.Const.FreeCompanyCoordinationList.len() - 1);
-				} while (this.m.NonDefaultFreeCompanies.find(themeSelect) && !(this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyCoordinationList.len() - 1))
+					themeSelect = this.Math.rand(0, this.Const.FreeCompanyOneTimeList.len() - 1);
+				} while ( this.m.NonDefaultFreeCompanies.find(themeSelect) && !( this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() ) )
 			}
-			if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyCoordinationList.len() - 1) //dude it's like 5am and im writing this
+
+			if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() - 1) //dude it's like 5am and im writing this
 			{
-				themeSelect = 0; //if we have only 1 custom free company and we roll twice, on custom companies, then we can't respawn the same custom one
+				themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
 			}
 			this.m.NonDefaultFreeCompanies.push(themeSelect)
 			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect]; //array 0 is our "default"/"example" one
