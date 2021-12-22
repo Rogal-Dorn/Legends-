@@ -267,9 +267,9 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onHiredByScenario( bro )
 	{
+		bro.improveMood(1.5, "Joined a militia");
 		bro.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
-		bro.getSprite("accessory_special").setBrush("bust_militia_band_01");
 		bro.getSprite("socket").setBrush("bust_base_militia");
 	}
 
@@ -280,10 +280,25 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 			{
-				garbage.push(bro);
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
+				bro.getSprite("accessory_special").setBrush("bust_militia_band_01"); //red
+				bro.getSkills().update();
 			}
+			else if (bro.getBackground().getID() == "background.legend_man_at_arms")
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
+				bro.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue
+				bro.getSkills().update();
+			}
+
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+            {
+                garbage.push(bro);
+            }
 		}
 
 		foreach( g in garbage )
@@ -291,6 +306,5 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			_roster.remove(g);
 		}
 	}
-
 });
 
