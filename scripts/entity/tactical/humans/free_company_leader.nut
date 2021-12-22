@@ -3,7 +3,9 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_a
 		Outfits = [
 			[1, "mercenary_leader_outfit_uncommon_00"],
             [1, "mercenary_leader_outfit_00"]
-		]
+		],
+		PerkList = this.Const.EnemyPerks.FreeCompanyLeader,
+		PerkPower = 10
 	},
 	function create()
 	{
@@ -15,7 +17,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_a
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
 		if (this.Math.rand(1, 100) <= 10)
 		{
@@ -52,7 +54,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_a
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 6);
+		local r = this.Math.rand(1, 5); //can open it up to a 1h fighting axe by changing to 6
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/bardiche"));
