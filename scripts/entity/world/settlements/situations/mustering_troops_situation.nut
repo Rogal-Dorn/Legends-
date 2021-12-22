@@ -58,6 +58,13 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 			_draftList.push("female_beggar_background");
 		}
 
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")
+		{
+			_draftList.push("legend_man_at_arms_background");
+			_draftList.push("legend_man_at_arms_background");
+			_draftList.push("legend_man_at_arms_background");
+		}
+
 	}
 
 });

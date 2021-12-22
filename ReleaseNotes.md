@@ -6443,8 +6443,25 @@ A second company spawns on day 100
 Free company units now have randomized perks available to their own class, e.g. spearmen can roll the early game spear perks
 Added in a few more free company names
 
-**Changes**
-Nerfs the possible resolve roll on the cheaper named cloak
-
 **Fixes**
 Adds some capitalization in to some perks names
+Fixes issues with Penance.
+
+**Typos**
+Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
+Zombie summon tooltips updated to match the previous build.
+
+**Balance**
+Mold carrion skill now grants 20 health (up from 10).
+Bandit spawns have been rebalanced somewhat.
+Man-at-arms daily upkeep decreased from 18 to 15.
+Man-at-arms initial cost decreased from 165 to 130.
+Nerfs the possible resolve roll on the cheaper named cloak
+
+**Events**
+Man-at-arms and leech peddler have been added to some settlement events when playing as the militia origin.
+
+**MISC**
+Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
+Men-at-arms now have blue armbands.
+Donkeys now cost no upkeep
