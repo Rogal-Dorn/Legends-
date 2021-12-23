@@ -20,10 +20,10 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 1;
-		this.m.FatigueCost = 5;
+		this.m.ActionPointCost = 4;
+		this.m.FatigueCost = 45;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 3;
+		this.m.MaxRange = 2;
 	}
 
 	function getTooltip()
