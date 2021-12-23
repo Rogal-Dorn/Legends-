@@ -27,9 +27,17 @@ this.peasant_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "This trait is used to alter daily reputation decline for noble factions. If you can see this tooltip then something is broken."
+				text = "This trait is used to alter daily reputation decline for noble factions and remove the fear of nobles trait. If you can see this tooltip then something is broken - or someone is fucking with things they shouldn\'t be."
 			}
 		];
+	}
+
+	function onAdded() //removes fear of nobles (militia origin only!).
+	{
+		if (this.m.Container.hasSkill("trait.fear_nobles"))
+		{
+			this.m.Container.removeByID("trait.fear_nobles");
+		}		
 	}
 
 	function onUpdate( _properties )
@@ -46,7 +54,7 @@ this.peasant_trait <- this.inherit("scripts/skills/traits/character_trait", {
 		{ //Relations: 0 = hostile, 100 = allied
 			if (f.m.PlayerRelation > 30)
 			{
-		    f.m.PlayerRelation = this.Math.minf(100.0, this.Math.max(0.0, f.m.PlayerRelation - 0.1));  //-0.2 reputation per day per unit in company.
+		    f.m.PlayerRelation = this.Math.minf(100.0, this.Math.max(0.0, f.m.PlayerRelation - 0.1));  //-0.1 reputation per day per unit in company.
 			f.updatePlayerRelation();
 			}
 		}
