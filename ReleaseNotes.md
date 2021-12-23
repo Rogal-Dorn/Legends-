@@ -6471,3 +6471,7 @@ Donkeys now cost no upkeep
 Cheer on range reduced by 1 (from 1-3 to 1-2), now costs 45 fatigue (from 5), action point cost raised from 1 to 4.
 Inspire range increased from 1-3 to 1-4.
 Rationale; cheer on was made to be overpowered by design last patch to test the waters of how flexible people were to more minor skills if the reward was great enough. Cheer on now works as a more localised inspire, having less range and greater fatigue cost but providing a better short term benefit than inspire does. Inspire costs almost all of your AP, but provides a better benefit for longer battles due to having less fatigue cost.
+
+
+**Fixes**
+The cultist robe blueprint granted by penance now no longer requires a sackcloth, it now requires 1 cloth (bringing the total requirements to 1 cloth and 1 furs). This was mainly due to confusion with the varients of sack apparel in the game. Crafting cost reduced.
