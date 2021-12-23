@@ -39,6 +39,18 @@ this.fear_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 				type = "text",
 				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Resolve when in battle with greenskins"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Melee Skill when in battle with greenskins"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Ranged Skill when in battle with greenskins"
 			}
 		];
 	}
@@ -53,6 +65,8 @@ this.fear_greenskins_trait <- this.inherit("scripts/skills/traits/character_trai
 		if (this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getID()) != 0 || this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getID()) != 0)
 		{
 			_properties.Bravery -= 10;
+			_properties.MeleeSkillMult *= 0.95;
+			_properties.RangedSkillMult *= 0.95;
 		}
 	}
 
