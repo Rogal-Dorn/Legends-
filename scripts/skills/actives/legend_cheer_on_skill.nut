@@ -4,7 +4,7 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_cheer_on_skill";
 		this.m.Name = "Cheer On";
-		this.m.Description = "Give it your all! Put your support behind an ally, granting them another Action Point. Targets can only be inspired once per turn.";
+		this.m.Description = "Give it your all! Put your support behind an ally, granting them two Actions Points. Targets can only be inspired once per turn and you must be adjacent.";
 		this.m.Icon = "skills/cheered_on_square.png";
 		this.m.IconDisabled = "skills/cheered_on_square_bw.png";
 		this.m.Overlay = "perk_28_active";
@@ -21,9 +21,9 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 45;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 2;
+		this.m.MaxRange = 1;
 	}
 
 	function getTooltip()
