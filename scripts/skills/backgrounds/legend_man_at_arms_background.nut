@@ -138,12 +138,10 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		return c;
 	}
 
-	function onAdded() //adds random perm injury (Taro my beloved)
-	{
-		this.character_background.onAdded();
-		local rng = this.Math.rand(0, this.Const.Injury.Permanent.len()-1);
-		this.m.Container.add(this.new("scripts/skills/" + this.Const.Injury.Permanent[rng].Script))
-	}
+	// function onAdded() //adds random perm injury (Taro my beloved)
+	// {
+	// 	this.character_background.onAdded();
+	// }
 
 	function onAddEquipment() // NO TWO HANDED WEAPONS OR OFFHANDS HERE - 'missing hand' will unequip the item and cause errors if you add them.
 	{
@@ -177,6 +175,8 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 			[2, "open_leather_cap"],
 			[3, "full_leather_cap"]
 		]));
+		local rng = this.Math.rand(0, this.Const.Injury.Permanent.len()-1);
+		this.m.Container.add(this.new("scripts/skills/" + this.Const.Injury.Permanent[rng].Script))
 	}
 });
 
