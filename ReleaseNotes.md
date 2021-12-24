@@ -6434,11 +6434,6 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 - Layers aren't split in half anymore
 - Fixes cheer on only giving 1 ap
 
-<<<<<<< HEAD
-## Uber Changes
-- Removed darkened equipment on Brigand Warlords.
-=======
-
 ## 15.0.2.xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 **Typos**
@@ -6455,4 +6450,7 @@ Bandit spawns have been rebalanced somewhat.
 **MISC**
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
 Men-at-arms now have blue armbands.
->>>>>>> origin/Luft's-Writing-Dungeon
+
+## Uber Changes
+- Removed darkened equipment on Brigand Warlords.
+- Throwing Spear converted to use ammo and be refillable. 1 ammo max and costs 6 ammunition to replenish. Value changed from 80 to 400.
