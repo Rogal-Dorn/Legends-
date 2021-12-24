@@ -6477,6 +6477,7 @@ Inventor is now classified as a lowborn.
 'Hate entity' traits now provide +10 resolve, +5% melee and +5% ranged skill. Likewise, 'Fear entity' traits do the reverse, providing -10 resolve, -5% melee skill and -5% ranged skill.
 Nachzehrer trophy necklace now reduces resolve of enemies adjacent to you by -3.
 The gatherer building has now been tweak for yields from timber and ore hunter perks. Both rough wood and peat bricks may be found more commonly from both respective skills, however quality wood and uncut gems are the same chance as before - this should alleviate issues of players struggling to get raw wood and peat bricks.
+Bandit warlords now have much heavier armour choices to spawn with, bandit leaders also have a few heavier outfits to spawn with but also can spawn with medium armour still.
 
 **Fixes**
 The cultist robe blueprint granted by penance now no longer requires a sackcloth, it now requires 1 cloth (bringing the total requirements to 1 cloth and 1 furs). This was mainly due to confusion with the varients of sack apparel in the game. Crafting cost reduced.
