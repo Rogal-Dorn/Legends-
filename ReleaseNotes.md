@@ -6443,6 +6443,11 @@ A second company spawns on day 100
 Free company units now have randomized perks available to their own class, e.g. spearmen can roll the early game spear perks
 Added in a few more free company names
 
+**Throwing Spear**
+- Throwing Spear converted to use ammo and be refillable. 
+- 1 ammo max and costs 6 ammunition to replenish.
+- Value changed from 80 to 400.
+
 **Fixes**
 Adds some capitalization in to some perks names
 Fixes issues with Penance.
@@ -6465,3 +6470,4 @@ Man-at-arms and leech peddler have been added to some settlement events when pla
 Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
 Men-at-arms now have blue armbands.
 Donkeys now cost no upkeep
+- Removed darkened equipment on Brigand Warlords.
