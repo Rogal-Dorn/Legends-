@@ -1,5 +1,11 @@
-this.free_company_archer <- this.inherit("scripts/entity/tactical/human", {
-	m = {},
+this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_abstract", {
+	m = {
+		Outfits = [
+            [1, "mercenary_archer_outfit_00"]
+		],
+		PerkList = this.Const.EnemyPerks.FreeCompanyArcher,
+		PerkPower = 5
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.FreeCompanyArcher;
@@ -12,6 +18,10 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
@@ -33,6 +43,14 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_militia");
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_bullseye"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		if (this.Math.rand(0, 3) == 0)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_skill"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shortbow_damage"));
+		}
 	}
 
 	function onAppearanceChanged( _appearance, _setDirty = true )
@@ -55,14 +73,7 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/human", {
 
         this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
-
-        local outfits = [
-            [1, "mercenary_archer_outfit_00"]
-		]
-		foreach( item in this.Const.World.Common.pickOutfit(outfits) ) 
-        {
-            this.m.Items.equip(item)
-        }
+		this.free_company_abstract.assignRandomEquipment();
 	}
 
 });

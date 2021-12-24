@@ -1,5 +1,11 @@
-this.free_company_footman <- this.inherit("scripts/entity/tactical/human", {
-	m = {},
+this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_abstract", {
+	m = {
+		Outfits = [
+			[1, "mercenary_spearman_outfit_00"]
+		],
+		PerkList = this.Const.EnemyPerks.FreeCompanyFootman,
+		PerkPower = 11
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.FreeCompanyFootman;
@@ -12,6 +18,10 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
@@ -98,14 +108,8 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
 			}
 		}
-
-		local outfits = [
-            [1, "mercenary_spearman_outfit_00"]
-		]
-		foreach( item in this.Const.World.Common.pickOutfit(outfits) ) 
-        {
-            this.m.Items.equip(item)
-        }
+		
+		this.free_company_abstract.assignRandomEquipment();
 	}
 
 });

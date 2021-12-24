@@ -1,5 +1,12 @@
-this.free_company_leader <- this.inherit("scripts/entity/tactical/human", {
-	m = {},
+this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_abstract", {
+	m = {
+		Outfits = [
+			[1, "mercenary_leader_outfit_uncommon_00"],
+            [1, "mercenary_leader_outfit_00"]
+		],
+		PerkList = this.Const.EnemyPerks.FreeCompanyLeader,
+		PerkPower = 10
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.FreeCompanyLeader;
@@ -10,8 +17,12 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
+		if (this.Math.rand(1, 100) <= 10)
+		{
+			this.setGender(1);
+		}
 	}
 
 	function onInit()
@@ -43,7 +54,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 6);
+		local r = this.Math.rand(1, 5); //can open it up to a 1h fighting axe by changing to 6
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/bardiche"));
@@ -62,7 +73,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_goedandag"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_goedendag"));
 		}
         else
         {
@@ -83,14 +94,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		local outfits = [
-            [1, "mercenary_leader_outfit_uncommon_00"],
-            [1, "mercenary_leader_outfit_00"]
-		]
-		foreach( item in this.Const.World.Common.pickOutfit(outfits) ) 
-        {
-            this.m.Items.equip(item)
-        }
+		this.free_company_abstract.assignRandomEquipment();
 	}
 
 });
