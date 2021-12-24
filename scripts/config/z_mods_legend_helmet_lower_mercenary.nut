@@ -187,8 +187,8 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "helm/legend_helmet_barbute", 2],
             [1, "helm/legend_helmet_barbute", 6],
             [1, "helm/legend_helmet_barbute", 7],
-            [1, "helm/nordic_helm_low", 1],
-            [1, "helm/nordic_helm", 1]
+            [1, "helm/legend_helmet_nordic_helm_low", 1],
+            [1, "helm/legend_helmet_nordic_helm", 1]
         ],
         Tops = [
             [1, "top/legend_helmet_faceplate_snub_nose"],

@@ -140,12 +140,12 @@ gt.Const.World.Spawn.BanditScouts <-
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					//MaxR = 120,
 					MaxR = 105,
-					Cost = 11
+					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
 					MinR = 80,					
-					Cost = 7
+					Cost = 8
 				},
 				{
 					//MinR = 200,

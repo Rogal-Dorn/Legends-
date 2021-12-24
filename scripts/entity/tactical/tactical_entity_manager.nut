@@ -1999,6 +1999,11 @@ this.tactical_entity_manager <- {
 			_t.Callback(_e, "Tag" in _t ? _t.Tag : null);
 		}
 
+		if (("Outfits") in _t) //this is mostly only used for free companies currently, I'll admit I just can't think of a better way to do these
+		{
+			_e.m.Outfits = _t.Outfits;
+		}
+
 		if (_t.Variant != 0)
 		{
 			_e.makeMiniboss();

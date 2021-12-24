@@ -15,8 +15,8 @@ gt.Const.World.Spawn.FreeCompany <-
 	Name = "FreeCompany",
 	IsDynamic = true,
 	MovementSpeedMult = 0.95,
-	VisibilityMult = 1.05,
-	VisionMult = 1.05,
+	VisibilityMult = 200,
+	VisionMult = 200,
 	Body = "figure_bandit_03",
 	MaxR = 690,
 	MinR = 97,
@@ -29,11 +29,11 @@ gt.Const.World.Spawn.FreeCompany <-
 	],
 	Troops = [ //weights dont add up to 100 but it doesn't really matter : total weight is of 120
 		{
-			Weight = 70, //frontline shielded units
+			Weight = 60, //frontline shielded units
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanySpearman,
-					Cost = 17
+					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanySlayer,
@@ -46,7 +46,7 @@ gt.Const.World.Spawn.FreeCompany <-
 			]
 		},
 		{
-			Weight = 5, //just the dog
+			Weight = 10, //just the dog
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Wardog,
@@ -55,7 +55,7 @@ gt.Const.World.Spawn.FreeCompany <-
 			]
 		},
 		{
-			Weight = 15, //backline archers
+			Weight = 20, //backline archers
 			Types =
 			[
 				{

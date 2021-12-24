@@ -463,10 +463,10 @@ this.entity_manager <- {
 		this.m.LastFreeCompanyUpdateTime = this.Time.getVirtualTimeF();
 
 		local companies = 0;
-		if (this.World.getTime().Days > 100)
-			companies = 1
-		// if (this.World.getTime().Days > 150)
-		// 	companies = 2;
+		if (this.World.getTime().Days > 80)
+			companies = 1;
+		if (this.World.getTime().Days > 130)
+			companies = 2;
 
 		if (companies == 0)
 			return;
@@ -491,36 +491,74 @@ this.entity_manager <- {
 				candidates.push(s);
 			}
 
+			// local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
+			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
+			local themeSelect = 0;
+			// if (this.Math.rand(0, 99) == 0)
+			// {
+			// 	themeSelect = this.Math.rand(1, this.Const.FreeCompanyCoordinationList.len() - 1);
+			// }
+			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect]; //array 0 is our "default"/"example" one
+
 			local start = candidates[this.Math.rand(0, candidates.len() - 1)];
 			local party = this.World.spawnEntity("scripts/entity/world/party", start.getTile().Coords);
 			party.setPos(this.createVec(party.getPos().X - 50, party.getPos().Y - 50));
-			party.setDescription("A free company, out for their own share of crowns.");
-			party.setFootprintType(this.Const.World.FootprintsType.Mercenaries);
+
+			local description = ("Description" in themeTable) ? themeTable.Description : "A free company, out for their own share of crowns."
+			party.setDescription(description);
+
+			local footprints = ("FootprintsType" in themeTable) ? themeTable.FootprintsType : "Mercenaries"
+			party.setFootprintType(this.Const.World.FootprintsType[footprints]);
+
 			party.getFlags().set("IsFreeCompany", true);
 			party.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
 
 			// local r = this.Math.min(330, 150 + this.World.getTime().Days);
+			local spawntype = ("Spawn" in themeTable) ? themeTable.Spawn : "FreeCompany"
 			local r = this.World.State.getPlayer().getStrength() + 50;
-			this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.FreeCompany, this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
+			this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
+			foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
+			{	
+				foreach (uo in themeTable.UnitOutfits)
+				{
+					if (troop.ID == uo.Type)
+					{
+						troop.Outfits <- clone uo.Outfits
+					}
+				}
+				// if ("Outfits" in troop.m)
+				// {
+				// 	local type = troop.getType();
+				// 	foreach (uo in themeTable.UnitOutfits)
+				// 	{
+				// 		if (uo.Type == type)
+				// 		{
+				// 			troop.m.Outfits = uo.Outfits;
+				// 		}
+				// 	}
+				// }
+			}
+
 			party.getLoot().Money = this.Math.rand(400, 800);
 			party.getLoot().ArmorParts = this.Math.rand(10, 30);
 			party.getLoot().Medicine = this.Math.rand(5, 15);
 			party.getLoot().Ammo = this.Math.rand(10, 50);
 
-			local items = ["amber_shards_item", "furs_item", "tin_ingots_item", "spices_item", "silk_item", "peat_bricks_item", "cloth_rolls_item"]
+			local items =  ("LootTable" in themeTable) ? themeTable.LootTable : this.Const.FreeCompanyDefaultLootTable;
 			
 
 			for( local i = 0; i < 2; i = ++i ) //change to some trade goods, and lower money amount if it picks them
 			{
-				party.addToInventory("trade/" + items[this.Math.rand(0, items.len() - 1)]);
+				party.addToInventory(items[this.Math.rand(0, items.len() - 1)]);
 			}
 
 			party.getSprite("base").setBrush("world_base_07");
 			party.getSprite("body").setBrush("figure_mercenary_0" + this.Math.rand(1, 2));
 
 			while (true)
-			{
-				local name = this.Const.Strings.FreeCompanyNames[this.Math.rand(0, this.Const.Strings.FreeCompanyNames.len() - 1)];
+			{	
+				local idx = this.Math.rand(0, themeTable.Names.len() - 1);
+				local name = themeTable.Names[idx]
 
 				if (name == this.World.Assets.getName())
 				{

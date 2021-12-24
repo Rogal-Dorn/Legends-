@@ -12,7 +12,8 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		Gender = 0,
 		VoiceSet = 0,
 		IsEyesClosed = false,
-		NextBlinkTime = 0.0
+		NextBlinkTime = 0.0,
+		Outfits = [] //Always overridden if it's used
 	},
 	function getEthnicity()
 	{

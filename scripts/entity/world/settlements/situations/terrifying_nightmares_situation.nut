@@ -54,6 +54,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 			_draftList.push("legend_nightwatch_background");
 			_draftList.push("legend_nightwatch_background");
 			_draftList.push("legend_nightwatch_background");
+			_draftList.push("legend_man_at_arms_background");
 		}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
