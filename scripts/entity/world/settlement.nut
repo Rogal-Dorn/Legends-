@@ -2467,6 +2467,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
+
+					if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+					{
+						this.setResources(this.getResources() + item.getResourceValue());
+					}
 				}
 			}
 		}
