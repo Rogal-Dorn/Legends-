@@ -6487,6 +6487,7 @@ Man-at-arms *should* now actually spawn with a blue band, not a red one.
 
 **Typos**
 Rust skill now states it uses (current) inititive to calculate damage.
+Witchhunter hat typo corrected stating it still gave nightvision.
 
 **For Modders**
 The hidden peasant trait used by miltia now removes the fear of nobles trait using the onadded function.
