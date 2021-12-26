@@ -6462,6 +6462,7 @@ Bandit spawns have been rebalanced somewhat.
 Man-at-arms daily upkeep decreased from 18 to 15.
 Man-at-arms initial cost decreased from 165 to 130.
 Nerfs the possible resolve roll on the cheaper named cloak
+- Minstrel War Chant now only recovers 3 fatigue per ally instead of 5.
 
 **Events**
 Man-at-arms and leech peddler have been added to some settlement events when playing as the militia origin.
