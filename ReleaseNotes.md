@@ -6470,3 +6470,6 @@ Donkeys now cost no upkeep
 
 **Fixes**
 Man at arms doesn't get a new injury every save load
+
+**Changes**
+Contract-selected bandit and barbarian settlements shouldn't spawn roaming parties anymore
