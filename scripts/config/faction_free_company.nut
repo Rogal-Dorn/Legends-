@@ -49,6 +49,25 @@ gt.Const.Tactical.Actor.FreeCompanyLeader <- {
 	],
 	FatigueRecoveryRate = 20
 };
+gt.Const.Tactical.Actor.FreeCompanyLeaderLow <- {
+	XP = 175,
+	ActionPoints = 9,
+	Hitpoints = 75,
+	Bravery = 45,
+	Stamina = 120,
+	MeleeSkill = 65,
+	RangedSkill = 40,
+	MeleeDefense = 10,
+	RangedDefense = -5,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 20
+};
 
 //3 frontline shield
 gt.Const.Tactical.Actor.FreeCompanyFootman <- {

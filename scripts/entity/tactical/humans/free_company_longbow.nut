@@ -62,6 +62,7 @@ this.free_company_longbow <- this.inherit("scripts/entity/tactical/free_company_
         {
             this.m.Items.equip(this.new("scripts/items/weapons/war_bow"));
         }
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
 		r = this.Math.rand(1, 4);
 		if (r <= 3)

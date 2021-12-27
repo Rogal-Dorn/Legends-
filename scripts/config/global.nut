@@ -429,6 +429,8 @@ gt.Const.EntityType <- {
 	FreeCompanyPikeman = 161,
 	FreeCompanyInfantry = 162,
 	FreeCompanyLeader = 163,
+	FreeCompanyLeaderLow = 164,
+
 
 	function convertOldToNew( _id )
 	{

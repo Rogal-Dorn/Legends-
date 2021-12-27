@@ -467,7 +467,7 @@ this.entity_manager <- {
 
 		local days = this.World.getTime().Days;
 		local companies = 0;
-		if (days > 30)
+		if (days > 0)
 			companies++;
 		if (days > 100)
 			companies++;
@@ -500,19 +500,32 @@ this.entity_manager <- {
 			// local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
 			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
 			local themeSelect;
+			local themeTable;
+			local selectedND = false;
 			if (this.Math.rand(0, 199) == 0 && days > 100)
 			{	
 				do {
 					themeSelect = this.Math.rand(0, this.Const.FreeCompanyOneTimeList.len() - 1);
 				} while ( this.m.NonDefaultFreeCompanies.find(themeSelect) && !( this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() ) )
+				if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() - 1) //dude it's like 5am and im writing this
+				{
+					themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1); //only go i nhere if we can't select any more nondefaults, it'll break that while loop above too 
+				}
+				else 
+				{
+					this.m.NonDefaultFreeCompanies.push(themeSelect)
+					selectedND = true;
+				}
+			}
+			if (selectedND)
+			{
+				themeTable = this.Const.FreeCompanyOneTimeList[themeSelect]; //array 0 is our "default"/"example" one
+			}
+			else
+			{
+				themeTable = this.Const.FreeCompanyCoordinationList[themeSelect];
 			}
 
-			if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() - 1) //dude it's like 5am and im writing this
-			{
-				themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
-			}
-			this.m.NonDefaultFreeCompanies.push(themeSelect)
-			local themeTable = this.Const.FreeCompanyCoordinationList[themeSelect]; //array 0 is our "default"/"example" one
 
 			local start = candidates[this.Math.rand(0, candidates.len() - 1)];
 			local party = this.World.spawnEntity("scripts/entity/world/party", start.getTile().Coords);
@@ -529,15 +542,20 @@ this.entity_manager <- {
 
 			// local r = this.Math.min(330, 150 + this.World.getTime().Days);
 			local spawntype = ("Spawn" in themeTable) ? themeTable.Spawn : "FreeCompany"
-			local r = this.World.State.getPlayer().getStrength() + 50;
-			// if(r > 120)
-			// {
-				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
-			// }
-			// else
-			// {
-			// 	this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.BanditRoamers, 120)
-			// }
+			local r = this.World.State.getPlayer().getStrength();
+			if (days > 100) r += 50;
+			else if (days > 75) r += 30
+			else if (days > 50) r += 10
+			
+			local r = this.Math.rand(r * 0.8, r * 1.5);
+			if (days < 25) {
+				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.FreeCompanyLow, r * 0.9); 
+			}
+			else
+			{
+				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], r); //change this to freecompany spawn later
+			}
+			
 			if ("UnitOutfits" in themeTable) {
 				foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
 				{	

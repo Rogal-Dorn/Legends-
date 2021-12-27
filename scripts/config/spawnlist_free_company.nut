@@ -118,6 +118,80 @@ gt.Const.World.Spawn.FreeCompany <-
 		}
 	]
 }
+gt.Const.World.Spawn.FreeCompanyLeaderLow <-
+{
+	Name = "FreeCompanyLow",
+	IsDynamic = true,
+	MovementSpeedMult = 0.90,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_bandit_03",
+	MinR = 120,
+	MaxR = 225,
+	MinR = 97,
+	Fixed = [
+		{
+			Type = this.Const.World.Spawn.Troops.FreeCompanyLeaderLow,
+			Cost = 30,
+			Weight = 0, //0 Weight guarentees this will be added
+		}
+	],
+	Troops = [ //weights dont add up to 100 but it doesn't really matter : total weight is of 120
+		{
+			Weight = 60, //frontline shielded units
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanySpearmanLow,
+					MaxR = 250,
+					Cost = 10
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanySpearman,
+					Cost = 15
+				}
+			]
+		},
+		{
+			Weight = 10, //just the dog
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.Wardog,
+					Cost = 8
+				}
+			]
+		},
+		{
+			Weight = 20, //backline archers
+			Types =
+			[
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanyArcherLow,
+					MaxR = 250,
+					Cost = 10
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanyArcher,
+					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanyCrossbow,
+					MinR = 250,
+					Cost = 15
+				}
+			]
+		},
+		{
+			Weight = 20, //backline 2tile range
+			Types =[
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanyPikeman,
+					MinR = 200,
+					Cost = 20
+				}
+			]
+		}
+	]
+}
 
 gt.Const.World.Spawn.GildedCompany <-
 {

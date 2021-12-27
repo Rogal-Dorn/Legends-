@@ -1657,6 +1657,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/free_company_leader"
 	},
+	FreeCompanyLeaderLow = {
+		ID = this.Const.EntityType.FreeCompanyLeaderLow,
+		Variant = 0,
+		Strength = 20,
+		Cost = 20,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_leader_low"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-
