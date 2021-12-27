@@ -30,8 +30,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			bro.worsenMood(1.5, "Lost many a friend in battle");
 			bro.improveMood(0.5, "Part of a militia");
 			///---
-			bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
-			bro.getSprite("accessory_special").setBrush("bust_militia_band_01");
+			bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait")); //IMPORTANT
 			bro.getSprite("socket").setBrush("bust_base_militia");
 			///---
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -49,14 +48,17 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			"farmhand_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% is a farmer\'s son, and presumably wishes to be the father of his own son at some point. For now, he\'s with you which is quite a regrettable clash between dreams and reality.";
+		bros[0].getSprite("accessory_special").setBrush("bust_militia_band_01");	
 		bros[0].improveMood(3.0, "Has recently fallen in love");
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/pitchfork"));
+		
 		bros[1].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[1].getBackground().m.RawDescription = "%name% owned a farmstead that has long since gone underfoot of countless passing armies, including the very ones he has fought for. His \'allegiance\' to you is arguably the result of an empty belly more than anything.";
+		bros[1].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[1].worsenMood(0.5, "Was involved in a brawl");
 		bros[1].addLightInjury();
 		bros[1].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
@@ -68,6 +70,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			"poacher_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "It is a common joke that %name% is in fact a nobleman hiding away from the world, but to the best of your knowledge he was a simple poacher. The grind of the world got him to where he is today, not much else need be said other than you hope he gets back on his feet.";
+		bros[2].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[2].worsenMood(0.5, "Was involved in a brawl");
 		bros[2].addLightInjury();
 		bros[2].setVeteranPerks(2);
@@ -82,6 +85,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			"gambler_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "You notice that %name% hides from certain noblemen. It is likely that he is a common criminal at large for some petty crime, but so long as he fights well it is no business to you.";
+		bros[3].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[3].improveMood(1.5, "Stole someone\'s scramasax");
 		bros[3].setVeteranPerks(2);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
@@ -94,46 +98,57 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			"legend_leech_peddler_background"
 		]);
 		bros[4].getBackground().m.RawDescription = "A daytaler and common laborer, %name% would rather join your outfit than go back to wasting his body building some nobleman\'s new fancy foyer.";
+		bros[4].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[4].worsenMood(0.5, "Was involved in a brawl");
 		bros[4].addLightInjury();
 		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+
 		bros[5].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[5].getBackground().m.RawDescription = "Seeking riches, %name% has come to the right place in your newfound mercenary band. Unfortunately, his background is in farming, milling, and laying stone, particularly none of which he was any good at.";
+		bros[5].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[5].improveMood(1.0, "Looks forward to becoming rich as a sellsword");
 		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[5].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/pitchfork"));
+		
 		bros[6].setStartValuesEx([
 			"fisherman_background"
 		]);
 		bros[6].getBackground().m.RawDescription = "%name% states he was a sailor prior to coming inland and falling in with the militia and now your mercenary band. He hopes to eventually own a boat and put its sails to the open ocean. You hope he can do that someday, truly.";
+		bros[6].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[6].worsenMood(0.25, "Feels somewhat sickly of late");
 		bros[6].setVeteranPerks(2);
 		bros[6].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		
 		bros[7].setStartValuesEx([
 			"militia_background"
 		]);
 		bros[7].getBackground().m.RawDescription = "%name% has apparently been in many militias, all of which eventually dissolved for one reason or another. At no point has he made any money in any of them, so he hopes to changes that with this whole new sellswording schtick.";
+		bros[7].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[7].improveMood(3.0, "Has recently become a father");
 		bros[7].m.PerkPoints = 0;
 		bros[7].m.LevelUps = 0;
 		bros[7].m.Level = 1;
 		bros[7].setVeteranPerks(2);
 		bros[7].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		
 		bros[8].setStartValuesEx([
 			"minstrel_background"
 		]);
 		bros[8].getBackground().m.RawDescription = "A proper lad, %name% enjoys carousing ladies at the pub and chasing skirt in the church. You get the sense he\'s only tagged along to spread his sense of \'fun\' around the world.";
+		bros[8].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[8].setVeteranPerks(2);
 		bros[8].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		local items = bros[8].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
+		
 		bros[9].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[9].getBackground().m.RawDescription = "Daytaler, laborer, caravan hand, sailor, militiaman, %name%\'s done a bit of it all. Hopefully this new foray into mercenary work will stick for him.";
+		bros[9].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[9].worsenMood(1.0, "Had his trusty scramasax stolen");
 		bros[9].setVeteranPerks(2);
 		bros[9].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
@@ -141,6 +156,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			"militia_background"
 		]);
 		bros[10].getBackground().m.RawDescription = "Like yourself, %name% was fed up with militias being overused to solve the crises of unprepared nobles. He was arguably the most earnest of the men in joining the transition to mercenary work.";
+		bros[10].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[10].worsenMood(0.5, "Disliked that some members of the militia were involved in a brawl");
 		bros[10].m.PerkPoints = 0;
 		bros[10].m.LevelUps = 0;
@@ -267,7 +283,6 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onHiredByScenario( bro )
 	{
-		bro.improveMood(1.5, "Joined a militia");
 		bro.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
 		bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
 		bro.getSprite("socket").setBrush("bust_base_militia");

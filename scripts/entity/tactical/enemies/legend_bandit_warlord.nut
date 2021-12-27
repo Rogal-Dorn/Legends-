@@ -200,13 +200,13 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body) == null)
 		{
 			local armor = [
+				[1, "coat_of_plates"],
+				[1, "coat_of_scales"],
+				[1, "heavy_lamellar_armor"],
 				[1, "reinforced_mail_hauberk"],
-				[1, "worn_mail_shirt"],
-				[1, "patched_mail_shirt"],
-				[1, "mail_shirt"],
 				[1, "footman_armor"],
-				[1, "leather_scale_armor"],
-				[1, "light_scale_armor"],
+				[1, "brown_hedgeknight_armor"],
+				[1, "northern_mercenary_armor_02"],
 				[1, "lamellar_harness"]
 			];
 

@@ -35,6 +35,18 @@ this.hate_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 				type = "text",
 				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve when in a battle against nobles"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee Skill when in a battle against nobles"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Ranged Skill when in a battle against nobles"
 			}
 		];
 	}
@@ -49,6 +61,8 @@ this.hate_nobles_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		if (this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.NobleHouse).getID()) != 0)
 		{
 			_properties.Bravery += 10;
+			_properties.MeleeSkillMult *= 1.05;
+			_properties.RangedSkillMult *= 1.05;
 		}
 	}
 
