@@ -234,6 +234,43 @@ gt.Const.LegendMod.OutfitObjs.extend([
       [1, "mercenary_billman_helmet_00"]
     ]
 },
+{
+  ID = "low_tier_unit_catchall_outfit_00"
+  Body = [
+      [4, "basic_mail_shirt"],
+      [4, "cultist_leather_robe"],
+      [4, "gambeson"],
+      [4, "leather_tunic"],
+      [4, "legend_blacksmith_apron"],
+      [4, "mail_shirt"],
+      [4, "padded_leather"],
+      [4, "padded_surcoat"],
+      [4, "ragged_dark_surcoat"],
+      [1, "wizard_robe"]
+    ],
+  Helmet = [ 
+      [2, "oriental/nomad_leather_cap"],
+      [2, "oriental/southern_head_wrap"],
+      [1, "legend_headband_coin"],
+      [1, "legend_headress_coin"],
+      [1, "legend_southern_veil_coin"],
+      [1, "legend_southern_veil"],
+      [1, "legend_jewelry"],
+      [3, "mercenary_archer_helmet_00"],
+      [3, "closed_mail_coif"],
+      [3, "cultist_leather_hood"],
+      [3, "dark_cowl"],
+      [3, "full_aketon_cap"],
+      [3, "headscarf"],
+      [3, "hood"],
+      [3, "hunters_hat"],
+      [3, "jesters_hat"],
+      [1, "magician_hat"],
+      [3, "straw_hat"],
+      [1, "witchhunter_hat"],
+      [1, ""]
+    ]
+},
 
 
 ]);
