@@ -527,7 +527,14 @@ this.entity_manager <- {
 			// local r = this.Math.min(330, 150 + this.World.getTime().Days);
 			local spawntype = ("Spawn" in themeTable) ? themeTable.Spawn : "FreeCompany"
 			local r = this.World.State.getPlayer().getStrength() + 50;
-			this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
+			// if(r > 120)
+			// {
+				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], this.Math.rand(r * 0.8, r * 1.5)); //change this to freecompany spawn later
+			// }
+			// else
+			// {
+			// 	this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.BanditRoamers, 120)
+			// }
 			if ("UnitOutfits" in themeTable) {
 				foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
 				{	

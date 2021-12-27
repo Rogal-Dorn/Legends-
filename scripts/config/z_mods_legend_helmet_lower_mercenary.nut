@@ -198,6 +198,7 @@ gt.Const.LegendMod.HelmObjs.extend([
         Vanity = [
             [3, ""],
             [1, "vanity/legend_helmet_plait"],
+            [1, "vanity/legend_helmet_lion_pelt"],
             [1, "vanity_lower/legend_helmet_knotted_tail"],
             [1, "vanity_lower/legend_helmet_orc_tail"]
         ]
@@ -217,6 +218,49 @@ gt.Const.LegendMod.HelmObjs.extend([
             [1, "top/legend_helmet_faceplate_full_01_named"],
         ],
         Vanity = [
+        ]
+    }]
+},
+{
+    ID = "mercenary_billman_helmet_00",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_chain_hood_full"],
+            [1, "hood/legend_helmet_padded_hood", 1]
+        ],
+        Helms = [
+            [1, "helm/legend_helmet_barbute", 7],            
+            [1, "helm/legend_helmet_norman_helm", 1],
+            [1, "helm/legend_helmet_flat_top_helm_low", 1]
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [3, ""],
+            [1, "vanity/legend_helmet_plait"]
+        ]
+    }]
+},
+{
+    ID = "mercenary_longbow_helmet_00",
+    Script = "",
+    Sets = [{
+        Hoods = [
+            [1, "hood/legend_helmet_simple_hood"],
+            [1, "hood/legend_helmet_leather_cap"]
+        ],
+        Helms = [        
+            [2, "helm/legend_helmet_norman_helm", 1],
+            [1, "helm/legend_helmet_sallet", 1]
+        ],
+        Tops = [
+        ],
+        Vanity = [
+            [3, ""],
+            [1, "vanity/legend_helmet_headband"],
+            [1, "vanity/legend_helmet_southern_patterned_headband"],
+            [1, "vanity/legend_helmet_southern_patterned_headwrap"]
         ]
     }]
 },

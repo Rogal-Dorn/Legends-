@@ -267,5 +267,57 @@ gt.Const.LegendMod.ArmorObjs.extend([
         ]
     }]
 },
+{
+    ID = "mercenary_billman_armor_00",
+    Script = "",
+    Sets = [{
+        Cloth = [ //not seen underneath but we copy to have some variety in armor values here
+            [1, "cloth/legend_tunic", 4]
+        ],
+        Chain = [
+            [1, "chain/legend_armor_reinforced_mail"],
+            [1, "chain/legend_armor_basic_mail"],
+            [1, "chain/legend_armor_hauberk"], // 95
+            [1, "chain/legend_armor_hauberk_full"] // 115
+        ],
+        Plate = [
+            [1, "plate/legend_armor_leather_padded"],
+            [1, "plate/legend_armor_leather_lamellar_reinforced"],
+            [1, "plate/legend_armor_leather_lamellar"],
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+            [9, ""],
+            [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
+        ]
+    }]
+},
+{
+    ID = "mercenary_longbow_armor_00",
+    Script = "",
+    Sets = [{
+        Cloth = [ //not seen underneath but we copy to have some variety in armor values here
+            [1, "cloth/gambeson", 0],
+            [1, "cloth/gambeson", 8]
+        ],
+        Chain = [
+        ],
+        Plate = [
+            [1, "plate/legend_armor_leather_scale"],
+            [1, "plate/legend_armor_leather_riveted_light"]
+        ],
+        Cloak = [
+        ],
+        Tabard = [
+        ],
+        Attachments =[
+            [9, ""],
+            [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]
+        ]
+    }]
+},
 
 ]);
