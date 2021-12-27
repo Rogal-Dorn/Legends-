@@ -6468,6 +6468,15 @@ Donkeys now cost no upkeep
 
 ## 15.0.2.3
 
+**Free Company**
+Adds in outfits for the following:
+  Longbow, Billman
+
+Adds in the first "Custom" company:
+  Gilded company -> Just has a custom leader outfit, it's so tedious making these outfits. Leader is decked out in gold though 
+
+Fixes being able to see them all the time, lol
+
 **Fixes**
 Man at arms doesn't get a new injury every save load
 
