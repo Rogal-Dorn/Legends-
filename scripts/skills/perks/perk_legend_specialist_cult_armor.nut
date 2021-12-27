@@ -17,7 +17,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	function getDescription()
 	{
 		local bonus = this.getBonus() * 100;
-		return "This character gains [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] maximum damage because of adjacent opponents.";
+		return "This character gains +[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] maximum damage of the weapon's base maximum because of adjacent opponents.";
 	}
 
 	function getTooltip()
@@ -28,7 +28,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	        id = 10,
 	        type = "text",
 	        icon = "ui/icons/damage_dealt.png",
-	        text = "[color=" + this.Const.UI.Color.NegativeValue + "]" + bonus + "[/color] Maximum Damage"
+	        text = "+[color=" + this.Const.UI.Color.NegativeValue + "]" + bonus + "[/color] Maximum Damage"
 	    });
 
 	    return ret;
@@ -105,6 +105,14 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
+		}
+
+		local bonus = this.getBonus();
+		if (bonus == 0) return;
+		item = this.getContainer().getActor().getMainhandItem();
+		if (item != null)
+		{
+			_properties.DamageRegularMax += item.m.DamageRegularMax * bonus;
 		}
 	}
 
