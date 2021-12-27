@@ -6437,11 +6437,11 @@ Potion brewer perk description now correctly notes the amount of apothecary leve
 ## 15.0.2.2
 
 **Free Companies**
-The first company now spawns on day 80
-A second company spawns on day 100
-[There's some reasonably undocumented ways to make your own if you really want to jump the gun right now and add themed companies]
-Free company units now have randomized perks available to their own class, e.g. spearmen can roll the early game spear perks
-Added in a few more free company names
+- The first company now spawns on day 80
+- A second company spawns on day 100
+- [There's some reasonably undocumented ways to make your own if you really want to jump the gun right now and add themed companies]
+- Free company units now have randomized perks available to their own class, e.g. spearmen can roll the early game spear perks
+- Added in a few more free company names
 
 **Throwing Spear**
 - Throwing Spear converted to use ammo and be refillable. 
@@ -6449,26 +6449,27 @@ Added in a few more free company names
 - Value changed from 80 to 400.
 
 **Fixes**
-Adds some capitalization in to some perks names
-Fixes issues with Penance.
+- Adds some capitalization in to some perks names
+- Fixes issues with Penance.
+- Improved tooltip for halberd smite to state it has a 2 tile range.
 
 **Typos**
-Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
-Zombie summon tooltips updated to match the previous build.
+- Runes no longer state that they will be consumed on being used with equipment, unless they are a shield or weapon rune.
+- Zombie summon tooltips updated to match the previous build.
 
 **Balance**
-Mold carrion skill now grants 20 health (up from 10).
-Bandit spawns have been rebalanced somewhat.
-Man-at-arms daily upkeep decreased from 18 to 15.
-Man-at-arms initial cost decreased from 165 to 130.
-Nerfs the possible resolve roll on the cheaper named cloak
+- Mold carrion skill now grants 20 health (up from 10).
+- Bandit spawns have been rebalanced somewhat.
+- Man-at-arms daily upkeep decreased from 18 to 15.
+- Man-at-arms initial cost decreased from 165 to 130.
+- Nerfs the possible resolve roll on the cheaper named cloak
 - Minstrel War Chant now only recovers 3 fatigue per ally instead of 5.
 
 **Events**
-Man-at-arms and leech peddler have been added to some settlement events when playing as the militia origin.
+- Man-at-arms and leech peddler have been added to some settlement events when playing as the militia origin.
 
 **MISC**
-Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
-Men-at-arms now have blue armbands.
-Donkeys now cost no upkeep
+- Traveler's bags no longer use the resolve icon on their stash capacity tooltip line.
+- Men-at-arms now have blue armbands.
+- Donkeys now cost no upkeep
 - Removed darkened equipment on Brigand Warlords.
