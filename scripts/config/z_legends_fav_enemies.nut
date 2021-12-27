@@ -203,7 +203,15 @@ gt.Const.LegendMod.FavoriteMercenary <- [
 	this.Const.EntityType.BountyHunter,
 	this.Const.EntityType.Swordmaster,
 	this.Const.EntityType.HedgeKnight,
-	this.Const.EntityType.MasterArcher
+	this.Const.EntityType.MasterArcher,
+	this.Const.EntityType.FreeCompanyArcher, 
+	this.Const.EntityType.FreeCompanyCrossbow, 
+	this.Const.EntityType.FreeCompanyLongbow, 
+	this.Const.EntityType.FreeCompanyBillman, 
+	this.Const.EntityType.FreeCompanyPikeman, 
+	this.Const.EntityType.FreeCompanyInfantry, 
+	this.Const.EntityType.FreeCompanyLeader, 
+	this.Const.EntityType.FreeCompanyLeaderLow
 ];
 gt.Const.LegendMod.FavoriteSoutherners <- [
 	this.Const.EntityType.Conscript,

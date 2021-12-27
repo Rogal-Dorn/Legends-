@@ -509,7 +509,7 @@ this.entity_manager <- {
 				} while ( this.m.NonDefaultFreeCompanies.find(themeSelect) && !( this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() ) )
 				if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() - 1) //dude it's like 5am and im writing this
 				{
-					themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1); //only go i nhere if we can't select any more nondefaults, it'll break that while loop above too 
+					// themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1); //only go i nhere if we can't select any more nondefaults, it'll break that while loop above too 
 				}
 				else 
 				{
@@ -523,7 +523,7 @@ this.entity_manager <- {
 			}
 			else
 			{
-				themeTable = this.Const.FreeCompanyCoordinationList[themeSelect];
+				themeTable = this.Const.FreeCompanyCoordinationList[this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1)];
 			}
 
 

@@ -1,4 +1,4 @@
-this.free_company_leader_low <- this.inherit("scripts/entity/tactical/enemies/free_company_leader", {
+this.free_company_leader_low <- this.inherit("scripts/entity/tactical/humans/free_company_leader", {
 	m = {
 		Outfits = [
 			[1, "low_tier_unit_catchall_outfit_00"]
@@ -53,44 +53,18 @@ this.free_company_leader_low <- this.inherit("scripts/entity/tactical/enemies/fr
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 5); //can open it up to a 1h fighting axe by changing to 6
+		local r = this.Math.rand(1, 3);
 		if (r == 1)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/bardiche"));
+			this.m.Items.equip(this.new("scripts/items/weapons/warfork"));
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greataxe"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/greatsword"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/two_handed_flanged_mace"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_goedendag"));
-		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-        }
-
-		if (this.getIdealRange() == 1)
-		{
-			r = this.Math.rand(1, 2);
-
-			if (r == 1)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
-			}
-			else if (r == 2)
-			{
-				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
-			}
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_katar"));
 		}
 
 		this.free_company_abstract.assignRandomEquipment();

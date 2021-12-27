@@ -118,7 +118,7 @@ gt.Const.World.Spawn.FreeCompany <-
 		}
 	]
 }
-gt.Const.World.Spawn.FreeCompanyLeaderLow <-
+gt.Const.World.Spawn.FreeCompanyLow <-
 {
 	Name = "FreeCompanyLow",
 	IsDynamic = true,

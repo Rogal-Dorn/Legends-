@@ -751,14 +751,15 @@ gt.Const.EntityIcon <- [
 	"kobold_wolfrider_orientation",
 	"mummy_priest_orientation",
 
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation"
+	"mercenary_orientation",//Spearmen
+	"mercenary_orientation",//Slayers
+	"mercenary_orientation",//Footmen
+	"mercenary_orientation",//Archers
+	"mercenary_orientation",//Crossbows
+	"mercenary_orientation",//Longbows
+	"mercenary_orientation",//Billmen
+	"mercenary_orientation",//Pikemen
+	"mercenary_orientation",//Infantry
+	"mercenary_orientation",//Leaders
+	"mercenary_orientation" //Managers
 ];

@@ -296,7 +296,8 @@ gt.Const.Strings.EntityName <- [
 	"Free Company Billman",
 	"Free Company Pikeman",
 	"Free Company Infantry",
-	"Free Company Leader"
+	"Free Company Leader",
+	"Free Company Ringleader",
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -462,7 +463,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Free Company Billmen",
 	"Free Company Pikemen",
 	"Free Company Infantry",
-	"Free Company Leaders"
+	"Free Company Leaders",
+	"Free Company Ringleaders",
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
