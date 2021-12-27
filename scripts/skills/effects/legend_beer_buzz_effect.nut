@@ -17,7 +17,7 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "After guzzling beer, this character has [color=" + this.Const.UI.Color.PositiveValue + "]+9%[/color] Resolve and Hitchance, [color=" + this.Const.UI.Color.NegativeValue + "]-18%[/color] Defenses and [color=" + this.Const.UI.Color.NegativeValue + "]-36%[/color] Initiative for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "After guzzling beer, this character has [color=" + this.Const.UI.Color.PositiveValue + "]+3%[/color] Resolve and Hitchance, [color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Defenses and [color=" + this.Const.UI.Color.NegativeValue + "]-12%[/color] Initiative for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
 	function getTooltip()
