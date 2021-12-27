@@ -72,6 +72,12 @@ this.send_barbarian_roamers_action <- this.inherit("scripts/factions/faction_act
 				continue;
 			}
 
+			local activeContract = this.World.Contracts.getActiveContract();
+			if (activeContract != null && "Destination" in activeContract.m && activeContract.m.Destination == s)
+			{
+				continue;
+			}
+
 			settlements.push({
 				D = s,
 				P = 10
