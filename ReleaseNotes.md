@@ -6487,6 +6487,7 @@ Adds in lower tiers for the following units:
 These use lower tier "catch-all" outfits currently and have lower perk purchasing power + lower stats + can only roll the tier 1 weapons (short bow, spear, etc)
 The catch all outfits are basically just randomized nonstyled outfits that would kinda look like your first 25 days or so
 Because these are in I'm testing out spawning at day 0 and the next two on day 100/130 (3 is probably too many companies)
+The low tier spawns include mostly just low tier archer/spearmen and a single low tier ringleader, (he has a 33% chance to have a katar lol i just think it's cool)
 
 Free company units now have randomized perk allotments. Each unit has a purchasing power and will randomly assign itself perks. Some perks are coupled, e.g. spears getting both damage+matk, but cannot roll one individually, it must purchase both
 
