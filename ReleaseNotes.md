@@ -6492,6 +6492,7 @@ Recruits in the militia scenario no longer get two seperate positive moodlets wh
 Militia recruits no longer can have fear of nobles, as this would conflict with their hate of nobles garenteed trait.
 Man-at-arms *should* now actually spawn with a blue band, not a red one.
 Man at arms doesn't get a new injury every save load
+Fixes the porridge skill and the beer buzz tooltips to be accurate to actual %s
 
 **Changes**
 Contract-selected bandit and barbarian settlements shouldn't spawn roaming parties anymore
