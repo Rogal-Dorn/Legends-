@@ -63,7 +63,10 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_a
             this.m.Items.equip(this.new("scripts/items/weapons/hunting_bow"));
         }
 
+        this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
         this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
+
+		this.m.Items.equip
 
 		this.free_company_abstract.assignRandomEquipment();
 	}
