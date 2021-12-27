@@ -465,11 +465,14 @@ this.entity_manager <- {
 
 		this.m.LastFreeCompanyUpdateTime = this.Time.getVirtualTimeF();
 
+		local days = this.World.getTime().Days;
 		local companies = 0;
-		if (this.World.getTime().Days > 80)
-			companies = 1;
-		if (this.World.getTime().Days > 130)
-			companies = 2;
+		if (days > 30)
+			companies++;
+		if (days > 100)
+			companies++;
+		if (days > 175)
+			companies++;
 
 		if (companies == 0)
 			return;
@@ -497,7 +500,7 @@ this.entity_manager <- {
 			// local themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1);
 			//just hardcoding themes to be a 1/100 chance of being themed here until i go over this again later, uncomment below if i add another theme before tweaking this
 			local themeSelect;
-			if (this.Math.rand(0, 199) == 0)
+			if (this.Math.rand(0, 199) == 0 && days > 100)
 			{	
 				do {
 					themeSelect = this.Math.rand(0, this.Const.FreeCompanyOneTimeList.len() - 1);

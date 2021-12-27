@@ -15,8 +15,8 @@ gt.Const.World.Spawn.FreeCompany <-
 	Name = "FreeCompany",
 	IsDynamic = true,
 	MovementSpeedMult = 0.95,
-	VisibilityMult = 1,
-	VisionMult = 1,
+	VisibilityMult = 1000,
+	VisionMult = 1000,
 	Body = "figure_bandit_03",
 	MaxR = 690,
 	MinR = 97,
@@ -31,6 +31,11 @@ gt.Const.World.Spawn.FreeCompany <-
 		{
 			Weight = 60, //frontline shielded units
 			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanySpearmanLow,
+					MaxR = 250,
+					Cost = 10
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanySpearman,
 					Cost = 15
@@ -59,10 +64,14 @@ gt.Const.World.Spawn.FreeCompany <-
 			Types =
 			[
 				{
+					Type = this.Const.World.Spawn.Troops.FreeCompanyArcherLow,
+					MaxR = 250,
+					Cost = 10
+				},
+				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyArcher,
 					Cost = 15
-				}
-				,
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyCrossbow,
 					Cost = 15

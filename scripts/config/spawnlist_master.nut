@@ -1569,19 +1569,27 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/free_company_spearman"
 	},
+	FreeCompanySpearmanLow = {
+		ID = this.Const.EntityType.FreeCompanySpearman,
+		Variant = 0,
+		Strength = 12,
+		Cost = 12,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/free_company_spearman_low"
+	},
 	FreeCompanySlayer = {
 		ID = this.Const.EntityType.FreeCompanySlayer,
 		Variant = 0,
-		Strength = 2215,
-		Cost = 2215,
+		Strength = 22,
+		Cost = 22,
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/free_company_slayer"
 	},
 	FreeCompanyFootman = {
 		ID = this.Const.EntityType.FreeCompanyFootman,
 		Variant = 0,
-		Strength = 2215,
-		Cost = 2215,
+		Strength = 22,
+		Cost = 22,
 		Row = 2,
 		Script = "scripts/entity/tactical/humans/free_company_footman"
 	},
@@ -1592,6 +1600,14 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 15,
 		Row = 3,
 		Script = "scripts/entity/tactical/humans/free_company_archer"
+	},
+	FreeCompanyArcherLow = {
+		ID = this.Const.EntityType.FreeCompanyArcher,
+		Variant = 0,
+		Strength = 10,
+		Cost = 10,
+		Row = 3,
+		Script = "scripts/entity/tactical/humans/free_company_archer_low"
 	},
 	FreeCompanyCrossbow = {
 		ID = this.Const.EntityType.FreeCompanyCrossbow,
