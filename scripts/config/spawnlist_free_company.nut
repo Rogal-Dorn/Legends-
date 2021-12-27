@@ -42,10 +42,12 @@ gt.Const.World.Spawn.FreeCompany <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanySlayer,
+					MinR = 250,
 					Cost = 22
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyFootman,
+					MinR = 250,
 					Cost = 22
 				}
 			]
@@ -74,10 +76,12 @@ gt.Const.World.Spawn.FreeCompany <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyCrossbow,
+					MinR = 250,
 					Cost = 15
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyLongbow,
+					MinR = 300,
 					Cost = 25
 				}
 			]
@@ -87,10 +91,12 @@ gt.Const.World.Spawn.FreeCompany <-
 			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyBillman,
+					MinR = 200,
 					Cost = 20
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyPikeman,
+					MinR = 200,
 					Cost = 20
 				}
 			]
@@ -100,10 +106,12 @@ gt.Const.World.Spawn.FreeCompany <-
 			Types =[
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyInfantry,
+					MinR = 250,
 					Cost = 25
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.FreeCompanyLeader,
+					MinR = 250,
 					Cost = 30
 				}
 			]
