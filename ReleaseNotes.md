@@ -6489,3 +6489,4 @@ Man at arms doesn't get a new injury every save load
 
 **Changes**
 Contract-selected bandit and barbarian settlements shouldn't spawn roaming parties anymore
+Some more spawnlist changing, should see rabble again, maybe for too long.
