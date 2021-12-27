@@ -6482,6 +6482,8 @@ Because these are in I'm testing out spawning at day 30 and the next two on day 
 
 Free company units now have randomized perk allotments. Each unit has a purchasing power and will randomly assign itself perks. Some perks are coupled, e.g. spears getting both damage+matk, but cannot roll one individually, it must purchase both
 
+I'm stressing here that it takes like an hour for 2 units assuming I only need one outfit per unit, *eventually* there'll be more than default brown but I make no promises for how soon
+
 Fixes being able to see them all the time, lol
 
 **Fixes**
