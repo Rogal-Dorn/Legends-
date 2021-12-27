@@ -6526,3 +6526,6 @@ Witchhunter hat typo corrected stating it still gave nightvision.
 
 **For Modders**
 The hidden peasant trait used by miltia now removes the fear of nobles trait using the onadded function.
+
+
+## 15.0.2.4
