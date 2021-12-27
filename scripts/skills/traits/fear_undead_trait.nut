@@ -39,6 +39,18 @@ this.fear_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 				type = "text",
 				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Resolve when in battle with undead"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Melee Skill when in battle with undead"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/ranged_skill.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Ranged Skill when in battle with undead"
 			}
 		];
 	}
@@ -53,6 +65,8 @@ this.fear_undead_trait <- this.inherit("scripts/skills/traits/character_trait", 
 		if (this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID()) != 0 || this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID()) != 0)
 		{
 			_properties.Bravery -= 10;
+			_properties.MeleeSkillMult *= 0.95;
+			_properties.RangedSkillMult *= 0.95;
 		}
 	}
 

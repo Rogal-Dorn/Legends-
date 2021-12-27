@@ -23,7 +23,7 @@ this.inspire_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 8;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 3;
+		this.m.MaxRange = 4;
 	}
 
 	function getTooltip()

@@ -59,6 +59,13 @@ this.ghoul_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 			icon = "ui/icons/bravery.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Resolve"
 		});
+
+		result.push({
+			id = 15,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color]"
+		});
 		return result;
 	}
 
@@ -66,6 +73,7 @@ this.ghoul_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 	{
 		this.accessory.onUpdateProperties(_properties);
 		_properties.Bravery += 4;
+		_properties.Threat += 3;
 	}
 
 });
