@@ -59,6 +59,28 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
+
+		local ammo = this.getAmmo();
+
+		if (ammo > 0)
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/icons/ammo.png",
+				text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]" + ammo + "[/color] throwing spear left"
+			});
+		}
+		else
+		{
+			ret.push({
+				id = 8,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]No throwing spears left[/color]"
+			});
+		}
+
 		local damage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
 		ret.push({
 			id = 7,
@@ -96,7 +118,7 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.Tactical.isActive() || !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
+		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 0 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
 	function getAmmo()
@@ -129,6 +151,7 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
+		this.consumeAmmo();
 		local shield = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 
 		if (shield != null && shield.isItemType(this.Const.Items.ItemType.Shield))
@@ -147,8 +170,6 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 		{
 			local ret = this.attackEntity(_user, targetEntity);
 		}
-
-		_user.getItems().unequip(_user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		return true;
 	}
 

@@ -82,6 +82,13 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		ret.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/vision.png",
+			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]2" + "[/color] tiles"
+		});
+
 		return ret;
 	}
 
