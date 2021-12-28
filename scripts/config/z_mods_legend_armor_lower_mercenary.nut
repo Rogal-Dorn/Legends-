@@ -300,8 +300,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
     Script = "",
     Sets = [{
         Cloth = [ //not seen underneath but we copy to have some variety in armor values here
-            [1, "cloth/gambeson", 0],
-            [1, "cloth/gambeson", 8]
+            [1, "cloth/legend_gambeson", 0],
+            [1, "cloth/legend_gambeson", 8]
         ],
         Chain = [
         ],

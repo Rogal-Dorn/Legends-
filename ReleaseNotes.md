@@ -6531,6 +6531,7 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 ## 15.0.2.4
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
+Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep.
 
 **Balance**
 Men at arms now have marginally better stats.
