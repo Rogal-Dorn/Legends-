@@ -6529,3 +6529,11 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 
 
 ## 15.0.2.4
+**Fixes**
+Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
+
+**Balance**
+Men at arms now have marginally better stats.
+
+**Typos**
+Militia scenario starters now have gender neutral background text.
