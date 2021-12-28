@@ -811,7 +811,7 @@ layers = [
 {"name": "legend_shoulder_cloth",           "layer": "cloak", "min": 1, "max": 11, "value" : 50, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "shoulder_cloth",\
     "title" :  "Shoulder Cloth", \
     "desc" :  "A Piece of cloth drapped over the shoulder", \
-    "adesc" : "Includes a should cloth"
+    "adesc" : "Includes a shoulder cloth"
 },
 {"name": "legend_noble_shawl",           "layer": "cloak", "min": 1, "max": 1, "value" : 250, "con" : 10, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "noble_shawl",\
     "title" :  "Noble Shawl", \
