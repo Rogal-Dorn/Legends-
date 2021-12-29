@@ -1464,7 +1464,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [2, "tabard/legend_shoulder_cloth", 2]
+            [2, "cloak/legend_shoulder_cloth", 2]
         ],
         Tabard = [
             
@@ -1493,7 +1493,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [2, "tabard/legend_shoulder_cloth"],
+            [2, "cloak/legend_shoulder_cloth"],
         ],
         Tabard = [
             
@@ -1520,7 +1520,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [2, "tabard/legend_shoulder_cloth", 2]
+            [2, "cloak/legend_shoulder_cloth", 2]
         ],
         Tabard = [
             
@@ -1550,7 +1550,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
         ],
         Cloak = [
             [1, ""],
-            [2, "tabard/legend_shoulder_cloth", 2]
+            [2, "cloak/legend_shoulder_cloth", 2]
         ],
         Tabard = [
             
