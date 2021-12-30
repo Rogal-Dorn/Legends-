@@ -88,7 +88,7 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
 		this.World.Flags.set("HasLegendCampHunting", true);
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
-		this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18);
+		//this.World.Assets.getStash().resize(this.World.Assets.getStash().getCapacity() - 18); creates a crash on legendary eco difficulty due to taking too many slots away
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/cured_venison_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.m.ArmorParts = this.World.Assets.m.ArmorParts / 2;

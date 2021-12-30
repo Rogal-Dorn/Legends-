@@ -6532,6 +6532,7 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep.
+Patched a critical issue caused by stash space modifications that would prevent players from loading the poacher scenario on legendary economy difficulty.
 
 **Balance**
 Men at arms now have marginally better stats.
