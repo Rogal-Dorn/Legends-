@@ -175,9 +175,13 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				items.equip(this.new("scripts/items/weapons/short_bow"));
 				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 			}
-			else if (r <= 80)
+			else if (r <= 70)
 			{
 				items.equip(this.new("scripts/items/weapons/legend_sling"));
+			}
+			else if (r <= 85)
+			{
+				items.equip(this.new("scripts/items/weapons/legend_slingshot"));
 			}
 			else
 			{
