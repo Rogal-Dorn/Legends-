@@ -52,7 +52,7 @@ this.legend_hunting_skin_ghouls_action <- this.inherit("scripts/factions/faction
 			this.Const.World.LegendaryContract.SkinGhoul += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()

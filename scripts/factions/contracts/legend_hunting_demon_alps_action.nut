@@ -52,7 +52,7 @@ this.legend_hunting_demon_alps_action <- this.inherit("scripts/factions/faction_
 			this.Const.World.LegendaryContract.DemonAlp += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()
