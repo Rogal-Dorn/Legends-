@@ -6536,7 +6536,12 @@ Footmen now don't have nets at all, 1/3 chance for each kind of basic shield (Ki
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep. - Luft
+Gathering Tent shouldn't just hand you free raw wood anymore, as we've recently added protection to your battle siblings woods.
+  (The actual formulas for calculating Quality Wood/Gem drops are the following)
+  -500.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100) :: after this procs if you have a collective level of 11 for Woodsmen/Miners it guarantees a Wood/Gem, otherwise it's a 1/3 chance
 
+  (Actual formula for calculating Raw Wood/Peat Bricks)
+  -300.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100); :: Same 1/3 as above but it requires a collective level of 6 for a guaranteed one
 **Balance**
 Men at arms now have marginally better stats.
 The legendary contracts has a significantly lowered score (Should pick them WAY less now)
