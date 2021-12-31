@@ -121,6 +121,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 		foreach (b in this.m.Items)
 		{
+			if (b == null) {this.logWarning("Null item attempted in gatherer building, the length of items arr is " + this.m.Items.len());}
 			res.push({
 		 		id = id,
 		 		icon = "ui/items/" + b.getIcon(),
@@ -171,7 +172,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		dropLoot = -500.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with timber perk.
-		if (dropLoot)
+		if (dropLoot && levels.Woodsman > 0)
 		{
 			local r = levels.Woodsman > 10 ? 1 : this.Math.rand(1, 3);
 			if (r == 1) item = this.new("scripts/items/trade/quality_wood_item");
@@ -195,7 +196,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		} 
 
 		dropLoot = -500.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with ore perk.
-		if (dropLoot)
+		if (dropLoot && levels.Woodsman > 0)
 		{
 			local r = levels.Miner > 10 ? 1 : this.Math.rand(1, 3);
 			if (r < 3) item = this.new("scripts/items/trade/uncut_gems_item");
@@ -207,7 +208,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		dropLoot = -300.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100);
-		if (dropLoot)
+		if (dropLoot && levels.Woodsman > 0)
 		{
 			local r = levels.Miner > 5 ? 1 : this.Math.rand(1, 3);
 			if (r < 3) item = this.new("scripts/items/trade/peat_bricks_item");
