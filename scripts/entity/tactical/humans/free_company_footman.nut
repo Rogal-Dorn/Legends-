@@ -80,19 +80,19 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_
         }
 
 			
-		r = this.Math.rand(1, 100);
-		if (r <= 10)
+		r = this.Math.rand(1, 3);
+		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
 			
 		}
-		else if (r <= 20)
+		else if (r == 2)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/heater_shield"));
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
+			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 		}
 
 		if (this.getIdealRange() == 1 && this.Math.rand(1, 100) <= 50)
