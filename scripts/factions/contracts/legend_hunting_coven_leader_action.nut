@@ -52,7 +52,7 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 			this.Const.World.LegendaryContract.BossHexe += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()

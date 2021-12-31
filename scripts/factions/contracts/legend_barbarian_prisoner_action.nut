@@ -73,22 +73,6 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 			}
 
 			candidates = ++candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
-			candidates = candidates;
 			break;
 		}
 
@@ -110,7 +94,7 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 			this.Const.World.LegendaryContract.BarbPrison += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()

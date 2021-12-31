@@ -54,7 +54,7 @@ this.legend_hunting_stollwurms_action <- this.inherit("scripts/factions/faction_
 			this.Const.World.LegendaryContract.Stollwurm += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()
