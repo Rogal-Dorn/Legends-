@@ -92,6 +92,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			bros[2].getSkills().removeByID(skill);
 		}
 		bros[2].getSkills().add(heavy);
+		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
