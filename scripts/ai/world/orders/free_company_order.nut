@@ -1,6 +1,7 @@
 this.free_company_order <- this.inherit("scripts/ai/world/world_behavior", {
 	m = {
-		TargetSettlement = null
+		TargetSettlement = null,
+		Theme = null
 	},
 	function setSettlement( _t )
 	{
@@ -59,13 +60,26 @@ this.free_company_order <- this.inherit("scripts/ai/world/world_behavior", {
 			return true;
 		}
 
-		_entity.setOrders("Hiring Troops");
-		_entity.clearTroops();
-		local r = this.Math.min(350, 150 + this.World.getTime().Days);
-		local brush = _entity.getSprite("body").getBrush().Name;
-		this.Const.World.Common.assignTroops(_entity, this.Const.World.Spawn.Mercenaries, this.Math.rand(r * 0.8, r));
-		_entity.getSprite("body").setBrush(brush);
-        _entity.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
+		// _entity.setOrders("Hiring Troops");
+		// _entity.clearTroops();
+		// local r = this.Math.min(350, 150 + this.World.getTime().Days);
+		// local brush = _entity.getSprite("body").getBrush().Name;
+		// local r = this.World.State.getPlayer().getStrength();
+		// local days = this.World.getTime().Days;
+		// if (days > 100) r += 50;
+		// else if (days > 75) r += 30
+		// else if (days > 50) r += 10
+		
+		// local r = this.Math.rand(r * 0.8, r * 1.5);
+		// if (days < 25) {
+		// 	this.Const.World.Common.assignTroops(_entity, this.Const.World.Spawn.FreeCompanyLow, r * 0.9); 
+		// }
+		// else
+		// {
+		// 	this.Const.World.Common.assignTroops(_entity, this.Const.World.Spawn[spawntype], r); //change this to freecompany spawn later
+		// }
+		// _entity.getSprite("body").setBrush(brush);
+        // _entity.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
 
 		this.getController().popOrder();
 		return true;
