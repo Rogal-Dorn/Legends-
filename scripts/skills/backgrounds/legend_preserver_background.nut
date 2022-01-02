@@ -3,7 +3,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_preserver";
+		this.m.ID = "background.legend_preserver"; //always female
 		this.m.Name = "Preserver";
 		this.m.Icon = "ui/backgrounds/background_necromancer_2.png"; 
 		this.m.BackgroundDescription = "Preservers practice the art of anatomy over ressurection - taking a more scientific approach to how dead things work.";
@@ -34,12 +34,15 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Fleshshaper"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.Monk;
+		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Ethnicity = 0;
+		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Kind;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Druid;
+		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Druid | this.Const.BackgroundType.Female;
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[1];
@@ -149,32 +152,6 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			];
 
 		}
-	}
-
-	//Default Male
-	function setGender(_gender = -1)
-	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = this.Math.rand(0, 3);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
-
-		if (r != 1)
-		{
-			return
-		}
-		this.m.Faces = this.Const.Faces.AllWhiteFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = null;
-		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
 	function onBuildDescription()
