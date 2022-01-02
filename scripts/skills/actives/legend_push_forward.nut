@@ -4,12 +4,12 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_push_forward";
 		this.m.Name = "Push Forward";
-		this.m.Description = "Advance as one, increasing your melee effectiveness";
+		this.m.Description = "Advance as one, increasing melee effectiveness of allies nearby.";
 		this.m.Icon = "skills/spears_square.png";
 		this.m.IconDisabled = "skills/spears_square_bw.png";
 		this.m.Overlay = "spears_square";
 		this.m.SoundOnUse = [
-			"sounds/combat/pushforward_01.wav"
+			"sounds/combat/rally_the_troops_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted;
@@ -19,7 +19,7 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -47,9 +47,21 @@ this.legend_push_forward <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee attack to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
-			},			
+				icon = "ui/icons/melee_skill.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] resolve to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] melee defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			}
 		];
 	}
 
