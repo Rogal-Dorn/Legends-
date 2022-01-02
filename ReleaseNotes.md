@@ -6535,6 +6535,7 @@ Minor fixes for armours that were causing hangs when fighting free company or ba
 Patched a critical issue caused by stash space modifications that would prevent players from loading the poacher scenario on legendary economy difficulty.
 Fixed a bug where the Nun from the Inquisition origin would get a perk every 5 levels after 11, not 2 as she should do.
 Preserver from the Cabal origin no longer spawns as male both in art and base ID.
+Prosthetic limbs gained via an inventor are removed from a bro when they drink the water of life, allowing them to no longer suffer the negative effects of their prosthetic(s).
 
 **Balance**
 Men at arms now have marginally better stats.

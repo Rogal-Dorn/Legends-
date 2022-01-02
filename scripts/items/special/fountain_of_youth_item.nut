@@ -56,7 +56,7 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Will remove all temporary or permanent injuries, as well as the Old, Addicted, Exhausted and Hangover traits and status effects"
+			text = "Will remove all temporary, permanent and prosthetic injuries, as well as the Old, Addicted, Exhausted and Hangover traits and status effects."
 		});
 		result.push({
 			id = 65,
@@ -112,6 +112,17 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 		_actor.getSprite("permanent_injury_scarred").resetBrush();
 		_actor.getSprite("permanent_injury_burned").resetBrush();
 
+		// Inventor 'injuries'
+		_actor.getSkills().removeByID("trait.legend_prosthetic_ear");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_eye");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_finger");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_foot");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_forearm");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_leg");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_hand");
+		_actor.getSkills().removeByID("trait.legend_prosthetic_nose");
+
+		// Re-add donkey
 		if (isDonkey) //if we were a donkey up top and had more perm injuries, then we re-add donkey injury here
 		{
 			_actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));
