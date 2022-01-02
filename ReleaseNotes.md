@@ -6542,6 +6542,7 @@ Men at arms now have marginally better stats.
 
 **Typos**
 Militia scenario starters now have gender neutral background text.
+Cut down negotiator follower (meeting point) retinue text so it doesn't run off the screen anymore.
 
 **New weapon; The Slingshot**
 The slingshot is a short ranged weapon that does less damage than the sling, but it's compactness and power can cause great damage and confusion. Slingshots are produced by fletchers and can be found in the hands of poachers. Slingshots benefit from all ranged skills and sling perks. Slingshots are light and require both hands free to use. Art should be credited to Von krolock.
