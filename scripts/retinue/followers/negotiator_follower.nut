@@ -9,8 +9,8 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Image = "ui/campfire/legend_negotiator_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [
-			"Allows for more rounds of contract negotiations with your potential employers before they abort, and with only a 10% chance on a hit to relations",
-			"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
+			"Allows for more rounds of contract negotiations and greater payment with your potential employers before they abort, and with only a 10% chance on a hit to relations. Bad relations recover faster"
+			//"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
 		];
 		this.m.Requirements = [
 			{
