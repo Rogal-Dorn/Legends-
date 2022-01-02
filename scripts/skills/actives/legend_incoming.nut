@@ -4,12 +4,12 @@ this.legend_incoming <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_incoming";
 		this.m.Name = "Incoming!";
-		this.m.Description = "Instruct your mercenaries to dodge incoming ranged attacks, raising ranged defence by 10 within 4 tiles";
+		this.m.Description = "This mercenary has received clear instructions to keep their head down, and is coordinating accordingly.";
 		this.m.Icon = "skills/incoming_square.png";
 		this.m.IconDisabled = "skills/incoming_square_bw.png";
 		this.m.Overlay = "incoming_circle";
 		this.m.SoundOnUse = [
-			"sounds/combat/fasterbastards_01.wav"
+			"sounds/combat/rally_the_troops_01.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.BeforeLast;
@@ -19,7 +19,7 @@ this.legend_incoming <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 20;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
@@ -47,13 +47,25 @@ this.legend_incoming <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]10[/color] ranged defense to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+				icon = "ui/icons/ranged_skill.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] ranged skill to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] resolve to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
 			}
 		];
 	}
 
-function isUsable()
+	function isUsable()
 	{
 		return this.skill.isUsable() && !this.getContainer().hasSkill("effects.legend_dodging_incoming");
 	}

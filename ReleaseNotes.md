@@ -6539,6 +6539,8 @@ Prosthetic limbs gained via an inventor are removed from a bro when they drink t
 
 **Balance**
 Men at arms now have marginally better stats.
+Push forward now grants +10 melee skill, +5 resolve and +3 melee defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
+Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 
 **Typos**
 Militia scenario starters now have gender neutral background text.
