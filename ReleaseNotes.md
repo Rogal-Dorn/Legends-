@@ -6536,6 +6536,7 @@ Patched a critical issue caused by stash space modifications that would prevent 
 Fixed a bug where the Nun from the Inquisition origin would get a perk every 5 levels after 11, not 2 as she should do.
 Preserver from the Cabal origin no longer spawns as male both in art and base ID.
 Prosthetic limbs gained via an inventor are removed from a bro when they drink the water of life, allowing them to no longer suffer the negative effects of their prosthetic(s).
+Penance now works as intended and doesn't cause crashes (thanks Zdzislaw)
 
 **Balance**
 Men at arms now have marginally better stats.

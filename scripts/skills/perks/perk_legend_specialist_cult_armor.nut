@@ -112,9 +112,8 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			_properties.DamageRegularMax += item.m.DamageRegularMax * bonus;
+			_properties.DamageRegularMax += item.m.RegularDamageMax * bonus; //perk damage += item damage
 		}
 	}
 
 });
-
