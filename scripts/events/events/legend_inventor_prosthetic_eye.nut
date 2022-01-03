@@ -10,13 +10,13 @@ this.legend_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%Access to the company tools, and some coin for special parts, is all I require. What say you?%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the company, inspecting their eyes. Before long they come running up to you as well.\n%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, they hastily shift up close to you, grabbing your head and inspecting your eyes from every possible angle.\n%SPEECH_ON%Yes, yes... Yes! I think I\'ve figured out how to do it...%SPEECH_OFF%You\'re just about to ask him what on earth they\'re talking about.\n%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%They smile broadly while staring intently at you.\n%SPEECH_ON%I just need a few tools and some coin to make what I need — but this could be dangerous...%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Sounds good. Here\'s 1000 crowns for the expenses.",
+					Text = "Sounds good. Here\'s 600 crowns for the expenses. Take 5 tools from the cart.",
 					function getResult( _event )
 					{
 							return this.Math.rand(1, 100) <= 85 ? "C" : "D";
@@ -38,13 +38,13 @@ this.legend_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the men, inspecting their eyes. Before long he comes running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, he hastily shifts up close to you, grabs your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%For some mere coin I can procure what items I need.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]As you plant your behind on the ground to get some rest, you notice %inventor% darting back and forth between the company, inspecting their eyes. Before long they come running up to you as well.%SPEECH_ON%Captain! May I have a look at your eyes?%SPEECH_OFF%Not actually waiting for you to reply, they hastily shift up close to you, grabbing your head and checks your eyes from every possible angle.%SPEECH_ON%Yes, yes. Yes! I think I\'ve figured out how to do it.%SPEECH_OFF%You\'re just about to ask him what on earth he\'s talking about when he continues.%SPEECH_ON%Do what, you might wonder. Well, you see, %noeye% over there has been feeling down ever since the incident and I haven\'t been able to stop thinking about his situation. I think I can help him!%SPEECH_OFF%He smiles broadly while staring intently at you.%SPEECH_ON%For some mere coin I can procure what items I need.%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Sounds good. Here\'s 1000 crowns for the expenses.",
+					Text = "Sounds good. Here\'s 600 crowns for the expenses.",
 					function getResult( _event )
 					{
 							return "C";
@@ -83,18 +83,18 @@ this.legend_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 				this.Characters.push(_event.m.Noeye.getImagePath());
-				this.World.Assets.addMoney(-1000);
+				this.World.Assets.addMoney(-600);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]600[/color] Crowns"
 				});
 
-				this.World.Assets.addArmorParts(-20);
+				this.World.Assets.addArmorParts(-5);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_supplies.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]5[/color] Tools and Supplies"
 				});
 
 				local glass_eye_trait = this.new("scripts/skills/traits/legend_prosthetic_eye");
@@ -137,18 +137,18 @@ this.legend_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 				this.Characters.push(_event.m.Noeye.getImagePath());
-				this.World.Assets.addMoney(-1000);
+				this.World.Assets.addMoney(-600);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]600[/color] Crowns"
 				});
 
-				this.World.Assets.addArmorParts(-20);
+				this.World.Assets.addArmorParts(-5);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_supplies.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]5[/color] Tools and Supplies"
 				});
 
 				if (!_event.m.Noeye.getSkills().hasSkill("injury.brain_damage"))

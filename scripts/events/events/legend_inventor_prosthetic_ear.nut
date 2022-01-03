@@ -7,16 +7,16 @@ this.legend_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.legend_inventor_prosthetic_ear";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 25 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% offers to fix %nofoot%\'s ear. He asks for coin to cover the cost, and requires the use of company tools.",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% bumps your side and points to %nofoot%\'s ear. %SPEECH_ON% It\'s left a nasty scar, but I reckon I could make life a little easier for them — all I need is a little scratch and some supplies from the stash...%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "Alright. Here\'s 1000 crowns. Do your thing.",
+					Text = "Alright. Here\'s 350 crowns — and take 5 tools from the cart.",
 					function getResult( _event )
 					{
 						return "B";
@@ -38,7 +38,7 @@ this.legend_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% attaches an artificial ear to %nofoot%'s head.",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% attaches an artificial ear to %nofoot%'s head. It droops slightly but %inventor% rushes in to catch it before it falls completely. You lock your gaze from the ear to %nofoot% directly.\n\n %SPEECH_ON%Any better?%SPEECH_OFF% %nofoot% looks in your direction.\n\n %SPEECH_ON%WHAT?%SPEECH_OFF%",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -55,18 +55,18 @@ this.legend_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 				this.Characters.push(_event.m.Nofoot.getImagePath());
-				this.World.Assets.addMoney(-1000);
+				this.World.Assets.addMoney(-350);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]350[/color] Crowns"
 				});
 
-				this.World.Assets.addArmorParts(-20);
+				this.World.Assets.addArmorParts(-5);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_supplies.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]5[/color] Tools and Supplies"
 				});
 
 				local pros_foot_trait = this.new("scripts/skills/traits/legend_prosthetic_ear");
@@ -91,7 +91,7 @@ this.legend_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "C",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time.",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]You tell %inventor% that the %companyname% has no resources to spare for such things at this time. But you have no doubt they\'ll ask again later.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -119,7 +119,7 @@ this.legend_inventor_prosthetic_ear <- this.inherit("scripts/events/event", {
 		local nofoot_candidates = [];
 
 
-		if (this.World.Assets.getMoney() < 2000 || this.World.Assets.getArmorParts() < 40)
+		if (this.World.Assets.getMoney() < 800 || this.World.Assets.getArmorParts() < 20)
 		{
 			return;
 		}
