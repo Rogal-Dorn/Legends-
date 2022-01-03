@@ -7,7 +7,7 @@ this.legend_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.legend_inventor_prosthetic_hand";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 40 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]As you take in the scenery you find %inventor% sitting by a tree, seemingly deep in thought, startling him as you approach.%SPEECH_ON%Oh, hey there, captain! I didn\'t see you there.%SPEECH_OFF%He stands up and enthusiastically steps up to you.%SPEECH_ON%You know.. I\'ve been thinking of ways to help %nohand% with his problem, and I think I might have come up with a solution.%SPEECH_OFF%He scratches his head nervously as he continues..%SPEECH_ON%I.. will need some coin in order to cover the material cost for this little experiment, however, and any leftover tools that we can spare.%SPEECH_OFF%",
@@ -16,7 +16,7 @@ this.legend_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Alright. Here\'s 1000 crowns. Show me what you can do.",
+					Text = "Here\'s 1750 crowns. Take 15 tools from the tents. Show me what you can do.",
 					function getResult( _event )
 					{
 						return "B";
@@ -55,18 +55,18 @@ this.legend_inventor_prosthetic_hand <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 				this.Characters.push(_event.m.Nohand.getImagePath());
-				this.World.Assets.addMoney(-1000);
+				this.World.Assets.addMoney(-1750);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1750[/color] Crowns"
 				});
 
-				this.World.Assets.addArmorParts(-20);
+				this.World.Assets.addArmorParts(-15);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_supplies.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]15[/color] Tools and Supplies"
 				});
 
 				local pros_hand_trait = this.new("scripts/skills/traits/legend_prosthetic_hand");

@@ -7,7 +7,7 @@ this.legend_inventor_prosthetic_forearm <- this.inherit("scripts/events/event", 
 	{
 		this.m.ID = "event.legend_inventor_prosthetic_forearm";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 45 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% offers to fix %nofoot%\'s arm. He asks for coin to cover the cost, and requires the use of company tools.",
@@ -16,7 +16,7 @@ this.legend_inventor_prosthetic_forearm <- this.inherit("scripts/events/event", 
 			Characters = [],
 			Options = [
 				{
-					Text = "Alright. Here\'s 1000 crowns. Do your thing.",
+					Text = "Alright. Here\'s 2000 crowns. Take 20 tools from around the camp.",
 					function getResult( _event )
 					{
 						return "B";
@@ -38,7 +38,7 @@ this.legend_inventor_prosthetic_forearm <- this.inherit("scripts/events/event", 
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% amputates %nofoot%\'s forearm and attaches an artificial one.",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% amputates %nofoot%\'s forearm and attaches an artificial one. %nofoot% cheerfully slaps %inventor%\'s face as they make finishing touches.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -55,11 +55,11 @@ this.legend_inventor_prosthetic_forearm <- this.inherit("scripts/events/event", 
 			{
 				this.Characters.push(_event.m.Inventor.getImagePath());
 				this.Characters.push(_event.m.Nofoot.getImagePath());
-				this.World.Assets.addMoney(-1000);
+				this.World.Assets.addMoney(-2000);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]2000[/color] Crowns"
 				});
 
 				this.World.Assets.addArmorParts(-20);
@@ -119,7 +119,7 @@ this.legend_inventor_prosthetic_forearm <- this.inherit("scripts/events/event", 
 		local nofoot_candidates = [];
 
 
-		if (this.World.Assets.getMoney() < 2000 || this.World.Assets.getArmorParts() < 40)
+		if (this.World.Assets.getMoney() < 4000 || this.World.Assets.getArmorParts() < 40)
 		{
 			return;
 		}

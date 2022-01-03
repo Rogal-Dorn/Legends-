@@ -7,7 +7,7 @@ this.legend_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 	{
 		this.m.ID = "event.legend_inventor_prosthetic_foot";
 		this.m.Title = "During camp...";
-		this.m.Cooldown = 30 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 35 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
 			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% offers to fix %nofoot%\'s foot. He asks for coin to cover the cost, and requires the use of company tools.",
@@ -16,7 +16,7 @@ this.legend_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Alright. Here\'s 1000 crowns. Do your thing.",
+					Text = "Alright. Here\'s 1000 crowns. Make sure to take 10 tools from the camp.",
 					function getResult( _event )
 					{
 						return "B";
@@ -38,7 +38,7 @@ this.legend_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% amputates %nofoot%\'s foot and attaches an artificial one.",
+			Text = "[img]gfx/ui/events/legend_inventor_general.png[/img]%inventor% amputates %nofoot%\'s foot and attaches an artificial one. This might be an upgrade, it\'s hard to say at this point.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -62,11 +62,11 @@ this.legend_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]1000[/color] Crowns"
 				});
 
-				this.World.Assets.addArmorParts(-20);
+				this.World.Assets.addArmorParts(-10);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_supplies.png",
-					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]20[/color] Tools and Supplies"
+					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]10[/color] Tools and Supplies"
 				});
 
 				local pros_foot_trait = this.new("scripts/skills/traits/legend_prosthetic_foot");

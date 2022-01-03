@@ -6542,6 +6542,19 @@ Men at arms now have marginally better stats.
 Push forward now grants +10 melee skill, +5 resolve and +3 melee defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 
+Inventor's prosthetics now are more balanced when it comes to cost, previously they were all 1000 gold and 20 tools each, with a cooldown of 30 days. Now they are;
+```
+Finger = 225 gold, 5 tools. Cooldown 20.
+Ear = 350 gold, 5 tools. Cooldown 25.
+Eye = 600 gold, 5 tools. Cooldown 30.
+Nose = 800 gold, 10 tools. Cooldown 35.
+Foot = 1000 gold, 10 tools. Cooldown 35.
+Leg = 1400 gold, 15 tools. Cooldown 40.
+Hand = 1750 gold, 15 tools. Cooldown 40.
+Forearm = 2000 gold, 20 tools. Cooldown 45.
+```
+Each event has been altered slightly in terms of requirements, for example, a missing finger has a lower needed level of crown and tools to be availible to trigger, because it requires less of each than any other injury.
+
 **Typos**
 Militia scenario starters now have gender neutral background text.
 Cut down negotiator follower (meeting point) retinue text so it doesn't run off the screen anymore.
@@ -6552,3 +6565,6 @@ The slingshot is a short ranged weapon that does less damage than the sling, but
 **For modders**
 Slingshots do not have a working AI package yet. I tried to get it working but encountered a few issues with it. Please DM me if you'd like the error logs of these tests - Luft.
 For now, slingshots should NOT be given to the AI.
+
+**Misc.**
+Inventor prosthetic events now have new event text.
