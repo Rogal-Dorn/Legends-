@@ -12,8 +12,21 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HiringCost = 2000;
 		this.m.DailyCost = 25;
 		this.m.Excluded = [
+			"trait.weasel",
+			"trait.fear_beasts",
+			"trait.clubfooted",
+			"trait.irrational",
+			"trait.hesitant",
+			"trait.drunkard",
+			"trait.fainthearted",
+			"trait.craven",
+			"trait.dastard",
+			"trait.fragile",
 			"trait.insecure",
+			"trait.asthmatic",
 			"trait.spartan",
+			"trait.loyal",
+			"trait.double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.IsGuaranteed = ["disloyal_trait", "legend_noble_killer_trait"];
