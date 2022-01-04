@@ -6566,7 +6566,7 @@ White, green and yellow paint = 520, 4 dyes
 White and blue paint = 645, 5 dyes
 Paint set = 760, 6 dyes
 ```
-Dyes have been reduced from 400 value to 110 to allow players to use them to craft paints if they have the requirement(s). Making paints from monster parts is still possible, but now requires a beast slayer background to be present. Costs for crafting dyes at a taxidermist universially reduced.
+Dyes have been reduced from 400 value to 110 to allow players to use them to craft paints if they have the requirement(s). Making paints from monster parts is still possible, but now requires a beast slayer background to be present. Costs for crafting paints at a taxidermist universally reduced.
 
 **Typos**
 Militia scenario starters now have gender neutral background text.
