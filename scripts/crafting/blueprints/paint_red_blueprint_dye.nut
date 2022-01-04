@@ -6,11 +6,11 @@ this.paint_red_blueprint_dye <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.paint_red_dye";
 		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_red_item");
-		this.m.Cost = 50;
+		this.m.Cost = 10;
 		local ingredients = [
 			{
 				Script = "scripts/items/trade/dies_item",
-				Num = 1
+				Num = 2
 			}
 		];
 		this.init(ingredients);

@@ -6556,6 +6556,18 @@ Forearm = 2000 gold, 20 tools. Cooldown 45.
 ```
 Each event has been altered slightly in terms of requirements, for example, a missing finger has a lower needed level of crown and tools to be availible to trigger, because it requires less of each than any other injury.
 
+Paint is now no longer a tool, it is a trade resource. All paints have a resource value of 2, except paint remover which is 1. It's type affects it's value, but the dyes required to make them have increased in many cases;
+```
+Paint remover = 150
+Black paint = 160, 1 dye
+Red paint = 270, 2 dyes
+Orange and red paint = 380, 3 dyes
+White, green and yellow paint = 520, 4 dyes
+White and blue paint = 645, 5 dyes
+Paint set = 760, 6 dyes
+```
+Dyes have been reduced from 400 value to 110 to allow players to use them to craft paints if they have the requirement(s). Making paints from monster parts is still possible, but now requires a beast slayer background to be present. Costs for crafting dyes at a taxidermist universially reduced.
+
 **Typos**
 Militia scenario starters now have gender neutral background text.
 Cut down negotiator follower (meeting point) retinue text so it doesn't run off the screen anymore.
@@ -6569,3 +6581,4 @@ For now, slingshots should NOT be given to the AI.
 
 **Misc.**
 Inventor prosthetic events now have new event text.
+Paints have new description text now.
