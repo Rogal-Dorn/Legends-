@@ -12,4 +12,10 @@ this.perk_legend_scholar <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
+
+	function isDroppedAsLoot( _item )
+	{
+		return this.Math.rand(1, 100) <= 10; //10% more loot, counts for beast loot, weapons, armour, scrolls and anything else tagged as "isdroppedasloot". Stacks with other sources.
+	}
+
 });

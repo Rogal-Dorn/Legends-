@@ -3,6 +3,7 @@ gt.Const.TipOfTheDay <- [
 	"As brothers we fight, as brothers we die!",
 	"The arenas in the south do not sate the expectations of some - for that there is another place far, far away from prying eyes",
 	"Cooking recipes can heal and create a tidy profit",
+	"The \'scholar\' perk can allow brothers to increase the amount of loot they find after battle.",
 	"Ancient Scrolls can have random powerful effects when read. They can be identified by scholars.",
 	"Jugglers can leap and tumble, and have a great aim.",
 	"Herbalists can create herbal cures for fun and profit",

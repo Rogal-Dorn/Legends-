@@ -6541,6 +6541,7 @@ Penance now works as intended and doesn't cause crashes (thanks Zdzislaw)
 
 **Balance**
 Men at arms now have marginally better stats.
+Brothers with the scholar perk can now find 10% more loot after battle. Stacks additively.
 Push forward now grants +10 melee skill, +5 resolve and +3 melee defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 
@@ -6583,3 +6584,4 @@ For now, slingshots should NOT be given to the AI.
 **Misc.**
 Inventor prosthetic events now have new event text.
 Paints have new description text now.
+Added in one new tip of the day.
