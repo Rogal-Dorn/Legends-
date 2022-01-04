@@ -14,6 +14,14 @@ this.paint_black_blueprint_dye <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = [
+					"scripts/skills/perks/perk_legend_scholar",
+				]
+			}
+		];
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )
