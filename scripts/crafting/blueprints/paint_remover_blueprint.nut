@@ -6,7 +6,7 @@ this.paint_remover_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.paint_remover";
 		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_remover_item");
-		this.m.Cost = 25;
+		this.m.Cost = 10;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/ghoul_horn_item",
@@ -14,6 +14,22 @@ this.paint_remover_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = [
+					"scripts/skills/backgrounds/beast_hunter_background"
+				]
+			}
+		];
+		this.initSkills(skills);
+		local skills = [
+			{
+				Scripts = [
+					"scripts/skills/backgrounds/beast_hunter_background"
+				]
+			}
+		];
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )

@@ -6,7 +6,7 @@ this.paint_red_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.paint_red";
 		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_red_item");
-		this.m.Cost = 25;
+		this.m.Cost = 10;
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/poisoned_apple_item",
@@ -14,6 +14,14 @@ this.paint_red_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = [
+					"scripts/skills/backgrounds/beast_hunter_background"
+				]
+			}
+		];
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )

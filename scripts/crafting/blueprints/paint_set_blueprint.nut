@@ -6,19 +6,11 @@ this.paint_set_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.ID = "blueprint.paint_set";
 		this.m.Type = this.Const.Items.ItemType.Misc;
 		this.m.PreviewCraftable = this.new("scripts/items/misc/paint_set_item");
-		this.m.Cost = 50;
+		this.m.Cost = 10;
 		local ingredients = [
 			{
-				Script = "scripts/items/misc/paint_black_item",
-				Num = 1
-			},
-			{
-				Script = "scripts/items/misc/paint_white_green_yellow_item",
-				Num = 1
-			},
-			{
-				Script = "scripts/items/misc/paint_orange_red_item",
-				Num = 1
+				Script = "scripts/items/trade/dies_item",
+				Num = 6
 			}
 		];
 		this.init(ingredients);
