@@ -6531,6 +6531,7 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 ## 15.0.2.4
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
+Noble's cousin now has the same excluded trait rules as the noble commander, this will also stop them spawning with loyal and disloyal traits at the same time. 
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep.
 Patched a critical issue caused by stash space modifications that would prevent players from loading the poacher scenario on legendary economy difficulty.
 Fixed a bug where the Nun from the Inquisition origin would get a perk every 5 levels after 11, not 2 as she should do.
