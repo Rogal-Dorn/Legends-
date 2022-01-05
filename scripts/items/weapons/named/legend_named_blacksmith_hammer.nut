@@ -24,7 +24,8 @@ this.legend_named_blacksmith_hammer <- this.inherit("scripts/items/weapons/named
 		this.m.RegularDamage = 20;
 		this.m.RegularDamageMax = 30;
 		this.m.ArmorDamageMult = 2.5;
-		this.m.DirectDamageMult = 0.7;
+		this.m.DirectDamageMult = 0.5;
+		this.m.DirectDamageAdd = 0.2;
 		this.randomizeValues();
 	}
 
