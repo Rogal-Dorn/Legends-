@@ -25,7 +25,8 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamage = 15;
 		this.m.RegularDamageMax = 20;
 		this.m.ArmorDamageMult = 1.5;
-		this.m.DirectDamageMult = 0.4;
+		this.m.DirectDamageMult = 0.5;
+		this.m.DirectDamageAdd = -0.1;
 	}
 
 	function onEquip()
