@@ -12,7 +12,7 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 	{
 		this.m.ID = "event.legend_swordmaster_fav_enemy";
 		this.m.Title = "As you approach...";
-		this.m.Cooldown = 60.0 * this.World.getTime().SecondsPerDay;
+		this.m.Cooldown = 45.0 * this.World.getTime().SecondsPerDay; // WAS 60
 		this.m.Screens.push({
 			ID = "A1",
 			Text = "[img]gfx/ui/events/event_144.png[/img]{You discover a cave in the ice with its maw shielded by a gate of thick icicles. Looking through the icy bars, you find the cave quickly declines down a steep slope and toward what may be an underground riverbank that has long since frozen. Something is huddled beside it hitting the ice with a pickaxe over and over again. The wind whistles as it grates against the teeth of the cave. You call out to the huddled man, but there is no response.\n\nIt will take some time to chop through this thick ice and get in there. Fortunately, one of the sellswords reports that there may be a rear entrance. It is blocked just as well, but a strong enough man just might be able to squeeze through and face any dangers within.}",
@@ -470,7 +470,7 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 
 		foreach( t in towns )
 		{
-			if (t.getTile().getDistanceTo(playerTile) <= 10 && !t.isIsolated())
+			if (t.getTile().getDistanceTo(playerTile) <= 8 && !t.isIsolated()) // WAS 10
 			{
 				town = t;
 				break;
@@ -486,11 +486,16 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{
-			if (!bro.getSkills().hasSkill("perk.legend_favoured_enemy_swordmaster"))
+			if (!bro.getSkills().hasSkill("perk.legend_favoured_enemy_swordmaster")) // perk check
 			{
 				continue;
 			}
-
+//
+        	if (bro.getLevel() > 10) // level check		
+			{
+				continue;
+			}
+//
 			local stats = this.Const.LegendMod.GetFavoriteEnemyStats(bro, this.Const.LegendMod.FavoriteSwordmaster);
 
 			for( ; stats.Strength < this.m.MinStrength;  )
