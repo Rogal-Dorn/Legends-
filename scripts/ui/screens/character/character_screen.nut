@@ -520,15 +520,20 @@ this.character_screen <- {
 		{
 			return data;
 		}
-
-		if (data.stash.upgrade(data.sourceIndex, data.targetIndex))
+		local upgrade = data.stash.upgrade(data.sourceIndex, data.targetIndex)
+		if (upgrade)
 		{
-			data.stash.removeByIndex(data.sourceIndex);
+			//only remove item if it wasn't switched out for another upgrade
+			if (typeof upgrade == "table"){
+				data.stash.removeByIndex(upgrade.index);
+				if (upgrade.item != null){
+					this.World.Assets.getStash().insert(upgrade.item, upgrade.index);
+				}
+			}
 			return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
 		}
 		else
 		{
-			this.logError("general_onUpgradeInventoryItem(stash)");
 			return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToAcquireStash);
 		}
 
@@ -1144,9 +1149,15 @@ this.character_screen <- {
 
 		if (!this.Tactical.isActive() && data.sourceItem.isUsable())
 		{
-			if (data.sourceItem.onUse(data.inventory.getActor()))
+			local result = data.sourceItem.onUse(data.inventory.getActor())
+			if (result)
 			{
-				data.stash.removeByIndex(data.sourceIndex);
+				if (typeof result == "table"){
+					data.stash.removeByIndex(result.index);
+					if (result.item != null){
+						this.World.Assets.getStash().insert(result.item, result.index);
+					}
+				}
 				data.inventory.getActor().getSkills().update();
 				return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, null, false, this.m.InventoryFilter);
 			}
@@ -2502,7 +2513,7 @@ this.character_screen <- {
 				if (value != 1) continue
 				local upgrade = armor.getUpgrade(idx)
 				if (upgrade.isDestroyedOnRemove()) continue
-				this.Stash.add(armor.removeUpgrade( idx ))		
+				this.Stash.add(armor.removeUpgrade(idx))		
 			}
 		}
 		return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);

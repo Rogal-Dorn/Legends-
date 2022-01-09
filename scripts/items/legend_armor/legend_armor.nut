@@ -387,15 +387,14 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (_upgrade == null) return true;
 		if (_upgrade != null && this.m.Blocked[_upgrade.getType()]) return false;
 
+		local container = _upgrade.getContainer()
+		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		if (oldIndex != null) oldIndex = oldIndex.index
+		local oldItem;
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
-			local item = this.removeUpgrade(_upgrade.getType());
-			if (!item.isDestroyedOnRemove())
-			{
-				this.World.Assets.getStash().add(item);
-			}
+			oldItem = this.removeUpgrade(_upgrade.getType());
 		}
-
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
 		this.updateAppearance();
@@ -404,7 +403,17 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			this.m.Upgrades[_upgrade.getType()].onEquip();
 			this.getContainer().getActor().getSkills().update();
 		}
-		return true;
+
+		//switch places with other upgrade item
+		local result = {
+			item = null,
+			index = oldIndex
+		}
+		if (oldItem != null && !oldItem.isDestroyedOnRemove())
+		{
+			result.item = oldItem 
+		}
+		return result;
 	}
 
 	function removeUpgrade( _slot )
