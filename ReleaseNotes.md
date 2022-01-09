@@ -6529,3 +6529,6 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 
 
 ## 15.0.2.4
+
+**Balance**
+- Blacksmith stats adjusted: Lost capability as a fighter, gained more stamina.
