@@ -19,7 +19,7 @@ gt.Const.World.Spawn.NomadRoamers <-
 	VisionMult = 1.0,
 	Body = "figure_nomad_03",
 	Fixed = [],
-	//MinR = 56,
+	MinR = 56, // TEST
 	MaxR = 188,
 	Troops = [
 		{
@@ -68,7 +68,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 	VisionMult = 1.0,
 	Body = "figure_nomad_01",
 	Fixed = [],
-	//MinR = 63,
+	MinR = 63, // TEST
 	MaxR = 600
 	Troops =
 	[
@@ -160,7 +160,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 	VisionMult = 1.0,
 	Body = "figure_nomad_01",
 	Fixed = [],
-	//MinR = 63,
+	MinR = 63, // TEST
 	MaxR = 600
 	Troops =
 	[

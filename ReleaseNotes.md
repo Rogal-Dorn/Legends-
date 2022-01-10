@@ -6547,6 +6547,7 @@ Push forward now grants +10 melee skill, +5 resolve and +3 melee defence to alli
 Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 Favoured enemy: swordmaster event tweaks; event cooldown reduced from 60 days to 45 days. beforehand you had to be 10 tiles or more from a settlement for this event to trigger, it is now 8. The brother with this perk must be level 10 or higher to trigger this event now.
 NPC militia no longer can spawn with a wooden stick. Instead they can spawn with a saw.
+Bandit and nomad spawns rebalanced again, this time using a differant technique. Please report feedback on balance.
 
 Inventor's prosthetics now are more balanced when it comes to cost, previously they were all 1000 gold and 20 tools each, with a cooldown of 30 days. Now they are;
 ```
