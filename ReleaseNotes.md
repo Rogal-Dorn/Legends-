@@ -6512,7 +6512,7 @@ Removes darkened equipment on human enemies
 Cheer on range reduced by 2 (from 1-3 to 1), now costs 30 fatigue (from 5), action point cost raised from 1 to 4.
 Inspire range increased from 1-3 to 1-4.
 
-``Luft's Rationale; cheer on was made to be overpowered by design last patch to test the waters of how flexible people were to more minor skills if the reward was great enough. Cheer on now works as a more localised inspire, having less range and greater fatigue cost but providing a better short term benefit than inspire does. Inspire costs almost all of your AP, but provides a better benefit for longer battles due to having less fatigue cost.
+```Luft's Rationale; cheer on was made to be overpowered by design last patch to test the waters of how flexible people were to more minor skills if the reward was great enough. Cheer on now works as a more localised inspire, having less range and greater fatigue cost but providing a better short term benefit than inspire does. Inspire costs almost all of your AP, but provides a better benefit for longer battles due to having less fatigue cost.
 Inventor is now classified as a lowborn.```
 
 'Hate entity' traits now provide +10 resolve, +5% melee and +5% ranged skill. Likewise, 'Fear entity' traits do the reverse, providing -10 resolve, -5% melee skill and -5% ranged skill.
@@ -6529,3 +6529,5 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 
 
 ## 15.0.2.4
+- Fixed Blacksmith hammers having slightly more armor penetration than shown in the weapon's tooltip.
+- Fixed Named Blacksmith hammers having significantly less armor penetration than shown in the weapon's tooltip.
