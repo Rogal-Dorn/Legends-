@@ -69,9 +69,12 @@ this.militia <- this.inherit("scripts/entity/tactical/human", {
 			}
 			else if (r == 5)
 			{
-				this.m.Items.equip(this.new("scripts/items/weapons/legend_wooden_spear"));
+				this.m.Items.equip(this.new("scripts/items/weapons/legend_saw"));
 			}
-
+			// else if (r == 6)
+			// {
+			// 	this.m.Items.equip(this.new("scripts/items/weapons/legend_sickle")); // Unsure about this
+			// }
 
 			local r = this.Math.rand(1, 4);
 
