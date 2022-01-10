@@ -1773,14 +1773,17 @@ this.asset_manager <- {
 		}
 	}
 
-	function updateLook( _updateTo = -1 )
+	function updateLook( _updateTo = -1 ) // Will check any origin for update look.
 	{
-		if (_updateTo != -1)
-		{
-			this.m.Look = _updateTo
-		}
+	    if (_updateTo != -1)
+	    {
+	        this.m.Look = _updateTo
+	    }
 
-		this.World.State.getPlayer().setBaseImage(this.m.Look);
+	    this.World.State.getPlayer().setBaseImage(this.m.Look);
+	    if ("updateLook" in this.World.Assets.getOrigin()){
+	         this.World.Assets.getOrigin().updateLook();
+	    }
 	}
 
 	function saveEquipment()
