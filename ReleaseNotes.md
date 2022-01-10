@@ -6537,7 +6537,7 @@ Patched a critical issue caused by stash space modifications that would prevent 
 Fixed a bug where the Nun from the Inquisition origin would get a perk every 5 levels after 11, not 2 as she should do.
 Preserver from the Cabal origin no longer spawns as male both in art and base ID.
 Prosthetic limbs gained via an inventor are removed from a bro when they drink the water of life, allowing them to no longer suffer the negative effects of their prosthetic(s).
-Penance now works as intended and doesn't cause crashes (thanks Zdzislaw)
+Penance now works as intended and doesn't cause crashes (thanks Zdzislaw).
 
 **Balance**
 Men at arms now have marginally better stats.
@@ -6545,6 +6545,7 @@ Brothers with the scholar perk can now find 10% more loot after battle. Stacks a
 Push forward now grants +10 melee skill, +5 resolve and +3 melee defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies within 4 tiles. Cost decreased from 6 AP to 5 AP.
 Favoured enemy: swordmaster event tweaks; event cooldown reduced from 60 days to 45 days. beforehand you had to be 10 tiles or more from a settlement for this event to trigger, it is now 8. The brother with this perk must be level 10 or higher to trigger this event now.
+NPC militia no longer can spawn with a wooden stick. Instead they can spawn with a saw.
 
 Inventor's prosthetics now are more balanced when it comes to cost, previously they were all 1000 gold and 20 tools each, with a cooldown of 30 days. Now they are;
 ```
