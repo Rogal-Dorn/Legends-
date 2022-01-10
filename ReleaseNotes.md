@@ -6584,6 +6584,7 @@ The slingshot is a short ranged weapon that does less damage than the sling, but
 **For modders**
 Slingshots do not have a working AI package yet. I tried to get it working but encountered a few issues with it. Please DM me if you'd like the error logs of these tests - Luft.
 For now, slingshots should NOT be given to the AI.
+Asset_manager's function updateLook now check all origins for updateLook. This means updateLook can be used in a file without needing custom brushes after camping (Thanks to Taro).
 
 **Misc.**
 Inventor prosthetic events now have new event text.
