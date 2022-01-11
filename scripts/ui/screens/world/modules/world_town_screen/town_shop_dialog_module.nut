@@ -229,15 +229,6 @@ this.town_shop_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 					this.World.Assets.addMoney(removedItem.getSellPrice());
 					shopStash.add(removedItem);
 					removedItem.setSold(true);
-
-					if (removedItem.isItemType(this.Const.Items.ItemType.TradeGood))
-					{
-
-						if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
-						{
-							this.m.Parent.m.Town.setResources(this.m.Parent.m.Town.getResources() + sourceItem.item.getResourceValue());
-						}
-					}
 				}
 			}
 
