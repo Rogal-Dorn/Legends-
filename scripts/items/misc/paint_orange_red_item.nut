@@ -16,4 +16,14 @@ this.paint_orange_red_item <- this.inherit("scripts/items/item", {
 		this.m.ResourceValue = 2;
 	}
 
+	function onSerialize( _out )
+	{
+		this.item.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.item.onDeserialize(_in);
+	}
+	
 });
