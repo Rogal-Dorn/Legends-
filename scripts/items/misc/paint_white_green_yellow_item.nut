@@ -15,5 +15,14 @@ this.paint_white_green_yellow_item <- this.inherit("scripts/items/trade/trading_
 		this.m.Value = 520;
 		this.m.ResourceValue = 2;
 	}
+	function onSerialize( _out )
+	{
+		this.item.onSerialize(_out);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.item.onDeserialize(_in);
+	}
 
 });
