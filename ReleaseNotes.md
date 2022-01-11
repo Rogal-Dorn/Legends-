@@ -6545,6 +6545,8 @@ Preserver from the Cabal origin no longer spawns as male both in art and base ID
 'Meat hacker' Orc weapon no longer tagged as a two handed weapon - is now tagged as one handed like it should be.
 Prosthetic limbs gained via an inventor are removed from a bro when they drink the water of life, allowing them to no longer suffer the negative effects of their prosthetic(s).
 Penance now works as intended and doesn't cause crashes (thanks Zdzislaw).
+Fixed Blacksmith hammers having slightly more armor penetration than shown in the weapon's tooltip.
+Fixed Named Blacksmith hammers having significantly less armor penetration than shown in the weapon's tooltip.
 
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep. - Luft
 Gathering Tent shouldn't just hand you free raw wood anymore, as we've recently added protection to your battle siblings woods.
@@ -6561,6 +6563,7 @@ Incoming now grants +5 ranged skill, +5 resolve and +10 ranged defence to allies
 Favoured enemy: swordmaster event tweaks; event cooldown reduced from 60 days to 45 days. beforehand you had to be 10 tiles or more from a settlement for this event to trigger, it is now 8. The brother with this perk must be level 10 or higher to trigger this event now.
 NPC militia no longer can spawn with a wooden stick. Instead they can spawn with a saw.
 Bandit and nomad spawns rebalanced again, this time using a differant technique. Please report feedback on balance.
+Blacksmith stats adjusted: Lost capability as a fighter, gained more stamina.
 
 Inventor's prosthetics now are more balanced when it comes to cost, previously they were all 1000 gold and 20 tools each, with a cooldown of 30 days. Now they are;
 ```
@@ -6605,9 +6608,3 @@ Paints have new description text now.
 Added in one new tip of the day.
 The legendary contracts has a significantly lowered score (Should pick them WAY less now)
   -> If it's still too common let us know
-
-- Fixed Blacksmith hammers having slightly more armor penetration than shown in the weapon's tooltip.
-- Fixed Named Blacksmith hammers having significantly less armor penetration than shown in the weapon's tooltip.
-
-**Balance**
-- Blacksmith stats adjusted: Lost capability as a fighter, gained more stamina.
