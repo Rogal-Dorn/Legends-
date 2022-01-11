@@ -6533,6 +6533,8 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 Slayers now have 30% chance for a Kite Shield, 30% Heater Shield, 10% Net, 30% No secondary item
 Footmen now don't have nets at all, 1/3 chance for each kind of basic shield (Kite/Heater/Wooden)
 
+- Takes free companies out for a bit, they'll still exist if they spawned in your world but I have some checklist of stuff I need to work on before these guys are ready I think. Happy with the general proof of concept so far.
+
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep. - Luft

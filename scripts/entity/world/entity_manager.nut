@@ -467,12 +467,12 @@ this.entity_manager <- {
 
 		local days = this.World.getTime().Days;
 		local companies = 0;
-		if (days > 0)
-			companies++;
-		if (days > 100)
-			companies++;
-		if (days > 175)
-			companies++;
+		// if (days > 0)
+		// 	companies++;
+		// if (days > 100)
+		// 	companies++;
+		// if (days > 175)
+		// 	companies++;
 
 		if (companies == 0)
 			return;
