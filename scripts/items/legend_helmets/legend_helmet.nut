@@ -440,14 +440,12 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		{
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
-
+		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		if (oldIndex != null) oldIndex = oldIndex.index
+		local oldItem;
 		if (this.m.Upgrades[slot] != null)
 		{
-			local item = this.removeUpgrade(slot);
-			if (!item.isDestroyedOnRemove())
-			{
-				this.World.Assets.getStash().add(item);
-			}
+			oldItem = this.removeUpgrade(slot);
 		}
 
 		this.m.Upgrades[slot] = _upgrade;
@@ -458,7 +456,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			if (slot != this.Const.Items.HelmetUpgrades.ExtraVanity) this.m.Upgrades[slot].onEquip();
 			this.getContainer().getActor().getSkills().update();
 		}
-		return true;
+		//switch places with other upgrade item
+		//switch places with other upgrade item
+		local result = {
+			item = null,
+			index = oldIndex
+		}
+		if (oldItem != null && !oldItem.isDestroyedOnRemove())
+		{
+			result.item = oldItem 
+		}
+		return result;
 	}
 
 	function removeUpgrade( _slot )
