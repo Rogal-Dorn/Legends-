@@ -6547,6 +6547,7 @@ Prosthetic limbs gained via an inventor are removed from a bro when they drink t
 Penance now works as intended and doesn't cause crashes (thanks Zdzislaw).
 Fixed Blacksmith hammers having slightly more armor penetration than shown in the weapon's tooltip.
 Fixed Named Blacksmith hammers having significantly less armor penetration than shown in the weapon's tooltip.
+Fixed town wealth exploit with buyback.
 
 Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep. - Luft
 Gathering Tent shouldn't just hand you free raw wood anymore, as we've recently added protection to your battle siblings woods.
