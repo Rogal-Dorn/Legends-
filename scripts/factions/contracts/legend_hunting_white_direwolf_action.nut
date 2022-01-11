@@ -53,7 +53,7 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 			this.Const.World.LegendaryContract.WhiteWolf += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()

@@ -6529,6 +6529,12 @@ The hidden peasant trait used by miltia now removes the fear of nobles trait usi
 
 
 ## 15.0.2.4
+**Free Company**
+Slayers now have 30% chance for a Kite Shield, 30% Heater Shield, 10% Net, 30% No secondary item
+Footmen now don't have nets at all, 1/3 chance for each kind of basic shield (Kite/Heater/Wooden)
+
+- Takes free companies out for a bit, they'll still exist if they spawned in your world but I have some checklist of stuff I need to work on before these guys are ready I think. Happy with the general proof of concept so far.
+
 **Fixes**
 Fuck it. Militia now should defnitely have blue armbands for men at arms because I added them in 3 differant places this time. Im done being merciful.
 Noble's cousin now has the same excluded trait rules as the noble commander, this will also stop them spawning with loyal and disloyal traits at the same time. 
@@ -6540,6 +6546,13 @@ Preserver from the Cabal origin no longer spawns as male both in art and base ID
 Prosthetic limbs gained via an inventor are removed from a bro when they drink the water of life, allowing them to no longer suffer the negative effects of their prosthetic(s).
 Penance now works as intended and doesn't cause crashes (thanks Zdzislaw).
 
+Minor fixes for armours that were causing hangs when fighting free company or bandits. If you don't remove your submod for this when updating to this build I will fly to your country, not enjoy your food and then shit on your doorstep. - Luft
+Gathering Tent shouldn't just hand you free raw wood anymore, as we've recently added protection to your battle siblings woods.
+  (The actual formulas for calculating Quality Wood/Gem drops are the following)
+  -500.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100) :: after this procs if you have a collective level of 11 for Woodsmen/Miners it guarantees a Wood/Gem, otherwise it's a 1/3 chance
+  (Actual formula for calculating Raw Wood/Peat Bricks)
+  -300.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100); :: Same 1/3 as above but it requires a collective level of 6 for a guaranteed one
+  
 **Balance**
 Men at arms now have marginally better stats.
 Brothers with the scholar perk can now find 10% more loot after battle. Stacks additively.
@@ -6590,3 +6603,6 @@ Asset_manager's function updateLook now check all origins for updateLook. This m
 Inventor prosthetic events now have new event text.
 Paints have new description text now.
 Added in one new tip of the day.
+The legendary contracts has a significantly lowered score (Should pick them WAY less now)
+  -> If it's still too common let us know
+

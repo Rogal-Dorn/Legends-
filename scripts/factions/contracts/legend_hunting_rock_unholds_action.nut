@@ -66,7 +66,7 @@ this.legend_hunting_rock_unholds_action <- this.inherit("scripts/factions/factio
 			this.Const.World.LegendaryContract.RockUnhold += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()

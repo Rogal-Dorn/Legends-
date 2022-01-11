@@ -49,7 +49,7 @@ this.legend_hunting_redback_webknechts_action <- this.inherit("scripts/factions/
 			this.Const.World.LegendaryContract.RedSpider += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()
