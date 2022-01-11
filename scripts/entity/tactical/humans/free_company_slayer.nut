@@ -73,16 +73,16 @@ this.free_company_slayer <- this.inherit("scripts/entity/tactical/free_company_a
 
 			
 		r = this.Math.rand(1, 100);
-		if (r <= 40)
+		if (r <= 30)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
 			
 		}
-		else if (r <= 80)
+		else if (r <= 60)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/heater_shield"));
 		}
-		else
+		else if (r <= 70)
 		{
 			this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 		}

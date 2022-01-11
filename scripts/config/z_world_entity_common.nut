@@ -768,6 +768,15 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
          {
              helmet.setUpgrade(van)
          }
+		
+		if ("Vanity2" in set)
+		{
+			local van2 = this.Const.World.Common.pickLegendHelmet(set.Vanity2);
+			if (van2 != null)
+			{
+				helmet.setUpgrade(van2)
+			}
+		}
 	}
 
 	return helmet;

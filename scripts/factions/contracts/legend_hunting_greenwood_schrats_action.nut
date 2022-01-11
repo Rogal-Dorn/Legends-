@@ -54,7 +54,7 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 			this.Const.World.LegendaryContract.GreenSchrat += 1;
 		}
 
-		this.m.Score = 5;
+		this.m.Score = 1;
 	}
 
 	function onClear()
