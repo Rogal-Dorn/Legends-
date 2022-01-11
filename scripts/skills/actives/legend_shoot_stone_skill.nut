@@ -1,4 +1,4 @@
-this.shoot_stone_skill <- this.inherit("scripts/skills/skill", {
+this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = 0,
 		AdditionalHitChance = 0
