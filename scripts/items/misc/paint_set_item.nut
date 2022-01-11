@@ -1,4 +1,4 @@
-this.paint_set_item <- this.inherit("scripts/items/item", {
+this.paint_set_item <- this.inherit("scripts/items/trade/trading_good_item", {
 	m = {},
 	function create()
 	{

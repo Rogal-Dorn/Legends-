@@ -33,7 +33,7 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
-		this.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue armband
+		//this.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue armband (causes crashes if put here)
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
