@@ -6608,3 +6608,6 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 
 - Fixed Blacksmith hammers having slightly more armor penetration than shown in the weapon's tooltip.
 - Fixed Named Blacksmith hammers having significantly less armor penetration than shown in the weapon's tooltip.
+
+**Balance**
+- Blacksmith stats adjusted: Lost capability as a fighter, gained more stamina.

@@ -87,27 +87,27 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				15
+				5,
+				5
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				10,
-				10
+				15,
+				20
 			],
 			MeleeSkill = [
-				5,
-				10
+				0,
+				3
 			],
 			RangedSkill = [
 				-10,
 				-10
 			],
 			MeleeDefense = [
-				5,
+				-5,
 				0
 			],
 			RangedDefense = [
@@ -115,8 +115,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				-5
 			],
 			Initiative = [
-				5,
-				5
+				0,
+				0
 			]
 		};
 		return c;
