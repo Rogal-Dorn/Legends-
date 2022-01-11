@@ -86,7 +86,7 @@ function getTooltip()
 			if (a.getFaction() == _user.getFaction())
 			{
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
-				a.setFatigue(this.Math.max(0, a.getFatigue() - 5));
+				//a.setFatigue(this.Math.max(0, a.getFatigue() - 5)); - Redundant?
 				this.spawnIcon(this.m.Overlay, a.getTile());
 			}
 		}
