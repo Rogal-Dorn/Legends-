@@ -51,7 +51,15 @@ return [
 		];
 	}
 
-
+	function onUpdate( _properties )
+	{
+		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
+		{
+			_properties.Vision += 1;
+			_properties.RangedSkillMult *= 1.15;
+			_properties.RangedDefenseMult *= 1.15;
+		}
+	}
 
 });
 
