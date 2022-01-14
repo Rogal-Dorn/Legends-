@@ -1158,6 +1158,9 @@ this.character_screen <- {
 						this.World.Assets.getStash().insert(result.item, result.index);
 					}
 				}
+				else{
+					data.stash.removeByIndex(data.sourceIndex);
+				}
 				data.inventory.getActor().getSkills().update();
 				return this.UIDataHelper.convertStashAndEntityToUIData(data.entity, null, false, this.m.InventoryFilter);
 			}
