@@ -37,7 +37,7 @@ this.schrat_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake")
+		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.legend_cascade")
 		{
 			_properties.DamageReceivedRegularMult *= 0.25;
 		}
