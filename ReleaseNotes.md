@@ -6616,3 +6616,4 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 
 **Fixes**
 Drill sergeant follower (training dummies) from the retinue no longer accepts temporary injuries on the listed backgrounds to buy the retinue.
+Bandit rabble should now spawn in bandit groups.
