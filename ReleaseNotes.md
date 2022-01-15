@@ -6620,3 +6620,6 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Bandit rabble should now spawn in bandit groups.
 - 'Schrat racial' now takes into account the ranged cascade skill.
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
+
+## 15.0.2.6
+Southern slaves rebalanced slightly to be more in-line with their rabble cousins
