@@ -28,12 +28,12 @@ gt.Const.World.Spawn.BanditRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					// MaxR = 0.25 * 420,
-					MaxR = 115,
+					MaxR = 110,
 					Cost = 4
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 75,
+					MinR = 180,
 					Cost = 8
 				},
 				{
@@ -138,12 +138,12 @@ gt.Const.World.Spawn.BanditScouts <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 115,
+					MaxR = 80,
 					Cost = 4
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 80,					
+					MinR = 115,					
 					Cost = 8
 				},
 				{
@@ -410,12 +410,12 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 115,
+					MaxR = 70,
 					Cost = 4
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
-					MinR = 70,					
+					MinR = 115,					
 					Cost = 8
 				},
 				{
