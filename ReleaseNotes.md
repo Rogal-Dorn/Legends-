@@ -6612,5 +6612,7 @@ Added in one new tip of the day.
 The legendary contracts has a significantly lowered score (Should pick them WAY less now)
   -> If it's still too common let us know
 
-## 15.0.2.4
+## 15.0.2.5
 - Champion Orc Behemoths no longer have adrenaline.
+- Consumable items can no longer be used infinitely.
+- Doublestrike should have its own effect icon now.
