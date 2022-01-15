@@ -298,7 +298,6 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_adrenalin"));  // idk what perks to add
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 		return true;
 	}

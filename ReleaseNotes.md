@@ -6611,3 +6611,6 @@ Paints have new description text now.
 Added in one new tip of the day.
 The legendary contracts has a significantly lowered score (Should pick them WAY less now)
   -> If it's still too common let us know
+
+## 15.0.2.4
+- Champion Orc Behemoths no longer have adrenaline.
