@@ -15,7 +15,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Requirements = [
 			{
 				IsSatisfied = false,
-				Text = "Have a Retired Soldier, Swordmaster, Sellsword, or Gladiator with an injury in your company"
+				Text = "Have a Retired Soldier, Swordmaster, Sellsword, or Gladiator with a permanent injury in your company"
 			}
 		];
 		this.m.RequiredSkills = [
@@ -50,7 +50,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 				this.m.LinkedBro = bro;
 				break;
 			}
-			else if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) || bro.getSkills().hasSkillOfType(this.Const.SkillType.Injury)))
+			else if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury))
 			{
 				this.m.LinkedBro = bro;
 				bro.getFlags().add("DrillSergeantFollower");
