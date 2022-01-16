@@ -6622,4 +6622,6 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
 
 ## 15.0.2.6
-Southern slaves rebalanced slightly to be more in-line with their rabble cousins
+**Fixes**
+Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
+Alps now have resistance to the ranged cascade skill in their racial files.
