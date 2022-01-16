@@ -6630,3 +6630,4 @@ Fixed an issue with drill sergeant follower (training dummies) in the retinue gi
 **Balance**
 Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be a warlord that spawns and no more. This warlord will ahve a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
 Noble house slingers have had their stats adjusted and sling damage perk removed. This should hopefully make them less frustrating to fight.
+Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
