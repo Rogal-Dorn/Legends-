@@ -6620,3 +6620,17 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Bandit rabble should now spawn in bandit groups.
 - 'Schrat racial' now takes into account the ranged cascade skill.
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
+
+
+#poss troupe changes
+Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
+Jugglers have slightly better ranged and lower bravery, are gauranteed dagger tree instead of slings. starts in troupe with javelins
+Drums and lute s hit for less but cost less AP and can be used one handed 
+Named lute cost, AP and damage reduced 
+Drums  count as a staff isntead of a mace, lutes are still maces, so your choice of instrument makes a bigger difference
+Bardbarian drums now drop as loot and are two handed drums. beware, they can also be used against you. 
+Troupe has a chance to find another illusionist at a fair 
+illusionist  Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice Revoltecfatigue reduced from 25 to 15 
+Lute Solo max damage reduced from 20 to 10 
+
+

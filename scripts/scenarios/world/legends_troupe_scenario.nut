@@ -4,7 +4,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.m.ID = "scenario.legends_troupe";
 		this.m.Name = "The Troupe";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_26.png[/img][/p]The life of an artist is not an easy one, misunderstood and under appreciated. Perhaps performers will have more luck together, find and audience, travel the world, or at least stop having things thrown at you. \n\n[color=#bcad8c]Acrobatics:[/color] Anyone you hire gains the Leap ability \n[color=#bcad8c]Exposure:[/color] You will encounter more performers, and they will be cheaper to hire.\n[color=#bcad8c]Busking:[/color] You gain 10 crowns each day for each member of the troupe.";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_26.png[/img][/p]The life of an artist is not an easy one, misunderstood and under appreciated. Perhaps performers will have more luck together, find and audience, travel the world, or at least stop having things thrown at you. \n\n[color=#bcad8c]Acrobatics:[/color] Anyone you hire gains the Leap ability \n[color=#bcad8c]Exposure:[/color] You will encounter more performers, and they will be cheaper to hire.\n[color=#bcad8c]Busking:[/color] You gain 10 crowns each day for each member of the troupe. Tavern rumors and drinks are cheaper.";
 		this.m.Difficulty = 3;
 		this.m.Order = 290;
 		this.m.IsFixedLook = true;
@@ -34,23 +34,21 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.PerkPoints = 2;
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
-		bros[0].setPlaceInFormation(3);
+		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_entice"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "jesters_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/legend_staff"));
+		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
 		bros[1].setStartValuesEx([
-			"female_minstrel_background"
+			"minstrel_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% worked providing entertainment at inns around the country, but the bar fights and road bandits make it no life for a solo artist. Joining with others was for safety as much as the show.}";
-		bros[1].setPlaceInFormation(4);
-
-		bros[1].setVeteranPerks(2);
+		bros[1].setPlaceInFormation(12);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_life"));
 		
@@ -61,11 +59,12 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
 		bros[2].setStartValuesEx([
-			"minstrel_background"
+			"female_minstrel_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "{%name% has been in the court of a local noble for years, but the same audience every night grows tiresome. It was time to find a band, hit the road and find some new audiences for their art.}";
 		bros[2].improveMood(1.0, "Got the band back together");
-		bros[2].setPlaceInFormation(12);
+		bros[2].setPlaceInFormation(4);
+		bros[1].setVeteranPerks(2);
 		bros[2].m.PerkPoints = 3;
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
@@ -93,11 +92,11 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_padded_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
+		items.equip(this.new("scripts/items/weapons/greenskins/orc_javelin"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_pie_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_drum"));
-		this.World.Assets.getStash().add(this.new("scripts/items/weapons/lute"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/greenskins/goblin_spiked_balls"));
 	}
 
 	function onSpawnPlayer()

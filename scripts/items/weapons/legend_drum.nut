@@ -11,21 +11,20 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.IconLarge = "weapons/melee/drum_01.png";
 		this.m.Icon = "weapons/melee/drum_01_70x70.png";
 		this.m.BreakingSound = "sounds/combat/lute_break_01.wav";
-		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Mace;
+		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Staff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_drum";
-		this.m.Value = 300;
+		this.m.Value = 100;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
 		this.m.StaminaModifier = -4;
-		this.m.RegularDamage = 20;
-		this.m.RegularDamageMax = 40;
+		this.m.RegularDamage = 5;
+		this.m.RegularDamageMax = 10;
 		this.m.ArmorDamageMult = 0.2;
 		this.m.DirectDamageMult = 0.5;
 	}
@@ -33,7 +32,7 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/bash"));
+		this.addSkill(this.new("scripts/skills/actives/drum_bash"));
 		local s = this.new("scripts/skills/actives/knock_out");
 		this.addSkill(s);
 	}

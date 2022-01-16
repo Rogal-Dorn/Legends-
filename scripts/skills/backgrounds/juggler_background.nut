@@ -47,7 +47,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.StavesTree
 			],
 			Defense = [
@@ -95,8 +95,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				-5
 			],
 			Bravery = [
-				0,
-				0
+				-3,
+				-3
 			],
 			Stamina = [
 				0,
@@ -107,8 +107,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				5
 			],
 			RangedSkill = [
-				3,
-				9
+				7,
+				12
 			],
 			MeleeDefense = [
 				0,
