@@ -2332,7 +2332,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistHammerSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] armor damage while using a Blacksmiths Hammer. 25% of this skill applies to other One Handed Hammers.",
 	LegendSpecialistKnifeDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a Knife or Shiv. 35% of this skill applies to other daggers.",
 	LegendSpecialistKnifeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] armor penetration while using a Knife or Shiv. 25% of this skill applies to other daggers.",
-	LegendSpecialistLuteDamage = "Deal an extra [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] damage while using a musical instrument.",
+	LegendSpecialistLuteDamage = "Deal an extra [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] damage while using a musical instrument.",
 	LegendSpecialistLuteSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee skill and defense while using a musical instrument.",
 	LegendSpecialistMilitiaDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a militia spear, ancient spear or wooden spear. Only 35% of this skill applies to other spears.",
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears.",
