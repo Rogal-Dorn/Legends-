@@ -6625,3 +6625,4 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 **Fixes**
 Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
 Alps now have resistance to the ranged cascade skill in their racial files.
+Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
