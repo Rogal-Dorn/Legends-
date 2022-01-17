@@ -6628,6 +6628,26 @@ Alps now have resistance to the ranged cascade skill in their racial files.
 Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
 
 **Balance**
-Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be a warlord that spawns and no more. This warlord will ahve a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
-Noble house slingers have had their stats adjusted and sling damage perk removed. This should hopefully make them less frustrating to fight.
+Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
+Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
 Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
+
+Bandit Warlord changes;
+```
+Warlords now have 'Rally the troops', 'True believer', 'Lone wolf', 'Composure', 'Underdog' and 'Full force' by default.
+Warlords get 'Battleheart' on legendary combat difficulty.
+Xp reward upped from 800 to 1000.
+Action points increased from 9 to 11.
+Hitpoints from 200 to 225.
+Resolve from 140 to 180.
+Melee skill from 110 to 135.
+Melee defence from 30 to 45.
+Ranged defence dropped from 30 to 25.
+Initiative from 170 to 185.
+Fatigue recovery rate from 25 per turn to 30 per turn.
+
+To compensate, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
+Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
+```
+
+

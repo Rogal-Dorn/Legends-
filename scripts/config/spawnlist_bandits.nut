@@ -325,13 +325,13 @@ gt.Const.World.Spawn.BanditRaiders <-
 					Type = this.Const.World.Spawn.Troops.BanditLeader,
 					Cost = 40,
 					Roll = true
-				},
-				{
-					MinR = 600,
-					Type = this.Const.World.Spawn.Troops.BanditWarlord,
-					Cost = 80,
-					Roll = true
 				}
+				// {
+				// 	MinR = 600,
+				// 	Type = this.Const.World.Spawn.Troops.BanditWarlord,
+				// 	Cost = 125,
+				// 	Roll = true
+				// }
 			]
 		},
 		{
@@ -471,7 +471,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 5,
+			Weight = 4,
 			MinR = 500,
 			Types =
 			[
@@ -484,7 +484,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 				{
 					MinR = 600,
 					Type = this.Const.World.Spawn.Troops.BanditWarlord,
-					Cost = 50,
+					Cost = 100,
 					Roll = true
 				}
 			]

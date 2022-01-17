@@ -201,24 +201,24 @@ gt.Const.Tactical.Actor.BanditVeteran <- {
 	],
 	FatigueRecoveryRate = 20
 };
-gt.Const.Tactical.Actor.BanditWarlord <- {
-	XP = 800,
-	ActionPoints = 9,
-	Hitpoints = 200,
-	Bravery = 140,
+gt.Const.Tactical.Actor.BanditWarlord <- { // You contracted in the wrong neighbourhood
+	XP = 1000,
+	ActionPoints = 11,
+	Hitpoints = 225,
+	Bravery = 180,
 	Stamina = 180,
-	MeleeSkill = 110,
+	MeleeSkill = 135,
 	RangedSkill = 90,
-	MeleeDefense = 30,
-	RangedDefense = 30,
-	Initiative = 170,
+	MeleeDefense = 45,
+	RangedDefense = 25,
+	Initiative = 185,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.BanditOutrider <- {
 	XP = 300,
