@@ -8,6 +8,7 @@
 	this.Const.LegendMod.hookAISplitShield();
 	this.Const.LegendMod.hookAlpRacial();
 	this.Const.LegendMod.hookBehavior();
+	this.Const.LegendMod.hookCharacterBackground();
 	this.Const.LegendMod.hookCombatManager();
 	this.Const.LegendMod.hookContract();
 	this.Const.LegendMod.hookFactionAction();
