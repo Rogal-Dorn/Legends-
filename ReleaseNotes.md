@@ -6632,6 +6632,7 @@ Fixed legend chain skills (flail and hook) being 4 range instead of 3.
 Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
 Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
 Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
+Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
 
 Bandit Warlord changes;
 ```
