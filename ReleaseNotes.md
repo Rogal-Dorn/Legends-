@@ -6627,6 +6627,7 @@ Southern slaves rebalanced slightly to be more in-line with their rabble cousins
 Alps now have resistance to the ranged cascade skill in their racial files.
 Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
 Fixed legend chain skills (flail and hook) being 4 range instead of 3.
+Prayer of faith perk now harms normal cultists and converted cultists as intended.
 
 **Balance**
 Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
