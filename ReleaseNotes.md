@@ -6634,6 +6634,7 @@ Brigand army contract has been overhauled somewhat. The payout should now be mor
 Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
 Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
 Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
+Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
 
 Bandit Warlord changes;
 ```
