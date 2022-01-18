@@ -6652,4 +6652,6 @@ To compensate, Bandit Warlords now only spawn in forts and other garrisons, not 
 Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
 ```
 
+**Typos**
+Corrected the language of the parrying dagger description somewhat.
 
