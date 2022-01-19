@@ -6658,3 +6658,4 @@ Overall, Warlords are now stronger and more independant entities that act as a h
 Corrected the language of the parrying dagger description somewhat.
 Made the 'Avatar' trait more obvious in its effects via tooltip.
 Prayer of faith perk now states that it hurts cultists rather than "not working" on them.
+Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
