@@ -76,7 +76,7 @@ gt.Const.World.Spawn.Ghouls <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Ghoul,
-					Cost = 19
+					Cost = 15 // Was 19
 				}
 			]
 		},
@@ -85,9 +85,9 @@ gt.Const.World.Spawn.Ghouls <-
 			MinR = 0.60 * 535,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.GhoulHIGH,
-					Cost = 35,
-					Roll = true
+					Type = this.Const.World.Spawn.Troops.GhoulHIGH, // (!!!) test to limit high tier ghoul spawns until much later, change done 19/1/22 - Luft.
+					Cost = 50, // Was 35
+					//Roll = true // Was true
 				}
 			]
 		}
