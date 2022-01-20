@@ -3,6 +3,7 @@ this.perk_legend_tumble <- this.inherit("scripts/skills/skill", {
 		Skills = [
 			"actives.lunge",
 			"actives.footwork",
+			"actives.rotation",
 			"actives.legend_unarmed_lunge",
 			"actives.legend_tumble",
 			"actives.legend_leap",
