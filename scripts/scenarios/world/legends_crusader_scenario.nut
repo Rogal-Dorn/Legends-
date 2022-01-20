@@ -189,9 +189,8 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (_list.len() < 5)
 		{
 			local r;

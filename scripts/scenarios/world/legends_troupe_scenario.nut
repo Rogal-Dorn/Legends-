@@ -195,9 +195,8 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendLeap);
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (_list.len() < 5)
 		{
 			local r;

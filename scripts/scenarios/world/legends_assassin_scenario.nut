@@ -123,9 +123,8 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		return false;
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		local r;
 		r = this.Math.rand(0, 99);
 
