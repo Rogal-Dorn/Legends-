@@ -223,8 +223,9 @@ this.alchemist_building <- this.inherit("scripts/entity/world/settlements/buildi
 		this.fillStash(list, this.m.Stash, 1.0, false);
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_list.push("legend_alchemist_background");
 		_list.push("legend_alchemist_background");
 	}

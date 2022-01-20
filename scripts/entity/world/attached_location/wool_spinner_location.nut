@@ -15,8 +15,9 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("trade/cloth_rolls_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

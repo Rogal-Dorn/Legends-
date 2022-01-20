@@ -184,8 +184,9 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		return false;
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 
 		local r;
 		r = this.Math.rand(0, 19);

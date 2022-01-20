@@ -220,8 +220,9 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 	{
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 	}
 
 	function onUpdateStablesList ( _list )

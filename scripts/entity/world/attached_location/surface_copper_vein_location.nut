@@ -63,8 +63,9 @@ this.surface_copper_vein_location <- this.inherit("scripts/entity/world/attached
 		_list.push("trade/copper_ingots_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

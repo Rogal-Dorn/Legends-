@@ -9,8 +9,9 @@ this.temple_oriental_building <- this.inherit("scripts/entity/world/settlements/
 		this.m.SoundsAtNight = [];
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_list.push("cripple_southern_background");
 		_list.push("legend_dervish_background");
 	}

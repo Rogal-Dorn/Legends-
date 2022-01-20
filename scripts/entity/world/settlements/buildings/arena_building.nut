@@ -117,8 +117,9 @@ this.arena_building <- this.inherit("scripts/entity/world/settlements/buildings/
 	{
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_list.push("gladiator_background");
 		_list.push("gladiator_background");
 		_list.push("gladiator_background");

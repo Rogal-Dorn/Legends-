@@ -16,8 +16,9 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("trade/peat_bricks_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

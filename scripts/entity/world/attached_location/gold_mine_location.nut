@@ -64,8 +64,9 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("trade/gold_ingots_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

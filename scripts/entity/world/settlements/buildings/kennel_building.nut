@@ -255,8 +255,9 @@ this.kennel_building <- this.inherit("scripts/entity/world/settlements/buildings
 		this.fillStash(list, this.m.Stash, 0.75, false);
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_list.push("houndmaster_background");
 		_list.push("houndmaster_background");
 	}
