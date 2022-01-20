@@ -259,7 +259,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		this.starting_scenario.onInit();
 	}
 
-	function onUpdateDraftList( _list, _gender ) //unique backgrounds
+	function onUpdateDraftList( _list, _gender = null ) //unique backgrounds
 	{
 		local r;
 		r = this.Math.rand(0, 3);
