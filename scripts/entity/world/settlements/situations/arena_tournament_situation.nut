@@ -35,8 +35,10 @@ this.arena_tournament_situation <- this.inherit("scripts/entity/world/settlement
 	{
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("gladiator_background");
 		_draftList.push("gladiator_background");
 		_draftList.push("gladiator_background");

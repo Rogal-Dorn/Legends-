@@ -125,8 +125,9 @@ this.legends_seer_scenario <- this.inherit("scripts/scenarios/world/starting_sce
 		return false;
 	}
 
-	function onUpdateDraftList( _list, _gender )
+	function onUpdateDraftList( _list, _gender = null )
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (_list.len() < 10)
 		{
 			return;
