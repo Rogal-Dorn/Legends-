@@ -4,7 +4,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_leap";
 		this.m.Name = "Leap";
-		this.m.Description = "Learning to jump extended distances allows escape from usually impossible situations";
+		this.m.Description = "Learning to jump extended distances allows escape from usually impossible situations. Fatigue cost is 25 plus the weight of your armor. Range can be increased with Staff Mastery and a staff. ";
 		this.m.Icon = "skills/leap_square.png";
 		this.m.IconDisabled = "skills/leap_square_bw.png";
 		this.m.Overlay = "horse_pirouette";
@@ -23,7 +23,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsDisengagement = true;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 50;
+		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 2;
@@ -31,24 +31,18 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
+		local ret = this.getDefaultTooltip();
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (item.isWeaponType(this.Const.Items.WeaponType.Staff, true) || item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff, true))
+		{	
+			ret.push({
+				id = 6,
 				type = "text",
-				text = this.getCostString()
-			}
-		];
-
+				icon = "ui/icons/special.png",
+				text = "Leap range inreased by 1 tile while wielding a staff and having staff mastery"
+			});
+		}
 
 		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
@@ -61,6 +55,40 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		}
 
 		return ret;
+	}
+	
+	function getModifier()
+	{
+		local fat = 0;
+		local body = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local head = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+
+		if (body != null)
+		{
+			fat = fat + body.getStaminaModifier();
+		}
+
+		if (head != null)
+		{
+			fat = fat + head.getStaminaModifier();
+		}
+		
+		fat = fat * -1;
+		
+		return fat;
+	}	
+	
+	function onAfterUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local fat = this.getModifier();
+		if (item.isWeaponType(this.Const.Items.WeaponType.Staff, true) || item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff, true))
+		{
+		this.m.MaxRange =  _properties.IsSpecializedInStaves ? 3 : 2;
+		}
+		this.m.FatigueCost = 25 + fat;
+		
 	}
 
 	function isUsable()

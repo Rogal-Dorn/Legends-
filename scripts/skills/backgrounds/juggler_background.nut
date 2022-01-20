@@ -91,20 +91,20 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Bravery = [
 				-3,
 				-3
 			],
 			Stamina = [
-				0,
-				0
+				15,
+				10
 			],
-			MeleeSkill = [
-				5,
-				5
+			MeleSkill = [
+				-3,
+				3
 			],
 			RangedSkill = [
 				7,

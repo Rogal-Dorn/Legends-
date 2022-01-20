@@ -5,7 +5,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		this.m.ID = "scenario.legends_troupe";
 		this.m.Name = "The Troupe";
 		this.m.Description = "[p=c][img]gfx/ui/events/event_26.png[/img][/p]The life of an artist is not an easy one, misunderstood and under appreciated. Perhaps performers will have more luck together, find and audience, travel the world, or at least stop having things thrown at you. \n\n[color=#bcad8c]Acrobatics:[/color] Anyone you hire gains the Leap ability \n[color=#bcad8c]Exposure:[/color] You will encounter more performers, and they will be cheaper to hire.\n[color=#bcad8c]Busking:[/color] You gain 10 crowns each day for each member of the troupe. Tavern rumors and drinks are cheaper.";
-		this.m.Difficulty = 3;
+		this.m.Difficulty = 2;
 		this.m.Order = 290;
 		this.m.IsFixedLook = true;
 	}
@@ -243,6 +243,11 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			{
 				_list.push("juggler_background");
 			}
+			r = this.Math.rand(0, 20);
+			if (r == 0)
+			{
+			_list.push("eunuch_background");
+			}
 			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
@@ -251,17 +256,17 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
-				_list.push("legend_diviner_background");
+				_list.push("belly_dancer_background");
 			}
 			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
-				_list.push("legend_entrancer_background");
+				_list.push("gambler_background");
 			}
 			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
-				_list.push("legend_spiritualist_background");
+				_list.push("legend_dervish_background");
 			}
 		}
 	}
