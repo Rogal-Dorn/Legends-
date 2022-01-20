@@ -15,9 +15,8 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 		_list.push("supplies/wine_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

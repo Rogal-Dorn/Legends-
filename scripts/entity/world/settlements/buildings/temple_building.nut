@@ -55,9 +55,8 @@ this.temple_building <- this.inherit("scripts/entity/world/settlements/buildings
 		this.m.SoundsAtNight = [];
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		_list.push("monk_background");
 		_list.push("cripple_background");
 	}

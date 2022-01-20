@@ -93,9 +93,8 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 		return true;
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

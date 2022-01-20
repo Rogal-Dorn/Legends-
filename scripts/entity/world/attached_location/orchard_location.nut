@@ -55,9 +55,8 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 		_list.push("supplies/dried_fruits_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

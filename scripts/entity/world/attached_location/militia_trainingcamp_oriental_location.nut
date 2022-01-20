@@ -116,9 +116,8 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		_list.push("supplies/ammo_small_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

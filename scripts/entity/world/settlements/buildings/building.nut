@@ -253,9 +253,8 @@ this.building <- {
 	{
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 	}
 
 	function onUpdateStablesList ( _list )

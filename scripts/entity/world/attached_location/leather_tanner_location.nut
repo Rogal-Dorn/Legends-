@@ -10,9 +10,8 @@ this.leather_tanner_location <- this.inherit("scripts/entity/world/attached_loca
 		this.m.SpriteDestroyed = "world_leather_tanner_01_ruins";
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

@@ -69,9 +69,8 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("supplies/ammo_small_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

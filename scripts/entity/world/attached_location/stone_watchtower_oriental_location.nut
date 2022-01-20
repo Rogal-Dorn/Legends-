@@ -61,9 +61,8 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 		return r;
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

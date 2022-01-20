@@ -1704,13 +1704,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		rosterMax = rosterMax + this.World.Assets.m.RosterSizeAdditionalMax;
 
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
-		local draftList = this.getDraftList();
+		local draftList;
+		draftList = this.getDraftList();
+		local isGenderEnabled = this.LegendsMod.Configs().LegendGenderEnabled();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
 			this.Math.seedRandom(this.m.RosterSeed); 
 
-			loc.onUpdateDraftList(draftList);
+			loc.onUpdateDraftList(draftList, isGenderEnabled);
 		}
 
 		foreach( b in this.m.Buildings )
@@ -1719,17 +1721,17 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 			if (b != null)
 			{
-				b.onUpdateDraftList(draftList);
+				b.onUpdateDraftList(draftList, isGenderEnabled);
 			}
 		}
 
 		foreach( s in this.m.Situations )
 		{
 			this.Math.seedRandom(this.m.RosterSeed); 
-			s.onUpdateDraftList(draftList);
+			s.onUpdateDraftList(draftList, isGenderEnabled);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList, isGenderEnabled);
 		
 		this.Math.seedRandom(this.m.RosterSeed); 
 		for (local i = 0; i < maxRecruits + daysPassed; ++i)

@@ -15,9 +15,8 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("supplies/cured_venison_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;

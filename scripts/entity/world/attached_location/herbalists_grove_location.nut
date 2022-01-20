@@ -17,9 +17,8 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		_list.push("supplies/medicine_small_item");
 	}
 
-    function onUpdateDraftList( _list)
-    {
-        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	function onUpdateDraftList( _list, _gender)
+	{
 		if (!this.isActive())
 		{
 			return;
