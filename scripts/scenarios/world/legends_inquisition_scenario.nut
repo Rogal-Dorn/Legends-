@@ -290,8 +290,9 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
-	function onUpdateDraftList( _list, _gender)
-	{
+    function onUpdateDraftList( _list)
+    {
+        local _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (_list.len() < 5)
 		{
 			local r;
