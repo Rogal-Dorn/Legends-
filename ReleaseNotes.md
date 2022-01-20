@@ -6660,3 +6660,4 @@ Corrected the language of the parrying dagger description somewhat.
 Made the 'Avatar' trait more obvious in its effects via tooltip.
 Prayer of faith perk now states that it hurts cultists rather than "not working" on them.
 Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
+'Fearsome' perk now stipulates that it only triggers once per attacker.
