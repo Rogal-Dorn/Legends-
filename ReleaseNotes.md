@@ -6639,6 +6639,7 @@ Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduce
 Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
 Black monolith garrison buffed. Adds in a few legends enemies to the roster.
 Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
+'Obsidian Dagger' item considerably buffed.
 
 Bandit Warlord changes;
 ```
