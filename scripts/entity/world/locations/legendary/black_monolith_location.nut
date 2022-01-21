@@ -38,28 +38,35 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			}, false);
 		}
 
-		for( local i = 0; i < 4; i = ++i )
+		for( local i = 0; i < 2; i = ++i )
+		{
+			this.Const.World.Common.addTroop(this, {
+				Type = this.Const.World.Spawn.Troops.LegendVampireLord
+			}, false);
+		}
+
+		for( local i = 0; i < 3; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.Vampire
 			}, false);
 		}
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.VampireLOW
 			}, false);
 		}
 
-		for( local i = 0; i < 9; i = ++i )
+		for( local i = 0; i < 11; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.SkeletonHeavy
 			}, false);
 		}
 
-		for( local i = 0; i < 8; i = ++i )
+		for( local i = 0; i < 9; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.SkeletonHeavyPolearm
@@ -70,17 +77,23 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			Type = this.Const.World.Spawn.Troops.SkeletonBoss
 		}, false);
 
-		for( local i = 0; i < 3; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.SkeletonPriest
 			}, false);
 		}
 
-		for( local i = 0; i < 5; i = ++i )
+		for( local i = 0; i < 6; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.SkeletonHeavyBodyguard
+			}, false);
+		}
+		for( local i = 0; i < 5; i = ++i )
+		{
+			this.Const.World.Common.addTroop(this, {
+				Type = this.Const.World.Spawn.Troops.LegendDemonHound
 			}, false);
 		}
 	}
