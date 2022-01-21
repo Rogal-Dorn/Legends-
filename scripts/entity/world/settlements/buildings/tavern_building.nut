@@ -248,8 +248,9 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 		local bonus = 1; 
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
 		{
-		bonus = 0.5;
-		)
+		bonus *= 0.5;
+		}
+		
 		return this.Math.round(20 * this.m.Settlement.getBuyPriceMult() * bonus);
 	}
 
@@ -566,7 +567,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 		if (this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
 		{
 		bonus = 0.5;
-		)
+		}
 		return this.Math.round(this.World.getPlayerRoster().getSize() * 5 * this.m.Settlement.getBuyPriceMult() * bonus);
 	}
 
@@ -599,7 +600,7 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 			if (this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
 			{
 			drunkChance = drunkChance * 0.5;
-			)
+			}
 
 			if (!b.getSkills().hasSkill("effects.drunk"))
 			{

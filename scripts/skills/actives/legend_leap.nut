@@ -34,7 +34,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultTooltip();
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.isWeaponType(this.Const.Items.WeaponType.Staff, true) || item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff, true))
+		if (item.isWeaponType(this.Const.Items.WeaponType.Staff) | this.Const.Items.WeaponType.MagicStaff)
 		{	
 			ret.push({
 				id = 6,
@@ -83,7 +83,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local fat = this.getModifier();
-		if (item.isWeaponType(this.Const.Items.WeaponType.Staff, true) || item.isWeaponType(this.Const.Items.WeaponType.Staff | this.Const.Items.WeaponType.MagicStaff, true))
+		if (item.isWeaponType(this.Const.Items.WeaponType.Staff) | this.Const.Items.WeaponType.MagicStaff)		
 		{
 		this.m.MaxRange =  _properties.IsSpecializedInStaves ? 3 : 2;
 		}
