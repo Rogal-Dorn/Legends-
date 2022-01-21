@@ -6637,6 +6637,8 @@ Peasant versions of the witchunter, blacksmith and squire have been added into g
 Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
 Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
 Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
+Black monolith garrison buffed. Adds in a few legends enemies to the roster.
+Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
 
 Bandit Warlord changes;
 ```
@@ -6663,7 +6665,6 @@ Prayer of faith perk now states that it hurts cultists rather than "not working"
 Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
 'Fearsome' perk now stipulates that it only triggers once per attacker.
 Minor typo changes to 'meat hacker' weapon.
-
 
 **For Modders**
 Donkeys are no longer lowborns.
