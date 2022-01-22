@@ -111,12 +111,12 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				12
 			],
 			MeleeDefense = [
-				0,
-				0
+				-3,
+				-3
 			],
 			RangedDefense = [
-				0,
-				0
+				3,
+				3
 			],
 			Initiative = [
 				12,

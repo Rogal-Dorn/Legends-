@@ -34,14 +34,17 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultTooltip();
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item.isWeaponType(this.Const.Items.WeaponType.Staff) | this.Const.Items.WeaponType.MagicStaff)
-		{	
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Leap range inreased by 1 tile while wielding a staff and having staff mastery"
-			});
+		if (item != null)
+		{
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff))
+			{	
+				ret.push({
+					id = 6,
+					type = "text",
+					icon = "ui/icons/special.png",
+					text = "Leap range inreased by 1 tile while wielding a staff and having staff mastery"
+				});
+			}
 		}
 
 		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
@@ -83,9 +86,12 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local fat = this.getModifier();
-		if (item.isWeaponType(this.Const.Items.WeaponType.Staff) | this.Const.Items.WeaponType.MagicStaff)		
+		if (item != null)
 		{
-		this.m.MaxRange =  _properties.IsSpecializedInStaves ? 3 : 2;
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff))		
+			{
+			this.m.MaxRange =  _properties.IsSpecializedInStaves ? 3 : 2;
+			}
 		}
 		this.m.FatigueCost = 25 + fat;
 		

@@ -1,4 +1,4 @@
-this.bash <- this.inherit("scripts/skills/skill", {
+this.drum_bash <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
