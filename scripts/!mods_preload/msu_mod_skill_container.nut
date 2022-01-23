@@ -76,8 +76,15 @@ gt.MSU.modSkillContainer <- function ()
 			local wasUpdating = this.m.IsUpdating;
 			this.m.IsUpdating = true;
 
+			local shouldReset = _function == "onAnySkillUsed";
+
 			foreach (skill in this.m.Skills)
 			{
+				if (shouldReset)
+				{
+					skill.resetField("HitChanceBonus");
+				}
+
 				_argsArray[0] = skill;
 				skill[_function].acall(_argsArray);
 			}
@@ -98,6 +105,14 @@ gt.MSU.modSkillContainer <- function ()
 			this.doOnFunction("onMovementFinished", [
 				_tile
 			]);
+		}
+
+		o.onMovementStep <- function( _tile, _levelDifference )
+		{
+			this.doOnFunction("onMovementStep", [
+				_tile,
+				_levelDifference
+			], false);
 		}
 
 		o.onAnySkillExecuted <- function( _skill, _targetTile, _targetEntity )
@@ -170,6 +185,16 @@ gt.MSU.modSkillContainer <- function ()
 			this.doOnFunction("onQueryTooltip", [
 				_skill,
 				_tooltip
+			], false);
+		}
+
+		o.onDeathWithInfo <- function( _killer, _skill, _tile, _fatalityType )
+		{
+			this.doOnFunction("onDeathWithInfo", [
+				_killer,
+				_skill,
+				_tile,
+				_fatalityType
 			], false);
 		}
 
