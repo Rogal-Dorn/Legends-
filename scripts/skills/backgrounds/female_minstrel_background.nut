@@ -6,35 +6,35 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.ID = "background.female_minstrel";
 		this.m.Name = "Troubadour";
 		this.m.Icon = "ui/backgrounds/background_42.png";
-		this.m.BackgroundDescription = "A good troubadour will sing a saga to inspire the men, play the flute to calm them, or entertain them with poetry around the camp fire. A lute is not a weapon, however, and minstrels are often not used to physical labor or bloodshed.";
+		this.m.BackgroundDescription = "A good troubadour will give a speech to inspire the company, act out a scene to calm them, or entertain them with dancing around the camp fire. The actors tumbles and moves may be repurposed for the real battle, if their nerve holds steady";
 		this.m.GoodEnding = "Ah, %name%. What an addition to the %companyname%! The minstrel not only became an excellent fighter, but was crucial in keeping the men\'s spirits high in the toughest of times. A poet and actor at heart, she eventually retired from the company and started up a theater company. She currently performs plays for both the nobility and laymen. The minstrel does not yet realize it, but her playful wit and sharp commentary are slowly bringing the classes together.";
 		this.m.BadEnding = "Never a fighter at heart, %name% the minstrel quickly left the declining %companyname%. She and a group of musicians and jesters spend their evenings performing for drunken noblemen. You managed to see one of these performances for yourself. %name% spent much of the time being berated by the inebriated and having half-eaten chicken bones thrown at her. One of the nobles even thought it\'d be funny to set a dog loose on one of the jesters. You could see the minstrel\'s dreams dying in her eyes, but the show went on.";
 		this.m.HiringCost = 665;
 		this.m.DailyCost = 19;
 		this.m.Excluded = [
-			"trait.huge",
-			"trait.iron_jaw",
-			"trait.athletic",
-			"trait.craven",
+			"trait.asthmatic",
+			"trait.fainthearted",
+			"trait.legend_diurnal",
+			"trait.night_blind",
 			"trait.dumb",
-			"trait.strong",
+			"trait.pragmatic",
 			"trait.tough",
-			"trait.dumb",
+			"trait.spartan",
 			"trait.brute",
 			"trait.clubfooted",
 			"trait.dastard",
-			"trait.insecure",
+			"trait.short_sighted",
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the Minstrel",
-			"the Skjald",
-			"the Poet",
-			"Songbird",
+			"the Pantomime",
+			"the Performer",
+			"the Actor",
+			"Thespian",
 			"the Troubadour",
-			"the Singer",
-			"the Lover",
-			"the Bard"
+			"the Star",
+			"the Character",
+			"the Artist"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -81,35 +81,35 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-15,
-				-15
-			],
-			Bravery = [
-				10,
-				15
-			],
-			Stamina = [
-				-5,
-				0
-			],
-			MeleeSkill = [
 				-5,
 				-5
 			],
-			RangedSkill = [
+			Bravery = [
 				10,
 				10
 			],
+			Stamina = [
+				-3,
+				5
+			],
+			MeleeSkill = [
+				-3,
+				3
+			],
+			RangedSkill = [
+				-3,
+				3
+			],
 			MeleeDefense = [
-				-10,
-				-10
+				-3,
+				3
 			],
 			RangedDefense = [
-				5,
-				10
+				3,
+				5
 			],
 			Initiative = [
-				5,
+				3,
 				5
 			]
 		};
