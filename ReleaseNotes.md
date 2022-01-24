@@ -6629,6 +6629,7 @@ Fixed an issue with drill sergeant follower (training dummies) in the retinue gi
 Fixed legend chain skills (flail and hook) being 4 range instead of 3.
 Prayer of faith perk now harms normal cultists and converted cultists as intended.
 Fixed a potential issue where, in theory, a donkey bought by the militia origin could have a red armband due to it being tagged as lowborn.
+- Implemented a bandaid fix for the gatherer tent in camp. Hopefully this does the trick.
 
 **Balance**
 Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
