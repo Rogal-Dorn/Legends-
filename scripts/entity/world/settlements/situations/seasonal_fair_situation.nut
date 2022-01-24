@@ -9,6 +9,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		this.m.Icon = "ui/settlement_status/settlement_effect_28.png";
 		this.m.Rumors = [
 			"What\'s going on around here you\'re asking? Well, there\'s a fair over in %settlement%. Merchants from far and wide gather to offer their wares.",
+			"Big fairs like the one over in %settlement% atract the worst kinds of people, minstrels and troubadours."
 			"Me, I am more of the solitary type. Big fairs like the one over in %settlement% just don\'t appeal to me at all...."
 		];
 		this.m.IsStacking = false;
@@ -86,16 +87,18 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 			local r;
 			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_seer")
 			{
-			r = this.Math.rand(0, 5);
-				if (r == 1)
-				{
 				_draftList.push("legend_entrancer_background");
-				}
 			}
 			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_sisterhood")
 			{
 
 				_draftList.push("legend_entrancer_background");
+
+			}
+			else if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_troupe")
+			{
+
+				_draftList.push("legend_illusionist_background");
 
 			}
 			else
@@ -107,6 +110,7 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 				}
 			}
 		}
+
 	}
 
 });

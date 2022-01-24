@@ -3561,6 +3561,24 @@ local perkDefObjects = [
 		Icon = "ui/perks/throw_sand_01.png", 
 		IconDisabled = "ui/perks/throw_sand_01_bw.png",
 		Const = "LegendThrowSand"
+	},
+	{
+		ID = "perk.legend_backflip",
+		Script = "scripts/skills/perks/perk_legend_backflip",
+		Name = this.Const.Strings.PerkName.LegendBackflip,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBackflip,
+		Icon = "ui/perks/backflip_circle.png", 
+		IconDisabled = "ui/perks/backflip_circle_bw.png",
+		Const = "LegendBackflip"
+	},
+	{
+		ID = "perk.legend_twirl",
+		Script = "scripts/skills/perks/perk_legend_twirl",
+		Name = this.Const.Strings.PerkName.LegendTwirl,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTwirl,
+		Icon = "ui/perks/twirl_circle.png", 
+		IconDisabled = "ui/perks/twirl_circle_bw.png",
+		Const = "LegendTwirl"
 	}
 ];
 
