@@ -99,6 +99,7 @@ this.troubador_and_juggler_event <- this.inherit("scripts/events/event", {
 						text = _event.m.Juggler.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+1[/color] Melee Skill"
 					});					
 					}
+					if (r == 3)
 					{
 					local injury = _event.m.Minstrel.addInjury(this.Const.Injury.BluntBody);
 					this.List.push({
@@ -107,7 +108,7 @@ this.troubador_and_juggler_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Minstrel.getName() + " suffers " + injury.getNameOnly()
 					});
 					}			
-					else
+					if (r == 4)
 					{
 					local injury = _event.m.Minstrel.addInjury(this.Const.Injury.PiercingBody);
 					this.List.push({
