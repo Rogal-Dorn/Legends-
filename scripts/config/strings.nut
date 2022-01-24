@@ -1892,6 +1892,8 @@ gt.Const.Strings.PerkName <- {
 	LegendCheerOn = "Cheer On",
 	LegendLeap = "Leap",
 	LegendTumble = "Tumble",
+	LegendBackflip = "Backflip",
+	LegendTwirl = "Twirl",
 	LegendHairSplitter = "Hair Splitter",
 	LegendScrollIngredients = "Interpretation",
 	LegendScholar = "Scholar",
@@ -2270,7 +2272,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff.",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun.",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies.",
-	LegendMasteryStaves = "Master the art of fighting with staves. Use 25% less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also reduces costs for Missile, Revolt, Entice, Chain Lightning and Firefield.",
+	LegendMasteryStaves = "Master the art of fighting with staves. Use 25% less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also Increases range for leaps and reduces costs for spells",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue.",
 	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants.",
@@ -2332,7 +2334,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistHammerSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] armor damage while using a Blacksmiths Hammer. 25% of this skill applies to other One Handed Hammers.",
 	LegendSpecialistKnifeDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a Knife or Shiv. 35% of this skill applies to other daggers.",
 	LegendSpecialistKnifeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+40%[/color] armor penetration while using a Knife or Shiv. 25% of this skill applies to other daggers.",
-	LegendSpecialistLuteDamage = "Deal an extra [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] damage while using a musical instrument.",
+	LegendSpecialistLuteDamage = "Deal an extra [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] damage while using a musical instrument.",
 	LegendSpecialistLuteSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee skill and defense while using a musical instrument.",
 	LegendSpecialistMilitiaDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a militia spear, ancient spear or wooden spear. Only 35% of this skill applies to other spears.",
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears.",
@@ -2526,7 +2528,9 @@ gt.Const.Strings.PerkDescription <- {
 	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile by 6.",
 	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three.",
 	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble.",
-	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight."
+	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
+	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' perk, it gains 1 range.",
+	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -344,12 +344,12 @@ gt.Const.Perks.JugglerClassTree <- {
 		"acrobatics"
 	],
 	Tree = [
-		[],
-		[gt.Const.Perks.PerkDefs.LegendHairSplitter],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.Footwork],
 		[gt.Const.Perks.PerkDefs.LegendLeap],
+		[gt.Const.Perks.PerkDefs.LegendHairSplitter],
+		[gt.Const.Perks.PerkDefs.Rotation],
+		[gt.Const.Perks.PerkDefs.LegendTwirl],
+		[gt.Const.Perks.PerkDefs.Footwork],
+		[gt.Const.Perks.PerkDefs.LegendBackflip],
 		[gt.Const.Perks.PerkDefs.LegendTumble]
 	]
 };

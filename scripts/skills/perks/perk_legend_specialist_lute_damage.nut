@@ -21,7 +21,7 @@ this.perk_legend_specialist_lute_damage <- this.inherit("scripts/skills/skill", 
 			if (item.isWeaponType(this.Const.Items.WeaponType.Musical))
 			{
 				_properties.DamageRegularMin += 10;
-				_properties.DamageRegularMax += 20;
+				_properties.DamageRegularMax += 10;
 			}
 		}
 	}

@@ -107,6 +107,14 @@ this.footwork <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 	}
+	
+	function onAfterUpdate( _properties )
+	{
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_backflip"))
+		{	
+		this.m.MaxRange = 2;
+		}
+	}
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
