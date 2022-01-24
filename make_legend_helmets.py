@@ -205,6 +205,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 		this.m.Vision = $vision;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -243,6 +244,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.IsLowerVanity = $lower;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -283,6 +285,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 		this.m.IsLowerVanity = $lower;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -1946,6 +1949,10 @@ def main():
         desc = d["desc"]
 
         has_missing = has_missing or checkForIcon("inventory_" + d["name"], variants)
+
+        itemType = "this.m.ItemType"
+        if "itemType" in d:
+            itemType += " | " + d["itemType"]
 
         opts = dict(
             test="true",
