@@ -6622,80 +6622,76 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
 
 ## 15.0.2.6
-- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
-- Fixed Inspire active skill ID. The wrong ID was causing the active skill to persist even after the perk was removed from a character.
-- Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
-
 ##The circus is in town##
 **Troupe**
-Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. 
-illusionist  Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice Revoltecfatigue reduced from 25 to 15 
-Troupe has a chance to find another illusionist at a fair 
-New event between juggler and minstrel or troubador resulting in skill increases or injuries 
-New event between minstrel and troubadour resulting in an occassional mood lift 
+- Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. 
+- illusionist: Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice. Revolt fatigue reduced from 25 to 15.
+- Troupe has a chance to find another illusionist at a fair 
+- New event between juggler and minstrel or troubador resulting in skill increases or injuries 
+- New event between minstrel and troubadour resulting in an occassional mood lift 
+- Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
 
 **Instruments**
-Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
-Drums and lute s hit for less but cost less AP and can be used one handed 
-Named lute cost, AP and damage reduced 
-Drums  count as a staff isntead of a mace, lutes are still maces, so your choice of instrument makes a bigger difference
-Bardbarian drums now drop as loot and are two handed drums. beware, they can also be used against you. 
-Lute Solo max damage reduced from 20 to 10 
+- Drums and lute s hit for less but cost less AP and can be used one handed 
+- Named lute cost, AP and damage reduced 
+- Drums  count as a staff isntead of a mace, lutes are still maces, so your choice of instrument makes a bigger difference
+- Bardbarian drums now drop as loot and are two handed drums. beware, they can also be used against you. 
+- Lute Solo max damage reduced from 20 to 10 
 
 **Jugglers** 
-have better fatigue, slightly better ranged and lower bravery and hitpoints. 
-they are gauranteed dagger tree instead of slings. starts in troupe with javelins
-* Leap moved to T1 - fatigue costs halved, and then each point of armor weight increases the fatigue cost. Staff mastery increases its range by 1 tile while wielding a staff.  
-* Rotation added at T3 
-* New Perk Twirl added at T4 - upgrades Rotation to optionally target enemies
-* New Perk Backflip at T6 - upgrades Footwork to two tiles 
-* Tumble at T7 now also halves the fatigue cost of Rotation
-
-**Fixes**
-Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
-Alps now have resistance to the ranged cascade skill in their racial files.
-Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
-Fixed legend chain skills (flail and hook) being 4 range instead of 3.
-Prayer of faith perk now harms normal cultists and converted cultists as intended.
-Fixed a potential issue where, in theory, a donkey bought by the militia origin could have a red armband due to it being tagged as lowborn.
+- have better fatigue, slightly better ranged and lower bravery and hitpoints. 
+- they are gauranteed dagger tree instead of slings. starts in troupe with javelins
+- Leap moved to T1 - fatigue costs halved, and then each point of armor weight increases the fatigue cost. Staff mastery increases its range by 1 tile while wielding a staff.  
+- Rotation added at T3 
+- New Perk Twirl added at T4 - upgrades Rotation to optionally target enemies
+- New Perk Backflip at T6 - upgrades Footwork to two tiles 
+- Tumble at T7 now also halves the fatigue cost of Rotation
 
 **Balance**
-Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
-Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
-Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
-Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
-Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
-Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
-Black monolith garrison buffed. Adds in a few legends enemies to the roster.
-Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
-'Obsidian Dagger' item considerably buffed.
+- Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
+- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
+- Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
+- Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
+- Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
+- Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
+- Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
+- Black monolith garrison buffed. Adds in a few legends enemies to the roster.
+- Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
+- 'Obsidian Dagger' item considerably buffed.
+- Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
 
-Bandit Warlord changes;
-```
-Warlords now have 'Rally the troops', 'True believer', 'Lone wolf', 'Composure', 'Underdog' and 'Full force' by default.
-Warlords get 'Battleheart' on legendary combat difficulty.
-Xp reward upped from 800 to 1000.
-Action points increased from 9 to 11.
-Hitpoints from 200 to 225.
-Resolve from 140 to 180.
-Melee skill from 110 to 135.
-Melee defence from 30 to 45.
-Ranged defence dropped from 30 to 25.
-Initiative from 170 to 185.
-Fatigue recovery rate from 25 per turn to 30 per turn.
-
-To compensate, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
+**Bandit Warlord changes**
+- Warlords now have 'Rally the troops', 'True believer', 'Lone wolf', 'Composure', 'Underdog' and 'Full force' by default.
+- Warlords get 'Battleheart' on legendary combat difficulty.
+- Xp reward upped from 800 to 1000.
+- Action points increased from 9 to 11.
+- Hitpoints from 200 to 225.
+- Resolve from 140 to 180.
+- Melee skill from 110 to 135.
+- Melee defence from 30 to 45.
+- Ranged defence dropped from 30 to 25.
+- Initiative from 170 to 185.
+- Fatigue recovery rate from 25 per turn to 30 per turn.
+- To compensate for these changes, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
 Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
-```
+
+**Fixes**
+- Alps now have resistance to the ranged cascade skill in their racial files.
+- Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
+- Fixed legend chain skills (flail and hook) being 4 range instead of 3.
+- Prayer of faith perk now harms normal cultists and converted cultists as intended.
+- Fixed a potential issue where, in theory, a donkey bought by the militia origin could have a red armband due to it being tagged as lowborn.
+- Fixed Inspire active skill ID. The wrong ID was causing the active skill to persist even after the perk was removed from a character.
 
 **Typos**
-Corrected the language of the parrying dagger description somewhat.
-Made the 'Avatar' trait more obvious in its effects via tooltip.
-Prayer of faith perk now states that it hurts cultists rather than "not working" on them.
-Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
-'Fearsome' perk now stipulates that it only triggers once per attacker.
-Minor typo changes to 'meat hacker' weapon.
+- Corrected the language of the parrying dagger description somewhat.
+- Made the 'Avatar' trait more obvious in its effects via tooltip.
+- Prayer of faith perk now states that it hurts cultists rather than "not working" on them.
+- Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
+- 'Fearsome' perk now stipulates that it only triggers once per attacker.
+- Minor typo changes to 'meat hacker' weapon.
 
 **For Modders**
-Donkeys are no longer lowborns.
-The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
+- Donkeys are no longer lowborns.
+- The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
+- Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
