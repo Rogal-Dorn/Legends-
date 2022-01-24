@@ -6670,3 +6670,29 @@ Minor typo changes to 'meat hacker' weapon.
 **For Modders**
 Donkeys are no longer lowborns.
 The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
+
+##The circus is in town##
+**Troupe**
+Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. 
+illusionist  Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice Revoltecfatigue reduced from 25 to 15 
+Troupe has a chance to find another illusionist at a fair 
+New event between juggler and minstrel or troubador resulting in skill increases or injuries 
+New event between minstrel and troubadour resulting in an occassional mood lift 
+
+**Instruments**
+Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
+Drums and lute s hit for less but cost less AP and can be used one handed 
+Named lute cost, AP and damage reduced 
+Drums  count as a staff isntead of a mace, lutes are still maces, so your choice of instrument makes a bigger difference
+Bardbarian drums now drop as loot and are two handed drums. beware, they can also be used against you. 
+Lute Solo max damage reduced from 20 to 10 
+
+**Jugglers** 
+have better fatigue, slightly better ranged and lower bravery and hitpoints. 
+they are gauranteed dagger tree instead of slings. starts in troupe with javelins
+* Leap moved to T1 - fatigue costs halved, and then each point of armor weight increases the fatigue cost. Staff mastery increases its range by 1 tile while wielding a staff.  
+* Rotation added at T3 
+* New Perk Twirl added at T4 - upgrades Rotation to optionally target enemies
+* New Perk Backflip at T6 - upgrades Footwork to two tiles 
+* Tumble at T7 now also halves the fatigue cost of Rotation
+ 
