@@ -6650,3 +6650,52 @@ they are gauranteed dagger tree instead of slings. starts in troupe with javelin
 * New Perk Twirl added at T4 - upgrades Rotation to optionally target enemies
 * New Perk Backflip at T6 - upgrades Footwork to two tiles 
 * Tumble at T7 now also halves the fatigue cost of Rotation
+
+**Fixes**
+Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
+Alps now have resistance to the ranged cascade skill in their racial files.
+Fixed an issue with drill sergeant follower (training dummies) in the retinue giving errors (REMOVE YOUR PATCH FROM LAST BUILD).
+Fixed legend chain skills (flail and hook) being 4 range instead of 3.
+Prayer of faith perk now harms normal cultists and converted cultists as intended.
+Fixed a potential issue where, in theory, a donkey bought by the militia origin could have a red armband due to it being tagged as lowborn.
+
+**Balance**
+Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
+Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
+Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
+Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
+Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
+Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
+Black monolith garrison buffed. Adds in a few legends enemies to the roster.
+Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
+'Obsidian Dagger' item considerably buffed.
+
+Bandit Warlord changes;
+```
+Warlords now have 'Rally the troops', 'True believer', 'Lone wolf', 'Composure', 'Underdog' and 'Full force' by default.
+Warlords get 'Battleheart' on legendary combat difficulty.
+Xp reward upped from 800 to 1000.
+Action points increased from 9 to 11.
+Hitpoints from 200 to 225.
+Resolve from 140 to 180.
+Melee skill from 110 to 135.
+Melee defence from 30 to 45.
+Ranged defence dropped from 30 to 25.
+Initiative from 170 to 185.
+Fatigue recovery rate from 25 per turn to 30 per turn.
+
+To compensate, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
+Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
+```
+
+**Typos**
+Corrected the language of the parrying dagger description somewhat.
+Made the 'Avatar' trait more obvious in its effects via tooltip.
+Prayer of faith perk now states that it hurts cultists rather than "not working" on them.
+Corrected an incorrect tooltip on 'Field triage' perk, also cleaned up the tooltip it uses.
+'Fearsome' perk now stipulates that it only triggers once per attacker.
+Minor typo changes to 'meat hacker' weapon.
+
+**For Modders**
+Donkeys are no longer lowborns.
+The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
