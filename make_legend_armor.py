@@ -953,6 +953,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.StaminaModifier = $stamina;
         this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -983,6 +984,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/cloth/$inherit", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 });
 '''
@@ -1007,6 +1009,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -1043,6 +1046,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 });
 '''
@@ -1068,6 +1072,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrad
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -1111,6 +1116,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_cloth_named", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -1151,6 +1157,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_cloak", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.m.Bravery = $bravery;
 	}
 
@@ -1186,6 +1193,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.m.Bravery = $bravery;
 	}
 
@@ -1348,6 +1356,10 @@ def main():
         if "bravery" in d:
             bravery = d["bravery"]
 
+        itemType = "this.m.ItemType"
+        if "itemType" in d:
+            itemType += " | " + d["itemType"]
+
         opts = dict(
             test="true",
             inherit=inherit,
@@ -1373,7 +1385,8 @@ def main():
             rmaxStam = d["rmaxStam"] if "rmaxStam" in d else 0,
             rminCond = d["rminCond"] if "rminCond" in d else 0,
             rmaxCond = d["rmaxCond"] if "rmaxCond" in d else 0,
-            bravery = bravery
+            bravery = bravery,
+            itemType = itemType,
         )
         s = Template(temp)
         text = s.substitute(opts)
