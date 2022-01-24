@@ -6696,3 +6696,7 @@ they are gauranteed dagger tree instead of slings. starts in troupe with javelin
 * New Perk Backflip at T6 - upgrades Footwork to two tiles 
 * Tumble at T7 now also halves the fatigue cost of Rotation
  
+- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
+- Fixed Inspire active skill ID. The wrong ID was causing the active skill to persist even after the perk was removed from a character.
+- Fixed the Tumble perk not reducing the Fatigue Cost of skills e.g. Lunge.
+- Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
