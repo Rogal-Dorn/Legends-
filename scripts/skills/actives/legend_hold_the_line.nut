@@ -4,7 +4,7 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_hold_the_line";
 		this.m.Name = "Hold the line";
-		this.m.Description = "Instruct your mercenaries to push their advantages, raising melee defence by 10 within 4 tiles";
+		this.m.Description = "Instruct your mercenaries to hold their ground!";
 		this.m.Icon = "skills/holdtheline_square.png";
 		this.m.IconDisabled = "skills/holdtheline_square_bw.png";
 		this.m.Overlay = "holdtheline_square";
@@ -19,8 +19,8 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 20;
+		this.m.ActionPointCost = 9;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 	}
@@ -47,8 +47,20 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]10[/color] melee defense to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn"
+				icon = "ui/icons/regular_damage.png",
+				text = "Receives only [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] of any damage."
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/locked_small.png",
+				text = "Immune to being knocked back or grabbed."
+			},
+			{
+				id = 6,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn."
 			}
 		];
 	}
