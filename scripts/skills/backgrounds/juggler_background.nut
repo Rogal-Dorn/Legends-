@@ -9,8 +9,8 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.BackgroundDescription = "Jugglers need to have good reflexes and hand-eye-coordination for their profession.";
 		this.m.GoodEnding = "%name% the juggler took all his mercenary money and started a traveling troupe of performers. Last you heard, he started an entire theater and puts on a new play a month!";
 		this.m.BadEnding = "%name% the juggler retired from fighting. He was performing for a gaudy nobleman in the {south | north | east | west} when an act went horribly wrong. Word has it he was thrown off a tower for his mistake, but you prefer to not believe that.";
-		this.m.HiringCost = 75;
-		this.m.DailyCost = 7;
+		this.m.HiringCost = 100;
+		this.m.DailyCost = 8;
 		this.m.Excluded = [
 			"trait.fear_undead",
 			"trait.hate_undead",
@@ -47,7 +47,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.StavesTree
 			],
 			Defense = [
@@ -91,32 +91,32 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-10,
+				-10
 			],
 			Bravery = [
-				0,
-				0
+				-3,
+				-3
 			],
 			Stamina = [
-				0,
-				0
+				15,
+				10
 			],
-			MeleeSkill = [
-				5,
-				5
+			MeleSkill = [
+				-3,
+				3
 			],
 			RangedSkill = [
-				3,
-				9
+				7,
+				12
 			],
 			MeleeDefense = [
-				0,
-				0
+				-3,
+				-3
 			],
 			RangedDefense = [
-				0,
-				0
+				3,
+				3
 			],
 			Initiative = [
 				12,
