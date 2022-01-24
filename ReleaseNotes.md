@@ -6620,3 +6620,8 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Bandit rabble should now spawn in bandit groups.
 - 'Schrat racial' now takes into account the ranged cascade skill.
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
+
+## 15.0.2.6
+- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
+- Fixed Inspire active skill ID. The wrong ID was causing the active skill to persist even after the perk was removed from a character.
+- Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
