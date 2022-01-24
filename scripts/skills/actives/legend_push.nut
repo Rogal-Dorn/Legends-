@@ -28,7 +28,7 @@ this.legend_push <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 2;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 8;
 	}

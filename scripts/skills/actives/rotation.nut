@@ -46,6 +46,7 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 				text = this.getCostString()
 			}
 		];
+		
 
 		if (this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
@@ -79,11 +80,13 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 
 		local target = _targetTile.getEntity();
 
-		if (!target.isAlliedWith(this.getContainer().getActor()))
+		if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_twirl"))
 		{
-			return false;
+			if (!target.isAlliedWith(this.getContainer().getActor()))
+			{
+				return false;
+			}
 		}
-
 		return this.skill.onVerifyTarget(_originTile, _targetTile) && !target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsRooted && target.getCurrentProperties().IsMovable && !target.getCurrentProperties().IsImmuneToRotation;
 	}
 

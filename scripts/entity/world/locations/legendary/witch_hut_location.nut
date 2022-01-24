@@ -24,28 +24,35 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 		this.m.Name = "Witch Hut";
 		this.location.onSpawned();
 
-		for( local i = 0; i < 4; i = ++i )
+		for( local i = 0; i < 3; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.Hexe
 			}, false);
 		}
 
+		for( local i = 0; i < 1; i = ++i )
+		{
+			this.Const.World.Common.addTroop(this, {
+				Type = this.Const.World.Spawn.Troops.LegendHexeLeader
+			}, false);
+		}
+
+		for( local i = 0; i < 1; i = ++i )
+		{
+			this.Const.World.Common.addTroop(this, {
+				Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard
+			}, false);
+		}
+
 		for( local i = 0; i < 2; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
-				Type = this.Const.World.Spawn.Troops.DirewolfBodyguard
+				Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard
 			}, false);
 		}
 
-		for( local i = 0; i < 3; i = ++i )
-		{
-			this.Const.World.Common.addTroop(this, {
-				Type = this.Const.World.Spawn.Troops.SpiderBodyguard
-			}, false);
-		}
-
-		for( local i = 0; i < 5; i = ++i )
+		for( local i = 0; i < 4; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
 				Type = this.Const.World.Spawn.Troops.DirewolfHIGH
@@ -55,7 +62,7 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 		for( local i = 0; i < 1; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
-				Type = this.Const.World.Spawn.Troops.UnholdBog
+				Type = this.Const.World.Spawn.Troops.LegendRockUnhold
 			}, false);
 		}
 
@@ -66,17 +73,17 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 			}, false);
 		}
 
-		for( local i = 0; i < 2; i = ++i )
+		for( local i = 0; i < 3; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
-				Type = this.Const.World.Spawn.Troops.Ghoul
+				Type = this.Const.World.Spawn.Troops.LegendSkinGhoulLOW
 			}, false);
 		}
 
 		for( local i = 0; i < 1; i = ++i )
 		{
 			this.Const.World.Common.addTroop(this, {
-				Type = this.Const.World.Spawn.Troops.GhoulHIGH
+				Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat
 			}, false);
 		}
 	}

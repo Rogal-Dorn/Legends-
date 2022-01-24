@@ -25,6 +25,26 @@ gt.MSU.modActor <- function() {
 			this.m.IsMoving = false;
 		}
 
+		local onMovementStep = o.onMovementStep;
+		o.onMovementStep  = function( _tile, _levelDifference )
+		{
+			local ret = onMovementStep(_tile, _levelDifference);
+
+			if (ret)
+			{
+				this.m.Skills.onMovementStep(_tile, _levelDifference);
+			}
+
+			return ret;
+		}
+
+		local onDeath = o.onDeath;
+		o.onDeath = function( _killer, _skill, _tile, _fatalityType )
+		{
+			this.m.Skills.onDeathWithInfo(_killer, _skill, _tile, _fatalityType);
+			onDeath(_killer, _skill, _tile, _fatalityType);
+		}
+
 		local getActionPointsMax = o.getActionPointsMax
 		o.getActionPointsMax = function()
 		{
@@ -153,23 +173,23 @@ gt.MSU.modActor <- function() {
 			return item != null && item.isItemType(this.Const.Items.ItemType.TwoHanded);
 		}
 
-		o.getRemainingArmorFraction <- function()
+		o.getRemainingArmorFraction <- function( _bodyPart = null )
 		{
-			local fraction = 0;
+			local totalArmorMax = 0;
+			local currentArmor = 0;
 
-			local maxHeadArmor = this.getArmorMax(this.Const.BodyPart.Head);
-			if (maxHeadArmor != 0)
+			if (_bodyPart == null)
 			{
-				fraction += this.getArmor(this.Const.BodyPart.Head) / (maxHeadArmor * 1.0);
+				totalArmorMax = this.getArmorMax(this.Const.BodyPart.Head) + this.getArmorMax(this.Const.BodyPart.Body);
+				currentArmor = this.getArmor(this.Const.BodyPart.Head) + this.getArmor(this.Const.BodyPart.Body);
+			}
+			else
+			{
+				totalArmorMax = this.getArmorMax(_bodyPart);
+				currentArmor = this.getArmor(_bodyPart);
 			}
 
-			local maxBodyArmor = this.getArmorMax(this.Const.BodyPart.Body);
-			if (maxBodyArmor != 0)
-			{
-				fraction += this.getArmor(this.Const.BodyPart.Body) / (maxBodyArmor * 1.0);
-			}
-
-			return fraction;
+			return totalArmorMax > 0 ? currentArmor / (totalArmorMax * 1.0) : 0.0;
 		}
 
 		o.getTotalArmorStaminaModifier <- function()

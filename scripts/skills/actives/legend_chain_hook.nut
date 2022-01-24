@@ -30,7 +30,7 @@ this.legend_chain_hook <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;
 		this.m.MinRange = 2;
-		this.m.MaxRange = 4;
+		this.m.MaxRange = 3;
 	}
 
 	function getTooltip()

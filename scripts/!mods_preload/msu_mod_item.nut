@@ -43,6 +43,11 @@ gt.MSU.modItem <- function ()
 			}
 		}
 
+		o.getSkills <- function()
+		{
+			return this.m.SkillPtrs;
+		}
+
 		local addSkill = o.addSkill;
 		o.addSkill = function( _skill )
 		{
@@ -52,6 +57,10 @@ gt.MSU.modItem <- function ()
 			}
 
 			addSkill(_skill);
+		}
+
+		o.onAfterUpdateProperties <- function( _properties )
+		{			
 		}
 	});
 }

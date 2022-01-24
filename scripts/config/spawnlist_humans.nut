@@ -75,6 +75,18 @@ gt.Const.World.Spawn.Peasants <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 15,
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantWitchHunter,
+					Cost = 20,
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantBlacksmith,
+					Cost = 20,
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendPeasantSquire,
+					Cost = 25,
 				}
 			]
 		},
