@@ -196,8 +196,9 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		return false;
 	}
 
-	function onUpdateDraftList( _list, _gender )
+	function onUpdateDraftList( _list, _gender = null )
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (_list.len() <= 5)
 		{
 			local r;

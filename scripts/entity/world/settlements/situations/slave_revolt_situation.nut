@@ -40,8 +40,10 @@ this.slave_revolt_situation <- this.inherit("scripts/entity/world/settlements/si
 		_modifiers.RarityMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		for( local i = _draftList.len() - 1; i >= 0; i = --i )
 		{
 			if (_draftList[i] == "slave_background" || _draftList[i] == "slave_southern_background")

@@ -56,8 +56,9 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 		_list.push("supplies/beer_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

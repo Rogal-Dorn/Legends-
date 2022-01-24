@@ -121,7 +121,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 		foreach (b in this.m.Items)
 		{
-			if (b == null) {this.logWarning("Null item attempted in gatherer building, the length of items arr is " + this.m.Items.len());}
+			if (b == null) {
+				this.logWarning("Null item attempted in gatherer building, the length of items arr is " + this.m.Items.len())
+				continue //bandaid fix, one item is null
+			}
 			res.push({
 		 		id = id,
 		 		icon = "ui/items/" + b.getIcon(),

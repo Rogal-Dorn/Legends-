@@ -32,8 +32,10 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_modifiers.FoodRarityMult *= 0.9;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
 		_draftList.push("cripple_background");

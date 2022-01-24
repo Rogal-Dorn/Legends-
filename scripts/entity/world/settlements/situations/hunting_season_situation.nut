@@ -41,8 +41,10 @@ this.hunting_season_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
 		_draftList.push("poacher_background");

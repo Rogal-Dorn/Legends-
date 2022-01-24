@@ -41,8 +41,10 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
