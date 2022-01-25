@@ -306,8 +306,9 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		return this.Math.rand(1, 100) <= 15;
 	}
 
-	function onUpdateDraftList( _list, _gender )
+	function onUpdateDraftList( _list, _gender = null )
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (_list.len() >= 10)
 		{
 			local r;

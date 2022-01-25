@@ -4,7 +4,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_prayer_of_faith";
 		this.m.Name = "Prayer of Faith";
-		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +20% of their resolve as melee and ranged defense. Does not work on cultists. Adjacent undead are Baffled.";
+		this.m.Description = "Grant defense to your allies with your chant of holy scripture, granting +20% of their resolve as melee and ranged defense. Hurts cultists. Adjacent undead are Baffled.";
 		this.m.Icon = "skills/prayer_purple_square.png";
 		this.m.IconDisabled = "skills/prayer_purple_square_bw.png";
 		this.m.Overlay = "prayer_purple";
@@ -76,7 +76,7 @@ this.legend_prayer_of_faith_skill <- this.inherit("scripts/skills/skill", {
 
 			if (a.getFaction() == _user.getFaction())
 			{
-				if (!a.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
+				if (!a.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist || this.Const.BackgroundType.Cultist))
 				{
 					local effect = this.new("scripts/skills/effects/legend_prayer_of_faith_effect");
 					effect.m.Resolve = this.getContainer().getActor().getBravery();

@@ -13,6 +13,13 @@ this.perk_legend_escape_artist <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-
+	function onAfterUpdate( _properties )
+	{
+		local skills = this.getContainer().getSkillsByFunction(this, @(_skill) _skill.getID() == "actives.break_free" || _skill.getID() == "actives.break_ally_free");
+		foreach (s in skills)
+		{
+			s.m.ActionPointCost -= 1;
+		}
+	}
 
 });
