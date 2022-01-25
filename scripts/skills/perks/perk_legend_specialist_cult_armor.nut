@@ -63,49 +63,23 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
+		local hasItem = false;
 
 		if (item != null)
 		{
-			switch(item.getID())
+			hasItem = item.isItemType(this.Const.Items.ItemType.Cultist)
+			if (!hasItem && this.LegendsMod.Configs().LegendArmorsEnabled() && && ::mods_isClass(item, "legend_armor"))
 			{
-				//case "armor.body.leather_wraps":
-				case "armor.body.cultist_leather_robe":
-				//case "armor.body.sackcloth":
-				//case "armor.body.tattered_sackcloth":
-				case "armor.body.armor_of_davkul":
-				case "armor.body.reinforced_animal_hide_armor":
-				case "armor.body.hide_and_bone_armor":
-				case "armor.body.animal_hide_armor":
-				//case "legend_armor.body.legend_sackcloth_patched":
-				//case "legend_armor.body.legend_sackcloth_tattered":
-				//case "legend_armor.body.legend_sackcloth":
-				case "legend_armor.body.cultist_leather_robe":
-				case "legend_armor.body.legend_armor_warlock_cloak":
-				case "legend_armor.body.legend_named_warlock_cloak":
-				//case "legend_armor.body.legend_robes":
-					_properties.Bravery += this.Math.floor(healthMissing * 0.75);
-					return;
-			}
-
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
-			{
-				local validLayers = [
-					"legend_armor.body.legend_animal_hide_armor",
-					"legend_armor.body.legend_hide_and_bone_armor",
-					"legend_armor.body.legend_reinforced_animal_hide_armor",
-					"legend_armor.body.legend_armor_cult_armor",
-				];
-
-				foreach (l in item.getUpgradeIDs())
+				foreach( upgrade in item.m.Upgrades )
 				{
-					if (validLayers.find(l) != null)
-					{
-						_properties.Bravery += this.Math.floor(healthMissing * 0.5);
-						return;
+					if (upgrade.isItemType(this.Const.Items.ItemType.Cultist)){
+						hasItem = true;
+						break;
 					}
 				}
 			}
 		}
+		if (hasItem) _properties.Bravery += this.Math.floor(healthMissing * 0.75);
 
 		local bonus = this.getBonus();
 		if (bonus == 0) return;

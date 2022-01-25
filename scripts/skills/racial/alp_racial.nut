@@ -39,7 +39,7 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot")
+		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.legend_cascade")
 		{
 			_properties.DamageReceivedRegularMult *= 0.1;
 		}

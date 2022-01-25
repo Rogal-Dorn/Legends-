@@ -40,8 +40,10 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.FoodPriceMult *= 2.0;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("butcher_background");
 		_draftList.push("butcher_background");
 		_draftList.push("servant_background");

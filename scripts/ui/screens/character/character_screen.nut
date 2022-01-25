@@ -530,6 +530,9 @@ this.character_screen <- {
 					this.World.Assets.getStash().insert(upgrade.item, upgrade.index);
 				}
 			}
+			else{
+				data.stash.removeByIndex(data.sourceIndex);
+			}
 			return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
 		}
 		else

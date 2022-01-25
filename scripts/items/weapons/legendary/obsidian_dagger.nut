@@ -16,13 +16,13 @@ this.obsidian_dagger <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_obsidian_dagger";
-		this.m.Condition = 1.0;
-		this.m.ConditionMax = 1.0;
+		this.m.Condition = 95.0;
+		this.m.ConditionMax = 95.0;
 		this.m.Value = 5000;
-		this.m.RegularDamage = 25;
-		this.m.RegularDamageMax = 45;
-		this.m.ArmorDamageMult = 0.7;
-		this.m.DirectDamageMult = 0.2;
+		this.m.RegularDamage = 35;
+		this.m.RegularDamageMax = 50;
+		this.m.ArmorDamageMult = 1.15;
+		this.m.DirectDamageMult = 0.4;
 	}
 
 	function getTooltip()
@@ -41,6 +41,7 @@ this.obsidian_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/stab"));
+		this.addSkill(this.new("scripts/skills/actives/deathblow_skill"));		
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
 	}
 

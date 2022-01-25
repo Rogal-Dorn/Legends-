@@ -97,6 +97,11 @@ gt.MSU.modSkill <- function ()
 			this.m.IsBaseValuesSaved = true;
 		}
 
+		o.getBaseValue <- function( _field )
+		{
+			return this.b[_field];
+		}
+
 		o.softReset <- function()
 		{
 			if (!this.m.IsBaseValuesSaved)
@@ -151,6 +156,10 @@ gt.MSU.modSkill <- function ()
 		{
 		}
 
+		o.onMovementStep <- function( _tile, _levelDifference )
+		{
+		}
+
 		o.onAfterDamageReceived <- function()
 		{
 		}
@@ -198,7 +207,11 @@ gt.MSU.modSkill <- function ()
 		}
 
 		o.onQueryTooltip <- function( _skill, _tooltip )
-		{			
+		{
+		}
+
+		o.onDeathWithInfo <- function( _killer, _skill, _tile, _fatalityType )
+		{
 		}
 
 		local use = o.use;

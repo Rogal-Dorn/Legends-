@@ -50,8 +50,9 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 		return r;
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

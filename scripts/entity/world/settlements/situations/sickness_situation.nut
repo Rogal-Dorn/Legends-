@@ -42,8 +42,10 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.RecruitsMult *= 0.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("beggar_background");

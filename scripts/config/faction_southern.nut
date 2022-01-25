@@ -106,16 +106,16 @@ gt.Const.Tactical.Actor.Assassin <- {
 	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.Slave <- {
-	XP = 50,
+	XP = 75,
 	ActionPoints = 9,
-	Hitpoints = 55,
-	Bravery = 40,
+	Hitpoints = 45,
+	Bravery = 35,
 	Stamina = 100,
 	MeleeSkill = 45,
 	RangedSkill = 35,
-	MeleeDefense = 5,
-	RangedDefense = 5,
-	Initiative = 90,
+	MeleeDefense = 3,
+	RangedDefense = 3,
+	Initiative = 105,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [

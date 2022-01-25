@@ -31,6 +31,18 @@ this.player_character_trait <- this.inherit("scripts/skills/traits/character_tra
 				type = "text",
 				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Resolve."
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "Immune to charm effects."
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/relations.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "Will never desert the company."
 			}
 		];
 	}
