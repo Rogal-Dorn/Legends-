@@ -6700,5 +6700,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
 
 ## 15.0.2.7
-**Fixes**
+##Juggle This##
 - Fixed syntax error in Juggler Background.
+- Reverted arena scaling due to bugs.
