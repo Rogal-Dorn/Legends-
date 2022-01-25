@@ -6698,3 +6698,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Donkeys are no longer lowborns.
 - The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
+
+## 15.0.2.7
+**Fixes**
+- Fixed syntax error in Juggler Background.
