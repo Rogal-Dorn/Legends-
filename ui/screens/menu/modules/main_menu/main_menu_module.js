@@ -21,6 +21,7 @@ var MainMenuModule = function(_alignment)
 	// generic containers
 	this.mContainer = null;
     this.mButtonContainer = null;
+    this.mDisableButtons = false;
     this.mRetirePopupDialog = null;
 
 /*	this.mFleeButton = null;*/
@@ -98,9 +99,9 @@ MainMenuModule.prototype.destroyDIV = function ()
 		this.mRetirePopupDialog.destroyPopupDialog();
 
 	this.mRetirePopupDialog = null;
-
 	this.mButtonContainer.empty();
     this.mButtonContainer = null;
+
 
     this.mContainer.empty();
     this.mContainer.remove();
@@ -123,7 +124,7 @@ MainMenuModule.prototype.createMainMenuButtons = function ()
     {
         self.notifyBackendNewCampaignButtonPressed();
     }, '', 4);
-    if (this.mIsDemoModus === true)
+    if (this.mIsDemoModus === true || this.mDisableButtons === true)
     {
         button.attr('disabled', 'disabled');
     }
@@ -136,11 +137,10 @@ MainMenuModule.prototype.createMainMenuButtons = function ()
     {
         self.notifyBackendLoadCampaignButtonPressed();
     }, '', 4);
-    if (this.mIsDemoModus === true)
+    if (this.mIsDemoModus === true || this.mDisableButtons === true)
     {
         button.attr('disabled', 'disabled');
     }
-
     row = $('<div class="row"></div>');
     this.mButtonContainer.append(row);
     buttonLayout = $('<div class="l-center"></div>');
