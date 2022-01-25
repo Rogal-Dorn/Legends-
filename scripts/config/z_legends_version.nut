@@ -11,6 +11,10 @@ if (!("LegendMod" in gt.Const))
 }
 
 gt.Const.LegendMod.Version <- "Legends Beta " + ver;
+gt.Const.LegendMod.RequiredFiles <- {
+	Sound = "",
+	Patch = ""
+}
 
 
 
