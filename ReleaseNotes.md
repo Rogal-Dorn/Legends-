@@ -6703,3 +6703,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ##Juggle This##
 - Fixed syntax error in Juggler Background.
 - Reverted arena scaling due to bugs.
+
+## 15.0.2.7
+**Typos**
+Avatar trait tooltip fixed.
