@@ -4,7 +4,7 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_hold_the_line";
 		this.m.Name = "Hold the line";
-		this.m.Description = "Instruct your mercenaries to hold their ground!";
+		this.m.Description = "Instruct your mercenaries to hold their ground! Grants the following bonuses to self and allies of your faction within 4 tiles.";
 		this.m.Icon = "skills/holdtheline_square.png";
 		this.m.IconDisabled = "skills/holdtheline_square_bw.png";
 		this.m.Overlay = "holdtheline_square";
@@ -27,42 +27,29 @@ this.legend_hold_the_line <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
+		local tooltip = this.skill.getDefaultUtilityTooltip();
+		tooltip.extend([
 			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
+				id = 6,
 				type = "text",
-				text = this.getCostString()
+				icon = "ui/icons/melee_defense.png",
+				text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Defense"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Receives only [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] of any damage."
+				text = "Receive only [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] of any damage"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/locked_small.png",
-				text = "Immune to being knocked back or grabbed."
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn."
+				text = "Gain immunity to being knocked back or grabbed"
 			}
-		];
+		]);
+
+		return tooltip;
 	}
 
 	function isUsable()
