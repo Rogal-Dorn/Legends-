@@ -6722,3 +6722,4 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Avatar trait tooltip fixed.
 - Crusader scenario text typo fixed.
 - Typos corrected when a player hovers over free or locked space in the retinue menu.
+- Fixed incorrect tooltip on white wolf mantle attachment.
