@@ -6716,6 +6716,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 **Balance**
 - Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
 - Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
+- Mummies and Alps now receive 1.25x damage from burning damage.
 
 **Typos**
 - Avatar trait tooltip fixed.
