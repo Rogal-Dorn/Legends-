@@ -6705,6 +6705,9 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Reverted arena scaling due to bugs.
 
 ## 15.0.2.7
+**Fixes**
+Recover should now calculate fatigue recovery correctly.
+
 **Balance**
 Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
 
