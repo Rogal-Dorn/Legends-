@@ -6622,7 +6622,7 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
 
 ## 15.0.2.6
-##The circus is in town##
+##The ImPossible Circus##
 **Troupe**
 - Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. 
 - Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
@@ -6705,6 +6705,12 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Reverted arena scaling due to bugs.
 
 ## 15.0.2.8
+##Of Farriers and Flames##
+**Balance**
+- Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
+- Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
+- Mummies and Alps now receive 1.25x damage from burning damage.
+
 **Fixes**
 - Recover should now calculate fatigue recovery correctly.
 - Fixes a critical issue in the militia origin.
@@ -6712,11 +6718,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed, cleaned up, and improved the tooltips for Hold the Line perk, status effect and active skill.
 - Mummies now apply the curse even if an actor kills them without an attack.
 - Converted the racial skills to now use MSU based damage type system for damage reduction. This ensures a much more consistent damage resistance system for entities such as skeletons, mummies etc.
-
-**Balance**
-- Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
-- Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
-- Mummies and Alps now receive 1.25x damage from burning damage.
 
 **Typos**
 - Avatar trait tooltip fixed.
