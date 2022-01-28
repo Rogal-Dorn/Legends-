@@ -6706,15 +6706,18 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.8
 **Fixes**
-Recover should now calculate fatigue recovery correctly.
-Fixes a critical issue in the militia origin.
-Fixes an issue that caused blue armbands not to spawn on men-at-arms.
+- Recover should now calculate fatigue recovery correctly.
+- Fixes a critical issue in the militia origin.
+- Fixes an issue that caused blue armbands not to spawn on men-at-arms.
+- Fixed, cleaned up, and improved the tooltips for Hold the Line perk, status effect and active skill.
+- Mummies now apply the curse even if an actor kills them without an attack.
+- Converted the racial skills to now use MSU based damage type system for damage reduction. This ensures a much more consistent damage resistance system for entities such as skeletons, mummies etc.
 
 **Balance**
-Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
-Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
+- Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
+- Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
 
 **Typos**
-Avatar trait tooltip fixed.
-Crusader scenario text typo fixed.
-Typos corrected when a player hovers over free or locked space in the retinue menu.
+- Avatar trait tooltip fixed.
+- Crusader scenario text typo fixed.
+- Typos corrected when a player hovers over free or locked space in the retinue menu.

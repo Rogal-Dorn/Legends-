@@ -37,21 +37,44 @@ this.schrat_racial <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.legend_cascade")
+		switch (_hitInfo.DamageType)
 		{
-			_properties.DamageReceivedRegularMult *= 0.25;
-		}
-		else if (_skill.getID() == "actives.throw_javelin")
-		{
-			_properties.DamageReceivedRegularMult *= 0.5;
-		}
-		else if (_skill.getID() == "actives.throw_javelin")
-		{
-			_properties.DamageReceivedRegularMult *= 0.5;
-		}
-		else if (_skill.getID() == "actives.ignite_firelance")
-		{
-			_properties.DamageReceivedRegularMult *= 1.33;
+			case this.Const.Damage.DamageType.Piercing:
+				if (_skill == null)
+				{
+					_properties.DamageReceivedRegularMult *= 0.25; 
+				}
+				else
+				{					
+					if (_skill.isRanged())
+					{				
+						local weapon = _skill.getItem();
+						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
+						{
+							if (weapon.isWeaponType(this.Const.Items.WeaponType.Bow) || weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow))
+							{
+								_properties.DamageReceivedRegularMult *= 0.25;
+							}
+							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Throwing))
+							{
+								_properties.DamageReceivedRegularMult *= 0.5;
+							}
+							else
+							{
+								_properties.DamageReceivedRegularMult *= 0.5;
+							}
+						}
+						else
+						{
+							_properties.DamageReceivedRegularMult *= 0.2;
+						}
+					}
+				}
+				break;
+
+			case this.Const.Damage.DamageType.Burning:
+				_properties.DamageReceivedRegularMult *= 1.33;
+				break;
 		}
 	}
 

@@ -34,30 +34,69 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_skill == null)
+		switch (_hitInfo.DamageType)
 		{
-			return;
-		}
+			case this.Const.Damage.DamageType.Piercing:
+				if (_skill == null)
+				{
+					_properties.DamageReceivedRegularMult *= 0.2; 
+				}
+				else
+				{					
+					if (_skill.isRanged())
+					{				
+						local weapon = _skill.getItem();
+						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
+						{
+							if (weapon.isWeaponType(this.Const.Items.WeaponType.Bow))
+							{
+								_properties.DamageReceivedRegularMult *= 0.1;
+							}
+							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow) || weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
+							{
+								_properties.DamageReceivedRegularMult *= 0.33;
+							}
+							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Throwing))
+							{
+								if (_skill.getID() == "actives.throw_spear")
+								{
+									_properties.DamageReceivedRegularMult *= 0.5;
+								}
+								else
+								{
+									_properties.DamageReceivedRegularMult *= 0.25;
+								}								
+							}
+							else
+							{
+								_properties.DamageReceivedRegularMult *= 0.25;
+							}
+						}
+						else
+						{
+							_properties.DamageReceivedRegularMult *= 0.2;
+						}
+					}
+					else
+					{
+						_properties.DamageReceivedRegularMult *= 0.5;
+					}
+				}
+				break;
 
-		if (_skill.getID() == "actives.aimed_shot" || _skill.getID() == "actives.quick_shot" || _skill.getID() == "actives.legend_cascade")
-		{
-			_properties.DamageReceivedRegularMult *= 0.1;
-		}
-		else if (_skill.getID() == "actives.shoot_bolt" || _skill.getID() == "actives.shoot_stake" || _skill.getID() == "actives.sling_stone")
-		{
-			_properties.DamageReceivedRegularMult *= 0.33;
-		}
-		else if (_skill.getID() == "actives.throw_javelin")
-		{
-			_properties.DamageReceivedRegularMult *= 0.25;
-		}
-		else if (_skill.getID() == "actives.puncture" || _skill.getID() == "actives.thrust" || _skill.getID() == "actives.stab" || _skill.getID() == "actives.impale" || _skill.getID() == "actives.prong" || _skill.getID() == "actives.rupture" || _skill.getID() == "actives.lunge" || _skill.getID() == "actives.fire_handgonne" || _skill.getID() == "actives.throw_spear")
-		{
-			_properties.DamageReceivedRegularMult *= 0.5;
-		}
-		else if (_skill.getID() == "actives.wardog_bite" || _skill.getID() == "actives.wolf_bite" || _skill.getID() == "actives.warhound_bite")
-		{
-			_properties.DamageReceivedRegularMult *= 0.33;
+			case this.Const.Damage.DamageType.Burning:
+				_properties.DamageReceivedRegularMult *= 1.25;
+				break;
+
+			case this.Const.Damage.DamageType.Cutting:
+				if (_skill != null)
+				{
+					if (_skill.getID() == "actives.wardog_bite" || _skill.getID() == "actives.wolf_bite" || _skill.getID() == "actives.warhound_bite")
+					{
+						_properties.DamageReceivedRegularMult *= 0.33;
+					}
+				}				
+				break;
 		}
 	}
 

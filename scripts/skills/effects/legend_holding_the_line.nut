@@ -15,42 +15,29 @@ this.legend_holding_the_line <- this.inherit("scripts/skills/effects/legend_comm
 
 	function getTooltip()
 	{
-		local p = this.getContainer().getActor().getCurrentProperties();
-		return [
+		local tooltip = this.skill.getTooltip();
+		tooltip.extend([
 			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
+				id = 6,
 				type = "text",
-				text = this.getCostString()
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Defense"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Receives only [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] of any damage."
+				text = "Receive only [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color] of any damage"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/locked_small.png",
-				text = "Immune to being knocked back or grabbed."
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text =  "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn."
+				text = "Immune to being knocked back or grabbed"
 			}
-		];
+		]);
+
+		return tooltip;
 	}
 
 	function onUpdate( _properties )
