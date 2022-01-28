@@ -6717,3 +6717,4 @@ Blacksmiths are now tagged as lowborns, which allows the militia origin to craft
 **Typos**
 Avatar trait tooltip fixed.
 Crusader scenario text typo fixed.
+Typos corrected when a player hovers over free or locked space in the retinue menu.
