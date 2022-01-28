@@ -6703,3 +6703,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ##Juggle This##
 - Fixed syntax error in Juggler Background.
 - Reverted arena scaling due to bugs.
+
+## 15.0.2.8
+- Fixed, cleaned up, and improved the tooltips for Hold the Line perk, status effect and active skill.
+- Mummies now apply the curse even if an actor kills them without an attack.
+- Converted the racial skills to now use MSU based damage type system for damage reduction. This ensures a much more consistent damage resistance system for entities such as skeletons, mummies etc.
