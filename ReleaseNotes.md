@@ -6707,6 +6707,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.7
 **Fixes**
 Recover should now calculate fatigue recovery correctly.
+Fixes a critical issue in the militia origin.
+Fixes an issue that caused blue armbands not to spawn on men-at-arms.
 
 **Balance**
 Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
