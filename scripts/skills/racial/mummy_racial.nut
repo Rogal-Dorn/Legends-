@@ -1,7 +1,5 @@
 this.mummy_racial <- this.inherit("scripts/skills/skill", {
-	m = {
-		Killer = null
-	},
+	m = {},
 	function create()
 	{
 		this.m.ID = "racial.mummy";
@@ -71,21 +69,11 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onDamageReceived(_attacker, _damageHitpoints, _damageArmor)
+	function onDeathWithInfo( _killer, _skill, _tile, _fatalityType )
 	{
-		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
+		if (_killer != null)
 		{
-			this.m.Killer = _attacker;
+			_killer.getSkills().add(this.new("scripts/skills/effects/mummy_curse_effect"));
 		}
 	}
-
-	function onDeath()
-	{
-		this.skill.onDeath();
-		if (this.m.Killer != null)
-		{
-			this.m.Killer.getSkills().add(this.new("scripts/skills/effects/mummy_curse_effect"));
-		}
-	}	
-
 });
