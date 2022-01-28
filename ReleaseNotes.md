@@ -6704,7 +6704,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed syntax error in Juggler Background.
 - Reverted arena scaling due to bugs.
 
-## 15.0.2.7
+## 15.0.2.8
 **Fixes**
 Recover should now calculate fatigue recovery correctly.
 Fixes a critical issue in the militia origin.
@@ -6716,3 +6716,4 @@ Blacksmiths are now tagged as lowborns, which allows the militia origin to craft
 
 **Typos**
 Avatar trait tooltip fixed.
+Crusader scenario text typo fixed.
