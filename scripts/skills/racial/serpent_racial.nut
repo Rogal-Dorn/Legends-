@@ -56,12 +56,7 @@ this.serpent_racial <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_skill == null)
-		{
-			return;
-		}
-
-		if (_skill.getID() == "actives.fire_handgonne" || _skill.getID() == "actives.ignite_firelance")
+		if (_hitInfo.DamageType == this.Const.Damage.DamageType.Burning)
 		{
 			_properties.DamageReceivedRegularMult *= 0.66;
 		}
