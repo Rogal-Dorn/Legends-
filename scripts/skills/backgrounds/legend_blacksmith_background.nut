@@ -7,7 +7,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Name = "Blacksmith";
 		this.m.Icon = "ui/backgrounds/blacksmith.png";
 		this.m.BackgroundDescription = "Blacksmiths tend to be strong and are skilled at repairing equipment.";
-		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both his own equipment and that of his comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out his years comfortably on the coast.";
+		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both their own equipment and that of their comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out their years comfortably on the coast.";
 		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
 		this.m.HiringCost = 500;
 		this.m.DailyCost = 50;
@@ -31,7 +31,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Noble;
+		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Lowborn;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[3];
@@ -78,9 +79,40 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		return ret
 	}
 
+	function setGender(_gender = -1)
+	{
+		local r = _gender;
+		if (_gender == -1)
+		{
+			r = 0;
+			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			{
+				r = this.Math.rand(0, 1);
+			}
+		}
+
+		if (r == 0)
+		{
+			return;
+		}
+ 			//Female
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.AllFemale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = null;
+		this.m.BeardChance = 0;
+		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Name = "Farrier";
+		this.addBackgroundType(this.Const.BackgroundType.Female);
+		this.m.Icon = "ui/backgrounds/blacksmith.png"; //keep the same otherwise people will get confused.
+		this.m.BackgroundDescription = "Everyone needs shoes — and the same applies to four legs, not just two.";
+		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both their own equipment and that of their comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out their years comfortably on the coast.";
+		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
+	}
+
 	function onBuildDescription()
 	{
-		return "{Most every town has a resident blacksmith, | The local blacksmith is always an important person in the village, | Key to the success of any town is the skills of its resident blacksmith,} {%name% needed to repair tools of every kind and the equipment of the local militia. | vital to the maintenance of sword and plow alike. | relied upon by the whole village for tools of every sort, from horseshoes to axes.} {%name%, learning from his father, was the resident blacksmith of %townname%. | Understanding this, %name% took up an apprenticeship in %randomtown% and, once having mastered the craft, settled down as the blacksmith of %townname%. | The son of one such blacksmith, %name% was forced into the profession by his overzealous father, though he cared little for it. | Hastily trained during a greenskin incursion, %name% eventually settled down as one such blacksmith, in %townname%. | %name% was one such blacksmith.}{Unfortunately, %name%\'s wife was killed in a freak accident. Unable to remain in %townname% any longer, %name% sold all he had and left, wandering aimlessly. Eventually he found himself in the company of sellswords, where his strong arms and hammer accustomed hands drew great interest. | Feeling his years wear away, %name% was overcome by restlessness, and he decided to set out as a mercenary, where his strong arms could be of different use. | After many years %name% was nearly killed by greenskin raiders, escaping only by blind chance. Thoroughly shaken, %name% quit his job at the village, determined to learn all he could of warlore and battlecraft so that greenskins would never menace him again.}";
+		return "{Most every town has a resident blacksmith, | The local blacksmith is always an important person in the village, | Key to the success of any town is the skills of its resident blacksmith,} {%name% needed to repair tools of every kind and the equipment of the local militia. | vital to the maintenance of sword and plow alike. | relied upon by the whole village for tools of every sort, from horseshoes to axes.} {%name%, learning from their father, was the resident blacksmith of %townname%. | Understanding this, %name% took up an apprenticeship in %randomtown% and, once having mastered the craft, settled down as the blacksmith of %townname%. | The son of one such blacksmith, %name% was forced into the profession by his overzealous father, though he cared little for it. | Hastily trained during a greenskin incursion, %name% eventually settled down as one such blacksmith, in %townname%. | %name% was one such blacksmith.}{Unfortunately, %name%\'s partner was killed in a freak accident. Unable to remain in %townname% any longer, %name% sold all they had and left, wandering aimlessly. Eventually they found themselves in the company of sellswords, where their strong arms and hammer accustomed hands drew great interest. | Feeling their years wear away, %name% was overcome by restlessness, and they decided to set out as a mercenary, where their strong arms could be of different use. | After many years %name% was nearly killed by greenskin raiders, escaping only by blind chance. Thoroughly shaken, %name% quit their job at the village, determined to learn all they could of warfare and battlecraft so that greenskins would never menace them again.}";
 	}
 
 	function onChangeAttributes()

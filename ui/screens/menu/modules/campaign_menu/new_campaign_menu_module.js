@@ -106,24 +106,6 @@ var NewCampaignMenuModule = function () {
 
 	// Map config
 	this.mMapOptions = {
-		Width: {
-			Control: null,
-			Title: null,
-			OptionsKey: 'map.width',
-			Min: 0,
-			Max: 0,
-			Value: 0,
-			Step: 1
-		},
-		Height: {
-			Control: null,
-			Title: null,
-			OptionsKey: 'map.height',
-			Min: 0,
-			Max: 0,
-			Value: 0,
-			Step: 1
-		},
 		LandMassMult: {
 			Control: null,
 			Title: null,
@@ -926,9 +908,6 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	this.mMapPanel.append(leftColumn);
 	var rightColumn = $('<div class="column"></div>');
 	this.mMapPanel.append(rightColumn);
-
-	this.createSliderControlDIV(this.mMapOptions.Width, 'Map Width', leftColumn);
-	this.createSliderControlDIV(this.mMapOptions.Height, 'Map Height', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.LandMassMult, 'Land Mass Ratio', leftColumn);
 	this.createSliderControlDIV(this.mMapOptions.WaterConnectivity, 'Water', leftColumn);
 	//this.createSliderControlDIV(this.mMapOptions.MinLandToWaterRatio, 'Land To Water Ratio', leftColumn);
@@ -936,8 +915,8 @@ NewCampaignMenuModule.prototype.buildMapConfig = function () {
 	//this.createSliderControlDIV(this.mMapOptions.MountainsMult, 'Mountain Density', rightColumn);
 	//this.createSliderControlDIV(this.mMapOptions.ForestsMult, 'Forest Density', rightColumn);
 	//this.createSliderControlDIV(this.mMapOptions.SwampsMult, 'Swamp Density', rightColumn);
-	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', rightColumn);
-	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', rightColumn);
+	this.createSliderControlDIV(this.mMapOptions.NumSettlements, 'Settlements', leftColumn);
+	this.createSliderControlDIV(this.mMapOptions.NumFactions, 'Factions', leftColumn);
 
 	// this.mMapOptions.ForestsMult.Control.addClass('display-none');
 	// this.mMapOptions.ForestsMult.Title.addClass('display-none');
@@ -1280,8 +1259,6 @@ NewCampaignMenuModule.prototype.buildConfigPage = function () {
 
 NewCampaignMenuModule.prototype.updateMapConfig = function () {
 	var controls = [
-		this.mMapOptions.Width,
-		this.mMapOptions.Height,
 		this.mMapOptions.LandMassMult,
 		this.mMapOptions.WaterConnectivity,
 		this.mMapOptions.Snowline,
@@ -1314,9 +1291,6 @@ NewCampaignMenuModule.prototype.updateMapConfig = function () {
 }
 
 NewCampaignMenuModule.prototype.randomizeMapConfig = function () {
-
-	this.mMapOptions.Width.Value = Helper.getRandomInt(this.mMapOptions.Width.Min, this.mMapOptions.Width.Max);
-	this.mMapOptions.Height.Value = Helper.getRandomInt(this.mMapOptions.Height.Min, this.mMapOptions.Height.Max);
 	this.mMapOptions.LandMassMult.Value = Helper.getRandomInt(this.mMapOptions.LandMassMult.Min, this.mMapOptions.LandMassMult.Max);
 	this.mMapOptions.WaterConnectivity.Value = Helper.getRandomInt(this.mMapOptions.WaterConnectivity.Min, this.mMapOptions.WaterConnectivity.Max);
 	this.mMapOptions.Snowline.Value = Helper.weightedRandom(this.mMapOptions.Snowline.Min, this.mMapOptions.Snowline.Max, 90, 5);
@@ -1533,24 +1507,6 @@ NewCampaignMenuModule.prototype.bindTooltips = function () {
 	this.mEvilPermanentDestructionCheckbox.bindTooltip({
 		contentType: 'ui-element',
 		elementId: TooltipIdentifier.MenuScreen.NewCampaign.EvilPermanentDestruction
-	});
-
-	this.mMapOptions.Width.Control.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.width'
-	});
-	this.mMapOptions.Width.Title.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.width'
-	});
-
-	this.mMapOptions.Height.Control.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.height'
-	});
-	this.mMapOptions.Height.Title.bindTooltip({
-		contentType: 'ui-element',
-		elementId: 'mapconfig.height'
 	});
 
 	this.mMapOptions.LandMassMult.Control.bindTooltip({
@@ -1864,12 +1820,6 @@ NewCampaignMenuModule.prototype.unbindTooltips = function () {
 	this.mEvilPermanentDestructionLabel.unbindTooltip();
 	this.mEvilPermanentDestructionCheckbox.unbindTooltip();
 
-	this.mMapOptions.Width.Control.unbindTooltip();
-	this.mMapOptions.Width.Title.unbindTooltip();
-
-	this.mMapOptions.Height.Control.unbindTooltip();
-	this.mMapOptions.Height.Title.unbindTooltip();
-
 	// this.mMapOptions.LandMassMult.Control.unbindTooltip();
 	// this.mMapOptions.LandMassMult.Title.unbindTooltip();
 
@@ -2175,17 +2125,6 @@ NewCampaignMenuModule.prototype.updateStartingScenarioDescription = function (_d
 NewCampaignMenuModule.prototype.setConfigOpts = function (_data) {
 	if (_data !== null) {
 		this.mMapConfigOpts = _data;
-
-		if ('Height' in _data) {
-			this.mMapOptions.Height.Value = _data['Height'];
-			this.mMapOptions.Height.Min = _data['HeightMin'];
-			this.mMapOptions.Height.Max = _data['HeightMax'];
-		}
-		if ('Width' in _data) {
-			this.mMapOptions.Width.Value = _data['Width'];
-			this.mMapOptions.Width.Min = _data['WidthMin'];
-			this.mMapOptions.Width.Max = _data['WidthMax'];
-		}
 		if ('LandMassMult' in _data) {
 			this.mMapOptions.LandMassMult.Value = _data['LandMassMult'];
 			this.mMapOptions.LandMassMult.Min = _data['LandMassMultMin'];
@@ -2261,8 +2200,6 @@ NewCampaignMenuModule.prototype.collectSettings = function () {
 	settings["GreaterEvil"] = this.mEvil
 	settings["PermanentDestruction"] = this.mEvilPermanentDestructionCheckbox.is(':checked')
 	settings["Seed"] = this.mSeed.getInputText()
-	settings["Width"] = this.mMapOptions.Width.Value
-	settings["Height"] = this.mMapOptions.Height.Value
 	settings["LandMassMult"] = this.mMapOptions.LandMassMult.Value
 	settings["WaterConnectivity"] = this.mMapOptions.WaterConnectivity.Value
 	settings["MinLandToWaterRatio"] = this.mMapOptions.MinLandToWaterRatio.Value
