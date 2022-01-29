@@ -6728,3 +6728,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.9
 ##All Fun and Games##
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
+
+## 15.0.2.10
+**Typos**
+Fixed an issue with player avatar trait not displaying the information correctly.
