@@ -419,9 +419,16 @@ this.character_screen <- {
 
 	function queryRosterSizeData(_shake = false)
 	{
-
+		local brothersInFrontline = 9;
+		if (("State" in this.Tactical))
+		{
+			if (!this.Tactical.State.isScenarioMode())
+			{
+			local brothersInFrontline = this.World.State.getBrothersInFrontline();
+			}
+		}
 		local result = {
-			brothersInCombat = this.World.State.getBrothersInFrontline(),
+			brothersInCombat = brothersInFrontline,
 			brothersMaxInCombat = 27,
 			brothers = this.World.getPlayerRoster().getSize(),
 			brothersMax = 27,
