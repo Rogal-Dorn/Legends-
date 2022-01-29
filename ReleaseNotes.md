@@ -6724,3 +6724,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Crusader scenario text typo fixed.
 - Typos corrected when a player hovers over free or locked space in the retinue menu.
 - Fixed incorrect tooltip on white wolf mantle attachment.
+
+## 15.0.2.9
+- Fixed an issue with the minstrel_and_troubador event causing events to break.
