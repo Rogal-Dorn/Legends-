@@ -6733,3 +6733,4 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 **Typos**
 Fixed an issue with player avatar trait not displaying the information correctly.
 Fixed a few typos in the legends tournament event.
+'Hunting mummies' contract typos fixed.
