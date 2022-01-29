@@ -6732,20 +6732,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## UPCOMING
 
-**kobolds**
-80 new sounds added 
-Kobolds:
-- Become invisible at the end of each turn 
-- Have Backlfip 
-Blowguns:
-- do less damage 
-- have a 50% chance to daze when hitting body
-- send the target to sleep when hitting the head
-Kobold scenario updated so you can try them out.
-
-
 **Fixes**
-- Scenario mode now works
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
