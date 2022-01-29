@@ -6695,3 +6695,9 @@ Overall, Warlords are now stronger and more independant entities that act as a h
 - Donkeys are no longer lowborns.
 - The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
+
+
+## 15.0.2.6
+
+**Fixes** 
+Scenario mode now works again
