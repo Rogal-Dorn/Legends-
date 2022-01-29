@@ -190,8 +190,9 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
-	function onUpdateDraftList( _list, _gender )
+	function onUpdateDraftList( _list, _gender = null )
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (_list.len() < 10)
 		{
 			return;

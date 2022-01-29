@@ -105,8 +105,9 @@ this.starting_scenario <- {
 	{
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 	}
 
 	function onUpdateStablesList( _list )

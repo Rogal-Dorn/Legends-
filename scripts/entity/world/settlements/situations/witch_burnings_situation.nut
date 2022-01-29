@@ -47,8 +47,10 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_modifiers.FoodPriceMult *= 1.15;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");

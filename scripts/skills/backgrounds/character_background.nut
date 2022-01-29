@@ -118,8 +118,29 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		CustomPerkTree = null,
 		PerkTreeMap = null,
 		PerkTree = null,
-		IsGuaranteed = []
+		IsGuaranteed = [],
+		IsScenarioOnly = false,
+		IsNew = true,
+		IsUntalented = false,
+		IsOffendedByViolence = false,
+		IsCombatBackground = false,
+		IsNoble = false,
+		IsLowborn = false
 	},
+
+	function convertToBackgroundType(){
+		local function addToBackgroundType(_type, _constType){
+			if (!_type) return
+			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
+		}
+		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario)
+		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented)
+		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence)
+		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat)
+		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble)
+		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn)
+	}
+
 	function isExcluded( _id )
 	{
 		return this.m.Excluded.find(_id) != null;

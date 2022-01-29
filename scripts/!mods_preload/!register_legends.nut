@@ -8,15 +8,17 @@
 	this.Const.LegendMod.hookAISplitShield();
 	this.Const.LegendMod.hookAlpRacial();
 	this.Const.LegendMod.hookBehavior();
+	this.Const.LegendMod.hookCharacterBackground();
 	this.Const.LegendMod.hookCombatManager();
 	this.Const.LegendMod.hookContract();
 	this.Const.LegendMod.hookFactionAction();
+	this.Const.LegendMod.hookGhoul();
 	this.Const.LegendMod.hookItemContainer();
 	this.Const.LegendMod.hookStrategy();
 	this.Const.LegendMod.hookTacticalEntityManager();
 	this.Const.LegendMod.hookTacticalState();
 	this.Const.LegendMod.hookWorldmapGenerator();
-	this.Const.LegendMod.hookGhoul();
+	
 
 	this.Const.LegendMod.hookMSU();
 

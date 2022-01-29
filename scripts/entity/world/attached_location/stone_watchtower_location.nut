@@ -61,8 +61,9 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		return r;
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

@@ -109,8 +109,10 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 		this.m.Target = _in.readString();
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (this.m.IsSouthern)
 		{
 			_draftList.push("daytaler_southern_background");

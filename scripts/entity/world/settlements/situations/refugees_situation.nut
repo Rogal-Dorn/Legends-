@@ -40,8 +40,10 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.FoodPriceMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");

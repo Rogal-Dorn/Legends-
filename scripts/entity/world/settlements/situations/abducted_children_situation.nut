@@ -48,8 +48,10 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 		_modifiers.RecruitsMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 	_draftList.push("witchhunter_background");
 	}
 
