@@ -6726,4 +6726,5 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed incorrect tooltip on white wolf mantle attachment.
 
 ## 15.0.2.9
+##All Fun and Games##
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
