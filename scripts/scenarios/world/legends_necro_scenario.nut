@@ -200,8 +200,9 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		return necros != 0;
 	}
 
-	function onUpdateDraftList( _list, _gender )
+	function onUpdateDraftList( _list, _gender = null )
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		local r;
 		r = this.Math.rand(0, 5);
 
