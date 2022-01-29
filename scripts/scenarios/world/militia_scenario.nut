@@ -315,12 +315,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 				bro.getSkills().update();
 			}
 
-			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Stabled))
-            {
-                garbage.push(bro);
-            }
-
-			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Stabled)) //keep lowborn and stabled, delete all else.
             {
                 garbage.push(bro);
             }

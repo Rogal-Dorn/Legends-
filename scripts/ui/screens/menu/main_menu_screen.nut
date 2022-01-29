@@ -137,13 +137,38 @@ this.main_menu_screen <- {
 			}
 		}
 
+
 		this.m.JSHandle.asyncCall("setDLC", dlc);
-		if (!this.Const.DLC.Unhold && !this.Const.DLC.Wildmen && !this.Const.DLC.Desert)
+		local missingFiles = this.checkForRequiredFiles();
+		local test = false
+		if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert || missingFiles.len() > 0)
 		{
-			this.m.JSHandle.asyncCall("setLMOTD", "Legends Mod requires all DLC to be installed and enabled. \n Legends extensively uses features and assets from all official DLC. We would not be able to offer this mod experience without all the awesome work from Overhype. \n We apologize that we can't offer a version without support from the DLC's, but we also do feel that the devs deserve our support for this amazing game.");
+			local disabledMotdText = "You are missing critical files!"
+			if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert) disabledMotdText += "\nLegends extensively uses features and assets from all official DLC. We would not be able to offer this mod experience without all the awesome work from Overhype."
+			if(!this.Const.DLC.Unhold) disabledMotdText += "\nMissing 'Beasts and Exploration' DLC";
+			if(!this.Const.DLC.Wildmen) disabledMotdText += "\nMissing 'Warriors of the North' DLC'";
+			if(!this.Const.DLC.Desert) disabledMotdText += "\nMissing 'Blazing Deserts' DLC'";
+			if(missingFiles.len() > 0){
+				foreach (fileType, fileName in missingFiles){
+					disabledMotdText += format("\nMissing %s file %s", fileType, fileName);
+				}
+			}
+			this.m.JSHandle.asyncCall("setLMOTD", disabledMotdText);
 		} else {
 			this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
 		}
+	}
+
+	function checkForRequiredFiles(){
+		local missing = {};
+		local requiredFiles = this.Const.LegendMod.RequiredFiles;
+		local filesInData = this.IO.enumerateFiles("");
+		foreach (fileType, fileName in requiredFiles){
+			if(fileName != "" && filesInData.find(fileName) == null){
+				missing[fileType] <- fileName;
+			}
+		}
+		return missing
 	}
 
 	function destroy()

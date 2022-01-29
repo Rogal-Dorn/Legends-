@@ -2237,6 +2237,10 @@ this.character_screen <- {
 				{
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 				}
+				else if (::mods_isClass(_data.targetItem, "legend_armor_upgrade") || ::mods_isClass(_data.targetItem, "legend_helmet_upgrade"))
+				{
+					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
+				}
 
 				if (_data.inventory.unequip(_data.sourceItem) == false)
 				{
