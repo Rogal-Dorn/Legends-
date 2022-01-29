@@ -102,7 +102,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				15,
 				10
 			],
-			MeleSkill = [
+			MeleeSkill = [
 				-3,
 				3
 			],
