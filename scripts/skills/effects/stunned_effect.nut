@@ -49,7 +49,7 @@ this.stunned_effect <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.IsGarbage = true;
 			/*
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.m.Container.getActor().getName()) + " became dazed instead of baffled, due to being stun immune.");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.m.Container.getActor().getName()) + " became dazed instead of stunned, due to being stun immune.");
 
 			local forceDaze = this.new("scripts/skills/effects/dazed_effect");
 			forceDaze.m.IsForced = true;

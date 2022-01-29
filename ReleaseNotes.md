@@ -6699,5 +6699,16 @@ Overall, Warlords are now stronger and more independant entities that act as a h
 
 ## 15.0.2.6
 
+**kobolds**
+80 new sounds added 
+Kobolds now:
+- Become invisible at the end of each turn 
+- Have Backlfip 
+Blowguns now:
+- do less damage 
+- have a 50% chance to daze when hitting body
+- send the target to sleep when hitting the head
+Kobold scenario updated so you can try them out.
+
 **Fixes** 
 Scenario mode now works again

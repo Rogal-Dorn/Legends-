@@ -161,6 +161,11 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 		actor.setDirty(true);
 	}
 
+	function resetTime()
+	{
+		this.m.TurnsLeft = 4;
+	}
+
 	function onTurnEnd()
 	{
 		if (--this.m.TurnsLeft <= 0)
