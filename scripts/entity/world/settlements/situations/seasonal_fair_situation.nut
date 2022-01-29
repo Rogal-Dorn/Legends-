@@ -35,8 +35,10 @@ this.seasonal_fair_situation <- this.inherit("scripts/entity/world/settlements/s
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");
 		_draftList.push("peddler_background");

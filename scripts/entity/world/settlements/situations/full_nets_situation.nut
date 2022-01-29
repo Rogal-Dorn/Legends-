@@ -41,8 +41,10 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_modifiers.FoodPriceMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");

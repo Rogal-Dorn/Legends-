@@ -40,8 +40,10 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 		_modifiers.RarityMult *= 0.75;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

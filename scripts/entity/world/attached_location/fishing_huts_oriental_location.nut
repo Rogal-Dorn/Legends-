@@ -13,8 +13,9 @@ this.fishing_huts_oriental_location <- this.inherit("scripts/entity/world/attach
 		_list.push("supplies/armor_parts_small_item");
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if (!this.isActive())
 		{
 			return;

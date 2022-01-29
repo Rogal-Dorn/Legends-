@@ -31,8 +31,10 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.RarityMult *= 1.1;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("caravan_hand_background");
 		_draftList.push("caravan_hand_background");
 		_draftList.push("caravan_hand_background");

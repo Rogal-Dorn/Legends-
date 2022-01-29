@@ -42,8 +42,10 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("deserter_background");
 		_draftList.push("deserter_background");
 		_draftList.push("deserter_background");
