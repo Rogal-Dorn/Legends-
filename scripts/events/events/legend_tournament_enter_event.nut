@@ -380,7 +380,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "H",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n 1. Fight as many battles in a row as you can. \n\n 2. You will fight a mix of human competitors from across the lands without combat rules. \n\n 2. The prize begins at 250 crowns, each battle the difficulty will increase and the prize will double.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{Artemisia sighs a little before repeating a speech she has clearly given many times %SPEECH_ON%The rules of the Gauntlet are simple, \n\n One — fight as many battles in a row as you can. \n\n Two — you will fight a mix of human competitors from across the lands without combat rules. \n\n Three — the prize begins at 250 crowns, each battle the difficulty will increase and the prize will double.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
