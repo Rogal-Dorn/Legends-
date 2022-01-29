@@ -6698,3 +6698,16 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Donkeys are no longer lowborns.
 - The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
+
+
+## UPCOMING
+
+**Fixes**
+- Fixed being able to equip layer items
+- Fixed more infinite consumables
+- Fixed web skill showing damage values in the tooltip
+- 
+**For Modders**
+- Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
+- onUpdateDraftsList now has Gender as an optional parameter
+- These changes improve compatibility with mods
