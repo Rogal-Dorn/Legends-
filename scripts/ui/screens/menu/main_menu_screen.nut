@@ -143,9 +143,16 @@ this.main_menu_screen <- {
 		{
 			local disabledMotdText = "You are missing critical files!"
 			if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert) disabledMotdText += "\nLegends extensively uses features and assets from all official DLC. We would not be able to offer this mod experience without all the awesome work from Overhype."
-			if(!this.Const.DLC.Unhold) disabledMotdText += "\nMissing 'Beasts and Exploration' DLC";
-			if(!this.Const.DLC.Wildmen) disabledMotdText += "\nMissing 'Warriors of the North' DLC'";
-			if(!this.Const.DLC.Desert) disabledMotdText += "\nMissing 'Blazing Deserts' DLC'";
+			if(!this.Const.DLC.Unhold){
+				disabledMotdText += "\nMissing 'Beasts and Exploration' DLC";
+			}
+			if(!this.Const.DLC.Wildmen){ 
+				disabledMotdText += "\nMissing 'Warriors of the North' DLC'";
+			}
+			if(!this.Const.DLC.Desert){ 
+				disabledMotdText += "\nMissing 'Blazing Deserts' DLC'";
+			}
+			this.logError(disabledMotdText);
 			this.m.JSHandle.asyncCall("setLMOTD", disabledMotdText);
 		} else {
 			this.m.JSHandle.asyncCall("setMOTD", "Welcome to Legends Beta. \n\n To report bugs, share strategies and ideas, or try out new test builds, join us on https://discord.gg/ZfCHGuC");
