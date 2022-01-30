@@ -2272,7 +2272,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChainLightning = "Unleash an arcing barrage that strikes an opponent and sending sparks on to another 3 enemies, dealing additional damage and ignoring armor. Requires a staff.",
 	LegendComposure = "Train to keep your cool, under even the most challenging circumstances. Grants immunity to stun.",
 	LegendNightvision = "Use your superior vision and training to spot targets in the gloom, and grant that vision to your allies.",
-	LegendMasteryStaves = "Master the art of fighting with staves. Use 25% less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also Increases range for leaps and reduces costs for spells.",
+	LegendMasteryStaves = "Master the art of fighting with staves. Build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less fatigue when using Staff Bash or Staff Knock Out, increases the daze chance when using Staves. Also Increases range for leaps and reduces costs for spells.",
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue.",
 	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants.",
