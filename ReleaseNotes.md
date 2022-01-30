@@ -6732,11 +6732,18 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## UPCOMING
 
+**Kobolds**
+80 new sounds added 
+go invisible at the end of every turn 
+blowgun can stun and daze 
+
 **Fixes**
+- Scenario mode now works
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
-- 
+- Updated bases for troupe, beasthunters and crusader
+
 **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
