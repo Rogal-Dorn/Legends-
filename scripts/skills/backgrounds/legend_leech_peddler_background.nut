@@ -24,10 +24,10 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the unhinged",
-			"the slimy",
-			"the unsound",
-			"the jarman",
+			"the Unhinged",
+			"the Slimy",
+			"the Unsound",
+			"the Jarman",
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.Monk;
