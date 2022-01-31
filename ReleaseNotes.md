@@ -6752,3 +6752,6 @@ A few more tavern rumors have been added.
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods
+## 15.0.2.10
+**Fixes**
+- Improved grammar in peddler deal event.
