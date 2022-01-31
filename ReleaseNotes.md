@@ -6730,15 +6730,25 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ##All Fun and Games##
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
 
-## UPCOMING
 
+## 15.0.2.10
 **Fixes**
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
-- 
+Disowned noble background may now spawn as a full female background, named disowned lady.
+Fixes an issue with the troubadour vs. juggler event.
+
+**Typos**
+Fixed an issue with player avatar trait not displaying the information correctly.
+Fixed a few typos in the legends tournament event.
+'Hunting mummies' contract typos fixed.
+A couple dozen typo fixes thanks to Dimon485.
+
+**Misc**
+A few more tavern rumors have been added.
+
 **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods
-
