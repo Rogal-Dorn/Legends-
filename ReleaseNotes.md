@@ -6732,6 +6732,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.10
 **Fixes**
 Disowned noble background may now spawn as a full female background, named disowned lady.
+Fixes an issue with the troubadour vs. juggler event.
 
 **Typos**
 Fixed an issue with player avatar trait not displaying the information correctly.
