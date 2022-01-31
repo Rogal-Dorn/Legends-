@@ -68,7 +68,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		if (item != null)
 		{
 			hasItem = item.isItemType(this.Const.Items.ItemType.Cultist)
-			if (!hasItem && this.LegendsMod.Configs().LegendArmorsEnabled() && && ::mods_isClass(item, "legend_armor"))
+			if (!hasItem && this.LegendsMod.Configs().LegendArmorsEnabled() && ::mods_isClass(item, "legend_armor"))
 			{
 				foreach( upgrade in item.m.Upgrades )
 				{
