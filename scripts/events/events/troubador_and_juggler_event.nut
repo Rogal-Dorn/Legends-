@@ -194,7 +194,7 @@ this.troubador_and_juggler_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		this.m.Troubador = candidates_troubador[this.Math.rand(0, candidates_minstrel.len() - 1)];
+		this.m.Troubador = candidates_troubador[this.Math.rand(0, candidates_troubador.len() - 1)];
 		this.m.Juggler = candidates_juggler[this.Math.rand(0, candidates_juggler.len() - 1)];
 		this.m.Score = (candidates_troubador.len() + candidates_juggler.len()) * 5;
 	}
