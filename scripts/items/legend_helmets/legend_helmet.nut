@@ -440,7 +440,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		{
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
+		local oldIndex
+		if (("Assets" in this.World))
+		{
 		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		}
 		if (oldIndex != null) oldIndex = oldIndex.index
 		local oldItem;
 		if (this.m.Upgrades[slot] != null)

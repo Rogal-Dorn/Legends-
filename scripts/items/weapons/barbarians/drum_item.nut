@@ -5,8 +5,11 @@ this.drum_item <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.barbarian_drum";
 		this.m.Name = "Barbarian Drum";
-		this.m.Description = "";
-		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Mace;
+		this.m.Description = "A barbarian instrument, can produce inspiring rythms if you have the skill. The drum sticks make weak maces in a pinch.";
+		this.m.IconLarge = "weapons/melee/wildmen_10.png";
+		this.m.Icon = "weapons/melee/wildmen_10_70x70.png";
+		this.m.BreakingSound = "sounds/combat/bash_hit_03.wav";
+		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Staff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Misc;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
@@ -19,7 +22,7 @@ this.drum_item <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RangeMin = 1;
 		this.m.RangeMax = 1;
 		this.m.RangeIdeal = 1;
-		this.m.Value = 200;
+		this.m.Value = 300;
 		this.m.Condition = 100;
 		this.m.ConditionMax = 100;
 		this.m.StaminaModifier = 0;
