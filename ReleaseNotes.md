@@ -6732,6 +6732,15 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## UPCOMING
 
+**Vala** 
+You will now only encounter a vala during the undead crisis
+Her offensive abilities can now affect your own company 
+
+**Runes**
+Equiping a rune will now make your mercenaries superstitious
+Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
+
+
 **Kobolds**
 Can show up in goblin scouting parties, or when the greenskin horde assembles
 80 new sounds added 
