@@ -264,14 +264,14 @@ gt.Const.Tactical.Actor.GreenskinCatapult <- {
 	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.KoboldFighter <- {
-	XP = 100,
+	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 40,
-	Bravery = 55,
+	Bravery = 50,
 	Stamina = 100,
-	MeleeSkill = 55,
-	RangedSkill = 60,
-	MeleeDefense = 15,
+	MeleeSkill = 50,
+	RangedSkill = 70,
+	MeleeDefense = 5,
 	RangedDefense = 10,
 	Initiative = 130,
 	FatigueEffectMult = 1.0,

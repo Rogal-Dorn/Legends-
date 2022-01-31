@@ -6733,12 +6733,14 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## UPCOMING
 
 **Kobolds**
+Can show up in goblin scouting parties, or when the greenskin horde assembles
 80 new sounds added 
-go invisible at the end of every turn 
-blowgun can stun and daze 
+become invisible at the end of every turn 
+blowgun can daze, and stun if they hit the head
 
 **Fixes**
 - Scenario mode now works
+- Fixes barbarian drum not showing up in inventories
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
