@@ -73,7 +73,7 @@ gt.Const.Strings.RumorsGeneral <- [
 ];
 gt.Const.Strings.RumorsCivilian <- [
 	"Always be sceptical towards the nobility, my friend. You never know what their real agenda might be.",
-	"You small that? No? That must mean — oh no...",
+	"You smell that? No? That must mean — oh no...",
 	"You seen a weird fella about? Five foot tall, jar of leeches? No? Alright nevermind then...",
 	"These Dakkul folks are gettin\' more common by the day — one was pickin\' carrots outta my field and when I yelled at \'im he just...stared.",
 	"You seen those brutes with the sacks on their \'eds? Nah? Well if you do i'd be mindful of how close you get to \'em — these ones weren't like the rest, \'ollow they told me... or somthin\'",
@@ -101,7 +101,7 @@ gt.Const.Strings.RumorsMilitary <- [
 	"There\'re things out there way more scary than some group of brigands. You\'ll see what I mean soon enough if you head out beyond the borderlands.",
 	"I always rely on my axe to smash the enemy\'s shield. Even the tallest man will fall quickly once he can not defend himself any more.",
 	"If I learned one thing during my soldiering years, it\'s that the high ground wins battles. Trust me on this one.",
-	"I once was a mercenary like you but then I took an arrow to the knee.",
+	"I once was a mercenary like you — but then I took an arrow to the knee.",
 	"Have you heard? There\'s an \'edge knight runnin\' about the place lookin\' for squires and the sort. Might consider tryin\' out myself, if I was feelin\' suicidal...",
 	"I\'ve seen %randomnoble% at a tourney recently. Damn, what a sight, that man. The way he jousts, I mean. Took the prize and all the ladies loved him.",
 	"I\'m old now, but I still remember my first battle. Pissed my pants even before the first arrow flew. Ha!",
@@ -114,6 +114,8 @@ gt.Const.Strings.RumorsMilitary <- [
 	"Got wounded bad some months back in a skirmish \'gainst goblins. Couldn\'t feel me legs anymore, but the lads carried me all the way back to %townname%. Gods bless \'em.",
 	"You\'ll know greenskin territory from the idols they erect out of skulls and bones. Of human skulls and bones.",
 	"Fourteen. That\'s how many men I\'ve killed. Women I count extra, three so far. What about you?",
+	"Seen them knights wanderin\' around? They look like they\'re the shit but trust me — you put a dagger inbetween those plates and they die just like any other man...",
+	"You seen those ponces waving their swords around in their fancy \'ats? They aren\'t too smart when you put an arrow between their ribs!",
 	"Knew a Hedge Knight who got hired by a sellsword company a few days back — he was in here puffin\' his chest and talkin\' about how much gold he\'d make. Then as soon as he joined up they took all his gear and gave him the boot. Maybe there old gods are alive after all!",
 	"I usually stand guard on the gate tower. To be honest, spitting down on some travellers is the only fun I get all day.",
 	"The mood amongst the garrison is pretty bad. They say that pay\'s been delayed a few times already and everyone\'s starting to lose patience.",
@@ -128,11 +130,13 @@ gt.Const.Strings.RumorsMiningSettlement <- [
 	"The other day my pickaxe broke while I was hammering away. Piece of it clipped my cheek. Not much and I\'d be missing an eye!",
 	"The mines are a real deathtrap, we\'re losing men every week. Even venturing with you might be better for longevity, ha!",
 	"Working the mines has its merits, too, you know. We never get wet from the rain, it\'s just the dust that kills you eventually.",
+	"Hit a rock with my pick once — before you laugh it started movin\' on its own, damn almost killed me!"
 	"In the other mine shaft, %randomname% found a nugget the size of me fist! The overseer got to him before he could hide it, though."
 ];
 gt.Const.Strings.RumorsFarmingSettlement <- [
 	"Even with the bad harvest this year the landlord won\'t give us a rest! The high folks got to have their feasts, you know...",
 	"If a lordling every gives you trouble, see how smart he is on the other end of yer pitchfork!",
+	"You seen those beasts eatin\' corpses? If its grey, you stay — if it\'s pick you better run as far and fast as you can. Town guard won\'t help so don\'t bother \'em.",
 	"If you\'re looking to stack up on food and supplies head over to the market and look for %randomname%. He has the best quality and the lowest prices!",
 	"I\'ve been a farmhand all my life and sometimes I wish I\'d taken the chance to venture with a company like yours... well, it\'s too late for that now.",
 	"There\'s lots of young and naive lads out there looking for adventure. I hope you take good care of them and return them safely to their families one day."
@@ -156,6 +160,7 @@ gt.Const.Strings.RumorsForestSettlement <- [
 ];
 gt.Const.Strings.RumorsTundraSettlement <- [
 	"You may think our land is barren and scant but once you live here you will learn to love it like no other!",
+	"Saw a woman built like an Ox last season — got into the fight with a few handsy watchmen and ended up turning this whole place upside down. Legendary it was!",
 	"If you\'re up in the mountains and see one of the rocks move, just run, stranger. It ain\'t worth your life to gawk at.",
 	"The clans and families in these parts are still strong and define who we are. Those nancy southern folks will never understand how things work here in the north.",
 	"If you\'re looking to make a quick coin with some trades look around for furs. The ones from around here are the best far and wide.",
@@ -163,6 +168,7 @@ gt.Const.Strings.RumorsTundraSettlement <- [
 ];
 gt.Const.Strings.RumorsSnowSettlement <- [
 	"The best remedy against biting winds and freezing cold can be found right here: Beer and mead!",
+	"Knew a madman who lived out here. Said somthing about a cave and disappeared...",
 	"You seen that weird woman around? The one with that staff who keeps talkin\' about stones? What is the world comin\' to, eh?",
 	"\'erd of a spot of trouble around here — whole family butchered by gods know what. Only one survivor I hear. We\'ll see how long that one lasts.",
 	"A fortnight ago %randomname% went missing on the way home from the tavern. Found him frozen rock solid the next morning. Could have sold him to some fancy noble as a statue, haha!",
@@ -193,6 +199,7 @@ gt.Const.Strings.RumorsDesertSettlement <- [
 	"Careful where you step out here friend, the sand is not as stable as you think it might be.",
 	"You better be careful fighting the snakes in the desert around here. They\'re strong enough to drag a man off his feet!",
 	"Word of advice, crownling — if a gladiator looks at you. Look. Away.",
+	"Did you meet any of the dead in the desert on your way in? Saw a young fighter from the arena turn to dust after hitting one of them once. Hard to bury something like that.",
 	"A friend of mine said something about an ancient temple somewhere in the desert. Sounds like a fool\'s errand for me...",
 	"Those northern dogs have no right to come into our lands, they should stay where they belong!"
 ];
