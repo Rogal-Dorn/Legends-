@@ -6732,12 +6732,30 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 
 ## 15.0.2.10
+
+**Vala** 
+You will now only encounter a vala during the undead crisis
+Her offensive abilities can now affect your own company 
+
+**Runes**
+Equiping a rune will now make your mercenaries superstitious
+Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
+
+**Kobolds**
+Can show up in goblin scouting parties, or when the greenskin horde assembles
+80 new sounds added 
+become invisible at the end of every turn 
+blowgun can daze, and stun if they hit the head
+
 **Fixes**
+- Scenario mode now works
+- Fixes barbarian drum not showing up in inventories
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
-Disowned noble background may now spawn as a full female background, named disowned lady.
-Fixes an issue with the troubadour vs. juggler event.
+- Disowned noble background may now spawn as a full female background, named disowned lady.
+- Fixes an issue with the troubadour vs. juggler event.
+- Improved grammar in peddler deal event.
 
 **Typos**
 Fixed an issue with player avatar trait not displaying the information correctly.
@@ -6747,11 +6765,11 @@ A couple dozen typo fixes thanks to Dimon485.
 
 **Misc**
 A few more tavern rumors have been added.
+- Updated bases for troupe, beasthunters and crusader
 
 **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods
-## 15.0.2.10
-**Fixes**
-- Improved grammar in peddler deal event.
+
+
