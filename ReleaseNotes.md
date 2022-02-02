@@ -6732,20 +6732,20 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 
 ## 15.0.2.10
-
+##Ghosts 'N Goblins##
 **Vala** 
-You will now only encounter a vala during the undead crisis
-Her offensive abilities can now affect your own company 
+- You will now only encounter a vala during the undead crisis
+- Her offensive abilities can now affect your own company 
 
 **Runes**
-Equiping a rune will now make your mercenaries superstitious
-Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
+- Equiping a rune will now make your mercenaries superstitious
+- Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
 
 **Kobolds**
-Can show up in goblin scouting parties, or when the greenskin horde assembles
-80 new sounds added 
-become invisible at the end of every turn 
-blowgun can daze, and stun if they hit the head
+- Can show up in goblin scouting parties, or when the greenskin horde assembles
+- 80 new sounds added 
+- Become invisible at the end of every turn 
+- Blowgun can daze, and stun if they hit the head
 
 **Fixes**
 - Scenario mode now works
@@ -6758,23 +6758,20 @@ blowgun can daze, and stun if they hit the head
 - Improved grammar in peddler deal event.
 
 **Typos**
-Fixed an issue with player avatar trait not displaying the information correctly.
-Fixed a few typos in the legends tournament event.
-'Hunting mummies' contract typos fixed.
-A couple dozen typo fixes thanks to Dimon485.
+- Fixed an issue with player avatar trait not displaying the information correctly.
+- Fixed a few typos in the legends tournament event.
+- 'Hunting mummies' contract typos fixed.
+- A couple dozen typo fixes thanks to Dimon485.
+- Added detail to perk descrtiptions of Revolt and Entice.
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
+- Improved grammar in peddler deal event.
+- Fixed multiple small punctuation and grammatical errors.
 
 **Misc**
-A few more tavern rumors have been added.
+- A few more tavern rumors have been added.
 - Updated bases for troupe, beasthunters and crusader
 
 **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods
-
-
-**Typos**
-- Added detail to perk descrtiptions of Revolt and Entice.
-- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
-- Improved grammar in peddler deal event.
-- Fixed multiple small punctuation and grammatical errors.
