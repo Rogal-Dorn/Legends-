@@ -730,6 +730,10 @@ this.item <- {
 	function onUnequip()
 	{
 		this.clearSkills();
+		if (this.isRuned())
+		{
+			this.onUnequipRuneSigil();
+		}
 		if (this.m.Container != null && ("getSkills" in this.getContainer().getActor())) this.getContainer().getActor().getSkills().update();
 	}
 
@@ -750,6 +754,25 @@ this.item <- {
 			this.setToBeSalvaged(false, 0);
 		}
 	}
+	
+	function onUnequipRuneSigil()
+	{
+		local debuffs = [
+			"injury.traumatized",
+			"trait.craven",
+			"trait.mad",
+			"trait.irrational",
+			"trait.fear_undead",
+			"trait.superstitious",
+		]
+		local skills = this.getContainer().getActor().getSkills();
+		foreach(debuff in debuffs){
+			if(skills.hasSkill(debuff)){
+				skills.removeByID(debuff);
+				return;
+			}
+		}
+	}
 
 	function onEquipRuneSigil()
 	{
@@ -763,7 +786,10 @@ this.item <- {
 		]
 		local skills = this.getContainer().getActor().getSkills();
 		foreach(debuffPair in debuffs){
-			if(!skills.hasSkill(debuffPair[0])) skills.add(this.new("scripts/skills/" + debuffPair[1]))
+			if(!skills.hasSkill(debuffPair[0])){
+				skills.add(this.new("scripts/skills/" + debuffPair[1]));
+				break;
+			}
 		}
 		switch (this.m.RuneVariant)
 		{
