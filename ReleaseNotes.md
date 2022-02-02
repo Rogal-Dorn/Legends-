@@ -6730,9 +6730,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ##All Fun and Games##
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
 
-
 ## 15.0.2.10
-## Superstitious Creatures ##
+##Ghosts 'N Goblins##
 **Kobolds**
 - Can show up in goblin scouting parties, or when the greenskin horde assembles
 - become invisible at the end of every turn 
@@ -6740,9 +6739,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Art by Von Krolock 
 - 80 new sounds added 
 
-
-## 15.0.2.10
-##Ghosts 'N Goblins##
 **Vala** 
 - You will now only encounter a vala during the undead crisis
 - Her offensive abilities can now affect your own company 
