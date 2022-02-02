@@ -753,30 +753,18 @@ this.item <- {
 
 	function onEquipRuneSigil()
 	{
-			if (!this.getContainer().getActor().getSkills().hasSkill("trait.superstitious"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/traits/superstitious_trait"));
-				}			
-			if (this.getContainer().getActor().getSkills().hasSkill("trait.superstitious") && !this.getContainer().getActor().getSkills().hasSkill("trait.fear_undead"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/traits/fear_undead_trait"));
-				}
-			if (this.getContainer().getActor().getSkills().hasSkill("trait.superstitious") && this.getContainer().getActor().getSkills().hasSkill("trait.fear_undead") && !this.getContainer().getActor().getSkills().hasSkill("trait.irrational"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/traits/irrational_trait"));
-				}
-			if (this.getContainer().getActor().getSkills().hasSkill("trait.superstitious") && this.getContainer().getActor().getSkills().hasSkill("trait.fear_undead") && this.getContainer().getActor().getSkills().hasSkill("trait.irrational") && !this.getContainer().getActor().getSkills().hasSkill("trait.mad"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/traits/mad_trait"));
-				}		
-			if (this.getContainer().getActor().getSkills().hasSkill("trait.superstitious") && this.getContainer().getActor().getSkills().hasSkill("trait.fear_undead") && this.getContainer().getActor().getSkills().hasSkill("trait.irrational") && this.getContainer().getActor().getSkills().hasSkill("trait.mad")  && !this.getContainer().getActor().getSkills().hasSkill("trait.craven"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/traits/craven_trait"));
-				}	
-			if (this.getContainer().getActor().getSkills().hasSkill("trait.superstitious") && this.getContainer().getActor().getSkills().hasSkill("trait.fear_undead") && this.getContainer().getActor().getSkills().hasSkill("trait.irrational") && this.getContainer().getActor().getSkills().hasSkill("trait.mad")  && this.getContainer().getActor().getSkills().hasSkill("trait.craven") && !this.getContainer().getActor().getSkills().hasSkill("injury.traumatized"))
-				{
-				this.getContainer().getActor().addSkill(this.new("scripts/skills/injury_permanent/traumatized_injury"));
-				}
+		local debuffs = [
+			["trait.superstitious", "traits/superstitious_trait"],
+			["trait.fear_undead", "traits/fear_undead_trait"],
+			["trait.irrational", "traits/irrational_trait"],
+			["trait.mad", "traits/mad_trait"],
+			["trait.craven", "traits/craven_trait"],
+			["injury.traumatized", "injury_permanent/traumatized_injury"],
+		]
+		local skills = this.getContainer().getActor().getSkills();
+		foreach(debuffPair in debuffs){
+			if(!skills.hasSkill(debuffPair[0])) skills.add(this.new("scripts/skills/" + debuffPair[1]))
+		}
 		switch (this.m.RuneVariant)
 		{
 			case 1:
