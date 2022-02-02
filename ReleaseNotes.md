@@ -6730,5 +6730,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
 
 ## 15.0.2.10
-**Fixes**
+**Typos**
+- Added detail to perk descrtiptions of Revolt and Entice.
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
 - Improved grammar in peddler deal event.
+- Fixed multiple small punctuation and grammatical errors.
