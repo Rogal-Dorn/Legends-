@@ -43,7 +43,6 @@ var CharacterScreenInventoryListModule = function(_parent, _dataSource)
     this.mFilterUsableButton = null;
 
     this.mCurrentPopupDialog = null;
-    this.mLastHoveredSlot = null;
 
     this.registerDatasourceListener();
 };
@@ -157,11 +156,11 @@ CharacterScreenInventoryListModule.prototype.createDIV = function (_parentDiv)
         self.mFilterUsableButton.addClass('is-active');
         self.mDataSource.notifyBackendFilterUsableButtonClicked();
     }, '', 3);
+
 };
 
 CharacterScreenInventoryListModule.prototype.destroyDIV = function ()
 {
-    this.mLastHoveredSlot = null;
     this.mInventorySlots = null;
 
     this.mSlotCountPanel = null;
@@ -570,27 +569,6 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
         }
     });
 
-    result.mouseenter(function(_event){
-        self.mLastHoveredSlot = $(this).data('item').index;
-    })
-    result.mouseleave(function(_event){
-        self.mLastHoveredSlot = null;
-    })
-    // result.keydown(function(_event){
-    //     console.error("keydown")
-    //     var idx = $(this).data('item').index
-    //     if (self.mLastHoveredSlot == idx){
-    //         console.error("apparently this is slot?")
-    //         if (KeyConstants.O in _event){
-    //             console.error("works?")
-    //             var data = $(this).data('item');
-    //             console.error("idx?" + data.index)
-
-    //         }
-    //     }
-
-    // }) 
-
     return result;
 };
 
@@ -846,8 +824,6 @@ CharacterScreenInventoryListModule.prototype.show = function ()
 {
     // NOTE: (js) HACK which prevents relayouting..
 	this.mContainer.removeClass('opacity-none no-pointer-events').addClass('opacity-full');
-    this.addKeybindListeners()
-    
 	//this.mContainer.removeClass('display-none').addClass('display-full');
 };
 
@@ -855,24 +831,8 @@ CharacterScreenInventoryListModule.prototype.hide = function ()
 {
     // NOTE: (js) HACK which prevents relayouting..
 	this.mContainer.removeClass('opacity-full is-top').addClass('opacity-none no-pointer-events');
-    this.removeKeybindListeners()
 	//this.mContainer.removeClass('display-block is-top').addClass('display-none');
 };
-
-CharacterScreenInventoryListModule.prototype.addKeybindListeners = function(){
-    var self = this;
-    GlobalKeyHandler.AddHandlerFunction(KeyConstants.Zero, "PlayerStash_RemoveUpgrade", function(_event){
-        var shiftPressed = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true)
-        if(self.mLastHoveredSlot !== null && shiftPressed){
-            self.mDataSource.notifyBackendRemoveInventoryItemUpgrades(self.mLastHoveredSlot)
-        }
-    })
-}
-
-CharacterScreenInventoryListModule.prototype.removeKeybindListeners = function(){
-    var self = this;
-    GlobalKeyHandler.RemoveHandlerFunction(KeyConstants.Zero, "PlayerStash_RemoveUpgrade")
-}
 
 CharacterScreenInventoryListModule.prototype.isVisible = function ()
 {
