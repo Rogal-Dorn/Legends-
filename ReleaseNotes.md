@@ -6756,12 +6756,12 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - 80 new sounds added 
 - Become invisible at the end of every turn 
 - Blowgun can daze, and stun if they hit the head
-Equiping a rune will now add a negative trait to your character
-Each time you equip a rune, another trait is added, growing worse each time
-Supertitious > Fear undead > Irrational > Mad > Craven > Traumatized 
-There is a percentage chance to avoid this fate, equal to half your resolve
-If you manage to avoid the supersititon, there is a 10% chance to remove one of the negative traits
-drop rate for runes increased for legendary creatures 
+- Equiping a rune will now add a negative trait to your character
+- Each time you equip a rune, another trait is added, growing worse each time
+- Supertitious > Fear undead > Irrational > Mad > Craven > Traumatized 
+- There is a percentage chance to avoid this fate, equal to half your resolve
+- If you manage to avoid the supersititon, there is a 10% chance to remove one of the negative traits
+- drop rate for runes increased for legendary creatures 
 
 **Fixes**
 - Scenario mode now works
@@ -6786,12 +6786,11 @@ drop rate for runes increased for legendary creatures
 - Fixed multiple small punctuation and grammatical errors.
 
 **Misc**
-Fixed an issue with player avatar trait not displaying the information correctly.
-Fixed a few typos in the legends tournament event.
-'Hunting mummies' contract typos fixed.
-A couple dozen typo fixes thanks to Dimon485.
-
-**Misc**
+- Fixed an issue with player avatar trait not displaying the information correctly.
+- Fixed a few typos in the legends tournament event.
+- 'Hunting mummies' contract typos fixed.
+- A couple dozen typo fixes thanks to Dimon485.
+- Removed 'Formations' tab until eventual rework/fixes
 - adds variety to snow tiles
 - A few more tavern rumors have been added.
 - Updated bases for troupe, beasthunters and crusader
