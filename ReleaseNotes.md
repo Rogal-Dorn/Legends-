@@ -6731,7 +6731,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.10
 **Typos**
-- Added detail to perk descrtiptions of Revolt and Entice.
-- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
+- Added detail to perk descriptions of Revolt and Entice.
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push, Bribe, Return Favor, Perfect Focus, Rotation, Footwork, Debilitate, Indomitable, Rally the Troops, First Aid, Sundering Strikes, Bloody Harvest, Immovable Object, Executioner, Steel Brow, Anticipation, Double Strike, Vengeance and Ballistics..
 - Improved grammar in peddler deal event.
 - Fixed multiple small punctuation and grammatical errors.
