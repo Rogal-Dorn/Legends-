@@ -6773,3 +6773,8 @@ A few more tavern rumors have been added.
 - These changes improve compatibility with mods
 
 
+**Typos**
+- Added detail to perk descrtiptions of Revolt and Entice.
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
+- Improved grammar in peddler deal event.
+- Fixed multiple small punctuation and grammatical errors.
