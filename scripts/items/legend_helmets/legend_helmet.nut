@@ -441,7 +441,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
 		local oldIndex
-		if (("Assets" in this.World))
+		if (!(this.Tactical.isActive() && this.Tactical.State.isScenarioMode()) && ("Assets" in this.World))
 		{
 		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
 		}
