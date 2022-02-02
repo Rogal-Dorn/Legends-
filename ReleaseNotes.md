@@ -6730,33 +6730,54 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ##All Fun and Games##
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
 
-## UPCOMING
+
+## 15.0.2.10
+## Superstitious Creatures ##
+**Kobolds**
+- Can show up in goblin scouting parties, or when the greenskin horde assembles
+- become invisible at the end of every turn 
+- blowgun can daze, and stun if they hit the head. (first iteration, feedback wanted)
+- Art by Von Krolock 
+- 80 new sounds added 
 
 **Vala** 
 You will now only encounter a vala during the undead crisis
 Her offensive abilities can now affect your own company 
 
 **Runes**
-Equiping a rune will now make your mercenaries superstitious
-Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
-
-
-**Kobolds**
-Can show up in goblin scouting parties, or when the greenskin horde assembles
-80 new sounds added 
-become invisible at the end of every turn 
-blowgun can daze, and stun if they hit the head
+Equiping a rune will now add a negative trait to your character
+Each time you equip a rune, another trait is added, growing worse each time
+Supertitious > Fear undead > Irrational > Mad > Craven > Traumatized 
+There is a percentage chance to avoid this fate, equal to half your resolve
+If you manage to avoid the supersititon, there is a 10% chance to remove one of the negative traits
+drop rate for runes increased for legendary creatures 
 
 **Fixes**
 - Scenario mode now works
+- Kobold scenario added
+- Stollwurm scenario is now in a cave 
 - Fixes barbarian drum not showing up in inventories
 - Fixed being able to equip layer items
 - Fixed more infinite consumables
 - Fixed web skill showing damage values in the tooltip
+- Disowned noble background may now spawn as a full female background, named disowned lady.
+- Fixes an issue with the troubadour vs. juggler event.
+- Improved grammar in peddler deal event.
+
+**Typos**
+Fixed an issue with player avatar trait not displaying the information correctly.
+Fixed a few typos in the legends tournament event.
+'Hunting mummies' contract typos fixed.
+A couple dozen typo fixes thanks to Dimon485.
+
+**Misc**
+- adds variety to snow tiles
+- A few more tavern rumors have been added.
 - Updated bases for troupe, beasthunters and crusader
 
 **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods
+
 
