@@ -22,7 +22,7 @@ var CharacterScreenRightPanelModule = function(_parent, _dataSource)
 	this.mHeaderModule = null;
 	this.mInventoryModule = null;
     this.mPerksModule = null;
-    this.mFormationsModule = null;
+    //this.mFormationsModule = null;
 
     this.createModules();
 };
@@ -48,7 +48,7 @@ CharacterScreenRightPanelModule.prototype.createModules = function()
 	this.mHeaderModule = new CharacterScreenRightPanelHeaderModule(this, this.mDataSource);
 	this.mInventoryModule = new CharacterScreenInventoryListModule(this, this.mDataSource);
     this.mPerksModule = new CharacterScreenPerksModule(this, this.mDataSource);
-    this.mFormationsModule = new CharacterScreenFormationsModule(this, this.mDataSource);
+    //this.mFormationsModule = new CharacterScreenFormationsModule(this, this.mDataSource);
 };
 
 CharacterScreenRightPanelModule.prototype.registerModules = function ()
@@ -56,7 +56,7 @@ CharacterScreenRightPanelModule.prototype.registerModules = function ()
     this.mHeaderModule.register(this.mContainer);
     this.mInventoryModule.register(this.mContainer);
     this.mPerksModule.register(this.mContainer);
-    this.mFormationsModule.register(this.mContainer);
+    //this.mFormationsModule.register(this.mContainer);
 
     this.setupEventHandler();
 };
@@ -68,7 +68,7 @@ CharacterScreenRightPanelModule.prototype.unregisterModules = function ()
     this.mHeaderModule.unregister();
     this.mInventoryModule.unregister();
     this.mPerksModule.unregister();
-    this.mFormationsModule.unregister();
+    //this.mFormationsModule.unregister();
 };
 
 
@@ -78,7 +78,7 @@ CharacterScreenRightPanelModule.prototype.setupEventHandler = function ()
 
 	this.mHeaderModule.setOnSwitchToInventoryCallback(jQuery.proxy(this.switchToInventory, this));
     this.mHeaderModule.setOnSwitchToPerksCallback(jQuery.proxy(this.switchToPerks, this));
-    this.mHeaderModule.setOnSwitchToFormationsCallback(jQuery.proxy(this.switchToFormations, this));
+    //this.mHeaderModule.setOnSwitchToFormationsCallback(jQuery.proxy(this.switchToFormations, this));
 
 	this.mHeaderModule.selectInventoryPanel();
 };
@@ -87,7 +87,7 @@ CharacterScreenRightPanelModule.prototype.removeEventHandler = function ()
 {
 	this.mHeaderModule.setOnSwitchToInventoryCallback(null);
     this.mHeaderModule.setOnSwitchToPerksCallback(null);
-    this.mHeaderModule.setOnSwitchToFormationsCallback(null);
+    //this.mHeaderModule.setOnSwitchToFormationsCallback(null);
 };
 
 
@@ -158,7 +158,7 @@ CharacterScreenRightPanelModule.prototype.toggleFilterPanel = function ()
 CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
 {
     this.mPerksModule.hide();
-    this.mFormationsModule.hide();
+    //this.mFormationsModule.hide();
     this.mInventoryModule.show();
     this.mInventoryModule.toggleFilterPanel(true);
 };
@@ -167,15 +167,15 @@ CharacterScreenRightPanelModule.prototype.switchToInventory = function ()
 CharacterScreenRightPanelModule.prototype.switchToPerks = function ()
 {
     this.mInventoryModule.hide();
-    this.mFormationsModule.hide();
+    //this.mFormationsModule.hide();
     this.mInventoryModule.toggleFilterPanel(false);
     this.mPerksModule.show();
 };
 
-CharacterScreenRightPanelModule.prototype.switchToFormations = function ()
-{
-    this.mInventoryModule.hide();
-    this.mPerksModule.hide();
-    this.mFormationsModule.show();
-    this.mInventoryModule.toggleFilterPanel(false);
-};
+// CharacterScreenRightPanelModule.prototype.switchToFormations = function ()
+// {
+//     this.mInventoryModule.hide();
+//     this.mPerksModule.hide();
+//     this.mFormationsModule.show();
+//     this.mInventoryModule.toggleFilterPanel(false);
+// };

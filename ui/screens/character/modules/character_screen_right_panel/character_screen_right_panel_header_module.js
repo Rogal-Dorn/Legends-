@@ -28,7 +28,7 @@ var CharacterScreenRightPanelHeaderModule = function(_parent, _dataSource)
 	this.mOnToggleFilterCallback = null;
 	this.mOnSwitchToInventoryCallback = null;
     this.mOnSwitchToPerksCallback = null;
-    this.mOnSwitchtoFormationsCallback = null;
+    //this.mOnSwitchtoFormationsCallback = null;
 
     this.registerDatasourceListener();
 };
@@ -63,15 +63,15 @@ CharacterScreenRightPanelHeaderModule.prototype.createDIV = function (_parentDiv
         }
     }, null, 'tab-button', 7);
 
-    layout = $('<div class="l-button is-formations"/>');
-    middleButtonContainer.append(layout);
-    this.mSwitchToFormationsButton = layout.createTabTextButton("Formations", function()
-	{
-        if (self.mOnSwitchToFormationsCallback !== null && jQuery.isFunction(self.mOnSwitchToFormationsCallback))
-        {
-            self.mOnSwitchToFormationsCallback();
-        }
-    }, null, 'tab-button', 7);
+ //    layout = $('<div class="l-button is-formations"/>');
+ //    middleButtonContainer.append(layout);
+ //    this.mSwitchToFormationsButton = layout.createTabTextButton("Formations", function()
+	// {
+ //        if (self.mOnSwitchToFormationsCallback !== null && jQuery.isFunction(self.mOnSwitchToFormationsCallback))
+ //        {
+ //            self.mOnSwitchToFormationsCallback();
+ //        }
+ //    }, null, 'tab-button', 7);
 
 
     layout = $('<div class="l-button is-perks"/>');
@@ -98,8 +98,8 @@ CharacterScreenRightPanelHeaderModule.prototype.destroyDIV = function ()
     this.mSwitchToInventoryButton = null;
     this.mSwitchToPerksButton.remove();
     this.mSwitchToPerksButton = null;
-    this.mSwitchToFormationsButton.remove();
-    this.mSwitchToFormationsButton = null;
+    // this.mSwitchToFormationsButton.remove();
+    // this.mSwitchToFormationsButton = null;
     this.mCloseButton.remove();
     this.mCloseButton = null;
 
@@ -121,7 +121,7 @@ CharacterScreenRightPanelHeaderModule.prototype.bindTooltips = function ()
 {
 	this.mSwitchToInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.InventoryButton });
     this.mSwitchToPerksButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.PerksButton });
-    this.mSwitchToFormationsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FormationButton });
+    //this.mSwitchToFormationsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FormationButton });
     this.mCloseButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.CloseButton });
 };
 
@@ -129,7 +129,7 @@ CharacterScreenRightPanelHeaderModule.prototype.unbindTooltips = function ()
 {
 	this.mSwitchToInventoryButton.unbindTooltip();
     this.mSwitchToPerksButton.unbindTooltip();
-    this.mSwitchToFormationsButton.unbindTooltip();
+    //this.mSwitchToFormationsButton.unbindTooltip();
     this.mCloseButton.unbindTooltip();
 };
 
@@ -149,10 +149,10 @@ CharacterScreenRightPanelHeaderModule.prototype.setOnSwitchToPerksCallback = fun
 	this.mOnSwitchToPerksCallback = _callback;
 };
 
-CharacterScreenRightPanelHeaderModule.prototype.setOnSwitchToFormationsCallback = function(_callback)
-{
-	this.mOnSwitchToFormationsCallback = _callback;
-};
+// CharacterScreenRightPanelHeaderModule.prototype.setOnSwitchToFormationsCallback = function(_callback)
+// {
+// 	this.mOnSwitchToFormationsCallback = _callback;
+// };
 
 CharacterScreenRightPanelHeaderModule.prototype.create = function(_parentDiv)
 {
@@ -246,12 +246,12 @@ CharacterScreenRightPanelHeaderModule.prototype.updateButtonsByInventoryMode = f
         case CharacterScreenDatasourceIdentifier.InventoryMode.Stash:
         {
             this.mSwitchToInventoryButton.findButtonText().html('Stash');
-            this.mSwitchToFormationsButton.show();
+            //this.mSwitchToFormationsButton.show();
         } break;
         case CharacterScreenDatasourceIdentifier.InventoryMode.Ground:
         {
             this.mSwitchToInventoryButton.findButtonText().html('Ground');
-            this.mSwitchToFormationsButton.hide();
+            //this.mSwitchToFormationsButton.hide();
         } break;
     }
 };
