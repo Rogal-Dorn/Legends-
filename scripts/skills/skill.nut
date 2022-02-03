@@ -103,12 +103,9 @@ this.skill <- {
 	{
 		local gender = -1;
 		local vars = [];
-		if (this.getContainer() == null || !("getActor" in this.getContainer()) || this.getContainer().getActor() == null)
+		if (this.getContainer() == null || this.getContainer().getActor() == null)
 		{
 			this.logError("Skill: " + this.getName() + " is missing a " + (this.getContainer() == null ? "Container" : "Actor") + "when getting description");
-			if(this.getContainer() != null && !("getActor" in this.getContainer())){
-				this.logError("Skill: " + this.getName() + " does not have a proper container? No actor in container. Container is " + this.getContainer() + " type " + typeof this.getContainer())
-			}
 			this.MSU.Log.printStackTrace();
 		}
 		else
