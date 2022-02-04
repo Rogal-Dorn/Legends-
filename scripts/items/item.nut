@@ -732,7 +732,7 @@ this.item <- {
 		this.clearSkills();
 		if (this.isRuned())
 		{
-			this.onUnequipRuneSigil();
+			this.updateRuneSigilCurse();
 		}
 		if (this.m.Container != null && ("getSkills" in this.getContainer().getActor())) this.getContainer().getActor().getSkills().update();
 	}
@@ -755,42 +755,71 @@ this.item <- {
 		}
 	}
 	
-	function onUnequipRuneSigil()
+	function updateRuneSigilCurse()
 	{
-		local debuffs = [
-			"injury.traumatized",
-			"trait.craven",
-			"trait.mad",
-			"trait.irrational",
-			"trait.fear_undead",
-			"trait.superstitious",
-		]
+		local runeCount;
 		local skills = this.getContainer().getActor().getSkills();
-		foreach(debuff in debuffs){
-			if(skills.hasSkill(debuff)){
-				skills.removeByID(debuff);
-				return;
+		local slots = [
+			["this.Const.ItemSlot.Offhand"],
+			["this.Const.ItemSlot.Mainhand"],
+			["this.Const.ItemSlot.Body"],
+			["this.Const.ItemSlot.Head"],
+		]
+		foreach(slot in slots){
+		 local itemSlot = this.getContainer().getActor().getItems().getItemAtSlot(slot[0]);
+			if(itemSlot != null)
+			{
+				if(itemSlot.isRuned())
+				{
+					runeCount++;
+				}
+			}
+		local itemsInBag = this.m.Actor.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);	
+		foreach(itemInBag in itemsInBag){
+			if(itemInBag != null)
+			{
+				if(itemInBag.isRuned())
+				{
+					runeCount++;
+				}
 			}
 		}
-	}
+			
+		switch (runeCount)
+		{
+			case 1:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_01_trait"));
+				break;
+
+			case 2:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_02_trait"));
+				break;
+
+			case 3:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_03_trait"));
+				break;
+
+			case 4:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_04_trait"));
+				break;
+
+			case 5:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_05_trait"));
+				break;
+
+			case 6:
+				skills.add(this.new("scripts/skills/traits/legend_haunted_06_trait"));
+				break;
+
+			default:
+				break;
+		}
+			
+	}	
 
 	function onEquipRuneSigil()
 	{
-		local debuffs = [
-			["trait.superstitious", "traits/superstitious_trait"],
-			["trait.fear_undead", "traits/fear_undead_trait"],
-			["trait.irrational", "traits/irrational_trait"],
-			["trait.mad", "traits/mad_trait"],
-			["trait.craven", "traits/craven_trait"],
-			["injury.traumatized", "injury_permanent/traumatized_injury"],
-		]
-		local skills = this.getContainer().getActor().getSkills();
-		foreach(debuffPair in debuffs){
-			if(!skills.hasSkill(debuffPair[0])){
-				skills.add(this.new("scripts/skills/" + debuffPair[1]));
-				break;
-			}
-		}
+		this.updateRuneSigilCurse();
 		switch (this.m.RuneVariant)
 		{
 			case 1:
