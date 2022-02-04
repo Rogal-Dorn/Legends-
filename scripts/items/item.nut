@@ -789,33 +789,74 @@ this.item <- {
 		{
 			case 1:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_01_trait"));
+				if(skills.hasSkill("trait.legend_haunted_02"))
+				{
+				skills.removeByID("trait.legend_haunted_02")
+				}
 				break;
 
 			case 2:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_02_trait"));
+				if(skills.hasSkill("trait.legend_haunted_01"))
+				{
+				skills.removeByID("trait.legend_haunted_01")
+				}
+				if(skills.hasSkill("trait.legend_haunted_03"))
+				{
+				skills.removeByID("trait.legend_haunted_03")
+				}				
 				break;
 
 			case 3:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_03_trait"));
+				if(skills.hasSkill("trait.legend_haunted_02"))
+				{
+				skills.removeByID("trait.legend_haunted_02")
+				}
+				if(skills.hasSkill("trait.legend_haunted_04"))
+				{
+				skills.removeByID("trait.legend_haunted_04")
+				}	
 				break;
 
 			case 4:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_04_trait"));
+				if(skills.hasSkill("trait.legend_haunted_03"))
+				{
+				skills.removeByID("trait.legend_haunted_03")
+				}
+				if(skills.hasSkill("trait.legend_haunted_05"))
+				{
+				skills.removeByID("trait.legend_haunted_05")
+				}	
 				break;
 
 			case 5:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_05_trait"));
+				if(skills.hasSkill("trait.legend_haunted_04"))
+				{
+				skills.removeByID("trait.legend_haunted_04")
+				}
+				if(skills.hasSkill("trait.legend_haunted_06"))
+				{
+				skills.removeByID("trait.legend_haunted_06")
+				}	
 				break;
 
 			case 6:
 				skills.add(this.new("scripts/skills/traits/legend_haunted_06_trait"));
+				if(skills.hasSkill("trait.legend_haunted_05"))
+				{
+				skills.removeByID("trait.legend_haunted_05")
+				}
 				break;
 
 			default:
 				break;
-		}
+			}
 			
-	}	
+		}
+	}
 
 	function onEquipRuneSigil()
 	{
