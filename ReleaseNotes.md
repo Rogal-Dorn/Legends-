@@ -6724,3 +6724,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Crusader scenario text typo fixed.
 - Typos corrected when a player hovers over free or locked space in the retinue menu.
 - Fixed incorrect tooltip on white wolf mantle attachment.
+
+##00000 MIDAAAAAS CHANGELOG
+- Fixed Double Strike mini icon not appearing.
+- Modding: Improved automatic formatting for perk tree mention in perk tooltips.
+- Modding: Updated MSU to v0.6.27.
