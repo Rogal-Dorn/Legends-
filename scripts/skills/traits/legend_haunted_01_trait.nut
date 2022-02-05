@@ -4,7 +4,7 @@ this.legend_haunted_01_trait <- this.inherit("scripts/skills/traits/character_tr
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.legend_haunted_01";
-		this.m.Name = "Spooked";
+		this.m.Name = "Unsettled by spirit runes";
 		this.m.Icon = "ui/traits/trait_haunted_01.png";
 		this.m.Description = "This character is carrying an enchanted rune. The otherworldly power is unsettling, sometimes they feel protected, other times afeared. Is it the work of spirits, or all in their mind?";
 		this.m.Excluded = [

@@ -4,7 +4,7 @@ this.legend_haunted_02_trait <- this.inherit("scripts/skills/traits/character_tr
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.legend_haunted_02";
-		this.m.Name = "Troubled by spirit runes";
+		this.m.Name = "Spooked by spirit runes";
 		this.m.Icon = "ui/traits/trait_haunted_02.png";
 		this.m.Description = "This character is carrying two spirit enchanted runes. If these work, then that must mean spirits are real. Are they carrying the souls of the dead? An unsettling thought.";
 		this.m.Excluded = [

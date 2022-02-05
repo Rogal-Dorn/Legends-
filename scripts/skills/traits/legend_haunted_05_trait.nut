@@ -4,7 +4,7 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 	{
 		this.character_trait.create();
 		this.m.ID = "trait.legend_haunted_05";
-		this.m.Name = "Harrowed by spirit runes";
+		this.m.Name = "Tormented by spirit runes";
 		this.m.Icon = "ui/traits/trait_haunted_05.png";
 		this.m.Description = "This character is carrying five spirits encased in runes. The thought never leaves their mind, every movement disturbs the dead. They mutter to themselves, disapear randomly and look at friends like strangers. They are descending into madness. ";
 		this.m.Excluded = [
@@ -52,19 +52,13 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Melee Skill when in battle with undead"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Melee Skill when in battle with undead"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Ranged Skill when in battle with undead"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-66%[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Ranged Skill when in battle with undead"
 			},
 			{
 				id = 10,
@@ -76,6 +70,7 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 	}
 	function onUpdate( _properties )
 	{
+	_properties.IsAffectedByDyingAllies = false;
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
 			return;
@@ -84,9 +79,8 @@ this.legend_haunted_05_trait <- this.inherit("scripts/skills/traits/character_tr
 		if (this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID()) != 0 || this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID()) != 0)
 		{
 			_properties.Bravery -= 6;
-			_properties.InitiativeMult *= 0.34;
-			_properties.MeleeSkillMult *= 0.94;
-			_properties.RangedSkillMult *= 0.94;
+			_properties.MeleeSkill -= 6;
+			_properties.RangedSkillMult -= 6;
 		}
 	}
 	

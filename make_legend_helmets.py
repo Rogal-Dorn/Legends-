@@ -922,6 +922,10 @@ layers = [
  "title" :  "Curved Faceplate", \
  "desc" :  "Curved Faceplate." \
 },
+{"name" : "southern_faceplate"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 40, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
+ "title" :  "Southern Faceplate", \
+ "desc" :  "The faceplate of a southern assasin" \
+},
 {"name" : "faceplate_short"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 140, "con" : 30, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Short Faceplate", \
  "desc" :  "A short squat faceplate." \

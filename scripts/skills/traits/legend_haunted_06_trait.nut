@@ -6,7 +6,7 @@ this.legend_haunted_06_trait <- this.inherit("scripts/skills/traits/character_tr
 		this.m.ID = "trait.legend_haunted_06";
 		this.m.Name = "Broken by spirit runes";
 		this.m.Icon = "ui/traits/trait_haunted_06.png";
-		this.m.Description = "This character is carrying the rune trapped spirits of six dead people. They have lost their mind and no longer fear death. ";
+		this.m.Description = "This character is carrying the rune trapped spirits of six dead people. They are driven mad with thoughts of the dead, and no longer fear death. They will charge into battle and may attack everyone including your own units. ";
 		this.m.Excluded = [
 		];
 	}
@@ -47,14 +47,46 @@ this.legend_haunted_06_trait <- this.inherit("scripts/skills/traits/character_tr
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Is not affected by fresh injuries sustained during the current battle"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Chance to lose control of this character at the end of each turn"
 			}
 
 		];
 	}
 	function onTurnEnd()
 	{
-		this.applyDamage();
+		local r = this.Math.rand(1, 100);
+		local actor = this.getContainer().getActor();
+		if (r < 33)
+		{
+		actor.setFaction(this.Const.Faction.PlayerAnimals);
+		this.logDebug(this.getName() + " AI set to " + this.m.Agent2);
+		local agent = this.new("scripts/ai/tactical/agents/wardog_agent");
+		actor.setAIAgent(agent)
+		this.m.AgentID = agent.getID();
+		}
+		else if ( r > 66) 
+		{
+		actor.setFaction(this.Const.Faction.Beasts);
+		local agent = this.new("scripts/ai/tactical/agents/zombie_agent"1);
+		actor.setAIAgent(agent);
+		this.logDebug(this.getName() + " AI set to " + this.m.Agent1);
+		this.m.AgentID = agent.getID();
+		}
+		else 
+		{
+		actor.setFaction(this.Const.Faction.Player);
+		}
 	}	
+	
+	function onRemoved()
+	{
+		this.removeEffect();
+	}
 	
 	function onUpdate( _properties )
 	{
@@ -62,12 +94,7 @@ this.legend_haunted_06_trait <- this.inherit("scripts/skills/traits/character_tr
 		_properties.IsAffectedByDyingAllies = false;
 		_properties.IsAffectedByLosingHitpoints = false;	
 		_properties.IsAffectedByFreshInjuries = false;
-	}
 
-
-	function onUpdate( _properties )
-	{
-		_properties.IsAffectedByLosingHitpoints = false;
 	}
 });
 
