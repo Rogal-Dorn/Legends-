@@ -46,13 +46,13 @@ this.legend_haunted_03_trait <- this.inherit("scripts/skills/traits/character_tr
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Melee Skill when in battle with undead"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Melee Skill when in battle with undead"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6%[/color] Ranged Skill when in battle with undead"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Ranged Skill when in battle with undead"
 			}
 		];
 	}
@@ -66,8 +66,8 @@ this.legend_haunted_03_trait <- this.inherit("scripts/skills/traits/character_tr
 		if (this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID()) != 0 || this.Tactical.Entities.getInstancesNum(this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getID()) != 0)
 		{
 			_properties.Bravery -= 6;
-			_properties.MeleeSkillMult *= 0.94;
-			_properties.RangedSkillMult *= 0.94;
+			_properties.MeleeSkill -= 6;
+			_properties.RangedSkillMult -= 6;
 		}
 	}
 });

@@ -6732,34 +6732,40 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.10
 ##Ghosts 'N Goblins##
-**Kobolds**
+
+:kobold: **Kobolds**
 - Can show up in goblin scouting parties, or when the greenskin horde assembles
 - become invisible at the end of every turn 
-- blowgun can daze, and stun if they hit the head. (first iteration, feedback wanted)
+- Blowgun can daze, and stun if they hit the head
 - Art by Von Krolock 
-- 80 new sounds added 
+- 80 new sounds
 
-**Vala** 
+:tempt: **Vala** 
+Vala is intended to be rare and mysterious, not something everyone farms
 - You will now only encounter a vala during the undead crisis
 - Her offensive abilities can now affect your own company 
 
-**Runes**
-- Equiping a rune will now make your mercenaries superstitious
-- Each new rune you equip will make the superstition grow worse until the character is mad and traumatised
+:sly: **Runes**
+Runes are meant as powerful spiritual artifacts, not mandatory on every item.  
+- Equiping a rune will now scare your mercenaries, adding a negative trait that grows worse for each rune you hold
+- 1 rune - Unsettled: - +6 or -6 resolve randomly at each resolve check. 
+- 2 runes - Spooked:  Adds -6 resolve at morale checks against fear, panic or mind control 
+- 3 runes - Haunted: Adds -6 resolve, melee skill and ranged skill when fighting the undead 
+- 4 runes - Harrowed: Adds -6 resolve at all times 
+- 5 runes - Tormented: All be above, and begins each combat at wavering 
+- 6 runes - Broken: loses all the above. Gains +6 resolve, no morale check when allies die or on losing hitpoints, not affected by injuries during battle. At the end of each turn has a 33% chance to join the enemy, 33% chance to lose control but stay on your side, 33% chance to return to your control
+Runes are only worth 100 gold, down from 1200
 
-**Kobolds**
-- Can show up in goblin scouting parties, or when the greenskin horde assembles
-- 80 new sounds added 
-- Become invisible at the end of every turn 
-- Blowgun can daze, and stun if they hit the head
-- Equiping a rune will now add a negative trait to your character
-- Each time you equip a rune, another trait is added, growing worse each time
-- Supertitious > Fear undead > Irrational > Mad > Craven > Traumatized 
-- There is a percentage chance to avoid this fate, equal to half your resolve
-- If you manage to avoid the supersititon, there is a 10% chance to remove one of the negative traits
-- drop rate for runes increased for legendary creatures 
+ :coin~1: **Loot**
+ Legendary creatures are more rewarding, dropping more runes and crafting ingredients
+- Stollwurm -  1-2 endurance, safety or resilience runes. 1-2scales, 0-2 blood, 0-2 bones
+- white wolf - teeth and pelt gauranteed, chance of a second pelt, teeth or valuable fures
+- rock unhold - increase chance of unhold hide instead of bones. 33% each for regular unhold heart, hide and bones 
+- embalmed queen - drops a jeweled crown and ancient coins, plus 50% chance of a scroll when magic is enabled
+- greenwood schratt - drops an ancient green wood (value reduced), 50% each chance for another ancient wood, a glowing resin, a heart of the forest and a rune. 
+- demon alp - rune plus a skin or eye gauranteed. chance of another skin
 
-**Fixes**
+:hammer~1: **Fixes**
 - Scenario mode now works
 - Kobold scenario added
 - Stollwurm scenario is now in a cave 
@@ -6771,7 +6777,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixes an issue with the troubadour vs. juggler event.
 - Improved grammar in peddler deal event.
 
-**Typos**
+
+:broken: **Typos**
 - Fixed an issue with player avatar trait not displaying the information correctly.
 - Fixed a few typos in the legends tournament event.
 - 'Hunting mummies' contract typos fixed.
@@ -6781,17 +6788,17 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Improved grammar in peddler deal event.
 - Fixed multiple small punctuation and grammatical errors.
 
-**Misc**
-- Fixed an issue with player avatar trait not displaying the information correctly.
-- Fixed a few typos in the legends tournament event.
-- 'Hunting mummies' contract typos fixed.
-- A couple dozen typo fixes thanks to Dimon485.
+:go_on: **Changes**
 - Removed 'Formations' tab until eventual rework/fixes
 - adds variety to snow tiles
 - A few more tavern rumors have been added.
 - Updated bases for troupe, beasthunters and crusader
+- assassin faceplate added
 
-**For Modders**
+
+
+
+:pathold:  **For Modders**
 - Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
 - onUpdateDraftsList now has Gender as an optional parameter
 - These changes improve compatibility with mods

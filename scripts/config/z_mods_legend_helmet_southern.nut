@@ -22,6 +22,7 @@ gt.Const.LegendMod.HelmObjs.extend([
     Helms = [
     ],
     Tops = [
+			[1, "top/legend_helmet_faceplate_southern"], //40
     ],
     Vanity = [
 		[5, "vanity/legend_helmet_southern_turban_open"], //10

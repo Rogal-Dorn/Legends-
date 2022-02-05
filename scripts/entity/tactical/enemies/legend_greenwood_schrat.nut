@@ -134,19 +134,26 @@ this.legend_greenwood_schrat <- this.inherit("scripts/entity/tactical/actor", {
 					local loot;
 
 					loot = this.new("scripts/items/misc/legend_ancient_green_wood_item");
-
-					if (r <= 80)
+					if (r <= 50)
+					{
+						loot = this.new("scripts/items/misc/legend_ancient_green_wood_item");
+						loot.drop(_tile);
+					}
+					local r = this.Math.rand(1, 100);
+					if (r <= 33)
 					{
 						loot = this.new("scripts/items/misc/glowing_resin_item");
+						loot.drop(_tile);
 					}
-					else
+					if (r <= 50)
 					{
 						loot = this.new("scripts/items/misc/heart_of_the_forest_item");
+						loot.drop(_tile);
 					}
 
-					loot.drop(_tile);
+					
 
-					local chance = 30;
+					local chance = 50;
 					if (this.LegendsMod.Configs().LegendMagicEnabled())
 					{
 						chance = 100;
