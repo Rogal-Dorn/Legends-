@@ -6776,6 +6776,7 @@ Runes are only worth 100 gold, down from 1200
 - Disowned noble background may now spawn as a full female background, named disowned lady.
 - Fixes an issue with the troubadour vs. juggler event.
 - Improved grammar in peddler deal event.
+- Fixed double strike icon not displaying
 
 
 :broken: **Typos**
