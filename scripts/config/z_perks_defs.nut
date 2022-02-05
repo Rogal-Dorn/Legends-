@@ -55,7 +55,7 @@ gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [
 	{
 		local desc = gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const];
 		
-		local pre = "\n\n[color=#0b0084]From the ";
+		local pre = "[color=#0b0084]From the ";
 		local mid = "";
 		local ap = "perk group[/color]";
 		local array = _groups.len() == 0 ? table.Groups : _groups;
@@ -76,8 +76,9 @@ gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [
 
 		if (desc.find(pre) == null)
 		{
-			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] += pre + mid + ap;
-			gt.Const.Perks.PerkDefObjects[table.Const].Tooltip += pre + mid + ap;
+			local text = "\n\n" + pre + mid + ap;
+			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] += text;
+			gt.Const.Perks.PerkDefObjects[table.Const].Tooltip += text;
 		}
 		else
 		{
@@ -97,6 +98,12 @@ gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [
 			foreach (s in strArray)
 			{
 				ret += s;
+			}
+
+			if (ret.find("\n\n" + pre) == null)
+			{				
+				local prefix = ret.find("\n" + pre) == null ? "\n\n" : "\n";				
+				ret = this.MSU.String.replace(ret, pre, prefix + pre);			
 			}
 
 			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] = ret;
