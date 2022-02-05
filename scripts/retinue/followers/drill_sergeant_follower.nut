@@ -45,15 +45,9 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			if (bro.getFlags().has("DrillSergeantFollower"))
+			if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury)))
 			{
 				this.m.LinkedBro = bro;
-				break;
-			}
-			else if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury)))
-			{
-				this.m.LinkedBro = bro;
-				bro.getFlags().add("DrillSergeantFollower");
 				break;
 			}
 		}
