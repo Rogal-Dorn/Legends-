@@ -590,23 +590,29 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return pT.Tree;
 	}
 
-	function getPerk( _id )
+	// Input can be a Perk Id or a PerkDef
+	function getPerk( _perk )
 	{
-		if ( _id == null )
+		local id;
+		local perkDef;
+		if (typeof _perk == "string")
+		{
+			id = _perk;
+			local basePerkDefObject = this.Const.Perks.findById(_perk);			
+			perkDef = this.Const.Perks.PerkDefs[basePerkDefObject.Const];
+		}
+		else
+		{
+			id = this.Const.Perks.PerkDefObjects[_perk].ID;
+			perkDef = _perk;
+		}
+		
+		if (!(id in this.m.PerkTreeMap))
 		{
 			return null;
 		}
 
-		if (this.m.PerkTreeMap != null)
-		{
-			if (!(_id in this.m.PerkTreeMap))
-			{
-				return null;
-			}
-			return this.m.PerkTreeMap[_id];
-		}
-
-		return this.Const.Perks.findByBackground(_id, this.getID());
+		return this.m.PerkTreeMap[id];
 	}
 
 	function addPerk( _perk, _row = 0 )
@@ -689,33 +695,6 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	{
 		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
 		return perkDefObject.ID in this.m.PerkTreeMap;
-	}
-
-	function findPerk( _perk )
-	{
-		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
-		if (!(perkDefObject.ID in this.m.PerkTreeMap))
-		{
-			return null;
-		}
-
-		local ret = {
-			Perk = null,
-			Row = 0,
-			PerkDefObject = perkDefObject
-		};
-
-		ret.Row = this.m.PerkTreeMap[perkDefObject.ID].Row;
-		foreach (i, perk in this.m.CustomPerkTree[row])
-		{
-			if (perk == _perk)
-			{
-				ret.Perk = perk;
-				break;
-			}
-		}
-
-		return ret;
 	}
 
 	function buildDescription( _isFinal = false )
