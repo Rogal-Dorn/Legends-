@@ -2202,28 +2202,28 @@ local perkDefObjects = [
 		Const = "LegendForcefulSwing"
 	},
 	{
-		ID = "perk.legend_balance",
-		Script = "scripts/skills/perks/perk_legend_balance",
-		Name = this.Const.Strings.PerkName.LegendBalance,
-		Tooltip = this.Const.Strings.PerkDescription.LegendBalance,
+		ID = "perk.mar_balance",
+		Script = "scripts/skills/perks/perk_mar_balance",
+		Name = this.Const.Strings.PerkName.MARBalance,
+		Tooltip = this.Const.Strings.PerkDescription.MARBalance,
 		Icon = "ui/perks/balance.png",
 		IconDisabled = "ui/perks/balance_bw.png",
 		Const = "LegendBalance"
 	},
 	{
-		ID = "perk.legend_matching_set",
-		Script = "scripts/skills/perks/perk_legend_matching_set",
-		Name = this.Const.Strings.PerkName.LegendMatchingSet,
-		Tooltip = this.Const.Strings.PerkDescription.LegendMatchingSet,
+		ID = "perk.mar_perfect_fit",
+		Script = "scripts/skills/perks/perk_mar_perfect_fit",
+		Name = this.Const.Strings.PerkName.MARPerfectFit,
+		Tooltip = this.Const.Strings.PerkDescription.MARPerfectFit,
 		Icon = "ui/perks/matching_set.png",
 		IconDisabled = "ui/perks/matching_set_bw.png",
 		Const = "LegendMatchingSet"
 	},
 	{
-		ID = "perk.legend_lithe",
-		Script = "scripts/skills/perks/perk_legend_lithe",
-		Name = this.Const.Strings.PerkName.LegendLithe,
-		Tooltip = this.Const.Strings.PerkDescription.LegendLithe,
+		ID = "perk.mar_lithe",
+		Script = "scripts/skills/perks/perk_mar_lithe",
+		Name = this.Const.Strings.PerkName.MARLithe,
+		Tooltip = this.Const.Strings.PerkDescription.MARLithe,
 		Icon = "ui/perks/lithe.png",
 		IconDisabled = "ui/perks/lithe_bw.png",
 		Const = "LegendLithe"

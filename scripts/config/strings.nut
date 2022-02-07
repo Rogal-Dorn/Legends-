@@ -1905,6 +1905,10 @@ gt.Const.Strings.PerkName <- {
 	LastStand = "Last Stand",
 	LegendGuideSteps = "Guide Steps",
 	LegendTasteThePain = "Taste the Pain",
+	MARBalance = "Balance",
+	MARPerfectFit = "Perfect Fit",
+	MARLithe = "Lithe",
+	MARInTheZone = "In the Zone"
 
 
 	//MASTERIES - skills that have a unified effect on their weapon class
@@ -2531,6 +2535,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
 	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' perk, it gains 1 range.",
 	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
+	MARBalance = "Gain increased defense by balancing your armor\'s weight and mobility. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Melee Defense when wearing head and body armor with a total weight (penalty to Maximum Fatigue) of 35. The bonus drops by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] for every 2 points of deviation from this value, and for every 10 points that your Current Initiative is below twice your armor weight. Gain a third of the Melee Defense bonus as Ranged Defense.\n[color=#0b0084]From the Medium Armor perk group[/color]",
+	MARPerfectFit = "Leverage the superior fit of your armor to gain increased speed and endurance! Reduces the penalty to Initiative from head and body armor by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] and lowers the Fatigue cost of skills by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]. This bonus is reduced exponentially when the total penalty to Maxium Fatigue from your head and body armor is more than half of your Maximum Fatigue after gear.\n[color=#0b0084]From the Medium Armor perk group[/color]",
+	MARLithe = "Specialize in Medium Armor! Damage to Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the total penalty to Maximum Fatigue from head and body armor is between 25 and 35. Outside this range, the bonus drops exponentially.\n\nAs your armor takes damage, the bonus drops slowly to half its maximum value at 0 armor remaining.\n[color=#0b0084]From the Medium Armor perk group[/color]",
+	MARInTheZone = "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you get hit by any attack.\n\n When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor\'s weight above 15.\n[color=#0b0084]From the Medium Armor perk group[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
