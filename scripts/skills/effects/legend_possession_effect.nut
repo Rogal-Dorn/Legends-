@@ -12,6 +12,7 @@ this.legend_possession_effect <- this.inherit("scripts/skills/skill", {
 		this.m.SoundOnUse = [];
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
+		this.m.IsRemovedAfterBattle = true;
 	}
 
 	function onUpdate( _properties )
