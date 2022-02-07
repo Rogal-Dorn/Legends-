@@ -693,8 +693,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function hasPerk( _perk )
 	{
-		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
-		return perkDefObject.ID in this.m.PerkTreeMap;
+		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;		
 	}
 
 	function buildDescription( _isFinal = false )
