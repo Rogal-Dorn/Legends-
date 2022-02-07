@@ -1135,21 +1135,26 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				this.m.CustomPerkTree = this.Const.Perks.DefaultCustomPerkTree;
 			}
-
-			//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
-			//already have added its perks so we should be ok. This will fail though loading an old save
-			//and we've added new perks to a scenario...
-			local origin = this.World.Assets.getOrigin()
-			if (origin != null)
-			{
-				this.World.Assets.getOrigin().onBuildPerkTree(this);
-			}
+			
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
-		return a
+
+		//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
+		//already have added its perks so we should be ok. This will fail though loading an old save
+		//and we've added new perks to a scenario...
+
+		// THE COMMMENT ABOVE IS PROBABLY WRONG. Scenario doesn't seem to be null here on deserialize. But some weird 
+		// shenanigans are still happening, so I will test some more. -- Midas
+		local origin = this.World.Assets.getOrigin();
+		if (origin != null)
+		{
+			origin.onBuildPerkTree(this);
+		}
+
+		return a;
 	}
 
 	function updateAppearance()
