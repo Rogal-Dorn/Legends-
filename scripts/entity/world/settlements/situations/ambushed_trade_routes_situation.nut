@@ -42,8 +42,10 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 		_modifiers.RarityMult *= 0.75;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{
 			_draftList.push("legend_puppet_background");

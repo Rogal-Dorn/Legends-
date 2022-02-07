@@ -530,6 +530,9 @@ this.character_screen <- {
 					this.World.Assets.getStash().insert(upgrade.item, upgrade.index);
 				}
 			}
+			else{
+				data.stash.removeByIndex(data.sourceIndex);
+			}
 			return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
 		}
 		else
@@ -2224,6 +2227,10 @@ this.character_screen <- {
 					}
 				}
 				else if (_data.sourceItem.getSlotType() != _data.targetItem.getSlotType())
+				{
+					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
+				}
+				else if (::mods_isClass(_data.targetItem, "legend_armor_upgrade") || ::mods_isClass(_data.targetItem, "legend_helmet_upgrade"))
 				{
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 				}

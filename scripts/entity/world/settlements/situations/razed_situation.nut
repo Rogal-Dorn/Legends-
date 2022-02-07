@@ -44,8 +44,10 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_modifiers.RarityMult *= 0.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");
 		_draftList.push("beggar_background");

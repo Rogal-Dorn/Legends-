@@ -41,8 +41,10 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.RarityMult *= 0.75;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

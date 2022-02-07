@@ -6727,3 +6727,15 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.9
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
+
+## UPCOMING
+
+**Fixes**
+- Fixed being able to equip layer items
+- Fixed more infinite consumables
+- Fixed web skill showing damage values in the tooltip
+- 
+**For Modders**
+- Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
+- onUpdateDraftsList now has Gender as an optional parameter
+- These changes improve compatibility with mods

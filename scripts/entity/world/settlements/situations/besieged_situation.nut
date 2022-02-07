@@ -44,8 +44,10 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_modifiers.RarityMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("gravedigger_background");

@@ -40,8 +40,10 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("monk_background");
 		_draftList.push("monk_background");
 		_draftList.push("cultist_background");

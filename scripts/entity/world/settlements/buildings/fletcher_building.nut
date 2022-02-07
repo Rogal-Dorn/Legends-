@@ -245,8 +245,9 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 		this.fillStash(list, this.m.Stash, 1.25, false);
 	}
 
-	function onUpdateDraftList( _list, _gender)
+	function onUpdateDraftList( _list, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_list.push("bowyer_background");
 		if (_gender)
 		{

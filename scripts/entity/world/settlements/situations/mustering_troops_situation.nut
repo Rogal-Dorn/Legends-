@@ -43,8 +43,10 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 		_modifiers.RarityMult *= 0.5;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("retired_soldier_background");
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");

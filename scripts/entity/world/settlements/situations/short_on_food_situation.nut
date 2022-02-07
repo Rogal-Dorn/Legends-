@@ -39,8 +39,10 @@ this.short_on_food_situation <- this.inherit("scripts/entity/world/settlements/s
 		_modifiers.FoodPriceMult *= 3.0;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{
 			_draftList.push("legend_puppet_background");

@@ -37,8 +37,10 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList, _gender )
+
+	function onUpdateDraftList( _draftList, _gender = null)
 	{
+	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
 		_draftList.push("hunter_background");
