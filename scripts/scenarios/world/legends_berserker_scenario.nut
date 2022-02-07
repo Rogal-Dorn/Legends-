@@ -33,7 +33,7 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 			"legend_berserker_commander_background"
 		]);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.Berserk);
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setVeteranPerks(2);
 		this.World.Assets.m.Money = this.World.Assets.m.Money;
@@ -252,16 +252,11 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 		}
 
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_berserk"));
 	}
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Berserk);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Berserk);
 	}
 
 });

@@ -27,9 +27,9 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 			"mage_legend_mage_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_mage_legend_magic_missile"));
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.Student);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendMagicMissile);		
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
 		bro.getFlags().set("IsPlayerCharacter", true);
@@ -163,7 +163,6 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		}
 
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_student"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -188,12 +187,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Student);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Student);
 	}
-
 });
 

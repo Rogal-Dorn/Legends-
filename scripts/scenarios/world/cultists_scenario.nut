@@ -44,7 +44,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		]);
 		bros[0].getBackground().m.RawDescription = "When %name% joined, the cultist warmly called you captain, saying \"tis a proper manner to pursue the path into the Black from whence we came\".";
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));		
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
@@ -68,7 +68,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			"cultist_darksoul_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "%name% found you upon the road, stating with certainty you were a mercenary captain. You wore but ordinary cloth at that moment, but %name% said that by Davkul\'s darkness you had an aura of wanted Black about you.";
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
+		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
@@ -92,7 +92,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			"cultist_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "A quiet figure, %name% has shadows beneath the fingerprints, running like the brine beneath a pallid shore. When you exchanged a handshake, it was as though you could hear the hissing of your sanity.";
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
+		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		local items = bros[2].getItems();
@@ -116,7 +116,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			"cultist_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw the cultist, there were scars running up %name%\'s arms and across veins that could not be survived. But each morning it appears as though the scars move, slowly creeping in one direction: toward the forehead.";
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
+		this.addScenarioPerk(bros[3].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 		local items = bros[3].getItems();
@@ -140,7 +140,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			"cultist_lurker_background"
 		]);
 		bros[4].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw the cultist, there were scars running up %name%\'s arms and across veins that could not be survived. But each morning it appears as though the scars move, slowly creeping in one direction: toward the forehead.";
-		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));		
+		this.addScenarioPerk(bros[4].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);		
 		bros[4].setPlaceInFormation(6);
 		bros[4].setVeteranPerks(2);
 		local items = bros[4].getItems();
@@ -273,7 +273,6 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		if (this.isCultist(_bro.getBackground()))
 		{
 			_bro.improveMood(2.0, "Embraced by Davkul");
-			_bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_true_believer"));
 			_bro.getSprite("socket").setBrush("bust_base_orcs");
 		}
 		else
@@ -308,15 +307,10 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}
 	}
 	function onBuildPerkTree( _background ) //give true believer
-	{
-		if  (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		
+	{		
 		if (this.isCultist(_background))
 		{
-			_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendTrueBeliever);
+			this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendTrueBeliever);
 		}
 	}
 });

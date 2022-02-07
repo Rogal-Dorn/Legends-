@@ -26,8 +26,8 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 			"legend_assassin_commander_background"
 		]);
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_backstabber"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_hidden"));
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.Backstabber);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendHidden);		
 		bro.m.PerkPointsSpent += 2;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
@@ -216,18 +216,12 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.improveMood(0.5, "Learned a new skill");
 		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendSpecialistKnifeSkill, 1);
 		bro.getBackground().addPerk(this.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage, 3);
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_backstabber"));
 
 	}
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Backstabber);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Backstabber);		
 	}
 
 });
