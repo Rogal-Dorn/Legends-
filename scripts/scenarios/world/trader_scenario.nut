@@ -42,7 +42,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		]);
 		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPacifist);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -164,8 +164,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
-			bro.m.PerkPointsSpent += 1;
 		}
 	}
 
@@ -180,10 +178,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
 				bro.getBaseProperties().DailyWageMult *= 1.25;
 				bro.getSkills().update();
-			}
-			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
-			{
-				bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_pacifist"));
 			}
 
 			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey")
@@ -220,12 +214,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendPacifist);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPacifist, 0, !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat));
 	}
-
 });
 

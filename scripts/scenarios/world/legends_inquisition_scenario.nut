@@ -37,7 +37,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[0].getBaseProperties().Hitpoints += 10;
 		bros[0].getBaseProperties().MeleeDefense += 5;
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_inquisition_disciple_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -70,7 +70,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].m.Level = 2;
 		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 		bros[1].m.PerkPointsSpent += 1;
 
 		bros[2].setStartValuesEx([
@@ -93,7 +93,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 		bros[2].getSkills().add(heavy);
 		bros[2].setVeteranPerks(2);
-		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
+		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
@@ -246,7 +246,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.worsenMood(1.0, "Dislikes your sermons");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_mind_over_body"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -283,11 +282,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendMindOverBody);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendMindOverBody);
 	}
 
 	function onUpdateDraftList( _list, _gender)
