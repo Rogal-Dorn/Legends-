@@ -130,6 +130,7 @@ gt.Const.Perks.BuildCustomPerkTree <- function (_custom)
 		}
 		perk.Row <- _row;
 		perk.Unlocks <- _row;
+		perk.IsRefundable <- true;
 		for (local i = this.Tree.len(); i < _row + 1; i = ++i)
 		{
 			this.Tree.push([]);

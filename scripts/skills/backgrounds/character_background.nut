@@ -615,17 +615,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return this.m.PerkTreeMap[id];
 	}
 
-	function addPerk( _perk, _row = 0 )
+	function addPerk( _perk, _row = 0, _isRefundable = true )
 	{
 		local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
         //Dont add dupes
-        if (perkDefObject.ID in this.m.PerkTreeMap)
+        if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
         {
             return false;
         }
 
         perkDefObject.Row <- _row;
         perkDefObject.Unlocks <- _row;
+        perkDefObject.IsRefundable <- _isRefundable;
+
         for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
         {
             this.getPerkTree().push([]);
