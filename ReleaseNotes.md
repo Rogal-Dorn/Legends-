@@ -6727,3 +6727,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.9
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
+
+## Luft
+- Fixes an issue where possession was not being dismissed when combat ended.
