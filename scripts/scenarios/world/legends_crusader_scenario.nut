@@ -4,7 +4,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_crusader";
 		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background or squire who joins you. Find pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background that joins you. Find pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 70;
 		this.m.IsFixedLook = true;		
@@ -26,10 +26,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		bro.setStartValuesEx([
 			"legend_crusader_commander_background"
 		]); //skills on start
-		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_rebound"));
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_zombie"));
+		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));		
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.FortifiedMind);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.Rebound);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie);
 		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);
 		bro.setVeteranPerks(2);
@@ -134,7 +134,6 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		{
 			bro.improveMood(1.5, "Joined a righteous cause");
  			bro.getSprite("socket").setBrush("bust_base_crusader"); //custom base
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
 		}
 		else
 		{
@@ -182,11 +181,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.FortifiedMind);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind);
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

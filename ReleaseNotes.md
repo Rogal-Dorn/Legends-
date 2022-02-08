@@ -6622,14 +6622,14 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - 'Night owl' trait didn't do anything before, it should now be working as intended.
 
 ## 15.0.2.6
-##The circus is in town##
+##The ImPossible Circus##
 **Troupe**
 - Tavern rumours and drinks are half price as troupe, and you're less likely to get drunk from each round in the tavern. 
-- illusionist: Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice. Revolt fatigue reduced from 25 to 15.
+- Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
+- illusionist  Has more ranged skill, begins in the back row with a slingstaff, has the fast tree instead of organised and occassionally has premonitions. Is better at ranged, but worse hitpoints and stamina. Begins with revolt instead of entice Revoltecfatigue reduced from 25 to 15 
 - Troupe has a chance to find another illusionist at a fair 
 - New event between juggler and minstrel or troubador resulting in skill increases or injuries 
 - New event between minstrel and troubadour resulting in an occassional mood lift 
-- Troubadours are better differentiated from minstels. They are actors and dancers with more well rounded stats 
 
 **Instruments**
 - Drums and lute s hit for less but cost less AP and can be used one handed 
@@ -6639,8 +6639,8 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Lute Solo max damage reduced from 20 to 10 
 
 **Jugglers** 
-- have better fatigue, slightly better ranged and lower bravery and hitpoints. 
-- they are gauranteed dagger tree instead of slings. starts in troupe with javelins
+- Now have better fatigue, slightly better ranged and lower bravery and hitpoints
+- Now guaranteed dagger tree instead of slings. Starts in troupe with javelins
 - Leap moved to T1 - fatigue costs halved, and then each point of armor weight increases the fatigue cost. Staff mastery increases its range by 1 tile while wielding a staff.  
 - Rotation added at T3 
 - New Perk Twirl added at T4 - upgrades Rotation to optionally target enemies
@@ -6648,19 +6648,20 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Tumble at T7 now also halves the fatigue cost of Rotation
 
 **Balance**
+- Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
 - Brigand army contract has been overhauled somewhat. The payout should now be more reasonable and a few typos have been corrected and flavour text restructured. There will always be one warlord that spawns and no more. This warlord will have a mix of vets, marksmen and occasional monks as a personal guard, dynamic spawns will then add to that group.
-- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
 - Noble house slingers have had their stats adjusted and sling damage perk removed - this should hopefully make them less frustrating to fight.
 - Peasant versions of the witchunter, blacksmith and squire have been added into general circulation with roaming peasant groups.
 - Southern Arena fights now should scale dynamically based on difficulty factors and are no longer fixed like vanilla. This will make arena fights marginally easier early on and much harder later. (Highly experimental right now, let us know of the balance with the spawns).
 - Hold the line now gives +10 Melee defence, immunity to knockback/grab and reduces overall damage taken by 10%. Hold the line costs 9 action points, 30 fatigue and has a range of 4 tiles.
-- Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
+Experimental: High tier ghouls (capable of swallowing bros) have been increased in cost for non-hexe parties. Medium tier ghouls lowered in cost slightly. This may help with too many high tier 3 ghouls at later levels.
 - Black monolith garrison buffed. Adds in a few legends enemies to the roster.
 - Witch's hut greatly buffed. Now includes various legendary monsters (calm down it's not 11 stollwurms).
 - 'Obsidian Dagger' item considerably buffed.
-- Southern slaves rebalanced slightly to be more in-line with their rabble cousins.
+- The Escape Artist perk now reduces the Action Point cost of breaking free from a net and helping an ally break from from a net by 1.
 
-**Bandit Warlord changes**
+**Bandit Warlord Rebalance**
+- Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
 - Warlords now have 'Rally the troops', 'True believer', 'Lone wolf', 'Composure', 'Underdog' and 'Full force' by default.
 - Warlords get 'Battleheart' on legendary combat difficulty.
 - Xp reward upped from 800 to 1000.
@@ -6672,8 +6673,8 @@ The legendary contracts has a significantly lowered score (Should pick them WAY 
 - Ranged defence dropped from 30 to 25.
 - Initiative from 170 to 185.
 - Fatigue recovery rate from 25 per turn to 30 per turn.
-- To compensate for these changes, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
-Overall, Warlords are now stronger and more independant entities that act as a hardpoint in a garrison. Warlords still carry named items.
+- To compensate for these buffs, Bandit Warlords now only spawn in forts and other garrisons, not in roaming parties. Their cost for spawning is now higher than normal and capped to avoid multiple warlord spawns.
+
 
 **Fixes**
 - Alps now have resistance to the ranged cascade skill in their racial files.
@@ -6681,7 +6682,9 @@ Overall, Warlords are now stronger and more independant entities that act as a h
 - Fixed legend chain skills (flail and hook) being 4 range instead of 3.
 - Prayer of faith perk now harms normal cultists and converted cultists as intended.
 - Fixed a potential issue where, in theory, a donkey bought by the militia origin could have a red armband due to it being tagged as lowborn.
+- Implemented a bandaid fix for the gatherer tent in camp. Hopefully this does the trick.
 - Fixed Inspire active skill ID. The wrong ID was causing the active skill to persist even after the perk was removed from a character.
+- Fixed the Tumble perk not reducing the Fatigue Cost of skills e.g. Lunge.
 
 **Typos**
 - Corrected the language of the parrying dagger description somewhat.
@@ -6695,3 +6698,67 @@ Overall, Warlords are now stronger and more independant entities that act as a h
 - Donkeys are no longer lowborns.
 - The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
+
+## 15.0.2.7
+##Juggle This##
+- Fixed syntax error in Juggler Background.
+- Reverted arena scaling due to bugs.
+
+## 15.0.2.8
+##Of Farriers and Flames##
+**Balance**
+- Blacksmiths can now spawn as females, which are known as Farriers. This is primarily to alleviate the issue where the Sisterhood origin could not craft most of the legendary items without a blacksmith present.
+- Blacksmiths are now tagged as lowborns, which allows the militia origin to craft legendary armours.
+- Mummies and Alps now receive 1.25x damage from burning damage.
+
+**Fixes**
+- Recover should now calculate fatigue recovery correctly.
+- Fixes a critical issue in the militia origin.
+- Fixes an issue that caused blue armbands not to spawn on men-at-arms.
+- Fixed, cleaned up, and improved the tooltips for Hold the Line perk, status effect and active skill.
+- Mummies now apply the curse even if an actor kills them without an attack.
+- Converted the racial skills to now use MSU based damage type system for damage reduction. This ensures a much more consistent damage resistance system for entities such as skeletons, mummies etc.
+
+**Typos**
+- Avatar trait tooltip fixed.
+- Crusader scenario text typo fixed.
+- Typos corrected when a player hovers over free or locked space in the retinue menu.
+- Fixed incorrect tooltip on white wolf mantle attachment.
+
+## 15.0.2.9 - All Fun and Games
+
+- Fixed an issue with the minstrel_and_troubador event causing events to break.
+
+
+## 15.0.2.10 - A Promise Unfulfilled
+**Fixes**
+- Fixed being able to equip layer items
+- Fixed more infinite consumables
+- Fixed web skill showing damage values in the tooltip
+- Disowned noble background may now spawn as a full female background, named disowned lady.
+- Fixes an issue with the troubadour vs. juggler event.
+- Fixed Double Strike mini icon not appearing.
+- Fixes an issue where possession was not being dismissed when combat ended.
+
+**Typos**
+- Fixed an issue with player avatar trait not displaying the information correctly.
+- Fixed a few typos in the legends tournament event.
+- 'Hunting mummies' contract typos fixed.
+- A couple dozen typo fixes thanks to Dimon485.
+
+**Misc**
+- A few more tavern rumors have been added.
+
+**For Modders**
+- Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
+- onUpdateDraftsList now has Gender as an optional parameter
+- These changes improve compatibility with mods
+- Removed the `findPerk( _perk )` function from character_background.
+- Enhanced the functionality of the `getPerk( _perk )` function in `character_background`. It now takes either a string or a perkDef as its argument and returns the perkDefObject of the perk from this character's perk tree if it has it.
+- Implemented `addScenarioPerk( _background, _perk, _row = 0, _addSkill = true )` function in `starting_scenario`. This function should be used to add origin-specific free perks to characters. `_background` is the background of the character, `_perk` is a perkDef, `_row` is the desired row on which to add the perk, note that if the perk already exists in the character's perk tree then `_row` is ignored and the perk remains on that row. `_addSkill` will also add the skill to the character if true, and if false then only adds the perk to the perk tree but doesn't give the perk to the character.
+- Added `_isRefundable` argument to the `addPerk( _perk, _row = 0, _isRefundable = true )` function of character_background. The argument defaults to true. If it is set to false, the the perk won't be refunded during `resetPerks()` of actor.
+- An existing perk in the perk tree can be made non-refundable by accessing it via `getPerk` to get the perkDefObject and then setting the `perkDefObject.IsRefundable` boolean to false.
+- The `onBuildPerkTree` function of scenarios is now called after the perk tree of the character is built, and hence the `PerkTree` and `PerkTreeMap` members of `character_background` can be accessed during this function.
+- The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
+- Improved automatic formatting for perk tree mention in perk tooltips.
+- Modding: Updated MSU to v0.6.27.

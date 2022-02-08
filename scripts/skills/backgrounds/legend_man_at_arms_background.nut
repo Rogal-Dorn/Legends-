@@ -33,9 +33,8 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Muscular;
-		//this.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue armband (causes crashes if put here)
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat; //not lowborn for armband spawn
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[2];
@@ -91,7 +90,6 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
-		this.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue armband
 		this.m.Name = "Woman-At-Arms";
 
 	}

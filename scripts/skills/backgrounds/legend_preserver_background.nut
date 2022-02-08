@@ -28,7 +28,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.bloodthirsty"
 		];
 		this.m.Titles = [
-			"the Mordbid",
+			"the Morbid",
 			"the Surgeon",
 			"the Butcher",
 			"the Fleshshaper"

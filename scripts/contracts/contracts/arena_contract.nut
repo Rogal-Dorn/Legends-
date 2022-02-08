@@ -321,8 +321,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 
 				if (this.World.Statistics.getFlags().getAsInt("ArenaRegularFightsWon") > 0 && this.World.Statistics.getFlags().getAsInt("ArenaRegularFightsWon") % 5 == 0)
 				{
-					// baseDifficulty = baseDifficulty + 10; //OLD
-					baseDifficulty = baseDifficulty * this.getScaledDifficultyMult();
+					baseDifficulty = baseDifficulty + 10;
 				}
 
 				baseDifficulty = baseDifficulty * this.Contract.getScaledDifficultyMult();
@@ -581,7 +580,6 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 
 						p.Entities = [];
 						local baseDifficulty = 30;
-						baseDifficulty = baseDifficulty * this.getScaledDifficultyMult();
 
 						if (this.World.Statistics.getFlags().getAsInt("ArenaRegularFightsWon") > 0 && this.World.Statistics.getFlags().getAsInt("ArenaRegularFightsWon") % 5 == 0)
 						{

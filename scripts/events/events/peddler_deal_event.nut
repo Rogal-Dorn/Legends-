@@ -9,7 +9,7 @@ this.peddler_deal_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 40.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% comes to you, rubbing the back of their neck and nervously pulling on their shirt front. %peddler%  proposes a plan to goes into town with a handful of goods to peddle around, as they\'ve done so often in the past.\n\nOnly problem is that %peddler%  doesn\'t yet have the goods -  that will need to be bought from some local in the nearby hinterlands. All %peddler% needs now is a bit of money to get started and help purchase the goods. A sum of 500 crowns all in all. Naturally, as a partner, you will get a cut of the profits once it\'s all said and done.",
+			Text = "[img]gfx/ui/events/event_05.png[/img]%peddler% comes to you, rubbing the back of their neck and nervously pulling on their shirt front. %peddler%  proposes a plan to go into town with a handful of goods to peddle around, as they\'ve done so often in the past.\n\nOnly problem is that %peddler%  doesn\'t yet have the goods -  those will need to be bought from some local in the nearby hinterlands. All %peddler% needs now is a bit of money to get started and help purchase the goods. A sum of 500 crowns all in all. Naturally, as a partner, you will get a cut of the profits once it\'s all said and done.",
 			Image = "",
 			List = [],
 			Characters = [],

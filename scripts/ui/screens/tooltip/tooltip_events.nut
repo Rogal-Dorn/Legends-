@@ -90,12 +90,12 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Locked Seat"
+					text = "Insufficent Renown"
 				},
 				{
 					id = 4,
 					type = "description",
-					text = "Your company lacks the renown necessary to hire more non-combat followers. Attain at least " + renown + " renown in order to unlock this seat. Gain renown by completing ambitions and contracts, as well as by winning battles."
+					text = "Your company lacks the renown necessary to accomodate more equipment in your camp. Attain at least " + renown + " renown in order to unlock this space. Gain renown by completing ambitions and contracts, as well as by winning battles."
 				}
 			];
 			return ret;
@@ -106,18 +106,18 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Free Seat"
+					text = "Free Space"
 				},
 				{
 					id = 4,
 					type = "description",
-					text = "There\'s space here to add another non-combat follower to your company."
+					text = "There\'s space here to buy more equipment for your company specialists to use."
 				},
 				{
 					id = 1,
 					type = "hint",
 					icon = "ui/icons/mouse_left_button.png",
-					text = "Open Hiring Screen"
+					text = "Buy Equipment"
 				}
 			];
 			return ret;

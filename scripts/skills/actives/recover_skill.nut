@@ -80,7 +80,7 @@ this.recover_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local actor = this.getContainer().getActor();
-		local fatMult = this.m.AP * 0.03;
+		local fatMult = this.m.AP * 0.055;
 
 		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigueMax() );
 		
