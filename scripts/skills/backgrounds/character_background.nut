@@ -1632,6 +1632,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
+		local nonRefundablePerks = [];
+		foreach (row in this.m.PerkTree)
+		{
+			foreach (perk in row)
+			{
+				if (!perk.IsRefundable)
+				{
+					nonRefundablePerks.push(this.Const.Perks.PerkDefs[perk.Const]);
+				}
+			}
+		}
+
+		_out.writeU8(nonRefundablePerks.len());
+		foreach (perk in nonRefundablePerks)
+		{
+			_out.writeU16(perk);
+		}
 	}
 
 	function onDeserialize( _in )
@@ -1684,7 +1702,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 
+		if (this.Const.LegendMod.compareSavedVersionTo("15.0.2.10", _in.getMetaData()) != -1)
+		{
+			local num = _in.readU8();
+			for (local i = 0; i < num; i++)
+			{
+				this.getPerk(_in.readU16()).IsRefundable <- false;
+			}
+		}
 	}
-
 });
 
