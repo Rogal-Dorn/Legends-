@@ -24,8 +24,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		local roster = this.World.getPlayerRoster();
 		for( local i = 0; i < 6; i = ++i )
 		{
-			local bro = roster.create("scripts/entity/tactical/player");
-			bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
+			local bro = roster.create("scripts/entity/tactical/player");			
 			if (i != 0)
 			{
 				bro.fillTalentValues(3); //quick way to skip noble commander's fill talent values
@@ -41,13 +40,12 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(13);
-		bros[0].setVeteranPerks(2);
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_2"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_roster_4"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
+		bros[0].setVeteranPerks(2);		
 		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_noble_killer_trait"));
 		bros[0].getSkills().add(this.new("scripts/skills/effects_world/drunk_effect"));
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.Rotation);
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.RallyTheTroops);
 
 		// End Noble Commander Create
 		// Noble Shield 1 Create
@@ -74,6 +72,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getSkills().add(this.new("scripts/skills/traits/optimist_trait"));
 		bros[1].getSkills().add(this.new("scripts/skills/traits/determined_trait"));
 		bros[1].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
+		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
 
@@ -89,6 +88,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getSkills().add(this.new("scripts/skills/traits/huge_trait"));
 		bros[2].getSkills().add(this.new("scripts/skills/traits/fat_trait"));
 		bros[2].getSkills().add(this.new("scripts/skills/traits/gluttonous_trait"));
+		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 
@@ -117,6 +117,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/slack_trait"));
+		this.addScenarioPerk(bros[3].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[3].setPlaceInFormation(5);
 		bros[3].setVeteranPerks(2);
 
@@ -132,6 +133,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[4].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
 		bros[4].getSkills().add(this.new("scripts/skills/traits/lucky_trait"));
 		bros[4].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
+		this.addScenarioPerk(bros[4].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[4].setPlaceInFormation(12);
 		bros[4].setVeteranPerks(2);
 		local items = bros[4].getItems();
@@ -155,6 +157,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
+		this.addScenarioPerk(bros[5].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		if (bros[5].getBaseProperties().RangedSkill  <= 60) {
 			bros[5].getBaseProperties().RangedSkill  += 5;
 		}
@@ -305,7 +308,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.worsenMood(0.5, "Resents you as nobility, will try to squeeze money from you.");
 		}
 		bro.improveMood(0.5, "Learned a new skill");
-		bro.getSkills().add(this.new("scripts/skills/perks/perk_rotation"));
 	}
 
 	function onUpdateHiringRoster( _roster )
@@ -368,17 +370,9 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-
-
 	function onBuildPerkTree( _background )
 	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.Rotation)
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Rotation);
 	}
-
-
 });
 
