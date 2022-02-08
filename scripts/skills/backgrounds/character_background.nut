@@ -611,36 +611,44 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return pT.Tree;
 	}
 
-	function getPerk( _id )
+	// Input can be a Perk Id or a PerkDef
+	function getPerk( _perk )
 	{
-		if ( _id == null )
+		local id;
+		local perkDef;
+		if (typeof _perk == "string")
+		{
+			id = _perk;
+			local basePerkDefObject = this.Const.Perks.findById(_perk);			
+			perkDef = this.Const.Perks.PerkDefs[basePerkDefObject.Const];
+		}
+		else
+		{
+			id = this.Const.Perks.PerkDefObjects[_perk].ID;
+			perkDef = _perk;
+		}
+		
+		if (!(id in this.m.PerkTreeMap))
 		{
 			return null;
 		}
 
-		if (this.m.PerkTreeMap != null)
-		{
-			if (!(_id in this.m.PerkTreeMap))
-			{
-				return null;
-			}
-			return this.m.PerkTreeMap[_id];
-		}
-
-		return this.Const.Perks.findByBackground(_id, this.getID());
+		return this.m.PerkTreeMap[id];
 	}
 
-	function addPerk( _perk, _row = 0 )
+	function addPerk( _perk, _row = 0, _isRefundable = true )
 	{
 		local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
         //Dont add dupes
-        if (perkDefObject.ID in this.m.PerkTreeMap)
+        if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
         {
             return false;
         }
 
         perkDefObject.Row <- _row;
         perkDefObject.Unlocks <- _row;
+        perkDefObject.IsRefundable <- _isRefundable;
+
         for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
         {
             this.getPerkTree().push([]);
@@ -708,35 +716,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function hasPerk( _perk )
 	{
-		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
-		return perkDefObject.ID in this.m.PerkTreeMap;
-	}
-
-	function findPerk( _perk )
-	{
-		local perkDefObject = this.Const.Perks.PerkDefObjects[_perk];
-		if (!(perkDefObject.ID in this.m.PerkTreeMap))
-		{
-			return null;
-		}
-
-		local ret = {
-			Perk = null,
-			Row = 0,
-			PerkDefObject = perkDefObject
-		};
-
-		ret.Row = this.m.PerkTreeMap[perkDefObject.ID].Row;
-		foreach (i, perk in this.m.CustomPerkTree[row])
-		{
-			if (perk == _perk)
-			{
-				ret.Perk = perk;
-				break;
-			}
-		}
-
-		return ret;
+		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;		
 	}
 
 	function buildDescription( _isFinal = false )
@@ -1176,21 +1156,26 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			{
 				this.m.CustomPerkTree = this.Const.Perks.DefaultCustomPerkTree;
 			}
-
-			//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
-			//already have added its perks so we should be ok. This will fail though loading an old save
-			//and we've added new perks to a scenario...
-			local origin = this.World.Assets.getOrigin()
-			if (origin != null)
-			{
-				this.World.Assets.getOrigin().onBuildPerkTree(this);
-			}
+			
 		}
 
 		local pT = this.Const.Perks.BuildCustomPerkTree(this.m.CustomPerkTree);
 		this.m.PerkTree = pT.Tree;
 		this.m.PerkTreeMap = pT.Map;
-		return a
+
+		//When deserializing, the scenario isn't set yet, so it will be null - in this case, the sceario should
+		//already have added its perks so we should be ok. This will fail though loading an old save
+		//and we've added new perks to a scenario...
+
+		// THE COMMMENT ABOVE IS PROBABLY WRONG. Scenario doesn't seem to be null here on deserialize. But some weird 
+		// shenanigans are still happening, so I will test some more. -- Midas
+		local origin = this.World.Assets.getOrigin();
+		if (origin != null)
+		{
+			origin.onBuildPerkTree(this);
+		}
+
+		return a;
 	}
 
 	function updateAppearance()
@@ -1668,6 +1653,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				}
 			}
 		}
+
+		local nonRefundablePerks = [];
+		foreach (row in this.m.PerkTree)
+		{
+			foreach (perk in row)
+			{
+				if (!perk.IsRefundable)
+				{
+					nonRefundablePerks.push(this.Const.Perks.PerkDefs[perk.Const]);
+				}
+			}
+		}
+
+		_out.writeU8(nonRefundablePerks.len());
+		foreach (perk in nonRefundablePerks)
+		{
+			_out.writeU16(perk);
+		}
 	}
 
 	function onDeserialize( _in )
@@ -1720,7 +1723,14 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 
+		if (this.Const.LegendMod.compareSavedVersionTo("15.0.2.10", _in.getMetaData()) != -1)
+		{
+			local num = _in.readU8();
+			for (local i = 0; i < num; i++)
+			{
+				this.getPerk(_in.readU16()).IsRefundable <- false;
+			}
+		}
 	}
-
 });
 
