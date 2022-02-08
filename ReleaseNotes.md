@@ -6762,3 +6762,5 @@ FOR MODDERS:
 - The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
 - Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
+## Luft
+- Fixes an issue where possession was not being dismissed when combat ended.
