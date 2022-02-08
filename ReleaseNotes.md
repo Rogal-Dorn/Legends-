@@ -6727,5 +6727,13 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ##00000 MIDAAAAAS CHANGELOG
 - Fixed Double Strike mini icon not appearing.
-- Modding: Improved automatic formatting for perk tree mention in perk tooltips.
+FOR MODDERS:
+- Removed the `findPerk( _perk )` function from character_background.
+- Enhanced the functionality of the `getPerk( _perk )` function in `character_background`. It now takes either a string or a perkDef as its argument and returns the perkDefObject of the perk from this character's perk tree if it has it.
+- Implemented `addScenarioPerk( _background, _perk, _row = 0, _addSkill = true )` function in `starting_scenario`. This function should be used to add origin-specific free perks to characters. `_background` is the background of the character, `_perk` is a perkDef, `_row` is the desired row on which to add the perk, note that if the perk already exists in the character's perk tree then `_row` is ignored and the perk remains on that row. `_addSkill` will also add the skill to the character if true, and if false then only adds the perk to the perk tree but doesn't give the perk to the character.
+- Added `_isRefundable` argument to the `addPerk( _perk, _row = 0, _isRefundable = true )` function of character_background. The argument defaults to true. If it is set to false, the the perk won't be refunded during `resetPerks()` of actor.
+- An existing perk in the perk tree can be made non-refundable by accessing it via `getPerk` to get the perkDefObject and then setting the `perkDefObject.IsRefundable` boolean to false.
+- The `onBuildPerkTree` function of scenarios is now called after the perk tree of the character is built, and hence the `PerkTree` and `PerkTreeMap` members of `character_background` can be accessed during this function.
+- The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
+- Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
