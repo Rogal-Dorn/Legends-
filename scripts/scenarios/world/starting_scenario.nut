@@ -172,4 +172,27 @@ this.starting_scenario <- {
 	{
 		this.m.RosterReputationTiers = _tiers;
 	}
+
+	function addScenarioPerk( _background, _perk, _row = 0, _addSkill = true )
+	{
+		if (_background.m.CustomPerkTree == null)
+		{
+			return;
+		}
+		
+		local perk = _background.getPerk(_perk);
+		if (perk != null)
+		{
+			perk.IsRefundable = false;
+		}
+		else
+		{
+			_background.addPerk(_perk, _row, false);
+		}
+
+		if (_addSkill && _background.getContainer() != null)
+		{
+			_background.getContainer().add(this.new(this.Const.Perks.PerkDefObjects[_perk].Script));
+		}
+	}
 };

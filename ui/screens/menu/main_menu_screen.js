@@ -401,6 +401,7 @@ MainMenuScreen.prototype.setMOTD = function (_data)
     });
 
     this.mMOTD.html(parsedDescriptionText.html);
+    
 };
 
 MainMenuScreen.prototype.setLMOTD = function (_data)
@@ -414,7 +415,13 @@ MainMenuScreen.prototype.setLMOTD = function (_data)
     this.mLMOTDContainer.removeClass('display-none').addClass('display-block');
 
     this.mLMOTD.html(parsedDescriptionText.html);
+
+    this.disableGameButtons();
 };
+
+MainMenuScreen.prototype.disableGameButtons = function(){
+    this.mMainMenuModule.mDisableButtons = true;
+}
 
 MainMenuScreen.prototype.getModule = function (_name)
 {
