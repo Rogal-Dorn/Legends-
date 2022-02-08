@@ -1,7 +1,7 @@
 local gt = this.getroottable();
 
-local ver = "15.0.2.7";
-local buildName = "";
+local ver = "15.0.2.10";
+local buildName = "A Promise Unfulfilled";
 
 gt.logInfo("Legends Mod Version " + ver + " " + buildName)
 
