@@ -281,8 +281,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 
 	function onBuildPerkTree( _background )
 	{
-		local addSkill = bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger);
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Pathfinder, 0, addSkill);		
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Pathfinder, 0, _background.isBackgroundType(this.Const.BackgroundType.Druid) || _background.isBackgroundType(this.Const.BackgroundType.Ranger));		
 	}
 });
 
