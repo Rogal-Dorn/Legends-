@@ -13,45 +13,35 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	} 
 
+	function getCultistPieces(){
+		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		local cultItems = []
+		if (item != null)
+		{
+			if(item.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(item)
+			if (this.LegendsMod.Configs().LegendArmorsEnabled() && ::mods_isClass(item, "legend_helmet"))
+			{
+				foreach( upgrade in item.m.Upgrades )
+				{
+					if (upgrade != null && upgrade.isItemType(this.Const.Items.ItemType.Cultist)){
+						cultItems.push(upgrade);
+					}
+				}
+			}
+		}
+		return cultItems
+	}
+
 	function onAfterUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local resolve = actor.getCurrentProperties().getBravery();
 
-		if (item != null)
-		{
-			if (::mods_isClass(item, "legend_helmet") != null)
-			{
-				local layers = item.getUpgradeIDs();
+		if (this.getCultistPieces().len() > 0){
 
-				foreach( l in layers )
-				{
-					if (l != null && (l == "armor.head.legend_helmet_sack" || l == "armor.head.legend_helmet_cult_hood"))
-					{
-						_properties.MeleeDefense += this.Math.floor(resolve * 0.15);
-						_properties.RangedDefense += this.Math.floor(resolve * 0.15);
-						return;
-					}
-				}
-			}
-			else
-			{
-				switch(item.getID())
-				{
-				case "armor.head.cultist_hood":
-				case "armor.head.cultist_leather_hood":
-				case "armor.head.leather_helmet":
-				case "armor.head.legend_helmet_leather_hood_barb":
-				case "armor.head.legend_helmet_warlock_hood":
-				case "armor.head.legend_named_warlock_hood":
-				case "armor.head.decayed_closed_flat_top_with_sack":
-				case "armor.head.mask_of_davkul":
-					_properties.MeleeDefense += this.Math.floor(resolve * 0.15);
-					_properties.RangedDefense += this.Math.floor(resolve * 0.15);
-					break;
-				}
-			}
+			_properties.MeleeDefense += this.Math.floor(resolve * 0.15);
+			_properties.RangedDefense += this.Math.floor(resolve * 0.15);
 		}
 	}
 
