@@ -1645,6 +1645,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		local perk = this.getBackground().getPerk(_id);
+		if (perk == null)
+		{
+			return false;
+		}
 
 		if (this.m.PerkPointsSpent >= perk.Unlocks)
 		{

@@ -559,6 +559,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			});
 		}
 
+		local upgradeNum = this.m.Upgrades.filter(@(idx, val) val != null).len();
+		if (upgradeNum > 0){
+			result.push({
+				id = 65,
+				type = "hint",
+				icon = "ui/icons/mouse_right_button_shift.png",
+				text = "Shift + Right-click to remove all layers."
+			});
+		}
+
 		return result;
 	}
 

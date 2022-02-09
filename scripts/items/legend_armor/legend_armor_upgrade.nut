@@ -183,8 +183,15 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 		result.push({
 			id = 65,
-			type = "text",
-			text = "Right-click or drag onto an armor carried by the currently selected character in order to attach the armor upgrade."
+			type = "hint",
+			icon = "ui/icons/mouse_right_button_shift.png",
+			text = "Right-click or drag onto the armor of the currently selected character to attach."
+		});
+		result.push({
+			id = 66,
+			type = "hint",
+			icon = "ui/icons/mouse_right_button_shift_drag.png",
+			text = "Hold Shift and drag onto an armor in the stash to attach."
 		});
 		result.push({
 			id = 4,

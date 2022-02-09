@@ -522,14 +522,14 @@ CharacterScreenInventoryListModule.prototype.createItemSlot = function (_owner, 
         var data = _item.data('item');
 
 
-        var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : true;
+        var isEmpty = (data !== null && 'isEmpty' in data) ? data.isEmpty : ytrue;
         //var owner = (data !== null && 'owner' in data) ? data.owner : null;
         var itemId = (data !== null && 'itemId' in data) ? data.itemId : null;
         var entityId = (data !== null && 'entityId' in data) ? data.entityId : null;
         var sourceItemIdx = (data !== null && 'index' in data) ? data.index : null;
         var dropIntoBag = (KeyModiferConstants.CtrlKey in _event && _event[KeyModiferConstants.CtrlKey] === true);
         var repairItem = (KeyModiferConstants.AltKey in _event && _event[KeyModiferConstants.AltKey] === true);
-        var removeUpgrades = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true);
+        var removeUpgrades = (KeyModiferConstants.ShiftKey in _event && _event[KeyModiferConstants.ShiftKey] === true && ("isUsable" in data && data.isUsable === false));
         var sourceSlotType = (data !== null && 'slotType' in data) ? data.slotType : null;
 
         if (isEmpty === false && /*owner !== null &&*/ itemId !== null /*&& itemIdx !== null*/)

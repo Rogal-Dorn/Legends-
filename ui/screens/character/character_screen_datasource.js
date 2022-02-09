@@ -1988,10 +1988,19 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveInventoryItemUpgrades = f
 {
     var self = this;
     SQ.call(this.mSQHandle, 'removeInventoryItemUpgrades', [_slot], function (data) {
-    	if (data === null) return
-		{
-		    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
-		}
+    	if (data === undefined || data == null || typeof (data) !== 'object')
+    	{
+    	    console.error('ERROR: Failed to drop paperdoll item into bag. Invalid data result.');
+    	    return;
+    	}
+
+    	// check if we have an error
+    	if (ErrorCode.Key in data)
+    	{
+    	    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+    	}
+
+    	//Still try to do the rest as error can be no stash space when removing multiple layers
         if ('stashSpaceUsed' in data)
             self.mStashSpaceUsed = data.stashSpaceUsed;
 
@@ -2013,19 +2022,38 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveInventoryItemUpgrades = f
                 console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
             }
         }
+	    
     });
 };
-CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (_slot)
+CharacterScreenDatasource.prototype.notifyBackendRemovePaperdollItemUpgrades = function (_brotherId, _sourceItemId)
 {
-    var self = this;
-    var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
-    SQ.call(this.mSQHandle, 'onRemoveArmorUpgrade', [_slot, activeCharacterID], function (data) {
-    	if (data === null) return
-		if (ErrorCode.Key in data)
-		{
+    var brotherId = _brotherId;
+    if (brotherId === null)
+    {
+        var selectedBrother = this.getSelectedBrother();
+        if (selectedBrother === null || !(CharacterScreenIdentifier.Entity.Id in selectedBrother))
+        {
+            console.error('ERROR: Failed to remove paperdoll item layers. No entity selected.');
+            return;
+        }
 
-		    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
-		}
+        brotherId = selectedBrother[CharacterScreenIdentifier.Entity.Id];
+    }
+
+    var self = this;
+
+    SQ.call(this.mSQHandle, 'removePaperdollItemUpgrades', [brotherId, _sourceItemId], function (data) {
+    	if (data === undefined || data == null || typeof (data) !== 'object')
+    	{
+    	    console.error('ERROR: Failed to remove Paperdoll Item Upgrades. Invalid data result.');
+    	    return;
+    	}
+
+    	//Still try to do the rest as error can be no stash space when removing multiple layers
+    	if (ErrorCode.Key in data)
+    	{
+    	    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+    	}
         if ('stashSpaceUsed' in data)
             self.mStashSpaceUsed = data.stashSpaceUsed;
 
@@ -2041,12 +2069,7 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
             {
                 self.updateStash(stashData);
             }
-            else
-            {
-                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
-            }
         }
-
         if (CharacterScreenIdentifier.QueryResult.Brother in data)
         {
             var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
@@ -2054,11 +2077,61 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
             {
                 self.updateBrother(brotherData);
             }
-            else
-            {
-                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
-            }
         }
+    });
+};
+CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (_slot)
+{
+    var self = this;
+    var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
+    SQ.call(this.mSQHandle, 'onRemoveArmorUpgrade', [_slot, activeCharacterID], function (data) {
+    	if (data === undefined || data == null || typeof (data) !== 'object')
+    	{
+    	    console.error('ERROR: Failed to remove armor upgrade. Invalid data result.');
+    	    return;
+    	}
+
+    	// check if we have an error
+    	if (ErrorCode.Key in data)
+    	{
+    	    self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
+    	}
+    	else
+    	{
+	        if ('stashSpaceUsed' in data)
+	            self.mStashSpaceUsed = data.stashSpaceUsed;
+
+	        if ('stashSpaceMax' in data)
+	            self.mStashSpaceMax = data.stashSpaceMax;
+
+	        self.mInventoryModule.updateSlotsLabel();
+
+	        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+	        {
+	            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+	            if (stashData !== null && jQuery.isArray(stashData))
+	            {
+	                self.updateStash(stashData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
+	            }
+	        }
+
+	        if (CharacterScreenIdentifier.QueryResult.Brother in data)
+	        {
+	            var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
+	            if (CharacterScreenIdentifier.Entity.Id in brotherData)
+	            {
+	                self.updateBrother(brotherData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
+	            }
+	        }
+	    }
     });
 };
 
@@ -2068,46 +2141,53 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function 
     var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
     SQ.call(this.mSQHandle, 'onRemoveHelmetUpgrade', [_slot, activeCharacterID], function (data) {
 
-        if (data === null) { return; }
+        if (data === undefined || data == null || typeof (data) !== 'object')
+        {
+            console.error('ERROR: Failed to remove Paperdoll Item Upgrades. Invalid data result.');
+            return;
+        }
+
+        // check if we have an error
         if (ErrorCode.Key in data)
         {
-        	console.error(ErrorCode.Key)
-        	console.error("should print the error thing")
             self.notifyEventListener(ErrorCode.Key, data[ErrorCode.Key]);
         }
-        if ('stashSpaceUsed' in data)
-            self.mStashSpaceUsed = data.stashSpaceUsed;
-
-        if ('stashSpaceMax' in data)
-            self.mStashSpaceMax = data.stashSpaceMax;
-
-        self.mInventoryModule.updateSlotsLabel();
-
-        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+        else
         {
-            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
-            if (stashData !== null && jQuery.isArray(stashData))
-            {
-                self.updateStash(stashData);
-            }
-            else
-            {
-                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
-            }
-        }
+	        if ('stashSpaceUsed' in data)
+	            self.mStashSpaceUsed = data.stashSpaceUsed;
 
-        if (CharacterScreenIdentifier.QueryResult.Brother in data)
-        {
-            var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
-            if (CharacterScreenIdentifier.Entity.Id in brotherData)
-            {
-                self.updateBrother(brotherData);
-            }
-            else
-            {
-                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
-            }
-        }
+	        if ('stashSpaceMax' in data)
+	            self.mStashSpaceMax = data.stashSpaceMax;
+
+	        self.mInventoryModule.updateSlotsLabel();
+
+	        if (CharacterScreenIdentifier.QueryResult.Stash in data)
+	        {
+	            var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
+	            if (stashData !== null && jQuery.isArray(stashData))
+	            {
+	                self.updateStash(stashData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
+	            }
+	        }
+
+	        if (CharacterScreenIdentifier.QueryResult.Brother in data)
+	        {
+	            var brotherData = data[CharacterScreenIdentifier.QueryResult.Brother];
+	            if (CharacterScreenIdentifier.Entity.Id in brotherData)
+	            {
+	                self.updateBrother(brotherData);
+	            }
+	            else
+	            {
+	                console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
+	            }
+	        }
+	    }
     });
 };
 CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse, _callback)
