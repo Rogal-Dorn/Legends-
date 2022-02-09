@@ -120,7 +120,6 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				this.Characters.push(_event.m.Fisherman.getImagePath());
 				this.World.Assets.addMoralReputation(2);
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");

@@ -6766,3 +6766,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.11 [NAME HERE]
 **Balance**
 Improves 'Resilient' (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
+
+**Fixes**
+Fixes runaway harem event.
