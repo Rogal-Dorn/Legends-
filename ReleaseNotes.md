@@ -6766,6 +6766,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.11 [NAME HERE]
 **Balance**
 Improves 'Resilient' (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
+Tweaks made to legendary bandit contract spawnrates and rabble in general. Thugs and low level archers will no longer spawn in the legendary brigand contract location. Rabble should now spawn as normal.
 
 **Fixes**
 Fixes runaway harem event.

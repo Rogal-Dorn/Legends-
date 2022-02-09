@@ -19,7 +19,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
 	Fixed = [],
-	MinR = 56, //TEST
+	MinR = 56,
 	MaxR = 220,
 	Troops = [
 		{
@@ -28,8 +28,8 @@ gt.Const.World.Spawn.BanditRoamers <-
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
 					// MaxR = 0.25 * 420,
-					MaxR = 110,
-					Cost = 4
+					MaxR = 150,
+					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
@@ -138,8 +138,8 @@ gt.Const.World.Spawn.BanditScouts <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 80,
-					Cost = 4
+					MaxR = 150,
+					Cost = 7
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
@@ -410,8 +410,8 @@ gt.Const.World.Spawn.BanditDefenders <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRabble,
-					MaxR = 70,
-					Cost = 4
+					MaxR = 150,
+					Cost = 6
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditThug,
@@ -681,7 +681,6 @@ gt.Const.World.Spawn.BanditArmy <- //legend_bandit_army_contract only!!
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_bandit_01",
-	MinR = 1, //Big boss, only 1
 	MaxR = 1,
 	Fixed = [
 		{
@@ -691,7 +690,6 @@ gt.Const.World.Spawn.BanditArmy <- //legend_bandit_army_contract only!!
 			Roll = true
 		}
 	],
-	MinR = 12, //Vanguard
 	MaxR = 12,
 	Fixed = [
 		{
@@ -732,10 +730,10 @@ gt.Const.World.Spawn.BanditArmy <- //legend_bandit_army_contract only!!
 		{
 			Weight = 65,
 			Types = [
-				{
-					Type = this.Const.World.Spawn.Troops.BanditThug,
-					Cost = 8
-				},
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.BanditThug,
+				// 	Cost = 8
+				// },
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
@@ -757,10 +755,10 @@ gt.Const.World.Spawn.BanditArmy <- //legend_bandit_army_contract only!!
 			Weight = 20,
 			Types =
 			[
-				{
-					Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
-					Cost = 8
-				},
+				// {
+				// 	Type = this.Const.World.Spawn.Troops.BanditMarksmanLOW,
+				// 	Cost = 8
+				// },
 				{
 					MinR = 400,
 					Type = this.Const.World.Spawn.Troops.BanditMarksman,
