@@ -205,6 +205,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 		this.m.Vision = $vision;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -243,6 +244,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade",
 		this.m.IsLowerVanity = $lower;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -283,6 +285,7 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 		this.m.IsLowerVanity = $lower;
 		this.m.HideHair = $hair;
 		this.m.HideBeard = $beard;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -372,7 +375,7 @@ layers = [
  "title" :  "Aketon Cap", \
  "desc" :  "A padded cloth cap." \
 },
-{"name" : "leather_hood"                     , "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 110, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "leather_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 5, "base" : True, "value" : 110, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Leather Hood", \
  "desc" :  "A closed leather cap that protects the head and neck. Padded for extra protection." \
 },
@@ -806,7 +809,7 @@ layers = [
  "title" :  "Swan Helm", \
  "desc" :  "The helm of a noble house champion bearing the design of the swan, beautiful design but quite impractical." \
 },
-{"name" : "skin_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 20000, "con" : 105, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "true",  \
+{"name" : "skin_helm"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "helm", "min" : 1, "max" : 1, "value" : 20000, "con" : 105, "stam" : -5, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Glimpse of Davkul", \
  "desc" :  "The Glimpse of Davkul is a gift bestowed upon man by ancient and dark powers, a helmet merged with human skin and bones through the most unspeakable of rituals. A glimpse of a future where man shall become one with creations from a realm beyond. It shall never break, but instead keep regrowing its scarred skin on the spot." \
 },
@@ -926,7 +929,7 @@ layers = [
  "title" :  "Short Faceplate", \
  "desc" :  "A short squat faceplate." \
 },
-{"name" : "cult_hood"                     , "layer" : "top", "min" : 1, "max" : 7, "value" : 60, "con" : 15, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "cult_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 7, "value" : 60, "con" : 15, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Cult Leather Hood", \
  "desc" :  "A leather hood used in cultist ceremonies." \
 },
@@ -1049,7 +1052,7 @@ layers = [
  "title" :  "Golden Mask", \
  "desc" :  "An exquisit golden mask from distant royalty, exceptional craftmanship." \
 },
-{"name" : "warlock_skull"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 2000, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 1, "rminStam" : 2, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,  \
+{"name" : "warlock_skull"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "top", "min" : 1, "max" : 3, "value" : 2000, "con" : 45, "stam" : -2, "vis" : 0, "hair" : "false", "beard" : "true", "named" : True, "rmaxViz" : 0, "rminViz" : 1, "rmaxStam" : 1, "rminStam" : 2, "rminCond" : 90, "rmaxCond" : 115, "names" : Names,  \
  "title" :  "Warlock Skill Helm", \
  "desc" :  "Warlock Skill Helm." \
 },
@@ -1088,7 +1091,7 @@ layers = [
 #  "title" :  "Open Turban", \
 #  "desc" :  "A turban with open face." \
 # },
-{"name" : "sack"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 100, "con" : 10, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "sack"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "vanity", "min" : 1, "max" : 12, "value" : 100, "con" : 10, "stam" : 0, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Sack", \
  "desc" :  "A rough hewn hession sack with two holes in it." \
 },
@@ -1334,7 +1337,7 @@ layers = [
 #  "title" :  "Demon Alp Helm", \
 #  "desc" :  "A trophy made from the face of a demon" \
 # },
-{"name" : "warlock_hood"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+{"name" : "warlock_hood"                     ,"itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "vanity", "min" : 1, "max" : 4, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Warlock Hood", \
  "desc" :  "Warlock Hood." \
 },
@@ -1947,6 +1950,10 @@ def main():
 
         has_missing = has_missing or checkForIcon("inventory_" + d["name"], variants)
 
+        itemType = "this.m.ItemType"
+        if "itemType" in d:
+            itemType += " | " + d["itemType"]
+
         opts = dict(
             test="true",
             name=fname,
@@ -1972,6 +1979,7 @@ def main():
             rmaxStam = d["rmaxStam"] if "rmaxStam" in d else 0,
             rminCond = d["rminCond"] if "rminCond" in d else 0,
             rmaxCond = d["rmaxCond"] if "rmaxCond" in d else 0,
+            itemType = itemType,
         )
         s = Template(temp)
         text = s.substitute(opts)
