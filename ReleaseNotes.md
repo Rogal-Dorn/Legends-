@@ -6699,7 +6699,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - The militia origin now detects 'stabled' characters and does not move them to garbage on creation.
 - Updated MSU to v0.6.26. Check MSU changelog of v0.6.25 and v0.6.26.
 
-
 ## 15.0.2.7
 ##Juggle This##
 - Fixed syntax error in Juggler Background.
@@ -6726,12 +6725,45 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Typos corrected when a player hovers over free or locked space in the retinue menu.
 - Fixed incorrect tooltip on white wolf mantle attachment.
 
-## 15.0.2.9
-##All Fun and Games##
+## 15.0.2.9 - All Fun and Games
+
 - Fixed an issue with the minstrel_and_troubador event causing events to break.
 
-## 15.0.2.10
-##Ghosts 'N Goblins##
+
+## 15.0.2.10 - A Promise Unfulfilled
+**Fixes**
+- Fixed being able to equip layer items
+- Fixed more infinite consumables
+- Fixed web skill showing damage values in the tooltip
+- Disowned noble background may now spawn as a full female background, named disowned lady.
+- Fixes an issue with the troubadour vs. juggler event.
+- Fixed Double Strike mini icon not appearing.
+- Fixes an issue where possession was not being dismissed when combat ended.
+
+**Typos**
+- Fixed an issue with player avatar trait not displaying the information correctly.
+- Fixed a few typos in the legends tournament event.
+- 'Hunting mummies' contract typos fixed.
+- A couple dozen typo fixes thanks to Dimon485.
+
+**Misc**
+- A few more tavern rumors have been added.
+
+**For Modders**
+- Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
+- onUpdateDraftsList now has Gender as an optional parameter
+- These changes improve compatibility with mods
+- Removed the `findPerk( _perk )` function from character_background.
+- Enhanced the functionality of the `getPerk( _perk )` function in `character_background`. It now takes either a string or a perkDef as its argument and returns the perkDefObject of the perk from this character's perk tree if it has it.
+- Implemented `addScenarioPerk( _background, _perk, _row = 0, _addSkill = true )` function in `starting_scenario`. This function should be used to add origin-specific free perks to characters. `_background` is the background of the character, `_perk` is a perkDef, `_row` is the desired row on which to add the perk, note that if the perk already exists in the character's perk tree then `_row` is ignored and the perk remains on that row. `_addSkill` will also add the skill to the character if true, and if false then only adds the perk to the perk tree but doesn't give the perk to the character.
+- Added `_isRefundable` argument to the `addPerk( _perk, _row = 0, _isRefundable = true )` function of character_background. The argument defaults to true. If it is set to false, the the perk won't be refunded during `resetPerks()` of actor.
+- An existing perk in the perk tree can be made non-refundable by accessing it via `getPerk` to get the perkDefObject and then setting the `perkDefObject.IsRefundable` boolean to false.
+- The `onBuildPerkTree` function of scenarios is now called after the perk tree of the character is built, and hence the `PerkTree` and `PerkTreeMap` members of `character_background` can be accessed during this function.
+- The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
+- Improved automatic formatting for perk tree mention in perk tooltips.
+- Modding: Updated MSU to v0.6.27.
+
+## 15.0.2.11 Next Build 
 
 :kobold: **Kobolds**
 - Can show up in goblin scouting parties, or when the greenskin horde assembles
@@ -6770,37 +6802,5 @@ Runes are only worth 100 gold, down from 1200
 - Kobold scenario added
 - Stollwurm scenario is now in a cave 
 - Fixes barbarian drum not showing up in inventories
-- Fixed being able to equip layer items
-- Fixed more infinite consumables
-- Fixed web skill showing damage values in the tooltip
-- Disowned noble background may now spawn as a full female background, named disowned lady.
-- Fixes an issue with the troubadour vs. juggler event.
-- Improved grammar in peddler deal event.
-- Fixed double strike icon not displaying
-
-
-:broken: **Typos**
-- Fixed an issue with player avatar trait not displaying the information correctly.
-- Fixed a few typos in the legends tournament event.
-- 'Hunting mummies' contract typos fixed.
-- A couple dozen typo fixes thanks to Dimon485.
-- Added detail to perk descrtiptions of Revolt and Entice.
-- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push and Bribe.
-- Improved grammar in peddler deal event.
-- Fixed multiple small punctuation and grammatical errors.
-
-:go_on: **Changes**
-- Removed 'Formations' tab until eventual rework/fixes
-- adds variety to snow tiles
-- A few more tavern rumors have been added.
 - Updated bases for troupe, beasthunters and crusader
 - assassin faceplate added
-
-
-
-
-:pathold:  **For Modders**
-- Background parameters such as IsLowborn are now automatically transformed into the BackgroundType system, via convertToBackgroundType() running during a create hook
-- onUpdateDraftsList now has Gender as an optional parameter
-- These changes improve compatibility with mods
-

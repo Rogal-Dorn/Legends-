@@ -197,8 +197,15 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 		result.push({
 			id = 65,
-			type = "text",
-			text = "Right-click or drag onto an helmet carried by the currently selected character in order to attach the helmet upgrade."
+			type = "hint",
+			icon = "ui/icons/mouse_right_button_shift.png",
+			text = "Right-click or drag onto the helmet of the currently selected character to attach."
+		});
+		result.push({
+			id = 66,
+			type = "hint",
+			icon = "ui/icons/mouse_right_button_shift_drag.png",
+			text = "Hold Shift and drag onto a helmet in the stash to attach."
 		});
 		result.push({
 			id = 4,

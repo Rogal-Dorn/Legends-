@@ -996,26 +996,5 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			this.World.Events.fire("event.legend_random_party_scenario_intro");
 		}, null);
 	}
-
-	function onBuildPerkTree( _background )
-	{
-		if (_background.m.CustomPerkTree == null)
-		{
-			return;
-		}
-
-		// _tree[0].push(this.Const.Perks.PerkDefs.LegendPiercingShot);
-		// _tree[0].push(this.Const.Perks.PerkDefs.LegendMedIngredients);
-		// _tree[0].push(this.Const.Perks.PerkDefs.LegendCampCook);
-
-		foreach (i, row in this.Const.Perks.HoundmasterClassTree.Tree)
-		{
-			foreach (p in row)
-			{
-				_tree[i].push(p)
-			}
-		}
-	}
-
 });
 

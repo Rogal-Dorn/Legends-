@@ -69,7 +69,7 @@ this.mummy_racial <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onDeathWithInfo( _killer, _skill, _tile, _fatalityType )
+	function onDeathWithInfo( _killer, _skill, _deathTile, _corpseTile, _fatalityType )
 	{
 		if (_killer != null)
 		{
