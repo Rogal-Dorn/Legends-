@@ -560,7 +560,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				id = 65,
 				type = "hint",
 				icon = "ui/icons/mouse_right_button_shift.png",
-				text = "Shift + Rightclick to remove all layers."
+				text = "Shift + Right-click to remove all layers."
 			});
 		}
 
