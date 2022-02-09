@@ -629,6 +629,17 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			});
 		}
 
+		local upgradeNum = this.m.Upgrades.filter(@(idx, val) val != null).len();
+		if (upgradeNum > 0){
+			result.push({
+				id = 65,
+				type = "hint",
+				icon = "ui/icons/mouse_right_button_shift.png",
+				text = "Shift + Rightclick to remove all layers."
+			});
+		}
+
+
 		return result;
 	}
 

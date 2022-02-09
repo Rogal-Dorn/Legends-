@@ -649,6 +649,7 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
     var repairItem =
       KeyModiferConstants.AltKey in _event &&
       _event[KeyModiferConstants.AltKey] === true;
+    
 
     if (
       isEmpty === false &&
@@ -666,7 +667,8 @@ CharacterScreenPaperdollModule.prototype.createBagSlot = function (
       } else if (dropIntoInventory === true) {
         //console.info('drop item into inventory: ' + itemId);
         self.mDataSource.dropPaperdollItem(entityId, itemId, null);
-      } else {
+      } 
+      else {
         //console.info('equip item: ' + itemId);
         self.mDataSource.equipBagItem(entityId, itemId, null);
       }
@@ -1141,6 +1143,9 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
     var repairItem =
       KeyModiferConstants.AltKey in _event &&
       _event[KeyModiferConstants.AltKey] === true;
+    var unequipAllLayers =
+        KeyModiferConstants.ShiftKey in _event &&
+        _event[KeyModiferConstants.ShiftKey] === true;
 
     if (
       isEmpty === false &&
@@ -1162,7 +1167,11 @@ CharacterScreenPaperdollModule.prototype.createEquipmentSlot = function (
       else if (dropIntoInventory === true) {
         //console.info('drop item: ' + itemId);
         self.mDataSource.dropPaperdollItem(entityId, itemId, null);
-      } else if (data.isAllowedInBag === true) {
+      } 
+      else if (unequipAllLayers === true) {
+        self.mDataSource.notifyBackendRemovePaperdollItemUpgrades(entityId, itemId);
+      }
+      else if (data.isAllowedInBag === true) {
         //console.info('drop item into bag: ' + itemId);
         self.mDataSource.dropPaperdollItemIntoBag(entityId, itemId, null);
       }

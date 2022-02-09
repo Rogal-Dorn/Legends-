@@ -2510,23 +2510,38 @@ this.character_screen <- {
 	function removeInventoryItemUpgrades(_data)
 	{
 		local armor  = this.Stash.getItemAtIndex(_data[0]).item;
-		if (armor != null)
+		return this.removeAllUpgradesFromItem(armor)
+	}
+	function removePaperdollItemUpgrades(_data)
+	{
+		local bro = this.Tactical.getEntityByID(_data[0]);
+		local item  = bro.m.Items.getItemByInstanceID(_data[1]);
+		return this.removeAllUpgradesFromItem(item, bro)
+	}
+
+	function removeAllUpgradesFromItem(_item, _entity = null){
+		if (_item != null)
 		{
-			foreach (idx, value in armor.getUpgrades())
+			local toRemove = []
+			foreach (idx, value in _item.getUpgrades())
 			{
-				if (this.Stash.getNumberOfEmptySlots() <= 0){
-					return {
-						error = this.Const.UI.Error.NotEnoughStashSpace,
-						code = this.Const.UI.Error.NotEnoughStashSpace
-					};
-				}
 				if (value != 1) continue
-				local upgrade = armor.getUpgrade(idx)
+				toRemove.push(idx)	
+			}
+			if (this.Stash.getNumberOfEmptySlots() < toRemove.len()){
+				return {
+					error = this.Const.UI.Error.NotEnoughStashSpace,
+					code = this.Const.UI.Error.NotEnoughStashSpace
+				};
+			}
+			foreach(idx in toRemove)
+			{
+				local upgrade = _item.getUpgrade(idx)
 				if (upgrade.isDestroyedOnRemove()) continue
-				this.Stash.add(armor.removeUpgrade(idx))		
+				this.Stash.add(_item.removeUpgrade(idx))	
 			}
 		}
-		return this.UIDataHelper.convertStashAndEntityToUIData(null, null, false, this.m.InventoryFilter);
+		return this.UIDataHelper.convertStashAndEntityToUIData(_entity, null, false, this.m.InventoryFilter);
 	}
 
 	function removeUpgrade( _slot, _data)
