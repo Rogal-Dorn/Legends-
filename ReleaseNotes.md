@@ -6767,6 +6767,10 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 **Balance**
 Improves 'Resilient' (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
 Tweaks made to legendary bandit contract spawnrates and rabble in general. Thugs and low level archers will no longer spawn in the legendary brigand contract location. Rabble should now spawn as normal.
+ALL named shields have had their base durability increased by their current durability divided by 4, then that value added to their current durability. At lower levels, even basic named shields are getting 11 or more extra base durability. This is before random modifiers are applied, which may increase this value further.
+-Undead shields (decayed) lose a small amount of durability but are lighter than their other named counterparts under this change.
+-Living tree shield durability increased from 40 to 60.
+-A few inconsistences with shield stats have been cleaned up
 
 **Fixes**
 Fixes runaway harem event.
