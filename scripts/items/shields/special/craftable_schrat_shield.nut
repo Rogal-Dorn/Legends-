@@ -14,8 +14,8 @@ this.craftable_schrat_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.MeleeDefense = 20;
 		this.m.RangedDefense = 17;
 		this.m.StaminaModifier = -12;
-		this.m.Condition = 40;
-		this.m.ConditionMax = 40;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 	}
 
 	function updateVariant()

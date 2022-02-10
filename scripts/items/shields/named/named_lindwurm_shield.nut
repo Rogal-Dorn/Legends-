@@ -11,11 +11,11 @@ this.named_lindwurm_shield <- this.inherit("scripts/items/shields/named/named_sh
 		this.m.AddGenericSkill = true;
 		this.m.ShowOnCharacter = true;
 		this.m.Value = 1300;
-		this.m.MeleeDefense = 15;
+		this.m.MeleeDefense = 17;
 		this.m.RangedDefense = 25;
-		this.m.StaminaModifier = -16;
-		this.m.Condition = 48;
-		this.m.ConditionMax = 48;
+		this.m.StaminaModifier = -14;
+		this.m.Condition = 64;
+		this.m.ConditionMax = 64;
 		this.randomizeValues();
 	}
 

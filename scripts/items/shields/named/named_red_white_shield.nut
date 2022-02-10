@@ -14,8 +14,8 @@ this.named_red_white_shield <- this.inherit("scripts/items/shields/named/named_s
 		this.m.MeleeDefense = 15;
 		this.m.RangedDefense = 25;
 		this.m.StaminaModifier = -16;
-		this.m.Condition = 48;
-		this.m.ConditionMax = 48;
+		this.m.Condition = 60;
+		this.m.ConditionMax = 60;
 		this.randomizeValues();
 	}
 

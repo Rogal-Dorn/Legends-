@@ -21,8 +21,8 @@ this.named_orc_heavy_shield <- this.inherit("scripts/items/shields/named/named_s
 		this.m.MeleeDefense = 15;
 		this.m.RangedDefense = 15;
 		this.m.StaminaModifier = -22;
-		this.m.Condition = 72;
-		this.m.ConditionMax = 72;
+		this.m.Condition = 80;
+		this.m.ConditionMax = 80;
 		this.m.FatigueOnSkillUse = 5;
 		this.randomizeValues();
 	}
