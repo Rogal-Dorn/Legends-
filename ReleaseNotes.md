@@ -6762,3 +6762,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
 - Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
+
+## 15.0.2.11 - 
+
+**Text**
+- Improved Crusader Intro Event text.
