@@ -179,20 +179,25 @@ this.starting_scenario <- {
 		{
 			return;
 		}
-		
-		local perk = _background.getPerk(_perk);
-		if (perk != null)
-		{
-			perk.IsRefundable = false;
-		}
-		else
-		{
-			_background.addPerk(_perk, _row, false);
-		}
+
+		local isRefundable = true;
 
 		if (_addSkill && _background.getContainer() != null)
 		{
 			_background.getContainer().add(this.new(this.Const.Perks.PerkDefObjects[_perk].Script));
+			isRefundable = false;
 		}
+
+		if (!isRefundable)
+		{
+			local perkDefObject = _background.getPerk(_perk);
+			if (perkDefObject != null)
+			{
+				perkDefObject.IsRefundable = false;
+				return;
+			}
+		}
+		
+		_background.addPerk(_perk, _row, isRefundable);
 	}
 };
