@@ -6774,3 +6774,6 @@ ALL named shields have had their base durability increased by their current dura
 
 **Fixes**
 Fixes runaway harem event.
+
+**Typos**
+Corrected typo in militia scenario text.
