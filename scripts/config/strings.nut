@@ -1996,7 +1996,7 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemyDirewolf = "Favoured Enemy - Direwolf",
 	LegendFavouredEnemySpider = "Favoured Enemy - Spiders",
 	LegendFavouredEnemySchrat = "Favoured Enemy - Schrats",
-	LegendFavouredEnemyOrk = "Favoured Enemy - Orks",
+	LegendFavouredEnemyOrk = "Favoured Enemy - Orcs",
 	LegendFavouredEnemyGoblin = "Favoured Enemy - Goblins",
 	LegendFavouredEnemyVampire = "Favoured Enemy - Necrosavants", //also contains embalmed
 	LegendFavouredEnemySkeleton = "Favoured Enemy - Ancient dead",

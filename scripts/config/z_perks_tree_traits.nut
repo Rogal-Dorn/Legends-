@@ -135,7 +135,7 @@ gt.Const.Perks.MartyrTree <- {
 	Descriptions = [
 		"has martyr complex",
 		"strictly penatant ",
-		"strives for attonement in harship",
+		"strives for atonement in hardship",
 		"sees their own torture as absolution",
 		"seems to revel in self-suffering",
 		"takes joy in feeling pain",
