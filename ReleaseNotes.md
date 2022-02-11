@@ -6777,5 +6777,5 @@ Fixes runaway harem event.
 
 **Typos**
 Corrected typo in militia scenario text.
-A dozen more typos corrected thanks to Dimon485
-
+A dozen more typos corrected thanks to Dimon485.
+Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
