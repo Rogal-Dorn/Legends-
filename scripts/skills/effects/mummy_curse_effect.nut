@@ -1,58 +1,63 @@
 this.mummy_curse_effect <- this.inherit("scripts/skills/skill", {
 	m = {
+		Stacks = 1
 	},
 	function create()
 	{
 		this.m.ID = "effects.mummy_curse";
 		this.m.Name = "Curse of the Mummy";
+		this.m.Description = "This character has been cursed by the death of a mummy.";
 		this.m.Icon = "skills/icon_mummy_curse.png";
 		this.m.IconMini = "mini_icon_mummy_curse";
 		this.m.Overlay = "mummy_curse";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
-		this.m.IsStacking = true;
 	}
 
-	function getDescription()
+	function getName()
 	{
-		return "This character has been cursed by the death of a mummy, they will take extra damage for the rest of this battle";
+		return this.m.Stacks > 1 ? this.m.Name + " (x" + this.m.Stacks + ")" : this.m.Name;
 	}
 
 	function getTooltip()
 	{
-		return [
+		local tooltip = this.skill.getTooltip();
+
+		tooltip.extend([
 			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
+				id = 6,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Receive [color=" + this.Const.UI.Color.NegativeValue + "]+" + this.getBonus() + "[/color] damage from any source"
 			},
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Receives +[color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] damage from any source"
+				text = "Enemies are more likely to target this character"
 			}
-		];
+		]);
+
+		return tooltip;
+	}
+
+	function getBonus()
+	{
+		return 25 * this.m.Stacks;
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageReceivedTotalMult *= 1.25;
-		_properties.TargetAttractionMult *= 1.25;
+		local bonus = this.getBonus() * 0.01;
+		_properties.DamageReceivedTotalMult *= 1.0 + bonus;
+		_properties.TargetAttractionMult *= 1.0 + bonus;
 	}
 
-	function onCombatFinished()
+	function onRefresh()
 	{
-		this.removeSelf();
+		this.m.Stacks++;
+		this.spawnIcon("mummy_curse", this.getContainer().getActor().getTile());
 	}
-	
-	
-
 });
 
