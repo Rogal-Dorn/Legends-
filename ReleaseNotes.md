@@ -6777,3 +6777,5 @@ Fixes runaway harem event.
 
 **Typos**
 Corrected typo in militia scenario text.
+A dozen more typos corrected thanks to Dimon485
+
