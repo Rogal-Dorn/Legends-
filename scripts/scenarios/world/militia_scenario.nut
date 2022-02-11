@@ -300,25 +300,20 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
-				bro.getSprite("accessory_special").setBrush("bust_militia_band_01"); //red
-				bro.getSkills().update();
-			}
-			else if (bro.getBackground().getID() == "background.legend_man_at_arms")
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
-				bro.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue
-				bro.getSkills().update();
-			}
-
 			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Stabled)) //keep lowborn and stabled, delete all else.
             {
                 garbage.push(bro);
+                continue;
             }
+
+			if (bro.getBackground().getID() == "background.legend_man_at_arms")
+			{
+				bro.getSprite("accessory_special").setBrush("bust_militia_band_02"); //blue
+			}
+			else
+			{
+				bro.getSprite("accessory_special").setBrush("bust_militia_band_01"); //red
+			}
 		}
 
 		foreach( g in garbage )
