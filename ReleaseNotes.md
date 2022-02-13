@@ -6771,6 +6771,7 @@ ALL named shields have had their base durability increased by their current dura
 -Undead shields (decayed) lose a small amount of durability but are lighter than their other named counterparts under this change.
 -Living tree shield durability increased from 40 to 60.
 -A few inconsistences with shield stats have been cleaned up
+Cultist scenario has had a few equipment tweaks - there is now less forced equipment when starting this origin which should make the special cultists at the start more useful.
 
 **Fixes**
 Fixes runaway harem event.
