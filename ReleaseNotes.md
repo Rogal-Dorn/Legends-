@@ -6772,6 +6772,7 @@ ALL named shields have had their base durability increased by their current dura
 -Living tree shield durability increased from 40 to 60.
 -A few inconsistences with shield stats have been cleaned up
 Cultist scenario has had a few equipment tweaks - there is now less forced equipment when starting this origin which should make the special cultists at the start more useful.
+Mixed up the low level mummy weapons a bit more. They will now spawn with ancient spears and swords in addition to their brass khopesh.
 
 **Fixes**
 Fixes runaway harem event.
