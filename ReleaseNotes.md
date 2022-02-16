@@ -6772,7 +6772,13 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 **Balance**
 - Armor Piercing Bolts now increase armor penetration damage by 20% (up from 10%), but reduce overall damage by 15% (up from 10%)
-
+- Infantry Axe Reworked
+  • Now has the skills Chop(4AP), Split Man(6AP) and Split Shield.
+  • Damage: 50 - 70
+  • Armor Ignore: 35%
+  • Armor Efficiency: 125%
+  • Value: 1950
+  
 **Text**
 - Improved Crusader Intro Event text.
 - Added fluff to perk description of Big Game Hunter.
