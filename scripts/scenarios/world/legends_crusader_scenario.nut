@@ -181,7 +181,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind, 2, _background.isBackgroundType(this.Const.BackgroundType.Crusader));
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
