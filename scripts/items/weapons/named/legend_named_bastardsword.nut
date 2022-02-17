@@ -1,7 +1,5 @@
 this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {
-		StunChance = 0
-	},
+	m = {},
 	function create()
 	{
 		this.named_weapon.create();
@@ -27,7 +25,7 @@ this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/name
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.25;
-		this.m.ChanceToHitHead = 5;
+		this.m.ChanceToHitHead = 10;
 		this.randomizeValues();
 	}
 
@@ -41,10 +39,11 @@ this.legend_named_bastardsword <- this.inherit("scripts/items/weapons/named/name
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/slash"));
-		this.addSkill(this.new("scripts/skills/actives/swing"));
+		local slash = this.new("scripts/skills/actives/slash");
+		slash.m.DirectDamageMult = this.m.DirectDamageMult;
+		this.addSkill(slash);
+		this.addSkill(this.new("scripts/skills/actives/overhead_strike"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
-
 });
 
