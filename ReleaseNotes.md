@@ -6783,3 +6783,4 @@ Berserker background graphic now slightly larger and better definition.
 Corrected typo in militia scenario text.
 A dozen more typos corrected thanks to Dimon485.
 Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
+Corrected a typo in 'archery stunt' event.
