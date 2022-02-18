@@ -161,13 +161,13 @@ this.main_menu_screen <- {
 
 	function checkForRequiredFiles(){
 		local missing = {};
-		local requiredFiles = this.Const.LegendMod.RequiredFiles;
-		local filesInData = this.IO.enumerateFiles("");
-		foreach (fileType, fileName in requiredFiles){
-			if(fileName != "" && filesInData.find(fileName) == null){
-				missing[fileType] <- fileName;
-			}
-		}
+		// local requiredFiles = this.Const.LegendMod.RequiredFiles;
+		// local filesInData = this.IO.enumerateFiles("");
+		// foreach (fileType, fileName in requiredFiles){
+		// 	if(fileName != "" && filesInData.find(fileName) == null){
+		// 		missing[fileType] <- fileName;
+		// 	}
+		// }
 		return missing
 	}
 
