@@ -2,6 +2,8 @@
 ::mods_queue(null, "mod_MSU", function()
 {
 	::mods_registerJS("legends_assets.js");
+	local gt = this.getroottable();
+	gt.LegendsMod <- this.new("scripts/mods/legends_mod")
 	this.Const.LegendMod.hookActor();
 	this.Const.LegendMod.hookAISkills();
 	this.Const.LegendMod.hookAIAgent();
