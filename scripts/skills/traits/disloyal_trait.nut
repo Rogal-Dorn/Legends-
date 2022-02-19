@@ -35,6 +35,12 @@ this.disloyal_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Is always content with being in reserve"
+			},
+			{
+				id = 17,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Defense while retreating"
 			}
 		];
 	}
@@ -42,6 +48,19 @@ this.disloyal_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	function onUpdate( _properties )
 	{
 		_properties.IsContentWithBeingInReserve = true;
+	}
+
+	function onBeingAttacked( _attacker, _skill, _properties )
+	{
+		if (("State" in this.Tactical) && this.Tactical.State != null && this.Tactical.State.isScenarioMode())
+		{
+			return;
+		}
+
+		if (this.getContainer().getActor().isPlacedOnMap() && this.Tactical.State.isAutoRetreat() && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
+		{
+			_properties.MeleeDefense += 10;
+		}
 	}
 
 });
