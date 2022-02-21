@@ -6781,6 +6781,7 @@ Low level mercs: gain overwhelm, backstabber and a small chance to spawn with he
 Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 110, melee defence raised from 20 to 25.
 Ranged mercs; gains nine lives on legendary difficulty.
 ```
+'Distracted' effect (see: throw dirt) now has synergies with 'Deathblow'.
 
 **Fixes**
 Fixes runaway harem event.
