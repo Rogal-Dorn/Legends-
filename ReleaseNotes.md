@@ -6782,6 +6782,7 @@ Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 11
 Ranged mercs; gains nine lives on legendary difficulty.
 ```
 'Distracted' effect (see: throw dirt) now has synergies with 'Deathblow'.
+'Nimble' perk now provides +10% threshold against injury effects (stacks with other sources, like steel brow).
 
 **Fixes**
 Fixes runaway harem event.
