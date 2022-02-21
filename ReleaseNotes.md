@@ -6775,6 +6775,13 @@ Cultist scenario has had a few equipment tweaks - there is now less forced equip
 Mixed up the low level mummy weapons a bit more. They will now spawn with ancient spears and swords in addition to their brass khopesh.
 Disloyal trait now gives +10 melee defence when retreating, in addition to it's old effect.
 
+Mercenaries slightly buffed;
+```
+Low level mercs: gain overwhelm, backstabber and a small chance to spawn with heavier armours. Loses battleforged unless on legendary difficulty, gains nimble. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+Ranged mercs; gains nine lives on legendary difficulty.
+```
+
 **Fixes**
 Fixes runaway harem event.
 Fixes orientation data for some enemies that were facing the wrong way.
