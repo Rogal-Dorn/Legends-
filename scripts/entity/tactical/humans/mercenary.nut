@@ -66,6 +66,64 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		this.setDirty(true);
 	}
 
+	function onDeath( _killer, _skill, _tile, _fatalityType )
+	{
+		if (_tile != null)
+		{
+			if ((_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals) && this.m.Size > 0.75 && this.Math.rand(1, 100) <= 60)
+			{
+				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+
+				for( local i = 0; i < n; i = ++i )
+				{
+					local r = this.Math.rand(1, 100); //roll D100
+					local loot;
+
+					if (r <= 5) //5%
+					{
+						loot = this.new("scripts/items/loot/silver_bowl_item");
+					}
+					else if (r <= 3)
+					{
+						loot = this.new("scripts/items/loot/jeweled_crown_item");
+					}
+					else if (r <= 3)
+					{
+						loot = this.new("scripts/items/loot/ancient_amber_item");
+					}
+					else if (r <= 10)
+					{
+						loot = this.new("scripts/items/loot/webbed_valuables_item");
+					}
+					else if (r <= 10)
+					{
+						loot = this.new("scripts/items/loot/looted_valuables_item");
+					}
+					else if (r <= 5)
+					{
+						loot = this.new("scripts/items/loot/white_pearls_item");
+					}
+					else if (r <= 10)
+					{
+						loot = this.new("scripts/items/loot/rainbow_scale_item");
+					}
+					else if (r <= 2)
+					{
+						loot = this.new("scripts/items/loot/lindwurm_hoard_item");
+					}
+					else if (r <= 5)
+					{
+						loot = this.new("scripts/items/loot/silverware_item");
+					}
+
+					loot.drop(_tile);
+				}
+			}
+		}
+
+		this.human.onDeath(_killer, _skill, _tile, _fatalityType);
+	}
+
 	function assignRandomEquipment()
 	{
 		local r;
@@ -182,7 +240,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 			[1, "lamellar_harness"],
 			[1, "footman_armor"],
 			[1, "light_scale_armor"],
-			[1, "leather_scale_armor"],
+			[1, "leather_scale_armor"]
 		]
 
 		local helm = [

@@ -6783,6 +6783,7 @@ Ranged mercs; gains nine lives on legendary difficulty.
 ```
 'Distracted' effect (see: throw dirt) now has synergies with 'Deathblow'.
 'Nimble' perk now provides +10% threshold against injury effects (stacks with other sources, like steel brow).
+Mercenaries have a *small* chance to drop additional loot like silverware, treasure and other trinkets. These only drop from battleforged mercs, not low level light mercs or ranged mercs. Loot based perks and origins (see; raiders origin and scholar perk) can increase these droprates.
 
 **Fixes**
 Fixes runaway harem event.
