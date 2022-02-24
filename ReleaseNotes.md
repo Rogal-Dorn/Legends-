@@ -6740,6 +6740,11 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed Double Strike mini icon not appearing.
 - Fixes an issue where possession was not being dismissed when combat ended.
 
+**Text**
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push, Bribe, Return Favor, Perfect Focus, Rotation, Footwork, Debilitate, Indomitable, Rally the Troops, First Aid, Sundering Strikes, Bloody Harvest, Immovable Object, Executioner, Steel Brow, Anticipation, Double Strike, Vengeance, Ballistics and Battle Flow.
+- Added detail to perk descriptions of Revolt and Entice.
+- Improved grammar in Peddler Deal event.
+
 **Typos**
 - Fixed an issue with player avatar trait not displaying the information correctly.
 - Fixed a few typos in the legends tournament event.
@@ -6796,3 +6801,17 @@ Corrected typo in militia scenario text.
 A dozen more typos corrected thanks to Dimon485.
 Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
 Corrected a typo in 'archery stunt' event.
+## 15.0.2.11 - 
+
+**Balance**
+- Armor Piercing Bolts now increase armor penetration damage by 20% (up from 10%), but reduce overall damage by 15% (up from 10%)
+- Infantry Axe Reworked
+  • Now has the skills Chop(4AP), Split Man(6AP) and Split Shield.
+  • Damage: 50 - 70
+  • Armor Ignore: 35%
+  • Armor Efficiency: 125%
+  • Value: 1950
+  
+**Text**
+- Improved Crusader Intro Event text.
+- Added fluff to perk description of Big Game Hunter.
