@@ -6762,3 +6762,37 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - The Legends version is now saved in the savegame metadata and will be printed in the game log when saving and loading a save file.
 - Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
+
+## 15.0.2.11 [NAME HERE]
+**Balance**
+Improves 'Resilient' (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
+Tweaks made to legendary bandit contract spawnrates and rabble in general. Thugs and low level archers will no longer spawn in the legendary brigand contract location. Rabble should now spawn as normal.
+ALL named shields have had their base durability increased by their current durability divided by 4, then that value added to their current durability. At lower levels, even basic named shields are getting 11 or more extra base durability. This is before random modifiers are applied, which may increase this value further.
+-Undead shields (decayed) lose a small amount of durability but are lighter than their other named counterparts under this change.
+-Living tree shield durability increased from 40 to 60.
+-A few inconsistences with shield stats have been cleaned up
+Cultist scenario has had a few equipment tweaks - there is now less forced equipment when starting this origin which should make the special cultists at the start more useful.
+Mixed up the low level mummy weapons a bit more. They will now spawn with ancient spears and swords in addition to their brass khopesh.
+Disloyal trait now gives +10 melee defence when retreating, in addition to it's old effect.
+
+Mercenaries slightly buffed;
+```
+Low level mercs: gain overwhelm, backstabber and a small chance to spawn with heavier armours. Loses battleforged unless on legendary difficulty, gains nimble. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+Ranged mercs; gains nine lives on legendary difficulty.
+```
+'Distracted' effect (see: throw dirt) now has synergies with 'Deathblow'.
+'Nimble' perk now provides +10% threshold against injury effects (stacks with other sources, like steel brow).
+Mercenaries have a *small* chance to drop additional loot like silverware, treasure and other trinkets. These only drop from battleforged mercs, not low level light mercs or ranged mercs. Loot based perks and origins (see; raiders origin and scholar perk) can increase these droprates.
+
+**Fixes**
+Fixes runaway harem event.
+Fixes orientation data for some enemies that were facing the wrong way.
+Berserker background graphic now slightly larger and better definition.
+Possible fix for missing textures on reload. Please report any performance instability to us or missing textures on reload.
+
+**Typos**
+Corrected typo in militia scenario text.
+A dozen more typos corrected thanks to Dimon485.
+Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
+Corrected a typo in 'archery stunt' event.

@@ -58,7 +58,7 @@ this.legend_drink_heartwood_sap_skill <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/days_wounded.png",
-				text = "grants perfect focus, halving the action point costs of all skills for three turns"
+				text = "Grants perfect focus, halving the action point costs of all skills for three turns."
 			}
 		];
 
