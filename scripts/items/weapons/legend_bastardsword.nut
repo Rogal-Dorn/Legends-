@@ -1,7 +1,5 @@
 this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
-	m = {
-		StunChance = 0
-	},
+	m = {},
 	function create()
 	{
 		this.weapon.create();
@@ -13,9 +11,7 @@ this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
-		this.m.IsAgainstShields = false;
-		this.m.IsAoE = true;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;				
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
@@ -28,16 +24,17 @@ this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.25;
-		this.m.ChanceToHitHead = 5;
+		this.m.ChanceToHitHead = 10;
 	}
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/slash"));
-		this.addSkill(this.new("scripts/skills/actives/swing"));
+		local slash = this.new("scripts/skills/actives/slash");
+		slash.m.DirectDamageMult = this.m.DirectDamageMult;
+		this.addSkill(slash);
+		this.addSkill(this.new("scripts/skills/actives/overhead_strike"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
-
 });
 

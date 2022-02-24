@@ -15,10 +15,12 @@ this.perk_legend_unarmed_lunge <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.legend_unarmed_lunge"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_unarmed_lunge_skill"));
-		}
+		this.getContainer().add(this.new("scripts/skills/actives/legend_unarmed_lunge_skill"));
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("actives.legend_unarmed_lunge");
 	}
 
 });

@@ -87,7 +87,7 @@ this.perk_mar_lithe <- this.inherit("scripts/skills/skill", {
 		local armorFatMult = this.getArmorFatPenMult(actor.getTotalArmorStaminaModifier());
 
 		local totalArmorDurability = actor.getArmor(this.Const.BodyPart.Head) + actor.getArmor(this.Const.BodyPart.Body);
-		local maxArmorDurability = actor.getArmorMax(this.Const.BodyPart.Head) + actor.getArmorMax(this.Const.BodyPart.Body)
+		local maxArmorDurability = actor.getArmorMax(this.Const.BodyPart.Head) + actor.getArmorMax(this.Const.BodyPart.Body);
 
 		local bonus = this.Math.maxf(this.m.BonusMin, this.Math.minf(this.m.BonusMax, this.m.BonusMax * armorFatMult));
 		bonus *= 0.5 * totalArmorDurability/(maxArmorDurability * 1.0) + 0.5;
