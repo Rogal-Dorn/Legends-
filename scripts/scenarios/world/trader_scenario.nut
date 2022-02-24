@@ -215,7 +215,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPacifist, 0, !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat));
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPacifist, 0, !_background.isBackgroundType(this.Const.BackgroundType.Combat));
 	}
 });
 
