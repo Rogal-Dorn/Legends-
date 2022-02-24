@@ -6789,6 +6789,7 @@ Mercenaries have a *small* chance to drop additional loot like silverware, treas
 Fixes runaway harem event.
 Fixes orientation data for some enemies that were facing the wrong way.
 Berserker background graphic now slightly larger and better definition.
+Possible fix for missing textures on reload. Please report any performance instability to us or missing textures on reload.
 
 **Typos**
 Corrected typo in militia scenario text.
