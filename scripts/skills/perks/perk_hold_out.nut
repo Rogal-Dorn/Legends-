@@ -17,7 +17,8 @@ this.perk_hold_out <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		_properties.NegativeStatusEffectDuration += -5;
-		_properties.Hitpoints += 6;
+		_properties.Hitpoints += 8;
+		_properties.SurviveWithInjuryChanceMult = 2.00; // 2 x 33 = 66% chance to get up after being struck down.
 	}
 
 });

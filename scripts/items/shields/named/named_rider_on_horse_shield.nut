@@ -14,8 +14,8 @@ this.named_rider_on_horse_shield <- this.inherit("scripts/items/shields/named/na
 		this.m.MeleeDefense = 20;
 		this.m.RangedDefense = 15;
 		this.m.StaminaModifier = -14;
-		this.m.Condition = 32;
-		this.m.ConditionMax = 32;
+		this.m.Condition = 40;
+		this.m.ConditionMax = 40;
 		this.randomizeValues();
 	}
 

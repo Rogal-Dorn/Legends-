@@ -35,15 +35,17 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 		this.getSprite("socket").setBrush("bust_base_militia");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_quick_hands"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 
 		if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Hitpoints = b.Hitpoints * 2;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
@@ -147,13 +149,14 @@ this.mercenary_low <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "gambeson"],
-			[1, "padded_leather"],
-			[1, "ragged_surcoat"],
-			[1, "padded_surcoat"],
-			// [1, "basic_mail_shirt"],
-			// [1, "mail_shirt"],
-			[1, "mail_hauberk"]
+			[5, "gambeson"],
+			[2, "werewolf_mail_armor"],
+			[1, "northern_mercenary_armor_00"],
+			[3, "northern_mercenary_armor_01"],
+			[3, "padded_surcoat"],
+			[4, "basic_mail_shirt"],
+			[4, "mail_shirt"],
+			[4, "mail_hauberk"]
 		]));
 
 		if (this.Math.rand(1, 100) <= 90)

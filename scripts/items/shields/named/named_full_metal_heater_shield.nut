@@ -15,8 +15,8 @@ this.named_full_metal_heater_shield <- this.inherit("scripts/items/shields/named
 		this.m.MeleeDefense = 20;
 		this.m.RangedDefense = 15;
 		this.m.StaminaModifier = -16;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
 		this.randomizeValues();
 	}
 

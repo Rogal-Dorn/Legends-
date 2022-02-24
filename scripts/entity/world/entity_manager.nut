@@ -790,7 +790,7 @@ this.entity_manager <- {
 
 			for( local i = 0; i < 2; i = ++i )
 			{
-				local r = this.Math.rand(1, 4);
+				local r = this.Math.rand(1, 13);
 
 				if (r == 1)
 				{
@@ -807,6 +807,42 @@ this.entity_manager <- {
 				else if (r == 4)
 				{
 					party.addToInventory("supplies/beer_item");
+				}
+				else if (r == 5) 
+				{
+					loot = this.new("scripts/items/loot/silver_bowl_item");
+				}
+				else if (r == 6)
+				{
+					loot = this.new("scripts/items/loot/jeweled_crown_item");
+				}
+				else if (r == 7)
+				{
+					loot = this.new("scripts/items/loot/ancient_amber_item");
+				}
+				else if (r == 8)
+				{
+					loot = this.new("scripts/items/loot/webbed_valuables_item");
+				}
+				else if (r == 9)
+				{
+					loot = this.new("scripts/items/loot/looted_valuables_item");
+				}
+				else if (r == 10)
+				{
+					loot = this.new("scripts/items/loot/white_pearls_item");
+				}
+				else if (r == 11)
+				{
+					loot = this.new("scripts/items/loot/rainbow_scale_item");
+				}
+				else if (r == 12)
+				{
+					loot = this.new("scripts/items/loot/lindwurm_hoard_item");
+				}
+				else if (r == 13)
+				{
+					loot = this.new("scripts/items/loot/silverware_item");
 				}
 			}
 

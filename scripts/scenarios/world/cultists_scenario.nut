@@ -49,21 +49,8 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.equip(this.new("scripts/items/weapons/battle_whip"));
-		items.equip(this.Const.World.Common.pickHelmet([
-			[
-				1,
-				"cultist_hood"
-			]
-		]));
-		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"leather_wraps"
-			]
-		]));
+
 		bros[1].setStartValuesEx([ //heavy hitter
 			"cultist_darksoul_background"
 		]);
@@ -73,21 +60,8 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[1].setVeteranPerks(2);
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/two_handed_wooden_flail"));
-		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"cultist_leather_robe"
-			]
-		]));
-		items.equip(this.Const.World.Common.pickHelmet([
-			[
-				1,
-				"hood"
-			]
-		]));
+
 		bros[2].setStartValuesEx([ //edgyboy 1, hitchance
 			"cultist_background"
 		]);
@@ -145,21 +119,8 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		bros[4].setVeteranPerks(2);
 		local items = bros[4].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
-		items.equip(this.Const.World.Common.pickHelmet([
-			[
-				1,
-				"cultist_hood"
-			]
-		]));
-		items.equip(this.Const.World.Common.pickArmor([
-			[
-				1,
-				"leather_wraps"
-			]
-		]));
+
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
 		this.World.Assets.m.Money = this.World.Assets.m.Money + 300;

@@ -42,6 +42,8 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
@@ -167,17 +169,20 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 
 		local armor = [
 			[1, "sellsword_armor"],
-			[1, "padded_leather"],
-			[1, "patched_mail_shirt"],
+			// [1, "padded_leather"],
+			// [1, "patched_mail_shirt"],
 			// [1, "basic_mail_shirt"],
 			// [1, "mail_shirt"],
 			[1, "reinforced_mail_hauberk"],
 			[1, "mail_hauberk"],
-			[1, "traze_northern_mercenary_armor"],		
+			[1, "traze_northern_mercenary_armor"],	
+			[1, "northern_mercenary_armor_00"],
+			[1, "northern_mercenary_armor_01"],	
+			[1, "northern_mercenary_armor_02"],
 			[1, "lamellar_harness"],
 			[1, "footman_armor"],
 			[1, "light_scale_armor"],
-			[1, "leather_scale_armor"],
+			[1, "leather_scale_armor"]
 		]
 
 		local helm = [
