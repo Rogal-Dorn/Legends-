@@ -13,28 +13,33 @@ this.legend_infantry_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAgainstShields = true;
-		this.m.IsAoE = true;
+		this.m.IsAoE = false;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_footman_axe_01";
-		this.m.Value = 1750;
-		this.m.ShieldDamage = 40;
+		this.m.Value = 1950;
+		this.m.ShieldDamage = 24;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
 		this.m.StaminaModifier = -15;
-		this.m.RegularDamage = 55;
-		this.m.RegularDamageMax = 85;
-		this.m.ArmorDamageMult = 1.35;
-		this.m.DirectDamageMult = 0.4;
+		this.m.RegularDamage = 50;
+		this.m.RegularDamageMax = 70;
+		this.m.ArmorDamageMult = 1.25;
+		this.m.DirectDamageMult = 0.35;
 		this.m.ChanceToHitHead = 0;
 	}
 
 	function onEquip()
 	{
+
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/split_man"));
-		this.addSkill(this.new("scripts/skills/actives/round_swing"));
+		local chop = this.new("scripts/skills/actives/chop");
+		chop.DirectDamageMult = this.m.DirectDamageMult; //Sets Chop's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		this.addSkill(chop);
+		local splitman = this.new("scripts/skills/actives/split_man");
+		splitman.DirectDamageMult = this.m.DirectDamageMult; //Sets Split Man's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		this.addSkill(splitman);
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
