@@ -6840,3 +6840,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.11a - Bastard Blades
 - Fixed issue causing infantry axes to crash the game.
+
+## 15.0.2.11b - Bastard Blades
+- Reverted fixes to scenarios due to lingering bugs.
