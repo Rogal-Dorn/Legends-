@@ -523,7 +523,7 @@ layers = [
     "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.", \
     "adesc" : "Includes armor of overlapping leather plates."
 },
-{"name": "legend_armor_cult_armor",                 "layer": "plate", "min": 1, "max": 1, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_armor_cult_armor",               "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 1, "max": 1, "value" : 250, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Cultist Leather Armor", \
     "desc" :  "Numerous overlapping leather plates provide decent protection for most of the upper body.", \
     "adesc" : "Includes an occult armor of overlapping leather plates."
@@ -708,7 +708,7 @@ layers = [
     "desc" :  "A sturdy yet flexible armor composed of small, overlapping metal scales.", \
     "adesc" : "Includes body vest with small overlapping metal scales."
 },
-{"name": "legend_animal_hide_armor",                      "layer": "plate", "min": 90, "max": 90, "value" : 100, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", "vanilla" : "body",\
+{"name": "legend_animal_hide_armor",                     "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 90, "max": 90, "value" : 100, "con" : 30, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", "vanilla" : "body",\
     "title" :  "Animal Hide Armor", \
     "desc" :  "Heavy hides patched together to create a decent makeshift armor.", \
     "adesc" : "Includes heavy hides patched together to create a decent makeshift armor."
@@ -718,12 +718,12 @@ layers = [
     "desc" :  "This armor is made from heavy metal plates, scales and pieces of chainmal. The true armor of a northern warrior.", \
     "adesc" : "Includes is made from heavy metal plates, scales and pieces of chainmal. The true armor of a northern warrior."
 },
-{"name": "legend_hide_and_bone_armor",                    "layer": "plate", "min": 92, "max": 92, "value" : 350, "con" : 80, "stam" : -11, "impactSound" : "bone", "invSound" : "leather", "vanilla" : "body",\
+{"name": "legend_hide_and_bone_armor",                   "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 92, "max": 92, "value" : 350, "con" : 80, "stam" : -11, "impactSound" : "bone", "invSound" : "leather", "vanilla" : "body",\
     "title" :  "Hide and Bone Armor", \
     "desc" :  "Hide and bone are common materials in the northern regions. This armor is using both for decent protection.", \
     "adesc" : "Includes hide and bone armor that is decent protection."
 },
-{"name": "legend_reinforced_animal_hide_armor",           "layer": "plate", "min": 97, "max": 97, "value" : 175, "con" : 55, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", "vanilla" : "body",\
+{"name": "legend_reinforced_animal_hide_armor",           "itemType" : "this.Const.Items.ItemType.Cultist", "layer": "plate", "min": 97, "max": 97, "value" : 175, "con" : 55, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", "vanilla" : "body",\
     "title" :  "Reinforced Animal Hide Armor", \
     "desc" :  "A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales.", \
     "adesc" : "Includes A reinforced animal hide armor fashioned from thick leather pieces with added mail and metal scales."
@@ -953,6 +953,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor", {
 		this.m.StaminaModifier = $stamina;
         this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -983,6 +984,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/cloth/$inherit", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 });
 '''
@@ -1007,6 +1009,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 
 	function updateVariant()
@@ -1043,6 +1046,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
 	}
 });
 '''
@@ -1068,6 +1072,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_named_armor_upgrad
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -1111,6 +1116,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_cloth_named", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.randomizeValues();
 	}
 
@@ -1151,6 +1157,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_cloak", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.m.Bravery = $bravery;
 	}
 
@@ -1186,6 +1193,7 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
 		this.m.Condition = $condition;
 		this.m.ConditionMax = $condition;
 		this.m.StaminaModifier = $stamina;
+        this.m.ItemType = $itemType;
         this.m.Bravery = $bravery;
 	}
 
@@ -1348,6 +1356,10 @@ def main():
         if "bravery" in d:
             bravery = d["bravery"]
 
+        itemType = "this.m.ItemType"
+        if "itemType" in d:
+            itemType += " | " + d["itemType"]
+
         opts = dict(
             test="true",
             inherit=inherit,
@@ -1373,7 +1385,8 @@ def main():
             rmaxStam = d["rmaxStam"] if "rmaxStam" in d else 0,
             rminCond = d["rminCond"] if "rminCond" in d else 0,
             rmaxCond = d["rmaxCond"] if "rmaxCond" in d else 0,
-            bravery = bravery
+            bravery = bravery,
+            itemType = itemType,
         )
         s = Template(temp)
         text = s.substitute(opts)
