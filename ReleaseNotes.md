@@ -6768,50 +6768,72 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
 
-## 15.0.2.11 [NAME HERE]
-**Balance**
-Improves 'Resilient' (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
-Tweaks made to legendary bandit contract spawnrates and rabble in general. Thugs and low level archers will no longer spawn in the legendary brigand contract location. Rabble should now spawn as normal.
-ALL named shields have had their base durability increased by their current durability divided by 4, then that value added to their current durability. At lower levels, even basic named shields are getting 11 or more extra base durability. This is before random modifiers are applied, which may increase this value further.
--Undead shields (decayed) lose a small amount of durability but are lighter than their other named counterparts under this change.
--Living tree shield durability increased from 40 to 60.
--A few inconsistences with shield stats have been cleaned up
-Cultist scenario has had a few equipment tweaks - there is now less forced equipment when starting this origin which should make the special cultists at the start more useful.
-Mixed up the low level mummy weapons a bit more. They will now spawn with ancient spears and swords in addition to their brass khopesh.
-Disloyal trait now gives +10 melee defence when retreating, in addition to it's old effect.
+## 15.0.2.11 - Bastard Blades
 
-Mercenaries slightly buffed;
-```
-Low level mercs: gain overwhelm, backstabber and a small chance to spawn with heavier armours. Loses battleforged unless on legendary difficulty, gains nimble. Hp raised from 90 to 110, melee defence raised from 20 to 25.
-Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 110, melee defence raised from 20 to 25.
-Ranged mercs; gains nine lives on legendary difficulty.
-```
-'Distracted' effect (see: throw dirt) now has synergies with 'Deathblow'.
-'Nimble' perk now provides +10% threshold against injury effects (stacks with other sources, like steel brow).
-Mercenaries have a *small* chance to drop additional loot like silverware, treasure and other trinkets. These only drop from battleforged mercs, not low level light mercs or ranged mercs. Loot based perks and origins (see; raiders origin and scholar perk) can increase these droprates.
+*New Features**
+- Added functionality to remove all layers from an equipped item. (Shift + Right Click)
+- Added functionality to equip layers on armor in the stash. (Hold Shift and drag onto a base layer in the stash)
+- Added tooltips and new mouse icons for the above functionality.
+*Thanks to Taro for these additions!*
 
-**Fixes**
-Fixes runaway harem event.
-Fixes orientation data for some enemies that were facing the wrong way.
-Berserker background graphic now slightly larger and better definition.
-Possible fix for missing textures on reload. Please report any performance instability to us or missing textures on reload.
-
-**Typos**
-Corrected typo in militia scenario text.
-A dozen more typos corrected thanks to Dimon485.
-Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
-Corrected a typo in 'archery stunt' event.
-## 15.0.2.11 - 
-
-**Balance**
-- Armor Piercing Bolts now increase armor penetration damage by 20% (up from 10%), but reduce overall damage by 15% (up from 10%)
-- Infantry Axe Reworked
+**Infantry Axe Rework**
   • Now has the skills Chop(4AP), Split Man(6AP) and Split Shield.
   • Damage: 50 - 70
   • Armor Ignore: 35%
   • Armor Efficiency: 125%
   • Value: 1950
-  
-**Text**
-- Improved Crusader Intro Event text.
+
+**Longsword Rework**
+  • Removed the Swing skill and replaced it with Overhead Strike.
+  • Increased headshot chance to 10% from 5%.
+  • Fixed Slash skill having 20% armor ignore instead of the intended 25%.
+
+**Balance**
+- Armor Piercing Bolts now increase armor penetration damage by 20% (up from 10%), but reduce overall damage by 15% (up from 10%).
+- Mercenaries slightly buffed
+  • Low level mercs: gain overwhelm, backstabber and a small chance to spawn with heavier armours. Loses battleforged unless on legendary difficulty, gains nimble. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+  • Normal mercs: gains smashing shields, crippling strikes. Hp raised from 90 to 110, melee defence raised from 20 to 25.
+  • Ranged mercs; gains nine lives on legendary difficulty.
+  • Mercenaries have a *small* chance to drop additional loot like silverware, treasure and other trinkets. These only drop from battleforged mercs, not low level light mercs or ranged mercs. Loot based perks and origins (see; raiders origin and scholar perk) can increase these droprates.
+- Tweaks made to legendary bandit contract spawnrates and rabble in general. Thugs and low level archers will no longer spawn in the legendary brigand contract location. Rabble should now spawn as normal.
+- ALL named shields have had their base durability increased by their current durability divided by 4, then that value added to their current durability. At lower levels, even basic named shields are getting 11 or more extra base durability. This is before random modifiers are applied, which may increase this value further.
+- Improved Resilient (holdout) perk. Now grants +8 health (from +6) and raises the chance to survive after being struck down from 33% to 66%. This stacks with other sources of the same effect.
+- Undead shields (decayed) lose a small amount of durability but are lighter than their other named counterparts under this change.
+- Living tree shield durability increased from 40 to 60.
+- A few inconsistences with shield stats have been cleaned up.
+- Cultist scenario has had a few equipment tweaks - there is now less forced equipment when starting this origin which should make the special cultists at the start more useful.
+- Mixed up the low level mummy weapons a bit more. They will now spawn with ancient spears and swords in addition to their brass khopesh.
+- Disloyal trait now gives +10 melee defence when retreating, in addition to it's old effect.
+- Distracted effect (see: throw dirt) now has synergies with 'Deathblow'.
+- Nimble perk now provides +10% threshold against injury effects (stacks with other sources, like steel brow).
+
+**Improvements**
+- Improved Crusader Intro event text.
 - Added fluff to perk description of Big Game Hunter.
+- Updated bases for Troupe, Beasthunter and Crusader origins.
+- Improved Fearsome perk description.
+- Mummy Curse will now stack inside one status effect, instead of multiple instances of it. Also updated tooltip to mention target attraction.
+- Changed Man at Arms to Lowborn and updated the way for it to get blue armband in Militia origin.
+
+**Fixes**
+- Possible fix for missing textures on reload. Please report any performance instability to us or missing textures on reload.
+- Scenario mode will now work properly.
+- Fixed Trader origin wrong variable causing it to not be loadable.
+- Fixed Ranger origin wrong variable causing it to not be loadable.
+- Fixed Crusader scenario so that only Crusader type backgrounds get the Fortified Mind perk. All backgrounds will still get the perk available in their perk tree.
+- Fixes runaway harem event.
+- Fixes orientation data for some enemies that were facing the wrong way.
+- Berserker background graphic now slightly larger and better definition.
+- Fixed Barbarian Drum graphic not showing in-game.
+- Fixed item logspam.
+- Fixed Unarmed Lunge perk not removing the active skill upon perk removal.
+
+**Typos**
+- Corrected typo in militia scenario text.
+- A dozen more typos corrected thanks to Dimon485.
+- Added in more lines to Favoured enemy skills which stipulates that the base and scaling modifiers are seperate things.
+- Corrected a typo in 'archery stunt' event.
+- Fixed type in Crusader Intro event text.
+
+**For Modders**
+- addScenarioPerk will now only mark the perk as non-refundable if it actually also added the skill.
