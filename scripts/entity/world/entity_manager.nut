@@ -791,6 +791,8 @@ this.entity_manager <- {
 			for( local i = 0; i < 2; i = ++i )
 			{
 				local r = this.Math.rand(1, 13);
+				
+				local loot;
 
 				if (r == 1)
 				{
