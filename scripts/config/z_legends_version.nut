@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-local ver = "15.0.2.11";
+local ver = "15.0.2.11a";
 local buildName = "Bastard Blades";
 
 gt.logInfo("Legends Mod Version " + ver + " " + buildName)

@@ -35,10 +35,10 @@ this.legend_infantry_axe <- this.inherit("scripts/items/weapons/weapon", {
 
 		this.weapon.onEquip();
 		local chop = this.new("scripts/skills/actives/chop");
-		chop.DirectDamageMult = this.m.DirectDamageMult; //Sets Chop's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		chop.m.DirectDamageMult = this.m.DirectDamageMult; //Sets Chop's Direct Damage Mult to Infantry Axes's Direct Damage Mult
 		this.addSkill(chop);
 		local splitman = this.new("scripts/skills/actives/split_man");
-		splitman.DirectDamageMult = this.m.DirectDamageMult; //Sets Split Man's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		splitman.m.DirectDamageMult = this.m.DirectDamageMult; //Sets Split Man's Direct Damage Mult to Infantry Axes's Direct Damage Mult
 		this.addSkill(splitman);
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);

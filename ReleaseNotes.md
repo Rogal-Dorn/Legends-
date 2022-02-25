@@ -6837,3 +6837,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 **For Modders**
 - addScenarioPerk will now only mark the perk as non-refundable if it actually also added the skill.
+
+## 15.0.2.11a - Bastard Blades
+- Fixed issue causing infantry axes to crash the game.
