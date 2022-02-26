@@ -279,8 +279,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloth = [
 			[1, "cloth/legend_gambeson"],
 			[1, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_robes"],
-			[1, "cloth/legend_tunic"],
+			// [1, "cloth/legend_robes"],
+			// [1, "cloth/legend_tunic"],
 		],
 		Chain = [
 			[1, "chain/legend_armor_basic_mail"],
