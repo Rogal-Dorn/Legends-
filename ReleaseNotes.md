@@ -6902,3 +6902,8 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 15.0.2.11b - Bastard Blades
 - Reverted fixes to scenarios due to lingering bugs.
+
+## 15.0.2.12 - Witty Title here
+
+**Balance**
+Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
