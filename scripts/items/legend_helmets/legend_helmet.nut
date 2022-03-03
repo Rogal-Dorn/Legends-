@@ -395,6 +395,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			{
 				slots.push(0);
 			}
+			else if (u.isVisible() == false)
+			{
+				slots.push(2);
+			}
 			else
 			{
 				slots.push(1);
@@ -403,6 +407,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		return slots;
 	}
+
 
 	function getUpgradeIDs()
 	{
@@ -455,6 +460,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		this.m.Upgrades[slot] = _upgrade;
 		this.m.Upgrades[slot].setArmor(this);
+		this.m.Upgrades[slot].setVisible(true);
 		this.updateAppearance();
 		if (this.m.Container != null) 
 		{
@@ -480,8 +486,10 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		local app = this.getContainer() == null ? null : this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
-		item.clearAppearance(app);
 		item.onUnequip();
+		item.clearAppearance(app);
+		this.m.Upgrades[_slot].setVisible(true);
+		
 		item.setArmor(null);
 		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();

@@ -348,6 +348,10 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			{
 				slots.push(0);
 			}
+			else if (!u.isVisible())
+			{
+				slots.push(2);
+			}
 			else
 			{
 				slots.push(1);
@@ -400,6 +404,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
 		this.m.Upgrades[_upgrade.getType()].setArmor(this);
+		this.m.Upgrades[_upgrade.getType()].setVisible(true);
 		this.updateAppearance();
 		if (this.m.Container != null) 
 		{
@@ -427,6 +432,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local item = this.m.Upgrades[_slot];
 		item.clearAppearance(app);
 		item.onUnequip();
+		this.m.Upgrades[_slot].setVisible(true);
 		item.setArmor(null);
 		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();

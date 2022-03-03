@@ -1130,15 +1130,14 @@
 }
 
 .ui-control.button-11:hover,
-.ui-control.button-11.is-selected {
-	background-image: url("coui://gfx/ui/skin/armor_button_hovered.png");
-	background-size: 2.2rem 2.2rem;
-	color: #f0b121;
+.ui-control.button-11.is-selected, {
+    background-image: url("coui://gfx/ui/skin/armor_button_hovered.png");
+    background-size: 2.2rem 2.2rem;
+    color: #f0b121;
 }
 
 .ui-control.button-11.is-selected {
-	text-shadow: 1px 1px #A36426, -1px -1px #000;
-	color: #f0b121;
+    color: #f0b121;
 }
 
 .ui-control.button-11.is-active {

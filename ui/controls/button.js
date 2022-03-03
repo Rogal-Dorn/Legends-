@@ -43,12 +43,12 @@ $.fn.createTextButton = function (_text, _callback, _classes, _size, _imagePath)
 
 	if (_callback !== undefined && _callback !== null && typeof(_callback) === 'function')
 	{
-		result.on("click", function ()
+		result.on("click", function (_event)
 		{
 			var disabled = $(this).attr('disabled');
 			if (disabled !== null && disabled !== 'disabled')
 			{
-				_callback($(this));
+				_callback($(this), _event);
 			}
 		});
 	}
