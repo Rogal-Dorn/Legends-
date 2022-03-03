@@ -6907,3 +6907,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 **Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
+
+**Events**
+There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity items. This event repeats.
