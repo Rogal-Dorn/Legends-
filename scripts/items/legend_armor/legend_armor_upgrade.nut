@@ -17,6 +17,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		InventorySound = this.Const.Sound.ArmorLeatherImpact,
 		IsDestroyedOnRemove = false,
 		Variants = [],
+		Visible = true
 	},
 	function create()
 	{
@@ -306,12 +307,39 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		return this.Math.floor(this.getConditionMax());
 	}
 
+	function toggleVisible()
+	{
+		return this.setVisible(!this.isVisible());
+	}
+
+	function setVisible(_bool)
+	{
+		this.m.Visible = _bool;
+		if (this.m.Armor != null && this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
+		{
+			local app = this.getContainer().getAppearance();
+			this.updateAppearance(app);
+			this.getContainer().updateAppearance();
+		}
+		return _bool
+	}
+
+	function isVisible()
+	{
+		return this.m.Visible
+	}
+
 	function updateAppearance( _app )
 	{
 		local frontSprite = "";
 		local backSprite = "";
 
-		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
+		if (this.isVisible() == false)
+		{
+			frontSprite = "";
+			backSprite = "";
+		}
+		else if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
 			frontSprite = this.m.SpriteDamagedFront != null ? this.m.SpriteDamagedFront : this.m.SpriteFront != null ? this.m.SpriteFront : "";
 			backSprite = this.m.SpriteDamagedBack != null ? this.m.SpriteDamagedBack : this.m.SpriteBack != null ? this.m.SpriteBack : "";
@@ -360,6 +388,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 
 	function onEquip()
 	{
+		this.setVisible(true);
 		this.item.onEquip();
 		this.setCurrentSlotType(this.m.SlotType);
 	}
@@ -447,10 +476,12 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
+		_out.writeBool(this.m.Visible);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
+		this.m.Visible = _in.readBool();
 	}
 });

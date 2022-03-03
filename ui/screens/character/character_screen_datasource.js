@@ -281,8 +281,8 @@ CharacterScreenDatasource.prototype.loadFromData = function(_data)
 
 	if ('maxBrothers' in _data)
 		this.mMaxBrothers = _data.maxBrothers;
-   	if ('frontlineData' in _data)
-   		this.mFrontlineData = _data.frontlineData;
+	if ('frontlineData' in _data)
+		this.mFrontlineData = _data.frontlineData;
 
 	if ('stashSpaceUsed' in _data)
 		this.mStashSpaceUsed = _data.stashSpaceUsed;
@@ -1665,7 +1665,7 @@ CharacterScreenDatasource.prototype.updateStash = function (_data)
 				console.info('STASH: Item updated trgType: ' + targetItem[CharacterScreenIdentifier.Item.Slot]);
 */
 				//console.log('STASH: Item updated (Index: ' + i + ')');
-				
+
 				this.mStashList[i] = targetItem;
 				this.notifyEventListener(CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Key, { item: targetItem, index: i, flag: CharacterScreenDatasourceIdentifier.Inventory.StashItemUpdated.Flag.Updated });
 			}
@@ -1801,7 +1801,7 @@ CharacterScreenDatasource.prototype.getFrontlineData = function()
 
 CharacterScreenDatasource.prototype.notifyBackendSortButtonClicked = function ()
 {
-   	SQ.call(this.mSQHandle, 'onSortButtonClicked');
+	SQ.call(this.mSQHandle, 'onSortButtonClicked');
 }
 
 /*CharacterScreenDatasource.prototype.notifyBackendQueryStashList = function ()
@@ -2022,7 +2022,7 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveInventoryItemUpgrades = f
 				console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
 			}
 		}
-		
+
 	});
 };
 CharacterScreenDatasource.prototype.notifyBackendRemovePaperdollItemUpgrades = function (_brotherId, _sourceItemId)
@@ -2080,14 +2080,15 @@ CharacterScreenDatasource.prototype.notifyBackendRemovePaperdollItemUpgrades = f
 		}
 	});
 };
-CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (_slot)
+
+CharacterScreenDatasource.prototype.notifyBackendRemoveUpgrade = function (_type, _slot)
 {
 	var self = this;
 	var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
-	SQ.call(this.mSQHandle, 'onRemoveArmorUpgrade', [_slot, activeCharacterID], function (data) {
+	SQ.call(this.mSQHandle, 'onRemoveUpgrade', [_slot, activeCharacterID, _type], function (data) {
 		if (data === undefined || data == null || typeof (data) !== 'object')
 		{
-			console.error('ERROR: Failed to remove armor upgrade. Invalid data result.');
+			console.error('ERROR: Failed to remove upgrade. Invalid data result.');
 			return;
 		}
 
@@ -2135,15 +2136,15 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveArmorUpgrade = function (
 	});
 };
 
-CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function (_slot)
+CharacterScreenDatasource.prototype.notifyBackendToggleUpgradeVisible = function (_type, _slot)
 {
 	var self = this;
 	var activeCharacterID = this.mBrothersList[this.mSelectedBrotherIndex]['id'];
-	SQ.call(this.mSQHandle, 'onRemoveHelmetUpgrade', [_slot, activeCharacterID], function (data) {
+	SQ.call(this.mSQHandle, 'onToggleUpgradeVisibility', [_slot, activeCharacterID, _type], function (data) {
 
 		if (data === undefined || data == null || typeof (data) !== 'object')
 		{
-			console.error('ERROR: Failed to remove Paperdoll Item Upgrades. Invalid data result.');
+			console.error('ERROR: Failed to toggle visibility of Paperdoll Item Upgrade. Invalid data result.');
 			return;
 		}
 
@@ -2154,26 +2155,6 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function 
 		}
 		else
 		{
-			if ('stashSpaceUsed' in data)
-				self.mStashSpaceUsed = data.stashSpaceUsed;
-
-			if ('stashSpaceMax' in data)
-				self.mStashSpaceMax = data.stashSpaceMax;
-
-			self.mInventoryModule.updateSlotsLabel();
-
-			if (CharacterScreenIdentifier.QueryResult.Stash in data)
-			{
-				var stashData = data[CharacterScreenIdentifier.QueryResult.Stash];
-				if (stashData !== null && jQuery.isArray(stashData))
-				{
-					self.updateStash(stashData);
-				}
-				else
-				{
-					console.error('ERROR: Failed to equip inventory item. Invalid stash data result.');
-				}
-			}
 
 			if (CharacterScreenIdentifier.QueryResult.Brother in data)
 			{
@@ -2184,12 +2165,14 @@ CharacterScreenDatasource.prototype.notifyBackendRemoveHelmetUpgrade = function 
 				}
 				else
 				{
-					console.error('ERROR: Failed to equip inventory item. Invalid brother data result.');
+					console.error('ERROR: Failed to toggle visibility of Paperdoll Item Upgrade. Invalid brother data result.');
 				}
 			}
 		}
 	});
 };
+
+
 CharacterScreenDatasource.prototype.notifyBackendAssignRider = function (_rider, _horse, _callback)
 {
 	SQ.call(this.mSQHandle, 'onAssignRider', [ _rider, _horse ], _callback);

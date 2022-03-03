@@ -880,7 +880,7 @@ this.data_helper <- {
 		result.price <- 0;
 
 		result.upgrades <- _item.getUpgrades();
-
+		
 		if (_owner != null)
 		{
 			switch(_owner)

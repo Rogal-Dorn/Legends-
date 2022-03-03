@@ -2567,7 +2567,7 @@ this.character_screen <- {
 		return this.UIDataHelper.convertStashAndEntityToUIData(_entity, null, false, this.m.InventoryFilter);
 	}
 
-	function removeUpgrade( _slot, _data)
+	function onRemoveUpgrade(_data)
 	{
 		if (this.Stash.getNumberOfEmptySlots() <= 0){
 			return {
@@ -2576,7 +2576,7 @@ this.character_screen <- {
 			};
 		}
 		local bro = this.Tactical.getEntityByID(_data[1]);
-		local upgrade = bro.removeArmorUpgrade(_slot, _data[0]);
+		local upgrade = bro.removeArmorUpgrade(_data[2] == "body" ? this.Const.ItemSlot.Body : this.Const.ItemSlot.Head, _data[0]);
 		if (upgrade != null && !upgrade.isDestroyedOnRemove())
 		{
 			this.World.Assets.getStash().add(upgrade);
@@ -2585,15 +2585,15 @@ this.character_screen <- {
 		}
 	}
 
-	function onRemoveArmorUpgrade( _data )
+	function onToggleUpgradeVisibility( _data )
 	{
-		return this.removeUpgrade(this.Const.ItemSlot.Body, _data);
+		local bro = this.Tactical.getEntityByID(_data[1]);
+		local armor = bro.getItems().getItemAtSlot(_data[2] == "body" ? this.Const.ItemSlot.Body : this.Const.ItemSlot.Head);
+		local upgrade = armor.getUpgrade(_data[0]);
+		local result = upgrade.toggleVisible();
+		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
 	}
 
-	function onRemoveHelmetUpgrade( _data )
-	{
-		return this.removeUpgrade(this.Const.ItemSlot.Head, _data);
-	}
 
 	function onUpdateFormationName( _data )
 	{

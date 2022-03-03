@@ -17,7 +17,8 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		Variants = [],
 		HideHair = false,
 		HideBeard = false,
-		Vision = 0
+		Vision = 0,
+		Visible = true
 	},
 	function create()
 	{
@@ -334,11 +335,42 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		return this.Math.floor(this.getConditionMax());
 	}
 
+	function toggleVisible()
+	{
+		return this.setVisible(!this.isVisible());
+	}
+
+	function setVisible(_bool)
+	{
+		this.m.Visible = _bool;
+		if (this.m.Armor != null && this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
+		{
+			local app = this.getContainer().getAppearance();
+			this.updateAppearance(app);
+			this.getContainer().updateAppearance();
+		}
+		return _bool
+	}
+
+	function isVisible()
+	{
+		return this.m.Visible
+	}
+
 	function updateAppearance( _app )
 	{
 		local sprite = "";
+		local slot = this.m.Type;
+		if (slot == this.Const.Items.HelmetUpgrades.Vanity && this.m.Armor.getUpgrade(slot) != this)
+		{
+			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
+		}
 
-		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
+		if (this.isVisible() == false)
+		{
+			sprite = "";
+		}
+		else if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
 			sprite = this.m.SpriteDamaged != null ? this.m.SpriteDamaged : "";
 		}
@@ -351,8 +383,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		{
 			return false;
 		}
-
-		switch(this.m.Type)
+		switch(slot)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
 				_app.HelmetLayerHelm = sprite;
@@ -365,42 +396,37 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				break;
 
 			case this.Const.Items.HelmetUpgrades.Vanity:
-				if (_app.HelmLayer == this.Const.Items.HelmetUpgrades.ExtraVanity)
+				if (this.m.IsLowerVanity)
 				{
-					if (this.m.IsLowerVanity)
-					{
-						_app.HelmetLayerVanity2 = "";
-						_app.HelmetLayerVanity2Corpse = "";
-						_app.HelmetLayerVanity2Lower = sprite;
-						_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					}
-					else
-					{
-						_app.HelmetLayerVanity2 = sprite;
-						_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-						_app.HelmetLayerVanity2Lower = "";
-						_app.HelmetLayerVanity2LowerCorpse = "";
-					}
+					_app.HelmetLayerVanity = "";
+					_app.HelmetLayerVanityCorpse = "";
+					_app.HelmetLayerVanityLower = sprite;
+					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
 				}
 				else
 				{
-					if (this.m.IsLowerVanity)
-					{
-						_app.HelmetLayerVanity = "";
-						_app.HelmetLayerVanityCorpse = "";
-						_app.HelmetLayerVanityLower = sprite;
-						_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					}
-					else
-					{
-						_app.HelmetLayerVanity = sprite;
-						_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-						_app.HelmetLayerVanityLower = "";
-						_app.HelmetLayerVanityLowerCorpse = "";
-					}
+					_app.HelmetLayerVanity = sprite;
+					_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerVanityLower = "";
+					_app.HelmetLayerVanityLowerCorpse = "";
 				}
-
 				break;
+
+			case this.Const.Items.HelmetUpgrades.ExtraVanity:
+				if (this.m.IsLowerVanity)
+				{
+					_app.HelmetLayerVanity2 = "";
+					_app.HelmetLayerVanity2Corpse = "";
+					_app.HelmetLayerVanity2Lower = sprite;
+					_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				}
+				else
+				{
+					_app.HelmetLayerVanity2 = sprite;
+					_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerVanity2Lower = "";
+					_app.HelmetLayerVanity2LowerCorpse = "";
+				}
 		}
 
 		return true;
@@ -489,11 +515,13 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
+		_out.writeBool(this.m.Visible);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
+		this.m.Visible = _in.readBool();
 	}
 });
 

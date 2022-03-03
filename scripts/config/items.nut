@@ -295,8 +295,8 @@ gt.Const.Items.HelmetUpgrades <- {
 	Helm = 0,
 	Top = 1,
 	Vanity = 2,
-	Rune = 3,
-	ExtraVanity = 4,
+	ExtraVanity = 3,
+	Rune = 4,
 	//Extra spot for second vanity
 	COUNT = 5
 }
