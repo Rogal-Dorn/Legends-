@@ -32,14 +32,17 @@ this.tutorial_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}
 
 		local bros = roster.getAll();
+		bros[0].setVeteranPerks(2);
 		bros[0].setStartValuesEx([
 			"companion_1h_background"
 		]);
 		bros[0].setPlaceInFormation(3);
+		bros[1].setVeteranPerks(2);
 		bros[1].setStartValuesEx([
 			"companion_2h_background"
 		]);
 		bros[1].setPlaceInFormation(4);
+		bros[2].setVeteranPerks(2);
 		bros[2].setStartValuesEx([
 			"companion_ranged_background"
 		]);
