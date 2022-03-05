@@ -964,9 +964,27 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 3:
-						local helmet = [
-							[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)]
-						];
+						local r = this.Math.rand(1, 3); //Glad helmets
+						local item;
+
+						if (r == 1)
+						{
+							item = this.new("oriental/nomad_head_wrap");
+							item = this.new("helm/legend_helmet_southern_gladiator_helm_crested");
+						}
+						else if (r == 2)
+						{
+							item = this.new("oriental/nomad_head_wrap");
+							item = this.new("helm/legend_helmet_southern_gladiator_helm_split");
+						}
+						else if (r == 3)
+						{
+							item = this.new("oriental/nomad_head_wrap");
+							item = this.new("helm/legend_helmet_southern_gladiator_helm_masked");
+						}
+						// local helmet = [
+						// 	[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)]
+						// ];
 						a = this.Const.World.Common.pickHelmet(helmet);
 						this.List.push({
 							id = 12,
