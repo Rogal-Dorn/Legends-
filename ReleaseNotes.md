@@ -6908,5 +6908,11 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 **Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 
+**Improvements**
+The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
+
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity items. This event repeats.
+
+**Typos**
+A few minor typos fixed
