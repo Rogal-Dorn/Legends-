@@ -3,7 +3,7 @@ this.legend_skeleton_gladiator_agent <- this.inherit("scripts/ai/tactical/agent"
 	function create()
 	{
 		this.agent.create();
-		this.m.ID = this.Const.AI.Agent.ID.GoblinWolfrider;
+		this.m.ID = this.Const.AI.Agent.ID.GoblinWolfrider; //needs to be changed //this.m.ID = this.Const.AI.Agent.ID.SkeletonMelee;
 		this.m.IsUsingHeat = true;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.4;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.2;
@@ -25,8 +25,6 @@ this.legend_skeleton_gladiator_agent <- this.inherit("scripts/ai/tactical/agent"
 
 	function onAddBehaviors()
 	{
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_flee"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_throw_net"));
