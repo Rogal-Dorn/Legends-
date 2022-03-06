@@ -36,6 +36,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.BanditWarlord);
+		b.IsImmuneToDisarm = true;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;

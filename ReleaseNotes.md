@@ -6907,6 +6907,7 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 **Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
+Brigand warlords are now immune to disarm (skill issue).
 
 **Fixes**
 Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
