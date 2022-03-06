@@ -6911,6 +6911,7 @@ Brigand warlords are now immune to disarm (skill issue).
 
 **Fixes**
 Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
+Skeleton gladiators should now be unable to flee combat.
 
 **Improvements**
 The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
