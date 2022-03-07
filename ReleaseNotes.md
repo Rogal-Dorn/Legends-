@@ -6920,4 +6920,4 @@ The arena should now give you just the layer of the gladiator helmet, not the gl
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity items. This event repeats.
 
 **Typos**
-A few minor typos fixed
+A few minor typos fixed, many thanks to Dimon.
