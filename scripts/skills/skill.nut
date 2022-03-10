@@ -105,7 +105,7 @@ this.skill <- {
 		local vars = [];
 		if (this.getContainer() == null || (typeof this.getContainer() == "instance" && this.getContainer().isNull()) || this.getContainer().getActor() == null)
 		{
-			this.logError("Skill: " + this.getName() + " is missing a " + (this.getContainer() == null ? "Container" : "Actor") + " when getting description");
+			this.logError("Skill: " + this.getName() + " is missing a" + (this.getContainer() == null ? " Container" : "n Actor") + " when getting description");
 			this.MSU.Log.printStackTrace();
 		}
 		else

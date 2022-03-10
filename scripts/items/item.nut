@@ -305,6 +305,11 @@ this.item <- {
 		return this.m.Value;
 	}
 
+	function getRawValue()
+	{
+		return this.m.Value;
+	}
+
 	function getPriceMult()
 	{
 		return this.m.PriceMult;

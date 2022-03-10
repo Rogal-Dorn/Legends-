@@ -734,7 +734,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getRepairMax() > 1 && _item.getRepair() < _item.getRepairMax())
 			{
 				local price = (_item.getRepairMax() - _item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.getRawValue() * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)

@@ -161,6 +161,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		return this.Math.floor(this.getAddedValue("getValue", this.m.Value * (1.0 * this.m.Condition / (1.0 * this.m.ConditionMax))));
 	}
 
+	function getRawValue()
+	{
+		return this.getAddedValue("getRawValue", this.m.Value);
+	}
+
 	function doOnFunction(_function, _argsArray = null)
 	{
 		if (_argsArray == null) _argsArray = [];

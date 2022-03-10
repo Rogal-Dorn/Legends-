@@ -207,6 +207,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		return this.Math.floor(this.getAddedValue("getValue", this.m.Value * (1.0 * this.m.Condition / (1.0 * this.m.ConditionMax)), true));
 	}
 
+	function getRawValue()
+	{
+		return this.getAddedValue("getRawValue", this.m.Value);
+	}
+
 	function doOnFunction(_function, _argsArray = null, _all = false)
 	{
 		if (_argsArray == null) _argsArray = [];
