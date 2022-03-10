@@ -34,7 +34,7 @@ this.sellsword_retires_event <- this.inherit("scripts/events/event", {
 				local item;
 				local stash = this.World.Assets.getStash();
 				item = this.new("scripts/items/weapons/arming_sword");
-				item.setCondition(item.getConditionMax() / 2 - 1);
+				item.setCondition(item.getRepairMax() / 2 - 1);
 				stash.add(item);
 				this.List.push({
 					id = 10,

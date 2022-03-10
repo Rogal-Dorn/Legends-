@@ -75,7 +75,7 @@ this.legend_blacksmith_fix_equipment <- this.inherit("scripts/events/event", {
 				{
 					if (item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && item.getCondition() < item.getConditionMax())
 					{
-						item.setCondition(item.getConditionMax());
+						item.setCondition(item.getRepairMax());
 						this.List.push({
 							id = 10,
 							icon = "ui/items/" + item.getIcon(),
