@@ -180,13 +180,13 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"

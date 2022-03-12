@@ -228,13 +228,13 @@ this.legends_lumber_village <- this.inherit("scripts/entity/world/settlements/le
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		]];
 

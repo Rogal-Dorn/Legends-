@@ -1,4 +1,4 @@
-this.legend_donkey <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{

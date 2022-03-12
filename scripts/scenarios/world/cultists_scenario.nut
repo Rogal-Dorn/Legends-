@@ -40,7 +40,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([ // discount Alastair Crowley
-			"cultist_magister_background"
+			"legend_magister_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "When %name% joined, the cultist warmly called you captain, saying \"tis a proper manner to pursue the path into the Black from whence we came\".";
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_rally_the_troops"));
@@ -52,7 +52,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.equip(this.new("scripts/items/weapons/battle_whip"));
 
 		bros[1].setStartValuesEx([ //heavy hitter
-			"cultist_darksoul_background"
+			"legend_husk_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "%name% found you upon the road, stating with certainty you were a mercenary captain. You wore but ordinary cloth at that moment, but %name% said that by Davkul\'s darkness you had an aura of wanted Black about you.";
 		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);
@@ -111,7 +111,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			]
 		]));
 		bros[4].setStartValuesEx([ //ranged support
-			"cultist_lurker_background"
+			"legend_lurker_background"
 		]);
 		bros[4].getBackground().m.RawDescription = "%name% banded with you outside a tavern. The first time you saw the cultist, there were scars running up %name%\'s arms and across veins that could not be survived. But each morning it appears as though the scars move, slowly creeping in one direction: toward the forehead.";
 		this.addScenarioPerk(bros[4].getBackground(), this.Const.Perks.PerkDefs.LegendTrueBeliever);		
@@ -210,17 +210,17 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			r = this.Math.rand(0, 6);
 			if (r == 0 && _gender)
 			{
-			_list.push("cultist_lurker_background");
+			_list.push("legend_lurker_background");
 			}
 			r = this.Math.rand(0, 9);
 			if (r == 0)
 			{
-				_list.push("cultist_darksoul_background");
+				_list.push("legend_husk_background");
 			}
 			r = this.Math.rand(0, 49);
 			if (r == 0)
 			{
-				_list.push("cultist_magister_background");
+				_list.push("legend_magister_background");
 			}
 		}
 	}

@@ -24,7 +24,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 4;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;
@@ -48,7 +48,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of " + this.m.Money +" total"
+				text = "This will cost [color=" + this.Const.UI.Color.PositiveValue +"]" + this.m.Cost + "[/color] crowns out of " + this.m.Money +" total, motivates the reciever."
 			});
 
 		return ret;
@@ -88,6 +88,7 @@ this.legend_danger_pay <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
+		target.getSkills().add(this.new("scripts/skills/effects/motivated_effect"));
 		local wage = target.getBaseProperties().DailyWage;
 		local cost = this.Math.floor(this.Math.pow(wage, 1.3) - 1);
 		this.World.Assets.addMoney(cost);

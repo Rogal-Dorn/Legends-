@@ -1,9 +1,9 @@
-this.legend_bastardsword <- this.inherit("scripts/items/weapons/weapon", {
+this.legend_longsword <- this.inherit("scripts/items/weapons/weapon", {
 	m = {},
 	function create()
 	{
 		this.weapon.create();
-		this.m.ID = "weapon.legend_bastardsword";
+		this.m.ID = "weapon.legend_longsword";
 		this.m.Name = "Longsword";
 		this.m.Description = "A long two-handed blade that makes for a versatile weapon.";
 		this.m.IconLarge = "weapons/melee/longsword_01.png";

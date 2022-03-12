@@ -1,16 +1,16 @@
-this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.cultist_darksoul";
-		this.m.Name = "Husk";
-		this.m.Icon = "ui/backgrounds/background_husk.png";
-		this.m.BackgroundDescription = "Once imbued with the will of a dead god, the departing of said god left this one...unpredictable.";
+		this.m.ID = "background.legend_lurker";
+		this.m.Name = "Lurker";
+		this.m.Icon = "ui/backgrounds/background_lurker.png";
+		this.m.BackgroundDescription = "This one is unsettling, even for a cultist. Ever quiet and brooding, but with eyes as keen as that of a vengeful god.";
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
-		this.m.HiringCost = 150;
-		this.m.DailyCost = 24;
+		this.m.HiringCost = 130;
+		this.m.DailyCost = 20;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
@@ -19,10 +19,11 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_nobles",
-			"trait.night_blind",
 			"trait.slack",
+			"trait.night_blind",
 			"trait.lucky",
 			"trait.athletic",
+			"trait.short_sighted",
 			"trait.bright",
 			"trait.drunkard",
 			"trait.dastard",
@@ -37,8 +38,7 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.fainthearted"
 		];
 		this.m.ExcludedTalents = [
-			this.Const.Attributes.RangedSkill
-			this.Const.Attributes.Bravery
+			this.Const.Attributes.MeleeSkill
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -53,7 +53,6 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Fanatic",
 			"the Zealot"
 		];
-		this.m.IsGuaranteed = ["mad_trait"]
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -65,33 +64,56 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.BackgroundType = this.Const.BackgroundType.Cultist | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
+		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
+		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
+		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
-		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.00,//plains
+				0.10, //swamp
+				0.0, //hills
+				0.05, //forest
+				0.05, //forest
+				0.05, //forest_leaves
+				0.05, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.05, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0, //ocean
+				0.0, //desert
+				0.0 //oasis
+			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.MaceTree,
-				this.Const.Perks.AxeTree
+				this.Const.Perks.BowTree,
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.SlingsTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.MartyrTree,
-				this.Const.Perks.ViciousTree,
-				this.Const.Perks.FitTree,
-				this.Const.Perks.IndestructibleTree
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.MartyrTree
 			],
 			Enemy = [
 				this.Const.Perks.CaravanTree,
 				this.Const.Perks.NoblesTree
 			],
 			Class = [
-				this.Const.Perks.BeastClassTree,
-				this.Const.Perks.NinetailsClassTree
+				this.Const.Perks.NinetailsClassTree,
+				this.Const.Perks.ShortbowClassTree
 			],
 			Magic = []
 		}
@@ -131,59 +153,47 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 		return true;
 	}
 
-	function getTooltip()
-	{
-		local ret = this.character_background.getTooltip()
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/campfire.png",
-				text = "Davkul sees this one as spent goods without any value and will never ask you to sacrifice them."
-			}
-		)
-		return ret
-	}
+
 
 	function onBuildDescription()
 	{
-		return "{With a mind torn in half and nowhere else to go, %name% is a mess of gibbering voices and flailing fists at unseen attackers. | They clutch and imaginary insects and brush at unseen horrors crawling over their skin. | Their face an ever shifting soup of expressions. | Clothed in rags and decayed metal they stamp and struggle as if the earth was trying to swallow them whole. | Words are carved into their hands, face and any other virgin flesh availible. | %name% spits and chitters at seemly mundane items as if every one of them were made from their own flesh. | The only constant in all this madness is a singluar phrase, as you approach them you recite the words ingrained into your mind...} \"Davkul awaits\" you announce. %name% recomposes themselves instantly. \"Davkul awaits us all\" they reply, with perfect cadence.";
+		return "{%name% has always been a quiet sort, preferring to observe rather than act impulsively. | They gravitate to the darkest places possible and have no problem marching through difficult terrain. | Shot in the head by a bolt at close range, %name% was pulled from a shallow grave far in the southern sands by a healer, now they seek reprisal. | Clothed in rags, %name% is suprisingly at ease with their surroundings, ever watchful of potential predators...or prey. | %name% carries a myriad of makeshift arrows, some bone and others metal. However a few shafts and arrowheads seem more otherworldly than the others... | Looking at %name% you can\'t help but feel that you have met one another before. A familial bonds links the two of you togeather as if you have known each other a lifetime before.} They place a finger on their lips and your thoughts evaporate. \"Davkul awaits us all, chosen one\".";
 	}
 
 	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				9
+				-10,
+				-5
 			],
 			Bravery = [
-				-5,
-				-8
+				10,
+				20
 			],
 			Stamina = [
-				5,
-				8
+				4,
+				12
 			],
 			MeleeSkill = [
-				5,
+				-5,
 				5
 			],
 			RangedSkill = [
-				-10,
-				5
+				10,
+				20
 			],
 			MeleeDefense = [
+				-5,
+				5
+			],
+			RangedDefense = [
 				5,
 				8
 			],
-			RangedDefense = [
-				3,
-				3
-			],
 			Initiative = [
-				5,
-				5
+				8,
+				16
 			]
 		};
 		return c;
@@ -231,49 +241,60 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 1;
+		talents[this.Const.Attributes.RangedSkill] = 2;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 8);
+
+		if (this.Const.DLC.Wildmen)
+		{
+			r = this.Math.rand(1, 100);
+
+			if (r <= 50)
+			{
+				items.equip(this.new("scripts/items/weapons/short_bow"));
+				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+			}
+			else if (r <= 80)
+			{
+				items.equip(this.new("scripts/items/weapons/legend_sling"));
+			}
+			else
+			{
+				items.equip(this.new("scripts/items/weapons/wonky_bow"));
+				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+			}
+		}
+		else
+		{
+			if (this.Math.rand(1, 100) <= 75)
+			{
+				items.equip(this.new("scripts/items/weapons/short_bow"));
+			}
+			else
+			{
+				items.equip(this.new("scripts/items/weapons/wonky_bow"));
+			}
+
+			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		}
+
+		r = this.Math.rand(0, 4);
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/greenskins/legend_bone_carver"));
+			items.addToBag(this.new("scripts/items/weapons/knife"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/wooden_flail"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_reinforced_flail"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
-		}
-		else if (r == 4)
-		{
-			if (this.Const.DLC.Wildmen)
-			{
-				items.equip(this.new("scripts/items/weapons/battle_whip"));
-			}
-			else if (!this.Const.DLC.Wildmen)
-			{
-				items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-			}
-		}
-		else if (r >= 5)
-		{
-		 items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
+			items.addToBag(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "tattered_sackcloth"],
 			[1, "leather_wraps"],
-			[1, "decayed_reinforced_mail_hauberk"],
-			[1, "decayed_coat_of_plates"]
+			[1, "monk_robe"],
+			[1, "cultist_leather_robe"]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "cultist_hood"],

@@ -161,7 +161,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 					"weapons/greatsword",
 					"weapons/greataxe",
 					"weapons/legend_swordstaff",
-					"weapons/legend_bastardsword",
+					"weapons/legend_longsword",
 					"weapons/warbrand",
 					"weapons/legend_estoc"
 				]);

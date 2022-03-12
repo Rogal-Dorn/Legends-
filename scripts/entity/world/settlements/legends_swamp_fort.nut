@@ -233,13 +233,13 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"female_disowned_noble_background"
 		]];
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		]];
 

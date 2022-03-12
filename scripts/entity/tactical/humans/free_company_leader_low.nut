@@ -60,7 +60,7 @@ this.free_company_leader_low <- this.inherit("scripts/entity/tactical/humans/fre
 		}
 		else if (r == 2)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+			this.m.Items.equip(this.new("scripts/items/weapons/legend_longsword"));
 		}
 		else if (r == 3)
 		{

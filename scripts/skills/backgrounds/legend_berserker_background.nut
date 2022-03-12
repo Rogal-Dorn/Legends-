@@ -285,7 +285,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+			items.equip(this.new("scripts/items/weapons/legend_longsword"));
 		}
 		else if (r == 4)
 		{
