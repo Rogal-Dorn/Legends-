@@ -1,16 +1,16 @@
-this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.cultist_magister";
-		this.m.Name = "Magister";
-		this.m.Icon = "ui/backgrounds/background_magister.png";
-		this.m.BackgroundDescription = "Magisters are a unqiue breed of insane. While those they control run amock, the Magister coordinates the carnage from up high.";
+		this.m.ID = "background.legend_husk";
+		this.m.Name = "Husk";
+		this.m.Icon = "ui/backgrounds/background_husk.png";
+		this.m.BackgroundDescription = "Once imbued with the will of a dead god, the departing of said god left this one...unpredictable.";
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
-		this.m.HiringCost = 250;
-		this.m.DailyCost = 32;
+		this.m.HiringCost = 150;
+		this.m.DailyCost = 24;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
@@ -20,9 +20,10 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.hate_greenskins",
 			"trait.hate_nobles",
 			"trait.night_blind",
-			"trait.lucky",
 			"trait.slack",
+			"trait.lucky",
 			"trait.athletic",
+			"trait.bright",
 			"trait.drunkard",
 			"trait.dastard",
 			"trait.gluttonous",
@@ -34,6 +35,10 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.greedy",
 			"trait.craven",
 			"trait.fainthearted"
+		];
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.RangedSkill
+			this.Const.Attributes.Bravery
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -48,43 +53,47 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Fanatic",
 			"the Zealot"
 		];
+		this.m.IsGuaranteed = ["mad_trait"]
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.Level = this.Math.rand(2, 3);
+		this.m.Level = this.Math.rand(1, 2);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.BackgroundType = this.Const.BackgroundType.Cultist | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
-		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
-		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
+		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree,				
-				this.Const.Perks.StavesTree
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.AxeTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
-				this.Const.Perks.CalmTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.InspirationalTree
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.IndestructibleTree
 			],
-			Enemy = [],
+			Enemy = [
+				this.Const.Perks.CaravanTree,
+				this.Const.Perks.NoblesTree
+			],
 			Class = [
-				this.Const.Perks.NinetailsClassTree,
-				this.Const.Perks.HealerClassTree
+				this.Const.Perks.BeastClassTree,
+				this.Const.Perks.NinetailsClassTree
 			],
-			Magic = [
-				this.Const.Perks.PremonitionMagicTree
-			]
+			Magic = []
 		}
 	}
 
@@ -130,7 +139,7 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 				id = 13,
 				type = "text",
 				icon = "ui/icons/campfire.png",
-				text = "Davkul sees this one as too important to sacrifice, and therefore will never ask you to do so."
+				text = "Davkul sees this one as spent goods without any value and will never ask you to sacrifice them."
 			}
 		)
 		return ret
@@ -138,42 +147,42 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 
 	function onBuildDescription()
 	{
-		return "{Magisters are a conduit of evil in the world, seemingly sucking up all the suffering around them and directing it upon whoever they please. | %name% is wreathed in fabrics that seem to obay a differant set of rules to the rest of the world. | %name% occasionally turns their head as if an unseen force was whispering to them, nodding and whispering back to the unseen force in kind, almost as if affirming their own madness. | %name% whispers into their weapon and nods in agreement with it, almost as if conversing with a long lost friend. | The stranger tracks and nods towards unseen figures like a ringmaster for a ghostly parade. | The look in the eyes of %name% reveals little, aside from the fact that the more you look at them the more you notice the irregularaties, having a smaller second pupil for instance...or a malformed scar of flesh. | They stand with a a crooked posture, as if holding up a heavy and unseen burden.} \"Davkul awaits us all\" %name% parrots. You are not certain, but you feel a second voice repeat those words in unison from deep inside your mind.";
+		return "{With a mind torn in half and nowhere else to go, %name% is a mess of gibbering voices and flailing fists at unseen attackers. | They clutch and imaginary insects and brush at unseen horrors crawling over their skin. | Their face an ever shifting soup of expressions. | Clothed in rags and decayed metal they stamp and struggle as if the earth was trying to swallow them whole. | Words are carved into their hands, face and any other virgin flesh availible. | %name% spits and chitters at seemly mundane items as if every one of them were made from their own flesh. | The only constant in all this madness is a singluar phrase, as you approach them you recite the words ingrained into your mind...} \"Davkul awaits\" you announce. %name% recomposes themselves instantly. \"Davkul awaits us all\" they reply, with perfect cadence.";
 	}
 
 	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				5
+				5,
+				9
 			],
 			Bravery = [
-				15,
-				20
+				-5,
+				-8
 			],
 			Stamina = [
-				-4,
-				6
-			],
-			MeleeSkill = [
-				-5,
-				6
-			],
-			RangedSkill = [
 				5,
 				8
 			],
-			MeleeDefense = [
-				-2,
+			MeleeSkill = [
+				5,
 				5
+			],
+			RangedSkill = [
+				-10,
+				5
+			],
+			MeleeDefense = [
+				5,
+				8
 			],
 			RangedDefense = [
-				-2,
-				5
+				3,
+				3
 			],
 			Initiative = [
-				-5,
+				5,
 				5
 			]
 		};
@@ -222,7 +231,7 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Bravery] = 1;
+		talents[this.Const.Attributes.MeleeSkill] = 1;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
@@ -230,11 +239,11 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 
 		if (r == 0)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
+			items.equip(this.new("scripts/items/weapons/greenskins/legend_bone_carver"));
 		}
 		else if (r == 1)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_staff"));
+			items.equip(this.new("scripts/items/weapons/wooden_flail"));
 		}
 		else if (r == 2)
 		{
@@ -242,7 +251,7 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 		}
 		else if (r == 3)
 		{
-			items.equip(this.new("scripts/items/weapons/legend_chain"));
+			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 		}
 		else if (r == 4)
 		{
@@ -257,14 +266,14 @@ this.cultist_magister_background <- this.inherit("scripts/skills/backgrounds/cha
 		}
 		else if (r >= 5)
 		{
-		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+		 items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "tattered_sackcloth"],
 			[1, "leather_wraps"],
-			[1, "monk_robe"],
-			[1, "cultist_leather_robe"]
+			[1, "decayed_reinforced_mail_hauberk"],
+			[1, "decayed_coat_of_plates"]
 		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "cultist_hood"],

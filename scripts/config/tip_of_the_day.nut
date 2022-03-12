@@ -196,7 +196,6 @@ gt.Const.TipOfTheDay <- [
 	"The \'Perfect Focus\' perk is a good way to deal a lot of damage quickly, for a price.",
 	"Nimble only protects hitpoints, not armour.",
 	"The \'Ballistics\' skill can greatly increase your chance to hit at far ranges",
-	"Most origins support 27 brothers, however some may require you to unlock more slots from commanders",
 	"At 15 points of intensive training will reward that brother with a free perk point and trait",
 	"Larger groups on the world map move more slowly - regardless of terrain",
 	"Staffs and slings are ideal supporting weapons for those brothers who are not fit for direct combat",

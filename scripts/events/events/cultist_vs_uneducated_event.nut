@@ -172,7 +172,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 						//this.logInfo("1");
 						if(bro.getBackground().getID() != "background.legend_commander_berserker" &&
 						   bro.getBackground().getID() != "background.legend_berserker" &&
-						   bro.getBackground().getID() != "background.legend_donkey")
+						   bro.getBackground().getID() != "background.legend_donkey_background")
 						{
 							//this.logInfo("2");
 							uneducated_candidates.push(bro);

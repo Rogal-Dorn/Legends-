@@ -36,12 +36,12 @@ this.cultist_origin_flock_event <- this.inherit("scripts/events/event", {
 					"cultist_background",
 					"cultist_background",
 					"cultist_background",
-					"cultist_lurker_background",
-					"cultist_lurker_background",
-					"cultist_lurker_background",
-					"cultist_darksoul_background",
-					"cultist_darksoul_background",					
-					"cultist_magister_background"
+					"legend_lurker_background",
+					"legend_lurker_background",
+					"legend_lurker_background",
+					"legend_husk_background",
+					"legend_husk_background",					
+					"legend_magister_background"
 				]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}

@@ -253,7 +253,7 @@ this.legends_steppe_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"hedge_knight_background"
 		]];
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
 			"legend_horse_rouncey",

@@ -173,7 +173,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/human", {
 				}
 				else if (r == 9)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_longsword"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					{

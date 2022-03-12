@@ -225,11 +225,11 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"female_thief_background",
 		]];
 		this.m.StablesLists = [[
-			"legend_donkey"
+			"legend_donkey_background"
 		],[
-			"legend_donkey"
+			"legend_donkey_background"
 		],[
-			"legend_donkey"
+			"legend_donkey_background"
 		]];
 		this.m.Rumors = this.Const.Strings.RumorsMiningSettlement;
 		this.m.ProduceString = "ore";

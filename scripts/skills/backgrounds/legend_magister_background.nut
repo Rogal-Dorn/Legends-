@@ -1,16 +1,16 @@
-this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.cultist_lurker";
-		this.m.Name = "Lurker";
-		this.m.Icon = "ui/backgrounds/background_lurker.png";
-		this.m.BackgroundDescription = "This one is unsettling, even for a cultist. Ever quiet and brooding, but with eyes as keen as that of a vengeful god.";
+		this.m.ID = "background.legend_magister";
+		this.m.Name = "Magister";
+		this.m.Icon = "ui/backgrounds/background_magister.png";
+		this.m.BackgroundDescription = "Magisters are a unqiue breed of insane. While those they control run amock, the Magister coordinates the carnage from up high.";
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
-		this.m.HiringCost = 130;
-		this.m.DailyCost = 20;
+		this.m.HiringCost = 250;
+		this.m.DailyCost = 32;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
@@ -19,12 +19,10 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_nobles",
-			"trait.slack",
 			"trait.night_blind",
 			"trait.lucky",
+			"trait.slack",
 			"trait.athletic",
-			"trait.short_sighted",
-			"trait.bright",
 			"trait.drunkard",
 			"trait.dastard",
 			"trait.gluttonous",
@@ -36,9 +34,6 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.greedy",
 			"trait.craven",
 			"trait.fainthearted"
-		];
-		this.m.ExcludedTalents = [
-			this.Const.Attributes.MeleeSkill
 		];
 		this.m.Titles = [
 			"the Cultist",
@@ -58,64 +53,38 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.Level = this.Math.rand(1, 2);
+		this.m.Level = this.Math.rand(2, 3);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
 		this.m.BackgroundType = this.Const.BackgroundType.Cultist | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
-		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[1];
-		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
-		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
-		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
-		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[1];
-		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[1];
-		this.m.Modifiers.Terrain = [
-				0.0, // ?
-				0.0, //ocean
-				0.00,//plains
-				0.10, //swamp
-				0.0, //hills
-				0.05, //forest
-				0.05, //forest
-				0.05, //forest_leaves
-				0.05, //autumn_forest
-				0.0, //mountains
-				0.0, // ?
-				0.05, //farmland
-				0.0, // snow
-				0.0, // badlands
-				0.0, //highlands
-				0.0, //stepps
-				0.0, //ocean
-				0.0, //desert
-				0.0 //oasis
-			];
+		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
+		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
+		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
+		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.FlailTree,
-				this.Const.Perks.BowTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.FlailTree,				
+				this.Const.Perks.StavesTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FastTree,
-				this.Const.Perks.MartyrTree
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.InspirationalTree
 			],
-			Enemy = [
-				this.Const.Perks.CaravanTree,
-				this.Const.Perks.NoblesTree
-			],
+			Enemy = [],
 			Class = [
 				this.Const.Perks.NinetailsClassTree,
-				this.Const.Perks.ShortbowClassTree
+				this.Const.Perks.HealerClassTree
 			],
-			Magic = []
+			Magic = [
+				this.Const.Perks.PremonitionMagicTree
+			]
 		}
 	}
 
@@ -153,47 +122,59 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 		return true;
 	}
 
-
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/campfire.png",
+				text = "Davkul sees this one as too important to sacrifice, and therefore will never ask you to do so."
+			}
+		)
+		return ret
+	}
 
 	function onBuildDescription()
 	{
-		return "{%name% has always been a quiet sort, preferring to observe rather than act impulsively. | They gravitate to the darkest places possible and have no problem marching through difficult terrain. | Shot in the head by a bolt at close range, %name% was pulled from a shallow grave far in the southern sands by a healer, now they seek reprisal. | Clothed in rags, %name% is suprisingly at ease with their surroundings, ever watchful of potential predators...or prey. | %name% carries a myriad of makeshift arrows, some bone and others metal. However a few shafts and arrowheads seem more otherworldly than the others... | Looking at %name% you can\'t help but feel that you have met one another before. A familial bonds links the two of you togeather as if you have known each other a lifetime before.} They place a finger on their lips and your thoughts evaporate. \"Davkul awaits us all, chosen one\".";
+		return "{Magisters are a conduit of evil in the world, seemingly sucking up all the suffering around them and directing it upon whoever they please. | %name% is wreathed in fabrics that seem to obay a differant set of rules to the rest of the world. | %name% occasionally turns their head as if an unseen force was whispering to them, nodding and whispering back to the unseen force in kind, almost as if affirming their own madness. | %name% whispers into their weapon and nods in agreement with it, almost as if conversing with a long lost friend. | The stranger tracks and nods towards unseen figures like a ringmaster for a ghostly parade. | The look in the eyes of %name% reveals little, aside from the fact that the more you look at them the more you notice the irregularaties, having a smaller second pupil for instance...or a malformed scar of flesh. | They stand with a a crooked posture, as if holding up a heavy and unseen burden.} \"Davkul awaits us all\" %name% parrots. You are not certain, but you feel a second voice repeat those words in unison from deep inside your mind.";
 	}
 
 	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-5
+				-5,
+				5
 			],
 			Bravery = [
-				10,
+				15,
 				20
 			],
 			Stamina = [
-				4,
-				12
+				-4,
+				6
 			],
 			MeleeSkill = [
 				-5,
-				5
+				6
 			],
 			RangedSkill = [
-				10,
-				20
-			],
-			MeleeDefense = [
-				-5,
-				5
-			],
-			RangedDefense = [
 				5,
 				8
 			],
+			MeleeDefense = [
+				-2,
+				5
+			],
+			RangedDefense = [
+				-2,
+				5
+			],
 			Initiative = [
-				8,
-				16
+				-5,
+				5
 			]
 		};
 		return c;
@@ -241,53 +222,42 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.RangedSkill] = 2;
+		talents[this.Const.Attributes.Bravery] = 1;
 		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
-
-		if (this.Const.DLC.Wildmen)
-		{
-			r = this.Math.rand(1, 100);
-
-			if (r <= 50)
-			{
-				items.equip(this.new("scripts/items/weapons/short_bow"));
-				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-			}
-			else if (r <= 80)
-			{
-				items.equip(this.new("scripts/items/weapons/legend_sling"));
-			}
-			else
-			{
-				items.equip(this.new("scripts/items/weapons/wonky_bow"));
-				items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-			}
-		}
-		else
-		{
-			if (this.Math.rand(1, 100) <= 75)
-			{
-				items.equip(this.new("scripts/items/weapons/short_bow"));
-			}
-			else
-			{
-				items.equip(this.new("scripts/items/weapons/wonky_bow"));
-			}
-
-			items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		}
-
-		r = this.Math.rand(0, 4);
+		r = this.Math.rand(0, 8);
 
 		if (r == 0)
 		{
-			items.addToBag(this.new("scripts/items/weapons/knife"));
+			items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 		}
 		else if (r == 1)
 		{
-			items.addToBag(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_reinforced_flail"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_chain"));
+		}
+		else if (r == 4)
+		{
+			if (this.Const.DLC.Wildmen)
+			{
+				items.equip(this.new("scripts/items/weapons/battle_whip"));
+			}
+			else if (!this.Const.DLC.Wildmen)
+			{
+				items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
+			}
+		}
+		else if (r >= 5)
+		{
+		 items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
 		}
 
 		items.equip(this.Const.World.Common.pickArmor([

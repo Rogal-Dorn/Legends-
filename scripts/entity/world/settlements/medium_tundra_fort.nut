@@ -65,7 +65,7 @@ this.medium_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"paladin_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A stone keep securing the surrounding tundra";

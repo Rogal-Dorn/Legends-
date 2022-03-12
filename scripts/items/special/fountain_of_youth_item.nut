@@ -80,10 +80,10 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 		}
 
 		local isDonkey = false;
-		if (_actor.getSkills().hasSkill("injury.legend_donkey")) //if we use it on a donkey
+		if (_actor.getSkills().hasSkill("injury.legend_donkey_background")) //if we use it on a donkey
 		{
 			isDonkey = true;
-			_actor.getSkills().removeByID("injury.legend_donkey"); //remove donkey skill temporarily
+			_actor.getSkills().removeByID("injury.legend_donkey_background"); //remove donkey skill temporarily
 			if (!_actor.getSkills().hasSkillOfType(this.Const.SkillType.Injury)) //if we have no more injuries
 			{
 				_actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));

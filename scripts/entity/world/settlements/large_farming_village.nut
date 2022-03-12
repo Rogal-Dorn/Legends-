@@ -78,8 +78,8 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"legend_inventor_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
-			"legend_donkey",
+			"legend_donkey_background",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A large city thriving on trade and agriculture";

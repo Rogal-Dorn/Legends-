@@ -77,7 +77,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 				"weapons/pike",
 				"weapons/warbrand",
 				"weapons/longsword",
-				"weapons/legend_bastardsword",
+				"weapons/legend_longsword",
 				"weapons/hand_axe",
 				"weapons/fighting_spear",
 				"weapons/legend_glaive",

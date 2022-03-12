@@ -173,7 +173,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		if (r == 0)
 		{
-			_list.push("legend_donkey");
+			_list.push("legend_donkey_background");
 		}
 
 		r = this.Math.rand(0, 4);

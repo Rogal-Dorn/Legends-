@@ -78,7 +78,7 @@ this.medium_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"cripple_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		];

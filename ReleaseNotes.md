@@ -6903,21 +6903,61 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 ## 15.0.2.11b - Bastard Blades
 - Reverted fixes to scenarios due to lingering bugs.
 
-## 15.0.2.12 - Witty Title here
+## 16.0.0.00 - Witty Title here
 
 **Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 Brigand warlords are now immune to disarm (skill issue).
 
+**Barter tree rework**
+Barter array changed from 0.0, 0.005, 0.01, 0.02, 0.03 to 0.0, 0.003, 0.006, 0.01, 0.013. - divisions of 3 allow us to better control later game barter benefits by spacing the increments.
+Seductive trait reduced from +0.5% barter to +0.3% barter
+'Convincing Proposals' perk now gives 5% to caravan escort payout per head (up from 1%), but no longer influences barter. Adds 10 crowns a day per perk in party.
+'Trustworthy Demeanour' perk unchanged.
+'Danger Pay' perk now gives the 'motivated' effect to the buffed brother - increasing their damage by 10%, melee and ranged skill by 5% and granting 15% more resolve for 3 turns. Costs 2 AP to perform (from 4).
+'Paymaster' perk unchanged.
+'Bribe' perk now costs 3 AP to perform (was 4).
+'Greed' perk removed.
+
+**Origins**
+Trader origin reworked.
+```
+Difficulty reduced from 2 to 1.
+Trader is now called a merchant, which is an avatar unique to this origin with special skillsets and lower stats than a normal trader.
+Combat backgrounds cost 25% more to maintain. Every combat background you hire can roll disloyal, greedy, slack, dastard, double tounged or weasel traits randomly on hire.
+Peddlers cost 25% less to recruit, but 25% more upkeep. Any hire that isn't a combat hire gets the 'peaceful' perk.
+Donkeys cost 25% less to buy.
+Cannot hire outlaws.
+Trader origin has new busts for brothers who are peddlers, caravan hands or donkeys.
+Trader origin now no longer has a penalty to renown gain.
+Trader global buy and sell price modifiers have been removed.
+Start with x3 more money than normal (was: x2).
+
+```
+
 **Fixes**
 Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
 Skeleton gladiators should now be unable to flee combat.
 
+**Art**
+Man-at-arms now have new background art.
+
 **Improvements**
 The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
+Preserver from Cabal origin now gets scythe skills like her two counterparts do.
 
 **Events**
-There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity items. This event repeats.
+There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
+Crusader (commander or any other) can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event can repeat if the requirements are met.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
+
+**Backend**
+Note; files below have been moved or outright deleted and replaced. ANY mods using these files WILL crash or cause errors if not updated. We will not be changing vanilla files as they may cause serious conflicts with mods not made for legends.
+"cultist_darksoul_background" changed to "legend_husk_background".
+"cultist_lurker_background" changed to "legend_lurker_background".
+"cultist_magister_background" changed to "legend_magister_background".
+"legend_donkey" changed to "legend_donkey_background".
+"legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
+"legend_bastardsword" renamed to "legend_longsword".

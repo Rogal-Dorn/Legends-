@@ -80,7 +80,7 @@ this.medium_mining_village <- this.inherit("scripts/entity/world/settlement", {
 			"vagabond_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey"
+			"legend_donkey_background"
 		];
 		this.m.UIDescription = "A stretched out settlement nestled into the surrounding mountains";
 		this.m.Description = "A stretched out settlement nestled into the surrounding mountains. The hammering of pickaxes against stone can be heard from a distance.";

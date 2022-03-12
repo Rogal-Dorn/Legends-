@@ -87,7 +87,7 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		];

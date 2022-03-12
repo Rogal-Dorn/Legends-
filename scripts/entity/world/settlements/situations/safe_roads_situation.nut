@@ -52,7 +52,7 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_draftList.push("minstrel_background");
 		_draftList.push("historian_background");
 		_draftList.push("adventurous_noble_background");
-		_draftList.push("legend_donkey");
+		_draftList.push("legend_donkey_background");
 
 		if (_gender)
 		{

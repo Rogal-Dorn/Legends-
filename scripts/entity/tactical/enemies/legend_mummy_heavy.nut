@@ -65,7 +65,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		}
 		else if (r == 3)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_great_khopesh"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_great_khopesh"));
 		}
 		else if (r == 4)
 		{

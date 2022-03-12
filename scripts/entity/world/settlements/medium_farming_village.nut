@@ -82,8 +82,8 @@ this.medium_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
-			"legend_donkey",
+			"legend_donkey_background",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A prospering village surrounded by fertile land";

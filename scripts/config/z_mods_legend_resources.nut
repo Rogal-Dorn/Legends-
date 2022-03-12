@@ -72,7 +72,7 @@ gt.Const.LegendMod.ResourceModifiers <- {
 	ArmorParts = [5, 8, 13, 21, 34, 55],
 	Meds = [8, 13, 21, 34, 55],
 	Stash = [3, 5, 8, 13, 21, 34],
-	Healing = [0.0, 0.10, 0.30. 0.50],
+	Healing = [0.0, 0.10, 0.30, 0.50],
 	Injury = [0.0, 0.05, 0.15, 0.25],
 	Repair = [0.0, 0.10, 0.30, 0.50, 1.0],
 	Salvage = [0.0, 0.10, 0.30, 0.50],

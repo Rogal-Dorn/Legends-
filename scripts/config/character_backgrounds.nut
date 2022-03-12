@@ -347,7 +347,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_crusader_background",
 	"legend_berserker_background",
 	"legend_blacksmith_background",
-	"legend_donkey",
+	"legend_donkey_background",
 	"legend_noble_background",
 	"legend_noble_ranged",
 	"legend_noble_2h",

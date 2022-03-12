@@ -1909,7 +1909,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 		draftList = [
-			"legend_donkey"
+			"legend_donkey_background"
 		];
 
 		while (maxRecruits > current.len())

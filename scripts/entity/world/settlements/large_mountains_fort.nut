@@ -118,7 +118,7 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"

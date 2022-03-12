@@ -85,7 +85,7 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"legend_noble_2h"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		];
