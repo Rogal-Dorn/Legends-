@@ -337,12 +337,12 @@ gt.Const.Tactical.Actor.ZombieBoss <- {
 	]
 };
 gt.Const.Tactical.Actor.GhostKnight <- {
-	XP = 500,
-	ActionPoints = 9,
-	Hitpoints = 275,
+	XP = 2000,
+	ActionPoints = 12,
+	Hitpoints = 375,
 	Bravery = 130,
-	Stamina = 100,
-	MeleeSkill = 90,
+	Stamina = 150,
+	MeleeSkill = 110,
 	RangedSkill = 0,
 	MeleeDefense = 50,
 	RangedDefense = 999,
