@@ -6905,10 +6905,6 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 
 ## 16.0.0.00 - Witty Title here
 
-**Balance**
-Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
-Brigand warlords are now immune to disarm (skill issue).
-
 **Barter tree rework**
 Barter array changed from 0.0, 0.005, 0.01, 0.02, 0.03 to 0.0, 0.003, 0.006, 0.01, 0.013. - divisions of 3 allow us to better control later game barter benefits by spacing the increments.
 Seductive trait reduced from +0.5% barter to +0.3% barter
@@ -6938,13 +6934,27 @@ Start with x3 more money than normal (was: x2).
 **Fixes**
 Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
 Skeleton gladiators should now be unable to flee combat.
+Fixes an issue with a mistype in the obsidian dagger stat sheet.
 
 **Art**
-Man-at-arms now have new background art.
+Man-at-arms now has new background art.
 
-**Improvements**
+**Improvements & Balance**
+Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
+Brigand warlords are now immune to disarm (lmao).
 The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
 Preserver from Cabal origin now gets scythe skills like her two counterparts do.
+Injury heal rates (not healing itself) has been readjusted from 0.0, 0.05, 0.15, 0.25 to 0.0, 0.03, 0.6, 0.10.
+When being healed at a temple, that brother with get a temporary buff which improves their stats as they recover. This effect will disappear after a few days. This is only obtainable at temples.
+Ijirok armour and helmet now improved. Regenerates more health and provides much higher base armour.
+Emperors armour item improved. both have increased armour. Effect remains the same.
+Armor of the mountain has been improved - much higher base armour at the cost of fatigue.
+Skin ghoul armour improved slightly.
+The 'boss' in the black monolith now always spawns with a named crypt cleaver.
+A previously unobtainable item may now drop as loot in the black monolith fight.
+Skeleton gladiators now may spawn in the black monolith fight.
+The Ijirok now has higher regen and is nimble. Has increased health, melee skill but loses ranged defence. Now grants much more xp when slain. 
+Kraken now grants much more xp when slain.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
@@ -6952,6 +6962,8 @@ Crusader (commander or any other) can now talk to a blacksmith, who will offer t
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
+Tweaked a few barter tooltips.
+Tweaked blacksmith background's tooltip.
 
 **Backend**
 Note; files below have been moved or outright deleted and replaced. ANY mods using these files WILL crash or cause errors if not updated. We will not be changing vanilla files as they may cause serious conflicts with mods not made for legends.

@@ -18,9 +18,9 @@ this.legend_mountain_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 10000;
-		this.m.Condition = 300.0;
-		this.m.ConditionMax = 300.0;
-		this.m.StaminaModifier = -24;
+		this.m.Condition = 400.0; //was 300
+		this.m.ConditionMax = 400.0;
+		this.m.StaminaModifier = -38; //was -30
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 
 	}
