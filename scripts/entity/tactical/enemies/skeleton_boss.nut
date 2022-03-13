@@ -46,7 +46,7 @@ this.skeleton_boss <- this.inherit("scripts/entity/tactical/skeleton", {
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/weapons/ancient/crypt_cleaver"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/named_crypt_cleaver"));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
