@@ -6924,11 +6924,30 @@ Combat backgrounds cost 25% more to maintain. Every combat background you hire c
 Peddlers cost 25% less to recruit, but 25% more upkeep. Any hire that isn't a combat hire gets the 'peaceful' perk.
 Donkeys cost 25% less to buy.
 Cannot hire outlaws.
-Trader origin has new busts for brothers who are peddlers, caravan hands or donkeys.
+Trader origin has new busts for the merchant avatar.
 Trader origin now no longer has a penalty to renown gain.
 Trader global buy and sell price modifiers have been removed.
 Start with x3 more money than normal (was: x2).
 
+```
+
+Beastslayers origin reworked.
+```
+Difficulty dropped from 3 to 2.
+Ranger backgrounds gain a new baseplate in battle
+Sell price decreased from 90% to 80%
+Buy price increased from 110% to 120%
+Unique trait: Natural Order
+
+New background unique to this origin; Guild Master
+The guild master is an aging beast slayer who knows how to craft runes, however they cannot make runes without the vala unlocking them first.
+
+Recruiting rules;
+Reduction of cost and upkeep for beastslayer backgrounds by 20%.
+Other ranger backgrounds have their cost and upkeep reduced by 10%.
+Vala costs no upkeep.
+Beasthunters appear more frequently in town rosters.
+Small chance to find Guild Masters in any settlement
 ```
 
 **Fixes**
