@@ -4,8 +4,8 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.beast_hunters";
 		this.m.Name = "Beast Slayers";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your kind make your living by hunting down the many beasts that beset villages on the fringes of civilization. It is dangerous work, but it pays well enough and there is always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people do not trust your kind, so you get 10% worse prices.[/p]";
-		this.m.Difficulty = 3;
+		this.m.Description = "[p=c][img]gfx/ui/events/event_122.png[/img][/p][p]You and your kind make your living by hunting down the many beasts that beset villages on the fringes of civilization. It is dangerous work, but it pays well enough and there is always a bigger beast to slay and more crowns to earn.\n\n[color=#bcad8c]Beast Slayers:[/color] Start with three beast slayers and decent equipment, as well as some beast trophies. Beast Slayers gain a unique trait when fighting beasts.\n[color=#bcad8c]Expert Trackers:[/color] See tracks from further away.\n[color=#bcad8c]Expert Skinners:[/color] Each beast you slay has a 50% chance to drop an additional trophy.\n[color=#bcad8c]Prejudice:[/color] Most people do not trust your kind, get 20% worse prices.[/p]";
+		this.m.Difficulty = 2;
 		this.m.Order = 40;
 		this.m.IsFixedLook = true;
 		this.m.StartingBusinessReputation = 100;
@@ -41,12 +41,16 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		local bros = roster.getAll();
+		
+
 		bros[0].setStartValuesEx([
 			"beast_hunter_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "%name% saved you in the brigand\'s ambush that destroyed your band of slayers. The mercenary does not hang this fact over you, for you have saved %name% many a times yourself. The beast hunter suffers no emotion that does not bid well in this world and that alone makes for a sound slayer.";
 		bros[0].setPlaceInFormation(3);
 		bros[0].addLightInjury();
+		bros[0].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+ 		bros[0].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[0].m.Talents = [];
 		bros[0].setVeteranPerks(2);
 		local talents = bros[0].getTalents();
@@ -60,12 +64,16 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/boar_spear"));
 		items.equip(this.new("scripts/items/tools/throwing_net"));
+		
+
 		bros[1].setStartValuesEx([
 			"beast_hunter_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "A young whelp from the city, %name% got a start in beast slaying by rooting out the warrens of \'vicious rabbits\', as one puts it. You are not sure how true that is, but regardless %name% has demonstrated greats feats of arms on the battlefield more times than you can count.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].addLightInjury();
+		bros[1].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+ 		bros[1].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[1].setVeteranPerks(2);
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
@@ -78,12 +86,16 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/spetum"));
+		
+
 		bros[2].setStartValuesEx([
 			"beast_hunter_background"
 		]);
 		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, the \'slayer\' started the foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is the study and preparation that gives %name% the edge in battle.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].addInjury(this.Const.Injury.Brawl);
+		bros[2].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+ 		bros[2].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[2].setVeteranPerks(2);
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
@@ -181,18 +193,76 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}, null);
 	}
 
+	function onHiredByScenario( bro )
+	{
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+		{
+			bro.improveMood(1.5, "Feels at one with nature");
+ 			bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
+		}
+		else
+		{
+			bro.worsenMood(2.0, "Has heard worrying things about your kind...");
+		}
+	}
+
+	function onUpdateHiringRoster( _roster )
+	{
+		local garbage = [];
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.90) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.90; //1.0 = default
+				bro.getSkills().update();
+			}
+			else if (bro.getBackground().getID() == "background.beast_slayer")
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.80) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.80; //1.0 = default
+ 				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
+				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+				bro.getSkills().update();
+			}
+			else if (bro.getBackground().getID() == "background.legend_guildmaster")
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.00; //1.0 = default
+ 				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
+				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+				bro.getSkills().update();
+			}
+			else if (bro.getBackground().getID() == "background.legend_vala")
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.00; //1.0 = default
+ 				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
+				bro.getSkills().update();
+			}
+			else
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
+				bro.getSkills().update();
+			}
+		}
+	}
+
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BuyPriceMult = 1.1;
-		this.World.Assets.m.SellPriceMult = 0.9;
+		this.World.Assets.m.BuyPriceMult = 1.2;
+		this.World.Assets.m.SellPriceMult = 0.8;
 		this.World.Assets.m.ExtraLootChance = 50;
 		this.World.Assets.m.FootprintVision = 1.5;
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		if (_gender == null) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 10)
 		{
 			return;
@@ -204,6 +274,11 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		if (r == 0)
 		{
 			_list.push("beast_hunter_background");
+		}
+		r = this.Math.rand(0, 35);
+		if (r == 0)
+		{
+			_list.push("legend_guildmaster_background");
 		}
 	}
 
