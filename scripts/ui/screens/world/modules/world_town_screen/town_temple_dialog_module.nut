@@ -113,6 +113,7 @@ this.town_temple_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			Assets = this.m.Parent.queryAssetsInformation()
 		};
 		this.World.Statistics.getFlags().increment("InjuriesTreatedAtTemple");
+		entity.getSkills().add(this.new("scripts/skills/effects_world/legend_well_tended_effect"));
 		this.updateAchievement("PatchedUp", 1, 1);
 		return r;
 	}
