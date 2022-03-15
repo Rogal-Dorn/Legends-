@@ -4,7 +4,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Not a Warrior:[/color] Start with no renown, every non-combat recruit gains the Pacifist perk. Professional soldiers will cost 25% more and be less eager to stick around if things get tough. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Peddlers cost 25% less.";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Not a Warrior:[/color] Start with no renown, every non-combat recruit gains the Peaceful perk. Professional soldiers will cost 25% more and be less eager to stick around if things get tough. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Peddlers cost 25% less.";
 		this.m.Difficulty = 1;
 		this.m.Order = 300;
 		this.m.IsFixedLook = true;
@@ -47,7 +47,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		bros[0].getFlags().set("IsPlayerCharacter", true);
  		bros[0].getSprite("socket").setBrush("bust_base_caravan");
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_trader");
-		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPacifist);
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPeaceful);
 		bro.m.PerkPointsSpent += 1;
 		
 		bros[1].setStartValuesEx([
@@ -277,7 +277,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPacifist, 0, !_background.isBackgroundType(this.Const.BackgroundType.Combat));
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPeaceful, 0, !_background.isBackgroundType(this.Const.BackgroundType.Combat));
 	}
 });
 

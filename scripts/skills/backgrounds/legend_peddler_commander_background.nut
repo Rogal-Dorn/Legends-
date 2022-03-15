@@ -190,12 +190,12 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 				-5
 			],
 			MeleeSkill = [
-				-10,
-				-9
+				-5,
+				0
 			],
 			RangedSkill = [
 				-5,
-				-5
+				0
 			],
 			MeleeDefense = [
 				4,
