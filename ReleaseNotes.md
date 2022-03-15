@@ -6976,6 +6976,7 @@ The Ijirok now has higher regen and is nimble. Has increased health, melee skill
 Kraken now grants much more xp when slain.
 Rachgeist now more powerful, also gives much more xp than before.
 Ifrits now have a tiny chance to drop uncut gems on death.
+Vala now requires 1 uncut gems per rune to craft.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
