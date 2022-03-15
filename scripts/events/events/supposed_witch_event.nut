@@ -297,7 +297,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "Monk",
-			Text = "[img]gfx/ui/events/event_79.png[/img]The holy one, %monk%, sits with the town\'s own friar and talks for a time. When they are done, a nod is given to the torchman who sets the wooden pallets aflame. The woman screams for mercy, but the flames have none for her, slowly working up feet first. It is a horrific sight and only when the smoke is a choking cloud does the dying woman go silent. The fire consumes her entirely as the rest of the town claps and cheers. %monk% states that she was clearly a witch and had to be done away with. You\'re not sure. All you saw was a woman burned alive, but you trust that he knows more than you about the war between the old gods and the evils of sorcery.",
+			Text = "[img]gfx/ui/events/event_79.png[/img]The holy one, %monk%, sits with the town\'s own friar and talks for a time. When they are done, a nod is given to the torchman who sets the wooden pallets aflame. The woman screams for mercy, but the flames have none for her, slowly working up feet first. It is a horrific sight and only when the smoke is a choking cloud does the dying woman go silent. The fire consumes her entirely as the rest of the town claps and cheers. %monk% states that she was clearly a witch and had to be done away with. You\'re not sure. All you saw was a woman burned alive, but you trust that they know more than you about the war between the old gods and the evils of sorcery.",
 			Image = "",
 			List = [],
 			Characters = [],
