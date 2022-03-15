@@ -217,6 +217,11 @@ this.sand_golem <- this.inherit("scripts/entity/tactical/actor", {
 					local loot = this.new("scripts/items/loot/glittering_rock_item");
 					loot.drop(_tile);
 				}
+				else if (this.Math.rand(1, 100) <= 5)
+				{
+					local loot = this.new("scripts/items/trade/uncut_gems_item");
+					loot.drop(_tile);
+				}
 			}
 
 			this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
