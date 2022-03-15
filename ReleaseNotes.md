@@ -6969,6 +6969,7 @@ Ijirok armour and helmet now improved. Regenerates more health and provides much
 Emperors armour item improved. both have increased armour. Effect remains the same.
 Armor of the mountain has been improved - much higher base armour at the cost of fatigue.
 Skin ghoul armour improved slightly.
+Longsword now costs 8 stamina to equip, greatsword costs 10.
 The 'boss' in the black monolith now always spawns with a named crypt cleaver.
 A previously unobtainable item may now drop as loot in the black monolith fight.
 Skeleton gladiators now may spawn in the black monolith fight.
@@ -6977,6 +6978,8 @@ Kraken now grants much more xp when slain.
 Rachgeist now more powerful, also gives much more xp than before.
 Ifrits now have a tiny chance to drop uncut gems on death.
 Vala now requires 1 uncut gems per rune to craft.
+Crusader commander no longer starts with a crusader sword.
+Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.

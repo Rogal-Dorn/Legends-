@@ -19,7 +19,7 @@ this.legend_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Value = 2000;
 		this.m.Condition = 60.0;
 		this.m.ConditionMax = 60.0;
-		this.m.StaminaModifier = -10;
+		this.m.StaminaModifier = -8;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 75;
 		this.m.ArmorDamageMult = 0.8;
