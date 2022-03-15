@@ -6975,6 +6975,7 @@ Skeleton gladiators now may spawn in the black monolith fight.
 The Ijirok now has higher regen and is nimble. Has increased health, melee skill but loses ranged defence. Now grants much more xp when slain. 
 Kraken now grants much more xp when slain.
 Rachgeist now more powerful, also gives much more xp than before.
+Ifrits now have a tiny chance to drop uncut gems on death.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
