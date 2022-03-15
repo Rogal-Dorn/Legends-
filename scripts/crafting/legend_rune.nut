@@ -14,13 +14,13 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		this.m.PreviewCraftable = token;
 		this.m.Cost = 1200;
 		this.m.Enchanter = true;
-		// local ingredients = [
-		// 	{
-		// 		Script = "scripts/items/trade/uncut_gems_item",
-		// 		Num = 1
-		// 	}
-		// ];
-		// this.init(ingredients);
+		local ingredients = [
+			{
+				Script = "scripts/items/trade/uncut_gems_item",
+				Num = 1
+			}
+		];
+		this.init(ingredients);
 	}
 
 	function isUpgraded()
