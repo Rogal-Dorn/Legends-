@@ -6983,7 +6983,7 @@ Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increase
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
-Crusader (commander or any other) can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event can repeat if the requirements are met.
+Crusader commander can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event does not repeat.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
