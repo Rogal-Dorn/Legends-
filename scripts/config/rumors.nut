@@ -43,7 +43,7 @@ gt.Const.Strings.RumorsContract <- [
 	"Some guy from %settlement% was here just the other day, wanted to hire strong lads for some problem they have over there. Don\'t think many went %direction% with him, though.",
 	"Mercenaries, eh? We got a few of those these days. Just some days ago a bunch that called themselves %randommercenarycompany% travelled through. On their way %direction%  to %settlement%, they said, good coin to be made there.",
 	"If it\'s work you\'re looking for, they\'re taking crowns in to the %direction% over at %settlement% to hire strong men.",
-	"Heard that some fancy fat merchant or so from %settlement% is looking to hire armed guards the other day. Well, I ain\'t going %direction% to die to the for him, no thanks. Have me my house and wife right here."
+	"Heard that some fancy fat merchant or so from %settlement% is looking to hire armed guards the other day. Well, I ain\'t going %direction% to die to there for him, no thanks. Have me house and wife right here."
 ];
 gt.Const.Strings.RumorsGeneral <- [
 	"If you\'re looking to fetch a good price for your trading goods, my friend, you should go to one of the large cities or castles and not some run-down poor village at world\'s ass.",
