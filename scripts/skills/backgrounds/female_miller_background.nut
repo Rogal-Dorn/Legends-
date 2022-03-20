@@ -33,7 +33,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Female;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Female | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
