@@ -11,7 +11,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_net";
 		this.m.Name = "Throw Net";
-		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can pick up your net if you miss.";
+		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively.";
 		this.m.Icon = "skills/active_73.png";
 		this.m.IconDisabled = "skills/active_73_sw.png";
 		this.m.Overlay = "active_73";
@@ -59,7 +59,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Hit chance may be inaccurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
+				text = "Some targets can never be caught or ensnared"
 			}
 		]);
 		return ret;

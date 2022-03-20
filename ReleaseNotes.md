@@ -6993,6 +6993,7 @@ A strange old man may try to sell you something. Repeats.
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
 Tweaked a few barter tooltips.
+Removed the part on 'throw net' about throwing nets requiring Rskill to connect with their target.
 Tweaked blacksmith background's tooltip.
 
 **Backend**
