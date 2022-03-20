@@ -6970,6 +6970,7 @@ Emperors armour item improved. both have increased armour. Effect remains the sa
 Armor of the mountain has been improved - much higher base armour at the cost of fatigue.
 Skin ghoul armour improved slightly.
 Longsword now costs 8 stamina to equip, greatsword costs 10.
+'Violent decomposition' perk damage threshold raised from 35 to 55 base damage.
 The 'boss' in the black monolith now always spawns with a named crypt cleaver.
 A previously unobtainable item may now drop as loot in the black monolith fight.
 Skeleton gladiators now may spawn in the black monolith fight.
@@ -6984,6 +6985,7 @@ Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increase
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
 Crusader commander can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event does not repeat.
+A strange old man may try to sell you something. Repeats.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
