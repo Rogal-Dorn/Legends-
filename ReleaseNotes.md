@@ -6930,7 +6930,6 @@ Trader global buy and sell price modifiers have been removed.
 Start with x3 more money than normal (was: x2).
 
 ```
-
 Beastslayers origin reworked.
 ```
 Difficulty dropped from 3 to 2.
@@ -6955,6 +6954,7 @@ Tutorial scenario starter brothers now get a perk point every 2 levels as they s
 Skeleton gladiators should now be unable to flee combat.
 Fixes an issue with a mistype in the obsidian dagger stat sheet.
 Natural and frail traits are now mutually exclusive.
+Assassin from bastard vs. assassin event can no longer be given the 'loyal' trait.
 
 **Art**
 Man-at-arms now has new background art.
@@ -6962,6 +6962,7 @@ Man-at-arms now has new background art.
 **Improvements & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 Brigand warlords are now immune to disarm (lmao).
+Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
 The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
 Preserver from Cabal origin now gets scythe skills like her two counterparts do.
 Injury heal rates (not healing itself) has been readjusted from 0.0, 0.05, 0.15, 0.25 to 0.0, 0.03, 0.6, 0.10.
