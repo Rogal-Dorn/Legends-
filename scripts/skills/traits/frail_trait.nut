@@ -18,6 +18,7 @@ this.frail_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.strong",
 			"trait.brawler",
 			"trait.brute",
+			"trait.natural",
 			"trait.iron_jaw",
 			"trait.natural",
 			"trait.firm",
