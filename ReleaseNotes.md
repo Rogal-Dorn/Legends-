@@ -6954,6 +6954,7 @@ Small chance to find Guild Masters in any settlement
 Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
 Skeleton gladiators should now be unable to flee combat.
 Fixes an issue with a mistype in the obsidian dagger stat sheet.
+Natural and frail traits are now mutually exclusive.
 
 **Art**
 Man-at-arms now has new background art.
