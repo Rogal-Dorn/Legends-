@@ -57,7 +57,7 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The next attack will push the enemy back if it deals damage"
+				text = "The next attack will push the enemy back and baffle them if it connects"
 			}
 		];
 

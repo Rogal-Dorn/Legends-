@@ -6955,6 +6955,7 @@ Skeleton gladiators should now be unable to flee combat.
 Fixes an issue with a mistype in the obsidian dagger stat sheet.
 Natural and frail traits are now mutually exclusive.
 Assassin from bastard vs. assassin event can no longer be given the 'loyal' trait.
+A few minor fixes to windup and smackdown.
 
 **Art**
 Man-at-arms now has new background art.
