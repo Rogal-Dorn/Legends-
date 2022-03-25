@@ -10,7 +10,8 @@ this.legend_fear_of_dark_trait <- this.inherit("scripts/skills/traits/character_
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",
-			"trait.night_owl"
+			"trait.night_owl",
+			"trait.legend_fear_of_light"
 		];
 	}
 
