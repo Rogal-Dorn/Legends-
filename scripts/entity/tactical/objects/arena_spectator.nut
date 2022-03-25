@@ -71,7 +71,7 @@ this.arena_spectator <- this.inherit("scripts/entity/tactical/entity", {
 
 
 		local body = this.addSprite("body");
-		body.setBrush(heads[this.Math.rand(0, heads.len() - 1)]);
+		body.setBrush(bodies[this.Math.rand(0, bodies.len() - 1)]);
 		body.varyColor(0.05, 0.05, 0.05);
 		body.varySaturation(0.1);
 		local armor = this.addSprite("armor");
