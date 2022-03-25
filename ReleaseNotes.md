@@ -6959,6 +6959,7 @@ A few minor fixes to windup and smackdown.
 
 **Art**
 Man-at-arms now has new background art.
+Two new pieces of art for traits; Heliophobia and Nyctophobia.
 
 **Improvements & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
@@ -7006,3 +7007,7 @@ Note; files below have been moved or outright deleted and replaced. ANY mods usi
 "legend_donkey" changed to "legend_donkey_background".
 "legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
 "legend_bastardsword" renamed to "legend_longsword".
+Added two new traits; legend_fear_of_dark_trait & legend_fear_of_light_trait.
+
+**MISC.**
+Mercenaries can now be afraid of the light or the dark.
