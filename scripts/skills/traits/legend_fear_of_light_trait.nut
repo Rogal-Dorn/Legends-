@@ -9,7 +9,8 @@ this.legend_fear_of_light_trait <- this.inherit("scripts/skills/traits/character
 		this.m.Description = "Look I ain\'t feelin\' so good — can we wait untul the sun goes down? Please?";
 		this.m.Excluded = [
 			"trait.fearless",
-			"trait.brave"
+			"trait.brave",
+			"trait.legend_fear_of_dark"
 		];
 	}
 
