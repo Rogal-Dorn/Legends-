@@ -6930,6 +6930,14 @@ Trader global buy and sell price modifiers have been removed.
 Start with x3 more money than normal (was: x2).
 
 ```
+Manhunters origin tweaked.
+```
+Whip slave skill now costs 2 AP (from 4), fatigue cost reduced to 10 (from 15), maxed range increased to 4 (from 3).
+Whipped effect increased in duration to 3 turns (from 2). Base mskill upped to 12 (from 9), ranged skill to 14 (from 9), Melee/ranged defence increased to 5 (from 0), initiative unchanged (9).
+Resolve increase removed from whipped effect, now removes 5 resolve base and decreases resolve further based on slave level for every whip.
+Slaves are 50% cheaper to hire from this origin.
+
+```
 Beastslayers origin reworked.
 ```
 Difficulty dropped from 3 to 2.
