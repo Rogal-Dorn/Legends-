@@ -4,7 +4,7 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 	{
 		this.m.ID = "scenario.manhunters";
 		this.m.Name = "Manhunters";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_172.png[/img][/p][p]Constant conflict between city states and nomads makes for good business. The bulk of your outfit are captives, forced to fight to earn their freedom, and their ranks grow after each battle.\n\n[color=#bcad8c]Army of Captives:[/color] Start with two manhunters and four indebted. Take up to 16 men into battle at once. Having equal or fewer indebted than non-indebted will make your men dissatisfied.\n[color=#bcad8c]Overseers:[/color] All non-indebted can whip indebted in combat to reset their morale and buff their stats.\n[color=#bcad8c]Captives:[/color] Indebted earn 10% more experience, are capped at level 7, and will die if struck down.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_172.png[/img][/p][p]Constant conflict between city states and nomads makes for good business. The bulk of your outfit are captives, forced to fight to earn their freedom, and their ranks grow after each battle.\n\n[color=#bcad8c]Army of Captives:[/color] Start with two manhunters and four indebted. Take up to 16 men into battle at once. Having equal or fewer indebted than non-indebted will make your men dissatisfied.\n[color=#bcad8c]Overseers:[/color] All non-indebted can whip indebted in combat to reset their morale and buff their stats.\n[color=#bcad8c]Captives:[/color] Indebted earn 10% more experience, are capped at level 7, and will die if struck down. However, they are 50% cheaper to buy in towns.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 89;
 		this.m.IsFixedLook = true;
@@ -208,6 +208,27 @@ this.manhunters_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 			], this.Const.Music.CrossFadeTime);
 			this.World.Events.fire("event.manhunters_scenario_intro");
 		}, null);
+	}
+
+	function onUpdateHiringRoster( _roster ) //hiring
+	{
+		local bros = _roster.getAll();
+
+		foreach( i, bro in bros )
+		{
+			if (bro.getBackground().getID() == "slave_background")
+			{				
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.5) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default (costs nothing)
+				bro.getSkills().update();
+			}
+			else
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0)
+				bro.getBaseProperties().DailyWageMult *= 1.0;
+				bro.getSkills().update();
+			}
+		}
 	}
 
 	function onInit()
