@@ -302,11 +302,7 @@ gt.Const.CharacterTraits <- [
 	],
 	[
 		"trait.legend_fear_of_dark",
-		"scripts/skills/traits/legend_fear_of_dark_trait"
-	],
-	[
-		"trait.legend_fear_of_light",
-		"scripts/skills/traits/legend_fear_of_light_trait"
+		"scripts/skills/traits/legend_fear_dark_trait"
 	]
 ];
 
