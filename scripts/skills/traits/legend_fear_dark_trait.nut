@@ -1,17 +1,16 @@
-this.legend_fear_of_dark_trait <- this.inherit("scripts/skills/traits/character_trait", {
+this.legend_fear_dark_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	m = {},
 	function create()
 	{
 		this.character_trait.create();
-		this.m.ID = "trait.legend_fear_of_dark";
+		this.m.ID = "trait.legend_fear_dark";
 		this.m.Name = "Nyctophobia";
-		this.m.Icon = "ui/traits/trait_fearofnight.png";
-		this.m.Description = "Did those shadows just move? Are you sure?";
+		this.m.Icon = "ui/traits/trait_fearofdark.png";
+		this.m.Description = "A dislike of the dark can be a childish fear for some, but with what\'s been running around in the wilds lately, maybe it isn\'t as odd anymore...";
 		this.m.Excluded = [
 			"trait.fearless",
 			"trait.brave",
-			"trait.night_owl",
-			"trait.legend_fear_of_light"
+			"trait.night_owl"
 		];
 	}
 
@@ -31,14 +30,20 @@ this.legend_fear_of_dark_trait <- this.inherit("scripts/skills/traits/character_
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/vision.png",
+				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10[/color] Resolve during Nighttime"
 			},
 			{
 				id = 10,
 				type = "text",
-				icon = "ui/icons/vision.png",
+				icon = "ui/icons/bravery.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-20[/color] Resolve when attacked by mental effects during Nighttime"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve during daytime"
 			}
 		];
 	}
@@ -51,6 +56,11 @@ this.legend_fear_of_dark_trait <- this.inherit("scripts/skills/traits/character_
 			this.character_background.onUpdate(_properties);
 			_properties.MoraleCheckBravery[1] -= 20;
 		}
+		else
+		{
+			_properties.Bravery += 5;
+		}
+
 	}
 
 });
