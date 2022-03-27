@@ -6996,6 +6996,7 @@ Ifrits now have a tiny chance to drop uncut gems on death.
 Vala now requires 1 uncut gems per rune to craft.
 Crusader commander no longer starts with a crusader sword.
 Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
+Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers or qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
