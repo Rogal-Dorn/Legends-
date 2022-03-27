@@ -5,7 +5,7 @@ this.legend_longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_longsword";
 		this.m.Name = "Longsword";
-		this.m.Description = "A long two-handed blade that makes for a versatile weapon.";
+		this.m.Description = "A long two-handed blade that makes for a versatile weapon, this longsword is the smaller and lighter of it\'s town cousins but is much more versatile.";
 		this.m.IconLarge = "weapons/melee/longsword_01.png";
 		this.m.Icon = "weapons/melee/longsword_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
