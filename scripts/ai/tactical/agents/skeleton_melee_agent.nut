@@ -26,6 +26,7 @@ this.skeleton_melee_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_reap"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_split"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_decapitate"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_gash")); //mainly for mummies
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_shieldwall"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_knock_back"));

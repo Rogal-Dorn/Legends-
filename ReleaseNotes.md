@@ -6965,6 +6965,7 @@ Natural and frail traits are now mutually exclusive.
 Assassin from bastard vs. assassin event can no longer be given the 'loyal' trait.
 A few minor fixes to windup and smackdown.
 Arena spectators now all have bodies.
+Mummies can now use the 'gash' skill when equipped with a kopis.
 
 **Art**
 Man-at-arms now has new background art.
