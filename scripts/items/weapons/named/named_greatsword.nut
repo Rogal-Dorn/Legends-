@@ -10,7 +10,7 @@ this.named_greatsword <- this.inherit("scripts/items/weapons/named/named_weapon"
 		this.updateVariant();
 		this.m.ID = "weapon.named_greatsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
-		this.m.Description = "This greatsword is a true masterpiece, with a blade that is both flexible yet extremely durable."; //Let's get this working
+		this.m.Description = "This zweihander is a true masterpiece, with a blade that is both flexible yet extremely durable."; 
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;

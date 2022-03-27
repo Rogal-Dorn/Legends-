@@ -7010,6 +7010,7 @@ Tweaked a few barter tooltips.
 Removed the part on 'throw net' about throwing nets requiring Rskill to connect with their target.
 Tweaked blacksmith background's tooltip.
 Deathwish trait now has a stipulation regarding the fearsome perk.
+Clarification given to zweihander, greatsword and longsword items in their descriptions to better describe which of them they are. This has also been applied to their named counterparts for better identification.
 
 **Backend**
 Note; files below have been moved or outright deleted and replaced. ANY mods using these files WILL crash or cause errors if not updated. We will not be changing vanilla files as they may cause serious conflicts with mods not made for legends.

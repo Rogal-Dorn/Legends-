@@ -7,7 +7,7 @@ this.named_longsword <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.named_weapon.create();
 		this.m.ID = "weapon.named_longsword";
 		this.m.NameList = this.Const.Strings.GreatswordNames;
-		this.m.Description = "This blade shows great craftmanship. It is of great length and strength, holding a great balance in the hands."; //Let's get this working
+		this.m.Description = "This greatsword shows great craftmanship. It is of great length and strength, holding a great balance in the hands.";
 		this.m.IconLarge = "weapons/melee/longsword_01_named.png";
 		this.m.Icon = "weapons/melee/longsword_01_named_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
