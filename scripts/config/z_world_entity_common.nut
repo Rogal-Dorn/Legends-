@@ -257,7 +257,7 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 					unit.Strength = this.Math.round(unit.Strength * 1.35);
 					unit.Variant = this.Math.rand(1, 255);
 
-					if ("NameList" in unit.Type)
+					if ("NameList" in unit)
 					{
 						unit.Name = this.generateName(unit.Type.NameList) + (unit.Type.TitleList != null ? " " + unit.Type.TitleList[this.Math.rand(0, unit.Type.TitleList.len() - 1)] : "");
 					}
