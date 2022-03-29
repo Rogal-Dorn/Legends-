@@ -23,6 +23,9 @@ this.legend_fan_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;
 		this.m.StaminaModifier = -14;
+		this.m.RangeMin = 1;
+		this.m.RangeMax = 2;
+		this.m.RangeIdeal = 2;
 		this.m.RegularDamage = 60;
 		this.m.RegularDamageMax = 95;
 		this.m.ArmorDamageMult = 1.1;
