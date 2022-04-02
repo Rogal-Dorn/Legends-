@@ -78,7 +78,7 @@ this.goblin_ambusher <- this.inherit("scripts/entity/tactical/goblin", {
 		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head) == null)
 		{
 			local item = this.Const.World.Common.pickHelmet([
-				[1, "greenskins/goblin_skirmisher_helmet"]
+				[1, "legend_goblin_skirmisher_helmet"]
 			])
 			this.m.Items.equip(item);
 		}

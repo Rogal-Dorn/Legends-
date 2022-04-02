@@ -6966,6 +6966,7 @@ Assassin from bastard vs. assassin event can no longer be given the 'loyal' trai
 A few minor fixes to windup and smackdown.
 Arena spectators now all have bodies.
 Mummies can now use the 'gash' skill when equipped with a kopis.
+Goblins should now not drop invisible helmets on death.
 
 **Art**
 Man-at-arms now has new background art.

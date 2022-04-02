@@ -342,8 +342,8 @@ this.goblin_wolfrider <- this.inherit("scripts/entity/tactical/goblin", {
 
 
 		local item = this.Const.World.Common.pickHelmet([
-			[75, "greenskins/goblin_light_helmet"],
-			[25, "greenskins/goblin_heavy_helmet"]
+			[75, "legend_goblin_light_helmet"],
+			[25, "legend_goblin_heavy_helmet"]
 		])
 		if (item != null)
 		{
