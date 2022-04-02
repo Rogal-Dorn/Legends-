@@ -73,6 +73,9 @@ this.starting_scenario <- {
 
 		case 3:
 			return "difficulty_hard";
+		
+		case 4:
+			return "difficulty_legend";
 		}
 
 		return "difficulty_unknown";

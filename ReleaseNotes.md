@@ -7029,6 +7029,7 @@ Note; files below have been moved or outright deleted and replaced. ANY mods usi
 "legend_donkey" changed to "legend_donkey_background".
 "legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
 "legend_bastardsword" renamed to "legend_longsword".
+Added an additional difficulty step 'legendary' to scenarios (case = 4).
 
 **MISC.**
 Mercenaries can now be afraid of the dark.
