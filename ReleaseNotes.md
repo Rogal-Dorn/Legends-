@@ -6968,9 +6968,15 @@ Arena spectators now all have bodies.
 Mummies can now use the 'gash' skill when equipped with a kopis.
 Goblins should now not drop invisible helmets on death.
 
+**New backgrounds and traits**
+Added new trait; legend_fear_dark_trait.
+Added new background: surgeon.
+
+
 **Art**
 Man-at-arms now has new background art.
-Two new pieces of art for traits; Heliophobia and Nyctophobia.
+New background art for surgeon
+New trait art; Nyctophobia.
 
 **Improvements & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
@@ -6998,12 +7004,13 @@ Ifrits now have a tiny chance to drop uncut gems on death.
 Vala now requires 1 uncut gems per rune to craft.
 Crusader commander no longer starts with a crusader sword.
 Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
-Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers or qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
+Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers, qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
 Crusader commander can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event does not repeat.
-A strange old man may try to sell you something. Repeats.
+A strange old man may try to sell you something. Does not repeat.
+Holy war crusader replaced by a new background: Surgeon.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
@@ -7021,7 +7028,6 @@ Note; files below have been moved or outright deleted and replaced. ANY mods usi
 "legend_donkey" changed to "legend_donkey_background".
 "legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
 "legend_bastardsword" renamed to "legend_longsword".
-Added new trait; legend_fear_dark_trait
 
 **MISC.**
 Mercenaries can now be afraid of the dark.
