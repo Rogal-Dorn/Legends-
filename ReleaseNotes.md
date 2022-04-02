@@ -6990,6 +6990,7 @@ Ijirok armour and helmet now improved. Regenerates more health and provides much
 Emperors armour item improved. both have increased armour. Effect remains the same.
 Armor of the mountain has been improved - much higher base armour at the cost of fatigue.
 Skin ghoul armour improved slightly.
+Greenwood schrat now has a higher chance to drop ancient greenwood.
 Miller (and female miller) background now count as an Outlaw.
 'Lacerate' cultist perk now triggers regardless of circumstances.
 Longsword now costs 8 stamina to equip, greatsword costs 10.
