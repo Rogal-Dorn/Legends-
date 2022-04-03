@@ -14,7 +14,6 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Excluded = [ //can roll; brute, clubfooted, clumsy, fragile, huge, hesitant, strong, sure footing, survivor, tiny, tough, gluttonous, lucky, shortsighted, aggressive, martial, predictable, lumbering.
 			"trait.ailing", //only including naturally occouring or obtainable traits.
 			"trait.asthmatic",
-			"trait.asthmatic",
 			"trait.bleeder",
 			"trait.bloodthirsty",
 			"trait.brave",
