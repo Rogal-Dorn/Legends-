@@ -6930,6 +6930,15 @@ Trader global buy and sell price modifiers have been removed.
 Start with x3 more money than normal (was: x2).
 
 ```
+Lone wolf origin reworked.
+```
+No longer starts with a squire. Lone wolf starts alone again.
+Lone wolf now uses its own template, not that of the hedge knight. Has a unique skill tree.
+Lone wolf cannot recruit normally, they must find like minded friends across the world. These friends cost no upkeep.
+Starts at professional renown, capped at 6 brothers total. Scaling is two-thirds higher than normal.
+
+```
+
 Manhunters origin tweaked.
 ```
 Whip slave skill now costs 2 AP (from 4), fatigue cost reduced to 10 (from 15), maxed range increased to 4 (from 3).
@@ -6975,8 +6984,9 @@ Added new background: surgeon.
 
 **Art**
 Man-at-arms now has new background art.
-New background art for surgeon
+New background art for surgeon.
 New trait art; Nyctophobia.
+Now background art for lone wolf, made by Gilded Wraith.
 
 **Improvements & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
