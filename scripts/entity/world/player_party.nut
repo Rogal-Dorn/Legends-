@@ -36,6 +36,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			broScale = 0.66;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			broScale = 1.66;
+		}
+
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
 
