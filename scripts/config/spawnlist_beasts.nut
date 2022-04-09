@@ -102,7 +102,7 @@ gt.Const.World.Spawn.Lindwurm <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_lindwurm_01",
-	MaxR = 800,
+	MaxR = 600, //WAS 800
 	Troops = [
 		{
 			Weight = 100,
