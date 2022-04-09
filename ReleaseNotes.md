@@ -7045,3 +7045,4 @@ Added an additional difficulty step 'legendary' to scenarios (case = 4).
 
 **MISC.**
 Mercenaries can now be afraid of the dark.
+Taverns will now have a variety of random names, instead of just "Tavern"
