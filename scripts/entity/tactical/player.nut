@@ -3063,7 +3063,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			if (this.m.VeteranPerks == 0)
 			{
-				this.m.VeteranPerks = 5;
+				this.m.VeteranPerks = 4;
 			}
 		}
 

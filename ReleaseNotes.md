@@ -6979,14 +6979,14 @@ Goblins should now not drop invisible helmets on death.
 
 **New backgrounds and traits**
 Added new trait; legend_fear_dark_trait.
-Added new background: surgeon.
-
+Added new background: Surgeon.
+Added new background: Lone Wolf.
 
 **Art**
 Man-at-arms now has new background art.
 New background art for surgeon.
-New trait art; Nyctophobia.
-Now background art for lone wolf, made by Gilded Wraith.
+New trait art for Nyctophobia.
+New background art for lone wolf, made by Gilded Wraith.
 
 **Improvements & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
@@ -7017,6 +7017,7 @@ Crusader commander no longer starts with a crusader sword.
 Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
 Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers, qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
 Lindwurm packs now have a lower score threshold - meaning you should see fewer impossible fights against them.
+Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
