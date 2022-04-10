@@ -6977,6 +6977,7 @@ Arena spectators now all have bodies.
 Mummies can now use the 'gash' skill when equipped with a kopis.
 Goblins should now not drop invisible helmets on death.
 Fixes an exploit that can be used in the sunken library fight (Thanks Necro).
+Player characters can now never roll greedy, loyal or disloyal (as all these traits are pointless).
 
 **New backgrounds and traits**
 Added new trait: legend_fear_dark_trait.
