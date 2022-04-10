@@ -422,5 +422,13 @@ this.flying_skull <- this.inherit("scripts/entity/tactical/actor", {
 		this.actor.onActorKilled( _actor, _tile, _skill );
 	}
 
+	function onAfterDeath( _tile ) //Fixes suicide exploit
+	{
+		if (this.m.HasKilledPlayer && this.Tactical.Entities.getHostilesNum() != 0)
+		{
+			this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerDestroyed);
+		}
+	}
+
 });
 
