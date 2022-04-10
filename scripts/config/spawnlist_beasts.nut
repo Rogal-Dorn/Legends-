@@ -156,6 +156,16 @@ gt.Const.World.Spawn.UnholdFrost <-
 					Cost = 60
 				}
 			]
+		},
+		{
+			Weight = 5,
+			MinR = 1.0 * 4000,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+					Cost = 200
+				}
+			]
 		}
 	]
 }
