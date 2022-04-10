@@ -6976,6 +6976,7 @@ A few minor fixes to windup and smackdown.
 Arena spectators now all have bodies.
 Mummies can now use the 'gash' skill when equipped with a kopis.
 Goblins should now not drop invisible helmets on death.
+Fixes an exploit that can be used in the sunken library fight (Thanks Necro).
 
 **New backgrounds and traits**
 Added new trait: legend_fear_dark_trait.
@@ -6988,7 +6989,7 @@ New background art for surgeon.
 New trait art for Nyctophobia.
 New background art for lone wolf, made by Gilded Wraith.
 
-**Improvements & Balance**
+**Improvements, Tweaks & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 Brigand warlords are now immune to disarm (lmao).
 Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
