@@ -274,6 +274,10 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		{
 			items.equip(this.new("scripts/items/weapons/warbrand"));
 		}
+		else if (r == 5)
+		{
+			items.equip(this.new("scripts/items/weapons/goedendag"));
+		}
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "mail_hauberk"],
