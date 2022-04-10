@@ -7020,6 +7020,7 @@ Southern assassins can now spawn as champions - they will spawn with named shams
 Lindwurm packs now have a lower score threshold - meaning you should see fewer impossible fights against them.
 Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
 Hexen gain the 'wither' ability. Hexen leaders gain 'wither' and 'sleep'.
+Added a slim chance for rock unholds to spawn in frost unhold groups.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
