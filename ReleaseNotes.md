@@ -7073,3 +7073,6 @@ Made 'legend_fleshless_trait' and replaced 'legend_fleshless' which was an injur
 **MISC.**
 Mercenaries can now be afraid of the dark.
 Taverns will now have a variety of random names, instead of just "Tavern".
+
+==Uber Changes==
+- Removed Pathfinder from Ancient Dead.
