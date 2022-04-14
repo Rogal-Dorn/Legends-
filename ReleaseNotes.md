@@ -7076,3 +7076,4 @@ Taverns will now have a variety of random names, instead of just "Tavern".
 
 ==Uber Changes==
 - Removed Pathfinder from Ancient Dead.
+- Improved Slingshot tooltip to mention it can target heads and daze enemies.
