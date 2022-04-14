@@ -6989,6 +6989,7 @@ Man-at-arms now has new background art.
 New background art for surgeon.
 New trait art for Nyctophobia.
 New background art for lone wolf, made by Gilded Wraith.
+New background art made for berserker.
 
 **Improvements, Tweaks & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
