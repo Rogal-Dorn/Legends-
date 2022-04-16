@@ -2,7 +2,7 @@ local modID = "mod_mediumArmorRework";
 
 ::mods_registerMod(modID, 1.4, "Medium Armor Rework (MAR) 1.4.8");
 
-::mods_queue(modID, "mod_legends,mod_MSU", function ()
+::mods_queue(modID, "mod_legends, mod_msu", function ()
 {
 	local gt = this.getroottable();	
 

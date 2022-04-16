@@ -5359,7 +5359,7 @@ Fixes all the perks allowing for passive production at a tent (e.g. hunter build
 Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
 
-## 15.0.1.16 
+## 15.0.1.16
 Died from too many patches
 
 ## 15.0.1.17 (Did someone say FIXES?!)
@@ -5803,7 +5803,7 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Made minor edits to nomad spawns overall (should see fewer clusters of specials and leaders now)
 
 **For Modders**
-- MSU was updated and the repo can be accessed here with documentation: https://github.com/Battle-Brothers-Legends/mod_MSU
+- MSU was updated and the repo can be accessed here with documentation: https://github.com/MSUTeam/mod_MSU
 
 ## 15.0.1.20i
 - Fixes critical crash when loading saved games.

@@ -1,5 +1,5 @@
 ::mods_registerMod("mod_legends", 15, "Legends Mod");
-::mods_queue(null, "mod_MSU", function()
+::mods_queue(null, "mod_msu", function()
 {
 	::mods_registerJS("legends_assets.js");
 	local gt = this.getroottable();
