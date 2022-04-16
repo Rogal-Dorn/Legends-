@@ -46,6 +46,21 @@ this.starting_scenario <- {
 		return this.m.Difficulty;
 	}
 
+	function getOrder()
+	{
+		return this.m.Order;
+	}
+
+	function isFixedLook()
+	{
+		return this.m.IsFixedLook;
+	}
+
+	function isDroppedAsLoot( _item )
+	{
+		return false;
+	}
+
 	function getDifficultyForUI()
 	{
 		switch(this.m.Difficulty)
@@ -119,6 +134,18 @@ this.starting_scenario <- {
 	}
 
 	function onBuildPerkTree( _background )
+	{
+	}
+
+	function onHired( _bro )
+	{
+	}
+
+	function onActorKilled( _actor, _killer, _combatID )
+	{
+	}
+
+	function onBattleWon( _combatLoot )
 	{
 	}
 
