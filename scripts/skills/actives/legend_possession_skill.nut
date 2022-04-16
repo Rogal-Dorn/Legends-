@@ -94,6 +94,7 @@ this.legend_possession_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local possessed = this.new("scripts/skills/effects/legend_possession_effect");
+		local possessed = this.new("scripts/skills/traits/loyal_trait"); //removes charm and makes immune to charm.
 		target.getSkills().add(possessed);
 		target.setActionPoints(target.getCurrentProperties().ActionPoints);
 		// local possessing = this.new("scripts/skills/effects/possessing_undead_effect");

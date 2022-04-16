@@ -8,7 +8,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 		this.m.ID = "trait.legend_rotten_flesh";
 		this.m.Name = "Rotting Flesh";
 		this.m.Description = "With flesh is pale and gaunt, this one rots away as merely a souless animal.";
-		this.m.Icon = "ui/backgrounds/background_zombie.png";
+		this.m.Icon = "ui/traits/rotting_flesh_trait.png";
 	}
 
 	function getTooltip()
