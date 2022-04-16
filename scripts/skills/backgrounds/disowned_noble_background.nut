@@ -9,8 +9,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BackgroundDescription = "Disowned nobles often have profited from some training in melee fighting at court.";
 		this.m.GoodEnding = "A noble at heart, the disowned nobleman %name% returned to his family. Word has it he kicked in the doors and demanded a royal seat. An usurper challenged him in combat and, well, %name% learned a lot in his days with the %companyname% and he now sits on a very, very comfortable throne.";
 		this.m.BadEnding = "A man of nobility at heart, %name% the disowned noble returned to his family home. Word has it an usurper arrested him at the gates. His head currently rests on a pike with crows for a crown.";
-		this.m.HiringCost = 160;
-		this.m.DailyCost = 18;
+		this.m.HiringCost = 135;
+		this.m.DailyCost = 17;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.clumsy",
@@ -170,7 +170,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			[1, "gambeson"],
 			[1, "basic_mail_shirt"],
 			[1, "mail_shirt"],
-			[1, "mail_hauberk"]
+			[1, "mail_hauberk"],
+			[1, "padded_surcoat"]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

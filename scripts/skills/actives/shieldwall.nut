@@ -30,10 +30,16 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local mult = 1.0;
+		local proficiencyBonus = 0;
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInShields)
 		{
 			mult = mult * 1.25;
+		}
+
+		if (this.getContainer().getActor().getCurrentProperties().IsProficientWithShieldSkills)
+		{
+			proficiencyBonus = 5;
 		}
 
 		return [
@@ -56,13 +62,13 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getMeleeDefense() * mult) + "[/color] Melee Defense for one turn"
+				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getMeleeDefense() * mult + proficiencyBonus) + "[/color] Melee Defense for one turn"
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getRangedDefense() * mult) + "[/color] Ranged Defense for one turn"
+				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getRangedDefense() * mult + proficiencyBonus) + "[/color] Ranged Defense for one turn"
 			},
 			{
 				id = 6,
@@ -92,6 +98,11 @@ this.shieldwall <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 		return true;
+	}
+
+	function onAfterUpdate( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsProficientWithShieldWall || _properties.IsProficientWithShieldSkills ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

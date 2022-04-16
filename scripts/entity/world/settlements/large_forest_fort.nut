@@ -72,6 +72,7 @@ this.large_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"swordmaster_background",
 			"cripple_background",
+			"paladin_background",
 		 	"apprentice_background",
 			"female_beggar_background",
 			"female_bowyer_background",

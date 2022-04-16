@@ -2,6 +2,7 @@ this.poisoned_apple_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.poisoned_apple";
 		this.m.Name = "Poisoned Apple";
 		this.m.Description = "Looks delicious!";
@@ -15,6 +16,16 @@ this.poisoned_apple_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

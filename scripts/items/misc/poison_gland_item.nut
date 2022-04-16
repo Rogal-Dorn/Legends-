@@ -2,6 +2,7 @@ this.poison_gland_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.poison_gland";
 		this.m.Name = "Poison Gland";
 		this.m.Description = "The poison gland of a Webknecht. Should not be carried close to any food or drink.";
@@ -15,6 +16,16 @@ this.poison_gland_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

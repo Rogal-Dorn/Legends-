@@ -76,6 +76,7 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"swordmaster_background",
 			"hedge_knight_background",
+			"paladin_background",
 			"apprentice_background",
 			"female_beggar_background",
 			"female_bowyer_background",

@@ -2,6 +2,7 @@ this.ancient_wood_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.ancient_wood";
 		this.m.Name = "Ancient Wood";
 		this.m.Description = "Ancient pieces of wood carved from the remains of a living tree.";
@@ -15,6 +16,16 @@ this.ancient_wood_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

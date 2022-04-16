@@ -2,6 +2,7 @@ this.lindwurm_bones_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.lindwurm_bones";
 		this.m.Name = "Lindwurm Bones";
 		this.m.Description = "The bones of the Lindwurm are mostly hollow from the inside, making them an easy to carry trophy despite their size.";
@@ -15,6 +16,16 @@ this.lindwurm_bones_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

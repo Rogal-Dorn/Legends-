@@ -74,6 +74,7 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"squire_background",
 			"swordmaster_background",
+			"anatomist_background",
 			"legend_inventor_background"
 		];
 		this.m.StablesList = [

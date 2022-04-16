@@ -79,6 +79,7 @@ this.large_tundra_fort <- this.inherit("scripts/entity/world/settlement", {
 			"eunuch_background",
 			"hedge_knight_background",
 			"hedge_knight_background",
+			"paladin_background",
 			"legend_blacksmith_background",
 			"legend_shieldmaiden_background",
 			"legend_noble_2h"

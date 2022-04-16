@@ -2,6 +2,7 @@ this.ghoul_horn_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.ghoul_horn";
 		this.m.Name = "Nachzehrer Horn";
 		this.m.Description = "Nachzehrers can grow impressive horns, and these in turn make for impressive trophies.";
@@ -15,6 +16,16 @@ this.ghoul_horn_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

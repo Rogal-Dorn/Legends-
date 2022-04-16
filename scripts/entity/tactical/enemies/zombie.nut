@@ -830,7 +830,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
+			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1));
 		}
 
 		this.m.Items.equip(armor);

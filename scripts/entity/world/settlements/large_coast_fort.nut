@@ -61,6 +61,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background",
+			"paladin_background",
 			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",

@@ -366,7 +366,7 @@ this.retinue_manager <- {
 		}
 
 		this.m.InventoryUpgrades = _in.readU8();
-		this.update();
+		this.World.Assets.resetToDefaults();
 	}
 
 };

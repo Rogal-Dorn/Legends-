@@ -298,6 +298,7 @@ gt.Const.Strings.EntityName <- [
 	"Free Company Infantry",
 	"Free Company Leader",
 	"Free Company Ringleader",
+	"Oathbringer"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -465,6 +466,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Free Company Infantry",
 	"Free Company Leaders",
 	"Free Company Ringleaders",
+	"Oathbringers"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -2231,7 +2233,7 @@ gt.Const.Strings.PerkDescription <- {
 	Overwhelm = "Learn to take advantage of your high Initiative and prevent the enemy from attacking effectively by overwhelming them with your attacks!\n\nWith every attack, hit or miss, against an opponent that acts after you in the current round, inflict the \'Overwhelmed\' status effect which lowers both Melee Skill and Ranged Skill by [color=" + this.Const.UI.Color.NegativeValue + "]5%[/color] for one turn.\n\nThe effect stacks with each attack, and can be applied to multiple targets at once with a single attack.",
 	SpecBow = "Master the art of archery and pelting your opponents with arrows from afar. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nView range and maximum firing range with bows is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color].",
 	SpecCrossbow = "Master crossbows and firearms, and learn where to aim best. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nAn additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of damage inflicted with crossbows ignores armor.\n\nHandgonnes now require [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] Action Points to reload and can be fired every turn instead of every other turn.",
-	SpecThrowing = "Master throwing weapons to wound or kill the enemy before they even get close. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]40%[/color] when attacking at 2 tiles of distance.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] when attacking at 3 tiles of distance.",
+	SpecThrowing = "Master throwing weapons to wound or kill the enemy before they even get close. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when attacking at 2 tiles of distance.\n\nDamage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] when attacking at 3 tiles of distance.",
 	SpecAxe = "Master combat with axes and destroying shields. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit Shield damage to shields is increased by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] when used with axes.\n\nRound Swing gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Longaxe no longer has a penalty for attacking targets directly adjacent.",
 	SpecCleaver = "Master cleavers to inflict gruesome wounds. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nBleeding damage inflicted by cleavers and whips is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] per turn, respectively.\n\nDisarm only has half the penalty to hit.",
 	SpecDagger = "Master swift and deadly daggers. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nStab, Puncture and Deathblow  have a reduced Action Point cost to allow for an additional attack each turn.",

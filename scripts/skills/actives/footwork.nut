@@ -23,7 +23,7 @@ this.footwork <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsDisengagement = true;
 		this.m.ActionPointCost = 3;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 		this.m.MaxLevelDifference = 1;
@@ -112,7 +112,14 @@ this.footwork <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_backflip"))
 		{	
-		this.m.MaxRange = 2;
+			this.m.MaxRange = 2;
+		}
+
+		this.m.FatigueCostMult = _properties.IsFleetfooted ? 0.5 : 1.0;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("effects.goblin_grunt_potion"))
+		{
+			this.m.ActionPointCost = 2;
 		}
 	}
 

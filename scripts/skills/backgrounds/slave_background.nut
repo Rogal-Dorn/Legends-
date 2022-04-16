@@ -117,7 +117,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 				id = 16,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
 			});
 			ret.push({
 				id = 17,
@@ -265,7 +265,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
 		{
-			_properties.XPGainMult *= 0.75;
+			_properties.XPGainMult *= 1.1;
 			_properties.SurviveWithInjuryChanceMult = 0.0;
 		}
 	}

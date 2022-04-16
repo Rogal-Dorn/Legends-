@@ -60,6 +60,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"squire_background",
 			"swordmaster_background",
+			"paladin_background",
 			"apprentice_background",
 			"gambler_background",
 			"female_farmhand_background",

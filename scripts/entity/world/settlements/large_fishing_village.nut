@@ -70,6 +70,7 @@ this.large_fishing_village <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background",
 			"swordmaster_background",
+			"anatomist_background",
 			"legend_inventor_background"
 		];
 		this.m.UIDescription = "A large coastal city and trading hub";

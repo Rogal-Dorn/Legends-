@@ -44,11 +44,11 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local chance = this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10 + this.m.ChanceBonus);
+		local chance = this.Math.min(100, this.getContainer().getActor().getCurrentProperties().getMeleeSkill() - 10 + this.m.ChanceBonus + (this.getContainer().getActor().getSkills().hasSkill("effects.goblin_shaman_potion") ? 100 : 0));
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_escape_artist"))
 		{
 			chance = this.Math.max(99, chance);
-		} 
+		}
 		return [
 			{
 				id = 1,
@@ -106,7 +106,7 @@ this.break_free_skill <- this.inherit("scripts/skills/skill", {
 	function onUse( _user, _targetTile )
 	{
 		local skill = this.m.SkillBonus == null ? _user.getCurrentProperties().getMeleeSkill() : this.m.SkillBonus;
-		local toHit = this.Math.min(100, skill - 10 + this.m.ChanceBonus);
+		local toHit = this.Math.min(100, skill - 10 + this.m.ChanceBonus + (_user.getSkills().hasSkill("effects.goblin_shaman_potion") ? 100 : 0));
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_escape_artist"))
 		{
 			toHit = this.Math.max(99, toHit);

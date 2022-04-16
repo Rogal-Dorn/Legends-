@@ -29,6 +29,10 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 		];
 	}
 
+	function onUpdate()
+	{
+	}
+
 	function onEvaluate()
 	{
 		local allied = false;

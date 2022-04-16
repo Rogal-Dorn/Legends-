@@ -194,6 +194,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 	function create()
 	{
+		this.item.create();
 		this.m.IsDroppedAsLoot = true;
 	}
 
@@ -343,7 +344,7 @@ this.weapon <- this.inherit("scripts/items/item", {
 			});
 		}
 
-		if (this.m.FatigueOnSkillUse > 0)
+		if (this.m.FatigueOnSkillUse > 0 && (this.getContainer() == null || !this.getContainer().getActor().getCurrentProperties().IsProficientWithHeavyWeapons))
 		{
 			result.push({
 				id = 8,
@@ -490,7 +491,8 @@ this.weapon <- this.inherit("scripts/items/item", {
 
 		if (_skill.isType(this.Const.SkillType.Active))
 		{
-			_skill.setFatigueCost(this.Math.max(0, _skill.getFatigueCostRaw() + this.m.FatigueOnSkillUse));
+			local fatigueOnSkillUse = this.getContainer().getActor().getCurrentProperties().IsProficientWithHeavyWeapons && this.m.FatigueOnSkillUse > 0 ? 0 : this.m.FatigueOnSkillUse;
+			_skill.setFatigueCost(this.Math.max(0, _skill.getFatigueCostRaw() + fatigueOnSkillUse));
 		}
 	}
 

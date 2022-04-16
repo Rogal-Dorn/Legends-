@@ -26,7 +26,16 @@ this.horrified_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.getActor().getCurrentProperties().IsImmuneToStun)
+		if (this.getContainer().getActor().getCurrentProperties().IsResistantToAnyStatuses && this.Math.rand(1, 100) <= 50)
+		{
+			if (!this.getContainer().getActor().isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.actor) + " resists being frozen with fear thanks to his unnatural physiology");
+			}
+
+			this.removeSelf();
+		}
+		else if (!this.m.Container.getActor().getCurrentProperties().IsImmuneToStun)
 		{
 			this.m.Container.removeByID("effects.shieldwall");
 			this.m.Container.removeByID("effects.spearwall");

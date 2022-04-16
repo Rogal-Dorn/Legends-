@@ -255,6 +255,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 					text = _event.m.Expendable.getName() + " went missing"
 				});
 				_event.m.Expendable.getItems().transferToStash(this.World.Assets.getStash());
+				_event.m.Expendable.getSkills().onDeath(this.Const.FatalityType.None);
 				this.World.getPlayerRoster().remove(_event.m.Expendable);
 			}
 
@@ -279,6 +280,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Expendable.getImagePath());
 				_event.m.Expendable.addXP(200, false);
+				_event.m.Expendable.updateLevel();
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/xp_received.png",

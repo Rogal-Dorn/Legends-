@@ -21,6 +21,11 @@ this.hunting_serpents_action <- this.inherit("scripts/factions/faction_action", 
 			return;
 		}
 
+		if (this.World.Assets.getBusinessReputation() < 450)
+		{
+			return;
+		}
+
 		if (this.World.getTime().Days <= 5 || this.Math.rand(1, 100) > 30)
 		{
 			return;
@@ -48,7 +53,7 @@ this.hunting_serpents_action <- this.inherit("scripts/factions/faction_action", 
 				local tile = this.World.getTileSquare(x, y);
 				local d = villageTile.getDistanceTo(tile);
 
-				if (d > 5 && tile.Type == this.Const.World.TerrainType.Oasis)
+				if (d >= 5 && d <= 14 && tile.Type == this.Const.World.TerrainType.Oasis)
 				{
 					numOasis = ++numOasis;
 					break;

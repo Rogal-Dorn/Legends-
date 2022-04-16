@@ -694,9 +694,9 @@ this.skill_container <- {
 		this.doOnFunction("onCombatFinished");
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
-		this.doOnFunction("onDeath");
+		this.doOnFunction("onDeath", [_fatalityType]);
 	}
 
 	function compareSkillsByOrder( _skill1, _skill2 )

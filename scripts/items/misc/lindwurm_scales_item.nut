@@ -2,6 +2,7 @@ this.lindwurm_scales_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.lindwurm_scales";
 		this.m.Name = "Lindwurm Scales";
 		this.m.Description = "The shimmering green scales of a Lindwurm are among the most reputable trophies a beast hunter can bring home from his adventures.";
@@ -15,6 +16,16 @@ this.lindwurm_scales_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

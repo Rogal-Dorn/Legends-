@@ -174,6 +174,11 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMin += 100;
 			_properties.DamageRegularMax += 105;
 		}
+
+		if (_properties.IsSharpshooter)
+		{
+			_properties.DamageDirectMult += 0.05;
+		}
 	}
 
 	function onRemoved()

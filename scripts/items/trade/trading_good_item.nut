@@ -6,6 +6,7 @@ this.trading_good_item <- this.inherit("scripts/items/item", {
 	},
 	function create()
 	{
+		this.item.create();
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.TradeGood | this.Const.Items.ItemType.Misc;
 		this.m.IsDroppedAsLoot = true;
@@ -130,16 +131,6 @@ this.trading_good_item <- this.inherit("scripts/items/item", {
 		}
 
 		return this.item.getSellPrice();
-	}
-
-	function getSellPriceMult()
-	{
-		return 1.0;
-	}
-
-	function getBuyPriceMult()
-	{
-		return 1.0;
 	}
 
 	function onSerialize( _out )

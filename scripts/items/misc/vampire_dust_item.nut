@@ -2,6 +2,7 @@ this.vampire_dust_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.vampire_dust";
 		this.m.Name = "Shimmering Ashes";
 		this.m.Description = "A small heap of ashes shimmering in many facets of blue. Allegedly it\'s the remains of a powerful undead creature, but few people would believe a claim like this.";
@@ -15,6 +16,16 @@ this.vampire_dust_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

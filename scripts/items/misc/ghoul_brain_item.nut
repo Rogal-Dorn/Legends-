@@ -2,6 +2,7 @@ this.ghoul_brain_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.ghoul_brain";
 		this.m.Name = "Nachzehrer Brain";
 		this.m.Description = "The greasy brain of a slain Nachzehrer. What could you possibly want with this?";
@@ -15,6 +16,16 @@ this.ghoul_brain_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

@@ -19,6 +19,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 	function create()
 	{
+		this.item.create();
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.ItemType = this.Const.Items.ItemType.Accessory;
 	}
