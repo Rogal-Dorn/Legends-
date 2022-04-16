@@ -35,7 +35,7 @@ this.named_longsword <- this.inherit("scripts/items/weapons/named/named_weapon",
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		local skillToAdd = this.new("scripts/skills/actives/overhead_strike");
 		skillToAdd.setStunChance(this.m.StunChance);
 		this.addSkill(skillToAdd);

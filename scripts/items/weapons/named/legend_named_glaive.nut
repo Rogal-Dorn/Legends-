@@ -36,11 +36,5 @@ this.legend_named_glaive <- this.inherit("scripts/items/weapons/named/named_weap
 		spearwall.m.BaseAttackName = p.getName();
 		this.addSkill(spearwall);
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 
