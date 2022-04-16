@@ -21,6 +21,7 @@
 	this.Const.LegendMod.hookTacticalState();
 	this.Const.LegendMod.hookWorldmapGenerator();
 	
+	::Const.LegendMod.registerUI();
 
 	this.Const.LegendMod.hookMSU();
 
