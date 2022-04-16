@@ -1104,7 +1104,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					this.getFlags().add("undead");
 					this.getFlags().add("skeleton");
 					local body = this.getSprite("body");
-					local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
+					local skill = this.new("scripts/skills/traits/legend_fleshless_trait");
 					this.m.Skills.add(skill);
 					this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
 				}
@@ -1113,7 +1113,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 					this.getFlags().add("PlayerZombie");
 					this.getFlags().add("undead");
 					this.getFlags().add("zombie_minion");
-					local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
+					local skill = this.new("scripts/skills/traits/legend_rotten_flesh_trait");
 					this.m.Skills.add(skill);
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));

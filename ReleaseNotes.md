@@ -6990,6 +6990,7 @@ New background art for surgeon.
 New trait art for Nyctophobia.
 New background art for lone wolf, made by Gilded Wraith.
 New background art made for berserker.
+Rotting flesh and fleshless traits have new art.
 
 **Improvements, Tweaks & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
@@ -7023,12 +7024,16 @@ Lindwurm packs now have a lower score threshold - meaning you should see fewer i
 Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
 Hexen gain the 'wither' ability. Hexen leaders gain 'wither' and 'sleep'.
 Added a slim chance for rock unholds to spawn in frost unhold groups.
+Cabal can no longer find puppets in towns - it is now done via a repeating event.
+Possession skill now makes the possessed unit immune to charm for the possession duration.
+'Deathy spectre' is now back in the Cabal origin.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
 Crusader commander can now talk to a blacksmith, who will offer to forge them a crusader's sword if the player has the right requirements. The blacksmith has a small chance of failing to forge the sword. This event does not repeat.
 A strange old man may try to sell you something. Does not repeat.
 Holy war crusader replaced by a new background: Surgeon.
+Cabal now has an event to recruit puppets.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
@@ -7047,6 +7052,7 @@ Note; files below have been moved or outright deleted and replaced. ANY mods usi
 "legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
 "legend_bastardsword" renamed to "legend_longsword".
 Added an additional difficulty step 'legendary' to scenarios (case = 4).
+Made 'legend_fleshless_trait' and replaced 'legend_fleshless' which was an injury type. This change affects legion, deathy spectre and skeleton summons.
 
 **MISC.**
 Mercenaries can now be afraid of the dark.
