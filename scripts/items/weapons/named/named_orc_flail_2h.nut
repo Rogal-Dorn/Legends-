@@ -34,18 +34,12 @@ this.named_orc_flail_2h <- this.inherit("scripts/items/weapons/named/named_weapo
 
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/pound");
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/thresh");
 		this.addSkill(skill);
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

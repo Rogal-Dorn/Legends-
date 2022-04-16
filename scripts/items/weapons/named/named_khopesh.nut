@@ -42,11 +42,5 @@ this.named_khopesh <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.addSkill(this.new("scripts/skills/actives/cleave"));
 		this.addSkill(this.new("scripts/skills/actives/decapitate"));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

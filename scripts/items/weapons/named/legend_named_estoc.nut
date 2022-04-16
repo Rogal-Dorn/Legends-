@@ -36,11 +36,5 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.addSkill(this.new("scripts/skills/actives/lunge_skill"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 
