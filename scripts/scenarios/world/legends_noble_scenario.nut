@@ -241,7 +241,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		brothers[1].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 		brothers[3].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			foreach( bro in brothers )
 			{

@@ -416,7 +416,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				if (myItem.getRuneVariant() != 0)
 				{
 
-					if (this.LegendsMod.Configs().LegendArmorsEnabled() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23 || myItem.getRuneVariant() == 11 || myItem.getRuneVariant() == 12 || myItem.getRuneVariant() == 13))
+					if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() && (myItem.getRuneVariant() == 21 || myItem.getRuneVariant() == 22 || myItem.getRuneVariant() == 23 || myItem.getRuneVariant() == 11 || myItem.getRuneVariant() == 12 || myItem.getRuneVariant() == 13))
 					{
 						local rune;
 

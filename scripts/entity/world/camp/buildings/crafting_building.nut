@@ -270,9 +270,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			{
 				if ("LegendsArmor" in c)
 				{
-					if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled()) continue;
+					if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) continue;
 
-					if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled()) continue;
+					if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) continue;
 				}
 
 				if (c.Instance.getID() in itemsMap && c.Num <= itemsMap[c.Instance.getID()] )

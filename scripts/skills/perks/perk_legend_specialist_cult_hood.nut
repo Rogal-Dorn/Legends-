@@ -19,7 +19,7 @@ this.perk_legend_specialist_cult_hood <- this.inherit("scripts/skills/skill", {
 		if (item != null)
 		{
 			if(item.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(item)
-			if (this.LegendsMod.Configs().LegendArmorsEnabled() && ::mods_isClass(item, "legend_helmet"))
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() && ::mods_isClass(item, "legend_helmet"))
 			{
 				foreach( upgrade in item.m.Upgrades )
 				{

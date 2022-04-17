@@ -51,7 +51,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
@@ -89,7 +89,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
@@ -127,7 +127,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_patched");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
