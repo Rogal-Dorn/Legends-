@@ -671,7 +671,7 @@ this.legends_tundra_fort <- this.inherit("scripts/entity/world/settlements/legen
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("stackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

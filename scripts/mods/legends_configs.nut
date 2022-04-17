@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsArmor = true,
         IsItemScaling = false,
         IsLocationScaling = false,
         IsCampUnlock = false,
@@ -107,7 +106,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-        _out.writeBool(this.m.IsArmor);
 		_out.writeBool(this.m.IsItemScaling);
 		_out.writeBool(this.m.IsLocationScaling);
 		_out.writeBool(this.m.IsCampUnlock);
@@ -124,7 +122,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-		this.m.IsArmor = _in.readBool();
         this.m.IsItemScaling = _in.readBool();
         this.m.IsLocationScaling = _in.readBool();
         this.m.IsCampUnlock = _in.readBool();
