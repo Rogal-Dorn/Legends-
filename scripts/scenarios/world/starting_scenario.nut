@@ -154,6 +154,22 @@ this.starting_scenario <- {
 		return true;
 	}
 
+	function onContractFinished( _contractType, _cancelled )
+	{
+	}
+
+	function onUnlockPerk( _bro, _perkID )
+	{
+	}
+
+	function onUpdateLevel( _bro )
+	{
+	}
+
+	function onGetBackgroundTooltip( _background, _tooltip )
+	{
+	}
+
 	function getStartingRosterTier()
 	{
 		return this.m.StartingRosterTier;
