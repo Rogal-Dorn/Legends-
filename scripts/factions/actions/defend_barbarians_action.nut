@@ -30,7 +30,7 @@ this.defend_barbarians_action <- this.inherit("scripts/factions/faction_action",
 
 			local mult = 0.66;
 			local distanceToNextSettlement = this.getDistanceToSettlements(s.getTile());
-			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (::Legends.Mod.ModSettings.getSetting("distanceScaling").getValue() && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;
 			}
@@ -89,7 +89,7 @@ this.defend_barbarians_action <- this.inherit("scripts/factions/faction_action",
 		{
 			local mult = 0.66;
 			local distanceToNextSettlement = this.getDistanceToSettlements(this.m.Settlement.getTile());
-			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (::Legends.Mod.ModSettings.getSetting("distanceScaling").getValue() && distanceToNextSettlement > 14)
 			{
 				mult *= distanceToNextSettlement / 14.0;
 			}
