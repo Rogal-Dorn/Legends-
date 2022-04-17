@@ -588,12 +588,11 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 		local buildAdditionalRoads = o.buildAdditionalRoads;
 		o.buildAdditionalRoads = function (_rect, _properties)
 		{
-			if (_properties.AllTradeLocations)
+			if (::Legends.Mod.ModSettings.getSetting("allTradeLocations").getValue())
 			{
 				o.guaranteeAllLocations();
 			}
 			buildAdditionalRoads(_rect, _properties);
-
 		}
 
 		o.guaranteeAllLocations <- function()
