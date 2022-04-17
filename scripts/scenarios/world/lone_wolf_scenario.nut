@@ -4,12 +4,12 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.lone_wolf";
 		this.m.Name = "Lone Wolf";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling with your squire for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds. All encounters are two-thirds harder than normal.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 6 fighters in your roster.\n[color=#bcad8c]Avatar:[/color] If your lone wolf dies, the campaign ends.\n[color=#c90000]Not a sellsword:[/color] Cannot recruit. Must instead encounter other champions through events to join your cause.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling with your squire for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds. All encounters are two-thirds harder than normal.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 10 fighters in your roster.\n[color=#bcad8c]Avatar:[/color] If your lone wolf dies, the campaign ends.\n[color=#c90000]Not a sellsword:[/color] Cannot recruit. Must instead encounter other champions through events to join your cause.[/p]";
 		this.m.Difficulty = 4;
 		this.m.Order = 150;
 		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(1);
-		this.m.RosterTierMax = this.Const.Roster.getTierForSize(6);
+		this.m.RosterTierMax = this.Const.Roster.getTierForSize(3);
 		this.m.StartingBusinessReputation = 1250;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
@@ -49,6 +49,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[0].setTitle("the Lone Wolf");
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/special/relationship_check")); //enables relationships.
 		bros[0].setPlaceInFormation(4);
 		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_lone_wolf");

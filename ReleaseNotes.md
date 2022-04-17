@@ -6935,7 +6935,8 @@ Lone wolf origin reworked.
 No longer starts with a squire. Lone wolf starts alone again.
 Lone wolf now uses its own template, not that of the hedge knight. Has a unique skill tree.
 Lone wolf cannot recruit normally, they must find like minded friends across the world. These friends cost no upkeep.
-Starts at professional renown, capped at 6 brothers total. Scaling is two-thirds higher than normal.
+Starts at professional renown, capped at 10 brothers total. Scaling is two-thirds higher than normal.
+Lone wolf origin now has the 'relationships' mechanic.
 
 ```
 
