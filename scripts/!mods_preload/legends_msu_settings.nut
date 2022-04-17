@@ -38,7 +38,6 @@
 	addNCSetting(config, ::MSU.Class.BooleanSetting("worldEconomy", true, "World Economy"), "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations.");
 	addNCSetting(config, ::MSU.Class.BooleanSetting("craftingUnlocked", false, "All Crafting Recipes Unlocked"), "If enabled, all crafting recipes will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced.");
 
-	addNCSetting(config, ::MSU.Class.BooleanSetting("autosaveOff", false, "Disable Autosave"), "Only disable for the most masochistic playthroughs. No save will exist for the company, the game will not be automatically saved during the game or when exiting it. \n\n Harder than ironman, there can be no alt f4, the entire run must happen in one sitting.")
 
 	local combat = ::MSU.Class.SettingsPage("Combat");
 	::Legends.Mod.ModSettings.addPage(combat);
