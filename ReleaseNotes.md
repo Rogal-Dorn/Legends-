@@ -6983,6 +6983,7 @@ Player characters can now never roll greedy, loyal or disloyal (as all these tra
 Added new trait: legend_fear_dark_trait.
 Added new background: Surgeon.
 Added new background: Lone Wolf.
+Added new background: Youngblood.
 
 **Art**
 Man-at-arms now has new background art.
@@ -6991,10 +6992,12 @@ New trait art for Nyctophobia.
 New background art for lone wolf, made by Gilded Wraith.
 New background art made for berserker.
 Rotting flesh and fleshless traits have new art.
+New background art for youngblood.
 
 **Improvements, Tweaks & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 Brigand warlords are now immune to disarm (lmao).
+Inquisition origin can now recruit youngbloods.
 Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
 The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
 Preserver from Cabal origin now gets scythe skills like her two counterparts do.
@@ -7027,6 +7030,7 @@ Added a slim chance for rock unholds to spawn in frost unhold groups.
 Cabal can no longer find puppets in towns - it is now done via a repeating event.
 Possession skill now makes the possessed unit immune to charm for the possession duration.
 'Deathy spectre' is now back in the Cabal origin.
+You will now get 2 stakes for every raw wood in crafting, rather than 1.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
@@ -7034,6 +7038,7 @@ Crusader commander can now talk to a blacksmith, who will offer to forge them a 
 A strange old man may try to sell you something. Does not repeat.
 Holy war crusader replaced by a new background: Surgeon.
 Cabal now has an event to recruit puppets.
+Undead scourge 'crusader joins' event now gives a differant recruit if you started as the solo crusader.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
@@ -7056,4 +7061,4 @@ Made 'legend_fleshless_trait' and replaced 'legend_fleshless' which was an injur
 
 **MISC.**
 Mercenaries can now be afraid of the dark.
-Taverns will now have a variety of random names, instead of just "Tavern"
+Taverns will now have a variety of random names, instead of just "Tavern".

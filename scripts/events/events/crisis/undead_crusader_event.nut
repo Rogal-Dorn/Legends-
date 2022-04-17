@@ -34,13 +34,29 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 
 				}
 			],
+
 			function start( _event )
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"legend_crusader_background"
-				]);
+					if (this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
+						{
+						_event.m.Dude.setStartValuesEx([
+							"legend_youngblood_background"
+						]);
+						_event.m.Dude.getBackground().getBaseProperties().Hitpoints += 10;
+						_event.m.Dude.getBackground().getBaseProperties().Fatigue += 7;
+						_event.m.Dude.getBackground().getBaseProperties().MeleeSkill += 10;
+						_event.m.Dude.getBackground().getBaseProperties().RangedSkill += 10;
+						_event.m.Dude.getBackground().m.RawDescription = "With nowhere else to go, %name% resorted to seeking you out after the destruction of the monastery. With their home gone, the future from %them% and the order looks bleaker still.";
+						_event.m.Dude.getBackground().buildDescription(true);
+						}
+					else
+					{
+					_event.m.Dude.setStartValuesEx([
+						"legend_crusader_background"
+					]);
+					}
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_undead_trait"));
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
