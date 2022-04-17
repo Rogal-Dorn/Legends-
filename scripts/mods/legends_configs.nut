@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsItemScaling = false,
         IsLocationScaling = false,
         IsCampUnlock = false,
         IsRecruitScaling = false,
@@ -17,7 +16,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsItemScaling = _settings.LegendItemScaling;
 		this.m.IsLocationScaling = _settings.LegendLocationScaling;
 		this.m.IsCampUnlock = _settings.LegendCampUnlock;
 		this.m.IsRecruitScaling = _settings.LegendRecruitScaling;
@@ -52,11 +50,6 @@ this.legends_configs <- {
     function LegendMagicEnabled()
     {
         return false;
-    }
-
-    function LegendItemScalingEnabled()
-    {
-        return this.m.IsItemScaling
     }
 
     function LegendLocationScalingEnabled()
@@ -106,7 +99,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-		_out.writeBool(this.m.IsItemScaling);
 		_out.writeBool(this.m.IsLocationScaling);
 		_out.writeBool(this.m.IsCampUnlock);
 		_out.writeBool(this.m.IsRecruitScaling);
@@ -122,7 +114,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-        this.m.IsItemScaling = _in.readBool();
         this.m.IsLocationScaling = _in.readBool();
         this.m.IsCampUnlock = _in.readBool();
         this.m.IsRecruitScaling = _in.readBool();
