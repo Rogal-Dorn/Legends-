@@ -1208,7 +1208,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.uncoverFogOfWar(this.getPlayer().getTile().Pos, 900.0);
 		}
 
-		this.World.FactionManager.uncoverSettlements(this.m.CampaignSettings.ExplorationMode);
+		this.World.FactionManager.uncoverSettlements(::Legends.Mod.ModSettings.getSetting("explorationMode").getValue());
 		this.World.FactionManager.runSimulation();
 		this.m.CampaignSettings = null;
 		this.setupWeather();

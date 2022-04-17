@@ -72,7 +72,6 @@ this.asset_manager <- {
 		LastFoodConsumed = 0,
 		IsIronman = false,
 		IsAutosave = false,
-		IsExplorationMode = false,
 		IsPermanentDestruction = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
@@ -280,11 +279,6 @@ this.asset_manager <- {
 		return this.m.IsAutosave;
 	}
 
-	function isExplorationMode()
-	{
-		return this.m.IsExplorationMode;
-	}
-
 	function isPermanentDestruction()
 	{
 		return this.m.IsPermanentDestruction;
@@ -435,7 +429,6 @@ this.asset_manager <- {
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
 		this.m.Origin = _settings.StartingScenario;
-		this.m.IsExplorationMode = _settings.ExplorationMode;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
@@ -2504,7 +2497,6 @@ this.asset_manager <- {
 		}
 		_out.writeU8(this.m.BrothersMax);
 		_out.writeU16(this.m.LastDayResourcesUpdated);
-		_out.writeBool(this.m.IsExplorationMode);
 	}
 
 	function onDeserialize( _in )
@@ -2584,7 +2576,6 @@ this.asset_manager <- {
 		}
 		local maxBros = _in.readU8(); //Deprecated, but kept for backwards save compatibility. It is now dynamically calculated
 		this.m.LastDayResourcesUpdated = _in.readU16();
-		this.m.IsExplorationMode = _in.readBool();
 
 		this.updateAverageMoodState();
 		this.updateFood();
