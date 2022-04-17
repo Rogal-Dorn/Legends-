@@ -116,6 +116,7 @@ this.item_container <- {
 
 	function isActionAffordable( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
@@ -132,6 +133,7 @@ this.item_container <- {
 
 	function getActionCost( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
@@ -148,6 +150,7 @@ this.item_container <- {
 
 	function payForAction( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
