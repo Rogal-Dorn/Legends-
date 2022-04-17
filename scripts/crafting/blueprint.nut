@@ -214,7 +214,7 @@ this.blueprint <- {
 			return false;
 		}
 
-		if (this.LegendsMod.Configs().LegendAllBlueprintsEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("craftingUnlocked").getValue())
 		{
 			return true;
 		}
