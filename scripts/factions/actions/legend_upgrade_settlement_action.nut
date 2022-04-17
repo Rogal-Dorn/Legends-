@@ -12,7 +12,7 @@ this.legend_upgrade_settlement_action <- this.inherit("scripts/factions/faction_
 
 	function onUpdate( _faction )
 	{
-		if(!this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(!::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			return;
 		}
