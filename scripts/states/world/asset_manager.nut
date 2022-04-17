@@ -74,7 +74,6 @@ this.asset_manager <- {
 		IsAutosave = false,
 		IsExplorationMode = false,
 		IsPermanentDestruction = true,
-		IsLegendPerkTrees = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
@@ -291,11 +290,6 @@ this.asset_manager <- {
 		return this.m.IsPermanentDestruction;
 	}
 
-	function isLegendPerkTrees()
-	{
-		return this.m.IsLegendPerkTrees;
-	}
-
 	function isCamping()
 	{
 		return this.World.Camp.isCamping();
@@ -440,7 +434,6 @@ this.asset_manager <- {
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
-		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
 		this.m.Origin = _settings.StartingScenario;
 		this.m.IsExplorationMode = _settings.ExplorationMode;
 		this.m.BusinessReputation = 0;
@@ -2491,7 +2484,6 @@ this.asset_manager <- {
 		_out.writeU8(this.m.CombatDifficulty);
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
-		_out.writeBool(this.m.IsLegendPerkTrees);
 		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
@@ -2539,10 +2531,6 @@ this.asset_manager <- {
 		this.m.CombatDifficulty = _in.readU8();
 		this.m.IsIronman = _in.readBool();
 		this.m.IsPermanentDestruction = !_in.readBool();
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.IsLegendPerkTrees = _in.readBool();
-		}
 
 		if (_in.getMetaData().getVersion() >= 46)
 		{

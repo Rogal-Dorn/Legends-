@@ -1074,7 +1074,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function rebuildPerkTree( _tree )
 	{
 		this.m.CustomPerkTree = _tree
-		if (this.World.Assets.isLegendPerkTrees())
+		if (::Legends.Mod.ModSettings.getSetting("perkTrees").getValue())
 		{
 			this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
 		}
@@ -1143,7 +1143,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (this.World.Assets.isLegendPerkTrees())
+			if (::Legends.Mod.ModSettings.getSetting("perkTrees").getValue())
 			{
 
 				local mins = this.getPerkTreeDynamicMins();
