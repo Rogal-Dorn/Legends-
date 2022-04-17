@@ -383,7 +383,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 
 			foreach( list in this.Const.World.Settlements.LegendsWorldMaster )
 			{
-				local num = Math.ceil(_properties.NumSettlements * list.Ratio)
+				local num = Math.ceil(::Legends.Mod.ModSettings.getSetting("settlements").getValue() * list.Ratio)
 				//Add at least one of each
 
 				local additionalSpace = 0
