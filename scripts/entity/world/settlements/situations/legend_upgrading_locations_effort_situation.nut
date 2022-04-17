@@ -52,7 +52,7 @@ this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if (this.m.IsSouthern)
 		{
 			_draftList.push("daytaler_southern_background");

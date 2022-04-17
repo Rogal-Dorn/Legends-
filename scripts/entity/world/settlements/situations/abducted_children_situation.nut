@@ -51,7 +51,7 @@ this.abducted_children_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 	_draftList.push("witchhunter_background");
 	}
 

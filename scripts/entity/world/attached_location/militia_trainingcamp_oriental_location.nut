@@ -118,7 +118,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;

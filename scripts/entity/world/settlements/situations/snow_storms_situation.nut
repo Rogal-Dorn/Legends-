@@ -43,7 +43,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

@@ -44,7 +44,7 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");

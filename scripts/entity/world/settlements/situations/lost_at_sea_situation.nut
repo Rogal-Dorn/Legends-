@@ -46,7 +46,7 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if (_gender)
 		{
 			_draftList.push("female_beggar_background");

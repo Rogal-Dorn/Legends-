@@ -2,7 +2,6 @@ this.legends_configs <- {
 	m = {
         IsArmor = true,
         IsMagic = false,
-        IsGender = 0,
         IsItemScaling = false,
         IsLocationScaling = false,
         IsCampUnlock = false,
@@ -20,7 +19,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsGender = _settings.LegendGenderEquality;
 		this.m.IsMagic = _settings.LegendMagic;
 		this.m.IsArmor = _settings.LegendArmor;
 		this.m.IsItemScaling = _settings.LegendItemScaling;
@@ -63,16 +61,6 @@ this.legends_configs <- {
     function LegendMagicEnabled()
     {
         return this.m.IsMagic
-    }
-
-    function LegendGenderEnabled()
-    {
-        return this.m.IsGender > 0
-    }
-
-    function LegendGenderLevel()
-    {
-        return this.m.IsGender
     }
 
     function LegendItemScalingEnabled()
@@ -129,7 +117,6 @@ this.legends_configs <- {
     {
         _out.writeBool(this.m.IsArmor);
 		_out.writeBool(this.m.IsMagic);
-		_out.writeU8(this.m.IsGender);
 		_out.writeBool(this.m.IsItemScaling);
 		_out.writeBool(this.m.IsLocationScaling);
 		_out.writeBool(this.m.IsCampUnlock);
@@ -148,7 +135,6 @@ this.legends_configs <- {
     {
 		this.m.IsArmor = _in.readBool();
 		this.m.IsMagic = _in.readBool();
-		this.m.IsGender = _in.readU8();
         this.m.IsItemScaling = _in.readBool();
         this.m.IsLocationScaling = _in.readBool();
         this.m.IsCampUnlock = _in.readBool();

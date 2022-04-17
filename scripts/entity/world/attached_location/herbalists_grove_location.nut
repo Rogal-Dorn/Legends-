@@ -19,7 +19,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;

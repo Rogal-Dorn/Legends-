@@ -126,7 +126,7 @@ this.cultist_lurker_background <- this.inherit("scripts/skills/backgrounds/chara
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

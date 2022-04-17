@@ -97,7 +97,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local L = clone this.m.DraftList;
 
-		if (this.LegendsMod.Configs().LegendGenderEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
 		{
 			L.extend(this.m.FemaleDraftList);
 		}
@@ -1733,7 +1733,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-		local isGenderEnabled = this.LegendsMod.Configs().LegendGenderEnabled();
+		local isGenderEnabled = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 
 		foreach( loc in this.m.AttachedLocations )
 		{

@@ -11,7 +11,7 @@ this.temple_oriental_building <- this.inherit("scripts/entity/world/settlements/
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		_list.push("cripple_southern_background");
 		_list.push("legend_dervish_background");
 	}

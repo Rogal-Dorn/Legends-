@@ -43,7 +43,7 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");

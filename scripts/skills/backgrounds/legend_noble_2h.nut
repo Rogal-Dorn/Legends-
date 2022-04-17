@@ -86,7 +86,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 		if (_gender == -1)
 		{
 			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

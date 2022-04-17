@@ -50,7 +50,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")
 		{
 			_draftList.push("legend_nightwatch_background");
