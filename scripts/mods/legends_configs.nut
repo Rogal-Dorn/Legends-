@@ -1,7 +1,6 @@
 this.legends_configs <- {
 	m = {
         IsHelmets = 0,
-        IsTherian = false,
         AISpeed = 1.0,
         EnemeyTooltips = false
     },
@@ -10,7 +9,6 @@ this.legends_configs <- {
     function Update (_settings)
     {
         this.m.IsHelmets = _settings.LegendIsHelmet;
-        this.m.IsTherian = _settings.LegendTherian;
     }
 
     function AISpeed()
@@ -45,13 +43,12 @@ this.legends_configs <- {
 
     function LegendTherianthropyEnabled()
     {
-        return this.m.IsTherian
+        return false;
     }
 
     function onSerialize(_out)
     {
         _out.writeU8(this.m.IsHelmets);
-        _out.writeBool(this.m.IsTherian);
         _out.writeF32(this.m.AISpeed);
         _out.writeBool(this.m.EnemeyTooltips);
     }
@@ -59,7 +56,6 @@ this.legends_configs <- {
     function onDeserialize(_in)
     {
         this.m.IsHelmets = _in.readU8();
-        this.m.IsTherian = _in.readBool();
         this.m.AISpeed = _in.readF32()
         if (_in.getMetaData().getVersion() >= 66)
 		{
