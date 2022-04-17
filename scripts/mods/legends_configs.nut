@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsCampUnlock = false,
         IsRecruitScaling = false,
         IsBleedKiller = false,
         IsBlueprintsVisible = false,
@@ -15,7 +14,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsCampUnlock = _settings.LegendCampUnlock;
 		this.m.IsRecruitScaling = _settings.LegendRecruitScaling;
         this.m.IsBleedKiller = _settings.LegendBleedKiller;
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
@@ -48,11 +46,6 @@ this.legends_configs <- {
     function LegendMagicEnabled()
     {
         return false;
-    }
-
-    function LegendCampUnlockEnabled()
-    {
-        return this.m.IsCampUnlock
     }
 
     function LegendRecruitScalingEnabled()
@@ -92,7 +85,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-		_out.writeBool(this.m.IsCampUnlock);
 		_out.writeBool(this.m.IsRecruitScaling);
         _out.writeBool(this.m.IsBleedKiller);
         _out.writeBool(this.m.IsBlueprintsVisible);
@@ -106,7 +98,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-        this.m.IsCampUnlock = _in.readBool();
         this.m.IsRecruitScaling = _in.readBool();
 		this.m.IsBleedKiller = _in.readBool();
 		this.m.IsBlueprintsVisible = _in.readBool();
