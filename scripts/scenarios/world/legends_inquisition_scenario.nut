@@ -306,6 +306,11 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			{
 			_list.push("legend_nun_background");
 			}
+			r = this.Math.rand(0, 6);
+			if (r == 0 && _gender)
+			{
+			_list.push("legend_youngblood_background");
+			}
 			r = this.Math.rand(0, 8);
 			if (r == 0)
 			{

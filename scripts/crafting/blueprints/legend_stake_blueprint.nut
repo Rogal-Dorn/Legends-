@@ -18,6 +18,7 @@ this.legend_stake_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			{
 				Scripts = [
 					"scripts/skills/backgrounds/witchhunter_background",
+					"scripts/skills/backgrounds/legend_youngblood_background"
 				]
 			}
 		];
@@ -26,6 +27,7 @@ this.legend_stake_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
+		local item = this.new("scripts/items/weapons/legend_wooden_stake");
 		local item = this.new("scripts/items/weapons/legend_wooden_stake");
 		item.setVariant(this.m.PreviewCraftable.m.Variant);
 		_stash.add(item);
