@@ -103,49 +103,6 @@ gt.Const.World.Settlements.LegendsWorldMaster <- [
 	}
 ];
 
-gt.Const.World.NewCampaignOpts <- function ()
-{
-	return {
-		Width = this.Const.World.Settings.SizeX,
-		WidthMin = this.Const.World.Settings.SizeX,
-		WidthMax = this.Const.World.Settings.SizeX,
-		Height = this.Const.World.Settings.SizeY,
-		HeightMin = this.Const.World.Settings.SizeY,
-		HeightMax = this.Const.World.Settings.SizeY,
-		LandMassMult = 50, //this.Const.World.Settings.LandMassMult * 100 - 100,
-		LandMassMultMin = 45,
-		LandMassMultMax = 80,
-		WaterConnectivity = 38, //this.Const.World.Settings.WaterConnectivity - 36,
-		WaterConnectivityMin = 28,
-		WaterConnectivityMax = 48,
-		MinLandToWaterRatio = 7, //this.Const.World.Settings.MinLandToWaterRatio * 10,
-		MinLandToWaterRatioMin = 5,
-		MinLandToWaterRatioMax = 9,
-		Snowline = 0.85 * 100,
-		SnowlineMin = 75,
-		SnowlineMax = 95,
-		NumSettlements = 27,
-		NumSettlementsMax = 50,
-		NumSettlementsMin = 19,
-		NumFactions = 3,
-		NumFactionsMin = 1,
-		NumFactionsMax = 6//Math.min(11, this.Const.GetFactionArchetypesList().len()),
-		FOW = true,
-		ForestsMult = 50,
-		ForestsMultMax = 100,
-		ForestsMultMin = 1
-		SwampsMult = 50,
-		SwampsMultMax = 100,
-		SwampsMultMin = 1,
-		MountainsMult = 50,
-		MountainsMultMax = 100,
-		MountainsMultMin = 1,
-		Debug = false,
-		StackCitadels = false,
-		AllTradeLocations = false
-	}
-}
-
 gt.Const.World.LegendaryContract <-
 {
 	WhiteWolf = 0,

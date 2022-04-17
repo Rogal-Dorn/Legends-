@@ -58,7 +58,6 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 		}
 
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setBanners(this.Const.PlayerBanners);
-		this.m.MainMenuScreen.getNewCampaignMenuModule().setConfigOpts(this.Const.World.NewCampaignOpts());
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setStartingScenarios(this.m.ScenarioManager.getScenariosForUI());
 		this.m.MainMenuScreen.getNewCampaignMenuModule().setCrusadeCampaignAvailable(this.Const.DLC.Desert);
 	}
