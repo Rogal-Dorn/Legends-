@@ -35,7 +35,5 @@
     ::mods_registerCSS("screens/world/modules/camp/camp_screen_main_dialog_module.css");
     ::mods_registerCSS("screens/world/camp_screen.css");
 
-    // new campaign
-    ::mods_registerJS("screens/menu/modules/campaign_menu/new_legend_campaign_menu_module.js");
     delete ::Const.LegendMod.registerUI;
 }
