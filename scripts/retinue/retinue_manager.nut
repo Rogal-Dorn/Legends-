@@ -235,7 +235,6 @@ this.retinue_manager <- {
 
 	function update()
 	{
-		this.World.Assets.resetToDefaults();
 		foreach (p in this.m.Slots)
 		{
 			if (p != null)

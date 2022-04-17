@@ -302,7 +302,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 			if (_skill != null && !_skill.isRanged())
 			{
-				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
+				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnAnyAttackMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
 			}
 
 			this.m.Skills.onMissed(_attacker, _skill);
@@ -390,6 +390,11 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			local oldMoraleState = this.m.MoraleState;
 			this.m.MoraleState = _change;
 			this.m.FleeingRounds = 0;
+
+			if (this.m.MoraleState == this.Const.MoraleState.Confident && oldMoraleState != this.Const.MoraleState.Confident && ("State" in this.World) && this.World.State != null && this.World.Ambitions.hasActiveAmbition() && this.World.Ambitions.getActiveAmbition().getID() == "ambition.oath_of_camaraderie")
+			{
+				this.World.Statistics.getFlags().increment("OathtakersBrosConfident");
+			}
 
 			if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 			{
@@ -819,7 +824,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 			local myTile = this.isPlacedOnMap() ? this.getTile() : null;
 			local tile = this.findTileToSpawnCorpse(_killer);
-			this.m.Skills.onDeath();
+			this.m.Skills.onDeath(_fatalityType);
 			this.onDeath(_killer, _skill, tile, _fatalityType);
 
 			if (!this.Tactical.State.isFleeing() && _killer != null)
@@ -911,6 +916,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			{
 				this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 				this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
+				this.World.Assets.getOrigin().onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 
 				if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
 				{

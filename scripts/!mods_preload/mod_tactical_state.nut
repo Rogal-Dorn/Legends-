@@ -61,18 +61,21 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 
 					this.World.Contracts.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 					this.World.Events.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
+					this.World.Statistics.getFlags().set("LastPlayersAtBattleStartCount", this.m.MaxPlayers);
 					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", this.m.MaxHostiles);
 					this.World.Statistics.getFlags().set("LastCombatResult", 1);
 					if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID())
 					{
 						this.World.Statistics.getFlags().increment("BeastsDefeated");
 					}
+					this.World.Assets.getOrigin().onBattleWon(this.m.CombatResultLoot);
 
 					local playerRoster = this.World.getPlayerRoster().getAll();
 					foreach( bro in playerRoster )
 					{
 						if (bro.getPlaceInFormation() <= 26 && !bro.isPlacedOnMap() && bro.getFlags().get("Devoured") == true)
 						{
+							bro.getSkills().onDeath(this.Const.FatalityType.Devoured);
 							bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 							this.World.getPlayerRoster().remove(bro);
 						}
@@ -131,6 +134,7 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 						{
 							if (bro.isAlive())
 							{
+								bro.getSkills().onDeath(this.Const.FatalityType.Devoured);
 								bro.onDeath(null, null, null, this.Const.FatalityType.Devoured);
 								this.World.getPlayerRoster().remove(bro);
 							}
@@ -458,6 +462,7 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 				}
 			}
 
+			loot.extend(this.m.CombatResultLoot.getItems());
 			this.m.CombatResultLoot.assign(loot);
 			this.m.CombatResultLoot.sort();
 		}
@@ -520,6 +525,7 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 						Expendable = bro.getBackground().getID() == "background.slave"
 					};
 					this.World.Statistics.addFallen(bro);
+					bro.getSkills().onDeath(this.Const.FatalityType.None);
 					this.World.getPlayerRoster().remove(bro);
 					bro.die();
 				}

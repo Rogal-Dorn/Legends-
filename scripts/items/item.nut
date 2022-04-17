@@ -43,6 +43,11 @@ this.item <- {
 		Type = -1
 	},
 
+	function create()
+	{
+		this.m.MagicNumber = this.Math.rand(1, 100);
+	}
+
 	function setContainer( _c )
 	{
 		if (_c != null)
