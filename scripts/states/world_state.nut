@@ -78,7 +78,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		CampaignToLoadFileName = null,
 		CampaignLoadTime = 0,
 		CampaignSettings = null,
-		DebugMap = false,
 		Campaign = "",
 		CommanderDied = null,
 		Camp = null,
@@ -1228,7 +1227,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.Flags.set("IsDesertCampaign", true);
 		}
 
-		this.World.setFogOfWar(!this.m.DebugMap);
+		this.World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("debugMap").getValue());
 		this.World.Crafting.resetAllBlueprints();
 	}
 
@@ -1300,7 +1299,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.logInfo(k + " = " + v);
 		}
 		this.m.CampaignSettings = _settings;
-		this.m.DebugMap = _settings.Debug;
 	}
 
 	function enterLocation( _location )
