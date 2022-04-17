@@ -28,7 +28,7 @@ this.slave_revolt_situation <- this.inherit("scripts/entity/world/settlements/si
 	{
 		_settlement.resetShop();
 		_settlement.resetRoster(true);
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}

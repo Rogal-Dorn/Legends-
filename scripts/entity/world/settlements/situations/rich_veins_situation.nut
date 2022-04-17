@@ -28,7 +28,7 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.25);
 		}

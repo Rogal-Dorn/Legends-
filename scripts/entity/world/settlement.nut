@@ -471,7 +471,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && ::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			ret.push({
 				id = 6,
@@ -550,7 +550,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local s = this.m.Sprite;
 
-		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -2495,7 +2495,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
 
-					if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+					if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 					{
 						this.setResources(this.getResources() + item.getResourceValue());
 					}
@@ -2528,7 +2528,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 						{
 							this.World.Statistics.getFlags().increment("TradeGoodsSold");
 
-							if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+							if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 							{
 								this.setResources(this.getResources() + item.getResourceValue());
 							}

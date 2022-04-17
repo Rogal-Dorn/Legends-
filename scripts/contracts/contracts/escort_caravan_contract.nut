@@ -1004,7 +1004,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 
 						this.World.Contracts.finishActiveContract();
 
-						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 						{
 							local origin = this.Contract.getOrigin();
 							if (origin != null)
@@ -1065,7 +1065,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						}
 
 						//moved from up above when we actually call this screen -> supposedly this is the issue where it makes it fail the contract but here it shouldn't
-						if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+						if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 						{
 							this.Contract.m.Caravan.setResources(this.Math.round(this.Contract.m.Caravan.getResources() / 2));
 							local L = this.Contract.m.Caravan.getInventory();
@@ -1199,7 +1199,7 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 			local min = 1;
 			local L = this.m.Home.getProduce();
 
-			if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+			if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 			{
 				switch (this.m.Home.getSize()) {
 					case 1:

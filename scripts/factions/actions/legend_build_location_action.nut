@@ -12,7 +12,7 @@ this.legend_build_location_action <- this.inherit("scripts/factions/faction_acti
 
 	function onUpdate( _faction )
 	{
-		if(!this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(!::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			return;
 		}

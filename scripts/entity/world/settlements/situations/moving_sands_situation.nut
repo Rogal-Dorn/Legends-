@@ -28,7 +28,7 @@ this.moving_sands_situation <- this.inherit("scripts/entity/world/settlements/si
 		_settlement.removeSituationByID("situation.safe_roads");
 		_settlement.resetShop();
 
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}

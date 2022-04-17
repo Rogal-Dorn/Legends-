@@ -27,7 +27,7 @@ this.warehouse_burned_down_situation <- this.inherit("scripts/entity/world/settl
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}

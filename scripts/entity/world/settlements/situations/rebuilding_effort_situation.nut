@@ -59,7 +59,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 			this.m.Target = candidates[this.Math.rand(0, candidates.len() - 1)].getRealName();
 		}
 
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}

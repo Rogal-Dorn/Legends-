@@ -17,7 +17,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
@@ -25,7 +25,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 
 	function onResolved( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		} 
