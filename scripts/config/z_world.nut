@@ -73,7 +73,6 @@ gt.Const.World.SettingsUpdate <- function (_settings)
 	// }
 	this.Const.World.Settings.LandMassMult = landmass;
 	this.Const.World.Settings.WaterConnectivity = connectivity;
-	this.Const.World.Settings.MinLandToWaterRatio = landwaterratio
 	this.Const.World.Settings.MinDesertTiles = desert
 	this.Const.World.Settings.Snowline = ::Legends.Mod.ModSettings.getSetting("snowline").getValue();
 
