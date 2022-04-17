@@ -110,7 +110,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 3);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

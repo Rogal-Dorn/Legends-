@@ -196,7 +196,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;
