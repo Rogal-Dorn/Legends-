@@ -192,6 +192,13 @@ this.legend_companion_background <- this.inherit("scripts/skills/backgrounds/cha
 		return c;
 	}
 
+	function onAdded() // enables relationships
+	{
+		this.character_background.onAdded();
+		local actor = this.getContainer().getActor();
+		this.m.Container.add(this.new("scripts/skills/special/relationship_check"));
+	}
+
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
