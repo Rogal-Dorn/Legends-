@@ -14,9 +14,9 @@
 		addSetting(_page, _setting, _description);
 	}
 
-	addNCSetting(map, ::MSU.Class.RangeSetting("landRatio", 0.5, 0.45, 0.8, 0.01, "Land Mass Ratio"), "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated.");
+	addNCSetting(map, ::MSU.Class.RangeSetting("landRatio", 50, 45, 80, 1, "Land Mass Ratio"), "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated.");
 	addNCSetting(map, ::MSU.Class.RangeSetting("water", 38, 28, 48, 1, "Water"), "Impacts how much of the map is water. Small value results in patchy water around the corners of the map. Larger numbers can create a single large island given a low enough land mass ratio.");
-	addNCSetting(map, ::MSU.Class.RangeSetting("snowline", 0.85, 0.75, 0.95, 0.01, "Snowline"), "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow.");
+	addNCSetting(map, ::MSU.Class.RangeSetting("snowline", 85, 75, 95, 1, "Snowline"), "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow.");
 	addNCSetting(map, ::MSU.Class.RangeSetting("settlements", 27, 19, 50, 1, "Settlements"), "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles.");
 	addNCSetting(map, ::MSU.Class.RangeSetting("factions", 3, 1, 6, 1, "Factions"), "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider.");
 
