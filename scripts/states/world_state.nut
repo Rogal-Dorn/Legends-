@@ -1143,8 +1143,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		}.bindenv(this), null);
 
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
-		this.LegendsMod.Configs().Update(this.m.CampaignSettings);
-		this.Const.World.SettingsUpdate(this.m.CampaignSettings);
+		this.Const.World.settingsUpdate();
 		local worldmap = this.MapGen.get("world.worldmap_generator");
 		local minX = this.Const.World.Settings.SizeX;
 		local minY = this.Const.World.Settings.SizeY;
