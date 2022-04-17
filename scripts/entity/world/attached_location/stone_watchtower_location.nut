@@ -194,7 +194,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "ammo/quiver_of_bolts"
 			});
 
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 45,
@@ -233,7 +233,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

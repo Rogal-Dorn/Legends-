@@ -5,7 +5,7 @@ this.unhold_fur_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 		this.blueprint.create();
 		this.m.ID = "blueprint.unhold_fur_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_unhold_fur_upgrade");
 		}
@@ -25,7 +25,7 @@ this.unhold_fur_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint", 
 
 	function onCraft( _stash )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_unhold_fur_upgrade"));
 		}

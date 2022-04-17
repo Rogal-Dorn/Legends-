@@ -5,7 +5,7 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_stollwurm_scales_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_stollwurm_scales_upgrade");
 		}
@@ -34,7 +34,7 @@ this.legend_stollwurm_scales_upgrade_blueprint <- this.inherit("scripts/crafting
 
 	function onCraft( _stash )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 		_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_stollwurm_scales_upgrade"));
 		}

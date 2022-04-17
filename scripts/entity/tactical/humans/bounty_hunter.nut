@@ -170,7 +170,7 @@ this.bounty_hunter <- this.inherit("scripts/entity/tactical/human", {
 				[1, "nordic_helmet_with_closed_mail"],
 				[1, "barbute_helmet"]
 			];
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				helm.push([1, "theamson_barbute_helmet"])
 			}

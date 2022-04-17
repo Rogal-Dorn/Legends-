@@ -263,7 +263,7 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 				P = 1.0,
 				S = "armor/basic_mail_shirt"
 			});
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

@@ -18,7 +18,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsArmor = _settings.LegendArmor;
 		this.m.IsItemScaling = _settings.LegendItemScaling;
 		this.m.IsLocationScaling = _settings.LegendLocationScaling;
 		this.m.IsCampUnlock = _settings.LegendCampUnlock;
@@ -49,11 +48,6 @@ this.legends_configs <- {
     function setEnemeyTooltips(val)
     {
         this.m.EnemeyTooltips = val;
-    }
-
-    function LegendArmorsEnabled()
-    {
-        return this.m.IsArmor
     }
 
     function LegendMagicEnabled()

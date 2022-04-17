@@ -88,7 +88,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "trade/cloth_rolls_item"
 			});
 
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 10,
@@ -161,7 +161,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

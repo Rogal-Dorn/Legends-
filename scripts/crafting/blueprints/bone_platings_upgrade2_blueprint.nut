@@ -5,7 +5,7 @@ this.bone_platings_upgrade2_blueprint <- this.inherit("scripts/crafting/blueprin
 		this.blueprint.create();
 		this.m.ID = "blueprint.bone_platings_upgrade2";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_bone_platings_upgrade");
 		}
@@ -25,7 +25,7 @@ this.bone_platings_upgrade2_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function onCraft( _stash )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 		_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_bone_platings_upgrade"));
 		}

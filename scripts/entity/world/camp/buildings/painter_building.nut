@@ -82,7 +82,7 @@ this.painter_building <- this.inherit("scripts/entity/world/camp/camp_building",
 
 	function isHidden()
 	{
-		if (!this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			return true;
 		}

@@ -26,7 +26,7 @@ this.legend_redback_helmet_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function isQualified()
 	{
-		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

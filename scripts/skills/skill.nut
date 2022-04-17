@@ -1292,7 +1292,7 @@ this.skill <- {
 				return false;
 			}
 
-			return !!this.regexp(pattern).search(text);
+			return this.regexp(pattern).search(text);
 		};
 		local user = this.m.Container.getActor();
 		local myTile = user.getTile();

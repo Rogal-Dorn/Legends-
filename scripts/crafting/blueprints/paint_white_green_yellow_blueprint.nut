@@ -35,7 +35,7 @@ this.paint_white_green_yellow_blueprint <- this.inherit("scripts/crafting/bluepr
 
 	function isQualified()
 	{
-		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 });
 

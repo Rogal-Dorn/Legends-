@@ -7,7 +7,7 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor/legendary/legend_mountain_armor");
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_mountain_named");
 		}
@@ -60,7 +60,7 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/legendary/legend_armor_mountain_named"));
 		}

@@ -141,7 +141,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 			items.equip(armor);
 		}
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			foreach( bro in bros )
 			{

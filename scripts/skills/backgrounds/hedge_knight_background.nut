@@ -245,7 +245,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			[1, "closed_flat_top_helmet"]
 		];
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 		{
 			helm.push([1, "theamson_barbute_helmet"])
 		}

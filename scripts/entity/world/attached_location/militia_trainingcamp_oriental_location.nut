@@ -203,7 +203,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 60,

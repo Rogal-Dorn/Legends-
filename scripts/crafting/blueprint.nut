@@ -165,12 +165,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -327,12 +327,12 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -371,12 +371,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -423,12 +423,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 				{
 					continue;
 				}

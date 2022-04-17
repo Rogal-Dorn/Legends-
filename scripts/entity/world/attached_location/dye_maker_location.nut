@@ -72,7 +72,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				P = 1.0,
 				S = "helmets/legend_noble_hood"
 			});
-			if (this.Const.DLC.Unhold && this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (this.Const.DLC.Unhold && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 30,

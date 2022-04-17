@@ -99,7 +99,7 @@ this.executioner <- this.inherit("scripts/entity/tactical/human", {
 				[3, "oriental/turban_helmet"]
 			];
 
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
 			{
 				helm.push(
 					[1, "oriental/janissary_helmet"]
