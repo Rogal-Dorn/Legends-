@@ -1,7 +1,6 @@
 this.legends_configs <- {
 	m = {
         IsArmor = true,
-        IsMagic = false,
         IsItemScaling = false,
         IsLocationScaling = false,
         IsCampUnlock = false,
@@ -19,7 +18,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsMagic = _settings.LegendMagic;
 		this.m.IsArmor = _settings.LegendArmor;
 		this.m.IsItemScaling = _settings.LegendItemScaling;
 		this.m.IsLocationScaling = _settings.LegendLocationScaling;
@@ -60,7 +58,7 @@ this.legends_configs <- {
 
     function LegendMagicEnabled()
     {
-        return this.m.IsMagic
+        return false;
     }
 
     function LegendItemScalingEnabled()
@@ -116,7 +114,6 @@ this.legends_configs <- {
     function onSerialize(_out)
     {
         _out.writeBool(this.m.IsArmor);
-		_out.writeBool(this.m.IsMagic);
 		_out.writeBool(this.m.IsItemScaling);
 		_out.writeBool(this.m.IsLocationScaling);
 		_out.writeBool(this.m.IsCampUnlock);
@@ -134,7 +131,6 @@ this.legends_configs <- {
     function onDeserialize(_in)
     {
 		this.m.IsArmor = _in.readBool();
-		this.m.IsMagic = _in.readBool();
         this.m.IsItemScaling = _in.readBool();
         this.m.IsLocationScaling = _in.readBool();
         this.m.IsCampUnlock = _in.readBool();
