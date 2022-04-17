@@ -720,7 +720,7 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/port_building"), 3);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("stackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,
