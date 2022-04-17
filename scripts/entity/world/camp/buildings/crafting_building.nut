@@ -157,7 +157,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return true;
 		}
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("skipCamp").getValue())
 		{
 			return false;
 		}

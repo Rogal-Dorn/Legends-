@@ -2548,7 +2548,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.updateAchievement("MasterTrader", 1, 1);
 		}
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("skipCamp").getValue())
 		{
 			return;
 		}
