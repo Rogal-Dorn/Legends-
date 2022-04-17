@@ -284,7 +284,7 @@ this.faction_manager <- {
 			this.assignSettlementsToCityStates(cityStates);
 		}
 
-		local nobles = this.createNobleHouses( _settings.NumFactions );
+		local nobles = this.createNobleHouses(::Legends.Mod.ModSettings.getSetting("factions").getValue());
 		this.assignSettlementsToNobleHouses(nobles);
 		this.createBandits();
 		this.createBarbarians();
