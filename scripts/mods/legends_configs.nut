@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsBleedKiller = false,
         IsBlueprintsVisible = false,
         IsRelationship = false,
         IsWorldEconomy = false,
@@ -13,7 +12,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-        this.m.IsBleedKiller = _settings.LegendBleedKiller;
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
@@ -46,11 +44,6 @@ this.legends_configs <- {
         return false;
     }
 
-    function LegendBleedKillerEnabled()
-    {
-        return this.m.IsBleedKiller
-    }
-
     function LegendAllBlueprintsEnabled()
     {
         return this.m.IsBlueprintsVisible
@@ -78,7 +71,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-        _out.writeBool(this.m.IsBleedKiller);
         _out.writeBool(this.m.IsBlueprintsVisible);
         _out.writeBool(this.m.IsRelationship);
         _out.writeBool(this.m.IsWorldEconomy);
@@ -90,7 +82,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-		this.m.IsBleedKiller = _in.readBool();
 		this.m.IsBlueprintsVisible = _in.readBool();
         this.m.IsRelationship = _in.readBool();
         this.m.IsWorldEconomy = _in.readBool();
