@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsBlueprintsVisible = false,
         IsRelationship = false,
         IsWorldEconomy = false,
         IsHelmets = 0,
@@ -12,7 +11,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-        this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
         this.m.IsHelmets = _settings.LegendIsHelmet;
@@ -44,11 +42,6 @@ this.legends_configs <- {
         return false;
     }
 
-    function LegendAllBlueprintsEnabled()
-    {
-        return this.m.IsBlueprintsVisible
-    }
-
     function RelationshipsEnabled()
     {
         return this.m.IsRelationship
@@ -71,7 +64,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-        _out.writeBool(this.m.IsBlueprintsVisible);
         _out.writeBool(this.m.IsRelationship);
         _out.writeBool(this.m.IsWorldEconomy);
         _out.writeU8(this.m.IsHelmets);
@@ -82,7 +74,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-		this.m.IsBlueprintsVisible = _in.readBool();
         this.m.IsRelationship = _in.readBool();
         this.m.IsWorldEconomy = _in.readBool();
         this.m.IsHelmets = _in.readU8();
