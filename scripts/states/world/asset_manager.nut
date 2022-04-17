@@ -71,7 +71,6 @@ this.asset_manager <- {
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
-		IsAutosave = false,
 		IsPermanentDestruction = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
@@ -273,12 +272,7 @@ this.asset_manager <- {
 	{
 		return this.m.IsIronman;
 	}
-
-	function isAutosave()
-	{
-		return this.m.IsAutosave;
-	}
-
+	
 	function isPermanentDestruction()
 	{
 		return this.m.IsPermanentDestruction;
@@ -437,7 +431,6 @@ this.asset_manager <- {
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
 		this.m.Medicine = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Medicine;
-		this.m.IsAutosave = _settings.Autosave;
 
 
 		this.m.Stash.clear();

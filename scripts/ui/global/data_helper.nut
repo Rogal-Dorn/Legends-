@@ -42,11 +42,6 @@ this.data_helper <- {
 			d = d + " Ironman";
 		}
 
-		if (_meta.getInt("autosave") == 1)
-		{
-			d = d + " Autosave off";
-		}
-
 		d = d + ")";
 		return {
 			fileName = _meta.getFileName(),
@@ -55,7 +50,6 @@ this.data_helper <- {
 			banner = _meta.getString("banner"),
 			dayName = "Day " + _meta.getInt("days") + d,
 			creationDate = _meta.getCreationDate(),
-			isAutosave = _meta.getInt("autosave") == 1
 			isIncompatibleVersion = _meta.getVersion() < 33 || _meta.getVersion() > this.Const.Serialization.Version || !this.Const.DLC.isCompatible(_meta),
 			isIronman = _meta.getInt("ironman") == 1
 		};
