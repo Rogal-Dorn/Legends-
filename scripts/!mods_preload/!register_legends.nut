@@ -1,9 +1,21 @@
-::mods_registerMod("mod_legends", 15, "Legends Mod");
+::Legends <- {
+	ID = "mod_legends",
+	Version = "16.0.0-0+alpha",
+	Name = "Legends Mod"
+};
+::mods_registerMod(::Legends.ID, 15, ::Legends.Name);
 ::mods_queue(null, "mod_msu", function()
 {
+	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
+	
 	::mods_registerJS("legends_assets.js");
 	local gt = this.getroottable();
 	gt.LegendsMod <- this.new("scripts/mods/legends_mod")
+
+	::Const.LegendMod.addSettings();
+	::Const.LegendMod.hookMSU();
+
+
 	this.Const.LegendMod.hookActor();
 	this.Const.LegendMod.hookAISkills();
 	this.Const.LegendMod.hookAIAgent();
@@ -23,7 +35,6 @@
 	
 	::Const.LegendMod.registerUI();
 
-	this.Const.LegendMod.hookMSU();
 
 	this.Const.LegendMod.loadBuyback();
 	this.Const.LegendMod.loadTacticalTooltip();
