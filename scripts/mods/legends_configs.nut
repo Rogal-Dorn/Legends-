@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsRecruitScaling = false,
         IsBleedKiller = false,
         IsBlueprintsVisible = false,
         IsRelationship = false,
@@ -14,7 +13,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-		this.m.IsRecruitScaling = _settings.LegendRecruitScaling;
         this.m.IsBleedKiller = _settings.LegendBleedKiller;
         this.m.IsBlueprintsVisible = _settings.LegendAllBlueprints;
         this.m.IsRelationship = _settings.LegendRelationship;
@@ -46,11 +44,6 @@ this.legends_configs <- {
     function LegendMagicEnabled()
     {
         return false;
-    }
-
-    function LegendRecruitScalingEnabled()
-    {
-        return this.m.IsRecruitScaling
     }
 
     function LegendBleedKillerEnabled()
@@ -85,7 +78,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-		_out.writeBool(this.m.IsRecruitScaling);
         _out.writeBool(this.m.IsBleedKiller);
         _out.writeBool(this.m.IsBlueprintsVisible);
         _out.writeBool(this.m.IsRelationship);
@@ -98,7 +90,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-        this.m.IsRecruitScaling = _in.readBool();
 		this.m.IsBleedKiller = _in.readBool();
 		this.m.IsBlueprintsVisible = _in.readBool();
         this.m.IsRelationship = _in.readBool();

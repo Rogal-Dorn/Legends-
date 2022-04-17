@@ -1395,7 +1395,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function calculateAdditionalRecruitmentLevels()
 	{
-		if (this.LegendsMod.Configs().LegendRecruitScalingEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("recruitScaling").getValue())
 		{
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;
