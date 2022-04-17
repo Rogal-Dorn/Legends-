@@ -2,11 +2,10 @@ local gt = this.getroottable();
 
 gt.Const.World.SettingsUpdate <- function (_settings)
 {
-	local landmass =  1.0 + _settings.LandMassMult / 100.0;
 	local landwaterratio = 1.6;
 	local desert = 2000
 
-	this.Const.World.Settings.LandMassMult = landmass;
+	this.Const.World.Settings.LandMassMult = 1.0 + ::Legends.Mod.ModSettings.getSetting("landRatio").getValue();
 	this.Const.World.Settings.WaterConnectivity = ::Legends.Mod.ModSettings.getSetting("water").getValue();
 	this.Const.World.Settings.MinDesertTiles = desert
 	this.Const.World.Settings.Snowline = ::Legends.Mod.ModSettings.getSetting("snowline").getValue();
