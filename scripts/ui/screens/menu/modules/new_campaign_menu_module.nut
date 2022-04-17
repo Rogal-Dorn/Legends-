@@ -79,8 +79,6 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 			GreaterEvil = _settings["GreaterEvil"],
 			PermanentDestruction = _settings["PermanentDestruction"],
 			Seed = _settings["Seed"],
-			Width = this.Const.World.Settings.SizeX,
-			Height = this.Const.World.Settings.SizeY,
 			LandMassMult = _settings["LandMassMult"],
 			WaterConnectivity = _settings["WaterConnectivity"],
 			MinLandToWaterRatio = (_settings["MinLandToWaterRatio"] + 10.0) / 10.0,

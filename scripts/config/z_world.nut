@@ -9,9 +9,6 @@ gt.Const.World.SettingsUpdate <- function (_settings)
 	this.Const.World.Settings.WaterConnectivity = ::Legends.Mod.ModSettings.getSetting("water").getValue();
 	this.Const.World.Settings.MinDesertTiles = desert
 	this.Const.World.Settings.Snowline = ::Legends.Mod.ModSettings.getSetting("snowline").getValue();
-
-	this.Const.World.Settings.SizeX = _settings.Width;
-	this.Const.World.Settings.SizeY = _settings.Height;
 };
 
 
