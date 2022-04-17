@@ -1,6 +1,5 @@
 this.legends_configs <- {
 	m = {
-        IsRelationship = false,
         IsWorldEconomy = false,
         IsHelmets = 0,
         IsTherian = false,
@@ -11,7 +10,6 @@ this.legends_configs <- {
 
     function Update (_settings)
     {
-        this.m.IsRelationship = _settings.LegendRelationship;
         this.m.IsWorldEconomy = _settings.LegendWorldEconomy;
         this.m.IsHelmets = _settings.LegendIsHelmet;
         this.m.IsTherian = _settings.LegendTherian;
@@ -42,11 +40,6 @@ this.legends_configs <- {
         return false;
     }
 
-    function RelationshipsEnabled()
-    {
-        return this.m.IsRelationship
-    }
-
     function LegendWorldEconomyEnabled()
     {
         return this.m.IsWorldEconomy
@@ -64,7 +57,6 @@ this.legends_configs <- {
 
     function onSerialize(_out)
     {
-        _out.writeBool(this.m.IsRelationship);
         _out.writeBool(this.m.IsWorldEconomy);
         _out.writeU8(this.m.IsHelmets);
         _out.writeBool(this.m.IsTherian);
@@ -74,7 +66,6 @@ this.legends_configs <- {
 
     function onDeserialize(_in)
     {
-        this.m.IsRelationship = _in.readBool();
         this.m.IsWorldEconomy = _in.readBool();
         this.m.IsHelmets = _in.readU8();
         this.m.IsTherian = _in.readBool();
