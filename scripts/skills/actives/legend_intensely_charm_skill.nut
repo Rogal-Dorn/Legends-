@@ -160,7 +160,7 @@ this.legend_intensely_charm_skill <- this.inherit("scripts/skills/skill", {
 		}.bindenv(this), this);
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		foreach( id in this.m.Slaves )
 		{

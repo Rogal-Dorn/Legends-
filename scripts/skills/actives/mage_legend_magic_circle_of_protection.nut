@@ -168,7 +168,7 @@ this.mage_legend_magic_circle_of_protection <- this.inherit("scripts/skills/acti
 		this.endEffect();
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.endEffect();
 	}
