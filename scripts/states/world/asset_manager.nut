@@ -1189,11 +1189,6 @@ this.asset_manager <- {
 			}
 		}
 
-		if (this.LegendsMod.Configs().m.IsHelmets == 1)
-		{
-			this.LegendsMod.Configs().m.IsHelmets += (this.Const.DLC.Wildmen && this.Const.DLC.Desert) ? 1 : 0
-		}
-
 		// Adds Taro's Turn it in Mod
 		local excluded_contracts =
 		[
