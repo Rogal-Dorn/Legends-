@@ -75,7 +75,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
 	}

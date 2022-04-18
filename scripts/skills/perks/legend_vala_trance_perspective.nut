@@ -280,7 +280,7 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();

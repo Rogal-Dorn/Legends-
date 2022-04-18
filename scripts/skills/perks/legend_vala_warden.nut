@@ -89,7 +89,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		if (this.m.WardenEntity != null)
 		{

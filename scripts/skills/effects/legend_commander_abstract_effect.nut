@@ -44,7 +44,7 @@ this.legend_commander_abstract_effect <- this.inherit("scripts/skills/skill", {
 		this.removeFromAll();
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.removeFromAll();
 	}

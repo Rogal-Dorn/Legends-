@@ -193,7 +193,7 @@ this.legend_RSS_radiance_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.removeSelf();
 	}
