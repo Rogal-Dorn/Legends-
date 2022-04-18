@@ -16,7 +16,7 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 	function onAdded( _settlement )
 	{
 		_settlement.resetRoster(true);
-		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
@@ -24,7 +24,7 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 
 	function onResolved( _settlement )
 	{
-		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}

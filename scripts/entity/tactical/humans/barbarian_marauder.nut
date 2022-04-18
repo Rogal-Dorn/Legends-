@@ -165,7 +165,7 @@ this.barbarian_marauder <- this.inherit("scripts/entity/tactical/human", {
 			[33, "barbarians/reinforced_animal_hide_armor"]
 		];
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			armor.push(
 				[5, "barbarians/legend_barbarian_southern_armor"]

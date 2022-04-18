@@ -31,7 +31,7 @@ this.paint_black_blueprint_dye <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
-		return (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 });
 

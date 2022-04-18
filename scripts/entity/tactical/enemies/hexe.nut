@@ -210,7 +210,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 
 				if (this.Math.rand(1, 100) <= chance)
 				{
-					if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+					if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 					{
 						local rune;
 						local selected = this.Math.rand(11,13);

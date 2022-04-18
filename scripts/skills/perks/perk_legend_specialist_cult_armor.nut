@@ -63,7 +63,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		if (item != null)
 		{
 			if(item.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(item)
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() && ::mods_isClass(item, "legend_armor"))
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && ::mods_isClass(item, "legend_armor"))
 			{
 				foreach( upgrade in item.m.Upgrades )
 				{

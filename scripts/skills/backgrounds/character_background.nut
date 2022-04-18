@@ -1074,7 +1074,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function rebuildPerkTree( _tree )
 	{
 		this.m.CustomPerkTree = _tree
-		if (::Legends.Mod.ModSettings.getSetting("perkTrees").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("PerkTrees").getValue())
 		{
 			this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
 		}
@@ -1143,7 +1143,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (::Legends.Mod.ModSettings.getSetting("perkTrees").getValue())
+			if (::Legends.Mod.ModSettings.getSetting("PerkTrees").getValue())
 			{
 
 				local mins = this.getPerkTreeDynamicMins();
@@ -1395,7 +1395,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function calculateAdditionalRecruitmentLevels()
 	{
-		if (::Legends.Mod.ModSettings.getSetting("recruitScaling").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("RecruitScaling").getValue())
 		{
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;

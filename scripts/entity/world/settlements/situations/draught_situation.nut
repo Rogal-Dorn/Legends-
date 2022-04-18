@@ -28,7 +28,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 
 	function onAdded( _settlement )
 	{
-		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.1);
 		}
@@ -44,7 +44,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");

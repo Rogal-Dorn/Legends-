@@ -186,7 +186,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			flip = !flip
 		}

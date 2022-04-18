@@ -112,7 +112,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -342,7 +342,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

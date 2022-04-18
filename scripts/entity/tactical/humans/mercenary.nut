@@ -212,7 +212,7 @@ this.mercenary <- this.inherit("scripts/entity/tactical/human", {
 			[5, "barbute_helmet"]
 		];
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			helm.push([5, "theamson_barbute_helmet"])
 		}

@@ -5,7 +5,7 @@ this.serpent_skin_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.blueprint.create();
 		this.m.ID = "blueprint.serpent_skin_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_serpent_skin_upgrade");
 		}
@@ -29,7 +29,7 @@ this.serpent_skin_upgrade_blueprint <- this.inherit("scripts/crafting/blueprint"
 
 	function onCraft( _stash )
 	{
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_serpent_skin_upgrade"));
 		}

@@ -155,7 +155,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 				[1, "barbarians/thick_plated_barbarian_armor"]
 			];
 
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				armor.push(
 					[1, "barbarians/reinforced_heavy_iron_armor"]
@@ -179,7 +179,7 @@ this.barbarian_chosen <- this.inherit("scripts/entity/tactical/human", {
 				[1, "barbarian_chosen_helmet_02"],
 			];
 
-			// if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			// if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			// {
 			// 	helmet.push(
 			// 		[1, "barbarians/rusted_heavy_plate_helmet"]

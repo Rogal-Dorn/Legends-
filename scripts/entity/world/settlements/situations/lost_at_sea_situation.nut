@@ -28,7 +28,7 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onAdded( _settlement )
 	{
-		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -46,7 +46,7 @@ this.lost_at_sea_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_gender)
 		{
 			_draftList.push("female_beggar_background");

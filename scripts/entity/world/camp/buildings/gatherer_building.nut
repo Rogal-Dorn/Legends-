@@ -68,7 +68,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function isHidden()
 	{
 
-		if (::Legends.Mod.ModSettings.getSetting("skipCamp").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return false;
 		}

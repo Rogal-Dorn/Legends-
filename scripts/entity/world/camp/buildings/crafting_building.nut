@@ -157,7 +157,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return true;
 		}
 
-		if (::Legends.Mod.ModSettings.getSetting("skipCamp").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return false;
 		}
@@ -270,9 +270,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			{
 				if ("LegendsArmor" in c)
 				{
-					if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) continue;
+					if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) continue;
 
-					if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) continue;
+					if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) continue;
 				}
 
 				if (c.Instance.getID() in itemsMap && c.Num <= itemsMap[c.Instance.getID()] )

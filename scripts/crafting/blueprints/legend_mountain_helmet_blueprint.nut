@@ -37,7 +37,7 @@ this.legend_mountain_helmet_blueprint <- this.inherit("scripts/crafting/blueprin
 
 	function isQualified()
 	{
-		return (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 
 	function onCraft( _stash )

@@ -28,7 +28,7 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
-		if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.1);
 		}
@@ -46,7 +46,7 @@ this.mustering_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("retired_soldier_background");
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");

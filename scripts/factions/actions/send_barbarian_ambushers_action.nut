@@ -102,7 +102,7 @@ this.send_barbarian_ambushers_action <- this.inherit("scripts/factions/faction_a
 			local mult = this.World.FactionManager.isCivilWar() ? 1.2 : 1.0;
 			}
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-		if (::Legends.Mod.ModSettings.getSetting("distanceScaling").getValue() && distanceToNextSettlement > 14)
+		if (::Legends.Mod.ModSettings.getSetting("DistanceScaling").getValue() && distanceToNextSettlement > 14)
 			{
 			 mult *= distanceToNextSettlement / 14;
 			}

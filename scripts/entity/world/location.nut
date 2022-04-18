@@ -494,7 +494,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 							helmets.extend(this.m.NamedHelmetsList);
 						}
 
-						if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+						if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 						{
 							local weightName = this.Const.World.Common.convNameToList(helmets);
 							this.m.Loot.add(this.Const.World.Common.pickHelmet(weightName));
@@ -507,7 +507,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 					else if (type <= 100)
 					{
 						local armor = clone this.Const.Items.NamedArmors;
-						if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+						if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 						{
 							// armor = clone this.Const.Items.LegendNamedArmorLayers;
 							// armor.extend(this.Const.Items.LegendNamedArmorLayers);
@@ -518,7 +518,7 @@ this.location <- this.inherit("scripts/entity/world/world_entity", {
 							armor.extend(this.m.NamedArmorsList);
 							armor.extend(this.m.NamedArmorsList);
 						}
-						if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+						if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 						{
 							local weightName = this.Const.World.Common.convNameToList(armor);
 							this.m.Loot.add(this.Const.World.Common.pickArmor(weightName));

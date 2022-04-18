@@ -225,7 +225,7 @@ this.alchemist_building <- this.inherit("scripts/entity/world/settlements/buildi
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("legend_alchemist_background");
 		_list.push("legend_alchemist_background");
 	}

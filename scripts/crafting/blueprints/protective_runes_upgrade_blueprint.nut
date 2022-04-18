@@ -26,7 +26,7 @@ this.protective_runes_upgrade_blueprint <- this.inherit("scripts/crafting/bluepr
 
 	function onCraft( _stash )
 	{
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_protective_runes_upgrade"));
 		}

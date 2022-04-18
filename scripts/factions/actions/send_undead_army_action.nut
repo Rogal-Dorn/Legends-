@@ -125,7 +125,7 @@ this.send_undead_army_action <- this.inherit("scripts/factions/faction_action", 
 		local nearestUndead = this.getNearestLocationTo(origin, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Undead).getSettlements());
 		local rand = this.Math.rand(80, 120);
 		local distanceToNextSettlement = this.getDistanceToSettlements(best_settlement.getTile());
-		if (::Legends.Mod.ModSettings.getSetting("distanceScaling").getValue() && distanceToNextSettlement > 14)
+		if (::Legends.Mod.ModSettings.getSetting("DistanceScaling").getValue() && distanceToNextSettlement > 14)
 		{
 			rand *= distanceToNextSettlement / 14.0;
 		}

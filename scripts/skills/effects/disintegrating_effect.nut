@@ -41,7 +41,7 @@ this.disintegrating_effect <- this.inherit("scripts/skills/skill", {
 
 	function getAttacker()
 	{
-		if (!::Legends.Mod.ModSettings.getSetting("bleedKiller").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("BleedKiller").getValue())
 		{
 			return this.getContainer().getActor();
 		}

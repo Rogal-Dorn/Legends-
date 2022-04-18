@@ -488,7 +488,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.Const.DLC.Unhold && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() && (this.m.Settlement.isMilitary() && this.m.Settlement.getSize() >= 3 || this.m.Settlement.getSize() >= 2))
+		if (this.Const.DLC.Unhold && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && (this.m.Settlement.isMilitary() && this.m.Settlement.getSize() >= 3 || this.m.Settlement.getSize() >= 2))
 		{
 			list.push({
 				R = 65,

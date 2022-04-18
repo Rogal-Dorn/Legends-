@@ -63,7 +63,7 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -153,7 +153,7 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 35,

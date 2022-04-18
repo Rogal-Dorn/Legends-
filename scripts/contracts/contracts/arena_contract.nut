@@ -939,7 +939,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								[1, "oriental/gladiator_harness"],
 						]);
 						a.setUpgrade(this.new("scripts/items/" +
-							(!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+							(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
 						))
 
 						this.List.push({
@@ -954,7 +954,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								[1, "oriental/gladiator_harness"],
 						]);
 						a.setUpgrade(this.new("scripts/items/" +
-							(!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+							(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 						))
 						this.List.push({
 							id = 12,

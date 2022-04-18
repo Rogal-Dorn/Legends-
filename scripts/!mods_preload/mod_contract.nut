@@ -303,7 +303,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 			if (s != null)
 			{
-				if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+				if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 				{
 					ret = _settlement.resolveSituationByInstance(_situationInstance);
 				}

@@ -96,7 +96,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (_gender == -1)
 		{
 			r = 0;
-			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
@@ -275,13 +275,13 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (r == 1)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+				(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
 			))
 		}
 		else if (r == 2)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+				(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 			))
 		}
 		items.equip(a);

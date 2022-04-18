@@ -99,7 +99,7 @@ this.destroy_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				if (e.isAlive() && e.getID() == this.m.TargetID)
 				{
-					if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+					if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 					{
 						//Level
 						if (e.getSize() == 1 && !e.isSouthern() && this.World.Assets.isPermanentDestruction())

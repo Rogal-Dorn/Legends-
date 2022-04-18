@@ -19,7 +19,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local s = this.m.Sprite;
-		if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -39,7 +39,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 		}
 
 		local s = this.m.SpriteDestroyed;
-		if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			s = "legend_" + this.m.SpriteDestroyed;
 		}
@@ -222,7 +222,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 	}
 
 	function onUpdateStablesList ( _list )

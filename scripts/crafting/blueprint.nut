@@ -165,12 +165,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -214,7 +214,7 @@ this.blueprint <- {
 			return false;
 		}
 
-		if (::Legends.Mod.ModSettings.getSetting("craftingUnlocked").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("CraftingUnlocked").getValue())
 		{
 			return true;
 		}
@@ -327,12 +327,12 @@ this.blueprint <- {
 
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -371,12 +371,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
@@ -423,12 +423,12 @@ this.blueprint <- {
 		{
 			if ("LegendsArmor" in c)
 			{
-				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}
 
-				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					continue;
 				}

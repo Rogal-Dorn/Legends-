@@ -51,7 +51,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
@@ -89,7 +89,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
@@ -127,7 +127,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_patched");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
@@ -308,7 +308,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() >= 10)
 		{
 			local r;

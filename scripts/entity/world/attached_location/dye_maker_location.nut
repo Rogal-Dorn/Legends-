@@ -17,7 +17,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -72,7 +72,7 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 				P = 1.0,
 				S = "helmets/legend_noble_hood"
 			});
-			if (this.Const.DLC.Unhold && !::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (this.Const.DLC.Unhold && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 30,

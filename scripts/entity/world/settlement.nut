@@ -97,7 +97,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local L = clone this.m.DraftList;
 
-		if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 		{
 			L.extend(this.m.FemaleDraftList);
 		}
@@ -471,7 +471,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && ::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && ::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			ret.push({
 				id = 6,
@@ -550,7 +550,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local s = this.m.Sprite;
 
-		if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -1733,7 +1733,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-		local isGenderEnabled = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+		local isGenderEnabled = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
 		foreach( loc in this.m.AttachedLocations )
 		{
@@ -2317,7 +2317,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (loc.isActive())
 			{
-				if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					loc.onUpdateShopList(_id, _list);
 				}
@@ -2495,7 +2495,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
 
-					if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+					if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 					{
 						this.setResources(this.getResources() + item.getResourceValue());
 					}
@@ -2528,7 +2528,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 						{
 							this.World.Statistics.getFlags().increment("TradeGoodsSold");
 
-							if (::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+							if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 							{
 								this.setResources(this.getResources() + item.getResourceValue());
 							}
@@ -2548,7 +2548,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.updateAchievement("MasterTrader", 1, 1);
 		}
 
-		if (::Legends.Mod.ModSettings.getSetting("skipCamp").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return;
 		}

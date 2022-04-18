@@ -714,7 +714,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	}
 	// return this.new("scripts/items/helmets/" + helm);
 
-	if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (helm == "")
 		{
@@ -824,7 +824,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		return null;
 	}
 
-	if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (armorID == "seedmaster_noble_armor" || armorID == "citreneking_noble_armor" ) {armorID = "mail_hauberk"};	
 		local item = this.new("scripts/items/armor/" + armorID);
@@ -939,7 +939,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		break;
 	}
 
-	if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (armorID == "")
 		{

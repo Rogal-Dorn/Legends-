@@ -53,7 +53,7 @@ this.undead_crypt_location <- this.inherit("scripts/entity/world/location", {
 			treasure.extend(treasure);
 			treasure.extend(treasure);
 			treasure.extend(treasure);
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				treasure.push("legend_armor/armor_upgrades/legend_metal_plating_upgrade");
 				treasure.push("legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade");

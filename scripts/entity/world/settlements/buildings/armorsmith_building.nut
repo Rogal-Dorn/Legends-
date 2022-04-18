@@ -380,7 +380,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			S = "helmets/rondel_helm"
 		});
 
-		if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			list.push({
 				R = 80,
@@ -405,7 +405,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 
 		}
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			foreach( i in this.Const.Items.LegendNamedArmorLayers )
 			{
@@ -494,7 +494,7 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 				S = "helmets/barbute_helmet"
 			});
 
-			if (::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				list.push({
 					R = 60,

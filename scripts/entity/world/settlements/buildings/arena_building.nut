@@ -119,7 +119,7 @@ this.arena_building <- this.inherit("scripts/entity/world/settlements/buildings/
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled";
+	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("gladiator_background");
 		_list.push("gladiator_background");
 		_list.push("gladiator_background");

@@ -171,7 +171,7 @@ this.send_ship_action <- this.inherit("scripts/factions/faction_action", {
 		//TODO, I want to have these generated only once a harbor town gets nice and fat and juicy,
 		//have this ship going to another settlement to move goods around the map.
 
-		// if(::Legends.Mod.ModSettings.getSetting("worldEconomy").getValue())
+		// if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		// {
 		// 	local success = this.onLegendExecute( _faction)
 		// 	if (success != false)

@@ -61,7 +61,7 @@ this.slave_southern_background <- this.inherit("scripts/skills/backgrounds/slave
 		if (_gender == -1)
 		{
 			r = 0;
-			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 19);
 			}

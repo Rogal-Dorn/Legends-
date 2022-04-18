@@ -51,7 +51,7 @@ this.nomad_ruins_location <- this.inherit("scripts/entity/world/location", {
 			treasure.extend(treasure);
 			treasure.extend(treasure);
 			treasure.extend(treasure);
-			if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 			treasure.push("legend_armor/armor_upgrades/legend_metal_plating_upgrade");
 			treasure.push("legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade");
@@ -84,7 +84,7 @@ this.nomad_ruins_location <- this.inherit("scripts/entity/world/location", {
 		], _lootTable);
 		this.dropTreasure(this.Math.rand(1, 2), treasure, _lootTable);
 
-		if (this.Const.DLC.Unhold && ::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue() && this.Math.rand(1, 100) <= 10)
+		if (this.Const.DLC.Unhold && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && this.Math.rand(1, 100) <= 10)
 		{
 			local treasure = [];
 			treasure.push("misc/paint_set_item");

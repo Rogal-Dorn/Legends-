@@ -97,7 +97,7 @@ this.cultist_finale_event <- this.inherit("scripts/events/event", {
 				this.World.getPlayerRoster().remove(_event.m.Sacrifice);
 				this.World.Assets.getStash().makeEmptySlots(1);
 				local item = this.new("scripts/items/armor/legendary/armor_of_davkul");
-				if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+				if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					item = this.new("scripts/items/legend_armor/legendary/legend_armor_of_davkul");
 				}
