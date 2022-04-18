@@ -6,9 +6,9 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 		o.updateCurrentEntity = function()
 		{
 			updateCurrentEntity();
-			if (this.Time.getVirtualSpeed != this.LegendsMod.Configs().AISpeed())
+			if (this.Time.getVirtualSpeed != ::Legends.Mod.ModSettings.getSetting("AISpeed").getValue())
 			{
-				this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
+				this.Time.setVirtualSpeed(::Legends.Mod.ModSettings.getSetting("AISpeed").getValue());
 			}
 		}
 
@@ -23,7 +23,7 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 			}
 			else
 			{
-				this.Time.setVirtualSpeed(this.LegendsMod.Configs().AISpeed());
+				this.Time.setVirtualSpeed(::Legends.Mod.ModSettings.getSetting("AISpeed").getValue());
 				this.m.IsAIPaused = false;
 			}
 		}
