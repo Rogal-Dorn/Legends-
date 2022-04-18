@@ -41,12 +41,10 @@ this.legends_mod <- {
 
     function onSerialize(_out)
     {
-        this.m.Configs.onSerialize(_out);
     }
 
     function onDeserialize(_in)
     {
-        this.m.Configs.onDeserialize(_in);
     }
 
 
