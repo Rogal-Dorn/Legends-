@@ -63,7 +63,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

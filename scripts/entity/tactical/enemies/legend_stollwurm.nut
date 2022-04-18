@@ -184,7 +184,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 
 						if (this.Math.rand(1, 100) <= chance)
 						{
-							if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+							if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 							{
 								local rune;
 								local variant = this.Math.rand(21, 23)

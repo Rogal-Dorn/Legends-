@@ -87,7 +87,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		{
 			r = 0;
 
-			if (::Legends.Mod.ModSettings.getSetting("genderEquality").getValue() != "Disabled")
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

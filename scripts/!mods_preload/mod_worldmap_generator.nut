@@ -383,7 +383,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 
 			foreach( list in this.Const.World.Settlements.LegendsWorldMaster )
 			{
-				local num = Math.ceil(::Legends.Mod.ModSettings.getSetting("settlements").getValue() * list.Ratio)
+				local num = Math.ceil(::Legends.Mod.ModSettings.getSetting("Settlements").getValue() * list.Ratio)
 				//Add at least one of each
 
 				local additionalSpace = 0
@@ -588,7 +588,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 		local buildAdditionalRoads = o.buildAdditionalRoads;
 		o.buildAdditionalRoads = function (_rect, _properties)
 		{
-			if (::Legends.Mod.ModSettings.getSetting("allTradeLocations").getValue())
+			if (::Legends.Mod.ModSettings.getSetting("AllTradeLocations").getValue())
 			{
 				o.guaranteeAllLocations();
 			}

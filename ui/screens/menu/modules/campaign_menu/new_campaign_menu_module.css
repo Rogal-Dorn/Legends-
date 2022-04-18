@@ -43,11 +43,6 @@
     height: 500px;
 }
 
-.new-campaign-menu-module > .dialog .content .column2 .l-list-container
-{
-    height: 80%;
-}
-
 .new-campaign-menu-module > .dialog .content .column3
 {
     width: 45.0rem;
@@ -140,10 +135,6 @@
 	/*margin-top: 1.5rem;*/
 }
 
-	.new-campaign-menu-module > .dialog .content .row .autosave-control {
-		/*margin-top: 1.5rem;*/
-	}
-
 .new-campaign-menu-module > .dialog .content .row .permanent-destruction-control
 {
 	/*margin-top: 1.5rem;*/
@@ -201,17 +192,6 @@
     line-height: 3.0rem;
 }
 
-.new-campaign-menu-module > .dialog .footer .l-random-button
-{
-    top: 0;
-    left: 29.0rem;
-    bottom: 0;
-    width: 17.5rem;
-    position: absolute;
-
-    line-height: 3.0rem;
-}
-
 .new-campaign-menu-module .column .row .l-input
 {
     width: 30.0rem;
@@ -247,26 +227,4 @@
 	vertical-align: middle;
 	margin-left: auto;
     margin-right: auto;
-}
-
-.new-campaign-menu-module > .dialog .content .row .scale-control
-{
-	width: 36.0rem;
-	height: 3.0rem;
-}
-
-.new-campaign-menu-module > .dialog .content .scale-label
-{
-    top: 5.5rem;
-    left: 32.5rem;
-    position: absolute;
-}
-
-.new-campaign-menu-module > .dialog .content .scale-slider
-{
-    top: -1.5rem;
-	width: 30.0rem;
-    position: relative;
-	float: left;
-	margin-bottom: 0.0rem;
 }

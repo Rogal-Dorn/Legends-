@@ -20,7 +20,7 @@ this.snake_oil_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function isQualified()
 	{
-		if (::Legends.Mod.ModSettings.getSetting("craftingUnlocked").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("CraftingUnlocked").getValue())
 		{
 			return true;
 		}

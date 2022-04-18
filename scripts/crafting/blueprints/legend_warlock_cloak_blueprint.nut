@@ -7,7 +7,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 		this.m.Type = this.Const.Items.ItemType.Armor;
 		this.m.PreviewCraftable = this.new("scripts/items/armor/named/legend_named_warlock_cloak");
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}
@@ -53,7 +53,7 @@ this.legend_warlock_cloak_blueprint <- this.inherit("scripts/crafting/blueprint"
 	{
 		local item;
 
-		if (!::Legends.Mod.ModSettings.getSetting("unlayeredArmor").getValue())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			item = this.new("scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak");
 		}

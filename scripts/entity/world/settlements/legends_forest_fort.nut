@@ -683,7 +683,7 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
 
-		if (::Legends.Mod.ModSettings.getSetting("stackCitadels").getValue())
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,
