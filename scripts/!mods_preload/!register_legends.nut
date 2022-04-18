@@ -15,7 +15,6 @@
 	::Const.LegendMod.addSettings();
 	::Const.LegendMod.hookMSU();
 
-
 	this.Const.LegendMod.hookActor();
 	this.Const.LegendMod.hookAISkills();
 	this.Const.LegendMod.hookAIAgent();
@@ -35,27 +34,6 @@
 	
 	::Const.LegendMod.registerUI();
 
-
 	this.Const.LegendMod.loadBuyback();
 	this.Const.LegendMod.loadTacticalTooltip();
-
-	if (!this.Const.DLC.Lindwurm)
-	{
-		this.logError("Legends Error - DLC Missing: Lindwurm");
-	}
-
-	if (!this.Const.DLC.Unhold)
-	{
-		this.logError("Legends Error - DLC Missing: Beasts and Exploration");
-	}
-
-	if (!this.Const.DLC.Wildmen)
-	{
-		this.logError("Legends Error - DLC Missing: Warriors of the North");
-	}
-
-	if (!this.Const.DLC.Desert)
-	{
-		this.logError("Legends Error - DLC Missing: Blazing Deserts");
-	}
 });
