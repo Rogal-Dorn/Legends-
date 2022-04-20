@@ -62,12 +62,12 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
 		{
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
 		}
 
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")

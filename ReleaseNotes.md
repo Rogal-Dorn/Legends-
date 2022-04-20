@@ -7059,6 +7059,7 @@ Note; files below have been moved or outright deleted and replaced. ANY mods usi
 "legend_bastardsword" renamed to "legend_longsword".
 Added an additional difficulty step 'legendary' to scenarios (case = 4).
 Made 'legend_fleshless_trait' and replaced 'legend_fleshless' which was an injury type. This change affects legion, deathy spectre and skeleton summons.
+"pilgrim_background" is now called "legend_pilgrim_background".
 
 **MISC.**
 Mercenaries can now be afraid of the dark.

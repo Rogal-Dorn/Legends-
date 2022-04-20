@@ -64,24 +64,24 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 	if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
 	{
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
 	}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
