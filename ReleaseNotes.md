@@ -6937,7 +6937,6 @@ Lone wolf now uses its own template, not that of the hedge knight. Has a unique 
 Lone wolf cannot recruit normally, they must find like minded friends across the world. These friends cost no upkeep.
 Starts at professional renown, capped at 10 brothers total. Scaling is two-thirds higher than normal.
 Lone wolf origin now has the 'relationships' mechanic.
-
 ```
 
 Manhunters origin tweaked.
@@ -6946,7 +6945,6 @@ Whip slave skill now costs 2 AP (from 4), fatigue cost reduced to 10 (from 15), 
 Whipped effect increased in duration to 3 turns (from 2). Base mskill upped to 12 (from 9), ranged skill to 14 (from 9), Melee/ranged defence increased to 5 (from 0), initiative unchanged (9).
 Resolve increase removed from whipped effect, now removes 5 resolve base and decreases resolve further based on slave level for every whip.
 Slaves are 50% cheaper to hire from this origin.
-
 ```
 Beastslayers origin reworked.
 ```
@@ -7040,6 +7038,7 @@ A strange old man may try to sell you something. Does not repeat.
 Holy war crusader replaced by a new background: Surgeon.
 Cabal now has an event to recruit puppets.
 Undead scourge 'crusader joins' event now gives a differant recruit if you started as the solo crusader.
+Crisis join events remapped; if you you are playing solo crusader, solo ranger or noble you'll get a difefrant recruit for your respective event. Eg, a solo crusader starter will not gain another crusader, instead they'll get another background that is semi unique to their story.
 
 **Typos**
 A few minor typos fixed, many thanks to Dimon.
@@ -7048,6 +7047,7 @@ Removed the part on 'throw net' about throwing nets requiring Rskill to connect 
 Tweaked blacksmith background's tooltip.
 Deathwish trait now has a stipulation regarding the fearsome perk.
 Clarification given to zweihander, greatsword and longsword items in their descriptions to better describe which of them they are. This has also been applied to their named counterparts for better identification.
+Fixed a few issues with the druid background with typos.
 
 **Backend**
 Note; files below have been moved or outright deleted and replaced. ANY mods using these files WILL crash or cause errors if not updated. We will not be changing vanilla files as they may cause serious conflicts with mods not made for legends.
