@@ -1,9 +1,9 @@
-this.pilgrim_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.pilgrim";
+		this.m.ID = "background.legend_pilgrim";
 		this.m.Name = "Pilgrim";
 		this.m.Icon = "ui/backgrounds/background_54.png"; //needs changing
 		this.m.BackgroundDescription = "Dirty and tired, these disciples of the old gods look for clarity and power in their teachings.";
