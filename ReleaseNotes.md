@@ -6978,6 +6978,7 @@ Goblins should now not drop invisible helmets on death.
 Fixes an exploit that can be used in the sunken library fight (Thanks Necro).
 Player characters can now never roll greedy, loyal or disloyal (as all these traits are pointless).
 Demon alp AI fixed (maybe?).
+Wardrum now works as a two handed weapon as intended.
 
 **New backgrounds and traits**
 Added new trait: legend_fear_dark_trait.

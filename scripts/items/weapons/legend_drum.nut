@@ -14,6 +14,7 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.WeaponType = this.Const.Items.WeaponType.Musical | this.Const.Items.WeaponType.Staff;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
+		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
