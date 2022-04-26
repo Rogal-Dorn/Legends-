@@ -3944,9 +3944,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		meta.setInt("difficulty2", this.World.Assets.getEconomicDifficulty());
 		meta.setInt("ironman", this.World.Assets.isIronman() ? 1 : 0);
 		meta.setInt("dlc", this.Const.DLC.Mask);		
-		local ver = this.Const.LegendMod.getVersion();
-		meta.setString("LegendsVersion", ver);
-		this.logInfo("Legends Save Version: " + ver);
 	}
 
 	function onBeforeDeserialize( _in )
@@ -3978,7 +3975,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.Assets.clear();
 		this.setEscortedEntity(null);
 		this.logInfo("Save version: " + _in.getMetaData().getVersion());
-		this.logInfo("Loading Legends Version: " + _in.getMetaData().getString("LegendsVersion"));
 	}
 
 	function onSerialize( _out )

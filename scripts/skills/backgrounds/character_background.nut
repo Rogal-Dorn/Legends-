@@ -1728,13 +1728,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 
-		if (this.Const.LegendMod.compareSavedVersionTo("15.0.2.10", _in.getMetaData()) != -1)
+		local num = _in.readU8();
+		for (local i = 0; i < num; i++)
 		{
-			local num = _in.readU8();
-			for (local i = 0; i < num; i++)
-			{
-				this.getPerk(_in.readU16()).IsRefundable <- false;
-			}
+			this.getPerk(_in.readU16()).IsRefundable <- false;
 		}
 	}
 });
