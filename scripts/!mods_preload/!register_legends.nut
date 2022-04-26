@@ -1,7 +1,8 @@
 ::Legends <- {
 	ID = "mod_legends",
 	Version = "16.0.0-alpha",
-	Name = "Legends Mod"
+	Name = "Legends Mod",
+	BuildName = "MidasAddedThisIDKWhy"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.0-alpha.4), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
