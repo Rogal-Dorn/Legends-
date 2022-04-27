@@ -1,16 +1,16 @@
 ::Const.LegendMod.addSettings <- function()
 {
-	local map = ::MSU.Class.SettingsPage("Map Options");
-	::Legends.Mod.ModSettings.addPage(map);
+	local map = ::Legends.Mod.ModSettings.addPage("Map Options");
 
 	local function addSetting(_page, _setting, _description)
 	{
 		_setting.setDescription(_description);
-		_page.add(_setting);
+		_page.addElement(_setting);
 	}
 	local function addNCSetting( _page, _setting, _description )
 	{
-		_setting.addFlags(["NewCampaign", "NewCampaignOnly"]);
+		_setting.getData().NewCampaign <- true;
+		_setting.getData().NewCampaignOnly <- true;
 		addSetting(_page, _setting, _description);
 	}
 
@@ -27,8 +27,7 @@
 	addNCSetting(map, ::MSU.Class.BooleanSetting("AllTradeLocations", false, "All trade buildings available"), "If enabled, ensures there is at least one of each trade location building on the map.");
 	addNCSetting(map, ::MSU.Class.BooleanSetting("DebugMap", false, "(Debug) Show Entire Map"), "If enabled, the map will start completely revealed and all enemies and camps will be visible.");
 
-	local config = ::MSU.Class.SettingsPage("New Campaign");
-	::Legends.Mod.ModSettings.addPage(config);
+	local config = ::Legends.Mod.ModSettings.addPage("New Campaign");
 
 	addNCSetting(config, ::MSU.Class.EnumSetting("GenderEquality", "All", ["Disabled", "Specific", "All"], "Battle Sisters"), "TODO");
 	addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider1"), "");
@@ -44,8 +43,7 @@
 	addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider2"), "");
 	addNCSetting(config, ::MSU.Class.BooleanSetting("UnlayeredArmor", false, "Unlayered Armor[LEGACY]"), "[color=" + this.Const.UI.Color.NegativeValue + "]LEGACY OPTION, NOT RECOMMENDED.[/color]\n\nIn Legends, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer.\n\nHelmet is made up of a base hood layer, helmet layer, top layer, vanity layer and finally a rune layer.\n\nEach layer can be upgraded individually, allowing flexible armor builds and aesthetics\n\nIf this option is checked, layered armor is disabled.");
 
-	local combat = ::MSU.Class.SettingsPage("Combat");
-	::Legends.Mod.ModSettings.addPage(combat);
+	local combat = ::Legends.Mod.ModSettings.addPage("Combat");
 
 	addSetting(combat, ::MSU.Class.RangeSetting("AISpeed", 1.0, 1.0, 4.0, 0.5, "AI Battle Speed"), "Increases the overall speed of all tactical engagements.");
 	addSetting(combat, ::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Enhanced Enemy Tooltips"), "Enemy tooltips in tactical battles will show more information, like perks and statuses");
