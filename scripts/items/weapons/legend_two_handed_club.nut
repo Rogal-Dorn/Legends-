@@ -18,7 +18,7 @@ this.legend_two_handed_club <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_two_handed_club_01";
-		this.m.Value = 750;
+		this.m.Value = 400;
 		this.m.ShieldDamage = 20;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
