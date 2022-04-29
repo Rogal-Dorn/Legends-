@@ -7013,6 +7013,7 @@ Greenwood schrat now has a higher chance to drop ancient greenwood.
 Miller (and female miller) background now count as an Outlaw.
 'Lacerate' cultist perk now triggers regardless of circumstances.
 Longsword now costs 8 stamina to equip, greatsword costs 10.
+Two-handed club decreased from 750 cost to 450.
 'Violent decomposition' perk damage threshold raised from 35 to 55 base damage.
 The 'boss' in the black monolith now always spawns with a named crypt cleaver.
 A previously unobtainable item may now drop as loot in the black monolith fight.
