@@ -91,6 +91,7 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 	function finishedTraining( _traitGained )
 	{
 		this.m.Description = "This character completed training and can't get any more skills from training. Training experience is slightly improved.";
+		this.m.Icon = "ui/traits/IntensiveTrainingCompleted.png";
 		this.m.TraitGained = _traitGained;
 		this.m.BonusXP = 0.05;
 	}
