@@ -6997,12 +6997,18 @@ New background art made for berserker.
 Rotting flesh and fleshless traits have new art.
 New background art for youngblood.
 
-**Improvements, Tweaks & Balance**
+**General Improvements**
+'Intensive training' trait will now change appearance when you complete it.
+Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
+The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
+Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
+'Deathy spectre' effect is now back in the Cabal origin.
+You will now get 2 stakes for every raw wood in crafting, rather than 1.
+
+**Tweaks & Balance**
 Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
 Brigand warlords are now immune to disarm (lmao).
 Inquisition origin can now recruit youngbloods.
-Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
-The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
 Preserver from Cabal origin now gets scythe skills like her two counterparts do.
 Injury heal rates (not healing itself) has been readjusted from 0.0, 0.05, 0.15, 0.25 to 0.0, 0.03, 0.6, 0.10.
 When being healed at a temple, that brother with get a temporary buff which improves their stats as they recover. This effect will disappear after a few days. This is only obtainable at temples.
@@ -7028,13 +7034,10 @@ Crusader commander no longer starts with a crusader sword.
 Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
 Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers, qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
 Lindwurm packs now have a lower score threshold - meaning you should see fewer impossible fights against them.
-Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
 Hexen gain the 'wither' ability. Hexen leaders gain 'wither' and 'sleep'.
 Added a slim chance for rock unholds to spawn in frost unhold groups.
 Cabal can no longer find puppets in towns - it is now done via a repeating event.
 Possession skill now makes the possessed unit immune to charm for the possession duration.
-'Deathy spectre' is now back in the Cabal origin.
-You will now get 2 stakes for every raw wood in crafting, rather than 1.
 
 **Events**
 There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
