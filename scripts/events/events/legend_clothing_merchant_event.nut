@@ -175,14 +175,14 @@ this.legend_clothing_merchant_event <- this.inherit("scripts/events/event", {
 							"legend_donkey_background"
 						]);
 					_event.m.Dude.getBackground().getBaseProperties().Hitpoints -= 35;
-					_event.m.Dude.getBackground().getBaseProperties().Fatigue -= 25;
+					_event.m.Dude.getBackground().getBaseProperties().Stamina -= 25;
 					_event.m.Dude.getBackground().getBaseProperties().Initiative -= 40;
 						}
 					this.World.Assets.addMoney(-2800);
 					this.List.push({
 						id = 10,
 						icon = "ui/icons/asset_money.png",
-						text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]3000[/color] Crowns"
+						text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]2800[/color] Crowns"
 					});
 					break;
 				}
