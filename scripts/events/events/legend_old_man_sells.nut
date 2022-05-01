@@ -39,10 +39,6 @@ this.legend_old_man_sells <- this.inherit("scripts/events/event", {
 
 				}
 			],
-			function start( _event )
-			{
-				this.Characters.push(_event.m.Blacksmith.getImagePath());
-			}
 
 		});
 		this.m.Screens.push({ //buy
