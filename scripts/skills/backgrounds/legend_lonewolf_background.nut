@@ -94,6 +94,9 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.BowTree,
 				this.Const.Perks.HammerTree
 			],
 			Defense = [
@@ -211,12 +214,12 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				15,
-				20
+				8,
+				12
 			],
 			Bravery = [
 				10,
-				10
+				5
 			],
 			Stamina = [
 				12,
@@ -227,19 +230,19 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				7
 			],
 			RangedSkill = [
-				10,
-				5
+				14,
+				10
 			],
 			MeleeDefense = [
 				7,
 				6
 			],
 			RangedDefense = [
-				3,
-				1
+				7,
+				6
 			],
 			Initiative = [
-				10,
+				15,
 				5
 			]
 		};
@@ -247,37 +250,37 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 	}
 
 
-	function onAddEquipment()
+	function onAddEquipment() //chooses a weapon through starting event
 	{
-		local items = this.getContainer().getActor().getItems();
-		local r;
+		// local items = this.getContainer().getActor().getItems();
+		// local r;
 
-		r = this.Math.rand(0, 4); //Maybe more?
+		// r = this.Math.rand(0, 5);
 
-		if (r == 0)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_longsword"));
-		}
-		else if (r == 1)
-		{
-			items.equip(this.new("scripts/items/weapons/longsword"));
-		}
-		else if (r == 2)
-		{
-			items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
-		}
-		else if (r == 3)
-		{
-			items.equip(this.new("scripts/items/weapons/pike"));
-		}
-		else if (r == 4)
-		{
-			items.equip(this.new("scripts/items/weapons/warbrand"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/weapons/goedendag"));
-		}
+		// if (r == 0)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/legend_longsword"));
+		// }
+		// else if (r == 1)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/longsword"));
+		// }
+		// else if (r == 2)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
+		// }
+		// else if (r == 3)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/pike"));
+		// }
+		// else if (r == 4)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/warbrand"));
+		// }
+		// else if (r == 5)
+		// {
+		// 	items.equip(this.new("scripts/items/weapons/goedendag"));
+		// }
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "mail_hauberk"],

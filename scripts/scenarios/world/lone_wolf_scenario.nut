@@ -4,7 +4,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.m.ID = "scenario.lone_wolf";
 		this.m.Name = "Lone Wolf";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling with your squire for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds. All encounters are two-thirds harder than normal.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 10 fighters in your roster.\n[color=#bcad8c]Avatar:[/color] If your lone wolf dies, the campaign ends.\n[color=#c90000]Not a sellsword:[/color] Cannot recruit. Must instead encounter other champions through events to join your cause.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]You have been traveling for a long time, taking part in tourneys and sparring with young nobles. A hedge knight as tall as a tree, you never needed anybody for long. Is it true still?\n\n[color=#bcad8c]Lone Wolf:[/color] Start with a single experienced hedge knight and great equipment but low funds. All encounters are two-thirds harder than normal.\n[color=#bcad8c]Elite Few:[/color] Can never have more than 10 fighters in your roster.\n[color=#bcad8c]Avatar:[/color] If your lone wolf dies, the campaign ends.\n[color=#c90000]Not a sellsword:[/color] Cannot recruit. Must instead encounter other champions through events to join your cause.[/p]";
 		this.m.Difficulty = 4;
 		this.m.Order = 150;
 		this.m.IsFixedLook = true;
@@ -44,7 +44,6 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[0].setStartValuesEx([
 			"legend_lonewolf_background"
 		]);
-		bros[0].getBackground().m.RawDescription = "A wandering hedge knight, you were a veteran of jousting and sparring tournaments. You were also a veteran of victory. It is a scary thought for many, but if it were anything at all that turned your eye toward mercenary work, it was boredom. Outwardly you state it is for the coin, but a part of you knows it is also for the company.";
 		bros[0].getBackground().buildDescription(true);
 		bros[0].setTitle("the Lone Wolf");
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_swordmaster"));
