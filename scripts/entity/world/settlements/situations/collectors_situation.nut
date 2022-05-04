@@ -38,7 +38,7 @@ this.collectors_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_modifiers.RecruitsMult *= 1.25;
 	}
 
-	function onUpdateDraftList( _draftList )
+	function onUpdateDraftList( _draftList, _gender = null )
 	{
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");

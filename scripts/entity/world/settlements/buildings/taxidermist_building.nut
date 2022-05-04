@@ -80,7 +80,7 @@ this.taxidermist_building <- this.inherit("scripts/entity/world/settlements/buil
 		this.m.SoundsAtNight = [];
 	}
 
-	function onUpdateDraftList( _list )
+	function onUpdateDraftList( _list, _gender = null )
 	{
 		_list.push("anatomist_background");
 	}
