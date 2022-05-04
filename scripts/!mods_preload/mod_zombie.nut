@@ -19,10 +19,10 @@ this.getroottable().Const.LegendMod.hookGhoul <- function()
 			local e = skill.getSwallowedEntity();
 			this.Tactical.addEntityToMap(e, _tile.Coords.X, _tile.Coords.Y);
 			e.getFlags().set("Devoured", false);
-	        if (e.getFlags().has("IsSummoned"))
-	        {
-	            return
-	        }
+			if (e.getFlags().has("IsSummoned"))
+			{
+				return
+			}
 			local slime = e.getSprite("dirt");
 			slime.setBrush("bust_slime");
 			slime.Visible = true;

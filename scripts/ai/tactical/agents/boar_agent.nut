@@ -33,7 +33,7 @@ this.boar_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_line_breaker"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_charge"));
-        this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default")); //bear claws & stuff are in here
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default")); //bear claws & stuff are in here
 	}
 
 	function onUpdate()

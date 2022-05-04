@@ -17,11 +17,11 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"Sturmfeste",
 			"Wesefeste",
 			"Dunenfeste",
-                        "Horizont",
-                        "Ertrunkenort",
-                        "Diekante",
-                        "Dasende",
-                        "Wasserkante",
+						"Horizont",
+						"Ertrunkenort",
+						"Diekante",
+						"Dasende",
+						"Wasserkante",
 			"Seemarkfeste",
 			"Seelandfeste",
 			"Regenfeste",
@@ -387,7 +387,7 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

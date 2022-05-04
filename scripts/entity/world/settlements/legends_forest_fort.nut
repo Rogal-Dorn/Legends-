@@ -275,7 +275,7 @@ this.legends_forest_fort <- this.inherit("scripts/entity/world/settlements/legen
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

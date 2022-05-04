@@ -162,7 +162,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 10)
 		{
 			return;

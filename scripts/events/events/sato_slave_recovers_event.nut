@@ -32,35 +32,35 @@ this.sato_slave_recovers_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-                local dude = _event.m.Recovered;
+				local dude = _event.m.Recovered;
 				this.Characters.push(dude.getImagePath());
 				dude.getFlags().set("sato_recovered_slave", true);
-                local rolls = [];
-                rolls.push(this.Math.rand(8,12));
-                rolls.push(this.Math.rand(4,8));
-                rolls.push(this.Math.rand(4,8));
-                rolls.push(this.Math.rand(4,8));
+				local rolls = [];
+				rolls.push(this.Math.rand(8,12));
+				rolls.push(this.Math.rand(4,8));
+				rolls.push(this.Math.rand(4,8));
+				rolls.push(this.Math.rand(4,8));
 
-                local r = this.Math.rand(0, rolls.len() - 1);
-                local healthRoll = rolls[r] + 2;
-                dude.getBaseProperties().Hitpoints += healthRoll;
-                dude.setHitpoints(this.Math.min(dude.getHitpoints(), dude.getHitpointsMax()));
-                rolls.remove(r);
+				local r = this.Math.rand(0, rolls.len() - 1);
+				local healthRoll = rolls[r] + 2;
+				dude.getBaseProperties().Hitpoints += healthRoll;
+				dude.setHitpoints(this.Math.min(dude.getHitpoints(), dude.getHitpointsMax()));
+				rolls.remove(r);
 
-                r = this.Math.rand(0, rolls.len() - 1);
-                local fatigueRoll = rolls[r];
-                dude.getBaseProperties().Stamina += fatigueRoll;
-                rolls.remove(r);
+				r = this.Math.rand(0, rolls.len() - 1);
+				local fatigueRoll = rolls[r];
+				dude.getBaseProperties().Stamina += fatigueRoll;
+				rolls.remove(r);
 
-                r = this.Math.rand(0, rolls.len() - 1);
-                local resolveRoll = rolls[r] + 2;
-                dude.getBaseProperties().Bravery += resolveRoll;
-                rolls.remove(r);
+				r = this.Math.rand(0, rolls.len() - 1);
+				local resolveRoll = rolls[r] + 2;
+				dude.getBaseProperties().Bravery += resolveRoll;
+				rolls.remove(r);
 
-                r = this.Math.rand(0, rolls.len() - 1);
-                local initiativeRoll = rolls[r] + 5;
-                dude.getBaseProperties().Initiative += initiativeRoll;
-                rolls.remove(r);
+				r = this.Math.rand(0, rolls.len() - 1);
+				local initiativeRoll = rolls[r] + 5;
+				dude.getBaseProperties().Initiative += initiativeRoll;
+				rolls.remove(r);
 
 				dude.getSkills().update();
 				this.List.push({
@@ -96,10 +96,10 @@ this.sato_slave_recovers_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-        if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
-        {
-            return;
-        }
+		if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
+		{
+			return;
+		}
 
 		local brothers = this.World.getPlayerRoster().getAll();
 

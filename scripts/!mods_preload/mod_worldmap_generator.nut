@@ -2,7 +2,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 {
 	::mods_hookNewObjectOnce("mapgen/templates/world/worldmap_generator", function(o)
 	{
-	    o.isWorldAcceptable = function (_rect)
+		o.isWorldAcceptable = function (_rect)
 		{
 			local ocean = 0;
 			local nonOcean = 0;
@@ -49,7 +49,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 			return desert >= this.Const.World.Settings.MinDesertTiles;
 		}
 
-	    // o.fill = function ( _rect, _properties)
+		// o.fill = function ( _rect, _properties)
 		// {
 		// 	this.Const.World.Buildings.reset();
 		// 	this.m.Tiles = [];
@@ -139,11 +139,11 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 		// 	this.LoadingScreen.updateProgress("Building Land and Sea ...");
 		// 	this.buildLandAndSea(_rect);
 		// 	this.__ping();
-	    //     if (!this.isWorldAcceptable(_rect))
-	    //     {
-	    //         this.clearWorld(_rect);
-	    //         return false;
-	    //     }
+		//	 if (!this.isWorldAcceptable(_rect))
+		//	 {
+		//		 this.clearWorld(_rect);
+		//		 return false;
+		//	 }
 
 		// 	this.__ping();
 		// 	this.LoadingScreen.updateProgress("Building Terrain ...");
@@ -165,12 +165,12 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 		// 	this.__ping();
 		// 	this.refineTerrain(_rect, _properties);
 		// 	this.__ping();
-	    //     if (!this.buildSettlements(_rect, _properties))
-	    //     {
+		//	 if (!this.buildSettlements(_rect, _properties))
+		//	 {
 		// 		this.clearWorld(_rect);
 		// 		//this.World.clearScene();
-	    //         return false;
-	    //     }
+		//		 return false;
+		//	 }
 		// 	this.__ping();
 		// 	this.buildRoads(_rect, _properties);
 		// 	this.__ping();
@@ -195,7 +195,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 		// 	}
 		// 	this.__ping();
 
-	    //     return true;
+		//	 return true;
 		// }
 
 		o.refineSettlements = function ( _rect )
@@ -372,7 +372,7 @@ this.getroottable().Const.LegendMod.hookWorldmapGenerator <- function()
 			return settlementTiles
 		}
 
-	    o.buildSettlements = function ( _rect )
+		o.buildSettlements = function ( _rect )
 		{
 
 			local _properties = this.World.State.m.CampaignSettings;

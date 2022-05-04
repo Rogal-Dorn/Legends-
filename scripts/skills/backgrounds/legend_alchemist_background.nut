@@ -23,7 +23,7 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.dumb"
 		];
 		this.m.ExcludedTalents = [
-            this.Const.Attributes.MeleeSkill,
+			this.Const.Attributes.MeleeSkill,
 			this.Const.Attributes.Fatigue
 		];
 		this.m.Bodies = this.Const.Bodies.SouthernMale;
@@ -55,8 +55,8 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 			],
 			Enemy = [],
 			Class = [
-                this.Const.Perks.SickleClassTree, 
-                this.Const.Perks.BarterClassTree]
+				this.Const.Perks.SickleClassTree, 
+				this.Const.Perks.BarterClassTree]
 			Magic = []
 		}
 	}

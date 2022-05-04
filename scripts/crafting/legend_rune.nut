@@ -1,8 +1,8 @@
 this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	m = {
-        Rune = 0,
-        Skill = ""
-    },
+		Rune = 0,
+		Skill = ""
+	},
 	function create()
 	{
 		this.blueprint.create();
@@ -25,7 +25,7 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 
 	function isUpgraded()
 	{
-        return this.Stash.hasItem("tent.enchant_tent");
+		return this.Stash.hasItem("tent.enchant_tent");
 	}
 
 	function getRuneSigilTooltip()
@@ -120,12 +120,12 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	function isCraftable()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill(this.m.Skill))
-            {
-                return true
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getSkills().hasSkill(this.m.Skill))
+			{
+				return true
+			}
 		}
 		return false;
 	}

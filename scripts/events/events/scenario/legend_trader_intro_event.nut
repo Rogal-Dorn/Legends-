@@ -6,7 +6,7 @@ this.legend_trader_intro_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-        	Text = "[img]gfx/ui/events/event_24.png[/img]The open road calls you to profit. The only rule is acquisition",
+			Text = "[img]gfx/ui/events/event_24.png[/img]The open road calls you to profit. The only rule is acquisition",
 			Image = "",
 			Banner = "",
 			List = [],

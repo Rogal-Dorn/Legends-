@@ -53,7 +53,7 @@ this.cultist_darksoul_background <- this.inherit("scripts/skills/backgrounds/cha
 			"the Fanatic",
 			"the Zealot"
 		];
-        this.m.IsGuaranteed = ["mad_trait"]
+		this.m.IsGuaranteed = ["mad_trait"]
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;

@@ -13,7 +13,7 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 		this.m.Description = "A helmet crafted from the skin and skull of a mighty rock unhold, the beast may be dead, but it continues to mend itself even after death";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -47,12 +47,12 @@ this.legend_helmet_mountain_helm <- this.inherit("scripts/items/legend_helmets/l
 
 
 
-    function onCombatFinished()
+	function onCombatFinished()
 	{
 		this.setCondition(this.m.ConditionMax);
 	}
 
-    function onTurnStart()
+	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
 		local helm = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);

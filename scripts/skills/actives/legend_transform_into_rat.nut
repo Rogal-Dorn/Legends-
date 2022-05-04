@@ -51,9 +51,9 @@ this.legend_transform_into_rat <- this.inherit("scripts/skills/skill", {
 	}
 
 	  function isHidden()
-    {
-        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
-    }
+	{
+		return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
+	}
 
 
 	function onVerifyTarget( _originTile, _targetTile )

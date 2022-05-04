@@ -125,7 +125,7 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		local r;
 		r = this.Math.rand(0, 99);
 

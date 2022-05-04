@@ -301,10 +301,10 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		foreach( i, bro in bros )
 		{
 			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Stabled)) //keep lowborn and stabled, delete all else.
-            {
-                garbage.push(bro);
-                continue;
-            }
+			{
+				garbage.push(bro);
+				continue;
+			}
 
 			if (bro.getBackground().getID() == "background.legend_man_at_arms")
 			{

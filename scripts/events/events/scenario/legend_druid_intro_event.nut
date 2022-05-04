@@ -6,7 +6,7 @@ this.legend_druid_intro_event <- this.inherit("scripts/events/event", {
 		this.m.IsSpecial = true;
 		this.m.Screens.push({
 			ID = "A",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]These impudent humans have strayed too far from their realm. The wilds are rebelling, the wolves are angry, even the trees begin to stir in rage. The Druids must undo the damage caused by humans, and show them who are the true beasts. ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]These impudent humans have strayed too far from their realm. The wilds are rebelling, the wolves are angry, even the trees begin to stir in rage. The Druids must undo the damage caused by humans, and show them who are the true beasts. ",
 			Image = "",
 			Banner = "",
 			List = [],

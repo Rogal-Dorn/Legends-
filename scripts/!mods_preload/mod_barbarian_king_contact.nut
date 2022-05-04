@@ -3,7 +3,7 @@ this.getroottable().Const.LegendMod.hookBarbarianKingContract <- function()
 	::mods_hookExactClass("contracts/contract/barbarian_king_contract", function(o) 
 	{
 		local createScreens = o.createScreens;
-	    o.createScreens = function()
+		o.createScreens = function()
 		{
 			createScreens();
 			foreach (s in this.m.Screens)

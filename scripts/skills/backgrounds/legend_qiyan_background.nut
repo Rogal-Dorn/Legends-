@@ -27,15 +27,15 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.craven"
 		];
 		this.m.ExcludedTalents = [
-            this.Const.Attributes.Hitpoints,
+			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Fatigue
-        ];
-        this.m.IsGuaranteed = ["seductive_trait"]
+		];
+		this.m.IsGuaranteed = ["seductive_trait"]
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
-        this.m.Beards = null;
+		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Ethnicity = 1;
 
@@ -62,7 +62,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			Class = [
 				this.Const.Perks.KnifeClassTree,
 				this.Const.Perks.BardClassTree
-            ],
+			],
 			Magic = []
 		}
 	}

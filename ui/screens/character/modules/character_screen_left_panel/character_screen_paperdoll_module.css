@@ -69,18 +69,18 @@
 	position: relative;
 
 	/*background-image: url("coui://gfx/ui/skin/paperdoll_slot_small.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 7.4rem 7.4rem;*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 7.4rem 7.4rem;*/
 }
 
 .character-screen-container .paperdoll-module .l-slot-container.is-big {
 	height: 14.0rem;
 
 	/*background-image: url("coui://gfx/ui/skin/paperdoll_slot_big.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 7.4rem 14.0rem;*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 7.4rem 14.0rem;*/
 }
 
 .character-screen-container .paperdoll-module .l-slot-container.is-top-small-offset {
@@ -220,26 +220,26 @@
 .character-screen-container .paperdoll-module .equipment-slot-container-small .equipment-slot-amount-layer,
 .character-screen-container .paperdoll-module .equipment-slot-container-big .equipment-slot-amount-layer
 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 4;
 
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .character-screen-container .paperdoll-module .equipment-slot-container-small .l-equipment-slot-amount-label,
 .character-screen-container .paperdoll-module .equipment-slot-container-big .l-equipment-slot-amount-label
 {
-    right: 0.4rem;
-    bottom: 0.0rem;
-    height: 1.2rem;
-    position: absolute;
+	right: 0.4rem;
+	bottom: 0.0rem;
+	height: 1.2rem;
+	position: absolute;
 
-    text-align: right;
-    line-height: 1.2rem;
+	text-align: right;
+	line-height: 1.2rem;
 
-    pointer-events: none;
+	pointer-events: none;
 }
 */
 

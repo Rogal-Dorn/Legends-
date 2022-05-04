@@ -16,7 +16,7 @@ this.legend_armor_warlock_cloak <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Condition = 100;
 		this.m.ConditionMax = 100;
 		this.m.StaminaModifier = 4;
-        // this.blockUpgrades();
+		// this.blockUpgrades();
 		// this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
 		// this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
 	}

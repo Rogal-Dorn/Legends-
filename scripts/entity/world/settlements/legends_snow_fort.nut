@@ -270,7 +270,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Clear = true,
 				Force = true
 			}],
-           [1, {
+		   [1, {
 				Script = "scripts/entity/world/attached_location/surface_iron_vein_location",
 				Terrain = ALL
 				NearTerrain = [],
@@ -280,7 +280,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -352,7 +352,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/trapper_location",
 				Terrain = ALL,
 				NearTerrain = [],

@@ -143,7 +143,7 @@ this.vazl_vala_inscribe_armor <- this.inherit("scripts/skills/skill", {
 				local inscriber = this.getContainer().getActor();
 
 				armor.setRuneVariant(this.Math.rand(21, 23));
-                armor.updateRuneSigil();
+				armor.updateRuneSigil();
 				person.getItems().unequip(armor);
 				person.getItems().equip(armor);
 

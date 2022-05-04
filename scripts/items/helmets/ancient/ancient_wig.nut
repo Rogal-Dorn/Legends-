@@ -32,7 +32,7 @@ this.ancient_wig <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteDamaged = "legendhelms_ancient_wig" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_ancient_wig" + "_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_ancient_wig" + "_" + variant + ".png";
-        this.m.IconLarge = this.m.Icon;
+		this.m.IconLarge = this.m.Icon;
 	}
 
 	}

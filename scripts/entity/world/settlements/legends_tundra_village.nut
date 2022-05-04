@@ -9,10 +9,10 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 			"Kravlund",
 			"Bola",
 			"Ravestad",
-                        "Plyndring",
-                        "Koldjord",
-                        "Naturlegeme",
-                        "Klogflygte",
+						"Plyndring",
+						"Koldjord",
+						"Naturlegeme",
+						"Klogflygte",
 			"Alsliv",
 			"Hellevad",
 			"Heimstad",
@@ -273,7 +273,7 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 		];
 		local items = [
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/trapper_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -303,7 +303,7 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/surface_iron_vein_location",
 				Terrain = ALL
 				NearTerrain = [],
@@ -342,7 +342,7 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 				break;
 			case 2:
 				items.extend([
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

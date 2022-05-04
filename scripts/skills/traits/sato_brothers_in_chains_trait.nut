@@ -29,14 +29,14 @@ this.sato_brothers_in_chains_trait <- this.inherit("scripts/skills/traits/charac
 	function onCombatStarted()
 	{
 		this.getContainer().add(this.new("scripts/skills/effects/sato_brothers_in_chains_effect"));
-        this.m.IsHidden = true;
+		this.m.IsHidden = true;
 	}
 
-    function onCombatFinished()
-    {
+	function onCombatFinished()
+	{
 		this.getContainer().removeByID("effects.sato_brothers_in_chains_effect");
-        this.m.IsHidden = false;
-    }
+		this.m.IsHidden = false;
+	}
 
 });
 

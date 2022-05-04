@@ -1,12 +1,12 @@
 this.sato_brothers_in_chains_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-        AttackBonus = 0,
-        DefenseBonus = 0,
-        ResolveBonus = 0,
-        AttackMagnitude = 1,
-        DefenseMagnitude = 1,
-        ResolveMagnitude = 1
-    },
+		AttackBonus = 0,
+		DefenseBonus = 0,
+		ResolveBonus = 0,
+		AttackMagnitude = 1,
+		DefenseMagnitude = 1,
+		ResolveMagnitude = 1
+	},
 	function create()
 	{
 		this.m.ID = "effects.sato_brothers_in_chains";
@@ -76,7 +76,7 @@ this.sato_brothers_in_chains_effect <- this.inherit("scripts/skills/skill", {
 
 		local myTile = actor.getTile();
 		local allies = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
-        local numSlaves = 0;
+		local numSlaves = 0;
 
 		foreach( ally in allies )
 		{
@@ -85,31 +85,31 @@ this.sato_brothers_in_chains_effect <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-            if (ally.getBackground() != null && ally.getBackground().getID() == "background.slave")
-            {
-                numSlaves += 1;
-            }
-        }
+			if (ally.getBackground() != null && ally.getBackground().getID() == "background.slave")
+			{
+				numSlaves += 1;
+			}
+		}
 
-        if (numSlaves < 1)
-        {
-            this.m.IsHidden = true;
-        }
-        else
-        {
-            this.m.IsHidden = false;
+		if (numSlaves < 1)
+		{
+			this.m.IsHidden = true;
+		}
+		else
+		{
+			this.m.IsHidden = false;
 
-            local numSlavesForBonus = numSlaves;
-            this.m.AttackBonus = numSlavesForBonus * this.m.AttackMagnitude;
-            this.m.DefenseBonus = numSlavesForBonus * this.m.DefenseMagnitude;
-            this.m.ResolveBonus = numSlavesForBonus * this.m.ResolveMagnitude;
+			local numSlavesForBonus = numSlaves;
+			this.m.AttackBonus = numSlavesForBonus * this.m.AttackMagnitude;
+			this.m.DefenseBonus = numSlavesForBonus * this.m.DefenseMagnitude;
+			this.m.ResolveBonus = numSlavesForBonus * this.m.ResolveMagnitude;
 
 			_properties.MeleeSkill += this.m.AttackBonus;
 			_properties.RangedSkill += this.m.AttackBonus;
 			_properties.MeleeDefense += this.m.DefenseBonus;
 			_properties.RangedDefense += this.m.DefenseBonus;
 			_properties.Bravery += this.m.ResolveBonus;
-        }
+		}
 	}
 
 });

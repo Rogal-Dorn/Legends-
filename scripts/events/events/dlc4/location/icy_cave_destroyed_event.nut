@@ -56,7 +56,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 						}
 
 					});
-					  // [057]  OP_CLOSE          0      6    0    0
+					  // [057]  OP_CLOSE		  0	  6	0	0
 				}
 
 				this.Options.push({
@@ -113,7 +113,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 						}
 
 					});
-					  // [036]  OP_CLOSE          0      5    0    0
+					  // [036]  OP_CLOSE		  0	  5	0	0
 				}
 
 				this.Options.push({
@@ -263,7 +263,7 @@ this.icy_cave_destroyed_event <- this.inherit("scripts/events/event", {
 						}
 
 					});
-					  // [041]  OP_CLOSE          0      5    0    0
+					  // [041]  OP_CLOSE		  0	  5	0	0
 				}
 
 				this.Options.push({

@@ -70,10 +70,10 @@ this.legend_staff_thrust <- this.inherit("scripts/skills/skill", {
 
 		}
 
-        if (_properties.IsSpecializedInSpearThrust )
-        {
-        _properties.DamageTotalMult *= 1.15;
-        }
+		if (_properties.IsSpecializedInSpearThrust )
+		{
+		_properties.DamageTotalMult *= 1.15;
+		}
 	}
 
 });

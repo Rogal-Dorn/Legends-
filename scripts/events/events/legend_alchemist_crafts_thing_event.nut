@@ -27,51 +27,51 @@ this.legend_alchemist_crafts_thing_event <- this.inherit("scripts/events/event",
 			{
 				this.Characters.push(_event.m.Alchemist.getImagePath());
 				local item;
-                local string = "";
-                switch(this.Math.rand(0,12))
-                {
-                    case 0:
-                        string = "tools/daze_bomb_item";
-                        break;
-                    case 1:
-                        string = "tools/fire_bomb_item";
-                        break;
-                    case 2:
-                        string = "tools/smoke_bomb_item";
-                        break;
-                    case 3:
-                        string = "tools/acid_flask_item";
-                        break;
-                    case 4:
-                        string = "accessory/antidote_item";
-                        break;
-                    case 5:
-                        string = "ammo/powder_bag";
-                        break;
-                    case 6:
-                        string = "accessory/cat_potion_item";
-                        break;
-                    case 7:
-                        string = "accessory/iron_will_potion_item";
-                        break;
-                    case 8:
-                        string = "accessory/lionheart_potion_item";
-                        break;
-                    case 9:
-                        string = "accessory/night_vision_elixir_item";
-                        break;
-                    case 10:
-                        string = "accessory/recovery_potion_item";
-                        break;
-                    case 11:
-                        string = "accessory/spider_poison_item";
-                        break;
-                    case 12:
-                        string = "misc/potion_of_knowledge_item";
-                        break;
+				local string = "";
+				switch(this.Math.rand(0,12))
+				{
+					case 0:
+						string = "tools/daze_bomb_item";
+						break;
+					case 1:
+						string = "tools/fire_bomb_item";
+						break;
+					case 2:
+						string = "tools/smoke_bomb_item";
+						break;
+					case 3:
+						string = "tools/acid_flask_item";
+						break;
+					case 4:
+						string = "accessory/antidote_item";
+						break;
+					case 5:
+						string = "ammo/powder_bag";
+						break;
+					case 6:
+						string = "accessory/cat_potion_item";
+						break;
+					case 7:
+						string = "accessory/iron_will_potion_item";
+						break;
+					case 8:
+						string = "accessory/lionheart_potion_item";
+						break;
+					case 9:
+						string = "accessory/night_vision_elixir_item";
+						break;
+					case 10:
+						string = "accessory/recovery_potion_item";
+						break;
+					case 11:
+						string = "accessory/spider_poison_item";
+						break;
+					case 12:
+						string = "misc/potion_of_knowledge_item";
+						break;
 
-                }
-                item = this.new("scripts/items/" + string);
+				}
+				item = this.new("scripts/items/" + string);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

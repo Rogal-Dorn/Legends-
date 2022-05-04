@@ -290,7 +290,7 @@ this.legends_steppe_village <- this.inherit("scripts/entity/world/settlements/le
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

@@ -124,7 +124,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SpecAxe,
 				this.Const.Perks.PerkDefs.SpecSword,
 				this.Const.Perks.PerkDefs.SpecDagger,
-                this.Const.Perks.PerkDefs.SpecThrowing,
+				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendMasterySlings,
 				this.Const.Perks.PerkDefs.LegendSpecPoison,
 				this.Const.Perks.PerkDefs.SpecThrowing

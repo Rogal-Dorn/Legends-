@@ -621,7 +621,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 		else
 		{
 			self.notifyBackendStartButtonPressed();
-		}    	
+		}		
 	}, '', 1);
 
 	layout = $('<div class="l-cancel-button"/>');
@@ -646,7 +646,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			self.mStartButton.changeButtonText("Next");
 			self.mCancelButton.changeButtonText("Cancel");
 			self.mStartButton.enableButton(true);
-		}    	
+		}		
 	}, '', 1);
 
 	this.mIsVisible = false;

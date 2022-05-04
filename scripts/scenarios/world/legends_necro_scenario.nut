@@ -202,7 +202,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		local r;
 		r = this.Math.rand(0, 5);
 
@@ -272,10 +272,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
 				bro.getSkills().update();
 			}
-            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
-            {
-                garbage.push(bro);
-            }
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
+			{
+				garbage.push(bro);
+			}
 		}
 	}
 

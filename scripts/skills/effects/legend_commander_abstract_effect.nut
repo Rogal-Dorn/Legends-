@@ -57,9 +57,9 @@ this.legend_commander_abstract_effect <- this.inherit("scripts/skills/skill", {
 
 			foreach( a in actors )
 			{
-                local effect = a.getSkills().getSkillByID(this.m.ID);
-                if (effect != null && effect.getCommander() == this.getCommander()) //if for some god forsaken reason we have 2 commanders casting these skills it'll only remove the correct one
-				    a.getSkills().removeByID(this.m.ID);	
+				local effect = a.getSkills().getSkillByID(this.m.ID);
+				if (effect != null && effect.getCommander() == this.getCommander()) //if for some god forsaken reason we have 2 commanders casting these skills it'll only remove the correct one
+					a.getSkills().removeByID(this.m.ID);	
 			}
 		}
 	}

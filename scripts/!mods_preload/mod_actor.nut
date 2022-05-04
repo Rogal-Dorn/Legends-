@@ -1112,17 +1112,17 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 		// local onResurrected = o.onResurrected;
 		// o.onResurrected = function ( _info )
 		// {
-		//     onResurrected(_info);
-		//     this.World.getPlayerRoster().add(_info);
+		//	 onResurrected(_info);
+		//	 this.World.getPlayerRoster().add(_info);
 		// }
 		// local onInit = o.onInit;
 		// o.onInit = function ()
 		// {
-		//     o.onInit();
-		//     o.m.BloodSaturation = 1.5;
-		//     o.m.DeathBloodAmount = 1.5;
-		//     o.m.BloodPoolScale = 1.25;
-		//     o.m.BloodSplatterOffset = this.createVec(-1, -1);
+		//	 o.onInit();
+		//	 o.m.BloodSaturation = 1.5;
+		//	 o.m.DeathBloodAmount = 1.5;
+		//	 o.m.BloodPoolScale = 1.25;
+		//	 o.m.BloodSplatterOffset = this.createVec(-1, -1);
 		// }
 		// }
 	});

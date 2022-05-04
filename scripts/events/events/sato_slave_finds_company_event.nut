@@ -43,8 +43,8 @@ this.sato_slave_finds_company_event <- this.inherit("scripts/events/event", {
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
 					"slave_background",
-                    "slave_southern_background",
-                    "slave_barbarian_background"
+					"slave_southern_background",
+					"slave_barbarian_background"
 				]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
@@ -59,10 +59,10 @@ this.sato_slave_finds_company_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-        if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
-        {
-            return;
-        }
+		if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
+		{
+			return;
+		}
 
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{

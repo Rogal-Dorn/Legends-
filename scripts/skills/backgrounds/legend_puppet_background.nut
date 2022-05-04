@@ -262,10 +262,10 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 	}
 
 	function adjustHiringCostBasedOnEquipment() //reduces cost for equipment worn on zombies to zero for recruiting purposes.
-    {
-        local actor = this.getContainer().getActor();
-        actor.m.HiringCost = this.Math.floor(this.m.HiringCost + 500 * this.Math.pow(this.m.Level - 1, 1.5));
-    }
+	{
+		local actor = this.getContainer().getActor();
+		actor.m.HiringCost = this.Math.floor(this.m.HiringCost + 500 * this.Math.pow(this.m.Level - 1, 1.5));
+	}
 
 	function onAddEquipment()
 	{
