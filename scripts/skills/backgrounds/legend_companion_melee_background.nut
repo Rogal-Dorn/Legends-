@@ -1,9 +1,9 @@
-this.legend_companion_background <- this.inherit("scripts/skills/backgrounds/character_background", {
+this.legend_companion_melee_background <- this.inherit("scripts/skills/backgrounds/character_background", {
 	m = {},
 	function create()
 	{
 		this.character_background.create();
-		this.m.ID = "background.legend_companion";
+		this.m.ID = "background.legend_companion_melee";
 		this.m.Name = "Companion";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.BackgroundDescription = "This one has lost all interest in glory and gold. With nothing else to prove but to themselves.";
