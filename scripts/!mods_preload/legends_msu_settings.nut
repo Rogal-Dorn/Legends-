@@ -39,5 +39,5 @@
 
 	local combat = ::Legends.Mod.ModSettings.addPage("Combat");
 
-	addSetting(combat, ::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Enhanced Enemy Tooltips", "Enemy tooltips in tactical battles will show more information, like perks and statuses"));
+	combat.addElement(::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Enhanced Enemy Tooltips", "Enemy tooltips in tactical battles will show more information, like perks and statuses"));
 }
