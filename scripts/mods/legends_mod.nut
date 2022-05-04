@@ -38,14 +38,4 @@ this.legends_mod <- {
 
 		this.World.Events.fire(_args);
 	}
-
-	function onSerialize(_out)
-	{
-	}
-
-	function onDeserialize(_in)
-	{
-	}
-
-
 }

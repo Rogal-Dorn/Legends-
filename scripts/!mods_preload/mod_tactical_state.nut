@@ -2,32 +2,6 @@ this.getroottable().Const.LegendMod.hookTacticalState <- function()
 {
 	::mods_hookExactClass("states/tactical_state", function(o) 
 	{
-		local updateCurrentEntity = o.updateCurrentEntity;
-		o.updateCurrentEntity = function()
-		{
-			updateCurrentEntity();
-			if (this.Time.getVirtualSpeed != ::Legends.Mod.ModSettings.getSetting("AISpeed").getValue())
-			{
-				this.Time.setVirtualSpeed(::Legends.Mod.ModSettings.getSetting("AISpeed").getValue());
-			}
-		}
-
-		o.setPause = function (_f)
-		{
-			this.m.IsGamePaused = _f;
-
-			if (_f)
-			{
-				this.Time.setVirtualSpeed(0.0);
-				this.m.IsAIPaused = true;
-			}
-			else
-			{
-				this.Time.setVirtualSpeed(::Legends.Mod.ModSettings.getSetting("AISpeed").getValue());
-				this.m.IsAIPaused = false;
-			}
-		}
-
 		o.onBattleEnded = function()
 		{
 			if (this.m.IsExitingToMenu)
