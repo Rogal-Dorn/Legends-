@@ -703,6 +703,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function hasPerkGroup( _group )
+	{
+		foreach (row in _group.Tree)
+		{
+			foreach (perk in row)
+			{
+				if (!this.hasPerk(perk)) return false;
+			}
+		}
+
+		return true;
+	}
+
 	function removePerkGroup( _group )
 	{
 		foreach (i, row in _group.Tree)
