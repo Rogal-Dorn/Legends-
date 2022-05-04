@@ -3590,34 +3590,6 @@ this.tooltip_events <- {
 				}
 			];
 
-		case "world-screen.topbar.TimeVeryfastButton":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Very Fast Speed (3)"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Set time to pass much faster than normal. (4x Speed)"
-				}
-			];
-		
-		case "world-screen.topbar.TimeLudicrousButton":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Ludicrous Speed (4)"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Set time to pass insanely quickly. (8x Speed)"
-				}
-			];
-
 		case "world-screen.topbar.options-module.ActiveContractButton":
 			return [
 				{
