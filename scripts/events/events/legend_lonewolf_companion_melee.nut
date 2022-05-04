@@ -74,7 +74,7 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				{
 				_event.m.Dude.setStartValuesEx([
-					"legend_companion_background"
+					"legend_companion_melee_background"
 				]);
 				}
 
@@ -114,7 +114,7 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 
 				{
 				_event.m.Dude.setStartValuesEx([
-					"legend_companion_background"
+					"legend_companion_melee_background"
 				]);
 				}
 
@@ -153,7 +153,7 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 
 				{
 				_event.m.Dude.setStartValuesEx([
-					"legend_companion_background"
+					"legend_companion_melee_background"
 				]);
 				}
 
