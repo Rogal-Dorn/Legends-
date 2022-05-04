@@ -22,7 +22,6 @@
 
 	addNCSetting(map, ::MSU.Class.SettingsDivider("MapDivider1"), "");
 
-	addNCSetting(map, ::MSU.Class.BooleanSetting("ExplorationMode", true, "Unexplored Map"), "An optional way to play the game where the map is entirely unexplored and not visible to you at the start of your campaign. You\'ll have to discover everything on your own, which makes your campaign more difficult, but potentially also more exciting.\n\nRecommended only for experienced players that know what they\'re doing.");
 	addNCSetting(map, ::MSU.Class.BooleanSetting("StackCitadels", false, "Decked Out Citadels"), "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for.");
 	addNCSetting(map, ::MSU.Class.BooleanSetting("AllTradeLocations", false, "All trade buildings available"), "If enabled, ensures there is at least one of each trade location building on the map.");
 	addNCSetting(map, ::MSU.Class.BooleanSetting("DebugMap", false, "(Debug) Show Entire Map"), "If enabled, the map will start completely revealed and all enemies and camps will be visible.");
@@ -45,6 +44,5 @@
 
 	local combat = ::Legends.Mod.ModSettings.addPage("Combat");
 
-	addSetting(combat, ::MSU.Class.RangeSetting("AISpeed", 1.0, 1.0, 4.0, 0.5, "AI Battle Speed"), "Increases the overall speed of all tactical engagements.");
 	addSetting(combat, ::MSU.Class.BooleanSetting("EnhancedTooltips", false, "Enhanced Enemy Tooltips"), "Enemy tooltips in tactical battles will show more information, like perks and statuses");
 }
