@@ -10,8 +10,7 @@
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 	
 	::mods_registerJS("legends_assets.js");
-	local gt = this.getroottable();
-	gt.LegendsMod <- this.new("scripts/mods/legends_mod")
+	::LegendsMod <- this.new("scripts/mods/legends_mod")
 
 	::Const.LegendMod.addSettings();
 	::Const.LegendMod.hookMSU();
