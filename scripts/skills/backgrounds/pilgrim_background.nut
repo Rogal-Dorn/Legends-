@@ -41,7 +41,7 @@ this.pilgrim_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.hate_nobles",
 			"trait.slack"
 		];
-        this.m.IsGuaranteed = ["hate_undead_trait"]
+		this.m.IsGuaranteed = ["hate_undead_trait"]
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;

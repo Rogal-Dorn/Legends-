@@ -58,7 +58,7 @@ this.oathtakers_confrontation_event <- this.inherit("scripts/events/event", {
 						}
 
 					});
-					  // [054]  OP_CLOSE          0      5    0    0
+					  // [054]  OP_CLOSE		  0	  5	0	0
 				}
 
 				$[stack offset 0].Options.push({
@@ -181,7 +181,7 @@ this.oathtakers_confrontation_event <- this.inherit("scripts/events/event", {
 						}
 
 					});
-					  // [145]  OP_CLOSE          0      6    0    0
+					  // [145]  OP_CLOSE		  0	  6	0	0
 				}
 
 				$[stack offset 0].Options.push({

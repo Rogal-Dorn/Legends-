@@ -639,24 +639,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function addPerk( _perk, _row = 0, _isRefundable = true )
 	{
 		local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
-        //Dont add dupes
-        if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
-        {
-            return false;
-        }
+		//Dont add dupes
+		if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
+		{
+			return false;
+		}
 
-        perkDefObject.Row <- _row;
-        perkDefObject.Unlocks <- _row;
-        perkDefObject.IsRefundable <- _isRefundable;
+		perkDefObject.Row <- _row;
+		perkDefObject.Unlocks <- _row;
+		perkDefObject.IsRefundable <- _isRefundable;
 
-        for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
-        {
-            this.getPerkTree().push([]);
-        }
-        this.getPerkTree()[_row].push(perkDefObject);
+		for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
+		{
+			this.getPerkTree().push([]);
+		}
+		this.getPerkTree()[_row].push(perkDefObject);
 		this.m.CustomPerkTree[_row].push(_perk);
-        this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
-        return true;
+		this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
+		return true;
 	}
 
 	function addPerkGroup(_Tree) {

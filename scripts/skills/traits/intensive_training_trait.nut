@@ -217,17 +217,17 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 		return tooltip;
 	}
 	
-    function isHidden()
-    {
-        if (this.getStatsIncreased() == 0)
-        {
-        return true;
-        }
-        else
-        {
-        return false;
-        }
-    }	
+	function isHidden()
+	{
+		if (this.getStatsIncreased() == 0)
+		{
+		return true;
+		}
+		else
+		{
+		return false;
+		}
+	}	
 
 	function onSerialize( _out )
 	{

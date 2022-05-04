@@ -180,10 +180,10 @@ this.uproot_skill <- this.inherit("scripts/skills/skill", {
 					}.bindenv(this), null);
 				}
 
-				  // [325]  OP_CLOSE          0      6    0    0
+				  // [325]  OP_CLOSE		  0	  6	0	0
 			}
 
-			  // [326]  OP_CLOSE          0      5    0    0
+			  // [326]  OP_CLOSE		  0	  5	0	0
 		}
 
 		return true;

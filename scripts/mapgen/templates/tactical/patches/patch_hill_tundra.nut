@@ -33,7 +33,7 @@ this.patch_hill_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 						if (this.Math.rand(1, 100) < 35)
 						{
-							  // [111]  OP_JMP            0    293    0    0
+							  // [111]  OP_JMP			0	293	0	0
 						}
 						else
 						{
@@ -46,7 +46,7 @@ this.patch_hill_tundra <- this.inherit("scripts/mapgen/tactical_template", {
 						{
 							if (this.Math.rand(1, 100) < 15)
 							{
-								  // [179]  OP_JMP            0    225    0    0
+								  // [179]  OP_JMP			0	225	0	0
 							}
 							else
 							{

@@ -197,10 +197,10 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-            if (bro.getSkills().hasSkill("trait.player") || (bro.getFlags().get("IsPlayerCharacter")))
-            {
-                continue;
-            }
+			if (bro.getSkills().hasSkill("trait.player") || (bro.getFlags().get("IsPlayerCharacter")))
+			{
+				continue;
+			}
 
 			if (bro.getDailyCost() < lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{

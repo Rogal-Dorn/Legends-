@@ -427,10 +427,10 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-            if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_commander_noble")
-            {
-                continue;
-            }
+			if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_commander_noble")
+			{
+				continue;
+			}
 			
 			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.slave")
 			{

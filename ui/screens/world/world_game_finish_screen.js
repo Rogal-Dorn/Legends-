@@ -25,19 +25,19 @@ var WorldGameFinishScreen = function()
 	this.mScore = null;
 	this.mQuitButton = null;
 
-    this.mIsVisible = false;
+	this.mIsVisible = false;
 };
 
 
 WorldGameFinishScreen.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 WorldGameFinishScreen.prototype.onConnection = function (_handle)
 {
 	this.mSQHandle = _handle;
-    this.register($('.root-screen'));
+	this.register($('.root-screen'));
 };
 
 WorldGameFinishScreen.prototype.onDisconnection = function ()
@@ -109,94 +109,94 @@ WorldGameFinishScreen.prototype.createDIV = function (_parentDiv)
 
 WorldGameFinishScreen.prototype.destroyDIV = function ()
 {
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 WorldGameFinishScreen.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
+	this.createDIV(_parentDiv);
 };
 
 WorldGameFinishScreen.prototype.destroy = function()
 {
-    this.destroyDIV();
+	this.destroyDIV();
 };
 
 
 WorldGameFinishScreen.prototype.register = function (_parentDiv)
 {
-    console.log('WorldGameFinishScreen::REGISTER');
+	console.log('WorldGameFinishScreen::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register World Game Finish Screen. Reason: Screen is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register World Game Finish Screen. Reason: Screen is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 WorldGameFinishScreen.prototype.unregister = function ()
 {
-    console.log('WorldGameFinishScreen::UNREGISTER');
+	console.log('WorldGameFinishScreen::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister World Game Finish Screen. Reason: Screen is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister World Game Finish Screen. Reason: Screen is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
 WorldGameFinishScreen.prototype.show = function (_data)
 {
-    this.loadFromData(_data);
+	this.loadFromData(_data);
 
-    var self = this;
-    this.mContainer.velocity("finish", true).velocity({ opacity: 1 },
-    {
-        duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            $(this).removeClass('display-none').addClass('display-block');
-            self.notifyBackendOnAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = true;
-            self.notifyBackendOnShown();
-        }
-    });
+	var self = this;
+	this.mContainer.velocity("finish", true).velocity({ opacity: 1 },
+	{
+		duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			$(this).removeClass('display-none').addClass('display-block');
+			self.notifyBackendOnAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = true;
+			self.notifyBackendOnShown();
+		}
+	});
 };
 
 WorldGameFinishScreen.prototype.hide = function ()
 {
-    var self = this;
+	var self = this;
 
-    this.mContainer.velocity("finish", true).velocity({ opacity: 0 },
-    {
-        duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            self.notifyBackendOnAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = false;
-            $(this).removeClass('display-block').addClass('display-none');
-            self.notifyBackendOnHidden();
-        }
-    });
+	this.mContainer.velocity("finish", true).velocity({ opacity: 0 },
+	{
+		duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			self.notifyBackendOnAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = false;
+			$(this).removeClass('display-block').addClass('display-none');
+			self.notifyBackendOnHidden();
+		}
+	});
 };
 
 
@@ -240,26 +240,26 @@ WorldGameFinishScreen.prototype.notifyBackendOnDisconnected = function ()
 
 WorldGameFinishScreen.prototype.notifyBackendOnShown = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenShown');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenShown');
+	}
 };
 
 WorldGameFinishScreen.prototype.notifyBackendOnHidden = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenHidden');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenHidden');
+	}
 };
 
 WorldGameFinishScreen.prototype.notifyBackendOnAnimating = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenAnimating');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenAnimating');
+	}
 };
 
 WorldGameFinishScreen.prototype.notifyBackendQuitButtonPressed = function ()

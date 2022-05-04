@@ -750,14 +750,14 @@ this.asset_manager <- {
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
 		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
-        {
+		{
 			local name = "NULL"
 			if (i == 0)
 			{
 				name = "Formation 1"
 			}
-            this.m.FormationNames.push(name);
-        }
+			this.m.FormationNames.push(name);
+		}
 	}
 
 	function init()
@@ -874,7 +874,7 @@ this.asset_manager <- {
 				}
 
 				food.remove(i);
-				  // [136]  OP_JMP            0      8    0    0
+				  // [136]  OP_JMP			0	  8	0	0
 			}
 			else
 			{
@@ -1574,7 +1574,7 @@ this.asset_manager <- {
 		return ret;
 	}
 
-    function changeFormation( _index )
+	function changeFormation( _index )
 	{
 
 		if (_index == this.m.FormationIndex)
@@ -1647,7 +1647,7 @@ this.asset_manager <- {
 		this.updateFormation();
 	}
 
-    function clearFormation()
+	function clearFormation()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -1680,7 +1680,7 @@ this.asset_manager <- {
 		this.m.FormationNames[_index] = _name;
 	}
 
-    function changeFormationName( _name )
+	function changeFormationName( _name )
 	{
 		this.setFormationName(this.m.FormationIndex, _name);
 	}
@@ -1760,15 +1760,15 @@ this.asset_manager <- {
 
 	function updateLook( _updateTo = -1 ) // Will check any origin for update look.
 	{
-	    if (_updateTo != -1)
-	    {
-	        this.m.Look = _updateTo
-	    }
+		if (_updateTo != -1)
+		{
+			this.m.Look = _updateTo
+		}
 
-	    this.World.State.getPlayer().setBaseImage(this.m.Look);
-	    if ("updateLook" in this.World.Assets.getOrigin()){
-	         this.World.Assets.getOrigin().updateLook();
-	    }
+		this.World.State.getPlayer().setBaseImage(this.m.Look);
+		if ("updateLook" in this.World.Assets.getOrigin()){
+			 this.World.Assets.getOrigin().updateLook();
+		}
 	}
 
 	function saveEquipment()

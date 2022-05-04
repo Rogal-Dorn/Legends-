@@ -69,7 +69,7 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 		for ( local i = 0; i < 99; i = ++i )
 		{
 			if (actor.isAlive() && this.Math.rand(1, 6) >= this.Math.max(2, 7 - this.getTurnsCurseofyears()))
-            {
+			{
 				this.spawnIcon("status_effect_81", this.getContainer().getActor().getTile());
 				local hitInfo = clone this.Const.Tactical.HitInfo;
 				hitInfo.DamageRegular = this.getDamage();
@@ -78,11 +78,11 @@ this.curseofyears_effect <- this.inherit("scripts/skills/skill", {
 				hitInfo.BodyDamageMult = 0.02 + this.getTurnsCurseofyears();
 				hitInfo.FatalityChanceMult = 0.0;
 				this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
-            }
-            else
-            {
+			}
+			else
+			{
 				break;
-            }
+			}
 		}
 	}
 

@@ -17,7 +17,7 @@
 	height: 3.5rem;
 	position: absolute;
 
-    /*border-bottom: 1px rgba(130, 130, 130, 1) solid;*/
+	/*border-bottom: 1px rgba(130, 130, 130, 1) solid;*/
 }
 
 .character-screen-container .right-panel-header-module .buttons-container
@@ -54,12 +54,12 @@
 	height: 4.3rem;
 	position: absolute;
 
-    line-height: 3.0rem;
+	line-height: 3.0rem;
 }
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button:last-child
 {
-    margin-right: 0;
+	margin-right: 0;
 }
 
 /*
@@ -85,19 +85,19 @@
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button.is-inventory
 {
-    left: 0;
+	left: 0;
 }
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button.is-perks
 {
-    left: 17.0rem;
+	left: 17.0rem;
 }
 
 .character-screen-container .right-panel-header-module .buttons-container .l-button.is-close
 {
-    right: 0;
-    top: 0.2rem;
-    width: 4.5rem;
+	right: 0;
+	top: 0.2rem;
+	width: 4.5rem;
 	height: 4.1rem;
 }
 

@@ -5,18 +5,18 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		NumBros = 0,
 		Craft = 0
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Gatherer;
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Gatherer;
 		this.m.ModName = "Gathering";
 		this.m.BaseCraft = 1.0;
-        this.m.Slot = "gather";
-        this.m.Name = "Gatherer";
-        this.m.Description = "Forgage for herbs and medicine";
+		this.m.Slot = "gather";
+		this.m.Name = "Gatherer";
+		this.m.Description = "Forgage for herbs and medicine";
 		this.m.BannerImage = "ui/buttons/banner_gather.png";
-        this.m.CanEnter = false
-    }
+		this.m.CanEnter = false
+	}
 
 	function getTitle()
 	{
@@ -40,7 +40,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	}
 
 	function getModifierToolip()
-    {
+	{
 		local mod = this.getModifiers();
 		local ret = [
 			{
@@ -78,7 +78,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.gather_tent");
+		return this.Stash.hasItem("tent.gather_tent");
 	}
 
 	function getLevel()
@@ -97,17 +97,17 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return pro + "_" + sub;
 	}
 
-    function init()
-    {
+	function init()
+	{
 		this.m.MedsAdded = 0;
 		this.m.Items = [];
 		local mod = this.getModifiers();
-        this.m.NumBros = mod.Assigned;
+		this.m.NumBros = mod.Assigned;
 		this.m.Craft = mod.Craft;
-    }
+	}
 
 	function getResults()
-    {
+	{
 		local res = []
 		local id = 60;
 		if (this.m.MedsAdded > 0)
@@ -132,26 +132,26 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			})
 			++id;
 		}
-        return res;
-    }
+		return res;
+	}
 
 	function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
-    function getUpdateText()
-    {
-    	if (this.World.Assets.getMedicine() + this.m.MedsAdded >= this.World.Assets.getMaxMedicine())
-    	{
-    		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds and " + this.m.Items.len() + " items";
-    	}
+	function getUpdateText()
+	{
+		if (this.World.Assets.getMedicine() + this.m.MedsAdded >= this.World.Assets.getMaxMedicine())
+		{
+			return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds and " + this.m.Items.len() + " items";
+		}
 
-    	local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
-    	this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (points / 3.0));
-    	return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds and " + this.m.Items.len() + " items";
-    }
+		local points = this.Math.floor(this.m.Craft * this.m.Camp.getElapsedHours());
+		this.m.MedsAdded = this.Math.min(this.World.Assets.getMaxMedicine(), (points / 3.0));
+		return "Gathered ... " + this.Math.floor(this.m.MedsAdded) + " meds and " + this.m.Items.len() + " items";
+	}
 
 	function update()
 	{
@@ -280,9 +280,9 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		};
 		local roster = this.World.getPlayerRoster().getAll();
 
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID) continue;
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID) continue;
 
 			if (bro.getSkills().hasSkill("perk.legend_potion_brewer")) map.Brewer += bro.getLevel();
 
@@ -302,23 +302,23 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 
 			if (bro.getSkills().hasSkill("perk.legend_gatherer")) map.Apothecary += bro.getLevel();
-        }
-        return map;
+		}
+		return map;
 	}
 
-    function completed()
-    {
+	function completed()
+	{
 		local item = null
 		if (this.m.MedsAdded > 0)
 		{
 			this.World.Assets.addMedicine(this.Math.floor(this.m.MedsAdded));
 		}
-    }
+	}
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showGathererDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showGathererDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )

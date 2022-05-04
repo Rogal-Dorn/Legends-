@@ -79,10 +79,10 @@ this.knock_back <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stagger on a hit"
-        	});
-        }
-        
-        if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
+			});
+		}
+		
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
 			local actor = this.getContainer().getActor();
 			local p = this.getContainer().getActor().getCurrentProperties();

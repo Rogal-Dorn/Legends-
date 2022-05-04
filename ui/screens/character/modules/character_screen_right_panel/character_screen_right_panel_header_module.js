@@ -12,8 +12,8 @@
 
 var CharacterScreenRightPanelHeaderModule = function(_parent, _dataSource)
 {
-    this.mParent = _parent;
-    this.mDataSource = _dataSource;
+	this.mParent = _parent;
+	this.mDataSource = _dataSource;
 
 	// header: containers
 	this.mContainer = null;
@@ -27,21 +27,21 @@ var CharacterScreenRightPanelHeaderModule = function(_parent, _dataSource)
 	// button: callbacks
 	this.mOnToggleFilterCallback = null;
 	this.mOnSwitchToInventoryCallback = null;
-    this.mOnSwitchToPerksCallback = null;
-    //this.mOnSwitchtoFormationsCallback = null;
+	this.mOnSwitchToPerksCallback = null;
+	//this.mOnSwitchtoFormationsCallback = null;
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
 
 CharacterScreenRightPanelHeaderModule.prototype.createDIV = function (_parentDiv)
 {
-    var self = this;
+	var self = this;
 
 	// create: container
 	this.mContainer = $('<div class="right-panel-header-module"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	var leftButtonContainer = $('<div class="buttons-container is-left"/>');
 	this.mContainer.append(leftButtonContainer);
@@ -52,85 +52,85 @@ CharacterScreenRightPanelHeaderModule.prototype.createDIV = function (_parentDiv
 
 	// create: buttons
 	//this.mToggleSearchButton = this.createImageButtonDIV(leftButtonContainer, 'search-button', Path.GFX + Asset.BUTTON_SEARCH);
-    
-    var layout = $('<div class="l-button is-inventory"/>');
-    middleButtonContainer.append(layout);
-    this.mSwitchToInventoryButton = layout.createTabTextButton("Stash", function()
+	
+	var layout = $('<div class="l-button is-inventory"/>');
+	middleButtonContainer.append(layout);
+	this.mSwitchToInventoryButton = layout.createTabTextButton("Stash", function()
 	{
-        if (self.mOnSwitchToInventoryCallback !== null && jQuery.isFunction(self.mOnSwitchToInventoryCallback))
-        {
-            self.mOnSwitchToInventoryCallback();
-        }
-    }, null, 'tab-button', 7);
+		if (self.mOnSwitchToInventoryCallback !== null && jQuery.isFunction(self.mOnSwitchToInventoryCallback))
+		{
+			self.mOnSwitchToInventoryCallback();
+		}
+	}, null, 'tab-button', 7);
 
- //    layout = $('<div class="l-button is-formations"/>');
- //    middleButtonContainer.append(layout);
- //    this.mSwitchToFormationsButton = layout.createTabTextButton("Formations", function()
+ //	layout = $('<div class="l-button is-formations"/>');
+ //	middleButtonContainer.append(layout);
+ //	this.mSwitchToFormationsButton = layout.createTabTextButton("Formations", function()
 	// {
- //        if (self.mOnSwitchToFormationsCallback !== null && jQuery.isFunction(self.mOnSwitchToFormationsCallback))
- //        {
- //            self.mOnSwitchToFormationsCallback();
- //        }
- //    }, null, 'tab-button', 7);
+ //		if (self.mOnSwitchToFormationsCallback !== null && jQuery.isFunction(self.mOnSwitchToFormationsCallback))
+ //		{
+ //			self.mOnSwitchToFormationsCallback();
+ //		}
+ //	}, null, 'tab-button', 7);
 
 
-    layout = $('<div class="l-button is-perks"/>');
-    middleButtonContainer.append(layout);
-    this.mSwitchToPerksButton = layout.createTabTextButton("Perks", function()
+	layout = $('<div class="l-button is-perks"/>');
+	middleButtonContainer.append(layout);
+	this.mSwitchToPerksButton = layout.createTabTextButton("Perks", function()
 	{
-        if (self.mOnSwitchToPerksCallback !== null && jQuery.isFunction(self.mOnSwitchToPerksCallback))
-        {
-            self.mOnSwitchToPerksCallback();
-        }
-    }, null, 'tab-button', 7);
+		if (self.mOnSwitchToPerksCallback !== null && jQuery.isFunction(self.mOnSwitchToPerksCallback))
+		{
+			self.mOnSwitchToPerksCallback();
+		}
+	}, null, 'tab-button', 7);
 
-    layout = $('<div class="l-button is-close"/>');
-    rightButtonContainer.append(layout);
-    this.mCloseButton = layout.createImageButton(Path.GFX + Asset.BUTTON_QUIT, function ()
+	layout = $('<div class="l-button is-close"/>');
+	rightButtonContainer.append(layout);
+	this.mCloseButton = layout.createImageButton(Path.GFX + Asset.BUTTON_QUIT, function ()
 	{
-        self.mDataSource.notifyBackendCloseButtonClicked();
-    }, '', 6);
+		self.mDataSource.notifyBackendCloseButtonClicked();
+	}, '', 6);
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.destroyDIV = function ()
 {
-    this.mSwitchToInventoryButton.remove();
-    this.mSwitchToInventoryButton = null;
-    this.mSwitchToPerksButton.remove();
-    this.mSwitchToPerksButton = null;
-    // this.mSwitchToFormationsButton.remove();
-    // this.mSwitchToFormationsButton = null;
-    this.mCloseButton.remove();
-    this.mCloseButton = null;
+	this.mSwitchToInventoryButton.remove();
+	this.mSwitchToInventoryButton = null;
+	this.mSwitchToPerksButton.remove();
+	this.mSwitchToPerksButton = null;
+	// this.mSwitchToFormationsButton.remove();
+	// this.mSwitchToFormationsButton = null;
+	this.mCloseButton.remove();
+	this.mCloseButton = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 CharacterScreenRightPanelHeaderModule.prototype.registerDatasourceListener = function()
 {
-    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.ModeUpdated, jQuery.proxy(this.onInventoryModeUpdated, this));
-    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Updated, jQuery.proxy(this.onBrotherUpdated, this));
-    this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Selected, jQuery.proxy(this.onBrotherSelected, this));
+	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Inventory.ModeUpdated, jQuery.proxy(this.onInventoryModeUpdated, this));
+	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Updated, jQuery.proxy(this.onBrotherUpdated, this));
+	this.mDataSource.addListener(CharacterScreenDatasourceIdentifier.Brother.Selected, jQuery.proxy(this.onBrotherSelected, this));
 };
 
 
 CharacterScreenRightPanelHeaderModule.prototype.bindTooltips = function ()
 {
 	this.mSwitchToInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.InventoryButton });
-    this.mSwitchToPerksButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.PerksButton });
-    //this.mSwitchToFormationsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FormationButton });
-    this.mCloseButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.CloseButton });
+	this.mSwitchToPerksButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.PerksButton });
+	//this.mSwitchToFormationsButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.FormationButton });
+	this.mCloseButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterScreen.RightPanelHeaderModule.CloseButton });
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.unbindTooltips = function ()
 {
 	this.mSwitchToInventoryButton.unbindTooltip();
-    this.mSwitchToPerksButton.unbindTooltip();
-    //this.mSwitchToFormationsButton.unbindTooltip();
-    this.mCloseButton.unbindTooltip();
+	this.mSwitchToPerksButton.unbindTooltip();
+	//this.mSwitchToFormationsButton.unbindTooltip();
+	this.mCloseButton.unbindTooltip();
 };
 
 
@@ -156,44 +156,44 @@ CharacterScreenRightPanelHeaderModule.prototype.setOnSwitchToPerksCallback = fun
 
 CharacterScreenRightPanelHeaderModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 CharacterScreenRightPanelHeaderModule.prototype.register = function (_parentDiv)
 {
-    console.log('CharacterScreenRightPanelHeaderModule::REGISTER');
+	console.log('CharacterScreenRightPanelHeaderModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Right Panel Header Module. Reason: Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Right Panel Header Module. Reason: Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.unregister = function ()
 {
-    console.log('CharacterScreenRightPanelHeaderModule::UNREGISTER');
+	console.log('CharacterScreenRightPanelHeaderModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Right Panel Header Module. Reason: Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Right Panel Header Module. Reason: Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.isRegistered = function ()
@@ -216,50 +216,50 @@ CharacterScreenRightPanelHeaderModule.prototype.toggleFilterPanel = function ()
 
 CharacterScreenRightPanelHeaderModule.prototype.selectInventoryPanel = function ()
 {
-    this.mSwitchToInventoryButton.selectTabTextButton(true);
+	this.mSwitchToInventoryButton.selectTabTextButton(true);
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.selectPerksPanel = function ()
 {
-    this.mSwitchToPerksButton.selectTabTextButton(true);
+	this.mSwitchToPerksButton.selectTabTextButton(true);
 };
 
 
 CharacterScreenRightPanelHeaderModule.prototype.updateButtonsByBrother = function (_brother)
 {
-    var perkPoints = this.mDataSource.getBrotherPerkPoints(_brother);
-    if (perkPoints > 0)
-    {
-        this.mSwitchToPerksButton.findButtonText().html('Perks (<span class="font-bold font-color-positive-value">' + perkPoints + '</span>)');
-    }
-    else
-    {
-        this.mSwitchToPerksButton.findButtonText().html('Perks');
-    }
+	var perkPoints = this.mDataSource.getBrotherPerkPoints(_brother);
+	if (perkPoints > 0)
+	{
+		this.mSwitchToPerksButton.findButtonText().html('Perks (<span class="font-bold font-color-positive-value">' + perkPoints + '</span>)');
+	}
+	else
+	{
+		this.mSwitchToPerksButton.findButtonText().html('Perks');
+	}
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.updateButtonsByInventoryMode = function (_inventoryMode)
 {
-    switch(_inventoryMode)
-    {
-        case CharacterScreenDatasourceIdentifier.InventoryMode.BattlePreparation:
-        case CharacterScreenDatasourceIdentifier.InventoryMode.Stash:
-        {
-            this.mSwitchToInventoryButton.findButtonText().html('Stash');
-            //this.mSwitchToFormationsButton.show();
-        } break;
-        case CharacterScreenDatasourceIdentifier.InventoryMode.Ground:
-        {
-            this.mSwitchToInventoryButton.findButtonText().html('Ground');
-            //this.mSwitchToFormationsButton.hide();
-        } break;
-    }
+	switch(_inventoryMode)
+	{
+		case CharacterScreenDatasourceIdentifier.InventoryMode.BattlePreparation:
+		case CharacterScreenDatasourceIdentifier.InventoryMode.Stash:
+		{
+			this.mSwitchToInventoryButton.findButtonText().html('Stash');
+			//this.mSwitchToFormationsButton.show();
+		} break;
+		case CharacterScreenDatasourceIdentifier.InventoryMode.Ground:
+		{
+			this.mSwitchToInventoryButton.findButtonText().html('Ground');
+			//this.mSwitchToFormationsButton.hide();
+		} break;
+	}
 };
 
 
 CharacterScreenRightPanelHeaderModule.prototype.onInventoryModeUpdated = function (_dataSource, _mode)
 {
-    this.updateButtonsByInventoryMode(_mode);
+	this.updateButtonsByInventoryMode(_mode);
 };
 
 CharacterScreenRightPanelHeaderModule.prototype.onBrotherUpdated = function (_dataSource, _brother)
@@ -270,8 +270,8 @@ CharacterScreenRightPanelHeaderModule.prototype.onBrotherUpdated = function (_da
 CharacterScreenRightPanelHeaderModule.prototype.onBrotherSelected = function (_dataSource, _brother)
 {
 	if (_brother !== null)
-    {
-        this.updateButtonsByBrother(_brother);
-    }
+	{
+		this.updateButtonsByBrother(_brother);
+	}
 };
 

@@ -53,7 +53,7 @@ this.blueprint <- {
 
 	function getCostForCraft () 
 	{
-	    return getCost() * this.m.CraftMultiplier;
+		return getCost() * this.m.CraftMultiplier;
 	}
 
 	function getSounds()

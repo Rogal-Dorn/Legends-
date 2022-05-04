@@ -43,9 +43,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-        StarWeights = [50,50,50,50,50,50,50,50],
-        // Alignment = null,
-        CompanyID = 0
+		StarWeights = [50,50,50,50,50,50,50,50],
+		// Alignment = null,
+		CompanyID = 0
 	},
 	function setName( _value )
 	{
@@ -898,7 +898,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
-        // this.m.CompanyID = this.World.State.addNewID(this);
+		// this.m.CompanyID = this.World.State.addNewID(this);
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -2182,15 +2182,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	}
 
-    function getAlignment()
-    {
-        return this.m.Alignment;
-    }
+	function getAlignment()
+	{
+		return this.m.Alignment;
+	}
 
-    // function getCompanyID()
-    // {
-    //     return this.m.CompanyID;
-    // }
+	// function getCompanyID()
+	// {
+	//	 return this.m.CompanyID;
+	// }
 
 	// function setCompanyID( _num )
 	// {

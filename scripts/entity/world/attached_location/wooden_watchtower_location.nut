@@ -63,7 +63,7 @@ this.wooden_watchtower_location <- this.inherit("scripts/entity/world/attached_l
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;

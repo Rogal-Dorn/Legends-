@@ -19,7 +19,7 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.m.Description = "A trophy made from the face of a skin ghoul.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -51,13 +51,13 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		return result;
 	}
 
-    function onEquip()
+	function onEquip()
 	{
 		this.legend_helmet_upgrade.onEquip();
-        if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_gruesome_feast"))
-        {
-		    this.addSkill(this.new("scripts/skills/actives/legend_gruesome_feast"));
-        }
+		if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_gruesome_feast"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_gruesome_feast"));
+		}
 	}
 
 	function updateVariant()

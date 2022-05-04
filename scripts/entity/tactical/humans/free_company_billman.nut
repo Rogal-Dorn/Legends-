@@ -1,7 +1,7 @@
 this.free_company_billman <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_billman_outfit_00"]
+			[1, "mercenary_billman_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyBillman,
 		PerkPower = 7
@@ -78,10 +78,10 @@ this.free_company_billman <- this.inherit("scripts/entity/tactical/free_company_
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_halberd"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/polehammer"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/polehammer"));
+		}
 
 		this.free_company_abstract.assignRandomEquipment();
 	}

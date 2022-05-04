@@ -27,7 +27,7 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
-        this.getSprite("socket").setBrush("bust_base_nomads");
+		this.getSprite("socket").setBrush("bust_base_nomads");
 
 		if (this.Math.rand(1, 100) <= 15)
 		{
@@ -86,15 +86,15 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		];
 
 		if (this.Const.DLC.Wildmen)
-        {
-            weapons.extend([
+		{
+			weapons.extend([
 				"weapons/scimitar",
 				"weapons/scimitar",
 				"weapons/oriental/light_southern_mace",
 				"weapons/oriental/light_southern_mace",
-                "weapons/battle_whip"
-            ]);
-        }
+				"weapons/battle_whip"
+			]);
+		}
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 
@@ -118,8 +118,8 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		local helmet = [
 			[1, "oriental/nomad_leather_cap"],
 			[1, "oriental/nomad_light_helmet"],
-            [1, "oriental/wrapped_southern_helmet"],
-            [1, "oriental/spiked_skull_cap_with_mail"]
+			[1, "oriental/wrapped_southern_helmet"],
+			[1, "oriental/spiked_skull_cap_with_mail"]
 		];
 
 		if (this.World.getTime().Days <= 18)

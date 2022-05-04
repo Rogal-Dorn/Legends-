@@ -2478,7 +2478,7 @@ this.worldmap_generator <- this.inherit("scripts/mapgen/map_template", {
 						if (d < 8)
 						{
 							tooClose = true;
-							  // [084]  OP_JMP            0      7    0    0
+							  // [084]  OP_JMP			0	  7	0	0
 						}
 						else if (d <= 20)
 						{

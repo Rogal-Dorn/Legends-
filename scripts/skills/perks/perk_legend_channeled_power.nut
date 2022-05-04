@@ -1,7 +1,7 @@
 this.perk_legend_channeled_power <- this.inherit("scripts/skills/skill", {
 	m = {
-        FatigueMult = 0.7
-    },
+		FatigueMult = 0.7
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_channeled_power";

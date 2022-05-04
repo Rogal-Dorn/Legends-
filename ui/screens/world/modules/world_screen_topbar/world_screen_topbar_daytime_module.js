@@ -14,7 +14,7 @@
 var WorldScreenTopbarDayTimeModule = function(_dataSource)
 {
 	this.mSQHandle = null;
-    this.mDataSource = _dataSource;
+	this.mDataSource = _dataSource;
 
 	// event listener
 	this.mEventListener = null;
@@ -23,8 +23,8 @@ var WorldScreenTopbarDayTimeModule = function(_dataSource)
 	this.mContainer = null;
 
 	// text & image containers
-    this.mDayTimeText = null;
-    this.mDayTimeImage = null;
+	this.mDayTimeText = null;
+	this.mDayTimeImage = null;
 
 	this.mPausedDiv = null;
 	this.mPausedSpacebarDiv = null;
@@ -35,7 +35,7 @@ var WorldScreenTopbarDayTimeModule = function(_dataSource)
 	this.mTimeVeryfastButton = null;
 	this.mTimeLudicrousButton = null;
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -74,113 +74,113 @@ WorldScreenTopbarDayTimeModule.prototype.createDIV = function (_parentDiv)
 
 	// create: containers
 	this.mContainer = $('<div class="topbar-daytime-module ui-control"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	var textContainer = $('<div class="text-container"></div>');
 	this.mContainer.append(textContainer);
 	var imageContainer = $('<div class="image-container"></div>');
 	this.mContainer.append(imageContainer);
 
-    this.mDayTimeText = $('<div class="text title-font-small font-bold font-bottom-shadow font-color-title"></div>');
-    textContainer.append(this.mDayTimeText);
+	this.mDayTimeText = $('<div class="text title-font-small font-bold font-bottom-shadow font-color-title"></div>');
+	textContainer.append(this.mDayTimeText);
 
-    this.mDayTimeImage = $('<img/>');
-    this.mDayTimeImage.attr('src', Path.GFX + Asset.IMAGE_DAY_TIME);
-    imageContainer.append(this.mDayTimeImage);
+	this.mDayTimeImage = $('<img/>');
+	this.mDayTimeImage.attr('src', Path.GFX + Asset.IMAGE_DAY_TIME);
+	imageContainer.append(this.mDayTimeImage);
 
-    /*this.mDayTimeImage.on("click", function ()
-    {
-    	self.notifyBackendPauseButtonPressed();
-    });*/
+	/*this.mDayTimeImage.on("click", function ()
+	{
+		self.notifyBackendPauseButtonPressed();
+	});*/
 
-    var layout = $('<div class="l-pause-button"/>');
-    this.mContainer.append(layout);
-    this.mTimePauseButton = layout.createImageButton(Path.GFX + Legends.BUTTON_PAUSE_DISABLED, function ()
-    {
-    	self.notifyBackendTimePauseButtonPressed();
+	var layout = $('<div class="l-pause-button"/>');
+	this.mContainer.append(layout);
+	this.mTimePauseButton = layout.createImageButton(Path.GFX + Legends.BUTTON_PAUSE_DISABLED, function ()
+	{
+		self.notifyBackendTimePauseButtonPressed();
 
-    	self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE);
-    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
-    	self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
-    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
-    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
-    }, '', 10);
+		self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE);
+		self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
+		self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
+		self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
+		self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
+	}, '', 10);
 
-    var layout = $('<div class="l-normal-time-button"/>');
-    this.mContainer.append(layout);
-    this.mTimeNormalButton = layout.createImageButton(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED, function ()
-    {
-    	self.notifyBackendTimeNormalButtonPressed();
+	var layout = $('<div class="l-normal-time-button"/>');
+	this.mContainer.append(layout);
+	this.mTimeNormalButton = layout.createImageButton(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED, function ()
+	{
+		self.notifyBackendTimeNormalButtonPressed();
 
-    	self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
-    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED);
-    	self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
-    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
-    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
-    }, '', 10);
+		self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
+		self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED);
+		self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
+		self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
+		self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
+	}, '', 10);
 
-    var layout = $('<div class="l-fast-time-button"/>');
-    this.mContainer.append(layout);
-    this.mTimeFastButton = layout.createImageButton(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED, function ()
-    {
-    	self.notifyBackendTimeFastButtonPressed();
+	var layout = $('<div class="l-fast-time-button"/>');
+	this.mContainer.append(layout);
+	this.mTimeFastButton = layout.createImageButton(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED, function ()
+	{
+		self.notifyBackendTimeFastButtonPressed();
 
-    	self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
-    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
-    	self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED);
-    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
-    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
-    }, '', 10);
+		self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
+		self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
+		self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED);
+		self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
+		self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
+	}, '', 10);
 
 
-    var layout = $('<div class="l-veryfast-time-button"/>');
-    this.mContainer.append(layout);
-    this.mTimeVeryfastButton = layout.createImageButton(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED, function ()
-    {
-    	self.notifyBackendTimeVeryfastButtonPressed();
+	var layout = $('<div class="l-veryfast-time-button"/>');
+	this.mContainer.append(layout);
+	this.mTimeVeryfastButton = layout.createImageButton(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED, function ()
+	{
+		self.notifyBackendTimeVeryfastButtonPressed();
 
-    	self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
-    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
-    	self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
-    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED);
-    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
-    }, '', 10);
+		self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
+		self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
+		self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
+		self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED);
+		self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED);
+	}, '', 10);
 
-    var layout = $('<div class="l-ludicrous-time-button"/>');
-    this.mContainer.append(layout);
-    this.mTimeLudicrousButton = layout.createImageButton(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED, function ()
-    {
-    	self.notifyBackendTimeLudicrousButtonPressed();
+	var layout = $('<div class="l-ludicrous-time-button"/>');
+	this.mContainer.append(layout);
+	this.mTimeLudicrousButton = layout.createImageButton(Path.GFX + Legends.BUTTON_8X_SPEED_DISABLED, function ()
+	{
+		self.notifyBackendTimeLudicrousButtonPressed();
 
-    	self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
-    	self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
-    	self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
-    	self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
-    	self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED);;
-    }, '', 10);
-    
-    this.mPausedDiv = $('<div class="display-none title-font-very-big paused-label font-color-title font-shadow-silhouette">PAUSED</div>');
-    this.mPausedSpacebarDiv = $('<div class="display-none text-font-small paused-spacebar-label font-color-title font-shadow-silhouette">(Press Spacebar)</div>');
+		self.mTimePauseButton.changeButtonImage(Path.GFX + Legends.BUTTON_PAUSE_DISABLED);
+		self.mTimeNormalButton.changeButtonImage(Path.GFX + Legends.BUTTON_1X_SPEED_DISABLED);
+		self.mTimeFastButton.changeButtonImage(Path.GFX + Legends.BUTTON_2X_SPEED_DISABLED);
+		self.mTimeVeryfastButton.changeButtonImage(Path.GFX + Legends.BUTTON_4X_SPEED_DISABLED);
+		self.mTimeLudicrousButton.changeButtonImage(Path.GFX + Legends.BUTTON_8X_SPEED);;
+	}, '', 10);
+	
+	this.mPausedDiv = $('<div class="display-none title-font-very-big paused-label font-color-title font-shadow-silhouette">PAUSED</div>');
+	this.mPausedSpacebarDiv = $('<div class="display-none text-font-small paused-spacebar-label font-color-title font-shadow-silhouette">(Press Spacebar)</div>');
 	_parentDiv.append(this.mPausedDiv);
 	_parentDiv.append(this.mPausedSpacebarDiv);
 };
 
 WorldScreenTopbarDayTimeModule.prototype.destroyDIV = function ()
 {
-    // text & image containers
-    this.mDayTimeText.remove();
-    this.mDayTimeText = null;
-    this.mDayTimeImage.remove();
-    this.mDayTimeImage = null;
+	// text & image containers
+	this.mDayTimeText.remove();
+	this.mDayTimeText = null;
+	this.mDayTimeImage.remove();
+	this.mDayTimeImage = null;
 
 	this.mPausedDiv.remove();
 	this.mPausedDiv = null;
 	this.mPausedSpacebarDiv.remove();
 	this.mPausedSpacebarDiv = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -205,50 +205,50 @@ WorldScreenTopbarDayTimeModule.prototype.unbindTooltips = function ()
 
 WorldScreenTopbarDayTimeModule.prototype.registerDatasourceListener = function()
 {
-    this.mDataSource.addListener(WorldScreenTopbarDatasourceIdentifier.TimeInformation.Updated, jQuery.proxy(this.onTimeInformation, this));
+	this.mDataSource.addListener(WorldScreenTopbarDatasourceIdentifier.TimeInformation.Updated, jQuery.proxy(this.onTimeInformation, this));
 };
 
 
 WorldScreenTopbarDayTimeModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 WorldScreenTopbarDayTimeModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 WorldScreenTopbarDayTimeModule.prototype.register = function (_parentDiv)
 {
-    console.log('WorldScreenTopbarDayTimeModule::REGISTER');
+	console.log('WorldScreenTopbarDayTimeModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Day-Time Module. Reason: Day-Time Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Day-Time Module. Reason: Day-Time Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 WorldScreenTopbarDayTimeModule.prototype.unregister = function ()
 {
-    console.log('WorldScreenTopbarDayTimeModule::UNREGISTER');
+	console.log('WorldScreenTopbarDayTimeModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Day-Time Module. Reason: Options Bar Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Day-Time Module. Reason: Options Bar Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 WorldScreenTopbarDayTimeModule.prototype.isRegistered = function ()
@@ -269,7 +269,7 @@ WorldScreenTopbarDayTimeModule.prototype.registerEventListener = function(_liste
 
 WorldScreenTopbarDayTimeModule.prototype.showMessage = function(_data)
 {
-    this.mPausedDiv.addClass('display-block');
+	this.mPausedDiv.addClass('display-block');
 	this.mPausedSpacebarDiv.addClass('display-block');
 
 	this.mPausedDiv.html(_data.Header)
@@ -285,25 +285,25 @@ WorldScreenTopbarDayTimeModule.prototype.showMessage = function(_data)
 
 WorldScreenTopbarDayTimeModule.prototype.hideMessage = function()
 {
-    this.mPausedDiv.removeClass('display-block');
+	this.mPausedDiv.removeClass('display-block');
 	this.mPausedSpacebarDiv.removeClass('display-block');
 }
 
 
 WorldScreenTopbarDayTimeModule.prototype.onTimeInformation = function (_datasource, _data)
 {
-    if (_data === undefined || _data === null || typeof(_data) !== "object" ||
-        (!(WorldScreenTopbarIdentifier.TimeInformation.Day in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Day]) !== "number") ||
-        (!(WorldScreenTopbarIdentifier.TimeInformation.Time in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Time]) !== "string") ||
-        (!(WorldScreenTopbarIdentifier.TimeInformation.Degree in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Degree]) !== "number")
-        )
-    {
-        console.error('ERROR: Failed to query time information data. Reason: Invalid result.');
-        return;
-    }
+	if (_data === undefined || _data === null || typeof(_data) !== "object" ||
+		(!(WorldScreenTopbarIdentifier.TimeInformation.Day in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Day]) !== "number") ||
+		(!(WorldScreenTopbarIdentifier.TimeInformation.Time in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Time]) !== "string") ||
+		(!(WorldScreenTopbarIdentifier.TimeInformation.Degree in _data) || typeof(_data[WorldScreenTopbarIdentifier.TimeInformation.Degree]) !== "number")
+		)
+	{
+		console.error('ERROR: Failed to query time information data. Reason: Invalid result.');
+		return;
+	}
 
-    this.mDayTimeText.html('Day ' + _data[WorldScreenTopbarIdentifier.TimeInformation.Day] + '<br/>' + _data[WorldScreenTopbarIdentifier.TimeInformation.Time]);
-    this.mDayTimeImage.css('transform', 'rotate(' + _data[WorldScreenTopbarIdentifier.TimeInformation.Degree] + 'deg)');
+	this.mDayTimeText.html('Day ' + _data[WorldScreenTopbarIdentifier.TimeInformation.Day] + '<br/>' + _data[WorldScreenTopbarIdentifier.TimeInformation.Time]);
+	this.mDayTimeImage.css('transform', 'rotate(' + _data[WorldScreenTopbarIdentifier.TimeInformation.Degree] + 'deg)');
 };
 
 

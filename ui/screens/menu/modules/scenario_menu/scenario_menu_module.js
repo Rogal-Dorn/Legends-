@@ -14,30 +14,30 @@ var ScenarioMenuModule = function()
 {
 	this.mSQHandle = null;
 
-    // event listener
-    this.mEventListener = null;
+	// event listener
+	this.mEventListener = null;
 
 	// generic containers
 	this.mContainer = null;
-    this.mDialogContainer = null;
+	this.mDialogContainer = null;
 
-    // scenario list container
+	// scenario list container
 	this.mListContainer = null;
-    this.mListScrollContainer = null;
+	this.mListScrollContainer = null;
 	this.mDescriptionContainer = null;
 	this.mDescriptionScrollContainer = null;
 
 	// buttons
 	this.mPlayButton  = null;
 
-    // generics
-    this.mIsVisible = false;
+	// generics
+	this.mIsVisible = false;
 };
 
 
 ScenarioMenuModule.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 ScenarioMenuModule.prototype.onConnection = function (_handle)
@@ -46,10 +46,10 @@ ScenarioMenuModule.prototype.onConnection = function (_handle)
 	{
 		this.mSQHandle = _handle;
 
-        // notify listener
-        if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener)) {
-            this.mEventListener.onModuleOnConnectionCalled(this);
-        }
+		// notify listener
+		if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener)) {
+			this.mEventListener.onModuleOnConnectionCalled(this);
+		}
 	}
 };
 
@@ -57,91 +57,91 @@ ScenarioMenuModule.prototype.onDisconnection = function ()
 {
 	this.mSQHandle = null;
 
-    // notify listener
-    if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener)) {
-        this.mEventListener.onModuleOnDisconnectionCalled(this);
-    }
+	// notify listener
+	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener)) {
+		this.mEventListener.onModuleOnDisconnectionCalled(this);
+	}
 };
 
 
 ScenarioMenuModule.prototype.createDIV = function (_parentDiv)
 {
-    var self = this;
+	var self = this;
 
-    // create: dialog container
-    this.mContainer = $('<div class="scenario-menu-module ui-control display-none"/>');
-    _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('Choose a Scenario', null, null, true, 'dialog-800-720-2' /*Path.GFX + Asset.HEADER_TACTICAL_COMBAT_DIALOG*/);
+	// create: dialog container
+	this.mContainer = $('<div class="scenario-menu-module ui-control display-none"/>');
+	_parentDiv.append(this.mContainer);
+	this.mDialogContainer = this.mContainer.createDialog('Choose a Scenario', null, null, true, 'dialog-800-720-2' /*Path.GFX + Asset.HEADER_TACTICAL_COMBAT_DIALOG*/);
 
-    // create content
-    var content = this.mContainer.findDialogContentContainer();
-    var scenarioListContainerLayout = $('<div class="l-list-container"></div>');
-    content.append(scenarioListContainerLayout);
-    this.mListContainer = scenarioListContainerLayout.createList(18);
-    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
+	// create content
+	var content = this.mContainer.findDialogContentContainer();
+	var scenarioListContainerLayout = $('<div class="l-list-container"></div>');
+	content.append(scenarioListContainerLayout);
+	this.mListContainer = scenarioListContainerLayout.createList(18);
+	this.mListScrollContainer = this.mListContainer.findListScrollContainer();
 
-    var descriptionContainerLayout = $('<div class="l-description-container"></div>');
-    content.append(descriptionContainerLayout);
-    this.mDescriptionContainer = descriptionContainerLayout.createList(10, 'description-font-medium font-color-description');
-    this.mDescriptionScrollContainer = this.mDescriptionContainer.findListScrollContainer();
+	var descriptionContainerLayout = $('<div class="l-description-container"></div>');
+	content.append(descriptionContainerLayout);
+	this.mDescriptionContainer = descriptionContainerLayout.createList(10, 'description-font-medium font-color-description');
+	this.mDescriptionScrollContainer = this.mDescriptionContainer.findListScrollContainer();
 
-    // create footer button bar
-    var footerButtonBar = $('<div class="l-button-bar"></div>');
-    this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
+	// create footer button bar
+	var footerButtonBar = $('<div class="l-button-bar"></div>');
+	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
 
-    var layout = $('<div class="l-play-button"/>');
-    footerButtonBar.append(layout);
-    this.mPlayButton = layout.createTextButton("Play", function ()
-    {
-        // find current selected and show its description
-        var selectedEntry = self.mListScrollContainer.find('.is-selected:first');
-        if (selectedEntry.length > 0)
-        {
-            var scenarioData = selectedEntry.data('scenario');
-            self.notifyBackendPlayButtonPressed(scenarioData[ScenarioMenuModuleIdentifier.Scenario.Id]);
-        }
-    }, '', 1);
-    this.mPlayButton.enableButton(false);
+	var layout = $('<div class="l-play-button"/>');
+	footerButtonBar.append(layout);
+	this.mPlayButton = layout.createTextButton("Play", function ()
+	{
+		// find current selected and show its description
+		var selectedEntry = self.mListScrollContainer.find('.is-selected:first');
+		if (selectedEntry.length > 0)
+		{
+			var scenarioData = selectedEntry.data('scenario');
+			self.notifyBackendPlayButtonPressed(scenarioData[ScenarioMenuModuleIdentifier.Scenario.Id]);
+		}
+	}, '', 1);
+	this.mPlayButton.enableButton(false);
 
-    layout = $('<div class="l-cancel-button"/>');
-    footerButtonBar.append(layout);
-    layout.createTextButton("Cancel", function ()
-    {
-        self.notifyBackendCancelButtonPressed();
-    }, '', 1);
+	layout = $('<div class="l-cancel-button"/>');
+	footerButtonBar.append(layout);
+	layout.createTextButton("Cancel", function ()
+	{
+		self.notifyBackendCancelButtonPressed();
+	}, '', 1);
 
-    this.mIsVisible = false;
+	this.mIsVisible = false;
 };
 
 ScenarioMenuModule.prototype.destroyDIV = function ()
 {
-    // scenario list container
-    this.mListContainer.destroyList();
-    this.mListContainer = null;
-    this.mListScrollContainer = null;
-    this.mDescriptionContainer.destroyList();
-    this.mDescriptionContainer = null;
-    this.mDescriptionScrollContainer = null;
+	// scenario list container
+	this.mListContainer.destroyList();
+	this.mListContainer = null;
+	this.mListScrollContainer = null;
+	this.mDescriptionContainer.destroyList();
+	this.mDescriptionContainer = null;
+	this.mDescriptionScrollContainer = null;
 
-    // buttons
-    this.mPlayButton.remove();
-    this.mPlayButton  = null;
+	// buttons
+	this.mPlayButton.remove();
+	this.mPlayButton  = null;
 
-    this.mDialogContainer.empty();
-    this.mDialogContainer.remove();
-    this.mDialogContainer = null;
+	this.mDialogContainer.empty();
+	this.mDialogContainer.remove();
+	this.mDialogContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 ScenarioMenuModule.prototype.bindTooltips = function ()
 {
-    /*
-     this.mBrothersCountContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.RoundInformationModule.BrothersCounter });
-     */
+	/*
+	 this.mBrothersCountContainer.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.RoundInformationModule.BrothersCounter });
+	 */
 };
 
 ScenarioMenuModule.prototype.unbindTooltips = function ()
@@ -152,136 +152,136 @@ ScenarioMenuModule.prototype.unbindTooltips = function ()
 
 ScenarioMenuModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 ScenarioMenuModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 ScenarioMenuModule.prototype.register = function (_parentDiv)
 {
-    console.log('ScenarioMenuModule::REGISTER');
+	console.log('ScenarioMenuModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Scenario Menu Module. Reason: Scenario Menu Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Scenario Menu Module. Reason: Scenario Menu Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 ScenarioMenuModule.prototype.unregister = function ()
 {
-    console.log('ScenarioMenuModule::UNREGISTER');
+	console.log('ScenarioMenuModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Scenario Menu Module. Reason: Scenario Menu Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Scenario Menu Module. Reason: Scenario Menu Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 ScenarioMenuModule.prototype.isRegistered = function ()
 {
-    if (this.mContainer !== null)
-    {
-        return this.mContainer.parent().length !== 0;
-    }
+	if (this.mContainer !== null)
+	{
+		return this.mContainer.parent().length !== 0;
+	}
 
-    return false;
+	return false;
 };
 
 
 ScenarioMenuModule.prototype.registerEventListener = function(_listener)
 {
-    this.mEventListener = _listener;
+	this.mEventListener = _listener;
 };
 
 
 ScenarioMenuModule.prototype.show = function (_data)
 {
-    // query data
-    if (_data === null)
-    {
-        console.error('ERROR: Failed to show Scenario Menu Module. Reason: Invalid data.');
-        return;
-    }
+	// query data
+	if (_data === null)
+	{
+		console.error('ERROR: Failed to show Scenario Menu Module. Reason: Invalid data.');
+		return;
+	}
 
-    this.addScenariosToList(_data);
+	this.addScenariosToList(_data);
 
-    var self = this;
-    var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-    this.mContainer.css({ 'left' : offset });
-    this.mContainer.velocity("finish", true).velocity({ opacity: 1, left: '0', right: '0' },
-    {
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            //$(this).css({ 'left' : '', 'right' : '' });
-            $(this).removeClass('display-none').addClass('display-block');
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = true;
-            //$(this).addClass('is-center');
-            self.notifyBackendModuleShown();
-        }
-    });
+	var self = this;
+	var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+	this.mContainer.css({ 'left' : offset });
+	this.mContainer.velocity("finish", true).velocity({ opacity: 1, left: '0', right: '0' },
+	{
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			//$(this).css({ 'left' : '', 'right' : '' });
+			$(this).removeClass('display-none').addClass('display-block');
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = true;
+			//$(this).addClass('is-center');
+			self.notifyBackendModuleShown();
+		}
+	});
 };
 
 ScenarioMenuModule.prototype.hide = function ()
 {
-    var self = this;
+	var self = this;
 
-    var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-    this.mContainer.velocity("finish", true).velocity({ opacity: 0, left: offset },
-    {
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            //$(this).css({ 'left' : '', 'right' : '' });
-            $(this).removeClass('is-center');
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = false;
-            self.mListScrollContainer.empty();
-            $(this).removeClass('display-block').addClass('display-none');
-            self.notifyBackendModuleHidden();
-        }
-    });
+	var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+	this.mContainer.velocity("finish", true).velocity({ opacity: 0, left: offset },
+	{
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			//$(this).css({ 'left' : '', 'right' : '' });
+			$(this).removeClass('is-center');
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = false;
+			self.mListScrollContainer.empty();
+			$(this).removeClass('display-block').addClass('display-none');
+			self.notifyBackendModuleHidden();
+		}
+	});
 };
 
 ScenarioMenuModule.prototype.isVisible = function ()
 {
-    return this.mIsVisible;
+	return this.mIsVisible;
 };
 
 
 ScenarioMenuModule.prototype.addScenarioEntryToList = function (_data)
 {
-    var row = $('<div class="l-row"/>');
+	var row = $('<div class="l-row"/>');
 	var entry = $('<div class="list-entry list-entry-small"><span class="label text-font-normal font-color-label">' + _data[ScenarioMenuModuleIdentifier.Scenario.Name] + '</span></div></div>');
-    entry.data('scenario', _data);
+	entry.data('scenario', _data);
 	entry.click(this, this.onSelectScenario);
 	entry.mouseenter(this, this.onMouseHoverScenario);
 	entry.mouseleave(this, this.onMouseLeaveScenario);
-    row.append(entry);
+	row.append(entry);
 	this.mListScrollContainer.append(row);
 };
 
@@ -329,7 +329,7 @@ ScenarioMenuModule.prototype.onSelectScenario = function(_event)
 
 		buttonDiv.addClass('is-selected');
 
-        self.mPlayButton.enableButton(true);
+		self.mPlayButton.enableButton(true);
 	}
 };
 
@@ -358,27 +358,27 @@ ScenarioMenuModule.prototype.onMouseLeaveScenario = function(_event)
 ScenarioMenuModule.prototype.selectFirstScenario = function()
 {
 	// deselect all entries first
-    this.mListScrollContainer.find('.is-selected').each(function (index, el)
-    {
+	this.mListScrollContainer.find('.is-selected').each(function (index, el)
+	{
 		$(el).removeClass('is-selected');
 	});
 
 	var firstEntry = this.mListScrollContainer.find('.l-row:first');
-    if (firstEntry.length > 0)
-    {
-        var entry = firstEntry.find('.list-entry:first');
-        entry.addClass('is-selected');
-        this.updateDescription(entry.data('scenario'));
-        this.mPlayButton.enableButton(true);
-    }
+	if (firstEntry.length > 0)
+	{
+		var entry = firstEntry.find('.list-entry:first');
+		entry.addClass('is-selected');
+		this.updateDescription(entry.data('scenario'));
+		this.mPlayButton.enableButton(true);
+	}
 };
 
 ScenarioMenuModule.prototype.updateDescription = function (_data)
 {
 	if (_data !== null && ScenarioMenuModuleIdentifier.Scenario.Description in _data && typeof(_data[ScenarioMenuModuleIdentifier.Scenario.Description]) == 'string')
 	{
-        var parsedText = XBBCODE.process(
-        {
+		var parsedText = XBBCODE.process(
+		{
 			text: _data[ScenarioMenuModuleIdentifier.Scenario.Description],
 			removeMisalignedTags: false,
 			addInLineBreaks: true
@@ -395,17 +395,17 @@ ScenarioMenuModule.prototype.updateDescription = function (_data)
 
 ScenarioMenuModule.prototype.notifyBackendModuleShown = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleShown');
+	SQ.call(this.mSQHandle, 'onModuleShown');
 };
 
 ScenarioMenuModule.prototype.notifyBackendModuleHidden = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleHidden');
+	SQ.call(this.mSQHandle, 'onModuleHidden');
 };
 
 ScenarioMenuModule.prototype.notifyBackendModuleAnimating = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleAnimating');
+	SQ.call(this.mSQHandle, 'onModuleAnimating');
 };
 
 ScenarioMenuModule.prototype.notifyBackendPlayButtonPressed = function (_scenarioId)
@@ -415,5 +415,5 @@ ScenarioMenuModule.prototype.notifyBackendPlayButtonPressed = function (_scenari
 
 ScenarioMenuModule.prototype.notifyBackendCancelButtonPressed = function ()
 {
-    SQ.call(this.mSQHandle, 'onCancelButtonPressed');
+	SQ.call(this.mSQHandle, 'onCancelButtonPressed');
 };

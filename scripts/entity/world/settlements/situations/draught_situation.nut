@@ -44,7 +44,7 @@ this.draught_situation <- this.inherit("scripts/entity/world/settlements/situati
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");
 		_draftList.push("farmhand_background");

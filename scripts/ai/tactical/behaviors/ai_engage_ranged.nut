@@ -487,7 +487,7 @@ this.ai_engage_ranged <- this.inherit("scripts/ai/tactical/behavior", {
 				if (d <= 1)
 				{
 					tooClose = true;
-					  // [608]  OP_JMP            0     26    0    0
+					  // [608]  OP_JMP			0	 26	0	0
 				}
 				else if (d <= target.Actor.getIdealRange() && !target.Actor.getCurrentProperties().IsStunned && target.Actor.isArmedWithMeleeWeapon())
 				{

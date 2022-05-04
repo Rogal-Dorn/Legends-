@@ -75,10 +75,10 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [
-                this.Const.Perks.NomadsTree
-            ],
+				this.Const.Perks.NomadsTree
+			],
 			Class = [this.Const.Perks.ShortbowClassTree,
-            this.Const.Perks.HoundmasterClassTree],
+			this.Const.Perks.HoundmasterClassTree],
 			Magic = []
 		}
 	}
@@ -112,7 +112,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	}
 
-    function onAdded()
+	function onAdded()
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
@@ -221,7 +221,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.addToBag(this.new("scripts/items/weapons/militia_spear"));
 		}
 
-        items.equip(this.new("scripts/items/accessory/wardog_item"))
+		items.equip(this.new("scripts/items/accessory/wardog_item"))
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/nomad_robe"],

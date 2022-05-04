@@ -30,7 +30,7 @@ var ProgressbarStyleIdentifier = {
 	CrushingDamage:		'crushing-damage',
 	ChanceToHitHead:	'chance-to-hit-head',
 	Initiative:			'initiative',
-    Bravery:			'bravery',
+	Bravery:			'bravery',
 
 	Undefined:			'undefined'
 };
@@ -96,9 +96,9 @@ var ProgressbarValueIdentifier = {
 	SightDistanceMax:		'sightDistanceMax',
 	SightDistanceLabel:		'sightDistanceLabel',
 
-    Bravery:				'bravery',
-    BraveryMax:			    'braveryMax',
-    BraveryLabel:		    'braveryLabel',
+	Bravery:				'bravery',
+	BraveryMax:				'braveryMax',
+	BraveryLabel:			'braveryLabel',
 
 	Initiative:				'initiative',
 	InitiativeMax:			'initiativeMax',

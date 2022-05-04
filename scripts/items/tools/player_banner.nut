@@ -66,7 +66,7 @@ this.player_banner <- this.inherit("scripts/items/weapons/weapon", {
 		}
 
 		local variant = this.m.Variant < 10 ? "0" + this.m.Variant : this.m.Variant;
-        local prefix = "player_banner_";
+		local prefix = "player_banner_";
 
 		// if (this.isRuned())
 		// {

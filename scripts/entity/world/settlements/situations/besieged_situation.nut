@@ -47,7 +47,7 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("gravedigger_background");
@@ -84,7 +84,7 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 			r = this.Math.rand(0, 2);
 				if (r == 1)
 				{
-			     _draftList.push("legend_death_summoner_background");
+				 _draftList.push("legend_death_summoner_background");
 				}
 			}
 			else

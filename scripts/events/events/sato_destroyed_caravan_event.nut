@@ -25,48 +25,48 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-                local items = [];
+				local items = [];
 
-                items.push(this.Const.World.Common.pickArmor([
+				items.push(this.Const.World.Common.pickArmor([
 					[1, "oriental/cloth_sash"]
 				]));
-                items.push(this.Const.World.Common.pickArmor([
+				items.push(this.Const.World.Common.pickArmor([
 					[1, "oriental/cloth_sash"]
 				]));
-                items.push(this.Const.World.Common.pickHelmet([
+				items.push(this.Const.World.Common.pickHelmet([
 					[1, "oriental/gunner_hat"]
 				]));
 
-                items.push(this.new("scripts/items/weapons/oriental/nomad_mace"));
+				items.push(this.new("scripts/items/weapons/oriental/nomad_mace"));
 
 				
 				
 				
 
 
-                local r = this.Math.rand(1, 2);
-                if (r == 1)
-                {
-                    items.push(this.new("scripts/items/misc/hyena_fur_item"));
-                }
-                else if (r == 2)
-                {
-                    items.push(this.new("scripts/items/misc/acidic_saliva_item"));
-                }
+				local r = this.Math.rand(1, 2);
+				if (r == 1)
+				{
+					items.push(this.new("scripts/items/misc/hyena_fur_item"));
+				}
+				else if (r == 2)
+				{
+					items.push(this.new("scripts/items/misc/acidic_saliva_item"));
+				}
 
-                foreach(item in items)
-                {
-                    this.World.Assets.getStash().add(item);
-                    this.List.push({
-                        id = 10,
-                        icon = "ui/items/" + item.getIcon(),
-                        text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-                    });
-                }
+				foreach(item in items)
+				{
+					this.World.Assets.getStash().add(item);
+					this.List.push({
+						id = 10,
+						icon = "ui/items/" + item.getIcon(),
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
+					});
+				}
 			}
 
 		});
-        this.m.Screens.push({
+		this.m.Screens.push({
 			ID = "Midland",
 			Text = "[img]gfx/ui/events/event_56.png[/img]There are many dangers that await travelers on the road, but the caravan before you may well have encountered all of them at once. The pack beasts have been slaughtered, the wagons splintered into uselessness, and the guards\' corpses litter the mud. Behind one of the carts lies a dead direwolf, suggesting a pack of the beasts attacked, but that doesn\'t explain the level of destruction before you.\n\nYou tell the company to gather what they can and move on. Whatever happened here, you don\'t want to wait for it to come back and find you, too.",
 			Image = "",
@@ -84,43 +84,43 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-                local items = [];
+				local items = [];
 
 				items.push(this.Const.World.Common.pickArmor([
 					[1, "linen_tunic"]
 				]));
-                items.push(this.Const.World.Common.pickArmor([
+				items.push(this.Const.World.Common.pickArmor([
 					[1, "wizard_robe"]
 				]));
-                items.push(this.Const.World.Common.pickHelmet([
+				items.push(this.Const.World.Common.pickHelmet([
 					[1, "wizard_hat"]
 				]));
 
-                items.push(this.new("scripts/items/weapons/bludgeon"));
+				items.push(this.new("scripts/items/weapons/bludgeon"));
 
-                local r = this.Math.rand(1, 2);
-                if (r == 1)
-                {
-                    items.push(this.new("scripts/items/misc/werewolf_pelt_item"));
-                }
-                else if (r == 2)
-                {
-                    items.push(this.new("scripts/items/misc/adrenaline_gland_item"));
-                }
+				local r = this.Math.rand(1, 2);
+				if (r == 1)
+				{
+					items.push(this.new("scripts/items/misc/werewolf_pelt_item"));
+				}
+				else if (r == 2)
+				{
+					items.push(this.new("scripts/items/misc/adrenaline_gland_item"));
+				}
 
-                foreach(item in items)
-                {
-                    this.World.Assets.getStash().add(item);
-                    this.List.push({
-                        id = 10,
-                        icon = "ui/items/" + item.getIcon(),
-                        text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-                    });
-                }
+				foreach(item in items)
+				{
+					this.World.Assets.getStash().add(item);
+					this.List.push({
+						id = 10,
+						icon = "ui/items/" + item.getIcon(),
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
+					});
+				}
 			}
 
 		});
-        this.m.Screens.push({
+		this.m.Screens.push({
 			ID = "North",
 			Text = "[img]gfx/ui/events/event_113.png[/img]An unhold squats dead upon the path, a crude weapon\'s handle jutting out of its skull and half of a cart clenched in its fist. The other half of the cart lies shattered on the path, along with several bodies. You sift through the corpses and find that a couple belong to the northern barbarians. That explains who killed the unhold, but little else.\n\nNo sense trying to piece together a mystery only the dead can solve. You order the company to loot what they can and keep moving.",
 			Image = "",
@@ -138,30 +138,30 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-                local items = [];
+				local items = [];
 
 				items.push(this.Const.World.Common.pickArmor([
 					[1, "noble_tunic"]
 				]));
-                items.push(this.Const.World.Common.pickArmor([
+				items.push(this.Const.World.Common.pickArmor([
 					[1, "barbarians/hide_and_bone_armor"]
 				]));
-                items.push(this.Const.World.Common.pickHelmet([
+				items.push(this.Const.World.Common.pickHelmet([
 					[1, "wizard_hat"]
 				]));
 
-                items.push(this.new("scripts/items/weapons/barbarians/axehammer"));
-                items.push(this.new("scripts/items/misc/frost_unhold_fur_item"));
+				items.push(this.new("scripts/items/weapons/barbarians/axehammer"));
+				items.push(this.new("scripts/items/misc/frost_unhold_fur_item"));
 
-                foreach(item in items)
-                {
-                    this.World.Assets.getStash().add(item);
-                    this.List.push({
-                        id = 10,
-                        icon = "ui/items/" + item.getIcon(),
-                        text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-                    });
-                }
+				foreach(item in items)
+				{
+					this.World.Assets.getStash().add(item);
+					this.List.push({
+						id = 10,
+						icon = "ui/items/" + item.getIcon(),
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
+					});
+				}
 			}
 
 		});
@@ -169,15 +169,15 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-        if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
-        {
-            return;
-        }
+		if (this.World.Assets.getOrigin().getID() != "scenario.sato_escaped_slaves")
+		{
+			return;
+		}
 
-        if (this.World.getTime().Days > 20)
-        {
-            return;
-        }
+		if (this.World.getTime().Days > 20)
+		{
+			return;
+		}
 
 		local currentTile = this.World.State.getPlayer().getTile();
 
@@ -208,22 +208,22 @@ this.sato_destroyed_caravan_event <- this.inherit("scripts/events/event", {
 		this.m.Score = 25;
 	}
 
-    function onDetermineStartScreen()
+	function onDetermineStartScreen()
 	{
-        local currentTile = this.World.State.getPlayer().getTile();
+		local currentTile = this.World.State.getPlayer().getTile();
 
 		if (currentTile.SquareCoords.Y < this.World.getMapSize().Y * 0.33)
 		{
 			return "South";
 		}
-        else if (currentTile.SquareCoords.Y < this.World.getMapSize().Y * 0.66)
-        {
-            return "Midland";
-        }
-        else
-        {
-            return "North";
-        }
+		else if (currentTile.SquareCoords.Y < this.World.getMapSize().Y * 0.66)
+		{
+			return "Midland";
+		}
+		else
+		{
+			return "North";
+		}
 	}
 
 });

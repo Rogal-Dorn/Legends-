@@ -19,19 +19,19 @@ var TacticalScreenIdentifier =
 	{
 		RoundInformation:
 		{
-            BrotherCount: 'brothersCount',
-            EnemiesCount: 'enemiesCount',
-            RoundNumber: 'roundNumber'
-        }
-    },
+			BrotherCount: 'brothersCount',
+			EnemiesCount: 'enemiesCount',
+			RoundNumber: 'roundNumber'
+		}
+	},
 
 	OrientationOverlay:
 	{
-        Id: 'id',
-        PositionX: 'x',
-        PositionY: 'y',
-        OffsetY: 'yOffset',
-        Visible: 'visible'
-    }
+		Id: 'id',
+		PositionX: 'x',
+		PositionY: 'y',
+		OffsetY: 'yOffset',
+		Visible: 'visible'
+	}
 
 };

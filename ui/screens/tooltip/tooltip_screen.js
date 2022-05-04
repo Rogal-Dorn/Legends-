@@ -19,18 +19,18 @@ var TooltipScreen = function()
 	this.mContainer = null;
 
 	// modules
-    this.mTooltipModule = null;
+	this.mTooltipModule = null;
 
-    this.mDate = new Date();
-    this.mLastHiddenTime = 0;
+	this.mDate = new Date();
+	this.mLastHiddenTime = 0;
 
-    this.createModules();
+	this.createModules();
 };
 
 
 TooltipScreen.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 TooltipScreen.prototype.onConnection = function (_handle)
@@ -43,7 +43,7 @@ TooltipScreen.prototype.onDisconnection = function ()
 {
 	this.mSQHandle = null;
 
-    this.mTooltipModule.onDisconnection();
+	this.mTooltipModule.onDisconnection();
 
 	this.unregister();
 };
@@ -71,14 +71,14 @@ TooltipScreen.prototype.createDIV = function (_parentDiv)
 {
 	// create: containers (init hidden!)
 	this.mContainer = $('<div class="tooltip-screen display-none"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 };
 
 TooltipScreen.prototype.destroyDIV = function ()
 {
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -90,55 +90,55 @@ TooltipScreen.prototype.createModules = function()
 
 TooltipScreen.prototype.registerModules = function ()
 {
-    this.mTooltipModule.register(this.mContainer);
+	this.mTooltipModule.register(this.mContainer);
 };
 
 TooltipScreen.prototype.unregisterModules = function ()
 {
-    this.mTooltipModule.unregister();
+	this.mTooltipModule.unregister();
 };
 
 
 TooltipScreen.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.registerModules();
+	this.createDIV(_parentDiv);
+	this.registerModules();
 };
 
 TooltipScreen.prototype.destroy = function()
 {
-    this.unregisterModules();
-    this.destroyDIV();
+	this.unregisterModules();
+	this.destroyDIV();
 };
 
 
 TooltipScreen.prototype.register = function (_parentDiv)
 {
-    console.log('TooltipScreen::REGISTER');
+	console.log('TooltipScreen::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Tooltip Screen. Reason: Tooltip Screen is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Tooltip Screen. Reason: Tooltip Screen is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 TooltipScreen.prototype.unregister = function ()
 {
-    console.log('TooltipScreen::UNREGISTER');
+	console.log('TooltipScreen::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Tooltip Screen. Reason: Tooltip Screen is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Tooltip Screen. Reason: Tooltip Screen is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
@@ -148,14 +148,14 @@ TooltipScreen.prototype.show = function ()
 		return;
 
 	this.mContainer.removeClass('display-none').addClass('display-block');
-    this.notifyBackendOnShown();
+	this.notifyBackendOnShown();
 };
 
 TooltipScreen.prototype.hide = function ()
 {
 	this.mLastHiddenTime = this.mDate.getTime();
 	this.mContainer.removeClass('display-block').addClass('display-none');
-    this.notifyBackendOnHidden();
+	this.notifyBackendOnHidden();
 };
 
 
@@ -163,7 +163,7 @@ TooltipScreen.prototype.getModule = function (_name)
 {
 	switch(_name)
 	{
-        case 'TooltipModule': return this.mTooltipModule;
+		case 'TooltipModule': return this.mTooltipModule;
 		default: return null;
 	}
 };
@@ -188,10 +188,10 @@ TooltipScreen.prototype.notifyBackendOnDisconnected = function ()
 
 TooltipScreen.prototype.notifyBackendOnShown = function ()
 {
-    SQ.call(this.mSQHandle, 'onScreenShown');
+	SQ.call(this.mSQHandle, 'onScreenShown');
 };
 
 TooltipScreen.prototype.notifyBackendOnHidden = function ()
 {
-    SQ.call(this.mSQHandle, 'onScreenHidden');
+	SQ.call(this.mSQHandle, 'onScreenHidden');
 };

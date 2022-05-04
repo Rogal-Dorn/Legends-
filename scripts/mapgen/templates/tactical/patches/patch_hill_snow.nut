@@ -31,7 +31,7 @@ this.patch_hill_snow <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 						if (this.Math.rand(1, 100) < 35)
 						{
-							  // [101]  OP_JMP            0    271    0    0
+							  // [101]  OP_JMP			0	271	0	0
 						}
 						else
 						{
@@ -44,7 +44,7 @@ this.patch_hill_snow <- this.inherit("scripts/mapgen/tactical_template", {
 						{
 							if (this.Math.rand(1, 100) < 15)
 							{
-								  // [169]  OP_JMP            0    203    0    0
+								  // [169]  OP_JMP			0	203	0	0
 							}
 							else
 							{

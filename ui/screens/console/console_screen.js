@@ -17,9 +17,9 @@ var ConsoleScreen = function()
 	this.mSQHandle = null;
 	
 	// generic containers
-	this.mContainer          = null;
+	this.mContainer		  = null;
 	this.mConsoleContainer   = null;
-	this.mLogContainer       = null;
+	this.mLogContainer	   = null;
 	this.mLogScrollContainer = null;
 
 	// options controls
@@ -53,12 +53,12 @@ var ConsoleScreen = function()
 
 	// toolbar controls
 	this.mSwitchToOptionsButton = null;
-	this.mSwitchToJSButton      = null;
-	this.mSwitchToSQButton      = null;
-	this.mCommandInput          = null;
+	this.mSwitchToJSButton	  = null;
+	this.mSwitchToSQButton	  = null;
+	this.mCommandInput		  = null;
 
 	// timing	
-	this.mTimerHandle     = null;
+	this.mTimerHandle	 = null;
 	this.mFadeInDuration  = 400;
 	this.mFadeOutDuration = 400;
 
@@ -78,7 +78,7 @@ var ConsoleScreen = function()
 	// Command History handling
 	this.mCommandHistoryIndex   = 0;
 	this.mCommandHistoryMaxSize = 20;
-	this.mCommandHistory        = [];
+	this.mCommandHistory		= [];
 
 	// log groups
 	this.mCurrentGroups = [];

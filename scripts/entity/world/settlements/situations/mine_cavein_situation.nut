@@ -57,7 +57,7 @@ this.mine_cavein_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");

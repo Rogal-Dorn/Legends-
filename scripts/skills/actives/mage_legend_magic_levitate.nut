@@ -29,7 +29,7 @@ this.mage_legend_magic_levitate <- this.inherit("scripts/skills/actives/mage_leg
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsUsingHitchance = false;
-    this.m.MaxLevelDifference = 6;
+	this.m.MaxLevelDifference = 6;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 25;
 		this.m.MinRange = 1;

@@ -254,10 +254,10 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		// ]));
 
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-            [3, "named/bascinet_named"],
-            [3, "named/kettle_helm_named"],
-            [3, "named/deep_sallet_named"],
-            [3, "named/barbute_named"],
+			[3, "named/bascinet_named"],
+			[3, "named/kettle_helm_named"],
+			[3, "named/deep_sallet_named"],
+			[3, "named/barbute_named"],
 			[3, "named/italo_norman_helm_named"],
 			[3, "named/wallace_sallet_named"],
 			[3, "named/named_helm_with_lion_pelt"]

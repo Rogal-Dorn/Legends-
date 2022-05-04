@@ -77,12 +77,12 @@
 
 .tactical-screen .topbar-round-information-module .entities-count-image.is-right
 {
-    float: right;
+	float: right;
 }
 
 .tactical-screen .topbar-round-information-module .entities-count-image.is-left
 {
-    float: left;
+	float: left;
 }
 
 .tactical-screen .topbar-round-information-module .entities-count-image img
@@ -100,12 +100,12 @@
 
 .tactical-screen .topbar-round-information-module .l-entities-count-text.is-right
 {
-    float: right;
+	float: right;
 }
 
 .tactical-screen .topbar-round-information-module .l-entities-count-text.is-left
 {
-    float: left;
+	float: left;
 }
 
 .tactical-screen .topbar-round-information-module .entities-count-text
@@ -117,7 +117,7 @@
 	position: absolute;
 	margin: auto;
 
-    text-align: center;
+	text-align: center;
 }
 
 .tactical-screen .topbar-round-information-module .l-round-number-container
@@ -170,6 +170,6 @@
 	position: absolute;
 	margin: auto;
 
-    line-height: 2.2rem;
-    text-align: center;
+	line-height: 2.2rem;
+	text-align: center;
 }

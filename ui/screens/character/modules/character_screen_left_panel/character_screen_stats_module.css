@@ -12,16 +12,16 @@
 .character-screen-container .stats-module
 {
 	width: 100%;
-    height: 32.5%; /* AUTO HEIGHT */
+	height: 32.5%; /* AUTO HEIGHT */
 
-    position: absolute;
-    bottom: 0.0rem;
+	position: absolute;
+	bottom: 0.0rem;
 }
 
 .character-screen-container .stats-module .stats-column
 {
 	width: 50%;
-    height: 100%; /* AUTO HEIGHT */
+	height: 100%; /* AUTO HEIGHT */
 	float: left;
 	margin-top: 0.4rem;
 }
@@ -30,7 +30,7 @@
 {
 	width: 100%;
 	/*height  : 3.0rem;*/
-    height: 12.2%; /* AUTO HEIGHT */
+	height: 12.2%; /* AUTO HEIGHT */
 	position: relative;
 }
 

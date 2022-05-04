@@ -19,20 +19,20 @@ var TacticalScreenTurnSequenceBarModule = function()
 	this.mEventListener = null;
 
 	// container
-	this.mContainer              = null;
+	this.mContainer			  = null;
 	this.mStatusEffectsContainer = null;
-	this.mStatsContainer         = null;
-	this.mSkillsContainer        = null;
+	this.mStatsContainer		 = null;
+	this.mSkillsContainer		= null;
 	
 	// stats header
 	this.mStatsHeaderElevationImage = null;
 	this.mStatsHeaderCharacterName  = null;
 
 	// left stats row defines	
-    this.mLeftStatsRows =
-    {
-        ActionPoints:
-        {
+	this.mLeftStatsRows =
+	{
+		ActionPoints:
+		{
 			ImagePath: Path.GFX + Asset.ICON_ACTION_POINTS,
 			StyleName: ProgressbarStyleIdentifier.ActionPoints,
 			TooltipId: TooltipIdentifier.CharacterStats.ActionPoints,
@@ -41,8 +41,8 @@ var TacticalScreenTurnSequenceBarModule = function()
 			ProgressbarPreview: null,
 			ProgressbarLabel: null,
 		},
-        Fatigue:
-        {
+		Fatigue:
+		{
 			ImagePath: Path.GFX + Asset.ICON_FATIGUE,
 			StyleName: ProgressbarStyleIdentifier.Fatigue,
 			TooltipId: TooltipIdentifier.CharacterStats.Fatigue,
@@ -51,8 +51,8 @@ var TacticalScreenTurnSequenceBarModule = function()
 			ProgressbarPreview: null,
 			ProgressbarLabel: null,
 		},
-        Morale:
-        {
+		Morale:
+		{
 			ImagePath: Path.GFX + Asset.ICON_MORALE,
 			StyleName: ProgressbarStyleIdentifier.Morale,
 			TooltipId: TooltipIdentifier.CharacterStats.Morale,
@@ -64,10 +64,10 @@ var TacticalScreenTurnSequenceBarModule = function()
 	};
 
 	// right stats row defines	
-    this.mRightStatsRows =
-    {
-        ArmorHead:
-        {
+	this.mRightStatsRows =
+	{
+		ArmorHead:
+		{
 			ImagePath: Path.GFX + Asset.ICON_ARMOR_HEAD,
 			StyleName: ProgressbarStyleIdentifier.ArmorHead,
 			TooltipId: TooltipIdentifier.CharacterStats.ArmorHead,
@@ -76,8 +76,8 @@ var TacticalScreenTurnSequenceBarModule = function()
 			ProgressbarPreview: null,
 			ProgressbarLabel: null,
 		},
-        ArmorBody:
-        {
+		ArmorBody:
+		{
 			ImagePath: Path.GFX + Asset.ICON_ARMOR_BODY,
 			StyleName: ProgressbarStyleIdentifier.ArmorBody,
 			TooltipId: TooltipIdentifier.CharacterStats.ArmorBody,
@@ -86,8 +86,8 @@ var TacticalScreenTurnSequenceBarModule = function()
 			ProgressbarPreview: null,
 			ProgressbarLabel: null,
 		},
-        Hitpoints:
-        {
+		Hitpoints:
+		{
 			ImagePath: Path.GFX + Asset.ICON_HEALTH,
 			StyleName: ProgressbarStyleIdentifier.Hitpoints,
 			TooltipId: TooltipIdentifier.CharacterStats.Hitpoints,
@@ -99,54 +99,54 @@ var TacticalScreenTurnSequenceBarModule = function()
 	};
 
 	// turn sequence bar container
-	this.mEntityContainer                   = null;
-	this.mEntitySliderClippingContainer     = null;
-	this.mEntitySliderContainer             = null;
+	this.mEntityContainer				   = null;
+	this.mEntitySliderClippingContainer	 = null;
+	this.mEntitySliderContainer			 = null;
 	this.mFirstSlotNormalSizeEntityTemplate = null;
-	this.mEntitySliderClippingContainer     = null;
+	this.mEntitySliderClippingContainer	 = null;
 
 	// entity hover callbacks
 	this.mEntityMouseEnterCallback = null;
 	this.mEntityMouseLeaveCallback = null;
-	this.mEntityClickedCallback    = null;
+	this.mEntityClickedCallback	= null;
 
 	// buttons
-	this.mEndTurnButton       = null;
-    this.mEndTurnAllButton    = null;
-	this.mWaitTurnButton      = null;
+	this.mEndTurnButton	   = null;
+	this.mEndTurnAllButton	= null;
+	this.mWaitTurnButton	  = null;
 	this.mOpenInventoryButton = null;
 
-    this.mEndTurnButtonContainer      = null;
-    this.mEndTurnAllButtonContainer   = null;
-	this.mWaitTurnButtonContainer     = null;
+	this.mEndTurnButtonContainer	  = null;
+	this.mEndTurnAllButtonContainer   = null;
+	this.mWaitTurnButtonContainer	 = null;
 
-    this.mIsEndTurnAllVisible = true;
+	this.mIsEndTurnAllVisible = true;
 
 	// timing
-	this.mFadeInDuration                                 = 150;
-	this.mFadeOutDuration                                = 250;
-	this.mFadeOutDurationIfHiddenToPlayer                = 60;
-	this.mSlideInDuration                                = 100;
-	this.mSlideOutDuration                               = 260;
+	this.mFadeInDuration								 = 150;
+	this.mFadeOutDuration								= 250;
+	this.mFadeOutDurationIfHiddenToPlayer				= 60;
+	this.mSlideInDuration								= 100;
+	this.mSlideOutDuration							   = 260;
 	this.mSlideOutDurationIfHiddenToPlayer				 = 30;
-    this.mResizeFirstSlotTime                            = 180;
+	this.mResizeFirstSlotTime							= 180;
 
-    this.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer = 30;
-	this.mResizeFirstSlotImageTime                       = 180;
-	this.mSelectionFadeInDuration                        = 100;
-	this.mSelectionFadeOutDuration                       = 100;
-	this.mProgressbarMovementDuration                    = 600;
-	this.mSkillPreviewFadeIn                             = 200;
-	this.mSkillPreviewFadeOut                            = 200;
-	this.mStatsPanelFadeInTime                           = 150;
-	this.mStatsPanelFadeOutTime                          = 250;
+	this.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer = 30;
+	this.mResizeFirstSlotImageTime					   = 180;
+	this.mSelectionFadeInDuration						= 100;
+	this.mSelectionFadeOutDuration					   = 100;
+	this.mProgressbarMovementDuration					= 600;
+	this.mSkillPreviewFadeIn							 = 200;
+	this.mSkillPreviewFadeOut							= 200;
+	this.mStatsPanelFadeInTime						   = 150;
+	this.mStatsPanelFadeOutTime						  = 250;
 
 	// special timer
-	this.mFirstEntitySelectionTimer                      = null;
-	this.mFirstEntitySelectionTimerInterval              = 10;
+	this.mFirstEntitySelectionTimer					  = null;
+	this.mFirstEntitySelectionTimerInterval			  = 10;
 
-    // constants
-    this.mNormalEntityImageScale                         = 0.66;
+	// constants
+	this.mNormalEntityImageScale						 = 0.66;
 };
 
 
@@ -157,11 +157,11 @@ TacticalScreenTurnSequenceBarModule.prototype.isConnected = function ()
 
 TacticalScreenTurnSequenceBarModule.prototype.onConnection = function (_handle)
 {
-    this.mSQHandle = _handle;
+	this.mSQHandle = _handle;
 
 	// notify listener
-    if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
-    {
+	if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
+	{
 		this.mEventListener.onModuleOnConnectionCalled(this);
 	}
 };
@@ -171,8 +171,8 @@ TacticalScreenTurnSequenceBarModule.prototype.onDisconnection = function ()
 	this.mSQHandle = null;
 
 	// notify listener
-    if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
-    {
+	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
+	{
 		this.mEventListener.onModuleOnDisconnectionCalled(this);
 	}
 };
@@ -180,11 +180,11 @@ TacticalScreenTurnSequenceBarModule.prototype.onDisconnection = function ()
 
 TacticalScreenTurnSequenceBarModule.prototype.createDIV = function (_parentDiv)
 {
-    var self = this;
+	var self = this;
 
 	// create: container
 	this.mContainer = $('<div class="turnsequencebar-module ui-control"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	var centerContainerLayout = $('<div class="l-center-container"/>');
 	this.mContainer.append(centerContainerLayout);
@@ -221,12 +221,12 @@ TacticalScreenTurnSequenceBarModule.prototype.createDIV = function (_parentDiv)
 	statsHeaderCharacterNameLayout.append(this.mStatsHeaderCharacterName);
 
 	// create: inventory button
-    var layout = $('<div class="l-inventory-button"/>');
-    statsHeader.append(layout);
-    this.mOpenInventoryButton = layout.createImageButton(Path.GFX + Asset.BUTTON_OPEN_INVENTORY, function ()
-    {
-        self.notifyBackendOpenInventoryButtonPressed();
-    }, '', 6);
+	var layout = $('<div class="l-inventory-button"/>');
+	statsHeader.append(layout);
+	this.mOpenInventoryButton = layout.createImageButton(Path.GFX + Asset.BUTTON_OPEN_INVENTORY, function ()
+	{
+		self.notifyBackendOpenInventoryButtonPressed();
+	}, '', 6);
 
 	// create: stats values columns
 	var statsValuesColumnLeft = $('<div class="stats-column"/>');
@@ -263,35 +263,35 @@ TacticalScreenTurnSequenceBarModule.prototype.createDIV = function (_parentDiv)
 	rightTopContainer.append(buttonsContainer);
 
 	// create: buttons
-    var buttonBackground = $('<div class="l-button-container"/>');
+	var buttonBackground = $('<div class="l-button-container"/>');
 	buttonsContainer.append(buttonBackground);
 	layout = $('<div class="l-button"/>');
 	buttonBackground.append(layout);
-    this.mEndTurnButton = layout.createImageButton(Path.GFX + Asset.BUTTON_END_TURN, function ()
-    {
-        self.notifyBackendNextTurnButtonPressed();
-    }, '', 6);
-    this.mEndTurnButtonContainer = buttonBackground;
+	this.mEndTurnButton = layout.createImageButton(Path.GFX + Asset.BUTTON_END_TURN, function ()
+	{
+		self.notifyBackendNextTurnButtonPressed();
+	}, '', 6);
+	this.mEndTurnButtonContainer = buttonBackground;
 
-    var buttonBackground = $('<div class="l-button-container"/>');
-    buttonsContainer.append(buttonBackground);
-    layout = $('<div class="l-button"/>');
-    buttonBackground.append(layout);
-    this.mWaitTurnButton = layout.createImageButton(Path.GFX + Asset.BUTTON_DELAY_TURN, function ()
-    {
-        self.notifyBackendWaitTurnButtonPressed();
-    }, '', 6);
-    this.mWaitTurnButtonContainer = buttonBackground;
+	var buttonBackground = $('<div class="l-button-container"/>');
+	buttonsContainer.append(buttonBackground);
+	layout = $('<div class="l-button"/>');
+	buttonBackground.append(layout);
+	this.mWaitTurnButton = layout.createImageButton(Path.GFX + Asset.BUTTON_DELAY_TURN, function ()
+	{
+		self.notifyBackendWaitTurnButtonPressed();
+	}, '', 6);
+	this.mWaitTurnButtonContainer = buttonBackground;
 
-    var buttonBackground = $('<div class="l-button-container"/>');
-    buttonsContainer.append(buttonBackground);
-    layout = $('<div class="l-button"/>');
-    buttonBackground.append(layout);
-    this.mEndTurnAllButton = layout.createImageButton(Path.GFX + Asset.BUTTON_END_ALL_TURNS, function ()
-    {
-        self.notifyBackendEndTurnAllButtonPressed();
-    }, '', 6);
-    this.mEndTurnAllButtonContainer = buttonBackground;
+	var buttonBackground = $('<div class="l-button-container"/>');
+	buttonsContainer.append(buttonBackground);
+	layout = $('<div class="l-button"/>');
+	buttonBackground.append(layout);
+	this.mEndTurnAllButton = layout.createImageButton(Path.GFX + Asset.BUTTON_END_ALL_TURNS, function ()
+	{
+		self.notifyBackendEndTurnAllButtonPressed();
+	}, '', 6);
+	this.mEndTurnAllButtonContainer = buttonBackground;
 
 	// create: turn sequence bar
 	this.mEntitySliderClippingContainer = $('<div class="entity-slider-clipping-container"/>');
@@ -311,65 +311,65 @@ TacticalScreenTurnSequenceBarModule.prototype.createDIV = function (_parentDiv)
 
 TacticalScreenTurnSequenceBarModule.prototype.destroyDIV = function ()
 {
-    this.mStatusEffectsContainer.empty();
-    this.mStatusEffectsContainer.remove();
-    this.mStatusEffectsContainer = null;
+	this.mStatusEffectsContainer.empty();
+	this.mStatusEffectsContainer.remove();
+	this.mStatusEffectsContainer = null;
 
-    this.mStatsContainer.empty();
-    this.mStatsContainer.remove();
-    this.mStatsContainer = null;
+	this.mStatsContainer.empty();
+	this.mStatsContainer.remove();
+	this.mStatsContainer = null;
 
-    this.mStatsHeaderElevationImage.empty();
-    this.mStatsHeaderElevationImage.remove();
-    this.mStatsHeaderElevationImage = null;
+	this.mStatsHeaderElevationImage.empty();
+	this.mStatsHeaderElevationImage.remove();
+	this.mStatsHeaderElevationImage = null;
 
-    this.mStatsHeaderCharacterName.empty();
-    this.mStatsHeaderCharacterName.remove();
-    this.mStatsHeaderCharacterName = null;
+	this.mStatsHeaderCharacterName.empty();
+	this.mStatsHeaderCharacterName.remove();
+	this.mStatsHeaderCharacterName = null;
 
-    this.mOpenInventoryButton.empty();
-    this.mOpenInventoryButton.remove();
-    this.mOpenInventoryButton = null;
+	this.mOpenInventoryButton.empty();
+	this.mOpenInventoryButton.remove();
+	this.mOpenInventoryButton = null;
 
-    this.mEndTurnButton.empty();
-    this.mEndTurnButton.remove();
-    this.mEndTurnButton = null;
+	this.mEndTurnButton.empty();
+	this.mEndTurnButton.remove();
+	this.mEndTurnButton = null;
 
-    this.mWaitTurnButton.empty();
-    this.mWaitTurnButton.remove();
-    this.mWaitTurnButton = null;
+	this.mWaitTurnButton.empty();
+	this.mWaitTurnButton.remove();
+	this.mWaitTurnButton = null;
 
-    this.mSkillsContainer.empty();
-    this.mSkillsContainer.remove();
-    this.mSkillsContainer = null;
+	this.mSkillsContainer.empty();
+	this.mSkillsContainer.remove();
+	this.mSkillsContainer = null;
 
-    this.mFirstSlotNormalSizeEntityTemplate.remove();
-    this.mFirstSlotNormalSizeEntityTemplate = null;
-    this.mFirstSlotFullSizeEntityTemplate.remove();
-    this.mFirstSlotFullSizeEntityTemplate = null;
+	this.mFirstSlotNormalSizeEntityTemplate.remove();
+	this.mFirstSlotNormalSizeEntityTemplate = null;
+	this.mFirstSlotFullSizeEntityTemplate.remove();
+	this.mFirstSlotFullSizeEntityTemplate = null;
 
-    this.mEntitySliderContainer.empty();
-    this.mEntitySliderContainer.remove();
-    this.mEntitySliderContainer = null;
+	this.mEntitySliderContainer.empty();
+	this.mEntitySliderContainer.remove();
+	this.mEntitySliderContainer = null;
 
-    this.mEntitySliderClippingContainer.empty();
-    this.mEntitySliderClippingContainer.remove();
-    this.mEntitySliderClippingContainer = null;
+	this.mEntitySliderClippingContainer.empty();
+	this.mEntitySliderClippingContainer.remove();
+	this.mEntitySliderClippingContainer = null;
 
-    this.mEntityContainer.empty();
-    this.mEntityContainer.remove();
-    this.mEntityContainer = null;
+	this.mEntityContainer.empty();
+	this.mEntityContainer.remove();
+	this.mEntityContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 TacticalScreenTurnSequenceBarModule.prototype.createStatsRowDIV = function (_definitions, _parentDiv)
 {
-    $.each(_definitions, function (_key, _value)
-    {
+	$.each(_definitions, function (_key, _value)
+	{
 		_value.Row = $('<div class="stats-row"></div>');
 		_parentDiv.append(_value.Row);
 		var leftStatsRowLayout = $('<div class="l-stats-row"></div>');
@@ -400,7 +400,7 @@ TacticalScreenTurnSequenceBarModule.prototype.createStatsRowDIV = function (_def
 
 TacticalScreenTurnSequenceBarModule.prototype.createEntityDIV = function (_entityId)
 {
-    var self = this;
+	var self = this;
 
 	var entity = $('<div class="l-entity"></div>');
 	entity.data('entity', { id: _entityId });
@@ -415,7 +415,7 @@ TacticalScreenTurnSequenceBarModule.prototype.createEntityDIV = function (_entit
 		// create image layer & image
 		var entityImageLayer = $('<div class="image-layer"/>');
 
-        entityContainer.append(entityImageLayer);
+		entityContainer.append(entityImageLayer);
 		var entityImage = $('<img class="entity-image"/>');
 		entityImageLayer.append(entityImage);
 		entityImage.css({ opacity: 0 });
@@ -429,37 +429,37 @@ TacticalScreenTurnSequenceBarModule.prototype.createEntityDIV = function (_entit
 
 		entityImage.load(function ()
 		{
-            var isFirst = $(this).data('is-first') || false;
-            if(isFirst === false)
+			var isFirst = $(this).data('is-first') || false;
+			if(isFirst === false)
 			{
 				// NOTE: (js) Das Bild per "Hand" um n-% verkleiner und in seinem Parent zentrieren, da es per CSS ned wirklich funktionieren wollte..
-                var offsets = $(this).data('offsets') || { imageOffsetX: 0, imageOffsetY: 0};
-                var parent = $(this).parent();
-                var newWidth = this.naturalWidth * self.mNormalEntityImageScale;
-                var newHeight = this.naturalHeight * self.mNormalEntityImageScale;
-                var marginLeft = (parent.innerWidth() - newWidth + offsets.imageOffsetX)/2;
-                var marginTop = (/*parent.innerHeight()*/ 130 - newHeight + offsets.imageOffsetY)/2;
+				var offsets = $(this).data('offsets') || { imageOffsetX: 0, imageOffsetY: 0};
+				var parent = $(this).parent();
+				var newWidth = this.naturalWidth * self.mNormalEntityImageScale;
+				var newHeight = this.naturalHeight * self.mNormalEntityImageScale;
+				var marginLeft = (parent.innerWidth() - newWidth + offsets.imageOffsetX)/2;
+				var marginTop = (/*parent.innerHeight()*/ 130 - newHeight + offsets.imageOffsetY)/2;
 
-                $(this).css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
-                $(this).data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
-            }
+				$(this).css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+				$(this).data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+			}
 			else if($(this).data('is-scaling') !== true)
 			{
 				// NOTE: (js) Das Bild per "Hand" um n-% verkleiner und in seinem Parent zentrieren, da es per CSS ned wirklich funktionieren wollte..
-                var offsets = $(this).data('offsets') || { imageOffsetX: 0, imageOffsetY: 0};
-                var parent = $(this).parent();
-                var newWidth = this.naturalWidth;
-                var newHeight = this.naturalHeight;
-                var marginLeft = (parent.innerWidth() - newWidth + offsets.imageOffsetX)/2;
-                var marginTop = (/*parent.innerHeight()*/ 130 - newHeight + offsets.imageOffsetY)/2;
+				var offsets = $(this).data('offsets') || { imageOffsetX: 0, imageOffsetY: 0};
+				var parent = $(this).parent();
+				var newWidth = this.naturalWidth;
+				var newHeight = this.naturalHeight;
+				var marginLeft = (parent.innerWidth() - newWidth + offsets.imageOffsetX)/2;
+				var marginTop = (/*parent.innerHeight()*/ 130 - newHeight + offsets.imageOffsetY)/2;
 
-                $(this).css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
-                $(this).data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+				$(this).css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+				$(this).data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
 			}
 
-            $(this).data('placeholder').addClass('opacity-almost-none');
-            $(this).data('placeholder').attr('src', $(this).attr('src'));
-        });
+			$(this).data('placeholder').addClass('opacity-almost-none');
+			$(this).data('placeholder').attr('src', $(this).attr('src'));
+		});
 
 		// bind tooltip
 		entityImageLayer.bindTooltip({ contentType: 'entity', entityId: _entityId, yOffset: -10 });
@@ -483,11 +483,11 @@ TacticalScreenTurnSequenceBarModule.prototype.createEntityDIV = function (_entit
 
 TacticalScreenTurnSequenceBarModule.prototype.addSkillToList = function (_entity, _skill, _label)
 {
-    var bottom = 0.0 + Math.floor((_label - 0) / 8) * 4.7;
-    var left = 11.0 + ((_label - 0) - Math.floor((_label - 0) / 8) * 7) * 4.2;
+	var bottom = 0.0 + Math.floor((_label - 0) / 8) * 4.7;
+	var left = 11.0 + ((_label - 0) - Math.floor((_label - 0) / 8) * 7) * 4.2;
 
-    var skillContainerLayout = $('<div class="l-skill"></div>');
-    skillContainerLayout.css({ 'left': left + 'rem', 'bottom' : bottom + 'rem' });
+	var skillContainerLayout = $('<div class="l-skill"></div>');
+	skillContainerLayout.css({ 'left': left + 'rem', 'bottom' : bottom + 'rem' });
 	this.mSkillsContainer.append(skillContainerLayout);
 
 	// bind tooltip
@@ -542,17 +542,17 @@ TacticalScreenTurnSequenceBarModule.prototype.addSkillToList = function (_entity
 	}
 	
 	// create label (numeration)
-    if (_label == 10)
-        _label = 0;
+	if (_label == 10)
+		_label = 0;
 
-    if (_label < 10)
-    {
-	    var textLayer = $('<div class="text-layer"></div>');
-	    skillContainer.append(textLayer);
-	    var label = $('<div class="numeration-label text-font-very-small font-bold font-color-numeration-label"></div>');
-	    label.html(_label);
-        textLayer.append(label);
-    }
+	if (_label < 10)
+	{
+		var textLayer = $('<div class="text-layer"></div>');
+		skillContainer.append(textLayer);
+		var label = $('<div class="numeration-label text-font-very-small font-bold font-color-numeration-label"></div>');
+		label.html(_label);
+		textLayer.append(label);
+	}
 			
 	// create overlay & image div
 	var overlayLayer = $('<div class="overlay-layer"></div>');
@@ -609,8 +609,8 @@ TacticalScreenTurnSequenceBarModule.prototype.createEntityCallbacks = function()
 
 TacticalScreenTurnSequenceBarModule.prototype.bindTooltips = function ()
 {
-    this.mEndTurnAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.EndTurnAllButton });
-    this.mEndTurnButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.EndTurnButton });
+	this.mEndTurnAllButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.EndTurnAllButton });
+	this.mEndTurnButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.EndTurnButton });
 	this.mWaitTurnButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.WaitTurnButton });
 	this.mOpenInventoryButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.TacticalScreen.TurnSequenceBarModule.OpenInventoryButton });
 
@@ -624,8 +624,8 @@ TacticalScreenTurnSequenceBarModule.prototype.bindTooltips = function ()
 
 TacticalScreenTurnSequenceBarModule.prototype.unbindTooltips = function ()
 {
-    this.mEndTurnAllButton.unbindTooltip();
-    this.mEndTurnButton.unbindTooltip();
+	this.mEndTurnAllButton.unbindTooltip();
+	this.mEndTurnButton.unbindTooltip();
 	this.mWaitTurnButton.unbindTooltip();
 	this.mOpenInventoryButton.unbindTooltip();
 
@@ -665,48 +665,48 @@ TacticalScreenTurnSequenceBarModule.prototype.setupEventHandler = function ()
 
 TacticalScreenTurnSequenceBarModule.prototype.create = function(_parentDiv)
 {
-    this.createEntityCallbacks();
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createEntityCallbacks();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 
-    // hide the stats panel
-    this.showStatsPanel(false, true);
+	// hide the stats panel
+	this.showStatsPanel(false, true);
 };
 
 TacticalScreenTurnSequenceBarModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 TacticalScreenTurnSequenceBarModule.prototype.register = function (_parentDiv)
 {
-    console.log('TacticalScreenTurnSequenceBarModule::REGISTER');
+	console.log('TacticalScreenTurnSequenceBarModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register TurnSequenceBar Module. Reason: TurnSequenceBar Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register TurnSequenceBar Module. Reason: TurnSequenceBar Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 TacticalScreenTurnSequenceBarModule.prototype.unregister = function ()
 {
-    console.log('TacticalScreenTurnSequenceBarModule::UNREGISTER');
+	console.log('TacticalScreenTurnSequenceBarModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister TurnSequenceBar Module. Reason: TurnSequenceBar Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister TurnSequenceBar Module. Reason: TurnSequenceBar Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 TacticalScreenTurnSequenceBarModule.prototype.isRegistered = function ()
@@ -728,33 +728,33 @@ TacticalScreenTurnSequenceBarModule.prototype.registerEventListener = function(_
 
 TacticalScreenTurnSequenceBarModule.prototype.show = function(_delay)
 {
-    var self = this;
-    this.mContainer.removeClass('display-none').addClass('display-block');
-    this.mContainer.velocity("finish", true).velocity({ bottom: '2.6rem' },
-    {
-        duration: _delay,
-        easing: 'swing',
-        begin: function ()
-        {
-            $(this).removeClass('display-none').addClass('display-block');
-        }
-    });
+	var self = this;
+	this.mContainer.removeClass('display-none').addClass('display-block');
+	this.mContainer.velocity("finish", true).velocity({ bottom: '2.6rem' },
+	{
+		duration: _delay,
+		easing: 'swing',
+		begin: function ()
+		{
+			$(this).removeClass('display-none').addClass('display-block');
+		}
+	});
 };
 
 TacticalScreenTurnSequenceBarModule.prototype.hide = function(_delay)
 {
-    var targetOffset = this.mContainer.offset();
-    var parentHeight = this.mContainer.parent().height();
-    var offset = parentHeight - targetOffset.top;
+	var targetOffset = this.mContainer.offset();
+	var parentHeight = this.mContainer.parent().height();
+	var offset = parentHeight - targetOffset.top;
 
-    this.mContainer.velocity("finish", true).velocity({ bottom: (-offset) + 'px' },
-    {
-        duration: _delay,
-        easing: 'swing',
-        begin: function() {
-            $(this).removeClass('display-block').addClass('display-none');
-        }
-    });
+	this.mContainer.velocity("finish", true).velocity({ bottom: (-offset) + 'px' },
+	{
+		duration: _delay,
+		easing: 'swing',
+		begin: function() {
+			$(this).removeClass('display-block').addClass('display-none');
+		}
+	});
 };
 
 /**
@@ -811,7 +811,7 @@ TacticalScreenTurnSequenceBarModule.prototype.showButton = function (_button, _s
 			//_button.css({opacity: 0});
 			_button.removeClass('display-none').addClass('display-block');
 			_button.velocity("finish", true).velocity({ opacity: 1 },
-            {
+			{
 				duration: this.mStatsPanelFadeInTime,
 				easing: 'swing'
 			});
@@ -822,8 +822,8 @@ TacticalScreenTurnSequenceBarModule.prototype.showButton = function (_button, _s
 		if (_button.hasClass('display-block'))
 		{
 			//_button.css({opacity: 1});
-		    _button.velocity("finish", true).velocity({ opacity: 0 },
-            {
+			_button.velocity("finish", true).velocity({ opacity: 0 },
+			{
 				duration: this.mStatsPanelFadeOutTime,
 				easing: 'swing',
 				complete: function ()
@@ -924,105 +924,105 @@ TacticalScreenTurnSequenceBarModule.prototype.selectFirstEntity = function (_ent
 {
 	// notify sq that a new entity went into the first slot
 	// +  query entity data from sq backend
-    var self = this;
-    this.notifyBackendEntityEntersFirstSlot(_entity.id, function (entityData)
-    {
-        if (entityData === null || entityData === undefined)
-        {
-            console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
-            return;
-        }
+	var self = this;
+	this.notifyBackendEntityEntersFirstSlot(_entity.id, function (entityData)
+	{
+		if (entityData === null || entityData === undefined)
+		{
+			console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
+			return;
+		}
 
-        // update the visible to player attribute
-        self.updateEntityVisiblity(entityData, _entityDIV);
+		// update the visible to player attribute
+		self.updateEntityVisiblity(entityData, _entityDIV);
 
-        // update image
-        self.updateEntityImage(entityData, _entityDIV);
+		// update image
+		self.updateEntityImage(entityData, _entityDIV);
 
-        // remove possible selection mark
-        self.selectEntity({ id: _entity.id, select: false });
+		// remove possible selection mark
+		self.selectEntity({ id: _entity.id, select: false });
 
-        // update all related controls
-        self.updateButtonBar(entityData);
-        self.updateStatsPanel(entityData);
-        self.updateEntitySkills(entityData);
-        self.updateEntityStatusEffects(entityData);
+		// update all related controls
+		self.updateButtonBar(entityData);
+		self.updateStatsPanel(entityData);
+		self.updateEntitySkills(entityData);
+		self.updateEntityStatusEffects(entityData);
 
-        // update & resize image and keep aligned
-        var entityImageLayer = _entityDIV.find('.image-layer:first');
-        var entityImage = _entityDIV.find('img:first');
-        entityImage.data('is-first', true);
-        entityImage.data('is-scaling', true);
+		// update & resize image and keep aligned
+		var entityImageLayer = _entityDIV.find('.image-layer:first');
+		var entityImage = _entityDIV.find('img:first');
+		entityImage.data('is-first', true);
+		entityImage.data('is-scaling', true);
 
-        // remove event handler
-        entityImage.off('mouseenter', self.mEntityMouseEnterCallback);
-        entityImage.off('mouseleave', self.mEntityMouseLeaveCallback);
+		// remove event handler
+		entityImage.off('mouseenter', self.mEntityMouseEnterCallback);
+		entityImage.off('mouseleave', self.mEntityMouseLeaveCallback);
 
-        // resize first slot div - only if the entity is visible to the player - otherwise we wanna speed things up for the player
-        //if (_entityDIV.attr('is-hidden-to-player') !== 'true')
-        {
-            var resizeFirstSlotTime = (_entityDIV.attr('is-hidden-to-player') === 'true' || _previousEntityWasHiddenToPlayer) ? self.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer : self.mResizeFirstSlotTime;
-            _entityDIV.velocity({ width: '10.4rem' },
-		    {
-		        duration: resizeFirstSlotTime,
-		        easing: 'swing',
-		        complete: function ()
-		        {
-		            // NOTE: (js) Hier zentrieren wir die Image per "Hand"...
-		            var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
-		            var newWidth = entityImage[0].naturalWidth;
-		            var newHeight = entityImage[0].naturalHeight;
-		            var marginLeft = (entityImageLayer.innerWidth() - newWidth + offsets.imageOffsetX) / 2;
-		            var marginTop = (entityImageLayer.innerHeight() - newHeight + offsets.imageOffsetY) / 2;
-		            //console.info('w: ' + newWidth + ' h: ' + newHeight);
-		            //entityImage.css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop});
+		// resize first slot div - only if the entity is visible to the player - otherwise we wanna speed things up for the player
+		//if (_entityDIV.attr('is-hidden-to-player') !== 'true')
+		{
+			var resizeFirstSlotTime = (_entityDIV.attr('is-hidden-to-player') === 'true' || _previousEntityWasHiddenToPlayer) ? self.mResizeFirstSlotTimeIfPreviousWasHiddenToPlayer : self.mResizeFirstSlotTime;
+			_entityDIV.velocity({ width: '10.4rem' },
+			{
+				duration: resizeFirstSlotTime,
+				easing: 'swing',
+				complete: function ()
+				{
+					// NOTE: (js) Hier zentrieren wir die Image per "Hand"...
+					var offsets = entityImage.data('offsets') || { imageOffsetX: 0, imageOffsetY: 0 };
+					var newWidth = entityImage[0].naturalWidth;
+					var newHeight = entityImage[0].naturalHeight;
+					var marginLeft = (entityImageLayer.innerWidth() - newWidth + offsets.imageOffsetX) / 2;
+					var marginTop = (entityImageLayer.innerHeight() - newHeight + offsets.imageOffsetY) / 2;
+					//console.info('w: ' + newWidth + ' h: ' + newHeight);
+					//entityImage.css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop});
 
-		            entityImage.data('placeholder').velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
-                    {
-                    	duration: self.mResizeFirstSlotImageTime,
-                    	easing: 'swing',
-                    	complete: function ()
-                    	{
-                    	}
-                    });
+					entityImage.data('placeholder').velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
+					{
+						duration: self.mResizeFirstSlotImageTime,
+						easing: 'swing',
+						complete: function ()
+						{
+						}
+					});
 
-		            entityImage.velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
-                    {
-                        duration: self.mResizeFirstSlotImageTime,
-                        easing: 'swing',
-                        complete: function ()
-                        {
-                        	entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
-                        	entityImage.data('is-scaling', false);
+					entityImage.velocity({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop },
+					{
+						duration: self.mResizeFirstSlotImageTime,
+						easing: 'swing',
+						complete: function ()
+						{
+							entityImage.data('placeholder').css({ 'width': newWidth, 'margin-left': marginLeft, 'margin-top': marginTop });
+							entityImage.data('is-scaling', false);
 
-                        	var newImage = entityImage.data('newImage') || false;
+							var newImage = entityImage.data('newImage') || false;
 
-                            if (newImage !== false)
-                            {
-                            	entityImage.data('placeholder').removeClass('opacity-almost-none');
-                            	entityImage.attr('src', newImage);
-                                entityImage.data('newImage', false);
-                            }
+							if (newImage !== false)
+							{
+								entityImage.data('placeholder').removeClass('opacity-almost-none');
+								entityImage.attr('src', newImage);
+								entityImage.data('newImage', false);
+							}
 
-                            // notify sq that a new turn image resize animation has ended
-                            self.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
-                        }
-                    });
+							// notify sq that a new turn image resize animation has ended
+							self.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
+						}
+					});
 
-		            // notify sq that a new turn slot resize animation has ended
-		            // Note: (js) we do this here to speed up the process of sliden through AI entities
-		            self.notifyBackendEntityEnteredFirstSlot(_entity.id);
-		        }
-		    });
-        }
-        // 	else
-        // 	{
-        // 		// notify sq that a new entity has entered the first slot
-        // 		this.notifyBackendEntityEnteredFirstSlot(_entity.id);
-        // 		// notify sq that a new turn image resize animation has ended
-        // 		this.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
-        // 	}
-    });
+					// notify sq that a new turn slot resize animation has ended
+					// Note: (js) we do this here to speed up the process of sliden through AI entities
+					self.notifyBackendEntityEnteredFirstSlot(_entity.id);
+				}
+			});
+		}
+		// 	else
+		// 	{
+		// 		// notify sq that a new entity has entered the first slot
+		// 		this.notifyBackendEntityEnteredFirstSlot(_entity.id);
+		// 		// notify sq that a new turn image resize animation has ended
+		// 		this.notifyBackendEntityEnteredFirstSlotFully(_entity.id);
+		// 	}
+	});
 };
 		
 
@@ -1057,155 +1057,155 @@ TacticalScreenTurnSequenceBarModule.prototype.updateStatsPanel = function (_data
 		}
 
 
-        // LEFT ROW
-        // ************************************************************************************************************************
+		// LEFT ROW
+		// ************************************************************************************************************************
 
-        // update action points
-        var newWidth = 0;
-        if (ProgressbarValueIdentifier.ActionPoints in _data && ProgressbarValueIdentifier.ActionPointsMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.ActionPointsMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.ActionPoints] * 100) / _data[ProgressbarValueIdentifier.ActionPointsMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mLeftStatsRows.ActionPoints.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mLeftStatsRows.ActionPoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            if (ProgressbarValueIdentifier.ActionPointsLabel in _data)
-                this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsLabel]);
-            else
-                this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPoints] + ' / ' + _data[ProgressbarValueIdentifier.ActionPointsMax]);
-        }
+		// update action points
+		var newWidth = 0;
+		if (ProgressbarValueIdentifier.ActionPoints in _data && ProgressbarValueIdentifier.ActionPointsMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.ActionPointsMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.ActionPoints] * 100) / _data[ProgressbarValueIdentifier.ActionPointsMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mLeftStatsRows.ActionPoints.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mLeftStatsRows.ActionPoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			if (ProgressbarValueIdentifier.ActionPointsLabel in _data)
+				this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsLabel]);
+			else
+				this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPoints] + ' / ' + _data[ProgressbarValueIdentifier.ActionPointsMax]);
+		}
 
-        // update action points preview
-        if (ProgressbarValueIdentifier.ActionPointsPreview in _data && ProgressbarValueIdentifier.ActionPointsMaxPreview in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.ActionPointsMaxPreview] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.ActionPointsPreview] * 100) / _data[ProgressbarValueIdentifier.ActionPointsMaxPreview];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mLeftStatsRows.ActionPoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update action points preview
+		if (ProgressbarValueIdentifier.ActionPointsPreview in _data && ProgressbarValueIdentifier.ActionPointsMaxPreview in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.ActionPointsMaxPreview] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.ActionPointsPreview] * 100) / _data[ProgressbarValueIdentifier.ActionPointsMaxPreview];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mLeftStatsRows.ActionPoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.ActionPointsLabel in _data)
-                this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsLabel]);
-            else
-                this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsPreview] + ' / ' + _data[ProgressbarValueIdentifier.ActionPointsMaxPreview]);
-        }
+			if (ProgressbarValueIdentifier.ActionPointsLabel in _data)
+				this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsLabel]);
+			else
+				this.mLeftStatsRows.ActionPoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ActionPointsPreview] + ' / ' + _data[ProgressbarValueIdentifier.ActionPointsMaxPreview]);
+		}
 
-        // update morale
-        if (ProgressbarValueIdentifier.Morale in _data && ProgressbarValueIdentifier.MoraleMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.MoraleMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.Morale] * 100) / _data[ProgressbarValueIdentifier.MoraleMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mLeftStatsRows.Morale.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mLeftStatsRows.Morale.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update morale
+		if (ProgressbarValueIdentifier.Morale in _data && ProgressbarValueIdentifier.MoraleMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.MoraleMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.Morale] * 100) / _data[ProgressbarValueIdentifier.MoraleMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mLeftStatsRows.Morale.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mLeftStatsRows.Morale.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.MoraleLabel in _data)
-                this.mLeftStatsRows.Morale.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.MoraleLabel]);
-            else
-                this.mLeftStatsRows.Morale.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Morale] + ' / ' + _data[ProgressbarValueIdentifier.MoraleMax]);
-        }
+			if (ProgressbarValueIdentifier.MoraleLabel in _data)
+				this.mLeftStatsRows.Morale.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.MoraleLabel]);
+			else
+				this.mLeftStatsRows.Morale.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Morale] + ' / ' + _data[ProgressbarValueIdentifier.MoraleMax]);
+		}
 
-        // update fatigue
-        if (ProgressbarValueIdentifier.Fatigue in _data && ProgressbarValueIdentifier.FatigueMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.FatigueMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.Fatigue] * 100) / _data[ProgressbarValueIdentifier.FatigueMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mLeftStatsRows.Fatigue.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mLeftStatsRows.Fatigue.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update fatigue
+		if (ProgressbarValueIdentifier.Fatigue in _data && ProgressbarValueIdentifier.FatigueMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.FatigueMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.Fatigue] * 100) / _data[ProgressbarValueIdentifier.FatigueMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mLeftStatsRows.Fatigue.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mLeftStatsRows.Fatigue.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.FatigueLabel in _data)
-                this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatigueLabel]);
-            else
-                this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Fatigue] + ' / ' + _data[ProgressbarValueIdentifier.FatigueMax]);
-        }
+			if (ProgressbarValueIdentifier.FatigueLabel in _data)
+				this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatigueLabel]);
+			else
+				this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Fatigue] + ' / ' + _data[ProgressbarValueIdentifier.FatigueMax]);
+		}
 
-        // update fatigue preview
-        if (ProgressbarValueIdentifier.FatiguePreview in _data && ProgressbarValueIdentifier.FatigueMaxPreview in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.FatigueMaxPreview] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.FatiguePreview] * 100) / _data[ProgressbarValueIdentifier.FatigueMaxPreview];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mLeftStatsRows.Fatigue.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update fatigue preview
+		if (ProgressbarValueIdentifier.FatiguePreview in _data && ProgressbarValueIdentifier.FatigueMaxPreview in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.FatigueMaxPreview] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.FatiguePreview] * 100) / _data[ProgressbarValueIdentifier.FatigueMaxPreview];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mLeftStatsRows.Fatigue.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.FatigueLabel in _data)
-                this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatigueLabel]);
-            else
-                this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatiguePreview] + ' / ' + _data[ProgressbarValueIdentifier.FatigueMaxPreview]);
-        }
+			if (ProgressbarValueIdentifier.FatigueLabel in _data)
+				this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatigueLabel]);
+			else
+				this.mLeftStatsRows.Fatigue.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.FatiguePreview] + ' / ' + _data[ProgressbarValueIdentifier.FatigueMaxPreview]);
+		}
 
 
-        // RIGHT ROW
-        // ************************************************************************************************************************
+		// RIGHT ROW
+		// ************************************************************************************************************************
 
-        // update hit points
-        if (ProgressbarValueIdentifier.Hitpoints in _data && ProgressbarValueIdentifier.HitpointsMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.HitpointsMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.Hitpoints] * 100) / _data[ProgressbarValueIdentifier.HitpointsMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mRightStatsRows.Hitpoints.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mRightStatsRows.Hitpoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update hit points
+		if (ProgressbarValueIdentifier.Hitpoints in _data && ProgressbarValueIdentifier.HitpointsMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.HitpointsMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.Hitpoints] * 100) / _data[ProgressbarValueIdentifier.HitpointsMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mRightStatsRows.Hitpoints.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mRightStatsRows.Hitpoints.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.HitpointsLabel in _data)
-                this.mRightStatsRows.Hitpoints.ProgressbarLabel.html('' + _data[ProgressbarValueIdentifier.HitpointsLabel]);
-            else
-                this.mRightStatsRows.Hitpoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Hitpoints] + ' / ' + _data[ProgressbarValueIdentifier.HitpointsMax]);
-        }
+			if (ProgressbarValueIdentifier.HitpointsLabel in _data)
+				this.mRightStatsRows.Hitpoints.ProgressbarLabel.html('' + _data[ProgressbarValueIdentifier.HitpointsLabel]);
+			else
+				this.mRightStatsRows.Hitpoints.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.Hitpoints] + ' / ' + _data[ProgressbarValueIdentifier.HitpointsMax]);
+		}
 
-        // update armor head
-        if (ProgressbarValueIdentifier.ArmorHead in _data && ProgressbarValueIdentifier.ArmorHeadMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.ArmorHeadMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.ArmorHead] * 100) / _data[ProgressbarValueIdentifier.ArmorHeadMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
-            }
-            this.mRightStatsRows.ArmorHead.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mRightStatsRows.ArmorHead.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+		// update armor head
+		if (ProgressbarValueIdentifier.ArmorHead in _data && ProgressbarValueIdentifier.ArmorHeadMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.ArmorHeadMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.ArmorHead] * 100) / _data[ProgressbarValueIdentifier.ArmorHeadMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
+			}
+			this.mRightStatsRows.ArmorHead.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mRightStatsRows.ArmorHead.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.ArmorHeadLabel in _data)
-                this.mRightStatsRows.ArmorHead.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorHeadLabel]);
-            else
-                this.mRightStatsRows.ArmorHead.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorHead] + ' / ' + _data[ProgressbarValueIdentifier.ArmorHeadMax]);
-        }
+			if (ProgressbarValueIdentifier.ArmorHeadLabel in _data)
+				this.mRightStatsRows.ArmorHead.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorHeadLabel]);
+			else
+				this.mRightStatsRows.ArmorHead.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorHead] + ' / ' + _data[ProgressbarValueIdentifier.ArmorHeadMax]);
+		}
 
-        // update armor body
-        if (ProgressbarValueIdentifier.ArmorBody in _data && ProgressbarValueIdentifier.ArmorBodyMax in _data)
-        {
-            newWidth = 0;
-            if (_data[ProgressbarValueIdentifier.ArmorBodyMax] > 0)
-            {
-                newWidth = (_data[ProgressbarValueIdentifier.ArmorBody] * 100) / _data[ProgressbarValueIdentifier.ArmorBodyMax];
-                newWidth = Math.max(Math.min(newWidth, 100), 0);
+		// update armor body
+		if (ProgressbarValueIdentifier.ArmorBody in _data && ProgressbarValueIdentifier.ArmorBodyMax in _data)
+		{
+			newWidth = 0;
+			if (_data[ProgressbarValueIdentifier.ArmorBodyMax] > 0)
+			{
+				newWidth = (_data[ProgressbarValueIdentifier.ArmorBody] * 100) / _data[ProgressbarValueIdentifier.ArmorBodyMax];
+				newWidth = Math.max(Math.min(newWidth, 100), 0);
 
-            }
-            this.mRightStatsRows.ArmorBody.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
-            this.mRightStatsRows.ArmorBody.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			}
+			this.mRightStatsRows.ArmorBody.Progressbar.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
+			this.mRightStatsRows.ArmorBody.ProgressbarPreview.velocity("stop", true).velocity({ 'width': newWidth + '%' }, { duration: this.mProgressbarMovementDuration });
 
-            if (ProgressbarValueIdentifier.ArmorBodyLabel in _data)
-                this.mRightStatsRows.ArmorBody.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorBodyLabel]);
-            else
-                this.mRightStatsRows.ArmorBody.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorBody] + ' / ' + _data[ProgressbarValueIdentifier.ArmorBodyMax]);
-        }
+			if (ProgressbarValueIdentifier.ArmorBodyLabel in _data)
+				this.mRightStatsRows.ArmorBody.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorBodyLabel]);
+			else
+				this.mRightStatsRows.ArmorBody.ProgressbarLabel.html(_data[ProgressbarValueIdentifier.ArmorBody] + ' / ' + _data[ProgressbarValueIdentifier.ArmorBodyMax]);
+		}
 	}
 };
 
@@ -1220,8 +1220,8 @@ TacticalScreenTurnSequenceBarModule.prototype.updateButtonBar = function (_entit
 	if ('isWaitActionSpent' in _entityData)
 	{
 		//this.showButton(this.mWaitTurnButton, !_entityData.isWaitActionSpent);
-        this.mWaitTurnButton.enableButton(!_entityData.isWaitActionSpent);
-    } 
+		this.mWaitTurnButton.enableButton(!_entityData.isWaitActionSpent);
+	} 
 };
 
 
@@ -1233,10 +1233,10 @@ TacticalScreenTurnSequenceBarModule.prototype.showStatsPanel = function (_show, 
 	{
 		this.mStatsContainer.css({ opacity: _show ? 1 : 0 });
 		//this.mEndTurnButton.css({ opacity: _show ? 1 : 0 });
-	    //this.mWaitTurnButton.css({ opacity: _show ? 1 : 0 });
+		//this.mWaitTurnButton.css({ opacity: _show ? 1 : 0 });
 		this.mWaitTurnButtonContainer.css({ opacity: _show ? 1 : 0 });
-        this.mEndTurnButtonContainer.css({ opacity: _show ? 1 : 0 });
-        this.mEndTurnAllButtonContainer.css({ opacity: _show ? 1 : 0 });
+		this.mEndTurnButtonContainer.css({ opacity: _show ? 1 : 0 });
+		this.mEndTurnAllButtonContainer.css({ opacity: _show ? 1 : 0 });
 		this.mStatusEffectsContainer.css({ opacity: showStatusEffectbarContainer ? 1 : 0 });
 		this.mSkillsContainer.css({ opacity: _show ? 1 : 0 });
 
@@ -1247,10 +1247,10 @@ TacticalScreenTurnSequenceBarModule.prototype.showStatsPanel = function (_show, 
 		else this.mWaitTurnButtonContainer.addClass('display-none').removeClass('display-block');
 
 		if (_show) this.mEndTurnButtonContainer.removeClass('display-none').addClass('display-block');
-        else this.mEndTurnButtonContainer.addClass('display-none').removeClass('display-block');
+		else this.mEndTurnButtonContainer.addClass('display-none').removeClass('display-block');
 
-        if (_show) this.mEndTurnAllButtonContainer.removeClass('display-none').addClass('display-block');
-        else this.mEndTurnAllButtonContainer.addClass('display-none').removeClass('display-block');
+		if (_show) this.mEndTurnAllButtonContainer.removeClass('display-none').addClass('display-block');
+		else this.mEndTurnAllButtonContainer.addClass('display-none').removeClass('display-block');
 
 		if (_show) this.mStatusEffectsContainer.removeClass('display-none').addClass('display-block');
 		else this.mStatusEffectsContainer.addClass('display-none').removeClass('display-block');
@@ -1260,8 +1260,8 @@ TacticalScreenTurnSequenceBarModule.prototype.showStatsPanel = function (_show, 
 	}
 	else
 	{
-	    this.mStatsContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
+		this.mStatsContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
 			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 			easing: 'swing',
 			begin: function ()
@@ -1274,71 +1274,22 @@ TacticalScreenTurnSequenceBarModule.prototype.showStatsPanel = function (_show, 
 				if (!_show)
 					$(this).removeClass('display-block').addClass('display-none');
 			}
-        });
+		});
 
-	    /*this.mEndTurnButton.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
+		/*this.mEndTurnButton.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
 			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 			easing: 'swing'
-        });
+		});
 
-	    this.mWaitTurnButton.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
+		this.mWaitTurnButton.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
 			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 			easing: 'swing'
 		});*/
 
-	    this.mEndTurnButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
-            duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
-            easing: 'swing',
-            begin: function ()
-            {
-            	if (_show)
-            		$(this).removeClass('display-none').addClass('display-block');
-            },
-            complete: function ()
-            {
-            	if (!_show)
-            		$(this).removeClass('display-block').addClass('display-none');
-            }
-        });
-
-        this.mEndTurnAllButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
-            duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
-            easing: 'swing',
-            begin: function ()
-            {
-            	if (_show)
-            		$(this).removeClass('display-none').addClass('display-block');
-            },
-            complete: function ()
-            {
-            	if (!_show)
-            		$(this).removeClass('display-block').addClass('display-none');
-            }
-        });
-
-	    this.mWaitTurnButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
-            duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
-            easing: 'swing',
-        	begin: function ()
-			{
-        		if (_show)
-        			$(this).removeClass('display-none').addClass('display-block');
-			},
-			complete: function ()
-			{
-				if (!_show)
-					$(this).removeClass('display-block').addClass('display-none');
-			}
-        });
-
-		// check if there is any effect within the container
-	    this.mStatusEffectsContainer.velocity("finish", true).velocity({ opacity: showStatusEffectbarContainer ? 1 : 0 },
-        {
+		this.mEndTurnButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
 			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 			easing: 'swing',
 			begin: function ()
@@ -1351,21 +1302,70 @@ TacticalScreenTurnSequenceBarModule.prototype.showStatsPanel = function (_show, 
 				if (!_show)
 					$(this).removeClass('display-block').addClass('display-none');
 			}
-        });
+		});
 
-	    this.mSkillsContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-        {
+		this.mEndTurnAllButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
 			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 			easing: 'swing',
-        	begin: function ()
+			begin: function ()
 			{
-	    		if (_show)
-	    			$(this).removeClass('display-none').addClass('display-block');
+				if (_show)
+					$(this).removeClass('display-none').addClass('display-block');
 			},
 			complete: function ()
 			{
-	    		if (!_show)
-	    			$(this).removeClass('display-block').addClass('display-none');
+				if (!_show)
+					$(this).removeClass('display-block').addClass('display-none');
+			}
+		});
+
+		this.mWaitTurnButtonContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
+			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
+			easing: 'swing',
+			begin: function ()
+			{
+				if (_show)
+					$(this).removeClass('display-none').addClass('display-block');
+			},
+			complete: function ()
+			{
+				if (!_show)
+					$(this).removeClass('display-block').addClass('display-none');
+			}
+		});
+
+		// check if there is any effect within the container
+		this.mStatusEffectsContainer.velocity("finish", true).velocity({ opacity: showStatusEffectbarContainer ? 1 : 0 },
+		{
+			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
+			easing: 'swing',
+			begin: function ()
+			{
+				if (_show)
+					$(this).removeClass('display-none').addClass('display-block');
+			},
+			complete: function ()
+			{
+				if (!_show)
+					$(this).removeClass('display-block').addClass('display-none');
+			}
+		});
+
+		this.mSkillsContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
+		{
+			duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
+			easing: 'swing',
+			begin: function ()
+			{
+				if (_show)
+					$(this).removeClass('display-none').addClass('display-block');
+			},
+			complete: function ()
+			{
+				if (!_show)
+					$(this).removeClass('display-block').addClass('display-none');
 			}
 		});
 	}
@@ -1393,38 +1393,38 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntitySkills = function (_en
 
 	if (!isEnemy)
 	{
-	    // query entity skill data from sq backend
-	    var self = this;
-	    this.notifyBackendQueryEntitySkills(_entityData.id, function (entitySkills)
-	    {
-	        if (entitySkills === null || !jQuery.isArray(entitySkills) || entitySkills.length === 0)
-	        {
-	            self.showEntitySkillbar(false);
-	            return;
-	        }
+		// query entity skill data from sq backend
+		var self = this;
+		this.notifyBackendQueryEntitySkills(_entityData.id, function (entitySkills)
+		{
+			if (entitySkills === null || !jQuery.isArray(entitySkills) || entitySkills.length === 0)
+			{
+				self.showEntitySkillbar(false);
+				return;
+			}
 
-	        // remove current skills
-	        var wasEmpty = self.mSkillsContainer.find('.l-skill').size() === 0;
-	        if (entitySkills.length > 0)
-	        {
-	            self.mSkillsContainer.empty();
-	        }
+			// remove current skills
+			var wasEmpty = self.mSkillsContainer.find('.l-skill').size() === 0;
+			if (entitySkills.length > 0)
+			{
+				self.mSkillsContainer.empty();
+			}
 
-	        // add new skills
-	        for (var i = 0; i < entitySkills.length; ++i)
-	        {
-	            self.addSkillToList(_entityData, entitySkills[i], i + 1);
-	        }
+			// add new skills
+			for (var i = 0; i < entitySkills.length; ++i)
+			{
+				self.addSkillToList(_entityData, entitySkills[i], i + 1);
+			}
 
-	        // prepare to fade in
-	        if (wasEmpty && entitySkills.length > 0)
-	        {
-	            self.mSkillsContainer.css({ opacity: 0 });
-	        }
+			// prepare to fade in
+			if (wasEmpty && entitySkills.length > 0)
+			{
+				self.mSkillsContainer.css({ opacity: 0 });
+			}
 
-	        // show skillbar
-	        self.showEntitySkillbar(entitySkills.length > 0);
-	    });
+			// show skillbar
+			self.showEntitySkillbar(entitySkills.length > 0);
+		});
 	}
 	else
 	{
@@ -1452,7 +1452,7 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntitySkillsPreview = functi
 					var skillOverlayImgDiv = skillOverlayDiv.children('img:first');
 					if (skillOverlayImgDiv.length > 0)
 					{
-					    skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
+						skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
 					}
 				}
 			}
@@ -1466,48 +1466,48 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntitySkillsPreview = functi
 		//this.notifySkillTooltipsToHide();
 
 		// query entity skill data from sq backend
-	    var self = this;
-	    this.notifyBackendQueryEntitySkills(_entityId, function (entitySkills)
-	    {
-	        if (entitySkills === null || !jQuery.isArray(entitySkills) || entitySkills.length === 0)
-	        {
-	            console.error('ERROR: Failed to query entity skills data for entity (' + _entityId + '). Reason: Invalid result.');
-	            return;
-	        }
+		var self = this;
+		this.notifyBackendQueryEntitySkills(_entityId, function (entitySkills)
+		{
+			if (entitySkills === null || !jQuery.isArray(entitySkills) || entitySkills.length === 0)
+			{
+				console.error('ERROR: Failed to query entity skills data for entity (' + _entityId + '). Reason: Invalid result.');
+				return;
+			}
 
-	        // update every skill there is
-	        for (var i = 0; i < entitySkills.length; ++i)
-	        {
-	            var foundSkill = self.searchSkillDIV(entitySkills[i]);
-	            if (foundSkill !== null)
-	            {
-	                var isSkillSelected = foundSkill.div.hasClass('is-selected');
-	                var skillOverlayDiv = foundSkill.div.find('.overlay-layer:first');
-	                if (skillOverlayDiv.length > 0)
-	                {
-	                    var skillOverlayImgDiv = skillOverlayDiv.children('img:first');
-	                    if (skillOverlayImgDiv.length > 0)
-	                    {
-	                        if (entitySkills[i].isUsable)
-	                        {
-	                            if (!entitySkills[i].isAffordable && !isSkillSelected)
-	                            {
-	                                skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 1 }, { duration: self.mSkillPreviewFadeIn });
-	                            }
-	                            else
-	                            {
-	                                skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
-	                            }
-	                        }
-	                        else
-	                        {
-	                            skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
-	                        }
-	                    }
-	                }
-	            }
-	        }
-	    });
+			// update every skill there is
+			for (var i = 0; i < entitySkills.length; ++i)
+			{
+				var foundSkill = self.searchSkillDIV(entitySkills[i]);
+				if (foundSkill !== null)
+				{
+					var isSkillSelected = foundSkill.div.hasClass('is-selected');
+					var skillOverlayDiv = foundSkill.div.find('.overlay-layer:first');
+					if (skillOverlayDiv.length > 0)
+					{
+						var skillOverlayImgDiv = skillOverlayDiv.children('img:first');
+						if (skillOverlayImgDiv.length > 0)
+						{
+							if (entitySkills[i].isUsable)
+							{
+								if (!entitySkills[i].isAffordable && !isSkillSelected)
+								{
+									skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 1 }, { duration: self.mSkillPreviewFadeIn });
+								}
+								else
+								{
+									skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
+								}
+							}
+							else
+							{
+								skillOverlayImgDiv.velocity("finish", true).velocity({ opacity: 0 }, { duration: self.mSkillPreviewFadeOut });
+							}
+						}
+					}
+				}
+			}
+		});
 	}
 };
 
@@ -1534,7 +1534,7 @@ TacticalScreenTurnSequenceBarModule.prototype.showEntitySkillbar = function (_sh
 
 	var self = this;
 	this.mSkillsContainer.velocity("finish", true).velocity({ opacity: _show ? 1 : 0 },
-    {
+	{
 		duration: _show ? this.mStatsPanelFadeInTime : this.mStatsPanelFadeOutTime,
 		complete: function()
 		{
@@ -1569,36 +1569,36 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityStatusEffects = functi
 	if (!isEnemy)
 	{
 		// query entity status effects data from sq backend
-	    var self = this;
-	    this.notifyBackendQueryEntityStatusEffects(_entityData.id, function (entityStatusEffects)
-	    {
-	        if (entityStatusEffects === null || !jQuery.isArray(entityStatusEffects) || entityStatusEffects.length === 0)
-	        {
-	            self.showEntityStatusEffectbar(false);
-	            return;
-	        }
+		var self = this;
+		this.notifyBackendQueryEntityStatusEffects(_entityData.id, function (entityStatusEffects)
+		{
+			if (entityStatusEffects === null || !jQuery.isArray(entityStatusEffects) || entityStatusEffects.length === 0)
+			{
+				self.showEntityStatusEffectbar(false);
+				return;
+			}
 
-	        // remove current status effects
-	        var wasEmpty = self.mStatusEffectsContainer.find('.l-status-effect').size() === 0;
-	        if (entityStatusEffects.length > 0)
-	        {
-	            self.mStatusEffectsContainer.empty();
-	        }
+			// remove current status effects
+			var wasEmpty = self.mStatusEffectsContainer.find('.l-status-effect').size() === 0;
+			if (entityStatusEffects.length > 0)
+			{
+				self.mStatusEffectsContainer.empty();
+			}
 
-	        for (var i = 0; i < entityStatusEffects.length; ++i)
-	        {
-	            self.addStatusEffectToList(_entityData, entityStatusEffects[i]);
-	        }
+			for (var i = 0; i < entityStatusEffects.length; ++i)
+			{
+				self.addStatusEffectToList(_entityData, entityStatusEffects[i]);
+			}
 
-	        // prepare to fade in
-	        if (wasEmpty && entityStatusEffects.length > 0)
-	        {
-	            self.mStatusEffectsContainer.css({ opacity: 0 });
-	        }
+			// prepare to fade in
+			if (wasEmpty && entityStatusEffects.length > 0)
+			{
+				self.mStatusEffectsContainer.css({ opacity: 0 });
+			}
 
-	        // show status effect bar
-	        self.showEntityStatusEffectbar(entityStatusEffects.length > 0);
-	    });
+			// show status effect bar
+			self.showEntityStatusEffectbar(entityStatusEffects.length > 0);
+		});
 	}
 	else
 	{
@@ -1727,38 +1727,38 @@ TacticalScreenTurnSequenceBarModule.prototype.updateEntityImage = function (_ent
 
 	var entityImage = entityImageLayer.find('img:first');
 
-    // offsets ?
-    if ('imageOffsetX' in _entityData && typeof(_entityData.imageOffsetX) === 'number')
-    {
-        var offsets = entityImage.data('offsets') || {};
-        offsets.imageOffsetX = _entityData.imageOffsetX;
-        entityImage.data('offsets', offsets);
-    }
-    if ('imageOffsetY' in _entityData && typeof(_entityData.imageOffsetY) === 'number')
-    {
-        var offsets = entityImage.data('offsets') || {};
-        offsets.imageOffsetY = _entityData.imageOffsetY;
-        entityImage.data('offsets', offsets);
-    }
+	// offsets ?
+	if ('imageOffsetX' in _entityData && typeof(_entityData.imageOffsetX) === 'number')
+	{
+		var offsets = entityImage.data('offsets') || {};
+		offsets.imageOffsetX = _entityData.imageOffsetX;
+		entityImage.data('offsets', offsets);
+	}
+	if ('imageOffsetY' in _entityData && typeof(_entityData.imageOffsetY) === 'number')
+	{
+		var offsets = entityImage.data('offsets') || {};
+		offsets.imageOffsetY = _entityData.imageOffsetY;
+		entityImage.data('offsets', offsets);
+	}
 
 	if(!entityImage.data('is-scaling'))
 	{
-	    // update image
+		// update image
 		if('imagePath' in _entityData)
 		{
-		    entityImage.data('placeholder').removeClass('opacity-almost-none');
+			entityImage.data('placeholder').removeClass('opacity-almost-none');
 			entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
 
 		   /* var image = new Image();
-		    image.onload = function ()
-		    {
-		        entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
-		    };
-		    image.src = Path.PROCEDURAL + _entityData.imagePath;*/
+			image.onload = function ()
+			{
+				entityImage.attr('src', Path.PROCEDURAL + _entityData.imagePath);
+			};
+			image.src = Path.PROCEDURAL + _entityData.imagePath;*/
 		}
 		else if('imagePathFoW' in _entityData)
 		{
-		    entityImage.attr('src', Path.GFX + _entityData.imagePathFoW);
+			entityImage.attr('src', Path.GFX + _entityData.imagePathFoW);
 		}
 	}
 	else
@@ -1982,18 +1982,18 @@ TacticalScreenTurnSequenceBarModule.prototype.insertEntity = function (_entity)
 	if ((insertRange.before === null && insertRange.after === null) ||
 		(insertRange.before !== null && insertRange.after === null))
 	{
-	    var self = this;
-	    this.notifyBackendQueryEntity(_entity.id, function (entityData)
-	    {
-	        if (entityData === null || entityData === undefined)
-	        {
-	            console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
-	            return;
-	        }
+		var self = this;
+		this.notifyBackendQueryEntity(_entity.id, function (entityData)
+		{
+			if (entityData === null || entityData === undefined)
+			{
+				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
+				return;
+			}
 
-	        // simply add to the end
-	        self.addEntity(entityData);
-	    });
+			// simply add to the end
+			self.addEntity(entityData);
+		});
 	}
 	else
 	{
@@ -2008,28 +2008,28 @@ TacticalScreenTurnSequenceBarModule.prototype.insertEntity = function (_entity)
 		var self = this;
 		this.notifyBackendQueryEntity(_entity.id, function (entityData)
 		{
-		    if (entityData === null || entityData === undefined)
-		    {
-		        console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
-		        return;
-		    }
+			if (entityData === null || entityData === undefined)
+			{
+				console.error('ERROR: Failed to query entity data for entity (' + _entity.id + '). Reason: Invalid result.');
+				return;
+			}
 
-		    // update the visible to player attribute
-		    self.updateEntityVisiblity(entityData, entityDIV);
+			// update the visible to player attribute
+			self.updateEntityVisiblity(entityData, entityDIV);
 
-		    // update image
-		    self.updateEntityImage(entityData, entityDIV);
+			// update image
+			self.updateEntityImage(entityData, entityDIV);
 
-		    // slide the entity in
-		    entityDIV.velocity({ width: '8.0rem' },
-		    {
-		        duration: self.mSlideInDuration,
-		        easing: 'swing',
-		        complete: function ()
-		        {
-		            entityImage.velocity({ opacity: 1 }, { easing: 'swing', duration: self.mFadeInDuration });
-		        }
-		    });
+			// slide the entity in
+			entityDIV.velocity({ width: '8.0rem' },
+			{
+				duration: self.mSlideInDuration,
+				easing: 'swing',
+				complete: function ()
+				{
+					entityImage.velocity({ opacity: 1 }, { easing: 'swing', duration: self.mFadeInDuration });
+				}
+			});
 		});
 	}
 };
@@ -2288,8 +2288,8 @@ TacticalScreenTurnSequenceBarModule.prototype.flashProgressbars = function (_whi
 		parentDiv = this.mLeftStatsRows.ActionPoints.ProgressbarPreview.parent();
 		if (parentDiv.length > 0)
 		{
-		    //parentDiv.velocity("finish", true).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 });
-		    parentDiv.stop(true).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+			//parentDiv.velocity("finish", true).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 });
+			parentDiv.stop(true).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 		}
 	}
 
@@ -2298,8 +2298,8 @@ TacticalScreenTurnSequenceBarModule.prototype.flashProgressbars = function (_whi
 		parentDiv = this.mLeftStatsRows.Fatigue.ProgressbarPreview.parent();
 		if (parentDiv.length > 0)
 		{
-		    //parentDiv.velocity("finish", true).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 });
-		    parentDiv.stop(true).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+			//parentDiv.velocity("finish", true).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 }).velocity("fadeOut", { duration: 100 }).velocity("fadeIn", { duration: 100 });
+			parentDiv.stop(true).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
 		}
 	}
 };
@@ -2307,14 +2307,14 @@ TacticalScreenTurnSequenceBarModule.prototype.flashProgressbars = function (_whi
 
 TacticalScreenTurnSequenceBarModule.prototype.setEndTurnAllButtonVisible = function (_visible)
 {
-    this.mEndTurnAllButton.enableButton(_visible);
+	this.mEndTurnAllButton.enableButton(_visible);
 }
 
 
 TacticalScreenTurnSequenceBarModule.prototype.clear = function ()
 {
-    clearInterval(this.mFirstEntitySelectionTimer);
-    this.mFirstEntitySelectionTimer = null;
+	clearInterval(this.mFirstEntitySelectionTimer);
+	this.mFirstEntitySelectionTimer = null;
 
 	// remove all entities
 	this.mEntitySliderContainer.empty();

@@ -44,7 +44,7 @@ this.sand_storm_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

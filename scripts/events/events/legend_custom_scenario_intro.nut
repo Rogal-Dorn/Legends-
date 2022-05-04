@@ -110,7 +110,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 		//Build Hero selection ...
 		local screen = {
 			ID = "A",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -167,7 +167,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 				screen = {
 					ID = nextScreen,
-        			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
+					Text = "[img]gfx/ui/events/event_128.png[/img]Pick your companions background",
 					Image = "",
 					Banner = "",
 					List = [],
@@ -201,7 +201,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		local screen = {
 			ID = "BF",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -240,7 +240,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 		//Build Traits selection ...
 		screen = {
 			ID = "B0",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes traits ",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -327,7 +327,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		local screen = {
 			ID = "C0",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -387,7 +387,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		local screen = {
 			ID = "C00",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talents ",
 			Image = "",
 			Banner = "",
 			List = [],
@@ -447,7 +447,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 
 		local screen = {
 			ID = "C1",
-        	Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talent stars ",
+			Text = "[img]gfx/ui/events/event_128.png[/img]Pick your heroes talent stars ",
 			Image = "",
 			Banner = "",
 			List = [],

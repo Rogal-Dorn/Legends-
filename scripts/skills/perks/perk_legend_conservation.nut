@@ -1,7 +1,7 @@
 this.perk_legend_conservation <- this.inherit("scripts/skills/skill", {
 	m = {
-        MedicinePerDayMult = 0.5
-    },
+		MedicinePerDayMult = 0.5
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_conservation";

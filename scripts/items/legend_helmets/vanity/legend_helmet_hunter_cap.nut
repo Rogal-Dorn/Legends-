@@ -10,7 +10,7 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		this.m.Description = "The distinctive hat of a game hunter, the pointed shape focuses vision and it\'s ornate feather and shape bristles with confidence, but also makes it an easy target for others.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -43,11 +43,11 @@ this.legend_helmet_hunter_cap <- this.inherit("scripts/items/legend_helmets/lege
 		return _result;
 	}
 
-    function onUpdateProperties(_properties)
-    {
-    	this.legend_helmet_upgrade.onUpdateProperties(_properties);
+	function onUpdateProperties(_properties)
+	{
+		this.legend_helmet_upgrade.onUpdateProperties(_properties);
 		_properties.TargetAttractionMult *= 1.4; // 1.0 = normal aggression, 0.1 = minimal aggression
-    }
+	}
 
 	function updateVariant()
 	{

@@ -22,16 +22,16 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-	    local ret = this.skill.getTooltip();
-	    local bonus = this.getBonus() * 100;
-	    ret.push({
-	        id = 10,
-	        type = "text",
-	        icon = "ui/icons/damage_dealt.png",
-	        text = "+[color=" + this.Const.UI.Color.NegativeValue + "]" + bonus + "[/color] Maximum Damage"
-	    });
+		local ret = this.skill.getTooltip();
+		local bonus = this.getBonus() * 100;
+		ret.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/damage_dealt.png",
+			text = "+[color=" + this.Const.UI.Color.NegativeValue + "]" + bonus + "[/color] Maximum Damage"
+		});
 
-	    return ret;
+		return ret;
 	}
 
 	function isOpponent( _actor, _tag )

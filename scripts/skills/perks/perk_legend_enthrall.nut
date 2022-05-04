@@ -1,7 +1,7 @@
 this.perk_legend_enthrall <- this.inherit("scripts/skills/skill", {
 	m = {
-        RangeIncrease = 1
-    },
+		RangeIncrease = 1
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_enthrall";

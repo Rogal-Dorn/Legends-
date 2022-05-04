@@ -45,7 +45,7 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");

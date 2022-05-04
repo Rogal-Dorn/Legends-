@@ -17,16 +17,16 @@
  */
 var ErrorCode =
 {
-    // Query result key
-    Key: 'error',
+	// Query result key
+	Key: 'error',
 
-    // Global UI Error Codes
-    RosterEntryNotFound: 1,
+	// Global UI Error Codes
+	RosterEntryNotFound: 1,
 
-    NotEnoughMoney: 10,
-    NotEnoughRosterSpace: 11,
-    NotEnoughStashSpace: 12,
+	NotEnoughMoney: 10,
+	NotEnoughRosterSpace: 11,
+	NotEnoughStashSpace: 12,
 
-    FoundLootListIsEmpty: 13
+	FoundLootListIsEmpty: 13
 };
 

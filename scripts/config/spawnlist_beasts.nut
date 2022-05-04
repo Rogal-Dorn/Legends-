@@ -818,7 +818,7 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 			Cost = 180,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -902,7 +902,7 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 			Cost = 150,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -945,7 +945,7 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 			Cost = 100,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -986,7 +986,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
 			Cost = 105,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -1025,7 +1025,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendStollwurm,
 			Cost = 270,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -1064,7 +1064,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 			Cost = 210,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [

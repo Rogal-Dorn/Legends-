@@ -43,7 +43,7 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("butcher_background");
 		_draftList.push("butcher_background");
 		_draftList.push("servant_background");

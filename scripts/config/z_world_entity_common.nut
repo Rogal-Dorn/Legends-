@@ -751,23 +751,23 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 				helmet.setupArmor(variant);
 		}
 
-         local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
-         if (helm != null)
-         {
-             helmet.setUpgrade(helm)
-         }
+		 local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
+		 if (helm != null)
+		 {
+			 helmet.setUpgrade(helm)
+		 }
 
-         local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
-         if (top != null)
-         {
-             helmet.setUpgrade(top)
-         }
+		 local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
+		 if (top != null)
+		 {
+			 helmet.setUpgrade(top)
+		 }
 
 		local van = this.Const.World.Common.pickLegendHelmet(set.Vanity);
-         if (van != null)
-         {
-             helmet.setUpgrade(van)
-         }
+		 if (van != null)
+		 {
+			 helmet.setUpgrade(van)
+		 }
 		
 		if ("Vanity2" in set)
 		{

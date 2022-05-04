@@ -1,19 +1,19 @@
 this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
 		BaseCraft = 13.0,
-        ItemsCrafted = [],
-        Queue = [],
+		ItemsCrafted = [],
+		Queue = [],
 		CurrentProgress = 0,
 		CurrentCraft = null,
 		NumBros = 0
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Enchanter;
-        this.m.Slot = "enchant";
-        this.m.Name = "Enchanter";
-        this.m.Description = "Oooo.. Pretty glowing things..."
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Enchanter;
+		this.m.Slot = "enchant";
+		this.m.Name = "Enchanter";
+		this.m.Description = "Oooo.. Pretty glowing things..."
 		this.m.BannerImage = "ui/buttons/banner_enchant.png"
 		this.m.Sounds = [
 			{
@@ -159,7 +159,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 				Pitch = 1.0
 			}
 		];
-    }
+	}
 
 	function getTitle()
 	{
@@ -183,7 +183,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 	}
 
 	function getModifierToolip()
-    {
+	{
 		this.init();
 		local mod = this.getModifiers();
 		local ret = [
@@ -220,31 +220,31 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		return ret;
 	}
 
-    function init()
-    {
+	function init()
+	{
 		this.onInit();
 		this.m.ItemsCrafted = [];
 		this.m.CurrentProgress = 0;
 		this.m.CurrentCraft = null;
 		local mod = this.getModifiers()
 		this.m.NumBros = mod.Assigned;
-    }
+	}
 
 	function isHidden()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getBackground().getModifiers().Enchanting > 0)
-            {
-                return false
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getBackground().getModifiers().Enchanting > 0)
+			{
+				return false
+			}
 		}
 		return true;
 	}
 
-    function onInit()
-    {
+	function onInit()
+	{
 		local q = [];
 		for (local i = 0; i < this.m.Queue.len(); i = ++i)
 		{
@@ -261,42 +261,42 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		this.m.Queue = q
 	}
 
-    function getModifiers()
-    {
-        local ret =
-        {
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
+	function getModifiers()
+	{
+		local ret =
+		{
+			Craft = 0.0,
+			Assigned = 0,
+			Modifiers = []
+		}
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
 
-            local rm = this.m.BaseCraft * bro.getBackground().getModifiers().Enchanting;
+			local rm = this.m.BaseCraft * bro.getBackground().getModifiers().Enchanting;
 			if (bro.getSkills().hasSkill("perk.legend_vala_inscription_mastery"))
 			{
 				rm += 0.3 * rm;
 			}
-            ret.Craft += rm
-            ++ret.Assigned
+			ret.Craft += rm
+			++ret.Assigned
 			ret.Modifiers.push([rm, bro.getName(), bro.getBackground().getNameOnly()]);
-        }
+		}
 
-        if (this.getUpgraded())
-        {
-            ret.Craft *= 1.15;
-        }
+		if (this.getUpgraded())
+		{
+			ret.Craft *= 1.15;
+		}
 
-        return ret;
-    }
+		return ret;
+	}
 
 	function getResults()
-    {
+	{
 		local res = []
 		local id = 20;
 		foreach (b in this.m.ItemsCrafted)
@@ -308,12 +308,12 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			})
 			++id;
 		}
-        return res;
-    }
+		return res;
+	}
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.enchant_tent");
+		return this.Stash.hasItem("tent.enchant_tent");
 	}
 
 	function getLevel()
@@ -353,15 +353,15 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		return "Enchanted ... " + crafted + "/" + numToCraft + " ... " + progress + "% of " + this.m.CurrentCraft;
 	}
 
-    function update ()
-    {
-        local modifiers = this.getModifiers();
-        foreach (i, r in this.m.Queue)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+	function update ()
+	{
+		local modifiers = this.getModifiers();
+		foreach (i, r in this.m.Queue)
+		{
+			if (r == null)
+			{
+				continue;
+			}
 
 			if (r.Blueprint == null)
 			{
@@ -373,14 +373,14 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 				continue;
 			}
 
-            local needed = r.Blueprint.getCost() - r.Points;
+			local needed = r.Blueprint.getCost() - r.Points;
 
-            if (modifiers.Craft < needed)
-            {
-                needed = modifiers.Craft;
-            }
+			if (modifiers.Craft < needed)
+			{
+				needed = modifiers.Craft;
+			}
 			r.Points += needed;
-            modifiers.Craft -= needed;
+			modifiers.Craft -= needed;
 
 			if (r.Points >= r.Blueprint.getCost())
 			{
@@ -389,16 +389,16 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 				this.m.Queue[i] = null;
 			}
 
-            if (modifiers.Craft <= 0)
-            {
-            	this.m.CurrentProgress = r.Points / r.Blueprint.getCostForCraft();
-            	this.m.CurrentCraft = r.Blueprint.getName();
-                break
-            }
-        }
+			if (modifiers.Craft <= 0)
+			{
+				this.m.CurrentProgress = r.Points / r.Blueprint.getCostForCraft();
+				this.m.CurrentCraft = r.Blueprint.getName();
+				break
+			}
+		}
 
 		return this.getUpdateText();
-    }
+	}
 
 	function getQueue()
 	{
@@ -426,36 +426,36 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 		return this.getRequiredTime();
 	}
 
-    function getRequiredTime()
-    {
-        local points = 0;
+	function getRequiredTime()
+	{
+		local points = 0;
 		if (this.m.Queue == null)
-        {
-            return 0;
-        }
+		{
+			return 0;
+		}
 
-        foreach (r in this.m.Queue)
-        {
-            if (r == null)
-            {
-                continue;
-            }
+		foreach (r in this.m.Queue)
+		{
+			if (r == null)
+			{
+				continue;
+			}
 
-            points += (r.Blueprint.getCost() - r.Points);
-        }
-        local modifiers = this.getModifiers();
+			points += (r.Blueprint.getCost() - r.Points);
+		}
+		local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)
 		{
 			return 0
 		}
-        return this.Math.ceil(points / modifiers.Craft);
-    }
+		return this.Math.ceil(points / modifiers.Craft);
+	}
 
-    function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	function getAssignedBros()
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
 	function onBroEnter ( _bro )
 	{
@@ -507,8 +507,8 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showEnchanterDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showEnchanterDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )

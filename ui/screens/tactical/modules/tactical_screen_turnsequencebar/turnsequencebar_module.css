@@ -16,7 +16,7 @@
 {
 	/*background-color: #000;*/
 
-	left    : 0;
+	left	: 0;
 	bottom  : 2.6rem;
 	width   : 100%;
 	position: absolute;
@@ -38,7 +38,7 @@
 .turnsequencebar-module .l-center-container
 {
 	top: 0;
-	left    : 0;
+	left	: 0;
 	right   : 0;
 	bottom  : 0;
 	width   : 100.0rem;
@@ -126,19 +126,19 @@
 	height: 14.0rem;*/
 	width : 41.0rem;
 	height: 15.1rem;
-    float : left;
+	float : left;
 	clear : left;
 
-    background-image: url("coui://gfx/ui/skin/tactical_character_background.png");
-    background-size: 41.0rem 15.1rem;
+	background-image: url("coui://gfx/ui/skin/tactical_character_background.png");
+	background-size: 41.0rem 15.1rem;
 }
 
 .turnsequencebar-module .stats-panel .header
 {
 	padding-top: 0.5rem;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    width : 100%;
+	padding-left: 0.6rem;
+	padding-right: 0.6rem;
+	width : 100%;
 	height: 4.1rem;
 	float : left;
 }
@@ -153,8 +153,8 @@
 
 .turnsequencebar-module .header .elevation-image
 {
-	top     : 0;
-	left    : 0.2rem;
+	top	 : 0;
+	left	: 0.2rem;
 	right   : 0;
 	bottom  : 0;
 	width   : 1.2rem;
@@ -179,8 +179,8 @@
 
 .turnsequencebar-module .header .character-name
 {
-	top     : 0;
-	left    : 0;
+	top	 : 0;
+	left	: 0;
 	right   : 0;
 	bottom  : 0;
 	width   : 100%;
@@ -197,8 +197,8 @@
 	height  : 100%;
 	position: relative;
 	float   : left;
-    top     : 0.4rem;
-	left    : 0;
+	top	 : 0.4rem;
+	left	: 0;
 	right   : 0.3rem;
 	bottom  : 0;
 }
@@ -209,14 +209,14 @@
 	height  : 4.1rem;
 	position: absolute;
 	margin  : auto;
-    right   : 0.3rem;
+	right   : 0.3rem;
 }
 
 .turnsequencebar-module .header .button .l-image
 {
-	top     : 0;
+	top	 : 0;
 	bottom  : 0;
-	left    : 0;
+	left	: 0;
 	right   : 0;
 	width   : 2.2rem;
 	height  : 2.2rem;
@@ -240,8 +240,8 @@
 
 .turnsequencebar-module .stats-column > .l-stats-column
 {
-	top     : -1.8rem;
-	left    : 0;
+	top	 : -1.8rem;
+	left	: 0;
 	right   : 0;
 	bottom  : 0;
 	width   : 20.0rem;
@@ -260,9 +260,9 @@
 
 .turnsequencebar-module .stats-row > .l-stats-row
 {
-	left    : 0;
+	left	: 0;
 	right   : 0;
-	top     : 0;
+	top	 : 0;
 	bottom  : 0;
 	width   : 96%;
 	height	: 3.0rem;
@@ -280,8 +280,8 @@
 
 .turnsequencebar-module .stats-row .stats-row-image
 {
-	top     : 0;
-	left    : 0;
+	top	 : 0;
+	left	: 0;
 	right   : 0;
 	bottom  : 0;
 	width   : 2.6rem;
@@ -306,13 +306,13 @@
 
 .turnsequencebar-module .stats-row .stats-progressbar-container
 {
-	top     : 0;
-	left    : 0;
+	top	 : 0;
+	left	: 0;
 	right   : 0;
 	bottom  : 0;
 	/*width   : 16.0rem;*/
 	/*width   : 94%;*/
-    width   : 15.5rem;
+	width   : 15.5rem;
 	height  : 2.6rem;
 	position: absolute;
 	margin  : auto;
@@ -359,7 +359,7 @@
 	z-index : 2;
 	*/
 
-	left    : 0;
+	left	: 0;
 	bottom  : 8.3rem;
 	width   : 100%;
 	position: absolute;
@@ -377,7 +377,7 @@
 	z-index : 1;
 	*/
 
-	left    : 0;
+	left	: 0;
 	bottom  : 0;
 	width   : 100%;
 	height  : 8.6rem;
@@ -388,7 +388,7 @@
 /* Workaround to get box-shadow working */
 .turnsequencebar-module .right-container .bottom-shadow-container
 {
-	left    : 0;
+	left	: 0;
 	bottom  : -0.2rem;
 	width   : 100%;
 	height  : 8.6rem;
@@ -403,8 +403,8 @@
 {
 	max-width  : 36.0rem;
 	margin-left: 14.0rem;
-	float      : left;
-	clear      : both;
+	float	  : left;
+	clear	  : both;
 }
 
 .turnsequencebar-module .skills-container .l-skill
@@ -414,9 +414,9 @@
 	position: absolute;
 	float   : left;
 
-    background-image: url("coui://gfx/ui/skin/tactical_skill_bg.png");
-    background-size: 4.2rem 4.7rem;
-    background-repeat: no-repeat;
+	background-image: url("coui://gfx/ui/skin/tactical_skill_bg.png");
+	background-size: 4.2rem 4.7rem;
+	background-repeat: no-repeat;
 }
 
 /*.turnsequencebar-module .l-skill:first-child
@@ -445,9 +445,9 @@
 .turnsequencebar-module .skill.is-selected
 {
 	/*box-shadow: 0px 0px 4px 1px #ecae21;*/
-    background-image: url("coui://gfx/ui/skin/golden_gradient.png");
-    background-size: 5.6rem 5.6rem;
-    background-repeat: no-repeat;
+	background-image: url("coui://gfx/ui/skin/golden_gradient.png");
+	background-size: 5.6rem 5.6rem;
+	background-repeat: no-repeat;
 }
 
 .turnsequencebar-module .skill .image-layer
@@ -484,7 +484,7 @@
 
 .turnsequencebar-module .text-layer .numeration-label
 {
-	left    : 0.4rem;
+	left	: 0.4rem;
 	bottom  : 0.2rem;
 	width   : 2.0rem;
 	height  : 1.4rem;
@@ -493,8 +493,8 @@
 
 .turnsequencebar-module .skill .overlay-layer
 {
-	top     : -0.2rem; /* NOTE: Remove as the images is not equal in size */
-	left    : 0;
+	top	 : -0.2rem; /* NOTE: Remove as the images is not equal in size */
+	left	: 0;
 	width   : 100%;
 	height  : 100%;
 	position: absolute;
@@ -527,19 +527,19 @@
 	position: relative;
 	float   : right;
 
-    background-image: url("coui://gfx/ui/skin/tactical_skill_bg.png");
-    background-size: 4.2rem 4.7rem;
-    background-repeat: no-repeat;
+	background-image: url("coui://gfx/ui/skin/tactical_skill_bg.png");
+	background-size: 4.2rem 4.7rem;
+	background-repeat: no-repeat;
 }
 
 .turnsequencebar-module .buttons-container .l-button
 {
-    width: 4.5rem;
-    height: 4.1rem;
+	width: 4.5rem;
+	height: 4.1rem;
 	float: right;
-    margin-top: 0.5rem;
-    left: -0.1rem;
-    position: absolute;
+	margin-top: 0.5rem;
+	left: -0.1rem;
+	position: absolute;
 }
 
 
@@ -548,8 +548,8 @@
 */
 .turnsequencebar-module .bottom-container .entity-slider-clipping-container
 {
-	width     : 100%;/*19.5rem;*/ /* 100% */
-	height    : 15.0rem; 
+	width	 : 100%;/*19.5rem;*/ /* 100% */
+	height	: 15.0rem; 
 	position  : relative;
 	margin-top: -4.0rem;
 	z-index   : 1;
@@ -559,12 +559,12 @@
 
 .turnsequencebar-module .bottom-container .entity-slider-container
 {
-	width      : 300%;
-	height     : 13.0rem; 
+	width	  : 300%;
+	height	 : 13.0rem; 
 	position   : relative;
 	margin-left: 1.0rem;
-	z-index    : 1;
-    top        : 0.4rem;
+	z-index	: 1;
+	top		: 0.4rem;
 
 	overflow: visible !important;   
 }
@@ -585,9 +585,9 @@
 	z-index : 1;
 	/*border   : 1px red solid;*/
 
-    overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
+	overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
 
-    /*-webkit-transform: translateZ(0);*/
+	/*-webkit-transform: translateZ(0);*/
 }
 
 .turnsequencebar-module .entity-slider-container .entity
@@ -597,14 +597,14 @@
 	position: relative;
 	z-index : 2;
 
-    overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
+	overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
 }
 
 .turnsequencebar-module .entity .image-layer
 {
-	left    : 0;
+	left	: 0;
 	right   : 0;
-    top     : 2.8rem;
+	top	 : 2.8rem;
 	bottom  : 0;
 	width   : 7.4rem;
 	height  : 100%;
@@ -612,15 +612,15 @@
 	position: absolute;
 	z-index : 3;
 
-    /*
-    width   : 100%;
-    height  : 100%;
-    position: relative;
-    margin-top: 1.6rem;
-    z-index : 3;
+	/*
+	width   : 100%;
+	height  : 100%;
+	position: relative;
+	margin-top: 1.6rem;
+	z-index : 3;
 */
 
-    overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
+	overflow: visible !important; /* shut jQuery.animate() the fucking hell up... */
 }
 
 .turnsequencebar-module .entity .image-layer img
@@ -628,44 +628,44 @@
 	position: absolute;
 	/*width : 100%;*/
 
-    /*
-    -moz-transform: scale(0.7);
-    -moz-transform-origin: left;
-    -o-transform: scale(0.7);
-    -o-transform-origin: left;
-    -webkit-transform: scale(0.7);
-    -webkit-transform-origin: left;
+	/*
+	-moz-transform: scale(0.7);
+	-moz-transform-origin: left;
+	-o-transform: scale(0.7);
+	-o-transform-origin: left;
+	-webkit-transform: scale(0.7);
+	-webkit-transform-origin: left;
 */
 
-    /*
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
+	/*
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: absolute;
 
-    display: block;
-    margin: 0 auto;
-    */
+	display: block;
+	margin: 0 auto;
+	*/
 }
 
 .turnsequencebar-module .entity .image-layer img.is-scaling
 {
-    /*
-    width : 100%;
+	/*
+	width : 100%;
 
-    -moz-transform: scale(1.0);
-    -moz-transform-origin: left;
-    -o-transform: scale(1.0);
-    -o-transform-origin: left;
-    -webkit-transform: scale(1.0);
-    -webkit-transform-origin: left;
-    */
+	-moz-transform: scale(1.0);
+	-moz-transform-origin: left;
+	-o-transform: scale(1.0);
+	-o-transform-origin: left;
+	-webkit-transform: scale(1.0);
+	-webkit-transform-origin: left;
+	*/
 }
 
 .turnsequencebar-module .entity .selected-layer
 {
-	left    : 0;
+	left	: 0;
 	right   : 0;
 	bottom  : -1.0rem;
 	width   : 3.5rem;

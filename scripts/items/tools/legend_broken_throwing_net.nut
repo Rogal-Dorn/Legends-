@@ -64,11 +64,11 @@ this.legend_broken_throwing_net <- this.inherit("scripts/items/weapons/weapon", 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-    }
+	}
 
-    function isAmountShown()
-    {
-        return true;
+	function isAmountShown()
+	{
+		return true;
 	}
 
 	function playInventorySound( _eventType )

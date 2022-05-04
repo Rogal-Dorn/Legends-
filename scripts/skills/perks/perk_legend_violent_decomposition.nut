@@ -1,7 +1,7 @@
 this.perk_legend_violent_decomposition <- this.inherit("scripts/skills/skill", {
 	m = {
-        LootChance = 30
-    },
+		LootChance = 30
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_violent_decomposition";

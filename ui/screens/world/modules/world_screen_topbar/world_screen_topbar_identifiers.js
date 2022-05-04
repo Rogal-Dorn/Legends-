@@ -11,24 +11,24 @@
 "use strict";
 
 var WorldScreenTopbarIdentifier = {
-    TimeInformation: {
-        Day: 'day',
-        Time: 'time',
-        Degree: 'degree'
-    },
+	TimeInformation: {
+		Day: 'day',
+		Time: 'time',
+		Degree: 'degree'
+	},
 
-    AssetsInformation: {
-        Money: 'money',
-        Ammo: 'ammo',
-        Food: 'food',
-        Supplies: 'supplies',
-        Medicine: 'medicine',
-        Brothers: 'brothers',
-        BrothersMax: 'brothersMax'
-    },
+	AssetsInformation: {
+		Money: 'money',
+		Ammo: 'ammo',
+		Food: 'food',
+		Supplies: 'supplies',
+		Medicine: 'medicine',
+		Brothers: 'brothers',
+		BrothersMax: 'brothersMax'
+	},
 
-    QueryResult: {
-        TimeInformation: 'timeInformation',
-        AssetsInformation: 'assetsInformation'
-    }
+	QueryResult: {
+		TimeInformation: 'timeInformation',
+		AssetsInformation: 'assetsInformation'
+	}
 };

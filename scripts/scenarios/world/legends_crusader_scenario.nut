@@ -167,10 +167,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 				bro.getSkills().update();
 			}
 
-            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
-            {
-                garbage.push(bro);
-            }
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+			{
+				garbage.push(bro);
+			}
 		}
 
 		foreach( g in garbage )
@@ -186,7 +186,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;

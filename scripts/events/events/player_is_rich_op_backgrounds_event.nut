@@ -267,32 +267,32 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 		local candidate_rest = [];
 		local thetrader;
 
-        foreach( bro in brothers )
-        {
-		    if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_trader_commander")
-            {
+		foreach( bro in brothers )
+		{
+			if (bro.getSkills().hasSkill("trait.player") && bro.getBackground().getID() != "background.legend_trader_commander")
+			{
 				continue;
 			}			
-            switch (bro.getBackground().getID())
-            {			
+			switch (bro.getBackground().getID())
+			{			
 				
 				case "background.legend_trader_commander":
 					thetrader.push(bro);
 					break;
-                case "background.assassin":
-                case "background.legend_crusader":
-                case "background.legend_berserker":
-                case "background.legend_necro":
-                case "background.legend_witch":
-                case "background.legend_trader":
-                case "background.legend_ranger":
-                case "background.legend_noble_event":
-                    candidate_opbackground.push(bro);			
-                    break;
-                default:
+				case "background.assassin":
+				case "background.legend_crusader":
+				case "background.legend_berserker":
+				case "background.legend_necro":
+				case "background.legend_witch":
+				case "background.legend_trader":
+				case "background.legend_ranger":
+				case "background.legend_noble_event":
+					candidate_opbackground.push(bro);			
+					break;
+				default:
 					candidate_rest.push(bro);
-            }
-        }
+			}
+		}
 		if (candidate_opbackground.len() <= 2)
 		{
 			return;

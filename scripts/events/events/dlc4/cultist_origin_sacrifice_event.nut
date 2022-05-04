@@ -219,7 +219,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		{
 		  if (bro.getSkills().hasSkill("background.cultist_magister") || bro.getSkills().hasSkill("background.cultist_darksoul"))
 		  {
-		    continue;
+			continue;
 		  }
 
 		  candidates.push(bro);

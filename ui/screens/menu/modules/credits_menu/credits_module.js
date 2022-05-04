@@ -20,10 +20,10 @@ var CreditsModule = function(_alignment)
 
 	// generic containers
 	this.mContainer = null;
-    this.mText = null;
+	this.mText = null;
 
-    // generics
-    this.mIsVisible = false;
+	// generics
+	this.mIsVisible = false;
 };
 
 
@@ -59,40 +59,40 @@ CreditsModule.prototype.createDIV = function (_parentDiv)
 {
 	// create: containers (init hidden!)
 	this.mContainer = $('<div class="credits-module ui-control display-none"></div>');
-    this.mContainer.addClass(this.mAlignmentClass);
-    _parentDiv.append(this.mContainer);
+	this.mContainer.addClass(this.mAlignmentClass);
+	_parentDiv.append(this.mContainer);
 
-    // text
-    this.mText = $('<div class="crawler text-font-very-big font-shadow-silhouette font-color-white"/>');
-    this.mContainer.append(this.mText);
+	// text
+	this.mText = $('<div class="crawler text-font-very-big font-shadow-silhouette font-color-white"/>');
+	this.mContainer.append(this.mText);
 
-    this.mIsVisible = false;
+	this.mIsVisible = false;
 };
 
 CreditsModule.prototype.destroyDIV = function ()
 {
 	this.mText = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 CreditsModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
+	this.createDIV(_parentDiv);
 };
 
 CreditsModule.prototype.destroy = function()
 {
-    this.destroyDIV();
+	this.destroyDIV();
 };
 
 
 CreditsModule.prototype.register = function (_parentDiv)
 {
-    console.log('CreditsModule::REGISTER');
+	console.log('CreditsModule::REGISTER');
 
 	if (this.mContainer !== null)
 	{
@@ -102,13 +102,13 @@ CreditsModule.prototype.register = function (_parentDiv)
 
 	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
 	{
-        this.create(_parentDiv);
+		this.create(_parentDiv);
 	}
 };
 
 CreditsModule.prototype.unregister = function ()
 {
-    console.log('CreditsModule::UNREGISTER');
+	console.log('CreditsModule::UNREGISTER');
 
 	if (this.mContainer === null)
 	{
@@ -143,7 +143,7 @@ CreditsModule.prototype.show = function (_text)
 		removeMisalignedTags: false,
 		addInLineBreaks: true
 	});
-    
+	
 	this.mText.html(parsedText.html);
 
 	this.notifyBackendModuleShown();
@@ -151,51 +151,51 @@ CreditsModule.prototype.show = function (_text)
 	var self = this;
 	var offset = this.mContainer.height();
 	var textHeight = 5500;
-    /*var textHeight = this.mText.height();*/
+	/*var textHeight = this.mText.height();*/
 
-    this.mContainer.css({ top: offset * 2, opacity: 1 });
-    this.mContainer.velocity("finish", true).velocity({ top: -textHeight },
-    {
-    	duration: textHeight * 20,
-        easing: 'linear',
-        begin: function ()
-        {
-            $(this).removeClass('display-none').addClass('display-block');
-            self.mIsVisible = true;
-            //self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-        	self.mIsVisible = true;
-        	self.notifyBackendDone();
-        }
-    });
+	this.mContainer.css({ top: offset * 2, opacity: 1 });
+	this.mContainer.velocity("finish", true).velocity({ top: -textHeight },
+	{
+		duration: textHeight * 20,
+		easing: 'linear',
+		begin: function ()
+		{
+			$(this).removeClass('display-none').addClass('display-block');
+			self.mIsVisible = true;
+			//self.notifyBackendModuleAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = true;
+			self.notifyBackendDone();
+		}
+	});
 };
 
 CreditsModule.prototype.hide = function ()
 {
-    var self = this;
+	var self = this;
 
-    this.mContainer.velocity("finish", true).velocity({ opacity: 0 },
-    {
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-            self.mIsVisible = false;
-            $(this).removeClass('display-block').addClass('display-none');
-            self.notifyBackendModuleHidden();
-        }
-    });
+	this.mContainer.velocity("finish", true).velocity({ opacity: 0 },
+	{
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = false;
+			$(this).removeClass('display-block').addClass('display-none');
+			self.notifyBackendModuleHidden();
+		}
+	});
 };
 
 CreditsModule.prototype.isVisible = function ()
 {
-    return this.mIsVisible;
+	return this.mIsVisible;
 };
 
 
@@ -206,12 +206,12 @@ CreditsModule.prototype.notifyBackendModuleShown = function ()
 
 CreditsModule.prototype.notifyBackendModuleHidden = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleHidden');
+	SQ.call(this.mSQHandle, 'onModuleHidden');
 };
 
 CreditsModule.prototype.notifyBackendModuleAnimating = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleAnimating');
+	SQ.call(this.mSQHandle, 'onModuleAnimating');
 };
 
 CreditsModule.prototype.notifyBackendDone = function ()

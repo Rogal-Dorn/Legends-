@@ -4,23 +4,23 @@
 var CampScreenPainterDialogModule = function(_parent)
 {
 	this.mSQHandle = null;
-    this.mParent = _parent;
+	this.mParent = _parent;
 
 	this.mRoster = null;
 
-    // event listener
-    this.mEventListener = null;
+	// event listener
+	this.mEventListener = null;
 
 	// generic containers
 	this.mContainer = null;
-    this.mDialogContainer = null;
-    this.mListContainer = null;
-    this.mListScrollContainer = null;
-    this.mDetailsPanel = {
-        Container: null,
-        ConfirmButton: null,
+	this.mDialogContainer = null;
+	this.mListContainer = null;
+	this.mListScrollContainer = null;
+	this.mDetailsPanel = {
+		Container: null,
+		ConfirmButton: null,
 		TotalCostText: null
-    };
+	};
 
 	// controls
 	this.mArmorLayers =
@@ -33,97 +33,97 @@ var CampScreenPainterDialogModule = function(_parent)
 		[{Row: null},{MasterKey: "BodyArmor", Key: "Cloak", Image: null, Value: null, Left: null, Right: null, Reset: null, Input: null, Combined: null}, {MasterKey: "Helmet", Key: "ExtraVanity", Image: null, Value: null, Left: null, Right: null, Reset: null, Input: null, Combined: null}],
 	];
 
-    // assets labels
+	// assets labels
 	this.mAssets = new WorldTownScreenAssets(_parent);
 
-    // buttons
-    this.mLeaveButton = null;
+	// buttons
+	this.mLeaveButton = null;
 
-    // generics
-    this.mIsVisible = false;
+	// generics
+	this.mIsVisible = false;
 
-    // selected entry
-    this.mSelectedEntry = null;
+	// selected entry
+	this.mSelectedEntry = null;
 };
 
 
 CampScreenPainterDialogModule.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 CampScreenPainterDialogModule.prototype.onConnection = function (_handle)
 {
 	this.mSQHandle = _handle;
 
-    // notify listener
-    if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
+	// notify listener
+	if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
 	{
-        this.mEventListener.onModuleOnConnectionCalled(this);
-    }
+		this.mEventListener.onModuleOnConnectionCalled(this);
+	}
 };
 
 CampScreenPainterDialogModule.prototype.onDisconnection = function ()
 {
 	this.mSQHandle = null;
 
-    // notify listener
-    if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
+	// notify listener
+	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
 	{
-        this.mEventListener.onModuleOnDisconnectionCalled(this);
-    }
+		this.mEventListener.onModuleOnDisconnectionCalled(this);
+	}
 };
 
 CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv)
 {
-    var self = this;
+	var self = this;
 
-    // create: containers (init hidden!)
-    this.mContainer = $('<div class="l-painter-dialog-container display-none opacity-none"/>');
-    _parentDiv.append(this.mContainer);
-    this.mDialogContainer = this.mContainer.createDialog('Painter', '', '', true, 'dialog-1024-768');
+	// create: containers (init hidden!)
+	this.mContainer = $('<div class="l-painter-dialog-container display-none opacity-none"/>');
+	_parentDiv.append(this.mContainer);
+	this.mDialogContainer = this.mContainer.createDialog('Painter', '', '', true, 'dialog-1024-768');
 
-    // create tabs
-    var tabButtonsContainer = $('<div class="l-tab-container"/>');
-    this.mDialogContainer.findDialogTabContainer().append(tabButtonsContainer);
+	// create tabs
+	var tabButtonsContainer = $('<div class="l-tab-container"/>');
+	this.mDialogContainer.findDialogTabContainer().append(tabButtonsContainer);
 
 	// create assets
 	this.mAssets.createDIV(tabButtonsContainer);
 
-    // create content
-    var content = this.mDialogContainer.findDialogContentContainer();
+	// create content
+	var content = this.mDialogContainer.findDialogContentContainer();
 
-    // left column
-    var column = $('<div class="column is-left"/>');
-    content.append(column);
-    var listContainerLayout = $('<div class="l-list-container"/>');
-    column.append(listContainerLayout);
-    this.mListContainer = listContainerLayout.createList(1.77/*8.85*/);
-    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
+	// left column
+	var column = $('<div class="column is-left"/>');
+	content.append(column);
+	var listContainerLayout = $('<div class="l-list-container"/>');
+	column.append(listContainerLayout);
+	this.mListContainer = listContainerLayout.createList(1.77/*8.85*/);
+	this.mListScrollContainer = this.mListContainer.findListScrollContainer();
 
-    // right column
-    column = $('<div class="column is-right"/>');
-    content.append(column);
+	// right column
+	column = $('<div class="column is-right"/>');
+	content.append(column);
 
-    // details container
-    var detailsFrame = $('<div class="l-details-frame"/>');
-    column.append(detailsFrame);
-    this.mDetailsPanel.Container = $('<div class="details-container display-none"/>');
-    detailsFrame.append(this.mDetailsPanel.Container);
+	// details container
+	var detailsFrame = $('<div class="l-details-frame"/>');
+	column.append(detailsFrame);
+	this.mDetailsPanel.Container = $('<div class="details-container display-none"/>');
+	detailsFrame.append(this.mDetailsPanel.Container);
 
-    // details: character container
-    var detailsRow = $('<div class="row is-character-container"/>');
-    this.mDetailsPanel.Container.append(detailsRow);
-    var detailsColumn = $('<div class="column is-character-background-container"/>');
-    detailsRow.append(detailsColumn);
+	// details: character container
+	var detailsRow = $('<div class="row is-character-container"/>');
+	this.mDetailsPanel.Container.append(detailsRow);
+	var detailsColumn = $('<div class="column is-character-background-container"/>');
+	detailsRow.append(detailsColumn);
  
-    // details: background
-    var backgroundRow = $('<div class="row is-top"/>');
-    detailsColumn.append(backgroundRow);
-    var headertext = $('<div class="armorname title-font-normal font-bold font-color-brother-name">Armor</div>');
-    backgroundRow.append(headertext);
+	// details: background
+	var backgroundRow = $('<div class="row is-top"/>');
+	detailsColumn.append(backgroundRow);
+	var headertext = $('<div class="armorname title-font-normal font-bold font-color-brother-name">Armor</div>');
+	backgroundRow.append(headertext);
  	headertext = $('<div class="helmetname title-font-normal font-bold font-color-brother-name">Helmet</div>');
-    backgroundRow.append(headertext); 
+	backgroundRow.append(headertext); 
 	
 	// details: layers
 	for (var r = 0; r < this.mArmorLayers.length; r++) 
@@ -311,39 +311,39 @@ CampScreenPainterDialogModule.prototype.createDIV = function (_parentDiv)
 	}, '', 6);
 		
 	
-    // details: buttons
-    detailsRow = $('<div class="row is-button-container"/>');
-    this.mDetailsPanel.Container.append(detailsRow);
-    var costsLabel = $('<div class="totalmoney title-font-normal font-bold font-bottom-shadow font-color-title">Total Cost:</div>');
-    detailsRow.append(costsLabel);
+	// details: buttons
+	detailsRow = $('<div class="row is-button-container"/>');
+	this.mDetailsPanel.Container.append(detailsRow);
+	var costsLabel = $('<div class="totalmoney title-font-normal font-bold font-bottom-shadow font-color-title">Total Cost:</div>');
+	detailsRow.append(costsLabel);
 	var costsImage = $('<img class="moneyimg"/>');
 	detailsRow.append(costsImage);
 	costsImage.attr('src', Path.GFX + Asset.ICON_ASSET_MONEY);
 	this.mDetailsPanel.TotalCostText = $('<div class="totalmoneysum title-font-normal font-bold font-bottom-shadow font-color-title">0</div>');
 	detailsRow.append(this.mDetailsPanel.TotalCostText);
 	
-    var ConfirmButtonLayout = $('<div class="l-confirm-button"/>');
-    detailsRow.append(ConfirmButtonLayout);
-    this.mDetailsPanel.ConfirmButton = ConfirmButtonLayout.createTextButton("Confirm", function()
+	var ConfirmButtonLayout = $('<div class="l-confirm-button"/>');
+	detailsRow.append(ConfirmButtonLayout);
+	this.mDetailsPanel.ConfirmButton = ConfirmButtonLayout.createTextButton("Confirm", function()
 	{
-        if(self.mSelectedEntry !== null)
-        {
-            self.changeRosterEntry();
-        }
-    }, '', 1);
+		if(self.mSelectedEntry !== null)
+		{
+			self.changeRosterEntry();
+		}
+	}, '', 1);
 
-    // create footer button bar
-    var footerButtonBar = $('<div class="l-button-bar"/>');
-    this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
+	// create footer button bar
+	var footerButtonBar = $('<div class="l-button-bar"/>');
+	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
 
-    // create: buttons
-    var layout = $('<div class="l-leave-button"/>');
-    footerButtonBar.append(layout);
-    this.mLeaveButton = layout.createTextButton("Leave", function() {
-        self.notifyBackendLeaveButtonPressed();
-    }, '', 1);
+	// create: buttons
+	var layout = $('<div class="l-leave-button"/>');
+	footerButtonBar.append(layout);
+	this.mLeaveButton = layout.createTextButton("Leave", function() {
+		self.notifyBackendLeaveButtonPressed();
+	}, '', 1);
 
-    this.mIsVisible = false;
+	this.mIsVisible = false;
 };
 
 CampScreenPainterDialogModule.prototype.destroyDIV = function ()
@@ -352,117 +352,117 @@ CampScreenPainterDialogModule.prototype.destroyDIV = function ()
 
 	this.mSelectedEntry = null;
 
-    this.mDetailsPanel.ConfirmButton.remove();
-    this.mDetailsPanel.ConfirmButton = null;
+	this.mDetailsPanel.ConfirmButton.remove();
+	this.mDetailsPanel.ConfirmButton = null;
 	
-/*     this.mDetailsPanel.TotalCostText.remove();
-    this.mDetailsPanel.TotalCostText = null; */
+/*	 this.mDetailsPanel.TotalCostText.remove();
+	this.mDetailsPanel.TotalCostText = null; */
 
-/*     this.mDetailsPanel.CharacterImage.empty();
-    this.mDetailsPanel.CharacterImage.remove();
-    this.mDetailsPanel.CharacterImage = null; */
+/*	 this.mDetailsPanel.CharacterImage.empty();
+	this.mDetailsPanel.CharacterImage.remove();
+	this.mDetailsPanel.CharacterImage = null; */
 
-    this.mDetailsPanel.Container.empty();
-    this.mDetailsPanel.Container.remove();
-    this.mDetailsPanel.Container = null;
+	this.mDetailsPanel.Container.empty();
+	this.mDetailsPanel.Container.remove();
+	this.mDetailsPanel.Container = null;
 
-    this.mListScrollContainer.empty();
-    this.mListScrollContainer = null;
-    this.mListContainer.destroyList();
-    this.mListContainer.remove();
-    this.mListContainer = null;
+	this.mListScrollContainer.empty();
+	this.mListScrollContainer = null;
+	this.mListContainer.destroyList();
+	this.mListContainer.remove();
+	this.mListContainer = null;
 
 	this.mLeaveButton.remove();
-    this.mLeaveButton = null;
+	this.mLeaveButton = null;
 
-    this.mDialogContainer.empty();
-    this.mDialogContainer.remove();
-    this.mDialogContainer = null;
+	this.mDialogContainer.empty();
+	this.mDialogContainer.remove();
+	this.mDialogContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 CampScreenPainterDialogModule.prototype.addListEntry = function (_data)
 {
-    var result = $('<div class="l-row"/>');
-    this.mListScrollContainer.append(result);
+	var result = $('<div class="l-row"/>');
+	this.mListScrollContainer.append(result);
 
-    var entry = $('<div class="ui-control list-entry"/>');
-    result.append(entry);
-    entry.data('entry', _data);
-    entry.click(this, function(_event)
+	var entry = $('<div class="ui-control list-entry"/>');
+	result.append(entry);
+	entry.data('entry', _data);
+	entry.click(this, function(_event)
 	{
-        var self = _event.data;
-        self.selectListEntry($(this));
-    });
+		var self = _event.data;
+		self.selectListEntry($(this));
+	});
 
-    // left column
-    var column = $('<div class="column is-left"/>');
-    entry.append(column);
+	// left column
+	var column = $('<div class="column is-left"/>');
+	entry.append(column);
 
-    var imageOffsetX = ('ImageOffsetX' in _data ? _data['ImageOffsetX'] : 0);
-    var imageOffsetY = ('ImageOffsetY' in _data ? _data['ImageOffsetY'] : 0);
-    _data.BroImage = column.createImage(Path.PROCEDURAL + _data['ImagePath'], function (_image)
+	var imageOffsetX = ('ImageOffsetX' in _data ? _data['ImageOffsetX'] : 0);
+	var imageOffsetY = ('ImageOffsetY' in _data ? _data['ImageOffsetY'] : 0);
+	_data.BroImage = column.createImage(Path.PROCEDURAL + _data['ImagePath'], function (_image)
 	{
-        _image.centerImageWithinParent(imageOffsetX, imageOffsetY, 0.64);
-        _image.removeClass('opacity-none');
-    }, null, 'opacity-none');
+		_image.centerImageWithinParent(imageOffsetX, imageOffsetY, 0.64);
+		_image.removeClass('opacity-none');
+	}, null, 'opacity-none');
 
-    // right column
-    column = $('<div class="column is-right"/>');
-    entry.append(column);
+	// right column
+	column = $('<div class="column is-right"/>');
+	entry.append(column);
 
-    // top row
-    var row = $('<div class="row is-top"/>');
-    column.append(row);
+	// top row
+	var row = $('<div class="row is-top"/>');
+	column.append(row);
 
-    var image = $('<img/>');
-    image.attr('src', Path.GFX + _data['BackgroundImagePath']);
-    row.append(image);
+	var image = $('<img/>');
+	image.attr('src', Path.GFX + _data['BackgroundImagePath']);
+	row.append(image);
 
-    // bind tooltip
-    image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterBackgrounds.Generic, elementOwner: TooltipIdentifier.ElementOwner.HireScreen, entityId: _data.ID });
+	// bind tooltip
+	image.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.CharacterBackgrounds.Generic, elementOwner: TooltipIdentifier.ElementOwner.HireScreen, entityId: _data.ID });
 
-    var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data[WorldTownScreenIdentifier.HireRosterEntry.Name] + '</div>');
-    row.append(name);
+	var name = $('<div class="name title-font-normal font-bold font-color-brother-name">' + _data[WorldTownScreenIdentifier.HireRosterEntry.Name] + '</div>');
+	row.append(name);
 
 	// bottom row
-    row = $('<div class="row is-bottom"/>');
-    column.append(row);
+	row = $('<div class="row is-bottom"/>');
+	column.append(row);
 };
 
 CampScreenPainterDialogModule.prototype.selectListEntry = function(_element, _scrollToEntry)
 {
-    if (_element !== null && _element.length > 0)
-    {
-        {
-            this.mListContainer.deselectListEntries();
-            _element.addClass('is-selected');
+	if (_element !== null && _element.length > 0)
+	{
+		{
+			this.mListContainer.deselectListEntries();
+			_element.addClass('is-selected');
 
-            if (_scrollToEntry !== undefined && _scrollToEntry === true)
-            {
-                this.mListContainer.scrollListToElement(_element);
-            }
+			if (_scrollToEntry !== undefined && _scrollToEntry === true)
+			{
+				this.mListContainer.scrollListToElement(_element);
+			}
 
-            this.mSelectedEntry = _element;
-            this.updateDetailsPanel(this.mSelectedEntry);
-        }
-    }
-    else
-    {
-        this.mSelectedEntry = null;
-        this.updateDetailsPanel(this.mSelectedEntry);
-    }
+			this.mSelectedEntry = _element;
+			this.updateDetailsPanel(this.mSelectedEntry);
+		}
+	}
+	else
+	{
+		this.mSelectedEntry = null;
+		this.updateDetailsPanel(this.mSelectedEntry);
+	}
 };
 
 CampScreenPainterDialogModule.prototype.updateDetailsPanel = function(_element)
 {
-    if(_element !== null && _element.length > 0)
-    {
-        var data = _element.data('entry');
-        var self = this;
+	if(_element !== null && _element.length > 0)
+	{
+		var data = _element.data('entry');
+		var self = this;
 		
 		$.each(data.BodyArmor, function (_key, _value)
 		{
@@ -572,11 +572,11 @@ CampScreenPainterDialogModule.prototype.updateDetailsPanel = function(_element)
 		self.mDetailsPanel.TotalCostText.html("0");
 		
 		self.mDetailsPanel.Container.removeClass('display-none').addClass('display-block');
-    }
-    else
-    {
-        this.mDetailsPanel.Container.removeClass('display-block').addClass('display-none');
-    }
+	}
+	else
+	{
+		this.mDetailsPanel.Container.removeClass('display-block').addClass('display-none');
+	}
 };
 
 CampScreenPainterDialogModule.prototype.ProcessInputChange = function (_row, _mkey, _key, _input)
@@ -702,7 +702,7 @@ CampScreenPainterDialogModule.prototype.UpdateVisuals = function (_row, _column,
 		if(self.mSQHandle !== null)
 		{
 			SQ.call(self.mSQHandle, 'SendPics', result, function(_result)
-			{           
+			{		   
 				self.mArmorLayers[_row][_column].Image.attr('src', Path.ITEMS + _result['Icon']);
 				self.mArmorLayers[_row][_column].Combined.attr('src', Path.ITEMS + _result['IconLarge']);
 			}); 
@@ -764,143 +764,143 @@ CampScreenPainterDialogModule.prototype.UpdateCost = function ()
 
 CampScreenPainterDialogModule.prototype.bindTooltips = function ()
 {
-    this.mAssets.bindTooltips();
-    this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
+	this.mAssets.bindTooltips();
+	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 };
 
 CampScreenPainterDialogModule.prototype.unbindTooltips = function ()
 {
 	this.mAssets.unbindTooltips();
-    this.mLeaveButton.unbindTooltip();
+	this.mLeaveButton.unbindTooltip();
 };
 
 
 CampScreenPainterDialogModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 CampScreenPainterDialogModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 CampScreenPainterDialogModule.prototype.register = function (_parentDiv)
 {
-    console.log('CampScreenPainterDialogModule::REGISTER');
+	console.log('CampScreenPainterDialogModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register World Town Screen Hire Dialog Module. Reason: World Town Screen Hire Dialog Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register World Town Screen Hire Dialog Module. Reason: World Town Screen Hire Dialog Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 CampScreenPainterDialogModule.prototype.unregister = function ()
 {
-    console.log('CampScreenPainterDialogModule::UNREGISTER');
+	console.log('CampScreenPainterDialogModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister World Town Screen Hire Dialog Module. Reason: World Town Screen Hire Dialog Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister World Town Screen Hire Dialog Module. Reason: World Town Screen Hire Dialog Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 CampScreenPainterDialogModule.prototype.isRegistered = function ()
 {
-    if (this.mContainer !== null)
-    {
-        return this.mContainer.parent().length !== 0;
-    }
+	if (this.mContainer !== null)
+	{
+		return this.mContainer.parent().length !== 0;
+	}
 
-    return false;
+	return false;
 };
 
 
 CampScreenPainterDialogModule.prototype.registerEventListener = function(_listener)
 {
-    this.mEventListener = _listener;
+	this.mEventListener = _listener;
 };
 
 
 CampScreenPainterDialogModule.prototype.show = function (_withSlideAnimation)
 {
-    var self = this;
+	var self = this;
 
-    var withAnimation = (_withSlideAnimation !== undefined && _withSlideAnimation !== null) ? _withSlideAnimation : true;
-    if (withAnimation === true)
-    {
-        var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-        this.mContainer.css({ 'left': offset });
-        this.mContainer.velocity("finish", true).velocity({ opacity: 1, left: '0', right: '0' }, {
-            duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-            easing: 'swing',
-            begin: function () {
-                $(this).removeClass('display-none').addClass('display-block');
-                self.notifyBackendModuleAnimating();
-            },
-            complete: function () {
-                self.mIsVisible = true;
-                self.notifyBackendModuleShown();
-            }
-        });
-    }
-    else
-    {
-        this.mContainer.css({ opacity: 0 });
-        this.mContainer.velocity("finish", true).velocity({ opacity: 1 }, {
-            duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
-            easing: 'swing',
-            begin: function() {
-                $(this).removeClass('display-none').addClass('display-block');
-                self.notifyBackendModuleAnimating();
-            },
-            complete: function() {
-                self.mIsVisible = true;
-                self.notifyBackendModuleShown();
-            }
-        });
-    }
+	var withAnimation = (_withSlideAnimation !== undefined && _withSlideAnimation !== null) ? _withSlideAnimation : true;
+	if (withAnimation === true)
+	{
+		var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+		this.mContainer.css({ 'left': offset });
+		this.mContainer.velocity("finish", true).velocity({ opacity: 1, left: '0', right: '0' }, {
+			duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+			easing: 'swing',
+			begin: function () {
+				$(this).removeClass('display-none').addClass('display-block');
+				self.notifyBackendModuleAnimating();
+			},
+			complete: function () {
+				self.mIsVisible = true;
+				self.notifyBackendModuleShown();
+			}
+		});
+	}
+	else
+	{
+		this.mContainer.css({ opacity: 0 });
+		this.mContainer.velocity("finish", true).velocity({ opacity: 1 }, {
+			duration: Constants.SCREEN_FADE_IN_OUT_DELAY,
+			easing: 'swing',
+			begin: function() {
+				$(this).removeClass('display-none').addClass('display-block');
+				self.notifyBackendModuleAnimating();
+			},
+			complete: function() {
+				self.mIsVisible = true;
+				self.notifyBackendModuleShown();
+			}
+		});
+	}
 };
 
 CampScreenPainterDialogModule.prototype.hide = function ()
 {
-    var self = this;
+	var self = this;
 
-    var offset = -(this.mContainer.parent().width() + this.mContainer.width());
-    this.mContainer.velocity("finish", true).velocity({ opacity: 0, left: offset },
+	var offset = -(this.mContainer.parent().width() + this.mContainer.width());
+	this.mContainer.velocity("finish", true).velocity({ opacity: 0, left: offset },
 	{
-        duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
-        easing: 'swing',
-        begin: function ()
-        {
-            $(this).removeClass('is-center');
-            self.notifyBackendModuleAnimating();
-        },
-        complete: function ()
-        {
-        	self.mIsVisible = false;
-        	self.mListScrollContainer.empty();
-            $(this).removeClass('display-block').addClass('display-none');
-            self.notifyBackendModuleHidden();
-        }
-    });
+		duration: Constants.SCREEN_SLIDE_IN_OUT_DELAY,
+		easing: 'swing',
+		begin: function ()
+		{
+			$(this).removeClass('is-center');
+			self.notifyBackendModuleAnimating();
+		},
+		complete: function ()
+		{
+			self.mIsVisible = false;
+			self.mListScrollContainer.empty();
+			$(this).removeClass('display-block').addClass('display-none');
+			self.notifyBackendModuleHidden();
+		}
+	});
 };
 
 CampScreenPainterDialogModule.prototype.isVisible = function ()
 {
-    return this.mIsVisible;
+	return this.mIsVisible;
 };
 
 CampScreenPainterDialogModule.prototype.updateAssets = function (_data)
@@ -911,9 +911,9 @@ CampScreenPainterDialogModule.prototype.updateAssets = function (_data)
 CampScreenPainterDialogModule.prototype.loadFromData = function (_data)
 {
 	if(_data === undefined || _data === null)
-    {
-        return;
-    }
+	{
+		return;
+	}
 
 	if('Title' in _data && _data.Title !== null)
 	{
@@ -927,20 +927,20 @@ CampScreenPainterDialogModule.prototype.loadFromData = function (_data)
 
 	this.mRoster = _data.Roster;
 
-    this.mListScrollContainer.empty();
+	this.mListScrollContainer.empty();
 
-    for(var i = 0; i < _data.Roster.length; ++i)
-    {
+	for(var i = 0; i < _data.Roster.length; ++i)
+	{
 		var entry = _data.Roster[i];
-        this.addListEntry(entry);
-    }
+		this.addListEntry(entry);
+	}
 
-    this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
+	this.selectListEntry(this.mListContainer.findListEntryByIndex(0), true);
 };
 
 CampScreenPainterDialogModule.prototype.changeRosterEntry = function ()
 {
-    var self = this;
+	var self = this;
 	var data = self.mSelectedEntry.data('entry');
 	
 	var result = {
@@ -1018,8 +1018,8 @@ CampScreenPainterDialogModule.prototype.changeRosterEntry = function ()
 	
 	result.Cost = totalcost;
 	
-    this.notifyBackendChangeAppearance(result, function(_data)
-    {
+	this.notifyBackendChangeAppearance(result, function(_data)
+	{
 		if (_data != null)
 		{
 			self.mRoster = _data.Roster;
@@ -1038,22 +1038,22 @@ CampScreenPainterDialogModule.prototype.changeRosterEntry = function ()
 			var data = self.mSelectedEntry.data('entry');
 			self.updateDetailsPanel(self.mSelectedEntry);
 		}
-    }); 
+	}); 
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendModuleShown = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleShown');
+	SQ.call(this.mSQHandle, 'onModuleShown');
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendModuleHidden = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleHidden');
+	SQ.call(this.mSQHandle, 'onModuleHidden');
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendModuleAnimating = function ()
 {
-    SQ.call(this.mSQHandle, 'onModuleAnimating');
+	SQ.call(this.mSQHandle, 'onModuleAnimating');
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendLeaveButtonPressed = function ()
@@ -1063,10 +1063,10 @@ CampScreenPainterDialogModule.prototype.notifyBackendLeaveButtonPressed = functi
 
 CampScreenPainterDialogModule.prototype.notifyBackendBrothersButtonPressed = function ()
 {
-    SQ.call(this.mSQHandle, 'onBrothersButtonPressed');
+	SQ.call(this.mSQHandle, 'onBrothersButtonPressed');
 };
 
 CampScreenPainterDialogModule.prototype.notifyBackendChangeAppearance = function (_result, _callback)
 {
-    SQ.call(this.mSQHandle, 'onChangeAppearance', _result, _callback);
+	SQ.call(this.mSQHandle, 'onChangeAppearance', _result, _callback);
 };

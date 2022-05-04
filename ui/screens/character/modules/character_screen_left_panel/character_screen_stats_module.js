@@ -16,8 +16,8 @@
 
 var CharacterScreenStatsModule = function(_parent, _dataSource)
 {
-    this.mParent = _parent;
-    this.mDataSource = _dataSource;
+	this.mParent = _parent;
+	this.mDataSource = _dataSource;
 
 	// container
 	this.mContainer = null;
@@ -56,14 +56,14 @@ var CharacterScreenStatsModule = function(_parent, _dataSource)
 			Progressbar: null,
 			Talent: null
 		},
-        Fatigue: {
-            IconPath: Path.GFX + Asset.ICON_FATIGUE,
-            StyleName: ProgressbarStyleIdentifier.Fatigue,
-            TooltipId: TooltipIdentifier.CharacterStats.Fatigue,
-            Row: null,
-            Progressbar: null,
-            Talent: null
-        },
+		Fatigue: {
+			IconPath: Path.GFX + Asset.ICON_FATIGUE,
+			StyleName: ProgressbarStyleIdentifier.Fatigue,
+			TooltipId: TooltipIdentifier.CharacterStats.Fatigue,
+			Row: null,
+			Progressbar: null,
+			Talent: null
+		},
 		Morale: {
 			IconPath: Path.GFX + Asset.ICON_MORALE,
 			StyleName: ProgressbarStyleIdentifier.Morale,
@@ -72,42 +72,42 @@ var CharacterScreenStatsModule = function(_parent, _dataSource)
 			Progressbar: null,
 			Talent: null
 		},
-        Bravery: {
-            IconPath: Path.GFX + Asset.ICON_BRAVERY,
-            StyleName: ProgressbarStyleIdentifier.Bravery,
-            TooltipId: TooltipIdentifier.CharacterStats.Bravery,
-            Row: null,
-            Progressbar: null,
-            Talent: null
-        },
-        Initiative: {
-            IconPath: Path.GFX + Asset.ICON_INITIATIVE,
-            StyleName: ProgressbarStyleIdentifier.Initiative,
-            TooltipId: TooltipIdentifier.CharacterStats.Initiative,
-            Row: null,
-            Progressbar: null,
-            Talent: null
-        }
+		Bravery: {
+			IconPath: Path.GFX + Asset.ICON_BRAVERY,
+			StyleName: ProgressbarStyleIdentifier.Bravery,
+			TooltipId: TooltipIdentifier.CharacterStats.Bravery,
+			Row: null,
+			Progressbar: null,
+			Talent: null
+		},
+		Initiative: {
+			IconPath: Path.GFX + Asset.ICON_INITIATIVE,
+			StyleName: ProgressbarStyleIdentifier.Initiative,
+			TooltipId: TooltipIdentifier.CharacterStats.Initiative,
+			Row: null,
+			Progressbar: null,
+			Talent: null
+		}
 	};
 
 	// middle stats row defines
 	this.mMiddleStatsRows = {
-        MeleeSkill: {
-            IconPath: Path.GFX + Asset.ICON_MELEE_SKILL,
-            StyleName: ProgressbarStyleIdentifier.MeleeSkill,
-            TooltipId: TooltipIdentifier.CharacterStats.MeleeSkill,
-            Row: null,
-            Progressbar: null,
-            Talent: null
-        },
-        RangeSkill: {
-            IconPath: Path.GFX + Asset.ICON_RANGE_SKILL,
-            StyleName: ProgressbarStyleIdentifier.RangeSkill,
-            TooltipId: TooltipIdentifier.CharacterStats.RangeSkill,
-            Row: null,
-            Progressbar: null,
-            Talent: null
-        },
+		MeleeSkill: {
+			IconPath: Path.GFX + Asset.ICON_MELEE_SKILL,
+			StyleName: ProgressbarStyleIdentifier.MeleeSkill,
+			TooltipId: TooltipIdentifier.CharacterStats.MeleeSkill,
+			Row: null,
+			Progressbar: null,
+			Talent: null
+		},
+		RangeSkill: {
+			IconPath: Path.GFX + Asset.ICON_RANGE_SKILL,
+			StyleName: ProgressbarStyleIdentifier.RangeSkill,
+			TooltipId: TooltipIdentifier.CharacterStats.RangeSkill,
+			Row: null,
+			Progressbar: null,
+			Talent: null
+		},
 		MeleeDefense: {
 			IconPath: Path.GFX + Asset.ICON_MELEE_DEFENCE,
 			StyleName: ProgressbarStyleIdentifier.MeleeDefense,
@@ -158,7 +158,7 @@ var CharacterScreenStatsModule = function(_parent, _dataSource)
 		}
 	};
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -166,7 +166,7 @@ CharacterScreenStatsModule.prototype.createDIV = function (_parentDiv)
 {
 	// create: containers
 	this.mContainer = $('<div class="stats-module"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	// create: stats containers & layouts
 	var leftStatsColumn = $('<div class="stats-column"/>');
@@ -182,12 +182,12 @@ CharacterScreenStatsModule.prototype.createDIV = function (_parentDiv)
 
 CharacterScreenStatsModule.prototype.destroyDIV = function ()
 {
-    this.destroyRowsDIV(this.mLeftStatsRows);
-    this.destroyRowsDIV(this.mMiddleStatsRows);
+	this.destroyRowsDIV(this.mLeftStatsRows);
+	this.destroyRowsDIV(this.mMiddleStatsRows);
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -222,14 +222,14 @@ CharacterScreenStatsModule.prototype.destroyRowsDIV = function (_definitions)
 {
 	$.each(_definitions, function (_key, _value)
 	{
-        _value.Progressbar.empty();
-        _value.Progressbar.remove();
-        _value.Progressbar = null;
+		_value.Progressbar.empty();
+		_value.Progressbar.remove();
+		_value.Progressbar = null;
 
-        _value.Row.empty();
-        _value.Row.remove();
-        _value.Row = null;
-    });
+		_value.Row.empty();
+		_value.Row.remove();
+		_value.Row = null;
+	});
 };
 
 CharacterScreenStatsModule.prototype.setupEventHandler = function ()
@@ -271,44 +271,44 @@ CharacterScreenStatsModule.prototype.registerDatasourceListener = function()
 
 CharacterScreenStatsModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.setupEventHandler();
+	this.createDIV(_parentDiv);
+	this.setupEventHandler();
 };
 
 CharacterScreenStatsModule.prototype.destroy = function()
 {
-    this.removeEventHandler();
-    this.destroyDIV();
+	this.removeEventHandler();
+	this.destroyDIV();
 };
 
 
 CharacterScreenStatsModule.prototype.register = function (_parentDiv)
 {
-    console.log('CharacterScreenStatsModule::REGISTER');
+	console.log('CharacterScreenStatsModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to registerStats Module. Reason: Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to registerStats Module. Reason: Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 CharacterScreenStatsModule.prototype.unregister = function ()
 {
-    console.log('CharacterScreenStatsModule::UNREGISTER');
+	console.log('CharacterScreenStatsModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Stats Module. Reason: Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Stats Module. Reason: Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 CharacterScreenStatsModule.prototype.isRegistered = function ()
@@ -323,34 +323,34 @@ CharacterScreenStatsModule.prototype.isRegistered = function ()
 
 CharacterScreenStatsModule.prototype.setProgressbarValue = function (_progressbarDiv, _data, _valueKey, _valueMaxKey, _labelKey)
 {
-    if (_valueKey in _data && _data[_valueKey] !== null && _valueMaxKey in _data && _data[_valueMaxKey] !== null)
-    {
-        _progressbarDiv.changeProgressbarNormalWidth(_data[_valueKey], _data[_valueMaxKey]);
+	if (_valueKey in _data && _data[_valueKey] !== null && _valueMaxKey in _data && _data[_valueMaxKey] !== null)
+	{
+		_progressbarDiv.changeProgressbarNormalWidth(_data[_valueKey], _data[_valueMaxKey]);
 
-        if (_labelKey in _data && _data[_labelKey] !== null)
-        {
-            _progressbarDiv.changeProgressbarLabel(_data[_labelKey]);
-        }
-        else
-        {
-            switch(_valueKey)
-            {
-                case ProgressbarValueIdentifier.ArmorHead:
-                case ProgressbarValueIdentifier.ArmorBody:
-                case ProgressbarValueIdentifier.Hitpoints:
-                case ProgressbarValueIdentifier.ActionPoints:
-                case ProgressbarValueIdentifier.Fatigue:
-                case ProgressbarValueIdentifier.Morale:
-                {
-                    _progressbarDiv.changeProgressbarLabel('' + _data[_valueKey] + ' / ' + _data[_valueMaxKey] + '');
-                } break;
-                default:
-                {
-                    _progressbarDiv.changeProgressbarLabel('' + _data[_valueKey]);
-                }
-            }
-        }
-    }
+		if (_labelKey in _data && _data[_labelKey] !== null)
+		{
+			_progressbarDiv.changeProgressbarLabel(_data[_labelKey]);
+		}
+		else
+		{
+			switch(_valueKey)
+			{
+				case ProgressbarValueIdentifier.ArmorHead:
+				case ProgressbarValueIdentifier.ArmorBody:
+				case ProgressbarValueIdentifier.Hitpoints:
+				case ProgressbarValueIdentifier.ActionPoints:
+				case ProgressbarValueIdentifier.Fatigue:
+				case ProgressbarValueIdentifier.Morale:
+				{
+					_progressbarDiv.changeProgressbarLabel('' + _data[_valueKey] + ' / ' + _data[_valueMaxKey] + '');
+				} break;
+				default:
+				{
+					_progressbarDiv.changeProgressbarLabel('' + _data[_valueKey]);
+				}
+			}
+		}
+	}
 };
 
 CharacterScreenStatsModule.prototype.setTalentValue = function (_what, _data)
@@ -363,35 +363,35 @@ CharacterScreenStatsModule.prototype.setProgressbarValues = function (_data)
 {
 	// LEFT ROW
 	// ************************************************************************************************************************
-    this.setProgressbarValue(this.mLeftStatsRows.ArmorHead.Progressbar, _data, ProgressbarValueIdentifier.ArmorHead, ProgressbarValueIdentifier.ArmorHeadMax, ProgressbarValueIdentifier.ArmorHeadLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.ArmorBody.Progressbar, _data, ProgressbarValueIdentifier.ArmorBody, ProgressbarValueIdentifier.ArmorBodyMax, ProgressbarValueIdentifier.ArmorBodyLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.Hitpoints.Progressbar, _data, ProgressbarValueIdentifier.Hitpoints, ProgressbarValueIdentifier.HitpointsMax, ProgressbarValueIdentifier.HitpointsLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.ActionPoints.Progressbar, _data, ProgressbarValueIdentifier.ActionPoints, ProgressbarValueIdentifier.ActionPointsMax, ProgressbarValueIdentifier.ActionPointsLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.Fatigue.Progressbar, _data, ProgressbarValueIdentifier.Fatigue, ProgressbarValueIdentifier.FatigueMax, ProgressbarValueIdentifier.FatigueLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.Morale.Progressbar, _data, ProgressbarValueIdentifier.Morale, ProgressbarValueIdentifier.MoraleMax, ProgressbarValueIdentifier.MoraleLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.Bravery.Progressbar, _data, ProgressbarValueIdentifier.Bravery, ProgressbarValueIdentifier.BraveryMax, ProgressbarValueIdentifier.BraveryLabel);
-    this.setProgressbarValue(this.mLeftStatsRows.Initiative.Progressbar, _data, ProgressbarValueIdentifier.Initiative, ProgressbarValueIdentifier.InitiativeMax, ProgressbarValueIdentifier.InitiativeLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.ArmorHead.Progressbar, _data, ProgressbarValueIdentifier.ArmorHead, ProgressbarValueIdentifier.ArmorHeadMax, ProgressbarValueIdentifier.ArmorHeadLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.ArmorBody.Progressbar, _data, ProgressbarValueIdentifier.ArmorBody, ProgressbarValueIdentifier.ArmorBodyMax, ProgressbarValueIdentifier.ArmorBodyLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.Hitpoints.Progressbar, _data, ProgressbarValueIdentifier.Hitpoints, ProgressbarValueIdentifier.HitpointsMax, ProgressbarValueIdentifier.HitpointsLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.ActionPoints.Progressbar, _data, ProgressbarValueIdentifier.ActionPoints, ProgressbarValueIdentifier.ActionPointsMax, ProgressbarValueIdentifier.ActionPointsLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.Fatigue.Progressbar, _data, ProgressbarValueIdentifier.Fatigue, ProgressbarValueIdentifier.FatigueMax, ProgressbarValueIdentifier.FatigueLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.Morale.Progressbar, _data, ProgressbarValueIdentifier.Morale, ProgressbarValueIdentifier.MoraleMax, ProgressbarValueIdentifier.MoraleLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.Bravery.Progressbar, _data, ProgressbarValueIdentifier.Bravery, ProgressbarValueIdentifier.BraveryMax, ProgressbarValueIdentifier.BraveryLabel);
+	this.setProgressbarValue(this.mLeftStatsRows.Initiative.Progressbar, _data, ProgressbarValueIdentifier.Initiative, ProgressbarValueIdentifier.InitiativeMax, ProgressbarValueIdentifier.InitiativeLabel);
 
-    this.setTalentValue(this.mLeftStatsRows.Hitpoints, _data.hitpointsTalent);
-    this.setTalentValue(this.mLeftStatsRows.Fatigue, _data.fatigueTalent);
-    this.setTalentValue(this.mLeftStatsRows.Bravery, _data.braveryTalent);
-    this.setTalentValue(this.mLeftStatsRows.Initiative, _data.initiativeTalent);
+	this.setTalentValue(this.mLeftStatsRows.Hitpoints, _data.hitpointsTalent);
+	this.setTalentValue(this.mLeftStatsRows.Fatigue, _data.fatigueTalent);
+	this.setTalentValue(this.mLeftStatsRows.Bravery, _data.braveryTalent);
+	this.setTalentValue(this.mLeftStatsRows.Initiative, _data.initiativeTalent);
 
 	// MIDDLE ROW
 	// ************************************************************************************************************************
-    this.setProgressbarValue(this.mMiddleStatsRows.MeleeSkill.Progressbar, _data, ProgressbarValueIdentifier.MeleeSkill, ProgressbarValueIdentifier.MeleeSkillMax, ProgressbarValueIdentifier.MeleeSkillLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.RangeSkill.Progressbar, _data, ProgressbarValueIdentifier.RangeSkill, ProgressbarValueIdentifier.RangeSkillMax, ProgressbarValueIdentifier.RangeSkillLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.MeleeDefense.Progressbar, _data, ProgressbarValueIdentifier.MeleeDefense, ProgressbarValueIdentifier.MeleeDefenseMax, ProgressbarValueIdentifier.MeleeDefenseLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.RangeDefense.Progressbar, _data, ProgressbarValueIdentifier.RangeDefense, ProgressbarValueIdentifier.RangeDefenseMax, ProgressbarValueIdentifier.RangeDefenseLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.RegularDamage.Progressbar, _data, ProgressbarValueIdentifier.RegularDamage, ProgressbarValueIdentifier.RegularDamageMax, ProgressbarValueIdentifier.RegularDamageLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.CrushingDamage.Progressbar, _data, ProgressbarValueIdentifier.CrushingDamage, ProgressbarValueIdentifier.CrushingDamageMax, ProgressbarValueIdentifier.CrushingDamageLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.ChanceToHitHead.Progressbar, _data, ProgressbarValueIdentifier.ChanceToHitHead, ProgressbarValueIdentifier.ChanceToHitHeadMax, ProgressbarValueIdentifier.ChanceToHitHeadLabel);
-    this.setProgressbarValue(this.mMiddleStatsRows.SightDistance.Progressbar, _data, ProgressbarValueIdentifier.SightDistance, ProgressbarValueIdentifier.SightDistanceMax, ProgressbarValueIdentifier.SightDistanceLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.MeleeSkill.Progressbar, _data, ProgressbarValueIdentifier.MeleeSkill, ProgressbarValueIdentifier.MeleeSkillMax, ProgressbarValueIdentifier.MeleeSkillLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.RangeSkill.Progressbar, _data, ProgressbarValueIdentifier.RangeSkill, ProgressbarValueIdentifier.RangeSkillMax, ProgressbarValueIdentifier.RangeSkillLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.MeleeDefense.Progressbar, _data, ProgressbarValueIdentifier.MeleeDefense, ProgressbarValueIdentifier.MeleeDefenseMax, ProgressbarValueIdentifier.MeleeDefenseLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.RangeDefense.Progressbar, _data, ProgressbarValueIdentifier.RangeDefense, ProgressbarValueIdentifier.RangeDefenseMax, ProgressbarValueIdentifier.RangeDefenseLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.RegularDamage.Progressbar, _data, ProgressbarValueIdentifier.RegularDamage, ProgressbarValueIdentifier.RegularDamageMax, ProgressbarValueIdentifier.RegularDamageLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.CrushingDamage.Progressbar, _data, ProgressbarValueIdentifier.CrushingDamage, ProgressbarValueIdentifier.CrushingDamageMax, ProgressbarValueIdentifier.CrushingDamageLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.ChanceToHitHead.Progressbar, _data, ProgressbarValueIdentifier.ChanceToHitHead, ProgressbarValueIdentifier.ChanceToHitHeadMax, ProgressbarValueIdentifier.ChanceToHitHeadLabel);
+	this.setProgressbarValue(this.mMiddleStatsRows.SightDistance.Progressbar, _data, ProgressbarValueIdentifier.SightDistance, ProgressbarValueIdentifier.SightDistanceMax, ProgressbarValueIdentifier.SightDistanceLabel);
 	
-    this.setTalentValue(this.mMiddleStatsRows.MeleeSkill, _data.meleeSkillTalent);
-    this.setTalentValue(this.mMiddleStatsRows.RangeSkill, _data.rangeSkillTalent);
-    this.setTalentValue(this.mMiddleStatsRows.MeleeDefense, _data.meleeDefenseTalent);
-    this.setTalentValue(this.mMiddleStatsRows.RangeDefense, _data.rangeDefenseTalent);
+	this.setTalentValue(this.mMiddleStatsRows.MeleeSkill, _data.meleeSkillTalent);
+	this.setTalentValue(this.mMiddleStatsRows.RangeSkill, _data.rangeSkillTalent);
+	this.setTalentValue(this.mMiddleStatsRows.MeleeDefense, _data.meleeDefenseTalent);
+	this.setTalentValue(this.mMiddleStatsRows.RangeDefense, _data.rangeDefenseTalent);
 };
 
 

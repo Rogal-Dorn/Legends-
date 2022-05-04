@@ -13,14 +13,14 @@ this.legend_scroll_blueprint <- this.inherit("scripts/crafting/blueprint", {
 				Script = "scripts/items/misc/legend_ancient_scroll_item",
 				Num = 1
 			},
-            {
-                Script = "scripts/items/trade/cloth_rolls_item",
-                Num = 1
-            },
-            {
-                Script = "scripts/items/trade/dies_item",
-                Num = 1
-            }
+			{
+				Script = "scripts/items/trade/cloth_rolls_item",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/trade/dies_item",
+				Num = 1
+			}
 		];
 		this.init(ingredients);
 		local skills = [

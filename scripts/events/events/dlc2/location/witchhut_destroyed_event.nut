@@ -243,7 +243,7 @@ this.witchhut_destroyed_event <- this.inherit("scripts/events/event", {
 					break;
 				}
 
-				  // [034]  OP_CLOSE          0      4    0    0
+				  // [034]  OP_CLOSE		  0	  4	0	0
 			}
 		}
 

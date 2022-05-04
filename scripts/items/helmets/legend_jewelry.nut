@@ -8,7 +8,7 @@ this.legend_jewelry <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Name = "Southern Coin Veil";
 		this.m.Description = "A southern veil made of coins threaded togther";
 		this.m.Variants = [1];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -27,6 +27,6 @@ this.legend_jewelry <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteDamaged = "legend_jewelry" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legend_jewelry" + "_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/legend_jewelry" + "_" + variant + ".png";
-        this.m.IconLarge = this.m.Icon;
+		this.m.IconLarge = this.m.Icon;
 	}
 });

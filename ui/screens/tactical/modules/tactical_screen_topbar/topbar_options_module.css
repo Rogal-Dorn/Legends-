@@ -30,55 +30,55 @@
 .tactical-screen .topbar-options-module .l-flee-button,
 .tactical-screen .topbar-options-module .l-quit-button
 {
-    top: 0.2rem;
-    bottom: 0;
-    width: 4.5rem;
-    height: 4.1rem;
-    position: absolute;
-    margin: auto 0;
+	top: 0.2rem;
+	bottom: 0;
+	width: 4.5rem;
+	height: 4.1rem;
+	position: absolute;
+	margin: auto 0;
 }
 
 /*.tactical-screen .topbar-options-module .l-switch-map-orientation-button
 {
-    left: 1.0rem;
+	left: 1.0rem;
 }*/
 
 .tactical-screen .topbar-options-module .l-center-camera-button
 {
-    left: 1.0rem;
+	left: 1.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-switch-map-level-up-button
 {
-    left: 5.0rem;
+	left: 5.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-switch-map-level-down-button
 {
-    left: 9.0rem;
+	left: 9.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-toggle-trees-button
 {
-    left: 13.0rem;
+	left: 13.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-toggle-blocked-tile-highlights-button
 {
-    left: 17.0rem;
+	left: 17.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-toggle-stats-overlays-button
 {
-    left: 21.0rem;
+	left: 21.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-flee-button
 {
-    right: 5.0rem;
+	right: 5.0rem;
 }
 
 .tactical-screen .topbar-options-module .l-quit-button
 {
-    right: 1.0rem;
+	right: 1.0rem;
 }

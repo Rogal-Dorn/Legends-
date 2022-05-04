@@ -19,7 +19,7 @@ this.legend_helmet_redback_helm <- this.inherit("scripts/items/legend_helmets/le
 		this.m.Description = "A sturdy yet light helmet made from the carapace of a redback spider.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;

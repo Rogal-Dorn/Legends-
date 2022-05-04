@@ -305,7 +305,7 @@ this.kraken_cult_enter_event <- this.inherit("scripts/events/event", {
 					}
 
 				});
-				  // [028]  OP_CLOSE          0      4    0    0
+				  // [028]  OP_CLOSE		  0	  4	0	0
 			}
 		}
 

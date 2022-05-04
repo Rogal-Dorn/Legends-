@@ -7,7 +7,7 @@ this.legend_faction_helmet <- this.inherit("scripts/items/legend_helmets/hood/le
 		this.m.Name = "Chain Hood";
 		this.m.Description = "A sturdy chain hood of military grade";
 		this.m.Variants = [1, 2, 3, 4];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -28,7 +28,7 @@ this.legend_faction_helmet <- this.inherit("scripts/items/legend_helmets/hood/le
 		this.m.Icon = "legend_helmets/inventory_chain_hood" + "_" + variant + ".png"
 	}
 
-    function setupArmor( _variant ) {
+	function setupArmor( _variant ) {
 		local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_great_helm");
 		helm.setVariant(1);
 		this.setUpgrade(helm);
@@ -36,7 +36,7 @@ this.legend_faction_helmet <- this.inherit("scripts/items/legend_helmets/hood/le
 		local flair = this.new("scripts/items/legend_helmets/vanity/legend_helmet_faction_helmet");
 		flair.setVariant(_variant);
 		this.setUpgrade(flair);
-    }
+	}
 
 });
 

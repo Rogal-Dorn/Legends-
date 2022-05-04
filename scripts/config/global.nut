@@ -408,7 +408,7 @@ gt.Const.EntityType <- {
 	BanditOutrider = 138,
 	LegendBear = 139,
 	LegendCatapult = 140,
-    LegendHorse = 141,
+	LegendHorse = 141,
 	SkeletonGladiator = 142,
 
 	BanditRabblePoacher = 143,

@@ -29,7 +29,7 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAlwaysHideTreesCheckbox		= null;
 	this.mAutoEndTurnCheckbox			= null;
 	this.mRestoreEquipmentCheckbox		= null;
-	this.mAutoPauseAfterCityCheckbox    = null;
+	this.mAutoPauseAfterCityCheckbox	= null;
 
 	this.mCameraFollowLabel				= null;
 	this.mCameraAdjustLevelLabel		= null;
@@ -40,8 +40,8 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAutoLootLabel					= null;
 	this.mAlwaysHideTreesLabel			= null;
 	this.mAutoEndTurnLabel				= null;
-	this.mRestoreEquipmentLabel         = null;
-	this.mAutoPauseAfterCityLabel       = null;
+	this.mRestoreEquipmentLabel		 = null;
+	this.mAutoPauseAfterCityLabel	   = null;
 
 	this.registerDatasourceListener();
 };

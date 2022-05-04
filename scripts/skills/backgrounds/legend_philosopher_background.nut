@@ -56,7 +56,7 @@ this.legend_philosopher_background <- this.inherit("scripts/skills/backgrounds/c
 		local c = {
 			Hitpoints = [
 				-10,
-                0
+				0
 			],
 			Bravery = [
 				0,

@@ -32,23 +32,23 @@ var TacticalScreen = function()
 	this.mTopbarOptionsModule = null;
 	this.mOrientationOverlayModule = null;
 
-    // timer
-    this.mShowHideModulesDelay = 200;
+	// timer
+	this.mShowHideModulesDelay = 200;
 
 	// create
-    this.createModules();
+	this.createModules();
 };
 
 
 TacticalScreen.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 TacticalScreen.prototype.onConnection = function (_handle)
 {
 	this.mSQHandle = _handle;
-    this.register($('.root-screen'));
+	this.register($('.root-screen'));
 };
 
 TacticalScreen.prototype.onDisconnection = function ()
@@ -94,7 +94,7 @@ TacticalScreen.prototype.createDIV = function (_parentDiv)
 {
 	// create: containers
 	this.mContainer = $('<div class="tactical-screen ui-control display-none"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	this.mTopBarContainer = $('<div class="topbar-container"/>');
 	this.mContainer.append(this.mTopBarContainer);
@@ -110,29 +110,29 @@ TacticalScreen.prototype.createDIV = function (_parentDiv)
 
 TacticalScreen.prototype.destroyDIV = function ()
 {
-    this.mLeftModuleContainer.empty();
-    this.mLeftModuleContainer = null;
-    this.mMiddleModuleContainer.empty();
-    this.mMiddleModuleContainer = null;
-    this.mRightModuleContainer.empty();
-    this.mRightModuleContainer = null;
+	this.mLeftModuleContainer.empty();
+	this.mLeftModuleContainer = null;
+	this.mMiddleModuleContainer.empty();
+	this.mMiddleModuleContainer = null;
+	this.mRightModuleContainer.empty();
+	this.mRightModuleContainer = null;
 
-    this.mTopBarContainer.empty();
-    this.mTopBarContainer = null;
+	this.mTopBarContainer.empty();
+	this.mTopBarContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 TacticalScreen.prototype.createModules = function()
 {
-    this.mTurnSequenceBarModule = new TacticalScreenTurnSequenceBarModule();
-    this.mTurnSequenceBarModule.registerEventListener(this);
+	this.mTurnSequenceBarModule = new TacticalScreenTurnSequenceBarModule();
+	this.mTurnSequenceBarModule.registerEventListener(this);
 
-    this.mOrientationOverlayModule = new TacticalScreenOrientationOverlayModule();
-    this.mOrientationOverlayModule.registerEventListener(this);
+	this.mOrientationOverlayModule = new TacticalScreenOrientationOverlayModule();
+	this.mOrientationOverlayModule.registerEventListener(this);
 
 	this.mTopbarEventLogModule = new TacticalScreenTopbarEventLogModule();
 	this.mTopbarEventLogModule.registerEventListener(this);
@@ -146,8 +146,8 @@ TacticalScreen.prototype.createModules = function()
 
 TacticalScreen.prototype.registerModules = function ()
 {
-    this.mTurnSequenceBarModule.register(this.mContainer);
-    this.mOrientationOverlayModule.register(this.mContainer);
+	this.mTurnSequenceBarModule.register(this.mContainer);
+	this.mOrientationOverlayModule.register(this.mContainer);
 
 	this.mTopbarEventLogModule.register(this.mLeftModuleContainer);
 	this.mTopbarRoundInformationModule.register(this.mMiddleModuleContainer);
@@ -156,8 +156,8 @@ TacticalScreen.prototype.registerModules = function ()
 
 TacticalScreen.prototype.unregisterModules = function ()
 {
-    this.mTurnSequenceBarModule.unregister();
-    this.mOrientationOverlayModule.unregister();
+	this.mTurnSequenceBarModule.unregister();
+	this.mOrientationOverlayModule.unregister();
 
 	this.mTopbarEventLogModule.unregister();
 	this.mTopbarRoundInformationModule.unregister();
@@ -168,111 +168,111 @@ TacticalScreen.prototype.unregisterModules = function ()
 TacticalScreen.prototype.create = function(_parentDiv)
 {
 	this.createDIV(_parentDiv);
-    this.registerModules();
+	this.registerModules();
 };
 
 TacticalScreen.prototype.destroy = function()
 {
-    this.unregisterModules();
-    this.destroyDIV();
+	this.unregisterModules();
+	this.destroyDIV();
 };
 
 
 TacticalScreen.prototype.register = function (_parentDiv)
 {
-    console.log('TacticalScreen::REGISTER');
+	console.log('TacticalScreen::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Tactical Screen. Reason: Tactical Screen is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Tactical Screen. Reason: Tactical Screen is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 TacticalScreen.prototype.unregister = function ()
 {
-    console.log('TacticalScreen::UNREGISTER');
+	console.log('TacticalScreen::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Tactical Screen. Reason: Tactical Screen is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Tactical Screen. Reason: Tactical Screen is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
 TacticalScreen.prototype.showTopbar = function (_startFallback, _finishFallback)
 {
-    this.mTopBarContainer.velocity("finish", true).velocity({ top: '0' }, {
-        duration: this.mShowHideModulesDelay,
-        easing: 'swing',
-        begin: function() {
-            $(this).removeClass('display-none').addClass('display-block');
-            if (jQuery.isFunction(_startFallback))
-            {
-                _startFallback();
-            }
-        },
-        complete: function() {
-            if (jQuery.isFunction(_finishFallback))
-            {
-                _finishFallback();
-            }
-        }
-    });
+	this.mTopBarContainer.velocity("finish", true).velocity({ top: '0' }, {
+		duration: this.mShowHideModulesDelay,
+		easing: 'swing',
+		begin: function() {
+			$(this).removeClass('display-none').addClass('display-block');
+			if (jQuery.isFunction(_startFallback))
+			{
+				_startFallback();
+			}
+		},
+		complete: function() {
+			if (jQuery.isFunction(_finishFallback))
+			{
+				_finishFallback();
+			}
+		}
+	});
 };
 
 TacticalScreen.prototype.hideTopbar = function (_startFallback, _finishFallback)
 {
-    this.mTopBarContainer.velocity("finish", true).velocity({ top: '-10.0rem' }, {
-        duration: this.mShowHideModulesDelay,
-        easing: 'swing',
-        begin: function() {
-            if (jQuery.isFunction(_startFallback))
-            {
-                _startFallback();
-            }
-        },
-        complete: function() {
-            $(this).removeClass('display-block').addClass('display-none');
-            if (jQuery.isFunction(_finishFallback))
-            {
-                _finishFallback();
-            }
-        }
-    });
+	this.mTopBarContainer.velocity("finish", true).velocity({ top: '-10.0rem' }, {
+		duration: this.mShowHideModulesDelay,
+		easing: 'swing',
+		begin: function() {
+			if (jQuery.isFunction(_startFallback))
+			{
+				_startFallback();
+			}
+		},
+		complete: function() {
+			$(this).removeClass('display-block').addClass('display-none');
+			if (jQuery.isFunction(_finishFallback))
+			{
+				_finishFallback();
+			}
+		}
+	});
 };
 
 
 TacticalScreen.prototype.show = function ()
 {
-    this.showTopbar(jQuery.proxy(function () {
-            this.mContainer.removeClass('display-none').addClass('display-block');
-            this.notifyBackendOnAnimating();
-        }, this),
-        jQuery.proxy(function () {
-            this.notifyBackendOnShown();
-        }, this));
-    this.mTurnSequenceBarModule.show(this.mShowHideModulesDelay);
+	this.showTopbar(jQuery.proxy(function () {
+			this.mContainer.removeClass('display-none').addClass('display-block');
+			this.notifyBackendOnAnimating();
+		}, this),
+		jQuery.proxy(function () {
+			this.notifyBackendOnShown();
+		}, this));
+	this.mTurnSequenceBarModule.show(this.mShowHideModulesDelay);
 };
 
 TacticalScreen.prototype.hide = function ()
 {
-    this.hideTopbar(jQuery.proxy(function () {
-            this.notifyBackendOnAnimating();
-        }, this),
-        jQuery.proxy(function () {
-            this.mContainer.removeClass('display-block').addClass('display-none');
-            this.notifyBackendOnHidden();
-        }, this));
-    this.mTurnSequenceBarModule.hide(this.mShowHideModulesDelay);
+	this.hideTopbar(jQuery.proxy(function () {
+			this.notifyBackendOnAnimating();
+		}, this),
+		jQuery.proxy(function () {
+			this.mContainer.removeClass('display-block').addClass('display-none');
+			this.notifyBackendOnHidden();
+		}, this));
+	this.mTurnSequenceBarModule.hide(this.mShowHideModulesDelay);
 };
 
 
@@ -284,7 +284,7 @@ TacticalScreen.prototype.getModule = function (_name)
 		case 'TopbarEventLogModule': return this.mTopbarEventLogModule;
 		case 'TopbarOptionsModule': return this.mTopbarOptionsModule;
 		case 'OrientationOverlayModule': return this.mOrientationOverlayModule;
-        case 'TurnSequenceBarModule': return this.mTurnSequenceBarModule;
+		case 'TurnSequenceBarModule': return this.mTurnSequenceBarModule;
 		default: return null;
 	}
 };
@@ -296,7 +296,7 @@ TacticalScreen.prototype.getModules = function ()
 		{ name: 'TopbarEventLogModule', module: this.mTopbarEventLogModule },
 		{ name: 'TopbarOptionsModule', module: this.mTopbarOptionsModule },
 		{ name: 'OrientationOverlayModule', module: this.mOrientationOverlayModule },
-        { name: 'TurnSequenceBarModule', module: this.mTurnSequenceBarModule }
+		{ name: 'TurnSequenceBarModule', module: this.mTurnSequenceBarModule }
 	];
 };
 
@@ -319,24 +319,24 @@ TacticalScreen.prototype.notifyBackendOnDisconnected = function ()
 
 TacticalScreen.prototype.notifyBackendOnShown = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenShown');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenShown');
+	}
 };
 
 TacticalScreen.prototype.notifyBackendOnHidden = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenHidden');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenHidden');
+	}
 };
 
 TacticalScreen.prototype.notifyBackendOnAnimating = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenAnimating');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenAnimating');
+	}
 };

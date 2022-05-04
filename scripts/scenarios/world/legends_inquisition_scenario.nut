@@ -110,7 +110,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		if (armor != null)
 		{
 			local chains = [
-                [1, "chain/legend_armor_mail_shirt"],
+				[1, "chain/legend_armor_mail_shirt"],
 				[1, "chain/legend_armor_mail_shirt_simple"],
 				[1, "chain/legend_armor_short_mail"]
 			]
@@ -287,7 +287,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;

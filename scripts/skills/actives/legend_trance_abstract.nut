@@ -1,15 +1,15 @@
 this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
-    m = {
-        IsInTrance = false,
-        IsSameTurn = false,
+	m = {
+		IsInTrance = false,
+		IsSameTurn = false,
 		BaseFatigueCost = 50,
 		BaseAPCost = 5,
-        ToggleOnDescription = "",
-        ToggleOffDescription = ""
-    },
-    function create() //this trance abstract is for trances which are wrapped into 1 active, ee read omens or scry trances
-    {   
-        this.m.Type = this.Const.SkillType.Active;
+		ToggleOnDescription = "",
+		ToggleOffDescription = ""
+	},
+	function create() //this trance abstract is for trances which are wrapped into 1 active, ee read omens or scry trances
+	{   
+		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 5;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -21,9 +21,9 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCost = this.m.BaseFatigueCost;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
-    }
+	}
 
-    function getTooltip()
+	function getTooltip()
 	{
 		local ret = [
 			{
@@ -45,25 +45,25 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-    function onCombatFinished()
+	function onCombatFinished()
 	{
 		this.m.IsInTrance = false;
 	}
 
 
-    function doTranceEndTurn() {} //Put trances that toggle end of turn here
-    function doTranceStartTurn() {} //Put trances that toggle start of turn here
-    function removeAll() {} //If your trance adds a skill in swapOn() you can override this to remove em all
+	function doTranceEndTurn() {} //Put trances that toggle end of turn here
+	function doTranceStartTurn() {} //Put trances that toggle start of turn here
+	function removeAll() {} //If your trance adds a skill in swapOn() you can override this to remove em all
 
-    function onTurnEnd()
-    {
-        if (this.m.IsInTrance)
+	function onTurnEnd()
+	{
+		if (this.m.IsInTrance)
 		{
 			this.doTranceEndTurn();
 		}
-    }
-    
-    function onTurnStart()
+	}
+	
+	function onTurnStart()
 	{
 		if (this.m.IsInTrance)
 		{
@@ -72,21 +72,21 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-    function onUse( _user, _targetTile )
+	function onUse( _user, _targetTile )
 	{
-        if (this.m.IsInTrance)
-        {
-            this.swapOff();
-        }
-        else
-        {
-            this.swapOn();
-        }
-        this.m.IsInTrance = !this.m.IsInTrance;
+		if (this.m.IsInTrance)
+		{
+			this.swapOff();
+		}
+		else
+		{
+			this.swapOn();
+		}
+		this.m.IsInTrance = !this.m.IsInTrance;
 		return true;
 	}
 
-    function onUpdate( _properties )
+	function onUpdate( _properties )
 	{
 		if (_properties.IsStunned)
 		{
@@ -98,20 +98,20 @@ this.legend_trance_abstract <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-    function swapOn()
-    {
-        this.m.Description = this.m.ToggleOffDescription;
-        this.getContainer().getActor().setActionPoints(0);
+	function swapOn()
+	{
+		this.m.Description = this.m.ToggleOffDescription;
+		this.getContainer().getActor().setActionPoints(0);
 		this.m.FatigueCost = 0;
 		this.m.ActionPointCost = 0;
-    }
+	}
 
-    function swapOff()
-    {
-        this.m.Description = this.m.ToggleOnDescription;
+	function swapOff()
+	{
+		this.m.Description = this.m.ToggleOnDescription;
 		this.m.FatigueCost = this.m.BaseFatigueCost;
 		this.m.ActionPointCost = this.m.BaseAPCost;	
 		this.removeAll();
-    }
+	}
 
 });

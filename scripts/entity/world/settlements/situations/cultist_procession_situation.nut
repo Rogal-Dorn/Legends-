@@ -43,7 +43,7 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
 		_draftList.push("cultist_background");
@@ -83,7 +83,7 @@ this.cultist_procession_situation <- this.inherit("scripts/entity/world/settleme
 				r = this.Math.rand(0, 2);
 				if (r == 1)
 				{
-			     _draftList.push("legend_ancient_summoner_background");
+				 _draftList.push("legend_ancient_summoner_background");
 				}
 			}
 			else

@@ -32,7 +32,7 @@ this.patch_hill_desert <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 						if (this.Math.rand(1, 100) < 35)
 						{
-							  // [106]  OP_JMP            0    249    0    0
+							  // [106]  OP_JMP			0	249	0	0
 						}
 						else
 						{
@@ -45,7 +45,7 @@ this.patch_hill_desert <- this.inherit("scripts/mapgen/tactical_template", {
 						{
 							if (this.Math.rand(1, 100) < 15)
 							{
-								  // [174]  OP_JMP            0    181    0    0
+								  // [174]  OP_JMP			0	181	0	0
 							}
 							else
 							{

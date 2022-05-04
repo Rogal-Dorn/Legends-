@@ -45,7 +45,7 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");
 		_draftList.push("beggar_background");

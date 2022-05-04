@@ -11,9 +11,9 @@
 
 
 var ScenarioMenuModuleIdentifier = {
-    Scenario: {
-        Id: 'id',
-        Name: 'name',
-        Description: 'description'
-    }
+	Scenario: {
+		Id: 'id',
+		Name: 'name',
+		Description: 'description'
+	}
 };

@@ -15,11 +15,11 @@
 	background-color: rgba(0, 0, 0, 0.8);
 	border-radius: 0 0 10px 0;
 
-	width       : 8.0rem;
-	height      : 2.2rem;
+	width	   : 8.0rem;
+	height	  : 2.2rem;
 	padding-left: 1.0rem;
 	padding-top : 0.4rem;
-	position    : absolute; 
+	position	: absolute; 
 
 	pointer-events: none;
 }

@@ -16,7 +16,7 @@ this.legend_armor_vala_cloak <- this.inherit("scripts/items/legend_armor/legend_
 		this.m.Condition = 80;
 		this.m.ConditionMax = 80;
 		this.m.StaminaModifier = 0;
-        // this.blockUpgrades();
+		// this.blockUpgrades();
 		// this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
 		// this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
 	}

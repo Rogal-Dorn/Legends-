@@ -158,7 +158,7 @@ this.tactical_barbarian_camp <- this.inherit("scripts/mapgen/tactical_template",
 					}
 					else if (d <= 1)
 					{
-						  // [480]  OP_JMP            0    145    0    0
+						  // [480]  OP_JMP			0	145	0	0
 					}
 					else if (d >= 4 && this.Math.rand(1, 100) <= 2)
 					{

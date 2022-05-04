@@ -58,7 +58,7 @@ this.patrol_order <- this.inherit("scripts/ai/world/orders/move_order", {
 			local r = this.Math.rand(0, this.Math.max(3, s.len() - 1));
 			this.m.TargetTile = s[r].getTile();
 			return true;
-			  // [076]  OP_CLOSE          0      3    0    0
+			  // [076]  OP_CLOSE		  0	  3	0	0
 		}
 
 		_entity.setOrders("Patrolling");
