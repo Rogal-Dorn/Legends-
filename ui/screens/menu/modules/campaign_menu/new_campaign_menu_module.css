@@ -144,6 +144,11 @@
 {
 	/*margin-top: 20.0rem;*/
 }
+.new-campaign-menu-module > .dialog .content .row .unexplored-map-control
+{
+	margin-top: 17rem;
+}
+
 
 .new-campaign-menu-module > .dialog .content .control label
 {
@@ -157,7 +162,6 @@
 	white-space: nowrap;
 	line-height: 2.0rem;
 }
-
 
 .new-campaign-menu-module > .dialog .footer .l-button-bar
 {
