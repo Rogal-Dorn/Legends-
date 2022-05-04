@@ -281,6 +281,33 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			this.m.EscortedEntity = this.WeakTableRef(_e);
 		}
+
+		if (this.m.EscortedEntity != null && !this.m.EscortedEntity.isNull() && this.m.EscortedEntity.isAlive())
+		{
+			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
+
+			if (!this.isPaused())
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(2);
+			}
+			else
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+			}
+		}
+		else
+		{
+			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
+
+			if (!this.isPaused())
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(1);
+			}
+			else
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+			}
+		}
 	}
 
 	function autosave()
@@ -541,8 +568,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		dayTimeModule.setOnTimePausePressedListener(this.setPausedTime.bindenv(this));
 		dayTimeModule.setOnTimeNormalPressedListener(this.setNormalTime.bindenv(this));
 		dayTimeModule.setOnTimeFastPressedListener(this.setFastTime.bindenv(this));
-		dayTimeModule.setOnTimeVeryfastPressedListener(this.setVeryfastTime.bindenv(this));
-		dayTimeModule.setOnTimeLudicrousPressedListener(this.setLudicrousTime.bindenv(this));
 		this.m.CombatDialog <- this.new("scripts/ui/screens/world/world_combat_dialog");
 		this.m.CombatDialog.setOnEngageButtonPressedListener(this.combat_dialog_module_onEngagePressed.bindenv(this));
 		this.m.CombatDialog.setOnCancelButtonPressedListener(this.combat_dialog_module_onCancelPressed.bindenv(this));
@@ -756,12 +781,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (this.World.Camp.isCamping())
 		{
-			//this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
+			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 
 			if (!this.isPaused())
 			{
-				//this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-				this.m.Camp.update(this);
+				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
 			}
 		}
 
@@ -836,7 +860,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Player.setPath(null);
 				this.m.Player.setDestination(this.m.AutoAttack.getPos());
 			}
-			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.100000001)
+			else if (!this.m.Player.hasPath() || this.Time.getVirtualTimeF() - this.m.LastAutoAttackPath >= 0.1)
 			{
 				local navSettings = this.World.getNavigator().createSettings();
 				navSettings.ActionPointCosts = this.Const.World.TerrainTypeNavCost;
@@ -938,12 +962,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			if (_mouse.getState() == 3)
 			{
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.4);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 			else if (_mouse.getState() == 4)
 			{
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.4);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.3);
 				return true;
 			}
 		}
@@ -1038,12 +1062,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				{
 					if (this.World.Camp.isCamping())
 					{
-						if (this.isPaused())
-						{
-							return false;
-						}
 						this.onCamp();
-						return true;
 					}
 
 					this.m.Player.setPath(null);
@@ -1053,12 +1072,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 				{
 					if (this.World.Camp.isCamping())
 					{
-						if (this.isPaused())
-						{
-							return false;
-						}
 						this.onCamp();
-						return true;
 					}
 
 					local navSettings = this.World.getNavigator().createSettings();
@@ -1114,14 +1128,14 @@ this.world_state <- this.inherit("scripts/states/state", {
 	function setupWeather()
 	{
 		local clouds = this.World.getWeather().createCloudSettings();
-		clouds.MinClouds = 60;
-		clouds.MaxClouds = 80;
-		clouds.MinVelocity = 25.0;
-		clouds.MaxVelocity = 75.0;
-		clouds.MinAlpha = 0.6;
-		clouds.MaxAlpha = 0.9;
-		clouds.MinScale = 0.8;
-		clouds.MaxScale = 1.4;
+		clouds.MinClouds = 70;
+		clouds.MaxClouds = 70;
+		clouds.MinVelocity = 35.0;
+		clouds.MaxVelocity = 65.0;
+		clouds.MinAlpha = 0.8;
+		clouds.MaxAlpha = 0.8;
+		clouds.MinScale = 1.0;
+		clouds.MaxScale = 1.25;
 		this.World.getWeather().buildCloudCover(clouds);
 		local birds = this.World.getWeather().createBirdSettings();
 		birds.MinBirds = 12;
@@ -1136,16 +1150,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.m.IsRunningUpdatesWhilePaused = true;
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 500, function ( _tag )
-		{
-			this.setPause(true);
-		}.bindenv(this), null);
-
+		this.setPause(true);
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
 		this.Const.World.settingsUpdate();
 		local worldmap = this.MapGen.get("world.worldmap_generator");
-		local minX = this.Const.World.Settings.SizeX;
-		local minY = this.Const.World.Settings.SizeY;
+		local minX = worldmap.getMinX();
+		local minY = worldmap.getMinY();
 		this.World.resizeScene(minX, minY);
 		this.logInfo("Generating world with following settings...")
 		foreach (k,v in this.Const.World.Settings)
@@ -1158,46 +1168,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 			W = minX,
 			H = minY
 		}, this.m.CampaignSettings);
-		// local tries = 200;
-		// while (tries > 0)
-		// {
-		// 	local result = worldmap.fill({
-		// 		X = 0,
-		// 		Y = 0,
-		// 		W = minX,
-		// 		H = minY
-		// 	}, this.m.CampaignSettings);
-		// 	if (result)
-		// 	{
-		// 		break;
-		// 	}
-		// 	tries = --tries
-		// 	this.logInfo("Invalid map. Regenerating...")
-		// 	//Failures are because of water issues, help map generation towards default results
-		// 	// if (tries < 195)
-		// 	// {
-		// 	// 	if (this.Const.World.Settings.LandMassMult > 1.4) {
-		// 	// 		this.Const.World.Settings.LandMassMult -= 0.05;
-		// 	// 	} else {
-		// 	// 		this.Const.World.Settings.LandMassMult += 0.05;
-		// 	// 	}
-
-		// 	// 	if (this.Const.World.Settings.WaterConnectivity > 38) {
-		// 	// 		this.Const.World.Settings.WaterConnectivity -= 1;
-		// 	// 	} else {
-		// 	// 		this.Const.World.Settings.WaterConnectivity += 1;
-		// 	// 	}
-		// 	// 	this.logInfo("LandMassMult = " + this.Const.World.Settings.LandMassMult);
-		// 	// 	this.logInfo("WaterConnectivity = " + this.Const.World.Settings.WaterConnectivity);
-		// 	// }
-		// }
 		this.m.Assets.init();
 		this.m.Camp.init();
 		//this.LoadingScreen.updateProgress("Creating Factions ...");
 		this.World.FactionManager.createFactions(this.m.CampaignSettings);
-		//this.LoadingScreen.updateProgress("Adding Roads ...");
 		this.World.EntityManager.buildRoadAmbushSpots();
 		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+
 		if (this.m.CampaignSettings != null)
 		{
 			this.m.Assets.setCampaignSettings(this.m.CampaignSettings);
@@ -1206,7 +1183,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.World.uncoverFogOfWar(this.getPlayer().getTile().Pos, 900.0);
 		}
 
-		this.World.FactionManager.uncoverSettlements(::Legends.Mod.ModSettings.getSetting("ExplorationMode").getValue());
+		this.World.FactionManager.uncoverSettlements(this.m.CampaignSettings.ExplorationMode);
 		this.World.FactionManager.runSimulation();
 		this.m.CampaignSettings = null;
 		this.setupWeather();
@@ -1271,11 +1248,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.load(_campaignFileName);
 		this.setupWeather();
 		this.updateDayTime();
-		local bros = this.World.getPlayerRoster().getAll();
-		// foreach (bro in bros)
-		// {
-		// 	this.m.IDToRef[bro.getCompanyID()] = this.WeakTableRef(bro);
-		// }
 		this.setWorldmapMusic(false);
 		this.World.Crafting.resetAllBlueprints();
 		this.setPause(true);
@@ -1340,14 +1312,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 					this.showCombatDialog();
 				}
 			}
-	//		else if (this.m.IsForcingAttack == true  && _location.isAttackable() && _location.isAlliedWithPlayer())
-	//		{
-	//			if (_location.onEnteringCombatWithPlayer())
-	//			{
-	//				this.showCombatDialog();
-	//			}
-	//		}
-
 		}
 
 		return true;
@@ -1365,7 +1329,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(128, 0);
+		factions.resize(32, 0); // handled by MSU
 
 		foreach( party in raw_parties )
 		{
@@ -1462,11 +1426,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
-						// if (t.Faction >= factions.len())
-						// {
-						// 	factions.resize(t.Faction + 1, 0);
-						// }
-						++factions[t.Faction];
+						++factions[party.getFaction()];
 					}
 				}
 			}
@@ -1656,8 +1616,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			foreach( party in this.m.PartiesInCombat )
 			{
-				local partyNameOnCrash = party.getName();
-				local partyIDOnCrash = party.getID();
 				if (party.isLocation() && !party.isAlliedWithPlayer())
 				{
 					nonLocationBattle = false;
@@ -1714,7 +1672,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished() || this.commanderDied())
 		{
-		if (this.World.Assets.isIronman())
+			if (this.World.Assets.isIronman())
 			{
 				this.autosave();
 			}
@@ -1769,56 +1727,63 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			return;
 		}
-		local speed = this.m.LastWorldSpeedMult;
-		this.World.Camp.onCamp();
-		this.m.LastWorldSpeedMult = speed;
-		if (this.World.Camp.isCamping())
+
+		this.World.Assets.setCamping(!this.World.Assets.isCamping());
+
+		if (this.World.Assets.isCamping())
 		{
 			this.m.Player.setDestination(null);
 			this.m.Player.setPath(null);
 			this.m.AutoEnterLocation = null;
 			this.m.AutoAttack = null;
-			/*this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
+		}
+
+		if (this.World.Assets.isCamping())
+		{
+			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
-			this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-			this.World.TopbarDayTimeModule.updateTimeButtons(2);*/
-			this.setPause(false);
+
+			if (!this.isPaused())
+			{
+				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+				this.World.TopbarDayTimeModule.updateTimeButtons(2);
+			}
+			else
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+			}
 		}
 		else
 		{
-			this.updateTopbarAssets();
-			/*this.m.LastWorldSpeedMult = 1.0;
+			this.m.LastWorldSpeedMult = 1.0;
 			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
-			this.World.setSpeedMult(1.0);
-			this.World.TopbarDayTimeModule.updateTimeButtons(1);*/
-			this.setPause(true);
+
+			if (!this.isPaused())
+			{
+				this.World.setSpeedMult(1.0);
+				this.World.TopbarDayTimeModule.updateTimeButtons(1);
+			}
+			else
+			{
+				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+			}
 		}
 
-		// 	if (!this.isPaused())
-		// 	{
-
-		// 	}
-		// 	else
-		// 	{
-		// 		this.World.TopbarDayTimeModule.updateTimeButtons(0);
-		// 	}
-		// }
-
-		// if (!this.isPaused())
-		// {
-		// 	if (this.World.Camp.isCamping())
-		// 	{
-		// 		this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
-		// 	}
-		// 	else
-		// 	{
-		// 		this.World.TopbarDayTimeModule.hideMessage();
-		// 	}
-		// }
-		// else
-		// {
-		// 	this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
-		// }
+		if (!this.isPaused())
+		{
+			if (this.World.Assets.isCamping())
+			{
+				this.World.TopbarDayTimeModule.showMessage("ENCAMPED", "");
+			}
+			else
+			{
+				this.World.TopbarDayTimeModule.hideMessage();
+			}
+		}
+		else
+		{
+			this.World.TopbarDayTimeModule.showMessage("PAUSED", "(Press Spacebar)");
+		}
 	}
 
 	function showDialogPopup( _title, _text, _okCallback, _cancelCallback, _isMonologue = false )
@@ -2068,7 +2033,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			this.m.LastWorldSpeedMult = 1.0;
+			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			{
+				this.m.LastWorldSpeedMult = 1.0;
+			}
+
 			this.setPause(false);
 		}
 	}
@@ -2077,25 +2046,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
-			this.setPause(false);
-		}
-	}
+			if (!this.World.Assets.isCamping() && this.m.EscortedEntity == null)
+			{
+				this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
+			}
 
-	function setVeryfastTime()
-	{
-		if (!this.m.MenuStack.hasBacksteps())
-		{
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.VeryfastSpeedMult;
-			this.setPause(false);
-		}
-	}
-
-	function setLudicrousTime()
-	{
-		if (!this.m.MenuStack.hasBacksteps())
-		{
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.LudicrousSpeedMult;
 			this.setPause(false);
 		}
 	}
@@ -2652,8 +2607,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
 			this.m.IsForcingAttack = false;
-			this.setAutoPause(false);
-			this.setPause(true);
+			this.setAutoPause(true);
+			this.m.AutoUnpauseFrame = this.Time.getFrame() + 1;
 		}, function ()
 		{
 			return !this.m.WorldTownScreen.isAnimating();
@@ -3677,20 +3632,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 				break;
 
 			case 1:
-				this.setNormalTime();
-				break;
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.setNormalTime();
+					break;
+				}
 
 			case 2:
-				this.setFastTime();
-				break;
-
-			case 3:
-				this.setVeryfastTime();
-				break;
-
-			case 4:
-				this.setLudicrousTime();
-				break;
+				if (!this.m.MenuStack.hasBacksteps())
+				{
+					this.setFastTime();
+					break;
+				}
 
 			case 16:
 				if (!this.m.MenuStack.hasBacksteps())
@@ -3852,12 +3805,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.20);
+				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.20);
+				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 96:
@@ -3943,7 +3896,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		meta.setInt("difficulty", this.World.Assets.getCombatDifficulty());
 		meta.setInt("difficulty2", this.World.Assets.getEconomicDifficulty());
 		meta.setInt("ironman", this.World.Assets.isIronman() ? 1 : 0);
-		meta.setInt("dlc", this.Const.DLC.Mask);		
+		meta.setInt("dlc", this.Const.DLC.Mask);
 	}
 
 	function onBeforeDeserialize( _in )
@@ -3956,7 +3909,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.LastTileHovered = null;
 		this.m.LastWorldSpeedMult = 1.0;
 		this.m.CustomZoom = 1.0;
-		this.m.Player = null
+		this.m.Player = null;
 		this.m.CombatStartTime = 0;
 		this.m.LastEnemyDiscoveredSoundTime = 0.0;
 		this.m.IsTriggeringContractUpdatesOnce = true;
@@ -3990,7 +3943,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 			_out.writeI16(r.Center.Coords.Y);
 			_out.writeF32(r.Discovered);
 		}
-		this.LegendsMod.onSerialize(_out)
+
 		this.World.Flags.onSerialize(_out);
 		this.World.FactionManager.onSerialize(_out);
 		this.World.EntityManager.onSerialize(_out);
@@ -4041,7 +3994,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 				this.m.Regions.push(region);
 			}
 		}
-		this.LegendsMod.onDeserialize(_in)
 		this.World.Flags.onDeserialize(_in);
 		this.World.FactionManager.onDeserialize(_in);
 		this.World.EntityManager.onDeserialize(_in);
@@ -4067,15 +4019,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 		this.World.Statistics.onDeserialize(_in);
 		this.m.LastIsDaytime = !this.World.getTime().IsDaytime;
-
-		if (_in.getMetaData().getVersion() >= 15)
-		{
-			this.setCampingAllowed(_in.readBool());
-		}
-		else
-		{
-			this.setCampingAllowed(true);
-		}
+		this.setCampingAllowed(_in.readBool());
 
 		if (_in.getMetaData().getVersion() >= 38)
 		{
