@@ -544,17 +544,7 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			increaseArea: '30%'
 		});
 
-		// seed
-		var row = $('<div class="row map-seed-control" />');
-		leftColumn.append(row);
-		var title = $('<div class="title title-font-big font-color-title">Map Seed</div>');
-		row.append(title);
-
-		var inputLayout = $('<div class="l-input"/>');
-		row.append(inputLayout);
-		this.mSeed = inputLayout.createInput('', 0, 10, 1, null, 'title-font-big font-bold font-color-brother-name');
-
-		var explorationControl = $('<div class="control ironman-control"/>');
+		var explorationControl = $('<div class="control unexplored-map-control"/>');
 		row.append(explorationControl);
 		this.mExplorationCheckbox = $('<input type="checkbox" id="cb-exploration"/>');
 		explorationControl.append(this.mExplorationCheckbox);
@@ -566,6 +556,15 @@ NewCampaignMenuModule.prototype.createDIV = function (_parentDiv)
 			increaseArea: '30%'
 		});
 
+		// seed
+		var row = $('<div class="row map-seed-control" />');
+		leftColumn.append(row);
+		var title = $('<div class="title title-font-big font-color-title">Map Seed</div>');
+		row.append(title);
+
+		var inputLayout = $('<div class="l-input"/>');
+		row.append(inputLayout);
+		this.mSeed = inputLayout.createInput('', 0, 10, 1, null, 'title-font-big font-bold font-color-brother-name');
 
 	this.mFirstPanel = $('<div class="display-none"/>');
 	contentContainer.append(this.mFirstPanel);
