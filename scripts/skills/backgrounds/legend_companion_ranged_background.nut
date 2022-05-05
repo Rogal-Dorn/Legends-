@@ -104,10 +104,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 	{
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Ethnicity = this.Math.rand(0, 2);
 		if (this.m.Ethnicity == 0)
 		{

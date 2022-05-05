@@ -137,20 +137,9 @@ this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/chara
 
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-			{
-				r = this.Math.rand(0, 19);
-			}
-		}
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 19)
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

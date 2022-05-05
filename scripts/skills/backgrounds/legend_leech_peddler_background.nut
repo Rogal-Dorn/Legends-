@@ -105,10 +105,7 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 			}
 		}
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;

@@ -205,10 +205,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AfricanFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.African;

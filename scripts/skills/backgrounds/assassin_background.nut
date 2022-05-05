@@ -111,10 +111,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

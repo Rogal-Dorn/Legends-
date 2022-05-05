@@ -104,11 +104,8 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	function setGender(_gender = -1)
 	{
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
+		if (_gender != 1) return;
 
-		if (r != 1)
-		{
-			return
-		}
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -118,10 +115,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the hunter eventually saw fit to leave it all behind. She returned to the forests and fields, hunting deer and small game. She rarely showed the grim reality of hunting humans, but you have to imagine she\'d just rather stop doing it. As far as you know, she\'s doing well for herself these days. She purchased a bit of land and helps guide nobles on pricy hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the hunter departed from the company and returned to game hunting. Unfortunately, a hunting trip with a nobleman went awry when the lord was gored through both cheeks by a boar. The hunter, feeling she\'d be blamed, shot by the nobleman and his guard and fled through the forests on her own. She has not been seen since.";
-
 	}
-
-
 
 	function onBuildDescription()
 	{
@@ -170,12 +164,10 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	function onAddEquipment()
 	{
 		local items = this.getContainer().getActor().getItems();
-		local r;
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-		r = this.Math.rand(0, 1);
 
-		if (r == 0)
+		if (this.Math.rand(0, 1) == 0)
 		{
 			items.addToBag(this.new("scripts/items/weapons/knife"));
 		}

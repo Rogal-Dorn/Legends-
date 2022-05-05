@@ -110,10 +110,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.OldFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

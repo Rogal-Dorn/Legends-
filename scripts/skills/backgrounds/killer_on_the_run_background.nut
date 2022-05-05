@@ -91,10 +91,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 			}
 		}
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
