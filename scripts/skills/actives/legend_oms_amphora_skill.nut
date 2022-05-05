@@ -4,10 +4,10 @@ this.legend_oms_amphora_skill <- ::inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_oms_amphora_skill";
 		this.m.Name = "Drink from Amphora";
-		this.m.Description = "TODO LUFT";
-		this.m.Icon = "skills/active_96.png"; //TODO LUFT
-		this.m.IconDisabled = "skills/active_96_sw.png"; //TODO LUFT
-		this.m.Overlay = "active_96"; //TODO LUFT
+		this.m.Description = "Drink from the Amphora. You can\'t be sure what this might do...";
+		this.m.Icon = "skills/active_96.png"; //PLACEHOLDER
+		this.m.IconDisabled = "skills/active_96_sw.png"; //PLACEHOLDER
+		this.m.Overlay = "active_96"; //PLACEHOLDER
 		this.m.SoundOnUse = [
 			"sounds/combat/drink_01.wav",
 			"sounds/combat/drink_02.wav",
@@ -21,10 +21,10 @@ this.legend_oms_amphora_skill <- ::inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.ActionPointCost = 3; //TODO LUFT
-		this.m.FatigueCost = 5; //TODO LUFT
-		this.m.MinRange = 0; //TODO LUFT
-		this.m.MaxRange = 1; //TODO LUFT
+		this.m.ActionPointCost = 3;
+		this.m.FatigueCost = 5; 
+		this.m.MinRange = 0; 
+		this.m.MaxRange = 1; 
 	}
 
 	function getTooltip()
@@ -79,22 +79,25 @@ this.legend_oms_amphora_skill <- ::inherit("scripts/skills/skill", {
 		}
 
 		local effects = ::MSU.Class.WeightedContainer([
-			[1.0 / 15, "scripts/skills/effects/iron_will_effect"],
-			[1.0 / 10, "scripts/skills/effects/antidote_effect"],
-			[1.0 / 10, "scripts/skills/effects/bleeding_effect"],
-			[1.0 / 15, "scripts/skills/effects/cat_potion_effect"],
-			[1.0 / 10, "scripts/skills/effects/chilled_effect"],
-			[1.0 / 10, "scripts/skills/effects/dazed_effect"],
-			[1.0 / 8, "scripts/skills/effects/legend_beer_buzz_effect"],
-			[1.0 / 30, "scripts/skills/effects/legend_greenwood_sap_effect"],
-			[1.0 / 8, "scripts/skills/effects/legend_mead_warmth_effect"],
-			[1.0 / 15, "scripts/skills/effects/lionheart_potion_effect"],
-			[1.0 / 8, "scripts/skills/effects/legend_wine_tipsy_effect"],
-			[1.0 / 15, "scripts/skills/effects/cat_potion_effect"],
-			[1.0 / 12, "scripts/skills/effects/recovery_potion_effect"],
-			[1.0 / 9, "scripts/skills/effects/goblin_poison_effect"],
-			[1.0 / 11, "scripts/skills/effects/spider_poison_effect"],
-			[1.0 / 30, "scripts/skills/effects/legend_redback_spider_poison_effect"]
+			[0.5, "scripts/skills/effects/antidote_effect"], 
+			[0.5, "scripts/skills/effects/bleeding_effect"], 
+			[0.5, "scripts/skills/effects/legend_beer_buzz_effect"],
+			[0.5, "scripts/skills/effects/legend_mead_warmth_effect"],
+			[0.5, "scripts/skills/effects/legend_wine_tipsy_effect"],
+
+			[0.4, "scripts/skills/effects/cat_potion_effect"],
+			[0.4, "scripts/skills/effects/lionheart_potion_effect"],
+			[0.4, "scripts/skills/effects/dazed_effect"],
+
+			[0.3, "scripts/skills/effects/recovery_potion_effect"],
+			[0.3, "scripts/skills/effects/chilled_effect"],
+			[0.3, "scripts/skills/effects/goblin_poison_effect"],
+
+			[0.2, "scripts/skills/effects/spider_poison_effect"],
+			[0.2, "scripts/skills/effects/iron_will_effect"], 
+			[0.2, "scripts/skills/effects/legend_redback_spider_poison_effect"],
+
+			[0.1, "scripts/skills/effects/legend_greenwood_sap_effect"]
 		]);
 
 		user.getSkills().add(::new(effects.roll()));
