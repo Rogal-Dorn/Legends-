@@ -82,15 +82,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
 		if (r != 1)
 		{
