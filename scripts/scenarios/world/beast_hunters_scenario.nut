@@ -217,7 +217,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.90) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.90; //1.0 = default
-				bro.getSkills().update();
 			}
 			else if (bro.getBackground().getID() == "background.beast_slayer")
 			{
@@ -225,7 +224,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.getBaseProperties().DailyWageMult *= 0.80; //1.0 = default
  				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
-				bro.getSkills().update();
 			}
 			else if (bro.getBackground().getID() == "background.legend_guildmaster")
 			{
@@ -233,21 +231,19 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.getBaseProperties().DailyWageMult *= 1.00; //1.0 = default
  				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
-				bro.getSkills().update();
 			}
 			else if (bro.getBackground().getID() == "background.legend_vala")
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.00; //1.0 = default
  				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
-				bro.getSkills().update();
 			}
 			else
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
-				bro.getSkills().update();
 			}
+			bro.getSkills().update();
 		}
 	}
 

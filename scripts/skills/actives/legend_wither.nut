@@ -35,32 +35,10 @@ this.legend_wither <- this.inherit("scripts/skills/skill", {
 		return "";
 	}
 
-function getTooltip()
-	{
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 2,
-				type = "description",
-				text = this.getDescription()
-			},
-			{
-				id = 3,
-				type = "text",
-				text = this.getCostString()
-			}
-		];
-	}
-
 	function getTooltip()
 	{
 		return this.skill.getDefaultUtilityTooltip();
 	}
-
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{

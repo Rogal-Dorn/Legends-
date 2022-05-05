@@ -1,7 +1,6 @@
 this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/event", {
 	m = {
-		Blacksmith = null,
-		numIngots = null
+		Blacksmith = null
 	},
 	function create()
 	{
@@ -65,9 +64,10 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 				});
 				local stash = this.World.Assets.getStash().getItems();
 
-				foreach( i, item in stash )
+				local numIngots = ::Math.rand(1, 2);
+				foreach (i, item in stash)
 				{
-					if (_event.m.numIngots != null && _event.m.numIngots >= 2)
+					if (item != null && item.getID() == "misc.iron_ingots")
 					{
 						stash[i] = null;
 						this.List.push({
@@ -75,7 +75,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 							icon = "ui/items/" + item.getIcon(),
 							text = "You lose " + item.getName()
 						});
-						break;
+						if (--numIngots == 0) break;
 					}
 				}
 
@@ -127,9 +127,10 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 				});
 				local stash = this.World.Assets.getStash().getItems();
 
-				foreach( i, item in stash )
+				local numIngots = ::Math.rand(1, 2);
+				foreach (i, item in stash)
 				{
-					if (_event.m.numIngots != null && _event.m.numIngots >= 2)
+					if (item != null && item.getID() == "misc.iron_ingots")
 					{
 						stash[i] = null;
 						this.List.push({
@@ -137,7 +138,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 							icon = "ui/items/" + item.getIcon(),
 							text = "You lose " + item.getName()
 						});
-						break;
+						if (--numIngots == 0) break;
 					}
 				}
 
@@ -198,17 +199,17 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() != "scenario.legends_crusader") //only crusader origin
+		{
+			return;
+		}
+
 		if (this.World.Assets.getMoney() < 3500)
 		{
 			return;
 		}
 
 		if (!this.World.getTime().IsDaytime)
-		{
-			return;
-		}
-
-		if (this.World.Assets.getOrigin().getID() != "scenario.legends_crusader") //only crusader origin
 		{
 			return;
 		}
@@ -243,11 +244,11 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 			if (item != null && item.getID() == "misc.iron_ingots")
 			{
 				numIngots = ++numIngots;
-				break;
+				if (numIngots >= 2) break;
 			}
 		}
 
-		if (numIngots == 0)
+		if (numIngots < 2)
 		{
 			return;
 		}
@@ -290,7 +291,6 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 	function onClear()
 	{
 		this.m.Blacksmith = null;
-		this.m.numIngots = null;
 	}
 
 });

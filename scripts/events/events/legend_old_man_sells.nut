@@ -173,7 +173,7 @@ this.legend_old_man_sells <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local money = this.Math.rand(489, 2582);
-				this.World.Assets.addMoney(+money);
+				this.World.Assets.addMoney(money);
 				this.List = [
 					{
 						id = 10,

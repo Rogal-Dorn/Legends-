@@ -187,8 +187,7 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 	function onAdded() // enables relationships
 	{
 		this.character_background.onAdded();
-		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/special/relationship_check"));
+		this.getContainer().add(this.new("scripts/skills/special/relationship_check"));
 	}
 
 	function onSetAppearance()
@@ -313,10 +312,4 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 			[1, "mercenary_billman_outfit_00"]
 		]))
 	}
-
-	function onUpdate( _properties )
-	{
-	}
-
 });
-

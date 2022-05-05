@@ -60,18 +60,12 @@ this.legend_cabal_puppet_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local currentTile = this.World.State.getPlayer().getTile();
-
-		if (!currentTile.HasRoad)
+		if (!this.World.State.getPlayer().getTile().HasRoad)
 		{
 			return;
 		}
 
 		this.m.Score = 7;
-	}
-
-	function onPrepare()
-	{
 	}
 
 	function onPrepareVariables( _vars )

@@ -205,11 +205,6 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
-		// if (r == 0)
-		// {
-		// 	_list.push("legend_puppet_background"); //Now via event
-		// }
-
 		local r;
 		r = this.Math.rand(0, 3);
 

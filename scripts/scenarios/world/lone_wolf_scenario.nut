@@ -22,25 +22,12 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local names = [];
 
-		for( local i = 0; i < 1; i = i ) //party size = 1
-		{
-			local bro;
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-
-			while (names.find(bro.getNameOnly()) != null)
-			{
-				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-			}
-
-			names.push(bro.getNameOnly());
-			i = ++i;
-		}
+		local bro = roster.create("scripts/entity/tactical/player");
+		bro.m.HireTime = this.Time.getVirtualTimeF();
+		bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 
 		local bros = roster.getAll(); //starting party
-		local talents;
 		bros[0].setStartValuesEx([
 			"legend_lonewolf_background"
 		]);
@@ -170,10 +157,10 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		foreach( i, bro in bros )
 		{
-			if (!bro.getBackground().getID() == "background.legend_donkey")
-			{
-				garbage.push(bro);
-			}
+            if (bro.getBackground().getID() != "background.legend_donkey")
+            {
+                garbage.push(bro);
+            }
 		}
 
 		foreach( g in garbage )

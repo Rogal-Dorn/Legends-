@@ -167,7 +167,6 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		{
 			return "{You\'ve come so far that you forgot where you came from and how it all started. Distant memories of gold grew into fame. But what point is fame and gold to those who are mortal? If you want to create a legacy you\'ll need to prove yourself first - but years spent alone training for battles that never came will make it hard for anyone to notice you outside of a tournament.}";
 		}
-
 	}
 
 	function onSetAppearance()
