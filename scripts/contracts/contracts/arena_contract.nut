@@ -965,22 +965,22 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 
 					case 3:
 						local r = this.Math.rand(1, 3); //Glad helmets
-						local item;
+						local helmet;
 
 						if (r == 1)
 						{
-							item = this.new("oriental/nomad_head_wrap");
-							item = this.new("helm/legend_helmet_southern_gladiator_helm_crested");
+							helmet = this.new("oriental/nomad_head_wrap");
+							helmet = this.new("helm/legend_helmet_southern_gladiator_helm_crested");
 						}
 						else if (r == 2)
 						{
-							item = this.new("oriental/nomad_head_wrap");
-							item = this.new("helm/legend_helmet_southern_gladiator_helm_split");
+							helmet = this.new("oriental/nomad_head_wrap");
+							helmet = this.new("helm/legend_helmet_southern_gladiator_helm_split");
 						}
 						else if (r == 3)
 						{
-							item = this.new("oriental/nomad_head_wrap");
-							item = this.new("helm/legend_helmet_southern_gladiator_helm_masked");
+							helmet = this.new("oriental/nomad_head_wrap");
+							helmet = this.new("helm/legend_helmet_southern_gladiator_helm_masked");
 						}
 						// local helmet = [
 						// 	[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)]

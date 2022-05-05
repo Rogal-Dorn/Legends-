@@ -38,11 +38,4 @@ this.legend_great_khopesh <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(this.new("scripts/skills/actives/decapitate"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
-

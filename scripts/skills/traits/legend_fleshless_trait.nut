@@ -2,7 +2,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 	m = {},
 	function create()
 	{
-		this.permanent_injury.create();
+		this.character_trait.create();
 		this.m.ID = "trait.legend_fleshless";
 		this.m.Name = "Fleshless";
 		this.m.Description = "All skin is rotted or torn away, only bones remain.";
@@ -59,7 +59,6 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 				text = "Has no eyes, Not affected by night."
 			}
 		];
-		this.addTooltipHint(ret);
 		return ret;
 	}
 
@@ -87,7 +86,6 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 	function onApplyAppearance()
 	{
 		local actor = this.getContainer().getActor();
-	//	local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];
 		local body = actor.getSprite("body");
 		body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
 		body.Saturation = 0.8;
@@ -106,24 +104,6 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 		head.setBrush("bust_skeleton_head");
 		head.Color = body.Color;
 		head.Saturation = body.Saturation;
-
-	//	local hair = actor.getSprite("hair");
-	//	hair.setBrush("hair_" + hairColor + "_" + this.Const.Hair.ZombieOnly[this.Math.rand(0, this.Const.Hair.ZombieOnly.len() - 1)]);
-	//	hair.varyColor(0.02, 0.02, 0.02);
- 	//	if (this.Math.rand(1, 100) <= 30)
-	//	{
-	//		local beard = actor.getSprite("beard");
-	//		beard.setBrush("beard_" + hairColor + "_" + this.Const.Beards.ZombieOnly[this.Math.rand(0, this.Const.Beards.ZombieOnly.len() - 1)]);
-	//		beard.Color = hair.Color;
-	//
-	//		if (this.doesBrushExist(beard.getBrush().Name + "_top"))
-	//		{
-	//			local sprite = actor.getSprite("beard_top");
-	//			sprite.setBrush(beard.getBrush().Name + "_top");
-	//			sprite.Color = actor.getSprite("hair").Color;
-	//		}
-	//	}
-
 	}
 
 	function onCombatStarted()
@@ -166,6 +146,4 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 			"sounds/enemies/skeleton_idle_06.wav"
 		];
 	}
-
 });
-

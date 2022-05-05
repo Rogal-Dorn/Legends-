@@ -53,15 +53,11 @@ this.legend_fear_dark_trait <- this.inherit("scripts/skills/traits/character_tra
 		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
 		{
 			_properties.Bravery -= 10;
-			this.character_background.onUpdate(_properties);
-			_properties.MoraleCheckBravery[1] -= 20;
+			_properties.MoraleCheckBravery[::Const.MoraleCheckType.MentalAttack] -= 20;
 		}
 		else
 		{
 			_properties.Bravery += 5;
 		}
-
 	}
-
 });
-

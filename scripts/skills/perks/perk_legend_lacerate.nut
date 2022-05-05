@@ -36,6 +36,7 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+		local user = _skill.getContainer().getActor();
 		_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
 
 		if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)

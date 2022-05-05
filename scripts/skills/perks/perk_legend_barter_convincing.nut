@@ -20,37 +20,8 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 		return this.m.Amount;
 	}
 
-	function onAdded()
+	function onNewDay()
 	{
-					if (this.World.State.getPlayer() == null)
-			{
-				return;
-			}
-
-		// this.World.State.getPlayer().calculateBarterMult();
-		this.World.State.getPlayer().calculateWageModifier(); 
-		this.World.State.getPlayer().onNewDay();
-		{
-			this.addMoney(10);
-		}
-
+		::World.Assets.addMoney(10);
 	}
-
-	function onRemoved()
-	{
-					if (this.World.State.getPlayer() == null)
-			{
-				return;
-			}
-
-		// this.World.State.getPlayer().calculateBarterMult();
-		this.World.State.getPlayer().calculateWageModifier(); 
-		this.World.State.getPlayer().onNewDay();
-		{
-			this.addMoney(10);
-		}
-
-	}
-
 });
-

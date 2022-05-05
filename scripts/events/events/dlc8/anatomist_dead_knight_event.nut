@@ -128,8 +128,8 @@ this.anatomist_dead_knight_event <- this.inherit("scripts/events/event", {
 				this.Characters.push(_event.m.Noble.getImagePath());
 
 				local armor_list = [
-					 this.Const.World.Common.pickArmor("decayed_reinforced_mail_hauberk");,
-					 this.Const.World.Common.pickHelmet("decayed_closed_flat_top_with_mail");
+					 this.Const.World.Common.pickArmor("decayed_reinforced_mail_hauberk"),
+					 this.Const.World.Common.pickHelmet("decayed_closed_flat_top_with_mail")
 				];
 
 				local item = this.new(armor_list[this.Math.rand(0, armor_list.len() - 1)]);
@@ -222,8 +222,8 @@ this.anatomist_dead_knight_event <- this.inherit("scripts/events/event", {
 			{
 				this.Characters.push(_event.m.Anatomist.getImagePath());
 				local armor_list = [
-					 this.Const.World.Common.pickArmor("decayed_reinforced_mail_hauberk");,
-					 this.Const.World.Common.pickHelmet("decayed_closed_flat_top_with_mail");
+					 this.Const.World.Common.pickArmor("decayed_reinforced_mail_hauberk"),
+					 this.Const.World.Common.pickHelmet("decayed_closed_flat_top_with_mail")
 				];
 				local item = this.new(armor_list[this.Math.rand(0, armor_list.len() - 1)]);
 				item.setCondition(item.getConditionMax() / 2 - 1);

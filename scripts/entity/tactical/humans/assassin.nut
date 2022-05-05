@@ -106,7 +106,7 @@ this.assassin <- this.inherit("scripts/entity/tactical/human", {
 		];
 
 		local armor = [
-			"armor/named/black_leather_armor" //will need more in future
+			[1, "armor/named/black_leather_armor"] //will need more in future
 		];
 
 		if (this.Math.rand(1, 100) <= 70)
@@ -115,11 +115,7 @@ this.assassin <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else
 		{
-			this.m.Items.equip(this.Const.World.Common.pickArmor(
-				this.Const.World.Common.convNameToList(
-					armor
-				)
-			));
+			this.m.Items.equip(this.Const.World.Common.pickArmor(armor));
 		}
 
 		this.m.BaseProperties.DamageDirectMult *= 1.25;

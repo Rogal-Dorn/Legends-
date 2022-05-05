@@ -291,65 +291,21 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		if (_list.len() < 5)
 		{
 			local r;
-			r = this.Math.rand(0, 2);
-			if (r == 0)
-			{
-			_list.push("flagellant_background");
-			}
-			r = this.Math.rand(0, 4);
-			if (r == 0)
-			{
-			_list.push("monk_background");
-			}
-			r = this.Math.rand(0, 6);
-			if (r == 0 && _gender)
-			{
-			_list.push("legend_nun_background");
-			}
-			r = this.Math.rand(0, 6);
-			if (r == 0 && _gender)
-			{
-			_list.push("legend_youngblood_background");
-			}
-			r = this.Math.rand(0, 8);
-			if (r == 0)
-			{
-				_list.push("witchhunter_background");
-			}
-			r = this.Math.rand(0, 49);
-			if (r == 0)
-			{
-				_list.push("legend_crusader_background");
-			}
+			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
+			if (::Math.rand(0, 4) == 0) _list.push("monk_background")
+			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_nun_background")
+			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_youngblood_background")
+			if (::Math.rand(0, 8) == 0) _list.push("witchhunter_background")
+			if (::Math.rand(0, 49) == 0) _list.push("legend_crusader_background")
 		}
 		if (_list.len() >= 5)
 		{
 			local r;
-			r = this.Math.rand(0, 2);
-			if (r == 0)
-			{
-				_list.push("flagellant_background");
-			}
-			r = this.Math.rand(0, 3);
-			if (r == 0)
-			{
-				_list.push("monk_background");
-			}
-			r = this.Math.rand(0, 4);
-			if (r == 0 && _gender)
-			{
-				_list.push("legend_nun_background");
-			}
-			r = this.Math.rand(0, 5);
-			if (r == 0)
-			{
-				_list.push("witchhunter_background");
-			}
-			r = this.Math.rand(0, 19);
-			if (r == 0)
-			{
-				_list.push("legend_crusader_background");
-			}
+			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
+			if (::Math.rand(0, 3) == 0) _list.push("monk_background")
+			if (::Math.rand(0, 4) == 0 && _gender) _list.push("legend_nun_background")
+			if (::Math.rand(0, 5) == 0) _list.push("witchhunter_background")
+			if (::Math.rand(0, 19) == 0) _list.push("legend_crusader_background")
 		}
 	}
 

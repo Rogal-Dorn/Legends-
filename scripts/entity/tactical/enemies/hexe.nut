@@ -319,6 +319,7 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/actives/charm_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hex_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_wither"));
 		this.m.Skills.add(this.new("scripts/skills/actives/fake_drink_night_vision_skill"));
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
