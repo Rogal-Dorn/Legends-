@@ -45,18 +45,18 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));	
 		bros[0].getFlags().set("IsPlayerCharacter", true);
- 		bros[0].getSprite("socket").setBrush("bust_base_caravan");
+		bros[0].getSprite("socket").setBrush("bust_base_caravan");
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_trader");
 		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPeaceful);
 		bro.m.PerkPointsSpent += 1;
-		
+
 		bros[1].setStartValuesEx([
 			"caravan_hand_background",
 			"caravan_hand_southern_background"
 		]);
 		bros[1].setPlaceInFormation(5);
 		bros[1].setVeteranPerks(2);
- 		bros[1].getSprite("socket").setBrush("bust_base_caravan");
+		bros[1].getSprite("socket").setBrush("bust_base_caravan");
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance thought that was little more than a drunken miscreant. But you watched as off three would-be muggers were soon on the ground. They still managed to take off with a coin purse in the end, sure, but they could not truly defeat %name%. Impressed, you took the newly-impoverished fighter on as a caravan hand.";
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
@@ -177,7 +177,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat)) //anyone but combat background
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
- 			bro.getSprite("socket").setBrush("bust_base_caravan");
+			bro.getSprite("socket").setBrush("bust_base_caravan");
 		}
 	}
 
@@ -233,10 +233,10 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.getSkills().update();
 			}
 
-            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
-            {
-                garbage.push(bro);
-            }
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
+			{
+				garbage.push(bro);
+			}
 		}
 		foreach( g in garbage )
 		{
