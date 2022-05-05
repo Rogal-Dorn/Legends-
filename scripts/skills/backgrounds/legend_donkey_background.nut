@@ -119,10 +119,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}

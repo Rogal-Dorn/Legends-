@@ -165,10 +165,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;

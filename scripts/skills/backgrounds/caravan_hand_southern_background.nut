@@ -32,10 +32,7 @@ this.caravan_hand_southern_background <- this.inherit("scripts/skills/background
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.GoodEnding = "%name% the once-caravan hand retired from fighting. She used her mercenary money to start a trade-guarding business that specializes in transporting goods through dangerous lands.";
 		this.m.BadEnding = "%name% the caravan hand retired back into guarding trade wagons. She died when defending against an ambush by brigands. They took her clothes and left her body in a ditch.";
 		this.m.Faces = this.Const.Faces.SouthernFemale;

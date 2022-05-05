@@ -64,10 +64,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
  			//Female
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
