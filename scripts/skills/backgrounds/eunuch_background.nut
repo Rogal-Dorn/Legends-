@@ -47,7 +47,7 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.MaceTree
 			],
 			Defense = [

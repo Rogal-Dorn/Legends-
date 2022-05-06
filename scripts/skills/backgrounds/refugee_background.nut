@@ -64,8 +64,8 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StavesTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.StaffTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [

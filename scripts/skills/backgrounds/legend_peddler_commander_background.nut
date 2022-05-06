@@ -93,9 +93,9 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 			];		
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.MaceTree
 

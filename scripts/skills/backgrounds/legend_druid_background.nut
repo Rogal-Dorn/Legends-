@@ -87,7 +87,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [

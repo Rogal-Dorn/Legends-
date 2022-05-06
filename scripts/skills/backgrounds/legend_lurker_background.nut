@@ -97,7 +97,7 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.BowTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
