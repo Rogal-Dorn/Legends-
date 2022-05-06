@@ -44,7 +44,7 @@ this.legend_runesmith_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.PickaxeClassTree
 			],

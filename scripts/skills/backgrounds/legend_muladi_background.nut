@@ -62,7 +62,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [

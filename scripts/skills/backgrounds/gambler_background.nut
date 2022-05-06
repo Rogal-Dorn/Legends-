@@ -56,7 +56,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.StaffTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree

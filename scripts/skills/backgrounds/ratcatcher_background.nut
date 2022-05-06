@@ -48,7 +48,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.SpearTree
 			],
 			Defense = [

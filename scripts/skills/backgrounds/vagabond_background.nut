@@ -48,7 +48,7 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.CleaverTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [

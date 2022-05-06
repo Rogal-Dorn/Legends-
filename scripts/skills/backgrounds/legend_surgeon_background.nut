@@ -84,7 +84,7 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
