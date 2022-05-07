@@ -1,12 +1,12 @@
-this.perk_mar_in_the_zone <- this.inherit("scripts/skills/skill", {
+this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 	m = {
 		Stacks = 0,
 		MaxStacks = 25
 	},
 	function create()
 	{
-		this.m.ID = "perk.mar_in_the_zone";
-		this.m.Name = this.Const.Strings.PerkName.MARInTheZone;
+		this.m.ID = "perk.legend_in_the_zone";
+		this.m.Name = this.Const.Strings.PerkName.LegendInTheZone;
 		this.m.Description = "%name% utilizes %their% armor\'s blend of protection and mobility to deal increased damage and gain increased accuracy when foes miss attacks against %them%.";
 		this.m.Icon = "ui/perks/in_the_zone.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;

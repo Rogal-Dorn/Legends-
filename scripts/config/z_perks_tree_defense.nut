@@ -48,12 +48,12 @@ gt.Const.Perks.MediumArmorTree <- {
 	],
 	Tree = [
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendBalance],
+		[gt.Const.Perks.PerkDefs.LegendPerfectFit],
 		[],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendLithe],
-		[gt.Const.Perks.PerkDefs.LegendBalance],
-		[gt.Const.Perks.PerkDefs.LegendMatchingSet]
+		[gt.Const.Perks.PerkDefs.LegendInTheZone]
 	]
 };
 

@@ -1,14 +1,14 @@
-this.perk_mar_perfect_fit <- this.inherit("scripts/skills/skill", {
+this.perk_legend_perfect_fit <- this.inherit("scripts/skills/skill", {
 	m = {
 		BonusMin = 0,
 		BonusMax = 30
 	},
 	function create()
 	{
-		this.m.ID = "perk.mar_perfect_fit";
-		this.m.Name = this.Const.Strings.PerkName.MARPerfectFit;
+		this.m.ID = "perk.legend_perfect_fit";
+		this.m.Name = this.Const.Strings.PerkName.LegendPerfectFit;
 		this.m.Description = "Leveraging the superior fit of %their% armor, %name% is gaining increased speed and endurance.";
-		this.m.Icon = "ui/perks/matching_set.png";
+		this.m.Icon = "ui/perks/perfect_fit.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.VeryLast;
 		this.m.IsActive = false;

@@ -2202,31 +2202,40 @@ local perkDefObjects = [
 		Const = "LegendForcefulSwing"
 	},
 	{
-		ID = "perk.mar_balance",
-		Script = "scripts/skills/perks/perk_mar_balance",
-		Name = this.Const.Strings.PerkName.MARBalance,
-		Tooltip = this.Const.Strings.PerkDescription.MARBalance,
+		ID = "perk.legend_balance",
+		Script = "scripts/skills/perks/perk_legend_balance",
+		Name = this.Const.Strings.PerkName.LegendBalance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBalance,
 		Icon = "ui/perks/balance.png",
 		IconDisabled = "ui/perks/balance_bw.png",
 		Const = "LegendBalance"
 	},
 	{
-		ID = "perk.mar_perfect_fit",
-		Script = "scripts/skills/perks/perk_mar_perfect_fit",
-		Name = this.Const.Strings.PerkName.MARPerfectFit,
-		Tooltip = this.Const.Strings.PerkDescription.MARPerfectFit,
-		Icon = "ui/perks/matching_set.png",
-		IconDisabled = "ui/perks/matching_set_bw.png",
-		Const = "LegendMatchingSet"
+		ID = "perk.legend_perfect_fit",
+		Script = "scripts/skills/perks/perk_legend_perfect_fit",
+		Name = this.Const.Strings.PerkName.LegendPerfectFit,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPerfectFit,
+		Icon = "ui/perks/perfect_fit.png",
+		IconDisabled = "ui/perks/perfect_fit_bw.png",
+		Const = "LegendPerfectFit"
 	},
 	{
-		ID = "perk.mar_lithe",
-		Script = "scripts/skills/perks/perk_mar_lithe",
-		Name = this.Const.Strings.PerkName.MARLithe,
-		Tooltip = this.Const.Strings.PerkDescription.MARLithe,
+		ID = "perk.legend_lithe",
+		Script = "scripts/skills/perks/perk_legend_lithe",
+		Name = this.Const.Strings.PerkName.LegendLithe,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLithe,
 		Icon = "ui/perks/lithe.png",
 		IconDisabled = "ui/perks/lithe_bw.png",
 		Const = "LegendLithe"
+	},
+	{
+		ID = "perk.legend_in_the_zone",
+		Script = "scripts/skills/perks/perk_legend_in_the_zone",
+		Name = this.Const.Strings.PerkName.LegendInTheZone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInTheZone,
+		Icon = "ui/perks/in_the_zone.png",
+		IconDisabled = "ui/perks/in_the_zone_bw.png",
+		Const = "LegendInTheZone"
 	},
 	{
 		ID = "perk.legend_hidden",

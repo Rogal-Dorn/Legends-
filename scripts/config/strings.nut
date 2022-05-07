@@ -1837,8 +1837,9 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecSpearWall = "Spearwaller",
 	LegendSpecSpearThrust = "Thrust Master",
 	LegendBalance = "Balance",
-	LegendMatchingSet = "Matching Set",
+	LegendPerfectFit = "Perfect Fit",
 	LegendLithe = "Lithe",
+	LegendInTheZone = "In the Zone",
 	LegendHidden = "Camouflage",
 	LegendBlendIn = "Blend in",
 	LegendDrumsOfWar = "War Chant",
@@ -1907,10 +1908,6 @@ gt.Const.Strings.PerkName <- {
 	LastStand = "Last Stand",
 	LegendGuideSteps = "Guide Steps",
 	LegendTasteThePain = "Taste the Pain",
-	MARBalance = "Balance",
-	MARPerfectFit = "Perfect Fit",
-	MARLithe = "Lithe",
-	MARInTheZone = "In the Zone"
 
 
 	//MASTERIES - skills that have a unified effect on their weapon class
@@ -2408,9 +2405,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage.",
 	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] less fatigue, [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Action Points and does [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage. Stacks with Spear Mastery.",
 	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust and Prong do [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage, also removes the hitchance penalty per tile when throwing spears and javelins.",
-	LegendBalance = "Some favour heavy armor, others prefer lightweight. A few strive to find the perfect balance of protection and movement. Grants up to [color=" + this.Const.UI.Color.PositiveValue + "]+40[/color] bonus melee defense, ranged defense and % armor damage reduction.  The bonus is at maximum when your current body armor is twice your current initiative. The bonus decreases for every point of difference between the two, to a minimum of 5.",
-	LegendMatchingSet = "Proper distribution of weight is crucial for maintaining mobility. Grants up to  [color=" + this.Const.UI.Color.PositiveValue + "]5[/color] fatigue per round if your current helmet and armor values match. Decreases by 1 for every 10 points difference. Armor that is too heavy can not be balanced, does not work if their combined durability is above 400.",
-	LegendLithe = "Not as nimble as some, but more lithe than most. You gain a [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] chance to have any attacker require two successful attack rolls in order to hit, but lowered by the total penalty to Maximum Fatigue from body and head armor above 30.\n\nStacks with other sources of this effect.\n\nBrawny does not affect this perk.",
+	LegendBalance = "Gain increased defense by balancing your armor\'s weight and mobility. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Melee Defense when wearing head and body armor with a total weight (penalty to Maximum Fatigue) of 35. The bonus drops by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] for every 2 points of deviation from this value, and for every 10 points that your Current Initiative is below twice your armor weight. Gain a third of the Melee Defense bonus as Ranged Defense.",
+	LegendPerfectFit = "Leverage the superior fit of your armor to gain increased speed and endurance! Reduces the penalty to Initiative from head and body armor by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] and lowers the Fatigue cost of skills by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]. This bonus is reduced exponentially when the total penalty to Maxium Fatigue from your head and body armor is more than half of your Maximum Fatigue after gear.",
+	LegendLithe = "Specialize in Medium Armor! Damage to Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the total penalty to Maximum Fatigue from head and body armor is between 25 and 35. Outside this range, the bonus drops exponentially.\n\nAs your armor takes damage, the bonus drops slowly to half its maximum value at 0 armor remaining.",
+	LegendInTheZone = "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you get hit by any attack.\n\n When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor\'s weight above 15.",
 	LegendHidden = "Master the art of concealment. When you are outside enemy vision you can blend in with your surroundings and remain hidden from the enemy for 3 turns, or until your next attack.",
 	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies less likely to attack you instead of an ally, also grants +5 Ranged Defense and +3 Melee Defense.",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers.",
@@ -2537,10 +2535,6 @@ gt.Const.Strings.PerkDescription <- {
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
 	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' perk, it gains 1 range.",
 	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
-	MARBalance = "Gain increased defense by balancing your armor\'s weight and mobility. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Melee Defense when wearing head and body armor with a total weight (penalty to Maximum Fatigue) of 35. The bonus drops by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] for every 2 points of deviation from this value, and for every 10 points that your Current Initiative is below twice your armor weight. Gain a third of the Melee Defense bonus as Ranged Defense.\n[color=#0b0084]From the Medium Armor perk group[/color]",
-	MARPerfectFit = "Leverage the superior fit of your armor to gain increased speed and endurance! Reduces the penalty to Initiative from head and body armor by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color] and lowers the Fatigue cost of skills by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color]. This bonus is reduced exponentially when the total penalty to Maxium Fatigue from your head and body armor is more than half of your Maximum Fatigue after gear.\n[color=#0b0084]From the Medium Armor perk group[/color]",
-	MARLithe = "Specialize in Medium Armor! Damage to Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the total penalty to Maximum Fatigue from head and body armor is between 25 and 35. Outside this range, the bonus drops exponentially.\n\nAs your armor takes damage, the bonus drops slowly to half its maximum value at 0 armor remaining.\n[color=#0b0084]From the Medium Armor perk group[/color]",
-	MARInTheZone = "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you get hit by any attack.\n\n When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor\'s weight above 15.\n[color=#0b0084]From the Medium Armor perk group[/color]"
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
