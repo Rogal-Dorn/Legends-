@@ -1,10 +1,13 @@
 this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BonusMin = 0,
+		BonusMax = 15
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_balance";
 		this.m.Name = this.Const.Strings.PerkName.LegendBalance;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendBalance;
+		this.m.Description = "%name% gains increased Melee and Ranged defense by balancing %their% armor weight and mobility.";
 		this.m.Icon = "ui/perks/balance.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -13,43 +16,33 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function getBonus()
-	{
-		if (this.getContainer() == null)
-		{
-			return 5;
-		}
-
-		local actor = this.getContainer().getActor();
-
-		if (actor == null)
-		{
-			return 5;
-		}
-		
-		local bodyitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		if (bodyitem == null)
-		{
-			return 5;
-		}
-		local body = actor.getArmor(this.Const.BodyPart.Body);		
-		local initiative = actor.getInitiative();
-		local diff = this.Math.abs(body - 2 * initiative);
-		return this.Math.max(5, this.Math.floor(40 - diff * 0.5));
-	}
-
 	function getTooltip()
 	{
-		local bonus = this.getBonus();
 		local tooltip = this.skill.getTooltip();
+		local bonus = this.getBonus();
 
-		if (bonus > 5)
+		if (bonus > this.m.BonusMin)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
-				icon = "ui/icons/special.png",
-				text = "You are gaining [color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "[/color] defence and damage reduction due to increased balance"
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Melee Defense"
+			});
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/ranged_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus/3 + "[/color] Ranged Defense"
+			});
+		}
+		else if (this.getContainer().getActor().getBodyItem() == null)
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "This character is not wearing any body armor and hence receives no bonus from this perk"
 			});
 		}
 		else
@@ -58,30 +51,41 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character\'s initiative and armor are too far out of alignment to gain more than[color=" + this.Const.UI.Color.PositiveValue + "] 5[/color] defense from balance"
+				text = "This character\'s armor is too light or too heavy or their Initiative is too low to receive any bonus from this perk"
 			});
 		}
 
 		return tooltip;
 	}
 
-	function onUpdate( _properties )
+	function getBonus()
+	{
+		local actor = this.getContainer().getActor();
+
+		local bodyitem = actor.getBodyItem();
+
+		if (bodyitem == null)
+		{
+			return 0;
+		}
+
+		local armorFatPen = actor.getTotalArmorStaminaModifier() * -1;
+
+		local bonus = this.m.BonusMax - this.Math.abs(armorFatPen - 35) / 2;
+		local currIni = actor.getInitiative();
+
+		if (currIni < armorFatPen * 2)
+		{			
+			bonus -= (armorFatPen * 2 - currIni) / 10;
+		}		
+
+		return this.Math.max(this.m.BonusMin, bonus);
+	}
+
+	function onAfterUpdate( _properties )
 	{
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus;
+		_properties.RangedDefense += bonus/3;
 	}
-
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill != null && !_skill.isAttack())
-		{
-			return;
-		}
-
-		local bonus = this.getBonus();
-		_properties.DamageReceivedArmorMult *= 1.0 - bonus * 0.01;
-	}
-
 });
-

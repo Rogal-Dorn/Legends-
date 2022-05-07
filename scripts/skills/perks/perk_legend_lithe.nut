@@ -1,9 +1,13 @@
 this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BonusMin = 0,
+		BonusMax = 30
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_lithe";
 		this.m.Name = this.Const.Strings.PerkName.LegendLithe;
+		this.m.Description = "Lithe like a lizard! %name% is able to partially deflect attacks at the last moment, turning them into glancing hits.";
 		this.m.Icon = "ui/perks/lithe.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
@@ -14,75 +18,92 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		local fm = this.getChance();
-		return fm <= 0;
-	}
-
-	function getDescription()
-	{
-		return "Lithe like a lizard! This character is able to partially evade or deflect attacks at the last moment, turning them into glancing hits. ";
+		return !(this.getBonus() > 0);
 	}
 
 	function getTooltip()
 	{
-		local fm = this.getChance();
+		local bonus = this.getBonus();
 		local tooltip = this.skill.getTooltip();
 
-		if (fm > 0)
+		if (bonus > this.m.BonusMin)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]" + fm + "%[/color] chance of a defense reroll"
+				text = "Only receive [color=" + this.Const.UI.Color.PositiveValue + "]" + (100 - bonus) + "%[/color] of any damage to Hitpoints and Armor from attacks"
 			});
+			return tooltip;
 		}
-		else //This part doesn't show up due to the "isHidden()" function further up. 
+
+		if (this.getContainer().getActor().getBodyItem() == null)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]This character\'s body and head armor are too heavy as to gain any benefit from being lithe[/color]"
+				text = "This character is not wearing any body armor and hence receives no bonus damage reduction"
 			});
+			return tooltip;
 		}
 
 		return tooltip;
 	}
 
-	function getChance()
+	function getArmorFatPenMult(_totalArmorStaminaModifier)
 	{
-		local fat = 0;
-		local body = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local head = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+		_totalArmorStaminaModifier *= -1;
 
-		if (body != null)
+		local steepnessFactor = 2.6;
+		local armorIdealMin = 25;
+		local armorIdealMax = 35;
+
+		local mult = 1;
+
+		if (_totalArmorStaminaModifier < armorIdealMin)
 		{
-			fat = fat + body.getStaminaModifier();
+			mult = this.Math.maxf(0, 1 - 0.01 * this.Math.pow(armorIdealMin - _totalArmorStaminaModifier, steepnessFactor));
+		}
+		else if (_totalArmorStaminaModifier > armorIdealMax)
+		{
+			mult = this.Math.maxf(0, 1 - 0.01 * this.Math.pow(_totalArmorStaminaModifier - armorIdealMax, steepnessFactor));
 		}
 
-		if (head != null)
-		{
-			fat = fat + head.getStaminaModifier();
-		}
-		//30 here is max armor fat before dropoff starts
-		fat = this.Math.min(0, fat + 30);
-		//30 here is what the bonus starts at. Graph of the function can be found here.
-		//http://fooplot.com/#W3sidHlwZSI6MCwiZXEiOiIzMC0oKG1heCgwLHgtMzApXjEuMSkpIiwiY29sb3IiOiIjMDAwMDAwIn0seyJ0eXBlIjoxMDAwLCJ3aW5kb3ciOlsiLTIyLjU3NjkyMzA3NjkyMzA3MyIsIjEwMi40MjMwNzY5MjMwNzY5MyIsIi0xNy4zMTI1IiwiMTA3LjY4NzUiXX1d
-		local ret = this.Math.floor(this.Math.max(0, 30 - this.Math.pow(this.Math.abs(fat), 1.1)));
-		return ret;
+		return mult;
 	}
 
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	function getBonus()
 	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack() || !_skill.isUsingHitchance())
+		local actor = this.getContainer().getActor();
+
+		local bodyitem = actor.getBodyItem();
+
+		if (bodyitem == null)
+		{
+			return 0;
+		}
+
+		local armorFatMult = this.getArmorFatPenMult(actor.getTotalArmorStaminaModifier());
+
+		local totalArmorDurability = actor.getArmor(this.Const.BodyPart.Head) + actor.getArmor(this.Const.BodyPart.Body);
+		local maxArmorDurability = actor.getArmorMax(this.Const.BodyPart.Head) + actor.getArmorMax(this.Const.BodyPart.Body);
+
+		local bonus = this.Math.maxf(this.m.BonusMin, this.Math.minf(this.m.BonusMax, this.m.BonusMax * armorFatMult));
+		bonus *= 0.5 * totalArmorDurability/(maxArmorDurability * 1.0) + 0.5;
+
+		return this.Math.floor(bonus);
+	}
+
+	function onBeforeDamageReceived ( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_attacker == null || _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack())
 		{
 			return;
 		}
-		local actor = this.getContainer().getActor();
-		local chance = this.getChance();
-		_properties.RerollDefenseChance += chance;
+
+		local bonus = this.getBonus();
+		_properties.DamageReceivedArmorMult *= 1.0 - bonus * 0.01;
+		_properties.DamageReceivedRegularMult *= 1.0 - bonus * 0.01;
 	}
-
 });
-
