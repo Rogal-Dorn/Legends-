@@ -10,8 +10,8 @@ this.legend_oms_fate_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.IsDroppedAsLoot = true;
 		//this.m.ShowOnCharacter = true;
 		this.m.IconLarge = "";
-		this.m.Icon = "accessory/oms_placeholder.png"; //PLACEHOLDER
-		//this.m.Sprite = "nachzehrer_trophy";
+		this.m.Icon = "accessory/oms_book_of_fate.png";
+		//this.m.Sprite = "";
 		this.m.Value = 1100;
 	}
 

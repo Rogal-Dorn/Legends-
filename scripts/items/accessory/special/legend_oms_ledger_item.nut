@@ -10,8 +10,8 @@ this.legend_oms_ledger_item <- this.inherit("scripts/items/accessory/accessory",
 		this.m.IsDroppedAsLoot = true;
 		//this.m.ShowOnCharacter = true;
 		this.m.IconLarge = "";
-		this.m.Icon = "accessory/oms_placeholder.png"; //PLACEHOLDER
-		//this.m.Sprite = "nachzehrer_trophy";
+		this.m.Icon = "accessory/oms_ledger.png";
+		//this.m.Sprite = "";
 		this.m.Value = 1725;
 	}
 

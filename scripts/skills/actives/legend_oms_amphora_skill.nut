@@ -5,9 +5,9 @@ this.legend_oms_amphora_skill <- ::inherit("scripts/skills/skill", {
 		this.m.ID = "actives.legend_oms_amphora_skill";
 		this.m.Name = "Drink from Amphora";
 		this.m.Description = "Drink from the Amphora. You can\'t be sure what this might do...";
-		this.m.Icon = "skills/active_96.png"; //PLACEHOLDER
-		this.m.IconDisabled = "skills/active_96_sw.png"; //PLACEHOLDER
-		this.m.Overlay = "active_96"; //PLACEHOLDER
+		this.m.Icon = "skills/amphora_active.png";
+		this.m.IconDisabled = "skills/amphora_active_bw.png";
+		this.m.Overlay = "amphora_active.png"; 
 		this.m.SoundOnUse = [
 			"sounds/combat/drink_01.wav",
 			"sounds/combat/drink_02.wav",

@@ -5,13 +5,13 @@ this.legend_oms_rib_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.accessory.create();
 		this.m.ID = "accessory.legend_oms_rib";
 		this.m.Name = "Saint\'s Rib"; //Do you like the McRib?
-		this.m.Description = "A supposed rib bone from a long dead saint, apparently killed by a volley of arrows — it has been picked cleaned and preserved with great care and thought. More superstitious minds claim it to be warm to the touch.";
+		this.m.Description = "A supposed rib bone from a long dead saint, locked away in a secure chest. Apparently the figure in question killed by a volley of arrows — it has been picked cleaned and preserved with great care and thought. More superstitious minds claim it to be warm to the touch.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		//this.m.ShowOnCharacter = true;
 		this.m.IconLarge = "";
-		this.m.Icon = "accessory/oms_placeholder.png"; //PLACEHOLDER
-		//this.m.Sprite = "nachzehrer_trophy";
+		this.m.Icon = "accessory/oms_rib.png"; //PLACEHOLDER
+		//this.m.Sprite = "";
 		this.m.Value = 1350;
 	}
 

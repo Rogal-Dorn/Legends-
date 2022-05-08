@@ -18,11 +18,11 @@ this.legend_oms_amphora_item <- this.inherit("scripts/items/accessory/accessory"
 
 		if (!this.m.IsConsumed)
 		{
-			this.m.Icon = "accessory/oms_placeholder.png"; //Filled
+			this.m.Icon = "accessory/oms_amphora_full.png"; //Filled
 		}
 		else
 		{
-			this.m.Icon = "accessory/oms_placeholder.png"; //Empty
+			this.m.Icon = "accessory/oms_amphora_empty.png"; //Empty
 		}
 	}
 
@@ -48,7 +48,7 @@ this.legend_oms_amphora_item <- this.inherit("scripts/items/accessory/accessory"
 		this.m.ShowOnCharacter = false;
 		this.m.IsDroppedAsLoot = true;
 		this.m.IconLarge = "";
-		this.m.Icon = "accessory/oms_placeholder.png"; //PLACEHOLDER
+		this.m.Icon = "accessory/oms_amphora_full.png";
 		this.m.Value = 2450;
 	}
 
