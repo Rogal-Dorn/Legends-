@@ -1752,27 +1752,26 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-		local isGenderEnabled = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
 		foreach( loc in this.m.AttachedLocations )
 		{
-			loc.onUpdateDraftList(draftList, gender);
+			loc.onUpdateDraftList(draftList);
 		}
 
 		foreach( b in this.m.Buildings )
 		{
 			if (b != null)
 			{
-				b.onUpdateDraftList(draftList, gender);
+				b.onUpdateDraftList(draftList);
 			}
 		}
 
 		foreach( s in this.m.Situations )
 		{
-			s.onUpdateDraftList(draftList, gender);
+			s.onUpdateDraftList(draftList);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList, gender);
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
 
 		while (maxRecruits > current.len())
 		{
