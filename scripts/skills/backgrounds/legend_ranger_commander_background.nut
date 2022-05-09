@@ -151,7 +151,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendWindReader,
-				this.Const.Perks.PerkDefs.LegendMatchingSet,
+				this.Const.Perks.PerkDefs.LegendPerfectFit,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,

@@ -88,7 +88,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 					this.Const.Perks.PerkDefs.CoupDeGrace,
 					this.Const.Perks.PerkDefs.FortifiedMind,
 					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendMatchingSet,
+					this.Const.Perks.PerkDefs.LegendPerfectFit,
 					this.Const.Perks.PerkDefs.LegendTrueBeliever,
 					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendPrepareGraze
@@ -133,7 +133,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 					this.Const.Perks.PerkDefs.LegendPush,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 					this.Const.Perks.PerkDefs.LegendExtendendAura,
-					this.Const.Perks.PerkDefs.MARInTheZone
+					this.Const.Perks.PerkDefs.LegendInTheZone
 				],
 				[],
 				[],

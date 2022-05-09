@@ -140,7 +140,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendMatchingSet,
+				this.Const.Perks.PerkDefs.LegendPerfectFit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
 			],
