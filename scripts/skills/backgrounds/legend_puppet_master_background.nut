@@ -94,7 +94,7 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 					this.Const.Perks.PerkDefs.SteelBrow,
 					this.Const.Perks.PerkDefs.Gifted,
 					this.Const.Perks.PerkDefs.LegendSpecialistShieldSkill,
-					this.Const.Perks.PerkDefs.LegendMatchingSet,
+					this.Const.Perks.PerkDefs.LegendPerfectFit,
 					this.Const.Perks.PerkDefs.LegendPrepareBleed,
 					this.Const.Perks.PerkDefs.LegendPrepareGraze
 				],
@@ -141,7 +141,7 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 					this.Const.Perks.PerkDefs.LegendFullForce,
 					this.Const.Perks.PerkDefs.BattleFlow,
 					this.Const.Perks.PerkDefs.LegendMiasma,
-					this.Const.Perks.PerkDefs.MARInTheZone,
+					this.Const.Perks.PerkDefs.LegendInTheZone,
 					this.Const.Perks.PerkDefs.LegendDeathtouch
 				],
 				[],
