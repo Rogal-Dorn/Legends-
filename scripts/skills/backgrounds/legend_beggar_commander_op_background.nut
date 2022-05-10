@@ -248,7 +248,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 		actor.getBaseProperties().RangedDefense += (actor.getBaseProperties().RangedDefense < _targetEntity.getBaseProperties().RangedDefense ? 1 : 0);
 		actor.getBaseProperties().Initiative += (actor.getBaseProperties().Initiative < _targetEntity.getBaseProperties().Initiative ? 1 : 0);
 
-		local target_skills = _targetEntity.getSkills().query(this.Const.SkillType.Perk);
+		local target_skills = _targetEntity.getSkills().getSkillsByFunction(@(skill) skill.isType(::Const.SkillType.Perk));
 		local allperks = [];
 		for( local i = 0; i != target_skills.len(); i = ++i )
 		{
