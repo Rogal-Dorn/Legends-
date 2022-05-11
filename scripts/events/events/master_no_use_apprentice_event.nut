@@ -49,7 +49,7 @@ this.master_no_use_apprentice_event <- this.inherit("scripts/events/event", {
 							"apprentice_background"
 						]);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_fleshless_trait"));
 						}
 					else
 					{

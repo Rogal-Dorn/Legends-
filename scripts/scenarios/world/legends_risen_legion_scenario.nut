@@ -32,7 +32,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 			bro.getFlags().add("skeleton");
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_fleshless_trait"));
 			local items = bro.getItems();
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 			items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
@@ -480,7 +480,7 @@ this.legends_risen_legion_scenario <- this.inherit("scripts/scenarios/world/star
 		if (!bro.getSkills().hasSkill("racial.skeleton") && bro.getFlags().has("skeleton"))
 		{
 			bro.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-			bro.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_fleshless_trait"));
 		}
 
 		local r = this.Math.rand(0, 2);
