@@ -86,7 +86,7 @@ this.legend_well_tended_effect <- this.inherit("scripts/skills/injury/injury", {
 		this.injury.onUpdate(_properties);
 		_properties.HitpointsMult *= 1.15;
 		_properties.BraveryMult *= 1.10;
-		_properties.FatigueMult *= 1.10;		
+		_properties.StaminaMult *= 1.10;
 		_properties.MeleeSkillMult *= 1.05;
 		_properties.RangedSkillMult *= 1.05;
 		_properties.MeleeDefenseMult *= 1.15;
