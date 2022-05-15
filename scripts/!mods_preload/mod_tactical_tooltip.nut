@@ -283,7 +283,7 @@ this.getroottable().Const.LegendMod.loadTacticalTooltip <- function()
 					}
 
 					tooltip.push(injuryRow);
-					  // [309]  OP_CLOSE		  0	 20	0	0
+					  // [309]  OP_CLOSE          0     20    0    0
 				}
 
 				statusEffects = removeDuplicates(statusEffects);
