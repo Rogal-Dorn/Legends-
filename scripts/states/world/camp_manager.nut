@@ -255,7 +255,7 @@ this.camp_manager <- {
 			{
 				me.fireEvent(_eventID, _name);
 			}, null);
-			  // [033]  OP_CLOSE		  0	  4	0	0
+			  // [033]  OP_CLOSE          0      4    0    0
 		}
 	}
 

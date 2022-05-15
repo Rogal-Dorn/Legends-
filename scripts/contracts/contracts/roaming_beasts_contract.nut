@@ -170,7 +170,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 						if (r <= t.R)
 						{
 							this.Flags.set(t.F, true);
-							  // [346]  OP_JMP			0	  5	0	0
+							  // [346]  OP_JMP            0      5    0    0
 						}
 						else
 						{

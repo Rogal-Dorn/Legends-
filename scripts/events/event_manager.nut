@@ -180,7 +180,7 @@ this.event_manager <- {
 			}
 		}
 
-		  // [037]  OP_CLOSE		  0	  1	0	0
+		  // [037]  OP_CLOSE          0      1    0    0
 		return false;
 	}
 

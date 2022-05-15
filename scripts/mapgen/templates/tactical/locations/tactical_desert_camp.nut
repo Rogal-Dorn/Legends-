@@ -124,7 +124,7 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 					}
 					else if (d <= 1)
 					{
-						  // [357]  OP_JMP			0	170	0	0
+						  // [357]  OP_JMP            0    170    0    0
 					}
 					else if (this.Math.rand(1, 100) <= 1)
 					{

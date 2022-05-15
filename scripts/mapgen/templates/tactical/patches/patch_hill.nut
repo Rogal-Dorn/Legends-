@@ -31,7 +31,7 @@ this.patch_hill <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 						if (this.Math.rand(1, 100) < 35)
 						{
-							  // [101]  OP_JMP			0	291	0	0
+							  // [101]  OP_JMP            0    291    0    0
 						}
 						else
 						{
@@ -44,7 +44,7 @@ this.patch_hill <- this.inherit("scripts/mapgen/tactical_template", {
 						{
 							if (this.Math.rand(1, 100) < 15)
 							{
-								  // [169]  OP_JMP			0	223	0	0
+								  // [169]  OP_JMP            0    223    0    0
 							}
 							else
 							{

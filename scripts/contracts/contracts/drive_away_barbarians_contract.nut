@@ -384,7 +384,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 						}
 
 					});
-					  // [062]  OP_CLOSE		  0	  7	0	0
+					  // [062]  OP_CLOSE          0      7    0    0
 				}
 			}
 

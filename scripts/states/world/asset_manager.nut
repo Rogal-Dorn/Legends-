@@ -874,7 +874,7 @@ this.asset_manager <- {
 				}
 
 				food.remove(i);
-				  // [136]  OP_JMP			0	  8	0	0
+				  // [136]  OP_JMP            0      8    0    0
 			}
 			else
 			{

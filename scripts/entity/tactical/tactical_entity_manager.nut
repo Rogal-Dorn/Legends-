@@ -1680,7 +1680,7 @@ this.tactical_entity_manager <- {
 					}
 					else
 					{
-						  // [157]  OP_JMP			0	288	0	0
+						  // [157]  OP_JMP            0    288    0    0
 					}
 				}
 			}

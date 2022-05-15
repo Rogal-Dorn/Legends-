@@ -1451,7 +1451,7 @@ this.skill <- {
 				blockChance = this.Math.ceil(blockChance * 100);
 				row.text = description + "\n(" + red("-" + blockChance + "%") + " Total hit chance)";
 			};
-			// [080]  OP_CLOSE		  0	 17	0	0
+			// [080]  OP_CLOSE          0     17    0    0
 		}
 
 		modifier.Nighttime <- function ( row, description )

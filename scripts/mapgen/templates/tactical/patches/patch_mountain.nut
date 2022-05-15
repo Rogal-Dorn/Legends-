@@ -30,7 +30,7 @@ this.patch_mountain <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 						if (this.Math.rand(1, 100) < 50)
 						{
-							  // [096]  OP_JMP			0	247	0	0
+							  // [096]  OP_JMP            0    247    0    0
 						}
 						else
 						{
@@ -43,7 +43,7 @@ this.patch_mountain <- this.inherit("scripts/mapgen/tactical_template", {
 						{
 							if (this.Math.rand(1, 100) < 25)
 							{
-								  // [164]  OP_JMP			0	179	0	0
+								  // [164]  OP_JMP            0    179    0    0
 							}
 							else
 							{
