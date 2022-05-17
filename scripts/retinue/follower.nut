@@ -174,7 +174,7 @@ this.follower <- {
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			if (bro.getSkills().getSkillsByFunction(isCorrectSkill).len() != 0)
+			if (bro.getSkills().getSkillsByFunction(isCorrectSkill.bindenv(this)).len() != 0)
 			{
 				this.m.LinkedBro = bro;
 				break;
