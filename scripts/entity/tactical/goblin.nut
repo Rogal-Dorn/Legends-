@@ -164,13 +164,12 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 	function onFactionChanged()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer()
-		// if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
-		// {
-		// 	flip = !flip
-		// }
-		this.getSprite("helmet").setHorizontalFlipping(flip);
-		this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		local flip = this.isAlliedWithPlayer();
+		if (::MSU.isKindOf(this.getItems().getItemAtSlot(::Const.ItemSlot.Head), "legend_helmet"))
+		{
+			this.getSprite("helmet").setHorizontalFlipping(flip);
+			this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+		}
 	}
 
 	function onInit()
