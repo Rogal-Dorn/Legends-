@@ -27,7 +27,7 @@ this.perk_legend_perfect_fit <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
-		local armorFatPen = -1 * actor.getTotalArmorStaminaModifier();
+		local armorFatPen = -1 * actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]);
 		local maxFat = actor.getFatigueMax();
 		local armorFatPenMult = 0;
 
@@ -45,7 +45,7 @@ this.perk_legend_perfect_fit <- this.inherit("scripts/skills/skill", {
 
 	function getInitiativeBonus(_bonus)
 	{
-		return this.Math.floor(0.01 * _bonus * this.getContainer().getActor().getTotalArmorStaminaModifier() * -1);
+		return this.Math.floor(0.01 * _bonus * this.getContainer().getActor().getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]) * -1);
 	}
 
 	function getFatCostReductionBonus(_bonus)

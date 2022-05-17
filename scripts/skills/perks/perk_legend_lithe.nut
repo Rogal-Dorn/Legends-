@@ -84,7 +84,7 @@ this.perk_legend_lithe <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
-		local armorFatMult = this.getArmorFatPenMult(actor.getTotalArmorStaminaModifier());
+		local armorFatMult = this.getArmorFatPenMult(actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]));
 
 		local totalArmorDurability = actor.getArmor(this.Const.BodyPart.Head) + actor.getArmor(this.Const.BodyPart.Body);
 		local maxArmorDurability = actor.getArmorMax(this.Const.BodyPart.Head) + actor.getArmorMax(this.Const.BodyPart.Body);

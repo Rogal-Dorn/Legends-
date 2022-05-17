@@ -69,7 +69,7 @@ this.perk_legend_balance <- this.inherit("scripts/skills/skill", {
 			return 0;
 		}
 
-		local armorFatPen = actor.getTotalArmorStaminaModifier() * -1;
+		local armorFatPen = actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]) * -1;
 
 		local bonus = this.m.BonusMax - this.Math.abs(armorFatPen - 35) / 2;
 		local currIni = actor.getInitiative();
