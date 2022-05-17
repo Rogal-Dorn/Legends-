@@ -27,6 +27,7 @@ gt.Const.LegendMod.hookMSU <- function()
 		if (!this.m.MenuStack.hasBacksteps())
 		{
 			this.showCampScreen();
+			return true;
 		}
 	}
 }
