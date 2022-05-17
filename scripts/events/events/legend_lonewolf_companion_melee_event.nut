@@ -68,6 +68,9 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 					Text = "{More killing power is always a good thing... | A good arm will get you far in this business. | Now for the real thing...}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
@@ -99,6 +102,9 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 					Text = "{Fighting in the front is never easy. | At least you can take a few hits. | The real thing will be much differant.}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
@@ -129,6 +135,9 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 					Text = "{Worth a tryout I guess. | You can improve. | We\'ll make a master out of you yet...}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
