@@ -49,7 +49,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getBackground().m.RawDescription = "%name% saved you in the brigand\'s ambush that destroyed your band of slayers. The mercenary does not hang this fact over you, for you have saved %name% many a times yourself. The beast hunter suffers no emotion that does not bid well in this world and that alone makes for a sound slayer.";
 		bros[0].setPlaceInFormation(3);
 		bros[0].addLightInjury();
-		bros[0].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[0].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[0].m.Talents = [];
 		bros[0].setVeteranPerks(2);
@@ -72,7 +72,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getBackground().m.RawDescription = "A young whelp from the city, %name% got a start in beast slaying by rooting out the warrens of \'vicious rabbits\', as one puts it. You are not sure how true that is, but regardless %name% has demonstrated greats feats of arms on the battlefield more times than you can count.";
 		bros[1].setPlaceInFormation(4);
 		bros[1].addLightInjury();
-		bros[1].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[1].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[1].setVeteranPerks(2);
 		bros[1].m.Talents = [];
@@ -94,7 +94,7 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getBackground().m.RawDescription = "Grizzled vets are a rarity in beast slaying, and %name% sure ain\'t one. Instead, the \'slayer\' started the foray into monster hunting by reading books instead of training the sword. Still a good enough warrior at heart, it is the study and preparation that gives %name% the edge in battle.";
 		bros[2].setPlaceInFormation(5);
 		bros[2].addInjury(this.Const.Injury.Brawl);
-		bros[2].getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[2].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[2].setVeteranPerks(2);
 		bros[2].m.Talents = [];
@@ -223,14 +223,14 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.80) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.80; //1.0 = default
  				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
-				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+				bro.getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
 			}
 			else if (bro.getBackground().getID() == "background.legend_guildmaster")
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.00) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 1.00; //1.0 = default
  				bro.getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
-				bro.getSkills().add(this.new("scripts/skills/traits/beastslayers_trait"));
+				bro.getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
 			}
 			else if (bro.getBackground().getID() == "background.legend_vala")
 			{
