@@ -432,7 +432,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		local item = this.m.Upgrades[_slot];
 		item.clearAppearance(app);
 		item.onUnequip();
-		this.m.Upgrades[_slot].setVisible(true);
+		this.m.Upgrades[_slot].setVisible(false);
 		item.setArmor(null);
 		this.m.Upgrades[_slot] = null;
 		this.updateAppearance();
