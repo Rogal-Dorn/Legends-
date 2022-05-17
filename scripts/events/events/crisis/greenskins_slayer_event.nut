@@ -46,9 +46,9 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 					_event.m.Dude.setStartValuesEx([
 						"legend_druid_background"
 					]);
-					_event.m.Dude.getBackground().getBaseProperties().Hitpoints += 5;
-					_event.m.Dude.getBackground().getBaseProperties().MeleeSkill += 5;
-					_event.m.Dude.getBackground().getBaseProperties().MeleeDefense += 4;
+					_event.m.Dude.getBaseProperties().Hitpoints += 5;
+					_event.m.Dude.getBaseProperties().MeleeSkill += 5;
+					_event.m.Dude.getBaseProperties().MeleeDefense += 4;
 					_event.m.Dude.getBackground().m.RawDescription = "The forests scream and wail. Nature has been out of balance for a long time and %name% is one of the few chosen to listen.";
 					_event.m.Dude.getBackground().buildDescription(true);
 				}
