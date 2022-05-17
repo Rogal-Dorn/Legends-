@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.0.0",
+	Version = "16.0.1",
 	Name = "Legends Mod",
 	BuildName = "The One That Took Forever"
 };
