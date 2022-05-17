@@ -354,7 +354,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			this.m.PerkPoints = 0;
 			this.m.PerkPointsSpent = 0;
 
-			local skillsToRemove = this.getSkills().getSkillsByFunction(this, @(_skill) _skill.isType(this.Const.SkillType.Perk) && nonRefundable.find(_skill.getID()) == null);
+			local skillsToRemove = this.getSkills().getSkillsByFunction(@(_skill) _skill.isType(this.Const.SkillType.Perk) && nonRefundable.find(_skill.getID()) == null);
 			foreach (s in skillsToRemove)
 			{
 				this.getSkills().removeByID(s.getID());
