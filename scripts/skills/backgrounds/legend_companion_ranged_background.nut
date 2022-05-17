@@ -297,7 +297,7 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			items.addToBag(this.new("scripts/items/weapons/legend_staff"));
 		}
 
-		items.equip(this.Const.World.Common.pickArmor([
+		local outfits = [
 			[1, "mercenary_crossbow_outfit_00"],
 			[1, "mercenary_longbow_outfit_00"],
 			[1, "mercenary_spearman_outfit_00"],
@@ -305,7 +305,12 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			[1, "mercenary_leader_outfit_uncommon_00"],
 			[1, "mercenary_leader_outfit_00"],
 			[1, "mercenary_billman_outfit_00"]
-		]))
+		]
+
+		foreach (item in this.Const.World.Common.pickOutfit(outfits))
+		{
+			items.equip(item)
+		}
 	}
 
 	function onUpdate( _properties )
