@@ -49,6 +49,12 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 			],
 			function start( _event )
 			{
+				local roster = this.World.getTemporaryRoster();
+				_event.m.Dude = roster.create("scripts/entity/tactical/player");
+				_event.m.Dude.setStartValuesEx([
+					"legend_companion_ranged_background"
+				]);
+
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 		});
@@ -70,24 +76,16 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 			],
 			function start( _event )
 			{
-				local roster = this.World.getTemporaryRoster();
-				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				{
-				_event.m.Dude.setStartValuesEx([
-					"legend_companion_ranged_background"
-				]);
-				}
-
 				this.Characters.push(_event.m.Dude.getImagePath());
 				_event.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
-				_event.m.Dude.getBackground().getBaseProperties().Hitpoints += 0;
-				_event.m.Dude.getBackground().getBaseProperties().Bravery += 5;
-				_event.m.Dude.getBackground().getBaseProperties().Stamina += 0;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeSkill += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedSkill += 10;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeDefense += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedDefense += 0;
-				_event.m.Dude.getBackground().getBaseProperties().Initiative += 5;
+				_event.m.Dude.getBaseProperties().Hitpoints += 0;
+				_event.m.Dude.getBaseProperties().Bravery += 5;
+				_event.m.Dude.getBaseProperties().Stamina += 0;
+				_event.m.Dude.getBaseProperties().MeleeSkill += 0;
+				_event.m.Dude.getBaseProperties().RangedSkill += 10;
+				_event.m.Dude.getBaseProperties().MeleeDefense += 0;
+				_event.m.Dude.getBaseProperties().RangedDefense += 0;
+				_event.m.Dude.getBaseProperties().Initiative += 5;
 			}
 
 		});
@@ -109,25 +107,16 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 			],
 			function start( _event )
 			{
-				local roster = this.World.getTemporaryRoster();
-				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-
-				{
-				_event.m.Dude.setStartValuesEx([
-					"legend_companion_ranged_background"
-				]);
-				}
-
 				this.Characters.push(_event.m.Dude.getImagePath());
 				_event.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
-				_event.m.Dude.getBackground().getBaseProperties().Hitpoints += 5;
-				_event.m.Dude.getBackground().getBaseProperties().Bravery += 0;
-				_event.m.Dude.getBackground().getBaseProperties().Stamina += 5;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeSkill += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedSkill += 0;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeDefense += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedDefense += 8;
-				_event.m.Dude.getBackground().getBaseProperties().Initiative += 10;
+				_event.m.Dude.getBaseProperties().Hitpoints += 5;
+				_event.m.Dude.getBaseProperties().Bravery += 0;
+				_event.m.Dude.getBaseProperties().Stamina += 5;
+				_event.m.Dude.getBaseProperties().MeleeSkill += 0;
+				_event.m.Dude.getBaseProperties().RangedSkill += 0;
+				_event.m.Dude.getBaseProperties().MeleeDefense += 0;
+				_event.m.Dude.getBaseProperties().RangedDefense += 8;
+				_event.m.Dude.getBaseProperties().Initiative += 10;
 			}
 		});
 		this.m.Screens.push({ //Balanced archetype
@@ -148,25 +137,16 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 			],
 			function start( _event )
 			{
-				local roster = this.World.getTemporaryRoster();
-				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-
-				{
-				_event.m.Dude.setStartValuesEx([
-					"legend_companion_ranged_background"
-				]);
-				}
-
 				this.Characters.push(_event.m.Dude.getImagePath());
 				_event.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
-				_event.m.Dude.getBackground().getBaseProperties().Hitpoints += 0;
-				_event.m.Dude.getBackground().getBaseProperties().Bravery += 0;
-				_event.m.Dude.getBackground().getBaseProperties().Stamina += 5;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeSkill += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedSkill -= 5;
-				_event.m.Dude.getBackground().getBaseProperties().MeleeDefense += 0;
-				_event.m.Dude.getBackground().getBaseProperties().RangedDefense += 2;
-				_event.m.Dude.getBackground().getBaseProperties().Initiative -= 15;
+				_event.m.Dude.getBaseProperties().Hitpoints += 0;
+				_event.m.Dude.getBaseProperties().Bravery += 0;
+				_event.m.Dude.getBaseProperties().Stamina += 5;
+				_event.m.Dude.getBaseProperties().MeleeSkill += 0;
+				_event.m.Dude.getBaseProperties().RangedSkill -= 5;
+				_event.m.Dude.getBaseProperties().MeleeDefense += 0;
+				_event.m.Dude.getBaseProperties().RangedDefense += 2;
+				_event.m.Dude.getBaseProperties().Initiative -= 15;
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/sureshot_trait")); //Bonus for choosing fewer stats.
 			}
 		});
