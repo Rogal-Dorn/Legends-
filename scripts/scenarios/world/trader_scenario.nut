@@ -48,7 +48,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		bros[0].getSprite("socket").setBrush("bust_base_caravan");
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_trader");
 		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPeaceful);
-		bro.m.PerkPointsSpent += 1;
+		bros[0].m.PerkPointsSpent += 1;
 
 		bros[1].setStartValuesEx([
 			"caravan_hand_background",
