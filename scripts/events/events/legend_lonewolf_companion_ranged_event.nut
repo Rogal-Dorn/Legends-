@@ -15,7 +15,7 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 			Characters = [],
 			Options = [
 				{
-					Text = "{How good is your aim? | How accruate are you?}",
+					Text = "{How good is your aim? | How accurate are you?}",
 					function getResult( _event )
 					{
 						return "B"; //B = aggressive
