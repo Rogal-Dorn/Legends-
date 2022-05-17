@@ -79,7 +79,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 		{
 			this.m.Stacks = 0;
 			
-			local armorFat = actor.getTotalArmorStaminaModifier() * -1;
+			local armorFat = actor.getItems().getStaminaModifier([::Const.ItemSlot.Body, ::Const.ItemSlot.Head]) * -1;
 
 			if (actor.getInitiative() >= 2*armorFat)
 			{
