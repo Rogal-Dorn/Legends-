@@ -69,6 +69,9 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 					Text = "{A good shot, mostly. | A good shot but lacking awareness. | Now we\'ll all be safe when the bottles invade.}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
@@ -100,6 +103,9 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 					Text = "{Get in line. | It was the wind. | I\'d like to see how they fare against more than one arrow.}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
@@ -130,6 +136,9 @@ this.legend_lonewolf_companion_ranged_event <- this.inherit("scripts/events/even
 					Text = "{Well, you hit it at least... | I hope they don't take as long to piss. | Deadly. You almost killed it from boredom.}",
 					function getResult( _event )
 					{
+						this.World.getPlayerRoster().add(_event.m.Dude);
+						this.World.getTemporaryRoster().clear();
+						_event.m.Dude.onHired();
 						return 0;
 					}
 
