@@ -97,61 +97,21 @@ this.legend_clothing_merchant_event <- this.inherit("scripts/events/event", {
 				switch(_event.m.Bought)
 				{
 				case 1:
-					local r = this.Math.rand(1, 13); //clothing, fancy vanity stuff
-					local item;
-
-					if (r == 1)
-					{
-						item = this.new("vanity/legend_helmet_southern_top_tail");
-					}
-					else if (r == 2)
-					{
-						item = this.new("vanity/legend_helmet_wizard_cowl");
-					}
-					else if (r == 3)
-					{
-						item = this.new("vanity/legend_helmet_wreath");
-					}
-					else if (r == 4)
-					{
-						item = this.new("vanity/legend_helmet_warlock_hood");
-					}
-					else if (r == 5)
-					{
-						item = this.new("vanity/legend_helmet_royal_hood");
-					}
-					else if (r == 6)
-					{
-						item = this.new("vanity/legend_helmet_lion_pelt");
-					}
-					else if (r == 7)
-					{
-						item = this.new("tabard/legend_noble_vest");
-					}
-					else if (r == 8)
-					{
-						item = this.new("vanity/legend_helmet_noble_buckle");
-					}
-					else if (r == 9)
-					{
-						item = this.new("cloak/legend_noble_shawl");
-					}
-					else if (r == 10)
-					{
-						item = this.new("cloth/legend_southern_noble_surcoat");
-					}
-					else if (r == 11)
-					{
-						item = this.new("vanity/legend_helmet_ponytail");
-					}
-					else if (r == 12)
-					{
-						item = this.new("vanity/legend_helmet_royal_hood");
-					}
-					else if (r == 13)
-					{
-						item = this.new("vanity/legend_helmet_southern_silk_headscarf");
-					}
+					local item = ::new(::MSU.Class.WeightedContainer([
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_southern_top_tail"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_wizard_cowl"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_wreath"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_warlock_hood"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_royal_hood"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_lion_pelt"],
+						[1, "scripts/items/legend_helmets/tabard/legend_noble_vest"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_noble_buckle"],
+						[1, "scripts/items/legend_helmets/cloak/legend_noble_shawl"],
+						[1, "scripts/items/legend_helmets/cloth/legend_southern_noble_surcoat"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_ponytail"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_royal_hood"],
+						[1, "scripts/items/legend_helmets/vanity/legend_helmet_southern_silk_headscarf"]
+					]).roll());
 
 					this.World.Assets.getStash().add(item); //add random item from above, take money, capitalism.
 					this.List.push({
@@ -170,14 +130,18 @@ this.legend_clothing_merchant_event <- this.inherit("scripts/events/event", {
 				case 2: //donkey bought and joins
 					local roster = this.World.getTemporaryRoster();
 					_event.m.Dude = roster.create("scripts/entity/tactical/player");
-						{
-						_event.m.Dude.setStartValuesEx([
-							"legend_donkey_background"
-						]);
+					_event.m.Dude.setStartValuesEx([
+						"legend_donkey_background"
+					]);
+
 					_event.m.Dude.getBaseProperties().Hitpoints -= 35;
 					_event.m.Dude.getBaseProperties().Stamina -= 25;
 					_event.m.Dude.getBaseProperties().Initiative -= 40;
-						}
+
+					this.World.getPlayerRoster().add(_event.m.Dude);
+					this.World.getTemporaryRoster().clear();
+					_event.m.Dude.onHired();
+
 					this.World.Assets.addMoney(-2800);
 					this.List.push({
 						id = 10,
