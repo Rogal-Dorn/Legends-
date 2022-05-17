@@ -294,7 +294,7 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 			items.equip(this.new("scripts/items/shields/legend_tower_shield"));
 		}
 
-		items.equip(this.Const.World.Common.pickArmor([
+		local outfits = [
 			[1, "traze_northern_mercenary_outfit_00"],
 			[1, "mercenary_infantry_outfit_00"],
 			[1, "mercenary_infantry_outfit_01"],
@@ -307,6 +307,11 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 			[1, "brown_hedgeknight_outfit_00"],
 			[1, "red_bandit_leader_outfit_00"],
 			[1, "mercenary_billman_outfit_00"]
-		]))
+		]
+
+		foreach (item in this.Const.World.Common.pickOutfit(outfits))
+		{
+			items.equip(item)
+		}
 	}
 });
