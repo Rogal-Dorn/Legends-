@@ -31,6 +31,7 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			ID = "B",
 			Text = "[img]gfx/ui/events/event_62.png[/img]{It occurs to you that before you embark on this journey of self discovery, you should probably arm yourself a little better - a lance is pointless without a horse. Your armour is old - but it\'ll do for now.\n\n Visiting the local weaponsmith you spot an array of killing instruments, each carefully dressed and arranged like a breadmaker\'s stall. You only have enough crowns for one set, so you better choose wisely.}",
 			Image = "",
+			Banner = "",
 			List = [],
 			Characters = [],
 			Options = [ //maximum 6 options
@@ -67,7 +68,7 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 
 				},
 				{
-					Text = "Its been a while, but I could fell an orc with a bow at 20 paces easily. I'll get a small dagger too.",
+					Text = "I\'m a little rusty, but a bow and dagger is the proper choice.",
 					function getResult( _event )
 					{
 						return "G"; //Bow + dagger
@@ -134,6 +135,12 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local item = this.new("scripts/items/weapons/military_pick");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/shields/heater_shield");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -163,6 +170,12 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local item = this.new("scripts/items/weapons/fighting_axe");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/shields/buckler_shield");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -192,7 +205,19 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local item = this.new("scripts/items/weapons/crossbow");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/ammo/quiver_of_bolts");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/weapons/arming_sword");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
@@ -205,7 +230,7 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({ //Bow + dagger
 			ID = "G",
-			Text = "[img]gfx/ui/events/event_01.png[/img]{You test the string on the hunting bow. Pulling it back reminds you of all the archery tournaments you won in the past and how hard it would be to hit a living, breathing and possible very angry target.\n\nEitherway - you still have a nice, sharp dagger if they get close.}",
+			Text = "[img]gfx/ui/events/event_01.png[/img]{You test the string on the hunting bow. Pulling it back reminds you of all the archery tournaments you won in the past and how hard it would be to hit a living, breathing and possible very angry target.\n\nEither way - you still have a nice, sharp dagger if they get close.}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -222,7 +247,19 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local item = this.new("scripts/items/weapons/hunting_bow");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/ammo/quiver_of_arrows");
+				this.World.Assets.getStash().add(item);
+				this.List.push({
+					id = 10,
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
+				});
 				local item = this.new("scripts/items/weapons/rondel_dagger");
 				this.World.Assets.getStash().add(item);
 				this.List.push({

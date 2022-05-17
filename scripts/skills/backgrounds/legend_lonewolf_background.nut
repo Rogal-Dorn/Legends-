@@ -240,7 +240,8 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 
 	function onAddEquipment() //chooses a weapon through starting event
 	{
-		// local items = this.getContainer().getActor().getItems();
+		local items = this.getContainer().getActor().getItems();
+		local helm = this.getContainer().getActor().getItems();
 		// local r;
 
 		// r = this.Math.rand(0, 5);
@@ -286,7 +287,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			[1, "closed_flat_top_helmet"]
 		];
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			helm.push([1, "theamson_barbute_helmet"])
 		}
