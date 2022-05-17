@@ -1739,6 +1739,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return;
 		}
 
+		this.World.Camp.onCamp();
+
 		if (this.World.Camp.isCamping())
 		{
 			this.m.Player.setDestination(null);
@@ -1747,7 +1749,6 @@ this.world_state <- this.inherit("scripts/states/state", {
 			this.m.AutoAttack = null;
 		}
 
-		this.World.Camp.onCamp();
 		if (this.World.Camp.isCamping())
 		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
