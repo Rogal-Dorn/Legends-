@@ -174,9 +174,9 @@ this.legend_clothing_merchant_event <- this.inherit("scripts/events/event", {
 						_event.m.Dude.setStartValuesEx([
 							"legend_donkey_background"
 						]);
-					_event.m.Dude.getBackground().getBaseProperties().Hitpoints -= 35;
-					_event.m.Dude.getBackground().getBaseProperties().Stamina -= 25;
-					_event.m.Dude.getBackground().getBaseProperties().Initiative -= 40;
+					_event.m.Dude.getBaseProperties().Hitpoints -= 35;
+					_event.m.Dude.getBaseProperties().Stamina -= 25;
+					_event.m.Dude.getBaseProperties().Initiative -= 40;
 						}
 					this.World.Assets.addMoney(-2800);
 					this.List.push({
