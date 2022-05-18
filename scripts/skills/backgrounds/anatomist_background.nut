@@ -173,35 +173,17 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 			items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
 
-		r = this.Math.rand(0, 5);
+		items.equip(this.Const.World.Common.pickArmor([
+			[2, "undertaker_apron"],
+			[2, "wanderers_coat"],
+			[1, "reinforced_leather_tunic"]
+		]));
 
-		if (r < 3)
-		{
-			items.equip(this.new("scripts/items/armor/undertaker_apron"));
-		}
-		else if (r < 5)
-		{
-			items.equip(this.new("scripts/items/armor/wanderers_coat"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/armor/reinforced_leather_tunic"));
-		}
-
-		r = this.Math.rand(0, 5);
-
-		if (r < 3)
-		{
-			items.equip(this.new("scripts/items/helmets/undertaker_hat"));
-		}
-		else if (r < 5)
-		{
-			items.equip(this.new("scripts/items/helmets/physician_mask"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/masked_kettle_helmet"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, "undertaker_hat"],
+			[2, "physician_mask"],
+			[1, "masked_kettle_helmet"]
+		]));
 	}
 
 });
