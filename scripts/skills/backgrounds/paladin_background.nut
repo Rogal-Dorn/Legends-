@@ -242,33 +242,17 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		r = this.Math.rand(0, 5);
 
-		if (r < 3)
-		{
-			items.equip(this.new("scripts/items/armor/adorned_mail_shirt"));
-		}
-		else if (r < 5)
-		{
-			items.equip(this.new("scripts/items/armor/adorned_warriors_armor"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/armor/adorned_heavy_mail_hauberk"));
-		}
+		items.equip(this.Const.World.Common.pickArmor([
+			[2, "adorned_mail_shirt"],
+			[2, "adorned_warriors_armor"],
+			[1, "adorned_heavy_mail_hauberk"]
+		]));
 
-		r = this.Math.rand(0, 5);
-
-		if (r < 3)
-		{
-			items.equip(this.new("scripts/items/helmets/heavy_mail_coif"));
-		}
-		else if (r < 5)
-		{
-			items.equip(this.new("scripts/items/helmets/adorned_closed_flat_top_with_mail"));
-		}
-		else if (r == 5)
-		{
-			items.equip(this.new("scripts/items/helmets/adorned_full_helm"));
-		}
+		items.equip(this.Const.World.Common.pickHelmet([
+			[2, "heavy_mail_coif"],
+			[2, "adorned_closed_flat_top_with_mail"],
+			[1, "adorned_full_helm"]
+		]));
 	}
 
 });

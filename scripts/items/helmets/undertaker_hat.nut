@@ -1,8 +1,8 @@
-this.undertaker_hat <- this.inherit("scripts/items/helmets/helmet", {
+this.undertaker_hat <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	m = {},
 	function create()
 	{
-		this.helmet.create();
+		this.legend_helmet.create();
 		this.m.ID = "armor.head.undertaker_hat";
 		this.m.Name = "Undertaker\'s Hat";
 		this.m.Description = "A wide-brimmed feathered hat with a scarf to cover the mouth. Durable enough to protect against weather and scratches.";
@@ -18,7 +18,25 @@ this.undertaker_hat <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.Condition = 40;
 		this.m.ConditionMax = 40;
 		this.m.StaminaModifier = 0;
+		this.blockUpgrades();
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.ExtraVanity] = false;
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.Rune] = false;
 	}
 
-});
+	function updateVariant()
+	{
+		return this.helmet.updateVariant();
+	}
 
+	function onDeserialize( _in )
+	{
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("16.0.3", _in.getMetaData()))
+		{
+			this.legend_helmet.onDeserialize(_in);
+		}
+		else
+		{
+			this.helmet.onDeserialize(_in);
+		}
+	}
+});

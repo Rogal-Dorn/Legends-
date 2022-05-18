@@ -1,8 +1,8 @@
-this.masked_kettle_helmet <- this.inherit("scripts/items/helmets/helmet", {
+this.masked_kettle_helmet <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	m = {},
 	function create()
 	{
-		this.helmet.create();
+		this.legend_helmet.create();
 		this.m.ID = "armor.head.masked_kettle_helmet";
 		this.m.Name = "Masked Kettle Helmet";
 		this.m.Description = "A brimmed metal helmet with an ominous black mask to cover the face.";
@@ -19,7 +19,25 @@ this.masked_kettle_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 120;
 		this.m.StaminaModifier = -6;
 		this.m.Vision = -2;
+		this.blockUpgrades();
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.ExtraVanity] = false;
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.Rune] = false;
 	}
 
-});
+	function updateVariant()
+	{
+		return this.helmet.updateVariant();
+	}
 
+	function onDeserialize( _in )
+	{
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("16.0.3", _in.getMetaData()))
+		{
+			this.legend_helmet.onDeserialize(_in);
+		}
+		else
+		{
+			this.helmet.onDeserialize(_in);
+		}
+	}
+});

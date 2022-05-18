@@ -1904,6 +1904,108 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Attachments =[
 		]
 	}]
+},{
+	ID = "adorned_heavy_mail_hauberk",
+	Script = "scripts/items/armor/adorned_heavy_mail_hauberk",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
+	ID = "adorned_mail_shirt",
+	Script = "scripts/items/armor/adorned_mail_shirt",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
+	ID = "adorned_warriors_armor",
+	Script = "scripts/items/armor/adorned_warriors_armor",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
+	ID = "reinforced_leather_tunic",
+	Script = "scripts/items/armor/reinforced_leather_tunic",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
+	ID = "undertaker_apron",
+	Script = "scripts/items/armor/undertaker_apron",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
+	ID = "wanderers_coat",
+	Script = "scripts/items/armor/wanderers_coat",
+	Sets = [{
+		Cloth = [
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
 }]);
 
 gt.Const.LegendMod.Armors <- {};

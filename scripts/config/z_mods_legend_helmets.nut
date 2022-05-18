@@ -2202,6 +2202,90 @@ gt.Const.LegendMod.HelmObjs.extend([
 			Vanity = [
 			]
 		}]
+	},
+	{
+		ID = "adorned_closed_flat_top_with_mail",
+		Script = "scripts/items/helmets/adorned_closed_flat_top_with_mail",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
+	},
+	{
+		ID = "adorned_full_helm",
+		Script = "scripts/items/helmets/adorned_full_helm",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
+	},
+	{
+		ID = "heavy_mail_coif",
+		Script = "scripts/items/helmets/heavy_mail_coif",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
+	},
+	{
+		ID = "masked_kettle_helmet",
+		Script = "scripts/items/helmets/masked_kettle_helmet",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
+	},
+	{
+		ID = "physician_mask",
+		Script = "scripts/items/helmets/physician_mask",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
+	},
+	{
+		ID = "undertaker_hat",
+		Script = "scripts/items/helmets/undertaker_hat",
+		Sets = [{
+			Hoods = [
+			],
+			Helms = [
+			],
+			Tops = [
+			],
+			Vanity = [
+			]
+		}]
 	}
 ])
 

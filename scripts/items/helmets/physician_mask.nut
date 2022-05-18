@@ -1,8 +1,8 @@
-this.physician_mask <- this.inherit("scripts/items/helmets/helmet", {
+this.physician_mask <- this.inherit("scripts/items/legend_helmets/legend_helmet", {
 	m = {},
 	function create()
 	{
-		this.helmet.create();
+		this.legend_helmet.create();
 		this.m.ID = "armor.head.physician_mask";
 		this.m.Name = "Physician\'s Mask";
 		this.m.Description = "A thick leather hood with a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease.";
@@ -20,11 +20,14 @@ this.physician_mask <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ConditionMax = 70;
 		this.m.StaminaModifier = -3;
 		this.m.Vision = -1;
+		this.blockUpgrades();
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.ExtraVanity] = false;
+		this.m.Blocked[this.Const.Items.HelmetUpgrades.Rune] = false;
 	}
 
 	function getTooltip()
 	{
-		local result = this.helmet.getTooltip();
+		local result = this.legend_helmet.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
@@ -36,9 +39,24 @@ this.physician_mask <- this.inherit("scripts/items/helmets/helmet", {
 
 	function onUpdateProperties( _properties )
 	{
-		this.helmet.onUpdateProperties(_properties);
+		this.legend_helmet.onUpdateProperties(_properties);
 		_properties.IsResistantToMiasma = true;
 	}
 
-});
+	function updateVariant()
+	{
+		return this.helmet.updateVariant();
+	}
 
+	function onDeserialize( _in )
+	{
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("16.0.3", _in.getMetaData()))
+		{
+			this.legend_helmet.onDeserialize(_in);
+		}
+		else
+		{
+			this.helmet.onDeserialize(_in);
+		}
+	}
+});

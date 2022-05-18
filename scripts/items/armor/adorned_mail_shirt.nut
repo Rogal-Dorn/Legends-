@@ -1,8 +1,8 @@
-this.adorned_mail_shirt <- this.inherit("scripts/items/armor/armor", {
+this.adorned_mail_shirt <- this.inherit("scripts/items/legend_armor/legend_armor", {
 	m = {},
 	function create()
 	{
-		this.armor.create();
+		this.legend_armor.create();
 		this.m.ID = "armor.body.adorned_mail_shirt";
 		this.m.Name = "Adorned Mail Shirt";
 		this.m.Description = "A heavy mail shirt covered by a quilted surcoat. An impressive and well-maintained piece, adorned with trophies and holy symbols.";
@@ -17,7 +17,20 @@ this.adorned_mail_shirt <- this.inherit("scripts/items/armor/armor", {
 		this.m.Condition = 150;
 		this.m.ConditionMax = 150;
 		this.m.StaminaModifier = -16;
+		this.blockUpgrades();
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
+	function onDeserialize( _in )
+	{
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("16.0.3", _in.getMetaData()))
+		{
+			this.legend_armor.onDeserialize(_in);
+		}
+		else
+		{
+			this.armor.onDeserialize(_in);
+		}
+	}
 });
-
