@@ -164,11 +164,11 @@ this.goblin <- this.inherit("scripts/entity/tactical/actor", {
 	function onFactionChanged()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer();
-		if (::MSU.isKindOf(this.getItems().getItemAtSlot(::Const.ItemSlot.Head), "legend_helmet"))
+		local flip = !this.isAlliedWithPlayer();
+
+		foreach (sprite in ::Const.CharacterSprites.Helmets)
 		{
-			this.getSprite("helmet").setHorizontalFlipping(flip);
-			this.getSprite("helmet_damage").setHorizontalFlipping(flip);
+			if (this.hasSprite(sprite)) this.getSprite(sprite).setHorizontalFlipping(flip);
 		}
 	}
 
