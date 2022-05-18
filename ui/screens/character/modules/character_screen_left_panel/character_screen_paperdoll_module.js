@@ -1430,14 +1430,19 @@ CharacterScreenPaperdollModule.prototype.setupLayerButtons = function(_buttonArr
 		var self = this;
 		_buttonArray.forEach(function (btn, index) {
 				var enabled = false;
-				if (_upgradeArray !== undefined && _upgradeArray !== '' && _upgradeArray.length > 0) {
-						btn.show();
-						enabled = _upgradeArray[index] > 0 && !self.mDataSource.isTacticalMode()
+				if (_upgradeArray !== undefined && _upgradeArray !== '' && _upgradeArray.length > 0)
+				{
+					btn.show();
+					enabled = _upgradeArray[index] > 0 && !self.mDataSource.isTacticalMode()
 
-						if( _upgradeArray[index] == 2)
-						{
-								btn.addClass('armor_button_invisible')
-						}
+					if( _upgradeArray[index] == 2)
+					{
+						btn.addClass('armor_button_invisible')
+					}
+					else if (_upgradeArray[index] == -1) // blocked
+					{
+						btn.changeButtonText("X")
+					}
 				}
 				btn.enableButton(enabled);
 				btn.bindTooltip({
