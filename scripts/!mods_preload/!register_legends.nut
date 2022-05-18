@@ -1,8 +1,8 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.0.1",
+	Version = "16.0.2",
 	Name = "Legends Mod",
-	BuildName = "The One That Took Forever"
+	BuildName = "Name Pending"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.0), vanilla(>=1.5.0-11), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()

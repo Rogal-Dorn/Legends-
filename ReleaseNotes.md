@@ -1,6 +1,21 @@
 ### Legend Mod Release Notes
 
-## 17 - Of Flesh and Faith
+## 16.0.3 - Weiderganger Mustachio
+- fix: Increased 2h Flail damage to 45 - 90 as intended.
+- fix: Zombie trying too set brush for a sprite it doesn't have.
+- fix: Possession not actually applying possessed.
+- fix: Stollwurm helm typo.
+- fix: Some more crafting item typos.
+- fix: Potential error if nearest there are no zombie or bandit locations on the map.
+- style: Replace double spaces in character screen paperdoll with tabs.
+
+## 16.0.2 - First Day Hotfixes
+- bugfixes
+
+## 16.0.1 - The One That Took Forever
+- bugfixes
+
+## 16.0.0 - The One That Took Forever
 
 ===**DLC Compatibility**===
     - Anatomists and Oathtakers have been made Legends compatible.
