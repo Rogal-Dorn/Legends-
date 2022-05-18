@@ -284,7 +284,7 @@ this.anatomist_dead_knight_event <- this.inherit("scripts/events/event", {
 			{
 				anatomist_candidates.push(bro);
 			}
-			else if (bro.getBackground().isNoble())
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
 			{
 				noble_candidates.push(bro);
 			}
