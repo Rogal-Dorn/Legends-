@@ -5,7 +5,7 @@ this.legend_heartwood_sap_flask_item <- this.inherit("scripts/items/accessory/ac
 		this.accessory.create();
 		this.m.ID = "accessory.legend_heartwood_sap_flask";
 		this.m.Name = "Flask of Heartwood Sap";
-		this.m.Description = "This flask holds the sap of a heartwood scrat, it will grant a feeling of intense clarity and speed. The sensation takes over your mind and body, placing you in a flow state of pure presence.";
+		this.m.Description = "This flask holds the sap of a heartwood schrat, it will grant a feeling of intense clarity and speed. The sensation takes over your mind and body, placing you in a flow state of pure presence.";
 		this.m.SlotType = this.Const.ItemSlot.Bag;
 		this.m.IsAllowedInBag = true;
 		this.m.IsDroppedAsLoot = true;
