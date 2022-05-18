@@ -181,6 +181,18 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		}
 	}
 
+	function setBought( _bought )
+	{
+		this.armor.setBought(_bought);
+		this.doOnFunction("setBought", [_bought]);
+	}
+
+	function setSold( _sold )
+	{
+		this.armor.setSold(_sold);
+		this.doOnFunction("setSold", [_sold]);
+	}
+
 	function onTurnStart()
 	{
 		this.doOnFunction("onTurnStart");

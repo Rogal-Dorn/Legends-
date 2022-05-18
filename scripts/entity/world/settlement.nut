@@ -2475,9 +2475,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		foreach (item in this.World.Assets.getStash().getItems())
 		{
-			if (item != null && item.isBought())
+			if (item == null) continue;
+			if (item.isBought())
 			{
-				item.setBought(false);
 				if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
@@ -2488,16 +2488,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					}
 				}
 			}
+			item.setBought(false);
 		}
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			foreach (item in bro.getItems().getAllItems())
 			{
-				if (item.isBought())
-				{
-					item.setBought(false);
-				}
+				item.setBought(false);
 			}
 		}
 
@@ -2508,9 +2506,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				foreach (item in stash.getItems())
 				{
-					if (item != null && item.isSold())
+					if (item == null) continue;
+					if (item.isSold())
 					{
-						item.setSold(false);
 						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 						{
 							this.World.Statistics.getFlags().increment("TradeGoodsSold");
@@ -2521,6 +2519,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 							}
 						}
 					}
+					item.setSold(false);
 				}
 			}
 		}

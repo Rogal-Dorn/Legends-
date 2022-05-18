@@ -227,6 +227,18 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		}
 	}
 
+	function setBought( _bought )
+	{
+		this.helmet.setBought(_bought);
+		this.doOnFunction("setBought", [_bought], true);
+	}
+
+	function setSold( _sold )
+	{
+		this.helmet.setSold(_sold);
+		this.doOnFunction("setSold", [_sold], true);
+	}
+
 	function onTurnStart()
 	{
 		this.doOnFunction("onTurnStart");
