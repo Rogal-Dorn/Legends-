@@ -32,7 +32,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				text = "+[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] Melee Skill"
 			});
 
-			if (!actor.isPlacedOnMap() || actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() > 0)
+			if (!actor.isPlacedOnMap() || ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len() > 0)
 			{
 				bonus *= 2;
 			}
@@ -54,7 +54,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 				text = "The Melee Damage bonus will be [color=" + this.Const.UI.Color.NegativeValue + "]halved[/color] when not engaged in melee"
 			});
 		}
-		else if (actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() == 0)
+		else if (::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true) == 0)
 		{
 			tooltip.push({
 				id = 6,
@@ -92,7 +92,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 			local bonus = this.getBonus();
 			_properties.MeleeSkillMult *= 1 + bonus * 0.01;
 
-			if (!actor.isPlacedOnMap() || actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() > 0)
+			if (!actor.isPlacedOnMap() || ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true) > 0)
 			{
 				bonus *= 2;
 			}

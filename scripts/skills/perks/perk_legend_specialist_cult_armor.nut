@@ -49,7 +49,8 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 
 	function getBonus()
 	{
-		return this.getContainer().getActor().getActorsWithinDistanceAsArray(1, this.Const.FactionRelation.Enemy).len() * 0.05;
+		local actor = this.getContainer().getActor();
+		return ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1).len() * 0.05;
 	}
 
 	function onUpdate( _properties )
