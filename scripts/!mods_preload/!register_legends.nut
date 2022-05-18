@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.0.2",
+	Version = "16.0.3",
 	Name = "Legends Mod",
 	BuildName = "Name Pending"
 };
