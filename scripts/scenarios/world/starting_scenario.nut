@@ -233,17 +233,8 @@ this.starting_scenario <- {
 			_background.getContainer().add(this.new(this.Const.Perks.PerkDefObjects[_perk].Script));
 			isRefundable = false;
 		}
-
-		if (!isRefundable)
-		{
-			local perkDefObject = _background.getPerk(_perk);
-			if (perkDefObject != null)
-			{
-				perkDefObject.IsRefundable = false;
-				return;
-			}
-		}
 		
 		_background.addPerk(_perk, _row, isRefundable);
+		if (!isRefundable) _background.getPerk(_perk).IsRefundable = false;
 	}
 };
