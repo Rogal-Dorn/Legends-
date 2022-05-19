@@ -92,7 +92,7 @@ this.perk_legend_in_the_zone <- this.inherit("scripts/skills/skill", {
 			local bonus = this.getBonus();
 			_properties.MeleeSkillMult *= 1 + bonus * 0.01;
 
-			if (!actor.isPlacedOnMap() || ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true) > 0)
+			if (!actor.isPlacedOnMap() || ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len() > 0)
 			{
 				bonus *= 2;
 			}
