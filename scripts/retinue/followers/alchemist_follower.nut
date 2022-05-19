@@ -27,7 +27,9 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			"background.legend_taxidermist",
 			"background.legend_druid",
 			"background.legend_commander_druid",
-			"background.legend_alchemist"
+			"background.legend_alchemist",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

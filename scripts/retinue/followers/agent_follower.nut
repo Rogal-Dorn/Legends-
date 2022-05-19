@@ -25,7 +25,9 @@ this.agent_follower <- this.inherit("scripts/retinue/follower", {
 			"background.eunuch",
 			"background.messenger",
 			"background.assassin",
-			"background.assassin_southern"
+			"background.assassin_southern",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

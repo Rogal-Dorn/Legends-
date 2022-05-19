@@ -25,7 +25,9 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 			"background.lumberjack",
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
-			"background.legend_master_archer"
+			"background.legend_master_archer",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

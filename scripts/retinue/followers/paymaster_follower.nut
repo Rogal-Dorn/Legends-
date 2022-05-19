@@ -20,7 +20,9 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_barter_paymaster"
+			"perk.legend_barter_paymaster",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 	
