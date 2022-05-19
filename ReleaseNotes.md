@@ -1,20 +1,22 @@
 ### Legend Mod Release Notes
 
-## 16.0.4 - Title Here
+## 16.0.4 - Last Knight Standing
 
-Lone wolf scenario;
-Melee and ranged companions have had most of their base stats raised.
-Lone wolf has had a few base stats raised.
-Companions can now occupy any retinue slot, as long as it is unlocked.
-Companions should now have the coirrect weapon trees (they were the basic trees for the PTR merge, which did not happen in V16).
-Lone wolf should now reduce random hires from events (apprentice, vala, kings guard, etc.) to zero daily wage.
+**Lone Wolf Scenario**
+- Melee and ranged companions have had most of their base stats raised.
+- Lone wolf has had a few base stats raised.
+- Companions can now occupy any retinue slot, as long as it is unlocked.
+- Companions should now have the correct weapon trees (they were the basic trees for the PTR merge, which did not happen in V16).
+- Lone wolf should now reduce random hires from events (apprentice, vala, kings guard, etc.) to zero daily wage.
 
-Misc;
-Hedge knights and knights now have the 'last stand' perk by default.
-Both the above have had their hitpoints greatly increased.
+**Changes**
+- Hedge knights and knights now have the 'last stand' perk by default.
+- Both the above have had their hitpoints greatly increased.
 
+**Fixes**
+- Improper file path for armor in new background.
 
-## 16.0.3 - Weiderganger Mustachio
+## 16.0.3 - Name Pending <3 Uber
 - fix: Increased 2h Flail damage to 45 - 90 as intended.
 - fix: Zombie trying too set brush for a sprite it doesn't have.
 - fix: Possession not actually applying possessed.
