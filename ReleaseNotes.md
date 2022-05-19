@@ -1,5 +1,15 @@
 ### Legend Mod Release Notes
 
+## 16.0.4 - Title Here
+
+Lone wolf scenario;
+Melee and ranged companions have had most of their base stats raised.
+Lone wolf has had a few base stats raised.
+Companions can now occupy any retinue slot, as long as it is unlocked.
+Companions should now have the coirrect weapon trees (they were the basic trees for the PTR merge, which did not happen in V16).
+Lone wolf should now reduce random hires from events (apprentice, vala, kings guard, etc.) to zero daily wage.
+
+
 ## 16.0.3 - Weiderganger Mustachio
 - fix: Increased 2h Flail damage to 45 - 90 as intended.
 - fix: Zombie trying too set brush for a sprite it doesn't have.

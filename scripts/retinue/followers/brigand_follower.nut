@@ -20,7 +20,9 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.RequiredSkills = [
 			"background.raider",
 			"background.barbarian",
-			"background.deserter"
+			"background.deserter",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

@@ -19,7 +19,9 @@ this.lookout_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.lookout"
+			"perk.lookout",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

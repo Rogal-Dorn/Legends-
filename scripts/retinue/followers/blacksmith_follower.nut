@@ -19,7 +19,9 @@ this.blacksmith_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_field_repairs"
+			"perk.legend_field_repairs",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 
