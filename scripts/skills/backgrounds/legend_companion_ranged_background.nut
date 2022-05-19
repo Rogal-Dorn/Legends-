@@ -77,27 +77,36 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		
 
-		this.m.PerkTreeDynamic = { //UBER TO DO - RANGED FOCUSED BRO
+		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.HammerTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.BowTree,
+				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.AxeTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree,
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.TrainedTree,
-				this.Const.Perks.FastTree
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.TrainedTree
 			],
 			Enemy = [],
-			Class = [],
+			Class = [
+				this.Const.Perks.BeastClassTree
+			],
 			Magic = []
 		}
-	} //UBER TO DO ABOVE
+	}
 
 	//Default Male
 	function setGender(_gender = -1)
@@ -150,27 +159,27 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 				5
 			],
 			Bravery = [
-				5,
+				8,
 				5
 			],
 			Stamina = [
-				3,
-				3
+				10,
+				5
 			],
 			MeleeSkill = [
-				-5,
+				0,
 				0
 			],
 			RangedSkill = [
-				10,
-				5
+				15,
+				10
 			],
 			MeleeDefense = [
 				-3,
 				0
 			],
 			RangedDefense = [
-				5,
+				7,
 				5
 			],
 			Initiative = [

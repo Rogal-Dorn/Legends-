@@ -19,7 +19,9 @@ this.surgeon_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_field_triage"
+			"perk.legend_field_triage",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

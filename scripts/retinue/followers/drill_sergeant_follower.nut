@@ -22,7 +22,9 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 			"background.retired_soldier",
 			"background.swordmaster",
 			"background.sellsword",
-			"background.gladiator"
+			"background.gladiator",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

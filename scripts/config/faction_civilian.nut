@@ -278,7 +278,7 @@ gt.Const.Tactical.Actor.Swordmaster <- {
 gt.Const.Tactical.Actor.HedgeKnight <- {
 	XP = 450,
 	ActionPoints = 9,
-	Hitpoints = 150,
+	Hitpoints = 185,
 	Bravery = 90,
 	Stamina = 160,
 	MeleeSkill = 85,

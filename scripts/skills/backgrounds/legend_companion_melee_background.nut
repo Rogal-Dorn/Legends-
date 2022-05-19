@@ -77,27 +77,35 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[1];
 		
 
-		this.m.PerkTreeDynamic = { //UBER TO DO - MELEE FOCUSED BRO
+		this.m.PerkTreeDynamic = { 
 			Weapon = [
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.FlailTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.HammerTree,
-				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.AxeTree
+				this.Const.Perks.HammerTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree,
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
-				this.Const.Perks.IndestructibleTree,
-				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.TrainedTree,
-				this.Const.Perks.FastTree
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.FitTree
 			],
 			Enemy = [],
 			Class = [],
 			Magic = []
 		}
-	} //UBER TO DO ABOVE
+	} 
 
 	//Default Male
 	function setGender(_gender = -1)
@@ -146,11 +154,11 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 	{
 		local c = {
 			Hitpoints = [ //THIS BACKGROUND GAINS EXTRA STATS IN RECRUITMENT EVENTS DEPENDING ON PLAYER CHOICES
-				5,
-				5
+				14,
+				10
 			],
 			Bravery = [
-				5,
+				8,
 				5
 			],
 			Stamina = [
@@ -159,15 +167,15 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 			],
 			MeleeSkill = [
 				10,
-				5
+				13
 			],
 			RangedSkill = [
-				-10,
-				-7
+				-5,
+				-3
 			],
 			MeleeDefense = [
-				5,
-				7
+				7,
+				10
 			],
 			RangedDefense = [
 				-4,
