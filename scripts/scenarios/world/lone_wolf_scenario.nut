@@ -161,6 +161,12 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 			{
 				garbage.push(bro);
 			}
+			else
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.0)
+				bro.getBaseProperties().DailyWageMult *= 0.0;
+				bro.getSkills().update();
+			}
 		}
 
 		foreach( g in garbage )

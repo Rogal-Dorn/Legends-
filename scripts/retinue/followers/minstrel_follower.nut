@@ -19,7 +19,9 @@ this.minstrel_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_entice"
+			"perk.legend_entice",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

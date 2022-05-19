@@ -19,7 +19,9 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_pacifist"
+			"perk.legend_pacifist",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

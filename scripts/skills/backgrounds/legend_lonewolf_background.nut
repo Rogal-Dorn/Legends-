@@ -87,7 +87,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
 		
-		this.m.PerkTreeDynamic = { //UBER TO DO
+		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.PolearmTree,
@@ -113,7 +113,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			Enemy = [this.Const.Perks.SwordmastersTree],
 			Class = [],
 			Magic = []
-		} //UBER TO DO
+		}
 	}
 
 	//Default Male
@@ -202,28 +202,28 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				8,
-				12
+				12,
+				16
 			],
 			Bravery = [
-				10,
-				5
+				12,
+				8
 			],
 			Stamina = [
-				12,
+				18,
 				12
 			],
 			MeleeSkill = [
-				10,
-				7
-			],
-			RangedSkill = [
 				14,
 				10
 			],
+			RangedSkill = [
+				10,
+				16
+			],
 			MeleeDefense = [
-				7,
-				6
+				6,
+				9 // nice
 			],
 			RangedDefense = [
 				7,

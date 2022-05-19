@@ -18,7 +18,9 @@ this.cook_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_camp_cook"
+			"perk.legend_camp_cook",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 
