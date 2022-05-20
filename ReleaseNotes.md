@@ -1,5 +1,9 @@
 ### Legend Mod Release Notes
 
+## 16.0.5 - 
+- Lumberjack is now tagged as a combat background for origin purposes.
+- Trader Commander is now fat as befits a person of greed and gluttony.
+
 ## 16.0.4 - Last Knight Standing
 
 **Lone Wolf Scenario**
