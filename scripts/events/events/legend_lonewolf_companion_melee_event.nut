@@ -59,7 +59,7 @@ this.legend_lonewolf_companion_melee_event <- this.inherit("scripts/events/event
 		});
 		this.m.Screens.push({ //Aggressive archetype
 			ID = "B",
-			Text = "[img]gfx/ui/events/event_76.png[/img]{%recruit% smiles and picks up their weapon. At first their attacks are random and clumsy but gradually pick up in speed and precision as they probe the weak points of your defence. You deflect an incoming thrust only to be kicked in the shin and subsequently punched in the face by a fist tightly gripped around the handle of their weapon.%SPEECH_ON%You should look down more, friend. You keep your eyes up high and around my shoulders but you reacted far too slowly to all those low hits I tried to get in on you.%SPEECH_OFF%You brush the blood froma round your nose. Your eyes water a little but you managed to regain your composure.%SPEECH_ON%Fine, you\'re in.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_76.png[/img]{%recruit% smiles and picks up their weapon. At first their attacks are random and clumsy but gradually pick up in speed and precision as they probe the weak points of your defence. You deflect an incoming thrust only to be kicked in the shin and subsequently punched in the face by a fist tightly gripped around the handle of their weapon.%SPEECH_ON%You should look down more, friend. You keep your eyes up high and around my shoulders but you reacted far too slowly to all those low hits I tried to get in on you.%SPEECH_OFF%You brush the blood from around your nose. Your eyes water a little but you managed to regain your composure.%SPEECH_ON%Fine, you\'re in.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
