@@ -5,6 +5,7 @@ Cabal brothers that raise from the dead should now only raise as zombies, not sk
 
 Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
 
+Roses are red, violets are blue, I fucked with demon alp AI again - who knows what it will do?
 
 
 ## 16.0.4 - Last Knight Standing
