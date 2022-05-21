@@ -3,8 +3,7 @@
 ## 16.0.5 - Mmmm nyees :uphold:
 Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
 
-
-
+Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
 
 
 
