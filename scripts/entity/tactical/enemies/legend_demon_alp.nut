@@ -1,8 +1,8 @@
 this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Size = 1,
-		Head = 1,
-		ScaleStartTime = 0
+		// Size = 1,
+		// Head = 1,
+		// ScaleStartTime = 0 //changed 21/5/22 - conflict with disengage AI in agent. Lets see if this changes something.
 	},
 	function getSize()
 	{
