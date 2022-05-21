@@ -2,6 +2,7 @@ this.getroottable().Const.LegendMod.hookAIAgent <- function()
 {
 	::mods_hookBaseClass("ai/tactical/agent", function(o) {
 		o = o[o.SuperName];
+		o.m.PriorityTarget <- null;
 
 		o.setPriorityTarget <- function(_entity)
 		{
