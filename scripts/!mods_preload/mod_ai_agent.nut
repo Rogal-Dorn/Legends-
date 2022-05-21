@@ -1,12 +1,7 @@
 this.getroottable().Const.LegendMod.hookAIAgent <- function()
 {
 	::mods_hookBaseClass("ai/tactical/agent", function(o) {
-		while(!("StrategyGenerator" in o.m)) o = o[o.SuperName]; // find the base class
-		if(!("_mod_legend" in o))
-		{
-			o._mod_legend <- true;// only override the methods once per base instance
-			o.m.PriorityTarget <- null;
-		}
+		o = o[o.SuperName];
 
 		o.setPriorityTarget <- function(_entity)
 		{
@@ -41,6 +36,59 @@ this.getroottable().Const.LegendMod.hookAIAgent <- function()
 			}
 
 			return entityRet;
+		}
+
+		o.think = function( _evaluateOnly = false )
+		{
+			if (!this.m.Actor.isAlive() || !this.m.IsTurnStarted || this.m.IsFinished || this.Tactical.CameraDirector.isDelayed())
+			{
+				return;
+			}
+
+			if (this.Settings.getGameplaySettings().AlwaysFocusCamera && !this.m.Actor.isPlayerControlled() && !this.m.Actor.isHiddenToPlayer())
+			{
+				if (this.Tactical.getNavigator().IsTravelling)
+				{
+					::MSU.Popup.showRawText("prevented a rotation crash, if you see this screen, please notify the Legends team ASAP.")
+				}
+				else
+				{
+					this.Tactical.getCamera().moveToExactly(this.m.Actor);
+				}
+			}
+
+			if (this.m.IsEvaluating)
+			{
+				if (this.Tactical.getNavigator().IsTravelling)
+				{
+					return;
+				}
+
+				if (this.Const.AI.PathfindingDebugMode)
+				{
+					this.Tactical.getNavigator().clearPath();
+				}
+
+				if (this.m.NextEvaluationTime <= this.Time.getVirtualTime())
+				{
+					this.evaluate(this.m.Actor);
+				}
+			}
+
+			if (!_evaluateOnly && (this.isReady() || this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && this.m.Actor.getActionPoints() == this.m.Actor.getActionPointsMax() || !this.Tactical.TurnSequenceBar.isLastEntityPlayerControlled() && this.m.ActiveBehavior != null && this.m.ActiveBehavior.getID() == this.Const.AI.Behavior.ID.Idle && !this.Tactical.getNavigator().IsTravelling && (this.Const.Tactical.Common.LastAIBehaviorID == this.Const.AI.Behavior.ID.EngageMelee || this.Const.Tactical.Common.LastAIBehaviorID == this.Const.AI.Behavior.ID.EngageRanged)))
+			{
+				this.m.IsEvaluating = this.execute(this.m.Actor);
+
+				if (this.m.IsEvaluating)
+				{
+					this.m.ActiveBehavior = null;
+				}
+			}
+
+			if (!this.m.Actor.isAlive())
+			{
+				this.setFinished(true);
+			}
 		}
 	});
 	delete this.Const.LegendMod.hookAIAgent;
