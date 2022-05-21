@@ -1094,30 +1094,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie") && !this.getFlags().has("PlayerSkeleton"))
+			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie") //deathly spectre for Cabal
 			{
-				local r = this.Math.rand(0, 1);
-
-				if (r == 0)
-				{
-					this.getFlags().add("PlayerSkeleton");
-					this.getFlags().add("undead");
-					this.getFlags().add("skeleton");
-					local body = this.getSprite("body");
-					local skill = this.new("scripts/skills/traits/legend_fleshless_trait");
-					this.m.Skills.add(skill);
-					this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
-				}
-				else
-				{
-					this.getFlags().add("PlayerZombie");
-					this.getFlags().add("undead");
-					this.getFlags().add("zombie_minion");
-					local skill = this.new("scripts/skills/traits/legend_rotten_flesh_trait");
-					this.m.Skills.add(skill);
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-				}
+				this.getFlags().add("PlayerZombie");
+				this.getFlags().add("undead");
+				this.getFlags().add("zombie_minion");
+				local skill = this.new("scripts/skills/traits/legend_rotten_flesh_trait");
+				this.m.Skills.add(skill);
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 
 			this.Tactical.getSurvivorRoster().add(this);

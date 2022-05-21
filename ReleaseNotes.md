@@ -1,5 +1,13 @@
 ### Legend Mod Release Notes
 
+## 16.0.5 - Mmmm nyees :uphold:
+Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
+
+
+
+
+
+
 ## 16.0.4 - Last Knight Standing
 
 **Lone Wolf Scenario**
