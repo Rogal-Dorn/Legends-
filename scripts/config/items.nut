@@ -255,7 +255,8 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/legend_named_infantry_axe",
 	"weapons/named/legend_named_warhammer",
 	"weapons/named/legend_named_gladius",
-	"weapons/named/legend_named_military_goedendag"
+	"weapons/named/legend_named_military_goedendag",
+	"weapons/named/legend_parrying_dagger"
 ];
 gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",
