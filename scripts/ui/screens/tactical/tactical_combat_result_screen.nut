@@ -438,7 +438,7 @@ this.tactical_combat_result_screen <- {
 			deletedNum = 0
 		};
 		local capacity = this.Stash.getCapacity();
-		local current = this.World.State.getPlayer().calculateStashModifier(false);
+		local current = "State" in ::World ? this.World.State.getPlayer().calculateStashModifier(false) : capacity;
 
 		if (capacity > current)
 		{

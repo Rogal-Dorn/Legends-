@@ -443,8 +443,9 @@ this.character_screen <- {
 
 	function queryRosterSizeData(_shake = false)
 	{
+		local brosInCombat = "State" in ::World ? ::World.State.getBrothersInFrontline() : 18;
 		local result = {
-			brothersInCombat = this.World.State.getBrothersInFrontline(),
+			brothersInCombat = brosInCombat,
 			brothersMaxInCombat = 27,
 			brothers = this.World.getPlayerRoster().getSize(),
 			brothersMax = 27,
