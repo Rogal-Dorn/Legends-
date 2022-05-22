@@ -7,7 +7,9 @@ Beastslayers origin now should give beastslayers 'natural' order as intended. Ad
 
 Roses are red, violets are blue, I fucked with demon alp AI again - who knows what it will do?
 
-Few typos fixed in various events and skills
+Few typos fixed in various events and skills.
+
+Named parrying daggers may now spawn in weaponsmiths and other locations.
 
 
 ## 16.0.4 - Last Knight Standing
