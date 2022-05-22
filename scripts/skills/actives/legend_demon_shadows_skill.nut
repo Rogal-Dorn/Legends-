@@ -65,11 +65,18 @@ this.legend_demon_shadows_skill <- this.inherit("scripts/skills/skill", {
 		local p = {
 			Type = "shadows",
 			Tooltip = "The boundary to the realm of dreams is erased here, allowing living nightmares to manifest",
+			IsPositive = false,
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = true,
+			IsAppliedOnEnter = false,
+			IsByPlayer = _user.isPlayerControlled(),
 			Timeout = this.Time.getRound() + 4,
-			Callback = this.Const.Tactical.Common.onApplyFirefield
+			Callback = this.Const.Tactical.Common.onApplyDemonShadows,
+			function Applicable( _a )
+			{
+				return !_a.getSkills().hasSkill("racial.alp") && !::MSU.isKindOf(_a, "alp_shadow");
+			}
 		};
 
 		foreach( tile in targets )
