@@ -37,23 +37,16 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 	function onAddBehaviors()
 	{
-
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_default"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_spawn_shadow"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_horror"));
-	
-
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_roam"));
-
-
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_ranged"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
+		// this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
-
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_spawn_demon_shadow"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
-
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_gruesome_feast"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_terror"));
 	}
 
 	function onUpdate()
