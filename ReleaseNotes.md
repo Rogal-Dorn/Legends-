@@ -13,6 +13,8 @@ Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros t
 
 Lone wolf buying donkeys for free fixed.
 
+Reduced cabal orgin card fluff so it no longer runs off the screen
+
 
 ## 16.0.4 - Last Knight Standing
 
