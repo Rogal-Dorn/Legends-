@@ -158,6 +158,9 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().getID() != "background.legend_donkey")
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0)
+				bro.getBaseProperties().DailyWageMult *= 1.0;
+				bro.getSkills().update();
 			{
 				garbage.push(bro);
 			}
