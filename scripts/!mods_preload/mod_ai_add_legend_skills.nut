@@ -24,7 +24,8 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 			"actives.legend_rat_claws",
 			"actives.legend_rat_bite",
 			"actives.legend_en_garde",
-			"actives.lunge"
+			"actives.lunge",
+			"actives.nightmare_touch"
 		]);
 	});
 

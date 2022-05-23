@@ -300,6 +300,15 @@ gt.Const.Tactical.Common <- {
 		_tile.getEntity().onDamageReceived(_entity, null, hitInfo);
 	}
 
+	function onApplyDemonShadows( _tile, _entity )
+	{
+		if (_entity.getSkills().hasSkill("racial.alp") || ::MSU.isKindOf(_entity, "alp_shadow"))
+		{
+			return;
+		}
+		this.onApplyFirefield(_tile, _entity);
+	}
+
 	function onApplyHolyFlame( _tile, _entity )
 	{
 		local sounds = [
