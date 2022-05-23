@@ -8,7 +8,7 @@
 - Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
 - Named parrying daggers may now spawn in weaponsmiths and other locations.
 - Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros to be hired and not progressing beyond that point. Scenario card amended.
-- Reduced cabal orgin card fluff so it no longer runs off the screen.
+- Reduced cabal origin card fluff so it no longer runs off the screen.
 
 **Fixes**
 - Fixes an issue with healer tent occasionally crashing
