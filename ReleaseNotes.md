@@ -1,6 +1,8 @@
 ### Legend Mod Release Notes
 
-## 16.0.5 - Mmmm nyees :uphold:
+## 16.0.5 - 
+- Lumberjack is now tagged as a combat background for origin purposes.
+- Trader Commander is now fat as befits a person of greed and gluttony.
 Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
 
 Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
