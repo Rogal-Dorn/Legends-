@@ -399,45 +399,6 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		this.setCurrentSlotType(this.Const.ItemSlot.None);
 	}
 
-	function clearAppearance( _app )
-	{
-		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
-
-		if (_app == null) return;
-
-		switch(this.m.Type)
-		{
-		case this.Const.Items.ArmorUpgrades.Chain:
-			_app.ArmorLayerChain = "";
-			_app.CorpseArmorLayerChain = "";
-			break;
-
-		case this.Const.Items.ArmorUpgrades.Plate:
-			_app.ArmorLayerPlate = "";
-			_app.CorpseArmorLayerPlate = "";
-			break;
-
-		case this.Const.Items.ArmorUpgrades.Tabbard:
-			_app.ArmorLayerTabbard = "";
-			_app.CorpseArmorLayerTabbard = "";
-			break;
-
-		case this.Const.Items.ArmorUpgrades.Cloak:
-			_app.ArmorLayerCloak = "";
-			_app.CorpseArmorLayerCloak = "";
-			break;
-
-		case this.Const.Items.ArmorUpgrades.Attachment:
-			_app.ArmorUpgradeFront = "";
-			_app.ArmorUpgradeBack = "";
-			_app.CorpseArmorUpgradeFront = "";
-			_app.CorpseArmorUpgradeBack = "";
-			break;
-		}
-
-		return this.m.IsDestroyedOnRemove;
-	}
-
 	function onUse( _actor, _item = null )
 	{
 		if (this.isUsed()) return false;
