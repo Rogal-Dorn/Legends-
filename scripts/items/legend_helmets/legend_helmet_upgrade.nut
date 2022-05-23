@@ -359,6 +359,10 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 	function updateAppearance( _app )
 	{
+		if (_app == null)
+		{
+			return false;
+		}
 		local sprite = "";
 		local slot = this.m.Type;
 		if (slot == this.Const.Items.HelmetUpgrades.Vanity && this.m.Armor.getUpgrade(slot) != this)
@@ -379,10 +383,6 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			sprite = this.m.Sprite != null ? this.m.Sprite : "";
 		}
 
-		if (_app == null)
-		{
-			return false;
-		}
 		switch(slot)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
@@ -443,39 +443,6 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 	{
 		this.item.onUnequip()
 		this.setCurrentSlotType(this.Const.ItemSlot.None);
-	}
-
-	function clearAppearance( _app )
-	{
-		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
-
-		if (_app == null) return;
-
-		switch(this.m.Type)
-		{
-			case this.Const.Items.HelmetUpgrades.Helm:
-				_app.HelmetLayerHelm = "";
-				_app.HelmetLayerHelmCorpse = ""
-				break;
-
-			case this.Const.Items.HelmetUpgrades.Top:
-				_app.HelmetLayerTop = "";
-				_app.HelmetLayerTopCorpse = ""
-				break;
-
-			case this.Const.Items.HelmetUpgrades.Vanity:
-					_app.HelmetLayerVanity = "";
-					_app.HelmetLayerVanityCorpse = "";
-					_app.HelmetLayerVanityLower = ""
-					_app.HelmetLayerVanityLowerCorpse = ""
-					_app.HelmetLayerVanity2 = "";
-					_app.HelmetLayerVanity2Corpse = "";
-					_app.HelmetLayerVanity2Lower = ""
-					_app.HelmetLayerVanity2LowerCorpse = ""
-				break;
-		}
-
-		return this.m.IsDestroyedOnRemove;
 	}
 
 	function onUse( _actor, _item = null )
