@@ -1,27 +1,25 @@
 ### Legend Mod Release Notes
 
-## 16.0.5 - 
+## 16.0.5 - Fat, Dead and Bloody
+**Changes** 
 - Lumberjack is now tagged as a combat background for origin purposes.
 - Trader Commander is now fat as befits a person of greed and gluttony.
-Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
+- Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
+- Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
+- Named parrying daggers may now spawn in weaponsmiths and other locations.
+- Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros to be hired and not progressing beyond that point. Scenario card amended.
+- Reduced cabal orgin card fluff so it no longer runs off the screen.
 
-Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
-
-Few typos fixed in various events and skills.
-
-Named parrying daggers may now spawn in weaponsmiths and other locations.
-
-Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros to be hired and not progressing beyond that point. Scenario card amended.
-
-Lone wolf buying donkeys for free fixed.
-
-Reduced cabal orgin card fluff so it no longer runs off the screen
-
-Fixes an issue with healer tent occasionally crashing
-
+**Fixes**
+- Fixes an issue with healer tent occasionally crashing
+- Few typos fixed in various events and skills.
+- Lone wolf buying donkeys for free fixed.
+- Goblin helmets are no longer flipped.
+- Attempted to fix the rotation crash again.
+- Firefield skill missing isAppliedOnEnter.
+- Added missing bleed icon to prepared bleed effect.
 
 ## 16.0.4 - Last Knight Standing
-
 **Lone Wolf Scenario**
 - Melee and ranged companions have had most of their base stats raised.
 - Lone wolf has had a few base stats raised.
