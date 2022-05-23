@@ -15,6 +15,8 @@ Lone wolf buying donkeys for free fixed.
 
 Reduced cabal orgin card fluff so it no longer runs off the screen
 
+Fixes an issue with healer tent occasionally crashing
+
 
 ## 16.0.4 - Last Knight Standing
 
