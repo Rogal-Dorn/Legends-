@@ -1,5 +1,19 @@
 ### Legend Mod Release Notes
 
+## 16.0.5 - Mmmm nyees :uphold:
+Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
+
+Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
+
+Few typos fixed in various events and skills.
+
+Named parrying daggers may now spawn in weaponsmiths and other locations.
+
+Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros to be hired and not progressing beyond that point. Scenario card amended.
+
+Lone wolf buying donkeys for free fixed.
+
+
 ## 16.0.4 - Last Knight Standing
 
 **Lone Wolf Scenario**
