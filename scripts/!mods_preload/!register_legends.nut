@@ -1,8 +1,8 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.0.4",
+	Version = "16.0.5",
 	Name = "Legends Mod",
-	BuildName = "Last Knight Standing"
+	BuildName = "Fat, Dead and Bloody"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.3), vanilla(>=1.5.0-11), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
