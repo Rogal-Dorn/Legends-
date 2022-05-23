@@ -407,20 +407,22 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 	{
 		if (_upgrade == null) return true;
 		if (_upgrade != null && this.m.Blocked[_upgrade.getType()]) return false;
+
 		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
 		if (oldIndex != null) oldIndex = oldIndex.index
+
 		local oldItem;
 		if (this.m.Upgrades[_upgrade.getType()] != null)
 		{
 			oldItem = this.removeUpgrade(_upgrade.getType());
 		}
 		this.m.Upgrades[_upgrade.getType()] = _upgrade;
-		this.m.Upgrades[_upgrade.getType()].setArmor(this);
-		this.m.Upgrades[_upgrade.getType()].setVisible(true);
-		this.updateAppearance();
+		_upgrade.setArmor(this);
+		_upgrade.setVisible(true);
+		
 		if (this.m.Container != null) 
 		{
-			this.m.Upgrades[_upgrade.getType()].onEquip();
+			_upgrade.onEquip();
 			this.getContainer().getActor().getSkills().update();
 		}
 
@@ -433,6 +435,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		{
 			result.item = oldItem 
 		}
+
+		this.updateAppearance();
 		return result;
 	}
 
@@ -442,13 +446,14 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		local app = this.getContainer() == null ? null : this.getContainer().getAppearance();
 		local item = this.m.Upgrades[_slot];
-		item.clearAppearance(app);
 		item.onUnequip();
-		this.m.Upgrades[_slot].setVisible(false);
+		item.setVisible(true);
 		item.setArmor(null);
+
 		this.m.Upgrades[_slot] = null;
+		if (this.m.Container != null) this.getContainer().getActor().getSkills().update();
+
 		this.updateAppearance();
-		if (this.m.Container != null) this.getContainer().getActor().getSkills().update()
 		return item;
 	}
 
@@ -682,6 +687,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return;
 		}
 
+		this.clearAppearance();
 		local app = this.getContainer().getAppearance();
 		app.CorpseArmor = this.m.SpriteCorpse;
 		app.HideBody = this.m.HideBody;
@@ -710,9 +716,35 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			app.Armor = this.m.Sprite;
 		}
 
+		foreach (u in this.m.Upgrades)
+		{
+			if (u != null) u.updateAppearance(app);
+		}
+
 		this.doOnFunction("updateAppearance", [app]);
 
 		this.getContainer().updateAppearance();
+	}
+
+	function clearAppearance()
+	{
+		local app = this.getContainer().getAppearance();
+		app.Armor = "";
+		app.ArmorLayerChain = "";
+		app.ArmorLayerPlate = "";
+		app.ArmorLayerTabbard = "";
+		app.ArmorLayerCloak = "";
+		app.ArmorUpgradeFront = "";
+		app.ArmorUpgradeBack = "";
+		app.CorpseArmor = "";
+		app.CorpseArmorLayerChain = "";
+		app.CorpseArmorLayerPlate = "";
+		app.CorpseArmorLayerTabbard = "";
+		app.CorpseArmorLayerCloak = "";
+		app.CorpseArmorUpgradeFront = "";
+		app.CorpseArmorUpgradeBack = "";
+		app.HideBody = false;
+		app.ImpactSound[this.Const.BodyPart.Body] = [];
 	}
 
 	function onEquip()
@@ -734,23 +766,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 
 		if (this.m.ShowOnCharacter)
 		{
-			local app = this.getContainer().getAppearance();
-			app.Armor = "";
-			app.ArmorLayerChain = "";
-			app.ArmorLayerPlate = "";
-			app.ArmorLayerTabbard = "";
-			app.ArmorLayerCloak = "";
-			app.ArmorUpgradeFront = "";
-			app.ArmorUpgradeBack = "";
-			app.CorpseArmor = "";
-			app.CorpseArmorLayerChain = "";
-			app.CorpseArmorLayerPlate = "";
-			app.CorpseArmorLayerTabbard = "";
-			app.CorpseArmorLayerCloak = "";
-			app.CorpseArmorUpgradeFront = "";
-			app.CorpseArmorUpgradeBack = "";
-			app.HideBody = false;
-			app.ImpactSound[this.Const.BodyPart.Body] = [];
+			this.clearAppearance();
 			this.getContainer().updateAppearance();
 
 			if (this.getContainer().getActor() != null && !this.getContainer().getActor().isNull())
