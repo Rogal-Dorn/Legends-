@@ -1,5 +1,19 @@
 ### Legend Mod Release Notes
 
+## 16.0.6 - Poacher's Paradise
+- Adjusted brigand spawns yet again. Early game should be more balanced now. Units should show up at appropriate times. Tweaked nomads slightly to favor ranged units less. Let us know how these changes feel.
+- Allowed shortbow perks to work with reinforced boondock bow.
+- Lone Wolf origin - Barred from receiving roster size ambitions as an option.
+- Peasant Poacher, Squire and Witchunter enemies added to brigand parties.
+- Peasant Poacher, Squire and Witchunter enemies no longer have 1.5x hp on legendary.
+- Warbrand and Rhomphaia greatslash changed to slash. This was way too powerful and not balanced.
+- Man Mangler will now have proper armor penetration with Overhead Strike.
+- Extends armor piercing bolt changes to the large stack as intended.Manhunter origin
+- Whipping your indebted no longers lowers their resolve. Feedback suggested that this penalty was too high. Give more feedback.
+- Changed Headhunter tooltip to reflect Legends 1.5 changes.
+- Hopefully fixed an error with the clothing merchant event.
+- Fixed a bug when receiving a gladiator helm as an arena award.
+
 ## 16.0.5 - Fat, Dead and Bloody
 **Changes** 
 - Lumberjack is now tagged as a combat background for origin purposes.
