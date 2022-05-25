@@ -13,85 +13,82 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false; 
 	}
 
-	//constant passive
-	function getDescription()
+	function isHidden()
 	{
-		local bonus = this.getBonus() * 100;
-		return "This character gains +[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus + "%[/color] maximum damage of the weapon's base maximum because of adjacent opponents.";
+		return this.getDamageBonus() == 0 && this.getResolveBonus() == 0;
 	}
 
 	function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
-		local bonus = this.getBonus() * 100;
-		ret.push({
-			id = 10,
-			type = "text",
-			icon = "ui/icons/damage_dealt.png",
-			text = "+[color=" + this.Const.UI.Color.NegativeValue + "]" + bonus + "[/color] Maximum Damage"
-		});
+		local damageBonus = this.getDamageBonus();
+		if (damageBonus != 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/damage_dealt.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + (damageBonus * 100) + "%[/color] of equipped weapon's Maximum Damage as additional Maximum Damage"
+			});
+		}
+
+		local resolveBonus = this.getResolveBonus();
+		if (resolveBonus != 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/icons/bravery.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + resolveBonus + "[/color] Resolve due to missing health and wearing cultist items"
+			});
+		}
 
 		return ret;
 	}
 
-	function isOpponent( _actor, _tag )
-	{
-		if (this.Math.abs(_actor.getTile().Level - _tag.Actor.getTile().Level) > 1)
-		{
-			return;
-		}
-
-		if (!_actor.isAlliedWithPlayer())
-		{
-			++_tag.Opponents;
-		}
-	}
-
-	function getBonus()
+	function getDamageBonus()
 	{
 		local actor = this.getContainer().getActor();
-		return ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1).len() * 0.05;
+		return !actor.isPlacedOnMap() ? 0 : ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1).len() * 0.05;
+	}
+
+	function getResolveBonus()
+	{
+		local actor = this.getContainer().getActor();
+		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local cultItems = [];
+		if (item != null)
+		{
+			if (item.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(item);
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && ::MSU.isKindOf(item, "legend_armor"))
+			{
+				foreach (upgrade in item.m.Upgrades)
+				{
+					if (upgrade != null && upgrade.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(upgrade);
+				}
+			}
+		}
+
+		if (cultItems.len() > 0)
+		{
+			return this.Math.floor((actor.getHitpointsMax() - actor.getHitpoints()) * 0.75);
+		}
+
+		return 0;
 	}
 
 	function onUpdate( _properties )
 	{
-		this.m.IsHidden = this.getBonus() == 0.0;
-	}
+		_properties.Bravery += this.getResolveBonus();
 
-	function getCultistPieces(){
-		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local cultItems = []
-		if (item != null)
+		local damageBonus = this.getDamageBonus();
+		if (damageBonus != 0)
 		{
-			if(item.isItemType(this.Const.Items.ItemType.Cultist)) cultItems.push(item)
-			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && ::mods_isClass(item, "legend_armor"))
+			item = this.getContainer().getActor().getMainhandItem();
+			if (item != null)
 			{
-				foreach( upgrade in item.m.Upgrades )
-				{
-					if (upgrade != null && upgrade.isItemType(this.Const.Items.ItemType.Cultist)){
-						cultItems.push(upgrade);
-					}
-				}
+				_properties.DamageRegularMax += item.m.RegularDamageMax * damageBonus;
 			}
-		}
-		return cultItems
-	}
-
-	//equipment check
-	function onAfterUpdate( _properties )
-	{
-		local actor = this.getContainer().getActor();
-		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
-
-		if (this.getCultistPieces().len() > 0) _properties.Bravery += this.Math.floor(healthMissing * 0.75);
-
-		local bonus = this.getBonus();
-		if (bonus == 0) return;
-		item = this.getContainer().getActor().getMainhandItem();
-		if (item != null)
-		{
-			_properties.DamageRegularMax += item.m.RegularDamageMax * bonus; //perk damage += item damage
 		}
 	}
 
