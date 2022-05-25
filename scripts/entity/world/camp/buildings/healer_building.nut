@@ -267,7 +267,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				res.push({
 					id = id++,
-					icon = "ui/injury/" + b.getIcon(), //tested on 23/5 and worked fine for me - luftwaffle
+					icon = "" + b.getIcon(),
 					text = b.getName()
 				})
 			}
