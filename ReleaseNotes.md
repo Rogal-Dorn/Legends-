@@ -1,5 +1,42 @@
 ### Legend Mod Release Notes
 
+## 16.0.7 - Ber Minot Misti
+**Exciting New Feature**
+- You now have more options to manipulate layered gear in the inventory. Check the tooltip on layered gear to see the options. (This was already added but not mentioned in patch notes. Thanks Taro!)
+
+**Changes**
+- Legend orc weapons fixed and rebalanced. They properly count as orc weapons now for anything that reduces fat cost on skill use. Properly set armor penetration on skills in a few cases (buff). Properly set split shield fatigue cost and rebalanced shield damage on 2h non-axe Legends orc weapons.
+- Changed Split Shield to only cost 4 AP on Infantry Axe instead of 6 AP.
+- Tweaked stats and given XP of the new peasant enemies.
+- Fixed Peasant Witchhunter's shortsword not being equipped to bag.
+- Gave Peasant Squire some better armor.
+- Gave Barbarian Background terrain modifiers.
+- Removes Rabble from locations. Rabble will stop spawning sooner. Thugs will start spawning sooner.
+- Named orc flail base stats brought in line with it's non named counterpart (buff).
+- Shortbow perks now give full bonuses to named goblin bows as intended.
+- The company avatar of the Noble origin is now locked to the starting one.
+- Companions re-balanced, relationships is now handled via a different method in Lone Wolf origin.
+- Upkeep issue should now be fixed for new hires in Lone wolf origin.
+- Adds two new events to Lone wolf to give them a blacksmith or tailor respectively.
+- Swordmaster from FE event fixed - swordmaster challenge now only procs when you have a level 11 or higher bro with this perk as intended.
+- Outros from crisis events have had their flavour text changed to better reflect the scaling nature of Legend's gameplay loop.
+- Value of famed orc flails is increased to 2100 (up from 1300).
+- Error during sunken libary fight when flying skulls explode.
+- Every accessory now plays a sound when equipped or moved around in the inventory.
+- Famed Noble Tunics now roll a durability between 46 - 56 (up from 40 - 50) to make sure its always better than its base version.
+- Value of famed orc flails is increased to 2100 (up from 1300).
+
+**Fixes**
+- Fixed exploit that allowed selling of layers for their full buy price.
+- Fixed Veteran level perks only being given every 5 levels instead of the new 4.
+- Fixed error during the Event 'holywar_crucified_1_event'.
+- Fixed the fix of the clothing merchant event.
+- Fixed the fix of the gladiator helm bug.
+- Fixed cult armor perk having an undefined variable.
+- Fixed Peasant Witchhunter's shortsword not being equipped to bag.
+- Fixed a bug with a recently added event causing it not to fire in the correct manner.
+- Fixed a bug causing the peasant squire enemy not to load.
+
 ## 16.0.6 - Poacher's Paradise
 - Adjusted brigand spawns yet again. Early game should be more balanced now. Units should show up at appropriate times. Tweaked nomads slightly to favor ranged units less. Let us know how these changes feel.
 - Allowed shortbow perks to work with reinforced boondock bow.
