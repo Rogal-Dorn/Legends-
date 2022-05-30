@@ -153,7 +153,7 @@ this.legend_lonewolf_companion_blacksmith_event <- this.inherit("scripts/events/
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
 				_event.m.Dude.setStartValuesEx([
 					"legend_blacksmith_background"
-
+				]);
 				_event.m.Dude.getSprite("miniboss").setBrush("bust_miniboss");
 				_event.m.Dude.getBaseProperties().Hitpoints += 3;
 				_event.m.Dude.getBaseProperties().Bravery += 10;
@@ -169,7 +169,6 @@ this.legend_lonewolf_companion_blacksmith_event <- this.inherit("scripts/events/
 
 				_event.m.Dude.getBackground().m.RawDescription = "%name% specialised in forging exotic weapons for nobility — however their fighting style and skill tells you there is more to them than initally meets the eye, even if they don\'t want to talk about it.";
 				_event.m.Dude.addLightInjury();
-				]);
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 		});
