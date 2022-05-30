@@ -8,7 +8,6 @@
 - Legend orc weapons fixed and rebalanced. They properly count as orc weapons now for anything that reduces fat cost on skill use. Properly set armor penetration on skills in a few cases (buff). Properly set split shield fatigue cost and rebalanced shield damage on 2h non-axe Legends orc weapons.
 - Changed Split Shield to only cost 4 AP on Infantry Axe instead of 6 AP.
 - Tweaked stats and given XP of the new peasant enemies.
-- Fixed Peasant Witchhunter's shortsword not being equipped to bag.
 - Gave Peasant Squire some better armor.
 - Gave Barbarian Background terrain modifiers.
 - Removes Rabble from locations. Rabble will stop spawning sooner. Thugs will start spawning sooner.
@@ -24,7 +23,6 @@
 - Error during sunken libary fight when flying skulls explode.
 - Every accessory now plays a sound when equipped or moved around in the inventory.
 - Famed Noble Tunics now roll a durability between 46 - 56 (up from 40 - 50) to make sure its always better than its base version.
-- Value of famed orc flails is increased to 2100 (up from 1300).
 
 **Fixes**
 - Fixed exploit that allowed selling of layers for their full buy price.
