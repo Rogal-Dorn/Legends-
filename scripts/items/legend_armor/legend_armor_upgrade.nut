@@ -186,7 +186,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			id = 65,
 			type = "hint",
 			icon = "ui/icons/mouse_right_button.png",
-			text = "Right-click or left-click + drag onto the armor of the currently selected character to attach."
+			text = "Right-click or left-click and drag onto the armor of the currently selected character to attach."
 		});
 		result.push({
 			id = 66,
