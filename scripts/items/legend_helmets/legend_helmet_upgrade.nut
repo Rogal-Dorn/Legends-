@@ -199,8 +199,8 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "hint",
-			icon = "ui/icons/mouse_right_button_shift.png",
-			text = "Right-click or drag onto the helmet of the currently selected character to attach."
+			icon = "ui/icons/mouse_right_button.png",
+			text = "Right-click or left-click and drag onto the helmet of the currently selected character to attach."
 		});
 		result.push({
 			id = 66,
