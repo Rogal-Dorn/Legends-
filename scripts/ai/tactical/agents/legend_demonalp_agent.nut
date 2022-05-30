@@ -45,7 +45,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_break_free"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_gruesome_feast"));
 
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
+		// this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
 	}
 
 	function onUpdate()
