@@ -16,7 +16,6 @@ this.champion_racial <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageTotalMult *= 1.15;
 		_properties.BraveryMult *= 1.5;
 		_properties.StaminaMult *= 1.5;
 		_properties.MeleeSkillMult *= 1.15;
