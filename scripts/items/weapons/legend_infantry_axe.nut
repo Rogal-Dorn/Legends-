@@ -22,7 +22,7 @@ this.legend_infantry_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = 24;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
-		this.m.StaminaModifier = -15;
+		this.m.StaminaModifier = -14;
 		this.m.RegularDamage = 50;
 		this.m.RegularDamageMax = 70;
 		this.m.ArmorDamageMult = 1.25;
