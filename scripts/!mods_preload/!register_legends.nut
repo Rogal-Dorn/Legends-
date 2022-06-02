@@ -14,6 +14,7 @@
 
 	::Const.LegendMod.addSettings();
 	::Const.LegendMod.hookMSU();
+	::Const.LegendMod.addLegendItemTypes();
 
 	this.Const.LegendMod.hookActor();
 	this.Const.LegendMod.hookAISkills();
