@@ -1,5 +1,34 @@
 ### Legend Mod Release Notes
 
+## 16.0.8 - An Unexpected Inquisition
+**Major Changes**
+- Champion enemies no longer get an arbitrary 15% damage boost. We feel that damage changes should come from named weapons or perks.
+- All non-avatar starters now get perks every 4 levels like normal brothers. This change, in conjunction with lowering vet levels to 4 instead of 5, serves to eliminate the "necessity" of keeping starter brothers alive while not impacting late game power potential.
+
+**Inquisition Origin**
+- Starting Flagellant now gains +10 melee skill instaed of +5 melee defense. Now has guaranteed 2 start talent in melee skill.
+- Starting Nun now gets +10 stamina, +10 melee skill, +7 hitpoints and -5 initiative, instead of +10 hitpoints and +5 melee skill. Talents are now 3/2/3 in resolve, melee skilll and melee defense respectively.
+- Starting characters no longer start with 1 tier of their perk list unlocked.
+- These changes were made to make the starters more late game capable and further slot into their thematic roles. The Flagellant foregoes defense in exchange for a large health pool and strong melee attack. The Nun excels at defense and is a capable attacker, but is slow to act in combat due to the lumbering trait and inherentely lower initiative.
+
+- The perk 'Nine Lives' will now show a symbol above the entity for as long as it has not been procced (similar to Bone Plating)
+
+**Balance**
+- 'Broken Net' is now categorised as a 'Crafting Material'
+- Infantry Axe - Buffed stamina cost to 14 from 15 to better reflect the Infantry Axe's new role on the battlefield.
+- Nerf to well tended - now has a more mild effect and lasts for much longer
+
+**Improvement**
+- The perk 'Nine Lives' will now show a symbol above the entity for as long as it has not been procced (similar to Bone Plating)
+
+**Fixes**
+- Changes tooltip and function of perk 'Danger Pay' to match exactly as the perk description advertises
+- Fixes several crashes caused by the perk 'Danger Pay'.
+- Fixes Issue where Veteran Level perks were given out at Level 13, 17, 21, 25, ... instead of 15, 19, 23, 27, ...
+- Fixes an issue with the blacksmith event hanging for lone wolf.
+- Fixes an issue with the caravan event hanging for lone wolf.
+- Lone wolf should now have the correct recruiting rules of 0 upkeep for event joiners (thanks to Midas) 
+
 ## 16.0.7 - Ber Minot Misti
 **Exciting New Feature**
 - You now have more options to manipulate layered gear in the inventory. Check the tooltip on layered gear to see the options. (This was already added but not mentioned in patch notes. Thanks Taro!)

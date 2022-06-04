@@ -1,8 +1,8 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.0.7",
+	Version = "16.0.8",
 	Name = "Legends Mod",
-	BuildName = "Ber Minot Misti"
+	BuildName = "An Unexpected Inquisition"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.3), vanilla(>=1.5.0-11), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
