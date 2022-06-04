@@ -33,7 +33,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[0].setPlaceInFormation(4);
-		bros[0].setVeteranPerks(2);
 		bros[0].getBaseProperties().Hitpoints += 10;
 		bros[0].getBaseProperties().MeleeDefense += 5;
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_inquisition_disciple_trait"));
@@ -68,7 +67,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].m.PerkPoints = 1;
 		bros[1].m.LevelUps = 1;
 		bros[1].m.Level = 2;
-		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 		bros[1].m.PerkPointsSpent += 1;
@@ -92,7 +90,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			bros[2].getSkills().removeByID(skill);
 		}
 		bros[2].getSkills().add(heavy);
-		bros[2].setVeteranPerks(2);
 		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();

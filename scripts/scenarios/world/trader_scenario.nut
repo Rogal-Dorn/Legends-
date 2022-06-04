@@ -55,7 +55,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 			"caravan_hand_southern_background"
 		]);
 		bros[1].setPlaceInFormation(5);
-		bros[1].setVeteranPerks(2);
 		bros[1].getSprite("socket").setBrush("bust_base_caravan");
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance thought that was little more than a drunken miscreant. But you watched as off three would-be muggers were soon on the ground. They still managed to take off with a coin purse in the end, sure, but they could not truly defeat %name%. Impressed, you took the newly-impoverished fighter on as a caravan hand.";
 		bros[1].m.Talents = [];
