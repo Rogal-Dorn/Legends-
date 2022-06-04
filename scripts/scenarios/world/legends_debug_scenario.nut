@@ -34,7 +34,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
-			bro.setVeteranPerks(2);
 		}
 
 		 local horsesize = 0;
@@ -49,7 +48,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.m.Level = broLevel;
 		 	bro.m.LevelUps = broPerks;
 		 	bro.m.PerkPoints = broPerks;
-		 	bro.setVeteranPerks(2);
 		 }
 
 		this.World.Assets.getStash().resize(2000);

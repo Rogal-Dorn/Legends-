@@ -64,7 +64,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 1;
 		talents[this.Const.Attributes.RangedDefense] = 3;
-		bros[0].setVeteranPerks(2);
 		bros[0].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[0].getItems();
 		this.addRandomEquipment(items);
@@ -137,7 +136,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 		}
 
-		bros[1].setVeteranPerks(2);
 		bros[1].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[1].getItems();
 		this.addRandomEquipment(items);
@@ -158,7 +156,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		talents[this.Const.Attributes.Initiative] = 2;
 		talents[this.Const.Attributes.Bravery] = 2;
 		talents[this.Const.Attributes.RangedSkill] = 2;
-		bros[2].setVeteranPerks(2);
 		bros[2].worsenMood(0.5, "Misses life in the army");
 		bros[2].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[2].getItems();
@@ -182,7 +179,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 		this.setRetireText(bros[3]);
 		bros[3].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
-		bros[3].setVeteranPerks(2);
 		bros[3].worsenMood(1.5, "Feels he deserves better in life");
 		bros[3].improveMood(2.5, "Escaped a life of slavery");
 		local items = bros[3].getItems();
@@ -242,7 +238,6 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 		}
 
-		bros[4].setVeteranPerks(2);
 		bros[4].improveMood(2.5, "Escaped a life of slavery");
 		bros[4].getSkills().add(this.new("scripts/skills/traits/sato_brothers_in_chains_trait"));
 		local items = bros[4].getItems();

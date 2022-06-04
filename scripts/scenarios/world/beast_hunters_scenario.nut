@@ -52,7 +52,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[0].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
 		bros[0].m.Talents = [];
-		bros[0].setVeteranPerks(2);
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -74,7 +73,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].addLightInjury();
 		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[1].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
-		bros[1].setVeteranPerks(2);
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -96,7 +94,6 @@ this.beast_hunters_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].addInjury(this.Const.Injury.Brawl);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_beastslayers_trait"));
  		bros[2].getSprite("socket").setBrush("bust_base_beasthunters"); //custom base
-		bros[2].setVeteranPerks(2);
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
