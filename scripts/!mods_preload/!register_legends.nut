@@ -2,7 +2,7 @@
 	ID = "mod_legends",
 	Version = "16.0.9",
 	Name = "Legends Mod",
-	BuildName = "No You Bloody Don't"
+	BuildName = "No You Bloody Dont"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.3), vanilla(>=1.5.0-11), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
