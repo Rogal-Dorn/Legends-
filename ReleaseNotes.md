@@ -1,5 +1,16 @@
 ### Legend Mod Release Notes
 
+## 16.0.9 - No You Bloody Don't
+- Applied fixes from vanilla update where applicable.
+- Ancient Dead no longer give 3 bleed with all weapons on Legendary difficulty. We'd rather give them unique, faction specific perks than a blanket bleed.
+- Adds an event for Lone Wolf to find a Berserker.
+- Max settlements reduced to 27 from 50. Default vanilla value is 19. We feel that 27 settlements is an acceptable maximum increase from vanilla. Higher numbers here tend to cause bugs and crashes, so tightening up this range will help with this.
+- Max Land Mass Ratio reduced to 70 from 80. As above, extremes cause crashes and issues.
+- Ijirok armor fatigue penalty reduced from -38 -> -25. Durability reduced from 440 -> 350. Health regen increased from +12 -> +15. It is now a more suitable medium armour.
+- Ijirok helmet fatigue penalty reduced from -28 -> -20, Durability reduced from 330 -> 300. Health regen decreased from +12 -> +10.
+- fix for problems around Nine Lives introduced by last patch and temporarily disables the symbol again which was shown while Nine Lives is available.
+- Almost a dozen typo fixes.
+
 ## 16.0.8 - An Unexpected Inquisition
 **Major Changes**
 - Champion enemies no longer get an arbitrary 15% damage boost. We feel that damage changes should come from named weapons or perks.
