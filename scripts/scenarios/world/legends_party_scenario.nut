@@ -61,13 +61,13 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
 		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		bros[3].setStartValuesEx([
-			"legend_witch_background"
+			"legend_druid_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "%name% is a cunning savant, a well of knowledge on nearly ever subject. Spending hours gathering ingredients and tinkering with concoctions to use in battle, %name% assures you no magic is involved, but it sure looks like it.";
+		bros[3].getBackground().m.RawDescription = "Druids are from the wild lands and are ardent defenders of nature.";
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/old_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/light_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/iron_lungs_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/eagle_eyes_trait"));
 		bros[4].setStartValuesEx([
 			"legend_noble_commander_background"
 		]);
