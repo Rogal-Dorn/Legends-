@@ -8,7 +8,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.ID = "background.legend_commander_druid";
 		this.m.Name = "Druid Commander";
 		this.m.Icon = "ui/backgrounds/druid_background.png";
-		this.m.BackgroundDescription = "Druids are from the wild lands, defenders of nature.";
+		this.m.BackgroundDescription = "Druids are from the wild lands and are ardent defenders of nature.";
 		this.m.GoodEnding = "While the %companyname% visited a settlement in the far north %name% bit off more than they could chew with an Unhold contract. Dazed and injured they were taken by a particularly large Unhold for unknown purposes. Months later %name% was found eating, sleeping and even fighting with the giants to defend their home. Sellswords today still joke about the 'giant farker' in the woods, but who is the pet and who is the master is quite the mystery to this day.";
 		this.m.BadEnding = "%name% stayed for a little while longer with the company after your departure, then without notice they simply vanished from the company records entirely. Some say they were tired of what the company had become - obsessed with gold and trinkets and straying too far from what it was founded on.";
 		this.m.HiringCost = 10000;
