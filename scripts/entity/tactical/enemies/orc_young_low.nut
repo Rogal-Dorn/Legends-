@@ -44,7 +44,7 @@ this.orc_young_low <- this.inherit("scripts/entity/tactical/enemies/orc_young", 
 		}
 		else
 		{
-			r = this.Math.rand(1, 3);
+			r = this.Math.rand(1, 4);
 
 			if (r == 1)
 			{
