@@ -10,7 +10,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Icon = "ui/backgrounds/druid_background.png";
 		this.m.BackgroundDescription = "Druids are from the wild lands and are ardent defenders of nature.";
 		this.m.GoodEnding = "Eventually, being away from the woods became too much for %name%, they eventually found their way back home with tales from the world outside and beyound the trees. The throws of nature were not healed, but they were mending - which is sometimes all one person can do to make a differance.";
-		this.m.BadEnding = "%name% eventually became disillusioned with the world you brought %them% into - seeking home shortly after your departure from %companyname%, they found themselves terrified by what met them. SOmething had swept through the forest in their absence and stripped the resources from the land. ANimals were burnt in piles and trees had been burnt, destroyed or smashed down. %name% never did find home, or another place like it.";
+		this.m.BadEnding = "%name% eventually became disillusioned with the world you brought %them% into - seeking home shortly after your departure from %companyname%, they found themselves terrified by what met them. SOmething had swept through the forest in their absence and stripped the resources from the land. Animals were burnt in piles and trees had been burnt, destroyed or smashed down. %name% never did find home, or another place like it.";
 		this.m.HiringCost = 2000;
 		this.m.DailyCost = 25;
 		this.m.Excluded = [
@@ -128,6 +128,16 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 
 	function getTooltip()
 	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 12,
+				type = "text",
+				icon = "ui/icons/regular_damage.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
+			}
+		)
+		return ret
 	}
 
 	function onBuildDescription()
