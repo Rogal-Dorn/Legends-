@@ -18,9 +18,9 @@ this.ijirok_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 13000;
-		this.m.Condition = 300;
-		this.m.ConditionMax = 300; //was 310
-		this.m.StaminaModifier = -20; //was 24
+		this.m.Condition = 160;
+		this.m.ConditionMax = 160; //was 300
+		this.m.StaminaModifier = -10; //was 20
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
 
