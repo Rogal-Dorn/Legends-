@@ -92,7 +92,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			actor.onDamageReceived(actor, this, hitInfo);
+			actor.onDamageReceived(this.getAttacker(), this, hitInfo);
 
 			if (--this.m.TurnsLeft <= 0)
 			{
