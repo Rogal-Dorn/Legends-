@@ -85,7 +85,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 
 					});
 				}
-
+			}
 		});
 		this.m.Screens.push({
 			ID = "Lightpatrol",
