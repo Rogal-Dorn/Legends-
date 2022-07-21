@@ -106,8 +106,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				itemweapon.equip(this.new("scripts/items/weapons/legend_longsword"));
-				// local item = this.new("scripts/items/weapons/legend_longsword");
+				local item = this.new("scripts/items/weapons/legend_longsword");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -120,17 +120,10 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 						"lonewolf_longsword_armour"
 					]
 				]));
-				// local armourhead = getItemAtSlot(this.Const.ItemSlot.Head));
-				// armourhead.equip(this.new("scripts/items/armor/lonewolf_longsword_helmet"));
-				// local armourhead = this.new("scripts/items/armor/lonewolf_longsword_helmet");
-				// local armourbody = this.new("scripts/items/armor/lonewolf_longsword_armour");
-				// armourhead.equip(armourhead.getItemAtSlot(this.Const.ItemSlot.Head));
-				// armourbody.equip(armourbody.getItemAtSlot(this.Const.ItemSlot.Body));
-				// this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
@@ -153,8 +146,9 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				itemweapon.equip(this.new("scripts/items/weapons/military_pick"));
-				itemshield.equip(this.new("scripts/items/shields/heater_shield"));
+				local item = this.new("scripts/items/weapons/military_pick");
+				local item = this.new("scripts/items/shields/heater_shield");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -169,13 +163,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 				]));
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itemshield.getIcon(),
-					text = "You gain " + itemshield.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
@@ -198,8 +187,9 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				itemweapon.equip(this.new("scripts/items/weapons/fighting_axe"));
-				itemshield.equip(this.new("scripts/items/shields/buckler_shield"));
+				local item = this.new("scripts/items/weapons/fighting_axe");
+				local item = this.new("scripts/items/shields/buckler_shield");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -214,13 +204,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 				]));
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itemshield.getIcon(),
-					text = "You gain " + itemshield.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
@@ -243,9 +228,10 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				itemweapon.equip(this.new("scripts/items/weapons/crossbow"));
-				itemquiver.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
-				itembackup.addToBag(this.new("scripts/items/weapons/arming_sword"));
+				local item = this.new("scripts/items/weapons/crossbow");
+				local item = this.new("scripts/items/weapons/arming_sword");
+				local item = this.new("scripts/items/ammo/quiver_of_bolts");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -260,18 +246,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 				]));
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itemquiver.getIcon(),
-					text = "You gain " + itemquiver.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itembackup.getIcon(),
-					text = "You gain " + itembackup.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
@@ -294,9 +270,10 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				itemweapon.equip(this.new("scripts/items/weapons/hunting_bow"));
-				itemquiver.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-				itembackup.addToBag(this.new("scripts/items/weapons/rondel_dagger"));
+				local item = this.new("scripts/items/weapons/hunting_bow");
+				local item = this.new("scripts/items/ammo/quiver_of_arrows");
+				local item = this.new("scripts/items/weapons/rondel_dagger");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -311,18 +288,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 				]));
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itemquiver.getIcon(),
-					text = "You gain " + itemquiver.getName()
-				});
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + itembackup.getIcon(),
-					text = "You gain " + itembackup.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
@@ -345,8 +312,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-
-				itemweapon.equip(this.new("scripts/items/weapons/pike"));
+				local item = this.new("scripts/items/weapons/pike");
+				this.World.Assets.getStash().add(item);
 				items.equip(this.Const.World.Common.pickHelmet([
 					[
 						1,
@@ -362,8 +329,8 @@ this.lone_wolf_intro_event <- this.inherit("scripts/events/event", {
 
 				this.List.push({
 					id = 10,
-					icon = "ui/items/" + itemweapon.getIcon(),
-					text = "You gain " + itemweapon.getName()
+					icon = "ui/items/" + item.getIcon(),
+					text = "You gain " + item.getName()
 				});
 			}
 
