@@ -79,10 +79,7 @@ this.legend_lw_relationship_effect <- this.inherit("scripts/skills/skill", {
 				break;
 			}
 		}
-	}
 
-	function onUpdate( _properties )
-	{
 		if (isSupported)
 		{
 			this.m.IsHidden = false;
