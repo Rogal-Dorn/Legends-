@@ -2,9 +2,9 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 	m = {},
 	function create()
 	{
+		this.legend_conscript_background.create();
 		this.m.Name = "Conscript Gunner";
 		this.m.Icon = "ui/backgrounds/background_ranged_conscript.png"; //TO DO
-		this.nomad_background.create();
 		this.m.HiringCost = 325;
 	}
 
