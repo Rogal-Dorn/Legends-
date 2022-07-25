@@ -371,9 +371,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_gambeson_plain"],
-			[1, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_robes"],
-			[1, "cloth/legend_tunic"],
+			[1, "cloth/legend_padded_surcoat"]
 		],
 		Chain = [
 			[1, ""],
@@ -403,11 +401,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloth = [
 			[1, "cloth/legend_gambeson_plain"],
 			[1, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_robes"],
-			[10, "cloth/legend_tunic"],
 		],
 		Chain = [
-			[10, ""],
 			[1, "chain/legend_armor_mail_shirt"],
 			[1, "chain/legend_armor_mail_shirt_simple"],
 		],
@@ -429,10 +424,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloth = [
 			[2, "cloth/legend_gambeson"],
 			[1, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_tunic"],
 		],
 		Chain = [
-			[4, ""],
 			[1, "chain/legend_armor_mail_shirt"],
 			[1, "chain/legend_armor_mail_shirt_simple"],
 		],
@@ -2011,15 +2004,15 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	Script = "scripts/items/armor/lonewolf_longsword_armour",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/legend_padded_surcoat"],
-			[1, "cloth/legend_gambeson_plain"],
+			[1, "cloth/legend_padded_surcoat"], //55
+			[1, "cloth/legend_gambeson_plain"], //65
 		],
 		Chain = [
-			[1, "chain/legend_armor_mail_shirt"],
-			[1, "chain/legend_armor_mail_shirt_simple"],
+			[1, "chain/legend_armor_mail_shirt"], //50
+			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/legend_armor_leather_lamellar"],
+			[1, "plate/legend_armor_leather_lamellar"], //50
 		],
 		Cloak = [
 		],
@@ -2039,7 +2032,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "cloth/legend_gambeson_plain"],
 		],
 		Chain = [
-			[1, "chain/legend_armor_reinforced_mail"],
+			[1, "chain/legend_armor_reinforced_mail"], //50
 		],
 		Plate = [
 		],
@@ -2060,10 +2053,10 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "cloth/legend_gambeson_plain"],
 		],
 		Chain = [
-			[1, "chain/legend_armor_mail_shirt_simple"],
+			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/legend_armor_leather_lamellar_reinforced"],
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], //55
 		],
 		Cloak = [
 		],
@@ -2083,7 +2076,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "cloth/legend_tunic"],
 		],
 		Chain = [
-			[1, "chain/legend_armor_mail_shirt_simple"],
+			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
 		],
@@ -2123,13 +2116,13 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	Script = "scripts/items/armor/lonewolf_polearm_armour",
 	Sets = [{
 		Cloth = [
-			[1, "cloth/legend_padded_surcoat"],
+			[1, "cloth/legend_padded_surcoat"], //55
 		],
 		Chain = [
-			[1, "chain/legend_armor_mail_shirt_simple"],
+			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/legend_armor_plate_chest"],
+			[1, "plate/legend_armor_plate_chest"], //125
 		],
 		Cloak = [
 			[1, "cloak/legend_southern_scarf"],
