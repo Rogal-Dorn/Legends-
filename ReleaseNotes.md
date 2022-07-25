@@ -1,5 +1,93 @@
 ### Legend Mod Release Notes
 
+## 16.1.0 - Sojourn
+
+**Important Changes**
+- Map generation options locked to defaults. This is for the sake of stability until the game becomes 4GB Large Address Aware.
+- Removed Unlayered armor option. This is for the sake of stability until someone thinks this has a high enough priority to maintain.
+- Evoker in Adventuring Party origin replaced with Druid.
+- All female hires now gain Resilient for free in the Sisterhood origin.
+- A lot of existing Attachments have been rebalanced: buffing several underused attachments and changing others.
+- Six former attachments have been made into cloaks while keeping their effects. Their old counterparts can no longer be obtained but you may still have access to them on if you crafted them in an old savegame.
+- A more detailed overview of these attachments/cloak changes can be seen on the screenshot below
+
+**General Changes**
+- Six former attachments have been made into cloaks while keeping their effects. Their old counterparts can no longer be obtained but you may still have access to them on if you crafted them in an old savegame.
+- A more detailed overview of these attachments/cloak changes can be seen on the screenshot below
+- Lone wolf relationship effect has been increased in gains but no longer attempts to scale from level
+- Adds two new southern backgrounds; the Conscript and Gunner - both can be found in southern cities with towers/military camps.
+
+**New Events**
+- Adds in an event that triggers if the player has 3 or fewer brothers that allows them to purchase renown. This event repeats but only triggers with 3 or fewer brothers.
+- Adds in 6 new and unique armoursets to the Lone Wolf origin, depending on what weapon type you pick in the first event.
+- Adds an event that allows a blacksmith to reforge an orc cleaver.
+- Adds an event for a discussion to happen between the noble footsoldier and noble warrior.
+- Adds an event for when the player has a brother with a falcon equipped.
+- Adds a forest ambush event with multiple outcomes.
+
+**Balance**
+Experience Changes
+- Bandit Veterans now grant 400 XP (down from 600)
+- Serpents now grant 200 XP (up from 175)
+- Redback Spider now grants 600 XP (up from 500)
+- Rock Unhold now grants 1100 XP (up from 800)
+- Stollwurm now grants 2000 XP (up from 1500)
+- Greenwood Schrat now grants 1100 XP (up from 1000)
+- Bear now grants 500 XP (up from 200)
+
+Hedge Knight Enemies Rebalanced
+  • Now always spawn with good armor.
+  • Now always spawn with a 2h melee weapon.
+  • Can now spawn with famed armor.
+  • Will not spawn famed helmets. Appropriate famed helmets need to be added to this list.
+
+- Adds a traveling bard event in to give renown to smaller groups or struggling players
+- Converted cultists added to Cabal favoured roster, will now gain full abilities and benefits a normal cultist would get
+- Cabal origin now spawn with strange meat instead of bodyparts in their inventory at the start of the game
+- Champion versions of Bandit Leader, Bandit Warlords and Gladiators should no longer be able to randomly spawn with named Shovels, Sickles or Daggers
+- Orc Young Low can now spawn with bone carver again.
+- Low condition layers in Coat of Plates outfit removed.
+- Low condition layers in Mail Hauberk outfit removed.
+- Pitchfork and Woodaxe Damage perks buffed.
+- Removed low-end (tunics, robes) base layers from mid-range armor sets.
+- New perk 'Off-Book Deal' replaces 'Bribe' for Peddller-Group. This perk reduces Barter by 1%, increases the available items sold by some towns but also increases their prices.
+- Changes 'Convincing Proposal' to granting 1% Barter and 10 Crowns. This also fixes the bug where this perk gave 5% Barter.
+- Removes the ability for a drunkard to break a named type item via an event.
+- 'Greed' perk reintroduced back into the barter perktree, Greed now scales with the amount of gold in the player's stash which in turn makes a brother with the perk better in combat.
+- Gruesome Feast no longer heals permanent injuries. This change prevents you from healing all your brothers permanent injuries with the Nach-Mask
+- Reduced durability of the Ijirok helmet from 300 to 160 & decreased fatigue cost from 20 to 10.
+- Adds terrain speed to gladiator backgrounds.
+
+**Other Changes**
+- You can now change that way how blueprints are shown during a playthrough as opposed to just during world generation
+- The mini-icon for 'Nine-Lives' is once again shown on each character who can still survive a fatal hit during this battle
+- Tooltips of combined armor/helmets are better formatted and more informative. No longer are the fluff texts of the layers listed here.
+- New 'Autorepair Layer' option in the menu settings. Activating this makes it so any layer that you unequip from a piece of armor is automatically set as 'To Be Repaired'
+
+**Fixes**
+- Fixes a bug that prevented the new 'berserker event' for the 'Lonewolf origin' from starting
+- The perk 'Assured Conquest' now shows the correct icon for its effect instead of the 'Student' Icon
+- Fixes an issue where female bower was exempt from crafting a masterwork bow and bower from the masterwork quiver events.
+- Fixed Lone Wolf berserker & caravan events.
+- Fixed a typo in the crusader sword event which caused a screen not to appear.
+- Fixed a typo in the minstrel x troubadour event which caused an error.
+- Fixes an ongoing issue with contract garrisons leaving their garrisons before the player arrived - often causing softlocks and poor balancing. This primarily affects the legendary brigand army contract and the 'retrieve cargo' contract that offered up the garrison as a twist. (See: for modders)
+- A half-dozen typo fixes in various places.
+- Fixes the skin ghoul map figure being just a normal nachzehrer.
+- 'Net Casting' now correctly states in the description that it increases the range by two tiles (instead of one)
+- 'Net Casting' no longer reduces the AP cost of throwing nets to 3
+- 'Net Mastery' now correctly reduces the AP cost of throwing nets to 3
+- Fixes a bug that prevented battles with Tower Shield wielding characters from starting
+- Fixes a typo that prevented named Parrying Dagger from appearing in Weaponsmiths 
+- text improvements and typo fixes.
+
+**For Modders**
+- All blueprints introduced by legends are now sorted into their own subfolders for better organization. If you hooked into- or replaced those then your mod needs to be adjusted to still work correctly
+- All Legends events are now sorted in their own events/legends subfolder. If you hooked in any of those, you need to adjust those hooks
+- A new flag has been created, titled 'isContractLocation'. This has been added to 'sendbanditroamers' & 'sendbanditambushers' actions but may be implemented elsewhere in the future. Do what you will with this information.
+- The perk 'Adrenalin' is now correctly changed to 'Adrenaline' in the code to align with Vanilla Battle Brothers. If your submod modified this perks Description, Name or added it to custom perk trees then you need to adjust those instances. 
+- If you are making your own body armor layers you can now use a handful of new existing variables for common stats like 'Resolve', 'Initiative' or 'Threat'. Changing those will automatically apply the respective effects and create tooltips for them. See 'legend_armor_upgrade.nut'
+
 ## 16.0.9 - No You Bloody Don't
 - Applied fixes from vanilla update where applicable.
 - Ancient Dead no longer give 3 bleed with all weapons on Legendary difficulty. We'd rather give them unique, faction specific perks than a blanket bleed.
