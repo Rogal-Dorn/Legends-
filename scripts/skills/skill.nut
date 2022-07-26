@@ -702,6 +702,13 @@ this.skill <- {
 		}
 
 		user.setPreviewSkillID("");
+
+		local recoverSkill = this.getContainer().getSkillByID("actives.recover");
+		if (recoverSkill != null)
+		{
+			recoverSkill.m.CanRecover = false;
+		}
+
 		return this.onUse(user, _targetTile);
 	}
 
