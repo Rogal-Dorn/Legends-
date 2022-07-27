@@ -1,5 +1,8 @@
 ### Legend Mod Release Notes
 
+## 16.1.2 - Conscription
+- fixed bug in Conscript Gunner background with adding equipment. (Thanks Druwski)
+
 ## 16.1.1 - Bush Knight
 - Fixed Hedge Knight bug and event score bug.
 - Remove hook on executeEntitySkill and move the Recover skill related code to use function of skill. This is to allow compatibility with MSU because MSU hooks the executeEntitySkill function and Legends was overwriting that.
