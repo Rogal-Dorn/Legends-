@@ -4,7 +4,7 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 	{
 		this.legend_conscript_background.create();
 		this.m.Name = "Conscript Gunner";
-		this.m.Icon = "ui/backgrounds/background_ranged_conscript.png"; //TO DO
+		this.m.Icon = "ui/backgrounds/background_ranged_conscript.png";
 		this.m.HiringCost = 325;
 	}
 
@@ -46,12 +46,12 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 		};
 		return c;
 	}
-	
+
 	function onAdded()
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_throw_sand"));
-	}	
+	}
 
 	function onAddEquipment()
 	{
@@ -67,13 +67,12 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 		{
 			items.addToBag(this.new("scripts/items/weapons/oriental/saif"));
 		}
-		this.m.Items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
-		this.m.Items.equip(this.new("scripts/items/ammo/powder_bag"));
 
+		items.equip(this.new("scripts/items/weapons/oriental/handgonne"));
+		items.equip(this.new("scripts/items/ammo/powder_bag"));
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/padded_vest"]
-		]))
-
+		]));
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/nomad_head_wrap"],
 			[1, "oriental/gunner_hat"],
