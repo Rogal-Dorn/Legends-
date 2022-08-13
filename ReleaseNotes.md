@@ -1,5 +1,19 @@
 ### Legend Mod Release Notes
 
+## 16.1.3 - Soujourn v3
+Changes:
+- 'Off-Book Deal' now states its duration of 3 days in the tooltip
+- 'Greed' Defensive Bonus is reduced greatly
+- 'Greed' Bonus gained from Crowns above 25000 is reduced by 95%
+Fixes:
+- corrects stamina cost of leather neckguard to -2
+- summoned zombies are now gaining the correct 'rotten flesh' effect 
+- fixes bug with 'collector_wants_trophy_event' event making it unable to procc
+- fixes bug preventing the lonewolf 'companion_caravan' event from working
+- fixes a bug preventing the 'Bandit Army' contract from working
+- fixes the missing formatting in various recent events
+- corrects some typos 
+
 ## 16.1.2 - Conscription
 - fixed bug in Conscript Gunner background with adding equipment. (Thanks Druwski)
 
