@@ -74,7 +74,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_food_up.png",
-				text = "Successful hunt will take approxiamtely [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours."
+				text = "Successful hunt will take approximately [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours."
 			}
 		];
 		local id = 6;
