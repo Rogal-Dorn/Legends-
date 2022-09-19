@@ -36,34 +36,30 @@ this.legend_craftable_greenwood_schrat_shield <- this.inherit("scripts/items/shi
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 
-		function onCombatFinished()
+	function onCombatFinished()
 	{
-		local actor = this.getContainer().getActor();
-		local shield = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		shield.setCondition(shield.getConditionMax());
+		this.setCondition(shield.getConditionMax());	// To discourage the player stalling battles to fully repair this shield
 	}
 
 	function onTurnStart()
 	{
-		local actor = this.getContainer().getActor();
-		local shield = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local shieldMissing = shield.getConditionMax() - shield.getCondition();
-		local shieldAdded = this.Math.min(shieldMissing, this.Math.floor(shield.getConditionMax() * 0.1));
-
+		local shieldMissing = this.getConditionMax() - this.getCondition();
+		local shieldAdded = this.Math.min(shieldMissing, this.Math.floor(this.getConditionMax() * 0.1));
 
 		if (shieldAdded <= 0)
 		{
 			return;
 		}
 
-		shield.setCondition(shield.getCondition() + shieldAdded);
+		this.setCondition(shield.getCondition() + shieldAdded);
+		local actor = this.getContainer().getActor();
 		actor.setDirty(true);
 
 		if (!actor.isHiddenToPlayer())
 		{
 			this.Tactical.spawnIconEffect("status_effect_79", actor.getTile(), this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
 			this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + shieldAdded + " points");
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + "\'s shield restores " + shieldAdded + " durability");
 		}
 	}
 
