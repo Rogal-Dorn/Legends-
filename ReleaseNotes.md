@@ -1,10 +1,24 @@
 ### Legend Mod Release Notes
 
+## 16.1.4 - Soujourn v4
+Fixes:
+- Discovering the Legendary Ancient Mastaba or the Tournament Ground now correctly counts as discovering a legendary location for the purpose of the Retinue 
+- Revert change to the rotten flesh effect from the last release
+- The changed Icon for completing the Camp Training should now persist after loading a savegame 
+- fixes crashes with the bandit army contract
+- fixes a gamefreeze when ending a battle with a greenwood schrat shield in your bag
+- fixes missing formatting in alp-in-hole event and in forest-ambush event
+- Fixed a typo into FE: southerners contract
+- Fixed a typo in demon alp and alp contracts
+- Fixed a typo in cabal origin introduction
+- corrects a few other typos
+
 ## 16.1.3 - Soujourn v3
 Changes:
 - 'Off-Book Deal' now states its duration of 3 days in the tooltip
 - 'Greed' Defensive Bonus is reduced greatly
 - 'Greed' Bonus gained from Crowns above 25000 is reduced by 95%
+
 Fixes:
 - corrects stamina cost of leather neckguard to -2
 - summoned zombies are now gaining the correct 'rotten flesh' effect 
