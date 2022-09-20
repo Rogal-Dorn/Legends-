@@ -38,7 +38,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 			],
 			function start( _event )
 			{
-				if (_event.m.Barbarian != null)
+				if (_event.m.Barbarian != "")
 				{
 					this.Options.push({
 						Text = "Our barbarian, %barbarian% wants to talk to them.",
@@ -50,7 +50,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 					});
 				}
 
-				if (_event.m.Wildman != null)
+				if (_event.m.Wildman != "")
 				{
 					this.Options.push({
 						Text = "%wildman% is about to break into a berserk fury...",
@@ -62,7 +62,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 					});
 				}
 
-				if (_event.m.MasterArcher != null)
+				if (_event.m.MasterArcher != "")
 				{
 					this.Options.push({
 						Text = "It seems that our master archer, %masterarcher% has a plan.",
@@ -74,7 +74,7 @@ this.legend_northmen_forest_ambush_event <- this.inherit("scripts/events/event",
 					});
 				}
 
-				if (_event.m.Assassin != null)
+				if (_event.m.Assassin != "")
 				{
 					this.Options.push({
 						Text = "Our assassin, %assassin% has an idea...",
