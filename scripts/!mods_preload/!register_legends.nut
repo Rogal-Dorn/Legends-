@@ -1,8 +1,8 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "16.1.3",
+	Version = "16.1.4",
 	Name = "Legends Mod",
-	BuildName = "Sojourn v3"
+	BuildName = "Sojourn v4"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 ::mods_queue(null, "mod_msu(>=1.0.3), vanilla(>=1.5.0-11), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
