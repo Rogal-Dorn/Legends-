@@ -68,7 +68,7 @@ this.named_throwing_axe <- this.inherit("scripts/items/weapons/named/named_weapo
 
 	function setAmmo( _a )
 	{
-		this.weapon.setAmmo(_a);
+		this.named_weapon.setAmmo(_a);
 		this.updateVariant();
 		this.updateAppearance();
 	}

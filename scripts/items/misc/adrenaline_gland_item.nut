@@ -2,6 +2,7 @@ this.adrenaline_gland_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.adrenaline_gland";
 		this.m.Name = "Adrenaline Gland";
 		this.m.Description = "A Direwolf\'s frenzy and bloodlust can be attributed to substances produced by this gland. Someone, somewhere will probably have a use for it.";
@@ -15,6 +16,16 @@ this.adrenaline_gland_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/cleave_hit_hitpoints_01.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

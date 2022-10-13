@@ -84,10 +84,11 @@ this.medium_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"witchhunter_background",
 			"cripple_background",
-			"eunuch_background"
+			"eunuch_background",
+			"anatomist_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		];
 		if (this.Const.DLC.Unhold)

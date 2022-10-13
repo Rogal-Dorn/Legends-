@@ -56,7 +56,7 @@ this.named_crossbow <- this.inherit("scripts/items/weapons/named/named_weapon", 
 
 	function getTooltip()
 	{
-		local result = this.weapon.getTooltip();
+		local result = this.named_weapon.getTooltip();
 
 		if (!this.m.IsLoaded)
 		{

@@ -17,8 +17,8 @@ var OptionsMenuModuleVideoPanel = function(_dataSource)
  
 	// container
 	this.mContainer = null;
-    this.mListContainer = null;
-    this.mListScrollContainer = null;
+	this.mListContainer = null;
+	this.mListScrollContainer = null;
 
 	// controls
 	this.mFullscreenCheckbox	= null;
@@ -36,7 +36,7 @@ var OptionsMenuModuleVideoPanel = function(_dataSource)
 
 	this.mIsSystemChange		= false;
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -46,7 +46,7 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 
 	// create: character panel (init hidden!)
 	this.mContainer = $('<div class="video-panel display-none"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	// create: columns
 	var leftColumn = $('<div class="column"/>');
@@ -60,10 +60,10 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 	var resolutionsTile = $('<div class="title title-font-big font-bold font-color-title">Resolution</div>');
 	resolutionsRow.append(resolutionsTile);
 
-    var listContainerLayout = $('<div class="control l-list-container"/>');
-    resolutionsRow.append(listContainerLayout);
-    this.mListContainer = listContainerLayout.createList(0.635);
-    this.mListScrollContainer = this.mListContainer.findListScrollContainer();
+	var listContainerLayout = $('<div class="control l-list-container"/>');
+	resolutionsRow.append(listContainerLayout);
+	this.mListContainer = listContainerLayout.createList(0.635);
+	this.mListScrollContainer = this.mListContainer.findListScrollContainer();
 
 	// create: display options
 	var displayRow = $('<div class="row"/>');
@@ -81,7 +81,7 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	var windowControl = $('<div class="control"/>');
 	displayRow.append(windowControl);
@@ -93,7 +93,7 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	var borderlessControl = $('<div class="control"/>');
 	displayRow.append(borderlessControl);
@@ -105,7 +105,7 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	var vsyncControl = $('<div class="control"/>');
 	displayRow.append(vsyncControl);
@@ -117,7 +117,7 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	// create: detail options
 	var detailRow = $('<div class="row"/>');
@@ -199,30 +199,30 @@ OptionsMenuModuleVideoPanel.prototype.createDIV = function (_parentDiv)
 	var thanksLabel = $('<label class="text-font-normal font-color-brother-name">Changes take effect after restart!</label>');
 	thanksMike.append(thanksLabel);
 
-    this.setupEventHandler();
+	this.setupEventHandler();
 };
 
 OptionsMenuModuleVideoPanel.prototype.destroyDIV = function ()
 {
-    // controls
-    this.mFullscreenCheckbox.remove();
-    this.mFullscreenCheckbox = null;
-    this.mWindowCheckbox.remove();
-    this.mWindowCheckbox = null;
-    this.mBorderlessCheckbox.remove();
-    this.mBorderlessCheckbox = null;
-    this.mVSyncCheckbox.remove();
-    this.mVSyncCheckbox = null;
-    this.mDepthOfFieldCheckbox.remove();
-    this.mDepthOfFieldCheckbox = null;
+	// controls
+	this.mFullscreenCheckbox.remove();
+	this.mFullscreenCheckbox = null;
+	this.mWindowCheckbox.remove();
+	this.mWindowCheckbox = null;
+	this.mBorderlessCheckbox.remove();
+	this.mBorderlessCheckbox = null;
+	this.mVSyncCheckbox.remove();
+	this.mVSyncCheckbox = null;
+	this.mDepthOfFieldCheckbox.remove();
+	this.mDepthOfFieldCheckbox = null;
 
-    this.mListContainer.destroyList();
-    this.mListScrollContainer = null;
-    this.mListContainer = null;
+	this.mListContainer.destroyList();
+	this.mListScrollContainer = null;
+	this.mListContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -240,25 +240,25 @@ OptionsMenuModuleVideoPanel.prototype.setupEventHandler = function ()
 	{
 		var self = _event.data;
 		self.mDataSource.updateVideoOption(OptionsMenuModuleIdentifier.QueryResult.Video.WindowMode.Key, OptionsMenuModuleIdentifier.QueryResult.Video.WindowMode.Window);
-    });
+	});
 
 	this.mBorderlessCheckbox.on('ifChecked', null, this, function (_event)
 	{
 		var self = _event.data;
 		self.mDataSource.updateVideoOption(OptionsMenuModuleIdentifier.QueryResult.Video.WindowMode.Key, OptionsMenuModuleIdentifier.QueryResult.Video.WindowMode.Borderless);
-    });
+	});
 
-    this.mVSyncCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
+	this.mVSyncCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
 		var self = _event.data;
 		self.mDataSource.updateVideoOption(OptionsMenuModuleIdentifier.QueryResult.Video.VSync, self.mVSyncCheckbox.prop('checked') === true);
-    });
+	});
 
-    this.mDepthOfFieldCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
+	this.mDepthOfFieldCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
 		var self = _event.data;
 		self.mDataSource.updateVideoOption(OptionsMenuModuleIdentifier.QueryResult.Video.DepthOfField, self.mDepthOfFieldCheckbox.prop('checked') === true);
-    });
+	});
 };
 
 
@@ -291,15 +291,15 @@ OptionsMenuModuleVideoPanel.prototype.addResolutionToList = function (_data, _in
 	var label = '' + _data[OptionsMenuModuleIdentifier.QueryResult.Video.Resolution.Width] + ' x ' +
 					_data[OptionsMenuModuleIdentifier.QueryResult.Video.Resolution.Height];
 
-    var row = $('<div class="l-row"/>');
+	var row = $('<div class="l-row"/>');
 	var entry = $('<div id="resolution-' + _index + '" class="ui-control list-entry list-entry-small"><span class="label text-font-medium font-color-label">' + label + '</span></div></div>');
-    entry.data('resolution', _index);
-    entry.click(this, function (_event)
-    {
+	entry.data('resolution', _index);
+	entry.click(this, function (_event)
+	{
 		var self = _event.data;
 		self.selectResolution($(this));
 	});
-    row.append(entry);
+	row.append(entry);
 	this.mListScrollContainer.append(row);
 };
 
@@ -307,7 +307,7 @@ OptionsMenuModuleVideoPanel.prototype.addResolutionsToList = function (_data)
 {
 	if (_data !== null && jQuery.isArray(_data))
 	{
-        this.mListScrollContainer.empty();
+		this.mListScrollContainer.empty();
 
 		for (var i = 0; i < _data.length; ++i)
 		{
@@ -352,7 +352,7 @@ OptionsMenuModuleVideoPanel.prototype.selectResolution = function(_element, _scr
 			// give the renderer some time to layout his shit...
 			if (_scrollToResolution !== undefined && _scrollToResolution === true)
 			{
-                self.mListContainer.scrollListToElement(_element);
+				self.mListContainer.scrollListToElement(_element);
 			}
 
 			this.mDataSource.updateVideoOption(OptionsMenuModuleIdentifier.QueryResult.Video.Resolution.Key, _element.data('resolution'));
@@ -449,44 +449,44 @@ OptionsMenuModuleVideoPanel.prototype.registerDatasourceListener = function()
 
 OptionsMenuModuleVideoPanel.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 OptionsMenuModuleVideoPanel.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 OptionsMenuModuleVideoPanel.prototype.register = function (_parentDiv)
 {
-    console.log('OptionsMenuModuleVideoPanel::REGISTER');
+	console.log('OptionsMenuModuleVideoPanel::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Video Panel Module. Reason: Video Panel Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Video Panel Module. Reason: Video Panel Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 OptionsMenuModuleVideoPanel.prototype.unregister = function ()
 {
-    console.log('OptionsMenuModuleVideoPanel::UNREGISTER');
+	console.log('OptionsMenuModuleVideoPanel::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Video Panel Module. Reason: Video Panel Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Video Panel Module. Reason: Video Panel Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 OptionsMenuModuleVideoPanel.prototype.isRegistered = function ()
@@ -502,7 +502,7 @@ OptionsMenuModuleVideoPanel.prototype.isRegistered = function ()
 
 OptionsMenuModuleVideoPanel.prototype.show = function ()
 {
-    this.mContainer.removeClass('display-none').addClass('display-block');
+	this.mContainer.removeClass('display-none').addClass('display-block');
 	this.reselectResolution();
 };
 

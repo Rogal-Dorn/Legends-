@@ -35,7 +35,7 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

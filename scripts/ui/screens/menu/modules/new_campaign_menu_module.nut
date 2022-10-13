@@ -52,11 +52,6 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		this.m.JSHandle.asyncCall("setBanners", _banners);
 	}
 
-	function setConfigOpts ( _opts )
-	{
-		this.m.JSHandle.asyncCall("setConfigOpts", _opts);
-	}
-
 	function setStartingScenarios( _scenarios )
 	{
 		this.m.JSHandle.asyncCall("setStartingScenarios", _scenarios);
@@ -70,47 +65,17 @@ this.new_campaign_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 	function onStartButtonPressed( _settings )
 	{
 		local settings = {
-			Name = _settings["Name"],
-			Banner = _settings["Banner"],
-			Difficulty = _settings["Difficulty"],
-			EconomicDifficulty = _settings["EconomicDifficulty"],
-			BudgetDifficulty = _settings["BudgetDifficulty"],
-			Ironman = _settings["Ironman"],
-			GreaterEvil = _settings["GreaterEvil"],
-			PermanentDestruction = _settings["PermanentDestruction"],
-			Seed = _settings["Seed"],
-			Width = this.Const.World.Settings.SizeX,
-			Height = this.Const.World.Settings.SizeY,
-			LandMassMult = _settings["LandMassMult"],
-			WaterConnectivity = _settings["WaterConnectivity"],
-			MinLandToWaterRatio = (_settings["MinLandToWaterRatio"] + 10.0) / 10.0,
-			Snowline = _settings["Snowline"] / 100.0,
-			NumSettlements = _settings["NumSettlements"],
-			NumFactions = _settings["NumFactions"],
-			FOW = _settings["FOW"],
-			ExplorationMode = _settings["ExplorationMode"],
-			ForestsMult = _settings["ForestsMult"] / 100.0,
-			SwampsMult = _settings["SwampsMult"] / 100.0 ,
-			MountainsMult = _settings["MountainsMult"] / 100.0,
-			StackCitadels = _settings["StackCitadels"],
-			AllTradeLocations = _settings["AllTradeLocations"],
-			StartingScenario = _settings["StartingScenario"],
-			LegendPerkTrees = _settings["LegendPerkTrees"],
-			LegendGenderEquality = _settings["LegendGenderEquality"],
-			LegendMagic = _settings["LegendMagic"],
-			LegendArmor = _settings["LegendArmor"],
-			Debug = _settings["Debug"],
-			Autosave = _settings["Autosave"],
-			LegendItemScaling = _settings["LegendItemScaling"],
-			LegendLocationScaling = _settings["LegendLocationScaling"],
-			LegendCampUnlock = _settings["LegendCampUnlock"],
-			LegendRecruitScaling = _settings["LegendRecruitScaling"],
-			LegendBleedKiller = _settings["LegendBleedKiller"],
-			LegendAllBlueprints = _settings["LegendAllBlueprints"],
-			LegendRelationship = _settings["LegendRelationship"],
-			LegendWorldEconomy = _settings["LegendWorldEconomy"],
-			LegendTherian = _settings["LegendTherian"],
-			LegendIsHelmet = this.Const.DLC.Unhold ? 1 : 0
+			Name = _settings[0],
+			Banner = _settings[1],
+			Difficulty = _settings[2],
+			EconomicDifficulty = _settings[3],
+			BudgetDifficulty = _settings[4],
+			Ironman = _settings[5],
+			ExplorationMode = _settings[6],
+			GreaterEvil = _settings[7],
+			PermanentDestruction = _settings[8],
+			Seed = _settings[9],
+			StartingScenario = _settings[10]
 		};
 
 		if (this.m.OnStartButtonPressedListener != null)

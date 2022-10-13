@@ -939,7 +939,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								[1, "oriental/gladiator_harness"],
 						]);
 						a.setUpgrade(this.new("scripts/items/" +
-							(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+							(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
 						))
 
 						this.List.push({
@@ -954,7 +954,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 								[1, "oriental/gladiator_harness"],
 						]);
 						a.setUpgrade(this.new("scripts/items/" +
-							(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+							(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 						))
 						this.List.push({
 							id = 12,
@@ -964,10 +964,11 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 						break;
 
 					case 3:
-						local helmet = [
-							[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)]
-						];
-						a = this.Const.World.Common.pickHelmet(helmet);
+						a = ::new(::MSU.Array.rand([
+							"scripts/items/legend_helmets/helm/legend_helmet_southern_gladiator_helm_crested",
+							"scripts/items/legend_helmets/helm/legend_helmet_southern_gladiator_helm_split",
+							"scripts/items/legend_helmets/helm/legend_helmet_southern_gladiator_helm_masked"
+						]));
 						this.List.push({
 							id = 12,
 							icon = "ui/items/" + a.getIcon(),
@@ -1064,7 +1065,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "Gladiators",
 			Title = "At the Arena",
-			Text = "{[img]gfx/ui/events/event_85.png[/img]The fight over, you find a few women sauntering upon you and the gladiators. They are practically swooning, faces blushed, and the men take special care of them. A little tired yourself, you have one of the fans help you count inventory. | [img]gfx/ui/events/event_147.png[/img]The battle\'s over, but a shadow suddenly crosses the ground. In a flash, you unsheathe and slash the sky. Flower petals shower your glistening body and you catch the rest of the bouquet in your teeth. A woman stands there fanning herself.%SPEECH_ON%I wondered why you didn\'t fight.%SPEECH_OFF%She says. You sheathe your blade and tie the bouquet to your belt. You tell her that if you fought, it wouldn\'t be a \'fight\' at all. The fan goes weak at the knees and finds comfort on the ground. Before leaving, you tell her to drink plenty of water and make sure she stretches in the mornings. | [img]gfx/ui/events/event_97.png[/img]%SPEECH_START%Can I learn to fight like you men?%SPEECH_OFF%The voices catches you off guard and before you know it you have your blade an inch from a little boy\'s face. His eyes are shut, and he slowly opens one. You sheathe the sword and laugh.%SPEECH_ON%No. What I am cannot be learned.%SPEECH_OFF%You use a bit of ash and blood from the field to sign the kid\'s shirt and then make your leave. | %SPEECH_START%Are you... are you gladiators?%SPEECH_OFF%You look to see a boy standing there with awe on his face. He almost cries he\'s so giddy.%SPEECH_ON%You\'re amazing!%SPEECH_OFF%Tussling the boy\'s hair, you tell him thanks, and make your leave. | [img]gfx/ui/events/event_97.png[/img]%SPEECH_START%H-how did you get so good?%SPEECH_OFF%You turn to see a boy nervously staring at you. Smiling, you give him the truth.%SPEECH_ON%When I was your age, I was killing men my age.%SPEECH_OFF%Grinning back, he asks if he works on it, can he be like you. Nodding, you answer.%SPEECH_ON%You can\'t know until you try, kid. Now go on home.%SPEECH_OFF%The boy brandishes a butter knife and fiendishly turns and sprints away. He\'s a good lad.}",
+			Text = "{[img]gfx/ui/events/event_85.png[/img]The fight over, you find a few women sauntering upon you and the gladiators. They are practically swooning, faces blushed, and the men take special care of them. A little tired yourself, you have one of the fans help you count inventory. | [img]gfx/ui/events/event_147.png[/img]The battle\'s over, but a shadow suddenly crosses the ground. In a flash, you unsheathe and slash the sky. Flower petals shower your glistening body and you catch the rest of the bouquet in your teeth. A woman stands there fanning herself.%SPEECH_ON%I wondered why you didn\'t fight.%SPEECH_OFF%She says. You sheathe your blade and tie the bouquet to your belt. You tell her that if you fought, it wouldn\'t be a \'fight\' at all. The fan goes weak at the knees and finds comfort on the ground. Before leaving, you tell her to drink plenty of water and make sure she stretches in the mornings. | [img]gfx/ui/events/event_97.png[/img]%SPEECH_START%Can I learn to fight like you men?%SPEECH_OFF%The voices catches you off guard and before you know it you have your blade an inch from a little boy\'s face. His eyes are shut, and he slowly opens one. You sheathe the sword and laugh.%SPEECH_ON%No. What I am cannot be learned.%SPEECH_OFF%You use a bit of ash and blood from the field to sign the kid\'s shirt and then make your leave. | [img]gfx/ui/events/event_97.png[/img]%SPEECH_START%Are you... are you gladiators?%SPEECH_OFF%You look to see a boy standing there with awe on his face. He almost cries he\'s so giddy.%SPEECH_ON%You\'re amazing!%SPEECH_OFF%Tussling the boy\'s hair, you tell him thanks, and make your leave. | [img]gfx/ui/events/event_97.png[/img]%SPEECH_START%H-how did you get so good?%SPEECH_OFF%You turn to see a boy nervously staring at you. Smiling, you give him the truth.%SPEECH_ON%When I was your age, I was killing men my age.%SPEECH_OFF%Grinning back, he asks if he works on it, can he be like you. Nodding, you answer.%SPEECH_ON%You can\'t know until you try, kid. Now go on home.%SPEECH_OFF%The boy brandishes a butter knife and fiendishly turns and sprints away. He\'s a good lad.}",
 			Image = "",
 			Characters = [],
 			List = [],

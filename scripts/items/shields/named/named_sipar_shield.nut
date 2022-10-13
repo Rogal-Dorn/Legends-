@@ -21,8 +21,8 @@ this.named_sipar_shield <- this.inherit("scripts/items/shields/named/named_shiel
 		this.m.MeleeDefense = 18;
 		this.m.RangedDefense = 18;
 		this.m.StaminaModifier = -18;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
 		this.randomizeValues();
 	}
 

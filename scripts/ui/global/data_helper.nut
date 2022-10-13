@@ -42,11 +42,6 @@ this.data_helper <- {
 			d = d + " Ironman";
 		}
 
-		if (_meta.getInt("autosave") == 1)
-		{
-			d = d + " Autosave off";
-		}
-
 		d = d + ")";
 		return {
 			fileName = _meta.getFileName(),
@@ -55,7 +50,6 @@ this.data_helper <- {
 			banner = _meta.getString("banner"),
 			dayName = "Day " + _meta.getInt("days") + d,
 			creationDate = _meta.getCreationDate(),
-			isAutosave = _meta.getInt("autosave") == 1
 			isIncompatibleVersion = _meta.getVersion() < 33 || _meta.getVersion() > this.Const.Serialization.Version || !this.Const.DLC.isCompatible(_meta),
 			isIronman = _meta.getInt("ironman") == 1
 		};
@@ -432,8 +426,8 @@ this.data_helper <- {
 		_target.moraleLabel <- this.Const.MoraleStateName[_entity.getMoraleState()];
 
 		local dm = 1.0;
-		dm *= _entity.isArmedWithMeleeOrUnarmed() ? properties.MeleeDamageMult : 1.0;
-		dm *= _entity.isArmedWithRangedWeapon() ? properties.RangedDamageMult : 1.0;
+		dm *= (_entity.isArmedWithMeleeWeapon() || _entity.getSkills().hasSkill("actives.hand_to_hand")) ? properties.MeleeDamageMult : 1.0;
+		dm *= (_entity.isArmedWithMeleeWeapon() || _entity.getSkills().hasSkill("actives.hand_to_hand")) ? properties.RangedDamageMult : 1.0;
 
 		local damageMin = properties.getRegularDamageAverage() * dm;
 		local damageMax = this.Const.CharacterMaxValue.RegularDamage;
@@ -886,7 +880,7 @@ this.data_helper <- {
 		result.price <- 0;
 
 		result.upgrades <- _item.getUpgrades();
-
+		
 		if (_owner != null)
 		{
 			switch(_owner)

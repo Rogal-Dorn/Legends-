@@ -48,12 +48,12 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 		local effect = _actor.getSkills().getSkillByID("effects.scroll");
 		local smart = _actor.getSkills().getSkillByID("trait.bright");
 		if (  effect != null && ( (effect.m.Smart && smart != null) || smart == null ) )
-        {
+		{
 			this.logInfo("Failed to apply scroll: " + (effect == null ? " effect null" : " effect not null"));
-            return false;
-        }
+			return false;
+		}
 		else
-        {
+		{
 
 			local r = this.Math.rand(1, 5);
 			switch(r)
@@ -137,12 +137,12 @@ this.legend_ancient_scroll_item <- this.inherit("scripts/items/item", {
 					_actor.getSkills().add(this.new("scripts/skills/effects_world/legend_irritable_effect")); //dont have to wry about this stacking because u can aat max study twice
 				}
 			}
-        }
+		}
 
 		if (  effect != null )
-        {
+		{
 			effect.m.Smart = true;
-        }
+		}
 		else {
 			_actor.getSkills().add(this.new("scripts/skills/effects/legend_scroll_effect"));
 		}

@@ -10,7 +10,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		this.m.Description = "A tough leather hat that provides decent protection against scratches.";
 		this.m.ArmorDescription = this.m.Description;
 		this.m.Variants = [1, 2, 3, 4, 5, 6, 7];
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -42,11 +42,11 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 		return result;
 	}
 
-    function onUpdateProperties(_properties)
-    {
-        this.legend_helmet_upgrade.onUpdateProperties(_properties);
+	function onUpdateProperties(_properties)
+	{
+		this.legend_helmet_upgrade.onUpdateProperties(_properties);
 		_properties.MoraleCheckBravery[1] += 5;
-    }
+	}
 
 	function updateVariant()
 	{

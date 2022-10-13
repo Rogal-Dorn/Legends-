@@ -11,52 +11,52 @@
 "use strict";
 
 var TacticalCombatResultScreenIdentifier = {
-    KeyEvent: {
+	KeyEvent: {
 
-    },
+	},
 
-    CombatInformation: {
-        Result: {
-            Key: 'result',
-            Win: 'win',
-            Loose: 'loose'
-        },
-        Title: 'title',
-        SubTitle: 'subTitle'
-    },
+	CombatInformation: {
+		Result: {
+			Key: 'result',
+			Win: 'win',
+			Loose: 'loose'
+		},
+		Title: 'title',
+		SubTitle: 'subTitle'
+	},
 
-    Statistic: {
-        Id: 'id',
-        Name: 'name',
-        Title: 'title',
-        ImagePath: 'imagePath',
-        ImageOffsetX: 'imageOffsetX',
-        ImageOffsetY: 'imageOffsetY',
-        KillsMade: 'killsMade',
-        XpReceived: 'xpReceived',
-        DamageDealt: 'damageDealt',
-        DamageReceived: 'damageReceived',
-        DaysWounded: 'daysWounded',
-        LeveledUp: 'leveledUp'
-    },
+	Statistic: {
+		Id: 'id',
+		Name: 'name',
+		Title: 'title',
+		ImagePath: 'imagePath',
+		ImageOffsetX: 'imageOffsetX',
+		ImageOffsetY: 'imageOffsetY',
+		KillsMade: 'killsMade',
+		XpReceived: 'xpReceived',
+		DamageDealt: 'damageDealt',
+		DamageReceived: 'damageReceived',
+		DaysWounded: 'daysWounded',
+		LeveledUp: 'leveledUp'
+	},
 
-    Item: {
-        Id: 'id',
-        ImagePath: 'imagePath',
-        Amount: 'amount',
-        AmountMax: 'amountMax'
-    },
+	Item: {
+		Id: 'id',
+		ImagePath: 'imagePath',
+		Amount: 'amount',
+		AmountMax: 'amountMax'
+	},
 
-    QueryResult: {
-        CombatInformation: 'combatInformation',
-        Statistics: 'statistics',
-        Stash: 'stash',
-        FoundLoot: 'foundLoot'
-    },
+	QueryResult: {
+		CombatInformation: 'combatInformation',
+		Statistics: 'statistics',
+		Stash: 'stash',
+		FoundLoot: 'foundLoot'
+	},
 
 	ItemOwner:
 	{
-        Stash: 'tactical-combat-result-screen.stash',
-        FoundLoot: 'tactical-combat-result-screen.found-loot'
-    }
+		Stash: 'tactical-combat-result-screen.stash',
+		FoundLoot: 'tactical-combat-result-screen.found-loot'
+	}
 };

@@ -48,7 +48,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.SpearTree
 			],
 			Defense = [
@@ -77,10 +77,7 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.GoodEnding = "%name% the ratcatcher came from stranger stocks, and to stranger stocks she returned. After retiring from the %companyname%, she started a ratcatching company. She was doing wonderful business until it came out that she hadn\'t been killing any of the rats, but instead stowing thousands of them in a storehouse just outside town. Last you heard, the woman was quite content with her new and numerous friends.";
 		this.m.BadEnding = "You didn\'t think %name% would fit in with sellswords, but she proved herself capable. Unfortunately, the %companyname% fell apart and he returned to ratcatching. You got word that her body was found in a sewer utterly covered in nibbling rats. It\'s said that she had a smile on her face.";
 

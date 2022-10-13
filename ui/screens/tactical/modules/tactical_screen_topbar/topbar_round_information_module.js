@@ -23,13 +23,13 @@ var TacticalScreenTopbarRoundInformationModule = function()
 
 	// entities count containers
 	this.mBrothersCountContainer = null;
-	this.mBrothersCount          = null;
+	this.mBrothersCount		  = null;
 
 	this.mEnemiesCountContainer = null;
-	this.mEnemiesCount          = null;
+	this.mEnemiesCount		  = null;
 
 	this.mRoundCounterContainer = null;
-	this.mRoundNumber          = null;
+	this.mRoundNumber		  = null;
 };
 
 
@@ -64,7 +64,7 @@ TacticalScreenTopbarRoundInformationModule.prototype.createDIV = function (_pare
 {
 	// create: containers
 	this.mContainer = $('<div class="topbar-round-information-module"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	var leftContainer = $('<div class="left-container"/>');
 	this.mContainer.append(leftContainer);
@@ -115,27 +115,27 @@ TacticalScreenTopbarRoundInformationModule.prototype.createDIV = function (_pare
 
 TacticalScreenTopbarRoundInformationModule.prototype.destroyDIV = function ()
 {
-    this.mBrothersCount.remove();
-    this.mBrothersCount = null;
-    this.mBrothersCountContainer.empty();
-    this.mBrothersCountContainer.remove();
-    this.mBrothersCountContainer = null;
+	this.mBrothersCount.remove();
+	this.mBrothersCount = null;
+	this.mBrothersCountContainer.empty();
+	this.mBrothersCountContainer.remove();
+	this.mBrothersCountContainer = null;
 
-    this.mRoundNumber.remove();
-    this.mRoundNumber = null;
-    this.mRoundCounterContainer.empty();
-    this.mRoundCounterContainer.remove();
-    this.mRoundCounterContainer = null;
+	this.mRoundNumber.remove();
+	this.mRoundNumber = null;
+	this.mRoundCounterContainer.empty();
+	this.mRoundCounterContainer.remove();
+	this.mRoundCounterContainer = null;
 
-    this.mEnemiesCount.remove();
-    this.mEnemiesCount = null;
-    this.mEnemiesCountContainer.empty();
-    this.mEnemiesCountContainer.remove();
-    this.mEnemiesCountContainer = null;
+	this.mEnemiesCount.remove();
+	this.mEnemiesCount = null;
+	this.mEnemiesCountContainer.empty();
+	this.mEnemiesCountContainer.remove();
+	this.mEnemiesCountContainer = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -148,52 +148,52 @@ TacticalScreenTopbarRoundInformationModule.prototype.bindTooltips = function ()
 
 TacticalScreenTopbarRoundInformationModule.prototype.unbindTooltips = function ()
 {
-    this.mBrothersCountContainer.unbindTooltip();
-    this.mEnemiesCountContainer.unbindTooltip();
-    this.mRoundCounterContainer.unbindTooltip();
+	this.mBrothersCountContainer.unbindTooltip();
+	this.mEnemiesCountContainer.unbindTooltip();
+	this.mRoundCounterContainer.unbindTooltip();
 };
 
 
 TacticalScreenTopbarRoundInformationModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 TacticalScreenTopbarRoundInformationModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 TacticalScreenTopbarRoundInformationModule.prototype.register = function (_parentDiv)
 {
-    console.log('TacticalScreenTopbarRoundInformationModule::REGISTER');
+	console.log('TacticalScreenTopbarRoundInformationModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Round Information Module. Reason: Round Information Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Round Information Module. Reason: Round Information Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 TacticalScreenTopbarRoundInformationModule.prototype.unregister = function ()
 {
-    console.log('TacticalScreenTopbarRoundInformationModule::UNREGISTER');
+	console.log('TacticalScreenTopbarRoundInformationModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Round Information Module. Reason: Round Information Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Round Information Module. Reason: Round Information Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
@@ -216,24 +216,24 @@ TacticalScreenTopbarRoundInformationModule.prototype.registerEventListener = fun
 
 TacticalScreenTopbarRoundInformationModule.prototype.update = function (_data)
 {
-    if (_data === null || _data === undefined)
+	if (_data === null || _data === undefined)
 	{
 		console.error('ERROR: Failed to query round information data. Reason: Invalid result.');
 		return;
 	}
 
-    if (TacticalScreenIdentifier.Topbar.RoundInformation.BrotherCount in _data)
+	if (TacticalScreenIdentifier.Topbar.RoundInformation.BrotherCount in _data)
 	{
-	    this.mBrothersCount.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.BrotherCount]);
+		this.mBrothersCount.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.BrotherCount]);
 	}
 
-    if (TacticalScreenIdentifier.Topbar.RoundInformation.EnemiesCount in _data)
+	if (TacticalScreenIdentifier.Topbar.RoundInformation.EnemiesCount in _data)
 	{
-        this.mEnemiesCount.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.EnemiesCount]);
+		this.mEnemiesCount.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.EnemiesCount]);
 	}
 
-    if (TacticalScreenIdentifier.Topbar.RoundInformation.RoundNumber in _data)
+	if (TacticalScreenIdentifier.Topbar.RoundInformation.RoundNumber in _data)
 	{
-        this.mRoundNumber.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.RoundNumber]);
+		this.mRoundNumber.html(_data[TacticalScreenIdentifier.Topbar.RoundInformation.RoundNumber]);
 	}
 };

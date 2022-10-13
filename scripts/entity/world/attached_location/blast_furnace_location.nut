@@ -52,7 +52,7 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;

@@ -149,7 +149,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,				
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
-				this.Const.Perks.PerkDefs.LegendMatchingSet,
+				this.Const.Perks.PerkDefs.LegendPerfectFit,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat
@@ -178,20 +178,9 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;

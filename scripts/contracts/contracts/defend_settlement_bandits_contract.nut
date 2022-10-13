@@ -1013,7 +1013,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		local nearestBandits = this.getNearestLocationTo(this.m.Home, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getSettlements());
 		local nearestZombies = this.getNearestLocationTo(this.m.Home, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getSettlements());
 
-		if (nearestZombies.getTile().getDistanceTo(this.m.Home.getTile()) > 20 && nearestBandits.getTile().getDistanceTo(this.m.Home.getTile()) > 20)
+		if ((nearestZombies == null || nearestZombies.getTile().getDistanceTo(this.m.Home.getTile()) > 20) && (nearestBandits == null || nearestBandits.getTile().getDistanceTo(this.m.Home.getTile()) > 20))
 		{
 			return false;
 		}

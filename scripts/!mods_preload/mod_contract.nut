@@ -6,14 +6,14 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 		o.onClear = function()
 		{
 			if (this.isActive())
-	            {
+				{
 					local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
 					local towns = contract_faction.getSettlements()
 					foreach (town in towns)
 					{
 						town.getSprite("selection").Visible = false;
 					}
-	            }
+				}
 				onClear()
 		}
 	})
@@ -21,10 +21,10 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 	::mods_hookBaseClass("contracts/contract", function(o) 
 	{
 		while(!("EmployerID" in o.m)) o = o[o.SuperName]; // find the base class
-	    /*if(!("_mod_legend" in o))
-	    {
-	        o._mod_legend <- true;// only override the methods once per base instance
-	    }*/
+		/*if(!("_mod_legend" in o))
+		{
+			o._mod_legend <- true;// only override the methods once per base instance
+		}*/
 
 		o.create = function()
 		{
@@ -303,7 +303,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 			if (s != null)
 			{
-				if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+				if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 				{
 					ret = _settlement.resolveSituationByInstance(_situationInstance);
 				}
@@ -325,7 +325,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			return ret;
 		}
 
-	    o.buildText <- function(_text)
+		o.buildText <- function(_text)
 		{
 			local brothers = this.World.getPlayerRoster().getAll();
 			local brother1 = this.Math.rand(0, brothers.len() - 1);

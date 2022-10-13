@@ -29,7 +29,7 @@ this.natural_trait <- this.inherit("scripts/skills/traits/character_trait", {
 			"trait.pessimist",
 			"trait.dumb",
 			"trait.fainthearted",
-			"trait,frail"
+			"trait.frail"
 		];
 	}
 

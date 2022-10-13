@@ -499,7 +499,7 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 			}
 		}
 
-	    o.isTileIsolated = function( _tile )
+		o.isTileIsolated = function( _tile )
 		{
 			local isCompletelyIsolated = true;
 
@@ -507,10 +507,10 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 			{
 				if (!_tile.hasNextTile(i))
 				{
-	                continue
+					continue
 				}
 
-	            if (_tile.getNextTile(i).IsEmpty && this.Math.abs(_tile.Level - _tile.getNextTile(i).Level) <= 1)
+				if (_tile.getNextTile(i).IsEmpty && this.Math.abs(_tile.Level - _tile.getNextTile(i).Level) <= 1)
 				{
 					isCompletelyIsolated = false;
 					break;

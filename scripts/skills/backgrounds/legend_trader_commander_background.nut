@@ -122,16 +122,13 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -192,6 +189,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
 		actor.setTitle(this.Const.Strings.PeddlerTitles[this.Math.rand(0, this.Const.Strings.PeddlerTitles.len() - 1)]);
+		this.m.Container.add(this.new("scripts/skills/traits/fat_trait"));
 		//this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_bribe"));
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_2"));

@@ -61,7 +61,7 @@ this.legend_mummy_priest <- this.inherit("scripts/entity/tactical/legend_mummy",
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "ancient/legend_mummy_headband"],
-            [1, "ancient/legend_mummy_crown"]
+			[1, "ancient/legend_mummy_crown"]
 		])
 		if (item != null)
 		{

@@ -296,13 +296,10 @@ this.options_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		settings.AutoLoot = _data[8];
 		settings.RestoreEquipment = _data[9];
 		settings.AutoPauseAfterCity = _data[10];
-		this.LegendsMod.Configs().setAISpeed((_data[11] * 1.0) / 10.0);
-		this.LegendsMod.Configs().setEnemeyTooltips(_data[12]);
 		this.Settings.save();
 		settings = this.Settings.getTempGameplaySettings();
 		settings.ShowOverlayStats = _data[1];
 		settings.HideTrees = _data[2];
-
 	}
 
 	function helper_addGameplayOptionsToUIData( _target )
@@ -319,9 +316,6 @@ this.options_menu_module <- this.inherit("scripts/ui/screens/ui_module", {
 		_target.autoLoot <- settings.AutoLoot;
 		_target.restoreEquipment <- settings.RestoreEquipment;
 		_target.autoPauseAfterCity <- settings.AutoPauseAfterCity;
-		_target.AISpeed <- this.LegendsMod.Configs().AISpeed();
-		_target.EnemyTooltips <- this.LegendsMod.Configs().EnemeyTooltips();
-
 	}
 
 });

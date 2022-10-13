@@ -14,20 +14,20 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAgainstShields = true;
-		this.m.IsAoE = true;
+		this.m.IsAoE = false;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.Value = 5400;
-		this.m.ShieldDamage = 55;
-		this.m.Condition = 75.0;
-		this.m.ConditionMax = 75.0;
-		this.m.StaminaModifier = -20;
-		this.m.RegularDamage = 65;
-		this.m.RegularDamageMax = 100;
-		this.m.ArmorDamageMult = 1.45;
-		this.m.DirectDamageMult = 0.4;
-		this.m.ChanceToHitHead = 5;
+		this.m.Value = 4600;
+		this.m.ShieldDamage = 24;
+		this.m.Condition = 64.0;
+		this.m.ConditionMax = 64.0;
+		this.m.StaminaModifier = -15;
+		this.m.RegularDamage = 50;
+		this.m.RegularDamageMax = 70;
+		this.m.ArmorDamageMult = 1.25;
+		this.m.DirectDamageMult = 0.35;
+		this.m.ChanceToHitHead = 0;
 		this.randomizeValues();
 	}
 
@@ -41,10 +41,15 @@ this.legend_named_infantry_axe <- this.inherit("scripts/items/weapons/named/name
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/split_man"));
-		this.addSkill(this.new("scripts/skills/actives/round_swing"));
+		local chop = this.new("scripts/skills/actives/chop");
+		chop.m.DirectDamageMult = this.m.DirectDamageMult; //Sets Chop's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		this.addSkill(chop);
+		local splitman = this.new("scripts/skills/actives/split_man");
+		splitman.m.DirectDamageMult = this.m.DirectDamageMult; //Sets Split Man's Direct Damage Mult to Infantry Axes's Direct Damage Mult
+		this.addSkill(splitman);
 		local skillToAdd = this.new("scripts/skills/actives/split_shield");
 		skillToAdd.setApplyAxeMastery(true);
+		skillToAdd.m.ActionPointCost = 4;
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
 	}

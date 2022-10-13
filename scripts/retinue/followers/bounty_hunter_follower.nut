@@ -25,7 +25,9 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.RequiredSkills = [
 			"background.witchhunter",
 			"background.beast_slayer",
-			"background.manhunter"
+			"background.manhunter",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		]
 	}
 

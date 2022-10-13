@@ -50,10 +50,5 @@ this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapo
 		// this.addSkill(lash);
 	}
 
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

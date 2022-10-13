@@ -1,5 +1,5 @@
 .xbbcode-b {
-    font-weight:bold;
+	font-weight:bold;
 }
 
 .xbbcode-blockquote {
@@ -7,16 +7,16 @@
 }
 
 .xbbcode-code {
-    white-space: pre-wrap;
-    font-family: monospace;
+	white-space: pre-wrap;
+	font-family: monospace;
 }
 
 .xbbcode-i {
-    font-style: italic; 
+	font-style: italic; 
 }
 
 .xbbcode-s {
-    text-decoration: line-through;
+	text-decoration: line-through;
 }
 
 .xbbcode-size-4 {font-size:4px;}
@@ -58,11 +58,11 @@
 .xbbcode-size-40 {font-size:40px;}
 
 .xbbcode-u {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .xbbcode-table {
-    border-collapse:collapse;
+	border-collapse:collapse;
 }
 
 .xbbcode-tr {
@@ -70,5 +70,5 @@
 }
 
 .xbbcode-table , .xbbcode-th, .xbbcode-td {
-    border: 1px solid #666;
+	border: 1px solid #666;
 }

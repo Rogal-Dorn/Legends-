@@ -211,7 +211,7 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			flip = !flip
 		}
@@ -294,6 +294,8 @@ this.orc_young <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.m.Skills.add(this.new("scripts/skills/actives/wake_ally_skill"));
 		}
+
+		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
 	}
 
 	function onFinish()

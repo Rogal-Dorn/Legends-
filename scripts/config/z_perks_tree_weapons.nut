@@ -225,8 +225,8 @@ gt.Const.Perks.ThrowingTree <- {
 	]
 };
 
-gt.Const.Perks.SlingsTree <- {
-	ID = "Slings",
+gt.Const.Perks.SlingTree <- {
+	ID = "Sling",
 	Name = "Sling"
 	Descriptions = [
 		"slings"
@@ -242,8 +242,8 @@ gt.Const.Perks.SlingsTree <- {
 	]
 };
 
-gt.Const.Perks.StavesTree <- {
-	ID = "Staves",
+gt.Const.Perks.StaffTree <- {
+	ID = "Staff",
 	Name = "Staff"
 	Descriptions = [
 		"staves"
@@ -274,8 +274,8 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.CrossbowTree,
 		gt.Const.Perks.BowTree,
 		gt.Const.Perks.ThrowingTree,
-		gt.Const.Perks.SlingsTree,
-		gt.Const.Perks.StavesTree
+		gt.Const.Perks.SlingTree,
+		gt.Const.Perks.StaffTree
 	],
 	function getRandom(_exclude)
 	{
@@ -307,7 +307,7 @@ gt.Const.Perks.MeleeWeaponTrees <- {
 		gt.Const.Perks.DaggerTree,
 		gt.Const.Perks.PolearmTree,
 		gt.Const.Perks.SpearTree,
-		gt.Const.Perks.StavesTree
+		gt.Const.Perks.StaffTree
 	],
 	function getRandom(_exclude)
 	{
@@ -331,7 +331,7 @@ gt.Const.Perks.RangedWeaponTrees <- {
 		gt.Const.Perks.CrossbowTree,
 		gt.Const.Perks.BowTree,
 		gt.Const.Perks.ThrowingTree,
-		gt.Const.Perks.SlingsTree
+		gt.Const.Perks.SlingTree
 	],
 	function getRandom(_exclude)
 	{

@@ -66,7 +66,7 @@ this.named_javelin <- this.inherit("scripts/items/weapons/named/named_weapon", {
 
 	function setAmmo( _a )
 	{
-		this.weapon.setAmmo(_a);
+		this.named_weapon.setAmmo(_a);
 		this.updateVariant();
 		this.updateAppearance();
 	}

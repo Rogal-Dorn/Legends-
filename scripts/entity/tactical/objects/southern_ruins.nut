@@ -1,6 +1,6 @@
 this.southern_ruins <- this.inherit("scripts/entity/tactical/entity", {
 	m = {
-        IsRock = true    	
+		IsRock = true		
 	},
 	function getName()
 	{

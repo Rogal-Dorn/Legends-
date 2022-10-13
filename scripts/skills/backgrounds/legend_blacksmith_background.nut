@@ -73,7 +73,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				id = 13,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] repair rate, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] maximum tools and [color=" + this.Const.UI.Color.PositiveValue + "]-20%[/color] tool usage"
+				text = "Has the knowledge to construct powerful items"
 			}
 		)
 		return ret
@@ -81,20 +81,9 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
  			//Female
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

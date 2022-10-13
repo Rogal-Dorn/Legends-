@@ -17,7 +17,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -88,7 +88,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "trade/cloth_rolls_item"
 			});
 
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 10,
@@ -161,7 +161,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

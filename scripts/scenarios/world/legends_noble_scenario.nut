@@ -7,6 +7,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Description = "[p=c][img]gfx/ui/events/event_96.png[/img][/p][p]From a noble family, you were born to rule. With your trusted company at your side, it is time to conquer the world, as is your birthright.\n\n[color=#bcad8c]Usurper:[/color] Start as a noble, with your retainers.\n[color=#bcad8c]Highborn:[/color] Nobles will cost 25% less, lowborns will cost 50% more, can\'t hire outlaws\n[color=#bcad8c]Trained leader:[/color] Your studies at the academy gave tactical and campaign skills, everyone begins with Rotation.\n[color=#bcad8c]Avatar:[/color] if your character dies, it is game over.[/p]";
 		this.m.Difficulty = 2;
 		this.m.Order = 170;
+		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(6);
 		this.m.StartingBusinessReputation = 1100;
 		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
@@ -74,7 +75,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
 		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[1].setPlaceInFormation(3);
-		bros[1].setVeteranPerks(2);
 
 		// End Noble Shield 1 Create
 		// Noble 2h create
@@ -90,7 +90,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].getSkills().add(this.new("scripts/skills/traits/gluttonous_trait"));
 		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[2].setPlaceInFormation(4);
-		bros[2].setVeteranPerks(2);
 
 		// End Noble 2h Create
 		// Noble Shield 2 Create
@@ -119,7 +118,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].getSkills().add(this.new("scripts/skills/traits/slack_trait"));
 		this.addScenarioPerk(bros[3].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[3].setPlaceInFormation(5);
-		bros[3].setVeteranPerks(2);
 
 		// End Noble Shield 2 Create
 		// Noble Servant Create
@@ -135,7 +133,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[4].getSkills().add(this.new("scripts/skills/traits/survivor_trait"));
 		this.addScenarioPerk(bros[4].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[4].setPlaceInFormation(12);
-		bros[4].setVeteranPerks(2);
 		local items = bros[4].getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "linen_tunic"]
@@ -163,7 +160,6 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		bros[5].setPlaceInFormation(14);
-		bros[5].setVeteranPerks(2);
 
 		// End arbalester create
 
@@ -241,7 +237,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		brothers[1].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 		brothers[3].getItems().getItemAtSlot(this.Const.ItemSlot.Offhand).setFaction(banner)
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			foreach( bro in brothers )
 			{
@@ -344,7 +340,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
 
 		local r;

@@ -140,7 +140,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		];
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			foreach( i in this.Const.Items.LegendNamedSouthernArmorLayers )
 			{
@@ -179,7 +179,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		}
 
-		if (this.Const.DLC.Unhold && !this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (this.Const.DLC.Unhold && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			list.push({
 				R = 60,
@@ -216,7 +216,7 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 				P = 1.0,
 				S = "misc/paint_white_green_yellow_item"
 			});
-			if (!this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				list.push({
 					R = 85,

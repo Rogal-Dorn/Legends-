@@ -13,10 +13,10 @@ gt.Const.Perks.addPerkDefObjects <- function( _perkDefObjects )
 	local i = gt.Const.Perks.PerkDefObjects.len();
 
 	gt.Const.Perks.PerkDefObjects.extend(_perkDefObjects);
-	
+
 	foreach (perkDefObject in _perkDefObjects)
 	{
-		gt.Const.Perks.PerkDefs[perkDefObject.Const] <- i;		
+		gt.Const.Perks.PerkDefs[perkDefObject.Const] <- i;
 		gt.Const.Perks.LookupMap[perkDefObject.ID] <- perkDefObject;
 		i++;
 	}
@@ -54,15 +54,15 @@ gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [
 	foreach (perk, table in map)
 	{
 		local desc = gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const];
-		
+
 		local pre = "[color=#0b0084]From the ";
 		local mid = "";
 		local ap = "perk group[/color]";
 		local array = _groups.len() == 0 ? table.Groups : _groups;
 		if (array.len() == 1)
 		{
-			mid += array[0] + " ";	
-		} 
+			mid += array[0] + " ";
+		}
 		else
 		{
 			for (local i = 0; i < array.len() - 2; i++)
@@ -101,14 +101,14 @@ gt.Const.Perks.updatePerkGroupTooltips <- function( _perkDef = null, _groups = [
 			}
 
 			if (ret.find("\n\n" + pre) == null)
-			{				
-				local prefix = ret.find("\n" + pre) == null ? "\n\n" : "\n";				
-				ret = this.MSU.String.replace(ret, pre, prefix + pre);			
+			{
+				local prefix = ret.find("\n" + pre) == null ? "\n\n" : "\n";
+				ret = this.MSU.String.replace(ret, pre, prefix + pre);
 			}
 
 			gt.Const.Strings.PerkDescription[gt.Const.Perks.PerkDefObjects[perk].Const] = ret;
 			gt.Const.Perks.PerkDefObjects[table.Const].Tooltip = ret;
-		}		
+		}
 	}
 }
 
@@ -170,11 +170,11 @@ local perkDefObjects = [
 	{
 		ID = "perk.adrenaline",
 		Script = "scripts/skills/perks/perk_adrenalin",
-		Name = this.Const.Strings.PerkName.Adrenalin,
-		Tooltip = this.Const.Strings.PerkDescription.Adrenalin,
+		Name = this.Const.Strings.PerkName.Adrenaline,
+		Tooltip = this.Const.Strings.PerkDescription.Adrenaline,
 		Icon = "ui/perks/perk_37.png",
 		IconDisabled = "ui/perks/perk_37_sw.png",
-		Const = "Adrenalin"
+		Const = "Adrenaline"
 	},
 	{
 		ID = "perk.recover",
@@ -1419,6 +1419,15 @@ local perkDefObjects = [
 		Const = "LegendBribe"
 	},
 	{
+		ID = "perk.legends.off_book_deal",
+		Script = "scripts/skills/perks/legends/off_book_deal",
+		Name = this.Const.Strings.PerkName.LegendOffBookDeal,
+		Tooltip = this.Const.Strings.PerkDescription.LegendOffBookDeal,
+		Icon = "ui/perks/coins_circle.png",
+		IconDisabled = "ui/perks/coins_circle_bw.png",
+		Const = "LegendOffBookDeal"
+	},
+	{
 		ID = "perk.legend_specialist_butcher_damage",
 		Script = "scripts/skills/perks/perk_legend_specialist_butcher_damage",
 		Name = this.Const.Strings.PerkName.LegendSpecialistButcherDamage,
@@ -2202,31 +2211,40 @@ local perkDefObjects = [
 		Const = "LegendForcefulSwing"
 	},
 	{
-		ID = "perk.mar_balance",
-		Script = "scripts/skills/perks/perk_mar_balance",
-		Name = this.Const.Strings.PerkName.MARBalance,
-		Tooltip = this.Const.Strings.PerkDescription.MARBalance,
+		ID = "perk.legend_balance",
+		Script = "scripts/skills/perks/perk_legend_balance",
+		Name = this.Const.Strings.PerkName.LegendBalance,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBalance,
 		Icon = "ui/perks/balance.png",
 		IconDisabled = "ui/perks/balance_bw.png",
 		Const = "LegendBalance"
 	},
 	{
-		ID = "perk.mar_perfect_fit",
-		Script = "scripts/skills/perks/perk_mar_perfect_fit",
-		Name = this.Const.Strings.PerkName.MARPerfectFit,
-		Tooltip = this.Const.Strings.PerkDescription.MARPerfectFit,
-		Icon = "ui/perks/matching_set.png",
-		IconDisabled = "ui/perks/matching_set_bw.png",
-		Const = "LegendMatchingSet"
+		ID = "perk.legend_perfect_fit",
+		Script = "scripts/skills/perks/perk_legend_perfect_fit",
+		Name = this.Const.Strings.PerkName.LegendPerfectFit,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPerfectFit,
+		Icon = "ui/perks/perfect_fit.png",
+		IconDisabled = "ui/perks/perfect_fit_bw.png",
+		Const = "LegendPerfectFit"
 	},
 	{
-		ID = "perk.mar_lithe",
-		Script = "scripts/skills/perks/perk_mar_lithe",
-		Name = this.Const.Strings.PerkName.MARLithe,
-		Tooltip = this.Const.Strings.PerkDescription.MARLithe,
+		ID = "perk.legend_lithe",
+		Script = "scripts/skills/perks/perk_legend_lithe",
+		Name = this.Const.Strings.PerkName.LegendLithe,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLithe,
 		Icon = "ui/perks/lithe.png",
 		IconDisabled = "ui/perks/lithe_bw.png",
 		Const = "LegendLithe"
+	},
+	{
+		ID = "perk.legend_in_the_zone",
+		Script = "scripts/skills/perks/perk_legend_in_the_zone",
+		Name = this.Const.Strings.PerkName.LegendInTheZone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendInTheZone,
+		Icon = "ui/perks/in_the_zone.png",
+		IconDisabled = "ui/perks/in_the_zone_bw.png",
+		Const = "LegendInTheZone"
 	},
 	{
 		ID = "perk.legend_hidden",
@@ -3565,7 +3583,7 @@ local perkDefObjects = [
 		Script = "scripts/skills/perks/perk_legend_throw_sand",
 		Name = this.Const.Strings.PerkName.LegendThrowSand,
 		Tooltip = this.Const.Strings.PerkDescription.LegendThrowSand,
-		Icon = "ui/perks/throw_sand_01.png", 
+		Icon = "ui/perks/throw_sand_01.png",
 		IconDisabled = "ui/perks/throw_sand_01_bw.png",
 		Const = "LegendThrowSand"
 	},
@@ -3574,7 +3592,7 @@ local perkDefObjects = [
 		Script = "scripts/skills/perks/perk_legend_backflip",
 		Name = this.Const.Strings.PerkName.LegendBackflip,
 		Tooltip = this.Const.Strings.PerkDescription.LegendBackflip,
-		Icon = "ui/perks/backflip_circle.png", 
+		Icon = "ui/perks/backflip_circle.png",
 		IconDisabled = "ui/perks/backflip_circle_bw.png",
 		Const = "LegendBackflip"
 	},
@@ -3583,7 +3601,7 @@ local perkDefObjects = [
 		Script = "scripts/skills/perks/perk_legend_twirl",
 		Name = this.Const.Strings.PerkName.LegendTwirl,
 		Tooltip = this.Const.Strings.PerkDescription.LegendTwirl,
-		Icon = "ui/perks/twirl_circle.png", 
+		Icon = "ui/perks/twirl_circle.png",
 		IconDisabled = "ui/perks/twirl_circle_bw.png",
 		Const = "LegendTwirl"
 	}

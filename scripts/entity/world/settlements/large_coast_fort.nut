@@ -61,6 +61,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background",
+			"paladin_background",
 			"apprentice_background",
 			"brawler_background",
 			"caravan_hand_background",
@@ -132,7 +133,7 @@ this.large_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/port_building"), 3);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

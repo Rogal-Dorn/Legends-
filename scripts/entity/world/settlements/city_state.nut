@@ -142,7 +142,7 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/silk_farm_location",
 				Terrain = ALL
 				NearTerrain = [],

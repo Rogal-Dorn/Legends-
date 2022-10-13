@@ -22,14 +22,14 @@ var TacticalScreenTopbarOptionsModule = function()
 	this.mContainer = null;
 
 	// buttons
-	this.mToggleHighlightBlockedTilesButton	    = null;
-	this.mSwitchMapLevelUpButton		        = null;
-	this.mSwitchMapLevelDownButton		        = null;
-	this.mToggleStatsOverlaysButton		        = null;
-	this.mCenterButton					        = null;
-	this.mTreesButton					        = null;
-	this.mFleeButton					        = null;
-	this.mQuitButton					        = null;
+	this.mToggleHighlightBlockedTilesButton		= null;
+	this.mSwitchMapLevelUpButton				= null;
+	this.mSwitchMapLevelDownButton				= null;
+	this.mToggleStatsOverlaysButton				= null;
+	this.mCenterButton							= null;
+	this.mTreesButton							= null;
+	this.mFleeButton							= null;
+	this.mQuitButton							= null;
 };
 
 TacticalScreenTopbarOptionsModule.prototype.isConnected = function ()
@@ -140,7 +140,7 @@ TacticalScreenTopbarOptionsModule.prototype.destroyDIV = function ()
 	this.mTreesButton.remove();
 	this.mTreesButton = null;
 	this.mFleeButton.remove();
-	this.mFleeButton = null;    
+	this.mFleeButton = null;	
 	this.mQuitButton.remove();
 	this.mQuitButton = null;
 

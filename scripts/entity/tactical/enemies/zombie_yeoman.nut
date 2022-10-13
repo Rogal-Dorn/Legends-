@@ -91,7 +91,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 		if (this.Math.rand(1, 100) <= 66)
 		{
-			armor.setArmor(armor.getArmorMax() / 2 - 1);
+			armor.setArmor(this.Math.round(armor.getArmorMax() / 2 - 1));
 		}
 
 		this.m.Items.equip(armor);
@@ -111,7 +111,7 @@ this.zombie_yeoman <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 			{
 				if (this.Math.rand(1, 100) <= 66)
 				{
-					item.setArmor(item.getArmorMax() / 2 - 1);
+					item.setArmor(this.Math.round(item.getArmorMax() / 2 - 1));
 				}
 				this.m.Items.equip(item);
 			}

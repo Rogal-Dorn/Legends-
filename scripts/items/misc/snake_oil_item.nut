@@ -2,6 +2,7 @@ this.snake_oil_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.snake_oil";
 		this.m.Name = "Snake Oil";
 		this.m.Description = "A mysterious concoction said to help against hair loss, syphilis, deafness, impotence, skin rash, pox and writer\'s block. A true miracle potion if only you believe in it. Can be sold everywhere for a tidy sum.";
@@ -14,12 +15,36 @@ this.snake_oil_item <- this.inherit("scripts/items/item", {
 
 	function getBuyPrice()
 	{
-		return this.m.Value;
+		if (this.m.IsSold)
+		{
+			return this.getSellPrice();
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult()));
+		}
+		else
+		{
+			return this.Math.ceil(this.getValue());
+		}
 	}
 
 	function getSellPrice()
 	{
-		return this.m.Value;
+		if (this.m.IsBought)
+		{
+			return this.getBuyPrice();
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
+		{
+			return this.Math.floor(this.getValue() * this.World.State.getCurrentTown().getBeastPartsPriceMult());
+		}
+		else
+		{
+			return this.Math.floor(this.getValue());
+		}
 	}
 
 	function getTooltip()

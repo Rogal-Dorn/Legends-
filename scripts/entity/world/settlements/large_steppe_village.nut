@@ -67,10 +67,11 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background",
 			"cripple_background",
 			"eunuch_background",
+			"anatomist_background",
 			"legend_inventor_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"

@@ -734,7 +734,7 @@ this.tooltip_events <- {
 			if (this.World.State.getCurrentTown() != null && this.World.State.getCurrentTown().getCurrentBuilding() != null && this.World.State.getCurrentTown().getCurrentBuilding().isRepairOffered() && _item.getRepairMax() > 1 && _item.getRepair() < _item.getRepairMax())
 			{
 				local price = (_item.getRepairMax() - _item.getRepair()) * this.Const.World.Assets.CostToRepairPerPoint;
-				local value = _item.m.Value * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
+				local value = _item.getRawValue() * (1.0 - _item.getRepair() / _item.getRepairMax()) * 0.2 * this.World.State.getCurrentTown().getPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()];
 				price = this.Math.max(price, value);
 
 				if (this.World.Assets.getMoney() >= price)
@@ -987,7 +987,14 @@ this.tooltip_events <- {
 
 			if (statusEffect != null)
 			{
-				return statusEffect.getTooltip();
+				local ret = statusEffect.getTooltip();
+
+				if (statusEffect.isType(this.Const.SkillType.Background) && ("State" in this.World) && this.World.State != null)
+				{
+					this.World.Assets.getOrigin().onGetBackgroundTooltip(statusEffect, ret);
+				}
+
+				return ret;
 			}
 		}
 
@@ -1750,12 +1757,17 @@ this.tooltip_events <- {
 			if (this.World.Ambitions.hasActiveAmbition())
 			{
 				local ret = this.World.Ambitions.getActiveAmbition().getButtonTooltip();
-				ret.push({
-					id = 10,
-					type = "hint",
-					icon = "ui/icons/mouse_right_button.png",
-					text = "Cancel Ambition"
-				});
+
+				if (this.World.Ambitions.getActiveAmbition().isCancelable())
+				{
+					ret.push({
+						id = 10,
+						type = "hint",
+						icon = "ui/icons/mouse_right_button.png",
+						text = "Cancel Ambition"
+					});
+				}
+
 				return ret;
 			}
 			else
@@ -2425,20 +2437,6 @@ this.tooltip_events <- {
 				}
 			];
 
-		case "menu-screen.new-campaign.Autosave":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Autosave"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Only disable for the most masochistic playthroughs. No save will exist for the company, the game will not be automatically saved during the game or when exiting it. \n\n Harder than ironman, there can be no alt f4, the entire run must happen in one sitting. "
-				}
-			];
-
 		case "menu-screen.new-campaign.Exploration":
 			return [
 				{
@@ -2718,34 +2716,6 @@ this.tooltip_events <- {
 					text = "Speed up the movement of any characters controlled by you in combat significantly. Does not affect movement-related skills."
 				}
 			];
-
-		case "legend.aispeed":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Faster Mod"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Increases the overal speed of all tactical engagemenets."
-				}
-			];
-
-	case "legend.enemytooltip":
-		return [
-			{
-				id = 1,
-				type = "title",
-				text = "Enhanced Enemy Tooltips"
-			},
-			{
-				id = 2,
-				type = "description",
-				text = "Enemy tooltips in tactical battles will show more information, like perks and statuses"
-			}
-		];
 
 		case "menu-screen.options.AutoLoot":
 			return [
@@ -3036,7 +3006,7 @@ this.tooltip_events <- {
 				{
 					id = 1,
 					type = "title",
-					text = "Wait Turn (Spacebar)"
+					text = "Wait Turn (Spacebar, End)"
 				},
 				{
 					id = 2,
@@ -3617,34 +3587,6 @@ this.tooltip_events <- {
 					id = 2,
 					type = "description",
 					text = "Set time to pass faster than normal. (2x Speed)"
-				}
-			];
-
-		case "world-screen.topbar.TimeVeryfastButton":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Very Fast Speed (3)"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Set time to pass much faster than normal. (4x Speed)"
-				}
-			];
-		
-		case "world-screen.topbar.TimeLudicrousButton":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Ludicrous Speed (4)"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Set time to pass insanely quickly. (8x Speed)"
 				}
 			];
 
@@ -4529,412 +4471,6 @@ this.tooltip_events <- {
 			});
 			return ret;
 
-		case "mapconfig.width":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Map Width"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Width of the map in number of tiles. Default is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
-				}
-			];
-
-		case "mapconfig.height":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Map Height"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Height of the map in number of tiles. Defualt is 140. The camera renderer is hardcoded for max of 140 (this can\'t be modded). Above that and zoom in won\'t render correctly for tiles above 140"
-				}
-			];
-
-		case "mapconfig.landmass":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Land Mass Ratio"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Minimum land to water ratio for an acceptable map. Default is 50. Going either extremes on this slider can result in map never getting generated."
-				}
-			];
-
-		case "mapconfig.water":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Water"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Impacts how much of the map is water. Small value results in patchy water around the corners of the map. Larger numbers can create a single large island given a low enough land mass ratio."
-				}
-			];
-
-		case "mapconfig.snowline":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Snowline"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Determines where the snowline is generated. Default is 90. This value is inverted. A value of 10 would mean the top 90% of the map is snow."
-				}
-			];
-
-		case "mapconfig.mountains":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Mountain Density"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Influences density of mountains. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
-				}
-			];
-
-		case "mapconfig.forest":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Forest Density"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Influences density of forests. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
-				}
-			];
-
-		case "mapconfig.swamp":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Swamp Density"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Influences density of swamps. Default is 50. This is experimental. There can be tile overlay issues with going to extremes on this slider right now."
-				}
-			];
-
-		case "mapconfig.settlements":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Number of Settlements"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Maximum number of settlements. Depending on map size, this will try to add the number of settlements on the slider. It will keep the same ratio of settlement types as default Battle Brothers maps. Minimum distance between settlements is 12 tiles."
-				}
-			];
-
-		case "mapconfig.factions":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Number of Factions"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Maximum number of Factions to try and generate. Depending on map size, this may not add all the factions on the slider."
-				}
-			];
-
-		case "mapconfig.fow":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Hide settlements you have not visited"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, all settlements will be hidden at campaign start, giving a small scale start. For the true role playing explorer experience!"
-				}
-			];
-
-		case "mapconfig.stackcitadels":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Gaurantee Citadels Have Everything"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, every Citadel will start with all those building attachments map scummers are re-rolling for."
-				}
-			];
-
-		case "mapconfig.alltradelocations":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Guarantee All Trade Locations"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, ensures there is at least one of each trade location building on the map."
-				}
-			];
-
-		case "mapconfig.legendperktrees":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Recruits have unique perk trees"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, all recruits for hire will have a unique perk tree including new Legends perks. \n\n Detail: Dynamic perk trees are half determined by background, and half randomly chosen from perk groups. Perk groups align around a theme, and you can see hints about the perks of potential recruits in their background description. Recruits will also have their stats and talents modifed to align with their new perks"
-				}
-			];
-
-		case "mapconfig.legendgenderequality_off":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "No Battle Sisters"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "The vanilla experience. No backgrounds or enemy encounters with females. (Yes, your friend the Hex is still here!)"
-				}
-			];
-
-		case "mapconfig.legendgenderequality_low":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Selected Battle Sisters"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "Legend curated female backgrounds and enemies can be found and recruited throughout your adventure."
-				}
-			];
-
-		case "mapconfig.legendgenderequality_high":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Woman can do anything"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "All commanders and most backgrounds will have a chance of being any gender"
-				}
-			];
-
-		case "mapconfig.legendmagic":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Runestones and Mysticism"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, magic is allowed in the world, this makes it possible to find rare wise women, rune stones, magic backgrounds and magic perks. \n\n Detail: If disabled, vala will not appear, runes stones will be 10x rarer. Seer, vala and warlock will lose their mystical perks"
-				}
-			];
-
-		case "mapconfig.legendarmor":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Armors are NOT split into layers"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "[color=" + this.Const.UI.Color.NegativeValue + "]LEGACY OPTION, NOT RECOMMENDED.[/color]\n\nIn Legends, armor is arranged in layers, hundreds of pieces combine into millions of visual combinations. \n\n Detail: Armor is made up of a base cloth layer, chain, plate, tabard, cloak, attachment and finally a rune layer.\n\nHelmet is made up of a base hood layer, helmet layer, top layer, vanity layer and finally a rune layer.\n\nEach layer can be upgraded individually, allowing flexible armor builds and aesthetics\n\nIf this option is checked, layered armor is disabled."
-				}
-			];
-
-		case "mapconfig.legenddebug":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Debug Map"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, the map will start completely revealed and all enemies and camps will be visible."
-				}
-			];
-
-		case "mapconfig.legenditemscaling":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Gear included in difficulty calculations"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, the value of your equipped items will increase the combat difficulty. \n\n Detail: 10,000 crowns worth of gear is equal to a new recruit. Only effects mainhand, offhand, body and head. \n\n This is in addition to other difficulty settings."
-				}
-			];
-
-		case "mapconfig.legendlocationscaling":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Remote areas are more dangerous"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, enemies will be stronger the further they spawn from civilization. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."
-				}
-			];
-
-		case "mapconfig.legendcampunlock":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Start with all camp activities enabled"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades. "
-				}
-			];
-
-		case "mapconfig.legendrecruitscaling":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Recruits improve with you"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 7 levels rounded down. \n\n This in addition to normal recruit level variance. "
-				}
-			];
-
-		case "mapconfig.legendbleedkiller":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Who dealt the bleed gets the kill"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, kills by bleeding out are granted to the actor who caused the bleed."
-				}
-			];
-
-		case "mapconfig.legendallblueprints":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Unlock all crafting recipes"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, all crafting recipes will be visible at the taxidermist and camp crafting. If disabled, vanilla behavior of having to discover the ingredients first will be enforced."
-				}
-			];
-
-		case "mapconfig.legendrelationship":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Mercenaries develop relationships"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, mercenaries will gradually form friendships based on morality and experiences. Affects combat, events and contracts. "
-				}
-			];
-
-		case "mapconfig.legendworldeconomy":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "World Economy"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations."
-				}
-			];
-
-		case "mapconfig.legendtherian":
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = "Therianthropy"
-				},
-				{
-					id = 2,
-					type = "description",
-					text = "An ancient infection plagues the lands of the north. Rumors abound of men turning into monsters and creatures of the dark. Beware the moon as it crosses its zenith."
-				}
-			];
-
 		case "camp.commander":
 		case "camp.rest":
 		case "camp.repair":
@@ -5296,6 +4832,37 @@ this.tooltip_events <- {
 			else
 			{
 				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for purchase on Steam and GOG![/color]";
+			}
+
+			ret.push({
+				id = 1,
+				type = "hint",
+				icon = "ui/icons/mouse_left_button.png",
+				text = "Open store page in browser"
+			});
+			return ret;
+
+		case "dlc_8":
+			local ret = [
+				{
+					id = 1,
+					type = "title",
+					text = "Of Flesh and Faith"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "The free Of Flesh and Faith DLC adds two new and very unique origins for you to play as: The Anatomists and the Oathtakers. In addition, there\'s two new banners, new equipment, new backgrounds to hire and lots of new events."
+				}
+			];
+
+			if (this.Const.DLC.Paladins == true)
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.PositiveValue + "]This DLC has been installed.[/color]";
+			}
+			else
+			{
+				ret[1].text += "\n\n[color=" + this.Const.UI.Color.NegativeValue + "]This DLC is missing. It\'s available for free on Steam and GOG![/color]";
 			}
 
 			ret.push({

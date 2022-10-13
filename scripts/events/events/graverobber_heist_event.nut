@@ -333,7 +333,7 @@ this.graverobber_heist_event <- this.inherit("scripts/events/event", {
 					]);
 				}
 
-				item.setCondition(item.getCondition() / 2);
+				item.setCondition(item.getRepair() / 2);
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

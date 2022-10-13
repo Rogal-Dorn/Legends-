@@ -7,7 +7,7 @@ this.item <- {
 		IconLarge = "",
 		Description = "",
 		Categories = "",
-		MagicNumber = this.Math.rand(1, 100),
+		MagicNumber = 0,
 		Variant = 0,
 		Condition = 1.0,
 		ConditionMax = 1.0,
@@ -42,6 +42,11 @@ this.item <- {
 		ResourceValue = 0,
 		Type = -1
 	},
+
+	function create()
+	{
+		this.m.MagicNumber = this.Math.rand(1, 100);
+	}
 
 	function setContainer( _c )
 	{
@@ -305,6 +310,11 @@ this.item <- {
 		return this.m.Value;
 	}
 
+	function getRawValue()
+	{
+		return this.m.Value;
+	}
+
 	function getPriceMult()
 	{
 		return this.m.PriceMult;
@@ -403,14 +413,14 @@ this.item <- {
 
 	function getBuyPrice()
 	{
-		if (this.m.IsSold)
+		if (this.isSold())
 		{
 			return this.getSellPrice();
 		}
 
 		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
 		{
-			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.getPriceMult() * this.World.State.getCurrentTown().getBuyPriceMult() * this.Const.Difficulty.BuyPriceMult[this.World.Assets.getEconomicDifficulty()]));
+			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * this.getBuyPriceMult() * this.getPriceMult() * this.World.State.getCurrentTown().getBuyPriceMult() * this.Const.Difficulty.BuyPriceMult[this.World.Assets.getEconomicDifficulty()]));
 		}
 		else
 		{
@@ -420,19 +430,29 @@ this.item <- {
 
 	function getSellPrice()
 	{
-		if (this.m.IsBought)
+		if (this.isBought())
 		{
 			return this.getBuyPrice();
 		}
 
 		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
 		{
-			return this.Math.floor(this.getValue() * this.Const.World.Assets.BaseSellPrice * this.World.State.getCurrentTown().getSellPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()]);
+			return this.Math.floor(this.getValue() * this.getSellPriceMult() * this.Const.World.Assets.BaseSellPrice * this.World.State.getCurrentTown().getSellPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()]);
 		}
 		else
 		{
 			return this.Math.floor(this.getValue() * this.Const.World.Assets.BaseSellPrice);
 		}
+	}
+
+	function getSellPriceMult()
+	{
+		return 1.0;
+	}
+
+	function getBuyPriceMult()
+	{
+		return 1.0;
 	}
 
 	function getTooltip()
@@ -643,6 +663,11 @@ this.item <- {
 
 	function playInventorySound( _eventType )
 	{
+	}
+
+	function create()
+	{
+		this.m.MagicNumber = this.Math.rand(1, 100);
 	}
 
 	function onFactionChanged( _faction )

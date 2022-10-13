@@ -2,6 +2,7 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.bodily_reward";
 		this.m.Name = "Water Skin";
 		this.m.Description = "A leather water skin filled up with the liquid from under a bizarre human-shaped tree. It whispered in your head that you should drink it to heal.";
@@ -79,10 +80,10 @@ this.fountain_of_youth_item <- this.inherit("scripts/items/item", {
 		}
 
 		local isDonkey = false;
-		if (_actor.getSkills().hasSkill("injury.legend_donkey")) //if we use it on a donkey
+		if (_actor.getSkills().hasSkill("injury.legend_donkey_background")) //if we use it on a donkey
 		{
 			isDonkey = true;
-			_actor.getSkills().removeByID("injury.legend_donkey"); //remove donkey skill temporarily
+			_actor.getSkills().removeByID("injury.legend_donkey_background"); //remove donkey skill temporarily
 			if (!_actor.getSkills().hasSkillOfType(this.Const.SkillType.Injury)) //if we have no more injuries
 			{
 				_actor.getSkills().add(this.new("scripts/skills/injury_permanent/legend_donkey_injury"));

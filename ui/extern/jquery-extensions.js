@@ -12,14 +12,14 @@
  * Computes the actual width of an emelent which contains text
  */
  $.fn.textWidth = function(text, font) {
-    if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
-    $.fn.textWidth.fakeEl.html(text || this.val() || this.text()).css({'font': font || this.css('font'),
+	if (!$.fn.textWidth.fakeEl) $.fn.textWidth.fakeEl = $('<span>').hide().appendTo(document.body);
+	$.fn.textWidth.fakeEl.html(text || this.val() || this.text()).css({'font': font || this.css('font'),
 		'font-size': this.css('font-size'),
 		'font-weight': this.css('font-weight'),
 		'font-style': this.css('font-style'),
 		'font-family': this.css('font-family'),
 	});
-    return $.fn.textWidth.fakeEl.width();
+	return $.fn.textWidth.fakeEl.width();
 };
 
 
@@ -67,8 +67,8 @@ $.fn.centerToParent = function ()
 		this.css({ width: imageWidth, height: imageHeight });
 	}
 
-    //console.dir(this);
-    //console.info('imageWidth: ' + imageWidth  + ' - imageHeight: ' + imageHeight + ' - containerWidth: ' + containerWidth + ' - containerHeight: ' + containerHeight);
+	//console.dir(this);
+	//console.info('imageWidth: ' + imageWidth  + ' - imageHeight: ' + imageHeight + ' - containerWidth: ' + containerWidth + ' - containerHeight: ' + containerHeight);
 
 	// center image
 	var imageLeft = (containerWidth / 2) - (imageWidth / 2);
@@ -82,7 +82,7 @@ $.fn.centerToParent = function ()
 **/
 $.fn.isInDOM = function()
 {
-    return this.parents(document).length > 0;
+	return this.parents(document).length > 0;
 };
 
 /**
@@ -90,7 +90,7 @@ $.fn.isInDOM = function()
 **/
 $.fn.nodeInserted = function(_callback)
 {
-    var _insertListener = function(_event) {
+	var _insertListener = function(_event) {
 		var event = _event.originalEvent || _event;
 		if (event.animationName == "node-inserted-animation") {
 			var element = $(_event.target);

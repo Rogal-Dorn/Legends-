@@ -60,7 +60,7 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -72,6 +72,7 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
+		_list.push("anatomist_background");
 		_list.push("legend_taxidermist_background");
 		if (_gender)
 		{

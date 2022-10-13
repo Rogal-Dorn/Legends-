@@ -50,14 +50,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		IsMilitary = false,
 		IsActive = true,
 		IsUpgrading = false
-		RecruitRoster = {
-			Previous = [],
-			Tryout = [],
-			ClearRoster = function(){
-				this.Previous = [];
-				this.Tryout = [];
-			}
-		}
 	},
 	function setUpgrading( _v )
 	{
@@ -97,7 +89,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local L = clone this.m.DraftList;
 
-		if (this.LegendsMod.Configs().LegendGenderEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 		{
 			L.extend(this.m.FemaleDraftList);
 		}
@@ -389,6 +381,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		if (this.World.Retinue.hasFollower("follower.agent"))
 		{
 			local contracts = this.getContracts();
+			local situations = this.getSituations();
 
 			foreach( i, c in contracts )
 			{
@@ -403,6 +396,27 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 					icon = "ui/icons/contract_scroll.png",
 					text = c.getName()
 				});
+			}
+
+			local addedSituations = {};
+
+			foreach( i, s in situations )
+			{
+				if (s.isValid() && !(s.getValidUntil() == 0 && !this.World.Contracts.hasContractWithSituation(s.getInstanceID())))
+				{
+					local id = s.getID();
+
+					if (!(id in addedSituations))
+					{
+						ret.push({
+							id = 10 + contracts.len() + i,
+							type = "text",
+							icon = s.getIcon(),
+							text = s.getName()
+						});
+						addedSituations[id] <- true;
+					}
+				}
 			}
 		}
 
@@ -449,7 +463,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			});
 		}
 
-		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (this.Const.LegendMod.DebugMode || this.m.IsVisited && ::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			ret.push({
 				id = 6,
@@ -528,7 +542,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	{
 		local s = this.m.Sprite;
 
-		if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			s = "legend_" + this.m.Sprite;
 		}
@@ -892,6 +906,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function getFoodPriceMult()
 	{
 		return this.m.Modifiers.FoodPriceMult;
+	}
+
+	function getBeastPartsPriceMult()
+	{
+		return this.m.Modifiers.BeastPartsPriceMult;
 	}
 
 	function getPriceMult()
@@ -1641,45 +1660,47 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.m.LastRosterUpdate = -9000.0;
 		}
 	}
-	function getRosterIdentifier(_bro){
-		local id = _bro.getName()
-		local b = _bro.getBaseProperties();
-		local bstats = [
-			b.Hitpoints,
-			b.Stamina,
-			b.Bravery,
-			b.Initiative,
-			b.MeleeSkill,
-			b.RangedSkill,
-			b.MeleeDefense,
-			b.RangedDefense
-		];
-		foreach(stat in bstats) id += stat.tostring()
-		return id
-	}
 
 	function updateRoster( _force = false )
 	{
 		local daysPassed = (this.Time.getVirtualTimeF() - this.m.LastRosterUpdate) / this.World.getTime().SecondsPerDay;
-		if (daysPassed > 7){
-			this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
-			this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
-			this.m.RecruitRoster.ClearRoster()
-			daysPassed = 0;
-			
+
+		if (!_force && this.m.LastRosterUpdate != 0 && daysPassed < 2)
+		{
+			return;
 		}
-		this.Math.seedRandom(this.m.RosterSeed); 
-		
+
+		if (this.m.RosterSeed != 0)
+		{
+			this.Math.seedRandom(this.m.RosterSeed);
+		}
+
+		this.m.RosterSeed = this.Math.floor(this.Time.getRealTime() + this.Math.rand());
+		this.m.LastRosterUpdate = this.Time.getVirtualTimeF();
 		local roster = this.World.getRoster(this.getID());
 		local allbros = roster.getAll();
 		local current = [];
+		for( local i = 0; i < allbros.len(); i = ++i )
+		{
+			if (allbros[i].isStabled())
+			{
+				continue
+			}
+			else
+			{
+				current.push(allbros[i]);
+			}
+		}
 
+		local iterations = this.Math.max(1, daysPassed / 2);
 		local activeLocations = 0;
+
 		foreach( loc in this.m.AttachedLocations )
 		{
 			if (loc.isActive())
 			{
-				activeLocations++
+				activeLocations = ++activeLocations;
+				activeLocations = activeLocations;
 			}
 		}
 
@@ -1703,68 +1724,64 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		rosterMin = rosterMin + this.World.Assets.m.RosterSizeAdditionalMin;
 		rosterMax = rosterMax + this.World.Assets.m.RosterSizeAdditionalMax;
 
+		if (iterations < 7)
+		{
+			for( local i = 0; i < iterations; i = i )
+			{
+				for( local maxRecruits = this.Math.rand(this.Math.max(0, rosterMax / 2 - 1), rosterMax - 1); current.len() > maxRecruits;  )
+				{
+					local n = this.Math.rand(0, current.len() - 1);
+					roster.remove(current[n]);
+					current.remove(n);
+				}
+
+				i = ++i;
+			}
+		}
+		else
+		{
+			for( local i = 0; i < current.len(); i = i )
+			{
+				roster.remove(current[i]);
+				i = ++i;
+			}
+
+			current = [];
+		}
+
 		local maxRecruits = this.Math.rand(rosterMin, rosterMax);
 		local draftList;
 		draftList = this.getDraftList();
-		local isGenderEnabled = this.LegendsMod.Configs().LegendGenderEnabled();
 
 		foreach( loc in this.m.AttachedLocations )
 		{
-			this.Math.seedRandom(this.m.RosterSeed); 
-
-			loc.onUpdateDraftList(draftList, isGenderEnabled);
+			loc.onUpdateDraftList(draftList);
 		}
 
 		foreach( b in this.m.Buildings )
 		{
-			this.Math.seedRandom(this.m.RosterSeed); 
-
 			if (b != null)
 			{
-				b.onUpdateDraftList(draftList, isGenderEnabled);
+				b.onUpdateDraftList(draftList);
 			}
 		}
 
 		foreach( s in this.m.Situations )
 		{
-			this.Math.seedRandom(this.m.RosterSeed); 
-			s.onUpdateDraftList(draftList, isGenderEnabled);
+			s.onUpdateDraftList(draftList);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList, isGenderEnabled);
-		
-		this.Math.seedRandom(this.m.RosterSeed); 
-		for (local i = 0; i < maxRecruits + daysPassed; ++i)
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
+
+		while (maxRecruits > current.len())
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx(draftList);
 			current.push(bro);
 		}
-		for( local i = 0; i < daysPassed; i++ )
-		{
-			local n = this.Math.rand(0, current.len() - 1);
-			roster.remove(current[n]);
-			current.remove(n);
-		}
 
-		local previousRecruits = this.m.RecruitRoster.Previous
-		local tryoutCompleted = this.m.RecruitRoster.Tryout
-		for( local i = 0; i < current.len(); i++ )
-		{
-			local bro = current[i]
-			local broID = this.getRosterIdentifier(bro)
-			if (tryoutCompleted.find(broID) != null){
-				bro.setTryoutDone(true);
-			}
-			if (previousRecruits.find(broID) != null){
-				roster.remove(bro);
-			}
-		}
-		
-
-		
-		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
 		this.updateStables(_force);
+		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
 	}
 
 	function updateStables( _force = false )
@@ -1882,7 +1899,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.World.Assets.getOrigin().onUpdateStablesList(draftList);
 		draftList = [
-			"legend_donkey"
+			"legend_donkey_background"
 		];
 
 		while (maxRecruits > current.len())
@@ -2290,7 +2307,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			if (loc.isActive())
 			{
-				if (this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					loc.onUpdateShopList(_id, _list);
 				}
@@ -2456,34 +2473,29 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
-		local roster = this.World.getRoster(this.getID())
-		roster.clear()
-
 		foreach (item in this.World.Assets.getStash().getItems())
 		{
-			if (item != null && item.isBought())
+			if (item == null) continue;
+			if (item.isBought())
 			{
-				item.setBought(false);
 				if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
 
-					if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+					if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 					{
 						this.setResources(this.getResources() + item.getResourceValue());
 					}
 				}
 			}
+			item.setBought(false);
 		}
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			foreach (item in bro.getItems().getAllItems())
 			{
-				if (item.isBought())
-				{
-					item.setBought(false);
-				}
+				item.setBought(false);
 			}
 		}
 
@@ -2494,19 +2506,20 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			{
 				foreach (item in stash.getItems())
 				{
-					if (item != null && item.isSold())
+					if (item == null) continue;
+					if (item.isSold())
 					{
-						item.setSold(false);
 						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 						{
 							this.World.Statistics.getFlags().increment("TradeGoodsSold");
 
-							if (this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+							if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 							{
 								this.setResources(this.getResources() + item.getResourceValue());
 							}
 						}
 					}
+					item.setSold(false);
 				}
 			}
 		}
@@ -2521,7 +2534,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			this.updateAchievement("MasterTrader", 1, 1);
 		}
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return;
 		}
@@ -2770,7 +2783,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onSerialize( _out )
 	{
-		this.getFlags().set("TemporaryRecruitRoster", true)
 		this.location.onSerialize(_out);
 		_out.writeU8(this.m.Size);
 		_out.writeBool(this.m.IsUpgrading);
@@ -2847,15 +2859,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
 			i = ++i;
-		}
-		
-		_out.writeU8(this.m.RecruitRoster.Previous.len());
-		foreach(bro in this.m.RecruitRoster.Previous){
-			_out.writeString(bro)
-		}
-		_out.writeU8(this.m.RecruitRoster.Tryout.len());
-		foreach(bro in this.m.RecruitRoster.Tryout){
-			_out.writeString(bro)
 		}
 	}
 
@@ -2973,18 +2976,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				V = v
 			});
 			i = ++i;
-		}
-		if(this.getFlags().has("TemporaryRecruitRoster")){
-			local previouslen = _in.readU8()
-			for (local i = 0; i != previouslen; ++i)
-			{
-				this.m.RecruitRoster.Previous.push(_in.readString())
-			}
-			previouslen = _in.readU8()
-			for (local i = 0; i !=  previouslen; ++i)
-			{
-				this.m.RecruitRoster.Tryout.push(_in.readString())
-			}
 		}
 
 		this.updateSprites();

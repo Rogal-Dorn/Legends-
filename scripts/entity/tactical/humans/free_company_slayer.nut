@@ -1,7 +1,7 @@
 this.free_company_slayer <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_spearman_outfit_00"]
+			[1, "mercenary_spearman_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanySlayer,
 		PerkPower = 12
@@ -66,10 +66,10 @@ this.free_company_slayer <- this.inherit("scripts/entity/tactical/free_company_a
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/three_headed_flail"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/three_headed_flail"));
+		}
 
 			
 		r = this.Math.rand(1, 100);

@@ -9,7 +9,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a man crosses paths with the %companyname%. He wears light armor and carries a fine bow, he looks aloof and distant at first as if staring off at something you can\'t see. %SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an uncanny air to this man, as though you can barely see him while he is standing right in front of you. He nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. He whispers his indifference.%SPEECH_ON%If he\'s a problem, we can handle him.%SPEECH_OFF%The man shakes his head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Once these greenskins are taken care of, I\'ll be out of your hair.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a stranger crosses paths with the %companyname%. %they% wear light armor while looking aloof and distant at first as if staring off at something you can\'t see. %SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an uncanny air to this character, as though you can barely see them while %they% is standing right in front of you. %they% nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. He whispers %their% indifference.%SPEECH_ON%If they\'re a problem, we can handle %them%.%SPEECH_OFF%The man shakes their head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Once these greenskins are taken care of, I\'ll be out of your hair.%SPEECH_OFF%",
 			Banner = "",
 			Characters = [],
 			Options = [
@@ -36,22 +36,30 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 
 				}
 			],
+
 			function start( _event )
 			{
 				local roster = this.World.getTemporaryRoster();
 				_event.m.Dude = roster.create("scripts/entity/tactical/player");
-				_event.m.Dude.setStartValuesEx([
-					"legend_ranger_background"
-				]);
-				if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
+				if (this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
 				{
-					_event.m.Dude.getFlags().add("PlayerSkeleton");
-					_event.m.Dude.getFlags().add("undead");
-					_event.m.Dude.getFlags().add("skeleton");
-					_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-					_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+					_event.m.Dude.setStartValuesEx([
+						"legend_druid_background"
+					]);
+					_event.m.Dude.getBaseProperties().Hitpoints += 5;
+					_event.m.Dude.getBaseProperties().MeleeSkill += 5;
+					_event.m.Dude.getBaseProperties().MeleeDefense += 4;
+					_event.m.Dude.getBackground().m.RawDescription = "The forests scream and wail. Nature has been out of balance for a long time and %name% is one of the few chosen to listen.";
+					_event.m.Dude.getBackground().buildDescription(true);
 				}
-
+				else
+				{
+					_event.m.Dude.setStartValuesEx([
+						"legend_ranger_background"
+					]);
+					_event.m.Dude.getBackground().m.RawDescription = "Part of an ancient order somewhere in the forests, %name% vowed to maintain balance of nature and all other things, even if violence was necessary.";
+					_event.m.Dude.getBackground().buildDescription(true);
+				}
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_greenskins_trait"));
 				local necklace = this.new("scripts/items/accessory/special/slayer_necklace_item");
 				necklace.m.Name = _event.m.Dude.getNameOnly() + "\'s Necklace";
@@ -75,9 +83,9 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 		}
 
 
-        local roster = this.World.getPlayerRoster().getAll()
-        foreach( bro in roster)
-        {
+		local roster = this.World.getPlayerRoster().getAll()
+		foreach( bro in roster)
+		{
 			if (bro.getBackground().getID() == "background.legend_ranger")
 			{
 				return

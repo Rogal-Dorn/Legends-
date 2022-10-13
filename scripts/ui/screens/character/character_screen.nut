@@ -314,6 +314,7 @@ this.character_screen <- {
 
 		if (bro != null)
 		{
+			bro.getSkills().onDismiss();
 			this.World.Statistics.getFlags().increment("BrosDismissed");
 
 			if (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury) && (bro.getBackground().getID() != "background.slave" || this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves"))
@@ -385,6 +386,29 @@ this.character_screen <- {
 					}
 				}
 			}
+
+			if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
+			{
+				local playerRoster = this.World.getPlayerRoster().getAll();
+				local indebted = 0;
+				local nonIndebted = [];
+
+				foreach( bro in playerRoster )
+				{
+					if (bro.getBackground().getID() == "background.slave")
+					{
+						indebted++;
+					}
+					else
+					{
+						nonIndebted.push(bro);
+					}
+				}
+
+				this.World.Statistics.getFlags().set("ManhunterIndebted", indebted);
+				this.World.Statistics.getFlags().set("ManhunterNonIndebted", nonIndebted.len());
+			}
+
 			bro.getItems().transferToStash(this.World.Assets.getStash());
 			this.World.getPlayerRoster().remove(bro);
 			if (this.World.State.getPlayer() != null)
@@ -419,16 +443,9 @@ this.character_screen <- {
 
 	function queryRosterSizeData(_shake = false)
 	{
-		local brothersInFrontline = 9;
-		if (("State" in this.Tactical))
-		{
-			if (!this.Tactical.State.isScenarioMode())
-			{
-			local brothersInFrontline = this.World.State.getBrothersInFrontline();
-			}
-		}
+		local brosInCombat = "State" in ::World ? ::World.State.getBrothersInFrontline() : 18;
 		local result = {
-			brothersInCombat = brothersInFrontline,
+			brothersInCombat = brosInCombat,
 			brothersMaxInCombat = 27,
 			brothers = this.World.getPlayerRoster().getSize(),
 			brothersMax = 27,
@@ -2551,7 +2568,7 @@ this.character_screen <- {
 		return this.UIDataHelper.convertStashAndEntityToUIData(_entity, null, false, this.m.InventoryFilter);
 	}
 
-	function removeUpgrade( _slot, _data)
+	function onRemoveUpgrade(_data)
 	{
 		if (this.Stash.getNumberOfEmptySlots() <= 0){
 			return {
@@ -2560,7 +2577,7 @@ this.character_screen <- {
 			};
 		}
 		local bro = this.Tactical.getEntityByID(_data[1]);
-		local upgrade = bro.removeArmorUpgrade(_slot, _data[0]);
+		local upgrade = bro.removeArmorUpgrade(_data[2] == "body" ? this.Const.ItemSlot.Body : this.Const.ItemSlot.Head, _data[0]);
 		if (upgrade != null && !upgrade.isDestroyedOnRemove())
 		{
 			this.World.Assets.getStash().add(upgrade);
@@ -2569,15 +2586,15 @@ this.character_screen <- {
 		}
 	}
 
-	function onRemoveArmorUpgrade( _data )
+	function onToggleUpgradeVisibility( _data )
 	{
-		return this.removeUpgrade(this.Const.ItemSlot.Body, _data);
+		local bro = this.Tactical.getEntityByID(_data[1]);
+		local armor = bro.getItems().getItemAtSlot(_data[2] == "body" ? this.Const.ItemSlot.Body : this.Const.ItemSlot.Head);
+		local upgrade = armor.getUpgrade(_data[0]);
+		local result = upgrade.toggleVisible();
+		return this.UIDataHelper.convertStashAndEntityToUIData(bro, null, false, this.m.InventoryFilter);
 	}
 
-	function onRemoveHelmetUpgrade( _data )
-	{
-		return this.removeUpgrade(this.Const.ItemSlot.Head, _data);
-	}
 
 	function onUpdateFormationName( _data )
 	{

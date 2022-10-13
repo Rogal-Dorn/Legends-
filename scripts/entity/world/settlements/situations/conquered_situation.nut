@@ -17,7 +17,7 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.20);
 		}
@@ -35,7 +35,7 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("refugee_background");
 		_draftList.push("refugee_background");
 		_draftList.push("cripple_background");

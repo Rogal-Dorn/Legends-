@@ -2,7 +2,7 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_a
 	m = {
 		Outfits = [
 			[1, "mercenary_leader_outfit_uncommon_00"],
-            [1, "mercenary_leader_outfit_00"]
+			[1, "mercenary_leader_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyLeader,
 		PerkPower = 10
@@ -75,10 +75,10 @@ this.free_company_leader <- this.inherit("scripts/entity/tactical/free_company_a
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_military_goedendag"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
+		}
 
 		if (this.getIdealRange() == 1)
 		{

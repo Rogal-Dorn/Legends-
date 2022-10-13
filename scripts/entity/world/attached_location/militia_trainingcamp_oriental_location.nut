@@ -118,7 +118,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -127,6 +127,14 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		_list.push("nomad_background");
 		_list.push("legend_dervish_background");
 		_list.push("legend_dervish_background");
+		if (this.Math.rand(0, 4) == 1)
+		{
+			_list.push("legend_conscript_background");
+		}
+		if (this.Math.rand(0, 4) == 1)
+		{
+			_list.push("legend_conscript_ranged_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -203,7 +211,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 60,

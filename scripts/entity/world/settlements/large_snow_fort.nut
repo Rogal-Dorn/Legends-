@@ -72,12 +72,13 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"sellsword_background",
 			"squire_background",
 			"cripple_background",
+			"paladin_background",
 			"legend_blacksmith_background",
 			"legend_shieldmaiden_background",
 			"legend_shieldmaiden_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"
@@ -111,7 +112,7 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

@@ -26,7 +26,7 @@ this.greenskins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.25);
 		}
@@ -36,7 +36,7 @@ this.greenskins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onResolved( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.50);
 		}
@@ -51,7 +51,7 @@ this.greenskins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{
 			_draftList.push("legend_puppet_background");

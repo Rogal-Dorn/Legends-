@@ -63,7 +63,7 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -72,6 +72,14 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 		_list.push("nomad_background");
 		_list.push("nomad_background");
 		_list.push("nomad_background");
+		if (this.Math.rand(0, 6) == 1)
+		{
+			_list.push("legend_conscript_background");
+		}
+		if (this.Math.rand(0, 6) == 1)
+		{
+			_list.push("legend_conscript_ranged_background");
+		}
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -153,7 +161,7 @@ this.stone_watchtower_oriental_location <- this.inherit("scripts/entity/world/at
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 35,

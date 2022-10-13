@@ -2,7 +2,7 @@ this.legend_violent_decomposition_skill <- this.inherit("scripts/skills/skill", 
 	m = {
 		// base damage of the explosion
 		MinDamage = 15,
-		MaxDamage = 35,
+		MaxDamage = 55,
 		ArmorDamageMult = 0.65,
 	},
 	function create()

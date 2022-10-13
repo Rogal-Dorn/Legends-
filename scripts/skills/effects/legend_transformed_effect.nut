@@ -229,7 +229,7 @@ this.legend_transformed_effect <- this.inherit("scripts/skills/skill", {
 		this.removeEffect();
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.onRemoved();
 	}

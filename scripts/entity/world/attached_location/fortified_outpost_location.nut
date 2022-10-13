@@ -112,7 +112,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -123,6 +123,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		_list.push("deserter_background");
 		_list.push("sellsword_background");
 		_list.push("hedge_knight_background");
+		_list.push("paladin_background");
 		if (this.Math.rand(0, 9) == 1)
 		{
 			_list.push("legend_master_archer_background");
@@ -341,7 +342,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

@@ -244,7 +244,8 @@ gt.Const.AI <- {
 			MoveToMerge = 83,
 			Howl = 84,
 			SpawnShadow = 85,
-			COUNT = 86
+			Corruption = 86,
+			COUNT = 87
 		},
 		Name = [
 			"None",
@@ -332,7 +333,8 @@ gt.Const.AI <- {
 			"Explode",
 			"MoveToMerge",
 			"Howl",
-			"SpawnShadow"
+			"SpawnShadow",
+			"Corruption"
 		],
 		Order = {
 			Retreat = 2,
@@ -386,6 +388,7 @@ gt.Const.AI <- {
 			Disengage = 38,
 			Root = 39,
 			Horror = 39,
+			Corruption = 39,
 			Sleep = 39,
 			Miasma = 39,
 			Nightmare = 39,
@@ -478,6 +481,7 @@ gt.Const.AI <- {
 			UsePotion = 250,
 			Miasma = 250,
 			Horror = 250,
+			Corruption = 480,
 			Charm = 300,
 			MoveTail = 300,
 			KeepSafe = 350,
@@ -791,6 +795,8 @@ gt.Const.AI <- {
 		MoveTailMaxDistanceToHead = 1,
 		MoveTailCurrentTileBonus = 0.1,
 		CommandUndeadRefreshMult = 0.33,
+		CommandUndeadStunnedMult = 0.25,
+		CommandUndeadYetToActMult = 1.15,
 		CommandUndeadEngagedMult = 0.5,
 		CommandUndeadTargetsInRangeMult = 1.0,
 		CommandUndeadHitpointsMult = 1.0,
@@ -1020,6 +1026,15 @@ gt.Const.AI <- {
 		AttackHandgoneAlliesHitMult = 0.8,
 		LightningStormStunnedTargetMult = 2.0,
 		LightningStormTargetInZOCMult = 4.0,
-		MoveToMergeMaxAttempts = 32
+		MoveToMergeMaxAttempts = 32,
+
+		//Corruption
+		CorruptionTurnDoneMult = 1.1,
+		CorruptionAttackingMeBonus = 7.0,
+		CorruptionNumAffectedPOW = 1.2,
+		CorruptionRedundantPOW = 0.85,
+		CorruptionAtMyTileBonus = 4.0,
+		CorruptionNearAllyBonus = 2.0,
+		CorruptionTargetValueMult = 2.0,
 	}
 };

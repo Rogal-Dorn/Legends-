@@ -20,13 +20,13 @@ this.perk_legend_specialist_woodaxe_damage <- this.inherit("scripts/skills/skill
 		{
 			if (item.getID() == "weapon.woodcutters_axe" || item.getID() == "weapon.legend_saw")
 			{
-				_properties.DamageRegularMin += 6;
-				_properties.DamageRegularMax += 16;
+				_properties.DamageRegularMin += 9;
+				_properties.DamageRegularMax += 24;
 			}
 			else if (item.isWeaponType(this.Const.Items.WeaponType.Axe))
 			{
-				_properties.DamageRegularMin += 2;
-				_properties.DamageRegularMax += 7;
+				_properties.DamageRegularMin += 3;
+				_properties.DamageRegularMax += 8;
 			}
 		}
 	}

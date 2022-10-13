@@ -17,7 +17,8 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		Variants = [],
 		HideHair = false,
 		HideBeard = false,
-		Vision = 0
+		Vision = 0,
+		Visible = true
 	},
 	function create()
 	{
@@ -198,8 +199,8 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 65,
 			type = "hint",
-			icon = "ui/icons/mouse_right_button_shift.png",
-			text = "Right-click or drag onto the helmet of the currently selected character to attach."
+			icon = "ui/icons/mouse_right_button.png",
+			text = "Right-click or left-click and drag onto the helmet of the currently selected character to attach."
 		});
 		result.push({
 			id = 66,
@@ -234,22 +235,13 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			});
 		}
 
-		if (this.m.Vision < 0)
+		if (this.getVision() != 0)
 		{
 			result.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/vision.png",
-				text = "Vision [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.Vision + "[/color]"
-			});
-		}
-		else if (this.m.Vision > 0)
-		{
-			result.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Vision [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.Vision + "[/color]"
+				text = "Vision " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getVision()) + this.Math.abs(this.getVision()), this.getVision())
 			});
 		}
 
@@ -258,13 +250,29 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 	function getArmorTooltip( _result )
 	{
-		this.onArmorTooltip(_result);
-		_result.push({
-			id = 15,
+		_result.push({	// An empty line is put in to improve formatting
+			id = 10,
 			type = "text",
-			icon = "ui/icons/plus.png",
-			text = this.getDescription()
+			icon = "",
+			text = " "
+		})
+		_result.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/armor_body.png",	// ui/icons/armor_body.png
+			text = "[u]" + this.getName() + "[/u]"
 		});
+
+		if (this.getVision() != 0)
+		{
+			_result.push({
+				id = 6,
+				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Vision " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getVision()) + this.Math.abs(this.getVision()), this.getVision())
+			});
+		}
+		this.onArmorTooltip(_result);
 	}
 
 	function playInventorySound( _eventType )
@@ -334,11 +342,46 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		return this.Math.floor(this.getConditionMax());
 	}
 
+	function toggleVisible()
+	{
+		return this.setVisible(!this.isVisible());
+	}
+
+	function setVisible(_bool)
+	{
+		this.m.Visible = _bool;
+		if (this.m.Armor != null && this.m.Armor.getContainer() != null && this.m.Armor.isEquipped())
+		{
+			local app = this.getContainer().getAppearance();
+			this.updateAppearance(app);
+			this.getContainer().updateAppearance();
+		}
+		return _bool
+	}
+
+	function isVisible()
+	{
+		return this.m.Visible
+	}
+
 	function updateAppearance( _app )
 	{
+		if (_app == null)
+		{
+			return false;
+		}
 		local sprite = "";
+		local slot = this.m.Type;
+		if (slot == this.Const.Items.HelmetUpgrades.Vanity && this.m.Armor.getUpgrade(slot) != this)
+		{
+			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
+		}
 
-		if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
+		if (this.isVisible() == false)
+		{
+			sprite = "";
+		}
+		else if (this.m.Condition / this.m.ConditionMax <= this.Const.Combat.ShowDamagedArmorThreshold)
 		{
 			sprite = this.m.SpriteDamaged != null ? this.m.SpriteDamaged : "";
 		}
@@ -347,12 +390,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 			sprite = this.m.Sprite != null ? this.m.Sprite : "";
 		}
 
-		if (_app == null)
-		{
-			return false;
-		}
-
-		switch(this.m.Type)
+		switch(slot)
 		{
 			case this.Const.Items.HelmetUpgrades.Helm:
 				_app.HelmetLayerHelm = sprite;
@@ -365,42 +403,37 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				break;
 
 			case this.Const.Items.HelmetUpgrades.Vanity:
-				if (_app.HelmLayer == this.Const.Items.HelmetUpgrades.ExtraVanity)
+				if (this.m.IsLowerVanity)
 				{
-					if (this.m.IsLowerVanity)
-					{
-						_app.HelmetLayerVanity2 = "";
-						_app.HelmetLayerVanity2Corpse = "";
-						_app.HelmetLayerVanity2Lower = sprite;
-						_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					}
-					else
-					{
-						_app.HelmetLayerVanity2 = sprite;
-						_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-						_app.HelmetLayerVanity2Lower = "";
-						_app.HelmetLayerVanity2LowerCorpse = "";
-					}
+					_app.HelmetLayerVanity = "";
+					_app.HelmetLayerVanityCorpse = "";
+					_app.HelmetLayerVanityLower = sprite;
+					_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
 				}
 				else
 				{
-					if (this.m.IsLowerVanity)
-					{
-						_app.HelmetLayerVanity = "";
-						_app.HelmetLayerVanityCorpse = "";
-						_app.HelmetLayerVanityLower = sprite;
-						_app.HelmetLayerVanityLowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-					}
-					else
-					{
-						_app.HelmetLayerVanity = sprite;
-						_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
-						_app.HelmetLayerVanityLower = "";
-						_app.HelmetLayerVanityLowerCorpse = "";
-					}
+					_app.HelmetLayerVanity = sprite;
+					_app.HelmetLayerVanityCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerVanityLower = "";
+					_app.HelmetLayerVanityLowerCorpse = "";
 				}
-
 				break;
+
+			case this.Const.Items.HelmetUpgrades.ExtraVanity:
+				if (this.m.IsLowerVanity)
+				{
+					_app.HelmetLayerVanity2 = "";
+					_app.HelmetLayerVanity2Corpse = "";
+					_app.HelmetLayerVanity2Lower = sprite;
+					_app.HelmetLayerVanity2LowerCorpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+				}
+				else
+				{
+					_app.HelmetLayerVanity2 = sprite;
+					_app.HelmetLayerVanity2Corpse = this.m.SpriteCorpse != null ? this.m.SpriteCorpse : "";
+					_app.HelmetLayerVanity2Lower = "";
+					_app.HelmetLayerVanity2LowerCorpse = "";
+				}
 		}
 
 		return true;
@@ -415,41 +448,9 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 
 	function onUnequip()
 	{
-		this.item.onUnequip()
+		this.item.onUnequip();
+        if (::Legends.Mod.ModSettings.getSetting("AutoRepairLayer").getValue()) this.setToBeRepaired(true, 0);
 		this.setCurrentSlotType(this.Const.ItemSlot.None);
-	}
-
-	function clearAppearance( _app )
-	{
-		this.Sound.play("sounds/inventory/armor_upgrade_use_01.wav", this.Const.Sound.Volume.Inventory);
-
-		if (_app == null) return;
-
-		switch(this.m.Type)
-		{
-			case this.Const.Items.HelmetUpgrades.Helm:
-				_app.HelmetLayerHelm = "";
-				_app.HelmetLayerHelmCorpse = ""
-				break;
-
-			case this.Const.Items.HelmetUpgrades.Top:
-				_app.HelmetLayerTop = "";
-				_app.HelmetLayerTopCorpse = ""
-				break;
-
-			case this.Const.Items.HelmetUpgrades.Vanity:
-					_app.HelmetLayerVanity = "";
-					_app.HelmetLayerVanityCorpse = "";
-					_app.HelmetLayerVanityLower = ""
-					_app.HelmetLayerVanityLowerCorpse = ""
-					_app.HelmetLayerVanity2 = "";
-					_app.HelmetLayerVanity2Corpse = "";
-					_app.HelmetLayerVanity2Lower = ""
-					_app.HelmetLayerVanity2LowerCorpse = ""
-				break;
-		}
-
-		return this.m.IsDestroyedOnRemove;
 	}
 
 	function onUse( _actor, _item = null )
@@ -489,11 +490,13 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 	function onSerialize( _out )
 	{
 		this.item.onSerialize(_out);
+		_out.writeBool(this.m.Visible);
 	}
 
 	function onDeserialize( _in )
 	{
 		this.item.onDeserialize(_in);
+		this.m.Visible = _in.readBool();
 	}
 });
 

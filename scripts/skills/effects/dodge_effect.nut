@@ -9,7 +9,7 @@ this.dodge_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IconMini = "perk_01_mini";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
-		this.m.IsRemovedAfterBattle = true;
+		this.m.IsRemovedAfterBattle = false;
 	}
 
 	function getTooltip()

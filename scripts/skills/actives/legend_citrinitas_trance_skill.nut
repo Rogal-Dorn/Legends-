@@ -18,9 +18,9 @@ this.legend_citrinitas_trance_skill <- this.inherit("scripts/skills/actives/lege
 		this.m.ToggleOffDescription = "Toggle Citrinitas Off";
 	}
 
-    function applyDrums()
-    {
-        local myTile = _user.getTile();
+	function applyDrums()
+	{
+		local myTile = _user.getTile();
 		local actors = this.Tactical.Entities.getInstancesOfFaction(_user.getFaction());
 
 		foreach( a in actors )
@@ -37,17 +37,17 @@ this.legend_citrinitas_trance_skill <- this.inherit("scripts/skills/actives/lege
 
 			if (a.getFaction() == _user.getFaction())
 			{
-                // a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
+				// a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 				a.getSkills().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
 			}
 		}
-        // this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
+		// this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_life_effect"));
 		this.getContainer().add(this.new("scripts/skills/effects/legend_drums_of_war_effect"));
-    }
+	}
 
-    function doTranceEndTurn()
-    {
-        this.applyDrums();
-    }
+	function doTranceEndTurn()
+	{
+		this.applyDrums();
+	}
 
 });

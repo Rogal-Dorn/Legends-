@@ -15,8 +15,8 @@ this.named_golden_round_shield <- this.inherit("scripts/items/shields/named/name
 		this.m.MeleeDefense = 19;
 		this.m.RangedDefense = 17;
 		this.m.StaminaModifier = -18;
-		this.m.Condition = 60;
-		this.m.ConditionMax = 60;
+		this.m.Condition = 75;
+		this.m.ConditionMax = 75;
 		this.randomizeValues();
 	}
 

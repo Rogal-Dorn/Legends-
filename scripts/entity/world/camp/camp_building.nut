@@ -1,10 +1,10 @@
 this.camp_building <- {
 	m = {
-        Camp = null,
-        ID = "",
-        Slot = "",
-        Name = "",
-        Description = "",
+		Camp = null,
+		ID = "",
+		Slot = "",
+		Name = "",
+		Description = "",
 		BannerImage = "",
 		Level = 0,
 		UIImage = null,
@@ -204,8 +204,8 @@ this.camp_building <- {
 			}
 
 		],
-        CanEnter = true,
-        InCommanderTent = true,
+		CanEnter = true,
+		InCommanderTent = true,
 		Camping = true,
 		Escorting = false
 		ModName = "",
@@ -213,21 +213,21 @@ this.camp_building <- {
 		BaseCraft = 0.0,
 		Conversion = 1.0
 	},
-    function create()
-    {
-    }
+	function create()
+	{
+	}
 
-    function destroy()
-    {
-    }
+	function destroy()
+	{
+	}
 
-    function init()
-    {
-    }
+	function init()
+	{
+	}
 
-    function completed()
-    {
-    }
+	function completed()
+	{
+	}
 
 	function Camping()
 	{
@@ -244,44 +244,44 @@ this.camp_building <- {
 		return null;
 	}
 
-    function update ()
-    {
+	function update ()
+	{
 		return this.getUpdateText();
-    }
+	}
 
 	function updateTick (_hours)
 	{
 	}
 
-    function canEnter()
-    {
-        return this.m.CanEnter;
-    }
+	function canEnter()
+	{
+		return this.m.CanEnter;
+	}
 
-    function getID()
-    {
-        return this.m.ID;
-    }
+	function getID()
+	{
+		return this.m.ID;
+	}
 
-    function getName()
-    {
-        return this.m.Name;
-    }
+	function getName()
+	{
+		return this.m.Name;
+	}
 
-    function getSlot()
-    {
-        return this.m.Slot;
-    }
+	function getSlot()
+	{
+		return this.m.Slot;
+	}
 
-    function getResults()
-    {
-        return [];
-    }
+	function getResults()
+	{
+		return [];
+	}
 
-    function isHidden()
-    {
-        return false;
-    }
+	function isHidden()
+	{
+		return false;
+	}
 
 	function getLevel()
 	{
@@ -318,30 +318,30 @@ this.camp_building <- {
 		return this.m.Name;
 	}
 
-    function getTooltip()
-    {
+	function getTooltip()
+	{
 		local res = [
-            {
-                id = 1,
-                type = "title",
-                text = this.getTitle()
-            },
-            {
-                id = 2,
-                type = "description",
-                text = this.getDescription()
-            }
-        ];
+			{
+				id = 1,
+				type = "title",
+				text = this.getTitle()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			}
+		];
 		local mod = this.getModifierToolip()
 		foreach (i in mod)
 		{
 			res.push(i);
 		}
 		return res;
-    }
+	}
 
-    function getModifierToolip()
-    {
+	function getModifierToolip()
+	{
 		return [];
 	}
 
@@ -355,20 +355,20 @@ this.camp_building <- {
 		return this.m.TooltipIcon;
 	}
 
-    function getNumberAssigned()
-    {
-        local count = 0;
-        local roster = this.World.getPlayerRoster().getAll();
-        foreach( b in roster )
-        {
-            if (b.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-            ++count;
-        }
-        return count;
-    }
+	function getNumberAssigned()
+	{
+		local count = 0;
+		local roster = this.World.getPlayerRoster().getAll();
+		foreach( b in roster )
+		{
+			if (b.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
+			++count;
+		}
+		return count;
+	}
 
 	function getBanner()
 	{
@@ -385,10 +385,10 @@ this.camp_building <- {
 		return 0;
 	}
 
-    function inCommanderTent()
-    {
-        return this.m.InCommanderTent && !this.isHidden();
-    }
+	function inCommanderTent()
+	{
+		return this.m.InCommanderTent && !this.isHidden();
+	}
 
 	function pushUIMenuStack()
 	{
@@ -401,19 +401,19 @@ this.camp_building <- {
 		});
 	}
 
-    function assignBro( _bro )
-    {
-        bro.setCampAssignment(this.m.ID);
-    }
+	function assignBro( _bro )
+	{
+		bro.setCampAssignment(this.m.ID);
+	}
 
-    function setCamp ( _camp )
-    {
-        this.m.Camp = this.WeakTableRef(_camp);
-    }
+	function setCamp ( _camp )
+	{
+		this.m.Camp = this.WeakTableRef(_camp);
+	}
 
 	function onClicked( _campScreen )
 	{
-        this.World.State.getMenuStack().push(function ()
+		this.World.State.getMenuStack().push(function ()
 		{
 			this.World.State.getCampScreen().showMainDialog();
 			this.World.State.getCampScreen().refresh();
@@ -440,7 +440,7 @@ this.camp_building <- {
 	{
 	}
 
-    function sortModifiers( _f1, _f2 )
+	function sortModifiers( _f1, _f2 )
 	{
 		if (_f1[0] > _f2[0])
 		{
@@ -456,39 +456,39 @@ this.camp_building <- {
 		}
 	}
 
-    function getModifiers()
-    {
-        local ret =
-        {
+	function getModifiers()
+	{
+		local ret =
+		{
 			Consumption = 1.0 / this.m.Conversion,
-            Craft = 0.0,
-            Assigned = 0,
-            Modifiers = []
-        }
+			Craft = 0.0,
+			Assigned = 0,
+			Modifiers = []
+		}
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-            local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers()[this.m.ModName] * this.m.ModMod;
-            ++ret.Assigned
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
+			local mod = this.m.BaseCraft + this.m.BaseCraft * bro.getBackground().getModifiers()[this.m.ModName] * this.m.ModMod;
+			++ret.Assigned
 			ret.Modifiers.push([mod, bro.getNameOnly(), bro.getBackground().getNameOnly()]);
-        }
+		}
 
-        ret.Modifiers.sort(this.sortModifiers);
-        for (local i = 0; i < ret.Modifiers.len(); i = ++i)
-        {
-            ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
+		ret.Modifiers.sort(this.sortModifiers);
+		for (local i = 0; i < ret.Modifiers.len(); i = ++i)
+		{
+			ret.Modifiers[i][0] = ret.Modifiers[i][0] * this.Math.pow(i + 1, -0.5);
 			if (this.getUpgraded())
 			{
 				ret.Modifiers[i][0] *= 1.15;
 			}
-            ret.Craft += ret.Modifiers[i][0];
-        }
-        return ret;
-    }
+			ret.Craft += ret.Modifiers[i][0];
+		}
+		return ret;
+	}
 
 	function onSortByModifier( _a, _b )
 	{

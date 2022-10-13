@@ -28,7 +28,7 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.25);
 		}
@@ -45,7 +45,7 @@ this.rich_veins_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");
 		_draftList.push("miner_background");

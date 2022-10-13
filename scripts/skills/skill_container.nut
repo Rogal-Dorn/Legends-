@@ -611,92 +611,97 @@ this.skill_container <- {
 
 	function onBeforeActivation()
 	{
-		this.doOnFunctionWhenAlive("onBeforeActivation");
+		//overwritten by MSU
 	}
 
 	function onTurnStart()
 	{
-		this.doOnFunctionWhenAlive("onTurnStart");
+		//overwritten by MSU
 	}
 
 	function onResumeTurn()
 	{
-		this.doOnFunctionWhenAlive("onResumeTurn");
+		//overwritten by MSU
 	}
 
 	function onRoundEnd()
 	{
-		this.doOnFunctionWhenAlive("onRoundEnd");
+		//overwritten by MSU
 	}
 
 	function onTurnEnd()
 	{
-		this.doOnFunctionWhenAlive("onTurnEnd");
+		//overwritten by MSU
 	}
 
 	function onWaitTurn()
 	{
-		this.doOnFunctionWhenAlive("onWaitTurn");
+		//overwritten by MSU
 	}
 
 	function onNewRound()
 	{
-		this.doOnFunction("onNewRound");
+		//overwritten by MSU
 	}
 
 	function onNewDay()
 	{
-		this.doOnFunctionWhenAlive("onNewDay");
+		//overwritten by MSU
 	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		this.doOnFunction("onDamageReceived", [_attacker, _damageHitpoints, _damageArmor]);
+		//overwritten by MSU
 	}
 
 	function onBeforeTargetHit( _caller, _targetEntity, _hitInfo )
 	{
-		this.doOnFunction("onBeforeTargetHit", [_caller, _targetEntity, _hitInfo]);
+		//overwritten by MSU
 	}
 
 	function onTargetHit( _caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		this.doOnFunction("onTargetHit", [_caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor]);
+		//overwritten by MSU
 	}
 
 	function onTargetMissed( _caller, _targetEntity )
 	{
-		this.doOnFunction("onTargetMissed", [_caller, _targetEntity]);
+		//overwritten by MSU
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
-		this.doOnFunction("onTargetKilled", [_targetEntity, _skill]);
+		//overwritten by MSU
 	}
 
 	function onMissed( _attacker, _skill )
 	{
-		this.doOnFunction("onMissed", [_attacker, _skill]);
+		//overwritten by MSU
 	}
 
 	function onAfterDamageReceived()
 	{
-		this.update();
+		//overwritten by MSU
 	}
 
 	function onCombatStarted()
 	{
-		this.doOnFunction("onCombatStarted");
+		//overwritten by MSU
 	}
 
 	function onCombatFinished()
 	{
-		this.doOnFunction("onCombatFinished");
+		//overwritten by MSU
 	}
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
-		this.doOnFunction("onDeath");
+		//overwritten by MSU
+	}
+
+	function onDismiss()
+	{
+		//overwritten by MSU
 	}
 
 	function compareSkillsByOrder( _skill1, _skill2 )

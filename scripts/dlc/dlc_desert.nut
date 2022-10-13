@@ -13,11 +13,11 @@ if (!("Desert" in gt.Const.DLC) || !this.Const.DLC.Desert)
 	if (this.Const.DLC.Desert)
 	{
 		this.Const.DLC.Mask = this.Const.DLC.Mask | 64;
-		this.Const.LoadingScreens.push("ui/screens/loading_screen_06.jpg");
+		this.Const.LoadingScreens.push("ui/screens/loading_screen_10.jpg");
 		local tips = [
 			"The southern city states have made unparalleled advancements in medicine, astrology and alchemy.",
 			"The southerners call themselves \'Gilded\' after their god, in whose shine they bask day in and out.",
-			"The \'indebted\' are a social caste of de-facto slaves in the city states.",
+			"The \'indebted\' are a social caste of de-facto slaves in the city states, made up of criminals, prisoners of war and violators of religous dogma.",
 			"The southern city states are built on the ruins of the Ancient Empire.",
 			"Nomads are a southern people that are not subject to the rule of a city state.",
 			"Nomads are experts in desert warfare and using the environment to their advantage - including throwing it in your face.",
@@ -43,7 +43,7 @@ if (!("Desert" in gt.Const.DLC) || !this.Const.DLC.Desert)
 			"Always out of ammo and tools? Hire a scavenger to reclaim ammo you spent and gather tools from armor you destroyed.",
 			"Inventory full? Buy carts and wagons for your company in the Retinue screen.",
 			"You unlock slots for your retinue of non-combat followers by gaining Renown.",
-			"Ferocious hyenas roam the southern deserts, with strong jaws that can crush even metal armor und inflict bleeding wounds.",
+			"Ferocious hyenas roam the southern deserts, with strong jaws that can crush even metal armor and inflict bleeding wounds.",
 			"Try out different retinue followers to find those that complement your playstyle and chosen company origin."
 		];
 		this.Const.TipOfTheDay.extend(tips);

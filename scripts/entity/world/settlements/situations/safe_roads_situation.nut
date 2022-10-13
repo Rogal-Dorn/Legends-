@@ -18,7 +18,7 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 	function onAdded( _settlement )
 	{
 		_settlement.removeSituationByID("situation.ambushed_trade_routes");
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
 		}
@@ -34,7 +34,7 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("caravan_hand_background");
 		_draftList.push("caravan_hand_background");
 		_draftList.push("caravan_hand_background");
@@ -52,7 +52,7 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_draftList.push("minstrel_background");
 		_draftList.push("historian_background");
 		_draftList.push("adventurous_noble_background");
-		_draftList.push("legend_donkey");
+		_draftList.push("legend_donkey_background");
 
 		if (_gender)
 		{
@@ -62,12 +62,12 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
 		{
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
-			_draftList.push("pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
 		}
 
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")

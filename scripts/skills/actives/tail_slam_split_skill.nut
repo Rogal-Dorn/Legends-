@@ -47,7 +47,7 @@ this.tail_slam_split_skill <- this.inherit("scripts/skills/skill", {
 
 		if (applyEffect == 1)
 		{
-			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToStun)
+			if (_target.isNonCombatant() || _target.getCurrentProperties().IsImmuneToStun || _target.getCurrentProperties().IsImmuneToDaze)
 			{
 				return;
 			}

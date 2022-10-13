@@ -5,7 +5,7 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.legend_sanctified_effect";
-		this.m.Name = "Sancitified";
+		this.m.Name = "Sanctified";
 		this.m.Description = "This character is being cleansed by holy light";
 		this.m.Icon = "ui/perks/holybluefire_circle.png";
 		this.m.IconMini = "mini_bluefire_circle";

@@ -36,6 +36,11 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 			broScale = 0.66;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			broScale = 1.66;
+		}
+
 		local zombieSummonLevel = 0
 		local skeletonSummonLevel = 0
 
@@ -97,40 +102,39 @@ this.player_party <- this.inherit("scripts/entity/world/party", {
 				this.m.Strength += (count + (brolevel + (pow(brolevel,1.2)))) * broScale;
 			}
 
-			if (this.LegendsMod.Configs().LegendItemScalingEnabled())
+			// item scaling
+			local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+			local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+			local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+			local head = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+			local mainhandvalue = 0;
+			local offhandvalue = 0;
+			local bodyvalue = 0;
+			local headvalue = 0;
+
+			if (mainhand != null)
 			{
-				local mainhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-				local offhand = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-				local body = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-				local head = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
-				local mainhandvalue = 0;
-				local offhandvalue = 0;
-				local bodyvalue = 0;
-				local headvalue = 0;
-
-				if (mainhand != null)
-				{
-					mainhandvalue += (mainhand.getSellPrice())  / 1000;
-				}
-
-				if (offhand != null)
-				{
-					offhandvalue += (offhand.getSellPrice()) / 1000;
-				}
-
-				if (body != null)
-				{
-					bodyvalue += (body.getSellPrice()) / 1000;
-				}
-
-				if (head != null)
-				{
-					headvalue += (head.getSellPrice()) / 1000;
-				}
-
-				local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
-				this.m.Strength += gearvalue ;
+				mainhandvalue += (mainhand.getSellPrice())  / 1000;
 			}
+
+			if (offhand != null)
+			{
+				offhandvalue += (offhand.getSellPrice()) / 1000;
+			}
+
+			if (body != null)
+			{
+				bodyvalue += (body.getSellPrice()) / 1000;
+			}
+
+			if (head != null)
+			{
+				headvalue += (head.getSellPrice()) / 1000;
+			}
+
+			local gearvalue = mainhandvalue + offhandvalue + bodyvalue + headvalue;
+			this.m.Strength += gearvalue;
+			// item scaling end
 
 			count++;
 

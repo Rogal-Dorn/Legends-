@@ -50,8 +50,24 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 		if (!this.m.IsRanged)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_khopesh"));
+			local r = this.Math.rand(0, 3);
 
+			if (r == 0)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/broken_ancient_sword"));
+			}
+			else if (r == 1)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_spear"));
+			}
+			else if (r == 2)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/ancient_sword"));
+			}
+			else if (r == 3)
+			{
+				this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_khopesh"));
+			}
 
 			if (this.Math.rand(1, 100) <= 66)
 			{

@@ -9,13 +9,13 @@ this.fat_guy_gets_fit_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 30.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_75.png[/img]%fatguy%, once a lumbering lump of belly fat on two legs, has lost a considerable amount of weight since he\'s with the company. No longer does the mere notion of a sparring fight leave him without breath. In fact, he\'s got more bounce in his step and is showing a sort of agility you\'ve never seen from him before. Looks like all this walking about has done wonders.",
+			Text = "[img]gfx/ui/events/event_75.png[/img]%fatguy%, once a lumbering lump of belly fat on two legs, has lost a considerable amount of weight since enlisting with the company. No longer does the mere notion of a sparring fight leave them without breath. In fact, they\'ve got more bounce in their step and is showing a sort of agility you\'ve never seen from them before. Looks like all this walking about has done wonders.",
 			Image = "",
 			List = [],
 			Characters = [],
 			Options = [
 				{
-					Text = "He might make a good sellsword yet.",
+					Text = "They might make a good sellsword yet.",
 					function getResult( _event )
 					{
 						return 0;

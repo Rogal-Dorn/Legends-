@@ -51,6 +51,7 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -63,7 +64,6 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
@@ -205,13 +205,13 @@ this.knight <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(h);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
-            [3, "named/legend_frogmouth_helm_crested_painted"],
-            [3, "named/bascinet_named"],
-            [3, "named/kettle_helm_named"],
-            [3, "named/deep_sallet_named"],
-            [3, "named/barbute_named"],
-            [3, "named/italo_norman_helm_named"],
-            [1, "named/legend_helm_full_named"]
+			[3, "named/legend_frogmouth_helm_crested_painted"],
+			[3, "named/bascinet_named"],
+			[3, "named/kettle_helm_named"],
+			[3, "named/deep_sallet_named"],
+			[3, "named/barbute_named"],
+			[3, "named/italo_norman_helm_named"],
+			[1, "named/legend_helm_full_named"]
 		]))
 
 

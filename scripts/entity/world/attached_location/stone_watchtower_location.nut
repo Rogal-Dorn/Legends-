@@ -63,7 +63,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
@@ -71,6 +71,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		_list.push("legend_ironmonger_background");
 		_list.push("retired_soldier_background");
 		_list.push("deserter_background");
+		_list.push("paladin_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -193,7 +194,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "ammo/quiver_of_bolts"
 			});
 
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 45,
@@ -232,7 +233,7 @@ this.stone_watchtower_location <- this.inherit("scripts/entity/world/attached_lo
 		}
 		else if (_id == "building.armorsmith")
 		{
-			if (this.LegendsMod.Configs().LegendArmorsEnabled())
+			if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 			{
 				_list.push({
 					R = 50,

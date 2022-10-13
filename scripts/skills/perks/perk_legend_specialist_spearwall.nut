@@ -21,7 +21,7 @@ this.perk_legend_specialist_spearwall <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		foreach (skill in this.getContainer().getSkillsByFunction(this, @(_skill) this.m.Skills.find(_skill.getID()) != null))
+		foreach (skill in this.getContainer().getSkillsByFunction((@(_skill) this.m.Skills.find(_skill.getID()) != null).bindenv(this)))
 		{
 			skill.m.FatigueCostMult *= 0.5;
 			skill.m.ActionPointCost = 3;

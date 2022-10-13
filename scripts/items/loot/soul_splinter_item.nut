@@ -2,6 +2,7 @@ this.soul_splinter_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.soul_splinter";
 		this.m.Name = "Soul Splinter";
 		this.m.Description = "In the dusty remains of Alps sometimes these pitch black splinters can be found. It looks like the stars are shimmering deep within these stones.";
@@ -43,7 +44,7 @@ this.soul_splinter_item <- this.inherit("scripts/items/item", {
 
 		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
 		{
-			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * 1.5 * this.World.State.getCurrentTown().getBuyPriceMult()));
+			return this.Math.max(this.getSellPrice(), this.Math.ceil(this.getValue() * 1.5 * this.World.State.getCurrentTown().getBuyPriceMult() * this.World.State.getCurrentTown().getBeastPartsPriceMult()));
 		}
 		else
 		{
@@ -60,7 +61,7 @@ this.soul_splinter_item <- this.inherit("scripts/items/item", {
 
 		if (("State" in this.World) && this.World.State != null && this.World.State.getCurrentTown() != null)
 		{
-			return this.Math.floor(this.getValue() * this.Const.World.Assets.BaseLootSellPrice * this.World.State.getCurrentTown().getSellPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()]);
+			return this.Math.floor(this.getValue() * this.Const.World.Assets.BaseLootSellPrice * this.World.State.getCurrentTown().getSellPriceMult() * this.World.State.getCurrentTown().getBeastPartsPriceMult() * this.Const.Difficulty.SellPriceMult[this.World.Assets.getEconomicDifficulty()]);
 		}
 		else
 		{

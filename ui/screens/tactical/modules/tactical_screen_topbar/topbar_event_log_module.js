@@ -52,7 +52,7 @@ TacticalScreenTopbarEventLogModule.prototype.onConnection = function (_handle)
 
 	// notify listener
 	if (this.mEventListener !== null && ('onModuleOnConnectionCalled' in this.mEventListener))
-    {
+	{
 		this.mEventListener.onModuleOnConnectionCalled(this);
 	}
 };
@@ -63,7 +63,7 @@ TacticalScreenTopbarEventLogModule.prototype.onDisconnection = function ()
 
 	// notify listener
 	if (this.mEventListener !== null && ('onModuleOnDisconnectionCalled' in this.mEventListener))
-    {
+	{
 		this.mEventListener.onModuleOnDisconnectionCalled(this);
 	}
 };
@@ -84,43 +84,43 @@ TacticalScreenTopbarEventLogModule.prototype.createDIV = function (_parentDiv)
 
 	// create: container
 	this.mContainer = $('<div class="topbar-event-log-module"/>');
-    newlog.append(this.mContainer);
+	newlog.append(this.mContainer);
 
 	// create: log container
 	var eventLogsContainerLayout = $('<div class="l-event-logs-container"/>');
 	eventLogsContainerLayout.css('width', newlog.width() - 50);
 
 	this.mContainer.append(eventLogsContainerLayout);
-    this.mEventsListContainer = eventLogsContainerLayout.createList(15);
-    this.mEventsListScrollContainer = this.mEventsListContainer.findListScrollContainer();
+	this.mEventsListContainer = eventLogsContainerLayout.createList(15);
+	this.mEventsListScrollContainer = this.mEventsListContainer.findListScrollContainer();
 
-    this.mEventsListContainer.css('background-size', newlog.width() - 65, + " " + newlog.height());
+	this.mEventsListContainer.css('background-size', newlog.width() - 65, + " " + newlog.height());
 
-    // create: button
-    var layout = $('<div class="l-expand-button"/>');
-    this.mContainer.append(layout);
-    this.ExpandButton = layout.createImageButton(Path.GFX + Asset.BUTTON_OPEN_EVENTLOG, function ()
-    {
-        self.expand(!self.mIsExpanded);
-    }, '', 6);
+	// create: button
+	var layout = $('<div class="l-expand-button"/>');
+	this.mContainer.append(layout);
+	this.ExpandButton = layout.createImageButton(Path.GFX + Asset.BUTTON_OPEN_EVENTLOG, function ()
+	{
+		self.expand(!self.mIsExpanded);
+	}, '', 6);
 	//this.ExpandButton.css('z-index', '9999999');
-    this.expand(false);
+	this.expand(false);
 };
 
 TacticalScreenTopbarEventLogModule.prototype.destroyDIV = function ()
 {
-    this.mEventsListScrollContainer.empty();
-    this.mEventsListScrollContainer = null;
-    this.mEventsListContainer.destroyList();
-    this.mEventsListContainer.remove();
-    this.mEventsListContainer = null;
+	this.mEventsListScrollContainer.empty();
+	this.mEventsListScrollContainer = null;
+	this.mEventsListContainer.destroyList();
+	this.mEventsListContainer.remove();
+	this.mEventsListContainer = null;
 
-    this.ExpandButton.remove();
-    this.ExpandButton = null;
+	this.ExpandButton.remove();
+	this.ExpandButton = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -156,45 +156,45 @@ TacticalScreenTopbarEventLogModule.prototype.unbindTooltips = function ()
 
 TacticalScreenTopbarEventLogModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 TacticalScreenTopbarEventLogModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 TacticalScreenTopbarEventLogModule.prototype.register = function (_parentDiv)
 {
-    console.log('TacticalScreenTopbarEventLogModule::REGISTER');
+	console.log('TacticalScreenTopbarEventLogModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Event Log Module. Reason: Event Log Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Event Log Module. Reason: Event Log Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 
 TacticalScreenTopbarEventLogModule.prototype.unregister = function ()
 {
-    console.log('TacticalScreenTopbarEventLogModule::UNREGISTER');
+	console.log('TacticalScreenTopbarEventLogModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Event Log Module. Reason: Event Log Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Event Log Module. Reason: Event Log Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
@@ -230,8 +230,8 @@ TacticalScreenTopbarEventLogModule.prototype.log = function (_text)
 		}
 
 		this.mEventsListScrollContainer.append(entry);
-        //this.mEventsListContainer.scrollListToElement(entry);
-        this.mEventsListContainer.scrollListToBottom();
+		//this.mEventsListContainer.scrollListToElement(entry);
+		this.mEventsListContainer.scrollListToBottom();
 	}
 };
 
@@ -246,7 +246,7 @@ TacticalScreenTopbarEventLogModule.prototype.expand = function (_value)
 {
 	if (this.mIsExpanded == _value)
 	{
-        this.mEventsListContainer.showListScrollbar(_value);
+		this.mEventsListContainer.showListScrollbar(_value);
 		return;
 	}
 
@@ -257,10 +257,10 @@ TacticalScreenTopbarEventLogModule.prototype.expand = function (_value)
 		duration: this.mExpandDelay,
 		begin: function ()
 		{
-            self.mEventsListContainer.scrollListToElement();
+			self.mEventsListContainer.scrollListToElement();
 			if (_value === false)
 			{
-                self.mEventsListContainer.showListScrollbar(false);
+				self.mEventsListContainer.showListScrollbar(false);
 			}
 
 			if (_value)
@@ -270,7 +270,7 @@ TacticalScreenTopbarEventLogModule.prototype.expand = function (_value)
 		},
 		progress: function ()
 		{
-            //self.mEventsListContainer.scrollListToElement();
+			//self.mEventsListContainer.scrollListToElement();
 		},
 		complete: function ()
 		{
@@ -279,11 +279,11 @@ TacticalScreenTopbarEventLogModule.prototype.expand = function (_value)
 			self.mEventsListContainer.scrollListToElement();
 			if (_value === true)
 			{
-                self.mEventsListContainer.showListScrollbar(true)
+				self.mEventsListContainer.showListScrollbar(true)
 			}
 
 			// change button image
-            self.ExpandButton.changeButtonImage(Path.GFX + (_value === true ? Asset.BUTTON_CLOSE_EVENTLOG :  Asset.BUTTON_OPEN_EVENTLOG));
+			self.ExpandButton.changeButtonImage(Path.GFX + (_value === true ? Asset.BUTTON_CLOSE_EVENTLOG :  Asset.BUTTON_OPEN_EVENTLOG));
 		}
 	});
 
@@ -353,4 +353,4 @@ TacticalScreenTopbarEventLogModule.prototype.update = function ()
 		}, 10);
 	}
 };
-    */
+	*/

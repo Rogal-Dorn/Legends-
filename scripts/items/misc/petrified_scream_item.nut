@@ -2,6 +2,7 @@ this.petrified_scream_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.petrified_scream";
 		this.m.Name = "Petrified Scream";
 		this.m.Description = "An eerie artifact found among the remains of an Alp. Carrying this around may cause bad dreams and bad night\'s rest.";
@@ -15,6 +16,16 @@ this.petrified_scream_item <- this.inherit("scripts/items/item", {
 	function playInventorySound( _eventType )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
+	}
+
+	function getSellPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
+	}
+
+	function getBuyPriceMult()
+	{
+		return this.World.State.getCurrentTown().getBeastPartsPriceMult();
 	}
 
 });

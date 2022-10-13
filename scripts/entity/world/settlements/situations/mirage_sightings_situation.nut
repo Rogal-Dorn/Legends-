@@ -26,7 +26,7 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.015);
 		}
@@ -41,7 +41,7 @@ this.mirage_sightings_situation <- this.inherit("scripts/entity/world/settlement
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
 	if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{

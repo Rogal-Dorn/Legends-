@@ -14,8 +14,8 @@
 	Identifiers
  */
 var LoadingScreenIdentifier = {
-    Data: {
-        Text: 'text',
-        ImagePath: 'imagePath'
-    }
+	Data: {
+		Text: 'text',
+		ImagePath: 'imagePath'
+	}
 };

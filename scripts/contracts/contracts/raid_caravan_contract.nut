@@ -149,6 +149,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 				party.setDiscovered(true);
 				party.setDescription("A caravan with armed escorts transporting something worth protecting between settlements.");
 				party.setFootprintType(this.Const.World.FootprintsType.Caravan);
+				party.getFlags().set("IsCaravan", true);
 				party.setAttackableByAI(false);
 				party.getFlags().add("ContractCaravan");
 				this.Contract.m.Target = this.WeakTableRef(party);
@@ -317,7 +318,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 						this.Contract.setScreen("Success1");
 						this.World.Contracts.showActiveContract();
 					}
-					else if (this.Math.rand(1, 100) < this.Flags.get("Survivors") * 15)
+					else if (this.Math.rand(1, 100) > this.Flags.get("Survivors") * 15)
 					{
 						this.Contract.setScreen("Failure1");
 						this.World.Contracts.showActiveContract();

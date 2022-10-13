@@ -35,7 +35,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
 		bros[0].setPlaceInFormation(13);
-		bros[0].setVeteranPerks(2);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
 		bros[0].m.PerkPointsSpent += 1;
@@ -64,11 +63,9 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[2].getBackground().m.RawDescription = "{%name% has been in the court of a local noble for years, but the same audience every night grows tiresome. It was time to find a band, hit the road and find some new audiences for their art.}";
 		bros[2].improveMood(1.0, "Got the band back together");
 		bros[2].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);
 		bros[2].m.PerkPoints = 3;
 		bros[2].m.LevelUps = 3;
 		bros[2].m.Level = 4;
-		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 		bros[2].getSkills().add(this.new("scripts/skills/perks/perk_legend_drums_of_war"));
 		bros[2].m.PerkPointsSpent += 1;
@@ -196,7 +193,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;

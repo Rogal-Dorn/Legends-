@@ -57,14 +57,14 @@ var OptionsMenuModuleIdentifier = {
 			Master: 'master',
 			Music: 'music',
 			Effects: 'effects',
-            Ambience: 'ambience',
-            HWSound: 'hardwareSound'
+			Ambience: 'ambience',
+			HWSound: 'hardwareSound'
 		},
 
 		Controls: {
 			Key: 'controls',
-            Scrollmode:
-            {
+			Scrollmode:
+			{
 				Key: 'scrollMode',
 				EdgeOfScreen: 'edgeOfScreen',
 				DragWithMouse: 'dragWithMouse'
@@ -83,8 +83,8 @@ var OptionsMenuModuleIdentifier = {
 			AutoLoot: 'autoLoot',
 			AutoEndTurn: 'autoEndTurn',
 			AlwaysHideTrees: 'alwaysHideTrees',
-            RestoreEquipment: 'restoreEquipment',
-            AutoPauseAfterCity: 'autoPauseAfterCity'
+			RestoreEquipment: 'restoreEquipment',
+			AutoPauseAfterCity: 'autoPauseAfterCity'
 		}
 		
 	}

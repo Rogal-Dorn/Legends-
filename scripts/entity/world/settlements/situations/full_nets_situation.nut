@@ -28,7 +28,7 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.1);
 		}
@@ -44,7 +44,7 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");

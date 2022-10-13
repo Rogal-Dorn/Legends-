@@ -7,7 +7,7 @@ this.longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.longsword";
 		this.m.Name = "Greatsword";
-		this.m.Description = "A long two-handed blade as good for crushing as for cutting."; //Let's get this working
+		this.m.Description = "A long two-handed greatsword as good for crushing as for cutting, it has a good balance between the lighter longsword and heavier zweihander.";
 		this.m.IconLarge = "weapons/melee/sword_two_hand_01.png";
 		this.m.Icon = "weapons/melee/sword_two_hand_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
@@ -24,7 +24,7 @@ this.longsword <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShieldDamage = 12;
 		this.m.Condition = 64.0;
 		this.m.ConditionMax = 64.0;
-		this.m.StaminaModifier = -8;
+		this.m.StaminaModifier = -10;
 		this.m.RegularDamage = 65;
 		this.m.RegularDamageMax = 85;
 		this.m.ArmorDamageMult = 1.0;

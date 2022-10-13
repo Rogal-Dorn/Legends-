@@ -16,7 +16,7 @@ this.legend_knockback_prepared_effect<- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is preparing an attack to inflict strong blow that pushes the target back if it deals damage.";
+		return "This character is preparing an attack to inflict strong blow that pushes the target back and baffles them if it connects.";
 	}
 
 	function getTooltip()

@@ -27,7 +27,7 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
 		}
@@ -43,7 +43,7 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("monk_background");
 		_draftList.push("monk_background");
 		_draftList.push("cultist_background");
@@ -55,33 +55,33 @@ this.ceremonial_season_situation <- this.inherit("scripts/entity/world/settlemen
 	}
 	if  ( this.World.Assets.getOrigin().getID() == "scenario.cultists")
 	{
-		_draftList.push("cultist_darksoul_background");
-		_draftList.push("cultist_darksoul_background");
-		_draftList.push("cultist_lurker_background");
-		_draftList.push("cultist_lurker_background");
-		_draftList.push("cultist_lurker_background");
-		_draftList.push("cultist_magister_background");
+		_draftList.push("legend_husk_background");
+		_draftList.push("legend_husk_background");
+		_draftList.push("legend_lurker_background");
+		_draftList.push("legend_lurker_background");
+		_draftList.push("legend_lurker_background");
+		_draftList.push("legend_magister_background");
 	}
 	if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
 	{
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
-		_draftList.push("pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
+		_draftList.push("legend_pilgrim_background");
 	}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())

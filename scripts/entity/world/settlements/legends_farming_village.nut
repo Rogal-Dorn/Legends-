@@ -17,11 +17,11 @@ this.legends_farming_village <- this.inherit("scripts/entity/world/settlements/l
 			"Muhlenheim",
 			"Grunfelde",
 			"Ivendorf",
-                        "Ohnemenschen",
-                        "Kornstadt",
-                        "Ausbeute",
-                        "Feldgehen",
-                        "Tierbauernhof",
+						"Ohnemenschen",
+						"Kornstadt",
+						"Ausbeute",
+						"Feldgehen",
+						"Tierbauernhof",
 			"Grafenheide",
 			"Hermannshof",
 			"Koppeldorf",
@@ -231,15 +231,15 @@ this.legends_farming_village <- this.inherit("scripts/entity/world/settlements/l
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
-			"legend_donkey",
+			"legend_donkey_background",
+			"legend_donkey_background",
 		],[
-			"legend_donkey",
-			"legend_donkey",
+			"legend_donkey_background",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
-			"legend_donkey",
+			"legend_donkey_background",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		]];
 		this.m.Rumors = this.Const.Strings.RumorsFarmingSettlement;

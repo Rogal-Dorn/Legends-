@@ -72,7 +72,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.CustomPerkTree = [
 			[
 				this.Const.Perks.PerkDefs.LegendCheerOn,
-				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.Adrenaline,
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.Pathfinder,
@@ -140,7 +140,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.BattleForged,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendMatchingSet,
+				this.Const.Perks.PerkDefs.LegendPerfectFit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendForwardPush,
 			],
@@ -174,16 +174,13 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;

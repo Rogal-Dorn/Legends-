@@ -10,17 +10,17 @@ this.legend_horse_bridle <- this.inherit("scripts/items/legend_horse_helmets/leg
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [
 			"black_brown",
-            "black_white",
-            "black_yellow",
-            "blue_green",
-            "blue_red",
-            "blue_white",
-            "blue_yellow",
-            "brown",
-            "green_yellow",
-            "red_yellow",
-            "white_black",
-            "yellow_black"
+			"black_white",
+			"black_yellow",
+			"blue_green",
+			"blue_red",
+			"blue_white",
+			"blue_yellow",
+			"brown",
+			"green_yellow",
+			"red_yellow",
+			"white_black",
+			"yellow_black"
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();

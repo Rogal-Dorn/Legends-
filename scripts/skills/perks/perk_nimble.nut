@@ -82,4 +82,9 @@ this.perk_nimble <- this.inherit("scripts/skills/skill", {
 		_properties.DamageReceivedRegularMult *= chance;
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.ThresholdToReceiveInjuryMult *= 1.10; //10%
+	}
+
 });

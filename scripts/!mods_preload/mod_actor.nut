@@ -302,7 +302,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 			if (_skill != null && !_skill.isRanged())
 			{
-				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
+				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnAnyAttackMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
 			}
 
 			this.m.Skills.onMissed(_attacker, _skill);
@@ -354,7 +354,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			this.m.PerkPoints = 0;
 			this.m.PerkPointsSpent = 0;
 
-			local skillsToRemove = this.getSkills().getSkillsByFunction(this, @(_skill) _skill.isType(this.Const.SkillType.Perk) && nonRefundable.find(_skill.getID()) == null);
+			local skillsToRemove = this.getSkills().getSkillsByFunction(@(_skill) _skill.isType(this.Const.SkillType.Perk) && nonRefundable.find(_skill.getID()) == null);
 			foreach (s in skillsToRemove)
 			{
 				this.getSkills().removeByID(s.getID());
@@ -390,6 +390,11 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			local oldMoraleState = this.m.MoraleState;
 			this.m.MoraleState = _change;
 			this.m.FleeingRounds = 0;
+
+			if (this.m.MoraleState == this.Const.MoraleState.Confident && oldMoraleState != this.Const.MoraleState.Confident && ("State" in this.World) && this.World.State != null && this.World.Ambitions.hasActiveAmbition() && this.World.Ambitions.getActiveAmbition().getID() == "ambition.oath_of_camaraderie")
+			{
+				this.World.Statistics.getFlags().increment("OathtakersBrosConfident");
+			}
 
 			if (oldMoraleState == this.Const.MoraleState.Fleeing && this.m.IsActingEachTurn)
 			{
@@ -749,12 +754,26 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 				}
 			}
 
+			if (this.hasSprite("armor_layer_cloak_front"))
+			{
+				if (_appearance.ArmorLayerCloakFront.len() != 0)
+				{
+					local armor = this.getSprite("armor_layer_cloak_front");
+					armor.setBrush(_appearance.ArmorLayerCloakFront);
+					armor.Visible = true;
+				}
+				else
+				{
+					this.getSprite("armor_layer_cloak_front").Visible = false;
+				}
+			}
+
 			if (this.hasSprite("armor_layer_cloak"))
 			{
-				if (_appearance.ArmorLayerCloak.len() != 0)
+				if (_appearance.ArmorLayerCloakBack.len() != 0)
 				{
 					local armor = this.getSprite("armor_layer_cloak");
-					armor.setBrush(_appearance.ArmorLayerCloak);
+					armor.setBrush(_appearance.ArmorLayerCloakBack);
 					armor.Visible = true;
 				}
 				else
@@ -819,7 +838,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 			local myTile = this.isPlacedOnMap() ? this.getTile() : null;
 			local tile = this.findTileToSpawnCorpse(_killer);
-			this.m.Skills.onDeath();
+			this.m.Skills.onDeath(_fatalityType);
 			this.onDeath(_killer, _skill, tile, _fatalityType);
 
 			if (!this.Tactical.State.isFleeing() && _killer != null)
@@ -911,6 +930,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 			{
 				this.World.Contracts.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 				this.World.Events.onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
+				this.World.Assets.getOrigin().onActorKilled(this, _killer, this.Tactical.State.getStrategicProperties().CombatID);
 
 				if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
 				{
@@ -1106,17 +1126,17 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 		// local onResurrected = o.onResurrected;
 		// o.onResurrected = function ( _info )
 		// {
-		//     onResurrected(_info);
-		//     this.World.getPlayerRoster().add(_info);
+		//	 onResurrected(_info);
+		//	 this.World.getPlayerRoster().add(_info);
 		// }
 		// local onInit = o.onInit;
 		// o.onInit = function ()
 		// {
-		//     o.onInit();
-		//     o.m.BloodSaturation = 1.5;
-		//     o.m.DeathBloodAmount = 1.5;
-		//     o.m.BloodPoolScale = 1.25;
-		//     o.m.BloodSplatterOffset = this.createVec(-1, -1);
+		//	 o.onInit();
+		//	 o.m.BloodSaturation = 1.5;
+		//	 o.m.DeathBloodAmount = 1.5;
+		//	 o.m.BloodPoolScale = 1.25;
+		//	 o.m.BloodSplatterOffset = this.createVec(-1, -1);
 		// }
 		// }
 	});

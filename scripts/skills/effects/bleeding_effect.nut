@@ -17,7 +17,7 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function setActor( _a )
 	{
-		this.m.Actor = (typeof _a == "instance" ? _a.get() : _a);
+		this.m.Actor = ::MSU.asWeakTableRef(_a);
 	}
 
 	function create()
@@ -41,42 +41,25 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function getAttacker()
 	{
-		if (!this.LegendsMod.Configs().LegendBleedKillerEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("BleedKiller").getValue())
 		{
 			return this.getContainer().getActor();
 		}
 
-		if (this.m.Actor == null )
+		if (::MSU.isNull(this.m.Actor))
 		{
 			return this.getContainer().getActor();
 		}
 
-		if (this.m.Actor != this.getContainer().getActor())
+		if (this.m.Actor.getID() != this.getContainer().getActor().getID())
 		{
-			if (typeof this.m.Actor == "instance")
+			if (this.m.Actor.isAlive() && this.m.Actor.isPlacedOnMap())
 			{
-				this.m.Actor = this.m.Actor.get();
+				return this.m.Actor;
 			}
-			// Must be alive to get the credit, to stop crashes
-			if (!this.m.Actor.isAlive())
-			{
-				return this.getContainer().getActor();
-			}
-
-
-			// If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
-			 if (this.m.Actor.isPlacedOnMap())
-			 {
-		 		return this.getContainer().getActor();
-			 }
-
-			 if (this.m.Actor.getFlags().get("Devoured") == true)
-			 {
-		 		return this.getContainer().getActor();
-			 }
 		}
 
-		return this.m.Actor;
+		return this.getContainer().getActor();
 	}
 
 	function applyDamage()
@@ -84,14 +67,15 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 		if (this.m.LastRoundApplied != this.Time.getRound())
 		{
 			this.m.LastRoundApplied = this.Time.getRound();
-			this.spawnIcon("status_effect_01", this.getContainer().getActor().getTile());
+			local actor = this.getContainer().getActor();
+			this.spawnIcon("status_effect_01", actor.getTile());
 			local hitInfo = clone this.Const.Tactical.HitInfo;
-			hitInfo.DamageRegular = this.m.Damage;
+			hitInfo.DamageRegular = this.m.Damage * (actor.getSkills().hasSkill("effects.hyena_potion") ? 0.5 : 1.0);
 			hitInfo.DamageDirect = 1.0;
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			this.getContainer().getActor().onDamageReceived(this.getAttacker(), this, hitInfo);
+			actor.onDamageReceived(this.getAttacker(), this, hitInfo);
 
 			if (--this.m.TurnsLeft <= 0)
 			{
@@ -102,11 +86,23 @@ this.bleeding_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
-
-		if (this.getContainer().hasSkill("trait.bleeder"))
+		if (this.getContainer().getActor().getCurrentProperties().IsResistantToAnyStatuses && this.Math.rand(1, 100) <= 50)
 		{
-			++this.m.TurnsLeft;
+			if (!this.getContainer().getActor().isHiddenToPlayer())
+			{
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " had his bleeding wound quickly close thanks to his unnatural physiology");
+			}
+
+			this.removeSelf();
+		}
+		else
+		{
+			this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+
+			if (this.getContainer().hasSkill("trait.bleeder"))
+			{
+				++this.m.TurnsLeft;
+			}
 		}
 	}
 

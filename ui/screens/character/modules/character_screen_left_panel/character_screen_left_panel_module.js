@@ -13,8 +13,8 @@
 
 var CharacterScreenLeftPanelModule = function(_parent, _dataSource)
 {
-    this.mParent = _parent;
-    this.mDataSource = _dataSource;
+	this.mParent = _parent;
+	this.mDataSource = _dataSource;
 
 	// container
 	this.mContainer = null;
@@ -25,20 +25,20 @@ var CharacterScreenLeftPanelModule = function(_parent, _dataSource)
 	this.mSkillsModule = null;
 	this.mStatsModule = null;
 
-    this.createModules();
+	this.createModules();
 };
 
 CharacterScreenLeftPanelModule.prototype.createDIV = function (_parentDiv)
 {
 	this.mContainer = $('<div class="left-panel-module"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 };
 
 CharacterScreenLeftPanelModule.prototype.destroyDIV = function ()
 {
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -52,18 +52,18 @@ CharacterScreenLeftPanelModule.prototype.createModules = function()
 
 CharacterScreenLeftPanelModule.prototype.registerModules = function ()
 {
-    this.mCharacterPanelHeaderModule.register(this.mContainer);
-    this.mPaperdollModule.register(this.mContainer);
-    this.mSkillsModule.register(this.mContainer);
-    this.mStatsModule.register(this.mContainer);
+	this.mCharacterPanelHeaderModule.register(this.mContainer);
+	this.mPaperdollModule.register(this.mContainer);
+	this.mSkillsModule.register(this.mContainer);
+	this.mStatsModule.register(this.mContainer);
 };
 
 CharacterScreenLeftPanelModule.prototype.unregisterModules = function ()
 {
-    this.mCharacterPanelHeaderModule.unregister();
-    this.mPaperdollModule.unregister();
-    this.mSkillsModule.unregister();
-    this.mStatsModule.unregister();
+	this.mCharacterPanelHeaderModule.unregister();
+	this.mPaperdollModule.unregister();
+	this.mSkillsModule.unregister();
+	this.mStatsModule.unregister();
 };
 
 
@@ -90,44 +90,44 @@ CharacterScreenLeftPanelModule.prototype.removeEventHandler = function ()
 
 CharacterScreenLeftPanelModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.registerModules();
+	this.createDIV(_parentDiv);
+	this.registerModules();
 };
 
 CharacterScreenLeftPanelModule.prototype.destroy = function()
 {
-    this.unregisterModules();
-    this.destroyDIV();
+	this.unregisterModules();
+	this.destroyDIV();
 };
 
 
 CharacterScreenLeftPanelModule.prototype.register = function (_parentDiv)
 {
-    console.log('CharacterScreenLeftPanelModule::REGISTER');
+	console.log('CharacterScreenLeftPanelModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Left Panel Module. Reason: Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Left Panel Module. Reason: Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 CharacterScreenLeftPanelModule.prototype.unregister = function ()
 {
-    console.log('CharacterScreenLeftPanelModule::UNREGISTER');
+	console.log('CharacterScreenLeftPanelModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Left Panel Module. Reason: Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Left Panel Module. Reason: Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 CharacterScreenLeftPanelModule.prototype.isRegistered = function ()

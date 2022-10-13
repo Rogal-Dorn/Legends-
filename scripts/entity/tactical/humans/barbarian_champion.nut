@@ -119,7 +119,7 @@ this.barbarian_champion <- this.inherit("scripts/entity/tactical/human", {
 				[33, "barbarians/thick_plated_barbarian_armor"]
 		];
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			armor.push(
 				[5, "barbarians/reinforced_heavy_iron_armor"]

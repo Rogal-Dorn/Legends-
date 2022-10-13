@@ -46,6 +46,21 @@ this.starting_scenario <- {
 		return this.m.Difficulty;
 	}
 
+	function getOrder()
+	{
+		return this.m.Order;
+	}
+
+	function isFixedLook()
+	{
+		return this.m.IsFixedLook;
+	}
+
+	function isDroppedAsLoot( _item )
+	{
+		return false;
+	}
+
 	function getDifficultyForUI()
 	{
 		switch(this.m.Difficulty)
@@ -58,6 +73,9 @@ this.starting_scenario <- {
 
 		case 3:
 			return "difficulty_hard";
+		
+		case 4:
+			return "difficulty_legend";
 		}
 
 		return "difficulty_unknown";
@@ -107,7 +125,7 @@ this.starting_scenario <- {
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 	}
 
 	function onUpdateStablesList( _list )
@@ -122,9 +140,37 @@ this.starting_scenario <- {
 	{
 	}
 
+	function onHired( _bro )
+	{
+	}
+
+	function onActorKilled( _actor, _killer, _combatID )
+	{
+	}
+
+	function onBattleWon( _combatLoot )
+	{
+	}
+
 	function onCombatFinished()
 	{
 		return true;
+	}
+
+	function onContractFinished( _contractType, _cancelled )
+	{
+	}
+
+	function onUnlockPerk( _bro, _perkID )
+	{
+	}
+
+	function onUpdateLevel( _bro )
+	{
+	}
+
+	function onGetBackgroundTooltip( _background, _tooltip )
+	{
 	}
 
 	function getStartingRosterTier()
@@ -179,20 +225,16 @@ this.starting_scenario <- {
 		{
 			return;
 		}
-		
-		local perk = _background.getPerk(_perk);
-		if (perk != null)
-		{
-			perk.IsRefundable = false;
-		}
-		else
-		{
-			_background.addPerk(_perk, _row, false);
-		}
+
+		local isRefundable = true;
 
 		if (_addSkill && _background.getContainer() != null)
 		{
 			_background.getContainer().add(this.new(this.Const.Perks.PerkDefObjects[_perk].Script));
+			isRefundable = false;
 		}
+		
+		_background.addPerk(_perk, _row, isRefundable);
+		if (!isRefundable) _background.getPerk(_perk).IsRefundable = false;
 	}
 };

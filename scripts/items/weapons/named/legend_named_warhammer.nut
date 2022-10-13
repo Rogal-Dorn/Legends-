@@ -36,10 +36,5 @@ this.legend_named_warhammer <- this.inherit("scripts/items/weapons/named/named_w
 		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
 	}
 
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

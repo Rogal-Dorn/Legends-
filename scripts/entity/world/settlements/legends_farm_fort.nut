@@ -7,10 +7,10 @@ this.legends_farm_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"Gardendorf",
 			"Walldorf",
 			"Hageturm",
-            "Starkort",
-            "Todesmauer",
-            "Grimmigwand",
-            "Hochturm",
+			"Starkort",
+			"Todesmauer",
+			"Grimmigwand",
+			"Hochturm",
 			"Wiesenwacht",
 			"Markwall",
 			"Hornwall",
@@ -231,14 +231,14 @@ this.legends_farm_fort <- this.inherit("scripts/entity/world/settlements/legends
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"
@@ -685,7 +685,7 @@ this.legends_farm_fort <- this.inherit("scripts/entity/world/settlements/legends
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

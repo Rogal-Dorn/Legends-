@@ -60,6 +60,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"squire_background",
 			"squire_background",
 			"swordmaster_background",
+			"paladin_background",
 			"apprentice_background",
 			"gambler_background",
 			"female_farmhand_background",
@@ -95,7 +96,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"legend_noble_shield"	
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"
@@ -124,7 +125,7 @@ this.large_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

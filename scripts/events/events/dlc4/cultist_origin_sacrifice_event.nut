@@ -92,7 +92,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 
 
 
-					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey")
+					if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist) || bro.getBackground().getID() == "background.legend_commander_necro" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_cannibal" || bro.getBackground().getID() == "background.legend_donkey_background")
 					{
 						bro.improveMood(3.0, "Appeased Davkul");
 
@@ -219,7 +219,7 @@ this.cultist_origin_sacrifice_event <- this.inherit("scripts/events/event", {
 		{
 		  if (bro.getSkills().hasSkill("background.cultist_magister") || bro.getSkills().hasSkill("background.cultist_darksoul"))
 		  {
-		    continue;
+			continue;
 		  }
 
 		  candidates.push(bro);

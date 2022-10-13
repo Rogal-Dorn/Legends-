@@ -58,7 +58,7 @@ this.quick_shot <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultRangedTooltip();
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
 
@@ -143,6 +143,11 @@ this.quick_shot <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
+
+			if (_properties.IsSharpshooter)
+			{
+				_properties.DamageDirectMult += 0.05;
+			}
 		}
 	}
 

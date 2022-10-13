@@ -5,7 +5,6 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 	{
 		this.m.SpawnType = this.Const.Tactical.Actor.LegendZombieLight;
 		this.legend_zombie.onInit();
-		this.getSprite("accessory_special").setBrush("bust_militia_band_01");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
@@ -13,9 +12,9 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-		this.m.BaseProperties.Hitpoints *= 1.5;
+			this.m.BaseProperties.Hitpoints *= 1.5;
 			this.m.Hitpoints *= 1.5;
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
 		}
 		this.m.Skills.update();
 

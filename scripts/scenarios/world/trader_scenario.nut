@@ -4,9 +4,10 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Trader:[/color] Get better prices for buying and selling.\n[color=#bcad8c]Not a Warrior:[/color] Start with no renown, and gain renown at half the normal rate. Every non-combat recruit gains the Pacifist perk. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Combat backgrounds cost more to hire, peddlers and donkeys cost less.";
-		this.m.Difficulty = 2;
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Not a Warrior:[/color] Start with no renown, every non-combat recruit gains the Peaceful perk. Professional soldiers will cost 25% more and be less eager to stick around if things get tough. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Peddlers cost 25% less.";
+		this.m.Difficulty = 1;
 		this.m.Order = 300;
+		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(6);
 	}
 
@@ -38,26 +39,23 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 		local bros = roster.getAll();
 		bros[0].setStartValuesEx([
-			"peddler_background"
+			"legend_peddler_commander_background"//avatar
 		]);
 		bros[0].setPlaceInFormation(4);
 		bros[0].setVeteranPerks(2);
-		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPacifist);
-		local items = bros[0].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
-		items.equip(this.new("scripts/items/weapons/legend_staff"));
-		items.equip(this.Const.World.Common.pickHelmet([
-			[
-				1,
-				"feathered_hat"
-			]
-		]));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));	
+		bros[0].getFlags().set("IsPlayerCharacter", true);
+		bros[0].getSprite("socket").setBrush("bust_base_caravan");
+		bros[0].getSprite("miniboss").setBrush("bust_miniboss_trader");
+		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendPeaceful);
+		bros[0].m.PerkPointsSpent += 1;
+
 		bros[1].setStartValuesEx([
-			"caravan_hand_background"
+			"caravan_hand_background",
+			"caravan_hand_southern_background"
 		]);
 		bros[1].setPlaceInFormation(5);
-		bros[1].setVeteranPerks(2);
+		bros[1].getSprite("socket").setBrush("bust_base_caravan");
 		bros[1].getBackground().m.RawDescription = "You found %name% being thrown out of a pub and at first glance thought that was little more than a drunken miscreant. But you watched as off three would-be muggers were soon on the ground. They still managed to take off with a coin purse in the end, sure, but they could not truly defeat %name%. Impressed, you took the newly-impoverished fighter on as a caravan hand.";
 		bros[1].m.Talents = [];
 		local talents = bros[1].getTalents();
@@ -65,9 +63,8 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		talents[this.Const.Attributes.MeleeDefense] = 1;
 		talents[this.Const.Attributes.Hitpoints] = 1;
-		local items = bros[1].getItems();
-		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		items.equip(this.new("scripts/items/weapons/scimitar"));
+
+		//starting stash
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
@@ -76,7 +73,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/dies_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/furs_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/trade/salt_item"));
-		this.World.Assets.m.Money = this.World.Assets.m.Money * 2;
+		this.World.Assets.m.Money = this.World.Assets.m.Money * 3;
 	}
 
 	function onSpawnPlayer()
@@ -149,10 +146,25 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	function onInit()
 	{
 		this.starting_scenario.onInit();
-		this.World.Assets.m.BusinessReputationRate = 0.5;
-		this.World.Assets.m.BuyPriceMult = 0.9;
-		this.World.Assets.m.SellPriceMult = 1.1;
+		// this.World.Assets.m.BusinessReputationRate = 0.5;
+		// this.World.Assets.m.BuyPriceMult = 0.9;
+		// this.World.Assets.m.SellPriceMult = 1.1;
 		this.World.Flags.set("IsLegendsTrader", true);
+	}
+
+	function onCombatFinished() //is kill?
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+
+		foreach( bro in roster )
+		{
+			if (bro.getFlags().get("IsPlayerCharacter"))
+			{
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	function onHiredByScenario( bro )
@@ -161,16 +173,17 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		{
 			bro.worsenMood(1.0, "Unhappy they will need to do all the fighting");
 		}
-		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat)) //anyone but combat background
 		{
 			bro.improveMood(0.5, "Glad to be out of the fighting line");
+			bro.getSprite("socket").setBrush("bust_base_caravan");
 		}
 	}
 
 	function onUpdateHiringRoster( _roster )
 	{
 		local bros = _roster.getAll();
-
+		local garbage = [];
 		foreach( i, bro in bros )
 		{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
@@ -178,20 +191,61 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
 				bro.getBaseProperties().DailyWageMult *= 1.25;
 				bro.getSkills().update();
+				local r;
+				r = this.Math.rand(0, 5); //randomly assigned mald generator (TM)
+
+				if (r == 0)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/disloyal_trait"));
+				}
+
+				if (r == 1)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/greedy_trait"));
+				}
+
+				if (r == 2)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/weasel_trait"));
+				}
+
+				if (r == 3)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/slack_trait"));
+				}
+
+				if (r == 4)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/double_tongued_trait"));
+				}
+
+				if (r == 5)
+				{
+					bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
+				}
 			}
 
-			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey")
+			if (bro.getBackground().getID() == "background.peddler" || bro.getBackground().getID() == "background.legend_donkey_background")
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75)
-				bro.getBaseProperties().DailyWageMult *= 0.75;
+				bro.getBaseProperties().DailyWageMult *= 1.25;
 				bro.getSkills().update();
 			}
+
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
+			{
+				garbage.push(bro);
+			}
+		}
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
 		}
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 10)
 		{
 			return;
@@ -211,11 +265,18 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		{
 			_list.push("caravan_hand_background");
 		}
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			_list.push("sellsword_background");
+		}
 	}
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPacifist, 0, !bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat));
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendPeaceful, 0, !_background.isBackgroundType(this.Const.BackgroundType.Combat));
 	}
 });
 

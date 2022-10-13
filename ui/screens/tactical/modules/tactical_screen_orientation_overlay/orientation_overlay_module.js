@@ -58,15 +58,15 @@ TacticalScreenOrientationOverlayModule.prototype.onDisconnection = function ()
 TacticalScreenOrientationOverlayModule.prototype.createDIV = function (_parentDiv)
 {
 	this.mContainer = $('<div class="orientation-overlay-module"/>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 };
 
 TacticalScreenOrientationOverlayModule.prototype.destroyDIV = function ()
 {
-    this.removeOverlays();
+	this.removeOverlays();
 
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 TacticalScreenOrientationOverlayModule.prototype.createOverlayDIV = function (_overlay)
@@ -95,42 +95,42 @@ TacticalScreenOrientationOverlayModule.prototype.findOverlayById = function(_id)
 
 TacticalScreenOrientationOverlayModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
+	this.createDIV(_parentDiv);
 };
 
 TacticalScreenOrientationOverlayModule.prototype.destroy = function()
 {
-    this.destroyDIV();
+	this.destroyDIV();
 };
 
 
 TacticalScreenOrientationOverlayModule.prototype.register = function (_parentDiv)
 {
-    console.log('TacticalScreenOrientationOverlayModule::REGISTER');
+	console.log('TacticalScreenOrientationOverlayModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Orientation Overlay Module. Reason: Orientation Overlay Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Orientation Overlay Module. Reason: Orientation Overlay Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 TacticalScreenOrientationOverlayModule.prototype.unregister = function ()
 {
-    console.log('TacticalScreenOrientationOverlayModule::UNREGISTER');
+	console.log('TacticalScreenOrientationOverlayModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Orientation Overlay Module. Reason: Orientation Overlay Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Orientation Overlay Module. Reason: Orientation Overlay Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 TacticalScreenOrientationOverlayModule.prototype.isRegistered = function ()
@@ -261,7 +261,7 @@ TacticalScreenOrientationOverlayModule.prototype.updatePosition = function(_over
 {
 	// Align to Screen Borders
 	/*
-    var containerWidth = this.mContainer.innerWidth();
+	var containerWidth = this.mContainer.innerWidth();
 	var containerHeight = this.mContainer.innerHeight();
 	*/
 

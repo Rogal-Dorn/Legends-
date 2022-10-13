@@ -67,8 +67,6 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 			this.World.getPlayerRoster().add(entry);
 			this.World.getRoster(this.m.RosterID).remove(entry);
-			local broID = this.World.State.getCurrentTown().getRosterIdentifier(entry)
-			this.World.State.getCurrentTown().m.RecruitRoster.Previous.push(broID)
 			entry.onHired();
 			this.World.Assets.addMoney(-hiringCost);
 			this.World.Statistics.getFlags().increment("BrosHired");
@@ -110,8 +108,6 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 
 			entry.setTryoutDone(true);
-			local broID = this.World.State.getCurrentTown().getRosterIdentifier(entry)
-			this.World.State.getCurrentTown().m.RecruitRoster.Tryout.push(broID)
 			this.World.Assets.addMoney(-tryoutCost);
 			return {
 				Result = 0,
@@ -149,8 +145,6 @@ this.town_hire_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			}
 
 			this.World.getRoster(this.m.RosterID).remove(entry);
-			local broID = this.World.State.getCurrentTown().getRosterIdentifier(entry)
-			this.World.State.getCurrentTown().m.RecruitRoster.Previous.push(broID)
 
 			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
 			{

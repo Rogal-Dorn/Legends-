@@ -47,7 +47,7 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.MaceTree
@@ -71,20 +71,9 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.GoodEnding = "A lover of the sale, %name% the peddler couldn\'t stay fighting for long. She eventually left the %companyname% to go out and start her own business. Recently, you got word that she was selling trinkets with the company\'s sigil on them. You specifically told her to do whatever they wanted except just this one thing, but apparently your warning merely fostered the idea. When you went to tell her to stop, she slammed a crown-bulging satchel on a rather ornate table, saying it was your \'cut.\' She sells those trinkets to this day.";
 		this.m.BadEnding = "With hard times hitting the %companyname%, many brothers saw fit to return to their old lives. %name% the peddler was no different. Last you heard she got the tar beaten out of her trying to sell stolen wares that \'fell off the wagon\' to the very merchant which they originally belonged.";
 

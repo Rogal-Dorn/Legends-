@@ -57,7 +57,8 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"sellsword_background",
 			"swordmaster_background",
-				"apprentice_background",
+			"paladin_background",
+			"apprentice_background",
 			"caravan_hand_background",
 			"gambler_background",
 			"female_daytaler_background",
@@ -86,7 +87,7 @@ this.medium_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"swordmaster_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		];

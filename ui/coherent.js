@@ -661,7 +661,7 @@
 	}
 
 	engine._coherentGlobalCanvas = document.createElement('canvas');
-	engine._coherentGlobalCanvas.id     = "coherentGlobalCanvas";
+	engine._coherentGlobalCanvas.id	 = "coherentGlobalCanvas";
 	engine._coherentGlobalCanvas.width  = 1;
 	engine._coherentGlobalCanvas.height = 1;
 	engine._coherentGlobalCanvas.style.zIndex   = 0;

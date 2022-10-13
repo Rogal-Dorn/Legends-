@@ -3,6 +3,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 		StaminaModifier = 0,
 		StashModifier = 0,
 		AddGenericSkill = true,
+		InventorySound = "sounds/combat/armor_leather_impact_03.wav",
 		ShowOnCharacter = false,
 		Sprite = null,
 		SpriteCorpse = null
@@ -19,6 +20,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 	function create()
 	{
+		this.item.create();
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.ItemType = this.Const.Items.ItemType.Accessory;
 	}
@@ -109,11 +111,16 @@ this.accessory <- this.inherit("scripts/items/item", {
 				id = 9,
 				type = "text",
 				icon = "ui/icons/bag.png",
-				text = "Provides [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.StashModifier + "[/color] stash spaces. If you remove the bag, spaces at the bottom of the stash will be lost, along with any items in those spaces."
+				text = "Provides [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.StashModifier + "[/color] stash spaces. If you remove this accessory, spaces at the bottom of the stash will be lost, along with any items in those spaces."
 			});
 		}
 
 		return result;
+	}
+
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play(this.m.InventorySound, this.Const.Sound.Volume.Inventory);
 	}
 
 	function onEquip()
@@ -169,6 +176,7 @@ this.accessory <- this.inherit("scripts/items/item", {
 
 	function onUpdateProperties( _properties )
 	{
+		_properties.Stamina += getStaminaModifier();
 	}
 
 	function onSerialize( _out )

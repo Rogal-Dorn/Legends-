@@ -14,7 +14,7 @@
 var WorldScreenTopbarAmbitionModule = function(_dataSource)
 {
 	this.mSQHandle  = null;
-    this.mDataSource = _dataSource;
+	this.mDataSource = _dataSource;
 
 	// event listener
 	this.mEventListener = null;
@@ -58,14 +58,14 @@ WorldScreenTopbarAmbitionModule.prototype.onDisconnection = function ()
 
 WorldScreenTopbarAmbitionModule.prototype.createDIV = function (_parentDiv)
 {
-    // create: container
-    this.mContainer = $('<div class="topbar-ambition-module"></div>');
-    _parentDiv.append(this.mContainer);
+	// create: container
+	this.mContainer = $('<div class="topbar-ambition-module"></div>');
+	_parentDiv.append(this.mContainer);
 
-    // create: asset container & buttons
-    var assetContainer = $('<div class="asset-container is-ambition"></div>');
-    this.mContainer.append(assetContainer);
-    this.mAmbitionButton = this.createImageButton(assetContainer, Path.GFX + Asset.ICON_AMBITION_DISABLED);
+	// create: asset container & buttons
+	var assetContainer = $('<div class="asset-container is-ambition"></div>');
+	this.mContainer.append(assetContainer);
+	this.mAmbitionButton = this.createImageButton(assetContainer, Path.GFX + Asset.ICON_AMBITION_DISABLED);
 };
 
 WorldScreenTopbarAmbitionModule.prototype.destroyDIV = function ()
@@ -73,9 +73,9 @@ WorldScreenTopbarAmbitionModule.prototype.destroyDIV = function ()
 	this.mAmbitionButton.remove();
 	this.mAmbitionButton = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
@@ -84,24 +84,24 @@ WorldScreenTopbarAmbitionModule.prototype.createImageButton = function (_parentD
 	var self = this;
 
 	var layout = $('<div class="l-ambitions-container"/>');
-    var image = $('<img/>');
-    image.attr('src', _imagePath);
-    layout.append(image);
-    this.mAmbitionLabel = $('<div class="label text-font-small font-bold font-bottom-shadow font-color-assets-positive-value"/>');
-    layout.append(this.mAmbitionLabel);
+	var image = $('<img/>');
+	image.attr('src', _imagePath);
+	layout.append(image);
+	this.mAmbitionLabel = $('<div class="label text-font-small font-bold font-bottom-shadow font-color-assets-positive-value"/>');
+	layout.append(this.mAmbitionLabel);
 
-    layout.on("mouseup", function ()
-    {
-    	self.notifyBackendCancelAmbition();
-    });
+	layout.on("mouseup", function ()
+	{
+		self.notifyBackendCancelAmbition();
+	});
 
-    _parentDiv.append(layout);
-    return layout;
+	_parentDiv.append(layout);
+	return layout;
 };
 
 WorldScreenTopbarAmbitionModule.prototype.bindTooltips = function ()
 {
-    this.mAmbitionButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Assets.Ambition });
+	this.mAmbitionButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.Assets.Ambition });
 };
 
 WorldScreenTopbarAmbitionModule.prototype.unbindTooltips = function ()
@@ -112,44 +112,44 @@ WorldScreenTopbarAmbitionModule.prototype.unbindTooltips = function ()
 
 WorldScreenTopbarAmbitionModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 WorldScreenTopbarAmbitionModule.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 WorldScreenTopbarAmbitionModule.prototype.register = function (_parentDiv)
 {
-    console.log('WorldScreenTopbarAmbitionModule::REGISTER');
+	console.log('WorldScreenTopbarAmbitionModule::REGISTER');
 
-    if(this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Ambitions Module. Reason: Already initialized.');
-        return;
-    }
+	if(this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Ambitions Module. Reason: Already initialized.');
+		return;
+	}
 
-    if(_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if(_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 WorldScreenTopbarAmbitionModule.prototype.unregister = function ()
 {
-    console.log('WorldScreenTopbarAmbitionModule::UNREGISTER');
+	console.log('WorldScreenTopbarAmbitionModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Ambitions Module. Reason: Not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Ambitions Module. Reason: Not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 WorldScreenTopbarAmbitionModule.prototype.isRegistered = function ()

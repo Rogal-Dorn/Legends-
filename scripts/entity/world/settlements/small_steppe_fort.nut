@@ -62,7 +62,7 @@ this.small_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background"
 		];
 		this.m.StablesList = [
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		];
 		this.m.UIDescription = "A small wooden keep in the dry steppe";

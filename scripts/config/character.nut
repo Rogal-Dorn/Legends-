@@ -19,7 +19,7 @@ gt.Const.BusinessReputation <- [
 	-500, //0
 	-250, //1
 	-100, //2
-	0,    //3
+	0,	//3
 	250,  //4
 	500,  //5
 	750,  //6
@@ -164,6 +164,7 @@ gt.Const.ShakeCharacterLayers <- [
 		"armor_layer_chain",
 		"armor_layer_plate",
 		"armor_layer_tabbard",
+		"armor_layer_cloak_front",
 		"armor_layer_cloak",
 		"armor_upgrade_back",
 		"armor_upgrade_front"
@@ -194,6 +195,7 @@ gt.Const.ShakeCharacterLayers <- [
 		"armor_layer_chain",
 		"armor_layer_plate",
 		"armor_layer_tabbard",
+		"armor_layer_cloak_front",
 		"armor_layer_cloak",
 		"armor_upgrade_back",
 		"armor_upgrade_front"
@@ -955,6 +957,8 @@ gt.Const.CharacterProperties <- {
 	DamageReceivedRangedMult = 1.0,
 	DamageReceivedMeleeMult = 1.0,
 	DamageReceivedTotalMult = 1.0,
+	DamageRegularReduction = 0,
+	DamageArmorReduction = 0,
 	Armor = [
 		0.0,
 		0.0
@@ -1001,6 +1005,7 @@ gt.Const.CharacterProperties <- {
 	HitChanceAdditionalWithEachTile = 0.0,
 	HitChanceWithEachTileMult = 1.0,
 	FatigueDealtPerHitMult = 1.0,
+	FatigueLossOnAnyAttackMult = 1.0,
 	MeleeDamageMult = 1.0,
 	RangedDamageMult = 1.0,
 	DamageRegularMin = 0,
@@ -1008,6 +1013,8 @@ gt.Const.CharacterProperties <- {
 	DamageRegularMult = 1.0,
 	DamageArmorMult = 1.0,
 	DamageDirectAdd = 0.0,
+	DamageDirectMeleeAdd = 0.0,
+	DamageDirectRangedAdd = 0.0,
 	DamageDirectMult = 1.0,
 	DamageTotalMult = 1.0,
 	DamageAdditionalWithEachTile = 0.0,
@@ -1016,10 +1023,12 @@ gt.Const.CharacterProperties <- {
 	DamageTooltipMaxMult = 1.0,
 	ThresholdToInflictInjuryMult = 1.0,
 	SurroundedBonus = 5,
+	SurroundedBonusMult = 1.0,
 	TargetAttractionMult = 1.0,
 	IsImmuneToOverwhelm = false,
 	IsImmuneToZoneOfControl = false,
 	IsImmuneToStun = false,
+	IsImmuneToDaze = false,
 	IsImmuneToRoot = false,
 	IsImmuneToKnockBackAndGrab = false,
 	IsImmuneToRotation = false,
@@ -1030,6 +1039,9 @@ gt.Const.CharacterProperties <- {
 	IsImmuneToDamageReflection = false,
 	IsImmuneToFire = false,
 	IsIgnoringArmorOnAttack = false,
+	IsResistantToAnyStatuses = false,
+	IsResistantToPhysicalStatuses = false,
+	IsResistantToMiasma = false,
 	IsRooted = false,
 	IsStunned = false,
 	IsMovable = true,
@@ -1051,6 +1063,10 @@ gt.Const.CharacterProperties <- {
 	SurvivesAsUndead = false,
 	IsStealthed = false,
 	IsFleetfooted = false,
+	IsSharpshooter = false,
+	IsProficientWithHeavyWeapons = false,
+	IsProficientWithShieldWall = false,
+	IsProficientWithShieldSkills = false,
 	IsSpecializedInBows = false,
 	IsSpecializedInCrossbows = false,
 	IsSpecializedInThrowing = false,
@@ -1076,6 +1092,7 @@ gt.Const.CharacterProperties <- {
 	IsSpecializedInStaffStun = false,
 	IsSpecializedInSummons = false,
 	IsContentWithBeingInReserve = false,
+	IsAllyXPBlocked = false,
 	DamageInitiativeMin = 0,
 	DamageInitiativeMax = 0,
 	DamageInitiativeCutoff = 100,

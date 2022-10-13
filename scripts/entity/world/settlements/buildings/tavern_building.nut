@@ -12,7 +12,39 @@ this.tavern_building <- this.inherit("scripts/entity/world/settlements/buildings
 	{
 		this.building.create();
 		this.m.ID = "building.tavern";
-		this.m.Name = "Tavern";
+		this.m.Name = ::MSU.Array.rand([
+			"The Catchpole",
+			"The Mother Black",
+			"The Ratcatcher",
+			"Coachman\'s Inn",
+			"Highwayman\'s Rest",
+			"The Black Baron",
+			"The Padfoot\'s Arms",
+			"The Leaking Ghoul",
+			"The Henhouse Tavern",
+			"The Wurmtail Inn",
+			"The Last March",
+			"The First Rest",
+			"The Last Rest",
+			"The Gatehouse",
+			"The Giblet",
+			"The Drunk Nobleman",
+			"The Scarlet Maiden",
+			"The Pit",
+			"Crossroads Inn",
+			"The Nobleman\'s Demise",
+			"Trapper Tavern",
+			"Pilgrim\'s Rest",
+			"The Raging Greenskin",
+			"The Ploughman",
+			"The Frail Thief",
+			"Hollow Heart Inn",
+			"The Cutpurse",
+			"The Black Hag",
+			"Drifter\'s Rest",
+			"The Swillbucket",
+			"The Huntsmarshal"
+		]);
 		this.m.UIImage = "ui/settlements/building_02";
 		this.m.UIImageNight = "ui/settlements/building_02_night";
 		this.m.Tooltip = "world-town-screen.main-dialog-module.Tavern";

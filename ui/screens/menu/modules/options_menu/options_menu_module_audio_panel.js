@@ -44,7 +44,7 @@ var OptionsMenuModuleAudioPanel = function(_dataSource)
 	this.mVolumeStep = 10;
 	this.mIsSystemChange = false;
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -52,7 +52,7 @@ OptionsMenuModuleAudioPanel.prototype.createDIV = function (_parentDiv)
 {
 	// create: character panel (init hidden)
 	this.mContainer = $('<div class="audio-panel display-none"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	// create: columns
 	var leftColumn = $('<div class="column"></div>');
@@ -69,58 +69,58 @@ OptionsMenuModuleAudioPanel.prototype.createDIV = function (_parentDiv)
 	this.createVolumeControlDIV(this.mVolumeOptions.Master, 'Master', row);	
 	this.createVolumeControlDIV(this.mVolumeOptions.Music, 'Music', row);
 	this.createVolumeControlDIV(this.mVolumeOptions.Effects, 'Effects', row);
-    this.createVolumeControlDIV(this.mVolumeOptions.Ambience, 'Ambience', row);
+	this.createVolumeControlDIV(this.mVolumeOptions.Ambience, 'Ambience', row);
 
-    var row = $('<div class="row"></div>');
-    rightColumn.append(row);
-    var displayTile = $('<div class="title title-font-big font-bold font-color-title">Advanced</div>');
-    row.append(displayTile);
+	var row = $('<div class="row"></div>');
+	rightColumn.append(row);
+	var displayTile = $('<div class="title title-font-big font-bold font-color-title">Advanced</div>');
+	row.append(displayTile);
 
-    var hwControl = $('<div class="control"/>');
-    row.append(hwControl);
-    this.mHWCheckbox = $('<input type="checkbox" id="cb-hw"/>');
-    hwControl.append(this.mHWCheckbox);
-    this.mHWLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-hw">Hardware Sound</label>');
-    hwControl.append(this.mHWLabel);
-    this.mHWCheckbox.iCheck(
-    {
-        checkboxClass: 'icheckbox_flat-orange',
-        radioClass: 'iradio_flat-orange',
-        increaseArea: '30%'
-    });
+	var hwControl = $('<div class="control"/>');
+	row.append(hwControl);
+	this.mHWCheckbox = $('<input type="checkbox" id="cb-hw"/>');
+	hwControl.append(this.mHWCheckbox);
+	this.mHWLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-hw">Hardware Sound</label>');
+	hwControl.append(this.mHWLabel);
+	this.mHWCheckbox.iCheck(
+	{
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
 
-    this.setupEventHandler();
+	this.setupEventHandler();
 };
 
 OptionsMenuModuleAudioPanel.prototype.destroyDIV = function ()
 {
-    // controls
-    $.each(this.mVolumeOptions, function (_key, _value)
-    {
-        _value.Control.remove();
-        _value.Control = null;
-    });
+	// controls
+	$.each(this.mVolumeOptions, function (_key, _value)
+	{
+		_value.Control.remove();
+		_value.Control = null;
+	});
 
-    this.mContainer.empty();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer = null;
 };
 
 
 OptionsMenuModuleAudioPanel.prototype.setupEventHandler = function ()
 {
-    //this.removeEventHandler();
+	//this.removeEventHandler();
 
-    this.mHWCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateAudioOption(OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound, self.mHWCheckbox.prop('checked') === true);
-    });
+	this.mHWCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
+		var self = _event.data;
+		self.mDataSource.updateAudioOption(OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound, self.mHWCheckbox.prop('checked') === true);
+	});
 };
 
 
 OptionsMenuModuleAudioPanel.prototype.createVolumeControlDIV = function (_definition, _label, _parentDiv)
 {
-    var self = this;
+	var self = this;
 
 	var control = $('<div class="volume-control"></div>');
 	_parentDiv.append(control);
@@ -133,23 +133,23 @@ OptionsMenuModuleAudioPanel.prototype.createVolumeControlDIV = function (_defini
 
 	_definition.Control.on("change", function ()
 	{
-	    if (!self.mIsSystemChange)
-	    {
-	        var value = parseInt(_definition.Control.val());
-	        self.mDataSource.updateAudioOption(_definition.OptionsKey, value);
-	    }
+		if (!self.mIsSystemChange)
+		{
+			var value = parseInt(_definition.Control.val());
+			self.mDataSource.updateAudioOption(_definition.OptionsKey, value);
+		}
 	});
 };
 
 
 OptionsMenuModuleAudioPanel.prototype.bindTooltips = function ()
 {
-    this.mHWLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.HardwareSound });
+	this.mHWLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.HardwareSound });
 };
 
 OptionsMenuModuleAudioPanel.prototype.unbindTooltips = function ()
 {
-    this.mHWLabel.unbindTooltip();
+	this.mHWLabel.unbindTooltip();
 };
 
 
@@ -177,44 +177,44 @@ OptionsMenuModuleAudioPanel.prototype.registerDatasourceListener = function()
 
 OptionsMenuModuleAudioPanel.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 OptionsMenuModuleAudioPanel.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 OptionsMenuModuleAudioPanel.prototype.register = function (_parentDiv)
 {
-    console.log('OptionsMenuModuleAudioPanel::REGISTER');
+	console.log('OptionsMenuModuleAudioPanel::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Audio Panel Module. Reason: Audio Panel Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Audio Panel Module. Reason: Audio Panel Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 OptionsMenuModuleAudioPanel.prototype.unregister = function ()
 {
-    console.log('OptionsMenuModuleVideoPanel::UNREGISTER');
+	console.log('OptionsMenuModuleVideoPanel::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Audio Panel Module. Reason: Audio Panel Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Audio Panel Module. Reason: Audio Panel Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 OptionsMenuModuleAudioPanel.prototype.isRegistered = function ()
@@ -261,12 +261,12 @@ OptionsMenuModuleAudioPanel.prototype.onOptionsLoaded = function (_dataSource, _
 	if (OptionsMenuModuleIdentifier.QueryResult.Audio.Ambience in audioOptions)
 	{
 		this.updateVolume(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.Ambience], this.mVolumeOptions.Ambience);
-    }
+	}
 
-    if (OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound in audioOptions)
-    {
-        this.mHWCheckbox.iCheck(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound] === true ? 'check' : 'uncheck');
-    }
+	if (OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound in audioOptions)
+	{
+		this.mHWCheckbox.iCheck(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound] === true ? 'check' : 'uncheck');
+	}
 };
 
 OptionsMenuModuleAudioPanel.prototype.onDefaultsLoaded = function (_dataSource, _data)
@@ -291,10 +291,10 @@ OptionsMenuModuleAudioPanel.prototype.onDefaultsLoaded = function (_dataSource, 
 	if (OptionsMenuModuleIdentifier.QueryResult.Audio.Ambience in audioOptions)
 	{
 		this.updateVolume(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.Ambience], this.mVolumeOptions.Ambience);
-    }
+	}
 
-    if (OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound in audioOptions)
-    {
-        this.mHWCheckbox.iCheck(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound] === true ? 'check' : 'uncheck');
-    }
+	if (OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound in audioOptions)
+	{
+		this.mHWCheckbox.iCheck(audioOptions[OptionsMenuModuleIdentifier.QueryResult.Audio.HWSound] === true ? 'check' : 'uncheck');
+	}
 };

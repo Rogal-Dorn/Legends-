@@ -102,7 +102,7 @@ gt.Const.World.Spawn.Lindwurm <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_lindwurm_01",
-	MaxR = 800,
+	MaxR = 600, //WAS 800
 	Troops = [
 		{
 			Weight = 100,
@@ -154,6 +154,16 @@ gt.Const.World.Spawn.UnholdFrost <-
 				{
 					Type = this.Const.World.Spawn.Troops.UnholdFrost,
 					Cost = 60
+				}
+			]
+		},
+		{
+			Weight = 5,
+			MinR = 1.0 * 4000,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
+					Cost = 200
 				}
 			]
 		}
@@ -818,7 +828,7 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
 			Cost = 180,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -859,7 +869,7 @@ gt.Const.World.Spawn.LegendSkinGhouls <-
 	MovementSpeedMult = 1.0,
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
-	Body = "figure_ghoul_01",
+	Body = "figure_skin_ghoul_01", //also has 02 model - not in use but could be for harder groups.
 	MaxR = 1000,
 	Troops = [
 		{
@@ -902,7 +912,7 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
 			Cost = 150,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -945,7 +955,7 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
 			Cost = 100,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -986,7 +996,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
 			Cost = 105,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -1025,7 +1035,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendStollwurm,
 			Cost = 270,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [
@@ -1064,7 +1074,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 		{
 			Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
 			Cost = 210,
-            Weight = 0
+			Weight = 0
 		}
 	],
 	Troops = [

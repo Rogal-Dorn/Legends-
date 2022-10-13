@@ -2,7 +2,7 @@ this.getroottable().Const.LegendMod.loadTacticalTooltip <- function()
 {
 	local modTacticalTooltip = function ( tooltip, _targetedWithSkill )
 	{
-		if (!this.isPlayerControlled() && !this.LegendsMod.Configs().EnemeyTooltips())
+		if (!this.isPlayerControlled() && !::Legends.Mod.ModSettings.getSetting("EnhancedTooltips").getValue())
 		{
 			return tooltip;
 		}

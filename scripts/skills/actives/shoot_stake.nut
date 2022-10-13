@@ -63,7 +63,7 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultRangedTooltip();
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
 
@@ -173,6 +173,11 @@ this.shoot_stake <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageRegularMin += 100;
 			_properties.DamageRegularMax += 105;
+		}
+
+		if (_properties.IsSharpshooter)
+		{
+			_properties.DamageDirectMult += 0.05;
 		}
 	}
 

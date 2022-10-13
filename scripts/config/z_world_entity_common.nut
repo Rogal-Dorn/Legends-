@@ -257,7 +257,7 @@ gt.Const.World.Common.addUnitsToCombat = function( _into, _partyList, _resources
 					unit.Strength = this.Math.round(unit.Strength * 1.35);
 					unit.Variant = this.Math.rand(1, 255);
 
-					if ("NameList" in unit.Type)
+					if ("NameList" in unit)
 					{
 						unit.Name = this.generateName(unit.Type.NameList) + (unit.Type.TitleList != null ? " " + unit.Type.TitleList[this.Math.rand(0, unit.Type.TitleList.len() - 1)] : "");
 					}
@@ -714,7 +714,7 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 	}
 	// return this.new("scripts/items/helmets/" + helm);
 
-	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (helm == "")
 		{
@@ -751,23 +751,23 @@ gt.Const.World.Common.pickHelmet <- function (_helms)
 				helmet.setupArmor(variant);
 		}
 
-         local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
-         if (helm != null)
-         {
-             helmet.setUpgrade(helm)
-         }
+		 local helm = this.Const.World.Common.pickLegendHelmet(set.Helms);
+		 if (helm != null)
+		 {
+			 helmet.setUpgrade(helm)
+		 }
 
-         local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
-         if (top != null)
-         {
-             helmet.setUpgrade(top)
-         }
+		 local top = this.Const.World.Common.pickLegendHelmet(set.Tops);
+		 if (top != null)
+		 {
+			 helmet.setUpgrade(top)
+		 }
 
 		local van = this.Const.World.Common.pickLegendHelmet(set.Vanity);
-         if (van != null)
-         {
-             helmet.setUpgrade(van)
-         }
+		 if (van != null)
+		 {
+			 helmet.setUpgrade(van)
+		 }
 		
 		if ("Vanity2" in set)
 		{
@@ -824,7 +824,7 @@ gt.Const.World.Common.pickArmor <- function (_armors)
 		return null;
 	}
 
-	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (armorID == "seedmaster_noble_armor" || armorID == "citreneking_noble_armor" ) {armorID = "mail_hauberk"};	
 		local item = this.new("scripts/items/armor/" + armorID);
@@ -939,7 +939,7 @@ gt.Const.World.Common.pickArmorUpgrade <- function (_armors)
 		break;
 	}
 
-	if (!this.LegendsMod.Configs().LegendArmorsEnabled())
+	if (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 	{
 		if (armorID == "")
 		{
@@ -1065,13 +1065,12 @@ gt.Const.World.Common.pickOutfit <- function ( _outfitArr, _armorArr = null, _he
 gt.Const.World.Common.convNameToList <- function ( _named )
 {
 	local findString = ["helmets/", "armor/", "legend_armor/", "legend_helmets/"];
-	local list = clone _named; //iirc we have to clone this because this is the actual array & we don't want to edit it
 	local retArr = [];
 	foreach( search in findString )
 	{
-		if (list[0].find(search) != null ) //was this list
+		if (_named[0].find(search) != null ) //was this list
 		{
-			foreach( item in list )
+			foreach( item in _named )
 			{
 				retArr.push(
 					[1, item.slice(item.find(search) + search.len())]

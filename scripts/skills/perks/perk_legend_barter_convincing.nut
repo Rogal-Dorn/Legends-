@@ -22,26 +22,24 @@ this.perk_legend_barter_convincing <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-					if (this.World.State.getPlayer() == null)
-			{
-				return;
-			}
-
+		if (this.World.State.getPlayer() == null)
+		{
+			return;
+		}
 		this.World.State.getPlayer().calculateBarterMult();
-		this.World.State.getPlayer().calculateWageModifier(); 
-
 	}
 
 	function onRemoved()
 	{
-					if (this.World.State.getPlayer() == null)
-			{
-				return;
-			}
-
+		if (this.World.State.getPlayer() == null)
+		{
+			return;
+		}
 		this.World.State.getPlayer().calculateBarterMult();
-		this.World.State.getPlayer().calculateWageModifier(); 
-
 	}
 
+	function onNewDay()
+	{
+		::World.Assets.addMoney(10);
+	}
 });

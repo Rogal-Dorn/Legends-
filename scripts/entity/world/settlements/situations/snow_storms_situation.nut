@@ -26,7 +26,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -43,7 +43,7 @@ this.snow_storms_situation <- this.inherit("scripts/entity/world/settlements/sit
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r;

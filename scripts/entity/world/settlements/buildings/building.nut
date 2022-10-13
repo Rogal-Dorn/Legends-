@@ -116,7 +116,7 @@ this.building <- {
 				local isUpgrade = false;
 				local script = i.S;
 
-				if (this.LegendsMod.Configs().LegendArmorsEnabled())
+				if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 				{
 					local index = script.find("helmets/");
 					if (index != null && script.find("legend_helmets") == null)
@@ -255,7 +255,7 @@ this.building <- {
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 	}
 
 	function onUpdateStablesList ( _list )

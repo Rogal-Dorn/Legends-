@@ -69,5 +69,23 @@ this.legend_rock_unhold_racial <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		switch (_hitInfo.DamageType)
+		{
+			case ::Const.Damage.DamageType.Piercing:
+			case ::Const.Damage.DamageType.Burning:
+				_properties.DamageReceivedRegularMult *= 0.1;
+				break;
+
+			case ::Const.Damage.DamageType.Cutting:
+				_properties.DamageReceivedRegularMult *= 0.4;
+				break;
+
+			case ::Const.Damage.DamageType.Blunt:
+				_properties.DamageReceivedRegularMult *= 1.2;
+				break;
+		}
+	}
 });
 

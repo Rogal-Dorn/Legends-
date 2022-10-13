@@ -125,7 +125,7 @@ drop = $.event.special.drop = {
 					$targets = $targets.filter( dd.drop );
 				// reset drop data winner properties
 				$targets.each(function(){
-                    var data = $.data( this, drop.datakey );
+					var data = $.data( this, drop.datakey );
 					data.active = [];
 					data.anyactive = 0;
 					data.winner = 0;
@@ -241,8 +241,8 @@ drop = $.event.special.drop = {
 			// reset the loop
 			i = len;
 
-            //i = 0;
-            // NOTE: (js) Iterate bottom -> top, otherwise we wont get contained drop events
+			//i = 0;
+			// NOTE: (js) Iterate bottom -> top, otherwise we wont get contained drop events
 			// loop each stored drop target
 			do if ( elem = ia.droppable[i-1] ){
 				data = $.data( elem, drop.datakey );
@@ -254,15 +254,15 @@ drop = $.event.special.drop = {
 					: drop.contains( drp, xy ) ? 1 : 0; 
 				arr.push( data );
 			//} while ( ++i < len ); // loop
-            } while ( --i > 0); // loop
+			} while ( --i > 0); // loop
 
-        // sort the drop targets
+		// sort the drop targets
 			arr.sort( drop.sort );			
 			// reset the loop
 			i = arr.length;
 
-            //i = 0;
-            // NOTE: (js) Iterate bottom -> top, otherwise we wont get contained drop events
+			//i = 0;
+			// NOTE: (js) Iterate bottom -> top, otherwise we wont get contained drop events
 			// loop through all of the targets again
 			do if ( data = arr[ i-1 ] ){
 				// winners...
@@ -290,7 +290,7 @@ drop = $.event.special.drop = {
 					data.anyactive -= 1;
 				}
 			//} while ( ++i < len ); // loop
-            } while ( --i > 0); // loop
+			} while ( --i > 0); // loop
 		} while ( ++x < end ) // loop
 		// check if the mouse is still moving or is idle
 		if ( drop.last && xy[0] == drop.last.pageX && xy[1] == drop.last.pageY ) 

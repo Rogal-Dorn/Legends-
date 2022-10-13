@@ -46,7 +46,7 @@
 .display-none
 {
 	display: none;
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .display-block
@@ -57,18 +57,18 @@
 
 .opacity-none
 {
-    opacity: 0;
-    /*pointer-events: none;*/
+	opacity: 0;
+	/*pointer-events: none;*/
 }
 
 .opacity-full
 {
-    opacity: 1;
+	opacity: 1;
 }
 
 .opacity-almost-none
 {
-    opacity: 0.01;
+	opacity: 0.01;
 }
 
 .no-pointer-events

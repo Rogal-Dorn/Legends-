@@ -48,7 +48,7 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
 		this.m.CustomPerkTree = [
 			[
-				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.Adrenaline,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.BagsAndBelts
@@ -92,16 +92,13 @@ this.legend_beggar_commander_background <- this.inherit("scripts/skills/backgrou
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;

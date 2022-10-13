@@ -48,7 +48,7 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		}
 
 		local actor = this.getContainer().getActor();
-		local numAdjacentEnemies = actor.getActorsAtDistanceAsArray(1, this.Const.FactionRelation.Enemy).len();
+		local numAdjacentEnemies = ::Tactical.Entities.getHostileActors(actor.getFaction(), actor.getTile(), 1, true).len();
 
 		this.m.Bonus = numAdjacentEnemies == 1 ? 20 : 5;
 

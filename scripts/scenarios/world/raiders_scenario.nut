@@ -38,7 +38,6 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].m.LevelUps = 2;
 		bros[0].m.Level = 3;
 		bros[0].m.Talents = [];
-		bros[0].setVeteranPerks(2);
 		local talents = bros[0].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -51,7 +50,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		warhound.m.Name = "Fenrir the Warhound";
 		items.equip(warhound);
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_reinforced_animal_hide_armor");
@@ -79,7 +78,6 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].m.LevelUps = 2;
 		bros[1].m.Level = 3;
 		bros[1].m.Talents = [];
-		bros[1].setVeteranPerks(2);
 		local talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 2;
@@ -89,7 +87,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_scrap_metal_armor");
@@ -117,7 +115,6 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].m.LevelUps = 2;
 		bros[2].m.Level = 3;
 		bros[2].m.Talents = [];
-		bros[2].setVeteranPerks(2);
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.MeleeSkill] = 1;
@@ -127,7 +124,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			local armor = this.new("scripts/items/legend_armor/cloth/legend_sackcloth_patched");
 			local plate = this.new("scripts/items/legend_armor/plate/legend_hide_and_bone_armor");
@@ -152,12 +149,11 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].improveMood(2.0, "Thinks he managed to convince you to give up raiding and pillaging");
 		bros[3].setPlaceInFormation(13);
 		bros[3].m.Talents = [];
-		bros[3].setVeteranPerks(2);
 		local talents = bros[3].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
-		this.World.Assets.m.MoralReputation = -30;
+		this.World.Assets.addMoralReputation(-30.0);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/goat_cheese_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/loot/silverware_item"));
@@ -308,7 +304,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() >= 10)
 		{
 			local r;

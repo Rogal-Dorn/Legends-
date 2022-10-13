@@ -235,7 +235,6 @@ this.retinue_manager <- {
 
 	function update()
 	{
-		this.World.Assets.resetToDefaults();
 		foreach (p in this.m.Slots)
 		{
 			if (p != null)
@@ -366,7 +365,7 @@ this.retinue_manager <- {
 		}
 
 		this.m.InventoryUpgrades = _in.readU8();
-		this.update();
+		this.World.Assets.resetToDefaults();
 	}
 
 };

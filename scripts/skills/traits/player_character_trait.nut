@@ -10,7 +10,11 @@ this.player_character_trait <- this.inherit("scripts/skills/traits/character_tra
 		this.m.Order = this.Const.SkillOrder.Trait - 1;
 		this.m.Type = this.m.Type;
 		this.m.Titles = [];
-		this.m.Excluded = [];
+		this.m.Excluded = [
+			"trait.loyal",
+			"trait.disloyal",
+			"trait.greedy"
+		];
 	}
 
 	function getTooltip()

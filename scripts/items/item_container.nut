@@ -22,7 +22,8 @@ this.item_container <- {
 			ArmorLayerChain = "",
 			ArmorLayerPlate= "",
 			ArmorLayerTabbard= "",
-			ArmorLayerCloak= "",
+			ArmorLayerCloakFront = "",
+			ArmorLayerCloakBack = "",
 			ArmorUpgradeFront = "",
 			ArmorUpgradeBack = "",
 			Accessory = "",
@@ -31,7 +32,8 @@ this.item_container <- {
 			CorpseArmorLayerChain = "",
 			CorpseArmorLayerPlate= "",
 			CorpseArmorLayerTabbard= ""
-			CorpseArmorLayerCloak= "",
+			CorpseArmorLayerCloakFront = "",
+			CorpseArmorLayerCloakBack = "",
 			CorpseArmorUpgradeFront = "",
 			CorpseArmorUpgradeBack = "",
 			HelmetColor = this.createColor("#ffffff"),
@@ -116,6 +118,7 @@ this.item_container <- {
 
 	function isActionAffordable( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
@@ -132,6 +135,7 @@ this.item_container <- {
 
 	function getActionCost( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
@@ -148,6 +152,7 @@ this.item_container <- {
 
 	function payForAction( _items )
 	{
+		// overwritten by MSU
 		local twoHanded = false;
 
 		foreach( i in _items )
@@ -902,7 +907,7 @@ this.item_container <- {
 				this.doOnFunctionSlot(_function, _argsArray, slot);
 			}
 		}
-		
+
 		this.m.IsUpdating = false;
 	}
 

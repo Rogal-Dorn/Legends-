@@ -10,7 +10,8 @@ this.flying_skull <- this.inherit("scripts/entity/tactical/actor", {
 		DistortAnimationStartTimeC = 0,
 		DurationC = 0.2,
 		IsFlippingC = false,
-		IsExploded = false
+		IsExploded = false,
+		HasKilledPlayer = false
 	},
 	function create()
 	{
@@ -410,6 +411,24 @@ this.flying_skull <- this.inherit("scripts/entity/tactical/actor", {
 		}
 
 		return this.actor.onMovementStep(_tile, _levelDifference);
+	}
+
+	function onActorKilled( _actor, _tile, _skill ) //Fixes suicide exploit
+	{
+		if (!this.m.HasKilledPlayer)
+		{
+			this.m.HasKilledPlayer = _actor.getFaction() == this.Const.Faction.Player;
+		}
+
+		this.actor.onActorKilled( _actor, _tile, _skill );
+	}
+
+	function onAfterDeath( _tile ) //Fixes suicide exploit
+	{
+		if (this.m.HasKilledPlayer && this.Tactical.Entities.getHostilesNum() != 0)
+		{
+			this.Tactical.Entities.setLastCombatResult(this.Const.Tactical.CombatResult.PlayerDestroyed);
+		}
 	}
 
 });

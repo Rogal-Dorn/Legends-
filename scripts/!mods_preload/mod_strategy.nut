@@ -2,7 +2,7 @@ this.getroottable().Const.LegendMod.hookStrategy <- function()
 {
 	::mods_hookNewObject("ai/tactical/strategy", function(o) 
 	{
-	    o.compileKnownOpponents = function ()
+		o.compileKnownOpponents = function ()
 		{
 			local instances = this.Tactical.Entities.getAllInstances();
 
@@ -34,7 +34,7 @@ this.getroottable().Const.LegendMod.hookStrategy <- function()
 
 					if (instances[f][p].getTile().IsHidingEntity && !instances[f][p].isVisibleToEntity())
 					{
-	                    continue;
+						continue;
 					}
 
 					this.onOpponentSighted(instances[f][p]);

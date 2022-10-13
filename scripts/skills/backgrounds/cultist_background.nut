@@ -66,7 +66,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
@@ -96,16 +96,13 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.OldFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -186,7 +183,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				tattoo_head.setBrush("tattoo_head_01");
+				tattoo_head.setBrush("tattoo_01_head");
 				tattoo_head.Visible = true;
 			}
 		}

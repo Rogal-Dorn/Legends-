@@ -375,7 +375,7 @@ this.weaponsmith_building <- this.inherit("scripts/entity/world/settlements/buil
 				{
 					R = 50,
 					P = 1.0,
-					S = "weapons/legend_bastardsword"
+					S = "weapons/legend_longsword"
 				},
 				{
 					R = 80,

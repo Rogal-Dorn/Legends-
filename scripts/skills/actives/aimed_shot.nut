@@ -52,8 +52,8 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.4;
-		this.m.ActionPointCost = 8;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 7;
+		this.m.FatigueCost = 20;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 7;
 		this.m.MaxLevelDifference = 4;
@@ -62,7 +62,7 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultRangedTooltip();
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
 
@@ -175,6 +175,11 @@ this.aimed_shot <- this.inherit("scripts/skills/skill", {
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 			_properties.DamageRegularMult *= 1.1;
+
+			if (_properties.IsSharpshooter)
+			{
+				_properties.DamageDirectMult += 0.05;
+			}
 		}
 	}
 

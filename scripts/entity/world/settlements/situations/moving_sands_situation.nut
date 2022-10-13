@@ -28,7 +28,7 @@ this.moving_sands_situation <- this.inherit("scripts/entity/world/settlements/si
 		_settlement.removeSituationByID("situation.safe_roads");
 		_settlement.resetShop();
 
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -43,7 +43,7 @@ this.moving_sands_situation <- this.inherit("scripts/entity/world/settlements/si
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{
 			_draftList.push("legend_puppet_background");

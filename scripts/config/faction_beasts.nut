@@ -319,29 +319,29 @@ gt.Const.Tactical.Actor.SchratSmall <- {
 	]
 };
 gt.Const.Tactical.Actor.TricksterGod <- {
-	XP = 1500,
+	XP = 3500,
 	ActionPoints = 9,
-	Hitpoints = 2000,
+	Hitpoints = 2500,
 	Bravery = 999,
 	Stamina = 400,
-	MeleeSkill = 90,
+	MeleeSkill = 95,
 	RangedSkill = 0,
-	MeleeDefense = 15,
-	RangedDefense = 15,
+	MeleeDefense = 20,
+	RangedDefense = 5,
 	Initiative = 95,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,
 	Armor = [
-		130,
-		130
+		180,
+		180
 	]
 };
 gt.Const.Tactical.Actor.Kraken <- {
-	XP = 2500,
+	XP = 4500,
 	ActionPoints = 9,
-	Hitpoints = 4400,
-	Bravery = 500,
+	Hitpoints = 3800,
+	Bravery = 999,
 	Stamina = 999,
 	MeleeSkill = 999,
 	RangedSkill = 0,
@@ -376,7 +376,7 @@ gt.Const.Tactical.Actor.KrakenTentacle <- {
 	]
 };
 gt.Const.Tactical.Actor.Serpent <- {
-	XP = 175,
+	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 130,
 	Bravery = 100,
@@ -470,7 +470,7 @@ gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
-	XP = 500,
+	XP = 600,
 	ActionPoints = 16,
 	Hitpoints = 250,
 	Bravery = 120,
@@ -489,7 +489,7 @@ gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendRockUnhold <- {
-	XP = 800,
+	XP = 1100,
 	ActionPoints = 12,
 	Hitpoints = 1000,
 	Bravery = 250,
@@ -528,7 +528,7 @@ gt.Const.Tactical.Actor.LegendDemonAlp <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendStollwurm <- {
-	XP = 1500,
+	XP = 2000,
 	ActionPoints = 15,
 	Hitpoints = 2000,
 	Bravery = 180,
@@ -547,7 +547,7 @@ gt.Const.Tactical.Actor.LegendStollwurm <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendGreenwoodSchrat <- {
-	XP = 1000,
+	XP = 1100,
 	ActionPoints = 10,
 	Hitpoints = 900,
 	Bravery = 200,
@@ -606,7 +606,7 @@ gt.Const.Tactical.Actor.LegendHexeLeader <- {
 	]
 };
 gt.Const.Tactical.Actor.LegendBear <- {
-	XP = 200,
+	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 400,
 	Bravery = 80,

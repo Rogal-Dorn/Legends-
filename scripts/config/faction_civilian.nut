@@ -221,12 +221,12 @@ gt.Const.Tactical.Actor.BountyHunterRanged <- {
 gt.Const.Tactical.Actor.Mercenary <- {
 	XP = 350,
 	ActionPoints = 9,
-	Hitpoints = 90,
+	Hitpoints = 110,
 	Bravery = 70,
 	Stamina = 135,
 	MeleeSkill = 75,
 	RangedSkill = 65,
-	MeleeDefense = 20,
+	MeleeDefense = 25,
 	RangedDefense = 10,
 	Initiative = 125,
 	FatigueEffectMult = 1.0,
@@ -278,7 +278,7 @@ gt.Const.Tactical.Actor.Swordmaster <- {
 gt.Const.Tactical.Actor.HedgeKnight <- {
 	XP = 450,
 	ActionPoints = 9,
-	Hitpoints = 150,
+	Hitpoints = 185,
 	Bravery = 90,
 	Stamina = 160,
 	MeleeSkill = 85,
@@ -370,6 +370,25 @@ gt.Const.Tactical.Actor.Cultist <- {
 	],
 	FatigueRecoveryRate = 15
 };
+gt.Const.Tactical.Actor.Oathbringer <- {
+	XP = 375,
+	ActionPoints = 9,
+	Hitpoints = 125,
+	Bravery = 130,
+	Stamina = 145,
+	MeleeSkill = 80,
+	RangedSkill = 50,
+	MeleeDefense = 20,
+	RangedDefense = 5,
+	Initiative = 135,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 25
+};
 
 gt.Const.Tactical.Actor.LegendPeasantButcher <- {
 	XP = 150,
@@ -412,7 +431,7 @@ gt.Const.Tactical.Actor.LegendPeasantMonk <- {
 };
 
 gt.Const.Tactical.Actor.LegendPeasantBlacksmith <- {
-	XP = 350,
+	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 80,
 	Bravery = 60,
@@ -532,7 +551,7 @@ gt.Const.Tactical.Actor.LegendPeasantMiner <- {
 };
 
 gt.Const.Tactical.Actor.LegendPeasantSquire <- {
-	XP = 400,
+	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 130,
 	Bravery = 75,
@@ -552,13 +571,13 @@ gt.Const.Tactical.Actor.LegendPeasantSquire <- {
 };
 
 gt.Const.Tactical.Actor.LegendPeasantWitchHunter <- {
-	XP = 400,
+	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 90,
 	Bravery = 90,
 	Stamina = 100,
 	MeleeSkill = 50,
-	RangedSkill = 80,
+	RangedSkill = 70,
 	MeleeDefense = 20,
 	RangedDefense = 30,
 	Initiative = 110,

@@ -19,13 +19,15 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (!this.isActive())
 		{
 			return;
 		}
 
 		_list.push("monk_background");
+		_list.push("flagellant_background");
+		_list.push("anatomist_background");
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");
 		_list.push("legend_herbalist_background");

@@ -11,52 +11,52 @@
 "use strict";
 
 var WorldEventIdentifier = {
-    KeyEvent: {
+	KeyEvent: {
 
-    },
+	},
 
-    Event: {
-        Id: 'id',
+	Event: {
+		Id: 'id',
 		Title: 'title',
 		CharacterLeft: 'characterLeft',
-        CharacterRight: 'characterRight',
+		CharacterRight: 'characterRight',
 		BannerImagePath: 'bannerImagePath',
-        HeaderImagePath: 'headerImagePath',
-        Content: {
-            Key: 'content',
-            Entry: {
-                Id: 'id',
-                Type: {
-                    Key: 'type',
-                    Image: {
-                        Value: 'image',
-                        ImagePath: 'imagePath'
-                    },
-                    Description: {
-                        Value: 'description',
-                        Text: 'text'
-                    },
-                    List: {
-                        Value: 'list',
-                        Title: 'title',
-                        Items: {
-                            Key: 'items',
-                            Entry: {
-                                Id: 'id',
-                                ImagePath: 'icon',
-                                Text: 'text'
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        Buttons: {
-            Key: 'buttons',
-            Entry: {
-                Id: 'id',
-                Text: 'text'
-            }
-        }
-    }
+		HeaderImagePath: 'headerImagePath',
+		Content: {
+			Key: 'content',
+			Entry: {
+				Id: 'id',
+				Type: {
+					Key: 'type',
+					Image: {
+						Value: 'image',
+						ImagePath: 'imagePath'
+					},
+					Description: {
+						Value: 'description',
+						Text: 'text'
+					},
+					List: {
+						Value: 'list',
+						Title: 'title',
+						Items: {
+							Key: 'items',
+							Entry: {
+								Id: 'id',
+								ImagePath: 'icon',
+								Text: 'text'
+							}
+						}
+					}
+				}
+			}
+		},
+		Buttons: {
+			Key: 'buttons',
+			Entry: {
+				Id: 'id',
+				Text: 'text'
+			}
+		}
+	}
 };

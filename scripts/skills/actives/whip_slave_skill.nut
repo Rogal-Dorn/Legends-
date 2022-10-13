@@ -22,10 +22,10 @@ this.whip_slave_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsVisibleTileNeeded = true;
-		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 15;
+		this.m.ActionPointCost = 2;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 3;
+		this.m.MaxRange = 4;
 	}
 
 	function getTooltip()

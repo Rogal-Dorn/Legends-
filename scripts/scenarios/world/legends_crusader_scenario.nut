@@ -4,7 +4,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 	{
 		this.m.ID = "scenario.legends_crusader";
 		this.m.Name = "Crusader";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background that joins you. Find pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_35.png[/img][/p][p]Sent on a holy quest to rid the world of undead, you walk a righteous path. \n\n[color=#bcad8c]Pure of Heart:[/color] You cannot recruit outlaw backgrounds, while pious recruits and squires cost less.\n[color=#bcad8c]Strict Sermons:[/color] You will grant the Fortified Mind perk to any pious background that joins you. Find Pilgrims to aid you on your journey.\n[color=#bcad8c]Avatar:[/color] If your crusader dies, the campaign ends.[/p]";
 		this.m.Difficulty = 1;
 		this.m.Order = 70;
 		this.m.IsFixedLook = true;		
@@ -167,10 +167,10 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 				bro.getSkills().update();
 			}
 
-            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
-            {
-                garbage.push(bro);
-            }
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+			{
+				garbage.push(bro);
+			}
 		}
 
 		foreach( g in garbage )
@@ -181,12 +181,12 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 	function onBuildPerkTree( _background )
 	{
-		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind);
+		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.FortifiedMind, 2, _background.isBackgroundType(this.Const.BackgroundType.Crusader));
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;
@@ -198,7 +198,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			r = this.Math.rand(0, 4);
 			if (r == 0)
 			{
-			_list.push("pilgrim_background");
+			_list.push("legend_pilgrim_background");
 			}
 			r = this.Math.rand(0, 4);
 			if (r == 0)
@@ -232,7 +232,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 			r = this.Math.rand(0, 5);
 			if (r == 0)
 			{
-				_list.push("pilgrim_background");
+				_list.push("legend_pilgrim_background");
 			}
 			r = this.Math.rand(0, 6);
 			if (r == 0)

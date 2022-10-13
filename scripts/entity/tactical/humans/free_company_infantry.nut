@@ -1,8 +1,8 @@
 this.free_company_infantry <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_infantry_outfit_00"],
-            [1, "mercenary_infantry_outfit_01"]
+			[1, "mercenary_infantry_outfit_00"],
+			[1, "mercenary_infantry_outfit_01"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyInfantry,
 		PerkPower = 9
@@ -71,10 +71,10 @@ this.free_company_infantry <- this.inherit("scripts/entity/tactical/free_company
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/two_handed_mace"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
+		}
 
 		if (this.getIdealRange() == 1 && this.Math.rand(1, 100) <= 50)
 		{

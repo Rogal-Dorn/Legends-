@@ -11,7 +11,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.throw_net";
 		this.m.Name = "Throw Net";
-		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively. Ranged Skill needed to hit, you can pick up your net if you miss.";
+		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively.";
 		this.m.Icon = "skills/active_73.png";
 		this.m.IconDisabled = "skills/active_73_sw.png";
 		this.m.Overlay = "active_73";
@@ -32,6 +32,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsOffensiveToolSkill = true;
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = false;
@@ -58,7 +59,7 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Hit chance may be inaccurate. Hit chance determined by your ranged skill. Hitchance doubled by the Net Casting Perk."
+				text = "Some targets can never be caught or ensnared"
 			}
 		]);
 		return ret;
@@ -66,11 +67,14 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
 	{
-		this.m.FatigueCostMult = (_properties.IsSpecializedInNets) ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		if (_properties.IsSpecializedInNets)
+		{
+			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
+			this.m.ActionPointCost = 3;
+		}
 		if (_properties.IsSpecializedInNetCasting)
 		{
 			this.m.MaxRange = 5;
-			this.m.ActionPointCost = 3;
 		}
 	}
 
@@ -102,28 +106,9 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		local target = _targetTile.getEntity();
 		local targetEntity = _targetTile.getEntity();
-		local r = this.Math.rand(1, 100);
 
-		if (_user.getSkills().hasSkill("perk.legend_net_casting"))
-		{
-			r = r * 0.5;
-		}
-
-		
-
-		if (_user.getSkills().hasSkill("perk.legend_net_repair"))
-		{
-			r = r * 0.75;
-		}
-
-		if (r > this.getHitchance(_targetTile.getEntity()))
-		{
-			target.onMissed(this.getContainer().getActor(), this);
-			return false;
-		}
-		else if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
+		if (!targetEntity.getCurrentProperties().IsImmuneToRoot)
 		{
 			if (this.m.SoundOnHit.len() != 0)
 			{
@@ -189,4 +174,3 @@ this.throw_net <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-

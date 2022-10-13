@@ -25,7 +25,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 4;
+		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 0;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 3;

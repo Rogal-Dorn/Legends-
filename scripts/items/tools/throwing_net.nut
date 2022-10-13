@@ -99,16 +99,16 @@ this.throwing_net <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/throw_net"));
 
-        if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
-       {
-            this.m.RangeMax = 5;
-       }
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_net_casting"))
+	   {
+			this.m.RangeMax = 5;
+	   }
 
-    }
+	}
 
-    function isAmountShown()
-    {
-        return true;
+	function isAmountShown()
+	{
+		return true;
 	}
 
 	function playInventorySound( _eventType )

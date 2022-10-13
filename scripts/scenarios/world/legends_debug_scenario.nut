@@ -34,7 +34,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
-			bro.setVeteranPerks(2);
 		}
 
 		 local horsesize = 0;
@@ -49,7 +48,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		 	bro.m.Level = broLevel;
 		 	bro.m.LevelUps = broPerks;
 		 	bro.m.PerkPoints = broPerks;
-		 	bro.setVeteranPerks(2);
 		 }
 
 		this.World.Assets.getStash().resize(2000);
@@ -395,7 +393,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legendary/legend_mage_swordstaff",
 			"legendary/lightbringer_sword",
 			"legendary/obsidian_dagger",
-			"legend_bastardsword",
+			"legend_longsword",
 			"legend_battle_glaive",
 			"legend_cat_o_nine_tails",
 			"legend_chain",
@@ -445,7 +443,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"military_pick",
 			"militia_spear",
 			"morning_star",
-			"named/legend_named_bastardsword",
+			"named/legend_named_longsword",
 			"named/legend_named_blacksmith_hammer",
 			"named/legend_named_estoc",
 			"named/legend_named_flail",

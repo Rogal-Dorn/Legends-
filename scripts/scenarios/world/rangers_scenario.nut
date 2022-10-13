@@ -52,14 +52,12 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].m.PerkPoints = 0;
 		bros[0].m.LevelUps = 0;
 		bros[0].m.Level = 1;
-		bros[0].setVeteranPerks(2);
 		bros[1].setStartValuesEx([
 			"poacher_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% fell into poaching after a drought ravaged the personal farmstead. Like most poachers, %name% is not truly of the criminal mind. Long grouped together in the hunting gangs, the poacher was quick to nominate you as captain of the new sellsword outfit.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].m.Talents = [];
-		bros[1].setVeteranPerks(2);
 		talents = bros[1].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 2;
@@ -76,7 +74,6 @@ this.rangers_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].getBackground().m.RawDescription = "{A former jester whose gag was to shoot three water jugs out of the sky. You do not know how %name% got into poaching and you sense bitterness about some jester-related drama, but an excellent archer nonetheless. Likes to pretend being a far better shot than you. Nonsense, of course.}";
 		bros[2].setPlaceInFormation(5);
 		bros[2].m.Talents = [];
-		bros[2].setVeteranPerks(2);
 		talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.RangedSkill] = 2;

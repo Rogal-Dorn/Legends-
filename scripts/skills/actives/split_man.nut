@@ -76,7 +76,7 @@ this.split_man <- this.inherit("scripts/skills/skill", {
 			local hitInfo = clone this.Const.Tactical.HitInfo;
 			local damageRegular = this.Math.rand(p.DamageRegularMin, p.DamageRegularMax) * p.DamageRegularMult * 0.5;
 			local damageArmor = this.Math.rand(p.DamageRegularMin, p.DamageRegularMax) * p.DamageArmorMult * 0.5;
-			local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd));
+			local damageDirect = this.Math.minf(1.0, p.DamageDirectMult * (this.m.DirectDamageMult + p.DamageDirectAdd + p.DamageDirectMeleeAdd));
 			hitInfo.DamageRegular = damageRegular;
 			hitInfo.DamageArmor = damageArmor;
 			hitInfo.DamageDirect = damageDirect;

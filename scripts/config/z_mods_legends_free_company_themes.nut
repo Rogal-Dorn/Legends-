@@ -7,32 +7,32 @@ gt.Const.FreeCompanyDefaultLootTable <- ["trade/amber_shards_item", "trade/furs_
 //You can get away with having a very simple table such as the following
 /*
 {
-    ID = "MyList",
-    UnitOutfits = [
-        {
-            ID = this.Const.EntityType.FreeCompanyLeader,
-            Outfits = ["my_leader_outfit_00", "my_leader_outfit_01"]
-        }
-    ]
+	ID = "MyList",
+	UnitOutfits = [
+		{
+			ID = this.Const.EntityType.FreeCompanyLeader,
+			Outfits = ["my_leader_outfit_00", "my_leader_outfit_01"]
+		}
+	]
 }
 */
 //Any entity not in the unitoutfit selection will simply have default, so if you only add in an entry for freecompanyleader's you'll only have a custom outfit on them + full default everyone else
 
 gt.Const.FreeCompanyCoordinationList <- [
-    {
-        ID = "Default",                                                            //ID doesn't matter really but it's good to have
-        Names = this.Const.Strings.FreeCompanyNames,                               //Custom name array
-        Description = "An ordinary mercenary company, out for their own crowns.",  //Custom description
-        FootprintsType = "Mercenaries",                                            //custom footprints type (think raiders having beast tracks)
-        Spawn = "FreeCompany",                                                     //custom spawnlist
-        LootTable = clone this.Const.FreeCompanyDefaultLootTable                   //Custom loot tables
-        UnitOutfits = [                                                            //Unit outfits each need a type and an array of outfits
-            // {
-            //     Type = this.Const.EntityType.FreeCompanyLeader,
-            //     Outfits = [ [1, "mercenary_archer_outfit_00"] ]
-            // }
-        ]                                                           //Leave this for default outfits
-    },
+	{
+		ID = "Default",															//ID doesn't matter really but it's good to have
+		Names = this.Const.Strings.FreeCompanyNames,							   //Custom name array
+		Description = "An ordinary mercenary company, out for their own crowns.",  //Custom description
+		FootprintsType = "Mercenaries",											//custom footprints type (think raiders having beast tracks)
+		Spawn = "FreeCompany",													 //custom spawnlist
+		LootTable = clone this.Const.FreeCompanyDefaultLootTable				   //Custom loot tables
+		UnitOutfits = [															//Unit outfits each need a type and an array of outfits
+			// {
+			//	 Type = this.Const.EntityType.FreeCompanyLeader,
+			//	 Outfits = [ [1, "mercenary_archer_outfit_00"] ]
+			// }
+		]														   //Leave this for default outfits
+	},
 	// {
 	// 	ID = "BanditRoamers",
 	// 	Names = ["Bandits1", "Bandits2", "Bandits3", "Bandits4"],

@@ -27,7 +27,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.05);
 		}
@@ -50,7 +50,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");

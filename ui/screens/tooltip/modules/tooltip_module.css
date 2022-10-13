@@ -132,16 +132,16 @@
 
 .tooltip-module .row .l-left-column
 {
-	width     : 3.0rem;
+	width	 : 3.0rem;
 	min-height: 2.0rem;
-	float     : left;
+	float	 : left;
 	position  : relative;
 }
 
 .tooltip-module .row .label
 {
 	line-height: 2.0rem;
-	float      : left;
+	float	  : left;
 }
 
 .tooltip-module .row .label img
@@ -152,7 +152,7 @@
 .tooltip-module .row .l-right-column
 {
 	min-height: 2.0rem;
-	float     : left;
+	float	 : left;
 	position  : relative;
 
 }
@@ -160,7 +160,7 @@
 .tooltip-module .row .text
 {
 	line-height: 2.0rem;
-	float      : left;
+	float	  : left;
 }
 
 
@@ -174,9 +174,9 @@
 .tooltip-module .title-container .title
 {
 	max-width  : 22.2rem;
-	height     : 100%;
+	height	 : 100%;
 	margin-top : 0.2rem;
-	float      : left;
+	float	  : left;
 }
 
 .tooltip-module.is-full-width .title-container .title
@@ -186,10 +186,10 @@
 
 .tooltip-module .title-container .title-image
 {
-	width       : 1.2rem;
-	height      : 2.3rem;
+	width	   : 1.2rem;
+	height	  : 2.3rem;
 	margin-right: 0.6rem;
-	float       : left;
+	float	   : left;
 }
 
 .tooltip-module .title-image img
@@ -413,8 +413,8 @@
 
 .tooltip-module .row .progressbar-container
 {
-	top     : 0;
-	left    : 0;
+	top	 : 0;
+	left	: 0;
 	width   : 19.6rem;
 	height  : 2.0rem;
 	position: absolute;

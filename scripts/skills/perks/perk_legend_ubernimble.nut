@@ -60,7 +60,7 @@ this.perk_legend_ubernimble <- this.inherit("scripts/skills/skill", {
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
 	   local  bodyitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
-       local  headitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
+	   local  headitem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 	   
 	   if (bodyitem != null || headitem != null)
 	   {

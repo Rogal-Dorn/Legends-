@@ -14,7 +14,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		{
 			this.m.Variants.push(i);
 		}
-        this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
@@ -61,12 +61,12 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 		return _result;
 	}
 
-    function onUpdateProperties(_properties)
-    {
-    	this.legend_helmet_upgrade.onUpdateProperties(_properties);
+	function onUpdateProperties(_properties)
+	{
+		this.legend_helmet_upgrade.onUpdateProperties(_properties);
   		_properties.SurroundedDefense -= 3; // -3 defence per enemy surrounding this unit while equipped
 		_properties.TargetAttractionMult *= 1.2; // 1.0 = normal aggression, 0.1 = minimal aggression
-    }
+	}
 
 	function updateVariant()
 	{

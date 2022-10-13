@@ -5,7 +5,7 @@ this.drum_item <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.barbarian_drum";
 		this.m.Name = "Barbarian Drum";
-		this.m.Description = "A barbarian instrument, can produce inspiring rythms if you have the skill. The drum sticks make weak maces in a pinch.";
+		this.m.Description = "A barbarian instrument, can produce inspiring rhythms if you have the skill. The drum sticks make weak maces in a pinch.";
 		this.m.IconLarge = "weapons/melee/wildmen_10.png";
 		this.m.Icon = "weapons/melee/wildmen_10_70x70.png";
 		this.m.BreakingSound = "sounds/combat/bash_hit_03.wav";

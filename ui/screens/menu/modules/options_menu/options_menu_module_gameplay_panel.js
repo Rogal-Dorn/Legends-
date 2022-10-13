@@ -3,7 +3,7 @@
  *	@Company:		Overhype Studios
  *
  *	@Copyright:		(c) Overhype Studios | 2013 - 2020
- *
+ * 
  *  @Author:		Overhype Studios
  *  @Date:			12.04.2017 (refactored: 03.10.2017)
  *  @Description:	Options Menu Module - Gameplay Panel JS
@@ -14,10 +14,10 @@
 var OptionsMenuModuleGameplayPanel = function(_dataSource)
 {
 	this.mDataSource = _dataSource;
-
+ 
 	// container
 	this.mContainer = null;
-
+	
 	// controls
 	this.mCameraFollowCheckbox			= null;
 	this.mCameraAdjustLevelCheckbox		= null;
@@ -29,7 +29,7 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAlwaysHideTreesCheckbox		= null;
 	this.mAutoEndTurnCheckbox			= null;
 	this.mRestoreEquipmentCheckbox		= null;
-    this.mAutoPauseAfterCityCheckbox    = null;
+	this.mAutoPauseAfterCityCheckbox	= null;
 
 	this.mCameraFollowLabel				= null;
 	this.mCameraAdjustLevelLabel		= null;
@@ -40,25 +40,10 @@ var OptionsMenuModuleGameplayPanel = function(_dataSource)
 	this.mAutoLootLabel					= null;
 	this.mAlwaysHideTreesLabel			= null;
 	this.mAutoEndTurnLabel				= null;
-    this.mRestoreEquipmentLabel         = null;
-    this.mAutoPauseAfterCityLabel       = null;
+	this.mRestoreEquipmentLabel		 = null;
+	this.mAutoPauseAfterCityLabel	   = null;
 
-	this.mEnemyTooltipsCheckbox	= null;
-	this.mEnemyTooltipsLabel	= null;
-
-	this.mOptions = {
-		AISpeed: {
-			Control: null,
-			Title: null,
-			OptionsKey: 'legend.aispeed',
-			Min: 0.5,
-			Max: 4,
-			Value: 1.0,
-			Step: 0.5
-		}
-	}
-
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -66,7 +51,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 {
 	// create: character panel (init hidden!)
 	this.mContainer = $('<div class="gameplay-panel display-none"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	// create: columns
 	var leftColumn = $('<div class="column"></div>');
@@ -91,7 +76,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -104,7 +89,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -117,14 +102,14 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	// create: overlays options
 	var row = $('<div class="row"></div>');
 	rightColumn.append(row);
 	displayTile = $('<div class="title title-font-big font-color-title">Overlays</div>');
 	row.append(displayTile);
-
+	
 	control = $('<div class="control"></div>');
 	row.append(control);
 	this.mStatsOverlaysCheckbox = $('<input type="checkbox" id="cb-stats-overlays" name="stats-overlays" />');
@@ -136,7 +121,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -146,19 +131,6 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 	this.mOrientationOverlaysLabel = orientationOverlaysCheckboxLabel;
 	control.append(orientationOverlaysCheckboxLabel);
 	this.mOrientationOverlaysCheckbox.iCheck({
-		checkboxClass: 'icheckbox_flat-orange',
-		radioClass: 'iradio_flat-orange',
-		increaseArea: '30%'
-    });
-
-	control = $('<div class="control"></div>');
-	row.append(control);
-	this.mEnemyTooltipsCheckbox = $('<input type="checkbox" id="cb-enemytooltips-overlays" name="enemytooltips-overlays" />');
-	control.append(this.mEnemyTooltipsCheckbox);
-	var mEnemyTooltipsLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-enemytooltips-overlays">Enhanced Enemy Tooltips</label>');
-	this.mEnemyTooltipsLabel = mEnemyTooltipsLabel;
-	control.append(mEnemyTooltipsLabel);
-	this.mEnemyTooltipsCheckbox.iCheck({
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
@@ -181,7 +153,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -194,7 +166,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -207,7 +179,7 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	control = $('<div class="control"></div>');
 	row.append(control);
@@ -233,171 +205,130 @@ OptionsMenuModuleGameplayPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
-
-    control = $('<div class="control"></div>');
-    row.append(control);
-    this.mAutoPauseAfterCityCheckbox = $('<input type="checkbox" id="cb-auto-pause-after-city" name="auto-pause-after-city" />');
-    control.append(this.mAutoPauseAfterCityCheckbox);
-    var autoPauseAfterCityLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-auto-pause-after-city">Auto-Pause After Leaving City</label>');
-    this.mAutoPauseAfterCityLabel = autoPauseAfterCityLabel;
-    control.append(autoPauseAfterCityLabel);
-    this.mAutoPauseAfterCityCheckbox.iCheck({
-        checkboxClass: 'icheckbox_flat-orange',
-        radioClass: 'iradio_flat-orange',
-        increaseArea: '30%'
-    });
-
-	this.createSliderControlDIV(this.mOptions.AISpeed, 'AI Battle Speed', rightColumn);
-
-    this.setupEventHandler();
-};
-
-OptionsMenuModuleGameplayPanel.prototype.createSliderControlDIV = function (_definition, _label, _parentDiv)
-{
-    var self = this;
-	var row = $('<div class="row"></div>');
-	_parentDiv.append(row);
-	_definition.Title = $('<div class="title title-font-big font-bold font-color-title">' + _label + '</div>');
-	row.append(_definition.Title);
-
-	var control = $('<div class="scale-control"></div>');
-	row.append(control);
-
-	_definition.Control = $('<input class="scale-slider" type="range"/>');
-	_definition.Control.attr('min', _definition.Min);
-	_definition.Control.attr('max', _definition.Max);
-	_definition.Control.attr('step', _definition.Step);
-	_definition.Control.val(_definition.Value);
-	control.append(_definition.Control);
-
-	_definition.Label = $('<div class="scale-label text-font-normal font-color-subtitle">' +_definition.Value + '</div>');
-	control.append(_definition.Label);
-
-	_definition.Control.on("change", function ()
-	{
-		_definition.Value = parseFloat(_definition.Control.val());
-		_definition.Label.text('' + _definition.Value);
-		self.mDataSource.updateGameplayOption("AISpeed", _definition.Value);
 	});
+
+	control = $('<div class="control"></div>');
+	row.append(control);
+	this.mAutoPauseAfterCityCheckbox = $('<input type="checkbox" id="cb-auto-pause-after-city" name="auto-pause-after-city" />');
+	control.append(this.mAutoPauseAfterCityCheckbox);
+	var autoPauseAfterCityLabel = $('<label class="text-font-normal font-color-subtitle" for="cb-auto-pause-after-city">Auto-Pause After Leaving City</label>');
+	this.mAutoPauseAfterCityLabel = autoPauseAfterCityLabel;
+	control.append(autoPauseAfterCityLabel);
+	this.mAutoPauseAfterCityCheckbox.iCheck({
+		checkboxClass: 'icheckbox_flat-orange',
+		radioClass: 'iradio_flat-orange',
+		increaseArea: '30%'
+	});
+
+	this.setupEventHandler();
 };
 
 OptionsMenuModuleGameplayPanel.prototype.destroyDIV = function ()
 {
-    // controls
-    this.mCameraFollowCheckbox.remove();
-    this.mCameraFollowCheckbox = null;
+	// controls
+	this.mCameraFollowCheckbox.remove();
+	this.mCameraFollowCheckbox = null;
 	this.mCameraAdjustLevelCheckbox.remove();
-    this.mCameraAdjustLevelCheckbox = null;
+	this.mCameraAdjustLevelCheckbox = null;
 	this.mAlwaysHideTreesCheckbox.remove();
-    this.mAlwaysHideTreesCheckbox = null;
-    this.mStatsOverlaysCheckbox.remove();
-    this.mStatsOverlaysCheckbox = null;
-    this.mOrientationOverlaysCheckbox.remove();
-    this.mOrientationOverlaysCheckbox = null;
+	this.mAlwaysHideTreesCheckbox = null;
+	this.mStatsOverlaysCheckbox.remove();
+	this.mStatsOverlaysCheckbox = null;
+	this.mOrientationOverlaysCheckbox.remove();
+	this.mOrientationOverlaysCheckbox = null;
 	this.mMovementPlayerCheckbox.remove();
-    this.mMovementPlayerCheckbox = null;
+	this.mMovementPlayerCheckbox = null;
 	this.mMovementAICheckbox.remove();
-    this.mMovementAICheckbox = null;
+	this.mMovementAICheckbox = null;
 	this.mAutoEndTurnCheckbox.remove();
-    this.mAutoEndTurnCheckbox = null;
+	this.mAutoEndTurnCheckbox = null;
 	this.mAutoLootCheckbox.remove();
-    this.mAutoLootCheckbox = null;
-    this.mRestoreEquipmentCheckbox.remove();
+	this.mAutoLootCheckbox = null;
+	this.mRestoreEquipmentCheckbox.remove();
 	this.mRestoreEquipmentCheckbox = null;
 
-	this.mEnemyTooltipsCheckbox.remove();
-	this.mEnemyTooltipsCheckbox	= null;
-
-    this.mContainer.empty();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer = null;
 };
 
 
 OptionsMenuModuleGameplayPanel.prototype.setupEventHandler = function ()
 {
-    //this.removeEventHandler();
+	//this.removeEventHandler();
 
 	this.mCameraFollowCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode, self.mCameraFollowCheckbox.prop('checked') === true);
-    });
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode, self.mCameraFollowCheckbox.prop('checked') === true);
+	});
 
-    this.mCameraAdjustLevelCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraAdjustLevel, self.mCameraAdjustLevelCheckbox.prop('checked') === true);
-    });
+	this.mCameraAdjustLevelCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraAdjustLevel, self.mCameraAdjustLevelCheckbox.prop('checked') === true);
+	});
 
 	this.mAlwaysHideTreesCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AlwaysHideTrees, self.mAlwaysHideTreesCheckbox.prop('checked') === true);
-    });
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AlwaysHideTrees, self.mAlwaysHideTreesCheckbox.prop('checked') === true);
+	});
 
 	this.mStatsOverlaysCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.StatsOverlays, self.mStatsOverlaysCheckbox.prop('checked') === true);
-    });
-
-    this.mOrientationOverlaysCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.OrientationOverlays, self.mOrientationOverlaysCheckbox.prop('checked') === true);
-    });
-
-	this.mEnemyTooltipsCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption("EnemyTooltips", self.mEnemyTooltipsCheckbox.prop('checked') === true);
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.StatsOverlays, self.mStatsOverlaysCheckbox.prop('checked') === true);
 	});
 
-    this.mMovementPlayerCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.MovementPlayer, self.mMovementPlayerCheckbox.prop('checked') === true);
-    });
+	this.mOrientationOverlaysCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.OrientationOverlays, self.mOrientationOverlaysCheckbox.prop('checked') === true);
+	});
+
+	this.mMovementPlayerCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.MovementPlayer, self.mMovementPlayerCheckbox.prop('checked') === true);
+	});
 
 	this.mMovementAICheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.MovementAI, self.mMovementAICheckbox.prop('checked') === true);
-    });
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.MovementAI, self.mMovementAICheckbox.prop('checked') === true);
+	});
 
 	this.mAutoEndTurnCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
 		var self = _event.data;
 		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoEndTurn, self.mAutoEndTurnCheckbox.prop('checked') === true);
-    });
+	});
 
 	this.mAutoLootCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoLoot, self.mAutoLootCheckbox.prop('checked') === true);
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoLoot, self.mAutoLootCheckbox.prop('checked') === true);
 	});
 
 	this.mRestoreEquipmentCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
 	{
 		var self = _event.data;
 		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment, self.mRestoreEquipmentCheckbox.prop('checked') === true);
-    });
-
-    this.mAutoPauseAfterCityCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
-    {
-        var self = _event.data;
-        self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity, self.mAutoPauseAfterCityCheckbox.prop('checked') === true);
 	});
 
+	this.mAutoPauseAfterCityCheckbox.on('ifChecked ifUnchecked', null, this, function (_event)
+	{
+		var self = _event.data;
+		self.mDataSource.updateGameplayOption(OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity, self.mAutoPauseAfterCityCheckbox.prop('checked') === true);
+	});
 };
 
 /*
 OptionsMenuModuleGameplayPanel.prototype.removeEventHandler = function ()
 {
-    this.mCameraFollowCheckbox.off('ifChecked ifUnchecked');
-    this.mStatsOverlaysCheckbox.off('ifChecked ifUnchecked');
-    this.mOrientationOverlaysCheckbox.off('ifChecked ifUnchecked');
+	this.mCameraFollowCheckbox.off('ifChecked ifUnchecked');
+	this.mStatsOverlaysCheckbox.off('ifChecked ifUnchecked');
+	this.mOrientationOverlaysCheckbox.off('ifChecked ifUnchecked');
 };
 */
 
@@ -413,11 +344,8 @@ OptionsMenuModuleGameplayPanel.prototype.bindTooltips = function ()
 	this.mAutoLootLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoLoot });
 	this.mAlwaysHideTreesLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AlwaysHideTrees });
 	this.mAutoEndTurnLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoEndTurns });
-    this.mRestoreEquipmentLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.RestoreEquipment });
+	this.mRestoreEquipmentLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.RestoreEquipment });
 	this.mAutoPauseAfterCityLabel.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.MenuScreen.Options.AutoPauseAfterCity });
-	this.mOptions.AISpeed.Control.bindTooltip({ contentType: 'ui-element', elementId: 'legend.aispeed' });
-	this.mOptions.AISpeed.Title.bindTooltip({ contentType: 'ui-element', elementId: 'legend.aispeed' });
-	this.mEnemyTooltipsLabel.bindTooltip({ contentType: 'ui-element', elementId: 'legend.enemytooltip' });
 };
 
 OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
@@ -431,11 +359,8 @@ OptionsMenuModuleGameplayPanel.prototype.unbindTooltips = function ()
 	this.mAutoLootLabel.unbindTooltip();
 	this.mAlwaysHideTreesLabel.unbindTooltip();
 	this.mAutoEndTurnLabel.unbindTooltip();
-    this.mRestoreEquipmentLabel.unbindTooltip();
+	this.mRestoreEquipmentLabel.unbindTooltip();
 	this.mAutoPauseAfterCityLabel.unbindTooltip();
-	this.mOptions.AISpeed.Control.unbindTooltip();
-	this.mOptions.AISpeed.Title.unbindTooltip();
-	this.mEnemyTooltipsLabel.unbindTooltip();
 };
 
 
@@ -459,44 +384,44 @@ OptionsMenuModuleGameplayPanel.prototype.registerDatasourceListener = function()
 
 OptionsMenuModuleGameplayPanel.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 OptionsMenuModuleGameplayPanel.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 OptionsMenuModuleGameplayPanel.prototype.register = function (_parentDiv)
 {
-    console.log('OptionsMenuModuleGameplayPanel::REGISTER');
+	console.log('OptionsMenuModuleGameplayPanel::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Gameplay Panel Module. Reason: Gameplay Panel Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Gameplay Panel Module. Reason: Gameplay Panel Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 OptionsMenuModuleGameplayPanel.prototype.unregister = function ()
 {
-    console.log('OptionsMenuModuleGameplayPanel::UNREGISTER');
+	console.log('OptionsMenuModuleGameplayPanel::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Gameplay Panel Module. Reason: Gameplay Panel Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Gameplay Panel Module. Reason: Gameplay Panel Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 OptionsMenuModuleGameplayPanel.prototype.isRegistered = function ()
@@ -525,7 +450,7 @@ OptionsMenuModuleGameplayPanel.prototype.onOptionsLoaded = function (_dataSource
 {
 	// get controls options
 	var gameplayOptions = _dataSource.getGameplayOptions();
-
+	
 	if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode in gameplayOptions)
 	{
 		this.selectCheckboxOption(this.mCameraFollowCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.CameraFollowMode]);
@@ -574,25 +499,12 @@ OptionsMenuModuleGameplayPanel.prototype.onOptionsLoaded = function (_dataSource
 	if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment in gameplayOptions)
 	{
 		this.selectCheckboxOption(this.mRestoreEquipmentCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.RestoreEquipment]);
-    }
-
-    if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity in gameplayOptions)
-    {
-        this.selectCheckboxOption(this.mAutoPauseAfterCityCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity]);
 	}
 
-	if ("AISpeed" in gameplayOptions)
+	if (OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity in gameplayOptions)
 	{
-		this.mOptions.AISpeed.Control.val(gameplayOptions["AISpeed"]);
-		this.mOptions.AISpeed.Label.text('' + gameplayOptions["AISpeed"]);
+		this.selectCheckboxOption(this.mAutoPauseAfterCityCheckbox, gameplayOptions[OptionsMenuModuleIdentifier.QueryResult.Gameplay.AutoPauseAfterCity]);
 	}
-
-	if ("EnemyTooltips" in gameplayOptions)
-	{
-		this.selectCheckboxOption(this.mEnemyTooltipsCheckbox, gameplayOptions["EnemyTooltips"]);
-	}
-
-
 };
 
 OptionsMenuModuleGameplayPanel.prototype.onDefaultsLoaded = function (_dataSource, _data)

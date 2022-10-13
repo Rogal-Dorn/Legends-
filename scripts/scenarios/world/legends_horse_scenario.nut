@@ -42,19 +42,16 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_horse"
 		]);
 		bros[0].setPlaceInFormation(3);
-		bros[0].setVeteranPerks(2);
 		bros[1].setStartValuesEx([
 			"legend_horserider"
 		]);
 		bros[1].setPlaceInFormation(3);
-		bros[1].setVeteranPerks(2);
 		bros[2].setStartValuesEx([
 			"legend_trader_commander_background"
 		]);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		bros[2].getFlags().set("IsPlayerCharacter", true);
 		bros[2].setPlaceInFormation(4);
-		bros[2].setVeteranPerks(2);
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scimitar"));
@@ -162,7 +159,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 10)
 		{
 			return;
@@ -173,7 +170,7 @@ this.legends_horse_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		if (r == 0)
 		{
-			_list.push("legend_donkey");
+			_list.push("legend_donkey_background");
 		}
 
 		r = this.Math.rand(0, 4);

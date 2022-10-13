@@ -360,7 +360,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_great_khopesh"));
+			this.m.Items.equip(this.new("scripts/items/weapons/ancient/legend_great_khopesh"));
 		}
 	}
 

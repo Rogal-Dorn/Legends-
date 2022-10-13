@@ -154,7 +154,7 @@ this.tactical_desert_camp <- this.inherit("scripts/mapgen/tactical_template", {
 					{
 
 						local rand = this.Math.rand(1, 100);
-					     if (rand <= 20)
+						 if (rand <= 20)
 						 {
 
 							local deco = [

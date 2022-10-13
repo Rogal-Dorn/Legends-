@@ -136,7 +136,29 @@ this.faction_manager <- {
 	{
 		if (this.m.Factions[_f] != null)
 		{
-			return this.m.Factions[_f].getAllies();
+			if (!this.m.Factions[_f].isTemporaryEnemy())
+			{
+				return this.m.Factions[_f].getAllies();
+			}
+			else
+			{
+				local ret = clone this.m.Factions[_f].getAllies();
+				local idx = ret.find(1);
+
+				if (idx != null)
+				{
+					ret.remove(idx);
+				}
+
+				idx = ret.find(2);
+
+				if (idx != null)
+				{
+					ret.remove(idx);
+				}
+
+				return ret;
+			}
 		}
 		else
 		{
@@ -262,7 +284,7 @@ this.faction_manager <- {
 			this.assignSettlementsToCityStates(cityStates);
 		}
 
-		local nobles = this.createNobleHouses( _settings.NumFactions );
+		local nobles = this.createNobleHouses(::Legends.Mod.ModSettings.getSetting("Factions").getValue());
 		this.assignSettlementsToNobleHouses(nobles);
 		this.createBandits();
 		this.createBarbarians();
@@ -327,7 +349,7 @@ this.faction_manager <- {
 		f.addTrait(this.Const.FactionTrait.Bandit);
 		this.m.Factions.push(f);
 	}
-	
+
 	function createFreeCompany()
 	{
 		local f = this.new("scripts/factions/free_company_faction");
@@ -986,7 +1008,7 @@ this.faction_manager <- {
 			}
 		}
 
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0);
+		this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(80.0);
 		this.logInfo("Making a noble house friendly");
 
 	}
@@ -995,7 +1017,7 @@ this.faction_manager <- {
 	{
 		local nobleHouses = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
 		local randomHouseID = nobleHouses[this.Math.rand(0, nobleHouses.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0);
+		this.World.FactionManager.getFaction(randomHouseID).setPlayerRelation(-80.0);
 		this.logInfo("Making a noble house unfriendly");
 	}
 
@@ -1022,7 +1044,7 @@ this.faction_manager <- {
 	{
 		local settlements = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.Settlement);
 		local randomSettlementID = settlements[this.Math.rand(0, settlements.len() - 1)].getID();
-	    this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0);
+		this.World.FactionManager.getFaction(randomSettlementID).setPlayerRelation(50.0);
 		this.logInfo("Making a settlement friendly");
 		local settlements = this.World.EntityManager.getSettlements();
 		foreach( s in settlements )
@@ -1260,6 +1282,11 @@ this.faction_manager <- {
 	{
 		local feuding = 0;
 		local nobles = this.getFactionsOfType(this.Const.FactionType.NobleHouse);
+
+		if (nobles.len() <= 2)
+		{
+			return false;
+		}
 
 		foreach( n in nobles )
 		{

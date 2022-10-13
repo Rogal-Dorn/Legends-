@@ -60,6 +60,7 @@ this.town_barber_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 			"beard",
 			"hair",
 			"tattoo_body",
+			"tattoo_head",
 			"beard_top"
 		]);
 		temp.setDirty(true);

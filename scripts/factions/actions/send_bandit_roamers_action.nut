@@ -67,7 +67,7 @@ this.send_bandit_roamers_action <- this.inherit("scripts/factions/faction_action
 
 		foreach( s in _faction.getSettlements() )
 		{
-			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF())
+			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF() || s.getFlags().get("isContractLocation")) //use to prevent patrols on camps that are marked by contracts.
 			{
 				continue;
 			}
@@ -88,7 +88,7 @@ this.send_bandit_roamers_action <- this.inherit("scripts/factions/faction_action
 		settlement.setLastSpawnTimeToNow();
 		local rand = this.Math.rand(60, 110);
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-			if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+			if (::Legends.Mod.ModSettings.getSetting("DistanceScaling").getValue() && distanceToNextSettlement > 14)
 			{
 				rand *= distanceToNextSettlement / 14.0;
 			}

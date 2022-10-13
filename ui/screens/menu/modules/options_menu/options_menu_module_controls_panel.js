@@ -27,7 +27,7 @@ var OptionsMenuModuleControlsPanel = function(_dataSource)
 	this.mDragWithMouseLabel	= null;
 	this.mHardwareMouseLabel	= null;
 
-    this.registerDatasourceListener();
+	this.registerDatasourceListener();
 };
 
 
@@ -35,7 +35,7 @@ OptionsMenuModuleControlsPanel.prototype.createDIV = function (_parentDiv)
 {
 	// create: character panel (init hidden!)
 	this.mContainer = $('<div class="controls-panel display-none"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	// create: columns
 	var leftColumn = $('<div class="column"></div>');
@@ -60,7 +60,7 @@ OptionsMenuModuleControlsPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	var edgeOfScreenControl = $('<div class="control"></div>');
 	row.append(edgeOfScreenControl);
@@ -73,7 +73,7 @@ OptionsMenuModuleControlsPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
 	// create: mouse options
 	row = $('<div class="row"></div>');
@@ -92,23 +92,23 @@ OptionsMenuModuleControlsPanel.prototype.createDIV = function (_parentDiv)
 		checkboxClass: 'icheckbox_flat-orange',
 		radioClass: 'iradio_flat-orange',
 		increaseArea: '30%'
-    });
+	});
 
-    this.setupEventHandler();
+	this.setupEventHandler();
 };
 
 OptionsMenuModuleControlsPanel.prototype.destroyDIV = function ()
 {
-    // controls
-    this.mEdgeOfScreenCheckbox.remove();
-    this.mEdgeOfScreenCheckbox  = null;
-    this.mDragWithMouseCheckbox.remove();
-    this.mDragWithMouseCheckbox = null;
-    this.mHardwareMouseCheckbox.remove();
-    this.mHardwareMouseCheckbox = null;
+	// controls
+	this.mEdgeOfScreenCheckbox.remove();
+	this.mEdgeOfScreenCheckbox  = null;
+	this.mDragWithMouseCheckbox.remove();
+	this.mDragWithMouseCheckbox = null;
+	this.mHardwareMouseCheckbox.remove();
+	this.mHardwareMouseCheckbox = null;
 
-    this.mContainer.empty();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer = null;
 };
 
 
@@ -116,28 +116,28 @@ OptionsMenuModuleControlsPanel.prototype.setupEventHandler = function ()
 {
    //this.removeEventHandler();
 
-    this.mEdgeOfScreenCheckbox.on('ifChecked', null, this, function(_event) {
-        var self = _event.data;
-        self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.Key, OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.EdgeOfScreen);
-    });
+	this.mEdgeOfScreenCheckbox.on('ifChecked', null, this, function(_event) {
+		var self = _event.data;
+		self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.Key, OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.EdgeOfScreen);
+	});
 
-    this.mDragWithMouseCheckbox.on('ifChecked', null, this, function(_event) {
-        var self = _event.data;
-        self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.Key, OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.DragWithMouse);
-    });
+	this.mDragWithMouseCheckbox.on('ifChecked', null, this, function(_event) {
+		var self = _event.data;
+		self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.Key, OptionsMenuModuleIdentifier.QueryResult.Controls.Scrollmode.DragWithMouse);
+	});
 
-    this.mHardwareMouseCheckbox.on('ifChecked ifUnchecked', null, this, function(_event) {
-        var self = _event.data;
-        self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.HardwareMouse, self.mHardwareMouseCheckbox.prop('checked') === true);
-    });
+	this.mHardwareMouseCheckbox.on('ifChecked ifUnchecked', null, this, function(_event) {
+		var self = _event.data;
+		self.mDataSource.updateControlsOption(OptionsMenuModuleIdentifier.QueryResult.Controls.HardwareMouse, self.mHardwareMouseCheckbox.prop('checked') === true);
+	});
 };
 
 /*
 OptionsMenuModuleControlsPanel.prototype.removeEventHandler = function ()
 {
-    this.mEdgeOfScreenCheckbox.off('ifChecked ifUnchecked');
-    this.mDragWithMouseCheckbox.off('ifChecked ifUnchecked');
-    this.mHardwareMouseCheckbox.off('ifChecked ifUnchecked');
+	this.mEdgeOfScreenCheckbox.off('ifChecked ifUnchecked');
+	this.mDragWithMouseCheckbox.off('ifChecked ifUnchecked');
+	this.mHardwareMouseCheckbox.off('ifChecked ifUnchecked');
 };
 */
 
@@ -196,44 +196,44 @@ OptionsMenuModuleControlsPanel.prototype.registerDatasourceListener = function()
 
 OptionsMenuModuleControlsPanel.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
-    this.bindTooltips();
+	this.createDIV(_parentDiv);
+	this.bindTooltips();
 };
 
 OptionsMenuModuleControlsPanel.prototype.destroy = function()
 {
-    this.unbindTooltips();
-    this.destroyDIV();
+	this.unbindTooltips();
+	this.destroyDIV();
 };
 
 
 OptionsMenuModuleControlsPanel.prototype.register = function (_parentDiv)
 {
-    console.log('OptionsMenuModuleControlsPanel::REGISTER');
+	console.log('OptionsMenuModuleControlsPanel::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Controls Panel Module. Reason: Controls Panel Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Controls Panel Module. Reason: Controls Panel Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 OptionsMenuModuleControlsPanel.prototype.unregister = function ()
 {
-    console.log('OptionsMenuModuleControlsPanel::UNREGISTER');
+	console.log('OptionsMenuModuleControlsPanel::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Controls Panel Module. Reason: Controls Panel Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Controls Panel Module. Reason: Controls Panel Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 OptionsMenuModuleControlsPanel.prototype.isRegistered = function ()

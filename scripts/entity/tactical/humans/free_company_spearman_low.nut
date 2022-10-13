@@ -1,8 +1,8 @@
 this.free_company_spearman_low <- this.inherit("scripts/entity/tactical/humans/free_company_spearman", {
 	m = {
 		Outfits = [
-            [1, "low_tier_unit_catchall_outfit_01"]
-            // [1, "mercenary_spearman_outfit_01"]
+			[1, "low_tier_unit_catchall_outfit_01"]
+			// [1, "mercenary_spearman_outfit_01"]
 		]
 		PerkList = this.Const.EnemyPerks.FreeCompanySpearman,
 		PerkPower = 3
@@ -13,9 +13,9 @@ this.free_company_spearman_low <- this.inherit("scripts/entity/tactical/humans/f
 		this.human.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.FreeCompanySpearman);
-        b.MeleeSkill -= 10;
-        b.MeleeDefense -= 5;
-        b.Hitpoints -= 5;
+		b.MeleeSkill -= 10;
+		b.MeleeDefense -= 5;
+		b.Hitpoints -= 5;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;

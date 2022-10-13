@@ -77,7 +77,7 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 				continue;
 			}
 
-			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF())
+			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF() || s.getFlags().get("isContractLocation")) //use to prevent patrols on camps that are marked by contracts.
 			{
 				continue;
 			}
@@ -102,7 +102,7 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 			local mult = this.World.FactionManager.isCivilWar() ? 1.2 : 1.0;
 			}
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
-		if (this.LegendsMod.Configs().LegendLocationScalingEnabled() && distanceToNextSettlement > 14)
+		if (::Legends.Mod.ModSettings.getSetting("DistanceScaling").getValue() && distanceToNextSettlement > 14)
 			{
 			 mult *= distanceToNextSettlement / 14;
 			}

@@ -59,7 +59,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 			this.m.Target = candidates[this.Math.rand(0, candidates.len() - 1)].getRealName();
 		}
 
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.05);
 		}
@@ -112,7 +112,7 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (this.m.IsSouthern)
 		{
 			_draftList.push("daytaler_southern_background");

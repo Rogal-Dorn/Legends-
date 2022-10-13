@@ -790,24 +790,24 @@ this.entity_manager <- {
 
 			for( local i = 0; i < 2; i = ++i )
 			{
-				local r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					party.addToInventory("supplies/bread_item");
-				}
-				else if (r == 2)
-				{
-					party.addToInventory("supplies/mead_item");
-				}
-				else if (r == 3)
-				{
-					party.addToInventory("supplies/dried_fruits_item");
-				}
-				else if (r == 4)
-				{
-					party.addToInventory("supplies/beer_item");
-				}
+				local r = this.Math.rand(1, 13);
+				
+				local loot = [
+					"supplies/bread_item",
+					"supplies/mead_item",
+					"supplies/dried_fruits_item",
+					"supplies/beer_item",
+					"loot/silver_bowl_item",
+					"loot/jeweled_crown_item",
+					"loot/ancient_amber_item",
+					"loot/webbed_valuables_item",
+					"loot/looted_valuables_item",
+					"loot/white_pearls_item",
+					"loot/rainbow_scale_item",
+					"loot/lindwurm_hoard_item",
+					"loot/silverware_item",
+				];
+				party.addToInventory(loot[this.Math.rand(0, loot.len() - 1 )]);
 			}
 
 			party.getSprite("base").setBrush("world_base_07");

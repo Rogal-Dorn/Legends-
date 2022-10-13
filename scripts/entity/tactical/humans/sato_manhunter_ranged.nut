@@ -28,7 +28,7 @@ this.sato_manhunter_ranged <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
-        this.getSprite("socket").setBrush("bust_base_nomads");
+		this.getSprite("socket").setBrush("bust_base_nomads");
 
 		if (this.Math.rand(1, 100) <= 15)
 		{

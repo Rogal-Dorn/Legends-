@@ -120,7 +120,7 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			if (r == 1)
 			{
 				this.Const.World.Common.addTroop(this, {
-					Type = this.Const.World.Spawn.Troops.SkeletonMedium
+					Type = this.Const.World.Spawn.Troops.SkeletonGladiator
 				}, false);
 			}
 			else if (r == 2)
@@ -183,7 +183,7 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 		], _lootTable);
 
 		_lootTable.push(this.Const.World.Common.pickArmor([
-			[1, "legendary/emperors_armor"],
+			[1, "legendary/emperors_armor"]
 		]))
 	}
 

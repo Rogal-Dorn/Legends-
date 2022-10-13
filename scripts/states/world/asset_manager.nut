@@ -29,6 +29,7 @@ this.asset_manager <- {
 		HitpointsPerHourMult = 1.0,
 		RepairSpeedMult = 1.0,
 		HiringCostMult = 1.0,
+		CampingMult = 1.5,
 		RosterSizeAdditionalMin = 0,
 		RosterSizeAdditionalMax = 0,
 		XPMult = 1.0,
@@ -71,10 +72,7 @@ this.asset_manager <- {
 		LastHourUpdated = 0,
 		LastFoodConsumed = 0,
 		IsIronman = false,
-		IsAutosave = false,
-		IsExplorationMode = false,
 		IsPermanentDestruction = true,
-		IsLegendPerkTrees = true,
 		IsCamping = false,
 		IsUsingProvisions = true,
 		IsConsumingAssets = true,
@@ -276,24 +274,9 @@ this.asset_manager <- {
 		return this.m.IsIronman;
 	}
 
-	function isAutosave()
-	{
-		return this.m.IsAutosave;
-	}
-
-	function isExplorationMode()
-	{
-		return this.m.IsExplorationMode;
-	}
-
 	function isPermanentDestruction()
 	{
 		return this.m.IsPermanentDestruction;
-	}
-
-	function isLegendPerkTrees()
-	{
-		return this.m.IsLegendPerkTrees;
 	}
 
 	function isCamping()
@@ -440,9 +423,7 @@ this.asset_manager <- {
 		this.m.EconomicDifficulty = _settings.EconomicDifficulty;
 		this.m.IsIronman = _settings.Ironman;
 		this.m.IsPermanentDestruction = _settings.PermanentDestruction;
-		this.m.IsLegendPerkTrees = _settings.LegendPerkTrees;
 		this.m.Origin = _settings.StartingScenario;
-		this.m.IsExplorationMode = _settings.ExplorationMode;
 		this.m.BusinessReputation = 0;
 		this.m.SeedString = _settings.Seed;
 		this.World.FactionManager.getGreaterEvil().Type = _settings.GreaterEvil;
@@ -451,7 +432,6 @@ this.asset_manager <- {
 		this.m.Ammo = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Ammo;
 		this.m.ArmorParts = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].ArmorParts;
 		this.m.Medicine = this.Const.LegendMod.StartResources[_settings.BudgetDifficulty].Medicine;
-		this.m.IsAutosave = _settings.Autosave;
 
 
 		this.m.Stash.clear();
@@ -589,7 +569,7 @@ this.asset_manager <- {
 		}
 
 		ret.ArmorParts = this.Math.ceil(ret.ArmorParts);
-		ret.Hours = this.Math.ceil(ret.Hours * (this.isCamping() ? 0.5 : 1.0) / this.m.RepairSpeedMult);
+		ret.Hours = this.Math.ceil(ret.Hours / (this.isCamping() ? this.m.CampingMult : 1.0) / this.m.RepairSpeedMult);
 		return ret;
 	}
 
@@ -611,6 +591,11 @@ this.asset_manager <- {
 			local injuries = bro.getSkills().query(this.Const.SkillType.TemporaryInjury);
 
 			local ht;
+			if (bro.getSkills().hasSkill("injury.sickness"))
+			{
+				injuries.push(bro.getSkills().getSkillByID("injury.sickness"));
+			}
+
 			foreach( inj in injuries )
 			{
 				ht = inj.getHealingTime();
@@ -718,6 +703,7 @@ this.asset_manager <- {
 		this.m.HitpointsPerHourMult = 1.0;
 		this.m.RepairSpeedMult = 1.0;
 		this.m.HiringCostMult = 1.0;
+		this.m.CampingMult = 1.5;
 		this.m.RosterSizeAdditionalMin = 0;
 		this.m.RosterSizeAdditionalMax = 0;
 		this.m.XPMult = 1.0;
@@ -745,10 +731,16 @@ this.asset_manager <- {
 		this.m.IsSurvivalGuaranteed = false;
 		this.m.IsShowingExtendedFootprints = false;
 		this.m.IsBlacksmithed = false;
+		this.World.Retinue.update();
 
 		if (this.m.Origin != null)
 		{
 			this.m.Origin.onInit();
+		}
+
+		if (this.World.Ambitions.hasActiveAmbition())
+		{
+			this.World.Ambitions.getActiveAmbition().onUpdateEffect();
 		}
 	}
 
@@ -760,14 +752,14 @@ this.asset_manager <- {
 		local globalTable = this.getroottable();
 		globalTable.Stash <- this.WeakTableRef(this.m.Stash);
 		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )
-        {
+		{
 			local name = "NULL"
 			if (i == 0)
 			{
 				name = "Formation 1"
 			}
-            this.m.FormationNames.push(name);
-        }
+			this.m.FormationNames.push(name);
+		}
 	}
 
 	function init()
@@ -1040,7 +1032,7 @@ this.asset_manager <- {
 			this.m.LastHourUpdated = this.World.getTime().Hours;
 			this.consumeFood();
 			local roster = this.World.getPlayerRoster().getAll();
-			local campMultiplier = this.isCamping() ? 1.5 : 1.0;
+			local campMultiplier = this.isCamping() ? this.m.CampingMult : 1.0;
 
 			foreach( bro in roster )
 			 {
@@ -1197,11 +1189,6 @@ this.asset_manager <- {
 			{
 				t.addNewResources();
 			}
-		}
-
-		if (this.LegendsMod.Configs().m.IsHelmets == 1)
-		{
-			this.LegendsMod.Configs().m.IsHelmets += (this.Const.DLC.Wildmen && this.Const.DLC.Desert) ? 1 : 0
 		}
 
 		// Adds Taro's Turn it in Mod
@@ -1589,7 +1576,7 @@ this.asset_manager <- {
 		return ret;
 	}
 
-    function changeFormation( _index )
+	function changeFormation( _index )
 	{
 
 		if (_index == this.m.FormationIndex)
@@ -1662,7 +1649,7 @@ this.asset_manager <- {
 		this.updateFormation();
 	}
 
-    function clearFormation()
+	function clearFormation()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
 
@@ -1695,12 +1682,12 @@ this.asset_manager <- {
 		this.m.FormationNames[_index] = _name;
 	}
 
-    function changeFormationName( _name )
+	function changeFormationName( _name )
 	{
 		this.setFormationName(this.m.FormationIndex, _name);
 	}
 
-	function updateFormation()
+	function updateFormation( considerMaxBros = false )
 	{
 		local NOT_IN_FORMATION = 255;
 		local formation = [];
@@ -1711,7 +1698,7 @@ this.asset_manager <- {
 
 		foreach( b in roster )
 		{
-			if (b.getPlaceInFormation() != NOT_IN_FORMATION && formation[b.getPlaceInFormation()] == false)
+			if (b.getPlaceInFormation() != NOT_IN_FORMATION && formation[b.getPlaceInFormation()] == false && (!considerMaxBros || inCombat < this.m.BrothersMaxInCombat))
 			{
 				formation[b.getPlaceInFormation()] = true;
 
@@ -1775,15 +1762,15 @@ this.asset_manager <- {
 
 	function updateLook( _updateTo = -1 ) // Will check any origin for update look.
 	{
-	    if (_updateTo != -1)
-	    {
-	        this.m.Look = _updateTo
-	    }
+		if (_updateTo != -1)
+		{
+			this.m.Look = _updateTo
+		}
 
-	    this.World.State.getPlayer().setBaseImage(this.m.Look);
-	    if ("updateLook" in this.World.Assets.getOrigin()){
-	         this.World.Assets.getOrigin().updateLook();
-	    }
+		this.World.State.getPlayer().setBaseImage(this.m.Look);
+		if ("updateLook" in this.World.Assets.getOrigin()){
+			 this.World.Assets.getOrigin().updateLook();
+		}
 	}
 
 	function saveEquipment()
@@ -1986,7 +1973,7 @@ this.asset_manager <- {
 			data.Text += this.addBrotherEnding(brothers, excludedBackgrounds, true);
 			data.Text += "\n\n{The other day, a hermit came up to your cabin asking if you knew of the %companyname%. You shook your head and feigned interest. The wildman says it is the greatest company in all the land. You asked him if he was totally sure about that. The hermit shrank back as if you\'d insulted him personally.%SPEECH_ON%Am I sure? Mister, you\'d best sit down. Let me tell you all about the %companyname%. First off, they say the man who ran it was seven-feet tall and made of all muscle. Went by the name of...%SPEECH_OFF% | It wasn\'t the easiest move to leave the company behind, but there\'s a room in your keep that lets you swim around in gold crowns so it\'s not too bad. | Now you spend your days not even sure what to do with all your gold. A lot of people come by the keep. Wenches of all shapes and sizes... strange men with even stranger, gold-sucking ideas... and a great deal of cloaked noble princes humbling themselves by asking for advice on warfare. Some days, while chopping away in your garden, you think about getting back into the field. Boredom, as it turns out, is the most sickly and nasty of beasts you\'ve faced yet. | A man came by your keep the other day. He wanted help on starting a mercenary band, obviously taking inspiration from your own feats. You asked how many other successful sellswords he\'d talked to. He shrugged.%SPEECH_ON%You\'re the only one so far.%SPEECH_OFF%You nodded back.%SPEECH_ON%That\'s right. I\'m the only one despite hundreds of men like me having been out there. Maybe it\'s cause I\'m that good, but I think the truth is that I\'m just that lucky. So if you want my advice on starting a mercenary company, don\'t. That\'s all. One of my servants will show you the door. Good day now.%SPEECH_OFF% | While tending to your garden, you find a mouse nibbling on one of your tomatoes. It\'s so buzzed on the flavors you easily capture the rodent and hold it in both hands. Despondent defeatism spreads across its face as you stare at it, half its maw still gnawing away on a bit of tomato. A servant rushes over.%SPEECH_ON%I can rid you of that, my lord.%SPEECH_OFF%You stare at the servant and then back at the mouse.%SPEECH_ON%No, no I think I\'ll keep it. I could use a friend.%SPEECH_OFF%The servant looks down. You slap him on the shoulder.%SPEECH_ON%Cheer up now. You\'re my friend, too!%SPEECH_OFF%The servant smiles.%SPEECH_ON%Thank you, my lord.%SPEECH_OFF%}";
 		}
-		else if (this.World.Statistics.getFlags().get("GreaterEvilsDefeated") == 1)
+		else if (this.World.Statistics.getFlags().get("GreaterEvilsDefeated") >= 1)
 		{
 			this.Music.setTrackList(this.Const.Music.Retirement3Tracks, this.Const.Music.CrossFadeTime);
 			this.updateAchievement("LeavingAMark", 1, 1);
@@ -2480,7 +2467,6 @@ this.asset_manager <- {
 		_out.writeU8(this.m.CombatDifficulty);
 		_out.writeBool(this.m.IsIronman);
 		_out.writeBool(!this.m.IsPermanentDestruction);
-		_out.writeBool(this.m.IsLegendPerkTrees);
 		_out.writeString(this.m.Origin.getID());
 		_out.writeString(this.m.SeedString);
 		_out.writeF32(this.m.Money);
@@ -2501,7 +2487,6 @@ this.asset_manager <- {
 		}
 		_out.writeU8(this.m.BrothersMax);
 		_out.writeU16(this.m.LastDayResourcesUpdated);
-		_out.writeBool(this.m.IsExplorationMode);
 	}
 
 	function onDeserialize( _in )
@@ -2528,10 +2513,6 @@ this.asset_manager <- {
 		this.m.CombatDifficulty = _in.readU8();
 		this.m.IsIronman = _in.readBool();
 		this.m.IsPermanentDestruction = !_in.readBool();
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.IsLegendPerkTrees = _in.readBool();
-		}
 
 		if (_in.getMetaData().getVersion() >= 46)
 		{
@@ -2552,6 +2533,11 @@ this.asset_manager <- {
 		{
 			_in.readI32();
 			this.m.SeedString = "Unknown";
+		}
+
+		if (_in.getMetaData().getVersion() < 64 && this.m.Origin != null && this.m.Origin.getID() == "scenario.manhunters")
+		{
+			this.m.Stash.add(this.new("scripts/items/misc/manhunters_ledger_item"));
 		}
 
 		this.m.Money = _in.readF32();
@@ -2580,7 +2566,6 @@ this.asset_manager <- {
 		}
 		local maxBros = _in.readU8(); //Deprecated, but kept for backwards save compatibility. It is now dynamically calculated
 		this.m.LastDayResourcesUpdated = _in.readU16();
-		this.m.IsExplorationMode = _in.readBool();
 
 		this.updateAverageMoodState();
 		this.updateFood();

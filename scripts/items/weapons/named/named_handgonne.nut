@@ -52,7 +52,7 @@ this.named_handgonne <- this.inherit("scripts/items/weapons/named/named_weapon",
 		this.m.ConditionMax = 60.0;
 		this.m.RegularDamage = 35;
 		this.m.RegularDamageMax = 75;
-		this.m.ArmorDamageMult = 1.0;
+		this.m.ArmorDamageMult = 0.9;
 		this.m.DirectDamageMult = 0.25;
 		this.m.IsEnforcingRangeLimit = true;
 		this.randomizeValues();
@@ -77,7 +77,7 @@ this.named_handgonne <- this.inherit("scripts/items/weapons/named/named_weapon",
 
 	function getTooltip()
 	{
-		local result = this.weapon.getTooltip();
+		local result = this.named_weapon.getTooltip();
 
 		if (!this.m.IsLoaded)
 		{
@@ -133,7 +133,7 @@ this.named_handgonne <- this.inherit("scripts/items/weapons/named/named_weapon",
 
 	function onCombatFinished()
 	{
-		this.weapon.onCombatFinished();
+		this.named_weapon.onCombatFinished();
 		this.m.IsLoaded = true;
 	}
 

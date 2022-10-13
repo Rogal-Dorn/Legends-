@@ -23,27 +23,27 @@ var RootScreenFPSModule = function()
 
 RootScreenFPSModule.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 RootScreenFPSModule.prototype.onConnection = function (_handle)
 {
-    //if (typeof(_handle) == 'string')
-    {
-        this.mSQHandle = _handle;
-    }
+	//if (typeof(_handle) == 'string')
+	{
+		this.mSQHandle = _handle;
+	}
 };
 
 RootScreenFPSModule.prototype.onDisconnection = function ()
 {
-    this.mSQHandle = null;
+	this.mSQHandle = null;
 };
 
 
 RootScreenFPSModule.prototype.createDIV = function (_parentDiv)
 {
 	this.mContainer = $('<div class="fps-container ui-control.panel-embossed"></div>');
-    _parentDiv.append(this.mContainer);
+	_parentDiv.append(this.mContainer);
 
 	var fpsLabel = $('<div class="label default-font-normal ui-control-fps-label">FPS:</div>');
 	this.mFPSLabel = $('<div class="value default-font-normal ui-control-fps-label">60</div>');
@@ -53,53 +53,53 @@ RootScreenFPSModule.prototype.createDIV = function (_parentDiv)
 
 RootScreenFPSModule.prototype.destroyDIV = function ()
 {
-    this.mFPSLabel.remove();
-    this.mFPSLabel = null;
+	this.mFPSLabel.remove();
+	this.mFPSLabel = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 RootScreenFPSModule.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
+	this.createDIV(_parentDiv);
 };
 
 RootScreenFPSModule.prototype.destroy = function()
 {
-    this.destroyDIV();
+	this.destroyDIV();
 };
 
 
 RootScreenFPSModule.prototype.register = function (_parentDiv)
 {
-    console.log('RootScreenFPSModule::REGISTER');
+	console.log('RootScreenFPSModule::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register FPS Module. Reason: FPS Module is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register FPS Module. Reason: FPS Module is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 RootScreenFPSModule.prototype.unregister = function ()
 {
-    console.log('RootScreenFPSModule::UNREGISTER');
+	console.log('RootScreenFPSModule::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister FPS Module. Reason: FPS Module is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister FPS Module. Reason: FPS Module is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 

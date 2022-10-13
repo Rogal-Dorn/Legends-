@@ -59,8 +59,8 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 			Weapon = [
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.StavesTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.StaffTree,
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

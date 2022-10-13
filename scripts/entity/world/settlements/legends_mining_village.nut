@@ -225,11 +225,11 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"female_thief_background",
 		]];
 		this.m.StablesLists = [[
-			"legend_donkey"
+			"legend_donkey_background"
 		],[
-			"legend_donkey"
+			"legend_donkey_background"
 		],[
-			"legend_donkey"
+			"legend_donkey_background"
 		]];
 		this.m.Rumors = this.Const.Strings.RumorsMiningSettlement;
 		this.m.ProduceString = "ore";
@@ -307,7 +307,7 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/surface_copper_vein_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -317,7 +317,7 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/surface_iron_vein_location",
 				Terrain = ALL
 				NearTerrain = [],

@@ -49,8 +49,8 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				0.0,//plains
 				0.0, //swamp
 				0.0, //hills
-				0.0, //forest
-				0.0, //forest
+				0.0, //forest (pine?)
+				0.0, //forest (snow?)
 				0.0, //forest_leaves
 				0.0, //autumn_forest
 				0.0, //mountains
@@ -639,24 +639,24 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function addPerk( _perk, _row = 0, _isRefundable = true )
 	{
 		local perkDefObject = clone this.Const.Perks.PerkDefObjects[_perk];
-        //Dont add dupes
-        if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
-        {
-            return false;
-        }
+		//Dont add dupes
+		if (this.m.PerkTreeMap == null || perkDefObject.ID in this.m.PerkTreeMap)
+		{
+			return false;
+		}
 
-        perkDefObject.Row <- _row;
-        perkDefObject.Unlocks <- _row;
-        perkDefObject.IsRefundable <- _isRefundable;
+		perkDefObject.Row <- _row;
+		perkDefObject.Unlocks <- _row;
+		perkDefObject.IsRefundable <- _isRefundable;
 
-        for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
-        {
-            this.getPerkTree().push([]);
-        }
-        this.getPerkTree()[_row].push(perkDefObject);
+		for (local i = this.getPerkTree().len(); i < _row + 1; i = ++i)
+		{
+			this.getPerkTree().push([]);
+		}
+		this.getPerkTree()[_row].push(perkDefObject);
 		this.m.CustomPerkTree[_row].push(_perk);
-        this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
-        return true;
+		this.m.PerkTreeMap[perkDefObject.ID] <- perkDefObject;
+		return true;
 	}
 
 	function addPerkGroup(_Tree) {
@@ -700,6 +700,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		delete this.m.PerkTreeMap[perkDefObject.ID];
 		
+		return true;
+	}
+
+	function hasPerkGroup( _group )
+	{
+		foreach (row in _group.Tree)
+		{
+			foreach (perk in row)
+			{
+				if (!this.hasPerk(perk)) return false;
+			}
+		}
+
 		return true;
 	}
 
@@ -1074,7 +1087,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 	function rebuildPerkTree( _tree )
 	{
 		this.m.CustomPerkTree = _tree
-		if (this.World.Assets.isLegendPerkTrees())
+		if (::Legends.Mod.ModSettings.getSetting("PerkTrees").getValue())
 		{
 			this.m.CustomPerkTree = this.Const.Perks.MergeDynamicPerkTree(_tree, this.m.PerkTreeDynamic);
 		}
@@ -1143,7 +1156,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		if (this.m.CustomPerkTree == null)
 		{
-			if (this.World.Assets.isLegendPerkTrees())
+			if (::Legends.Mod.ModSettings.getSetting("PerkTrees").getValue())
 			{
 
 				local mins = this.getPerkTreeDynamicMins();
@@ -1209,6 +1222,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				local previous = wage * this.Math.pow(1.1, 10);
 				_properties.DailyWage += previous * this.Math.pow(1.03, level - 1 - 10) - previous;
 			}
+		}
+
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getID() != "background.slave")
+		{
+			_properties.XPGainMult *= 0.9;
 		}
 	}
 
@@ -1390,7 +1408,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function calculateAdditionalRecruitmentLevels()
 	{
-		if (this.LegendsMod.Configs().LegendRecruitScalingEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("RecruitScaling").getValue())
 		{
 			local roster = this.World.getPlayerRoster().getAll();
 			local levels = 0;
@@ -1723,13 +1741,10 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			this.buildPerkTree();
 		}
 
-		if (this.Const.LegendMod.compareSavedVersionTo("15.0.2.10", _in.getMetaData()) != -1)
+		local num = _in.readU8();
+		for (local i = 0; i < num; i++)
 		{
-			local num = _in.readU8();
-			for (local i = 0; i < num; i++)
-			{
-				this.getPerk(_in.readU16()).IsRefundable <- false;
-			}
+			this.getPerk(_in.readU16()).IsRefundable <- false;
 		}
 	}
 });

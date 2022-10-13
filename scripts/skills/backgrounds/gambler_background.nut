@@ -56,7 +56,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.StaffTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -77,19 +77,17 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	function setGender(_gender = -1)
 	{
 		local r = _gender;
-		if (_gender == -1)
+		switch (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue()) // this is what this code was supposed to be if you go back far enough
 		{
-			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
+			case "All":
+				_gender = ::Math.rand(0, 1);
+				break;
+			case "Specific":
+				_gender = ::Math.rand(0, 9);
+				break;
 		}
+		if (_gender != 1) return;
 
-		if (r != 1)
-		{
-			return;
-		}
 		this.m.Name = "Gambler";
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;

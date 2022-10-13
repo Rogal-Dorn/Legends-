@@ -26,12 +26,12 @@ this.paint_white_green_yellow_blueprint_dye <- this.inherit("scripts/crafting/bl
 
 	function onCraft( _stash )
 	{
-            _stash.add(this.new("scripts/items/misc/paint_white_green_yellow_item"));
+			_stash.add(this.new("scripts/items/misc/paint_white_green_yellow_item"));
 	}
 
 	function isQualified()
 	{
-		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 });
 

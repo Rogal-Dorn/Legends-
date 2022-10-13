@@ -51,8 +51,8 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.SlingsTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.CleaverTree
 			],

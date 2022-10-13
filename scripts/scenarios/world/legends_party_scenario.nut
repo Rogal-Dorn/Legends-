@@ -55,23 +55,23 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setStartValuesEx([
 			"legend_crusader_background"
 		]);
-		bros[2].getBackground().m.RawDescription = "%name% is a righteous fighter, constantly chanting religious hymns and psalms. The crusader exists to fight the undead and has a burning passion against any kind of necromancy. How the holy warrior ever agreed to join forces with those who do not share a similar zeal remains a mystery.";
+		bros[2].getBackground().m.RawDescription = "{%name% is a righteous fighter, constantly chanting religious hymns and psalms. The crusader exists to fight the undead and has a burning passion against any kind of necromancy. How the holy warrior ever agreed to join forces with those who do not share a similar zeal remains a mystery.}";
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
 		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		bros[3].setStartValuesEx([
-			"legend_witch_background"
+			"legend_druid_background"
 		]);
-		bros[3].getBackground().m.RawDescription = "%name% is a cunning savant, a well of knowledge on nearly ever subject. Spending hours gathering ingredients and tinkering with concoctions to use in battle, %name% assures you no magic is involved, but it sure looks like it.";
+		bros[3].getBackground().m.RawDescription = "{Druids are from the wild lands and are ardent defenders of nature.}";
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/old_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/light_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/iron_lungs_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/eagle_eyes_trait"));
 		bros[4].setStartValuesEx([
 			"legend_noble_commander_background"
 		]);
-		bros[4].getBackground().m.RawDescription = "You can tell %name% is nobleborn from a thousand yards. The posture, the upper class mannerisms and the uncanny ability to never get as dirty as the rest of the party. A conniving, selfish liar with a silver tongue to boot, like any noble. Despite this, the blue-blood denies all connections to nobility and claims to be a commoner like everyone else.";
+		bros[4].getBackground().m.RawDescription = "{You can tell %name% is nobleborn from a thousand yards. The posture, the upper class mannerisms and the uncanny ability to never get as dirty as the rest of the party. A conniving, selfish liar with a silver tongue to boot, like any noble. Despite this, the blue-blood denies all connections to nobility and claims to be a commoner like everyone else.}";
 		bros[4].setPlaceInFormation(13);
 		bros[4].setVeteranPerks(2);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/cocky_trait"));
@@ -79,7 +79,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].setStartValuesEx([
 			"legend_ranger_background"
 		]);
-		bros[5].getBackground().m.RawDescription = "There is a quiet calm to %name%, with an intense gaze that seems to see more details than anyone else. A person of few words, it is clear the ranger holds a deep affinity with the land and sees orcs as a symbol of all that is wrong with the world.";
+		bros[5].getBackground().m.RawDescription = "{There is a quiet calm to %name%, with an intense gaze that seems to see more details than anyone else. A person of few words, it is clear the ranger holds a deep affinity with the land and sees orcs as a symbol of all that is wrong with the world.}";
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
 		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
@@ -88,11 +88,11 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 
 	function onInit()
-    {
-        this.starting_scenario.onInit();
-        this.World.Assets.m.ChampionChanceAdditional += 5;
-        this.World.Flags.set("IsLegendsParty", true);
-    }
+	{
+		this.starting_scenario.onInit();
+		this.World.Assets.m.ChampionChanceAdditional += 5;
+		this.World.Flags.set("IsLegendsParty", true);
+	}
 
 	function onSpawnPlayer()
 	{

@@ -54,7 +54,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Adrenalin,
+				this.Const.Perks.PerkDefs.Adrenaline,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Student
 			],
@@ -147,16 +147,13 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -251,7 +248,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 		actor.getBaseProperties().RangedDefense += (actor.getBaseProperties().RangedDefense < _targetEntity.getBaseProperties().RangedDefense ? 1 : 0);
 		actor.getBaseProperties().Initiative += (actor.getBaseProperties().Initiative < _targetEntity.getBaseProperties().Initiative ? 1 : 0);
 
-		local target_skills = _targetEntity.getSkills().query(this.Const.SkillType.Perk);
+		local target_skills = _targetEntity.getSkills().getSkillsByFunction(@(skill) skill.isType(::Const.SkillType.Perk));
 		local allperks = [];
 		for( local i = 0; i != target_skills.len(); i = ++i )
 		{

@@ -74,6 +74,7 @@ this.large_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"raider_background",
 			"sellsword_background",
 			"swordmaster_background",
+			"anatomist_background",
 			"legend_inventor_background"
 		];
 

@@ -5,7 +5,7 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 		this.blueprint.create();
 		this.m.ID = "blueprint.additional_padding_upgrade";
 		this.m.Type = this.Const.Items.ItemType.Armor;
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			this.m.PreviewCraftable = this.new("scripts/items/legend_armor/armor_upgrades/legend_additional_padding_upgrade");
 		}
@@ -29,7 +29,7 @@ this.additional_padding_upgrade_blueprint <- this.inherit("scripts/crafting/blue
 
 	function onCraft( _stash )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			_stash.add(this.new("scripts/items/legend_armor/armor_upgrades/legend_additional_padding_upgrade"));
 		}

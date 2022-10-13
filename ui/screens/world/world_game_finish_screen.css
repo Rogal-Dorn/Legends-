@@ -22,13 +22,13 @@
 
 .world-game-finish-screen .background-image
 {
-    position: absolute;
+	position: absolute;
 	z-index: 1;
 }
 
 .world-game-finish-screen .content-container
 {
-    position: absolute;
+	position: absolute;
 	z-index: 2;
 	width: 50.0rem;
 	/*height: 55.0rem;*/
@@ -62,24 +62,24 @@
 .world-game-finish-screen > .content-container .l-list-container
 {
 	top: 0rem;
-    left: 0rem;
-    right: 0rem;
-    bottom: 0rem;
+	left: 0rem;
+	right: 0rem;
+	bottom: 0rem;
 }
 
 .world-game-finish-screen > .content-container .scroll-container
 {
-    /*padding-left: 1.0rem;
-    padding-right: 1.0rem;*/
+	/*padding-left: 1.0rem;
+	padding-right: 1.0rem;*/
 }
 
 .world-game-finish-screen > .button-container .l-quit-button
 {
 	top: 0;
-    right: 0;
-    bottom: 0;
-    width: 17.5rem;
-    position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 17.5rem;
+	position: absolute;
 
-    line-height: 3.0rem;
+	line-height: 3.0rem;
 }

@@ -100,7 +100,7 @@ this.retired_gladiator_event <- this.inherit("scripts/events/event", {
 					[1, "oriental/gladiator_harness"],
 				]);
 				a.setUpgrade(this.new("scripts/items/" +
-					(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+					(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 				))
 				this.List.push({
 					id = 12,
@@ -240,7 +240,7 @@ this.retired_gladiator_event <- this.inherit("scripts/events/event", {
 
 		local currentTile = this.World.State.getPlayer().getTile();
 
-		if (this.World.Assets.getStash().getNumberOfEmptySlots() < 1)
+		if (!this.World.Assets.getStash().hasEmptySlot())
 		{
 			return;
 		}

@@ -210,7 +210,7 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		this.actor.onFactionChanged();
 		local flip = this.isAlliedWithPlayer()
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			flip = !flip
 		}
@@ -289,10 +289,13 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand_orc"));
 		this.m.Skills.add(this.new("scripts/skills/actives/warcry"));
 		this.m.Skills.add(this.new("scripts/skills/actives/line_breaker"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_captain"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battering_ram"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_hold_out"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_bash"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
+		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));

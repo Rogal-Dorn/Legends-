@@ -18,14 +18,18 @@ this.recruiter_follower <- this.inherit("scripts/retinue/follower", {
 				Text = "Have a mercenary who has taken the Inspiring Presence perk. Guaranteed on Cultists, Pimps, Retired Soldiers and many others."
 			}
 		];
-		this.m.RequiredSkills = "perk.inspiring_presence";
+		this.m.RequiredSkills = [ 
+			"perk.inspiring_presence",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
+		];
 	}
 
 	function onUpdate()
 	{
 		if ("RosterSizeAdditionalMin" in this.World.Assets.m)
 			this.World.Assets.m.RosterSizeAdditionalMin += 2;
-		if ("RosterSizeAdditionalMax" in this.World.Assets.m)
+		if ("RosterSizeAdditionalMax" in this.World.Assets.m) 
 			this.World.Assets.m.RosterSizeAdditionalMax  += 4;
 		if ("HiringCostMult" in this.World.Assets.m)
 			this.World.Assets.m.HiringCostMult *= 0.9;

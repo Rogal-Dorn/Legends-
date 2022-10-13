@@ -37,15 +37,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			Tags = null
 		},
 		Formations = null,
-		VeteranPerks = 5,
+		VeteranPerks = 4,
 		CampAssignment = "camp.rest",
 		LastCampAssignment = "camp.rest",
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
-        StarWeights = [50,50,50,50,50,50,50,50],
-        // Alignment = null,
-        CompanyID = 0
+		StarWeights = [50,50,50,50,50,50,50,50],
+		// Alignment = null,
+		CompanyID = 0
 	},
 	function setName( _value )
 	{
@@ -91,6 +91,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function getPerkPoints()
 	{
 		return this.m.PerkPoints;
+	}
+
+	function setPerkPoints( _value )
+	{
+		this.m.PerkPoints = _value;
 	}
 
 	function getPerkPointsSpent()
@@ -877,16 +882,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.improveMood(1.5, "Joined a mercenary company");
 		}
 
-		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null)
 		{
-			if (this.getBackground().getID() != "background.slave")
-			{
-				this.getSkills().add(this.new("scripts/skills/actives/whip_slave_skill"));
-			}
-			else
-			{
-				this.getSprite("miniboss").setBrush("bust_miniboss_indebted");
-			}
+			this.World.Assets.getOrigin().onHired(this);
 		}
 
 		if (this.World.getPlayerRoster().getSize() >= 12)
@@ -900,7 +898,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		this.World.Assets.getOrigin().onHiredByScenario(this);
-        // this.m.CompanyID = this.World.State.addNewID(this);
+		// this.m.CompanyID = this.World.State.addNewID(this);
 
 		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
 		{
@@ -943,6 +941,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.XPGained = 0;
 		this.m.Items.onCombatStarted();
 		this.m.Skills.onCombatStarted();
+		this.m.Items.onCombatStarted();
 		this.m.Skills.update();
 		this.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Retreat] = 0.0;
 	}
@@ -1095,30 +1094,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie") && !this.getFlags().has("PlayerSkeleton"))
+			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //deathly spectre for Cabal
 			{
-				local r = this.Math.rand(0, 1);
-
-				if (r == 0)
-				{
-					this.getFlags().add("PlayerSkeleton");
-					this.getFlags().add("undead");
-					this.getFlags().add("skeleton");
-					local body = this.getSprite("body");
-					local skill = this.new("scripts/skills/injury_permanent/legend_fleshless");
-					this.m.Skills.add(skill);
-					this.m.Skills.add(this.new("scripts/skills/racial/skeleton_racial"));
-				}
-				else
-				{
-					this.getFlags().add("PlayerZombie");
-					this.getFlags().add("undead");
-					this.getFlags().add("zombie_minion");
-					local skill = this.new("scripts/skills/injury_permanent/legend_rotten_flesh");
-					this.m.Skills.add(skill);
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-				}
+				this.m.MoraleState = this.Const.MoraleState.Ignore;
+				this.getFlags().add("PlayerZombie");
+				this.getFlags().add("undead");
+				this.getFlags().add("zombie_minion");
+				local skill = this.new("scripts/skills/traits/legend_rotten_flesh_trait");
+				this.m.Skills.add(skill);
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 			}
 
 			this.Tactical.getSurvivorRoster().add(this);
@@ -1446,12 +1431,22 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (brothers.len() == 1)
 		{
+			if (this.getSkills().hasSkill("trait.oath_of_distinction"))
+			{
+				return;
+			}
+
 			this.addXP(XPgroup);
 		}
 		else
 		{
 			foreach( bro in brothers )
 			{
+				if (bro.getCurrentProperties().IsAllyXPBlocked)
+				{
+					return;
+				}
+
 				bro.addXP(this.Math.max(1, this.Math.floor(XPgroup / brothers.len())));
 			}
 		}
@@ -1474,12 +1469,47 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			return;
 		}
 
+		if (_m == this.Const.MoraleState.Confident && ("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.anatomists")
+		{
+			return;
+		}
+
+		if (_m == this.Const.MoraleState.Fleeing && this.m.Skills.hasSkill("effects.ancient_priest_potion"))
+		{
+			return;
+		}
+
+		if (_m == this.Const.MoraleState.Fleeing && this.m.Skills.hasSkill("trait.oath_of_valor"))
+		{
+			return;
+		}
+
+		if (_m == this.Const.MoraleState.Confident && this.getMoraleState() != this.Const.MoraleState.Confident && this.isPlacedOnMap() && this.Time.getRound() >= 1 && ("State" in this.World) && this.World.State != null && this.World.Ambitions.hasActiveAmbition() && this.World.Ambitions.getActiveAmbition().getID() == "ambition.oath_of_camaraderie")
+		{
+			this.World.Statistics.getFlags().increment("OathtakersBrosConfident");
+		}
+
 		this.actor.setMoraleState(_m);
 	}
 
 	function checkMorale( _change, _difficulty, _type = this.Const.MoraleCheckType.Default, _showIconBeforeMoraleIcon = "", _noNewLine = false )
 	{
 		if (_change > 0 && this.m.MoraleState == this.Const.MoraleState.Steady && this.m.Skills.hasSkill("trait.insecure"))
+		{
+			return false;
+		}
+
+		if (_change > 0 && this.m.MoraleState == this.Const.MoraleState.Steady && ("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin().getID() == "scenario.anatomists")
+		{
+			return false;
+		}
+
+		if (_change < 0 && this.m.MoraleState == this.Const.MoraleState.Breaking && this.m.Skills.hasSkill("effects.ancient_priest_potion"))
+		{
+			return false;
+		}
+
+		if (_change < 0 && this.m.MoraleState == this.Const.MoraleState.Breaking && this.m.Skills.hasSkill("trait.oath_of_valor"))
 		{
 			return false;
 		}
@@ -1627,11 +1657,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		p.onUnlocked();
 		this.m.Skills.update();
 
-		if ((this.m.Level >= 11 || this.m.Level >= 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && _id == "perk.student")
+		if (this.m.Level >= 11 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
 
+		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null)
+		{
+			this.World.Assets.getOrigin().onUnlockPerk(this, _id);
+		}
 		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
@@ -1698,9 +1732,14 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				++this.m.PerkPoints;
 			}
 
-			if ((this.m.Level == 11 || this.m.Level == 7 && this.World.Assets.getOrigin().getID() == "scenario.manhunters" && this.getBackground().getID() == "background.slave") && this.m.Skills.hasSkill("perk.student"))
+			if (this.m.Level == 11 && this.m.Skills.hasSkill("perk.student"))
 			{
 				++this.m.PerkPoints;
+			}
+
+			if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null)
+			{
+				this.World.Assets.getOrigin().onUpdateLevel(this);
 			}
 
 			if (this.m.Level == 11)
@@ -1980,11 +2019,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
 		this.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 	}
-	
+
 	function pickTraits( _backgrounds, _maxTraits )
 	{
 		if(_maxTraits <= 0) {return;}
-		
+
 		local available_traits = [];
 		foreach(trait in this.Const.CharacterTraits)
 		{
@@ -2035,7 +2074,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-		if (this.LegendsMod.Configs().LegendGenderLevel() == 2)
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "All")
 		{
 			background.setGender(_gender);
 		}
@@ -2094,7 +2133,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 
 			pickTraits( traits, maxTraits );
-			
+
 			for( local i = 1; i < traits.len(); i = ++i )
 			{
 				this.m.Skills.add(traits[i]);
@@ -2137,15 +2176,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 	}
 
-    function getAlignment()
-    {
-        return this.m.Alignment;
-    }
+	function getAlignment()
+	{
+		return this.m.Alignment;
+	}
 
-    // function getCompanyID()
-    // {
-    //     return this.m.CompanyID;
-    // }
+	// function getCompanyID()
+	// {
+	//	 return this.m.CompanyID;
+	// }
 
 	// function setCompanyID( _num )
 	// {
@@ -2588,7 +2627,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local skills = [
 			"perk.legend_barter_trustworthy",
 			"perk.legend_barter_convincing",
-			"perk.legend_barter_greed",
+			"perk.legends.off_book_deal",
 			"trait.seductive"
 		];
 
@@ -2693,11 +2732,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			break;
 
 		case 3:
-			title = _slot == this.Const.ItemSlot.Body ? "Cloak Layer" : "Rune Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Cloak Layer" : "Aesthetic Vanity Layer";
 			break;
 
 		case 4:
-			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Aesthetic Vanity Layer";
+			title = _slot == this.Const.ItemSlot.Body ? "Upgrade Attachment Layer" : "Rune Layer";
 			break;
 
 		case 5:
@@ -3016,9 +3055,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.VeteranPerks = _in.readU8();
 
-			if (this.m.VeteranPerks == 0)
+			if (this.m.VeteranPerks == 5)
 			{
-				this.m.VeteranPerks = 5;
+				this.m.VeteranPerks = 4;
 			}
 		}
 

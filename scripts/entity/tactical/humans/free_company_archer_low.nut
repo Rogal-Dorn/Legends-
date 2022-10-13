@@ -1,7 +1,7 @@
 this.free_company_archer_low <- this.inherit("scripts/entity/tactical/humans/free_company_archer", {
 	m = {
 		Outfits = [
-            [1, "low_tier_unit_catchall_outfit_01"]
+			[1, "low_tier_unit_catchall_outfit_01"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyArcher,
 		PerkPower = 3
@@ -12,9 +12,9 @@ this.free_company_archer_low <- this.inherit("scripts/entity/tactical/humans/fre
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.FreeCompanyArcher);
 		b.RangedSkill -= 10;
-        b.MeleeDefense -= 5;
-        b.RangedDefense -= 5;
-        b.Hitpoints -= 5;
+		b.MeleeDefense -= 5;
+		b.RangedDefense -= 5;
+		b.Hitpoints -= 5;
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -38,10 +38,10 @@ this.free_company_archer_low <- this.inherit("scripts/entity/tactical/humans/fre
 	}
 
 	function assignRandomEquipment()
-    {
-        this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
+	{
+		this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));		
-        this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
 		this.free_company_abstract.assignRandomEquipment();
 	}

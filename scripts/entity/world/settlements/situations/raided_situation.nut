@@ -28,7 +28,7 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 
 	function onAdded( _settlement )
 	{
-		if(this.LegendsMod.Configs().LegendWorldEconomyEnabled())
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.15);
 		}
@@ -45,7 +45,7 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_gender)
 		{
 		_draftList.push("female_beggar_background");

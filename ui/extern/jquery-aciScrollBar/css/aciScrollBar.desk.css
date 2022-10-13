@@ -40,7 +40,7 @@ Date: Fri Feb 17 20:05 2012 +0200
 .aciSb_grip.desk {
 	display:block;
 	/*border:1px solid #F00;*/
-    border: none;
+	border: none;
 	height:32px;
 	width:20px;
 }
@@ -82,22 +82,22 @@ Date: Fri Feb 17 20:05 2012 +0200
 
 .aciSb_arrow_l.desk {
 	/*background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;*/
-    background:none;
+	background:none;
 }
 
 .aciSb_arrow_t.desk {
 	/*background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;*/
-    background:none;
+	background:none;
 }
 
 .aciSb_arrow_r.desk {
 	/*background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;*/
-    background:none;
+	background:none;
 }
 
 .aciSb_arrow_b.desk {
 	/*background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;*/
-    background:none;
+	background:none;
 }
 
 /* track */
@@ -126,7 +126,7 @@ Date: Fri Feb 17 20:05 2012 +0200
  {
 	width:18px;
 	height:18px;
-    z-index:10003;
+	z-index:10003;
 	background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;
 }
 
@@ -134,7 +134,7 @@ Date: Fri Feb 17 20:05 2012 +0200
  {
 	width:18px;
 	height:18px;
-    z-index:10003;
+	z-index:10003;
 	background:url(../image/aciScrollBar.desk/end.png) 0 0 no-repeat;
 }
 
@@ -157,7 +157,7 @@ Date: Fri Feb 17 20:05 2012 +0200
 .aciSb_drag_hg.desk {
 	width:20px;
 	background:url(../image/aciScrollBar.desk/drag_g.png) 0 0 no-repeat;
-    z-index:10004;	
+	z-index:10004;	
 }
 
 .aciSb_drag_r.desk {
@@ -171,7 +171,7 @@ Date: Fri Feb 17 20:05 2012 +0200
 .aciSb_drag_vg.desk {
 	height:32px;
 	background:url(../image/aciScrollBar.desk/drag_g.png) 0 0 no-repeat;
-    z-index:10004;		
+	z-index:10004;		
 }
 
 .aciSb_drag_b.desk {

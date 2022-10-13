@@ -40,6 +40,12 @@ this.deathwish_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				type = "text",
 				icon = "ui/icons/morale.png",
 				text = "No morale check triggered upon losing hitpoints"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/morale.png",
+				text = "Does not protect from effects that target morale directly, like Fearsome"
 			}
 		];
 	}

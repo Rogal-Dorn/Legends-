@@ -31,7 +31,7 @@ this.paint_orange_red_blueprint_dye <- this.inherit("scripts/crafting/blueprint"
 
 		function isQualified()
 	{
-		return (!this.LegendsMod.Configs().LegendArmorsEnabled()) && this.blueprint.isQualified();
+		return (::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) && this.blueprint.isQualified();
 	}
 
 });

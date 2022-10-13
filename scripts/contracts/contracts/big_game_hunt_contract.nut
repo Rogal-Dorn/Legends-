@@ -257,6 +257,9 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 							local party = action.getFaction().getUnits()[action.getFaction().getUnits().len() - 1];
 							party.setAttackableByAI(false);
 							this.Contract.m.UnitsSpawned.push(party.getID());
+							local wait = this.new("scripts/ai/world/orders/wait_order");
+							wait.setTime(15.0);
+							party.getController().addOrderInFront(wait);
 							local footPrintsOrigin = this.Contract.getTileToSpawnLocation(nearTile, 4, 8);
 							this.Const.World.Common.addFootprintsFromTo(footPrintsOrigin, party.getTile(), this.Const.BeastFootprints, party.getFootprintType(), party.getFootprintsSize(), 1.1);
 							break;

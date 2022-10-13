@@ -191,13 +191,13 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier",
 			"legend_horse_courser"
@@ -270,7 +270,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Clear = true,
 				Force = true
 			}],
-           [1, {
+		   [1, {
 				Script = "scripts/entity/world/attached_location/surface_iron_vein_location",
 				Terrain = ALL
 				NearTerrain = [],
@@ -280,7 +280,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -352,7 +352,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/trapper_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -696,7 +696,7 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

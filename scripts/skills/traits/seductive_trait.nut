@@ -1,6 +1,6 @@
 this.seductive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 	m = {
-		Amount = 0.005
+		Amount = 0.003
 	},
 	function create()
 	{
@@ -32,7 +32,7 @@ this.seductive_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/asset_money.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color] barter skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+0.3%[/color] barter skill"
 			},
 		];
 	}
