@@ -1,20 +1,20 @@
 this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {
-        ItemsCrafted = [],
-        Queue = [],
+		ItemsCrafted = [],
+		Queue = [],
 		CurrentProgress = 0,
 		CurrentCraft = null,
 		NumBros = 0,
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Crafting;
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Crafting;
 		this.m.ModName = "Crafting";
-        this.m.BaseCraft = 10.0;
-        this.m.Slot = "craft";
-        this.m.Name = "Craft";
-        this.m.Description = "Craft items"
+		this.m.BaseCraft = 10.0;
+		this.m.Slot = "craft";
+		this.m.Name = "Craft";
+		this.m.Description = "Craft items"
 		this.m.BannerImage = "ui/buttons/banner_craft.png"
 		this.m.Sounds = [
 			{
@@ -90,7 +90,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				Pitch = 1.0
 			}
 		];
-    }
+	}
 
 	function getTitle()
 	{
@@ -113,7 +113,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	}
 
 	function getModifierToolip()
-    {
+	{
 		this.init();
 		local mod = this.getModifiers();
 		local ret = [
@@ -157,7 +157,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			return true;
 		}
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return false;
 		}
@@ -167,7 +167,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.craft_tent");
+		return this.Stash.hasItem("tent.craft_tent");
 	}
 
 	function getLevel()
@@ -186,17 +186,17 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return pro + "_" + sub;
 	}
 
-    function init()
-    {
+	function init()
+	{
 		this.onInit();
 		this.m.ItemsCrafted = [];
 		this.m.CurrentProgress = 0;
 		local mod = this.getModifiers();
 		this.m.NumBros = mod.Assigned;
-    }
+	}
 
-    function onInit()
-    {
+	function onInit()
+	{
 		local q = [];
 		for (local i = 0; i < this.m.Queue.len(); i = ++i)
 		{
@@ -214,7 +214,7 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	}
 
 	function getResults()
-    {
+	{
 		local res = []
 		local id = 20;
 		foreach (b in this.m.ItemsCrafted)
@@ -226,8 +226,8 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			})
 			++id;
 		}
-        return res;
-    }
+		return res;
+	}
 
 	function getUpdateText()
 	{
@@ -270,9 +270,9 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			{
 				if ("LegendsArmor" in c)
 				{
-					if (c.LegendsArmor && !this.LegendsMod.Configs().LegendArmorsEnabled()) continue;
+					if (c.LegendsArmor && ::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) continue;
 
-					if (!c.LegendsArmor && this.LegendsMod.Configs().LegendArmorsEnabled()) continue;
+					if (!c.LegendsArmor && !::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue()) continue;
 				}
 
 				if (c.Instance.getID() in itemsMap && c.Num <= itemsMap[c.Instance.getID()] )
@@ -296,17 +296,17 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return craftable;
 	}
 
-    function update ()
-    {
-        local modifiers = this.getModifiers();
+	function update ()
+	{
+		local modifiers = this.getModifiers();
 
-        for (local i = 0; i < this.m.Queue.len(); ++i) 
-        {
-        	local r = this.m.Queue[i];
-            if (r == null)
-            {
-                continue;
-            }
+		for (local i = 0; i < this.m.Queue.len(); ++i) 
+		{
+			local r = this.m.Queue[i];
+			if (r == null)
+			{
+				continue;
+			}
 
 			if (r.Blueprint == null)
 			{
@@ -318,14 +318,14 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				continue;
 			}
 
-            local needed = r.Blueprint.getCostForCraft() - r.Points;
+			local needed = r.Blueprint.getCostForCraft() - r.Points;
 
-            if (modifiers.Craft < needed)
-            {
-                needed = modifiers.Craft;
-            }
+			if (modifiers.Craft < needed)
+			{
+				needed = modifiers.Craft;
+			}
 			r.Points += needed;
-            modifiers.Craft -= needed;
+			modifiers.Craft -= needed;
 
 			if (r.Points >= r.Blueprint.getCostForCraft())
 			{
@@ -341,16 +341,16 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				this.World.Statistics.getFlags().increment("ItemsCrafted");
 			}
 
-            if (modifiers.Craft <= 0)
-            {
-            	this.m.CurrentProgress = r.Points / r.Blueprint.getCostForCraft();
-            	this.m.CurrentCraft = r.Blueprint.getName();
-                break
-            }
-        }
+			if (modifiers.Craft <= 0)
+			{
+				this.m.CurrentProgress = r.Points / r.Blueprint.getCostForCraft();
+				this.m.CurrentCraft = r.Blueprint.getName();
+				break
+			}
+		}
 
 		return this.getUpdateText();
-    }
+	}
 
 	function getQueue()
 	{
@@ -379,37 +379,37 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return this.getRequiredTime();
 	}
 
-    function getRequiredTime()
-    {
-        local points = 0;
+	function getRequiredTime()
+	{
+		local points = 0;
 		if (this.m.Queue == null)
-        {
-            return 0;
-        }
+		{
+			return 0;
+		}
 
-        foreach (i in this.getCraftableQueue())
-        {
-        	local r = this.m.Queue[i];
-            if (r == null)
-            {
-                continue;
-            }
+		foreach (i in this.getCraftableQueue())
+		{
+			local r = this.m.Queue[i];
+			if (r == null)
+			{
+				continue;
+			}
 
-            points += (r.Blueprint.getCostForCraft() - r.Points);
-        }
-        local modifiers = this.getModifiers();
+			points += (r.Blueprint.getCostForCraft() - r.Points);
+		}
+		local modifiers = this.getModifiers();
 		if (modifiers.Craft <= 0)
 		{
 			return 0
 		}
-        return this.Math.ceil(points / modifiers.Craft);
-    }
+		return this.Math.ceil(points / modifiers.Craft);
+	}
 
-    function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	function getAssignedBros()
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
 	function onAdd ( _blueprintID )
 	{
@@ -464,8 +464,8 @@ this.crafting_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showCraftingDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showCraftingDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )

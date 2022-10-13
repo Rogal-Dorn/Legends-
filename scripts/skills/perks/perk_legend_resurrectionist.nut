@@ -1,7 +1,7 @@
 this.perk_legend_resurrectionist <- this.inherit("scripts/skills/skill", {
 	m = {
-        LootChance = 5
-    },
+		LootChance = 5
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_resurrectionist";

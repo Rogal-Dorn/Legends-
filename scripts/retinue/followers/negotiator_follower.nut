@@ -19,7 +19,9 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_pacifist"
+			"perk.legend_pacifist",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 
@@ -32,16 +34,16 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 
 		if ("RelationDecayGoodMult" in this.World.Assets.m) {
 			if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves") {
-				this.World.Assets.m.RelationDecayGoodMult = 1.05;
+				this.World.Assets.m.RelationDecayGoodMult = 1.075;
 			} else {
-				this.World.Assets.m.RelationDecayGoodMult = 0.9;
+				this.World.Assets.m.RelationDecayGoodMult = 0.85;
 			}
 		}
 		if ("RelationDecayBadMult" in this.World.Assets.m) {
 			if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves") {
-				this.World.Assets.m.RelationDecayBadMult = 0.95;
+				this.World.Assets.m.RelationDecayBadMult = 0.925;
 			} else {
-				this.World.Assets.m.RelationDecayBadMult = 1.1;
+				this.World.Assets.m.RelationDecayBadMult = 1.15;
 			}
 		}
 

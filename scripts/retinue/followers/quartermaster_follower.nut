@@ -19,7 +19,9 @@ this.quartermaster_follower <- this.inherit("scripts/retinue/follower", {
 			}
 		];
 		this.m.RequiredSkills = [
-			"perk.legend_skillful_stacking"
+			"perk.legend_skillful_stacking",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

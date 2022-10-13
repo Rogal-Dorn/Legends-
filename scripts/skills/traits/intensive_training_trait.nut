@@ -91,6 +91,7 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 	function finishedTraining( _traitGained )
 	{
 		this.m.Description = "This character completed training and can't get any more skills from training. Training experience is slightly improved.";
+		this.m.Icon = "ui/traits/IntensiveTrainingCompleted.png";
 		this.m.TraitGained = _traitGained;
 		this.m.BonusXP = 0.05;
 	}
@@ -217,17 +218,17 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 		return tooltip;
 	}
 	
-    function isHidden()
-    {
-        if (this.getStatsIncreased() == 0)
-        {
-        return true;
-        }
-        else
-        {
-        return false;
-        }
-    }	
+	function isHidden()
+	{
+		if (this.getStatsIncreased() == 0)
+		{
+		return true;
+		}
+		else
+		{
+		return false;
+		}
+	}	
 
 	function onSerialize( _out )
 	{
@@ -257,6 +258,11 @@ this.intensive_training_trait <- this.inherit("scripts/skills/traits/character_t
 		this.m.RdefAdded = _in.readU16();
 		this.m.BonusXP = _in.readF32();
 		this.m.TraitGained = _in.readString();
+
+		if(this.isMaxReached())
+		{
+			this.m.Icon = "ui/traits/IntensiveTrainingCompleted.png";
+		}
 	}
 
 });

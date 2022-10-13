@@ -25,29 +25,28 @@ this.legend_bone_carver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 60;
 		this.m.ArmorDamageMult = 1.0;
 		this.m.DirectDamageMult = 0.25;
+		this.m.FatigueOnSkillUse = 5;
 	}
 
-	function getTooltip()
-	{
-		local ret = this.weapon.getTooltip();
-		ret.push({
-			id = 18,
-			type = "text",
-			icon = "ui/icons/fatigue.png",
-			text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
-		});
-		return ret;
-	}
+	// function getTooltip() //Already pulls tooltip below from skill!
+	// {
+	// 	local ret = this.weapon.getTooltip();
+	// 	ret.push({
+	// 		id = 18,
+	// 		type = "text",
+	// 		icon = "ui/icons/fatigue.png",
+	// 		text = "Builds up additional [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue with every skill use"
+	// 	});
+	// 	return ret;
+	// }
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
 		local skill;
 		skill = this.new("scripts/skills/actives/cleave");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 		skill = this.new("scripts/skills/actives/decapitate");
-		skill.setFatigueCost(this.Math.round(skill.getFatigueCostRaw() + 5));
 		this.addSkill(skill);
 	}
 

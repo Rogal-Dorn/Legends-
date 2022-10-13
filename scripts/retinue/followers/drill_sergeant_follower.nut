@@ -22,7 +22,9 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 			"background.retired_soldier",
 			"background.swordmaster",
 			"background.sellsword",
-			"background.gladiator"
+			"background.gladiator",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 
@@ -45,7 +47,7 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
-			if (bro.getSkills().getSkillsByFunction(this, isCorrectSkill).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury)))
+			if (bro.getSkills().getSkillsByFunction(isCorrectSkill.bindenv(this)).len() != 0 && (bro.getSkills().hasSkillOfType(this.Const.SkillType.PermanentInjury)))
 			{
 				this.m.LinkedBro = bro;
 				break;

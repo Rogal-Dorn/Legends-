@@ -10,7 +10,7 @@ this.legends_skeleton_high <- this.inherit("scripts/entity/tactical/legend_skele
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
-		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_fleshless_trait"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));

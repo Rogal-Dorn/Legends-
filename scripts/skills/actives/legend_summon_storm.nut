@@ -55,9 +55,9 @@ this.legend_summon_storm <- this.inherit("scripts/skills/skill", {
 
 
 	  function isHidden()
-    {
-        return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
-    }
+	{
+		return this.m.IsHidden || !this.getContainer().getActor().getItems().hasEmptySlot(this.Const.ItemSlot.Mainhand);
+	}
 
 
 	function onUse( _user, _targetTile )

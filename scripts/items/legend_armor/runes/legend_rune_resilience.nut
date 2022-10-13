@@ -43,9 +43,9 @@ this.legend_rune_resilience <- this.inherit("scripts/items/legend_armor/legend_a
 		});
 	}
 
-    function onDamageReceived( _damage, _fatalityType, _attacker )
+	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
-        return _damage;
+		return _damage;
 	}
 
 	function onUpdateProperties( _properties )

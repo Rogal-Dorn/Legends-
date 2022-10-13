@@ -52,6 +52,27 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
+		this.m.Modifiers.Terrain = [
+			0.0, // ?
+			0.0, //ocean
+			0.0,//plains
+			0.00, //swamp
+			0.00, //hills
+			0.05, //forest
+			0.05, //forest
+			0.01, //forest_leaves
+			0.01, //autumn_forest
+			0.0, //mountains
+			0.0, // ?
+			0.0, //farmland
+			0.05, // snow
+			0.00, // badlands
+			0.05, //highlands
+			0.0, //stepps
+			0.0, //ocean
+			0.0, //desert
+			0.0 //oasis
+		];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.GreatSwordTree,
@@ -83,20 +104,9 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;

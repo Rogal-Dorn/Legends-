@@ -75,6 +75,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Location1 = this.WeakTableRef(this.getNearestLocationTo(this.m.Home, settlements, true));
 		this.m.Location2 = this.WeakTableRef(this.getNearestLocationTo(this.m.Location1, settlements, true));
 		local banditcamp = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).getNearestSettlement(this.m.Home.getTile());
+		banditcamp.getFlags().set("isContractLocation", true); //prevents additional patrols (banditroamers+ambushers) being generated and diluting garrison strength
 		this.m.Destination = this.WeakTableRef(banditcamp);
 		this.m.Flags.set("DestinationName", banditcamp.getName());
 			//due to multipliers, ive just reduced the payment pool from 1200 to 500 for now as an easy fix.
@@ -473,7 +474,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "BribeSuccess",
 			Title = "An enemy divided...",
-			Text = "[img]gfx/ui/events/event_54.png[/img] %shouter% starts negotiations with some of the less bloodthristy looking brigands — weaving their way through the crowd looking for the weakest and least angry of the group first.\n Promises of great wealth without spilling blood appeal to sizeable part of the mob — you notice quite a few of the raiders taking the coins %shouter% offers and preparing to leave the camp.\n\n This situation, while acceptable for the greedy, does not sit well with the remainers looking for blood.\n The camp atmosphere grows more tense with every minute, as those intrested in crowns gradually filter out of the camp — some are left clutching their weapons and ready to fight. The last moment of peaceful negotiations is interrupted when one of the larger fighters pushes %shouter% back to your group.\n They did what they could, and no it\'s your turn.",
+			Text = "[img]gfx/ui/events/event_54.png[/img] %shouter% starts negotiations with some of the less bloodthristy looking brigands — weaving their way through the crowd looking for the weakest and least angry of the group first.\n Promises of great wealth without spilling blood appeal to sizeable part of the mob — you notice quite a few of the raiders taking the coins %shouter% offers and preparing to leave the camp.\n\n This situation, while acceptable for the greedy, does not sit well with the remainers looking for blood.\n The camp atmosphere grows more tense with every minute, as those intrested in crowns gradually filter out of the camp — some are left clutching their weapons and ready to fight. The last moment of peaceful negotiations is interrupted when one of the larger fighters pushes %shouter% back to your group.\n They did what they could, and now it\'s your turn.",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -580,7 +581,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "FirstIntel",
 			Title = "At %location1%...",
-			Text = "[img]gfx/ui/events/event_45.png[/img]You reach %location1% and order everyone to start gathering any information related to these local bandits. News of your arrival spreads and commoners begin to ask you if the threat of the horde is real.\n\n With your agenda in mind and little care for the safety of every individual here, you tell them the main force of the bandits has already been defeated — locals are told you were hired to hunt down the remaining bandits that most likely retreated back to their encampment. Being small folk with small minds, you are able to collect a few hints about where their main force operates from. A few oppertunistic merchants are willing to trade as you prepare to head out from %location1%.",
+			Text = "[img]gfx/ui/events/event_45.png[/img]You reach %location1% and order everyone to start gathering any information related to these local bandits. News of your arrival spreads and commoners begin to ask you if the threat of the horde is real.\n\n With your agenda in mind and little care for the safety of every individual here, you tell them the main force of the bandits has already been defeated — locals are told you were hired to hunt down the remaining bandits that most likely retreated back to their encampment. Being small folk with small minds, you are able to collect a few hints about where their main force operates from. A few opportunistic merchants are willing to trade as you prepare to head out from %location1%.",
 			Image = "",
 			Characters = [],
 			List = [],
@@ -634,7 +635,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Screens.push({
 			ID = "ISEEYOU",
 			Title = "At %Home%...",
-			Text = "[img]gfx/ui/events/event_45.png[/img]{Not long after you enter %Home%, your employer summons you. This time you enter meeting that is more war council than a social visit — All local militia captains are present, discussing the defensive capabilities of %Home% and outlying farms in case of a siege. With the rumours you gathered and information from other agents, the location of the bandit army is finally determined to be not far from here.\n\n You begin to wondering if this job is worth the risk, but so close to the end and with the threat confirmed, there is no turning back now. Your hesitance clearly terrifies your employer greatly, they assure you that coin promised will be paid to the last crown if threat is eliminated. Food, wine and company are offered if you succeed; anything to convince you to stop the bandits or die trying, or at least to slow it down.\n Preparing to move out from %Home% you notice unusual mobilization of the locals.}",
+			Text = "[img]gfx/ui/events/event_45.png[/img]{Not long after you enter %Home%, your employer summons you. This time you enter meeting that is more war council than a social visit — All local militia captains are present, discussing the defensive capabilities of %Home% and outlying farms in case of a siege. With the rumours you gathered and information from other agents, the location of the bandit army is finally determined to be not far from here.\n\n You begin to wonder if this job is worth the risk, but so close to the end and with the threat confirmed, there is no turning back now. Your hesitance clearly terrifies your employer greatly, they assure you that coin promised will be paid to the last crown if threat is eliminated. Food, wine and company are offered if you succeed; anything to convince you to stop the bandits or die trying, or at least to slow it down.\n Preparing to move out from %Home% you notice unusual mobilization of the locals.}",
 			Image = "",
 			Characters = [],
 			List = [],

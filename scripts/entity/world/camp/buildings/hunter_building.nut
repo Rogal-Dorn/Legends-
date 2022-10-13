@@ -7,16 +7,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Craft = 0,
 		Value = 0
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Hunter;
-        this.m.ModName = "Hunting";
-        this.m.ModMod = 10.0;
-        this.m.BaseCraft = 1.5;
-        this.m.Slot = "hunt";
-        this.m.Name = "Hunting";
-        this.m.Description = "Send out a hunting party for food provisions"
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Hunter;
+		this.m.ModName = "Hunting";
+		this.m.ModMod = 10.0;
+		this.m.BaseCraft = 1.5;
+		this.m.Slot = "hunt";
+		this.m.Name = "Hunting";
+		this.m.Description = "Send out a hunting party for food provisions"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
 		this.m.CanEnter = false
 		this.m.Sounds = [
@@ -43,7 +43,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				Pitch = 1.0
 			}
 		];
-    }
+	}
 
 	function getTitle()
 	{
@@ -67,14 +67,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	}
 
 	function getModifierToolip()
-    {
+	{
 		local mod = this.getModifiers();
 		local ret = [
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_food_up.png",
-				text = "Successful hunt will take approxiamtely [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours."
+				text = "Successful hunt will take approximately [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours."
 			}
 		];
 		local id = 6;
@@ -94,7 +94,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function isHidden()
 	{
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return false;
 		}
@@ -104,7 +104,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.hunter_tent");
+		return this.Stash.hasItem("tent.hunter_tent");
 	}
 
 	function getLevel()
@@ -123,36 +123,36 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return pro + "_" + sub;
 	}
 
-    function init()
-    {
+	function init()
+	{
 		this.m.Items = [];
 		this.m.Points = 0;
 		this.m.FoodAmount = 0;
 		local mod = this.getModifiers();
-        this.m.NumBros = mod.Assigned;
+		this.m.NumBros = mod.Assigned;
 		this.m.Craft = mod.Craft;
-    }
+	}
 
 	function getChefLevel()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
 		local chefLevel = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
 
 
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
-               chefLevel += bro.getLevel()
-            }
+			   chefLevel += bro.getLevel()
+			}
 
 			return chefLevel;
 
-        }
+		}
 
 	}
 
@@ -160,26 +160,26 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		local roster = this.World.getPlayerRoster().getAll();
 		local brewerLevel = 0;
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
 
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
-               brewerLevel += bro.getLevel()
-            }
+			   brewerLevel += bro.getLevel()
+			}
 
 			return brewerLevel;
 
-        }
+		}
 
 	}
 
 	function getResults()
-    {
+	{
 		local res = []
 		local id = 80;
 		foreach (b in this.m.Items)
@@ -191,14 +191,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			})
 			++id;
 		}
-        return res;
-    }
+		return res;
+	}
 
 	function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
 	function getUpdateText()
 	{
@@ -341,8 +341,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showHunterDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showHunterDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )

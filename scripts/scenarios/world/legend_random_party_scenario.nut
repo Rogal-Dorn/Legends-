@@ -33,7 +33,6 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;
-			bro.setVeteranPerks(2);
 		}
 
 		local randomFood;

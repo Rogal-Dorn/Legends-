@@ -1,8 +1,8 @@
 this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	m = {
-        Rune = 0,
-        Skill = ""
-    },
+		Rune = 0,
+		Skill = ""
+	},
 	function create()
 	{
 		this.blueprint.create();
@@ -14,18 +14,18 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 		this.m.PreviewCraftable = token;
 		this.m.Cost = 1200;
 		this.m.Enchanter = true;
-		// local ingredients = [
-		// 	{
-		// 		Script = "scripts/items/trade/uncut_gems_item",
-		// 		Num = 1
-		// 	}
-		// ];
-		// this.init(ingredients);
+		local ingredients = [
+			{
+				Script = "scripts/items/trade/uncut_gems_item",
+				Num = 1
+			}
+		];
+		this.init(ingredients);
 	}
 
 	function isUpgraded()
 	{
-        return this.Stash.hasItem("tent.enchant_tent");
+		return this.Stash.hasItem("tent.enchant_tent");
 	}
 
 	function getRuneSigilTooltip()
@@ -120,19 +120,19 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 	function isCraftable()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getSkills().hasSkill(this.m.Skill))
-            {
-                return true
-            }
+		foreach( bro in roster )
+		{
+			if (bro.getSkills().hasSkill(this.m.Skill))
+			{
+				return true
+			}
 		}
 		return false;
 	}
 
 	function onEnchant( _stash, _bonus )
 	{
-		if (this.LegendsMod.Configs().LegendArmorsEnabled() && ( this.m.Rune == 11 || this.m.Rune == 12 || this.m.Rune == 13 || this.m.Rune == 21 || this.m.Rune == 22 || this.m.Rune == 23))
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() && ( this.m.Rune == 11 || this.m.Rune == 12 || this.m.Rune == 13 || this.m.Rune == 21 || this.m.Rune == 22 || this.m.Rune == 23))
 		{
 			local rune;
 			switch (this.m.Rune)

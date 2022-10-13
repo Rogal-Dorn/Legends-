@@ -1,7 +1,7 @@
 this.free_company_crossbow <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_crossbow_outfit_00"]
+			[1, "mercenary_crossbow_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyCrossbow,
 		PerkPower = 6
@@ -62,12 +62,12 @@ this.free_company_crossbow <- this.inherit("scripts/entity/tactical/free_company
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/light_crossbow"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/heavy_crossbow"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/heavy_crossbow"));
+		}
 
-        r = this.Math.rand(1, 4);
+		r = this.Math.rand(1, 4);
 		if (r == 4)
 		{
 			this.m.Items.addToBag(this.new("scripts/items/weapons/dagger"));

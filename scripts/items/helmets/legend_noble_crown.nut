@@ -31,7 +31,7 @@ this.legend_noble_crown <- this.inherit("scripts/items/helmets/helmet", {
 		this.m.SpriteDamaged = "legendhelms_crown" + "_" + variant + "_damaged";
 		this.m.SpriteCorpse = "legendhelms_crown" + "_" + variant + "_dead";
 		this.m.Icon = "legend_helmets/inventory_crown" + "_" + variant + ".png";
-        this.m.IconLarge = this.m.Icon;
+		this.m.IconLarge = this.m.Icon;
 	}
 
 });

@@ -1,7 +1,7 @@
 this.free_company_longbow <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_longbow_outfit_00"]
+			[1, "mercenary_longbow_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyLongbow,
 		PerkPower = 8
@@ -58,10 +58,10 @@ this.free_company_longbow <- this.inherit("scripts/entity/tactical/free_company_
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/war_bow"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/war_bow"));
+		}
 		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 
 		r = this.Math.rand(1, 4);

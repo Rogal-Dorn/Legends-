@@ -94,7 +94,7 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.BowTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,

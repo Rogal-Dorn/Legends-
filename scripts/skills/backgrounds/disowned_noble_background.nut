@@ -9,8 +9,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BackgroundDescription = "Disowned nobles often have profited from some training in melee fighting at court.";
 		this.m.GoodEnding = "A noble at heart, the disowned nobleman %name% returned to his family. Word has it he kicked in the doors and demanded a royal seat. An usurper challenged him in combat and, well, %name% learned a lot in his days with the %companyname% and he now sits on a very, very comfortable throne.";
 		this.m.BadEnding = "A man of nobility at heart, %name% the disowned noble returned to his family home. Word has it an usurper arrested him at the gates. His head currently rests on a pike with crows for a crown.";
-		this.m.HiringCost = 160;
-		this.m.DailyCost = 18;
+		this.m.HiringCost = 135;
+		this.m.DailyCost = 17;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.clumsy",
@@ -62,20 +62,9 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
  			//Female
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -86,8 +75,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.Name = "Disowned Lady";
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.Icon = "ui/backgrounds/background_08.png";
-		this.m.BackgroundDescription = "Everyone needs shoes — and the same applies to four legs, not just two.";
-		this.m.GoodEnding = "A noble at heart, the disowned noblewoman %name% returned to her family. Word has it she kicked in the doors and demanded a royal seat. An usurper challenged her in combat and, well, %name% learned a lot in his days with the %companyname% and she now sits on a very, very comfortable throne.";
+		this.m.BackgroundDescription = "Disowned ladies are often known for their skill with bows.";
+		this.m.GoodEnding = "A noble at heart, the disowned noblewoman %name% returned to her family. Word has it she kicked in the doors and demanded a royal seat. An usurper challenged her in combat and, well, %name% learned a lot in her days with the %companyname% and she now sits on a very, very comfortable throne.";
 		this.m.BadEnding = "A woman of nobility at heart, %name% the disowned noblewoman returned to her family home. Word has it an usurper arrested her at the gates. Her head currently rests on a pike with crows for a crown.";
 	}
 
@@ -170,7 +159,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			[1, "gambeson"],
 			[1, "basic_mail_shirt"],
 			[1, "mail_shirt"],
-			[1, "mail_hauberk"]
+			[1, "mail_hauberk"],
+			[1, "padded_surcoat"]
 		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([

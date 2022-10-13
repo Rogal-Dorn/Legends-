@@ -91,10 +91,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.GoodEnding = "%name% the assassin departed the %companyname% with a large chest of gold and traveled far away. From what rumors you\'ve heard, she built a castle in the mountains east of the southern kingdoms. You\'re not sure if it\'s true, but there\'s been a steady increase in dead viziers and lords alike as of late.";
 		this.m.BadEnding = "%name% disappeared not long after your retirement from the %companyname%. The assassin presumably does not want to be found and there\'s no telling where she is. In moments of honesty, you tell others you wished you never hired her at all. You just can\'t shake the terror that it is you she is stalking and hunting, and you spend many nights with one eye open, looking for the woman in black with the crooked dagger.";
 		this.m.Faces = this.Const.Faces.SouthernFemale;

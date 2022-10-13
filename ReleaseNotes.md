@@ -1,5 +1,528 @@
 ### Legend Mod Release Notes
 
+## 15.0.2.11 Next Build 
+
+:kobold: **Kobolds**
+- Can show up in goblin scouting parties, or when the greenskin horde assembles
+- become invisible at the end of every turn 
+- Blowgun can daze, and stun if they hit the head
+- Art by Von Krolock 
+- 80 new sounds
+
+:tempt: **Vala** 
+Vala is intended to be rare and mysterious, not something everyone farms
+- You will now only encounter a vala during the undead crisis
+- Her offensive abilities can now affect your own company 
+
+:sly: **Runes**
+Runes are meant as powerful spiritual artifacts, not mandatory on every item.  
+- Equiping a rune will now scare your mercenaries, adding a negative trait that grows worse for each rune you hold
+- 1 rune - Unsettled: - +6 or -6 resolve randomly at each resolve check. 
+- 2 runes - Spooked:  Adds -6 resolve at morale checks against fear, panic or mind control 
+- 3 runes - Haunted: Adds -6 resolve, melee skill and ranged skill when fighting the undead 
+- 4 runes - Harrowed: Adds -6 resolve at all times 
+- 5 runes - Tormented: All be above, and begins each combat at wavering 
+- 6 runes - Broken: loses all the above. Gains +6 resolve, no morale check when allies die or on losing hitpoints, not affected by injuries during battle. At the end of each turn has a 33% chance to join the enemy, 33% chance to lose control but stay on your side, 33% chance to return to your control
+Runes are only worth 100 gold, down from 1200
+
+ :coin~1: **Loot**
+ Legendary creatures are more rewarding, dropping more runes and crafting ingredients
+- Stollwurm -  1-2 endurance, safety or resilience runes. 1-2scales, 0-2 blood, 0-2 bones
+- white wolf - teeth and pelt gauranteed, chance of a second pelt, teeth or valuable fures
+- rock unhold - increase chance of unhold hide instead of bones. 33% each for regular unhold heart, hide and bones 
+- embalmed queen - drops a jeweled crown and ancient coins, plus 50% chance of a scroll when magic is enabled
+- greenwood schratt - drops an ancient green wood (value reduced), 50% each chance for another ancient wood, a glowing resin, a heart of the forest and a rune. 
+- demon alp - rune plus a skin or eye gauranteed. chance of another skin
+
+:hammer~1: **Fixes**
+- Scenario mode now works
+- Kobold scenario added
+- Stollwurm scenario is now in a cave 
+- Fixes barbarian drum not showing up in inventories
+- Updated bases for troupe, beasthunters and crusader
+- assassin faceplate added
+
+## 16.1.4 - Soujourn v4
+Fixes:
+- Discovering the Legendary Ancient Mastaba or the Tournament Ground now correctly counts as discovering a legendary location for the purpose of the Retinue 
+- Revert change to the rotten flesh effect from the last release
+- The changed Icon for completing the Camp Training should now persist after loading a savegame 
+- fixes crashes with the bandit army contract
+- fixes a gamefreeze when ending a battle with a greenwood schrat shield in your bag
+- fixes missing formatting in alp-in-hole event and in forest-ambush event
+- Fixed a typo into FE: southerners contract
+- Fixed a typo in demon alp and alp contracts
+- Fixed a typo in cabal origin introduction
+- corrects a few other typos
+
+## 16.1.3 - Soujourn v3
+Changes:
+- 'Off-Book Deal' now states its duration of 3 days in the tooltip
+- 'Greed' Defensive Bonus is reduced greatly
+- 'Greed' Bonus gained from Crowns above 25000 is reduced by 95%
+
+Fixes:
+- corrects stamina cost of leather neckguard to -2
+- summoned zombies are now gaining the correct 'rotten flesh' effect 
+- fixes bug with 'collector_wants_trophy_event' event making it unable to procc
+- fixes bug preventing the lonewolf 'companion_caravan' event from working
+- fixes a bug preventing the 'Bandit Army' contract from working
+- fixes the missing formatting in various recent events
+- corrects some typos 
+
+## 16.1.2 - Conscription
+- fixed bug in Conscript Gunner background with adding equipment. (Thanks Druwski)
+
+## 16.1.1 - Bush Knight
+- Fixed Hedge Knight bug and event score bug.
+- Remove hook on executeEntitySkill and move the Recover skill related code to use function of skill. This is to allow compatibility with MSU because MSU hooks the executeEntitySkill function and Legends was overwriting that.
+
+## 16.1.0 - Sojourn
+
+**Important Changes**
+- Map generation options locked to defaults. This is for the sake of stability until the game becomes 4GB Large Address Aware.
+- Removed Unlayered armor option. This is for the sake of stability until someone thinks this has a high enough priority to maintain.
+- Evoker in Adventuring Party origin replaced with Druid.
+- All female hires now gain Resilient for free in the Sisterhood origin.
+- A lot of existing Attachments have been rebalanced: buffing several underused attachments and changing others.
+- Six former attachments have been made into cloaks while keeping their effects. Their old counterparts can no longer be obtained but you may still have access to them on if you crafted them in an old savegame.
+- A more detailed overview of these attachments/cloak changes can be seen on the screenshot below
+
+**General Changes**
+- Six former attachments have been made into cloaks while keeping their effects. Their old counterparts can no longer be obtained but you may still have access to them on if you crafted them in an old savegame.
+- A more detailed overview of these attachments/cloak changes can be seen on the screenshot below
+- Lone wolf relationship effect has been increased in gains but no longer attempts to scale from level
+- Adds two new southern backgrounds; the Conscript and Gunner - both can be found in southern cities with towers/military camps.
+
+**New Events**
+- Adds in an event that triggers if the player has 3 or fewer brothers that allows them to purchase renown. This event repeats but only triggers with 3 or fewer brothers.
+- Adds in 6 new and unique armoursets to the Lone Wolf origin, depending on what weapon type you pick in the first event.
+- Adds an event that allows a blacksmith to reforge an orc cleaver.
+- Adds an event for a discussion to happen between the noble footsoldier and noble warrior.
+- Adds an event for when the player has a brother with a falcon equipped.
+- Adds a forest ambush event with multiple outcomes.
+
+**Balance**
+Experience Changes
+- Bandit Veterans now grant 400 XP (down from 600)
+- Serpents now grant 200 XP (up from 175)
+- Redback Spider now grants 600 XP (up from 500)
+- Rock Unhold now grants 1100 XP (up from 800)
+- Stollwurm now grants 2000 XP (up from 1500)
+- Greenwood Schrat now grants 1100 XP (up from 1000)
+- Bear now grants 500 XP (up from 200)
+
+Hedge Knight Enemies Rebalanced
+  • Now always spawn with good armor.
+  • Now always spawn with a 2h melee weapon.
+  • Can now spawn with famed armor.
+  • Will not spawn famed helmets. Appropriate famed helmets need to be added to this list.
+
+- Adds a traveling bard event in to give renown to smaller groups or struggling players
+- Converted cultists added to Cabal favoured roster, will now gain full abilities and benefits a normal cultist would get
+- Cabal origin now spawn with strange meat instead of bodyparts in their inventory at the start of the game
+- Champion versions of Bandit Leader, Bandit Warlords and Gladiators should no longer be able to randomly spawn with named Shovels, Sickles or Daggers
+- Orc Young Low can now spawn with bone carver again.
+- Low condition layers in Coat of Plates outfit removed.
+- Low condition layers in Mail Hauberk outfit removed.
+- Pitchfork and Woodaxe Damage perks buffed.
+- Removed low-end (tunics, robes) base layers from mid-range armor sets.
+- New perk 'Off-Book Deal' replaces 'Bribe' for Peddller-Group. This perk reduces Barter by 1%, increases the available items sold by some towns but also increases their prices.
+- Changes 'Convincing Proposal' to granting 1% Barter and 10 Crowns. This also fixes the bug where this perk gave 5% Barter.
+- Removes the ability for a drunkard to break a named type item via an event.
+- 'Greed' perk reintroduced back into the barter perktree, Greed now scales with the amount of gold in the player's stash which in turn makes a brother with the perk better in combat.
+- Gruesome Feast no longer heals permanent injuries. This change prevents you from healing all your brothers permanent injuries with the Nach-Mask
+- Reduced durability of the Ijirok helmet from 300 to 160 & decreased fatigue cost from 20 to 10.
+- Adds terrain speed to gladiator backgrounds.
+
+**Other Changes**
+- You can now change that way how blueprints are shown during a playthrough as opposed to just during world generation
+- The mini-icon for 'Nine-Lives' is once again shown on each character who can still survive a fatal hit during this battle
+- Tooltips of combined armor/helmets are better formatted and more informative. No longer are the fluff texts of the layers listed here.
+- New 'Autorepair Layer' option in the menu settings. Activating this makes it so any layer that you unequip from a piece of armor is automatically set as 'To Be Repaired'
+
+**Fixes**
+- Fixes a bug that prevented the new 'berserker event' for the 'Lonewolf origin' from starting
+- The perk 'Assured Conquest' now shows the correct icon for its effect instead of the 'Student' Icon
+- Fixes an issue where female bower was exempt from crafting a masterwork bow and bower from the masterwork quiver events.
+- Fixed Lone Wolf berserker & caravan events.
+- Fixed a typo in the crusader sword event which caused a screen not to appear.
+- Fixed a typo in the minstrel x troubadour event which caused an error.
+- Fixes an ongoing issue with contract garrisons leaving their garrisons before the player arrived - often causing softlocks and poor balancing. This primarily affects the legendary brigand army contract and the 'retrieve cargo' contract that offered up the garrison as a twist. (See: for modders)
+- A half-dozen typo fixes in various places.
+- Fixes the skin ghoul map figure being just a normal nachzehrer.
+- 'Net Casting' now correctly states in the description that it increases the range by two tiles (instead of one)
+- 'Net Casting' no longer reduces the AP cost of throwing nets to 3
+- 'Net Mastery' now correctly reduces the AP cost of throwing nets to 3
+- Fixes a bug that prevented battles with Tower Shield wielding characters from starting
+- Fixes a typo that prevented named Parrying Dagger from appearing in Weaponsmiths 
+- text improvements and typo fixes.
+
+**For Modders**
+- All blueprints introduced by legends are now sorted into their own subfolders for better organization. If you hooked into- or replaced those then your mod needs to be adjusted to still work correctly
+- All Legends events are now sorted in their own events/legends subfolder. If you hooked in any of those, you need to adjust those hooks
+- A new flag has been created, titled 'isContractLocation'. This has been added to 'sendbanditroamers' & 'sendbanditambushers' actions but may be implemented elsewhere in the future. Do what you will with this information.
+- The perk 'Adrenalin' is now correctly changed to 'Adrenaline' in the code to align with Vanilla Battle Brothers. If your submod modified this perks Description, Name or added it to custom perk trees then you need to adjust those instances. 
+- If you are making your own body armor layers you can now use a handful of new existing variables for common stats like 'Resolve', 'Initiative' or 'Threat'. Changing those will automatically apply the respective effects and create tooltips for them. See 'legend_armor_upgrade.nut'
+
+## 16.0.9 - No You Bloody Don't
+- Applied fixes from vanilla update where applicable.
+- Ancient Dead no longer give 3 bleed with all weapons on Legendary difficulty. We'd rather give them unique, faction specific perks than a blanket bleed.
+- Adds an event for Lone Wolf to find a Berserker.
+- Max settlements reduced to 27 from 50. Default vanilla value is 19. We feel that 27 settlements is an acceptable maximum increase from vanilla. Higher numbers here tend to cause bugs and crashes, so tightening up this range will help with this.
+- Max Land Mass Ratio reduced to 70 from 80. As above, extremes cause crashes and issues.
+- Two-Handed Flail now deals 115% damage to armor (up from 110%) to mirror the buffs given to it during OFAF DLC.
+- Two-Handed Wooden Flail now correctly has 30% base Armor Penetration as shown in the tooltip (up from 10%).
+- Armor Penetration of Two Handed Flail is reduced from 50% to 30%. This is only visual and not a nerf. It always used 30% armor pen for damage calculation purposes.
+- Ijirok armor fatigue penalty reduced from -38 -> -25. Durability reduced from 440 -> 350. Health regen increased from +12 -> +15. It is now a more suitable medium armour.
+- Ijirok helmet fatigue penalty reduced from -28 -> -20, Durability reduced from 330 -> 300. Health regen decreased from +12 -> +10.
+- fix for problems around Nine Lives introduced by last patch and temporarily disables the symbol again which was shown while Nine Lives is available.
+- Almost a dozen typo fixes.
+
+## 16.0.8 - An Unexpected Inquisition
+**Major Changes**
+- Champion enemies no longer get an arbitrary 15% damage boost. We feel that damage changes should come from named weapons or perks.
+- All non-avatar starters now get perks every 4 levels like normal brothers. This change, in conjunction with lowering vet levels to 4 instead of 5, serves to eliminate the "necessity" of keeping starter brothers alive while not impacting late game power potential.
+
+**Inquisition Origin**
+- Starting Flagellant now gains +10 melee skill instaed of +5 melee defense. Now has guaranteed 2 start talent in melee skill.
+- Starting Nun now gets +10 stamina, +10 melee skill, +7 hitpoints and -5 initiative, instead of +10 hitpoints and +5 melee skill. Talents are now 3/2/3 in resolve, melee skilll and melee defense respectively.
+- Starting characters no longer start with 1 tier of their perk list unlocked.
+- These changes were made to make the starters more late game capable and further slot into their thematic roles. The Flagellant foregoes defense in exchange for a large health pool and strong melee attack. The Nun excels at defense and is a capable attacker, but is slow to act in combat due to the lumbering trait and inherentely lower initiative.
+
+- The perk 'Nine Lives' will now show a symbol above the entity for as long as it has not been procced (similar to Bone Plating)
+
+**Balance**
+- 'Broken Net' is now categorised as a 'Crafting Material'
+- Infantry Axe - Buffed stamina cost to 14 from 15 to better reflect the Infantry Axe's new role on the battlefield.
+- Nerf to well tended - now has a more mild effect and lasts for much longer
+
+**Improvement**
+- The perk 'Nine Lives' will now show a symbol above the entity for as long as it has not been procced (similar to Bone Plating)
+
+**Fixes**
+- Changes tooltip and function of perk 'Danger Pay' to match exactly as the perk description advertises
+- Fixes several crashes caused by the perk 'Danger Pay'.
+- Fixes Issue where Veteran Level perks were given out at Level 13, 17, 21, 25, ... instead of 15, 19, 23, 27, ...
+- Fixes an issue with the blacksmith event hanging for lone wolf.
+- Fixes an issue with the caravan event hanging for lone wolf.
+- Lone wolf should now have the correct recruiting rules of 0 upkeep for event joiners (thanks to Midas) 
+
+## 16.0.7 - Ber Minot Misti
+**Exciting New Feature**
+- You now have more options to manipulate layered gear in the inventory. Check the tooltip on layered gear to see the options. (This was already added but not mentioned in patch notes. Thanks Taro!)
+
+**Changes**
+- Legend orc weapons fixed and rebalanced. They properly count as orc weapons now for anything that reduces fat cost on skill use. Properly set armor penetration on skills in a few cases (buff). Properly set split shield fatigue cost and rebalanced shield damage on 2h non-axe Legends orc weapons.
+- Changed Split Shield to only cost 4 AP on Infantry Axe instead of 6 AP.
+- Tweaked stats and given XP of the new peasant enemies.
+- Gave Peasant Squire some better armor.
+- Gave Barbarian Background terrain modifiers.
+- Removes Rabble from locations. Rabble will stop spawning sooner. Thugs will start spawning sooner.
+- Named orc flail base stats brought in line with it's non named counterpart (buff).
+- Shortbow perks now give full bonuses to named goblin bows as intended.
+- The company avatar of the Noble origin is now locked to the starting one.
+- Companions re-balanced, relationships is now handled via a different method in Lone Wolf origin.
+- Upkeep issue should now be fixed for new hires in Lone wolf origin.
+- Adds two new events to Lone wolf to give them a blacksmith or tailor respectively.
+- Swordmaster from FE event fixed - swordmaster challenge now only procs when you have a level 11 or higher bro with this perk as intended.
+- Outros from crisis events have had their flavour text changed to better reflect the scaling nature of Legend's gameplay loop.
+- Value of famed orc flails is increased to 2100 (up from 1300).
+- Error during sunken libary fight when flying skulls explode.
+- Every accessory now plays a sound when equipped or moved around in the inventory.
+- Famed Noble Tunics now roll a durability between 46 - 56 (up from 40 - 50) to make sure its always better than its base version.
+
+**Fixes**
+- Fixed exploit that allowed selling of layers for their full buy price.
+- Fixed Veteran level perks only being given every 5 levels instead of the new 4.
+- Fixed error during the Event 'holywar_crucified_1_event'.
+- Fixed the fix of the clothing merchant event.
+- Fixed the fix of the gladiator helm bug.
+- Fixed cult armor perk having an undefined variable.
+- Fixed Peasant Witchhunter's shortsword not being equipped to bag.
+- Fixed a bug with a recently added event causing it not to fire in the correct manner.
+- Fixed a bug causing the peasant squire enemy not to load.
+
+## 16.0.6 - Poacher's Paradise
+- Adjusted brigand spawns yet again. Early game should be more balanced now. Units should show up at appropriate times. Tweaked nomads slightly to favor ranged units less. Let us know how these changes feel.
+- Allowed shortbow perks to work with reinforced boondock bow.
+- Lone Wolf origin - Barred from receiving roster size ambitions as an option.
+- Peasant Poacher, Squire and Witchunter enemies added to brigand parties.
+- Peasant Poacher, Squire and Witchunter enemies no longer have 1.5x hp on legendary.
+- Warbrand and Rhomphaia greatslash changed to slash. This was way too powerful and not balanced.
+- Man Mangler will now have proper armor penetration with Overhead Strike.
+- Extends armor piercing bolt changes to the large stack as intended.Manhunter origin
+- Whipping your indebted no longers lowers their resolve. Feedback suggested that this penalty was too high. Give more feedback.
+- Changed Headhunter tooltip to reflect Legends 1.5 changes.
+- Hopefully fixed an error with the clothing merchant event.
+- Fixed a bug when receiving a gladiator helm as an arena award.
+
+## 16.0.5 - Fat, Dead and Bloody
+**Changes** 
+- Lumberjack is now tagged as a combat background for origin purposes.
+- Trader Commander is now fat as befits a person of greed and gluttony.
+- Cabal brothers that raise from the dead should now only raise as zombies, not skeletons as intended.
+- Beastslayers origin now should give beastslayers 'natural' order as intended. Additionally, the Vala will get 'natural order' also. Why? Because I can.
+- Named parrying daggers may now spawn in weaponsmiths and other locations.
+- Lone wolf roster max raised from 10 to 12. Fixed an issue only allowing 3 bros to be hired and not progressing beyond that point. Scenario card amended.
+- Reduced cabal origin card fluff so it no longer runs off the screen.
+
+**Fixes**
+- Fixes an issue with healer tent occasionally crashing
+- Few typos fixed in various events and skills.
+- Lone wolf buying donkeys for free fixed.
+- Goblin helmets are no longer flipped.
+- Attempted to fix the rotation crash again.
+- Firefield skill missing isAppliedOnEnter.
+- Added missing bleed icon to prepared bleed effect.
+
+## 16.0.4 - Last Knight Standing
+**Lone Wolf Scenario**
+- Melee and ranged companions have had most of their base stats raised.
+- Lone wolf has had a few base stats raised.
+- Companions can now occupy any retinue slot, as long as it is unlocked.
+- Companions should now have the correct weapon trees (they were the basic trees for the PTR merge, which did not happen in V16).
+- Lone wolf should now reduce random hires from events (apprentice, vala, kings guard, etc.) to zero daily wage.
+
+**Changes**
+- Hedge knights and knights now have the 'last stand' perk by default.
+- Both the above have had their hitpoints greatly increased.
+
+**Fixes**
+- Improper file path for armor in new background.
+
+## 16.0.3 - Name Pending <3 Uber
+- fix: Increased 2h Flail damage to 45 - 90 as intended.
+- fix: Zombie trying too set brush for a sprite it doesn't have.
+- fix: Possession not actually applying possessed.
+- fix: Stollwurm helm typo.
+- fix: Some more crafting item typos.
+- fix: Potential error if nearest there are no zombie or bandit locations on the map.
+- style: Replace double spaces in character screen paperdoll with tabs.
+
+## 16.0.2 - First Day Hotfixes
+- bugfixes
+
+## 16.0.1 - The One That Took Forever
+- bugfixes
+
+## 16.0.0 - The One That Took Forever
+
+===**DLC Compatibility**===
+    - Anatomists and Oathtakers have been made Legends compatible.
+    - OFaF armors have not yet been converted into layers.
+    - New events that give non-OFaF armors have been converted to layers.
+  
+===**Origins**===
+**Trader Origin Reworked**
+    - Difficulty reduced from 2 to 1.
+    - Trader is now called a merchant, which is an avatar unique to this origin with special skillsets and lower stats than a normal trader.
+    - Combat backgrounds cost 25% more to maintain. Every combat background you hire can roll disloyal, greedy, slack, dastard, double tounged or weasel traits randomly on hire.
+    - Peddlers cost 25% less to recruit, but 25% more upkeep. Any hire that isn't a combat hire gets the 'peaceful' perk.
+    - Donkeys cost 25% less to buy.
+    - Cannot hire outlaws.
+    - Trader origin has new busts for the merchant avatar.
+    - Trader origin now no longer has a penalty to renown gain.
+    - Trader global buy and sell price modifiers have been removed.
+    - Start with x3 more money than normal (was: x2).
+
+**Lone wolf origin Reworked**
+    - No longer starts with a squire. Lone wolf starts alone again.
+    - Lone wolf starts with no weapon - they can pick a weapon package when the run starts.
+    - Lone wolf now uses its own template, not that of the hedge knight. Has a unique skill tree.
+    - Lone wolf cannot recruit normally, they must find like minded friends across the world. These friends cost no upkeep.
+    - Starts at professional renown, capped at 10 brothers total. Scaling is two-thirds higher than normal.
+    - Lone wolf origin now has the 'relationships' mechanic.
+
+**Manhunters Origin Tweaked**
+    - Whip slave skill now costs 2 AP (from 4), fatigue cost reduced to 10 (from 15), max range increased to 4 (from 3).
+    - Whipped effect increased in duration to 3 turns (from 2). Base melee skill upped to 12 (from 9), ranged skill to 14 (from 9), Melee/ranged defence increased to 5 (from 0), initiative unchanged (9).
+    - Resolve increase removed from whipped effect, now removes 5 resolve base and decreases resolve further based on slave level for every whip.
+    - Slaves are 50% cheaper to hire from this origin.
+
+**Beastslayers Origin Reworked**
+    - Difficulty dropped from 3 to 2.
+    - Ranger backgrounds gain a new baseplate in battle
+    - Sell price decreased from 90% to 80%
+    - Buy price increased from 110% to 120%
+    - Unique trait: Natural Order
+        • When battling beasts, gain +10% Melee and Ranged damage, as well as +5 Resolve.
+    - New background unique to this origin; Guild Master
+        • The guild master is an aging beast slayer who knows how to craft runes. They cannot make runes without the vala unlocking them first, however.
+    - Recruiting rules
+        • Reduction of cost and upkeep for beastslayer backgrounds by 20%.
+        • Other ranger backgrounds have their cost and upkeep reduced by 10%.
+        • Vala costs no upkeep.
+        • Beasthunters appear more frequently in town rosters.
+        • Small chance to find Guild Masters in any settlement
+    - *Pending* - Improved versions of current craftables for Beastslayer Origin. Including attachments, trinkets and hopefully consumables/throwables. This is the feature that had thus far been holding up this origin rework. It's coming along. Blame Uber!
+
+**Assorted Origin Changes**
+    - Crusader now starts with a Longsword instead of the Crusader Sword. Crusader Sword can now be obtained via an event. 
+    - Preserver from Cabal origin now gets scythe skills like her two counterparts do.
+    - Cabal can no longer find puppets in towns - it is now done via a repeating event.
+    - 'Deathy spectre' effect is now back in the Cabal origin.
+
+===**Balance**===
+**Perk and Skill Balance**
+    - With Throwing Mastery, damage increase at 2 tiles distance has been reduced to 30% instead of 40%.
+    - Footwork skill fatigue cost reduced to 20 from 25.
+    - Head Hunter no longer loses stacks on misses.
+    - 'Violent decomposition' damage threshold raised from 35 to 55 base damage.
+    - 'Lacerate' cultist perk now triggers regardless of circumstances.
+    - Possession skill now makes the possessed unit immune to charm for the possession duration.
+
+**Weapon Balance**
+    - Two Handed Wooden Flail damage increased to 30-60 from 25-60.
+    - Two Handed Flail damage increased to 45-90 from 40-80.
+    - Orc Flail min damage up to 50 from 40.
+    - Cascade skill (Three Headed Flail) fatigue cost reduced to 13 from 15.
+    - Pound skill (Two Handed Flails) now ignores an additional 20% of armor on hits to the head with Flail Mastery and 10% without Flail Mastery. 
+    - Handgonne effectiveness against armor reduced to 90% from 100%.
+    - Split and Swing skills now gain +10% to hit (total +5%) from Sword Mastery up from +5% (total +0%).
+    - Aimed Shot skill now costs 20 fatigue, down from 25, and costs 7 action points, down from 8.
+    - Shield damage multiplier on named weapons increased to 1.5x-2.0x, up from 1.33x-1.8x.
+    - Longsword now costs 8 stamina to equip, greatsword costs 10.
+    - Two-handed club decreased from 750 cost to 450.
+    - Crusader sword rebalanced; stun chance decreased from 30 to 15%, damage increased.
+
+**Northern Sling Rebalance**
+    - Default accuracy debuff reduced to -5 from -40.
+    - Hit chance modifier per tile of range changed to -4 from 3.
+    - Sling Mastery now reduces default accuracy debuff to 0 from -5.
+    - Sling Mastery now reduces hit chance modifier per tile of range from -4 to -2.
+    - With these changes, the sling will now act more like a traditional ranged weapon, losing accuracy based on distance. However, with Sling Mastery, it becomes the best weapon for range at -2 to hit per tile compared to -3 or -4 for Bow or Crossbow. Add Ballistics and you now have no penalty to hit based on distance. This rebalance should keep the theme and use case of the Northern Sling alive while making it more balanced and realistic of a weapon.
+
+**Barter Modifiers and Tree Rework**
+    - Barter array modifiers changed from 0.0, 0.005, 0.01, 0.02, 0.03 to 0.0, 0.003, 0.006, 0.01, 0.013. - divisions of 3 allow us to better control later game barter benefits by spacing the increments.
+    - Seductive trait reduced from +0.5% barter to +0.3% barter
+    - 'Convincing Proposals' perk now gives 5% to caravan escort payout per head (up from 1%), but no longer influences barter. Adds 10 crowns a day per perk in party.
+    - 'Trustworthy Demeanour' perk unchanged.
+    - 'Danger Pay' perk now gives the 'motivated' effect to the buffed brother - increasing their damage by 10%, melee and ranged skill by 5% and granting 15% more resolve for 3 turns. Costs 2 AP to perform (from 4).
+    - 'Paymaster' perk unchanged.
+    - 'Bribe' perk now costs 3 AP to perform (was 4).
+    - 'Greed' perk removed.
+
+**Backgrounds**
+    - Added new background: Surgeon - Replaces Crucified Crusader background obtainable during the Holy War Crisis. 
+    - Inquisition Origin New Background: Youngblood - Youngbloods are students who have yet to prove themselves as capable witchhunters. Are recruitable.
+    - Hiring and daily cost changes.
+        • Brawler: 125 from 120.
+        • Deserter: 85 from 100.
+        • Disowned Noble: 135 from 60. Daily Cost 17 from 18.
+        • Alchemist background type changed to Educated from Female, Combat and Performing.
+        • Qiyan background type added Combat in addition to Female and Performing.
+        • Druid and Druid Commander now start with a staff.
+    - Miller (and female miller) background now count as an Outlaw.
+
+**Enemy Balance**
+    - Adjusted Brigand spawns to fix return item contracts being too hard in the early game. Spawns are finicky, so let us know how your experience is now.
+    - Kraken now has less health and destroying tentacles inflicts a higher minimum damage to the Kraken as a whole.
+    - Ijirok now has slightly more health and slightly better stats.
+    - 'Chilled' status effect now lasts for two turns instead of one. It now applies -3 Action Points and -50 Initiative the first turn, and -2 Action Points and -30 Initiative on the second.
+    - Orc Warlords now have the Captain perk/effect and the Resilient perk.
+    - All ancient dead have gained +10 resolve, buffing their fearsome perk.
+    - Pathfinder has been removed from all Ancient Dead.
+    - Skeleton gladiators now may spawn in the black monolith fight.
+    - The Ijirok now has higher regen and is nimble. Has increased health, melee skill but loses ranged defence. Now grants much more xp when slain. 
+    - Footman armour outfit can no longer spawn with robes underneath, only gambesons and surcoats.
+    - Brigand warlords are now immune to disarm (lmao).
+    - Greenwood schrat now has a higher chance to drop ancient greenwood.
+    - Kraken now grants much more xp when slain.
+    - Rachgeist now more powerful, also gives much more xp than before.
+    - Ifrits now have a tiny chance to drop uncut gems on death.
+    - Southern assassins can now spawn as champions - they will spawn with named shamshirs, daggers, qatal daggers or a named armour layer. Champions gain the usual +25% direct damage buff and onslaught + escape artist perks in addition to their regular perks.
+    - Lindwurm packs now have a lower score threshold - meaning you should see fewer impossible fights against them.
+    - Hexen gain the 'wither' ability. Hexen leaders gain 'wither' and 'sleep'.
+    - Added a slim chance for rock unholds to spawn in frost unhold groups.
+
+**Armor and Item Balance**
+    - Alp Trophy Necklace value increased from 250 to 400.
+    - Hexen Trophy Necklace value increased from 250 to 550.
+    - When using Berserker Mushrooms, morale checks are no longer triggered on HP loss.
+    - Ijirok armour and helmet now improved. Regenerates more health and provides much higher base armour.
+    - Emperors armour item improved. both have increased armour. Effect remains the same.
+    - Armor of the mountain has been improved - much higher base armour at the cost of fatigue.
+    - Skin ghoul armour improved slightly.
+
+**Other Balance**
+    - Set the default settlements to 19 (vanilla) instead of 27. This was done in consideration of balance. 19 settlements is what the game was designed around. More settlements than this means more patrols and more caravans, leading to less dangerous roads and travel. Players are of course still free to adjust this according to their own preferences.
+    - Changed the relations gain/decay effect of the Negotiator(Meeting Point) to 15%, up from 10%, as they did in Vanilla.
+    - Injury heal rates (not healing itself) has been readjusted from 0.0, 0.05, 0.15, 0.25 to 0.0, 0.03, 0.6, 0.10.
+    - When being healed at a temple, that brother with get a temporary buff which improves their stats as they recover. This effect will disappear after a few days. This is only obtainable at temples.
+    - The 'boss' in the black monolith now always spawns with a named crypt cleaver.
+    - A previously unobtainable item may now drop as loot in the black monolith fight.
+    - Vala now requires 1 uncut gems per rune to craft.
+
+===**General Improvements**===
+    - Added new trait: legend_fear_dark_trait.
+    - 'Intensive training' trait will now change appearance when you complete it.
+    - The arena should now give you just the layer of the gladiator helmet, not the gladiator helmet as a package. This will stop the event saying you received an aketon cap.
+    - Veteran perkpoints after 11 have been changed from every 5 levels to every 4. Starting bros and avatars still get theirs every 2.
+    - You will now get 2 stakes for every raw wood in crafting, rather than 1.
+    - Improved Slingshot tooltip to mention it can target heads and daze enemies.
+
+===**Events**===
+    - There is a new event to meet a merchant on the road, who will sell you a donkey or random vanity headwear items. This event repeats.
+    - A strange old man may try to sell you something. Does not repeat.
+    - Cabal now has an event to recruit puppets.
+    - Crisis join events reworked; if you you are playing solo crusader, solo ranger or noble you'll get a different recruit for your respective event. Eg, a solo crusader starter will not gain another crusader, instead they'll get another background that is semi unique to their story.
+    - Assassin from bastard vs. assassin event now starts at level 5 (was: 4).
+
+===**Art**===
+    - Man-at-arms now has new background art.
+    - New background art for surgeon.
+    - New trait art for Nyctophobia.
+    - New background art for lone wolf, made by Gilded Wraith.
+    - New background art made for berserker.
+    - Rotting flesh and fleshless traits have new art.
+    - New background art for youngblood.
+
+===**Typos**===
+    - Fixed Disowned Lady background using the Farrier description.
+    - A few minor typos fixed, many thanks to Dimon.
+    - Tweaked a few barter tooltips.
+    - Removed the part on 'throw net' about throwing nets requiring Rskill to connect with their target.
+    - Tweaked blacksmith background's tooltip.
+    - Deathwish trait now has a stipulation regarding the fearsome perk.
+    - Clarification given to zweihander, greatsword and longsword items in their descriptions to better describe which of them they are. This has also been applied to their named counterparts for better identification.
+    - Fixed a few issues with the druid background with typos.
+
+===**Fixes**===
+    - Hopefully fixed a bug where orcs did full weapon damage even when disarmed.
+    - Tutorial scenario starter brothers now get a perk point every 2 levels as they should do.
+    - Skeleton gladiators should now be unable to flee combat.
+    - Fixes an issue with a mistype in the obsidian dagger stat sheet.
+    - Natural and frail traits are now mutually exclusive.
+    - Assassin from bastard vs. assassin event can no longer be given the 'loyal' trait.
+    - A few minor fixes to windup and smackdown.
+    - Arena spectators now all have bodies.
+    - Mummies can now use the 'gash' skill when equipped with a kopis.
+    - Goblins should now not drop invisible helmets on death.
+    - Fixes an exploit that can be used in the sunken library fight (Thanks Necro).
+    - Player characters can now never roll greedy, loyal or disloyal (as all these traits are pointless).
+    - Demon alp AI fixed (maybe?).
+    - Fixed a typo in 'backflip' that was causing errors.
+    - Wardrum now works as a two handed weapon as intended.
+    - Fixed an issue where the witch burning event would always force a brother into the player's roster even if they were at full capacity.
+
+===**Backend**===
+    - Note; files below have been moved or outright deleted and replaced. ANY mods using these files WILL crash or cause errors if not updated. We will not be changing vanilla files as they may cause serious conflicts with mods not made for legends.
+    - "cultist_darksoul_background" changed to "legend_husk_background".
+    - "cultist_lurker_background" changed to "legend_lurker_background".
+    - "cultist_magister_background" changed to "legend_magister_background".
+    - "legend_donkey" changed to "legend_donkey_background".
+    - "legend_great_khopesh" moved from "scripts\items\weapons" to "scripts\items\weapons\ancient".
+    - "legend_bastardsword" renamed to "legend_longsword".
+    - Added an additional difficulty step 'legendary' to scenarios (case = 4).
+    - Made 'legend_fleshless_trait' and replaced 'legend_fleshless' which was an injury type. This change affects legion, deathy spectre and skeleton summons.
+    - "pilgrim_background" is now called "legend_pilgrim_background".
+
+===**MISC.**===
+    - Mercenaries can now be afraid of the dark.
+    - Taverns will now have a variety of random names, instead of just "Tavern".
+
+############################PRE VERSION 17###################################
 ## Alpha 1
 
 Mod Features:
@@ -5359,7 +5882,7 @@ Fixes all the perks allowing for passive production at a tent (e.g. hunter build
 Unstoppable Force renamed to Immovable Object (lol)
 Witch burn event can't happen if you have max roster
 
-## 15.0.1.16 
+## 15.0.1.16
 Died from too many patches
 
 ## 15.0.1.17 (Did someone say FIXES?!)
@@ -5803,7 +6326,7 @@ In the Zone (tier 7) - Melee Defense and Melee Damage are increased by 1% every 
 - Made minor edits to nomad spawns overall (should see fewer clusters of specials and leaders now)
 
 **For Modders**
-- MSU was updated and the repo can be accessed here with documentation: https://github.com/Battle-Brothers-Legends/mod_MSU
+- MSU was updated and the repo can be accessed here with documentation: https://github.com/MSUTeam/mod_MSU
 
 ## 15.0.1.20i
 - Fixes critical crash when loading saved games.
@@ -6740,6 +7263,11 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Fixed Double Strike mini icon not appearing.
 - Fixes an issue where possession was not being dismissed when combat ended.
 
+**Text**
+- Added fluff to perk descriptions of Mark Target, Danger Pay, Hold the Line, Forward Push, Bribe, Return Favor, Perfect Focus, Rotation, Footwork, Debilitate, Indomitable, Rally the Troops, First Aid, Sundering Strikes, Bloody Harvest, Immovable Object, Executioner, Steel Brow, Anticipation, Double Strike, Vengeance, Ballistics and Battle Flow.
+- Added detail to perk descriptions of Revolt and Entice.
+- Improved grammar in Peddler Deal event.
+
 **Typos**
 - Fixed an issue with player avatar trait not displaying the information correctly.
 - Fixed a few typos in the legends tournament event.
@@ -6763,44 +7291,4 @@ Experimental: High tier ghouls (capable of swallowing bros) have been increased 
 - Improved automatic formatting for perk tree mention in perk tooltips.
 - Modding: Updated MSU to v0.6.27.
 
-## 15.0.2.11 Next Build 
 
-:kobold: **Kobolds**
-- Can show up in goblin scouting parties, or when the greenskin horde assembles
-- become invisible at the end of every turn 
-- Blowgun can daze, and stun if they hit the head
-- Art by Von Krolock 
-- 80 new sounds
-
-:tempt: **Vala** 
-Vala is intended to be rare and mysterious, not something everyone farms
-- You will now only encounter a vala during the undead crisis
-- Her offensive abilities can now affect your own company 
-
-:sly: **Runes**
-Runes are meant as powerful spiritual artifacts, not mandatory on every item.  
-- Equiping a rune will now scare your mercenaries, adding a negative trait that grows worse for each rune you hold
-- 1 rune - Unsettled: - +6 or -6 resolve randomly at each resolve check. 
-- 2 runes - Spooked:  Adds -6 resolve at morale checks against fear, panic or mind control 
-- 3 runes - Haunted: Adds -6 resolve, melee skill and ranged skill when fighting the undead 
-- 4 runes - Harrowed: Adds -6 resolve at all times 
-- 5 runes - Tormented: All be above, and begins each combat at wavering 
-- 6 runes - Broken: loses all the above. Gains +6 resolve, no morale check when allies die or on losing hitpoints, not affected by injuries during battle. At the end of each turn has a 33% chance to join the enemy, 33% chance to lose control but stay on your side, 33% chance to return to your control
-Runes are only worth 100 gold, down from 1200
-
- :coin~1: **Loot**
- Legendary creatures are more rewarding, dropping more runes and crafting ingredients
-- Stollwurm -  1-2 endurance, safety or resilience runes. 1-2scales, 0-2 blood, 0-2 bones
-- white wolf - teeth and pelt gauranteed, chance of a second pelt, teeth or valuable fures
-- rock unhold - increase chance of unhold hide instead of bones. 33% each for regular unhold heart, hide and bones 
-- embalmed queen - drops a jeweled crown and ancient coins, plus 50% chance of a scroll when magic is enabled
-- greenwood schratt - drops an ancient green wood (value reduced), 50% each chance for another ancient wood, a glowing resin, a heart of the forest and a rune. 
-- demon alp - rune plus a skin or eye gauranteed. chance of another skin
-
-:hammer~1: **Fixes**
-- Scenario mode now works
-- Kobold scenario added
-- Stollwurm scenario is now in a cave 
-- Fixes barbarian drum not showing up in inventories
-- Updated bases for troupe, beasthunters and crusader
-- assassin faceplate added

@@ -2,20 +2,20 @@ this.legend_magic_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = 0,
 		AdditionalHitChance = 0,
-        DamageInitiativeMin = 0,
-        DamageInitiativeMax = 0,
-        DamageInitiativeCutoff = 100
+		DamageInitiativeMin = 0,
+		DamageInitiativeMax = 0,
+		DamageInitiativeCutoff = 100
 	},
 
-    function create()
-    {
+	function create()
+	{
 
-    }
+	}
 
-    function getTooltip()
-    {
-        return this.getDefaultTooltip();
-    }
+	function getTooltip()
+	{
+		return this.getDefaultTooltip();
+	}
 
 	function onUpdate( _properties )
 	{

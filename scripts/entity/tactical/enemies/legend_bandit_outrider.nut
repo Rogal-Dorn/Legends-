@@ -111,7 +111,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 		wolf_bite.setRestrained(true);
 		wolf_bite.m.ActionPointCost = 0;
 		this.m.Skills.add(wolf_bite);
-        this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_horse_charge"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_pirouette"));
 

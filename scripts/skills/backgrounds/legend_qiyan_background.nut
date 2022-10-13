@@ -27,19 +27,19 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.craven"
 		];
 		this.m.ExcludedTalents = [
-            this.Const.Attributes.Hitpoints,
+			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Fatigue
-        ];
-        this.m.IsGuaranteed = ["seductive_trait"]
+		];
+		this.m.IsGuaranteed = ["seductive_trait"]
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
-        this.m.Beards = null;
+		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Ethnicity = 1;
 
-		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Performing;
+		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Performing;
 		this.m.Modifiers.Barter = this.Const.LegendMod.ResourceModifiers.Barter[3];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[1];
@@ -62,7 +62,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			Class = [
 				this.Const.Perks.KnifeClassTree,
 				this.Const.Perks.BardClassTree
-            ],
+			],
 			Magic = []
 		}
 	}

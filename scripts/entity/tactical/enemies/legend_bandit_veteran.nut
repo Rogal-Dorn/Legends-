@@ -210,7 +210,7 @@ this.legend_bandit_veteran <- this.inherit("scripts/entity/tactical/human", {
 				}
 				else if (r == 9)
 				{
-					this.m.Items.equip(this.new("scripts/items/weapons/legend_bastardsword"));
+					this.m.Items.equip(this.new("scripts/items/weapons/legend_longsword"));
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

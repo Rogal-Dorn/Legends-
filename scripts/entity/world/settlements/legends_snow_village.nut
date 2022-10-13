@@ -9,12 +9,12 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 			"Kravlund",
 			"Bola",
 			"Ravestad",
-                        "Gammeljord",
-                        "Tabtmennesker",
-                        "Morktoppe",
-                        "Lysdal",
-                        "Narredod",
-                        "Forsvinde",
+						"Gammeljord",
+						"Tabtmennesker",
+						"Morktoppe",
+						"Lysdal",
+						"Narredod",
+						"Forsvinde",
 			"Alsliv",
 			"Hellevad",
 			"Heimstad",
@@ -309,7 +309,7 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/trapper_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -320,7 +320,7 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 			}],
 
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/surface_copper_vein_location",
 				Terrain = [this.Const.World.TerrainType.Hills, this.Const.World.TerrainType.Snow ],
 				NearTerrain = [],
@@ -330,7 +330,7 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

@@ -75,7 +75,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
-				this.Const.Perks.PerkDefs.Adrenalin
+				this.Const.Perks.PerkDefs.Adrenaline
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -165,20 +165,9 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -299,7 +288,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 		stash.add(this.new("scripts/items/supplies/armor_parts_item"));
 		stash.add(this.new("scripts/items/supplies/medicine_item"));
 		stash.add(this.new("scripts/items/supplies/cured_venison_item"));
-		items.equip(this.new("scripts/items/weapons/legend_crusader_sword"));;
+		items.equip(this.new("scripts/items/weapons/legend_longsword"));;
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "legend_crusader_armor"]

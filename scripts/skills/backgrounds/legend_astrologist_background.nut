@@ -26,7 +26,7 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.StaffTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -53,7 +53,7 @@ this.legend_astrologist_background <- this.inherit("scripts/skills/backgrounds/c
 		local c = {
 			Hitpoints = [
 				-10,
-                0
+				0
 			],
 			Bravery = [
 				0,

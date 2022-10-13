@@ -100,8 +100,8 @@ this.legend_halberd_smite_skill <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-	    this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
-	    return this.attackEntity(_user, _targetTile.getEntity());        
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
+		return this.attackEntity(_user, _targetTile.getEntity());		
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )

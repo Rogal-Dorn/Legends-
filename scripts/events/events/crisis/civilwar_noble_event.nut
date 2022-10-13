@@ -47,7 +47,7 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 							"legend_noble_event_background"
 						]);
 						_event.m.Dude.getSkills().add(this.new("scripts/skills/racial/skeleton_racial"));
-						_event.m.Dude.getSkills().add(this.new("scripts/skills/injury_permanent/legend_fleshless"));
+						_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_fleshless_trait"));
 						}
 					else
 					{
@@ -75,9 +75,9 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-        local roster = this.World.getPlayerRoster().getAll()
-        foreach( bro in roster)
-        {
+		local roster = this.World.getPlayerRoster().getAll()
+		foreach( bro in roster)
+		{
 			if (bro.getBackground().getID() == "background.legend_noble_event")
 			{
 				return

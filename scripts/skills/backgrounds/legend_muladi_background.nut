@@ -62,7 +62,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.BowTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
@@ -75,10 +75,10 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [
-                this.Const.Perks.NomadsTree
-            ],
+				this.Const.Perks.NomadsTree
+			],
 			Class = [this.Const.Perks.ShortbowClassTree,
-            this.Const.Perks.HoundmasterClassTree],
+			this.Const.Perks.HoundmasterClassTree],
 			Magic = []
 		}
 	}
@@ -86,20 +86,9 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.PrettyFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -112,7 +101,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 
 	}
 
-    function onAdded()
+	function onAdded()
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
@@ -221,7 +210,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.addToBag(this.new("scripts/items/weapons/militia_spear"));
 		}
 
-        items.equip(this.new("scripts/items/accessory/wardog_item"))
+		items.equip(this.new("scripts/items/accessory/wardog_item"))
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/nomad_robe"],

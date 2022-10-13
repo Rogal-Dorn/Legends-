@@ -10,17 +10,17 @@ this.legend_horse_caparison <- this.inherit("scripts/items/legend_horse_armor/le
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [
 			"black",
-            "blue",
-            "blue_green",
-            "blue_red",
-            "blue_white",
-            "blue_yellow",
-            "brown",
-            "green_yellow",
-            "red_yellow",
-            "white_black",
-            "yellow_black",
-            "yellow_red"
+			"blue",
+			"blue_green",
+			"blue_red",
+			"blue_white",
+			"blue_yellow",
+			"brown",
+			"green_yellow",
+			"red_yellow",
+			"white_black",
+			"yellow_black",
+			"yellow_red"
 		];
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
 		this.updateVariant();

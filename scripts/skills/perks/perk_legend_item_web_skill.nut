@@ -22,9 +22,9 @@ this.perk_legend_item_web_skill <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-    function onRemoved()
-    {
-        this.m.Container.removeByID("actives.web_skill");
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.web_skill");
 	}
 
 });

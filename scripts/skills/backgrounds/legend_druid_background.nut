@@ -8,9 +8,9 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.ID = "background.legend_druid";
 		this.m.Name = "Druid";
 		this.m.Icon = "ui/backgrounds/druid_background.png";
-		this.m.BackgroundDescription = "Druids are from the wild lands, defenders of nature.";
-		// this.m.GoodEnding = "While the %companyname% visited a town for rest and recuperation, a local princess took a shine to %name% the wildman. He was \'purchased\' for a large sum of gold and given to the noblewoman. You went and visited the man recently. For dinner, he sat at a kingly table, grinning goofily and mimicking the nobles around him as best he could. His new and inexplicable wife adored him, and him her. When you said your goodbyes, he offered you a heavy golden crown off the top of his head. It weighed heavy with traditions and ancient histories. You said it\'d be best if he kept it. The wildman shrugged and walked off, spinning the circlet around a finger.";
-		// this.m.BadEnding = "%name% the wildman stayed with the fragmenting %companyname% for a time and then, just like that, he was gone. The company went out looking for him in a forest, eventually finding some sort of crude note: an enormous pile of crowns next to a dirt-drawing of the %companyname% and some of its members, all of them being hugged by a big, literal stick figure with a goofy smile on its face. There was also an offering of a dead, half-eaten rabbit.";
+		this.m.BackgroundDescription = "Druids are from the wild lands and are ardent defenders of nature.";
+		this.m.GoodEnding = "Eventually, being away from the woods became too much for %name%, they eventually found their way back home with tales from the world outside and beyound the trees. The throws of nature were not healed, but they were mending - which is sometimes all one person can do to make a differance.";
+		this.m.BadEnding = "%name% eventually became disillusioned with the world you brought %them% into - seeking home shortly after your departure from %companyname%, they found themselves terrified by what met them. SOmething had swept through the forest in their absence and stripped the resources from the land. Animals were burnt in piles and trees had been burnt, destroyed or smashed down. %name% never did find home, or another place like it.";
 		this.m.HiringCost = 2000;
 		this.m.DailyCost = 25;
 		this.m.Excluded = [
@@ -42,24 +42,23 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 			"The Green thumb",
 			"Oakheart",
 			"Treebeard",
-			"The flower",
-			"The Pollenator",
+			"the flower",
+			"the Pollenator",
 			"Nature's Wrath",
-			"The Bear",
-			"The Wolf",
-			"The Sapling"
+			"the Bear",
+			"the Wolf",
+			"the Sapling"
 		];
-		this.m.Faces = this.Const.Faces.AfricanMale;
+		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.WildMale;
-		this.m.HairColors = this.Const.HairColors.African;
-		this.m.Beards = this.Const.Beards.Untidy;
+		this.m.HairColors = this.Const.HairColors.Young;
+		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
-		this.m.Bodies = this.Const.Bodies.AfricanMale;
-		this.m.Ethnicity = 2;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = 3;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Druid | this.Const.BackgroundType.Ranger;
-		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
-		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
+		// this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
+		// this.m.AlignmentMax = this.Const.LegendMod.Alignment.Good;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
@@ -67,7 +66,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Modifiers.Terrain = [
 			0.0, // ?
 			0.0, //ocean
-			0.0,//plains
+			0.0, //plains
 			0.05, //swamp
 			0.05, //hills
 			0.1, //forest
@@ -88,7 +87,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.StavesTree,
+				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -105,8 +104,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.FistsClassTree,
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.SickleClassTree
-
-				],
+			],
 			Magic = [
 				this.Const.Perks.DruidMagicTree
 			]
@@ -116,26 +114,15 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
-		this.m.Faces = this.Const.Faces.AfricanFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.African;
+		if (_gender != 1) return;
+		this.m.Faces = this.Const.Faces.AllWhiteFemale;
+		this.m.Hairs = this.Const.Hair.WildMale;
+		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AfricanFemale;
+		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
@@ -163,7 +150,6 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		{
 			return "{For some, the wild is a refuge. | It is said that man is born with the wilderness in him, and that he does wrong by turning his back on it. | Civilization is a stain, one prolonged arming of every next-generation to better battle the ultimate enemy: Mother Nature herself. | In a time of war, it\'s not surprising that many once again seek refuge in the wild. | Some people flee from town to town. Others stop in between, disappearing into the tranquil forests.} {%name% once found a safe register amongst the trees, but that time is over. | Once a mysterious figure to hunters - the famed masskewatsthat - %name% now returns to civilization for reasons unknown. | %name%\'s got the hands of a blacksmith, but the hygiene of a pigsty. | Maybe it was spurned love, or maybe just war, but %name% has spent the last decade far from the rest of mankind. | Possibly a poacher who settled where he hunted, %name%\'s lived amongst the trees for untold years. | With cleverly stitched garb, %name%\'s atavistic appearance perhaps belies a past as a tailor or tanner.} {There is an obvious language barrier with the druid, but for some reason he seems very willing to fight. Let\'s hope his newfound \'calling\' doesn\'t have a darker purpose behind it. | Colorful and permanent ritual rites circle about his body. When asked why he wishes to join a band of mercenaries, he hoots and, with a crooked finger, replicates one of his fleshen arts across the sky. | Wounds, old and fresh, dot his already mottled body. And they are not superficial - this man had been fighting something fierce in the wild. | One has to wonder if the calamities which chased him into the forests have come to chase him back out. | Judging by his wild grunting, it\'s doubtful he\'s here to rejoin civilization. | Years as a recluse haven\'t made the man forget what a few crowns can get you. The question is, why did he come back? | He has the strength to wrestle a boar - and his many scars makes you wonder if perhaps he did.}";
 		}
-
 
 	}
 
@@ -247,6 +233,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "barbarians/bear_headpiece"]
 		]));
+		items.equip(this.new("scripts/items/weapons/legend_staff"));;
 		//this.getContainer().getActor().TherianthropeInfectionRandom();
 	}
 

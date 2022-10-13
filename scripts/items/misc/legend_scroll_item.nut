@@ -77,11 +77,11 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		local effect = _actor.getSkills().getSkillByID("effects.scroll");
 		local smart = _actor.getSkills().getSkillByID("trait.bright");
 		if (  effect != null && ( (effect.m.Smart && smart != null) || smart == null ) )
-        {
-            return false;
-        }
-        else
-        {
+		{
+			return false;
+		}
+		else
+		{
 			switch(this.m.Selection)
 			{
 				case 1:
@@ -164,11 +164,11 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 				}
 
 			}
-        }
+		}
 		if (  effect != null )
-        {
+		{
 			effect.m.Smart = true;
-        }
+		}
 		else {
 			_actor.getSkills().add(this.new("scripts/skills/effects/legend_scroll_effect"));
 		}

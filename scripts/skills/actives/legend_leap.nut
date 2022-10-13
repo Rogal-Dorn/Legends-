@@ -42,7 +42,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 					id = 6,
 					type = "text",
 					icon = "ui/icons/special.png",
-					text = "Leap range inreased by 1 tile while wielding a staff and having staff mastery"
+					text = "Leap range increased by 1 tile while wielding a staff and having staff mastery"
 				});
 			}
 		}

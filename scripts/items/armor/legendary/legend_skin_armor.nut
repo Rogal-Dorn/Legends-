@@ -17,8 +17,8 @@ this.legend_skin_armor <- this.inherit("scripts/items/armor/named/named_armor", 
 		this.m.ImpactSound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorChainmailImpact;
 		this.m.Value = 10000;
-		this.m.Condition = 160;
-		this.m.ConditionMax = 160;
+		this.m.Condition = 180;
+		this.m.ConditionMax = 180; //was 160
 		this.m.StaminaModifier = -16;
 		this.randomizeValues();
 	}

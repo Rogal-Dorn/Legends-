@@ -61,6 +61,27 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[0];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[0];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[3];
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0, //plains
+				0.0, //swamp
+				0.0, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.05, //stepps
+				0.0, //ocean
+				0.1, //desert
+				0.1 //oasis
+			];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.PolearmTree,
@@ -87,25 +108,12 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		}
 	}
 
-
-
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		if (this.m.Ethnicity == 1)
 		{
 			this.m.Faces = this.Const.Faces.SouthernFemale;
@@ -275,13 +283,13 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (r == 1)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
+				(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_light_gladiator_upgrade" : "armor_upgrades/light_gladiator_upgrade")
 			))
 		}
 		else if (r == 2)
 		{
 			a.setUpgrade(this.new("scripts/items/" +
-				(this.LegendsMod.Configs().LegendArmorsEnabled() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
+				(!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue() ? "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade" : "armor_upgrades/heavy_gladiator_upgrade")
 			))
 		}
 		items.equip(a);

@@ -90,7 +90,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -117,7 +117,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 				id = 16,
 				type = "text",
 				icon = "ui/icons/xp_received.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] Experience Gain"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Experience Gain"
 			});
 			ret.push({
 				id = 17,
@@ -165,20 +165,9 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 0;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
-			{
-				r = this.Math.rand(0, 19);
-			}
-		}
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 19)
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -265,7 +254,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 
 		if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null && this.World.Assets.getOrigin().getID() == "scenario.manhunters")
 		{
-			_properties.XPGainMult *= 0.75;
+			_properties.XPGainMult *= 1.1;
 			_properties.SurviveWithInjuryChanceMult = 0.0;
 		}
 	}

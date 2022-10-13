@@ -17,11 +17,11 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"Sturmfeste",
 			"Wesefeste",
 			"Dunenfeste",
-                        "Horizont",
-                        "Ertrunkenort",
-                        "Diekante",
-                        "Dasende",
-                        "Wasserkante",
+						"Horizont",
+						"Ertrunkenort",
+						"Diekante",
+						"Dasende",
+						"Wasserkante",
 			"Seemarkfeste",
 			"Seelandfeste",
 			"Regenfeste",
@@ -261,11 +261,11 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"female_adventurous_noble_background",
 		]];
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],
 		[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		],
@@ -387,7 +387,7 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],
@@ -720,7 +720,7 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/port_building"), 3);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/training_hall_building"));
 
-		if ( _settings.StackCitadels)
+		if (::Legends.Mod.ModSettings.getSetting("StackCitadels").getValue())
 		{
 			local ALL = [
 				this.Const.World.TerrainType.Plains,

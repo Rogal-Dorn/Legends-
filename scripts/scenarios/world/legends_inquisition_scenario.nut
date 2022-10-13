@@ -33,12 +33,10 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% has no greater joy than suffering in the name of the old gods. Pain and pleasure and intimately linked, just as creation and desctruction are intwined. Each lash of the whip is like the caress of an angel, and their belief is that in only through suffering can we find salvation. Few laymen understand this viewpoint, but it is respected by other servants of the old gods.}";
 		bros[0].setPlaceInFormation(4);
-		bros[0].setVeteranPerks(2);
 		bros[0].getBaseProperties().Hitpoints += 10;
-		bros[0].getBaseProperties().MeleeDefense += 5;
+		bros[0].getBaseProperties().MeleeSkill += 10;
 		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_inquisition_disciple_trait"));
 		this.addScenarioPerk(bros[0].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
-		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "barbarians/leather_helmet"]]));
@@ -49,7 +47,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		talents.resize(this.Const.Attributes.COUNT, 0);
 		talents[this.Const.Attributes.Bravery] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
-		bros[0].fillTalentValues(1, true);
+		talents[this.Const.Attributes.MeleeSkill] = 2;
 		bros[1].setStartValuesEx([
 			"witchhunter_background"
 		]);
@@ -68,10 +66,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[1].m.PerkPoints = 1;
 		bros[1].m.LevelUps = 1;
 		bros[1].m.Level = 2;
-		bros[1].setVeteranPerks(2);
 		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
 		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
-		bros[1].m.PerkPointsSpent += 1;
 
 		bros[2].setStartValuesEx([
 			"legend_nun_background"
@@ -79,11 +75,13 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 3;
-		talents[this.Const.Attributes.MeleeSkill] = 3;
-		bros[2].fillTalentValues(1, true);
-		bros[2].getBaseProperties().Hitpoints += 10;
-		bros[2].getBaseProperties().MeleeSkill += 5;
+		talents[this.Const.Attributes.Bravery] = 3;
+		talents[this.Const.Attributes.MeleeSkill] = 2;
+		talents[this.Const.Attributes.MeleeDefense] = 3;
+		bros[2].getBaseProperties().Stamina += 10;
+		bros[2].getBaseProperties().MeleeSkill += 10;
+		bros[2].getBaseProperties().Hitpoints += 7;
+		bros[2].getBaseProperties().Initiative -= 5;
 		bros[2].getBackground().m.RawDescription = "{%name% is a huge figure, who spent many years in a temple healing and carrying the sick, learning the power of both strength and compassion. It was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world. }";
 		bros[2].setPlaceInFormation(5);
 		local heavy = this.new("scripts/skills/traits/heavy_trait");
@@ -92,9 +90,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			bros[2].getSkills().removeByID(skill);
 		}
 		bros[2].getSkills().add(heavy);
-		bros[2].setVeteranPerks(2);
 		this.addScenarioPerk(bros[2].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
-		bros[2].m.PerkPointsSpent += 1;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
@@ -110,7 +106,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		if (armor != null)
 		{
 			local chains = [
-                [1, "chain/legend_armor_mail_shirt"],
+				[1, "chain/legend_armor_mail_shirt"],
 				[1, "chain/legend_armor_mail_shirt_simple"],
 				[1, "chain/legend_armor_short_mail"]
 			]
@@ -141,7 +137,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 			items.equip(armor);
 		}
-		if (this.LegendsMod.Configs().LegendArmorsEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
 		{
 			foreach( bro in bros )
 			{
@@ -287,64 +283,25 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function onUpdateDraftList( _list, _gender = null)
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() < 5)
 		{
 			local r;
-			r = this.Math.rand(0, 2);
-			if (r == 0)
-			{
-			_list.push("flagellant_background");
-			}
-			r = this.Math.rand(0, 4);
-			if (r == 0)
-			{
-			_list.push("monk_background");
-			}
-			r = this.Math.rand(0, 6);
-			if (r == 0 && _gender)
-			{
-			_list.push("legend_nun_background");
-			}
-			r = this.Math.rand(0, 8);
-			if (r == 0)
-			{
-				_list.push("witchhunter_background");
-			}
-			r = this.Math.rand(0, 49);
-			if (r == 0)
-			{
-				_list.push("legend_crusader_background");
-			}
+			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
+			if (::Math.rand(0, 4) == 0) _list.push("monk_background")
+			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_nun_background")
+			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_youngblood_background")
+			if (::Math.rand(0, 8) == 0) _list.push("witchhunter_background")
+			if (::Math.rand(0, 49) == 0) _list.push("legend_crusader_background")
 		}
 		if (_list.len() >= 5)
 		{
 			local r;
-			r = this.Math.rand(0, 2);
-			if (r == 0)
-			{
-				_list.push("flagellant_background");
-			}
-			r = this.Math.rand(0, 3);
-			if (r == 0)
-			{
-				_list.push("monk_background");
-			}
-			r = this.Math.rand(0, 4);
-			if (r == 0 && _gender)
-			{
-				_list.push("legend_nun_background");
-			}
-			r = this.Math.rand(0, 5);
-			if (r == 0)
-			{
-				_list.push("witchhunter_background");
-			}
-			r = this.Math.rand(0, 19);
-			if (r == 0)
-			{
-				_list.push("legend_crusader_background");
-			}
+			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
+			if (::Math.rand(0, 3) == 0) _list.push("monk_background")
+			if (::Math.rand(0, 4) == 0 && _gender) _list.push("legend_nun_background")
+			if (::Math.rand(0, 5) == 0) _list.push("witchhunter_background")
+			if (::Math.rand(0, 19) == 0) _list.push("legend_crusader_background")
 		}
 	}
 

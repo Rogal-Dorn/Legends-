@@ -69,18 +69,18 @@
 	position: relative;
 
 	/*background-image: url("coui://gfx/ui/skin/paperdoll_slot_small.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 7.4rem 7.4rem;*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 7.4rem 7.4rem;*/
 }
 
 .character-screen-container .paperdoll-module .l-slot-container.is-big {
 	height: 14.0rem;
 
 	/*background-image: url("coui://gfx/ui/skin/paperdoll_slot_big.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 7.4rem 14.0rem;*/
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 7.4rem 14.0rem;*/
 }
 
 .character-screen-container .paperdoll-module .l-slot-container.is-top-small-offset {
@@ -220,26 +220,26 @@
 .character-screen-container .paperdoll-module .equipment-slot-container-small .equipment-slot-amount-layer,
 .character-screen-container .paperdoll-module .equipment-slot-container-big .equipment-slot-amount-layer
 {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: 4;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 4;
 
-    pointer-events: none;
+	pointer-events: none;
 }
 
 .character-screen-container .paperdoll-module .equipment-slot-container-small .l-equipment-slot-amount-label,
 .character-screen-container .paperdoll-module .equipment-slot-container-big .l-equipment-slot-amount-label
 {
-    right: 0.4rem;
-    bottom: 0.0rem;
-    height: 1.2rem;
-    position: absolute;
+	right: 0.4rem;
+	bottom: 0.0rem;
+	height: 1.2rem;
+	position: absolute;
 
-    text-align: right;
-    line-height: 1.2rem;
+	text-align: right;
+	line-height: 1.2rem;
 
-    pointer-events: none;
+	pointer-events: none;
 }
 */
 
@@ -311,42 +311,47 @@
 	top: -0.6rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.h-remove5 {
+.character-screen-container .paperdoll-module .l-button.h-remove3 {
 	top: 1.6rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.h-remove3 {
+.character-screen-container .paperdoll-module .l-button.h-remove2 {
 	top: 3.8rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.h-remove2 {
+.character-screen-container .paperdoll-module .l-button.h-remove1 {
 	top: 6.0rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.h-remove1 {
+.character-screen-container .paperdoll-module .l-button.h-remove0 {
 	top: 8.2rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove6 {
+.character-screen-container .paperdoll-module .l-button.remove5 {
 	top: 11.4rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove5 {
+.character-screen-container .paperdoll-module .l-button.remove4 {
 	top: 13.6rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove4 {
+.character-screen-container .paperdoll-module .l-button.remove3 {
 	top: 15.8rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove3 {
+.character-screen-container .paperdoll-module .l-button.remove2 {
 	top: 18.0rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove2 {
+.character-screen-container .paperdoll-module .l-button.remove1 {
 	top: 20.2rem;
 }
 
-.character-screen-container .paperdoll-module .l-button.remove1 {
+.character-screen-container .paperdoll-module .l-button.remove0 {
 	top: 22.4rem;
+}
+
+.armor_button_invisible {
+	background-image: url("coui://gfx/ui/skin/armor_button_invisible.png") !important;
+	background-size: 2.2rem 2.2rem;
 }

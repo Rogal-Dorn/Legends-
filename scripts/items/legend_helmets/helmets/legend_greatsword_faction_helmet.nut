@@ -5,7 +5,7 @@ this.legend_greatsword_faction_helmet <- this.inherit("scripts/items/legend_helm
 		this.legend_helmet_padded_hood.create();
 	}
 
-    function setupArmor( _variant ) {
+	function setupArmor( _variant ) {
 		local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_sallet");
 		helm.setVariant(1);
 		this.setUpgrade(helm);
@@ -13,7 +13,7 @@ this.legend_greatsword_faction_helmet <- this.inherit("scripts/items/legend_helm
 		local flair = this.new("scripts/items/legend_helmets/vanity/legend_helmet_faction_helmet_2");
 		flair.setVariant(_variant);
 		this.setUpgrade(flair);
-    }
+	}
 
 });
 

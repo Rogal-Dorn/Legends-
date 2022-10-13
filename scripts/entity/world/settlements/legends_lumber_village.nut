@@ -228,13 +228,13 @@ this.legends_lumber_village <- this.inherit("scripts/entity/world/settlements/le
 		]];
 
 		this.m.StablesLists = [[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		],[
-			"legend_donkey",
+			"legend_donkey_background",
 			"legend_horse_rouncey"
 		]];
 
@@ -375,7 +375,7 @@ this.legends_lumber_village <- this.inherit("scripts/entity/world/settlements/le
 				Force = true
 			}],
 
-            [1, {
+			[1, {
 				Script = "scripts/entity/world/attached_location/leather_tanner_location",
 				Terrain = ALL,
 				NearTerrain = [],

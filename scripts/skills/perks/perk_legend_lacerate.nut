@@ -36,25 +36,7 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		// local user = _skill.getContainer().getActor();
-		// local ourHP =  user.getHitpoints();		//75
-		// local ourMaxHP =  user.getHitpointsMax();//100
-		// local PercentHP = ourMaxHP / 100;		// (100/100) = 1
-		// local chance = ourHP / PercentHP;		// 75/1
-
 		local user = _skill.getContainer().getActor();
-		local currentHP = user.getHitpoints(); //75
-		local maxHP = user.getHitpointsMax();  //100
-		local missingHP = maxHP - currentHP;   //missing 25
-		local percentMissingHP = this.Math.round(missingHP / maxHP); // (25/100) = .25
-		local chance = percentMissingHP * 100; //.25 * 100 = 25 chance
-
-
-		if (this.Math.rand(1, 100) > chance)
-		{
-			return false;
-		}
-
 		_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_grazed_effect"));
 
 		if (!user.isHiddenToPlayer() && _targetEntity.getTile().IsVisibleForPlayer)
@@ -62,7 +44,6 @@ this.perk_legend_lacerate <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " lacerated " + this.Const.UI.getColorizedEntityName(_targetEntity) + " leaving them grazed");
 		}
 	
-
 		return true;
 		
 	}

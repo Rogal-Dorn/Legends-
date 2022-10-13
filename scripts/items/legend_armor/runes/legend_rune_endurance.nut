@@ -43,15 +43,15 @@ this.legend_rune_endurance <- this.inherit("scripts/items/legend_armor/legend_ar
 		});
 	}
 
-    function onDamageReceived( _damage, _fatalityType, _attacker )
+	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
-        return _damage;
+		return _damage;
 	}
 
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);
-        _properties.FatigueRecoveryRate += this.m.RuneBonus1;
+		_properties.FatigueRecoveryRate += this.m.RuneBonus1;
 		_properties.FatigueEffectMult *= (1.0 - ((this.m.RuneBonus2) * 1.0) / 100.0);
 	}
 

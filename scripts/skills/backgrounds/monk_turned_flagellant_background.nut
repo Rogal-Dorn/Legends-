@@ -39,7 +39,7 @@ this.monk_turned_flagellant_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.HammerTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree

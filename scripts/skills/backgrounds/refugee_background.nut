@@ -64,8 +64,8 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.StavesTree,
-				this.Const.Perks.SlingsTree,
+				this.Const.Perks.StaffTree,
+				this.Const.Perks.SlingTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
@@ -90,16 +90,13 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		if (_gender == -1)
 		{
 			r = this.Math.rand(0, 9);
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}
 		}
 
-		if (r != 1)
-		{
-			return
-		}
+		if (_gender != 1) return;
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;

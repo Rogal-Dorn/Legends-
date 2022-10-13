@@ -79,7 +79,7 @@ this.free_company_order <- this.inherit("scripts/ai/world/world_behavior", {
 		// 	this.Const.World.Common.assignTroops(_entity, this.Const.World.Spawn[spawntype], r); //change this to freecompany spawn later
 		// }
 		// _entity.getSprite("body").setBrush(brush);
-        // _entity.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
+		// _entity.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
 
 		this.getController().popOrder();
 		return true;

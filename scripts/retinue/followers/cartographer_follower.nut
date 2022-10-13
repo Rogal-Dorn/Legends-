@@ -26,7 +26,9 @@ this.cartographer_follower <- this.inherit("scripts/retinue/follower", {
 			"background.historian",
 			"background.legend_philosopher",
 			"background.female_adventurous_noble",
-			"background.legend_commander_noble"
+			"background.legend_commander_noble",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
 		];
 	}
 

@@ -5,16 +5,16 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		NumBros = 0,
 		Craft = 0
 	},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Fletcher;
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Fletcher;
 		this.m.ModName = "Fletching";
-        this.m.ModMod = 10.0;
-        this.m.BaseCraft = 1.0;
-        this.m.Slot = "fletch";
-        this.m.Name = "Fletcher";
-        this.m.Description = "Make some ammo"
+		this.m.ModMod = 10.0;
+		this.m.BaseCraft = 1.0;
+		this.m.Slot = "fletch";
+		this.m.Name = "Fletcher";
+		this.m.Description = "Make some ammo"
 		this.m.BannerImage = "ui/buttons/banner_fletch.png"
 		this.m.CanEnter = false;
 		this.m.Sounds = [
@@ -45,7 +45,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 		];
 		this.m.SoundsAtNight = [];
-    }
+	}
 
 	function getTitle()
 	{
@@ -69,7 +69,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	}
 
 	function getModifierToolip()
-    {
+	{
 		local mod = this.getModifiers();
 		local ret = [
 			{
@@ -96,7 +96,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function isHidden()
 	{
 
-		if (this.LegendsMod.Configs().LegendCampUnlockEnabled())
+		if (::Legends.Mod.ModSettings.getSetting("SkipCamp").getValue())
 		{
 			return false;
 		}
@@ -106,7 +106,7 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getUpgraded()
 	{
-        return this.Stash.hasItem("tent.fletcher_tent");
+		return this.Stash.hasItem("tent.fletcher_tent");
 	}
 
 	function getLevel()
@@ -125,17 +125,17 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return pro + "_" + sub;
 	}
 
-    function init()
-    {
+	function init()
+	{
 		this.m.AmmoAdded = 0;
 		this.m.Items = [];
 		local mod = this.getModifiers();
-        this.m.NumBros = mod.Assigned;
+		this.m.NumBros = mod.Assigned;
 		this.m.Craft = mod.Craft;
-    }
+	}
 
 	function getResults()
-    {
+	{
 		local res = []
 		local id = 50;
 		if (this.m.AmmoAdded > 0)
@@ -156,14 +156,14 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			})
 			++id;
 		}
-        return res;
-    }
+		return res;
+	}
 
 	function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
 	function update()
 	{
@@ -182,8 +182,8 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		return "Fletched ... " + this.Math.floor(this.m.AmmoAdded) + " ammo";
 	}
 
-    function completed()
-    {
+	function completed()
+	{
 		local item = null
 		if (this.m.AmmoAdded > 0)
 		{
@@ -213,13 +213,13 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			this.Stash.add(item);
 		}
 
-    }
+	}
 
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showFletcherDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showFletcherDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )

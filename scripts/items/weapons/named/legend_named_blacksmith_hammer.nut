@@ -37,11 +37,5 @@ this.legend_named_blacksmith_hammer <- this.inherit("scripts/items/weapons/named
 		this.addSkill(this.new("scripts/skills/actives/crush_armor"));
 		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
 	}
-
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

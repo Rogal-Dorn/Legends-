@@ -17,7 +17,7 @@ this.disintegrating_effect <- this.inherit("scripts/skills/skill", {
 
 	function setActor( _a )
 	{
-		this.m.Actor = (typeof _a == "instance" ? _a.get() : _a);
+		this.m.Actor = ::MSU.asWeakTableRef(_a);
 	}
 
 	function create()
@@ -41,42 +41,25 @@ this.disintegrating_effect <- this.inherit("scripts/skills/skill", {
 
 	function getAttacker()
 	{
-		if (!this.LegendsMod.Configs().LegendBleedKillerEnabled())
+		if (!::Legends.Mod.ModSettings.getSetting("BleedKiller").getValue())
 		{
 			return this.getContainer().getActor();
 		}
 
-		if (this.m.Actor == null )
+		if (::MSU.isNull(this.m.Actor))
 		{
 			return this.getContainer().getActor();
 		}
 
-		if (this.m.Actor != this.getContainer().getActor())
+		if (this.m.Actor.getID() != this.getContainer().getActor().getID())
 		{
-			if (typeof this.m.Actor == "instance")
+			if (this.m.Actor.isAlive() && this.m.Actor.isPlacedOnMap())
 			{
-				this.m.Actor = this.m.Actor.get();
+				return this.m.Actor;
 			}
-			// Must be alive to get the credit, to stop crashes
-			if (!this.m.Actor.isAlive())
-			{
-				return this.getContainer().getActor();
-			}
-
-
-			// If Swallowed and not on the map, can't be counted for bleed kills, it crashes the game
-			 if (this.m.Actor.isPlacedOnMap())
-			 {
-		 		return this.getContainer().getActor();
-			 }
-
-			 if (this.m.Actor.getFlags().get("Devoured") == true)
-			 {
-		 		return this.getContainer().getActor();
-			 }
 		}
 
-		return this.m.Actor;
+		return this.getContainer().getActor();
 	}
 
 	function applyDamage()

@@ -44,10 +44,5 @@ this.legend_named_voulge <- this.inherit("scripts/items/weapons/named/named_weap
 		this.addSkill(this.new("scripts/skills/actives/legend_voulge_decapitate"));
 	}
 
-	function onUpdateProperties( _properties )
-	{
-		this.weapon.onUpdateProperties(_properties);
-	}
-
 });
 

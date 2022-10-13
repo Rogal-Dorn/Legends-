@@ -45,12 +45,12 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		if (this.Math.rand(1, 100) <= 33 && items.getItemAtSlot(this.Const.ItemSlot.Head) != null)
 		{
-			items.getItemAtSlot(this.Const.ItemSlot.Head).setCondition(items.getItemAtSlot(this.Const.ItemSlot.Head).getConditionMax() * 0.5);
+			items.getItemAtSlot(this.Const.ItemSlot.Head).setCondition(items.getItemAtSlot(this.Const.ItemSlot.Head).getRepairMax() * 0.5);
 		}
 
 		if (this.Math.rand(1, 100) <= 33 && items.getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 		{
-			items.getItemAtSlot(this.Const.ItemSlot.Mainhand).setCondition(items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getConditionMax() * 0.5);
+			items.getItemAtSlot(this.Const.ItemSlot.Mainhand).setCondition(items.getItemAtSlot(this.Const.ItemSlot.Mainhand).getRepairMax() * 0.5);
 		}
 
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Body));
@@ -186,14 +186,12 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[0].m.Level = 2;
 		bros[0].m.XP = this.Const.LevelXP[bros[0].m.Level - 1];
 		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		bros[0].setVeteranPerks(2);
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/hatchet"));
 		bros[1].getBackground().m.RawDescription = "{A fine fighter by any judgment, %name% simply hated the low pay of being a soldier in the army. The pursuit of the sellsword\'s life makes sense. Though quite flighty, you believe %name%\'s transient sense of allegiance will be buffered by a steady flow of good coin.}";
 		bros[1].getBackground().buildDescription(true);
-		bros[1].setVeteranPerks(2);
 		local talents = bros[1].getTalents();
 		talents[this.Const.Attributes.MeleeSkill] = 2;
 		talents[this.Const.Attributes.MeleeDefense] = 1;
@@ -203,14 +201,12 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		bros[1].m.Level = 1;
 		bros[1].m.XP = this.Const.LevelXP[bros[1].m.Level - 1];
 		bros[1].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-		bros[1].setVeteranPerks(2);
 		items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Ammo));
 		items.equip(this.new("scripts/items/weapons/shortsword"));
 		bros[2].getBackground().m.RawDescription = "{%name% is like many deserters. You can see the spirit of a fighter, but the heart for it is withering. It doesn\'t make %name% a coward, as many assume deserters to be, but instead simply someone who may need change. Hopefully the coin of mercenary work can provide it.}";
 		bros[2].getBackground().buildDescription(true);
-		bros[2].setVeteranPerks(2);
 		local talents = bros[2].getTalents();
 		talents[this.Const.Attributes.RangedSkill] = 2;
 		talents[this.Const.Attributes.RangedDefense] = 1;
@@ -238,7 +234,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		if (_list.len() >= 10)
 		{
 			local r;
@@ -348,6 +344,16 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 				bro.improveMood(1.5, "Is excited at becoming a deserter");
 			}
 		}
+	}
+
+	function onGetBackgroundTooltip( _background, _tooltip )
+	{
+		_tooltip.push({
+			id = 16,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Always acts first in the very first round of combat"
+		});
 	}
 
 });

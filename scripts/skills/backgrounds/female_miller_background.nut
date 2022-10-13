@@ -33,7 +33,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Female;
+		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Female | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[1];
@@ -43,7 +43,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingsTree
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -69,7 +69,7 @@ this.female_miller_background <- this.inherit("scripts/skills/backgrounds/charac
 		if (_gender == -1)
 		{
 			r = 1;
-			if (this.LegendsMod.Configs().LegendGenderEnabled())
+			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			{
 				r = this.Math.rand(0, 1);
 			}

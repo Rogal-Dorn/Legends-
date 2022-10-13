@@ -68,7 +68,7 @@ this.legend_shoot_dart <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultRangedTooltip();
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 
 		return ret;
 	}

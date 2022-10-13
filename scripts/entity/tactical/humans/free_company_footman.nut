@@ -74,10 +74,10 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/flail"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
+		}
 
 			
 		r = this.Math.rand(1, 3);

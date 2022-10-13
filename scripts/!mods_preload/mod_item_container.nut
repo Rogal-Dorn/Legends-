@@ -2,30 +2,30 @@ this.getroottable().Const.LegendMod.hookItemContainer <- function()
 {
 	::mods_hookNewObject("items/item_container", function(o) 
 	{
-	    o.drop <- function( item )
+		o.drop <- function( item )
 		{
-	        if (!this.m.Actor.isPlacedOnMap())
-	        {
-	            return;
-	        }
+			if (!this.m.Actor.isPlacedOnMap())
+			{
+				return;
+			}
 
-	        local _tile = this.m.Actor.getTile();
-	        item.m.IsDroppedAsLoot = true;
-	        item.drop(_tile);
+			local _tile = this.m.Actor.getTile();
+			item.m.IsDroppedAsLoot = true;
+			item.drop(_tile);
 			_tile.IsContainingItemsFlipped = true;
 		}
 
-	    local equip = o.equip
-	    o.equip = function (_item)
-	    {
-	        if (_item == null)
-	        {
-	            return false;
-	        }
-	        return equip(_item);
-	    }
+		local equip = o.equip
+		o.equip = function (_item)
+		{
+			if (_item == null)
+			{
+				return false;
+			}
+			return equip(_item);
+		}
 
-	    o.unequipNoUpdate <- function (_item)
+		o.unequipNoUpdate <- function (_item)
 		{
 			if (_item == null || _item == -1)
 			{
@@ -65,7 +65,7 @@ this.getroottable().Const.LegendMod.hookItemContainer <- function()
 			return false;
 		}
 
-	    o.transferToList <- function( _stash )
+		o.transferToList <- function( _stash )
 		{
 			for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
 			{
@@ -73,36 +73,36 @@ this.getroottable().Const.LegendMod.hookItemContainer <- function()
 				{
 					if (this.m.Items[i][j] == null || this.m.Items[i][j] == -1)
 					{
-	                    continue
+						continue
 					}
 
-	                local item = this.m.Items[i][j];
-	                if (item.isEquipped())
-	                {
-	                    this.unequip(item);
-	                }
-	                else
-	                {
-	                    this.removeFromBag(item);
-	                }
-	                _stash.push(item);
-	                // this.logInfo("Transferred " + item.m.Name + " : " + item.getInstanceID())
-	                // local res = this.Stash.getItemByInstanceID(item.getInstanceID());
-	                // if (res == null) {
-	                //     this.logInfo("saveFormation::could not find item for " + item.getInstanceID());
-	                //     continue
-	                // }
-	                //toTransfer.push(item);
+					local item = this.m.Items[i][j];
+					if (item.isEquipped())
+					{
+						this.unequip(item);
+					}
+					else
+					{
+						this.removeFromBag(item);
+					}
+					_stash.push(item);
+					// this.logInfo("Transferred " + item.m.Name + " : " + item.getInstanceID())
+					// local res = this.Stash.getItemByInstanceID(item.getInstanceID());
+					// if (res == null) {
+					//	 this.logInfo("saveFormation::could not find item for " + item.getInstanceID());
+					//	 continue
+					// }
+					//toTransfer.push(item);
 				}
 			}
 
-	        // this.logInfo("TRANSFERED TO STASH COMPLETE. STASH SIZe = " + _stash.m.Items.len())
+			// this.logInfo("TRANSFERED TO STASH COMPLETE. STASH SIZe = " + _stash.m.Items.len())
 
 			// foreach( item in toTransfer )
 			// {
 			// 	if (_stash.add(item) == null)
 			// 	{
-	        //         this.logInfo("STASH ADD ITEM IS NULL")
+			//		 this.logInfo("STASH ADD ITEM IS NULL")
 			// 		break;
 			// 	}
 

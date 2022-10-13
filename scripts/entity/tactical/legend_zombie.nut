@@ -1,7 +1,7 @@
 this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	m = {
 		Item = null,
-        SpawnType = null
+		SpawnType = null
 	},
 
 	function create()
@@ -141,15 +141,15 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 		this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
 	}
 
-    function isGuest()
-    {
-        return false;
-    }
+	function isGuest()
+	{
+		return false;
+	}
 
-    function addXP(_xp)
-    {
+	function addXP(_xp)
+	{
 
-    }
+	}
 
 	function setItem( _i )
 	{
@@ -167,24 +167,24 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 
 	}
 
-    function isReallyKilled(_fatalityType)
+	function isReallyKilled(_fatalityType)
 	{
 		return false;
 	}
 
-    function onActorKilled( _actor, _tile, _skill )
+	function onActorKilled( _actor, _tile, _skill )
 	{
 		this.actor.onActorKilled(_actor, _tile, _skill);
 		local XPkiller = this.Math.floor(_actor.getXPValue() * this.Const.XP.XPForKillerPct);
 		local XPgroup = _actor.getXPValue() * (1.0 - this.Const.XP.XPForKillerPct);
 
-        local summoner = getFlags().get("Summoner");
-        if (summoner != null && "addXP" in summoner)
-        {
-            summoner.addXP(this.Math.floor(XPkiller * 0.50));
-        }
+		local summoner = getFlags().get("Summoner");
+		if (summoner != null && "addXP" in summoner)
+		{
+			summoner.addXP(this.Math.floor(XPkiller * 0.50));
+		}
 
-        local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
+		local brothers = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 
 		if (brothers.len() == 1)
 		{

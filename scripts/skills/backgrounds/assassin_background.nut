@@ -71,7 +71,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.Level = 4;
+		this.m.Level = 5;
 		this.m.BackgroundType = this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
@@ -111,10 +111,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
@@ -202,8 +199,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local actor = this.getContainer().getActor();
 		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
-		this.m.Container.add(this.new("scripts/skills/traits/loyal_trait"));
-
 	}
 
 	function onAddEquipment()

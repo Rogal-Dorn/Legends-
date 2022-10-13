@@ -4,7 +4,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	{
 		this.m.ID = "scenario.legends_necro";
 		this.m.Name = "The Cabal";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but we embrace the other side. \n\n[color=#bcad8c]Dark arts:[/color] Start with three apprentice necromancers - all focusing on differant cornerstones of necromancy.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies.\n[color=#bcad8c]Blood magic:[/color] Cultists and other macabre backgrounds will flock to join you and cost 25% less to maintain. Including the undead. Cannot hire pious backgrounds. Everyone else costs 50% more to upkeep\n[color=#bcad8c]Avatars:[/color] If all three necromancers die, the spell is broken and the story ends.[/p]";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but we embrace the other side. \n\n[color=#bcad8c]Dark arts:[/color] Start with three apprentice necromancers.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies.\n[color=#bcad8c]Blood magic:[/color] Cultists and other macabre backgrounds will flock to join you and cost 25% less to maintain. Cannot hire pious backgrounds. Everyone else costs 50% more to upkeep\n[color=#bcad8c]Avatars:[/color] If all three necromancers die, the spell is broken and the story ends.[/p]";
 		this.m.Difficulty = 3;
 		this.m.Order = 310;
 		this.m.IsFixedLook = true;
@@ -29,6 +29,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
  			bro.getSprite("socket").setBrush("bust_base_undead"); //base bust for starters
+ 			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
@@ -45,7 +46,6 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_preserver_background" //light and fast healer
 		]);
 		bros[0].setPlaceInFormation(3);
-		bros[0].setVeteranPerks(2);
 		bros[0].getSprite("miniboss").setBrush("bust_miniboss_undead");
 		bros[0].getFlags().set("IsPlayerCharacter", true); //player character
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
@@ -55,7 +55,6 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_warlock_summoner_background" //sickly but good def. summons.
 		]);
 		bros[1].setPlaceInFormation(4);
-		bros[1].setVeteranPerks(2);
 		bros[1].getSprite("miniboss").setBrush("bust_miniboss_undead");
 		bros[1].getSkills().add(this.new("scripts/skills/traits/ailing_trait"));
 		bros[1].getFlags().set("IsPlayerCharacter", true); //player character
@@ -66,7 +65,6 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_puppet_master_background" //strong but slow tank
 		]);
 		bros[2].setPlaceInFormation(5);
-		bros[2].setVeteranPerks(2);
 		bros[2].getSprite("miniboss").setBrush("bust_miniboss_undead");
 		bros[2].getFlags().set("IsPlayerCharacter", true); //player character
 		bros[2].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
@@ -81,8 +79,8 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		//Starting stash
 		this.World.Assets.m.Money = this.World.Assets.m.Money / 1;
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_human_parts"));
-		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_human_parts"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/strange_meat_item"));
+		this.World.Assets.getStash().add(this.new("scripts/items/supplies/strange_meat_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/black_marsh_stew_item"));
 	}
 
@@ -202,14 +200,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-	    _gender = this.LegendsMod.Configs().LegendGenderEnabled();
-		local r;
-		r = this.Math.rand(0, 5);
-
-		if (r == 0)
-		{
-			_list.push("legend_puppet_background");
-		}
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
 		local r;
 		r = this.Math.rand(0, 3);
@@ -238,12 +229,13 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onHiredByScenario( bro )
 	{
-		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
+		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist")
 		{
 			bro.improveMood(1.5, "These people really understand me!");
 			bro.getSprite("socket").setBrush("bust_base_undead");
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 		}
-		else if (bro.getBackground().getID() == "background.puppet")
+		else if (bro.getBackground().getID() == "background.legend_puppet")
 		{
 			bro.getSprite("socket").setBrush("bust_base_undead");
 		}
@@ -272,10 +264,10 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
 				bro.getSkills().update();
 			}
-            if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
-            {
-                garbage.push(bro);
-            }
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
+			{
+				garbage.push(bro);
+			}
 		}
 	}
 

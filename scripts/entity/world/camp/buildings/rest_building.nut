@@ -1,16 +1,16 @@
 this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	m = {},
-    function create()
-    {
-        this.camp_building.create();
-        this.m.ID = this.Const.World.CampBuildings.Rest;
-        this.m.Escorting = true;        
-        this.m.Slot = "rest";
-        this.m.Name = "Rest";
-        this.m.Description = "Company personnel who have not been assigned a task will rest and relax here. .";
-        this.m.BannerImage = "ui/buttons/banner_rest.png"
-        this.m.CanEnter = false
-    }
+	function create()
+	{
+		this.camp_building.create();
+		this.m.ID = this.Const.World.CampBuildings.Rest;
+		this.m.Escorting = true;		
+		this.m.Slot = "rest";
+		this.m.Name = "Rest";
+		this.m.Description = "Company personnel who have not been assigned a task will rest and relax here. .";
+		this.m.BannerImage = "ui/buttons/banner_rest.png"
+		this.m.CanEnter = false
+	}
 
 	function getDescription()
 	{
@@ -30,91 +30,91 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		return pro + "_" + sub;
 	}
 
-    function getAssignedBros()
-    {
-        local mod = this.getModifiers();
-        return mod.Assigned;
-    }
+	function getAssignedBros()
+	{
+		local mod = this.getModifiers();
+		return mod.Assigned;
+	}
 
-    function getModifiers()
-    {
-        local ret = 
-        {
-            Assigned = 0
-        }
+	function getModifiers()
+	{
+		local ret = 
+		{
+			Assigned = 0
+		}
 		local roster = this.World.getPlayerRoster().getAll();
-        foreach( bro in roster )
-        {
-            if (bro.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
-            ++ret.Assigned
-        }
-        return ret;
-    }
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
+			++ret.Assigned
+		}
+		return ret;
+	}
 
 
-    function completed()
-    {
-        local roster = this.World.getPlayerRoster().getAll();
+	function completed()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
 
-        if (this.m.Camp.getCampTimeHours() < 4)
-        {
-            return;
-        }
+		if (this.m.Camp.getCampTimeHours() < 4)
+		{
+			return;
+		}
 
-        local mood = 0.5;
-        if (this.m.Camp.getCampTimeHours() >= 8)
-        {
-            mood = 1.0;
-        }
+		local mood = 0.5;
+		if (this.m.Camp.getCampTimeHours() >= 8)
+		{
+			mood = 1.0;
+		}
 
-        if (this.m.Camp.getCampTimeHours() >= 12)
-        {
-            mood = 1.5;
-        }
+		if (this.m.Camp.getCampTimeHours() >= 12)
+		{
+			mood = 1.5;
+		}
 
 
-        foreach( b in roster )
-        {
-            if (b.getCampAssignment() != this.m.ID)
-            {
-                continue
-            }
+		foreach( b in roster )
+		{
+			if (b.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
 
 			if (b.getLastCampTime() == 0 || this.Time.getVirtualTimeF() - b.getLastCampTime() > this.World.getTime().SecondsPerDay)
 			{
 				b.improveMood(mood, "Was able to rest in camp");
-                b.setLastCampTime(this.m.Camp.getStopTime());
+				b.setLastCampTime(this.m.Camp.getStopTime());
 			}
-        }
-    }
-    
-    function getResults()
-    {
-        local res = [];
-        local roster = this.World.getPlayerRoster().getAll();
-        local moodCount = 150;
-        foreach( b in roster )
-        {
-            if (b.getLastCampTime() == this.m.Camp.getStopTime())
-            {
-                ++moodCount
-                res.push({
-                    id = moodCount,
-                    icon =  this.Const.MoodStateIcon[b.getMoodState()],
-                    text = b.getName() + this.Const.MoodStateEvent[b.getMoodState()]
-                })
-            }
-        }
-        return res;
-    }
+		}
+	}
+	
+	function getResults()
+	{
+		local res = [];
+		local roster = this.World.getPlayerRoster().getAll();
+		local moodCount = 150;
+		foreach( b in roster )
+		{
+			if (b.getLastCampTime() == this.m.Camp.getStopTime())
+			{
+				++moodCount
+				res.push({
+					id = moodCount,
+					icon =  this.Const.MoodStateIcon[b.getMoodState()],
+					text = b.getName() + this.Const.MoodStateEvent[b.getMoodState()]
+				})
+			}
+		}
+		return res;
+	}
 
 	function onClicked( _campScreen )
 	{
-        _campScreen.showRestDialog();
-        this.camp_building.onClicked(_campScreen);
+		_campScreen.showRestDialog();
+		this.camp_building.onClicked(_campScreen);
 	}
 
 	function onSerialize( _out )
@@ -126,5 +126,5 @@ this.rest_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 	{
 		this.camp_building.onDeserialize(_in);
 	}
-    
+	
 });

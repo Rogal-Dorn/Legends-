@@ -56,8 +56,8 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingsTree,
-				this.Const.Perks.StavesTree
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.StaffTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree
@@ -83,10 +83,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			r = this.Math.rand(0, 1);
 		}
 
-		if (r == 0)
-		{
-			return;
-		}
+		if (_gender != 1) return;
 		this.m.GoodEnding = "It\'s shocking that a woman of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. She runs an orphanage these days, spending her crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
 		this.m.BadEnding = "When you left the %companyname%, there was one thing you were almost certain of: that damned cripple, %name%, wouldn\'t last long. Despite all odds, she did survive. Long enough in fact to retire herself, albeit departing with about as many crowns as she had when she joined up. You\'ve no idea what became of her, but surely she\'s dead by now. Surely, right?";
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;

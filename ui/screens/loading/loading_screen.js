@@ -16,10 +16,10 @@ var LoadingScreen = function()
 	this.mSQHandle = null;
 	
 	// generic containers
-	this.mContainer       = null;
-    this.mBackgroundImage = null;
-    this.mTipContainer    = null;
-    this.mTipOfTheDayLabel = null;
+	this.mContainer	   = null;
+	this.mBackgroundImage = null;
+	this.mTipContainer	= null;
+	this.mTipOfTheDayLabel = null;
 
 	// timing	
 	this.mFadeInOutDelay = 800;//500;
@@ -28,13 +28,13 @@ var LoadingScreen = function()
 
 LoadingScreen.prototype.isConnected = function ()
 {
-    return this.mSQHandle !== null;
+	return this.mSQHandle !== null;
 };
 
 LoadingScreen.prototype.onConnection = function (_handle)
 {
 	this.mSQHandle = _handle;
-    this.register($('.root-screen'));
+	this.register($('.root-screen'));
 };
 
 LoadingScreen.prototype.onDisconnection = function ()
@@ -47,114 +47,114 @@ LoadingScreen.prototype.onDisconnection = function ()
 
 LoadingScreen.prototype.createDIV = function (_parentDiv)
 {
-    var self = this;
+	var self = this;
 
 	// create: containers (init hidden!)
-    this.mContainer = $('<div class="loading-screen display-none"/>');
-    _parentDiv.append(this.mContainer);
+	this.mContainer = $('<div class="loading-screen display-none"/>');
+	_parentDiv.append(this.mContainer);
 
-    var header = $('<div class="screen-header ui-control"/>');
-    // var textContainer = $('<div class="text-container"></div>');
-    // header.append(textContainer);
+	var header = $('<div class="screen-header ui-control"/>');
+	// var textContainer = $('<div class="text-container"></div>');
+	// header.append(textContainer);
 	// var title = $('<div class="title title-font-big font-align-center font-color-subtitle">Progress</div>');
-    // textContainer.append(title);
+	// textContainer.append(title);
 	// this.mTipProgressLabel = $('<div class="text description-font-normal font-color-description"></div>');
-    // textContainer.append(this.mTipProgressLabel);
+	// textContainer.append(this.mTipProgressLabel);
 	this.mContainer.append(header);
 
 /* NOTE: Not needed
 	var content = $('<div class="screen-content"></div>');
-    this.mContainer.append(content);
+	this.mContainer.append(content);
 */
 
 	this.mBackgroundImage = this.mContainer.createImage(null, function (_image)
 	{
-        _image.removeClass('display-none').addClass('display-block');
-        _image.fitImageToParent();
+		_image.removeClass('display-none').addClass('display-block');
+		_image.fitImageToParent();
 
-        self.mContainer.css({ opacity: 0 });
-        self.mContainer.velocity("finish", true).velocity({ opacity: 1 },
-        {
-            duration: self.mFadeInOutDelay,
-            easing: 'swing',
-            begin: function ()
-            {
-                $(this).removeClass('display-none').addClass('display-block');
-                self.notifyBackendScreenAnimating();
-            },
-            complete: function ()
-            {
-                self.notifyBackendScreenShown();
-            }
-        });
+		self.mContainer.css({ opacity: 0 });
+		self.mContainer.velocity("finish", true).velocity({ opacity: 1 },
+		{
+			duration: self.mFadeInOutDelay,
+			easing: 'swing',
+			begin: function ()
+			{
+				$(this).removeClass('display-none').addClass('display-block');
+				self.notifyBackendScreenAnimating();
+			},
+			complete: function ()
+			{
+				self.notifyBackendScreenShown();
+			}
+		});
 	}, function (_image)
 	{
-        _image.fitImageToParent();
-    }, 'display-none');
+		_image.fitImageToParent();
+	}, 'display-none');
 
 	var footer = $('<div class="screen-footer ui-control"></div>');
-    this.mContainer.append(footer);
+	this.mContainer.append(footer);
 	var textContainer = $('<div class="text-container"></div>');
-    footer.append(textContainer);
+	footer.append(textContainer);
 	var title = $('<div class="title title-font-big font-align-center font-color-subtitle">Tip</div>');
-    textContainer.append(title);
-    this.mTipContainer = textContainer;
+	textContainer.append(title);
+	this.mTipContainer = textContainer;
 	this.mTipOfTheDayLabel = $('<div class="text description-font-normal font-color-description"></div>');
-    textContainer.append(this.mTipOfTheDayLabel);
+	textContainer.append(this.mTipOfTheDayLabel);
 };
 
 LoadingScreen.prototype.destroyDIV = function ()
 {
-    this.mTipOfTheDayLabel.remove();
-    this.mTipOfTheDayLabel = null;
-    
-    this.mBackgroundImage.remove();
-    this.mBackgroundImage = null;
+	this.mTipOfTheDayLabel.remove();
+	this.mTipOfTheDayLabel = null;
+	
+	this.mBackgroundImage.remove();
+	this.mBackgroundImage = null;
 
-    this.mContainer.empty();
-    this.mContainer.remove();
-    this.mContainer = null;
+	this.mContainer.empty();
+	this.mContainer.remove();
+	this.mContainer = null;
 };
 
 
 LoadingScreen.prototype.create = function(_parentDiv)
 {
-    this.createDIV(_parentDiv);
+	this.createDIV(_parentDiv);
 };
 
 LoadingScreen.prototype.destroy = function()
 {
-    this.destroyDIV();
+	this.destroyDIV();
 };
 
 
 LoadingScreen.prototype.register = function (_parentDiv)
 {
-    console.log('LoadingScreen::REGISTER');
+	console.log('LoadingScreen::REGISTER');
 
-    if (this.mContainer !== null)
-    {
-        console.error('ERROR: Failed to register Loading Screen. Reason: Main Menu Screen is already initialized.');
-        return;
-    }
+	if (this.mContainer !== null)
+	{
+		console.error('ERROR: Failed to register Loading Screen. Reason: Main Menu Screen is already initialized.');
+		return;
+	}
 
-    if (_parentDiv !== null && typeof(_parentDiv) == 'object')
-    {
-        this.create(_parentDiv);
-    }
+	if (_parentDiv !== null && typeof(_parentDiv) == 'object')
+	{
+		this.create(_parentDiv);
+	}
 };
 
 LoadingScreen.prototype.unregister = function ()
 {
-    console.log('LoadingScreen::UNREGISTER');
+	console.log('LoadingScreen::UNREGISTER');
 
-    if (this.mContainer === null)
-    {
-        console.error('ERROR: Failed to unregister Loading Screen. Reason: Main Menu Screen is not initialized.');
-        return;
-    }
+	if (this.mContainer === null)
+	{
+		console.error('ERROR: Failed to unregister Loading Screen. Reason: Main Menu Screen is not initialized.');
+		return;
+	}
 
-    this.destroy();
+	this.destroy();
 };
 
 
@@ -182,13 +182,13 @@ LoadingScreen.prototype.hide = function ()
 {
 	var self = this;
 	this.mContainer.velocity("finish", true).velocity({ opacity: 0 },
-    {
+	{
 		duration: this.mFadeInOutDelay,
 		easing: 'swing',
 		begin: function ()
 		{
-            self.notifyBackendScreenAnimating();
-        },
+			self.notifyBackendScreenAnimating();
+		},
 		complete: function ()
 		{
 			$(this).removeClass('display-block').addClass('display-none');
@@ -200,18 +200,18 @@ LoadingScreen.prototype.hide = function ()
 
 LoadingScreen.prototype.updateProgress = function ( _text )
 {
-    this.mTipOfTheDayLabel.remove();
-    this.mTipOfTheDayLabel = $('<div class="text description-font-normal font-color-description">' + _text + '</div>');
-    this.mTipContainer.append(this.mTipOfTheDayLabel);
-    //this.mTipOfTheDayLabel.html( _text );
+	this.mTipOfTheDayLabel.remove();
+	this.mTipOfTheDayLabel = $('<div class="text description-font-normal font-color-description">' + _text + '</div>');
+	this.mTipContainer.append(this.mTipOfTheDayLabel);
+	//this.mTipOfTheDayLabel.html( _text );
 }
 
 LoadingScreen.prototype.getModule = function (_name)
 {
-    switch(_name)
-    {
-        default: return null;
-    }
+	switch(_name)
+	{
+		default: return null;
+	}
 };
 
 LoadingScreen.prototype.getModules = function ()
@@ -238,8 +238,8 @@ LoadingScreen.prototype.notifyBackendScreenHidden = function ()
 
 LoadingScreen.prototype.notifyBackendScreenAnimating = function ()
 {
-    if (this.mSQHandle !== null)
-    {
-        SQ.call(this.mSQHandle, 'onScreenAnimating');
-    }
+	if (this.mSQHandle !== null)
+	{
+		SQ.call(this.mSQHandle, 'onScreenAnimating');
+	}
 };

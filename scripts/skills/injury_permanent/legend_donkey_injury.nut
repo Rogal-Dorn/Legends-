@@ -3,7 +3,7 @@ this.legend_donkey_injury <- this.inherit("scripts/skills/injury_permanent/perma
 	function create()
 	{
 		this.permanent_injury.create();
-		this.m.ID = "injury.legend_donkey";
+		this.m.ID = "injury.legend_donkey_background";
 		this.m.Name = "Donkey body";
 		this.m.Icon = "ui/traits/legend_donkey_body.png";
 		this.m.Description = "This character is a donkey, it can't use weapons, shields, ammunition or armor";

@@ -134,7 +134,7 @@ this.legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onDeath()
+	function onDeath( _fatalityType )
 	{
 		this.endChant();
 	}

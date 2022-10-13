@@ -145,7 +145,7 @@ this.legend_violent_decomposition_effect <- this.inherit("scripts/skills/skill",
 
 	function onNewRound()
 	{
-        --this.m.TurnsLeft;
+		--this.m.TurnsLeft;
 	}
 
 	function onTurnEnd()

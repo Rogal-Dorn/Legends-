@@ -1,7 +1,7 @@
 this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_abstract", {
 	m = {
 		Outfits = [
-            [1, "mercenary_archer_outfit_00"]
+			[1, "mercenary_archer_outfit_00"]
 		],
 		PerkList = this.Const.EnemyPerks.FreeCompanyArcher,
 		PerkPower = 5
@@ -58,13 +58,13 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_a
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/short_bow"));
 		}
-        else
-        {
-            this.m.Items.equip(this.new("scripts/items/weapons/hunting_bow"));
-        }
+		else
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		}
 
-        this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
-        this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
 		this.m.Items.equip
 

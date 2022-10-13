@@ -22,7 +22,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.seductive"
 		];
 		this.m.ExcludedTalents = [];
-        this.m.IsGuaranteed = ["tough_trait"]
+		this.m.IsGuaranteed = ["tough_trait"]
 		this.m.Bodies = this.Const.Bodies.SouthernMale;
 		this.m.Faces = this.Const.Faces.SouthernMale;
 		this.m.Hairs = this.Const.Hair.SouthernMale;
@@ -41,7 +41,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
-                this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [ //lf 5
 				this.Const.Perks.IndestructibleTree,
@@ -52,7 +52,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			Class = [
 				this.Const.Perks.HealerClassTree,
 				this.Const.Perks.FaithClassTree
-            ],
+			],
 			Magic = []
 		}
 	}
