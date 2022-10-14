@@ -23,7 +23,12 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			"world_grass_03",
 			"world_grass_04",
 			"world_grass_05",
-			"world_grass_06"
+			"world_grass_06",
+			"world_grass_07",
+			"world_grass_08",
+			"world_grass_09",
+			"world_grass_10",
+			"world_grass_12"
 		],
 		DetailsLake = [
 			"world_grass_lake_01",
@@ -41,7 +46,14 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			"world_detail_flowers_03",
 			"world_detail_flowers_04",
 			"world_detail_flowers_05",
-			"world_detail_flowers_06"
+			"world_detail_flowers_06",
+			"world_detail_flowers_07",
+			"world_detail_flowers_08",
+			"world_detail_flowers_09",
+			"world_detail_flowers_10",
+			"world_detail_flowers_11",
+			"world_detail_flowers_12",
+			"world_detail_flowers_13"
 		],
 		DetailsUrban = [
 			"world_detail_treestump_01",
@@ -156,14 +168,31 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 		{
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				tile.spawnDetail("world_detail_forest_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+				local random = this.Math.rand(1, 16);
+				if (random <=9)
+				{
+				tile.spawnDetail("world_detail_forest_light_0" + random, this.Const.World.ZLevel.Object, 0);
+				}
+				else
+				{
+				tile.spawnDetail("world_detail_forest_light_" + random, this.Const.World.ZLevel.Object, 0);
+				}
 			}
 		}
 		else if (forest_leave > 0 && forest_leave > forest && forest_leave > forest_autumn)
 		{
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				tile.spawnDetail("world_detail_forest_leaves_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+				local random = this.Math.rand(1, 18);
+				if (random <=9)
+				{
+				tile.spawnDetail("world_detail_forest_leaves_light_0" + random, this.Const.World.ZLevel.Object, 0);
+				}
+				else
+				{
+				tile.spawnDetail("world_detail_forest_leaves_light_" + random, this.Const.World.ZLevel.Object, 0);
+				}			
+			
 			}
 		}
 		else if (forest_autumn > 0 && forest_autumn > forest && forest_autumn > forest_leave)
@@ -247,11 +276,29 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 		{
 			if (_rect.Y < this.Const.World.Settings.SizeY * 0.5)
 			{
-				tile.spawnDetail("world_detail_forest_leaves_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+			
+				local random = this.Math.rand(1, 18);
+				if (random <=9)
+				{
+				tile.spawnDetail("world_detail_forest_leaves_light_0" + random, this.Const.World.ZLevel.Object, 0);
+				}
+				else
+				{
+				tile.spawnDetail("world_detail_forest_leaves_light_" + random, this.Const.World.ZLevel.Object, 0);
+				}			
+			
 			}
 			else
 			{
-				tile.spawnDetail("world_detail_forest_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+				local random = this.Math.rand(1, 16);
+				if (random <=9)
+				{
+				tile.spawnDetail("world_detail_forest_light_0" + random, this.Const.World.ZLevel.Object, 0);
+				}
+				else
+				{
+				tile.spawnDetail("world_detail_forest_light_" + random, this.Const.World.ZLevel.Object, 0);
+				}
 			}
 		}
 	}

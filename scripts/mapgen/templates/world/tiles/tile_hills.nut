@@ -213,7 +213,15 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 					}
 					else
 					{
-						tile.spawnDetail("world_detail_forest_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+						local random = this.Math.rand(1, 16);
+						if (random <=9)
+						{
+						tile.spawnDetail("world_detail_forest_light_0" + random, this.Const.World.ZLevel.Object, 0);
+						}
+						else
+						{
+						tile.spawnDetail("world_detail_forest_light_" + random, this.Const.World.ZLevel.Object, 0);
+						}
 					}
 				}
 			}
@@ -242,7 +250,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 			}
 			else
 			{
-				tile.setBrush("world_grassland_0" + this.Math.rand(1, 4));
+				tile.setBrush("world_grassland_0" + this.Math.rand(1, 8));
 				tile.TacticalType = this.Const.World.TerrainTacticalType.Hills;
 			}
 
@@ -265,18 +273,43 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 				}
 				else
 				{
-					tile.spawnDetail("world_grass_hill_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.Hills, false);
+				
+					local random = this.Math.rand(1, 7);
+		
+					tile.spawnDetail("legend_world_grass_hill_0" + random, this.Const.World.ZLevel.Terrain, 
+					this.Const.World.DetailType.Hills, false);
+			
+				
 				}
 
 				if (this.Math.rand(1, 100) <= 50)
 				{
 					if (this.Math.rand(1, 100) <= 75)
 					{
-						tile.spawnDetail("world_detail_flowers_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Hills, false);
+						local random = this.Math.rand(1, 13);
+						if (random <=9)
+						{
+						tile.spawnDetail("world_detail_flowers_0" + random, this.Const.World.ZLevel.Object, 
+						this.Const.World.DetailType.Hills, false);
+						}
+						else
+						{
+						tile.spawnDetail("world_detail_flowers_" + random, this.Const.World.ZLevel.Object, 
+						this.Const.World.DetailType.Hills, false);
+						}					
+						
 					}
 					else if (_rect.Y > this.Const.World.Settings.SizeY * 0.25)
 					{
-						tile.spawnDetail("world_detail_forest_light_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+						local random = this.Math.rand(1, 16);
+						if (random <=9)
+						{
+						tile.spawnDetail("world_detail_forest_light_0" + random, this.Const.World.ZLevel.Object, 0);
+						}
+						else
+						{
+						tile.spawnDetail("world_detail_forest_light_" + random, this.Const.World.ZLevel.Object, 0);
+						}
 					}
 				}
 			}
