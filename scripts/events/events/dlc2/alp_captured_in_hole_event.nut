@@ -102,7 +102,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Beastslayer != null)
 				{
 					this.Options.push({
-						Text = "%beastslayer%, you\'re an expert on these things. What say you?",
+						Text = "Our beastslayer is an expert on these things...",
 						function getResult( _event )
 						{
 							return "F";
@@ -112,7 +112,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 				if (_event.m.Guildmaster != null)
 				{
 					this.Options.push({
-						Text = "Let the Guildmaster speak.",
+						Text = "Let\'s ask our guildmaster...",
 						function getResult( _event )
 						{
 							return "guildmaster";
@@ -205,7 +205,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "F",
-			Text = "[img]gfx/ui/events/event_122.png[/img]{%beastslayer% the beast slayer walks up to the hole and stares in, nodding.%SPEECH_ON%You don\'t have it captured. Alps cannot be captured.%SPEECH_OFF%The monster enslaver looks over and asks how so. The slayer laughs.%SPEECH_ON%Because that is no ordinary creature. This alp is biding its time. You said it sends nightmares to people looking in, yeah? Yeah, that\'s right. Fear is its blade and it is sharpening it right and steady. It is practicing its craft the best it can. Alps use environments to put their victims in and currently it\'s making do with the dirt. But eventually you\'ll look in and it\'ll be looking up, ready for the very moment, and you\'ll find yourself in the hole with it. Not you, yourself. No, the body would be spared. It will take your mind into that hole. And it will be there. You and that monstrosity alone in all the dark this world has to spare. For how long? Days, weeks. A very dangerous alp can cage your mind for what seems like years. You\'ll come out of it a fool, broken and slobbering and begging for death, that is if you still have the capacity to speak by then.%SPEECH_OFF%The slayer takes a bow from one of the enslaver\'s guards and nocks an arrow. The alp looks up and its mouth blossoms open to rows of razor sharp teeth. The slayer shoots it right in the maw killing it instantly, before handing the bow back and unfurling a journeyman sheet.%SPEECH_ON%This is the pay I am owed. Extra for saving your soul and mind from an alp\'s forever harvest. I\'ll also be taking the alp\'s skin. Agreed?%SPEECH_OFF%The enslaver hurriedly nods.%SPEECH_ON%Yes, yes of course!%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_122.png[/img]{%beastslayer% walks up to the hole and stares in, nodding.%SPEECH_ON%You don\'t have it captured. Alps cannot be captured.%SPEECH_OFF%The monster enslaver looks over and asks how so. The slayer laughs.%SPEECH_ON%Because that is no ordinary creature. This alp is biding its time. You said it sends nightmares to people looking in, yeah? Fear is its blade and it is sharpening it right and steady. But eventually you\'ll look in and it\'ll be looking up, ready for the very moment, and you\'ll find yourself in the hole with it. Not you, yourself. No, the body would be spared. It will take your mind into that hole. And it will be there with you. You and that monstrosity alone in all the dark this world has to spare. For how long? Days, weeks. A very dangerous alp can cage your mind for what seems like years. You\'ll come out of it a fool, broken and slobbering and begging for death, that is if you still have the capacity to speak by then.%SPEECH_OFF%The slayer takes a bow from one of the enslaver\'s guards and nocks an arrow. The alp looks up and its mouth blossoms open to rows of razor sharp teeth. The slayer shoots it right in the maw killing it instantly, before handing the bow back and unfurling a journeyman sheet.%SPEECH_ON%This is the pay I am owed. Extra for saving your soul and mind from an alp\'s harvest. I\'ll also be taking the alp\'s skin. Agreed?%SPEECH_OFF%The enslaver hurriedly nods.%SPEECH_ON%Yes, yes of course!%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -326,16 +326,8 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 			}
 		}
 
-		if (candidates_beastslayer.len() != 0)
-		{
-			this.m.Beastslayer = candidates_beastslayer[this.Math.rand(0, candidates_beastslayer.len() - 1)];
-		}
-
-		if (candidates_guildmaster.len() != 0)
-		{
-			this.m.Guildmaster = candidates_guildmaster[this.Math.rand(0, candidates_guildmaster.len() - 1)];
-		}
-
+		this.m.Beastslayer = candidates_beastslayer[this.Math.rand(0, candidates_beastslayer.len() - 1)];
+		this.m.Guildmaster = candidates_guildmaster[this.Math.rand(0, candidates_guildmaster.len() - 1)];
 		this.m.Score = 5;
 	}
 
@@ -347,11 +339,11 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 	{
 		_vars.push([
 			"beastslayer",
-			this.m.Beastslayer ? this.m.Beastslayer.getNameOnly() : ""
+			this.m.Beastslayer.getNameOnly()
 		]);
 		_vars.push([
 			"guildmaster",
-			this.m.Guildmaster ? this.m.Guildmaster.getNameOnly() : ""
+			this.m.Guildmaster.getNameOnly()
 		]);
 	}
 
