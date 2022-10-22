@@ -320,7 +320,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_beastslayer.push(bro);
 			}
-			if (bro.getBackground().getID() == "background.legend_guildmaster")
+			else if (bro.getBackground().getID() == "background.legend_guildmaster")
 			{
 				candidates_guildmaster.push(bro);
 			}
