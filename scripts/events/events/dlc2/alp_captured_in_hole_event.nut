@@ -99,7 +99,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				if (_event.m.Beastslayer != "")
+				if (_event.m.Beastslayer != null)
 				{
 					this.Options.push({
 						Text = "%beastslayer%, you\'re an expert on these things. What say you?",
@@ -109,7 +109,7 @@ this.alp_captured_in_hole_event <- this.inherit("scripts/events/event", {
 						}
 					});
 				}
-				if (_event.m.Guildmaster != "")
+				if (_event.m.Guildmaster != null)
 				{
 					this.Options.push({
 						Text = "Let the Guildmaster speak.",
