@@ -50,8 +50,19 @@
 	<sprite id="tile_desert_06" b6="1" ic="FF3D695C" img="tactical_tiles\desert_06.png" />
 	<sprite id="socket_desert" b6="1" ic="FF2C4B5D" img="tactical_tiles\socket_desert.png" />
 	<sprite id="tile_desert_07" b6="1" ic="FF3B7C9B" img="tactical_tiles\desert_07.png" />
- 
- 
+	<sprite id="tile_legend_snow_01" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_01.png" />
+	<sprite id="tile_legend_snow_02" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_02.png" />
+	<sprite id="tile_legend_snow_03" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_03.png" />
+	<sprite id="tile_legend_snow_04" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_04.png" />
+	<sprite id="tile_legend_snow_05" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_05.png" />
+ 	<sprite id="tile_legend_snow_06" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_06.png" />
+	<sprite id="tile_legend_snow_07" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_07.png" />
+	<sprite id="tile_legend_snow_08" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_08.png" />
+	<sprite id="tile_legend_snow_09" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_09.png" />
+	<sprite id="tile_legend_snow_10" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_10.png" />
+	<sprite id="tile_legend_snow_11" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_11.png" />
+	<sprite id="tile_legend_snow_12" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_12.png" />
+	<sprite id="tile_legend_snow_13" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_snow_13.png" />
 	<sprite id="tile_legend_desert_01" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_desert_01.png" />
 	<sprite id="tile_legend_desert_02" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_desert_02.png" />
 	<sprite id="tile_legend_desert_03" b6="1" ic="FF3B7C9B" img="tactical_tiles\legend_desert_03.png" />
