@@ -195,11 +195,19 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 			
 			}
 		}
+		else if (forest_autumn > 0 && forest > 0 && forest_autumn > forest_leave)
+		{
+			if (this.Math.rand(1, 100) <= 50 + forest_autumn * 10)
+			{
+				local r = this.Math.rand(1, 4);
+				tile.spawnDetail("world_detail_green_autumn_light_0" + r, this.Const.World.ZLevel.Object, 0);
+			}
+		}
 		else if (forest_autumn > 0 && forest_autumn > forest && forest_autumn > forest_leave)
 		{
 			if (this.Math.rand(1, 100) <= 50 + forest_autumn * 10)
 			{
-				local r = this.Math.rand(1, 10);
+				local r = this.Math.rand(1, 20);
 				tile.spawnDetail("world_detail_autumn_light_" + (r < 10 ? "0" + r : r), this.Const.World.ZLevel.Object, 0);
 			}
 		}

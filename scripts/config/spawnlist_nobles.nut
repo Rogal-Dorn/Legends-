@@ -40,7 +40,7 @@ gt.Const.World.Spawn.Noble <- {
 			Weight = 45,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.VeteraFootman,
+					Type = this.Const.World.Spawn.Troops.FootmanVeteran,
 					Cost = 25
 				}
 			]

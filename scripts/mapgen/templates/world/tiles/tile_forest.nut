@@ -35,6 +35,7 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
 		local urban = 0;
 		local snow = 0;
+		local autumn = 0;
 
 		for( local i = 0; i != 6; i = ++i )
 		{
@@ -54,6 +55,10 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 				{
 					snow = ++snow;
 				}
+				else if (type == this.Const.World.TerrainType.AutumnForest)
+				{
+					autumn = ++autumn;
+				}
 			}
 		}
 
@@ -61,14 +66,22 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 		{
 			tile.setBrush("world_needles_0" + this.Math.rand(1, 3));
 
-			if (urban != 0 && this.Math.rand(1, 100) <= 75)
+			if (autumn >= 2)
 			{
-				tile.spawnDetail("world_detail_forest_cut_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
-				tile.setBrush("world_forest_needle_02");
+				tile.spawnDetail("world_detail_autumn_green_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
+				tile.setBrush("world_forest_needle_01");
 			}
 			else
 			{
-				tile.spawnDetail("world_detail_forest_0" + this.Math.rand(1, 3), this.Const.World.ZLevel.Object, 0);
+				if (urban != 0 && this.Math.rand(1, 100) <= 75)
+				{
+					tile.spawnDetail("world_detail_forest_cut_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
+					tile.setBrush("world_forest_needle_02");
+				}
+				else
+				{
+					tile.spawnDetail("world_detail_forest_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, 0);
+				}
 			}
 		}
 		else

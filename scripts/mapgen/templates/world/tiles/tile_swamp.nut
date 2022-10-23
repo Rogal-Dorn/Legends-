@@ -26,7 +26,10 @@ this.tile_swamp <- this.inherit("scripts/mapgen/map_template", {
 			"world_detail_swamp_11",
 			"world_detail_swamp_12",
 			"world_detail_swamp_13",
-			"world_detail_swamp_14"
+			"world_detail_swamp_14",
+			"world_detail_swamp_green_01",
+			"world_detail_swamp_green_02",
+			"world_detail_swamp_green_03"
 		]
 	},
 	function init()
@@ -47,15 +50,8 @@ this.tile_swamp <- this.inherit("scripts/mapgen/map_template", {
 
 		tile.Type = this.Const.World.TerrainType.Swamp;
 		tile.TacticalType = this.Const.World.TerrainTacticalType.Swamp;
-		local random = this.Math.rand(1, 9);
-			if (random <=8)
-			{
-			tile.setBrush("world_swamp_0" + this.Math.rand(1, 4));
-			}
-			else
-			{
-			tile.setBrush("world_swamp_green_0" + this.Math.rand(1, 3));
-			}
+		tile.setBrush("world_swamp_0" + this.Math.rand(1, 4));
+	
 	}
 
 	function onSecondPass( _rect )

@@ -1675,6 +1675,22 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 1,
 		Script = "scripts/entity/tactical/humans/free_company_leader_low"
 	},
+	FootmanVeteran = {
+		ID = this.Const.EntityType.FootmanVeteran,
+		Variant = 0,
+		Strength = 30,
+		Cost = 30,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/noble_footman_veteran"
+	},
+	ManAtArms = {
+		ID = this.Const.EntityType.ManAtArms,
+		Variant = 0,
+		Strength = 40,
+		Cost = 40,
+		Row = 1,
+		Script = "scripts/entity/tactical/humans/noble_man_at_arms"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-
