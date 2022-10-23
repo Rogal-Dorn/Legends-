@@ -37,6 +37,24 @@ gt.Const.World.Spawn.Noble <- {
 			]
 		},
 		{
+			Weight = 45,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.VeteraFootman,
+					Cost = 25
+				}
+			]
+		},
+		{
+			Weight = 45,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ManAtArms,
+					Cost = 40
+				}
+			]
+		},
+		{
 			Weight = 25,
 			Types = [
 				{
@@ -50,7 +68,7 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,
-					Cost = 20
+					Cost = 25
 				}
 			]
 		},

@@ -47,7 +47,15 @@ this.tile_swamp <- this.inherit("scripts/mapgen/map_template", {
 
 		tile.Type = this.Const.World.TerrainType.Swamp;
 		tile.TacticalType = this.Const.World.TerrainTacticalType.Swamp;
-		tile.setBrush("world_swamp_0" + this.Math.rand(1, 4));
+		local random = this.Math.rand(1, 9);
+			if (random <=8)
+			{
+			tile.setBrush("world_swamp_0" + this.Math.rand(1, 4));
+			}
+			else
+			{
+			tile.setBrush("world_swamp_green_0" + this.Math.rand(1, 3));
+			}
 	}
 
 	function onSecondPass( _rect )

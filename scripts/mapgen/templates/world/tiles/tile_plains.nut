@@ -168,7 +168,7 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 		{
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				local random = this.Math.rand(1, 16);
+				local random = this.Math.rand(1, 28);
 				if (random <=9)
 				{
 				tile.spawnDetail("world_detail_forest_light_0" + random, this.Const.World.ZLevel.Object, 0);

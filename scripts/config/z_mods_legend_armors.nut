@@ -1349,7 +1349,34 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Tabard = [
 		],
 		Attachments =[
-			[15, ""],
+			[5, ""],
+			[5, "armor_upgrades/legend_leather_neckguard_upgrade"],
+			[5, "armor_upgrades/legend_mail_patch_upgrade"],
+			[2, "armor_upgrades/legend_joint_cover_upgrade"]
+		]
+	}]
+},{
+	ID = "man_at_arms_noble_armor", // 110
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_gambeson_plain"]
+		],
+		Chain = [
+			[1, "chain/legend_armor_hauberk"],
+			[1, "chain/legend_armor_hauberk_full"]
+			
+		],
+		Plate = [
+			[1, "plate/legend_armor_leather_riveted"],
+			[1, "plate/legend_armor_plate_chest"]
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+			[5, ""],
 			[5, "armor_upgrades/legend_leather_neckguard_upgrade"],
 			[5, "armor_upgrades/legend_mail_patch_upgrade"],
 			[2, "armor_upgrades/legend_joint_cover_upgrade"]

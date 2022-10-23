@@ -33,7 +33,17 @@ this.tile_autumn_forest <- this.inherit("scripts/mapgen/map_template", {
 	{
 		local tile = this.World.getTileSquare(_rect.X, _rect.Y);
 		local urban = tile.getSurroundingTilesOfType(this.Const.World.TerrainType.Urban);
-		local d = tile.spawnDetail("world_detail_autumn_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, 0);
+
+		local random = this.Math.rand(1, 13);
+		if (random <=9)
+		{
+		local d = tile.spawnDetail("world_detail_autumn_0" + this.Math.rand(1, 9), this.Const.World.ZLevel.Object, 0);
+		}
+		else
+		{
+		local d = tile.spawnDetail("world_detail_autumn_1" + this.Math.rand(0, 3), this.Const.World.ZLevel.Object, 0);
+		}
+		
 	}
 
 	function onRoadPass( _rect )
