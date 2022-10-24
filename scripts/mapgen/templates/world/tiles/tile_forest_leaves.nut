@@ -32,15 +32,15 @@ this.tile_forest_leaves <- this.inherit("scripts/mapgen/map_template", {
 		{
 			tile.spawnDetail("world_detail_forest_leaves_cut_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
 		}
-		else if (forest >= 2)
+		else if (forest > 1)
 		{
 			tile.spawnDetail("world_detail_forest_green_0" + this.Math.rand(4, 6), this.Const.World.ZLevel.Object, 0);
 		}
-		else if (autumn >= 2)
+		else if (autumn > 1)
 		{
-			tile.spawnDetail("world_detail_autumn_leaves_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Object, 0);
+			tile.spawnDetail("world_detail_autumn_leaves_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
 		}
-		else if (swamp != 0)
+		else if (swamp > 1)
 		{
 			tile.spawnDetail("world_detail_swamp_green_leaves_0" + this.Math.rand(1, 4), this.Const.World.ZLevel.Object, 0);
 		}
