@@ -125,25 +125,15 @@ this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 		// ]));
 
 		local helmet;
-		if (banner <= 4)
-			{
-				helmet = this.Const.World.Common.pickHelmet([
-					[1, "heavy_noble_house_helmet_00"]
-				])
-			}
-		else if (banner <= 7)
-			{
-				helmet = this.Const.World.Common.pickHelmet([
-					[1, "heavy_noble_house_helmet_00"]
-				])
-			}
-		else
-			{
-				helmet = this.Const.World.Common.pickHelmet([,
-					[1, "heavy_noble_house_helmet_00"]
-				])
-			}
 
+		helmet = this.Const.World.Common.pickHelmet([
+			[4, "scale_helm"],
+			[4, "kettle_hat_with_mail"],
+			[2, "mail_coif"],
+			[1, "heavy_noble_house_helmet_00"]
+		])
+	
+		
 		if (helmet != null)
 			{
 				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }
