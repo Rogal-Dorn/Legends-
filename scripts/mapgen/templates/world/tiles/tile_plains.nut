@@ -220,10 +220,22 @@ this.tile_plains <- this.inherit("scripts/mapgen/map_template", {
 		}
 		else if (swamp != 0)
 		{
-			if (this.Math.rand(1, 100) <= 50 + swamp * 4)
+		
+			if (this.Math.rand(1, 100) >= 10)
 			{
-				tile.spawnDetail("world_detail_swamp_light_0" + this.Math.rand(0, 9), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Swamp);
+				if (this.Math.rand(1, 100) <= 50 + swamp * 4)
+				{
+					tile.spawnDetail("world_detail_swamp_light_0" + this.Math.rand(0, 9), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Swamp);
+				}
 			}
+			else
+			{
+				if (this.Math.rand(1, 100) <= 50 + swamp * 4)
+				{
+					tile.spawnDetail("world_detail_swamp_green_light_0" + this.Math.rand(1, 6), this.Const.World.ZLevel.Object, this.Const.World.DetailType.Swamp);
+				}			
+			}
+			
 		}
 		else if (oasis != 0)
 		{

@@ -36,6 +36,8 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 		local urban = 0;
 		local snow = 0;
 		local autumn = 0;
+		local leaves = 0;
+		local swamp = 0;
 
 		for( local i = 0; i != 6; i = ++i )
 		{
@@ -55,6 +57,14 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 				{
 					snow = ++snow;
 				}
+				else if (type == this.Const.World.TerrainType.LeaveForest)
+				{
+					leaves = ++leaves;
+				}
+				else if (type == this.Const.World.TerrainType.Swamp)
+				{
+					swamp = ++swamp;
+				}
 				else if (type == this.Const.World.TerrainType.AutumnForest)
 				{
 					autumn = ++autumn;
@@ -69,7 +79,14 @@ this.tile_forest <- this.inherit("scripts/mapgen/map_template", {
 			if (autumn >= 2)
 			{
 				tile.spawnDetail("world_detail_autumn_green_0" + this.Math.rand(1, 2), this.Const.World.ZLevel.Object, 0);
-				tile.setBrush("world_forest_needle_01");
+			}
+			else if (leaves >= 2)
+			{
+				tile.spawnDetail("world_detail_forest_green_0" + this.Math.rand(1, 3), this.Const.World.ZLevel.Object, 0);
+			}
+			else if (swamp >= 2)
+			{
+				tile.spawnDetail("world_detail_swamp_green_forest_0" + this.Math.rand(1, 3), this.Const.World.ZLevel.Object, 0);
 			}
 			else
 			{

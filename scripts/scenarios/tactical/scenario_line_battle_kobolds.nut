@@ -15,7 +15,7 @@ this.scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tactical/sc
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.plains");
+		local testMap = this.MapGen.get("tactical.swamp_green");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
