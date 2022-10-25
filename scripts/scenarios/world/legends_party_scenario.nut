@@ -59,7 +59,7 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[2].setPlaceInFormation(5);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
-		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait"));
+		// bros[2].getSkills().add(this.new("scripts/skills/traits/legend_undead_killer_trait")); //Has this by default
 		bros[3].setStartValuesEx([
 			"legend_druid_background"
 		]);
