@@ -1,12 +1,12 @@
 this.perk_legend_barter_greed <- this.inherit("scripts/skills/skill", {
 	m = {
-		SoftCap = 25000,			// Bonus gained from Crowns above this value is penalized
+		SoftCap = 15000,			// Bonus gained from Crowns above this value is penalized
 		SoftCapPenalty = 0.05,		// Multiplier for Bonus gained from Crowns above SoftCap
 
 		// Every 10000 Crowns
-		OffensiveMult = 18.0,		
-		DefensiveMult = 2.0,
-		ResolveMult = 16.0
+		OffensiveMult = 1.2,
+		DefensiveMult = 1.4,
+		ResolveMult = 0.5
 	},
 	function create()
 	{
