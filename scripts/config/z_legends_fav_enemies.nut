@@ -185,8 +185,8 @@ gt.Const.LegendMod.FavoriteCaravan <- [
 ];
 gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.Footman,
-	this.Const.EntityType.FootmanVeteran,
-	this.Const.EntityType.ManAtArms,
+	this.Const.EntityType.LegendNobleGuard,
+	this.Const.EntityType.LegendManAtArms,
 	this.Const.EntityType.Greatsword,
 	this.Const.EntityType.Billman,
 	this.Const.EntityType.Arbalester,

@@ -73,7 +73,7 @@ gt.Const.Tactical.Actor.OrcWarrior <- {
 gt.Const.Tactical.Actor.LegendOrcElite <- {
 	XP = 800,
 	ActionPoints = 8,
-	Hitpoints = 300,
+	Hitpoints = 350,
 	Bravery = 90,
 	Stamina = 400,
 	MeleeSkill = 80,

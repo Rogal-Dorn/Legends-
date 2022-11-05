@@ -1,5 +1,32 @@
 ### Legend Mod Release Notes
 
+## 17  Wildlands Warriors
+
+**Environment**
+-Greater variety of trees, grasses, bushes, logs and flowers on the world map 
+-Forest biomes now blend into each other to create more natural looking terrain
+-Marshes can sometimes be lush Wetlands with a new tactical map type. This is more common near forest edges 
+
+**Wildlife**
+Bear graphics updated 
+
+
+**Kobolds**
+Kobolds can now found in marshes, where they disapear into the undergrowth while their dart guns waylay you
+You can try them out in a new tactical scenario 'Kobold Swamp'
+
+**Noble armies**
+Nobles have much smaller armies with harder high tier units closer to Orc Elites 
+Fencers, Halberdiers and Slingers are all stronger and appear later in your campaign. 
+New unit: Noble Guard - High tier with plate armor 
+New unit: Man at Arms - Very high tier with decorated armor and new helmets 
+You can try them out in a new tactical scenario 'Noble Camp' 
+
+Changes:
+Undead facemask helmets moved to top layer so they can be stacked on helmets
+The wreath helmet has a wreath 
+
+
 ## 16.1.5 - Soujourn v5
 Changes:
 - World Generation sliders are unlocked again

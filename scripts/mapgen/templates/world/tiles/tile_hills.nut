@@ -274,11 +274,7 @@ this.tile_hills <- this.inherit("scripts/mapgen/map_template", {
 				else
 				{
 				
-					local random = this.Math.rand(1, 7);
-		
-					tile.spawnDetail("legend_world_grass_hill_0" + random, this.Const.World.ZLevel.Terrain, 
-					this.Const.World.DetailType.Hills, false);
-			
+					tile.spawnDetail("world_grass_hill_0" + this.Math.rand(1, 5), this.Const.World.ZLevel.Terrain, this.Const.World.DetailType.Hills, false);
 				
 				}
 

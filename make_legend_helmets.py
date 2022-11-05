@@ -500,18 +500,6 @@ layers = [
  "desc" :  "The tailed conic helm of an ancient legionary." \
 },
 
-{"name" : "ancient_beard_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
- "title" :  "Ancient Bearded Mask", \
- "desc" :  "Bearded Mask of an ancient honor guard." \
-},
-{"name" : "ancient_lion_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
- "title" :  "Ancient Lion Mask", \
- "desc" :  "A Lion Mask of an ancient honor guard." \
-},
-{"name" : "ancient_mask"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 600, "con" : 130, "stam" : -12, "vis" : -3, "hair" : "true", "beard" : "true",  \
- "title" :  "Ancient Mask", \
- "desc" :  "A masked helm of an ancient honor guard." \
-},
 {"name" : "ancient_face_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 500, "con" : 120, "stam" : -10, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Face Helm", \
  "desc" :  "A helm of an ancient honor guard." \
@@ -884,6 +872,18 @@ layers = [
 {"name" : "goblin_spiked_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 125, "con" : 35, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Spiked Goblin Helm", \
  "desc" :  "The distinctive spiked helm of a goblin overseer." \
+},
+{"name" : "ancient_beard_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 45, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Ancient Bearded Mask", \
+ "desc" :  "Bearded Mask of an ancient honor guard." \
+},
+{"name" : "ancient_lion_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 150, "con" : 40, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Ancient Lion Mask", \
+ "desc" :  "A Lion Mask of an ancient honor guard." \
+},
+{"name" : "ancient_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 30, "stam" : -2, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Ancient Mask", \
+ "desc" :  "A masked helm of an ancient honor guard." \
 },
 {"name" : "vampire_crown"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ancient Crown", \
@@ -2111,10 +2111,7 @@ Sets = [{
         [1, "helm/legend_helmet_ancient_legionaire"], //50
         [1, "helm/legend_helmet_ancient_side_hawk"], //50
         [1, "helm/legend_helmet_ancient_tailed_conic_helm"], //50
-        [1, "helm/legend_helmet_ancient_beard_mask"], //100
         [1, "helm/legend_helmet_ancient_crested"], //100
-        [1, "helm/legend_helmet_ancient_lion_mask"], //100
-        [1, "helm/legend_helmet_ancient_mask"], //100
         [1, "helm/legend_helmet_ancient_face_helm"], //100
         [1, "helm/legend_helmet_orc_strapped_helm"], //160
         [1, "helm/legend_helmet_orc_double_helm"], //220
@@ -2165,6 +2162,9 @@ Sets = [{
         [1, "top/legend_helmet_goblin_spiked_helm"], //90
         [1, "top/legend_helmet_vampire_crown"], //30
         [1, "top/legend_helmet_ancient_crown"], //80
+        [1, "helm/legend_helmet_ancient_lion_mask"], //100
+        [1, "helm/legend_helmet_ancient_mask"], //100
+        [1, "helm/legend_helmet_ancient_beard_mask"], //100
         [1, "top/legend_helmet_leather_hood_barb"], //105
         [1, "top/legend_helmet_nose_plate"], //15
         [1, "top/legend_helmet_headband_side"], //20

@@ -439,8 +439,8 @@ gt.Const.EntityType <- {
 	FreeCompanyLeaderLow = 164,
 
 	Oathbringer = 165,
-	FootmanVeteran = 166,
-	ManAtArms = 167
+	LegendNobleGuard= 166,
+	LegendManAtArms = 167
 	function convertOldToNew( _id )
 	{
 		switch(_id)
@@ -642,7 +642,7 @@ gt.Const.EntityType <- {
 
 		case this.Const.EntityType.Footman:
 		case this.Const.EntityType.VeteranFootman:
-		case this.Const.EntityType.ManAtArms:
+		case this.Const.EntityType.LegendManAtArms:
 		case this.Const.EntityType.Greatsword:
 		case this.Const.EntityType.Billman:
 		case this.Const.EntityType.Arbalester:
@@ -915,5 +915,5 @@ gt.Const.EntityIcon <- [
 
 	"oathbringer_orientation",
 	"footman_veteran_orientation",//VeteranFootman
-	"footman_veteran_orientation"//ManAtArms
+	"footman_veteran_orientation"//LegendManAtArms
 ];
