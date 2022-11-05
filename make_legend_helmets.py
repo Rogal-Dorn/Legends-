@@ -379,6 +379,10 @@ layers = [
  "title" :  "Leather Hood", \
  "desc" :  "A closed leather cap that protects the head and neck. Padded for extra protection." \
 },
+{"name" : "beak_hood"                     , "itemType" : "this.Const.Items.ItemType.Cultist", "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 150, "con" : 65, "stam" : -3, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Beaked Hood", \
+ "desc" :  "A thick leather hood with a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease." \
+},
 {"name" : "padded_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 115, "con" : 50, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Full Aketon Cap", \
  "desc" :  "A large padded cloth cap also covering the neck." \
@@ -398,6 +402,10 @@ layers = [
 {"name" : "southern_niqaab"                     , "layer" : "hood", "min" : 1, "max" : 4, "base" : True, "value" : 300, "con" : 45, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "true",  \
  "title" :  "Niqaab", \
  "desc" :  "A headwrap, protects from the sun and light blows." \
+},
+{"name" : "full_mask"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 50, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "true",  \
+ "title" :  "Full Cloth Mask", \
+ "desc" :  "An ominous black mask to cover the face" \
 },
 {"name" : "open_chain_hood"                     , "layer" : "hood", "min" : 1, "max" : 3, "base" : True, "value" : 225, "con" : 65, "stam" : -3, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Chain Mail Hood", \
@@ -637,6 +645,10 @@ layers = [
  "title" :  "Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim." \
 },
+{"name" : "kettle_hat"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 800, "con" : 120, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Kettle Hat", \
+ "desc" :  "A full-metal helmet with a very wide rim." \
+},
 {"name" : "kettle_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3500, "con" : 130, "stam" : -9, "vis" : -2, "hair" : "true", "beard" : "false", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 7, "rminStam" : 9, "rminCond" : 130, "rmaxCond" : 155, "names" : Names, \
  "title" :  "Kettle Helm", \
  "desc" :  "An exceptional and sturdy kettle helm. Blackened and polished, it has a gilded point." \
@@ -708,6 +720,10 @@ layers = [
 {"name" : "great_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 2500, "con" : 175, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Helm", \
  "desc" :  "A closed metal helm with breathing holes. Great in the way of protection but hard to breathe in and limiting the field of view." \
+},
+{"name" : "full_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 3000, "con" : 180, "stam" : -13, "vis" : -2, "hair" : "true", "beard" : "true",  \
+ "title" :  "Full Helm", \
+ "desc" :  "A closed metal helm with breathing holes. Lovingly maintained despite its extensive use" \
 },
 {"name" : "enclave_great_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2650, "con" : 180, "stam" : -12, "vis" : -2, "hair" : "true", "beard" : "true",  \
  "title" :  "Great Helm", \
@@ -831,10 +847,13 @@ layers = [
  "title" :  "Cloth Long Hood", \
  "desc" :  "A simple hood to protect against weather and scratches." \
 },
-
-{"name" : "orc_leather_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 150, "con" : 45, "stam" : -6, "vis" : -1, "hair" : "true", "beard" : "false",  \
- "title" :  "Orc Leather Mask", \
- "desc" :  "A basic leather mask worn by young orcs." \
+{"name" : "cloth_long_hood"                     , "layer" : "top", "min" : 1, "max" : 4, "value" : 30, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Cloth Long Hood", \
+ "desc" :  "A simple hood to protect against weather and scratches." \
+},
+{"name" : "mask_beak"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 50, "con" : 20, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
+ "title" :  "Physicians Mask", \
+ "desc" :  "a distinctive, bird-like mask. The beak acts as a ventilator, containing sweet-smelling herbs to ward away sickness and disease" \
 },
 {"name" : "orc_horn_mask"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 200, "con" : 60, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Orc Horn Mask", \
@@ -848,6 +867,10 @@ layers = [
 {"name" : "goblin_leaves"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 5, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaves", \
  "desc" :  "A set of leaves used by goblins to disguise themselves." \
+},
+{"name" : "undertakers_scarf"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 20, "con" : 5, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Undertaker Scarf", \
+ "desc" :  "A scarf to cover the mouth. Durable enough to protect against weather and scratches." \
 },
 {"name" : "goblin_leaf_helm"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Goblin Leaf Mask", \
@@ -916,6 +939,14 @@ layers = [
 {"name" : "chain_attachment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 250, "con" : 25, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Chain Attachment", \
  "desc" :  "A piece of mail used for hanging over the mouth and nose." \
+},
+{"name" : "helm_adornment"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 500, "con" : 20, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Helm Adornment", \
+ "desc" :  "Relics of adornment to create the helmet of a true questing knight" \
+},
+{"name" : "helm_adornment_rotten"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Tarnished Helm Adornment", \
+ "desc" :  "Ancient rotten relics of adornment from the helmet of a long dead questing knight" \
 },
 {"name" : "faceplate_flat"                     , "layer" : "top", "min" : 1, "max" : 6, "value" : 300, "con" : 35, "stam" : -2, "vis" : -1, "hair" : "false", "beard" : "false",  \
  "title" :  "Flat Faceplate", \
@@ -1183,6 +1214,10 @@ layers = [
  "title" :  "Noble Hat", \
  "desc" :  "A fashionable hat for courtesans." \
 },
+{"name" : "chaperon"                     , "layer" : "vanity", "min" : 1, "max" : 9, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Chaperon", \
+ "desc" :  "Fashionable headerware for adorning a questing knight" \
+},
 {"name" : "ancient_wig"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Wig", \
  "desc" :  "A wig from an ancient embalmed noble." \
@@ -1206,6 +1241,14 @@ layers = [
 {"name" : "plait"                     , "layer" : "vanity", "min" : 1, "max" : 12, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Plait", \
  "desc" :  "A decorative plait used to adorn helms." \
+},
+{"name" : "thick_braid"                     , "layer" : "vanity", "min" : 1, "max" : 6, "value" : 300, "con" : 20, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Torse", \
+ "desc" :  "A padded roller made of linen, that is put on the top of helmet. Helps to identify a warrior during the battle and amortize hits in the head" \
+},
+{"name" : "thick_braid_rotten"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 200, "con" : 15, "stam" : -1, "vis" : 0, "hair" : "false", "beard" : "false",  \
+ "title" :  "Rotten Torse", \
+ "desc" :  "An old mouldy linen torse. The colours are faded but it still offers some small protection" \
 },
 {"name" : "ponytail"                     , "layer" : "vanity", "min" : 1, "max" : 4, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "false", "beard" : "false",  \
  "title" :  "Ponytail", \
@@ -1267,6 +1310,10 @@ layers = [
  "title" :  "Wizard Cowl", \
  "desc" :  "A pointy hat with a broad rim." \
 },
+{"name" : "undertakers_hat"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 50, "con" : 12, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Undertaker Hat", \
+ "desc" :  "A wide-brimmed feathered hat to protect against weather and scratches." \
+},
 {"name" : "wolf_helm"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Wolf Helm", \
  "desc" :  "An impressive wolf head covering." \
@@ -1282,6 +1329,10 @@ layers = [
 {"name" : "royal_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Royal Hood", \
  "desc" :  "The ornate hood of distant royalty, made from the finest materials." \
+},
+{"name" : "physicians_hood"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Physician Hood", \
+ "desc" :  "A thick hood for keeping out splatters and vapours" \
 },
 {"name" : "mummy_headress"                     , "layer" : "vanity", "min" : 1, "max" : 1, "value" : 100, "con" : 10, "stam" : 0, "vis" : 0, "hair" : "true", "beard" : "false",  \
  "title" :  "Ancient Southern Headress", \

@@ -10,7 +10,6 @@
 **Wildlife**
 Bear graphics updated 
 
-
 **Kobolds**
 Kobolds can now found in marshes, where they disapear into the undergrowth while their dart guns waylay you
 You can try them out in a new tactical scenario 'Kobold Swamp'
@@ -22,9 +21,33 @@ New unit: Noble Guard - High tier with plate armor
 New unit: Man at Arms - Very high tier with decorated armor and new helmets 
 You can try them out in a new tactical scenario 'Noble Camp' 
 
+**Hats**
+Vanity:
+-Undertaker's Hat
+-Torse (in 6 colours) 
+-Rotten Torse 
+-Physician's Hood 
+-Chaperon (in 9 colours) 
+
+Top:
+-Physician's Mask 
+-Helm Adornment
+-Tarnished Helm Adornment
+-Undertaker's Scarf
+
+Helm:
+-Full Helm
+-Kettle Hat
+
+Hood:
+-Beak Hood
+-Full Mask 
+
+
 Changes:
 Undead facemask helmets moved to top layer so they can be stacked on helmets
-The wreath helmet has a wreath 
+The emporer's wreath helmet now has a wreath 
+More variety added to character and location names
 
 
 ## 16.1.5 - Soujourn v5
