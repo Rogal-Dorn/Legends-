@@ -1676,7 +1676,7 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/humans/free_company_leader_low"
 	},
 	LegendNobleGuard= {
-		ID = this.Const.EntityType.VeteranFootman,
+		ID = this.Const.EntityType.LegendNobleGuard,
 		Variant = 0,
 		Strength = 50,
 		Cost = 50,
