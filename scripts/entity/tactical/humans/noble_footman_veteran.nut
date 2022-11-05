@@ -1,4 +1,4 @@
-this.legend_noble_footman_veteran <- this.inherit("scripts/entity/tactical/human", {
+this.legend_noble_footman_veteran <- this.inherit("scripts/entity/tactical/humans/noble_footman", {
 	m = {},
 	function create()
 	{
@@ -117,7 +117,7 @@ this.legend_noble_footman_veteran <- this.inherit("scripts/entity/tactical/human
 		this.m.Items.equip(shield);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "citreneking_noble_armor"]
+			[1, "legend_noble_guard_armour"]
 		]));
 		// this.m.Items.equip(this.Const.World.Common.pickArmor([
 		// 	[1, "mail_hauberk", 28],
