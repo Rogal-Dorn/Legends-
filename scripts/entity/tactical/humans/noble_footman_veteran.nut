@@ -2,9 +2,9 @@ this.legend_noble_footman_veteran <- this.inherit("scripts/entity/tactical/human
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.FootmanVeteran;
+		this.m.Type = this.Const.EntityType.LegendNobleGuard;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.FootmanVeteran.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendNobleGuard.XP;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.Military;
@@ -18,7 +18,7 @@ this.legend_noble_footman_veteran <- this.inherit("scripts/entity/tactical/human
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.FootmanVeteran);
+		b.setValues(this.Const.Tactical.Actor.LegendNobleGuard);
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;

@@ -2,9 +2,9 @@ this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.ManAtArms;
+		this.m.Type = this.Const.EntityType.LegendManAtArms;
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.ManAtArms.XP;
+		this.m.XP = this.Const.Tactical.Actor.LegendManAtArms.XP;
 		this.human.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.Military;
@@ -18,7 +18,7 @@ this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 	{
 		this.human.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.ManAtArms);
+		b.setValues(this.Const.Tactical.Actor.LegendManAtArms);
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -116,7 +116,7 @@ this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip(shield);
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "citreneking_noble_armor"]
+			[1, "man_at_arms_noble_armor"]
 		]));
 		// this.m.Items.equip(this.Const.World.Common.pickArmor([
 		// 	[1, "mail_hauberk", 28],
@@ -127,9 +127,8 @@ this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 		local helmet;
 
 		helmet = this.Const.World.Common.pickHelmet([
-			[4, "scale_helm"],
-			[4, "kettle_hat_with_mail"],
-			[2, "mail_coif"],
+			[3, "stag_helm"],
+			[3, "swan_helm"],
 			[1, "heavy_noble_house_helmet_00"]
 		])
 	
