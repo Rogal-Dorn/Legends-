@@ -24,10 +24,11 @@ You can try them out in a new tactical scenario 'Noble Camp'
 **Hats**
 Vanity:
 -Undertaker's Hat
--Torse (in 6 colours) 
+-Torse in 6 colours 
 -Rotten Torse 
 -Physician's Hood 
--Chaperon (in 9 colours) 
+-Chaperon in 9 colours 
+-Felt Chaperon in 9 colours
 
 Top:
 -Physician's Mask 
@@ -45,6 +46,7 @@ Hood:
 
 
 Changes:
+Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
