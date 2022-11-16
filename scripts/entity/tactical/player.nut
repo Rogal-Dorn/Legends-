@@ -369,20 +369,17 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	{
 		local ret = [];
 
-		if (!this.m.IsTryoutDone)
-		{
-			return ret;
-		}
+		if (!this.m.IsTryoutDone) return ret;
 
 		foreach( s in this.m.Skills.m.Skills )
 		{
-			if (s.getType() == this.Const.SkillType.Trait)
-			{
-				ret.push({
-					id = s.getID(),
-					icon = s.getIconColored()
-				});
-			}
+			if (s.getType() != ::Const.SkillType.Trait) continue;
+			if (s.isHidden()) continue;
+
+			ret.push({
+				id = s.getID(),
+				icon = s.getIconColored()
+			});
 		}
 
 		return ret;
