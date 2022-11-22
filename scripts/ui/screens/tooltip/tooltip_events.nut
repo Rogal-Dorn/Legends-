@@ -1653,7 +1653,7 @@ this.tooltip_events <- {
 					type = "description",
 					text = "Show the roster of the fighting force of your mercenary company. Increase your Renown to increase the Roster Size!"
 				}
-			]; 
+			];
 
 
 			local data = this.World.Assets.getRosterDescription();
@@ -1687,7 +1687,7 @@ this.tooltip_events <- {
 				});
 				id = ++id;
 			}
-			
+
 			ret.push({
 				id = id,
 				type = "text",
@@ -1697,6 +1697,7 @@ this.tooltip_events <- {
 
 			foreach( bro in data.TerrainModifiers )
 			{
+				if (bro[1] == 0) continue;
 				ret.push({
 					id = id,
 					type = "text",
@@ -1710,7 +1711,7 @@ this.tooltip_events <- {
 				type = "hint",
 				text = "Company Strength: " + this.World.State.getPlayer().getStrength()
 			});
-			id = ++id;			
+			id = ++id;
 
 			foreach( bro in data.Brothers )
 			{
