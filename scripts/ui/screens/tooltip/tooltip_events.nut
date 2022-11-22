@@ -1713,6 +1713,8 @@ this.tooltip_events <- {
 			});
 			id = ++id;
 
+			local brothersLimit = 12;
+			local i = 0
 			foreach( bro in data.Brothers )
 			{
 				ret.push({
@@ -1722,6 +1724,16 @@ this.tooltip_events <- {
 					text = "L" + bro.Level + "  " + bro.Name + " (" + bro.Background + ")"
 				});
 				id = ++id;
+				i++;
+				if (i == brothersLimit) break;
+			}
+			if (data.Brothers.len() - brothersLimit > 0)
+			{
+				ret.push({
+					id = id,
+					type = "hint",
+					text = "... and " + (data.Brothers.len() - brothersLimit) + " others."
+				});
 			}
 
 			return ret;
