@@ -272,6 +272,13 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		{
 			_list.push("sellsword_background");
 		}
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			_list.push("hedge_knight_background");
+		}
 	}
 
 	function onBuildPerkTree( _background )
