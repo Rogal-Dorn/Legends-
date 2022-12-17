@@ -193,35 +193,35 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if (_list.len() < 5)
+		local r;
+		r = this.Math.rand(0, 2);
+		if (r == 0)
 		{
-			local r;
-			r = this.Math.rand(0, 2);
-			if (r == 0)
-			{
 			_list.push("cultist_background");
-			}
-			r = this.Math.rand(0, 4);
-			if (r == 0)
-			{
+		}
+
+		r = this.Math.rand(0, 4);
+		if (r == 0)
+		{
 			_list.push("cultist_background");
-			}
-			r = this.Math.rand(0, 6);
-			if (r == 0 && _gender)
-			{
+		}
+
+		r = this.Math.rand(0, 6);
+		if (r == 0)
+		{
 			_list.push("legend_lurker_background");
-			}
-			r = this.Math.rand(0, 9);
-			if (r == 0)
-			{
-				_list.push("legend_husk_background");
-			}
-			r = this.Math.rand(0, 20);
-			if (r == 0)
-			{
-				_list.push("legend_magister_background");
-			}
+		}
+
+		r = this.Math.rand(0, 9);
+		if (r == 0)
+		{
+			_list.push("legend_husk_background");
+		}
+
+		r = this.Math.rand(0, 20);
+		if (r == 0)
+		{
+			_list.push("legend_magister_background");
 		}
 	}
 
@@ -254,7 +254,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.cultist_lurker" || bro.getBackground().getID() == "background.cultist_darksoul" || bro.getBackground().getID() == "background.cultist_magister")
+			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_lurker" || bro.getBackground().getID() == "background.legend_darksoul" || bro.getBackground().getID() == "background.legend_magister")
 			{				
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
