@@ -193,36 +193,34 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
-		local r;
-		r = this.Math.rand(0, 2);
-		if (r == 0)
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		if (_list.len() <= 5)
 		{
-			_list.push("cultist_background");
-		}
+			local r;
+			r = this.Math.rand(0, 9);
+			if (r == 0)
+			{
+				_list.push("cultist_background");
+			}
 
-		r = this.Math.rand(0, 4);
-		if (r == 0)
-		{
-			_list.push("cultist_background");
-		}
+			r = this.Math.rand(0, 10);
+			if (r == 0)
+			{
+				_list.push("legend_lurker_background");
+			}
 
-		r = this.Math.rand(0, 6);
-		if (r == 0)
-		{
-			_list.push("legend_lurker_background");
-		}
+			r = this.Math.rand(0, 13);
+			if (r == 0)
+			{
+				_list.push("legend_husk_background");
+			}
 
-		r = this.Math.rand(0, 9);
-		if (r == 0)
-		{
-			_list.push("legend_husk_background");
-		}
-
-		r = this.Math.rand(0, 20);
-		if (r == 0)
-		{
-			_list.push("legend_magister_background");
-		}
+			r = this.Math.rand(0, 17);
+			if (r == 0)
+			{
+				_list.push("legend_magister_background");
+			}
+		}	
 	}
 
 	function isCultist( _background )
