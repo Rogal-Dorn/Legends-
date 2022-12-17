@@ -199,7 +199,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		} 
 
 		dropLoot = -500.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with ore perk.
-		if (dropLoot && levels.Woodsman > 0)
+		if (dropLoot && levels.Miner > 0)
 		{
 			local r = levels.Miner > 10 ? 1 : this.Math.rand(1, 3);
 			if (r < 3) item = this.new("scripts/items/trade/uncut_gems_item");
@@ -211,7 +211,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		}
 
 		dropLoot = -300.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100);
-		if (dropLoot && levels.Woodsman > 0)
+		if (dropLoot && levels.Miner > 0)
 		{
 			local r = levels.Miner > 5 ? 1 : this.Math.rand(1, 3);
 			if (r < 3) item = this.new("scripts/items/trade/peat_bricks_item");
