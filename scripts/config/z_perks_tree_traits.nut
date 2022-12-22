@@ -744,7 +744,7 @@ gt.Const.Perks.SturdyTree <- {
 		],
 		[],
 		[
-			gt.Const.Perks.PerkDefs.Stalwart
+			// gt.Const.Perks.PerkDefs.Stalwart
 		],
 		[],
 		[]

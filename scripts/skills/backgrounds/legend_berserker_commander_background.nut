@@ -181,7 +181,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendTumble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.Stalwart,
+				// this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 			]
