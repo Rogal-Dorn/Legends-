@@ -68,8 +68,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.Sprint,
-				this.Const.Perks.PerkDefs.LegendOnslaught,
-				this.Const.Perks.PerkDefs.LegendComposure
+				this.Const.Perks.PerkDefs.LegendOnslaught
+				// this.Const.Perks.PerkDefs.LegendComposure
 			],
 			[
 				this.Const.Perks.PerkDefs.Brawny,
