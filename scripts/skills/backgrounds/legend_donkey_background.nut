@@ -67,7 +67,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 			[
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.LegendComposure,
+				// this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendAlert,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.SteelBrow
