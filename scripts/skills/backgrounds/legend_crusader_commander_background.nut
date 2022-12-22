@@ -145,7 +145,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Indomitable,
-				this.Const.Perks.PerkDefs.Stalwart,
+				// this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				//this.Const.Perks.PerkDefs.LegendStrictSermons,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
