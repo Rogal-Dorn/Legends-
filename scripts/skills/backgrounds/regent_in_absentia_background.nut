@@ -31,6 +31,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Thick;
+		this.m.Level = this.Math.rand(1, 3);
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -41,6 +42,27 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree
+			],
+			Enemy = [],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	function setGender(_gender = -1)

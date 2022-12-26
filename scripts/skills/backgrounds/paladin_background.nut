@@ -70,6 +70,35 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [
+				this.Const.Perks.ZombieTree,
+				this.Const.Perks.SkeletonTree
+			],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	//Default Male
@@ -163,8 +192,8 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				16
 			],
 			Stamina = [
-				0,
-				-4
+				10,
+				5
 			],
 			MeleeSkill = [
 				13,
