@@ -21,27 +21,13 @@ this.perk_steel_brow <- this.inherit("scripts/skills/skill", {
 		if ("effects.stunned")
 		{
 			_entity.getSkills().removeByID("effects.stunned");
+			actor.getSprite("status_stunned").Visible = false;
+			actor.getSprite("status_stunned").setBrush("bust_dazed");
 			_entity.getSkills().add("effects.dazed");
+			// actor.getSprite("status_effect_87").Visible = true;
+			actor.setDirty(true);
 		}
 	}
-
-	// function onUpdate( _properties )
-	// {
-	// 	local currentPercent = this.getContainer().getActor().getHitpointsPct();
-	// 	if (currentPercent < 0.66)
-	// 	{
-	// 		local bonus = this.Math.floor(100 * (0.66 - currentPercent) / 2.0);
-	// 		_properties.MeleeDefense += bonus;
-	// 		_properties.RangedDefense += bonus;
-
-	// 		if (currentPercent < 0.33)
-	// 		{
-	// 			_properties.IsAffectedByFreshInjuries = false;
-	// 			_properties.IsAffectedByLosingHitpoints = false;
-	// 		}
-	// 	}
-	// }
-
 
 });
 
