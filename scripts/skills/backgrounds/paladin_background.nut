@@ -70,6 +70,28 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.05, //plains
+				0.0, //swamp
+				0.0, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.03, //farmland
+				0.0, // snow
+				0.01, // badlands
+				0.01, //highlands
+				0.0, //steppes
+				0.0, //ocean
+				0.0, //desert
+				0.0 //oasis
+			];
 		
 		this.m.PerkTreeDynamic = {
 			Weapon = [
