@@ -203,7 +203,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 
 			if (this.Math.rand(1, 100) <= 50)
 			{
-				tattoo_head.setBrush("tattoo_head_01");
+				tattoo_head.setBrush("tattoo_01_head");
 				tattoo_head.Visible = true;
 			}
 		}
