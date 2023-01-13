@@ -22,14 +22,6 @@ this.legend_white_wolf_helmet_layered_blueprint <- this.inherit("scripts/craftin
 			}
 		];
 		this.init(ingredients);
-		local skills = [
-			{
-				Scripts = [
-					"scripts/skills/backgrounds/legend_blacksmith_background"
-				]
-			}
-		];
-		this.initSkills(skills);
 	}
 
 	function isQualified()
