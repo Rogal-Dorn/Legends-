@@ -28,6 +28,10 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 			bro.getSprite("socket").setBrush("bust_base_orcs");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 			bro.getSkills().add(this.new("scripts/skills/traits/cultist_fanatic_trait"));
+			bro.getSkills().removeByID("trait.superstitious"); //If cultist, this ID will be removed as True believer is not removing them on start
+			bro.getSkills().removeByID("trait.dastard"); //If cultist, this ID will be removed as True believer is not removing them on start
+			bro.getSkills().removeByID("trait.insecure"); //If cultist, this ID will be removed as True believer is not removing them on start
+			bro.getSkills().removeByID("trait.craven"); //If cultist, this ID will be removed as True believer is not removing them on start
 
 			while (names.find(bro.getNameOnly()) != null)
 			{
@@ -257,6 +261,10 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
 				bro.getBaseProperties().MeleeSkill += 10;
+				bro.getSkills().removeByID("trait.superstitious"); //If cultist, this ID will be removed as True believer is not removing them on hire
+				bro.getSkills().removeByID("trait.dastard"); //If cultist, this ID will be removed as True believer is not removing them on hire
+				bro.getSkills().removeByID("trait.insecure"); //If cultist, this ID will be removed as True believer is not removing them on hire
+				bro.getSkills().removeByID("trait.craven"); //If cultist, this ID will be removed as True believer is not removing them on hire
 				bro.getSkills().update();
 			}
 
@@ -278,7 +286,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 				id = 16,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill from being a cultist"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Skill from being a cultist in a cultist mercenary company"
 			});
 		}
 	}
