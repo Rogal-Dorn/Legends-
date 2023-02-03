@@ -51,6 +51,7 @@ this.lone_wolf_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		talents[this.Const.Attributes.MeleeDefense] = 2;
 		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.MeleeSkill] = 3;
+		talents[this.Const.Attributes.RangedSkill] = 2;
 		bros[0].fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
 		//---
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
