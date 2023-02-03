@@ -8,7 +8,9 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 		this.m.Skills.add(this.new("scripts/skills/actives/zombie_bite"));
-		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_rotten_flesh"));
+		this.m.Skills.add(this.new("scripts/skills/traits/legend_rotten_flesh_trait"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 		this.m.BaseProperties.Hitpoints *= 1.5;
@@ -87,18 +89,6 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
 			}
-
-			if (this.isKindOf(this, "zombie_knight_bodyguard") && this.Math.rand(1, 100) <= 2)
-			{
-				if (this.Math.rand(1, 2) == 1)
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_undead_heater_shield"));
-				}
-				else
-				{
-					this.m.Items.equip(this.new("scripts/items/shields/named/named_undead_kite_shield"));
-				}
-			}
 			else if (this.Math.rand(1, 2) == 1)
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/worn_heater_shield"));
@@ -109,15 +99,12 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			}
 		}
 
-		this.m.Items.equip(
-			this.Const.World.Common.pickArmor(
-				[
-					[1, "decayed_coat_of_plates"],
-					[1, "decayed_coat_of_scales"],
-					[1, "decayed_reinforced_mail_hauberk"]
-				]
-			)
-		);
+		this.m.Items.equip(this.Const.World.Common.pickArmor([
+			[1, "decayed_closed_flat_top_with_sack"],
+			[3, "decayed_closed_flat_top_with_mail"],
+			[2, "decayed_full_helm"],
+			[3, "decayed_great_helm"]
+		]));
 
 		local item = this.Const.World.Common.pickHelmet([
 			[2, "decayed_closed_flat_top_with_mail"],
