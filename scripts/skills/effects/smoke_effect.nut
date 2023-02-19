@@ -46,7 +46,7 @@ this.smoke_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Not affected by Zones of Control"
+				text = "Not affected by Zones of Control and will hide you"
 			}
 		];
 	}
@@ -71,6 +71,7 @@ this.smoke_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
+			_properties.getSkills().add(this.new("scripts/skills/terrain/hidden_effect"));
 			_properties.RangedSkillMult *= 0.5;
 			_properties.RangedDefenseMult *= 2.0;
 		}

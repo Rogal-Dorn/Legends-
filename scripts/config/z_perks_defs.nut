@@ -2562,6 +2562,51 @@ local perkDefObjects = [
 		Const = "LegendUntouchable"
 	},
 	{
+		ID = "perk.legend_knifeplay",
+		Script = "scripts/skills/perks/perk_legend_knifeplay",
+		Name = this.Const.Strings.PerkName.LegendKnifeplay,
+		Tooltip = this.Const.Strings.PerkDescription.LegendKnifeplay,
+		Icon = "ui/perks/knifeplay.png",
+		IconDisabled = "ui/perks/knifeplay_bw.png",
+		Const = "LegendKnifeplay"
+	},
+	{
+		ID = "perk.legend_opportunist",
+		Script = "scripts/skills/perks/perk_legend_opportunist",
+		Name = this.Const.Strings.PerkName.LegendOpportunist,
+		Tooltip = this.Const.Strings.PerkDescription.LegendOpportunist,
+		Icon = "ui/perks/opportunist.png",
+		IconDisabled = "ui/perks/opportunist_bw.png",
+		Const = "LegendOpportunist"
+	},
+	{
+		ID = "perk.legend_prepared",
+		Script = "scripts/skills/perks/perk_legend_prepared",
+		Name = this.Const.Strings.PerkName.LegendPrepared,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPrepared,
+		Icon = "ui/perks/prepared.png",
+		IconDisabled = "ui/perks/prepared_bw.png",
+		Const = "LegendPrepared"
+	},
+	{
+		ID = "perk.legend_lurker",
+		Script = "scripts/skills/perks/perk_legend_lurker",
+		Name = this.Const.Strings.PerkName.LegendLurker,
+		Tooltip = this.Const.Strings.PerkDescription.LegendLurker,
+		Icon = "ui/perks/lurker.png",
+		IconDisabled = "ui/perks/lurker_bw.png",
+		Const = "LegendLurker"
+	},
+	{
+		ID = "perk.legend_night_raider",
+		Script = "scripts/skills/perks/perk_legend_night_raider",
+		Name = this.Const.Strings.PerkName.LegendNightRaider,
+		Tooltip = this.Const.Strings.PerkDescription.LegendNightRaider,
+		Icon = "ui/perks/night_raider.png",
+		IconDisabled = "ui/perks/night_raider_bw.png",
+		Const = "LegendNightRaider"
+	},
+	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,

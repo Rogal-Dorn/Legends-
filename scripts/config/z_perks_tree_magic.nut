@@ -381,12 +381,12 @@ gt.Const.Perks.AssassinMagicTree <- {
 		"assassination"
 	],
 	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendKnifeplay],
+		[gt.Const.Perks.PerkDefs.LegendOpportunist],
+		[gt.Const.Perks.PerkDefs.LegendPrepared],
 		[],
-		[],
-		[],
-		[gt.Const.Perks.PerkDefs.LegendHidden],
-		[gt.Const.Perks.PerkDefs.LegendBlendIn],
-		[gt.Const.Perks.PerkDefs.LegendUntouchable],
+		[gt.Const.Perks.PerkDefs.LegendLurker],
+		[gt.Const.Perks.PerkDefs.LegendNightRaider],
 		[gt.Const.Perks.PerkDefs.LegendAssassinate]
 	]
 };
