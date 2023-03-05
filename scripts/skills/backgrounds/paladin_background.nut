@@ -70,6 +70,57 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[1];
 		this.m.Modifiers.ToolConsumption = this.Const.LegendMod.ResourceModifiers.ToolConsumption[1];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.05, //plains
+				0.0, //swamp
+				0.0, //hills
+				0.0, //forest
+				0.0, //forest
+				0.0, //forest_leaves
+				0.0, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.03, //farmland
+				0.0, // snow
+				0.01, // badlands
+				0.01, //highlands
+				0.0, //steppes
+				0.0, //ocean
+				0.0, //desert
+				0.0 //oasis
+			];
+		
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.MaceTree,
+				this.Const.Perks.FlailTree,
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.CrossbowTree
+			],
+			Defense = [
+				this.Const.Perks.HeavyArmorTree
+			],
+			Traits = [
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.FitTree
+			],
+			Enemy = [
+				this.Const.Perks.ZombieTree,
+				this.Const.Perks.SkeletonTree
+			],
+			Class = [],
+			Magic = []
+		}
 	}
 
 	//Default Male
@@ -163,8 +214,8 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				16
 			],
 			Stamina = [
-				0,
-				-4
+				10,
+				5
 			],
 			MeleeSkill = [
 				13,
