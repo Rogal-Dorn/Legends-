@@ -22,12 +22,6 @@ this.legend_demonalp_helmet_layered_blueprint <- this.inherit("scripts/crafting/
 			}
 		];
 		this.init(ingredients);
-		local skills = [
-			{
-				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
-			}
-		]
-		this.initSkills(skills);
 	}
 
 
