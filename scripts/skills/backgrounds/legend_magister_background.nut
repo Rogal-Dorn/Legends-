@@ -91,15 +91,7 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 	//Default Male
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = this.Math.rand(0, 9);
-			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
 		if (_gender != 1) return;
 
@@ -110,7 +102,6 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 		this.m.BeardChance = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
-
 	}
 
 	// Should overwrite the "character_backgrounds" isCultist() check
