@@ -125,6 +125,7 @@ this.legend_greenwood_schrat_racial <- this.inherit("scripts/skills/skill", {
 			}
 		}
 	}
+}
 
 });
 

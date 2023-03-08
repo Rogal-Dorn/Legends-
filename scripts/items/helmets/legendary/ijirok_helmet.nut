@@ -97,7 +97,7 @@ this.ijirok_helmet <- this.inherit("scripts/items/helmets/helmet", {
 						local weapon = _skill.getItem();
 						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
 						{
-							if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow) || (weapon.isWeaponType(this.Const.Items.WeaponType.Bow) || weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
+							if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow) || weapon.isWeaponType(this.Const.Items.WeaponType.Bow) || weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
 							{
 								_properties.DamageReceivedRegularMult *= 0.25;
 							}

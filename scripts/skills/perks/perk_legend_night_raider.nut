@@ -25,4 +25,6 @@ this.perk_legend_night_raider <- this.inherit("scripts/skills/skill", {
 		_properties.MeleeSkill *= 1.10;
 		_properties.RangedSkill *= 1.10;
 	}
+}
+
 }); 
