@@ -65,12 +65,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		local desc = "";
 		desc = desc + "Whether a seasoned veteran or a green recruit, there\'s always something new to learn. ";
-		desc = desc + "Anyone assigned to train has a chance to get a 20% increase in xp on their next combat. ";
-		desc = desc + "Time and having highly skilled teachers in the grounds increases the chances of successfully learning something new. ";
+		desc = desc + "Anyone assigned to train will gain xp over time based on the total modifier of occupiers in this tent. ";
+		desc = desc + "Having highly skilled teachers in the grounds increases the chances of successfully learning something new, which will be tracked under \'Intensive Training\' progress under their traits. ";
 		desc = desc + "There\'s always a slight chance someone can be injured.";
 		desc = desc + "\n\n";
 		desc = desc + "Training grounds can be upgraded by purchasing an upgrade set in local markets. Upgraded grounds reduce the ";
-		desc = desc + "risk of accidents from a minimum of 5% to 1% and also give the chance of a permanent skill increase.";
+		desc = desc + "risk of accidents from a minimum of 5% to 1% and also give the chance of a permanent random skill increase.";
 		return desc;
 	}
 
