@@ -256,6 +256,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getBaseProperties().MeleeSkill += 10;
 				bro.getSkills().update();
 			}
 			else
@@ -271,5 +272,14 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-});
+	function onBuildPerkTree( _background ) //give trait to cultist converts
+	{		
+		if (this.isCultist(_background))
+		{
+			// this.addScenarioPerk(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+			this.getSkills().add(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+			this.getBaseProperties().MeleeSkill += 10;
+		}
+	}
 
+});

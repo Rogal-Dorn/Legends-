@@ -97,9 +97,9 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				return "This item has the power of the rune sigil of Safety:\n[color=" + this.Const.UI.Color.PositiveValue + "]+3% to +" + max1 + "%[/color] Hitpoints.\n[color=" + this.Const.UI.Color.PositiveValue + "]-3% to -" + max1 + "%[/color] Damage received.";
 				break;
 
-			case 23:
-				return "This item has the power of the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs.";
-				break;
+			// case 23: //Removed 22/1/23 as part of the steel brow rework. May rework this rune in a similar manner later where its not blanket immunity
+			// 	return "This item has the power of the rune sigil of Resilience:\n[color=" + this.Const.UI.Color.PositiveValue + "]Immune[/color] to stuns, knockbacks and grabs.";
+			// 	break;
 
 			case 31:
 				max1 = this.isUpgraded() ? 9 : 6;
@@ -157,9 +157,9 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				rune = this.new("scripts/items/legend_armor/runes/legend_rune_safety");
 				break
 
-				case 23:
-				rune = this.new("scripts/items/legend_armor/runes/legend_rune_resilience");
-				break
+				// case 23: //Removed 22/1/23 as part of the steel brow rework. May rework this rune in a similar manner later where its not blanket immunity
+				// rune = this.new("scripts/items/legend_armor/runes/legend_rune_resilience"); 
+				// break
 			}
 			rune.setRuneVariant(this.m.Rune);
 			rune.setRuneBonus(_bonus);
