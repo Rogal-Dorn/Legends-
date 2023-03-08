@@ -100,10 +100,9 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		}
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "decayed_closed_flat_top_with_sack"],
-			[3, "decayed_closed_flat_top_with_mail"],
-			[2, "decayed_full_helm"],
-			[3, "decayed_great_helm"]
+			[1, "decayed_coat_of_plates"],
+			[1, "decayed_coat_of_scales"],
+			[1, "decayed_reinforced_mail_hauberk"]
 		]));
 
 		local item = this.Const.World.Common.pickHelmet([
@@ -117,6 +116,5 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 		{
 			this.m.Items.equip(item);
 		}
-
 	}
 });
