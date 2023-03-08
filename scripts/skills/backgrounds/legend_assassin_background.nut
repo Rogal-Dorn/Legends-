@@ -85,7 +85,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Bullseye,
 				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.LegendComposure,
+				// this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,

@@ -1091,7 +1091,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //deathly spectre for Cabal
+			if (this.m.CurrentProperties.SurvivesAsUndead && this.m.IsDying = true && !this.getFlags().has("PlayerZombie")) //deathly spectre for Cabal
 			{
 				this.m.MoraleState = this.Const.MoraleState.Ignore;
 				this.getFlags().add("PlayerZombie");
@@ -1572,10 +1572,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			_xp = _xp * this.Const.Combat.GlobalXPVeteranLevelMult;
 		}
 
-		if (this.getFlags().has("PlayerSkeleton"))
-		{
-			_xp = _xp * 0.33;
-		}
+		// if (this.getFlags().has("PlayerSkeleton")) //Disabled 27/1/23 - these are overiding the xp modifiers elsewhere including submods. therefore I have disabled them here so they may be changed in traits, events, etc. as all other stat varibles are for these types of units. - Luft
+		// {
+		// 	_xp = _xp * 0.33;
+		// }
+
+		// if (this.getFlags().has("PlayerZombie")) //Disabled 27/1/23 - these are overiding the xp modifiers elsewhere including submods. therefore I have disabled them here so they may be changed in traits, events, etc. as all other stat varibles are for these types of units. - Luft
+		// {
+		// 	_xp = _xp * 0.25;
+		// }
 
 		if (!isScenarioMode)
 		{
@@ -1595,10 +1600,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		if (this.getFlags().has("PlayerZombie"))
-		{
-			_xp = _xp * 0.25;
-		}
 	//	if (("State" in this.World) && this.World.State != null && this.World.getPlayerRoster().getSize() < 3)
 	//	{
 	//		_xp = _xp * (1.0 - (3 - this.World.getPlayerRoster().getSize()) * 0.15);

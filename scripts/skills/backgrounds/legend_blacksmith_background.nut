@@ -10,7 +10,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.GoodEnding = "Perhaps one of the strongest men you\'ve ever met, %name% the blacksmith was a vital asset in the %companyname%, repairing both their own equipment and that of their comrades with practiced hands. With plenty of crowns stored, he retired from fighting and blacksmithing both. Last you heard he was living out their years comfortably on the coast.";
 		this.m.BadEnding = "%name% the blacksmith was a strong and capable sellsword in the %companyname%. He held out until the bitter end, sticking with the company as it lurched from one disaster to the next. Perhaps, had he been born in a different time he would have gone on to do great things, making legendary weapons for regal kings. Instead, many wars, invasions, and plagues spreading across the land ultimately ensured %name% and many other talented men went to total waste.";
 		this.m.HiringCost = 500;
-		this.m.DailyCost = 50;
+		this.m.DailyCost = 23;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -65,19 +65,19 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 	}
 
-	function getTooltip()
-	{
-		local ret = this.character_background.getTooltip()
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has the knowledge to construct powerful items"
-			}
-		)
-		return ret
-	}
+	// function getTooltip()
+	// {
+	// 	local ret = this.character_background.getTooltip()
+	// 	ret.push(
+	// 		{
+	// 			id = 13,
+	// 			type = "text",
+	// 			icon = "ui/icons/special.png",
+	// 			text = "Has the knowledge to construct powerful items"
+	// 		}
+	// 	)
+	// 	return ret
+	// }
 
 	function setGender(_gender = -1)
 	{
@@ -120,8 +120,8 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 				20
 			],
 			MeleeSkill = [
-				0,
-				3
+				3,
+				7
 			],
 			RangedSkill = [
 				-10,
