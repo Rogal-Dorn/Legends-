@@ -1909,7 +1909,11 @@ gt.Const.Strings.PerkName <- {
 	LastStand = "Last Stand",
 	LegendGuideSteps = "Guide Steps",
 	LegendTasteThePain = "Taste the Pain",
-
+	LegendKnifeplay = "Knifeplay",
+	LegendOpportunist = "Opportunist",
+	LegendPrepared = "Prepared",
+	LegendLurker = "Lurker",
+	LegendNightRaider = "Night Raider"
 
 	//MASTERIES - skills that have a unified effect on their weapon class
 	SpecBow = "Bow Mastery",
@@ -2440,7 +2444,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPrepareGraze = "Long slow deep rending scratches can leave many bleeding grazes. Grants the active skill Prepare to Graze that primes your next strike to inflict weak but long lasting bleeding.",
 	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage when attacking a bleeding enemy.",
 	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle. Extends your camouflage by two turns.",
-	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really counts.  Striking from the shadows allows you to bypass enemy defenses and strike for their undefended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] maximum and minimum damage while hidden. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Assassin backgrounds while hidden.",
+	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really counts.  Striking from the shadows allows you to bypass enemy defenses and strike for their undefended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] maximum and minimum damage while hidden by being within a bush or smoke. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage to Assassin backgrounds while hidden.",
 	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character hunts in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings.",
 	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character hunts in camp. The rewards increase as you level up. Includes beer, wine and mead. Also allows alcohol crafting in the crafting tent.",
 	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy.",
@@ -2537,6 +2541,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
 	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' perk, it gains 1 range.",
 	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
+	LegendKnifeplay = "Unlocks a bound throwing knife skill that does [color=" + this.Const.UI.Color.PositiveValue + "]2-12[/color] damage but has almost no armour penetration and will \'Baffle\' a target on hit.\n Benefits from perks that affect throwing weapons.",
+	LegendOpportunist = "When successfully landing a hit on an enemy who is bleeding or poisoned, apply \'Dazed\' to them. If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Melee Skill and no penalty to Ranged Skill.",
+	LegendPrepared = "While using a dagger, dealing health damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance of poisoning them. You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery per turn while holding a dagger in your mainhand.",
+	LegendLurker = "When you are not near an ally or enemy within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
+	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night."
 };
 gt.Const.Strings.Tooltip <- {
 	World = {
