@@ -41,6 +41,16 @@ gt.Const.World.Spawn.Zombies <-
 			]
 		},
 		{
+			Weight = 35,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					MinR = 200,
+					Cost = 30
+				}
+			]
+		},
+		{
 			Weight = 10,
 			Types = [
 				{
@@ -107,6 +117,16 @@ gt.Const.World.Spawn.ZombiesAndGhouls <-
 			]
 		},
 		{
+			Weight = 35,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					MinR = 200,
+					Cost = 30
+				}
+			]
+		},
+		{
 			Weight = 10,
 			Types = [
 				{
@@ -158,6 +178,16 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
+					MinR = 200,
+					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 30,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
 					MinR = 200,
 					Cost = 20
 				}
@@ -217,6 +247,16 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
 					MinR = 200,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 35,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					MinR = 200,
+					Cost = 30
 				}
 			]
 		},
@@ -289,6 +329,16 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
 					MinR = 200,
 					Cost = 20
+				}
+			]
+		},
+		{
+			Weight = 35,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					MinR = 200,
+					Cost = 30
 				}
 			]
 		},
@@ -447,6 +497,16 @@ gt.Const.World.Spawn.Necromancer <-
 			]
 		},
 		{
+			Weight = 45,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					MinR = 200,
+					Cost = 30
+				}
+			]
+		},
+		{
 			Weight = 10,
 			Types = [
 				{
@@ -576,6 +636,15 @@ gt.Const.World.Spawn.NecromancerSouthern <-
 				{
 					Type = this.Const.World.Spawn.Troops.ZombieYeoman,
 					Cost = 10
+				}
+			]
+		},
+		{
+			Weight = 25,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.ZombieYeomanFrenzy,
+					Cost = 15
 				}
 			]
 		},
