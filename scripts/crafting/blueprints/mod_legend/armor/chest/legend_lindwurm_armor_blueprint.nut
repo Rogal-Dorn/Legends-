@@ -37,14 +37,7 @@ this.legend_lindwurm_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 			Num = 1,
 			LegendsArmor = false
 		})
-
 		this.init(ingredients);
-		local skills = [
-			{
-				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
-			}
-		]
-		this.initSkills(skills);
 	}
 
 	function isQualified()

@@ -33,12 +33,12 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 			LegendsArmor = false
 		})
 
-		this.init(ingredients);
-		local skills = [
-			{
-				Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
-			}
-		]
+		// this.init(ingredients);
+		// local skills = [
+		// 	{
+		// 		Scripts = ["scripts/skills/backgrounds/legend_blacksmith_background"]
+		// 	}
+		// ]
 		this.initSkills(skills);
 	}
 

@@ -228,7 +228,7 @@ gt.Const.Perks.CaptainMagicTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendBackToBasics],
-		[gt.Const.Perks.PerkDefs.LegendComposure],
+		// [gt.Const.Perks.PerkDefs.LegendComposure],
 		[gt.Const.Perks.PerkDefs.InspiringPresence],
 		[gt.Const.Perks.PerkDefs.LegendShieldsUp],
 		[gt.Const.Perks.PerkDefs.LegendHoldTheLine],
