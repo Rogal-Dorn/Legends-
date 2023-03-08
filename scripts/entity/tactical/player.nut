@@ -1091,7 +1091,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //deathly spectre for Cabal
+			if (this.m.CurrentProperties.SurvivesAsUndead && this.m.IsDying = true && !this.getFlags().has("PlayerZombie")) //deathly spectre for Cabal
 			{
 				this.m.MoraleState = this.Const.MoraleState.Ignore;
 				this.getFlags().add("PlayerZombie");
