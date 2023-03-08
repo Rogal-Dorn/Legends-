@@ -111,7 +111,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.Dodge,
 				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.LegendComposure,
+				// this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands
 			],
@@ -181,7 +181,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendTumble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.Stalwart,
+				// this.Const.Perks.PerkDefs.Stalwart,
 				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 			]
