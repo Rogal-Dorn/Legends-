@@ -87,7 +87,7 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (!this.Tactical.isActive() || this.skill.isUsable() && this.World.Assets.getAmmo() < 2 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions())
+		if (!this.Tactical.isActive() || this.skill.isUsable() && this.World.Assets.getAmmo() < 2 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
 			return false;
 		}
