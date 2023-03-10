@@ -12,7 +12,7 @@ gt.Const.LegendMod.FavoriteZombies <- [
 	this.Const.EntityType.ZombieBoss,
 	this.Const.EntityType.ZombieKnight,
 	this.Const.EntityType.Necromancer,
-	this.Const.EntityType.ZombieTreasureHunter,
+	this.Const.EntityType.ZombieTreasureHunter
 ];
 
 gt.Const.LegendMod.FavoriteAlps <- [
@@ -70,7 +70,7 @@ gt.Const.LegendMod.FavoriteSchrat <- [
 	this.Const.EntityType.Schrat,
 	this.Const.EntityType.SchratSmall,
 	this.Const.EntityType.LegendGreenwoodSchrat,
-	this.Const.EntityType.LegendGreenwoodSchratSmall,
+	this.Const.EntityType.LegendGreenwoodSchratSmall
 ];
 
 gt.Const.LegendMod.FavoriteSkeleton <- [
