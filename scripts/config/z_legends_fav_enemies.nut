@@ -87,7 +87,7 @@ gt.Const.LegendMod.FavoriteSkeleton <- [
 ];
 gt.Const.LegendMod.FavoriteSpider <- [
 	this.Const.EntityType.Spider,
-	this.Const.EntityType.SpiderBodyguard,
+	//this.Const.EntityType.SpiderBodyguard,
 	this.Const.EntityType.SpiderEggs,
 	this.Const.EntityType.LegendRedbackSpider
 ];
@@ -290,8 +290,8 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 	case "this.Const.EntityType.Spider":
 		return 8;
 
-	case "this.Const.EntityType.SpiderBodyguard":
-		return 8;
+	// case "this.Const.EntityType.SpiderBodyguard":
+	// 	return 8;
 
 	case "this.Const.EntityType.SpiderEggs":
 		return 2;
