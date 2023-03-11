@@ -272,8 +272,16 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
+	//new test start --
+
+	function isCultist( _background )
+	{
+		return _background.isBackgroundType(this.Const.BackgroundType.ConvertedCultist | this.Const.BackgroundType.Cultist);
+	}
+	//new end
+
 	function onBuildPerkTree( _background ) //give trait to cultist converts
-	{		
+	{
 		if (this.isCultist(_background))
 		{
 			// this.addScenarioPerk(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
@@ -283,3 +291,4 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	}
 
 });
+
