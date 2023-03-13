@@ -296,7 +296,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		if (this.isCultist(_background))
 		{
 			this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendTrueBeliever);
-			this.getBaseProperties().MeleeSkill += 10;
+		//	this.getBaseProperties().MeleeSkill += 10;
 		}
 	}
 });
