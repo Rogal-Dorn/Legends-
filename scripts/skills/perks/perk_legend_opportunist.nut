@@ -3,10 +3,10 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "perk.perk_legend_opportunist"; 
+		this.m.ID = "perk.legend_opportunist";
 		this.m.Name = this.Const.Strings.PerkName.LegendOpportunist;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendOpportunist;
-		this.m.Icon = "opportunist.png";
+		this.m.Icon = "ui/perks/opportunist.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -32,12 +32,30 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate(_properties)
 	{
-		local effect = new("scripts/skills/effects/smoke_effect"); 
-		if(this.getContainer().getActor().hasSkill(effect))
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("effects.smoke"))
 		{
 			_properties.RangedSkillMult *= 1.5; //Offsets the -50% from smoke_effect.nut
 			_properties.MeleeSkillMult *= 1.25;
+	//If you are within a smoke cloud gain +2 maximum action points.
+			_properties.ActionPoints = 11; //default = 9. 9+2 = 11.
+		}
+
+		if (!this.getContainer().getActor().isPlacedOnMap())
+		{
+			// this.m.IsHidden = true;
+			return;
 		}
 	}
+
+	// function onUpdate(_properties)
+	// {
+	// 	local effect = new("scripts/skills/effects/smoke_effect");
+	// 	if(this.getContainer().getActor().hasSkill(effect))
+	// 	{
+	// 		_properties.RangedSkillMult *= 1.5; //Offsets the -50% from smoke_effect.nut
+	// 		_properties.MeleeSkillMult *= 1.25;
+	// 	}
+	// }
 });
 
