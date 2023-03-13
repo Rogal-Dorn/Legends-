@@ -18,7 +18,7 @@ this.perk_legend_lurker <- this.inherit("scripts/skills/skill", {
 	function onUpdate(_properties)
 	   {
 		//increase ranged skill if hidden
-		if(this.getContainer().getActor().hasSkill("actives.legend_hidden"))
+		if(this.getContainer().getActor().getSkills().hasSkill("actives.legend_hidden"))
 		{
 			local effect = new("scripts/skills/effects/legend_hidden");
 			if(this.getContainer().getActor().hasSkill(effect).isActive())
