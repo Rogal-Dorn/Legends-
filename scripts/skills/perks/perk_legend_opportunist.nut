@@ -26,6 +26,7 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 			if (_targetEntity.getSkills().hasSkill("effects.legend_grazed_effect") || _targetEntity.getSkills().hasSkill("effects.bleeding") || _targetEntity.getSkills().hasSkill("effects.goblin_poison") || _targetEntity.getSkills().hasSkill("effects.spider_poison") || _targetEntity.getSkills().hasSkill("effects.legend_redback_spider_poison"))
 			{
 				local effect = this.new("scripts/skills/effects/dazed_effect");
+				_targetEntity.getSkills().add(effect);
 			}
 		}
 	}
