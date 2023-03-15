@@ -43,7 +43,7 @@ this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 
    function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_targetEntity == null || !_targetEntity.isAlive())
+		if (_targetEntity == null || !_targetEntity.isAlive() || _targetEntity.getCurrentProperties().IsImmuneToPoison == true)
 		{
 			return;
 		}
