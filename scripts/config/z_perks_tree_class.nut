@@ -162,7 +162,7 @@ gt.Const.Perks.KnifeClassTree <- {
 		[gt.Const.Perks.PerkDefs.LegendSpecialistKnifeDamage],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendHidden],
+		[],
 		[gt.Const.Perks.PerkDefs.LegendAssassinate]
 	]
 };

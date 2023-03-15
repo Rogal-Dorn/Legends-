@@ -307,8 +307,8 @@ gt.Const.Perks.DeviousTree <- {
 		[ gt.Const.Perks.PerkDefs.LegendBlendIn ],
 		[],
 		[ gt.Const.Perks.PerkDefs.LegendEvasion ],
-		[ gt.Const.Perks.PerkDefs.LegendHidden ],
-		[ gt.Const.Perks.PerkDefs.LegendUntouchable ]
+		[],
+		[]
 	]
 };
 gt.Const.Perks.InspirationalTree <- {
