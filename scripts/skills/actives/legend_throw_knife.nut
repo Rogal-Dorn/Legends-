@@ -2,16 +2,16 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 	m = {
 		AdditionalAccuracy = 5,
 		AdditionalHitChance = -10,
-		AmmoPerUse = 2.0,
+		AmmoPerUse = 2.0, 		
 		AmmoMax = 3,
-        Ammo = 3
-
+        Ammo = 3 
+        
 	},
 	function create()
 	{
 		this.m.ID = "actives.legend_throw_knife";
 		this.m.Name = "Throw Knife";
-		this.m.Description = "Throw a knife at an enemy. Costs " + this.m.AmmoPerUse + " ammo per use and has a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head.\nCannot be used while engaged in melee.";
+		this.m.Description = "Throw a knife at an enemy. Costs " + this.m.AmmoPerUse + " ammo per use and has a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head as well as a high chance to baffle your target.\nCannot be used while engaged in melee.";
 		this.m.Icon = "skills/active_87.png"; //To do
 		this.m.IconDisabled = "skills/active_87_sw.png"; //to do
 		this.m.Overlay = "active_87"; //to do
@@ -27,7 +27,7 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.SoundOnHitDelay = -150;
 		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
+		this.m.Order = this.Const.SkillOrder.UtilityTargeted; 
 		this.m.Delay = 750;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
@@ -40,7 +40,7 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
-		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead;
+		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead; 
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 2;
@@ -49,19 +49,18 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		this.m.ProjectileType = this.Const.ProjectileType.Axe;
 		this.m.ProjectileTimeScale = 1.5;
 		this.m.IsProjectileRotated = false;
-	}
+	}	
 
 	function getTooltip()
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
-        //test start
-        //if (this.m.Ammo > 0)
+     
         ret.push({
 			id = 5,
 			type = "text",
 			icon = "ui/tooltips/warning.png",
 			text = "You can use [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] time per battle and will consume two ammo assets for each use"
-		}); //test end
+		}); 
 		ret.push({
 			id = 7,
 			type = "text",
@@ -93,27 +92,15 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
-	/*function isUsable()
-	{
-		return this.skill.isUsable() && this.m.Ammo == 0;
-		if (this.m.AmmoMax <= 0)
-		{
-			return false;
-		}
-
-		return true;
-	}*/
-
 	function isHidden()
 	{
 	   if (this.m.AmmoMax > 0)
 	   {
 	     return false;
-	   }
-
+	   }		
+    
 	    return true;
 	}
-
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
@@ -122,12 +109,12 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		local mainhand = this.m.Container.getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand); 
 		_properties.DamageRegularMin *= 0.0;
 		_properties.DamageRegularMax *= 0.0;
 		_properties.DamageArmorMult = 0.0;
 
-		local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor(); 
 		_properties.DamageRegularMin += 2;
 		_properties.DamageRegularMax += 12;
 		_properties.DamageArmorMult = 0.1;
@@ -141,10 +128,10 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
 			}
 		}
-	}
+	}	
 
 	function getAmmo()
-	{
+	{		
 		return this.m.Ammo;
 	}
 
@@ -156,10 +143,9 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
         this.m.Ammo = this.m.Ammo - 1;
 	}
 
-
-     function onCombatFinished()
+     function onCombatFinished() 
     {
-    	//this.m.AmmoMax = 3;
+    
         this.skill.onCombatFinished();
         this.m.AmmoMax = 3;
        this.m.Ammo = this.m.AmmoMax;
@@ -167,19 +153,27 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 
 	function onUse( _user, _targetTile )
 	{
-		this.m.AmmoMax = this.m.AmmoMax - 1
+		this.m.AmmoMax = this.m.AmmoMax - 1;
 		local Ammo = this.getAmmo();
         this.consumeAmmo();
 		this.World.Assets.addAmmo(0 - this.m.AmmoPerUse);
 
-		local ret = this.attackEntity(_user, _targetTile.getEntity());
-		return ret;
+		local target = _targetTile.getEntity();
+		local success = this.attackEntity(_user, _targetTile.getEntity()); 
 
-		local effect = this.new("scripts/skills/effects/legend_baffled_effect");
-		if (_user.getFaction() == this.Const.Faction.Player )
-		{
-			effect.setActor(this.getContainer().getActor());
-		}
+		if (success) 
+        { 
+        	local r = this.Math.rand(1, 100);
+        	if (r <= 75)
+        	{
+
+		       local effect = this.new("scripts/skills/effects/legend_baffled_effect");
+		       target.getSkills().add(effect); 
+		    }
+	    }
+
+	 return success;
+		
 		this.m.Ammo = 2;
 	}
 
@@ -187,5 +181,6 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
+	
 });
 
