@@ -7,7 +7,7 @@ this.perk_legend_lurker <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_lurker"; 
 		this.m.Name = this.Const.Strings.PerkName.LegendLurker;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendLurker;
-		this.m.Icon = "lurker.png";
+		this.m.Icon = "ui/perks/lurker.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -17,21 +17,21 @@ this.perk_legend_lurker <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate(_properties)
 	   {
+	   	local effect = new("scripts/skills/terrain/hidden_effect");
 		//increase ranged skill if hidden
-		if(this.getContainer().getActor().getSkills().hasSkill("actives.legend_hidden"))
+		if(this.getContainer().getActor().getSkills().hasSkill(effect))
 		{
-			local effect = new("scripts/skills/effects/legend_hidden");
 			if(this.getContainer().getActor().hasSkill(effect).isActive())
 			{
-				_properties.RangedSkill *= 1.25; 
+				_properties.RangedSkill *= 1.25;
 			}
 		}
 
 		// if not
 		_properties.ActionPoints += 3
 
-		local effect = new("scripts/skills/effects/smoke_effect"); 
-		if(this.getContainer().getActor().hasSkill(effect))
+		local actor = this.getContainer().getActor();
+		if (actor.getSkills().hasSkill("effect.smoke"))
 		{
 			_properties.ActionPoints += 2
 		}
@@ -84,8 +84,8 @@ this.perk_legend_lurker <- this.inherit("scripts/skills/skill", {
 
 	function onAfterUpdate( _properties )
     {
-       	if(this.getContainer().getActor().hasSkill("actives.legend_hidden")){
-			if(this.getContainer().getActor().hasSkill("actives.legend_hidden").isActive()){
+       	if(this.getContainer().getActor().getSkills().hasSkill("hidden_effect")){
+			if(this.getContainer().getActor().getSkills().hasSkill("hidden_effect").isActive()){
 				_properties.FatigueRecoveryRate += 10; 
 			}
 		}
