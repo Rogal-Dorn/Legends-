@@ -89,6 +89,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.PolearmTree,
+				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
@@ -98,6 +99,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.AgileTree,
+				this.Const.Perks.FitTree,			
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.TrainedTree
 			],
