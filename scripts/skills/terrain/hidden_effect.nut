@@ -1,5 +1,7 @@
 this.hidden_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 1
+	}, // CD turns added
 	function create()
 	{
 		this.m.ID = "terrain.hidden";
@@ -11,6 +13,7 @@ this.hidden_effect <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = false;
 		this.m.IsHidden = false;
 		this.m.IsSerialized = false;
+		this.m.IsRemovedAfterBattle = true; // the old legend_hidden_effect has this line but was missing, required? 
 	}
 
 	function getDescription()
@@ -70,23 +73,112 @@ this.hidden_effect <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
-	function onUpdate( _properties )
+	//added all this missing code from legend_hidden_effect which seemingly controls the hidden graphics--
+	function onMovementCompleted( _tile )
+	{
+		if (_tile.hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		{
+			this.getContainer().getActor().setHidden(false);
+			this.removeSelf();
+			return;
+		}
+
+		this.getContainer().getActor().setHidden(true);
+	}
+
+	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
+	{
+		this.getContainer().getActor().setHidden(false);
+		this.removeSelf();
+	}
+
+	function onTargetMissed( _skill, _targetEntity )
+	{
+		this.getContainer().getActor().setHidden(false);
+		this.removeSelf();
+	}
+
+	function onAdded()
 	{
 		local actor = this.getContainer().getActor();
-		if (actor.getSkills().hasSkill("perk.legend_assassinate"))
+		if (actor.getTile().IsVisibleForPlayer)
 		{
-			_properties.DamageRegularMin *= 1.5;
-			_properties.DamageRegularMax *= 1.5;
-
-			if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+			if (this.Const.Tactical.HideParticles.len() != 0)
 			{
-				_properties.DamageRegularMax *= 1.5;
+				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+				{
+					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+				}
 			}
-			if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
+		}
+
+		//actor.setBrushAlpha(10);
+		//actor.getSprite("hair").Visible = false;
+		//actor.getSprite("beard").Visible = false;
+		//actor.setHidden(true);
+		//actor.setDirty(true);
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().getActor().setHidden(false);
+		local actor = this.getContainer().getActor();
+		//actor.setBrushAlpha(255);
+		//actor.getSprite("hair").Visible = true;
+		//actor.getSprite("beard").Visible = true;
+		//actor.setDirty(true);
+		//foreach (i in actor.getItems().getAllItems())
+		//	i.updateAppearance();
+		if (actor.getTile().IsVisibleForPlayer)
+		{
+			if (this.Const.Tactical.HideParticles.len() != 0)
 			{
-				_properties.DamageRegularMax *= 1.75;
+				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
+				{
+					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
+				}
 			}
 		}
 	}
+	// added graphics control code end here --
+
+	function onUpdate( _properties )
+	{
+		local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor();
+        if (actor.getSkills().hasSkill("perk.legend_assassinate"))
+        {
+            _properties.DamageRegularMin *= 1.2;
+            _properties.DamageRegularMax *= 1.2;
+
+            if (actor.getSkills().hasSkill("background.legend_assassin") || actor.getSkills().hasSkill("background.assassin") || actor.getSkills().hasSkill("background.assassin_southern"))
+            {
+                _properties.DamageRegularMax *= 1.3;
+            }
+            if (actor.getSkills().hasSkill("background.legend_commander_assassin"))
+            {
+                _properties.DamageRegularMax *= 1.5;
+            }
+        }
+        //this missing for graphics start --
+        //actor.setBrushAlpha(10);
+		//actor.getSprite("hair").Visible = false;
+		//actor.getSprite("beard").Visible = false;
+		//actor.setHidden(true);
+		//actor.setDirty(true);
+		// end --
+	}
+    // added missing turn end graphics control --
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.getContainer().getActor().setHidden(false);
+			this.removeSelf();
+		}
+	}
+	//end --
 });
+
+
 

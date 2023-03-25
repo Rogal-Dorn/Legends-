@@ -63,7 +63,10 @@ this.smoke_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
+		this.skill.onUpdate(_properties);
+		local actor = this.getContainer().getActor();
 		local tile = this.getContainer().getActor().getTile();
+		//local target = _targetTile.getEntity();
 
 		if (tile.Properties.Effect == null || tile.Properties.Effect.Type != "smoke")
 		{
@@ -71,10 +74,12 @@ this.smoke_effect <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			_properties.getSkills().add(this.new("scripts/skills/terrain/hidden_effect"));
+			actor.getSkills().add(::new("scripts/skills/terrain/hidden_effect"));		
 			_properties.RangedSkillMult *= 0.5;
 			_properties.RangedDefenseMult *= 2.0;
+			
 		}
+		return true;
 	}
 
 });
