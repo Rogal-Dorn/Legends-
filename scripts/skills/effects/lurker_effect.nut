@@ -64,7 +64,6 @@ this.lurker_effect <- this.inherit("scripts/skills/skill", {
 
 		foreach( ally in allies )
 		{
-			::logInfo("unit: " + ally.getID() + " distance:" + ally.getTile().getDistanceTo(myTile));
 			if (ally.getID() == actor.getID() || !ally.isPlacedOnMap())
 			{
 				continue;
@@ -80,7 +79,6 @@ this.lurker_effect <- this.inherit("scripts/skills/skill", {
 
 		foreach( unit in entites )
 		{
-			::logInfo("unit: " + unit.getID() + " distance:" + unit.getTile().getDistanceTo(myTile));
             if (unit.getID() == actor.getID())
             {
                 continue;
