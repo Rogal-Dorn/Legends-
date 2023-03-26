@@ -41,7 +41,7 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		this.m.IsDoingForwardMove = false;
 		this.m.InjuriesOnBody = this.Const.Injury.CuttingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.CuttingHead; 
-		this.m.ActionPointCost = 3;
+		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 3;
@@ -115,8 +115,8 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
 		_properties.DamageArmorMult = 0.0;
 
 		local actor = this.getContainer().getActor(); 
-		_properties.DamageRegularMin += 2;
-		_properties.DamageRegularMax += 12;
+		_properties.DamageRegularMin += 10;
+		_properties.DamageRegularMax += 20;
 		_properties.DamageArmorMult = 0.1;
 
 		if (this.m.Container.hasSkill("effects.disarmed"))
@@ -167,7 +167,7 @@ this.legend_throw_knife <- this.inherit("scripts/skills/skill", {
         	if (r <= 75)
         	{
 
-		       local effect = this.new("scripts/skills/effects/legend_baffled_effect");
+		       local effect = this.new("scripts/skills/effects/dazed_effect");
 		       target.getSkills().add(effect); 
 		    }
 	    }
