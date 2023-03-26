@@ -29,7 +29,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
  			bro.getSprite("socket").setBrush("bust_base_undead"); //base bust for starters
- 			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+ 			// bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
@@ -233,7 +233,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			bro.improveMood(1.5, "These people really understand me!");
 			bro.getSprite("socket").setBrush("bust_base_undead");
-			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+			// bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 		}
 		else if (bro.getBackground().getID() == "background.legend_puppet")
 		{
@@ -285,7 +285,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		if (this.isCultist(_background))
 		{
 			// this.addScenarioPerk(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
-			this.getSkills().add(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
+			// this.getSkills().add(_background, this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			this.getBaseProperties().MeleeSkill += 10;
 		}
 	}
