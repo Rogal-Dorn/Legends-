@@ -37,9 +37,9 @@ this.perk_legend_opportunist <- this.inherit("scripts/skills/skill", {
 		if (actor.getSkills().hasSkill("effects.smoke"))
 		{
 			_properties.RangedSkillMult *= 1.5; //Offsets the -50% from smoke_effect.nut
-			_properties.MeleeSkillMult *= 1.25;
+			_properties.MeleeSkillMult *= 1.10;
 	//If you are within a smoke cloud gain +2 maximum action points.
-			_properties.ActionPoints = 11; //default = 9. 9+2 = 11.
+			//_properties.ActionPoints = 10; //default = 9. 9+2 = 11.
 		}
 
 		if (!this.getContainer().getActor().isPlacedOnMap())
