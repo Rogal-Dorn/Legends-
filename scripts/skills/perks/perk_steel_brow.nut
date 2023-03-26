@@ -13,25 +13,38 @@ this.perk_steel_brow <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-			//if (effect) -> remove and replace with diff. effect
-    function onUse( _user, _targetTile )
-    {
-        local bonk = this.attackEntity(_user, _targetTile.getEntity());
+	function onAdded()
+	{
+		if (!this.m.Container.hasSkill("effects.steel_brow"))
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/steel_brow_effect"));
+		}
+	}
 
-        if (bonk)
-        {
-            local target = _targetTile.getEntity();
+	function onRemoved()
+	{
+		this.m.Container.removeByID("effects.steel_brow");
+	}
 
-            if (target.getCurrentProperties().IsStunned)
-            {
-                // target.getSprite("status_stunned").Visible = false; //Not needed - is managed by dazed_effect.nut
-                target.getSkills().removeByID("effects.stunned");
-                target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
-            }
-        }
+	// 		//if (effect) -> remove and replace with diff. effect
+    // function onUse( _user, _targetTile )
+    // {
+    //     local bonk = this.attackEntity(_user, _targetTile.getEntity());
 
-        return success;
-    }
+    //     if (bonk)
+    //     {
+    //         local target = _targetTile.getEntity();
+
+    //         if (target.getCurrentProperties().IsStunned)
+    //         {
+    //             // target.getSprite("status_stunned").Visible = false; //Not needed - is managed by dazed_effect.nut
+    //             target.getSkills().removeByID("effects.stunned");
+    //             target.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+    //         }
+    //     }
+
+    //     return success;
+    // }
 
 });
 
