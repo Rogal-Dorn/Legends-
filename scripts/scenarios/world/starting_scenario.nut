@@ -237,4 +237,8 @@ this.starting_scenario <- {
 		_background.addPerk(_perk, _row, isRefundable);
 		if (!isRefundable) _background.getPerk(_perk).IsRefundable = false;
 	}
+
+	function onGenerateBro(bro)
+	{
+	}
 };

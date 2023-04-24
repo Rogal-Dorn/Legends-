@@ -254,23 +254,27 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getBaseProperties().MeleeSkill += 10;
-				bro.getSkills().update();
-			}
-			else
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
-				bro.getSkills().update();
-			}
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader)) //delete crusader/pious recruits
 			{
 				garbage.push(bro);
 			}
+		}
+	}
+
+	function onGenerateBro(bro)
+	{
+		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist")
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			bro.getBaseProperties().MeleeSkill += 10;
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+			bro.getSkills().update();
 		}
 	}
 

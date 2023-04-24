@@ -164,22 +164,15 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bro.getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
 	}
 
-	function onUpdateHiringRoster( _roster )
+
+	function onGenerateBro(bro)
 	{
-		local garbage = [];
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Performing))
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Performing))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getSkills().update();
-			}
-
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			bro.getSkills().update();
 		}
-
 	}
 
 	function onBuildPerkTree( _background )

@@ -302,6 +302,18 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		return this.Math.rand(1, 100) <= 15;
 	}
 
+	function onHiredByScenario( bro )
+	{
+			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
+			{
+				bro.worsenMood(0.5, "Is uncomfortable with joining raiders");
+			}
+			else
+			{
+				bro.improveMood(1.5, "Is excited at becoming a raider");
+			}
+	}
+
 	function onUpdateDraftList( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
@@ -355,13 +367,8 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onGenerateBro(bro)
 	{
-		local garbage = [];
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
-		{
 			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5)
@@ -403,7 +410,6 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 					bro.getSkills().add(this.new("scripts/skills/traits/brute_trait"));
 				}
 			}
-		}
 	}
 
 });

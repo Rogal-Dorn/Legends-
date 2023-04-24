@@ -251,19 +251,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getSkills().update();
-			}
-			else
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
-				bro.getSkills().update();
-			}
-
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				garbage.push(bro);
@@ -273,6 +260,22 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		foreach( g in garbage )
 		{
 			_roster.remove(g);
+		}
+	}
+
+	function onGenerateBro(bro)
+	{
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
+			bro.getSkills().update();
 		}
 	}
 
