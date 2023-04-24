@@ -176,24 +176,19 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onGenerateBro(bro)
 	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
+		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) // if bro is NOT an outlaw then....
 		{
-			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) // if bro is NOT an outlaw then....
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
-				bro.getSkills().update();
-			}
-			else
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.5) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.5; //1.0 = default
-				bro.getSkills().update();
-			}
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.0) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 1.0; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.5) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.5; //1.0 = default
+			bro.getSkills().update();
 		}
 	}
 
