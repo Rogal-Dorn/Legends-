@@ -248,33 +248,27 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		this.starting_scenario.onInit();
 	}
 
-	function onUpdateHiringRoster( _roster ) //hiring
-	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
-		{															//Can't really recruit converted cultists but its here anyway for posterity
-			if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_lurker" || bro.getBackground().getID() == "background.legend_darksoul" || bro.getBackground().getID() == "background.legend_magister")
-			{				
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getBaseProperties().MeleeSkill += 10;
-				bro.getSkills().removeByID("trait.superstitious"); //If cultist, this ID will be removed as True believer is not removing them on hire
-				bro.getSkills().removeByID("trait.dastard"); //If cultist, this ID will be removed as True believer is not removing them on hire
-				bro.getSkills().removeByID("trait.insecure"); //If cultist, this ID will be removed as True believer is not removing them on hire
-				bro.getSkills().removeByID("trait.craven"); //If cultist, this ID will be removed as True believer is not removing them on hire
-				bro.getSkills().update();
-			}
-
-			else
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
-				bro.getBaseProperties().DailyWageMult *= 1.25;
-				bro.getSkills().update();
-			}
+	function onGenerateBro(bro)
+	{																
+		//Can't really recruit converted cultists but its here anyway for posterity
+		if (bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.converted_cultist" || bro.getBackground().getID() == "background.legend_lurker" || bro.getBackground().getID() == "background.legend_darksoul" || bro.getBackground().getID() == "background.legend_magister")
+		{				
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			bro.getBaseProperties().MeleeSkill += 10;
+			bro.getSkills().removeByID("trait.superstitious"); //If cultist, this ID will be removed as True believer is not removing them on hire
+			bro.getSkills().removeByID("trait.dastard"); //If cultist, this ID will be removed as True believer is not removing them on hire
+			bro.getSkills().removeByID("trait.insecure"); //If cultist, this ID will be removed as True believer is not removing them on hire
+			bro.getSkills().removeByID("trait.craven"); //If cultist, this ID will be removed as True believer is not removing them on hire
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
+			bro.getBaseProperties().DailyWageMult *= 1.25;
+			bro.getSkills().update();
 		}
 	}
-
 	function onGetBackgroundTooltip( _background, _tooltip )
 	{
 		if (_background.getID() == "background.cultist" || _background.getID() == "background.converted_cultist" || _background.getID() == "background.legend_lurker" || _background.getID() == "background.legend_darksoul" || _background.getID() == "background.legend_magister")
