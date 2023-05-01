@@ -121,16 +121,6 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function getTooltip()
 	{
-		local ret = this.character_background.getTooltip()
-		ret.push(
-			{
-				id = 13,
-				type = "text",
-				icon = "ui/icons/campfire.png",
-				text = "Davkul sees this one as spent goods without any value and will never ask you to sacrifice them."
-			}
-		)
-		return ret
 	}
 
 	function onBuildDescription()
@@ -142,8 +132,8 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				9
+				10,
+				14
 			],
 			Bravery = [
 				-5,
@@ -155,7 +145,7 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 			],
 			MeleeSkill = [
 				5,
-				5
+				10
 			],
 			RangedSkill = [
 				-10,
@@ -217,13 +207,9 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 
 	function onAddEquipment()
 	{
-		local talents = this.getContainer().getActor().getTalents();
-		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.MeleeSkill] = 1;
-		this.getContainer().getActor().fillTalentValues(1, true);
 		local items = this.getContainer().getActor().getItems();
 		local r;
-		r = this.Math.rand(0, 8);
+		r = this.Math.rand(0, 4);
 
 		if (r == 0)
 		{
@@ -242,17 +228,6 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 			items.equip(this.new("scripts/items/weapons/woodcutters_axe"));
 		}
 		else if (r == 4)
-		{
-			if (this.Const.DLC.Wildmen)
-			{
-				items.equip(this.new("scripts/items/weapons/battle_whip"));
-			}
-			else if (!this.Const.DLC.Wildmen)
-			{
-				items.equip(this.new("scripts/items/weapons/legend_cat_o_nine_tails"));
-			}
-		}
-		else if (r >= 5)
 		{
 		 items.equip(this.new("scripts/items/weapons/legend_infantry_axe"));
 		}
