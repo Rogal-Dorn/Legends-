@@ -251,13 +251,9 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onGenerateBro(bro)
 	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
-		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
@@ -269,7 +265,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
 				bro.getSkills().update();
 			}
-		}
 	}
 
 	function onBuildPerkTree( _background )

@@ -299,7 +299,7 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			bro.improveMood(0.5, "Supports your cause as a usurper, will cost less to maintain.");
 		}
-		else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+		else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
 		{
 			bro.worsenMood(0.5, "Resents you as nobility, will try to squeeze money from you.");
 		}
@@ -308,23 +308,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateHiringRoster( _roster )
 	{
-			local garbage = [];
+		local garbage = [];
 		local bros = _roster.getAll();
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getSkills().update();
-			}
-			else if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
-				bro.getSkills().update();
-			}
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				garbage.push(bro);
@@ -336,6 +324,22 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			_roster.remove(g);
 		}
+	}
+
+	function onGenerateBro(bro)
+	{
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble))
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+				bro.getSkills().update();
+			}
+			else if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+			{
+				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
+				bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+				bro.getSkills().update();
+			}
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

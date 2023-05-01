@@ -186,7 +186,20 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local garbage = [];
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
+			{
+				garbage.push(bro);
+			}
+		}
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
+		}
+	}
+
+	function onGenerateBro(bro)
+	{
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
 				bro.getBaseProperties().DailyWageMult *= 1.25;
@@ -231,16 +244,6 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.getBaseProperties().DailyWageMult *= 1.25;
 				bro.getSkills().update();
 			}
-
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
-			{
-				garbage.push(bro);
-			}
-		}
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
-		}
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
