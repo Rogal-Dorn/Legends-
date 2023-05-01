@@ -102,6 +102,7 @@ gt.Const.LegendMod.FavoriteUnhold <- [
 gt.Const.LegendMod.FavoriteVampire <- [
 	this.Const.EntityType.Vampire,
 	this.Const.EntityType.Ghost,
+	this.Const.EntityType.LegendDemonHound,
 	this.Const.EntityType.LegendVampireLord,
 	this.Const.EntityType.LegendBanshee,
 	this.Const.EntityType.LegendMummyLight,
@@ -261,13 +262,16 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 		return 1;
 
 	case "this.Const.EntityType.LegendGreenwoodSchratSmall":
-		return 0.4;
+		return 2.5;
 
 	case "this.Const.EntityType.SandGolem":
 		return 8;
 
 	case "this.Const.EntityType.Schrat":
 		return 1;
+
+	case "this.Const.EntityType.SchratSmall":
+		return 5;
 
 	case "this.Const.EntityType.LegendRockUnhold":
 		return 0.5;
@@ -350,6 +354,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 	case "this.Const.EntityType.SkeletonLight":
 		return 10;
 
+	case "this.Const.EntityType.LegendDemonHound":
+		return 8;
+
 	case "this.Const.EntityType.Ghost":
 		return 8;
 
@@ -395,13 +402,13 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 	case "this.Const.EntityType.OrcBerserker":
 		return 5;
 
-	case "this.Const.EntityType.OrcElite":
+	case "this.Const.EntityType.LegendOrcElite":
 		return 4;
 
 	case "this.Const.EntityType.OrcWarlord":
 		return 1;
 
-	case "this.Const.EntityType.OrcBehemoth":
+	case "this.Const.EntityType.LegendOrcBehemoth":
 		return 2;
 
 	case "this.Const.EntityType.OrcWarrior":
@@ -437,7 +444,7 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 	case "this.Const.EntityType.CaravanHand":
 		return 10;
 
-	case "this.Const.EntityType.CaravanGaurd":
+	case "this.Const.EntityType.CaravanGuard":
 		return 8;
 
 	case "this.Const.EntityType.Wardog":
@@ -606,6 +613,9 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 
 	case "this.Const.EntityType.SkeletonPhylactery":
 		return 1;
+
+	case "this.Const.EntityType.SkeletonBoss":
+		return 0.25;
 
 	case "this.Const.EntityType.ZombieTreasureHunter":
 		return 5;
