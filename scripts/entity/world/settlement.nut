@@ -1777,6 +1777,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx(draftList);
+			this.World.Assets.getOrigin().onGenerateBro(bro);
 			current.push(bro);
 		}
 
