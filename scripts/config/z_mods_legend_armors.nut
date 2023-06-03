@@ -2170,7 +2170,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Chain = [
 			[1, "chain/legend_armor_mail_shirt"], // 50
 			[1, "chain/legend_armor_reinforced_mail"], //110
-			[1, "chain/legend_armor_reinforced_mail_shirt"] //80
+			[1, "chain/legend_armor_reinforced_mail_shirt"], //80
 			[1, "chain/legend_armor_short_mail"], //60
 			[1, "chain/legend_armor_basic_mail"], //85
 			[1, "chain/legend_armor_hauberk"], //95
