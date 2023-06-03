@@ -2182,11 +2182,11 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[2, "plate/legend_armor_leather_padded"], // 40
 			[2, "plate/legend_armor_leather_lamellar_reinforced"], //55
 			[1, "plate/legend_armor_scale_shirt"], //85
-			[2, ""] //0
-			[2, "plate/legend_armor_leather_lamellar_reinforced"] //55
+			[2, ""], //0
+			[2, "plate/legend_armor_leather_lamellar_reinforced"], //55
 		],
 		Cloak = [
-			[1, "cloak/legend_armor_cloak_common"] //10
+			[1, "cloak/legend_armor_cloak_common"], //10
 			[1, ""], //0			
 		],
 		Tabard = [
@@ -2223,7 +2223,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
 		],
 		Cloak = [
-			[1, "cloak/legend_armor_cloak_common"] //10
+			[1, "cloak/legend_armor_cloak_common"], //10
 			[1, ""], //0
 		],
 		Tabard = [
@@ -2246,7 +2246,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Chain = [
 			[1, "chain/legend_armor_reinforced_mail"], //110
 			[1, "chain/legend_armor_hauberk"], //95
-			[1, "chain/legend_armor_reinforced_mail_shirt"] //80
+			[1, "chain/legend_armor_reinforced_mail_shirt"], //80
 			[1, "chain/legend_armor_hauberk_full"], //115
 		],
 		Plate = [
@@ -2255,12 +2255,12 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "plate/legend_armor_leather_lamellar_heavy"], //165
 			[1, "plate/legend_armor_plate_milanese"], //170
 			[1, "plate/legend_armor_plate_krastenbrust"], //170
-			[1, "plate/legend_armor_plate_triangle"] //170
+			[1, "plate/legend_armor_plate_triangle"], //170
 			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
 			[1, "plate/legend_armor_leather_lamellar_heavy"], //165
 		],
 		Cloak = [
-			[1, "cloak/legend_armor_cloak_common"] //10
+			[1, "cloak/legend_armor_cloak_common"], //10
 			[1, ""], //0
 		],
 		Tabard = [
