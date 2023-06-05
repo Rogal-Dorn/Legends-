@@ -134,9 +134,20 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		}
 
 		local actor = this.getContainer().getActor();
-		_properties.DamageRegularMin = 5;
-		_properties.DamageRegularMax = 10;
+		_properties.DamageRegularMin += 5;
+		_properties.DamageRegularMax += 10;
 		_properties.DamageArmorMult = 0.5;
+
+		if (this.m.Container.hasSkill("effects.disarmed") || this.m.Container.hasSkill("perk.legend_ambidextrous"))
+		{
+			local mhand = actor.getMainhandItem();
+
+			if (mhand != null)
+			{
+				_properties.DamageRegularMin -= mhand.m.RegularDamage;
+				_properties.DamageRegularMax -= mhand.m.RegularDamageMax;
+			}
+		}
 		_properties.FatigueDealtPerHitMult += 1.0; // Increase fatigue damage from 5 to 10
 
 		if (this.m.Container.hasSkill("perk.legend_ambidextrous"))
