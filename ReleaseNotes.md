@@ -1,6 +1,6 @@
 ### Legend Mod Release Notes
 
-## 17  Wildlands Warriors
+## Wildlands Warriors
 
 **Environment**
 -Greater variety of trees, grasses, bushes, logs and flowers on the world map 
@@ -45,11 +45,58 @@ Hood:
 -Full Mask 
 
 
-Changes:
+
+**Trait changes**
+New Trait - Nocturnal
+The negatives and positives from night and day are reversed 
+
+New Trait - Pugilist 
++10% chance to hit the head, and +5% melee skill, but -10% experience gain. 
+
+New Trait - Deceiver
++20% daily wage, 20% chance to have an attacker require two successful attack rolls
+
+Double Tongued Trait 
+- Lowered from 10% to 5% chance to depress company morale each battle
+- Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
+- Characters with this trait can now stop the children's crusade event  
+
+Addict Trait: 
+Withdrawals now give +10% Melee Skill as they lash out in anger. Other negatives remain.
+
+Craven Trait: 
+Provides +5 ranged defense in addition to the existing -10 Resolve
+
+Deathwish Trait:
+since they don't care about being hit or injured, it now also lowers their melee defense by -3 
+
+Impatient:
+Now has -5% melee defense in addition to always acting first. 
+
+Insecure Trait:
+adds +5% to Defenses as they cower for cover in addition to the existing never being at confident morale 
+
+Peaceful Trait: 
+adds +5% to Defenses in addition to the -5 to attack skill. While they won't attack and still start out poor fighters, if they train in self defense they can get quite good at peaceful self defense. 
+has a new icon to stop duplicating another trait. 
+
+Pragmatic Trait: 
+Lowers from -20% to -10% chance to hit the head as it was nearly stopping all head hits. 
+
+Predictable Trait: 
+Raises from -5% to -10% chance to hit the head, equivilent to pragmatic
+
+Unredictable Trait: 
+Raises from +5% to +10% chance to hit the head, equivilent to pragmatic
+
+Other Changes:
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
+New Event - Reserve becomes Glutton  - This creates a cycle of events, where people in reserves can become gluttons, gluttons can become fat and the fat can be lost over time.  The more people you have in reserve, the more likely this is to happen.
+
+
 
 
 ## 16.1.5 - Soujourn v5
