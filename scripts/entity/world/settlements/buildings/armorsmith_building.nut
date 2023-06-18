@@ -614,8 +614,104 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 					P = 1.25,
 					S = "legend_armor/armor_upgrades/legend_double_mail_upgrade"
 				});
-			}
-		}
+				list.push({
+					R = 85,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_double_mail_upgrade"
+				});
+				list.push({
+					R = 90,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_armor_skull_chain_upgrade"
+				});	
+				list.push({
+					R = 90,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade"
+				});					
+				list.push({
+					R = 90,
+					P = 1.25,
+					S = "legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade"
+				});		
+				list.push({
+					R = 90,
+					P = 1.5,
+					S = "legend_armor/armor_upgrades/legend_armor_chain_and_mail_upgrade"
+				});
+					list.push({
+						R = 80,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_additional_padding_upgrade"
+					});
+				if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.hunters_cabin"))
+				{
+					list.push({
+						R = 40,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_direwolf_pelt_upgrade"
+					});
+					list.push({
+						R = 40,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_bone_platings_upgrade"
+					});
+				}	
+				if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.wool_spinner"))
+				{
+					list.push({
+						R = 40,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_additional_padding_upgrade"
+					});
+				}	
+				if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.leather_tanner"))
+				{
+					list.push({
+						R = 40,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_leather_shoulderguards_upgrade"
+					});
+					list.push({
+						R = 40,
+						P = 1.25,
+						S = "legend_armor/armor_upgrades/legend_leather_neckguard_upgrade"
+					});
+				}	
+				if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.blast_furnace"))
+						{
+							list.push({
+								R = 40,
+								P = 1.25,
+								S = "legend_armor/armor_upgrades/legend_metal_pauldrons_upgrade"
+							});
+							list.push({
+								R = 40,
+								P = 1.25,
+								S = "legend_armor/armor_upgrades/legend_metal_plating_upgrade"
+							});
+							list.push({
+								R = 40,
+								P = 1.25,
+								S = "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade"
+							});
+							list.push({
+								R = 40,
+								P = 1.25,
+								S = "legend_armor/armor_upgrades/legend_joint_cover_upgrade"
+							});
+						}
+				if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.gold_mine"))
+					{
+						list.push({
+							R = 40,
+							P = 1.25,
+							S = "legend_armor/armor_upgrades/legend_armor_chain_and_mail_upgrade"
+						});
+					}							
+					}
+				}
+	
 
 		if (this.Const.DLC.Wildmen && this.m.Settlement.getTile().SquareCoords.Y > this.World.getMapSize().Y * 0.7)
 		{

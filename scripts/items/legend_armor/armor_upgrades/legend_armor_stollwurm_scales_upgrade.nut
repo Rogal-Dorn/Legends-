@@ -32,7 +32,7 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Immune to stun"
+			text = "Immune to stun, knockback and grab, and acid"
 		});
 		return result;
 	}

@@ -462,7 +462,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 			this.m.Doubter != null ? this.m.Doubter.getName() : ""
 		]);
 	}
-	}
+
 
 	function onClear()
 	{

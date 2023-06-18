@@ -371,7 +371,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.fishing_huts"))
+		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.fishing_huts"))
 		{
 			list.push({
 				R = 50,
@@ -380,7 +380,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 3 && !this.m.Settlement.hasAttachedLocation("attached_location.beekeeper"))
+		if (this.m.Settlement.getSize() >= 3 && this.m.Settlement.hasAttachedLocation("attached_location.beekeeper"))
 		{
 			list.push({
 				R = 50,
@@ -389,7 +389,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 1 && !this.m.Settlement.hasAttachedLocation("attached_location.pig_farm"))
+		if (this.m.Settlement.getSize() >= 1 && this.m.Settlement.hasAttachedLocation("attached_location.pig_farm"))
 		{
 			list.push({
 				R = 50,
@@ -398,7 +398,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.hunters_cabin"))
+		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.hunters_cabin"))
 		{
 			list.push({
 				R = 50,
@@ -407,7 +407,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 3 && !this.m.Settlement.hasAttachedLocation("attached_location.goat_herd"))
+		if (this.m.Settlement.getSize() >= 3 && this.m.Settlement.hasAttachedLocation("attached_location.goat_herd"))
 		{
 			list.push({
 				R = 50,
@@ -416,7 +416,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 3 && !this.m.Settlement.hasAttachedLocation("attached_location.orchard"))
+		if (this.m.Settlement.getSize() >= 3 && this.m.Settlement.hasAttachedLocation("attached_location.orchard"))
 		{
 			list.push({
 				R = 50,
@@ -425,7 +425,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.mushroom_grove"))
+		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.mushroom_grove"))
 		{
 			list.push({
 				R = 50,
@@ -443,7 +443,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.gatherers_hut"))
+		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.gatherers_hut"))
 		{
 			list.push({
 				R = 50,
@@ -452,7 +452,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 2 && !this.m.Settlement.hasAttachedLocation("attached_location.brewery"))
+		if (this.m.Settlement.getSize() >= 2 && this.m.Settlement.hasAttachedLocation("attached_location.brewery"))
 		{
 			list.push({
 				R = 50,
@@ -461,7 +461,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			});
 		}
 
-		if (this.m.Settlement.getSize() >= 3 && !this.m.Settlement.hasAttachedLocation("attached_location.winery"))
+		if (this.m.Settlement.getSize() >= 3 && this.m.Settlement.hasAttachedLocation("attached_location.winery"))
 		{
 			list.push({
 				R = 50,
