@@ -252,8 +252,13 @@ layers = [
     "adesc" :""
 },
 {"name": "legend_robes_wizard",                            "layer": "cloth", "min": 1, "max": 12, "value" : 50, "con" : 30, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wizard_robe", \
-    "title" :  "Wizard\'s Robe", \
-    "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
+    "title" :  "Beautiful Robe", \
+    "desc" :  "A soft shiny robe worn by practictioners of the arts", \
+    "adesc" :""
+},
+{"name": "anatomist_robe",                            "layer": "cloth", "min": 1, "max": 1, "value" : 75, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_robe", \
+    "title" :  "Anatomist Robe", \
+    "desc" :  "A dark robe and gloves worn by those who tinker with flesh and filth", \
     "adesc" :""
 },
 {"name": "legend_robes_nun",                              "layer": "cloth", "min": 1, "max": 2, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_robes", "variants" : [6,7], \
@@ -326,6 +331,11 @@ layers = [
 {"name": "legend_southern_robe",                 "layer": "cloth", "min": 1, "max": 6, "value" : 35, "con" : 25, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_robe", \
     "title" : "Southern Wool Robe", \
     "desc" :  "A dense wool wrap to protect against blunt hits.", \
+    "adesc" : ""
+},
+{"name": "legend_knightly_robe",                 "layer": "cloth", "min": 1, "max": 8, "value" : 200, "con" : 60, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_knightly_robe", \
+    "title" : "Knightly Robe", \
+    "desc" :  "A padded robe designed to go under armor and absorb blows", \
     "adesc" : ""
 },
 {"name": "legend_southern_gambeson",           "layer": "cloth", "min": 1, "max": 7, "value" : 250, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_gambeson", \
@@ -470,10 +480,6 @@ layers = [
     "desc" :  "A long and heavy mail shirt of southern design made with with slightly thinner and lighter metal rings than those used in the north", \
     "adesc" : "Includes a long southern mail shirt."
 },
-
-
-
-
 {"name": "legend_armor_leather_brigandine",               "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Leather Brigandine Armor", \
     "desc" :  "A thick leather brigandine studded with steel rivets for added protection.", \
@@ -567,6 +573,11 @@ layers = [
 {"name": "legend_armor_leather_riveted",                  "layer": "plate", "min": 1, "max": 9, "value" : 900, "con" : 95, "stam" : -13, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Sellsword\'s Leather Armor", \
     "desc" :  "A long leather armor coat reinforced with metal plates.", \
+    "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
+},
+{"name": "legend_heavy_mail",                  "layer": "plate", "min": 1, "max": 14, "value" : 1300, "con" : 105, "stam" : -14, "impactSound" : "chain", "invSound" : "leather", \
+    "title" :  "Heavy Mail", \
+    "desc" :  "A long armor coat reinforced with studded metal plates and covered in colorful cloth.", \
     "adesc" : "Includes a long leather coat reinforced with metal plates that offers good protection but is very fatiguing to wear."
 },
 {"name": "legend_armor_leather_riveted_light",            "layer": "plate", "min": 1, "max": 1, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "chain", "invSound" : "leather", \
@@ -828,6 +839,16 @@ layers = [
     "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.", \
     "adesc" : "Has a stout wool cloak"
 },
+{"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 50, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_hood",\
+    "title" :  "Anatomist Hood", \
+    "desc" :  "A dark hood for those who work with filth", \
+    "adesc" : "Has a dark hood for working with entrails"
+},
+{"name": "relic_hood",           "layer": "cloak", "min": 1, "max": 10, "value" : 600, "con" : 30, "stam" : -2, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "relic_hood",\
+    "title" :  "Relic Hood", \
+    "desc" :  "A hood and belts adorned with a holy relic", \
+    "adesc" : "Has a hood and belts adorned with a holy relic"
+},
 {"name": "legend_armor_cloak_heavy",           "layer": "cloak", "min": 0, "max": 0, "value" : 500, "con" : 30, "stam" : -4, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [3,8,15,16,17,18,19,20,24,26,27,28,29,30,31,35], \
     "title" :  "Heavy Cloak", \
     "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
@@ -863,8 +884,11 @@ layers = [
     "desc" :  "A cloak of dark wool that wraps around the shoulders.", \
     "adesc" : "Includes a dark wooly cloak"
 },
-
-
+{"name": "relic_hood",           "layer": "cloak", "min": 1, "max": 10, "value" : 500, "con" : 25, "stam" : -2, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "relic_hood",\
+    "title" :  "Relic Hood and belts", \
+    "desc" :  "Straps, bags, hood and relic of a knightly order. Offers physical and spiritual protection.", \
+    "adesc" : "Straps, bags, hood and relic of a knightly order. Offers physical and spiritual protection."
+},
 {"name": "legend_common_tabard",           "layer": "tabard", "min": 101, "max": 113, "value" : 200, "con" : 5, "stam" : 0, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tabard",\
     "title" :  "Tabard", \
     "desc" :  "A flowing cloth covering for armor, to show your allegiance. Offers minimal protection and small boost to morale.", \
