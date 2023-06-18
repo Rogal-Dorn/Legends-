@@ -13,6 +13,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/cloth_rolls_item");
+		_list.push("trade/cloth_rolls_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

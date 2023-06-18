@@ -5,7 +5,7 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		this.attached_location.create();
 		this.m.Name = "Wheat Fields";
 		this.m.ID = "attached_location.wheat_fields";
-		this.m.Description = "Golden wheat can be seen glistening in the sun from afar. Many people from the nearby settlement work here, farmhands and daytalers mostly.";
+		this.m.Description = "Golden wheat can be seen glistening in the sun from afar. Many people from the nearby settlement work here. Contributes bread, grains, poridge, farmhands, daytalers, millers and bakers to the local town.";
 		this.m.Sprite = "world_wheat_farm_01";
 		this.m.SpriteDestroyed = "world_wheat_farm_01_ruins";
 	}
@@ -96,6 +96,7 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/bread_item");
+		_list.push("supplies/bread_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -105,7 +106,6 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		{
 			return;
 		}
-		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("daytaler_background");

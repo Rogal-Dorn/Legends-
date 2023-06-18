@@ -78,6 +78,7 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/iron_ingots_item");
+		_list.push("trade/iron_ingots_item");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -85,9 +86,14 @@ this.surface_iron_vein_location <- this.inherit("scripts/entity/world/attached_l
 		if (_id == "building.marketplace")
 		{
 			_list.push({
-				R = 10,
+				R = 0,
 				P = 1.0,
 				S = "weapons/pickaxe"
+			});
+			_list.push({
+				R = 10,
+				P = 1.0,
+				S = "trade/iron_ingots_item"
 			});
 			_list.push({
 				R = 15,

@@ -5,7 +5,7 @@ this.plantation_location <- this.inherit("scripts/entity/world/attached_location
 		this.attached_location.create();
 		this.m.Name = "Plantation";
 		this.m.ID = "attached_location.plantation";
-		this.m.Description = "All kinds of wonderous spices and herbs are cultivated in this plantation. A small and rare fruitful spot in the barren desert.";
+		this.m.Description = "All kinds of wonderous spices and herbs are cultivated in this plantation. A small and rare fruitful spot in the barren desert. Contributes spices, dates and slaves to the nearby town";
 		this.m.Sprite = "world_spice_01";
 		this.m.SpriteDestroyed = "world_spice_01_ruins";
 	}

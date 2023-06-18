@@ -5,7 +5,7 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		this.attached_location.create();
 		this.m.Name = "Arrow Maker\'s Shed";
 		this.m.ID = "attached_location.fletchers_hut";
-		this.m.Description = "The arrow makers in these sheds produce all kinds of ranged ammunition which they then sell at the nearest settlement.";
+		this.m.Description = "The arrow makers in these sheds produce all kinds of ranged ammunition which they then sell at the nearest settlement. Contributes bows, crossbows, arrows, bolts, bowyers and archers to the local town";
 		this.m.Sprite = "world_fletchers_hut_01";
 		this.m.SpriteDestroyed = "world_fletchers_hut_01_ruins";
 	}
@@ -67,6 +67,8 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 	{
 		_list.push("supplies/ammo_item");
 		_list.push("supplies/ammo_small_item");
+		_list.push("supplies/ammo_item");
+		_list.push("supplies/ammo_small_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -76,9 +78,10 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		{
 			return;
 		}
-
+		_list.push("hunter_background");
 		_list.push("hunter_background");
 		_list.push("bowyer_background");
+		_list.push("poacher_background");
 		_list.push("poacher_background");
 		_list.push("witchhunter_background");
 

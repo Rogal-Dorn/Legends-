@@ -5,7 +5,7 @@ this.salt_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		this.attached_location.create();
 		this.m.Name = "Salt Mine";
 		this.m.ID = "attached_location.salt_mine";
-		this.m.Description = "A mine in which precious rock salt is extracted and shipped off to only the most trustworthy traders.";
+		this.m.Description = "A mine in which precious rock salt is extracted and shipped off to only the most trustworthy traders. Contributes salt, pickaxes and miners to the local town";
 		this.m.Sprite = "world_salt_mine_01";
 		this.m.SpriteDestroyed = "world_salt_mine_01_ruins";
 	}
@@ -60,6 +60,7 @@ this.salt_mine_location <- this.inherit("scripts/entity/world/attached_location"
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("trade/salt_item");
 		_list.push("trade/salt_item");
 	}
 

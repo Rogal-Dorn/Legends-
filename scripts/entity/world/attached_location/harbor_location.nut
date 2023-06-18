@@ -5,7 +5,7 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 		this.attached_location.create();
 		this.m.Name = "Harbor";
 		this.m.ID = "attached_location.harbor";
-		this.m.Description = "A harbor that serves both foreign trading ships and local fishermen.";
+		this.m.Description = "A harbor that serves both foreign trading ships and local fishermen. Contributes fish, nets, fishermen and fishmongers to the local town";
 		this.m.Sprite = "";
 		this.m.SpriteDestroyed = "";
 		this.m.IsUsable = true;
@@ -241,6 +241,7 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 			return;
 		}
 		_list.push("fisherman_background");
+		_list.push("fisherman_background");
 		if (_gender)
 		{
 		_list.push("female_butcher_background");
@@ -256,6 +257,16 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 	{
 		if (_id == "building.marketplace")
 		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "tools/throwing_net"
+			});			
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/dried_fish_item"
+			});
 			_list.push({
 				R = 20,
 				P = 1.0,

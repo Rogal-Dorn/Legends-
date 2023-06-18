@@ -5,7 +5,7 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		this.attached_location.create();
 		this.m.Name = "Gold Mine";
 		this.m.ID = "attached_location.gold_mine";
-		this.m.Description = "A deep mine build atop a gold ore vein. This rare metal has a tendency to bring out the worst in people.";
+		this.m.Description = "A deep mine build atop a gold ore vein. This rare metal has a tendency to bring out the worst in people. Contributes gold ingots, miners, caravan hands, sellswords and thieves to the local town";
 		this.m.Sprite = "world_gold_mine_01";
 		this.m.SpriteDestroyed = "world_gold_mine_01_ruins";
 	}
@@ -62,6 +62,7 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/gold_ingots_item");
+		_list.push("trade/gold_ingots_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -79,6 +80,7 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("sellsword_background");
 		_list.push("caravan_hand_background");
 		_list.push("thief_background");
+		_list.push("peddler_background");
 	}
 
 	function onUpdateShopList( _id, _list )
@@ -86,19 +88,29 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 		if (_id == "building.marketplace")
 		{
 			_list.push({
-				R = 20,
+				R = 0,
 				P = 1.0,
 				S = "weapons/pickaxe"
 			});
 			_list.push({
-				R = 90,
+				R = 40,
 				P = 1.0,
 				S = "weapons/military_pick"
 			});
 			_list.push({
-				R = 20,
+				R = 0,
 				P = 1.0,
 				S = "weapons/legend_hammer"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "trade/gold_ingots_item"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "loot/golden_chalice_item"
 			});
 		}
 		else if (_id == "building.specialized_trader")

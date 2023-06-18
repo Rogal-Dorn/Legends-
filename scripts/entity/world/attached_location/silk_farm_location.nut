@@ -20,6 +20,7 @@ this.silk_farm_location <- this.inherit("scripts/entity/world/attached_location"
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/silk_item");
+		_list.push("trade/silk_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

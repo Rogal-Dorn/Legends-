@@ -5,7 +5,7 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 		this.attached_location.create();
 		this.m.Name = "Brewery";
 		this.m.ID = "attached_location.brewery";
-		this.m.Description = "This brewery produces large quantities of beer for both local taverns and traders.";
+		this.m.Description = "This brewery produces large quantities of beer for both local taverns and traders. Contributes beer, brawlers, monks and gablers to the local town";
 		this.m.Sprite = "world_brewery_01";
 		this.m.SpriteDestroyed = "world_brewery_01_ruins";
 	}
@@ -54,6 +54,7 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/beer_item");
+		_list.push("supplies/beer_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -77,6 +78,11 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 	{
 		if (_id == "building.marketplace")
 		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/beer_item"
+			});
 			_list.push({
 				R = 0,
 				P = 1.0,

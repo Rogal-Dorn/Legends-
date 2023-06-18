@@ -87,6 +87,11 @@ this.blast_furnace_location <- this.inherit("scripts/entity/world/attached_locat
 				P = 1.0,
 				S = "supplies/armor_parts_item"
 			});
+			_list.push({
+				R = 25,
+				P = 1.0,
+				S = "supplies/armor_parts_item"
+			});
 		}
 		else if (_id == "building.specialized_trader")
 		{

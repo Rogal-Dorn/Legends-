@@ -7,7 +7,7 @@ this.fortified_outpost_location <- this.inherit("scripts/entity/world/attached_l
 		this.attached_location.create();
 		this.m.Name = "Barracks";
 		this.m.ID = "attached_location.fortified_outpost";
-		this.m.Description = "Large barracks housing a host of professional soldiers.";
+		this.m.Description = "Large barracks housing a host of professional soldiers. Contributes military weapons, armor, soldiers and knights to the local town";
 		this.m.Sprite = "world_fortified_outpost_01";
 		this.m.SpriteDestroyed = "world_fortified_outpost_01_ruins";
 		this.m.IsMilitary = true;

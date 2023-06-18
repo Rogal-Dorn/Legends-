@@ -5,7 +5,7 @@ this.incense_dryer_location <- this.inherit("scripts/entity/world/attached_locat
 		this.attached_location.create();
 		this.m.Name = "Incense Dryer";
 		this.m.ID = "attached_location.incense_dryer";
-		this.m.Description = "Tree sap is gathered from the surrounding trees and dried in the sun to create valuable incense.";
+		this.m.Description = "Tree sap is gathered from the surrounding trees and dried in the sun to create valuable incense. Contributes incense, spices, medicine and daytalers to the local town";
 		this.m.Sprite = "world_incense_01";
 		this.m.SpriteDestroyed = "world_incense_01_ruins";
 	}
@@ -20,8 +20,7 @@ this.incense_dryer_location <- this.inherit("scripts/entity/world/attached_locat
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/incense_item");
-		_list.push("supplies/armor_parts_small_item");
-		_list.push("supplies/medicine_small_item");
+		_list.push("trade/incense_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -46,6 +45,11 @@ this.incense_dryer_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 0,
 				P = 1.0,
 				S = "trade/incense_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "misc/legend_cooking_spices_trade_item"
 			});
 			_list.push({
 				R = 0,

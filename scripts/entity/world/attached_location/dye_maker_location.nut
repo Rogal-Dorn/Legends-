@@ -5,13 +5,14 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		this.attached_location.create();
 		this.m.Name = "Dye Maker";
 		this.m.ID = "attached_location.dye_maker";
-		this.m.Description = "This dye maker creates precious dies from all kinds of ingredients. The recipes for these expensive goods are well-kept secrets.";
+		this.m.Description = "This dye maker creates precious dies from all kinds of ingredients. The recipes for these expensive goods are well-kept secrets. Contributes dyes, paints and colourful clothes to the local town";
 		this.m.Sprite = "world_dye_maker_01";
 		this.m.SpriteDestroyed = "world_dye_maker_01_ruins";
 	}
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("trade/dies_item");
 		_list.push("trade/dies_item");
 	}
 

@@ -5,7 +5,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 		this.attached_location.create();
 		this.m.Name = "Amber Collector";
 		this.m.ID = "attached_location.amber_collector";
-		this.m.Description = "The collectors living in these huts search for valuable amber shards along the shore.";
+		this.m.Description = "The collectors living in these huts search for valuable amber shards along the shore. Contributes amber and peddlers to the local town";
 		this.m.Sprite = "world_amber_collector_01";
 		this.m.SpriteDestroyed = "world_amber_collector_01_ruins";
 		this.m.IsConnected = false;
@@ -13,6 +13,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("trade/amber_shards_item");
 		_list.push("trade/amber_shards_item");
 	}
 

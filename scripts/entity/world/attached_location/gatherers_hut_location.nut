@@ -5,13 +5,15 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		this.attached_location.create();
 		this.m.Name = "Gatherer\'s Hut";
 		this.m.ID = "attached_location.gatherers_hut";
-		this.m.Description = "Even in sparse environments an experienced gatherer can find berries, roots and other edible things. Although not the most delicious, it can still keep a man fed.";
+		this.m.Description = "Even in sparse environments an experienced gatherer can find berries, roots and other edible things. Although not the most delicious, it can still keep a man fed. Contributes roots, berries, spices, sickles, puddings, herbalists and daytalers to the local town";
 		this.m.Sprite = "world_gatherers_hut_01";
 		this.m.SpriteDestroyed = "world_gatherers_hut_01_ruins";
 	}
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("supplies/roots_and_berries_item");
+		_list.push("trade/legend_cooking_spices_trade_item");
 		_list.push("supplies/roots_and_berries_item");
 		_list.push("trade/legend_cooking_spices_trade_item");
 	}
@@ -37,6 +39,11 @@ this.gatherers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				R = 0,
 				P = 1.0,
 				S = "supplies/roots_and_berries_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "misc/legend_cooking_spices_trade_item"
 			});
 			_list.push({
 				R = 20,

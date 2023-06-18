@@ -5,7 +5,7 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 		this.attached_location.create();
 		this.m.Name = "Orchard";
 		this.m.ID = "attached_location.orchard";
-		this.m.Description = "Dense rows of trees with ripe fruit frame a small warehouse where everything is stored until offered on local markets.";
+		this.m.Description = "Dense rows of trees with ripe fruit frame a small warehouse where everything is stored until offered on local markets. Contributes fruit, blades and laborers to the local town.";
 		this.m.Sprite = "world_orchard_01";
 		this.m.SpriteDestroyed = "world_orchard_01_ruins";
 	}
@@ -53,6 +53,7 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/dried_fruits_item");
+		_list.push("supplies/dried_fruits_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -62,7 +63,8 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 		{
 			return;
 		}
-
+		_list.push("daytaler_background");
+		_list.push("farmhand_background");
 		_list.push("daytaler_background");
 		_list.push("farmhand_background");
 	}
@@ -75,6 +77,11 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 				R = 0,
 				P = 1.0,
 				S = "supplies/dried_fruits_item"
+			});
+			_list.push({
+				R = 0,
+				P = 0.9,
+				S = "supplies/legend_fresh_fruit_item"
 			});
 			_list.push({
 				R = 0,

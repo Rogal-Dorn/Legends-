@@ -44,7 +44,31 @@ Hood:
 -Beak Hood
 -Full Mask 
 
+**Armors** 
+Cloth:
+-Anatomist Robe 
+-Knightly Robe in 8 colours 
 
+Plate:
+-Heavy Mail in 14 colours
+
+
+Cloak: 
+-Anatomist Hood 
+-Relic Hood  in 10 colours 
+-Religious Scarf in 4 colours 
+
+
+Attachments:
+- Amulet Coif - +3 resolve and taunts enemies in battle 
+- Spiked Coif - +3 mdef -10 init 20 condition -3 stamina 
+- Skull Chain - +10% chance to hit head, +1 fatigue per tile moved 
+- Sacred Shield - +5% resolve 
+
+**Attached locations**
+Production rate  doubled to help the trading economy
+Expanded descriptions to explain what they do 
+Now occassionally produce processed versions of their raw material
 
 **Trait changes**
 New Trait - Nocturnal
@@ -54,12 +78,15 @@ New Trait - Pugilist
 +10% chance to hit the head, and +5% melee skill, but -10% experience gain. 
 
 New Trait - Deceiver
-+20% daily wage, 20% chance to have an attacker require two successful attack rolls
++0.15% barter, +20% chance to have an attacker require two successful attack rolls, +50% daily wage
+
+New Trait Event - Reserve becomes Glutton - with event art - This creates a cycle of events, where people in reserves can become gluttons, gluttons can become fat and the fat can be lost over time.  The more people you have in reserve, the more likely this is to happen.
+
 
 Double Tongued Trait 
 - Lowered from 10% to 5% chance to depress company morale each battle
 - Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
-- Characters with this trait can now stop the children's crusade event  
+- Characters with this trait can now stop the children's crusade event - with event art 
 
 Addict Trait: 
 Withdrawals now give +10% Melee Skill as they lash out in anger. Other negatives remain.
@@ -89,13 +116,11 @@ Raises from -5% to -10% chance to hit the head, equivilent to pragmatic
 Unredictable Trait: 
 Raises from +5% to +10% chance to hit the head, equivilent to pragmatic
 
-Other Changes:
+**Other Changes:**
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
-New Event - Reserve becomes Glutton  - This creates a cycle of events, where people in reserves can become gluttons, gluttons can become fat and the fat can be lost over time.  The more people you have in reserve, the more likely this is to happen.
-
 
 
 

@@ -56,6 +56,7 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/smoked_ham_item");
+		_list.push("supplies/smoked_ham_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -86,6 +87,11 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 	{
 		if (_id == "building.marketplace")
 		{
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/smoked_ham_item"
+			});
 			_list.push({
 				R = 0,
 				P = 1.0,

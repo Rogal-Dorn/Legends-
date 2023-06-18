@@ -14,6 +14,7 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/peat_bricks_item");
+		_list.push("trade/peat_bricks_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

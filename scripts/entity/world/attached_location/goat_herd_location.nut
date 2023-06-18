@@ -5,7 +5,7 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 		this.attached_location.create();
 		this.m.Name = "Goat Pens";
 		this.m.ID = "attached_location.goat_herd";
-		this.m.Description = "The goats held here are mainly used for their milk which is then turned into cheese to make it more durable.";
+		this.m.Description = "The goats held here are mainly used for their milk which is then turned into cheese to make it more durable. Contributes cheese, staves, slings, shepards, farmhands and butchers to the local town";
 		this.m.Sprite = "world_goat_herd_01";
 		this.m.SpriteDestroyed = "world_goat_herd_01_ruins";
 	}
@@ -66,6 +66,7 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/goat_cheese_item");
+		_list.push("supplies/goat_cheese_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -78,7 +79,6 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 
 		_list.push("butcher_background");
 		_list.push("daytaler_background");
-		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("farmhand_background");
 		_list.push("shepherd_background");
@@ -102,9 +102,14 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 				S = "supplies/goat_cheese_item"
 			});
 			_list.push({
-				R = 20,
+				R = 0,
 				P = 1.0,
-				S = "weapons/bludgeon"
+				S = "supplies/goat_cheese_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "weapons/legend_sling"
 			});
 			_list.push({
 				R = 10,
@@ -115,6 +120,11 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 60,
 				P = 1.0,
 				S = "weapons/legend_tipstaff"
+			});
+			_list.push({
+				R = 60,
+				P = 1.0,
+				S = "weapons/legend_slingstaff"
 			});
 			_list.push({
 				R = 30,

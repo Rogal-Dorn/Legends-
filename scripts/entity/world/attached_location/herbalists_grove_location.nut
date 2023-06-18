@@ -5,7 +5,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 		this.attached_location.create();
 		this.m.Name = "Herbalist\'s Grove";
 		this.m.ID = "attached_location.herbalists_grove";
-		this.m.Description = "In this remote grove the knowing herbalist collects all kinds of medicinal plants and roots.";
+		this.m.Description = "In this remote grove the knowing herbalist collects all kinds of medicinal plants and roots. Contributes medicine, bandages, mysterious herbs, sickles and herbalists to the local town";
 		this.m.Sprite = "world_herbalists_grove_01";
 		this.m.SpriteDestroyed = "world_herbalists_grove_01_ruins";
 		this.m.IsConnected = false;
@@ -14,6 +14,7 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/medicine_item");
+		_list.push("supplies/medicine_small_item");
 		_list.push("supplies/medicine_small_item");
 	}
 
@@ -87,6 +88,11 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "accessory/bandage_item"
 			});
 			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "accessory/bandage_item"
+			});
+			_list.push({
 				R = 80,
 				P = 1.0,
 				S = "tents/tent_heal"
@@ -107,9 +113,34 @@ this.herbalists_grove_location <- this.inherit("scripts/entity/world/attached_lo
 				S = "accessory/antidote_item"
 			});
 				_list.push({
-				R = 20,
+				R = 0,
 				P = 1.0,
 				S = "weapons/legend_sickle"
+			});
+				_list.push({
+				R = 30,
+				P = 1.1,
+				S = "misc/legend_mistletoe_item"
+			});
+				_list.push({
+				R = 50,
+				P = 1.2,
+				S = "misc/snake_oil_item"
+			});
+				_list.push({
+				R = 70,
+				P = 1.3,
+				S = "misc/mysterious_herbs_item"
+			});
+				_list.push({
+				R = 90,
+				P = 1.4,
+				S = "misc/miracle_drug_item"
+			});
+				_list.push({
+				R = 95,
+				P = 1.5,
+				S = "misc/happy_powder_item"
 			});
 		}
 		else if (_id == "building.specialized_trader")

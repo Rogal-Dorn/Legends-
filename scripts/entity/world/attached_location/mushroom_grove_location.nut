@@ -13,6 +13,7 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/pickled_mushrooms_item");
+		_list.push("supplies/pickled_mushrooms_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -68,12 +69,12 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 				S = "supplies/medicine_item"
 			});
 			_list.push({
-				R = 50,
+				R = 30,
 				P = 1.0,
 				S = "accessory/berserker_mushrooms_item"
 			});
 			_list.push({
-				R = 50,
+				R = 30,
 				P = 1.0,
 				S = "accessory/legend_apothecary_mushrooms_item"
 			});
