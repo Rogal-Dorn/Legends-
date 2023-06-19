@@ -188,6 +188,7 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function onUpdateDraftList( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		
 		local r;
 		r = this.Math.rand(0, 1);
 
@@ -229,19 +230,11 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 
 		local r;
-		r = this.Math.rand(0, 999);
+		r = this.Math.rand(0, 274);
 
 		if (r == 0)
 		{
 			_list.push("legend_ranger_background");
-		}
-
-		local r;
-		r = this.Math.rand(0, 999);
-
-		if (r == 0)
-		{
-			_list.push("legend_druid_background");
 		}
 	}
 
@@ -258,13 +251,9 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onGenerateBro(bro)
 	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
-		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Druid) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Ranger))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
 				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
@@ -276,7 +265,6 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
 				bro.getSkills().update();
 			}
-		}
 	}
 
 	function onBuildPerkTree( _background )

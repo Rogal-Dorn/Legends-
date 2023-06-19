@@ -137,24 +137,23 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 			}
 			items.equip(armor);
 		}
-		if (!::Legends.Mod.ModSettings.getSetting("UnlayeredArmor").getValue())
+
+		foreach( bro in bros )
 		{
-			foreach( bro in bros )
-			{
-				local items = bro.getItems();
-				local armor = items.getItemAtSlot(this.Const.ItemSlot.Body)
-				local tabards = [
-						[0, ""],
-						[1, "tabard/legend_noble_tabard"]
-					]
-					local tabard = this.Const.World.Common.pickLegendArmor(tabards)
-					if (tabard != null && armor != null)
-					{
-						tabard.setVariant(102)
-						armor.setUpgrade(tabard)
-					}
-			}
+			local items = bro.getItems();
+			local armor = items.getItemAtSlot(this.Const.ItemSlot.Body)
+			local tabards = [
+					[0, ""],
+					[1, "tabard/legend_noble_tabard"]
+				]
+				local tabard = this.Const.World.Common.pickLegendArmor(tabards)
+				if (tabard != null && armor != null)
+				{
+					tabard.setVariant(102)
+					armor.setUpgrade(tabard)
+				}
 		}
+
 
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/bread_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/wine_item"));
@@ -251,19 +250,6 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
-				bro.getSkills().update();
-			}
-			else
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
-				bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
-				bro.getSkills().update();
-			}
-
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw))
 			{
 				garbage.push(bro);
@@ -276,6 +262,22 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		}
 	}
 
+	function onGenerateBro(bro)
+	{
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Crusader))
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.75) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 0.75; //1.0 = default
+			bro.getSkills().update();
+		}
+		else
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 1.25; //1.0 = default
+			bro.getSkills().update();
+		}
+	}
+
 	function onBuildPerkTree( _background )
 	{
 		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.LegendMindOverBody);
@@ -284,24 +286,48 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 	function onUpdateDraftList( _list, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if (_list.len() < 5)
+		
+		local r;
+		r = this.Math.rand(0, 1);
+		
+		if (r == 0)
 		{
-			local r;
-			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
-			if (::Math.rand(0, 4) == 0) _list.push("monk_background")
-			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_nun_background")
-			if (::Math.rand(0, 6) == 0 && _gender) _list.push("legend_youngblood_background")
-			if (::Math.rand(0, 8) == 0) _list.push("witchhunter_background")
-			if (::Math.rand(0, 49) == 0) _list.push("legend_crusader_background")
+			_list.push("flagellant_background");
 		}
-		if (_list.len() >= 5)
+
+		r = this.Math.rand(0, 3);
+		
+		if (r == 0)
 		{
-			local r;
-			if (::Math.rand(0, 2) == 0) _list.push("flagellant_background")
-			if (::Math.rand(0, 3) == 0) _list.push("monk_background")
-			if (::Math.rand(0, 4) == 0 && _gender) _list.push("legend_nun_background")
-			if (::Math.rand(0, 5) == 0) _list.push("witchhunter_background")
-			if (::Math.rand(0, 19) == 0) _list.push("legend_crusader_background")
+			_list.push("monk_background");
+		}
+
+		r = this.Math.rand(0, 3);
+		
+		if (r == 0 && _gender)
+		{
+			_list.push("legend_nun_background");
+		}
+
+		r = this.Math.rand(0, 5);
+		
+		if (r == 0)
+		{
+			_list.push("witchhunter_background");
+		}
+
+		r = this.Math.rand(0, 29);
+		
+		if (r == 0)
+		{
+			_list.push("legend_youngblood_background");
+		}
+
+		r = this.Math.rand(0, 49);
+		
+		if (r == 0)
+		{
+			_list.push("legend_crusader_background");
 		}
 	}
 

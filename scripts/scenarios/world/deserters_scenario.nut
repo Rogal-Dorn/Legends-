@@ -299,53 +299,46 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onGenerateBro(bro)
 	{
-		local bros = _roster.getAll();
-
-		foreach( i, bro in bros )
+		local r = this.Math.rand(0, 9);
+		if (r == 0)
 		{
-			local r = this.Math.rand(0, 9);
+			bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
+		}
 
-			if (r == 0)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/dastard_trait"));
-			}
+		if (r == 1)
+		{
+			bro.getSkills().add(this.new("scripts/skills/traits/craven_trait"));
+		}
 
-			if (r == 1)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/craven_trait"));
-			}
+		if (r == 2)
+		{
+			bro.getSkills().add(this.new("scripts/skills/traits/fear_nobles_trait"));
+		}
 
-			if (r == 2)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/fear_nobles_trait"));
-			}
+		if (r == 3)
+		{
+			bro.getSkills().add(this.new("scripts/skills/traits/pessimist_trait"));
+		}
 
-			if (r == 3)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/pessimist_trait"));
-			}
+		if (r == 4)
+		{
+			bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
+		}
 
-			if (r == 4)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/paranoid_trait"));
-			}
+		if (r == 5)
+		{
+			bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
+		}
 
-			if (r == 5)
-			{
-				bro.getSkills().add(this.new("scripts/skills/traits/superstitious_trait"));
-			}
-
-			if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
-			{
-				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
-				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
-				bro.improveMood(1.5, "Is excited at becoming a deserter");
-			}
+		if (!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+		{
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.9);
+			bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.9);
+			bro.improveMood(1.5, "Is excited at becoming a deserter");
 		}
 	}
-
 	function onGetBackgroundTooltip( _background, _tooltip )
 	{
 		_tooltip.push({
