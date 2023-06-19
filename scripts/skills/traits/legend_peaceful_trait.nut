@@ -44,7 +44,7 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]-5[/color] Melee and Ranged Skill"
 			},
-			(
+			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
