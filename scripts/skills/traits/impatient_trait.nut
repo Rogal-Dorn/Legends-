@@ -46,7 +46,6 @@ this.impatient_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				icon = "ui/icons/melee_defense.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Melee Defense"
 			}
-			);
 		];
 	}
 
