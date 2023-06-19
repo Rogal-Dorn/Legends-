@@ -421,7 +421,15 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (_upgrade == null) return true;
 		if (_upgrade != null && this.m.Blocked[_upgrade.getType()]) return false;
 
-		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		local oldIndex;
+		if (this.Tactical.isActive())
+		{
+			if(!this.Tactical.State.isScenarioMode())
+			{
+			local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+			}
+		}
+		
 		if (oldIndex != null) oldIndex = oldIndex.index
 
 		local oldItem;
