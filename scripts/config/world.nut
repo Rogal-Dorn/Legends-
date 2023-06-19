@@ -38,7 +38,9 @@ gt.Const.World.TerrainType <- {
 	Shore = 16,
 	Desert = 17,
 	Oasis = 18,
-	COUNT = 19
+	SwampGreen = 19,
+	SwampForest = 20,
+	COUNT = 21
 };
 gt.Const.World.TerrainScript <- [
 	"",
@@ -59,7 +61,9 @@ gt.Const.World.TerrainScript <- [
 	"world.tile.steppe",
 	"world.tile.ocean",
 	"world.tile.desert",
-	"world.tile.oasis"
+	"world.tile.oasis",
+	"world.tile.swamp_green",
+	"world.tile.swamp_forest",
 ];
 gt.Const.World.TerrainTypeSpeedMult <- [
 	0.0,
@@ -80,7 +84,9 @@ gt.Const.World.TerrainTypeSpeedMult <- [
 	1.0,
 	0.5,
 	0.75,
-	0.9
+	0.9,
+	0.64,
+	0.64,
 ];
 gt.Const.World.TerrainTypeVisibilityMult <- [
 	1.0,
@@ -101,7 +107,9 @@ gt.Const.World.TerrainTypeVisibilityMult <- [
 	1.0,
 	1.0,
 	1.0,
-	0.9
+	0.9,
+	0.9,
+	0.9,
 ];
 gt.Const.World.TerrainTypeVisionRadiusMult <- [
 	1.0,
@@ -122,7 +130,9 @@ gt.Const.World.TerrainTypeVisionRadiusMult <- [
 	1.0,
 	1.0,
 	1.0,
-	1.0
+	1.0,
+	1.0,
+	1.0,
 ];
 gt.Const.World.TerrainFoodConsumption <- [
 	0.0,
@@ -143,7 +153,9 @@ gt.Const.World.TerrainFoodConsumption <- [
 	1.1,
 	1.0,
 	1.5,
-	1.0
+	1.0,
+	0.9,
+	0.9
 ];
 gt.Const.World.TerrainTypeLineBattle <- [
 	false,
@@ -154,6 +166,8 @@ gt.Const.World.TerrainTypeLineBattle <- [
 	false,
 	false,
 	false,
+	true,
+	true,
 	true,
 	true,
 	true,
@@ -192,7 +206,9 @@ gt.Const.World.TerrainTacticalType <- {
 	Desert = 22,
 	DesertHills = 23,
 	Oasis = 24,
-	COUNT = 25
+	SwampGreen = 25,
+	SwampForest = 26,
+	COUNT = 27
 };
 gt.Const.World.TerrainTacticalTemplate <- [
 	"",
@@ -219,7 +235,9 @@ gt.Const.World.TerrainTacticalTemplate <- [
 	"tactical.quarry",
 	"tactical.desert",
 	"tactical.hills_desert",
-	"tactical.oasis"
+	"tactical.oasis",
+	"tactical.swamp_green",
+	"tactical.swamp_forest"
 ];
 gt.Const.World.TerrainTacticalImage <- [
 	"",
@@ -246,7 +264,9 @@ gt.Const.World.TerrainTacticalImage <- [
 	"engage/engage_quarry",
 	"engage/engage_desert",
 	"engage/engage_desert_hills",
-	"engage/engage_oasis"
+	"engage/engage_oasis",
+	"engage/engage_swamp_green",
+	"engage/engage_swamp_forest"
 ];
 gt.Const.World.TerrainSettlementImages <- [
 	{},
@@ -342,6 +362,18 @@ gt.Const.World.TerrainSettlementImages <- [
 		Background = "ui/settlements/village_bg_10",
 		Ramp = "ui/settlements/ramp_07",
 		Mood = null
+	},
+	{
+		Foreground = "ui/settlements/foreground_06",
+		Background = "ui/settlements/village_bg_07",
+		Ramp = "ui/settlements/ramp_06",
+		Mood = "ui/settlements/mood_swamp"
+	},
+	{
+		Foreground = "ui/settlements/foreground_06",
+		Background = "ui/settlements/village_bg_07",
+		Ramp = "ui/settlements/ramp_06",
+		Mood = "ui/settlements/mood_swamp"
 	}
 ];
 gt.Const.World.ZLevel <- {
