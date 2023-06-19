@@ -166,13 +166,9 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 		bro.improveMood(0.5, "Learned a new skill");
 	}
 
-	function onUpdateHiringRoster( _roster )
-	{
-		local garbage = [];
-		local bros = _roster.getAll();
 
-		foreach( i, bro in bros )
-		{
+	function onGenerateBro(bro)
+	{
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.bright") || bro.getSkills().hasSkill("trait.pragmatic"))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.8);
@@ -183,7 +179,6 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.3);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 1.3);
 			}
-		}
 	}
 
 	function onBuildPerkTree( _background )

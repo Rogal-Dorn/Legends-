@@ -4,7 +4,7 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 	{
 		this.m.ID = "scenario.trader";
 		this.m.Name = "Trading Caravan";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Not a Warrior:[/color] Start with no renown, every non-combat recruit gains the Peaceful perk. Professional soldiers will cost 25% more and be less eager to stick around if things get tough. \n[color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Peddlers cost 25% less.";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_41.png[/img][/p]You are running a small trading caravan and have most of your crowns invested into trading goods. But the roads have become dangerous - brigands and greenskins lay in ambush, and there are rumors of even worse things out there.\n\n [color=#bcad8c]Not a Warrior:[/color] Start with no renown, every non-combat recruit gains the Peaceful perk. Professional soldiers will cost 25% more and have a high chance of having additional bad traits and be less eager to stick around if things get tough. Cannot recruit outlaws.\n [color=#bcad8c]Avatar:[/color] Start with a cunning and wealthy merchant, the caravan will be dissolved if they die.\n [color=#bcad8c]Bribery:[/color] Pay off human enemies instead of fighting them. Peddlers cost 25% less.";
 		this.m.Difficulty = 1;
 		this.m.Order = 300;
 		this.m.IsFixedLook = true;
@@ -186,7 +186,20 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		local garbage = [];
 		foreach( i, bro in bros )
 		{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
+			{
+				garbage.push(bro);
+			}
+		}
+		foreach( g in garbage )
+		{
+			_roster.remove(g);
+		}
+	}
+
+	function onGenerateBro(bro)
+	{
+		if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Combat))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.25)
 				bro.getBaseProperties().DailyWageMult *= 1.25;
@@ -231,35 +244,21 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 				bro.getBaseProperties().DailyWageMult *= 1.25;
 				bro.getSkills().update();
 			}
-
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Outlaw)) //no outlaws
-			{
-				garbage.push(bro);
-			}
-		}
-		foreach( g in garbage )
-		{
-			_roster.remove(g);
-		}
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if (_list.len() < 10)
-		{
-			return;
-		}
 
 		local r;
-		r = this.Math.rand(0, 4);
+		r = this.Math.rand(0, 2);
 
 		if (r == 0)
 		{
 			_list.push("peddler_background");
 		}
 
-		r = this.Math.rand(0, 2);
+		r = this.Math.rand(0, 1);
 
 		if (r == 0)
 		{
@@ -271,6 +270,13 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 		if (r == 0)
 		{
 			_list.push("sellsword_background");
+		}
+
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			_list.push("hedge_knight_background");
 		}
 	}
 

@@ -111,6 +111,7 @@ this.starting_scenario <- {
 
 	function onInit()
 	{
+		this.logInfo("bruh");
 		this.m.StaticRelationsToFaction.resize(this.Const.FactionType.len());
 		if (this.World.State.getPlayer() != null)
 		{
@@ -237,4 +238,28 @@ this.starting_scenario <- {
 		_background.addPerk(_perk, _row, isRefundable);
 		if (!isRefundable) _background.getPerk(_perk).IsRefundable = false;
 	}
+
+	function onGenerateBro(bro)
+	{
+	}
+
+	function addBroToRoster(_roster, background, chance)
+	{
+		local multiplier = 1;
+		this.logInfo(_roster.getAll().len());
+		if (_roster.getAll().len() < 8)
+		{
+			multiplier = 2; // Short little change to make these spawns less common in tiny villages
+		}
+
+		local r;
+		r = this.Math.rand(0, chance * multiplier);
+		if (r == 0)
+		{
+			local bro = _roster.create("scripts/entity/tactical/player")
+			bro.setStartValuesEx([background]);
+			this.World.Assets.getOrigin().onGenerateBro(bro);
+		}
+	}
+
 };
