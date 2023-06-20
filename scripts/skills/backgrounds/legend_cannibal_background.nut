@@ -75,36 +75,36 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				2,
-				8
+				5,
+				10
 			],
 			Bravery = [
-				5,
-				7
+				0,
+				0
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				5,
-				10
+				10,
+				20
 			],
 			RangedSkill = [
 				-3,
 				0
 			],
 			MeleeDefense = [
-				0,
-				4
+				-5,
+				0
 			],
 			RangedDefense = [
 				0,
 				4
 			],
 			Initiative = [
-				5,
-				12
+				10,
+				20
 			]
 		};
 		return c;

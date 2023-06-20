@@ -9,8 +9,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 		this.m.BackgroundDescription = "Shieldmaidens are fierce female warriors from the northern settlements.";
 		this.m.GoodEnding = "The shieldmaiden, %name% stayed with %companyname% a little longer after your departure, netting herself a small horde of crowns. Nobody truely knew what happened to her next, but she was last seen hiring other female fighters not far from where you picked her up so long ago.";
 		this.m.BadEnding = "As %companyname% declined in strength, %name% was one of the first to take charge. Her defensive nature led to inaction and ended up with most of the company being whittled down by goblin arrows in a swamp, many with their shields still clutched in their hands under the neverending rain of projectiles.";
-		this.m.HiringCost = 250;
-		this.m.DailyCost = 30;
+		this.m.HiringCost = 450;
+		this.m.DailyCost = 35;
 		this.m.Excluded = [
 			"trait.asthmatic",
 			"trait.clumsy",
@@ -90,12 +90,12 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				12
 			],
 			MeleeSkill = [
-				4,
-				6
+				2,
+				4
 			],
 			RangedSkill = [
-				6,
-				10
+				4,
+				8
 			],
 			MeleeDefense = [
 				8,

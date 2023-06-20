@@ -6,7 +6,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_ranged";
 		this.m.Name = "Arbalester";
 		this.m.Icon = "ui/backgrounds/background_nobleranged.png";
-		this.m.HiringCost = 300;
+		this.m.HiringCost = 900;
 		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
@@ -129,8 +129,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				5
 			],
 			Stamina = [
-				5,
-				5
+				0,
+				0
 			],
 			MeleeSkill = [
 				3,
@@ -149,8 +149,8 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				12
 			],
 			Initiative = [
-				5,
-				5
+				-5,
+				-5
 			]
 		};
 		return c;
