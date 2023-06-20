@@ -259,6 +259,11 @@ layers = [
 {"name": "anatomist_robe",                            "layer": "cloth", "min": 1, "max": 1, "value" : 75, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_robe", \
     "title" :  "Anatomist Robe", \
     "desc" :  "A dark robe and gloves worn by those who tinker with flesh and filth", \
+    "adesc" :"A dark robe"
+},
+{"name": "wanderers_coat",                            "layer": "cloth", "min": 1, "max": 1, "value" : 90, "con" : 45, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wanderers_coat", \
+    "title" :  "Wanderer Coat", \
+    "desc" :  "A coat well suited to wandering the lands", \
     "adesc" :""
 },
 {"name": "legend_robes_nun",                              "layer": "cloth", "min": 1, "max": 2, "value" : 25, "con" : 22, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_robes", "variants" : [6,7], \
@@ -416,6 +421,11 @@ layers = [
 {"name": "legend_armor_mail_shirt",                       "layer": "chain", "min": 1, "max": 1, "value" : 375, "con" : 50, "stam" : -6, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Basic Mail Shirt", \
     "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.", \
+    "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
+},
+{"name": "wild_scale",                       "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather", \
+    "title" :  "Wild Scale", \
+    "desc" :  "A well crafted scale mail shirt", \
     "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
 },
 {"name": "legend_armor_mail_shirt_simple",                "layer": "chain", "min": 1, "max": 1, "value" : 250, "con" : 25, "stam" : -3, "impactSound" : "chain", "invSound" : "leather", \
@@ -589,6 +599,11 @@ layers = [
     "title" :  "Leather Scale Armor", \
     "desc" :  "A thick leather scale armor for added protection.", \
     "adesc" : "Includes scaled leather armor."
+},
+{"name": "legend_noble_scale",                    "layer": "plate", "min": 1, "max": 6, "value" : 2000, "con" : 80, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Noble Scale", \
+    "desc" :  "A very well crafted scale mail armor", \
+    "adesc" : "Includes scaled  armor."
 },
 {"name": "legend_armor_plate_ancient_chest",              "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 105, "stam" : -18, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Ancient Breastplate", \
@@ -839,6 +854,11 @@ layers = [
     "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.", \
     "adesc" : "Has a stout wool cloak"
 },
+{"name": "decorative_hood",           "layer": "cloak", "min": 1, "max": 11, "value" : 50, "con" : 15, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "decorative_hood",  \
+    "title" :  "Decorative Cowl", \
+    "desc" :  "A hooded cowl with decorated edges, quite dashing", \
+    "adesc" : "Has a dashing cowl"
+},
 {"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 50, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_hood",\
     "title" :  "Anatomist Hood", \
     "desc" :  "A dark hood for those who work with filth", \
@@ -862,6 +882,11 @@ layers = [
 {"name": "legend_armor_cloak_noble",           "layer": "cloak", "min": 0, "max": 0, "value" : 3000, "con" : 25, "stam" : -2, "bravery" : 3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [1,2,4,5,6,7,25], \
     "title" :  "Noble Cloak", \
     "desc" :  "A fine cloak made of light foreign silk, provides protection and looks great. ", \
+    "adesc" : "Has a flowing light cloak"
+},
+{"name": "dukes_cloak",           "layer": "cloak", "min": 1, "max": 4, "value" : 2000, "con" : 20, "stam" : -2, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "dukes_cloak",\
+    "title" :  "Dukes Cloak", \
+    "desc" :  "A refined cloak for the distinguished cloak appreciator", \
     "adesc" : "Has a flowing light cloak"
 },
 {"name": "legend_sash",           "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 3, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "sash",\
