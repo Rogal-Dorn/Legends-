@@ -2,6 +2,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	m = {
 		BaseMovementSpeed = 100.0,
 		Destination = null,
+		Origin = null,
 		Path = null,
 		LastFootprintTime = 0.0,
 		LastFootprintType = 1,
@@ -65,6 +66,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function setDestination( _dest )
 	{
 		this.m.Destination = _dest;
+	}
+	
+	function setOrigin( _origin )
+	{
+		this.m.Destination = _origin;
 	}
 
 	function setPath( _path )

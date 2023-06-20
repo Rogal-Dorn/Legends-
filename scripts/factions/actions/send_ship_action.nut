@@ -1,11 +1,12 @@
 this.send_ship_action <- this.inherit("scripts/factions/faction_action", {
 	m = {
-		Settlement = null
+		Settlement = null,
+		Dest = null
 	},
 	function create()
 	{
 		this.m.ID = "send_ship_action";
-		this.m.Cooldown = this.Math.rand(120, 240);
+		this.m.Cooldown = this.Math.rand(60, 120);
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}
@@ -109,54 +110,99 @@ this.send_ship_action <- this.inherit("scripts/factions/faction_action", {
 				break;
 		}
 		local max = min + this.Math.round(this.m.Settlement.getResources() * 0.05);
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+				{
+					local town = this.m.Settlement;
+					foreach (building in town.getBuildings())
+					{
+						local stash = building.getStash()
+						if (stash != null)
+						{
+							foreach (item in stash.getItems())
+							{
+							if (item == null) continue;
 
-		local r = this.Math.rand(min,max);
-		for( local j = 0; j < r; j = ++j )
-		{
-			local items = [
-				[2, "supplies/bread_item"],
-				[2, "supplies/roots_and_berries_item"],
-				[2, "supplies/dried_fruits_item"],
-				[2, "supplies/ground_grains_item"],
-				[2, "supplies/bread_item"],
-				[2, "supplies/dried_fish_item"],
-				[2, "supplies/beer_item"],
-				[2, "supplies/bread_item"],
-				[2, "supplies/goat_cheese_item"],
-				[2, "supplies/legend_fresh_fruit_item"],
-				[2, "supplies/legend_fresh_meat_item"],
-				[2, "supplies/legend_pie_item"],
-				[2, "supplies/legend_porridge_item"],
-				[2, "supplies/legend_pudding_item"],
-				[2, "supplies/mead_item"],
-				[2, "supplies/medicine_item"],
-				[2, "supplies/pickled_mushrooms_item"],
-				[2, "supplies/preserved_mead_item"],
-				[2, "supplies/smoked_ham_item"],
-				[2, "supplies/wine_item"],
-				[1, "trade/amber_shards_item"],
-				[3, "trade/cloth_rolls_item"],
-				[1, "trade/copper_ingots_item"],
-				[2, "trade/dies_item"],
-				[1, "trade/legend_cooking_spices_trade_item"],
-				[1, "trade/furs_item"],
-				[1, "trade/peat_bricks_item"],
-				[3, "trade/quality_wood_item"],
-				[2, "trade/salt_item"],
-				[1, "trade/uncut_gems_item"],
-				[1, "trade/gold_ingots_item"],
-				[1, "trade/tin_ingots_item"],
-				[1, "trade/iron_ingots_item"]
-			]
 
-			local item = this.Const.World.Common.pickItem(items)
-			party.addToInventory(item);
+								if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+								{
+									if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+									{
+										item.removeSelf();
+										party.addToInventory(item);
+										
+									}
+									else
+									{
+										local r = this.Math.rand(1,10);
+										if (r == 1)
+										{
+										item.removeSelf();								
+										party.addToInventory(item);
+										}
+									}
+
+								}
+							}
+						}
+					}
+					local resources = this.Math.max(1, this.Math.round(0.025 * town.getResources()));
+					town.setResources(town.getResources() - resources);
+					party.setResources(resources);
+					this.logWarning("Exporting " + resources + " resources and " + party.getInventory().len() + "items from " + town.getName() + "via a ship bound for " + this.m.Dest.getName() + " town")
+				}
+
+				else
+				{
+				local r = this.Math.rand(min,max);
+				for( local j = 0; j < r; j = ++j )
+				{
+					local items = [
+						[2, "supplies/bread_item"],
+						[2, "supplies/roots_and_berries_item"],
+						[2, "supplies/dried_fruits_item"],
+						[2, "supplies/ground_grains_item"],
+						[2, "supplies/bread_item"],
+						[2, "supplies/dried_fish_item"],
+						[2, "supplies/beer_item"],
+						[2, "supplies/bread_item"],
+						[2, "supplies/goat_cheese_item"],
+						[2, "supplies/legend_fresh_fruit_item"],
+						[2, "supplies/legend_fresh_meat_item"],
+						[2, "supplies/legend_pie_item"],
+						[2, "supplies/legend_porridge_item"],
+						[2, "supplies/legend_pudding_item"],
+						[2, "supplies/mead_item"],
+						[2, "supplies/medicine_item"],
+						[2, "supplies/pickled_mushrooms_item"],
+						[2, "supplies/preserved_mead_item"],
+						[2, "supplies/smoked_ham_item"],
+						[2, "supplies/wine_item"],
+						[1, "trade/amber_shards_item"],
+						[3, "trade/cloth_rolls_item"],
+						[1, "trade/copper_ingots_item"],
+						[2, "trade/dies_item"],
+						[1, "trade/legend_cooking_spices_trade_item"],
+						[1, "trade/furs_item"],
+						[1, "trade/peat_bricks_item"],
+						[3, "trade/quality_wood_item"],
+						[2, "trade/salt_item"],
+						[1, "trade/uncut_gems_item"],
+						[1, "trade/gold_ingots_item"],
+						[1, "trade/tin_ingots_item"],
+						[1, "trade/iron_ingots_item"]
+					]
+
+					local item = this.Const.World.Common.pickItem(items)
+					party.addToInventory(item);
+				}
+			
 		}
 
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
 		local swim = this.new("scripts/ai/world/orders/swim_order");
+		this.m.Dest = destination;
 		swim.setDestination(destination);
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
 		local dock = this.new("scripts/ai/world/orders/dock_order");

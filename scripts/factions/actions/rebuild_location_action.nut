@@ -5,7 +5,7 @@ this.rebuild_location_action <- this.inherit("scripts/factions/faction_action", 
 	function create()
 	{
 		this.m.ID = "rebuild_location_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}

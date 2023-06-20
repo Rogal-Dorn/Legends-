@@ -3,7 +3,7 @@ this.patrol_area_action <- this.inherit("scripts/factions/faction_action", {
 	function create()
 	{
 		this.m.ID = "patrol_area_action";
-		this.m.Cooldown = 400.0;
+		this.m.Cooldown = 200.0;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}

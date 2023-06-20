@@ -6,7 +6,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 	function create()
 	{
 		this.m.ID = "send_caravan_action";
-		this.m.Cooldown = 300.0;
+		this.m.Cooldown = 100.0;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
 	}
@@ -128,38 +128,43 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			local resources = this.Math.max(1, this.Math.round(0.025 * this.m.Start.getResources()));
-			this.m.Start.setResources(this.m.Start.getResources() - resources);
-			party.setResources(resources);
-
-			local r = this.Math.rand(1,3);
-			for( local j = 0; j < r; j = ++j )
+			local town = this.m.Start;
+			foreach (building in town.getBuildings())
 			{
-				local items = [
-					[0, "supplies/bread_item"],
-					[0, "supplies/roots_and_berries_item"],
-					[0, "supplies/dried_fruits_item"],
-					[0, "supplies/ground_grains_item"],
-					[0, "supplies/dried_fish_item"],
-					[0, "supplies/beer_item"],
-					[0, "supplies/goat_cheese_item"],
-					[1, "supplies/legend_fresh_fruit_item"],
-					[1, "supplies/legend_fresh_meat_item"],
-					[1, "supplies/legend_pie_item"],
-					[1, "supplies/legend_porridge_item"],
-					[1, "supplies/legend_pudding_item"],
-					[0, "supplies/mead_item"],
-					[0, "supplies/medicine_item"],
-					[0, "supplies/pickled_mushrooms_item"],
-					[0, "supplies/preserved_mead_item"],
-					[0, "supplies/smoked_ham_item"],
-					[0, "supplies/wine_item"]
-				]
+				local stash = building.getStash()
+				if (stash != null)
+				{
+					foreach (item in stash.getItems())
+					{
+					if (item == null) continue;
 
-				local item = this.Const.World.Common.pickItem(items)
-				party.addToInventory(item);
+
+						if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+						{
+							if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+							{
+								party.addToInventory(item);
+								
+							}
+							else
+							{
+								local r = this.Math.rand(1,10);
+								if (r == 1)
+								{							
+								party.addToInventory(item);
+								}
+							}
+
+						}
+					}
+				}
 			}
+			local resources = this.Math.max(1, this.Math.round(0.025 * town.getResources()));
+			//town.setResources(town.getResources() - resources);
+			party.setResources(resources);
+			this.logWarning("Exporting " + resources + " resources and " + party.getInventory().len() + "items from " + town.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
 		}
+
 		else
 		{
 			local r = this.Math.rand(1, 4);
@@ -187,6 +192,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
 		local move = this.new("scripts/ai/world/orders/move_order");
 		move.setDestination(this.m.Dest.getTile());
+		move.setOrigin(this.m.Start);
 		move.setRoadsOnly(true);
 		local unload = this.new("scripts/ai/world/orders/unload_order");
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
