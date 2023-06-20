@@ -142,8 +142,8 @@ this.female_beggar_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				5,
+				5
 			],
 			RangedDefense = [
 				0,

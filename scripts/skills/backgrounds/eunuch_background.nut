@@ -78,15 +78,15 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		local c = {
 			Hitpoints = [
 				0,
-				0
+				5
 			],
 			Bravery = [
 				-5,
-				-5
+				5
 			],
 			Stamina = [
-				0,
-				0
+				-5,
+				5
 			],
 			MeleeSkill = [
 				0,
@@ -105,8 +105,8 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				0
 			],
 			Initiative = [
-				-5,
-				-5
+				0,
+				10
 			]
 		};
 		return c;

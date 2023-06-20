@@ -109,7 +109,7 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Bravery = [
 				-5,
-				-5
+				5
 			],
 			Stamina = [
 				-2,
@@ -129,11 +129,11 @@ this.female_servant_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			RangedDefense = [
 				2,
-				0
+				5
 			],
 			Initiative = [
 				5,
-				0
+				10
 			]
 		};
 		return c;
