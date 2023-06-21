@@ -13,8 +13,11 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_belt_and_shield_01.png";
 		this.m.SpriteFront = "upgrade_belt_and_shield";
+		this.m.SpriteBack = null;
 		this.m.SpriteDamagedFront = "upgrade_belt_and_shield_damaged";
+		this.m.SpriteDamagedBack = null;
 		this.m.SpriteCorpseFront = "upgrade_belt_and_shield_dead";
+		this.m.SpriteCorpseBack = null;
 
 		this.m.Value = 2000;
 		this.m.Condition = 10;

@@ -49,20 +49,24 @@ Cloth:
 -Anatomist Robe 
 -Wanderer's Coat
 -Knightly Robe in 8 colours 
+-Magician's Robe expanded to 6 colours
 
 Plate:
 -Heavy Mail in 14 colours
 -Noble Scale in 6 colours 
+-Undertaker's Apron
 
 Chain:
 -Wild scale 
 
 Cloak: 
--Anatomist Hood 
+-Anatomist Hood
+-Decorative Cowl in 11 colours 
+-Duke's Cloak in 4 colours
+-Fur Cloak in 4 colours  
 -Relic Hood  in 10 colours 
 -Religious Scarf in 4 colours 
--Decorative cowl in 11 colours 
--Duke's Cloak in 4 colours
+-Tabbed Cowl
 
 Attachments:
 - Amulet Coif - +3 resolve and taunts enemies in battle 
