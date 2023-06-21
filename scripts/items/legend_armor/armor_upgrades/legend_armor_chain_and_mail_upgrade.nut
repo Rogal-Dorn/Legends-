@@ -13,8 +13,11 @@ this.legend_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_chain_and_mail_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_chain_and_mail_01.png";
 		this.m.SpriteFront = "upgrade_chain_and_mail";
+		this.m.SpriteBack = null;
 		this.m.SpriteDamagedFront = "upgrade_chain_and_mail_damaged";
+		this.m.SpriteDamagedBack = null;
 		this.m.SpriteCorpseFront = "upgrade_chain_and_mail_dead";
+		this.m.SpriteCorpseBack = null;
 		this.m.Value = 3000;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;

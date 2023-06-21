@@ -2225,7 +2225,8 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[1, "top/legend_helmet_faceplate_pointed"],
 			],
 			Vanity = [
-			[19, "vanity/legend_helmet_chaperon"],
+			[1, "vanity/legend_helmet_chaperon"],
+			
 			]
 		}]
 	},

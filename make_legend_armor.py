@@ -246,7 +246,7 @@ layers = [
     "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.", \
     "adesc" :""
 },
-{"name": "legend_robes_magic",                            "layer": "cloth", "min": 3, "max": 3, "value" : 100, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_robes", \
+{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 6, "value" : 100, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe", \
     "title" :  "Magician\'s Robe", \
     "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
     "adesc" :""
@@ -256,13 +256,13 @@ layers = [
     "desc" :  "A soft shiny robe worn by practictioners of the arts", \
     "adesc" :""
 },
-{"name": "anatomist_robe",                            "layer": "cloth", "min": 1, "max": 1, "value" : 75, "con" : 40, "stam" : -3, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_robe", \
-    "title" :  "Anatomist Robe", \
+{"name": "anatomist_robe",                            "layer": "cloth", "min": 1, "max": 1, "value" : 350, "con" : 70, "stam" : -7, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_robe", \
+    "title" :  "Anatomist\'s Robe", \
     "desc" :  "A dark robe and gloves worn by those who tinker with flesh and filth", \
     "adesc" :"A dark robe"
 },
-{"name": "wanderers_coat",                            "layer": "cloth", "min": 1, "max": 1, "value" : 90, "con" : 45, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wanderers_coat", \
-    "title" :  "Wanderer Coat", \
+{"name": "wanderers_coat",                            "layer": "cloth", "min": 1, "max": 1, "value" : 120, "con" : 45, "stam" : -4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wanderers_coat", \
+    "title" :  "Wanderer\'s Coat", \
     "desc" :  "A coat well suited to wandering the lands", \
     "adesc" :""
 },
@@ -339,7 +339,7 @@ layers = [
     "adesc" : ""
 },
 {"name": "legend_knightly_robe",                 "layer": "cloth", "min": 1, "max": 8, "value" : 200, "con" : 60, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_knightly_robe", \
-    "title" : "Knightly Robe", \
+    "title" : "Knight\'s Robe", \
     "desc" :  "A padded robe designed to go under armor and absorb blows", \
     "adesc" : ""
 },
@@ -423,7 +423,7 @@ layers = [
     "desc" :  "A basic mail shirt. Offers decent and affordable protection against slashing and piercing attacks.", \
     "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
 },
-{"name": "wild_scale",                       "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather", \
+{"name": "wild_scale",                              "layer": "chain", "min": 1, "max": 1, "value" : 2000, "con" : 60, "stam" : -6, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Wild Scale", \
     "desc" :  "A well crafted scale mail shirt", \
     "adesc" : "Includes a basic mail shirt that offers good protection against slashing and piercing attacks."
@@ -528,7 +528,11 @@ layers = [
     "adesc" : "Includes a well-crafted leather jacket. Light to wear but very sturdy.", \
     "named" : True, "rminStam" : 1, "rmaxStam": 2, "rminCond" : 35, "rmaxCond" : 45,  "names" : Names + ["Leather Cuirass", "Leather Armor", "Skin", "Peel", "Guard", "Coat", "Nightcloak", "Black", "Dark Omen", "Toadskin", "Ogreskin"]
 },
-
+{"name": "undertakers_apron",                                  "layer": "plate", "min": 1, "max": 1, "value" : 60, "con" : 35, "stam" : -4, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Undertakers Apron", \
+    "desc" :  "A leather apron usually worn by an undertaker", \
+    "adesc" :""
+},
 {"name": "legend_armor_leather_jacket_simple",            "layer": "plate", "min": 1, "max": 6, "value" : 30, "con" : 15, "stam" : -2, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Simple Leather Jacket", \
     "desc" :  "A simple leather jacket for minimal protection.", \
@@ -600,11 +604,7 @@ layers = [
     "desc" :  "A thick leather scale armor for added protection.", \
     "adesc" : "Includes scaled leather armor."
 },
-{"name": "legend_noble_scale",                    "layer": "plate", "min": 1, "max": 6, "value" : 2000, "con" : 80, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", \
-    "title" :  "Noble Scale", \
-    "desc" :  "A very well crafted scale mail armor", \
-    "adesc" : "Includes scaled  armor."
-},
+
 {"name": "legend_armor_plate_ancient_chest",              "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 105, "stam" : -18, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Ancient Breastplate", \
     "desc" :  "A tarnished thick breastplate of ancient origin.", \
@@ -717,6 +717,11 @@ layers = [
     "title" :  "Coat of Scales", \
     "desc" :  "A heavy armor made of thick, overlapping metal scales covering most of the body.", \
     "adesc" : "Includes heavy armor made of thick, overlapping metal scales."
+},
+{"name": "legend_noble_scale",                    "layer": "plate", "min": 1, "max": 6, "value" : 2000, "con" : 80, "stam" : -10, "impactSound" : "leather", "invSound" : "leather", \
+    "title" :  "Noble Scale", \
+    "desc" :  "A very well crafted scale mail armor", \
+    "adesc" : "Includes scaled armor."
 },
 {"name": "legend_armor_scale_coat_named",                 "layer": "plate", "min": 1, "max": 1, "value" : 5000, "con" : 160, "stam" : -22, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "", \
@@ -849,6 +854,11 @@ layers = [
     "desc" :  "A cloak of dark wool that wraps around the shoulders.", \
     "adesc" : "Includes a dark wooly cloak"
 },
+{"name": "fur_cloak",           "layer": "cloak", "min": 1, "max": 4, "value" : 120, "con" : 35, "stam" : -6, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "fur_cloak",\
+    "title" :  "Fur Cloak", \
+    "desc" :  "A cloak made of rough chain and the fur of a beast", \
+    "adesc" : "Includes a fur cloak"
+},
 {"name": "legend_armor_cloak_common",           "layer": "cloak", "min": 0, "max": 0, "value" : 100, "con" : 10, "stam" : -1, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak", "variants" : [8,9,10,11,12,13,14,21,22,23,32,33,34], \
     "title" :  "Simple Cloak", \
     "desc" :  "A rustic cloak made of strong warm wool, provides some small protection, from the weather if nothing else.", \
@@ -859,7 +869,12 @@ layers = [
     "desc" :  "A hooded cowl with decorated edges, quite dashing", \
     "adesc" : "Has a dashing cowl"
 },
-{"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 50, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_hood",\
+{"name": "tabbed_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 40, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "tabbed_hood",  \
+    "title" :  "Tabbed Cowl", \
+    "desc" :  "A hooded cowl with tabbed edges", \
+    "adesc" : "Has a dour cowl"
+},
+{"name": "anatomist_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 150, "con" : 30, "stam" : -2, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "anatomist_hood",\
     "title" :  "Anatomist Hood", \
     "desc" :  "A dark hood for those who work with filth", \
     "adesc" : "Has a dark hood for working with entrails"
@@ -896,7 +911,12 @@ layers = [
 },
 {"name": "legend_southern_scarf",           "layer": "cloak", "min": 1, "max": 17, "value" : 100, "con" : 5, "stam" : 0, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "southern_scarf",\
     "title" :  "Southern Scarf", \
-    "desc" :  "A cloak of dark wool that wraps around the shoulders.", \
+    "desc" :  "A scarf that wraps around the shoulders.", \
+    "adesc" : "Includes a dark wooly cloak"
+},
+{"name": "legend_religious_scarf",           "layer": "cloak", "min": 1, "max": 4, "value" : 60, "con" : 10, "stam" : 0, "bravery" : 1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_religious_scarf",\
+    "title" :  "Religious Scarf", \
+    "desc" :  "An adorned scarf of dark wool that wraps around the shoulders.", \
     "adesc" : "Includes a dark wooly cloak"
 },
 {"name": "legend_animal_pelt",           "layer": "cloak", "min": 1, "max": 8, "value" : 250, "con" : 15, "stam" : -2, "bravery" : 2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "animal_pelt",\
