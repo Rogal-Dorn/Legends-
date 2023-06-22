@@ -4119,6 +4119,20 @@ this.tooltip_events <- {
 				}
 			];
 
+		case "world-town-screen.main-dialog-module.Blackmarket":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Black Market"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "A shady alleyway filled with shadier individuals - deals for luxury and \'loaned\' items can be made here, for a price."
+				}
+			];
+
 		case "world-town-screen.main-dialog-module.Weaponsmith":
 			return [
 				{
