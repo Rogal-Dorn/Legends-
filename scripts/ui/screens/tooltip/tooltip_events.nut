@@ -4129,7 +4129,7 @@ this.tooltip_events <- {
 				{
 					id = 2,
 					type = "description",
-					text = "A shady alleyway filled with shadier individuals - deals for luxury and \'loaned\' items can be made here, for a price."
+					text = "A shady setup populated with shadier individuals - deals for luxuries, \'loaned\' items and curiosities can be made here, for a price."
 				}
 			];
 
