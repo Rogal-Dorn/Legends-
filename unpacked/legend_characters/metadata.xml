@@ -785,8 +785,8 @@
 	<sprite id="upgrade_spiked_collar" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_spiked_collar.png" left="-44" right="50" top="-53" bottom="13" />
 	<sprite id="upgrade_spiked_collar_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_spiked_collar_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 	<sprite id="upgrade_spiked_collar_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_spiked_collar_dead.png" left="-57" right="59" top="-53" bottom="55" />
-	<sprite id="upgrade_shield_and_belt" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_shield_and_belt.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_shield_and_belt_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_shield_and_belt_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-	<sprite id="upgrade_shield_and_belt_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_shield_and_belt_dead.png" left="-57" right="59" top="-53" bottom="55" />
+	<sprite id="upgrade_belt_and_shield" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield.png" left="-44" right="50" top="-53" bottom="13" />
+	<sprite id="upgrade_belt_and_shield_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+	<sprite id="upgrade_belt_and_shield_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_belt_and_shield_dead.png" left="-57" right="59" top="-53" bottom="55" />
 		
 </brush>

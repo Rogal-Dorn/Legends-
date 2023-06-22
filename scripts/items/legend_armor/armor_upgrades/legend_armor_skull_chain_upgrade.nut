@@ -10,11 +10,14 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.ArmorDescription = "The skull of a dead man hangs from this armor on a heavy chain, a grizzly trophy";
 		this.m.Icon = "armor_upgrades/upgrade_skull_and_chain_01.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_belt_and_shield_01.png";
+		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_skull_and_chain_01.png";
+		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_skull_and_chain_01.png";
 		this.m.SpriteFront = "upgrade_skull_and_chain";
+		this.m.SpriteBack = null;
 		this.m.SpriteDamagedFront = "upgrade_skull_and_chain_damaged";
+		this.m.SpriteDamagedBack = null;
 		this.m.SpriteCorpseFront = "upgrade_skull_and_chain_dead";
+		this.m.SpriteCorpseBack = null;
 
 		this.m.Value = 500;
 		this.m.Condition = 10;

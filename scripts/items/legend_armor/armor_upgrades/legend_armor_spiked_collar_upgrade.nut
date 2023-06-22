@@ -13,9 +13,11 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_spiked_collar_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_spiked_collar_01.png";
 		this.m.SpriteFront = "upgrade_spiked_collar";
+		this.m.SpriteBack = null;
 		this.m.SpriteDamagedFront = "upgrade_spiked_collar_damaged";
+		this.m.SpriteDamagedBack = null;
 		this.m.SpriteCorpseFront = "upgrade_spiked_collar_dead";
-
+		this.m.SpriteCorpseBack = null;
 		this.m.Value = 2000;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;

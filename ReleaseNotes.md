@@ -47,17 +47,26 @@ Hood:
 **Armors** 
 Cloth:
 -Anatomist Robe 
+-Wanderer's Coat
 -Knightly Robe in 8 colours 
+-Magician's Robe expanded to 6 colours
 
 Plate:
 -Heavy Mail in 14 colours
+-Noble Scale in 6 colours 
+-Undertaker's Apron
 
+Chain:
+-Wild scale 
 
 Cloak: 
--Anatomist Hood 
+-Anatomist Hood
+-Decorative Cowl in 11 colours 
+-Duke's Cloak in 4 colours
+-Fur Cloak in 4 colours  
 -Relic Hood  in 10 colours 
 -Religious Scarf in 4 colours 
-
+-Tabbed Cowl
 
 Attachments:
 - Amulet Coif - +3 resolve and taunts enemies in battle 
@@ -71,56 +80,52 @@ Expanded descriptions to explain what they do
 Now occassionally produce processed versions of their raw material
 
 **Trait changes**
-New Trait - Nocturnal
-The negatives and positives from night and day are reversed 
-
-New Trait - Pugilist 
-+10% chance to hit the head, and +5% melee skill, but -10% experience gain. 
-
-New Trait - Deceiver
-+0.15% barter, +20% chance to have an attacker require two successful attack rolls, +50% daily wage
-
+These changes mainly serve to reduce the impact of extreme traits. 
+New Trait - Nocturnal - The negatives and positives from night and day are reversed 
+New Trait - Pugilist: +10% chance to hit the head, and +5% melee skill, but -10% experience gain. A counterpoint to pragmatic and predictable
+New Trait - Deceiver: +0.15% barter, +20% chance to have an attacker require two successful attack rolls, +50% daily wage
 New Trait Event - Reserve becomes Glutton - with event art - This creates a cycle of events, where people in reserves can become gluttons, gluttons can become fat and the fat can be lost over time.  The more people you have in reserve, the more likely this is to happen.
 
-
-Double Tongued Trait 
+Addict Trait: Withdrawals now give +10% Melee Skill as they lash out in anger. Other negatives remain. A minor mitigation on a still bad trait. 
+Craven Trait: Provides +5 ranged defense in addition to the existing -10 Resolve. Always looking for the exit makes them better at spotting incoming fire. 
+Deathwish Trait:since they don't care about being hit or injured, it now also lowers their melee defense by -3. The benefits of this trait were huge, it is now a mixed bag.  
+Impatient:Now has -5% melee defense in addition to always acting first. The benefits of acting first are huge, but perhaps they should have waited to avoid being hit. 
+Insecure Trait:adds +5% to Defenses as they cower for cover in addition to the existing never being at confident morale 
+Peaceful Trait: adds +5% to Defenses in addition to the -5 to attack skill. While they won't attack and still start out poor fighters, if they train in self defense they can get quite good at peaceful self defense. has a new icon to stop duplicating another trait. 
+Pragmatic Trait: Lowers from -20% to -10% chance to hit the head as it was nearly stopping all head hits. Retains skill bonuses. You can still reach similar levels of body hit, but you'll need both traits.    
+Predictable Trait: Raises from -5% to -10% chance to hit the head, retains -5 initiative penalty. Reduces how much worse than pragmatic this was. 
+Unredictable Trait: Raises from +5% to +10% chance to hit the head. More in line with predictable, pragmatic and pugilist. 
+Double Tongued Trait: 
 - Lowered from 10% to 5% chance to depress company morale each battle
 - Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
 - Characters with this trait can now stop the children's crusade event - with event art 
 
-Addict Trait: 
-Withdrawals now give +10% Melee Skill as they lash out in anger. Other negatives remain.
 
-Craven Trait: 
-Provides +5 ranged defense in addition to the existing -10 Resolve
 
-Deathwish Trait:
-since they don't care about being hit or injured, it now also lowers their melee defense by -3 
+**Background changes**
+A few outlier backgrounds have been brought back closer to average stat ranges to increase the variety of compositions. 
+Arbelester loses 5 stamina and 10 initiative, hiring cost increased. To make them a bit less powerful without impacting their core benefits
+Beggar gain up to 2 mdef and 3 ranged defense, from years taking abuse on the streets
+Cannibal gains 5-10 melee attack, 5-8 initiative and 3-2 hitpoints. To make the trade-off more worthwhile
+Cripple gain 0-5 resolve and 0-5 fatigue, a little more likely to persist through their hardship. still not great.
+Eunuch gains  5-15 initiative 0-5 hitpoints and 0-10 bravery, they gain situational advantages, and can be a bit less frail, but still aren't fighters.
+Foot soldier loses -5 ranged skill and -5 initiative,  hiring cost increased.  A bit less dominating without losing their core benefits
+Historians gain 0-5 bravery, 0-7 melee skill, -3-3 Mdef, -6-6  Rdef, -5-5 Init.  This increases variability, making it possible to rarely find some who know a little bit about fighting, but also possible for them to be worse
+Maids gain 0-10 Bravery, 0-5 ranged defense, 0-10 initiative. More likely to stay by your side and dodge thrown objects.
+Shieldmaiden loses -2 melee and ranged skill, and increased daily cost by 5. Still very strong defenses, but less oppressively powerful in all areas.  
+Troubadour gains 8-5 Fatigue, loses ~5 hitpoints, gains 2 melee defense and 3 ranged defense, this brings their more in line with a female ranged version of a minstrel.  
+Warrior hiring cost increased. They are still quite powerful, but you'll need to pay for it. 
+Widow and widower gains 5 melee defense, self defense skills earned through the years in short abusive relationships since their partner died.  
 
-Impatient:
-Now has -5% melee defense in addition to always acting first. 
-
-Insecure Trait:
-adds +5% to Defenses as they cower for cover in addition to the existing never being at confident morale 
-
-Peaceful Trait: 
-adds +5% to Defenses in addition to the -5 to attack skill. While they won't attack and still start out poor fighters, if they train in self defense they can get quite good at peaceful self defense. 
-has a new icon to stop duplicating another trait. 
-
-Pragmatic Trait: 
-Lowers from -20% to -10% chance to hit the head as it was nearly stopping all head hits. 
-
-Predictable Trait: 
-Raises from -5% to -10% chance to hit the head, equivilent to pragmatic
-
-Unredictable Trait: 
-Raises from +5% to +10% chance to hit the head, equivilent to pragmatic
 
 **Other Changes:**
+Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
+
+
 ## Build 16.2.0, Smoke & Faith
 
 * New Content

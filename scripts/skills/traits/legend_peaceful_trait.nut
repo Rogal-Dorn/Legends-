@@ -38,7 +38,7 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 				type = "description",
 				text = this.getDescription()
 			},
-			(
+			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",

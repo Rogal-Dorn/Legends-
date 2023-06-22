@@ -62,6 +62,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
 			[1, "plate/legend_thick_plated_barbarian_armor"], // 155
 		],
 		Cloak = [
+			[1, "cloak/fur_cloak"], // 10
 		],
 		Tabard = [
 		],
