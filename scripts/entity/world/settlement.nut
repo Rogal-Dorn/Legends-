@@ -1224,9 +1224,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			}
 		}
 
-		if (_building.getID() == "building.barber")
+		if (_building.getID() == "building.blackmarket")
 		{
-			++this.Const.World.Buildings.Barbers;
+			++this.Const.World.Buildings.Blackmarket;
 		}
 		else if (_building.getID() == "building.kennel")
 		{
