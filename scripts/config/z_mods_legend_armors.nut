@@ -1147,8 +1147,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Tabard = [
 		],
 		Attachments =[
-		//	[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
-		//	[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
+			[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
+			[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
 		]
 	}]
 },{
@@ -2079,21 +2079,21 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/southern_padded"], //
-			[1, "plate/southern_padded_chest"], //
-			[1, "plate/legend_leather_padded_chest"], //
+			[1, "plate/legend_southern_padded"], //
+			[1, "plate/legend_southern_padded_chest"], //
+			[1, "plate/legend_leather_padded"], //
 		],
 		Cloak = [
 		],
 		Tabard = [
 		],
 		Attachments =[
-		//	[1, "armor_upgrades/legend_armor_spiked_chain_collar"], //
+			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade"], //
 		]
 	}]
 },{
 	ID = "reinforced_leather_tunic",
-	Script = "scripts/items/armor/reinforced_leather_tunic",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/anatomist_robe"], //
