@@ -11,6 +11,7 @@ this.building <- {
 		SoundsAtNight = [],
 		Settlement = null,
 		IsClosedAtNight = true,
+		IsClosedAtDay = false,
 		IsRepairOffered = false
 	},
 	function getID()
@@ -36,6 +37,11 @@ this.building <- {
 	function getTooltip()
 	{
 		return this.World.getTime().IsDaytime || !this.m.IsClosedAtNight ? this.m.Tooltip : null;
+	}
+
+	function getTooltip()
+	{
+		return this.World.getTime().IsNighttime || !this.m.IsClosedAtDay ? this.m.Tooltip : null;
 	}
 
 	function getTooltipIcon()
@@ -71,6 +77,11 @@ this.building <- {
 	function isClosedAtNight()
 	{
 		return this.m.IsClosedAtNight;
+	}
+
+	function isClosedAtDay()
+	{
+		return this.m.IsClosedAtDay;
 	}
 
 	function isRepairOffered()
