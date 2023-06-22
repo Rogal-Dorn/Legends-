@@ -119,6 +119,7 @@ Widow and widower gains 5 melee defense, self defense skills earned through the 
 
 
 **Other Changes:**
+Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
