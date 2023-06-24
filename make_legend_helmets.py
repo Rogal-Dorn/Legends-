@@ -403,7 +403,7 @@ layers = [
  "title" :  "Niqaab", \
  "desc" :  "A headwrap, protects from the sun and light blows." \
 },
-{"name" : "full_mask"                     , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 50, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "true",  \
+{"name" : "full_mask"                           , "layer" : "hood", "min" : 1, "max" : 1, "base" : True, "value" : 50, "con" : 25, "stam" : -1, "vis" : -1, "hair" : "true", "beard" : "true",  \
  "title" :  "Full Cloth Mask", \
  "desc" :  "An ominous black mask to cover the face" \
 },
