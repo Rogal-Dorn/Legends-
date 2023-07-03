@@ -788,5 +788,23 @@
 	<sprite id="upgrade_belt_and_shield" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield.png" left="-44" right="50" top="-53" bottom="13" />
 	<sprite id="upgrade_belt_and_shield_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\upgrade_belt_and_shield_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 	<sprite id="upgrade_belt_and_shield_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\upgrade_belt_and_shield_dead.png" left="-57" right="59" top="-53" bottom="55" />
-		
+
+	<sprite id="upgrade_pauldrons" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'
+	<sprite id="upgrade_pauldrons_strong" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_strong_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_strong_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_strong_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'
+	<sprite id="upgrade_pauldrons_named" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_named_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_named_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_named_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_named_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_named_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'
+	<sprite id="upgrade_pauldrons_heavy" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_heavy_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_strong_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_heavy_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_heavy_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'
+	<sprite id="upgrade_pauldrons_stag" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_stag_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_stag_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_stag_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_stag_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_stag_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'
+	<sprite id="upgrade_pauldrons_swan" offsetY="35" ic="FF242D3B" width="104" height="142" img="entity\armor_upgrades\pauldrons_swan_01.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_swan_damaged" offsetY="35" ic="FF242D3F" width="104" height="142" img="entity\armor_upgrades\pauldrons_swan_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />\n'
+	<sprite id="upgrade_pauldrons_swan_dead" offsetX="6" offsetY="10" f="64FE" ic="FF242D43" width="131" height="125" img="entity\armor_upgrades\pauldrons_swan_01_dead.png" left="-57" right="59" top="-53" bottom="55" />\n'			
 </brush>

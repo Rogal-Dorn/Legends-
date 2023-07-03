@@ -773,6 +773,10 @@ layers = [
  "title" :  "Italo Norman Helm", \
  "desc" :  "A curved metal helm in a distinctive style. It has a large duck-bill shaped faceplate covering the front." \
 },
+{"name" : "giles_helm"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1500, "con" : 100, "stam" : -6, "vis" : -3, "hair" : "true", "beard" : "true",  \
+ "title" :  "Sir Giles Helm", \
+ "desc" :  "A tight fitting helm with a mesh grille in a unique style." \
+},
 {"name" : "italo_norman_helm_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 2000, "con" : 110, "stam" : -5, "vis" : -2, "hair" : "true", "beard" : "true", "named" : True, "rmaxViz" : 1, "rminViz" : 2, "rmaxStam" : 4, "rminStam" : 5, "rminCond" : 110, "rmaxCond" : 135, "names" : Names,  \
  "title" :  "Italo Conic Helm", \
  "desc" :  "A well-built and lavishly decorated pointed conic helm. It has a large duck-bill shaped faceplate covering the front." \
@@ -980,7 +984,7 @@ layers = [
  "title" :  "Long Faceplate", \
  "desc" :  "A long faceplate." \
 },
-{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 600, "con" : 45, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 2, "value" : 600, "con" : 45, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Winged Faceplate", \
  "desc" :  "A glorious faceplate formed into the shape of wings." \
 },
