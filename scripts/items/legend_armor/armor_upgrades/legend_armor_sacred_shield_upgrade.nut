@@ -19,7 +19,7 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.SpriteCorpseFront = "upgrade_belt_and_shield_dead";
 		this.m.SpriteCorpseBack = null;
 
-		this.m.Value = 2000;
+		this.m.Value = 200;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -1;
