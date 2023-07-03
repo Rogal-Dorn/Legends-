@@ -705,6 +705,10 @@ layers = [
  "title" :  "Sallet", \
  "desc" :  "A metal sallet helmet with an extended neckguard, a design uncommon in these lands. It is well crafted to offer maximum protection with minimum weight, and without impairing vision." \
 },
+{"name" : "sallet_named"                     , "layer" : "helm", "min" : 1, "max" : 1, "value" : 1600, "con" : 55, "stam" : -2, "vis" : 0, "hair" : "true", "beard" : "false",  \
+ "title" :  "Guilded Sallet", \
+ "desc" :  "A beautifully designed metal sallet helmet with an extended neckguard, a design uncommon in these lands. It is well crafted to offer maximum protection with minimum weight, and without impairing vision." \
+},
 {"name" : "nordic_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 460, "con" : 110, "stam" : -7, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusted Nordic Helm", \
  "desc" :  "A poorly maintained nordic helmet guarding face and neck with additional metal plates. It is rusted, dented, bent and will never be fully repaired." \
@@ -976,7 +980,7 @@ layers = [
  "title" :  "Long Faceplate", \
  "desc" :  "A long faceplate." \
 },
-{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 1, "value" : 600, "con" : 45, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
+{"name" : "faceplate_winged"                     , "layer" : "top", "min" : 1, "max" : 3, "value" : 600, "con" : 45, "stam" : -4, "vis" : 0, "hair" : "false", "beard" : "true",  \
  "title" :  "Winged Faceplate", \
  "desc" :  "A glorious faceplate formed into the shape of wings." \
 },
