@@ -565,9 +565,9 @@ gt.Const.LegendMod.HelmObjs.extend([
 		Script = "",
 		Sets = [{
 		Hoods = [
-			[1, "hood/legend_chain_hood"],
-			[1, "hood/legend_chain_hood_full"],
-			[1, "hood/legend_open_chain_hood"]
+			[1, "hood/legend_helmet_chain_hood"],
+			[1, "hood/legend_helmet_chain_hood_full"],
+			[1, "hood/legend_helmet_open_chain_hood"]
 		],
 		Helms = [
 			 [1, "helm/legend_helmet_swan_helm"] //140, -7, -2
@@ -604,9 +604,9 @@ gt.Const.LegendMod.HelmObjs.extend([
 		Script = "",
 		Sets = [{
 		Hoods = [
-			[1, "hood/legend_chain_hood"],
-			[1, "hood/legend_chain_hood_full"],
-			[1, "hood/legend_open_chain_hood"],
+			[1, "hood/legend_helmet_chain_hood"],
+			[1, "hood/legend_helmet_chain_hood_full"],
+			[1, "hood/legend_helmet_open_chain_hood"],
 		],
 		Helms = [
 			 [1, "helm/legend_helmet_swan_helm"] //140, -7, -2

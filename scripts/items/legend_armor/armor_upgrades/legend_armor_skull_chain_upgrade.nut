@@ -19,7 +19,7 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.SpriteCorpseFront = "upgrade_skull_and_chain_dead";
 		this.m.SpriteCorpseBack = null;
 
-		this.m.Value = 500;
+		this.m.Value = 150;
 		this.m.Condition = 10;
 		this.m.ConditionMax = 10;
 		this.m.StaminaModifier = -2;

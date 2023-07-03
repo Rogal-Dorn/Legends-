@@ -56,7 +56,7 @@ this.paladins_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.equip(hood);
 		local armor = this.new("scripts/items/legend_armor/cloth/legend_knightly_robe");
 		local chain = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt");
-		local plate = this.new("scripts/items/legend_armor/plate/legend_southern_padded_chest");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_southern_padded");
 		local attach = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade");
 		armor.setUpgrade(chain);
 		armor.setUpgrade(plate);
@@ -89,9 +89,6 @@ this.paladins_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
 		
-		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "adorned_closed_flat_top_with_mail"],
-		]));
 		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_padded_cap");
 		local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_flat_top_helm");
 		local top = this.new("scripts/items/legend_helmets/top/legend_helmet_faceplate_flat");

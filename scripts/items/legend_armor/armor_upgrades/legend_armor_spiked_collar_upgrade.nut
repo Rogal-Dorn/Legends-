@@ -8,17 +8,17 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Spiked Coif";
 		this.m.Description = "A spiked mail coif which adds another layer of defense, at the expense of weight and sound as it jangles";
 		this.m.ArmorDescription = "This armor is topped with a noisey spiked mail coif";
-		this.m.Icon = "armor_upgrades/upgrade_spiked_collar_01.png";
+		this.m.Icon = "armor_upgrades/upgrade_spiked_chain_collar_01.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_spiked_collar_01.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_spiked_collar_01.png";
+		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_spiked_chain_collar_01.png";
+		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_spiked_chain_collar_01.png";
 		this.m.SpriteFront = "upgrade_spiked_collar";
-		this.m.SpriteBack = null;
-		this.m.SpriteDamagedFront = "upgrade_spiked_collar_damaged";
-		this.m.SpriteDamagedBack = null;
-		this.m.SpriteCorpseFront = "upgrade_spiked_collar_dead";
-		this.m.SpriteCorpseBack = null;
-		this.m.Value = 2000;
+		this.m.SpriteBack = "upgrade_spiked_collar";
+		this.m.SpriteDamagedFront = "upgrade_spiked_chain_collar_damaged";
+		this.m.SpriteDamagedBack = "upgrade_spiked_chain_collar_damaged";
+		this.m.SpriteCorpseFront = "upgrade_spiked_chain_collar_dead";
+		this.m.SpriteCorpseBack = "upgrade_spiked_chain_collar_dead";
+		this.m.Value = 200;
 		this.m.Condition = 20;
 		this.m.ConditionMax = 20;
 		this.m.StaminaModifier = -3;
@@ -30,15 +30,8 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 14,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
-		},
-		{
-			id = 10,
-			type = "text",
-			icon = "ui/icons/initiative.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
-		}
-		);
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense and [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+		});
 		return result;
 	}	
 	function onArmorTooltip( _result )
@@ -47,15 +40,8 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 			id = 14,
 			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
-		},
-		{
-			id = 10,
-			type = "text",
-			icon = "ui/icons/initiative.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
-		}
-		);
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense and [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+		});
 	}	
 	function onUpdateProperties( _properties )
 	{

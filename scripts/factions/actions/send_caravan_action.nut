@@ -87,6 +87,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 		party.getFlags().set("IsCaravan", true);
 		party.getFlags().set("IsRandomlySpawned", true);
+		party.setOrigin(this.World.State.getCurrentTown());
 
 		if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
 		{
@@ -192,7 +193,6 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
 		local move = this.new("scripts/ai/world/orders/move_order");
 		move.setDestination(this.m.Dest.getTile());
-		move.setOrigin(this.m.Start);
 		move.setRoadsOnly(true);
 		local unload = this.new("scripts/ai/world/orders/unload_order");
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
