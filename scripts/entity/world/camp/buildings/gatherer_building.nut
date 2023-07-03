@@ -13,7 +13,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.BaseCraft = 1.0;
 		this.m.Slot = "gather";
 		this.m.Name = "Gatherer";
-		this.m.Description = "Forgage for herbs and medicine";
+		this.m.Description = "Forgage for herbs, resources and medicine";
 		this.m.BannerImage = "ui/buttons/banner_gather.png";
 		this.m.CanEnter = false
 	}
@@ -30,12 +30,13 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Cuts, scrapes, bruises, missing limbs and other body parts - all part of the job. "
-		desc += "Make sure you always have enough medicines on hand to keep the company patched up and in fighting condition. "
 		desc += "Brothers assigned to this task will go out and forage for herbs and plants of medicinal quality. The more people assigned, the more medicine gathered. "
 		desc += "\n\n"
-		desc += "The Gathering tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in gathering speed. "
-		desc += "Additionally, there's a chance that some more potent and useful medicines will be discovered."
+		desc += "Assigning Woodsmen can return wood for trade. Assigning Miners can return gems. "
+		desc += "Assigning apocatheries like Herbalists, Vala, Alchemists and Druids can return medicines."
+		desc += "\n\n"
+		desc += "Buying and upgraded tent will increase gathering speed by 15% and produce more kinds of medicine"
+		desc += "Combining an upgraded tent and apocatheries can provide rare medicines and powerful potions"
 		return desc;
 	}
 
@@ -236,14 +237,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/items/supplies/medicine_item"
 			]);
 
-			if (levels.Brewer == 0 && levels.Apothecary >= 10)
+			if (this.getUpgraded() && levels.Apothecary >= 0)
 			{
 				loot.extend([
 					"scripts/items/accessory/legend_apothecary_mushrooms_item",
 					"scripts/items/misc/happy_powder_item"
 				]);
 			}
-			else if (levels.Brewer >= 0 && levels.Apothecary >= 10)
+			else if (this.getUpgraded() && levels.Apothecary >= 10)
 			{
 				loot.extend([
 					"scripts/items/accessory/lionheart_potion_item",
@@ -251,7 +252,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					"scripts/items/accessory/recovery_potion_item",
 					"scripts/items/accessory/cat_potion_item"
 				]);
-				if (levels.Brewer >= 20 && levels.Apothecary >= 30)
+				if (this.getUpgraded() && levels.Apothecary >= 20)
 				{
 					loot.extend([
 						"scripts/items/misc/miracle_drug_item",
