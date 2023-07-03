@@ -69,10 +69,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getRate()
 	{
-		local heal = 1.00;
+		local heal = 1.33;
 		if (this.getUpgraded())
 		{
-			heal = 2.0;
+			heal = 1.66;
 		}
 		local points =  this.Const.World.Assets.HitpointsPerHour * heal;
 		return points + points * this.m.Rate;
@@ -91,10 +91,10 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		local desc = "";
 		desc += "Injuries are a prerequisite for any self respecting battle brother. The quicker temporary injuries are patched up, the quicker a battle brother can get some more! "
-		desc += "Assigning brothers to this tent allows them to treat any wounds in the company roster and also help restore healthpoints of any injured brother. "
+		desc += "Assigning brothers to this tent allows them to treat any wounds in the company roster and also help restore health points of any injured brother by +10%. "
 		desc += "Treating an injury requires a cost of medicine and time (vs coin in a temple). The more people assigned to the tent, the quicker injuries will be treated and healthpoints restored. "
 		desc += "\n\n"
-		desc += "The healing tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 33% increase in treatment speed and a 25% decrease in medicine cost for each injury."
+		desc += "The healing tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent provides a 66% increase in health point recovery speed, 33% increase in wound treatment speed, hitpoint recovery speed and a 25% decrease in medicine cost for each injury."
 		return desc;
 	}
 

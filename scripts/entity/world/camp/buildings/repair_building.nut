@@ -14,7 +14,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.camp_building.create();
 		this.m.ID = this.Const.World.CampBuildings.Repair;
 		this.m.BaseCraft = 10.0;
-		this.m.Conversion = 15.0;
+		this.m.Conversion = 10.0;
 		this.m.ModName = "Repair";
 		this.m.Escorting = true;
 		this.m.Slot = "repair";
@@ -100,7 +100,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		desc += "Any equipped gear that is damaged will automatically be added to the front of the queue at the end of all battles. "
 		desc += "If no brothers are assigned to the repair tent, repairs will still be made, albeit at a slower rate. "
 		desc += "\n\n"
-		desc += "The crafting tent can be upgraded by purchasing a repair cart from a settlement merchant. An upgraded tent has a 15% increase in repair speed."
+		desc += "The crafting tent can be upgraded by purchasing a repair cart from a settlement merchant. An upgraded tent has a 15% increase in repair speed and -50% reduction in tool use"
 		return desc;
 	}
 

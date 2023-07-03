@@ -14,12 +14,6 @@ Bear graphics updated
 Kobolds can now found in marshes, where they disapear into the undergrowth while their dart guns waylay you
 You can try them out in a new tactical scenario 'Kobold Swamp'
 
-**Noble armies**
-Nobles have much smaller armies with harder high tier units closer to Orc Elites 
-Fencers, Halberdiers and Slingers are all stronger and appear later in your campaign. 
-New unit: Noble Guard - High tier with plate armor 
-New unit: Man at Arms - Very high tier with decorated armor and new helmets 
-You can try them out in a new tactical scenario 'Noble Camp' 
 
 **Hats**
 Vanity:
@@ -77,10 +71,44 @@ Attachments:
 - Sacred Shield - +5% resolve 
 - Iron Pauldrons, Heavy Pauldrons, Strong Pauldrons, Stag Pauldrons, Swan Pauldrons and Guilded Pauldrons
 
-**Attached locations**
-Production rate  doubled to help the trading economy
-Expanded descriptions to explain what they do 
-Now occassionally produce processed versions of their raw material
+**World economy**
+Settlement wealth calculation for upgrades changed to coins rather than abstract resource points 
+Caravans now take tagoods out of each building's inventory of the town they leave, and deliver it to the town they arrive at. Paying the origin town in coin 
+Attached locations have expanded descriptions to explain what they do for the town. They also have increased production rates of their goods for trade, and occassionally produce processed versions of their raw material
+Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving without the player
+Rebuilding can happen more freuqently 
+
+**Camp Balance**
+Camp adjusted to make cities and upgraded tents more appealing 
+
+Healing:
+-Background healing rate outside camp reduced by 25%
+- a healing tent increases healing rate by 10%
+- an upgraded healing tent increases healing rate by 66%
+
+Food:
+- Background food consumption rate increased by 50% to incentivise cooking
+- Hunting tent renamed to Kitchen to better reflect its role, description updated to explain what it does  
+- Upgraded kitchen now allows production of mead, porridge, pudding and pies
+- Upgrading increases 
+
+Training: 
+- Training speed halved, upgrading the tent doubles the rate
+
+Gathering:
+- Description updated to explain what it does 
+- no longer requires both apocatheries and brewers to produce potions. Instead needing apocatheries and upgraded tent 
+
+Repair: 
+- rate slowed and description improved
+
+**Noble armies**
+Nobles have much smaller armies with harder high tier units closer to Orc Elites 
+Fencers, Halberdiers and Slingers are all stronger and appear later in your campaign. 
+New unit: Noble Guard - High tier with plate armor 
+New unit: Man at Arms - Very high tier with decorated armor and new helmets 
+You can try them out in a new tactical scenario 'Noble Camp' 
+
 
 **Trait changes**
 These changes mainly serve to reduce the impact of extreme traits. 

@@ -1,4 +1,4 @@
-this.legend_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
+this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
@@ -27,7 +27,7 @@ this.legend_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_armor/l
 	{
 		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
-			id = 14,
+			id = 10,
 			type = "text",
 			icon = "ui/icons/bravery.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"

@@ -8,8 +8,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.Difficulty = 2;
 		this.m.Order = 999;
 		this.m.StashModifier = 2000;
-		this.m.StartingBusinessReputation = 1000;
-		this.setRosterReputationTiers(this.Const.Roster.createReputationTiers(this.m.StartingBusinessReputation));
 	}
 
 	function isValid()
@@ -131,6 +129,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"cloth/legend_southern_split_gambeson",
 			"cloth/legend_southern_tunic",
 			"cloth/legend_southern_noble_surcoat",
+			"cloth/legend_knightly_robe",
+			"cloth/anatomist_robe",
+			"cloth/wanderers_coat",
+			
 			"chain/legend_armor_ancient_double_mail",
 			"chain/legend_armor_ancient_mail",
 			"chain/legend_armor_basic_mail",
@@ -150,6 +152,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"chain/legend_southern_cloth",
 			"chain/legend_southern_padded_chest",
 			"chain/legend_southern_mail",
+			"chain/wild_scale",
+			
 			"plate/legend_armor_leather_brigandine",
 			"plate/legend_armor_leather_brigandine_hardened",
 			"plate/legend_armor_leather_brigandine_hardened_full",
@@ -211,6 +215,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"plate/legend_southern_leather_plates",
 			"plate/legend_southern_leather_scale",
 			"plate/legend_southern_scale",
+			"plate/undertakers_apron",
+			
 			"cloak/legend_shoulder_cloth",
 			"cloak/legend_noble_shawl",
 			"cloak/legend_dark_wooly_cloak",
@@ -222,6 +228,13 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"cloak/legend_southern_scarf",
 			"cloak/legend_animal_pelt",
 			"cloak/legend_southern_scarf_wrap",
+			"cloak/anatomist_hood",
+			"cloak/decorative_hood",
+			"cloak/fur_cloak",
+			"cloak/dukes_cloak",
+			"cloak/relic_hood",
+			"cloak/tabbed_hood",
+			
 			"tabard/legend_common_tabard",
 			"tabard/legend_noble_tabard",
 			"tabard/legend_southern_wrap_right",
@@ -252,6 +265,16 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"armor_upgrades/legend_metal_plating_upgrade",
 			"armor_upgrades/legend_protective_runes_upgrade",
 			"armor_upgrades/legend_unhold_fur_upgrade",
+			"armor_upgrades/legend_pauldron_upgrade",
+			"armor_upgrades/legend_pauldron_heavy_upgrade",
+			"armor_upgrades/legend_pauldron_strong_upgrade",
+			"armor_upgrades/legend_pauldron_stag_upgrade",
+			"armor_upgrades/legend_pauldron_swan_upgrade",
+			"armor_upgrades/legend_pauldron_named_upgrade",
+			"armor_upgrades/legend_armor_spiked_collar_upgrade",
+			"armor_upgrades/legend_armor_sacred_shield_upgrade",
+			"armor_upgrades/legend_armor_skull_chain_upgrade",
+			"armor_upgrades/legend_armor_chain_and_mail_upgrade",
 
 			"runes/legend_rune_endurance",
 			"runes/legend_rune_resilience",
@@ -297,13 +320,9 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		foreach(a in armors)
 		{
 			local item = this.new("scripts/items/legend_armor/" + a);
-			if (item.m.Variants.len() == 0)
-			{
-				this.logInfo("Adding " + a);
-				this.World.Assets.getStash().add(item);
-				continue;
-			}
 
+			this.logInfo("Adding " + a);
+			this.World.Assets.getStash().add(item);
 			for( local i = 0; i < item.m.Variants.len(); i = ++i )
 			{
 				this.logInfo("Adding " + a + " :: " + i);
@@ -401,7 +420,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_drum",
 			"legend_estoc",
 			"legend_glaive",
-			"legend_great_khopesh",
+			//"legend_great_khopesh",
 			"legend_grisly_scythe",
 			"legend_halberd",
 			"legend_hammer",
@@ -564,12 +583,10 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{
 			local item = this.new("scripts/items/weapons/" + w);
 
-			if (item.m.Variants.len() == 0)
-			{
-				this.logInfo("Adding " + w);
-				this.World.Assets.getStash().add(item);
-				continue;
-			}
+
+			this.logInfo("Adding " + w);
+			this.World.Assets.getStash().add(item);
+
 
 			for( local i = 0; i < item.m.Variants.len(); i = ++i )
 			{
@@ -622,10 +639,15 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"hood/legend_helmet_southern_chain_hood",
 			"hood/legend_helmet_southern_open_chain_hood",
 			"hood/legend_helmet_southern_open_hood",
+			"hood/legend_helmet_southern_niqaab",
 			"hood/legend_helmet_cloth_cap",
 			"hood/legend_helmet_barb_leather_cap",
 			"hood/legend_helmet_southern_headband_coin",
 			"hood/legend_helmet_mummy_bandage",
+			"hood/legend_helmet_full_mask",
+			"hood/legend_helmet_beak_hood",
+			"hood/legend_helmet_enclave_bevor",
+
 			"helm/legend_helmet_ancient_conic_helm",
 			"helm/legend_helmet_ancient_kettle",
 			"helm/legend_helmet_ancient_dome",
@@ -635,9 +657,6 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_ancient_legionaire",
 			"helm/legend_helmet_ancient_side_hawk",
 			"helm/legend_helmet_ancient_tailed_conic_helm",
-			"helm/legend_helmet_ancient_beard_mask",
-			"helm/legend_helmet_ancient_lion_mask",
-			"helm/legend_helmet_ancient_mask",
 			"helm/legend_helmet_ancient_face_helm",
 			"helm/legend_helmet_orc_strapped_helm",
 			"helm/legend_helmet_orc_double_helm",
@@ -692,6 +711,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_legend_armet",
 			"helm/legend_helmet_enclave_armet",
 			"helm/legend_helmet_legend_frogmouth",
+			"helm/legend_helmet_legend_frogmouth_close",
 			"helm/legend_helmet_southern_gladiator_helm_crested",
 			"helm/legend_helmet_southern_gladiator_helm_split",
 			"helm/legend_helmet_southern_gladiator_helm_masked",
@@ -713,12 +733,12 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_rotten_flat_top_face_mask",
 			"helm/legend_helmet_rotten_great_helm",
 			"helm/legend_helmet_barb_metal_cap",
-			"helm/legend_helmet_mummy_crown_king",
+			
+			
 			"top/legend_helmet_hood_cloth_round",
 			"top/legend_helmet_hood_cloth_wide",
 			"top/legend_helmet_hood_cloth_square",
 			"top/legend_helmet_cloth_long_hood",
-			"top/legend_helmet_orc_leather_mask",
 			"top/legend_helmet_orc_horn_mask",
 			"top/legend_helmet_orc_metal_mask",
 			"top/legend_helmet_goblin_leaves",
@@ -770,6 +790,15 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_golden_mask",
 			"top/legend_helmet_warlock_skull",
 			"top/legend_helmet_fencer_hat",
+			"top/legend_helmet_fencer_hat",
+			"top/legend_helmet_southern_veil",
+			"top/legend_helmet_undertakers_scarf",
+			"top/legend_helmet_helm_adornment",
+			"top/legend_helmet_ancient_beard_mask",
+			"top/legend_helmet_ancient_lion_mask",
+			"top/legend_helmet_ancient_mask",
+			
+		//	"vanity/legend_helmet_orc_leather_mask",
 			"vanity/legend_helmet_noble_southern_crown",
 			"vanity/legend_helmet_noble_southern_hat",
 			"vanity/legend_helmet_southern_noble_turban",
@@ -823,8 +852,11 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_mummy_headress",
 			"vanity/legend_helmet_mummy_headband",
 			"vanity/legend_helmet_southern_cloth_headress",
-			"top/legend_helmet_southern_veil",
-			"top/legend_helmet_southern_veil_coin",
+			"vanity/legend_helmet_undertakers_hat",
+			"vanity/legend_helmet_thick_braid",
+			"vanity/legend_helmet_physicians_hood",
+			"vanity/legend_helmet_chaperon",
+			"vanity/legend_helmet_felt_chaperon",			
 			"vanity/legend_helmet_southern_earings",
 			"vanity/legend_helmet_southern_headress_coin",
 			"vanity/legend_helmet_nun_habit",
@@ -839,6 +871,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity_lower/legend_helmet_top_plume",
 			"vanity_lower/legend_helmet_wings",
 			"vanity_lower/legend_helmet_goblin_tail",
+			"vanity/legend_helmet_mummy_crown_king",
 
 			"helmets/legend_faction_helmet"
 		]

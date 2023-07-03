@@ -15,8 +15,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.ModMod = 10.0;
 		this.m.BaseCraft = 1.5;
 		this.m.Slot = "hunt";
-		this.m.Name = "Hunting";
-		this.m.Description = "Send out a hunting party for food provisions"
+		this.m.Name = "Kitchen";
+		this.m.Description = "A kitchen tent with supplies for hunting, preparing and cooking food"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
 		this.m.CanEnter = false
 		this.m.Sounds = [
@@ -57,12 +57,17 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Armies march on their stomachs...And apparently so do mercenary companies! "
-		desc += "Keep the company's bellies full by sending your highly skilled killing machines to hunt the land for food. "
-		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food that can be hunted."
+		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food hunted."
+		desc += "A basic tent returns fresh meat and fruit which don't keep for long"
 		desc += "\n\n"
-		desc += "The Hunting tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 10% increase in hunting efficiency. "
-		desc += "Additionally, there's a chance that some of the spoils of the hunt, other than food, can also be salvaged and brought back to camp."
+		desc += "Assigning mercenaries with cooking perks can provide cured meats, dried fruits and grains"
+		desc += "Assigning mercenaries with brewing perks can yield wine and beer"
+		desc += "\n\n"
+		desc += "An upgraded tent allows brewers to produce mead and cured mead, while cooks produce porridge, pudding and pies"
+		desc += "Upgrading also provides a 10% increase in hunting speed and +50% to cooking and brewing efficiency."
+		desc += "Upgrading allows cooking backgrounds a small chance to help cook even without cooking perks"
+	
+		
 		return desc;
 	}
 
@@ -143,7 +148,13 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				continue
 			}
-
+			if (this.getUpgraded())
+			{
+				if (bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal"))
+				{
+				   chefLevel += this.Math.floor(bro.getLevel() * 0.1);
+				}
+			}		
 
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
@@ -167,6 +178,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
+			if (this.getUpgraded())
+			{
+				if (bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal"))
+				{
+				   chefLevel += this.Math.floor(bro.getLevel() * 0.1);
+				}
+			}		
+			
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
 			   brewerLevel += bro.getLevel()
@@ -228,6 +247,10 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local item = null;
 
 		local brewerlevels = this.getBrewerLevel();
+		if (this.getUpgraded())
+		{
+			cost = this.Math.floor(brewerlevels * 1.5);
+		}
 		local dropLoot = -300.0 / (brewerlevels + 20) + 15 > this.Math.rand(1, 100);
 		if (dropLoot) // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		{
@@ -237,11 +260,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/wine_item"
 			]);
 
-			if (16 <= brewerlevels)
+			if (this.getUpgraded())
 			{
 				brewerLoot.extend([
-					[2, "scripts/items/supplies/mead_item"],
-					"scripts/items/supplies/preserved_mead_item"
+					[3, "scripts/items/supplies/mead_item"],
+					[1, "scripts/items/supplies/preserved_mead_item"]
 				]);
 			}
 
@@ -252,6 +275,10 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		local cheflevels = this.getChefLevel();
+		if (this.getUpgraded())
+		{
+			cost = this.Math.floor(cheflevels * 1.5);
+		}
 		dropLoot = -300.0 / (cheflevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		if (dropLoot)
 		{
@@ -260,18 +287,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/dried_fruits_item",
 				"scripts/items/supplies/cured_venison_item",
 				"scripts/items/supplies/ground_grains_item",
-				"scripts/items/supplies/dried_fish_item",
-				"scripts/items/supplies/bread_item",
-				"scripts/items/supplies/smoked_ham_item",
-				"scripts/items/supplies/goat_cheese_item"
 			]);
 
-			if (16 <= cheflevels)
+			if (this.getUpgraded())
 			{
 				chefLoot.extend([
-					[3, "scripts/items/supplies/legend_pie_item"],
-					[3, "scripts/items/supplies/legend_pudding_item"],
-					[3, "scripts/items/supplies/legend_porridge_item"]
+					[3, "scripts/items/supplies/bread_item"],
+					[1, "scripts/items/supplies/legend_pudding_item"],
+					[2, "scripts/items/supplies/legend_porridge_item"]
 				]);
 			}
 

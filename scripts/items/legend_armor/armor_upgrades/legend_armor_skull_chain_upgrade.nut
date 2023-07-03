@@ -26,10 +26,10 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 	}
 	function getTooltip()
 	{
-		local result = this.legend_armor_upgrade.getTooltip();
+	
 		result.push(
 		{
-			id = 13,
+			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
 			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
@@ -45,6 +45,7 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 	}	
 	function onArmorTooltip( _result )
 	{
+		local result = this.legend_armor_upgrade.getArmorTooltip();
 		_result.push(
 		{
 			id = 13,
