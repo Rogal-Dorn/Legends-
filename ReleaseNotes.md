@@ -40,6 +40,7 @@ Helm:
 -Full Helm
 -Kettle Hat
 -Guilded Sallet
+-Sir Giles Helm 
 
 Hood:
 -Beak Hood
@@ -74,6 +75,7 @@ Attachments:
 - Spiked Coif - +3 mdef -10 init 20 condition -3 stamina 
 - Skull Chain - +10% chance to hit head, +1 fatigue per tile moved 
 - Sacred Shield - +5% resolve 
+- Iron Pauldrons, Heavy Pauldrons, Strong Pauldrons, Stag Pauldrons, Swan Pauldrons and Guilded Pauldrons
 
 **Attached locations**
 Production rate  doubled to help the trading economy
@@ -100,7 +102,6 @@ Double Tongued Trait:
 - Lowered from 10% to 5% chance to depress company morale each battle
 - Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
 - Characters with this trait can now stop the children's crusade event - with event art 
-
 
 
 **Background changes**
