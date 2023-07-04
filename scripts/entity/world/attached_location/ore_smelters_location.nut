@@ -52,6 +52,7 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/copper_ingots_item");
+		_list.push("trade/tin_ingots_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -77,9 +78,24 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 				S = "weapons/dagger"
 			});
 			_list.push({
-				R = 35,
+				R = 20,
+				P = 1.0,
+				S = "trade/iron_ingots_item"
+			});
+			_list.push({
+				R = 40,
 				P = 1.0,
 				S = "trade/copper_ingots_item"
+			});
+			_list.push({
+				R = 60,
+				P = 1.0,
+				S = "trade/tin_ingots_item"
+			});
+			_list.push({
+				R = 80,
+				P = 1.0,
+				S = "trade/legend_gold_nugget_item"
 			});
 			_list.push({
 				R = 10,

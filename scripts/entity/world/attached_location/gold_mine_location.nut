@@ -61,7 +61,8 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("trade/gold_ingots_item");
+		_list.push("trade/gold_dust_item");
+		_list.push("trade/gold_nugget_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -104,10 +105,20 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "trade/gold_ingots_item"
+				S = "trade/legend_gold_nugget_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/legend_gold_dust_item"
 			});
 			_list.push({
 				R = 80,
+				P = 1.0,
+				S = "trade/legend_gold_ingots_item"
+			});
+			_list.push({
+				R = 90,
 				P = 1.0,
 				S = "loot/golden_chalice_item"
 			});
