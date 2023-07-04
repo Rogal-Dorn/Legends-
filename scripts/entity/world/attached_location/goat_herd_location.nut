@@ -66,7 +66,7 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/goat_cheese_item");
-		_list.push("supplies/goat_cheese_item");
+		_list.push("supplies/legend_fresh_milk_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -105,6 +105,11 @@ this.goat_herd_location <- this.inherit("scripts/entity/world/attached_location"
 				R = 0,
 				P = 1.0,
 				S = "supplies/goat_cheese_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/legend_fresh_milk_item"
 			});
 			_list.push({
 				R = 0,

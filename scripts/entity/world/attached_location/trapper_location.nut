@@ -13,8 +13,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/furs_item");
-		_list.push("trade/furs_item");
-		_list.push("trade/tin_ingots_item");
+		_list.push("trade/legend_small_furs_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -41,6 +40,11 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 				R = 0,
 				P = 1.0,
 				S = "trade/furs_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/legend_small_furs_item"
 			});
 			_list.push({
 				R = 0,

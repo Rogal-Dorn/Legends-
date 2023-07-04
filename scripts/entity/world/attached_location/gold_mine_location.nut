@@ -62,7 +62,6 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/gold_ingots_item");
-		_list.push("trade/gold_ingots_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

@@ -61,7 +61,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/quality_wood_item");
-		_list.push("trade/quality_wood_item");
+		_list.push("trade/legend_raw_wood_item");
 	}
 
 	function onBuild()
@@ -212,6 +212,11 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				R = 0,
 				P = 1.0,
 				S = "trade/quality_wood_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "trade/legend_raw_wood_item"
 			});
 			_list.push({
 				R = 80,

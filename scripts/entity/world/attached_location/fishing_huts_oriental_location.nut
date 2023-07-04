@@ -10,7 +10,7 @@ this.fishing_huts_oriental_location <- this.inherit("scripts/entity/world/attach
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/dried_fish_item");
-		_list.push("supplies/armor_parts_small_item");
+		_list.push("supplies/legend_fresh_fish");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -41,6 +41,11 @@ this.fishing_huts_oriental_location <- this.inherit("scripts/entity/world/attach
 				R = 0,
 				P = 1.0,
 				S = "supplies/dried_fish_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "supplies/legend_fresh_fish"
 			});
 			_list.push({
 				R = 0,

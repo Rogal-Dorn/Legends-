@@ -52,7 +52,7 @@ this.orchard_location <- this.inherit("scripts/entity/world/attached_location", 
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("supplies/dried_fruits_item");
+		_list.push("supplies/legend_fresh_fruit_item");
 		_list.push("supplies/dried_fruits_item");
 	}
 

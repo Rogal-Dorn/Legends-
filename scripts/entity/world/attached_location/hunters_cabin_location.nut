@@ -12,8 +12,8 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("supplies/cured_venison_item");
 		_list.push("trade/furs_item");
+		_list.push("trade/legend_small_furs_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

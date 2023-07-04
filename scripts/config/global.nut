@@ -670,6 +670,8 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendHalberdier:
 		case this.Const.EntityType.LegendSlinger:
 		case this.Const.EntityType.LegendFencer:
+		case this.Const.EntityType.LegendNobleGuard:
+		case this.Const.EntityType.LegendManAtArms:	
 			return this.Const.FactionType.NobleHouse;
 
 		case this.Const.EntityType.BountyHunter:

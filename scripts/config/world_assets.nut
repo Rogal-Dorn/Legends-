@@ -9,11 +9,11 @@ gt.Const.World.Assets <- {
 	NewCampaignEquipment = [
 		"scripts/items/accessory/bandage_item"
 	],
-	MedicinePerHitpoint = 0.1,
+	MedicinePerHitpoint = 0.13,
 	MedicinePerInjuryDay = 1.0,
 	HitpointsPerHour = 0.75,
 	ArmorPartsPerArmor = 0.067,
-	ArmorPerHour = 3,
+	ArmorPerHour = 2,
 	FoodConsumptionMult = 1.5 / this.World.getTime().SecondsPerDay,
 	CostToRepairPerPoint = 2,
 	ReputationOnVictory = 5,

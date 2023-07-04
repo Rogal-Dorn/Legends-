@@ -95,7 +95,7 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("supplies/bread_item");
+		_list.push("supplies/ground_grains_item");
 		_list.push("supplies/bread_item");
 	}
 

@@ -299,7 +299,7 @@ gt.Const.Strings.EntityName <- [
 	"Free Company Leader",
 	"Free Company Ringleader",
 	"Oathbringer",
-	"Veteran Footman",
+	"Noble Guard",
 	"Man at Arms"
 ];
 gt.Const.Strings.EntityNamePlural <- [

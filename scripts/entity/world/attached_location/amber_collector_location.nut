@@ -14,7 +14,7 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/amber_shards_item");
-		_list.push("trade/amber_shards_item");
+		_list.push("trade/legend_seashells_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -43,6 +43,11 @@ this.amber_collector_location <- this.inherit("scripts/entity/world/attached_loc
 				R = 0,
 				P = 1.0,
 				S = "trade/amber_shards_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/legend_seashells_item"
 			});
 			_list.push({
 				R = 95,
