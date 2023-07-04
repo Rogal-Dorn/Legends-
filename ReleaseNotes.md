@@ -73,34 +73,47 @@ Attachments:
 
 **World economy**
 Settlement wealth calculation for upgrades changed to coins rather than abstract resource points 
-Caravans now take tagoods out of each building's inventory of the town they leave, and deliver it to the town they arrive at. Paying the origin town in coin 
-Attached locations have expanded descriptions to explain what they do for the town. They also have increased production rates of their goods for trade, and occassionally produce processed versions of their raw material
+Caravans now take goods out of each building's inventory of the town they leave, carry the goods in their inventory, and deliver the goods into the inventoryu of the town they arrive at. Paying the origin town in coin when they unload.
 Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving without the player
-Rebuilding can happen more freuqently 
+
+Attached locations: 
+- Increased production rates by introducing smaller versions of their trade goods. This increases the number of trade goods without overall ballooning trade values
+- New items produced are: Fresh fish, Fresh milk, gem shards and fur scraps
+- have expanded descriptions to explain what they do for the town.
+- Rebuilding can happen more freuqently 
 
 **Camp Balance**
-Camp adjusted to make cities and upgraded tents more appealing 
+Camp adjusted to make visiting cities more appealing, contributing to their economy. 
+You'll now need an upgraded tent to get full benefit from camping.  
 
 Healing:
--Background healing rate outside camp reduced by 25%
-- a healing tent increases healing rate by 10%
+- Background healing rate outside camp reduced by 25%, and medicine consumption increased by 10%
+- a healing tent increases healing rate by 10%, with skilled backgrounds increasing the rate and decreasing consumption
 - an upgraded healing tent increases healing rate by 66%
 
 Food:
 - Background food consumption rate increased by 50% to incentivise cooking
 - Hunting tent renamed to Kitchen to better reflect its role, description updated to explain what it does  
-- Upgraded kitchen now allows production of mead, porridge, pudding and pies
-- Upgrading increases 
+- Upgraded kitchen now allows production of mead, porridge, pudding and pies, while also increasing the hunting rate and chance of getting better foods.
+- Assigned cooking backgrounds have a small chance to produce cured goods without a cooking perk, though the perk drastically increases the chances.
+- It is still possible to improve food using spices in the crafting tent. 
 
 Training: 
 - Training speed halved, upgrading the tent doubles the rate
 
 Gathering:
-- Description updated to explain what it does 
+- Description updated to explain what it does, making it clearer you're offsetting medicine consumption rate. 
+- miners and woodsmen sent to gather will return smaller versions of their resources until they're high level.
 - no longer requires both apocatheries and brewers to produce potions. Instead needing apocatheries and upgraded tent 
 
 Repair: 
-- rate slowed and description improved
+- rate slowed by 33% outside camp, camp passive repair rate decreased closer to normal rate, mercenaries assigned and skills increase the rate further
+- upgraded tent multiplies the rate by another 33% while decreasing tool use by 33%. Description improved
+
+Scrap 
+- item durability required to produce a tool nerfed to 30 from 15.   Upgrading the tent reduces this by 66%
+
+
 
 **Noble armies**
 Nobles have much smaller armies with harder high tier units closer to Orc Elites 
@@ -155,6 +168,8 @@ Most decorative layers had their condition and value reduced.
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
+Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
+
 
 
 ## Build 16.2.0, Smoke & Faith
@@ -164,7 +179,7 @@ More variety added to character and location names
 - Improved named helmet random stat rolls (increased min and max - they were often too close to normal helmets to justify their value)
 - Noble fencers can now spawn as champions. Dev note: Noble parties often lacked champions, this should fill that void and make them more rewarding to fight 
 - Adds a new effect to some champion enemies: Warmonger.
-  - Warmonger greatly increases defensive and offensive stats of their allies within a small radius. Killing the champion producing the effect removes it. Making the fight easier. Champion entities with this enabled effect are: Brigand leaders, Brigand warlords and Necromancers
+- Warmonger greatly increases defensive and offensive stats of their allies within a small radius. Killing the champion producing the effect removes it. Making the fight easier. Champion entities with this enabled effect are: Brigand leaders, Brigand warlords and Necromancers
 - Adds a new background image for man-at-arms background
 - Adds in a calculation to a ranged weapon tooltip if the entity has the close combat archer perk enabled (Thanks to WNTR Jimmy)
 

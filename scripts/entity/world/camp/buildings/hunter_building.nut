@@ -15,7 +15,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.ModMod = 10.0;
 		this.m.BaseCraft = 1.5;
 		this.m.Slot = "hunt";
-		this.m.Name = "Kitchen";
+		this.m.Name = "Camp Kitchen";
 		this.m.Description = "A kitchen tent with supplies for hunting, preparing and cooking food"
 		this.m.BannerImage = "ui/buttons/banner_hunt.png"
 		this.m.CanEnter = false
@@ -58,14 +58,18 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	{
 		local desc = "";
 		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food hunted."
-		desc += "A basic tent returns fresh meat and fruit which don't keep for long"
+		desc += "Returns fresh meat and fruit which don't keep for long. Assigning hunting backgrounds increases the amount returned"
 		desc += "\n\n"
 		desc += "Assigning mercenaries with cooking perks can provide cured meats, dried fruits and grains"
 		desc += "Assigning mercenaries with brewing perks can yield wine and beer"
 		desc += "\n\n"
-		desc += "An upgraded tent allows brewers to produce mead and cured mead, while cooks produce porridge, pudding and pies"
+		desc += "An upgraded tent allows brewers to produce mead, while cooks produce porridge, pudding and pies"
 		desc += "Upgrading also provides a 10% increase in hunting speed and +50% to cooking and brewing efficiency."
 		desc += "Upgrading allows cooking backgrounds a small chance to help cook even without cooking perks"
+		desc += "Upgrading allows hunting backgrounds like wildfolk, ratcatchers, poachers and hunters to return furs and rarer animal parts"
+		desc += "\n\n"
+		desc += "Advanced food can also be made using spices in the crafting tent"
+
 	
 		
 		return desc;
@@ -167,6 +171,30 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	}
 
+	function getHuntLevel()
+	{
+		local roster = this.World.getPlayerRoster().getAll();
+		local huntLevel = 0;
+		foreach( bro in roster )
+		{
+			if (bro.getCampAssignment() != this.m.ID)
+			{
+				continue
+			}
+			if (this.getUpgraded())
+			{
+				if (bro.getSkills().hasSkill("background.hunter") || bro.getSkills().hasSkill("background.poacher") || bro.getSkills().hasSkill("background.wildman") || bro.getSkills().hasSkill("background.wildwoman")  || bro.getSkills().hasSkill("background.ratcatcher"))
+				{
+				   huntLevel += this.Math.floor(bro.getLevel());
+				}
+			}		
+
+			return huntLevel;
+
+		}
+
+	}
+
 	function getBrewerLevel()
 	{
 		local roster = this.World.getPlayerRoster().getAll();
@@ -194,7 +222,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return brewerLevel;
 
 		}
-
 	}
 
 	function getResults()
@@ -287,6 +314,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/dried_fruits_item",
 				"scripts/items/supplies/cured_venison_item",
 				"scripts/items/supplies/ground_grains_item",
+				"scripts/items/trade/legend_cooking_spices_trade_item",
 			]);
 
 			if (this.getUpgraded())
@@ -304,7 +332,37 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
 		
+		local huntlevels = this.getHuntLevel();
+		if (this.getUpgraded())
+		{
+			cost = this.Math.floor(huntlevels * 1.5);
+		}
+		dropLoot = -300.0 / (huntlevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		if (dropLoot)
+		{
+			local huntLoot = this.new("scripts/mods/script_container")
+			huntLoot.extend([
+				"scripts/items/supplies/legend_fresh_meat_item",
+				"scripts/items/supplies/legend_fresh_fruit_item",
+				"scripts/items/supplies/strange_meat_item",
+			]);
 
+			if (this.getUpgraded())
+			{
+				chefLoot.extend([
+					[1, "scripts/misc/adrenaline_gland_item"],
+					[2, "scripts/items/misc/poison_gland_item"],
+					[3, "scripts/items/trade/legend_small_furs_item"]
+				]);
+			}
+
+			item = this.new(chefLoot.roll()); 
+			this.m.Items.push(item);
+			this.Stash.add(item);
+			if(--emptySlots == 0) return this.getUpdateText();
+		}
+		
+		
 		local r = this.Math.rand(1, 4);
 		
 		local huntingLoot = this.new("scripts/mods/script_container");
@@ -334,6 +392,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/dried_fruits_item"
 			]);
 		}
+
+
 
 		if (item.getValue() != null && this.m.Points < item.getValue())
 		{

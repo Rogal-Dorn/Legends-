@@ -5,7 +5,7 @@ this.legend_wooden_spear <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.create();
 		this.m.ID = "weapon.legend_wooden_spear";
 		this.m.Name = "Wooden Spear";
-		this.m.Description = "A large branch whittled to a fine point. It\'s so unbalanced and irregular you need to use two hands just to keep it steady. Liable to snap at any moment.";
+		this.m.Description = "A large branch whittled to a fine point. It\'s so unbalanced and irregular you need to use two hands just to keep it steady. Liable to snap at any moment. Deals additional damage to vampires";
 		this.m.IconLarge = "weapons/melee/legend_wooden_spear_01.png";
 		this.m.Icon = "weapons/melee/legend_wooden_spear_01_70x70.png";
 		this.m.WeaponType = this.Const.Items.WeaponType.Spear;

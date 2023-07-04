@@ -69,7 +69,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getRate()
 	{
-		local heal = 1.33;
+		local heal = 1.1;
 		if (this.getUpgraded())
 		{
 			heal = 1.66;
