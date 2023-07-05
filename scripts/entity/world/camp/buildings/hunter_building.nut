@@ -57,16 +57,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food hunted."
-		desc += "Returns fresh meat and fruit which don't keep for long. Assigning hunting backgrounds increases the amount returned"
+		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food hunted. "
+		desc += "Returns fresh meat and fruit which don't keep for long. Assigning hunting backgrounds increases the amount returned. "
 		desc += "\n\n"
-		desc += "Assigning mercenaries with cooking perks can provide cured meats, dried fruits and grains"
-		desc += "Assigning mercenaries with brewing perks can yield wine and beer"
+		desc += "Assigning mercenaries with cooking perks can provide cured meats, dried fruits and grains. "
+		desc += "Assigning mercenaries with brewing perks can yield wine and beer. "
 		desc += "\n\n"
-		desc += "An upgraded tent allows brewers to produce mead, while cooks produce porridge, pudding and pies"
-		desc += "Upgrading also provides a 10% increase in hunting speed and +50% to cooking and brewing efficiency."
-		desc += "Upgrading allows cooking backgrounds a small chance to help cook even without cooking perks"
-		desc += "Upgrading allows hunting backgrounds like wildfolk, ratcatchers, poachers and hunters to return furs and rarer animal parts"
+		desc += "Updgrading this tent allows brewers to produce mead, while cooks produce porridge, pudding and pies. "
+		desc += "Upgrading also provides a 10% increase in hunting speed and +50% to cooking and brewing efficiency. "
+		desc += "Upgrading allows cooking backgrounds a small chance to help cook even without cooking perks. "
+		desc += "Upgrading allows hunting backgrounds like wildfolk, ratcatchers, poachers and hunters to return furs and rarer animal parts. "
 		desc += "\n\n"
 		desc += "Advanced food can also be made using spices in the crafting tent"
 

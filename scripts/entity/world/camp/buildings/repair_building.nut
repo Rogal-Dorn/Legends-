@@ -93,11 +93,11 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getDescription()
 	{
 		local desc = "";
-		desc += "this tent repairs damaged items in your stash and equipped bros. Equipment is repaired one item at time, so repair order matters"
-		desc += "At the end of a battle, any equiped gear damaged is added to the front of the repair queue"
+		desc += "this tent repairs damaged items in your stash and equipped bros. Equipment is repaired one item at time, so repair order matters. "
+		desc += "At the end of a battle, any equiped gear damaged is added to the front of the repair queue. "
 		desc += "\n\n"
 		desc += "Items will repair very slowly when not camped. Camping increases the speed even with no one assigned. "
-		desc += "The more people assigned to the repair tent, the quicker the repairs. Mercenaries with repair skills increase the speed even further."
+		desc += "The more people assigned to the repair tent, the quicker the repairs. Mercenaries with repair skills increase the speed even further. "
 		desc += "\n\n"
 		desc += "Buying an upgraded tent from a settlement will increase repair speed by 33% and reduce tool use by -33%"
 		return desc;
