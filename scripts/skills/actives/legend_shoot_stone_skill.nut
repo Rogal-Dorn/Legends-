@@ -41,7 +41,7 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.SoundOnHitDelay = -150;
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
-		this.m.Delay = 500;
+		this.m.Delay = 200;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
