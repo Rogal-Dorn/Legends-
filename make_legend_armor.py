@@ -713,6 +713,11 @@ layers = [
     "desc" :  "A body vest with overlapping scales.", \
     "adesc" : "Includes body vest with overlapping scales."
 },
+{"name": "noble_padded",                            "layer": "plate", "min": 1, "max": 1, "value" : 280, "con" : 120, "stam" : -13, "impactSound" : "plate", "invSound" : "leather", \
+    "title" :  "Padded Noble Vest", \
+    "desc" :  "An expensive padded vest with thick leather strapping", \
+    "adesc" : "Includes body vest with overlapping scales."
+},
 {"name": "legend_armor_scale_coat",                       "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 120, "stam" : -15, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Coat of Scales", \
     "desc" :  "A heavy armor made of thick, overlapping metal scales covering most of the body.", \
@@ -785,11 +790,24 @@ layers = [
     "desc" :  "A heavy composite armor consisting of padding and lamellar elements", \
     "adesc" : "Includes composite lamellar elements",
 },
+
 {"name": "legend_southern_named_plates",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
     "title" :  "Famed Southern plates", \
     "desc" :  "Ancient knowledge has been used when smithing this unique set of armor. Its light mail overlapped with golden splints offers high protection with manageable encumberment.", \
     "adesc" : "overlapped with golden splints offering high protection with manageable encumberment.",
     "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]
+},
+{"name": "named_emperors_armor",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
+    "title" :  "emperors armor", \
+    "desc" :  "", \
+    "adesc" : "",
+    "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Aspect of Davkul"]
+},
+{"name": "davkul",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
+    "title" :  "Aspect of Davkul", \
+    "desc" :  "", \
+    "adesc" : "",
+    "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Aspect of Davkul"]
 },
 {"name": "legend_southern_plate_full",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_plate_full",\
     "title" :  "Mail with Lamellar Plating", \
@@ -869,6 +887,11 @@ layers = [
     "desc" :  "A hooded cowl with decorated edges, quite dashing", \
     "adesc" : "Has a dashing cowl"
 },
+{"name": "nun_wimple",           "layer": "cloak", "min": 1, "max": 1, "value" : 50, "con" : 15, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "nun_wimple",  \
+    "title" :  "Nun Wimple", \
+    "desc" :  "A basic wimple of a nun", \
+    "adesc" : "Has a wimple"
+},
 {"name": "tabbed_hood",           "layer": "cloak", "min": 1, "max": 1, "value" : 40, "con" : 10, "stam" : -1, "bravery" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "tabbed_hood",  \
     "title" :  "Tabbed Cowl", \
     "desc" :  "A hooded cowl with tabbed edges", \
@@ -888,6 +911,11 @@ layers = [
     "title" :  "Heavy Cloak", \
     "desc" :  "A rustic cloak made of thick layered strong warm wool, provides protection from some blows but is quite hefty. ", \
     "adesc" : "Has a heavy thick cloak"
+},
+{"name": "cursed_cloak",           "layer": "cloak", "min": 1, "max": 1, "value" : 500, "con" : 20, "stam" : -1, "bravery" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cursed_cloak", \
+    "title" :  "Cursed Cloak", \
+    "desc" :  "A cloak made of the feathers of a strange creature of the abyss. ", \
+    "adesc" : "Has a cloak made of the feathers of a strange creature of the abyss."
 },
 {"name": "legend_armor_cloak_crusader",           "layer": "cloak", "min": 36, "max": 36, "value" : 500, "con" : 35, "stam" : -5, "bravery" : 4, "impactSound" : "leather", "invSound" : "cloth", "brush" : "cloak",\
     "title" :  "Crusader Cloak", \

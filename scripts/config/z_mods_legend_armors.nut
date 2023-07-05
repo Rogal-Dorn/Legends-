@@ -918,6 +918,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/cursed_cloak"],
 		],
 		Tabard = [
 		],

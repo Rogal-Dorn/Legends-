@@ -2,7 +2,8 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 	m = {},
 	function create()
 	{
-		this.legend_named_armor.create();
+		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.ID = "legend_armor.body.legend_named_warlock_cloak";
 		this.m.Description = "A cloak made from the skin of dead men and dark magic.";
 		this.m.Name = "Warlock cloak"
@@ -14,7 +15,7 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 			"Deathcloak",
 			"Sorceror\'s Cloak"
 		];
-		this.m.Variant = 508;
+		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
@@ -25,7 +26,17 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 		this.randomizeValues();
 	}
 
-
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "bust_cursed_cloak" + "_" + variant;
+		this.m.SpriteDamagedBack = "bust_cursed_cloak" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_cursed_cloak" + "_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_cursed_cloak" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_cursed_cloak" + "_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_cursed_cloak" + "_" + variant + ".png";
+	}
 	function getTooltip()
 	{
 		local result = this.legend_named_armor.getTooltip();
