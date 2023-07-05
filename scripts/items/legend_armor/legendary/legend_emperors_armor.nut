@@ -2,7 +2,8 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
+		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.emperors_armor";
 		this.m.Name = "The Emperor\'s Armor";
 		this.m.Description = "A shining armor once worn by the emperor of an age long past, made from the most woundrous of materials, imbued with mystical energies. Light reflects easily off the polished armor, turning the wearer into a shimmering figure of light during the day.";
@@ -10,7 +11,7 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variant = 80;
+		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
@@ -19,9 +20,20 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.ConditionMax = 400;
 		this.m.StaminaModifier = -30;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
-		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
+		this.randomizeValues();
+	}
+
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "bust_named_emperors_armor" + "_" + variant;
+		this.m.SpriteDamagedBack = "bust_named_emperors_armor" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_named_emperors_armor" + "_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_named_emperors_armor" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_dnamed_emperors_armor" + "_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_named_emperors_armor" + "_" + variant + ".png";
 	}
 
 	function getTooltip()

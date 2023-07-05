@@ -2,7 +2,8 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
+		this.legend_named_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.armor_of_davkul";
 		this.m.Name = "Aspect of Davkul";
 		this.m.Description = "A grisly aspect of Davkul, an ancient power not from this world, and the last remnants of %sacrifice% from whose body it has been fashioned. It shall never break, but instead keep regrowing its scarred skin on the spot.";
@@ -10,7 +11,7 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variant = 81;
+		this.m.Variants = [1];
 		this.updateVariant();
 		this.m.ImpactSound = [
 			"sounds/combat/cleave_hit_hitpoints_01.wav",
@@ -23,9 +24,18 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.ConditionMax = 270;
 		this.m.StaminaModifier = -18;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
-		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
+		this.randomizeValues();
+	}
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "bust_davkul" + "_" + variant;
+		this.m.SpriteDamagedBack = "bust_davkul" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_davkul" + "_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_davkul" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_davkul" + "_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_davkul" + "_" + variant + ".png";
 	}
 
 	function getTooltip()
