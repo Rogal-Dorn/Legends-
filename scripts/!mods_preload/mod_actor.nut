@@ -6,6 +6,7 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 		o.m.BloodSaturation = 1.5;
 		o.m.DeathBloodAmount = 1.5;
 		o.m.BloodPoolScale = 1.25;
+		o.m.HealRemainder <- 0.0;
 		o.m.RiderID <- "";
 
 		o.onRender <- function ()
@@ -1023,7 +1024,15 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 
 			this.onAfterDeath(myTile);
 		}
-
+		
+		o.setHitpoints <- function ( _h)
+		{
+			local healGoal = _h + this.m.HealRemainder; 
+			local healTick = this.Math.floor(healGoal);
+			this.m.Hitpoints = this.Math.round(healTick);
+			this.m.HealRemainder = healGoal - healTick;
+			this.onUpdateInjuryLayer();
+		}
 
 		o.removeArmorUpgrade <- function ( _slot, _item)
 		{
