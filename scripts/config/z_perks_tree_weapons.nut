@@ -11,6 +11,40 @@ gt.Const.Perks.MaceTree <- {
 	Descriptions = [
 		"maces"
 	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			-3,
+			-3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			-3,
+			-3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendOnslaught],
@@ -29,6 +63,40 @@ gt.Const.Perks.FlailTree <- {
 	Descriptions = [
 		"flails"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			-3,
+			-3
+		],
+		Stamina = [
+			-3,
+			-3
+		],
+		MeleeSkill = [
+			3,
+			3
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
 	Tree = [
 		[],
 		[],
@@ -46,6 +114,40 @@ gt.Const.Perks.HammerTree <- {
 	Descriptions = [
 		"hammers"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			-3,
+			-3
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			-3,
+			-3
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSmackdown],
@@ -63,6 +165,40 @@ gt.Const.Perks.AxeTree <- {
 	Descriptions = [
 		"axes"
 	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			3,
+			3
+		],
+		RangedSkill = [
+			-3,
+			-3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			-3,
+			-3
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSmashingShields],
@@ -80,6 +216,40 @@ gt.Const.Perks.CleaverTree <- {
 	Descriptions = [
 		"cleavers"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			-3,
+			-3
+		],
+		RangedDefense = [
+			-3,
+			-3
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
 	Tree = [
 		[],
 		[],
@@ -97,6 +267,40 @@ gt.Const.Perks.GreatSwordTree <- {
 	Descriptions = [
 		"greatswords"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			-3,
+			-3
+		],
+		MeleeSkill = [
+			-3,
+			-3
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.BloodyHarvest],
@@ -114,6 +318,40 @@ gt.Const.Perks.SwordTree <- {
 	Descriptions = [
 		"swords"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			-3,
+			-3
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			3,
+			3
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			-3,
+			-3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.Feint],
@@ -130,6 +368,40 @@ gt.Const.Perks.DaggerTree <- {
 	Descriptions = [
 		"daggers"
 	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			-3,
+			-3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			-3,
+			-3
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.Backstabber],
@@ -146,6 +418,40 @@ gt.Const.Perks.PolearmTree <- {
 	Descriptions = [
 		"polearms"
 	],
+	Attributes = {
+		Hitpoints = [
+			-3,
+			-3
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			-3,
+			-3
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.CoupDeGrace],
@@ -163,6 +469,40 @@ gt.Const.Perks.SpearTree <- {
 	Descriptions = [
 		"spears"
 	],
+	Attributes = {
+		Hitpoints = [
+			-3,
+			-3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			-3,
+			-3
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.LegendSpecSpearWall],
@@ -180,6 +520,40 @@ gt.Const.Perks.CrossbowTree <- {
 	Descriptions = [
 		"crossbows"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			3,
+			3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			-3,
+			-3
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			-3,
+			-3
+		]
+	},
 	Tree = [
 		[],
 		[],
@@ -197,6 +571,40 @@ gt.Const.Perks.BowTree <- {
 	Descriptions = [
 		"bows"
 	],
+	Attributes = {
+		Hitpoints = [
+			-3,
+			-3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			3,
+			3
+		],
+		MeleeSkill = [
+			-3,
+			-3
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			0,
+			0
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[gt.Const.Perks.PerkDefs.Lookout],//gt.Const.Perks.PerkDefs.BowRange
 		[gt.Const.Perks.PerkDefs.Bullseye],
@@ -214,6 +622,40 @@ gt.Const.Perks.ThrowingTree <- {
 	Descriptions = [
 		"throwing weapons"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			-3,
+			-3
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			3,
+			3
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			-3,
+			-3
+		],
+		RangedDefense = [
+			0,
+			0
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.QuickHands],
@@ -231,6 +673,40 @@ gt.Const.Perks.SlingTree <- {
 	Descriptions = [
 		"slings"
 	],
+	Attributes = {
+		Hitpoints = [
+			0,
+			0
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			-3,
+			-3
+		],
+		RangedSkill = [
+			3,
+			3
+		],
+		MeleeDefense = [
+			-3,
+			-3
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			0,
+			0
+		]
+	},
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendSpecialistSlingSkill],
 		[],
@@ -248,6 +724,40 @@ gt.Const.Perks.StaffTree <- {
 	Descriptions = [
 		"staves"
 	],
+	Attributes = {
+		Hitpoints = [
+			-3,
+			-3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			-3,
+			-3
+		]
+	},
 	Tree = [
 		[],
 		[],
