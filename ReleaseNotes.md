@@ -146,6 +146,7 @@ Double Tongued Trait:
 
 
 **Background changes**
+Perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
 A few outlier backgrounds have been brought back closer to average stat ranges to increase the variety of compositions. 
 Arbelester loses 5 stamina and 10 initiative, hiring cost increased. To make them a bit less powerful without impacting their core benefits
 Beggar gain up to 2 mdef and 3 ranged defense, from years taking abuse on the streets
@@ -169,7 +170,7 @@ Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
 Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
-
+Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
 
 
 ## Build 16.2.0, Smoke & Faith

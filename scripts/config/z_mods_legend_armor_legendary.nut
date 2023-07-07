@@ -16,13 +16,17 @@ gt.Const.LegendMod.ArmorObjs.extend([
 	Script = "scripts/items/legend_armor/legendary/legend_armor_of_davkul",
 	Sets = [{
 		Cloth = [
-
+			[1, "cloth/legend_sackcloth_patched"],
+			[1, "cloth/legend_sackcloth_tattered"],
+			[1, "cloth/legend_sackcloth"],
 		],
 		Chain = [
-
+			[1, "chain/legend_armor_reinforced_worn_mail"],
+			[1, "chain/legend_armor_reinforced_worn_mail_shirt"],
+			[1, "chain/legend_armor_rusty_mail_shirt"],
 		],
 		Plate = [
-
+			[1, "plate/davkul"], 
 		],
 		Cloak = [
 		],
