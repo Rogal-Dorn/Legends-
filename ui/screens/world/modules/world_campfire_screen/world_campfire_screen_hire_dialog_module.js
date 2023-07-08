@@ -168,8 +168,10 @@ WorldCampfireScreenHireDialogModule.prototype.createDIV = function (_parentDiv)
 	var requirementsHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Requirements</div>');
 	requirementsHeader.append(requirementsHeaderLabel);
 
-	this.mDetailsPanel.RequirementsContainer = $('<div class="row is-requirements-components-container"/>');
-	detailsRow.append(this.mDetailsPanel.RequirementsContainer);
+	// var row = $('<div class="row is-requirements-components-container"/>');
+	var row = $('<div class="row"/>');
+	detailsRow.append(row);
+	this.mDetailsPanel.RequirementsContainer = row.createList(10, 'is-requirements-components-container').findListScrollContainer();
 
 	// details: costs
 	detailsRow = $('<div class="row is-costs-container"/>');
@@ -405,9 +407,16 @@ WorldCampfireScreenHireDialogModule.prototype.updateDetailsPanel = function(_ele
 		// requirements
 		this.mDetailsPanel.RequirementsContainer.empty();
 		var table = "<table>";
+		var hasAddedSecondaryText = false;
 
 		for(var i = 0; i < data.Requirements.length; ++i)
 		{
+			if (!hasAddedSecondaryText && data.Requirements[i].NotImportant)
+			{
+				hasAddedSecondaryText = true;
+				table += "<tr><div class='text-font-medium font-color-label'>Fulfill one of the below requirements:</div></tr>";
+			}
+
 			table += "<tr>";
 
 			if(data.Requirements[i].IsSatisfied)

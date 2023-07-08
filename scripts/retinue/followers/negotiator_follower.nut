@@ -12,17 +12,21 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			"Allows for more rounds of contract negotiations and greater payment with your potential employers before they abort, and with only a 10% chance on a hit to relations. Bad relations recover faster"
 			//"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
 		];
-		this.m.Requirements = [
-			{
-				IsSatisfied = false,
-				Text = "Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others"
-			}
-		];
-		this.m.RequiredSkills = [
+
+		this.addSkillRequirement("Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others", [
 			"perk.legend_pacifist",
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"
-		];
+		], true);
+
+		this.addRequirement("Negotiated for the payment of contracts 25 times", function() {
+			return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 25;
+		}, true, function( _r ) {
+			_r.Count <- 25;
+			_r.UpdateText <- function() {
+				this.Text = "Negotiated for the payment of contracts for " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " times (attempts only be counted after accepting a contract)"
+			};
+		});
 	}
 
 	function onUpdate()
@@ -46,7 +50,6 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 				this.World.Assets.m.RelationDecayBadMult = 1.15;
 			}
 		}
-
 	}
 
 	function onNewDay()
