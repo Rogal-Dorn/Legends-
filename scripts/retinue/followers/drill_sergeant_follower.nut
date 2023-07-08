@@ -13,15 +13,6 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 			"Makes men in reserve never lose mood from not taking part in battles"
 		];
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Retired Soldier, Swordmaster, Sellsword, or Gladiator", [
-			"background.retired_soldier",
-			"background.swordmaster",
-			"background.sellsword",
-			"background.gladiator",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
-		], true);
-
 		this.addRequirement("Won 50 battles", function() {
 			return ::World.Statistics.getFlags().getAsInt("BattlesWon") >= 50;
 		}, true, function( _r ) {
@@ -30,6 +21,15 @@ this.drill_sergeant_follower <- this.inherit("scripts/retinue/follower", {
 				this.Text = "Won at least " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("BattlesWon")) + "/" + this.Count + " battles"
 			};
 		});
+
+		this.addSkillRequirement("Have at least one of the following backgrounds: Retired Soldier, Swordmaster, Sellsword, or Gladiator", [
+			"background.retired_soldier",
+			"background.swordmaster",
+			"background.sellsword",
+			"background.gladiator",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
+		], true);
 	}
 
 	function onUpdate()

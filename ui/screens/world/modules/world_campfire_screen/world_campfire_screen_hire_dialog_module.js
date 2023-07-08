@@ -168,10 +168,9 @@ WorldCampfireScreenHireDialogModule.prototype.createDIV = function (_parentDiv)
 	var requirementsHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Requirements</div>');
 	requirementsHeader.append(requirementsHeaderLabel);
 
-	// var row = $('<div class="row is-requirements-components-container"/>');
-	var row = $('<div class="row"/>');
+	var row = $('<div class="row is-requirements-components-container"/>');
 	detailsRow.append(row);
-	this.mDetailsPanel.RequirementsContainer = row.createList(10, 'is-requirements-components-container').findListScrollContainer();
+	this.mDetailsPanel.RequirementsContainer = row.createList(10, null).findListScrollContainer();
 
 	// details: costs
 	detailsRow = $('<div class="row is-costs-container"/>');
@@ -180,12 +179,14 @@ WorldCampfireScreenHireDialogModule.prototype.createDIV = function (_parentDiv)
 	detailsRow.append(costsHeader);
 	var costsHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Costs</div>');
 	costsHeader.append(costsHeaderLabel);
-	var costsInitial = $('<div class="row is-initial-costs"/>');
-	detailsRow.append(costsInitial);
-	var costsLabel = $('<div class="costs-label title-font-normal font-bold font-bottom-shadow font-color-title">Up Front</div>');
-	costsInitial.append(costsLabel);
+	//var costsInitial = $('<div class="row is-initial-costs"/>');
+	//detailsRow.append(costsInitial);
+	//var costsLabel = $('<div class="costs-label title-font-normal font-bold font-bottom-shadow font-color-title">Up Front</div>');
+	//costsInitial.append(costsLabel);
 	var costsContainer = $('<div class="l-costs-container"/>');
-	costsInitial.append(costsContainer);
+	//costsInitial.append(costsContainer);
+	costsHeader.append(costsContainer);
+	
 	var costsImage = $('<img/>');
 	costsImage.attr('src', Path.GFX + Asset.ICON_ASSET_MONEY);
 	costsContainer.append(costsImage);
@@ -414,7 +415,7 @@ WorldCampfireScreenHireDialogModule.prototype.updateDetailsPanel = function(_ele
 			if (!hasAddedSecondaryText && data.Requirements[i].NotImportant)
 			{
 				hasAddedSecondaryText = true;
-				table += "<tr><div class='text-font-medium font-color-label'>Fulfill one of the below requirements:</div></tr>";
+				table += "<tr><div class='text-font-medium font-color-white'>Fulfill one of the below requirements:</div></tr>";
 			}
 
 			table += "<tr>";

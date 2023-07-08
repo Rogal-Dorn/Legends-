@@ -13,6 +13,15 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			"Unlocks \'Snake Oil\' recipe to earn money by crafting from various low tier components"
 		];
 
+		this.addRequirement("Crafted 10 items", function() {
+			return ::World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10;
+		}, false, function( _r ) {
+			_r.Count <- 10;
+			_r.UpdateText <- function() {
+				this.Text = "Crafted " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/" + this.Count + " items"
+			};
+		});
+
 		this.addSkillRequirement("Have at least one of the following backgrounds: Herbalist, Taxidermist, Druid, Alchemist", [
 			"background.legend_herbalist",
 			"background.legend_taxidermist",
@@ -22,15 +31,6 @@ this.alchemist_follower <- this.inherit("scripts/retinue/follower", {
 			"background.legend_companion_melee",
 			"background.legend_companion_ranged"
 		]);
-
-		this.addRequirement("Crafted 10 items", function() {
-			return ::World.Statistics.getFlags().getAsInt("ItemsCrafted") >= 10;
-		}, false, function( _r ) {
-			_r.Count <- 10;
-			_r.UpdateText <- function() {
-				this.Text = "Crafted " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("ItemsCrafted")) + "/" + this.Count + " items"
-			};
-		});
 	}
 
 	function isValid()

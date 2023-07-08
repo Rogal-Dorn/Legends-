@@ -13,12 +13,6 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			//"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
 		];
 
-		this.addSkillRequirement("Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others", [
-			"perk.legend_pacifist",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
-		], true);
-
 		this.addRequirement("Negotiated for the payment of contracts 25 times", function() {
 			return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 25;
 		}, true, function( _r ) {
@@ -27,6 +21,12 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 				this.Text = "Negotiated for the payment of contracts for " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " times (attempts only be counted after accepting a contract)"
 			};
 		});
+
+		this.addSkillRequirement("Have someone with the Pacifist perk. Guaranteed on Widow, Inventor, Tailor and many others", [
+			"perk.legend_pacifist",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
+		], true);
 	}
 
 	function onUpdate()

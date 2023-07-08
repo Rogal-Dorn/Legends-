@@ -12,14 +12,6 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 			"Makes you see the position of some caravans at all times and even if outside your sight radius"
 		];
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Raider, Barbarian, Deserter", [
-			"background.raider",
-			"background.barbarian",
-			"background.deserter",
-			"background.legend_companion_melee",
-			"background.legend_companion_ranged"
-		], true);
-
 		this.addRequirement("Raided at least 3 caravans", function() {
 			return ::World.Statistics.getFlags().getAsInt("CaravansRaided") >= 3;
 		}, true, function( _r ) {
@@ -28,6 +20,14 @@ this.brigand_follower <- this.inherit("scripts/retinue/follower", {
 				this.Text = "Raided " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("CaravansRaided")) + "/" + this.Count + " caravans"
 			};
 		});
+
+		this.addSkillRequirement("Have at least one of the following backgrounds: Raider, Barbarian, Deserter", [
+			"background.raider",
+			"background.barbarian",
+			"background.deserter",
+			"background.legend_companion_melee",
+			"background.legend_companion_ranged"
+		], true);
 	}
 
 	function onUpdate()
