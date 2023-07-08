@@ -13,12 +13,12 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 			//"Greater contract payment if negotiations are successful and makes good relations with any faction decay slower and bad relations recover faster"
 		];
 
-		this.addRequirement("Negotiated for the payment of contracts 25 times", function() {
-			return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 25;
+		this.addRequirement("Negotiated for the payment of contracts x times", function() {
+			return ::World.Statistics.getFlags().getAsInt("NegotiatingTries") >= 10;
 		}, true, function( _r ) {
-			_r.Count <- 25;
+			_r.Count <- 10;
 			_r.UpdateText <- function() {
-				this.Text = "Negotiated for the payment of contracts for " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " times (attempts only be counted after accepting a contract)"
+				this.Text = "Negotiated for the payment of contracts " + ::Math.min(this.Count, ::World.Statistics.getFlags().getAsInt("NegotiatingTries")) + "/" + this.Count + " times (attempts only be counted after accepting the contract)"
 			};
 		});
 
