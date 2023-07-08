@@ -1,8 +1,8 @@
-this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_named_armor", {
 	m = {},
 	function create()
 	{
-		this.legend_named_armor_upgrade.create();
+		this.legend_named_armor.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.armor_of_davkul";
 		this.m.Name = "Aspect of Davkul";
@@ -11,8 +11,11 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variants = [1];
-		this.updateVariant();
+		this.m.Icon = "legend_armor/icon_named_davkul_armor_01.png";
+		this.m.IconLarge = "legend_armor/inventory_named_davkul_armor_01.png";
+		this.m.Sprite = "bust_davkul_01";
+		this.m.SpriteDamaged = "bust_davkul_01_damaged";
+		this.m.SpriteCorpse= "bust_davkul_01_dead";
 		this.m.ImpactSound = [
 			"sounds/combat/cleave_hit_hitpoints_01.wav",
 			"sounds/combat/cleave_hit_hitpoints_02.wav",
@@ -26,17 +29,7 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.randomizeValues();
 	}
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "bust_davkul" + "_" + variant;
-		this.m.SpriteDamagedBack = "bust_davkul" + "_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_davkul" + "_" + variant + "_dead";
-		this.m.Icon = "legend_armor/icon_davkul" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_davkul" + "_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_davkul" + "_" + variant + ".png";
-	}
+
 
 	function getTooltip()
 	{

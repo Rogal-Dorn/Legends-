@@ -1,8 +1,8 @@
-this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_named_armor", {
 	m = {},
 	function create()
 	{
-		this.legend_named_armor_upgrade.create();
+		this.legend_named_armor.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.emperors_armor";
 		this.m.Name = "The Emperor\'s Armor";
@@ -11,8 +11,11 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variants = [1];
-		this.updateVariant();
+		this.m.Icon = "legend_armor/icon_named_emperors_armor_01.png";
+		this.m.IconLarge = "legend_armor/inventory_named_emperors_armor_01.png";
+		this.m.Sprite = "bust_named_emperors_armor_01";
+		this.m.SpriteDamaged = "bust_named_emperors_armor_01_damaged";
+		this.m.SpriteCorpse= "bust_named_emperors_armor_01_dead";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
@@ -21,19 +24,6 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.StaminaModifier = -30;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.randomizeValues();
-	}
-
-
-	function updateVariant()
-	{
-		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
-		this.m.SpriteBack = "bust_named_emperors_armor" + "_" + variant;
-		this.m.SpriteDamagedBack = "bust_named_emperors_armor" + "_" + variant + "_damaged";
-		this.m.SpriteCorpseBack = "bust_named_emperors_armor" + "_" + variant + "_dead";
-		this.m.Icon = "legend_armor/icon_named_emperors_armor" + "_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "legend_armor/icon_dnamed_emperors_armor" + "_" + variant + ".png";
-		this.m.OverlayIconLarge = "legend_armor/inventory_named_emperors_armor" + "_" + variant + ".png";
 	}
 
 	function getTooltip()
