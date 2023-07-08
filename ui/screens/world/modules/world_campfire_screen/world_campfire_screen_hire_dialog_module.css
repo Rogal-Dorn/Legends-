@@ -526,6 +526,8 @@
 
 	width: 40.0rem;
 	height: 20.0rem;
+
+	border: 1px solid green;
 }
 
 .world-campfire-screen > .l-hire-dialog-container .content .details-container .row.is-requirements-container .is-requirements-components-container > .container
