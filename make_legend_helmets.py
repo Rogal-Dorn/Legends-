@@ -311,8 +311,8 @@ this.$name <- this.inherit("scripts/items/legend_helmets/legend_named_helmet_upg
 });
 '''
 
-BLayer = '<sprite id="$name" offsetY="35" ic="FF4E5053" width="184" height="222" img="$name_path" left="-67" right="68" top="-40" bottom="108" />\n'
-BLayerDamaged = '<sprite id="$damaged" offsetY="35" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-67" right="68" top="-40" bottom="108" />\n'
+BLayer = '<sprite id="$name" offsetY="35" f="64F0" ic="FF4E5053" width="184" height="222" img="$name_path" left="-67" right="68" top="-40" bottom="108" />\n'
+BLayerDamaged = '<sprite id="$damaged" offsetY="35" f="64F0" ic="FF4B4D51" width="184" height="222" img="$damaged_path" left="-67" right="68" top="-40" bottom="108" />\n'
 BLayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64F0" ic="FF222933" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
 
 brush_only_layers = [

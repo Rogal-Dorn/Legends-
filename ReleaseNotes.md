@@ -171,7 +171,7 @@ The emporer's wreath helmet now has a wreath
 More variety added to character and location names
 Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
-
+Bandit rabble poachers have improved aim, and 
 
 ## Build 16.2.0, Smoke & Faith
 

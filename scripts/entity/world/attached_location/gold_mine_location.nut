@@ -113,9 +113,9 @@ this.gold_mine_location <- this.inherit("scripts/entity/world/attached_location"
 				S = "trade/legend_gold_dust_item"
 			});
 			_list.push({
-				R = 80,
+				R = 95,
 				P = 1.0,
-				S = "trade/legend_gold_ingots_item"
+				S = "trade/gold_ingots_item"
 			});
 			_list.push({
 				R = 90,

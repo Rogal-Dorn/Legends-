@@ -48,7 +48,7 @@ this.incense_dryer_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 0,
 				P = 1.0,
-				S = "misc/legend_cooking_spices_trade_item"
+				S = "supplies/legend_cooking_spices_trade_item"
 			});
 			_list.push({
 				R = 0,

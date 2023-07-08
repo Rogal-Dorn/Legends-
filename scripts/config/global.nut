@@ -658,8 +658,6 @@ gt.Const.EntityType <- {
 			return this.Const.FactionType.Settlement;
 
 		case this.Const.EntityType.Footman:
-		case this.Const.EntityType.VeteranFootman:
-		case this.Const.EntityType.LegendManAtArms:
 		case this.Const.EntityType.Greatsword:
 		case this.Const.EntityType.Billman:
 		case this.Const.EntityType.Arbalester:

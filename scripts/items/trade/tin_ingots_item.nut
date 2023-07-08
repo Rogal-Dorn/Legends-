@@ -5,7 +5,7 @@ this.tin_ingots_item <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.trading_good_item.create();
 		this.m.ID = "misc.tin_ingots";
 		this.m.Name = "Tin Ingot";
-		this.m.Description = "Tin smolten and cast into and ingot for easy transportation. Used together with Copper to make Bronze.";
+		this.m.Description = "Tin smolten and cast into an ingot for easy transportation. Used together with Copper to make Bronze.";
 		this.m.Icon = "trade/inventory_trade_tin_bars.png";
 		this.m.Culture = this.Const.World.Culture.Northern;
 		this.m.ProducingBuildings = [

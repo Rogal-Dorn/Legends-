@@ -798,16 +798,15 @@ layers = [
     "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Gilder\'s Shining Ward", "Gilder\'s Skin", "Suncloak", "Snakeskin", "Blazing Mail", "Suntouched Harness", "Shining Hauberk", "Armor of the Scorpion King"]
 },
 {"name": "named_emperors_armor",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
-    "title" :  "emperors armor", \
+    "title" :  "fake emperors armor", \
     "desc" :  "", \
     "adesc" : "",
     "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Aspect of Davkul"]
 },
 {"name": "davkul",                  "layer": "plate", "min": 1, "max": 1, "value" : 9000, "con" : 210, "stam" : -25, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_named_plate",\
-    "title" :  "Aspect of Davkul", \
+    "title" :  "fake Aspect of Davkul", \
     "desc" :  "", \
     "adesc" : "",
-    "named" : True, "rminStam" : 23, "rmaxStam": 26, "rminCond" : 210, "rmaxCond" : 230,  "names" : Names + ["Aspect of Davkul"]
 },
 {"name": "legend_southern_plate_full",                 "layer": "plate", "min": 1, "max": 2, "value" : 750, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_plate_full",\
     "title" :  "Mail with Lamellar Plating", \
@@ -1308,8 +1307,8 @@ this.$name <- this.inherit("scripts/items/legend_armor/legend_armor_tabard", {
 });
 '''
 
-Layer = '<sprite id="$name" offsetY="35" ic="$ic" width="104" height="142" img="$name_path" left="-44" right="50" top="-53" bottom="13" />\n'
-LayerDamaged = '<sprite id="$damaged" offsetY="35" ic="$ic" width="104" height="142" img="$damaged_path" left="-44" right="50" top="-53" bottom="13" />\n'
+Layer = '<sprite id="$name" offsetY="35" f="64FE" ic="$ic" width="104" height="142" img="$name_path" left="-44" right="50" top="-53" bottom="13" />\n'
+LayerDamaged = '<sprite id="$damaged" offsetY="35" f="64FE" ic="$ic" width="104" height="142" img="$damaged_path" left="-44" right="50" top="-53" bottom="13" />\n'
 LayerDead = '<sprite id="$dead" offsetX="6" offsetY="10" f="64FE" ic="$ic" width="131" height="125" img="$dead_path" left="-57" right="59" top="-53" bottom="55" />\n'
 LayerArrow = '<sprite id="$arrow" offsetX="6" offsetY="10" f="64FB" ic="$ic" width="131" height="114" img="$arrow_path" left="0" right="28" top="-8" bottom="30" />\n'
 LayerJavelin = '<sprite id="$javelin" offsetX="6" offsetY="10" f="64FB" ic="$ic" width="131" height="134" img="$javelin_path" left="-11" right="35" top="-5" bottom="67" />\n'
