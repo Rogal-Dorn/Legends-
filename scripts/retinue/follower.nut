@@ -270,12 +270,26 @@ this.follower <- {
 	{
 	}
 
-	// clone the value for the ui, except the "CheckRequirement" cuz it is a function now
+	// clone the value for the ui, the return table should not contain any function
 	function cloneValue( _r )
 	{
 		local ret = clone _r;
-		ret.rawdelete("CheckRequirement");
-		ret.rawdelete("UpdateText");
+		local garbage = [];
+
+		// collect stuffs
+		foreach(k, v in ret)
+		{
+			if (typeof v != "function") continue;
+
+			garbage.push(k);
+		}
+
+		// dump stuffs
+		foreach(k in garbage)
+		{
+			ret.rawdelete(k);
+		}
+
 	    return ret;
 	}
 
