@@ -12,12 +12,9 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_skull_and_chain_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_skull_and_chain_01.png";
-		this.m.SpriteFront = "upgrade_skull_and_chain";
-		this.m.SpriteBack = null;
-		this.m.SpriteDamagedFront = "upgrade_skull_and_chain_damaged";
-		this.m.SpriteDamagedBack = null;
-		this.m.SpriteCorpseFront = "upgrade_skull_and_chain_dead";
-		this.m.SpriteCorpseBack = null;
+		this.m.SpriteBack = "upgrade_skull_and_chain";
+		this.m.SpriteDamagedBack = "upgrade_skull_and_chain_damaged";
+		this.m.SpriteCorpseBack = "upgrade_skull_and_chain_dead";
 
 		this.m.Value = 150;
 		this.m.Condition = 10;
@@ -27,20 +24,19 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 	function getTooltip()
 	{
 	
-		result.push(
-		{
+		local result = this.legend_armor_upgrade.getTooltip();
+		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
 			text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
-		},
-		{
+		});
+		result.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Builds up [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] more fatigue for each tile travelled"
-		}
-		);
+		});
 		return result;
 	}	
 	function onUpdateProperties( _properties )

@@ -12,11 +12,8 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_spiked_chain_collar_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_spiked_chain_collar_01.png";
-		this.m.SpriteFront = "upgrade_spiked_collar";
 		this.m.SpriteBack = "upgrade_spiked_collar";
-		this.m.SpriteDamagedFront = "upgrade_spiked_chain_collar_damaged";
 		this.m.SpriteDamagedBack = "upgrade_spiked_chain_collar_damaged";
-		this.m.SpriteCorpseFront = "upgrade_spiked_chain_collar_dead";
 		this.m.SpriteCorpseBack = "upgrade_spiked_chain_collar_dead";
 		this.m.Value = 200;
 		this.m.Condition = 20;

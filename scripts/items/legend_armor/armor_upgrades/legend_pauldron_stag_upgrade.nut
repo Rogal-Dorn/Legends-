@@ -12,11 +12,8 @@ this.legend_pauldron_stag_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_pauldrons_stag_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_pauldrons_stag_01.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_pauldrons_stag";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_pauldrons_stag_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_pauldrons_stag_dead";
 
 		this.m.Value = 2200;

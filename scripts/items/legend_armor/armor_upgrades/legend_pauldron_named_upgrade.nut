@@ -12,11 +12,8 @@ this.legend_pauldron_named_upgrade <- this.inherit("scripts/items/legend_armor/l
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_pauldrons_named_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_pauldrons_named_01.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_pauldrons_named";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_pauldrons_named_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_pauldrons_named_dead";
 		this.m.Value = 3000;
 		this.m.Condition = 50;

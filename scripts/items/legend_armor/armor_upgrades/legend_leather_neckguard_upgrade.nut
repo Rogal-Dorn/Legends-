@@ -12,11 +12,8 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_13.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_13.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_13_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_13_back_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_13_back_dead";
 
 		this.m.Value = 250;

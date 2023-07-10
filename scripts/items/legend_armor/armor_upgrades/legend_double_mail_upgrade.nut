@@ -12,11 +12,8 @@ this.legend_double_mail_upgrade <- this.inherit("scripts/items/legend_armor/lege
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_19.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_19.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_19_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_19_back_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_19_back_dead";
 
 		this.m.Value = 600;
