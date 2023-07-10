@@ -24,7 +24,6 @@
 	<sprite id="mini_choke" offsetY="35" ic="FF344955" img="skills\mini\mini_choke.png" />
 	<sprite id="mini_grapple" offsetY="35" ic="FF344955" img="skills\mini\mini_grapple.png" />
 	<sprite id="mini_tackle" offsetY="35" ic="FF344955" img="skills\mini\mini_tackle.png" />
-
 	<sprite id="piercing_bolt" ic="FF23165B" img="skills\PiercingBolt.png" />
 	<sprite id="guided_steps_square" ic="FF23165B" img="skills\guided_steps_square.png" />
 	<sprite id="mini_guided_steps_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_guided_steps_circle.png" />
@@ -36,10 +35,8 @@
 	<sprite id="nightvision_square" ic="FF23165B" img="skills\nightvision_square.png" />
 	<sprite id="spears_square" ic="FF23165B" img="skills\spears_square.png" />
 	<sprite id="status_spears_circle" ic="FF23165B" img="skills\status_spears_circle.png" />
-
 	<sprite id="status_effect_doublestrike" ic="FF23165B" img="skills\status_effect_doublestrike.png" />
 	<sprite id="mini_doublestrike_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_doublestrike_circle.png" />
-
 	<sprite id="mini_spears_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_spears_circle.png" />
 	<sprite id="revolt_square" ic="FF23165B" img="skills\revolt_square.png" />
 	<sprite id="relax_square" ic="FF23165B" img="skills\relax_square.png" />
@@ -87,7 +84,6 @@
 	<sprite id="throw_sand" ic="FF23165B" img="skills\throw_sand_01.png" />
 	<sprite id="boneplating_effect" ic="FF23165B" img="skills\boneplating_effect.png" />
 	<sprite id="trait_invictus" ic="FF23165B" img="skills\trait_invictus.png" />
-
 	<sprite id="mini_boneplating_effect" offsetY="35" ic="FF344955" img="skills\mini\mini_boneplating_effect.png" />
 	<sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 	<sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
@@ -100,7 +96,6 @@
 	<sprite id="mini_catapult_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_catapult_circle.png" />
 	<sprite id="mini_incoming_circle" ic="FF23165B" img="skills\mini\mini_incoming_circle.png" />
 	<sprite id="mini_omens_circle" ic="FF23165B" img="skills\mini\mini_omens_circle.png" />
-
 	<sprite id="cat_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\cat_orientation.png" />
 	<sprite id="rabble_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\rabble_orientation.png" />
 	<sprite id="rabble_poacher_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\rabble_poacher_orientation.png" />
@@ -148,7 +143,6 @@
 	<sprite id="kobold_fighter_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\kobold_fighter_orientation.png" />
 	<sprite id="kobold_wolfrider_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\kobold_wolfrider_orientation.png" />
 	<sprite id="mummy_queen_orientation" groupId="4DBF973D" ic="FF22200A" img="orientation\mummy_medium_orientation.png" />
-
 	<sprite id="demon_hound_flame_01" ic="FF23165B" img="skills\demon_hound_flame_01.png" />
 	<sprite id="demon_hound_bite" ic="FF23165B" img="skills\demon_hound_bite.png" />
 	<sprite id="demon_hound_bite_effect" ic="FF23165B" img="skills\demon_hound_bite_effect.png" />
@@ -161,11 +155,9 @@
 	<sprite id="mini_fire_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_fire_circle.png" />
 	<sprite id="mini_bluefire_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bluefire_circle.png" />
 	<sprite id="mini_throw_sand_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_throw_sand_circle.png" />
-
 	<sprite id="effect_sanctify_01" ic="FFEFEEEF" img="effects\effect_sanctify_01.png" left="-15" right="16" />
 	<sprite id="effect_sanctify_02" ic="FFEFEEEF" img="effects\effect_sanctify_02.png" left="-15" right="16" />
 	<sprite id="effect_sanctify_03" ic="FFEFEEEF" img="effects\effect_sanctify_03.png" left="-15" right="16" />
-
 	<sprite id="effect_transform_01" width="80" height="80" img="effects\effect_transform_01.png" left="-39" right="37" top="-34" bottom="36" />
 	<sprite id="effect_transform_02" width="80" height="80" img="effects\effect_transform_02.png" left="-39" right="37" top="-34" bottom="36" />
 	<sprite id="effect_transform_03" width="80" height="80" img="effects\effect_transform_03.png" left="-39" right="37" top="-34" bottom="36" />
@@ -174,11 +166,8 @@
 	<sprite id="active_24" ic="FF181B33" img="skills\active_24.png" />
 	<sprite id="active_117" ic="FF181B33" img="skills\active_117.png" />
 	<sprite id="rat_bite" ic="FF181B33" img="skills\rat_bite.png" />
-
 	<sprite id="blowgun_square" ic="FF23165B" img="skills\blowgun_square.png" />
-
 	<sprite id="mummy_curse" ic="FF23165B" img="skills\mummy_curse.png" />
 	<sprite id="icon_mummy_curse" ic="FF23165B" img="skills\icon_mummy_curse.png" />
 	<sprite id="mini_icon_mummy_curse" offsetY="35" ic="FF344955" img="skills\mini\mini_icon_mummy_curse.png" />
-
 </brush>

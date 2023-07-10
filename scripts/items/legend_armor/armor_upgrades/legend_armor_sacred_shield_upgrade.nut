@@ -8,7 +8,7 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 		this.m.Name = "Sacred Shield";
 		this.m.Description = "A holy relic shield to be strapped to your shoulder, it protects both physically and spiritually. This is primarily of benefit to those who are strong of mind";
 		this.m.ArmorDescription = "A holy relic shield has been attached to this armor, it protects both physically and spiritually";
-		this.m.Icon = "armor_upgrades/upgrade_belt_and_shield_01.png";
+		this.m.Icon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png"";
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_belt_and_shield_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_belt_and_shield_01.png";
@@ -28,15 +28,6 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 	{
 		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Resolve"
-		});
-	}	
-	function onArmorTooltip( _result )
-	{
-		_result.push({
 			id = 14,
 			type = "text",
 			icon = "ui/icons/bravery.png",
