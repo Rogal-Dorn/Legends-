@@ -13,7 +13,7 @@ this.mushroom_grove_location <- this.inherit("scripts/entity/world/attached_loca
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/pickled_mushrooms_item");
-		_list.push("supplies/pickled_mushrooms_item");
+		_list.push("trade/legend_cooking_spices_trade_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

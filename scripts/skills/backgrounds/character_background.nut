@@ -99,18 +99,9 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			MagicChance = 0.001
 		},
 		PerkTreeDynamic = {
-			Weapon = [
-				this.Const.Perks.SwordTree,
-				this.Const.Perks.DaggerTree,
-				this.Const.Perks.PolearmTree
-			],
-			Defense = [this.Const.Perks.MediumArmorTree],
-			Traits = [
-				this.Const.Perks.FitTree,
-				this.Const.Perks.IntelligentTree,
-				this.Const.Perks.AgileTree,
-				this.Const.Perks.FastTree
-			],
+			Weapon = [],
+			Defense = [],
+			Traits = [],
 			Enemy = [],
 			Class = [],
 			Magic = []

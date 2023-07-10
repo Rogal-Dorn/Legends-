@@ -40,23 +40,7 @@ this.legend_armor_chain_and_mail_upgrade <- this.inherit("scripts/items/legend_a
 		}
 		);
 		return result;
-	}	
-	function onArmorTooltip( _result )
-	{
-		_result.push({
-			id = 14,
-			type = "text",
-			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"
-		},
-		{
-			id = 10,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Doubles enemy desire to attack you in battle"
-		}
-		);
-	}	
+	}		
 	function onUpdateProperties( _properties )
 	{
 		this.legend_armor_upgrade.onUpdateProperties(_properties);
