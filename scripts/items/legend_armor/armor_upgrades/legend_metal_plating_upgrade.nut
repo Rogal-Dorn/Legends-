@@ -12,11 +12,8 @@ this.legend_metal_plating_upgrade <- this.inherit("scripts/items/legend_armor/le
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_12.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_12.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_12_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_12_back_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_12_back_dead";
 
 		this.m.Value = 800;
