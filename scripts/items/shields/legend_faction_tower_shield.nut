@@ -26,7 +26,7 @@ this.legend_faction_tower_shield <- this.inherit("scripts/items/shields/shield",
 		this.updateVariant();
 		this.m.Value = 1000;
 		this.m.MeleeDefense = 25;
-		this.m.RangedDefense = 25;
+		this.m.RangedDefense = 20;
 		this.m.StaminaModifier = -30;
 		this.m.Condition = 96;
 		this.m.ConditionMax = 96;

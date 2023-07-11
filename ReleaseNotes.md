@@ -146,7 +146,7 @@ Double Tongued Trait:
 
 
 **Background changes**
-Perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
+
 A few outlier backgrounds have been brought back closer to average stat ranges to increase the variety of compositions. 
 Arbelester loses 5 stamina and 10 initiative, hiring cost increased. To make them a bit less powerful without impacting their core benefits
 Beggar gain up to 2 mdef and 3 ranged defense, from years taking abuse on the streets
@@ -162,6 +162,15 @@ Warrior hiring cost increased. They are still quite powerful, but you'll need to
 Widow and widower gains 5 melee defense, self defense skills earned through the years in short abusive relationships since their partner died.  
 
 
+**Perk Changes**
+Weapon perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
+New Perk - Adaptive: add a new group of perks to your perk tree based on what is currently equipped in your hands. Found in the Intelligent Perk Group
+New Perk - Recuperation: Heal 1 hp per turn. Found in the Sturdy Perk Group
+Lookout now enables autopause when character is assigned to the scout tent
+Deulist now works with parrying dagger and buckler
+Fortified mind moved from intelligent to sturdy perk group
+
+
 **Other Changes:**
 Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
 Alignment pass on sallets, armets and faceplates. 
@@ -170,8 +179,16 @@ Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names
 Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
+Bandit rabble poachers have improved aim, sling damage reduced. You'll take more small hits rather than constantly being missed.  
+Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
+Towershield defenses changed to 25/20 from 30/15 
+Added fresh fish, fresh milk as products from attached locations and recipe for Goat Curry 
+Added gold dust, gold nuggest, seashells and small furs as small trade items 
+Fixed issue where radiance rune worked up and down many levels 
+Simplified logic for Grand Tournament, has some additional art
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
-Bandit rabble poachers have improved aim, and 
+ 
+
 
 ## Build 16.2.0, Smoke & Faith
 

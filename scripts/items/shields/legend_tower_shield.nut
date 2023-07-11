@@ -55,8 +55,8 @@ this.legend_tower_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Variant = this.Math.rand(1, 21); //random one is only 1-21 though
 		this.updateVariant();
 		this.m.Value = 1000;
-		this.m.MeleeDefense = 30;
-		this.m.RangedDefense = 15;
+		this.m.MeleeDefense = 25;
+		this.m.RangedDefense = 20;
 		this.m.StaminaModifier = -30;
 		this.m.Condition = 96;
 		this.m.ConditionMax = 96;
