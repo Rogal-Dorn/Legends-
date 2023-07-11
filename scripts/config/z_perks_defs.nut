@@ -2625,6 +2625,24 @@ local perkDefObjects = [
 		Const = "LegendNightRaider"
 	},
 	{
+		ID = "perk.legend_adaptive",
+		Script = "scripts/skills/perks/perk_legend_adaptive",
+		Name = this.Const.Strings.PerkName.LegendAdaptive,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAdaptive,
+		Icon = "ui/perks/adaptive_circle.png",
+		IconDisabled = "ui/perks/adaptive_circle_bw.png",
+		Const = "LegendAdaptive"
+	},
+	{
+		ID = "perk.legend_recuperation",
+		Script = "scripts/skills/perks/perk_legend_recuperation",
+		Name = this.Const.Strings.PerkName.LegendRecuperation,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRecuperation,
+		Icon = "ui/perks/recuperation_circle.png",
+		IconDisabled = "ui/perks/recuperation_circle_bw.png",
+		Const = "LegendRecuperation"
+	},
+	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,

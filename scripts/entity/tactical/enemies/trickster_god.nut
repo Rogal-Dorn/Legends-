@@ -177,7 +177,12 @@ this.trickster_god <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/gore_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_slaughter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_battleheart"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}

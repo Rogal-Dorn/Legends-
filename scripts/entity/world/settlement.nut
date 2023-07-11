@@ -1519,25 +1519,25 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		if (this.m.Size <= 1)
 		{
-			this.m.Resources = 2000;
+			this.m.Resources = 100;
 		}
 		else if (this.m.Size == 2)
 		{
-			this.m.Resources = 5000;
+			this.m.Resources = 150;
 		}
 		else if (this.m.Size == 3)
 		{
-			this.m.Resources = 10000;
+			this.m.Resources = 200;
 		}
 
 		if (this.isMilitary())
 		{
-			this.m.Resources += 1000;
+			this.m.Resources += 50;
 		}
 
 		if (this.isKindOf(this, "city_state"))
 		{
-			this.m.Resources += 2500;
+			this.m.Resources += 100;
 		}
 
 		if (this.getHousesMax() > 0)
@@ -2467,7 +2467,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function onLeave()
 	{
-		local oldBoughtResources = this.getResources();
 		foreach (item in this.World.Assets.getStash().getItems())
 		{
 			if (item == null) continue;
@@ -2476,19 +2475,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 				{
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
-				}
-				
-				if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-				{
-					this.setResources(this.getResources() + item.getValue());
-				}
 
+					if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+					{
+						this.setResources(this.getResources() + item.getResourceValue());
+					}
+				}
 			}
 			item.setBought(false);
-
 		}
-		local newBoughtResources = this.getResources();
-		this.logWarning("Left town with " + newBoughtResources + " bought resources up from " + oldBoughtResources )
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
@@ -2497,8 +2492,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				item.setBought(false);
 			}
 		}
-		
-		local oldBuildingResources = this.getResources();
+
 		foreach (building in this.getBuildings())
 		{
 			local stash = building.getStash()
@@ -2512,20 +2506,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 						{
 							this.World.Statistics.getFlags().increment("TradeGoodsSold");
-						}
-						
-						if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-						{
-							this.setResources(this.getResources() + item.getValue());
+
+							if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+							{
+								this.setResources(this.getResources() + item.getResourceValue());
+							}
 						}
 					}
 					item.setSold(false);
 				}
 			}
 		}
-		local newBuildingResources = this.getResources();
-		this.logWarning("Left town with " + newBuildingResources + " building resources up from " + oldBuildingResources + " total" )
-		
+
 		if (this.World.Statistics.getFlags().has("TradeGoodsSold") && this.World.Statistics.getFlags().get("TradeGoodsSold") >= 10)
 		{
 			this.updateAchievement("Trader", 1, 1);
@@ -2621,30 +2613,30 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function getBaseResourceLevel()
 	{
-		local minResources = 500;
+		local minResources = 50;
 
 		if (this.isMilitary())
 		{
-			minResources = minResources + 500;
+			minResources = minResources + 50;
 		}
 
 		if (this.isKindOf(this, "city_state"))
 		{
-			minResources = minResources + 1000;
+			minResources = minResources + 100;
 		}
 
 		switch(this.m.Size)
 		{
 		case 1:
-			minResources = minResources + 10000;
+			minResources = minResources + 100;
 			break;
 
 		case 2:
-			minResources = minResources + 50000;
+			minResources = minResources + 150;
 			break;
 
 		case 3:
-			minResources = minResources + 100000;
+			minResources = minResources + 200;
 			break;
 		}
 
@@ -2769,7 +2761,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		resources = resources + (this.m.HousesTiles.len() * 2);
-		this.logWarning("Adding a total of: " + resources + " from attached locations to a town that has " + this.m.HousesTiles.len() + " total tiles.")
+		// this.logWarning("Adding a total of: " + resources + " : to a town that has " + this.m.HousesTiles.len() + " total tiles.")
 		return resources;
 	}
 

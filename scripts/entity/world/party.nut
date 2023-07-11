@@ -503,6 +503,25 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 	function onDiscovered()
 	{
+		local playerRoster = this.World.getPlayerRoster().getAll();
+		local lookout = 0;
+		  if(!World.State.isPaused() && isAttackable() && getFaction() != 0 && !isAlliedWithPlayer() && getTile().getDistanceTo(World.State.getPlayer().getTile()) <= 12)
+		  {
+			foreach( bro in playerRoster )
+			{
+				if (bro.getCampAssignment() != this.Const.World.CampBuildings.Scout)
+					{
+						if (bro.getSkills().hasSkill("perk.lookout"))
+							{
+							lookout += 1;
+							}
+					}
+			}
+			if (lookout > 0)
+			{
+			World.State.setPause(true);
+			}
+		  }
 		this.world_entity.onDiscovered();
 	}
 

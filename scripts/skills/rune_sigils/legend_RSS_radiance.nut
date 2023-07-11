@@ -17,6 +17,7 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 	function onMovementCompleted( _tile )
 	{
 		local actor = this.getContainer().getActor();
+		local myTile = actor.getTile();
 		if (actor == null)
 		{
 			return;
@@ -31,7 +32,7 @@ this.legend_RSS_radiance <- this.inherit("scripts/skills/skill", {
 		{
 			foreach (t in tar)
 			{
-				if (!t.isAlliedWith(actor) && t.getSkills().hasSkill("effects.legend_RSS_radiance_effect") && t.getTile().getDistanceTo(actor.getTile()) == 1)
+				if (!t.isAlliedWith(actor) && t.getSkills().hasSkill("effects.legend_RSS_radiance_effect") && t.getTile().getDistanceTo(actor.getTile()) == 1 &&  this.Math.abs(t.getTile().Level - myTile.Level))
 				{
 					local NewMalus = t.getSkills().getSkillByID("effects.legend_RSS_radiance_effect");
 					NewMalus.setMalus(this.getItem().getRuneBonus1(), this.getItem().getRuneBonus2());

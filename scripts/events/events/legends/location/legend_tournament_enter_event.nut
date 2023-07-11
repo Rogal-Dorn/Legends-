@@ -33,7 +33,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "B",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A guard calls down from the battlements gesturing towards your arena veteran %SPEECH_ON%Hail %veteran%! I heard of your performance in the arena, but who are these welps with you? Your party will need at least three veterans before we can let you in to the grand tournament. Teach them your ways and come back, we look forward to seeing you in the tourney. %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament_castle.png[/img]{ You approach a large metal door set into a huge defensive wall. There is clearly only one way in. A guard calls down from the battlements gesturing towards your arena veteran %SPEECH_ON%Hail %veteran%! I heard of your performance in the arena, but who are these welps with you? Your party will need at least three veterans before we can let you in to the grand tournament. Teach them your ways and come back, we look forward to seeing you in the tourney. %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -75,7 +75,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{On the other side of the hall a door opens and a confident woman strides up to you. The trumpets sound again and a voice announces Artemisia, marshal of the grand tournament. She carries herself with the bearing of a fighter, wearing a gambeson, a full scabbard and a welcoming smile. %SPEECH_ON%Good to see the renowned %companyname%, I am glad to see you have joined us among the ranks of the greatest fighters. Have you come for bragging rights, or coin? No matter, you shall find both here%SPEECH_OFF% She leads you to a window that looks down on a large grassy arena where rich patrons watch on as warriors are sparring with one another. %SPEECH_ON%We have three events to compete in today, a Show Match against a specific foe of your choosing, The Gauntlet against endless waves of humans, or The Grand Melee against a mix of all foes. Would you like to compete today? %SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament_artemesia.png[/img]{On the other side of the hall a door opens and a confident woman strides up to you. The trumpets sound again and a voice announces Artemisia, marshal of the grand tournament. She carries herself with the bearing of a fighter, wearing well made chainmail, a well worn scabbard and a welcoming smile. %SPEECH_ON%Good to see the renowned %companyname%, I am glad to see you have joined us among the ranks of the greatest fighters. Have you come for bragging rights, or coin? No matter, you shall find both here%SPEECH_OFF% She leads you to a window that looks down on a large grassy arena where rich patrons watch on as warriors are sparring with one another. %SPEECH_ON%We have three events to compete in today, a Show Match against a specific foe of your choosing, The Gauntlet against endless waves of humans, or The Grand Melee against a mix of all foes. Would you like to compete today? %SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -120,7 +120,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 		});
 		this.m.Screens.push({
 			ID = "D2",
-			Text = "[img]gfx/ui/events/legend_tournament.png[/img]{You return to the main hall and find Artemesia talking with a ground of foreign fighters while they watch a bout of the Grand Melee through the viewing windows.  She sees you return, asks her leave from the fighters and greets you with a smile. %SPEECH_ON% So the %companyname% is not satisfied with mere Show Matches. I thought I saw a spark of something more in you. Which will it be, the Grand Melee or the Gauntlet?%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/legend_tournament_artemesia.png[/img]{You return to the main hall and find Artemesia talking with a ground of foreign fighters while they watch a bout of the Grand Melee through the viewing windows.  She sees you return, asks her leave from the fighters and greets you with a smile. %SPEECH_ON% So the %companyname% is not satisfied with mere Show Matches. I thought I saw a spark of something more in you. Which will it be, the Grand Melee or the Gauntlet?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Characters = [],
@@ -286,21 +286,15 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
-				local payment = 1000;
-
-				for( local i = 0; i < round && i < 5; i = i )
-				{
-					payment = payment * 2;
-					i = ++i;
-				}
-
+				round += 1;
+				local payment = 1000 * round ;
 				this.World.Assets.addMoney(payment);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
-				this.World.Flags.set("LegendTournamentRound", 1);
+				this.World.Flags.set("LegendTournamentRound", round);
 			}
 
 		});
@@ -323,21 +317,15 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
-				local payment = 500;
-
-				for( local i = 0; i < round && i < 5; i = i )
-				{
-					payment = payment * 2;
-					i = ++i;
-				}
-
+				round += 1;
+				local payment = 500 * round;
 				this.World.Assets.addMoney(payment);
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
-				this.World.Flags.set("LegendTournamentRound", 1);
+				this.World.Flags.set("LegendTournamentRound", round);
 			}
 
 		});
@@ -360,13 +348,8 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				local round = this.World.Flags.get("LegendTournamentRound");
-				local payment = 250;
-
-				for( local i = 0; i < round && i < 5; i = i )
-				{
-					payment = payment * 2;
-					i = ++i;
-				}
+				round += 1;
+				local payment = 250 * round;
 
 				this.World.Assets.addMoney(payment);
 				this.List.push({
@@ -374,7 +357,7 @@ this.legend_tournament_enter_event <- this.inherit("scripts/events/event", {
 					icon = "ui/icons/asset_money.png",
 					text = payment + " crowns as reward"
 				});
-				this.World.Flags.set("LegendTournamentRound", 1);
+				this.World.Flags.set("LegendTournamentRound", round);
 			}
 
 		});

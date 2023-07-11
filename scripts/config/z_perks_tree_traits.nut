@@ -427,11 +427,11 @@ gt.Const.Perks.IntelligentTree <- {
 		],
 		[
 			gt.Const.Perks.PerkDefs.Gifted,
-			gt.Const.Perks.PerkDefs.FortifiedMind
+			
 		],
 		[],
 		[],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendAdaptive],
 		[
 			gt.Const.Perks.PerkDefs.LegendMindOverBody
 		],
@@ -735,9 +735,11 @@ gt.Const.Perks.SturdyTree <- {
 		]
 	},
 	Tree = [
-		[],
 		[
-			// gt.Const.Perks.PerkDefs.LegendComposure
+			gt.Const.Perks.PerkDefs.LegendRecuperation
+		],
+		[
+			gt.Const.Perks.PerkDefs.FortifiedMind
 		],
 		[
 			gt.Const.Perks.PerkDefs.Steadfast

@@ -2183,7 +2183,9 @@ gt.Const.Strings.PerkName <- {
 	LegendOpportunist = "Opportunist",
 	LegendPrepared = "Prepared",
 	LegendLurker = "Lurker",
-	LegendNightRaider = "Night Raider"
+	LegendNightRaider = "Night Raider",
+	LegendAdaptive = "Adaptive",
+	LegendRecuperation = "Recuperation",
 
 	//MASTERIES - skills that have a unified effect on their weapon class
 	SpecBow = "Bow Mastery",
@@ -2453,7 +2455,7 @@ gt.Const.Strings.PerkDescription <- {
 	BattleForged = "Specialize in heavy armor! Armor damage taken is reduced by a percentage equal to [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of the current total armor value of both body and head armor. The heavier your armor and helmet, the more you benefit.\n\nDoes not affect damage from mental attacks or status effects, but can help to avoid receiving them.",
 	DoubleStrike = "Master the art of following up for devastating effects.\n\nAfter landing a hit, the next attack this turn does [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] overall damage. If the attack misses, the effect is lost.",
 	Vengeance = "\'You\'ve done it now!\'\n\nAfter receiving a blow, the next attack of this character will inflict [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] damage to both hitpoints and armor. If the attack misses, the effect is wasted.",
-	Duelist = "Become one with your weapon and go for the weak spots! With the offhand free, an additional [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] of any damage ignores armor. Does not work with two-handed weapons.",
+	Duelist = "Become one with your weapon and go for the weak spots! When your off hand is empty, or when you're holding an offhand throwable item, an additional [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] of any damage ignores armor. Bucklers and parrying daggers gain half of this bonus. Does not work with two-handed weapons.   ",
 	CripplingStrikes = "Cripple your enemies! Lowers the threshold to inflict injuries by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color] for both melee and ranged attacks. Undead cannot be injured, but you gain [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against them.",
 	QuickHands = "Looking for this? Swapping any item in battle except for shields becomes a free action with no Action Point cost once every turn.",
 	TrophyHunter = "Each fight tells a story, with glory and strength growing in their end. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] permanent hitpoint for every opponent slain.",
@@ -2486,7 +2488,7 @@ gt.Const.Strings.PerkDescription <- {
 	Feint = "If an attack misses, it costs [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] less fatigue than normal and you leave your opponent parried, lowering their defenses by 10.",
 	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point. The bonus experience stays until level 99. \n\nWhen playing the \'Manhunters\' origin, your indebted get the perk point refunded at the seventh character level.",
 	Gifted = "Mercenary life comes easy when you\'re naturally gifted. Instantly gain a levelup to increase this character\'s attributes with maximum rolls, but without talents.",
-	Lookout = "Learn to find your enemies before they find you. Vision is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] scouting in camp.",
+	Lookout = "Learn to find your enemies before they find you.  This Character\'s Vision is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color]. While on duty in the scout tent they grant [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] scouting and will pause the game when an enemy party is discovered nearby while travelling, allowing the party to avoid ambushes.",
 	Zweihander = "Fatigue costs for all two-handed weapon skills are reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color].",
 	Pathfinder = "Learn to move on difficult terrain. Action Point costs for movement on all terrain is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-1[/color] to a minimum of 2 Action Points per tile, and Fatigue cost is reduced to half. Changing height levels also has no additional Action Point cost anymore.",
 	FortifiedMind = "An iron will is not swayed from the true path easily. Resolve is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].",
@@ -2619,8 +2621,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a militia spear, ancient spear or wooden spear. Only 25% of this skill applies to other spears.",
 	LegendSpecialistPickaxeDamage = "Allows this character to mine for minerals while assigned to gathering in camp. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]+1-3[/color] damage when wielding 2 handed hammers.",
 	LegendSpecialistPickaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] melee skill while using 2 handed hammers.",
-	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+9-24[/color] damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 35% of this perk applies to other polearms including banners.",
-	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe or Wooden Flail. 25% of this perk applies to other polearms and banners.",
+	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+9-24[/color] damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warfork or Wooden Flail. 35% of this perk applies to other polearms including banners.",
+	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warfork or Wooden Flail. 25% of this perk applies to other polearms and banners.",
 	LegendSpecialistShortbowDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a shortbow, wonky bow, boondock bow or reinforced boondock bow. Only 35% of this skill applies to other bows.",
 	LegendSpecialistShortbowSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and 25% armor penetration while using a shortbow, wonky bow, boondock bow or reinforced boondock bow. Only 25% of this applies to other bows.",
 	LegendSpecialistShovelDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a shovel. 35% of this skill applies to two handed maces.",
@@ -2820,7 +2822,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendOpportunist = "When successfully landing a hit on an enemy who is bleeding or poisoned, apply \'Dazed\' to them. If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill and no penalty to Ranged Skill.",
 	LegendPrepared = "While using a dagger, dealing health damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance of poisoning them. You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery per turn while holding a dagger in your mainhand.",
 	LegendLurker = "When neither ally nor enemy is within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
-	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night."
+	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night.",
+	LegendAdaptive = "Add a new group of perks to this character's perk tree, the perks are determined by what is currently equipped in their hands",
+	LegendRecuperation = "Heal 1 hitpoint at the end of every turn"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

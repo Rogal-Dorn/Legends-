@@ -15,13 +15,23 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				local origin = _entity.getOrigin();
 				local inv = _entity.getInventory();
+				local payment; 
 				if (inv != null)
 					{
 						foreach (item in inv.getItems())
 						{
-						local payment = item.getValue() * 1.05;
-						this.setResources(this.getResources() + payment);
+							if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+							{
+							payment += item.getResourceValue();
+							}
+							else
+							{
+							payment += item.getValue() * 0.001;
+							this.setResources(this.getResources() + payment);
+							}
+							
 						}
+						payment = this.Math.floor(payment)
 					}
 				if (origin != null)
 				{

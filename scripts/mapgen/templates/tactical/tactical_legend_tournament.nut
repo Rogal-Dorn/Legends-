@@ -17,7 +17,7 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 			["tactical.tile.autumn1", "tactical.tile.autumn2", "tactical.tile.autumn3", "tactical.tile.autumn4"],
 			["tactical.tile.forest1", "tactical.tile.forest2", "tactical.tile.moss1", "tactical.tile.moss2"],
 			["tactical.tile.swamp1", "tactical.tile.swamp2", "tactical.tile.swamp3", "tactical.tile.swamp4"],
-			["tactical.tile.desert1", "tactical.tile.desert2", "tactical.tile.desert3", "tactical.tile.desert4"],
+			["tactical.tile.desert1", "tactical.tile.desert2", "tactical.tile.desert7", "tactical.tile.desert4"],
 			["tactical.tile.snow1", "tactical.tile.snow2", "tactical.tile.snow3", "tactical.tile.snow4"],
 			["tactical.tile.grass1", "tactical.tile.grass2", "tactical.tile.earth3", "tactical.tile.earth4"],
 			["tactical.tile.moss1", "tactical.tile.moss2", "tactical.tile.forest1", "tactical.tile.forest2"],
