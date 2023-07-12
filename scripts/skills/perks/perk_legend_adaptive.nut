@@ -24,7 +24,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 		{		
 		 item = this.getContainer().getActor().getMainhandItem();
-		|	
+		}	
 		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
 		{
 		 item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -35,10 +35,11 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		itemtype = item.getItemType()
 		}
 		
-		switch(itemtype){
-			  case "null":
-					newTree; = this.Const.Perks.FistsClassTree.Tree
-			  case "Weapon":
+		switch(itemtype)
+		{
+			  case null:
+					newTree = this.Const.Perks.FistsClassTree.Tree;
+			  case Weapon:
 					switch(item) {
 					//Mace
 						case "weapon.mace":
@@ -60,12 +61,12 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.two_handed_mace":
 						case "weapon.winged_mace":
 						case "weapon.wooden_stick":
-							newTree; = this.Const.Perks.MaceTree.Tree
+							newTree = this.Const.Perks.MaceTree.Tree;
 							break;
 					//Shovel
 						case "weapon.legend_named_shovel":
 						case "weapon.legend_shovel":
-							newTree; = this.Const.Perks.ShoveClassTree.Tree
+							newTree = this.Const.Perks.ShoveClassTree.Tree;
 							break;
 					//Spear
 						case "weapon.spear":
@@ -79,7 +80,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_spetum":
 						case "weapon.firelance":
 						case "weapon.spetum":
-							newTree; = this.Const.Perks.SpearTree.Tree
+							newTree = this.Const.Perks.SpearTree.Tree;
 							break;
 					//Goedendag 
 						case "weapon.goedendag":
@@ -87,10 +88,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 							local r = this.Math.rand(1,2);
 							switch (r){
 								case "1":
-									newTree; = this.Const.Perks.SpearTree.Tree
+									newTree = this.Const.Perks.SpearTree.Tree;
 									break
 								case "2":
-									newTree; = this.Const.Perks.MaceTree.Tree
+									newTree = this.Const.Perks.MaceTree.Tree;
 									break
 								}
 							break;
@@ -98,7 +99,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.legend_mage_swordstaff":
 						case "weapon.legend_named_swordstaff":
 						case "weapon.named_royal_lance":
-							newTree; = this.Const.Perks.SpearTree.Tree
+							newTree = this.Const.Perks.SpearTree.Tree;
 							break;
 					//Sword
 						case "weapon.ancient_sword":
@@ -121,12 +122,12 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.saif":
 						case "weapon.shamshir":
 						case "weapon.shortsword":
-							newTree; = this.Const.Perks.SwordTree.Tree
+							newTree = this.Const.Perks.SwordTree.Tree;
 							break;
 					//Sickle
 						case "weapon.legend_sickle":
 						case "weapon.legend_named_sickle":
-							newTree; = this.Const.Perks.SickleClassTree.Tree
+							newTree = this.Const.Perks.SickleClassTree.Tree;
 							break;	
 					//Greatsword				
 						case "weapon.greatsword":
@@ -137,7 +138,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.longsword":
 						case "weapon.named_warbrand":
 						case "weapon.warbrand":
-							newTree; = this.Const.Perks.GreatswordTree.Tree
+							newTree = this.Const.Perks.GreatswordTree.Tree;
 							break;
 					//Axe
 						case "weapon.legend_fan_axe":
@@ -161,11 +162,11 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_longaxe":
 						case "weapon.named_orc_axe":
 						case "weapon.named_orc_axe_2h":
-							newTree; = this.Const.Perks.SickleTree.Tree
+							newTree = this.Const.Perks.SickleTree.Tree;
 							break;
 					//Wood Axe
 						case "weapon.woodcutters_axe":
-							newTree; = this.Const.Perks.WoodaxeClassTree.Tree
+							newTree = this.Const.Perks.WoodaxeClassTree.Tree;
 							break;		
 					//Flail
 						case "weapon.flail":
@@ -183,7 +184,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.three_headed_flail":
 						case "weapon.two_handed_flail":
 						case "weapon.two_handed_wooden_flail":
-							newTree; = this.Const.Perks.FlailTree.Tree
+							newTree = this.Const.Perks.FlailTree.Tree;
 							break;		
 					//Wood Axe
 						case "weapon.skull_hammer":
@@ -200,26 +201,26 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.two_handed_hammer":
 						case "weapon.two_handed_wooden_hammer":
 						case "weapon.warhammer":
-							newTree; = this.Const.Perks.HammerTree.Tree
+							newTree = this.Const.Perks.HammerTree.Tree;
 							break;	
 					//Blacksmith
 						case "weapon.legend_hammer":
 						case "weapon.legend_named_blacksmith_hammer":
-							newTree; = this.Const.Perks.HammerClassTree.Tree
+							newTree = this.Const.Perks.HammerClassTree.Tree;
 							break;		
 					//Pickaxe
 						case "weapon.legend_hammer":
 						case "weapon.legend_named_blacksmith_hammer":
-							newTree; = this.Const.Perks.PickaxeClassTree.Tree
+							newTree = this.Const.Perks.PickaxeClassTree.Tree;
 							break;	
 					//Butcher
 						case "weapon.butchers_cleaver":
 						case "weapon.legend_named_butchers_cleaver":
-							newTree; = this.Const.Perks.ButcherClassTree.Tree
+							newTree = this.Const.Perks.ButcherClassTree.Tree;
 							break;	
 					//Ninetails
 						case "weapon.legend_cat_o_nine_tails":
-							newTree; = this.Const.Perks.NinetailsClassTree.Tree
+							newTree = this.Const.Perks.NinetailsClassTree.Tree;
 							break;								
 					//Cleaver
 						case "weapon.crypt_cleaver":
@@ -252,7 +253,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.two_handed_saif":
 						case "weapon.two_handed_scimitar":
 						case "weapon.scramasax":
-							newTree; = this.Const.Perks.CleaverTree.Tree
+							newTree = this.Const.Perks.CleaverTree.Tree;
 							break;	
 					//Dagger
 						case "weapon.dagger":
@@ -264,12 +265,12 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_qatal_dagger":
 						case "weapon.qatal_dagger":
 						case "weapon.rondel_dagger":
-							newTree; = this.Const.Perks.DaggerTree.Tree
+							newTree = this.Const.Perks.DaggerTree.Tree;
 							break;		
 					//Knife
 						case "weapon.knife":
 						case "weapon.legend_shiv":
-							newTree; = this.Const.Perks.KnifeClassTree.Tree
+							newTree = this.Const.Perks.KnifeClassTree.Tree;
 							break;		
 					//Pitchfork
 						case "weapon.legend_wooden_pitchfork":
@@ -278,7 +279,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.warfork":
 						case "weapon.legend_scythe":
 						case "weapon.wooden_flail":
-							newTree; = this.Const.Perks.PitchforkClassTree.Tree
+							newTree = this.Const.Perks.PitchforkClassTree.Tree;
 							break;		
 					//Polearm
 						case "weapon.faction_banner":
@@ -299,14 +300,14 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_warscythe":
 						case "weapon.swordlance":
 						case "weapon.pike":
-							newTree; = this.Const.Perks.PolearmTree.Tree
+							newTree = this.Const.Perks.PolearmTree.Tree;
 							break;	
 					//Musical
 						case "weapon.legend_drum":
 						case "weapon.drum_item":
 						case "weapon.lute":
 						case "weapon.named_lute":
-							newTree; = this.Const.Perks.BardClassTree.Tree
+							newTree = this.Const.Perks.BardClassTree.Tree;
 							break;		
 					//Crossbow
 						case "weapon.crossbow":
@@ -315,7 +316,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.heavy_crossbow":
 						case "weapon.light_crossbow":
 						case "weapon.named_crossbow":
-							newTree; = this.Const.Perks.CrossbowTree.Tree
+							newTree = this.Const.Perks.CrossbowTree.Tree;
 							break;	
 					//Bow
 						case "weapon.goblin_bow":
@@ -325,12 +326,12 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_warbow":
 						case "weapon.composite_bow":
 						case "weapon.war_bow":
-							newTree; = this.Const.Perks.BowTree.Tree
+							newTree = this.Const.Perks.BowTree.Tree;
 							break;	
 					//Shortbow
 						case "weapon.shortbow":
 						case "weapon.wonky_bow":
-							newTree; = this.Const.Perks.ShortbowClassTree.Tree
+							newTree = this.Const.Perks.ShortbowClassTree.Tree;
 							break;	
 					//Throwing
 						case "weapon.heavy_javelin":
@@ -342,7 +343,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.named_throwing_axe":
 						case "weapon.throwing_axe":
 						case "weapon.throwing_spear":
-							newTree; = this.Const.Perks.ThrowingTree.Tree
+							newTree = this.Const.Perks.ThrowingTree.Tree;
 							break;	
 					//Sling
 						case "weapon.legend_sling":
@@ -350,7 +351,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.legend_slingstaff":
 						case "weapon.nomad_sling":
 						case "weapon.staff_sling":
-							newTree; = this.Const.Perks.SlingTree.Tree
+							newTree = this.Const.Perks.SlingTree.Tree;
 							break;
 					//Staff
 						case "weapon.legend_mystic_staff":
@@ -358,38 +359,38 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						case "weapon.legend_staff_gnarled":
 						case "weapon.legend_staff_vala":
 						case "weapon.legend_tipstaff":
-							newTree; = this.Const.Perks.StaffTree.Tree
+							newTree = this.Const.Perks.StaffTree.Tree;
 							break;
 						  }
 					break;
-			  case "Shield":
-					newTree; = this.Const.Perks.ShieldTree.Tree
-			  case "Tool":
+			  case Shield:
+					newTree = this.Const.Perks.ShieldTree.Tree;
+			  case Tool:
 				  switch(item) {
 					//Net
 						case "tool.throwing_net":
 						case "tool.reinforced_throwing_net":
-							newTree; = this.Const.Perks.BeastClassTree.Tree
+							newTree = this.Const.Perks.BeastClassTree.Tree;
 							break;	
 					//Faith
 						case "weapon.holy_water":
-							newTree; = this.Const.Perks.FaithClassTree.Tree
+							newTree = this.Const.Perks.FaithClassTree.Tree;
 							break;	
 					//Juggler
 						case "weapon.daze_bomb":
-							newTree; = this.Const.Perks.JugglerClassTree.Tree
+							newTree = this.Const.Perks.JugglerClassTree.Tree;
 							break;	
 					//Repair
 						case "weapon.fire_bomb":
-							newTree; = this.Const.Perks.RepairClassTree.Tree
+							newTree = this.Const.Perks.RepairClassTree.Tree;
 							break;	
 					//Healer
 						case "weapon.acid_flask":
-							newTree; = this.Const.Perks.HealerClassTree.Tree
+							newTree = this.Const.Perks.HealerClassTree.Tree;
 							break;	
 					}	
 			}
-		if (!this.getBackground().hasPerkGroup(newTree)
+		if (!this.getBackground().hasPerkGroup(newTree))
 		{
 		this.getBackground().addPerkGroup(newTree);
 		}
@@ -406,49 +407,49 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	local randomTree;
 		switch(r) {
 		case "1":
-			randomTree = this.Const.Perks.AgileTree.Tree
+			randomTree = this.Const.Perks.AgileTree.Tree;
 			break;	
 		case "2":
-			randomTree = this.Const.Perks.IndestructibleTree.Tree
+			randomTree = this.Const.Perks.IndestructibleTree.Tree;
 			break;	
 		case "3":
-			randomTree = this.Const.Perks.MartyrTree.Tree
+			randomTree = this.Const.Perks.MartyrTree.Tree;
 			break;		
 		case "4":
-			randomTree = this.Const.Perks.ViciousTree.Tree
+			randomTree = this.Const.Perks.ViciousTree.Tree;
 			break;
 		case "5":
-			randomTree = this.Const.Perks.DeviousTree.Tree
+			randomTree = this.Const.Perks.DeviousTree.Tree;
 			break;
 		case "6":
-			randomTree = this.Const.Perks.InspirationalTree.Tree
+			randomTree = this.Const.Perks.InspirationalTree.Tree;
 			break;
 		case "7":
-			randomTree = this.Const.Perks.IntelligentTree.Tree
+			randomTree = this.Const.Perks.IntelligentTree.Tree;
 			break;
 		case "8":
-			randomTree = this.Const.Perks.CalmTree.Tree
+			randomTree = this.Const.Perks.CalmTree.Tree;
 			break;
 		case "9":
-			randomTree = this.Const.Perks.FastTree.Tree
+			randomTree = this.Const.Perks.FastTree.Tree;
 			break;
 		case "10":
-			randomTree = this.Const.Perks.LargeTree.Tree
+			randomTree = this.Const.Perks.LargeTree.Tree;
 			break;
 		case "11":
-			randomTree = this.Const.Perks.OrganisedTree.Tree
+			randomTree = this.Const.Perks.OrganisedTree.Tree;
 			break;
 		case "12":
-			randomTree = this.Const.Perks.SturdyTree.Tree
+			randomTree = this.Const.Perks.SturdyTree.Tree;
 			break;
 		case "13":
-			randomTree = this.Const.Perks.FitTree.Tree
+			randomTree = this.Const.Perks.FitTree.Tree;
 			break;
 		case "14":
-			randomTree = this.Const.Perks.TrainedTree.Tree
+			randomTree = this.Const.Perks.TrainedTree.Tree;
 			break;
 		}
-		if (!this.getBackground().hasPerkGroup(randomTree)
+		if (!this.getBackground().hasPerkGroup(randomTree))
 		{
 		this.getBackground().addPerkGroup(randomTree);
 		}
