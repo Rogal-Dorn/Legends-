@@ -297,10 +297,6 @@
 	<sprite id="legend_world_southern_watchtower" ic="FF2C4D62" img="world_settlement\southern_watchtower.png" left="-108" right="109" />
 	<sprite id="legend_world_southern_watchtower_lights" ic="FF52C5E3" width="217" height="178" img="world_settlement\southern_watchtower_lights.png" left="-103" right="61" top="-48" bottom="60" />
 	<sprite id="legend_world_southern_watchtower_ruins" ic="FF234153" img="world_settlement\southern_watchtower_ruins.png" left="-108" right="109" />
-  <sprite id="world_grassland_05" b6="1" ic="FF335758" img="world_tiles\world_grass_05.png" />
-  <sprite id="world_grassland_06" b6="1" ic="FF335758" img="world_tiles\world_grass_06.png" />
-  <sprite id="world_grassland_07" b6="1" ic="FF335758" img="world_tiles\world_grass_07.png" />
-  <sprite id="world_grassland_08" b6="1" ic="FF335758" img="world_tiles\world_grass_08.png" />
   <sprite id="world_grass_07" ic="FF386261" width="400" height="200" img="world_detail\grass\world_grass_07.png" left="-130" right="118" top="-79" bottom="53" />
    <sprite id="world_grass_08" ic="FF386261" width="400" height="200" img="world_detail\grass\world_grass_08.png" left="-130" right="118" top="-79" bottom="53" />
    <sprite id="world_grass_09" ic="FF386261" width="400" height="200" img="world_detail\grass\world_grass_09.png" left="-130" right="118" top="-79" bottom="53" />
