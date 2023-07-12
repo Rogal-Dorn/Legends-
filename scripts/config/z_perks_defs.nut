@@ -2643,6 +2643,15 @@ local perkDefObjects = [
 		Const = "LegendRecuperation"
 	},
 	{
+		ID = "perk.legend_climb",
+		Script = "scripts/skills/perks/perk_legend_climb",
+		Name = this.Const.Strings.PerkName.LegendClimb,
+		Tooltip = this.Const.Strings.PerkDescription.LegendClimb,
+		Icon = "ui/perks/climb_circle.png",
+		IconDisabled = "ui/perks/climb_circle_bw.png",
+		Const = "LegendClimb"
+	},
+	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,

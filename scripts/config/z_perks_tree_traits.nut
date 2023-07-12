@@ -57,7 +57,7 @@ gt.Const.Perks.AgileTree <- {
 		],
 		[],
 		[
-			gt.Const.Perks.PerkDefs.Sprint
+			gt.Const.Perks.PerkDefs.LegendClimb
 		],
 		[],
 		[
@@ -431,7 +431,9 @@ gt.Const.Perks.IntelligentTree <- {
 		],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendAdaptive],
+		[
+			gt.Const.Perks.PerkDefs.LegendAdaptive
+		],
 		[
 			gt.Const.Perks.PerkDefs.LegendMindOverBody
 		],
@@ -553,7 +555,8 @@ gt.Const.Perks.FastTree <- {
 			gt.Const.Perks.PerkDefs.Adrenaline
 		],
 		[
-			gt.Const.Perks.PerkDefs.Anticipation
+			gt.Const.Perks.PerkDefs.Anticipation,
+			gt.Const.Perks.PerkDefs.Sprint
 		],
 		[],
 		[],
