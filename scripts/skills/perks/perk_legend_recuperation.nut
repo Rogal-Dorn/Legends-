@@ -16,9 +16,13 @@ this.perk_legend_recuperation <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.getContainer().getActor().setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 1));
+		this.getContainer().getActor().setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 2));
 
 	}
-
+	
+	function onUpdate( _properties )
+	{
+	_properties.FatigueRecoveryRate += 2;
+	}
 });
 
