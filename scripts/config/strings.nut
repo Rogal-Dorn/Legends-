@@ -2825,7 +2825,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendLurker = "When neither ally nor enemy is within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
 	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night.",
 	LegendAdaptive = "Add a new group of perks to this character's perk tree, the perks are determined by what is currently equipped in their hands",
-	LegendRecuperation = "Heal 1 hitpoint at the end of every turn",
+	LegendRecuperation = "Heal 2 hitpoints and 2 fatigue at the end of every turn",
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five height in one move. Does not trigger attacks of opportunity"
 };
 gt.Const.Strings.Tooltip <- {

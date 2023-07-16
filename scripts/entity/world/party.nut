@@ -503,8 +503,10 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 	function onDiscovered()
 	{
+		this.world_entity.onDiscovered();
 		local playerRoster = this.World.getPlayerRoster().getAll();
 		local lookout = 0;
+		
 		  if(!World.State.isPaused() && isAttackable() && getFaction() != 0 && !isAlliedWithPlayer() && getTile().getDistanceTo(World.State.getPlayer().getTile()) <= 12)
 		  {
 			foreach( bro in playerRoster )
@@ -522,7 +524,6 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			World.State.setPause(true);
 			}
 		  }
-		this.world_entity.onDiscovered();
 	}
 
 	function onDropLootForPlayer( _lootTable )

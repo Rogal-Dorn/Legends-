@@ -13,7 +13,7 @@ if (!("ArmorObjs" in gt.Const.LegendMod))
 gt.Const.LegendMod.ArmorObjs.extend([
 {
 	ID = "legendary/armor_of_davkul", // this.m.ConditionMax
-	Script = "scripts/items/legend_armor/legendary/legend_armor_of_davkul",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_sackcloth_patched"],
@@ -40,13 +40,13 @@ gt.Const.LegendMod.ArmorObjs.extend([
 	Script = "scripts/items/legend_armor/legendary/legend_emperors_armor",
 	Sets = [{
 		Cloth = [
-
+			[1, "cloth/legend_ancient_cloth_restored"], // 35
 		],
 		Chain = [
-
+			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-
+			[1, "legendary/emperors_armor"],
 		],
 		Cloak = [
 		],

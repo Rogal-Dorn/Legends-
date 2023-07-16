@@ -5,22 +5,6 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-gt.Const.Perks.ShieldTree <- {
-	ID = "ShieldTree",
-	Name = "Shield",
-	Descriptions = [
-		"shields"
-	],
-	Tree = [
-		[],
-		[gt.Const.Perks.PerkDefs.ShieldBash],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
-		[gt.Const.Perks.PerkDefs.ShieldExpert],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldSkill],
-		[],
-		[]
-	]
-};
 
 
 gt.Const.Perks.HeavyArmorTree <- {
@@ -92,7 +76,7 @@ gt.Const.Perks.LightArmorTree <- {
 
 gt.Const.Perks.DefenseTrees <- {
 	Tree = [
-		gt.Const.Perks.ShieldTree,
+		//gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.HeavyArmorTree,
 		gt.Const.Perks.MediumArmorTree,
 		gt.Const.Perks.LightArmorTree
@@ -103,7 +87,7 @@ gt.Const.Perks.DefenseTrees <- {
 		local L = [];
 		foreach (i, t in this.Tree)
 		{
-			if (_exclude != null && _exclude.find(t.ID))
+			if (_exclude != null && _exclude.find(t.ID) != null)
 			{
 				continue;
 			}

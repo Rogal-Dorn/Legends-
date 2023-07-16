@@ -1992,7 +1992,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 },
 {
 	ID = "special/heraldic_armor", // 250
-	Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_gambeson_plain"], // 65
@@ -2070,7 +2070,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "adorned_mail_shirt",
-	Script = "scripts/items/armor/adorned_mail_shirt",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_knightly_robe"], //
@@ -2113,7 +2113,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "undertaker_apron",
-	Script = "scripts/items/armor/undertaker_apron",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_gambeson_plain"], //65
@@ -2132,7 +2132,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "wanderers_coat",
-	Script = "scripts/items/armor/wanderers_coat",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/wanderers_coat"], //
@@ -2218,7 +2218,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "lonewolf_crossbowsword_armour",
-	Script = "scripts/items/armor/lonewolf_crossbowsword_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_padded_surcoat"],
@@ -2242,7 +2242,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 
 },{
 	ID = "lonewolf_bowdagger_armour",
-	Script = "scripts/items/armor/lonewolf_bowdagger_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_tunic_noble"],
@@ -2263,7 +2263,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 
 },{
 	ID = "lonewolf_polearm_armour",
-	Script = "scripts/items/armor/lonewolf_polearm_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_padded_surcoat"], //55

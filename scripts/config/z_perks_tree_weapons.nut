@@ -769,6 +769,109 @@ gt.Const.Perks.StaffTree <- {
 	]
 };
 
+gt.Const.Perks.ShieldTree <- {
+	ID = "ShieldTree",
+	Name = "Shield",
+	Descriptions = [
+		"shields"
+	],
+	Attributes = {
+		Hitpoints = [
+			3,
+			3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			-3,
+			-3
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			-3,
+			-3
+		],
+		Initiative = [
+			3,
+			3
+		]
+	},
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.ShieldBash],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
+		[gt.Const.Perks.PerkDefs.ShieldExpert],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldSkill],
+		[],
+		[]
+	]
+};
+
+
+gt.Const.Perks.StaffTree <- {
+	ID = "Staff",
+	Name = "Staff"
+	Descriptions = [
+		"staves"
+	],
+	Attributes = {
+		Hitpoints = [
+			-3,
+			-3
+		],
+		Bravery = [
+			0,
+			0
+		],
+		Stamina = [
+			0,
+			0
+		],
+		MeleeSkill = [
+			0,
+			0
+		],
+		RangedSkill = [
+			0,
+			0
+		],
+		MeleeDefense = [
+			3,
+			3
+		],
+		RangedDefense = [
+			3,
+			3
+		],
+		Initiative = [
+			-3,
+			-3
+		]
+	},
+	Tree = [
+		[],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecStaffSkill],
+		[gt.Const.Perks.PerkDefs.LegendMasteryStaves],
+		[gt.Const.Perks.PerkDefs.LegendSpecStaffStun],
+		[],
+		[gt.Const.Perks.PerkDefs.PushTheAdvantage]
+	]
+};
+
 gt.Const.Perks.WeaponTrees <- {
 	Tree = [
 		gt.Const.Perks.MaceTree,
@@ -785,6 +888,7 @@ gt.Const.Perks.WeaponTrees <- {
 		gt.Const.Perks.BowTree,
 		gt.Const.Perks.ThrowingTree,
 		gt.Const.Perks.SlingTree,
+		gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.StaffTree
 	],
 	function getRandom(_exclude)
@@ -792,7 +896,7 @@ gt.Const.Perks.WeaponTrees <- {
 		local L = [];
 		foreach (i, t in this.Tree)
 		{
-			if (_exclude.find(t.ID))
+			if (_exclude.find(t.ID) != null)
 			{
 				//this.logInfo("Excluding " + t.ID)
 				continue;
@@ -817,6 +921,7 @@ gt.Const.Perks.MeleeWeaponTrees <- {
 		gt.Const.Perks.DaggerTree,
 		gt.Const.Perks.PolearmTree,
 		gt.Const.Perks.SpearTree,
+		gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.StaffTree
 	],
 	function getRandom(_exclude)

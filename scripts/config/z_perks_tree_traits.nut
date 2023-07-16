@@ -901,7 +901,7 @@ gt.Const.Perks.TraitsTrees <- {
 
 		foreach( i, t in this.Tree )
 		{
-			if (_exclude != null && _exclude.find(t.ID))
+			if (_exclude != null && _exclude.find(t.ID) != null)
 			{
 				continue;
 			}
