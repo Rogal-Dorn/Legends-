@@ -421,14 +421,14 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 							newTree = this.Const.Perks.HealerClassTree;
 							break;	
 					}	
-		//if (!actor.getBackground().hasPerkGroup(newTree))
-		//{
+		if (newTree != null && !actor.getBackground().hasPerkGroup(newTree)) 
+		{
 		actor.getBackground().addPerkGroup(newTree.Tree);
-		//}
-		//else
-		//{
-		//actor.addRandomPerkGroup()
-		//}
+		}
+		else
+		{
+		actor.addRandomPerkGroup()
+		}
 		}
 
 		   

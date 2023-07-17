@@ -162,7 +162,7 @@ Widow and widower gains 5 melee defense, self defense skills earned through the 
 Weapon perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
 New Perk - Small Target: Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have
 New Perk - Fashionable: You can wear tabards, cloaks and helmet vanity layers without negatively impacting Small Target
-New Perk - Meek: Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of fatigue, melee and ranged defense you have, not counting perks like Small Target.
+New Perk - Meek: Gain %100 lucky chance to force an enemy to reroll a successful attack. Lose 1% for every point of melee and ranged defense you have, not counting perks like Small Target.
 New Perk - Adaptive: add a new group of perks to your perk tree based on what is currently equipped in your hands. Found in the Intelligent Perk Group
 New Perk - Recuperation: Heal 2 hp and 2 fatigvue per turn. Found in the Sturdy Perk Group
 New Perk - Helpful: Gain the ability to freely give items from your bag to allies. Foudn in the Organised perk group
