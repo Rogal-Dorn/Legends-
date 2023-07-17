@@ -59,7 +59,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,

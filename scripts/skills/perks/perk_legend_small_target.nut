@@ -95,11 +95,11 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-		local bonus = this.Math.max(0, 100 - stackTotal); 
+		local bonus = this.Math.max(5, 100 - stackTotal); 
 		return this.Math.floor(bonus);
 	}
 
-	function onAfterUpdate( _properties )
+	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;
