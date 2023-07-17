@@ -79,7 +79,7 @@ this.mage_background <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.AgileTree,

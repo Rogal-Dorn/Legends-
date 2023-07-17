@@ -1,4 +1,4 @@
-this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
+this.perk_legend_meek <- this.inherit("scripts/skills/skill", {
 	m = {
 		BonusMin = 0
 	},
@@ -26,7 +26,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] chance for enemies to reroll their attack"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] chance for enemies to be forced to reroll their attack"
 			});
 
 		}
@@ -36,7 +36,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character has too many defenses and fatigue, so they currently get no bonus from this perk"
+				text = "This character has too many defenses and resolve, so they currently get no bonus from this perk"
 			});
 		}
 
@@ -48,8 +48,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local mdef = actor.getCurrentProperties().getMeleeDefense();
 		local rdef = actor.getCurrentProperties().getRangedDefense();
-		local fat = actor.getCurrentProperties().getFatigue();
-		local stack = mdef + rdef + fat;
+		local stack = mdef + rdef;
 		local bonus = this.Math.max(0, 100 - stack);
 		return this.Math.floor(bonus);
 	}

@@ -17,7 +17,7 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = this.Math.rand(1, 6);
+		local partysize = this.Math.rand(4, 6);
 		local broLevelMax = this.Math.floor(6 / partysize);
 
 
@@ -29,8 +29,8 @@ this.legend_random_party_scenario <- this.inherit("scripts/scenarios/world/start
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			local r = this.Math.rand(1, 10);
-			if (r = 1)
+			local r = this.Math.rand(0, 99);
+			if (r = 99)
 			{
 			bro.setStartValuesEx(this.Const.CharacterPartyBackgrounds);
 			}

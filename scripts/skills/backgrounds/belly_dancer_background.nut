@@ -49,7 +49,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.ClothArmorTree,
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,

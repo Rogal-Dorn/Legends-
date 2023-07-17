@@ -7,7 +7,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "perk.legend_small_target";
 		this.m.Name = this.Const.Strings.PerkName.LegendSmallTarget;
 		this.m.Description = "Gains increased Melee and Ranged defense by being small";
-		this.m.Icon = "ui/perks/balance.png";
+		this.m.Icon = "ui/perks/small_target.png";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -56,7 +56,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
 		local stackTotal = health + headArmor + bodyArmor;
 		
-		if (actor.getSkills().hasSkills("perk.legend_fashionable"))
+		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
 			{
 			local bodyItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 				if (bodyItem != null)
@@ -79,8 +79,8 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 			local headItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 				if (headItem != null)
 				{
-					local vanity = headItem.getUpgrade(this.Const.Items.ArmorUpgrades.Vanity);
-					local extra = headItem.getUpgrade(this.Const.Items.ArmorUpgrades.ExtraVanity)
+					local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
+					local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
 					
 					if (vanity != null)
 					{
@@ -95,7 +95,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 					}
 				}
 			}
-		local bonus = 100 - stackTotal; 
+		local bonus = this.Math.max(0, 100 - stackTotal); 
 		return this.Math.floor(bonus);
 	}
 

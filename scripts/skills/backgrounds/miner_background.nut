@@ -69,7 +69,7 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IndestructibleTree,

@@ -62,9 +62,9 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ShieldTree,
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [

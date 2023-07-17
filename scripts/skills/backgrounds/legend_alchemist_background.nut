@@ -44,7 +44,7 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [ //lf 5
 				this.Const.Perks.TrainedTree,

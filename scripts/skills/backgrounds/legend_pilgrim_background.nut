@@ -80,10 +80,10 @@ this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/chara
 			Weapon = [
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.SlingTree
 			],
-			Defense = [
-				this.Const.Perks.ShieldTree,
+			Defense = [		
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [

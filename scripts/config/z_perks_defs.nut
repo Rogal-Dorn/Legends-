@@ -2679,8 +2679,8 @@ local perkDefObjects = [
 		Const = "LegendMeek"
 	},
 	{
-		ID = "perk.legend_helpdul",
-		Script = "scripts/skills/perks/perk_legend_helpdul",
+		ID = "perk.legend_helpful",
+		Script = "scripts/skills/perks/perk_legend_helpful",
 		Name = this.Const.Strings.PerkName.LegendHelpful,
 		Tooltip = this.Const.Strings.PerkDescription.LegendHelpful,
 		Icon = "ui/perks/helpful.png",

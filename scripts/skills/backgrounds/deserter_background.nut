@@ -56,11 +56,12 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.MaceTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CrossbowTree
 			],
-			Defense = [
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HeavyArmorTree
+			Defense = [	
+				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,

@@ -63,7 +63,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

@@ -65,12 +65,18 @@ gt.Const.Perks.ClothArmorTree <- {
 		"cloth armor"
 	],
 	Tree = [
+		[
+		gt.Const.Perks.PerkDefs.LegendMeek
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSmallTarget],
-		[gt.Const.Perks.PerkDefs.LegendFashionable],
+		[
+		gt.Const.Perks.PerkDefs.LegendSmallTarget
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendMeek],
 		[],
+		[
+		gt.Const.Perks.PerkDefs.LegendFashionable
+		],
 		[]
 	]
 };

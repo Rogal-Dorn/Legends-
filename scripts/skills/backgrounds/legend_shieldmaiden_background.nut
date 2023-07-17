@@ -47,11 +47,11 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ShieldTree
 			],
-			Defense = [
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HeavyArmorTree
+			Defense = [	
+				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.SturdyTree,
@@ -94,8 +94,8 @@ this.legend_shieldmaiden_background <- this.inherit("scripts/skills/backgrounds/
 				4
 			],
 			RangedSkill = [
-				4,
-				8
+				2,
+				4
 			],
 			MeleeDefense = [
 				8,

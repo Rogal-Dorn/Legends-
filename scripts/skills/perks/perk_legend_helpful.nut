@@ -15,7 +15,7 @@ this.perk_legend_helpful <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.Container.hasSkill("actives.footwork"))
+		if (!this.m.Container.hasSkill("actives.legend_pass"))
 		{
 			this.m.Container.add(this.new("scripts/skills/actives/legend_pass_skill"));
 		}

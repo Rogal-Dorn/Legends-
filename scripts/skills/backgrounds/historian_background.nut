@@ -60,7 +60,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.SpearTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

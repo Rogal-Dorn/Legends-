@@ -61,10 +61,10 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SpearTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [

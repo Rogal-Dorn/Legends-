@@ -62,14 +62,13 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.GreatSwordTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
