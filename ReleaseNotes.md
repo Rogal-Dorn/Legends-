@@ -72,9 +72,8 @@ Attachments:
 - Iron Pauldrons, Heavy Pauldrons, Strong Pauldrons, Stag Pauldrons, Swan Pauldrons and Guilded Pauldrons
 
 **World economy**
-Settlement wealth calculation for upgrades changed to coins rather than abstract resource points 
-Caravans now take goods out of each building's inventory of the town they leave, carry the goods in their inventory, and deliver the goods into the inventoryu of the town they arrive at. Paying the origin town in coin when they unload.
-Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving without the player
+Caravans now take goods out of each building's inventory of the town they leave, carry the goods in their inventory, and deliver the goods into the inventory of the town they arrive at. Paying the origin town when they unload.
+Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving and thriving.
 
 Attached locations: 
 - Increased production rates by introducing smaller versions of their trade goods. This increases the number of trade goods without overall ballooning trade values
@@ -114,7 +113,6 @@ Scrap
 - item durability required to produce a tool nerfed to 30 from 15.   Upgrading the tent reduces this by 66%
 
 
-
 **Noble armies**
 Nobles have much smaller armies with harder high tier units closer to Orc Elites 
 Fencers, Halberdiers and Slingers are all stronger and appear later in your campaign. 
@@ -146,7 +144,6 @@ Double Tongued Trait:
 
 
 **Background changes**
-
 A few outlier backgrounds have been brought back closer to average stat ranges to increase the variety of compositions. 
 Arbelester loses 5 stamina and 10 initiative, hiring cost increased. To make them a bit less powerful without impacting their core benefits
 Beggar gain up to 2 mdef and 3 ranged defense, from years taking abuse on the streets
@@ -161,15 +158,19 @@ Troubadour gains 8-5 Fatigue, loses ~5 hitpoints, gains 2 melee defense and 3 ra
 Warrior hiring cost increased. They are still quite powerful, but you'll need to pay for it. 
 Widow and widower gains 5 melee defense, self defense skills earned through the years in short abusive relationships since their partner died.  
 
-
 **Perk Changes**
 Weapon perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
+New Perk - Small Target: Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have
+New Perk - Fashionable: You can wear tabards, cloaks and helmet vanity layers without negatively impacting Small Target
+New Perk - Meek: Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of fatigue, melee and ranged defense you have, not counting perks like Small Target.
 New Perk - Adaptive: add a new group of perks to your perk tree based on what is currently equipped in your hands. Found in the Intelligent Perk Group
-New Perk - Recuperation: Heal 1 hp per turn. Found in the Sturdy Perk Group
+New Perk - Recuperation: Heal 2 hp and 2 fatigvue per turn. Found in the Sturdy Perk Group
+New Perk - Helpful: Gain the ability to freely give items from your bag to allies. Foudn in the Organised perk group
 Lookout now enables autopause when character is assigned to the scout tent
 Deulist now works with parrying dagger and buckler
 Fortified mind moved from intelligent to sturdy perk group
-
+Backflip also increases the range of leap 
+Fixed an issue where duplicate perk trees were resulting in some recruits having too few perks. 
 
 **Other Changes:**
 Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
@@ -177,17 +178,18 @@ Alignment pass on sallets, armets and faceplates.
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
+
 More variety added to character and location names
+Simplified logic for Grand Tournament, has some additional art
 Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
 Bandit rabble poachers have improved aim, sling damage reduced. You'll take more small hits rather than constantly being missed.  
 Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
 Towershield defenses changed to 25/20 from 30/15 
-Added fresh fish, fresh milk as products from attached locations and recipe for Goat Curry 
+Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixed issue where radiance rune worked up and down many levels 
-Simplified logic for Grand Tournament, has some additional art
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
- 
+Bandages can now heal grazes 
 
 
 ## Build 16.2.0, Smoke & Faith

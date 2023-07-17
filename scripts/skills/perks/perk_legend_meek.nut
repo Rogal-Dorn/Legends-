@@ -49,7 +49,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local mdef = actor.getCurrentProperties().getMeleeDefense();
 		local rdef = actor.getCurrentProperties().getRangedDefense();
 		local fat = actor.getCurrentProperties().getFatigue();
-		localc stack = mdef + rdef + fat;
+		local stack = mdef + rdef + fat;
 		local bonus = this.Math.max(0, 100 - stack);
 		return this.Math.floor(bonus);
 	}
