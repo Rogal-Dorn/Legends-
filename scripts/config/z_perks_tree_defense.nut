@@ -58,6 +58,24 @@ gt.Const.Perks.LightArmorTree <- {
 	]
 };
 
+gt.Const.Perks.ClothArmorTree <- {
+	ID = "ClothArmorTree",
+	Name = "Cloth Armor",
+	Descriptions = [
+		"cloth armor"
+	],
+	Tree = [
+		[],
+		[gt.Const.Perks.PerkDefs.LegendSmallTarget],
+		[gt.Const.Perks.PerkDefs.LegendFashionable],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendMeek],
+		[],
+		[]
+	]
+};
+
+
 //gt.Const.Perks.HelmetTree <- {
 	//ID = "HelmetTree",
 	//Descriptions = [
@@ -79,7 +97,8 @@ gt.Const.Perks.DefenseTrees <- {
 		//gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.HeavyArmorTree,
 		gt.Const.Perks.MediumArmorTree,
-		gt.Const.Perks.LightArmorTree
+		gt.Const.Perks.LightArmorTree,
+		gt.Const.Perks.ClothArmorTree
 		//gt.Const.Perks.HelmetTree
 	],
 	function getRandom(_exclude)

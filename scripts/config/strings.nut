@@ -2187,6 +2187,10 @@ gt.Const.Strings.PerkName <- {
 	LegendAdaptive = "Adaptive",
 	LegendRecuperation = "Recuperation",
 	LegendClimb = "Climb",
+	LegendSmallTarget = "Small Target",
+	LegendFashionable = "Fashionable",
+	LegendMeek = "Meek",
+	LegendHelpful = "Helpful",
 
 	//MASTERIES - skills that have a unified effect on their weapon class
 	SpecBow = "Bow Mastery",
@@ -2817,7 +2821,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three.",
 	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble.",
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
-	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' perk, it gains 1 range.",
+	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' or \'Leap\' perk, they gain 1 range.",
 	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
 	LegendKnifeplay = "Unlocks a bound throwing knife skill that does [color=" + this.Const.UI.Color.PositiveValue + "]15-25[/color] damage with poor armour penetration but a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head.\n Can \'Daze\' a target on hit.\n\n Benefits from perks that affect throwing weapons.",
 	LegendOpportunist = "When successfully landing a hit on an enemy who is bleeding or poisoned, apply \'Dazed\' to them. If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill and no penalty to Ranged Skill.",
@@ -2827,6 +2831,11 @@ gt.Const.Strings.PerkDescription <- {
 	LegendAdaptive = "Add a new group of perks to this character's perk tree, the perks are determined by what is currently equipped in their hands",
 	LegendRecuperation = "Heal 2 hitpoints and 2 fatigue at the end of every turn",
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five height in one move. Does not trigger attacks of opportunity"
+	LegendSmallTarget = "Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have.",
+	LegendFashionable = "You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
+	LegendMeek = "Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of fatigue, melee and ranged defense you have, not counting perks",
+	LegendHelpful = "Gain the ability to freely give items from your bag to allies"
+
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

@@ -16,7 +16,8 @@ this.perk_legend_recuperation <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.getContainer().getActor().setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 2));
+		local actor = this.getContainer().getActor();
+		actor.setHitpoints(this.Math.min(actor.getHitpointsMax(), actor.getHitpoints() + 2));
 
 	}
 	

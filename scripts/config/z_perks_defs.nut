@@ -2652,6 +2652,42 @@ local perkDefObjects = [
 		Const = "LegendClimb"
 	},
 	{
+		ID = "perk.legend_small_target",
+		Script = "scripts/skills/perks/perk_legend_small_target",
+		Name = this.Const.Strings.PerkName.LegendSmallTarget,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSmallTarget,
+		Icon = "ui/perks/small_target.png",
+		IconDisabled = "ui/perks/small_target_bw.png",
+		Const = "LegendSmallTarget"
+	},
+	{
+		ID = "perk.legend_fashionable",
+		Script = "scripts/skills/perks/perk_legend_fashionable",
+		Name = this.Const.Strings.PerkName.LegendFashionable,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFashionable,
+		Icon = "ui/perks/fashionable.png",
+		IconDisabled = "ui/perks/fashionable_bw.png",
+		Const = "LegendFashionable"
+	},
+	{
+		ID = "perk.legend_meek",
+		Script = "scripts/skills/perks/perk_legend_meek",
+		Name = this.Const.Strings.PerkName.LegendMeek,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMeek,
+		Icon = "ui/perks/meek.png",
+		IconDisabled = "ui/perks/meek_bw.png",
+		Const = "LegendMeek"
+	},
+	{
+		ID = "perk.legend_helpdul",
+		Script = "scripts/skills/perks/perk_legend_helpdul",
+		Name = this.Const.Strings.PerkName.LegendHelpful,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHelpful,
+		Icon = "ui/perks/helpful.png",
+		IconDisabled = "ui/perks/helpful_bw.png",
+		Const = "LegendHelpful"
+	},
+	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,
