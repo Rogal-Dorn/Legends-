@@ -52,11 +52,11 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local health = actor.getHitpoints();
-		lobal headArmor = actor.getArmor(this.Const.BodyPart.Head)
+		local headArmor = actor.getArmor(this.Const.BodyPart.Head);
 		local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
 		local stackTotal = health + headArmor + bodyArmor;
 		
-		if (actor.getSkills().hasSkills("perk.legend_fashionable");
+		if (actor.getSkills().hasSkills("perk.legend_fashionable"))
 			{
 			local bodyItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
 				if (bodyItem != null)
