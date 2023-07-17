@@ -588,7 +588,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Maximum Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
+				text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
 			});
 		}
 
@@ -598,7 +598,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				id = 5,
 				type = "text",
 				icon = "",
-				text = format("(%.1f Armor per 1 Fatigue)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
+				text = format("(%.1f Armor per 1 Weight)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}
 
@@ -629,7 +629,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/fatigue.png",
-					text = "Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
+					text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
 				});
 			}
 		}

@@ -64,11 +64,12 @@ this.legend_crusader_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HeavyArmorTree
+				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,

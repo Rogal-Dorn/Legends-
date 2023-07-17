@@ -82,7 +82,7 @@ this.legend_herbalist_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

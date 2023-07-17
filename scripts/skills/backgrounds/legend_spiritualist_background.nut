@@ -50,7 +50,7 @@ this.legend_spiritualist_background <- this.inherit("scripts/skills/backgrounds/
 				this.Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,

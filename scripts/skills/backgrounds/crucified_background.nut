@@ -45,14 +45,14 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.MaceTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
+				
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [

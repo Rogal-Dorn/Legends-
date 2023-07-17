@@ -18,7 +18,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onSpawnAssets()
 	{
 		local roster = this.World.getPlayerRoster();
-		local partysize = 2;
+		local partysize = 6;
 		local broLevelMax = 11;
 
 		for( local i = 0; i < partysize; i = ++i )
@@ -28,7 +28,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
 			bro.m.HireTime = this.Time.getVirtualTimeF();
-			bro.setStartValuesEx(["legend_crusader_commander_background"])//this.Const.CharacterBackgroundsRandom);
+			bro.setStartValuesEx(this.Const.CharacterBackgroundsRandom);
 			bro.m.Level = broLevel;
 			bro.m.LevelUps = broPerks;
 			bro.m.PerkPoints = broPerks;

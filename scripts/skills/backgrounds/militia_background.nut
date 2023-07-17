@@ -35,11 +35,11 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.SlingTree,				
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.ShieldTree,				
 				this.Const.Perks.ThrowingTree
 			],
-			Defense = [
-				this.Const.Perks.ShieldTree
+			Defense = [		
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [

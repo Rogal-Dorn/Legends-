@@ -90,7 +90,7 @@ this.slave_background <- this.inherit("scripts/skills/backgrounds/character_back
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.ShieldTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,

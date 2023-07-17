@@ -246,12 +246,12 @@ layers = [
     "desc" :  "A rugged, large robe made of simple cloth usually worn by monks and similar individuals who don\'t care for fashion.", \
     "adesc" :""
 },
-{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 6, "value" : 100, "con" : 40, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe", \
+{"name": "legend_robes_magic",                            "layer": "cloth", "min": 1, "max": 6, "value" : 100, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "magic_robe", \
     "title" :  "Magician\'s Robe", \
     "desc" :  "A soft shiny robe worn by practictioners of the arcane arts", \
     "adesc" :""
 },
-{"name": "legend_robes_wizard",                            "layer": "cloth", "min": 1, "max": 12, "value" : 50, "con" : 30, "stam" : -1, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wizard_robe", \
+{"name": "legend_robes_wizard",                            "layer": "cloth", "min": 1, "max": 12, "value" : 50, "con" : 5, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "wizard_robe", \
     "title" :  "Beautiful Robe", \
     "desc" :  "A soft shiny robe worn by practictioners of the arts", \
     "adesc" :""
@@ -321,7 +321,7 @@ layers = [
     "desc" :  "A heavy cloth tunic. bulky but offering some protection.", \
     "adesc" :""
 },
-{"name": "legend_tunic_noble",                            "layer": "cloth", "min": 1, "max": 10, "value" : 500, "con" : 40, "stam" : -2, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_wide", \
+{"name": "legend_tunic_noble",                            "layer": "cloth", "min": 1, "max": 10, "value" : 500, "con" : 10, "stam" : 0, "impactSound" : "leather", "invSound" : "cloth", "brush" : "legend_tunic_collar_wide", \
     "title" :  "Noble Tunic", \
     "desc" :  "A fine linen tunic of exquisite material, embroided with pleasing patterns. Fashionable but offering little in protection.", \
     "adesc" :""
