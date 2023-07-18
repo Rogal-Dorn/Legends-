@@ -608,7 +608,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			result.push({	// An empty line is put in to improve formatting
 				id = 10,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/blank.png",
 				text = " "
 			})
 			result.push({
@@ -641,7 +641,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			_result.push({	// An empty line is put in to improve formatting
 				id = 20,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/blank.png",
 				text = " "
 			});
 			result.push({

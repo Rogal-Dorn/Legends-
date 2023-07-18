@@ -256,7 +256,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 		_result.push({	// An empty line is put in to improve formatting
 			id = 10,
 			type = "text",
-			icon = "",
+			icon = "ui/icons/blank.png",
 			text = " "
 		})
 		_result.push({
@@ -273,7 +273,7 @@ this.legend_helmet_upgrade <- this.inherit("scripts/items/item", {
 				_result.push({
 					id = 10,
 					type = "text",
-					icon = "",
+					icon = "ui/icons/blank.png",
 					text = "(Cosmetic only)"
 				});
 			} else {

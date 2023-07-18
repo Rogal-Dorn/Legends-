@@ -230,7 +230,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Maximum Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
+				text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
 			});
 		}
 
@@ -240,7 +240,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = format("(%.1f Armor per 1 Fatigue)", this.getConditionMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
+				text = format("(%.1f Armor per 1 Weight)", this.getConditionMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}
 
@@ -288,7 +288,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 		_result.push({	// An empty line is put in to improve formatting
 			id = 10,
 			type = "text",
-			icon = "",
+			icon = "ui/icons/blank.png",
 			text = " "
 		})
 		_result.push({
