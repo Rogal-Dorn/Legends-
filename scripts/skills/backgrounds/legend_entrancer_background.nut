@@ -63,7 +63,7 @@ this.legend_entrancer_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.FlailTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

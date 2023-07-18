@@ -5,7 +5,7 @@ this.tent_repair <- this.inherit("scripts/items/trade/trading_good_item", {
 		this.trading_good_item.create();
 		this.m.ID = "tent.repair_tent";
 		this.m.Name = "Repair Tent";
-		this.m.Description = "Wooden cart for carrying tools, comes with sharpening wheel, tools and anvil. Having this in your stash upgrades your camp.";
+		this.m.Description = "Wooden cart for carrying tools, comes with sharpening wheel, tools and anvil. Having this in your stash upgrades your camp, increasing repair speed and reducing repair costs";
 		this.m.Icon = "tents/tent_repair_70x70.png";
 		this.m.Value = 5000;
 	}

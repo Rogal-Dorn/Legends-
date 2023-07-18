@@ -12,11 +12,8 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_stollwurm.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_stollwurm.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_stollwurm_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_stollwurm_back_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_stollwurm_back_dead";
 		this.m.Value = 6000;
 		this.m.Condition = 40;
@@ -32,7 +29,7 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 			id = 15,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Immune to stun"
+			text = "Immune to stun, knockback and grab, and acid"
 		});
 		return result;
 	}

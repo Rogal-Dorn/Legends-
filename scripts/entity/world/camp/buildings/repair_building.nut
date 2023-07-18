@@ -14,7 +14,7 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.camp_building.create();
 		this.m.ID = this.Const.World.CampBuildings.Repair;
 		this.m.BaseCraft = 10.0;
-		this.m.Conversion = 15.0;
+		this.m.Conversion = 10.0;
 		this.m.ModName = "Repair";
 		this.m.Escorting = true;
 		this.m.Slot = "repair";
@@ -93,14 +93,13 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Repair damaged items in your stash and equipped bros. Equipment is repaired in a linear fashion (unlike in parallel in vanilla), so "
-		desc += "order in the queue has significance. Each brother assigned to the tent repairs an amount of durability each hour. "
-		desc += "The more people assigned to the tent, the quicker items will be repaired. Items will repair when not camped at a slow rate."
+		desc += "this tent repairs damaged items in your stash and equipped bros. Equipment is repaired one item at time, so repair order matters. "
+		desc += "At the end of a battle, any equiped gear damaged is added to the front of the repair queue. "
 		desc += "\n\n"
-		desc += "Any equipped gear that is damaged will automatically be added to the front of the queue at the end of all battles. "
-		desc += "If no brothers are assigned to the repair tent, repairs will still be made, albeit at a slower rate. "
+		desc += "Items will repair very slowly when not camped. Camping increases the speed even with no one assigned. "
+		desc += "The more people assigned to the repair tent, the quicker the repairs. Mercenaries with repair skills increase the speed even further. "
 		desc += "\n\n"
-		desc += "The crafting tent can be upgraded by purchasing a repair cart from a settlement merchant. An upgraded tent has a 15% increase in repair speed."
+		desc += "Buying an upgraded tent from a settlement will increase repair speed by 33% and reduce tool use by -33%"
 		return desc;
 	}
 
@@ -244,8 +243,12 @@ this.repair_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		ret.Craft += this.m.BaseCraft;
 		ret.Craft = ret.Craft * this.World.Assets.m.RepairSpeedMult; // should be taken into account (blacksmith influence)
-		local buff =  this.Math.ceil(this.World.getPlayerRoster().getAll().len() * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.World.Assets.m.RepairSpeedMult * 2 * this.Const.World.Assets.ArmorPerHour);
+		local buff =  this.Math.ceil(this.World.getPlayerRoster().getAll().len() * this.Const.Difficulty.RepairMult[this.World.Assets.getEconomicDifficulty()] * this.World.Assets.m.RepairSpeedMult * (1.33 * this.Const.World.Assets.ArmorPerHour));
 		ret.Craft = ret.Craft + buff; // to buff it as a compensation for disabling asset_manager part while camping
+		if (this.getUpgraded())
+		{
+			ret.Craft = this.Math.ceil(ret.Craft * 1.33);
+		}
 		return ret;
 	}
 

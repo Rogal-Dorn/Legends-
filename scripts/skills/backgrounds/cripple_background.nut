@@ -60,7 +60,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,
@@ -131,11 +131,11 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			Bravery = [
 				0,
-				0
+				5
 			],
 			Stamina = [
 				-10,
-				0
+				5
 			],
 			MeleeSkill = [
 				-5,

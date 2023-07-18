@@ -3,7 +3,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		Results = [],
 		NumBros = 0,
 		UnTrained = 0,
-		BaseCraft = 0.3 // was 1.0, changed 6/11/21 - Luft
+		BaseCraft = 0.15 // was 1.0, changed tp 0.4 6/11/21 - Luft - dropped to 0.15 by poss 7/3/2023
 	},
 	function create()
 	{
@@ -65,7 +65,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		local desc = "";
 		desc = desc + "Whether a seasoned veteran or a green recruit, there\'s always something new to learn. ";
-		desc = desc + "Anyone assigned to train will gain xp over time based on the total modifier of occupiers in this tent. ";
+		desc = desc + "Anyone assigned to train will gain experience over time based on the total modifier of occupiers in this tent. ";
 		desc = desc + "Having highly skilled teachers in the grounds increases the chances of successfully learning something new, which will be tracked under \'Intensive Training\' progress under their traits. ";
 		desc = desc + "There\'s always a slight chance someone can be injured.";
 		desc = desc + "\n\n";

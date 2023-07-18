@@ -41,10 +41,10 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.AxeTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CrossbowTree
 			],
-			Defense = [
-				this.Const.Perks.ShieldTree,
+			Defense = [		
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [

@@ -109,6 +109,20 @@ while read -r line; do
         :
     elif [ "$line" == "scripts/!mods_preload/tnf_debugMode.nut" ]; then
         :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_black_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_orange_red_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_red_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_remover_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_set_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_white_blue_blueprint.nut" ]; then
+        :
+    elif [ "$line" == "scripts/crafting/blueprints/paint_white_green_yellow_blueprint.nut" ]; then
+        :
     else
         #echo "$line"
         path=$( echo ${line%/*} )

@@ -12,11 +12,8 @@ this.legend_negative_falling_apart_upgrade <- this.inherit("scripts/items/legend
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_downgrade_01.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_downgrade_01.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "downgrade_01_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "downgrade_01_back";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "downgrade_01_back_dead";
 		this.m.Value = -200;
 	}

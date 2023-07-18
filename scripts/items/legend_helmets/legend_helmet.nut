@@ -486,7 +486,13 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 		{
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
-		local oldIndex = "Assets" in ::World ? this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID()) : null;
+		local oldIndex;
+		// uncomment these lines to make scenario battles work
+		//if ("Assets" in this.World && this.World.Assets != null)   
+		//{
+		oldIndex = "Assets" in ::World ? this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID()) : null;
+		//}
+		
 		if (oldIndex != null) oldIndex = oldIndex.index
 		local oldItem;
 		if (this.m.Upgrades[slot] != null)
@@ -643,7 +649,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Maximum Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
+				text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
 			});
 		}
 
@@ -652,8 +658,8 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			result.push({
 				id = 5,
 				type = "text",
-				icon = "",
-				text = format("(%.1f Armor per 1 Fatigue)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
+				icon = "ui/icons/fatigue.png",
+				text = format("(%.1f Armor per 1 Weight)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}
 
@@ -694,7 +700,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/fatigue.png",
-					text = "Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
+					text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
 				});
 			}
 			if (this.m.Vision != 0) 

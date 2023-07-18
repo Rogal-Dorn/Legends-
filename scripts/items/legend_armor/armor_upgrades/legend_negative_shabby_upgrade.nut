@@ -12,11 +12,8 @@ this.legend_negative_shabby_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_downgrade_02.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_downgrade_02.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "downgrade_02_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "downgrade_02_back";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "downgrade_02_back_dead";
 		this.m.Value = -100;
 	}

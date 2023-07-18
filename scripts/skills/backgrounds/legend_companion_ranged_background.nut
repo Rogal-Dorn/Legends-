@@ -89,7 +89,6 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [

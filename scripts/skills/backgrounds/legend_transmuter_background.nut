@@ -58,7 +58,7 @@ this.legend_transmuter_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

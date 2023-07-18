@@ -16,15 +16,15 @@ this.legend_sling <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_sling_02";
-		this.m.Value = 150;
+		this.m.Value = 50;
 		this.m.StaminaModifier = -4;
 		this.m.RangeMin = 2;
-		this.m.RangeMax = 6;
-		this.m.RangeIdeal = 3;
-		this.m.Condition = 50.0;
-		this.m.ConditionMax = 50.0;
-		this.m.RegularDamage = 25;
-		this.m.RegularDamageMax = 35;
+		this.m.RangeMax = 4;
+		this.m.RangeIdeal = 4;
+		this.m.Condition = 40.0;
+		this.m.ConditionMax = 40.0;
+		this.m.RegularDamage = 15;
+		this.m.RegularDamageMax = 25;
 		this.m.ArmorDamageMult = 0.5;
 		this.m.DirectDamageMult = 0.35;
 	}

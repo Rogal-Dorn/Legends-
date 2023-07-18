@@ -88,13 +88,11 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.ShieldTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.ViciousTree,

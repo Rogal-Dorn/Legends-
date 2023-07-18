@@ -13,7 +13,7 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		this.camp_building.create();
 		this.m.BaseCraft = 10;
-		this.m.Conversion = 15.0;
+		this.m.Conversion = 30.0;
 		this.m.ModName = "Salvage";
 		this.m.ID = this.Const.World.CampBuildings.Workshop;
 		this.m.Slot = "scrap";
@@ -99,12 +99,15 @@ this.workshop_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getDescription()
 	{
 		local desc = "";
-		desc = desc + "Repairing equipment takes supplies. Break down and reuse equipment in your stash to help repair existing gear. ";
-		desc = desc + "Each brother assigned to the tent salvages an amount of durability each hour and converts it into tools. ";
-		desc = desc + "Once an item reaches zero durability, it will be consumed and destroyed. Every 15 durability equals a tool. ";
-		desc = desc + "The more people assigned to the tent, the quicker items will be salvaged.";
+		desc = desc + "Repairing equipment takes tools. Break down and reuse equipment in your stash to create tools to repair other gear.";
+		desc = desc + "Once an item reaches zero durability, it will be consumed and destroyed. Every 30 durability equals a tool. ";
+		desc = desc + "\n\n";
+		desc = desc + "The more people assigned to the tent, the quicker items will be salvaged. People with salvage skills increase the speed further";
 		desc = desc + "\n\n";
 		desc = desc + "The salvage tent can be upgraded by purchasing a salvage cart from a settlement merchant. An upgraded tent has a 15% increase in salvage speed and every 10 durability equals a tool.";
+		desc = desc + "\n\n";
+		desc = desc + "Holding Alt and right clicking on an item in your inventory can send it to your repair or salvage queues";
+
 		return desc;
 	}
 

@@ -64,7 +64,7 @@ this.legend_enchanter_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.SpearTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,

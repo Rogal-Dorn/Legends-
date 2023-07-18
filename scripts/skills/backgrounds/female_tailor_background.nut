@@ -60,7 +60,7 @@ this.female_tailor_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FastTree,

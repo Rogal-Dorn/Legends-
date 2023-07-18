@@ -90,7 +90,6 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [

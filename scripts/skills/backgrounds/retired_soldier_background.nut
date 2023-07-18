@@ -59,11 +59,12 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.AxeTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.HeavyArmorTree
+				this.Const.Perks.HeavyArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,

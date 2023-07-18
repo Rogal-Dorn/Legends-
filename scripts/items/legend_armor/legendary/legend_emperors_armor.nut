@@ -1,8 +1,9 @@
-this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_named_armor", {
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
+		this.legend_named_armor.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.emperors_armor";
 		this.m.Name = "The Emperor\'s Armor";
 		this.m.Description = "A shining armor once worn by the emperor of an age long past, made from the most woundrous of materials, imbued with mystical energies. Light reflects easily off the polished armor, turning the wearer into a shimmering figure of light during the day.";
@@ -10,8 +11,11 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variant = 80;
-		this.updateVariant();
+		this.m.Icon = "legend_armor/icon_named_emperors_armor_01.png";
+		this.m.IconLarge = "legend_armor/inventory_named_emperors_armor_01.png";
+		this.m.Sprite = "bust_named_emperors_armor_01";
+		this.m.SpriteDamaged = "bust_named_emperors_armor_01_damaged";
+		this.m.SpriteCorpse= "bust_named_emperors_armor_01_dead";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
@@ -19,9 +23,7 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.ConditionMax = 400;
 		this.m.StaminaModifier = -30;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
-		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
+		this.randomizeValues();
 	}
 
 	function getTooltip()

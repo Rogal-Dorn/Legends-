@@ -71,7 +71,7 @@ this.legend_magister_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.CalmTree,

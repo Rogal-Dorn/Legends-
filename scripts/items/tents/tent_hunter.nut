@@ -4,8 +4,8 @@ this.tent_hunter <- this.inherit("scripts/items/trade/trading_good_item", {
 	{
 		this.trading_good_item.create();
 		this.m.ID = "tent.hunter_tent";
-		this.m.Name = "Hunter\'s tools";
-		this.m.Description = "A collection of tools for hunting game, comes with bows, traps and butchering tools. Having this in your stash upgrades your camp.";
+		this.m.Name = "Kitchen Tent";
+		this.m.Description = "A collection of tools and equipment for hunting and cooking. Having this in your stash upgrades your camp, allowing skilled backgrounds to produce food, alcohol and treats";
 		this.m.Icon = "tents/tent_hunt_70x70.png";
 		this.m.Value = 3000;
 	}

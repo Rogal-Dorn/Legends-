@@ -5,8 +5,8 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 	function create()
 	{
 		this.m.ID = "misc.legend_scroll";
-		this.m.Name = "Scroll";
-		this.m.Description = "A Scroll with description improperly set if you see this!";
+		this.m.Name = "Ability Scroll";
+		this.m.Description = "A Scroll which can unlock new abilities on mercenaries";
 		this.m.Icon = "trade/scroll.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Usable;
@@ -62,7 +62,7 @@ this.legend_scroll_item <- this.inherit("scripts/items/item", {
 		result.push({
 			id = 67,
 			type = "text",
-			text = "Every brother may use up to 1 scroll. Being bright increases this to 2 scrolls, and being dumb decreases this to 0 scrolls."
+			text = "Every character may use up to 1 ability scroll. Being bright increases this to 2 scrolls, and being dumb decreases this to 0 scrolls."
 		});
 		return result;
 	}

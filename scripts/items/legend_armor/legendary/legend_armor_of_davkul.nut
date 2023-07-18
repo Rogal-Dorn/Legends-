@@ -1,8 +1,9 @@
-this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_named_armor", {
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
+		this.legend_named_armor.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.armor_of_davkul";
 		this.m.Name = "Aspect of Davkul";
 		this.m.Description = "A grisly aspect of Davkul, an ancient power not from this world, and the last remnants of %sacrifice% from whose body it has been fashioned. It shall never break, but instead keep regrowing its scarred skin on the spot.";
@@ -10,8 +11,11 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
-		this.m.Variant = 81;
-		this.updateVariant();
+		this.m.Icon = "legend_armor/icon_named_davkul_armor_01.png";
+		this.m.IconLarge = "legend_armor/inventory_named_davkul_armor_01.png";
+		this.m.Sprite = "bust_davkul_01";
+		this.m.SpriteDamaged = "bust_davkul_01_damaged";
+		this.m.SpriteCorpse= "bust_davkul_01_dead";
 		this.m.ImpactSound = [
 			"sounds/combat/cleave_hit_hitpoints_01.wav",
 			"sounds/combat/cleave_hit_hitpoints_02.wav",
@@ -23,10 +27,9 @@ this.legend_armor_of_davkul <- this.inherit("scripts/items/legend_armor/legend_a
 		this.m.ConditionMax = 270;
 		this.m.StaminaModifier = -18;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
-		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
+		this.randomizeValues();
 	}
+
 
 	function getTooltip()
 	{
