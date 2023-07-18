@@ -679,7 +679,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			result.push({	// An empty line is put in to improve formatting
 				id = 10,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/blank.png",
 				text = " "
 			})
 			result.push({
@@ -721,7 +721,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			_result.push({	// An empty line is put in to improve formatting
 				id = 20,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/blank.png",
 				text = " "
 			});
 			result.push({
