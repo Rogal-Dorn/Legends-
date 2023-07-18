@@ -19,20 +19,20 @@ gt.Const.Perks.AgileTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			-4,
+			-4
 		],
 		Bravery = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Stamina = [
 			0,
 			0
 		],
 		MeleeSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedSkill = [
 			4,
@@ -57,7 +57,7 @@ gt.Const.Perks.AgileTree <- {
 		],
 		[],
 		[
-			gt.Const.Perks.PerkDefs.Sprint
+			gt.Const.Perks.PerkDefs.LegendClimb
 		],
 		[],
 		[
@@ -89,16 +89,16 @@ gt.Const.Perks.IndestructibleTree <- {
 			2
 		],
 		Stamina = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeSkill = [
 			0,
 			0
 		],
 		RangedSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeDefense = [
 			0,
@@ -109,8 +109,8 @@ gt.Const.Perks.IndestructibleTree <- {
 			2
 		],
 		Initiative = [
-			0,
-			0
+			-4,
+			-4
 		]
 	},
 	Tree = [
@@ -155,24 +155,24 @@ gt.Const.Perks.MartyrTree <- {
 			2
 		],
 		MeleeSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedSkill = [
-			0,
-			0
+			-4,
+			-4
 		],
 		MeleeDefense = [
-			0,
-			0
+			4,
+			4
 		],
 		RangedDefense = [
 			2,
 			2
 		],
 		Initiative = [
-			4,
-			4
+			-2,
+			-2
 		]
 	},
 	Tree = [
@@ -213,8 +213,8 @@ gt.Const.Perks.ViciousTree <- {
 			2
 		],
 		Stamina = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeSkill = [
 			4,
@@ -225,16 +225,16 @@ gt.Const.Perks.ViciousTree <- {
 			2
 		],
 		MeleeDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedDefense = [
-			0,
-			0
+			-4,
+			-4
 		],
 		Initiative = [
-			0,
-			0
+			2,
+			2
 		]
 	},
 	Tree = [
@@ -273,8 +273,8 @@ gt.Const.Perks.DeviousTree <- {
 			0
 		],
 		Bravery = [
-			0,
-			0
+			-4,
+			-4
 		],
 		Stamina = [
 			0,
@@ -289,8 +289,8 @@ gt.Const.Perks.DeviousTree <- {
 			2
 		],
 		MeleeDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedDefense = [
 			4,
@@ -302,8 +302,10 @@ gt.Const.Perks.DeviousTree <- {
 		]
 	},
 	Tree = [
+		[
+		gt.Const.Perks.PerkDefs.LegendTrueBeliever
+		],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendTrueBeliever],
 		[ gt.Const.Perks.PerkDefs.LegendBlendIn ],
 		[],
 		[ gt.Const.Perks.PerkDefs.LegendEvasion ],
@@ -325,8 +327,8 @@ gt.Const.Perks.InspirationalTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Bravery = [
 			4,
@@ -341,8 +343,8 @@ gt.Const.Perks.InspirationalTree <- {
 			2
 		],
 		RangedSkill = [
-			0,
-			0
+			-4,
+			-4
 		],
 		MeleeDefense = [
 			2,
@@ -353,8 +355,8 @@ gt.Const.Perks.InspirationalTree <- {
 			0
 		],
 		Initiative = [
-			0,
-			0
+			-2,
+			-2
 		]
 	},
 	Tree = [
@@ -389,16 +391,16 @@ gt.Const.Perks.IntelligentTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Bravery = [
 			4,
 			4
 		],
 		Stamina = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeSkill = [
 			0,
@@ -409,8 +411,8 @@ gt.Const.Perks.IntelligentTree <- {
 			0
 		],
 		MeleeDefense = [
-			0,
-			0
+			-4,
+			-4
 		],
 		RangedDefense = [
 			2,
@@ -427,11 +429,13 @@ gt.Const.Perks.IntelligentTree <- {
 		],
 		[
 			gt.Const.Perks.PerkDefs.Gifted,
-			gt.Const.Perks.PerkDefs.FortifiedMind
+			
 		],
 		[],
 		[],
-		[],
+		[
+			gt.Const.Perks.PerkDefs.LegendAdaptive
+		],
 		[
 			gt.Const.Perks.PerkDefs.LegendMindOverBody
 		],
@@ -451,24 +455,24 @@ gt.Const.Perks.CalmTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Bravery = [
 			2,
 			2
 		],
 		Stamina = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeSkill = [
-			0,
-			0
+			-4,
+			-4
 		],
 		RangedSkill = [
-			2,
-			2
+			4,
+			4
 		],
 		MeleeDefense = [
 			0,
@@ -479,8 +483,8 @@ gt.Const.Perks.CalmTree <- {
 			0
 		],
 		Initiative = [
-			4,
-			4
+			2,
+			2
 		]
 	},
 	Tree = [
@@ -515,16 +519,16 @@ gt.Const.Perks.FastTree <- {
 	],
 	Attributes = {
 		Hitpoints = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Bravery = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Stamina = [
-			0,
-			0
+			-4,
+			-4
 		],
 		MeleeSkill = [
 			0,
@@ -535,16 +539,16 @@ gt.Const.Perks.FastTree <- {
 			2
 		],
 		MeleeDefense = [
-			4,
-			4
+			0,
+			0
 		],
 		RangedDefense = [
 			2,
 			2
 		],
 		Initiative = [
-			0,
-			0
+			4,
+			4
 		]
 	},
 	Tree = [
@@ -553,7 +557,8 @@ gt.Const.Perks.FastTree <- {
 			gt.Const.Perks.PerkDefs.Adrenaline
 		],
 		[
-			gt.Const.Perks.PerkDefs.Anticipation
+			gt.Const.Perks.PerkDefs.Anticipation,
+			gt.Const.Perks.PerkDefs.Sprint
 		],
 		[],
 		[],
@@ -596,16 +601,16 @@ gt.Const.Perks.LargeTree <- {
 			0
 		],
 		MeleeDefense = [
-			0,
-			0
+			-4,
+			-4
 		],
 		RangedDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Initiative = [
-			0,
-			0
+			-2,
+			-2
 		]
 	},
 	Tree = [
@@ -633,7 +638,7 @@ gt.Const.Perks.OrganisedTree <- {
 		"formulates detailed plans",
 		"tabulates company expenses",
 		"already classified your inventory",
-		"straightened out the supplies",
+		"alphabetizes the supplies",
 		"is fastidiously organised"
 	],
 	Attributes = {
@@ -642,24 +647,24 @@ gt.Const.Perks.OrganisedTree <- {
 			2
 		],
 		Bravery = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Stamina = [
 			4,
 			4
 		],
 		MeleeSkill = [
-			0,
-			0
+			-4,
+			-4
 		],
 		RangedSkill = [
 			0,
 			0
 		],
 		MeleeDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedDefense = [
 			0,
@@ -674,7 +679,9 @@ gt.Const.Perks.OrganisedTree <- {
 		[
 			gt.Const.Perks.PerkDefs.BagsAndBelts
 		],
-		[],
+		[  
+			gt.Const.Perks.PerkDefs.LegendHelpful
+		],
 		[
 			gt.Const.Perks.PerkDefs.LegendEfficientPacking
 		],
@@ -714,20 +721,20 @@ gt.Const.Perks.SturdyTree <- {
 			2
 		],
 		MeleeSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		RangedSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeDefense = [
 			4,
 			4
 		],
 		RangedDefense = [
-			0,
-			0
+			-4,
+			-4
 		],
 		Initiative = [
 			0,
@@ -735,9 +742,11 @@ gt.Const.Perks.SturdyTree <- {
 		]
 	},
 	Tree = [
-		[],
 		[
-			// gt.Const.Perks.PerkDefs.LegendComposure
+			gt.Const.Perks.PerkDefs.LegendRecuperation
+		],
+		[
+			gt.Const.Perks.PerkDefs.FortifiedMind
 		],
 		[
 			gt.Const.Perks.PerkDefs.Steadfast
@@ -767,8 +776,8 @@ gt.Const.Perks.FitTree <- {
 			2
 		],
 		Bravery = [
-			0,
-			0
+			-4,
+			-4
 		],
 		Stamina = [
 			4,
@@ -779,16 +788,16 @@ gt.Const.Perks.FitTree <- {
 			0
 		],
 		RangedSkill = [
-			0,
-			0
+			-2,
+			-2
 		],
 		MeleeDefense = [
 			2,
 			2
 		],
 		RangedDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Initiative = [
 			0,
@@ -825,8 +834,8 @@ gt.Const.Perks.TrainedTree <- {
 	],
 	Attributes =  {
 		Hitpoints = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Bravery = [
 			0,
@@ -849,12 +858,12 @@ gt.Const.Perks.TrainedTree <- {
 			2
 		],
 		RangedDefense = [
-			0,
-			0
+			-2,
+			-2
 		],
 		Initiative = [
-			0,
-			0
+			-4,
+			-4
 		]
 	},
 	Tree = [
@@ -896,7 +905,7 @@ gt.Const.Perks.TraitsTrees <- {
 
 		foreach( i, t in this.Tree )
 		{
-			if (_exclude != null && _exclude.find(t.ID))
+			if (_exclude != null && _exclude.find(t.ID) != null)
 			{
 				continue;
 			}
@@ -928,36 +937,36 @@ gt.Const.Perks.TraitsTrees <- {
 	{
 		return {
 			Hitpoints = [
-				-8,
-				-8
+				0,
+				0
 			],
 			Bravery = [
-				-8,
-				-8
+				0,
+				0
 			],
 			Stamina = [
-				-8,
-				-8
+				0,
+				0
 			],
 			MeleeSkill = [
-				-8,
-				-8
+				0,
+				0
 			],
 			RangedSkill = [
-				-8,
-				-8
+				0,
+				0
 			],
 			MeleeDefense = [
-				-8,
-				-8
+				0,
+				0
 			],
 			RangedDefense = [
-				-8,
-				-8
+				0,
+				0
 			],
 			Initiative = [
-				-8,
-				-8
+				0,
+				0
 			]
 		};
 	}

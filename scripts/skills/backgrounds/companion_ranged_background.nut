@@ -64,7 +64,8 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.BowTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FastTree,

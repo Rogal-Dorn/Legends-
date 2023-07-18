@@ -65,6 +65,10 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (!this.World.FactionManager.isUndeadScourge())
+		{
+			return;
+		}
 		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
 		{
 			return;

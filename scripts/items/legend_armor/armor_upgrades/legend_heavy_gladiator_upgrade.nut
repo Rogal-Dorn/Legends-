@@ -12,12 +12,9 @@ this.legend_heavy_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_25.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_25.png";
-		this.m.SpriteFront = "upgrade_25_front";
-		this.m.SpriteBack = null;
-		this.m.SpriteDamagedFront = "upgrade_25_front_damaged";
-		this.m.SpriteDamagedBack = null;
-		this.m.SpriteCorpseFront = "upgrade_25_front_dead";
-		this.m.SpriteCorpseBack = null;
+		this.m.SpriteBack = "upgrade_25_front";
+		this.m.SpriteDamagedBack = "upgrade_25_front_damaged";
+		this.m.SpriteCorpseBack = "upgrade_25_front_dead";
 
 		this.m.Value = 800;
 		this.m.Condition = 75;

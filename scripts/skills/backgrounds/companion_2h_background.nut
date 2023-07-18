@@ -64,6 +64,7 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.SturdyTree,

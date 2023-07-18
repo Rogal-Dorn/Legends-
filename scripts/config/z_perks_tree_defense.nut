@@ -5,22 +5,6 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-gt.Const.Perks.ShieldTree <- {
-	ID = "ShieldTree",
-	Name = "Shield",
-	Descriptions = [
-		"shields"
-	],
-	Tree = [
-		[],
-		[gt.Const.Perks.PerkDefs.ShieldBash],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
-		[gt.Const.Perks.PerkDefs.ShieldExpert],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldSkill],
-		[],
-		[]
-	]
-};
 
 
 gt.Const.Perks.HeavyArmorTree <- {
@@ -74,6 +58,30 @@ gt.Const.Perks.LightArmorTree <- {
 	]
 };
 
+gt.Const.Perks.ClothArmorTree <- {
+	ID = "ClothArmorTree",
+	Name = "Cloth Armor",
+	Descriptions = [
+		"cloth armor"
+	],
+	Tree = [
+		[
+		gt.Const.Perks.PerkDefs.LegendMeek
+		],
+		[],
+		[
+		gt.Const.Perks.PerkDefs.LegendSmallTarget
+		],
+		[],
+		[],
+		[
+		gt.Const.Perks.PerkDefs.LegendFashionable
+		],
+		[]
+	]
+};
+
+
 //gt.Const.Perks.HelmetTree <- {
 	//ID = "HelmetTree",
 	//Descriptions = [
@@ -92,10 +100,11 @@ gt.Const.Perks.LightArmorTree <- {
 
 gt.Const.Perks.DefenseTrees <- {
 	Tree = [
-		gt.Const.Perks.ShieldTree,
+		//gt.Const.Perks.ShieldTree,
 		gt.Const.Perks.HeavyArmorTree,
 		gt.Const.Perks.MediumArmorTree,
-		gt.Const.Perks.LightArmorTree
+		gt.Const.Perks.LightArmorTree,
+		gt.Const.Perks.ClothArmorTree
 		//gt.Const.Perks.HelmetTree
 	],
 	function getRandom(_exclude)
@@ -103,7 +112,7 @@ gt.Const.Perks.DefenseTrees <- {
 		local L = [];
 		foreach (i, t in this.Tree)
 		{
-			if (_exclude != null && _exclude.find(t.ID))
+			if (_exclude != null && _exclude.find(t.ID) != null)
 			{
 				continue;
 			}

@@ -5,14 +5,15 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		this.attached_location.create();
 		this.m.Name = "Hunter\'s Cabin";
 		this.m.ID = "attached_location.hunters_cabin";
-		this.m.Description = "Hunters take shelter in these small huts while on the hunt. Chopped up game, venison and hides hung up to dry in the sun surround the huts.";
+		this.m.Description = "Hunters take shelter in these small huts while on the hunt. Chopped up game, venison and hides hung up to dry in the sun surround the huts. Contributes meat, furs, bows, poachers and hunters to the local town";
 		this.m.Sprite = "world_hunter_01";
 		this.m.SpriteDestroyed = "world_hunter_01_ruins";
 	}
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("supplies/cured_venison_item");
+		_list.push("trade/furs_item");
+		_list.push("trade/legend_small_furs_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -68,19 +69,34 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 		if (_id == "building.marketplace")
 		{
 			_list.push({
-				R = 10,
+				R = 0,
 				P = 1.0,
 				S = "supplies/cured_venison_item"
 			});
 			_list.push({
 				R = 0,
-				P = 0.9,
+				P = 1.0,
 				S = "supplies/legend_fresh_meat_item"
 			});
 			_list.push({
 				R = 30,
 				P = 1.0,
 				S = "weapons/short_bow"
+			});
+			_list.push({
+				R = 10,
+				P = 1.2,
+				S = "supplies/ammo_item"
+			});
+			_list.push({
+				R = 30,
+				P = 1.2,
+				S = "misc/werewolf_pelt_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.1,
+				S = "trade/furs_item"
 			});
 			_list.push({
 				R = 50,
@@ -113,7 +129,7 @@ this.hunters_cabin_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "tents/tent_hunter"
 			});
 			_list.push({
-				R = 10,
+				R = 30,
 				P = 1.0,
 				S = "helmets/hunters_hat"
 			});

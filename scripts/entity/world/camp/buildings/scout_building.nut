@@ -38,6 +38,8 @@ this.scout_building <- this.inherit("scripts/entity/world/camp/camp_building", {
 		desc += "The Patrol station can be upgraded by purchasing a patrol cart from a settlement merchant. An upgraded tent has a 15% increase in patrol speed and "
 		desc += "has a chance of revealing the defenders of any camps encountered. "
 		desc += "Additionally, while on patrol there's a chance that the location of enemy outposts can be determined."
+		desc += "\n\n"
+		desc += "Assigned scouts with the Lookout perk will pause time when an enemy is sighted"
 		return desc;
 	}
 

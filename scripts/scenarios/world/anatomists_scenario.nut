@@ -45,8 +45,17 @@ this.anatomists_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/helmets/undertaker_hat"));
-		items.equip(this.new("scripts/items/armor/undertaker_apron"));
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_tunic");
+		local plate = this.new("scripts/items/legend_armor/plate/undertakers_apron");
+		armor.setUpgrade(plate);
+		items.equip(armor);
+		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_cloth_scarf");
+		local top = this.new("scripts/items/legend_helmets/top/legend_helmet_undertakers_scarf");
+		local vanity = this.new("scripts/items/legend_helmets/vanity/legend_helmet_undertakers_hat");
+		hood.setUpgrade(top);
+		hood.setUpgrade(vanity);
+		items.equip(hood);
+	
 		bros[1].setStartValuesEx([
 			"anatomist_background"
 		]);
@@ -64,8 +73,21 @@ this.anatomists_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/helmets/physician_mask"));
-		items.equip(this.new("scripts/items/armor/wanderers_coat"));
+		
+		local armor = this.new("scripts/items/legend_armor/cloth/wanderers_coat");
+		local cloak = this.new("scripts/items/legend_armor/cloak/legend_religious_scarf");
+		armor.setUpgrade(cloak);
+		items.equip(armor);
+		
+		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_beak_hood");
+		local top = this.new("scripts/items/legend_helmets/top/legend_helmet_mask_beak");
+		local vanity = this.new("scripts/items/legend_helmets/vanity/legend_helmet_physicians_hood");
+		hood.setUpgrade(top);
+		hood.setUpgrade(vanity);
+		items.equip(hood);
+	
+		
+		
 		items.equip(this.new("scripts/items/weapons/dagger"));
 		bros[2].setStartValuesEx([
 			"anatomist_background"
@@ -84,9 +106,20 @@ this.anatomists_scenario <- this.inherit("scripts/scenarios/world/starting_scena
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/helmets/masked_kettle_helmet"));
-		items.equip(this.new("scripts/items/armor/reinforced_leather_tunic"));
+
+		local armor = this.new("scripts/items/legend_armor/cloth/anatomist_robe");
+		local cloak = this.new("scripts/items/legend_armor/cloak/anatomist_hood");
+		armor.setUpgrade(cloak);
+		items.equip(armor);
+		
+		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_full_mask");
+		local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_kettle_hat");
+		hood.setUpgrade(helm);
+		items.equip(hood);	
+		
 		items.equip(this.new("scripts/items/weapons/militia_spear"));
+		
+		
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/smoked_ham_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/misc/anatomist/research_notes_beasts_item"));

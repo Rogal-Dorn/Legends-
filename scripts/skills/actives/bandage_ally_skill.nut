@@ -56,7 +56,7 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Removes the Bleeding status effect"
+				text = "Removes the Bleeding and Grazed status effect"
 			},
 			{
 				id = 7,
@@ -114,7 +114,7 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
-		if (target.getSkills().hasSkill("effects.bleeding"))
+		if (target.getSkills().hasSkill("effects.bleeding") || target.getSkills().hasSkill("effects.legend_grazed_effect"))
 		{
 			return true;
 		}
@@ -152,6 +152,11 @@ this.bandage_ally_skill <- this.inherit("scripts/skills/skill", {
 		while (target.getSkills().hasSkill("effects.bleeding"))
 		{
 			target.getSkills().removeByID("effects.bleeding");
+		}
+		
+		while (target.getSkills().hasSkill("effects.legend_grazed_effect"))
+		{
+			target.getSkills().removeByID("effects.legend_grazed_effect");
 		}
 
 		local skill;

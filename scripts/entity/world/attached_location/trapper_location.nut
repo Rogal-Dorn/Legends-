@@ -5,7 +5,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 		this.attached_location.create();
 		this.m.Name = "Trapper";
 		this.m.ID = "attached_location.trapper";
-		this.m.Description = "Small huts provide shelter for the trappers living here and setting traps for animals with valuable furs.";
+		this.m.Description = "Small huts provide shelter for the trappers living here and setting traps for animals with valuable furs. Contributes furs, meat and poachers to the town";
 		this.m.Sprite = "world_trapper_01";
 		this.m.SpriteDestroyed = "world_trapper_01_ruins";
 	}
@@ -13,7 +13,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/furs_item");
-		_list.push("trade/tin_ingots_item");
+		_list.push("trade/legend_small_furs_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -27,7 +27,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 		_list.push("peddler_background");
 		_list.push("caravan_hand_background");
 		_list.push("poacher_background");
-
+		_list.push("poacher_background");
 
 
 	}
@@ -41,7 +41,21 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 				P = 1.0,
 				S = "trade/furs_item"
 			});
-
+			_list.push({
+				R = 0,
+				P = 1.0,
+				S = "trade/legend_small_furs_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.1,
+				S = "supplies/legend_fresh_meat_item"
+			});
+			_list.push({
+				R = 0,
+				P = 1.1,
+				S = "supplies/cured_venison_item"
+			});
 			_list.push({
 				R = 50,
 				P = 1.0,
@@ -68,7 +82,7 @@ this.trapper_location <- this.inherit("scripts/entity/world/attached_location", 
 				S = "tents/tent_hunter"
 			});
 				_list.push({
-				R = 50,
+				R = 30,
 				P = 1.0,
 				S = "weapons/legend_chain"
 			});

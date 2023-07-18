@@ -7,7 +7,7 @@ this.militia_trainingcamp_location <- this.inherit("scripts/entity/world/attache
 		this.attached_location.create();
 		this.m.Name = "Militia Barracks";
 		this.m.ID = "attached_location.militia_trainingcamp";
-		this.m.Description = "A large compound of militia barracks. This camp will turn ordinary peasants into somewhat able soldiers that can defend their home and their loved ones.";
+		this.m.Description = "A large compound of militia barracks. This camp will turn ordinary peasants into somewhat able soldiers that can defend their home and their loved ones. Contributes weapons, armor and militia to the local town.";
 		this.m.Sprite = "world_militia_trainingcamp_01";
 		this.m.SpriteDestroyed = "world_militia_trainingcamp_01_ruins";
 		this.m.IsMilitary = true;

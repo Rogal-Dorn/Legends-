@@ -12,11 +12,8 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.IconLarge = this.m.Icon;
 		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_04.png";
 		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_04.png";
-		this.m.SpriteFront = null;
 		this.m.SpriteBack = "upgrade_04_back";
-		this.m.SpriteDamagedFront = null;
 		this.m.SpriteDamagedBack = "upgrade_04_back_damaged";
-		this.m.SpriteCorpseFront = null;
 		this.m.SpriteCorpseBack = "upgrade_04_back_dead";
 		this.m.Value = 1800;
 		this.m.Condition = 20;

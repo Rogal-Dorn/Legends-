@@ -421,7 +421,16 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (_upgrade == null) return true;
 		if (_upgrade != null && this.m.Blocked[_upgrade.getType()]) return false;
 
-		local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		local oldIndex;
+		// uncomment these lines to make scenario battles work
+		//if (this.Tactical.isActive())
+		//{
+		//	if(!this.Tactical.State.isScenarioMode())
+		//	{
+			local oldIndex = this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID())
+		//	}
+		//}
+		
 		if (oldIndex != null) oldIndex = oldIndex.index
 
 		local oldItem;
@@ -579,7 +588,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 				id = 5,
 				type = "text",
 				icon = "ui/icons/fatigue.png",
-				text = "Maximum Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
+				text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.getStaminaModifier()) + this.Math.abs(this.getStaminaModifier()), this.getStaminaModifier())
 			});
 		}
 
@@ -588,8 +597,8 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			result.push({
 				id = 5,
 				type = "text",
-				icon = "",
-				text = format("(%.1f Armor per 1 Fatigue)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
+				icon = "ui/icons/fatigue.png",
+				text = format("(%.1f Armor per 1 Weight)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}
 
@@ -620,7 +629,7 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 					id = 10,
 					type = "text",
 					icon = "ui/icons/fatigue.png",
-					text = "Fatigue: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
+					text = "Weight: " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.StaminaModifier) + this.Math.abs(this.m.StaminaModifier), this.m.StaminaModifier)
 				});
 			}
 		}

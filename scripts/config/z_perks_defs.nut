@@ -2625,6 +2625,69 @@ local perkDefObjects = [
 		Const = "LegendNightRaider"
 	},
 	{
+		ID = "perk.legend_adaptive",
+		Script = "scripts/skills/perks/perk_legend_adaptive",
+		Name = this.Const.Strings.PerkName.LegendAdaptive,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAdaptive,
+		Icon = "ui/perks/adaptive_circle.png",
+		IconDisabled = "ui/perks/adaptive_circle_bw.png",
+		Const = "LegendAdaptive"
+	},
+	{
+		ID = "perk.legend_recuperation",
+		Script = "scripts/skills/perks/perk_legend_recuperation",
+		Name = this.Const.Strings.PerkName.LegendRecuperation,
+		Tooltip = this.Const.Strings.PerkDescription.LegendRecuperation,
+		Icon = "ui/perks/recuperation_circle.png",
+		IconDisabled = "ui/perks/recuperation_circle_bw.png",
+		Const = "LegendRecuperation"
+	},
+	{
+		ID = "perk.legend_climb",
+		Script = "scripts/skills/perks/perk_legend_climb",
+		Name = this.Const.Strings.PerkName.LegendClimb,
+		Tooltip = this.Const.Strings.PerkDescription.LegendClimb,
+		Icon = "ui/perks/climb_circle.png",
+		IconDisabled = "ui/perks/climb_circle_bw.png",
+		Const = "LegendClimb"
+	},
+	{
+		ID = "perk.legend_small_target",
+		Script = "scripts/skills/perks/perk_legend_small_target",
+		Name = this.Const.Strings.PerkName.LegendSmallTarget,
+		Tooltip = this.Const.Strings.PerkDescription.LegendSmallTarget,
+		Icon = "ui/perks/small_target.png",
+		IconDisabled = "ui/perks/small_target_bw.png",
+		Const = "LegendSmallTarget"
+	},
+	{
+		ID = "perk.legend_fashionable",
+		Script = "scripts/skills/perks/perk_legend_fashionable",
+		Name = this.Const.Strings.PerkName.LegendFashionable,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFashionable,
+		Icon = "ui/perks/fashionable.png",
+		IconDisabled = "ui/perks/fashionable_bw.png",
+		Const = "LegendFashionable"
+	},
+	{
+		ID = "perk.legend_meek",
+		Script = "scripts/skills/perks/perk_legend_meek",
+		Name = this.Const.Strings.PerkName.LegendMeek,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMeek,
+		Icon = "ui/perks/meek.png",
+		IconDisabled = "ui/perks/meek_bw.png",
+		Const = "LegendMeek"
+	},
+	{
+		ID = "perk.legend_helpful",
+		Script = "scripts/skills/perks/perk_legend_helpful",
+		Name = this.Const.Strings.PerkName.LegendHelpful,
+		Tooltip = this.Const.Strings.PerkDescription.LegendHelpful,
+		Icon = "ui/perks/helpful.png",
+		IconDisabled = "ui/perks/helpful_bw.png",
+		Const = "LegendHelpful"
+	},
+	{
 		ID = "perk.legend_assassinate",
 		Script = "scripts/skills/perks/perk_legend_assassinate",
 		Name = this.Const.Strings.PerkName.LegendAssassinate,

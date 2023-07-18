@@ -745,7 +745,7 @@ this.entity_manager <- {
 
 		this.m.LastMercUpdateTime = this.Time.getVirtualTimeF();
 
-		if (this.m.Mercenaries.len() < 2 || this.World.FactionManager.isCivilWar() && this.m.Mercenaries.len() < 3)
+		if (this.m.Mercenaries.len() < 3 || this.World.FactionManager.isCivilWar() && this.m.Mercenaries.len() < 4)
 		{
 			local playerTile = this.World.State.getPlayer().getTile();
 			local candidates = [];

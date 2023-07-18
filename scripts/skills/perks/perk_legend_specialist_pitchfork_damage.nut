@@ -18,7 +18,7 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.pitchfork" || item.getID() == "weapon.legend_wooden_pitchfork"  || item.getID() == "weapon.legend_hoe"  || item.getID() == "weapon.legend_scythe"  || item.getID() == "weapon.wooden_flail")
+			if (item.getID() == "weapon.pitchfork" || item.getID() == "weapon.legend_wooden_pitchfork"  || item.getID() == "weapon.legend_hoe"  || item.getID() == "weapon.legend_scythe"  || item.getID() == "weapon.wooden_flail" || item.getID() == "weapon.warfork")
 			{
 				_properties.DamageRegularMin += 9;
 				_properties.DamageRegularMax += 24;

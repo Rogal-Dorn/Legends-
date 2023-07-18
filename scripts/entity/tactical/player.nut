@@ -1530,6 +1530,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_difficulty = _difficulty - 5;
 		}
+		else if (this.m.Skills.hasSkill("trait.legend_haunted_01"))
+		{
+			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 6 : -6);
+		}
 		else if (this.m.Skills.hasSkill("trait.irrational"))
 		{
 			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 10 : -10);
@@ -1538,11 +1542,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		{
 			_difficulty = _difficulty + (this.Math.rand(0, 1) == 0 ? 15 : -15);
 		}
-
+		if (_change < 0 && _type == this.Const.MoraleCheckType.MentalAttack && this.m.Skills.hasSkill("trait.legend_haunted_02"))
+		{
+			_difficulty = _difficulty - 6;
+		}
 		if (_change < 0 && _type == this.Const.MoraleCheckType.MentalAttack && this.m.Skills.hasSkill("trait.superstitious"))
 		{
 			_difficulty = _difficulty - 10;
 		}
+
 
 		return this.actor.checkMorale(_change, _difficulty, _type, _showIconBeforeMoraleIcon, _noNewLine);
 	}

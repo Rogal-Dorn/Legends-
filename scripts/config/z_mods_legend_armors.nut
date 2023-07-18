@@ -51,6 +51,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[5, ""],
+			[1, "cloak/tabbed_hood"],
 		],
 		Tabard = [
 		],
@@ -157,6 +159,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloak = [ //1
 			[20, ""],
 			[1, "cloak/legend_armor_cloak_common"],
+			[1, "cloak/tabbed_hood"],
+			[1, "cloak/decorative_hood"],
 		],
 		Tabard = [
 		],
@@ -294,6 +298,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloak = [
 			[20, ""],
 			[1, "cloak/legend_armor_cloak_common"],
+			[1, "cloak/decorative_hood"],
 		],
 		Tabard = [
 		],
@@ -438,6 +443,30 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		]
 	}]
 },{
+	ID = "noble_scale_armor",
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[2, "cloth/legend_gambeson"],
+			[1, "cloth/legend_padded_surcoat"],
+		],
+		Chain = [
+			[1, "chain/legend_armor_mail_shirt"],
+			[1, "chain/legend_armor_mail_shirt_simple"],
+		],
+		Plate = [
+			[1, "plate/legend_noble_scale"],
+		],
+		Cloak = [
+			[20, ""],
+			[1, "cloak/dukes_cloak"],
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
 	ID = "leather_tunic",
 	Script = "",
 	Sets = [{
@@ -452,6 +481,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "plate/legend_armor_leather_jacket_simple"],
 		],
 		Cloak = [
+			[20, ""],
+			[1, "cloak/tabbed_hood"],
 		],
 		Tabard = [
 		],
@@ -848,6 +879,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[10, ""],
+			[1, "cloak/decorative_hood"],
 		],
 		Tabard = [
 		],
@@ -885,6 +918,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/cursed_cloak"],
 		],
 		Tabard = [
 		],
@@ -903,6 +937,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[10, ""],
+			[1, "cloak/legend_noble_shawl"],
 		],
 		Tabard = [
 		],
@@ -925,6 +961,9 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "plate/legend_armor_leather_noble"],
 		],
 		Cloak = [
+			[10, ""],
+			[2, "cloak/legend_noble_shawl"],
+			[1, "cloak/legend_sash"],
 		],
 		Tabard = [
 		],
@@ -943,6 +982,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[10, ""],
+			[1, "cloak/legend_noble_shawl"],
 		],
 		Tabard = [
 		],
@@ -983,6 +1024,8 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [
 		],
 		Cloak = [
+			[10, ""],
+			[1, "cloak/decorative_hood"],
 		],
 		Tabard = [
 		],
@@ -1030,6 +1073,10 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		//(this is an error)	[1, "plate/legend_armor_leather_jacket_named"], // 30
 		],
 		Cloak = [
+			[10, ""],
+			[1, "cloak/tabbed_hood"],
+			[1, "cloak/legend_dark_wooly_cloak"],
+			[1, "cloak/fur_cloak"],
 		],
 		Tabard = [
 		],
@@ -1077,6 +1124,32 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Tabard = [
 		],
 		Attachments =[
+		]
+	}]
+},{
+	ID = "adorned_warriors_armor", // 210
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_gambeson_plain"], // 65
+			[1, "cloth/legend_padded_surcoat"], // 55
+		],
+		Chain = [
+			[4, "chain/legend_armor_hauberk"], // 95
+			[1, "chain/legend_armor_hauberk_full"], // 115
+		],
+		Plate = [
+			[1, "plate/legend_armor_leather_riveted"], // 
+			[1, "plate/legend_armor_leather_riveted_light"], // 
+		],
+		Cloak = [
+			[1, "cloak/relic_hood"], // 
+		],
+		Tabard = [
+		],
+		Attachments =[
+			[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
+			[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
 		]
 	}]
 },{
@@ -1271,6 +1344,24 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		]
 	}]
 },{
+	ID = "beautiful_robe", // 20
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_robes_wizard"], // 40
+		],
+		Chain = [
+		],
+		Plate = [
+		],
+		Cloak = [
+		],
+		Tabard = [
+		],
+		Attachments =[
+		]
+	}]
+},{
 	ID = "worn_mail_shirt", // 110
 	Script = "",
 	Sets = [{
@@ -1347,7 +1438,63 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Tabard = [
 		],
 		Attachments =[
-			[15, ""],
+			[5, ""],
+			[5, "armor_upgrades/legend_leather_neckguard_upgrade"],
+			[5, "armor_upgrades/legend_mail_patch_upgrade"],
+			[2, "armor_upgrades/legend_joint_cover_upgrade"]
+		]
+	}]
+},{
+	ID = "legend_noble_guard_armour",
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_tunic_noble"],
+		],
+		Chain = [
+			[1, "chain/legend_armor_reinforced_mail"],
+		],
+		Plate = [
+			[1, "chain/legend_armor_plate_krastenbrust"],
+			[1, "chain/legend_armor_plate_full"],
+		],
+		Cloak = [
+			[3, ""],
+			[1, "chain/legend_armor_cloak_heavy"],
+		],
+		Tabard = [
+		[2, "tabard/legend_armor_noble_tabard"],
+		],
+		Attachments =[
+		]
+	}]
+
+},{
+	ID = "man_at_arms_noble_armor", 
+	Script = "",
+	Sets = [{
+		Cloth = [
+			[1, "cloth/legend_gambeson_named"]
+		],
+		Chain = [
+			[1, "chain/legend_armor_hauberk"],
+			[1, "chain/legend_armor_hauberk_full"]
+			
+		],
+		Plate = [
+			[1, "plate/legend_armor_plate_milanese"],
+			[1, "plate/legend_armor_plate_triangle"],
+			[1, "plate/legend_armor_plate_full_greaves"],
+		],
+		Cloak = [
+		[2, ""],
+		[2, "cloak/legend_armor_cloak_noble"],
+		],
+		Tabard = [
+		[2, "tabard/legend_armor_noble_tabard"],
+		],
+		Attachments =[
+			[5, ""],
 			[5, "armor_upgrades/legend_leather_neckguard_upgrade"],
 			[5, "armor_upgrades/legend_mail_patch_upgrade"],
 			[2, "armor_upgrades/legend_joint_cover_upgrade"]
@@ -1631,7 +1778,6 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		],
 		Tabard = [
 			[1, "tabard/legend_southern_wrap_left", 6],
-			
 			[1, "tabard/legend_southern_shoulder_cloth", 7],
 			[1, "tabard/legend_southern_shoulder_cloth", 6]
 		],
@@ -1846,17 +1992,20 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 },
 {
 	ID = "special/heraldic_armor", // 250
-	Script = "scripts/items/legend_armor/armor/legend_armor_heraldic",
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/legend_gambeson_plain"], // 65
 		],
 		Chain = [
+			[1, "chain/legend_armor_hauberk_full"], // 115
 		],
 		Plate = [
 		],
 		Cloak = [
 		],
 		Tabard = [
+			[1, "tabard/legend_tabard"], // 10
 		],
 		Attachments =[
 		]
@@ -1896,67 +2045,66 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		]
 	}]
 },{
-	ID = "adorned_heavy_mail_hauberk",
-	Script = "scripts/items/armor/adorned_heavy_mail_hauberk",
+	ID = "adorned_heavy_mail_hauberk", // 
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/legend_gambeson_plain"], // 65
+			[1, "cloth/legend_padded_surcoat"], // 55
 		],
 		Chain = [
+			[4, "chain/legend_armor_hauberk"], // 95
+			[1, "chain/legend_armor_hauberk_full"], // 115
 		],
 		Plate = [
+			[1, "plate/legend_heavy_mail"], // 
 		],
 		Cloak = [
 		],
 		Tabard = [
 		],
 		Attachments =[
+		//	[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
+		//	[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
 		]
 	}]
 },{
 	ID = "adorned_mail_shirt",
-	Script = "scripts/items/armor/adorned_mail_shirt",
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/legend_knightly_robe"], //
 		],
 		Chain = [
+			[1, "chain/legend_armor_mail_shirt"], //50
+			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
+			[1, "plate/legend_southern_padded"], //
+			[1, "plate/legend_southern_padded_chest"], //
+			[1, "plate/legend_leather_padded"], //
 		],
 		Cloak = [
 		],
 		Tabard = [
 		],
 		Attachments =[
-		]
-	}]
-},{
-	ID = "adorned_warriors_armor",
-	Script = "scripts/items/armor/adorned_warriors_armor",
-	Sets = [{
-		Cloth = [
-		],
-		Chain = [
-		],
-		Plate = [
-		],
-		Cloak = [
-		],
-		Tabard = [
-		],
-		Attachments =[
+			[1, "armor_upgrades/legend_armor_spiked_collar_upgrade"], //
 		]
 	}]
 },{
 	ID = "reinforced_leather_tunic",
-	Script = "scripts/items/armor/reinforced_leather_tunic",
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/anatomist_robe"], //
 		],
 		Chain = [
 		],
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/anatomist_hood"], //
 		],
 		Tabard = [
 		],
@@ -1965,13 +2113,15 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "undertaker_apron",
-	Script = "scripts/items/armor/undertaker_apron",
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/legend_gambeson_plain"], //65
 		],
 		Chain = [
 		],
 		Plate = [
+			[1, "plate/undertakers_apron"], //65
 		],
 		Cloak = [
 		],
@@ -1982,15 +2132,17 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "wanderers_coat",
-	Script = "scripts/items/armor/wanderers_coat",
+	Script = "",
 	Sets = [{
 		Cloth = [
+			[1, "cloth/wanderers_coat"], //
 		],
 		Chain = [
 		],
 		Plate = [
 		],
 		Cloak = [
+			[1, "cloak/legend_religious_scarf"], //
 		],
 		Tabard = [
 		],
@@ -2066,7 +2218,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 	}]
 },{
 	ID = "lonewolf_crossbowsword_armour",
-	Script = "scripts/items/armor/lonewolf_crossbowsword_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_padded_surcoat"],
@@ -2090,7 +2242,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 
 },{
 	ID = "lonewolf_bowdagger_armour",
-	Script = "scripts/items/armor/lonewolf_bowdagger_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_tunic_noble"],
@@ -2111,7 +2263,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 
 },{
 	ID = "lonewolf_polearm_armour",
-	Script = "scripts/items/armor/lonewolf_polearm_armour",
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_padded_surcoat"], //55

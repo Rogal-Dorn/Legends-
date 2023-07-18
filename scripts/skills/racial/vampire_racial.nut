@@ -48,5 +48,35 @@ this.vampire_racial <- this.inherit("scripts/skills/skill", {
 		actor.onUpdateInjuryLayer();
 	}
 
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		
+		local weapon = _skill.getItem();
+		if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
+		{
+
+			if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow))
+			{
+				_properties.DamageReceivedRegularMult *= 1.2;
+			}
+			if (weapon.getID() == "weapon.goblin_crossbow")
+			{
+				_properties.DamageReceivedRegularMult *= 2.0;
+			}
+			if (weapon.getID() == "weapon.legend_wooden_stake")
+			{
+				_properties.DamageReceivedRegularMult *= 10.0;
+			}
+			if (weapon.getID() == "weapon.legend_wooden_spear")
+			{
+				_properties.DamageReceivedRegularMult *= 5.0;
+			}
+			else
+			{
+				_properties.DamageReceivedRegularMult *= 0.2;
+			}
+		}
+
+	}
 });
 

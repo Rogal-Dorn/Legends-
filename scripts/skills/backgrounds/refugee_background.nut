@@ -69,7 +69,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,
@@ -145,8 +145,8 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0
 			],
 			Initiative = [
-				0,
-				0
+				5,
+				5
 			]
 		};
 		return c;

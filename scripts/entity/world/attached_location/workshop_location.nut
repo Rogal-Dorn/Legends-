@@ -7,7 +7,7 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		this.attached_location.create();
 		this.m.Name = "Workshop";
 		this.m.ID = "attached_location.workshop";
-		this.m.Description = "The workshop is proficient in making all kinds of tools and other supplies needed to keep carts and machines working.";
+		this.m.Description = "The workshop is proficient in making all kinds of tools and other supplies needed to keep carts and machines working. Contributes armor parts, ironmongers and blacksmiths to the local town";
 		this.m.Sprite = "world_workshop_01";
 		this.m.SpriteDestroyed = "world_workshop_01_ruins";
 	}
@@ -92,6 +92,8 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("supplies/armor_parts_item");
+		_list.push("supplies/armor_parts_small_item");
 		_list.push("supplies/armor_parts_item");
 		_list.push("supplies/armor_parts_small_item");
 	}

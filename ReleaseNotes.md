@@ -1,5 +1,197 @@
 ### Legend Mod Release Notes
 
+## 17 Wildlands Warriors
+
+**Environment**
+-Greater variety of trees, grasses, bushes, logs and flowers on the world map 
+-Forest biomes now blend into each other to create more natural looking terrain
+-Marshes can sometimes be lush Wetlands with a new tactical map type. This is more common near forest edges 
+
+**Wildlife**
+Bear graphics updated 
+
+**Kobolds**
+Kobolds can now found in marshes, where they disapear into the undergrowth while their dart guns waylay you
+You can try them out in a new tactical scenario 'Kobold Swamp'
+
+
+**Hats**
+Vanity:
+-Undertaker's Hat
+-Torse in 6 colours 
+-Rotten Torse 
+-Physician's Hood 
+-Chaperon in 9 colours 
+-Felt Chaperon in 9 colours
+
+Top:
+-Physician's Mask 
+-Helm Adornment
+-Tarnished Helm Adornment
+-Undertaker's Scarf
+
+Helm:
+-Full Helm
+-Kettle Hat
+-Guilded Sallet
+-Sir Giles Helm 
+
+Hood:
+-Beak Hood
+-Full Mask 
+
+**Armors** 
+Cloth:
+-Anatomist Robe 
+-Wanderer's Coat
+-Knightly Robe in 8 colours 
+-Magician's Robe expanded to 6 colours
+
+Plate:
+-Heavy Mail in 14 colours
+-Noble Scale in 6 colours 
+-Undertaker's Apron
+
+Chain:
+-Wild scale 
+
+Cloak: 
+-Anatomist Hood
+-Decorative Cowl in 11 colours 
+-Duke's Cloak in 4 colours
+-Fur Cloak in 4 colours  
+-Relic Hood  in 10 colours 
+-Religious Scarf in 4 colours 
+-Tabbed Cowl
+
+Attachments:
+- Amulet Coif - +3 resolve and taunts enemies in battle 
+- Spiked Coif - +3 mdef -10 init 20 condition -3 stamina 
+- Skull Chain - +10% chance to hit head, +1 fatigue per tile moved 
+- Sacred Shield - +5% resolve 
+- Iron Pauldrons, Heavy Pauldrons, Strong Pauldrons, Stag Pauldrons, Swan Pauldrons and Guilded Pauldrons
+
+**World economy**
+Caravans now take goods out of each building's inventory of the town they leave, carry the goods in their inventory, and deliver the goods into the inventory of the town they arrive at. Paying the origin town when they unload.
+Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving and thriving.
+
+Attached locations: 
+- Increased production rates by introducing smaller versions of their trade goods. This increases the number of trade goods without overall ballooning trade values
+- New items produced are: Fresh fish, Fresh milk, gem shards and fur scraps
+- have expanded descriptions to explain what they do for the town.
+- Rebuilding can happen more freuqently 
+
+**Camp Balance**
+Camp adjusted to make visiting cities more appealing, contributing to their economy. 
+You'll now need an upgraded tent to get full benefit from camping.  
+
+Healing:
+- Background healing rate outside camp reduced by 25%, and medicine consumption increased by 10%
+- a healing tent increases healing rate by 10%, with skilled backgrounds increasing the rate and decreasing consumption
+- an upgraded healing tent increases healing rate by 66%
+
+Food:
+- Background food consumption rate increased by 50% to incentivise cooking
+- Hunting tent renamed to Kitchen to better reflect its role, description updated to explain what it does  
+- Upgraded kitchen now allows production of mead, porridge, pudding and pies, while also increasing the hunting rate and chance of getting better foods.
+- Assigned cooking backgrounds have a small chance to produce cured goods without a cooking perk, though the perk drastically increases the chances.
+- It is still possible to improve food using spices in the crafting tent. 
+
+Training: 
+- Training speed halved, upgrading the tent doubles the rate
+
+Gathering:
+- Description updated to explain what it does, making it clearer you're offsetting medicine consumption rate. 
+- miners and woodsmen sent to gather will return smaller versions of their resources until they're high level.
+- no longer requires both apocatheries and brewers to produce potions. Instead needing apocatheries and upgraded tent 
+
+Repair: 
+- rate slowed by 33% outside camp, camp passive repair rate decreased closer to normal rate, mercenaries assigned and skills increase the rate further
+- upgraded tent multiplies the rate by another 33% while decreasing tool use by 33%. Description improved
+
+Scrap 
+- item durability required to produce a tool nerfed to 30 from 15.   Upgrading the tent reduces this by 66%
+
+
+**Noble armies**
+Nobles have much smaller armies with harder high tier units closer to Orc Elites 
+Fencers, Halberdiers and Slingers are all stronger and appear later in your campaign. 
+New unit: Noble Guard - High tier with plate armor 
+New unit: Man at Arms - Very high tier with decorated armor and new helmets 
+You can try them out in a new tactical scenario 'Noble Camp' 
+
+
+**Background changes**
+A few outlier backgrounds have been brought back closer to average stat ranges to increase the variety of compositions. 
+Arbelester loses 5 stamina and 10 initiative, hiring cost increased. To make them a bit less powerful without impacting their core benefits
+Beggar gain up to 2 mdef and 3 ranged defense, from years taking abuse on the streets
+Cannibal gains 5-10 melee attack, 5-8 initiative and 3-2 hitpoints. To make the trade-off more worthwhile
+Cripple gain 0-5 resolve and 0-5 fatigue, a little more likely to persist through their hardship. still not great.
+Eunuch gains  5-15 initiative 0-5 hitpoints and 0-10 bravery, they gain situational advantages, and can be a bit less frail, but still aren't fighters.
+Foot soldier loses -5 ranged skill and -5 initiative,  hiring cost increased.  A bit less dominating without losing their core benefits
+Historians gain 0-5 bravery, 0-7 melee skill, -3-3 Mdef, -6-6  Rdef, -5-5 Init.  This increases variability, making it possible to rarely find some who know a little bit about fighting, but also possible for them to be worse
+Maids gain 0-10 Bravery, 0-5 ranged defense, 0-10 initiative. More likely to stay by your side and dodge thrown objects.
+Shieldmaiden loses -2 melee and ranged skill, and increased daily cost by 5. Still very strong defenses, but less oppressively powerful in all areas.  
+Troubadour gains 8-5 Fatigue, loses ~5 hitpoints, gains 2 melee defense and 3 ranged defense, this brings their more in line with a female ranged version of a minstrel.  
+Warrior hiring cost increased. They are still quite powerful, but you'll need to pay for it. 
+Widow and widower gains 5 melee defense, self defense skills earned through the years in short abusive relationships since their partner died.  
+
+**Perk Changes**
+Weapon perk groups now more strongly influence stats for each recruit. This should result in more recruits being able to use their weapon perks. 
+New Perk - Small Target: Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have
+New Perk - Fashionable: You can wear tabards, cloaks and helmet vanity layers without negatively impacting Small Target
+New Perk - Meek: Gain %100 lucky chance to force an enemy to reroll a successful attack. Lose 1% for every point of melee and ranged defense you have, not counting perks like Small Target.
+New Perk - Adaptive: add a new group of perks to your perk tree based on what is currently equipped in your hands. Found in the Intelligent Perk Group
+New Perk - Recuperation: Heal 2 hp and 2 fatigvue per turn. Found in the Sturdy Perk Group
+New Perk - Helpful: Gain the ability to freely give items from your bag to allies. Foudn in the Organised perk group
+Lookout now enables autopause when character is assigned to the scout tent
+Deulist now works with parrying dagger and buckler
+Fortified mind moved from intelligent to sturdy perk group
+Backflip also increases the range of leap, stacking with the existing range increase from staff mastery 
+Fixed an issue where duplicate perk trees were resulting in some recruits having too few perks. 
+
+**Trait changes**
+These changes mainly serve to reduce the impact of extreme traits. 
+New Trait - Nocturnal - The negatives and positives from night and day are reversed 
+New Trait - Pugilist: +10% chance to hit the head, and +5% melee skill, but -10% experience gain. A counterpoint to pragmatic and predictable
+New Trait - Deceiver: +0.15% barter, +20% chance to have an attacker require two successful attack rolls, +50% daily wage
+New Trait Event - Reserve becomes Glutton - with event art - This creates a cycle of events, where people in reserves can become gluttons, gluttons can become fat and the fat can be lost over time.  The more people you have in reserve, the more likely this is to happen.
+
+Addict Trait: Withdrawals now give +10% Melee Skill as they lash out in anger. Other negatives remain. A minor mitigation on a still bad trait. 
+Craven Trait: Provides +5 ranged defense in addition to the existing -10 Resolve. Always looking for the exit makes them better at spotting incoming fire. 
+Deathwish Trait:since they don't care about being hit or injured, it now also lowers their melee defense by -3. The benefits of this trait were huge, it is now a mixed bag.  
+Impatient:Now has -5% melee defense in addition to always acting first. The benefits of acting first are huge, but perhaps they should have waited to avoid being hit. 
+Insecure Trait:adds +5% to Defenses as they cower for cover in addition to the existing never being at confident morale 
+Peaceful Trait: adds +5% to Defenses in addition to the -5 to attack skill. While they won't attack and still start out poor fighters, if they train in self defense they can get quite good at peaceful self defense. has a new icon to stop duplicating another trait. 
+Pragmatic Trait: Lowers from -20% to -10% chance to hit the head as it was nearly stopping all head hits. Retains skill bonuses. You can still reach similar levels of body hit, but you'll need both traits.    
+Predictable Trait: Raises from -5% to -10% chance to hit the head, retains -5 initiative penalty. Reduces how much worse than pragmatic this was. 
+Unredictable Trait: Raises from +5% to +10% chance to hit the head. More in line with predictable, pragmatic and pugilist. 
+Double Tongued Trait: 
+- Lowered from 10% to 5% chance to depress company morale each battle
+- Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
+- Characters with this trait can now stop the children's crusade event - with event art 
+
+
+**Other Changes:**
+Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
+Alignment pass on sallets, armets and faceplates. 
+Most decorative layers had their condition and value reduced. 
+Undead facemask helmets moved to top layer so they can be stacked on helmets
+The emporer's wreath helmet now has a wreath 
+More variety added to character and location names 
+Legendary beasts spawn in lower numbers with an increased chance of rare drops
+Rumors and camp descriptions are now gender neutral 
+Simplified logic for Grand Tournament, has some additional art
+Necrosavants gain a racial weakness to crossbows, in addition to massive weaknesses to wooden stakes and spiked impalers
+Bandit rabble poachers have improved aim, sling damage reduced. You'll take more small hits rather than constantly being missed.  
+Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
+Towershield defenses changed to 25/20 from 30/15 
+Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
+Added gold dust, gold nuggest, seashells and small furs as small trade items 
+Fixed issue where radiance rune worked up and down many levels 
+Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
+Bandages can now heal grazes 
+
 
 ## Build 16.2.0, Smoke & Faith
 
@@ -8,7 +200,7 @@
 - Improved named helmet random stat rolls (increased min and max - they were often too close to normal helmets to justify their value)
 - Noble fencers can now spawn as champions. Dev note: Noble parties often lacked champions, this should fill that void and make them more rewarding to fight 
 - Adds a new effect to some champion enemies: Warmonger.
-  - Warmonger greatly increases defensive and offensive stats of their allies within a small radius. Killing the champion producing the effect removes it. Making the fight easier. Champion entities with this enabled effect are: Brigand leaders, Brigand warlords and Necromancers
+- Warmonger greatly increases defensive and offensive stats of their allies within a small radius. Killing the champion producing the effect removes it. Making the fight easier. Champion entities with this enabled effect are: Brigand leaders, Brigand warlords and Necromancers
 - Adds a new background image for man-at-arms background
 - Adds in a calculation to a ranged weapon tooltip if the entity has the close combat archer perk enabled (Thanks to WNTR Jimmy)
 
@@ -137,6 +329,7 @@ Dev note: Magic backgrounds were not functioning as intended and now shouldn't s
   - Oathtakers  & Anatomists origins now have the starting bros get a perk point every 2 levels after 11 as opposed to the legends 4.
   - Anatomist backgrounds now have a dynamic perktree similar to that of historian and surgeon backgrounds.
   - Lindwurm slayer is now slightly higher in daily cost and has a perk tree that is a hybrid of hedge knight and beastslayers. Greatly improved stats. Now has beastslayer terrain bonuses
+
 
 ## 16.1.5 - Soujourn v5
 Changes:

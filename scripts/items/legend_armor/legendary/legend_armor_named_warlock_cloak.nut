@@ -3,6 +3,7 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 	function create()
 	{
 		this.legend_named_armor.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Cloak;
 		this.m.ID = "legend_armor.body.legend_named_warlock_cloak";
 		this.m.Description = "A cloak made from the skin of dead men and dark magic.";
 		this.m.Name = "Warlock cloak"
@@ -14,8 +15,11 @@ this.legend_armor_named_warlock_cloak <- this.inherit("scripts/items/legend_armo
 			"Deathcloak",
 			"Sorceror\'s Cloak"
 		];
-		this.m.Variant = 508;
-		this.updateVariant();
+		this.m.Icon = "legend_armor/icon_cursed_cloak_01.png";
+		this.m.IconLarge = "legend_armor/inventory_cursed_cloak_01.png";
+		this.m.Sprite = "bust_cursed_cloak_01";
+		this.m.SpriteDamaged = "bust_cursed_cloak_01_damaged";
+		this.m.SpriteCorpse= "bust_cursed_cloak_01_dead";
 		this.m.ImpactSound = this.Const.Sound.ArmorLeatherImpact;
 		this.m.InventorySound = this.Const.Sound.ClothEquip;
 		this.m.Value = 5000;

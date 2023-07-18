@@ -61,7 +61,7 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
@@ -89,16 +89,16 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-3,
-				-3
+				-10,
+				-5
 			],
 			Bravery = [
 				10,
-				15
+				10
 			],
 			Stamina = [
-				-3,
-				5
+				5,
+				10
 			],
 			MeleeSkill = [
 				0,
@@ -109,12 +109,12 @@ this.female_minstrel_background <- this.inherit("scripts/skills/backgrounds/char
 				10
 			],
 			MeleeDefense = [
-				0,
-				3
+				2,
+				5
 			],
 			RangedDefense = [
-				3,
-				6
+				6,
+				9
 			],
 			Initiative = [
 				5,

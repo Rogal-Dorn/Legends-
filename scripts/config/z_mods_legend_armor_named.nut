@@ -664,6 +664,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
 			[0, "tabard/legend_southern_tabard"]
 		],
 		Attachments =[
+			[1, "armor_upgrades/legend_armor_skull_chain_upgrade"]
 		]
 	}]
 }

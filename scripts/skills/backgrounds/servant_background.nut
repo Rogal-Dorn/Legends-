@@ -62,7 +62,7 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.OrganisedTree,

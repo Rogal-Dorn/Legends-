@@ -2,6 +2,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	m = {
 		BaseMovementSpeed = 100.0,
 		Destination = null,
+		Origin = null,
 		Path = null,
 		LastFootprintTime = 0.0,
 		LastFootprintType = 1,
@@ -65,6 +66,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function setDestination( _dest )
 	{
 		this.m.Destination = _dest;
+	}
+	
+	function setOrigin( _origin )
+	{
+		this.m.Destination = _origin;
 	}
 
 	function setPath( _path )
@@ -498,6 +504,26 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	function onDiscovered()
 	{
 		this.world_entity.onDiscovered();
+		local playerRoster = this.World.getPlayerRoster().getAll();
+		local lookout = 0;
+		
+		  if(!World.State.isPaused() && isAttackable() && getFaction() != 0 && !isAlliedWithPlayer() && getTile().getDistanceTo(World.State.getPlayer().getTile()) <= 12)
+		  {
+			foreach( bro in playerRoster )
+			{
+				if (bro.getCampAssignment() != this.Const.World.CampBuildings.Scout)
+					{
+						if (bro.getSkills().hasSkill("perk.lookout"))
+							{
+							lookout += 1;
+							}
+					}
+			}
+			if (lookout > 0)
+			{
+			World.State.setPause(true);
+			}
+		  }
 	}
 
 	function onDropLootForPlayer( _lootTable )

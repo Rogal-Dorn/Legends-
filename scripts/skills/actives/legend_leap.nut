@@ -4,7 +4,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_leap";
 		this.m.Name = "Leap";
-		this.m.Description = "Learning to jump extended distances allows escape from usually impossible situations. Fatigue cost is 25 plus the weight of your armor. Range can be increased with Staff Mastery and a staff. ";
+		this.m.Description = "Learning to jump extended distances allows escape from usually impossible situations. Fatigue cost is 15 plus the weight of your armor. Range can be increased with with Backflip perk, and by taking Staff Mastery and wielding staff ";
 		this.m.Icon = "skills/leap_square.png";
 		this.m.IconDisabled = "skills/leap_square_bw.png";
 		this.m.Overlay = "horse_pirouette";
@@ -23,7 +23,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsDisengagement = true;
 		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 25;
+		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 2;
 		this.m.MaxLevelDifference = 2;
@@ -36,7 +36,7 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		if (item != null)
 		{
-			if (item.isWeaponType(this.Const.Items.WeaponType.Staff))
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInStaves)
 			{	
 				ret.push({
 					id = 6,
@@ -86,14 +86,23 @@ this.legend_leap <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 		local fat = this.getModifier();
+		local bonus = 0;
 		if (item != null)
 		{
-			if (item.isWeaponType(this.Const.Items.WeaponType.Staff))		
+			if (item.isWeaponType(this.Const.Items.WeaponType.Staff) && actor.getCurrentProperties().IsSpecializedInStaves)
 			{
-			this.m.MaxRange =  _properties.IsSpecializedInStaves ? 3 : 2;
+			bonus += 1;
 			}
 		}
-		this.m.FatigueCost = 25 + fat;
+		
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_backflip"))		
+		{
+			bonus += 1;
+		}
+		
+		this.m.MaxRange = 2 + bonus;
+		
+		this.m.FatigueCost = 15 + fat;
 		
 	}
 

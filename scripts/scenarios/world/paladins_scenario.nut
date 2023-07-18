@@ -49,8 +49,21 @@ this.paladins_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/helmets/heavy_mail_coif"));
-		items.equip(this.new("scripts/items/armor/adorned_mail_shirt"));
+
+		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_mail_coif");
+		local vanity = this.new("scripts/items/legend_helmets/vanity/legend_helmet_plait");
+		hood.setUpgrade(vanity);
+		items.equip(hood);
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_knightly_robe");
+		local chain = this.new("scripts/items/legend_armor/chain/legend_armor_mail_shirt");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_southern_padded");
+		local attach = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade");
+		armor.setUpgrade(chain);
+		armor.setUpgrade(plate);
+		armor.setUpgrade(attach);
+		items.equip(armor);
+		
+		
 		items.equip(this.new("scripts/items/accessory/oathtaker_skull_01_item"));
 		local banner = this.new("scripts/items/tools/player_banner");
 		banner.setVariant(this.World.Assets.getBannerID());
@@ -75,8 +88,28 @@ this.paladins_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Offhand));
-		items.equip(this.new("scripts/items/helmets/adorned_closed_flat_top_with_mail"));
-		items.equip(this.new("scripts/items/armor/adorned_warriors_armor"));
+		
+		local hood = this.new("scripts/items/legend_helmets/hood/legend_helmet_padded_cap");
+		local helm = this.new("scripts/items/legend_helmets/helm/legend_helmet_flat_top_helm");
+		local top = this.new("scripts/items/legend_helmets/top/legend_helmet_faceplate_flat");
+		local vanity = this.new("scripts/items/legend_helmets/vanity/legend_helmet_chaperon");
+		hood.setUpgrade(helm);
+		hood.setUpgrade(top);
+		hood.setUpgrade(vanity);
+		items.equip(hood);
+
+		local armor = this.new("scripts/items/legend_armor/cloth/legend_gambeson_plain");
+		local chain = this.new("scripts/items/legend_armor/chain/legend_armor_hauberk");
+		local plate = this.new("scripts/items/legend_armor/plate/legend_armor_leather_riveted");
+		local cloak = this.new("scripts/items/legend_armor/cloak/relic_hood");
+		local attach = this.new("scripts/items/legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade");
+		armor.setUpgrade(chain);
+		armor.setUpgrade(plate);
+		armor.setUpgrade(cloak);
+		armor.setUpgrade(attach);
+		items.equip(armor);
+		
+		
 		items.equip(this.new("scripts/items/weapons/arming_sword"));
 		local shield = this.new("scripts/items/shields/heater_shield");
 		shield.onPaintInCompanyColors();

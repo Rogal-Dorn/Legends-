@@ -5,7 +5,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 		this.attached_location.create();
 		this.m.Name = "Lumber Camp";
 		this.m.ID = "attached_location.lumber_camp";
-		this.m.Description = "This lumber camp is used as a base for lumberjacks on the search for the most precious and durable materials in the nearby woods.";
+		this.m.Description = "This lumber camp is used as a base for lumberjacks on the search for the most precious and durable materials in the nearby woods. Contributes wood, wood products and lumberjacks to the local town";
 		this.m.Sprite = "world_lumber_camp_01";
 		this.m.SpriteDestroyed = "world_lumber_camp_01_ruins";
 	}
@@ -61,6 +61,7 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/quality_wood_item");
+		_list.push("trade/legend_raw_wood_item");
 	}
 
 	function onBuild()
@@ -116,11 +117,6 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				R = 30,
 				P = 1.0,
 				S = "weapons/woodcutters_axe"
-			});
-			_list.push({
-				R = 90,
-				P = 1.0,
-				S = "weapons/legend_staff_vala"
 			});
 			_list.push({
 				R = 95,
@@ -216,6 +212,11 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 				R = 0,
 				P = 1.0,
 				S = "trade/quality_wood_item"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "trade/legend_raw_wood_item"
 			});
 			_list.push({
 				R = 80,

@@ -12,8 +12,8 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.m.ModName = "Gathering";
 		this.m.BaseCraft = 1.0;
 		this.m.Slot = "gather";
-		this.m.Name = "Gatherer";
-		this.m.Description = "Forgage for herbs and medicine";
+		this.m.Name = "Supply Tent";
+		this.m.Description = "Send people out to gather supplies like medicinal herbs, plants, wood and stones.";
 		this.m.BannerImage = "ui/buttons/banner_gather.png";
 		this.m.CanEnter = false
 	}
@@ -30,12 +30,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	function getDescription()
 	{
 		local desc = "";
-		desc += "Cuts, scrapes, bruises, missing limbs and other body parts - all part of the job. "
-		desc += "Make sure you always have enough medicines on hand to keep the company patched up and in fighting condition. "
-		desc += "Brothers assigned to this task will go out and forage for herbs and plants of medicinal quality. The more people assigned, the more medicine gathered. "
+		desc += "People assigned to this task will go out get supplies, like herbs and plants of medicinal quality. The more people assigned, the more is gathered. "
+		desc += "The more people assigned, the more medicine is gathered. Skilled backgrounds increase the amount further"
 		desc += "\n\n"
-		desc += "The Gathering tent can be upgraded by purchasing a crafting cart from a settlement merchant. An upgraded tent has a 15% increase in gathering speed. "
-		desc += "Additionally, there's a chance that some more potent and useful medicines will be discovered."
+		desc += "Assigning Woodsmen can return wood for trade, while Miners can find gems in surrounding rocks. "
+		desc += "Assigning skilled apocatheries like Herbalists, Vala, Alchemists and Druids can return more advanced medicines and bandages."
+		desc += "\n\n"
+		desc += "Buying and upgraded tent will increase gathering speed by 15% and produce more kinds of medicine"
+		desc += "Having both an upgraded tent and skilled apocatheries can provide rare medicines, and powerful potions"
 		return desc;
 	}
 
@@ -177,9 +179,9 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		dropLoot = -500.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with timber perk.
 		if (dropLoot && levels.Woodsman > 0)
 		{
-			local r = levels.Woodsman > 10 ? 1 : this.Math.rand(1, 3);
-			if (r == 1) item = this.new("scripts/items/trade/quality_wood_item");
-			//else item = this.new("scripts/items/trade/quality_wood_item");
+			local r = levels.Woodsman > 10 ? 1 : this.Math.rand(1, 10);
+			if (r >= 6) item = this.new("scripts/items/trade/legend_raw_wood_item");
+			if (r == 3) item = this.new("scripts/items/trade/quality_wood_item");
 
 			this.m.Items.push(item);
 			this.Stash.add(item);
@@ -191,7 +193,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		{
 			local r = levels.Woodsman > 5 ? 1 : this.Math.rand(1, 3);
 			if (r == 1) item = this.new("scripts/items/trade/legend_raw_wood_item");
-			//else item = this.new("scripts/items/trade/quality_wood_item");
 
 			this.m.Items.push(item);
 			this.Stash.add(item);
@@ -201,9 +202,10 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		dropLoot = -500.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with ore perk.
 		if (dropLoot && levels.Miner > 0)
 		{
-			local r = levels.Miner > 10 ? 1 : this.Math.rand(1, 3);
-			if (r < 3) item = this.new("scripts/items/trade/uncut_gems_item");
-			//else item = this.new("scripts/items/trade/uncut_gems_item");
+			local r = levels.Miner > 10 ? 1 : this.Math.rand(1, 10);
+			if (r > 7) item = this.new("scripts/items/trade/legend_gem_shards_item");
+			if (r == 3) item = this.new("scripts/items/trade/uncut_gems_item");
+			if (r < 2) item = this.new("scripts/items/trade/salt_item");
 			
 			this.m.Items.push(item);
 			this.Stash.add(item);
@@ -214,8 +216,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		if (dropLoot && levels.Miner > 0)
 		{
 			local r = levels.Miner > 5 ? 1 : this.Math.rand(1, 3);
-			if (r < 3) item = this.new("scripts/items/trade/peat_bricks_item");
-			//else item = this.new("scripts/items/trade/uncut_gems_item");
+			if (r == 1) item = this.new("scripts/items/trade/legend_gem_shards_item");
 			
 			this.m.Items.push(item);
 			this.Stash.add(item);
@@ -236,14 +237,14 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/items/supplies/medicine_item"
 			]);
 
-			if (levels.Brewer == 0 && levels.Apothecary >= 10)
+			if (this.getUpgraded() && levels.Apothecary >= 0)
 			{
 				loot.extend([
 					"scripts/items/accessory/legend_apothecary_mushrooms_item",
 					"scripts/items/misc/happy_powder_item"
 				]);
 			}
-			else if (levels.Brewer >= 0 && levels.Apothecary >= 10)
+			else if (this.getUpgraded() && levels.Apothecary >= 10)
 			{
 				loot.extend([
 					"scripts/items/accessory/lionheart_potion_item",
@@ -251,7 +252,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 					"scripts/items/accessory/recovery_potion_item",
 					"scripts/items/accessory/cat_potion_item"
 				]);
-				if (levels.Brewer >= 20 && levels.Apothecary >= 30)
+				if (this.getUpgraded() && levels.Apothecary >= 20)
 				{
 					loot.extend([
 						"scripts/items/misc/miracle_drug_item",

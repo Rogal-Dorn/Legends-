@@ -49,6 +49,11 @@ this.goat_herd_oriental_location <- this.inherit("scripts/entity/world/attached_
 				S = "weapons/legend_tipstaff"
 			});
 			_list.push({
+				R = 70,
+				P = 1.0,
+				S = "supplies/legend_curry_item"
+			});
+			_list.push({
 				R = 20,
 				P = 1.0,
 				S = "weapons/legend_slingstaff"

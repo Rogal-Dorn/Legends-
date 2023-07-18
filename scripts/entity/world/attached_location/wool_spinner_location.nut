@@ -13,6 +13,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/cloth_rolls_item");
+		_list.push("supplies/legend_fresh_milk_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -51,6 +52,11 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 				R = 10,
 				P = 1.0,
 				S = "armor/linen_tunic"
+			});
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "supplies/legend_fresh_milk_item"
 			});
 			_list.push({
 				R = 10,

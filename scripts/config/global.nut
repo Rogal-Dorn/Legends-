@@ -437,13 +437,13 @@ gt.Const.EntityType <- {
 	FreeCompanyInfantry = 162,
 	FreeCompanyLeader = 163,
 	FreeCompanyLeaderLow = 164,
-
 	Oathbringer = 165,
-
 	SatoManhunterRanged = 166,
 	SatoManhunterVeteranRanged = 167,
-
-	/**
+	LegendNobleGuard= 168,
+	LegendManAtArms = 169,
+	
+		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
 	 * Not sure if it's still necessary but we can leave it for now.
 	 */
@@ -668,6 +668,8 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendHalberdier:
 		case this.Const.EntityType.LegendSlinger:
 		case this.Const.EntityType.LegendFencer:
+		case this.Const.EntityType.LegendNobleGuard:
+		case this.Const.EntityType.LegendManAtArms:	
 			return this.Const.FactionType.NobleHouse;
 
 		case this.Const.EntityType.BountyHunter:
@@ -980,5 +982,7 @@ gt.Const.EntityIcon <- [
 	"mercenary_orientation",//Leaders
 	"mercenary_orientation" //Managers
 
-	"oathbringer_orientation"
+	"oathbringer_orientation",
+	"footman_veteran_orientation",//VeteranFootman
+	"footman_veteran_orientation"//LegendManAtArms
 ];

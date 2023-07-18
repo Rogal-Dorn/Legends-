@@ -5,7 +5,7 @@ this.beekeeper_location <- this.inherit("scripts/entity/world/attached_location"
 		this.attached_location.create();
 		this.m.Name = "Beekeeper";
 		this.m.ID = "attached_location.beekeeper";
-		this.m.Description = "Surrounded by humming bees, these small huts are home to beekeepers. The honey they produce is a precious ingredient to sweeten pastries and other foods.";
+		this.m.Description = "Surrounded by humming bees, these small huts are home to beekeepers. The honey they produce is a precious ingredient to sweeten pastries and other foods. Contributes mead and farmhands to the local town";
 		this.m.Sprite = "world_bee_keeper_01";
 		this.m.SpriteDestroyed = "world_bee_keeper_01_ruins";
 	}
@@ -35,6 +35,7 @@ this.beekeeper_location <- this.inherit("scripts/entity/world/attached_location"
 
 	function onUpdateProduce( _list )
 	{
+		_list.push("supplies/mead_item");
 		_list.push("supplies/mead_item");
 	}
 

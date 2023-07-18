@@ -74,7 +74,7 @@ this.legend_lonewolf_companion_caravan_event <- this.inherit("scripts/events/eve
 					{
 						item = this.new("silk_item");
 						item = this.new("silverware_item");
-						item = this.new("gold_ingot_item");
+						item = this.new("legend_gold_nugget_item");
 						item = this.new("legend_cooking_spices_item");
 					}
 					else if (r == 2)

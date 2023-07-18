@@ -439,14 +439,14 @@ gt.Const.World.Spawn.HexenAndMore <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 250,
+							Cost = 400,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 150,
+							Cost = 250,
 							function Weight(scale) {
 								return 50;
 							}
@@ -590,21 +590,21 @@ gt.Const.World.Spawn.HexenAndNoSpiders <-
 				{
 					Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
 					MinR = 650,
-					Cost = 200,
+					Cost = 300,
 					MinGuards = 2,
 					MaxGuards = 3,
 					MaxGuardsWeight = 50,
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 250,
+							Cost = 400,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 200,
+							Cost = 250,
 							function Weight(scale) {
 								return 50;
 							}
@@ -629,7 +629,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendHexeLeader,
-			Cost = 200,
+			Cost = 300,
 			MinGuards = 2,
 			MaxGuards = 3,
 			MaxGuardsWeight = 50,
@@ -637,7 +637,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 			Guards = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-					Cost = 200,
+					Cost = 250,
 					function Weight(scale) {
 						return 50;
 					}
@@ -659,7 +659,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 200
+					Cost = 400
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Hyena,
@@ -681,7 +681,7 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 200
+					Cost = 250
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.Serpent,
@@ -795,14 +795,14 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 					Guards = [
 						{
 							Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolfBodyguard,
-							Cost = 200,
+							Cost = 400,
 							function Weight(scale) {
 								return 50;
 							}
 						},
 						{
 							Type = this.Const.World.Spawn.Troops.LegendRedbackSpiderBodyguard,
-							Cost = 200,
+							Cost = 250,
 							function Weight(scale) {
 								return 50;
 							}
@@ -837,7 +837,7 @@ gt.Const.World.Spawn.LegendRockUnhold <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRockUnhold,
-					Cost = 180
+					Cost = 300
 				}
 			]
 		},
@@ -921,7 +921,7 @@ gt.Const.World.Spawn.LegendWhiteDirewolf <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendWhiteDirewolf,
-					Cost = 150
+					Cost = 400
 				}
 			]
 		},
@@ -954,7 +954,7 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-			Cost = 100,
+			Cost = 250,
 			Weight = 0
 		}
 	],
@@ -964,7 +964,7 @@ gt.Const.World.Spawn.LegendRedbackSpider <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendRedbackSpider,
-					Cost = 100
+					Cost = 250
 				}
 			]
 		},
@@ -995,7 +995,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-			Cost = 105,
+			Cost = 200,
 			Weight = 0
 		}
 	],
@@ -1014,7 +1014,7 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 105
+					Cost = 200
 				}
 			]
 		}
@@ -1034,7 +1034,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendStollwurm,
-			Cost = 270,
+			Cost = 500,
 			Weight = 0
 		}
 	],
@@ -1053,7 +1053,7 @@ gt.Const.World.Spawn.LegendStollwurm <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendStollwurm,
-					Cost = 270
+					Cost = 500
 				}
 			]
 		}
@@ -1073,7 +1073,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-			Cost = 210,
+			Cost = 350,
 			Weight = 0
 		}
 	],
@@ -1092,7 +1092,7 @@ gt.Const.World.Spawn.LegendGreenwoodSchrat <-
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendGreenwoodSchrat,
-					Cost = 210
+					Cost = 350
 				}
 			]
 		}

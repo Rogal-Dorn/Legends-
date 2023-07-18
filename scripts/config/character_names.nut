@@ -101,8 +101,25 @@ gt.Const.Strings.BarbarianNames <- [
 	"Ulmer",
 	"Valbrand",
 	"Vidar",
+	"Kvothe",
+	"Olve",
 	"Wyborn",
 	"Yngvar",
+	"Morkar",
+	"Kastner",
+	"Cormac",
+	"Mortkin",
+	"Styrbjorn",
+	"Urlf",
+	"Wulfrik",
+	"Alfkaell",
+	"Garmr",
+	"Scyla",
+	"Hargroth",
+	"Valnir",
+	"Valgar",
+	"Hakka",
+	"Engra",
 	"Yrar"
 	"Sigbaal"
 ];
@@ -120,9 +137,14 @@ gt.Const.Strings.BarbarianTitles <- [
 	"the Ravager",
 	"Skullcrusher",
 	"Bonebreaker",
+	"Deathsword",
 	"Slaughterborne",
 	"the Chosen",
 	"Battleborn",
+	"Steelfist",
+	"Daemonkin",
+	"The Bloody",
+	"Bloodaxe",
 	"Ironside",
 	"the Bloodied",
 	"the Beast",
@@ -130,7 +152,8 @@ gt.Const.Strings.BarbarianTitles <- [
 	"Rawmeat",
 	"Hairy Breeches",
 	"Snake in the Eye",
-	"the Mandible"
+	"the Mandible",
+	"Winterhorn",
 	"the Wolfclaw",
 	"the Savage",
 	"the Bloodletter",
@@ -138,7 +161,7 @@ gt.Const.Strings.BarbarianTitles <- [
 	"the Everlasting"
 ];
 
-gt.Const.Strings.SouthernNames <- ["Jamil","Uthman","Sayid","Radwan","Yazid","Sahir","Wahib","Amira","Aslam","Atiq","Sadan","Ayman","Hakan","Hafas","Sawar","Shuyab","Husan","Hamdun","Ayshun","Jabir","Zuhri","Jifri","Galib","Tamim","Jaquba","Zawahir","Shurayd","Walid","Musa","Ubaid","Harad","Tariq","Wasi","Fariss","Abani","Mutar","Tawid","Zahiri","Milad","Nuh","Abdari","Junaid","Malik","Naser","Jahaf","Yazir","Talha","Sabti","Harun","Firi","Rashid","Hamdin","Rasil","Hayan","Askari","Barkud","Husni","Omar","Aarôn","Abdul-Hazeem","Anisse","Mufawwiz","Ugwistan","Zaia","Relip","Wilen","Abarran","Zorion","Abu-Bakr","Aarif","Abdul-Gafur","Abdul-Jaleel","Abdul-Qadir","Abdul-Wahab","Abdul","Abdullah","Aghlab","Akin","Ali","Alim","Aram","Azam","Bahir","Burhanaddin","Fadil","Fadl","Faruk","Ghalib","Hafiz","Halil","Hasan","Husam","Hussayn","Ibrahim","Idris","Isa","Jalil","Jibril","Khaireddin","Khalil","Mahdi","Mahmud","Mansur","Mirza","Mubarak","Muhammad","Mukhtar","Murad","Muslihiddin","Muzaffaraddin","Najib","Nasr","Nizam","Qawurd","Ramadan","Sadiq","Sami","Samir","Shaiban","Shamir","Shujah","Sulayman","Talib","Ubayd","Uways","Yahya","Youkhanna","Yusuf","Zeyd","Abdul-Azeem","Abdul-Hamid","Abdul-Lateef","Abdul-Razzaq","Abdul-Wahad","Adhid","Adil","Akab","Amir","Ashraf","Aziz","Bashar","Boutros","Faisal","Fayiz","Ghazi","Hakam","Hamdan","Hashmaddin","Imamaddin","Ismat","Jahan","Kamran","Khalid","Khudayar","Majid","Muaddam","Muhsin","Muzaffar","Nasraddin","Nuraddin","Nuri","Radhi","Rasul","Salahaddin","Seyfullah","Sharaf","Sirhan","Taimur","Tawfiq","Umaya","Wahid","Yasar","Zahir","Aaron","Abanoub","Abderahman","Abdul-Aziz","Abdul-Haq","Abdul-Madjid","Abdul-Salaam","Abianos","Abisalom","Ablarion","Abraam","Adnan","Agathon","Agathonikos","Agathos","Ahmad","Akbar","Alam","Amr","Androus","Anthinos","Arsenios","Asim","Athanasios","Badr","Bashir","Biktor","Binyamin","Bishoi","Danyal","Dawlat","Ezra","Farhan","Firuz","Georgios","Ghiyasaddin","Habil","Hammud","Hanri","Haroun","Hisham","Ilyas","Izzaddin","Jalaaladdin","Jawdat","Jerjer","Kemaladdin","Krystafer","Latif","Lot","Matta","Mehtar","Mikail","Mikhael","Mina","Muammar","Murshid","Nabil","Nasir","Nassib","Pamin","Qadir","Rafiq","Ridwan","Sabah","Salim","Sharif","Suhail","Tadros","Tajaddin","Tayyib","Touma","Usama","Yared","Yassir","Youssef","Zakariyah","Abbad","Abbas","Abdallah","Abdul-Hakam","Abdul-Hasan","Abdul-Hazm","Abdul-Rahman","Abu","Adfuns","Ayyub","Balashk","Bilal","Fath","Galind","Garsiya","Hilal","Jyad","Lubb","Mubashir","Mundir","Muyahid","Raf","Rasiq","Sanyo","Siddray","Suleyman","Tifilwit","Umar","Utman","Wannaqo","Yahaff","Aden","Zainuddin","Zulfiqar",];
+gt.Const.Strings.SouthernNames <- ["Jamil","Uthman","Sayid","Radwan","Thepla","Yazid","Sahir","Wahib","Amira","Aslam","Atiq","Sadan","Ayman","Hakan","Hafas","Sawar","Shuyab","Husan","Hamdun","Ayshun","Jabir","Zuhri","Jifri","Galib","Tamim","Jaquba","Zawahir","Shurayd","Walid","Musa","Ubaid","Harad","Tariq","Wasi","Fariss","Abani","Mutar","Tawid","Zahiri","Milad","Nuh","Abdari","Junaid","Malik","Naser","Jahaf","Yazir","Talha","Sabti","Harun","Firi","Rashid","Hamdin","Rasil","Hayan","Askari","Barkud","Husni","Omar","Aarôn","Abdul-Hazeem","Anisse","Mufawwiz","Ugwistan","Zaia","Relip","Wilen","Abarran","Zorion","Abu-Bakr","Aarif","Abdul-Gafur","Abdul-Jaleel","Abdul-Qadir","Abdul-Wahab","Abdul","Abdullah","Aghlab","Akin","Ali","Alim","Aram","Azam","Bahir","Burhanaddin","Fadil","Fadl","Faruk","Ghalib","Hafiz","Halil","Hasan","Husam","Hussayn","Ibrahim","Idris","Isa","Jalil","Jibril","Khaireddin","Khalil","Mahdi","Mahmud","Mansur","Mirza","Mubarak","Muhammad","Mukhtar","Murad","Muslihiddin","Muzaffaraddin","Najib","Nasr","Nizam","Qawurd","Ramadan","Sadiq","Sami","Samir","Shaiban","Shamir","Shujah","Sulayman","Talib","Ubayd","Uways","Yahya","Youkhanna","Yusuf","Zeyd","Abdul-Azeem","Abdul-Hamid","Abdul-Lateef","Abdul-Razzaq","Abdul-Wahad","Adhid","Adil","Akab","Amir","Ashraf","Aziz","Bashar","Boutros","Faisal","Fayiz","Ghazi","Hakam","Hamdan","Hashmaddin","Imamaddin","Ismat","Jahan","Kamran","Khalid","Khudayar","Majid","Muaddam","Muhsin","Muzaffar","Nasraddin","Nuraddin","Nuri","Radhi","Rasul","Salahaddin","Seyfullah","Sharaf","Sirhan","Taimur","Tawfiq","Umaya","Wahid","Yasar","Zahir","Aaron","Abanoub","Abderahman","Abdul-Aziz","Abdul-Haq","Abdul-Madjid","Abdul-Salaam","Abianos","Abisalom","Ablarion","Abraam","Adnan","Agathon","Agathonikos","Agathos","Ahmad","Akbar","Alam","Amr","Androus","Anthinos","Arsenios","Asim","Athanasios","Badr","Bashir","Biktor","Binyamin","Bishoi","Danyal","Dawlat","Ezra","Farhan","Firuz","Georgios","Ghiyasaddin","Habil","Hammud","Hanri","Haroun","Hisham","Ilyas","Izzaddin","Jalaaladdin","Jawdat","Jerjer","Kemaladdin","Krystafer","Latif","Lot","Matta","Mehtar","Mikail","Mikhael","Mina","Muammar","Murshid","Nabil","Nasir","Nassib","Pamin","Qadir","Rafiq","Ridwan","Sabah","Salim","Sharif","Suhail","Tadros","Tajaddin","Tayyib","Touma","Usama","Yared","Yassir","Youssef","Zakariyah","Abbad","Abbas","Abdallah","Abdul-Hakam","Abdul-Hasan","Abdul-Hazm","Abdul-Rahman","Abu","Adfuns","Ayyub","Balashk","Bilal","Fath","Galind","Garsiya","Hilal","Jyad","Lubb","Mubashir","Mundir","Muyahid","Raf","Rasiq","Sanyo","Siddray","Suleyman","Tifilwit","Umar","Utman","Wannaqo","Yahaff","Aden","Zainuddin","Zulfiqar",];
 
 gt.Const.Strings.AncientSouthernNames <- ["Aahotepre","Achillas","Addaya","Agathocies","Ebana","Ahmose","Amenmose","Amenemhat","Ankhkherednefer","Ankhmakis","Ankherfenedjef","Ankhreshet","Amenemhatankh","Ahmose","Sapair","Amenemhat","Amenemopet","Amenhotep","Amunherkhepeshef","Ankhhaf","Meritamon","Nebetta","Tumerisy","Henutemipet","Sitamun","Tasherit","Anen","Pairy","Huy","Aperei","Amethu","Bay Irsu","Bakenkhonsu","Baqet","Babaef","Bebi","Bakenrenef","Charmian","Duaenre","Djau","Dagi","Djaty","Djedefhor","Djedi","Duaenhor","Djediufankh","Dedi","Djehuty","Gemenefkhonsbak","Harkhebi","Harwa","Hui","Hannu","Herihor","Harkhuf","Hapuseneb","Haremakhet","Harsiese","Hori","Hsekiu","Horbaef","Hornakht","Hakor","Hunefer","Hepu","Hewernef","Ineni","Intef","Isesi","Iuput","Ini Menkhepere","Inkaef","Isu","Itisen","Iunre","Iynefer","Ibiaw","Ibi","Iunmin","Iuty","Iymeru","Kaaper","Kagemni","Khabash","Khabekhnet","Mentuherkhopshef","Mentuhotep","Menna","Merneptah","Minmose","Nahkt","Nakhtmin","Nakhtpaaten",];
 
@@ -188,6 +211,8 @@ gt.Const.Strings.SouthernNamesLast <- [
 	"Al-Siddiq",
 	"Ibn Sabti",
 	"Al-Fath",
+	"Eld-Taro",
+	"Tel-Contar",
 	"Ibn Mansur",
 	"Al-Sabbag",
 	"Al-Benali",
@@ -267,6 +292,8 @@ gt.Const.Strings.NomadChampionTitles <- [
 	"the Vulture",
 	"the Living Mirage",
 	"the Free Prince",
+	"the Midas Lord",
+	"the Gilded",
 	"the Prince of the Sands",
 	"the Dust Dancer",
 	"the Golden Vulture"
@@ -333,6 +360,7 @@ gt.Const.Strings.ExecutionerChampionTitles <- [
 	"The Traders\' Bane",
 	"The Scourge",
 	"The Cursed",
+	"The Ikon",
 	"The Sand Giant",
 	"The Gilder\'s Chosen",
 	"The Mountain",
@@ -438,7 +466,7 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"The Jouster",
 	"The Giant",
 	"The Mountain",
-	"Strongface",
+	"Strongwill",
 	"The Defiler",
 	"The Knightslayer",
 	"The Hedge Knight",
@@ -487,6 +515,7 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"The Grey",
 	"The Cold",
 	"The Warm",
+	"Of The Rule",
 	"Of The Ghost",
 	"Of The Dawn",
 	"Of The Stars",
@@ -518,7 +547,7 @@ gt.Const.Strings.LadyTitles <- [
 	"The Hawk",
 	"The Giant",
 	"The Mountain",
-	"Strongface",
+	"Strongwill",
 	"The Knightslayer",
 	"The Undefeated",
 	"The Scourge",
@@ -545,6 +574,7 @@ gt.Const.Strings.LadyTitles <- [
 	"The Slayer",
 	"The Bear",
 	"The Dragon",
+	"The Crane",
 	"The Unicorn",
 	"Lionheart",
 	"The Humble",
@@ -563,6 +593,7 @@ gt.Const.Strings.LadyTitles <- [
 	"The Grey",
 	"The Cold",
 	"The Warm",
+	"The Profligate",
 	"Of The Ghost",
 	"Of The Dawn",
 	"Of The Stars",
@@ -686,7 +717,11 @@ gt.Const.Strings.GravediggerTitles <- [
 gt.Const.Strings.RatcatcherTitles <- [
 	"Longnose",
 	"the Rat",
+	"the Fink",
+	"the Ratter",
+	"the Trapper",
 	"the Ratcatcher",
+	"the Ratmancer",
 	"the Tepid",
 	"the Trapper",
 	"the Beagle",
@@ -823,6 +858,14 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Mann",
 	"Sir Farrow",
 	"Sir Effingham",
+	"Sir Crane",
+	"Sir Darxo",
+	"Sir Rue",
+	"Sir Luke",
+	"Sir Freykin",
+	"Sir Plouf",
+	"Sir Teamson",
+	"Sir James",
 	"Sir Percy"
 
 ];
@@ -919,6 +962,9 @@ gt.Const.Strings.LadyNames <- [
 	"Lady Rachel",
 	"Lady Georgia",
 	"Lady May",
+	"Lady Meg",
+	"Lady Avalon",
+	"Lady Magda",
 	"Lady Eva"
 ];
 
@@ -1071,6 +1117,8 @@ gt.Const.Strings.BanditLeaderNames <- [
 	"Nasty %randomname%",
 	"The Pig",
 	"Prince %randomname% Murderhand",
+	"%randomname% the Citrene",
+	"%randomname% Ubermensch",
 	"Furious %randomname%"
 
 ];
@@ -1084,6 +1132,7 @@ gt.Const.Strings.KrakenNames <- [
 	"Xa-Shutar the Eater of Worlds",
 	"Thohochoth the All-Ender",
 	"Naccorath the Eternal",
+	"Rap-Stofchri The Deepest One",
 	"Xapocathlu the All-Reaching"
 ];
 gt.Const.Strings.CharacterNamesFemaleNorse <- [
@@ -1355,6 +1404,7 @@ gt.Const.Strings.AncientDeadTitles <- [
 	"the Destroyer",
 	"the Guardian",
 	"the Hunter",
+	"the Hanter",
 	"the Second",
 	"the Herald",
 	"the Unearthed",
@@ -1409,6 +1459,7 @@ gt.Const.Strings.AncientDeadTitles <- [
 	"the Governor",
 	"the Seneschal",
 	"the Elder",
+	"the Last",
 	"the High Judge",
 	"of the High Command",
 	"the Master of Horse"
@@ -1595,12 +1646,15 @@ gt.Const.Strings.FallenHeroTitles <- [
 	"the Doomed",
 	"the Blackhearted",
 	"the Cold",
+	"the Abyss",
 	"Darkblood",
 	"the Disturbed",
 	"the Hellknight",
 	"the Death Prophet",
 	"the Ghost",
 	"the Soulless",
+	"the Enduring",
+	"the Wraith",
 	"the Vessel"
 ];
 
@@ -1617,6 +1671,7 @@ gt.Const.Strings.NecromancerNames <- [
 	"%randomname% the Mad",
 	"%randomname% the Obsessed",
 	"The Pale Duke",
+	"%randomname% Necrofear",
 	"The Master of Undeath",
 	"%randomname% the Apostate",
 	"%randomname% the Knowledgeable",
@@ -1695,6 +1750,11 @@ gt.Const.Strings.VampireLordNames <- [
 	"Ahi",
 	"Sut",
 	"Ameneman",
+	"Manfred",
+	"Konrad",
+	"Vlad",
+	"Krell",
+	"Bella Kor",
 	"Smento",
 	"Mohar",
 	"Abdamelek"
@@ -1731,6 +1791,8 @@ gt.Const.Strings.PeasantButcherNames <- [
 	"Igor",
 	"Ebriah",
 	"Billy",
+	"Mouse",
+	"Luft",
 	"Patrick",
 	"Cady",
 	"Chapman"
@@ -1755,4 +1817,4 @@ gt.Const.Strings.PeasantButcherTitles <- [
 	"The Hash-Slinging Slasher"
 ]
 
-gt.Const.Strings.BanditRabbleNames <- [ "Poss", "Qetnaf", "Gomon", "Grafmg", "Rouhsif", "Uberbagel, the Ubermensch", "Ripgar Bloodsmite" ]
+gt.Const.Strings.BanditRabbleNames <- [ "Chat", "Twitch", "Anon" ]

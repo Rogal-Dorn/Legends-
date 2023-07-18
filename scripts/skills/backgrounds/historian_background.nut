@@ -60,7 +60,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.SpearTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
@@ -104,8 +104,8 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 				-5
 			],
 			Bravery = [
-				0,
-				0
+				-5,
+				5
 			],
 			Stamina = [
 				-5,
@@ -113,23 +113,23 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			MeleeSkill = [
 				-5,
-				-5
+				2
 			],
 			RangedSkill = [
 				-3,
 				-2
 			],
 			MeleeDefense = [
-				0,
-				0
+				-3,
+				3
 			],
 			RangedDefense = [
-				0,
-				0
+				-6,
+				6
 			],
 			Initiative = [
-				0,
-				0
+				-5,
+				5
 			]
 		};
 		return c;

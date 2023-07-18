@@ -74,7 +74,7 @@ gt.Const.Tactical.Actor.BanditRabble <- {
 	Bravery = 25,
 	Stamina = 80,
 	MeleeSkill = 40,
-	RangedSkill = 30,
+	RangedSkill = 40,
 	MeleeDefense = 0,
 	RangedDefense = 0,
 	Initiative = 100,

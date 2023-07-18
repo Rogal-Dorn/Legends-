@@ -122,11 +122,11 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HammerTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.ShieldTree
+				this.Const.Perks.HeavyArmorTree	
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,

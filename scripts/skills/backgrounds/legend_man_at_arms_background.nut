@@ -45,10 +45,10 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.PolearmTree
 			],
 			Defense = [
-				this.Const.Perks.ShieldTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
