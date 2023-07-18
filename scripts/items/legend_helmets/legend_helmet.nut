@@ -658,7 +658,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			result.push({
 				id = 5,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/fatigue.png",
 				text = format("(%.1f Armor per 1 Weight)", this.getArmorMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}

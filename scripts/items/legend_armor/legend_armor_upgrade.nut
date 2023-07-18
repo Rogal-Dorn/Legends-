@@ -239,7 +239,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			result.push({
 				id = 5,
 				type = "text",
-				icon = "",
+				icon = "ui/icons/fatigue.png",
 				text = format("(%.1f Armor per 1 Fatigue)", this.getConditionMax() / (1.0 * this.Math.abs(this.getStaminaModifier())))
 			});
 		}
