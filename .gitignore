@@ -5,7 +5,6 @@ unpacked/legend_armor/0
 unpacked/legend_armor/1
 unpacked/legend_armor/2
 
-
 !unpacked/**/helmets
 
 scripts/items/legend_armor/cloth/
@@ -13,7 +12,12 @@ scripts/items/legend_armor/chain/
 scripts/items/legend_armor/plate/
 scripts/items/legend_armor/cloak/
 scripts/items/legend_armor/tabard/
-
+scripts/crafting/blueprints/paint_black_blueprint.nut
+scripts/crafting/blueprints/paint_orange_red_blueprint.nut
+scripts/crafting/blueprints/paint_red_blueprint.nut
+scripts/crafting/blueprints/paint_set_blueprint.nut
+scripts/crafting/blueprints/paint_white_blue_blueprint.nut
+scripts/crafting/blueprints/paint_white_green_yellow_blueprint.nut
 
 gfx/*.png
 !gfx/skills*
