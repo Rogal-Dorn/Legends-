@@ -1529,7 +1529,7 @@ def main():
                 text.replace("/", "\\")
                 Brush.write(text)
                 imageCount += 1
-                if (imageCount > 10000):
+                if (imageCount > 2000):
                     Brush.write('</brush>\n')
                     Brush.close()
                     imageCount = 0
@@ -1581,7 +1581,7 @@ def main():
                 text.replace("/", "\\")
                 Brush.write(text)
                 imageCount += 1
-                if (imageCount > 10000):
+                if (imageCount > 2000):
                     Brush.write('</brush>\n')
                     Brush.close()
                     imageCount = 0

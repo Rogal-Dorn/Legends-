@@ -1,6 +1,6 @@
 this.human <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Bodies = this.Const.Bodies.NorthernMale,
+		Bodies = this.Const.Bodies.NorthWesternMaleOnly,
 		Faces = null,
 		Hairs = null,
 		HairColors = null,

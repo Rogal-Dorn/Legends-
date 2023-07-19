@@ -1133,7 +1133,11 @@ gt.Const.Bodies.NorthWesternMale <- [
 	"bust_male_western_01",
 	"bust_male_western_02"
 ];
-
+gt.Const.Bodies.NorthWesternMaleOnly <- [,
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02"
+];
 gt.Const.Bodies.WesternMale <- [
 	"bust_male_northwestern_00",	
 	"bust_male_northwestern_01",	

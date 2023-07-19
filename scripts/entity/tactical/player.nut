@@ -245,9 +245,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		return this.m.Ethnicity;
 	}
 
-	function setEthnicty( _id )
+	function setEthnicity( _id )
 	{
-		this.m.Ethnicty = _id;
+		this.m.Ethnicity = _id;
 	}
 
 	function getLastCampAssignment()
