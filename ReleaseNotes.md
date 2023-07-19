@@ -198,6 +198,7 @@ Named items will always drop as loot even if the condition is at 0. An indirect 
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixes warlock scenario not setting veteran perks correctly
+Fixed Mark Target being usable on allies
 Fixes bug where Pacifist could ruin moods at the wrong time. Now it just makes them unhappy each time they're in battle
 Fixed issue where radiance rune worked up and down many levels 
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
