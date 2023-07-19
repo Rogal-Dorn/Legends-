@@ -180,13 +180,15 @@ Converted all scripts in retinue/followers folder to use the new system.
 'Meeting Point' has an alternative requirement: 'Negotiated for the payment of contracts 10 times'.
 
 **Other Changes:**
+Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
+Named items now always have more durability than unamed 
 Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
 Alignment pass on sallets, armets and faceplates. 
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
-More variety added to character and location names 
 Updated Legends event art 
+More variety added to character and location names 
 Legendary beasts spawn in lower numbers with an increased chance of rare drops
 Rumors and camp descriptions are now gender neutral 
 Simplified logic for Grand Tournament, has some additional art
@@ -195,10 +197,11 @@ Bandit rabble poachers have improved aim, sling damage reduced. You'll take more
 Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
 Towershield defenses changed to 25/20 from 30/15 
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
-Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
-Named items now always have more durability than unamed 
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
+Changes the choke effect to -15 fat recovery per turn and adds a tooltip showing the current damage boost
+Also fixes the perk tree so that it does not have choke twice and instead has tackle in the second to last slot (special thanks to Hanter)
+Fixed Staff Daze skill to correctly apply Dazed and Staggered (when Staff Spins perk is taken) effects to stun immune enemies
 Fixes warlock scenario not setting veteran perks correctly
 Fixes bandit and lone wolf tabards which didn't exit 
 Fixed Mark Target being usable on allies
