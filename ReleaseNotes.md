@@ -186,6 +186,7 @@ Most decorative layers had their condition and value reduced.
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 More variety added to character and location names 
+Updated Legends event art 
 Legendary beasts spawn in lower numbers with an increased chance of rare drops
 Rumors and camp descriptions are now gender neutral 
 Simplified logic for Grand Tournament, has some additional art
@@ -199,6 +200,7 @@ Named items now always have more durability than unamed
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixes warlock scenario not setting veteran perks correctly
+Fixes bandit and lone wolf tabards which didn't exit 
 Fixed Mark Target being usable on allies
 Fixes Tumble not working on Great Lunge
 Fixes bug where Pacifist could ruin moods at the wrong time. Now it just makes them unhappy each time they're in battle
