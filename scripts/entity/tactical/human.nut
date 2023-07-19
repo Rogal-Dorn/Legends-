@@ -1,6 +1,6 @@
 this.human <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Bodies = this.Const.Bodies.AllMale,
+		Bodies = this.Const.Bodies.NorthernMale,
 		Faces = null,
 		Hairs = null,
 		HairColors = null,
@@ -59,7 +59,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Bodies = this.Const.Bodies.AllFemale;
 			this.m.BeardChance = 0;
 			this.m.Hairs = this.Const.Hair.AllFemale;
-			if (this.m.Ethnicity == 1)
+			if (this.m.Ethnicity == 4)
 			{
 				this.m.Bodies = this.Const.Bodies.SouthernFemale;
 				this.m.Faces = this.Const.Faces.SouthernFemale;
@@ -579,7 +579,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("scar_body");
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush("bust_naked_body_0" + this.m.Body + "_injured");
+		injury_body.setBrush("bust_male_northwestern_0" + this.m.Body + "_injured");
 		this.addSprite("armor");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");
@@ -706,7 +706,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.getSprite("beard").Visible = false;
 		}
 
-		if (this.m.Ethnicity == 1 && hairColor != "grey")
+		if (this.m.Ethnicity == 4 && hairColor != "grey")
 		{
 			local hair = this.getSprite("hair");
 			hair.Saturation = 0.8;

@@ -1056,6 +1056,18 @@ gt.Const.Strings.MoralReputation <- [
 	"Chivalrous",
 	"Saintly"
 ];
+gt.Const.Strings.Ethnicity <- [
+	"Mixed"
+	"South Western",
+	"Western",
+	"North Western",
+	"Southern",
+	"Central",	
+	"Northern",
+	"South Eastern",
+	"Eastern",
+	"North Eastern"
+];
 gt.Const.Strings.Relations <- [
 	"Hostile",
 	"Threatening",

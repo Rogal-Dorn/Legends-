@@ -9,7 +9,7 @@ this.companion_2h_southern_background <- this.inherit("scripts/skills/background
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 1;
+		this.m.Ethnicity = 4;
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.hate_undead",

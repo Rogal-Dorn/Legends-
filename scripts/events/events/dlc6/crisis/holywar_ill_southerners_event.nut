@@ -68,7 +68,7 @@ this.holywar_ill_southerners_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
+					if (bro.getEthnicity() == 4 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.improveMood(1.0, "Approved of your decision to end the suffering of fellow Gilded");
 
@@ -133,7 +133,7 @@ this.holywar_ill_southerners_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
+					if (bro.getEthnicity() == 4 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.worsenMood(1.0, "Disliked that you left fellow Gilded to suffer a slow death");
 

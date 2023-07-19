@@ -9,7 +9,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		Hairs = null,
 		HairColors = null,
 		Beards = null,
-		Bodies = this.Const.Bodies.AllMale,
+		Bodies = this.Const.Bodies.NorthernMale,
 		Ethnicity = 0,
 		Level = 1,
 		BeardChance = 60,
@@ -1365,7 +1365,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				actor.getSprite("injury_body").setBrush(body + "_injured");
 			}
 
-			if (this.m.Ethnicity == 1 && hairColor != "grey")
+			if (this.m.Ethnicity == 4 && hairColor != "grey")
 			{
 				local hair = actor.getSprite("hair");
 				hair.Saturation = 0.8;
@@ -1441,7 +1441,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 		this.m.IsNew = false;
 
-		if (this.m.LastNames.len() == 0 && this.m.Ethnicity == 1)
+		if (this.m.LastNames.len() == 0 && this.m.Ethnicity == 4)
 		{
 			this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		}
@@ -1463,11 +1463,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			if (names == null || this.m.Names.len() == 0)
 			{
 				names = this.Const.Strings.CharacterNames;
-				if (this.m.Ethnicity == 1)
+				if (this.m.Ethnicity == 4)
 				{
 					names = this.Const.Strings.SouthernNames;
 				}
-				else if (this.m.Ethnicity == 2)
+				else if (this.m.Ethnicity == 6)
 				{
 					names = this.Const.Strings.BarbarianNames
 				}
@@ -1475,11 +1475,11 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				if (this.isBackgroundType(this.Const.BackgroundType.Female))
 				{
 					names = this.Const.Strings.CharacterNamesFemale;
-					if (this.m.Ethnicity == 1)
+					if (this.m.Ethnicity == 4)
 					{
 						names = this.Const.Strings.SouthernFemaleNames;
 					}
-					else if (this.m.Ethnicity == 2)
+					else if (this.m.Ethnicity == 6)
 					{
 						names = this.Const.Strings.CharacterNamesFemaleNorse;
 					}

@@ -43,6 +43,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		CampHealing = 0,
 		LastCampTime = 0,
 		InReserves = false,
+		Ethnicity = 0,
 		StarWeights = [50,50,50,50,50,50,50,50],
 		// Alignment = null,
 		CompanyID = 0
@@ -237,6 +238,16 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 	function setCampAssignment( _id )
 	{
 		this.m.CampAssignment = _id;
+	}
+
+	function getEthnicity()
+	{
+		return this.m.Ethnicity;
+	}
+
+	function setEthnicty( _id )
+	{
+		this.m.Ethnicty = _id;
 	}
 
 	function getLastCampAssignment()

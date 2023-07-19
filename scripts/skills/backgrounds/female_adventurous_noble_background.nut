@@ -33,7 +33,7 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Educated;
