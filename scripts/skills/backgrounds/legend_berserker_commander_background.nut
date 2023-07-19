@@ -58,7 +58,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 		this.m.Beards = this.Const.Beards.Berserker;
 		this.m.BeardChance = 100;
 		this.m.Bodies = this.Const.Bodies.LegendTattos;
-		this.m.Ethnicity = 0;
+		this.m.Ethnicity = 6;
 		this.m.Level = 3;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Untalented;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;

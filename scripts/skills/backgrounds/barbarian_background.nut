@@ -43,10 +43,10 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
-		this.m.Ethnicity = 0;
+		this.m.Ethnicity = 6;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Druid;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];

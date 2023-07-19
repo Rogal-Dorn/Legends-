@@ -63,7 +63,8 @@ declare -a BRUSHES=(
 "ui"
 "orientation"
 "legend_objects"
-
+"legend_helmets"
+"legend_armor/0"
 )
 
 mkdir -p brushes

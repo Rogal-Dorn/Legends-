@@ -30,7 +30,7 @@ this.crucified_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.BeardChance = 100;
 		this.m.Level = this.Math.rand(2, 4);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Crusader;
