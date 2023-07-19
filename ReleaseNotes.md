@@ -195,6 +195,7 @@ Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing 
 Towershield defenses changed to 25/20 from 30/15 
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
 Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
+Named items now always have more durability than unamed 
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixes warlock scenario not setting veteran perks correctly
