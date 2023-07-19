@@ -189,6 +189,7 @@ Towershield defenses changed to 25/20 from 30/15
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
+Fixes bug where Pacifist could ruin moods at the wrong time. Now it just makes them unhappy each time they're in battle
 Fixed issue where radiance rune worked up and down many levels 
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
 Fixes Blend In not reducing enemy target attraction properly. 
