@@ -171,6 +171,13 @@ Double Tongued Trait:
 - Mercenaries who are Pessimistic, Superstitious, Paranoid, Traumatized, or have a Deathwish are strangely inspired by these dark speeches and gain +2AP for the first turn.
 - Characters with this trait can now stop the children's crusade event - with event art 
 
+**Retinue changes**
+Implemented a new requirement system for retinue, incorporating legends backgrounds and perks
+Changes to the UI screen of world_campfire_screen_hire_dialog_module.js to fit with the use of the new requirement system for retinue.
+Converted all scripts in retinue/followers folder to use the new system.
+'Stolen Documents' now has an alternative requirement: 'Raid 3 caravans'.
+'Training Dummies' doesn't require certain specific backgrounds to have a permanent injury. Has has an alternative requirement: 'Won 50 battles'.
+'Meeting Point' has an alternative requirement: 'Negotiated for the payment of contracts 10 times'.
 
 **Other Changes:**
 Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
@@ -187,6 +194,7 @@ Bandit rabble poachers have improved aim, sling damage reduced. You'll take more
 Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
 Towershield defenses changed to 25/20 from 30/15 
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
+Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixes warlock scenario not setting veteran perks correctly
@@ -194,6 +202,7 @@ Fixes bug where Pacifist could ruin moods at the wrong time. Now it just makes t
 Fixed issue where radiance rune worked up and down many levels 
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
 Fixes Blend In not reducing enemy target attraction properly. 
+Fixed the most common mime errors in logs
 Bandages can now heal grazes 
 
 
