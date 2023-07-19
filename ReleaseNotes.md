@@ -186,10 +186,12 @@ Necrosavants gain a racial weakness to crossbows, in addition to massive weaknes
 Bandit rabble poachers have improved aim, sling damage reduced. You'll take more small hits rather than constantly being missed.  
 Ijirock loses nimble on Legendary difficulty, gains colossus, fearsome, killing frenzy, last stand, underdog and slaughter
 Towershield defenses changed to 25/20 from 30/15 
+Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
 Fixed issue where radiance rune worked up and down many levels 
 Fixed an issue where sub-healthpoint healing was being rounded.  This was making tent heal skills not work as expected, and making passive healing round to zero in higher difficulties.
+Fixes Blend In not reducing enemy target attraction properly. 
 Bandages can now heal grazes 
 
 
