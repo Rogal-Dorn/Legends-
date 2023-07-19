@@ -2278,7 +2278,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "cloak/legend_southern_scarf"],
 		],
 		Tabard = [
-			[1, "tabard/legend_tattered_tabard"],
+			[1, "tabard/legend_common_tabard"],
 		],
 		Attachments =[
 		]
@@ -2305,7 +2305,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloak = [
 		],
 		Tabard = [
-			[1, "tabard/legend_tattered_tabard"], //5
+			[1, "tabard/legend_common_tabard"], //5
 			[2, ""], //0
 		],
 		Attachments =[
@@ -2342,7 +2342,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, ""], //0			
 		],
 		Tabard = [
-			[1, "tabard/legend_tattered_tabard"], //5
+			[1, "tabard/legend_common_tabard"], //5
 			[1, ""], //0
 		],
 		Attachments =[
@@ -2379,7 +2379,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, ""], //0
 		],
 		Tabard = [
-			[1, "tabard/legend_tattered_tabard"], //5
+			[1, "tabard/legend_common_tabard"], //5
 			[1, ""], //0
 		],
 		Attachments =[
