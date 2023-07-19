@@ -671,6 +671,11 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return false;
 		}
 
+		if (this.isArmorNamed())
+		{
+			return true;
+		}
+
 		local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || this.getContainer() != null && this.getContainer().getActor() != null && !this.getContainer().getActor().isNull() && this.isKindOf(this.getContainer().getActor().get(), "player");
 		local isLucky = !this.Tactical.State.isScenarioMode() && this.World.Assets.getOrigin().isDroppedAsLoot(this);
 		local repair = this.getRepair();
@@ -687,16 +692,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 			return true;
 		}
 
-		if (this.isItemType(this.Const.Items.ItemType.Named))
-		{
-			return true;
-		}
-
-		if (this.isItemType(this.Const.Items.ItemType.Legendary))
-		{
-			return true;
-		}
-
 		if (isLucky)
 		{
 			return true;
@@ -705,25 +700,6 @@ this.legend_armor <- this.inherit("scripts/items/armor/armor", {
 		if (isBlacksmithed)
 		{
 			return true;
-		}
-
-		foreach( u in this.m.Upgrades )
-		{
-			if (u == null)
-			{
-				continue;
-			}
-
-			if (u.isItemType(this.Const.Items.ItemType.Named))
-			{
-				return true;
-			}
-
-			if (u.isItemType(this.Const.Items.ItemType.Legendary))
-			{
-				return true;
-			}
-
 		}
 
 		return false;
