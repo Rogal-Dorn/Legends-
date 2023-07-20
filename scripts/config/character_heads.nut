@@ -37,6 +37,12 @@ gt.Const.HairColors.All <- [
 	"brown",
 	"red"
 ];
+gt.Const.HairColors.Northern <- [
+	"grey",
+	"blonde",
+	"brown",
+	"red"
+];
 gt.Const.HairColors.Old <- [
 	"grey"
 ];
