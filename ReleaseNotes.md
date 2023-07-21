@@ -6,14 +6,9 @@
 -Greater variety of trees, grasses, bushes, logs and flowers on the world map 
 -Forest biomes now blend into each other to create more natural looking terrain
 -Marshes can sometimes be lush Wetlands with a new tactical map type. This is more common near forest edges 
-
-**Wildlife**
-Bear graphics updated 
-
-**Kobolds**
-Kobolds can now found in marshes, where they disapear into the undergrowth while their dart guns waylay you
-You can try them out in a new tactical scenario 'Kobold Swamp'
-
+-Kobolds can now found in Wetlands, where they disapear into the undergrowth while their dart guns waylay you
+-You can try them out in a new tactical scenario 'Kobold Swamp'
+-Beasts can now sometimes roam well outside their usual territories, this includes legendary beasts. 
 
 **Hats**
 Vanity:
@@ -74,6 +69,7 @@ Attachments:
 **World economy**
 Caravans now take goods out of each building's inventory of the town they leave, carry the goods in their inventory, and deliver the goods into the inventory of the town they arrive at. Paying the origin town when they unload.
 Patrols, Mercenaries, Ships, Peasants and caravans are more frequent to increase the odds of caravans making it through and towns surving and thriving.
+Enemy caravan ambushes can also happen more frequently
 
 Attached locations: 
 - Increased production rates by introducing smaller versions of their trade goods. This increases the number of trade goods without overall ballooning trade values
@@ -92,13 +88,14 @@ Healing:
 
 Food:
 - Background food consumption rate increased by 50% to incentivise cooking
-- Hunting tent renamed to Kitchen to better reflect its role, description updated to explain what it does  
+- Hunting tent renamed to Camp Kitchen to better reflect its role, description updated to explain what it does  
 - Upgraded kitchen now allows production of mead, porridge, pudding and pies, while also increasing the hunting rate and chance of getting better foods.
 - Assigned cooking backgrounds have a small chance to produce cured goods without a cooking perk, though the perk drastically increases the chances.
 - It is still possible to improve food using spices in the crafting tent. 
 
 Training: 
-- Training speed halved, upgrading the tent doubles the rate
+- Training speed halved, upgrading the tent doubles the rate back to current
+- Training can now rarely result in a permanent injury. Brain damage, a broken knee or a missing finger. 
 
 Gathering:
 - Description updated to explain what it does, making it clearer you're offsetting medicine consumption rate. 
@@ -179,15 +176,19 @@ Converted all scripts in retinue/followers folder to use the new system.
 'Training Dummies' doesn't require certain specific backgrounds to have a permanent injury. Has has an alternative requirement: 'Won 50 battles'.
 'Meeting Point' has an alternative requirement: 'Negotiated for the payment of contracts 10 times'.
 
-**Other Changes:**
-Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
-Named items now always have more durability than unamed 
+**Visual Changes:**
 Visual pass on legends weapons and shields to more closely follow Overhype art process guides, reducing blur, colour issues, and alignment issues.
 Alignment pass on sallets, armets and faceplates. 
 Most decorative layers had their condition and value reduced. 
 Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 Updated Legends event art 
+Bear graphics updated 
+
+**Other Changes**
+Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
+Named items now always have more durability than unamed 
+
 More variety added to character and location names 
 Legendary beasts spawn in lower numbers with an increased chance of rare drops
 Rumors and camp descriptions are now gender neutral 
@@ -199,9 +200,9 @@ Towershield defenses changed to 25/20 from 30/15
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
-Changes the choke effect to -15 fat recovery per turn and adds a tooltip showing the current damage boost
-Also fixes the perk tree so that it does not have choke twice and instead has tackle in the second to last slot (special thanks to Hanter)
-Fixed Staff Daze skill to correctly apply Dazed and Staggered (when Staff Spins perk is taken) effects to stun immune enemies
+
+**Fixes**
+Repackages image brushes to improve graphics efficiency
 Fixes warlock scenario not setting veteran perks correctly
 Fixes bandit and lone wolf tabards which didn't exit 
 Fixed Mark Target being usable on allies
