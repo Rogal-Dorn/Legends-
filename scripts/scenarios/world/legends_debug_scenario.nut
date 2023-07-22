@@ -424,6 +424,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"legend_grisly_scythe",
 			"legend_halberd",
 			"legend_hammer",
+			"legend_hand_crossbow",
 			"legend_hoe",
 			"legend_infantry_axe",
 			"legend_military_goedendag",

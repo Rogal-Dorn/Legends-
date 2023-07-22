@@ -163,6 +163,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"))
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));
 		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_wooden_stake"));
+		this.World.Assets.getStash().add(this.new("scripts/items/weapons/legend_hand_crossbow"));
+		this.World.Assets.getStash().add(this.new("scripts/items/ammo/quiver_of_bolts"));
 	}
 
 	function onSpawnPlayer()
