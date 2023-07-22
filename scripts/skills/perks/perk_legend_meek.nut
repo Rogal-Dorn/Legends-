@@ -47,8 +47,8 @@ this.perk_legend_meek <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 		local mdef = actor.getCurrentProperties().getMeleeDefense();
-		local rdef = actor.getCurrentProperties().getRangedDefense();
-		local stack = mdef + rdef;
+		local resolve = actor.getCurrentProperties().getBravery();
+		local stack = mdef + resolve;
 		local bonus = this.Math.max(10, 100 - stack);
 		return this.Math.floor(bonus);
 	}
