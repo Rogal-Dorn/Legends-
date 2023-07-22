@@ -45,7 +45,7 @@ while read -r line; do
         :
     elif [[ "$line" == *.py ]]; then
         :
-    elif [[ "$line" == documentation/*.*]]; then
+    elif [[ "$line" == documentation/*.txt ]]; then
         :
     elif [[ "$line" == unpacked* ]]; then
         :

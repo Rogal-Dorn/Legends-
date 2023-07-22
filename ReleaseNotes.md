@@ -147,6 +147,7 @@ Fortified mind moved from intelligent to sturdy perk group
 Backflip also increases the range of leap, stacking with the existing range increase from staff mastery 
 Fixed an issue where duplicate perk trees were resulting in some recruits having too few perks. 
 
+
 **Trait changes**
 These changes mainly serve to reduce the impact of extreme traits. 
 New Trait - Nocturnal - The negatives and positives from night and day are reversed 
@@ -184,11 +185,11 @@ Undead facemask helmets moved to top layer so they can be stacked on helmets
 The emporer's wreath helmet now has a wreath 
 Updated Legends event art 
 Bear graphics updated 
+Parrying daggers held askew 
 
 **Other Changes**
 Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
 Named items now always have more durability than unamed 
-
 More variety added to character and location names 
 Legendary beasts spawn in lower numbers with an increased chance of rare drops
 Rumors and camp descriptions are now gender neutral 
@@ -200,6 +201,7 @@ Towershield defenses changed to 25/20 from 30/15
 Minor nerf to hidden to make it less effective when heavily armored, explained in tooltip
 Added fresh fish, fresh milk as products from attached locations and a recipe for Goat Curry 
 Added gold dust, gold nuggest, seashells and small furs as small trade items 
+Parry daggers apply parried effect when enemies miss 
 
 **Fixes**
 Repackages image brushes to improve graphics efficiency
