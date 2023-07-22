@@ -427,7 +427,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-		actor.addRandomPerkGroup()
+		this.addRandomPerkGroup()
 		}
 		}
 
