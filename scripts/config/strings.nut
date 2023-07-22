@@ -2561,7 +2561,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendGruesomeFeast = "Taste of the forbidden flesh. Devour a recently departed corpse to gain strength and restore your own health by [color=" + this.Const.UI.Color.PositiveValue + "]50[/color] ",
 	LegendRelax = "Sooth an ally, halving their fatigue.",
 	LegendUberNimble = "Gain another stack of nimble when not wearing both armour and a helmet, real berserkers don\'t need pants.",
-	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional minimum and maximum damage, up to 50.",
+	LegendMuscularity = "Put your full weight into every blow and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of your current hitpoints as additional minimum and maximum damage.",
 	LegendBattleheart = "Wade into the thick of battle, dodging blades from behind and above, aware of all around you at the heart of the battle. Being surrounded no longer affects this character\'s defences at all. Upgraded version of Underdog, immune to Backstabber.",
 	LegendTrueBeliever = "Lesser men may cower and flee, but you are unassuageable in your commitment. Allies fleeing or dying no longer lowers this character\'s morale. This character gains 5% resolve for every fleeing character on the field, friend or foe. Taking this perk also removes the superstitious, insecure, craven and dastard traits.",
 	LegendPoisonImmunity = "With a well developed immune system and incredible fitness, a warrior\'s system can shrug off even powerful toxins. This character becomes immune to all poisons.",
@@ -2610,7 +2610,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendMedIngredients = "Learning the plants of the healing trade allows you to fashion crude healing supplies from common ingredients. Unlocks crafting bandages and medicine. Also increases maximum medicine storage by 10 and resolve by [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color].",
 	LegendToolsDrawers = "Organising your tools into labeled compartments lets you carry more. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "] 10 [/color], reduces tool usage by [color=" + this.Const.UI.Color.PositiveValue + "] 4% [/color], and increases Fatigue by [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color].",
 	LegendToolsSpares = "Your experience with repairs has taught you to save your scraps and left over parts. These spares take up little space but are often just what you need for field repairs. Increases maximum tool storage by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color], reduces tool usage by [color=" + this.Const.UI.Color.PositiveValue + "] 6% [/color] and increases fatigue by [color=" + this.Const.UI.Color.PositiveValue + "]+6[/color].",
-	LegendBarterConvincing = "This characters skill with words makes their trade proposals more acceptable.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases Barter by [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n• Generate [color=" + this.Const.UI.Color.PositiveValue + "]+10 Crowns[/color] each day",
+	LegendBarterConvincing = "This characters skill with words makes their trade proposals more acceptable.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases their Barter skill by [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color], improving all buy and sell prices and rewards from trade contracts.\n• They also generate [color=" + this.Const.UI.Color.PositiveValue + "]+10 Crowns[/color] each day through their investments and an additional [color=" + this.Const.UI.Color.PositiveValue + "]+1 Crowns[/color] per level. \n Unfortunately their negotional skill also increases their dail pay rate by [color=" + this.Const.UI.Color.NegativeValue + "]+25%[/color] ",
 	LegendBarterTrustworthy = "This characters body language makes people believe them, leading to more favourable trade agreements. Grants +2% barter skill increasing sell prices, reducing buy prices and increasing pay for delivery contracts. Barter skill begins falling off at higher total rates.",
 	LegendBribe = "You\'ve never met a problem that money couldn't solve.\n\nThrow coins at your enemies to bribe them away from battle, only works on humans. The cost is the XP that would be granted by killing the enemy, to the power of 1.3.",
 	LegendOffBookDeal = "Convince anyone into selling you their priciest possession. Even if that means paying extra.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduces Barter by [color=" + this.Const.UI.Color.NegativeValue + "]-1%[/color]\n• When entering a town that has no active situation, apply the 'Off-Book Deal' situation for 3 days\n• This situation grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] to available items and [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] to buying price for each brother with this perk",
@@ -2651,7 +2651,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendTeacher = "The techniques you have mastered are inspirational and inspire curiosity in those who behold, granting the \'Student\' perk to anyone you fight with.",
 	LegendResurrectionist = "This character\'s experience with corpses gives an additional [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] chance to retrieve each human body or skeleton from the battlefield, if you are already collecting them.",
 	LegendScry = "Use your extraordinary senses to notice things no one else can. Reveals everything within 12 tiles.",
-	LegendPiercingShot = "Launch a shot so powerful it can hit two targets in a straight line. Does not work with throwing weapons.",
+	LegendPiercingShot = "Launch a shot so powerful it goes through an additional target. Bows and crossbows hit two targets in a straight line. Handgonnes reach an additional tile further. Does not work with throwing weapons.",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile.",
 	LegendTeleport = "Step through the world, disappearing from one place and reappearing in another place immediately.",
 	LegendSpecialistShieldSkill = "Begin each battle with your shieldwall activated and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Ranged Defense while using a shield.",
@@ -2831,10 +2831,10 @@ gt.Const.Strings.PerkDescription <- {
 	LegendAdaptive = "Add a new group of perks to this character's perk tree, the perks are determined by what is currently equipped in their hands",
 	LegendRecuperation = "Heal 2 hitpoints and 2 fatigue at the end of every turn",
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five height in one move. Does not trigger attacks of opportunity"
-	LegendSmallTarget = "Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have.",
-	LegendFashionable = "You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
-	LegendMeek = "Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of melee and ranged defense you have",
-	LegendHelpful = "Gain the ability to freely give items from your bag to allies"
+	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have.",
+	LegendFashionable = "Use flowing, billiowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit. \n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
+	LegendMeek = "Being quiet and unassuming can makes enemies underestimate how good you are at cowering and avoiding conflict \n\n Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of Melee Defense and Resolve you have.",
+	LegendHelpful = "Amateurs discuss tactics, the progressionals discuss logistics \n\n Gain the ability to freely give items from your bag to allies"
 
 };
 gt.Const.Strings.Tooltip <- {
