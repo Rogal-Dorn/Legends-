@@ -1427,24 +1427,6 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onRiposte.bindenv(this), info);
 			}
 		}
-		local item = this.getOffhandItem();
-		if (item.getID() == "shield.legend_parrying_dagger" || item.getID() == "shield.legend_named_parrying_dagger"  && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
-		{
-			if (_attacker.getCurrentProperties().IsImmuneToDisarm)
-					{
-						this.spawnAttackEffect(_attacker.getTile(), this.Const.Tactical.AttackEffectslash);
-
-						if (_attacker.isAlive() && !_attacker.getSkills().hasSkill("effects.legend_parried"))
-						{
-							_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
-
-							if (!this.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-							{
-								this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_attacker) + "is parried");
-							}
-						}			
-					}
-		}
 
 		if (_skill != null && !_skill.isRanged())
 		{
