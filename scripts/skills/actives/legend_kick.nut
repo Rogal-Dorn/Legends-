@@ -29,7 +29,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 10;
+		this.m.FatigueCost = 14;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -129,12 +129,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.applyFatigueDamage(target, 10);
-		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " inflicted 10 fatigue on " + this.Const.UI.getColorizedEntityName(target) + " ");
-			if (_properties.IsSpecializedInFists)
-			{
-				this.applyFatigueDamage(target, 5);
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " used their unarmed mastery to inflict 5 additional fatigue on " + this.Const.UI.getColorizedEntityName(target) + " ");
-			}
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " inflicted 10 fatigue on " + this.Const.UI.getColorizedEntityName(target) + " with a kick");
 
 		// Remove enemy stances
 		skills.removeByID("effects.shieldwall");
