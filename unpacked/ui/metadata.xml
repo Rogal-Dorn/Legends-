@@ -735,6 +735,6 @@
 	<sprite id="active_pass" ic="FF2B206C" img="skills\pass.png" />
 	<sprite id="status_helpful" ic="FF3D536F" img="skills\helpful.png" />
 	<sprite id="active_kick" ic="FF2B206C" img="skills\kick_square.png" />
-	<sprite id="active_choke" ic="FF2B206C" img="skills\kick_choke.png" />
-	<sprite id="active_grapple" ic="FF2B206C" img="skills\kick_grapple.png" />
+	<sprite id="active_choke" ic="FF2B206C" img="skills\choke_square.png" />
+	<sprite id="active_grapple" ic="FF2B206C" img="skills\grapple_square.png" />
 </brush>
