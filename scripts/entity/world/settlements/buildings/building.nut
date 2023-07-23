@@ -39,10 +39,7 @@ this.building <- {
 		return this.World.getTime().IsDaytime || !this.m.IsClosedAtNight ? this.m.Tooltip : null;
 	}
 
-	function getTooltip()
-	{
-		return this.World.getTime().IsNighttime || !this.m.IsClosedAtDay ? this.m.Tooltip : null;
-	}
+
 
 	function getTooltipIcon()
 	{

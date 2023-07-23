@@ -30,7 +30,7 @@ this.world_town_screen <- {
 	{
 		if (this.m.Animating != null && this.m.MainDialogModule != null && this.m.HireDialogModule != null && this.m.ShopDialogModule != null && this.m.StablesDialogModule != null)
 		{
-			return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.HireDialogModule.isAnimating() || this.m.ShopDialogModule.isAnimating() || this.m.TrainingDialogModule.isAnimating() || this.m.BarberDialogModule.isAnimating() || this.m.BlackmarketDialogModule.isAnimating() || this.m.StablesDialogModule.isAnimating();
+			return this.m.Animating == true || this.m.MainDialogModule.isAnimating() || this.m.HireDialogModule.isAnimating() || this.m.ShopDialogModule.isAnimating() || this.m.TrainingDialogModule.isAnimating() || this.m.BarberDialogModule.isAnimating() || this.m.StablesDialogModule.isAnimating();
 		}
 		else
 		{
@@ -151,9 +151,6 @@ this.world_town_screen <- {
 		this.m.BarberDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_barber_dialog_module");
 		this.m.BarberDialogModule.setParent(this);
 		this.m.BarberDialogModule.connectUI(this.m.JSHandle);
-		this.m.BlackmarketDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_blackmarket_dialog_module");
-		this.m.BlackmarketDialogModule.setParent(this);
-		this.m.BlackmarketDialogModule.connectUI(this.m.JSHandle);
 		this.m.TavernDialogModule = this.new("scripts/ui/screens/world/modules/world_town_screen/town_tavern_dialog_module");
 		this.m.TavernDialogModule.setParent(this);
 		this.m.TavernDialogModule.connectUI(this.m.JSHandle);
@@ -182,8 +179,6 @@ this.world_town_screen <- {
 		this.m.TravelDialogModule = null;
 		this.m.BarberDialogModule.destroy();
 		this.m.BarberDialogModule = null;
-		this.m.BlackmarketDialogModule.destroy();
-		this.m.BlackmarketDialogModule = null;
 		this.m.TavernDialogModule.destroy();
 		this.m.TavernDialogModule = null;
 		this.m.TempleDialogModule.destroy();
@@ -206,7 +201,6 @@ this.world_town_screen <- {
 		this.m.HireDialogModule.clear();
 		this.m.TravelDialogModule.clear();
 		this.m.BarberDialogModule.clear();
-		this.m.BlackmarketDialogModule.clear();
 		this.m.TavernDialogModule.clear();
 		this.m.TempleDialogModule.clear();
 		this.m.TrainingDialogModule.clear();
@@ -271,10 +265,6 @@ this.world_town_screen <- {
 		else if (this.m.LastActiveModule == this.m.BarberDialogModule)
 		{
 			this.showBarberDialog();
-		}
-		else if (this.m.LastActiveModule == this.m.BlackmarketDialogModule)
-		{
-			this.showBlackmarketDialog();
 		}
 		else if (this.m.LastActiveModule == this.m.TavernDialogModule)
 		{

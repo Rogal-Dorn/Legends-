@@ -135,6 +135,7 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 		if (item != null)
 		{
 			this.m.Items.equip(item);
+		}
 	}
 
 });
