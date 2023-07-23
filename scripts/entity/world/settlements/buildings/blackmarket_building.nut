@@ -11,12 +11,48 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 	{
 		this.building.create();
 		this.m.ID = "building.blackmarket";
-		this.m.Name = "Black Market";
+		this.m.Name = ::MSU.Array.rand([
+			"The Black Market",
+			"The Shadow Trade",
+			"The Dusk Traders",
+			"The Smuggler\'s Den",
+			"The Rogues\'s Harbor",
+			"The Highwayman\'s Haunt",
+			"Thieves Kitchen",
+			"Doxy\'s Dive",
+			"Wraith\'s Cache",
+			"The Gorgon Galley",
+			"The Den",
+			"The Underground",
+			"The Hidden Warehouse",
+			"Slayer\'s Stash",
+			"The Schleichhandel",
+			"The Undercroft",
+			"The Rookery",
+			"The Bagman",
+			"The Collector",
+			"The Trinketry",
+			"The Requistionary",
+			"Scavenger\'s Finds",
+			"Shadow Peddler",
+			"Nightfall\'s Nook",
+			"Nightfang Exchange",
+			"Darkblood Reliquary",
+			"Twilight Treasure",
+			"The Warren",
+			"The Undermarket",
+			"The Secret Supplier",
+			"The Dark Butcher",
+			"The Veiled Exchange",
+			"The Monster\'s End",
+			"The Schwarzmarkt"
+		]);
 		this.m.Description = "Psssst! Over \'ere!";
 		this.m.UIImage = "ui/settlements/blackmarket_day";
 		this.m.UIImageNight = "ui/settlements/blackmarket_night"; 
-		this.m.Tooltip = "world-town-screen.main-dialog-module.Marketplace";
+		this.m.Tooltip = "world-town-screen.main-dialog-module.Blackmarket";
 		this.m.IsClosedAtDay = true;
+		this.m.IsClosedAtNight = false;
 		this.m.Stash = this.new("scripts/items/stash_container");
 		this.m.Stash.setID("shop");
 		this.m.Stash.setResizable(true);
@@ -122,6 +158,11 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 	{
 		local list = [
 			{
+				R = 50,
+				P = 1.5,
+				S = "loot/gemstones_item"
+			},
+			{
 				R = 70,
 				P = 2.0,
 				S = "misc/legend_skin_ghoul_skin_item"
@@ -222,6 +263,31 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "misc/poisoned_apple_item"
 			},
 			{
+				R = 70,
+				P = 2.0,
+				S = "supplies/fermented_unhold_heart_item"
+			},
+		{
+				R = 10,
+				P = 2.0,
+				S = "supplies/strange_meat_item"
+			},
+			{
+				R = 99,
+				P = 10.0,
+				S = "special/spiritual_reward_item"
+			},
+			{
+				R = 99,
+				P = 10.0,
+				S = "special/bodily_reward_item"
+			},
+			{
+				R = 99,
+				P = 10.0,
+				S = "special/fountain_of_youth_item"
+			},
+			{
 				R = 30,
 				P = 1.0,
 				S = "weapons/lute"
@@ -242,9 +308,29 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/legend_mystic_staff"
 			},
 			{
+				R = 95,
+				P = 3.0,
+				S = "weapons/legend_hand_crossbow"
+			},
+			{
+				R = 95,
+				P = 3.0,
+				S = "weapons/legend_crusader_sword"
+			},
+			{
 				R = 80,
 				P = 2.0,
 				S = "shields/ancient/legend_mummy_tower_shield"
+			},
+			{
+				R = 60,
+				P = 2.0,
+				S = "tools/holy_water_item"
+			},
+			{
+				R = 30,
+				P = 2.0,
+				S = "tools/reinforced_throwing_net"
 			},
 			{
 				R = 25,
@@ -261,10 +347,10 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		foreach( i in this.Const.Items.NamedMeleeWeapons )
 		{
-			if (this.Math.rand(1, 100) <= 50)
+			if (this.Math.rand(1, 100) <= 10)
 			{
 				list.push({
-					R = 40,
+					R = 60,
 					P = 3.0,
 					S = i
 				});
@@ -273,10 +359,10 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		foreach( i in this.Const.Items.NamedRangedWeapons )
 		{
-			if (this.Math.rand(1, 100) <= 50)
+			if (this.Math.rand(1, 100) <= 10)
 			{
 				list.push({
-					R = 40,
+					R = 60,
 					P = 3.0,
 					S = i
 				});
