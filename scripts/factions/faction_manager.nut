@@ -1125,13 +1125,6 @@ this.faction_manager <- {
 	{
 		local GE = this.m.GreaterEvil;
 		
-		if(this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
-		{
-				GE.Type == this.Const.World.GreaterEvilType.Undead
-				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
-				GE.Phase = this.Const.World.GreaterEvilPhase.Live;	
-				this.World.Statistics.addNews("crisis_undead_start", this.World.Statistics.createNews());
-		}
 
 		if (GE.Type == this.Const.World.GreaterEvilType.None)
 		{
