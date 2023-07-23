@@ -56,83 +56,309 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 		this.m.Stash = this.new("scripts/items/stash_container");
 		this.m.Stash.setID("shop");
 		this.m.Stash.setResizable(true);
-		this.m.Sounds = []; 
+		this.m.Sounds = [
+			{
+				File = "ambience/blackmarket/blackmarket_01.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_02.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_03.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_04.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_05.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_06.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_07.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_08.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_09.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_10.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_11.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_12.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_13.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_14.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_15.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_16.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_17.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_18.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_19.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_20.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_21.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_22.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_23.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_24.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_25.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_26.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_27.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_28.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_29.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_30.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			}	
+		]; 
 		this.m.SoundsAtNight = [ //change these sounds at some point
 			{
-				File = "ambience/buildings/market_people_00.wav",
+				File = "ambience/blackmarket/blackmarket_01.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_01.wav",
-				Volume = 0.3,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_02.wav",
+				File = "ambience/blackmarket/blackmarket_02.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_03.wav",
-				Volume = 0.4,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_04.wav",
-				Volume = 0.4,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_05.wav",
-				Volume = 0.4,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_07.wav",
+				File = "ambience/blackmarket/blackmarket_03.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_08.wav",
+				File = "ambience/blackmarket/blackmarket_04.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_05.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_09.wav",
+				File = "ambience/blackmarket/blackmarket_06.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_07.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_08.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_09.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_10.wav",
-				Volume = 0.3,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_11.wav",
-				Volume = 0.4,
-				Pitch = 1.0
-			},
-			{
-				File = "ambience/buildings/market_people_12.wav",
+				File = "ambience/blackmarket/blackmarket_10.ogg",
 				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_13.wav",
-				Volume = 0.3,
+				File = "ambience/blackmarket/blackmarket_11.ogg",
+				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_people_14.wav",
-				Volume = 0.4,
+				File = "ambience/blackmarket/blackmarket_12.ogg",
+				Volume = 0.2,
 				Pitch = 1.0
 			},
 			{
-				File = "ambience/buildings/market_bottles_00.wav",
-				Volume = 0.7,
+				File = "ambience/blackmarket/blackmarket_13.ogg",
+				Volume = 0.2,
 				Pitch = 1.0
-			}
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_14.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_15.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_16.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_17.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_18.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_19.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_20.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_21.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_22.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_23.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_24.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_25.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_26.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_27.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},	
+			{
+				File = "ambience/blackmarket/blackmarket_28.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},		
+			{
+				File = "ambience/blackmarket/blackmarket_29.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			},
+			{
+				File = "ambience/blackmarket/blackmarket_30.ogg",
+				Volume = 0.2,
+				Pitch = 1.0
+			}		
 		];
 	}
 
@@ -160,16 +386,21 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 50,
 				P = 1.5,
+				S = "loot/white_pearls_item"
+			},
+			{
+				R = 50,
+				P = 1.0,
 				S = "loot/gemstones_item"
 			},
 			{
 				R = 70,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_skin_ghoul_skin_item"
 			},
 			{
 				R = 90,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_demon_third_eye_item"
 			},
 			{
@@ -179,12 +410,12 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			},
 			{
 				R = 50,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_banshee_essence_item"
 			},
 			{
 				R = 90,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_demon_alp_skin_item"
 			},
 			{
@@ -194,52 +425,57 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			},
 			{
 				R = 95,
-				P = 3.0,
+				P = 6.0,
 				S = "misc/legend_redback_poison_gland_item"
 			},
 			{
 				R = 50,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_demon_hound_bones_item"
 			},
 			{
 				R = 99,
-				P = 2.0,
+				P = 6.0,
 				S = "misc/legend_rock_unhold_bones_item"
 			},
 			{
 				R = 99,
-				P = 3.0,
+				P = 6.0,
 				S = "misc/legend_rock_unhold_hide_item"
 			},
 				{
 				R = 99,
-				P = 5.0,
+				P = 10.0,
 				S = "misc/legend_stollwurm_blood_item"
 			},
 			{
 				R = 99,
-				P = 4.0,
+				P = 10.0,
 				S = "misc/legend_stollwurm_scales_item"
 			},
 			{
 				R = 75,
-				P = 4.0,
+				P = 8.0,
 				S = "misc/legend_white_wolf_pelt_item"
 			},
 			{
 				R = 40,
-				P = 2.0,
+				P = 4.0,
 				S = "misc/lindwurm_blood_item"
 			},
 			{
+				R = 40,
+				P = 4.0,
+				S = "misc/witch_hair_item"
+			},
+			{
 				R = 35,
-				P = 3.0,
+				P = 4.0,
 				S = "misc/lindwurm_bones_item"
 			},
 			{
 				R = 25,
-				P = 2.0,
+				P = 4.0,
 				S = "misc/lindwurm_scales_item"
 			},
 			{
@@ -249,17 +485,22 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			},
 			{
 				R = 20,
-				P = 2.0,
+				P = 4.0,
 				S = "misc/petrified_scream_item"
 			},
 			{
 				R = 10,
-				P = 2.0,
+				P = 4.0,
 				S = "misc/poison_gland_item"
 			},
 			{
-				R = 35,
+				R = 10,
 				P = 2.0,
+				S = "misc/snake_oil_item"
+			},
+			{
+				R = 35,
+				P = 4.0,
 				S = "misc/poisoned_apple_item"
 			},
 			{
@@ -274,18 +515,118 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			},
 			{
 				R = 99,
-				P = 10.0,
+				P = 20.0,
 				S = "special/spiritual_reward_item"
 			},
 			{
 				R = 99,
-				P = 10.0,
+				P = 20.0,
 				S = "special/bodily_reward_item"
 			},
 			{
 				R = 99,
-				P = 10.0,
+				P = 20.0,
 				S = "special/fountain_of_youth_item"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_armor/runes/legend_rune_safety"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_armor/runes/legend_rune_resilience"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_helmets/runes/legend_rune_bravery"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_armor/helmets/legend_rune_clarity"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_armor/runes/legend_rune_endurance"
+			},
+			{
+				R = 30,
+				P = 3.0,
+				S = "legend_armor/cloak/legend_animal_pelt"
+			},
+			{
+				R = 60,
+				P = 5.0,
+				S = "legend_armor/cloak/fur_cloak"
+			},
+			{
+				R = 80,
+				P = 5.0,
+				S = "legend_armor/cloak/cursed_cloak"
+			},
+			{
+				R = 80,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_warlock_hood"
+			},
+			{
+				R = 80,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_wizard_cowl"
+			},
+			{
+				R = 70,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_physicians_hood"
+			},
+			{
+				R = 70,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_undertakers_hat"
+			},
+			{
+				R = 60,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_impaled_head"
+			},
+			{
+				R = 60,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_impaled_head"
+			},
+			{
+				R = 60,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_beret"
+			},
+			{
+				R = 60,
+				P = 2.0,
+				S = "legend_armor/vanity/legend_helmet_sack"
+			},
+			{
+				R = 60,
+				P = 3.0,
+				S = "legend_armor/top/legend_helmet_cult_hood"
+			},
+			{
+				R = 80,
+				P = 3.0,
+				S = "legend_armor/top/legend_helmet_mask_beak"
+			},
+			{
+				R = 40,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_southern_crown"
+			},
+			{
+				R = 60,
+				P = 3.0,
+				S = "legend_armor/vanity/legend_helmet_antler"
 			},
 			{
 				R = 30,
@@ -298,9 +639,24 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "weapons/legend_drum"
 			},
 			{
+				R = 30,
+				P = 5.0,
+				S = "misc/happy_powder_item"
+			},
+			{
 				R = 45,
 				P = 2.0,
 				S = "weapons/legend_staff_vala"
+			},
+			{
+				R = 70,
+				P = 2.0,
+				S = "legend_armor/cloth/legend_robes_wizard"
+			},
+			{
+				R = 70,
+				P = 2.0,
+				S = "legend_armor/cloth/legend_robes_magic"
 			},
 			{
 				R = 70,
@@ -347,7 +703,7 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		foreach( i in this.Const.Items.NamedMeleeWeapons )
 		{
-			if (this.Math.rand(1, 100) <= 10)
+			if (this.Math.rand(1, 100) <= 50)
 			{
 				list.push({
 					R = 60,
@@ -359,7 +715,7 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 
 		foreach( i in this.Const.Items.NamedRangedWeapons )
 		{
-			if (this.Math.rand(1, 100) <= 10)
+			if (this.Math.rand(1, 100) <= 50)
 			{
 				list.push({
 					R = 60,
