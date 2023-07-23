@@ -9,7 +9,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "Kick a target to break their balance. Targets hit will receive fatigue, get staggered, and a chance of daze. Shieldwall, Spearwall, Return Favor, and Riposte will be canceled for a target that is successfully knocked back. A rooted target can not be knocked back.";
 		this.m.Icon = "skills/kick_square.png";
 		this.m.IconDisabled = "skills/kick_square_bw.png";
-		this.m.Overlay = "active_10";
+		this.m.Overlay = "active_kick";
 		this.m.SoundOnUse = [
 			"sounds/combat/knockback_01.wav",
 			"sounds/combat/knockback_02.wav",
@@ -29,7 +29,7 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 14;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 1;
 	}
@@ -129,6 +129,12 @@ this.legend_kick <- this.inherit("scripts/skills/skill", {
 		}
 
 		this.applyFatigueDamage(target, 10);
+		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " inflicted 10 fatigue on " + this.Const.UI.getColorizedEntityName(target) + " ");
+			if (_properties.IsSpecializedInFists)
+			{
+				this.applyFatigueDamage(target, 5);
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " used their unarmed mastery to inflict 5 additional fatigue on " + this.Const.UI.getColorizedEntityName(target) + " ");
+			}
 
 		// Remove enemy stances
 		skills.removeByID("effects.shieldwall");
