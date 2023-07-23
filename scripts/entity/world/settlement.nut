@@ -592,7 +592,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			result.Contracts.push(c);
 		}
 
-		if (result.Contracts.len() == 0 && this.m.IsMilitary && !this.World.Ambitions.getAmbition("ambition.make_nobles_aware").isDone())
+		if (result.Contracts.len() == 0 && this.m.IsMilitary && !this.World.Ambitions.getAmbition("ambition.make_nobles_aware").isDone() && !this.World.Assets.getOrigin().getID() == "scenario.legends_noble")
 		{
 			result.IsContractsLocked = true;
 		}

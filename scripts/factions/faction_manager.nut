@@ -33,6 +33,16 @@ this.faction_manager <- {
 		return this.m.GreaterEvil;
 	}
 
+	function setGreaterEvilType( _type )
+	{
+		return this.m.GreaterEvil.Type = _type;
+	}
+
+	function setGreaterEvilPhase ( _phase )
+	{
+		return this.m.GreaterEvil.Type = _phase;
+	}
+
 	function getFaction( _i )
 	{
 		return this.m.Factions[_i];
@@ -1114,6 +1124,14 @@ this.faction_manager <- {
 	function updateGreaterEvil()
 	{
 		local GE = this.m.GreaterEvil;
+		
+		if(this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+		{
+				GE.Type == this.Const.World.GreaterEvilType.Undead
+				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
+				GE.Phase = this.Const.World.GreaterEvilPhase.Live;	
+				this.World.Statistics.addNews("crisis_undead_start", this.World.Statistics.createNews());
+		}
 
 		if (GE.Type == this.Const.World.GreaterEvilType.None)
 		{
@@ -1136,7 +1154,7 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 160)
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 160 && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
@@ -1182,7 +1200,7 @@ this.faction_manager <- {
 							possibilities.push(this.Const.World.GreaterEvilType.Greenskins);
 						}
 
-						if (GE.LastType != this.Const.World.GreaterEvilType.Undead)
+						if (GE.LastType != this.Const.World.GreaterEvilType.Undead && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
 						{
 							possibilities.push(this.Const.World.GreaterEvilType.Undead);
 						}
@@ -1196,7 +1214,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 180)
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 180  && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;
