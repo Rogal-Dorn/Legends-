@@ -188,6 +188,8 @@ Bear graphics updated
 Parrying daggers held askew 
 
 **Other Changes**
+Noble scenario can unlock noble contracts from the start
+Inquisition begins in the middle of an undead crisis 
 Named items will always drop as loot even if the condition is at 0. An indirect nerf to 'Blacksmith's Tools'.
 Named items now always have more durability than unamed 
 More variety added to character and location names 
