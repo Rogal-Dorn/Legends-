@@ -201,8 +201,8 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 				S = "weapons/war_bow"
 			});
 			_list.push({
-				R = 90,
-				P = 1.5,
+				R = 99,
+				P = 3.0,
 				S = "weapons/legend_hand_crossbow"
 			});
 		}

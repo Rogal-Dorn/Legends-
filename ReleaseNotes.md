@@ -1,5 +1,37 @@
 ### Legend Mod Release Notes
 
+17.0.2  
+Fixes scenario mode
+Duelist also gains half benefit from the offhand crossbow 
+Pacifist moves to tier 1 to allow conciencious objection early 
+Skull chain reduced to +5% chance to hit the head 
+
+
+fixed crash in tactical state 
+fixed adaptive not granting the Shovel perk tree
+fixed error in Hidden perk if no armor is equipped 
+fixed rare helmets not spawning in black market 
+fixed log error from helmet antlers
+fixed log errors from a missing blackmarket image
+fixed log errors from greater evil live phase 
+fixed log errors from campaign menu module 
+
+
+**changes missed in v17 patch notes**
+Clarification - food consumption rate not increased. This was reverted and patch notes not updated.
+Training can now rarely result in a permanent injury. Brain damage, a broken knee or a missing finger. 
+Unarmed tree perk order shifted around 
+Hand crossbow available in the bowyer event if you have an inventor 
+Wooden stake condition increased to support witch hunting
+Legendary creature rewards buffed and appear in slightly smaller groups. 
+
+
+reminder that many mods may be broken 
+- more save slots 
+- woditor
+- PTR 
+
+
 ## 17 Wildlands Warriors
 
 **Environment**

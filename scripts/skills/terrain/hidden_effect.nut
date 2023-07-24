@@ -95,11 +95,30 @@ this.hidden_effect <- this.inherit("scripts/skills/skill", {
 	//added all this missing code from legend_hidden_effect which seemingly controls the hidden graphics--
 	function onMovementCompleted( _tile )
 	{
+		//initialise variables
+		local body = 0;
+		local head = 0;
 		local actor = this.getContainer().getActor();
+		
+		//get the items
+		local bodyItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local headItem = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 
-		local body = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Body).getStaminaModifier();
-		local head = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Head).getStaminaModifier();
-
+		//check if the item exists to stop the error: getStaminaModifier does not exist
+		
+		if (bodyItem != null)
+		{
+		//update the variables
+		body = bodyItem.getStaminaModifier();
+		}
+		
+		if (headItem != null)
+		{	
+		head = headItem.getStaminaModifier();
+		}
+		
+		//calculate either on the initial or updated variable
+		
 		local fat = ::Math.abs(head + body);
 
 		local entites = this.Tactical.Entities.getAllHostilesAsArray();

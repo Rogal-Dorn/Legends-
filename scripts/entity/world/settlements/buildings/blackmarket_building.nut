@@ -571,62 +571,62 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 80,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_warlock_hood"
+				S = "legend_helmets/vanity/legend_helmet_warlock_hood"
 			},
 			{
 				R = 80,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_wizard_cowl"
+				S = "legend_helmets/vanity/legend_helmet_wizard_cowl"
 			},
 			{
 				R = 70,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_physicians_hood"
+				S = "legend_helmets/vanity/legend_helmet_physicians_hood"
 			},
 			{
 				R = 70,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_undertakers_hat"
+				S = "legend_helmets/vanity/legend_helmet_undertakers_hat"
 			},
 			{
 				R = 60,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_impaled_head"
+				S = "legend_helmets/vanity/legend_helmet_impaled_head"
 			},
 			{
 				R = 60,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_impaled_head"
+				S = "legend_helmets/vanity/legend_helmet_impaled_head"
 			},
 			{
 				R = 60,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_beret"
+				S = "legend_helmets/vanity/legend_helmet_beret"
 			},
 			{
 				R = 60,
 				P = 2.0,
-				S = "legend_armor/vanity/legend_helmet_sack"
+				S = "legend_helmets/vanity/legend_helmet_sack"
 			},
 			{
 				R = 60,
 				P = 3.0,
-				S = "legend_armor/top/legend_helmet_cult_hood"
+				S = "legend_helmets/top/legend_helmet_cult_hood"
 			},
 			{
 				R = 80,
 				P = 3.0,
-				S = "legend_armor/top/legend_helmet_mask_beak"
+				S = "legend_helmets/top/legend_helmet_mask_beak"
 			},
 			{
 				R = 40,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_southern_crown"
+				S = "legend_helmets/vanity/legend_helmet_southern_crown"
 			},
 			{
 				R = 60,
 				P = 3.0,
-				S = "legend_armor/vanity/legend_helmet_antler"
+				S = "legend_helmets/vanity/legend_helmet_antler"
 			},
 			{
 				R = 30,
