@@ -1,13 +1,14 @@
 ### Legend Mod Release Notes
 
 17.0.2  
-Fixes scenario mode
+
 Duelist also gains half benefit from the offhand crossbow 
-Pacifist moves to tier 1 to allow conciencious objection early 
+Pacifist moves to tier 1 to allow conscientious objection early 
 Skull chain reduced to +5% chance to hit the head 
 
-
-fixed crash in tactical state 
+**Fixes** 
+Fixes scenario mode
+fixed crash in tactical state from campaign menu issue
 fixed adaptive not granting the Shovel perk tree
 fixed error in Hidden perk if no armor is equipped 
 fixed rare helmets not spawning in black market 
@@ -15,7 +16,10 @@ fixed log error from helmet antlers
 fixed log errors from a missing blackmarket image
 fixed log errors from greater evil live phase 
 fixed log errors from campaign menu module 
-
+fixes from 17.0.01: 
+fixes missing image for black market 
+fixes greater eveil log spam
+fixes menu module error 
 
 **changes missed in v17 patch notes**
 Clarification - food consumption rate not increased. This was reverted and patch notes not updated.
@@ -26,7 +30,8 @@ Wooden stake condition increased to support witch hunting
 Legendary creature rewards buffed and appear in slightly smaller groups. 
 
 
-reminder that many mods may be broken 
+**reminder**
+Many mods may be broken 
 - more save slots 
 - woditor
 - PTR 
