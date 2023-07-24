@@ -487,11 +487,11 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			slot = this.Const.Items.HelmetUpgrades.ExtraVanity;
 		}
 		local oldIndex;
-		// uncomment these lines to make scenario battles work
-		//if ("Assets" in this.World && this.World.Assets != null)   
-		//{
-		oldIndex = "Assets" in ::World ? this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID()) : null;
-		//}
+
+		if ("Assets" in this.World && this.World.Assets.getStash())   
+		{
+		oldIndex =  this.World.Assets.getStash().getItemByInstanceID(_upgrade.getInstanceID());
+		}
 		
 		if (oldIndex != null) oldIndex = oldIndex.index
 		local oldItem;

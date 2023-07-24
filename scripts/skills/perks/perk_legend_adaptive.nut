@@ -59,7 +59,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					//Shovel
 						case "weapon.legend_named_shovel":
 						case "weapon.legend_shovel":
-							newTree = this.Const.Perks.ShoveClassTree;
+							newTree = this.Const.Perks.ShovelClassTree;
 							break;
 					//Spear
 						case "weapon.spear":
