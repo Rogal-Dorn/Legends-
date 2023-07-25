@@ -1147,7 +1147,7 @@ this.faction_manager <- {
 		}
 		else if (GE.NextPhaseTime <= this.Time.getVirtualTimeF())
 		{
-			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && this.World.State.getPlayer().getStrength() >= 160 && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+			if (GE.Phase == this.Const.World.GreaterEvilPhase.NotSet && (this.World.State.getPlayer().getStrength() >= 160 || this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition"))
 			{
 				this.logInfo("STARTING GREATER EVIL - WARNING PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Warning;
@@ -1193,7 +1193,7 @@ this.faction_manager <- {
 							possibilities.push(this.Const.World.GreaterEvilType.Greenskins);
 						}
 
-						if (GE.LastType != this.Const.World.GreaterEvilType.Undead && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+						if (GE.LastType != this.Const.World.GreaterEvilType.Undead || this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
 						{
 							possibilities.push(this.Const.World.GreaterEvilType.Undead);
 						}
@@ -1207,7 +1207,7 @@ this.faction_manager <- {
 					}
 				}
 			}
-			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && this.World.State.getPlayer().getStrength() >= 180  && !this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition")
+			else if (GE.Phase == this.Const.World.GreaterEvilPhase.Warning && (this.World.State.getPlayer().getStrength() >= 180  || this.World.Assets.getOrigin().getID() == "scenario.legends_inquisition"))
 			{
 				this.logInfo("STARTING GREATER EVIL - LIVE PHASE!");
 				GE.Phase = this.Const.World.GreaterEvilPhase.Live;

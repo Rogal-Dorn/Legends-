@@ -476,7 +476,7 @@ this.send_beast_roamers_action <- this.inherit("scripts/factions/faction_action"
 
 				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
 				{
-					if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Tundra && isTundraAllowed)
+					if (i == this.Const.World.TerrainType.Snow || i == this.Const.World.TerrainType.SnowyForest || i == this.Const.World.TerrainType.Tundra)
 					{
 					}
 					else

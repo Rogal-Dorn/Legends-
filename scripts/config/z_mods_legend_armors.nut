@@ -2081,8 +2081,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		],
 		Plate = [
 			[1, "plate/legend_southern_padded"], //
-			[1, "plate/legend_southern_padded_chest"], //
-			[1, "plate/legend_leather_padded"], //
+			[1, "plate/legend_armor_leather_padded"], //
 		],
 		Cloak = [
 		],
