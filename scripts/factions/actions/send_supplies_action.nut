@@ -86,6 +86,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		party.setMirrored(true);
 		party.setDescription("A caravan with armed escorts transporting provisions, supplies and equipment between settlements.");
 		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
+		party.setOrigin(this.World.State.getCurrentTown());
 		party.getFlags().set("IsCaravan", true);
 		party.getFlags().set("IsRandomlySpawned", true);
 
@@ -129,36 +130,44 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			local resources = this.Math.max(1, this.Math.round(0.05 * this.m.Start.getResources()));
-			this.m.Start.setResources(this.m.Start.getResources() - resources);
-			party.setResources(resources);
-
-			local r = this.Math.rand(3,6);
-			for( local j = 0; j < r; j = ++j )
+			local town = this.m.Start;
+			local value; 
+			foreach (building in town.getBuildings())
 			{
-				local items = [
-					[0, "supplies/bread_item"],
-					[0, "supplies/roots_and_berries_item"],
-					[0, "supplies/dried_fruits_item"],
-					[0, "supplies/ground_grains_item"],
-					[0, "supplies/dried_fish_item"],
-					[0, "supplies/beer_item"],
-					[0, "supplies/goat_cheese_item"],
-					[1, "supplies/legend_fresh_fruit_item"],
-					[1, "supplies/legend_fresh_meat_item"],
-					[1, "supplies/legend_pie_item"],
-					[1, "supplies/legend_porridge_item"],
-					[1, "supplies/legend_pudding_item"],
-					[0, "supplies/mead_item"],
-					[0, "supplies/medicine_item"],
-					[0, "supplies/pickled_mushrooms_item"],
-					[0, "supplies/preserved_mead_item"],
-					[0, "supplies/smoked_ham_item"],
-					[0, "supplies/wine_item"]
-				]
+				local stash = building.getStash()
+				if (stash != null)
+				{
+					foreach (item in stash.getItems())
+					{
+					if (item == null) continue;
 
-				local item = this.Const.World.Common.pickItem(items)
-				party.addToInventory(item);
+
+						if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+						{
+							if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+							{
+								party.addToInventory(item);
+								
+							}
+							else
+							{
+								local r = this.Math.rand(1,10);
+								if (r == 1)
+								{							
+								party.addToInventory(item);
+								value += item.getValue() * 0.01;
+								}
+							}
+
+						}
+					}
+				}
+			value = this.Math.floor(value);
+			local resources = this.Math.max(1, this.Math.round(0.025 * town.getResources()));
+			local total = value + resources;
+			town.setResources(town.getResources() - total);
+			party.setResources(resources + value);
+			this.logWarning("Exporting " + resources + " resources and " + party.getInventory().len() + "items from " + town.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
 			}
 		}
 		else

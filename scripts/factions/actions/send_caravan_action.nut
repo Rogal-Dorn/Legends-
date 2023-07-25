@@ -130,6 +130,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			local town = this.m.Start;
+			local value; 
 			foreach (building in town.getBuildings())
 			{
 				local stash = building.getStash()
@@ -153,17 +154,20 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 								if (r == 1)
 								{							
 								party.addToInventory(item);
+								value += item.getValue() * 0.01;
 								}
 							}
 
 						}
 					}
 				}
-			}
+			value = this.Math.floor(value);
 			local resources = this.Math.max(1, this.Math.round(0.025 * town.getResources()));
-			//town.setResources(town.getResources() - resources);
-			party.setResources(resources);
+			local total = value + resources;
+			town.setResources(town.getResources() - total);
+			party.setResources(resources + value);
 			this.logWarning("Exporting " + resources + " resources and " + party.getInventory().len() + "items from " + town.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
+			}
 		}
 
 		else

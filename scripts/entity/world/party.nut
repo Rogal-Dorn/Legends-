@@ -70,8 +70,13 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 	
 	function setOrigin( _origin )
 	{
-		this.m.Destination = _origin;
+		this.m.Origin = _origin;
 	}
+
+	function getOrigin( _origin )
+	{
+		this.m.Origin = _origin;
+	}	
 
 	function setPath( _path )
 	{

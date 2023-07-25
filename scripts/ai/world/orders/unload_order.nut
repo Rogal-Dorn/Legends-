@@ -15,30 +15,28 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				local origin = _entity.getOrigin();
 				local inv = _entity.getInventory();
-				local payment; 
+				local tradegoods; 
 				if (inv != null)
 					{
 						foreach (item in inv.getItems())
 						{
 							if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 							{
-							payment += item.getResourceValue();
+							tradegoods += item.getResourceValue();
 							}
 							else
 							{
-							payment += item.getValue() * 0.001;
-							this.setResources(this.getResources() + payment);
 							}
 							
 						}
-						payment = this.Math.floor(payment)
+						tradegoods = this.Math.floor(tradegoods)
 					}
 				if (origin != null)
 				{
-				local totalPayment = this.getResources();
+				local totalPayment = this.getResources() - tradegoods;
 				
 				origin.setResources(origin.getResources() + this.getResources());
-				settlement.setResources(settlement.getResources() - this.getResources());
+				settlement.setResources(settlement.getResources() - totalPayment);
 				this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + this.getResources() + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
 				}
 				
