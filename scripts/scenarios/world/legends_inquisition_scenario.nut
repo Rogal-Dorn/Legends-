@@ -170,6 +170,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		//unleash the dogs of war 
 		this.World.FactionManager.setGreaterEvilType(this.Const.World.GreaterEvilType.Undead);
 		this.World.FactionManager.setGreaterEvilPhase(this.Const.World.GreaterEvilPhase.Live);
+		this.World.FactionManager.addGreaterEvilStrength(500);
 		this.World.Statistics.addNews("crisis_undead_start", this.World.Statistics.createNews());
 	}
 

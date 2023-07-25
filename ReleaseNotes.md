@@ -1,5 +1,15 @@
 ### Legend Mod Release Notes
 
+17.0.3
+Unarmed tree perks reordered
+Inquisition undead crisis made stronger, and made the fight undead ambition available  
+Fixed Adaptive sometimes not giving you a perk tree
+Fixes error with clarity rune not spawning in Black Market
+Fixes beasts not spawning because they were checking if they were allowed in the tundra 
+Fixed Small Target defense values not adding up correctly until you get into battle 
+Fixed an error with padded leather armor not spawning 
+
+
 17.0.2  
 
 Duelist also gains half benefit from the offhand crossbow 
