@@ -2366,7 +2366,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[2, "top/legend_helmet_faceplate_pointed"],
 			[3, "top/legend_helmet_faceplate_pointed_slit"],
 			[3, "top/legend_helmet_facemask"],
-			[3, "top/legend_helmet_noseplate"],
+			[3, "top/legend_helmet_nose_plate"],
 			[1, "top/legend_helmet_goblin_gillie"],
 		],
 		Vanity = [
@@ -2405,7 +2405,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 			[1, "top/legend_helmet_faceplate_gold"],
 			[3, "top/legend_helmet_southern_faceplate"],
 			[1, "top/legend_helmet_facemask"],
-			[1, "top/legend_helmet_noseplate"],
+			[1, "top/legend_helmet_nose_plate"],
 			[1, "top/legend_helmet_goblin_gillie"],
 		],
 		Vanity = [
