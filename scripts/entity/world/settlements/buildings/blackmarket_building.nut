@@ -614,9 +614,9 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				S = "legend_helmets/top/legend_helmet_mask_beak"
 			},
 			{
-				R = 40,
+				R = 50,
 				P = 3.0,
-				S = "legend_helmets/vanity/legend_helmet_southern_crown"
+				S = "legend_helmets/vanity/legend_helmet_crown"
 			},
 			{
 				R = 60,
