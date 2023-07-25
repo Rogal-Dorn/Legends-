@@ -680,6 +680,11 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			},
 			{
 				R = 30,
+				P = 1.0,
+				S = "supplies/legend_liquor_item"
+			},
+			{
+				R = 30,
 				P = 2.0,
 				S = "tools/reinforced_throwing_net"
 			},

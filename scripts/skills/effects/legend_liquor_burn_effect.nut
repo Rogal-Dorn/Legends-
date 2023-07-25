@@ -1,11 +1,11 @@
-this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
+this.legend_liquor_burn_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		TurnsLeft = 6
+		TurnsLeft = 2
 	},
 	function create()
 	{
-		this.m.ID = "effects.legend_beer_buzz_effect";
-		this.m.Name = "Buzzed";
+		this.m.ID = "effects.legend_liquor_burn_effect";
+		this.m.Name = "Liquor Burn";
 		this.m.Icon = "skills/status_effect_92.png";
 		this.m.IconMini = "status_effect_92_mini";
 		this.m.Overlay = "status_effect_92";
@@ -17,7 +17,7 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "After guzzling beer, this character has [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve, Melee and Ranged Skill, [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Defenses and [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
+		return "After consuming mead, this character has [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Resolve, Melee and Ranged Skill, [color=" + this.Const.UI.Color.NegativeValue + "]-12[/color] Defenses and [color=" + this.Const.UI.Color.NegativeValue + "]-24[/color] Initiative for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] turn(s).";
 	}
 
 	function getTooltip()
@@ -37,37 +37,37 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 				id = 11,
 				type = "text",
 				icon = "ui/icons/bravery.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Resolve"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Melee Skill"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Ranged Skill"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Ranged Skill"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-12[/color] Melee Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-12[/color] Ranged Defense"
 			},
 			{
 				id = 11,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-24[/color] Initiative"
 			}
 		];
 		return ret;
@@ -75,18 +75,19 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.Bravery += 3;
-		_properties.MeleeSkill += 3;
-		_properties.RangedSkill += 3;
-		_properties.MeleeDefense -= 3;
-		_properties.RangedDefense -= 3;
-		_properties.Initiative -= 6;
+
+		_properties.Bravery += 12;
+		_properties.MeleeSkill += 12;
+		_properties.RangedSkill += 12;
+		_properties.MeleeDefense -= 12;
+		_properties.RangedDefense -= 12;
+		_properties.Initiative -= 24;
 
 	}
 
 	function onAdded()
 	{
-		this.m.TurnsLeft = 6;
+		this.m.TurnsLeft = 2;
 	}
 
 	function onTurnEnd()
@@ -100,11 +101,11 @@ this.legend_beer_buzz_effect <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		local actor = this.getContainer().getActor();
-		if (this.Math.rand(1, 100) <= 10 && !actor.getSkills().hasSkill("trait.drunkard"))
+		if (this.Math.rand(1, 100) <= 30 && !actor.getSkills().hasSkill("trait.drunkard"))
 		{
 			this.getContainer().add(this.new("scripts/skills/effects_world/hangover_effect"));
 		}
-		else if (this.Math.rand(1, 100) <= 5 && actor.getSkills().hasSkill("trait.drunkard"))
+		else if (this.Math.rand(1, 100) <= 15 && actor.getSkills().hasSkill("trait.drunkard"))
 		{
 			this.getContainer().add(this.new("scripts/skills/effects_world/hangover_effect"));
 		}
