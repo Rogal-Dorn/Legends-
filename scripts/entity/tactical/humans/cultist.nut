@@ -107,14 +107,13 @@ this.cultist <- this.inherit("scripts/entity/tactical/human", {
 			this.m.Items.equip(this.new("scripts/items/weapons/legend_ranged_wooden_flail"));
 		}
 
-		if (items.hasEmptySlot(this.Const.ItemSlot.Offhand))
+		if (this.Math.rand(1, 100) <= 66 && this.m.Items.hasEmptySlot(this.Const.ItemSlot.Offhand))
 		{
-			if (this.Math.rand(1, 100) <= 20)
+			if (this.Math.rand(1, 100) <= 50)
 			{
 				this.m.Items.equip(this.new("scripts/items/tools/throwing_net"));
 			}
-
-			else if (this.Math.rand(1, 100) <= 20)
+			else
 			{
 				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield_old"));
 			}
