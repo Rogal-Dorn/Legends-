@@ -26,7 +26,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "Fluid like water! \n\n This character is a skilled unarmed combatant who can effectively follow up any attack with a punch from their off hand! \n\n With unarmed mastery and both hands are free, they also gain additional melee skill and melee defense.";
+		return "Fluid like water!\n\nThis character will follow up any attack with a punch from their off hand! If both hands are free, they also gain additional melee skill and melee defense.";
 	}
 
 	function getTooltip()
@@ -46,10 +46,10 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				type = "description",
 				text = this.getDescription() // Since the passive should have a different name than the perk in this case
 			}
-			
+
 		];
 
-		if (main == null && this.m.Container.getActor().getCurrentProperties().IsSpecializedInFists)
+		if (main == null)
 		{
 			ret.push({
 					id = 3,
@@ -90,14 +90,12 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand)
-		if(_properties.IsSpecializedInFists)
-		{
-			if ((main == null || this.getContainer().hasSkill("effects.disarmed")) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
-			{
-				_properties.MeleeDefense += 10;
-				_properties.MeleeSkill += 5;
 
-			}
+		if ((main == null || this.getContainer().hasSkill("effects.disarmed")) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
+		{
+			_properties.MeleeDefense += 10;
+			_properties.MeleeSkill += 5;
+
 		}
 	}
 
@@ -105,6 +103,5 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Available = true;
 	}
-	
-});
 
+});
