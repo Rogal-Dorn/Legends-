@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "17.0.3",
+	Version = "17.0.4",
 	Name = "Legends Mod",
 	BuildName = "Wealthy Wetlands Warriors"
 };
@@ -11,6 +11,8 @@
 
 	::mods_registerJS("legends_assets.js");
 	::LegendsMod <- this.new("scripts/mods/legends_mod")
+	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-Bugs");
+    ::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
 	::Const.LegendMod.addSettings();
 	::Const.LegendMod.hookMSU();
