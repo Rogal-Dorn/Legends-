@@ -1,7 +1,5 @@
 this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
-	m = {
-			Available = true
-		},
+	m = {},
 	function create()
 	{
 		this.m.ID = "perk.legend_ambidextrous";
@@ -72,16 +70,14 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 		local items = this.getContainer().getActor().getItems();
 		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
 		{
-			if (this.m.Available)
+			if (!_forFree)
 			{
 				if (_targetTile == null) // Is this necessary?
 				{
 					return;
 				}
-				this.m.Available = false;
 				local attack = this.getContainer().getSkillByID("actives.hand_to_hand");
 				attack.useForFree(_targetTile);
-				this.m.Available = true;
 			}
 		}
 	}
@@ -97,11 +93,6 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 			_properties.MeleeSkill += 5;
 
 		}
-	}
-
-	function onTurnStart()
-	{
-		this.m.Available = true;
 	}
 
 });
