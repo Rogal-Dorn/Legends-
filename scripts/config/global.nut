@@ -441,7 +441,7 @@ gt.Const.EntityType <- {
 	SatoManhunterRanged = 166,
 	SatoManhunterVeteranRanged = 167,
 	LegendNobleGuard = 168,
-	LegendManAtArms = 169,
+	LegendManAtArms = 169
 	
 		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
@@ -793,6 +793,8 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.PeasantSouthern:
 		case this.Const.EntityType.SatoManhunter:
 		case this.Const.EntityType.SatoManhunterVeteran:
+		case this.Const.EntityType.SatoManhunterRanged:
+		case this.Const.EntityType.SatoManhunterVeteranRanged:	
 			return this.Const.FactionType.OrientalCityState;
 
 		case this.Const.EntityType.NomadCutthroat:

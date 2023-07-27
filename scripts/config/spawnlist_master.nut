@@ -1666,11 +1666,11 @@ gt.Const.World.Spawn.Troops <- {
 		Script = "scripts/entity/tactical/humans/sato_manhunter_ranged"
 	},
 	SatoManhunterVeteranRanged = {
-		ID = this.Const.EntityType.SatoManhunterVeteran,
+		ID = this.Const.EntityType.SatoManhunterVeteranRanged,
 		Variant = 1,
 		Strength = 25,
 		Cost = 28,
-		Row = 1,
+		Row = 2,
 		Script = "scripts/entity/tactical/humans/sato_manhunter_veteran_ranged",
 		NameList = this.Const.Strings.SouthernNames,
 		TitleList = this.Const.Strings.SatoManhunterVeteranTitles
