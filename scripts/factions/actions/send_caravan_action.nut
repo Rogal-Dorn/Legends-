@@ -130,7 +130,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			local town = this.m.Start;
-			local value; 
+			local value = 0; 
 			foreach (building in town.getBuildings())
 			{
 				local stash = building.getStash()
@@ -149,12 +149,15 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 								
 							}
 							else
-							{
+							{		
 								local r = this.Math.rand(1,10);
 								if (r == 1)
 								{							
 								party.addToInventory(item);
-								value += item.getValue() * 0.01;
+									if (item.getValue())
+									{
+									value += item.getValue() * 0.01;
+									}
 								}
 							}
 
