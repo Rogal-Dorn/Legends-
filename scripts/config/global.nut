@@ -440,7 +440,7 @@ gt.Const.EntityType <- {
 	Oathbringer = 165,
 	SatoManhunterRanged = 166,
 	SatoManhunterVeteranRanged = 167,
-	LegendNobleGuard= 168,
+	LegendNobleGuard = 168,
 	LegendManAtArms = 169,
 	
 		/**
@@ -980,9 +980,13 @@ gt.Const.EntityIcon <- [
 	"mercenary_orientation",//Pikemen
 	"mercenary_orientation",//Infantry
 	"mercenary_orientation",//Leaders
-	"mercenary_orientation" //Managers
-
+	"mercenary_orientation", //Managers
+	
 	"oathbringer_orientation",
-	"footman_veteran_orientation",//VeteranFootman
-	"footman_veteran_orientation"//LegendManAtArms
+	
+	"nomad_02",
+	"nomad_05",
+	
+	"footman_veteran_orientation", //LegendNobleGuard
+	"footman_veteran_orientation" //LegendManAtArms
 ];

@@ -299,6 +299,8 @@ gt.Const.Strings.EntityName <- [
 	"Free Company Leader",
 	"Free Company Ringleader",
 	"Oathbringer",
+	"Manhunter Handgonner",
+	"Manhunter Veteran Handonner",
 	"Noble Guard",
 	"Man at Arms"
 ];
@@ -469,6 +471,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Free Company Leaders",
 	"Free Company Ringleaders",
 	"Oathbringers",
+	"Manhunter Handgonners",
+	"Manhunter Veteran Handonners",
 	"Veteran Footmen",
 	"Men at Arms"
 ];
