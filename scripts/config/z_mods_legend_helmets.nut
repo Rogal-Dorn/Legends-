@@ -343,7 +343,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 	}]
 	},{
 		ID = "faction_helm",
-		Script = "scripts/items/legend_helmets/helmets/legend_helmet_faction_helmet",
+		Script = "scripts/items/legend_helmets/helmets/legend_faction_helmet",
 		Sets = [{
 		Hoods = [
 		],
