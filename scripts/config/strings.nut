@@ -2837,7 +2837,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five height in one move. Does not trigger attacks of opportunity"
 	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain +100 Melee and Ranged defences. Lose 1 point for every point of armor and health you have.",
 	LegendFashionable = "Use flowing, billiowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit. \n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
-	LegendMeek = "Being quiet and unassuming can makes enemies underestimate how good you are at cowering and avoiding conflict \n\n Gain %100 lucky chance to force an enemy to reroll a failed attack. Lose 1% for every point of Melee Defense and Resolve you have.",
+	LegendMeek = "Your unassuming posture leads the enemy to think you are an easy target, making their attacks careless. \n\n Force an enemy to reroll their successful attacks. \n\n This chance starts at 100% and is reduced by 1% for every point of Melee Defense and Resolve you have. ",
 	LegendHelpful = "Amateurs discuss tactics, the professionals discuss logistics \n\n Gain the ability to freely give items from your bag to allies"
 
 };
