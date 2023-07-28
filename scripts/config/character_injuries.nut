@@ -962,20 +962,6 @@ gt.Const.Injury.CampTraining <- [
 		Script = "injury/pierced_hand_injury"
 	},
 	{
-		ID = "injury.missing_finger",
-		Threshold = 0.50000000,
-		Script = "injury_permanent/missing_finger_injury"
-	},
-	{
-		ID = "injury.broken_knee",
-		Script = "injury_permanent/broken_knee_injury"
-	},
-	{
-		ID = "injury.brain_damage",
-		Threshold = 0.75000000,
-		Script = "injury_permanent/brain_damage_injury"
-	},
-	{
 		ID = "injury.injured_knee_cap",
 		Threshold = 0.50000000,
 		Script = "injury/injured_knee_cap_injury"

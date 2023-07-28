@@ -10,7 +10,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		this.camp_building.create();
 		this.m.ID = this.Const.World.CampBuildings.Gatherer;
 		this.m.ModName = "Gathering";
-		this.m.BaseCraft = 1.0;
+		this.m.BaseCraft = 0.5;
 		this.m.Slot = "gather";
 		this.m.Name = "Supply Tent";
 		this.m.Description = "Send people out to gather supplies like medicinal herbs, plants, wood and stones.";
