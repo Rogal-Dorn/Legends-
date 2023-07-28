@@ -47,7 +47,7 @@ this.legend_reserve_gets_fat_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 		
-		if (this.World.Assets.getFood() < 50)
+		if (this.World.Assets.getFood() < 100)
 		{
 			return;
 		}
