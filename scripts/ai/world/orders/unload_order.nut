@@ -16,7 +16,8 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				local origin = _entity.getOrigin();
 				local inv = _entity.getInventory();
 				local tradegoods; 
-				if (inv != null)
+				local value = 0; 
+				if (inv != null && inv.getItems())
 					{
 						foreach (item in inv.getItems())
 						{
@@ -26,6 +27,11 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 							}
 							else
 							{
+							
+								if (item.getValue())
+								{
+								value += item.getValue() * 0.01;
+								}
 							}
 							
 						}
@@ -33,7 +39,9 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					}
 				if (origin != null)
 				{
-				local totalPayment = this.getResources() - tradegoods;
+				value = this.Math.floor(value);
+				local total = value + tradegoods;
+				local totalPayment = this.getResources() - total;
 				
 				origin.setResources(origin.getResources() + this.getResources());
 				settlement.setResources(settlement.getResources() - totalPayment);
