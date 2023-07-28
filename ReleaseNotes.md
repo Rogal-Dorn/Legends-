@@ -1,5 +1,66 @@
 ### Legend Mod Release Notes
 
+17.0.7
+Permanent injuries removed from training tent injury pool, however:
+- trainees now additionally get exhausted about as often as they get injured
+- If you put an injured person in to train and they get injured again, it will be permanent 
+- The same fate awaits if they train while exhausted, drunk, hungover, irritable or have a headache 
+Gatherering rate reduced, it had escaped the nerfs of the other tents 
+
+Fixes error where Krastenbrust plate and noble tabards didn't spawn 
+
+
+
+17.0.6
+Fixes crashes when fighting noble guard, men at arms, manhunter handgonners and manhunter veteran handgonners.
+Fixes error if a caravan arrived with no items
+Fixes Camp Kitchen not working properly when upgraded
+Fixes Heraldic plates not having graphics
+Fixes instance where faction helmets wouldn't load
+Fixes more issues with scars and warpaint not loading correctly
+Balance:
+
+Nine tails flogging can target three tiles
+Thieves and assassins guaranteed bow skills so they can always act as lookouts for your party
+
+
+17.0.5
+Fixes
+
+Fixes errors with women not having scars, tattoos and warpaint. This stops the cause of some corrupted saves and graphics issues
+Fixes instances where noble and manhunter parties couldn't attack or be attacked.
+Fixes log errors from caravans exporting invaluable items, this fixes some instances of towns not being enterable
+Fixes Steelbrow not working correctly
+Fixes vampires taking too little damage from most weapons
+Fixes log errors from parties not knowing where they came from
+Fixes the noble joiner event from giving both disloyal and loyal to the recruit
+Fixes a typo in the 'helpful' perk
+Fixes perfect fit not applying the initiative bonus correctly
+Balance
+
+Big game hunter reworked: gain an additional modifier that deals bonus damage based on the target's missing health. When not fighting beasts, gain +10% ranged weapon damage but no additional modifier. Only works with ranged weapons.
+Ambidextrous does not reduce AP cost until you have mastery, also doesn't apply to attacks of opportunity
+Buffs debilitate by reducing the fatigue cost, making it so that it is not lost on miss and adds +15% damage
+
+Version 17.0.4
+
+Caravans can be a bit better guarded
+Buffs debilitate by reducing the fatigue cost and making it so that it is not lost on miss. Also adds +15% damage against debilitated targets
+
+Fixes
+
+Fixes an issue where cities couldn't be entered due to an Australian mispronouncing liquor as liguor
+Fixes a crash when a spiked collar died
+Fixes scaling beggar sometimes having too many perks to fit on the screen
+Fixes named bladed pikes not appearing
+Fixes nose plate not loading in battle or buildings
+Fixes crowns not appearing in the black market
+Fixes a typo in the named bladed pike's ID that was causing it to be incorrectly referenced.
+Fixes incorrect instance of cultists not getting an offhand item assigned in battle
+Fixed and issue where refugees and supply caravans didn't know where they had come from
+Fixed a caravan error when world economy was disabled
+Fixed and issue with faction helmets not loading
+
 17.0.3
 Unarmed tree perks reordered
 Inquisition undead crisis made stronger, and made the fight undead ambition available  
