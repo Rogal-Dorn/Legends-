@@ -1455,15 +1455,15 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "chain/legend_armor_reinforced_mail"],
 		],
 		Plate = [
-			[1, "chain/legend_armor_plate_krastenbrust"],
-			[1, "chain/legend_armor_plate_full"],
+			[1, "plate/legend_armor_plate_krastenbrust"],
+			[1, "plate/legend_armor_plate_full"],
 		],
 		Cloak = [
 			[3, ""],
-			[1, "chain/legend_armor_cloak_heavy"],
+			[1, "cloak/legend_armor_cloak_heavy"],
 		],
 		Tabard = [
-		[2, "tabard/legend_armor_noble_tabard"],
+		[2, "tabard/legend_noble_tabard"],
 		],
 		Attachments =[
 		]
@@ -1491,7 +1491,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		[2, "cloak/legend_armor_cloak_noble"],
 		],
 		Tabard = [
-		[2, "tabard/legend_armor_noble_tabard"],
+		[2, "tabard/legend_noble_tabard"],
 		],
 		Attachments =[
 			[5, ""],
