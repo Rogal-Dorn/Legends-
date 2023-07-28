@@ -1,4 +1,4 @@
-this.legend_noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
+this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 	m = {},
 	function create()
 	{
