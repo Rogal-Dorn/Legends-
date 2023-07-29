@@ -5,7 +5,7 @@ this.legend_liquor_item <- this.inherit("scripts/items/supplies/legend_usable_fo
 		this.legend_usable_food.create();
 		this.m.ID = "supplies.legend_liquor";
 		this.m.Name = "Liquor";
-		this.m.Description = "Provisions. Very  Can be drunk in battle to grant +12 resolve, melee and ranged skill. At the expense of -24 initiative and -12% melee defense and ranged defense, the effect lasts for two turns. Will be used as provisions while travelling if left in the company inventory.";
+		this.m.Description = "Provisions. Can be consumed in battle to grant +12 resolve, melee and ranged skill. At the expense of -24 initiative and -12% melee defense and ranged defense, the effect lasts for two turns. Will be used as provisions while travelling if left in the company inventory.";
 		this.m.Icon = "supplies/legend_liquor.png";
 		this.m.Value = 300;
 		this.m.Amount = 30.0;

@@ -41,7 +41,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "This character is not wearing any body armor and hence receives no bonus from this perk"
+				text = "This character is not wearing any body armor and receives no bonus from this perk"
 			});
 		}
 
