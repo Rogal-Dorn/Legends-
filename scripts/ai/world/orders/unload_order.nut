@@ -31,9 +31,9 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 
 				if (origin != null)
 				{
-					local totalPayment = _entity.getResources() - tradegoods;
+					local totalPayment = _entity.getResources() + tradegoods;
 					
-					origin.setResources(origin.getResources() + _entity.getResources());
+					origin.setResources(origin.getResources() + totalPayment);
 					settlement.setResources(settlement.getResources() - totalPayment);
 					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + totalPayment + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
 				}
