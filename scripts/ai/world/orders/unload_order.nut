@@ -47,7 +47,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					{
 						// this will prevent adding the same item over and over
 						local produce = inv.remove(this.Math.rand(0, inv.len() - 1));
-						this.logWarning("Importing \'" + produce.getName() + "\' to " + settlement.getName() +  "\'s marketplace");	
+						this.logWarning("Moving \'" + produce.getName() + "\' to " + settlement.getName() +  "\'s marketplace");	
 						settlement.addImportedProduce(produce);
 					}
 				}
