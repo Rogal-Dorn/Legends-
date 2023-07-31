@@ -35,7 +35,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					
 					origin.setResources(origin.getResources() + _entity.getResources());
 					settlement.setResources(settlement.getResources() - totalPayment);
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + this.getResources() + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
+					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + totalPayment + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
 				}
 				
 				if (inv.len() != 0)
