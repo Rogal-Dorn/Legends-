@@ -22,25 +22,5 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 		this.m.ResolveModifier = 10;
 	}
 
-	function updateVariant()
-	{
-		local variant = this.m.Variant;
-
-		if (variant < 10)
-		{
-			variant = "0" + variant;
-		}
-
-		this.m.Icon = "armor_upgrades/upgrade_" + variant + ".png";
-		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_" + variant + ".png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_" + variant + ".png";
-		this.m.SpriteFront = "upgrade_" + variant + "_front";
-		this.m.SpriteBack = "upgrade_" + variant + "_back";
-		this.m.SpriteDamagedFront = "upgrade_" + variant + "_front_damaged";
-		this.m.SpriteDamagedBack = "upgrade_" + variant + "_back_damaged";
-		this.m.SpriteCorpseFront = "upgrade_" + variant + "_front_dead";
-		this.m.SpriteCorpseBack = "upgrade_" + variant + "_back_dead";
-	}
 });
 
