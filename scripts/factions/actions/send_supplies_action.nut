@@ -136,26 +136,41 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			// gather goods from shops to export
 			foreach (building in this.m.Start.getBuildings())
 			{
-				local stash = building.getStash()
-				if (stash != null)
-				{
-					foreach (item in stash.getItems())
-					{
-						if (item == null) continue;
+				local g = [];
+				local stash = building.getStash();
 
-						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+				if (stash == null) continue;
+				
+				// gather goods to export
+				foreach (item in stash.getItems())
+				{
+					if (item == null) continue;
+
+					if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+					{	
+					}
+					else if (this.Math.rand(1,10) == 1)
+					{							
+						if (item.getValue() > 0)
 						{
-							party.addToInventory(item);
-						}
-						else if (this.Math.rand(1, 10) == 1)
-						{
-							party.addToInventory(item);
-							if (item.getValue() > 0)
-							{
-								value += item.getValue() * 0.01;
-							}
+							value += item.getValue() * 0.01;
 						}
 					}
+					else
+					{
+						continue;
+					}
+
+					party.addToInventory(item);
+					g.push(item);
+				}
+
+				// make sure to remove the gathered goods from the shop
+				// if the item isn't removed, it might cause an issue when players buy those items
+				// remember an item shouldn't be at 2 different inventories at the same time
+				foreach (item in g)
+				{
+					stash.remove(item);
 				}
 			}
 
