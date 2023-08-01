@@ -1930,16 +1930,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return;
 		}
 
-		local marketplace;
-
-		foreach( building in this.m.Buildings )
-		{
-			if (building != null && building.getID() == "building.marketplace")
-			{
-				marketplace = building;
-				break;
-			}
-		}
+		local marketplace = this.getBuilding("building.marketplace");
 
 		if (marketplace == null)
 		{
@@ -1948,8 +1939,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		foreach( p in this.m.ProduceImported )
 		{
-			local item = this.new("scripts/items/" + p);
-			marketplace.getStash().add(item);
+			marketplace.getStash().add(this.new("scripts/items/" + p));
 		}
 
 		foreach( p in this.m.ImportedGoodsInventory.getItems() )
