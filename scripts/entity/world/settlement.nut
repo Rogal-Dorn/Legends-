@@ -1925,7 +1925,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function updateImportedProduce()
 	{
-		if (this.m.ProduceImported.len() == 0 || this.m.ImportedGoodsInventory.getItems().len() == 0)
+		if (this.m.ProduceImported.len() == 0 && this.m.ImportedGoodsInventory.getItems().len() == 0)
 		{
 			return;
 		}
