@@ -18,24 +18,34 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				local origin = _entity.getOrigin();
 				local inv = _entity.getStashInventory().getItems();
 				local tradegoods = 0.0; 
-				
+				local profit = 0; 
 				foreach (item in inv)
 				{
 					if (item.isItemType(this.Const.Items.ItemType.TradeGood))
 					{
 						tradegoods += item.getResourceValue();
 					}
+					else
+					{
+					
+						if (item.getValue())
+						{
+						profit += item.getValue() * 0.01;
+						}
+					}
+							
 				}
 
 				tradegoods = this.Math.floor(tradegoods)
+				profit = this.Math.floor(profit)
 
 				if (origin != null)
 				{
-					local totalPayment = _entity.getResources() + tradegoods;
+					local totalPayment = tradegoods + profit;
 					
 					origin.setResources(origin.getResources() + totalPayment);
-					settlement.setResources(settlement.getResources() - totalPayment);
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + totalPayment + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
+					settlement.setResources(settlement.getResources() + tradegoods);
+					this.logInfo("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + totalPayment + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
 				}
 				
 				if (inv.len() != 0)
@@ -47,7 +57,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					{
 						// this will prevent adding the same item over and over
 						local produce = inv.remove(this.Math.rand(0, inv.len() - 1));
-						this.logWarning("Importing \'" + produce.getName() + "\' to " + settlement.getName() +  "\'s marketplace");	
+						this.logInfo("Importing \'" + produce.getName() + "\' to " + settlement.getName() +  "\'s marketplace");	
 						settlement.addImportedProduce(produce);
 					}
 				}

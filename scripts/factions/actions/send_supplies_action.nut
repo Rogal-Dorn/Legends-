@@ -69,6 +69,54 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
+		local party;
+		local value = 0; 
+		local tradegoods = 0; 
+		local totalValue = 0;
+		local itemList = [];
+		// If we have world economy on, check how much the caravan is worth 
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+		{
+
+			foreach (building in this.m.Start.getBuildings())
+			{
+				local stash = building.getStash()
+				if (stash != null)
+				{
+					foreach (item in stash.getItems())
+					{
+						if (item == null) continue;
+
+						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
+						{
+							
+							tradegoods += item.getResourceValue();
+							itemList.append(item) // Store item in array instead of directly adding to party
+						}
+						else if (this.Math.rand(1,10) == 1)
+						{								
+							
+							if (item.getValue() > 0)
+							{
+								value += item.getValue() * 0.01;
+							}
+							itemList.append(item) // Store item in array instead of directly adding to party
+						}
+					}
+				}
+			}
+			value = this.Math.floor(value);
+			tradegoods = this.Math.floor(tradegoods);
+			totalValue = value + tradegoods;
+		}
+		else
+		{
+		// if there is no world economy use the vanilla resource calculation
+		tradegoods = this.Math.round(0.1 * this.m.Start.getResources());
+		totalValue = this.m.Start.getResources() * 0.1;
+		}
+	
+	
 		local spawnParty = this.Const.World.Spawn.NobleCaravan;
 		local r = this.Math.rand(1, 100)
 		if (r > 75)
@@ -80,7 +128,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			spawnParty = this.Const.World.Spawn.MixedNobleCaravan;
 		}
 		r = this.Math.rand(100, 200) * 0.01;
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, spawnParty, r * 100 + this.Math.round(0.1 * this.m.Start.getResources()));
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, spawnParty, r * 100 + this.Math.round(totalValue * 2));
 		party.getSprite("body").setBrush(this.Const.World.Spawn.NobleCaravan.Body);
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -132,39 +180,12 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			local value = 0;
-			// gather goods from shops to export
-			foreach (building in this.m.Start.getBuildings())
+
+			// Now that party has been spawned, transfer items from itemList to party's inventory
+			foreach(item in itemList)
 			{
-				local stash = building.getStash()
-				if (stash != null)
-				{
-					foreach (item in stash.getItems())
-					{
-						if (item == null) continue;
-
-						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
-						{
-							party.addToInventory(item);
-						}
-						else if (this.Math.rand(1, 10) == 1)
-						{
-							party.addToInventory(item);
-							if (item.getValue() > 0)
-							{
-								value += item.getValue() * 0.01;
-							}
-						}
-					}
-				}
-			}
-
-			value = this.Math.floor(value);
-			local resources = this.Math.max(1, this.Math.round(0.025 * this.m.Start.getResources()));
-			local total = value + resources;
-			this.m.Start.setResources(this.m.Start.getResources() - total);
-			party.setResources(resources + value);
-			this.logWarning("Exporting " + resources + " resources and " + party.getStashInventory().getItems().len() + " items from " + this.m.Start.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
+				party.addToInventory(item);
+			}		
 		}
 		else
 		{
