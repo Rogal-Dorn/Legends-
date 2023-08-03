@@ -523,11 +523,6 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				P = 20.0,
 				S = "special/bodily_reward_item"
 			},
-			{
-				R = 99,
-				P = 20.0,
-				S = "special/fountain_of_youth_item"
-			},
 			// runes removed due to being bugged when acquired this way
 			//{
 			//	R = 90,
