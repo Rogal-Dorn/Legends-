@@ -69,151 +69,89 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-			local party;
+		local party;
 
-			if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState))
-			{
-				party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanSouthern, this.m.Start.getResources() * 0.6);
-			}
-			else
-			{
-				party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.Caravan, this.m.Start.getResources() * 0.5);
-			}
-
-			party.getSprite("banner").Visible = false;
-			party.getSprite("base").Visible = false;
-			party.setMirrored(true);
-			party.setDescription("A trading caravan from " + this.m.Start.getName() + " that is transporting all manner of goods between settlements.");
-			party.setFootprintType(this.Const.World.FootprintsType.Caravan);
-			party.getFlags().set("IsCaravan", true);
-			party.getFlags().set("IsRandomlySpawned", true);
-			party.setOrigin(this.m.Start);
-
-			if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
-			{
-				party.setVisibleInFogOfWar(true);
-				party.setImportant(true);
-				party.setDiscovered(true);
-			}
-
-			if (this.m.Start.getProduce().len() != 0)
-			{
-				local produce = 3
-				if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-				{
-					produce = this.Math.max(3, 3 + this.Math.round(0.025 * this.m.Start.getResources()));
-				}
-
-				local getAsString = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue();
-				for( local j = 0; j < produce; j = ++j )
-				{
-					local p = ::MSU.Array.rand(this.m.Start.getProduce())
-					party.addToInventory(getAsString ? p : this.new("scripts/items/" + p));
-				}
-			}
-
-			party.getLoot().Money = this.Math.rand(0, 100);
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				party.getLoot().ArmorParts = this.Math.rand(0, 10);
-			}
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				party.getLoot().Medicine = this.Math.rand(0, 10);
-			}
-
-			if (this.Math.rand(1, 100) <= 50)
-			{
-				party.getLoot().Ammo = this.Math.rand(0, 25);
-			}
-
-			if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-			{
-				local value = 0; 
-				foreach (building in this.m.Start.getBuildings())
-				{
-					local g = [];
-					local stash = building.getStash();
-
-					if (stash == null) continue;
-					
-					// gather goods to export
-					foreach (item in stash.getItems())
-					{
-						if (item == null) continue;
-
-						if (item.isItemType(this.Const.Items.ItemType.TradeGood))
-						{
-						}
-						else if (this.Math.rand(1,10) == 1)
-						{								
-							if (item.getValue() > 0)
-							{
-								value += item.getValue() * 0.01;
-							}
-						}
-						else
-						{
-							continue;
-						}
-
-						party.addToInventory(item);
-						g.push(item);
-					}
-
-					// make sure to remove the gathered goods from the shop
-					// if the item isn't removed, it might cause an issue when players buy those items
-					// remember an item shouldn't be at 2 different inventories at the same time
-					foreach (item in g)
-					{
-						stash.remove(item);
-					}
-				}
-
-				value = this.Math.floor(value);
-				local resources = this.Math.max(1, this.Math.round(0.025 * this.m.Start.getResources()));
-				local total = value + resources;
-				this.m.Start.setResources(this.m.Start.getResources() - total);
-				party.setResources(resources + value);
-				this.logWarning("Exporting " + resources + " resources and " + party.getStashInventory().getItems().len() + " items from " + this.m.Start.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
-			}
-			// no world economy
-			else
-			{
-				local r = this.Math.rand(1, 4);
-
-				if (r == 1)
-				{
-					party.addToInventory("supplies/bread_item");
-				}
-				else if (r == 2)
-				{
-					party.addToInventory("supplies/roots_and_berries_item");
-				}
-				else if (r == 3)
-				{
-					party.addToInventory("supplies/dried_fruits_item");
-				}
-				else if (r == 4)
-				{
-					party.addToInventory("supplies/ground_grains_item");
-				}
-			}
-
-			local c = party.getController();
-			c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
-			c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
-			local move = this.new("scripts/ai/world/orders/move_order");
-			move.setDestination(this.m.Dest.getTile());
-			move.setRoadsOnly(true);
-			local unload = this.new("scripts/ai/world/orders/unload_order");
-			local despawn = this.new("scripts/ai/world/orders/despawn_order");
-			c.addOrder(move);
-			c.addOrder(unload);
-			c.addOrder(despawn);
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState))
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanSouthern, this.m.Start.getResources() * 0.6);
 		}
+		else
+		{
+			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.Caravan, this.m.Start.getResources() * 0.5);
+		}
+
+		party.getSprite("banner").Visible = false;
+		party.getSprite("base").Visible = false;
+		party.setMirrored(true);
+		party.setDescription("A trading caravan from " + this.m.Start.getName() + " that is transporting all manner of goods between settlements.");
+		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
+		party.getFlags().set("IsCaravan", true);
+		party.getFlags().set("IsRandomlySpawned", true);
+
+		if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
+		{
+			party.setVisibleInFogOfWar(true);
+			party.setImportant(true);
+			party.setDiscovered(true);
+		}
+
+		party.getLoot().Money = this.Math.rand(0, 100);
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().ArmorParts = this.Math.rand(0, 10);
+		}
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().Medicine = this.Math.rand(0, 10);
+		}
+
+		if (this.Math.rand(1, 100) <= 50)
+		{
+			party.getLoot().Ammo = this.Math.rand(0, 25);
+		}
+
+		// yes world economy
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+		{
+			::Const.World.Common.WorldEconomy.setupTrade(party, this.m.Start, this.m.Dest);
+		}
+		// no world economy
+		else
+		{
+			local r = this.Math.rand(1, 4);
+
+			if (r == 1)
+			{
+				party.addToInventory("supplies/bread_item");
+			}
+			else if (r == 2)
+			{
+				party.addToInventory("supplies/roots_and_berries_item");
+			}
+			else if (r == 3)
+			{
+				party.addToInventory("supplies/dried_fruits_item");
+			}
+			else if (r == 4)
+			{
+				party.addToInventory("supplies/ground_grains_item");
+			}
+		}
+
+		local c = party.getController();
+		c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
+		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
+		local move = this.new("scripts/ai/world/orders/move_order");
+		move.setDestination(this.m.Dest.getTile());
+		move.setRoadsOnly(true);
+		local unload = this.new("scripts/ai/world/orders/unload_order");
+		local despawn = this.new("scripts/ai/world/orders/despawn_order");
+		c.addOrder(move);
+		c.addOrder(unload);
+		c.addOrder(despawn);
+	}
 
 });
 

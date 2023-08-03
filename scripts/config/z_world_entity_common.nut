@@ -5,6 +5,327 @@ if (!("World" in gt.Const))
 	gt.Const.World <- {};
 }
 
+gt.Const.World.Common.WorldEconomy <- {
+	// weigted container
+	WeightedContainer = null,
+
+	DecisionsID = {
+		TradeGoods = 0,
+		Foods     = 1,
+		Supplies = 2,
+		Weapons = 3,
+		Armors = 4,
+		Exotic = 5,
+		COUNT = 6,
+	},
+
+	// const to decide which goods should be gathered
+	Decisions = [
+		{
+			Weight = 2,
+			Name = "TradeGoods",
+			PreferNum = 2,
+			IsValid = function( _item, _shopID )
+			{
+				return _item.isItemType(this.Const.Items.ItemType.TradeGood);
+			},
+		},
+		{
+			Weight = 1,
+			Name = "Foods",
+			PreferNum = 5,
+			IsValid = function( _item, _shopID )
+			{
+				return _item.isItemType(this.Const.Items.ItemType.Food);
+			},
+		},
+		{
+			Weight = 1,
+			Name = "Supplies",
+			PreferNum = 3,
+			IsValid = function( _item, _shopID )
+			{
+				return _item.isItemType(this.Const.Items.ItemType.Supply);
+			},
+		},
+		{
+			Weight = 1,
+			Name = "Weapons",
+			PreferNum = 2,
+			IsValid = function( _item, _shopID )
+			{
+				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
+
+				return _item.isItemType(this.Const.Items.ItemType.Ammo) || _item.isItemType(this.Const.Items.ItemType.Weapon);
+			},
+		},
+		{
+			Weight = 1,
+			Name = "Armors",
+			PreferNum = 2,
+			IsValid = function( _item, _shopID )
+			{
+				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
+
+				return _item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet) || _item.isItemType(this.Const.Items.ItemType.Shield);
+			},
+		},
+		{
+			Weight = 2,
+			Name = "Exotic",
+			PreferNum = 2,
+			IsValid = function( _item, _shopID )
+			{
+				return _shopID == "building.alchemist" || _shopID == "building.kennel";
+			},
+		},
+	],
+
+	getWeightContainer = function( _array = null )
+	{
+		if (this.WeightedContainer == null) this.WeightedContainer = ::MSU.Class.WeightedContainer();
+
+		if (_array != null) {
+			this.WeightedContainer.clear();
+			this.WeightedContainer.addArray(_array);
+		}
+
+		return this.WeightedContainer;
+	},
+
+	calculateTradingBudget = function( _settlement, _min = -1, _max = -1 )
+	{
+		// 1% of current money this _settlement has
+		local budget = ::Math.round(_settlement.getWealth() * 0.01);
+
+		if (_min != -1) budget = ::Math.max(_min, budget); // budget shouldn't be smaller than _min
+
+		if (_max != -1) budget = ::Math.min(_max, budget); // budget shouldn't be higher than _max 
+
+		return budget;
+	},
+
+	setupTrade = function( _party, _settlement, _destination, _fixedBudget = -1, _minBudget = -1, _maxBudget = -1 )
+	{
+		local budget = _fixedBudget != -1 ? _fixedBudget : this.calculateTradingBudget(_settlement, _minBudget, _maxBudget);
+		local result = this.makeTradingDecision(_settlement, budget);
+		local expectedProfit = ::Math.round(result.Value * 0.12); // round up as generosity
+		local sharedProfit = ::Math.round(result.Value * 0.04);
+
+		//_settlement.addWealth(-result.Value);
+
+		_party.setOrigin(_settlement);
+		_party.getStashInventory().assign(result.Items);
+		_party.getFlags().set("CaravanProfit", expectedProfit);
+		_party.getFlags().set("CaravanInvestment", result.Value);
+		_party.getFlags().set("CaravanSharedProfit", sharedProfit);
+		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (estimated to be worth " + result.Value + " crowns) from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
+	},
+
+	makeTradingDecision = function( _settlement, _budget )
+	{
+		local decisions = this.compileTradingDecision(_settlement, _budget);
+
+		if (decisions.Potential.len() == 0) return this.fillWithBreads(_settlement, _budget);
+		
+		local name = this.getWeightContainer(decisions.Potential).roll();
+		local result;
+
+		if (name == "LocalProduce") result = this.gatherProduce(_settlement, _budget);
+		else result = this.gatherItems(_settlement, decisions.ItemList[this.DecisionsID[name]], _budget);
+
+		result.Items.sort(function(_item1, _item2){
+			if (_item1.getValue() > _item2.getValue()) return -1;
+			else if (_item1.getValue() < _item2.getValue()) return 1;
+			else return 0;
+		});
+
+		return result;
+	},
+
+	compileTradingDecision = function( _settlement, _budget )
+	{
+		local result = {};
+		local acceptableBudget = ::Math.round(_budget * 1.15);
+		result.Potential <- [];
+		result.ItemList <- [];
+
+		for(local i = 0; i < this.DecisionsID.COUNT; ++i)
+		{
+			result.ItemList.push({
+				Items = [],
+				Average = 0,
+				Total = 0,
+			});
+		}
+
+		foreach(building in _settlement.getBuildings())
+		{
+			local stash = building.getStash();
+			local shopID = building.getID();
+
+			if (stash == null) continue;
+
+			foreach(_item in stash.getItems())
+			{
+				if (_item == null) continue;
+
+				foreach(d in this.Decisions)
+				{
+					if (!d.IsValid(_item, shopID)) continue;
+
+					result.ItemList[this.DecisionsID[d.Name]].Total += _item.getValue();
+					result.ItemList[this.DecisionsID[d.Name]].Items.push({
+						Item = _item,
+						Stash = stash,
+					})
+				}
+			}
+		}
+
+		foreach(i, list in result.ItemList)
+		{
+			local num = list.Items.len();
+			list.Average = ::Math.floor(list.Total / num);
+
+			if (num < this.Decisions[i].PreferNum - 1) continue;
+
+			local a = ::Math.floor(acceptableBudget / list.Average);
+
+			if (a < this.Decisions[i].PreferNum - ::Math.rand(1, 2)) continue;
+
+			if (a > num && ::Math.rand(num, a) > num + ::Math.floor((a - num) / 2)) continue;
+
+			result.Potential.push([this.Decisions[i].Weight, this.Decisions[i].Name]);
+		}
+
+		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "LocalProduce"]);
+
+		return result;
+	},
+
+	fillWithBreads = function( _settlement, _budget, _target = null )
+	{
+		if (_target = null) _target = { Items = [], Value = 0 };
+
+		local num = ::Math.max(1, ::Math.floor(_budget / 50));
+
+		for (local i = 0; i < num; ++i)
+		{
+			_target.Items.push(::new("scripts/items/supplies/bread_item"));
+			_target.Value += 50; // the raw price of bread is ~50 crowns 
+		}
+
+		return _target;
+	},
+
+	gatherProduce = function( _settlement, _budget )
+	{
+		local map = {};
+		local lookup = {};
+		local array = [];
+		local extra = ::Math.round(_budget * 0.15);
+		local min = 9999999;
+
+		foreach(p in _settlement.getProduce())
+		{
+			if (p in map)
+			{
+				map[p][0] += 1;
+				continue; 
+			}
+
+			map[p] <- [1, p];
+			lookup[p] <- ::new("scripts/items/" + p).getValue();
+
+			if (lookup[p] < min) min = lookup[p];
+		}
+
+		foreach(k, pair in map)
+		{
+			array.push(pair);
+		}
+
+		local ret = [];
+		local tries = 0;
+		local isOverBudget = false;
+		local weight_container = this.getWeightContainer(array);
+		local result = { Items = [], Value = 0 };
+
+		while(tries < 25)
+		{
+			local r = weight_container.roll();
+
+			if (lookup[r] > _budget)
+			{
+				if (isOverBudget || lookup[r] > _budget + extra)
+				{
+					++tries;
+					weight_container.remove(r);
+
+					if (weight_container.len() == 0) break;
+
+					continue;
+				}
+				
+				isOverBudget = true;
+				_budget += extra;
+			}
+
+			result.Items.push(::new("scripts/items/" + r));
+			result.Value += lookup[r];
+			_budget -= lookup[r];
+
+			if (_budget < min) break;
+		}
+
+		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
+
+		return result;
+	},
+
+	gatherItems = function( _settlement, _data, _budget )
+	{
+		local result = { Items = [], Value = 0 };
+		local extra = ::Math.round(_budget * 0.15);
+		local isOverBudget = false;
+		local tries = 0;
+
+		while(tries < 50 && _budget > _data.Average)
+		{
+			local _i = _data.Items.remove(::Math.rand(0, _data.Items.len() - 1));
+			local v = _i.Item.getValue();
+
+			if (v > _budget)
+			{
+				if (isOverBudget || v > _budget + extra)
+				{
+					++tries;
+					continue;
+				}
+				
+				isOverBudget = true;
+				_budget += extra;
+			}
+			
+			result.Items.push(_i.Item);
+			result.Value += v;
+
+			_i.Stash.remove(_i.Item);
+			_budget -= v;
+
+			if (_data.Items.len() == 0) break;
+
+			_data.Total -= v;
+			_data.Average = ::Math.floor(_data.Total / _data.Items.len());
+		}
+
+		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
+
+		return result;
+	},
+};
+
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
 	local p;

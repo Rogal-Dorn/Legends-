@@ -88,30 +88,12 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		party.setFootprintType(this.Const.World.FootprintsType.Caravan);
 		party.getFlags().set("IsCaravan", true);
 		party.getFlags().set("IsRandomlySpawned", true);
-		party.setOrigin(this.m.Start);
 
 		if (this.World.Assets.m.IsBrigand && this.m.Start.getTile().getDistanceTo(this.World.State.getPlayer().getTile()) <= 70)
 		{
 			party.setVisibleInFogOfWar(true);
 			party.setImportant(true);
 			party.setDiscovered(true);
-		}
-
-		// the inital goods this caravan has
-		if (this.m.Start.getProduce().len() != 0)
-		{
-			local produce = 3;
-			if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-			{
-				produce = this.Math.max(3, 3 + this.Math.round(0.05 * this.m.Start.getResources()));
-			}
-
-			local getAsString = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue(); 
-			for( local j = 0; j < produce; j = ++j )
-			{
-				local p = ::MSU.Array.rand(this.m.Start.getProduce())
-				party.addToInventory(getAsString ? p : this.new("scripts/items/" + p));
-			}
 		}
 
 		party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * r);
@@ -130,57 +112,12 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			party.getLoot().Ammo = this.Math.rand(25 * r, 50 * r);
 		}
 
+		// yes world economy
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			local value = 0;
-			// gather goods from shops to export
-			foreach (building in this.m.Start.getBuildings())
-			{
-				local g = [];
-				local stash = building.getStash();
-
-				if (stash == null) continue;
-				
-				// gather goods to export
-				foreach (item in stash.getItems())
-				{
-					if (item == null) continue;
-
-					if (item.isItemType(this.Const.Items.ItemType.TradeGood))
-					{	
-					}
-					else if (this.Math.rand(1,10) == 1)
-					{							
-						if (item.getValue() > 0)
-						{
-							value += item.getValue() * 0.01;
-						}
-					}
-					else
-					{
-						continue;
-					}
-
-					party.addToInventory(item);
-					g.push(item);
-				}
-
-				// make sure to remove the gathered goods from the shop
-				// if the item isn't removed, it might cause an issue when players buy those items
-				// remember an item shouldn't be at 2 different inventories at the same time
-				foreach (item in g)
-				{
-					stash.remove(item);
-				}
-			}
-
-			value = this.Math.floor(value);
-			local resources = this.Math.max(1, this.Math.round(0.025 * this.m.Start.getResources()));
-			local total = value + resources;
-			this.m.Start.setResources(this.m.Start.getResources() - total);
-			party.setResources(resources + value);
-			this.logWarning("Exporting " + resources + " resources and " + party.getStashInventory().getItems().len() + " items from " + this.m.Start.getName() + " via a caravan bound for " + this.m.Dest.getName() + " town")
+			::Const.World.Common.WorldEconomy.setupTrade(party, this.m.Start, this.m.Dest);
 		}
+		// no world economy
 		else
 		{
 			local r = this.Math.rand(1, 4);

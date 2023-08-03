@@ -16,40 +16,29 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 			{
 				local origin = _entity.getOrigin();
-				local inv = _entity.getStashInventory().getItems();
-				local tradegoods = 0.0; 
-				
-				foreach (item in inv)
-				{
-					if (item.isItemType(this.Const.Items.ItemType.TradeGood))
-					{
-						tradegoods += item.getResourceValue();
-					}
-				}
-
-				tradegoods = this.Math.floor(tradegoods)
+				local investment = _entity.getFlags().getAsInt("CaravanInvestment");
+				local shared = _entity.getFlags().getAsInt("CaravanSharedProfit");
+				local profit = _entity.getFlags().getAsInt("CaravanProfit");
 
 				if (origin != null)
 				{
-					local totalPayment = _entity.getResources() + tradegoods;
+					local totalPayment = investment + profit;
 					
-					origin.setResources(origin.getResources() + totalPayment);
-					settlement.setResources(settlement.getResources() - totalPayment);
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() +  " who now have " + settlement.getResources() + " after paying " + totalPayment + " to the origin town "  + origin.getName() + " who now have" + origin.getResources());			
-				}
-				
-				if (inv.len() != 0)
-				{
-					// number of items be sent to the marketplace
-					local num = this.Math.min(settlement.getSize() + 1, inv.len());
+					// new functions
+					//origin.addWealth(totalPayment); (12%)
+					//settlement.addWealth(shared); (4%)
 
-					for (local i = 0; i < num; i = ++i)
-					{
-						// this will prevent adding the same item over and over
-						local produce = inv.remove(this.Math.rand(0, inv.len() - 1));
-						this.logWarning("Moving \'" + produce.getName() + "\' to " + settlement.getName() +  "\'s marketplace");	
-						settlement.addImportedProduce(produce);
-					}
+					// old functions
+					//origin.setResources(origin.getResources() + totalPayment);
+					//settlement.setResources(settlement.getResources() - totalPayment);
+
+					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + " who now have " + settlement.getResources() + " after paying " + totalPayment + " crowns to the origin town " + origin.getName() + " who now have" + origin.getResources());			
+				}
+
+				foreach( item in _entity.getStashInventory().getItems() )
+				{
+					settlement.addImportedProduce(item);
+					this.logWarning("Moving \'" + item.getName() + "\' to " + settlement.getName() +  "\'s marketplace");
 				}
 			}
 			// no world economy
