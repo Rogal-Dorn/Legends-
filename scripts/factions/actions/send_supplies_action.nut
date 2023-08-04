@@ -69,18 +69,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local spawnParty = this.Const.World.Spawn.NobleCaravan;
-		local r = this.Math.rand(1, 100)
-		if (r > 75)
-		{
-			spawnParty = this.Const.World.Spawn.Mercenaries;
-		}
-		else if (r > 50)
-		{
-			spawnParty = this.Const.World.Spawn.MixedNobleCaravan;
-		}
-		r = this.Math.rand(100, 200) * 0.01;
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, spawnParty, r * 100 + this.Math.round(0.1 * this.m.Start.getResources()));
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.pickSpawnList(), this.Math.rand(100, 200) + this.Math.round(0.1 * this.m.Start.getResources()));
 		party.getSprite("body").setBrush(this.Const.World.Spawn.NobleCaravan.Body);
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -96,21 +85,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 			party.setDiscovered(true);
 		}
 
-		party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * r);
-		local r = this.Math.rand(1, 3);
-
-		if (r == 1)
-		{
-			party.getLoot().ArmorParts = this.Math.rand(15 * r, 30 * r);
-		}
-		else if (r == 2)
-		{
-			party.getLoot().Medicine = this.Math.rand(10 * r, 20 * r);
-		}
-		else if (r == 3)
-		{
-			party.getLoot().Ammo = this.Math.rand(25 * r, 50 * r);
-		}
+		this.addLoot(party);
 
 		// yes world economy
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
@@ -120,24 +95,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		// no world economy
 		else
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				party.addToInventory("supplies/bread_item");
-			}
-			else if (r == 2)
-			{
-				party.addToInventory("supplies/roots_and_berries_item");
-			}
-			else if (r == 3)
-			{
-				party.addToInventory("supplies/dried_fruits_item");
-			}
-			else if (r == 4)
-			{
-				party.addToInventory("supplies/ground_grains_item");
-			}
+			this.addToPartyInventory(party);
 		}
 
 		local c = party.getController();
@@ -152,6 +110,67 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		c.addOrder(move);
 		c.addOrder(unload);
 		c.addOrder(despawn);
+
+		this.afterSpawnCaravan(party);
+	}
+
+	function pickSpawnList()
+	{
+		switch(::Math.rand(1, 4))
+		{
+		case 1:
+			return this.Const.World.Spawn.Mercenaries;
+
+		case 2:
+			return this.Const.World.Spawn.MixedNobleCaravan;
+
+		default:
+			return this.Const.World.Spawn.NobleCaravan;
+		}
+	}
+
+	function addLoot( _party )
+	{
+		switch(::Math.rand(1, 3))
+		{
+		case 1:
+			_party.getLoot().ArmorParts = this.Math.rand(15, 30);
+			break;
+
+		case 2:
+			_party.getLoot().Medicine = this.Math.rand(20, 40);
+			break;
+
+		default:
+			_party.getLoot().Ammo = this.Math.rand(75, 150);
+		}
+
+		_party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * this.Math.rand(100, 200) * 0.01);
+	}
+
+	function addToPartyInventory( _party )
+	{
+		switch(::Math.rand(1, 4))
+		{
+		case 1:
+			_party.addToInventory("supplies/bread_item");
+			break;
+
+		case 2:
+			_party.addToInventory("supplies/roots_and_berries_item");
+			break;
+
+		case 3:
+			_party.addToInventory("supplies/dried_fruits_item");
+			break;
+
+		default:
+			_party.addToInventory("supplies/ground_grains_item");
+		}
+	}
+
+	function afterSpawnCaravan(_party)
+	{
 	}
 
 });

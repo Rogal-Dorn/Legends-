@@ -95,22 +95,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 			party.setDiscovered(true);
 		}
 
-		party.getLoot().Money = this.Math.rand(0, 100);
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			party.getLoot().ArmorParts = this.Math.rand(0, 10);
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			party.getLoot().Medicine = this.Math.rand(0, 10);
-		}
-
-		if (this.Math.rand(1, 100) <= 50)
-		{
-			party.getLoot().Ammo = this.Math.rand(0, 25);
-		}
+		this.addLoot(party);
 
 		// yes world economy
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
@@ -120,24 +105,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		// no world economy
 		else
 		{
-			local r = this.Math.rand(1, 4);
-
-			if (r == 1)
-			{
-				party.addToInventory("supplies/bread_item");
-			}
-			else if (r == 2)
-			{
-				party.addToInventory("supplies/roots_and_berries_item");
-			}
-			else if (r == 3)
-			{
-				party.addToInventory("supplies/dried_fruits_item");
-			}
-			else if (r == 4)
-			{
-				party.addToInventory("supplies/ground_grains_item");
-			}
+			this.addToPartyInventory(party);
 		}
 
 		local c = party.getController();
@@ -151,6 +119,44 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		c.addOrder(move);
 		c.addOrder(unload);
 		c.addOrder(despawn);
+
+		this.afterSpawnCaravan(party);
+	}
+
+	function addLoot( _party )
+	{
+		if (this.Math.rand(1, 2) <= 1) _party.getLoot().ArmorParts = this.Math.rand(0, 10);
+	
+		if (this.Math.rand(1, 2) <= 1) _party.getLoot().Medicine = this.Math.rand(0, 10);
+
+		if (this.Math.rand(1, 2) <= 1) _party.getLoot().Ammo = this.Math.rand(0, 25);
+
+		_party.getLoot().Money = this.Math.rand(0, 100);
+	}
+
+	function addToPartyInventory( _party )
+	{
+		switch(::Math.rand(1, 4))
+		{
+		case 1:
+			_party.addToInventory("supplies/bread_item");
+			break;
+
+		case 2:
+			_party.addToInventory("supplies/roots_and_berries_item");
+			break;
+
+		case 3:
+			_party.addToInventory("supplies/dried_fruits_item");
+			break;
+
+		default:
+			_party.addToInventory("supplies/ground_grains_item");
+		}
+	}
+
+	function afterSpawnCaravan(_party)
+	{
 	}
 
 });
