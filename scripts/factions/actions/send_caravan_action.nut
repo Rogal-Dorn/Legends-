@@ -67,19 +67,23 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		this.m.Dest = null;
 	}
 
+	function getReputationToDifficultyLightMult()
+	{
+		return this.faction_action.getReputationToDifficultyLightMult() * (this.World.FactionManager.isCivilWar() ? 1.1 : 1.0);
+	}
+	
+	function getResourcesForParty( _settlement, _faction )
+	{
+		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
+
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(77, 122) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
+
+		return (this.Math.rand(60, 110) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.5
+	}
+
 	function onExecute( _faction )
 	{
-		local party;
-
-		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState))
-		{
-			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.CaravanSouthern, this.m.Start.getResources() * 0.6);
-		}
-		else
-		{
-			party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.Const.World.Spawn.Caravan, this.m.Start.getResources() * 0.5);
-		}
-
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.pickSpawnList(this.m.Start, _faction), this.getResourcesForParty(this.m.Start, _faction)); 
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -121,6 +125,13 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		c.addOrder(despawn);
 
 		this.afterSpawnCaravan(party);
+	}
+
+	function pickSpawnList( _settlement, _faction )
+	{
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return this.Const.World.Spawn.CaravanSouthern;
+
+		return this.Const.World.Spawn.Caravan;
 	}
 
 	function addLoot( _party )

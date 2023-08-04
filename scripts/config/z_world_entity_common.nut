@@ -10,13 +10,14 @@ gt.Const.World.Common.WorldEconomy <- {
 	WeightedContainer = null,
 
 	// willing percentage of resources to invest on a trade
-	PreferInvestmentPct = 0.01,
+	PreferInvestmentMin = 2,
+	PreferInvestmentMax = 3,
 
 	// percentage of acceptable overbudget
 	OverBudgetPct = 0.15,
 
-	// exchange rate
-	ExchangeRateFromResourcesToMoney = 1000.0,
+	// don't want a single item to take up a large portion of the budget
+	ExpensiveLimitMult = 0.85,
 
 	DecisionID = {
 		TradeGoods  = 0,
@@ -102,20 +103,15 @@ gt.Const.World.Common.WorldEconomy <- {
 		return this.WeightedContainer;
 	},
 
-	moneyToResources = function( _m )
-	{
-		return ::Math.floor(_m / this.ExchangeRateFromResourcesToMoney);
-	}
-
-	resourcesToMoney = function( _r )
-	{
-		return ::Math.floor(_r * this.ExchangeRateFromResourcesToMoney);
-	}
-
 	calculateTradingBudget = function( _settlement, _min = -1, _max = -1 )
 	{
-		// 1% of current money this _settlement has
-		local budget = ::Math.round(this.resourcesToMoney(_settlement.getResources()) * this.PreferInvestmentPct);
+		local mult = 10.0 + 5.0 * _settlement.getSize();
+
+		if (_settlement.isMilitary()) mult *= 2.0;
+
+		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 2.5;
+
+		local budget = ::Math.round(::Math.rand(50, 100) * mult);
 
 		if (_min != -1) budget = ::Math.max(_min, budget); // budget shouldn't be smaller than _min
 
@@ -128,18 +124,33 @@ gt.Const.World.Common.WorldEconomy <- {
 	{
 		local budget = _fixedBudget != -1 ? _fixedBudget : this.calculateTradingBudget(_settlement, _minBudget, _maxBudget);
 		local result = this.makeTradingDecision(_settlement, budget);
-		local expectedProfit = ::Math.round(result.Value * 0.12); // (12%) will 16% be any better? 
-		local sharedProfit = ::Math.round(result.Value * 0.04); // (4%)
+		local finance = this.getExpectedFinancialReport(_settlement);
 
-		//_settlement.addResources(-this.moneyToResources(result.Value));
+		// spend resources
+		_settlement.addResources(-finance.Investment);
 
+		// set origin settlement
 		_party.setOrigin(_settlement);
+
+		// loading goods
 		_party.getStashInventory().assign(result.Items);
-		_party.getFlags().set("CaravanProfit", expectedProfit); // expected profit made from this trade
-		_party.getFlags().set("CaravanInvestment", result.Value); // investment on this trade :)
-		_party.getFlags().set("CaravanSharedProfit", sharedProfit); // the future profit these juicy goods would bring to the destination settlement
-		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items, focusinng on trading \'" + result.Decision + "\' (estimated to be worth " + result.Value + " crowns) from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
+
+		// setup financial flag
+		_party.getFlags().set("CaravanProfit", finance.Profit); // expected profit made from this trade
+		_party.getFlags().set("CaravanInvestment", finance.Investment); // investment on this trade :)
+
+		// print log to declare action
+		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (" + result.Value + " crowns), focusinng on trading \'" + result.Decision + "\', investing " + finance.Investment + " resources," + /*expecting at least " + finance.Profit + " resouces as profit,*/ + " from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
 	},
+
+	getExpectedFinancialReport = function( _settlement )
+	{
+		local result = {};
+		local baseLevel = _settlement.getWealthBaseLevel();
+		result.Profit <- ::Math.round(baseLevel * ::Math.rand(1, this.PreferInvestmentMin) * 0.01);
+		result.Investment <- ::Math.round(baseLevel * ::Math.rand(this.PreferInvestmentMin, this.PreferInvestmentMax) * 0.01);
+		return result;
+	}
 
 	makeTradingDecision = function( _settlement, _budget )
 	{
@@ -167,6 +178,7 @@ gt.Const.World.Common.WorldEconomy <- {
 	{
 		local result = {};
 		local acceptableBudget = ::Math.round(_budget * (1.0 + this.OverBudgetPct));
+		local tooExpensiveLimit = ::Math.round(_budget * this.ExpensiveLimitMult);
 		result.Potential <- [];
 		result.ItemList <- [];
 
@@ -194,7 +206,11 @@ gt.Const.World.Common.WorldEconomy <- {
 				{
 					if (!d.IsValid(_item, shopID)) continue;
 
-					result.ItemList[this.DecisionID[d.Name]].Total += _item.getValue();
+					local v = _item.getValue()
+
+					if (v >= tooExpensiveLimit) continue;
+
+					result.ItemList[this.DecisionID[d.Name]].Total += v;
 					result.ItemList[this.DecisionID[d.Name]].Items.push({
 						Item = _item,
 						Stash = stash,

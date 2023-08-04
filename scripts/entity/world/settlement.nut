@@ -502,36 +502,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
+	function addResources( _v )
+	{
+		this.setResources(this.getResources() + _v);
+	}
+
 	function getWealth()
+	{
+		return this.Math.round(100.0 * (1.0 * this.getResources() / this.getWealthBaseLevel()));
+	}
+
+	function getWealthBaseLevel()
 	{
 		local baseLevel = 0.0;
 
-		if (this.isMilitary())
-		{
-			baseLevel = baseLevel + 50.0;
-		}
+		if (this.isMilitary()) baseLevel += 50.0;
 
-		if (this.isKindOf(this, "city_state"))
-		{
-			baseLevel = baseLevel + 100;
-		}
+		if (this.isKindOf(this, "city_state")) baseLevel += 100;
 
 		switch(this.getSize())
 		{
 		case 1:
-			baseLevel = baseLevel + 100.0;
+			baseLevel += 100.0;
 			break;
 
 		case 2:
-			baseLevel = baseLevel + 150.0;
+			baseLevel += 150.0;
 			break;
 
 		case 3:
-			baseLevel = baseLevel + 200.0;
+			baseLevel += 200.0;
 			break;
 		}
 
-		return this.Math.round(100.0 * (1.0 * this.getResources() / baseLevel));
+		return baseLevel;
 	}
 
 	function getImagePath()
@@ -2780,7 +2784,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return;
 		}
 
-		this.setResources(this.getResources() + this.getNewResources());
+		this.addResources(this.getNewResources());
 	}
 
 	function onSerialize( _out )

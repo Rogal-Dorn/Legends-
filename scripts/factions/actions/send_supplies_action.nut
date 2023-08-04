@@ -67,9 +67,21 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		this.m.Dest = null;
 	}
 
+	function getReputationToDifficultyLightMult()
+	{
+		return this.faction_action.getReputationToDifficultyLightMult() * (this.World.FactionManager.isCivilWar() ? 1.1 : 1.0);
+	}
+
+	function getResourcesForParty( _settlement, _faction )
+	{
+		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
+
+		return (this.Math.rand(75, 120) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult();
+	}
+
 	function onExecute( _faction )
 	{
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.pickSpawnList(), this.Math.rand(100, 200) + this.Math.round(0.1 * this.m.Start.getResources()));
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.pickSpawnList(this.m.Start, _faction), this.getResourcesForParty(this.m.Start, _faction));
 		party.getSprite("body").setBrush(this.Const.World.Spawn.NobleCaravan.Body);
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -114,7 +126,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 		this.afterSpawnCaravan(party);
 	}
 
-	function pickSpawnList()
+	function pickSpawnList( _settlement, _faction )
 	{
 		switch(::Math.rand(1, 4))
 		{

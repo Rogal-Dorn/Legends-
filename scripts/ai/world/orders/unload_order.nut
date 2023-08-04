@@ -20,21 +20,19 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				if (origin != null)
 				{
 					local investment = _entity.getFlags().getAsInt("CaravanInvestment");
-					local shared = _entity.getFlags().getAsInt("CaravanSharedProfit");
 					local profit = _entity.getFlags().getAsInt("CaravanProfit");
-					local totalPayment = investment + profit;
 					
 					// new functions
-					//origin.addResources(totalPayment);
-					//settlement.addResources(shared);
+					origin.addResources(investment + profit);
 
 					// old functions
 					//origin.setResources(origin.getResources() + totalPayment);
 					//settlement.setResources(settlement.getResources() - totalPayment);
 
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + " who now have " + settlement.getResources() + " after paying " + totalPayment + " crowns to the origin town " + origin.getName() + " who now have" + origin.getResources());			
+					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " gets their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources");			
 				}
 
+				// unload all items to the marketplace
 				foreach( item in _entity.getStashInventory().getItems() )
 				{
 					settlement.addImportedProduce(item);
