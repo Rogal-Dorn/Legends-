@@ -38,45 +38,45 @@ gt.Const.World.Common.WorldEconomy <- {
 			Weight = 2,
 			Name = "TradeGoods",
 			PreferNum = 2,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				return _item.isItemType(this.Const.Items.ItemType.TradeGood);
-			},
+			}
 		},
 		{
 			Weight = 1,
 			Name = "Foods",
 			PreferNum = 5,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				return _item.isItemType(this.Const.Items.ItemType.Food);
-			},
+			}
 		},
 		{
 			Weight = 1,
 			Name = "Supplies",
 			PreferNum = 3,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				return _item.isItemType(this.Const.Items.ItemType.Supply);
-			},
+			}
 		},
 		{
 			Weight = 1,
 			Name = "Weapons",
 			PreferNum = 2,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
 
 				return _item.isItemType(this.Const.Items.ItemType.Ammo) || _item.isItemType(this.Const.Items.ItemType.Weapon);
-			},
+			}
 		},
 		{
 			Weight = 1,
 			Name = "Armors",
 			PreferNum = 2,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
 
@@ -87,14 +87,14 @@ gt.Const.World.Common.WorldEconomy <- {
 			Weight = 2,
 			Name = "Exotic",
 			PreferNum = 2,
-			IsValid = function( _item, _shopID )
+			function IsValid( _item, _shopID )
 			{
 				return _shopID == "building.alchemist" || _shopID == "building.kennel";
-			},
+			}
 		},
 	],
 
-	getWeightContainer = function( _array = null )
+	function getWeightContainer( _array = null )
 	{
 		if (this.WeightedContainer == null) this.WeightedContainer = ::MSU.Class.WeightedContainer();
 
@@ -104,9 +104,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		}
 
 		return this.WeightedContainer;
-	},
+	}
 
-	calculateTradingBudget = function( _settlement, _min = -1, _max = -1 )
+	function calculateTradingBudget( _settlement, _min = -1, _max = -1 )
 	{
 		local mult = 10.0 + 5.0 * _settlement.getSize();
 
@@ -121,9 +121,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		if (_max != -1) budget = ::Math.min(_max, budget); // budget shouldn't be higher than _max 
 
 		return budget;
-	},
+	}
 
-	setupTrade = function( _party, _settlement, _destination, _fixedBudget = -1, _minBudget = -1, _maxBudget = -1 )
+	function setupTrade( _party, _settlement, _destination, _fixedBudget = -1, _minBudget = -1, _maxBudget = -1 )
 	{
 		local budget = _fixedBudget != -1 ? _fixedBudget : this.calculateTradingBudget(_settlement, _minBudget, _maxBudget);
 		local result = this.makeTradingDecision(_settlement, budget);
@@ -144,9 +144,9 @@ gt.Const.World.Common.WorldEconomy <- {
 
 		// print log to declare action
 		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (" + result.Value + " crowns), focusinng on trading \'" + result.Decision + "\', investing " + finance.Investment + " resources," + /*expecting at least " + finance.Profit + " resouces as profit,*/ + " from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
-	},
+	}
 
-	getExpectedFinancialReport = function( _settlement )
+	function getExpectedFinancialReport( _settlement )
 	{
 		local result = {};
 		local baseLevel = _settlement.getWealthBaseLevel();
@@ -155,7 +155,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		return result;
 	}
 
-	makeTradingDecision = function( _settlement, _budget )
+	function makeTradingDecision( _settlement, _budget )
 	{
 		local decisions = this.compileTradingDecision(_settlement, _budget);
 
@@ -175,9 +175,9 @@ gt.Const.World.Common.WorldEconomy <- {
 
 		result.Decision <- name; // declare decision to trade what kind of goods
 		return result;
-	},
+	}
 
-	compileTradingDecision = function( _settlement, _budget )
+	function compileTradingDecision( _settlement, _budget )
 	{
 		local result = {};
 		local acceptableBudget = ::Math.round(_budget * (1.0 + this.OverBudgetPct));
@@ -241,9 +241,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "FreshlyProduced"]);
 
 		return result;
-	},
+	}
 
-	fillWithBreads = function( _settlement, _budget, _target = null )
+	function fillWithBreads( _settlement, _budget, _target = null )
 	{
 		if (_target = null) _target = { Items = [], Value = 0, Decision = "Breads" };
 
@@ -256,9 +256,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		}
 
 		return _target;
-	},
+	}
 
-	gatherProduce = function( _settlement, _budget )
+	function gatherProduce( _settlement, _budget )
 	{
 		local map = {}; // to gather data for the weighted container
 		local lookup = {}; // to look up the price without having to create the same item over and over
@@ -333,9 +333,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
 
 		return result;
-	},
+	}
 
-	gatherItems = function( _settlement, _data, _budget )
+	function gatherItems( _settlement, _data, _budget )
 	{
 		local result = { Items = [], Value = 0 };
 		local extra = ::Math.round(_budget * this.OverBudgetPct);
@@ -384,7 +384,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
 
 		return result;
-	},
+	}
 };
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
