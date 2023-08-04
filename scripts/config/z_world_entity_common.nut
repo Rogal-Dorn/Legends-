@@ -225,6 +225,9 @@ gt.Const.World.Common.WorldEconomy <- {
 		foreach(i, list in result.ItemList)
 		{
 			local num = list.Items.len();
+
+			if (num == 0) continue;
+
 			list.Average = ::Math.floor(list.Total / num);
 
 			if (num < this.Decisions[i].PreferNum - 1) continue;
