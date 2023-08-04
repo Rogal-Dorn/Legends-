@@ -16,17 +16,17 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 			{
 				local origin = _entity.getOrigin();
-				local investment = _entity.getFlags().getAsInt("CaravanInvestment");
-				local shared = _entity.getFlags().getAsInt("CaravanSharedProfit");
-				local profit = _entity.getFlags().getAsInt("CaravanProfit");
 
 				if (origin != null)
 				{
+					local investment = _entity.getFlags().getAsInt("CaravanInvestment");
+					local shared = _entity.getFlags().getAsInt("CaravanSharedProfit");
+					local profit = _entity.getFlags().getAsInt("CaravanProfit");
 					local totalPayment = investment + profit;
 					
 					// new functions
-					//origin.addWealth(totalPayment); (12%)
-					//settlement.addWealth(shared); (4%)
+					//origin.addResources(totalPayment);
+					//settlement.addResources(shared);
 
 					// old functions
 					//origin.setResources(origin.getResources() + totalPayment);

@@ -9,17 +9,26 @@ gt.Const.World.Common.WorldEconomy <- {
 	// weigted container
 	WeightedContainer = null,
 
-	DecisionsID = {
-		TradeGoods = 0,
-		Foods     = 1,
-		Supplies = 2,
-		Weapons = 3,
-		Armors = 4,
-		Exotic = 5,
+	// willing percentage of resources to invest on a trade
+	PreferInvestmentPct = 0.01,
+
+	// percentage of acceptable overbudget
+	OverBudgetPct = 0.15,
+
+	// exchange rate
+	ExchangeRateFromResourcesToMoney = 1000.0,
+
+	DecisionID = {
+		TradeGoods  = 0,
+		Foods      = 1,
+		Supplies  = 2,
+		Weapons  = 3,
+		Armors  = 4,
+	    Exotic = 5,
 		COUNT = 6,
 	},
 
-	// const to decide which goods should be gathered
+	// const for the list possible decisions and to deciding which goods should be gathered
 	Decisions = [
 		{
 			Weight = 2,
@@ -93,10 +102,20 @@ gt.Const.World.Common.WorldEconomy <- {
 		return this.WeightedContainer;
 	},
 
+	moneyToResources = function( _m )
+	{
+		return ::Math.floor(_m / this.ExchangeRateFromResourcesToMoney);
+	}
+
+	resourcesToMoney = function( _r )
+	{
+		return ::Math.floor(_r * this.ExchangeRateFromResourcesToMoney);
+	}
+
 	calculateTradingBudget = function( _settlement, _min = -1, _max = -1 )
 	{
 		// 1% of current money this _settlement has
-		local budget = ::Math.round(_settlement.getWealth() * 0.01);
+		local budget = ::Math.round(this.resourcesToMoney(_settlement.getResources()) * this.PreferInvestmentPct);
 
 		if (_min != -1) budget = ::Math.max(_min, budget); // budget shouldn't be smaller than _min
 
@@ -109,16 +128,16 @@ gt.Const.World.Common.WorldEconomy <- {
 	{
 		local budget = _fixedBudget != -1 ? _fixedBudget : this.calculateTradingBudget(_settlement, _minBudget, _maxBudget);
 		local result = this.makeTradingDecision(_settlement, budget);
-		local expectedProfit = ::Math.round(result.Value * 0.12); // round up as generosity
-		local sharedProfit = ::Math.round(result.Value * 0.04);
+		local expectedProfit = ::Math.round(result.Value * 0.12); // (12%) will 16% be any better? 
+		local sharedProfit = ::Math.round(result.Value * 0.04); // (4%)
 
-		//_settlement.addWealth(-result.Value);
+		//_settlement.addResources(-this.moneyToResources(result.Value));
 
 		_party.setOrigin(_settlement);
 		_party.getStashInventory().assign(result.Items);
-		_party.getFlags().set("CaravanProfit", expectedProfit);
-		_party.getFlags().set("CaravanInvestment", result.Value);
-		_party.getFlags().set("CaravanSharedProfit", sharedProfit);
+		_party.getFlags().set("CaravanProfit", expectedProfit); // expected profit made from this trade
+		_party.getFlags().set("CaravanInvestment", result.Value); // investment on this trade :)
+		_party.getFlags().set("CaravanSharedProfit", sharedProfit); // the future profit these juicy goods would bring to the destination settlement
 		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items, focusinng on trading \'" + result.Decision + "\' (estimated to be worth " + result.Value + " crowns) from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
 	},
 
@@ -131,8 +150,8 @@ gt.Const.World.Common.WorldEconomy <- {
 		local name = this.getWeightContainer(decisions.Potential).roll();
 		local result;
 
-		if (name == "Freshly Produced") result = this.gatherProduce(_settlement, _budget);
-		else result = this.gatherItems(_settlement, decisions.ItemList[this.DecisionsID[name]], _budget);
+		if (name == "FreshlyProduced") result = this.gatherProduce(_settlement, _budget);
+		else result = this.gatherItems(_settlement, decisions.ItemList[this.DecisionID[name]], _budget);
 
 		result.Items.sort(function(_item1, _item2){
 			if (_item1.getValue() > _item2.getValue()) return -1;
@@ -147,11 +166,11 @@ gt.Const.World.Common.WorldEconomy <- {
 	compileTradingDecision = function( _settlement, _budget )
 	{
 		local result = {};
-		local acceptableBudget = ::Math.round(_budget * 1.15);
+		local acceptableBudget = ::Math.round(_budget * (1.0 + this.OverBudgetPct));
 		result.Potential <- [];
 		result.ItemList <- [];
 
-		for(local i = 0; i < this.DecisionsID.COUNT; ++i)
+		for(local i = 0; i < this.DecisionID.COUNT; ++i)
 		{
 			result.ItemList.push({
 				Items = [],
@@ -175,8 +194,8 @@ gt.Const.World.Common.WorldEconomy <- {
 				{
 					if (!d.IsValid(_item, shopID)) continue;
 
-					result.ItemList[this.DecisionsID[d.Name]].Total += _item.getValue();
-					result.ItemList[this.DecisionsID[d.Name]].Items.push({
+					result.ItemList[this.DecisionID[d.Name]].Total += _item.getValue();
+					result.ItemList[this.DecisionID[d.Name]].Items.push({
 						Item = _item,
 						Stash = stash,
 					})
@@ -200,7 +219,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			result.Potential.push([this.Decisions[i].Weight, this.Decisions[i].Name]);
 		}
 
-		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "Freshly Produced"]);
+		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "FreshlyProduced"]);
 
 		return result;
 	},
@@ -222,10 +241,10 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	gatherProduce = function( _settlement, _budget )
 	{
-		local map = {};
-		local lookup = {};
-		local array = [];
-		local extra = ::Math.round(_budget * 0.15);
+		local map = {}; // to gather data for the weighted container
+		local lookup = {}; // to look up the price without having to create the same item over and over
+		local array = []; // for the weighted container
+		local extra = ::Math.round(_budget * this.OverBudgetPct);
 		local min = 9999999;
 
 		foreach(p in _settlement.getProduce())
@@ -242,6 +261,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			if (lookup[p] < min) min = lookup[p];
 		}
 
+		// fill up the weigted array
 		foreach(k, pair in map)
 		{
 			array.push(pair);
@@ -262,24 +282,35 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (isOverBudget || lookup[r] > _budget + extra)
 				{
 					++tries;
+
+					// remove from selection list when the price can no longer be affordable
 					weight_container.remove(r);
 
+					// when everthing is beyond affordable
 					if (weight_container.len() == 0) break;
 
 					continue;
 				}
 				
+				// willing to go over budget for a little bit
 				isOverBudget = true;
 				_budget += extra;
 			}
 
+			// adds to the list
 			result.Items.push(::new("scripts/items/" + r));
+
+			// adds up the total cost
 			result.Value += lookup[r];
+
+			// reduces the remaining budget
 			_budget -= lookup[r];
 
+			// check if the budget can still be enough to buy the cheapest product
 			if (_budget < min) break;
 		}
 
+		// spend up last remaining budget with breads, who wouldn't want bread :)
 		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
 
 		return result;
@@ -288,7 +319,7 @@ gt.Const.World.Common.WorldEconomy <- {
 	gatherItems = function( _settlement, _data, _budget )
 	{
 		local result = { Items = [], Value = 0 };
-		local extra = ::Math.round(_budget * 0.15);
+		local extra = ::Math.round(_budget * this.OverBudgetPct);
 		local isOverBudget = false;
 		local tries = 0;
 
@@ -297,6 +328,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			local _i = _data.Items.remove(::Math.rand(0, _data.Items.len() - 1));
 			local v = _i.Item.getValue();
 
+			// check if the budget is enought to buy
 			if (v > _budget)
 			{
 				if (isOverBudget || v > _budget + extra)
@@ -305,22 +337,31 @@ gt.Const.World.Common.WorldEconomy <- {
 					continue;
 				}
 				
+				// willing to go over budget for a little bit
 				isOverBudget = true;
 				_budget += extra;
 			}
 			
+			// adds to the list
 			result.Items.push(_i.Item);
+
+			// adds up the total cost
 			result.Value += v;
 
+			// removes from origin stash
 			_i.Stash.remove(_i.Item);
+
+			// reduces the remaining budget
 			_budget -= v;
 
 			if (_data.Items.len() == 0) break;
 
+			// recalculate the average price
 			_data.Total -= v;
 			_data.Average = ::Math.floor(_data.Total / _data.Items.len());
 		}
 
+		// spend up last remaining budget with breads, who wouldn't want bread :)
 		if (_budget >= 50) this.fillWithBreads(_settlement, _budget, result);
 
 		return result;
