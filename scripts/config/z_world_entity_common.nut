@@ -108,11 +108,11 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	function calculateTradingBudget( _settlement, _min = -1, _max = -1 )
 	{
-		local mult = 10.0 + 5.0 * _settlement.getSize();
+		local mult = 10.0 + 4.0 * _settlement.getSize();
 
-		if (_settlement.isMilitary()) mult *= 2.0;
+		if (_settlement.isMilitary()) mult *= 1.75;
 
-		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 2.5;
+		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 1.75;
 
 		local budget = ::Math.round(::Math.rand(50, 100) * mult);
 
@@ -209,7 +209,7 @@ gt.Const.World.Common.WorldEconomy <- {
 				{
 					if (!d.IsValid(_item, shopID)) continue;
 
-					local v = _item.getValue()
+					local v = _item.getValue();
 
 					if (v >= tooExpensiveLimit) continue;
 
@@ -230,11 +230,11 @@ gt.Const.World.Common.WorldEconomy <- {
 
 			list.Average = ::Math.floor(list.Total / num);
 
-			if (num < this.Decisions[i].PreferNum - 1) continue;
+			//if (num < this.Decisions[i].PreferNum - 1) continue;
 
 			local a = ::Math.floor(acceptableBudget / list.Average);
 
-			if (a < this.Decisions[i].PreferNum - ::Math.rand(1, 2)) continue;
+			//if (a < this.Decisions[i].PreferNum - ::Math.rand(1, 2)) continue;
 
 			if (a > num && ::Math.rand(num, a) > num + ::Math.floor((a - num) / 2)) continue;
 
@@ -248,7 +248,7 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	function fillWithBreads( _settlement, _budget, _target = null )
 	{
-		if (_target = null) _target = { Items = [], Value = 0, Decision = "Breads" };
+		if (_target == null) _target = { Items = [], Value = 0, Decision = "Breads" };
 
 		local num = ::Math.max(1, ::Math.floor(_budget / 50));
 

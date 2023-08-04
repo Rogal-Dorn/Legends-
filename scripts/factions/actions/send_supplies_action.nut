@@ -76,7 +76,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 	{
 		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
 
-		return (this.Math.rand(77, 125) + this.Math.round(0.11 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult();
+		return (this.Math.rand(87, 135) + this.Math.round(0.11 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult();
 	}
 
 	function onExecute( _faction )
