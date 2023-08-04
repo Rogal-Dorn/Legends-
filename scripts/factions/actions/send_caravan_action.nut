@@ -71,12 +71,12 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 	{
 		return this.faction_action.getReputationToDifficultyLightMult() * (this.World.FactionManager.isCivilWar() ? 1.1 : 1.0);
 	}
-	
+
 	function getResourcesForParty( _settlement, _faction )
 	{
 		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
 
-		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(77, 122) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(80, 127) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
 
 		return (this.Math.rand(60, 110) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.5
 	}
