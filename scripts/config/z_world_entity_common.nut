@@ -119,7 +119,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		_party.getFlags().set("CaravanProfit", expectedProfit);
 		_party.getFlags().set("CaravanInvestment", result.Value);
 		_party.getFlags().set("CaravanSharedProfit", sharedProfit);
-		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (estimated to be worth " + result.Value + " crowns) from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
+		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items, focusinng on trading \'" + result.Decision + "\' (estimated to be worth " + result.Value + " crowns) from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
 	},
 
 	makeTradingDecision = function( _settlement, _budget )
@@ -131,7 +131,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		local name = this.getWeightContainer(decisions.Potential).roll();
 		local result;
 
-		if (name == "LocalProduce") result = this.gatherProduce(_settlement, _budget);
+		if (name == "Freshly Produced") result = this.gatherProduce(_settlement, _budget);
 		else result = this.gatherItems(_settlement, decisions.ItemList[this.DecisionsID[name]], _budget);
 
 		result.Items.sort(function(_item1, _item2){
@@ -140,6 +140,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			else return 0;
 		});
 
+		result.Decision <- name; // declare decision to trade what kind of goods
 		return result;
 	},
 
@@ -199,14 +200,14 @@ gt.Const.World.Common.WorldEconomy <- {
 			result.Potential.push([this.Decisions[i].Weight, this.Decisions[i].Name]);
 		}
 
-		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "LocalProduce"]);
+		if (_settlement.getProduce().len() > 0) result.Potential.push([1, "Freshly Produced"]);
 
 		return result;
 	},
 
 	fillWithBreads = function( _settlement, _budget, _target = null )
 	{
-		if (_target = null) _target = { Items = [], Value = 0 };
+		if (_target = null) _target = { Items = [], Value = 0, Decision = "Breads" };
 
 		local num = ::Math.max(1, ::Math.floor(_budget / 50));
 
