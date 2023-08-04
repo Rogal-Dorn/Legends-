@@ -903,6 +903,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
+	function getImportedGoodsInventory()
+	{
+		return this.m.ImportedGoodsInventory;
+	}
+
 	function addImportedProduce( _p )
 	{
 		if (typeof _p == "string")

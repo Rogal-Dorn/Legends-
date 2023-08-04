@@ -9,6 +9,9 @@ gt.Const.World.Common.WorldEconomy <- {
 	// weigted container
 	WeightedContainer = null,
 
+	// the maximum stash size of 'this.m.ImportedGoodsInventory' of any settlement
+	ImportedGoodsInventorySizeMax = 50,
+
 	// price of filler goods, the raw price of bread is ~52 crowns, so this is a bit overpriced 
 	PriceOfBread = 60,
 

@@ -32,8 +32,23 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " gets their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources");			
 				}
 
+				local inv = _entity.getStashInventory().getItems();
+				local storage = settlement.getImportedGoodsInventory().getItems();
+
+				// if there already too many items in storage, it's best to remove a few of them
+				// in order to keep the storage at a certain size
+				if (storage.len() + inv.len() > ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax)
+				{
+					local different = storage.len() + inv.len() - ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax;
+					local newStorage = storage.filter(function(_index, _item) {
+						return _index >= different;
+					});
+
+					settlement.getImportedGoodsInventory().assign(newStorage);
+				}
+
 				// unload all items to the marketplace
-				foreach( item in _entity.getStashInventory().getItems() )
+				foreach( item in inv )
 				{
 					settlement.addImportedProduce(item);
 					this.logWarning("Moving \'" + item.getName() + "\' to " + settlement.getName() +  "\'s marketplace");
