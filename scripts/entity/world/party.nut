@@ -248,19 +248,51 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			});
 		}
 
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() && this.World.Assets.m.IsBrigand && this.m.Flags.get("IsCaravan"))
+		{
+			local inv = this.getStashInventory().getItems();
+			local num = ::Math.min(inv.len(), ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo);
+
+			ret.push({
+				id = 51,
+				type = "text",
+				text = "[u][size=14]Inventory Info[/size][/u]"
+			});
+
+			for (local i = 0; i < num; ++i)
+			{
+				ret.push({
+					id = 52 + i,
+					type = "text",
+					icon = "ui/items/" + inv[i].getIcon(),
+					text = inv[i].getName()
+				});
+			}
+
+			if (inv.len() > ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo)
+			{
+				ret.push({
+					id = 53 + num,
+					type = "text",
+					text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
+				});
+			}
+		}
 
 		if (this.Const.LegendMod.DebugMode)
 		{
-			ret.push({
-				id = 6,
-				type = "hint",
-				text = "Resources: " + this.getResources()
-			});
-			ret.push({
-				id = 6,
-				type = "hint",
-				text = "Goods: " + this.getInventory().len()
-			});
+			ret.extend([
+				{
+					id = 6,
+					type = "hint",
+					text = "Resources: " + this.getResources()
+				},
+				{
+					id = 6,
+					type = "hint",
+					text = "Goods: " + this.getInventory().len()
+				}
+			]);
 		}
 
 		return ret;

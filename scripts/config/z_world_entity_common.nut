@@ -9,15 +9,18 @@ gt.Const.World.Common.WorldEconomy <- {
 	// weigted container
 	WeightedContainer = null,
 
-	// willing percentage of resources to invest on a trade
-	PreferInvestmentMin = 2,
-	PreferInvestmentMax = 3,
+	// for brigand_follower.nut retiune
+	AmountOfLeakedCaravanInventoryInfo = 3,
+
+	// don't want a single item to take up a large portion of the budget
+	ExpensiveLimitMult = 0.85,
 
 	// percentage of acceptable overbudget
 	OverBudgetPct = 0.15,
 
-	// don't want a single item to take up a large portion of the budget
-	ExpensiveLimitMult = 0.85,
+	// willing percentage of resources to invest on a trade
+	PreferInvestmentMin = 2,
+	PreferInvestmentMax = 3,
 
 	DecisionID = {
 		TradeGoods  = 0,
