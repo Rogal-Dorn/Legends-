@@ -13,7 +13,7 @@ gt.Const.World.Common.WorldEconomy <- {
 	PriceLookUp = {},
 
 	// the max products should be generated 
-	PreferProduceNumMax = 10,
+	PreferProduceNumMax = 8,
 
 	// the maximum stash size of 'this.m.ImportedGoodsInventory' of any settlement
 	ImportedGoodsInventorySizeMax = 50,
@@ -38,13 +38,14 @@ gt.Const.World.Common.WorldEconomy <- {
 	PreferInvestmentMax = 2,
 
 	DecisionID = {
-		TradeGoods  = 0,
-		Foods      = 1,
-		Supplies  = 2,
-		Weapons  = 3,
-		Armors  = 4,
-	    Exotic = 5,
-		COUNT = 6,
+		TradeGoods   = 0,
+		Foods       = 1,
+		Supplies   = 2,
+		Weapons   = 3,
+		Armors   = 4,
+	    Exotic  = 5,
+	    Misc   = 6
+		COUNT = 7,
 	},
 
 	// const for the list possible decisions and to deciding which goods should be gathered, more can be added if you can specify the conditions
@@ -86,7 +87,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 6,
 			function IsValid( _item, _shopID )
 			{
-				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
+				//if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
 
 				return _item.isItemType(this.Const.Items.ItemType.Ammo) || _item.isItemType(this.Const.Items.ItemType.Weapon);
 			}
@@ -98,7 +99,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 6,
 			function IsValid( _item, _shopID )
 			{
-				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
+				//if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
 
 				return _item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet) || _item.isItemType(this.Const.Items.ItemType.Shield);
 			},
@@ -111,6 +112,16 @@ gt.Const.World.Common.WorldEconomy <- {
 			function IsValid( _item, _shopID )
 			{
 				return _shopID == "building.alchemist" || _shopID == "building.kennel";
+			}
+		},
+		{
+			Weight = 1,
+			Name = "Misc",
+			PreferNum = 2,
+			PreferMax = 8,
+			function IsValid( _item, _shopID )
+			{
+				return _item.getValue() >= 200;
 			}
 		},
 	],
@@ -129,7 +140,7 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	function calculateTradingBudget( _settlement, _min = -1, _max = -1 )
 	{
-		local mult = 5.0 * (_settlement.getSize() + 1);
+		local mult = 4.25 * (_settlement.getSize() + 1);
 
 		if (_settlement.isMilitary()) mult *= 2.0;
 
@@ -261,7 +272,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			if (a <= 0) continue;
 
 			// the buy power is less than the prefer number of goods to gather
-			if (a < this.Decisions[i].PreferNum)
+			if (a < this.Decisions[i].PreferNum || (a < this.Decisions[i].PreferNum - 1 && ::Math.rand(1, 3) == 1))
 			{
 				// when the goods num is too few
 				if (this.Decisions[i].PreferNum - 2 <= 0) continue;
