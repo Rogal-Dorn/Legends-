@@ -12,6 +12,9 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 		{
 			if (!settlement.isLocation() || !settlement.isLocationType(this.Const.World.LocationType.Settlement) || !settlement.isEnterable()) continue;
 
+			local inv = _entity.getStashInventory().getItems();
+			local storage = settlement.getImportedGoodsInventory().getItems();
+
 			// yes world economy
 			if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 			{
@@ -29,11 +32,8 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					//origin.setResources(origin.getResources() + totalPayment);
 					//settlement.setResources(settlement.getResources() - totalPayment);
 
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " gets their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources");			
+					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
 				}
-
-				local inv = _entity.getStashInventory().getItems();
-				local storage = settlement.getImportedGoodsInventory().getItems();
 
 				// if there already too many items in storage, it's best to remove a few of them
 				// in order to keep the storage at a certain size

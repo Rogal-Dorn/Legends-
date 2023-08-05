@@ -256,7 +256,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			ret.push({
 				id = 51,
 				type = "text",
-				text = "[u][size=14]Inventory Info[/size][/u]"
+				text = "[u][size=14]Transporting:[/size][/u]"
 			});
 
 			for (local i = 0; i < num; ++i)
