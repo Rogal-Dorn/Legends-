@@ -13,7 +13,7 @@ gt.Const.World.Common.WorldEconomy <- {
 	PriceLookUp = {},
 
 	// the max products should be generated 
-	PreferProduceNumMax = 8,
+	PreferProduceNumMax = 9,
 
 	// the maximum stash size of 'this.m.ImportedGoodsInventory' of any settlement
 	ImportedGoodsInventorySizeMax = 50,
@@ -64,7 +64,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			Weight = 1,
 			Name = "Foods",
 			PreferNum = 5,
-			PreferMax = 15,
+			PreferMax = 20,
 			function IsValid( _item, _shopID )
 			{
 				return _item.isItemType(this.Const.Items.ItemType.Food);
@@ -84,7 +84,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			Weight = 1,
 			Name = "Weapons",
 			PreferNum = 2,
-			PreferMax = 6,
+			PreferMax = 7,
 			function IsValid( _item, _shopID )
 			{
 				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
@@ -96,7 +96,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			Weight = 1,
 			Name = "Armors",
 			PreferNum = 2,
-			PreferMax = 6,
+			PreferMax = 7,
 			function IsValid( _item, _shopID )
 			{
 				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
@@ -140,11 +140,11 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	function calculateTradingBudget( _settlement, _min = -1, _max = -1 )
 	{
-		local mult = 4.25 * (_settlement.getSize() + 1);
+		local mult = 5.0 * (_settlement.getSize() + 1);
 
-		if (_settlement.isMilitary()) mult *= 2.0;
+		if (_settlement.isMilitary()) mult *= 1.75;
 
-		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 2.0;
+		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 1.75;
 
 		local budget = ::Math.round(::Math.rand(50, 75) * mult);
 
