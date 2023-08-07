@@ -87,7 +87,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 6,
 			function IsValid( _item, _shopID )
 			{
-				//if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
+				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
 
 				return _item.isItemType(this.Const.Items.ItemType.Ammo) || _item.isItemType(this.Const.Items.ItemType.Weapon);
 			}
@@ -99,7 +99,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 6,
 			function IsValid( _item, _shopID )
 			{
-				//if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
+				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
 
 				return _item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet) || _item.isItemType(this.Const.Items.ItemType.Shield);
 			},
@@ -121,7 +121,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 8,
 			function IsValid( _item, _shopID )
 			{
-				return _item.getValue() >= 200;
+				return _item.getValue() >= 150;
 			}
 		},
 	],
