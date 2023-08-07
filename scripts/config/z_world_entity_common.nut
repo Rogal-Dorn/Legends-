@@ -272,16 +272,16 @@ gt.Const.World.Common.WorldEconomy <- {
 			if (a <= 0) continue;
 
 			// the buy power is less than the prefer number of goods to gather
-			if (a < this.Decisions[i].PreferNum || (a < this.Decisions[i].PreferNum - 1 && ::Math.rand(1, 3) == 1))
+			if (a < this.Decisions[i].PreferNum)
 			{
-				// when the goods num is too few
+				// when the goods num is too low
 				if (this.Decisions[i].PreferNum - 2 <= 0) continue;
 
 				// chance to discard this decision
-				if (::Math.rand(1, 3) == 1) continue;
+				//if (::Math.rand(1, 3) == 1) continue;
 
-				// the above seems simplier, so i commented out this one
-				//if (::Math.rand(a, this.Decisions[i].PreferNum) > this.Decisions[i].PreferNum + ::Math.floor((a - this.Decisions[i].PreferNum) / 2)) continue;
+				// chance to discard this decision
+				if (::Math.rand(a, this.Decisions[i].PreferNum) > this.Decisions[i].PreferNum + ::Math.floor((a - this.Decisions[i].PreferNum) / 2)) continue;
 			}
 
 			result.Potential.push([this.Decisions[i].Weight, this.Decisions[i].Name]);
