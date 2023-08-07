@@ -13,7 +13,6 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			if (!settlement.isLocation() || !settlement.isLocationType(this.Const.World.LocationType.Settlement) || !settlement.isEnterable()) continue;
 
 			local inv = _entity.getStashInventory().getItems();
-			local storage = settlement.getImportedGoodsInventory().getItems();
 
 			// yes world economy
 			if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
@@ -35,23 +34,30 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
 				}
 
-				// if there already too many items in storage, it's best to remove a few of them
-				// in order to keep the storage at a certain size
-				if (storage.len() + inv.len() > ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax)
-				{
-					local different = storage.len() + inv.len() - ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax;
-					local newStorage = storage.filter(function(_index, _item) {
-						return _index >= different;
-					});
-
-					settlement.getImportedGoodsInventory().assign(newStorage);
-				}
-
 				// unload all items to the marketplace
 				foreach( item in inv )
 				{
 					settlement.addImportedProduce(item);
 					this.logWarning("Moving \'" + item.getName() + "\' to " + settlement.getName() +  "\'s marketplace");
+				}
+
+				local storage = settlement.getImportedGoodsInventory().getItems();
+				local marketplace = settlement.getBuilding("building.marketplace");
+				// if there already too many items in storage, the excess one will be pushed to the marketplace immediately 
+				// in order to keep the storage at a certain size
+				// this also lets the settlement to continue shipping these items to another place :)
+				if (marketplace != null && storage.len() > ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax)
+				{
+					local different = storage.len() - ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax;
+					local newStorage = [];
+
+					foreach (i, item in storage )
+					{
+						if (i >= different) newStorage.push(item);
+						else marketplace.getStash().add(item);
+					}
+
+					settlement.getImportedGoodsInventory().assign(newStorage);
 				}
 			}
 			// no world economy
