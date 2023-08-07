@@ -574,15 +574,8 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 	function addToInventory( _i )
 	{
-		if (typeof _i == "string")
-		{
-			this.world_entity.addToInventory(_i);
-		}
-		else
-		{
-			this.m.StashInventory.add(_i);
-			this.getFlags().set("UseStashInventory", true);
-		}
+		if (typeof _i == "string") this.world_entity.addToInventory(_i);
+		else this.m.StashInventory.add(_i);
 	}
 	
 	function clearInventory()
@@ -641,10 +634,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		_out.writeF32(this.m.StunTime);
 		_out.writeU8(this.m.IdleSoundsIndex);
 
-		if (this.getFlags().get("UseStashInventory"))
-		{
-			this.m.StashInventory.onSerialize(_out);
-		}
+		this.m.StashInventory.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
@@ -696,14 +686,11 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			this.m.IdleSoundsIndex = _in.readU8();
 		}
 
+		this.m.StashInventory.onDeserialize(_in);
+
 		if (this.hasLabel("name"))
 		{
 			this.getLabel("name").Visible = this.m.IsShowingName && this.Const.World.AI.VisualizeNameOfUnits;
-		}
-
-		if (this.getFlags().get("UseStashInventory"))
-		{
-			this.m.StashInventory.onDeserialize(_in);
 		}
 	}
 

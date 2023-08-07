@@ -910,15 +910,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function addImportedProduce( _p )
 	{
-		if (typeof _p == "string")
-		{
-			this.m.ProduceImported.push(_p)
-		}
-		else
-		{
-			this.m.ImportedGoodsInventory.add(_p);
-			this.getFlags().set("UseImportedGoodsInventory", true);
-		}
+		if (typeof _p == "string") this.m.ProduceImported.push(_p);
+		else this.m.ImportedGoodsInventory.add(_p);
 	}
 
 	function getFoodPriceMult()
@@ -2864,18 +2857,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		_out.writeU8(this.m.HousesTiles.len());
 
-		for( local i = 0; i != this.m.HousesTiles.len(); i = i )
+		for( local i = 0; i != this.m.HousesTiles.len(); ++i )
 		{
 			_out.writeI16(this.m.HousesTiles[i].X);
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
-			i = ++i;
 		}
 
-		if (this.getFlags().get("UseImportedGoodsInventory"))
-		{
-			this.m.ImportedGoodsInventory.onSerialize(_out);
-		}
+		this.m.ImportedGoodsInventory.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
@@ -2919,7 +2908,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.Buildings.resize(9, null);
 		local numBuildings = _in.readU8();
 
-		for( local i = 0; i < numBuildings; i = i )
+		for( local i = 0; i < numBuildings; ++i )
 		{
 			local id = _in.readU32();
 
@@ -2929,8 +2918,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				this.m.Buildings[i].setSettlement(this);
 				this.m.Buildings[i].onDeserialize(_in);
 			}
-
-			i = ++i;
 		}
 
 		if (this.m.IsCoastal && this.m.Buildings[3] != null && this.m.Buildings[3].getID() == "building.port")
@@ -2941,11 +2928,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local numSituations = _in.readU8();
 		this.m.Situations.resize(numSituations);
 
-		for( local i = 0; i < numSituations; i = i )
+		for( local i = 0; i < numSituations; ++i )
 		{
 			this.m.Situations[i] = this.new(this.IO.scriptFilenameByHash(_in.readU32()));
 			this.m.Situations[i].onDeserialize(_in);
-			i = ++i;
 		}
 
 		this.m.Modifiers.reset();
@@ -2957,31 +2943,28 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local numProduce = _in.readU8();
 
-		for( local i = 0; i != numProduce; i = i )
+		for( local i = 0; i != numProduce; ++i )
 		{
 			this.m.ProduceImported.push(_in.readString());
-			i = ++i;
 		}
 
 		local numConnectedTo = _in.readU8();
 
-		for( local i = 0; i != numConnectedTo; i = i )
+		for( local i = 0; i != numConnectedTo; ++i )
 		{
 			this.m.ConnectedTo.push(_in.readU32());
-			i = ++i;
 		}
 
 		local numConnectedToByRoads = _in.readU8();
 
-		for( local i = 0; i != numConnectedToByRoads; i = i )
+		for( local i = 0; i != numConnectedToByRoads; ++i )
 		{
 			this.m.ConnectedToByRoads.push(_in.readU32());
-			i = ++i;
 		}
 
 		local numHouses = _in.readU8();
 
-		for( local i = 0; i != numHouses; i = i )
+		for( local i = 0; i != numHouses; ++i )
 		{
 			local x = _in.readI16();
 			local y = _in.readI16();
@@ -2991,14 +2974,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Y = y,
 				V = v
 			});
-			i = ++i;
 		}
 
-		if (this.getFlags().get("UseImportedGoodsInventory"))
-		{
-			this.m.ImportedGoodsInventory.onDeserialize(_in);
-		}
-
+		this.m.ImportedGoodsInventory.onDeserialize(_in);
 		this.updateSprites();
 	}
 
