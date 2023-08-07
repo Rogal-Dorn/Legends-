@@ -251,31 +251,43 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() && this.World.Assets.m.IsBrigand && this.m.Flags.get("IsCaravan"))
 		{
 			local inv = this.getStashInventory().getItems();
-			local num = ::Math.min(inv.len(), ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo);
 
-			ret.push({
-				id = 51,
-				type = "text",
-				text = "[u][size=14]Transporting:[/size][/u]"
-			});
-
-			for (local i = 0; i < num; ++i)
+			if (inv.len() == 0)
 			{
 				ret.push({
-					id = 52 + i,
+					id = 51,
 					type = "text",
-					icon = "ui/items/" + inv[i].getIcon(),
-					text = inv[i].getName()
+					text = "[u]Inventory is empty[/u]"
 				});
 			}
-
-			if (inv.len() > ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo)
+			else
 			{
+				local num = ::Math.min(inv.len(), ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo);
+
 				ret.push({
-					id = 53 + num,
+					id = 51,
 					type = "text",
-					text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
+					text = "[u]Transporting:[/u]"
 				});
+
+				for (local i = 0; i < num; ++i)
+				{
+					ret.push({
+						id = 52 + i,
+						type = "text",
+						icon = "ui/items/" + inv[i].getIcon(),
+						text = inv[i].getName()
+					});
+				}
+
+				if (inv.len() > ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo)
+				{
+					ret.push({
+						id = 53 + num,
+						type = "text",
+						text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
+					});
+				}
 			}
 		}
 
