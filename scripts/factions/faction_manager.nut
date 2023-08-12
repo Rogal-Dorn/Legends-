@@ -267,6 +267,11 @@ this.faction_manager <- {
 			}
 			this.__ping();
 		}
+
+		foreach(settlement in this.World.EntityManager.getSettlements() )
+		{
+			settlement.updateShop(true);
+		}
 	}
 
 	function clear()
