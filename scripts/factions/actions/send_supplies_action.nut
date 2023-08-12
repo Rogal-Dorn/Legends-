@@ -82,6 +82,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 	function onExecute( _faction )
 	{
 		local party = _faction.spawnEntity(this.m.Start.getTile(), "Supply Caravan", false, this.pickSpawnList(this.m.Start, _faction), this.getResourcesForParty(this.m.Start, _faction));
+
 		party.getSprite("body").setBrush(this.Const.World.Spawn.NobleCaravan.Body);
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);

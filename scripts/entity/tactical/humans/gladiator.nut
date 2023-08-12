@@ -12,7 +12,7 @@ this.gladiator <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 60;
-		this.m.Ethnicity = 1;
+		this.m.Ethnicity = 4;
 		this.m.Body = this.Math.rand(0, this.m.Bodies.len() - 1);
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);

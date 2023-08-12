@@ -37,6 +37,12 @@ gt.Const.HairColors.All <- [
 	"brown",
 	"red"
 ];
+gt.Const.HairColors.Northern <- [
+	"grey",
+	"blonde",
+	"brown",
+	"red"
+];
 gt.Const.HairColors.Old <- [
 	"grey"
 ];
@@ -432,6 +438,27 @@ gt.Const.Faces.SouthernFemale <- [
 	"bust_head_southern_female_07",
 	"bust_head_southern_female_08",
 	"bust_head_southern_female_09"
+]
+
+gt.Const.Faces.AfricanFemale <- [
+	"bust_head_southern_female_10",
+	"bust_head_southern_female_11",
+	"bust_head_southern_female_12",
+	"bust_head_southern_female_13"
+]
+
+gt.Const.Faces.AfricanMale <- [
+	"bust_head_african_03"
+	"bust_head_african_06",
+	"bust_head_african_07",
+	"bust_head_african_10",
+	"bust_head_african_11",
+	"bust_head_african_12",
+	"bust_head_african_13",
+	"bust_head_african_14",
+	"bust_head_african_15",
+	"bust_head_african_16",
+	"bust_head_african_17"
 ]
 
 
@@ -1013,109 +1040,654 @@ gt.Const.Tattoos.HorseFace <- [
 gt.Const.Tattoos.Wildman <- [];
 gt.Const.Tattoos.Cultist <- [];
 gt.Const.Bodies.AllHuman <- [
-	"bust_naked_body_00",
-	"bust_naked_body_01",
-	"bust_naked_body_02",
-	"bust_naked_body_03",
-	"bust_naked_body_southern_00",
-	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02",
-	"bust_female_southern_body_00",
-	"bust_female_southern_body_01",
-	"bust_female_southern_body_02",
-	"bust_female_southern_body_03",
-	"bust_female_southern_body_04",
-	"bust_female_southern_body_05",
-	"bust_female_northern_body_00",
-	"bust_female_northern_body_01",
-	"bust_female_northern_body_02",
-	"bust_naked_body_african_00",
-	"bust_naked_body_african_01",
-	"bust_naked_body_african_02"
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02",
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02",
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",	
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_00",
+	"bust_female_eastern_01",
+	"bust_female_eastern_02",
+	"bust_female_northeastern_00",	
+	"bust_female_northeastern_01",
+	"bust_female_northeastern_02",	
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02",
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02",
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",	
+	"bust_male_southeastern_02",	
+	"bust_male_eastern_00",
+	"bust_male_eastern_01",
+	"bust_male_eastern_02",
+	"bust_male_northeastern_00",	
+	"bust_male_northeastern_01",
+	"bust_male_northeastern_02"	
 ];
 
 gt.Const.Bodies.AllMale <- [
-	"bust_naked_body_00",
-	"bust_naked_body_01",
-	"bust_naked_body_02"
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02",
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02",
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",	
+	"bust_male_southeastern_02",	
+	"bust_male_eastern_00",
+	"bust_male_eastern_01",
+	"bust_male_eastern_02",
+	"bust_male_northeastern_00",	
+	"bust_male_northeastern_01",
+	"bust_male_northeastern_02"	
+];
+
+gt.Const.Bodies.NorthernMale <- [
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_northeastern_00",	
+	"bust_male_northeastern_01",
+	"bust_male_northeastern_02"	
+];
+gt.Const.Bodies.NorthWesternMale <- [
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02"
+];
+gt.Const.Bodies.NorthWesternMaleOnly <- [,
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02"
+];
+gt.Const.Bodies.WesternMale <- [
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02",
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02"
+];
+
+gt.Const.Bodies.SouthWesternMale <- [
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02",
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02"
 ];
 
 gt.Const.Bodies.SouthernMale <- [
-	"bust_naked_body_southern_00",
-	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02"
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02",
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",	
+	"bust_male_southeastern_02"
 ];
-gt.Const.Bodies.Skinny <- [
-	"bust_naked_body_00"
+
+gt.Const.Bodies.SouthEasternMale <- [
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",	
+	"bust_male_eastern_00",
+	"bust_male_eastern_01",
+	"bust_male_eastern_02",
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",
+	"bust_male_southeastern_02"
 ];
-gt.Const.Bodies.FemaleSkinny <- [
-	"bust_female_northern_body_00"
+
+
+gt.Const.Bodies.EasternMale <- [
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",	
+	"bust_male_southeastern_02",	
+	"bust_male_eastern_00",
+	"bust_male_eastern_01",
+	"bust_male_eastern_02",
+	"bust_male_northeastern_00",	
+	"bust_male_northeastern_01",
+	"bust_male_northeastern_02"	
 ];
-gt.Const.Bodies.SouthernSkinny <- [
-	"bust_naked_body_southern_00"
+gt.Const.Bodies.NorthEasternMale <- [
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northeastern_00",	
+	"bust_male_northeastern_01",	
+	"bust_male_northeastern_02",	
+	"bust_male_eastern_00",
+	"bust_male_eastern_01",
+	"bust_male_eastern_02"
 ];
-gt.Const.Bodies.SouthernFemaleSkinny <- [
-	"bust_female_southern_body_00"
-];
-gt.Const.Bodies.Muscular <- [
-	"bust_naked_body_01"
-];
-gt.Const.Bodies.FemaleMuscular <- [
-	"bust_female_northern_body_01"
-];
-gt.Const.Bodies.SouthernMuscular <- [
-	"bust_naked_body_southern_01"
-];
-gt.Const.Bodies.SouthernFemaleMuscular <- [
-	"bust_female_southern_body_01"
-];
-gt.Const.Bodies.Thick <- [
-	"bust_naked_body_02"
-];
-gt.Const.Bodies.FemaleThick <- [
-	"bust_female_northern_body_02"
-];
-gt.Const.Bodies.SouthernThick <- [
-	"bust_naked_body_southern_01"
-];
-gt.Const.Bodies.SouthernFemaleThick <- [
-	"bust_female_southern_body_02",
-	"bust_female_southern_body_05",
-];
-gt.Const.Bodies.Gladiator <- [
-	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02"
-];
-gt.Const.Bodies.SouthernSlave <- [
-	"bust_naked_body_southern_00"
-];
-gt.Const.Bodies.NorthernSlave <- [
-	"bust_naked_body_00"
-];
+
+
 
 gt.Const.Bodies.AllFemale <- [
-	"bust_naked_body_03",
-	"bust_female_southern_body_00",
-	"bust_female_southern_body_01",
-	"bust_female_southern_body_02",
-	"bust_female_southern_body_03",
-	"bust_female_southern_body_04",
-	"bust_female_southern_body_05",
-	"bust_female_northern_body_00",
-	"bust_female_northern_body_01",
-	"bust_female_northern_body_02"
-];
-
-gt.Const.Bodies.SouthernFemale <- [
-	"bust_female_southern_body_00",
-	"bust_female_southern_body_01",
-	"bust_female_southern_body_02"
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02",
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02",
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",	
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_00",
+	"bust_female_eastern_01",
+	"bust_female_eastern_02",
+	"bust_female_northeastern_00",	
+	"bust_female_northeastern_01",
+	"bust_female_northeastern_02"	
 ];
 
 gt.Const.Bodies.NorthernFemale <- [
-	"bust_female_northern_body_00",
-	"bust_female_northern_body_01",
-	"bust_female_northern_body_02"
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_northeastern_00",	
+	"bust_female_northeastern_01",
+	"bust_female_northeastern_02"	
+];
+gt.Const.Bodies.NorthWesternFemale <- [
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02"
+];
+
+gt.Const.Bodies.WesternFemale <- [
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02",
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02"
+];
+
+gt.Const.Bodies.SouthWesternFemale <- [
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02",
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02"
+];
+
+gt.Const.Bodies.SouthernFemale <- [
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02",
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",	
+	"bust_female_southeastern_02"
+];
+
+gt.Const.Bodies.SouthEasternFemale <- [
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",	
+	"bust_female_eastern_00",
+	"bust_female_eastern_01",
+	"bust_female_eastern_02",
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",
+	"bust_female_southeastern_02"
+];
+
+gt.Const.Bodies.EasternFemale <- [
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",	
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_00",
+	"bust_female_eastern_01",
+	"bust_female_eastern_02",
+	"bust_female_northeastern_00",	
+	"bust_female_northeastern_01",
+	"bust_female_northeastern_02"	
+];
+gt.Const.Bodies.NorthEasternFemale <- [
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northeastern_00",	
+	"bust_female_northeastern_01",	
+	"bust_female_northeastern_02",	
+	"bust_female_eastern_00",
+	"bust_female_eastern_01",
+	"bust_female_eastern_02"
+];
+
+
+
+gt.Const.Bodies.Skinny <- [
+	"bust_male_northern_00",
+	"bust_male_northwestern_00",		
+	"bust_male_western_00",
+	"bust_male_southwestern_00",	
+	"bust_male_southern_00",
+	"bust_male_southeastern_00",		
+	"bust_male_eastern_00",
+	"bust_male_northeastern_00",
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",	
+	"bust_female_western_00",
+	"bust_female_southwestern_00",	
+	"bust_female_southern_00",
+	"bust_female_southeastern_00",	
+	"bust_female_eastern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.MaleSkinny <- [
+	"bust_male_northern_00",
+	"bust_male_northwestern_00",		
+	"bust_male_western_00",
+	"bust_male_southwestern_00",	
+	"bust_male_southern_00",
+	"bust_male_southeastern_00",		
+	"bust_male_eastern_00",
+	"bust_male_northeastern_00"
+];
+gt.Const.Bodies.FemaleSkinny <- [
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",	
+	"bust_female_western_00",
+	"bust_female_southwestern_00",	
+	"bust_female_southern_00",
+	"bust_female_southeastern_00",	
+	"bust_female_eastern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.NorthernSkinny <- [
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",
+	"bust_female_northeastern_00",
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.NorthernMaleSkinny <- [
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.NorthernFemaleSkinny <- [
+	"bust_female_northern_00",
+	"bust_female_northwestern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.SouthernSkinny <- [
+	"bust_male_southwestern_00",	
+	"bust_male_southern_00",
+	"bust_male_southeastern_00",
+	"bust_female_southwestern_00",	
+	"bust_female_southern_00",
+	"bust_female_southeastern_00"
+];
+gt.Const.Bodies.SouthernMaleSkinny <- [
+	"bust_male_southwestern_00",	
+	"bust_male_southern_00",
+	"bust_male_southeastern_00"
+];
+gt.Const.Bodies.SouthernFemaleSkinny <- [
+	"bust_female_southwestern_00",	
+	"bust_female_southern_00",
+	"bust_female_southeastern_00"
+];
+gt.Const.Bodies.EasternSkinny <- [
+	"bust_male_southeastern_00",		
+	"bust_male_eastern_00",
+	"bust_male_northeastern_00",
+	"bust_female_southeastern_00",	
+	"bust_female_eastern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.EasternMaleSkinny <- [
+	"bust_male_southeastern_00",		
+	"bust_male_eastern_00",
+	"bust_male_northeastern_00"
+];
+gt.Const.Bodies.EasternFemaleSkinny <- [
+	"bust_female_southeastern_00",	
+	"bust_female_eastern_00",
+	"bust_female_northeastern_00"
+];
+gt.Const.Bodies.WesternSkinny <- [
+	"bust_male_northwestern_00",		
+	"bust_male_western_00",
+	"bust_male_southwestern_00",
+	"bust_female_northwestern_00",	
+	"bust_female_western_00",
+	"bust_female_southwestern_00",	
+];
+gt.Const.Bodies.WesternMaleSkinny <- [
+	"bust_male_northwestern_00",		
+	"bust_male_western_00",
+	"bust_male_southwestern_00"
+];
+gt.Const.Bodies.WesternFemaleSkinny <- [
+	"bust_female_northwestern_00",	
+	"bust_female_western_00",
+	"bust_female_southwestern_00"
+];
+
+
+
+gt.Const.Bodies.Muscular <- [
+	"bust_male_northern_01",
+	"bust_male_northwestern_01",		
+	"bust_male_western_01",
+	"bust_male_southwestern_01",	
+	"bust_male_southern_01",
+	"bust_male_southeastern_01",		
+	"bust_male_eastern_01",
+	"bust_male_northeastern_01",
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",	
+	"bust_female_western_01",
+	"bust_female_southwestern_01",	
+	"bust_female_southern_01",
+	"bust_female_southeastern_01",	
+	"bust_female_eastern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.MaleMuscular <- [
+	"bust_male_northern_01",
+	"bust_male_northwestern_01",		
+	"bust_male_western_01",
+	"bust_male_southwestern_01",	
+	"bust_male_southern_01",
+	"bust_male_southeastern_01",		
+	"bust_male_eastern_01",
+	"bust_male_northeastern_01"
+];
+gt.Const.Bodies.FemaleMuscular <- [
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",	
+	"bust_female_western_01",
+	"bust_female_southwestern_01",	
+	"bust_female_southern_01",
+	"bust_female_southeastern_01",	
+	"bust_female_eastern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.NorthernMuscular <- [
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",
+	"bust_female_northeastern_01",
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.NorthernMaleMuscular <- [
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.NorthernFemaleMuscular <- [
+	"bust_female_northern_01",
+	"bust_female_northwestern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.SouthernMuscular <- [
+	"bust_male_southwestern_01",	
+	"bust_male_southern_01",
+	"bust_male_southeastern_01",
+	"bust_female_southwestern_01",	
+	"bust_female_southern_01",
+	"bust_female_southeastern_01"
+];
+gt.Const.Bodies.SouthernMaleMuscular <- [
+	"bust_male_southwestern_01",	
+	"bust_male_southern_01",
+	"bust_male_southeastern_01"
+];
+gt.Const.Bodies.SouthernFemaleMuscular <- [
+	"bust_female_southwestern_01",	
+	"bust_female_southern_01",
+	"bust_female_southeastern_01"
+];
+gt.Const.Bodies.EasternMuscular <- [
+	"bust_male_southeastern_01",		
+	"bust_male_eastern_01",
+	"bust_male_northeastern_01",
+	"bust_female_southeastern_01",	
+	"bust_female_eastern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.EasternMaleMuscular <- [
+	"bust_male_southeastern_01",		
+	"bust_male_eastern_01",
+	"bust_male_northeastern_01"
+];
+gt.Const.Bodies.EasternFemaleMuscular <- [
+	"bust_female_southeastern_01",	
+	"bust_female_eastern_01",
+	"bust_female_northeastern_01"
+];
+gt.Const.Bodies.WesternMuscular <- [
+	"bust_male_northwestern_01",		
+	"bust_male_western_01",
+	"bust_male_southwestern_01",
+	"bust_female_northwestern_01",	
+	"bust_female_western_01",
+	"bust_female_southwestern_01",	
+];
+gt.Const.Bodies.WesternMaleMuscular <- [
+	"bust_male_northwestern_01",		
+	"bust_male_western_01",
+	"bust_male_southwestern_01"
+];
+gt.Const.Bodies.WesternFemaleMuscular <- [
+	"bust_female_northwestern_01",	
+	"bust_female_western_01",
+	"bust_female_southwestern_01"
+];
+
+
+gt.Const.Bodies.Thick <- [
+	"bust_male_northern_02",
+	"bust_male_northwestern_02",		
+	"bust_male_western_02",
+	"bust_male_southwestern_02",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_02",		
+	"bust_male_eastern_02",
+	"bust_male_northeastern_02",
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",	
+	"bust_female_western_02",
+	"bust_female_southwestern_02",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.MaleThick <- [
+	"bust_male_northern_02",
+	"bust_male_northwestern_02",		
+	"bust_male_western_02",
+	"bust_male_southwestern_02",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_02",		
+	"bust_male_eastern_02",
+	"bust_male_northeastern_02"
+];
+gt.Const.Bodies.FemaleThick <- [
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",	
+	"bust_female_western_02",
+	"bust_female_southwestern_02",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.NorthernThick <- [
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",
+	"bust_female_northeastern_02",
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.NorthernMaleThick <- [
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.NorthernFemaleThick <- [
+	"bust_female_northern_02",
+	"bust_female_northwestern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.SouthernThick <- [
+	"bust_male_southwestern_02",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_02",
+	"bust_female_southwestern_02",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_02"
+];
+gt.Const.Bodies.SouthernMaleThick <- [
+	"bust_male_southwestern_02",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_02"
+];
+gt.Const.Bodies.SouthernFemaleThick <- [
+	"bust_female_southwestern_02",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_02"
+];
+gt.Const.Bodies.EasternThick <- [
+	"bust_male_southeastern_02",		
+	"bust_male_eastern_02",
+	"bust_male_northeastern_02",
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.EasternMaleThick <- [
+	"bust_male_southeastern_02",		
+	"bust_male_eastern_02",
+	"bust_male_northeastern_02"
+];
+gt.Const.Bodies.EasternFemaleThick <- [
+	"bust_female_southeastern_02",	
+	"bust_female_eastern_02",
+	"bust_female_northeastern_02"
+];
+gt.Const.Bodies.WesternThick <- [
+	"bust_male_northwestern_02",		
+	"bust_male_western_02",
+	"bust_male_southwestern_02",
+	"bust_female_northwestern_02",	
+	"bust_female_western_02",
+	"bust_female_southwestern_02",	
+];
+gt.Const.Bodies.WesternMaleThick <- [
+	"bust_male_northwestern_02",		
+	"bust_male_western_02",
+	"bust_male_southwestern_02"
+];
+gt.Const.Bodies.WesternFemaleThick <- [
+	"bust_female_northwestern_02",	
+	"bust_female_western_02",
+	"bust_female_southwestern_02"
+];
+
+
+gt.Const.Bodies.Gladiator <- [
+	"bust_male_southwestern_01",	
+	"bust_male_southern_01",
+	"bust_male_southeastern_01"
+];
+gt.Const.Bodies.SouthernSlave <- [
+	"bust_male_southern_01",
+];
+gt.Const.Bodies.NorthernSlave <- [
+	"bust_male_northern_01",
 ];
 
 
@@ -1125,31 +1697,49 @@ gt.Const.Bodies.Barber <- [
 ];
 
 gt.Const.Bodies.BarberSouthernFemale <- [
-	"bust_female_southern_body_00",
-	"bust_female_southern_body_01",
-	"bust_female_southern_body_02",
-	"bust_female_southern_body_03",
-	"bust_female_southern_body_04",
-	"bust_female_southern_body_05"
+	"bust_female_southwestern_00",	
+	"bust_female_southwestern_01",
+	"bust_female_southwestern_02",
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02",
+	"bust_female_southeastern_00",	
+	"bust_female_southeastern_01",	
+	"bust_female_southeastern_02"
 ]
 gt.Const.Bodies.BarberNorthernFemale <- [
-	"bust_naked_body_03",
-	"bust_female_northern_body_00",
-	"bust_female_northern_body_01",
-	"bust_female_northern_body_02"
+	"bust_female_northern_00",
+	"bust_female_northern_01",
+	"bust_female_northern_02",
+	"bust_female_northwestern_00",	
+	"bust_female_northwestern_01",	
+	"bust_female_northwestern_02",	
+	"bust_female_western_00",
+	"bust_female_western_01",
+	"bust_female_western_02"
 ]
 gt.Const.Bodies.BarberSouthernMale <- [
-	"bust_naked_body_southern_00",
-	"bust_naked_body_southern_01",
-	"bust_naked_body_southern_02"
+	"bust_male_southwestern_00",	
+	"bust_male_southwestern_01",
+	"bust_male_southwestern_02",
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02",
+	"bust_male_southeastern_00",	
+	"bust_male_southeastern_01",
+	"bust_male_southeastern_02"
 ]
 gt.Const.Bodies.BarberNorthernMale <- [
-	"bust_naked_body_00",
-	"bust_naked_body_01",
-	"bust_naked_body_02"
+	"bust_male_northern_00",
+	"bust_male_northern_01",
+	"bust_male_northern_02",
+	"bust_male_northwestern_00",	
+	"bust_male_northwestern_01",	
+	"bust_male_northwestern_02",	
+	"bust_male_western_00",
+	"bust_male_western_01",
+	"bust_male_western_02"
 ]
-
-
 
 
 gt.Const.Bodies.Horses <- [
@@ -1201,52 +1791,32 @@ gt.Const.HairColors.African <- [
 ]
 
 gt.Const.Bodies.AfricanFemale <- [
-	"bust_female_southern_body_03",
-	"bust_female_southern_body_04",
-	"bust_female_southern_body_05",
+	"bust_female_southern_00",
+	"bust_female_southern_01",	
+	"bust_female_southern_02"
 ]
 
 gt.Const.Bodies.AfricanMale <- [
-	"bust_naked_body_african_00",
-	"bust_naked_body_african_01",
-	"bust_naked_body_african_02"
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02"
 ]
 
 gt.Const.Bodies.AfricanFemaleSkinny <- [
-	"bust_female_southern_body_03"
+	"bust_female_southern_00",
 ]
 gt.Const.Bodies.AfricanFemaleMuscular <- [
-	"bust_female_southern_body_04"
+	"bust_female_southern_01",
 ]
 gt.Const.Bodies.AfricanFemaleThick <- [
-	"bust_female_southern_body_05"
+	"bust_female_southern_02"
 ]
 
 gt.Const.Bodies.AfricanGladiator <- [
-	"bust_naked_body_african_01",
-	"bust_naked_body_african_02"
+	"bust_male_southern_00",
+	"bust_male_southern_01",	
+	"bust_male_southern_02"
 ]
 gt.Const.Bodies.AfricanSlave <- [
-	"bust_naked_body_african_00"
-]
-
-gt.Const.Faces.AfricanFemale <- [
-	"bust_head_southern_female_10",
-	"bust_head_southern_female_11",
-	"bust_head_southern_female_12",
-	"bust_head_southern_female_13"
-]
-
-gt.Const.Faces.AfricanMale <- [
-	"bust_head_african_03"
-	"bust_head_african_06",
-	"bust_head_african_07",
-	"bust_head_african_10",
-	"bust_head_african_11",
-	"bust_head_african_12",
-	"bust_head_african_13",
-	"bust_head_african_14",
-	"bust_head_african_15",
-	"bust_head_african_16",
-	"bust_head_african_17"
+	"bust_male_southern_00",
 ]

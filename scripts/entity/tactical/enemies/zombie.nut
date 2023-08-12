@@ -644,7 +644,7 @@ this.zombie <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ActionPointCosts = this.Const.DefaultMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		local app = this.getItems().getAppearance();
-		app.Body = "bust_naked_body_0" + this.Math.rand(0, 2);
+		app.Body = "bust_male_northwestern_0" + this.Math.rand(0, 2);
 		app.Corpse = app.Body + "_dead";
 		this.m.InjuryType = this.Math.rand(1, 4);
 		local hairColor = this.Const.HairColors.Zombie[this.Math.rand(0, this.Const.HairColors.Zombie.len() - 1)];

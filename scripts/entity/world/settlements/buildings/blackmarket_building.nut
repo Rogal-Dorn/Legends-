@@ -536,7 +536,12 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 90,
 				P = 20.0,
-				S = "legend_armor/runes/legend_rune_resilience"
+				S = "legend_armor/runes/legend_rune_endurance"
+			},
+			{
+				R = 90,
+				P = 20.0,
+				S = "legend_helmets/runes/legend_rune_luck"
 			},
 			{
 				R = 90,

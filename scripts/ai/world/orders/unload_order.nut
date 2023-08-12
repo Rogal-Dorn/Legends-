@@ -19,6 +19,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 			{
 				local origin = _entity.getOrigin();
 
+
 				if (origin != null)
 				{
 					local investment = _entity.getFlags().getAsInt("CaravanInvestment");
@@ -32,6 +33,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					//settlement.setResources(settlement.getResources() - totalPayment);
 
 					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
+
 				}
 
 				// unload all items to the marketplace

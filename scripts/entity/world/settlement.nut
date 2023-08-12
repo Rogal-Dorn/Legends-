@@ -49,6 +49,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		ConnectedToByRoads = [],
 		IsCoastal = false,
 		IsMilitary = false,
+		Ethnicity = 0,
 		IsActive = true,
 		IsUpgrading = false
 	},
@@ -1675,6 +1676,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
+	function setCityEthnicity()
+	{
+		local entityY = this.getTile().SquareCoords.Y;
+		local entityX = this.getTile().SquareCoords.X;
+		local worldY = this.World.getMapSize().Y;
+		local worldX = this.World.getMapSize().X;
+
+		// Determine the row
+		local row;
+		if (entityY < worldY * 0.3) {
+			row = 0;  // West
+		} else if (entityY < worldY * 0.6) {
+			row = 1;  // Center
+		} else {
+			row = 2;  // East
+		}
+
+		// Determine the column
+		local col;
+		if (entityX < worldX * 0.3) {
+			col = 0;  // South
+		} else if (entityX < worldX * 0.6) {
+			col = 1;  // Center
+		} else {
+			col = 2;  // North
+		}
+
+		// Combine row and column to get ethnicity
+		// Ethnicity ranges from 1 to 9, with 1 being Southwest, 3 being North West, and 9 being Northeast
+		// Descriptions are in Const.Strings.Ethnicity
+		this.m.Ethnicity = row * 3 + col + 1;
+		
+	}
+
 	function updateRoster( _force = false )
 	{
 		local daysPassed = (this.Time.getVirtualTimeF() - this.m.LastRosterUpdate) / this.World.getTime().SecondsPerDay;
@@ -1787,10 +1822,19 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
 
+		if (this.m.Ethnicity == 5)
+		{
+		this.setCityEthnicity()
+		}
+		
 		while (maxRecruits > current.len())
 		{
 			local bro = roster.create("scripts/entity/tactical/player");
 			bro.setStartValuesEx(draftList);
+			if (bro.getEthnicity() == 0)
+			{
+			bro.setEthnicity(this.m.Ethnicity);
+			}
 			this.World.Assets.getOrigin().onGenerateBro(bro);
 			current.push(bro);
 		}

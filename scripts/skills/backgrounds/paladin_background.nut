@@ -54,7 +54,7 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Initiative
 		];
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -134,7 +134,7 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.BackgroundDescription = "Oathtakers are brave warriors sworn to uphold a strict code, and are no strangers to combat.";
 		this.m.GoodEnding = "%name% the Oathtaker stayed with the %companyname%, wielding Young Anselm\'s skull to proselytize knightly virtues unto the world. Most see her as something of an annoyance, but there is also some charm in a woman who believes fully in matters of honor and pride and doing good. Last you heard, she singlehandedly saved a lord\'s prince from a gang of alley thieves. In celebration, she was wed to the man, though rumors abound that he is unhappy in bed, proclaiming that the Oathtaker insists on Young Anselm\'s skull watching from the corner. Whatever\'s going on, you\'re happy that the woman is still doing her thing to the fullest.";

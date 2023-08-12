@@ -77,7 +77,7 @@ this.legend_burned_injury <- this.inherit("scripts/skills/injury_permanent/perma
 	function onApplyAppearance()
 	{
 		local sprite = this.getContainer().getActor().getSprite("permanent_injury_burned");
-		if (this.getContainer().getActor().getEthnicity() == 1)
+		if (this.getContainer().getActor().getEthnicity() == 4)
 		{
 			sprite.setBrush("permanent_injury_burned_southern");
 		}
