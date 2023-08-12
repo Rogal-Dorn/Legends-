@@ -35,7 +35,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.Names = this.Const.Strings.KnightNames;
 		this.m.Level = this.Math.rand(1, 3);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Noble | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Educated;

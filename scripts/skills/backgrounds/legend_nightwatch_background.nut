@@ -28,7 +28,7 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Terrain = [

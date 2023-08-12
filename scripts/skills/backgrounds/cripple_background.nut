@@ -46,7 +46,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMin;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
 		this.m.BackgroundType = this.Const.BackgroundType.Lowborn;
 		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
@@ -91,7 +91,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
