@@ -81,7 +81,7 @@ this.holywar_sand_storm_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getEthnicity() == 4 && this.Math.rand(1, 100) <= 66)
+					else if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.worsenMood(0.75, "Disliked that you ended the suffering of northern invaders");
 
@@ -146,7 +146,7 @@ this.holywar_sand_storm_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getEthnicity() == 4 && this.Math.rand(1, 100) <= 66)
+					else if (bro.getEthnicity() == 1 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.improveMood(0.75, "Approved of your decision to leave northern invaders judged by the Gilder");
 

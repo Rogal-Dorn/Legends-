@@ -146,7 +146,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getEthnicity() == 4 || bro.getID() == _event.m.Monk.getID() || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
+					if (bro.getEthnicity() == 1 || bro.getID() == _event.m.Monk.getID() || bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.historian" || bro.getBackground().getID() == "background.legend_inventor" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" || bro.getBackground().getID() == "background.legend_necro" || bro.getBackground().getID() == "background.legend_necro_commander")
 					{
 						continue;
 					}
@@ -217,7 +217,7 @@ this.how_far_is_the_sun_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getEthnicity() == 4)
+					else if (bro.getEthnicity() == 1)
 					{
 						bro.worsenMood(1.0, "Angry about the heretical ramblings of " + _event.m.Cultist.getName());
 

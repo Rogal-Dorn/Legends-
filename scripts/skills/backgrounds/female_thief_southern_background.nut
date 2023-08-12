@@ -7,7 +7,7 @@ this.female_thief_southern_background <- this.inherit("scripts/skills/background
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 	}
 
 	function setGender(_gender = -1)

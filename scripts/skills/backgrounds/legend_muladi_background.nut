@@ -29,7 +29,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.BackgroundType = this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Ranger;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
@@ -94,7 +94,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.NorthernFemaleSkinny;
+		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		// this.m.GoodEnding = "todo endings";
 		// this.m.BadEnding = "todo endings";

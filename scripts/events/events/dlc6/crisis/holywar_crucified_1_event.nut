@@ -95,7 +95,7 @@ this.holywar_crucified_1_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getEthnicity() == 6 && this.Math.rand(1, 100) <= 66)
+					if (bro.getEthnicity() == 0 && this.Math.rand(1, 100) <= 66)
 					{
 						bro.improveMood(1.0, "Saved a dying surgeon from the desert");
 

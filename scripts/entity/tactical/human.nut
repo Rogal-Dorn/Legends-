@@ -1,6 +1,6 @@
 this.human <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Bodies = this.Const.Bodies.NorthWesternMaleOnly,
+		Bodies = this.Const.Bodies.AllMale,
 		Faces = null,
 		Hairs = null,
 		HairColors = null,
@@ -59,71 +59,14 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Bodies = this.Const.Bodies.AllFemale;
 			this.m.BeardChance = 0;
 			this.m.Hairs = this.Const.Hair.AllFemale;
-
-			
 			if (this.m.Ethnicity == 1)
-			{
-				this.m.Bodies = this.Const.Bodies.SouthwesternFemale;
-				this.m.Faces = this.Const.Faces.SouthernFemale;
-				this.m.Hairs = this.Const.Hair.SouthernFemale;
-				this.m.HairColors = this.Const.HairColors.Southern;
-			}
-			if (this.m.Ethnicity == 2)
-			{
-				this.m.Bodies = this.Const.Bodies.WesternFemale;
-				this.m.Faces = this.Const.Faces.AllWhiteFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.All;
-			}
-			if (this.m.Ethnicity == 3)
-			{
-				this.m.Bodies = this.Const.Bodies.NorthwesternFemale;
-				this.m.Faces = this.Const.Faces.AllWhiteFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Northern;
-			}
-			if (this.m.Ethnicity == 4)
 			{
 				this.m.Bodies = this.Const.Bodies.SouthernFemale;
 				this.m.Faces = this.Const.Faces.SouthernFemale;
 				this.m.Hairs = this.Const.Hair.SouthernFemale;
 				this.m.HairColors = this.Const.HairColors.Southern;
 			}
-			if (this.m.Ethnicity == 5 || this.m.Ethnicity == 0)
-			{
-				this.m.Bodies = this.Const.Bodies.AllFemale;
-				this.m.Faces = this.Const.Faces.AllFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.All;
-			}
-			if (this.m.Ethnicity == 6)
-			{
-				this.m.Bodies = this.Const.Bodies.NorthernFemale;
-				this.m.Faces = this.Const.Faces.AllWhiteFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Northern;
-			}
-			if (this.m.Ethnicity == 7)
-			{
-				this.m.Bodies = this.Const.Bodies.SoutheasternFemale;
-				this.m.Faces = this.Const.Faces.SouthFemale;
-				this.m.Hairs = this.Const.Hair.SouthernFemale;
-				this.m.HairColors = this.Const.HairColors.Southern;
-			}
-			if (this.m.Ethnicity == 8)
-			{
-				this.m.Bodies = this.Const.Bodies.EasternFemale;
-				this.m.Faces = this.Const.Faces.SouthFemale;
-				this.m.Hairs = this.Const.Hair.SouthernFemale;
-				this.m.HairColors = this.Const.HairColors.Southern;
-			}
-			if (this.m.Ethnicity == 9)
-			{
-				this.m.Bodies = this.Const.Bodies.NortheasternFemale;
-				this.m.Faces = this.Const.Faces.AllWhiteFemale;
-				this.m.Hairs = this.Const.Hair.AllFemale;
-				this.m.HairColors = this.Const.HairColors.Northern;
-			}
+
 			if (_reroll)
 			{
 				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
@@ -636,7 +579,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 		this.addSprite("scar_body");
 		local injury_body = this.addSprite("injury_body");
 		injury_body.Visible = false;
-		injury_body.setBrush("bust_male_northwestern_0" + this.m.Body + "_injured");
+		injury_body.setBrush("bust_naked_body_0" + this.m.Body + "_injured");
 		this.addSprite("armor");
 		this.addSprite("armor_layer_chain");
 		this.addSprite("armor_layer_plate");
@@ -763,7 +706,7 @@ this.human <- this.inherit("scripts/entity/tactical/actor", {
 			this.getSprite("beard").Visible = false;
 		}
 
-		if (this.m.Ethnicity == 4 && hairColor != "grey")
+		if (this.m.Ethnicity == 1 && hairColor != "grey")
 		{
 			local hair = this.getSprite("hair");
 			hair.Saturation = 0.8;

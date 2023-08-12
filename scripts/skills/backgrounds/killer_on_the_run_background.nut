@@ -47,7 +47,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;

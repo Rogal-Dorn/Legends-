@@ -55,7 +55,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 			Class = [this.Const.Perks.NinetailsClassTree],
 			Magic = []
 		}
-		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 	function onBuildDescription()
