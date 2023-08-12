@@ -460,12 +460,12 @@ this.sato_escaped_slaves_scenario <- this.inherit("scripts/scenarios/world/start
 
 	function setRetireText( bro )
 	{
-		if (bro.getBackground().getEthnicity() == 4 || bro.getBackground().getEthnicity() == 4  || bro.getBackground().getEthnicity() == 7)
+		if (bro.getBackground().getEthnicity() == 1)
 		{
 			bro.getBackground().m.GoodEnding = "You freed the indebted %name% and helped them find a new life as a sellsword. %name% did become an effective fighter, no doubt believing it was better to fight and live free than to fight and die. After your departure, you heard that the %companyname% traveled south on a campaign and the indebted got a good chance to exact a fair bit of revenge on a number of enemies from the past. You count yourself lucky to have served in the same company.";
 			bro.getBackground().m.BadEnding = "You found %name% as an indebted and after your retiring, they went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, the slave has either been put into the vanguard as fodder or forced out to distract manhunters on the company\'s trail. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and this mercenary is unfortunately both.";
 		}
-		else
+		else if (bro.getBackground().getEthnicity() != 1)
 		{
 			bro.getBackground().m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. You found them as a slave, far from family and home, and put them to work as a sellsword. After you left the %companyname%, they stayed on and has been rising through its ranks ever since. You hear they were so ferocious in a battle with manhunters that the city-states have reconsidered sending men after the company at all, fearing what might happen if %name% took the fight to them more directly.";
 			bro.getBackground().m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into troubles with manhunters and had to leave behind both \'man and material\' to escape. %name%\'s time with the company presumably ended sometime there. You hope %name%\'s time as a slave never started again.";

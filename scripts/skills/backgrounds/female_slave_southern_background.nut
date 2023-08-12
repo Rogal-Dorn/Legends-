@@ -5,8 +5,8 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 		this.slave_background.create();
 		this.m.GoodEnding = "You purchased %name% as an indebted for almost no gold and continued to pay her a \'slave\'s wage\' for her stay as a sellsword. She did make herself an effective fighter, no doubt believing it was better to be paid nothing and fight to stay alive than be paid nothing and give up and rot. After your departure, you heard that the %companyname% traveled south on a campaign and the indebted got a good chance to exact a fair bit of revenge on a number of enemies in her past. Thankfully, she does not consider you one such person despite having keeping her in an enslaved stead.";
 		this.m.BadEnding = "You purchased %name% as an indebted and after your retiring, she went on with the %companyname%. Word of the mercenary band\'s problems have trickled in, but nothing about the indebted\'s current situation. Knowing how this world works, she has either been put into the vanguard as fodder or perhaps even been sold off to recoup profits. Either way, the world isn\'t easy on a sellsword, and it isn\'t easy on an indebted, and the woman is unfortunately both.";
-		this.m.Ethnicity = this.Math.rand(1, 9);
-		if (this.m.Ethnicity == 4)
+		this.m.Ethnicity = this.Math.rand(1, 2);
+		if (this.m.Ethnicity == 1)
 		{
 			this.m.Bodies = this.Const.Bodies.SouthernFemaleSkinny;
 			this.m.Faces = this.Const.Faces.SouthernFemale;
@@ -100,7 +100,7 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 			return;
 		}
 
-		if (this.m.Ethnicity == 4)
+		if (this.m.Ethnicity == 1)
 		{
 			this.m.Bodies = this.Const.Bodies.SouthernSlave;
 			this.m.Faces = this.Const.Faces.SouthernMale;
@@ -117,7 +117,7 @@ this.female_slave_southern_background <- this.inherit("scripts/skills/background
 
 		this.m.Beards = this.Const.Beards.All;
 		this.m.BeardChance = 10;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.removeBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "%name% the indebted has had a rough life and you\'ve both contributed to that and helped alleviate it in some way. Found as a slave in the south, far from family and home. \'Hired\' essentially for free and worked as an enslaved sellsword. After you left the %companyname%, %name% was removed from the ledger of indebted and was for all intents and purposes free. %name% stayed with the company and has been rising through its ranks ever since. You stand at an odd relation, %name% never thanked you, nor expressed ill will.";
 		this.m.BadEnding = "With your retiring from the unsuccessful %companyname%, %name% the indebted from the north carried on with the company for a time. You got wind that the mercenary band ran into financial troubles and was selling off \'flesh and material\' to make ends meet. It seems %name%\'s time with the company presumably ended sometime there, and %name%\'s time as a slave started again.";

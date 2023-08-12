@@ -38,7 +38,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Ethnicity = 6;
+		this.m.Ethnicity = 0;
 		this.m.Bodies = this.Const.Bodies.AllFemale;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Kind;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;

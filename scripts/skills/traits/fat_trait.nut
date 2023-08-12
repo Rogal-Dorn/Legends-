@@ -62,7 +62,7 @@ this.fat_trait <- this.inherit("scripts/skills/traits/character_trait", {
 
 		local actor = this.getContainer().getActor();
 
-		if (actor.getEthnicity() == 4)
+		if (actor.getEthnicity() == 1)
 		{
 			actor.getSprite("body").setBrush("bust_naked_body_southern_02");
 		}

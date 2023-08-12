@@ -15,7 +15,7 @@ this.slave <- this.inherit("scripts/entity/tactical/human", {
 			this.m.HairColors = this.Const.HairColors.Southern;
 			this.m.Beards = this.Const.Beards.SouthernUntidy;
 			this.m.BeardChance = 90;
-			this.m.Ethnicity = 4;
+			this.m.Ethnicity = 1;
 		}
 		else
 		{
@@ -70,7 +70,7 @@ this.slave <- this.inherit("scripts/entity/tactical/human", {
 			tattoo_body.Visible = true;
 		}
 
-		if (this.m.Ethnicity == 5)
+		if (this.m.Ethnicity == 0)
 		{
 			local body = this.getSprite("body");
 			body.Color = this.createColor("#ffeaea");

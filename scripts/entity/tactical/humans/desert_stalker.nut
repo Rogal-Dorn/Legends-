@@ -12,7 +12,7 @@ this.desert_stalker <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.SouthernOnly;
 		this.m.BeardChance = 100;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
 	}

@@ -9,7 +9,7 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.huge",
@@ -49,7 +49,7 @@ this.peddler_southern_background <- this.inherit("scripts/skills/backgrounds/ped
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.NorthernFemaleThick;
+		this.m.Bodies = this.Const.Bodies.FemaleThick;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 
 	}
