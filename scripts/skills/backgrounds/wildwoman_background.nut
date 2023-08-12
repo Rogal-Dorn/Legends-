@@ -58,7 +58,7 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
 		this.m.Level = this.Math.rand(1, 2);
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Female | this.Const.BackgroundType.Druid | this.Const.BackgroundType.Ranger;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;

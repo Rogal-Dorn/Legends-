@@ -23,7 +23,7 @@ this.legend_tournament_spectator <- this.inherit("scripts/entity/tactical/entity
 
 	function onInit()
 	{
-		local bodies = this.Const.Bodies.AllMale;
+		local bodies = this.Const.Bodies.NorthernMale;
 		local heads = this.Const.Faces.AllHuman;
 		local beards = this.Const.Beards.All;
 		local hairs = this.Const.Hair.Barber;

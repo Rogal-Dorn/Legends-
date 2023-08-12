@@ -54,7 +54,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.Level = 3;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Lowborn | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Druid | this.Const.BackgroundType.Ranger;
 		// this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -121,7 +121,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 

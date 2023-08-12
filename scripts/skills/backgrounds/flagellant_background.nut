@@ -30,7 +30,7 @@ this.flagellant_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
 		this.m.BackgroundType = this.Const.BackgroundType.OffendedByViolence | this.Const.BackgroundType.Crusader;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
