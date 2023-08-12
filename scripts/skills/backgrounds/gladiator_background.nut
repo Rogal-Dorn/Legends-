@@ -35,8 +35,8 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.dastard",
 			"trait.insecure"
 		];
-		this.m.Ethnicity = this.Math.rand(1, 9);
-		if (this.m.Ethnicity == 4)
+		this.m.Ethnicity = this.Math.rand(1, 2);
+		if (this.m.Ethnicity == 1)
 		{
 			this.m.Bodies = this.Const.Bodies.Gladiator;
 			this.m.Faces = this.Const.Faces.SouthernMale;
@@ -116,7 +116,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
 		if (_gender != 1) return;
-		if (this.m.Ethnicity == 4)
+		if (this.m.Ethnicity == 1)
 		{
 			this.m.Faces = this.Const.Faces.SouthernFemale;
 			this.m.Hairs = this.Const.Hair.SouthernFemale;

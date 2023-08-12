@@ -58,7 +58,7 @@ this.legend_berserker_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Beards = this.Const.Beards.Wild;
 		this.m.BeardChance = 100;
 		this.m.Bodies = this.Const.Bodies.LegendTattos;
-		this.m.Ethnicity = 6;
+		this.m.Ethnicity = 0;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Cruel;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.Level = 1;

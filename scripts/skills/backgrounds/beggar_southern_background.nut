@@ -7,9 +7,9 @@ this.beggar_southern_background <- this.inherit("scripts/skills/backgrounds/begg
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.SouthernUntidy;
-		this.m.Bodies = this.Const.Bodies.SouthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.SouthernSkinny;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.Names = this.Const.Strings.SouthernNames;
 	}
 

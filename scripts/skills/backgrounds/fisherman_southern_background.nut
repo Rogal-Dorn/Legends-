@@ -3,13 +3,13 @@ this.fisherman_southern_background <- this.inherit("scripts/skills/backgrounds/f
 	function create()
 	{
 		this.fisherman_background.create();
-		this.m.Bodies = this.Const.Bodies.SouthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.SouthernSkinny;
 		this.m.Faces = this.Const.Faces.SouthernMale;
 		this.m.Hairs = this.Const.Hair.SouthernMale;
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.weasel",

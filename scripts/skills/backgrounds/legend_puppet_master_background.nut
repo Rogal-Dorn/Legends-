@@ -30,8 +30,8 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Bravery
 		];
-		this.m.Ethnicity = this.Math.rand(1, 9); //is southern
-		if (this.m.Ethnicity == 4)
+		this.m.Ethnicity = this.Math.rand(1, 2); //is southern
+		if (this.m.Ethnicity == 1)
 		{
 			this.m.Bodies = this.Const.Bodies.SouthernMuscular;
 			this.m.Faces = this.Const.Faces.SouthernMale;

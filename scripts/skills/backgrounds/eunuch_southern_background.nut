@@ -3,12 +3,12 @@ this.eunuch_southern_background <- this.inherit("scripts/skills/backgrounds/eunu
 	function create()
 	{
 		this.eunuch_background.create();
-		this.m.Bodies = this.Const.Bodies.SouthernMaleThick;
+		this.m.Bodies = this.Const.Bodies.SouthernThick;
 		this.m.Faces = this.Const.Faces.SouthernMale;
 		this.m.Hairs = this.Const.Hair.SouthernMale;
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = null;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.weasel",
