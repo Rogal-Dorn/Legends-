@@ -63,7 +63,7 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Class = [this.Const.Perks.JugglerClassTree,],
 			Magic = []
 		}
-		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 

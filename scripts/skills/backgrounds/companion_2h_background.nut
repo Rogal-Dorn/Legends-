@@ -48,7 +48,7 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Untalented;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;

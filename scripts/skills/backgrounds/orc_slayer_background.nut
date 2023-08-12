@@ -51,7 +51,7 @@ this.orc_slayer_background <- this.inherit("scripts/skills/backgrounds/character
 
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = 9;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.Crusader;
 		this.m.Modifiers.Repair = this.Const.LegendMod.ResourceModifiers.Repair[2];

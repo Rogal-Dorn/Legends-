@@ -82,7 +82,7 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 			Class = [],
 			Magic = []
 		}
-		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
+		this.m.Bodies = this.Const.Bodies.Skinny;
 	}
 
 

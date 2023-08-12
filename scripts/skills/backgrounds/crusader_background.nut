@@ -48,7 +48,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.Old;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = 9;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Crusader | this.Const.BackgroundType.OffendedByViolence;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Good;

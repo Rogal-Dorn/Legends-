@@ -50,7 +50,6 @@ python make_legend_enemies.py
 handleExit
 
 declare -a BRUSHES=(
-"legend_bodies"
 "entity_blood"
 "legend_characters"
 "legend_enemies"
@@ -81,7 +80,10 @@ declare -a BRUSHES=(
 "legend_helmets/14"
 "legend_helmets/15"
 "legend_armor/0"
-
+"legend_armor/1"
+"legend_armor/2"
+"legend_armor/3"
+"legend_armor/4"
 )
 
 mkdir -p brushes

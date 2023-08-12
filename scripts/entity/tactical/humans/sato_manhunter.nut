@@ -12,7 +12,7 @@ this.sato_manhunter <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.SouthernUntidy;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 4;
+		this.m.Ethnicity = 1;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/sato_manhunter_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}

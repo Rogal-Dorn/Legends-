@@ -31,7 +31,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
+		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.BackgroundType = this.Const.BackgroundType.Crusader | this.Const.BackgroundType.Noble;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
@@ -78,7 +78,7 @@ this.legend_blacksmith_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
+		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
 		this.m.Name = "Farrier";
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.Icon = "ui/backgrounds/blacksmith.png"; //keep the same otherwise people will get confused.

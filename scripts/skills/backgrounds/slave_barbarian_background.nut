@@ -9,8 +9,8 @@ this.slave_barbarian_background <- this.inherit("scripts/skills/backgrounds/slav
 		this.m.Hairs = this.Const.Hair.WildMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.WildExtended;
-		this.m.Bodies = this.Const.Bodies.NorthernMale;
-		this.m.Ethnicity = 6;
+		this.m.Bodies = this.Const.Bodies.AllMale;
+		this.m.Ethnicity = 0;
 		this.m.Titles = [
 			"the Barbarian",
 			"the Northman",
