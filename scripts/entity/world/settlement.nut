@@ -503,36 +503,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
+	function addResources( _v )
+	{
+		this.setResources(this.getResources() + _v);
+	}
+
 	function getWealth()
+	{
+		return this.Math.round(100.0 * (1.0 * this.getResources() / this.getWealthBaseLevel()));
+	}
+
+	function getWealthBaseLevel()
 	{
 		local baseLevel = 0.0;
 
-		if (this.isMilitary())
-		{
-			baseLevel = baseLevel + 50.0;
-		}
+		if (this.isMilitary()) baseLevel += 50.0;
 
-		if (this.isKindOf(this, "city_state"))
-		{
-			baseLevel = baseLevel + 100;
-		}
+		if (this.isKindOf(this, "city_state")) baseLevel += 100;
 
 		switch(this.getSize())
 		{
 		case 1:
-			baseLevel = baseLevel + 100.0;
+			baseLevel += 100.0;
 			break;
 
 		case 2:
-			baseLevel = baseLevel + 150.0;
+			baseLevel += 150.0;
 			break;
 
 		case 3:
-			baseLevel = baseLevel + 200.0;
+			baseLevel += 200.0;
 			break;
 		}
 
-		return this.Math.round(100.0 * (1.0 * this.getResources() / baseLevel));
+		return baseLevel;
 	}
 
 	function getImagePath()
@@ -900,17 +904,15 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
+	function getImportedGoodsInventory()
+	{
+		return this.m.ImportedGoodsInventory;
+	}
+
 	function addImportedProduce( _p )
 	{
-		if (typeof _p == "string")
-		{
-			this.m.ProduceImported.push(_p)
-		}
-		else
-		{
-			this.m.ImportedGoodsInventory.add(_p);
-			this.getFlags().set("UseImportedGoodsInventory", true);
-		}
+		if (typeof _p == "string") this.m.ProduceImported.push(_p);
+		else this.m.ImportedGoodsInventory.add(_p);
 	}
 
 	function getFoodPriceMult()
@@ -1969,21 +1971,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 	function updateImportedProduce()
 	{
-		if (this.m.ProduceImported.len() == 0 || this.m.ImportedGoodsInventory.getItems().len() == 0)
+		if (this.m.ProduceImported.len() == 0 && this.m.ImportedGoodsInventory.getItems().len() == 0)
 		{
 			return;
 		}
 
-		local marketplace;
-
-		foreach( building in this.m.Buildings )
-		{
-			if (building != null && building.getID() == "building.marketplace")
-			{
-				marketplace = building;
-				break;
-			}
-		}
+		local marketplace = this.getBuilding("building.marketplace");
 
 		if (marketplace == null)
 		{
@@ -1992,8 +1985,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		foreach( p in this.m.ProduceImported )
 		{
-			local item = this.new("scripts/items/" + p);
-			marketplace.getStash().add(item);
+			marketplace.getStash().add(this.new("scripts/items/" + p));
 		}
 
 		foreach( p in this.m.ImportedGoodsInventory.getItems() )
@@ -2834,7 +2826,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return;
 		}
 
-		this.setResources(this.getResources() + this.getNewResources());
+		this.addResources(this.getNewResources());
 	}
 
 	function onSerialize( _out )
@@ -2909,18 +2901,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		_out.writeU8(this.m.HousesTiles.len());
 
-		for( local i = 0; i != this.m.HousesTiles.len(); i = i )
+		for( local i = 0; i != this.m.HousesTiles.len(); ++i )
 		{
 			_out.writeI16(this.m.HousesTiles[i].X);
 			_out.writeI16(this.m.HousesTiles[i].Y);
 			_out.writeU8(this.m.HousesTiles[i].V);
-			i = ++i;
 		}
 
-		if (this.getFlags().get("UseImportedGoodsInventory"))
-		{
-			this.m.ImportedGoodsInventory.onSerialize(_out);
-		}
+		this.m.ImportedGoodsInventory.onSerialize(_out);
 	}
 
 	function onDeserialize( _in )
@@ -2964,7 +2952,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.m.Buildings.resize(9, null);
 		local numBuildings = _in.readU8();
 
-		for( local i = 0; i < numBuildings; i = i )
+		for( local i = 0; i < numBuildings; ++i )
 		{
 			local id = _in.readU32();
 
@@ -2974,8 +2962,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				this.m.Buildings[i].setSettlement(this);
 				this.m.Buildings[i].onDeserialize(_in);
 			}
-
-			i = ++i;
 		}
 
 		if (this.m.IsCoastal && this.m.Buildings[3] != null && this.m.Buildings[3].getID() == "building.port")
@@ -2986,11 +2972,10 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		local numSituations = _in.readU8();
 		this.m.Situations.resize(numSituations);
 
-		for( local i = 0; i < numSituations; i = i )
+		for( local i = 0; i < numSituations; ++i )
 		{
 			this.m.Situations[i] = this.new(this.IO.scriptFilenameByHash(_in.readU32()));
 			this.m.Situations[i].onDeserialize(_in);
-			i = ++i;
 		}
 
 		this.m.Modifiers.reset();
@@ -3002,31 +2987,28 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		local numProduce = _in.readU8();
 
-		for( local i = 0; i != numProduce; i = i )
+		for( local i = 0; i != numProduce; ++i )
 		{
 			this.m.ProduceImported.push(_in.readString());
-			i = ++i;
 		}
 
 		local numConnectedTo = _in.readU8();
 
-		for( local i = 0; i != numConnectedTo; i = i )
+		for( local i = 0; i != numConnectedTo; ++i )
 		{
 			this.m.ConnectedTo.push(_in.readU32());
-			i = ++i;
 		}
 
 		local numConnectedToByRoads = _in.readU8();
 
-		for( local i = 0; i != numConnectedToByRoads; i = i )
+		for( local i = 0; i != numConnectedToByRoads; ++i )
 		{
 			this.m.ConnectedToByRoads.push(_in.readU32());
-			i = ++i;
 		}
 
 		local numHouses = _in.readU8();
 
-		for( local i = 0; i != numHouses; i = i )
+		for( local i = 0; i != numHouses; ++i )
 		{
 			local x = _in.readI16();
 			local y = _in.readI16();
@@ -3036,14 +3018,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Y = y,
 				V = v
 			});
-			i = ++i;
 		}
 
-		if (this.getFlags().get("UseImportedGoodsInventory"))
-		{
-			this.m.ImportedGoodsInventory.onDeserialize(_in);
-		}
-
+		this.m.ImportedGoodsInventory.onDeserialize(_in);
 		this.updateSprites();
 	}
 
