@@ -42,7 +42,7 @@ this.female_bowyer_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleSkinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.NeutralMax;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.BackgroundType = this.Const.BackgroundType.Female | this.Const.BackgroundType.Ranger;

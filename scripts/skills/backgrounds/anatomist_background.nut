@@ -59,7 +59,7 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.Bodies = this.Const.Bodies.Skinny;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.BackgroundType = this.Const.BackgroundType.Educated;
@@ -132,7 +132,7 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
-		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.GoodEnding = "Out of all the women you came to know in the %companyname%, it was %name% the anatomist who is perhaps the most difficult to forget. An unending stream of letters only helps ensure you never will. You skim over her latest, one-sided correspondence: \"Captain! I\'ve managed to...\" skimming, skimming, \"...the greatest invention! The most...\" skimming, skimming. \"I\'m going to be famous! My brain will be studied for its weight is surely...\" Nothing new, it seems, though you are glad she\'s still in good health, albeit perhaps more so in body than mind.";
 		this.m.BadEnding = "Having fled the %companyname%, %name% the anatomist continued her studies elsewhere. She was admonished by her peers for venturing out in such an uncouth manner and found herself suffering in intellectual mediocrity. Some years later, she made a small contribution to the study of beetles after which she promptly threw herself off a seaside cliff, donating her brain to the rocks and her body to the ocean.";

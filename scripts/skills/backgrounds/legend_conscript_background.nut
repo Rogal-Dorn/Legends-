@@ -37,8 +37,8 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Titles = [
 			"the Conscript"
 		];
-		this.m.Ethnicity = this.Math.rand(1, 2);
-		if (this.m.Ethnicity == 1)
+		this.m.Ethnicity = this.Math.rand(1, 9);
+		if (this.m.Ethnicity == 4)
 		{
 			this.m.Bodies = this.Const.Bodies.SouthernMuscular;
 			this.m.Faces = this.Const.Faces.SouthernMale;

@@ -3,12 +3,12 @@ this.thief_southern_background <- this.inherit("scripts/skills/backgrounds/thief
 	function create()
 	{
 		this.thief_background.create();
-		this.m.Bodies = this.Const.Bodies.SouthernSkinny;
+		this.m.Bodies = this.Const.Bodies.SouthernMaleSkinny;
 		this.m.Faces = this.Const.Faces.SouthernMale;
 		this.m.Hairs = this.Const.Hair.SouthernMale;
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
 		this.m.Beards = this.Const.Beards.Southern;
-		this.m.Ethnicity = 1;
+		this.m.Ethnicity = 4;
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.huge",

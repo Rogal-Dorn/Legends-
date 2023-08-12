@@ -52,17 +52,17 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			"the Hedge Knight"
 		];
 
-		this.m.Ethnicity = this.Math.rand(0, 2);
-		if (this.m.Ethnicity == 0)
+		this.m.Ethnicity = this.Math.rand(0, 9);
+		if (this.m.Ethnicity == 5)
 		{
-			this.m.Bodies = this.Const.Bodies.Muscular;		
+			this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;		
 			this.m.Faces = this.Const.Faces.AllWhiteMale;
 			this.m.Hairs = this.Const.Hair.CommonMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.All;
 			this.m.BeardChance = 60;
 		}	
-		else if (this.m.Ethnicity == 1)
+		else if (this.m.Ethnicity == 4)
 		{
 			this.m.Bodies = this.Const.Bodies.Gladiator;
 			this.m.Faces = this.Const.Faces.SouthernMale;
@@ -73,7 +73,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			this.m.Names = this.Const.Strings.SouthernNames;
 			this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		}
-		else if (this.m.Ethnicity == 2)
+		else if (this.m.Ethnicity == 6)
 		{
 			this.m.Bodies = this.Const.Bodies.AfricanGladiator;
 			this.m.Faces = this.Const.Faces.AfricanMale;
@@ -122,15 +122,15 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
 		if (_gender != 1) return;
-		this.m.Ethnicity = this.Math.rand(0, 2);
-		if (this.m.Ethnicity == 0)
+		this.m.Ethnicity = this.Math.rand(0, 9);
+		if (this.m.Ethnicity == 5)
 		{
 			this.m.Faces = this.Const.Faces.AllWhiteFemale;
 			this.m.Hairs = this.Const.Hair.AllFemale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Bodies = this.Const.Bodies.AllFemale;
 		}	
-		else if (this.m.Ethnicity == 1)
+		else if (this.m.Ethnicity == 4)
 		{
 			this.m.Faces = this.Const.Faces.SouthernFemale;
 			this.m.Hairs = this.Const.Hair.SouthernFemale;
@@ -139,7 +139,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			this.m.Names = this.Const.Strings.SouthernNames;
 			this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		}
-		else if (this.m.Ethnicity == 2)
+		else if (this.m.Ethnicity == 6)
 		{
 			this.m.Faces = this.Const.Faces.AfricanFemale;
 			this.m.Hairs = this.Const.Hair.SouthernFemale;
