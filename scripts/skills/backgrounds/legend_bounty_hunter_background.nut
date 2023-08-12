@@ -51,9 +51,9 @@ this.legend_bounty_hunter_background <- this.inherit("scripts/skills/backgrounds
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Bodies = this.Const.Bodies.SouthernThick;
+		this.m.Bodies = this.Const.Bodies.SouthernMaleThick;
 
-		this.m.Ethnicity = 1;
+		this.m.Ethnicity = 4;
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.BackgroundType = this.Const.BackgroundType.Outlaw;

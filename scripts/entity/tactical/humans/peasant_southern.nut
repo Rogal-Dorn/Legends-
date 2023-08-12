@@ -12,7 +12,7 @@ this.peasant_southern <- this.inherit("scripts/entity/tactical/human", {
 		this.m.HairColors = this.Const.HairColors.Southern;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.BeardChance = 90;
-		this.m.Ethnicity = 1;
+		this.m.Ethnicity = 4;
 		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
 		this.m.AIAgent.setActor(this);

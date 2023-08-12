@@ -88,7 +88,7 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		//---
 		this.m.BackgroundType = this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
@@ -148,7 +148,7 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Bodies = this.Const.Bodies.Muscular;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleMuscular;;
 		this.m.Beards = null;
 		this.m.BeardChance = 1;
 		this.addBackgroundType(this.Const.BackgroundType.Female);

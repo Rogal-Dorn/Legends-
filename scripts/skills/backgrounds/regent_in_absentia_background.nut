@@ -30,7 +30,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Hairs = this.Const.Hair.AllMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.Bodies = this.Const.Bodies.Thick;
+		this.m.Bodies = this.Const.Bodies.NorthernMaleThick;
 		this.m.IsCombatBackground = true;
 		this.m.IsNoble = true;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
@@ -54,7 +54,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleMuscular;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleMuscular;;
 		this.m.Name = "Regent in Absentia";
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 		this.m.Icon = "ui/backgrounds/background_06.png";

@@ -38,15 +38,15 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"the Derelict",
 			"the Surbated"
 		];
-		this.m.Ethnicity = this.Math.rand(1, 2);
-		if (this.m.Ethnicity == 1)
+		this.m.Ethnicity = this.Math.rand(1, 9);
+		if (this.m.Ethnicity == 4)
 		{
-			this.m.Ethnicity = 0;
+			this.m.Ethnicity = 6;
 			this.m.Faces = this.Const.Faces.AllWhiteMale;
 			this.m.Hairs = this.Const.Hair.UntidyMale;
 			this.m.HairColors = this.Const.HairColors.All;
 			this.m.Beards = this.Const.Beards.Untidy;
-			this.m.Bodies = this.Const.Bodies.Skinny;
+			this.m.Bodies = this.Const.Bodies.NorthernMaleSkinny;
 		}
 		else
 		{
@@ -101,7 +101,7 @@ this.refugee_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Beards = null;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.FemaleSkinny;
+		this.m.Bodies = this.Const.Bodies.NorthernFemaleSkinny;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
