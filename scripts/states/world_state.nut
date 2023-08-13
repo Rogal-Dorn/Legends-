@@ -1639,7 +1639,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 				else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
 				{
 					this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
-					this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", party.getInventory()[this.Math.rand(0, party.getInventory().len() - 1)]);
+					if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+					{
+						local prefix = "scripts/items/";
+						local script = this.IO.scriptFilenameByHash(::MSU.Array(party.getStashInventory().getItems()).ClassNameHash);
+						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", script.slice(prefix.len()));
+					}
+					else
+					{
+						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", ::MSU.Array(party.getInventory()));
+					}
 				}
 			}
 
