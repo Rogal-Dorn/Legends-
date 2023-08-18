@@ -26,9 +26,15 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		result.push({
 			id = 14,
 			type = "text",
-			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense and [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+			icon = "ui/icons/melee_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
 		});
+		result.push({
+			id = 14,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+		});		
 		return result;
 	}	
 	function onArmorTooltip( _result )
@@ -36,8 +42,15 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		_result.push({
 			id = 14,
 			type = "text",
+			icon = "ui/icons/melee_defense.png",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense"
+		});
+
+		_result.push({
+			id = 14,
+			type = "text",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense and [color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
+			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
 		});
 	}	
 	function onUpdateProperties( _properties )
