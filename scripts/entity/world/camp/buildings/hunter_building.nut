@@ -63,7 +63,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		desc += "Assigning mercenaries with cooking perks can provide cured meats, dried fruits and grains. "
 		desc += "Assigning mercenaries with brewing perks can yield wine and beer. "
 		desc += "\n\n"
-		desc += "Updgrading this tent allows brewers to produce mead, while cooks produce porridge, pudding and pies. "
+		desc += "Upgrading this tent allows brewers to produce mead, while cooks produce porridge, pudding and pies. "
 		desc += "Upgrading also provides a 10% increase in hunting speed and +50% to cooking and brewing efficiency. "
 		desc += "Upgrading allows cooking backgrounds a small chance to help cook even without cooking perks. "
 		desc += "Upgrading allows hunting backgrounds like wildfolk, ratcatchers, poachers and hunters to return furs and rarer animal parts. "
