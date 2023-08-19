@@ -31,13 +31,13 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 	{
 		local desc = "";
 		desc += "People assigned to this task will go out get supplies, like herbs and plants of medicinal quality. The more people assigned, the more is gathered. "
-		desc += "The more people assigned, the more medicine is gathered. Skilled backgrounds increase the amount further"
+		desc += "The more people assigned, the more medicine is gathered. Skilled backgrounds increase the amount further."
 		desc += "\n\n"
 		desc += "Assigning Woodsmen with the Woodsman\'s Cuts perk can return wood for trade, while Miners with the Miners Strikes perk can find gems. "
 		desc += "Assigning skilled apocatheries like Herbalists, Vala, Alchemists and Druids can return more advanced medicines and bandages."
 		desc += "\n\n"
-		desc += "Buying and upgraded tent will increase gathering speed by 15% and produce more kinds of medicine"
-		desc += "Having both an upgraded tent and skilled apocatheries can provide rare medicines, and powerful potions"
+		desc += "Buying an upgraded tent will increase gathering speed by 15% and produce more kinds of medicine. "
+		desc += "Having both an upgraded tent and skilled apocatheries can provide rare medicines, and powerful potions."
 		return desc;
 	}
 
