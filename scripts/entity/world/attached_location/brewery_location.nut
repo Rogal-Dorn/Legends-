@@ -5,7 +5,7 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 		this.attached_location.create();
 		this.m.Name = "Brewery";
 		this.m.ID = "attached_location.brewery";
-		this.m.Description = "This brewery produces large quantities of beer for both local taverns and traders. Contributes beer, brawlers, monks and gablers to the local town";
+		this.m.Description = "This brewery produces large quantities of beer for both local taverns and traders. Contributes beer, brawlers, monks and gamblers to the local town";
 		this.m.Sprite = "world_brewery_01";
 		this.m.SpriteDestroyed = "world_brewery_01_ruins";
 	}
