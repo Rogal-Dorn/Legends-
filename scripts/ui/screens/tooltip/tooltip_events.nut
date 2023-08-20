@@ -1496,13 +1496,13 @@ this.tooltip_events <- {
 					id = 3,
 					type = "hint",
 					icon = "ui/icons/asset_supplies.png",
-					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + toolsMult + "%[/color] Reduction Multplier (modifier func)"
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + toolsMult + "%[/color] Reduction Multplier"
 				});
 				ret.push({
 					id = 4,
 					type = "hint",
 					icon = "ui/icons/asset_supplies.png",
-					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + tools * 100 + "%[/color] Tool usage percent out (raw calculated)"
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + tools * 100 + "%[/color] Tool usage percent out"
 				});
 
 			return ret;
