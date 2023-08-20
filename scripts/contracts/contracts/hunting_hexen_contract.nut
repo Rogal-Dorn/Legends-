@@ -9,6 +9,7 @@ this.hunting_hexen_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_hexen";
 		this.m.Name = "A Pact With Witches";
+		this.m.Description = "The local lord's firstborn is in danger as reports of sorcery are about, protect them from hexe sorcery and hunt down the creature.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

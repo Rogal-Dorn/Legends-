@@ -9,6 +9,7 @@ this.hunting_sand_golems_contract <- this.inherit("scripts/contracts/contract", 
 		this.contract.create();
 		this.m.Type = "contract.hunting_sandgolems";
 		this.m.Name = "Shifting Sands";
+		this.m.Description = "Local reports of shifting sands keep flocking in Ifrits must be close, hunt them down.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

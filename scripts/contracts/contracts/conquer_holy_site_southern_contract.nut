@@ -9,6 +9,7 @@ this.conquer_holy_site_southern_contract <- this.inherit("scripts/contracts/cont
 		this.contract.create();
 		this.m.Type = "contract.conquer_holy_site_southern";
 		this.m.Name = "Conquer Holy Site";
+		this.m.Description = "The southern leaders have had a vision from Glider and are hiring mercenaries to retake their holy ground form the northern heathens.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

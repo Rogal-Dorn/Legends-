@@ -9,6 +9,7 @@ this.hunting_alps_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_alps";
 		this.m.Name = "Ending the Nightmare";
+		this.m.Description = "Locals report getting reoccuring nightmares, the alps must not be far camp out till night and take them out.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

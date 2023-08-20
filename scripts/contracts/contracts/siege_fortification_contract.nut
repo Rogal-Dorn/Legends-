@@ -18,6 +18,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 
 		this.m.Type = "contract.siege_fortification";
 		this.m.Name = "Siege Fortification";
+		this.m.Description = "House lords are setting up a siege as the war rages, get down there and make sure the siege goes smoothly.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 	}

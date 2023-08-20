@@ -14,6 +14,7 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 		this.contract.create();
 		this.m.Type = "contract.investigate_cemetery";
 		this.m.Name = "Secure Cemetery";
+		this.m.Description = "Locals report a disturbance at a nearby cemetery, investigate and secure the cemetery.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

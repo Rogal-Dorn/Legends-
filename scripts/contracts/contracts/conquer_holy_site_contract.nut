@@ -9,6 +9,7 @@ this.conquer_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.conquer_holy_site";
 		this.m.Name = "Conquer Holy Site";
+		this.m.Description = "Spies report that the southerners are gathering en masse at their holysite, the local lord is rallying the troops and hiring mercenaries to squash their gathering.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

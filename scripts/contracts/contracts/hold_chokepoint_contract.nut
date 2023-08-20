@@ -9,6 +9,7 @@ this.hold_chokepoint_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hold_chokepoint";
 		this.m.Name = "Hold Fortress";
+		this.m.Description = "Southern leaders have reports of northern raiders coming to srtike at the golden citys of the south, move to the abandoned fortress and stop them coming further south.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

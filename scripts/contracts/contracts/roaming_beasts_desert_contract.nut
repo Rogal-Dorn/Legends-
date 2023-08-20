@@ -8,6 +8,7 @@ this.roaming_beasts_desert_contract <- this.inherit("scripts/contracts/contract"
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts_desert";
 		this.m.Name = "Hunting Beasts";
+		this.m.Description = "Southerners are restless as beast attacks become commonplace, as the southern lord is originizing a hunt they are looking for more hunters to get their beast problem in check.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

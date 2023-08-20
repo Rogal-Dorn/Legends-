@@ -6,6 +6,7 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = 1.0;
 		this.m.Type = "contract.arena";
 		this.m.Name = "The Arena";
+		this.m.Description = "Fight in todays Arena, emerge victorious and gain a piece of gladiator gear.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 1.0;
 	}
 

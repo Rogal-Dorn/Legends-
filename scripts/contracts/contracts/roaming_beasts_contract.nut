@@ -8,6 +8,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts";
 		this.m.Name = "Hunting Beasts";
+		this.m.Description = "Locals are restless as beast attacks become commonplace, as the lord is originizing a hunt they are looking for more hunters to get their beast problem in check.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

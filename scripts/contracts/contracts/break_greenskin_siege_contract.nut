@@ -20,6 +20,7 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 
 		this.m.Type = "contract.break_greenskin_siege";
 		this.m.Name = "Break Siege";
+		this.m.Description = "Greenskins are laying siege in the region, local lords are desprete and are hiring mercenaries to break the siege.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 	}

@@ -18,6 +18,7 @@ this.last_stand_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.last_stand";
 		this.m.Name = "Defend Settlement";
+		this.m.Description = "Scouts report undead horads heading straight for a nearby city, get over there and deffend the city.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;

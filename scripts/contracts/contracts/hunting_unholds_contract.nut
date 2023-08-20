@@ -14,6 +14,7 @@ this.hunting_unholds_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_unholds";
 		this.m.Name = "Hunting Giants";
+		this.m.Description = "Local lords are concerned with the proximity of a group of unholds, hunt them down.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
