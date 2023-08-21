@@ -9,7 +9,7 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.intercept_raiding_parties";
 		this.m.Name = "Intercept Raiding Parties";
-		this.m.Description = "Scouts report that several bands of raiders are on their way, set up camp and prevent the burning of the city.";
+		this.m.Description = "Scouts report that several bands of southern raiders are on their way. Set up camp and prevent the burning of the city.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;

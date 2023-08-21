@@ -22,7 +22,7 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.root_out_undead";
 		this.m.Name = "Root Out The Undead";
-		this.m.Description = "As the undead war rages scouts repot key undead strongholds that need to be destroied, head out and raise 3 key locations.";
+		this.m.Description = "As the undead war rages on, scout reports have identified key undead strongholds that need to be destroied. Head out and raze 3 key locations.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

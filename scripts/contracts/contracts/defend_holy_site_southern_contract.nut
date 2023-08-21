@@ -9,7 +9,7 @@ this.defend_holy_site_southern_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.defend_holy_site_southern";
 		this.m.Name = "Defend Holy Site";
-		this.m.Description = "The southern leaders have had a vision from Glider and are congragating at the nearby holysite. They are hiring anyone who can help them deffend their holysite from the heathens form the north.";
+		this.m.Description = "The Viziers have had a vision from the Gilder and are congregating at the nearby holy site. They are hiring anyone who can help them defend their holy site from the heathens from the north.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

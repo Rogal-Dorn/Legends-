@@ -9,7 +9,7 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.defend_settlement_bandits";
 		this.m.Name = "Defend Settlement";
-		this.m.Description = "Raiders are aplenty and scouts report bandits coming for another raid, set up camp at the town and prevent their raid.";
+		this.m.Description = "Raiders are aplenty and scouts report bandits coming for another raid. Set up camp at the town and prevent their raid.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;

@@ -9,7 +9,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.free_greenskin_prisoners";
 		this.m.Name = "Free Prisoners";
-		this.m.Description = "There are reports of a band of prisoners captured by the greenskins, find the prisoners dead or alive and avenge them.";
+		this.m.Description = "There are reports of a band of prisoners captured by the greenskins. Find the prisoners dead or alive and avenge them.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

@@ -9,7 +9,7 @@ this.find_artifact_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.find_artifact";
 		this.m.Name = "Expedition";
-		this.m.Description = "As the war rages ccouts report the existance of an ancient relic that could shift the balance of the war, fight through the undead hordes and steal back that relic.";
+		this.m.Description = "As the war rages on, scouts report the existence of an ancient relic that could shift the balance of the war. Fight through the undead hordes and steal back that relic.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
