@@ -502,7 +502,7 @@ this.contract_manager <- {
 function getContractByID( _id ){
 	if(this.m.Active != null && this.m.Active.getID() == _id) return this.m.Active;
 
-	foreach(contract in ths.m.Open)
+	foreach(contract in this.m.Open)
 	{
 		if(contract.getID() == _id)
 		{
