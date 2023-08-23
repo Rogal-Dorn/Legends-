@@ -27,6 +27,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 		}*/
 
 		o.m.Category <- "";
+		o.m.Description <- "";
 
 		o.create = function()
 		{
@@ -67,6 +68,11 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			this.m.TempFlags = this.new("scripts/tools/tag_collection");
 			this.createStates();
 			this.createScreens();
+		}
+
+		o.getDescription <- function()
+		{
+			return this.m.Description;
 		}
 
 		local onDeserialize = o.onDeserialize;
@@ -443,7 +449,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.getCategory <- function()
 		{
-			if (this.World.FactionManager.getFaction(this.getFaction()).getType() == this.Const.FactionType.Settlement && (this.m.Category == "" || this.m.Category == null))
+			if (this.getFaction() > 0 && this.World.FactionManager.getFaction(this.getFaction()).getType() == this.Const.FactionType.Settlement && (this.m.Category == "" || this.m.Category == null))
 			{
 				// At the current phase, all Settlement contracts should have assigned categories
 				this.logWarning("Contract Overhaul: Missing Category for settlement contract: " + this.getName());

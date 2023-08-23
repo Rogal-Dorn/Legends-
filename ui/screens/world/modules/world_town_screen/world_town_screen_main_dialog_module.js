@@ -464,12 +464,12 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 
 	if(_data.IsNegotiated)
 	{
-		contract.bindTooltip({ contentType: 'ui-element', elementId: _isDisabled ? TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractDisabled : TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractNegotiated });	
+		contract.bindTooltip({ elementOwner: _data.ID, contentType: 'ui-element', elementId: _isDisabled ? TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractDisabled : TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractNegotiated });
 		scroll = _content.createImage(Path.GFX + 'ui/icons/scroll_01' + (_isDisabled ? '_sw.png' : '.png'), null, null, 'display-block is-scroll contract' + _i + (_isDisabled ? ' is-disabled' : ''));
 	}
 	else
 	{
-		contract.bindTooltip({ contentType: 'ui-element', elementId: _isDisabled ? TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractDisabled : TooltipIdentifier.WorldTownScreen.MainDialogModule.Contract });
+		contract.bindTooltip({ elementOwner: _data.ID, contentType: 'ui-element', elementId: _isDisabled ? TooltipIdentifier.WorldTownScreen.MainDialogModule.ContractDisabled : TooltipIdentifier.WorldTownScreen.MainDialogModule.Contract });
 		scroll = _content.createImage(Path.GFX + 'ui/icons/scroll_02' + (_isDisabled ? '_sw.png' : '.png'), null, null, 'display-block is-scroll contract' + _i + (_isDisabled ? ' is-disabled' : ''));
 	}
 
