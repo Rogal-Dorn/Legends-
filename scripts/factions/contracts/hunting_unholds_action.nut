@@ -18,7 +18,7 @@ this.hunting_unholds_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.hunting_unholds_contract))
 		{
 			return;
 		}

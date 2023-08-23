@@ -11,6 +11,13 @@ this.escort_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.escort_caravan_contract))
+		{
+			return;
+		}
+
+		// For city-state faction
 		if (!_faction.isReadyForContract())
 		{
 			return;

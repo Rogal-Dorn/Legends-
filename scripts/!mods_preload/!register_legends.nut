@@ -28,6 +28,7 @@
 	this.Const.LegendMod.hookCharacterBackground();
 	this.Const.LegendMod.hookCombatManager();
 	this.Const.LegendMod.hookContract();
+	this.Const.LegendMod.hookContractCategory();
 	this.Const.LegendMod.hookFactionAction();
 	this.Const.LegendMod.hookGhoul();
 	this.Const.LegendMod.hookItemContainer();

@@ -21,7 +21,7 @@ this.discover_location_action <- this.inherit("scripts/factions/faction_action",
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.discover_location_contract))
 		{
 			return;
 		}

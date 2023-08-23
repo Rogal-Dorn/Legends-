@@ -11,7 +11,7 @@ this.defend_settlement_bandits_action <- this.inherit("scripts/factions/faction_
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.defend_settlement_bandits_contract))
 		{
 			return;
 		}

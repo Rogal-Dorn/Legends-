@@ -16,7 +16,7 @@ this.hunting_schrats_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.hunting_schrats_contract))
 		{
 			return;
 		}
