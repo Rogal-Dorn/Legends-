@@ -26,6 +26,8 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			o._mod_legend <- true;// only override the methods once per base instance
 		}*/
 
+		o.m.Description <- "";
+
 		o.create = function()
 		{
 			local r;
@@ -65,6 +67,11 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			this.m.TempFlags = this.new("scripts/tools/tag_collection");
 			this.createStates();
 			this.createScreens();
+		}
+
+		o.getDescription <- function()
+		{
+			return this.m.Description;
 		}
 
 		local onDeserialize = o.onDeserialize;

@@ -3880,75 +3880,32 @@ this.tooltip_events <- {
 			];
 
 		case "world-town-screen.main-dialog-module.Contract":
-			local locations = this.World.EntityManager.getSettlements();
 
-			local playerTile = this.World.State.getPlayer().getTile();
-
-			local settlement = null;
-
-			foreach( s in this.World.EntityManager.getSettlements() )
-			{
-				if (s.getTile().getDistanceTo(playerTile) <= 2)
-				{
-					settlement = s;
-				}
-			}
-
-			local contracts = settlement.getContracts();
-			local c = null;
-			foreach (contract in contracts){
-				if(_elementOwner == contract.getID())
-				{
-				c = contract;
-				}
-			}
-			// uncomment this and add replace ^ when the v is added in.
-			// can be done for the things below this as well.
-			// local contract = this.World.Contracts.getContractByID(_elementOwner);
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
 
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = c.getName()
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "description",
-					text = c.getDescription()
+					text = contract.getDescription()
 				}
 			];
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractNegotiated":
-			local locations = this.World.EntityManager.getSettlements();
 
-			local playerTile = this.World.State.getPlayer().getTile();
-
-			local settlement = null;
-
-			foreach( s in this.World.EntityManager.getSettlements() )
-			{
-				if (s.getTile().getDistanceTo(playerTile) <= 2)
-				{
-					settlement = s;
-				}
-			}
-
-			local contracts = settlement.getContracts();
-			local c = null;
-			foreach (contract in contracts){
-				if(_elementOwner == contract.getID())
-				{
-				c = contract;
-				}
-			}
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
 
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = c.getName()
+					text = contract.getName()
 				},
 				{
 					id = 2,
@@ -3958,56 +3915,31 @@ this.tooltip_events <- {
 				{
 					id = 3,
 					type = "description",
-					text = c.getDescription()
+					text = contract.getDescription()
 				}
 			];
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractDisabled":
-			local locations = this.World.EntityManager.getSettlements();
 
-			local playerTile = this.World.State.getPlayer().getTile();
 
-			local settlement = null;
-
-			foreach( s in this.World.EntityManager.getSettlements() )
-			{
-				if (s.getTile().getDistanceTo(playerTile) <= 2)
-				{
-					settlement = s;
-				}
-			}
-
-			local contracts = settlement.getContracts();
-			local c = null;
-			foreach (contract in contracts){
-				if(_elementOwner == contract.getID())
-				{
-				c = contract;
-				}
-			}
-
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
 
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = c.getName()
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "hint",
-					text = "You already have a contract!"
-				}
-				{
-					id = 3,
-					type = "hint",
-					text = "You can only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
+					text = "You already have a contract! Only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
 				},
 				{
-					id = 4,
+					id = 3,
 					type = "description",
-					text = c.getDescription()
+					text = contract.getDescription()
 				}
 			];
 			return ret;

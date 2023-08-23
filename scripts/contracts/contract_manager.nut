@@ -496,7 +496,7 @@ this.contract_manager <- {
 		this.m.ContractsCancelled = _in.readU32();
 	}
 
-};
+
 
 
 function getContractByID( _id ){
@@ -512,3 +512,5 @@ function getContractByID( _id ){
 
 	return null;
 }
+
+};
