@@ -10,6 +10,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(70, 105) * 0.01;
 		this.m.Type = "contract.deliver_item";
 		this.m.Name = "Armed Courier";
+		this.m.Description = "There is valuable cargo that local lords want transported so they are hiring mercenaries to transport it";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

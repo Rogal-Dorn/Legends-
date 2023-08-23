@@ -9,6 +9,7 @@ this.hunting_mummies_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_mummies";
 		this.m.Name = "The Ancient Dead";
+		this.m.Description = "Southern lords report that a group of mummies are roaming the deserts again. Track them down and take them out.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

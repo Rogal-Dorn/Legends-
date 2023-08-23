@@ -1095,7 +1095,7 @@ this.tooltip_events <- {
 		return null;
 	}
 
-	function general_queryUIElementTooltipData( _entityId, _elementId, _elementOwner )
+	function general_queryUIElementTooltipData(_entityId, _elementId, _elementOwner )
 	{
 		local entity;
 
@@ -1175,7 +1175,7 @@ this.tooltip_events <- {
 				{
 					dailyMoney -= (10 + bro.getLevel());
 				}
-				
+
 				local L = [
 					bro.getDailyCost(),
 					bro.getName(),
@@ -1470,6 +1470,41 @@ this.tooltip_events <- {
 					text = desc
 				}
 			];
+
+			local dailyTools = 0;
+			local toolsMult = 0.0;
+			local brolist = [];
+			local tools = 1;
+
+			foreach( bro in this.World.getPlayerRoster().getAll() )
+			{
+
+				if (bro.getSkills().hasSkill("perk.legend_tools_spares"))
+				{
+					tools = tools - (tools * 0.06); //6%, as it is on this perk above
+					toolsMult += 6;
+				}
+				if (bro.getSkills().hasSkill("perk.legend_tools_drawers"))
+				{
+					tools = tools - (tools * 0.04); //4%, as it is on this perk above
+					toolsMult += 4;
+				}
+
+			}
+
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/asset_supplies.png",
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + toolsMult + "%[/color] Reduction Multplier"
+				});
+				ret.push({
+					id = 4,
+					type = "hint",
+					icon = "ui/icons/asset_supplies.png",
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + tools * 100 + "%[/color] Tool usage percent out"
+				});
+
 			return ret;
 
 		case "repairs.Supplies":
@@ -3845,46 +3880,66 @@ this.tooltip_events <- {
 			];
 
 		case "world-town-screen.main-dialog-module.Contract":
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "Contract available"
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Someone is looking to hire mercenaries."
+					text = contract.getDescription()
 				}
 			];
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractNegotiated":
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "Contract available"
+					text = contract.getName()
 				},
 				{
 					id = 2,
-					type = "description",
+					type = "hint",
 					text = "The terms of this contract have been negotiated. All that\'s left is for you to sign it."
+				},
+				{
+					id = 3,
+					type = "description",
+					text = contract.getDescription()
 				}
 			];
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractDisabled":
+
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "You already have a contract!"
+					text = contract.getName()
 				},
 				{
 					id = 2,
+					type = "hint",
+					text = "You already have a contract! Only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
+				},
+				{
+					id = 3,
 					type = "description",
-					text = "You can only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
+					text = contract.getDescription()
 				}
 			];
 			return ret;

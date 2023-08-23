@@ -496,5 +496,21 @@ this.contract_manager <- {
 		this.m.ContractsCancelled = _in.readU32();
 	}
 
-};
 
+
+
+function getContractByID( _id ){
+	if(this.m.Active != null && this.m.Active.getID() == _id) return this.m.Active;
+
+	foreach(contract in this.m.Open)
+	{
+		if(contract.getID() == _id)
+		{
+			return contract;
+		}
+	}
+
+	return null;
+}
+
+};
