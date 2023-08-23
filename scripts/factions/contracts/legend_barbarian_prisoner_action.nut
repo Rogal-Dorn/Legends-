@@ -17,6 +17,13 @@ this.legend_barbarian_prisoner_action <- this.inherit("scripts/factions/faction_
 			return;
 		}
 
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_barbarian_prisoner_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;

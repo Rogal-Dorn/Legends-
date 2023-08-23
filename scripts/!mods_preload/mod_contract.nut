@@ -26,6 +26,8 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			o._mod_legend <- true;// only override the methods once per base instance
 		}*/
 
+		o.m.Category <- "";
+
 		o.create = function()
 		{
 			local r;
@@ -437,6 +439,21 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 				this.m.Payment.getOnCompletion() + this.m.Payment.getInAdvance()
 			]);
 			return this.buildTextFromTemplate(_text, vars);
+		}
+
+		o.getCategory <- function()
+		{
+			if (this.World.FactionManager.getFaction(this.getFaction()).getType() == this.Const.FactionType.Settlement && (this.m.Category == "" || this.m.Category == null))
+			{
+				// At the current phase, all Settlement contracts should have assigned categories
+				this.logWarning("Contract Overhaul: Missing Category for settlement contract: " + this.getName());
+			}
+			return this.m.Category;
+		}
+
+		o.setCategory <- function( _c )
+		{
+			this.m.Category = _c;
 		}
 
 	});
