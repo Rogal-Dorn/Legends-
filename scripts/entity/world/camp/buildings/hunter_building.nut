@@ -271,7 +271,10 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return this.getUpdateText();
 		}
-
+		::logInfo("1 and 5" + this.Math.minf(1,5));
+		// foreach (item in this.Const.Hunting_Categories.Plains.Items){
+		// 	::logInfo("Items:" + item);
+		// }
 		this.m.Points += this.m.Craft;
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
@@ -290,6 +293,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/beer_item",
 				"scripts/items/supplies/wine_item"
 			]);
+
 
 			if (this.getUpgraded())
 			{
@@ -404,7 +408,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			]);
 		}
 
-
+		if (this.getUpgraded() && huntingLoot.len() > 0 && this.Math.rand(1, 5) == 1)
+		{
+			huntitem = this.new(huntingLoot.roll());
+			this.m.Items.push(huntitem);
+			this.Stash.add(huntitem);
+		}
 
 		if (item.getValue() != null && this.m.Points < item.getValue())
 		{
@@ -417,18 +426,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		item.randomizeBestBefore();
 		this.m.Items.push(item);
 		this.Stash.add(item);
-
-		if (!this.getUpgraded() || huntingLoot.len() == 0)
-		{
-			return this.getUpdateText();
-		}
-
-		if (this.Math.rand(1, 5) == 1)
-		{
-			item = this.new(huntingLoot.roll());
-			this.m.Items.push(item);
-			this.Stash.add(item);
-		}
 		
 		return this.getUpdateText();
 	}
