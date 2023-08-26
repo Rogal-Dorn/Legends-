@@ -47,7 +47,7 @@ this.legend_parried_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onTurnEnd()
+	function onTurnStart()
 	{
 		this.removeSelf();
 	}
