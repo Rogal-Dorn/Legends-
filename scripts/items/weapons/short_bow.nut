@@ -8,7 +8,7 @@ this.short_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Description = "A simple wooden short bow with medium range. Requires some expertise to use effectively.";
 		this.m.IconLarge = "weapons/ranged/bow_02.png";
 		this.m.Icon = "weapons/ranged/bow_02_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow | this.Const.Items.WeaponType.Shortbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;

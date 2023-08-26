@@ -10,7 +10,7 @@ this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.Description = "A ritualisticly engraved tool made for maiming men, not digging holes. A shovel\'s wide blade lends accuracy when aiming for the head, but almost anything else would be better.";
 		this.m.IconLarge = "weapons/melee/legend_shovel_02.png";
 		this.m.Icon = "weapons/melee/legend_shovel_02_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
+		this.m.WeaponType = this.Const.Items.WeaponType.Mace | this.Const.Items.WeaponType.Shovel;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;

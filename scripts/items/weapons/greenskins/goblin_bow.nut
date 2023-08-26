@@ -8,7 +8,7 @@ this.goblin_bow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Description = "A very light short bow used by Goblins.";
 		this.m.IconLarge = "weapons/ranged/bow_goblin_01.png";
 		this.m.Icon = "weapons/ranged/bow_goblin_01_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Bow;
+		this.m.WeaponType = this.Const.Items.WeaponType.Bow | this.Const.Items.WeaponType.Shortbow;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
 		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.RangedWeapon | this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.TwoHanded;
