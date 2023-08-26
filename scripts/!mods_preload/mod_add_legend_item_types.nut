@@ -4,12 +4,12 @@
 	::Const.Items.ItemFilter.HorseArmor <- ::Const.Items.ItemType.HorseArmor;
 	::Const.Items.addNewItemType("HorseHelmet");
 	::Const.Items.addNewItemType("Cultist", "Cultist Item");
+	::Const.Items.addNewItemType("Net");
 
 	// new weapon types
 	::Const.Items.addNewWeaponType("Butcher", "Butcher Knife");
 	::Const.Items.addNewWeaponType("Blacksmith", "Blacksmith Hammer");
 	::Const.Items.addNewWeaponType("Knife");
-	::Const.Items.addNewWeaponType("Net");
 	::Const.Items.addNewWeaponType("Ninetails");
 	::Const.Items.addNewWeaponType("Shortbow");
 	::Const.Items.addNewWeaponType("Shovel");

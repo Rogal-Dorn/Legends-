@@ -30,15 +30,15 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			switch(true) {
 				// check the special weapon first then the generic one
 
-				//Sickle
-					case item.isWeaponType(this.Const.Items.WeaponType.Sickle):
-						newTree = this.Const.Perks.SickleClassTree;
-						break;	
-
 				//Shovel
 					case item.isWeaponType(this.Const.Items.WeaponType.Shovel):
 						newTree = this.Const.Perks.ShovelClassTree;
 						break;
+
+				//Sickle
+					case item.isWeaponType(this.Const.Items.WeaponType.Sickle):
+						newTree = this.Const.Perks.SickleClassTree;
+						break;	
 
 				//Wood Axe
 					case item.isWeaponType(this.Const.Items.WeaponType.Woodaxe):
@@ -86,7 +86,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						break;
 
 				//Net
-					case item.isWeaponType(this.Const.Items.WeaponType.Net):
+					case item.isItemType(this.Const.Items.ItemType.Net):
 						newTree = this.Const.Perks.BeastClassTree;
 						break;	
 
@@ -95,33 +95,29 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 						newTree = this.Const.Perks.MaceTree;
 						break;
 				
-				//Spear
+				//Spear && SwordStaff
 					case item.isWeaponType(this.Const.Items.WeaponType.Spear):
+					case item.isWeaponType(this.Const.Items.WeaponType.Sword) && item.isItemType(this.Const.Items.ItemType.Staff):
 						newTree = this.Const.Perks.SpearTree;
 						break;
 
-				/*Goedendag 
-					case "weapon.goedendag":
-					case "weapon.legend_military_goedendag":
-						local r = this.Math.rand(1,2);
-						switch (r){
-							case "1":
+				//Goedendag 
+					case item.isWeaponType(this.Const.Items.WeaponType.Spear) && item.isItemType(this.Const.Items.ItemType.Mace):
+						switch (this.Math.rand(1,2)){
+							case 1:
 								newTree = this.Const.Perks.SpearTree;
 								break
-							case "2":
+							case 2:
 								newTree = this.Const.Perks.MaceTree;
 								break
 							}
 						break;
 
 				//Swordstaff
-					case "weapon.legend_mage_swordstaff":
-					case "weapon.legend_named_swordstaff":
-					case "weapon.named_royal_lance":
+					
 						newTree = this.Const.Perks.SpearTree;
 						break;
-				*/
-
+				
 				//Greatsword				
 					case item.isWeaponType(this.Const.Items.WeaponType.Sword) && item.isItemType(this.Const.Items.ItemType.TwoHanded):
 						newTree = this.Const.Perks.GreatSwordTree;
