@@ -627,6 +627,7 @@
 	<sprite id="deathtouch_square" ic="FF23165B" img="skills\deathtouch_square.png" />
 	<sprite id="blooddrop_square" ic="FF23165B" img="skills\blooddrop_square.png" />
 	<sprite id="siphon_square" ic="FF23165B" img="skills\siphon_square.png" />
+  <sprite id="en_garde_square" ic="FF23165B" img="skills\en_garde_square.png" />
 	<sprite id="enthrall" ic="FF23165B" img="skills\enthrall.png" />
 	<sprite id="entice" ic="FF23165B" img="skills\entice.png" />
 	<sprite id="evasion" ic="FF23165B" img="skills\evasion.png" />
