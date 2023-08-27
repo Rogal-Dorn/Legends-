@@ -15,211 +15,181 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.IsNew) return
+		if (!this.m.IsNew) return;
 		
 		local item, itemtype, newTree;
 		local actor = this.getContainer().getActor();
+		this.m.IsNew = false;
 		
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) item = this.getContainer().getActor().getMainhandItem();
-		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null) item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) item = actor.getMainhandItem();
+		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null) item = actor.getOffhandItem();
 
 		if (item == null) return;
 		
-		if (item.isItemType(this.Const.Items.ItemType.Weapon))
+		if (item.isItemType(this.Const.Items.ItemType.Weapon)) newTree = this.getWeaponPerkTree(item);
+		else if (item.isItemType(this.Const.Items.ItemType.Shield)) newTree = this.getShieldPerkTree(item); //Shield
+		else newTree = this.getMiscPerkTree(item);
+
+		if (newTree == null || actor.getBackground().hasPerkGroup(newTree)) this.addRandomPerkGroup();
+		else actor.getBackground().addPerkGroup(newTree.Tree);
+	}
+
+	function getShieldPerkTree( _item )
+	{
+		return this.Const.Perks.ShieldTree;
+	}
+
+	function getMiscPerkTree(_item)
+	{
+		switch(_item.getID())
 		{
-			switch(true) {
-				// check the special weapon first then the generic one
+			//Faith
+			case "weapon.holy_water":
+				return this.Const.Perks.FaithClassTree;
 
-				//Shovel
-					case item.isWeaponType(this.Const.Items.WeaponType.Shovel):
-						newTree = this.Const.Perks.ShovelClassTree;
-						break;
+			//Juggler
+			case "weapon.daze_bomb":
+				return this.Const.Perks.JugglerClassTree;
 
-				//Sickle
-					case item.isWeaponType(this.Const.Items.WeaponType.Sickle):
-						newTree = this.Const.Perks.SickleClassTree;
-						break;	
+			//Repair
+			case "weapon.fire_bomb":
+				return this.Const.Perks.RepairClassTree;
 
-				//Wood Axe
-					case item.isWeaponType(this.Const.Items.WeaponType.Woodaxe):
-						newTree = this.Const.Perks.WoodaxeClassTree;
-						break;
+			//Healer
+			case "weapon.acid_flask":
+				return this.Const.Perks.HealerClassTree;
+		}
 
-				//Blacksmith
-					case item.isWeaponType(this.Const.Items.WeaponType.Blacksmith):
-						newTree = this.Const.Perks.HammerClassTree;
-						break;
+		return null;
+	}
 
-				//Pickaxe
-					case item.isWeaponType(this.Const.Items.WeaponType.Pickaxe):
-						newTree = this.Const.Perks.PickaxeClassTree;
-						break;
+	function getWeaponPerkTree( _item )
+	{
+		switch(true) {
+			// check the special weapon types first then the generic weapon types
 
-				//Butcher
-					case item.isWeaponType(this.Const.Items.WeaponType.Butcher):
-						newTree = this.Const.Perks.ButcherClassTree;
-						break;
+			//Shovel
+				case _item.isWeaponType(this.Const.Items.WeaponType.Shovel):
+					return this.Const.Perks.ShovelClassTree;
 
-				//Ninetails
-					case item.isWeaponType(this.Const.Items.WeaponType.Ninetails):
-						newTree = this.Const.Perks.NinetailsClassTree;
-						break;
+			//Sickle
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sickle):
+					return this.Const.Perks.SickleClassTree;
 
-				//Knife
-					case item.isWeaponType(this.Const.Items.WeaponType.Knife):
-						newTree = this.Const.Perks.KnifeClassTree;
-						break;
+			//Wood Axe
+				case _item.isWeaponType(this.Const.Items.WeaponType.Woodaxe):
+					return this.Const.Perks.WoodaxeClassTree;
 
-				//Pitchfork
-					case item.isWeaponType(this.Const.Items.WeaponType.Pitchfork):
-						newTree = this.Const.Perks.PitchforkClassTree;
-						break;
+			//Blacksmith
+				case _item.isWeaponType(this.Const.Items.WeaponType.Blacksmith):
+					return this.Const.Perks.HammerClassTree;
 
-				//Musical
-					case item.isWeaponType(this.Const.Items.WeaponType.Musical):
-						newTree = this.Const.Perks.BardClassTree;
-						break;
+			//Pickaxe
+				case _item.isWeaponType(this.Const.Items.WeaponType.Pickaxe):
+					return this.Const.Perks.PickaxeClassTree;
 
-				//Shortbow
-					case item.isWeaponType(this.Const.Items.WeaponType.Shortbow):
-						newTree = this.Const.Perks.ShortbowClassTree;
-						break;
+			//Butcher
+				case _item.isWeaponType(this.Const.Items.WeaponType.Butcher):
+					return this.Const.Perks.ButcherClassTree;
 
-				//Net
-					case item.isItemType(this.Const.Items.ItemType.Net):
-						newTree = this.Const.Perks.BeastClassTree;
-						break;	
+			//Ninetails
+				case _item.isWeaponType(this.Const.Items.WeaponType.Ninetails):
+					return this.Const.Perks.NinetailsClassTree;
 
-				//Mace
-					case item.isWeaponType(this.Const.Items.WeaponType.Mace):
-						newTree = this.Const.Perks.MaceTree;
-						break;
-				
-				//Spear && SwordStaff
-					case item.isWeaponType(this.Const.Items.WeaponType.Spear):
-					case item.isWeaponType(this.Const.Items.WeaponType.Sword) && item.isItemType(this.Const.Items.ItemType.Staff):
-						newTree = this.Const.Perks.SpearTree;
-						break;
+			//Knife
+				case _item.isWeaponType(this.Const.Items.WeaponType.Knife):
+					return this.Const.Perks.KnifeClassTree;
 
-				//Goedendag 
-					case item.isWeaponType(this.Const.Items.WeaponType.Spear) && item.isItemType(this.Const.Items.ItemType.Mace):
-						switch (this.Math.rand(1,2)){
-							case 1:
-								newTree = this.Const.Perks.SpearTree;
-								break
-							case 2:
-								newTree = this.Const.Perks.MaceTree;
-								break
-							}
-						break;
+			//Pitchfork
+				case _item.isWeaponType(this.Const.Items.WeaponType.Pitchfork):
+					return this.Const.Perks.PitchforkClassTree;
 
-				//Swordstaff
+			//Musical
+				case _item.isWeaponType(this.Const.Items.WeaponType.Musical):
+					return this.Const.Perks.BardClassTree;
+
+			//Shortbow
+				case _item.isWeaponType(this.Const.Items.WeaponType.Shortbow):
+					return this.Const.Perks.ShortbowClassTree;
+
+			//Net
+				case _item.isItemType(this.Const.Items.ItemType.Net):
+					return this.Const.Perks.BeastClassTree;
+
+			//Goedendag 
+				case _item.isWeaponType(this.Const.Items.WeaponType.Spear) && _item.isWeaponType(this.Const.Items.ItemType.Mace):
+					switch (this.Math.rand(1,2))
+					{
+						case 1:
+							return this.Const.Perks.SpearTree;
+						case 2:
+							return this.Const.Perks.MaceTree;
+					}
+					break;
+
+			//Spear && SwordStaff
+				case _item.isWeaponType(this.Const.Items.WeaponType.Spear):
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isWeaponType(this.Const.Items.ItemType.Staff):
+					return this.Const.Perks.SpearTree;
+			
+			//Greatsword				
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isItemType(this.Const.Items.ItemType.TwoHanded):
+					return this.Const.Perks.GreatSwordTree;
+
+			//Sword
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sword):
+					return this.Const.Perks.SwordTree;
+
+			//Mace
+				case _item.isWeaponType(this.Const.Items.WeaponType.Mace):
+					return this.Const.Perks.MaceTree;
+
+			//Axe
+				case _item.isWeaponType(this.Const.Items.WeaponType.Axe):
+					return this.Const.Perks.AxeTree;
+
+			//Flail
+				case _item.isWeaponType(this.Const.Items.WeaponType.Flail):
+					return this.Const.Perks.FlailTree;
+
+			//Hammer
+				case _item.isWeaponType(this.Const.Items.WeaponType.Hammer):
+					return this.Const.Perks.HammerTree;	
 					
-						newTree = this.Const.Perks.SpearTree;
-						break;
-				
-				//Greatsword				
-					case item.isWeaponType(this.Const.Items.WeaponType.Sword) && item.isItemType(this.Const.Items.ItemType.TwoHanded):
-						newTree = this.Const.Perks.GreatSwordTree;
-						break;
+			//Cleaver
+				case _item.isWeaponType(this.Const.Items.WeaponType.Cleaver):
+					return this.Const.Perks.CleaverTree;
 
-				//Sword
-					case item.isWeaponType(this.Const.Items.WeaponType.Sword):
-						newTree = this.Const.Perks.SwordTree;
-						break;
+			//Dagger
+				case _item.isWeaponType(this.Const.Items.WeaponType.Dagger):
+					return this.Const.Perks.DaggerTree;
 
-				//Axe
-					case item.isWeaponType(this.Const.Items.WeaponType.Axe):
-						newTree = this.Const.Perks.AxeTree;
-						break;
-	
-				//Flail
-					case item.isWeaponType(this.Const.Items.WeaponType.Flail):
-						newTree = this.Const.Perks.FlailTree;
-						break;
+			//Polearm
+				case _item.isWeaponType(this.Const.Items.WeaponType.Polearm):
+					return this.Const.Perks.PolearmTree;
 
-				//Hammer
-					case item.isWeaponType(this.Const.Items.WeaponType.Hammer):
-						newTree = this.Const.Perks.HammerTree;
-						break;		
-						
-				//Cleaver
-					case item.isWeaponType(this.Const.Items.WeaponType.Cleaver):
-						newTree = this.Const.Perks.CleaverTree;
-						break;
+			//Crossbow
+				case _item.isWeaponType(this.Const.Items.WeaponType.Crossbow):
+					return this.Const.Perks.CrossbowTree;
 
-				//Dagger
-					case item.isWeaponType(this.Const.Items.WeaponType.Dagger):
-						newTree = this.Const.Perks.DaggerTree;
-						break;
-	
-				//Polearm
-					case item.isWeaponType(this.Const.Items.WeaponType.Polearm):
-						newTree = this.Const.Perks.PolearmTree;
-						break;
+			//Bow
+				case _item.isWeaponType(this.Const.Items.WeaponType.Bow):
+					return this.Const.Perks.BowTree;
 
-				//Crossbow
-					case item.isWeaponType(this.Const.Items.WeaponType.Crossbow):
-						newTree = this.Const.Perks.CrossbowTree;
-						break;	
+			//Throwing
+				case _item.isWeaponType(this.Const.Items.WeaponType.Throwing):
+					return this.Const.Perks.ThrowingTree;
 
-				//Bow
-					case item.isWeaponType(this.Const.Items.WeaponType.Bow):
-						newTree = this.Const.Perks.BowTree;
-						break;	
+			//Sling
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sling):
+					return this.Const.Perks.SlingTree;
 
-				//Throwing
-					case item.isWeaponType(this.Const.Items.WeaponType.Throwing):
-						newTree = this.Const.Perks.ThrowingTree;
-						break;
-
-				//Sling
-					case item.isWeaponType(this.Const.Items.WeaponType.Sling):
-						newTree = this.Const.Perks.SlingTree;
-						break;
-
-				//Staff
-					case item.isWeaponType(this.Const.Items.WeaponType.Staff):
-						newTree = this.Const.Perks.StaffTree;
-						break;
-			}
+			//Staff
+				case _item.isWeaponType(this.Const.Items.WeaponType.Staff):
+					return this.Const.Perks.StaffTree;
 		}
-		else if (item.isItemType(this.Const.Items.ItemType.Shield))
-		{
-			//Shield
-			newTree = this.Const.Perks.ShieldTree;
-		}
-		else
-		{
-			switch(item.getID())
-			{
-				//Faith
-				case "weapon.holy_water":
-					newTree = this.Const.Perks.FaithClassTree;
-					break;	
-				//Juggler
-					case "weapon.daze_bomb":
-						newTree = this.Const.Perks.JugglerClassTree;
-						break;	
-				//Repair
-					case "weapon.fire_bomb":
-						newTree = this.Const.Perks.RepairClassTree;
-						break;	
-				//Healer
-					case "weapon.acid_flask":
-						newTree = this.Const.Perks.HealerClassTree;
-						break;	
-			}
-		}	
 
-		if (newTree != null && !actor.getBackground().hasPerkGroup(newTree)) 
-		{
-			actor.getBackground().addPerkGroup(newTree.Tree);
-		}
-		else
-		{
-			this.addRandomPerkGroup()
-		}	   
+		return null;
 	}
 
 	function addRandomPerkGroup()
