@@ -9,9 +9,9 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.Description = "A ritualisticly engraved tool usually for gathering plants, made of the highest quality druidic metals";
 		this.m.IconLarge = "weapons/melee/legend_sickle_02.png";
 		this.m.Icon = "weapons/melee/legend_sickle_02_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Sword | this.Const.Items.WeaponType.Sickle;
+		this.m.WeaponType = this.Const.Items.WeaponType.Sword;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Sickle;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;

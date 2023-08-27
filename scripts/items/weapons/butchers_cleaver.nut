@@ -8,9 +8,9 @@ this.butchers_cleaver <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Description = "A tool with a thick rectangular blade used for hacking through meat and bone.";
 		this.m.IconLarge = "weapons/melee/cleaver_02.png";
 		this.m.Icon = "weapons/melee/cleaver_02_70x70.png";
-		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver | this.Const.Items.WeaponType.Butcher;
+		this.m.WeaponType = this.Const.Items.WeaponType.Cleaver;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.OneHanded | this.Const.Items.ItemType.Butcher;
 		this.m.IsDoubleGrippable = true;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
