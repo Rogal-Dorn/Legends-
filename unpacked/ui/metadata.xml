@@ -627,7 +627,9 @@
 	<sprite id="deathtouch_square" ic="FF23165B" img="skills\deathtouch_square.png" />
 	<sprite id="blooddrop_square" ic="FF23165B" img="skills\blooddrop_square.png" />
 	<sprite id="siphon_square" ic="FF23165B" img="skills\siphon_square.png" />
-  <sprite id="en_garde_square" ic="FF23165B" img="skills\en_garde_square.png" />
+  <sprite id="en_garde_square" ic="2D6CB955" img="skills\en_garde_square.png" />
+  <sprite id="en_garde_circle" ic="2D6CB955" img="skills\en_garde_circle.png" />
+  <sprite id="mini_en_garde_circle" offsetY="35" ic="2D6CB955" img="skills\mini\mini_en_garde_circle.png" />
 	<sprite id="enthrall" ic="FF23165B" img="skills\enthrall.png" />
 	<sprite id="entice" ic="FF23165B" img="skills\entice.png" />
 	<sprite id="evasion" ic="FF23165B" img="skills\evasion.png" />
@@ -704,7 +706,10 @@
 	<sprite id="mini_safegaurd_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_safegaurd_circle.png" />
 	<sprite id="mini_shimmering_visage_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_shimmering_visage_circle.png" />
 	<sprite id="mini_fortified_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_fortified_circle.png" />
+  <sprite id="parried_circle" offsetY="35" ic="FF344955" img="skills\parried_circle.png" />
 	<sprite id="mini_parried_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_parried_circle.png" />
+  <sprite id="parrying_circle" offsetY="35" ic="FF344955" img="skills\parrying_circle.png" />
+  <sprite id="mini_parrying_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_parrying_circle.png" />
 	<sprite id="mini_bear_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_bear_circle.png" />
 	<sprite id="mini_wolf_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_wolf_circle.png" />
 	<sprite id="mini_dog_circle" offsetY="35" ic="FF344955" img="skills\mini\mini_dog_circle.png" />
