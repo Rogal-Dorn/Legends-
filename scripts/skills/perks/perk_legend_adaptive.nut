@@ -69,39 +69,39 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			// check the special weapon types first then the generic weapon types
 
 			//Shovel
-				case _item.isWeaponType(this.Const.Items.WeaponType.Shovel):
+				case _item.isItemType(this.Const.Items.ItemType.Shovel):
 					return this.Const.Perks.ShovelClassTree;
 
 			//Sickle
-				case _item.isWeaponType(this.Const.Items.WeaponType.Sickle):
+				case _item.isItemType(this.Const.Items.ItemType.Sickle):
 					return this.Const.Perks.SickleClassTree;
 
 			//Wood Axe
-				case _item.isWeaponType(this.Const.Items.WeaponType.Woodaxe):
+				case _item.isItemType(this.Const.Items.ItemType.Woodaxe):
 					return this.Const.Perks.WoodaxeClassTree;
 
 			//Blacksmith
-				case _item.isWeaponType(this.Const.Items.WeaponType.Blacksmith):
+				case _item.isItemType(this.Const.Items.ItemType.Blacksmith):
 					return this.Const.Perks.HammerClassTree;
 
 			//Pickaxe
-				case _item.isWeaponType(this.Const.Items.WeaponType.Pickaxe):
+				case _item.isItemType(this.Const.Items.ItemType.Pickaxe):
 					return this.Const.Perks.PickaxeClassTree;
 
 			//Butcher
-				case _item.isWeaponType(this.Const.Items.WeaponType.Butcher):
+				case _item.isItemType(this.Const.Items.ItemType.Butcher):
 					return this.Const.Perks.ButcherClassTree;
 
 			//Ninetails
-				case _item.isWeaponType(this.Const.Items.WeaponType.Ninetails):
+				case _item.isItemType(this.Const.Items.ItemType.Ninetails):
 					return this.Const.Perks.NinetailsClassTree;
 
 			//Knife
-				case _item.isWeaponType(this.Const.Items.WeaponType.Knife):
+				case _item.isItemType(this.Const.Items.ItemType.Knife):
 					return this.Const.Perks.KnifeClassTree;
 
 			//Pitchfork
-				case _item.isWeaponType(this.Const.Items.WeaponType.Pitchfork):
+				case _item.isItemType(this.Const.Items.ItemType.Pitchfork):
 					return this.Const.Perks.PitchforkClassTree;
 
 			//Musical
@@ -109,7 +109,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					return this.Const.Perks.BardClassTree;
 
 			//Shortbow
-				case _item.isWeaponType(this.Const.Items.WeaponType.Shortbow):
+				case _item.isItemType(this.Const.Items.ItemType.Shortbow):
 					return this.Const.Perks.ShortbowClassTree;
 
 			//Net
@@ -169,7 +169,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					return this.Const.Perks.PolearmTree;
 
 			//Crossbow
-				case _item.isWeaponType(this.Const.Items.WeaponType.Crossbow):
+				case _item.isWeaponType(this.Const.Items.WeaponType.Crossbow | this.Const.Items.WeaponType.Firearm):
 					return this.Const.Perks.CrossbowTree;
 
 			//Bow
