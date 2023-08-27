@@ -7,7 +7,9 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 		AddGenericSkill = true,
 		StaminaModifier = 0,
 		StashModifier = 0,
-		IsUndesirable = false
+		IsUndesirable = false,
+		IsRandomized = false,
+		MaxStack = 0
 	},
 	function isDesirable()
 	{
@@ -41,7 +43,15 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 
 	function getValue()
 	{
-		return this.Math.floor(this.m.Amount / 25.0 * (this.getSpoilInDays() / (this.m.GoodForDays * 1.0)) * this.m.Value);
+		if(this.m.IsRandomized){
+			return this.Math.floor(this.m.Amount / this.m.MaxStack * (this.getSpoilInDays() / (this.m.GoodForDays * 1.0)) * this.m.Value);
+		}
+		return this.Math.floor(1 * (this.getSpoilInDays() / (this.m.GoodForDays * 1.0)) * this.m.Value);
+	}
+
+	function DivideByValue()
+	{
+
 	}
 
 	function getBestBeforeTime()
@@ -51,6 +61,8 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 
 	function randomizeAmount()
 	{
+		this.m.IsRandomized = true;
+		this.m.MaxStack = this.m.Amount;
 		this.m.Amount = this.Math.rand(1, 25);
 	}
 
