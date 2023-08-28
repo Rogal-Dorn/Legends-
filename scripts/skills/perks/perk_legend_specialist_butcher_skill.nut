@@ -18,11 +18,11 @@ this.perk_legend_specialist_butcher_skill <- this.inherit("scripts/skills/skill"
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.butchers_cleaver" || item.getID() == "weapon.legend_named_butchers_cleaver")
+			if (item.isItemType(this.Const.Items.ItemType.Butcher))
 			{
 				_properties.MeleeSkill += 12;
 			}
-			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver) && !item.isWeaponType(this.Const.Items.WeaponType.Whip) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 			{
 				_properties.MeleeSkill += 3;
 			}

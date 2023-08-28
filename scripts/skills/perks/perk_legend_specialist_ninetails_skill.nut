@@ -21,7 +21,7 @@ this.perk_legend_specialist_ninetails_skill <- this.inherit("scripts/skills/skil
 
 		if (item != null && item.isItemType(this.Const.Items.ItemType.Cultist))
 		{
-		  if (item.getID() == "weapon.legend_cat_o_nine_tails")
+		  if (item.isItemType(this.Const.Items.ItemType.Ninetails))
 		  {
 			_properties.MeleeSkill += this.Math.floor(resolve * 0.2);
 		  }

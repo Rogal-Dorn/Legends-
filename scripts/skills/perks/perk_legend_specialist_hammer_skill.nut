@@ -18,12 +18,12 @@ this.perk_legend_specialist_hammer_skill <- this.inherit("scripts/skills/skill",
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.legend_hammer" || item.getID() == "weapon.legend_named_blacksmith_hammer")
+			if (item.isItemType(this.Const.Item.ItemType.Blacksmith))
 			{
 				_properties.MeleeSkill += 12;
 				_properties.DamageArmorMult += 0.4;
 			}
-			if (item.isItemType(this.Const.Items.ItemType.OneHanded) && item.isWeaponType(this.Const.Items.WeaponType.Hammer))
+			else if (item.isItemType(this.Const.Items.ItemType.OneHanded) && item.isWeaponType(this.Const.Items.WeaponType.Hammer))
 			{
 				_properties.MeleeSkill += 3;
 				_properties.DamageArmorMult += 0.1;

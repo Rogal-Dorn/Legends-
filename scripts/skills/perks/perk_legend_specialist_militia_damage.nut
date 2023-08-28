@@ -18,7 +18,7 @@ this.perk_legend_specialist_militia_damage <- this.inherit("scripts/skills/skill
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.militia_spear" || item.getID() == "weapon.legend_wooden_spear" || item.getID() == "weapon.ancient_spear")
+			if (item.isIetmType(this.Const.Items.ItemType.Militia))
 			{
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;
