@@ -21,7 +21,7 @@ this.perk_legend_specialist_ninetails_damage <- this.inherit("scripts/skills/ski
 
 		if (item != null && item.isItemType(this.Const.Items.ItemType.Cultist))
 		{
-		  if (item.getID() == "weapon.legend_cat_o_nine_tails")
+		  if (item.isItemType(this.Const.Items.ItemType.Ninetails))
 		  {
 			_properties.DamageRegularMin += this.Math.floor(resolve * 0.05);
 			_properties.DamageRegularMax += this.Math.floor(resolve * 0.1);

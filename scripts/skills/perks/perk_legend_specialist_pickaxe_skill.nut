@@ -18,11 +18,11 @@ this.perk_legend_specialist_pickaxe_skill <- this.inherit("scripts/skills/skill"
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.pickaxe")
+			if (item.isItemType(this.Const.Item.ItemType.Pickaxe))
 			{
 				_properties.MeleeSkill += 12;
 			}
-			if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
 				_properties.MeleeSkill += 3;
 			}

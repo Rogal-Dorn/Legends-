@@ -19,6 +19,7 @@
 	::Const.Items.addNewItemType("Pickaxe", "Pickaxe Item");
 	::Const.Items.addNewItemType("Pitchfork", "Pitchfork Item");
 	::Const.Items.addNewItemType("Woodaxe", "Woodaxe Item");
+	::Const.Items.addNewItemType("Militia", "Militia Item");
 
 	delete ::Const.LegendMod.addLegendItemTypes;
 }
