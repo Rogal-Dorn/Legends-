@@ -18,7 +18,7 @@ this.perk_legend_specialist_knife_damage <- this.inherit("scripts/skills/skill",
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.isItemType(this.Const.Items.ItemType.Knife))
+			if (item.getID() == "weapon.knife" || item.getID() == "weapon.legend_shiv")
 			{
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;

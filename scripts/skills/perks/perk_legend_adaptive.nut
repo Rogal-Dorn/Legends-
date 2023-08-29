@@ -69,36 +69,40 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			// check the special weapon types first then the generic weapon types
 
 			//Shovel
-				case _item.isItemType(this.Const.Items.ItemType.Shovel):
+				case _item.getID() == "weapon.legend_shovel" || _item.getID() == "weapon.legend_named_shovel":
 					return this.Const.Perks.ShovelClassTree;
 
 			//Sickle
-				case _item.isItemType(this.Const.Items.ItemType.Sickle):
+				case _item.getID() == "weapon.sickle" || _item.getID() == "weapon.goblin_notched_blade" || _item.getID() == "weapon.legend_named_sickle":
 					return this.Const.Perks.SickleClassTree;
 
 			//Wood Axe
-				case _item.isItemType(this.Const.Items.ItemType.Woodaxe):
+				case _item.getID() == "weapon.woodcutters_axe" || _item.getID() == "weapon.legend_saw":
 					return this.Const.Perks.WoodaxeClassTree;
 
 			//Blacksmith
-				case _item.isItemType(this.Const.Items.ItemType.Blacksmith):
+				case _item.getID() == "weapon.legend_hammer" || _item.getID() == "weapon.legend_named_blacksmith_hammer":
 					return this.Const.Perks.HammerClassTree;
 
 			//Pickaxe
-				case _item.isItemType(this.Const.Items.ItemType.Pickaxe):
+				case _item.getID() == "weapon.pickaxe":
 					return this.Const.Perks.PickaxeClassTree;
 
 			//Butcher
-				case _item.isItemType(this.Const.Items.ItemType.Butcher):
+				case _item.getID() == "weapon.butchers_cleaver" || _item.getID() == "weapon.legend_named_butchers_cleaver":
 					return this.Const.Perks.ButcherClassTree;
 
 			//Ninetails
-				case _item.isItemType(this.Const.Items.ItemType.Ninetails):
+				case _item.getID() == "weapon.legend_cat_o_nine_tails":
 					return this.Const.Perks.NinetailsClassTree;
 
 			//Knife
-				case _item.isItemType(this.Const.Items.ItemType.Knife):
+				case _item.getID() == "weapon.knife" || _item.getID() == "weapon.legend_shiv":
 					return this.Const.Perks.KnifeClassTree;
+
+			//Scythe
+				case _item.getID() == "weapon.legend_grisly_scythe" || _item.getID() == "weapon.legend_scythe" || _item.getID() == "weapon.warscythe" || _item.getID() == "weapon.named_warscythe":
+					return this.Const.Perks.ScytheClassTree;
 
 			//Pitchfork
 				case _item.isItemType(this.Const.Items.ItemType.Pitchfork):
@@ -116,6 +120,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 				case _item.isItemType(this.Const.Items.ItemType.Net):
 					return this.Const.Perks.BeastClassTree;
 
+			//Militia
+				case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
+					return this.Const.Perks.MilitiaClassTree;
+
 			//Goedendag 
 				case _item.isWeaponType(this.Const.Items.WeaponType.Spear) && _item.isWeaponType(this.Const.Items.ItemType.Mace):
 					switch (this.Math.rand(1,2))
@@ -129,7 +137,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 
 			//Spear && SwordStaff
 				case _item.isWeaponType(this.Const.Items.WeaponType.Spear):
-				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isWeaponType(this.Const.Items.ItemType.Staff):
+				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isWeaponType(this.Const.Items.WeaponType.Staff):
 					return this.Const.Perks.SpearTree;
 			
 			//Greatsword				

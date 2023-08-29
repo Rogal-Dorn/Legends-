@@ -374,6 +374,23 @@ gt.Const.Perks.HoundmasterClassTree <- {
 	]
 };
 
+gt.Const.Perks.ScytheClassTree <- {
+	ID = "ScytheClassTree",
+	Name = "Scythe",
+	Descriptions = [
+		"scythes"
+	],
+	Tree = [
+		[gt.Const.Perks.PerkDefs.LegendSpecialistScytheSkill],
+		[],
+		[gt.Const.Perks.PerkDefs.LegendSpecialistScytheDamage],
+		[],
+		[],
+		[],
+		[]
+	]
+};
+
 gt.Const.Perks.ClassTrees <- {
 	Tree = [
 		gt.Const.Perks.BeastClassTree,
@@ -395,7 +412,8 @@ gt.Const.Perks.ClassTrees <- {
 		gt.Const.Perks.SickleClassTree,
 		gt.Const.Perks.NinetailsClassTree,
 		gt.Const.Perks.JugglerClassTree,
-		gt.Const.Perks.HoundmasterClassTree
+		gt.Const.Perks.HoundmasterClassTree,
+		gt.Const.Perks.ScytheClassTree,
 	],
 	function getRandom(_exclude)
 	{

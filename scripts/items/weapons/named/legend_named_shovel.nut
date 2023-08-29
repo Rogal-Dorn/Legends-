@@ -13,7 +13,7 @@ this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.WeaponType = this.Const.Items.WeaponType.Mace;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Shovel;
+		this.m.ItemType = this.Const.Items.ItemType.Named | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsDoubleGrippable = false;
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;

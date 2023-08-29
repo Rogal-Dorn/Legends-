@@ -11,7 +11,7 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.WeaponType = this.Const.Items.WeaponType.Axe;
 		this.m.SlotType = this.Const.ItemSlot.Mainhand;
 		this.m.BlockedSlotType = this.Const.ItemSlot.Offhand;
-		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded | this.Const.Items.ItemType.Woodaxe;
+		this.m.ItemType = this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.MeleeWeapon | this.Const.Items.ItemType.TwoHanded;
 		this.m.IsAgainstShields = true;
 		this.m.IsAoE = true;
 		this.m.AddGenericSkill = true;
