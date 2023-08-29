@@ -2631,7 +2631,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendAdaptive,
 		Icon = "ui/perks/adaptive_circle.png",
 		IconDisabled = "ui/perks/adaptive_circle_bw.png",
-		Const = "LegendAdaptive"
+		Const = "LegendAdaptive",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_recuperation",
