@@ -18,7 +18,7 @@ this.perk_legend_specialist_sickle_damage <- this.inherit("scripts/skills/skill"
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.isItemType(this.Const.Items.ItemType.ItemType.Sickle))
+			if (item.getID() == "weapon.sickle" || item.getID() == "weapon.goblin_notched_blade"  || item.getID() == "weapon.legend_named_sickle")
 			{
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;

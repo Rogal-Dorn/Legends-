@@ -18,7 +18,7 @@ this.perk_legend_specialist_woodaxe_damage <- this.inherit("scripts/skills/skill
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.isItemType(this.Const.Items.ItemType.Woodaxe))
+			if (item.getID() == "weapon.woodcutters_axe" || item.getID() == "weapon.legend_saw")
 			{
 				_properties.DamageRegularMin += 9;
 				_properties.DamageRegularMax += 24;
