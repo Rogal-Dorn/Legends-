@@ -15,12 +15,48 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (!this.m.IsNew) return;
+		if (!this.m.IsNew || this.m.IsForPerkTooltip) return; // m.IsForPerkTooltip will be true if the instance of this perk is just a dummy being used to generate unactivated perk tooltip hints
 		
 		this.m.IsNew = false;
 		local possibleTrees = this.getPossibleTrees();
 		this.chooseAndAddTree(possibleTrees);
 		
+	}
+
+	// When the Perk is yet to be activated, show in the Tooltip which Perk Group will be awarded
+	function getUnactivatedPerkTooltipHints()
+	{
+		local possibleTrees = this.getPossibleTrees();
+		local descText = "";
+		local possibleTreesText = "";
+
+		if (typeof possibleTrees != "array" || possibleTrees.len()<=1)
+		{
+			descText = "Activating this Perk will grant the following Perk Group:\n";
+			possibleTreesText = "[color=#0b0084]" + possibleTrees.Name + "[/color]";
+		}
+		else
+		{
+			descText = "Activating this Perk will randomly grant one of the following Perk Groups:\n";
+			possibleTreesText = "[color=#0b0084]"
+			for (local i = 0; i < possibleTrees.len() - 2; i++)
+			{
+				 possibleTreesText += possibleTrees[i].Name + ", ";
+			}
+			possibleTreesText += possibleTrees[possibleTrees.len()-2].Name + ", or ";
+			possibleTreesText += possibleTrees[possibleTrees.len()-1].Name + "[/color]";
+		}
+
+		local ret = [
+			{
+				id = 3,
+				type = "hint",
+				icon = "ui/tooltips/positive.png",
+				text = descText + possibleTreesText
+			}
+		];
+
+		return ret;
 	}
 
 	// Return either a single Tree or an array of Trees that may be added by this perk
