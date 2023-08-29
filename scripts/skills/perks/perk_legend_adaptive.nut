@@ -17,21 +17,119 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.IsNew) return;
 		
-		local item, itemtype, newTree;
-		local actor = this.getContainer().getActor();
 		this.m.IsNew = false;
+		local possibleTrees = this.getPossibleTrees();
+		this.chooseAndAddTree(possibleTrees);
 		
+	}
+
+	// Return either a single Tree or an array of Trees that may be added by this perk
+	// Order of priority: from mainhand item, from offhand item, random
+	function getPossibleTrees()
+	{
+		local item, itemtype, newTree; // newTree may be a single Tree or an array of Trees
+		local actor = this.getContainer().getActor();
+
+		// First, try to give a new Tree based on equipped items
 		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) item = actor.getMainhandItem();
 		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null) item = actor.getOffhandItem();
-
-		if (item == null) return;
 		
-		if (item.isItemType(this.Const.Items.ItemType.Weapon)) newTree = this.getWeaponPerkTree(item);
-		else if (item.isItemType(this.Const.Items.ItemType.Shield)) newTree = this.getShieldPerkTree(item); //Shield
-		else newTree = this.getMiscPerkTree(item);
+		if (item != null)
+		{
+			if (item.isItemType(this.Const.Items.ItemType.Weapon)) newTree = this.getWeaponPerkTree(item);
+			else if (item.isItemType(this.Const.Items.ItemType.Shield)) newTree = this.getShieldPerkTree(item); //Shield
+			else newTree = this.getMiscPerkTree(item);
+			newTree = this.getOnlyNonExistingTrees(newTree); // filter out Trees this character already has
+		}
+		else
+		{
+			// Attempt to give Unarmed if no weapons are equipped
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.FistsClassTree);
+		}
+		
+		// If none of the equipped items granted any Trees, then consider the following Trees
+		if (newTree == null || newTree.len()<1)
+		{
+			newTree = [
+				this.Const.Perks.AgileTree,
+				this.Const.Perks.IndestructibleTree,
+				this.Const.Perks.MartyrTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.DeviousTree,
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.LargeTree,
+				this.Const.Perks.OrganisedTree,
+				this.Const.Perks.SturdyTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.TrainedTree
+			];
+		}
+		
+		newTree = this.getOnlyNonExistingTrees(newTree); // filter out Trees this character already has
 
-		if (newTree == null || actor.getBackground().hasPerkGroup(newTree)) this.addRandomPerkGroup();
-		else actor.getBackground().addPerkGroup(newTree.Tree);
+		// Give PhilosophyMagicTree if there are still no possible Trees
+		if(newTree == null || newTree.len()<1)
+		{
+			newTree = this.Const.Perks.PhilosophyMagicTree.Tree;
+		}
+
+		return newTree;
+	}
+
+	// Helper function that returns only Trees that this character does not already have
+	// _newTree: either a single Tree or an array of Trees
+	function getOnlyNonExistingTrees( _newTree )
+	{
+		local actor = this.getContainer().getActor();
+
+		// If there's only possible Tree then just check that
+		if ( typeof _newTree != "array" || _newTree.len()<=1 )
+		{
+			return actor.getBackground().hasPerkGroup(_newTree) ? null : _newTree;
+		}
+
+		// Otherwise, remove every Tree that this character already has from the array
+		local ret = []
+
+		foreach(tree in _newTree)
+		{
+			if(!actor.getBackground().hasPerkGroup(tree))
+			{
+				ret.append(tree);
+			}
+		}
+
+		return ret
+	}
+
+	// Give the character the new Tree.
+	// If _newTree is an array, randomly choose a Tree from the array 
+	// _newTree: either a single Tree or an array of Trees
+	function chooseAndAddTree( _newTree )
+		local actor = this.getContainer().getActor();
+
+		// If there's only possible Tree then just add it
+		if (typeof _newTree != "array")
+		{
+			actor.getBackground().addPerkGroup(_newTree.Tree)
+		}
+		// Otherwise, randomly select one from the array
+		else
+		{
+			if(_newTree.len() > 0) 
+			{
+				local randomIndex = this.Math.rand(0, _newTree.len()-1);
+				local randomTree = _newTree[randomIndex];
+				actor.getBackground().addPerkGroup(randomTree.Tree);
+			} 
+			else
+			{
+				this.logWarning("Adaptive Perk had no Tree to add");
+			}
+		}
 	}
 
 	function getShieldPerkTree( _item )
@@ -125,15 +223,8 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 					return this.Const.Perks.MilitiaClassTree;
 
 			//Goedendag 
-				case _item.isWeaponType(this.Const.Items.WeaponType.Spear) && _item.isWeaponType(this.Const.Items.ItemType.Mace):
-					switch (this.Math.rand(1,2))
-					{
-						case 1:
-							return this.Const.Perks.SpearTree;
-						case 2:
-							return this.Const.Perks.MaceTree;
-					}
-					break;
+				case _item.isWeaponType(this.Const.Items.WeaponType.Spear) && _item.isWeaponType(this.Const.Items.WeaponType.Mace):
+					return [this.Const.Perks.SpearTree,this.Const.Perks.MaceTree]
 
 			//Spear && SwordStaff
 				case _item.isWeaponType(this.Const.Items.WeaponType.Spear):
@@ -198,44 +289,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		}
 
 		return null;
-	}
-
-	function addRandomPerkGroup()
-	{
-		local actor = this.getContainer().getActor();
-		local allTrees = [
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.ViciousTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.InspirationalTree,
-			this.Const.Perks.IntelligentTree,
-			this.Const.Perks.CalmTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.OrganisedTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.TrainedTree
-		];
-
-		// List to hold trees the actor does not have
-		local availableTrees = [];
-
-		foreach(tree in allTrees) {
-			if(!actor.getBackground().hasPerkGroup(tree)) {
-				availableTrees.append(tree);
-			}
-		}
-
-		if(availableTrees.len() > 0) {
-			local randomIndex = this.Math.rand(0, availableTrees.len()-1);
-			local randomTree = availableTrees[randomIndex];
-			actor.getBackground().addPerkGroup(randomTree.Tree);
-		} else {
-			actor.getBackground().addPerkGroup(this.Const.Perks.PhilosophyMagicTree.Tree);
-		}
 	}
 
 });
