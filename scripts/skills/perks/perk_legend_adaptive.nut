@@ -109,6 +109,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	// If _newTree is an array, randomly choose a Tree from the array 
 	// _newTree: either a single Tree or an array of Trees
 	function chooseAndAddTree( _newTree )
+	{
 		local actor = this.getContainer().getActor();
 
 		// If there's only possible Tree then just add it
