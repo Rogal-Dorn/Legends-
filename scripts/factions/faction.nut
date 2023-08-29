@@ -525,6 +525,7 @@ this.faction <- {
 				if (j != null)
 				{
 					this.m.ContractsByCategory["Wildcard"].remove(j);
+					return;
 				}
 			}
 			// If not, we will remove it from the contract's corresponding Category
@@ -544,6 +545,7 @@ this.faction <- {
 				{
 					this.logInfo("Removing Contract " + _c.getName() + " with Category=" + _c.getCategory());
 					this.m.ContractsByCategory[cat].remove(j);
+					return;
 				}
 			}
 
@@ -555,6 +557,7 @@ this.faction <- {
 				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")"
 				error += " but it could not be found in any Category";
 				this.logError(error);
+				return;
 			}
 		}
 	}
