@@ -32,8 +32,9 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 
 		if (typeof possibleTrees != "array" || possibleTrees.len()<=1)
 		{
+			local name = typeof possibleTrees != "array" ? possibleTrees.Name : possibleTrees[0].Name;
 			descText = "Activating this Perk will grant the following Perk Group:\n";
-			possibleTreesText = "[color=#0b0084]" + possibleTrees.Name + "[/color]";
+			possibleTreesText = "[color=#0b0084]" + name + "[/color]";
 		}
 		else
 		{
@@ -121,8 +122,8 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		// If there's only possible Tree then just check that
-		if ( typeof _newTree != "array" || _newTree.len()<=1 )
+		// If there's only one possible Tree then just check that
+		if ( typeof _newTree != "array")
 		{
 			return actor.getBackground().hasPerkGroup(_newTree) ? null : _newTree;
 		}
@@ -259,70 +260,35 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 				case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
 					return this.Const.Perks.MilitiaClassTree;
 
-			//Goedendag 
-				case _item.isWeaponType(this.Const.Items.WeaponType.Spear) && _item.isWeaponType(this.Const.Items.WeaponType.Mace):
-					return [this.Const.Perks.SpearTree,this.Const.Perks.MaceTree]
-
-			//Spear && SwordStaff
-				case _item.isWeaponType(this.Const.Items.WeaponType.Spear):
-				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isWeaponType(this.Const.Items.WeaponType.Staff):
-					return this.Const.Perks.SpearTree;
-			
 			//Greatsword				
 				case _item.isWeaponType(this.Const.Items.WeaponType.Sword) && _item.isItemType(this.Const.Items.ItemType.TwoHanded):
 					return this.Const.Perks.GreatSwordTree;
 
-			//Sword
-				case _item.isWeaponType(this.Const.Items.WeaponType.Sword):
-					return this.Const.Perks.SwordTree;
-
-			//Mace
-				case _item.isWeaponType(this.Const.Items.WeaponType.Mace):
-					return this.Const.Perks.MaceTree;
-
-			//Axe
-				case _item.isWeaponType(this.Const.Items.WeaponType.Axe):
-					return this.Const.Perks.AxeTree;
-
-			//Flail
-				case _item.isWeaponType(this.Const.Items.WeaponType.Flail):
-					return this.Const.Perks.FlailTree;
-
-			//Hammer
-				case _item.isWeaponType(this.Const.Items.WeaponType.Hammer):
-					return this.Const.Perks.HammerTree;	
-					
-			//Cleaver
-				case _item.isWeaponType(this.Const.Items.WeaponType.Cleaver):
-					return this.Const.Perks.CleaverTree;
-
-			//Dagger
-				case _item.isWeaponType(this.Const.Items.WeaponType.Dagger):
-					return this.Const.Perks.DaggerTree;
-
-			//Polearm
-				case _item.isWeaponType(this.Const.Items.WeaponType.Polearm):
-					return this.Const.Perks.PolearmTree;
-
-			//Crossbow
-				case _item.isWeaponType(this.Const.Items.WeaponType.Crossbow | this.Const.Items.WeaponType.Firearm):
-					return this.Const.Perks.CrossbowTree;
-
-			//Bow
-				case _item.isWeaponType(this.Const.Items.WeaponType.Bow):
-					return this.Const.Perks.BowTree;
-
-			//Throwing
-				case _item.isWeaponType(this.Const.Items.WeaponType.Throwing):
-					return this.Const.Perks.ThrowingTree;
-
-			//Sling
-				case _item.isWeaponType(this.Const.Items.WeaponType.Sling):
-					return this.Const.Perks.SlingTree;
-
-			//Staff
-				case _item.isWeaponType(this.Const.Items.WeaponType.Staff):
-					return this.Const.Perks.StaffTree;
+			// WeaponTypes
+				default:
+					local ret = []; // Push all applicable WeaponTypes into array (supports Hybrid weapons)
+					local weaponToPerkMap = {
+						Axe = this.Const.Perks.AxeTree,
+						Bow = this.Const.Perks.BowTree,
+						Cleaver = this.Const.Perks.CleaverTree,
+						Crossbow = this.Const.Perks.CrossbowTree,
+						Dagger = this.Const.Perks.DaggerTree,
+						Firearm = this.Const.Perks.CrossbowTree,
+						Flail = this.Const.Perks.FlailTree,
+						Hammer = this.Const.Perks.HammerTree,
+						Mace = this.Const.Perks.MaceTree,
+						Polearm = this.Const.Perks.PolearmTree,
+						Sling = this.Const.Perks.SlingTree,
+						Spear = this.Const.Perks.SpearTree,
+						Sword = this.Const.Perks.SwordTree,
+						Staff = this.Const.Perks.StaffTree,
+						Throwing = this.Const.Perks.ThrowingTree
+					}
+					foreach (weapon, tree in weaponToPerkMap)
+					{
+						if (_item.isWeaponType(this.Const.Items.WeaponType[weapon])) ret.push(tree);
+					}
+					return ret;
 		}
 
 		return null;
