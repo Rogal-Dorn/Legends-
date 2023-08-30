@@ -3895,6 +3895,16 @@ this.tooltip_events <- {
 					text = contract.getDescription()
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 4,
+						type = "hint",
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractNegotiated":
@@ -3918,6 +3928,17 @@ this.tooltip_events <- {
 					text = "The terms of this contract have been negotiated. All that\'s left is for you to sign it."
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 4,
+						type = "hint",
+						divider = "top", // the options are: "top" / "bottom" / "both". Works only for type = "hint"
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractDisabled":
@@ -3947,6 +3968,17 @@ this.tooltip_events <- {
 					text = "You can only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 5,
+						type = "hint",
+						divider = "top",
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractLocked":
