@@ -23,7 +23,7 @@ this.perk_legend_specialist_pickaxe_damage <- this.inherit("scripts/skills/skill
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;
 			}
-			if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
 				_properties.DamageRegularMin += 2;
 				_properties.DamageRegularMax += 7;
