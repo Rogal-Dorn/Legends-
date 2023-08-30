@@ -12,6 +12,7 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [2]
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
+		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon;
 		this.updateVariant();
 		this.m.Value = 800;
 		this.m.MeleeDefense = 5;
@@ -37,6 +38,19 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.addSkill(this.new("scripts/skills/actives/legend_en_garde"));
 		this.addSkill(this.new("scripts/skills/actives/puncture_parry_dagger"));
 		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
+		local parrying = this.new("scripts/skills/effects/legend_parrying_effect");
+		parrying.m.IsFromItem = true;
+		this.getContainer().getActor().getSkills().add(parrying);
+	}
+
+	function onUnequip()
+	{
+		local skill = this.getContainer().getActor().getSkills().getSkillByID("effects.legend_parrying");
+		if (skill != null && skill.m.IsFromItem)
+		{
+			this.getContainer().getActor().getSkills().removeByID("effects.legend_parrying");
+		}
+		this.named_shield.onUnequip();
 	}
 
 

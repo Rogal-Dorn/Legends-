@@ -279,6 +279,51 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 				this.Tactical.getShaker().shake(this, _attacker.getTile(), 4);
 			}
 
+			// Attempt to Parry
+			local validAttackerToParry = _attacker != null && _attacker.isAlive() && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID()
+			local validSkillToParry = _skill != null && !_skill.isIgnoringRiposte()
+			if (this.m.CurrentProperties.IsParrying  &&  validAttackerToParry && validSkillToParry 
+				&& !_attacker.getCurrentProperties().IsImmuneToDisarm && !_attacker.getSkills().hasSkill("effects.legend_parried"))
+			{		
+				if (this.isHiddenToPlayer())
+				{
+					_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
+					this.onBeforeRiposte(_attacker,_skill);	
+				} 
+				else 
+				{
+					local info = {
+						Actor = this,
+						Attacker = _attacker,
+						Skill = _skill
+					};
+					this.Time.scheduleEvent(
+						this.TimeUnit.Virtual, 
+						this.Const.Combat.RiposteDelay * 1.5, 
+						this.onParryVisible.bindenv(this),
+						info
+					); 
+					
+				}
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " Parries the attack from " + this.Const.UI.getColorizedEntityName(_attacker));
+			}
+			// Otherwise, attempt to Riposte (if this character performed a Parry, they would have already attempted to perform a Riposte immediately after the Parry)
+			else
+			{
+				this.onBeforeRiposte(_attacker,_skill);
+			}
+	
+			if (_skill != null && !_skill.isRanged())
+			{
+				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnAnyAttackMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
+			}
+			
+			this.m.Skills.onMissed(_attacker, _skill);
+		}
+
+		// Preparation to call onRiposte(). Given its own function so it can be easily reused
+		o.onBeforeRiposte <- function ( _attacker, _skill, _delayMultiplier=1 )
+		{
 			if (this.m.CurrentProperties.IsRiposting && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
 			{
 				local skill = this.m.Skills.getAttackOfOpportunity();
@@ -290,44 +335,27 @@ this.getroottable().Const.LegendMod.hookActor <- function()
 						Skill = skill,
 						TargetTile = _attacker.getTile()
 					};
-					this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onRiposte.bindenv(this), info);
+					this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay * _delayMultiplier, this.onRiposte.bindenv(this), info);
 				}
+
+				this.getFlags().set("PerformedRiposte", true);
 			}
+		}
 
-
-			if (this.m.CurrentProperties.IsParrying && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
-			{
-
-				_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
-			}
-			
-			local item = this.getOffhandItem();
-			if (item != null)
-			{
-				if (item.getID() == "shield.legend_parrying_dagger" || item.getID() == "shield.legend_named_parrying_dagger"  && _attacker != null && !_attacker.isAlliedWith(this) && _attacker.getTile().getDistanceTo(this.getTile()) == 1 && this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == _attacker.getID() && _skill != null && !_skill.isIgnoringRiposte())
-				{
-					if (_attacker.getCurrentProperties().IsImmuneToDisarm)
-							{
-								this.spawnAttackEffect(_attacker.getTile(), this.Const.Tactical.AttackEffectslash);
-
-								if (_attacker.isAlive() && !_attacker.getSkills().hasSkill("effects.legend_parried"))
-								{
-									_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
-
-									if (!this.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
-									{
-										this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_attacker) + "is parried");
-									}
-								}			
-							}
-				}
-			}
-			if (_skill != null && !_skill.isRanged())
-			{
-				this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnAnyAttackMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
-			}
-			
-			this.m.Skills.onMissed(_attacker, _skill);
+		o.onParryVisible <- function ( _info )
+		{
+			// Animate and provide sound effects for the Parry, and apply the Vulnerable effect
+			this.Tactical.spawnSpriteEffect("en_garde_square", this.createColor("#ffffff"), _info.Actor.getTile(), this.Const.Tactical.Settings.SkillOverlayOffsetX, this.Const.Tactical.Settings.SkillOverlayOffsetY, this.Const.Tactical.Settings.SkillOverlayScale, this.Const.Tactical.Settings.SkillOverlayScale, this.Const.Tactical.Settings.SkillOverlayStayDuration, 0, this.Const.Tactical.Settings.SkillOverlayFadeDuration);
+			_info.Skill.spawnAttackEffect(_info.Attacker.getTile(), this.Const.Tactical.AttackEffectSlash);
+			this.Tactical.getShaker().cancel(_info.Attacker);
+			this.Tactical.getShaker().shake(_info.Attacker, _info.Actor.getTile(), 2);
+			local sound = this.Const.Sound.getParrySoundByWeaponType(_info.Skill);
+			// this.Sound.play("sounds/combat/legend_parried_01.wav", this.Const.Sound.Volume.Skill, _info.Actor.getPos())
+			this.Sound.play(sound, this.Const.Sound.Volume.Skill, _info.Actor.getPos());
+			_info.Attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_info.Attacker) + " is Vulnerable");
+			// Attempt to perform a Riposte after the Parry (with a delay so that it only begins after the Parry animation is finished)
+			this.onBeforeRiposte(_info.Attacker,_info.Skill,1.5);
 		}
 
 
