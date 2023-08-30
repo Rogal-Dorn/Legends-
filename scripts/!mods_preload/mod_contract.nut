@@ -447,6 +447,12 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			return this.buildTextFromTemplate(_text, vars);
 		}
 
+		o.getUICategoryIcon <- function()
+		{
+			local c = this.getCategory();
+			return c == "" ? "" : this.Const.Contracts.ContractCategoryIconMap[c];
+		}
+
 		o.getCategory <- function()
 		{
 			if (this.getFaction() > 0 && this.World.FactionManager.getFaction(this.getFaction()).getType() == this.Const.FactionType.Settlement && (this.m.Category == "" || this.m.Category == null))

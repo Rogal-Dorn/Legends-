@@ -89,6 +89,14 @@ gt.Const.Contracts.ContractCategoryMap <- {
 
 }
 
+// Map the contract category icons that will be used in the settlement screen
+gt.Const.Contracts.ContractCategoryIconMap <- {
+	Economy = "ui/icons/contract_type_economy", // the ".png" will be appended in world_town_screen_main_dialog_module.js
+	Battle = "ui/icons/contract_type_battle",
+	Hunt = "ui/icons/contract_type_hunt",
+	Legendary = ""
+}
+
 // Use hooks to programmatically set each contract's Category to the configured value in gt.Const.Contracts.ContractCategoryMap
 // Note: The corresponding faction action scripts that spawn the contracts still need manual coding to input the relevant Category to the isReadyForContract() call
 this.getroottable().Const.LegendMod.hookContractCategory <- function()

@@ -420,7 +420,7 @@ WorldTownScreenMainDialogModule.prototype.updateContracts = function (_data)
 
 	for(var i=0; i < 10; ++i)
 	{
-		for(var j=0; j<3; ++j)
+		for(var j=0; j<4; ++j)
 		{
 			var c = content.find('.contract' + i + ':first');
 
@@ -461,6 +461,7 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 
 	var contract = _content.createImage(Path.GFX + _data.Icon + (_isDisabled ? 'w.png' : '.png'), null, null, classes);
 	var scroll;
+	var category;
 
 	if(_data.IsNegotiated)
 	{
@@ -473,6 +474,20 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 		scroll = _content.createImage(Path.GFX + 'ui/icons/scroll_02' + (_isDisabled ? '_sw.png' : '.png'), null, null, 'display-block is-scroll contract' + _i + (_isDisabled ? ' is-disabled' : ''));
 	}
 
+	// category = _content.createImage(Path.GFX + _data.CategoryIcon, null, null, 'display-block is-contract-category contract-category-alignment-' + _data.Alignment + ' contract'  + _i);
+	// category = _content.createImage(Path.GFX + _data.CategoryIcon, null, null, 'display-block is-contract-category contract-category-alignment-middle' + ' contract'  + _i);
+
+	if(_data.CategoryIcon)
+	{
+		category = _content.createImage(Path.GFX + _data.CategoryIcon + (_isDisabled ? '_sw.png' : '.png'), null, null, 'display-block is-contract-category-' + _data.Alignment + ' contract' + _i);
+	}
+
+
+	// if(_data.CategoryIcon)
+	// {
+	// 	category = _content.createImage(Path.GFX + _data.CategoryIcon, null, null, 'display-block is-contract-category contract' + _i);
+	// }
+
 	var difficulty = _content.createImage(Path.GFX + _data.DifficultyIcon + (_isDisabled ? '_sw.png' : '.png'), null, null, 'display-block is-difficulty contract' + _i + (_isDisabled ? ' is-disabled' : ''));
 
 	if(!_isDisabled)
@@ -481,6 +496,12 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 		img1.src = Path.GFX + _data.Icon + 'b.png';
 		var img2 = new Image();
 		img2.src = Path.GFX + 'ui/icons/scroll_' + (_data.IsNegotiated ? '01' : '02') + '_b.png';
+		if(_data.CategoryIcon)
+		{
+			var img3 = new Image();
+			img3.src = Path.GFX + _data.CategoryIcon + '_b.png';
+		}
+		
 
 		contract.click(function (_event)
 		{
@@ -495,6 +516,10 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 
 			scroll.attr('src', Path.GFX + 'ui/icons/scroll_' + (_data.IsNegotiated ? '01' : '02') + '_b.png');
 			contract.attr('src', Path.GFX + _data.Icon + 'b.png');
+			if(_data.CategoryIcon)
+			{
+				category.attr('src', Path.GFX + _data.CategoryIcon + '_b.png')	
+			}
 		});
 
 		contract.mouseout(function()
@@ -505,6 +530,10 @@ WorldTownScreenMainDialogModule.prototype.createContract = function (_data, _i, 
 
 			scroll.attr('src', Path.GFX + 'ui/icons/scroll_' + (_data.IsNegotiated ? '01' : '02') + '.png');
 			contract.attr('src', Path.GFX + _data.Icon + '.png');
+			if(_data.CategoryIcon)
+			{
+				category.attr('src', Path.GFX + _data.CategoryIcon + '.png');	
+			}
 		});
 	}
 }

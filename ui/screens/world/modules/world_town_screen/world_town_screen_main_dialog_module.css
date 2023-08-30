@@ -300,6 +300,40 @@
 	 pointer-events: none;
 }
 
+/*Bottom Middle*/
+.world-town-screen > .l-main-dialog-container .is-contract-category-middle
+{
+	 top: 7.4rem;
+	 margin-left: 0.9rem;
+	 pointer-events: none;
+}
+
+/*Bottom Right*/
+.world-town-screen > .l-main-dialog-container .is-contract-category-right
+{
+	 top: 7.4rem;
+	 margin-left: 2.6rem;
+	 pointer-events: none;
+}
+
+
+/*Bottom Left*/
+.world-town-screen > .l-main-dialog-container .is-contract-category-left
+{
+	 top: 7.4rem;
+	 margin-left: -0.8rem;
+	 pointer-events: none;
+}
+
+/*Below*/
+.world-town-screen > .l-main-dialog-container .is-contract-category-below
+{
+	 top: 9rem;
+	 margin-left: 0.9rem;
+	 pointer-events: none;
+}
+
+
 .world-town-screen > .l-main-dialog-container .is-difficulty
 {
 	 top: 1.5rem;
