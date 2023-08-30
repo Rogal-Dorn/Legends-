@@ -13,6 +13,7 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.raid_caravan";
 		this.m.Name = "Raid Caravan";
+		this.m.Description = "A noble lord has gotten wind of a caravan route of an enemy house and is looking to hire 'brigands' to raid it. Intercept the caravan and let nobody escape.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

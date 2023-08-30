@@ -19,6 +19,13 @@ this.legend_hunting_greenwood_schrats_action <- this.inherit("scripts/factions/f
 			return;
 		}
 
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_hunting_greenwood_schrats_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;

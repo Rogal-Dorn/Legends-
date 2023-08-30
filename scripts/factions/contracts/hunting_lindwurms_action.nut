@@ -16,7 +16,7 @@ this.hunting_lindwurms_action <- this.inherit("scripts/factions/faction_action",
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.hunting_lindwurms_contract))
 		{
 			return;
 		}

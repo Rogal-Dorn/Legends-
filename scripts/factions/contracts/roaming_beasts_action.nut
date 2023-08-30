@@ -11,7 +11,7 @@ this.roaming_beasts_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.roaming_beasts_contract))
 		{
 			return;
 		}
