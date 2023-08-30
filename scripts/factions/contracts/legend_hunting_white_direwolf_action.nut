@@ -18,6 +18,14 @@ this.legend_hunting_white_direwolf_action <- this.inherit("scripts/factions/fact
 			return;
 		}
 
+		
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_hunting_white_direwolf_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;
