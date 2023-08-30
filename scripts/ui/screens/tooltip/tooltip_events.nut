@@ -3909,13 +3909,13 @@ this.tooltip_events <- {
 				},
 				{
 					id = 2,
-					type = "hint",
-					text = "The terms of this contract have been negotiated. All that\'s left is for you to sign it."
+					type = "description",
+					text = contract.getDescription()
 				},
 				{
 					id = 3,
-					type = "description",
-					text = contract.getDescription()
+					type = "hint",
+					text = "The terms of this contract have been negotiated. All that\'s left is for you to sign it."
 				}
 			];
 			return ret;
@@ -3933,13 +3933,18 @@ this.tooltip_events <- {
 				},
 				{
 					id = 2,
-					type = "hint",
-					text = "You already have a contract! Only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
+					type = "description",
+					text = contract.getDescription()
 				},
 				{
 					id = 3,
-					type = "description",
-					text = contract.getDescription()
+					type = "hint",
+					text = "You already have contract!"
+				},
+				{
+					id = 4,
+					type = "hint",
+					text = "You can only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
 				}
 			];
 			return ret;
