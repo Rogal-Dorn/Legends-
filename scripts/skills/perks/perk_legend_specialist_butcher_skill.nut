@@ -22,7 +22,7 @@ this.perk_legend_specialist_butcher_skill <- this.inherit("scripts/skills/skill"
 			{
 				_properties.MeleeSkill += 12;
 			}
-			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver) && !item.isWeaponType(this.Const.Items.WeaponType.Whip) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 			{
 				_properties.MeleeSkill += 3;
 			}
