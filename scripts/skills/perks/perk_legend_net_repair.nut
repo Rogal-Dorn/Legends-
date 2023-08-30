@@ -22,9 +22,9 @@ this.perk_legend_net_repair <- this.inherit("scripts/skills/skill", {
 
 		if (item != null)
 		{
-			if(item.getID() == "tool.throwing_net" || item.getID() == "tool.reinforced_throwing_net" || item.getID() == "tool.legend_broken_throwing_net")
+			if(item.isItemType(this.Const.Items.ItemType.Net))
 			{
-			_properties.MeleeDefense += 10;		
+				_properties.MeleeDefense += 10;		
 			}
 
 		}
