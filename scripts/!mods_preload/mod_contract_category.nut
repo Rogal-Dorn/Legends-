@@ -3,6 +3,14 @@
 local gt = this.getroottable();
 
 // Contract Overhaul (adding Categories)
+gt.Const.Contracts.Categories <- {
+	Economy = "Economy",
+	Battle = "Battle",
+	Hunt = "Hunt",
+	Legendary = "Legendary"
+}
+
+
 // At each corresponding Settlement Tier, a settlement can have the configured maximum number of open contracts under the corresponding Category (Economic, Location etc)
 // Wildcard is a bonus category, where any contract can be given an open contract slot under Wildcard if its corresponding Category is full. This is for variety's sake
 gt.Const.Contracts.CategoryLimits <- {
@@ -42,38 +50,38 @@ gt.Const.Contracts.CategoryLimits <- {
 gt.Const.Contracts.ContractCategoryMap <- {
 	
 	// Settlement Contracts
-	deliver_item_contract = "Economy",
-	deliver_money_contract = "Economy",
-	escort_caravan_contract = "Economy",
-	obtain_item_contract = "Economy",
-	restore_location_contract = "Economy",
-	return_item_contract = "Economy",
+	deliver_item_contract = this.Const.Contracts.Categories.Economy,
+	deliver_money_contract = this.Const.Contracts.Categories.Economy,
+	escort_caravan_contract = this.Const.Contracts.Categories.Economy,
+	obtain_item_contract = this.Const.Contracts.Categories.Economy,
+	restore_location_contract = this.Const.Contracts.Categories.Economy,
+	return_item_contract = this.Const.Contracts.Categories.Economy,
 
-	defend_settlement_bandits_contract = "Battle",
-	defend_settlement_greenskins_contract = "Battle",
-	discover_location_contract = "Battle",
-	drive_away_bandits_contract = "Battle",
-	drive_away_barbarians_contract = "Battle",
-	investigate_cemetery_contract = "Battle",
+	defend_settlement_bandits_contract = this.Const.Contracts.Categories.Battle,
+	defend_settlement_greenskins_contract = this.Const.Contracts.Categories.Battle,
+	discover_location_contract = this.Const.Contracts.Categories.Battle,
+	drive_away_bandits_contract = this.Const.Contracts.Categories.Battle,
+	drive_away_barbarians_contract = this.Const.Contracts.Categories.Battle,
+	investigate_cemetery_contract = this.Const.Contracts.Categories.Battle,
 
-	hunting_alps_contract = "Hunt",
-	hunting_hexen_contract = "Hunt",
-	hunting_lindwurms_contract = "Hunt",
-	hunting_schrats_contract = "Hunt",
-	hunting_unholds_contract = "Hunt",
-	hunting_webknechts_contract = "Hunt",
-	roaming_beasts_contract = "Hunt",
+	hunting_alps_contract = this.Const.Contracts.Categories.Hunt,
+	hunting_hexen_contract = this.Const.Contracts.Categories.Hunt,
+	hunting_lindwurms_contract = this.Const.Contracts.Categories.Hunt,
+	hunting_schrats_contract = this.Const.Contracts.Categories.Hunt,
+	hunting_unholds_contract = this.Const.Contracts.Categories.Hunt,
+	hunting_webknechts_contract = this.Const.Contracts.Categories.Hunt,
+	roaming_beasts_contract = this.Const.Contracts.Categories.Hunt,
 
-	legend_bandit_army_contract = "Legendary",
-	legend_barbarian_prisoner_contract = "Legendary",
-	legend_hunting_coven_leader_contract = "Legendary",
-	legend_hunting_demon_alps_contract = "Legendary",
-	legend_hunting_greenwood_schrats_contract = "Legendary",
-	legend_hunting_redback_webknechts_contract = "Legendary",
-	legend_hunting_rock_unholds_contract = "Legendary",
-	legend_hunting_skin_ghouls_contract = "Legendary",
-	legend_hunting_stollwurms_contract = "Legendary",
-	legend_hunting_white_direwolf_contract = "Legendary"
+	legend_bandit_army_contract = this.Const.Contracts.Categories.Legendary,
+	legend_barbarian_prisoner_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_coven_leader_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_demon_alps_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_greenwood_schrats_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_redback_webknechts_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_rock_unholds_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_skin_ghouls_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_stollwurms_contract = this.Const.Contracts.Categories.Legendary,
+	legend_hunting_white_direwolf_contract = this.Const.Contracts.Categories.Legendary
 
 	// Noble Contracts (future development?)
 
