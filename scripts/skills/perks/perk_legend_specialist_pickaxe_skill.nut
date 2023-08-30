@@ -22,7 +22,7 @@ this.perk_legend_specialist_pickaxe_skill <- this.inherit("scripts/skills/skill"
 			{
 				_properties.MeleeSkill += 12;
 			}
-			if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Hammer) && item.isItemType(this.Const.Items.ItemType.TwoHanded))
 			{
 				_properties.MeleeSkill += 3;
 			}

@@ -23,7 +23,7 @@ this.perk_legend_specialist_hammer_skill <- this.inherit("scripts/skills/skill",
 				_properties.MeleeSkill += 12;
 				_properties.DamageArmorMult += 0.4;
 			}
-			if (item.isItemType(this.Const.Items.ItemType.OneHanded) && item.isWeaponType(this.Const.Items.WeaponType.Hammer))
+			else if (item.isItemType(this.Const.Items.ItemType.OneHanded) && item.isWeaponType(this.Const.Items.WeaponType.Hammer))
 			{
 				_properties.MeleeSkill += 3;
 				_properties.DamageArmorMult += 0.1;

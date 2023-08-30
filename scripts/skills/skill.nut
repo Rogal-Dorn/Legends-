@@ -68,7 +68,8 @@ this.skill <- {
 		IsDisengagement = false,
 		IsTooCloseShown = false,
 		IsUsable = true,
-		IsGarbage = false
+		IsGarbage = false,
+		IsForPerkTooltip = false // Indicate whether the Perk is a dummy that is being used only to generate unactivated perk tooltip hints
 	},
 	function getContainer()
 	{
@@ -394,6 +395,12 @@ this.skill <- {
 				text = this.getDescription()
 			}
 		];
+	}
+
+	// Allow Perks to push Tooltip elements that will be displayed when the user views the Tooltips of unactivated Perks in the Perk screen
+	function getUnactivatedPerkTooltipHints()
+	{
+		return [];
 	}
 
 	function getDefaultUtilityTooltip()

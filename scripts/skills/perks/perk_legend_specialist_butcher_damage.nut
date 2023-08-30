@@ -23,7 +23,7 @@ this.perk_legend_specialist_butcher_damage <- this.inherit("scripts/skills/skill
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;
 			}
-			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Cleaver) && !item.isWeaponType(this.Const.Items.WeaponType.Whip) && item.isItemType(this.Const.Items.ItemType.OneHanded))
 			{
 				_properties.DamageRegularMin += 2;
 				_properties.DamageRegularMax += 7;
