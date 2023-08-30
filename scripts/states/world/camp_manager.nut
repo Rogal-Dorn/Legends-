@@ -105,7 +105,13 @@ this.camp_manager <- {
 
 	function getResults()
 	{
-		local L = [];
+		local L = [
+			{
+				id = 9000,
+				icon = "ui/buttons/icon_time.png",
+				text = "You were encamped for " + this.Math.floor(this.getElapsedHours()) + " hours"
+			}
+		];
 
 		foreach( b in this.m.Tents )
 		{
@@ -207,8 +213,26 @@ this.camp_manager <- {
 		}
 
 		this.m.LastHourUpdated = this.World.getTime().Hours;
+		local updates = this.getCampingUpdateText();
+
+		if (this.m.IsCamping)
+		{
+			this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
+		}
+		else if (this.m.IsEscorting)
+		{
+			this.World.TopbarDayTimeModule.showMessage("ESCORTING", updates);
+		}
+	}
+
+	function getCampingUpdateText()
+	{
 		local updates = [];
 		local text;
+
+		updates.push("----------------------------------");
+		updates.push("Hours Encamped: " + this.Math.floor(this.getElapsedHours()));
+		updates.push("----------------------------------");
 
 		foreach( b in this.m.Tents )
 		{
@@ -223,14 +247,7 @@ this.camp_manager <- {
 			}
 		}
 
-		if (this.m.IsCamping)
-		{
-			this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
-		}
-		else if (this.m.IsEscorting)
-		{
-			this.World.TopbarDayTimeModule.showMessage("ESCORTING", updates);
-		}
+		return updates;
 	}
 
 	function fireEvent( _eventID, _name )
