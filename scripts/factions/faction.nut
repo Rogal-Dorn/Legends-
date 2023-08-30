@@ -450,7 +450,6 @@ this.faction <- {
 	function addContract( _c )
 	{
 		_c.setFaction(this.getID());
-		this.m.Contracts.push(_c);
 		
 		// Contract Overhaul
 		// For the current phase, we will overhaul the system for Settlement contracts only
@@ -460,6 +459,7 @@ this.faction <- {
 			// During deserialization, if we detect the StoredAsWildcard flag, then we should straightaway push it there and finish
 			if ( _c.m.Flags.get("StoredAsWildcard"))
 			{
+				this.m.Contracts.push(_c); // We still need to push to this table because the game logic relies on it to make the contract available in the settlement
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 				return;
 			}
@@ -473,6 +473,7 @@ this.faction <- {
 			if (cat == "" || cat == null || !(cat in this.Const.Contracts.CategoryLimits))
 			{
 				_c.m.Flags.set("StoredAsWildcard", true);
+				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 
 				this.logWarning("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with missing or unrecognised Category {" + cat + "} to Slot {Wildcard}");
@@ -482,17 +483,21 @@ this.faction <- {
 			// Push to the contract's corresponding category if there's room
 			if (this.m.ContractsByCategory[cat].len() < this.Const.Contracts.CategoryLimits[cat][tier])
 			{
+				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory[cat].push(_c);
 				
 				this.logInfo("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {" + cat + "}");
+				return;
 			} 
 			// If not, push to the Wildcard category if there's room
 			else if (this.m.ContractsByCategory["Wildcard"].len() < this.Const.Contracts.CategoryLimits["Wildcard"][tier])
 			{
 				_c.m.Flags.set("StoredAsWildcard", true); // this will be used during deserialization and contract removal to indicate that it should be pushed to/removed from the Wildcard category
+				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 				
 				this.logInfo("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {Wildcard}");
+				return;
 			} 
 			// If not, something is wrong (the contract should not have been generated if both its category and Wildcard are full)
 			else
@@ -501,7 +506,13 @@ this.faction <- {
 				error += "Failed to add contract: " + _c.getName() + " (category=" + cat + ") | Settlement: " + s.getName() + " (size=" + s.getSize() + ")";
 				error += " | Existing contracts of relevant category: " + cat + "=" + this.m.ContractsByCategory[cat].len() + ", Wildcard=" + this.m.ContractsByCategory["Wildcard"].len();
 				this.logError(error);
+				return
 			}
+		}
+		else
+		{
+			// For this phase of the Contract Categories Overhaul, non-Settlement factions will always get the contract
+			this.m.Contracts.push(_c);
 		}
 	}
 
