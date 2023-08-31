@@ -374,23 +374,32 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getGenericTooltip()
 	{
-		return [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
 				text = this.getName()
-			},
+			}
+		];
+
+		if (::Legends.Mod.ModSettings.getSetting("ShowCharacterBackgroundType").getValue())
+		{
+			tooltip.push({
+				id = 2,
+				type = "description",
+				text = this.getBackgroundTypes() + "\n\n"
+			});
+		}
+
+		tooltip.push(
 			{
 				id = 3,
 				type = "description",
-				text =	this.getBackgroundTypes() + "\n"
-			},
-			{
-				id = 5,
-				type = "description",
 				text = this.getBackgroundDescription(true)
 			}
-		];
+		);
+
+		return tooltip;
 	}
 
 	function getTooltip()
@@ -1609,19 +1618,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getBackgroundTypes(){
 
-		local BackgroundType = "";
+		local ret = "";
 
-		foreach (i, name in ::Const.BackgroundTypeName)
+		foreach (type, name in ::Const.BackgroundTypeName)
 		{
-		    if (this.isBackgroundType(::Const.BackgroundType[name]))
+		    if (this.isBackgroundType(::Const.BackgroundType[type]))
 		    {
-		        BackgroundType += name + ", ";
+		        ret += name + ", ";
 		    }
 		}
 
-		if (BackgroundType.len() == 0) return "";
+		if (ret.len() == 0) return "";
 
-		return "Background Type(s): " + BackgroundType.slice(0, BackgroundType.len() - 2);
+		return "[color=" + this.Const.UI.Color.NegativeValue + "]Background Type: " + ret.slice(0, ret.len() - 2) + "[/color]";
 	}
 
 	//0 = Male, 1 = Female, -1 = Either
