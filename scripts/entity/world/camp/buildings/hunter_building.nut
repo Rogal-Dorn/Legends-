@@ -153,13 +153,13 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
+			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
+
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
 			   chefLevel += bro.getLevel()
 			}
-
-			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
-			if (this.getUpgraded() && boolean)
+			else if (this.getUpgraded() && boolean)
 			{
 				chefLevel += this.Math.floor(bro.getLevel() * 0.5);
 			}
@@ -209,13 +209,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
+			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
 			   brewerLevel += bro.getLevel()
 			}
-
-			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
-			if (this.getUpgraded() && boolean)
+			else if (this.getUpgraded() && boolean)
 			{
 			   brewerLevel += this.Math.floor(bro.getLevel() * 0.25);
 			}
@@ -271,161 +270,113 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			return this.getUpdateText();
 		}
-		::logInfo("1 and 5" + this.Math.minf(1,5));
-		// foreach (item in this.Const.Hunting_Categories.Plains.Items){
-		// 	::logInfo("Items:" + item);
-		// }
+
 		this.m.Points += this.m.Craft;
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
 
-		local brewerlevels = this.getBrewerLevel();
-		// if (this.getUpgraded())
-		// {
-		// 	brewerlevels = this.Math.floor(brewerlevels * 1.5);
-		// }
-		local dropLoot = -300.0 / (brewerlevels + 20) + 15 > this.Math.rand(1, 100);
-		if (dropLoot) // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
-		{
-			local brewerLoot = this.new("scripts/mods/script_container");
-			brewerLoot.extend([
-				"scripts/items/supplies/beer_item",
-				"scripts/items/supplies/wine_item"
-			]);
+
+		local terrainType = this.World.State.getPlayer().getTile().Type;
+
+		local Biome = this.Const.Hunting_Categories.BiomeType[terrainType];
 
 
-			if (this.getUpgraded())
-			{
-				brewerLoot.extend([
-					[3, "scripts/items/supplies/mead_item"],
-					[1, "scripts/items/supplies/preserved_mead_item"]
-				]);
-			}
-
-			item = this.new(brewerLoot.roll()); 
-			this.m.Items.push(item);
-			this.Stash.add(item);
-			if(--emptySlots == 0) return this.getUpdateText();
+		if(this.getUpgraded()){
+			this.Const.Hunting_Categories.addBiome(Biome, true);
+		}else {
+			this.Const.Hunting_Categories.addBiome(Biome, false)
 		}
 
-		local cheflevels = this.getChefLevel();
-		// if (this.getUpgraded())
-		// {
-		// 	cheflevels = this.Math.floor(cheflevels * 1.5);
-		// }
-		dropLoot = -300.0 / (cheflevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
-		if (dropLoot)
-		{
-			local chefLoot = this.new("scripts/mods/script_container")
-			chefLoot.extend([
-				"scripts/items/supplies/dried_fruits_item",
-				"scripts/items/supplies/cured_venison_item",
-				"scripts/items/supplies/ground_grains_item",
-				"scripts/items/trade/legend_cooking_spices_trade_item",
-			]);
+		local noLevel = this.Const.Hunting_Categories.Containers.noLevels;
+		local tentLevel = this.Const.Hunting_Categories.Containers.chef;
 
-			if (this.getUpgraded())
-			{
-				chefLoot.extend([
-					[3, "scripts/items/supplies/bread_item"],
-					[1, "scripts/items/supplies/legend_pudding_item"],
-					[2, "scripts/items/supplies/legend_porridge_item"]
-				]);
-			}
-
-			item = this.new(chefLoot.roll()); 
-			this.m.Items.push(item);
-			this.Stash.add(item);
-			if(--emptySlots == 0) return this.getUpdateText();
-		}
-		
-		local huntlevels = this.getHuntLevel();
-
-		// if (this.getUpgraded())
-		// {
-		// 	huntlevels = this.Math.floor(huntlevels * 1.5);
-		// }
-
-		dropLoot = -300.0 / (huntlevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
-
-		::logInfo("hunting levels: " + huntlevels + "  dropLoot: " + dropLoot);
-		if (dropLoot)
-		{
-			::logInfo("Entered the dungeon!!!!!");
-			local huntLoot = this.new("scripts/mods/script_container")
-			huntLoot.extend([
-				"scripts/items/supplies/legend_fresh_meat_item",
-				"scripts/items/supplies/legend_fresh_fruit_item",
-				"scripts/items/supplies/strange_meat_item",
-			]);
-
-			if (this.getUpgraded())
-			{
-				huntLoot.extend([
-					[1, "scripts/misc/adrenaline_gland_item"],
-					[2, "scripts/items/misc/poison_gland_item"],
-					[3, "scripts/items/trade/legend_small_furs_item"]
-				]);
-			}
-
-			item = this.new(huntLoot.roll());
-			::logInfo("Item: " + item);
-			this.m.Items.push(item);
-			this.Stash.add(item);
-			if(--emptySlots == 0) return this.getUpdateText();
-		}
-		
-		
-		local r = this.Math.rand(1, 4);
-		
-		local huntingLoot = this.new("scripts/mods/script_container");
-		::logInfo("hunting tent got to bottom part.");
-		if (r <= 2)
-		{
-			item = this.new("scripts/items/supplies/legend_fresh_meat_item");
-			huntingLoot.extend([
-				"scripts/items/misc/adrenaline_gland_item",
-				"scripts/items/misc/poison_gland_item",
-				"scripts/items/misc/spider_silk_item",
-				"scripts/items/misc/werewolf_pelt_item",
-				"scripts/items/accessory/spider_poison_item",
-				"scripts/items/supplies/strange_meat_item"
-			]);
-		}
-		else if (r == 3)
-		{
-			item = this.new("scripts/items/supplies/roots_and_berries_item");
-			huntingLoot.extend([
-				"scripts/items/supplies/cured_venison_item"
-			]);
-		}
-		else
-		{
-			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
-				huntingLoot.extend([
-				"scripts/items/supplies/dried_fruits_item"
-			]);
-		}
-
-		if (this.getUpgraded() && huntingLoot.len() > 0 && this.Math.rand(1, 5) == 1)
-		{
-			huntitem = this.new(huntingLoot.roll());
-			this.m.Items.push(huntitem);
-			this.Stash.add(huntitem);
-		}
-
-		if (item.getValue() != null && this.m.Points < item.getValue())
-		{
-			return this.getUpdateText();
-		}
-
-		this.m.Points -= item.getValue();
-		item.randomizeAmount();
-		this.m.FoodAmount += item.getAmount();
-		item.randomizeBestBefore();
+		item = tentLevel.rand();
 		this.m.Items.push(item);
 		this.Stash.add(item);
+		if(--emptySlots == 0) return this.getUpdateText();
+
+		// local brewerlevels = this.getBrewerLevel();
+		// local dropLoot = -300.0 / (brewerlevels + 20) + 15 > this.Math.rand(1, 100);
+		// if (dropLoot) // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		// {
+		// 	local brewerLoot = this.new("scripts/mods/script_container");
+		// 	brewerLoot.extend([
+		// 		"scripts/items/supplies/beer_item",
+		// 		"scripts/items/supplies/wine_item"
+		// 	]);
+
+
+		// 	if (this.getUpgraded())
+		// 	{
+		// 		brewerLoot.extend([
+		// 			[3, "scripts/items/supplies/mead_item"],
+		// 			[1, "scripts/items/supplies/preserved_mead_item"]
+		// 		]);
+		// 	}
+
+		// 	item = this.new(brewerLoot.roll());
+		// 	this.m.Items.push(item);
+		// 	this.Stash.add(item);
+		// 	if(--emptySlots == 0) return this.getUpdateText();
+		// }
+
+		// local cheflevels = this.getChefLevel();
+		// dropLoot = -300.0 / (cheflevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		// if (dropLoot)
+		// {
+
+
+		// 	item = this.new(chefLoot.roll());
+		// 	this.m.Items.push(item);
+		// 	this.Stash.add(item);
+		// 	if(--emptySlots == 0) return this.getUpdateText();
+		// }
+
+		// local huntlevels = this.getHuntLevel();
+
+
+		// dropLoot = -300.0 / (huntlevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+
+		// if (dropLoot)
+		// {
+		// 	::logInfo("Entered the dungeon!!!!!");
+		// 	local huntLoot = this.new("scripts/mods/script_container")
+		// 	huntLoot.extend([
+		// 		"scripts/items/supplies/legend_fresh_meat_item",
+		// 		"scripts/items/supplies/legend_fresh_fruit_item",
+		// 		"scripts/items/supplies/strange_meat_item",
+		// 	]);
+
+		// 	if (this.getUpgraded())
+		// 	{
+		// 		huntLoot.extend([
+		// 			[1, "scripts/misc/adrenaline_gland_item"],
+		// 			[2, "scripts/items/misc/poison_gland_item"],
+		// 			[3, "scripts/items/trade/legend_small_furs_item"]
+		// 		]);
+		// 	}
+
+		// 	item = this.new(huntLoot.roll());
+		// 	this.m.Items.push(item);
+		// 	this.Stash.add(item);
+		// 	if(--emptySlots == 0) return this.getUpdateText();
+		// }
+		
+
+
+
+		// if (item.getValue() != null && this.m.Points < item.getValue())
+		// {
+		// 	return this.getUpdateText();
+		// }
+
+		// this.m.Points -= item.getValue();
+		// item.randomizeAmount();
+		// this.m.FoodAmount += item.getAmount();
+		// item.randomizeBestBefore();
+		// this.m.Items.push(item);
+		// this.Stash.add(item);
 		
 		return this.getUpdateText();
 	}
