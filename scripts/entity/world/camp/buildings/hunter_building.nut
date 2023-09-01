@@ -276,10 +276,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
 
-
-		local terrainType = this.World.State.getPlayer().getTile().Type;
-
-		local Biome = this.Const.Hunting_Categories.BiomeType[terrainType];
+		local Biome = this.World.State.getPlayer().getTile().Type;
 
 
 		if(this.getUpgraded()){
@@ -288,10 +285,18 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.Const.Hunting_Categories.addBiome(Biome, false)
 		}
 
+
 		local noLevel = this.Const.Hunting_Categories.Containers.noLevels;
 		local tentLevel = this.Const.Hunting_Categories.Containers.chef;
 
-		item = tentLevel.rand();
+		foreach (item in noLevel.toArray(true)){
+			::logInfo("NoLevel: " + item);
+		}
+		foreach (item in tentLevel.toArray(true)){
+			::logInfo("TentLevel: " + item);
+		}
+
+		item = this.new(tentLevel.rand());
 		this.m.Items.push(item);
 		this.Stash.add(item);
 		if(--emptySlots == 0) return this.getUpdateText();
