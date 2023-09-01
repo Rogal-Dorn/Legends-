@@ -55,4 +55,17 @@
 	local myEnumTooltip = "Define how Blueprints are shown: 'All Ingredients Available' is the Vanilla behavior; 'One Ingredient Available' shows recipes when one ingredient is fully satisfied; 'Always' shows all recipes at all time";
 	misc.addElement(::MSU.Class.EnumSetting("ShowBlueprintsWhen", "All Ingredients Available", ["All Ingredients Available", "One Ingredient Available", "Always"], "Show Blueprints when", myEnumTooltip));
 	misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Autorepair Layer", "Any Body or Helmet Layer that you strip from a piece of armor is automatically marked as 'to be repaired'."));	
+
+
+	local logging = ::Legends.Mod.ModSettings.addPage("Logging");
+	foreach(f in ::Const.LegendMod.Debug.FlagDefs)
+	{
+		local b = logging.addElement(::MSU.Class.BooleanSetting(f.ID, f.Value, f.Name, f.Description)); // Set the default MSU Debug logging flags based on configuration in ::Const.LegendMod.Debug.FlagDefs
+		b.Data.FlagID <- f.ID
+		b.addCallback(function(_value)
+			{
+				::Legends.Mod.Debug.setFlag(this.Data.FlagID, _value);
+			}
+		);
+	}
 }	
