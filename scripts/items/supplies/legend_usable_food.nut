@@ -58,7 +58,7 @@ this.legend_usable_food <- this.inherit("scripts/items/item", {
 	{
 		this.m.IsRandomized = true;
 		this.m.MaxStack = this.m.Amount;
-		this.m.Amount = this.Math.rand(10, this.m.MaxStack);
+		this.m.Amount = this.Math.rand(this.Math.ceil(this.m.MaxStack * 0.25), this.m.MaxStack);
 	}
 
 	function randomizeBestBefore()

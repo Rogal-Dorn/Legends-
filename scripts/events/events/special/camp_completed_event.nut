@@ -28,7 +28,6 @@ this.camp_completed_event <- this.inherit("scripts/events/event", {
 			},
 			function start( _event )
 			{
-				this.Const.Hunting_Categories.clear();
 				this.Music.setTrackList(this.Const.Music.VictoryTracks, this.Const.Music.CrossFadeTime);
 				this.Banner = "ui/banners/" + this.World.Assets.getBanner() + "s.png";
 				this.Options = [
