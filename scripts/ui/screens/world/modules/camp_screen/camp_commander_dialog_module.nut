@@ -160,6 +160,18 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		return this.queryLoad();
 	}
 
+	function onSaveAssignmentPreset ( _presetNumber )
+	{
+		::World.Camp.saveAssignmentPreset( _presetNumber );
+		this.Sound.play("sounds/scribble.wav", 1.0)
+	}
+
+	function onLoadAssignmentPreset ( _presetNumber )
+	{
+		::World.Camp.loadAssignmentPreset( _presetNumber );
+		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
+	}
+
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
