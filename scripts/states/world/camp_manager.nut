@@ -282,6 +282,26 @@ this.camp_manager <- {
 		this.m.Tents.push(_building);
 	}
 
+	function saveAssignmentPreset( _presetNumber )
+	{
+		foreach(p in ::World.getPlayerRoster().getAll())
+		{
+			p.getFlags().set("camping_preset_" + _presetNumber, p.getCampAssignment());
+		}
+	}
+
+	function loadAssignmentPreset( _presetNumber )
+	{
+		foreach(p in ::World.getPlayerRoster().getAll())
+		{
+			if(p.getFlags().has("camping_preset_" + _presetNumber))
+			{
+				p.setLastCampAssignment(p.getCampAssignment());
+				p.setCampAssignment(p.getFlags().get("camping_preset_" + _presetNumber));
+			}
+		}
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsCamping);

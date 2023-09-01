@@ -859,3 +859,14 @@ CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = functio
 {
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
 };
+
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = function (_presetNumber, _callback)
+{
+	SQ.call(this.mSQHandle, 'onSaveAssignmentPreset', _presetNumber, _callback);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendLoadAssignmentPreset = function (_presetNumber, _callback)
+{
+	SQ.call(this.mSQHandle, 'onLoadAssignmentPreset', _presetNumber, _callback);
+};
+
