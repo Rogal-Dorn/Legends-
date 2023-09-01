@@ -7,7 +7,9 @@ this.legend_parried_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "This character has overextended, and is now vulnerable to a counterattack.";
 		this.m.Icon = "ui/perks/parried_circle.png";
 		this.m.IconMini = "mini_parried_circle";
+		this.m.Overlay = "parried_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
+		this.m.Order = this.Const.SkillOrder.VeryLast;
 		this.m.IsActive = false;
 		this.m.IsRemovedAfterBattle = true;
 	}
@@ -47,7 +49,7 @@ this.legend_parried_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 
-	function onTurnEnd()
+	function onTurnStart()
 	{
 		this.removeSelf();
 	}

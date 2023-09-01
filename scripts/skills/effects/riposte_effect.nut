@@ -14,7 +14,7 @@ this.riposte_effect <- this.inherit("scripts/skills/skill", {
 
 	function getDescription()
 	{
-		return "This character is prepared to immediately counter-attack on any failed attempt to attack him in melee.";
+		return "This character is prepared to immediately counter-attack on any failed attempt to attack them in melee.";
 	}
 
 	function onUpdate( _properties )
