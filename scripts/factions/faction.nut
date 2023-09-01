@@ -476,7 +476,8 @@ this.faction <- {
 				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 
-				this.logWarning("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with missing or unrecognised Category {" + cat + "} to Slot {Wildcard}");
+				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with missing or unrecognised Category {" + cat + "} to Slot {Wildcard}";
+				this.logWarning(str);
 				return;
 			}
 			
@@ -486,7 +487,8 @@ this.faction <- {
 				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory[cat].push(_c);
 				
-				this.logInfo("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {" + cat + "}");
+				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {" + cat + "}";
+				this.logInfo(str);
 				return;
 			} 
 			// If not, push to the Wildcard category if there's room
@@ -496,7 +498,8 @@ this.faction <- {
 				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 				
-				this.logInfo("Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {Wildcard}");
+				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {Wildcard}";
+				this.logInfo(str);
 				return;
 			} 
 			// If not, something is wrong (the contract should not have been generated if both its category and Wildcard are full)
