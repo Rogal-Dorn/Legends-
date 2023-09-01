@@ -458,7 +458,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			if (this.getFaction() > 0 && this.World.FactionManager.getFaction(this.getFaction()).getType() == this.Const.FactionType.Settlement && (this.m.Category == "" || this.m.Category == null))
 			{
 				// At the current phase, all Settlement contracts should have assigned categories
-				this.logWarning("Contract Overhaul: Missing Category for settlement contract: " + this.getName());
+				::Legends.Mod.Debug.printWarning("Contract Overhaul: Missing Category for settlement contract: " + this.getName(),::Const.LegendMod.Debug.Flags.ContractCategories);
 			}
 			return this.m.Category;
 		}
