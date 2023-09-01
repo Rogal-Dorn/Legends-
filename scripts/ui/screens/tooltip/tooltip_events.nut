@@ -3975,7 +3975,7 @@ this.tooltip_events <- {
 				{
 					id = 3,
 					type = "hint",
-					text = "You already have contract!"
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]You already have a contract![/color]"
 				},
 				{
 					id = 4,
