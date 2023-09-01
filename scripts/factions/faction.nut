@@ -477,7 +477,7 @@ this.faction <- {
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 
 				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with missing or unrecognised Category {" + cat + "} to Slot {Wildcard}";
-				this.logWarning(str);
+				::Legends.Mod.Debug.printWarning(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
 			}
 			
@@ -488,7 +488,7 @@ this.faction <- {
 				this.m.ContractsByCategory[cat].push(_c);
 				
 				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {" + cat + "}";
-				this.logInfo(str);
+				::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
 			} 
 			// If not, push to the Wildcard category if there's room
@@ -499,7 +499,7 @@ this.faction <- {
 				this.m.ContractsByCategory["Wildcard"].push(_c);
 				
 				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {Wildcard}";
-				this.logInfo(str);
+				::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
 			} 
 			// If not, something is wrong (the contract should not have been generated if both its category and Wildcard are full)
@@ -508,7 +508,7 @@ this.faction <- {
 				local error = "";
 				error += "Failed to add contract: " + _c.getName() + " (category=" + cat + ") | Settlement: " + s.getName() + " (size=" + s.getSize() + ")";
 				error += " | Existing contracts of relevant category: " + cat + "=" + this.m.ContractsByCategory[cat].len() + ", Wildcard=" + this.m.ContractsByCategory["Wildcard"].len();
-				this.logError(error);
+				::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return
 			}
 		}
@@ -550,14 +550,16 @@ this.faction <- {
 				// If there's no category, then something is wrong
 				if (cat == "" || cat == null)
 				{
-					this.logError("Attempting to remove contract: " + _c.getName() + " but it has no Category");
+					local error = "Attempting to remove contract: " + _c.getName() + " but it has no Category";
+					::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 					return;
 				}
 
 				local j = this.m.ContractsByCategory[cat].find(_c);
 				if (j != null)
 				{
-					this.logInfo("Removing Contract " + _c.getName() + " with Category=" + _c.getCategory());
+					local str = "Removing Contract " + _c.getName() + " with Category=" + _c.getCategory();
+					::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 					this.m.ContractsByCategory[cat].remove(j);
 					return;
 				}
@@ -570,7 +572,7 @@ this.faction <- {
 				error += "Attempting to remove contract: " + _c.getName()
 				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")"
 				error += " but it could not be found in any Category";
-				this.logError(error);
+				::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
 			}
 		}
