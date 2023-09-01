@@ -7,7 +7,6 @@ if (!("Hunting_Categories" in gt.Const))
 
 // for copying
 // item1 = [ , ""],
-
 gt.Const.Hunting_Categories <- {
 
 	Containers = {
@@ -33,6 +32,7 @@ gt.Const.Hunting_Categories <- {
 	// _upgrade = true means to add both upgraded tent and non-upgraded items
 	function extendCategories (_biomeType, _init, _Upgrade){
 		if(_init){
+			::logInfo("INIT COMPLETE");
 			this.Containers.noLevels = ::MSU.Class.WeightedContainer( null ),
 			this.Containers.chef = ::MSU.Class.WeightedContainer( null )
 		}
@@ -56,6 +56,7 @@ gt.Const.Hunting_Categories <- {
 		foreach (item in this.Containers.chef.toArray(true)){
 			::logInfo("TentLevel: " + item);
 		}
+		::logInfo("END EXTEND!");
 	}
 
 	function addBiome(_biomeType, _Upgrade){
@@ -106,7 +107,7 @@ gt.Const.Hunting_Categories.BiomeType[gt.Const.World.TerrainType.Plains] = [
 		[1 , "scripts/items/supplies/ground_grains_item"],
 	],
 	[
-		[2 , "scripts/items/supplies/roots_and_berries_item"]
+		[2 , "scripts/items/supplies/roots_and_berries_item"],
 		[2 , "scripts/items/supplies/cured_venison_item"],
 		[2 , "scripts/items/supplies/dried_lamb_item"],
 		[2 , "scripts/items/supplies/goat_cheese_item"],
