@@ -1639,7 +1639,22 @@ this.world_state <- this.inherit("scripts/states/state", {
 				else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
 				{
 					this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
-					this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", party.getInventory()[this.Math.rand(0, party.getInventory().len() - 1)]);
+
+					if (this.World.Statistics.getFlags().has("LastCombatSavedCaravanProduce") && typeof this.World.Statistics.getFlags().get("LastCombatSavedCaravanProduce") != "string")
+					{
+						this.World.Statistics.getFlags().remove("LastCombatSavedCaravanProduce");
+					}
+
+					if (party.getStashInventory().getItems().len() != 0)
+					{
+						local prefix = "scripts/items/";
+						local script = this.IO.scriptFilenameByHash(::MSU.Array.rand(party.getStashInventory().getItems()).ClassNameHash);
+						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", script.slice(prefix.len()));
+					}
+					else if (party.getInventory().len() != 0)
+					{
+						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", ::MSU.Array.rand(party.getInventory()));
+					}
 				}
 			}
 
