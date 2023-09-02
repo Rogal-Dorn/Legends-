@@ -307,6 +307,11 @@ CampScreenCommanderDialogModule.prototype.bindTooltips = function ()
 {
 	this.mAssets.bindTooltips();
 	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
+	this.mSaveButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonSavePreset"});
+	this.mLoadButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonLoadPreset"});
+	this.mSaveSlotButtons.forEach( function (_slot){
+		_slot.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonPresetSlot", index: _slot.data('Index')});
+	});
 };
 
 CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
