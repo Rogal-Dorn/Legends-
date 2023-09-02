@@ -53,6 +53,10 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.named_shield.onUnequip();
 	}
 
+	function getAmmoMax()
+	{
+		return 0;
+	}
 
 
 });
