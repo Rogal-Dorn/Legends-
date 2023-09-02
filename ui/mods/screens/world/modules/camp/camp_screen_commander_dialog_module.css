@@ -497,6 +497,56 @@
 	line-height: 3.0rem;
 }
 
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-save-load-button-container
+{
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 35.0rem;
+	height: 4.3rem;
+	position: absolute;
+	margin: auto;
+
+	display: flex;
+   	align-items: center;
+   	justify-content: space-between;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-slot-button-container
+{
+	top: 0.6rem;
+	bottom: 0;
+	left: 1.0rem;
+	width: 31.5rem; /*enough for 8 buttons*/
+	height: 4.3rem;
+	position: absolute;
+
+	display: flex;
+   	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-flex-button-save-load
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-flex-button-preset
+{
+    height: 4.3rem;
+    width: 3.9rem;
+    flex: 0 0 auto;
+
+    line-height: 2.8rem;
+}
+
 .camp-screen > .l-commander-dialog-container .ui-control.brother > .mood-layer img
 {
 	right: -0.6rem;
