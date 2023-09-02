@@ -35,6 +35,15 @@ var CampScreenCommanderDialogModule = function(_parent)
 
 	// buttons
 	this.mLeaveButton = null;
+	this.mSaveButton = null;
+	this.mLoadButton = null;
+
+	// Added By Necro
+	// number slot buttons
+	this.mSaveSlotButtonContainer = null;
+	this.mSaveSlotButtons = [];
+	this.mCurrentSelectedSaveSlot = null;
+	this.mSaveSlotNum = 8; /*the container width i made has enough for 8 buttons*/
 
 	// generics
 	this.mIsVisible = false;
@@ -139,10 +148,48 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
 
 	// create: buttons
+	
+	// Leave button
 	var layout = $('<div class="l-leave-button"/>');
 	footerButtonBar.append(layout);
 	this.mLeaveButton = layout.createTextButton("Leave", function() {
 		self.notifyBackendLeaveButtonPressed();
+	}, '', 1);
+
+
+	// Added By Necro
+	// Preset Slot buttons
+	this.mSaveSlotButtonContainer = $('<div class="l-slot-button-container"/>');
+	this.mDialogContainer.findDialogFooterContainer().append(this.mSaveSlotButtonContainer);
+	this.mSaveSlotButtons = [];
+	for (var i = 0; i < this.mSaveSlotNum; i++) {
+		var layout = $('<div class="l-flex-button-preset"/>');
+		this.mSaveSlotButtonContainer.append(layout);
+		var button = layout.createTextButton('' + (i + 1) + '', function(_button) {
+			self.notifyBackendSaveSlotButtonPressed(_button.data('Index'));
+		}, '', 6);
+		button.data('Index', i);
+		// a bug cause the label to fall off a bit, so i add this to offset that
+		// button.findButtonText().css('top', '0.4rem');
+		button.findButtonText().css({"top":"0.4rem","left":"0.5rem"});
+		this.mSaveSlotButtons.push(button);
+	}
+
+	// Added By Necro
+	// Save & Load Preset buttons
+	var container = $('<div class="l-save-load-button-container"/>');
+	this.mDialogContainer.findDialogFooterContainer().append(container);
+	var layout = $('<div class="l-flex-button-save-load"/>');
+	container.append(layout);
+	this.mSaveButton = layout.createTextButton("Save", function() {
+		self.notifyBackendSaveAssignmentPreset();
+	}, '', 1);
+	var layout = $('<div class="l-flex-button-save-load"/>');
+	container.append(layout);
+	this.mLoadButton = layout.createTextButton("Load", function() {
+		self.notifyBackendLoadAssignmentPreset(function( _load ) {
+			self.loadFromData(_load);
+		});
 	}, '', 1);
 
 	this.mIsVisible = false;
@@ -366,6 +413,19 @@ CampScreenCommanderDialogModule.prototype.show = function (_withSlideAnimation)
 			}
 		});
 	}
+
+	// Added By Necro
+	this.mCurrentSelectedSaveSlot = null;
+	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
+		if (this.mSaveSlotButtons[i].isEnabled() === true)
+			continue;
+
+		this.mCurrentSelectedSaveSlot = i;
+		break;
+	}
+
+	this.mSaveButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
+	this.mLoadButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
 };
 
 CampScreenCommanderDialogModule.prototype.hide = function ()
@@ -860,13 +920,28 @@ CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = functio
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
 };
 
-CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = function (_presetNumber, _callback)
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendLoadAssignmentPreset = function(_callback)
 {
-	SQ.call(this.mSQHandle, 'onSaveAssignmentPreset', _presetNumber, _callback);
+	SQ.call(this.mSQHandle, 'onLoadAssignmentPreset', this.mCurrentSelectedSaveSlot, _callback);
 };
 
-CampScreenCommanderDialogModule.prototype.notifyBackendLoadAssignmentPreset = function (_presetNumber, _callback)
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = function()
 {
-	SQ.call(this.mSQHandle, 'onLoadAssignmentPreset', _presetNumber, _callback);
+	SQ.call(this.mSQHandle, 'onSaveAssignmentPreset', this.mCurrentSelectedSaveSlot);
 };
 
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex)
+{
+	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
+		this.mSaveSlotButtons[i].enableButton(i != _slotIndex);
+	}
+
+	this.mCurrentSelectedSaveSlot = _slotIndex + 1; // + 1 so that the data saved in flags corresponds to the slot number
+	this.mSaveButton.enableButton(true);
+	this.mLoadButton.enableButton(true);
+
+	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
+};
