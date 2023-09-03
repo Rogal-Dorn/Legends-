@@ -2658,7 +2658,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPiercingShot = "Launch a shot so powerful it goes through an additional target. Bows and crossbows hit two targets in a straight line. Handgonnes reach an additional tile further. Does not work with throwing weapons.",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile.",
 	LegendTeleport = "Step through the world, disappearing from one place and reappearing in another place immediately.",
-	LegendSpecialistShieldSkill = "The first two times you end a turn without shieldwall activated, gain shieldwall. and gain [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] damage reduction while using a shield.",
+	LegendSpecialistShieldSkill = "The first two times you end a turn without shieldwall activated, gain shieldwall.\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] damage reduction while using a shield.",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points.",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
 	LegendSpecialistScytheSkill = "Practicing with the unwieldy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while wielding a Scythe or Warscythe.",
