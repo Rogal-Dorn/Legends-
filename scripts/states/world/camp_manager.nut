@@ -7,7 +7,17 @@ this.camp_manager <- {
 		StopTime = 0,
 		LastCampTime = 0,
 		lasttick = 0.0,
-		Tents = []
+		Tents = [],
+		PresetNames = [
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false,
+			false
+		] // CAUTION: the length of this array is tightly coupled with mSaveSlotNum in camp_screen_commander_dialog_module.js
 	},
 	function create()
 	{
@@ -282,6 +292,44 @@ this.camp_manager <- {
 		this.m.Tents.push(_building);
 	}
 
+	function saveAssignmentPreset( _presetNumber )
+	{
+		foreach(p in ::World.getPlayerRoster().getAll())
+		{
+			p.getFlags().set("camping_preset_" + _presetNumber, p.getCampAssignment());
+		}
+	}
+
+	function loadAssignmentPreset( _presetNumber )
+	{
+		foreach(p in ::World.getPlayerRoster().getAll())
+		{
+			if(p.getFlags().has("camping_preset_" + _presetNumber))
+			{
+				p.setLastCampAssignment(p.getCampAssignment());
+				p.setCampAssignment(p.getFlags().get("camping_preset_" + _presetNumber));
+			}
+		}
+	}
+
+	function setPresetName( _index, _presetName)
+	{
+		if(_index > this.m.PresetNames.len() + 1)
+		{
+			::Legends.Mod.Debug.printError(format("Index %i greater than length of m.PresetNames", _index));
+		}
+		this.m.PresetNames[_index] = _presetName;
+	}
+
+	function getPresetName( _index )
+	{
+		if(_index > this.m.PresetNames.len() + 1)
+		{
+			::Legends.Mod.Debug.printError(format("Index %i greater than length of m.PresetNames", _index));
+		}
+		return this.m.PresetNames[_index];
+	}
+
 	function onSerialize( _out )
 	{
 		_out.writeBool(this.m.IsCamping);
@@ -304,6 +352,7 @@ this.camp_manager <- {
 		}
 
 		_out.writeBool(false);
+		::MSU.Utils.serialize(this.m.PresetNames, _out);
 	}
 
 	function onDeserialize( _in )
@@ -340,6 +389,12 @@ this.camp_manager <- {
 		}
 
 		_in.readBool();
+
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("17.1.0", _in.getMetaData()))
+		{
+			this.m.PresetNames = ::MSU.Utils.deserialize(_in);
+		}
+		
 	}
 
 };
