@@ -11,7 +11,25 @@
 		CampingPresets = {
 			ButtonSavePreset = ::MSU.Class.BasicTooltip("Save Preset","Save the current camping assignments to the currently selected numbered preset slot"),
 			ButtonLoadPreset = ::MSU.Class.BasicTooltip("Load Preset","Load the camping assignments from the currently selected numbered preset slot"),
-			ButtonPresetSlot = ::MSU.Class.BasicTooltip(function(_data){return "Preset Slot " + (_data.index + 1);},""),
+			ButtonPresetName = ::MSU.Class.BasicTooltip("Customize Preset Name","Give a custom name to the currently selected numbered preset slot"),
+			ButtonPresetSlot = ::MSU.Class.BasicTooltip(
+				function(_data)
+				{
+					return "Preset Slot " + (_data.index + 1);
+				},
+				function(_data)
+				{
+					local name = ::World.Camp.getPresetName(_data.index);
+					if (name)
+					{
+						return name;
+					}
+					else
+					{
+						return "";
+					}
+				}
+			),
 		}
 		
 	});

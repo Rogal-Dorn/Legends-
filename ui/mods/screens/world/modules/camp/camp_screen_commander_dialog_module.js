@@ -35,6 +35,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 
 	// buttons
 	this.mLeaveButton = null;
+	this.mPresetNameButton = null;
 	this.mSaveButton = null;
 	this.mLoadButton = null;
 
@@ -43,7 +44,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mSaveSlotButtonContainer = null;
 	this.mSaveSlotButtons = [];
 	this.mCurrentSelectedSaveSlot = null;
-	this.mSaveSlotNum = 8; /*the container width i made has enough for 8 buttons*/
+	this.mSaveSlotNum = 8; /*the container width i made has enough for 8 buttons*/ /*CAUTION: this number is tightly coupled with the length of camp_manager.m.PresetNames*/
 
 	// generics
 	this.mIsVisible = false;
@@ -143,20 +144,6 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 
 	}, '', 1);
 
-	// create footer button bar
-	var footerButtonBar = $('<div class="l-button-bar"/>');
-	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
-
-	// create: buttons
-	
-	// Leave button
-	var layout = $('<div class="l-leave-button"/>');
-	footerButtonBar.append(layout);
-	this.mLeaveButton = layout.createTextButton("Leave", function() {
-		self.notifyBackendLeaveButtonPressed();
-	}, '', 1);
-
-
 	// Added By Necro
 	// Preset Slot buttons
 	this.mSaveSlotButtonContainer = $('<div class="l-slot-button-container"/>');
@@ -175,15 +162,35 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 		this.mSaveSlotButtons.push(button);
 	}
 
+	// Preset Name button
+	var layout = $('<div class="l-flex-button-preset-name"/>');
+	this.mSaveSlotButtonContainer.append(layout);
+	this.mPresetNameButton = layout.createImageButton(Path.GFX + "ui/icons/papers_icon.png", function(){
+		// clicking on this button should open up the proposed "Customize Preset Name" dialog
+		// TODO: implement popup dialog to enter preset name
+	}, '', 6);
+	this.mPresetNameButton.findButtonImage().css({"top":"0.4rem","left":"0.2rem"});
+
 	// Added By Necro
-	// Save & Load Preset buttons
+	// Save & Load Preset buttons container
 	var container = $('<div class="l-save-load-button-container"/>');
 	this.mDialogContainer.findDialogFooterContainer().append(container);
+
+	// Leave button
+	var layout = $('<div class="l-leave-button"/>');
+	container.append(layout);
+	this.mLeaveButton = layout.createTextButton("Leave", function() {
+		self.notifyBackendLeaveButtonPressed();
+	}, '', 1);
+
+	// Save Preset button
 	var layout = $('<div class="l-flex-button-save-load"/>');
 	container.append(layout);
 	this.mSaveButton = layout.createTextButton("Save", function() {
 		self.notifyBackendSaveAssignmentPreset();
 	}, '', 1);
+
+	// Load Preset button
 	var layout = $('<div class="l-flex-button-save-load"/>');
 	container.append(layout);
 	this.mLoadButton = layout.createTextButton("Load", function() {
@@ -309,6 +316,7 @@ CampScreenCommanderDialogModule.prototype.bindTooltips = function ()
 	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
 	this.mSaveButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonSavePreset"});
 	this.mLoadButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonLoadPreset"});
+	this.mPresetNameButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonPresetName"});
 	this.mSaveSlotButtons.forEach( function (_slot){
 		_slot.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonPresetSlot", index: _slot.data('Index')});
 	});
@@ -431,6 +439,7 @@ CampScreenCommanderDialogModule.prototype.show = function (_withSlideAnimation)
 
 	this.mSaveButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
 	this.mLoadButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
+	this.mPresetNameButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
 };
 
 CampScreenCommanderDialogModule.prototype.hide = function ()
@@ -947,6 +956,7 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = f
 	this.mCurrentSelectedSaveSlot = _slotIndex + 1; // + 1 so that the data saved in flags corresponds to the slot number
 	this.mSaveButton.enableButton(true);
 	this.mLoadButton.enableButton(true);
+	this.mPresetNameButton.enableButton(true);
 
 	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
 };
