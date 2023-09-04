@@ -142,7 +142,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	*/
 	var tentButtonContainer = $('<div class="tent-button-container"/>');
 	this.mStatsContainer.append(tentButtonContainer);
-	// 1st button (small size), not in use so only make the layout 
+	// 1st button (small size), use to assign all bro current tent
 	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
 	tentButtonContainer.append(buttonLayout);
 	var button = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
