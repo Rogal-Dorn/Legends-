@@ -13,7 +13,7 @@ this.investigate_cemetery_action <- this.inherit("scripts/factions/faction_actio
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.investigate_cemetery_contract))
 		{
 			return;
 		}

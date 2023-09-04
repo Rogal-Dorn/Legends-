@@ -11,10 +11,10 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_en_garde";
 		this.m.Name = "En Garde";
-		this.m.Description = "Block your enemy\'s weapons in a way that leaves them open to counter attack. Applies the Parried effect to an enemy, lowering their melee and ranged defenses by 10.";
+		this.m.Description = "Block your enemy\'s weapons in a way that leaves them open to counter attack. Applies the Vulnerable effect to an enemy, lowering their melee and ranged defenses by 10.";
 		this.m.Icon = "skills/en_garde_square.png";
 		this.m.IconDisabled = "skills/en_garde_square_bw.png";
-		this.m.Overlay = "active_32";
+		this.m.Overlay = "en_garde_square";
 		this.m.SoundOnUse = [
 			"sounds/combat/stab_01.wav",
 			"sounds/combat/stab_02.wav",
@@ -29,7 +29,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
-		this.m.IsAttack = false;
+		this.m.IsAttack = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
@@ -51,7 +51,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "] -10 [/color] melee and ranged defense"
+			text = "On successful Parry, inflicts [color=" + this.Const.UI.Color.NegativeValue + "]Vulnerable[/color] ([color=" + this.Const.UI.Color.DamageValue + "]-10[/color] melee and ranged defense)"
 		});
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInDaggers)
@@ -60,7 +60,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to parry on a hit thanks to Dagger Mastery"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to Parry on a hit thanks to Dagger Mastery. Enemies who are immune to being disarmed cannot be Parried"
 			});
 		}
 		else
@@ -69,7 +69,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to parry on a hit due to not having Dagger Mastery"
+				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.StunChance + "%[/color] chance to Parry on a hit due to not having Dagger Mastery. Enemies who are immune to being disarmed cannot be Parried"
 			});
 		}
 
@@ -95,7 +95,7 @@ this.legend_en_garde <- this.inherit("scripts/skills/skill", {
 		{
 			local target = _targetTile.getEntity();
 
-			if ((_user.getCurrentProperties().IsSpecializedInDaggers || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToStun && !target.getSkills().hasSkill("effects.legend_parried"))
+			if ((_user.getCurrentProperties().IsSpecializedInDaggers || this.Math.rand(1, 100) <= this.m.StunChance) && !target.getCurrentProperties().IsImmuneToDisarm && !target.getSkills().hasSkill("effects.legend_parried"))
 			{
 				target.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
 

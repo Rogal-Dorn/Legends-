@@ -381,7 +381,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);
+				if (this.World.Camp.isCamping())
+				{
+					local updates = ["(Press Spacebar)"];
+					updates.extend(this.World.Camp.getCampingUpdateText());
+					this.World.TopbarDayTimeModule.showMessage("ENCAMPED\n(PAUSED)", updates);		
+				}
+				else
+				{
+					this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);	
+				}
 			}
 		}
 

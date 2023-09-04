@@ -1,5 +1,7 @@
 this.perk_legend_piercing_shot <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		BonusRange = 1,
+	},
 	function create()
 	{
 		this.m.ID = "perk.legend_piercing_shot";
@@ -13,5 +15,14 @@ this.perk_legend_piercing_shot <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsHidden = false;
 	}
-	
+
+	function onAfterUpdate( _properties )
+	{
+		local s = this.getContainer().getSkillByID("actives.fire_handgonne");
+		if (s != null)
+		{
+			s.m.MaxRange += this.m.BonusRange;
+			// The getTooltip() function in fire_handgonne_skill has logic to display this bonus
+		}
+	}
 });

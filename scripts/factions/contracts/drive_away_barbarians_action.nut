@@ -16,7 +16,7 @@ this.drive_away_barbarians_action <- this.inherit("scripts/factions/faction_acti
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.drive_away_barbarians_contract))
 		{
 			return;
 		}

@@ -13,7 +13,7 @@ this.restore_location_action <- this.inherit("scripts/factions/faction_action", 
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.restore_location_contract))
 		{
 			return;
 		}

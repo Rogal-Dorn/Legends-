@@ -206,6 +206,28 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		return this.queryLoad();
 	}
 
+	function onSaveAssignmentPreset ( _presetNumber )
+	{
+		::Legends.Mod.Debug.printLog("Saving camping assignments preset: " + _presetNumber);
+		::World.Camp.saveAssignmentPreset( _presetNumber );
+		this.Sound.play("sounds/scribble.wav", 1.0)
+	}
+
+	function onLoadAssignmentPreset ( _presetNumber )
+	{
+		::Legends.Mod.Debug.printLog("Loading camping assignments preset: " + _presetNumber);
+		::World.Camp.loadAssignmentPreset( _presetNumber );
+		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
+
+		return this.queryLoad();
+	}
+
+	function onSaveSlotButtonPressed( _presetNumber )
+	{
+		::Legends.Mod.Debug.printLog("Currently selected camping assignment preset slot: " + _presetNumber);
+		this.Sound.play("sounds/move_pot_clay_01.wav", 2.0);
+	}
+
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();

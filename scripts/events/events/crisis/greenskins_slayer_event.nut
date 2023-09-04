@@ -9,7 +9,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 		this.m.Cooldown = 999999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
 			ID = "A",
-			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a stranger crosses paths with the %companyname%. %they% wear light armor while looking aloof and distant at first as if staring off at something you can\'t see. %SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an uncanny air to this character, as though you can barely see them while %they% is standing right in front of you. %they% nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. He whispers %their% indifference.%SPEECH_ON%If they\'re a problem, we can handle %them%.%SPEECH_OFF%The man shakes their head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Once these greenskins are taken care of, I\'ll be out of your hair.%SPEECH_OFF%",
+			Text = "[img]gfx/ui/events/event_35.png[/img]While marching, a stranger crosses paths with the %companyname%. %They% wears light armor while looking aloof and distant at first - as if staring off at something you can\'t see. %SPEECH_ON%Evening, sellswords.%SPEECH_OFF%The warrior waves. There\'s an uncanny air to this character, as though you can barely see %them% while %they% is standing right in front of you. %They% nods and continues speaking.%SPEECH_ON%You seem the greenskin skinnin\' sort, and that\'s the sort of company I\'d be most agreeable to joining.%SPEECH_OFF%%randombrother% exchanges a glance with you and shrugs. %They1% whispers %their1% indifference.%SPEECH_ON%If %they% becomes a problem, we can handle %them%.%SPEECH_OFF%The warrior shakes %their% head.%SPEECH_ON%Oh, I\'ll be no problem. I just want to kill orcs and goblins. What more do you need to know? Shall we get on with killing some greenskins, then?%SPEECH_OFF%",
 			Banner = "",
 			Characters = [],
 			Options = [
@@ -106,6 +106,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 
 	function onPrepareVariables( _vars )
 	{
+		this.Const.LegendMod.extendVarsWithPronouns(_vars, this.m.Dude.getGender());
 	}
 
 	function onClear()

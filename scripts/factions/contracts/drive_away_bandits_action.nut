@@ -11,7 +11,7 @@ this.drive_away_bandits_action <- this.inherit("scripts/factions/faction_action"
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.drive_away_bandits_contract))
 		{
 			return;
 		}

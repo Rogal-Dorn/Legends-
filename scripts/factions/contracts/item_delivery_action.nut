@@ -11,7 +11,14 @@ this.item_delivery_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.deliver_item_contract))
+		{
+			return;
+		}
+
+		// For city-state faction
+		if (_faction.getType()!=this.Const.FactionType.Settlement && !_faction.isReadyForContract())
 		{
 			return;
 		}

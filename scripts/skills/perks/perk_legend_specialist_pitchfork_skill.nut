@@ -18,7 +18,7 @@ this.perk_legend_specialist_pitchfork_skill <- this.inherit("scripts/skills/skil
 		local item = this.getContainer().getActor().getMainhandItem();
 		if (item != null)
 		{
-			if (item.getID() == "weapon.pitchfork" || item.getID() == "weapon.legend_wooden_pitchfork"  || item.getID() == "weapon.legend_hoe"  || item.getID() == "weapon.legend_scythe"  || item.getID() == "weapon.wooden_flail" || item.getID() == "weapon.warfork")
+			if (item.isItemType(this.Const.Items.ItemType.Pitchfork))
 			{
 				_properties.MeleeSkill += 12;
 				_properties.DamageArmorMult += 0.25;

@@ -9,6 +9,7 @@ this.hunting_serpents_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_serpents";
 		this.m.Name = "Hunting Serpents";
+		this.m.Description = "Locals have repoted seeing Serpents getting too close to the city. Hunt them down.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 

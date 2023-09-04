@@ -12,6 +12,13 @@ this.legend_bandit_army_action <- this.inherit("scripts/factions/faction_action"
 
 	function onUpdate( _faction )
 	{
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_bandit_army_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;
