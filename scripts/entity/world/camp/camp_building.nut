@@ -205,6 +205,7 @@ this.camp_building <- {
 
 		],
 		CanEnter = true,
+		HasPopup = false,
 		InCommanderTent = true,
 		Camping = true,
 		Escorting = false
@@ -251,6 +252,11 @@ this.camp_building <- {
 
 	function updateTick (_hours)
 	{
+	}
+
+	function hasPopup()
+	{
+		return this.m.HasPopup;
 	}
 
 	function canEnter()

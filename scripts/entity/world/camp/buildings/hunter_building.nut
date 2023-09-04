@@ -13,6 +13,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.camp_building.create();
 		this.m.ID = this.Const.World.CampBuildings.Hunter;
 		this.m.ModName = "Hunting";
+		this.m.HasPopup = true;
 		this.m.ModMod = 10.0;
 		this.m.BaseCraft = 1.5;
 		this.m.Slot = "hunt";
