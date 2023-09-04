@@ -145,6 +145,13 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	// 1st button (small size), not in use so only make the layout 
 	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
 	tentButtonContainer.append(buttonLayout);
+	var button = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendAssignedAll(self.mSelectedTent.data('ID'), function(_load){
+				self.loadFromData(_load);
+			});
+		}
+	}, '', 6);
 	// 2nd button (mid size), tent button
 	var buttonLayout = $('<div class="l-tent-button-175-43"/>');
 	tentButtonContainer.append(buttonLayout);
@@ -881,7 +888,7 @@ CampScreenCommanderDialogModule.prototype.onSelectButtonInThisArray = function(_
 	});
 }
 
-CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function()
+CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _data )
 {
     var self = this;
     this.notifyBackendPopupDialogIsVisible(true);
@@ -945,4 +952,9 @@ CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (
 CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = function (_broID, _tentID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendAssignedAll = function (_tentID, _callback)
+{
+	SQ.call(this.mSQHandle, 'onAssignedAll', _tentID, _callback);
 };

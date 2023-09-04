@@ -187,6 +187,25 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		return this.queryLoad();
 	}
 
+	function onAssignedAll( _campID )
+	{
+		local tent = this.m.CurrentTent == null ? this.World.Camp.getBuildingByID(_campID) : this.m.CurrentTent;
+
+		foreach (bro in this.World.getPlayerRoster().getAll())
+		{
+			if (bro.getCampAssignment() == _campID) continue;
+
+			if (!tent.onBroEnter(bro)) continue;
+
+			this.World.Camp.getBuildingByID(bro.getCampAssignment()).onBroLeave(bro);
+			bro.setLastCampAssignment(bro.getCampAssignment());
+			bro.setCampAssignment(_campID);
+		}
+		
+		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
+		return this.queryLoad();
+	}
+
 	function onLeaveButtonPressed()
 	{
 		this.m.Parent.onModuleClosed();
