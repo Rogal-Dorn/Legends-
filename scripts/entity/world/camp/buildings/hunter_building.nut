@@ -321,7 +321,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			item = this.new(tentLevel.roll());
 			item.randomizeAmount();
 
-			if (item.getValue() != null && this.m.Points => 8)
+			if (item.getValue() != null && this.m.Points >= 8)
 			{
 				this.m.Items.push(item);
 				this.Stash.add(item);
