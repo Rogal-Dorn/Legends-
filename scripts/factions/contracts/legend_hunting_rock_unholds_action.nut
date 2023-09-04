@@ -19,6 +19,13 @@ this.legend_hunting_rock_unholds_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_hunting_rock_unholds_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;

@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "17.0.9",
+	Version = "17.1.0",
 	Name = "Legends Mod",
 	BuildName = "Wealthy Wetlands Warriors"
 };
@@ -14,6 +14,7 @@
 	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-Bugs");
     ::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
+    ::Const.LegendMod.setupDebug(); // must be called before ::Const.LegendMod.addSettings();
 	::Const.LegendMod.addSettings();
 	::Const.LegendMod.hookMSU();
 	::Const.LegendMod.addLegendItemTypes();
@@ -28,6 +29,7 @@
 	this.Const.LegendMod.hookCharacterBackground();
 	this.Const.LegendMod.hookCombatManager();
 	this.Const.LegendMod.hookContract();
+	this.Const.LegendMod.hookContractCategory();
 	this.Const.LegendMod.hookFactionAction();
 	this.Const.LegendMod.hookGhoul();
 	this.Const.LegendMod.hookItemContainer();
@@ -40,4 +42,7 @@
 
 	this.Const.LegendMod.loadBuyback();
 	this.Const.LegendMod.loadTacticalTooltip();
+	this.Const.Perks.updatePerkGroupTooltips();
+
+	::Const.LegendMod.addTooltips();
 });

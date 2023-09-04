@@ -409,7 +409,7 @@ this.camp_building <- {
 
 	function assignBro( _bro )
 	{
-		bro.setCampAssignment(this.m.ID);
+		_bro.setCampAssignment(this.m.ID);
 	}
 
 	function setCamp ( _camp )
