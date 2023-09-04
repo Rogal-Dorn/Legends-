@@ -1,8 +1,9 @@
-
 this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module", {
 	m = {
 		Title = "Commanders Tent",
 		Description = "Select a tent, then click a brother to assign him to the tent. Bros sorted from best to worse"
+		PopupDialogVisible = false,
+		CurrentTent = null,
 	},
 	function create()
 	{
@@ -10,9 +11,34 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		this.ui_module.create();
 	}
 
+	function isAnimating()
+	{
+		if (this.m.Animating == null) return false;
+		
+		return this.m.Animating == true || this.m.PopupDialogVisible == true;
+	}
+
 	function destroy()
 	{
 		this.ui_module.destroy();
+	}
+
+	function onModuleShown()
+	{
+		this.ui_module.onModuleShown();
+		this.m.PopupDialogVisible = false;
+	}
+
+	function onModuleHidden()
+	{
+		this.ui_module.onModuleHidden();
+		this.m.PopupDialogVisible = false;
+		this.m.CurrentTent = null;
+	}
+
+	function onPopupDialogIsVisible( _isVisible )
+	{
+		this.m.PopupDialogVisible = _isVisible;
 	}
 
 	function queryLoad()
@@ -129,12 +155,13 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 
 	function onTentSelected ( _id )
 	{
-		local tent = this.World.Camp.getBuildingByID( _id );
+		this.m.CurrentTent = this.World.Camp.getBuildingByID( _id );
 		return {
-			Roster = tent.getSortedRoster(),
-			Label = tent.getName(),
-			Enabled = tent.canEnter(),
-			Modifiers = tent.getModifiers()
+			Roster = this.m.CurrentTent.getSortedRoster(),
+			Label = this.m.CurrentTent.getName(),
+			Enabled = this.m.CurrentTent.canEnter(),
+			Configure = this.m.CurrentTent.hasPopup(),
+			Modifiers = this.m.CurrentTent.getModifiers()
 		}
 	}
 
@@ -168,6 +195,21 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 	function onTentBuldingClicked( _id )
 	{
 		this.m.Parent.onShowTentBuilding( _id );
+	}
+
+	function onConfigureButtonClicked( _id )
+	{
+		if (this.m.CurrentTent == null || this.m.JSHandle == null || !this.isVisible()) return;
+
+		foreach (camp, i in this.Const.World.CampBuildings)
+		{
+			if (i != _id) continue;
+
+			if (this.m.CurrentTent.getID() != _id) continue;
+
+			this.Tooltip.hide();
+			this.m.JSHandle.asyncCall("show" + camp + "PopupDialog", this.m.CurrentTent.queryConfigureSettings());
+		}
 	}
 
 });
