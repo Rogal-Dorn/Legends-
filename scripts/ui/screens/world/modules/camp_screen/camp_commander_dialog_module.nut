@@ -216,6 +216,14 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		this.m.Parent.onShowTentBuilding( _id );
 	}
 
+	function onPopupButtonClicked( _buttonID )
+	{
+		if (this.m.CurrentTent == null) return;
+		
+		local func = "onButton" + _buttonID + "Clicked";
+		// this.m.CurrentTent[func]();
+	}
+
 	function onConfigureButtonClicked( _id )
 	{
 		if (this.m.CurrentTent == null || this.m.JSHandle == null || !this.isVisible()) return;

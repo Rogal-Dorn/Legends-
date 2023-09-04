@@ -537,4 +537,9 @@ this.camp_building <- {
 		roster.sort(this.onSortByModifier);
 		return roster
 	}
+
+	function queryConfigureSettings()
+	{
+		return [];
+	}
 }
