@@ -5,7 +5,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Points = 0,
 		FoodAmount = 0,
 		Craft = 0,
-		Value = 0
+		Value = 0,
+		rollCount = 0
 	},
 	function create()
 	{
@@ -161,14 +162,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			}
 			else if (this.getUpgraded() && boolean)
 			{
-				chefLevel += this.Math.floor(bro.getLevel());
+				chefLevel += this.Math.floor(bro.getLevel() * 2);
 			}
 			else if(!this.getUpgraded() && boolean){
-				chefLevel += this.Math.floor(bro.getLevel() * 0.5);
+				chefLevel += this.Math.floor(bro.getLevel());
 			}
 
 
 		}
+
+		::logInfo("Hunting level: " + huntLevel);
 		return chefLevel;
 
 	}
@@ -192,8 +195,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			   huntLevel += this.Math.ceil(bro.getLevel() * 0.5);
 			}
 
-			::logInfo("Hunting level: " + huntLevel);
-
 		}
 		return huntLevel;
 	}
@@ -212,7 +213,13 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
-			   brewerLevel += bro.getLevel()
+			    if(this.getUpgraded()){
+			    	brewerLevel += this.Math.celi(bro.getLevel() * 1.5);
+			   	}
+			   	else
+				{
+			   	brewerLevel += bro.getLevel()
+				}
 			}
 			else if (this.getUpgraded() && boolean)
 			{
@@ -273,6 +280,9 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		this.m.Points += this.m.Craft;
+
+		::logInfo("---->POINTS: " + this.m.Points);
+
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
@@ -300,21 +310,31 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 
+		local levelsChance = 15
+		local rollType = 0
+
 		local cheflevels = this.getChefLevel();
-		local dropLoot = -300.0 / (cheflevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		local dropLoot = -300.0 / (cheflevels + 25) + levelsChance >= this.Math.rand(1, 100); // At level 5 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		if (dropLoot)
 		{
 			item = this.new(tentLevel.roll());
 			item.randomizeAmount();
-			this.m.Items.push(item);
-			this.Stash.add(item);
-			if(--emptySlots == 0) return this.getUpdateText();
+
+			if (item.getValue() != null && this.m.Points => 8)
+			{
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				this.m.Points -= 8;
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+
 		}
 
 
 
 		local brewerlevels = this.getBrewerLevel();
-		local dropLoot = -300.0 / (brewerlevels + 20) + 15 > this.Math.rand(1, 100);
+		local dropLoot = -300.0 / (brewerlevels + 20) + levelsChance >= this.Math.rand(1, 100);
 		if (dropLoot) // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		{
 			local brewerLoot = this.new("scripts/mods/script_container");
@@ -335,29 +355,53 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			item = this.new(brewerLoot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
 
 		local huntlevels = this.getHuntLevel();
-		local dropLoot = -300.0 / (huntlevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		local dropLoot = -300.0 / (huntlevels + 20) + levelsChance >= this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		if (dropLoot)
 		{
-			foreach (item in huntingLoot.toArray(true)){
-				::logInfo("Hunting Items: " + item);
-			}
 			item = this.new(huntingLoot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
 
-		if (this.Math.rand(1, 4) >= 3){
-			item = this.new(noLevel.roll());
-			item.randomizeAmount();
+
+
+
+		item = this.new(noLevel.roll());
+		item.randomizeAmount();
+		if (item.getValue() != null && this.m.Points < item.getValue())
+		{
+			return this.getUpdateText();
+		}
+
+		if(rollType == 0)
+		{
 			this.m.Items.push(item);
 			this.Stash.add(item);
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
+		else if (this.m.rollCount == 10){
+			// secify roll type
+			// item = this.new(huntingLoot.roll());
+			// this.m.Items.push(item);
+			// this.Stash.add(item);
+			// this.m.FoodAmount += item.getAmount();
+			// if(--emptySlots == 0) return this.getUpdateText();
+		}else {
+			this.m.rollCount += 1;
+		}
+
+
+		// make the hunting tent have 2 options:
+		// 1.) increased rate for brewer hunter and cook and no junk items : every ~10 junk items = reroll into good item
+		// 2.) lower rate for cook brewer and hunter and get lots of the junk items
+
 
 		// if (item.getValue() != null && this.m.Points < item.getValue())
 		// {
