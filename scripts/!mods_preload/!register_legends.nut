@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "17.0.9",
+	Version = "17.1.0",
 	Name = "Legends Mod",
 	BuildName = "Wealthy Wetlands Warriors"
 };
@@ -43,4 +43,6 @@
 	this.Const.LegendMod.loadBuyback();
 	this.Const.LegendMod.loadTacticalTooltip();
 	this.Const.Perks.updatePerkGroupTooltips();
+
+	::Const.LegendMod.addTooltips();
 });

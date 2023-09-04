@@ -35,6 +35,16 @@ var CampScreenCommanderDialogModule = function(_parent)
 
 	// buttons
 	this.mLeaveButton = null;
+	this.mPresetNameButton = null;
+	this.mSaveButton = null;
+	this.mLoadButton = null;
+
+	// Added By Necro
+	// number slot buttons
+	this.mSaveSlotButtonContainer = null;
+	this.mSaveSlotButtons = [];
+	this.mCurrentSelectedSaveSlot = null;
+	this.mSaveSlotNum = 8; /*the container width i made has enough for 8 buttons*/ /*CAUTION: this number is tightly coupled with the length of camp_manager.m.PresetNames*/
 
 	// generics
 	this.mIsVisible = false;
@@ -134,15 +144,59 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 
 	}, '', 1);
 
-	// create footer button bar
-	var footerButtonBar = $('<div class="l-button-bar"/>');
-	this.mDialogContainer.findDialogFooterContainer().append(footerButtonBar);
+	// Added By Necro
+	// Preset Slot buttons
+	this.mSaveSlotButtonContainer = $('<div class="l-slot-button-container"/>');
+	this.mDialogContainer.findDialogFooterContainer().append(this.mSaveSlotButtonContainer);
+	this.mSaveSlotButtons = [];
+	for (var i = 0; i < this.mSaveSlotNum; i++) {
+		var layout = $('<div class="l-flex-button-preset"/>');
+		this.mSaveSlotButtonContainer.append(layout);
+		var button = layout.createTextButton('' + (i + 1) + '', function(_button) {
+			self.notifyBackendSaveSlotButtonPressed(_button.data('Index'));
+		}, '', 6);
+		button.data('Index', i);
+		// a bug cause the label to fall off a bit, so i add this to offset that
+		// button.findButtonText().css('top', '0.4rem');
+		button.findButtonText().css({"top":"0.4rem","left":"0.5rem"});
+		this.mSaveSlotButtons.push(button);
+	}
 
-	// create: buttons
+	// Preset Name button
+	var layout = $('<div class="l-flex-button-preset-name"/>');
+	this.mSaveSlotButtonContainer.append(layout);
+	this.mPresetNameButton = layout.createImageButton(Path.GFX + "ui/icons/papers_icon.png", function(){
+		// clicking on this button should open up the proposed "Customize Preset Name" dialog
+		// TODO: implement popup dialog to enter preset name
+	}, '', 6);
+	this.mPresetNameButton.findButtonImage().css({"top":"0.4rem","left":"0.2rem"});
+
+	// Added By Necro
+	// Save & Load Preset buttons container
+	var container = $('<div class="l-save-load-button-container"/>');
+	this.mDialogContainer.findDialogFooterContainer().append(container);
+
+	// Leave button
 	var layout = $('<div class="l-leave-button"/>');
-	footerButtonBar.append(layout);
+	container.append(layout);
 	this.mLeaveButton = layout.createTextButton("Leave", function() {
 		self.notifyBackendLeaveButtonPressed();
+	}, '', 1);
+
+	// Save Preset button
+	var layout = $('<div class="l-flex-button-save-load"/>');
+	container.append(layout);
+	this.mSaveButton = layout.createTextButton("Save", function() {
+		self.notifyBackendSaveAssignmentPreset();
+	}, '', 1);
+
+	// Load Preset button
+	var layout = $('<div class="l-flex-button-save-load"/>');
+	container.append(layout);
+	this.mLoadButton = layout.createTextButton("Load", function() {
+		self.notifyBackendLoadAssignmentPreset(function( _load ) {
+			self.loadFromData(_load);
+		});
 	}, '', 1);
 
 	this.mIsVisible = false;
@@ -260,6 +314,12 @@ CampScreenCommanderDialogModule.prototype.bindTooltips = function ()
 {
 	this.mAssets.bindTooltips();
 	this.mLeaveButton.bindTooltip({ contentType: 'ui-element', elementId: TooltipIdentifier.WorldTownScreen.HireDialogModule.LeaveButton });
+	this.mSaveButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonSavePreset"});
+	this.mLoadButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonLoadPreset"});
+	this.mPresetNameButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonPresetName"});
+	this.mSaveSlotButtons.forEach( function (_slot){
+		_slot.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.ButtonPresetSlot", index: _slot.data('Index')});
+	});
 };
 
 CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
@@ -366,6 +426,20 @@ CampScreenCommanderDialogModule.prototype.show = function (_withSlideAnimation)
 			}
 		});
 	}
+
+	// Added By Necro
+	this.mCurrentSelectedSaveSlot = null;
+	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
+		if (this.mSaveSlotButtons[i].isEnabled() === true)
+			continue;
+
+		this.mCurrentSelectedSaveSlot = i;
+		break;
+	}
+
+	this.mSaveButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
+	this.mLoadButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
+	this.mPresetNameButton.enableButton(this.mCurrentSelectedSaveSlot !== null);
 };
 
 CampScreenCommanderDialogModule.prototype.hide = function ()
@@ -858,4 +932,31 @@ CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (
 CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = function (_broID, _tentID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
+};
+
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendLoadAssignmentPreset = function(_callback)
+{
+	SQ.call(this.mSQHandle, 'onLoadAssignmentPreset', this.mCurrentSelectedSaveSlot, _callback);
+};
+
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = function()
+{
+	SQ.call(this.mSQHandle, 'onSaveAssignmentPreset', this.mCurrentSelectedSaveSlot);
+};
+
+// Added By Necro
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex)
+{
+	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
+		this.mSaveSlotButtons[i].enableButton(i != _slotIndex);
+	}
+
+	this.mCurrentSelectedSaveSlot = _slotIndex + 1; // + 1 so that the data saved in flags corresponds to the slot number
+	this.mSaveButton.enableButton(true);
+	this.mLoadButton.enableButton(true);
+	this.mPresetNameButton.enableButton(true);
+
+	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
 };
