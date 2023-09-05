@@ -705,7 +705,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 			}
 			if (this.m.Vision != 0) 
 			{
-				_result.push({
+				result.push({
 					id = 10,
 					type = "text",
 					icon = "ui/icons/vision.png",
@@ -718,7 +718,7 @@ this.legend_helmet <- this.inherit("scripts/items/helmets/helmet", {
 
 		if (this.isRuned())
 		{
-			_result.push({	// An empty line is put in to improve formatting
+			result.push({	// An empty line is put in to improve formatting
 				id = 20,
 				type = "text",
 				icon = "ui/icons/blank.png",
