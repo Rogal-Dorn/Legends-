@@ -356,3 +356,10 @@ gt.Const.Hunting_Categories.BiomeType[gt.Const.World.TerrainType.SwampForest] = 
 		[2 , "scripts/items/supplies/pickled_mushrooms_item"],
 	],
 ];
+
+gt.Const.Hunting_Categories.HunterCampMode <- {
+        Default = 0,
+        Cook = 1,
+        Brew = 2,
+        Beast = 3,
+    };
