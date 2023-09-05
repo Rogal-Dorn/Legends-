@@ -7,7 +7,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Craft = 0,
 		Value = 0,
 		rollCount = 0,
-		Mode = "Default"
+		Mode = 0
 	},
 	function create()
 	{
