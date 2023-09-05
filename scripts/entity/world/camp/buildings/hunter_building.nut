@@ -7,7 +7,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Craft = 0,
 		Value = 0,
 		rollCount = 0,
-		Mode = 0
+		Mode = 3
 	},
 	function create()
 	{
@@ -65,8 +65,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		ret.Buttons <- [];
 		ret.CurrentMode <- this.m.Mode;
 
-		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) ret.Buttons.push(mode);
-
+		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) {
+			::logInfo("mode for query: " + mode + "   id: " + id);
+			ret.Buttons.push(mode);
+		}
+		local first = ret.Buttons[0];
+		local last = ret.Buttons[3];
+		ret.Buttons[0] = last;
+		ret.Buttons[3] = first;
 		return ret;
 	}
 
@@ -324,6 +330,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// 	::logInfo("QUERY: " + v);
 		// }
 		// ::logInfo(val.CurrentMode);
+
+		::logInfo("MODE: " + this.getMode());
 
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
