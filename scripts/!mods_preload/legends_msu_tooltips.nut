@@ -30,6 +30,11 @@
 					}
 				}
 			),
+			PresetNameDialog = {
+				ButtonDelete = ::MSU.Class.BasicTooltip("Delete Preset Name","Delete the current preset slot's custom name and close this pop-up"),
+				ButtonCancel = ::MSU.Class.BasicTooltip("Cancel Changes","Discard any changes and close this pop-up"),
+				ButtonOk = ::MSU.Class.BasicTooltip("Save Preset Name","Save the input name as the current preset slot's custom name and close this pop-up"),
+			},
 		}
 		
 	});
