@@ -7,7 +7,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Craft = 0,
 		Value = 0,
 		rollCount = 0,
-		Mode = 3
+		Mode = 0
 	},
 	function create()
 	{
@@ -66,13 +66,19 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		ret.CurrentMode <- this.m.Mode;
 
 		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) {
-			::logInfo("mode for query: " + mode + "   id: " + id);
 			ret.Buttons.push(mode);
 		}
-		local first = ret.Buttons[0];
-		local last = ret.Buttons[3];
-		ret.Buttons[0] = last;
-		ret.Buttons[3] = first;
+
+		ret.Buttons.sort(function(_a, _b){
+			if (this.Const.Hunting_Categories.HunterCampMode[_a] < this.Const.Hunting_Categories.HunterCampMode[_b]) return -1;
+			else if (this.Const.Hunting_Categories.HunterCampMode[_a] > this.Const.Hunting_Categories.HunterCampMode[_b]) return 1;
+			else return 0;
+		});
+
+		foreach(i, name in ret.Buttons) {
+			::logInfo("mode for query: " + name + "   index: " + i);
+		}
+
 		return ret;
 	}
 
