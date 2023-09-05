@@ -247,13 +247,11 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 
 	function onConfigureButtonClicked( _id )
 	{
-		if (this.m.CurrentTent == null || this.m.JSHandle == null || !this.isVisible()) return;
+		if (this.m.CurrentTent == null || this.m.CurrentTent.getID() != _id || this.m.JSHandle == null || !this.isVisible()) return;
 
 		foreach (camp, i in this.Const.World.CampBuildings)
 		{
 			if (i != _id) continue;
-
-			if (this.m.CurrentTent.getID() != _id) continue;
 
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("show" + camp + "PopupDialog", this.m.CurrentTent.queryConfigureSettings());
