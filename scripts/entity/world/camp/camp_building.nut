@@ -540,6 +540,12 @@ this.camp_building <- {
 
 	function queryConfigureSettings()
 	{
-		return [];
+		local ret = {};
+		ret.Buttons <- ["Default", "Cook", "Brew", "Beast"];
+		ret.CurrentMode <- this.m.Mode;
+
+		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) ret.Buttons.push(mode);
+
+		return ret;
 	}
 }

@@ -6,7 +6,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		FoodAmount = 0,
 		Craft = 0,
 		Value = 0,
-		rollCount = 0
+		rollCount = 0,
+		Mode = "Default"
 	},
 	function create()
 	{
@@ -172,7 +173,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		}
 
-		::logInfo("Hunting level: " + huntLevel);
+		::logInfo("Hunting level: " + chefLevel);
 		return chefLevel;
 
 	}
@@ -283,6 +284,13 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.Points += this.m.Craft;
 
 		::logInfo("---->POINTS: " + this.m.Points);
+
+		// local val = this.camp_building.queryConfigureSettings();
+
+		// foreach(v in val){
+		// 	::logInfo("QUERY: " + v);
+		// }
+		// ::logInfo(val.CurrentMode);
 
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
