@@ -538,14 +538,13 @@ this.camp_building <- {
 		return roster
 	}
 
+	function onPopupButtonClicked( _data )
+	{
+		
+	}
+
 	function queryConfigureSettings()
 	{
-		local ret = {};
-		ret.Buttons <- ["Default", "Cook", "Brew", "Beast"];
-		ret.CurrentMode <- this.m.Mode;
-
-		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) ret.Buttons.push(mode);
-
-		return ret;
+		return {};
 	}
 }
