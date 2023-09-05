@@ -62,18 +62,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function queryConfigureSettings()
 	{
 		local ret = {};
-		ret.Buttons <- [];
+		ret.Buttons <- array(this.Const.Hunting_Categories.HunterCampMode.len(), "");
 		ret.CurrentMode <- this.m.Mode;
 
-		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) {
-			ret.Buttons.push(mode);
+		foreach (mode, index in this.Const.Hunting_Categories.HunterCampMode) {
+			ret.Buttons[index] = mode;
 		}
-
-		ret.Buttons.sort(function(_a, _b){
-			if (this.Const.Hunting_Categories.HunterCampMode[_a] < this.Const.Hunting_Categories.HunterCampMode[_b]) return -1;
-			else if (this.Const.Hunting_Categories.HunterCampMode[_a] > this.Const.Hunting_Categories.HunterCampMode[_b]) return 1;
-			else return 0;
-		});
 
 		foreach(i, name in ret.Buttons) {
 			::logInfo("mode for query: " + name + "   index: " + i);
