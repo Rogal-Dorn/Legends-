@@ -975,7 +975,8 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
         self.notifyBackendPopupDialogIsVisible(false);
     });
 
-    var ButtonNames = ["Default", "Cook", "Brew", "Beast"];
+    var ButtonNames = _data.Buttons;
+    var SelectedIndex = _data.CurrentMode;
   	// create: content
     var createContent = function(_dialog) {
 	    var result = $('<div class="popup-300x600-dialog-content-container"/>');
@@ -985,12 +986,13 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
 	    	result.append(layout);
 	    	var button = layout.createTextButton(ButtonNames[i], function(_button) {
 				self.onSelectButtonInThisArray(buttons, _button.data('ID'));
-				self.notifyBackendPopupButtonPressed(_button.data('ID'));
+				self.notifyBackendPopupButtonPressed(_button.data('ID'), _button.data('Func'));
 			}, '', 1);
 			button.data('ID', ButtonNames[i]);
+			button.data('Func', "setMode");
 			buttons.push(button);
 	    }
-	    buttons[0].enableButton(false);
+	    buttons[SelectedIndex].enableButton(false);
     	return result;
     };
 
@@ -998,9 +1000,14 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
 };
 
 
-CampScreenCommanderDialogModule.prototype.notifyBackendPopupButtonPressed = function (_buttonID)
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupButtonPressed = function (_buttonID, _data)
 {
-	SQ.call(this.mSQHandle, 'onPopupButtonClicked', _buttonID);
+	var result = [_buttonID];
+
+	if (_data !== undefined)
+		result.push(_data)
+
+	SQ.call(this.mSQHandle, 'onPopupButtonClicked', result);
 };
 
 CampScreenCommanderDialogModule.prototype.notifyBackendPopupDialogIsVisible = function (_isVisible)

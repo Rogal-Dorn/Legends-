@@ -48,6 +48,39 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 	}
 
+	function getMode()
+	{
+		return this.m.Mode;
+	}
+
+	function setMode( _m )
+	{
+		if (typeof _m == "string") this.m.Mode = this.Const.Hunting_Categories.HunterCampMode[_m];
+		else if (typeof _m = "integer") this.m.Mode = _m;
+	}
+
+	function queryConfigureSettings()
+	{
+		local ret = {};
+		ret.Buttons <- [];
+		ret.CurrentMode <- this.m.Mode;
+
+		foreach (mode, id in this.Const.Hunting_Categories.HunterCampMode) ret.Buttons.push(mode);
+
+		return ret;
+	}
+
+	function onPopupButtonClicked( _data )
+	{
+		if (_data.len() != 2) return;
+
+		local self = this;
+		local mode = _data[0];
+		local func = _data[1];
+
+		self[func](mode);
+	}
+
 	function getTitle()
 	{
 		if (this.getUpgraded())
