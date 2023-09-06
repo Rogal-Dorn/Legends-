@@ -1054,6 +1054,7 @@ CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = functio
 CampScreenCommanderDialogModule.prototype.notifyBackendAssignedAll = function (_tentID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onAssignedAll', _tentID, _callback);
+}
 
 CampScreenCommanderDialogModule.prototype.notifyBackendSavePresetName = function(_dialog)
 {
