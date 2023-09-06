@@ -18,7 +18,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mDialogContainer = null;
 
 	// popup dialog
-	this.mPopupDialog = null;
+    this.mPopupDialog = null;
 
 	//Brother list
 	this.mListContainer = null;
@@ -37,6 +37,8 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.IsMoodVisible = true;
 
 	// buttons
+	this.mTentButton = null;
+	this.mConfigureButton = null;
 	this.mLeaveButton = null;
 	this.mPresetNameButton = null;
 	this.mSaveButton = null;
@@ -135,6 +137,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 
 	this.mStatsContainer = $('<div class="stats"/>');
 	row.append(this.mStatsContainer);
+	/*
 	var tentButtonLayout = $('<div class="tent-button"/>');
 	this.mStatsContainer.append(tentButtonLayout);
 	this.mTentButton = tentButtonLayout.createTextButton("Building", function()
@@ -146,6 +149,35 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 		}
 
 	}, '', 1);
+	*/
+	var tentButtonContainer = $('<div class="tent-button-container"/>');
+	this.mStatsContainer.append(tentButtonContainer);
+	// 1st button (small size), use to assign all bro current tent
+	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
+	tentButtonContainer.append(buttonLayout);
+	var button = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendAssignedAll(self.mSelectedTent.data('ID'), function(_load){
+				self.loadFromData(_load);
+			});
+		}
+	}, '', 6);
+	// 2nd button (mid size), tent button
+	var buttonLayout = $('<div class="l-tent-button-175-43"/>');
+	tentButtonContainer.append(buttonLayout);
+	this.mTentButton = buttonLayout.createTextButton("Building", function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendTentButtonPressed(self.mSelectedTent.data('ID'));
+		}
+	}, '', 1);
+	// 3rd button (small size), to open popup
+	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
+	tentButtonContainer.append(buttonLayout);
+	this.mConfigureButton = buttonLayout.createImageButton(Path.GFX + 'ui/buttons/settings.png', function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendConfigureButtonPressed(self.mSelectedTent.data('ID'));
+		}
+	}, '', 6);
 
 	// Added By Necro
 	// Preset Slot buttons
@@ -591,6 +623,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 				self.onBrothersListLoaded(res.Roster);
 				self.mTentButton.changeButtonText(res.Label);
 				self.mTentButton.enableButton(res.Enabled);
+				self.mConfigureButton.enableButton(res.Configure);
 
 				self.mStatsList.forEach(function (c) {
 					c.remove();
@@ -937,6 +970,71 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 	//this.updateRosterLabel();
 };
 
+CampScreenCommanderDialogModule.prototype.onSelectButtonInThisArray = function(_buttonArray, _buttonID)
+{
+	_buttonArray.forEach(function(_button, index){
+		_button.enableButton(_button.data('ID') != _buttonID);
+	});
+}
+
+CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _data )
+{
+    var self = this;
+    this.notifyBackendPopupDialogIsVisible(true);
+    this.mPopupDialog = $('.camp-screen').createPopupDialog('Configuration', null, null, 'popup-300x600-dialog');
+
+    // create: footer button
+    this.mPopupDialog.addPopupDialogOkButton(function (_dialog) {
+        self.mPopupDialog = null;
+        _dialog.destroyPopupDialog();
+        self.notifyBackendPopupDialogIsVisible(false);
+    });
+
+    var ButtonNames = _data.Buttons;
+    var SelectedIndex = _data.CurrentMode;
+  	// create: content
+    var createContent = function(_dialog) {
+	    var result = $('<div class="popup-300x600-dialog-content-container"/>');
+	    var buttons = [];
+	    for (var i = 0; i < ButtonNames.length; i++) {
+	    	var layout = $('<div class="l-popup-button-175-43"/>');
+	    	result.append(layout);
+	    	var button = layout.createTextButton(ButtonNames[i], function(_button) {
+				self.onSelectButtonInThisArray(buttons, _button.data('ID'));
+				self.notifyBackendPopupButtonPressed(_button.data('ID'), _button.data('Func'));
+			}, '', 1);
+			button.data('ID', ButtonNames[i]);
+			button.data('Func', "setMode");
+			buttons.push(button);
+	    }
+	    buttons[SelectedIndex].enableButton(false);
+    	return result;
+    };
+
+    this.mPopupDialog.addPopupDialogContent(createContent(this.mPopupDialog));
+};
+
+
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupButtonPressed = function (_buttonID, _data)
+{
+	var result = [_buttonID];
+
+	if (_data !== undefined)
+		result.push(_data)
+
+	SQ.call(this.mSQHandle, 'onPopupButtonClicked', result);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupDialogIsVisible = function (_isVisible)
+{
+	SQ.call(this.mSQHandle, 'onPopupDialogIsVisible', _isVisible);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendConfigureButtonPressed = function (_entryID)
+{
+	SQ.call(this.mSQHandle, 'onConfigureButtonClicked', _entryID);
+};
+
 CampScreenCommanderDialogModule.prototype.notifyBackendTentButtonPressed = function (_entryID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onTentBuldingClicked', _entryID, _callback);
@@ -951,6 +1049,12 @@ CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = functio
 {
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
 };
+
+
+CampScreenCommanderDialogModule.prototype.notifyBackendAssignedAll = function (_tentID, _callback)
+{
+	SQ.call(this.mSQHandle, 'onAssignedAll', _tentID, _callback);
+}
 
 CampScreenCommanderDialogModule.prototype.notifyBackendSavePresetName = function(_dialog)
 {

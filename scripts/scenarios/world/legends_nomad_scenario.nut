@@ -159,7 +159,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		foreach( n in orientalbandits )
 		{
-			n.addPlayerRelation(+100.0, "You walk the same path, but should not be seeing this message");
+			n.addPlayerRelation(100.0, "You walk the same path, but should not be seeing this message");
 		}
 
 		local nobles = this.World.FactionManager.getFactionsOfType(this.Const.FactionType.NobleHouse);
