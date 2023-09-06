@@ -1,5 +1,7 @@
 this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_action", {
-	m = {},
+	m = {
+			timeBetweenSpawnsPerSettlement = 150
+		},
 	function create()
 	{
 		this.m.ID = "send_goblin_ambushers_action";
@@ -38,7 +40,7 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 
 		foreach( s in _faction.getSettlements() )
 		{
-			if (s.getLastSpawnTime() + 150.0 > this.Time.getVirtualTimeF())
+			if (s.getLastSpawnTime() + this.m.timeBetweenSpawnsPerSettlement > this.Time.getVirtualTimeF())
 			{
 				continue;
 			}
@@ -65,7 +67,7 @@ this.send_goblin_ambushers_action <- this.inherit("scripts/factions/faction_acti
 
 		foreach( s in _faction.getSettlements() )
 		{
-			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF())
+			if (s.getLastSpawnTime() + this.m.timeBetweenSpawnsPerSettlement > this.Time.getVirtualTimeF())
 			{
 				continue;
 			}
