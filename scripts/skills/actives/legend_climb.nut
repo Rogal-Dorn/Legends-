@@ -65,7 +65,7 @@ this.legend_climb <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (this.skill.isUsable() && this.getContainer().getActor().getCurrentProperties().IsRooted)
+		if (this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
 			local myTile = this.getContainer().getActor().getTile();
 
@@ -111,12 +111,23 @@ this.legend_climb <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+
+		if (_targetTile.IsOccupiedByActor)
+		{
+			return false;
+		}
+
 		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
 		{
 			return false;
 		}
 
 		if (!_targetTile.IsEmpty)
+		{
+			return false;
+		}
+
+		if (this.Math.abs(_targetTile.Level - _originTile.Level) == 0)
 		{
 			return false;
 		}

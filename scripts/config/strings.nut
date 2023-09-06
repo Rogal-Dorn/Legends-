@@ -2082,6 +2082,8 @@ gt.Const.Strings.PerkName <- {
 	ReturnFavor = "Return Favor",
 	Sprint = "Sprint",
 	Inspire = "Inspire",
+	LegendAthlete = "Athlete"
+	LegendQuickStep = "Quick Step"
 	LegendCascade = "Cascade strikes",
 	LegendEvasion = "Evasion",
 	LegendHoldTheLine = "Hold the line",
@@ -2526,6 +2528,8 @@ gt.Const.Strings.PerkDescription <- {
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out, Knock Over and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.\n\nThe Polemace no longer has a penalty for attacking targets directly adjacent.",
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendQuickStep = "Exert yourself to move one tile at an unusually quick speed.\n\n Gain the 'Quick Step' skill which allows you to move one tile for only [color=" + this.Const.UI.Color.PositiveValue + "]1 AP[/color] and 7 fatigue cost once per turn.",
+	LegendAthlete = "You're a well-rounded athlete!\n\n Gain the 'Sprint' skill which allows you to quickly cover 4 tiles in a straight line, does not work across rough terrain or through enemy zones of control.\n\n Additionally, gain the 'Climb' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity.",
 	LegendSpecPoison = "Master poison, giving you the ability to coat your weapons with poison for the next 4 attacks without needing or consuming a poison vial.",
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for the next whole turn without incurring any free attacks.",

@@ -57,7 +57,7 @@ gt.Const.Perks.AgileTree <- {
 		],
 		[],
 		[
-			gt.Const.Perks.PerkDefs.LegendClimb
+			gt.Const.Perks.PerkDefs.LegendAthlete
 		],
 		[],
 		[
@@ -558,7 +558,7 @@ gt.Const.Perks.FastTree <- {
 		],
 		[
 			gt.Const.Perks.PerkDefs.Anticipation,
-			gt.Const.Perks.PerkDefs.Sprint
+			gt.Const.Perks.PerkDefs.LegendQuickStep
 		],
 		[],
 		[],
