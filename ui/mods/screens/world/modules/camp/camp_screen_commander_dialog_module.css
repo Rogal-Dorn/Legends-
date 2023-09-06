@@ -352,6 +352,36 @@
 	background-repeat: no-repeat;
 }
 
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
+{
+	width: 100%;
+	height: 4.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-175-43
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-45-41
+{
+    width: 4.5rem;
+    height: 4.1rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
+}
 
 .camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button
 {
@@ -565,6 +595,70 @@
 	position: absolute;
 
 	pointer-events: none;
+}
+
+/* 
+    Popup Dialog 
+*/
+.camp-screen .ui-control.popup-dialog.popup-300x600-dialog
+{
+	width: 30.0rem;
+	height: 60.0rem;
+
+	background-image: url("coui://gfx/ui/skin/popup_background_300x600.png");
+	background-size: 30.0rem 60.0rem;
+	background-repeat: no-repeat;
+}
+
+.camp-screen .ui-control.popup-dialog .popup-300x600-dialog-content-container
+{
+	width: 100%;
+	height: 47.0rem;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.camp-screen .ui-control.popup-dialog .l-popup-button-175-43
+{
+ 	height: 4.3rem;
+ 	width: 17.5rem;
+ 
+ 	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
+{
+	width: 100%;
+	height: 4.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-175-43
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-45-41
+{
+    width: 4.5rem;
+    height: 4.1rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
 }
 
 /* Change Preset Name Dialog Container */
