@@ -162,7 +162,6 @@ gt.Const.LegendMod.ArmorObjs.extend([
 			[1, "chain/legend_armor_short_mail"]
 		],
 		Plate = [
-			[1, "plate/legend_armor_plate_full_greaves"],
 			[1, "plate/legend_armor_plate_full_greaves_named"],
 			[1, "plate/legend_armor_plate_full_greaves_painted"]
 		],
@@ -263,7 +262,6 @@ gt.Const.LegendMod.ArmorObjs.extend([
 			[1, "chain/legend_southern_mail"],
 		],
 		Plate = [
-			[1, "plate/legend_armor_plate_full_greaves"],
 			[1, "plate/legend_armor_plate_full_greaves_named"],
 			[1, "plate/legend_armor_plate_full_greaves_painted"]
 		],

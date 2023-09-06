@@ -292,28 +292,6 @@ gt.Const.LegendMod.HelmObjs.extend([
 	Vanity = []
 }]
 },{
-	ID = "named/norse_helmet", //125
-	Script = "",
-	Sets = [{
-	Hoods = [
-		[1, "hood/legend_helmet_open_chain_hood"] //65
-	],
-	Helms = [
-		[1, "helm/legend_helmet_viking_helm"] //45
-	]
-	Tops = [],
-	Vanity = [ //missing like 15 s i'm gonna just give it a nice vanity (:
-		[1, "vanity/legend_helmet_antler"], //10
-		[1, "vanity/legend_helmet_beret"], //10
-		[1, "vanity/legend_helmet_bull_horns"], //10
-		[1, "vanity/legend_helmet_feather_band"], //10
-		[1, "vanity/legend_helmet_feathered_hat"], //10
-		[1, "vanity/legend_helmet_headband"], //10
-		[1, "vanity/legend_helmet_plait"], //10
-		[1, "vanity/legend_helmet_ponytail"], //10
-	]
-}]
-},{
 	ID = "named/red_and_gold_band_helmet", //255
 	Script = "",
 	Sets = [{
@@ -325,22 +303,6 @@ gt.Const.LegendMod.HelmObjs.extend([
 	],
 	Tops = [],
 	Vanity = []
-}]
-},{
-	ID = "named/sallet_green_helmet", //265
-	Script = "",
-	Sets = [{
-	Hoods = [
-		[1, "hood/legend_helmet_chain_hood"] //80
-	],
-	Helms = [
-		[1, "helm/legend_helmet_sallet"] //185
-	],
-	Tops = [],
-	Vanity = [
-		[1, "vanity/legend_helmet_headband"],
-		[1, "vanity/legend_helmet_plait"] //10
-	]
 }]
 },{
 	ID = "named/witchhunter_helm", //140
