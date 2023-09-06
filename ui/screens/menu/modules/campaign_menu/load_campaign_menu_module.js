@@ -347,12 +347,6 @@ LoadCampaignMenuModule.prototype.addCampaignEntryToList = function (_data)
 		entry.assignListCampaignDateTime(_data[CampaignMenuModulesIdentifier.Campaign.CreationDate]);
 	}
 
-	if (true)
-	{
-		entry.assignListCampaignLegendsVersion("Legends Version: 17.0.9");
-		// entry.assignListCampaignLegendsVersion(_data[CampaignMenuModulesIdentifier.Campaign.CreationDate]);
-	}
-
 	entry.assignListCampaignClickHandler(function (_entry, _event)
 	{
 		// check if this is already selected
