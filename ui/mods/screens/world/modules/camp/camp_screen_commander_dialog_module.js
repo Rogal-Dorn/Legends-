@@ -329,6 +329,12 @@ CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
 {
 	this.mAssets.unbindTooltips();
 	this.mLeaveButton.unbindTooltip();
+	this.mSaveButton.unbindTooltip();
+	this.mLoadButton.unbindTooltip();
+	this.mPresetNameButton.unbindTooltip();
+	this.mSaveSlotButtons.forEach( function (_slot){
+		_slot.unbindTooltip();
+	});
 };
 
 
@@ -995,7 +1001,7 @@ CampScreenCommanderDialogModule.prototype.showPresetNamePopupDialog = function()
     var footer = this.mPopupDialog.findPopupDialogFooterContainer();
     var layout = $('<div class="l-delete-preset-name-button"/>');
 	footer.append(layout);
-	layout.createImageButton(Path.GFX + "ui/skin/icon_delete.png", function() { // button alignment not working as intended
+	layout.createImageButton(Path.GFX + "ui/skin/icon_delete.png", function() {
 		self.notifyBackendDeletePresetName();
 		self.removePopup();
 	}, '', 6).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonDelete" });
@@ -1008,23 +1014,24 @@ CampScreenCommanderDialogModule.prototype.showPresetNamePopupDialog = function()
 	container.append(layout);
 	layout.createTextButton("Cancel", function() {
 		self.removePopup();
-	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonCancel" }); ;
+	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonCancel" });
 
 	// save button
 	var layout = $('<div class="l-flex-button-cancel-save"/>');
 	container.append(layout);
-	layout.createTextButton("Save", function() {
+	var saveButton = layout.createTextButton("Save", function() {
 		self.notifyBackendSavePresetName(self.mPopupDialog);
     	self.removePopup();
-	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonOk" });;
+	}, '', 1);
+	saveButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonOk" });
 
-    this.mPopupDialog.addPopupDialogContent(self.createPresetNameDialogContent(this.mPopupDialog));
+    this.mPopupDialog.addPopupDialogContent(self.createPresetNameDialogContent(this.mPopupDialog,saveButton));
 
     var inputFields = self.mPopupDialog.findPopupDialogContentContainer().find('input');
     $(inputFields[0]).focus();
 };
 
-CampScreenCommanderDialogModule.prototype.createPresetNameDialogContent = function (_dialog)
+CampScreenCommanderDialogModule.prototype.createPresetNameDialogContent = function (_dialog, _saveButton)
 {
 	var slot = this.mCurrentSelectedSaveSlot;
 	if (slot === null)
@@ -1047,15 +1054,17 @@ CampScreenCommanderDialogModule.prototype.createPresetNameDialogContent = functi
 	row.append(inputLayout);
 	var inputField = inputLayout.createInput('', 0, Constants.Game.MAX_CAMPING_PRESET_NAME_LENGTH, 1, function (_input)
 	{
-		_dialog.findPopupDialogOkButton().enableButton(_input.getInputTextLength() >= 1);
+		_saveButton.enableButton(_input.getInputTextLength() >= 1);
 	}, 'title-font-big font-bold font-color-brother-name', function(_input)
 	{
-		var button = _dialog.findPopupDialogOkButton();
+		var button = _saveButton;
 		if(button.isEnabled())
 		{
 			button.click();
 		}
 	});
+
+	_saveButton.enableButton(inputField.getInputTextLength() >= 1);
 
 	return result;
 }
