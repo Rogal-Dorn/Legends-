@@ -978,48 +978,50 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = f
 	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
 };
 
+CampScreenCommanderDialogModule.prototype.removePopup = function()
+{
+	this.mPopupDialog.destroyPopupDialog();
+    this.mPopupDialog = null;
+    this.notifyBackendPopupDialogIsVisible(false);
+}
+
 CampScreenCommanderDialogModule.prototype.showPresetNamePopupDialog = function()
 {
     var self = this;
     this.notifyBackendPopupDialogIsVisible(true);
     this.mPopupDialog = $('.camp-screen').createPopupDialog('Customize Preset Name', null, null, 'change-preset-name-popup');
 
-    this.mPopupDialog.addPopupDialogOkButton(function (_dialog) {
-    	self.notifyBackendSavePresetName(_dialog);
-    	self.mPopupDialog = null;
-    	_dialog.destroyPopupDialog();
-    	self.notifyBackendPopupDialogIsVisible(false);
-    });
-    this.mPopupDialog.find("l-ok-button").find('.button').bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonOk" }); // Doesn't work
-
-    this.mPopupDialog.addPopupDialogCancelButton(function (_dialog) {
-    	self.mPopupDialog = null;
-    	_dialog.destroyPopupDialog();
-    	self.notifyBackendPopupDialogIsVisible(false);
-    });
-    this.mPopupDialog.find("l-cancel-button").find('.button').bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonCancel" }); // Doesn't work
-
-    var footer = this.mPopupDialog.find('.footer:first');
-    var buttonBar = footer.find('.l-button-bar');
-    buttonBar.css({"width":"39.3rem"})
-
+   	// delete button
+    var footer = this.mPopupDialog.findPopupDialogFooterContainer();
     var layout = $('<div class="l-delete-preset-name-button"/>');
-	buttonBar.append(layout);
-	var deleteButton = layout.createImageButton(Path.GFX + "ui/skin/icon_delete.png", function(){ // button alignment not working as intended
+	footer.append(layout);
+	layout.createImageButton(Path.GFX + "ui/skin/icon_delete.png", function() { // button alignment not working as intended
 		self.notifyBackendDeletePresetName();
-		var dialog = self.mPopupDialog;
-		self.mPopupDialog = null;
-		dialog.destroyPopupDialog();
-		self.notifyBackendPopupDialogIsVisible(false);
-	}, '', 6);
-	deleteButton.findButtonImage().css({"top":"0.15rem","left":"0.2rem"});
-	deleteButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonDelete" });
+		self.removePopup();
+	}, '', 6).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonDelete" });
+
+	var container = $('<div class="l-cancel-save-button-container"/>');
+	footer.append(container);
+
+	// cancel button
+	var layout = $('<div class="l-flex-button-cancel-save"/>');
+	container.append(layout);
+	layout.createTextButton("Cancel", function() {
+		self.removePopup();
+	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonCancel" }); ;
+
+	// save button
+	var layout = $('<div class="l-flex-button-cancel-save"/>');
+	container.append(layout);
+	layout.createTextButton("Save", function() {
+		self.notifyBackendSavePresetName(self.mPopupDialog);
+    	self.removePopup();
+	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonOk" });;
 
     this.mPopupDialog.addPopupDialogContent(self.createPresetNameDialogContent(this.mPopupDialog));
 
     var inputFields = self.mPopupDialog.findPopupDialogContentContainer().find('input');
     $(inputFields[0]).focus();
-
 };
 
 CampScreenCommanderDialogModule.prototype.createPresetNameDialogContent = function (_dialog)
