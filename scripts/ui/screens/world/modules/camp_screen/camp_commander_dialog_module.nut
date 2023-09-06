@@ -204,6 +204,7 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		
 		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
 		return this.queryLoad();
+	}
 
 	function onSavePresetName ( _data )
 	{

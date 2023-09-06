@@ -623,6 +623,43 @@
 }
 
 .camp-screen .ui-control.popup-dialog .l-popup-button-175-43
+{
+ 	height: 4.3rem;
+ 	width: 17.5rem;
+ 
+ 	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
+{
+	width: 100%;
+	height: 4.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-175-43
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-45-41
+{
+    width: 4.5rem;
+    height: 4.1rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
+}
 
 /* Change Preset Name Dialog Container */
 .camp-screen .ui-control.popup-dialog.change-preset-name-popup
