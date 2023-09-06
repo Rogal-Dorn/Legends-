@@ -204,6 +204,21 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 		
 		this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
 		return this.queryLoad();
+
+	function onSavePresetName ( _data )
+	{
+		local index = _data[0];
+		local presetName = _data[1];
+		::Legends.Mod.Debug.printLog(format("Saving camping preset %i name: %s", index + 1, presetName));	
+		::World.Camp.setPresetName(index, presetName);
+		this.Sound.play("sounds/scribble.wav", 1.0);
+	}
+
+	function onDeletePresetName( _index )
+	{
+		::Legends.Mod.Debug.printLog(format("Deleting camping preset %i name", _index + 1));	
+		::World.Camp.setPresetName(_index, false);
+		this.Sound.play("sounds/movement/movement_stone_01.wav", 0.5);
 	}
 
 	function onSaveAssignmentPreset ( _presetNumber )
