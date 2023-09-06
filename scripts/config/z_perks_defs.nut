@@ -762,6 +762,24 @@ local perkDefObjects = [
 		Const = "Sprint"
 	},
 	{
+		ID = "perk.legend_quick_step",
+		Script = "scripts/skills/perks/perk_legend_quick_step",
+		Name = this.Const.Strings.PerkName.LegendQuickStep,
+		Tooltip = this.Const.Strings.PerkDescription.LegendQuickStep,
+		Icon = "ui/perks/unarmed_lunge.png",
+		IconDisabled = "ui/perks/unarmed_lunge_bw.png",
+		Const = "LegendQuickStep"
+	},
+	{
+		ID = "perk.legend_athlete",
+		Script = "scripts/skills/perks/perk_legend_athlete",
+		Name = this.Const.Strings.PerkName.LegendAthlete,
+		Tooltip = this.Const.Strings.PerkDescription.LegendAthlete,
+		Icon = "ui/perks/climb_circle.png",
+		IconDisabled = "ui/perks/climb_circle_bw.png",
+		Const = "LegendAthlete"
+	},
+	{
 		ID = "perk.double_strike",
 		Script = "scripts/skills/perks/perk_double_strike",
 		Name = this.Const.Strings.PerkName.DoubleStrike,
