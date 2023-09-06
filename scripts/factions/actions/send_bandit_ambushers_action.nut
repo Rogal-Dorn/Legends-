@@ -1,5 +1,7 @@
 this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_action", {
-	m = {},
+	m = {
+			timeBetweenSpawnsPerSettlement = 150
+		},
 	function create()
 	{
 		this.m.ID = "send_bandit_ambushers_action";
@@ -45,7 +47,7 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 				continue;
 			}
 
-			if (s.getLastSpawnTime() + 300.0 > this.Time.getVirtualTimeF())
+			if (s.getLastSpawnTime() + this.m.timeBetweenSpawnsPerSettlement > this.Time.getVirtualTimeF())
 			{
 				continue;
 			}
@@ -77,7 +79,7 @@ this.send_bandit_ambushers_action <- this.inherit("scripts/factions/faction_acti
 				continue;
 			}
 
-			if (s.getLastSpawnTime() + 150.0 > this.Time.getVirtualTimeF() || s.getFlags().get("isContractLocation")) //use to prevent patrols on camps that are marked by contracts.
+			if (s.getLastSpawnTime() + this.m.timeBetweenSpawnsPerSettlement > this.Time.getVirtualTimeF() || s.getFlags().get("isContractLocation")) //use to prevent patrols on camps that are marked by contracts.
 			{
 				continue;
 			}
