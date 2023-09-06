@@ -69,9 +69,9 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			ret.Buttons[index] = mode;
 		}
 
-		foreach(i, name in ret.Buttons) {
-			::logInfo("mode for query: " + name + "   index: " + i);
-		}
+		// foreach(i, name in ret.Buttons) {
+		// 	::logInfo("mode for query: " + name + "   index: " + i);
+		// }
 
 		return ret;
 	}
@@ -212,7 +212,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		}
 
-		::logInfo("Hunting level: " + chefLevel);
+		// ::logInfo("Hunting level: " + chefLevel);
 		return chefLevel;
 
 	}
@@ -322,7 +322,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		this.m.Points += this.m.Craft;
 
-		::logInfo("---->POINTS: " + this.m.Points);
+		// ::logInfo("---->POINTS: " + this.m.Points);
 
 		// local val = this.camp_building.queryConfigureSettings();
 
@@ -331,7 +331,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// }
 		// ::logInfo(val.CurrentMode);
 
-		::logInfo("MODE: " + this.getMode());
+		// ::logInfo("MODE: " + this.getMode());
 
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
@@ -351,17 +351,21 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local tentLevel = this.Const.Hunting_Categories.Containers.chef;
 		local huntingLoot = this.Const.Hunting_Categories.Containers.hunting;
 
-		::logInfo("TENT");
-		foreach (item in noLevel.toArray(true)){
-			::logInfo("NoLevel: " + item);
-		}
-		foreach (item in tentLevel.toArray(true)){
-			::logInfo("TentLevel: " + item);
-		}
+		// ::logInfo("TENT");
+		// foreach (item in noLevel.toArray(true)){
+		// 	::logInfo("NoLevel: " + item);
+		// }
+		// foreach (item in tentLevel.toArray(true)){
+		// 	::logInfo("TentLevel: " + item);
+		// }
 
 
 		local levelsChance = 15
-		local rollType = 0
+
+
+		if(this.getMode() != 0){
+			levelsChance = 20
+		}
 
 		local cheflevels = this.getChefLevel();
 		local dropLoot = -300.0 / (cheflevels + 25) + levelsChance >= this.Math.rand(1, 100); // At level 5 there is a 5% chance per hour, increases asymptotically to 15% per hour
@@ -430,19 +434,58 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			return this.getUpdateText();
 		}
 
+		local rollType = this.getMode();
+
 		if(rollType == 0)
 		{
+			this.m.Points -= item.getValue();
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
 		else if (this.m.rollCount == 10){
-			// secify roll type
-			// item = this.new(huntingLoot.roll());
-			// this.m.Items.push(item);
-			// this.Stash.add(item);
-			// this.m.FoodAmount += item.getAmount();
-			// if(--emptySlots == 0) return this.getUpdateText();
+			if(rollType == 1){
+				item = this.new(tentLevel.roll());
+				item.randomizeAmount();
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			else if (rollType == 2)
+			{
+				local brewerLoot = this.new("scripts/mods/script_container");
+				brewerLoot.extend([
+					"scripts/items/supplies/beer_item",
+					"scripts/items/supplies/wine_item"
+				]);
+
+
+				if (this.getUpgraded())
+				{
+					brewerLoot.extend([
+						[3, "scripts/items/supplies/mead_item"],
+						[1, "scripts/items/supplies/preserved_mead_item"]
+					]);
+				}
+
+				item = this.new(brewerLoot.roll());
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			else if (rollType == 3)
+			{
+				item = this.new(huntingLoot.roll());
+				item.randomizeAmount();
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			this.m.rollCount = 0;
 		}else {
 			this.m.rollCount += 1;
 		}
