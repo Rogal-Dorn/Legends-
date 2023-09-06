@@ -155,9 +155,18 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	for (var i = 0; i < this.mSaveSlotNum; i++) {
 		var layout = $('<div class="l-flex-button-preset"/>');
 		this.mSaveSlotButtonContainer.append(layout);
-		var button = layout.createTextButton('' + (i + 1) + '', function(_button) {
-			self.notifyBackendSaveSlotButtonPressed(_button.data('Index'));
-		}, '', 6);
+		var button = layout.createTextButton('' + (i + 1) + '',
+			function(_button) {
+				self.notifyBackendSaveSlotButtonPressed(
+					_button.data('Index'),
+					function( _load ) {
+						if (_load)
+						{
+							self.loadFromData(_load);
+						}
+					}
+				)
+			}, '', 6);
 		button.data('Index', i);
 		// a bug cause the label to fall off a bit, so i add this to offset that
 		// button.findButtonText().css('top', '0.4rem');
@@ -970,7 +979,7 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = fu
 };
 
 // Added By Necro
-CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex)
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex, _callback)
 {
 	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
 		this.mSaveSlotButtons[i].enableButton(i != _slotIndex);
@@ -981,7 +990,7 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = f
 	this.mLoadButton.enableButton(true);
 	this.mPresetNameButton.enableButton(true);
 
-	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
+	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1, _callback);
 };
 
 CampScreenCommanderDialogModule.prototype.removePopup = function()
