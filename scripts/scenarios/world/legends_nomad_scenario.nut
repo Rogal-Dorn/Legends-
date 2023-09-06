@@ -36,6 +36,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);
+		bros[0].getSprite("socket").setBrush("bust_base_nomads");
 		bros[0].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
 		bros[0].getBackground().m.RawDescription = "{%name% is someone who you have known since they were a child. They always had a keen eye but had more interest in shooting things point blank with their sling instead. Their discovery of maces and swords changed their world for the better.}";
 		bros[0].setStartValuesEx([ // melee
@@ -44,6 +45,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
+		bros[1].getSprite("socket").setBrush("bust_base_nomads");
 		bros[1].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
 		bros[1].getBackground().m.RawDescription = "{%name% came from another tribe that merged with yours not too long ago. Their family was butched in the night by \'skin men\' who could travel thirty paces in a blink of the eye. While many think them unsettled by what appears to be a raid, you can\'t help but notice how they always sleep closest to the fire every night.}";
 		bros[1].setStartValuesEx([ //melee always to prevent all ranged parties
@@ -60,6 +62,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		bros[3].setPlaceInFormation(11);
 		bros[3].setVeteranPerks(2);
+		bros[3].getSprite("socket").setBrush("bust_base_nomads");
 		bros[3].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
 		bros[3].getBackground().m.RawDescription = "{You know little about %name%, they prefer to stay quiet and keep to themselves. However their loyalty to the tribe has never come into question.}";
 		bros[3].setStartValuesEx([ //wildcard 1
@@ -69,6 +72,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		bros[4].setPlaceInFormation(12);
 		bros[4].setVeteranPerks(2);
+		bros[4].getSprite("socket").setBrush("bust_base_nomads");
 		bros[4].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
 		bros[4].getBackground().m.RawDescription = "{Be it rabbit, snake or hyena - little stands a chance against %name% who readily hits their target with all the same precision. The change to conscripts over wildlife came as a challange at first until they realised they just needed to aim slightly lower than normal.}";
 		bros[4].setStartValuesEx([ //always ranged for variety
