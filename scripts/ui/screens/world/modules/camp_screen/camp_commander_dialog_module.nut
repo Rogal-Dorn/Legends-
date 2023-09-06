@@ -201,7 +201,14 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 	function onSaveSlotButtonPressed( _presetNumber )
 	{
 		::Legends.Mod.Debug.printLog("Currently selected camping assignment preset slot: " + _presetNumber);
+		if (::Legends.Mod.ModSettings.getSetting("ClickPresetToSwitch").getValue())
+		{
+			::World.Camp.loadAssignmentPreset( _presetNumber );
+			this.Sound.play("sounds/movement/movement_snow_00.wav", 1.0)
+			return this.queryLoad();
+		}
 		this.Sound.play("sounds/move_pot_clay_01.wav", 2.0);
+		return false;
 	}
 
 	function onLeaveButtonPressed()
