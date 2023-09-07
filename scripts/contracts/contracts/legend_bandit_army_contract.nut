@@ -327,7 +327,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_trader_commander" || bro.getBackground().getID() == "background.legend_assassin_commander" || bro.getBackground().getID() == "background.legend_assassin" || bro.getBackground().getID() == "background.female_thief" || bro.getSkills().hasSkill("perk.legend_bribe"))
+						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_trader_commander" || bro.getBackground().getID() == "background.legend_assassin_commander" || bro.getBackground().getID() == "background.legend_assassin" || bro.getSkills().hasSkill("perk.legend_bribe"))
 						{
 							candidates.push(bro);
 						}

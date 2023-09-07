@@ -20,8 +20,7 @@ this.legend_hexe_leader_cloak_blueprint <- this.inherit("scripts/crafting/bluepr
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/backgrounds/female_tailor_background",
-							"scripts/skills/backgrounds/tailor_background"]
+				Scripts = ["scripts/skills/backgrounds/tailor_background"]
 			}
 		]
 		this.initSkills(skills);
