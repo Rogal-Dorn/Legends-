@@ -305,6 +305,22 @@ gt.Const.LegendMod.HelmObjs.extend([
 	Vanity = []
 }]
 },{
+	ID = "named/sallet_green_helmet", //265
+	Script = "",
+	Sets = [{
+	Hoods = [
+		[1, "hood/legend_helmet_chain_hood"] //80
+	],
+	Helms = [
+		[1, "helm/legend_helmet_sallet"] //185
+	],
+	Tops = [],
+	Vanity = [
+		[1, "vanity/legend_helmet_headband"],
+		[1, "vanity/legend_helmet_plait"] //10
+	]
+}]
+},{
 	ID = "named/witchhunter_helm", //140
 	Script = "", //off but it's fine i guess?
 	Sets = [{
