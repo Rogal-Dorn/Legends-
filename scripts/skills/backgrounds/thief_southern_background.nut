@@ -45,7 +45,7 @@ this.thief_southern_background <- this.inherit("scripts/skills/backgrounds/thief
 
 		if (_gender != 1) return;
 
-		this.female_thief_background.create();
+		this.thief_background.create();
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;

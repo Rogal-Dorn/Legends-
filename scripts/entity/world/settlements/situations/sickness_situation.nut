@@ -54,7 +54,6 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 		if (_gender)
 		{
-		_draftList.push("female_beggar_background");
 		_draftList.push("legend_nun_background");
 		_draftList.push("legend_herbalist_background");
 		}

@@ -46,12 +46,6 @@ this.raided_situation <- this.inherit("scripts/entity/world/settlements/situatio
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if (_gender)
-		{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-
-		}
 		_draftList.push("refugee_background");
 		_draftList.push("cripple_background");
 		_draftList.push("cripple_background");

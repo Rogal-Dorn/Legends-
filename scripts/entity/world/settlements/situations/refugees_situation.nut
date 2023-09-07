@@ -77,8 +77,6 @@ this.refugees_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("refugee_background");
 		_draftList.push("slave_background");
 		_draftList.push("beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
 	}
 
 });

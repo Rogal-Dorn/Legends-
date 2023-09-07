@@ -311,7 +311,7 @@ this.the_horseman_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_flagellant.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.butcher" || bro.getBackground().getID() == "background.female_butcher")
+			else if (bro.getBackground().getID() == "background.butcher")
 			{
 				candidate_butcher.push(bro);
 			}
