@@ -5,12 +5,14 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "effects.legend_parrying_dagger";
-		this.m.Name = "Parry defense";
-		this.m.Description = "Parrying daggers work best against a single opponent, giving +20 melee defense when there is only a single enemy within 2 tiles. This effect dimishes when facing more than one enemy at a time.";
-		this.m.Icon = "ui/perks/perk_61.png";
-		this.m.IconMini = "perk_61_mini";
+		this.m.Name = "Parrying Dagger Defense";
+		this.m.Description = "Parrying Daggers work best against a single opponent, giving +20 melee defense when there is only a single adjacent enemy. This effect diminishes when facing more than one enemy at a time.";
+		this.m.Icon = "ui/perks/parrying_circle.png";
+		this.m.IconMini = "mini_parrying_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
-		this.m.Order = this.Const.SkillOrder.VeryLast;
+		// Note: because this effect is added via item.addSkill in legend_parrying_dagger, changing m.Order won't change how this effect will appear above all the other perk on the character screen
+		// This appears to be the game's default behaviour for item-added effects. See legend_parrying_dagger for how the parrying effect is added differently such that it appears with the other effects/perks.
+		this.m.Order = this.Const.SkillOrder.Item;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 	}
@@ -43,7 +45,6 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
-			this.m.IsHidden = true;
 			return;
 		}
 
@@ -55,8 +56,4 @@ this.legend_parrying_dagger_effect <- this.inherit("scripts/skills/skill", {
 		_properties.MeleeDefense += this.m.Bonus;
 	}
 
-	function onCombatFinished()
-	{
-		this.m.IsHidden = true;
-	}
 });

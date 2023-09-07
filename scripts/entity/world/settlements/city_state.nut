@@ -9,12 +9,6 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"ORIENTAL CITY #3"
 		]);
 		this.m.FemaleDraftList = [
-			"female_thief_southern_background",
-			"female_slave_background",
-			"female_slave_southern_background",
-			"female_slave_southern_background",
-			"female_slave_southern_background",
-			"female_slave_southern_background",
 			"legend_qiyan_background"
 		],
 		this.m.DraftList = [
@@ -41,7 +35,6 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			"eunuch_southern_background",
 			"slave_background",
 			"slave_background",
-			"female_slave_background",
 			"slave_southern_background",
 			"slave_southern_background",
 			"slave_southern_background",

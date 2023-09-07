@@ -23,8 +23,7 @@ this.perk_legend_specialist_knife_damage <- this.inherit("scripts/skills/skill",
 				_properties.DamageRegularMin += 6;
 				_properties.DamageRegularMax += 16;
 			}
-
-			if (item.isWeaponType(this.Const.Items.WeaponType.Dagger))
+			else if (item.isWeaponType(this.Const.Items.WeaponType.Dagger))
 			{
 				_properties.DamageRegularMin += 2;
 				_properties.DamageRegularMax += 7;

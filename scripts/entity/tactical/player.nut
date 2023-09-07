@@ -580,6 +580,15 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		if (!this.isGuest())
 		{
+			if (::Legends.Mod.ModSettings.getSetting("ShowCharacterBackgroundType").getValue())
+			{
+				tooltip.push({
+					id = 2,
+					type = "description",
+					text = this.m.Background.getBackgroundTypes() + "\n\n"
+				});
+			}
+
 			if (this.m.Background != null && this.m.Background.getID() == "background.companion")
 			{
 				text = "With the company from the very beginning.";
@@ -675,17 +684,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				});
 			}
 
-			tooltip.push({
-				id = 7,
-				type = "hint",
-				text = this.getBackground().getBackgroundDescription(false)
-			});
-
-			tooltip.push({
-				id = 10,
-				type = "description",
-				text = this.m.Background.getBackgroundTypes() + "\n"
-			});
+			tooltip.extend(this.getBackground().getBackgroundDescriptionTooltip(false));
 		}
 
 		local injuries = this.getSkills().query(this.Const.SkillType.Injury | this.Const.SkillType.SemiInjury);
@@ -2088,7 +2087,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "All")
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 		{
 			background.setGender(_gender);
 		}

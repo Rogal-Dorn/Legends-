@@ -352,6 +352,36 @@
 	background-repeat: no-repeat;
 }
 
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
+{
+	width: 100%;
+	height: 4.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-175-43
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-45-41
+{
+    width: 4.5rem;
+    height: 4.1rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
+}
 
 .camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button
 {
@@ -492,9 +522,68 @@
 	right: 0;
 	bottom: 0;
 	width: 17.5rem;
-	position: absolute;
+	flex: 0 0 auto;
 
 	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-save-load-button-container
+{
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 52.5rem;
+	height: 4.3rem;
+	position: absolute;
+	margin: auto;
+
+	display: flex;
+   	align-items: center;
+   	justify-content: space-between;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-slot-button-container
+{
+	top: 0.6rem;
+	bottom: 0;
+	left: 1.0rem;
+	width: 35.8rem; /*enough for 8 buttons + preset name*/
+	height: 4.3rem;
+	position: absolute;
+
+	display: flex;
+   	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-flex-button-save-load
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+.camp-screen > .l-commander-dialog-container .footer .l-flex-button-preset-name
+{
+    height: 4.3rem;
+    width: 4.3rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .footer .l-flex-button-preset
+{
+    height: 4.3rem;
+    width: 3.9rem;
+    flex: 0 0 auto;
+
+    line-height: 2.8rem;
 }
 
 .camp-screen > .l-commander-dialog-container .ui-control.brother > .mood-layer img
@@ -506,4 +595,163 @@
 	position: absolute;
 
 	pointer-events: none;
+}
+
+/* 
+    Popup Dialog 
+*/
+.camp-screen .ui-control.popup-dialog.popup-300x600-dialog
+{
+	width: 30.0rem;
+	height: 60.0rem;
+
+	background-image: url("coui://gfx/ui/skin/popup_background_300x600.png");
+	background-size: 30.0rem 60.0rem;
+	background-repeat: no-repeat;
+}
+
+.camp-screen .ui-control.popup-dialog .popup-300x600-dialog-content-container
+{
+	width: 100%;
+	height: 47.0rem;
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.camp-screen .ui-control.popup-dialog .l-popup-button-175-43
+{
+ 	height: 4.3rem;
+ 	width: 17.5rem;
+ 
+ 	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
+{
+	width: 100%;
+	height: 4.5rem;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-175-43
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content .l-tent-button-45-41
+{
+    width: 4.5rem;
+    height: 4.1rem;
+    flex: 0 0 auto;
+
+    line-height: 3.0rem;
+}
+
+/* Change Preset Name Dialog Container */
+.camp-screen .ui-control.popup-dialog.change-preset-name-popup
+{
+	width: 44.9rem;
+	height: 25.0rem; /*popup dialog height*/
+
+	background-image: url("coui://gfx/ui/skin/popup_background_449x250.png");
+	background-size: 44.9rem 25.0rem;
+	background-repeat: no-repeat;
+}
+
+.camp-screen .ui-control.popup-dialog .footer .l-delete-preset-name-button
+{
+	top: 0;
+	bottom: 0;
+	left: 2.8rem;
+	height: 4.1rem;
+	width: 4.5rem;
+	position: absolute;
+	margin: auto;
+
+	line-height: 3.0rem;
+}
+
+.camp-screen .ui-control.popup-dialog .footer .l-cancel-save-button-container
+{
+	top: 0;
+	bottom: 0;
+	left: 7.2rem;
+	width: 35.0rem;
+	height: 4.3rem;
+	position: absolute;
+	margin: auto;
+
+	display: flex;
+   	align-items: center;
+   	justify-content: space-between;
+}
+
+.camp-screen .ui-control.popup-dialog .footer .l-flex-button-cancel-save
+{
+	height: 4.3rem;
+	width: 17.5rem;
+	flex: 0 0 auto;
+
+	line-height: 3.0rem;
+}
+
+/*
+To get the footer be at the perfect place, you should make sure the container
+that is going to be appended to the content of dialog to have this height:
+		height = popup dialog height - 13.0rem
+In your case, your popup has a height of 25.0rem so this container should have the height of 25.0 - 13.0 = 12.0rem
+However this would change if you decide to add a subtitle or a tab bar to your popup 
+*/
+.camp-screen .ui-control.popup-dialog .change-preset-name-container
+{
+	width: 100%;
+	height: 12.0rem; 
+	padding-left: 0.6rem;
+	padding-right: 0.6rem;
+	position: relative;
+	float: left;
+}
+
+.camp-screen .ui-control.popup-dialog .change-preset-name-container .row
+{
+	width: 100%;
+	height: 5.9rem;
+	position: relative;
+	float: left;
+}
+
+.camp-screen .ui-control.popup-dialog .change-preset-name-container .row .label
+{
+	width: 9.0rem;
+	height: 5.9rem;
+	margin-right: 1.0rem;
+	position: relative;
+	float: left;
+
+	line-height: 5.9rem;
+	text-align: right;
+}
+
+.camp-screen .ui-control.popup-dialog .change-preset-name-container .row .l-input
+{
+	width: 30.0rem;
+	height: 4.0rem;
+	margin-top: 1.0rem;
+	margin-bottom: 1.0rem;
+	position: relative;
+	float: left;
 }

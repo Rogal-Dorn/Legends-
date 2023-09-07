@@ -592,7 +592,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Icon = contract.getBanner(),
 				ID = contract.getID(),
 				IsNegotiated = contract.isNegotiated(),
-				DifficultyIcon = contract.getUIDifficultySmall()
+				DifficultyIcon = contract.getUIDifficultySmall(),
+				CategoryIcon = contract.getUICategoryIcon(),
+				Alignment = ::Legends.Mod.ModSettings.getSetting("ContractCategoryIconAlignment").getValue().tolower()
 			};
 			result.Contracts.push(c);
 		}
@@ -738,7 +740,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 				Icon = contract.getBanner(),
 				ID = contract.getID(),
 				IsNegotiated = contract.isNegotiated(),
-				DifficultyIcon = contract.getUIDifficultySmall()
+				DifficultyIcon = contract.getUIDifficultySmall(),
+				CategoryIcon = contract.getUICategoryIcon(),
+				Alignment = ::Legends.Mod.ModSettings.getSetting("ContractCategoryIconAlignment").getValue().tolower()
 			};
 			result.Contracts.push(c);
 		}

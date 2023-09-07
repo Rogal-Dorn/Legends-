@@ -18,8 +18,14 @@ this.legend_hunting_coven_leader_action <- this.inherit("scripts/factions/factio
 			return;
 		}
 
-		if (!_faction.isReadyForContract())
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_hunting_coven_leader_contract))
 		{
+			return;
+		}
+
+		// For noble faction
+		if (!_faction.isReadyForContract())		{
 			return;
 		}
 

@@ -24,6 +24,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
 		this.m.Name = "Brigand Army (Legendary)";
+		this.m.Description = "Rumours of a brigand army have disturbed locals and their lords. Investigate and take out their supposed army.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
 
@@ -326,7 +327,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 
 					foreach( bro in bros )
 					{
-						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_trader_commander" || bro.getBackground().getID() == "background.legend_assassin_commander" || bro.getBackground().getID() == "background.legend_assassin" || bro.getBackground().getID() == "background.female_thief" || bro.getSkills().hasSkill("perk.legend_bribe"))
+						if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.legend_trader_commander" || bro.getBackground().getID() == "background.legend_assassin_commander" || bro.getBackground().getID() == "background.legend_assassin" || bro.getSkills().hasSkill("perk.legend_bribe"))
 						{
 							candidates.push(bro);
 						}

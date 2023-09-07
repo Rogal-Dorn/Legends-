@@ -55,14 +55,6 @@ this.conquered_situation <- this.inherit("scripts/entity/world/settlements/situa
 			_draftList.push("legend_puppet_background");
 		}
 
-		if (_gender)
-		{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_thief_background");
-		}
-
 	}
 
 });

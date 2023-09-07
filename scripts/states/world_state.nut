@@ -381,7 +381,16 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);
+				if (this.World.Camp.isCamping())
+				{
+					local updates = ["(Press Spacebar)"];
+					updates.extend(this.World.Camp.getCampingUpdateText());
+					this.World.TopbarDayTimeModule.showMessage("ENCAMPED\n(PAUSED)", updates);		
+				}
+				else
+				{
+					this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);	
+				}
 			}
 		}
 
@@ -1639,7 +1648,12 @@ this.world_state <- this.inherit("scripts/states/state", {
 				else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
 				{
 					this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
-					
+
+					if (this.World.Statistics.getFlags().has("LastCombatSavedCaravanProduce") && typeof this.World.Statistics.getFlags().get("LastCombatSavedCaravanProduce") != "string")
+					{
+						this.World.Statistics.getFlags().remove("LastCombatSavedCaravanProduce");
+					}
+
 					if (party.getStashInventory().getItems().len() != 0)
 					{
 						local prefix = "scripts/items/";

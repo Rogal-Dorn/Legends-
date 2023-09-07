@@ -17,6 +17,14 @@ this.legend_hunting_skin_ghouls_action <- this.inherit("scripts/factions/faction
 			return;
 		}
 
+		
+		// For settlement faction
+		if (_faction.getType()==this.Const.FactionType.Settlement && !_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_hunting_skin_ghouls_contract))
+		{
+			return;
+		}
+
+		// For noble faction
 		if (!_faction.isReadyForContract())
 		{
 			return;

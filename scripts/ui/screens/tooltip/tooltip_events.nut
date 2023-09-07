@@ -1057,6 +1057,21 @@ this.tooltip_events <- {
 
 			if (!player.hasPerk(_perkId))
 			{
+				if ("HasUnactivatedPerkTooltipHints" in perk && perk.HasUnactivatedPerkTooltipHints)
+				{
+					// Allow Perks to push Tooltip elements that will be displayed when the user views the Tooltips of unactivated Perks in the Perk screen
+					local tempContainer = this.new("scripts/skills/skill_container");
+					local tempPerk = this.new(perk.Script); // Need to instantiate a dummy perk because the player character's perk tree doesn't hold actual perks
+					tempPerk.m.IsForPerkTooltip=true; // onAdded() can check for this so it doesn't do anything when the dummy perk is added to the dummy skill container
+					tempContainer.setActor(player); // Associate the player character to the dummy container so that the dummy perk can read the character's data
+					tempContainer.add(tempPerk);
+					local perkHints = tempPerk.getUnactivatedPerkTooltipHints(); // get the additional hints (these will be capable of using the character's data)
+					if (perkHints != null && perkHints.len()>0)
+					{
+						ret.extend(perkHints);
+					}
+				}
+
 				if (player.getPerkPointsSpent() >= perk.Unlocks)
 				{
 					if (player.getPerkPoints() == 0)
@@ -1095,7 +1110,7 @@ this.tooltip_events <- {
 		return null;
 	}
 
-	function general_queryUIElementTooltipData( _entityId, _elementId, _elementOwner )
+	function general_queryUIElementTooltipData(_entityId, _elementId, _elementOwner )
 	{
 		local entity;
 
@@ -1175,7 +1190,7 @@ this.tooltip_events <- {
 				{
 					dailyMoney -= (10 + bro.getLevel());
 				}
-				
+
 				local L = [
 					bro.getDailyCost(),
 					bro.getName(),
@@ -1470,6 +1485,41 @@ this.tooltip_events <- {
 					text = desc
 				}
 			];
+
+			local dailyTools = 0;
+			local toolsMult = 0.0;
+			local brolist = [];
+			local tools = 1;
+
+			foreach( bro in this.World.getPlayerRoster().getAll() )
+			{
+
+				if (bro.getSkills().hasSkill("perk.legend_tools_spares"))
+				{
+					tools = tools - (tools * 0.06); //6%, as it is on this perk above
+					toolsMult += 6;
+				}
+				if (bro.getSkills().hasSkill("perk.legend_tools_drawers"))
+				{
+					tools = tools - (tools * 0.04); //4%, as it is on this perk above
+					toolsMult += 4;
+				}
+
+			}
+
+				ret.push({
+					id = 3,
+					type = "hint",
+					icon = "ui/icons/asset_supplies.png",
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + toolsMult + "%[/color] Reduction Multplier"
+				});
+				ret.push({
+					id = 4,
+					type = "hint",
+					icon = "ui/icons/asset_supplies.png",
+					text = 	" [color=" + this.Const.UI.Color.PositiveValue + "]" + tools * 100 + "%[/color] Tool usage percent out"
+				});
+
 			return ret;
 
 		case "repairs.Supplies":
@@ -3845,48 +3895,105 @@ this.tooltip_events <- {
 			];
 
 		case "world-town-screen.main-dialog-module.Contract":
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "Contract available"
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "description",
-					text = "Someone is looking to hire mercenaries."
+					text = contract.getDescription()
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 4,
+						type = "hint",
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractNegotiated":
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "Contract available"
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "description",
+					text = contract.getDescription()
+				},
+				{
+					id = 3,
+					type = "hint",
 					text = "The terms of this contract have been negotiated. All that\'s left is for you to sign it."
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 4,
+						type = "hint",
+						divider = "top", // the options are: "top" / "bottom" / "both". Works only for type = "hint"
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractDisabled":
+
+
+			local contract = this.World.Contracts.getContractByID(_elementOwner);
+
 			local ret = [
 				{
 					id = 1,
 					type = "title",
-					text = "You already have a contract!"
+					text = contract.getName()
 				},
 				{
 					id = 2,
 					type = "description",
+					text = contract.getDescription()
+				},
+				{
+					id = 3,
+					type = "hint",
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "]You already have a contract![/color]"
+				},
+				{
+					id = 4,
+					type = "hint",
 					text = "You can only have one contract active at a time. Contract offers will remain while you fulfill your current contract, as long as the problem doesn\'t go away in the meantime."
 				}
 			];
+			if (contract.getCategory() != "")
+			{
+				ret.push(
+					{
+						id = 5,
+						type = "hint",
+						divider = "top",
+						text = "Contract Category: [color=" + this.Const.UI.Color.PositiveValue + "]" + contract.getCategory() + "[/color]"
+					}
+				);
+			}
 			return ret;
 
 		case "world-town-screen.main-dialog-module.ContractLocked":

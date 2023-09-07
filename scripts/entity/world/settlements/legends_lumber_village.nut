@@ -203,28 +203,13 @@ this.legends_lumber_village <- this.inherit("scripts/entity/world/settlements/le
 			"legend_inventor_background"
 		]];
 		this.m.FemaleDraftLists = [[
-			"wildwoman_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
-			"female_butcher_background",
-			"female_daytaler_background",
-			"female_tailor_background"
+			"wildwoman_background"
 		],[
-			"wildwoman_background",
-			"female_beggar_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
-			"female_daytaler_background",
-			"female_tailor_background",
+			"wildwoman_background"
 		],[
-			"legend_shieldmaiden_background"
-			"female_bowyer_background",
-			"female_bowyer_background",
-			"female_bowyer_background",
-			"female_butcher_background",
-			"female_servant_background",
+			"legend_shieldmaiden_background",
 			"wildwoman_background",
-			"female_disowned_noble_background",
+			"female_disowned_noble_background"
 		]];
 
 		this.m.StablesLists = [[

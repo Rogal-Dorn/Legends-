@@ -18,7 +18,6 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 			"background.cripple",
 			"background.refugee",
 			"background.slave",
-			"background.female_beggar",
 			"background.legend_commander_beggar",
 			"background.legend_commander_beggar_female",
 			"background.legend_commander_beggar_op",

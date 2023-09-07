@@ -76,7 +76,7 @@ this.tailor_werewolf_hide_armor_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && bro.getBackground().getID() == "background.tailor" || bro.getBackground().getID() == "background.female_tailor")
+			if (bro.getLevel() >= 3 && bro.getBackground().getID() == "background.tailor")
 			{
 				candidates.push(bro);
 			}

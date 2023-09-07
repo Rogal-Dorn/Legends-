@@ -28,11 +28,6 @@ this.peat_pit_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("daytaler_background");
 		_list.push("peddler_background");
 
-		if (_gender)
-		{
-		_list.push("female_daytaler_background");
-
-		}
 
 
 	}

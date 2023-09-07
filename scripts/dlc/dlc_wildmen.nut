@@ -50,7 +50,7 @@ if (!("Wildmen" in gt.Const.DLC) || !this.Const.DLC.Wildmen)
 		this.Const.Items.NamedMeleeWeapons.push("weapons/named/named_bardiche");
 		this.Const.Items.NamedMeleeWeapons.push("weapons/named/named_shamshir");
 		this.Const.Items.NamedMeleeWeapons.push("weapons/named/named_battle_whip");
-		this.Const.Items.NamedHelmets.push("helmets/named/norse_helmet");
+		// this.Const.Items.NamedHelmets.push("helmets/named/norse_helmet"); // This doesn't really qualify as a named item
 		this.Const.Items.NamedHelmets.push("helmets/named/named_conic_helmet_with_faceguard");
 		this.Const.Items.NamedHelmets.push("helmets/named/named_nordic_helmet_with_closed_mail");
 		this.Const.Items.NamedHelmets.push("helmets/named/named_steppe_helmet_with_mail");

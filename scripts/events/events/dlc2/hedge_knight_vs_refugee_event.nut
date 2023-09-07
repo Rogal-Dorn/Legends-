@@ -248,7 +248,7 @@ this.hedge_knight_vs_refugee_event <- this.inherit("scripts/events/event", {
 			{
 				refugee_candidates.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.vagabond" || bro.getBackground().getID() == "background.beggar" || bro.getBackground().getID() == "background.female_beggar" || bro.getBackground().getID() == "background.cripple" || bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.ratcatcher")
+			else if (bro.getBackground().getID() == "background.vagabond" || bro.getBackground().getID() == "background.beggar" || bro.getBackground().getID() == "background.cripple" || bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.ratcatcher")
 			{
 				other_candidates.push(bro);
 			}

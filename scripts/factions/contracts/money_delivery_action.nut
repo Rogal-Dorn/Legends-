@@ -11,7 +11,7 @@ this.money_delivery_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.deliver_money_contract))
 		{
 			return;
 		}

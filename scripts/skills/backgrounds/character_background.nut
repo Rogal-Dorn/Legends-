@@ -271,6 +271,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return text;
 	}
 
+	// Deprecated. New approach uses getBackgroundDescriptionTooltip
 	function getBackgroundDescription( _desc )
 	{
 		local text = ""
@@ -372,25 +373,281 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		return text;
 	}
 
+	function getBackgroundDescriptionTooltip( _desc )
+	{
+		local tooltip = []
+
+		if (_desc)
+		{
+			tooltip.extend([
+				{
+					id = 2,
+					type = "description",
+					text = this.m.BackgroundDescription
+				},
+				{
+					id = 3,
+					type = "text",
+					text = this.getPerkBackgroundDescription(this.m.PerkTreeDynamic)
+				}
+			]);
+		}
+
+		local capacities = [
+			{
+				key = "Stash",
+				name = "Inventory Space",
+				icon = "ui/icons/bag_icon.png"
+			},
+			{
+				key = "ArmorParts",
+				name = "Tools and Supplies",
+				icon = "ui/icons/asset_supplies_icon.png"
+			},
+			{
+				key = "Ammo",
+				name = "Ammunition"
+				icon = "ui/icons/asset_ammo_icon.png"
+			},
+			{
+				key = "Meds",
+				name = "Medical Supplies",
+				icon = "ui/icons/asset_medicine_icon.png"
+			}
+		]
+
+		local capacityTitle = true;
+		foreach (c in capacities)
+		{
+			if (this.m.Modifiers[c.key] != 0)
+			{
+				if (capacityTitle)
+				{
+					tooltip.push(
+						{
+							id = 4,
+							type = "hint",
+							text = "[u]Company Capacity[/u]"
+						}
+					);
+					capacityTitle = false;
+				}
+
+				tooltip.push(
+					{
+						id = 4,
+						type = "hint",
+						icon = c.icon,
+						text = c.name + " " + ::Legends.S.colorize("" + ::Legends.S.getSign(this.m.Modifiers[c.key]) + this.Math.abs(this.m.Modifiers[c.key]), this.m.Modifiers[c.key])
+					}
+				);
+			}
+		}
+
+		local skills = [
+			{
+				key = "Healing",
+				name = "Healing",
+				icon = "ui/icons/banner_heal_icon.png"
+			},
+			{
+				key = "Injury",
+				name = "Treating Injuries",
+				icon = "ui/icons/banner_heal_icon.png"
+			},
+			{
+				key = "MedConsumption",
+				name = "Medical Supplies Efficiency"
+				icon = "ui/icons/banner_heal_icon.png"
+			},
+			{
+				key = "Repair",
+				name = "Repairing",
+				icon = "ui/icons/banner_repair_icon.png"
+			},
+			{
+				key = "ToolConsumption",
+				name = "Tools Efficiency",
+				icon = "ui/icons/banner_repair_icon.png"
+			},
+			{
+				key = "Salvage",
+				name = "Salvaging",
+				icon = "ui/icons/banner_scrap_icon.png"
+			},
+			{
+				key = "Crafting",
+				name = "Crafting"
+				icon = "ui/icons/banner_craft_icon.png"
+			},
+			{
+				key = "Scout",
+				name = "Scouting",
+				icon = "ui/icons/banner_scout_icon.png"
+			},
+			{
+				key = "Training",
+				name = "Training",
+				icon = "ui/icons/banner_train_icon.png"
+			},
+			{
+				key = "Fletching",
+				name = "Fletching",
+				icon = "ui/icons/banner_fletch_icon.png"
+			},
+			{
+				key = "Gathering",
+				name = "Gathering Supplies"
+				icon = "ui/icons/banner_gather_icon.png"
+			},
+			{
+				key = "Hunting",
+				name = "Hunting",
+				icon = "ui/icons/banner_hunt_icon.png"
+			},
+			{
+				key = "Enchanting",
+				name = "Enchanting",
+				icon = "ui/icons/banner_enchant_icon.png"
+			},
+			{
+				key = "Barter",
+				name = "Bartering",
+				icon = "ui/icons/banner_rest_icon.png"
+			}
+		]
+
+		local skillsTitle = true;
+		foreach (s in skills)
+		{
+			if (this.m.Modifiers[s.key] != 0)
+			{
+				if (skillsTitle)
+				{
+					tooltip.push(
+						{
+							id = 5,
+							type = "hint",
+							text = "[u]Company Skills[/u]"
+						}
+					);
+					skillsTitle = false;
+				}
+
+				tooltip.push(
+					{
+						id = 5,
+						type = "hint",
+						icon = s.icon,
+						text = s.name + " " + ::Legends.S.colorize("" + ((this.m.Modifiers[s.key] > 0) ? "+" : "-") + (this.m.Modifiers[s.key] * 100) + "%", this.m.Modifiers[s.key])
+					}
+				);
+			}
+		}
+
+		local terrain = [
+			{
+				key = 2,
+				name = "Plains"
+			},
+			{
+				key = 3,
+				name = "Swamps"
+			},
+			{
+				key = 4,
+				name = "Hills"
+			},
+			{
+				key = 5,
+				name = "Forests"
+			},
+			{
+				key = 9,
+				name = "Mountains"
+			},
+			{
+				key = 11,
+				name = "Farmland"
+			},
+			{
+				key = 12,
+				name = "Snow"
+			},
+			{
+				key = 13,
+				name = "Badlands"
+			},
+			{
+				key = 14,
+				name = "Highlands"
+			},
+			{
+				key = 15,
+				name = "Steppes"
+			},
+			{
+				key = 17,
+				name = "Deserts"
+			},
+			{
+				key = 18,
+				name = "Oases"
+			}
+		];
+		local terrainTitle = true;
+		foreach (t in terrain)
+		{
+			if (this.m.Modifiers.Terrain[t.key] != 0)
+			{
+				if (terrainTitle)
+				{
+					tooltip.push(
+						{
+							id = 6,
+							type = "hint",
+							text = "[u]Terrain Movement Modifiers[/u]"
+						}
+					);
+					terrainTitle = false;
+				}
+
+				tooltip.push(
+					{
+						id = 6,
+						type = "hint",
+						icon = "ui/icons/tracking_disabled.png",
+						text = t.name + " " + ::Legends.S.colorize("" + ((this.m.Modifiers.Terrain[t.key] > 0) ? "+" : "-") + (this.m.Modifiers.Terrain[t.key] * 100) + "%", this.m.Modifiers.Terrain[t.key])
+					}
+				);
+			}
+		}
+
+		return tooltip;
+	}
+
 	function getGenericTooltip()
 	{
-		return [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
 				text = this.getName()
-			},
-			{
-				id = 3,
-				type = "description",
-				text =	this.getBackgroundTypes() + "\n"
-			},
-			{
-				id = 5,
-				type = "description",
-				text = this.getBackgroundDescription(true)
 			}
 		];
+
+		if (::Legends.Mod.ModSettings.getSetting("ShowCharacterBackgroundType").getValue())
+		{
+			tooltip.push({
+				id = 2,
+				type = "description",
+				text = this.getBackgroundTypes() + "\n\n"
+			});
+		}
+
+		tooltip.extend(this.getBackgroundDescriptionTooltip(true));
+
+		return tooltip;
 	}
 
 	function getTooltip()
@@ -934,6 +1191,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 					110
 				]
 			};
+		}
+
+		// Modify the stats if being female carries a gameplay effect
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Enabled")
+		{
+			if (this.getContainer().getActor().getGender()==1)
+			{
+				// Female characters trade HP for Fatigue compared to male characters
+				a.Hitpoints[0] -= 10;
+				a.Hitpoints[1] -= 10;
+				a.Stamina[0] += 10;
+				a.Stamina[1] += 10;	
+			}
 		}
 
 		local c = this.onChangeAttributes();
@@ -1609,19 +1879,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 
 	function getBackgroundTypes(){
 
-		local BackgroundType = "";
+		local ret = "";
 
-		foreach (i, name in ::Const.BackgroundTypeName)
+		foreach (type, name in ::Const.BackgroundTypeName)
 		{
-		    if (this.isBackgroundType(::Const.BackgroundType[name]))
+		    if (this.isBackgroundType(::Const.BackgroundType[type]))
 		    {
-		        BackgroundType += name + ", ";
+		        ret += name + ", ";
 		    }
 		}
 
-		if (BackgroundType.len() == 0) return "";
+		if (ret.len() == 0) return "";
 
-		return "Background Type(s): " + BackgroundType.slice(0, BackgroundType.len() - 2);
+		return "[color=" + this.Const.UI.Color.NegativeValue + "]Background Type: " + ret.slice(0, ret.len() - 2) + "[/color]";
 	}
 
 	//0 = Male, 1 = Female, -1 = Either

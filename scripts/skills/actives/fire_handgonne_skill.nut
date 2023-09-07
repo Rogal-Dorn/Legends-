@@ -108,6 +108,17 @@ this.fire_handgonne_skill <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.getContainer().hasSkill("perk.legend_piercing_shot"))
+		{
+			local s = this.getContainer().getSkillByID("perk.legend_piercing_shot");
+			ret.push({
+				id = 6,
+				type = "text",
+				icon = "ui/tooltips/positive.png",
+				text = "Max Range [color=" + this.Const.UI.Color.PositiveValue + "]+" + s.m.BonusRange + "[/color] from " + s.getName()
+			});
+		}
+
 		return ret;
 	}
 

@@ -11,7 +11,7 @@ this.return_item_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.return_item_contract))
 		{
 			return;
 		}

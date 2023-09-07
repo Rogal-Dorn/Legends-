@@ -11,7 +11,7 @@ this.defend_settlement_greenskins_action <- this.inherit("scripts/factions/facti
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract())
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.defend_settlement_greenskins_contract))
 		{
 			return;
 		}

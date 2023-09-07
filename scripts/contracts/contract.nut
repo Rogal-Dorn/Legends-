@@ -3,6 +3,7 @@ this.contract <- {
 		ID = 0,
 		Type = "",
 		Name = "",
+		Description = "",
 		Faction = 0,
 		EmployerID = 0,
 		Home = null,
@@ -58,6 +59,11 @@ this.contract <- {
 		MakeAllSpawnsResetOrdersOnceDiscovered = false,
 		MakeAllSpawnsResetOrdersOnContractEnd = true
 	},
+	function getDescription()
+	{
+		return this.m.Description;
+	}
+
 	function getID()
 	{
 		return this.m.ID;

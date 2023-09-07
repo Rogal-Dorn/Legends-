@@ -6,7 +6,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		this.m.ID = "background.female_disowned_noble";
 		this.m.Name = "Disowned noblewoman";
 		this.m.Icon = "ui/backgrounds/background_08.png";
-		this.m.BackgroundDescription = "Disowned nobles often have profited from some training in melee fighting at court.";
+		this.m.BackgroundDescription = "Disowned nobles often have profited from some training in ranged warfare at court.";
 		this.m.GoodEnding = "A noble at heart, the disowned nobleman %name% returned to her family. Word has it she kicked in the doors and demanded a royal seat. An usurper challenged her in combat and, well, %name% learned a lot in her days with the %companyname% and she now sits on a very, very comfortable throne.";
 		this.m.BadEnding = "A woman of nobility at heart, %name% the disowned noble returned to her family home. Word has it an usurper arrested her at the gates. Her head currently rests on a pike with crows for a crown.";
 		this.m.HiringCost = 160;
@@ -61,9 +61,6 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 		}
 	}
 
-
-
-
 	function onBuildDescription()
 	{
 		return "{A constant disappointment to a delusional father | A victim of court intrigue involving poison and cake | After openly denouncing her own heritage | After an incestous relationship with her brother came to light | After a coup to dispose her older sister failed | After pride and hubris had her leading her father\'s army to total defeat | For accidentally killing her oldest brother and heir to the throne on a hunt | As a price to be paid for choosing her allies poorly in a war of succession | For attempting to sell captured poachers as slaves | Caught bedding a fellow noblewoman | Discovered to be the head of a child stealing plot that shocked the peasantry | For turning her back on the gods and causing a riot amongst the laymen | Seen with the cultists\' book of Davkul tucked under an arm}, %name% {was disowned and cast away from her family\'s estate, never to return. | was stripped of her titles and exiled from the land. | was forcibly removed from her land and told never to return. | came to see, by the threat of an executioner\'s axe, that she no longer belonged in the court. | saw the hangman\'s noose, and only by a clever ploy did she slip it. | was branded with the symbol of shame and cast out from her lands. | was believed to have been involved in one too many conspiracies and was removed from the lands. | was seen as being too ambitious, a dangerous trait amongst the nobility.} {%name% now seeks to redeem herself and live up to the family name. A bit selfish for a mercenary outfit, noble nonetheless. | Her posture slumped by scandal, %name%\'s resistance to difficulties has diminished. | A skilled fighter she may be, but %name% rarely talks about anyone but herself. | Though quick with a sword, you get the feeling someone like %name% was disowned for a reason. | Down on her luck and essentially broke, %name% ventures in the field of sellswords. | Without title or land, %name% seeks to join the sort of men she used to lord over. | Well-geared this former noble may be, you do notice that the most used piece of equipment %name% has are her boots.}";
@@ -73,7 +70,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 	{
 		local c = {
 			Hitpoints = [
-				-7,
+				3,
 				-2
 			],
 			Bravery = [
@@ -81,7 +78,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				-1
 			],
 			Stamina = [
-				5,
+				-10,
 				-5
 			],
 			MeleeSkill = [

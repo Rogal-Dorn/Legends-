@@ -81,7 +81,6 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].setStartValuesEx([
 			"vagabond_background",
 			"thief_background",
-			"female_thief_background",
 			"gambler_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "You notice that %name% hides from certain noblemen. It is likely that they are a common criminal at large for some petty crime, but so long as they fight well it is no business to you.";
