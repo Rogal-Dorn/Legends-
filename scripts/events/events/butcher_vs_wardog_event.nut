@@ -49,7 +49,7 @@ this.butcher_vs_wardog_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.butcher" || bro.getBackground().getID() == "background.female_butcher")
+			if (bro.getBackground().getID() == "background.butcher")
 			{
 				candidates.push(bro);
 			}

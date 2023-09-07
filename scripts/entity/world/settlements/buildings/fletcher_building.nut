@@ -249,10 +249,6 @@ this.fletcher_building <- this.inherit("scripts/entity/world/settlements/buildin
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("bowyer_background");
-		if (_gender)
-		{
-			_list.push("female_bowyer_background");
-		}
 
 	}
 

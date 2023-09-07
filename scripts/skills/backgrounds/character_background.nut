@@ -1193,6 +1193,19 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			};
 		}
 
+		// Modify the stats if being female carries a gameplay effect
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Enabled")
+		{
+			if (this.getContainer().getActor().getGender()==1)
+			{
+				// Female characters trade HP for Fatigue compared to male characters
+				a.Hitpoints[0] -= 10;
+				a.Hitpoints[1] -= 10;
+				a.Stamina[0] += 10;
+				a.Stamina[1] += 10;	
+			}
+		}
+
 		local c = this.onChangeAttributes();
 		a.Hitpoints[0] += c.Hitpoints[0];
 		a.Hitpoints[1] += c.Hitpoints[1];

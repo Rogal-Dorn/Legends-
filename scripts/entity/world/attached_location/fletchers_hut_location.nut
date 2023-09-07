@@ -84,12 +84,6 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 		_list.push("poacher_background");
 		_list.push("poacher_background");
 		_list.push("witchhunter_background");
-
-		if (_gender)
-		{
-			_list.push("female_bowyer_background");
-			_list.push("female_bowyer_background");
-		}
 	}
 
 	function onUpdateShopList( _id, _list )

@@ -116,12 +116,6 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("peddler_background");
 		_list.push("daytaler_background");
 
-		if (_gender)
-		{
-		_list.push("female_daytaler_background");
-
-		}
-
 	}
 
 	function onUpdateShopList( _id, _list )

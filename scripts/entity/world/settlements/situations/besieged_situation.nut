@@ -64,12 +64,6 @@ this.besieged_situation <- this.inherit("scripts/entity/world/settlements/situat
 		_draftList.push("deserter_background");
 		_draftList.push("militia_background");
 
-		if (_gender)
-		{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		}
-
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{
 			_draftList.push("legend_puppet_background");

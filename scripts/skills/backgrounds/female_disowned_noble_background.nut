@@ -70,7 +70,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 	{
 		local c = {
 			Hitpoints = [
-				-7,
+				3,
 				-2
 			],
 			Bravery = [
@@ -78,7 +78,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				-1
 			],
 			Stamina = [
-				5,
+				-10,
 				-5
 			],
 			MeleeSkill = [

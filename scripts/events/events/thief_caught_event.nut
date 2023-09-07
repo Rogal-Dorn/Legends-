@@ -282,7 +282,7 @@ this.thief_caught_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.beggar"  || bro.getBackground().getID() == "background.female_beggar")
+					if (bro.getBackground().getID() == "background.refugee" || bro.getBackground().getID() == "background.beggar" )
 					{
 						if (bro.getSkills().hasSkill("trait.bloodthirsty"))
 						{

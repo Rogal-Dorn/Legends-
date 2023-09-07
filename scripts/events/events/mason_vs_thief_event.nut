@@ -74,7 +74,7 @@ this.mason_vs_thief_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
+			if (bro.getBackground().getID() == "background.thief")
 			{
 				thief_candidates.push(bro);
 			}

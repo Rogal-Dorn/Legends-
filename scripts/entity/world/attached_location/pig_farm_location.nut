@@ -75,12 +75,6 @@ this.pig_farm_location <- this.inherit("scripts/entity/world/attached_location",
 		_list.push("farmhand_background");
 		_list.push("anatomist_background");
 		_list.push("legend_taxidermist_background");
-		if (_gender)
-		{
-		_list.push("female_daytaler_background");
-		_list.push("female_farmhand_background");
-
-		}
 	}
 
 	function onUpdateShopList( _id, _list )

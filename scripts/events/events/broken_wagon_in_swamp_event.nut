@@ -97,10 +97,6 @@ this.broken_wagon_in_swamp_event <- this.inherit("scripts/events/event", {
 			{
 				candidates.push(bro);
 			}
-			if (bro.getBackground().getID() == "background.female_butcher")
-			{
-				candidates.push(bro);
-			}
 		}
 
 		if (candidates.len() != 0)

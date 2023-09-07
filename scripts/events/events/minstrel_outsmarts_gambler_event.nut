@@ -56,7 +56,7 @@ this.minstrel_outsmarts_gambler_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
+			if (bro.getBackground().getID() == "background.minstrel")
 			{
 				candidates_minstrel.push(bro);
 			}

@@ -135,10 +135,6 @@ this.legends_assassin_scenario <- this.inherit("scripts/scenarios/world/starting
 		this.addBroToRoster(_roster, "assassin_southern_background", 11);
 		this.addBroToRoster(_roster, "legend_bounty_hunter_background", 11); // Increased this since it is seemingly much stronger than standard assassins.
 		this.addBroToRoster(_roster, "thief_background", 7);
-		if (_gender)
-		{
-			this.addBroToRoster(_roster, "female_thief_background", 7);
-		}
 		this.addBroToRoster(_roster, "killer_on_the_run_background", 7);
 
 	}
