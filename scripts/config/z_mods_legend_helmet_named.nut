@@ -590,7 +590,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 		],
 		Vanity = [
 			[5, ""],
-			[3, "vanity/legend_faction_helmet"],
+			[3, "vanity/legend_helmet_faction_helmet"],
 			[1, "vanity/legend_helmet_wreath"],
 			[5, "vanity/legend_helmet_plait"],
 			[3, "vanity/legend_helmet_feather_band"],
