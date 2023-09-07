@@ -195,7 +195,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
-			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
+			local boolean = bro.getSkills().hasSkill("background.miller") || bro.getSkills().hasSkill("background.butcher")  || bro.getSkills().hasSkill("background.cannibal");
 
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
@@ -251,7 +251,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
-			local boolean = bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal");
+			local boolean = bro.getSkills().hasSkill("background.miller") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.cannibal");
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
 			    if(this.getUpgraded()){

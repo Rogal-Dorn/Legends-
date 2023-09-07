@@ -52,15 +52,6 @@ this.good_harvest_situation <- this.inherit("scripts/entity/world/settlements/si
 		_draftList.push("miller_background");
 		_draftList.push("miller_background");
 		_draftList.push("legend_herbalist_background");
-
-		if (_gender)
-		{
-		_draftList.push("female_farmhand_background");
-		_draftList.push("female_farmhand_background");
-		_draftList.push("female_miller_background");
-		_draftList.push("female_miller_background");
-
-		}
 	}
 
 });

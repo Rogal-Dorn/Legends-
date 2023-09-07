@@ -242,14 +242,6 @@ this.harbor_location <- this.inherit("scripts/entity/world/attached_location", {
 		}
 		_list.push("fisherman_background");
 		_list.push("fisherman_background");
-		if (_gender)
-		{
-		_list.push("female_butcher_background");
-		_list.push("female_butcher_background");
-
-		}
-
-
 
 	}
 

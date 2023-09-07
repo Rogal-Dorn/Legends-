@@ -52,7 +52,6 @@ this.beekeeper_location <- this.inherit("scripts/entity/world/attached_location"
 		if (_gender)
 		{
 			_list.push("legend_nun_background");
-			_list.push("female_farmhand_background");
 		}
 	}
 

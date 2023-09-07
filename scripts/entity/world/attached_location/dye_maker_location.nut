@@ -27,10 +27,6 @@ this.dye_maker_location <- this.inherit("scripts/entity/world/attached_location"
 		_list.push("apprentice_background");
 		_list.push("caravan_hand_background");
 		_list.push("tailor_background");
-		if (_gender)
-		{
-			_list.push("female_tailor_background");
-		}
 
 	}
 

@@ -139,10 +139,6 @@ this.rebuilding_effort_situation <- this.inherit("scripts/entity/world/settlemen
 
 			_draftList.push("legend_inventor_background");
 
-			if (_gender)
-			{
-				_draftList.push("female_daytaler_background");
-			}
 
 
 			if(this.LegendsMod.Configs().LegendMagicEnabled())

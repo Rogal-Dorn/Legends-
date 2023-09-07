@@ -51,15 +51,6 @@ this.preparing_feast_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("servant_background");
 		_draftList.push("eunuch_background");;
 
-		if (_gender)
-		{
-		_draftList.push("female_servant_background");
-		_draftList.push("female_servant_background");
-		_draftList.push("female_servant_background");
-		_draftList.push("female_butcher_background");
-		_draftList.push("female_butcher_background");
-
-		}
 
 	}
 

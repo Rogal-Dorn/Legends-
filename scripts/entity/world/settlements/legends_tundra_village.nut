@@ -199,29 +199,13 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 		]];
 
 		this.m.FemaleDraftLists = [[
-			"wildwoman_background",
-			"female_daytaler_background",
-			"female_daytaler_background",
-			"female_farmhand_background",
-			"female_tailor_background",
+			"wildwoman_background"
 		],[
-			"wildwoman_background",
-			"female_beggar_background",
-			"female_bowyer_background",
-			"female_butcher_background",
-			"female_daytaler_background",
-			"female_minstrel_background",
-			"female_tailor_background",
-			"female_thief_background",
+			"wildwoman_background"
 		],[
 			"legend_shieldmaiden_background",
-			"female_beggar_background",
-			"female_daytaler_background",
-			"female_daytaler_background",
-			"female_tailor_background",
-			"female_thief_background",
 			"wildwoman_background",
-			"female_disowned_noble_background",
+			"female_disowned_noble_background"
 		]];
 		this.m.StablesLists = [[],[],[]];
 		this.m.Rumors = this.Const.Strings.RumorsTundraSettlement;

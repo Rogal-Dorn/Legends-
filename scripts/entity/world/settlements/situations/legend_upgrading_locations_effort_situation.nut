@@ -78,10 +78,6 @@ this.legend_upgrading_locations_effort_situation <- this.inherit("scripts/entity
 
 			_draftList.push("legend_inventor_background");
 
-			if (_gender)
-			{
-				_draftList.push("female_daytaler_background");
-			}
 		}
 
 		_draftList.push("legend_blacksmith_background");
