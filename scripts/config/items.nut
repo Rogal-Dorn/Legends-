@@ -174,7 +174,7 @@ gt.Const.Items.NamedHelmets <- [
 	// "helmets/named/golden_feathers_helmet",
 	"helmets/named/heraldic_mail_helmet",
 	"helmets/named/nasal_feather_helmet",
-	"helmets/named/sallet_green_helmet",
+	//"helmets/named/sallet_green_helmet",
 	"helmets/named/wolf_helmet",
 	"helmets/named/legend_frogmouth_helm_crested_painted",
 	"helmets/named/legend_frogmouth_helm_decorated",
