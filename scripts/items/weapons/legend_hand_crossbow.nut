@@ -39,7 +39,6 @@ this.legend_hand_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 40;
 		this.m.ArmorDamageMult = 0.4;
 		this.m.DirectDamageMult = 0.5;
-		
 	}
 
 	function getAmmoID()
@@ -67,16 +66,14 @@ this.legend_hand_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
+
 		this.addSkill(this.new("scripts/skills/actives/shoot_bolt"));
 		this.addSkill(this.new("scripts/skills/actives/legend_piercing_bolt"));
-
 
 		if (!this.m.IsLoaded)
 		{
 			this.addSkill(this.new("scripts/skills/actives/reload_bolt"));
 		}
-
-
 	}
 
 	function onCombatFinished()
