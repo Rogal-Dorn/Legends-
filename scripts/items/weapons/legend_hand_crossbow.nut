@@ -67,8 +67,8 @@ this.legend_hand_crossbow <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 
-		this.addSkill(this.new("scripts/skills/actives/shoot_bolt_offhand"));
-		this.addSkill(this.new("scripts/skills/actives/legend_piercing_bolt_offhand"));
+		this.addSkill(this.new("scripts/skills/actives/shoot_bolt"));
+		this.addSkill(this.new("scripts/skills/actives/legend_piercing_bolt"));
 
 		if (!this.m.IsLoaded)
 		{
