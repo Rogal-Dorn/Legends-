@@ -1,5 +1,13 @@
 this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		AdditionalAccuracy = 15,
+		AdditionalHitChance = -3
+	},
+	function onItemSet()
+	{
+		this.m.MaxRange = this.m.Item.getRangeMax();
+	}
+
 	function create()
 	{
 		this.m.ID = "actives.legend_piercing_bolt";
@@ -59,27 +67,14 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = local ret = this.getRangedTooltip(this.getDefaultTooltip());
 		ret.push({
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "If the bolt hits its target, it will continue through and damage any target behind, dealing 50% damage."
 		});
-
-		ret.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/vision.png",
-			text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
-		});
-
-		ret.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/hitchance.png",
-			text = "Has [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit, and [color=" + this.Const.UI.Color.NegativeValue + "]-3%[/color] per tile of distance"
-		});
+		
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
@@ -150,7 +145,6 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-
 	function consumeAmmo()
 	{
 		local item = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Ammo);
@@ -166,7 +160,6 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
 	}
-
 
 	function onUse( _user, _targetTile )
 	{
@@ -246,9 +239,19 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.RangedSkill += 15;
-			_properties.HitChanceAdditionalWithEachTile -= 3;
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
+
+			if (_properties.IsSharpshooter)
+			{
+				_properties.DamageDirectMult += 0.05;
+			}
 		}
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("actives.reload_bolt");
 	}
 
 });
