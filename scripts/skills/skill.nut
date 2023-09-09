@@ -920,6 +920,38 @@ this.skill <- {
 	{
 	}
 
+	function factoringOffhandBonuses( _properties )
+	{
+		this.removeMainhandBonuses(_properties);
+		this.addOffhandBonuses(_properties);
+	}
+
+	function removeMainhandBonuses( _properties )
+	{
+		local mainhand = this.getContainer().getActor().getMainhandItem();
+
+		if (mainhand == null) return;
+
+		_properties.DamageRegularMin -= mainhand.m.RegularDamage;
+		_properties.DamageRegularMax -= mainhand.m.RegularDamageMax;
+		_properties.DamageArmorMult /= mainhand.m.ArmorDamageMult;
+		_properties.DamageDirectAdd -= mainhand.m.DirectDamageAdd;
+		_properties.HitChance[this.Const.BodyPart.Head] -= mainhand.m.ChanceToHitHead;
+	}
+
+	function addOffhandBonuses( _properties )
+	{
+		local offhand = this.getContainer().getActor().getOffhandItem();
+
+		if (offhand == null) return;
+
+		_properties.DamageRegularMin += offhand.m.RegularDamage;
+		_properties.DamageRegularMax += offhand.m.RegularDamageMax;
+		_properties.DamageArmorMult *= offhand.m.ArmorDamageMult;
+		_properties.DamageDirectAdd += offhand.m.DirectDamageAdd;
+		_properties.HitChance[this.Const.BodyPart.Head] += offhand.m.ChanceToHitHead;
+	}
+
 	function onCombatStarted()
 	{
 	}
