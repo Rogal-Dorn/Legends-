@@ -552,11 +552,15 @@ this.weapon <- this.inherit("scripts/items/item", {
 	function onUpdateProperties( _properties )
 	{
 		_properties.Stamina += this.m.StaminaModifier;
-		_properties.DamageRegularMin += this.m.RegularDamage;
-		_properties.DamageRegularMax += this.m.RegularDamageMax;
-		_properties.DamageArmorMult *= this.m.ArmorDamageMult;
-		_properties.DamageDirectAdd += this.m.DirectDamageAdd;
-		_properties.HitChance[this.Const.BodyPart.Head] += this.m.ChanceToHitHead;
+
+		if (this.m.SlotType == this.Const.ItemSlot.Mainhand)
+		{
+			_properties.DamageRegularMin += this.m.RegularDamage;
+			_properties.DamageRegularMax += this.m.RegularDamageMax;
+			_properties.DamageArmorMult *= this.m.ArmorDamageMult;
+			_properties.DamageDirectAdd += this.m.DirectDamageAdd;
+			_properties.HitChance[this.Const.BodyPart.Head] += this.m.ChanceToHitHead;
+		}
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )
