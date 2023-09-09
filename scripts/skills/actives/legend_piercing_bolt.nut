@@ -67,7 +67,7 @@ this.legend_piercing_bolt <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = local ret = this.getRangedTooltip(this.getDefaultTooltip());
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 		ret.push({
 			id = 5,
 			type = "text",
