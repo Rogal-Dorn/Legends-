@@ -176,10 +176,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.m.StaticRelationsToFaction[this.Const.FactionType.OrientalCityState] = true;
 
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
-		// this.World.Assets.updateLook(8);
-		this.World.State.m.Player.getSprite("body").setBrush("figure_nomad_03"); // World map look, could be 01 (there is no '02')
-		this.World.State.m.Player.getSprite("body").setHorizontalFlipping(true); // Flip world map look
-		this.World.State.m.Player.setSpriteOffset("body", this.createVec(-3, 0)) // x axis, y axis. Postive values move left, negative values move right.
+		this.World.Assets.updateLook(117);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
 		this.Time.scheduleEvent(this.TimeUnit.Real, 1000, function ( _tag )
 		{
