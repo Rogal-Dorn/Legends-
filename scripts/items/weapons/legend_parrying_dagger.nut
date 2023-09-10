@@ -1,6 +1,14 @@
 this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	m = {
-		Variants = []
+		Variants = [],
+
+		// for offhand weapon
+		RegularDamage = 20,
+		RegularDamageMax = 40,
+		ArmorDamageMult = 0.7,
+		DirectDamageMult = 0.2,
+		DirectDamageAdd = 0.0,
+		ChanceToHitHead = 0,
 	},
 	function create()
 	{
@@ -31,11 +39,71 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		this.m.Icon = "weapons/melee/legend_parrying_dagger_0" + this.m.Variant + "_70x70.png";
 	}
 
+	function getTooltip()
+	{
+		local result = this.shield.getTooltip();
+		local find;
+
+		foreach(i, tooltip in result)
+		{
+			if (tooltip.id != 4 || tooltip.type != "progressbar") continue;
+
+			find = i;
+			break;
+		}
+
+		if (find != null)
+		{
+			if (this.m.RegularDamage > 0)
+			{
+				result.insert(find + 1, {
+					id = 4,
+					type = "text",
+					icon = "ui/icons/regular_damage.png",
+					text = "Damage of [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamage + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + this.m.RegularDamageMax + "[/color]"
+				});
+			}
+
+			if (this.m.DirectDamageMult > 0)
+			{
+				result.insert(find + 2, {
+					id = 64,
+					type = "text",
+					icon = "ui/icons/direct_damage.png",
+					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor((this.m.DirectDamageMult + this.m.DirectDamageAdd) * 100) + "%[/color] of damage ignores armor"
+				});
+			}
+
+			if (this.m.ArmorDamageMult > 0)
+			{
+				result.insert(find + 3, {
+					id = 5,
+					type = "text",
+					icon = "ui/icons/armor_damage.png",
+					text = "[color=" + this.Const.UI.Color.DamageValue + "]" + this.Math.floor(this.m.ArmorDamageMult * 100) + "%[/color] effective against armor"
+				});
+			}
+
+			if (this.m.ChanceToHitHead > 0)
+			{
+				result.insert(find + 4, {
+					id = 9,
+					type = "text",
+					icon = "ui/icons/chance_to_hit_head.png",
+					text = "Chance to hit head [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.ChanceToHitHead + "%[/color]"
+				});
+			}
+		}
+
+		return result;
+	}
+
 	function onEquip()
 	{
 		this.shield.onEquip();
+		this.addSkill(this.new("scripts/skills/actives/stab"));
 		this.addSkill(this.new("scripts/skills/actives/legend_en_garde"));
-		this.addSkill(this.new("scripts/skills/actives/puncture_parry_dagger"));
+		this.addSkill(this.new("scripts/skills/actives/puncture"));
 		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
 		// Manually add the effect so that it will be ordered after perks in the skill container instead of before background
 		// Even though this effect is being granted by equipping this weapon, we are adding it this way because of possible future plans to make legend_parrying_effect available not just by equipping this weapon.
@@ -59,8 +127,6 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	{
 		return 0;
 	}
-
-
 
 });
 
