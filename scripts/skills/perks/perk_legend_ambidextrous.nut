@@ -67,6 +67,11 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
+		if (_skill.getID()=="actives.hand_to_hand" && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null)
+		{
+			// Don't execute a follow up attack if you using hand to hand while the mainhand is holding a weapon
+			return;
+		}
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && off == null)
@@ -77,11 +82,23 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				{
 					return;
 				}
-				local attack = this.getContainer().getSkillByID("actives.hand_to_hand");
-				attack.useForFree(_targetTile);
+				local info = {
+					TargetTile = _targetTile
+				};
+				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpHandToHand.bindenv(this), info);
 			}
 		}
 	}
+
+	function executeFollowUpHandToHand( _info )
+	{
+		local attack = this.getContainer().getSkillByID("actives.hand_to_hand");
+		if (attack != null)
+		{
+			attack.useForFree(_info.TargetTile);
+		}
+	}
+
 	function onUpdate( _properties )
 	{
 		local items = this.getContainer().getActor().getItems();

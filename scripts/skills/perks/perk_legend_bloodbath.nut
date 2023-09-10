@@ -41,7 +41,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 				icon = "ui/icons/special.png",
 				text = "There are some characters bleeding, giving a bonus of [color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] to resolve and fatigue"
 			});
-		} else if (bleeders > 0.3)
+		} else
 		{
 			tooltip.push({
 				id = 6,
