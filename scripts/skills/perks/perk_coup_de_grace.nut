@@ -97,7 +97,7 @@ this.perk_coup_de_grace <- this.inherit("scripts/skills/skill", {
 		if (bonus > 0)
 		{
 			_tooltip.push({
-				icon = "ui/tooltips/positive.png",
+				icon = "ui/icons/damage_dealt.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "%[/color] damage from " + this.m.Name
 			});
 
