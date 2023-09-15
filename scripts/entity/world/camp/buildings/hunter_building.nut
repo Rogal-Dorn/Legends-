@@ -133,12 +133,17 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 	function getModifierToolip()
 	{
 		local mod = this.getModifiers();
+		local generator = ::Const.HuntingLoot.getGenerator(::World.State.getPlayer().getTile().Type, this.getUpgraded(), this.getHuntLevel(), this.getCookLevel(), this.getBrewLevel(), this.getAssignedBackgrounds(true));
+		local targets = generator.getEligibleTargets();
+		local difficulty = targets.map(function(t) {return t.Difficulty;});
+		local averageDifficulty = difficulty.reduce(@(p, c) p + c) / difficulty.len();
+		local estimateHuntTime = this.estimateHuntTime(averageDifficulty, mod.Craft);
 		local ret = [
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/buttons/asset_food_up.png",
-				text = "Successful hunt will take approximately [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(100.0 / mod.Craft) + "[/color] hours." //TODO: update this
+				text = "Successful hunt will take approximately [color=" + this.Const.UI.Color.PositiveValue + "]" + ::Math.floor(estimateHuntTime) + "[/color] hours.",
 			}
 		];
 		local id = 6;
@@ -273,9 +278,45 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				continue;
 			}
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ExpertHunter) || c.getBackground().getID() in ::Const.HuntingLoot.ExpertHunterBackgrounds)
+			if (c.getBackground().isBackgroundType(this.Const.BackgroundType.ExpertHunter) || c.getBackground().getID() in ::Const.HuntingLoot.ExpertHunterBackgrounds)
 			{
-				ret[c.getNameOnly()] = c.getBackground().getNameOnly();
+				ret[c.getNameOnly()] <- c.getBackground().getNameOnly();
+			}
+		}
+		return ret;
+	}
+
+	function getCooks()
+	{
+		local ret = {}
+		local roster = ::World.getPlayerRoster().getAll();
+		foreach (c in roster)
+		{
+			if (c.getCampAssignment() != this.m.ID)
+			{
+				continue;
+			}
+			if (c.getBackground().getID() in ::Const.HuntingLoot.CookBackgrounds || c.getSkills().hasSkill("perk.legend_meal_preperation"))
+			{
+				ret[c.getNameOnly()] <- c.getBackground().getNameOnly();
+			}
+		}
+		return ret;
+	}
+
+	function getBrewers()
+	{
+		local ret = {}
+		local roster = ::World.getPlayerRoster().getAll();
+		foreach (c in roster)
+		{
+			if (c.getCampAssignment() != this.m.ID)
+			{
+				continue;
+			}
+			if (c.getBackground().getID() in ::Const.HuntingLoot.CookBackgrounds || c.getSkills().hasSkill("perk.legend_alcohol_brewing"))
+			{
+				ret[c.getNameOnly()] <- c.getBackground().getNameOnly();
 			}
 		}
 		return ret;
@@ -417,7 +458,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// Food
 		res.push({
 			id = 81,
-			text = "Your hunting party brought back " + this.m.FoodAmount + " Food with the following:"
+			text = "Your hunting party brought back " + this.m.FoodAmount + " Food with the following:",
+			divider = "top"
 		});
 
 		foreach (item in this.m.VerboseResults["Food"].Items)
@@ -500,11 +542,14 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local mod = this.getModifiers();
 		local bgs = this.getAssignedBackgrounds(true);
 		local huntLevel = this.getHuntLevel(false);
+		local expertHunters = this.getExpertHunters();
+		local cooks = this.getCooks();
+		local brewers = this.getBrewers();
+		local indent = "<span style=\"display: inline-block; width: 1rem\"></span>";
 
 		ret.push("Hunting points per hour: " + mod.Craft);
 		ret.push("Hunt Tier: " + ::Const.HuntingLoot.getHuntLevelTier(huntLevel));
-		// TODO: show Expert Hunters, Cooks, and Brewers
-		ret.push("Current biome: " + ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]);
+		ret.push("Current biome: <span style=\"color:#0237bd;\">" + ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]) + "</span>";
 
 		local targets = ::Const.HuntingLoot.getBiomeTargetDefs(::World.State.getPlayer().getTile().Type);
 
@@ -530,7 +575,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					{
 						bgNames.push(::Const.HuntingLoot.RequiredBackgrounds[b]);
 					}
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; padding-left: 1rem;\">- Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
+					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
 				}
 
 				if (failed)
@@ -552,7 +597,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				if (!::Const.HuntingLoot.hasSufficientHuntLevelForTier(target,huntLevel))
 				{
 					failed = true;
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; padding-left: 1rem;\">- Requires Hunt Tier " + target.Tier + "</span>");
+					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; padding-left: 2rem;\">Requires Hunt Tier " + target.Tier + "</span>");
 				}
 				
 				// Show required backgrounds if none of the currently assigned characters qualify
@@ -564,7 +609,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 					{
 						bgNames.push(::Const.HuntingLoot.RequiredBackgrounds[b]);
 					}
-					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; padding-left: 1rem;\">- Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
+					requirements.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + "; display: inline-block; padding-left: 2rem;\">Requires " + ::Const.LegendMod.Language.arrayToText(bgNames,"or",false) + "</span>");
 				}
 
 				// Strikethrough the target if the hunting party does not qualify
@@ -584,7 +629,51 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		ret.extend(forageable);
 		ret.push("<u>Huntable</u>");
 		ret.extend(huntable);
-		ret.push("<span style=\"border-bottom: 1px solid\"></span>");
+
+		// Expert Hunters
+		if (expertHunters.len() > 0)
+		{
+			ret.push("<u>Expert Hunters</u>");
+			foreach (name, bg in expertHunters)
+			{
+				ret.push("- " + name + " (" + bg + ")");
+			}	
+		}
+		else
+		{
+			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Expert Hunters</u></span>");
+		}
+		
+
+		// Cooks
+		if (cooks.len() > 0)
+		{
+			ret.push("<u>Cooks</u>");
+			foreach (name, bg in cooks)
+			{
+				ret.push("- " + name + " (" + bg + ")");
+			}
+		}
+		else
+		{
+			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Cooks</u></span>");	
+		}
+
+		// Brewers
+		if (brewers.len() > 0)
+		{
+			ret.push("<u>Brewers</u>");
+			foreach (name, bg in brewers)
+			{
+				ret.push("- " + name + " (" + bg + ")");
+			}			
+		}
+		else
+		{
+			ret.push("<span style=\"color:" + ::Const.UI.Color.NegativeValue + ";\"><u>No Brewers</u></span>");	
+		}
+
+		ret.push("<u>Hunting points contributions per hour</u>");
 
 		return ret;
 	}

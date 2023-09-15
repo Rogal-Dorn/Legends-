@@ -36,6 +36,13 @@
 				ButtonOk = ::MSU.Class.BasicTooltip("Save Preset Name","Save the input name as the current preset slot's custom name and close this pop-up"),
 			},
 		}
+
+		Camping = {
+			ButtonAssignAll = ::MSU.Class.BasicTooltip("Assign All","Assign all mercenaries to the current tent"),
+			ButtonConfigure = ::MSU.Class.BasicTooltip("Configure","Special configurations for the current tent"),
+		}
+
+		Placeholder = ::MSU.Class.BasicTooltip("Placeholder","Under development"),
 		
 	});
 }
