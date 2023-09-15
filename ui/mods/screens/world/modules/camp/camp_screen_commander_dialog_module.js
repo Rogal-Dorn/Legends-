@@ -628,6 +628,15 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 				self.mStatsList.forEach(function (c) {
 					c.remove();
 				});
+				if (res.Info)
+				{
+					res.Info.forEach(function (i) {
+						var text = i;
+						var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+						self.mStatsList.push(stats);
+						self.mStatsContainer.append(stats);
+					})
+				}
 				if ('Modifiers' in res.Modifiers)
 				{
 					res.Modifiers.Modifiers.forEach(function (m) {
