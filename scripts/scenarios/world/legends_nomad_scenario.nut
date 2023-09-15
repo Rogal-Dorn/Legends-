@@ -226,13 +226,13 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onGenerateBro(bro)
 	{
 	}
-
-	function onUpdateHiringRoster( _roster )
+															//What are you doing Steppe-bro?
+	function onUpdateHiringRoster( _roster ) //will be managed in steppe settlements instead now
 	{
-		local bros = _roster.getAll();
-		this.addBroToRoster(_roster, "nomad_background", 4);
-		this.addBroToRoster(_roster, "nomad_ranged_background", 4);
-		this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
+		// local bros = _roster.getAll();
+		// this.addBroToRoster(_roster, "nomad_background", 4);
+		// this.addBroToRoster(_roster, "nomad_ranged_background", 4);
+		// this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
 	}
 });
 
