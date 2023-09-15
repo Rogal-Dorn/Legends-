@@ -29,7 +29,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		], 
 		GuaranteedPerks = [], // this will just be perks and not a tree? rarely do we want guaranteed perks,
 		WeaponsAndTrees = [ // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
-			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100]
+			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100, this.Const.Perks.KnifeClassTree, 75]
 		],
 		BasePower = this.Const.RandomizedPower.Low,
 		PerkPower = this.Const.RandomizedPower.Low
@@ -110,7 +110,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		local idx = this.Math.rand(0, this.m.WeaponsAndTrees.len() - 1)
 		local selection = this.m.WeaponsAndTrees[idx]
-		local test = selection[1].ID;
+		// local test = selection[1].ID;
 		
 		this.m.Items.equip( this.new( selection[0] ) )
 
@@ -119,6 +119,11 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		{
 			pickPerk( this.m.PerkPower,  selection[1].Tree, this.Math.floor(this.m.BasePower / 2))
 			modifyAttributes( selection[1].Attributes )
+		}
+
+		if (selection.len() > 2 && this.Math.rand(0, 99) <= selection[4]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
+		{
+			pickPerk( this.m.PerkPower,  selection[3].Tree, this.Math.floor(this.m.BasePower / 2))
 		}
 	
 	}
