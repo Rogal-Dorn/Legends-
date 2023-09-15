@@ -65,6 +65,29 @@ gt.Const.World.TerrainScript <- [
 	"world.tile.swamp_green",
 	"world.tile.swamp_forest",
 ];
+gt.Const.World.TerrainLocation <- [
+	"at an impassable location",
+	"at sea",
+	"on the plains",
+	"in the swamps",
+	"on the hills",
+	"in the forests",
+	"in the snowy forests",
+	"in the leafy forests",
+	"in the autumn forests",
+	"in the mountains",
+	"in an urban location",
+	"in the farmlands",
+	"in the snow",
+	"in the badlands",
+	"in the tundra",
+	"in the steppes",
+	"by the shores",
+	"in the desert",
+	"in the oasis",
+	"in the green swamps",
+	"in the forested swamps"
+]
 gt.Const.World.TerrainTypeSpeedMult <- [
 	0.0,
 	0.0,

@@ -119,7 +119,7 @@ this.camp_manager <- {
 			{
 				id = 9000,
 				icon = "ui/buttons/icon_time.png",
-				text = "You were encamped for " + this.Math.floor(this.getElapsedHours()) + " hours"
+				text = "You were encamped for " + this.Math.floor(this.getElapsedHours()) + " hours " + ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]
 			}
 		];
 
@@ -250,9 +250,13 @@ this.camp_manager <- {
 			{
 				text = b.update();
 
-				if (text)
+				if (text && typeof text == "string")
 				{
 					updates.push(text);
+				}
+				else if (text && typeof text == "array")
+				{
+					updates.extend(text);
 				}
 			}
 		}
