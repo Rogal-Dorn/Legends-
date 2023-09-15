@@ -305,9 +305,26 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, ""]
 	]
 },
+{
+	ID = "peasant_outfit_00"
+	Body = [
+		[1, "sackcloth"],
+		[1, "thick_tunic"],
+		[1, "apron"],
+		[1, "tattered_sackcloth"],
+		[4, "linen_tunic"]
+	],
+	Helmet = [
+		[2, "straw_hat"],
+		[2, "hood"],
+		[2, "headscarf"],
+		[2, "feathered_hat"],
+		[1, ""]
+	]
+},
 
 
-]);
+]); 
 
 foreach( i, v in gt.Const.LegendMod.OutfitObjs )
 {

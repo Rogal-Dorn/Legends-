@@ -1,13 +1,25 @@
 this.peasant <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
 	m = {
+		Outfits = [
+			[1, "peasant_outfit_00"],
+		]
 		WeaponsAndTrees = [
 			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100],
 			["scripts/items/weapons/pitchfork", this.Const.Perks.PolearmTree, 100],
 			["scripts/items/weapons/wooden_stick", this.Const.Perks.SpearTree, 100],
 			["scripts/items/weapons/pickaxe", this.Const.Perks.HammerTree, 100],
 			["scripts/items/weapons/legend_hammer", this.Const.Perks.HammerTree, 100],
+			["scripts/items/weapons/legend_sickle", this.Const.Perks.SwordTree, 100],
+			["scripts/items/weapons/legend_wooden_pitchfork", this.Const.Perks.PolearmTree, 100],
+			["scripts/items/weapons/legend_scythe", this.Const.Perks.CleaverTree, 100],
+			["scripts/items/weapons/legend_hoe", this.Const.Perks.AxeTree, 100],
+			["scripts/items/weapons/legend_shiv", this.Const.Perks.DaggerTree, 100],
+			["scripts/items/weapons/legend_shovel", this.Const.Perks.MaceTree, 100],
+			["scripts/items/weapons/legend_staff", this.Const.Perks.StaffTree, 100],
+			["scripts/items/weapons/butchers_cleaver", this.Const.Perks.CleaverTree, 100],
 			["scripts/items/weapons/legend_wooden_spear", this.Const.Perks.SpearTree, 100]
-		]
+		],
+		PerkPower = this.Const.RandomizedPower.VeryLow
 	},
 	function create()
 	{
