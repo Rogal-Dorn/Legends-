@@ -29,6 +29,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mTentMap = {};
 	
 	this.mStatsContainer = null;
+	this.mStatsScrollContainer = null;
 	this.mStatsList = [];
 
 	this.mBroListContainer = null;
@@ -179,6 +180,11 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 		}
 	}, '', 6);
 
+	var listContainer = $('<div class="stats-list-container"/>');
+	this.mStatsContainer.append(listContainer);
+	this.mStatsScrollContainer = listContainer.createList(10, '').findListScrollContainer();
+
+	// Footer
 	// Added By Necro
 	// Preset Slot buttons
 	this.mSaveSlotButtonContainer = $('<div class="l-slot-button-container"/>');
@@ -634,7 +640,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 						var text = i;
 						var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
 						self.mStatsList.push(stats);
-						self.mStatsContainer.append(stats);
+						self.mStatsScrollContainer.append(stats);
 					})
 				}
 				if ('Modifiers' in res.Modifiers)
@@ -643,7 +649,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 						var text = m[0].toFixed(2) + "% " + m[1];
 						var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
 						self.mStatsList.push(stats);
-						self.mStatsContainer.append(stats);
+						self.mStatsScrollContainer.append(stats);
 					})				
 				}
 			});			
