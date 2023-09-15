@@ -115,15 +115,16 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Items.equip( this.new( selection[0] ) )
 
 		// IF we happen to pick the weapon perks
-		if (this.Math.rand(0, 99) <= selection[2] - 1)
+		if (selection.len() > 1 && this.Math.rand(0, 99) <= selection[2] - 1)
 		{
 			pickPerk( this.m.PerkPower,  selection[1].Tree, this.Math.floor(this.m.BasePower / 2))
 			modifyAttributes( selection[1].Attributes )
 		}
 
-		if (selection.len() > 2 && this.Math.rand(0, 99) <= selection[4]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
+		if (selection.len() > 3 && this.Math.rand(0, 99) <= selection[4]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
 		{
 			pickPerk( this.m.PerkPower,  selection[3].Tree, this.Math.floor(this.m.BasePower / 2))
+			this.modifyAttributes(this.Const.RandomizedMalus)
 		}
 	
 	}
