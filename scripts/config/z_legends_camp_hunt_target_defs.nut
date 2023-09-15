@@ -51,6 +51,14 @@
 	"background.wildwoman",
 ]
 
+// Cook Backgrounds. No BackgroundType defined at this time
+::Const.HuntingLoot.CookBackgrounds <- [
+	"background.miller",
+	"background.butcher",
+	"background.servant",
+	"background.cannibal",
+]
+
 // Define the various targets that can be hunted / looted
 // TODO: add all the possible targets in the design document
 ::Const.HuntingLoot.TargetDefs <- {

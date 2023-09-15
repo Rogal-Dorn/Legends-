@@ -19,6 +19,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 
 	// popup dialog
     this.mPopupDialog = null;
+    this.mPopupDialogButtons = null;
 
 	//Brother list
 	this.mListContainer = null;
@@ -44,6 +45,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mPresetNameButton = null;
 	this.mSaveButton = null;
 	this.mLoadButton = null;
+	this.mAssignAllButton = null;
 
 	// Added By Necro
 	// number slot buttons
@@ -156,13 +158,14 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	// 1st button (small size), use to assign all bro current tent
 	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
 	tentButtonContainer.append(buttonLayout);
-	var button = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
+	this.mAssignAllButton = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
 		if(self.mSelectedTent !== null) {
 			self.notifyBackendAssignedAll(self.mSelectedTent.data('ID'), function(_load){
 				self.loadFromData(_load);
 			});
 		}
 	}, '', 6);
+	this.mAssignAllButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonAssignAll"});
 	// 2nd button (mid size), tent button
 	var buttonLayout = $('<div class="l-tent-button-175-43"/>');
 	tentButtonContainer.append(buttonLayout);
@@ -179,6 +182,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 			self.notifyBackendConfigureButtonPressed(self.mSelectedTent.data('ID'));
 		}
 	}, '', 6);
+	this.mConfigureButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonConfigure"});
 
 	var listContainer = $('<div class="stats-list-container"/>');
 	this.mStatsContainer.append(listContainer);
@@ -381,6 +385,11 @@ CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
 	this.mPresetNameButton.unbindTooltip();
 	this.mSaveSlotButtons.forEach( function (_slot){
 		_slot.unbindTooltip();
+	});
+	this.mAssignAllButton.unbindTooltip();
+	this.mConfigureButton.unbindTooltip();
+	this.mPopupDialogButtons.forEach( function (_b){
+		_b.unbindTooltip();
 	});
 };
 
@@ -1008,25 +1017,26 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
     var ButtonNames = _data.Buttons;
     var SelectedIndex = _data.CurrentMode;
   	// create: content
-    var createContent = function(_dialog) {
+    var createContent = function(_dialog, _dialogButtons) {
 	    var result = $('<div class="popup-300x600-dialog-content-container"/>');
-	    var buttons = [];
+	    _dialogButtons = [];
 	    for (var i = 0; i < ButtonNames.length; i++) {
 	    	var layout = $('<div class="l-popup-button-175-43"/>');
 	    	result.append(layout);
 	    	var button = layout.createTextButton(ButtonNames[i], function(_button) {
-				self.onSelectButtonInThisArray(buttons, _button.data('ID'));
+				self.onSelectButtonInThisArray(_dialogButtons, _button.data('ID'));
 				self.notifyBackendPopupButtonPressed(_button.data('ID'), _button.data('Func'));
 			}, '', 1);
 			button.data('ID', ButtonNames[i]);
 			button.data('Func', "setMode");
-			buttons.push(button);
+			button.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Placeholder"});
+			_dialogButtons.push(button);
 	    }
-	    buttons[SelectedIndex].enableButton(false);
+	    _dialogButtons[SelectedIndex].enableButton(false);
     	return result;
     };
 
-    this.mPopupDialog.addPopupDialogContent(createContent(this.mPopupDialog));
+    this.mPopupDialog.addPopupDialogContent(createContent(this.mPopupDialog, this.mPopupDialogButtons));
 };
 
 

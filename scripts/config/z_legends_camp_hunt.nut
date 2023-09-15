@@ -66,6 +66,11 @@ if (!("HuntingLoot" in ::Const))
 				}
 			}
 
+			function getEligibleTargets()
+			{
+				return this.Target.toArray(true);
+			}
+
 		};
 
 		local biomeRewards = this.getBiomeRewards(_biome);
