@@ -1,4 +1,4 @@
-this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
+this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", { 
 	m = {
 		Outfits = [
 			[1, "low_tier_unit_catchall_outfit_01"]
@@ -31,8 +31,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		WeaponsAndTrees = [ // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
 			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100]
 		]
-		BasePower = this.Const.RandomizedPower.Low //Generally decides the cap
-		PerkPower = this.m.BasePower, //How much we can purchase with left
+		BasePower = this.Const.RandomizedPower.Low, //Generally decides the cap
+		PerkPower = this.m.BasePower //How much we can purchase with left
 	},
 
 	function onInit() 
