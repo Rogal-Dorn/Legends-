@@ -92,6 +92,15 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			]);
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+		}
+
 		this.m.UIDescription = "An established and thriving settlement in the steppe";
 		this.m.Description = "An established settlement surrounded by the dry and flat lands of the steppe.";
 		this.m.UIBackgroundCenter = "ui/settlements/townhall_02";

@@ -82,6 +82,15 @@ this.large_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			this.m.DraftList.push("beast_hunter_background");
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+		}
+
 		if (this.Const.DLC.Desert)
 		{
 			this.m.DraftList.extend([

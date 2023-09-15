@@ -61,6 +61,18 @@ this.small_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"retired_soldier_background",
 			"retired_soldier_background"
 		];
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+		}
+
 		this.m.StablesList = [
 			"legend_donkey_background",
 			"legend_horse_rouncey"
