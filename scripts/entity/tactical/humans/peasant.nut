@@ -19,6 +19,7 @@ this.peasant <- this.inherit("scripts/entity/tactical/randomized_unit_abstract",
 			["scripts/items/weapons/butchers_cleaver", this.Const.Perks.CleaverTree, 100, this.Const.Perks.ButcherClassTree, 45],
 			["scripts/items/weapons/legend_wooden_spear", this.Const.Perks.SpearTree, 100, this.Const.Perks.MilitiaClassTree, 80]
 		],
+		BasePower = this.Const.RandomizedPower.VeryLow + 1,
 		PerkPower = this.Const.RandomizedPower.VeryLow - 1
 	},
 	function create()
