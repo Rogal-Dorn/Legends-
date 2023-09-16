@@ -1,24 +1,5 @@
 this.caravan_hand <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
 	m = {
-		Outfits = [
-			[1, "caravan_hand_outfit_00"]
-		],
-		WeaponsAndTrees = [
-			["scripts/items/weapons/dagger", this.Const.Perks.DaggerTree, 100, this.Const.Perks.KnifeClassTree, 75],
-			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100, this.Const.Perks.KnifeClassTree, 75],
-			["scripts/items/weapons/wooden_stick", this.Const.Perks.SpearTree, 100, this.Const.Perks.MilitiaClassTree, 75],
-			["scripts/items/weapons/hatchet", this.Const.Perks.AxeTree, 100],
-			["scripts/items/weapons/bludgeon", this.Const.Perks.MaceTree, 100],
-			["scripts/items/weapons/militia_spear", this.Const.Perks.SpearTree, 100, this.Const.Perks.MilitiaClassTree, 75],
-			["scripts/items/weapons/scramasax", this.Const.Perks.CleaverTree, 100],
-			["scripts/items/weapons/shortsword", this.Const.Perks.SwordTree, 100],
-			["scripts/items/weapons/legend_militia_glaive", this.Const.Perks.SpearTree, 100]
-		],
-		GuaranteedPerks = [
-			"scripts/skills/perks/perk_recover"
-		],
-		BasePower = this.Const.RandomizedPower.Low, // Low 'level', slightly lower purchase power
-		PerkPower = this.Const.RandomizedPower.Low - 1
 	},
 	function create()
 	{

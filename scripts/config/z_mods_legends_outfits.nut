@@ -353,6 +353,69 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, "aketon_cap"]
 	]
 },
+{
+	ID = "bandit_poacher_outfit_00"
+	Body = [
+		[20, "leather_wraps"]
+	],
+	Helmet = [
+		[1, "headscarf"],
+		[1, "mouth_piece"]
+	]
+},
+{
+	ID = "bandit_thug_outfit_00"
+	Body = [
+		[15, "leather_wraps"],
+		[15, "thick_tunic"],
+		[15, "monk_robe"],
+		[15, "bandit_armor_light"],
+		[15, "tattered_sackcloth"],
+		[10, "leather_tunic"],
+		[10, "blotched_gambeson"],
+		[10, "ragged_surcoat"],
+		[10, "padded_surcoat"],
+		[10, "gambeson"]
+	],
+	Helmet = [
+		[4, ""],
+		[1, "hood"],
+		[1, "open_leather_cap"],
+		[1, "headscarf"],
+		[1, "mouth_piece"],
+		[1, "full_leather_cap"],
+		[1, "aketon_cap"]
+	]
+},
+{
+	ID = "bandit_rabble_poacher_outfit_00"
+	Body = [
+		[20, "leather_wraps"],
+		[20, "tattered_sackcloth"],
+		[20, "legend_rabble_tunic"],
+		[20, "monk_robe"],
+		[20, "legend_rabble_fur"],
+		[5, ""]
+	],
+	Helmet = [
+		[2, ""],
+		[1, "headscarf"],
+		[1, "mouth_piece"]
+	]
+},
+{
+	ID = "bandit_rabble_outfit_00"
+	Body = [
+		[20, "leather_wraps"],
+		[20, "tattered_sackcloth"],
+		[20, "legend_rabble_tunic"],
+		[20, "monk_robe"],
+		[20, "legend_rabble_fur"]
+	],
+	Helmet = [
+		[1, ""]
+	]
+},
 
 
 ]); 

@@ -1,22 +1,5 @@
 this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
 	m = {
-		Outfits = [
-			[1, "caravan_guard_outfit_00"]
-		],
-		WeaponsAndTrees = [
-			["scripts/items/weapons/hand_axe", this.Const.Perks.AxeTree, 100],
-			["scripts/items/weapons/boar_spear", this.Const.Perks.SpearTree, 100, this.Const.Perks.MilitiaClassTree, 60],
-			["scripts/items/weapons/falchion", this.Const.Perks.SwordTree, 100],
-			["scripts/items/weapons/shortsword", this.Const.Perks.SwordTree, 100],
-			["scripts/items/weapons/arming_sword", this.Const.Perks.SwordTree, 100],
-			["scripts/items/weapons/legend_glaive", this.Const.Perks.SpearTree, 100, this.Const.Perks.MilitiaClassTree, 65],
-		],
-		GuaranteedPerks = [
-			"scripts/skills/perks/perk_recover",
-			"scripts/skills/perks/perk_shield_expert"
-		],
-		BasePower = this.Const.RandomizedPower.Medium, // medium 'level', lower purchase power
-		PerkPower = this.Const.RandomizedPower.Low + 1
 	},
 	function create()
 	{
