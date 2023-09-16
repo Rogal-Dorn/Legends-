@@ -388,9 +388,12 @@ CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
 	});
 	this.mAssignAllButton.unbindTooltip();
 	this.mConfigureButton.unbindTooltip();
-	this.mPopupDialogButtons.forEach( function (_b){
-		_b.unbindTooltip();
-	});
+	if(this.mPopupDialogButtons != null)
+	{
+		this.mPopupDialogButtons.forEach( function (_b){
+			_b.unbindTooltip();
+		});	
+	}
 };
 
 
