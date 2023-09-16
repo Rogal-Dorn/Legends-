@@ -16,8 +16,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			this.Const.Perks.IndestructibleTree,
 			this.Const.Perks.MartyrTree,
 			this.Const.Perks.ViciousTree,
-			this.Const.Perks.DeviousTree,
-			this.Const.Perks.InspirationalTree,
+			// this.Const.Perks.DeviousTree,
+			// this.Const.Perks.InspirationalTree,
 			// this.Const.Perks.IntelligentTree,
 			this.Const.Perks.CalmTree,
 			this.Const.Perks.FastTree,
@@ -37,11 +37,28 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		// PP = How much we can purchase with left
 	},
 
+	//TODO: 
+
+	// EXP based on basepower -> tweak curve, for now it just exists
+	// 		Currently entities will tend to have less exp than they did before
+
+	// Link weapons to the respective trees so we don't have to have individual class trees in each array? (saves retyping it like 30 billion times)
+	// 		Would be inside of a config file, probably the weapon name is a key and the respective tree/classtree are the two values
+	// 		Could also check the weapon type + link weapon type to each tree similarly in a config file? uncertain how or if I want to deal with this
+
+	// Add in chances for shields alongside the weapon tree?
+
+	// Add in a way to see when hovering over a unit what kinds of perks it has? e.g. rolled Huge/Fit/Quick 
+
 	function onInit() 
 	{
 		this.human.onInit();
-		// baseProperties should be set inside of the abstracted unit
-		// local b = this.m.BaseProperties;
+	}
+
+	function create()
+	{
+		this.human.create();
+		this.m.XP = this.m.BasePower * 20;
 	}
 
 	function modifyAttributes( _attributes )
@@ -80,6 +97,18 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignPerks()
 	{
+		// Do guaranteed perks first
+		// I think these should not touch the purchased power, always guaranteed no matter what
+		foreach (p in this.m.GuaranteedPerks)
+		{
+			local pAdd = this.new(p)
+			if (!this.m.Skills.hasSkill(pAdd.getID()))
+			{
+				this.m.Skills.add(pAdd)
+			}
+		}
+
+
 		// do *a* defense perk first
 		// it'll end up picking like 1+ depending on base power, we the rest on traits
 		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1)

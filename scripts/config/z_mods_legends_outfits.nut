@@ -322,6 +322,37 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, ""]
 	]
 },
+{
+	ID = "caravan_guard_outfit_00"
+	Body = [
+		[1, "leather_tunic"],
+		[1, "padded_leather"],
+		[1, "padded_surcoat"],
+		[1, "leather_lamellar"]
+	],
+	Helmet = [
+		[1, "hood"],
+		[1, "full_aketon_cap"],
+		[1, "headscarf"],
+		[1, "nasal_helmet"],
+		[1, "rondel_helm"],
+		[1, "scale_helm"],
+		[1, "padded_nasal_helmet"]
+	]
+},
+{
+	ID = "caravan_hand_outfit_00"
+	Body = [
+		[1, "leather_tunic"],
+		[1, "padded_leather"],
+		[1, "padded_surcoat"],
+		[1, "leather_lamellar"]
+	],
+	Helmet = [
+		[1, "hood"],
+		[1, "aketon_cap"]
+	]
+},
 
 
 ]); 

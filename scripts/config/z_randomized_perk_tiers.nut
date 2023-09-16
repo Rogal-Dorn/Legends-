@@ -9,8 +9,8 @@ gt.Const.RandomizedPower <- {
     VeryHigh = 15,
     ExtraHigh = 18
 };
-
-gt.Const.RandomizedMalus {
+ 
+gt.Const.RandomizedMalus <- {
     Hitpoints = [
         0,
         0
