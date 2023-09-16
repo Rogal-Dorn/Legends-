@@ -1,45 +1,19 @@
 this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", { 
 	m = {
-		Outfits = [
-			[1, "low_tier_unit_catchall_outfit_01"]
-		]
-		// // Default perk lists will have every option available, apart from things that we never want. (Magic)
+		Outfits = [],
 		ClassPerkList = [],  // Virtually always empty?
-		DefensePerkList = [  // Doesn't affect base stats
-			this.Const.Perks.HeavyArmorTree,
-			this.Const.Perks.MediumArmorTree,
-			this.Const.Perks.LightArmorTree,
-			this.Const.Perks.ClothArmorTree
-		],
-		TraitsPerkList = [  
-			this.Const.Perks.AgileTree,
-			this.Const.Perks.IndestructibleTree,
-			this.Const.Perks.MartyrTree,
-			this.Const.Perks.ViciousTree,
-			// this.Const.Perks.DeviousTree,
-			// this.Const.Perks.InspirationalTree,
-			// this.Const.Perks.IntelligentTree,
-			this.Const.Perks.CalmTree,
-			this.Const.Perks.FastTree,
-			this.Const.Perks.LargeTree,
-			this.Const.Perks.OrganisedTree,
-			this.Const.Perks.SturdyTree,
-			this.Const.Perks.FitTree,
-			this.Const.Perks.TrainedTree
-		], 
+		DefensePerkList = [],  // Doesn't affect base stats
+		TraitsPerkList = [],
 		GuaranteedPerks = [], // this will just be perks and not a tree? rarely do we want guaranteed perks,
-		WeaponsAndTrees = [ // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
-			["scripts/items/weapons/knife", this.Const.Perks.DaggerTree, 100, this.Const.Perks.KnifeClassTree, 75]
-		],
-		BasePower = this.Const.RandomizedPower.Low,
-		PerkPower = this.Const.RandomizedPower.Low
-		// BP = Generally decides the cap
-		// PP = How much we can purchase with left
+		WeaponsAndTrees = [], // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
+		LevelRange = [1, 1],
+		EnemyLevel = 1, // our perk tree can buy up to the Level-1 row
+		PerkPower = this.Const.PerkPurchasePower.Low
 	},
 
 	//TODO: 
 
-	// EXP based on basepower -> tweak curve, for now it just exists
+	// EXP based on LevelRange -> tweak curve, for now it just exists
 	// 		Currently entities will tend to have less exp than they did before
 
 	// Link weapons to the respective trees so we don't have to have individual class trees in each array? (saves retyping it like 30 billion times)
@@ -58,7 +32,29 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function create()
 	{
 		this.human.create();
-		this.m.XP = this.m.BasePower * 20;
+
+		local defaultTableImBeingLazy = clone this.Const.RandomizedCharacterInfo["Default"];
+		foreach(k, v in defaultTableImBeingLazy)
+		{
+			this.m[k] = v
+		}
+
+		if (this.m.Type in this.Const.RandomizedCharacterInfo) 
+		{
+			local randEntityTable = clone this.Const.RandomizedCharacterInfo[this.m.Type]
+			foreach(k, v in randEntityTable)
+			{
+				this.m[k] = v
+				this.logWarning("Adding in v: " + v)
+				this.logWarning("For key: " + k)
+				this.logWarning("In entity: " + this.m.Type)
+			}
+		}
+		else {this.logWarning("Entity type didnt exist: " + this.m.Type)}
+		
+
+		this.m.EnemyLevel = this.Math.rand( this.m.LevelRange[0], this.m.LevelRange[1] )
+		this.m.XP = this.m.EnemyLevel * 35;
 	}
 
 	function modifyAttributes( _attributes )
@@ -78,7 +74,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function pickPerk( _purchaseLimit, _tree, _cap = 6)
 	{
 		if (_cap > 6) { _cap = 6 } //idk i'm being lazy below this is fine to do trust me
-		for (local i = 0; i < _cap; i++)
+		for (local i = 0; i <= _cap; i++)
 		{
 			local row = _tree[i]
 			if ( row.len() != 0 && _purchaseLimit > 0) { //if empty we just cont
@@ -113,7 +109,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		// it'll end up picking like 1+ depending on base power, we the rest on traits
 		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1)
 		this.logInfo("Going into our defense perk list with : " + this.m.PerkPower)
-		pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx].Tree, (this.Math.floor(this.m.BasePower / 2) - 1) )
+		pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx].Tree, this.m.EnemyLevel - 1 )
 		// do traits perks second
 		// i'm willing to spend the entirity of perk power in one tree, otherwise we're gonna repeat and remove the perk tree until we exhaust all options
 		while (this.m.PerkPower > 0 && this.m.TraitsPerkList.len() != 0)
@@ -122,7 +118,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			local idx = this.Math.rand(0, this.m.TraitsPerkList.len() - 1)
 			local selectedTree = this.m.TraitsPerkList.remove(idx)
 			modifyAttributes(selectedTree.Attributes)
-			pickPerk(this.m.PerkPower, selectedTree.Tree, (this.Math.floor(this.m.BasePower / 2) - 1) )
+			pickPerk(this.m.PerkPower, selectedTree.Tree, this.m.EnemyLevel - 1 )
 		}
 	}
 
@@ -146,13 +142,13 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		// IF we happen to pick the weapon perks
 		if (selection.len() > 1 && this.Math.rand(0, 99) <= selection[2] - 1)
 		{
-			pickPerk( this.m.PerkPower,  selection[1].Tree, this.Math.floor(this.m.BasePower / 2))
+			pickPerk( this.m.PerkPower,  selection[1].Tree, this.m.EnemyLevel - 1)
 			modifyAttributes( selection[1].Attributes )
 		}
 
 		if (selection.len() > 3 && this.Math.rand(0, 99) <= selection[4]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
 		{
-			pickPerk( this.m.PerkPower,  selection[3].Tree, this.Math.floor(this.m.BasePower / 2))
+			pickPerk( this.m.PerkPower,  selection[3].Tree, this.m.EnemyLevel - 1)
 			this.modifyAttributes(this.Const.RandomizedMalus)
 		}
 	
