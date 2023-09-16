@@ -56,7 +56,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 
 		if (this.Math.rand(1, 100) <= 35)
 		{
-			r = this.Math.rand(1, 2);
+			local r = this.Math.rand(1, 2);
 
 			if (r == 1)
 			{
