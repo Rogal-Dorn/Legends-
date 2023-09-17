@@ -232,5 +232,21 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.addBroToRoster(_roster, "nomad_ranged_background", 4);
 		this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
 	}
+
+	function onAddFactionActions( _trait, _actions)
+	{
+		if ( _trait == ::Const.FactionTrait.OrientalCityState )
+		{
+			// Disable Drive Away Nomads contract for City State factions
+			local i = _actions.find("scripts/factions/contracts/drive_away_nomads_action");
+			if ( i != null )
+			{
+				_actions.remove(i);
+			}
+		}
+
+		return _actions;
+	}
+
 });
 
