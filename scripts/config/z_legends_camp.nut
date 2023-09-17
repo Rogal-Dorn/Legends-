@@ -95,6 +95,16 @@ gt.Const.World.TerrainCampImages <- [
 		Foreground = "ui/settlements/foreground_08",
 		Background = "ui/settlements/camp_bg_10",
 		Mood = "ui/settlements/mood_steppe"
+	},
+	{
+		Foreground = "ui/settlements/foreground_06",
+		Background = "ui/settlements/camp_bg_07",
+		Mood = "ui/settlements/mood_swamp"
+	},
+	{
+		Foreground = "ui/settlements/foreground_06",
+		Background = "ui/settlements/camp_bg_07",
+		Mood = "ui/settlements/mood_swamp"
 	}
 ];
 

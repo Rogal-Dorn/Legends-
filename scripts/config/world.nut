@@ -82,7 +82,7 @@ gt.Const.World.TerrainLocation <- [
 	"in the badlands",
 	"in the tundra",
 	"in the steppes",
-	"by the shores",
+	"by the shore",
 	"in the desert",
 	"in the oasis",
 	"in the green swamps",

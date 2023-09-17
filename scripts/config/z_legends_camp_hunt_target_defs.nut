@@ -1,37 +1,39 @@
 // Unfortunately we have to manually add any backgrounds that are used in TargetDefs, as there's no way to dynamically do it
 // MAKE SURE ANY BACKGROUNDS ADDED IN TargetDefs IS ALSO ADDED HERE
 ::Const.HuntingLoot.RequiredBackgrounds <- {};
-::Const.HuntingLoot.RequiredBackgrounds["background.hunter"] <- "Hunter";
-::Const.HuntingLoot.RequiredBackgrounds["background.poacher"] <-	"Poacher";
-::Const.HuntingLoot.RequiredBackgrounds["background.beast_slayer"] <- "Beast Slayer";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_muladi"] <- "Muladí";
 ::Const.HuntingLoot.RequiredBackgrounds["background.barbarian"] <- "Barbarian";
+::Const.HuntingLoot.RequiredBackgrounds["background.beast_slayer"] <- "Beast Slayer";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_berserker"] <- "Berserker";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_berserker"] <- "Berserker Commander";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_ranger"] <- "Ranger";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_ranger"] <- "Ranger Commander";
-::Const.HuntingLoot.RequiredBackgrounds["background.wildman"] <- "Wildman";
-::Const.HuntingLoot.RequiredBackgrounds["background.wildwoman"] <- "Wildwoman";
-::Const.HuntingLoot.RequiredBackgrounds["background.fisherman"] <- "Fisherman";
-::Const.HuntingLoot.RequiredBackgrounds["background.nomad"] <- "Nomad";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_cannibal"] <- "Cannibal";
 ::Const.HuntingLoot.RequiredBackgrounds["background.cultist"] <- "Cultist";
-::Const.HuntingLoot.RequiredBackgrounds["background.shepherd"] <- "Shepherd";
+::Const.HuntingLoot.RequiredBackgrounds["background.converted_cultist"] <- "Converted Cultist";
+::Const.HuntingLoot.RequiredBackgrounds["background.fisherman"] <- "Fisherman";
+::Const.HuntingLoot.RequiredBackgrounds["background.hunter"] <- "Hunter";
 ::Const.HuntingLoot.RequiredBackgrounds["background.lindwurm_slayer"] <- "Lindwurm Slayer";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_master_archer"] <- "Master Archer";
+::Const.HuntingLoot.RequiredBackgrounds["background.legend_muladi"] <- "Muladí";
+::Const.HuntingLoot.RequiredBackgrounds["background.nomad"] <- "Nomad";
+::Const.HuntingLoot.RequiredBackgrounds["background.poacher"] <-	"Poacher";
+::Const.HuntingLoot.RequiredBackgrounds["background.legend_ranger"] <- "Ranger";
+::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_ranger"] <- "Ranger Commander";
 ::Const.HuntingLoot.RequiredBackgrounds["background.ratcatcher"] <- "Ratcatcher";
+::Const.HuntingLoot.RequiredBackgrounds["background.shepherd"] <- "Shepherd";
+::Const.HuntingLoot.RequiredBackgrounds["background.wildman"] <- "Wildman";
+::Const.HuntingLoot.RequiredBackgrounds["background.wildwoman"] <- "Wildwoman";
+::Const.HuntingLoot.RequiredBackgrounds["background.witchhunter"] <- "Witch Hunter";
 // Foragers
+::Const.HuntingLoot.RequiredBackgrounds["background.anatomist"] <- "Anatomist";
 ::Const.HuntingLoot.RequiredBackgrounds["background.daytaler"] <- "Daytaler";
-::Const.HuntingLoot.RequiredBackgrounds["background.farmhand"] <- "Farmhand";
-::Const.HuntingLoot.RequiredBackgrounds["background.gravedigger"] <- "Gravedigger";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_druid"] <- "Druid";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_commander_druid"] <- "Druid Commander";
+::Const.HuntingLoot.RequiredBackgrounds["background.farmhand"] <- "Farmhand";
+::Const.HuntingLoot.RequiredBackgrounds["background.gravedigger"] <- "Gravedigger";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_herbalist"] <- "Herbalist / Apothecary";
-::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
+::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
 ::Const.HuntingLoot.RequiredBackgrounds["background.monk"] <- "Monk";
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
-::Const.HuntingLoot.RequiredBackgrounds["background.anatomist"] <- "Anatomist";
-::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
+::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
 
 // These backgrounds will contribute to Hunt Level (and hence Hunt Tier)
 // NOTE: The "ExpertHunter" Background Type defined in each background needs to be manually maintained)
