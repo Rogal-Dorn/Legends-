@@ -260,4 +260,14 @@ this.starting_scenario <- {
 		}
 	}
 
+	// Allows a scenario to customise what actions a faction can take.
+	// For example, a scenario can prevent specific contracts from spawning
+	// _trait: a number representing one of the faction "traits" defined in ::Const.FactionTrait
+	// _actions: a clone of one of the arrays in ::Const.FactionTrait.Actions
+	// (a clone means it is safe to modify _actions in-situ)
+	function onAddFactionActions( _trait, _actions )
+	{
+		return _actions;
+	}
+
 };
