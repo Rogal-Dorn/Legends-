@@ -417,7 +417,13 @@ this.faction <- {
 	{
 		this.m.Traits.push(_t);
 
-		foreach( c in this.Const.FactionTrait.Actions[_t] )
+		// Allow Scenarios (Origins) to optionally modify what actions can be taken by a given FactionTrait
+		// Make sure we use a clone of ::Const.FactionTrait.Actions so that the array can safely be modified in-situ by onAddFactionActions
+		local baseActions = clone ::Const.FactionTrait.Actions[_t];
+		local actions = ::World.State.m.CampaignSettings.StartingScenario.onAddFactionActions(_t, baseActions); 
+		// (we can't use ::World.Assets.getOrigin() because it has not been defined yet at this stage when starting a new game)
+
+		foreach( c in actions )
 		{
 			local card = this.new(c);
 			card.setFaction(this);
