@@ -5,13 +5,16 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		Points = 0,
 		FoodAmount = 0,
 		Craft = 0,
-		Value = 0
+		Value = 0,
+		rollCount = 0,
+		Mode = 0
 	},
 	function create()
 	{
 		this.camp_building.create();
 		this.m.ID = this.Const.World.CampBuildings.Hunter;
 		this.m.ModName = "Hunting";
+		this.m.HasPopup = true;
 		this.m.ModMod = 10.0;
 		this.m.BaseCraft = 1.5;
 		this.m.Slot = "hunt";
@@ -43,6 +46,45 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				Pitch = 1.0
 			}
 		];
+	}
+
+	function getMode()
+	{
+		return this.m.Mode;
+	}
+
+	function setMode( _m )
+	{
+		if (typeof _m == "string") this.m.Mode = this.Const.Hunting_Categories.HunterCampMode[_m];
+		else if (typeof _m = "integer") this.m.Mode = _m;
+	}
+
+	function queryConfigureSettings()
+	{
+		local ret = {};
+		ret.Buttons <- array(this.Const.Hunting_Categories.HunterCampMode.len(), "");
+		ret.CurrentMode <- this.m.Mode;
+
+		foreach (mode, index in this.Const.Hunting_Categories.HunterCampMode) {
+			ret.Buttons[index] = mode;
+		}
+
+		// foreach(i, name in ret.Buttons) {
+		// 	::logInfo("mode for query: " + name + "   index: " + i);
+		// }
+
+		return ret;
+	}
+
+	function onPopupButtonClicked( _data )
+	{
+		if (_data.len() != 2) return;
+
+		local self = this;
+		local mode = _data[0];
+		local func = _data[1];
+
+		self[func](mode);
 	}
 
 	function getTitle()
@@ -152,22 +194,26 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				continue
 			}
-			if (this.getUpgraded())
-			{
-				if (bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal"))
-				{
-				   chefLevel += this.Math.floor(bro.getLevel() * 0.1);
-				}
-			}		
+
+			local boolean = bro.getSkills().hasSkill("background.miller") || bro.getSkills().hasSkill("background.butcher")  || bro.getSkills().hasSkill("background.cannibal");
 
 			if (bro.getSkills().hasSkill("perk.legend_meal_preperation"))
 			{
-			   chefLevel += bro.getLevel()
+			   chefLevel += (bro.getLevel() * 3);
+			}
+			else if (this.getUpgraded() && boolean)
+			{
+				chefLevel += this.Math.floor(bro.getLevel() * 2);
+			}
+			else if(!this.getUpgraded() && boolean){
+				chefLevel += this.Math.floor(bro.getLevel());
 			}
 
-			return chefLevel;
 
 		}
+
+		// ::logInfo("Hunting level: " + chefLevel);
+		return chefLevel;
 
 	}
 
@@ -181,18 +227,17 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			{
 				continue
 			}
-			if (this.getUpgraded())
+			local boolean = bro.getSkills().hasSkill("background.hunter") || bro.getSkills().hasSkill("background.poacher") || bro.getSkills().hasSkill("background.wildman") || bro.getSkills().hasSkill("background.wildwoman")  || bro.getSkills().hasSkill("background.ratcatcher");
+			if(this.getUpgraded() && boolean){
+				huntLevel += this.Math.ceil(bro.getLevel() * 1.5);
+			}
+			else
 			{
-				if (bro.getSkills().hasSkill("background.hunter") || bro.getSkills().hasSkill("background.poacher") || bro.getSkills().hasSkill("background.wildman") || bro.getSkills().hasSkill("background.wildwoman")  || bro.getSkills().hasSkill("background.ratcatcher"))
-				{
-				   huntLevel += this.Math.floor(bro.getLevel());
-				}
-			}		
-
-			return huntLevel;
+			   huntLevel += this.Math.ceil(bro.getLevel() * 0.5);
+			}
 
 		}
-
+		return huntLevel;
 	}
 
 	function getBrewerLevel()
@@ -206,22 +251,28 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
-			if (this.getUpgraded())
-			{
-				if (bro.getSkills().hasSkill("background.female_miller") || bro.getSkills().hasSkill("background.female_butcher") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.female_servant")  || bro.getSkills().hasSkill("background.cannibal"))
-				{
-				   brewerLevel += this.Math.floor(bro.getLevel() * 0.1);
-				}
-			}		
-			
+			local boolean = bro.getSkills().hasSkill("background.miller") || bro.getSkills().hasSkill("background.butcher") || bro.getSkills().hasSkill("background.cannibal");
 			if (bro.getSkills().hasSkill("perk.legend_alcohol_brewing"))
 			{
-			   brewerLevel += bro.getLevel()
+			    if(this.getUpgraded()){
+			    	brewerLevel += this.Math.celi(bro.getLevel() * 1.5);
+			   	}
+			   	else
+				{
+			   	brewerLevel += bro.getLevel()
+				}
+			}
+			else if (this.getUpgraded() && boolean)
+			{
+			   brewerLevel += this.Math.floor(bro.getLevel() * 0.25);
+			}
+			else if (!this.getUpgraded() && boolean){
+				brewerLevel += this.Math.floor(bro.getLevel() * 0.1);
 			}
 
-			return brewerLevel;
 
 		}
+		return brewerLevel;
 	}
 
 	function getResults()
@@ -232,11 +283,12 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			res.push({
 		 		id = id,
-		 		icon = "ui/items/" + b.getIcon(),
+		 		// icon = "ui/items/" + b.getIcon(),
 		 		text = "You gained " + b.getName()
 			})
 			++id;
 		}
+		this.Const.Hunting_Categories.clear()
 		return res;
 	}
 
@@ -269,16 +321,74 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		}
 
 		this.m.Points += this.m.Craft;
+
+		// ::logInfo("---->POINTS: " + this.m.Points);
+
+		// local val = this.camp_building.queryConfigureSettings();
+
+		// foreach(v in val){
+		// 	::logInfo("QUERY: " + v);
+		// }
+		// ::logInfo(val.CurrentMode);
+
+		// ::logInfo("MODE: " + this.getMode());
+
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
 
-		local brewerlevels = this.getBrewerLevel();
-		if (this.getUpgraded())
-		{
-			brewerlevels = this.Math.floor(brewerlevels * 1.5);
+		local Biome = this.World.State.getPlayer().getTile().Type;
+
+
+		if(this.getUpgraded()){
+			this.Const.Hunting_Categories.addBiome(Biome, true);
+		}else {
+			this.Const.Hunting_Categories.addBiome(Biome, false)
 		}
-		local dropLoot = -300.0 / (brewerlevels + 20) + 15 > this.Math.rand(1, 100);
+
+
+		local noLevel = this.Const.Hunting_Categories.Containers.noLevels;
+		local tentLevel = this.Const.Hunting_Categories.Containers.chef;
+		local huntingLoot = this.Const.Hunting_Categories.Containers.hunting;
+
+		// ::logInfo("TENT");
+		// foreach (item in noLevel.toArray(true)){
+		// 	::logInfo("NoLevel: " + item);
+		// }
+		// foreach (item in tentLevel.toArray(true)){
+		// 	::logInfo("TentLevel: " + item);
+		// }
+
+
+		local levelsChance = 15
+
+
+		if(this.getMode() != 0){
+			levelsChance = 20
+		}
+
+		local cheflevels = this.getChefLevel();
+		local dropLoot = -300.0 / (cheflevels + 25) + levelsChance >= this.Math.rand(1, 100); // At level 5 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		if (dropLoot)
+		{
+			item = this.new(tentLevel.roll());
+			item.randomizeAmount();
+
+			if (item.getValue() != null && this.m.Points >= 8)
+			{
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				this.m.Points -= 8;
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+
+		}
+
+
+
+		local brewerlevels = this.getBrewerLevel();
+		local dropLoot = -300.0 / (brewerlevels + 20) + levelsChance >= this.Math.rand(1, 100);
 		if (dropLoot) // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		{
 			local brewerLoot = this.new("scripts/mods/script_container");
@@ -286,6 +396,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				"scripts/items/supplies/beer_item",
 				"scripts/items/supplies/wine_item"
 			]);
+
 
 			if (this.getUpgraded())
 			{
@@ -295,129 +406,107 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				]);
 			}
 
-			item = this.new(brewerLoot.roll()); 
+			item = this.new(brewerLoot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
 
-		local cheflevels = this.getChefLevel();
-		if (this.getUpgraded())
-		{
-			cheflevels = this.Math.floor(cheflevels * 1.5);
-		}
-		dropLoot = -300.0 / (cheflevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
-		if (dropLoot)
-		{
-			local chefLoot = this.new("scripts/mods/script_container")
-			chefLoot.extend([
-				"scripts/items/supplies/dried_fruits_item",
-				"scripts/items/supplies/cured_venison_item",
-				"scripts/items/supplies/ground_grains_item",
-				"scripts/items/trade/legend_cooking_spices_trade_item",
-			]);
-
-			if (this.getUpgraded())
-			{
-				chefLoot.extend([
-					[3, "scripts/items/supplies/bread_item"],
-					[1, "scripts/items/supplies/legend_pudding_item"],
-					[2, "scripts/items/supplies/legend_porridge_item"]
-				]);
-			}
-
-			item = this.new(chefLoot.roll()); 
-			this.m.Items.push(item);
-			this.Stash.add(item);
-			if(--emptySlots == 0) return this.getUpdateText();
-		}
-		
 		local huntlevels = this.getHuntLevel();
-		if (this.getUpgraded())
-		{
-			huntlevels = this.Math.floor(huntlevels * 1.5);
-		}
-		dropLoot = -300.0 / (huntlevels + 20) + 15 > this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+		local dropLoot = -300.0 / (huntlevels + 20) + levelsChance >= this.Math.rand(1, 100); // At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
 		if (dropLoot)
 		{
-			local huntLoot = this.new("scripts/mods/script_container")
-			huntLoot.extend([
-				"scripts/items/supplies/legend_fresh_meat_item",
-				"scripts/items/supplies/legend_fresh_fruit_item",
-				"scripts/items/supplies/strange_meat_item",
-			]);
-
-			if (this.getUpgraded())
-			{
-				chefLoot.extend([
-					[1, "scripts/misc/adrenaline_gland_item"],
-					[2, "scripts/items/misc/poison_gland_item"],
-					[3, "scripts/items/trade/legend_small_furs_item"]
-				]);
-			}
-
-			item = this.new(chefLoot.roll()); 
+			item = this.new(huntingLoot.roll());
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
 			if(--emptySlots == 0) return this.getUpdateText();
 		}
-		
-		
-		local r = this.Math.rand(1, 4);
-		
-		local huntingLoot = this.new("scripts/mods/script_container");
-		if (r <= 2)
-		{
-			item = this.new("scripts/items/supplies/legend_fresh_meat_item");
-			huntingLoot.extend([
-				"scripts/items/misc/adrenaline_gland_item",
-				"scripts/items/misc/poison_gland_item",
-				"scripts/items/misc/spider_silk_item",
-				"scripts/items/misc/werewolf_pelt_item",
-				"scripts/items/accessory/spider_poison_item",
-				"scripts/items/supplies/strange_meat_item"
-			]);
-		}
-		else if (r == 3)
-		{
-			item = this.new("scripts/items/supplies/roots_and_berries_item");
-			huntingLoot.extend([
-				"scripts/items/supplies/cured_venison_item"
-			]);
-		}
-		else
-		{
-			item = this.new("scripts/items/supplies/legend_fresh_fruit_item");
-				huntingLoot.extend([
-				"scripts/items/supplies/dried_fruits_item"
-			]);
-		}
 
 
 
+
+		item = this.new(noLevel.roll());
+		item.randomizeAmount();
 		if (item.getValue() != null && this.m.Points < item.getValue())
 		{
 			return this.getUpdateText();
 		}
 
-		this.m.Points -= item.getValue();
-		item.randomizeAmount();
-		this.m.FoodAmount += item.getAmount();
-		item.randomizeBestBefore();
-		this.m.Items.push(item);
-		this.Stash.add(item);
+		local rollType = this.getMode();
 
-		if (!this.getUpgraded() || huntingLoot.len() == 0)
+		if(rollType == 0)
 		{
-			return this.getUpdateText();
-		}
-
-		if (this.Math.rand(1, 5) == 1)
-		{
-			item = this.new(huntingLoot.roll());
+			this.m.Points -= item.getValue();
 			this.m.Items.push(item);
 			this.Stash.add(item);
+			this.m.FoodAmount += item.getAmount();
+			if(--emptySlots == 0) return this.getUpdateText();
 		}
+		else if (this.m.rollCount == 10){
+			if(rollType == 1){
+				item = this.new(tentLevel.roll());
+				item.randomizeAmount();
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			else if (rollType == 2)
+			{
+				local brewerLoot = this.new("scripts/mods/script_container");
+				brewerLoot.extend([
+					"scripts/items/supplies/beer_item",
+					"scripts/items/supplies/wine_item"
+				]);
+
+
+				if (this.getUpgraded())
+				{
+					brewerLoot.extend([
+						[3, "scripts/items/supplies/mead_item"],
+						[1, "scripts/items/supplies/preserved_mead_item"]
+					]);
+				}
+
+				item = this.new(brewerLoot.roll());
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			else if (rollType == 3)
+			{
+				item = this.new(huntingLoot.roll());
+				item.randomizeAmount();
+				this.m.Items.push(item);
+				this.Stash.add(item);
+				this.m.FoodAmount += item.getAmount();
+				if(--emptySlots == 0) return this.getUpdateText();
+			}
+			this.m.rollCount = 0;
+		}else {
+			this.m.rollCount += 1;
+		}
+
+
+		// make the hunting tent have 2 options:
+		// 1.) increased rate for brewer hunter and cook and no junk items : every ~10 junk items = reroll into good item
+		// 2.) lower rate for cook brewer and hunter and get lots of the junk items
+
+
+		// if (item.getValue() != null && this.m.Points < item.getValue())
+		// {
+		// 	return this.getUpdateText();
+		// }
+
+		// this.m.Points -= item.getValue();
+		// item.randomizeAmount();
+		// this.m.FoodAmount += item.getAmount();
+		// item.randomizeBestBefore();
+		// this.m.Items.push(item);
+		// this.Stash.add(item);
 		
 		return this.getUpdateText();
 	}

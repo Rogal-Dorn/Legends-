@@ -426,7 +426,7 @@ this.skill <- {
 
 	function getDefaultTooltip()
 	{
-		local p = this.m.Container.buildPropertiesForUse(this, null);
+		local p = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, null));
 		local ret = [
 			{
 				id = 1,
@@ -727,7 +727,7 @@ this.skill <- {
 	function getExpectedDamage( _target )
 	{
 		local actor = this.m.Container.getActor();
-		local p = this.m.Container.buildPropertiesForUse(this, _target);
+		local p = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _target));
 		local d = _target.getSkills().buildPropertiesForDefense(actor, this);
 		local critical = 1.0 + p.getHitchance(this.Const.BodyPart.Head) / 100.0 * (p.DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 		local armor = _target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0) + _target.getArmor(this.Const.BodyPart.Body) * (this.Math.max(0, p.getHitchance(this.Const.BodyPart.Body)) / 100.0);
@@ -918,6 +918,41 @@ this.skill <- {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
+	}
+
+	function factoringOffhand( _properties )
+	{
+		if (this.m.Item == null || this.m.Item.isNull()) return _properties;
+
+		if (this.m.Item.getCurrentSlotType() != this.Const.ItemSlot.Offhand) return _properties;
+
+		if (!this.m.Item.isItemType(this.Const.Items.ItemType.Weapon)) return _properties;
+
+		this.removeMainhandBonuses(_properties);
+		this.addOffhandBonuses(this.m.Item, _properties);
+		return _properties;
+	}
+
+	function removeMainhandBonuses( _properties )
+	{
+		local mainhand = this.getContainer().getActor().getMainhandItem();
+
+		if (mainhand == null) return;
+
+		_properties.DamageRegularMin -= mainhand.m.RegularDamage;
+		_properties.DamageRegularMax -= mainhand.m.RegularDamageMax;
+		_properties.DamageArmorMult /= mainhand.m.ArmorDamageMult;
+		_properties.DamageDirectAdd -= mainhand.m.DirectDamageAdd;
+		_properties.HitChance[this.Const.BodyPart.Head] -= mainhand.m.ChanceToHitHead;
+	}
+
+	function addOffhandBonuses( _offhand, _properties )
+	{
+		_properties.DamageRegularMin += _offhand.m.RegularDamage;
+		_properties.DamageRegularMax += _offhand.m.RegularDamageMax;
+		_properties.DamageArmorMult *= _offhand.m.ArmorDamageMult;
+		_properties.DamageDirectAdd += _offhand.m.DirectDamageAdd;
+		_properties.HitChance[this.Const.BodyPart.Head] += _offhand.m.ChanceToHitHead;
 	}
 
 	function onCombatStarted()
@@ -1453,7 +1488,7 @@ this.skill <- {
 		if (isRangedRelevant())
 		{
 			local distanceToTarget = _targetTile.getDistanceTo(user.getTile());
-			local propertiesWithSkill = thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity);
+			local propertiesWithSkill = this.factoringOffhand(thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity));
 			modifier["Distance of " + distanceToTarget] <- function ( row, description )
 			{
 				local hitDistancePenalty = (distanceToTarget - thisSkill.m.MinRange) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;				
@@ -1684,7 +1719,7 @@ this.skill <- {
 		}
 
 		local user = this.m.Container.getActor();
-		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
+		local properties = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _targetEntity));
 
 		if (!this.isUsingHitchance())
 		{
@@ -1938,7 +1973,7 @@ this.skill <- {
 			return false;
 		}
 
-		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
+		local properties = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _targetEntity));
 		local userTile = _user.getTile();
 		local astray = false;
 

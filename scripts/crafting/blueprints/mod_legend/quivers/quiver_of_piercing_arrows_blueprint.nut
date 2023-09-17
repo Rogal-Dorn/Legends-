@@ -16,8 +16,7 @@ this.quiver_of_piercing_arrows_blueprint <- this.inherit("scripts/crafting/bluep
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/backgrounds/female_bowyer_background",
-							"scripts/skills/backgrounds/bowyer_background"]
+				Scripts = ["scripts/skills/backgrounds/bowyer_background"]
 			}
 		]
 		this.initSkills(skills);

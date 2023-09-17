@@ -112,14 +112,6 @@ this.wheat_fields_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("daytaler_background");
 		_list.push("miller_background");
 		_list.push("miller_background");
-
-		if (_gender)
-		{
-		_list.push("female_farmhand_background");
-		_list.push("female_daytaler_background");
-		_list.push("female_miller_background");
-
-		}
 	}
 
 	function onUpdateShopList( _id, _list )

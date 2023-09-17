@@ -43,9 +43,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, "jesters_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_slingstaff"));
-		bros[1].setStartValuesEx([
-			"minstrel_background"
-		]);
+		bros[1].setStartValuesEx(["minstrel_background"],true,0);
 		bros[1].getBackground().m.RawDescription = "{%name% worked providing entertainment at inns around the country, but the bar fights and road bandits make it no life for a solo artist. Joining with others was for safety as much as the show.}";
 		bros[1].setPlaceInFormation(12);
 		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
@@ -57,9 +55,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		items.equip(this.Const.World.Common.pickHelmet([[1, "named/jugglers_hat"]]));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
-		bros[2].setStartValuesEx([
-			"female_minstrel_background"
-		]);
+		bros[2].setStartValuesEx(["minstrel_background"],true,1);
 		bros[2].getBackground().m.RawDescription = "{%name% has been in the court of a local noble for years, but the same audience every night grows tiresome. It was time to find a band, hit the road and find some new audiences for their art.}";
 		bros[2].improveMood(1.0, "Got the band back together");
 		bros[2].setPlaceInFormation(4);
@@ -188,7 +184,6 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 	{
 		this.addBroToRoster(_roster, "beggar_background", 8);
 		this.addBroToRoster(_roster, "minstrel_background", 8);
-		this.addBroToRoster(_roster, "female_minstrel_background", 8);
 		this.addBroToRoster(_roster, "juggler_background", 8);
 		this.addBroToRoster(_roster, "eunuch_background", 8);
 		this.addBroToRoster(_roster, "belly_dancer_background", 8);

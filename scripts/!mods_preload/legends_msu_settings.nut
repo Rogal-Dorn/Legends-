@@ -25,7 +25,7 @@
 
 	local config = ::Legends.Mod.ModSettings.addPage("Campaign Options");
 
-	addNCSetting(config, ::MSU.Class.EnumSetting("GenderEquality", "All", ["Disabled", "Specific", "All"], "Battle Sisters", "Disabled:\nThe vanilla experience. No backgrounds or enemy encounters with females. (Yes, your friend the Hex is still here!)\n\nSpecific:\nLegend curated female backgrounds and enemies can be found and recruited throughout your adventure.\n\nAll:\nAll commanders and most backgrounds will have a chance of being any gender."));
+	addNCSetting(config, ::MSU.Class.EnumSetting("GenderEquality", "Enabled", ["Disabled", "Enabled", "Enabled (Cosmetic)"], "Battle Sisters", "When enabled, most backgrounds will be randomly assigned male or female. Some backgrounds will remain exclusively male or female.\n\n[u]Disabled[/u]\nThe vanilla experience. No backgrounds or enemy encounters with females. (Yes, your friend the Hex is still here!)\n\n[u]Enabled[/u]\nBeing female has gameplay effects.\n\n[u]Enabled (Cosmetic)[/u]\nBeing female has no gameplay effects."));
 	addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider1"));
 	addNCSetting(config, ::MSU.Class.BooleanSetting("DistanceScaling", true, "Distance Scaling", "If enabled, enemies will be stronger the further they spawn from civilization. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."));
 	addNCSetting(config, ::MSU.Class.BooleanSetting("SkipCamp", true, "Skip Camp Tutorial", "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades."));
@@ -49,7 +49,7 @@
 	tooltip.addDivider("TooltipDivider3");
 	tooltip.addTitle("TooltipUI", "UI");
 	tooltip.addElement(::MSU.Class.EnumSetting("ContractCategoryIconAlignment", "Middle", ["Left","Middle","Right","Below"], "Contract Category Icon Alignment", "Adjust the position of the Contract Category icon at the bottom of Contracts in the Settlement screen"));
-
+	tooltip.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Faster Camping Preset Switch", "Clicking on the camping preset slot immediately applies the preset"));
 
 	local misc = ::Legends.Mod.ModSettings.addPage("Misc");
 	local myEnumTooltip = "Define how Blueprints are shown: 'All Ingredients Available' is the Vanilla behavior; 'One Ingredient Available' shows recipes when one ingredient is fully satisfied; 'Always' shows all recipes at all time";

@@ -299,7 +299,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.tailor" || bro.getBackground().getID() == "background.female_tailor")
+			if (bro.getBackground().getID() == "background.tailor")
 			{
 				candidates_tailor.push(bro);
 			}
@@ -307,7 +307,7 @@ this.march_wear_and_tear_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief"  || bro.getBackground().getID() == "background.legend_commander_assassin")
+				if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.legend_commander_assassin")
 				{
 					candidates_thief.push(bro);
 				}

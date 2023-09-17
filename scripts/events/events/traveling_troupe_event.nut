@@ -273,7 +273,7 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.juggler" || bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
+			if (bro.getBackground().getID() == "background.juggler" || bro.getBackground().getID() == "background.minstrel")
 			{
 				candidates_entertainer.push(bro);
 			}

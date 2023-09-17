@@ -432,11 +432,11 @@ this.drunk_nobleman_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 			
-			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.female_servant" || bro.getBackground().getID() == "background.slave")
+			if (bro.getBackground().getID() == "background.servant" || bro.getBackground().getID() == "background.slave")
 			{
 				candidates_servant.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.thief" || bro.getBackground().getID() == "background.female_thief")
+			else if (bro.getBackground().getID() == "background.thief")
 			{
 				candidates_thief.push(bro);
 			}

@@ -348,19 +348,15 @@ this.creepy_guy_event <- this.inherit("scripts/events/event", {
 
 		foreach( b in brothers )
 		{
-			if (b.getBackground().getID() == "background.thief" || b.getBackground().getID() == "background.female_thief")
+			if (b.getBackground().getID() == "background.thief")
 			{
 				candidates_thief.push(b);
 			}
-			else if (b.getBackground().getID() == "background.minstrel" || b.getBackground().getID() == "background.female_minstrel")
+			else if (b.getBackground().getID() == "background.minstrel")
 			{
 				candidates_minstrel.push(b);
 			}
 			else if (b.getBackground().getID() == "background.butcher" && !b.getSkills().hasSkill("injury.missing_finger"))
-			{
-				candidates_butcher.push(b);
-			}
-			else if (b.getBackground().getID() == "background.female_butcher" && !b.getSkills().hasSkill("injury.missing_finger"))
 			{
 				candidates_butcher.push(b);
 			}

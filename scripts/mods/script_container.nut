@@ -23,6 +23,7 @@ this.script_container <- {
 		local weight = 0;
 		foreach (pair in this.m.Array)
 		{
+			::logInfo("Pair " + pair + "pair[0]: " + pair[0] + "Pair[1]: " + pair[1]);
 			weight += pair[0];
 			if (weight >= i) return pair[1];
 		}

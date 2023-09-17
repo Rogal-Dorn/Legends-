@@ -74,7 +74,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.female_daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller"|| id == "background.female_miller" || id == "background.farmhand" || id == "background.female_farmhand"  || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{
@@ -172,7 +172,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.female_miller" || id == "background.female_farmhand" || id == "background.farmhand" || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{
@@ -228,7 +228,7 @@ this.lend_men_to_build_event <- this.inherit("scripts/events/event", {
 				{
 					local id = bro.getBackground().getID();
 
-					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.female_miller" || id == "background.female_farmhand" || id == "background.gravedigger")
+					if (id == "background.daytaler" || id == "background.mason" || id == "background.lumberjack" || id == "background.miller" || id == "background.farmhand" || id == "background.gravedigger")
 					{
 						if (this.Math.rand(1, 100) <= 33)
 						{

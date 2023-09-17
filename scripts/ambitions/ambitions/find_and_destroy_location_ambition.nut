@@ -53,11 +53,11 @@ this.find_and_destroy_location_ambition <- this.inherit("scripts/ambitions/ambit
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.farmhand" || bro.getBackground().getID() == "background.female_farmhand")
+			if (bro.getBackground().getID() == "background.farmhand")
 			{
 				farmers.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.shepherd" || bro.getBackground().getID() == "background.miller" || bro.getBackground().getID() == "background.female_miller" || bro.getBackground().getID() == "background.daytaler")
+			else if (bro.getBackground().getID() == "background.shepherd" || bro.getBackground().getID() == "background.miller" || bro.getBackground().getID() == "background.daytaler")
 			{
 				workers.push(bro);
 			}
