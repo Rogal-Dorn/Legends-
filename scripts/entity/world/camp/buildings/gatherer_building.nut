@@ -163,7 +163,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
-		this.logInfo(this.m.Craft);
 		local dropLoot = -3.0 / (this.m.Craft + 0.4) + 7.5 > this.Math.rand(1, 100);
 		if (dropLoot && this.getUpgraded())
 		{
