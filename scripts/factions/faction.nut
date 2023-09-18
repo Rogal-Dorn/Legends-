@@ -417,17 +417,11 @@ this.faction <- {
 	{
 		this.m.Traits.push(_t);
 
-		local actions = ::Const.FactionTrait.Actions[_t];
-
-		if (::World.State.m.CampaignSettings)
-		{
-			// Allow Scenarios (Origins) to optionally modify what actions can be taken by a given FactionTrait
-			// Make sure we use a clone of ::Const.FactionTrait.Actions so that the array can safely be modified in-situ by onAddFactionActions
-			// (we can't use ::World.Assets.getOrigin() because it has not been defined yet at this stage when starting a new game)
-			// Hanter TODO: this if-condition is only a band-aid to allow saves to load. More work needed (see commit message)
-			local baseActions = clone ::Const.FactionTrait.Actions[_t];
-			actions = ::World.State.m.CampaignSettings.StartingScenario.onAddFactionActions(_t, baseActions); 	
-		}
+		// Allow Scenarios (Origins) to optionally modify what actions can be taken by a given FactionTrait
+		// Make sure we use a clone of ::Const.FactionTrait.Actions so that the array can safely be modified in-situ by onAddFactionActions
+		local baseActions = clone ::Const.FactionTrait.Actions[_t];
+		local actions = ::World.State.m.CampaignSettings.StartingScenario.onAddFactionActions(_t, baseActions); 
+		// (we can't use ::World.Assets.getOrigin() because it has not been defined yet at this stage when starting a new game)
 
 		foreach( c in actions )
 		{
