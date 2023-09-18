@@ -755,7 +755,8 @@ this.faction <- {
 		return null;
 	}
 
-	// Remove all occurrences of faction actions with the given ID from this.m.Deck 
+	// Remove all occurrences of faction actions with the given ID from this.m.Deck
+	// Note that during deserialization, this.addTrait will re-add all actions associated with the input trait as defined in faction_traits.nut
 	function removeActionByID( _id )
 	{
 		local reachedEnd = false;
