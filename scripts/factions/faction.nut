@@ -417,19 +417,7 @@ this.faction <- {
 	{
 		this.m.Traits.push(_t);
 
-		local actions = ::Const.FactionTrait.Actions[_t];
-
-		if (::World.State.m.CampaignSettings)
-		{
-			// Allow Scenarios (Origins) to optionally modify what actions can be taken by a given FactionTrait
-			// Make sure we use a clone of ::Const.FactionTrait.Actions so that the array can safely be modified in-situ by onAddFactionActions
-			// (we can't use ::World.Assets.getOrigin() because it has not been defined yet at this stage when starting a new game)
-			// Hanter TODO: this if-condition is only a band-aid to allow saves to load. More work needed (see commit message)
-			local baseActions = clone ::Const.FactionTrait.Actions[_t];
-			actions = ::World.State.m.CampaignSettings.StartingScenario.onAddFactionActions(_t, baseActions); 	
-		}
-
-		foreach( c in actions )
+		foreach( c in this.Const.FactionTrait.Actions[_t] )
 		{
 			local card = this.new(c);
 			card.setFaction(this);
@@ -765,6 +753,31 @@ this.faction <- {
 		}
 
 		return null;
+	}
+
+	// Remove all occurrences of faction actions with the given ID from this.m.Deck 
+	function removeActionByID( _id )
+	{
+		local reachedEnd = false;
+		local startIndex = 0;
+
+		while( !reachedEnd )
+		{
+			for (local i = startIndex; i < this.m.Deck.len(); i++)
+			{
+				if ( i == this.m.Deck.len() - 1 )
+				{
+					reachedEnd = true;
+				}
+
+				if ( this.m.Deck[i].getID() == _id )
+				{
+					this.m.Deck.remove(i);
+					startIndex = i;
+					break; // Each time we remove an action from the array, its length changes
+				}
+			}
+		}
 	}
 
 	function create()
