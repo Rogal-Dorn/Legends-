@@ -280,6 +280,8 @@ this.camp_commander_dialog_module <- this.inherit("scripts/ui/screens/ui_module"
 			this.Tooltip.hide();
 			this.m.JSHandle.asyncCall("show" + camp + "PopupDialog", this.m.CurrentTent.queryConfigureSettings());
 		}
+
+		::Sound.play("sounds/move_pot_clay_01.wav", 2.0);
 	}
 
 });

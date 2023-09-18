@@ -47,14 +47,18 @@
 	tooltip.addTitle("TooltipCharacter", "Tooltips - Character");
 	tooltip.addElement(::MSU.Class.BooleanSetting("ShowCharacterBackgroundType", true, "Show Character Background Types", "Show a character's Background Types in Tooltips.\n\nUseful when playing Origins with additional gameplay mechanics based on Background Types"));
 	tooltip.addDivider("TooltipDivider3");
-	tooltip.addTitle("TooltipUI", "UI");
+	tooltip.addTitle("TooltipUI", "UI");	
+	local cpLight = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightLightBackground", "2,55,189,1", "Highlighted Text (Light Background)", "Customize the color for special highlighted text occurring in light backgrounds, such as in tooltips"));
+	::Const.UI.Color.getHighlightLightBackgroundValue <- function() {return "#" + cpLight.getValueAsHexString().slice(0,6)}
+	local cpDark = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightDarkBackground", "111,145,201,1", "Highlighted Text (Dark Background)", "Customize the color of special highlighted text occurring in dark backgrounds, such as in events"));
+	::Const.UI.Color.getHighlightDarkBackgroundValue <- function() {return "#" + cpDark.getValueAsHexString().slice(0,6)}
 	tooltip.addElement(::MSU.Class.EnumSetting("ContractCategoryIconAlignment", "Middle", ["Left","Middle","Right","Below"], "Contract Category Icon Alignment", "Adjust the position of the Contract Category icon at the bottom of Contracts in the Settlement screen"));
-	tooltip.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Faster Camping Preset Switch", "Clicking on the camping preset slot immediately applies the preset"));
 
 	local misc = ::Legends.Mod.ModSettings.addPage("Misc");
 	local myEnumTooltip = "Define how Blueprints are shown: 'All Ingredients Available' is the Vanilla behavior; 'One Ingredient Available' shows recipes when one ingredient is fully satisfied; 'Always' shows all recipes at all time";
 	misc.addElement(::MSU.Class.EnumSetting("ShowBlueprintsWhen", "All Ingredients Available", ["All Ingredients Available", "One Ingredient Available", "Always"], "Show Blueprints when", myEnumTooltip));
 	misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Autorepair Layer", "Any Body or Helmet Layer that you strip from a piece of armor is automatically marked as 'to be repaired'."));	
+	misc.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Faster Camping Preset Switch", "Clicking on the camping preset slot immediately applies the preset"));
 
 
 	local logging = ::Legends.Mod.ModSettings.addPage("Logging");
