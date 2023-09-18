@@ -28,7 +28,7 @@
 			ID = ::Const.LegendMod.Debug.Flags.ContractCategories,
 			Name = "Contract Categories",
 			Description = "Logs related to Contract Categories",
-			Value = true
+			Value = false
 		},
 		{
 			ID = ::Const.LegendMod.Debug.Flags.ContractCategoriesVerbose,
