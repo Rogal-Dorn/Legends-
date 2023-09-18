@@ -755,6 +755,31 @@ this.faction <- {
 		return null;
 	}
 
+	// Remove all occurrences of faction actions with the given ID from this.m.Deck 
+	function removeActionByID( _id )
+	{
+		local reachedEnd = false;
+		local startIndex = 0;
+
+		while( !reachedEnd )
+		{
+			for (local i = startIndex; i < this.m.Deck.len(); i++)
+			{
+				if ( i == this.m.Deck.len() - 1 )
+				{
+					reachedEnd = true;
+				}
+
+				if ( this.m.Deck[i].getID() == _id )
+				{
+					this.m.Deck.remove(i);
+					startIndex = i;
+					break; // Each time we remove an action from the array, its length changes
+				}
+			}
+		}
+	}
+
 	function create()
 	{
 		this.m.LastActionTime = this.Time.getVirtualTimeF() - this.Math.rand(0, this.World.getTime().SecondsPerDay) * 2.0;
