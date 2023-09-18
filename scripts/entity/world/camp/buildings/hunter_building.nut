@@ -56,6 +56,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		];
 	}
 
+	function hasPopup()
+	{
+		return this.m.HasPopup && this.getUpgraded();
+	}
+
 	function getMode()
 	{
 		return this.m.Mode;
@@ -93,6 +98,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local func = _data[1];
 
 		self[func](mode);
+
+		::Sound.play("sounds/move_pot_clay_01.wav", 2.0);
 	}
 
 	function getTitle()
@@ -110,19 +117,61 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		desc += "Hunting parties can only be sent out while encamped. The more people assigned, the more food foraged or hunted. "
 		desc += "Returns different food items depending on the current biome. Some items require the knowledge of specific backgrounds to be obtainable."
 		desc += "\n\n"
-		desc += "Assigning mercenaries with Expert Hunter backgrounds increases the Hunt Tier (based on each character's level), which allows the hunting party to hunt rarer or more dangerous prey.\n"
-		desc += "Assigning mercenaries with the Meal Preparation perk gives a chance to yield improved versions of the obtained food items.\n"
-		desc += "Assigning mercenaries with the Alcohol Brewing perk can yield wine and beer. "
+		desc += format(
+					"Assigning mercenaries with %s backgrounds increases the %s (based on each character's level), which allows the hunting party to hunt rarer or more dangerous prey.\n",
+					::Const.UI.getColorized("Expert Hunter",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("Hunt Tier",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"Assigning mercenaries with the %s perk gives a chance to yield %s of the obtained food items.\n",
+					::Const.UI.getColorized("Meal Preparation",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("improved versions",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"Assigning mercenaries with the %s perk gives a chance to yield %s. ",
+					::Const.UI.getColorized("Alcohol Brewing",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("wine and beer",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
 		desc += "\n\n"
 		desc += "Upgrading this tent grants the following effects:\n"
-		desc += "- Increases foraging / hunting speed by 15%\n"
+		desc += format(
+					"- Increases foraging / hunting speed by %s\n",
+					::Const.UI.getColorized("15%",::Const.UI.Color.PositiveValue)
+				);
+		desc += format(
+					"- Unlock the %s button, allowing you to customize the priorities of the hunting party\n",
+					::Const.UI.getColorized("Hunting Mode",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
 		desc += "- Increases the chance to obtain bonus loot, improved food items, and brewed items\n"
-		desc += "- Assigning Expert Hunter backgrounds increases the Hunt Tier at a much greater rate\n"
-		desc += "- Expert Hunters have a chance to obtain bonus loot from hunting, such as trophies or crafting ingredients\n"
-		desc += "- Assigning cooking backgrounds slightly increases the chance to yield improved version of obtained food items even without the Meal Preparation perk\n"
-		desc += "- Assigning cooking backgrounds slightly increases the chance to yield brewed items even without the Alcohol Brewing perk\n"
-		desc += "- Brewers can also produce mead\n"
-		desc += "- Advanced food can also be made using spices in the crafting tent"
+		desc += format(
+					"- Assigning %s backgrounds increases the %s at a much greater rate\n",
+					::Const.UI.getColorized("Expert Hunter",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("Hunt Tier",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"- %s have a chance to obtain %s from hunting, such as trophies or crafting ingredients\n",
+					::Const.UI.getColorized("Expert Hunters",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("bonus loot",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"- Assigning %s slightly increases the chance to yield %s of obtained food items even without the Meal Preparation perk\n",
+					::Const.UI.getColorized("cooking backgrounds",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("improved versions",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"- Assigning %s slightly increases the chance to yield %s even without the Alcohol Brewing perk\n",
+					::Const.UI.getColorized("cooking backgrounds",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("brewed items",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"- %s can also produce %s\n",
+					::Const.UI.getColorized("Brewers",::Const.UI.Color.getHighlightLightBackgroundValue()),
+					::Const.UI.getColorized("mead",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
+		desc += format(
+					"- Advanced food can also be made using spices in the %s tent",
+					::Const.UI.getColorized("crafting",::Const.UI.Color.getHighlightLightBackgroundValue())
+				);
 		desc += "\n\n"
 		desc += "Expert Hunter backgrounds: " + ::Const.LegendMod.Language.arrayToText(::Const.HuntingLoot.ExpertHunterBackgrounds.map(function(bg){return ::Const.HuntingLoot.RequiredBackgrounds[bg]}),"and",false) + "\n\n";
 		desc += "Cooking backgrounds: Miller / Baker, Butcher / Fishmonger, Servant, Cannibal"
@@ -232,10 +281,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.CurrentTarget = null;
 		this.m.PreviousTarget = null;
 		this.m.TargetStartTime = 0;
-
-		::logInfo("Cook Level: " + this.m.CookLevel);
-		::logInfo("Brew Level: " + this.m.BrewLevel);
-		::logInfo("Hunt Level: " + this.m.HuntLevel);
 	}
 
 	function getAssignedBackgrounds( _relevantOnly = false )
@@ -475,7 +520,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			res.push({
 				id = 79,
-				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Hunt"].Assigned, "and", "#6f91c9") + " had an exceptional hunt and brought back the following:"
+				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Hunt"].Assigned, "and", ::Const.UI.Color.getHighlightDarkBackgroundValue()) + " had an exceptional hunt and brought back the following:"
 			});
 
 			foreach (item in this.m.VerboseResults["Hunt"].Items)
@@ -492,7 +537,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			res.push({
 				id = 77,
-				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Cook"].Assigned, "and", "#6f91c9") + " prepared the following in the camp kitchen:"
+				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Cook"].Assigned, "and", ::Const.UI.Color.getHighlightDarkBackgroundValue()) + " prepared the following in the camp kitchen:"
 			});
 
 			foreach (item in this.m.VerboseResults["Cook"].Items)
@@ -509,7 +554,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		{
 			res.push({
 				id = 75,
-				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Brew"].Assigned, "and", "#6f91c9") + " brewed the following:"
+				text = ::Const.LegendMod.Language.arrayToText(this.m.VerboseResults["Brew"].Assigned, "and", ::Const.UI.Color.getHighlightDarkBackgroundValue()) + " brewed the following:"
 			});
 
 			foreach (item in this.m.VerboseResults["Brew"].Items)
@@ -549,7 +594,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 		ret.push("Hunting points per hour: " + mod.Craft);
 		ret.push("Hunt Tier: " + ::Const.HuntingLoot.getHuntLevelTier(huntLevel));
-		ret.push("Current biome: <span style=\"color:#0237bd;\">" + ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]) + "</span>";
+		ret.push("Current mode: <span style=\"color:" + ::Const.UI.Color.getHighlightLightBackgroundValue() + ";\">" + ::Const.HuntingLoot.HunterCampModeNameMap[this.m.Mode] + "</span>")
+		ret.push("Current biome: <span style=\"color:" + ::Const.UI.Color.getHighlightLightBackgroundValue() + ";\">" + ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]) + "</span>";
 
 		local targets = ::Const.HuntingLoot.getBiomeTargetDefs(::World.State.getPlayer().getTile().Type);
 
@@ -739,7 +785,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		local biome = ::World.State.getPlayer().getTile().Type;
 
 		// Prepare the generator that will roll for each category of loot
-		local lootGenerator = ::Const.HuntingLoot.getGenerator(biome, this.getUpgraded(), this.m.HuntLevel, this.m.CookLevel, this.m.BrewLevel, this.m.AssignedBackgrounds);
+		local lootGenerator = ::Const.HuntingLoot.getGenerator(biome, this.getUpgraded(), this.m.HuntLevel, this.m.CookLevel, this.m.BrewLevel, this.m.AssignedBackgrounds, this.m.Mode);
 		
 		// Generate Brewer loot
 		item = lootGenerator.rollBrew();
@@ -852,25 +898,6 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.m.VerboseResults[_category].Items[id].Count++;
 		}
 	}
-
-	// function generateAssignedNames( _namesArr )
-	// {
-	// 	local ret = "";
-	// 	if (_namesArr.len() == 0) return ret;
-
-	// 	// ret += ::Const.UI.getColorized(_namesArr[0],"#5d8ede");
-	// 	ret += ::Const.UI.getColorized(_namesArr[0],"#6f91c9");
-
-	// 	if (_namesArr.len() == 1) return ret;
-
-	// 	for (local i = 1; i < _namesArr.len(); i++ )
-	// 	{
-	// 		local separator = (i == (_namesArr.len() - 1)) ? " and " : ", ";
-	// 		ret += separator + ::Const.UI.getColorized(_namesArr[i],"#6f91c9");
-	// 	}
-
-	// 	return ret;
-	// }
 
 	function onClicked( _campScreen )
 	{

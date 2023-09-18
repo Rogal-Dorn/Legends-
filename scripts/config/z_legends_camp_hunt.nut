@@ -5,7 +5,7 @@ if (!("HuntingLoot" in ::Const))
 
 ::Const.HuntingLoot <- {
 
-	function getGenerator( _biome, _upgraded, _huntLevel, _cookLevel, _brewLevel, _partyBackgrounds = null)
+	function getGenerator( _biome, _upgraded, _huntLevel, _cookLevel, _brewLevel, _partyBackgrounds = null, _mode = 0)
 	{
 		local generator = {
 			
@@ -15,12 +15,14 @@ if (!("HuntingLoot" in ::Const))
 			CookLevel = _cookLevel,
 			BrewLevel = _brewLevel,
 			Upgraded = _upgraded,
+			Mode = _mode,
 
-			function dropLoot(_level)
+			function dropLoot(_level, _withModeBonus=false)
 			{
 				local upgradeModifier = this.Upgraded ? 1.15 : 1.0;
-				// At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
-				return (-300.0 / (_level + 20) + 15) * upgradeModifier > ::Math.rand(1,100);
+				local modeBonus = _withModeBonus ? 2.0 : 1.0;
+				// Without the upgradeModifier or modeBonus: At level 10 there is a 5% chance per hour, increases asymptotically to 15% per hour
+				return ::Math.rand(1,100) < ((-300.0 / (_level + 20) + 15) * upgradeModifier) * modeBonus;
 			},
 
 			function rollTarget()
@@ -30,13 +32,40 @@ if (!("HuntingLoot" in ::Const))
 				local food = this.new(targetDef.Food);
 				local loot = null;
 				local cook = null;
+				local isHuntMode = false;
+				local isCookMode = false;
+				local huntModeBonus = 1;
+				local cookModeBonus = 1;
+				local modeDifficultyMultiplier = 1;
 
-				if(targetDef.Type=="Hunt" && this.Upgraded && (::Math.rand(1,5)==1 || this.dropLoot(this.HuntLevel)))
+				// Check for Mode bonuses
+				if (this.Mode == ::Const.HuntingLoot.HunterCampMode.Hunt)
+				{
+					isHuntMode = true;
+					huntModeBonus = 2;
+					modeDifficultyMultiplier = 2;
+				}
+				else if (this.Mode == ::Const.HuntingLoot.HunterCampMode.Cook)
+				{
+					isCookMode = true;
+					cookModeBonus = 2;
+					modeDifficultyMultiplier = 2;
+				}
+				else if (this.Mode == ::Const.HuntingLoot.HunterCampMode.Brew)
+				{
+					modeDifficultyMultiplier = 2;
+				}
+				else if (this.Mode == ::Const.HuntingLoot.HunterCampMode.Forage)
+				{
+					modeDifficultyMultiplier = 0.75;
+				}
+
+				if(targetDef.Type=="Hunt" && this.Upgraded && (::Math.rand(1,5) <= (1 * huntModeBonus) || this.dropLoot(this.HuntLevel, isHuntMode)))
 				{
 					loot = this.new(::MSU.Class.WeightedContainer(targetDef.Loot).roll());
 				}
 
-				if("Cook" in targetDef && (::Math.rand(1,5)==1 || this.dropLoot(this.CookLevel)))
+				if("Cook" in targetDef && (::Math.rand(1,5) <= (1 * cookModeBonus) || this.dropLoot(this.CookLevel, isCookMode)))
 				{
 					cook = this.new(targetDef.Cook)
 				}
@@ -45,7 +74,7 @@ if (!("HuntingLoot" in ::Const))
 					Name = targetDef.Name,
 					Text = targetDef.Text,
 					Type = targetDef.Type,
-					Difficulty = targetDef.Difficulty,
+					Difficulty = targetDef.Difficulty * modeDifficultyMultiplier,
 					Food = food,
 					Loot = loot,
 					Cook = cook,
@@ -56,7 +85,7 @@ if (!("HuntingLoot" in ::Const))
 
 			function rollBrew()
 			{
-				if(this.dropLoot(this.BrewLevel))
+				if( this.dropLoot(this.BrewLevel, this.Mode == ::Const.HuntingLoot.HunterCampMode.Brew) )
 				{
 					return this.new(this.Brew.roll());
 				}
@@ -90,6 +119,18 @@ if (!("HuntingLoot" in ::Const))
 			if ("Backgrounds" in target && !this.hasQualifiedBackground(target.Backgrounds, _partyBackgrounds))
 			{
 				continue;
+			}
+
+			// Hunt mode: ignore all Forage targets
+			if (_mode == ::Const.HuntingLoot.HunterCampMode.Hunt && target.Type=="Forage")
+			{
+				continue;
+			}
+
+			// Forage mode: ignore all Hunt targets
+			if (_mode == ::Const.HuntingLoot.HunterCampMode.Forage && target.Type=="Hunt")
+			{
+				continue
 			}
 
 			generator.Target.addArray([targetContainer])
@@ -184,5 +225,12 @@ if (!("HuntingLoot" in ::Const))
 	Default = 0,
 	Cook = 1,
 	Brew = 2,
-	Beast = 3,
-};
+	Hunt = 3,
+	Forage = 4,
+}; // Tooltips are defined in CampingHuntingMode in legends_msu_tooltips.nut
+
+::Const.HuntingLoot.HunterCampModeNameMap <- array(::Const.HuntingLoot.HunterCampMode.len(),null);
+foreach (k, v in ::Const.HuntingLoot.HunterCampMode)
+{
+	::Const.HuntingLoot.HunterCampModeNameMap[v] = k;
+}

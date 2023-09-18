@@ -139,7 +139,7 @@
 		Food = "scripts/items/supplies/legend_bear_meat_item",
 		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
 		Loot = [
-			[1,"scripts/items/loot/legend_bear_fur"]
+			[1,"scripts/items/loot/legend_bear_fur_item"]
 		],
 		Backgrounds = [
 			"background.barbarian",

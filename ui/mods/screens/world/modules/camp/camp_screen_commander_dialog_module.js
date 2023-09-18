@@ -182,7 +182,6 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 			self.notifyBackendConfigureButtonPressed(self.mSelectedTent.data('ID'));
 		}
 	}, '', 6);
-	this.mConfigureButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonConfigure"});
 
 	var listContainer = $('<div class="stats-list-container"/>');
 	this.mStatsContainer.append(listContainer);
@@ -642,7 +641,7 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 				self.mTentButton.changeButtonText(res.Label);
 				self.mTentButton.enableButton(res.Enabled);
 				self.mConfigureButton.enableButton(res.Configure);
-
+				self.mConfigureButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonConfigure", tent: id});
 				self.mStatsList.forEach(function (c) {
 					c.remove();
 				});
@@ -1013,6 +1012,7 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
     // create: footer button
     this.mPopupDialog.addPopupDialogOkButton(function (_dialog) {
         self.mPopupDialog = null;
+        self.refreshInfoPanel(self.mSelectedTent.data('ID'));
         _dialog.destroyPopupDialog();
         self.notifyBackendPopupDialogIsVisible(false);
     });
@@ -1032,7 +1032,8 @@ CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _dat
 			}, '', 1);
 			button.data('ID', ButtonNames[i]);
 			button.data('Func', "setMode");
-			button.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Placeholder"});
+			var eid = "CampingHuntingMode." + ButtonNames[i];
+			button.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: eid});
 			_dialogButtons.push(button);
 	    }
 	    _dialogButtons[SelectedIndex].enableButton(false);
@@ -1072,6 +1073,37 @@ CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (
 {
 	SQ.call(this.mSQHandle, 'onTentSelected', _entryID, _callback);
 };
+
+CampScreenCommanderDialogModule.prototype.refreshInfoPanel = function(_tentID)
+{
+	var self = this;
+	var callback = function (_res)
+	{
+		self.mStatsList.forEach(function (c) {
+			c.remove();
+		});	
+		if (_res.Info)
+		{
+			_res.Info.forEach(function (i) {
+				var text = i;
+				var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+				self.mStatsList.push(stats);
+				self.mStatsScrollContainer.append(stats);
+			})
+		}
+		if ('Modifiers' in _res.Modifiers)
+		{
+			_res.Modifiers.Modifiers.forEach(function (m) {
+				var text = m[0].toFixed(2) + "% " + m[1];
+				var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+				self.mStatsList.push(stats);
+				self.mStatsScrollContainer.append(stats);
+			})				
+		}
+	}
+	
+	SQ.call(this.mSQHandle,'onTentSelected', _tentID, callback);
+}
 
 CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = function (_broID, _tentID, _callback)
 {
