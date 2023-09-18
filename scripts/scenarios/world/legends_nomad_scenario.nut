@@ -193,6 +193,8 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{											 //+30%
 			this.World.State.getPlayer().m.VisionRadius = 670; //500 is default during daytime on normal terrain
 		}
+
+		this.updateFactionActionsDeck();
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
@@ -231,6 +233,16 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.addBroToRoster(_roster, "nomad_background", 4);
 		this.addBroToRoster(_roster, "nomad_ranged_background", 4);
 		this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
+	}
+
+	function updateFactionActionsDeck()
+	{
+		// Disable Drive Away Nomads contract for City State factions
+		local cityStates = ::World.FactionManager.getFactionsOfType(::Const.FactionType.OrientalCityState);
+		foreach (faction in cityStates)
+		{
+			faction.removeActionByID("drive_away_nomads_action");
+		}
 	}
 });
 
