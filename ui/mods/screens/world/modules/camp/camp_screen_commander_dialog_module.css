@@ -353,6 +353,15 @@
 }
 
 /*Added by Necro*/
+.camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .stats-list-container
+{
+	top: 5.0rem;
+	width: 97%;
+	height: 22.5rem;
+	position: absolute;
+}
+
+/*Added by Necro*/
 .camp-screen > .l-commander-dialog-container .content > .right-column > .bottom-row > .stats > .tent-button-container
 {
 	width: 100%;

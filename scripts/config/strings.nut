@@ -1186,7 +1186,9 @@ gt.Const.Strings.Terrain <- [
 	"in the steppe",
 	"on the shore",
 	"in the desert",
-	"in the wetlands"
+	"in the wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainAlternative <- [
 	"",
@@ -1207,7 +1209,9 @@ gt.Const.Strings.TerrainAlternative <- [
 	"on steppe",
 	"",
 	"in the desert",
-	"in wetlands"
+	"in wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainShort <- [
 	"",
@@ -1230,7 +1234,9 @@ gt.Const.Strings.TerrainShort <- [
 	"",
 	"desert",
 	"hills",
-	"wetlands"
+	"wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainRegionNames <- [
 	[],

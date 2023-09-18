@@ -1,16 +1,16 @@
-this.legend_fresh_milk_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
+this.legend_wolf_meat_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
 		this.legend_usable_food.create();
-		this.m.ID = "supplies.legend_fresh_milk";
-		this.m.Name = "Fresh Milk";
-		this.m.Description = "Provisions. Freshly milked, it tastes good but will not last long without being turned into cheese. Can be eaten in battle to provide up to 1 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
-		this.m.Icon = "supplies/legend_fresh_milk.png";
-		this.m.Amount = 10.0;
-		this.m.Value = 20;
-		this.m.GoodForDays = 2;
-		this.m.IsUndesirable = false;
+		this.m.ID = "supplies.legend_wolf_meat";
+		this.m.Name = "Wolf Meat";
+		this.m.Description = "Provisions. Foul smelling meat from the howling bane of shepherds. Can be eaten in battle to provide up to 1 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
+		this.m.Icon = "supplies/legend_placeholder.png";
+		this.m.Amount = 15;
+		this.m.Value = 30;
+		this.m.GoodForDays = 1;
+		this.m.IsUndesirable = true;
 	}
 
 	function getBuyPrice()
@@ -57,4 +57,3 @@ this.legend_fresh_milk_item <- this.inherit("scripts/items/supplies/legend_usabl
 		this.addSkill(skill);
 	}
 });
-
