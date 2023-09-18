@@ -550,7 +550,7 @@ this.faction <- {
 				// If there's no category, then something is wrong
 				if (cat == "" || cat == null)
 				{
-					local error = "Attempting to remove contract: " + _c.getName() + " but it has no Category";
+					local error = "Attempting to remove contract: " + _c.getName() + " from {" + this.getName() + "}" + " but it has no Category";
 					::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 					return;
 				}
@@ -558,7 +558,7 @@ this.faction <- {
 				local j = this.m.ContractsByCategory[cat].find(_c);
 				if (j != null)
 				{
-					local str = "Removing Contract " + _c.getName() + " with Category=" + _c.getCategory();
+					local str = "Removing Contract " + _c.getName() + " with Category=" + _c.getCategory() + " from {" + this.getName() + "}";
 					::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 					this.m.ContractsByCategory[cat].remove(j);
 					return;
@@ -570,7 +570,7 @@ this.faction <- {
 			{
 				local error = "";
 				error += "Attempting to remove contract: " + _c.getName()
-				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")"
+				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")" + " from {" + this.getName() + "}"
 				error += " but it could not be found in any Category";
 				::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;

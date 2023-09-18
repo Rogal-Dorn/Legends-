@@ -3,7 +3,7 @@ this.defend_settlement_greenskins_action <- this.inherit("scripts/factions/facti
 	function create()
 	{
 		this.m.ID = "defend_settlements_greenskins_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 5;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();
