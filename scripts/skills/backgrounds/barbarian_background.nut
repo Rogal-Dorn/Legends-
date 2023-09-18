@@ -48,7 +48,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Notorious;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(2, 4);
-		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Druid;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Druid | this.Const.BackgroundType.ExpertHunter;
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[2];

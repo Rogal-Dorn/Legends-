@@ -2,10 +2,11 @@ this.legend_bear_fur_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
+		this.item.create();
 		this.m.ID = "misc.legend_bear_fur";
 		this.m.Name = "Bear Fur";
 		this.m.Description = "The intact skin and fur of a huge bear.  A very sought-after commodity, especially in larger settlements.";
-		this.m.Icon = "loot/wildmen_03.png";
+		this.m.Icon = "loot/legend_bear_loot.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;
 		this.m.IsDroppedAsLoot = true;
