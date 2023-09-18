@@ -62,54 +62,408 @@
 ]
 
 // Define the various targets that can be hunted / looted
-// TODO: add all the possible targets in the design document
+// Design document: https://docs.google.com/spreadsheets/d/1UHcwQFuL0dFtThlDFAXlAt7Lj4dNgWHKjO1palEq1to/edit?usp=sharing
 ::Const.HuntingLoot.TargetDefs <- {
 
-	// Foraging Loot
-	Fruit = {
+	// Foraging Targets
+	Dates = {
+		Name = "Dates",
+		Text = "dates",
+		Type = "Forage",
+		Difficulty = 250,
+		Food = "scripts/items/supplies/legend_fresh_dates_item",
+		Cook = "scripts/items/supplies/dates_item",
+	},
+
+	Fruits = {
 		Name = "Fruit",
 		Text = "fruit",
 		Type = "Forage",
-		Difficulty = 100,
+		Difficulty = 150,
 		Food = "scripts/items/supplies/legend_fresh_fruit_item",
 		Cook = "scripts/items/supplies/dried_fruits_item",
 	},
 
-	Berries = {
+	Grubs = {
+		Name = "Grubs",
+		Text = "grubs",
+		Type = "Forage",
+		Difficulty = 70,
+		Food = "scripts/items/supplies/legend_bug_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder
+	},
+
+	Milk = {
+		Name = "Milk",
+		Text = "milk",
+		Type = "Forage",
+		Difficulty = 100,
+		Food = "scripts/items/supplies/legend_fresh_milk_item",
+		Cook = "scripts/items/supplies/goat_cheese_item", // placeholder?
+	},
+
+	Mushrooms = {
+		Name = "Mushrooms",
+		Text = "mushrooms",
+		Type = "Forage",
+		Difficulty = 200,
+		Food = "scripts/items/supplies/legend_fresh_mushrooms_item",
+		Cook = "scripts/items/supplies/pickled_mushrooms_item",
+	},
+
+	NutsAndSeeds = {
+		Name = "Nuts and Seeds",
+		Text = "nuts and seeds",
+		Type = "Forage",
+		Difficulty = 100,
+		Food = "scripts/items/supplies/legend_nuts_and_seeds_item",
+		Cook = "scripts/items/supplies/roots_and_berries_item", // placeholder
+	},
+
+	RootsAndBerries = {
 		Name = "Roots and Berries",
 		Text = "roots and berries",
 		Type = "Forage",
-		Difficulty = 200,
-		Food = "scripts/items/supplies/roots_and_berries_item",
+		Difficulty = 150,
+		Food = "scripts/items/supplies/legend_fresh_roots_and_berries_item",
+		Cook = "scripts/items/supplies/roots_and_berries_item",
 	},
 
-	Herbs = {
-		Name = "Herbs",
-		Text = "herbs",
-		Type = "Forage",
+	// Hunting Targets
+	Bear = {
+		Name = "Bear",
+		Text = "a bear",
+		Type = "Hunt",
+		Tier = 2,
+		Difficulty = 800,
+		Food = "scripts/items/supplies/legend_bear_meat_item",
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Loot = [
+			[1,"scripts/items/loot/legend_bear_fur"]
+		],
+		Backgrounds = [
+			"background.barbarian",
+			"background.beast_slayer",
+			"background.legend_berserker",
+			"background.legend_commander_berserker",
+			"background.hunter",
+			"background.legend_ranger",
+			"background.legend_commander_ranger",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Boar = {
+		Name = "Boar",
+		Text = "a wild boar",
+		Type = "Hunt",
+		Tier = 1,
+		Difficulty = 400,
+		Food = "scripts/items/supplies/legend_boar_meat_item",
+		Cook = "scripts/items/supplies/smoked_ham_item", // placeholder?
+		Loot = [ // placeholder
+			[4,"scripts/items/trade/legend_small_furs_item"],
+			[2,"scripts/items/loot/sabertooth_item"],
+			[1,"scripts/items/trade/furs_item"]
+		],
+		Backgrounds = [
+			"background.barbarian",
+			"background.legend_berserker",
+			"background.legend_commander_berserker",
+			"background.hunter",
+			"background.poacher",
+			"background.legend_ranger",
+			"background.legend_commander_ranger",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Clams = {
+		Name = "Clams",
+		Text = "some clams",
+		Type = "Hunt",
+		Tier = 0,
 		Difficulty = 100,
-		Food = "scripts/items/supplies/roots_and_berries_item", // placeholder
+		Food = "scripts/items/supplies/legend_clams_item",
+		Cook = "scripts/items/supplies/dried_fish_item", // placeholder
+		Loot = [
+			[19,"scripts/items/trade/legend_seashells_item"],
+			[1,"scripts/items/loot/white_pearls_item"]
+		],
 	},
 
-	// Hunting Loot
+	Crab = {
+		Name = "Crab",
+		Text = "a crab",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 200,
+		Food = "scripts/items/supplies/legend_crab_meat_item",
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Loot = [ // placeholder
+			[1,"scripts/items/trade/legend_seashells_item"]
+		],
+		Backgrounds = [
+			"background.fisherman",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Deer = {
+		Name = "Deer",
+		Text = "a deer",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 300,
+		Food = "scripts/items/supplies/legend_fresh_meat_item",
+		Cook = "scripts/items/supplies/cured_venison_item",
+		Loot = [ // placeholder?
+			[3,"scripts/items/trade/legend_small_furs_item"],
+			[1,"scripts/items/trade/furs_item"]
+		],
+		Backgrounds = [
+			"background.hunter",
+			"background.poacher",
+			"background.legend_ranger",
+			"background.legend_commander_ranger",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
 	Direwolf = {
 		Name = "Direwolf",
 		Text = "a direwolf",
 		Type = "Hunt",
 		Tier = 1,
 		Difficulty = 500,
-		// Food = "scripts/items/supplies/legend_wolf_meat_item", // doesn't exist yet
-		Food = "scripts/items/supplies/strange_meat_item",
-		Cook = "scripts/items/supplies/cured_venison_item", // placeholder
+		Food = "scripts/items/supplies/legend_wolf_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder
 		Loot = [
-			[3,"scripts/items/misc/werewolf_pelt_item"], // the numbers are probability weights
-			[1,"scripts/items/misc/adrenaline_gland_item"],
+			[3,"scripts/items/misc/werewolf_pelt_item"],
+			[1,"scripts/items/misc/adrenaline_gland_item"]
+		],
+		Backgrounds = [
+			"background.barbarian",
+			"background.beast_slayer",
+			"background.legend_berserker",
+			"background.legend_commander_berserker",
+			"background.hunter",
+			"background.legend_ranger",
+			"background.legend_commander_ranger",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Fish = {
+		Name = "Fish",
+		Text = "a fish",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 150,
+		Food = "scripts/items/supplies/legend_fresh_fish_item",
+		Cook = "scripts/items/supplies/dried_fish_item",
+		Loot = [ // placeholder
+			[1,"scripts/items/trade/legend_seashells_item"]
+		],
+		Backgrounds = [
+			"background.fisherman",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Ghoul = {
+		Name = "Ghoul",
+		Text = "a nachzehrer",
+		Type = "Hunt",
+		Tier = 1,
+		Difficulty = 250,
+		Food = "scripts/items/supplies/strange_meat_item", // placeholder?
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Loot = [
+			[3,"scripts/items/loot/growth_pearls_item"],
+			[3,"scripts/items/misc/ghoul_brain_item"],
+			[3,"scripts/items/misc/ghoul_teeth_item"],
+			[2,"scripts/items/misc/ghoul_horn_item"]
+		],
+		Backgrounds = [
+			"background.legend_cannibal",
+			"background.cultist",
+			"background.converted_cultist",
+			"background.witchhunter"
+		]
+	},
+
+	Goblin = {
+		Name = "Goblin",
+		Text = "a goblin",
+		Type = "Hunt",
+		Tier = 2,
+		Difficulty = 250,
+		Food = "scripts/items/supplies/strange_meat_item", // placeholder?
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Loot = [
+			[4,"scripts/items/loot/goblin_carved_ivory_iconographs_item"],
+			[3,"scripts/items/loot/goblin_minted_coins_item"],
+			[2,"scripts/items/loot/goblin_rank_insignia"]
+		],
+		Backgrounds = [
+			"background.legend_cannibal",
+			"background.legend_ranger",
+			"background.legend_commander_ranger",
+			"background.wildman",
+			"background.wildwoman"
+		]
+	},
+
+	Hexen = {
+		Name = "Hexen",
+		Text = "a hexen",
+		Type = "Hunt",
+		Tier = 3,
+		Difficulty = 1200,
+		Food = "scripts/items/supplies/strange_meat_item", // placeholder?
+		Cook = "scripts/items/supplies/black_marsh_stew_item",
+		Loot = [
+			[3,"scripts/items/misc/poisoned_apple_item"],
+			[2,"scripts/items/misc/mysterious_herbs_item"],
+			[1,"scripts/items/misc/witch_hair_item"]
+		],
+		Backgrounds = [
+			"background.legend_cannibal",
+			"background.cultist",
+			"background.converted_cultist",
+			"background.witchhunter"
+		]
+	},
+
+	Hyena = {
+		Name = "Hyena",
+		Text = "a hyena",
+		Type = "Hunt",
+		Tier = 1,
+		Difficulty = 500,
+		Food = "scripts/items/supplies/legend_dog_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder?
+		Loot = [
+			[2,"scripts/items/loot/sabertooth_item"],
+			[1,"scripts/items/misc/acidic_saliva_item"],
+			[1,"scripts/items/misc/hyena_fur_item"]
+		],
+		Backgrounds = [
+			"background.beast_slayer",
+			"background.hunter",
+			"background.nomad",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
+		]
+	},
+
+	MountainGoat = {
+		Name = "Mountain Goat",
+		Text = "a mountain goat",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 350,
+		Food = "scripts/items/supplies/legend_mutton_item",
+		Cook = "scripts/items/supplies/dried_lamb_item",
+		Loot = [ // placeholder?
+			[5,"scripts/items/trade/legend_small_furs_item"],
+			[1,"scripts/items/trade/furs_item"]
+		],
+	},
+
+	Pheasant = {
+		Name = "Pheasant",
+		Text = "a pheasant",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 200,
+		Food = "scripts/items/supplies/legend_fresh_poultry_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder
+		Loot = [
+			[1,"scripts/items/trade/legend_small_furs_item"] // placeholder
 		],
 		Backgrounds = [
 			"background.hunter",
+			"background.nomad",
 			"background.poacher",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
+		]
+	},
+
+	Rabbit = {
+		Name = "Rabbit",
+		Text = "a rabbit",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 200,
+		Food = "scripts/items/supplies/legend_rabbit_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder
+		Loot = [
+			[1,"scripts/items/trade/legend_small_furs_item"] // placeholder
+		],
+	},
+
+	Serpent = {
+		Name = "Serpent",
+		Text = "a serpent",
+		Type = "Hunt",
+		Tier = 2,
+		Difficulty = 800,
+		Food = "scripts/items/supplies/legend_snake_meat_item",
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Loot = [
+			[3,"scripts/items/misc/serpent_skin_item"],
+			[2,"scripts/items/misc/glistening_scales_item"],
+			[4,"scripts/items/loot/rainbow_scale_item"]
+		],
+		Backgrounds = [
 			"background.beast_slayer",
-			"background.legend_muladi",
+			"background.lindwurm_slayer",
+			"background.nomad"
+		]
+	},
+
+	Squirrel = {
+		Name = "Squirrel",
+		Text = "a squirrel",
+		Type = "Hunt",
+		Tier = 0,
+		Difficulty = 200,
+		Food = "scripts/items/supplies/legends_squirrel_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder
+		Loot = [
+			[1,"scripts/items/trade/legend_small_furs_item"]
+		],
+	},
+
+	Unhold = {
+		Name = "Unhold",
+		Text = "an unhold",
+		Type = "Hunt",
+		Tier = 3,
+		Difficulty = 1500,
+		Food = "scripts/items/supplies/strange_meat_item",
+		Cook = "scripts/items/supplies/fermented_unhold_heart_item",
+		Loot = [
+			[3,"scripts/items/misc/unhold_bones_item"],
+			[3,"scripts/items/misc/unhold_heart_item"],
+			[4,"scripts/items/misc/unhold_hide_item"]
+		],
+		Backgrounds = [
+			"background.barbarian",
+			"background.beast_slayer",
+			"background.legend_berserker",
+			"background.legend_commander_berserker",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
 		]
 	},
 
@@ -120,52 +474,49 @@
 		Tier = 3,
 		Difficulty = 1500,
 		Food = "scripts/items/supplies/strange_meat_item",
-		Cook = "scripts/items/supplies/cured_venison_item", // placeholder
+		Cook = "scripts/items/supplies/fermented_unhold_heart_item",
 		Loot = [
 			[3,"scripts/items/misc/unhold_bones_item"],
 			[3,"scripts/items/misc/unhold_heart_item"],
 			[4,"scripts/items/misc/unhold_hide_item"],
+			[3,"scripts/items/misc/frost_unhold_fur"]
 		],
 		Backgrounds = [
-			"background.beast_slayer",
 			"background.barbarian",
-			"background.legend_ranger",
-			"background.legend_commander_ranger",
+			"background.beast_slayer",
 			"background.legend_berserker",
-			"background.legend_commander_berserker"
+			"background.legend_commander_berserker",
+			"background.legend_ranger",
+			"background.legend_commander_ranger"
 		]
 	},
 
-	Squirrel = {
-		Name = "Squirrel",
-		Text = "a squirrel",
+	Webknecht = {
+		Name = "Webknecht",
+		Text = "a webknecht",
 		Type = "Hunt",
-		Tier = 0,
-		Difficulty = 250,
-		Food = "scripts/items/supplies/legend_fresh_meat_item", // placeholder
-		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Tier = 1,
+		Difficulty = 500,
+		Food = "scripts/items/supplies/legend_bug_meat_item",
+		Cook = "scripts/items/supplies/legend_yummy_sausages", // placeholder?
+		Loot = [
+			[3,"scripts/items/misc/poison_gland_item"],
+			[2,"scripts/items/misc/spider_silk_item"]
+		],
 	},
 
-	Rabbit = {
-		Name = "Rabbit",
-		Text = "a rabbit",
+	Wicent = {
+		Name = "Wicent",
+		Text = "a wicent",
 		Type = "Hunt",
-		Tier = 0,
-		Difficulty = 250,
-		Food = "scripts/items/supplies/legend_fresh_meat_item", // placeholder
-		Cook = "scripts/items/supplies/legend_pie_item", // placeholder
+		Tier = 1,
+		Difficulty = 700,
+		Food = "scripts/items/supplies/legend_beef_item",
+		Cook = "scripts/items/supplies/legend_pie_item", // placeholder?
+		Loot = [
+			[1,"scripts/items/trade/furs_item"]
+		],
 	},
-
-	Deer = {
-		Name = "Deer",
-		Text = "a deer",
-		Type = "Hunt",
-		Tier = 0,
-		Difficulty = 350,
-		Food = "scripts/items/supplies/legend_fresh_meat_item",
-		Cook = "scripts/items/supplies/cured_venison_item",
-	},
-
 }
 
 // Gather all the backgrounds that enable hunting / foraging for convenient reference at runtime

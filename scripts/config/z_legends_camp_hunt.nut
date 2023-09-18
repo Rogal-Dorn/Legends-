@@ -126,7 +126,7 @@ if (!("HuntingLoot" in ::Const))
 		local biomeRewards = ::Const.HuntingLoot.Biomes[_biome];
 
 		// Generic rewards just in case the biome isn't suppported
-		if(!biomeRewards) 
+		if(!biomeRewards || biomeRewards[0].len()==0) 
 		{
 			return ::Const.HuntingLoot.BiomesDefault;
 		}
