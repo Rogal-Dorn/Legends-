@@ -155,7 +155,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         ["scripts/items/weapons/hatchet", this.Const.Perks.AxeTree, 70],
         ["scripts/items/weapons/bludgeon", this.Const.Perks.MaceTree, 70],
         ["scripts/items/weapons/militia_spear", this.Const.Perks.SpearTree, 70],
-        ["scripts/items/weapons/pickaxe", this.Const.Perks.HammerClassTree, 70],
+        ["scripts/items/weapons/pickaxe", this.Const.Perks.HammerTree, 70],
         ["scripts/items/weapons/reinforced_wooden_flail", this.Const.Perks.FlailTree, 70],
         ["scripts/items/weapons/wooden_flail", this.Const.Perks.FlailTree, 70],
         ["scripts/items/weapons/butchers_cleaver", this.Const.Perks.CleaverTree, 70],
