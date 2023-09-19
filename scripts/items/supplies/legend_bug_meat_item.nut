@@ -1,9 +1,9 @@
-this.legend_grubs_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
+this.legend_bug_meat_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
 		this.legend_usable_food.create();
-		this.m.ID = "supplies.legend_grubs";
+		this.m.ID = "supplies.legend_bug_meat";
 		this.m.Name = "Bug Meat";
 		this.m.Description = "Provisions. Disgusting fat writhing bugs... A pitiful meal sure to make any weep. Can be eaten in battle to provide up to 1 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
 		this.m.Icon = "supplies/legend_placeholder.png";
