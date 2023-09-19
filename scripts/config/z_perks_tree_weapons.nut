@@ -358,7 +358,8 @@ gt.Const.Perks.SwordTree <- {
 		[],
 		[gt.Const.Perks.PerkDefs.SpecSword],
 		[],
-		[gt.Const.Perks.PerkDefs.Duelist]
+		[gt.Const.Perks.PerkDefs.Duelist],
+		[]
 	]
 };
 

@@ -17,7 +17,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 
 	function onInit()
 	{
-		this.human.onInit();
+		this.randomized_unit_abstract.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.CaravanGuard);
 		b.IsSpecializedInSwords = true;
