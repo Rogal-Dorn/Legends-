@@ -212,17 +212,8 @@ this.legends_mining_village <- this.inherit("scripts/entity/world/settlements/le
 			"vagabond_background"
 		]];
 		this.m.FemaleDraftLists = [[
-			"female_beggar_background",
-			"female_daytaler_background",
-			"female_thief_background",
 		],[
-			"female_daytaler_background",
-			"female_servant_background",
-			"female_thief_background",
 		],[
-			"female_daytaler_background",
-			"female_servant_background",
-			"female_thief_background",
 		]];
 		this.m.StablesLists = [[
 			"legend_donkey_background"

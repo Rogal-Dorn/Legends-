@@ -437,6 +437,17 @@ WorldEventScreen.prototype.renderList = function (_data)
 WorldEventScreen.prototype.renderListItem = function (_container, _item)
 {
 	var row = $('<div class="row list"/>');
+	
+	if ('divider' in _item && _item['divider'] === 'top')
+	{
+		row.addClass("divider-top");		
+	}
+
+	if ('divider' in _item && _item['divider'] === 'bottom')
+	{
+		row.addClass("divider-bottom");		
+	}
+	
 	_container.append(row);
 
 	if (WorldEventIdentifier.Event.Content.Entry.Type.List.Items.Entry.ImagePath in _item && _item[WorldEventIdentifier.Event.Content.Entry.Type.List.Items.Entry.ImagePath] !== null)

@@ -163,7 +163,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		local emptySlots = this.Stash.getNumberOfEmptySlots();
 		if (emptySlots == 0) return this.getUpdateText();
 		local item = null;
-		this.logInfo(this.m.Craft);
 		local dropLoot = -3.0 / (this.m.Craft + 0.4) + 7.5 > this.Math.rand(1, 100);
 		if (dropLoot && this.getUpgraded())
 		{
@@ -179,7 +178,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		dropLoot = -500.0 / (levels.Woodsman + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with timber perk.
 		if (dropLoot && levels.Woodsman > 0)
 		{
-			local r = levels.Woodsman > 10 ? 1 : this.Math.rand(1, 10);
+			local r = levels.Woodsman <= 10 ? 1 : this.Math.rand(1, 10); // Can only access these if total miner lvl 11+
 			if (r >= 6) item = this.new("scripts/items/trade/legend_raw_wood_item");
 			if (r == 3) item = this.new("scripts/items/trade/quality_wood_item");
 
@@ -202,7 +201,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 		dropLoot = -500.0 / (levels.Miner + 60) + 10 > this.Math.rand(1, 100); //roughly .54% chance per lvl 11 recruit with ore perk.
 		if (dropLoot && levels.Miner > 0)
 		{
-			local r = levels.Miner > 10 ? 1 : this.Math.rand(1, 10);
+			local r = levels.Miner <= 10 ? 1 : this.Math.rand(1, 10); // Can only access these if total miner lvl 11+
 			if (r > 7) item = this.new("scripts/items/trade/legend_gem_shards_item");
 			if (r == 3) item = this.new("scripts/items/trade/uncut_gems_item");
 			if (r < 2) item = this.new("scripts/items/trade/salt_item");

@@ -150,25 +150,15 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 	//Default feMale
 	function setGender(_gender = -1)
 	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = 1;
-			if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
-			{
-				r = this.Math.rand(0, 1);
-			}
-		}
+		if (_gender == -1) _gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled" ? 0 : ::Math.rand(0, 1);
 
-		if (r != 0)
-		{
-			return;
-		}
+		if (_gender != 0) return;
+
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-
+		this.m.Bodies = this.Const.Bodies.Skinny;
 		this.removeBackgroundType(this.Const.BackgroundType.Female);
 	}
 
