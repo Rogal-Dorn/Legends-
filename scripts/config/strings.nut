@@ -1186,7 +1186,9 @@ gt.Const.Strings.Terrain <- [
 	"in the steppe",
 	"on the shore",
 	"in the desert",
-	"in the wetlands"
+	"in the wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainAlternative <- [
 	"",
@@ -1207,7 +1209,9 @@ gt.Const.Strings.TerrainAlternative <- [
 	"on steppe",
 	"",
 	"in the desert",
-	"in wetlands"
+	"in wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainShort <- [
 	"",
@@ -1230,7 +1234,9 @@ gt.Const.Strings.TerrainShort <- [
 	"",
 	"desert",
 	"hills",
-	"wetlands"
+	"wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainRegionNames <- [
 	[],
@@ -2082,6 +2088,8 @@ gt.Const.Strings.PerkName <- {
 	ReturnFavor = "Return Favor",
 	Sprint = "Sprint",
 	Inspire = "Inspire",
+	LegendAthlete = "Athlete"
+	LegendQuickStep = "Quick Step"
 	LegendCascade = "Cascade strikes",
 	LegendEvasion = "Evasion",
 	LegendHoldTheLine = "Hold the line",
@@ -2455,7 +2463,7 @@ gt.Const.Strings.PerkDescription <- {
 	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
 	LegendFullForce = "Knowing what blows you can ignore allows you to focus on the deadly ones.\n\nGain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of the combined fatigue modifier from body, head, main hand and off hand as Melee Defense.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count.",
-	CoupDeGrace = "Like a beast of prey, you hunt the weak.\n\nInflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that have sustained any injury effects, like a broken arm. Also grants [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against targets who are stunned, netted or sleeping.",
+	CoupDeGrace = "Like a beast of prey, you hunt the weak.\n\nInflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that are debilitated or have sustained any injury effects, like a broken arm.\n\nAlso grants [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against targets who suffer from any of the following effects: baffled, dazed, distracted, grappled, netted, rooted, shellshocked, sleeping, staggered, stunned, vulnerable, webbed, or withered.",
 	SteelBrow = "Mother always said you had a hard head.\n\nHits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.\n Additionally, any attacks that would stun you now daze you.",
 	Anticipation = "By watching your opponent\'s aim, you have more time to react.\n\nWhen being attacked with ranged weapons, gain [color=" + this.Const.UI.Color.PositiveValue + "]1 + 10% of your base Ranged Defense[/color] as additional Ranged Defense per tile that the attacker is away, and always at least [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Ranged Defense.",
 	HoldOut = "Keep it together! Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] turn. Status effects that have their effects grow weaker over several turns (e.g. Goblin Poison) are at their weakest state from the start. Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] hitpoints and raises the chance to survive being struck down and not killed from 33% to 66%.",
@@ -2479,7 +2487,7 @@ gt.Const.Strings.PerkDescription <- {
 	BattleFlow = "Glide through battle like a leaf in a stream.\n\nOnce per turn, killing an opponent reduces current fatigue by [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] of the base maximum fatigue (before penalties due to armor weight are applied).",
 	DevastatingStrikes = "All damage inflicted is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used, including fists. What could stand before you now?",
 	KillingFrenzy = "Go into a killing frenzy! A kill increases all damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] for 2 turns. Does not stack, but another kill will reset the timer.",
-	ShieldBash = "The Knock Back skill now also inflicts [color=" + this.Const.UI.Color.DamageValue + "]10 - 25[/color] Damage (50% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue in addition to its normal effect, and costs [color=" + this.Const.UI.Color.PositiveValue + "]-10%[/color] Fatigue less to use.",
+	ShieldBash = "The Knock Back skill now also inflicts [color=" + this.Const.UI.Color.DamageValue + "]10 - 25[/color] Damage (50% effective against armor) and [color=" + this.Const.UI.Color.DamageValue + "]10[/color] Fatigue in addition to its normal effect, and costs [color=" + this.Const.UI.Color.PositiveValue + "]-25%[/color] Fatigue and Action Points less to use.",
 	Brawny = "The fatigue and initiative penalty from wearing armor and helmet is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color].",
 	Stalwart = "Grants passive immunity against being knocked back, pulled, grabbed or swallowed. Applies to skills such as Knock Back, Hook and others that change a character\'s position. Does not grant the damage reduction of indomitable, but also doesn\'t require activation.",
 	Steadfast = "The Fatigue cost of getting hit or missed by regular attacks is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color]. Attacks that specifically target fatigue are unaffected.",
@@ -2526,6 +2534,8 @@ gt.Const.Strings.PerkDescription <- {
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
 	SpecMace = "Master maces to beat your opponents into submission, armored or not. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nKnock Out, Knock Over and Strike Down have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to stun the target if not immune.\n\nThe Polemace no longer has a penalty for attacking targets directly adjacent.",
 	SpecFlail = "Master flails and circumvent your opponent\'s shield. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nLash and Hail ignore the defense bonus of shields.\n\nThresh gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendQuickStep = "Exert yourself to move one tile at an unusually quick speed.\n\n Gain the 'Quick Step' skill which allows you to move one tile for only [color=" + this.Const.UI.Color.PositiveValue + "]1 AP[/color] and 7 fatigue cost once per turn.",
+	LegendAthlete = "You're a well-rounded athlete!\n\n Gain the 'Sprint' skill which allows you to quickly cover 4 tiles in a straight line, does not work across rough terrain or through enemy zones of control.\n\n Additionally, gain the 'Climb' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity.",
 	LegendSpecPoison = "Master poison, giving you the ability to coat your weapons with poison for the next 4 attacks without needing or consuming a poison vial.",
 	LegendCascade = "Let loose a cascade of three striking heads on your opponent. Will strike over or around shield cover.",
 	LegendEvasion = "Enables the character to move swiftly and safely through any Zone of Control for the next whole turn without incurring any free attacks.",
@@ -2642,7 +2652,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistSickleSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor piercing while using a Sickle or Notched Blade. 25% of this skill applies to One Handed Swords.",
 	LegendSpecialistSlingDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a sling or slingshot.\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+15-30[/color] damage while using a slingstaff at range (but increases the AP cost of Sling Heavy Stone by 1 and Fatigue cost by 4).",
 	LegendSpecialistSlingSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a sling or slingshot.\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] armor damage while using a slingstaff at range (but increases the AP cost of Sling Heavy Stone by 1 and Fatigue cost by 4).",
-	LegendBigGameHunter = "The bigger they are...\n\nWhen targeting an enemy with more health than you, gain damage equal to their current hitpoints divided by your current hitpoints.",
+	LegendBigGameHunter = "The bigger they are...\n\nWhen fighting beasts, deal bonus scaling damage based on the target\'s missing health.\n\nWhen not fighting beasts, gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] ranged weapon damage but no additional modifier. Only works with ranged weapons.",
 	LegendSecondWind = "When falling below 50% health for the first time in each combat, will fully refresh your fatigue, grant +10 fatigue recovery for four turns and remove any Stun, Daze, Stagger, Baffle, Charmed or Sleeping status. Only occurs once per combat.",
 	LegendMarkTarget = "\'The ugly one, right there! Take him out!\'\n\nMark a target, reducing their ranged defense by [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] for 3 turns.",
 	LegendFieldTriage = "Spend medicine to heal a unit on the battlefield, at a rate of 1 medicine for every 2 health. Heals up to [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] health per use.",
@@ -2658,7 +2668,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPiercingShot = "Launch a shot so powerful it goes through an additional target. Bows and crossbows hit two targets in a straight line. Handgonnes reach an additional tile further. Does not work with throwing weapons.",
 	LegendLevitate = "Levitate a person above the ground, making movement across any terrain cost 1 AP and 2 Fatigue per tile.",
 	LegendTeleport = "Step through the world, disappearing from one place and reappearing in another place immediately.",
-	LegendSpecialistShieldSkill = "Begin each battle with your shieldwall activated and gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Ranged Defense while using a shield.",
+	LegendSpecialistShieldSkill = "The first two times you end a turn without shieldwall activated, gain shieldwall.\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] damage reduction while using a shield.",
 	LegendSpecialistShieldPush = "The skill \'Knock Back\' costs [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] less fatigue and action points.",
 	LegendMasteryNets = "Use advanced net throwing techniques to reduce the fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] and reduce AP cost to [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
 	LegendSpecialistScytheSkill = "Practicing with the unwieldy scythe has taught you how to twist your torso to produce repeatable smooth strokes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] melee skill while wielding a Scythe or Warscythe.",
@@ -2773,7 +2783,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChoke = "Once an opponent is fatigued, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Damage is determined by the difference in fatigue between you and your target. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%.",
 	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usury it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company.",
 	LegendQuartermaster = "Meal planning and preparation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company.",
-	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life. \n\n[color=#4f1800][u]Passive:[/u][/color]\nFor every 10,000 crowns you have in your stash... \n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] to Melee Skill and Ranged Skill\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] as Melee Defence and Ranged Defence\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] to Resolve\n• The Bonus gained from Crowns above 50000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color]\n\nAdditionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
+	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life. \n\n[color=#4f1800][u]Passive:[/u][/color]\nFor every 10,000 crowns you have in your stash... \n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] to Melee Skill and Ranged Skill\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] as Melee Defence and Ranged Defence\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] to Resolve\n• The Bonus gained from Crowns above 80000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color]\n\nAdditionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
 	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as hitpoints when used. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists.",
 	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. [color=" + this.Const.UI.Color.NegativeValue + "]Will hurt cultists[/color].",
 	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurrect for two turns.",

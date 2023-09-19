@@ -61,7 +61,7 @@ this.farmer_old_tricks_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() <= 2 && bro.getBackground().getID() == "background.farmhand" || bro.getLevel() <= 2 && bro.getBackground().getID() == "background.female_farmhand")
+			if (bro.getLevel() <= 2 && bro.getBackground().getID() == "background.farmhand")
 			{
 				candidates.push(bro);
 			}

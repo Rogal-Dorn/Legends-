@@ -57,13 +57,6 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_draftList.push("graverobber_background");
 		_draftList.push("raider_background");
 
-		if (_gender)
-		{
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_beggar_background");
-		_draftList.push("female_thief_background");
-		}
 
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
 		{

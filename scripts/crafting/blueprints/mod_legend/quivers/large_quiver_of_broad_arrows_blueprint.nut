@@ -16,8 +16,7 @@ this.large_quiver_of_broad_arrows_blueprint <- this.inherit("scripts/crafting/bl
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/backgrounds/female_bowyer_background",
-							"scripts/skills/backgrounds/bowyer_background"]
+				Scripts = ["scripts/skills/backgrounds/bowyer_background"]
 			}
 		]
 		this.initSkills(skills);

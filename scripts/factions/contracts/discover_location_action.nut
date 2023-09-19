@@ -3,7 +3,7 @@ this.discover_location_action <- this.inherit("scripts/factions/faction_action",
 	function create()
 	{
 		this.m.ID = "discover_location_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 12;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();

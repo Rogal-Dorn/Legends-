@@ -66,36 +66,9 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 	}
 
-	function setGender(_gender = -1)
-	{
-		local r = _gender;
-		if (_gender == -1)
-		{
-			r = this.Math.rand(0, 1);
-		}
-
-		if (_gender != 1) return;
-
-		this.m.Name = "Adventurous Lady";
-		this.m.Faces = this.Const.Faces.PrettyFemale;
-		this.m.Hairs = this.Const.Hair.AllFemale;
-		this.m.HairColors = this.Const.HairColors.Young;
-		this.m.Beards = null;
-		this.m.BeardChance = 0;
-		this.m.Bodies = this.Const.Bodies.AllFemale;
-		this.addBackgroundType(this.Const.BackgroundType.Female);
-	}
-
 	function onBuildDescription()
 	{
-		if (this.isBackgroundType(this.Const.BackgroundType.Female))
-		{
-			return "{Hailing from the northern families, %name% preferred hunting and marksmanship over 'ladylike' interests. | %name% looks like a wild woman but carries herself like a noble scion. | You find %name% in the midst of a fierce archery competition with a handful of foppish admirers. Easily besting each one who steps forth. | Sipping wine in the midst of a rowdy tavern, %name% almost immediately stands out to you.} {After being found barren, the value to her family greatly diminished. Forcing %name% to find her legacy in battle as opposed to the bedchamber. | Tired of her {meek | abusive | drunkard | incompetent | lecherous | unfaithful} husband, %name% left without a trace one night. Eager to find a more satisfying life. | After her husband was murdered in a dastardly plot, %name% set out to find her lovers killer. | Unimpressed with her selection of suitors in court, %name% set off in pursuit of her true love, battle. | Forced into an arranged marriage with a man 40 years her elder, %name% spurned him at the wedding and fled with a bow gifted during the ceremony.} {%name% warns you that anyone who touches her {will lose their balls and their brain. | she'll split them from gullet to groin.} You assure her your men value their manhood highly. | With a smile %name% offers to shoot an apple off your head to prove her skills. You simply take her word on it. | %name% seems quite eager to see her first battle. You wonder if she has even seen a single skirmish. | %name% asks about how many servants she can bring, and who will be carrying her VAST luggage. | %name% holds a bow nearly a head taller than her at her side. It's a miracle she can even draw it back enough to fire}.";
-		}
-		else
-		{
-			return "{A minor noble | As the third in the line of succession | A young and brash %noble% | A skilled swordsman}, %name%\'s life at court {had grown stale for %them% | was not exciting enough for %them% with endless studying of court etiquette and family lineage | felt like wasting the best time of %their% life | was not half as exciting to %them% as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of %their% brother | To the frustration of %their% mother | Finally making a decision to change things}, %name% rode out to {prove %themself% | make a name for themselves | earn glory on the battlefield | test %their% skills in battle} and {live life to its fullest as %they% imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn %their% place in the world | be knighted for %their% valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
-		}
+		return "{A minor noble | As the third in the line of succession | A young and brash %noble% | A skilled swordsman}, %name%\'s life at court {had grown stale for %them% | was not exciting enough for %them% with endless studying of court etiquette and family lineage | felt like wasting the best time of %their% life | was not half as exciting to %them% as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of %their% brother | To the frustration of %their% mother | Finally making a decision to change things}, %name% rode out to {prove %themself% | make a name for themselves | earn glory on the battlefield | test %their% skills in battle} and {live life to its fullest as %they% imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn %their% place in the world | be knighted for %their% valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 	}
 
 	function onChangeAttributes()
@@ -119,7 +92,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			RangedSkill = [
 				0,
-				10
+				5
 			],
 			MeleeDefense = [
 				3,
@@ -136,7 +109,6 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		};
 		return c;
 	}
-
 
 	function onAddEquipment()
 	{
@@ -157,7 +129,6 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			items.equip(this.new("scripts/items/weapons/rondel_dagger"));
 			items.equip(this.new("scripts/items/weapons/legend_parrying_dagger"));
 		}
-
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "mail_shirt"],

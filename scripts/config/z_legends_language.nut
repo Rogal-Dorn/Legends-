@@ -1,5 +1,7 @@
 local gt = this.getroottable();
 
+::Const.LegendMod.Language <- {};
+
 gt.Const.LegendMod.Pronouns <- [
 	"They",
 	"they",
@@ -88,4 +90,40 @@ gt.Const.LegendMod.extendVarsWithPronouns <- function( _vars, _gender )
 		])
 
 	}
+}
+
+::Const.LegendMod.Language.arrayToText <- function( _arr, _finalSeparator = "and", _highlight = false)
+{
+	local ret = "";
+	if (_arr.len() == 0) return ret;
+
+	// ret += ::Const.UI.getColorized(_arr[0],"#5d8ede");
+	if(_highlight)
+	{
+		ret += ::Const.UI.getColorized(_arr[0],_highlight);	
+	}
+	else
+	{
+		ret += _arr[0];
+	}
+	
+
+	if (_arr.len() == 1) return ret;
+
+	for (local i = 1; i < _arr.len(); i++ )
+	{
+		local separator = (i == (_arr.len() - 1)) ? " " + _finalSeparator + " " : ", ";
+		
+		if(_highlight)
+		{
+			ret += separator + ::Const.UI.getColorized(_arr[i],_highlight);	
+		}
+		else
+		{
+			ret += separator + _arr[i];
+		}
+		
+	}
+
+	return ret;
 }

@@ -308,7 +308,7 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
+			if (bro.getBackground().getID() == "background.minstrel")
 			{
 				candidate_minstrel.push(bro);
 			}
@@ -320,7 +320,7 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_monk.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.tailor" || bro.getBackground().getID() == "background.female_tailor")
+			else if (bro.getBackground().getID() == "background.tailor")
 			{
 				candidate_tailor.push(bro);
 			}

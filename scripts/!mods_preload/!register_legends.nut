@@ -1,11 +1,11 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "17.1.0",
+	Version = "18.0.0",
 	Name = "Legends Mod",
 	BuildName = "Wealthy Wetlands Warriors"
 };
 ::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
-::mods_queue(null, "mod_msu(>=1.2.4), vanilla(>=1.5.0-14), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
+::mods_queue(null, "mod_msu(>=1.2.6), vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
 {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 

@@ -36,24 +36,24 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		bros[0].setPlaceInFormation(2);
 		bros[0].setVeteranPerks(2);
-		bros[0].getSprite("socket").setBrush("bust_base_nomads");
+		bros[0].getSprite("socket").setBrush("bust_base_nomads");		
+    bros[0].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 		bros[0].setStartValuesEx([ // melee
 			"nomad_background"
 		]);
 		bros[0].getBackground().m.RawDescription = "{%name% is someone who you have known since they were a child. They always had a keen eye but had more interest in shooting things point blank with their sling instead. Their discovery of maces and swords changed their world for the better.}";
-		bros[0].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
-		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
-		
+
 		bros[1].setPlaceInFormation(3);
 		bros[1].setVeteranPerks(2);
-		bros[1].getSprite("socket").setBrush("bust_base_nomads");
+    bros[1].getSprite("socket").setBrush("bust_base_nomads");
+  	bros[1].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 		bros[1].setStartValuesEx([ //melee always to prevent all ranged parties
 			"nomad_background"
 		]);
 		bros[1].getBackground().m.RawDescription = "{%name% came from another tribe that merged with yours not too long ago. Their family was butched in the night by \'skin men\' who could travel thirty paces in a blink of the eye. While many think them unsettled by what appears to be a raid, you can\'t help but notice how they always sleep closest to the fire every night.}";
-		bros[1].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
-
+    
 		bros[2].setPlaceInFormation(4);
 		bros[2].setVeteranPerks(2);
 		bros[2].getSkills().add(this.new("scripts/skills/effects_world/exhausted_effect"));
@@ -65,23 +65,23 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[3].setPlaceInFormation(11);
 		bros[3].setVeteranPerks(2);
 		bros[3].getSprite("socket").setBrush("bust_base_nomads");
+    bros[3].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 		bros[3].setStartValuesEx([ //wildcard 1
 			"nomad_background",
 			"nomad_ranged_background"
 		]);
 		bros[3].getBackground().m.RawDescription = "{You know little about %name%, they prefer to stay quiet and keep to themselves. However their loyalty to the tribe has never come into question.}";
-		bros[3].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 
 		bros[4].setPlaceInFormation(12);
 		bros[4].setVeteranPerks(2);
 		bros[4].getSprite("socket").setBrush("bust_base_nomads");
+		bros[4].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 		bros[4].setStartValuesEx([ //always ranged for variety
 			"nomad_ranged_background"
 		]);
 		bros[4].getBackground().m.RawDescription = "{Be it rabbit, snake or hyena - little stands a chance against %name% who readily hits their target with all the same precision. The change to conscripts over wildlife came as a challenge at first until they realised they just needed to aim slightly lower than normal.}";
-		bros[4].getSkills().add(this.new("scripts/skills/traits/nomad_trait"));
-		bros[4].getSkills().add(this.new("scripts/skills/perks/perk_legend_wind_reader"));
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/rice_item"));
@@ -174,7 +174,6 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 
 		this.m.StaticRelationsToFaction[this.Const.FactionType.OrientalCityState] = true;
-
 		this.World.State.m.Player = this.World.spawnEntity("scripts/entity/world/player_party", spawnTile.Coords.X, spawnTile.Coords.Y);
 		this.World.Assets.updateLook(117);
 		this.World.getCamera().setPos(this.World.State.m.Player.getPos());
@@ -195,6 +194,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		{											 //+30%
 			this.World.State.getPlayer().m.VisionRadius = 670; //500 is default during daytime on normal terrain
 		}
+		this.updateFactionActionsDeck();
 	}
 
 	function onUpdateDraftList( _list, _gender = null )
@@ -233,6 +233,15 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// this.addBroToRoster(_roster, "nomad_background", 4);
 		// this.addBroToRoster(_roster, "nomad_ranged_background", 4);
 		// this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
+
+	function updateFactionActionsDeck()
+	{
+		// Disable Drive Away Nomads contract for City State factions
+		local cityStates = ::World.FactionManager.getFactionsOfType(::Const.FactionType.OrientalCityState);
+		foreach (faction in cityStates)
+		{
+			faction.removeActionByID("drive_away_nomads_action");
+		}
 	}
 });
 

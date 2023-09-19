@@ -426,9 +426,11 @@ gt.Const.BackgroundTypeName <- {
 	Ranger = "Ranger",
 	Stabled = "Stabled",
 	Untalented = "Untalented",
-	Cultist = "Cultist"
+	Cultist = "Cultist",
+	ExpertHunter = "Expert Hunter",
 };
 
+// Note: due to limitations of 32-Bit Signed Integers, we can only have up to 31 types
 gt.Const.BackgroundType <- {
 	None = 0,
 	Crusader = 1,
@@ -446,7 +448,8 @@ gt.Const.BackgroundType <- {
 	Ranger = 4096,
 	Stabled = 8192,
 	Untalented = 16384,
-	Cultist = 32768
+	Cultist = 32768,
+	ExpertHunter = 65536,
 };
 
 gt.Const.addNewBackgroundType <- function( _typeKey )

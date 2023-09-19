@@ -77,11 +77,7 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 
 		if (_gender)
 		{
-			_draftList.push("female_beggar_background");
-			_draftList.push("female_beggar_background");
-			_draftList.push("female_beggar_background");
 			_draftList.push("legend_nun_background");
-
 		}
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())

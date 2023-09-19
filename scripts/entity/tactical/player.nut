@@ -2087,7 +2087,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 		local background = this.new("scripts/skills/backgrounds/" + _backgrounds[this.Math.rand(0, _backgrounds.len() - 1)]);
 
-		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "All")
+		if (::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 		{
 			background.setGender(_gender);
 		}

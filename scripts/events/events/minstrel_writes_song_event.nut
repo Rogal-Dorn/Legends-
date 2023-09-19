@@ -74,7 +74,7 @@ this.minstrel_writes_song_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.minstrel" || bro.getBackground().getID() == "background.female_minstrel")
+			if (bro.getBackground().getID() == "background.minstrel")
 			{
 				candidates_minstrel.push(bro);
 			}

@@ -51,14 +51,6 @@ this.full_nets_situation <- this.inherit("scripts/entity/world/settlements/situa
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");
 		_draftList.push("fisherman_background");
-		if (_gender)
-		{
-		_draftList.push("female_butcher_background");
-		_draftList.push("female_butcher_background");
-		_draftList.push("female_butcher_background");
-
-		}
-
 	}
 
 });

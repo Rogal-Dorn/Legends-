@@ -17,6 +17,10 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mContainer = null;
 	this.mDialogContainer = null;
 
+	// popup dialog
+    this.mPopupDialog = null;
+    this.mPopupDialogButtons = null;
+
 	//Brother list
 	this.mListContainer = null;
 	this.mListScrollContainer = null;
@@ -26,6 +30,7 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.mTentMap = {};
 	
 	this.mStatsContainer = null;
+	this.mStatsScrollContainer = null;
 	this.mStatsList = [];
 
 	this.mBroListContainer = null;
@@ -34,10 +39,13 @@ var CampScreenCommanderDialogModule = function(_parent)
 	this.IsMoodVisible = true;
 
 	// buttons
+	this.mTentButton = null;
+	this.mConfigureButton = null;
 	this.mLeaveButton = null;
 	this.mPresetNameButton = null;
 	this.mSaveButton = null;
 	this.mLoadButton = null;
+	this.mAssignAllButton = null;
 
 	// Added By Necro
 	// number slot buttons
@@ -132,6 +140,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 
 	this.mStatsContainer = $('<div class="stats"/>');
 	row.append(this.mStatsContainer);
+	/*
 	var tentButtonLayout = $('<div class="tent-button"/>');
 	this.mStatsContainer.append(tentButtonLayout);
 	this.mTentButton = tentButtonLayout.createTextButton("Building", function()
@@ -143,7 +152,42 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 		}
 
 	}, '', 1);
+	*/
+	var tentButtonContainer = $('<div class="tent-button-container"/>');
+	this.mStatsContainer.append(tentButtonContainer);
+	// 1st button (small size), use to assign all bro current tent
+	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
+	tentButtonContainer.append(buttonLayout);
+	this.mAssignAllButton = buttonLayout.createImageButton(Path.GFX + 'ui/skin/icon_end_all_turns.png', function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendAssignedAll(self.mSelectedTent.data('ID'), function(_load){
+				self.loadFromData(_load);
+			});
+		}
+	}, '', 6);
+	this.mAssignAllButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonAssignAll"});
+	// 2nd button (mid size), tent button
+	var buttonLayout = $('<div class="l-tent-button-175-43"/>');
+	tentButtonContainer.append(buttonLayout);
+	this.mTentButton = buttonLayout.createTextButton("Building", function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendTentButtonPressed(self.mSelectedTent.data('ID'));
+		}
+	}, '', 1);
+	// 3rd button (small size), to open popup
+	var buttonLayout = $('<div class="l-tent-button-45-41"/>');
+	tentButtonContainer.append(buttonLayout);
+	this.mConfigureButton = buttonLayout.createImageButton(Path.GFX + 'ui/buttons/settings.png', function() {
+		if(self.mSelectedTent !== null) {
+			self.notifyBackendConfigureButtonPressed(self.mSelectedTent.data('ID'));
+		}
+	}, '', 6);
 
+	var listContainer = $('<div class="stats-list-container"/>');
+	this.mStatsContainer.append(listContainer);
+	this.mStatsScrollContainer = listContainer.createList(10, '').findListScrollContainer();
+
+	// Footer
 	// Added By Necro
 	// Preset Slot buttons
 	this.mSaveSlotButtonContainer = $('<div class="l-slot-button-container"/>');
@@ -152,9 +196,18 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	for (var i = 0; i < this.mSaveSlotNum; i++) {
 		var layout = $('<div class="l-flex-button-preset"/>');
 		this.mSaveSlotButtonContainer.append(layout);
-		var button = layout.createTextButton('' + (i + 1) + '', function(_button) {
-			self.notifyBackendSaveSlotButtonPressed(_button.data('Index'));
-		}, '', 6);
+		var button = layout.createTextButton('' + (i + 1) + '',
+			function(_button) {
+				self.notifyBackendSaveSlotButtonPressed(
+					_button.data('Index'),
+					function( _load ) {
+						if (_load)
+						{
+							self.loadFromData(_load);
+						}
+					}
+				)
+			}, '', 6);
 		button.data('Index', i);
 		// a bug cause the label to fall off a bit, so i add this to offset that
 		// button.findButtonText().css('top', '0.4rem');
@@ -167,7 +220,7 @@ CampScreenCommanderDialogModule.prototype.createDIV = function (_parentDiv)
 	this.mSaveSlotButtonContainer.append(layout);
 	this.mPresetNameButton = layout.createImageButton(Path.GFX + "ui/icons/papers_icon.png", function(){
 		// clicking on this button should open up the proposed "Customize Preset Name" dialog
-		// TODO: implement popup dialog to enter preset name
+		self.showPresetNamePopupDialog();
 	}, '', 6);
 	this.mPresetNameButton.findButtonImage().css({"top":"0.4rem","left":"0.2rem"});
 
@@ -326,6 +379,20 @@ CampScreenCommanderDialogModule.prototype.unbindTooltips = function ()
 {
 	this.mAssets.unbindTooltips();
 	this.mLeaveButton.unbindTooltip();
+	this.mSaveButton.unbindTooltip();
+	this.mLoadButton.unbindTooltip();
+	this.mPresetNameButton.unbindTooltip();
+	this.mSaveSlotButtons.forEach( function (_slot){
+		_slot.unbindTooltip();
+	});
+	this.mAssignAllButton.unbindTooltip();
+	this.mConfigureButton.unbindTooltip();
+	if(this.mPopupDialogButtons != null)
+	{
+		this.mPopupDialogButtons.forEach( function (_b){
+			_b.unbindTooltip();
+		});	
+	}
 };
 
 
@@ -433,7 +500,7 @@ CampScreenCommanderDialogModule.prototype.show = function (_withSlideAnimation)
 		if (this.mSaveSlotButtons[i].isEnabled() === true)
 			continue;
 
-		this.mCurrentSelectedSaveSlot = i;
+		this.mCurrentSelectedSaveSlot = i + 1; // +1 to convert from index to slot number
 		break;
 	}
 
@@ -573,17 +640,27 @@ CampScreenCommanderDialogModule.prototype.selectTentEntry = function(_element, _
 				self.onBrothersListLoaded(res.Roster);
 				self.mTentButton.changeButtonText(res.Label);
 				self.mTentButton.enableButton(res.Enabled);
-
+				self.mConfigureButton.enableButton(res.Configure);
+				self.mConfigureButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "Camping.ButtonConfigure", tent: id});
 				self.mStatsList.forEach(function (c) {
 					c.remove();
 				});
+				if (res.Info)
+				{
+					res.Info.forEach(function (i) {
+						var text = i;
+						var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+						self.mStatsList.push(stats);
+						self.mStatsScrollContainer.append(stats);
+					})
+				}
 				if ('Modifiers' in res.Modifiers)
 				{
 					res.Modifiers.Modifiers.forEach(function (m) {
 						var text = m[0].toFixed(2) + "% " + m[1];
 						var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
 						self.mStatsList.push(stats);
-						self.mStatsContainer.append(stats);
+						self.mStatsScrollContainer.append(stats);
 					})				
 				}
 			});			
@@ -919,6 +996,74 @@ CampScreenCommanderDialogModule.prototype.onBrothersListLoaded = function (_brot
 	//this.updateRosterLabel();
 };
 
+CampScreenCommanderDialogModule.prototype.onSelectButtonInThisArray = function(_buttonArray, _buttonID)
+{
+	_buttonArray.forEach(function(_button, index){
+		_button.enableButton(_button.data('ID') != _buttonID);
+	});
+}
+
+CampScreenCommanderDialogModule.prototype.showHunterPopupDialog = function( _data )
+{
+    var self = this;
+    this.notifyBackendPopupDialogIsVisible(true);
+    this.mPopupDialog = $('.camp-screen').createPopupDialog('Configuration', null, null, 'popup-300x600-dialog');
+
+    // create: footer button
+    this.mPopupDialog.addPopupDialogOkButton(function (_dialog) {
+        self.mPopupDialog = null;
+        self.refreshInfoPanel(self.mSelectedTent.data('ID'));
+        _dialog.destroyPopupDialog();
+        self.notifyBackendPopupDialogIsVisible(false);
+    });
+
+    var ButtonNames = _data.Buttons;
+    var SelectedIndex = _data.CurrentMode;
+  	// create: content
+    var createContent = function(_dialog, _dialogButtons) {
+	    var result = $('<div class="popup-300x600-dialog-content-container"/>');
+	    _dialogButtons = [];
+	    for (var i = 0; i < ButtonNames.length; i++) {
+	    	var layout = $('<div class="l-popup-button-175-43"/>');
+	    	result.append(layout);
+	    	var button = layout.createTextButton(ButtonNames[i], function(_button) {
+				self.onSelectButtonInThisArray(_dialogButtons, _button.data('ID'));
+				self.notifyBackendPopupButtonPressed(_button.data('ID'), _button.data('Func'));
+			}, '', 1);
+			button.data('ID', ButtonNames[i]);
+			button.data('Func', "setMode");
+			var eid = "CampingHuntingMode." + ButtonNames[i];
+			button.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: eid});
+			_dialogButtons.push(button);
+	    }
+	    _dialogButtons[SelectedIndex].enableButton(false);
+    	return result;
+    };
+
+    this.mPopupDialog.addPopupDialogContent(createContent(this.mPopupDialog, this.mPopupDialogButtons));
+};
+
+
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupButtonPressed = function (_buttonID, _data)
+{
+	var result = [_buttonID];
+
+	if (_data !== undefined)
+		result.push(_data)
+
+	SQ.call(this.mSQHandle, 'onPopupButtonClicked', result);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupDialogIsVisible = function (_isVisible)
+{
+	SQ.call(this.mSQHandle, 'onPopupDialogIsVisible', _isVisible);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendConfigureButtonPressed = function (_entryID)
+{
+	SQ.call(this.mSQHandle, 'onConfigureButtonClicked', _entryID);
+};
+
 CampScreenCommanderDialogModule.prototype.notifyBackendTentButtonPressed = function (_entryID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onTentBuldingClicked', _entryID, _callback);
@@ -929,9 +1074,60 @@ CampScreenCommanderDialogModule.prototype.notifyBackendTentSelected = function (
 	SQ.call(this.mSQHandle, 'onTentSelected', _entryID, _callback);
 };
 
+CampScreenCommanderDialogModule.prototype.refreshInfoPanel = function(_tentID)
+{
+	var self = this;
+	var callback = function (_res)
+	{
+		self.mStatsList.forEach(function (c) {
+			c.remove();
+		});	
+		if (_res.Info)
+		{
+			_res.Info.forEach(function (i) {
+				var text = i;
+				var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+				self.mStatsList.push(stats);
+				self.mStatsScrollContainer.append(stats);
+			})
+		}
+		if ('Modifiers' in _res.Modifiers)
+		{
+			_res.Modifiers.Modifiers.forEach(function (m) {
+				var text = m[0].toFixed(2) + "% " + m[1];
+				var stats = $('<div class="stats-row text-font-small">' + text + '</div>');
+				self.mStatsList.push(stats);
+				self.mStatsScrollContainer.append(stats);
+			})				
+		}
+	}
+	
+	SQ.call(this.mSQHandle,'onTentSelected', _tentID, callback);
+}
+
 CampScreenCommanderDialogModule.prototype.notifyBackendBrotherAssigned = function (_broID, _tentID, _callback)
 {
 	SQ.call(this.mSQHandle, 'onBroAssigned', [_broID, _tentID], _callback);
+};
+
+
+CampScreenCommanderDialogModule.prototype.notifyBackendAssignedAll = function (_tentID, _callback)
+{
+	SQ.call(this.mSQHandle, 'onAssignedAll', _tentID, _callback);
+}
+
+CampScreenCommanderDialogModule.prototype.notifyBackendSavePresetName = function(_dialog)
+{
+	var contentContainer = _dialog.findPopupDialogContentContainer();
+	var inputFields = contentContainer.find('input');
+	var index = this.mCurrentSelectedSaveSlot - 1;
+	SQ.call(this.mSQHandle, 'onSavePresetName', [index, $(inputFields[0]).getInputText()]);
+};
+
+CampScreenCommanderDialogModule.prototype.notifyBackendDeletePresetName = function()
+{
+	var index = this.mCurrentSelectedSaveSlot - 1;
+	SQ.call(this.mSQHandle, 'onDeletePresetName', index);
 };
 
 // Added By Necro
@@ -947,7 +1143,7 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveAssignmentPreset = fu
 };
 
 // Added By Necro
-CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex)
+CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = function (_slotIndex, _callback)
 {
 	for (var i = this.mSaveSlotButtons.length - 1; i >= 0; i--) {
 		this.mSaveSlotButtons[i].enableButton(i != _slotIndex);
@@ -958,5 +1154,95 @@ CampScreenCommanderDialogModule.prototype.notifyBackendSaveSlotButtonPressed = f
 	this.mLoadButton.enableButton(true);
 	this.mPresetNameButton.enableButton(true);
 
-	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1);
+	SQ.call(this.mSQHandle, 'onSaveSlotButtonPressed', _slotIndex + 1, _callback);
+};
+
+CampScreenCommanderDialogModule.prototype.removePopup = function()
+{
+	this.mPopupDialog.destroyPopupDialog();
+    this.mPopupDialog = null;
+    this.notifyBackendPopupDialogIsVisible(false);
+}
+
+CampScreenCommanderDialogModule.prototype.showPresetNamePopupDialog = function()
+{
+    var self = this;
+    this.notifyBackendPopupDialogIsVisible(true);
+    this.mPopupDialog = $('.camp-screen').createPopupDialog('Customize Preset Name', null, null, 'change-preset-name-popup');
+
+   	// delete button
+    var footer = this.mPopupDialog.findPopupDialogFooterContainer();
+    var layout = $('<div class="l-delete-preset-name-button"/>');
+	footer.append(layout);
+	layout.createImageButton(Path.GFX + "ui/skin/icon_delete.png", function() {
+		self.notifyBackendDeletePresetName();
+		self.removePopup();
+	}, '', 6).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonDelete" });
+
+	var container = $('<div class="l-cancel-save-button-container"/>');
+	footer.append(container);
+
+	// cancel button
+	var layout = $('<div class="l-flex-button-cancel-save"/>');
+	container.append(layout);
+	layout.createTextButton("Cancel", function() {
+		self.removePopup();
+	}, '', 1).bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonCancel" });
+
+	// save button
+	var layout = $('<div class="l-flex-button-cancel-save"/>');
+	container.append(layout);
+	var saveButton = layout.createTextButton("Save", function() {
+		self.notifyBackendSavePresetName(self.mPopupDialog);
+    	self.removePopup();
+	}, '', 1);
+	saveButton.bindTooltip({ contentType: 'msu-generic', modId: "mod_legends", elementId: "CampingPresets.PresetNameDialog.ButtonOk" });
+
+    this.mPopupDialog.addPopupDialogContent(self.createPresetNameDialogContent(this.mPopupDialog,saveButton));
+
+    var inputFields = self.mPopupDialog.findPopupDialogContentContainer().find('input');
+    $(inputFields[0]).focus();
+};
+
+CampScreenCommanderDialogModule.prototype.createPresetNameDialogContent = function (_dialog, _saveButton)
+{
+	var slot = this.mCurrentSelectedSaveSlot;
+	if (slot === null)
+	{
+		console.error('Failed to create dialog content. Reason: No camping preset slot selected.');
+		return null;
+	}
+
+	var result = $('<div class="change-preset-name-container"/>');
+
+	// create & set name
+	var row = $('<div class="row"/>');
+	result.append(row);
+	var label = $('<div class="label text-font-normal font-color-label font-bottom-shadow">Name</div>');
+	row.append(label);
+
+	var self = this;
+
+	var inputLayout = $('<div class="l-input"/>');
+	row.append(inputLayout);
+	var inputField = inputLayout.createInput('', 0, Constants.Game.MAX_CAMPING_PRESET_NAME_LENGTH, 1, function (_input)
+	{
+		_saveButton.enableButton(_input.getInputTextLength() >= 1);
+	}, 'title-font-big font-bold font-color-brother-name', function(_input)
+	{
+		var button = _saveButton;
+		if(button.isEnabled())
+		{
+			button.click();
+		}
+	});
+
+	_saveButton.enableButton(inputField.getInputTextLength() >= 1);
+
+	return result;
+}
+
+CampScreenCommanderDialogModule.prototype.notifyBackendPopupDialogIsVisible = function (_isVisible)
+{
+	SQ.call(this.mSQHandle, 'onPopupDialogIsVisible', _isVisible);
 };

@@ -812,7 +812,7 @@ gt.Const.Perks.ShieldTree <- {
 	Tree = [
 		[],
 		[gt.Const.Perks.PerkDefs.ShieldBash],
-		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldPush],
+		[],
 		[gt.Const.Perks.PerkDefs.ShieldExpert],
 		[gt.Const.Perks.PerkDefs.LegendSpecialistShieldSkill],
 		[],

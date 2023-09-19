@@ -29,11 +29,7 @@ this.wool_spinner_location <- this.inherit("scripts/entity/world/attached_locati
 		_list.push("tailor_background");
 		_list.push("tailor_background");
 		_list.push("shepherd_background");
-		if (_gender)
-		{
-		_list.push("female_tailor_background");
 
-		}
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
 			local r = this.Math.rand(0, 90);
