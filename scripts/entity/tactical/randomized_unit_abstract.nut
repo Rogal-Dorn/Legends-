@@ -73,8 +73,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 	function pickPerk( _purchaseLimit, _tree, _cap = 6)
 	{
-		if (_cap > 6) { _cap = 6 } //idk i'm being lazy below this is fine to do trust me
-		if ( cap > _tree.len() ) { _cap = _tree.len() - 1 } 
+		if ( _cap > 6 ) { _cap = 6 } //idk i'm being lazy below this is fine to do trust me
+		if ( _cap > _tree.len() ) { _cap = _tree.len() - 1 } 
 		for (local i = 0; i <= _cap; i++)
 		{
 			local row = _tree[i]
