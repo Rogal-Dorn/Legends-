@@ -1,5 +1,15 @@
 ### Legend Mod Release Notes
 
+17.0.8
+The following lower-tier enemies now have randomized perks (similar to character-unit backgrounds):
+- Peasants, Caravan Guards + Hands, Bandit Rabble + Thugs + Poachers
+- Each enemy is given a "level", which dictates how high in the perk tree they can get perks
+- Each enemy is given an amount of perk-points, unlike players this isn't necessarily dictated by level. e.g. Caravan Guards + Thugs could randomly roll to be the same level, but not always have the same amount of perks
+- Each enemy is given different lists of what they can roll, e.g. a Caravan Guard or Hand could roll Bags and Belts, however a Bandit could not
+- Units are given "defensive" perks first, so for things like Bandit Rabble you might tend to see things like Meek very often
+- Enemies are then given a "tree" based on what they could possibly roll, similar to player backgrounds the tree that they roll affects their stats, e.g. an enemy that rolled the Large tree has slightly lower melee defense and slightly higher health
+- (Seer/Xytu) is looking for feedback on this setup, things that seem too strong or seem too weak compared to previous builds, and perks that seem out of place on units. 
+
 17.0.7
 Permanent injuries removed from training tent injury pool, however:
 - trainees now additionally get exhausted about as often as they get injured
