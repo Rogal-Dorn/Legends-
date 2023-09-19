@@ -6,7 +6,7 @@ this.legend_beef_item <- this.inherit("scripts/items/supplies/legend_usable_food
 		this.m.ID = "supplies.legend_beef";
 		this.m.Name = "Beef";
 		this.m.Description = "Provisions. Luxurious slab of meat from an ox or cow. Can be eaten in battle to provide up to 1 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
-		this.m.Icon = "supplies/legend_placeholder.png";
+		this.m.Icon = "supplies/legend_beef.png";
 		this.m.Amount = 20;
 		this.m.Value = 50;
 		this.m.GoodForDays = 1;

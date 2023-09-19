@@ -16,6 +16,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		PreviousTarget = null,
 		TargetStartTime = 0,
 		AssignedBackgrounds = [],
+		LootGenerator = null,
 	},
 	function create()
 	{
@@ -281,6 +282,11 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		this.m.CurrentTarget = null;
 		this.m.PreviousTarget = null;
 		this.m.TargetStartTime = 0;
+
+		// Get the current Biome we are camping on (to determine hunting results)
+		local biome = ::World.State.getPlayer().getTile().Type;
+		// Prepare the generator that roll for foraging/hunting targets
+		this.m.LootGenerator = ::Const.HuntingLoot.getGenerator(biome, this.getUpgraded(), this.m.HuntLevel, this.m.CookLevel, this.m.BrewLevel, this.m.AssignedBackgrounds, this.m.Mode);
 	}
 
 	function getAssignedBackgrounds( _relevantOnly = false )
@@ -780,12 +786,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		if (emptySlots == 0) return this.getUpdateText();
 		
 		local item = null;
-
-		// Get the current Biome we are camping on (to determine hunting results)
-		local biome = ::World.State.getPlayer().getTile().Type;
-
-		// Prepare the generator that will roll for each category of loot
-		local lootGenerator = ::Const.HuntingLoot.getGenerator(biome, this.getUpgraded(), this.m.HuntLevel, this.m.CookLevel, this.m.BrewLevel, this.m.AssignedBackgrounds, this.m.Mode);
+		local lootGenerator = this.m.LootGenerator;
 		
 		// Generate Brewer loot
 		item = lootGenerator.rollBrew();
@@ -825,6 +826,13 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.addItemToVerboseResults("Food", food);
 			this.m.CurrentTarget = null;
 			this.m.Points = 0; // reset points for the next hunt
+
+			// If we are escorting, the tile may have changed, so we need to refresh the loot generator
+			if (::World.State.m.EscortedEntity != null)
+			{
+				local biome = ::World.State.getPlayer().getTile().Type;
+				this.m.LootGenerator = ::Const.HuntingLoot.getGenerator(biome, this.getUpgraded(), this.m.HuntLevel, this.m.CookLevel, this.m.BrewLevel, this.m.AssignedBackgrounds, this.m.Mode);	
+			}
 			if(--emptySlots==0) return this.getUpdateText();
 
 			// Add the cooked food item if applicable
