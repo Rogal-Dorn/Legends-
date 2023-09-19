@@ -44,14 +44,14 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/randomized_unit_abs
 
 		this.setArmorSaturation(0.85);
 		this.getSprite("shield_icon").setBrightness(0.85);
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
-		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
-			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		// this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
+		// this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
+		// if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		// 	{
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
+		// 	this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		// 	}
 
 	}
 

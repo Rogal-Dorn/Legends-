@@ -50,15 +50,15 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/randomized_unit_abstra
 		this.setArmorSaturation(0.8);
 		this.getSprite("shield_icon").setBrightness(0.9);
 
-		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
-			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		// if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		// 	{
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
+		// 	this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 
-			}
+		// 	}
 
 	}
 

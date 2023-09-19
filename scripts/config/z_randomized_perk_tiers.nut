@@ -242,6 +242,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         this.Const.Perks.TrainedTree
     ], 
     LevelRange = [2, 4],
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_rotation",
+        "scripts/skills/perks/perk_recover"
+    ],
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
 

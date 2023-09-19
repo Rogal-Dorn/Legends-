@@ -33,12 +33,12 @@ this.peasant <- this.inherit("scripts/entity/tactical/randomized_unit_abstract",
 		dirt.Visible = true;
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.getSprite("socket").setBrush("bust_base_militia");
-		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-			this.m.Hitpoints = b.Hitpoints * 1.5;
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		// if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		// 	{
+		// 	this.m.Hitpoints = b.Hitpoints * 1.5;
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		// 	this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		// 	}
 
 	}
 
