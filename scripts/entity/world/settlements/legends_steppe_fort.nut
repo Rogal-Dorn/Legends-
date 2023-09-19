@@ -259,6 +259,18 @@ this.legends_steppe_fort <- this.inherit("scripts/entity/world/settlements/legen
 			"legend_horse_courser"
 		]];
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+		}
+
 		this.m.Rumors = this.Const.Strings.RumorsSteppeSettlement;
 	}
 
