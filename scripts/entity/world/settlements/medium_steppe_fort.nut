@@ -83,6 +83,18 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"legend_horse_rouncey",
 			"legend_horse_destrier"
 		];
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+		}
+
 		this.m.UIDescription = "A stone keep projecting power over the flat steppe";
 		this.m.Description = "This stone keep is a strongpoint in the area and grants a good view of the surrounding flat and dry lands.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_02";

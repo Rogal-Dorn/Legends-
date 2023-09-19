@@ -131,6 +131,18 @@ this.large_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			this.m.DraftList.push("eunuch_southern_background");
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("nomad_ranged_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+			this.m.DraftList.push("legend_bladedancer_background");
+		}
+
 		this.m.UIDescription = "A mighty citadel towering above the surrounding steppe";
 		this.m.Description = "This mighty citadel towers high above the surrounding steppe and is the seat of power in the region. It houses a large garrison and offers all kinds of services valuable to travellers and mercenaries.";
 		this.m.UIBackgroundCenter = "ui/settlements/stronghold_03";
