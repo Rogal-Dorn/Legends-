@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "17.1.0",
+	Version = "18.0.0",
 	Name = "Legends Mod",
 	BuildName = "Wealthy Wetlands Warriors"
 };
