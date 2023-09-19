@@ -1872,7 +1872,7 @@ this.skill <- {
 			{
 				if (this.Math.rand(1, 8) == 8)
 				{
-					local loot = this.new("scripts/items/supplies/legend_cooking_spices_item");
+					local loot = this.new("scripts/items/supplies/legend_cooking_spices_trade_item");
 					loot.drop(_targetEntity.getTile());
 				}
 			}
