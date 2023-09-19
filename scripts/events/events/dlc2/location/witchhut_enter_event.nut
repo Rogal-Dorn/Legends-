@@ -84,9 +84,9 @@ this.witchhut_enter_event <- this.inherit("scripts/events/event", {
 					}
 				}
 
+				local stash = this.World.Assets.getStash().getItems();
 				foreach( item in stash )
 				{
-					local stash = this.World.Assets.getStash().getItems();
 
 					if (item != null && (item.getID() == "accessory.legend_oms_amphora" || item.getID() == "accessory.legend_oms_fate" || item.getID() == "accessory.legend_oms_tome" || item.getID() == "accessory.legend_oms_paw" || item.getID() == "accessory.legend_oms_rib"))
 				
