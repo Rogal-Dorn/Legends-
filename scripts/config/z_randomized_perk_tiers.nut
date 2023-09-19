@@ -113,6 +113,22 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
     Outfits = [
         [1, "bandit_rabble_outfit_00"]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.MartyrTree,
+        this.Const.Perks.ViciousTree,
+        // this.Const.Perks.DeviousTree,
+        // this.Const.Perks.InspirationalTree,
+        // this.Const.Perks.IntelligentTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.LargeTree,
+        // this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     WeaponsAndTrees = [
         ["scripts/items/weapons/legend_wooden_pitchfork", this.Const.Perks.AxeTree, 35],
         ["scripts/items/weapons/legend_wooden_spear", this.Const.Perks.SpearTree, 35],
@@ -135,6 +151,22 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
     Outfits = [
         [1, "bandit_rabble_poacher_outfit_00"]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        // this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.MartyrTree,
+        this.Const.Perks.ViciousTree,
+        // this.Const.Perks.DeviousTree,
+        // this.Const.Perks.InspirationalTree,
+        // this.Const.Perks.IntelligentTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.LargeTree,
+        // this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     WeaponsAndTrees = [
         ["scripts/items/weapons/short_bow", this.Const.Perks.BowTree, 50],
         ["scripts/items/weapons/legend_sling", this.Const.Perks.SlingTree, 50],
@@ -166,6 +198,22 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         ["scripts/items/weapons/legend_tipstaff", this.Const.Perks.StaffTree, 70],
         ["scripts/items/weapons/legend_ranged_wooden_flail", this.Const.Perks.FlailTree, 70],
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.MartyrTree,
+        this.Const.Perks.ViciousTree,
+        // this.Const.Perks.DeviousTree,
+        // this.Const.Perks.InspirationalTree,
+        // this.Const.Perks.IntelligentTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.LargeTree,
+        // this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     LevelRange = [2, 5],
     PerkPower = gt.Const.PerkPurchasePower.Medium
 }
@@ -177,6 +225,22 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         ["scripts/items/weapons/short_bow", this.Const.Perks.BowTree, 65],
         ["scripts/items/weapons/legend_sling", this.Const.Perks.SlingTree, 65]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        // this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.MartyrTree,
+        this.Const.Perks.ViciousTree,
+        // this.Const.Perks.DeviousTree,
+        // this.Const.Perks.InspirationalTree,
+        // this.Const.Perks.IntelligentTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.LargeTree,
+        // this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     LevelRange = [2, 4],
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
