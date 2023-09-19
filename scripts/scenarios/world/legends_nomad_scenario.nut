@@ -233,7 +233,7 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		// this.addBroToRoster(_roster, "nomad_background", 4);
 		// this.addBroToRoster(_roster, "nomad_ranged_background", 4);
 		// this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
-
+	}
 	function updateFactionActionsDeck()
 	{
 		// Disable Drive Away Nomads contract for City State factions
