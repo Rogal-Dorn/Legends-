@@ -11,7 +11,7 @@ this.legend_cheese_blueprint <- this.inherit("scripts/crafting/food_blueprint", 
 				Num = 2
 			},
 			{
-				Script = "scripts/items/supplies/legend_cooking_spices_item",
+				Script = "scripts/items/supplies/legend_cooking_spices_trade_item",
 				Num = 1
 			}
 		];

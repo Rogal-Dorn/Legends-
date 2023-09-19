@@ -77,7 +77,7 @@ this.legend_lonewolf_companion_blacksmith_event <- this.inherit("scripts/events/
 						item = this.new("golden_chalice_item");
 						item = this.new("wine_item");
 						item = this.new("arming_sword");
-						item = this.new("legend_cooking_spices_item");
+						item = this.new("legend_cooking_spices_trade_item");
 					}
 					else if (r == 2)
 					{
