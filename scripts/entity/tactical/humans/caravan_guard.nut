@@ -1,11 +1,12 @@
-this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
-	m = {},
+this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
+	m = {
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.CaravanGuard;
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.CaravanGuard.XP;
-		this.human.create();
+		this.randomized_unit_abstract.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.Young;
@@ -16,7 +17,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 
 	function onInit()
 	{
-		this.human.onInit();
+		this.randomized_unit_abstract.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.CaravanGuard);
 		b.IsSpecializedInSwords = true;
@@ -35,8 +36,6 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 		this.setAppearance();
 		this.getSprite("socket").setBrush("bust_base_caravan");
 		this.getSprite("dirt").Visible = true;
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_shield_expert"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
@@ -53,38 +52,11 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignRandomEquipment()
 	{
-		local r = this.Math.rand(1, 6);
-
-		if (r == 1)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
-		}
-		else if (r == 2)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
-		}
-		else if (r == 3)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
-		}
-		else if (r == 4)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
-		}
-		else if (r == 5)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-		}
-		else if (r == 6)
-		{
-			this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
-		}
-
 		this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
 
 		if (this.Math.rand(1, 100) <= 35)
 		{
-			r = this.Math.rand(1, 2);
+			local r = this.Math.rand(1, 2);
 
 			if (r == 1)
 			{
@@ -96,30 +68,77 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/human", {
 			}
 		}
 
-		this.m.Items.equip(this.Const.World.Common.pickArmor([
-			[1, "leather_tunic"],
-			[1, "padded_leather"],
-			[1, "padded_surcoat"],
-			[1, "leather_lamellar"]
-		]));
-
-		if (this.Math.rand(1, 100) <= 75)
-		{
-			local item = this.Const.World.Common.pickHelmet([
-				[1, "hood"],
-				[1, "full_aketon_cap"],
-				[1, "headscarf"],
-				[1, "nasal_helmet"],
-				[1, "rondel_helm"],
-				[1, "scale_helm"],
-				[1, "padded_nasal_helmet"]
-			])
-			if (item != null)
-			{
-				this.m.Items.equip(item);
-			}
-		}
+		this.randomized_unit_abstract.assignRandomEquipment();
 	}
+	// function assignRandomEquipment()
+	// {
+	// 	local r = this.Math.rand(1, 6);
+
+	// 	if (r == 1)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/hand_axe"));
+	// 	}
+	// 	else if (r == 2)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
+	// 	}
+	// 	else if (r == 3)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/falchion"));
+	// 	}
+	// 	else if (r == 4)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/shortsword"));
+	// 	}
+	// 	else if (r == 5)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
+	// 	}
+	// 	else if (r == 6)
+	// 	{
+	// 		this.m.Items.equip(this.new("scripts/items/weapons/legend_glaive"));
+	// 	}
+
+	// 	this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
+
+	// 	if (this.Math.rand(1, 100) <= 35)
+	// 	{
+	// 		r = this.Math.rand(1, 2);
+
+	// 		if (r == 1)
+	// 		{
+	// 			this.m.Items.addToBag(this.new("scripts/items/weapons/throwing_axe"));
+	// 		}
+	// 		else if (r == 2)
+	// 		{
+	// 			this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
+	// 		}
+	// 	}
+
+	// 	this.m.Items.equip(this.Const.World.Common.pickArmor([
+	// 		[1, "leather_tunic"],
+	// 		[1, "padded_leather"],
+	// 		[1, "padded_surcoat"],
+	// 		[1, "leather_lamellar"]
+	// 	]));
+
+	// 	if (this.Math.rand(1, 100) <= 75)
+	// 	{
+	// 		local item = this.Const.World.Common.pickHelmet([
+	// 			[1, "hood"],
+	// 			[1, "full_aketon_cap"],
+	// 			[1, "headscarf"],
+	// 			[1, "nasal_helmet"],
+	// 			[1, "rondel_helm"],
+	// 			[1, "scale_helm"],
+	// 			[1, "padded_nasal_helmet"]
+	// 		])
+	// 		if (item != null)
+	// 		{
+	// 			this.m.Items.equip(item);
+	// 		}
+	// 	}
+	// }
 
 });
 
