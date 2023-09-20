@@ -205,13 +205,6 @@ this.legends_steppe_village <- this.inherit("scripts/entity/world/settlements/le
 			this.m.DraftLists[2].push("beast_hunter_background");
 		}
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
-		{
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_ranged_background");
-		}
-
 		this.m.Rumors = this.Const.Strings.RumorsSteppeSettlement;
 	}
 

@@ -60,18 +60,6 @@ this.city_state <- this.inherit("scripts/entity/world/settlement", {
 			this.m.DraftList.push("beast_hunter_background");
 		}
 
-		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
-		{
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("nomad_ranged_background");
-			this.m.DraftList.push("legend_bladedancer_background");
-			this.m.DraftList.push("legend_bladedancer_background");
-		}
-
 		this.m.UIDescription = "A large and rich city state that thrives on trade at the edge of the desert";
 		this.m.Description = "A large and rich city state that thrives on trade at the edge of the desert.";
 		this.m.UIBackgroundCenter = "ui/settlements/desert_stronghold_03";
