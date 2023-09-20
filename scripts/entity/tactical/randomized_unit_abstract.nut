@@ -137,19 +137,26 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		local idx = this.Math.rand(0, this.m.WeaponsAndTrees.len() - 1)
 		local selection = this.m.WeaponsAndTrees[idx]
 		// local test = selection[1].ID;
-		
 		this.m.Items.equip( this.new( selection[0] ) )
+		local weapon = this.getMainhandItem();
 
 		// IF we happen to pick the weapon perks
-		if (selection.len() > 1 && this.Math.rand(0, 99) <= selection[2] - 1)
+		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
+		if (typeof weaponPerkTree == "array") 
 		{
-			pickPerk( this.m.PerkPower,  selection[1].Tree, this.m.EnemyLevel - 1)
-			modifyAttributes( selection[1].Attributes )
+			weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
+		}
+		if (weaponPerkTree != null && selection.len() >= 2 && this.Math.rand(1, 100) <= selection[1])
+		{
+			pickPerk( this.m.PerkPower,  weaponPerkTree.Tree, this.m.EnemyLevel - 1)
+			modifyAttributes( weaponPerkTree.Attributes )
 		}
 
-		if (selection.len() > 3 && this.Math.rand(0, 99) <= selection[4]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
+		
+		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
+		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
 		{
-			pickPerk( this.m.PerkPower,  selection[3].Tree, this.m.EnemyLevel - 1)
+			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1)
 			this.modifyAttributes(this.Const.RandomizedMalus)
 		}
 	
