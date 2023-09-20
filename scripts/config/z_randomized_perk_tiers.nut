@@ -41,7 +41,7 @@ gt.Const.RandomizedCharacterInfo["Default"] <- {
     ], 
     GuaranteedPerks = [], 
     WeaponsAndTrees = [ 
-        ["scripts/items/weapons/knife",  100, 75]
+        ["scripts/items/weapons/knife",  100, 75] // [Weapon Script, Chance to roll weapon-perks, chacne to roll weapon-class-perks] 
     ],
     LevelRange = [3, 3]
     PerkPower = gt.Const.PerkPurchasePower.Low
