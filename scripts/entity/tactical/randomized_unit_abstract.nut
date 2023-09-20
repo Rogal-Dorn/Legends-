@@ -24,7 +24,13 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	},
 
 	//TODO: 
-	// Add in chances for shields alongside the weapon tree?
+	// 1. Add in chances for shields alongside the weapon tree?
+	// 		Check if the main hand is null after selecting, allows us to purchase and use nets/bucklers/any shield/offhand dagger and then another weapon?
+	//		Would also adding in a way to check if the weapon we're trying to add is 2h vs 1h, and purchasing only a 1h 
+	// 2. Debate making higher tier perks cost more, alongside adding more of a curve (mostly linear currently) for PerkPower growth
+	// 		Higher tier units would get much higher power to purchase with, and would spend much more
+	// 		We already limit how high units can purchase however, so this might not be necessary
+	// 
 
 	function onInit() 
 	{
