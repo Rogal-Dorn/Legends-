@@ -50,9 +50,9 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			foreach(k, v in randEntityTable)
 			{
 				this.m[k] = v
-				this.logWarning("Adding in v: " + v)
-				this.logWarning("For key: " + k)
-				this.logWarning("In entity: " + this.m.Type)
+				// this.logWarning("Adding in v: " + v)
+				// this.logWarning("For key: " + k)
+				// this.logWarning("In entity: " + this.m.Type)
 			}
 		}
 		else {this.logWarning("Entity type didnt exist: " + this.m.Type)}
