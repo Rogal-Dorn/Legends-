@@ -1,7 +1,6 @@
 local gt = this.getroottable();
 local et = gt.Const.EntityType //idk man like i"m supposed to do checks but it loads after global so it"s fine?
 
-// Numbers subject to change :: TODO
 gt.Const.PerkPurchasePower <- {
     VeryLow = 2,
     Low = 4,
@@ -11,6 +10,7 @@ gt.Const.PerkPurchasePower <- {
     ExtraHigh = 11
 };
 
+// Explanations of each of these is in the randomized_unit_abstract file
 gt.Const.RandomizedCharacterInfo <- {}
 gt.Const.RandomizedCharacterInfo["Default"] <- {
     Outfits = [
@@ -356,59 +356,59 @@ gt.Const.GetWeaponClassTree <- function ( _item ) {
     switch(true) {
 			//Shovel
 				case _item.getID() == "weapon.legend_shovel" || _item.getID() == "weapon.legend_named_shovel":
-					return this.Const.Perks.ShovelClassTree.Tree;
+					return this.Const.Perks.ShovelClassTree;
 
 			//Sickle
 				case _item.getID() == "weapon.sickle" || _item.getID() == "weapon.goblin_notched_blade" || _item.getID() == "weapon.legend_named_sickle":
-					return this.Const.Perks.SickleClassTree.Tree;
+					return this.Const.Perks.SickleClassTree;
 
 			//Wood Axe
 				case _item.getID() == "weapon.woodcutters_axe" || _item.getID() == "weapon.legend_saw":
-					return this.Const.Perks.WoodaxeClassTree.Tree;
+					return this.Const.Perks.WoodaxeClassTree;
 
 			//Blacksmith
 				case _item.getID() == "weapon.legend_hammer" || _item.getID() == "weapon.legend_named_blacksmith_hammer":
-					return this.Const.Perks.HammerClassTree.Tree;
+					return this.Const.Perks.HammerClassTree;
 
 			//Pickaxe
 				case _item.getID() == "weapon.pickaxe":
-					return this.Const.Perks.PickaxeClassTree.Tree;
+					return this.Const.Perks.PickaxeClassTree;
 
 			//Butcher
 				case _item.getID() == "weapon.butchers_cleaver" || _item.getID() == "weapon.legend_named_butchers_cleaver":
-					return this.Const.Perks.ButcherClassTree.Tree;
+					return this.Const.Perks.ButcherClassTree;
 
 			//Ninetails
 				case _item.getID() == "weapon.legend_cat_o_nine_tails":
-					return this.Const.Perks.NinetailsClassTree.Tree;
+					return this.Const.Perks.NinetailsClassTree;
 
 			//Knife
 				case _item.getID() == "weapon.knife" || _item.getID() == "weapon.legend_shiv":
-					return this.Const.Perks.KnifeClassTree.Tree;
+					return this.Const.Perks.KnifeClassTree;
 
 			//Scythe
 				case _item.getID() == "weapon.legend_grisly_scythe" || _item.getID() == "weapon.legend_scythe" || _item.getID() == "weapon.warscythe" || _item.getID() == "weapon.named_warscythe":
-					return this.Const.Perks.ScytheClassTree.Tree;
+					return this.Const.Perks.ScytheClassTree;
 
 			//Pitchfork
 				case _item.isItemType(this.Const.Items.ItemType.Pitchfork):
-					return this.Const.Perks.PitchforkClassTree.Tree;
+					return this.Const.Perks.PitchforkClassTree;
 
 			//Musical
 				case _item.isWeaponType(this.Const.Items.WeaponType.Musical):
-					return this.Const.Perks.BardClassTree.Tree;
+					return this.Const.Perks.BardClassTree;
 
 			//Shortbow
 				case _item.isItemType(this.Const.Items.ItemType.Shortbow):
-					return this.Const.Perks.ShortbowClassTree.Tree;
+					return this.Const.Perks.ShortbowClassTree;
 
 			//Net
 				case _item.isItemType(this.Const.Items.ItemType.Net):
-					return this.Const.Perks.BeastClassTree.Tree;
+					return this.Const.Perks.BeastClassTree;
 
 			//Militia
 				case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
-					return this.Const.Perks.MilitiaClassTree.Tree;
+					return this.Const.Perks.MilitiaClassTree;
 		}
 
 		return null;
