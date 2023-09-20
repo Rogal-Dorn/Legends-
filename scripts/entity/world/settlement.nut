@@ -1789,7 +1789,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			s.onUpdateDraftList(draftList);
 		}
 
-		this.World.Assets.getOrigin().onUpdateDraftList(draftList);
+		this.World.Assets.getOrigin().onUpdateDraftList(draftList, this);
 
 		while (maxRecruits > current.len())
 		{
@@ -1800,7 +1800,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.updateStables(_force);
-		this.World.Assets.getOrigin().onUpdateHiringRoster(roster);
+		this.World.Assets.getOrigin().onUpdateHiringRoster(roster, this);
 	}
 
 	function updateStables( _force = false )

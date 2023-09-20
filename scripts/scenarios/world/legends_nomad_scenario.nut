@@ -197,10 +197,6 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.updateFactionActionsDeck();
 	}
 
-	function onUpdateDraftList( _list, _gender = null )
-	{
-	}
-
 	function onHiredByScenario( bro )
 	{								//also contains nomad_ranged
 		if (bro.getBackground().getID() == "background.nomad" || bro.getBackground().getID() == "background.muladi")
@@ -226,14 +222,24 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 	function onGenerateBro(bro)
 	{
 	}
-															//What are you doing Steppe-bro?
-	function onUpdateHiringRoster( _roster ) //will be managed in steppe settlements instead now
+															
+	function onUpdateHiringRoster( _roster, _settlement )
 	{
-		// local bros = _roster.getAll();
-		// this.addBroToRoster(_roster, "nomad_background", 4);
-		// this.addBroToRoster(_roster, "nomad_ranged_background", 4);
-		// this.addBroToRoster(_roster, "legend_bladedancer_background", 8);
+		if (::MSU.isKindOf(_settlement, "legends_steppe_village"))
+		{
+			this.addBroToRoster(_roster, "nomad_background", 4);
+			this.addBroToRoster(_roster, "nomad_ranged_background", 4);
+			this.addBroToRoster(_roster, "legend_bladedancer_background", 8);		
+		}
+		else if (::MSU.isKindOf(_settlement, "city_state"))
+		{
+			this.addBroToRoster(_roster, "nomad_background", 3);
+			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
+			this.addBroToRoster(_roster, "legend_bladedancer_background", 2);	
+		}
 	}
+
+	// Helper function specific to this origin only
 	function updateFactionActionsDeck()
 	{
 		// Disable Drive Away Nomads contract for City State factions
