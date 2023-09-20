@@ -21,7 +21,7 @@ gt.Const.RandomizedCharacterInfo["Default"] <- {
         this.Const.Perks.HeavyArmorTree,
         this.Const.Perks.MediumArmorTree,
         this.Const.Perks.LightArmorTree,
-        this.Const.Perks.ClothArmorTree
+        // this.Const.Perks.ClothArmorTree
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -93,6 +93,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanGuard] <- {
     Outfits = [
         [1, "caravan_guard_outfit_00"]
+    ],
+     DefensePerkList = [  
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.MediumArmorTree,
+        this.Const.Perks.LightArmorTree,
+        this.Const.Perks.ClothArmorTree
     ],
     WeaponsAndTrees = [
         ["scripts/items/weapons/hand_axe", 100],
@@ -178,6 +184,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
     Outfits = [
         [1, "bandit_thug_outfit_00"]
+    ],
+     DefensePerkList = [  
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.MediumArmorTree,
+        this.Const.Perks.LightArmorTree,
+        this.Const.Perks.ClothArmorTree
     ],
     WeaponsAndTrees = [
         ["scripts/items/weapons/woodcutters_axe", 70],
@@ -270,12 +282,12 @@ gt.Const.RandomizedMalus <- {
         0
     ],
     MeleeSkill = [
-        -3,
-        -5
+        -4,
+        -6
     ],
     RangedSkill = [
-        -3,
-        -5
+        -4,
+        -7
     ],
     MeleeDefense = [
         0,
