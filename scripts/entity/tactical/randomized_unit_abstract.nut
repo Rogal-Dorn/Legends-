@@ -7,6 +7,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		GuaranteedPerks = [], // this will just be perks and not a tree? rarely do we want guaranteed perks,
 		WeaponsAndTrees = [], // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
 		LevelRange = [1, 1],
+		LegendaryPerks = [],
 		EnemyLevel = 1, // our perk tree can buy up to the Level-1 row
 		PerkPower = this.Const.PerkPurchasePower.Low
 	},
@@ -96,11 +97,9 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
-	function assignPerks()
+	function addAll( _arr ) 
 	{
-		// Do guaranteed perks first
-		// I think these should not touch the purchased power, always guaranteed no matter what
-		foreach (p in this.m.GuaranteedPerks)
+		foreach (p in _arr)
 		{
 			local pAdd = this.new(p)
 			if (!this.m.Skills.hasSkill(pAdd.getID()))
@@ -108,7 +107,18 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 				this.m.Skills.add(pAdd)
 			}
 		}
+	}
 
+	function assignPerks()
+	{
+		// Do guaranteed perks first
+		// I think these should not touch the purchased power, always guaranteed no matter what
+		addAll(this.m.GuaranteedPerks)
+
+		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+			addAll(this.m.LegendaryPerks)
+		}
 
 		// do *a* defense perk first
 		// it'll end up picking like 1+ depending on base power, we the rest on traits
@@ -161,7 +171,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
 		{
 			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1)
-			this.modifyAttributes(this.Const.RandomizedMalus)
+			modifyAttributes(this.Const.RandomizedMalus)
 		}
 	
 	}
