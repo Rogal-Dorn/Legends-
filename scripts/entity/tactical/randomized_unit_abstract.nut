@@ -1,67 +1,83 @@
 this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", { 
+	// Most of the m table is filled out inthe config file z_randomized_perk_tiers
+	// Outfits  		| [chance to roll, outfit] | outfits are defined in the z_mods_legends_outfits.nut config file
+	// ClassPerkList  	| Virtually always empty, this is for magic
+	// DefensePerkList 	| Defensive perk list | e.g. ClothArmorTree
+	// TraitsPerkList  	| Traits lists, generally very filled out | e.g. FitTree	
+	// WeaponsAndTrees 	| [Weapon Script, Chance to roll weapon perk, chance to roll weapon class perk]
+	// GuaranteedPerks 	| Guaranteed perks for units
+	// LegendaryPerks  	| Guaranteed perks on legendary difficulty
+	// LevelRange  		| Possible level range
+	// EnemyLevel  		| "Level" of the unit, unrelated to the PerkPower, but marks how far up the tree the unit can purchase | this is SET during creation
+	// PerkPower  		| How many perks the unit gets to purchase with
 	m = {
 		Outfits = [],
-		ClassPerkList = [],  // Virtually always empty?
-		DefensePerkList = [],  // Doesn't affect base stats
+		ClassPerkList = [], 
+		DefensePerkList = [], 
 		TraitsPerkList = [],
-		GuaranteedPerks = [], // this will just be perks and not a tree? rarely do we want guaranteed perks,
-		WeaponsAndTrees = [], // All weapons have an equal chance, the number is % to roll on the dagger tree. Can add more chances for weapons by just adding more entries for now
-		LevelRange = [1, 1],
+		WeaponsAndTrees = [],
+		GuaranteedPerks = [],
 		LegendaryPerks = [],
-		EnemyLevel = 1, // our perk tree can buy up to the Level-1 row
+		LevelRange = [1, 1],
+		EnemyLevel = 1,
 		PerkPower = this.Const.PerkPurchasePower.Low
 	},
 
 	//TODO: 
-
-	// EXP based on LevelRange -> tweak curve, for now it just exists
-	// 		Currently entities will tend to have less exp than they did before
-
-	// Link weapons to the respective trees so we don't have to have individual class trees in each array? (saves retyping it like 30 billion times)
-	// 		Would be inside of a config file, probably the weapon name is a key and the respective tree/classtree are the two values
-	// 		Could also check the weapon type + link weapon type to each tree similarly in a config file? uncertain how or if I want to deal with this
-
 	// Add in chances for shields alongside the weapon tree?
-
-	// Add in a way to see when hovering over a unit what kinds of perks it has? e.g. rolled Huge/Fit/Quick 
 
 	function onInit() 
 	{
 		this.human.onInit();
+	}
+
+
+	// Sets the actual m-tables keys to the values, reasoning is listed directly below 
+	function writeTablesFromParam( _table )
+	{
+		foreach(k, v in _table)
+		{
+			this.m[k] = v
+		}
+	}
+
+	// - writeTablesFromParam -
+	// As an "easy way out" in case a unit does not have its RandomizedCharacterInfo set, we would settle with full default values
+	// Because we set the parameters in our m-table to default first, we don't require the developer to set every single variable
+	// Admittedly this isn't the most efficient, but it's not breaking the bank with computation time
+	// We still log a warning if the type doesn't exist entirely, given that it should, but it allows us to miss things in the config tables in spots we might only care about default values
+	// I'm not entirely certain if I need to clone these, but to be safe I do
+
+	// We set the EnemyLevel which sets the experience amount here
+	// Non-legendary units currently get a blanket 1 fewer perk
+	function create()
+	{
+		this.human.create();
+
+		local writeTable = clone this.Const.RandomizedCharacterInfo["Default"];
+		writeTablesFromParam(writeTable)
+
+		if (this.m.Type in this.Const.RandomizedCharacterInfo) 
+		{
+			writeTable = clone this.Const.RandomizedCharacterInfo[this.m.Type]
+			writeTablesFromParam(writeTable)
+		}
+		else 
+		{
+			this.logWarning("Entity type didnt exist: " + this.m.Type)
+		}
+		
+
+		this.m.EnemyLevel = this.Math.rand( this.m.LevelRange[0], this.m.LevelRange[1] )
+		this.m.XP = this.m.EnemyLevel * 35;
 		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.PerkPower -= 1;
 		}
 	}
 
-	function create()
-	{
-		this.human.create();
 
-		local defaultTableImBeingLazy = clone this.Const.RandomizedCharacterInfo["Default"];
-		foreach(k, v in defaultTableImBeingLazy)
-		{
-			this.m[k] = v
-		}
-
-		if (this.m.Type in this.Const.RandomizedCharacterInfo) 
-		{
-			local randEntityTable = clone this.Const.RandomizedCharacterInfo[this.m.Type]
-			foreach(k, v in randEntityTable)
-			{
-				this.m[k] = v
-				// this.logWarning("Adding in v: " + v)
-				// this.logWarning("For key: " + k)
-				// this.logWarning("In entity: " + this.m.Type)
-			}
-		}
-		else {this.logWarning("Entity type didnt exist: " + this.m.Type)}
-		
-
-		this.m.EnemyLevel = this.Math.rand( this.m.LevelRange[0], this.m.LevelRange[1] )
-		this.m.XP = this.m.EnemyLevel * 35;
-	}
-
+	// Modifies the actual stats when possible (not all trees have an attributes tag, but weapon trees and trait trees do)
 	function modifyAttributes( _attributes )
 	{
 		local b = this.m.BaseProperties;
@@ -75,15 +91,24 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		b.Initiative += this.Math.rand(_attributes.Initiative[0], _attributes.Initiative[1])
 	}
 
-
-	function pickPerk( _purchaseLimit, _tree, _cap = 6)
+	// _purchaseLimit	| How many perks a unit can actually purchase, the total cost it could purchase
+	// _tree			| This is the actual tree to purchase from, we pipe in a tree from any of this.Const.[NameOfATree].Tree
+	// _cap 			| The actual cap on the perk tree, this is changed by the units level. A level 1 unit could buy from the first row, a level 10 unit could buy from the max row
+	// 							there are up to 7 rows in any given tree, or 0-6, so we cap it at 6
+	function pickPerkFromTree( _purchaseLimit, _tree, _cap = 6)
 	{
-		if ( _cap > 6 ) { _cap = 6 } //idk i'm being lazy below this is fine to do trust me
+		// Sets the cap to either 6 (maximum of the player tree) | OR | sets the cap to the tree's length, assuming it's missing the last row (some trees randomly are)
+		if ( _cap > 6 ) { _cap = 6 }
 		if ( _cap > _tree.len() ) { _cap = _tree.len() - 1 } 
+
+		// We purchase as much as we can from any given tree that got piped in, i.e. we go deeper into a tree of perks than we do wide
+		// We check the perkdef's numeric id, and ask the PerkDefObject tree (array?) to give us the actual perk's tree
+		// We then create the script and add it, assuming the perk isn't already there
+		// Possible options would be to set this.m.PerkPower-- to this.m.PerkPower -= i, thus making the cost for later tier perks higher (and similarly updating _purchaseLimit--)
 		for (local i = 0; i <= _cap; i++)
 		{
 			local row = _tree[i]
-			if ( row.len() != 0 && _purchaseLimit > 0) { //if empty we just cont
+			if ( row.len() != 0 && _purchaseLimit > 0) {
 				local perkDefNum = row[0]
 				local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
 				local toAdd = this.new(fullDef.Script)
@@ -97,6 +122,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	// Adds all of the possible perks to the unit in any given array
 	function addAll( _arr ) 
 	{
 		foreach (p in _arr)
@@ -109,10 +135,33 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
+	// _purchaseLimit, _table, _cap see ::pickPerkFromTree()
+	// _malus | decides if we attatch the RandomizedMalus assuming there is no attributes modifier
+	// 				this is currently only true for WeaponClassTrees, where there is a flat malus attatched to the units stats to offset the free stats from the perk
+	// helper function to check what trees want to modify the unit attributes, and selects perks from any sent in
+	function pickPerk(_purchaseLimit, _table, _cap = 6, _malus = false)
+	{
+		if ("Attributes" in _table)
+		{
+			local attr = _table["Attributes"]
+			modifyAttributes(attr)
+		}
+		else if (_malus)
+		{
+			modifyAttributes(this.Const.RandomizedMalus)
+		}
+
+		local tabl = _table["Tree"]
+		pickPerkFromTree(_purchaseLimit, tabl, _cap)
+
+	}
+
+	// Adds all guaranteed perks
+	// Adds all legendary guaranteed perks
+	// Selects a random defense tree + runs the perk buying functions on that				| these do not have attributes attatched to their tree
+	// Selects random traits lists + runs the buying functions until we run out of power 	| these do have attributes
 	function assignPerks()
 	{
-		// Do guaranteed perks first
-		// I think these should not touch the purchased power, always guaranteed no matter what
 		addAll(this.m.GuaranteedPerks)
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -120,23 +169,18 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			addAll(this.m.LegendaryPerks)
 		}
 
-		// do *a* defense perk first
-		// it'll end up picking like 1+ depending on base power, we the rest on traits
 		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1)
-		this.logInfo("Going into our defense perk list with : " + this.m.PerkPower)
-		pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx].Tree, this.m.EnemyLevel - 1 )
-		// do traits perks second
-		// i'm willing to spend the entirity of perk power in one tree, otherwise we're gonna repeat and remove the perk tree until we exhaust all options
+		pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx], this.m.EnemyLevel - 1 )
+
 		while (this.m.PerkPower > 0 && this.m.TraitsPerkList.len() != 0)
 		{
-			this.logInfo("Going into our traits perk list with : " + this.m.PerkPower)
 			local idx = this.Math.rand(0, this.m.TraitsPerkList.len() - 1)
 			local selectedTree = this.m.TraitsPerkList.remove(idx)
-			modifyAttributes(selectedTree.Attributes)
-			pickPerk(this.m.PerkPower, selectedTree.Tree, this.m.EnemyLevel - 1 )
+			pickPerk(this.m.PerkPower, selectedTree, this.m.EnemyLevel - 1 )
 		}
 	}
 
+	// Picks and equips our units outfit
 	function assignOutfit()
 	{
 		foreach( item in this.Const.World.Common.pickOutfit(this.m.Outfits) ) 
@@ -145,16 +189,16 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		}
 	}
 
-	// Full default is always a knife, with a 100% chance to select the weapon perks
+	// Picks a random weapon from our tree
+	// Equips weapon + gets what got equipped, for selecting the weapon's related perk trees
+	// The WeaponsAndTrees array contents are listed above, here we roll on those chances and apply applicable maluses, attributes, and perktrees
 	function assignWeapon()
 	{
 		local idx = this.Math.rand(0, this.m.WeaponsAndTrees.len() - 1)
 		local selection = this.m.WeaponsAndTrees[idx]
-		// local test = selection[1].ID;
 		this.m.Items.equip( this.new( selection[0] ) )
 		local weapon = this.getMainhandItem();
 
-		// IF we happen to pick the weapon perks
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
 		if (typeof weaponPerkTree == "array") 
 		{
@@ -162,24 +206,26 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		}
 		if (weaponPerkTree != null && selection.len() >= 2 && this.Math.rand(1, 100) <= selection[1])
 		{
-			pickPerk( this.m.PerkPower,  weaponPerkTree.Tree, this.m.EnemyLevel - 1)
-			modifyAttributes( weaponPerkTree.Attributes )
+			pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
 		}
 
-		
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
-		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2]) // > 2 means we have a chance to roll on the weapons applicable class tree perks
+		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2])
 		{
-			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1)
-			modifyAttributes(this.Const.RandomizedMalus)
+			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
 		}
 	
 	}
 
+	// Function generally doesn't need to be overridden in child files
+	// Only times you'll need to override would be to do things like a weapon-specific perk, i.e. peasants | OR | when adding items to bag/offhand
+	// assignWeapon() also assigns weapon-related perks, these are purchased first before any other perks
+	// assignOutfit() does not assign any armor related perks
+	// assignPerks() finishes spending the units PerkPower 
 	function assignRandomEquipment()
 	{
-		assignWeapon(); // This assigns weapon perks too
-		assignOutfit(); // This does not assign things like nimble, opposite of assignWeapon
+		assignWeapon();
+		assignOutfit();
 		assignPerks(); 
 	}
 });
