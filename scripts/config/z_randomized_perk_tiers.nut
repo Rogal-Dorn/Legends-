@@ -1,5 +1,5 @@
 local gt = this.getroottable();
-local et = gt.Const.EntityType //idk man like i'm supposed to do checks but it loads after global so it's fine?
+local et = gt.Const.EntityType //idk man like i"m supposed to do checks but it loads after global so it"s fine?
 
 // Numbers subject to change :: TODO
 gt.Const.PerkPurchasePower <- {
@@ -40,10 +40,11 @@ gt.Const.RandomizedCharacterInfo["Default"] <- {
         this.Const.Perks.TrainedTree
     ], 
     GuaranteedPerks = [], 
+    LegendaryPerks = [], 
     WeaponsAndTrees = [ 
         ["scripts/items/weapons/knife",  100, 75] // [Weapon Script, Chance to roll weapon-perks, chacne to roll weapon-class-perks] 
     ],
-    LevelRange = [3, 3]
+    LevelRange = [3, 3],
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
@@ -66,6 +67,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
         ["scripts/items/weapons/butchers_cleaver", 100, 45],
         ["scripts/items/weapons/legend_wooden_spear", 100, 80]
     ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_nimble",
+        "scripts/skills/traits/fearless_trait"
+    ],
     LevelRange = [1, 3]
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
 }
@@ -86,6 +91,14 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
     ],
     GuaranteedPerks = [
         "scripts/skills/perks/perk_recover"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_shield_bash",
+        "scripts/skills/perks/perk_pathfinder",
+        "scripts/skills/perks/perk_underdog",
+        "scripts/skills/perks/perk_legend_alert",
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/traits/fearless_trait"
     ],
     LevelRange = [3, 5],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -111,6 +124,17 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanGuard] <- {
     GuaranteedPerks = [
         "scripts/skills/perks/perk_recover",
         "scripts/skills/perks/perk_shield_expert"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_legend_specialist_shield_skill",
+        "scripts/skills/perks/perk_legend_specialist_shield_push",
+        "scripts/skills/perks/perk_shield_bash",
+        "scripts/skills/perks/perk_hold_out",
+        "scripts/skills/perks/perk_underdog",
+        "scripts/skills/perks/perk_rotation",
+        "scripts/skills/perks/perk_legend_alert",
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/traits/fearless_trait"
     ],
     LevelRange = [4, 7],
     PerkPower = gt.Const.PerkPurchasePower.Medium
@@ -150,6 +174,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
         ["scripts/items/weapons/legend_hoe", 35],
         ["scripts/items/weapons/wooden_flail", 35]
     ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_dodge",
+        "scripts/skills/perks/perk_backstabber",
+        "scripts/skills/traits/fearless_trait"
+    ],
     LevelRange = [1, 3],
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
 }
@@ -177,6 +206,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
         ["scripts/items/weapons/short_bow", 50],
         ["scripts/items/weapons/legend_sling", 50],
         ["scripts/items/weapons/legend_sling", 50]
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_dodge",
+        "scripts/skills/perks/perk_backstabber",
+        "scripts/skills/traits/fearless_trait",
+        "scripts/skills/traits/determined_trait"
     ],
     LevelRange = [1, 3],
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
@@ -226,6 +261,13 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_relentless",
+        "scripts/skills/perks/perk_dodge",
+        "scripts/skills/perks/perk_backstabber",
+        "scripts/skills/perks/perk_underdog",
+        "scripts/skills/traits/fearless_trait"
+    ],
     LevelRange = [2, 5],
     PerkPower = gt.Const.PerkPurchasePower.Medium
 }
@@ -253,6 +295,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_dodge",
+        "scripts/skills/perks/perk_backstabber",
+        "scripts/skills/traits/fearless_trait"
+    ],
     LevelRange = [2, 4],
     GuaranteedPerks = [
         "scripts/skills/perks/perk_rotation",
@@ -303,7 +350,7 @@ gt.Const.RandomizedMalus <- {
     ]
 };
 
-// Only lower tiered weapons should really get these class trees, might expand this later to just work with any tier of weapon anyways? It'll look the same as the other function if we do 
+// Only lower tiered weapons should really get these class trees, might expand this later to just work with any tier of weapon anyways? It"ll look the same as the other function if we do 
 gt.Const.GetWeaponClassTree <- function ( _item ) {
 
     switch(true) {
