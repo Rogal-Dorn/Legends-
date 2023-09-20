@@ -27,6 +27,10 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function onInit() 
 	{
 		this.human.onInit();
+		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+			this.m.PerkPower -= 1;
+		}
 	}
 
 	function create()
