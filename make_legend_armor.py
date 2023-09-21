@@ -631,13 +631,13 @@ layers = [
     "adesc" : "Includes an ancient mail armor with plated arm guards."
 },
 {"name": "legend_armor_plate_ancient_scale",              "layer": "plate", "min": 1, "max": 1, "value" : 1000, "con" : 105, "stam" : -17, "impactSound" : "plate", "invSound" : "leather", \
-    "title" :  "Ancient Plated Scale", \
-    "desc" :  "A heavy coat of scales, partly reinforced with a layer of plated metal on top. It\'s a massive armor of ancient origin that didn\'t age well.", \
-    "adesc" : "Includes an ancient heavy coat of scales."
-},
-{"name": "legend_armor_plate_ancient_scale_coat",         "layer": "plate", "min": 1, "max": 1, "value" : 2000, "con" : 140, "stam" : -24, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Ancient Scale Coat", \
     "desc" :  "A heavy and tarnished scale coat of ancient design that belongs into a collection, not on the battlefield.", \
+    "adesc" : "Includes an ancient heavy and tarnished scale coat."
+},
+{"name": "legend_armor_plate_ancient_scale_coat",         "layer": "plate", "min": 1, "max": 1, "value" : 2000, "con" : 140, "stam" : -24, "impactSound" : "plate", "invSound" : "leather", \
+    "title" :  "Ancient Plated Scale Coat", \
+    "desc" :  "A heavy coat of scales, partly reinforced with a layer of plated metal on top. It\'s a massive armor of ancient origin that didn\'t age well.", \
     "adesc" : "Includes an ancient heavy and tarnished scale coat."
 },
 {"name": "legend_armor_plate_ancient_scale_harness",      "layer": "plate", "min": 1, "max": 1, "value" : 500, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", \
