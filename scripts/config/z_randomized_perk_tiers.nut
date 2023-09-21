@@ -314,7 +314,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
     
     
 
-
+// Randomized Malus is applied when we select a weapon-class-tree, e.g. a Poacher rolls Slinger's Spins, it would then apply the malus to offset some of the bonus
 gt.Const.RandomizedMalus <- {
     Hitpoints = [
         0,
@@ -414,6 +414,9 @@ gt.Const.GetWeaponClassTree <- function ( _item ) {
 		return null;
 
 }
+
+// Greatswords are special in that they're the only 2-Handed weapon that also isn't it's own weapon type (I guess like contrary to Staves, but Staves have no 1-Handed equivalent)
+// Otherwise, we just return the actual weapon tree(s) applicable, sometimes a weapon is multiple so it returns both
 gt.Const.GetWeaponPerkTree <- function ( _item ) {
 
     //Greatsword				
