@@ -67,24 +67,32 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		local item, itemtype, newTree; // newTree may be a single Tree or an array of Trees
 		local actor = this.getContainer().getActor();
 
-		// First, try to give a new Tree based on equipped items
-		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) item = actor.getMainhandItem();
-		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null) item = actor.getOffhandItem();
-		
-		if (item != null)
+		// First, try to give a new Tree based on the equipped mainhand item
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) 
 		{
+			item = actor.getMainhandItem();
 			if (item.isItemType(this.Const.Items.ItemType.Weapon)) newTree = this.getWeaponPerkTree(item);
-			else if (item.isItemType(this.Const.Items.ItemType.Shield)) newTree = this.getShieldPerkTree(item); //Shield
+			newTree = this.getOnlyNonExistingTrees(newTree); // filter out Trees this character already has
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+		// Next, try to give a new Tree based on the equipped offhand item
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) != null)
+		{
+			item = actor.getOffhandItem();
+			if (item.isItemType(this.Const.Items.ItemType.Shield)) newTree = this.getShieldPerkTree(item);
 			else newTree = this.getMiscPerkTree(item);
 			newTree = this.getOnlyNonExistingTrees(newTree); // filter out Trees this character already has
+			if (newTree != null && newTree.len()>0) return newTree;
 		}
-		else
+
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null && actor.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
 			// Attempt to give Unarmed if no weapons are equipped
 			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.FistsClassTree);
+			if (newTree != null && newTree.len()>0) return newTree;
 		}
 		
-		// If none of the equipped items granted any Trees, then consider the following Trees
+		// If none of the equipped items (or unarmed) granted any Trees, then consider the following Trees
 		if (newTree == null || newTree.len()<1)
 		{
 			newTree = [
@@ -120,6 +128,11 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	// _newTree: either a single Tree or an array of Trees
 	function getOnlyNonExistingTrees( _newTree )
 	{
+		if ( _newTree == null || (typeof _newTree == "array" && _newTree.len()<1))
+		{
+			return [];
+		}
+
 		local actor = this.getContainer().getActor();
 
 		// If there's only one possible Tree then just check that
