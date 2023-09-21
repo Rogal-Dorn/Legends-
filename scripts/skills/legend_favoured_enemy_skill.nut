@@ -115,10 +115,41 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			id = 15,
 			type = "hint",
 			icon = "ui/icons/special.png",
-			text = stats.Kills + " favored enemy kills"
+			text = ::Const.UI.getColorized(stats.Kills,::Const.UI.Color.getHighlightLightBackgroundValue()) + " favored enemy kills"
 		})
 
 		return resp;
+	}
+
+	// When the Perk is yet to be activated, show in the Tooltip what the current bonus is
+	function getUnactivatedPerkTooltipHints()
+	{
+		local stats = this.getTotalKillStats();
+		local killsText = "";
+		if (stats.Kills > 0)
+		{
+			killsText = format("This character has already made %s favored enemy kills", ::Const.UI.getColorized(stats.Kills,::Const.UI.Color.getHighlightLightBackgroundValue()));
+		}
+		else
+		{
+			killsText = format("This character has not made any favored enemy kills yet");
+		}
+		local ret = [
+			{
+				id = 3,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = killsText
+			},
+			{
+				id = 3,
+				type = "hint",
+				icon = "ui/tooltips/positive.png"
+				text = format("Activating this perk will grant a %s bonus to the relevant stats", ::Const.UI.getColorized("+" + stats.HitChance + "%",::Const.UI.Color.PositiveValue))
+			}
+		];
+
+		return ret;
 	}
 
 	function validTarget( _targetID)
