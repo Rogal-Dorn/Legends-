@@ -200,8 +200,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// The WeaponsAndTrees array contents are listed above, here we roll on those chances and apply applicable maluses, attributes, and perktrees
 	function assignWeapon()
 	{
-		local idx = this.Math.rand(0, this.m.WeaponsAndTrees.len() - 1)
-		local selection = this.m.WeaponsAndTrees[idx]
+		local selection = this.Const.GetWeaponAndTree(this.m.WeaponsAndTrees)
 		this.m.Items.equip( this.new( selection[0] ) )
 		local weapon = this.getMainhandItem();
 
