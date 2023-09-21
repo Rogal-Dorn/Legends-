@@ -225,23 +225,23 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 															
 	function onUpdateHiringRoster( _roster, _settlement )
 	{
-		if (::MSU.isKindOf(_settlement, "legends_steppe_village"))
+		if (::MSU.isKindOf(_settlement, "city_state"))
+		{
+			this.addBroToRoster(_roster, "nomad_background", 3);
+			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
+			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
+		}
+		else if (::MSU.isKindOf(_settlement, "legends_steppe_fort") || (_settlement.isMilitary() && this.isSteppeSettlement(_settlement)))
+		{
+			this.addBroToRoster(_roster, "nomad_background", 3);
+			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
+			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
+		}
+		else if (::MSU.isKindOf(_settlement, "legends_steppe_village") || this.isSteppeSettlement(_settlement))
 		{
 			this.addBroToRoster(_roster, "nomad_background", 4);
 			this.addBroToRoster(_roster, "nomad_ranged_background", 4);
 			this.addBroToRoster(_roster, "legend_bladedancer_background", 8);		
-		}
-		else if (::MSU.isKindOf(_settlement, "legends_steppe_fort"))
-		{
-			this.addBroToRoster(_roster, "nomad_background", 3);
-			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
-			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
-		}
-		else if (::MSU.isKindOf(_settlement, "city_state"))
-		{
-			this.addBroToRoster(_roster, "nomad_background", 3);
-			this.addBroToRoster(_roster, "nomad_ranged_background", 3);
-			this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
 		}
 	}
 
@@ -255,5 +255,30 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			faction.removeActionByID("drive_away_nomads_action");
 		}
 	}
+
+	// Helper function to check if a settlement is adjacent to any steppe / desert / oasis tiles
+	function isSteppeSettlement( _settlement )
+	{
+		local settlementTile = _settlement.getTile();
+
+		for( local i = 0; i != 6; i = ++i )
+		{
+			if (!settlementTile.hasNextTile(i))
+			{
+				return false;
+			}
+			else
+			{
+				local tile = settlementTile.getNextTile(i);
+
+				if (tile.Type == this.Const.World.TerrainType.Steppe || tile.Type == this.Const.World.TerrainType.Desert || tile.Type == this.Const.World.TerrainType.Oasis)
+				{
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
 });
 
