@@ -21,6 +21,10 @@ gt.Const.LegendMod.Pronouns <- [
 	"Swordsman",
 	"noble",
 	"Noble",
+	"Sibling",
+	"sibling",
+	"Sib",
+	"sib",
 ];
 
 gt.Const.LegendMod.PronounTable <- {
@@ -32,7 +36,9 @@ gt.Const.LegendMod.PronounTable <- {
 	person = ["person", "man", "woman"],
 	people = ["people", "men", "women"],
 	swordsman = ["swordsman", "swordsman", "swordwoman"],
-	noble = ["noble", "nobleman", "noblewoman"]
+	noble = ["noble", "nobleman", "noblewoman"],
+	sibling = ["sibling", "brother", "sister"],
+	sib = ["sib", "bro", "sis"],
 }
 
 // _gender = -1 for neuter, 0 for male, 1 for female
