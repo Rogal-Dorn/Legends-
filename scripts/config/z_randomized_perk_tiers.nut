@@ -371,6 +371,43 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
     PerkPower = gt.Const.PerkPurchasePower.High
 }
 
+// Units TODO: 
+/* 
+    Bandit Leader
+    Bandit Marksman
+    Bandit Veteran
+    Bandit Warlord
+    Master Archer
+
+    Mercenary
+    
+    Militia Captain
+    Militia Ranged
+    Militia Veteran
+    Militia
+
+    Nomad Archer
+    Nomad Cutthroat
+    Nomad Leader
+    Nomad Outlaw
+    Nomad Slinger
+    Slave?
+
+    Noble Arbalester
+    Noble Billman
+    Noble Footman
+    Noble Greatsword
+    Noble Man at Arms
+    Noble Sergeant
+
+    Barbarian Champion
+    Barbarian Chosen
+    Barbarian Drummer
+    Barbarian Madman
+    Barbarian Marauder
+    Barbarian Thrall
+
+*/
      
     
      
