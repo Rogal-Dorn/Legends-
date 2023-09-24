@@ -198,24 +198,31 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// Picks a random weapon from our tree
 	// Equips weapon + gets what got equipped, for selecting the weapon's related perk trees
 	// The WeaponsAndTrees array contents are listed above, here we roll on those chances and apply applicable maluses, attributes, and perktrees
+	// Adds everything from (technically our index 3) guaranteed Legendary Perks if the enemy rolls that weapon (this should be a table at this point perhaps)
 	function assignWeapon()
 	{
 		local selection = this.Const.GetWeaponAndTree(this.m.WeaponsAndTrees)
-		this.m.Items.equip( this.new( selection[0] ) )
+		local weaponScriptAndChances = selection[0]
+		this.m.Items.equip( this.new( weaponScriptAndChances[0] ) )
 		local weapon = this.getMainhandItem();
+
+		if (selection.len() > 1)
+		{
+			addAll(selection[1])
+		}
 
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
 		if (typeof weaponPerkTree == "array") 
 		{
 			weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
 		}
-		if (weaponPerkTree != null && selection.len() >= 2 && this.Math.rand(1, 100) <= selection[1])
+		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
 		{
 			pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
 		}
 
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
-		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2])
+		if (weaponClassTree != null && weaponScriptAndChances.len() >= 3 && this.Math.rand(1, 100) <= weaponScriptAndChances[2])
 		{
 			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
 		}
