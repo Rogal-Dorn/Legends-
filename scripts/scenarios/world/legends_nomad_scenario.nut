@@ -197,6 +197,9 @@ this.legends_nomad_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function onUpdateDraftList( _list, _gender = null )
 	{
+		this.addBroToRoster(_roster, "legend_bladedancer_background", 4);
+		this.addBroToRoster(_roster, "legend_muladi_background", 4);
+		this.addBroToRoster(_roster, "nomad_background", 3);
 	}
 
 	function onHiredByScenario( bro )
