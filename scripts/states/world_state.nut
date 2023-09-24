@@ -3925,6 +3925,7 @@ this.world_state <- this.inherit("scripts/states/state", {
 		meta.setInt("difficulty2", this.World.Assets.getEconomicDifficulty());
 		meta.setInt("ironman", this.World.Assets.isIronman() ? 1 : 0);
 		meta.setInt("dlc", this.Const.DLC.Mask);
+		meta.setString("legendsVersion", ::Legends.Version);
 	}
 
 	function onBeforeDeserialize( _in )
