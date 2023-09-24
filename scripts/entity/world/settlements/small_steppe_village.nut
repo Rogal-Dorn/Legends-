@@ -59,6 +59,13 @@ this.small_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"vagabond_background",
 			"poacher_background"
 		];
+
+		if (this.World.Assets.getOrigin().getID() == "scenario.legends_nomad")
+		{
+			this.m.DraftList.push("nomad_background");
+			this.m.DraftList.push("nomad_ranged_background");
+		}
+
 		this.m.UIDescription = "A small village in the steppe living mainly off of modest trading";
 		this.m.Description = "A small village in the steppe living mainly off of modest trading.";
 		this.m.UIBackgroundCenter = "ui/settlements/townhall_01";

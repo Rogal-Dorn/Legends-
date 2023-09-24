@@ -550,7 +550,7 @@ this.faction <- {
 				// If there's no category, then something is wrong
 				if (cat == "" || cat == null)
 				{
-					local error = "Attempting to remove contract: " + _c.getName() + " but it has no Category";
+					local error = "Attempting to remove contract: " + _c.getName() + " from {" + this.getName() + "}" + " but it has no Category";
 					::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 					return;
 				}
@@ -558,7 +558,7 @@ this.faction <- {
 				local j = this.m.ContractsByCategory[cat].find(_c);
 				if (j != null)
 				{
-					local str = "Removing Contract " + _c.getName() + " with Category=" + _c.getCategory();
+					local str = "Removing Contract " + _c.getName() + " with Category=" + _c.getCategory() + " from {" + this.getName() + "}";
 					::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 					this.m.ContractsByCategory[cat].remove(j);
 					return;
@@ -570,7 +570,7 @@ this.faction <- {
 			{
 				local error = "";
 				error += "Attempting to remove contract: " + _c.getName()
-				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")"
+				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")" + " from {" + this.getName() + "}"
 				error += " but it could not be found in any Category";
 				::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
@@ -753,6 +753,32 @@ this.faction <- {
 		}
 
 		return null;
+	}
+
+	// Remove all occurrences of faction actions with the given ID from this.m.Deck
+	// Note that during deserialization, this.addTrait will re-add all actions associated with the input trait as defined in faction_traits.nut
+	function removeActionByID( _id )
+	{
+		local reachedEnd = false;
+		local startIndex = 0;
+
+		while( !reachedEnd )
+		{
+			for (local i = startIndex; i < this.m.Deck.len(); i++)
+			{
+				if ( i == this.m.Deck.len() - 1 )
+				{
+					reachedEnd = true;
+				}
+
+				if ( this.m.Deck[i].getID() == _id )
+				{
+					this.m.Deck.remove(i);
+					startIndex = i;
+					break; // Each time we remove an action from the array, its length changes
+				}
+			}
+		}
 	}
 
 	function create()

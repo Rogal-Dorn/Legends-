@@ -719,6 +719,8 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.m.WorldScreen.show();
 		this.LoadingScreen.hide();
 		this.updateTopbarAssets();
+		::World.setPlayerPos(this.getPlayer().getPos())
+        ::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius())
 	}
 
 	function onHide()

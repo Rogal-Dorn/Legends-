@@ -131,7 +131,8 @@ this.contract_manager <- {
 
 			if (_isNewContract)
 			{
-				this.World.FactionManager.getFaction(_contract.getFaction()).setLastContractTime(this.Time.getVirtualTimeF());
+				local faction = ::World.FactionManager.getFaction(_contract.getFaction());
+				this.World.FactionManager.getFaction(_contract.getFaction()).setLastContractTime(this.Time.getVirtualTimeF() + ::Const.LegendMod.ContractCooldown.getLastContractTimeDelay(faction));
 			}
 		}
 
@@ -191,6 +192,12 @@ this.contract_manager <- {
 		if (this.m.Active != null)
 		{
 			return;
+		}
+
+		if (!_alreadyStarted)
+		{
+			local faction = ::World.FactionManager.getFaction(_contract.getFaction());
+			::Const.LegendMod.ContractCooldown.updateStreak(faction);
 		}
 
 		this.logInfo("contract activated: " + _contract.getName() + " (id: " + _contract.getID() + ")");

@@ -195,7 +195,7 @@ this.cultists_scenario <- this.inherit("scripts/scenarios/world/starting_scenari
 		}, null);
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onUpdateHiringRoster( _roster, _settlement )
 	{
 		this.addBroToRoster(_roster, "cultist_background", 3);
 		this.addBroToRoster(_roster, "legend_lurker_background", 4);

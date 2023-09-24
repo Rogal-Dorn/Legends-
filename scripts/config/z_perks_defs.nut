@@ -2019,7 +2019,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGhoul,
 		Icon = "ui/perks/favoured_ghoul_01.png",
 		IconDisabled = "ui/perks/favoured_ghoul_bw.png",
-		Const = "LegendFavouredEnemyGhoul"
+		Const = "LegendFavouredEnemyGhoul",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_hexen",
@@ -2028,7 +2029,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyHexen,
 		Icon = "ui/perks/favoured_hexen_01.png",
 		IconDisabled = "ui/perks/favoured_hexen_bw.png",
-		Const = "LegendFavouredEnemyHexen"
+		Const = "LegendFavouredEnemyHexen",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_alps",
@@ -2037,7 +2039,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyAlps,
 		Icon = "ui/perks/favoured_alps_01.png",
 		IconDisabled = "ui/perks/favoured_alps_bw.png",
-		Const = "LegendFavouredEnemyAlps"
+		Const = "LegendFavouredEnemyAlps",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_unhold",
@@ -2046,7 +2049,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyUnhold,
 		Icon = "ui/perks/favoured_unhold_01.png",
 		IconDisabled = "ui/perks/favoured_unhold_bw.png",
-		Const = "LegendFavouredEnemyUnhold"
+		Const = "LegendFavouredEnemyUnhold",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_lindwurm",
@@ -2055,7 +2059,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyLindwurm,
 		Icon = "ui/perks/favoured_lindwurm_01.png",
 		IconDisabled = "ui/perks/favoured_lindwurm_bw.png",
-		Const = "LegendFavouredEnemyLindwurm"
+		Const = "LegendFavouredEnemyLindwurm",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_direwolf",
@@ -2064,7 +2069,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyDirewolf,
 		Icon = "ui/perks/favoured_direwolf_01.png",
 		IconDisabled = "ui/perks/favoured_direwolf_bw.png",
-		Const = "LegendFavouredEnemyDirewolf"
+		Const = "LegendFavouredEnemyDirewolf",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_spider",
@@ -2073,7 +2079,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySpider,
 		Icon = "ui/perks/favoured_spider_01.png",
 		IconDisabled = "ui/perks/favoured_spider_bw.png",
-		Const = "LegendFavouredEnemySpider"
+		Const = "LegendFavouredEnemySpider",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_schrat",
@@ -2082,7 +2089,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySchrat,
 		Icon = "ui/perks/favoured_schrat_01.png",
 		IconDisabled = "ui/perks/favoured_schrat_bw.png",
-		Const = "LegendFavouredEnemySchrat"
+		Const = "LegendFavouredEnemySchrat",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_ork",
@@ -2091,7 +2099,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyOrk,
 		Icon = "ui/perks/favoured_ork_01.png",
 		IconDisabled = "ui/perks/favoured_ork_bw.png",
-		Const = "LegendFavouredEnemyOrk"
+		Const = "LegendFavouredEnemyOrk",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_goblin",
@@ -2100,7 +2109,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyGoblin,
 		Icon = "ui/perks/favoured_goblin_01.png",
 		IconDisabled = "ui/perks/favoured_goblin_bw.png",
-		Const = "LegendFavouredEnemyGoblin"
+		Const = "LegendFavouredEnemyGoblin",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_vampire",
@@ -2109,7 +2119,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyVampire,
 		Icon = "ui/perks/favoured_vampire_01.png",
 		IconDisabled = "ui/perks/favoured_vampire_bw.png",
-		Const = "LegendFavouredEnemyVampire"
+		Const = "LegendFavouredEnemyVampire",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_skeleton",
@@ -2118,7 +2129,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySkeleton,
 		Icon = "ui/perks/favoured_skeleton_01.png",
 		IconDisabled = "ui/perks/favoured_skeleton_bw.png",
-		Const = "LegendFavouredEnemySkeleton"
+		Const = "LegendFavouredEnemySkeleton",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_zombie",
@@ -2127,7 +2139,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyZombie,
 		Icon = "ui/perks/favoured_zombie_01.png",
 		IconDisabled = "ui/perks/favoured_zombie_bw.png",
-		Const = "LegendFavouredEnemyZombie"
+		Const = "LegendFavouredEnemyZombie",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_noble",
@@ -2136,7 +2149,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyNoble,
 		Icon = "ui/perks/favoured_noble_01.png",
 		IconDisabled = "ui/perks/favoured_noble_bw.png",
-		Const = "LegendFavouredEnemyNoble"
+		Const = "LegendFavouredEnemyNoble",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_barbarian",
@@ -2145,7 +2159,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBarbarian,
 		Icon = "ui/perks/favoured_barbarian_01.png",
 		IconDisabled = "ui/perks/favoured_barbarian_bw.png",
-		Const = "LegendFavouredEnemyBarbarian"
+		Const = "LegendFavouredEnemyBarbarian",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_bandit",
@@ -2154,7 +2169,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyBandit,
 		Icon = "ui/perks/favoured_bandit_01.png",
 		IconDisabled = "ui/perks/favoured_bandit_bw.png",
-		Const = "LegendFavouredEnemyBandit"
+		Const = "LegendFavouredEnemyBandit",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_master_archer",
@@ -2163,7 +2179,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyArcher,
 		Icon = "ui/perks/favoured_archer_01.png",
 		IconDisabled = "ui/perks/favoured_archer_bw.png",
-		Const = "LegendFavouredEnemyArcher"
+		Const = "LegendFavouredEnemyArcher",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_swordmaster",
@@ -2172,7 +2189,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySwordmaster,
 		Icon = "ui/perks/favoured_swordmaster_01.png",
 		IconDisabled = "ui/perks/favoured_swordmaster_bw.png",
-		Const = "LegendFavouredEnemySwordmaster"
+		Const = "LegendFavouredEnemySwordmaster",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_mercenary",
@@ -2181,7 +2199,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyMercenary,
 		Icon = "ui/perks/favoured_mercenary_01.png",
 		IconDisabled = "ui/perks/favoured_mercenary_bw.png",
-		Const = "LegendFavouredEnemyMercenary"
+		Const = "LegendFavouredEnemyMercenary",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_caravan",
@@ -2190,7 +2209,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyCaravan,
 		Icon = "ui/perks/favoured_caravan_01.png",
 		IconDisabled = "ui/perks/favoured_caravan_bw.png",
-		Const = "LegendFavouredEnemyCaravan"
+		Const = "LegendFavouredEnemyCaravan",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_southerner",
@@ -2199,7 +2219,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemySoutherner,
 		Icon = "ui/perks/favoured_southerner_01.png",
 		IconDisabled = "ui/perks/favoured_southerner_bw.png",
-		Const = "LegendFavouredEnemySoutherner"
+		Const = "LegendFavouredEnemySoutherner",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.legend_favoured_enemy_nomad",
@@ -2208,7 +2229,8 @@ local perkDefObjects = [
 		Tooltip = this.Const.Strings.PerkDescription.LegendFavouredEnemyNomad,
 		Icon = "ui/perks/favoured_nomad_01.png",
 		IconDisabled = "ui/perks/favoured_nomad_bw.png",
-		Const = "LegendFavouredEnemyNomad"
+		Const = "LegendFavouredEnemyNomad",
+		HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 	},
 	{
 		ID = "perk.mastery.greatsword",

@@ -1186,7 +1186,9 @@ gt.Const.Strings.Terrain <- [
 	"in the steppe",
 	"on the shore",
 	"in the desert",
-	"in the wetlands"
+	"in the wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainAlternative <- [
 	"",
@@ -1207,7 +1209,9 @@ gt.Const.Strings.TerrainAlternative <- [
 	"on steppe",
 	"",
 	"in the desert",
-	"in wetlands"
+	"in wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainShort <- [
 	"",
@@ -1230,7 +1234,9 @@ gt.Const.Strings.TerrainShort <- [
 	"",
 	"desert",
 	"hills",
-	"wetlands"
+	"wetlands",
+	"",
+	""
 ];
 gt.Const.Strings.TerrainRegionNames <- [
 	[],
@@ -2457,7 +2463,7 @@ gt.Const.Strings.PerkDescription <- {
 	FastAdaption = "Adapt to your opponent\'s moves! Gain an additional stacking [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit with each attack that misses an opponent. Bonus is reset upon landing a hit.",
 	LegendFullForce = "Knowing what blows you can ignore allows you to focus on the deadly ones.\n\nGain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of the combined fatigue modifier from body, head, main hand and off hand as Melee Defense.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count.",
-	CoupDeGrace = "Like a beast of prey, you hunt the weak.\n\nInflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that have sustained any injury effects, like a broken arm. Also grants [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against targets who are stunned, netted or sleeping.",
+	CoupDeGrace = "Like a beast of prey, you hunt the weak.\n\nInflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that are debilitated or have sustained any injury effects, like a broken arm.\n\nAlso grants [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against targets who suffer from any of the following effects: baffled, dazed, distracted, grappled, netted, rooted, shellshocked, sleeping, staggered, stunned, vulnerable, webbed, or withered.",
 	SteelBrow = "Mother always said you had a hard head.\n\nHits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.\n Additionally, any attacks that would stun you now daze you.",
 	Anticipation = "By watching your opponent\'s aim, you have more time to react.\n\nWhen being attacked with ranged weapons, gain [color=" + this.Const.UI.Color.PositiveValue + "]1 + 10% of your base Ranged Defense[/color] as additional Ranged Defense per tile that the attacker is away, and always at least [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Ranged Defense.",
 	HoldOut = "Keep it together! Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] turn. Status effects that have their effects grow weaker over several turns (e.g. Goblin Poison) are at their weakest state from the start. Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] hitpoints and raises the chance to survive being struck down and not killed from 33% to 66%.",
@@ -2777,7 +2783,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendChoke = "Once an opponent is fatigued, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Damage is determined by the difference in fatigue between you and your target. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%.",
 	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usury it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company.",
 	LegendQuartermaster = "Meal planning and preparation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company.",
-	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life. \n\n[color=#4f1800][u]Passive:[/u][/color]\nFor every 10,000 crowns you have in your stash... \n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] to Melee Skill and Ranged Skill\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] as Melee Defence and Ranged Defence\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] to Resolve\n• The Bonus gained from Crowns above 50000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color]\n\nAdditionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
+	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life. \n\n[color=#4f1800][u]Passive:[/u][/color]\nFor every 10,000 crowns you have in your stash... \n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] to Melee Skill and Ranged Skill\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] as Melee Defence and Ranged Defence\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] to Resolve\n• The Bonus gained from Crowns above 80000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color]\n\nAdditionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
 	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as hitpoints when used. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists.",
 	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of their resolve as Melee and Ranged Defense. Adjacent undead are Baffled. [color=" + this.Const.UI.Color.NegativeValue + "]Will hurt cultists[/color].",
 	LegendHolyFlame = "Invokes a holy blessing that imbues a tile with the light of the old gods. Any of your mercenaries that enters the tile will become Sanctified, gaining immunity from injuries for two turns. Any undead unit that enters the tile will become Consecrated, becoming affected by injuries and unable to resurrect for two turns.",

@@ -141,8 +141,8 @@ this.settlement_faction <- this.inherit("scripts/factions/faction", {
 		}
 
 		// The remaining checks are based on time-related cooldowns
-		local delay = 5.0 - (this.getSettlements()[0].getSize() - 1);
-		return this.m.LastContractTime == 0 || this.World.getTime().Days <= 1 || this.Time.getVirtualTimeF() > this.m.LastContractTime + this.World.getTime().SecondsPerDay * delay;
+		local streak = ::Const.LegendMod.ContractCooldown.getStreak(this); // increase cooldown the more the player consecutively takes contracts from the same settlement
+		return this.m.LastContractTime == 0 || this.World.getTime().Days <= 1 || this.Time.getVirtualTimeF() > this.m.LastContractTime + this.World.getTime().SecondsPerDay * streak;
 			
 	}
 
