@@ -497,6 +497,14 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			ret.push({
 				id = 6,
 				type = "hint",
+				icon = "ui/icons/settlement_tier_icon.png",
+				divider = "top",
+				text = "Settlement Tier: " + this.getSize()
+			});
+			ret.push({
+				id = 6,
+				type = "hint",
+				icon = "ui/icons/asset_money_small.png",
 				text = "Wealth " + this.getWealth() + " %"
 			});
 		}
