@@ -219,12 +219,6 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
     Outfits = [
         [1, "bandit_thug_outfit_00"]
     ],
-     DefensePerkList = [  
-        this.Const.Perks.HeavyArmorTree,
-        this.Const.Perks.MediumArmorTree,
-        this.Const.Perks.LightArmorTree,
-        this.Const.Perks.ClothArmorTree
-    ],
     WeaponsAndTrees = [
         [1, ["scripts/items/weapons/woodcutters_axe", 70]],
         [1, ["scripts/items/weapons/goedendag", 70]],
