@@ -17,7 +17,8 @@ this.camp_manager <- {
 			false,
 			false,
 			false
-		] // CAUTION: the length of this array is tightly coupled with mSaveSlotNum in camp_screen_commander_dialog_module.js
+		], // CAUTION: the length of this array is tightly coupled with mSaveSlotNum in camp_screen_commander_dialog_module.js
+		StartedWhileEscorting = false,
 	},
 	function create()
 	{
@@ -61,6 +62,7 @@ this.camp_manager <- {
 				b.init();
 			}
 		}
+		this.m.StartedWhileEscorting = ::World.State.m.EscortedEntity != null;
 	}
 
 	function getBuildingByID( _id )
@@ -115,11 +117,12 @@ this.camp_manager <- {
 
 	function getResults()
 	{
+		local biomeText = this.m.StartedWhileEscorting ? "while escorting" : ::Const.World.TerrainLocation[::World.State.getPlayer().getTile().Type]
 		local L = [
 			{
 				id = 9000,
 				icon = "ui/buttons/icon_time.png",
-				text = "You were encamped for " + this.Math.floor(this.getElapsedHours()) + " hours"
+				text = "You were encamped for " + this.Math.floor(this.getElapsedHours()) + " hours " + biomeText,
 			}
 		];
 
@@ -225,14 +228,19 @@ this.camp_manager <- {
 		this.m.LastHourUpdated = this.World.getTime().Hours;
 		local updates = this.getCampingUpdateText();
 
-		if (this.m.IsCamping)
-		{
-			this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
-		}
-		else if (this.m.IsEscorting)
+
+		if (this.m.IsEscorting)
 		{
 			this.World.TopbarDayTimeModule.showMessage("ESCORTING", updates);
 		}
+		else if (this.m.IsCamping)
+		{
+			this.World.TopbarDayTimeModule.showMessage("ENCAMPED", updates);
+		}
+		// else if (this.m.IsEscorting)
+		// {
+		// 	this.World.TopbarDayTimeModule.showMessage("ESCORTING", updates);
+		// }
 	}
 
 	function getCampingUpdateText()
@@ -250,9 +258,13 @@ this.camp_manager <- {
 			{
 				text = b.update();
 
-				if (text)
+				if (text && typeof text == "string")
 				{
 					updates.push(text);
+				}
+				else if (text && typeof text == "array")
+				{
+					updates.extend(text);
 				}
 			}
 		}

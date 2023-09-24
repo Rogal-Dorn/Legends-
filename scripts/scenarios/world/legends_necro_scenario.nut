@@ -222,7 +222,7 @@ this.legends_necro_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		}
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onUpdateHiringRoster( _roster, _settlement )
 	{
 		local garbage = [];
 		local bros = _roster.getAll();

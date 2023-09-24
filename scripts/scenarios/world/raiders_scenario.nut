@@ -293,7 +293,7 @@ this.raiders_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 	}
 
 
-	function onUpdateHiringRoster( _roster )
+	function onUpdateHiringRoster( _roster, _settlement )
 	{
 		this.addBroToRoster(_roster, "thief_background", 4);
 		this.addBroToRoster(_roster, "barbarian_background", 5);

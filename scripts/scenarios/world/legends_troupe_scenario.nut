@@ -180,7 +180,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		_background.m.CustomPerkTree[0].push(this.Const.Perks.PerkDefs.LegendLeap);
 	}
 
-	function onUpdateHiringRoster( _roster )
+	function onUpdateHiringRoster( _roster, _settlement )
 	{
 		this.addBroToRoster(_roster, "beggar_background", 8);
 		this.addBroToRoster(_roster, "minstrel_background", 8);

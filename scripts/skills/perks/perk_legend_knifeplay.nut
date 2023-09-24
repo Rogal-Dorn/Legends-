@@ -21,7 +21,11 @@ this.perk_legend_knifeplay <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/legend_throw_knife"));
 		}
 	}
-
+	
+	function onRemoved()
+	{
+		this.m.Container.removeByID("actives.legend_throw_knife");
+	}
 
 });
 

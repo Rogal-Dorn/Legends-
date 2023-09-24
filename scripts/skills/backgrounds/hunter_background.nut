@@ -46,7 +46,7 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Saintly;
 		this.m.Bodies = this.Const.Bodies.Muscular;
 		this.m.Level = this.Math.rand(1, 2);
-		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger;
+		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger | this.Const.BackgroundType.ExpertHunter;
 		this.m.Modifiers.Ammo = this.Const.LegendMod.ResourceModifiers.Ammo[2];
 		this.m.Modifiers.Hunting = this.Const.LegendMod.ResourceModifiers.Hunting[3];
 		this.m.Modifiers.Fletching = this.Const.LegendMod.ResourceModifiers.Fletching[2];
