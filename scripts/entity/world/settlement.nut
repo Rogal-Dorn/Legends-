@@ -79,11 +79,39 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		this.updateSprites();
 	}
 
+	function changeSupportedOrAbandonedAttachedLocations()
+	{
+		local current = this.getActiveAttachedLocations().len();
+		local limit = this.getAttachedLocationsMax();
+
+		if ( current > limit )
+		{
+			// The settlement is shrinking and will have to abandon attached locations that exceed the Tier limit
+			for (local i = limit; i < current; i++ )
+			{
+				this.getActiveAttachedLocations()[i].setAbandoned(true);
+			}
+		}
+		else if ( current < limit && this.getAttachedLocations().len() > current )
+		{
+			// Check if we can repopulate attached locations that were previously abandoned
+			local maxIndex = ::Math.min(this.getAttachedLocations().len(), limit);
+			for (local i = current; i < maxIndex; i++ )
+			{
+				if (this.getAttachedLocations()[i].isAbandoned())
+				{
+					this.getAttachedLocations()[i].setAbandoned(false);
+				}
+			}
+		}
+	}
+
 	function changeSize( _v )
 	{
 		this.setUpgrading(false);
 		_v = this.Math.max(1, _v);
 		this.setSize(this.Math.min(3, _v));
+		this.changeSupportedOrAbandonedAttachedLocations();
 	}
 
 	function getDraftList()
