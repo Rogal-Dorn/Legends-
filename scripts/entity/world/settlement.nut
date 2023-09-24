@@ -1321,6 +1321,40 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return null;
 	}
 
+	// A helper function to filter out any existing attached locations from possible candidates in buildNewLocation()
+	function filterNewLocation( _items )
+	{
+		local ret = clone _items;
+		local existingLocations = this.getAttachedLocations().map(function(location){ return location.ClassName; });
+		local garbage = [];
+		// Find any candidate locations in _items that have already been built
+		for (local i=0; i < _items.len(); i++)
+		{
+			local arr = split(_items[i][1].Script, "/");
+			local location = arr[arr.len() - 1];
+			if (existingLocations.find(location) != null)
+			{
+				garbage.push(i);
+			}
+		}
+
+		// Now remove any locations that have already been built from ret
+		garbage.reverse();
+		foreach ( index in garbage )
+		{
+			ret.remove(index);
+		}
+
+		// Just in case all candidate locations have already be built, then allow duplicates
+		if ( ret == null || ret == [] )
+		{
+			ret = _items;
+		}
+
+		// ::MSU.Log.printData(ret.map(function(item){ return item[1].Script;}));
+		return ret;
+	}
+
 	function buildAttachedLocation( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
 	{
 		_num = this.Math.min(_num, this.getAttachedLocationsMax() - this.m.AttachedLocations.len());
