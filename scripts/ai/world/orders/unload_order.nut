@@ -48,9 +48,9 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				// if there already too many items in storage, the excess one will be pushed to the marketplace immediately 
 				// in order to keep the storage at a certain size
 				// this also lets the settlement to continue shipping these items to another place :)
-				if (marketplace != null && storage.len() > ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax)
+				if (marketplace != null && storage.len() > ::Const.World.Common.WorldEconomy.Trade.ImportedGoodsInventorySizeMax)
 				{
-					local different = storage.len() - ::Const.World.Common.WorldEconomy.ImportedGoodsInventorySizeMax;
+					local different = storage.len() - ::Const.World.Common.WorldEconomy.Trade.ImportedGoodsInventorySizeMax;
 					local newStorage = [];
 
 					foreach (i, item in storage )

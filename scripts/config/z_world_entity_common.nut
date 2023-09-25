@@ -5,7 +5,9 @@ if (!("World" in gt.Const))
 	gt.Const.World <- {};
 }
 
-gt.Const.World.Common.WorldEconomy <- {
+gt.Const.World.Common.WorldEconomy <- {};
+
+gt.Const.World.Common.WorldEconomy.Trade <- {
 	// weigted container
 	WeightedContainer = null,
 

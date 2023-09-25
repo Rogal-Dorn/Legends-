@@ -262,7 +262,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 			}
 			else
 			{
-				local num = ::Math.min(inv.len(), ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo);
+				local num = ::Math.min(inv.len(), ::Const.World.Common.WorldEconomy.Trade.AmountOfLeakedCaravanInventoryInfo);
 
 				ret.push({
 					id = 51,
@@ -280,12 +280,12 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 					});
 				}
 
-				if (inv.len() > ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo)
+				if (inv.len() > ::Const.World.Common.WorldEconomy.Trade.AmountOfLeakedCaravanInventoryInfo)
 				{
 					ret.push({
 						id = 53 + num,
 						type = "text",
-						text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
+						text = "And " + (inv.len() - ::Const.World.Common.WorldEconomy.Trade.AmountOfLeakedCaravanInventoryInfo) + " more item(s)"
 					});
 				}
 			}
