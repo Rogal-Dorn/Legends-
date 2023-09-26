@@ -34,6 +34,10 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 		_settlement.resetRoster(true); 
 		_settlement.resetShop();
 
+		if (::Math.rand(1,10)==1)
+		{
+			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));
+		}
 	}
 
 	function onResolved( _settlement )

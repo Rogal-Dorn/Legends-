@@ -32,6 +32,11 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 		}
 
 		_settlement.resetRoster(true);
+		
+		if (::Math.rand(1,10)==1)
+		{
+			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));
+		}
 	}
 
 
