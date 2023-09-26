@@ -79,6 +79,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 	{
 		this.randomized_unit_abstract.assignRandomEquipment();
 	}
+	
 	// function assignRandomEquipment()
 	// {
 	// 	local r;
