@@ -14,9 +14,14 @@ this.merc_company_disbands_situation <- this.inherit("scripts/entity/world/settl
 		];
 	}
 
-	function onAdded( _settlement )
+	function onAdded( _settlement ) //most bad events except the major ones.
 	{
 		_settlement.resetRoster(true);
+		_settlement.removeSituationByID("situation.ambushed_trade_routes");
+		_settlement.removeSituationByID("situation.abducted_children");
+		_settlement.removeSituationByID("situation.disappearing_villagers");
+		_settlement.removeSituationByID("situation.raided");
+		_settlement.removeSituationByID("situation.unhold_attacks");
 	}
 
 	function onUpdate( _modifiers )
