@@ -275,8 +275,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function assignRandomEquipment()
 	{
 		assignWeapon();
-		assignShield();
 		assignOutfit();
 		assignPerks(); 
+		assignShield();
 	}
 }); 
