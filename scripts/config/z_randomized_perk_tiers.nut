@@ -123,7 +123,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanGuard] <- {
         [2, ["scripts/items/weapons/falchion", 100]],
         [2, ["scripts/items/weapons/shortsword", 100]],
         [1, ["scripts/items/weapons/arming_sword", 100]],
-        [2, ["scripts/items/weapons/legend_glaive", 100]],
+        [2, ["scripts/items/weapons/legend_glaive", 100]]
     ],
     GuaranteedPerks = [
         "scripts/skills/perks/perk_recover",
