@@ -211,11 +211,11 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			addAll(selection[1])
 		}
 
+		// if (typeof weaponPerkTree == "array") 
+		// {
+		// 	weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
+		// }
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
-		if (typeof weaponPerkTree == "array") 
-		{
-			weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
-		}
 		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
 		{
 			pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
