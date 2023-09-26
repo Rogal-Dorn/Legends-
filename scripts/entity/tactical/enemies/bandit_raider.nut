@@ -75,21 +75,9 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 	}
 
 
-	// Chance to roll a shield if we don't have duelist and if there is no offhand (or no 2-Handed weapon)
 	function assignRandomEquipment()
 	{
 		this.randomized_unit_abstract.assignRandomEquipment();
-		if (this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand) == null && !this.m.Skills.hasSkill("perk.duelist") && this.Math.rand(1, 100) <= 80)
-		{
-			if (this.Math.rand(1, 100) <= 75)
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
-			}
-			else
-			{
-				this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-			}
-		}
 	}
 	// function assignRandomEquipment()
 	// {

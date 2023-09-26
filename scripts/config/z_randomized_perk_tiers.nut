@@ -89,6 +89,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
         [2, ["scripts/items/weapons/shortsword", 100]],
         [2, ["scripts/items/weapons/legend_militia_glaive", 100]]
     ],
+    Shields = [
+        [1, "scripts/items/shields/buckler_shield"],
+        [2, ""]
+    ],
     GuaranteedPerks = [
         "scripts/skills/perks/perk_recover"
     ],
@@ -136,6 +140,9 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanGuard] <- {
         "scripts/skills/perks/perk_crippling_strikes",
         "scripts/skills/traits/fearless_trait"
     ],
+    Shields = [
+        [1, "scripts/items/shields/wooden_shield"]
+    ],
     LevelRange = [4, 7],
     PerkPower = gt.Const.PerkPurchasePower.Medium
 }
@@ -173,6 +180,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
         [1, ["scripts/items/weapons/legend_saw", 35], ["scripts/skills/perks/perk_legend_smashing_shields", "scripts/skills/perks/perk_legend_specialist_woodaxe_skill", "scripts/skills/perks/perk_legend_specialist_woodaxe_damage"]],
         [1, ["scripts/items/weapons/legend_hoe", 35], ["scripts/skills/perks/perk_legend_smackdown", "scripts/skills/perks/perk_legend_specialist_pitchfork_skill", "scripts/skills/perks/perk_legend_specialist_pitchfork_damage"]],
         [1, ["scripts/items/weapons/wooden_flail", 35], ["scripts/skills/perks/perk_head_hunter", "scripts/skills/perks/perk_battle_flow", "scripts/skills/perks/perk_legend_specialist_pitchfork_skill", "scripts/skills/perks/perk_legend_specialist_pitchfork_damage"]]
+    ],
+    Shields = [
+        [1, "scripts/items/shields/buckler_shield"],
+        [14, ""]
     ],
     LegendaryPerks = [
         "scripts/skills/perks/perk_dodge",
@@ -237,6 +248,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         [3, ["scripts/items/weapons/legend_militia_glaive", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
         [3, ["scripts/items/weapons/legend_tipstaff", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
         [3, ["scripts/items/weapons/legend_ranged_wooden_flail", 70], ["scripts/skills/perks/perk_killing_frenzy"]]
+    ],
+    Shields = [
+        [1, "scripts/items/shields/wooden_shield"],
+        [1, "scripts/items/shields/buckler_shield"],
+        [6, ""]
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -336,6 +352,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         [5, ["scripts/items/weapons/military_pick", 70], ["scripts/skills/perks/perk_legend_smackdown"]],
         [5, ["scripts/items/weapons/legend_glaive", 70], ["scripts/skills/perks/perk_killing_frenzy"]]
     ],
+    Shields = [
+        [3, ""]
+        [4, "scripts/items/shields/wooden_shield"],
+        [2, "scripts/items/shields/kite_shield"]
+    ]
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
         this.Const.Perks.IndestructibleTree,

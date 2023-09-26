@@ -5,6 +5,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// DefensePerkList 	| Defensive perk list | e.g. ClothArmorTree
 	// TraitsPerkList  	| Traits lists, generally very filled out | e.g. FitTree	
 	// WeaponsAndTrees 	| [Weapon Script, Chance to roll weapon perk, chance to roll weapon class perk]
+	// Shields          | Chance to roll a shield, assuming no 2hander and assuming no duelist
 	// GuaranteedPerks 	| Guaranteed perks for units
 	// LegendaryPerks  	| Guaranteed perks on legendary difficulty
 	// LevelRange  		| Possible level range
@@ -16,6 +17,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		DefensePerkList = [], 
 		TraitsPerkList = [],
 		WeaponsAndTrees = [],
+		Shields = [],
 		GuaranteedPerks = [],
 		LegendaryPerks = [],
 		LevelRange = [1, 1],
@@ -229,14 +231,53 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	
 	}
 
+	function assignShield()
+	{
+		if (this.m.Shields.len() == 0) { return; }
+		if (this.m.Skills.hasSkill("perk.duelist")) { return; }
+		if (this.getMainhandItem().isItemType(this.Const.Items.ItemType.TwoHanded)) { return; }
+
+		local candidates = [];
+		local totalWeight = 0;
+
+		foreach (shield in this.m.Shields)
+		{
+			if (shield[0] == 0)
+			{
+				continue;
+			}
+			candidates.push(shield);
+			totalWeight += shield[0];
+		}
+		
+		local r = this.Math.rand(0, totalWeight);
+		foreach (shield in candidates)
+		{
+			r = r - shield[0];
+			if (r > 0)
+			{
+				continue;
+			}
+			if (shield[1] == "") //Randomly chose "no shield"
+			{
+				return;
+			}
+			this.m.Items.equip(this.new(shield[1]))
+			return;
+		}
+
+	}
+
 	// Function generally doesn't need to be overridden in child files
 	// Only times you'll need to override would be to do things like a weapon-specific perk, i.e. peasants | OR | when adding items to bag/offhand
 	// assignWeapon() also assigns weapon-related perks, these are purchased first before any other perks
+	// assignShield() gives us a shield based on the array (assuming it rolls it), and won't try if we have duelist or a 2hander
 	// assignOutfit() does not assign any armor related perks
 	// assignPerks() finishes spending the units PerkPower 
 	function assignRandomEquipment()
 	{
 		assignWeapon();
+		assignShield();
 		assignOutfit();
 		assignPerks(); 
 	}
