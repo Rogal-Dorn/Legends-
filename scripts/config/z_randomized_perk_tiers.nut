@@ -353,7 +353,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         [5, ["scripts/items/weapons/legend_glaive", 70], ["scripts/skills/perks/perk_killing_frenzy"]]
     ],
     Shields = [
-        [3, ""]
+        [3, ""],
         [4, "scripts/items/shields/wooden_shield"],
         [2, "scripts/items/shields/kite_shield"]
     ]
