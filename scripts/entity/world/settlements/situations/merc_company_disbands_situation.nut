@@ -53,7 +53,7 @@ this.merc_company_disbands_situation <- this.inherit("scripts/entity/world/settl
 		_draftList.push("militia_background");
 		_draftList.push("militia_background");
 		_draftList.push("militia_background");
-	}
+
 		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_noble")
 		{
 			_draftList.push("legend_noble_2h");
@@ -65,6 +65,7 @@ this.merc_company_disbands_situation <- this.inherit("scripts/entity/world/settl
 			_draftList.push("female_adventurous_noble_background");
 			_draftList.push("hedge_knight_background");
 		}
+	}
 
 });
 
