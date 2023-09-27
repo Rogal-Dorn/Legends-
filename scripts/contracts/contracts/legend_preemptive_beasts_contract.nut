@@ -8,7 +8,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.legend_preemptive_beasts";
 		this.m.Name = "Drive Away Beasts";
-		this.m.Description = "Some locals have spotted some wandering beasts. While attacks have yet to occur, they're willing to pay for some hunters to get rid of these beasts before they become an issue.";
+		this.m.Description = "Some locals have spotted some wandering beasts. While attacks have yet to occur, they're willing to pay for some hunters to get rid of these beasts before they become an issue. Pay may be lower due to the lack of urgency, but some locals might be willing to help for a bit of coin.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
 
@@ -19,7 +19,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 
 	function start()
 	{
-		this.m.Payment.Pool = 500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 400 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult(); // Reduced from base 500. Maybe reduce it further
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -441,6 +441,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
 				// this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/high_spirits_situation"), 3, this.Contract.m.Home, this.List); // placeholder for now, perhaps find/make a weaker positive situation
 			}
 
 		});
@@ -473,6 +474,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
 				// this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/high_spirits_situation"), 3, this.Contract.m.Home, this.List); // placeholder for now, perhaps find/make a weaker positive situation
 			}
 
 		});
@@ -505,6 +507,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
 				// this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/high_spirits_situation"), 3, this.Contract.m.Home, this.List); // placeholder for now, perhaps find/make a weaker positive situation
 			}
 
 		});
@@ -537,6 +540,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
 				// this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/high_spirits_situation"), 3, this.Contract.m.Home, this.List); // placeholder for now, perhaps find/make a weaker positive situation
 			}
 
 		});
@@ -569,6 +573,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					text = "You gain [color=" + this.Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
 				});
 				// this.Contract.m.SituationID = this.Contract.resolveSituation(this.Contract.m.SituationID, this.Contract.m.Home, this.List);
+				this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/high_spirits_situation"), 3, this.Contract.m.Home, this.List); // placeholder for now, perhaps find/make a weaker positive situation
 			}
 
 		});
@@ -576,7 +581,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Poachers1",
 			Title = "At %townname%",
-			Text = "[img]gfx/ui/events/event_80.png[/img]{As you leave, a pair of woodsmen approach. They introduce themselves as the ones who first spotted the beasts. They offer to help you track down and hunt the beasts in exchange %cut% paid in advance.}",
+			Text = "[img]gfx/ui/events/event_80.png[/img]{As you leave, a pair of woodsmen approach. They introduce themselves as the ones who first spotted the beasts. They offer to help you track down and hunt the beasts in exchange %cut% crowns paid in advance.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -610,9 +615,9 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					function getResult()
 					{
 						this.World.Assets.addMoney(this.Flags.get("Cut") * -1);
-						for( local i = 0; i != 2; i = ++i )
+						for( local i = 0; i != 2; i = ++i ) // Adds 2 poachers to the party
 						{
-							local militia = this.World.getGuestRoster().create("scripts/entity/tactical/humans/militia_guest_ranged");
+							local militia = this.World.getGuestRoster().create("scripts/entity/tactical/humans/legend_poacher_guest"); // Test character based off of legend_peasant_poacher stats & perks
 							militia.setFaction(1);
 							militia.setPlaceInFormation(19 + i);
 							militia.assignRandomEquipment();
