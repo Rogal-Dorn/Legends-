@@ -47,14 +47,26 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 		local orcs = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getNearestSettlement(myTile);
 		local goblins = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Goblins).getNearestSettlement(myTile);
 
-		if (myTile.getDistanceTo(orcs.getTile()) + this.Math.rand(0, 8) < myTile.getDistanceTo(goblins.getTile()) + this.Math.rand(0, 8))
+		if(goblins == null)
 		{
 			this.m.Flags.set("IsOrcs", true);
 		}
-		else
+		else if (orcs == null)
 		{
 			this.m.Flags.set("IsOrcs", false);
 		}
+		else
+		{
+			if (myTile.getDistanceTo(orcs.getTile()) + this.Math.rand(0, 8) < myTile.getDistanceTo(goblins.getTile()) + this.Math.rand(0, 8))
+			{
+				this.m.Flags.set("IsOrcs", true);
+			}
+			else
+			{
+				this.m.Flags.set("IsOrcs", false);
+			}
+		}
+
 
 		local bestDist = 9000;
 		local best;

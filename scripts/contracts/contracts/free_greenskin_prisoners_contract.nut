@@ -362,14 +362,26 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 						local nearest_orcs = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getNearestSettlement(playerTile);
 						local camp;
 
-						if (nearest_goblins.getTile().getDistanceTo(playerTile) <= nearest_orcs.getTile().getDistanceTo(playerTile))
+						if(nearest_goblins == null)
+						{
+							camp = nearest_orcs;
+						}
+						else if (nearest_orcs == null)
 						{
 							camp = nearest_goblins;
 						}
 						else
 						{
-							camp = nearest_orcs;
+							if (nearest_goblins.getTile().getDistanceTo(playerTile) <= nearest_orcs.getTile().getDistanceTo(playerTile))
+							{
+								camp = nearest_goblins;
+							}
+							else
+							{
+								camp = nearest_orcs;
+							}
 						}
+
 
 						if (this.Flags.get("IsEnemyParty"))
 						{
@@ -473,13 +485,24 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 						local nearest_orcs = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getNearestSettlement(tile);
 						local camp;
 
-						if (nearest_goblins.getTile().getDistanceTo(tile) <= nearest_orcs.getTile().getDistanceTo(tile))
+						if(nearest_goblins == null)
+						{
+							camp = nearest_orcs;
+						}
+						else if (nearest_orcs == null)
 						{
 							camp = nearest_goblins;
 						}
 						else
 						{
-							camp = nearest_orcs;
+							if (nearest_goblins.getTile().getDistanceTo(playerTile) <= nearest_orcs.getTile().getDistanceTo(playerTile))
+							{
+								camp = nearest_goblins;
+							}
+							else
+							{
+								camp = nearest_orcs;
+							}
 						}
 
 						p.EnemyBanners.push(camp.getBanner());
