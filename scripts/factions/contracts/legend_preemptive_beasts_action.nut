@@ -21,10 +21,10 @@ this.legend_preemptive_beasts_action <- this.inherit("scripts/factions/faction_a
 			return;
 		}
 
-		// if (this.World.getTime().Days <= 3 && this.Math.rand(1, 100) < 20 || this.Math.rand(1, 100) > 10)
-		// {
-		// 	return;
-		// }
+		if (this.Math.rand(1, 100) > 10) // no double check for the early game
+		{
+			return;
+		}
 
 		this.m.Score = 10;
 	}
