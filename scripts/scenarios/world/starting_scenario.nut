@@ -128,6 +128,17 @@ this.starting_scenario <- {
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 	}
 
+	// Older version for compatibility
+	function onUpdateHiringRoster( _roster )
+	{
+	}
+
+	// Older version for compatibility
+	function onUpdateDraftList ( _list, _gender = null)
+	{
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+	}
+
 	function onUpdateStablesList( _list )
 	{
 	}
