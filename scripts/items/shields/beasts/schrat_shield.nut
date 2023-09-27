@@ -24,10 +24,10 @@ this.schrat_shield <- this.inherit("scripts/items/shields/shield", {
 		this.m.Sprite = "bust_schrat_shield_0" + this.m.Variant;
 		this.m.SpriteDamaged = "bust_schrat_shield_0" + this.m.Variant + "_damaged";
 
-		//3 below only mtter for inventory looks when u transform, doesn't affect actual schrats only druids
-		this.m.ShieldDecal = "shield_heartwood_destroyed";
-		this.m.IconLarge = "shields/inventory_heartwood_shield.png";
-		this.m.Icon = "shields/icon_heartwood_shield.png";
+		// These need to be set only if it's a player that obtained this shield, i.e. through transformation. Currently transformation is removed so this is unneeded (Should maybe be set in create() if its a player anyways?
+		// this.m.ShieldDecal = "shield_heartwood_destroyed";
+		// this.m.IconLarge = "shields/inventory_heartwood_shield.png";
+		// this.m.Icon = "shields/icon_heartwood_shield.png";
 	}
 
 });
