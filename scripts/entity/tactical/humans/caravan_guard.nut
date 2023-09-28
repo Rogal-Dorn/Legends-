@@ -52,8 +52,7 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 
 	function assignRandomEquipment()
 	{
-		this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
-
+		this.randomized_unit_abstract.assignRandomEquipment();
 		if (this.Math.rand(1, 100) <= 35)
 		{
 			local r = this.Math.rand(1, 2);
@@ -67,8 +66,6 @@ this.caravan_guard <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
 			}
 		}
-
-		this.randomized_unit_abstract.assignRandomEquipment();
 	}
 	// function assignRandomEquipment()
 	// {
