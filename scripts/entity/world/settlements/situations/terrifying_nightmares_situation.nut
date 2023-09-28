@@ -5,7 +5,7 @@ this.terrifying_nightmares_situation <- this.inherit("scripts/entity/world/settl
 		this.situation.create();
 		this.m.ID = "situation.terrifying_nightmares";
 		this.m.Name = "Terrifying Nightmares";
-		this.m.Description = "The people of this settlement are terrorized by nightmares. Many prefer to stay awake all night just to be safe. The local townsfolk have called in Witch Hunters and Beast Slayers alike, desperately hoping for either group to put an end to their terrors.";
+		this.m.Description = "The people of this settlement are terrorized by nightmares. Many prefer to stay awake all night just to be safe. The local townsfolk have called in Witch Hunters and Beast Slayers alike, desperately hoping for either group to put an end to their terrors. Upon resolution this will refresh the hiring roster in town.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_25.png";
 		this.m.Rumors = [
 			"The other day I came through %settlement%. Something is wrong there. Pale faces, tired eyes and shambling walks. It\'s like they didn\'t sleep in a week!",

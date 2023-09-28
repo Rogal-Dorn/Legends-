@@ -5,7 +5,7 @@ this.terrified_villagers_situation <- this.inherit("scripts/entity/world/settlem
 		this.situation.create();
 		this.m.ID = "situation.terrified_villagers";
 		this.m.Name = "Terrified Villagers";
-		this.m.Description = "The villagers here are terrified of unknown horrors. Fewer potential recruits are to be found on the streets, and people deal less favourably with strangers. Those formerly in the business of graves are rightfully seeking new employment.";
+		this.m.Description = "The villagers here are terrified of unknown horrors. Fewer potential recruits are to be found on the streets, and people deal less favourably with strangers. Those formerly in the business of graves are rightfully seeking new employment. Upon resolution this will refresh the hiring roster in town.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_09.png";
 		this.m.Rumors = [
 			"The dead ain\'t really dead, sometimes they come back to haunt the living! Don\'t believe me? Just head over to %settlement% and see for yourself!",

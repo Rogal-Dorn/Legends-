@@ -5,7 +5,7 @@ this.ambushed_trade_routes_situation <- this.inherit("scripts/entity/world/settl
 		this.situation.create();
 		this.m.ID = "situation.ambushed_trade_routes";
 		this.m.Name = "Ambushed Trade Routes";
-		this.m.Description = "The roads leading here are unsafe of late, and many a caravan has been ambushed and plundered. With little successful trade, the selection of goods is lower and the prices higher. Former traders and caravan hands may be looking for new jobs.";
+		this.m.Description = "The roads leading here are unsafe of late, and many a caravan has been ambushed and plundered. With little successful trade, the selection of goods is lower and the prices higher. Former traders and caravan hands may be looking for new jobs. Upon resolution this will refresh the hiring roster in town.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_12.png";
 		this.m.Rumors = [
 			"Brigands and raiders are the bane of us traveling merchants! An old friend of mine got ambushed, robbed and beaten just outside of %settlement%!",
