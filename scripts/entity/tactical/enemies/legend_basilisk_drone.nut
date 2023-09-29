@@ -186,17 +186,17 @@ this.legend_basilisk_drone <- this.inherit("scripts/entity/tactical/actor", {
 
 			for( local i = 0; i < n; i = ++i )
 			{
-				local r = this.Math.rand(1, 100); //change
+				local r = this.Math.rand(1, 100);
 				local loot;
 
 				if (r <= 40)
 				{
-					loot = this.new("scripts/items/trade/furs_item");
+					loot = this.new("scripts/items/misc/basilisk_feathers_item");
 				}
 				else if (r <= 80)
 				{
-					loot = this.new("scripts/items/loot/legend_bear_fur_item");
-					loot = this.new("scripts/items/misc/furs_item");
+					loot = this.new("scripts/items/loot/basilisk_talon_item");
+					loot = this.new("scripts/items/misc/basilisk_eye_item");
 				}
 
 				if (loot != null)
