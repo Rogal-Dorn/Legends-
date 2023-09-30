@@ -30,9 +30,50 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.ConditionMax = 36;
 		this.m.RegularDamage = this.Math.rand(25, 30);
 		this.m.RegularDamageMax = this.Math.rand(40, 45);
-		this.randomizeValues();
+		this.parryRandomize();
 	}
 
+	function parryRandomize()
+	{
+		local available = [];
+		available.push(function ( _i )
+		{
+			local f = this.Math.rand(110, 130) * 0.01;
+			_i.m.RegularDamage = this.Math.round(_i.m.RegularDamage * f);
+			_i.m.RegularDamageMax = this.Math.round(_i.m.RegularDamageMax * f);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.ArmorDamageMult = _i.m.ArmorDamageMult + this.Math.rand(10, 30) * 0.01;
+		});
+		available.push(function ( _i )
+		{
+			_i.m.DirectDamageAdd = _i.m.DirectDamageAdd + this.Math.rand(8, 16) * 0.01;
+		});
+		available.push(function ( _i )
+		{
+			_i.m.MeleeDefense = this.Math.round(_i.m.MeleeDefense * this.Math.rand(130, 150) * 0.01);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
+		});
+		available.push(function ( _i )
+		{
+			_i.m.Condition = this.Math.round(_i.m.Condition * this.Math.rand(150, 200) * 0.01) * 1.0;
+			_i.m.ConditionMax = _i.m.Condition;
+		});
+		available.push(function ( _i )
+		{
+			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
+		});
+		for( local n = 2; n != 0 && available.len() != 0; n = --n )
+		{
+			local r = this.Math.rand(0, available.len() - 1);
+			available[r](this);
+			available.remove(r);
+		}
+	}
 	function updateVariant()
 	{
 		this.m.Sprite = "icon_legend_parrying_dagger_0" + this.m.Variant;
@@ -127,7 +168,26 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 	{
 		return 0;
 	}
+		function onSerialize( _out )
+	{
+		this.named_shield.onSerialize(_out);
+		_out.writeU16(this.m.RegularDamage);
+		_out.writeU16(this.m.RegularDamageMax);
+		_out.writeF32(this.m.ArmorDamageMult);
+		_out.writeF32(this.m.DirectDamageAdd);
+	}
 
+	function onDeserialize( _in )
+	{
+		this.named_shield.onDeserialize(_in);
+		if(::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
+		{
+			this.m.RegularDamage = _in.readU16();
+			this.m.RegularDamageMax = _in.readU16();
+			this.m.ArmorDamageMult = _in.readF32();
+			this.m.DirectDamageAdd = _in.readF32();
+		}
+	}
 
 });
 
