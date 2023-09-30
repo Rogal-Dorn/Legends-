@@ -404,6 +404,24 @@ gt.Const.LegendMod.OutfitObjs.extend([
 	]
 },
 {
+	ID = "bandit_raider_outfit_00"
+	Body = [
+		[1, "bandit_armor_medium"],
+		[2, "bandit_armor_light"],
+		[2, "leather_lamellar"]
+	],
+	Helmet = [
+		[1, "nasal_helmet"],
+		[1, "rondel_helm"],
+		[1, "barbute_helmet"],
+		[1, "scale_helm"],
+		[1, "dented_nasal_helmet"],
+		[1, "rusty_mail_coif"],
+		[1, "headscarf"],
+		[1, "nasal_helmet_with_rusty_mail"]
+	]
+},
+{
 	ID = "bandit_rabble_outfit_00"
 	Body = [
 		[20, "leather_wraps"],
@@ -416,7 +434,6 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, ""]
 	]
 },
-
 
 ]); 
 
