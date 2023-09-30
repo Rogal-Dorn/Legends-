@@ -22,14 +22,12 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
 		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon;
 		this.updateVariant();
-		this.m.Value = 800;
+		this.m.Value = 1000;
 		this.m.MeleeDefense = 5;
 		this.m.RangedDefense = 0;
 		this.m.StaminaModifier = -2;
 		this.m.Condition = 36;
 		this.m.ConditionMax = 36;
-		this.m.RegularDamage = this.Math.rand(25, 30);
-		this.m.RegularDamageMax = this.Math.rand(40, 45);
 		this.parryRandomize();
 	}
 
@@ -62,10 +60,6 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		{
 			_i.m.Condition = this.Math.round(_i.m.Condition * this.Math.rand(150, 200) * 0.01) * 1.0;
 			_i.m.ConditionMax = _i.m.Condition;
-		});
-		available.push(function ( _i )
-		{
-			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
 		});
 		for( local n = 2; n != 0 && available.len() != 0; n = --n )
 		{
