@@ -643,7 +643,7 @@ layers = [
 {"name": "legend_armor_plate_ancient_scale_harness",      "layer": "plate", "min": 1, "max": 1, "value" : 500, "con" : 75, "stam" : -12, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Ancient Scale Harness", \
     "desc" :  "A sturdy, but heavy and partly decayed ancient scale harness.", \
-    "adesc" : "Includes an heavy and partly decayed ancient scale harness."
+    "adesc" : "Includes a heavy and partly decayed ancient scale harness."
 },
 {"name": "legend_armor_plate_ancient_scale_coat_restored",         "layer": "plate", "min": 1, "max": 1, "value" : 3000, "con" : 170, "stam" : -23, "impactSound" : "plate", "invSound" : "leather", \
     "title" :  "Embalmed Ancient Scale Coat", \
