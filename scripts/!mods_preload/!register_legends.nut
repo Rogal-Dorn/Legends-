@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "18.1.0",
+	Version = "18.1.1",
 	Name = "Legends Mod",
 	BuildName = "Camps & Contracts"
 };
