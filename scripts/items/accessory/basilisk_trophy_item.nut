@@ -1,7 +1,5 @@
 this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
-	m = {
-		IsSpent = false
-	},
+	m = {},
 	function create()
 	{
 		this.accessory.create();
@@ -17,7 +15,7 @@ this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.Value = 1125;
 	}
 
-	function getTooltip() //attachment gives poison immunity and extra durability and necklace gives a headhunter effect when taking hp damage
+	function getTooltip() //necklace gives a headhunter effect when taking hp damage
 	{
 		local result = [
 			{
@@ -59,14 +57,14 @@ this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 			id = 10,
 			type = "text",
 			icon = "ui/icons/chance_to_hit_head.png",
-			text = "After taking damage gain [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] chance to hit the head on your next attack"
+			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit the head"
 		});
 
 		result.push({
 			id = 15,
 			type = "text",
-			icon = "ui/icons/special.png",
-			text = "[color=" + this.Const.UI.Color.NegativeValue + "]This effect will be wasted if you miss or pass your turn[/color]"
+			icon = "ui/icons/damage_dealt.png",
+			text = "Deal [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] more damage when hitting the head with any weapon"
 		});
 		return result;
 	}
@@ -83,18 +81,16 @@ this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 
 	function onUpdateProperties( _properties )
 	{
-		this.accessory.onUpdateProperties(_properties);
-		this.m.IsHidden = this.m.Stacks == 0;
-
-		if (this.m.Stacks != 0)
-		{
-			_properties.HitChance[this.Const.BodyPart.Head] = 100.0;
-		}
+		this.character_background.onUpdate(_properties);
+		_properties.HitChance[this.Const.BodyPart.Head] += 5;
 	}
 
-	function onTurnStart()
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		this.m.IsSpent = false;
+		if (_skill == this)
+		{
+			_properties.DamageAgainstMult[this.Const.BodyPart.Head] += 0.2; //20%
+		}
 	}
 
 });
