@@ -26,7 +26,7 @@ this.bandit_raider_low <- this.inherit("scripts/entity/tactical/enemies/bandit_r
 		
 		if (this.getIdealRange() == 1 && this.Math.rand(1, 100) <= 25)
 		{
-			r = this.Math.rand(1, 2);
+			local r = this.Math.rand(1, 2);
 
 			if (r == 1)
 			{
