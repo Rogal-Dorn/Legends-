@@ -441,7 +441,9 @@ gt.Const.EntityType <- {
 	SatoManhunterRanged = 166,
 	SatoManhunterVeteranRanged = 167,
 	LegendNobleGuard = 168,
-	LegendManAtArms = 169
+	LegendManAtArms = 169,
+
+	LegendCaravanPolearm = 170
 	
 		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
@@ -655,6 +657,7 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.CaravanHand:
 		case this.Const.EntityType.CaravanGuard:
 		case this.Const.EntityType.CaravanDonkey:
+		case this.Const.EntityType.LegendCaravanPolearm:
 			return this.Const.FactionType.Settlement;
 
 		case this.Const.EntityType.Footman:
@@ -990,5 +993,6 @@ gt.Const.EntityIcon <- [
 	"nomad_05",
 	
 	"footman_veteran_orientation", //LegendNobleGuard
-	"footman_veteran_orientation" //LegendManAtArms
+	"footman_veteran_orientation", //LegendManAtArms
+	"caravan_hand_orientation"     //CaravanPoleArm -> TODO
 ];
