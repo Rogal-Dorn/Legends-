@@ -78,7 +78,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 		this.m.EnemyLevel = this.Math.rand( this.m.LevelRange[0], this.m.LevelRange[1] )
 		this.m.XP = this.m.EnemyLevel * 35;
-		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if (this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Legendary)
 		{
 			this.m.PerkPower -= 1;
 		}
@@ -209,7 +209,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		local weapon = this.getMainhandItem();
 		local weaponID = this.getMainhandItem().getID();
 
-		if (selection.len() > 1)
+		if (selection.len() > 1 && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			addAll(selection[1])
 		}
