@@ -48,6 +48,12 @@ this.faction_manager <- {
 		return this.m.Factions[_i];
 	}
 
+	function getFactionForceHostile( _i )
+	{
+		local fact = this.m.Factions[_i];
+		return fact.isAlliedWithPlayer() ? this.getFactionOfType(this.Const.FactionType.DummyFaction) : fact
+	}
+
 	function isGreaterEvil()
 	{
 		return this.m.GreaterEvil.Phase == this.Const.World.GreaterEvilPhase.Live;
@@ -309,6 +315,7 @@ this.faction_manager <- {
 		this.createUndead();
 		this.createZombies();
 		this.createFreeCompany();
+		this.createDummyFaction();
 		this.createAlliances();
 
 		foreach( f in this.m.Factions )
@@ -443,6 +450,16 @@ this.faction_manager <- {
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Zombies);
 		this.m.Factions.push(f);
+	}
+
+	function createDummyFaction()
+	{
+		local f = this.new("scripts/factions/dummy_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Dummy Faction");
+		f.setDiscovered(true);
+		f.addTrait(this.Const.FactionTrait.DummyFaction);
+		this.m.Factions.push(f)
 	}
 
 	function createCityStates()
