@@ -1632,6 +1632,18 @@ foreach(k,v in this.Const.World.Spawn)
 }
 
 
+gt.Const.World.Common.addHostileUnitsToCombat <- function ( _into, _partyList, _resources, _faction, _minibossify = 0)
+{
+	local fact = _faction;
+	// this.logWarning("Faction: " + fact)
+	if (this.World.FactionManager.isAlliedWithPlayer(_faction))
+	{
+		fact = this.World.FactionManager.getFactionOfType(this.Const.FactionType.DummyFaction).getID();
+		// this.logWarning("Modified: " + fact)
+	}
+	this.Const.World.Common.addUnitsToCombat(_into, _partyList, _resources, fact, _minibossify = 0)
+}
+
 //Perks array is [weight, perk name, cost]
 //Returns array of perks
 //You could modify this too by changing the perk name to be an array of perks (which is what trees are), and add that for a cost instead + iterate thru that tree
