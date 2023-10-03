@@ -364,6 +364,28 @@ gt.Const.LegendMod.OutfitObjs.extend([
 	]
 },
 {
+	ID = "legend_caravan_polearm_outfit_00"
+	Body = [
+		[1, "leather_tunic"],
+		[1, "padded_leather"],
+		[1, "padded_surcoat"]
+	],
+	Helmet = [
+		[1, "hood"],
+		[1, "aketon_cap"]
+	]
+},
+{
+	ID = "bandit_poacher_outfit_00"
+	Body = [
+		[20, "leather_wraps"]
+	],
+	Helmet = [
+		[1, "headscarf"],
+		[1, "mouth_piece"]
+	]
+},
+{
 	ID = "bandit_thug_outfit_00"
 	Body = [
 		[15, "leather_wraps"],
@@ -419,6 +441,24 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, "rusty_mail_coif"],
 		[1, "headscarf"],
 		[1, "nasal_helmet_with_rusty_mail"]
+	]
+},
+{
+	ID = "bandit_raider_low_outfit_00"
+	Body = [
+		[10, "bandit_armor_light"],
+		[20, "ragged_surcoat"],
+		[20, "padded_leather"],
+		[15, "worn_mail_shirt"],
+		[15, "leather_lamellar"],
+		[20, "patched_mail_shirt"]
+	],
+	Helmet = [
+		[19, "nasal_helmet"],
+		[19, "dented_nasal_helmet"],
+		[19, "rusty_mail_coif"],
+		[18, "headscarf"],
+		[25, ""]
 	]
 },
 {

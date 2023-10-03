@@ -374,7 +374,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.TrainedTree
     ], 
     LegendaryPerks = [
-        "scripts/skills/perks/perk_battle_forged",
+        // "scripts/skills/perks/perk_battle_forged",
         "scripts/skills/perks/perk_relentless",
         "scripts/skills/perks/perk_dodge",
         "scripts/skills/perks/perk_backstabber",
@@ -382,15 +382,76 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         "scripts/skills/traits/fearless_trait"
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_brawny",
-        "scripts/skills/perks/perk_coup_de_grace",
+        // "scripts/skills/perks/perk_brawny",
+        // "scripts/skills/perks/perk_coup_de_grace",
         "scripts/skills/perks/perk_bullseye",
         "scripts/skills/perks/perk_rotation",
         "scripts/skills/perks/perk_recover"
     ],
-    LevelRange = [4, 7],
-    PerkPower = gt.Const.PerkPurchasePower.High
+    LevelRange = [3, 4],
+    PerkPower = gt.Const.PerkPurchasePower.Low
 } 
+
+// Should look at how to normalize this for low-tier units?
+gt.Const.RandomizedCharacterInfo["BanditRaiderLow"] <- {
+    Outfits = [
+        [1, "bandit_raider_low_outfit_00"]
+    ],
+    WeaponsAndTrees = [
+        [1, ["scripts/items/weapons/woodcutters_axe", 70]],
+        [1, ["scripts/items/weapons/hooked_blade", 70]],
+        [1, ["scripts/items/weapons/pike", 70]],
+        [1, ["scripts/items/weapons/two_handed_wooden_hammer", 70]],
+        [1, ["scripts/items/weapons/shortsword", 70]],
+        [1, ["scripts/items/weapons/hand_axe", 70]],
+        [1, ["scripts/items/weapons/boar_spear", 70]],
+        [1, ["scripts/items/weapons/morning_star", 70]],
+        [1, ["scripts/items/weapons/falchion", 70]],
+        [1, ["scripts/items/weapons/flail", 70]]
+    ],
+    Shields = [
+        [1, ""],
+        [2, "scripts/items/shields/buckler_shield"],
+        [1, "scripts/items/shields/wooden_shield"]
+    ]    
+}
+
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
+    Outfits = [
+        [1, "legend_caravan_polearm_outfit_00"]
+    ],
+    WeaponsAndTrees = [
+        [5, ["scripts/items/weapons/legend_ranged_wooden_flail", 75, 35]],
+        [5, ["scripts/items/weapons/legend_staff", 75, 65]],
+        [4, ["scripts/items/weapons/legend_tipstaff", 75, 65]],
+        [5, ["scripts/items/weapons/pitchfork", 50, 35]],
+        [1, ["scripts/items/weapons/warfork", 50, 0]]
+    ],
+    TraitsPerkList = [
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree
+    ],
+    DefensePerkList = [
+        this.Const.Perks.LightArmorTree,
+        this.Const.Perks.MediumArmorTree
+    ],
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_bags_and_belts"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_pathfinder",
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/perks/perk_overwhelm",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [3, 4],
+    PerkPower = gt.Const.PerkPurchasePower.Low
+}
 
 // Units TODO: 
 /* 
