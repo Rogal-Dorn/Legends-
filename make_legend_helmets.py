@@ -603,7 +603,7 @@ layers = [
 },
 {"name" : "flat_top_helm_polished"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 550, "con" : 100, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Hardened Flat Top Helm", \
- "desc" :  "A outstandingly well made and maintained flat full-metal helmet with noseguard." \
+ "desc" :  "An outstandingly well made and maintained flat full-metal helmet with noseguard." \
 },
 {"name" : "barbute"                     , "layer" : "helm", "min" : 1, "max" : 7, "value" : 1250, "con" : 75, "stam" : -3, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Barbute", \
@@ -643,7 +643,7 @@ layers = [
 },
 {"name" : "kettle_helm_high"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 850, "con" : 125, "stam" : -9, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Hardened Kettle Helm", \
- "desc" :  "A hardended full-metal helmet with a broad rim, excellent quality and military grade." \
+ "desc" :  "A hardened full-metal helmet with a broad rim, excellent quality and military grade." \
 },
 {"name" : "kettle_helm"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 750, "con" : 115, "stam" : -8, "vis" : -2, "hair" : "true", "beard" : "false",  \
  "title" :  "Kettle Helm", \
