@@ -48,10 +48,9 @@ this.faction_manager <- {
 		return this.m.Factions[_i];
 	}
 
-	function getFactionForceHostile( _i )
+	function getDummyFaction()
 	{
-		local fact = this.m.Factions[_i];
-		return fact.isAlliedWithPlayer() ? this.getFactionOfType(this.Const.FactionType.DummyFaction) : fact
+		return this.getFactionOfType(::Const.FactionType.DummyFaction); // there should only be 1 DummyFaction
 	}
 
 	function isGreaterEvil()
@@ -1404,6 +1403,19 @@ this.faction_manager <- {
 			}
 
 			f.onDeserialize(_in);
+		}
+
+		// For backwards compatibility
+		if (!::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
+		{
+			this.createDummyFaction();
+		}
+
+		// Setup the dummy faction's mimic behaviour after all possible factions have been deserialized
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
+		{
+			local dummy = this.getDummyFaction();
+			dummy.setMimicValues(dummy.getMimicID());
 		}
 
 		this.m.LastRelationUpdateDay = _in.readU32();
