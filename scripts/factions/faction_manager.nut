@@ -48,6 +48,11 @@ this.faction_manager <- {
 		return this.m.Factions[_i];
 	}
 
+	function getDummyFaction()
+	{
+		return this.getFactionOfType(::Const.FactionType.DummyFaction); // there should only be 1 DummyFaction
+	}
+
 	function isGreaterEvil()
 	{
 		return this.m.GreaterEvil.Phase == this.Const.World.GreaterEvilPhase.Live;
@@ -309,6 +314,7 @@ this.faction_manager <- {
 		this.createUndead();
 		this.createZombies();
 		this.createFreeCompany();
+		this.createDummyFaction();
 		this.createAlliances();
 
 		foreach( f in this.m.Factions )
@@ -443,6 +449,16 @@ this.faction_manager <- {
 		f.setDiscovered(true);
 		f.addTrait(this.Const.FactionTrait.Zombies);
 		this.m.Factions.push(f);
+	}
+
+	function createDummyFaction()
+	{
+		local f = this.new("scripts/factions/dummy_faction");
+		f.setID(this.m.Factions.len());
+		f.setName("Dummy Faction");
+		f.setDiscovered(true);
+		f.addTrait(this.Const.FactionTrait.DummyFaction);
+		this.m.Factions.push(f)
 	}
 
 	function createCityStates()
@@ -1387,6 +1403,19 @@ this.faction_manager <- {
 			}
 
 			f.onDeserialize(_in);
+		}
+
+		// For backwards compatibility
+		if (!::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
+		{
+			this.createDummyFaction();
+		}
+
+		// Setup the dummy faction's mimic behaviour after all possible factions have been deserialized
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
+		{
+			local dummy = this.getDummyFaction();
+			dummy.setMimicValues(dummy.getMimicID());
 		}
 
 		this.m.LastRelationUpdateDay = _in.readU32();
