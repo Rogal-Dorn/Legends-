@@ -68,12 +68,20 @@ gt.Const.LegendMod.ToBeVerbPronouns <- [
 	["were they", ["were they", "was he", "was she"]],
 ]
 
-gt.Const.LegendMod.extendVarsWithPronouns <- function( _vars, _gender )
+gt.Const.LegendMod.extendVarsWithPronouns <- function( _vars, _gender, _characterIdentitySuffix = "" )
 {
+	// _characterIdentitySuffix allows for support for multiple characters with possibly different genders
+	// For example, suppose in some event text we have 2 characters, "bro" (male) and "sis" (female)
+	// Calling this function with _characterIdentitySuffix = "bro" and "sis" respectively will result in the following:
+	// 		The placeholder text "%they_sis%" will be replaced with "she"
+	//		The placeholder text "%Their_bro%" will be replaced with "His"
+	//		etc.
+	local suffix = (_characterIdentitySuffix == "" || _characterIdentitySuffix == null) ? "" : "_" + _characterIdentitySuffix;
+
 	foreach (pronoun in this.Const.LegendMod.Pronouns)
 	{
 		_vars.push([
-			pronoun,
+			pronoun + suffix,
 			this.Const.LegendMod.getPronoun(_gender, pronoun)
 		]);
 	}
@@ -85,13 +93,13 @@ gt.Const.LegendMod.extendVarsWithPronouns <- function( _vars, _gender )
 		local value = pronounToBeVerb[1][_gender + 1];
 
 		_vars.push([
-			placeholder,
+			placeholder + suffix,
 			value
 		]);
 
 		// Add first-letter-capitalized versions as well
 		_vars.push([
-			placeholder.slice(0,1).toupper() + placeholder.slice(1),
+			placeholder.slice(0,1).toupper() + placeholder.slice(1) + suffix,
 			value.slice(0,1).toupper() + value.slice(1),
 		])
 
