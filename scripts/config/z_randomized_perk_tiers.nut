@@ -215,7 +215,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.BowTree
     ], 
     WeaponsAndTrees = [
         [1, ["scripts/items/weapons/short_bow", 50]],
@@ -293,7 +294,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         this.Const.Perks.FastTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.BowTree
     ], 
     LegendaryPerks = [
         "scripts/skills/perks/perk_dodge",
