@@ -67,6 +67,16 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
         [1, ["scripts/items/weapons/butchers_cleaver", 100, 45]],
         [2, ["scripts/items/weapons/legend_wooden_spear", 100, 80]]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     LegendaryPerks = [
         "scripts/skills/perks/perk_nimble",
         "scripts/skills/traits/fearless_trait"
@@ -89,6 +99,16 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
         [2, ["scripts/items/weapons/shortsword", 100]],
         [2, ["scripts/items/weapons/legend_militia_glaive", 100]]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     Shields = [
         [1, "scripts/items/shields/buckler_shield"],
         [2, ""]
@@ -153,16 +173,9 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
         this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
-        this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
@@ -199,17 +212,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
-        // this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
-        this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
-        this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
@@ -257,15 +261,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
         this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
         this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
@@ -290,16 +289,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
-        // this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
-        this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
@@ -325,7 +316,6 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.HeavyArmorTree,
         this.Const.Perks.MediumArmorTree,
         this.Const.Perks.LightArmorTree,
-        // this.Const.Perks.ClothArmorTree
     ],
     WeaponsAndTrees = [ // Author's Note: These are a substantially higher chance to purchase 2handers than current raiders, because of this (eventually) these will get weighted
         [1, ["scripts/items/weapons/legend_infantry_axe", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
@@ -362,19 +352,13 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.IndestructibleTree,
         this.Const.Perks.MartyrTree,
         this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
-        this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
     LegendaryPerks = [
-        // "scripts/skills/perks/perk_battle_forged",
         "scripts/skills/perks/perk_relentless",
         "scripts/skills/perks/perk_dodge",
         "scripts/skills/perks/perk_backstabber",
@@ -382,8 +366,6 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         "scripts/skills/traits/fearless_trait"
     ],
     GuaranteedPerks = [
-        // "scripts/skills/perks/perk_brawny",
-        // "scripts/skills/perks/perk_coup_de_grace",
         "scripts/skills/perks/perk_bullseye",
         "scripts/skills/perks/perk_rotation",
         "scripts/skills/perks/perk_recover"
