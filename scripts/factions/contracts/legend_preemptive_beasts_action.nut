@@ -16,17 +16,23 @@ this.legend_preemptive_beasts_action <- this.inherit("scripts/factions/faction_a
 			return;
 		}
 
+		// Will not spawn if the "Roaming Beasts" contract is present
+		if (_faction.getContracts().map(function (c){return c.getType() == "contract.roaming_beasts"}).find(true) != null)
+		{
+			return;
+		}
+
 		if (_faction.getSettlements()[0].isIsolated() || _faction.getSettlements()[0].getSize() > 2)
 		{
 			return;
 		}
 
-		if (this.Math.rand(1, 100) > 10) // no double check for the early game
+		if ((::World.getTime().Days <= 30 && ::Math.rand(1, 100) > 80) || ::Math.rand(1, 100) > 10) // much more common in the early game
 		{
 			return;
 		}
 
-		this.m.Score = 10;
+		this.m.Score = 1;
 	}
 
 	function onClear()

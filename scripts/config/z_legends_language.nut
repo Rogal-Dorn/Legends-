@@ -141,3 +141,8 @@ gt.Const.LegendMod.extendVarsWithPronouns <- function( _vars, _gender, _characte
 
 	return ret;
 }
+
+::Const.LegendMod.Language.pluralize <- function( _len, _singular, _plural )
+{
+	return _len <= 1 ? _singular : _plural;
+}
