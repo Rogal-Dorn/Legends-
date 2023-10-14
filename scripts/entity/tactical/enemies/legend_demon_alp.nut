@@ -82,25 +82,23 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 	function loadResources()
 	{
 		this.actor.loadResources();
-		local r3 = [
+		
+		foreach( r in [
 			"sounds/enemies/dlc2/alp_nightmare_01.wav",
 			"sounds/enemies/dlc2/alp_nightmare_02.wav",
 			"sounds/enemies/dlc2/alp_nightmare_03.wav",
 			"sounds/enemies/dlc2/alp_nightmare_04.wav",
 			"sounds/enemies/dlc2/alp_nightmare_05.wav",
 			"sounds/enemies/dlc2/alp_nightmare_06.wav"
-		];
-		local r4 = [
-			"sounds/enemies/ghost_death_01.wav",
-			"sounds/enemies/ghost_death_02.wav"
-		];
-
-		foreach( r in r3 )
+		])
 		{
 			this.Tactical.addResource(r);
 		}
 
-		foreach( r in r4 )
+		foreach( r in [
+			"sounds/enemies/ghost_death_01.wav",
+			"sounds/enemies/ghost_death_02.wav"
+		])
 		{
 			this.Tactical.addResource(r);
 		}
@@ -113,18 +111,15 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 			this.updateAchievement("SleepTight", 1, 1);
 		}
 
-		local flip = this.Math.rand(0, 100) < 50;
+		this.m.IsCorpseFlipped = this.Math.rand(0, 100) > 50;
 		local isResurrectable = _fatalityType != this.Const.FatalityType.Decapitated;
-		local sprite_body = this.getSprite("body");
+		local skin = this.getSprite("body");
 		local sprite_head = this.getSprite("head");
 
 		if (_tile != null)
 		{
-			local decal;
-			local skin = this.getSprite("body");
 			skin.Alpha = 255;
-			this.m.IsCorpseFlipped = !flip;
-			decal = _tile.spawnDetail("bust_demonalp_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
+			local decal = _tile.spawnDetail("bust_demonalp_body_01_dead", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 			decal.Color = skin.Color;
 			decal.Saturation = skin.Saturation;
 			decal.Scale = 0.9;
@@ -147,7 +142,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 			}
 			else
 			{
-				decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
+				decal = _tile.spawnDetail(sprite_head.getBrush().Name + "_dead", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 				decal.Color = skin.Color;
 				decal.Saturation = skin.Saturation;
 				decal.Scale = 0.9;
@@ -156,25 +151,25 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (_fatalityType == this.Const.FatalityType.Disemboweled)
 			{
-				decal = _tile.spawnDetail("bust_demonalp_guts", this.Const.Tactical.DetailFlag.Corpse, flip);
+				decal = _tile.spawnDetail("bust_demonalp_guts", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
 			else if (_fatalityType == this.Const.FatalityType.Smashed)
 			{
-				decal = _tile.spawnDetail("bust_alp_skull", this.Const.Tactical.DetailFlag.Corpse, flip);
+				decal = _tile.spawnDetail("bust_alp_skull", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
 			{
-				decal = _tile.spawnDetail("bust_demonalp_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
+				decal = _tile.spawnDetail("bust_demonalp_body_01_dead_arrows", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
 			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
 			{
-				decal = _tile.spawnDetail("bust_demonalp_body_01_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
+				decal = _tile.spawnDetail("bust_demonalp_body_01_dead_javelin", this.Const.Tactical.DetailFlag.Corpse, this.m.IsCorpseFlipped);
 				decal.Scale = 0.9;
 				decal.setBrightness(0.9);
 			}
