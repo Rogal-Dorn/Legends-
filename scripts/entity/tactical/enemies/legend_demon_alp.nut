@@ -64,6 +64,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1] = 1.0;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_demonalp_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Flags.add("alp");
 	}
 
 	function playIdleSound()
@@ -269,10 +270,10 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 
-		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-		this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 
 	}
