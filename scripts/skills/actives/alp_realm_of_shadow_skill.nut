@@ -65,7 +65,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
 			IsAppliedOnEnter = true,
-			IsByPlayer = _user.IsControlledByPlayer(),
+			IsByPlayer = _user.isPlayerControlled(),
 			Timeout = this.Time.getRound() + 3,
 			Callback = func,
 			function Applicable( _a )
