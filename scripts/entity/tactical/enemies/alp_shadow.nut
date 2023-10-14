@@ -1,5 +1,18 @@
 this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
-	m = {},
+	m = {
+		DistortTargetA = null,
+		DistortTargetPrevA = this.createVec(0, 0),
+		DistortAnimationStartTimeA = 0,
+		DistortTargetB = null,
+		DistortTargetPrevB = this.createVec(0, 0),
+		DistortAnimationStartTimeB = 0,
+		DistortTargetC = null,
+		DistortTargetPrevC = this.createVec(0, 0),
+		DistortAnimationStartTimeC = 0,
+		DistortTargetD = null,
+		DistortTargetPrevD = this.createVec(0, 0),
+		DistortAnimationStartTimeD = 0
+	},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.AlpShadow;
@@ -50,6 +63,19 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		b.MoraleEffectMult = 0.0;
 		b.RangedDefense = 999;
 		b.Hitpoints = 5;
+
+		// basic resistances
+		b.IsImmuneToBleeding = true;
+		b.IsImmuneToRoot = true;
+		b.IsImmuneToDisarm = true;
+		b.IsImmuneToFire = true;
+		b.IsIgnoringArmorOnAttack = true;
+		b.IsAffectedByNight = false;
+		b.IsAffectedByInjuries = false;
+		b.IsAffectedByRain = false;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 150)
+			b.MeleeDefense += 5;
 
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
@@ -129,6 +155,63 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 			]
 		};
 		this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
+	}
+
+	function onRender()
+	{
+		this.actor.onRender();
+
+		if (this.m.DistortTargetA == null)
+		{
+			this.m.DistortTargetA = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
+		}
+
+		if (this.moveSpriteOffset("head", this.m.DistortTargetPrevA, this.m.DistortTargetA, 3.8, this.m.DistortAnimationStartTimeA))
+		{
+			this.m.DistortAnimationStartTimeA = this.Time.getVirtualTimeF();
+			this.m.DistortTargetPrevA = this.m.DistortTargetA;
+			this.m.DistortTargetA = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+		}
+
+		if (this.m.DistortTargetB == null)
+		{
+			this.m.DistortTargetB = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+			this.m.DistortAnimationStartTimeB = this.Time.getVirtualTimeF();
+		}
+
+		if (this.moveSpriteOffset("blur_1", this.m.DistortTargetPrevB, this.m.DistortTargetB, 4.9000001, this.m.DistortAnimationStartTimeB))
+		{
+			this.m.DistortAnimationStartTimeB = this.Time.getVirtualTimeF();
+			this.m.DistortTargetPrevB = this.m.DistortTargetB;
+			this.m.DistortTargetB = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+		}
+
+		if (this.m.DistortTargetC == null)
+		{
+			this.m.DistortTargetC = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
+		}
+
+		if (this.moveSpriteOffset("body", this.m.DistortTargetPrevC, this.m.DistortTargetC, 4.3, this.m.DistortAnimationStartTimeC))
+		{
+			this.m.DistortAnimationStartTimeC = this.Time.getVirtualTimeF();
+			this.m.DistortTargetPrevC = this.m.DistortTargetC;
+			this.m.DistortTargetC = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+		}
+
+		if (this.m.DistortTargetD == null)
+		{
+			this.m.DistortTargetD = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+			this.m.DistortAnimationStartTimeD = this.Time.getVirtualTimeF();
+		}
+
+		if (this.moveSpriteOffset("blur_2", this.m.DistortTargetPrevD, this.m.DistortTargetD, 5.5999999, this.m.DistortAnimationStartTimeD))
+		{
+			this.m.DistortAnimationStartTimeD = this.Time.getVirtualTimeF();
+			this.m.DistortTargetPrevD = this.m.DistortTargetD;
+			this.m.DistortTargetD = this.createVec(this.Math.rand(0, 10) - 5, this.Math.rand(0, 10) - 5);
+		}
 	}
 
 });
