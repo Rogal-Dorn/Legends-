@@ -29,6 +29,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundPitch = this.Math.rand(90, 110) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/alp_shadow_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Flags.add("alp");
 	}
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
