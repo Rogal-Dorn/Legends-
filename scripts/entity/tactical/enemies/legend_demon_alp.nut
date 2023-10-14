@@ -127,10 +127,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 			if (_fatalityType == this.Const.FatalityType.Decapitated)
 			{
-				local layers = [
-					sprite_head.getBrush().Name + "_dead"
-				];
-				local decap = this.Tactical.spawnHeadEffect(this.getTile(), layers, this.createVec(-45, 30), 180.0, sprite_head.getBrush().Name + "_bloodpool");
+				local decap = this.Tactical.spawnHeadEffect(this.getTile(), [sprite_head.getBrush().Name + "_dead"], this.createVec(-45, 30), 180.0, sprite_head.getBrush().Name + "_bloodpool");
 
 				foreach( sprite in decap )
 				{
