@@ -1,19 +1,5 @@
 this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
-	m = {
-		Size = 1,
-		Head = 1,
-		ScaleStartTime = 0
-	},
-	function getSize()
-	{
-		return this.m.Size;
-	}
-
-	function getXP()
-	{
-		return this.m.XP * this.m.Size;
-	}
-
+	m = {},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.LegendDemonAlp;
@@ -24,6 +10,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.DecapitateBloodAmount = 1.0;
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.m.IsUsingZoneOfControl = false;
+		this.m.IsFlashingOnHit = false;
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
 			"sounds/enemies/dlc2/alp_idle_01.wav",
@@ -81,9 +68,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 	function playIdleSound()
 	{
-		local r = this.Math.rand(1, 100);
-
-		if (r <= 50)
+		if (this.Math.rand(1, 100) <= 50)
 		{
 			this.playSound(this.Const.Sound.ActorEvent.Other1, this.Const.Sound.Volume.Actor * this.Const.Sound.Volume.ActorIdle * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1] * this.m.SoundVolumeOverall * (this.Math.rand(50, 90) * 0.01) * (this.isHiddenToPlayer ? 0.5 : 1.0), this.m.SoundPitch * (this.Math.rand(50, 100) * 0.01));
 		}
@@ -205,65 +190,47 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.Entities.addCorpse(_tile);
 
 			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
-			{
-				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
-
-				for( local i = 0; i < n; i = ++i )
-				{
-
-					local r = this.Math.rand(1, 100);
-					local loot;
-					if (r <= 50)
-					{
-						loot = this.new("scripts/items/misc/legend_demon_alp_skin_item");
-					}
-					else
-					{
-						loot = this.new("scripts/items/misc/legend_demon_third_eye_item");
-					}
-					loot.drop(_tile);
-					loot = this.new("scripts/items/misc/petrified_scream_item");
-					loot.drop(_tile);
-					local r = this.Math.rand(1, 100);
-					if (r <= 33)
-					{
-						loot = this.new("scripts/items/misc/legend_demon_alp_skin_item");
-						loot.drop(_tile);
-					}
-					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-					token.setRuneVariant(6);
-					token.setRuneBonus(true);
-					token.updateRuneSigilToken();
-					token.drop(_tile);
-
-				}
-			}
+				this.onDropLootForPlayer(_tile);
 		}
 
-		local allies = this.Tactical.Entities.getInstancesOfFaction(this.getFaction());
-		local onlyIllusionsLeft = true;
-
-		foreach( ally in allies )
-		{
-			if (ally.getID() != this.getID() && ally.getType() == this.Const.EntityType.Alp && !this.isKindOf(ally, "alp_shadow"))
-			{
-				onlyIllusionsLeft = false;
-				break;
-			}
-		}
-
-		if (onlyIllusionsLeft)
-		{
-			foreach( ally in allies )
-			{
-				if (ally.getType() == this.Const.EntityType.Alp && this.isKindOf(ally, "alp_shadow"))
-				{
-					ally.killSilently();
-				}
-			}
-		}
-
+		this.onKillAllSummonedMinions();
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
+	}
+
+	function onKillAllSummonedMinions()
+	{
+		local id = this.getID();
+
+		foreach( a in this.Tactical.Entities.getInstancesOfFaction(this.getFaction()) )
+		{
+			if (!a.getFlags().has("living_nightmare"))
+				continue;
+
+			if (a.getFlags().get("living_nightmare") != id)
+				continue;
+			
+			a.killSilently();
+		}
+	}
+
+	function onDropLootForPlayer( _tile )
+	{
+		local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+
+		for( local i = 0; i < n; ++i )
+		{
+			if (this.Math.rand(1, 100) <= 33)
+				this.new("scripts/items/misc/legend_demon_alp_skin_item").drop(_tile);
+
+			this.new("scripts/items/misc/" + (this.Math.rand(1, 100) <= 50 ? "legend_demon_third_eye_item" : "legend_demon_alp_skin_item")).drop(_tile);
+			this.new("scripts/items/misc/petrified_scream_item").drop(_tile);
+		}
+
+		local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
+		token.setRuneVariant(::Math.rand(1, 6));
+		token.setRuneBonus(true);
+		token.updateRuneSigilToken();
+		token.drop(_tile);
 	}
 
 	function onInit()
@@ -300,14 +267,13 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_levitation"));
 		this.m.Skills.add(this.new("scripts/skills/actives/horrific_scream"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
-		this.m.Skills.add(this.new("scripts/skills/actives/gruesome_feast"));
-		this.m.Skills.add(this.new("scripts/skills/effects/gruesome_feast_effect"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
+
 		 if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
-			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
-			}
+		{
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
+		this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
+		}
 
 	}
 
