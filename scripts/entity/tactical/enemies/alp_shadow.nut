@@ -30,6 +30,11 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Flags.add("alp");
 	}
 
+	function setMaster( _actor )
+	{
+		this.m.Flags.set("living_nightmare", _actor.getID());
+	}
+
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
 		if (_tile != null)
@@ -45,13 +50,15 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ActionPointCosts = this.Const.SameMovementAPCost;
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.MaxTraversibleLevels = 3;
+		// basic alp skill
+		this.m.Skills.add(this.new("scripts/skills/actives/shadow_alp_teleport_skill"));
 		// basic racial skill
 		this.m.Skills.add(this.new("scripts/skills/racial/ghost_racial"));
+		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		// basic perks
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fearsome"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
 	}
 
