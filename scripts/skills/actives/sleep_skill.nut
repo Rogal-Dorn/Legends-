@@ -94,6 +94,12 @@ this.sleep_skill <- this.inherit("scripts/skills/skill", {
 
 	function isUsable() //allows this skill to be used by non-melee entities now
 	{
+		if (!this.skill.isUsable())
+			return false;
+
+		if (this.getContainer().getActor().getFlags().has("alp"))
+			return true;
+
 		return !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
