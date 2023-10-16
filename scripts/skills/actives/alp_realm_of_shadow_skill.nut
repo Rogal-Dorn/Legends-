@@ -7,7 +7,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Description = "";
 		this.m.Icon = "skills/nightvision_square.png";
 		this.m.IconDisabled = "skills/nightvision_square.png";
-		this.m.Overlay = "active_156";
+		this.m.Overlay = "bust_nightmare";
 		this.m.SoundOnUse = [
 			"sounds/enemies/miasma_spell_01.wav",
 			"sounds/enemies/miasma_spell_02.wav",
@@ -28,7 +28,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
+		this.m.ActionPointCost = 7;
 		this.m.FatigueCost = 15;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 9;
@@ -65,7 +65,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
 			IsAppliedOnEnter = true,
-			IsByPlayer = _user.isPlayerControlled(),
+			IsByPlayer = false,
 			Timeout = this.Time.getRound() + 3,
 			Callback = func,
 			function Applicable( _a )
@@ -74,7 +74,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 			}
 		};
 
-		foreach( tile in this.getAffectedTiles() )
+		foreach( tile in this.getAffectedTiles(_targetTile) )
 		{
 			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "shadows")
 			{
@@ -109,7 +109,9 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 		if (!_entity.getFlags().has("alp") && _entity.getMoraleState == this.Const.MoraleState.Ignore)
 			return;
 
-		this.Tactical.spawnIconEffect("bust_nightmare", _tile, this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+		if (_entity.getSkills().hasSkill("effects.alp_realm_of_shadow"))
+			return;
+
 		this.Sound.play(::MSU.Array.rand([
 			"sounds/enemies/dlc2/alp_nightmare_01.wav",
 			"sounds/enemies/dlc2/alp_nightmare_02.wav",
@@ -118,9 +120,6 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/dlc2/alp_nightmare_05.wav",
 			"sounds/enemies/dlc2/alp_nightmare_06.wav"
 		]), this.Const.Sound.Volume.Actor, _entity.getPos());
-
-		if (_entity.getSkills().hasSkill("effects.alp_realm_of_shadow"))
-			return;
 		
 		_entity.getSkills().add(this.new("scripts/skills/effects/alp_realm_of_shadow_effect"));
 	}
