@@ -1,7 +1,5 @@
-this.alp_realm_of_shadow <- ::inherit("scripts/skills/skill", {
-	m = {
-		Counter = 0,
-	},
+this.alp_realm_of_shadow_effect <- ::inherit("scripts/skills/skill", {
+	m = {},
 	function create()
 	{
 		this.m.ID = "effects.alp_realm_of_shadow";
@@ -52,7 +50,7 @@ this.alp_realm_of_shadow <- ::inherit("scripts/skills/skill", {
 					id = 9,
 					type = "text",
 					icon = "ui/icons/bravery.png",
-					text = "[color=" + ::Const.UI.Color.PositiveValue + "]+25%[/color] Resolve"
+					text = "[color=" + ::Const.UI.Color.PositiveValue + "]+33%[/color] Resolve"
 				},
 				{
 					id = 10,
@@ -99,7 +97,7 @@ this.alp_realm_of_shadow <- ::inherit("scripts/skills/skill", {
 				id = 9,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Takes [color=" + ::Const.UI.Color.NegativeValue + "]25%[/color] more damage from [color=" + ::Const.UI.Color.NegativeValue + "]Nightmare[/color]"
+				text = "Takes [color=" + ::Const.UI.Color.NegativeValue + "]33%[/color] more damage from [color=" + ::Const.UI.Color.NegativeValue + "]Nightmare[/color]"
 			}
 		]);
 
@@ -125,7 +123,7 @@ this.alp_realm_of_shadow <- ::inherit("scripts/skills/skill", {
 		if (this.getContainer().getActor().getFlags().has("alp"))
 		{
 			_properties.IsImmuneToZoneOfControl = true;
-			_properties.BraveryMult *= 1.25;
+			_properties.BraveryMult *= 1.33;
 			_properties.RangedDefenseMult *= 2.0;
 			_properties.MeleeDefense += 10;
 			return;
@@ -144,7 +142,7 @@ this.alp_realm_of_shadow <- ::inherit("scripts/skills/skill", {
 		if (_skill == null || _skill.getID != "actives.nightmare")
 			return;
 
-		_properties.DamageReceivedTotalMult *= 1.25;
+		_properties.DamageReceivedTotalMult *= 1.33;
 	}
 
 });
