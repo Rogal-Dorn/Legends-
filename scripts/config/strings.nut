@@ -303,6 +303,7 @@ gt.Const.Strings.EntityName <- [
 	"Manhunter Veteran Handonner",
 	"Noble Guard",
 	"Man at Arms",
+	"Basilisk Drone",
 	"Caravan Polearm"
 ];
 gt.Const.Strings.EntityNamePlural <- [
@@ -476,6 +477,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Manhunter Veteran Handonners",
 	"Veteran Footmen",
 	"Men at Arms",
+	"Basilisk Drones",
 	"Caravan Polearms"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
@@ -530,7 +532,8 @@ gt.Const.Strings.FootprintsType <- [
 	"A Kraken",
 	"Ifrits",
 	"Lindwurms",
-	"Mercenaries"
+	"Mercenaries",
+	"Basilisks"
 ];
 gt.Const.Strings.ShipNames <- [
 	"Summer Daze",
