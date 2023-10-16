@@ -3,7 +3,7 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "actives.alp_nightmare_manifestation";
-		this.m.Name = "Summon Nightmare";
+		this.m.Name = "Conjure Nightmare";
 		this.m.Description = "";
 		this.m.Icon = "skills/active_160.png";
 		this.m.IconDisabled = "skills/active_160.png";
@@ -29,10 +29,10 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsDoingForwardMove = false;
 		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 8;
+		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
-		this.m.MaxRange = 9;
+		this.m.MaxRange = 10;
 		this.m.MaxLevelDifference = 4;
 	}
 
@@ -60,7 +60,7 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{	
-		if (_targetTile.getEntity().getSkills().hasSkill("effects.sleeping"))
+		if (!_targetTile.getEntity().getSkills().hasSkill("effects.sleeping"))
 			return false;
 
 		if (this.getAvailableTiles(_targetTile).len() <= 1)
@@ -76,6 +76,26 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 			TargetTile = _targetTile
 		};
 
+		local potential = this.getAvailableTiles(_targetTile);
+		local num = ::Math.min(3, potential.len());
+
+		for (local i = 0; i < num; ++i)
+		{
+			local tile = potential.remove(::Math.rand(0, potential.len() - 1));
+			local type = ::MSU.Array.rand(["direwolf","human","serpent","tentacle"]);
+
+			//this.Time.scheduleEvent(this.TimeUnit.Virtual, 100 * i, function(_a) {
+				local nightmare = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp_nightmare_" + type, tile.Coords.X, tile.Coords.Y);
+				nightmare.setFaction(_user.getFaction());
+				nightmare.spawnSpecialEffect(tile);
+				nightmare.assignRandomEquipment();
+				nightmare.setMaster(_user);
+			//}.bindenv(this), _user);
+		}
+
+		if (!_user.isHiddenToPlayer() && !_targetTile.getEntity().isHiddenToPlayer())
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + "\'s nightmare becomes REAL!!!");
+
 		if (_targetTile.IsVisibleForPlayer || !_user.isHiddenToPlayer())
 			this.Time.scheduleEvent(this.TimeUnit.Virtual, 400, this.onDelayedEffect.bindenv(this), tag);
 		else
@@ -86,49 +106,18 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 
 	function getAvailableTiles( _targetTile )
 	{
-		local ret = [];
-
-		for( local i = 0; i != 6; ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
-				continue;
-
-			local tile = _targetTile.getNextTile(i);
-
-			if (!tile.IsEmpty)
-				continue;
-
-			ret.push(tile);
-		}
-
-		return ret;
+		return this.getContainer().getActor().getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AttackDefault).queryDestinationsInRange(_targetTile, 1, 2);
 	}
 
 	function onDelayedEffect( _tag )
 	{
-		local targetTile = _tag.TargetTile;
-		local user = _tag.User;
-		local target = targetTile.getEntity();
-		local potential = this.getAvailableTiles(targetTile);
-		local num = ::Math.min(this.Math.rand(2, 3), potential.len());
-
-		for (local i = 0; i < num; ++i)
-		{
-			local tile = potential.remove(::Math.rand(0, potential.len() - 1));
-			local nightmare = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/alp_nightmare_" + ::MSU.Array.rand([
-				"direwolf",
-				"human",
-				"serpent",
-				"tentacle"
-			]), tile.Coords);
-			nightmare.setFaction(user.getFaction());
-			nightmare.spawnSpecialEffect(tile);
-			nightmare.assignRandomEquipment();
-			nightmare.setMaster(user);
-
-			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "shadows")
-				tile.Properties.Effect.Callback(tile, nightmare);
-		}
+		local hitInfo = clone this.Const.Tactical.HitInfo;
+		hitInfo.DamageRegular = 5;
+		hitInfo.DamageDirect = 1.0;
+		hitInfo.BodyPart = this.Const.BodyPart.Body;
+		hitInfo.BodyDamageMult = 1.0;
+		hitInfo.FatalityChanceMult = 0.0;
+		_tag.TargetTile.getEntity().onDamageReceived(_tag.User, this, hitInfo);
 	}
 
 });
