@@ -68,6 +68,11 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/randomized_unit_abstra
 		this.setDirty(true);
 	}
 
+	function assignRandomEquipment()
+	{
+		this.randomized_unit_abstract.assignRandomEquipment();
+	}
+
 	// function assignRandomEquipment()
 	// {
 	// 	local r = this.Math.rand(1, 15);

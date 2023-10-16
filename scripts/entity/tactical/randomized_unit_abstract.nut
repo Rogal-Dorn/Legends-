@@ -5,6 +5,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// DefensePerkList 	| Defensive perk list | e.g. ClothArmorTree
 	// TraitsPerkList  	| Traits lists, generally very filled out | e.g. FitTree	
 	// WeaponsAndTrees 	| [Weapon Script, Chance to roll weapon perk, chance to roll weapon class perk]
+	// Shields          | Chance to roll a shield, assuming no 2hander and assuming no duelist
 	// GuaranteedPerks 	| Guaranteed perks for units
 	// LegendaryPerks  	| Guaranteed perks on legendary difficulty
 	// LevelRange  		| Possible level range
@@ -16,6 +17,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		DefensePerkList = [], 
 		TraitsPerkList = [],
 		WeaponsAndTrees = [],
+		Shields = [],
 		GuaranteedPerks = [],
 		LegendaryPerks = [],
 		LevelRange = [1, 1],
@@ -76,7 +78,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 		this.m.EnemyLevel = this.Math.rand( this.m.LevelRange[0], this.m.LevelRange[1] )
 		this.m.XP = this.m.EnemyLevel * 35;
-		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		if (this.World.Assets.getCombatDifficulty() != this.Const.Difficulty.Legendary)
 		{
 			this.m.PerkPower -= 1;
 		}
@@ -198,34 +200,76 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// Picks a random weapon from our tree
 	// Equips weapon + gets what got equipped, for selecting the weapon's related perk trees
 	// The WeaponsAndTrees array contents are listed above, here we roll on those chances and apply applicable maluses, attributes, and perktrees
+	// Adds everything from (technically our index 3) guaranteed Legendary Perks if the enemy rolls that weapon (this should be a table at this point perhaps)
 	function assignWeapon()
 	{
-		local idx = this.Math.rand(0, this.m.WeaponsAndTrees.len() - 1)
-		local selection = this.m.WeaponsAndTrees[idx]
-		this.m.Items.equip( this.new( selection[0] ) )
+		local selection = this.Const.GetWeaponAndTree(this.m.WeaponsAndTrees)
+		local weaponScriptAndChances = selection[0]
+		this.m.Items.equip( this.new( weaponScriptAndChances[0] ) )
 		local weapon = this.getMainhandItem();
+		local weaponID = this.getMainhandItem().getID();
+
+		if (selection.len() > 1 && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+		{
+			addAll(selection[1])
+		}
 
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
-		if (typeof weaponPerkTree == "array") 
-		{
-			weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
-		}
-		if (weaponPerkTree != null && selection.len() >= 2 && this.Math.rand(1, 100) <= selection[1])
+		weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
+		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
 		{
 			pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
 		}
 
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
-		if (weaponClassTree != null && selection.len() >= 3 && this.Math.rand(1, 100) <= selection[2])
+		if (weaponClassTree != null && weaponScriptAndChances.len() >= 3 && this.Math.rand(1, 100) <= weaponScriptAndChances[2])
 		{
 			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
 		}
 	
 	}
 
+	function assignShield()
+	{
+		if (this.m.Shields.len() == 0) { return; }
+		if (this.m.Skills.hasSkill("perk.duelist")) { return; }
+		if (this.getMainhandItem().isItemType(this.Const.Items.ItemType.TwoHanded)) { return; }
+
+		local candidates = [];
+		local totalWeight = 0;
+
+		foreach (shield in this.m.Shields)
+		{
+			if (shield[0] == 0)
+			{
+				continue;
+			}
+			candidates.push(shield);
+			totalWeight += shield[0];
+		}
+		
+		local r = this.Math.rand(0, totalWeight);
+		foreach (shield in candidates)
+		{
+			r = r - shield[0];
+			if (r > 0)
+			{
+				continue;
+			}
+			if (shield[1] == "") //Randomly chose "no shield"
+			{
+				return;
+			}
+			this.m.Items.equip(this.new(shield[1]))
+			return;
+		}
+
+	}
+
 	// Function generally doesn't need to be overridden in child files
 	// Only times you'll need to override would be to do things like a weapon-specific perk, i.e. peasants | OR | when adding items to bag/offhand
 	// assignWeapon() also assigns weapon-related perks, these are purchased first before any other perks
+	// assignShield() gives us a shield based on the array (assuming it rolls it), and won't try if we have duelist or a 2hander
 	// assignOutfit() does not assign any armor related perks
 	// assignPerks() finishes spending the units PerkPower 
 	function assignRandomEquipment()
@@ -233,5 +277,6 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		assignWeapon();
 		assignOutfit();
 		assignPerks(); 
+		assignShield();
 	}
-});
+}); 

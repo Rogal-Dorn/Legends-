@@ -1075,6 +1075,7 @@ gt.Const.CharacterProperties <- {
 	IsAttackingOnZoneOfControlAlways = false,
 	IsRiposting = false,
 	IsParrying = false,
+	IsEvadingAllAttacks = false,
 	IsSkillUseFree = false,
 	IsSkillUseHalfCost = false,
 	IsAffectedByNight = true,
