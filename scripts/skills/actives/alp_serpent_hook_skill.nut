@@ -32,7 +32,6 @@ this.alp_serpent_hook_skill <- this.inherit("scripts/skills/actives/serpent_hook
 
 		if (!_user.isHiddenToPlayer() || !target.isHiddenToPlayer())
 		{
-			local variant = _user.m.Variant;
 			local scaleBackup = target.getSprite("status_rooted").Scale;
 			_user.fadeOut(50);
 			local rooted_front = target.getSprite("status_rooted");
