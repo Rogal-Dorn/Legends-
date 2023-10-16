@@ -844,7 +844,7 @@ layers = [
     "adesc" : "Plates of leather hide and scraps"
 },
 {"name": "legend_southern_leather_scale",           "layer": "plate", "min": 1, "max": 4, "value" : 300, "con" : 70, "stam" : -10, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_scale",\
-    "title" :  "Plated Nomad Mail", \
+    "title" :  "Rusted Nomad Mail", \
     "desc" :  "A slightly worn-down, thin and light mail with additional metal plates grafted onto it.", \
     "adesc" : ""
 },
