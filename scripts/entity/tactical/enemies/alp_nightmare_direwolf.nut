@@ -85,27 +85,26 @@ this.alp_nightmare_direwolf <- this.inherit("scripts/entity/tactical/enemies/alp
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.addSprite("socket").setBrush("bust_base_shadow");
-		this.addSprite("fog").setBrush("bust_ghost_fog_02");
 		
 		local blurAlpha = 110;
 		local body_brush = "bust_alp_direwolf_0" + this.Math.rand(1, 3) + "_body";
 		local head_brush = "bust_alp_direwolf_0" + this.Math.rand(1, 3) + "_head";
 		local body = this.addSprite("body");
 		body.setBrush(body_brush);
-		body.Alpha = 0;
-		body.fadeToAlpha(blurAlpha, 750);
+		//body.Alpha = 0;
+		//body.fadeToAlpha(blurAlpha, 750);
 		local head = this.addSprite("head");
 		head.setBrush(head_brush);
-		head.Alpha = 0;
-		head.fadeToAlpha(blurAlpha, 750);
+		//head.Alpha = 0;
+		//head.fadeToAlpha(blurAlpha, 750);
 		local blur_1 = this.addSprite("blur_1");
 		blur_1.setBrush(body_brush);
-		blur_1.Alpha = 0;
-		blur_1.fadeToAlpha(blurAlpha, 750);
+		//blur_1.Alpha = 0;
+		//blur_1.fadeToAlpha(blurAlpha, 750);
 		local blur_2 = this.addSprite("blur_2");
 		blur_2.setBrush(head_brush);
-		blur_2.Alpha = 0;
-		blur_2.fadeToAlpha(blurAlpha, 750);
+		//blur_2.Alpha = 0;
+		//blur_2.fadeToAlpha(blurAlpha, 750);
 
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.54;
@@ -131,7 +130,6 @@ this.alp_nightmare_direwolf <- this.inherit("scripts/entity/tactical/enemies/alp
 	{
 		this.alp_shadow.onFactionChanged();
 		local flip = this.isAlliedWithPlayer();
-		this.getSprite("fog").setHorizontalFlipping(flip);
 		this.getSprite("body").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
 		this.getSprite("blur_1").setHorizontalFlipping(flip);
