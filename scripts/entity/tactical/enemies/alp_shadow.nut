@@ -70,13 +70,19 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		b.MoraleEffectMult = 0.0;
 		b.RangedDefense = 999;
 		b.Hitpoints = 5;
+		b.Bravery = 100;
+
+		// no armor
+		b.Armor[0] = 0;
+		b.Armor[1] = 0;
+		b.ArmorMax = clone b.Armor;
 
 		// basic resistances
 		b.IsImmuneToBleeding = true;
 		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
 		b.IsImmuneToFire = true;
-		b.IsIgnoringArmorOnAttack = true;
+		//b.IsIgnoringArmorOnAttack = true; dunno if i should enable this
 		b.IsAffectedByNight = false;
 		b.IsAffectedByInjuries = false;
 		b.IsAffectedByRain = false;
