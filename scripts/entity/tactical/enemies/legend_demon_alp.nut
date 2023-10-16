@@ -258,6 +258,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/super_sleep_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/super_nightmare_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/alp_realm_of_shadow_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/alp_summon_nightmare_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/alp_nightmare_manifestation_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
