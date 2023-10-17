@@ -6,10 +6,6 @@ this.noble_pollax <- this.inherit("scripts/entity/tactical/randomized_unit_noble
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.NoblePollax.XP;
 		this.randomized_unit_noble_abstract.create();
-		this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Tidy;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
 	}
@@ -32,7 +28,6 @@ this.noble_pollax <- this.inherit("scripts/entity/tactical/randomized_unit_noble
 		this.m.Hitpoints = b.Hitpoints;
 		this.m.CurrentProperties = clone b;
 		this.setAppearance();
-		this.getSprite("socket").setBrush("bust_base_military");
 	}
 
 	function assignRandomEquipment()
