@@ -58,9 +58,10 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 		}
 
 		local armor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
-		if (armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard) != null)
+		local tabard = armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
+		if (tabard != null)
 		{
-			armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard).setVariant(banner)
+			tabard.setVariant(banner);
 		}
 
         local shield = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand);
@@ -71,6 +72,8 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
         { 
             helmet.setPlainVariant(); 
         }
+
+		this.m.Items.updateAppearance();
 	}
 
 });
