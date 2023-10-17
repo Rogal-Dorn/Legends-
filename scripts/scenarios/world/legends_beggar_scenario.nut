@@ -18,13 +18,13 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onSpawnAssets()
 	{
+		local roster = this.World.getPlayerRoster();
 		local names = [];
+		local bro;
 
 		for( local i = 0; i < 1; i = i )
 		{
-			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
-
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)
