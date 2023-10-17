@@ -2605,6 +2605,26 @@ Tops = [[1, "top/legend_helmet_faceplate_winged", 2]],
 Vanity = [[1, ""]],
 }]
 },
+{
+ID = "mercury_pollax_01",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_open_chain_hood", 3]],
+Helms = [[1, "helm/legend_helmet_horsetail", 1]],
+Tops = [[1, "top/legend_helmet_faceplate_pointed_slit", 1], [1, "top/legend_helmet_faceplate_pointed", 1]],
+Vanity = [[1, "vanity/legend_helmet_headband", 16]],
+}]
+},
+{
+ID = "mercury_pollax_02",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_open_chain_hood", 3]],
+Helms = [[1, "helm/legend_helmet_horsetail", 1], [1, "helm/legend_helmet_norman_helm", 1]],
+Tops = [[1, "top/legend_helmet_faceplate_full", 1]],
+Vanity = [[1, "vanity/legend_helmet_plait", 7], [1, "vanity/legend_helmet_plait", 10]],
+}]
+},
 ])
 
 gt.Const.LegendMod.Helmets <- {};

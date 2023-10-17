@@ -2485,6 +2485,18 @@ Tabard = [[1, "tabard/legend_noble_tabard"]],
 Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 }]
 },
+{
+ID = "mercury_pollax_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_knightly_robe", 7]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_scale_shirt", 1]],
+Cloak = [[1, "cloak/decorative_hood", 8], [1, "cloak/legend_shoulder_cloth", 2]],
+Tabard = [[1, "tabard/legend_common_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
 ]);
 
 gt.Const.LegendMod.Armors <- {};
