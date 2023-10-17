@@ -184,6 +184,11 @@ this.fletcher_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function completed()
 	{
+		if (this.m.NumBros == 0)
+		{
+			return
+		}
+
 		local item = null
 		if (this.m.AmmoAdded > 0)
 		{
