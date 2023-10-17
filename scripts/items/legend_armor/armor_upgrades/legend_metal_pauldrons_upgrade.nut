@@ -3,7 +3,7 @@ this.legend_metal_pauldrons_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.metal_pauldrons";
+		this.m.ID = "legend_armor_upgrade.body.metal_pauldrons";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Metal Pauldrons";
 		this.m.Description = "Sturdy metal pauldrons that can be added to any armor for increased protection of the shoulders and upper body. Of course, it will also make the armor a bit heavier.";
