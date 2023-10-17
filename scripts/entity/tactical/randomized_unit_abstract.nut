@@ -233,8 +233,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 	function assignShield()
 	{
-		if (this.m.Shields.len() == 0) { return; }
-		if (this.m.Skills.hasSkill("perk.duelist")) { return; }
+		if (this.m.Shields.len() == 0) { this.logWarning("shield len 0"); return; }
 		if (this.getMainhandItem().isItemType(this.Const.Items.ItemType.TwoHanded)) { return; }
 
 		local candidates = [];
