@@ -116,7 +116,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		for (local i = 0; i <= _cap; i++)
 		{
 			local row = _tree[i]
-			if ( row.len() != 0 && _purchaseLimit > 0) {
+			if ( row.len() != 0 && _purchaseLimit >= row.len() && this.m.PerkPower >= row.len() ) {
 				foreach (perkDefNum in row) //Purchases every perk in the row, if there are multiple
 				{
 					local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
