@@ -21,21 +21,9 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		local roster = this.World.getPlayerRoster();
 		local names = [];
 		local bro;
-
-		for( local i = 0; i < 1; i = i )
-		{
-			bro = roster.create("scripts/entity/tactical/player");
-			bro.m.HireTime = this.Time.getVirtualTimeF();
-
-			while (names.find(bro.getNameOnly()) != null)
-			{
-				bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
-			}
-
-			names.push(bro.getNameOnly());
-			i = ++i;
-		}
-
+		bro = ::World.getPlayerRoster().create("scripts/entity/tactical/player");
+		bro.m.HireTime = this.Time.getVirtualTimeF();
+		bro.setName(this.Const.Strings.CharacterNames[this.Math.rand(0, this.Const.Strings.CharacterNames.len() - 1)]);
 		bro.setStartValuesEx([
 			"legend_beggar_commander_background"
 		]);

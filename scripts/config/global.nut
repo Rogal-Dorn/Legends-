@@ -442,11 +442,12 @@ gt.Const.EntityType <- {
 	SatoManhunterVeteranRanged = 167,
 	LegendNobleGuard = 168,
 	LegendManAtArms = 169,
+	LegendBasiliskDrone = 170,
 
-	LegendCaravanPolearm = 170,
-	NobleEliteFootman = 171,
-	NoblePollax = 172,
-	NobleSureshot = 173
+	LegendCaravanPolearm = 171,
+	NobleEliteFootman = 172,
+	NoblePollax = 173,
+	NobleSureshot = 174
 	
 		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
@@ -999,6 +1000,7 @@ gt.Const.EntityIcon <- [
 	"footman_veteran_orientation", //LegendNobleGuard
 	"footman_veteran_orientation", //LegendManAtArms
 	"caravan_hand_orientation",     //CaravanPoleArm -> TODO
+	"basilisk_orientation", // LegendBasiliskDrone -> TODO
 	"footman_veteran_orientation", //Noble Elite Footman
 	"billman_orientation", //Pollax
 	"arbalester_orientation" //Sureshot

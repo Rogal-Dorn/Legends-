@@ -64,6 +64,7 @@ this.alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1] = 1.0;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/alp_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Flags.add("alp");
 	}
 
 	function playIdleSound()
