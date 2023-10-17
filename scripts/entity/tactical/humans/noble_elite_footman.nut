@@ -57,6 +57,11 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
+		local armor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
+		if (armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard) != null)
+		{
+			armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard).setVariant(banner)
+		}
 
         local shield = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand);
 		shield.setFaction(banner);
