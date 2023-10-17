@@ -3,7 +3,7 @@ this.legend_direwolf_pelt_upgrade <- this.inherit("scripts/items/legend_armor/le
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.body.direwolf_pelt";
+		this.m.ID = "legend_armor_upgrade.body.legend_direwolf_pelt";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Direwolf Pelt Mantle";
 		this.m.Description = "Pelts taken from ferocious direwolves, cured and sewn together to be worn as a beast hunter\'s trophy around the neck. Donning the skin of a beast like this can turn one into an imposing figure.";
