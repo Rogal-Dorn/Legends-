@@ -2432,9 +2432,9 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Cloth = [[1, "cloth/legend_gambeson", 1]],
 		Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
 		Plate = [[1, "plate/legend_armor_leather_scale", 1]],
-		Cloak = [[1, "cloak/legend_common_tabard"]],
-		Tabard = [[1, "tabard/tabbed_hood"]],
-		Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_spiked_collar_upgrade", 0]],
+		Cloak = [[1, "cloak/tabbed_hood"]],
+		Tabard = [[1, "tabard/legend_common_tabard"]],
+		Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 	}]
 },
 ]);

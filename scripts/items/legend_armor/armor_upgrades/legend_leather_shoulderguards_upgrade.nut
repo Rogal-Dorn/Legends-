@@ -3,7 +3,7 @@ this.legend_leather_shoulderguards_upgrade <- this.inherit("scripts/items/legend
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.body.leather_shoulderguards";
+		this.m.ID = "legend_armor_upgrade.body.legend_leather_shoulderguards";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Leather Shoulderguards";
 		this.m.Description = "Studded leather shoulderguards can help in making even light armors a little bit more resilient.";

@@ -3,7 +3,7 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.body.legend_spiked_collar";
+		this.m.ID = "legend_armor_upgrade.body.legend_armor_spiked_collar";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Spiked Coif";
 		this.m.Description = "A spiked mail coif which adds another layer of defense, at the expense of weight and sound as it jangles";

@@ -3,7 +3,7 @@ this.legend_pauldron_heavy_upgrade <- this.inherit("scripts/items/legend_armor/l
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.body.pauldron_heavy";
+		this.m.ID = "legend_armor_upgrade.body.legend_pauldron_heavy";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Heavy Pauldrons";
 		this.m.Description = "These segments of iron plate are extremely heavy but excellent for protecting shoulders and arms. Worn over common armor, they can help to deflect incoming blows.";
