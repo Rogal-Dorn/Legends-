@@ -302,7 +302,7 @@ gt.Const.Strings.EntityName <- [
 	"Manhunter Handgonner",
 	"Manhunter Veteran Handonner",
 	"Noble Guard",
-	"Man at Arms",
+	"Veteran Knight",
 	"Caravan Polearm",
 	"Elite Footman"
 ];
@@ -476,7 +476,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Manhunter Handgonners",
 	"Manhunter Veteran Handonners",
 	"Veteran Footmen",
-	"Men at Arms",
+	"Veteran Knights",
 	"Caravan Polearms",
 	"Elite Footmen"
 ];
