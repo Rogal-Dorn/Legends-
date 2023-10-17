@@ -1,11 +1,11 @@
-this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
+this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_unit_noble_abstract", {
 	m = {},
 	function create()
 	{
 		this.m.Type = this.Const.EntityType.NobleEliteFootman; 
 		this.m.BloodType = this.Const.BloodType.Red;
 		this.m.XP = this.Const.Tactical.Actor.NobleEliteFootman.XP;
-		this.randomized_unit_abstract.create();
+		this.randomized_unit_noble_abstract.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -16,7 +16,7 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 
 	function onInit()
 	{
-		this.randomized_unit_abstract.onInit();
+		this.randomized_unit_noble_abstract.onInit();
 		local b = this.m.BaseProperties;
 		b.setValues(this.Const.Tactical.Actor.NobleEliteFootman);
 		b.IsSpecializedInSwords = true;
@@ -37,43 +37,7 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 
 	function assignRandomEquipment()
 	{
-        this.randomized_unit_abstract.assignRandomEquipment();
-
-		local banner = 3;
-
-		if (!this.Tactical.State.isScenarioMode())
-		{
-			banner = this.World.FactionManager.getFaction(this.getFaction()).getBanner();
-		}
-		else
-		{
-			banner = this.getFaction();
-		}
-
-		this.m.Surcoat = banner;
-
-		if (this.Math.rand(1, 100) <= 90)
-		{
-			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
-		}
-
-		local armor = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Body);
-		local tabard = armor.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
-		if (tabard != null)
-		{
-			tabard.setVariant(banner);
-		}
-
-        local shield = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		shield.setFaction(banner);
-
-		local helmet = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head);
-        if ("setPlainVariant" in helmet) 
-        { 
-            helmet.setPlainVariant(); 
-        }
-
-		this.m.Items.updateAppearance();
+        this.randomized_unit_noble_abstract.assignRandomEquipment();
 	}
 
 });
