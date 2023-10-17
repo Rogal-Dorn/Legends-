@@ -379,6 +379,127 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			P = 1.0,
 			S = "helmets/rondel_helm"
 		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/rondel_helm"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/metal_plating_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_armor_skull_chain_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_armor_sacred_shield_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_armor_chain_and_mail_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_armor_spiked_collar_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_heavy_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_strong_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_stag_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_swan_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/legend_pauldron_named_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/barbarian_horn_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/double_mail_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/heavy_gladiator_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/heraldic_plates_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/joint_cover_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/leather_neckguard_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/metal_plating_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/light_gladiator_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/light_padding_replacement_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/mail_patch_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/metal_pauldrons_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "armor/metal_plating_upgrade"
+		});
+		
 
 		foreach( i in this.Const.Items.LegendNamedArmorLayers )
 		{
