@@ -3,7 +3,7 @@ this.legend_lindwurm_scales_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.lindwurm_scales";
+		this.m.ID = "legend_armor_upgrade.body.lindwurm_scales";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Lindwurm Scale Cloak";
 		this.m.Description = "A cloak made out of the scales of a Lindwurm. Not only is it a rare and impressive trophy, it also offers additional protection and is untouchable by corroding Lindwurm blood.";

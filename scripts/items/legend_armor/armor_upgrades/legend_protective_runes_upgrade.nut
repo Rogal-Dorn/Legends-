@@ -3,7 +3,7 @@ this.legend_protective_runes_upgrade <- this.inherit("scripts/items/legend_armor
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.protective_runes";
+		this.m.ID = "legend_armor_upgrade.body.protective_runes";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Protective Runes and Sigils";
 		this.m.Description = "Protective runes and sigils written on parched skin and emitting an unsettling aura.";

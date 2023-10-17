@@ -3,7 +3,7 @@ this.legend_additional_padding_upgrade <- this.inherit("scripts/items/legend_arm
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.additional_padding";
+		this.m.ID = "legend_armor_upgrade.body.additional_padding";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Additional Fur Padding";
 		this.m.Description = "Crafted from thick furs, this additional padding helps dampen the impact of any blow.";

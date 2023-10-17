@@ -3,7 +3,7 @@ this.legend_negative_mouldered_upgrade <- this.inherit("scripts/items/legend_arm
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.negative_moulderedd";
+		this.m.ID = "legend_armor_upgrade.body.negative_mouldered";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Mouldered";
 		this.m.Description = "";

@@ -3,7 +3,7 @@ this.legend_armor_skull_chain_upgrade <- this.inherit("scripts/items/legend_armo
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.legend_skull_chain";
+		this.m.ID = "legend_armor_upgrade.body.legend_skull_chain";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Skull Chain";
 		this.m.Description = "The skull of a dead man hangs from this heavy chain. It serves as a reminder of the intended outcome.";

@@ -3,7 +3,7 @@ this.legend_heraldic_plates_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.heraldic_plates";
+		this.m.ID = "legend_armor_upgrade.body.heraldic_plates";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Heraldic Shoulderplates";
 		this.m.Description = "Large protective plates to be fixed at the shoulders of an armor.";

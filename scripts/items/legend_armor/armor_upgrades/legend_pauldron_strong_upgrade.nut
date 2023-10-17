@@ -3,7 +3,7 @@ this.legend_pauldron_strong_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.pauldron_strong";
+		this.m.ID = "legend_armor_upgrade.body.pauldron_strong";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Reinforced Pauldrons";
 		this.m.Description = "These segments of iron plate are strong and excellent for protecting shoulders and neck. Worn over common armor, they can help to deflect incoming blows.";

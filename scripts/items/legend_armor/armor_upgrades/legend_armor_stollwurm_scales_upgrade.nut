@@ -3,7 +3,7 @@ this.legend_armor_stollwurm_scales_upgrade <- this.inherit("scripts/items/legend
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.legend_stollwurm_scales";
+		this.m.ID = "legend_armor_upgrade.body.legend_stollwurm_scales";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Stollwurm Scale Cloak";
 		this.m.Description = "A cloak made out of the scales of a Stollwurm. Not only is it a rare and impressive trophy, it also offers additional protection";
