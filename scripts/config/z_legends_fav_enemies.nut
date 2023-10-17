@@ -198,6 +198,8 @@ gt.Const.LegendMod.FavoriteNoble <- [
 	this.Const.EntityType.LegendHalberdier,
 	this.Const.EntityType.LegendSlinger,
 	this.Const.EntityType.NobleEliteFootman,
+	this.Const.EntityType.NoblePollax,
+	this.Const.EntityType.NobleSureshot,
 	this.Const.EntityType.Knight
 ];
 gt.Const.LegendMod.FavoriteMercenary <- [
@@ -468,6 +470,8 @@ gt.Const.LegendMod.GetFavoriteEnemyValue <- function ( _type ) //Number = how ma
 
 	case this.Const.EntityType.Footman :
 	case this.Const.EntityType.NobleEliteFootman :
+	case this.Const.EntityType.NoblePollax :
+	case this.Const.EntityType.NobleSureshot :
 		return 8;
 
 	case this.Const.EntityType.Greatsword :

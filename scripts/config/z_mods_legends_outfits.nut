@@ -484,6 +484,24 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, "mercury_noble_elite_footman_01"]
 	]
 },
+{
+	ID = "mercury_pollax_00"
+	Body = [
+		[1, "mercury_pollax_00"]
+	],
+	Helmet = [
+		[1, "mercury_pollax_00"]
+	]
+},
+{
+	ID = "mercury_sureshot_00"
+	Body = [
+		[1, "mercury_sureshot_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_00"]
+	]
+},
 
 ]); 
 

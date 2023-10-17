@@ -297,3 +297,43 @@ gt.Const.Tactical.Actor.NobleEliteFootman <- {
 	],
 	FatigueRecoveryRate = 15
 };
+
+gt.Const.Tactical.Actor.NoblePollax <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 80,
+	Bravery = 60,
+	Stamina = 110,
+	MeleeSkill = 75,
+	RangedSkill = 50,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 100,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+
+gt.Const.Tactical.Actor.NobleSureshot <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 65,
+	Bravery = 65,
+	Stamina = 100,
+	MeleeSkill = 60,
+	RangedSkill = 80,
+	MeleeDefense = 5,
+	RangedDefense = 15,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};

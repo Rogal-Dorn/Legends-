@@ -2565,7 +2565,26 @@ gt.Const.LegendMod.HelmObjs.extend([
 			Vanity = [[1, "vanity/legend_helmet_plait"]],
 		}]
 	},
-
+{
+ID = "mercury_sureshot_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_cloth_scarf", 5]],
+Helms = [[1, "helm/legend_helmet_sallet", 2]],
+Tops = [[1, "top/legend_helmet_hood_cloth_round", 1]],
+Vanity = [[1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_open_chain_hood", 2]],
+Helms = [[1, "helm/legend_helmet_viking_helm", 1]],
+Tops = [[1, "top/legend_helmet_faceplate_winged", 2]],
+Vanity = [[1, ""]],
+}]
+},
 ])
 
 gt.Const.LegendMod.Helmets <- {};

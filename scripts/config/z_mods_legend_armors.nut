@@ -2437,6 +2437,30 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 	}]
 },
+{
+ID = "mercury_sureshot_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson", 2]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+Plate = [[1, "plate/legend_armor_leather_jacket_simple", 6]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson", 2]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+Plate = [[1, "plate/legend_armor_leather_lamellar", 1]],
+Cloak = [[1, "cloak/fur_cloak", 4]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+}]
+},
 ]);
 
 gt.Const.LegendMod.Armors <- {};

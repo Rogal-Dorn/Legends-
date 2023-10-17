@@ -479,6 +479,76 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
     PerkPower = gt.Const.PerkPurchasePower.High + 1
 }
 
+//todo
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
+    Outfits = [
+        [1, "mercury_pollax_00"] //todo
+    ],
+    WeaponsAndTrees = [
+        [1, ["scripts/items/weapons/polehammer", 100]],
+        [2, ["scripts/items/weapons/two_handed_wooden_hammer",  100]],
+        [2, ["scripts/items/weapons/two_handed_mace", 100]],
+        [2, ["scripts/items/weapons/warbrand", 100]],
+        [3, ["scripts/items/weapons/legend_swordstaff", 100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.ForcefulTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.GiantTree,
+        this.Const.Perks.AggressiveTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    GuaranteedPerks = [ //Testing to see if they ever actually use indom, given no guaranteed perks right now these might vary wildly in power levels
+        "scripts/skills/perks/perk_indomitable" 
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/perks/perk_berserk",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [5, 7],
+    PerkPower = gt.Const.PerkPurchasePower.High + 1
+}
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
+    Outfits = [
+        [1, "mercury_sureshot_00"] //todo
+    ],
+    WeaponsAndTrees = [
+        [3, ["scripts/items/weapons/war_bow", 100]],
+        [2, ["scripts/items/weapons/heavy_crossbow",  100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.LightArmorTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.FastTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.BowTree,
+        this.Const.Perks.CrossbowTree,
+        this.Const.Perks.RangerTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_ballistics",
+        "scripts/skills/perks/perk_lookout",
+        "scripts/skills/perks/perk_rotation"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/perks/perk_legend_clarity",
+        "scripts/skills/perks/perk_sundering_strikes",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [6, 8],
+    PerkPower = gt.Const.PerkPurchasePower.Medium
+}
+
 // Units TODO: 
 /* 
     Bandit Leader
@@ -507,6 +577,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
     Noble Greatsword
     Noble Man at Arms
     Noble Sergeant
+    Knight
 
     Barbarian Champion
     Barbarian Chosen

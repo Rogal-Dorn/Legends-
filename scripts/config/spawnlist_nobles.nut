@@ -46,6 +46,10 @@ gt.Const.World.Spawn.Noble <- {
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
 					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NoblePollax,
+					Cost = 40
 				}
 			]
 		},
@@ -55,6 +59,10 @@ gt.Const.World.Spawn.Noble <- {
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,
 					Cost = 25
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NobleSureshot,
+					Cost = 50
 				}
 			]
 		},
@@ -190,6 +198,10 @@ gt.Const.World.Spawn.NobleCaravan <-
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
 					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NoblePollax,
+					Cost = 40
 				}
 			]
 		},
@@ -199,6 +211,10 @@ gt.Const.World.Spawn.NobleCaravan <-
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NobleSureshot,
+					Cost = 50
 				}
 			]
 		},
@@ -318,6 +334,10 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 				{
 					Type = this.Const.World.Spawn.Troops.Billman,
 					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NoblePollax,
+					Cost = 40
 				}
 			]
 		},
@@ -327,6 +347,10 @@ gt.Const.World.Spawn.MixedNobleCaravan <-
 				{
 					Type = this.Const.World.Spawn.Troops.Arbalester,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NobleSureshot,
+					Cost = 50
 				}
 			]
 		},

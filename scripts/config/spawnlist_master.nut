@@ -1697,7 +1697,8 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 100,
 		Cost = 100,
 		Row = 1,
-		Script = "scripts/entity/tactical/humans/noble_man_at_arms"
+		Script = "scripts/entity/tactical/humans/noble_man_at_arms",
+		NameList = this.Const.Strings.KnightNames
 	},
 	NobleEliteFootman = {
 		ID = this.Const.EntityType.NobleEliteFootman,
@@ -1706,6 +1707,22 @@ gt.Const.World.Spawn.Troops <- {
 		Cost = 35,
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/noble_elite_footman"
+	},
+	NoblePollax = {
+		ID = this.Const.EntityType.NoblePollax,
+		Variant = 0,
+		Strength = 50,
+		Cost = 50,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/noble_pollax"
+	},
+	NobleSureshot = {
+		ID = this.Const.EntityType.NobleSureshot,
+		Variant = 0,
+		Strength = 75,
+		Cost = 75,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/noble_sureshot"
 	},
 };
 
