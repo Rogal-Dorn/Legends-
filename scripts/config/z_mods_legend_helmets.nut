@@ -2530,7 +2530,41 @@ gt.Const.LegendMod.HelmObjs.extend([
 			Vanity = [
 			]
 		}]
-	}
+	},
+	{
+		ID = "mercury_noble_elite_footman_00",
+		Script = "",
+		Sets = [{
+			Hoods = [[1, "hood/legend_helmet_leather_cap", 1]],
+			Helms = [
+				[1, "helm/legend_helmet_barbute", 1],
+				[1, "helm/legend_helmet_nordic_helm_high", 1]
+			],
+			Tops = [
+				[1, "top/legend_helmet_faceplate_full", 1],
+				[1, "top/legend_helmet_faceplate_snub_slit", 1],
+				[1, "top/legend_helmet_enclave_great_bascinet_visor", 1],
+				[1, "top/legend_helmet_faceplate_pointed_slit", 1],
+				[1, "top/legend_helmet_faceplate_pointed", 1],
+				[1, "top/legend_helmet_faceplate_flat", 1]
+			],
+			Vanity = [[1, "vanity/legend_helmet_plait", 7]],
+		}]
+	},
+	{
+		ID = "mercury_noble_elite_footman_01",
+		Script = "",
+		Sets = [{
+			Hoods = [[1, "hood/legend_helmet_chain_hood", 1]],
+			Helms = [
+				[1, "helm/legend_helmet_viking_helm"]
+			],
+			Tops = [
+				[1, "top/legend_helmet_faceplate_flat", 1]
+			],
+			Vanity = [[1, "vanity/legend_helmet_plait"]],
+		}]
+	},
 
 ])
 

@@ -439,7 +439,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
 
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
     Outfits = [
-        [1, "caravan_hand_outfit_00"] //todo
+        [1, "noble_elite_footman_outfit_00"] //todo
     ],
     WeaponsAndTrees = [
         [4, ["scripts/items/weapons/military_pick", 100]],
@@ -476,7 +476,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
         "scripts/skills/traits/fearless_trait"
     ],
     LevelRange = [5, 7],
-    PerkPower = gt.Const.PerkPurchasePower.High
+    PerkPower = gt.Const.PerkPurchasePower.High + 1
 }
 
 // Units TODO: 

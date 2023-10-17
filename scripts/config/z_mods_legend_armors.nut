@@ -2424,7 +2424,20 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		]
 	}]
 
-}]);
+},
+{
+	ID = "mercury_noble_elite_footman_00",
+	Script = "",
+	Sets = [{
+		Cloth = [[1, "cloth/legend_gambeson", 1]],
+		Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+		Plate = [[1, "plate/legend_armor_leather_scale", 1]],
+		Cloak = [[1, "cloak/legend_common_tabard"]],
+		Tabard = [[1, "tabard/tabbed_hood"]],
+		Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_spiked_collar_upgrade", 0]],
+	}]
+},
+]);
 
 gt.Const.LegendMod.Armors <- {};
 
