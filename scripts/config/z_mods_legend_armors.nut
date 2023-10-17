@@ -2450,6 +2450,30 @@ Attachments = [[1, ""]],
 }]
 },
 {
+ID = "mercury_sureshot_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 11]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_leather_lamellar", 1]],
+Cloak = [[1, "cloak/legend_armor_cloak_common", 21]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_02",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 11]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_leather_scale", 1], [1, "plate/legend_armor_leather_riveted_light", 1]],
+Cloak = [[1, ""], [1, "cloak/legend_shoulder_cloth", 2], [1, "cloak/fur_cloak", 1]],
+Tabard = [[1, "tabard/legend_noble_tabard", 3]],
+Attachments = [[1, ""]],
+}]
+},
+{
 ID = "mercury_pollax_00",
 Script = "",
 Sets = [{

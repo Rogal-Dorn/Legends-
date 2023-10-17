@@ -517,7 +517,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
 }
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
     Outfits = [
-        [1, "mercury_sureshot_00"] //todo
+        [1, "mercury_sureshot_00"], //todo
+        [1, "mercury_sureshot_brown_00"], //todo
     ],
     WeaponsAndTrees = [
         [3, ["scripts/items/weapons/war_bow", 100]],

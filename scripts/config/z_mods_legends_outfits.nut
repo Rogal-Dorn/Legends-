@@ -502,6 +502,16 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, "mercury_sureshot_00"]
 	]
 },
+{
+	ID = "mercury_sureshot_brown_00"
+	Body = [
+		[1, "mercury_sureshot_01"],
+		[1, "mercury_sureshot_02"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_01"]
+	]
+},
 
 ]); 
 

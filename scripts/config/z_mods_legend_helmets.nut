@@ -2576,6 +2576,26 @@ Vanity = [[1, ""]],
 }]
 },
 {
+ID = "mercury_sureshot_01",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_patched_hood", 1]],
+Helms = [[1, "helm/legend_helmet_barbute", 6]],
+Tops = [[1, ""]],
+Vanity = [[1, "vanity/legend_helmet_headband", 15]],
+}]
+},
+{
+ID = "mercury_rusty_sureshot_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_patched_hood", 1]],
+Helms = [[1, "helm/legend_helmet_barb_metal_cap", 1]],
+Tops = [[1, ""]],
+Vanity = [[1, "vanity/legend_helmet_headband", 15]],
+}]
+},
+{
 ID = "mercury_pollax_00",
 Script = "",
 Sets = [{
