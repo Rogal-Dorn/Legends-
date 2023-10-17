@@ -387,11 +387,6 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
 			S = "legend_armor/armor_upgrades/legend_armor_skull_chain_upgrade"
 		});
 		list.push({
@@ -437,67 +432,17 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "legend_armor/armor_upgrades/legend_pauldron_named_upgrade"
+			S = "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "legend_armor/armor_upgrades/barbarian_horn_upgrade"
+			S = "legend_armor/armor_upgrades/legend_light_gladiator_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "legend_armor/armor_upgrades/double_mail_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/heavy_gladiator_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/heraldic_plates_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/joint_cover_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/leather_neckguard_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/light_gladiator_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/light_padding_replacement_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/mail_patch_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/metal_pauldrons_upgrade"
-		});
-		list.push({
-			R = 80,
-			P = 1.0,
-			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
+			S = "legend_armor/armor_upgrades/legend_light_padding_replacement_upgrade"
 		});
 		
 
