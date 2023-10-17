@@ -437,6 +437,48 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
 
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
+    Outfits = [
+        [1, "caravan_hand_outfit_00"] //todo
+    ],
+    WeaponsAndTrees = [
+        [4, ["scripts/items/weapons/military_pick", 100]],
+        [1, ["scripts/items/weapons/warhammer",  100]],
+        [4, ["scripts/items/weapons/arming_sword", 100]],
+        [1, ["scripts/items/weapons/noble_sword", 100]],
+        [3, ["scripts/items/weapons/morning_star", 100]],
+        [3, ["scripts/items/weapons/winged_mace", 100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.ForcefulTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.SparringTree,
+        this.Const.Perks.GiantTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    Shields = [
+        [1, "scripts/items/shields/faction_kite_shield"],
+        [1, "scripts/items/shields/faction_heater_shield"]
+    ],
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_shield_expert",
+        "scripts/skills/perks/perk_rotation"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_shield_bash",
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [5, 7],
+    PerkPower = gt.Const.PerkPurchasePower.High
+}
+
 // Units TODO: 
 /* 
     Bandit Leader

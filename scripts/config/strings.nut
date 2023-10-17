@@ -303,7 +303,8 @@ gt.Const.Strings.EntityName <- [
 	"Manhunter Veteran Handonner",
 	"Noble Guard",
 	"Man at Arms",
-	"Caravan Polearm"
+	"Caravan Polearm",
+	"Elite Footman"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -476,7 +477,8 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Manhunter Veteran Handonners",
 	"Veteran Footmen",
 	"Men at Arms",
-	"Caravan Polearms"
+	"Caravan Polearms",
+	"Elite Footmen"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",

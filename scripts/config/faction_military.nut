@@ -277,3 +277,23 @@ gt.Const.Tactical.Actor.LegendManAtArms <- {
 	],
 	FatigueRecoveryRate = 25
 };
+
+gt.Const.Tactical.Actor.NobleEliteFootman <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 70,
+	Bravery = 65,
+	Stamina = 120,
+	MeleeSkill = 75,
+	RangedSkill = 50,
+	MeleeDefense = 15,
+	RangedDefense = 10,
+	Initiative = 120,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};

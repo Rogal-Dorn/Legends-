@@ -49,7 +49,7 @@ gt.Const.Perks.ForcefulTree <- {
 		[],
 		[],
 		[
-            gt.Const.Perks.PerkDefs.Battleforged
+            gt.Const.Perks.PerkDefs.BattleForged
         ],
 		[
             gt.Const.Perks.PerkDefs.LegendMuscularity,

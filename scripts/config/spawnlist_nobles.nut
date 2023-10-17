@@ -33,6 +33,10 @@ gt.Const.World.Spawn.Noble <- {
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
 					Cost = 15
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NobleEliteFootman,
+					Cost = 22
 				}
 			]
 		},
@@ -173,6 +177,10 @@ gt.Const.World.Spawn.NobleCaravan <-
 				{
 					Type = this.Const.World.Spawn.Troops.Footman,
 					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.NobleEliteFootman,
+					Cost = 28
 				}
 			]
 		},
