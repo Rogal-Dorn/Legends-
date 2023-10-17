@@ -5,7 +5,7 @@ this.webbed_valuables_item <- this.inherit("scripts/items/item", {
 		this.item.create();
 		this.m.ID = "misc.webbed_valuables";
 		this.m.Name = "Webbed Valuables";
-		this.m.Description = "Within the thick webs of webknechts sometimes valuables that once belonged to their unfortunate victims can be discoverd - if one is brave enough to search through the sticky deathtraps.";
+		this.m.Description = "Within the thick webs of webknechts sometimes valuables that once belonged to their unfortunate victims can be discovered - if one is brave enough to search through the sticky deathtraps.";
 		this.m.Icon = "loot/southern_08.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;

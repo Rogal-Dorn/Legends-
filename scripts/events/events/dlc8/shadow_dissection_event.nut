@@ -331,7 +331,7 @@ this.shadow_dissection_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "His shadows traverses with great danger.",
+					Text = "His shadow traverses with great danger.",
 					function getResult( _event )
 					{
 						return 0;
