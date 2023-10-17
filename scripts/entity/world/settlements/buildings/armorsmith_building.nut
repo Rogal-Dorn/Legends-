@@ -387,117 +387,117 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/metal_plating_upgrade"
+			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_armor_skull_chain_upgrade"
+			S = "legend_armor/armor_upgrades/legend_armor_skull_chain_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_armor_sacred_shield_upgrade"
+			S = "legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_armor_chain_and_mail_upgrade"
+			S = "legend_armor/armor_upgrades/legend_armor_chain_and_mail_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_armor_spiked_collar_upgrade"
+			S = "legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_heavy_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_heavy_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_strong_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_strong_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_stag_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_stag_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_swan_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_swan_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/legend_pauldron_named_upgrade"
+			S = "legend_armor/armor_upgrades/legend_pauldron_named_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/barbarian_horn_upgrade"
+			S = "legend_armor/armor_upgrades/barbarian_horn_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/double_mail_upgrade"
+			S = "legend_armor/armor_upgrades/double_mail_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/heavy_gladiator_upgrade"
+			S = "legend_armor/armor_upgrades/heavy_gladiator_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/heraldic_plates_upgrade"
+			S = "legend_armor/armor_upgrades/heraldic_plates_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/joint_cover_upgrade"
+			S = "legend_armor/armor_upgrades/joint_cover_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/leather_neckguard_upgrade"
+			S = "legend_armor/armor_upgrades/leather_neckguard_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/metal_plating_upgrade"
+			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/light_gladiator_upgrade"
+			S = "legend_armor/armor_upgrades/light_gladiator_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/light_padding_replacement_upgrade"
+			S = "legend_armor/armor_upgrades/light_padding_replacement_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/mail_patch_upgrade"
+			S = "legend_armor/armor_upgrades/mail_patch_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/metal_pauldrons_upgrade"
+			S = "legend_armor/armor_upgrades/metal_pauldrons_upgrade"
 		});
 		list.push({
 			R = 80,
 			P = 1.0,
-			S = "armor/metal_plating_upgrade"
+			S = "legend_armor/armor_upgrades/metal_plating_upgrade"
 		});
 		
 
