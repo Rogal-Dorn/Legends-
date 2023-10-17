@@ -117,15 +117,17 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		{
 			local row = _tree[i]
 			if ( row.len() != 0 && _purchaseLimit > 0) {
-				local perkDefNum = row[0]
-				local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
-				local toAdd = this.new(fullDef.Script)
-				if (!this.m.Skills.hasSkill(toAdd.getID()))
+				foreach (perkDefNum in row) //Purchases every perk in the row, if there are multiple
 				{
-					this.m.Skills.add(toAdd)
-					_purchaseLimit--
-					this.m.PerkPower--
-				}
+					local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
+					local toAdd = this.new(fullDef.Script)
+					if (!this.m.Skills.hasSkill(toAdd.getID()))
+					{
+						this.m.Skills.add(toAdd)
+						_purchaseLimit--
+						this.m.PerkPower--
+					}
+				}	
 			}
 		}
 	}
