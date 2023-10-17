@@ -2,9 +2,9 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.NobleEliteFootman; //todo
+		this.m.Type = this.Const.EntityType.NobleEliteFootman; 
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.NobleEliteFootman.XP;//todo
+		this.m.XP = this.Const.Tactical.Actor.NobleEliteFootman.XP;
 		this.randomized_unit_abstract.create();
 		this.m.Faces = this.Const.Faces.AllMale;
 		this.m.Hairs = this.Const.Hair.CommonMale;
@@ -18,7 +18,7 @@ this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_uni
 	{
 		this.randomized_unit_abstract.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.NobleEliteFootman); //todo
+		b.setValues(this.Const.Tactical.Actor.NobleEliteFootman);
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
