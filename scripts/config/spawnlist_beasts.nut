@@ -223,7 +223,7 @@ gt.Const.World.Spawn.Alps <-
 	VisibilityMult = 1.0,
 	VisionMult = 1.0,
 	Body = "figure_alp_01",
-	MaxR = 480,
+	MaxR = 600,
 	Troops = [
 		{
 			Weight = 85,
@@ -245,11 +245,11 @@ gt.Const.World.Spawn.Alps <-
 		},
 		{
 			Weight = 5,
-			MinR = 1.0 * 4000,
+			MinR = 450,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 200
+					Cost = 105
 				}
 			]
 		}
@@ -991,17 +991,17 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 	VisibilityMult = 0.7,
 	VisionMult = 1.3,
 	Body = "figure_demonalp_01",
-	MaxR = 500,
+	MaxR = 1000,
 	Fixed = [
 		{
 			Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-			Cost = 200,
+			Cost = 105,
 			Weight = 0
 		}
 	],
 	Troops = [
 		{
-			Weight = 60
+			Weight = 88
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.Alp,
@@ -1010,11 +1010,11 @@ gt.Const.World.Spawn.LegendDemonAlp <-
 			]
 		},
 		{
-			Weight = 40
+			Weight = 12
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendDemonAlp,
-					Cost = 200
+					Cost = 105
 				}
 			]
 		}
