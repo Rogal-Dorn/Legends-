@@ -5,9 +5,9 @@ if (!("Perks" in gt.Const))
 	gt.Const.Perks <- {};
 }
 
-gt.Const.Perks.BanditTree <- {
-	ID = "BanditTree",
-	Name =  "Bandit",
+gt.Const.Perks.ShadyTree <- {
+	ID = "ShadyTree",
+	Name =  "Shady",
 	Attributes = {
 		Hitpoints = [
 			-3,
