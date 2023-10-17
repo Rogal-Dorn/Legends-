@@ -509,7 +509,8 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		// Food
 		res.push({
 			id = 81,
-			text = "Your hunting party brought back " + this.m.FoodAmount + " Food with the following:",
+			icon = "ui/icons/asset_food.png"
+			text = "Your hunting party brought back " + ::Const.UI.getColorized(this.m.FoodAmount, ::Const.UI.Color.PositiveEventValue) + " Food with the following:",
 			divider = "top"
 		});
 
@@ -518,7 +519,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			res.push({
 				id = 80,
 				icon = item.Icon,
-				text = item.Name + " x" + item.Count
+				text = item.Name + " x" + item.Count + ::Const.UI.getColorized(" (from " + ::Const.LegendMod.Language.arrayToText(item.Targets, "and", false) + ")", ::Const.UI.Color.getFadeDarkBackgroundValue())
 			});
 		}
 
@@ -534,7 +535,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				res.push({
 					id = 78,
 					icon = item.Icon,
-					text = item.Name + " x" + item.Count
+					text = item.Name + " x" + item.Count + ::Const.UI.getColorized(" (from " + ::Const.LegendMod.Language.arrayToText(item.Targets, "and", false) + ")", ::Const.UI.Color.getFadeDarkBackgroundValue())
 				});
 			}
 		}
@@ -551,7 +552,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				res.push({
 					id = 76,
 					icon = item.Icon,
-					text = item.Name + " x" + item.Count
+					text = item.Name + " x" + item.Count + ::Const.UI.getColorized(" (from " + ::Const.LegendMod.Language.arrayToText(item.Targets, "and", false) + ")", ::Const.UI.Color.getFadeDarkBackgroundValue())
 				});
 			}
 		}
@@ -823,7 +824,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.m.FoodAmount += food.getAmount();
 			this.m.Items.push(food);
 			::Stash.add(food);
-			this.addItemToVerboseResults("Food", food);
+			this.addItemToVerboseResults("Food", food, target.Name);
 			this.m.CurrentTarget = null;
 			this.m.Points = 0; // reset points for the next hunt
 
@@ -843,7 +844,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				this.m.FoodAmount += cook.getAmount();
 				this.m.Items.push(cook);
 				::Stash.add(cook);
-				this.addItemToVerboseResults("Cook",cook);
+				this.addItemToVerboseResults("Cook",cook, target.Name);
 				if(--emptySlots==0) return this.getUpdateText();
 			}
 
@@ -853,7 +854,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				local loot = target.Loot;
 				this.m.Items.push(loot);
 				::Stash.add(loot);
-				this.addItemToVerboseResults("Hunt", loot);
+				this.addItemToVerboseResults("Hunt", loot, target.Name);
 				if(--emptySlots==0) return this.getUpdateText();
 			}
 
@@ -883,7 +884,7 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 		return 0.928 * ::Math.pow(2 * _difficulty / _points, 0.5);
 	}
 
-	function addItemToVerboseResults( _category, _item )
+	function addItemToVerboseResults( _category, _item, _targetName = null)
 	{
 		local id = _item.getID();
 		local itemName = _item.getName();
@@ -898,12 +899,18 @@ this.hunter_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			this.m.VerboseResults[_category].Items[id] <- {
 				Name = itemName,
 				Count = 1,
-				Icon = icon
+				Icon = icon,
+				Targets = []
 			}
 		}
 		else
 		{
 			this.m.VerboseResults[_category].Items[id].Count++;
+		}
+
+		if ( _targetName != null && this.m.VerboseResults[_category].Items[id].Targets.find(_targetName) == null )
+		{
+			this.m.VerboseResults[_category].Items[id].Targets.push(_targetName);
 		}
 	}
 
