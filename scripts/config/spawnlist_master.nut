@@ -827,7 +827,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
-		Variant = 1,
+		Variant = 2,
 		DieRoll = 100000, //100k
 		Strength = 5,
 		Cost = 5,
