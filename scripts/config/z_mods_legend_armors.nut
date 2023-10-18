@@ -2434,7 +2434,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [[1, "plate/legend_armor_leather_scale", 1]],
 		Cloak = [[1, "cloak/tabbed_hood"]],
 		Tabard = [[1, "tabard/legend_noble_tabard"]],
-		Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+		Attachments = [[2, ""],[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 	}]
 },
 {
@@ -2482,7 +2482,7 @@ Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
 Plate = [[1, "plate/legend_armor_leather_lamellar", 1]],
 Cloak = [[1, "cloak/fur_cloak", 4]],
 Tabard = [[1, "tabard/legend_noble_tabard"]],
-Attachments = [[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+Attachments = [[3, ""], [1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 }]
 },
 {
@@ -2518,7 +2518,7 @@ Chain = [[1, ""]],
 Plate = [[1, "plate/legend_armor_leather_lamellar_harness_reinforced", 1]],
 Cloak = [[1, ""]],
 Tabard = [[1, "tabard/legend_noble_tabard"]],
-Attachments = [[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
+Attachments = [[2, ""], [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
 }]
 },
 {
