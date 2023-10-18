@@ -49,20 +49,16 @@ this.legend_basilisk_drone <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
 		this.m.SoundVolumeOverall = 1.25;
 
-		if this.Math.rand(1, 100);
+		if (this.Math.rand(1, 100) <= 70)
 		{
-			if (<= 70)
-			{
-				this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent"); //normal
-			}
-
-			else if (<= 30)
-			{
-				this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent_aggressive"); //aggressive
-			}
-
-			this.m.AIAgent.setActor(this);
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent"); //normal	
 		}
+		else
+		{
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent_aggressive"); //aggressive
+		}
+		this.m.AIAgent.setActor(this);
+
 	}
 
 	function playSound( _type, _volume, _pitch = 1.0 )
