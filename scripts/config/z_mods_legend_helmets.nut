@@ -2625,6 +2625,46 @@ Tops = [[1, "top/legend_helmet_faceplate_full", 1]],
 Vanity = [[1, "vanity/legend_helmet_plait", 7], [1, "vanity/legend_helmet_plait", 10]],
 }]
 },
+{
+ID = "mercury_sureshot_green_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_cloth_scarf", 3]],
+Helms = [[1, "helm/legend_helmet_barb_metal_cap", 1]],
+Tops = [[1, "top/legend_helmet_hood_cloth_wide", 1]],
+Vanity = [[1, "vanity/legend_helmet_plait", 4]],
+}]
+},
+{
+ID = "mercury_sureshot_green_01",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_enclave_bevor", 1]],
+Helms = [[1, ""]],
+Tops = [[1, ""]],
+Vanity = [[1, "vanity/legend_helmet_plait"]],
+}]
+},
+{
+ID = "mercury_sureshot_blue_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_cloth_scarf", 4]],
+Helms = [[1, ""]],
+Tops = [[1, "top/legend_helmet_cloth_long_hood", 2], [1, ""]],
+Vanity = [[1, "vanity/legend_helmet_headband", 8], [1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_colorful",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_padded_hood"]],
+Helms = [[1, "helm/legend_helmet_norman_helm", 1]],
+Tops = [[1, "top/legend_helmet_enclave_great_bascinet_visor", 1], [1, "top/legend_helmet_faceplate_full_breaths", 1]],
+Vanity = [[1, "vanity/legend_helmet_plait"]], //12 to match the 8 if wnated
+}]
+},
 ])
 
 gt.Const.LegendMod.Helmets <- {};

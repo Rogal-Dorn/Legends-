@@ -2497,6 +2497,54 @@ Tabard = [[1, "tabard/legend_common_tabard"]],
 Attachments = [[1, ""]],
 }]
 },
+{
+ID = "mercury_sureshot_green_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 14]],
+Chain = [[1, ""]],
+Plate = [[1, "plate/legend_armor_leather_riveted", 5]],
+Cloak = [[1, "cloak/legend_armor_cloak_heavy", 24]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_blue_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_thick_tunic", 10]],
+Chain = [[1, ""]],
+Plate = [[1, "plate/legend_armor_leather_lamellar_harness_reinforced", 1]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
+}]
+},
+{
+ID = "mercury_pollax_colorful_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_tunic_noble", 9]],
+Chain = [[1, "chain/legend_armor_reinforced_mail_shirt", 1]],
+Plate = [[1, "plate/legend_armor_scale", 1], [1, "plate/legend_armor_leather_brigandine", 1]],
+Cloak = [[1, "cloak/decorative_hood"]], //8 for only black
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_colorful_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_tunic_noble", 9]],
+Chain = [[1, "chain/legend_armor_reinforced_worn_mail", 1]],
+Plate = [[1, "plate/legend_southern_arm_guards", 1]],
+Cloak = [[1, "cloak/decorative_hood", 8]],
+Tabard = [[1, "tabard/legend_noble_tabard", 3]],
+Attachments = [[1, ""]],
+}]
+},
 ]);
 
 gt.Const.LegendMod.Armors <- {};

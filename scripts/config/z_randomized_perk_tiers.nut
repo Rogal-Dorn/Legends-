@@ -479,10 +479,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
     PerkPower = gt.Const.PerkPurchasePower.High + 1
 }
 
-//todo
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
     Outfits = [
-        [1, "mercury_pollax_00"] //todo
+        [1, "mercury_pollax_00"], //Looking @ around 200 each at most ideally
+        [1, "mercury_pollax_colorful"]
     ],
     WeaponsAndTrees = [
         [1, ["scripts/items/weapons/polehammer", 100]],
@@ -517,8 +517,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
 }
 gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
     Outfits = [
-        [1, "mercury_sureshot_00"], //todo
-        [1, "mercury_sureshot_brown_00"], //todo
+        [1, "mercury_sureshot_00"], // looking for low helmets maybe 150ish body
+        [1, "mercury_sureshot_brown_00"],
+        [1, "mercury_sureshot_blue_00"],
+        [1, "mercury_sureshot_green_00"]
     ],
     WeaponsAndTrees = [
         [3, ["scripts/items/weapons/war_bow", 100]],

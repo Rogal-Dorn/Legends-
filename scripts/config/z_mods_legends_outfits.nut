@@ -497,6 +497,16 @@ gt.Const.LegendMod.OutfitObjs.extend([
 	]
 },
 {
+	ID = "mercury_pollax_colorful"
+	Body = [
+		[1, "mercury_pollax_colorful_00"],
+		[1, "mercury_pollax_colorful_01"]
+	],
+	Helmet = [
+		[1, "mercury_pollax_colorful"]
+	]
+},
+{
 	ID = "mercury_sureshot_00"
 	Body = [
 		[1, "mercury_sureshot_00"]
@@ -513,6 +523,25 @@ gt.Const.LegendMod.OutfitObjs.extend([
 	],
 	Helmet = [
 		[1, "mercury_sureshot_01"]
+	]
+},
+{
+	ID = "mercury_sureshot_blue_00"
+	Body = [
+		[1, "mercury_sureshot_blue_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_blue_00"]
+	]
+},
+{
+	ID = "mercury_sureshot_blue_00"
+	Body = [
+		[1, "mercury_sureshot_green_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_green_00"],
+		[1, "mercury_sureshot_green_01"]
 	]
 },
 
