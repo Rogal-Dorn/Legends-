@@ -2434,7 +2434,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		Plate = [[1, "plate/legend_armor_leather_scale", 1]],
 		Cloak = [[1, "cloak/tabbed_hood"]],
 		Tabard = [[1, "tabard/legend_noble_tabard"]],
-		Attachments = [[2, ""],[1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+		Attachments = [[2, ""], [1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
 	}]
 },
 {
