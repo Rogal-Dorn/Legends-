@@ -1721,7 +1721,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 75,
 		Cost = 75,
-		Row = 0,
+		Row = 2,
 		Script = "scripts/entity/tactical/humans/noble_sureshot"
 	},
 	LegendBasiliskDrone = {
