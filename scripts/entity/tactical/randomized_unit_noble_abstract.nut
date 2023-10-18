@@ -1,7 +1,5 @@
 this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", { 
-	m = {
-	},
-
+	m = {},
 	function onInit() 
 	{
 		this.randomized_unit_abstract.onInit();
@@ -10,12 +8,7 @@ this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/ran
 
     function create()
 	{
-		this.randomized_unit_abstract.create();
-
-        this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.CommonMale;
-		this.m.HairColors = this.Const.HairColors.All;
-		this.m.Beards = this.Const.Beards.Tidy;        
+		this.randomized_unit_abstract.create();     
 	}
 
 	function assignRandomEquipment()
@@ -53,4 +46,23 @@ this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/ran
 
 		this.m.Items.updateAppearance();
 	}
+
+    function setFemale()
+    {
+        this.setGender(1);
+        this.m.Faces = this.Const.Faces.AllFemale;
+		this.m.Hairs = this.Const.Hair.BarberFemale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.Female;  
+    }
+
+    function setMale()
+    {
+		this.setGender(0);
+        this.m.Faces = this.Const.Faces.AllMale;
+		this.m.Hairs = this.Const.Hair.CommonMale;
+		this.m.HairColors = this.Const.HairColors.All;
+		this.m.Beards = this.Const.Beards.Tidy;  
+    }
+
 }); 

@@ -82,6 +82,9 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.PerkPower -= 1;
 		}
+
+		if (::Math.rand(0, 3) == 0) { this.setFemale() }
+        else { this.setMale() } 
 	}
 
 
@@ -280,4 +283,17 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		assignPerks(); 
 		assignShield();
 	}
+
+
+	// Can override setfemale/male if we want southern units etc. Enemy defaults are setMale anyways 
+	// Defaulting to 1 in 4 chance of female
+    function setFemale()
+    {
+        this.setGender(1);
+    }
+
+    function setMale()
+    {
+		this.setGender(0);
+    }
 }); 
