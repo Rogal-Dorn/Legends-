@@ -36,13 +36,63 @@ this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/ran
 		if (tabard != null)
 		{
 			tabard.setVariant(banner);
+			armor.updateAppearance();
 		}
 
 		local helmet = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Head);
-        if ("setPlainVariant" in helmet) 
-        { 
-            helmet.setPlainVariant(); 
-        }
+		if (helmet != null)
+		{
+			if ("setPlainVariant" in helmet) 
+			{ 
+				helmet.setPlainVariant(); 
+			}
+
+			local helmLayer = helmet.getUpgrade(0);
+			if(helmLayer != null) 
+			{
+				switch (helmLayer.getID())
+				{
+					case "armor.head.legend_helmet_nordic_helm":
+					case "armor.head.legend_helmet_conic_helm":
+					case "armor.head.legend_helmet_kettle_helm_high":
+					case "armor.head.legend_helmet_kettle_helm_med":
+					case "armor.head.legend_helmet_flat_top_helm_polished":
+					case "armor.head.legend_helmet_flat_top_face_plate":
+						helmLayer.setVariant(::Const.FacColors.EliteHelm[banner]);
+					case "armor.head.legend_helmet_kettle_helm_med":
+					case "armor.head.legend_helmet_flat_top_helm":
+						helmLayer.setVariant(::Const.FacColors.BasicHelm[banner]);
+					case "armor.head.legend_helmet_norman_helm":
+						helmLayer.setVariant(::Const.FacColors.NormanHelm[banner]);
+					case "armor.head.legend_helmet_sallet":
+						helmLayer.setVariant(::Const.FacColors.EliteSallet[banner]);
+					case "armor.head.legend_helmet_nordic_helm_high":
+					case "armor.head.legend_helmet_nordic_helm_low":
+						helmLayer.setVariant(::Const.FacColors.NordicHelm[banner]);
+					case "armor.head.legend_helmet_viking_helm":
+						helmLayer.setVariant(::Const.FacColors.VikingHelm[banner]);
+				}				
+			}
+
+			local faceplate = helmet.getUpgrade(1); // The flat mask
+			if(faceplate != null && faceplate.getID() == "armor.head.legend_helmet_faceplate_flat") {
+				faceplate.setVariant(::Const.FacColors.EliteMask[banner]);
+			}
+
+			local zweihanderHat = helmet.getUpgrade(2); // Zweihander hat
+			if(zweihanderHat != null && zweihanderHat.getID() == "armor.head.legend_helmet_faction_helmet_2") {
+				zweihanderHat.setVariant(banner);
+			}
+
+			helmet.updateAppearance();
+		}
+
+		local shield = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		if (shield != null && "setFaction" in shield)
+		{
+			shield.setFaction(banner);
+			shield.updateAppearance();
+		}
 
 		this.m.Items.updateAppearance();
 	}

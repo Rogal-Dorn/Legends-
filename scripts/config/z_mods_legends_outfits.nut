@@ -535,7 +535,7 @@ gt.Const.LegendMod.OutfitObjs.extend([
 	]
 },
 {
-	ID = "mercury_sureshot_blue_00"
+	ID = "mercury_sureshot_green_00"
 	Body = [
 		[1, "mercury_sureshot_green_00"]
 	],

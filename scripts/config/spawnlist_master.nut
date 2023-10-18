@@ -1724,6 +1724,14 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		Script = "scripts/entity/tactical/humans/noble_sureshot"
 	},
+	LegendBasiliskDrone = {
+		ID = this.Const.EntityType.LegendBasiliskDrone,
+		Variant = 0,
+		Strength = 25,
+		Cost = 25,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_basilisk_drone"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-
