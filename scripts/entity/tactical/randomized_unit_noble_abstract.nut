@@ -79,9 +79,15 @@ this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/ran
 				faceplate.setVariant(::Const.FacColors.EliteMask[banner]);
 			}
 
-			local zweihanderHat = helmet.getUpgrade(2); // Zweihander hat
-			if(zweihanderHat != null && zweihanderHat.getID() == "armor.head.legend_helmet_faction_helmet_2") {
-				zweihanderHat.setVariant(banner);
+			local vanityLayer = helmet.getUpgrade(2);
+			if (vanityLayer != null)
+			{
+				switch (vanityLayer.getID())
+				{
+					case "armor.head.legend_helmet_faction_helmet":	  //The cool helmet on top that isnt a zweihander
+					case "armor.head.legend_helmet_faction_helmet_2": //Zweihander hat
+						vanityLayer.setVariant(banner)
+				}
 			}
 
 			helmet.updateAppearance();

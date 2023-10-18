@@ -112,7 +112,7 @@ gt.Const.World.Spawn.Noble <- {
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.LegendNobleGuard,
-					Cost = 50
+					Cost = 60
 				}
 			]
 		},

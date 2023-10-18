@@ -2665,6 +2665,26 @@ Tops = [[1, "top/legend_helmet_enclave_great_bascinet_visor", 1], [1, "top/legen
 Vanity = [[1, "vanity/legend_helmet_plait"]], //12 to match the 8 if wnated
 }]
 },
+{
+ID = "mercury_royal_guard_00",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_chain_hood", 2]],
+Helms = [[1, ""]],
+Tops = [[1, "top/legend_helmet_faceplate_flat"]],
+Vanity = [[1, "vanity/legend_helmet_plait"]],
+}]
+},
+{
+ID = "mercury_royal_guard_01",
+Script = "",
+Sets = [{
+Hoods = [[1, "hood/legend_helmet_padded_cap", 1]],
+Helms = [[1, "helm/legend_helmet_flat_top_helm", 1]],
+Tops = [[1, ""]],
+Vanity = [[1, "vanity/legend_helmet_faction_helmet"]],
+}]
+},
 ])
 
 gt.Const.LegendMod.Helmets <- {};

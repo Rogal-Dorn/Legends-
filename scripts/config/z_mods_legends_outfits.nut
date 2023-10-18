@@ -544,7 +544,17 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, "mercury_sureshot_green_01"]
 	]
 },
-
+{
+	ID = "noble_footman_veteran_00"
+	Body = [
+		[1, "legend_noble_guard_armour"],
+		[1, "mercury_royal_guard_00"]
+	],
+	Helmet = [
+		[1, "mercury_royal_guard_00"],
+		[1, "mercury_royal_guard_01"]
+	]
+},
 ]); 
 
 foreach( i, v in gt.Const.LegendMod.OutfitObjs )

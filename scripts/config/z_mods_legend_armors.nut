@@ -2541,8 +2541,20 @@ Cloth = [[1, "cloth/legend_tunic_noble", 9]],
 Chain = [[1, "chain/legend_armor_reinforced_worn_mail", 1]],
 Plate = [[1, "plate/legend_southern_arm_guards", 1]],
 Cloak = [[1, "cloak/decorative_hood", 8]],
-Tabard = [[1, "tabard/legend_noble_tabard", 3]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
 Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_royal_guard_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson_plain", 1]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1], [1, "chain/legend_armor_short_mail", 1]],
+Plate = [[1, "plate/legend_armor_leather_brigandine_hardened_full", 1], [1, "plate/legend_armor_leather_riveted"], [1, "plate/legend_armor_scale_shirt", 1], [1, "plate/legend_armor_leather_brigandine", 1]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade", 0], [1, "armor_upgrades/legend_double_mail_upgrade", 0], [1, "armor_upgrades/legend_leather_shoulderguards_upgrade", 0]],
 }]
 },
 ]);

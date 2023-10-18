@@ -242,14 +242,14 @@ gt.Const.Tactical.Actor.LegendCatapult <- {
 gt.Const.Tactical.Actor.LegendNobleGuard<- {
 	XP = 350,
 	ActionPoints = 9,
-	Hitpoints = 150,
-	Bravery = 75,
-	Stamina = 130,
+	Hitpoints = 175,
+	Bravery = 80,
+	Stamina = 135,
 	MeleeSkill = 80,
 	RangedSkill = 50,
 	MeleeDefense = 40,
 	RangedDefense = 25,
-	Initiative = 105,
+	Initiative = 80,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [

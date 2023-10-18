@@ -1688,7 +1688,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 50,
 		Cost = 50,
-		Row = 1,
+		Row = 0,
 		Script = "scripts/entity/tactical/humans/noble_footman_veteran"
 	},
 	LegendManAtArms = {
@@ -1705,7 +1705,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 35,
 		Cost = 35,
-		Row = 0,
+		Row = -1,
 		Script = "scripts/entity/tactical/humans/noble_elite_footman"
 	},
 	NoblePollax = {
