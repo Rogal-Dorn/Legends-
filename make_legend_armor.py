@@ -553,7 +553,7 @@ layers = [
     "desc" :  "A body armor made of thick overlapping metal plates that cover most of the upper body.", \
     "adesc" : "Includes body armor made of thick overlapping metal plates that cover most of the upper body."
 },
-{"name": "legend_armor_leather_lamellar_harness_reinforced", "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 150, "stam" : -23, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_armor_leather_lamellar_harness_reinforced", "layer": "plate", "min": 1, "max": 1, "value" : 350, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Reinforced Lamellar Harness", \
     "desc" :  "A body armor made of thick overlapping metal plates that cover most of the upper body.", \
     "adesc" : "Includes body armor made of thick overlapping metal plates that cover most of the upper body."
@@ -569,7 +569,7 @@ layers = [
     "adesc" : "Includes an extraordinarily well-crafted piece of lamellar armor. It is covered with beaten gold, which makes it truly stand out.", \
     "named" : True, "rminStam" : 19, "rmaxStam": 23, "rminCond" : 175, "rmaxCond" : 195,  "names" : Names + ["Harness", "Ward", "Defense", "Splendor", "Golden Lamellar"]
 },
-{"name": "legend_armor_leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 1, "value" : 350, "con" : 55, "stam" : -7, "impactSound" : "leather", "invSound" : "leather", \
+{"name": "legend_armor_leather_lamellar_reinforced",      "layer": "plate", "min": 1, "max": 1, "value" : 2500, "con" : 150, "stam" : -23, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Reinforced Leather Lamellar Armor", \
     "desc" :  "Numerous overlapping metal reinforced leather plates that provides excellent protection for most of the upper body but is very heavy.", \
     "adesc" : "Includes armor of overlapping reinforced metal leather plates."
@@ -843,12 +843,12 @@ layers = [
     "desc" :  "A leather nomad armor stitched together from various hides and scraps", \
     "adesc" : "Plates of leather hide and scraps"
 },
-{"name": "legend_southern_leather_scale",           "layer": "plate", "min": 1, "max": 4, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_scale",\
-    "title" :  "Plated Nomad Mail", \
+{"name": "legend_southern_leather_scale",           "layer": "plate", "min": 1, "max": 4, "value" : 300, "con" : 70, "stam" : -10, "impactSound" : "plate", "invSound" : "leather", "brush" : "southern_leather_scale",\
+    "title" :  "Rusted Nomad Mail", \
     "desc" :  "A slightly worn-down, thin and light mail with additional metal plates grafted onto it.", \
     "adesc" : ""
 },
-{"name": "legend_southern_scale",                  "layer": "plate", "min": 1, "max": 1, "value" : 300, "con" : 70, "stam" : -10, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_scale",\
+{"name": "legend_southern_scale",                  "layer": "plate", "min": 1, "max": 1, "value" : 1500, "con" : 155, "stam" : -26, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_scale",\
     "title" :  "Heavy Southern Lamellar", \
     "desc" :  "A heavy lamellar plated harness", \
     "adesc" : "Has heavy lamellar plated harness"

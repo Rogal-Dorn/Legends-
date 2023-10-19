@@ -3,7 +3,7 @@ this.legend_metal_plating_upgrade <- this.inherit("scripts/items/legend_armor/le
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.metal_plating";
+		this.m.ID = "legend_armor_upgrade.body.legend_metal_plating";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Metal Plates and Rivets";
 		this.m.Description = "Thick metal plates that are rivetted to the underlying armor. Very crude, but an easy way to quickly add protection.";
