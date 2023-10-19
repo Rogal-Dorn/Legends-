@@ -67,6 +67,16 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
         [1, ["scripts/items/weapons/butchers_cleaver", 100, 45]],
         [2, ["scripts/items/weapons/legend_wooden_spear", 100, 80]]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     LegendaryPerks = [
         "scripts/skills/perks/perk_nimble",
         "scripts/skills/traits/fearless_trait"
@@ -89,6 +99,16 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
         [2, ["scripts/items/weapons/shortsword", 100]],
         [2, ["scripts/items/weapons/legend_militia_glaive", 100]]
     ],
+    TraitsPerkList = [  
+        this.Const.Perks.AgileTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.CalmTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.OrganisedTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
     Shields = [
         [1, "scripts/items/shields/buckler_shield"],
         [2, ""]
@@ -153,16 +173,9 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
         this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
-        this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
@@ -199,19 +212,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
-        // this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
-        this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
-        this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.BowTree
     ], 
     WeaponsAndTrees = [
         [1, ["scripts/items/weapons/short_bow", 50]],
@@ -257,15 +262,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
         this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
         this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
@@ -290,19 +290,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
-        // this.Const.Perks.IndestructibleTree,
-        this.Const.Perks.MartyrTree,
-        this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
         this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
-        this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.BowTree
     ], 
     LegendaryPerks = [
         "scripts/skills/perks/perk_dodge",
@@ -325,7 +318,6 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.HeavyArmorTree,
         this.Const.Perks.MediumArmorTree,
         this.Const.Perks.LightArmorTree,
-        // this.Const.Perks.ClothArmorTree
     ],
     WeaponsAndTrees = [ // Author's Note: These are a substantially higher chance to purchase 2handers than current raiders, because of this (eventually) these will get weighted
         [1, ["scripts/items/weapons/legend_infantry_axe", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
@@ -362,19 +354,13 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.IndestructibleTree,
         this.Const.Perks.MartyrTree,
         this.Const.Perks.ViciousTree,
-        // this.Const.Perks.DeviousTree,
-        // this.Const.Perks.InspirationalTree,
-        // this.Const.Perks.IntelligentTree,
-        this.Const.Perks.CalmTree,
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
-        // this.Const.Perks.OrganisedTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
         this.Const.Perks.TrainedTree
     ], 
     LegendaryPerks = [
-        // "scripts/skills/perks/perk_battle_forged",
         "scripts/skills/perks/perk_relentless",
         "scripts/skills/perks/perk_dodge",
         "scripts/skills/perks/perk_backstabber",
@@ -382,8 +368,6 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         "scripts/skills/traits/fearless_trait"
     ],
     GuaranteedPerks = [
-        // "scripts/skills/perks/perk_brawny",
-        // "scripts/skills/perks/perk_coup_de_grace",
         "scripts/skills/perks/perk_bullseye",
         "scripts/skills/perks/perk_rotation",
         "scripts/skills/perks/perk_recover"
@@ -453,6 +437,164 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
 
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
+    Outfits = [
+        [1, "noble_elite_footman_outfit_00"] //todo
+    ],
+    WeaponsAndTrees = [
+        [4, ["scripts/items/weapons/military_pick", 100]],
+        [1, ["scripts/items/weapons/warhammer",  100]],
+        [4, ["scripts/items/weapons/arming_sword", 100]],
+        [1, ["scripts/items/weapons/noble_sword", 100]],
+        [3, ["scripts/items/weapons/morning_star", 100]],
+        [3, ["scripts/items/weapons/winged_mace", 100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.ForcefulTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.SparringTree,
+        this.Const.Perks.GiantTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    Shields = [
+        [1, "scripts/items/shields/faction_kite_shield"],
+        [1, "scripts/items/shields/faction_heater_shield"]
+    ],
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_shield_expert",
+        "scripts/skills/perks/perk_rotation"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_shield_bash",
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [6, 8], //At super high levels it stops mattering for what they can buy and just gives more exp
+    PerkPower = gt.Const.PerkPurchasePower.High + 1
+}
+
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
+    Outfits = [
+        [1, "mercury_pollax_00"], //Looking @ around 200 each at most ideally
+        [1, "mercury_pollax_colorful"]
+    ],
+    WeaponsAndTrees = [
+        [1, ["scripts/items/weapons/polehammer", 100]],
+        [2, ["scripts/items/weapons/two_handed_wooden_hammer",  100]],
+        [2, ["scripts/items/weapons/two_handed_mace", 100]],
+        [2, ["scripts/items/weapons/warbrand", 100]],
+        [3, ["scripts/items/weapons/legend_swordstaff", 100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.ForcefulTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.GiantTree,
+        this.Const.Perks.AggressiveTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.FastTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    GuaranteedPerks = [ //Testing to see if they ever actually use indom, given no guaranteed perks right now these might vary wildly in power levels
+        "scripts/skills/perks/perk_indomitable" 
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/perks/perk_berserk",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [5, 7],
+    PerkPower = gt.Const.PerkPurchasePower.High + 1
+}
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
+    Outfits = [
+        [1, "mercury_sureshot_00"], // looking for low helmets maybe 150ish body
+        [1, "mercury_sureshot_brown_00"],
+        [1, "mercury_sureshot_blue_00"],
+        [1, "mercury_sureshot_green_00"]
+    ],
+    WeaponsAndTrees = [
+        [3, ["scripts/items/weapons/war_bow", 100]],
+        [2, ["scripts/items/weapons/heavy_crossbow",  100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.LightArmorTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.FastTree,
+        this.Const.Perks.FitTree,
+        this.Const.Perks.BowTree,
+        this.Const.Perks.CrossbowTree,
+        this.Const.Perks.RangerTree,
+        this.Const.Perks.TrainedTree
+    ], 
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_ballistics",
+        "scripts/skills/perks/perk_lookout",
+        "scripts/skills/perks/perk_rotation"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_crippling_strikes",
+        "scripts/skills/perks/perk_legend_clarity",
+        "scripts/skills/perks/perk_sundering_strikes",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [6, 8],
+    PerkPower = gt.Const.PerkPurchasePower.Medium
+}
+
+gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendNobleGuard] <- {
+    Outfits = [
+        [1, "noble_footman_veteran_00"] //todo
+    ],
+    WeaponsAndTrees = [
+        [4, ["scripts/items/weapons/military_pick", 100]],
+        [1, ["scripts/items/weapons/arming_sword",  100]],
+        [4, ["scripts/items/weapons/fighting_axe", 100]],
+        [1, ["scripts/items/weapons/morning_star", 100]]
+    ],
+    DefensePerkList = [
+        this.Const.Perks.HeavyArmorTree,
+        this.Const.Perks.ForcefulTree
+    ],
+    TraitsPerkList = [  
+        this.Const.Perks.SparringTree,
+        this.Const.Perks.GiantTree,
+        this.Const.Perks.IndestructibleTree,
+        this.Const.Perks.LargeTree,
+        this.Const.Perks.SturdyTree,
+        this.Const.Perks.FitTree
+    ], 
+    Shields = [
+        [1, "scripts/items/shields/legend_faction_tower_shield"]
+    ],
+    GuaranteedPerks = [
+        "scripts/skills/perks/perk_shield_expert",
+        "scripts/skills/perks/perk_battle_forged",
+        "scripts/skills/perks/perk_rotation",
+        "scripts/skills/perks/perk_steel_brow",
+        "scripts/skills/perks/perk_legend_specialist_shield_skill",
+        "scripts/skills/perks/perk_legend_specialist_shield_push",
+        "scripts/skills/perks/perk_shield_bash"
+    ],
+    LegendaryPerks = [
+        "scripts/skills/perks/perk_deflect",
+        "scripts/skills/perks/perk_bruiser",
+        "scripts/skills/traits/fearless_trait"
+    ],
+    LevelRange = [7, 10],
+    PerkPower = gt.Const.PerkPurchasePower.High + 1
+}
+
 // Units TODO: 
 /* 
     Bandit Leader
@@ -481,6 +623,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
     Noble Greatsword
     Noble Man at Arms
     Noble Sergeant
+    Knight
 
     Barbarian Champion
     Barbarian Chosen

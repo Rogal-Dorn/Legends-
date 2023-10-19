@@ -18,6 +18,7 @@ this.legends_beggar_scenario <- this.inherit("scripts/scenarios/world/starting_s
 
 	function onSpawnAssets()
 	{
+		local roster = this.World.getPlayerRoster();
 		local names = [];
 		local bro;
 		bro = ::World.getPlayerRoster().create("scripts/entity/tactical/player");

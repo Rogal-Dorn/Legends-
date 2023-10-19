@@ -827,7 +827,7 @@ gt.Const.World.Spawn.Troops <- {
 	},
 	BanditRabble = {
 		ID = this.Const.EntityType.BanditRabble,
-		Variant = 1,
+		Variant = 2,
 		DieRoll = 100000, //100k
 		Strength = 5,
 		Cost = 5,
@@ -1688,7 +1688,7 @@ gt.Const.World.Spawn.Troops <- {
 		Variant = 0,
 		Strength = 50,
 		Cost = 50,
-		Row = 1,
+		Row = 0,
 		Script = "scripts/entity/tactical/humans/noble_footman_veteran"
 	},
 	LegendManAtArms = {
@@ -1697,8 +1697,41 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 100,
 		Cost = 100,
 		Row = 1,
-		Script = "scripts/entity/tactical/humans/noble_man_at_arms"
-	}
+		Script = "scripts/entity/tactical/humans/noble_man_at_arms",
+		NameList = this.Const.Strings.KnightNames
+	},
+	NobleEliteFootman = {
+		ID = this.Const.EntityType.NobleEliteFootman,
+		Variant = 0,
+		Strength = 35,
+		Cost = 35,
+		Row = -1,
+		Script = "scripts/entity/tactical/humans/noble_elite_footman"
+	},
+	NoblePollax = {
+		ID = this.Const.EntityType.NoblePollax,
+		Variant = 0,
+		Strength = 50,
+		Cost = 50,
+		Row = 0,
+		Script = "scripts/entity/tactical/humans/noble_pollax"
+	},
+	NobleSureshot = {
+		ID = this.Const.EntityType.NobleSureshot,
+		Variant = 0,
+		Strength = 75,
+		Cost = 75,
+		Row = 2,
+		Script = "scripts/entity/tactical/humans/noble_sureshot"
+	},
+	LegendBasiliskDrone = {
+		ID = this.Const.EntityType.LegendBasiliskDrone,
+		Variant = 0,
+		Strength = 25,
+		Cost = 25,
+		Row = 0,
+		Script = "scripts/entity/tactical/enemies/legend_basilisk_drone"
+	},
 };
 
 gt.Const.World.Spawn.Caravan <-

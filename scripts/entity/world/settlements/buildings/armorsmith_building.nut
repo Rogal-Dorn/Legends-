@@ -379,6 +379,72 @@ this.armorsmith_building <- this.inherit("scripts/entity/world/settlements/build
 			P = 1.0,
 			S = "helmets/rondel_helm"
 		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "helmets/rondel_helm"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_armor_skull_chain_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_armor_sacred_shield_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_armor_chain_and_mail_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_armor_spiked_collar_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_pauldron_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_pauldron_heavy_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_pauldron_strong_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_pauldron_stag_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_pauldron_swan_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_heavy_gladiator_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_light_gladiator_upgrade"
+		});
+		list.push({
+			R = 80,
+			P = 1.0,
+			S = "legend_armor/armor_upgrades/legend_light_padding_replacement_upgrade"
+		});
+		
 
 		foreach( i in this.Const.Items.LegendNamedArmorLayers )
 		{

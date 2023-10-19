@@ -3,7 +3,7 @@ this.legend_light_gladiator_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "armor_upgrade.light_gladiator_upgrade";
+		this.m.ID = "armor_upgrade.legend_light_gladiator_upgrade";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Padded Armor Pieces";
 		this.m.Description = "Padded armpieces that provides additional protection.";

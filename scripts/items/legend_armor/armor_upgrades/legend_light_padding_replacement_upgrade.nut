@@ -3,7 +3,7 @@ this.legend_light_padding_replacement_upgrade <- this.inherit("scripts/items/leg
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.light_padding_replacement";
+		this.m.ID = "legend_armor_upgrade.body.legend_light_padding_replacement";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Light Padding Replacement";
 		this.m.Description = "Crafted from exotic materials, this replacement padding can provide the same amount of protection as regular padding at less weight.";

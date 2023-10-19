@@ -1,10 +1,10 @@
-this.noble_footman_veteran <- this.inherit("scripts/entity/tactical/randomized_unit_noble_abstract", {
+this.noble_elite_footman <- this.inherit("scripts/entity/tactical/randomized_unit_noble_abstract", {
 	m = {},
 	function create()
 	{
-		this.m.Type = this.Const.EntityType.LegendNobleGuard;
+		this.m.Type = this.Const.EntityType.NobleEliteFootman; 
 		this.m.BloodType = this.Const.BloodType.Red;
-		this.m.XP = this.Const.Tactical.Actor.LegendNobleGuard.XP;
+		this.m.XP = this.Const.Tactical.Actor.NobleEliteFootman.XP;
 		this.randomized_unit_noble_abstract.create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
@@ -14,7 +14,7 @@ this.noble_footman_veteran <- this.inherit("scripts/entity/tactical/randomized_u
 	{
 		this.randomized_unit_noble_abstract.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.Const.Tactical.Actor.LegendNobleGuard);
+		b.setValues(this.Const.Tactical.Actor.NobleEliteFootman);
 		b.IsSpecializedInSwords = true;
 		b.IsSpecializedInAxes = true;
 		b.IsSpecializedInMaces = true;
@@ -32,18 +32,8 @@ this.noble_footman_veteran <- this.inherit("scripts/entity/tactical/randomized_u
 
 	function assignRandomEquipment()
 	{
-		this.randomized_unit_noble_abstract.assignRandomEquipment();
+        this.randomized_unit_noble_abstract.assignRandomEquipment();
 	}
-
-	function setMale()
-    {
-		this.setGender(0);
-        this.m.Faces = this.Const.Faces.AllMale;
-		this.m.Hairs = this.Const.Hair.Military;
-		this.m.HairColors = this.Const.HairColors.Old;
-		this.m.Beards = this.Const.Beards.Tidy;  
-    }
-
 
 });
 

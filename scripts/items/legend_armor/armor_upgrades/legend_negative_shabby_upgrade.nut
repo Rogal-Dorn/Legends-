@@ -3,7 +3,7 @@ this.legend_negative_shabby_upgrade <- this.inherit("scripts/items/legend_armor/
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.negative_shabby";
+		this.m.ID = "legend_armor_upgrade.body.legend_negative_shabby";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Shabby";
 		this.m.Description = "";
