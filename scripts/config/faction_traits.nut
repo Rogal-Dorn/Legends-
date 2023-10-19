@@ -109,6 +109,7 @@ gt.Const.FactionTrait <- {
 			"scripts/factions/contracts/legend_bandit_army_action",
 			"scripts/factions/contracts/legend_barbarian_prisoner_action",
 			"scripts/factions/contracts/legend_preemptive_beasts_action", // New action for situationless beasts contract
+			"scripts/factions/contracts/legend_spider_abductions_action",
 			"scripts/factions/actions/send_caravan_action",
 			"scripts/factions/actions/send_peasants_action",
 			"scripts/factions/actions/defend_militia_action",
