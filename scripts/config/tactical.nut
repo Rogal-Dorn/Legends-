@@ -839,6 +839,7 @@ gt.Const.Tactical.CombatInfo <- {
 	PlayerDeploymentType = this.Const.Tactical.DeploymentType.Auto,
 	EnemyDeploymentType = this.Const.Tactical.DeploymentType.Auto,
 	PlayerDeploymentCallback = null,
+	PlayerDeploymentWithFrontlineCallback = null,
 	EnemyDeploymentCallback = null,
 	BeforeDeploymentCallback = null,
 	AfterDeploymentCallback = null,

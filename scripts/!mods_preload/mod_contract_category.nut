@@ -72,6 +72,7 @@ gt.Const.Contracts.ContractCategoryMap <- {
 	hunting_webknechts_contract = this.Const.Contracts.Categories.Hunt,
 	roaming_beasts_contract = this.Const.Contracts.Categories.Hunt,
 	legend_preemptive_beasts_contract = this.Const.Contracts.Categories.Hunt, // Adds this in here for testing
+	legend_spider_abductions_contract = this.Const.Contracts.Categories.Hunt,
 
 	legend_bandit_army_contract = this.Const.Contracts.Categories.Legendary,
 	legend_barbarian_prisoner_contract = this.Const.Contracts.Categories.Legendary,
