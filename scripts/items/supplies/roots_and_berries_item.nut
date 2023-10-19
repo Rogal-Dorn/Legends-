@@ -6,7 +6,7 @@ this.roots_and_berries_item <- this.inherit("scripts/items/supplies/legend_usabl
 		this.m.ID = "supplies.roots_and_berries";
 		this.m.Name = "Dried Roots and Berries";
 		this.m.Description = "Provisions. Dried roots and berries are not the most exciting of rations but easy to come by and durable. Can be eaten in battle to provide up to 1 healing and fatigue recovery over ten turns, based on the amount remaining. Will be gradually used as provisions if left in the company stash.";
-		this.m.Icon = "supplies/inventory_provisions_04.png";
+		this.m.Icon = "supplies/legend_dried_roots_and_berries.png";
 		this.m.Value = 60;
 		this.m.Amount = 15.0;
 		this.m.GoodForDays = 8;
