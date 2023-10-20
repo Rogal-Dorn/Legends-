@@ -1000,7 +1000,7 @@ gt.Const.EntityIcon <- [
 	
 	"footman_veteran_orientation", //LegendNobleGuard
 	"footman_veteran_orientation", //LegendManAtArms
-	"basilisk_orientation", // LegendBasiliskDrone -> TODO
+	"basilisk_drone_orientation",
 	"caravan_hand_orientation",     //CaravanPoleArm -> TODO
 	"footman_veteran_orientation", //Noble Elite Footman
 	"billman_orientation", //Pollax
