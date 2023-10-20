@@ -230,6 +230,10 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_wall_battle"));
 					break;
 
+				case 41:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_basilisks"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
