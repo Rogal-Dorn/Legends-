@@ -1,4 +1,4 @@
-this.scenario_besilisks <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.scenario_basilisks <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{
