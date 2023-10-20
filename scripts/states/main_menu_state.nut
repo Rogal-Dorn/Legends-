@@ -495,6 +495,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 
 		local result = [
 			{
+				id = 41,
+				name = "Basilisks",
+				description = "[p=c][img]gfx/ui/events/event_05.png[/img][/p]\n[p=c]Fight against Basilisk Drones[/p]"
+			},
+			{
 				id = 39,
 				name = "Höllenhunds (Legendary)",
 				description = "[p=c][img]gfx/ui/events/event_57.png[/img][/p]\n[p=c]Undead demon hounds[/p]"
