@@ -82,6 +82,9 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		{
 			this.m.PerkPower -= 1;
 		}
+
+		if (::Math.rand(0, 3) == 0) { this.setFemale() }
+        else { this.setMale() } 
 	}
 
 
@@ -116,16 +119,18 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		for (local i = 0; i <= _cap; i++)
 		{
 			local row = _tree[i]
-			if ( row.len() != 0 && _purchaseLimit > 0) {
-				local perkDefNum = row[0]
-				local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
-				local toAdd = this.new(fullDef.Script)
-				if (!this.m.Skills.hasSkill(toAdd.getID()))
+			if ( row.len() != 0 && _purchaseLimit >= row.len() && this.m.PerkPower >= row.len() ) {
+				foreach (perkDefNum in row) //Purchases every perk in the row, if there are multiple
 				{
-					this.m.Skills.add(toAdd)
-					_purchaseLimit--
-					this.m.PerkPower--
-				}
+					local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
+					local toAdd = this.new(fullDef.Script)
+					if (!this.m.Skills.hasSkill(toAdd.getID()))
+					{
+						this.m.Skills.add(toAdd)
+						_purchaseLimit--
+						this.m.PerkPower--
+					}
+				}	
 			}
 		}
 	}
@@ -232,7 +237,6 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function assignShield()
 	{
 		if (this.m.Shields.len() == 0) { return; }
-		if (this.m.Skills.hasSkill("perk.duelist")) { return; }
 		if (this.getMainhandItem().isItemType(this.Const.Items.ItemType.TwoHanded)) { return; }
 
 		local candidates = [];
@@ -279,4 +283,17 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		assignPerks(); 
 		assignShield();
 	}
+
+
+	// Can override setfemale/male if we want southern units etc. Enemy defaults are setMale anyways 
+	// Defaulting to 1 in 4 chance of female
+    function setFemale()
+    {
+        this.setGender(1);
+    }
+
+    function setMale()
+    {
+		this.setGender(0);
+    }
 }); 

@@ -224,7 +224,11 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 				break;
 
 			case this.Const.Tactical.DeploymentType.Custom:
-				if (_properties.PlayerDeploymentCallback != null)
+				if (_properties.PlayerDeploymentWithFrontlineCallback != null)
+				{
+					_properties.PlayerDeploymentWithFrontlineCallback(frontline);
+				}
+				else if (_properties.PlayerDeploymentCallback != null)
 				{
 					_properties.PlayerDeploymentCallback();
 				}

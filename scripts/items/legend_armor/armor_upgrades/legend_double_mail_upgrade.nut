@@ -3,7 +3,7 @@ this.legend_double_mail_upgrade <- this.inherit("scripts/items/legend_armor/lege
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.double_mail";
+		this.m.ID = "legend_armor_upgrade.body.legend_double_mail";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Double Mail";
 		this.m.Description = "A couple of thick double mail patches. Heavy, but effective in further adding to an armor\'s protection.";

@@ -3,7 +3,7 @@ this.legend_leather_neckguard_upgrade <- this.inherit("scripts/items/legend_armo
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.leather_neckguard";
+		this.m.ID = "legend_armor_upgrade.body.legend_leather_neckguard";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Leather Neckguard";
 		this.m.Description = "This neckguard of cured leather can be attached to any armor for some additional protection.";

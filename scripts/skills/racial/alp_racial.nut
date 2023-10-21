@@ -125,7 +125,7 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 
 		foreach( a in allies )
 		{
-			if (a.getHitpoints() > 0 && a.getType() == this.Const.EntityType.Alp)
+			if (a.getHitpoints() > 0 && (a.getType() == this.Const.EntityType.Alp || a.getType() == this.Const.EntityType.AlpShadow))
 			{
 				local b = a.getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AlpTeleport);
 				b.onEvaluate(a);

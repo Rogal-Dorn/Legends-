@@ -242,14 +242,14 @@ gt.Const.Tactical.Actor.LegendCatapult <- {
 gt.Const.Tactical.Actor.LegendNobleGuard<- {
 	XP = 350,
 	ActionPoints = 9,
-	Hitpoints = 150,
-	Bravery = 75,
-	Stamina = 130,
+	Hitpoints = 175,
+	Bravery = 80,
+	Stamina = 135,
 	MeleeSkill = 80,
 	RangedSkill = 50,
 	MeleeDefense = 40,
 	RangedDefense = 25,
-	Initiative = 105,
+	Initiative = 80,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [
@@ -276,4 +276,64 @@ gt.Const.Tactical.Actor.LegendManAtArms <- {
 		0
 	],
 	FatigueRecoveryRate = 25
+};
+
+gt.Const.Tactical.Actor.NobleEliteFootman <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 70,
+	Bravery = 65,
+	Stamina = 120,
+	MeleeSkill = 75,
+	RangedSkill = 50,
+	MeleeDefense = 15,
+	RangedDefense = 10,
+	Initiative = 120,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+
+gt.Const.Tactical.Actor.NoblePollax <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 80,
+	Bravery = 60,
+	Stamina = 110,
+	MeleeSkill = 75,
+	RangedSkill = 50,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 100,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
+};
+
+gt.Const.Tactical.Actor.NobleSureshot <- {
+	XP = 250,
+	ActionPoints = 9,
+	Hitpoints = 65,
+	Bravery = 65,
+	Stamina = 100,
+	MeleeSkill = 60,
+	RangedSkill = 80,
+	MeleeDefense = 5,
+	RangedDefense = 15,
+	Initiative = 130,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	Armor = [
+		0,
+		0
+	],
+	FatigueRecoveryRate = 15
 };

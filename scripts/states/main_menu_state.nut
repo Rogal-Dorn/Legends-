@@ -230,6 +230,10 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_wall_battle"));
 					break;
 
+				case 41:
+					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_basilisks"));
+					break;
+
 				default:
 					tacticalState.setScenario(this.new("scripts/scenarios/tactical/scenario_combat_basics"));
 					break;
@@ -490,6 +494,11 @@ this.main_menu_state <- this.inherit("scripts/states/state", {
 	{
 
 		local result = [
+			{
+				id = 41,
+				name = "Basilisks",
+				description = "[p=c][img]gfx/ui/events/event_05.png[/img][/p]\n[p=c]Fight against Basilisk Drones[/p]"
+			},
 			{
 				id = 39,
 				name = "Höllenhunds (Legendary)",
