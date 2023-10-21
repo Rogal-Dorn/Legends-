@@ -1,9 +1,9 @@
-this.basilisk_drone_agent_aggressive <- this.inherit("scripts/ai/tactical/agent", {
+this.basilisk_drone_aggressive_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{
 		this.agent.create(); 
-		this.m.ID = this.Const.AI.Agent.ID.BasiliskDroneAgentAggressive;
+		this.m.ID = this.Const.AI.Agent.ID.BasiliskDroneAggressive;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.5;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.25;
 		this.m.Properties.TargetPriorityRandomMult = 0.5;
