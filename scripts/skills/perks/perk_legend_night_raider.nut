@@ -31,16 +31,14 @@ this.perk_legend_night_raider <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local actor = this.getContainer().getActor();
-
-		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
-		{
-			_properties.Threat += 10;
-			_properties.Vision += 1;
-			_properties.MeleeSkill *= 1.10;
-			_properties.RangedSkill *= 1.10;
-			!_properties.IsAffectedByNight;
-		}
+	    _properties.IsAffectedByNight = false;
+	    if (!this.World.getTime().IsDaytime)
+	    {
+	        _properties.Threat += 10;
+	        _properties.Vision += 1;
+	        _properties.MeleeSkill *= 1.10;
+	        _properties.RangedSkill *= 1.10;
+	    }
 	}
 
 	// function onCombatStarted()

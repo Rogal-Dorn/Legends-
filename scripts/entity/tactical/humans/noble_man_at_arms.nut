@@ -83,7 +83,7 @@ this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 			this.getSprite("surcoat").setBrush("surcoat_" + (banner < 10 ? "0" + banner : banner));
 		}
 
-		r = this.Math.rand(1, 5);
+		r = this.Math.rand(1, 6);
 
 		if (r == 1)
 		{
@@ -99,16 +99,17 @@ this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 		}
 		else if (r == 4)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
-		}
-		else if (r == 5)
-		{
 			this.m.Items.equip(this.new("scripts/items/weapons/military_cleaver"));
 		}
 		else if (r == 5)
 		{
-			this.m.Items.equip(this.new("scripts/items/weapons/flail"));
+			this.m.Items.equip(this.new("scripts/items/weapons/fighting_axe"));
 		}
+		else if (r == 6)
+		{
+			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
+		}
+
 		local shield = this.new("scripts/items/shields/faction_kite_shield");
 
 

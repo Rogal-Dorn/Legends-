@@ -3,7 +3,7 @@ this.legend_armor_sacred_shield_upgrade <- this.inherit("scripts/items/legend_ar
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.legend_sacred_shield";
+		this.m.ID = "legend_armor_upgrade.body.legend_armor_sacred_shield";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Sacred Shield";
 		this.m.Description = "A holy relic shield to be strapped to your shoulder, it protects both physically and spiritually. This is primarily of benefit to those who are strong of mind";

@@ -162,12 +162,30 @@ enemies = r"""
 <sprite id="bust_spider_redback_legs_front" offsetY="35" ic="FF171C20" width="174" height="214" img="entity\beasts\bust_spider_redback_front.png" left="-7" right="61" top="-54" bottom="16" />
 <sprite id="bust_spider_redback_legs_back" offsetY="35" ic="FF12171C" width="174" height="214" img="entity\beasts\bust_spider_redback_legs_back.png" left="-47" right="17" top="-52" bottom="32" />
 
-
 <sprite id="demon_alp_head" offsetX="-5" offsetY="35" ic="FF203653" width="174" height="214" img="entity\beasts\demon_alp_head.png" left="-58" right="38" top="-16" bottom="98" />
 <sprite id="demon_alp_head_dead" offsetY="35" f="64F6" ic="FF1E324C" width="185" height="157" img="entity\beasts\demon_alp_head_dead.png" left="-31" right="93" top="-70" bottom="28" />
 <sprite id="demon_alp_wounds" offsetX="-5" offsetY="35" ic="FF36586C" width="174" height="214" img="entity\beasts\demon_alp_wounds.png" left="-32" right="50" top="-47" bottom="23" />
 
+<sprite id="bust_alp_human_body_01" offsetY="35" ic="FF4D719A" width="104" height="142" img="entity\beasts\bust_alp_human_body_01.png" top="-48" bottom="10" />
+<sprite id="bust_alp_human_body_02" offsetY="35" ic="FF4D719B" width="104" height="142" img="entity\beasts\bust_alp_human_body_02.png" left="-42" right="40" top="-50" bottom="10" />
+<sprite id="bust_alp_human_head_01" offsetY="35" ic="FF5B7CAD" width="104" height="142" img="entity\beasts\bust_alp_human_head_01.png" left="-21" right="29" top="-21" bottom="47" />
+<sprite id="bust_alp_human_head_02" offsetY="35" ic="FF5C7CAC" width="104" height="142" img="entity\beasts\bust_alp_human_head_02.png" left="-20" right="32" top="-19" bottom="47" />
+<sprite id="bust_alp_human_head_03" offsetY="35" ic="FF5E81B0" width="104" height="142" img="entity\beasts\bust_alp_human_head_03.png" left="-26" right="38" top="-18" bottom="48" />
 
+<sprite id="bust_alp_snake_01" offsetY="35" ic="FF324E61" width="340" height="558" img="entity\beasts\bust_alp_snake_01.png" left="-93" right="59" top="-63" bottom="75" />
+<sprite id="bust_alp_snake_02" offsetY="35" ic="FF354D5D" width="340" height="558" img="entity\beasts\bust_alp_snake_02.png" left="-78" right="72" top="-49" bottom="75" />
+<sprite id="alp_snake_ensnare_back" offsetY="30" ic="FF2D424E" width="340" height="558" img="entity\beasts\alp_snake_ensnare_back.png" left="-49" right="81" />
+<sprite id="alp_snake_ensnare_front" offsetY="30" ic="FF2E414D" width="340" height="558" img="entity\beasts\alp_snake_ensnare_front.png" left="-56" right="106" top="-69" bottom="49" />
+
+<sprite id="bust_alp_kraken_tentacle_01" offsetY="35" ic="FF314553" width="340" height="558" img="entity\beasts\bust_alp_kraken_tentacle_01.png" left="-73" right="57" top="-44" bottom="82" />
+<sprite id="bust_alp_kraken_tentacle_02" offsetY="35" ic="FF32435D" width="340" height="558" img="entity\beasts\bust_alp_kraken_tentacle_02.png" left="-81" right="57" top="-44" bottom="82" />
+
+<sprite id="bust_alp_direwolf_01_body" offsetY="35" ic="FF1B2126" width="104" height="142" img="entity\beasts\bust_alp_direwolf_01_body.png" top="-62" bottom="38" />
+<sprite id="bust_alp_direwolf_01_head" offsetY="35" ic="FF242930" width="104" height="142" img="entity\beasts\bust_alp_direwolf_01_head.png" left="-52" right="24" top="-46" bottom="40" />
+<sprite id="bust_alp_direwolf_02_body" offsetY="35" ic="FF1D2128" width="104" height="142" img="entity\beasts\bust_alp_direwolf_02_body.png" left="-50" right="53" top="-60" bottom="42" />
+<sprite id="bust_alp_direwolf_02_head" offsetY="35" ic="FF293140" width="104" height="142" img="entity\beasts\bust_alp_direwolf_02_head.png" left="-52" right="20" top="-47" bottom="43" />
+<sprite id="bust_alp_direwolf_03_body" offsetY="35" ic="FF191B1F" width="104" height="142" img="entity\beasts\bust_alp_direwolf_03_body.png" top="-62" bottom="40" />
+<sprite id="bust_alp_direwolf_03_head" offsetY="35" ic="FF2A333D" width="104" height="142" img="entity\beasts\bust_alp_direwolf_03_head.png" left="-52" right="20" top="-33" bottom="43" />
 
 <sprite id="bust_demonalp_01_injured" offsetY="35" ic="FF242636" width="174" height="214" img="entity\beasts\bust_demonalp_01_injured.png" left="-39" right="53" top="-45" bottom="51" />
 <sprite id="bust_demonalp_body_01" offsetY="35" ic="FF697792" width="174" height="214" img="entity\beasts\bust_demonalp_body_01.png" left="-50" right="48" top="-55" bottom="23" />
