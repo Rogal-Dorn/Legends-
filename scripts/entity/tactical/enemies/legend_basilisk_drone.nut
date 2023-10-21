@@ -55,7 +55,7 @@ this.legend_basilisk_drone <- this.inherit("scripts/entity/tactical/actor", {
 		}
 		else
 		{
-			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent_aggressive"); //aggressive
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_aggressive_agent"); //aggressive
 		}
 		this.m.AIAgent.setActor(this);
 
