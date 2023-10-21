@@ -77,6 +77,8 @@ gt.Const.AI <- {
 			LegendButcher = "agent.legend_butcher",
 			Bear = "agent.bear",
 			Boar = "agent.boar",
+			BasiliskDrone = "agent.basilisk_drone",
+			BasiliskDroneAggressive = "agent.basilisk_drone_aggressive",
 			KoboldWolfrider = "agent.kobold_wolfrider",
 			LegendMummyQueen = "agent.legend_mummy_queen",
 			LegendMinstrel = "agent.minstrel",
