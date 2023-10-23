@@ -59,18 +59,24 @@ this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/ran
 					case "armor.head.legend_helmet_flat_top_helm_polished":
 					case "armor.head.legend_helmet_flat_top_face_plate":
 						helmLayer.setVariant(::Const.FacColors.EliteHelm[banner]);
+						break;
 					case "armor.head.legend_helmet_kettle_helm_med":
 					case "armor.head.legend_helmet_flat_top_helm":
 						helmLayer.setVariant(::Const.FacColors.BasicHelm[banner]);
+						break;
 					case "armor.head.legend_helmet_norman_helm":
 						helmLayer.setVariant(::Const.FacColors.NormanHelm[banner]);
+						break;
 					case "armor.head.legend_helmet_sallet":
 						helmLayer.setVariant(::Const.FacColors.EliteSallet[banner]);
+						break;
 					case "armor.head.legend_helmet_nordic_helm_high":
 					case "armor.head.legend_helmet_nordic_helm_low":
 						helmLayer.setVariant(::Const.FacColors.NordicHelm[banner]);
+						break;
 					case "armor.head.legend_helmet_viking_helm":
 						helmLayer.setVariant(::Const.FacColors.VikingHelm[banner]);
+						break;
 				}				
 			}
 
