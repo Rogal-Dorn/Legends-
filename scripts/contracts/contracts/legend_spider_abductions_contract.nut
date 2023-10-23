@@ -72,7 +72,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				if (this.Contract.m.SpiderNestTile == null || this.Contract.m.SpiderNestTile.IsOccupied)
 				{
 					local playerTile = this.World.State.getPlayer().getTile();
-					this.Contract.m.SpiderNestTile = this.getTileToSpawnLocation(playerTile, 6, 12, [
+					this.Contract.m.SpiderNestTile = this.Contract.getTileToSpawnLocation(playerTile, 6, 12, [
 						this.Const.World.TerrainType.Shore,
 						this.Const.World.TerrainType.Ocean,
 						this.Const.World.TerrainType.Mountains
