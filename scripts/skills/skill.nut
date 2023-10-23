@@ -1784,66 +1784,66 @@ this.skill <- {
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
-		if (_targetEntity.isRock())
-		{
-			if (_user.getSkills().hasSkill("perk.legend_specialist_pickaxe_damage"))
-			{
-				local r = this.Math.rand(0, 99);
-				if (r == 99)
-				{
-					local loot = this.new("scripts/items/trade/uncut_gems_item");
-					loot.drop(_targetEntity().getTile());
-				}
+		// if (_targetEntity.isRock())
+		// {
+		// 	if (_user.getSkills().hasSkill("perk.legend_specialist_pickaxe_damage"))
+		// 	{
+		// 		local r = this.Math.rand(0, 99);
+		// 		if (r == 99)
+		// 		{
+		// 			local loot = this.new("scripts/items/trade/uncut_gems_item");
+		// 			loot.drop(_targetEntity().getTile());
+		// 		}
 
-				else if (r <= 5 )
-				{
-					local loot = this.new("scripts/items/trade/salt_item");
-					loot.drop(_targetEntity().getTile());
-				}
+		// 		else if (r <= 5 )
+		// 		{
+		// 			local loot = this.new("scripts/items/trade/salt_item");
+		// 			loot.drop(_targetEntity().getTile());
+		// 		}
 
-				else if (r <= 15 && r > 5 )
-				{
-					local loot = this.new("scripts/items/trade/peat_bricks_item");
-					loot.drop(_targetEntity().getTile());
-				}
+		// 		else if (r <= 15 && r > 5 )
+		// 		{
+		// 			local loot = this.new("scripts/items/trade/peat_bricks_item");
+		// 			loot.drop(_targetEntity().getTile());
+		// 		}
 
-			}
-			// _targetEntity.getTile().removeObject()
-			if (this.m.SoundOnHit.len() != 0)
-			{
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-					Pos = _targetEntity.getPos()
-				});
-			}
-			local tile = _targetEntity.getTile();
-			local x = tile.X;
-			local y = tile.Y;
-			this.Tactical.getTile(x,y).removeObject();
-			return true;
-		}
+		// 	}
+		// 	// _targetEntity.getTile().removeObject()
+		// 	if (this.m.SoundOnHit.len() != 0)
+		// 	{
+		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+		// 			Pos = _targetEntity.getPos()
+		// 		});
+		// 	}
+		// 	local tile = _targetEntity.getTile();
+		// 	local x = tile.X;
+		// 	local y = tile.Y;
+		// 	this.Tactical.getTile(x,y).removeObject();
+		// 	return true;
+		// }
 
-		if (_targetEntity.isSticks())
-		{
-			local r = this.Math.rand(0, 4);
-			if (r == 1 && _user.getSkills().hasSkill("perk.legend_specialist_woodaxe_damage"))
-			{
-				local loot = this.new("scripts/items/trade/legend_raw_wood_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (this.m.SoundOnHit.len() != 0)
-			{
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-					Pos = _targetEntity.getPos()
-				});
-			}
-			local tile = _targetEntity.getTile();
-			local x = tile.X;
-			local y = tile.Y;
-			this.Tactical.getTile(x,y).removeObject();
-			return true;
-		}
+		// if (_targetEntity.isSticks())
+		// {
+		// 	local r = this.Math.rand(0, 4);
+		// 	if (r == 1 && _user.getSkills().hasSkill("perk.legend_specialist_woodaxe_damage"))
+		// 	{
+		// 		local loot = this.new("scripts/items/trade/legend_raw_wood_item");
+		// 		loot.drop(_targetEntity.getTile());
+		// 	}
+		// 	if (this.m.SoundOnHit.len() != 0)
+		// 	{
+		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+		// 			Pos = _targetEntity.getPos()
+		// 		});
+		// 	}
+		// 	local tile = _targetEntity.getTile();
+		// 	local x = tile.X;
+		// 	local y = tile.Y;
+		// 	this.Tactical.getTile(x,y).removeObject();
+		// 	return true;
+		// }
 
 		if (_targetEntity.isSupplies())
 		{
@@ -1920,51 +1920,51 @@ this.skill <- {
 			return false; //if we don't return false it counts as a success for skills like cleave which try to apply bleed etc afterwards ->
 		}
 
-		if (_targetEntity.isTree())
-		{
-			if (this.m.SoundOnHit.len() != 0)
-			{
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-					Pos = _targetEntity.getPos()
-				});
-			}
-			local tile = _targetEntity.getTile();
-			local x = tile.X;
-			local y = tile.Y;
-			this.Tactical.getTile(x,y).removeObject();
-			this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks");
-			return true;
-		}
+		// if (_targetEntity.isTree())
+		// {
+		// 	if (this.m.SoundOnHit.len() != 0)
+		// 	{
+		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+		// 			Pos = _targetEntity.getPos()
+		// 		});
+		// 	}
+		// 	local tile = _targetEntity.getTile();
+		// 	local x = tile.X;
+		// 	local y = tile.Y;
+		// 	this.Tactical.getTile(x,y).removeObject();
+		// 	this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks");
+		// 	return true;
+		// }
 
-		if (_targetEntity.isBush() )
-		{
-			local r = this.Math.rand(0, 99);
-			if (r <= 25 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
-			{
-				local loot = this.new("scripts/items/supplies/roots_and_berries_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 99 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
-			{
-				local loot = this.new("scripts/items/misc/mysterious_herbs_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			// _targetEntity.getTile().removeObject()
+		// if (_targetEntity.isBush() )
+		// {
+		// 	local r = this.Math.rand(0, 99);
+		// 	if (r <= 25 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
+		// 	{
+		// 		local loot = this.new("scripts/items/supplies/roots_and_berries_item");
+		// 		loot.drop(_targetEntity.getTile());
+		// 	}
+		// 	if (r == 99 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
+		// 	{
+		// 		local loot = this.new("scripts/items/misc/mysterious_herbs_item");
+		// 		loot.drop(_targetEntity.getTile());
+		// 	}
+		// 	// _targetEntity.getTile().removeObject()
 
-			if (this.m.SoundOnHit.len() != 0)
-			{
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-					Pos = _targetEntity.getPos()
-				});
-			}
-			local tile = _targetEntity.getTile();
-			local x = tile.X;
-			local y = tile.Y;
-			this.Tactical.getTile(x,y).removeObject();
-			return false;
-		}
+		// 	if (this.m.SoundOnHit.len() != 0)
+		// 	{
+		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
+		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
+		// 			Pos = _targetEntity.getPos()
+		// 		});
+		// 	}
+		// 	local tile = _targetEntity.getTile();
+		// 	local x = tile.X;
+		// 	local y = tile.Y;
+		// 	this.Tactical.getTile(x,y).removeObject();
+		// 	return false;
+		// }
 
 		//lets get on with the rest of the attack
 
