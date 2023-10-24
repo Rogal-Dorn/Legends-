@@ -238,7 +238,7 @@ this.spider <- this.inherit("scripts/entity/tactical/actor", {
 					loot.drop(_tile);
 				}
 
-				if (this.Math.rand(1, 100) <= 5)
+				if (this.Math.rand(1, 100) <= 1)
 				{
 					local loot = this.new("scripts/items/loot/webbed_valuables_item");
 					loot.drop(_tile);
