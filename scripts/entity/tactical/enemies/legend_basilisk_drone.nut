@@ -11,39 +11,39 @@ this.legend_basilisk_drone <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.ConfidentMoraleBrush = "icon_confident_orcs";
 		this.actor.create();
 		this.m.Sound[this.Const.Sound.ActorEvent.Death] = [ //credit to wellington for all sounds
-			"sounds/enemies/basilisk_death01.wav",
-			"sounds/enemies/basilisk_death02.wav",
-			"sounds/enemies/basilisk_death03.wav"
+			"sounds/enemies/Basilisk_death01.wav",
+			"sounds/enemies/Basilisk_death02.wav",
+			"sounds/enemies/Basilisk_death03.wav"
 		];
-		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [ 
-			"sounds/enemies/basilisk_flee01.wav",
-			"sounds/enemies/basilisk_flee02.wav",
-			"sounds/enemies/basilisk_flee03.wav"
+		this.m.Sound[this.Const.Sound.ActorEvent.Flee] = [ //i've spelt this with a capital B as thats what the files are right now. I can't seem to change the file names on git so im changing them here otherwise this whole process crashes on start when this entity is involved. We should change B to lowercase for all .wav files at a later date - Luft, 24/10/23. Fuck me.
+			"sounds/enemies/Basilisk_flee01.wav",
+			"sounds/enemies/Basilisk_flee02.wav",
+			"sounds/enemies/Basilisk_flee03.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = [
-			"sounds/enemies/basilisk_hurt01.wav",
-			"sounds/enemies/basilisk_hurt02.wav",
-			"sounds/enemies/basilisk_hurt03.wav",
-			"sounds/enemies/basilisk_hurt04.wav",
-			"sounds/enemies/basilisk_hurt05.wav",
-			"sounds/enemies/basilisk_hurt06.wav"
+			"sounds/enemies/Basilisk_hurt01.wav",
+			"sounds/enemies/Basilisk_hurt02.wav",
+			"sounds/enemies/Basilisk_hurt03.wav",
+			"sounds/enemies/Basilisk_hurt04.wav",
+			"sounds/enemies/Basilisk_hurt05.wav",
+			"sounds/enemies/Basilisk_hurt06.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Idle] = [
-			"sounds/enemies/basilisk_idle01.wav",
-			"sounds/enemies/basilisk_idle02.wav",
-			"sounds/enemies/basilisk_idle03.wav",
-			"sounds/enemies/basilisk_idle04.wav",
-			"sounds/enemies/basilisk_idle05.wav",
-			"sounds/enemies/basilisk_idle06.wav",
-			"sounds/enemies/basilisk_idle07.wav",
-			"sounds/enemies/basilisk_idle08.wav",
-			"sounds/enemies/basilisk_idle09.wav",
-			"sounds/enemies/basilisk_idle10.wav"
+			"sounds/enemies/Basilisk_idle01.wav",
+			"sounds/enemies/Basilisk_idle02.wav",
+			"sounds/enemies/Basilisk_idle03.wav",
+			"sounds/enemies/Basilisk_idle04.wav",
+			"sounds/enemies/Basilisk_idle05.wav",
+			"sounds/enemies/Basilisk_idle06.wav",
+			"sounds/enemies/Basilisk_idle07.wav",
+			"sounds/enemies/Basilisk_idle08.wav",
+			"sounds/enemies/Basilisk_idle09.wav",
+			"sounds/enemies/Basilisk_idle10.wav"
 		];
 		this.m.Sound[this.Const.Sound.ActorEvent.Move] = [
-			"sounds/enemies/basilisk_fatigue01.wav",
-			"sounds/enemies/basilisk_fatigue02.wav",
-			"sounds/enemies/basilisk_fatigue03.wav"
+			"sounds/enemies/Basilisk_fatigue01.wav",
+			"sounds/enemies/Basilisk_fatigue02.wav",
+			"sounds/enemies/Basilisk_fatigue03.wav"
 		];
 
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
