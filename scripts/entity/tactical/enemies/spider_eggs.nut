@@ -42,7 +42,7 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 
 		// Loot only drops if the player killed it. If the egg "dies" from spawning all possible hatchlings, it will not drop loot.
 		// This is to incentivise players to go after the eggs
-		if (!_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+		if (_killer != null && (_killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals))
 		{
 			local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
 
