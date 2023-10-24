@@ -63,12 +63,12 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		this.human.create();
 
 		local writeTable = clone this.Const.RandomizedCharacterInfo["Default"];
-		writeTablesFromParam(writeTable)
+		this.writeTablesFromParam(writeTable)
 
 		if (this.m.Type in this.Const.RandomizedCharacterInfo) 
 		{
 			writeTable = clone this.Const.RandomizedCharacterInfo[this.m.Type]
-			writeTablesFromParam(writeTable)
+			this.writeTablesFromParam(writeTable)
 		}
 		else 
 		{
@@ -157,15 +157,15 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		if ("Attributes" in _table)
 		{
 			local attr = _table["Attributes"]
-			modifyAttributes(attr)
+			this.modifyAttributes(attr)
 		}
 		else if (_malus)
 		{
-			modifyAttributes(this.Const.RandomizedMalus)
+			this.modifyAttributes(this.Const.RandomizedMalus)
 		}
 
 		local tabl = _table["Tree"]
-		pickPerkFromTree(_purchaseLimit, tabl, _cap)
+		this.pickPerkFromTree(_purchaseLimit, tabl, _cap)
 
 	}
 
@@ -175,21 +175,21 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// Selects random traits lists + runs the buying functions until we run out of power 	| these do have attributes
 	function assignPerks()
 	{
-		addAll(this.m.GuaranteedPerks)
+		this.addAll(this.m.GuaranteedPerks)
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			addAll(this.m.LegendaryPerks)
+			this.addAll(this.m.LegendaryPerks)
 		}
 
 		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1)
-		pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx], this.m.EnemyLevel - 1 )
+		this.pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx], this.m.EnemyLevel - 1 )
 
 		while (this.m.PerkPower > 0 && this.m.TraitsPerkList.len() != 0)
 		{
 			local idx = this.Math.rand(0, this.m.TraitsPerkList.len() - 1)
 			local selectedTree = this.m.TraitsPerkList.remove(idx)
-			pickPerk(this.m.PerkPower, selectedTree, this.m.EnemyLevel - 1 )
+			this.pickPerk(this.m.PerkPower, selectedTree, this.m.EnemyLevel - 1 )
 		}
 	}
 
@@ -210,26 +210,26 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		local selection = this.Const.GetWeaponAndTree(this.m.WeaponsAndTrees)
 		local weaponScriptAndChances = selection[0]
-		this.m.Items.equip( this.new( weaponScriptAndChances[0] ) )
+		this.m.Items.equip( this.new( "scripts/items/weapons/" + weaponScriptAndChances[0] ) )
 		local weapon = this.getMainhandItem();
 		local weaponID = this.getMainhandItem().getID();
 
 		if (selection.len() > 1 && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			addAll(selection[1])
+			this.addAll(selection[1])
 		}
 
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
 		weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
 		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
 		{
-			pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
+			this.pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
 		}
 
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
 		if (weaponClassTree != null && weaponScriptAndChances.len() >= 3 && this.Math.rand(1, 100) <= weaponScriptAndChances[2])
 		{
-			pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
+			this.pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
 		}
 	
 	}
@@ -264,7 +264,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			{
 				return;
 			}
-			this.m.Items.equip(this.new(shield[1]))
+			this.m.Items.equip(this.new("scripts/items/shields/" + shield[1]))
 			return;
 		}
 
@@ -278,10 +278,10 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	// assignPerks() finishes spending the units PerkPower 
 	function assignRandomEquipment()
 	{
-		assignWeapon();
-		assignOutfit();
-		assignPerks(); 
-		assignShield();
+		this.assignWeapon();
+		this.assignOutfit();
+		this.assignPerks(); 
+		this.assignShield();
 	}
 
 
