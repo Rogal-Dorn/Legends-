@@ -3,7 +3,7 @@ this.legend_barbarian_horn_upgrade <- this.inherit("scripts/items/legend_armor/l
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.barbarian_horn";
+		this.m.ID = "legend_armor_upgrade.body.legend_barbarian_horn";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Horn and Bone";
 		this.m.Description = "The ceremonial adornment of a self-proclaimed barbarian king. The rare and durable horns act as an suprisingly effective armor.";

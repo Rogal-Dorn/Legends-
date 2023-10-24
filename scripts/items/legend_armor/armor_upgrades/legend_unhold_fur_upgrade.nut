@@ -3,7 +3,7 @@ this.legend_unhold_fur_upgrade <- this.inherit("scripts/items/legend_armor/legen
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.unhold_fur";
+		this.m.ID = "legend_armor_upgrade.body.legend_unhold_fur";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Unhold Fur Cloak";
 		this.m.Description = "A thick cloak made out of a Frost Unhold\'s majestic white fur. Can be worn atop any armor to make the wearer more resilient against ranged weapons.";

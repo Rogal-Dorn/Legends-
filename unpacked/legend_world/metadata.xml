@@ -4,6 +4,7 @@
 	<sprite id="legend_necromancer_swamp" ic="FF3E525F" img="world_entity\location\necromancer_swamp.png" />
 	<sprite id="legend_ranger_tower" ic="FF3E525F" img="world_entity\location\ranger_tower.png" />
 	<sprite id="legend_seer_tower" ic="FF3E525F" img="world_entity\location\seer_tower.png" />
+	<sprite id="legend_spider_nest" ic="5F5B51FF" img="world_entity\location\legend_spider_nest.png" />
 	<sprite id="legend_tournament" ic="FF3E525F" img="world_entity\location\legend_tournament.png" />
 	<sprite id="figure_player_berserker" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_berserker.png" left="-18" right="24" top="-39" bottom="9" />
 	<sprite id="figure_player_crusader" offsetY="20" ic="FF334959" width="68" height="106" img="world_entity\party\figure_player_crusader.png" left="-18" right="24" top="-39" bottom="9" />
@@ -69,6 +70,7 @@
 	<sprite id="figure_skin_ghoul_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_01.png" left="-17" right="21" top="-41" bottom="1" />
 	<sprite id="figure_skin_ghoul_02" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_skin_ghoul_02.png" left="-17" right="21" top="-41" bottom="1" />
 	<sprite id="figure_kobold_01" offsetY="20" ic="FF33383C" width="68" height="106" img="world_entity\party\figure_kobold_01.png" left="-18" right="22" top="-40" bottom="4" />
+	<sprite id="figure_basilisk_01" offsetY="20" ic="FF295956" width="68" height="106" img="world_entity\party\figure_basilisk_01.png" left="-24" right="22" top="-43" bottom="21" />
 
 	<sprite id="legend_world_amber_collector_01_upgrade" ic="FF556A6F" width="239" height="145" img="world_settlement\amber_collector_01_upgrade.png" left="-118" right="116" top="-73" bottom="63" />
 	<sprite id="legend_world_bee_keeper_01_upgrade" ic="FF324B54" width="214" height="125" img="world_settlement\bee_keeper_01_upgrade.png" left="-107" right="85" />
