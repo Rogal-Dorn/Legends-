@@ -1,5 +1,7 @@
 this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
-	m = {},
+	m = {
+		Multiplier = 0.85,
+	},
 	function create()
 	{
 		this.follower.create();
@@ -9,7 +11,7 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 		this.m.Image = "ui/campfire/legend_paymaster_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [
-			"Reduces the daily wage of each man by 15%",
+			format("Reduces the daily wage of each man by %s%%", ((1.0 - this.m.Multiplier) * 100).tostring()),
 			"Reduces the chance of desertion by 50%",
 			"Prevents men demanding more pay in events"
 		];
@@ -21,10 +23,9 @@ this.paymaster_follower <- this.inherit("scripts/retinue/follower", {
 		]);
 	}
 	
-	function onUpdate()
+	function getMultiplier()
 	{
-		if ("DailyWageMult" in this.World.Assets.m)
-			this.World.Assets.m.DailyWageMult *= 0.85;
+		return this.m.Multiplier;
 	}
 
 });
