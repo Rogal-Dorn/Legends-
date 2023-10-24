@@ -3,7 +3,7 @@ this.legend_spider_abductions_action <- this.inherit("scripts/factions/faction_a
 	function create()
 	{
 		this.m.ID = "legend_spider_abductions_action";
-		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
+		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;
 		this.faction_action.create();

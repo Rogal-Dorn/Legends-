@@ -680,6 +680,12 @@ this.asset_manager <- {
 		}
 	}
 
+	function getDailyWageMult()
+	{
+		local modifier = ::World.Retinue.hasFollower("follower.paymaster") ? ::World.Retinue.getFollower("follower.paymaster").getMultiplier() : 1.0;
+		return this.m.DailyWageMult * modifier;
+	}
+
 	function clear()
 	{
 		this.m.Stash.clear();
