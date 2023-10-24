@@ -177,7 +177,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.ShadyTree
     ], 
     WeaponsAndTrees = [
         [1, ["legend_wooden_pitchfork", 35], ["perks/perk_coup_de_grace", "perks/perk_legend_specialist_pitchfork_skill", "perks/perk_legend_specialist_pitchfork_damage"]],
@@ -268,7 +268,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         this.Const.Perks.LargeTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.ShadyTree
     ], 
     LegendaryPerks = [
         "perks/perk_relentless",
@@ -358,7 +359,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.LargeTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.ShadyTree
     ], 
     LegendaryPerks = [
         "perks/perk_relentless",
