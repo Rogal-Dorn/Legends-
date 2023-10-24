@@ -249,6 +249,7 @@ this.retinue_manager <- {
 		this.m.Slots = [];
 		this.m.Slots.resize(5);
 		this.m.OwnedFollowerIDs = [];
+		this.m.Followers = [];
 	}
 
 	function onNewDay()
@@ -324,6 +325,7 @@ this.retinue_manager <- {
 	function onDeserialize( _in )
 	{
 		this.clear();
+		this.create();
 		local numPerks = _in.readU8();
 
 		for( local i = 0; i < numPerks; i = ++i )

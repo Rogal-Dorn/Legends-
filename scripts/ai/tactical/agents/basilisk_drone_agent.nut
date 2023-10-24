@@ -3,7 +3,7 @@ this.basilisk_drone_agent <- this.inherit("scripts/ai/tactical/agent", {
 	function create()
 	{
 		this.agent.create(); 
-		this.m.ID = this.Const.AI.Agent.ID.BasiliskDroneAgent;
+		this.m.ID = this.Const.AI.Agent.ID.BasiliskDrone;
 		this.m.Properties.TargetPriorityHitchanceMult = 0.4;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.2;
 		this.m.Properties.TargetPriorityRandomMult = 0.5;
