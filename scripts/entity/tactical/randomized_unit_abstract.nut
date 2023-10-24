@@ -140,7 +140,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		foreach (p in _arr)
 		{
-			local pAdd = this.new(p)
+			local pAdd = this.new("scripts/skills/" + p)
 			if (!this.m.Skills.hasSkill(pAdd.getID()))
 			{
 				this.m.Skills.add(pAdd)
