@@ -2,6 +2,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 	m = {
 		Destination = null,
 		SpiderNestTile = null,
+		PaymentModifier = 1,
 	},
 	function create()
 	{
@@ -72,7 +73,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				if (this.Contract.m.SpiderNestTile == null || this.Contract.m.SpiderNestTile.IsOccupied)
 				{
 					local playerTile = this.World.State.getPlayer().getTile();
-					this.Contract.m.SpiderNestTile = this.getTileToSpawnLocation(playerTile, 6, 12, [
+					this.Contract.m.SpiderNestTile = this.Contract.getTileToSpawnLocation(playerTile, 6, 12, [
 						this.Const.World.TerrainType.Shore,
 						this.Const.World.TerrainType.Ocean,
 						this.Const.World.TerrainType.Mountains
@@ -85,6 +86,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				this.Contract.m.Destination = this.WeakTableRef(this.World.spawnLocation("scripts/entity/world/locations/legend_spider_nest_location", tile.Coords));
 				this.Contract.m.Destination.onSpawned();
 				this.Contract.m.Destination.setFaction(::World.FactionManager.getFactionOfType(::Const.FactionType.Beasts).getID());
+				this.Contract.m.Destination.setBanner(this.World.FactionManager.getFaction(::Const.FactionType.Beasts).getPartyBanner());
 				this.Contract.m.Destination.setDiscovered(true);
 				::World.uncoverFogOfWar(this.Contract.m.Destination.getTile().Pos, 500.0);
 				this.Contract.setScreen("Overview");
@@ -141,7 +143,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					p.CombatID = "SpiderNest";
 					p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Custom;
 					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 90 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 
 					// TODO: Balance the fight
 					// Maybe also add another "ring" of eggs between the player and the surrounding spiders
@@ -178,7 +180,8 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 								ID = ::Const.EntityType.SpiderEggs,
 								Variant = 0,
 								Script = "scripts/entity/tactical/enemies/spider_eggs",
-								Faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID()
+								Faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID(),
+								Callback = this.onEggPlaced.bindenv(this)
 							}
 							eggs.push(egg);
 						}
@@ -190,7 +193,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 						::Tactical.Entities.placePlayersAtCenter(entities); // this is from the tactical_entity_manager
 
 						// Spawn additional ring of eggs / decorations between center and circle of enemies
-						local limit = ::Math.rand(12,16)
+						local limit = ::Math.rand(20,30)
 						local wc = ::MSU.Class.WeightedContainer([
 							[3,"Egg"],
 							[5,"CrushedEgg"],
@@ -231,6 +234,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 								case "Egg":
 									local egg = ::Tactical.spawnEntity("scripts/entity/tactical/enemies/spider_eggs", tile.Coords);
 									egg.setFaction(::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+									egg.setSpawnDelay(1);
 
 									break;
 
@@ -257,6 +261,11 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					::World.Contracts.showActiveContract();
 				}
 				
+			}
+
+			function onEggPlaced( _entity, _tag)
+			{
+				_entity.setSpawnDelay(1); // add a delay so that the eggs don't spawn hatchlings on the very first turn
 			}
 
 			function onRetreatedFromCombat( _combatID )
@@ -307,7 +316,24 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 			{
 				if (this.Contract.isPlayerAt(this.Contract.m.Home))
 				{
-					this.Contract.setScreen("Success1");
+					local survivorCount = 0;
+					foreach ( g in ::World.getGuestRoster().getAll())
+					{
+						if ( g.getFlags().get("IsSpiderAbductee") )
+						{
+							survivorCount += 1
+						}
+					}
+
+					if (survivorCount > 0)
+					{
+						this.Contract.setScreen("Success1");	
+					}
+					else
+					{
+						this.Contract.setScreen("Failure1");
+					}
+					
 					this.World.Contracts.showActiveContract();
 				}
 			}
@@ -485,10 +511,59 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					text = format("You rescued %s out of %s Abducted Townsfolk", ::Const.UI.getColorized(survivorCount, survivorCount == 0 ? ::Const.UI.Color.NegativeEventValue : ::Const.UI.Color.PositiveEventValue), ::Const.UI.getColorized(this.Flags.get("NumAbductees"), ::Const.UI.Color.PositiveEventValue))
 				})
 				// TODO: scale reward based on the number of survivors who made it back?
+				if (survivorCount == this.Flags.get("NumAbductees"))
+				{
+					this.Text += "{The townsfolk you rescued step forward.%SPEECH_ON%They saved all of us! We thought we were all done for, but they kept us safe.\"\n\n\"And not a single one of us was left behind either!\"\n\n\"All shall hear of the %companyname%!\"\n\n\"Hear, hear!%SPEECH_OFF%}";
+					this.Contract.addSituation(this.new("scripts/entity/world/settlements/situations/legend_word_of_mouth_situation"), 5, this.Contract.m.Home, this.List);
+				}
 				this.List.push({
 					id = 10,
 					icon = "ui/icons/asset_money.png",
 					text = "You gain [color=" + ::Const.UI.Color.PositiveEventValue + "]" + this.Contract.m.Payment.getOnCompletion() + "[/color] Crowns"
+				});
+			}
+		});
+
+		this.m.Screens.push({
+			ID = "Failure1",
+			Title = "Upon your return...",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{PLACEHOLDER: %employer% greets you upon your return to %townname%. The hopeful look on %their_employer% face quickly turns concern when %they_employer% notices the lack of rescued townsfolk among the %companyname%.%SPEECH_ON%Wh-where are the people who were abducted? You brought them back with you, yes?%SPEECH_OFF%%randombrother% shifts %their_randombrother% weight comfortably, notably avoiding all eye contact with %employer%.\n\nAs you begin to explain what happened, %employer% cuts you off with a wave of %their_employer% hand.%SPEECH_ON%We hired you to bring those poor folks back. Surely it is not too much to ask for you to have brought at least one person back safely?%SPEECH_OFF%%randombrother% has suddenly taken great interest in the clouds above, %their_randombrother% gaze pointedly fixated towards the sky.}",
+			Image = "",
+			List = [],
+			Options = [
+				{
+					Text = "{Next time you try clearing out a Webknecht nest yourself. | It\'s a dangerous world. | At least we made it back alive ourselves. | Whoops.}",
+					function getResult()
+					{
+						::World.Assets.addMoney(::Math.round(this.Contract.m.Payment.getOnCompletion() * this.Contract.m.PaymentModifier));
+						::World.Contracts.finishActiveContract();
+						return 0;
+					}
+				}
+			],
+			function start()
+			{
+				if (::MSU.isNull(this.Contract.m.Destination))
+				{
+					this.Text += "\n\n{%employer% lets out a sigh.%SPEECH_ON%Fine, I shall pay half of the agreed payment for at least having destroyed the nest.%SPEECH_OFF%}"
+					this.Contract.m.PaymentModifier = 0.5;
+				}
+				else
+				{
+					this.Text += "\n\n{After a brief moment of consideration, %employer% hands you a paltry sum of crowns.%SPEECH_ON%I don\'t think you deserve this at all, but having risked your lives for this, perhaps you should get something for the trouble%SPEECH_OFF%}";
+					this.Contract.m.PaymentModifier = 0.1;
+				}
+
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/relations.png",
+					text = format("You rescued %s out of %s Abducted Townsfolk", ::Const.UI.getColorized(0, ::Const.UI.Color.NegativeEventValue), ::Const.UI.getColorized(this.Flags.get("NumAbductees"), ::Const.UI.Color.PositiveEventValue))
+				})
+
+				this.List.push({
+					id = 10,
+					icon = "ui/icons/asset_money.png",
+					text = "You gain [color=" + ::Const.UI.Color.PositiveEventValue + "]" + ::Math.round(this.Contract.m.Payment.getOnCompletion() * this.Contract.m.PaymentModifier) + "[/color] Crowns"
 				});
 			}
 		});
