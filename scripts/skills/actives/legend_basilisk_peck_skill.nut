@@ -1,5 +1,7 @@
-this.legend_basilisk_drone_peck_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+this.legend_basilisk_peck_skill <- this.inherit("scripts/skills/skill", {
+	m = {
+		DamageArmorMult = 1.85,
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_basilisk_drone_peck";
@@ -32,7 +34,6 @@ this.legend_basilisk_drone_peck_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.5; //ignore armour multi.
-		this.m.DamageArmorMult = 1.85;
 		this.m.HitChanceBonus = 0;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 20;
@@ -65,6 +66,7 @@ this.legend_basilisk_drone_peck_skill <- this.inherit("scripts/skills/skill", {
 			_properties.DamageMinimum = this.Math.max(_properties.DamageMinimum, 10);
 			_properties.DamageRegularMin += 50;
 			_properties.DamageRegularMax += 75;
+			_properties.DamageArmorMult *= this.m.DamageArmorMult;
 		}
 	}
 
