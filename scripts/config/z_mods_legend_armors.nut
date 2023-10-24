@@ -1824,7 +1824,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		],
 		Plate = [
 			[5, "plate/legend_armor_leather_lamellar_harness_heavy"],// 130
-			[3, "plate/legend_armor_leather_lamellar_harness_reinforced"],// 150
+			[3, "plate/legend_armor_leather_lamellar_reinforced"],// 150 
 			[1, "plate/legend_armor_leather_lamellar_heavy"],// 165
 		],
 		Cloak = [
@@ -2205,7 +2205,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/legend_armor_leather_lamellar_reinforced"], //55
+			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //55 
 		],
 		Cloak = [
 		],
@@ -2372,7 +2372,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[2, "plate/legend_armor_scale_coat_rotten"], //60
 			[1, "plate/legend_armor_scale_coat"], //120
 			[2, "plate/legend_armor_leather_lamellar_harness_heavy"], //130
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150 
 		],
 		Cloak = [
 			[1, "cloak/legend_armor_cloak_common"], //10
@@ -2408,7 +2408,7 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 			[1, "plate/legend_armor_plate_milanese"], //170
 			[1, "plate/legend_armor_plate_krastenbrust"], //170
 			[1, "plate/legend_armor_plate_triangle"], //170
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150 
 			[1, "plate/legend_armor_leather_lamellar_heavy"], //165
 		],
 		Cloak = [
@@ -2424,7 +2424,140 @@ gt.Const.LegendMod.ArmorObjs.extend([{
 		]
 	}]
 
-}]);
+},
+{
+	ID = "mercury_noble_elite_footman_00",
+	Script = "",
+	Sets = [{
+		Cloth = [[1, "cloth/legend_gambeson", 1]],
+		Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+		Plate = [[1, "plate/legend_armor_leather_scale", 1]],
+		Cloak = [[1, "cloak/tabbed_hood"]],
+		Tabard = [[1, "tabard/legend_noble_tabard"]],
+		Attachments = [[2, ""], [1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+	}]
+},
+{
+ID = "mercury_sureshot_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson", 2]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+Plate = [[1, "plate/legend_armor_leather_jacket_simple", 6]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 11]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_leather_lamellar", 1]],
+Cloak = [[1, "cloak/legend_armor_cloak_common", 21]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_02",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 11]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_leather_scale", 1], [1, "plate/legend_armor_leather_riveted_light", 1]],
+Cloak = [[1, ""], [1, "cloak/legend_shoulder_cloth", 2], [1, "cloak/fur_cloak", 1]],
+Tabard = [[1, "tabard/legend_noble_tabard", 3]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson", 2]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1]],
+Plate = [[1, "plate/legend_armor_leather_lamellar", 1]],
+Cloak = [[1, "cloak/fur_cloak", 4]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[3, ""], [1, "armor_upgrades/legend_metal_plating_upgrade", 0], [1, "armor_upgrades/legend_pauldron_swan_upgrade"], [1, "armor_upgrades/legend_armor_spiked_collar_upgrade", 0]],
+}]
+},
+{
+ID = "mercury_pollax_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_knightly_robe", 7]],
+Chain = [[1, "chain/legend_armor_mail_shirt_simple", 1]],
+Plate = [[1, "plate/legend_armor_scale_shirt", 1]],
+Cloak = [[1, "cloak/decorative_hood", 8], [1, "cloak/legend_shoulder_cloth", 2]],
+Tabard = [[1, "tabard/legend_common_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_green_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_robes", 14]],
+Chain = [[1, ""]],
+Plate = [[1, "plate/legend_armor_leather_riveted", 5]],
+Cloak = [[1, "cloak/legend_armor_cloak_heavy", 24]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_sureshot_blue_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_thick_tunic", 10]],
+Chain = [[1, ""]],
+Plate = [[1, "plate/legend_armor_leather_lamellar_harness_reinforced", 1]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[2, ""], [1, "armor_upgrades/legend_leather_shoulderguards_upgrade"]],
+}]
+},
+{
+ID = "mercury_pollax_colorful_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_tunic_noble", 9]],
+Chain = [[1, "chain/legend_armor_reinforced_mail_shirt", 1]],
+Plate = [[1, "plate/legend_armor_scale", 1], [1, "plate/legend_armor_leather_brigandine", 1]],
+Cloak = [[1, "cloak/decorative_hood"]], //8 for only black
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_pollax_colorful_01",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_tunic_noble", 9]],
+Chain = [[1, "chain/legend_armor_reinforced_worn_mail", 1]],
+Plate = [[1, "plate/legend_southern_arm_guards", 1]],
+Cloak = [[1, "cloak/decorative_hood", 8]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[1, ""]],
+}]
+},
+{
+ID = "mercury_royal_guard_00",
+Script = "",
+Sets = [{
+Cloth = [[1, "cloth/legend_gambeson_plain", 1]],
+Chain = [[1, "chain/legend_armor_hauberk_sleevless", 1], [1, "chain/legend_armor_short_mail", 1]],
+Plate = [[1, "plate/legend_armor_leather_brigandine_hardened_full", 1], [1, "plate/legend_armor_leather_riveted"], [1, "plate/legend_armor_scale_shirt", 1], [1, "plate/legend_armor_leather_brigandine", 1]],
+Cloak = [[1, ""]],
+Tabard = [[1, "tabard/legend_noble_tabard"]],
+Attachments = [[3, ""], [1, "armor_upgrades/legend_leather_neckguard_upgrade", 0], [1, "armor_upgrades/legend_double_mail_upgrade", 0], [1, "armor_upgrades/legend_leather_shoulderguards_upgrade", 0]],
+}]
+},
+]);
 
 gt.Const.LegendMod.Armors <- {};
 

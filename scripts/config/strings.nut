@@ -301,9 +301,13 @@ gt.Const.Strings.EntityName <- [
 	"Oathbringer",
 	"Manhunter Handgonner",
 	"Manhunter Veteran Handonner",
-	"Noble Guard",
-	"Man at Arms",
-	"Caravan Polearm"
+	"Royal Guard",
+	"Veteran Knight",
+	"Basilisk Drone",
+	"Caravan Polearm",
+	"Elite Footman",
+	"Pollaxe",
+	"Sureshot"
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
@@ -474,9 +478,13 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Oathbringers",
 	"Manhunter Handgonners",
 	"Manhunter Veteran Handonners",
-	"Veteran Footmen",
-	"Men at Arms",
-	"Caravan Polearms"
+	"Royal Guards",
+	"Veteran Knights",
+	"Basilisk Drones",
+	"Caravan Polearms",
+	"Elite Footmen",
+	"Pollaxes",
+	"Sureshots"
 ];
 gt.Const.Strings.Tactical.EntityName <- {
 	Boulder = "Boulder",
@@ -530,7 +538,8 @@ gt.Const.Strings.FootprintsType <- [
 	"A Kraken",
 	"Ifrits",
 	"Lindwurms",
-	"Mercenaries"
+	"Mercenaries",
+	"Basilisks"
 ];
 gt.Const.Strings.ShipNames <- [
 	"Summer Daze",

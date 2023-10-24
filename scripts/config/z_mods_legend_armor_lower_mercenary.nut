@@ -97,7 +97,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_lamellar"],
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], 
 			[1, "plate/legend_armor_leather_riveted_light"]
 		],
 		Cloak = [
@@ -123,7 +123,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_lamellar"],
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"],
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], 
 			[1, "plate/legend_armor_leather_riveted_light"]
 		],
 		Cloak = [
@@ -282,7 +282,7 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_padded"],
-			[1, "plate/legend_armor_leather_lamellar_reinforced"],
+			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], 
 			[1, "plate/legend_armor_leather_lamellar"],
 		],
 		Cloak = [

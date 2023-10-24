@@ -1,9 +1,5 @@
 this.envoy <- this.inherit("scripts/entity/tactical/player", {
 	m = {},
-	function getPlaceInFormation()
-	{
-		return 21;
-	}
 
 	function isReallyKilled( _fatalityType )
 	{
@@ -41,6 +37,7 @@ this.envoy <- this.inherit("scripts/entity/tactical/player", {
 		this.getSprite("socket").setBrush("bust_base_military");
 		this.setAppearance();
 		this.assignRandomEquipment();
+		this.setPlaceInFormation(21);
 	}
 
 	function assignRandomEquipment()

@@ -474,7 +474,87 @@ gt.Const.LegendMod.OutfitObjs.extend([
 		[1, ""]
 	]
 },
-
+{
+	ID = "noble_elite_footman_outfit_00"
+	Body = [
+		[1, "mercury_noble_elite_footman_00"]
+	],
+	Helmet = [
+		[1, "mercury_noble_elite_footman_00"],
+		[1, "mercury_noble_elite_footman_01"]
+	]
+},
+{
+	ID = "mercury_pollax_00"
+	Body = [
+		[1, "mercury_pollax_00"],
+		[1, "mercury_pollax_01"]
+	],
+	Helmet = [
+		[1, "mercury_pollax_00"],
+		[1, "mercury_pollax_01"],
+		[1, "mercury_pollax_02"],
+	]
+},
+{
+	ID = "mercury_pollax_colorful"
+	Body = [
+		[1, "mercury_pollax_colorful_00"],
+		[1, "mercury_pollax_colorful_01"]
+	],
+	Helmet = [
+		[1, "mercury_pollax_colorful"]
+	]
+},
+{
+	ID = "mercury_sureshot_00"
+	Body = [
+		[1, "mercury_sureshot_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_00"]
+	]
+},
+{
+	ID = "mercury_sureshot_brown_00"
+	Body = [
+		[1, "mercury_sureshot_01"],
+		[1, "mercury_sureshot_02"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_01"]
+	]
+},
+{
+	ID = "mercury_sureshot_blue_00"
+	Body = [
+		[1, "mercury_sureshot_blue_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_blue_00"]
+	]
+},
+{
+	ID = "mercury_sureshot_green_00"
+	Body = [
+		[1, "mercury_sureshot_green_00"]
+	],
+	Helmet = [
+		[1, "mercury_sureshot_green_00"],
+		[1, "mercury_sureshot_green_01"]
+	]
+},
+{
+	ID = "noble_footman_veteran_00"
+	Body = [
+		[1, "legend_noble_guard_armour"],
+		[1, "mercury_royal_guard_00"]
+	],
+	Helmet = [
+		[1, "mercury_royal_guard_00"],
+		[1, "mercury_royal_guard_01"]
+	]
+},
 ]); 
 
 foreach( i, v in gt.Const.LegendMod.OutfitObjs )

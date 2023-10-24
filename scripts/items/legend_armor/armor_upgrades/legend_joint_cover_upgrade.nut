@@ -3,7 +3,7 @@ this.legend_joint_cover_upgrade <- this.inherit("scripts/items/legend_armor/lege
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.joint_cover";
+		this.m.ID = "legend_armor_upgrade.body.legend_joint_cover";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Metal Joint Covers";
 		this.m.Description = "Large metal plates that cover the vulnerable shoulder joints.";

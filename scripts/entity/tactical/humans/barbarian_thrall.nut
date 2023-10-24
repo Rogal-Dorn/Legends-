@@ -126,7 +126,8 @@ this.barbarian_thrall <- this.inherit("scripts/entity/tactical/human", {
 
 		this.m.Items.equip(this.Const.World.Common.pickArmor([
 			[1, "barbarians/thick_furs_armor"],
-			[1, "barbarians/animal_hide_armor"]
+			[1, "barbarians/animal_hide_armor"],
+			[2, ""]
 		]));
 
 

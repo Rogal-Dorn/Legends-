@@ -152,7 +152,7 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 						this.Contract.setScreen("AttackRobberBaron");
 						this.World.Contracts.showActiveContract();
 					}
-					else
+					else if (!this.Flags.get("IsRobberBaronDead"))
 					{
 						local properties = this.World.State.getLocalCombatProperties(this.World.State.getPlayer().getPos());
 						properties.Music = this.Const.Music.BanditTracks;

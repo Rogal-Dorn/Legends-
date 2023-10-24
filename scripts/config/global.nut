@@ -442,8 +442,12 @@ gt.Const.EntityType <- {
 	SatoManhunterVeteranRanged = 167,
 	LegendNobleGuard = 168,
 	LegendManAtArms = 169,
+	LegendBasiliskDrone = 170,
 
-	LegendCaravanPolearm = 170
+	LegendCaravanPolearm = 171,
+	NobleEliteFootman = 172,
+	NoblePollax = 173,
+	NobleSureshot = 174
 	
 		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
@@ -673,6 +677,7 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendFencer:
 		case this.Const.EntityType.LegendNobleGuard:
 		case this.Const.EntityType.LegendManAtArms:	
+		case this.Const.EntityType.NobleEliteFootman:	
 			return this.Const.FactionType.NobleHouse;
 
 		case this.Const.EntityType.BountyHunter:
@@ -771,6 +776,7 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendGreenwoodSchratSmall:
 		case this.Const.EntityType.LegendWhiteWarwolf:
 		case this.Const.EntityType.LegendBear:
+		case this.Const.EntityType.LegendBasiliskDrone:
 			return this.Const.FactionType.Beasts;
 
 		case this.Const.EntityType.Wildman:
@@ -994,5 +1000,9 @@ gt.Const.EntityIcon <- [
 	
 	"footman_veteran_orientation", //LegendNobleGuard
 	"footman_veteran_orientation", //LegendManAtArms
-	"caravan_hand_orientation"     //CaravanPoleArm -> TODO
+	"basilisk_drone_orientation",
+	"caravan_hand_orientation",     //CaravanPoleArm -> TODO
+	"footman_veteran_orientation", //Noble Elite Footman
+	"billman_orientation", //Pollax
+	"arbalester_orientation" //Sureshot
 ];

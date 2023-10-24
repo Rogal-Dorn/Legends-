@@ -3,7 +3,7 @@ this.legend_negative_falling_apart_upgrade <- this.inherit("scripts/items/legend
 	function create()
 	{
 		this.legend_armor_upgrade.create();
-		this.m.ID = "legend_armor_upgrade.negative_falling_apart";
+		this.m.ID = "legend_armor_upgrade.body.legend_negative_falling_apart";
 		this.m.Type = this.Const.Items.ArmorUpgrades.Attachment;
 		this.m.Name = "Falling Apart";
 		this.m.Description = "";

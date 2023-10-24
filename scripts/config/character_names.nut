@@ -1820,4 +1820,4 @@ gt.Const.Strings.PeasantButcherTitles <- [
 	"The Hash-Slinging Slasher"
 ]
 
-gt.Const.Strings.BanditRabbleNames <- [ "Chat", "Twitch", "Anon" ]
+gt.Const.Strings.BanditRabbleNames <- [ "Poss" ]

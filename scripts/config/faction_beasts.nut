@@ -509,18 +509,18 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 };
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
 	XP = 700,
-	ActionPoints = 9,
-	Hitpoints = 100,
-	Bravery = 150,
+	ActionPoints = 12,
+	Hitpoints = 350,
+	Bravery = 250,
 	Stamina = 150,
-	MeleeSkill = 0,
-	RangedSkill = 0,
-	MeleeDefense = 20,
-	RangedDefense = 20,
-	Initiative = 999,
+	MeleeSkill = 75,
+	RangedSkill = 75,
+	MeleeDefense = 25,
+	RangedDefense = 25,
+	Initiative = 100,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
-	FatigueRecoveryRate = 15,
+	FatigueRecoveryRate = 20,
 	Vision = 10,
 	Armor = [
 		0,
@@ -642,6 +642,23 @@ gt.Const.Tactical.Actor.LegendHorse <- {
 		0,
 		0
 	]
+}; 
+gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
+	XP = 320,
+	ActionPoints = 10,
+	Hitpoints = 200,
+	Bravery = 90,
+	Stamina = 200,
+	MeleeSkill = 70,
+	RangedSkill = 0,
+	MeleeDefense = 15,
+	RangedDefense = 10,
+	Initiative = 80,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 30,
+	Armor = [
+		140,
+		90
+	]
 };
-
-
