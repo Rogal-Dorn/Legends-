@@ -488,8 +488,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
     ],
     WeaponsAndTrees = [
         [1, ["polehammer", 100]],
-        [2, ["two_handed_wooden_hammer",  100]],
-        [2, ["two_handed_mace", 100]],
+        [2, ["two_handed_hammer",  100]],
+        [2, ["two_handed_spiked_mace", 100]],
         [2, ["warbrand", 100]],
         [3, ["legend_swordstaff", 100]]
     ],
