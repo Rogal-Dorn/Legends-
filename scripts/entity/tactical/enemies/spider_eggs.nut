@@ -1,6 +1,8 @@
 this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 	m = {
-		Count = 0
+		Count = 0,
+		SpawnDelay = 0, // Number of combat rounds before the egg can spawn spiders; 0 = on Round 1 onwards, 1 = only on Round 2 onwards etc.
+		MaxSpawnCount = 4, // The maximum number of spider spawns allowed. Vanilla is always 4
 	},
 	function create()
 	{
@@ -36,6 +38,37 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			_tile.spawnDetail("nest_01_dead", this.Const.Tactical.DetailFlag.Corpse, flip);
 			this.spawnTerrainDropdownEffect(_tile);
+		}
+
+		// Loot only drops if the player killed it. If the egg "dies" from spawning all possible hatchlings, it will not drop loot.
+		// This is to incentivise players to go after the eggs
+		if (_killer != null && (_killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals))
+		{
+			local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+
+			for( local i = 0; i < n; i = ++i )
+			{
+				local r = this.Math.rand(1, 100);
+				local loot;
+
+				if (r <= 60)
+				{
+					// 60% chance to get Webbed Valuables
+					loot = this.new("scripts/items/loot/webbed_valuables_item");
+				}
+				else if (r <= 90)
+				{
+					// 30% chance to get Spider Silk
+					loot = this.new("scripts/items/misc/spider_silk_item");
+				}
+				else
+				{
+					// 10% chance to get nothing	
+				}
+
+				loot.drop(_tile);
+			}
+
 		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
@@ -89,6 +122,11 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 
 	function onSpawn( _tile )
 	{
+		if (::Tactical.TurnSequenceBar.getCurrentRound() < 1 + this.getSpawnDelay())
+		{
+			return;
+		}
+
 		if (_tile.IsEmpty)
 		{
 			return;
@@ -132,6 +170,7 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 			spawn.setSize(this.Math.rand(60, 75) * 0.01);
 			spawn.setFaction(this.getFaction());
 			spawn.m.XP = spawn.m.XP / 2;
+			spawn.setName(spawn.getName() + " Hatchling");
 			local allies = this.Tactical.Entities.getInstancesOfFaction(this.getFaction());
 
 			foreach( a in allies )
@@ -146,7 +185,7 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 			++this.m.Count;
 		}
 
-		if (this.m.Count < 4)
+		if (this.m.Count < this.getMaxSpawnCount())
 		{
 			this.registerSpawnEvent();
 		}
@@ -154,6 +193,26 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 		{
 			this.killSilently();
 		}
+	}
+
+	function getSpawnDelay()
+	{
+		return this.m.SpawnDelay;
+	}
+
+	function setSpawnDelay( _turns )
+	{
+		this.m.SpawnDelay = _turns;
+	}
+
+	function getMaxSpawnCount()
+	{
+		return this.m.MaxSpawnCount;
+	}
+
+	function setMaxSpawnCount( _int )
+	{
+		this.m.MaxSpawnCount = _int;
 	}
 
 });
