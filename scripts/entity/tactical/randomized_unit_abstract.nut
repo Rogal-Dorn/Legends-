@@ -45,7 +45,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		foreach(k, v in _table)
 		{
-			this.m[k] = v
+			this.m[k] = v;
 		}
 	}
 
@@ -63,16 +63,16 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		this.human.create();
 
 		local writeTable = clone this.Const.RandomizedCharacterInfo["Default"];
-		this.writeTablesFromParam(writeTable)
+		this.writeTablesFromParam(writeTable);
 
 		if (this.m.Type in this.Const.RandomizedCharacterInfo) 
 		{
-			writeTable = clone this.Const.RandomizedCharacterInfo[this.m.Type]
-			this.writeTablesFromParam(writeTable)
+			writeTable = clone this.Const.RandomizedCharacterInfo[this.m.Type];
+			this.writeTablesFromParam(writeTable);
 		}
 		else 
 		{
-			this.logWarning("Entity type didnt exist: " + this.m.Type)
+			this.logWarning("Entity type didnt exist: " + this.m.Type);
 		}
 		
 
@@ -83,8 +83,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			this.m.PerkPower -= 1;
 		}
 
-		if (::Math.rand(0, 3) == 0) { this.setFemale() }
-        else { this.setMale() } 
+		if (::Math.rand(0, 3) == 0) { this.setFemale(); }
+        else { this.setMale(); } 
 	}
 
 
@@ -92,14 +92,14 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function modifyAttributes( _attributes )
 	{
 		local b = this.m.BaseProperties;
-		b.Hitpoints += this.Math.rand(_attributes.Hitpoints[0], _attributes.Hitpoints[1])
-		b.Bravery += this.Math.rand(_attributes.Bravery[0], _attributes.Bravery[1])
-		b.Stamina += this.Math.rand(_attributes.Stamina[0], _attributes.Stamina[1])
-		b.MeleeSkill += this.Math.rand(_attributes.MeleeSkill[0], _attributes.MeleeSkill[1])
-		b.RangedSkill += this.Math.rand(_attributes.RangedSkill[0], _attributes.RangedSkill[1])
-		b.MeleeDefense += this.Math.rand(_attributes.MeleeDefense[0], _attributes.MeleeDefense[1])
-		b.RangedDefense += this.Math.rand(_attributes.RangedDefense[0], _attributes.RangedDefense[1])
-		b.Initiative += this.Math.rand(_attributes.Initiative[0], _attributes.Initiative[1])
+		b.Hitpoints += this.Math.rand(_attributes.Hitpoints[0], _attributes.Hitpoints[1]);
+		b.Bravery += this.Math.rand(_attributes.Bravery[0], _attributes.Bravery[1]);
+		b.Stamina += this.Math.rand(_attributes.Stamina[0], _attributes.Stamina[1]);
+		b.MeleeSkill += this.Math.rand(_attributes.MeleeSkill[0], _attributes.MeleeSkill[1]);
+		b.RangedSkill += this.Math.rand(_attributes.RangedSkill[0], _attributes.RangedSkill[1]);
+		b.MeleeDefense += this.Math.rand(_attributes.MeleeDefense[0], _attributes.MeleeDefense[1]);
+		b.RangedDefense += this.Math.rand(_attributes.RangedDefense[0], _attributes.RangedDefense[1]);
+		b.Initiative += this.Math.rand(_attributes.Initiative[0], _attributes.Initiative[1]);
 	}
 
 	// _purchaseLimit	| How many perks a unit can actually purchase, the total cost it could purchase
@@ -109,8 +109,8 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	function pickPerkFromTree( _purchaseLimit, _tree, _cap = 6)
 	{
 		// Sets the cap to either 6 (maximum of the player tree) | OR | sets the cap to the tree's length, assuming it's missing the last row (some trees randomly are)
-		if ( _cap > 6 ) { _cap = 6 }
-		if ( _cap > _tree.len() ) { _cap = _tree.len() - 1 } 
+		if ( _cap > 6 ) { _cap = 6; }
+		if ( _cap > _tree.len() ) { _cap = _tree.len() - 1; } 
 
 		// We purchase as much as we can from any given tree that got piped in, i.e. we go deeper into a tree of perks than we do wide
 		// We check the perkdef's numeric id, and ask the PerkDefObject tree (array?) to give us the actual perk's tree
@@ -122,13 +122,13 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			if ( row.len() != 0 && _purchaseLimit >= row.len() && this.m.PerkPower >= row.len() ) {
 				foreach (perkDefNum in row) //Purchases every perk in the row, if there are multiple
 				{
-					local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum]
-					local toAdd = this.new(fullDef.Script)
+					local fullDef = clone this.Const.Perks.PerkDefObjects[perkDefNum];
+					local toAdd = this.new(fullDef.Script);
 					if (!this.m.Skills.hasSkill(toAdd.getID()))
 					{
-						this.m.Skills.add(toAdd)
-						_purchaseLimit--
-						this.m.PerkPower--
+						this.m.Skills.add(toAdd);
+						_purchaseLimit--;
+						this.m.PerkPower--;
 					}
 				}	
 			}
@@ -140,10 +140,10 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		foreach (p in _arr)
 		{
-			local pAdd = this.new("scripts/skills/" + p)
+			local pAdd = this.new("scripts/skills/" + p);
 			if (!this.m.Skills.hasSkill(pAdd.getID()))
 			{
-				this.m.Skills.add(pAdd)
+				this.m.Skills.add(pAdd);
 			}
 		}
 	}
@@ -156,16 +156,16 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 	{
 		if ("Attributes" in _table)
 		{
-			local attr = _table["Attributes"]
-			this.modifyAttributes(attr)
+			local attr = _table["Attributes"];
+			this.modifyAttributes(attr);
 		}
 		else if (_malus)
 		{
-			this.modifyAttributes(this.Const.RandomizedMalus)
+			this.modifyAttributes(this.Const.RandomizedMalus);
 		}
 
-		local tabl = _table["Tree"]
-		this.pickPerkFromTree(_purchaseLimit, tabl, _cap)
+		local tabl = _table["Tree"];
+		this.pickPerkFromTree(_purchaseLimit, tabl, _cap);
 
 	}
 
@@ -179,17 +179,17 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			this.addAll(this.m.LegendaryPerks)
+			this.addAll(this.m.LegendaryPerks);
 		}
 
-		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1)
-		this.pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx], this.m.EnemyLevel - 1 )
+		local idx = this.Math.rand(0, this.m.DefensePerkList.len() - 1);
+		this.pickPerk(this.m.PerkPower, this.m.DefensePerkList[idx], this.m.EnemyLevel - 1 );
 
 		while (this.m.PerkPower > 0 && this.m.TraitsPerkList.len() != 0)
 		{
-			local idx = this.Math.rand(0, this.m.TraitsPerkList.len() - 1)
-			local selectedTree = this.m.TraitsPerkList.remove(idx)
-			this.pickPerk(this.m.PerkPower, selectedTree, this.m.EnemyLevel - 1 )
+			local idx = this.Math.rand(0, this.m.TraitsPerkList.len() - 1);
+			local selectedTree = this.m.TraitsPerkList.remove(idx);
+			this.pickPerk(this.m.PerkPower, selectedTree, this.m.EnemyLevel - 1 );
 		}
 	}
 
@@ -216,20 +216,20 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 
 		if (selection.len() > 1 && "Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			this.addAll(selection[1])
+			this.addAll(selection[1]);
 		}
 
 		local weaponPerkTree = this.Const.GetWeaponPerkTree(weapon)
 		weaponPerkTree = weaponPerkTree[this.Math.rand(0, weaponPerkTree.len() - 1)]
 		if (weaponPerkTree != null && weaponScriptAndChances.len() >= 2 && this.Math.rand(1, 100) <= weaponScriptAndChances[1])
 		{
-			this.pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1)
+			this.pickPerk( this.m.PerkPower,  weaponPerkTree, this.m.EnemyLevel - 1);
 		}
 
 		local weaponClassTree = this.Const.GetWeaponClassTree(weapon)
 		if (weaponClassTree != null && weaponScriptAndChances.len() >= 3 && this.Math.rand(1, 100) <= weaponScriptAndChances[2])
 		{
-			this.pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true)
+			this.pickPerk( this.m.PerkPower,  weaponClassTree, this.m.EnemyLevel - 1, true);
 		}
 	
 	}
@@ -264,10 +264,33 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 			{
 				return;
 			}
-			this.m.Items.equip(this.new("scripts/items/shields/" + shield[1]))
+			this.m.Items.equip(this.new("scripts/items/shields/" + shield[1]));
 			return;
 		}
 
+	}
+
+	// Assigns ammo if we have a bow or xbow or gun
+	// Will not give any ammo if it's not a ranged weapon (this is primarily for the spear-gun thing that's a firearm but not a rangedweapon, but helps for modded items maybe)
+	function assignAmmo()
+	{
+		local weapon = this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (weapon == null) { return; }
+		if ( !(weapon.isItemType(this.Const.Items.ItemType.RangedWeapon)) ) { return; }
+
+
+		if (weapon.isWeaponType(this.Const.Items.WeaponType.Bow))
+		{
+			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		}
+		else if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow))
+		{
+			this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
+		}
+		else if (weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
+		{
+			this.m.Items.equip(this.new("scripts/items/ammo/powder_bag"));
+		}
 	}
 
 	// Function generally doesn't need to be overridden in child files
@@ -282,6 +305,7 @@ this.randomized_unit_abstract <- this.inherit("scripts/entity/tactical/human", {
 		this.assignOutfit();
 		this.assignPerks(); 
 		this.assignShield();
+		this.assignAmmo();
 	}
 
 
