@@ -65,8 +65,7 @@ this.bandit_poacher <- this.inherit("scripts/entity/tactical/randomized_unit_abs
 	function assignRandomEquipment()
 	{
 		this.randomized_unit_abstract.assignRandomEquipment()
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"))
-		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"))
+		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 	}
 	// function assignRandomEquipment()
 	// {
