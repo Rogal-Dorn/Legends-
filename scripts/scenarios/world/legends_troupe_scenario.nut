@@ -36,7 +36,7 @@ this.legends_troupe_scenario <- this.inherit("scripts/scenarios/world/starting_s
 		bros[0].m.Level = 3;
 		bros[0].setPlaceInFormation(13);
 		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_leap"));
-		bros[1].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
+		bros[0].getSkills().add(this.new("scripts/skills/perks/perk_legend_push"));
 		bros[0].m.PerkPointsSpent += 1;
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
