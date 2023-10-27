@@ -66,7 +66,11 @@ this.spider_eggs <- this.inherit("scripts/entity/tactical/actor", {
 					// 10% chance to get nothing	
 				}
 
-				loot.drop(_tile);
+				if (loot != null)
+				{
+					loot.drop(_tile);	
+				}
+				
 			}
 
 		}
