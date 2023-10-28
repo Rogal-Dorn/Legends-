@@ -11,6 +11,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Description = "Brigands have stolen a local artifact and the city is in an outrage. Follow their tracks, leave no survivors, and return the city\'s relic.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		local orig = this.getDifficultyMult();
+		this.m.DifficultyMult = 1.75;
 		if (this.getDifficultyMult() >= 1.45 && this.getDifficultyMult() <= 1.65) //lazy man's tweak to make the 4 skull return item contract a bit harder
 		{
 			local dm = this.Math.rand(155, 175) * 0.01;

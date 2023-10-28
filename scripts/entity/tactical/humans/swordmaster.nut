@@ -10,7 +10,7 @@ this.swordmaster <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.TidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Tidy;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent_less_flanking");
 		this.m.AIAgent.setActor(this);
 	}
 
