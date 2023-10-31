@@ -68,7 +68,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 		this.m.Start = settlements[0];
 		this.m.Dest = settlements[1];
-		this.m.Score = 5;
+		this.m.Score = 5 + (isNobleHouse ? this.m.Start.getSize() - 1 : 0);
 	}
 
 	function getFactionSettlememts( _faction, _onlyMilitary = false )
