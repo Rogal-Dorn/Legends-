@@ -3,6 +3,14 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		Start = null,
 		Dest = null
 	},
+	function setFaction( _f )
+	{
+		this.faction_action.setFaction(_f);
+
+		if (_f.getType() == this.Const.FactionType.NobleHouse)
+			this.m.Cooldown = this.World.getTime().SecondsPerDay * 2;
+	}
+
 	function create()
 	{
 		this.m.ID = "send_caravan_action";
@@ -23,12 +31,14 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 			return;
 		}
 
-		if (_faction.getUnits().len() >= 1)
+		local isNobleHouse = _faction.getType() == this.Const.FactionType.NobleHouse;
+
+		if (!isNobleHouse && _faction.getUnits().len() >= 1)
 		{
 			return;
 		}
 
-		local mySettlements = _faction.getSettlements();
+		local mySettlements = this.getFactionSettlememts(_faction, isNobleHouse);
 		local allSettlements = this.World.EntityManager.getSettlements();
 		local destinations;
 
@@ -61,6 +71,27 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		this.m.Score = 5;
 	}
 
+	function getFactionSettlememts( _faction, _onlyMilitary = false )
+	{
+		if (!_onlyMilitary)
+			return _faction.getSettlements();
+
+		local ret = [];
+
+		foreach( s in _faction.getSettlements() )
+		{
+			if (!s.isMilitary())
+				continue;
+
+			ret.push(s);
+		}
+
+		if (ret.len() == 0)
+			return _faction.getSettlements();
+
+		return ret;
+	}
+
 	function onClear()
 	{
 		this.m.Start = null;
@@ -75,7 +106,6 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 	function getResourcesForParty( _settlement, _faction )
 	{
 		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
-
 
 		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(90, 137) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
 
