@@ -140,13 +140,14 @@ gt.Const.World.Common.WorldEconomy <- {
 
 	function calculateTradingBudget( _settlement, _min = -1, _max = -1 )
 	{
-		local mult = 5.0 * (_settlement.getSize() + 1);
+		local isMilitary = _settlement.isMilitary();
+		local mult = 6.0 * (_settlement.getSize() + 1);
 
-		if (_settlement.isMilitary()) mult *= 1.75;
+		if (isMilitary) mult *= 2.0;
 
-		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 1.75;
+		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 2.0;
 
-		local budget = ::Math.round(::Math.rand(50, 75) * mult);
+		local budget = ::Math.round(::Math.rand(50, 75 + (!isMilitary ? 10 : 0)) * mult);
 
 		if (_min != -1) budget = ::Math.max(_min, budget); // budget shouldn't be smaller than _min
 
