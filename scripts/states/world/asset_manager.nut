@@ -1022,6 +1022,12 @@ this.asset_manager <- {
 				mood = mood + bro.getMoodState();
 			}
 
+			local settlements = ::World.EntityManager.getSettlements();
+			foreach( settlement in settlements )
+			{
+				settlement.onNewDay();
+			}
+
 			this.Sound.play(this.Const.Sound.MoneyTransaction[this.Math.rand(0, this.Const.Sound.MoneyTransaction.len() - 1)], this.Const.Sound.Volume.Inventory);
 			this.m.AverageMoodState = this.Math.round(mood / roster.len());
 			_worldState.updateTopbarAssets();
@@ -1201,6 +1207,7 @@ this.asset_manager <- {
 		if (this.World.getTime().Days > this.m.LastDayResourcesUpdated + 7)
 		{
 			this.m.LastDayResourcesUpdated = this.World.getTime().Days;
+			::Legends.Mod.Debug.printLog(format("Day %s: adding resources to each settlement",::World.getTime().Days.tostring()), ::Const.LegendMod.Debug.Flags.WorldEconomy);
 			foreach( t in this.World.EntityManager.getSettlements() )
 			{
 				t.addNewResources();

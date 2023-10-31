@@ -50,7 +50,9 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		IsCoastal = false,
 		IsMilitary = false,
 		IsActive = true,
-		IsUpgrading = false
+		IsUpgrading = false,
+		CaravanReceivedHistory = array(7,[]), // 7-day rolling window recording all caravans received
+		CaravanSentHistory = array(7,[]), // 7-day rolling window recording all caravans sent
 	},
 	function setUpgrading( _v )
 	{
@@ -162,6 +164,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	}
 
 	function getSize()
+	{
+		return this.m.Size;
+	}
+
+	// It will be easier to search for usages of "getSettlementTier" rather than "getSize"
+	function getSettlementTier()
 	{
 		return this.m.Size;
 	}
@@ -2856,6 +2864,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		resources = resources + (this.m.HousesTiles.len() * 2);
 		// this.logWarning("Adding a total of: " + resources + " : to a town that has " + this.m.HousesTiles.len() + " total tiles.")
+		::Legends.Mod.Debug.printLog(format("%s adding %s resources",::Const.LegendMod.Debug.Utils.settlementSummaryStr(this, true, true),resources.tostring()), ::Const.LegendMod.Debug.Flags.WorldEconomy);
 		return resources;
 	}
 
@@ -2868,6 +2877,44 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 
 		this.addWorldEconomyResources(this.getNewResources());
 	}
+
+	function getCaravanReceivedHistory()
+	{
+		return this.m.CaravanReceivedHistory;
+	}
+
+	function getCaravanSentHistory()
+	{
+		return this.m.CaravanSentHistory;
+	}
+
+	function updateCaravanReceivedHistory( _data )
+	{
+		this.m.CaravanReceivedHistory[0].push(_data);
+	}
+
+	function updateCaravanSentHistory( _data )
+	{
+		this.m.CaravanSentHistory[0].push( _data );
+	}
+
+	function onNewDay()
+	{
+		this.refreshCaravanHistory();
+	}
+
+	function refreshCaravanHistory()
+	{
+		this.updateRollingWindow(this.getCaravanReceivedHistory());
+		this.updateRollingWindow(this.getCaravanSentHistory());
+	}
+
+	function updateRollingWindow( _arr )
+	{
+		_arr.pop();
+		_arr.insert(0,[]);
+	}
+
 	}
 
 	function onSerialize( _out )
@@ -2950,6 +2997,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.m.ImportedGoodsInventory.onSerialize(_out);
+		::MSU.Utils.serialize(this.m.CaravanReceivedHistory, _out);
+		::MSU.Utils.serialize(this.m.CaravanSentHistory, _out);
 	}
 
 	function onDeserialize( _in )
@@ -3062,6 +3111,12 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.m.ImportedGoodsInventory.onDeserialize(_in);
+		if ( ::LegendsWorldEconomyUpdateV1 ) // TODO: change this to version check once the release is confirmed
+		{
+			this.m.CaravanReceivedHistory = ::MSU.Utils.deserialize(_in);
+			this.m.CaravanSentHistory = ::MSU.Utils.deserialize(_in);
+		}
+		
 		this.updateSprites();
 	}
 
