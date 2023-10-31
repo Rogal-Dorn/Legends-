@@ -18,8 +18,9 @@ gt.Const.World.Common.WorldEconomy <- {
 	// the maximum stash size of 'this.m.ImportedGoodsInventory' of any settlement
 	ImportedGoodsInventorySizeMax = 50,
 
-	// price of filler goods, the raw price of bread is ~52 crowns, so this is a bit overpriced 
-	PriceOfBread = 60,
+	// price of filler goods, the raw price of bread is ~52 crowns, so this is a bit overpriced
+	// also net cost 50 so funnily it's not a bad filler goods
+	PriceOfFillerGoods = 55,
 
 	// for brigand_follower.nut retiune
 	AmountOfLeakedCaravanInventoryInfo = 3,
@@ -53,75 +54,108 @@ gt.Const.World.Common.WorldEconomy <- {
 		{
 			Weight = 2,
 			Name = "TradeGoods",
+			PreferShops = [],
 			PreferNum = 2,
 			PreferMax = 5,
 			function IsValid( _item, _shopID )
 			{
-				return _item.isItemType(this.Const.Items.ItemType.TradeGood);
+				if (!_item.isItemType(this.Const.Items.ItemType.TradeGood))
+					return 0;
+
+				return ::Math.floor(_item.getValue() * 0.67);
 			}
 		},
 		{
 			Weight = 1,
 			Name = "Foods",
+			PreferShops = [],
 			PreferNum = 5,
 			PreferMax = 20,
 			function IsValid( _item, _shopID )
 			{
-				return _item.isItemType(this.Const.Items.ItemType.Food);
+				if (!_item.isItemType(this.Const.Items.ItemType.Food))
+					return 0;
+
+				return _item.getValue();
 			}
 		},
 		{
 			Weight = 1,
 			Name = "Supplies",
+			PreferShops = [],
 			PreferNum = 3,
 			PreferMax = 10,
 			function IsValid( _item, _shopID )
 			{
-				return _item.isItemType(this.Const.Items.ItemType.Supply);
+				if (!_item.isItemType(this.Const.Items.ItemType.Supply))
+					return 0;
+
+				return ::Math.floor(_item.getValue() * 1.1);
 			}
 		},
 		{
 			Weight = 1,
 			Name = "Weapons",
+			PreferShops = ["building.weaponsmith", "building.fletcher"],
 			PreferNum = 2,
 			PreferMax = 7,
 			function IsValid( _item, _shopID )
 			{
-				if (_shopID != "building.weaponsmith" && _shopID != "building.fletcher") return false;
+				if (_item.isItemType(this.Const.Items.ItemType.Ammo))
+					return _item.getValue() * 1.25;
 
-				return _item.isItemType(this.Const.Items.ItemType.Ammo) || _item.isItemType(this.Const.Items.ItemType.Weapon);
+				if (_item.isItemType(this.Const.Items.ItemType.Weapon))
+					return _item.getValue() * 0.75;
+
+				return 0;
 			}
 		},
 		{
 			Weight = 1,
 			Name = "Armors",
+			PreferShops = ["building.armorsmith", "building.marketplace"],
 			PreferNum = 2,
 			PreferMax = 7,
 			function IsValid( _item, _shopID )
 			{
-				if (_shopID != "building.armorsmith" && _shopID != "building.marketplace") return false;
+				if (_item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet))
+					return _item.getValue() * 0.80;
 
-				return _item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet) || _item.isItemType(this.Const.Items.ItemType.Shield);
+				if (_item.isItemType(this.Const.Items.ItemType.Shield))
+					return _item.getValue();
+
+				return 0;
 			},
 		},
 		{
 			Weight = 2,
 			Name = "Exotic",
+			PreferShops = ["building.alchemist", "building.kennel"],
 			PreferNum = 2,
 			PreferMax = 10,
 			function IsValid( _item, _shopID )
 			{
-				return _shopID == "building.alchemist" || _shopID == "building.kennel";
+				if (_shopID == "building.alchemist")
+				{
+					if (_item.isUsable())
+						return _item.getValue() * 0.67;
+
+					if (_item.isItemType(this.Const.Items.ItemType.Tool))
+						return _item.getValue() * 0.5;
+				}
+
+				return _item.getValue();
 			}
 		},
 		{
 			Weight = 1,
 			Name = "Misc",
+			PreferShops = [],
 			PreferNum = 2,
-			PreferMax = 8,
+			PreferMax = 9,
 			function IsValid( _item, _shopID )
 			{
-				return _item.getValue() >= 150;
+				return _item.getValue() >= 200 ? _item.getValue() : 0;
 			}
 		},
 	],
@@ -191,7 +225,7 @@ gt.Const.World.Common.WorldEconomy <- {
 	{
 		local decisions = this.compileTradingDecision(_settlement, _budget);
 
-		if (decisions.Potential.len() == 0) return this.fillWithBreads(_settlement, _budget);
+		if (decisions.Potential.len() == 0) return this.addFillerGoods(_settlement, _budget, null, false, "tools/throwing_net");
 		
 		local name = this.getWeightContainer(decisions.Potential).roll();
 		local result;
@@ -215,7 +249,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		result.Potential <- [];
 		result.ItemList <- [];
 
-		// 1% to just straight up exporting bread \(>-<)/ instead of compiling any data
+		// 1% to just straight up exporting nets \(>-<)/ instead of compiling any data
 		if (::Math.rand(1, 100) == 1) return result;
 
 		local acceptableBudget = ::Math.round(_budget * (1.0 + this.OverBudgetPct));
@@ -235,27 +269,30 @@ gt.Const.World.Common.WorldEconomy <- {
 			local stash = building.getStash();
 			local shopID = building.getID();
 
-			if (stash == null) continue;
+			if (stash == null) 
+				continue;
 
-			foreach(_item in stash.getItems())
+			foreach(d in this.Decisions)
 			{
-				if (_item == null) continue;
+				if (d.PreferShops.len() > 0 && d.PreferShops.find(shopID) == null)
+					continue;
 
-				foreach(d in this.Decisions)
+				foreach(_item in stash.getItems())
 				{
-					// check if the item meets the condition of this 'choice of goods'
-					if (!d.IsValid(_item, shopID)) continue;
+					if (_item == null) 
+						continue;
 
-					local v = _item.getValue();
+					local v = d.IsValid(_item, shopID);
 
-					// a single item should not cost a larget portion of the available budget
-					if (v >= tooExpensiveLimit) continue;
+					if (v < 1 || // check if the item meets the condition of this 'choice of goods'
+					 v >= tooExpensiveLimit) // a single item should not cost a larget portion of the available budget
+						continue;
 
 					result.ItemList[this.DecisionID[d.Name]].Total += v;
 					result.ItemList[this.DecisionID[d.Name]].Items.push({
 						Item = _item,
 						Stash = stash,
-					})
+					});
 				}
 			}
 		}
@@ -293,11 +330,11 @@ gt.Const.World.Common.WorldEconomy <- {
 		return result;
 	}
 
-	function fillWithBreads( _settlement, _budget, _target = null, _isFull = false )
+	function addFillerGoods( _settlement, _budget, _target = null, _isFull = false, _itemScript = "supplies/bread_item" )
 	{
 		local max = 15;
 
-		if (_target == null) _target = { Items = [], Value = 0, Decision = "Breads" };
+		if (_target == null) _target = { Items = [], Value = 0, Decision = "FillerGoods" };
 		else max -= _target.Items.len();
 
 		if (max <= 0) return _target;
@@ -308,8 +345,8 @@ gt.Const.World.Common.WorldEconomy <- {
 
 		for (local i = 0; i < num; ++i)
 		{
-			_target.Items.push(::new("scripts/items/supplies/bread_item"));
-			_target.Value += this.PriceOfBread;
+			_target.Items.push(::new("scripts/items/" + _itemScript));
+			_target.Value += this.PriceOfFillerGoods;
 		}
 
 		return _target;
@@ -390,7 +427,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		}
 
 		// spend the last remaining budget for breads, who wouldn't want bread :)
-		if (_budget >= this.PriceOfBread) this.fillWithBreads(_settlement, _budget, result, result.Items.len() >= this.PreferProduceNumMax);
+		if (_budget >= this.PriceOfFillerGoods) this.addFillerGoods(_settlement, _budget, result, result.Items.len() >= this.PreferProduceNumMax);
 
 		return result;
 	}
@@ -444,7 +481,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		}
 
 		// spend the last remaining budget for breads, who wouldn't want bread :)
-		if (_budget >= this.PriceOfBread) this.fillWithBreads(_settlement, _budget, result, data.Items.len() >= this.Decisions[_index].PreferMax);
+		if (_budget >= this.PriceOfFillerGoods) this.addFillerGoods(_settlement, _budget, result, data.Items.len() >= this.Decisions[_index].PreferMax);
 
 		return result;
 	}
