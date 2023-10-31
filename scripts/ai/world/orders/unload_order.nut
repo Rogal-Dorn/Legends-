@@ -26,7 +26,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					local profit = _entity.getFlags().getAsInt("CaravanProfit");
 					
 					// new functions
-					origin.addResources(investment + profit);
+					origin.addWorldEconomyResources(investment + profit);
 
 					// old functions
 					//origin.setResources(origin.getResources() + totalPayment);

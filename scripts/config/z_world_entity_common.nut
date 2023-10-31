@@ -164,7 +164,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		local finance = this.getExpectedFinancialReport(_settlement);
 
 		// spend resources
-		_settlement.addResources(-finance.Investment);
+		_settlement.addWorldEconomyResources(-finance.Investment);
 
 		// set origin settlement
 		_party.setOrigin(_settlement);

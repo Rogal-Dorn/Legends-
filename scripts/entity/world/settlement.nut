@@ -538,10 +538,18 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return ret;
 	}
 
+	// Use addWorldEconomyResources instead so it is easier to search for usages. Keeping this here for compatibility
 	function addResources( _v )
 	{
 		this.setResources(this.getResources() + _v);
 	}
+
+	// Use this instead of addResources so it is easier to search for usages
+	function addWorldEconomyResources( _v )
+	{
+		this.setResources(this.getResources() + _v);
+	}
+
 
 	function getWealth()
 	{
@@ -2858,7 +2866,8 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 			return;
 		}
 
-		this.addResources(this.getNewResources());
+		this.addWorldEconomyResources(this.getNewResources());
+	}
 	}
 
 	function onSerialize( _out )
