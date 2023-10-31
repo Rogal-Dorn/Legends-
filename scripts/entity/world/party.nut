@@ -229,6 +229,21 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 		local f = this.World.FactionManager.getFaction(this.getFaction());
 
+		if (this.getFlags().has("CaravanOrigin") && f != null)
+		{
+			local town = this.World.getEntityByID(this.getFlags().get("CaravanOrigin"));
+
+			if (town != null)
+			{
+				ret.push({
+					id = 50,
+					type = "hint",
+					icon = f.getUIBanner(),
+					text = "A caravan from " + town.getName()
+				});
+			}
+		}
+
 		if (this.m.Flags.get("IsMercenaries") == true)
 		{
 			ret.push({
