@@ -1332,6 +1332,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	// A helper function to filter out any existing attached locations from possible candidates in buildNewLocation()
 	function filterNewLocation( _items )
 	{
+		// ::MSU.Log.printData(_items.map(function(item){return item[1].Script;}));
 		local ret = clone _items;
 		local existingLocations = this.getAttachedLocations().map(function(location){ return location.ClassName; });
 		local garbage = [];
@@ -1354,7 +1355,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		// Just in case all candidate locations have already be built, then allow duplicates
-		if ( ret == null || ret == [] )
+		if ( ret == null || ret.len() < 1 )
 		{
 			ret = _items;
 		}
