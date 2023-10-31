@@ -107,14 +107,24 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 	{
 		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
 
-		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(90, 137) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
+		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(80, 127) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
 
-		return (this.Math.rand(60, 110) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.5
+		return (this.Math.rand(45, 95) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.5
+	}
+
+	function convertBudgetToMult( _budget )
+	{
+		if (_budget == 0)
+			return 1.0;
+
+		return 1.0 + this.Math.floor(_budget / 1000) * 0.115;
 	}
 
 	function onExecute( _faction )
 	{
-		local party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.pickSpawnList(this.m.Start, _faction), this.getResourcesForParty(this.m.Start, _faction)); 
+		local budget = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() ? 0 : ::Const.World.Common.WorldEconomy.calculateTradingBudget(this.m.Start);
+		local mult = this.convertBudgetToMult(budget);
+		local party = _faction.spawnEntity(this.m.Start.getTile(), "Trading Caravan", false, this.pickSpawnList(this.m.Start, _faction), this.getResourcesForParty(this.m.Start, _faction) * mult); 
 		party.getSprite("banner").Visible = false;
 		party.getSprite("base").Visible = false;
 		party.setMirrored(true);
@@ -135,7 +145,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		// yes world economy
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			::Const.World.Common.WorldEconomy.setupTrade(party, this.m.Start, this.m.Dest);
+			::Const.World.Common.WorldEconomy.setupTrade(party, this.m.Start, this.m.Dest, budget);
 		}
 		// no world economy
 		else
