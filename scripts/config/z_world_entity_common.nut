@@ -45,7 +45,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		Weapons   = 3,
 		Armors   = 4,
 	    Exotic  = 5,
-	    Misc   = 6
+	    Misc   = 6,
 		COUNT = 7,
 	},
 
@@ -440,7 +440,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		local isOverBudget = false;
 		local tries = 0;
 
-		while(tries < 50 && _budget > data.Average)
+		while(tries < 50 && _budget > data.Average && data.Items.len() > 0)
 		{
 			local _i = data.Items.remove(::Math.rand(0, data.Items.len() - 1));
 			local v = _i.Item.getValue();
@@ -471,9 +471,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			// reduces the remaining budget
 			_budget -= v;
 
-			if (data.Items.len() >= this.Decisions[_index].PreferMax) break;
-
-			if (data.Items.len() == 0) break;
+			if (result.Items.len() >= this.Decisions[_index].PreferMax) break;
 
 			data.Total -= v;
 			// recalculate the average price
@@ -481,7 +479,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		}
 
 		// spend the last remaining budget for breads, who wouldn't want bread :)
-		if (_budget >= this.PriceOfFillerGoods) this.addFillerGoods(_settlement, _budget, result, data.Items.len() >= this.Decisions[_index].PreferMax);
+		if (_budget >= this.PriceOfFillerGoods) this.addFillerGoods(_settlement, _budget, result, result.Items.len() >= this.Decisions[_index].PreferMax);
 
 		return result;
 	}
