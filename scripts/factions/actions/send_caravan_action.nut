@@ -22,21 +22,15 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 	function onUpdate( _faction )
 	{
 		if (!this.World.getTime().IsDaytime)
-		{
 			return;
-		}
 
 		if (_faction.isEnemyNearby())
-		{
 			return;
-		}
 
 		local isNobleHouse = _faction.getType() == this.Const.FactionType.NobleHouse;
 
-		if (this.isAbleToSpawnCaravan(_faction, isNobleHouse ? 4 : 1))
-		{
+		if (!this.isAbleToSpawnCaravan(_faction, isNobleHouse ? 4 : 1))
 			return;
-		}
 
 		local mySettlements = this.getFactionSettlememts(_faction, isNobleHouse);
 		local allSettlements = this.World.EntityManager.getSettlements();
@@ -62,9 +56,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		local settlements = this.getRandomConnectedSettlements(2, mySettlements, destinations, true);
 
 		if (settlements.len() < 2)
-		{
 			return;
-		}
 
 		this.m.Start = settlements[0];
 		this.m.Dest = settlements[1];
