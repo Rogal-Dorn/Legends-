@@ -138,10 +138,10 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (_shopID == "building.alchemist")
 				{
 					if (_item.isUsable())
-						return _item.getValue() * 0.67;
+						return _item.getValue() * 0.70;
 
 					if (_item.isItemType(this.Const.Items.ItemType.Tool))
-						return _item.getValue() * 0.5;
+						return _item.getValue() * 0.60;
 				}
 
 				return _item.getValue();
