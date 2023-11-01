@@ -179,7 +179,7 @@ gt.Const.World.Common.WorldEconomy <- {
 
 		if (isMilitary) mult *= 2.0;
 
-		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 2.0;
+		if (::MSU.isKindOf(_settlement, "city_state")) mult *= 1.75;
 
 		local budget = ::Math.round(::Math.rand(50, 75 + (!isMilitary ? 10 : 0)) * mult);
 
