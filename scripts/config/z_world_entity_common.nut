@@ -90,7 +90,7 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (!_item.isItemType(this.Const.Items.ItemType.Supply))
 					return 0;
 
-				return _item.getValue() * 1.1;
+				return _item.getValue() * 1.15;
 			}
 		},
 		{
@@ -102,10 +102,10 @@ gt.Const.World.Common.WorldEconomy <- {
 			function IsValid( _item, _shopID )
 			{
 				if (_item.isItemType(this.Const.Items.ItemType.Ammo))
-					return _item.getValue() * 1.25;
+					return _item.getValue() * 1.33;
 
 				if (_item.isItemType(this.Const.Items.ItemType.Weapon))
-					return _item.getValue() * 0.75;
+					return _item.getValue() * 0.65;
 
 				return 0;
 			}
@@ -119,10 +119,10 @@ gt.Const.World.Common.WorldEconomy <- {
 			function IsValid( _item, _shopID )
 			{
 				if (_item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet))
-					return _item.getValue() * 0.80;
+					return _item.getValue() * 0.67;
 
 				if (_item.isItemType(this.Const.Items.ItemType.Shield))
-					return _item.getValue();
+					return _item.getValue() * 0.82;
 
 				return 0;
 			},
