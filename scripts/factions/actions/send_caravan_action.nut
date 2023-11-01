@@ -33,7 +33,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 
 		local isNobleHouse = _faction.getType() == this.Const.FactionType.NobleHouse;
 
-		if (!isNobleHouse && _faction.getUnits().len() >= 1)
+		if (this.isAbleToSpawnCaravan(_faction, isNobleHouse ? 4 : 1))
 		{
 			return;
 		}
@@ -69,6 +69,19 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		this.m.Start = settlements[0];
 		this.m.Dest = settlements[1];
 		this.m.Score = 5 + (isNobleHouse ? this.m.Start.getSize() - 1 : 0);
+	}
+
+	function isAbleToSpawnCaravan( _faction, _maxNum = 0 )
+	{
+		local caravan = 0;
+
+		foreach( party in _faction.getUnits() )
+		{
+			if (party.getFlags().get("IsCaravan"))
+				++caravan;
+		}
+
+		return caravan < _maxNum;
 	}
 
 	function getFactionSettlememts( _faction, _onlyMilitary = false )
