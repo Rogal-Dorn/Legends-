@@ -62,7 +62,7 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (!_item.isItemType(this.Const.Items.ItemType.TradeGood))
 					return 0;
 
-				return ::Math.floor(_item.getValue() * 0.67);
+				return _item.getValue() * 0.67;
 			}
 		},
 		{
@@ -90,7 +90,7 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (!_item.isItemType(this.Const.Items.ItemType.Supply))
 					return 0;
 
-				return ::Math.floor(_item.getValue() * 1.1);
+				return _item.getValue() * 1.1;
 			}
 		},
 		{
@@ -282,7 +282,7 @@ gt.Const.World.Common.WorldEconomy <- {
 					if (_item == null) 
 						continue;
 
-					local v = d.IsValid(_item, shopID);
+					local v = ::Math.floor(d.IsValid(_item, shopID));
 
 					if (v < 1 || // check if the item meets the condition of this 'choice of goods'
 					 v >= tooExpensiveLimit) // a single item should not cost a larget portion of the available budget
@@ -386,7 +386,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		local weight_container = this.getWeightContainer(array);
 		local result = { Items = [], Value = 0 };
 
-		while(tries < 25)
+		while(tries < 25 && weight_container.len() > 0)
 		{
 			local r = weight_container.roll();
 
@@ -395,13 +395,8 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (isOverBudget || this.PriceLookUp[r] > _budget + extra)
 				{
 					++tries;
-
 					// remove from selection list when the price can no longer be affordable
 					weight_container.remove(r);
-
-					// when everthing is beyond affordable
-					if (weight_container.len() == 0) break;
-
 					continue;
 				}
 				
