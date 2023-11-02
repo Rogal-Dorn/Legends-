@@ -3136,7 +3136,7 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		}
 
 		this.m.ImportedGoodsInventory.onDeserialize(_in);
-		if ( ::LegendsWorldEconomyUpdateV1 ) // TODO: change this to version check once the release is confirmed
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0-pre-02", _in.getMetaData()))
 		{
 			this.m.CaravanReceivedHistory = ::MSU.Utils.deserialize(_in);
 			this.m.CaravanSentHistory = ::MSU.Utils.deserialize(_in);

@@ -328,7 +328,7 @@ this.attached_location <- this.inherit("scripts/entity/world/location", {
 
 		local active = _in.readBool();
 		this.m.IsNew = _in.readBool();
-		if ( ::LegendsWorldEconomyUpdateV1 ) // TODO: change this to version check once the release is confirmed
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0-pre-02", _in.getMetaData()))
 		{
 			this.m.IsAbandoned = _in.readBool();
 		}
