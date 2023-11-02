@@ -90,7 +90,7 @@ gt.Const.World.Common.WorldEconomy <- {
 				if (!_item.isItemType(this.Const.Items.ItemType.Supply))
 					return 0;
 
-				return _item.getValue() * 1.15;
+				return _item.getValue() * 1.25;
 			}
 		},
 		{
@@ -119,7 +119,7 @@ gt.Const.World.Common.WorldEconomy <- {
 			function IsValid( _item, _shopID )
 			{
 				if (_item.isItemType(this.Const.Items.ItemType.Armor) || _item.isItemType(this.Const.Items.ItemType.Helmet))
-					return _item.getValue() * 0.67;
+					return _item.getValue() * 0.70;
 
 				if (_item.isItemType(this.Const.Items.ItemType.Shield))
 					return _item.getValue() * 0.82;
@@ -135,14 +135,8 @@ gt.Const.World.Common.WorldEconomy <- {
 			PreferMax = 10,
 			function IsValid( _item, _shopID )
 			{
-				if (_shopID == "building.alchemist")
-				{
-					if (_item.isUsable())
-						return _item.getValue() * 0.70;
-
-					if (_item.isItemType(this.Const.Items.ItemType.Tool))
-						return _item.getValue() * 0.60;
-				}
+				if (_shopID == "building.alchemist" && _item.isItemType(this.Const.Items.ItemType.Tool))
+					return _item.getValue() * 0.70;
 
 				return _item.getValue();
 			}

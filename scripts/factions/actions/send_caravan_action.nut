@@ -122,7 +122,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		if (_budget == 0)
 			return 1.0;
 
-		return 1.0 + this.Math.floor(_budget / 1000) * 0.115;
+		return 1.0 + this.Math.floor(_budget / 900) * 0.125;
 	}
 
 	function onExecute( _faction )
