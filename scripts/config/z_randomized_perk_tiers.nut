@@ -42,7 +42,7 @@ gt.Const.RandomizedCharacterInfo["Default"] <- {
     GuaranteedPerks = [], 
     LegendaryPerks = [], 
     WeaponsAndTrees = [ 
-        ["scripts/items/weapons/knife",  100, 75] // [Weapon Script, Chance to roll weapon-perks, chacne to roll weapon-class-perks] 
+        ["knife",  100, 75] // [Weapon Script, Chance to roll weapon-perks, chacne to roll weapon-class-perks] 
     ],
     LevelRange = [3, 3],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -52,20 +52,20 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
         [1, "peasant_outfit_00"]
     ],
     WeaponsAndTrees = [ 
-        [2, ["scripts/items/weapons/knife",  100, 80]],
-        [2, ["scripts/items/weapons/pitchfork", 100, 60]],
-        [2, ["scripts/items/weapons/wooden_stick", 100, 65]],
-        [1, ["scripts/items/weapons/pickaxe", 100, 45]],
-        [2, ["scripts/items/weapons/legend_hammer", 100, 60]],
-        [2, ["scripts/items/weapons/legend_sickle", 100, 80]],
-        [2, ["scripts/items/weapons/legend_wooden_pitchfork", 100, 65]],
-        [2, ["scripts/items/weapons/legend_scythe", 100, 75]],
-        [2, ["scripts/items/weapons/legend_hoe", 100]],
-        [2, ["scripts/items/weapons/legend_shiv",  100, 75]],
-        [2, ["scripts/items/weapons/legend_shovel", 100, 80]],
-        [2, ["scripts/items/weapons/legend_staff", 100]],
-        [1, ["scripts/items/weapons/butchers_cleaver", 100, 45]],
-        [2, ["scripts/items/weapons/legend_wooden_spear", 100, 80]]
+        [2, ["knife",  100, 80]],
+        [2, ["pitchfork", 100, 60]],
+        [2, ["wooden_stick", 100, 65]],
+        [1, ["pickaxe", 100, 45]],
+        [2, ["legend_hammer", 100, 60]],
+        [2, ["legend_sickle", 100, 80]],
+        [2, ["legend_wooden_pitchfork", 100, 65]],
+        [2, ["legend_scythe", 100, 75]],
+        [2, ["legend_hoe", 100]],
+        [2, ["legend_shiv",  100, 75]],
+        [2, ["legend_shovel", 100, 80]],
+        [2, ["legend_staff", 100]],
+        [1, ["butchers_cleaver", 100, 45]],
+        [2, ["legend_wooden_spear", 100, 80]]
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -78,8 +78,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.Peasant] <- {
         this.Const.Perks.TrainedTree
     ], 
     LegendaryPerks = [
-        "scripts/skills/perks/perk_nimble",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_nimble",
+        "traits/fearless_trait"
     ],
     LevelRange = [1, 3]
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
@@ -89,15 +89,15 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
         [1, "caravan_hand_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/dagger", 100, 75]],
-        [1, ["scripts/items/weapons/knife",  100, 75]],
-        [1, ["scripts/items/weapons/wooden_stick", 100, 75]],
-        [2, ["scripts/items/weapons/hatchet", 100]],
-        [2, ["scripts/items/weapons/bludgeon", 100]],
-        [3, ["scripts/items/weapons/militia_spear", 100, 75]],
-        [1, ["scripts/items/weapons/scramasax", 100]],
-        [2, ["scripts/items/weapons/shortsword", 100]],
-        [2, ["scripts/items/weapons/legend_militia_glaive", 100]]
+        [1, ["dagger", 100, 75]],
+        [1, ["knife",  100, 75]],
+        [1, ["wooden_stick", 100, 75]],
+        [2, ["hatchet", 100]],
+        [2, ["bludgeon", 100]],
+        [3, ["militia_spear", 100, 75]],
+        [1, ["scramasax", 100]],
+        [2, ["shortsword", 100]],
+        [2, ["legend_militia_glaive", 100]]
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -110,19 +110,19 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanHand] <- {
         this.Const.Perks.TrainedTree
     ], 
     Shields = [
-        [1, "scripts/items/shields/buckler_shield"],
+        [1, "buckler_shield"],
         [2, ""]
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_recover"
+        "perks/perk_recover"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_shield_bash",
-        "scripts/skills/perks/perk_pathfinder",
-        "scripts/skills/perks/perk_underdog",
-        "scripts/skills/perks/perk_legend_alert",
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_shield_bash",
+        "perks/perk_pathfinder",
+        "perks/perk_underdog",
+        "perks/perk_legend_alert",
+        "perks/perk_crippling_strikes",
+        "traits/fearless_trait"
     ],
     LevelRange = [3, 5],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -138,30 +138,30 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.CaravanGuard] <- {
         this.Const.Perks.ClothArmorTree
     ],
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/hand_axe", 100]],
-        [1, ["scripts/items/weapons/boar_spear", 100]],
-        [2, ["scripts/items/weapons/falchion", 100]],
-        [2, ["scripts/items/weapons/shortsword", 100]],
-        [1, ["scripts/items/weapons/arming_sword", 100]],
-        [2, ["scripts/items/weapons/legend_glaive", 100]]
+        [1, ["hand_axe", 100]],
+        [1, ["boar_spear", 100]],
+        [2, ["falchion", 100]],
+        [2, ["shortsword", 100]],
+        [1, ["arming_sword", 100]],
+        [2, ["legend_glaive", 100]]
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_recover",
-        "scripts/skills/perks/perk_shield_expert"
+        "perks/perk_recover",
+        "perks/perk_shield_expert"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_legend_specialist_shield_skill",
-        "scripts/skills/perks/perk_legend_specialist_shield_push",
-        "scripts/skills/perks/perk_shield_bash",
-        "scripts/skills/perks/perk_hold_out",
-        "scripts/skills/perks/perk_underdog",
-        "scripts/skills/perks/perk_rotation",
-        "scripts/skills/perks/perk_legend_alert",
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_legend_specialist_shield_skill",
+        "perks/perk_legend_specialist_shield_push",
+        "perks/perk_shield_bash",
+        "perks/perk_hold_out",
+        "perks/perk_underdog",
+        "perks/perk_rotation",
+        "perks/perk_legend_alert",
+        "perks/perk_crippling_strikes",
+        "traits/fearless_trait"
     ],
     Shields = [
-        [1, "scripts/items/shields/wooden_shield"]
+        [1, "wooden_shield"]
     ],
     LevelRange = [4, 7],
     PerkPower = gt.Const.PerkPurchasePower.Medium
@@ -177,31 +177,31 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabble] <- {
         this.Const.Perks.FastTree,
         this.Const.Perks.LargeTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.ShadyTree
     ], 
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/legend_wooden_pitchfork", 35], ["scripts/skills/perks/perk_coup_de_grace", "scripts/skills/perks/perk_legend_specialist_pitchfork_skill", "scripts/skills/perks/perk_legend_specialist_pitchfork_damage"]],
-        [1, ["scripts/items/weapons/legend_wooden_spear", 35], ["scripts/skills/perks/perk_legend_specialist_militia_skill", "scripts/skills/perks/perk_legend_specialist_militia_damage"]],
-        [1, ["scripts/items/weapons/legend_sickle", 35], ["scripts/skills/perks/perk_legend_specialist_sickle_skill", "scripts/skills/perks/perk_legend_specialist_sickle_damage"]],
-        [1, ["scripts/items/weapons/legend_staff", 35], ["scripts/skills/perks/perk_legend_specialist_staff_skill", "scripts/skills/perks/perk_legend_mastery_staff_stun", "scripts/skills/perks/perk_fortified_mind"]],
-        [1, ["scripts/items/weapons/legend_shovel", 35], ["scripts/skills/perks/perk_legend_specialist_shovel_skill", "scripts/skills/perks/perk_legend_specialist_shovel_damage"]],
-        [1, ["scripts/items/weapons/wooden_stick", 35], ["scripts/skills/perks/perk_legend_onslaught", "scripts/skills/perks/perk_overwhelm", "scripts/skills/perks/perk_colossus", "scripts/skills/perks/perk_recover", "scripts/skills/perks/perk_rebound"]],
-        [1, ["scripts/items/weapons/legend_hammer", 35], ["scripts/skills/perks/perk_legend_specialist_hammer_skill", "scripts/skills/perks/perk_legend_specialist_hammer_damage", "scripts/skills/perks/perk_colossus"]],
-        [1, ["scripts/items/weapons/legend_shiv",  35], ["scripts/skills/perks/perk_legend_specialist_knife_skill", "scripts/skills/perks/perk_legend_specialist_knife_damage", "scripts/skills/perks/perk_duelist"]],
-        [1, ["scripts/items/weapons/lute", 35], ["scripts/skills/perks/perk_legend_specialist_lute_damage", "scripts/skills/perks/perk_legend_mind_over_body", "scripts/skills/perks/perk_recover"]],
-        [1, ["scripts/items/weapons/butchers_cleaver", 35], ["scripts/skills/perks/perk_legend_bloodbath", "scripts/skills/perks/perk_legend_specialist_butcher_skill", "scripts/skills/perks/perk_legend_specialist_butcher_damage"]],
-        [1, ["scripts/items/weapons/legend_saw", 35], ["scripts/skills/perks/perk_legend_smashing_shields", "scripts/skills/perks/perk_legend_specialist_woodaxe_skill", "scripts/skills/perks/perk_legend_specialist_woodaxe_damage"]],
-        [1, ["scripts/items/weapons/legend_hoe", 35], ["scripts/skills/perks/perk_legend_smackdown", "scripts/skills/perks/perk_legend_specialist_pitchfork_skill", "scripts/skills/perks/perk_legend_specialist_pitchfork_damage"]],
-        [1, ["scripts/items/weapons/wooden_flail", 35], ["scripts/skills/perks/perk_head_hunter", "scripts/skills/perks/perk_battle_flow", "scripts/skills/perks/perk_legend_specialist_pitchfork_skill", "scripts/skills/perks/perk_legend_specialist_pitchfork_damage"]]
+        [1, ["legend_wooden_pitchfork", 35], ["perks/perk_coup_de_grace", "perks/perk_legend_specialist_pitchfork_skill", "perks/perk_legend_specialist_pitchfork_damage"]],
+        [1, ["legend_wooden_spear", 35], ["perks/perk_legend_specialist_militia_skill", "perks/perk_legend_specialist_militia_damage"]],
+        [1, ["legend_sickle", 35], ["perks/perk_legend_specialist_sickle_skill", "perks/perk_legend_specialist_sickle_damage"]],
+        [1, ["legend_staff", 35], ["perks/perk_legend_specialist_staff_skill", "perks/perk_legend_mastery_staff_stun", "perks/perk_fortified_mind"]],
+        [1, ["legend_shovel", 35], ["perks/perk_legend_specialist_shovel_skill", "perks/perk_legend_specialist_shovel_damage"]],
+        [1, ["wooden_stick", 35], ["perks/perk_legend_onslaught", "perks/perk_overwhelm", "perks/perk_colossus", "perks/perk_recover", "perks/perk_rebound"]],
+        [1, ["legend_hammer", 35], ["perks/perk_legend_specialist_hammer_skill", "perks/perk_legend_specialist_hammer_damage", "perks/perk_colossus"]],
+        [1, ["legend_shiv",  35], ["perks/perk_legend_specialist_knife_skill", "perks/perk_legend_specialist_knife_damage", "perks/perk_duelist"]],
+        [1, ["lute", 35], ["perks/perk_legend_specialist_lute_damage", "perks/perk_legend_mind_over_body", "perks/perk_recover"]],
+        [1, ["butchers_cleaver", 35], ["perks/perk_legend_bloodbath", "perks/perk_legend_specialist_butcher_skill", "perks/perk_legend_specialist_butcher_damage"]],
+        [1, ["legend_saw", 35], ["perks/perk_legend_smashing_shields", "perks/perk_legend_specialist_woodaxe_skill", "perks/perk_legend_specialist_woodaxe_damage"]],
+        [1, ["legend_hoe", 35], ["perks/perk_legend_smackdown", "perks/perk_legend_specialist_pitchfork_skill", "perks/perk_legend_specialist_pitchfork_damage"]],
+        [1, ["wooden_flail", 35], ["perks/perk_head_hunter", "perks/perk_battle_flow", "perks/perk_legend_specialist_pitchfork_skill", "perks/perk_legend_specialist_pitchfork_damage"]]
     ],
     Shields = [
-        [1, "scripts/items/shields/buckler_shield"],
+        [1, "buckler_shield"],
         [14, ""]
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_dodge",
-        "scripts/skills/perks/perk_backstabber",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_dodge",
+        "perks/perk_backstabber",
+        "traits/fearless_trait"
     ],
     LevelRange = [1, 3],
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
@@ -219,14 +219,14 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
         this.Const.Perks.BowTree
     ], 
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/short_bow", 50]],
-        [2, ["scripts/items/weapons/legend_sling", 50]]
+        [1, ["short_bow", 50]],
+        [2, ["legend_sling", 50]]
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_dodge",
-        "scripts/skills/perks/perk_backstabber",
-        "scripts/skills/traits/fearless_trait",
-        "scripts/skills/traits/determined_trait"
+        "perks/perk_dodge",
+        "perks/perk_backstabber",
+        "traits/fearless_trait",
+        "traits/determined_trait"
     ],
     LevelRange = [1, 3],
     PerkPower = gt.Const.PerkPurchasePower.VeryLow
@@ -236,27 +236,27 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         [1, "bandit_thug_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/woodcutters_axe", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
-        [1, ["scripts/items/weapons/goedendag", 70], ["scripts/skills/perks/perk_legend_onslaught"]],
-        [1, ["scripts/items/weapons/pitchfork", 70], ["scripts/skills/perks/perk_coup_de_grace"]],
-        [3, ["scripts/items/weapons/shortsword", 70], ["scripts/skills/perks/perk_duelist"]],
-        [3, ["scripts/items/weapons/hatchet", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
-        [3, ["scripts/items/weapons/bludgeon", 70], ["scripts/skills/perks/perk_legend_onslaught"]],
-        [3, ["scripts/items/weapons/militia_spear", 70], ["scripts/skills/perks/perk_overwhelm"]],
-        [3, ["scripts/items/weapons/pickaxe", 70], ["scripts/skills/perks/perk_legend_smackdown"]],
-        [3, ["scripts/items/weapons/reinforced_wooden_flail", 70], ["scripts/skills/perks/perk_head_hunter"]],
-        [3, ["scripts/items/weapons/wooden_flail", 70], ["scripts/skills/perks/perk_head_hunter"]],
-        [3, ["scripts/items/weapons/butchers_cleaver", 70], ["scripts/skills/perks/perk_legend_bloodbath"]],
-        [3, ["scripts/items/weapons/dagger",  70], ["scripts/skills/perks/perk_duelist"]],
-        [3, ["scripts/items/weapons/legend_scythe", 70], ["scripts/skills/perks/perk_coup_de_grace"]],
-        [3, ["scripts/items/weapons/legend_tipstaff", 70], ["scripts/skills/perks/perk_return_favor"]],
-        [3, ["scripts/items/weapons/legend_militia_glaive", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
-        [3, ["scripts/items/weapons/legend_tipstaff", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
-        [3, ["scripts/items/weapons/legend_ranged_wooden_flail", 70], ["scripts/skills/perks/perk_killing_frenzy"]]
+        [1, ["woodcutters_axe", 70], ["perks/perk_legend_smashing_shields"]],
+        [1, ["goedendag", 70], ["perks/perk_legend_onslaught"]],
+        [1, ["pitchfork", 70], ["perks/perk_coup_de_grace"]],
+        [3, ["shortsword", 70], ["perks/perk_duelist"]],
+        [3, ["hatchet", 70], ["perks/perk_legend_smashing_shields"]],
+        [3, ["bludgeon", 70], ["perks/perk_legend_onslaught"]],
+        [3, ["militia_spear", 70], ["perks/perk_overwhelm"]],
+        [3, ["pickaxe", 70], ["perks/perk_legend_smackdown"]],
+        [3, ["reinforced_wooden_flail", 70], ["perks/perk_head_hunter"]],
+        [3, ["wooden_flail", 70], ["perks/perk_head_hunter"]],
+        [3, ["butchers_cleaver", 70], ["perks/perk_legend_bloodbath"]],
+        [3, ["dagger",  70], ["perks/perk_duelist"]],
+        [3, ["legend_scythe", 70], ["perks/perk_coup_de_grace"]],
+        [3, ["legend_tipstaff", 70], ["perks/perk_return_favor"]],
+        [3, ["legend_militia_glaive", 70], ["perks/perk_killing_frenzy"]],
+        [3, ["legend_tipstaff", 70], ["perks/perk_killing_frenzy"]],
+        [3, ["legend_ranged_wooden_flail", 70], ["perks/perk_killing_frenzy"]]
     ],
     Shields = [
-        [1, "scripts/items/shields/wooden_shield"],
-        [1, "scripts/items/shields/buckler_shield"],
+        [1, "wooden_shield"],
+        [1, "buckler_shield"],
         [6, ""]
     ],
     TraitsPerkList = [  
@@ -268,14 +268,15 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditThug] <- {
         this.Const.Perks.LargeTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.ShadyTree
     ], 
     LegendaryPerks = [
-        "scripts/skills/perks/perk_relentless",
-        "scripts/skills/perks/perk_dodge",
-        "scripts/skills/perks/perk_backstabber",
-        "scripts/skills/perks/perk_underdog",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_relentless",
+        "perks/perk_dodge",
+        "perks/perk_backstabber",
+        "perks/perk_underdog",
+        "traits/fearless_trait"
     ],
     LevelRange = [2, 4],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -285,8 +286,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         [1, "bandit_poacher_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [2, ["scripts/items/weapons/short_bow", 65]],
-        [1, ["scripts/items/weapons/legend_sling", 65]]
+        [2, ["short_bow", 65]],
+        [1, ["legend_sling", 65]]
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -298,14 +299,14 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         this.Const.Perks.BowTree
     ], 
     LegendaryPerks = [
-        "scripts/skills/perks/perk_dodge",
-        "scripts/skills/perks/perk_backstabber",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_dodge",
+        "perks/perk_backstabber",
+        "traits/fearless_trait"
     ],
     LevelRange = [2, 4],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_rotation",
-        "scripts/skills/perks/perk_recover"
+        "perks/perk_rotation",
+        "perks/perk_recover"
     ],
     PerkPower = gt.Const.PerkPurchasePower.Low
 }
@@ -320,34 +321,34 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.LightArmorTree,
     ],
     WeaponsAndTrees = [ // Author's Note: These are a substantially higher chance to purchase 2handers than current raiders, because of this (eventually) these will get weighted
-        [1, ["scripts/items/weapons/legend_infantry_axe", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
-        [1, ["scripts/items/weapons/hooked_blade", 70], ["scripts/skills/perks/perk_crippling_strikes"]],
-        [1, ["scripts/items/weapons/pike", 70], ["scripts/skills/perks/perk_reach_advantage"]],
-        [1, ["scripts/items/weapons/warbrand", 70], ["scripts/skills/perks/perk_bloody_harvest"]],
-        [1, ["scripts/items/weapons/longaxe", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
-        [1, ["scripts/items/weapons/two_handed_wooden_hammer", 70], ["scripts/skills/perks/perk_sundering_strikes"]],
-        [1, ["scripts/items/weapons/two_handed_wooden_flail", 70], ["scripts/skills/perks/perk_head_hunter"]],
-        [1, ["scripts/items/weapons/legend_ranged_flail", 70], ["scripts/skills/perks/perk_colossus"]],
-        [1, ["scripts/items/weapons/legend_reinforced_flail", 70], ["scripts/skills/perks/perk_vengeance"]],
-        [1, ["scripts/items/weapons/two_handed_mace", 70], ["scripts/skills/perks/perk_legend_forceful_swing"]],
-        [1, ["scripts/items/weapons/longsword", 70], ["scripts/skills/perks/perk_colossus"]],
-        [1, ["scripts/items/weapons/legend_longsword",  70], ["scripts/skills/perks/perk_duelist"]],
-        [1, ["scripts/items/weapons/legend_two_handed_club", 70], ["scripts/skills/perks/perk_legend_smashing_shields"]],
-        [5, ["scripts/items/weapons/shortsword", 70, 30], ["scripts/skills/perks/perk_overwhelm"]],
-        [5, ["scripts/items/weapons/hand_axe", 70], ["scripts/skills/perks/perk_legend_onslaught"]],
-        [5, ["scripts/items/weapons/boar_spear", 70], ["scripts/skills/perks/perk_duelist"]],
-        [5, ["scripts/items/weapons/morning_star", 70], ["scripts/skills/perks/perk_feint"]],
-        [5, ["scripts/items/weapons/falchion", 70], ["scripts/skills/perks/perk_feint"]],
-        [5, ["scripts/items/weapons/arming_sword", 70], ["scripts/skills/perks/perk_legend_bloodbath"]],
-        [5, ["scripts/items/weapons/flail", 70], ["scripts/skills/perks/perk_head_hunter"]],
-        [5, ["scripts/items/weapons/scramasax", 70], ["scripts/skills/perks/perk_killing_frenzy"]],
-        [5, ["scripts/items/weapons/military_pick", 70], ["scripts/skills/perks/perk_legend_smackdown"]],
-        [5, ["scripts/items/weapons/legend_glaive", 70], ["scripts/skills/perks/perk_killing_frenzy"]]
+        [1, ["legend_infantry_axe", 70], ["perks/perk_legend_smashing_shields"]],
+        [1, ["hooked_blade", 70], ["perks/perk_crippling_strikes"]],
+        [1, ["pike", 70], ["perks/perk_reach_advantage"]],
+        [1, ["warbrand", 70], ["perks/perk_bloody_harvest"]],
+        [1, ["longaxe", 70], ["perks/perk_killing_frenzy"]],
+        [1, ["two_handed_wooden_hammer", 70], ["perks/perk_sundering_strikes"]],
+        [1, ["two_handed_wooden_flail", 70], ["perks/perk_head_hunter"]],
+        [1, ["legend_ranged_flail", 70], ["perks/perk_colossus"]],
+        [1, ["legend_reinforced_flail", 70], ["perks/perk_vengeance"]],
+        [1, ["two_handed_mace", 70], ["perks/perk_legend_forceful_swing"]],
+        [1, ["longsword", 70], ["perks/perk_colossus"]],
+        [1, ["legend_longsword",  70], ["perks/perk_duelist"]],
+        [1, ["legend_two_handed_club", 70], ["perks/perk_legend_smashing_shields"]],
+        [5, ["shortsword", 70, 30], ["perks/perk_overwhelm"]],
+        [5, ["hand_axe", 70], ["perks/perk_legend_onslaught"]],
+        [5, ["boar_spear", 70], ["perks/perk_duelist"]],
+        [5, ["morning_star", 70], ["perks/perk_feint"]],
+        [5, ["falchion", 70], ["perks/perk_feint"]],
+        [5, ["arming_sword", 70], ["perks/perk_legend_bloodbath"]],
+        [5, ["flail", 70], ["perks/perk_head_hunter"]],
+        [5, ["scramasax", 70], ["perks/perk_killing_frenzy"]],
+        [5, ["military_pick", 70], ["perks/perk_legend_smackdown"]],
+        [5, ["legend_glaive", 70], ["perks/perk_killing_frenzy"]]
     ],
     Shields = [
         [3, ""],
-        [4, "scripts/items/shields/wooden_shield"],
-        [2, "scripts/items/shields/kite_shield"]
+        [4, "wooden_shield"],
+        [2, "kite_shield"]
     ]
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -358,19 +359,20 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRaider] <- {
         this.Const.Perks.LargeTree,
         this.Const.Perks.SturdyTree,
         this.Const.Perks.FitTree,
-        this.Const.Perks.TrainedTree
+        this.Const.Perks.TrainedTree,
+        this.Const.Perks.ShadyTree
     ], 
     LegendaryPerks = [
-        "scripts/skills/perks/perk_relentless",
-        "scripts/skills/perks/perk_dodge",
-        "scripts/skills/perks/perk_backstabber",
-        "scripts/skills/perks/perk_underdog",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_relentless",
+        "perks/perk_dodge",
+        "perks/perk_backstabber",
+        "perks/perk_underdog",
+        "traits/fearless_trait"
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_bullseye",
-        "scripts/skills/perks/perk_rotation",
-        "scripts/skills/perks/perk_recover"
+        "perks/perk_bullseye",
+        "perks/perk_rotation",
+        "perks/perk_recover"
     ],
     LevelRange = [3, 4],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -382,21 +384,21 @@ gt.Const.RandomizedCharacterInfo["BanditRaiderLow"] <- {
         [1, "bandit_raider_low_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/woodcutters_axe", 70]],
-        [1, ["scripts/items/weapons/hooked_blade", 70]],
-        [1, ["scripts/items/weapons/pike", 70]],
-        [1, ["scripts/items/weapons/two_handed_wooden_hammer", 70]],
-        [1, ["scripts/items/weapons/shortsword", 70]],
-        [1, ["scripts/items/weapons/hand_axe", 70]],
-        [1, ["scripts/items/weapons/boar_spear", 70]],
-        [1, ["scripts/items/weapons/morning_star", 70]],
-        [1, ["scripts/items/weapons/falchion", 70]],
-        [1, ["scripts/items/weapons/flail", 70]]
+        [1, ["woodcutters_axe", 70]],
+        [1, ["hooked_blade", 70]],
+        [1, ["pike", 70]],
+        [1, ["two_handed_wooden_hammer", 70]],
+        [1, ["shortsword", 70]],
+        [1, ["hand_axe", 70]],
+        [1, ["boar_spear", 70]],
+        [1, ["morning_star", 70]],
+        [1, ["falchion", 70]],
+        [1, ["flail", 70]]
     ],
     Shields = [
         [1, ""],
-        [2, "scripts/items/shields/buckler_shield"],
-        [1, "scripts/items/shields/wooden_shield"]
+        [2, "buckler_shield"],
+        [1, "wooden_shield"]
     ]    
 }
 
@@ -405,11 +407,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
         [1, "legend_caravan_polearm_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [5, ["scripts/items/weapons/legend_ranged_wooden_flail", 75, 35]],
-        [5, ["scripts/items/weapons/legend_staff", 75, 65]],
-        [4, ["scripts/items/weapons/legend_tipstaff", 75, 65]],
-        [5, ["scripts/items/weapons/pitchfork", 50, 35]],
-        [1, ["scripts/items/weapons/warfork", 50, 0]]
+        [5, ["legend_ranged_wooden_flail", 75, 35]],
+        [5, ["legend_staff", 75, 65]],
+        [4, ["legend_tipstaff", 75, 65]],
+        [5, ["pitchfork", 50, 35]],
+        [1, ["warfork", 50, 0]]
     ],
     TraitsPerkList = [
         this.Const.Perks.AgileTree,
@@ -425,13 +427,13 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendCaravanPolearm] <- {
         this.Const.Perks.MediumArmorTree
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_bags_and_belts"
+        "perks/perk_bags_and_belts"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_pathfinder",
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/perks/perk_overwhelm",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_pathfinder",
+        "perks/perk_crippling_strikes",
+        "perks/perk_overwhelm",
+        "traits/fearless_trait"
     ],
     LevelRange = [3, 4],
     PerkPower = gt.Const.PerkPurchasePower.Low
@@ -442,12 +444,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
         [1, "noble_elite_footman_outfit_00"] //todo
     ],
     WeaponsAndTrees = [
-        [4, ["scripts/items/weapons/military_pick", 100]],
-        [1, ["scripts/items/weapons/warhammer",  100]],
-        [4, ["scripts/items/weapons/arming_sword", 100]],
-        [1, ["scripts/items/weapons/noble_sword", 100]],
-        [3, ["scripts/items/weapons/morning_star", 100]],
-        [3, ["scripts/items/weapons/winged_mace", 100]]
+        [4, ["military_pick", 100]],
+        [1, ["warhammer",  100]],
+        [4, ["arming_sword", 100]],
+        [1, ["noble_sword", 100]],
+        [3, ["morning_star", 100]],
+        [3, ["winged_mace", 100]]
     ],
     DefensePerkList = [
         this.Const.Perks.HeavyArmorTree,
@@ -463,17 +465,17 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleEliteFootman] <- {
         this.Const.Perks.TrainedTree
     ], 
     Shields = [
-        [1, "scripts/items/shields/faction_kite_shield"],
-        [1, "scripts/items/shields/faction_heater_shield"]
+        [1, "faction_kite_shield"],
+        [1, "faction_heater_shield"]
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_shield_expert",
-        "scripts/skills/perks/perk_rotation"
+        "perks/perk_shield_expert",
+        "perks/perk_rotation"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_shield_bash",
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_shield_bash",
+        "perks/perk_crippling_strikes",
+        "traits/fearless_trait"
     ],
     LevelRange = [6, 8], //At super high levels it stops mattering for what they can buy and just gives more exp
     PerkPower = gt.Const.PerkPurchasePower.High + 1
@@ -485,11 +487,11 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
         [1, "mercury_pollax_colorful"]
     ],
     WeaponsAndTrees = [
-        [1, ["scripts/items/weapons/polehammer", 100]],
-        [2, ["scripts/items/weapons/two_handed_wooden_hammer",  100]],
-        [2, ["scripts/items/weapons/two_handed_mace", 100]],
-        [2, ["scripts/items/weapons/warbrand", 100]],
-        [3, ["scripts/items/weapons/legend_swordstaff", 100]]
+        [1, ["polehammer", 100]],
+        [2, ["two_handed_hammer",  100]],
+        [2, ["two_handed_spiked_mace", 100]],
+        [2, ["warbrand", 100]],
+        [3, ["legend_swordstaff", 100]]
     ],
     DefensePerkList = [
         this.Const.Perks.HeavyArmorTree,
@@ -505,12 +507,12 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
         this.Const.Perks.TrainedTree
     ], 
     GuaranteedPerks = [ //Testing to see if they ever actually use indom, given no guaranteed perks right now these might vary wildly in power levels
-        "scripts/skills/perks/perk_indomitable" 
+        "perks/perk_indomitable" 
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/perks/perk_berserk",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_crippling_strikes",
+        "perks/perk_berserk",
+        "traits/fearless_trait"
     ],
     LevelRange = [5, 7],
     PerkPower = gt.Const.PerkPurchasePower.High + 1
@@ -523,8 +525,8 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
         [1, "mercury_sureshot_green_00"]
     ],
     WeaponsAndTrees = [
-        [3, ["scripts/items/weapons/war_bow", 100]],
-        [2, ["scripts/items/weapons/heavy_crossbow",  100]]
+        [3, ["war_bow", 100]],
+        [2, ["heavy_crossbow",  100]]
     ],
     DefensePerkList = [
         this.Const.Perks.LightArmorTree
@@ -538,15 +540,15 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NobleSureshot] <- {
         this.Const.Perks.TrainedTree
     ], 
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_ballistics",
-        "scripts/skills/perks/perk_lookout",
-        "scripts/skills/perks/perk_rotation"
+        "perks/perk_ballistics",
+        "perks/perk_lookout",
+        "perks/perk_rotation"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_crippling_strikes",
-        "scripts/skills/perks/perk_legend_clarity",
-        "scripts/skills/perks/perk_sundering_strikes",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_crippling_strikes",
+        "perks/perk_legend_clarity",
+        "perks/perk_sundering_strikes",
+        "traits/fearless_trait"
     ],
     LevelRange = [6, 8],
     PerkPower = gt.Const.PerkPurchasePower.Medium
@@ -557,10 +559,10 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendNobleGuard] <- {
         [1, "noble_footman_veteran_00"] //todo
     ],
     WeaponsAndTrees = [
-        [4, ["scripts/items/weapons/military_pick", 100]],
-        [1, ["scripts/items/weapons/arming_sword",  100]],
-        [4, ["scripts/items/weapons/fighting_axe", 100]],
-        [1, ["scripts/items/weapons/morning_star", 100]]
+        [4, ["military_pick", 100]],
+        [1, ["arming_sword",  100]],
+        [4, ["fighting_axe", 100]],
+        [1, ["morning_star", 100]]
     ],
     DefensePerkList = [
         this.Const.Perks.HeavyArmorTree,
@@ -575,21 +577,21 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.LegendNobleGuard] <- {
         this.Const.Perks.FitTree
     ], 
     Shields = [
-        [1, "scripts/items/shields/legend_faction_tower_shield"]
+        [1, "legend_faction_tower_shield"]
     ],
     GuaranteedPerks = [
-        "scripts/skills/perks/perk_shield_expert",
-        "scripts/skills/perks/perk_battle_forged",
-        "scripts/skills/perks/perk_rotation",
-        "scripts/skills/perks/perk_steel_brow",
-        "scripts/skills/perks/perk_legend_specialist_shield_skill",
-        "scripts/skills/perks/perk_legend_specialist_shield_push",
-        "scripts/skills/perks/perk_shield_bash"
+        "perks/perk_shield_expert",
+        "perks/perk_battle_forged",
+        "perks/perk_rotation",
+        "perks/perk_steel_brow",
+        "perks/perk_legend_specialist_shield_skill",
+        "perks/perk_legend_specialist_shield_push",
+        "perks/perk_shield_bash"
     ],
     LegendaryPerks = [
-        "scripts/skills/perks/perk_deflect",
-        "scripts/skills/perks/perk_bruiser",
-        "scripts/skills/traits/fearless_trait"
+        "perks/perk_deflect",
+        "perks/perk_bruiser",
+        "traits/fearless_trait"
     ],
     LevelRange = [7, 10],
     PerkPower = gt.Const.PerkPurchasePower.High + 1

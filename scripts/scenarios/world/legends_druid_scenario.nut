@@ -13,7 +13,8 @@ this.legends_druid_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 	function isValid()
 	{
-		return this.Const.DLC.Wildmen;
+		// return this.Const.DLC.Wildmen;
+		return false;
 	}
 
 	function onSpawnAssets()

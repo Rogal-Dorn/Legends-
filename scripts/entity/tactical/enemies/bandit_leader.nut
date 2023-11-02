@@ -12,7 +12,7 @@ this.bandit_leader <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Raider;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_melee_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_melee_agent_less_flanking");
 		this.m.AIAgent.setActor(this);
 	}
 
