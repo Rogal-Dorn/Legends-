@@ -1,6 +1,6 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "18.2.0-pre-01",
+	Version = "18.2.0-pre-02",
 	Name = "Legends Mod",
 	BuildName = "Camps & Contracts"
 };
@@ -45,29 +45,5 @@
 	this.Const.Perks.updatePerkGroupTooltips();
 
 	::Const.LegendMod.addTooltips();
-
-	// Hanter TODO: change all references to LegendsWorldEconomyUpdateV1 to version check once the release is confirmed, and then delete this hook
-	::mods_hookExactClass("states/world_state", function(o) {
-		local onBeforeSerialize = o.onBeforeSerialize;
-		o.onBeforeSerialize = function( _out )
-		{
-			onBeforeSerialize(_out);
-
-	        _out.getMetaData().setInt("LegendsWorldEconomyUpdateV1", 1);
-			::logWarning("onBeforeSerialize LegendsWorldEconomyUpdateV1 set");
-		}
-
-		local onBeforeDeserialize = o.onBeforeDeserialize;
-		o.onBeforeDeserialize = function( _in )
-		{
-			::LegendsWorldEconomyUpdateV1 <- false;
-			onBeforeDeserialize(_in);
-			::logWarning("onBeforeDeserialize _in.getMetaData().getInt(LegendsWorldEconomyUpdateV1) = " + _in.getMetaData().getInt("LegendsWorldEconomyUpdateV1"));
-	        if (_in.getMetaData().getInt("LegendsWorldEconomyUpdateV1") == 1)
-	        {
-	        	::LegendsWorldEconomyUpdateV1 = true;
-	        }
-	    }
-	})
 	
 });
