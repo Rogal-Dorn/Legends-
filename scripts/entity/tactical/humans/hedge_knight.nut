@@ -10,7 +10,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Hairs = this.Const.Hair.CommonMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.All;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent_less_flanking");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/hedge_knight_less_flanking_less_zoc");
 		this.m.AIAgent.setActor(this);
 	}
 
