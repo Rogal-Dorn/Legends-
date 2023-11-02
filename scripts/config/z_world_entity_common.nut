@@ -233,6 +233,13 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		_party.setOrigin(_settlement);
 
 		// loading goods
+		foreach (item in result.Items)
+		{
+			if (item.getTradeHistorySettlementIDs().len() == 0)
+			{
+				item.setOriginSettlement(_settlement);
+			}
+		}
 		_party.getStashInventory().assign(result.Items);
 
 		// setup financial flag

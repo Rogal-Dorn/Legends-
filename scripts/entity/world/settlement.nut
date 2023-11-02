@@ -967,7 +967,11 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 	function addImportedProduce( _p )
 	{
 		if (typeof _p == "string") this.m.ProduceImported.push(_p);
-		else this.m.ImportedGoodsInventory.add(_p);
+		else 
+		{
+			_p.addSettlementToTradeHistory(this);
+			this.m.ImportedGoodsInventory.add(_p);
+		}
 	}
 
 	function getFoodPriceMult()
