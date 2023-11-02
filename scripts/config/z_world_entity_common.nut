@@ -241,7 +241,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		_party.getFlags().set("CaravanDestinationID", _destination.getID());
 
 		// record caravan history
-		local coords = settlement.getTile().Coords;
+		local coords = _settlement.getTile().Coords;
 		local caravanHistoryData = this.createCaravanHistoryData(this.CaravanHistoryType.Initiated, _settlement.getID(), _destination.getID(), finance.Investment, finance.Profit, result.Items, [coords.X, coords.Y]);
 		_settlement.updateCaravanSentHistory(caravanHistoryData);
 

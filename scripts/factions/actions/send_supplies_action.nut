@@ -128,7 +128,7 @@ this.send_supplies_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local budget = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() ? 0 : ::Const.World.Common.WorldEconomy.calculateTradingBudget(this.m.Start);
+		local budget = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() ? 0 : ::Const.World.Common.WorldEconomy.Trade.calculateTradingBudget(this.m.Start);
 		
 		if (!this.m.Start.isMilitary() && this.m.Start.getSize() < 3)
 			budget *= 1.5;

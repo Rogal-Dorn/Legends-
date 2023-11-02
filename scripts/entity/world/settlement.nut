@@ -2942,8 +2942,6 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		_arr.insert(0,[]);
 	}
 
-	}
-
 	function onSerialize( _out )
 	{
 		this.location.onSerialize(_out);
