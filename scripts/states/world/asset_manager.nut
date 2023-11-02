@@ -906,6 +906,15 @@ this.asset_manager <- {
 
 	function update( _worldState )
 	{
+		if (this.World.Flags.getAsInt("MandatoryShopRefreshDayMark") + 50 <= this.World.getTime().Days)
+		{
+			this.World.Flags.set("MandatoryShopRefreshDayMark", this.World.getTime().Days);
+			foreach( t in this.World.EntityManager.getSettlements() )
+			{
+				t.updateShop();
+			}
+		}
+
 		if (this.World.getTime().Days > this.m.LastDayPaid && this.World.getTime().Hours > 8 && this.m.IsConsumingAssets)
 		{
 			this.m.LastDayPaid = this.World.getTime().Days;

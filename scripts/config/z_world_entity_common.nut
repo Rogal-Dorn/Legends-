@@ -105,7 +105,7 @@ gt.Const.World.Common.WorldEconomy <- {
 					return _item.getValue() * 1.33;
 
 				if (_item.isItemType(this.Const.Items.ItemType.Weapon))
-					return _item.getValue() * 0.65;
+					return _item.getValue() * 0.70;
 
 				return 0;
 			}
