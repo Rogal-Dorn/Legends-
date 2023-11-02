@@ -150,7 +150,7 @@ this.send_caravan_action <- this.inherit("scripts/factions/faction_action", {
 		// yes world economy
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			::Const.World.Common.WorldEconomy.setupTrade(party, this.m.Start, this.m.Dest, budget);
+			::Const.World.Common.WorldEconomy.Trade.setupTrade(party, this.m.Start, this.m.Dest);
 		}
 		// no world economy
 		else

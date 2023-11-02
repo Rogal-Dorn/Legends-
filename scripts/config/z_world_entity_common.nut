@@ -5,7 +5,9 @@ if (!("World" in gt.Const))
 	gt.Const.World <- {};
 }
 
-gt.Const.World.Common.WorldEconomy <- {
+gt.Const.World.Common.WorldEconomy <- {};
+
+gt.Const.World.Common.WorldEconomy.Trade <- {
 	// weigted container
 	WeightedContainer = null,
 
@@ -154,6 +156,40 @@ gt.Const.World.Common.WorldEconomy <- {
 		},
 	],
 
+	CaravanHistoryType = {
+		Initiated = 0,
+		Completed = 1,
+		Destroyed = 2,
+	}
+
+	CaravanHistoryData = {
+		type = null,
+		originID = "",
+		destinationID = "",
+		investment = 0,
+		profit = 0,
+		itemHashes = [],
+		coordinates = [],
+	}
+
+	function createCaravanHistoryData( _type, _originID, _destinationID, _investment, _profit, _items, _coordinates )
+	{
+		local data = clone this.CaravanHistoryData;
+		data.type = _type;
+		data.originID = _originID;
+		data.destinationID = _destinationID;
+		data.investment = _investment;
+		data.profit = _profit;
+		data.itemHashes = _items.map(function(item){ return item.ClassNameHash });
+		data.coordinates = _coordinates // an array of length 2 for X, Y hexagonal coordiantes; when type is: Initiated->origin settlement, Completed->destination settlement, Destroyed->location of death
+		return data;
+	}
+
+	function getCaravanHistoryDataItems( _data )
+	{
+		return _data.itemHashes.map(function(hash){return this.new( ::IO.scriptFilenameByHash(hash) )});
+	}
+
 	function getWeightContainer( _array = null )
 	{
 		if (this.WeightedContainer == null) this.WeightedContainer = ::MSU.Class.WeightedContainer();
@@ -191,7 +227,7 @@ gt.Const.World.Common.WorldEconomy <- {
 		local finance = this.getExpectedFinancialReport(_settlement);
 
 		// spend resources
-		_settlement.addResources(-finance.Investment);
+		_settlement.addWorldEconomyResources(-finance.Investment);
 
 		// set origin settlement
 		_party.setOrigin(_settlement);
@@ -202,6 +238,12 @@ gt.Const.World.Common.WorldEconomy <- {
 		// setup financial flag
 		_party.getFlags().set("CaravanProfit", finance.Profit); // expected profit made from this trade
 		_party.getFlags().set("CaravanInvestment", finance.Investment); // investment on this trade :)
+		_party.getFlags().set("CaravanDestinationID", _destination.getID());
+
+		// record caravan history
+		local coords = settlement.getTile().Coords;
+		local caravanHistoryData = this.createCaravanHistoryData(this.CaravanHistoryType.Initiated, _settlement.getID(), _destination.getID(), finance.Investment, finance.Profit, result.Items, [coords.X, coords.Y]);
+		_settlement.updateCaravanSentHistory(caravanHistoryData);
 
 		// print log to declare action
 		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (" + result.Value + " crowns), focusinng on trading \'" + result.Decision + "\', investing " + finance.Investment + " resources," /*expecting at least " + finance.Profit + " resouces as profit,*/ + " from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
@@ -473,6 +515,10 @@ gt.Const.World.Common.WorldEconomy <- {
 		return result;
 	}
 };
+
+gt.Const.World.Common.WorldEconomy.Settlement <- {
+	UpgradeResourceCost = 50,
+}
 
 gt.Const.World.Common.assignTroops = function( _party, _partyList, _resources, _weightMode = 1 )
 {
