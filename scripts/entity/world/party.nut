@@ -513,6 +513,26 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 
 	function onCombatLost()
 	{
+		// World Economy: Track caravan destroyed
+		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() && this.getFlags().has("CaravanInvestment"))
+		{
+			local origin = this.getOrigin();
+			if (!::MSU.isNull(origin))
+			{
+				local destinationID = this.getFlags().get("CaravanDestinationID");
+				if (destinationID == null)
+				{
+					::logWarning("CaravanDestinationID is null for a recently destroyed caravan. This should only happen for caravans loaded from an older save.");
+				}
+				local investment = this.getFlags().get("CaravanInvestment");
+				local profit = this.getFlags().get("CaravanProfit");
+				local inv = this.getStashInventory().getItems();
+				local coords = this.getTile().Coords;
+				local caravanHistoryData = ::Const.World.Common.WorldEconomy.Trade.createCaravanHistoryData(::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Destroyed, origin.getID(), destinationID, investment, profit, inv, [coords.X, coords.Y]);
+				origin.updateCaravanSentHistory(caravanHistoryData);	
+			}
+		}
+		
 		this.World.EntityManager.onWorldEntityDestroyed(this, false);
 		this.world_entity.onCombatLost();
 	}

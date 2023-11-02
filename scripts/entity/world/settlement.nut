@@ -2888,6 +2888,33 @@ this.settlement <- this.inherit("scripts/entity/world/location", {
 		return this.m.CaravanSentHistory;
 	}
 
+	function getCaravanReceivedCount()
+	{
+		local sums = this.m.CaravanReceivedHistory.map(function(arr){return arr.len();});
+		return sums.reduce(function(prev, curr){return prev + curr;});
+	}
+
+	// Get the total number of caravans sent from this settlement over the past 7 days
+	function getCaravanSentCount()
+	{
+		local sums = this.m.CaravanSentHistory.map(function(arr){return arr.filter(function(index, data){return data.type == ::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Initiated}).len();});
+		return sums.reduce(function(prev, curr){return prev + curr;});
+	}
+
+	// Get the total number of caravans sent from this settlement and successfully reached their destination over the past 7 days
+	function getCaravanCompletedCount()
+	{
+		local sums = this.m.CaravanSentHistory.map(function(arr){return arr.filter(function(index, data){return data.type == ::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Completed}).len();});
+		return sums.reduce(function(prev, curr){return prev + curr;});
+	}
+
+	// Get the total number of caravans sent from this settlement and were destroyed along the way over the past 7 days
+	function getCaravanDestroyedCount()
+	{
+		local sums = this.m.CaravanSentHistory.map(function(arr){return arr.filter(function(index, data){return data.type == ::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Destroyed}).len();});
+		return sums.reduce(function(prev, curr){return prev + curr;});
+	}
+
 	function updateCaravanReceivedHistory( _data )
 	{
 		this.m.CaravanReceivedHistory[0].push(_data);

@@ -28,7 +28,8 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					// new functions
 					origin.addWorldEconomyResources(investment + profit);
 
-					local caravanHistoryData = ::Const.World.Common.WorldEconomy.Trade.createCaravanHistoryData(::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Completed, origin.getID(), settlement.getID(), investment, profit, inv);
+					local coords = settlement.getTile().Coords;
+					local caravanHistoryData = ::Const.World.Common.WorldEconomy.Trade.createCaravanHistoryData(::Const.World.Common.WorldEconomy.Trade.CaravanHistoryType.Completed, origin.getID(), settlement.getID(), investment, profit, inv, [coords.X, coords.Y]);
 					origin.updateCaravanSentHistory(caravanHistoryData);
 					settlement.updateCaravanReceivedHistory(caravanHistoryData);
 

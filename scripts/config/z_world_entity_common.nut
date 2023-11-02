@@ -141,9 +141,10 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		investment = 0,
 		profit = 0,
 		itemHashes = [],
+		coordinates = [],
 	}
 
-	function createCaravanHistoryData( _type, _originID, _destinationID, _investment, _profit, _items )
+	function createCaravanHistoryData( _type, _originID, _destinationID, _investment, _profit, _items, _coordinates )
 	{
 		local data = clone this.CaravanHistoryData;
 		data.type = _type;
@@ -152,6 +153,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		data.investment = _investment;
 		data.profit = _profit;
 		data.itemHashes = _items.map(function(item){ return item.ClassNameHash });
+		data.coordinates = _coordinates // an array of length 2 for X, Y hexagonal coordiantes; when type is: Initiated->origin settlement, Completed->destination settlement, Destroyed->location of death
 		return data;
 	}
 
@@ -207,9 +209,11 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		// setup financial flag
 		_party.getFlags().set("CaravanProfit", finance.Profit); // expected profit made from this trade
 		_party.getFlags().set("CaravanInvestment", finance.Investment); // investment on this trade :)
+		_party.getFlags().set("CaravanDestinationID", _destination.getID());
 
 		// record caravan history
-		local caravanHistoryData = this.createCaravanHistoryData(this.CaravanHistoryType.Initiated, _settlement.getID(), _destination.getID(), finance.Investment, finance.Profit, result.Items);
+		local coords = settlement.getTile().Coords;
+		local caravanHistoryData = this.createCaravanHistoryData(this.CaravanHistoryType.Initiated, _settlement.getID(), _destination.getID(), finance.Investment, finance.Profit, result.Items, [coords.X, coords.Y]);
 		_settlement.updateCaravanSentHistory(caravanHistoryData);
 
 		// print log to declare action
