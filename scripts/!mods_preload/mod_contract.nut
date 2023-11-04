@@ -447,7 +447,8 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 				"reward",
 				this.m.Payment.getOnCompletion() + this.m.Payment.getInAdvance()
 			]);
-			::Const.LegendMod.extendVarsWithPronouns(vars, this.getEmployer().getGender(), "employer");
+			local employer = this.getEmployer(); // Sometimes null for things like Arena Contract -> 0 is "default" male, 1 for female
+			::Const.LegendMod.extendVarsWithPronouns(vars, employer == null ? 0 : employer.getGender(), "employer");
 			::Const.LegendMod.extendVarsWithPronouns(vars, gender1, "randombrother");
 			::Const.LegendMod.extendVarsWithPronouns(vars, gender2, "randombrother2");
 			return this.buildTextFromTemplate(_text, vars);
