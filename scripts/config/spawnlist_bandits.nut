@@ -66,7 +66,7 @@ gt.Const.World.Spawn.BanditRoamers <-
 			]
 		},
 		{
-			Weight = 18,
+			Weight = 12,
 			Types =
 			[
 				{
@@ -190,7 +190,7 @@ gt.Const.World.Spawn.BanditScouts <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 12,
 			Types =
 			[
 				{
@@ -315,7 +315,7 @@ gt.Const.World.Spawn.BanditRaiders <-
 			]
 		},
 		{
-			Weight = 20,
+			Weight = 12,
 			Types =
 			[
 				{
@@ -486,7 +486,7 @@ gt.Const.World.Spawn.BanditDefenders <-
 			]
 		},
 		{
-			Weight = 18,
+			Weight = 12,
 			Types =
 			[
 				{

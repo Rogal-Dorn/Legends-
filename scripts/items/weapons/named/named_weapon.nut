@@ -3,7 +3,12 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		PrefixList = this.Const.Strings.RandomWeaponPrefix,
 		SuffixList = [],
 		NameList = [],
-		UseRandomName = true
+		UseRandomName = true,
+
+		PossibleEffects = [],
+		EffectBounds = [],
+		EffectChanceOrBonus = 0,
+		PossibleEffectIdx = -1
 	},
 	function create()
 	{
@@ -67,6 +72,13 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			{
 				this.setName(this.createRandomName());
 			}
+		}
+
+		if (this.m.PossibleEffectIdx >= 0)
+		{
+			local s = this.new(this.m.PossibleEffects[this.m.PossibleEffectIdx]);
+			s.setBonus(this.m.EffectChanceOrBonus);
+			this.addSkill(s);
 		}
 	}
 
@@ -154,6 +166,16 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 			_i.m.FatigueOnSkillUse = _i.m.FatigueOnSkillUse - this.Math.rand(1, 3);
 		});
 
+		if ( this.m.PossibleEffects.len() > 0 )
+		{
+			available.push(function ( _i )
+			{
+				_i.m.PossibleEffectIdx = ::Math.rand( 0, _i.m.PossibleEffects.len() - 1 );
+				_i.m.EffectChanceOrBonus = ::Math.rand( _i.m.EffectBounds[_i.m.PossibleEffectIdx][0], _i.m.EffectBounds[_i.m.PossibleEffectIdx][1] );
+			});
+		}
+		
+
 		for( local n = 2; n != 0 && available.len() != 0; n = --n )
 		{
 			local r = this.Math.rand(0, available.len() - 1);
@@ -176,6 +198,8 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		_out.writeF32(this.m.DirectDamageAdd);
 		_out.writeI16(this.m.FatigueOnSkillUse);
 		_out.writeU16(this.m.AmmoMax);
+		_out.writeI8(this.m.PossibleEffectIdx)
+		_out.writeI8(this.m.EffectChanceOrBonus);
 		_out.writeF32(0);
 		this.weapon.onSerialize(_out);
 	}
@@ -194,6 +218,11 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.DirectDamageAdd = _in.readF32();
 		this.m.FatigueOnSkillUse = _in.readI16();
 		this.m.AmmoMax = _in.readU16();
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0-pre-03", _in.getMetaData()))
+		{
+			this.m.PossibleEffectIdx = _in.readI8();
+			this.m.EffectChanceOrBonus = _in.readI8();
+		}
 		_in.readF32();
 		this.weapon.onDeserialize(_in);
 		this.updateVariant();

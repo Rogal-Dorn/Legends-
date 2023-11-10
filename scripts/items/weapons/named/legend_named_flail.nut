@@ -1,5 +1,8 @@
 this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_flail_effect"],
+		EffectBounds = [ [100, 100] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -32,6 +35,21 @@ this.legend_named_flail <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.m.ChanceToHitHead = 10;
 		this.m.DirectDamageMult = 0.3;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/armor_head.png",
+				text = "Applies [color=" + this.Const.UI.Color.PositiveValue + "]Daze[/color] to Targets Hit"
+			});
+		}
+		return result;
 	}
 
 	function onEquip()

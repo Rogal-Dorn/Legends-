@@ -1,5 +1,8 @@
 this.named_polemace <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_mace_stagger_effect"],
+		EffectBounds = [ [15, 25] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -33,6 +36,21 @@ this.named_polemace <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.DirectDamageMult = 0.4;
 		this.m.ChanceToHitHead = 5;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Stagger Chance"
+			});
+		}
+		return result;
 	}
 
 	function updateVariant()

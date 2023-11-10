@@ -1,5 +1,8 @@
 this.named_battle_whip <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_whip_bleed_effect", "scripts/skills/effects/named_whip_feint_effect"],
+		EffectBounds = [ [30, 50], [20, 35] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -27,6 +30,30 @@ this.named_battle_whip <- this.inherit("scripts/items/weapons/named/named_weapon
 		this.m.ArmorDamageMult = 0.25;
 		this.m.DirectDamageMult = 0.1;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] to Bleed Target on Hit"
+			});
+		}
+		if (this.m.PossibleEffectIdx == 1)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] to Feint Target on Hit"
+			});
+		}
+		return result;
 	}
 
 	function updateVariant()

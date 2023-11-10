@@ -219,7 +219,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditRabblePoacher] <- {
         this.Const.Perks.BowTree
     ], 
     WeaponsAndTrees = [
-        [1, ["short_bow", 50]],
+        [1, ["wonky_bow", 50]],
         [2, ["legend_sling", 50]]
     ],
     LegendaryPerks = [
@@ -286,8 +286,9 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.BanditPoacher] <- {
         [1, "bandit_poacher_outfit_00"]
     ],
     WeaponsAndTrees = [
-        [2, ["short_bow", 65]],
-        [1, ["legend_sling", 65]]
+        [3, ["wonky_bow", 65]],
+        [1, ["short_bow", 65]],
+        [3, ["legend_sling", 65]]
     ],
     TraitsPerkList = [  
         this.Const.Perks.AgileTree,
@@ -489,7 +490,7 @@ gt.Const.RandomizedCharacterInfo[gt.Const.EntityType.NoblePollax] <- {
     WeaponsAndTrees = [
         [1, ["polehammer", 100]],
         [2, ["two_handed_hammer",  100]],
-        [2, ["two_handed_spiked_mace", 100]],
+        [2, ["two_handed_flanged_mace", 100]],
         [2, ["warbrand", 100]],
         [3, ["legend_swordstaff", 100]]
     ],

@@ -1,5 +1,8 @@
 this.legend_named_gladius <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_sword_riposte_effect"],
+		EffectBounds = [ [8, 13] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -25,6 +28,21 @@ this.legend_named_gladius <- this.inherit("scripts/items/weapons/named/named_wea
 		this.m.ArmorDamageMult = 0.8;
 		this.m.DirectDamageMult = 0.2;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/melee_skill.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "[/color] Chance to Riposte on Turn Start"
+			});
+		}
+		return result;
 	}
 
 	function onEquip()
