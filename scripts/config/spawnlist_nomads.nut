@@ -43,7 +43,7 @@ gt.Const.World.Spawn.NomadRoamers <-
 			]
 		},
 		{
-			Weight = 15,
+			Weight = 10,
 			Types = [
 				{
 					Type = this.Const.World.Spawn.Troops.NomadSlinger,
@@ -92,7 +92,7 @@ gt.Const.World.Spawn.NomadRaiders <-
 			]
 		},
 		{
-			Weight = 18,
+			Weight = 10,
 			Types =
 			[
 				{
@@ -179,7 +179,7 @@ gt.Const.World.Spawn.NomadDefenders <-
 			]
 		},
 		{
-			Weight = 21,
+			Weight = 12,
 			Types =
 			[
 				{
