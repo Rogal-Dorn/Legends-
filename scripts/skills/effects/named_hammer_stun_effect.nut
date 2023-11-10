@@ -40,6 +40,8 @@ this.named_hammer_stun_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
+		if ( _skill.m.IsWeaponSkill == false ) { return; }
+		
 		local actor = this.getContainer().getActor();
 
 		if (!actor.isAlive() || actor.isDying())
