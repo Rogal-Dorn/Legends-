@@ -1,5 +1,8 @@
 this.legend_named_butchers_cleaver <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_cleaver_effect"],
+		EffectBounds = [ [10, 20] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -27,6 +30,21 @@ this.legend_named_butchers_cleaver <- this.inherit("scripts/items/weapons/named/
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.25;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Fatality Chance"
+			});
+		}
+		return result;
 	}
 
 	function onEquip()

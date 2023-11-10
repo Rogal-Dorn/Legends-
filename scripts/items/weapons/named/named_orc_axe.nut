@@ -1,7 +1,8 @@
 this.named_orc_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
 		PossibleEffects = ["scripts/skills/effects/named_axe_effect"],
-		EffectBounds = [ [15, 35] ]},
+		EffectBounds = [ [15, 35] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
