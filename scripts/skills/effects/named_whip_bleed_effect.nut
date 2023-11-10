@@ -56,7 +56,7 @@ this.named_whip_bleed_effect <- this.inherit("scripts/skills/skill", {
 		{
             if ( ::Math.rand(0, 100) > this.m.Bonus ) { return; }
 			local effect = this.new("scripts/skills/effects/bleeding_effect");
-            if (_user.getFaction() == this.Const.Faction.Player )
+            if (_skill.getContainer().getActor().getFaction() == this.Const.Faction.Player )
             {
                 effect.setActor(this.getContainer().getActor());
             }
