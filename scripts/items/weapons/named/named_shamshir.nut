@@ -1,5 +1,8 @@
 this.named_shamshir <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_shamshir_effect"],
+		EffectBounds = [ [20, 35] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -28,6 +31,21 @@ this.named_shamshir <- this.inherit("scripts/items/weapons/named/named_weapon", 
 		this.m.ArmorDamageMult = 0.75;
 		this.m.DirectDamageMult = 0.2;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + 100 - this.m.EffectChanceOrBonus + "%[/color] Lowered Injury Threshold"
+			});
+		}
+		return result;
 	}
 
 	function updateVariant()
