@@ -1,4 +1,4 @@
-this.named_whip_bleed_effect <- this.inherit("scripts/skills/skill", {
+this.named_whip_feint_effect <- this.inherit("scripts/skills/skill", {
 	m = {
         Bonus = 0
 	},
