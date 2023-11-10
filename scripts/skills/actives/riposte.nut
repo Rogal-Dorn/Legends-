@@ -64,7 +64,7 @@ this.riposte <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return !this.m.IsSpent && this.skill.isUsable();
+		return !this.m.IsSpent && this.skill.isUsable() && !this.getContainer().hasSkill("effects.riposte");
 	}
 
 	function onAfterUpdate( _properties )
