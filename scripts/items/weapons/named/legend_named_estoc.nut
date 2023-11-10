@@ -1,5 +1,8 @@
 this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_estoc_effect"],
+		EffectBounds = [ [2, 7] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -29,9 +32,24 @@ this.legend_named_estoc <- this.inherit("scripts/items/weapons/named/named_weapo
 		this.randomizeValues();
 	}
 
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/melee_defense.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "[/color] Melee Defense"
+			});
+		}
+		return result;
+	}
+
 	function onEquip()
 	{
-		this.weapon.onEquip();
+		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_great_slash"));
 		this.addSkill(this.new("scripts/skills/actives/legend_greatlunge_skill"));
 	}
