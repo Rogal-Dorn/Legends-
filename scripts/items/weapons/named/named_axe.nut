@@ -1,5 +1,8 @@
 this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
-	m = {},
+	m = {
+		PossibleEffects = ["scripts/skills/effects/named_axe_effect"],
+		EffectBounds = [ [10, 25] ]
+	},
 	function create()
 	{
 		this.named_weapon.create();
@@ -27,6 +30,21 @@ this.named_axe <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.m.ArmorDamageMult = 1.3;
 		this.m.DirectDamageMult = 0.3;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/armor_head.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Damage to Head"
+			});
+		}
+		return result;
 	}
 
 	function updateVariant()
