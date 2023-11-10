@@ -7,8 +7,8 @@ this.named_estoc_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.named_estoc";
 		this.m.Name = "Named Estoc";
 		this.m.Description = "";
-		this.m.Icon = "ui/perks/parrying_circle.png";
-		this.m.IconMini = "mini_parrying_circle";
+		this.m.Icon = "skills/placeholder_circle.png";
+		this.m.IconMini = "mini_placeholder_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Item;
 		this.m.IsActive = false;
