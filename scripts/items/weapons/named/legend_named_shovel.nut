@@ -1,6 +1,8 @@
 this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
-		StunChance = 10
+		StunChance = 10,
+		PossibleEffects = ["scripts/skills/effects/named_mace_stagger_effect"],
+		EffectBounds = [ [25, 40] ]
 	},
 	function create()
 	{
@@ -29,6 +31,21 @@ this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weap
 		this.m.DirectDamageMult = 0.2;
 		this.m.ChanceToHitHead = 10;
 		this.randomizeValues();
+	}
+
+	function getTooltip()
+	{
+		local result = this.named_weapon.getTooltip();
+		if (this.m.PossibleEffectIdx == 0)
+		{
+			result.push({
+				id = 12,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.EffectChanceOrBonus + "%[/color] Stagger Chance"
+			});
+		}
+		return result;
 	}
 
 	function onEquip()

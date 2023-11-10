@@ -593,7 +593,7 @@ layers = [
  "title" :  "Nasal Helmet", \
  "desc" :  "A metal helmet with added noseguard." \
 },
-{"name" : "flat_top_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -4, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "flat_top_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 225, "con" : 70, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusted Flat Top Helm", \
  "desc" :  "A flat top helm that is worn out, rusted, dented and will never be fully repairable." \
 },
@@ -633,7 +633,7 @@ layers = [
  "title" :  "Great Bascinet", \
  "desc" :  "A tall helm composed of a peaked bascinet and riveted cheek protection." \
 },
-{"name" : "kettle_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 250, "con" : 75, "stam" : -5, "vis" : -1, "hair" : "true", "beard" : "false",  \
+{"name" : "kettle_helm_low"                     , "layer" : "helm", "min" : 1, "max" : 6, "value" : 300, "con" : 75, "stam" : -7, "vis" : -1, "hair" : "true", "beard" : "false",  \
  "title" :  "Rusted Kettle Helm", \
  "desc" :  "A full-metal helmet with a broad rim, it has been poorly maintained and is now rusted, dented and will never be fully repaired." \
 },
