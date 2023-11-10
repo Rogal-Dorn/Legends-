@@ -40,6 +40,7 @@ this.named_axe_effect <- this.inherit("scripts/skills/skill", {
 
     function onBeforeTargetHit( _skill, _targetEntity, _hitInfo )
 	{
+        if ( _skill.m.IsWeaponSkill == false ) { return; }
 		if ( _targetEntity != null && _hitInfo.BodyPart == ::Const.BodyPart.Head)
 		{
 			_hitInfo.DamageRegular *= 1 + (this.m.Bonus * 0.01);
