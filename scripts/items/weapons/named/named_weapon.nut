@@ -218,8 +218,11 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.DirectDamageAdd = _in.readF32();
 		this.m.FatigueOnSkillUse = _in.readI16();
 		this.m.AmmoMax = _in.readU16();
-		this.m.PossibleEffectIdx = this.Const.Serialization.Version >= 74 ? _in.readI8() : -1;
-		this.m.EffectChanceOrBonus = this.Const.Serialization.Version >= 74 ? _in.readI8() : 0;
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0-pre-03", _in.getMetaData()))
+		{
+			this.m.PossibleEffectIdx = _in.readI8();
+			this.m.EffectChanceOrBonus = _in.readI8();
+		}
 		_in.readF32();
 		this.weapon.onDeserialize(_in);
 		this.updateVariant();
