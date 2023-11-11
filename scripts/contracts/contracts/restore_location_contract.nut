@@ -2,7 +2,8 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Caravan = null,
 		Location = null,
-		IsEscortUpdated = false
+		IsEscortUpdated = false,
+		UnformattedDescription = "%s is looking to rebuild, ideally with some heartless sellswords on-hand for any trouble."
 	},
 	function setLocation( _l )
 	{
@@ -15,8 +16,15 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.01;
 		this.m.Type = "contract.restore_location";
 		this.m.Name = "Rebuilding Effort";
-		this.m.Description = format("%s is looking to rebuild, ideally with some heartless sellswords on-hand for any trouble.", this.m.Home.getName());
+		this.m.Description = "";
+		// this.m.Description = format("%s is looking to rebuild, ideally with some heartless sellswords on-hand for any trouble.", this.m.Home.getName());
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+	}
+
+	// Ran when we actually add the contract
+	function formatDescription()
+	{
+		this.m.Description = format(this.m.UnformattedDescription, this.m.Home.getName());
 	}
 
 	function onImportIntro()
