@@ -2,17 +2,25 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 	m = {
 		Reward = 0,
 		Kidnapper = null,
-		Militia = null
+		Militia = null,
+		UnformattedDescription = "Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure."
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.defend_settlement_bandits";
 		this.m.Name = "Defend Settlement";
-		this.m.Description = format("Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure.", this.m.Home.getName());
+		this.m.Description = "";
+		// this.m.Description = format("Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure.", this.m.Home.getName());
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
+	}
+
+	// Ran when we actually add the contract
+	function formatDescription()
+	{
+		this.m.Description = format(this.m.UnformattedDescription, this.m.Home.getName());
 	}
 
 	function onImportIntro()
