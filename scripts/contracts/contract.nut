@@ -1624,7 +1624,7 @@ this.contract <- {
 		return ret;
 	}
 
-	function formatDescription()
+	function formatDescription() 
 	{
 	}
 

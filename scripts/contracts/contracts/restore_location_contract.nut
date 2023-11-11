@@ -3,7 +3,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		Caravan = null,
 		Location = null,
 		IsEscortUpdated = false,
-		UnformattedDescription = "%s is looking to rebuild, ideally with some heartless sellswords on-hand for any trouble."
+		UnformattedDescription = "The townsfolk are looking to rebuild the %s and are hiring heartless sellswords for any trouble."
 	},
 	function setLocation( _l )
 	{
@@ -24,7 +24,7 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, this.m.Home.getName());
+		this.m.Description = format(this.m.UnformattedDescription, this.m.Location.getName());
 	}
 
 	function onImportIntro()
