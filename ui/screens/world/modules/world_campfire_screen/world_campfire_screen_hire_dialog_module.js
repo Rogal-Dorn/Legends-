@@ -157,8 +157,9 @@ WorldCampfireScreenHireDialogModule.prototype.createDIV = function (_parentDiv)
 	var effectsHeaderLabel = $('<div class="label title-font-normal font-bold font-bottom-shadow font-color-title">Effects</div>');
 	effectsHeader.append(effectsHeaderLabel);*/
 
-	this.mDetailsPanel.EffectsContainer = $('<div class="row is-components-container"/>');
-	detailsRow.append(this.mDetailsPanel.EffectsContainer);
+	var row  = $('<div class="row is-components-container"/>');
+	detailsRow.append(row);
+	this.mDetailsPanel.EffectsContainer = row.createList(10, null).findListScrollContainer();
 
 	// details: requirements
 	detailsRow = $('<div class="row is-requirements-container"/>');
