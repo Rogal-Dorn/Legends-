@@ -7,12 +7,12 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 		local voice = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
 		this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[voice].NoDamageReceived;
 		this.m.Sound[this.Const.Sound.ActorEvent.DamageReceived] = this.Const.HumanSounds[voice].DamageReceived;
-		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
+		this.m.SoundPitch = this.Math.rand(125, 135) * 0.01;
 
 		// volumn
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.NoDamageReceived] = 1.4;
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.5;
-		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 1.5;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.NoDamageReceived] = 1.2;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.DamageReceived] = 1.15;
+		this.m.SoundVolume[this.Const.Sound.ActorEvent.Death] = 1.25;
 
 		this.m.Flags.set("type", "human");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_melee_agent");
@@ -38,7 +38,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 		b.IsSpecializedInSpears = true;
 		b.IsSpecializedInCleavers = true;
 
-		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 40)
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
 		{
 			b.MeleeSkill += 5;
 			b.RangedSkill += 5;
@@ -322,7 +322,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 			}
 		}
 
-		// stop from dropping their equipment
+		// stop the items from dropping
 		foreach (item in this.getItems().getAllItems())
 		{
 			item.m.IsDroppedAsLoot = false;
