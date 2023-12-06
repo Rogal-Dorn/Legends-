@@ -9,11 +9,12 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/siphon_square.png";
 		this.m.IconDisabled = "skills/siphon_square_bw.png";
 		this.m.Overlay = "siphon_square";
-		this.m.SoundOnUse = [
+		this.m.SoundOnUse = [ //new drain sounds thanks to Blackheart, implemented 6/12/23 - Luft
 			"sounds/combat/drain_01.wav",
 			"sounds/combat/drain_02.wav",
 			"sounds/combat/drain_03.wav",
-			"sounds/combat/drain_04.wav"
+			"sounds/combat/drain_04.wav",
+			"sounds/combat/drain_05.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
@@ -27,7 +28,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsUsingHitchance = false;
 		this.m.DirectDamageMult = 1.0;
 		this.m.ActionPointCost = 5;
-		this.m.FatigueCost = 20;
+		this.m.FatigueCost = 10;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 5;
 	}
@@ -55,7 +56,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/health.png", // fix from /ui to ui/, Abyss 6/17/23
-				text = "Siphons up to [color=" + this.Const.UI.Color.DamageValue + "]30% [/color] of targets health to you. Drops 5% for each tile away."
+				text = "Siphons up to [color=" + this.Const.UI.Color.DamageValue + "]30%[/color] of targets health to you. Drops by [color=" + this.Const.UI.Color.NegativeValue + "]5%[/color] for each tile distance."
 			}
 		];
 	}
