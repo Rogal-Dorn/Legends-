@@ -1100,7 +1100,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
 			this.m.Skills.add(skill);
 
-			if (this.World.Assets.getOrigin().getID() == "scenario.legends_necro") //deathly spectre for Cabal
+			if (this.World.Assets.getOrigin().getID() == "scenario.legends_necro") //deathly spectre for Cabal/necro
 			{
 				// if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //original that we know works but has conflicts - Luft
 				// if (this.m.CurrentProperties.SurvivesAsUndead && this.m.IsDying == true && !this.getFlags().has("PlayerZombie")) //attempt to add 'isdying' into the formula to stop the durgeon retinue from basically not working at all and bros still becoming zombies. But I think isdying is casuing a recursive loop because the bro is 'dying' but then being put back into the roster by the zombie mechanic. - Luft
