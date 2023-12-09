@@ -8,7 +8,7 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 		this.m.DamageInitiativeMax = 35;
 		this.m.ID = "actives.legend_deathtouch";
 		this.m.Name = "Death Touch";
-		this.m.Description = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim ";
+		this.m.Description = "Your fingers turn ghostly and pass through steel and flesh, tearing at the soul of your victim. Uses Melee Skill to hit.";
 		this.m.KilledString = "Frightened to death";
 		this.m.Icon = "skills/deathtouch_square.png";
 		this.m.IconDisabled = "skills/deathtouch_square_bw.png";
@@ -37,7 +37,7 @@ this.legend_deathtouch <- this.inherit("scripts/skills/legend_magic_skill", {
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Damage scales with current initiative"
+			text = "Damage scales with current initiative and ignores armour."
 		});
 		return ret;
 	}
