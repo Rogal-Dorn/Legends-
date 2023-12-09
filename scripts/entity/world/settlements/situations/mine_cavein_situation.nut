@@ -88,7 +88,7 @@ this.mine_cavein_situation <- this.inherit("scripts/entity/world/settlements/sit
 		_draftList.push("legend_ironmonger_background");
 		_draftList.push("legend_blacksmith_background");
 
-		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro")
 		{
 			_draftList.push("legend_puppet_background");
 			_draftList.push("legend_puppet_background");

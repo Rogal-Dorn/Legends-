@@ -58,7 +58,7 @@ this.razed_situation <- this.inherit("scripts/entity/world/settlements/situation
 		_draftList.push("raider_background");
 
 
-		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro")
 		{
 			_draftList.push("legend_puppet_background");
 			_draftList.push("legend_puppet_background");
