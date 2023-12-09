@@ -4,27 +4,12 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_necro";
+		this.m.Name = "Master Necromancer";
 		this.m.Icon = "ui/backgrounds/warlock_01.png";
-		local r = this.Math.rand(0, 3);
-
-		if (r == 0)
-		{
-			this.m.Name = "Necromancer";
-		}
-		else if (r == 1)
-		{
-			this.m.Name = "Seance";
-		}
-		else if (r == 2)
-		{
-			this.m.Name = "Sorcerer";
-		}
-		else if (r == 3)
-		{
-			this.m.Name = "Warlock";
-		}
-
-		this.m.HiringCost = 250;
+		this.m.BackgroundDescription = "Years of practical training and close calls have shaped %name% into a cold, dark figure capable of calling colder and darker followers to serve them.";
+		this.m.GoodEnding = "What awaits you at the top? You move from place to place and nothing ever holds your attention for long. Your mind bristles with ideas but the company you keep often fails to keep up in more ways than one. You repeated the same routes, strategies and maximised your efforts, perhaps cutting a few too many corners along the way. Why are you not happy? Is this not what you wanted? Nothing stirs within you — maybe you should have taken things more slowly? Enjoyed the small moments? Even if you did, would it change this outcome? Was this all too easy? Or perhaps too hard? Regardless, you are here now, and you can\'t go back anymore...";
+		this.m.BadEnding = "What awaits you at the top? You move from place to place and nothing ever holds your attention for long. Your mind bristles with ideas but the company you keep often fails to keep up in more ways than one. You repeated the same routes, strategies and maximised your efforts, perhaps cutting a few too many corners along the way. Why are you not happy? Is this not what you wanted? Nothing stirs within you — maybe you should have taken things more slowly? Perhaps enjoyed the small moments? Even if you did, would it change this outcome? Was this all too easy? Or perhaps too hard? Regardless, you are here now, and you can\'t go back anymore...";
+		this.m.HiringCost = 1200000000000;
 		this.m.DailyCost = 0;
 		this.m.Excluded = [
 			"trait.brave",
@@ -32,29 +17,44 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.brute",
 			"trait.dexterous",
 			"trait.eagleyes",
-			"trait.fearless",
-			"trait.huge",
 			"trait.loyal",
 			"trait.quick",
 			"trait.swift",
-			"trait.sure_footing",
 			"trait.tough",
-			"trait.disloyal"
+			"trait.disloyal",
+			"trait.hate_undead",
+			"trait.fear_undead",
+			"trait.gluttonous",
+			"trait.cocky",
+			"trait.dumb",
+			"trait.craven",
+			"trait.greedy",
+			"trait.bloodthirsty",
+			"trait.legend_fear_dark",
+			"trait.sureshot"
 		];
 		this.m.Titles = [
 			"the Sickening",
 			"the Wretched",
 			"the Widow Taunter",
+			"the Hidden Hand",
 			"the Fleshturner",
 			"The Corpse Dancer",
-			"the Puppeteer"
+			"the Puppeteer",
+			"the Morbid",
+			"the Surgeon",
+			"the Waker",
+			"the Gravewalker",
+			"the Butcher",
+			"the Fleshshaper",
+			"the Overseer"
 		];
 		this.m.Faces = this.Const.Faces.NecromancerMale;
 		this.m.Hairs = this.Const.Hair.Necromancer;
 		this.m.HairColors = this.Const.HairColors.Zombie;
 		this.m.Beards = this.Const.Beards.Raider;
 
-		this.m.Level = 2;
+		this.m.Level = 3;
 		this.m.BackgroundType = this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Outlaw;
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Merciless;
@@ -63,122 +63,69 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
 		this.m.Modifiers.MedConsumption = this.Const.LegendMod.ResourceModifiers.MedConsumption[3];
+		this.m.Modifiers.Crafting = this.Const.LegendMod.ResourceModifiers.Crafting[1];
+		this.m.Modifiers.Gathering = this.Const.LegendMod.ResourceModifiers.Gather[1];
 
-		if (!this.LegendsMod.Configs().LegendMagicEnabled())
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.Fatigue,
+			this.Const.Attributes.Bravery
+		];
+
+		this.m.Modifiers.Terrain = [
+				0.0, // ?
+				0.0, //ocean
+				0.0, //plains
+				0.15, //swamp
+				0.0, //hills
+				0.10, //forest
+				0.10, //forest
+				0.10, //forest_leaves
+				0.10, //autumn_forest
+				0.0, //mountains
+				0.0, // ?
+				0.0, //farmland
+				0.0, // snow
+				0.0, // badlands
+				0.0, //highlands
+				0.0, //stepps
+				0.0, //ocean
+				0.0, //desert
+				0.0 //oasis
+			];
+
+		if (!this.LegendsMod.Configs().LegendMagicEnabled()) 
 		{
 				this.m.CustomPerkTree = [
 				[
 					this.Const.Perks.PerkDefs.NineLives,
+					this.Const.Perks.PerkDefs.LegendAlert,
 					this.Const.Perks.PerkDefs.CripplingStrikes,
 					this.Const.Perks.PerkDefs.BagsAndBelts,
-					this.Const.Perks.PerkDefs.Student,
 					this.Const.Perks.PerkDefs.Recover,
 					this.Const.Perks.PerkDefs.LegendWither,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
 					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill,
-					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
-				],
-				[
-					this.Const.Perks.PerkDefs.CoupDeGrace,
-					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendTrueBeliever,
-					this.Const.Perks.PerkDefs.LegendRust,
-					this.Const.Perks.PerkDefs.LegendMedPackages,
-					this.Const.Perks.PerkDefs.LegendPrepareBleed,
-					this.Const.Perks.PerkDefs.LegendPrepareGraze
-				],
-				[
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.Debilitate,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-					this.Const.Perks.PerkDefs.Lookout,
-					this.Const.Perks.PerkDefs.LegendExtendendAura,
-					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
-					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
-					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendBloodbath
-				],
-				[
-					this.Const.Perks.PerkDefs.SpecDagger,
-					this.Const.Perks.PerkDefs.SpecMace,
-					this.Const.Perks.PerkDefs.SpecCleaver,
-					this.Const.Perks.PerkDefs.LegendMasteryStaves,
-					this.Const.Perks.PerkDefs.SpecThrowing,
-					this.Const.Perks.PerkDefs.LegendSpecPoison,
-					this.Const.Perks.PerkDefs.LegendLacerate,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
-				],
-				[
-					this.Const.Perks.PerkDefs.LoneWolf,
-					this.Const.Perks.PerkDefs.LegendLithe,
-					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
-					this.Const.Perks.PerkDefs.LegendBlendIn,
-					this.Const.Perks.PerkDefs.LegendReclamation,
-					this.Const.Perks.PerkDefs.LegendMedIngredients,
-					this.Const.Perks.PerkDefs.LegendConservation,
-					this.Const.Perks.PerkDefs.LegendSlaughter
-				],
-				[
-					this.Const.Perks.PerkDefs.LegendClarity,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
-					this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
-					this.Const.Perks.PerkDefs.LegendChanneledPower,
+					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill,
+					this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
 					this.Const.Perks.PerkDefs.LegendPossession
 				],
 				[
-					this.Const.Perks.PerkDefs.Fearsome,
-					this.Const.Perks.PerkDefs.LegendGruesomeFeast,
-					this.Const.Perks.PerkDefs.PerfectFocus,
-					this.Const.Perks.PerkDefs.LegendBalance,
-					this.Const.Perks.PerkDefs.LegendViolentDecomposition,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh
-				],
-				[],
-				[],
-				[],
-				[]
-			];
-
-		}
-		else
-		{
-			this.m.CustomPerkTree = [
-				[
-					this.Const.Perks.PerkDefs.LegendSiphon,
-					this.Const.Perks.PerkDefs.NineLives,
-					this.Const.Perks.PerkDefs.CripplingStrikes,
-					this.Const.Perks.PerkDefs.BagsAndBelts,
-					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.Recover,
-					this.Const.Perks.PerkDefs.LegendWither,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieLow,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonLow,
-					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsSkill,
-					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill
-				],
-				[
-					this.Const.Perks.PerkDefs.CoupDeGrace,
+					this.Const.Perks.PerkDefs.LegendReclamation,
+					this.Const.Perks.PerkDefs.LegendSpecCultHood,
 					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.Gifted,
+					this.Const.Perks.PerkDefs.Overwhelm,
 					this.Const.Perks.PerkDefs.LegendTrueBeliever,
 					this.Const.Perks.PerkDefs.LegendRust,
-					this.Const.Perks.PerkDefs.LegendPrepareBleed,
-					this.Const.Perks.PerkDefs.LegendPrepareGraze,
-					this.Const.Perks.PerkDefs.LegendMedPackages
-				],
-				[
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.Debilitate,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-					this.Const.Perks.PerkDefs.Lookout,
 					this.Const.Perks.PerkDefs.LegendDeathtouch,
-					this.Const.Perks.PerkDefs.LegendExtendendAura,
+					this.Const.Perks.PerkDefs.LegendGatherer,
+					this.Const.Perks.PerkDefs.LegendMedPackages,
+					this.Const.Perks.PerkDefs.RallyTheTroops
+				],
+				[
+					this.Const.Perks.PerkDefs.Backstabber,
+					this.Const.Perks.PerkDefs.Debilitate,
+					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
+					this.Const.Perks.PerkDefs.Lookout,
+					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
 					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
@@ -187,45 +134,45 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				[
 					this.Const.Perks.PerkDefs.SpecDagger,
 					this.Const.Perks.PerkDefs.SpecMace,
+					this.Const.Perks.PerkDefs.SpecSword,
 					this.Const.Perks.PerkDefs.SpecCleaver,
 					this.Const.Perks.PerkDefs.LegendMasteryStaves,
-					this.Const.Perks.PerkDefs.SpecThrowing,
+					this.Const.Perks.PerkDefs.SpecPolearm,
+					this.Const.Perks.PerkDefs.LegendPoisonImmunity,
 					this.Const.Perks.PerkDefs.LegendSpecPoison,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
-					this.Const.Perks.PerkDefs.LegendLacerate,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonMed
+					this.Const.Perks.PerkDefs.LegendSpecBandage,
+					this.Const.Perks.PerkDefs.LegendExtendendAura
 				],
 				[
-					this.Const.Perks.PerkDefs.LoneWolf,
+					this.Const.Perks.PerkDefs.LegendLacerate,
 					this.Const.Perks.PerkDefs.LegendLithe,
 					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
-					this.Const.Perks.PerkDefs.LegendBlendIn,
-					this.Const.Perks.PerkDefs.LegendReclamation,
+					this.Const.Perks.PerkDefs.CoupDeGrace,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
-					this.Const.Perks.PerkDefs.LegendSlaughter
+					this.Const.Perks.PerkDefs.LegendSlaughter,
+					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh
 				],
 				[
-					this.Const.Perks.PerkDefs.LegendClarity,
-					this.Const.Perks.PerkDefs.LegendInsects,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
-					this.Const.Perks.PerkDefs.LegendBrinkOfDeath,
 					this.Const.Perks.PerkDefs.LegendChanneledPower,
-					this.Const.Perks.PerkDefs.LegendPossession
+					this.Const.Perks.PerkDefs.LegendHerbcraft,
+					this.Const.Perks.PerkDefs.Rebound,
+					this.Const.Perks.PerkDefs.LegendSpecCultArmor,
+					this.Const.Perks.PerkDefs.LegendMiasma,
+					this.Const.Perks.PerkDefs.LegendViolentDecomposition
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
+					this.Const.Perks.PerkDefs.Footwork,
 					this.Const.Perks.PerkDefs.LegendGruesomeFeast,
 					this.Const.Perks.PerkDefs.PerfectFocus,
+					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.LegendBalance,
-					this.Const.Perks.PerkDefs.LegendMiasma,
-					this.Const.Perks.PerkDefs.LegendDarkflight,
-					this.Const.Perks.PerkDefs.LegendFieldTriage,
-					this.Const.Perks.PerkDefs.LegendViolentDecomposition,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
-					this.Const.Perks.PerkDefs.LegendSpawnSkeletonHigh
+					this.Const.Perks.PerkDefs.LegendClarity,
+					this.Const.Perks.PerkDefs.ReachAdvantage
 				],
 				[],
 				[],
@@ -233,7 +180,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				[]
 			];
 		}
-	}
+	}	
 
 	function setGender(_gender = -1)
 	{
@@ -249,12 +196,24 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
-
-	function onBuildDescription()
+	function getTooltip()
 	{
-		return "{Clothed in strangely colored robes, %name% appears to be more of an ambassador of the dark than a man of flesh and blood. | A curious fellow, %name% carries a slumped posture, as if he is weighted by otherworldly knowledge. | %name%\'s face is hidden well inside the dark of his cowl, a crescent of yellow teeth the only notion that a man dwells within. | Not much is known about %name%, but strange rumors of sorcery and dark arts follow him. | Wherever animals mysteriously begin to die, %name% makes an appearance. | The brooches on %name%\'s cloak seem to swirl and dance like midnight in a jug. | %name%\'s hands are rare to see, only coming out as if to portray the feelings of his face which lies hidden deep in his hood. | %name%\'s eyes could be mistaken for a cat\'s one day and for a blind man\'s the next.} {Little is known about whence he came. | From where he hails is but a mystery to most. | Some say he traveled deep into the northern foothills, returning with unspoken knowledge. | Ostensibly, the dark arts are his heritage, or so he puts on. | The man\'s past is kept from all. Maybe it\'s just uninteresting, or maybe just the opposite. | One rumor of the man says he traveled the land as a magician. | Rumors of magic surround the man, though some incredulous cynics are hardly impressed. | One rumor is that he was a conman, and another is that he\'s a sorcerer. You\'re not sure which you prefer. | With rumors of dark arts being practiced once more, the man\'s magical proclamation just might be true. | Some say he eats toads for breakfast and black cats for dinner.} {You ask %name% a lot of questions, but through some handwaves and nods, you realize you have forgotten his answers. Or did you ask the questions at all? | %name% produces a dove from his sleeve. An old trick that fancies no one - until it turns in the air, returning to him as a crow. | %name% has shown the ability to shoot smoke from his mouth. It\'s not fire, but it\'s close, and has people talking in hushed tones. | %name% floats a gold coin into the air. An amazing display that leaves the man too tired to attempt it again. | Predictions of the weather are common, but %name% is unusually accurate with his own. | %name% asks to read your palms. You decline. His presence alone is as close as you\'re willing to go. | %name% suggests that the stars are a roadmap to another world. He seems to know a lot about the heavens above. | %name% suggests that the heavens above are in fact just endless streams of beings, continuing on for eons. What a jest! | %name% points to one star in the sky and seems to suggest that is where he came from. You don\'t ask for a clarification on the matter.}";
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/xp_received.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Experience Gain"
+			}
+		)
+		return ret
 	}
 
+	function onBuildDescription() //—
+	{
+		return "Clothed in the un-reality of your life\'s work, ";
+	}
 
 	function onChangeAttributes()
 	{
@@ -264,32 +223,32 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				25
 			],
 			Bravery = [
-				0,
-				0
+				15,
+				20
 			],
 			Stamina = [
-				10,
-				10
+				5,
+				8
 			],
 			MeleeSkill = [
-				10,
-				10
+				2,
+				6
 			],
 			RangedSkill = [
-				0,
-				0
+				10,
+				18
 			],
 			MeleeDefense = [
-				0,
-				0
+				2,
+				5
 			],
 			RangedDefense = [
-				-5,
-				0
+				3,
+				6
 			],
 			Initiative = [
-				10,
-				15
+				-5,
+				10
 			]
 		};
 		return c;
@@ -298,37 +257,55 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 	function onAdded()
 	{
 		this.character_background.onAdded();
-		//if (this.LegendsMod.Configs().LegendMagicEnabled())
-		//{
-		//	this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
-		//}
-
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_roster_1"));
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_brink_of_death"));
-		this.m.Container.add(this.new("scripts/skills/traits/survivor_trait"));
+		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_siphon"));
+		this.m.Container.add(this.new("scripts/skills/traits/old_trait"));
 	}
 
 	function onAddEquipment()
 	{
 		local talents = this.getContainer().getActor().getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
-		talents[this.Const.Attributes.Fatigue] = 3;
 		talents[this.Const.Attributes.Hitpoints] = 3;
 		this.getContainer().getActor().fillTalentValues(2, true);
 		local items = this.getContainer().getActor().getItems();
 
 		items.equip(this.Const.World.Common.pickHelmet([
-			[1, "dark_cowl"]
+			[1, "necromancer_hat"],
+			[2, "dark_cowl"],
+			[2, "undertaker_hat"],
+			[3, "witchhunter_hat"],
+			[3, "physician_mask"]
 		]));
 
 		items.equip(this.Const.World.Common.pickArmor([
-			[1, "thick_dark_tunic"]
+			[1, "thick_dark_tunic"],
+			[1, "ragged_dark_surcoat"],
+			[2, "undertaker_apron"],
+			[2, "wanderers_coat"]
 		]));
-		items.equip(this.new("scripts/items/weapons/legend_grisly_scythe"));
-		local stash = this.World.Assets.getStash()
-		stash.removeByID("supplies.ground_grains");
-		stash.removeByID("supplies.ground_grains");
-		stash.add(this.new("scripts/items/supplies/strange_meat_item"));
 
+		local r;
+		r = this.Math.rand(0, 4);
+
+		if (r == 0)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_scythe"));
+		}
+		else if (r == 1)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_staff"));
+		}
+		else if (r == 2)
+		{
+			items.equip(this.new("scripts/items/weapons/legend_sickle"));
+		}
+		else if (r == 3)
+		{
+			items.equip(this.new("scripts/items/weapons/battle_whip"));
+		}
+		else if (r == 4)
+		{
+		 items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
+		}
 	}
 });
