@@ -4,7 +4,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.legend_siphon_skill";
 		this.m.Name = "Life Siphon";
-		this.m.Description = "Siphon the life force from your foe to yourself - replinishing your health and diminishing theirs. It will never kill your victim and you can\'t draw more health than you are missing. Damage drops off over distance.";
+		this.m.Description = "Siphon the life force from your foe to yourself - replinishing your health and diminishing theirs. It will never kill your victim and you can\'t draw more health than you are missing. Damage drops off over distance and uses Melee SKill to hit.";
 		this.m.KilledString = "Frightened to death";
 		this.m.Icon = "skills/siphon_square.png";
 		this.m.IconDisabled = "skills/siphon_square_bw.png";
@@ -24,6 +24,7 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
+		this.m.IsRanged = false;
 		this.m.IsShowingProjectile = false;
 		this.m.IsUsingHitchance = false;
 		this.m.DirectDamageMult = 1.0;
