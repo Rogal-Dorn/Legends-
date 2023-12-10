@@ -121,7 +121,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.RallyTheTroops
 				],
 				[
-					this.Const.Perks.PerkDefs.Backstabber,
+					this.Const.Perks.PerkDefs.LegendMiasma,
 					this.Const.Perks.PerkDefs.Debilitate,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 					this.Const.Perks.PerkDefs.Lookout,
@@ -148,7 +148,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendLithe,
 					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
-					this.Const.Perks.PerkDefs.CoupDeGrace,
+					this.Const.Perks.PerkDefs.LegendViolentDecomposition,
 					this.Const.Perks.PerkDefs.LegendMedIngredients,
 					this.Const.Perks.PerkDefs.LegendConservation,
 					this.Const.Perks.PerkDefs.LegendSlaughter,
@@ -161,8 +161,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendHerbcraft,
 					this.Const.Perks.PerkDefs.Rebound,
 					this.Const.Perks.PerkDefs.LegendSpecCultArmor,
-					this.Const.Perks.PerkDefs.LegendMiasma,
-					this.Const.Perks.PerkDefs.LegendViolentDecomposition
+					this.Const.Perks.PerkDefs.Backstabber,
+					this.Const.Perks.PerkDefs.CoupDeGrace
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
@@ -307,5 +307,11 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 		{
 		 items.equip(this.new("scripts/items/weapons/butchers_cleaver"));
 		}
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.XPGainMult *= 1.15;
 	}
 });
