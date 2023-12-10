@@ -3,9 +3,9 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 	function create()
 	{
 		this.m.ID = "scenario.legends_solo_necro";
-		this.m.Name = "Lone Necromancer";
-		this.m.Description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p][p] Death is no barrier, others flee from its yawning abyss, but we embrace the other side. \n\n[color=#bcad8c]Dark arts:[/color] Start with three apprentice necromancers.\n[color=#bcad8c]Gruesome harvest:[/color] Collect human corpses to fashion new minions, maintain them with medical supplies.\n[color=#bcad8c]Blood magic:[/color] Cultists and other macabre backgrounds will flock to join you and cost 25% less to maintain. Cannot hire pious backgrounds. Everyone else costs 50% more to upkeep\n[color=#bcad8c]Avatars:[/color] If all three necromancers die, the spell is broken and the story ends.[/p]";
-		this.m.Difficulty = 4; //recruits cannot hate undead, start with very poor relations with all factions that degrade quickly as your party grows //graverobbers, gravediggers, anatomists and cultists all gain access to the 'siphon' perk // Puppets under your control gain additional bonuses to health. //cannot recruit pious backgrounds living backgrounds have a chance to raise as undead after death, but suffer from negative effects while mortal
+		this.m.Name = "Master Necromancer";
+		this.m.Description = "[p=c][img]gfx/ui/events/event_29.png[/img][/p][p] What is there to do when you have reached the top? Perhaps more dangers and intrigue await? \n\n[color=#bcad8c]Dark sway:[/color] Start with a master necromancer, two puppets and 3 mortals.\n[color=#bcad8c]Not a fighter:[/color] The master necromancer gains martial perks later into their development, but gains more expereince than most. If the master necromancer dies, the binds are broken and the journey ends. Puppets under your control gain bonuses to health, while mortals wither away from sickness.\n[color=#bcad8c]Dark company:[/color] Cultists gravediggers, graverobbers and anatomists are eager to serve you will flock to join you and gain the \'Siphon\' skill. Most other backgrounds cost 20% more to recruit and maintain. Cannot hire pious backgrounds.\n[color=#bcad8c]A terrible reputation:[/color] Recruits cannot hate the undead, relationships are poor with all factions and degrade slowly each day. Undead are passive towards you, and will steadily gain in relationship over time.[/p]";
+		this.m.Difficulty = 4;
 		this.m.Order = 311;
 		this.m.IsFixedLook = true;
 		this.m.StartingRosterTier = this.Const.Roster.getTierForSize(4);
@@ -16,10 +16,10 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 
 	function onSpawnAssets()
 	{
-		local roster = this.World.getPlayerRoster(); //1 necro commander, 2 cultists, 2 puppets and a bard
+		local roster = this.World.getPlayerRoster(); //1 necro commander, 2 cultists, 2 puppets and 1 bard
 		local names = [];
 
-		for( local i = 0; i < 4; i = i )
+		for( local i = 0; i < 6; i = i )
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
@@ -53,7 +53,8 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[1].setPlaceInFormation(5);
 		bros[1].setVeteranPerks(2);
  		bros[1].getSprite("socket").setBrush("bust_base_undead");
-		bros[1].getBaseProperties().MeleeSkill += 12;
+ 		bros[1].getBackground().m.RawDescription = "You found %name% down on their luck behind an Inn in the middle of nowhere... they had long since fallen alseep from the dagger between their ribs. But you took pity and offered them a place in your latest scheme. They would be a fool to refuse, after all.";
+		bros[1].getBaseProperties().Hitpoints += 12;
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -78,7 +79,8 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[2].setPlaceInFormation(3);
 		bros[2].setVeteranPerks(2);
  		bros[2].getSprite("socket").setBrush("bust_base_undead");
-		bros[2].getBaseProperties().MeleeSkill += 12;
+ 		bros[2].getBackground().m.RawDescription = "%name% is a character of stunning vocal range - when you heard them sing in that graveyard you couldn't resist to allure them with the promise of fame and glory on the stage!";
+		bros[2].getBaseProperties().Hitpoints += 12;
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Head));
@@ -102,6 +104,9 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		]);
 		bros[3].setPlaceInFormation(12);
 		bros[3].setVeteranPerks(2);
+		bros[3].m.PerkPoints = 2;
+		bros[3].m.LevelUps = 2;
+		bros[3].m.Level = 3;
 		bros[3].getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/legend_withering_aura_trait"));
 		bros[3].getBackground().m.RawDescription = "";
@@ -248,7 +253,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 	{
 		if (bro.getBackground().getID() == "background.graverobber" || bro.getBackground().getID() == "background.gravedigger" || bro.getBackground().getID() == "background.cultist" || bro.getBackground().getID() == "background.anatomist" || bro.getBackground().getID() == "background.converted_cultist")
 		{
-			bro.improveMood(1.5, "These people really understand me!");
+			bro.improveMood(1.5, "I feel strange...but better!");
 			bro.getSprite("socket").setBrush("bust_base_undead");
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_withering_aura_trait"));
@@ -260,7 +265,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		}
 		else
 		{
-			bro.worsenMood(2.0, "Something doesn't feel right here...");
+			bro.worsenMood(2.0, "Feels very sick all of a sudden...");
 			bro.getSkills().add(this.new("scripts/skills/traits/legend_withering_aura_trait"));
 		}
 	}
@@ -272,6 +277,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		this.addBroToRoster(_roster, "graverobber_background", 4);
 		this.addBroToRoster(_roster, "gravedigger_background", 4);
 		this.addBroToRoster(_roster, "cultist_background", 4);
+		this.addBroToRoster(_roster, "anatomist_background", 5);
 		this.addBroToRoster(_roster, "legend_puppet_background", 6);
 		foreach( i, bro in bros )
 		{
@@ -296,8 +302,8 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		}
 		else
 		{
-			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.5) //1.0 = default
-			bro.getBaseProperties().DailyWageMult *= 1.5; //1.0 = default
+			bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 1.2) //1.0 = default
+			bro.getBaseProperties().DailyWageMult *= 1.2; //1.0 = default
 			bro.getSkills().update();
 		}
 	}
