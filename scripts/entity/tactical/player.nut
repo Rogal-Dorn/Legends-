@@ -945,7 +945,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.DamageDealtArmor = 0;
 		this.m.CombatStats.Kills = 0;
 		this.m.CombatStats.XPGained = 0;
-		this.m.Items.onCombatStarted();
 		this.m.Skills.onCombatStarted();
 		this.m.Items.onCombatStarted();
 		this.m.Skills.update();
