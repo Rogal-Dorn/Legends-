@@ -247,8 +247,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				6
 			],
 			Initiative = [
-				-5,
-				10
+				10,
+				15
 			]
 		};
 		return c;
