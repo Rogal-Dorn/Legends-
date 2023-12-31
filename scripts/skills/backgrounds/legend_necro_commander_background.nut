@@ -124,8 +124,8 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendMiasma,
 					this.Const.Perks.PerkDefs.Debilitate,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-					this.Const.Perks.PerkDefs.Lookout,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieMed,
+					this.Const.Perks.PerkDefs.LegendChanneledPower,
 					this.Const.Perks.PerkDefs.LegendSpecialistNinetailsDamage,
 					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
@@ -157,7 +157,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				[
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
-					this.Const.Perks.PerkDefs.LegendChanneledPower,
+					this.Const.Perks.PerkDefs.LegendGruesomeFeast,
 					this.Const.Perks.PerkDefs.LegendHerbcraft,
 					this.Const.Perks.PerkDefs.Rebound,
 					this.Const.Perks.PerkDefs.LegendSpecCultArmor,
@@ -167,7 +167,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
 					this.Const.Perks.PerkDefs.Footwork,
-					this.Const.Perks.PerkDefs.LegendGruesomeFeast,
+					this.Const.Perks.PerkDefs.Nimble,
 					this.Const.Perks.PerkDefs.PerfectFocus,
 					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.LegendBalance,
@@ -212,7 +212,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 
 	function onBuildDescription() //—
 	{
-		return "Clothed in the un-reality of your life\'s work, ";
+		return "Clothed in the un-reality of your life\'s work, manipulating the undead is second nature. With nothing to fear, manipulating people was not much more difficult. Despite the pacts you have made and the enemies bested along the way, you feel age catching up to you. How long has it been — how much longer is there to go?";
 	}
 
 	function onChangeAttributes()
