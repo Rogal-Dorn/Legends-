@@ -4,7 +4,7 @@ this.gruesome_feast <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.ID = "actives.gruesome_feast";
 		this.m.Name = "Gruesome Feast";
-		this.m.Description = "";
+		this.m.Description = "Allows you to consume a corpse on a tile you are currently standing on. Consuming a corpse restores a large portion of health and removes temporary injuries\n\n Permanent injuries cannot be healed.";
 		this.m.Icon = "skills/active_40.png";
 		this.m.IconDisabled = "skills/active_40.png";
 		this.m.Overlay = "active_40";
@@ -25,8 +25,8 @@ this.gruesome_feast <- this.inherit("scripts/skills/skill", {
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsAudibleWhenHidden = false;
 		this.m.IsUsingActorPitch = true;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 25;
+		this.m.ActionPointCost = 9;
+		this.m.FatigueCost = 30;
 		this.m.MinRange = 0;
 		this.m.MaxRange = 0;
 		this.m.MaxLevelDifference = 4;

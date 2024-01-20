@@ -43,7 +43,7 @@ this.short_on_food_situation <- this.inherit("scripts/entity/world/settlements/s
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro")
 		{
 			_draftList.push("legend_puppet_background");
 		}

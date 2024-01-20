@@ -60,7 +60,7 @@ this.disappearing_villagers_situation <- this.inherit("scripts/entity/world/sett
 	function onUpdateDraftList( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_necro")
+		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro")
 		{
 			_draftList.push("legend_puppet_background");
 			_draftList.push("legend_puppet_background");
