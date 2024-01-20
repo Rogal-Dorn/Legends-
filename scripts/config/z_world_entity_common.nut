@@ -254,7 +254,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		_settlement.updateCaravanSentHistory(caravanHistoryData);
 
 		// print log to declare action
-		this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (" + result.Value + " crowns), focusing on trading \'" + result.Decision + "\', investing " + finance.Investment + " resources," /*expecting at least " + finance.Profit + " resouces as profit,*/ + " from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
+		//this.logWarning("Exporting " + _party.getStashInventory().getItems().len() + " items (" + result.Value + " crowns), focusing on trading \'" + result.Decision + "\', investing " + finance.Investment + " resources," /*expecting at least " + finance.Profit + " resouces as profit,*/ + " from " + _settlement.getName() + " via a caravan bound for " + _destination.getName() + " town");
 	}
 
 	function getExpectedFinancialReport( _settlement )

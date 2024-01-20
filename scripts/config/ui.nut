@@ -57,7 +57,7 @@ gt.Const.UI <- {
 		Scroll = "cursor_scroll",
 		Drink = "cursor_drink",
 		Give = "cursor_give",
-		Bandage = "cursor_bandages",
+		Bandage = "cursor_bandage",
 		Rotation = "cursor_rotation",
 		Enter = "cursor_enter"
 	},

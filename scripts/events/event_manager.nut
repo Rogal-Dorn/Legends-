@@ -169,7 +169,7 @@ this.event_manager <- {
 				{
 					this.Time.scheduleEvent(this.TimeUnit.Real, 4000, function ( _tag )
 					{
-						if (this.World.Events.canFireEvent(true, true) && e.canFire())
+						if (this.World.Events.canFireEvent(true, true) && this.World.Events.getEvent(e).canFire())
 						{
 							this.World.Events.fire(e);
 						}

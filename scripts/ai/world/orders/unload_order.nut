@@ -37,7 +37,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 					//origin.setResources(origin.getResources() + totalPayment);
 					//settlement.setResources(settlement.getResources() - totalPayment);
 
-					this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
+					//this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
 
 				}
 
@@ -45,7 +45,7 @@ this.unload_order <- this.inherit("scripts/ai/world/world_behavior", {
 				foreach( item in inv )
 				{
 					settlement.addImportedProduce(item);
-					this.logWarning("Moving \'" + item.getName() + "\' to " + settlement.getName() +  "\'s marketplace");
+					//this.logWarning("Moving \'" + item.getName() + "\' to " + settlement.getName() +  "\'s marketplace");
 				}
 
 				local storage = settlement.getImportedGoodsInventory().getItems();

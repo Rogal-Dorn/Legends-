@@ -945,7 +945,6 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.CombatStats.DamageDealtArmor = 0;
 		this.m.CombatStats.Kills = 0;
 		this.m.CombatStats.XPGained = 0;
-		this.m.Items.onCombatStarted();
 		this.m.Skills.onCombatStarted();
 		this.m.Items.onCombatStarted();
 		this.m.Skills.update();
@@ -1011,6 +1010,11 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		if (this.isGuest())
+		{
+			return true;
+		}
+
+		if (this.getBackground() == null)
 		{
 			return true;
 		}
@@ -1097,10 +1101,10 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 				this.updateAchievement("HardToKill", 1, 1);
 			}
 
-			local skill = this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script);
-			this.m.Skills.add(skill);
+			this.m.Skills.add(this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script));
 
-			if (this.World.Assets.getOrigin().getID() == "scenario.legends_necro") //deathly spectre for Cabal/necro
+
+			if (this.getBackground().getID() != "background.legend_donkey" && this.World.Assets.getOrigin().getID() == "scenario.legends_necro" && this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") //deathly spectre for Cabal/solo necro
 			{
 				// if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //original that we know works but has conflicts - Luft
 				// if (this.m.CurrentProperties.SurvivesAsUndead && this.m.IsDying == true && !this.getFlags().has("PlayerZombie")) //attempt to add 'isdying' into the formula to stop the durgeon retinue from basically not working at all and bros still becoming zombies. But I think isdying is casuing a recursive loop because the bro is 'dying' but then being put back into the roster by the zombie mechanic. - Luft
@@ -1121,14 +1125,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			this.m.IsDying = false;
 			this.worsenMood(this.Const.MoodChange.PermanentInjury, "Suffered a permanent injury");
 			this.updateAchievement("ScarsForLife", 1, 1);
-
-			if (this.getFlags().has("PlayerSkeleton") || this.getFlags().has("PlayerZombie"))
-			{
-				return false;
-			}
-
 			return false;
 		}
+
 		return true;
 	}
 
@@ -1349,6 +1348,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			local corpse = _tile.Properties.get("Corpse");
 			corpse.IsPlayer = true;
 			corpse.Value = 10.0;
+
+			if (this.getBackground() != null && this.getBackground().getID() == "background.legend_donkey")
+				corpse.IsResurrectable = false;
 		}
 
 		if (!this.m.IsGuest && !this.Tactical.State.isScenarioMode())
