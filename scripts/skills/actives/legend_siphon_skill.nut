@@ -9,12 +9,11 @@ this.legend_siphon_skill <- this.inherit("scripts/skills/skill", {
 		this.m.Icon = "skills/siphon_square.png";
 		this.m.IconDisabled = "skills/siphon_square_bw.png";
 		this.m.Overlay = "siphon_square";
-		this.m.SoundOnUse = [ //new drain sounds thanks to Blackheart, implemented 6/12/23 - Luft
+		this.m.SoundOnUse = [
 			"sounds/combat/drain_01.wav",
 			"sounds/combat/drain_02.wav",
 			"sounds/combat/drain_03.wav",
-			"sounds/combat/drain_04.wav",
-			"sounds/combat/drain_05.wav"
+			"sounds/combat/drain_04.wav"
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
