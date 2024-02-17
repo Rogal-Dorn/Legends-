@@ -5,7 +5,7 @@ this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 		this.accessory.create();
 		this.m.ID = "accessory.basilisk_trophy";
 		this.m.Name = "Basilisk Trophy Necklace";
-		this.m.Description = "This necklace fashioned from trophies taken of various Nachzehrers declares the one wearing it a veteran of battle against feral beasts, and not easily daunted.";
+		this.m.Description = "This trophy fashioned from an eye and feathers of a Basilisk still stares blankly at all who lock eye-to-eye with it.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
