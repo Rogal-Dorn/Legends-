@@ -5,7 +5,7 @@ this.basilisk_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.blueprint.create();
 		this.m.ID = "blueprint.basilisk_trophy";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("scripts/items/accessory/basilisk_trophy_item"); //to do
+		this.m.PreviewCraftable = this.new("scripts/items/accessory/basilisk_trophy_item"); 
 		this.m.Cost = 2300;
 		local ingredients = [
 			{
@@ -22,7 +22,7 @@ this.basilisk_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/accessory/basilisk_trophy_item")); //to do
+		_stash.add(this.new("scripts/items/accessory/basilisk_trophy_item"));
 	}
 
 });
