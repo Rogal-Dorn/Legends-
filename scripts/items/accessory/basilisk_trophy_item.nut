@@ -81,7 +81,7 @@ this.basilisk_trophy_item <- this.inherit("scripts/items/accessory/accessory", {
 
 	function onUpdateProperties( _properties )
 	{
-		this.accessory.onUpdate(_properties);
+		this.accessory.onUpdateProperties(_properties);
 		_properties.HitChance[this.Const.BodyPart.Head] += 5;
 		_properties.DamageAgainstMult[this.Const.BodyPart.Head] += 0.2;
 	}
