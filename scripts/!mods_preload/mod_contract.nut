@@ -1,5 +1,25 @@
 this.getroottable().Const.LegendMod.hookContract <- function()
 {
+	::mods_hookNewObject("contracts/contract_manager", function(o) 
+	{
+		local onDeserialize = o.onDeserialize;
+		o.onDeserialize = function( _in )
+		{
+			onDeserialize(_in);
+
+			foreach( c in this.m.Open )
+			{
+				if (c.getDescription().len() != 0)
+					continue;
+
+				if (c.m.Flags.has("ContractDescription"))
+					c.m.Description = c.m.Flags.get("ContractDescription");
+				else
+					c.formatDescription();
+			}
+		}
+	}
+
 	::mods_hookDescendants("contracts/contract", function ( o )
 	{
 		local onClear = o.onClear;
@@ -77,6 +97,14 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.formatDescription <- function()
 		{
+		}
+
+		local onSerialize = o.onSerialize;
+		o.onSerialize = function(_out)
+		{
+			this.m.Flags.set("ContractDescription", this.m.Description);
+
+			onSerialize(_out);
 		}
 
 		local onDeserialize = o.onDeserialize;
