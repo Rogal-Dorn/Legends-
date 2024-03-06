@@ -8,7 +8,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_spider_abductions";
-		this.m.Name = "Webknecht Abductions";
+		this.m.Name = "Horror In The Woods";
 		this.m.Description = "Few things elicit such horror as the Webknechts, especially when they grow large enough to start abducting fully-grown townsfolk.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 	}
@@ -136,8 +136,8 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					p.Tile = tile;
 					p.CombatID = "SpiderNest";
 					p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Custom;
-					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;			//Was 80, but this proved to be almost three fold the difficulty expected. Decreased to 30 as a test on 6/3/24 - Luft
+					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 20 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 
 					// TODO: Balance the fight
 					// Maybe also add another "ring" of eggs between the player and the surrounding spiders
@@ -341,7 +341,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.importScreens(this.Const.Contracts.Overview);
 		this.m.Screens.push({
 			ID = "Task",
-			Title = "Negotiations",
+			Title = "Horror In The Woods",
 			Text = "[img]gfx/ui/events/event_43.png[/img]{%employer% seems very relaxed, they sloop in their chair as if the world was crushing down on them. A small spider no bigger than half a crown begins to climb up their cup, only to be detected and send flying across the the room into the wall along with the cup. The cup bounces off the wall, spilling it\'s contents across the floor as the spider escapes, dazed yet unharmed, from the flood of wine now escaping from the vessel. %employer% locks their gaze with yours, refusing to move any other part of their body except their eyes. You ask about the contract, and are met with a hand wave and a grunt. A steward quickly steps in, with rehersed practice and precision. %SPEECH_ON%You must forgive them - times have been tough with these nightmares scurrying about. I will keep this short for you - there is a nest somewhere nearby. Find it. Destroy it. Then bring anyone there back here ALIVE.%SPEECH_OFF% The steward made special effort to draw attention to that last part, clearly after making the mistake of not doing so with a previous band of mercenaries...}",
 			Image = "",
 			List = [],
