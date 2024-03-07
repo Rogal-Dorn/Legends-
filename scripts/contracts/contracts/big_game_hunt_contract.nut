@@ -2,24 +2,35 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Size = 0,
 		Dude = null,
-		UnformattedDescription = "Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.big_game_hunt";
 		this.m.Name = "Big Game Hunt";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.MakeAllSpawnsResetOrdersOnceDiscovered = true;
 		this.m.DifficultyMult = 1.0;
+		this.m.DescriptionTemplates = [
+			"Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all."
+			"Seeking fearless hunters! A monster hunt contract of great reward beckons!"
+			"%s is calling all skilled hunters to join an open monster hunt contract for honor and coin."
+			"Daring souls wanted! Take up arms for %s and kill monsters for great rewards."
+			"Fields lay barren, and homes abandoned, as monster attacks ravage a once thriving region."
+			"Life in the region has become a struggle, overshadowed by the constant threat of monster attacks."
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null);
+			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

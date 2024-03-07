@@ -18,7 +18,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 					c.formatDescription();
 			}
 		}
-	}
+	});
 
 	::mods_hookDescendants("contracts/contract", function ( o )
 	{
@@ -26,15 +26,16 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 		o.onClear = function()
 		{
 			if (this.isActive())
+			{
+				local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+				local towns = contract_faction.getSettlements()
+				foreach (town in towns)
 				{
-					local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-					local towns = contract_faction.getSettlements()
-					foreach (town in towns)
-					{
-						town.getSprite("selection").Visible = false;
-					}
+					town.getSprite("selection").Visible = false;
 				}
-				onClear()
+			}
+
+			onClear()
 		}
 	})
 
@@ -48,6 +49,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.m.Category <- "";
 		o.m.Description <- "";
+		o.m.DescriptionTemplates <- [];
 
 		o.create = function()
 		{
@@ -97,6 +99,10 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.formatDescription <- function()
 		{
+			if (this.m.DescriptionTemplates.len() == 0)
+				return;
+
+			this.m.Description = ::MSU.Array.rand(this.m.DescriptionTemplates);
 		}
 
 		local onSerialize = o.onSerialize;

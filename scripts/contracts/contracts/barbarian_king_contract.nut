@@ -4,7 +4,7 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 		Threat = null,
 		LastHelpTime = 0.0,
 		IsPlayerAttacking = false,
-		IsEscortUpdated = false
+		IsEscortUpdated = false,
 	},
 	function create()
 	{
@@ -22,9 +22,16 @@ this.barbarian_king_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.barbarian_king";
 		this.m.Name = "The Barbarian King";
-		this.m.Description = "Cold winds rise in the north. A terrible Barbarian King has emerged, dealing death and destruction to all in his path.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
+		this.m.DescriptionTemplates = [
+			"Cold winds rise in the north. A terrible Barbarian King has emerged, dealing death and destruction to all in his path.",
+			"From the icy wastes emerges a barbarian king, ready to conquer and rule the northern lands!",
+			"Behold, the rise of a barbarian king in the north, his might unmatched, his fury unstoppable!",
+			"The northlands are ablaze with the rise of a barbarian king, his dominance unchallenged, his strength unmatched!",
+			"The savage tribes of the north rally under the banner of their new king, a barbarian lord of unmatched ferocity.",
+			"A mighty barbarian king claims his throne in the frozen north, his rule marked by fire and steel.",
+		];
 	}
 
 	function onImportIntro()
