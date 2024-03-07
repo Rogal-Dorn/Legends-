@@ -9,8 +9,13 @@ this.conquer_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.conquer_holy_site";
 		this.m.Name = "Conquer Holy Site";
-		this.m.Description = ::Math.rand(1,2) == 1 ? "A Holy Site has been conquered by southern heathens. Honor and fear of the Old Gods demands that it be retaken." : "A famous Holy Site belongs to the Old Gods, except right now it belongs to the South. Purify the site in a way most pleasing to the Old Gods... with blood.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A Holy Site has been conquered by southern heathens. Honor and fear of the Old Gods demands that it be retaken.",
+			"Purify a holy site in a way most pleasing to the Old Gods... with blood.",
+			"Glory, renown and much coin awaits in the recapture of a most scared site.",
+			"The faith demands the recapture of a revered holy site. You demand coin.",
+		];
 	}
 
 	function onImportIntro()

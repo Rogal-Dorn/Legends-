@@ -9,8 +9,13 @@ this.defend_holy_site_southern_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.defend_holy_site_southern";
 		this.m.Name = "Defend Holy Site";
-		this.m.Description = "Northern soldiers are seeking to conquer a place sacred in the Eye of the Gilder. Such heresy cannot be allowed.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Northern soldiers are seeking to conquer a place sacred in the Eye of the Gilder. Such heresy cannot be allowed.",
+			"Northern rats are coming to defile a sacred place with their presence. The South will pay well to defend it.",
+			"The Gilder faithful are edging to mass hysteria at the blasphemy of possibly yielding a revered holy site to the North. This should pay well.",
+			"Southern faith demands the defence of all holy places, even if that means hiring heathen crownlings to do so.",
+		];
 	}
 
 	function onImportIntro()

@@ -3,23 +3,34 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		Reward = 0,
 		Kidnapper = null,
 		Militia = null,
-		UnformattedDescription = "Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure."
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.defend_settlement_bandits";
 		this.m.Name = "Defend Settlement";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
+		this.m.DescriptionTemplates = [
+			"Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure."
+			"With each passing day, the town's serious brigand problem threatens to worsen, unless action is taken."
+			"At night brigands roam freely, posing a serious threat to the safety and security of the town."
+			"In %s, the makeshift barricades and fire-gutted buildings hint how dangerous the local brigands have become."
+			"Sellswords are being sought in %s to repel a ruthless band of brigands terrorising the town."
+			"Desperation mounts as the town faces a ruthless brigand gang, with no end in sight."
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null);
+			r = format(r, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

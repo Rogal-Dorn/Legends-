@@ -9,8 +9,17 @@ this.discover_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(75, 105) * 0.01;
 		this.m.Type = "contract.discover_location";
 		this.m.Name = "Find Location";
-		this.m.Description = "Exploration. Easy money, for a sellsword company.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Exploration. Easy money, for a sellsword company.",
+			"Find a concealed place that may not even exist. Perfect.",
+			"Scout a mysterious location for your employer. Perhaps even loot it.",
+			"Exploration! The thrill of the unknown.",
+			"Venture into uncharted territory and perhaps uncover an ancient mystery or two.",
+			"Get lost, and get paid whilst doing so.",
+			"Rummage around the wilderness and see what you can find.",
+			"Scouting is not exactly a glorious contract, but it can pay well.",
+		];
 	}
 
 	function onImportIntro()

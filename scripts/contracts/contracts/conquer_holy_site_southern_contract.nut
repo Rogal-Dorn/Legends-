@@ -9,8 +9,13 @@ this.conquer_holy_site_southern_contract <- this.inherit("scripts/contracts/cont
 		this.contract.create();
 		this.m.Type = "contract.conquer_holy_site_southern";
 		this.m.Name = "Conquer Holy Site";
-		this.m.Description = "A Holy Site is being trespassed by northern rats. The Gilder\'s gleam will surely shine down on those who reclaim it for the faith.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A Holy Site is being trespassed by northern rats. Flush them out.",
+			"The Gilder faithful demand the recapture of a revered holy site. You demand coin.",
+			"Despite your heathen ways, the Gilder will permit your assistance in securing a sacred place.",
+			"The Gilder\'s gleam will surely shine down on those who reclaim a holy site for the faith.",
+		];
 	}
 
 	function onImportIntro()
