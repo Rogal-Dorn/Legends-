@@ -69,17 +69,23 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 			this.getContainer().unequip(this);
 		}
 
-		if (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode)
+		if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
 			return false;
 
-		local real = this.new("scripts/items/legend_armor/legendary/legend_emperors_armor");
-		real.setCondition(this.Math.maxf(this.getCondition(), this.Math.minf(1.0, this.getConditionMax())));
-		
-		if (_tile == null) {
-			this.Tactical.State.m.CombatResultLoot.add(real);
+		if (_tile == null) 
+		{
+			if (this.Tactical.State.getStrategicProperties() == null)
+			{
+				this.logWarning("Attempted to drop item, but no tile specified!");
+				return false;
+			}
+
+			this.Tactical.State.getStrategicProperties().Loot.add("scripts/items/legend_armor/legendary/legend_emperors_armor");
 			return true;
 		}
 
+		local real = this.new("scripts/items/legend_armor/legendary/legend_emperors_armor");
+		real.setCondition(this.Math.maxf(this.getCondition(), this.Math.minf(1.0, this.getConditionMax())));
 		_tile.Items.push(real);
 		_tile.IsContainingItems = true;
 		real.m.Tile = _tile;
