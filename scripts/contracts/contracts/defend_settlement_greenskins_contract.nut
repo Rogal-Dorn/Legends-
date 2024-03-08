@@ -16,7 +16,7 @@ this.defend_settlement_greenskins_contract <- this.inherit("scripts/contracts/co
 			"Greenskins are heading this way, murdering and destroying all that stands before them. %s seeks sellsword aid."
 			"Desperation mounts in %s as the town faces the suddenly very real prospect of a greenskin raid."
 			"Fear grips the townsfolk of %s as they prepare for the imminent onslaught of an orc raid."
-			"Funds have hastily been made available to hire defenders for %s. Orcs do have a nice way of focussing the mind on current matters."
+			"Funds have hastily been made available to hire defenders for %s. Orcs do have a nice way of focusing the mind on current matters."
 			"Greenskins thrive on carnage, slaughter and war. You thrive on coin."
 			"The specter of an orc raid looms large over the town, casting a shadow of fear over its inhabitants."
 		];
