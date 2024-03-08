@@ -7,7 +7,7 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "The Emperor\'s Armor";
 		this.m.Description = "A shining armor once worn by the emperor of an age long past, made from the most woundrous of materials, imbued with mystical energies. Light reflects easily off the polished armor, turning the wearer into a shimmering figure of light during the day.";
 		this.m.SlotType = this.Const.ItemSlot.Body;
-		this.m.IsDroppedAsLoot = false;
+		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
 		this.m.Variant = 80;
@@ -21,6 +21,11 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.blockUpgrades();
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
+	}
+
+	function isDroppedAsLoot()
+	{
+		return this.m.IsDroppedAsLoot;
 	}
 
 	function getTooltip()
@@ -50,6 +55,36 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 			hitInfo.FatalityChanceMult = 0.0;
 			_attacker.onDamageReceived(_attacker, null, hitInfo);
 		}
+	}
+
+	function drop( _tile = null )
+	{
+		this.m.IsDroppedAsLoot = false;
+
+		if (this.getContainer() != null)
+		{
+			if (_tile == null && this.getContainer().getActor() != null && this.getContainer().getActor().isPlacedOnMap())
+				_tile = this.getContainer().getActor().getTile();
+
+			this.getContainer().unequip(this);
+		}
+
+		if (this.Tactical.State.getStrategicProperties() == null || !this.Tactical.State.getStrategicProperties().IsArenaMode)
+			return false;
+
+		local real = this.new("scripts/items/legend_armor/legendary/legend_emperors_armor");
+		real.setCondition(this.Math.maxf(this.getCondition(), this.Math.minf(1.0, this.getConditionMax())));
+		
+		if (_tile == null) {
+			this.Tactical.State.m.CombatResultLoot.add(real);
+			return true;
+		}
+
+		_tile.Items.push(real);
+		_tile.IsContainingItems = true;
+		real.m.Tile = _tile;
+		real.onDrop(_tile);
+		return true;
 	}
 
 });
