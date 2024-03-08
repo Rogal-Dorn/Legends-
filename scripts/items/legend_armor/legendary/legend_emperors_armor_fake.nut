@@ -7,7 +7,7 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Name = "The Emperor\'s Armor";
 		this.m.Description = "A shining armor once worn by the emperor of an age long past, made from the most woundrous of materials, imbued with mystical energies. Light reflects easily off the polished armor, turning the wearer into a shimmering figure of light during the day.";
 		this.m.SlotType = this.Const.ItemSlot.Body;
-		this.m.IsDroppedAsLoot = true;
+		this.m.IsDroppedAsLoot = false;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
 		this.m.Variant = 80;
