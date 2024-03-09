@@ -27,7 +27,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 			this.m.SpiderNestTile = this.getTileToSpawnLocation(playerTile, 6, 12, excluded, false);
 		}
 
-		this.m.Payment.Pool = 500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 550 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -51,7 +51,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				// TODO: intermediary steps to investigate site before finding the nest
 				// TODO: Special scenarios: Redback / Spider Queen / Kobold Ambush
 				this.Contract.m.BulletpointsObjectives = [
-					"Find the Webknecht Nest where the abducted townsfolk from " + this.Contract.m.Home.getName() + " have been taken to"
+					"Find the Webknecht Nest where the abducted townsfolk from " + this.Contract.m.Home.getName() + " were taken to"
 				];
 
 				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
