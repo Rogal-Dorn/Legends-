@@ -9,8 +9,16 @@ this.hunting_mummies_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_mummies";
 		this.m.Name = "The Ancient Dead";
-		this.m.Description = "The fleshed dead have been seen roaming the desert, their purpose long since lost to the sands of time.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"The fleshed dead have been seen roaming the desert, their purpose long since lost to the sands of time.",
+			"Amongst the shifting sands, the embalmed dead wander aimlessly, their mummified forms driven by an insatiable thirst for the life they lost centuries ago.",
+			"In the desolate wastes of the desert, the embalmed dead rise from ancient tombs, their preserved forms shuffling endlessly beneath the scorching sun.",
+			"Beneath the burning sun, the embalmed dead roam the desert wastes, their empty eyes fixed on the horizon as they obey a long-forgotten command.",
+			"In the desolate expanse of the desert, the embalmed dead march in silent procession, their mummified forms a grim reminder of the ancient curses that lie buried beneath the sand.",
+			"The desert holds secrets best left undisturbed, for the embalmed dead have recently risen from their ancient tombs to stalk the sands once more.",
+			"Travelers in the desert face a grave threat: the embalmed dead, risen from their ancient crypts to haunt the dunes and prey upon the living with their cursed touch.",
+		];
 	}
 
 	function onImportIntro()
