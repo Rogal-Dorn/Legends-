@@ -9,8 +9,15 @@ this.hunting_schrats_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_schrats";
 		this.m.Name = "Haunted Woods";
-		this.m.Description = "Lumberjacks keep disappearing in the forest. Some say the trees are coming alive to have their revenge.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Lumberjacks keep disappearing in the forest. Some say the trees are coming alive to have their revenge.",
+			"Beware the forest\'s haunted groves, where gnarled limbs and grasping roots hunger for the flesh of the living.",
+			"In the depths of the forest, the possessed trees lie in wait, their twisted forms blending seamlessly with the shadows.",
+			"Recently the haunted forest has claimed its toll, as lumberjacks vanish in the mist, their fate unknown.",
+			"Many heedlessly enter those dark woods, only to become lost to its sinister embrace.",
+			"Whispers of the vanished echo through the haunted forest, where sometimes people disappear into the shadows, never to return.",
+		];
 	}
 
 	function onImportIntro()

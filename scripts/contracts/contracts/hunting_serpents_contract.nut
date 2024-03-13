@@ -9,8 +9,15 @@ this.hunting_serpents_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.hunting_serpents";
 		this.m.Name = "Hunting Serpents";
-		this.m.Description = "Sand serpents. Fast, venomous, dangerous. Yet their scales are worth a small fortune.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Sand serpents. Fast, venomous, dangerous. Yet their scales are worth a small fortune.",
+			"The serpents are fairly common in the dunes, whose swift strikes and potent venom make them feared predators.",
+			"Beware the deadly serpents, whose sleek bodies glide effortlessly through the desert, hunting for prey.",
+			"In nomad lore, sand serpents are revered as spirits of the desert, their sinuous forms embodying untamed power.",
+			"In a flurry of sand and scales, desert serpents often launch deadly coordinated attacks to overwhelm travelers.",
+			"They say you never forget your first snake attack. Sand, scales, screams, venom, bloody fang marks everywhere...",
+		];
 	}
 
 	function onImportIntro()

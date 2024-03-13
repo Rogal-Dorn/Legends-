@@ -3,23 +3,34 @@ this.intercept_raiding_parties_contract <- this.inherit("scripts/contracts/contr
 		Destination = null,
 		Objectives = [],
 		IsPlayerAttacking = false,
-		UnformattedDescription = "Southern raiders are coming to burn the homes, shops and farms in lands belonging to %s. Times are grim.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.intercept_raiding_parties";
 		this.m.Name = "Southern Raids";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
+		this.m.DescriptionTemplates = [
+			"Southern raiders are coming to burn the homes, shops and farms in lands belonging to %s. Times are grim.",
+			"Tension hangs heavy in the air, as folk are expecting troops from the South to descend upon %s any day now.",
+			"Due to spectacular mismanagement, the nobles have no troops to spare to defend %s from an incoming raid.",
+			"%s is a community on edge, as the looming threat of southern raiders casts a pall over daily life.",
+			"In these troubled times %s seeks sellswords - the more ruthless the better - to deter the threat of southern invaders.",
+			"%s seeks valiant sellswords - you assume the \'valiant\' part is optional - to defend against southern raiders.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null);
+			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()
