@@ -12,9 +12,9 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 				if (c.getDescription().len() != 0)
 					continue;
 
-				if (c.m.Flags.has("ContractDescription"))
-					c.m.Description = c.m.Flags.get("ContractDescription");
-				else
+				//if (c.m.Flags.has("ContractDescription"))
+				//	c.m.Description = c.m.Flags.get("ContractDescription");
+				//else
 					c.formatDescription();
 			}
 		}
@@ -105,6 +105,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 			this.m.Description = ::MSU.Array.rand(this.m.DescriptionTemplates);
 		}
 
+		/* no need to serialize the contract description
 		local onSerialize = o.onSerialize;
 		o.onSerialize = function(_out)
 		{
@@ -112,6 +113,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 			onSerialize(_out);
 		}
+		*/
 
 		local onDeserialize = o.onDeserialize;
 		o.onDeserialize = function(_in)
