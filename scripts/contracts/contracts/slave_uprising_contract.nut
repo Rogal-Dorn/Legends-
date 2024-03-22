@@ -16,8 +16,15 @@ this.slave_uprising_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(70, 105) * 0.01;
 		this.m.Type = "contract.slave_uprising";
 		this.m.Name = "Slave Uprising";
-		this.m.Description = "Some of the indebted slaves have uprisen, casting off their shackles! The Viziers desire a swift and cruel response.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Some of the indebted slaves have uprisen, casting off their shackles! The Viziers desire a swift and cruel response.",
+			"The rebel slaves are weak and malnourished, there will be no glory in this action.",
+			"After years of cruelty, some of the slaves are rebelling. Help crush this uprising before it spreads.",
+			"The desert skies darken with the smoke of rebellion. Restore law and order with brutal sellsword efficiency.",
+			"Some of the indebted have cast off their chains in defiance. Ensure the revolution is short-lived.",
+			"The Viziers desire you to make an example of some striking workers. A very violent example.",
+		];
 	}
 
 	function onImportIntro()

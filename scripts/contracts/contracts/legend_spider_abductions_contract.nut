@@ -9,8 +9,15 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.legend_spider_abductions";
 		this.m.Name = "Webknecht Abductions";
-		this.m.Description = "Few things elicit such horror as the Webknechts, especially when they grow large enough to start abducting fully-grown townsfolk.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Few things elicit such horror as the Webknechts, especially when they grow large enough to start abducting fully-grown townsfolk.",
+			"Spider abductions is yet another nightmare come to life, with local reports of hapless victims ensnared in webs being dragged away into the darkness.",
+			"Disturbing reports of people being seized in the night by eight-legged horrors are the talk of the town.",
+			"For those who tread the forest paths, the threat of being ensnared in sticky silk and spirited away by arachnid fiends fills their waking hours with dread.",
+			"Spider abduction is a grim fate that befalls those who wander too far from safety, their screams drowned out by the cacophony of chirping crickets and rustling leaves as they are dragged away.",
+			"Those taken by the webspinners into the trees never return, for the forest holds secrets darker than night.",
+		];
 	}
 
 	function onImportIntro()

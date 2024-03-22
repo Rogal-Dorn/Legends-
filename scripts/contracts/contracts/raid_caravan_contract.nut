@@ -13,8 +13,15 @@ this.raid_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.raid_caravan";
 		this.m.Name = "Raid Caravan";
-		this.m.Description = "Many a merchant has been sacrificed as a pawn in the deadly political games played between the Noble Houses."; 
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Many a merchant has been sacrificed as a pawn in the deadly political games played between the Noble Houses.",
+			"Sometimes the most unfortunate accidents can occur on the road.",
+			"Political rivals do seem to have the odd habit of vanishing on the road these days...",
+			"Avaricious or ambitious nobles are a far greater threat to merchant safety then mere brigands.",
+			"Double-crossing a merchant to confound a political rival is a favorite pastime of nobility.",
+			"When you kill him sellsword, tell him it was nothing personal, just business.",
+		];
 	}
 
 	function onImportIntro()

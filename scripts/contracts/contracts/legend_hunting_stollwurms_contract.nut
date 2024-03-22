@@ -12,9 +12,13 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_stollwurms";
 		this.m.Name = "Hunting Stollwurms (Legendary)";
-		this.m.Description = "You have to be either brave or foolish to fight a Lindwurm, the old saying goes. Looking at these especially monstrous specimens through your spyglass, you decide to add 'insane or desperate' to that list.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"You have to be either brave or foolish to fight a Lindwurm, the old saying goes. Looking at these especially monstrous specimens through your spyglass, you decide to add \'insane or desperate\' to that list.",
+			"Stollwurms scales are as hard as iron. Some tribes worship these apex predators as gods.",
+			"Blessed are the maker stollwurms, whose passage cleanses the world. You don\'t believe that farkin\' nonsense of course.",
+		];
 	}
 
 	function getBanner()

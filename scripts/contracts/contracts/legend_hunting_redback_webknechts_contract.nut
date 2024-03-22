@@ -12,9 +12,13 @@ this.legend_hunting_redback_webknechts_contract <- this.inherit("scripts/contrac
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_redback_webknechts";
 		this.m.Name = "Hunting Redback Webknechts (Legendary)";
-		this.m.Description = "The woods are poisoned. The way is blocked. Scuttling horrors chitter in the dark. There is something odd at work here.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"The woods are poisoned. The way is blocked. Scuttling horrors chitter in the dark. There is something odd at work here.",
+			"Bloated red bodies and gaping maws skitter through the darkness, hungry for blood.",
+			"Monstrous forms of red chitin haunt the dark, driven by an insatiable hunger to constantly feed.",
+		];
 	}
 
 	function getBanner()
