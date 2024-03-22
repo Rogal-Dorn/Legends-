@@ -3,21 +3,32 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 		Destination = null,
 		Dude = null,
 		Reward = 0,
-		UnformattedDescription = "A brutal Greenskin warcamp has settled near %s, becoming the source of much death and strife in the region.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.destroy_orc_camp";
 		this.m.Name = "Orc Warcamp";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A brutal greenskin warcamp has settled near %s, becoming the source of much death and strife in the region.",
+			"To greenskins it\'s less of a camp and more of a recreational deathpit." ,
+			"The looming presence of a greenskin warcamp nearby casts a dark cloud over this town\'s future.",
+			"Residents of %s live in constant dread with a greenskin warcamp lurking dangerously close by.",
+			"Few are brave or stupid enough to walk into an orc camp. You reckon the company can provide plenty of both.",
+			"Life in an orc warcamp is a never-ending cycle of violence. You plan to add to that.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+	
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

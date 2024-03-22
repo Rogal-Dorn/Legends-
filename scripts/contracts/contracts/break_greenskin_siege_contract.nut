@@ -3,7 +3,6 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 		Troops = null,
 		IsPlayerAttacking = true,
 		IsEscortUpdated = false,
-		UnformattedDescription = "Greenskins are besieging %s. With local forces depleted the inhabitants face a terrible slaughter.",
 	},
 	function create()
 	{
@@ -21,15 +20,27 @@ this.break_greenskin_siege_contract <- this.inherit("scripts/contracts/contract"
 
 		this.m.Type = "contract.break_greenskin_siege";
 		this.m.Name = "Break Siege";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
+		this.m.DescriptionTemplates = [
+			"Greenskins are besieging %s. With local forces depleted the inhabitants face a terrible slaughter.",
+			"Every dawn brings fresh horrors as %s wakes to another day of orc siege.",
+			"The citizens of %s cowers behind its walls, besieged by the relentless onslaught of orcs.",
+			"Attacking an army of relentless greenskin besiegers is a task nobody wants.",
+			"Homes burn and streets run red as %s faces the brutal siege of greenskin invaders.",
+			"People are praying for the salvation of %s, which is good, as salvation never comes cheap.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

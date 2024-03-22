@@ -8,8 +8,17 @@ this.roaming_beasts_desert_contract <- this.inherit("scripts/contracts/contract"
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts_desert";
 		this.m.Name = "Desert Beasts";
-		this.m.Description = "Amid the burning sands, the gnawed bones of deceased travelers are starting to pile up. The Viziers may have a beast problem.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Amid the burning sands, the gnawed bones of deceased travelers are starting to pile up.",
+			"The harsh desert trade routes are being made even more treacherous by hungry desert beasts.",
+			"Reports of a new pack of roaming desert predators have left travelers on edge.",
+			"Being devoured by ferocious desert beasts was not high on your list of things to do today.",
+			"Rumor is that a pack of fierce predators have been ambushing caravans in the desert.",
+			"A fierce pack of sand beasts appear to have developed quite a taste for human flesh.",
+			"The Viziers seek crownling warriors to expend on quelling the sand beast threat.",
+			"Some kind of unnatural beasts have been haunting the shifting sands.",
+		];
 	}
 
 	function onImportIntro()

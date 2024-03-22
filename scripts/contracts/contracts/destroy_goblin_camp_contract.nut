@@ -1,21 +1,33 @@
 this.destroy_goblin_camp_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Destination = null,
-		UnformattedDescription = "A loathsome goblin camp has been reported near %s. Treacherous creatures who fight without honor - something often also said of sellswords.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.destroy_goblin_camp";
 		this.m.Name = "Destroy Goblin Camp";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A loathsome goblin camp has been reported near %s. Treacherous creatures who fight without honor - something often also said of sellswords.",
+			"%s is offering a hefty bounty for some brave souls to go destroy a nearby goblin camp.",
+			"Residents of %s live in fear with a goblin camp nearby, its threat looming ever closer.",
+			"With a goblin camp nearby, the safety of %s is brought into question. You are being hired to correct that.",
+			"Sneaky little bastards, Goblins. You kill one and another pops up to stab you from behind.",
+			"Cunning, sneaky and treacherous little creatures, goblins and sellswords apparently have much in common.",
+			"Goblin raiders have been terrorising the roads around %s, you are being hired to eradicate them.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

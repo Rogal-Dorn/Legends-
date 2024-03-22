@@ -2,21 +2,36 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		IsPlayerAttacking = true,
-		UnformattedDescription = "Fell beasts have been preying on the citizens of %s. Folk are afraid to leave their homes."
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts";
 		this.m.Name = "Hunting Beasts";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Fell beasts have been preying on the citizens of %s. Folk are afraid to leave their homes.",
+			"Roaming beasts prowl the outskirts of %s, attacking travelers and livestock.",
+			"Outlandish tales are being told of fell creatures attacking folk around %s.",
+			"Rumor is that weird beastlings have been devouring livestock and even people around %s.",
+			"The gnawed bones of deceased travelers are starting to pile up around %s.",
+			"A cursed pack of fell beasts appear to have developed a taste for human flesh.",
+			"%s seeks mercenaries and beastmasters to confront the wild threats in its lands.",
+			"Some kind of unnatural beasts have been haunting the local countryside.",
+			"Ferocious beasts have reportedly been attacking folk on the road to %s.",
+			"Being devoured by a pack of savage beasts was not high on your list of things to do today.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

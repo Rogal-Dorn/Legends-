@@ -4,7 +4,6 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 		Target = null,
 		IsPlayerAttacking = true,
 		LastRandomEventShown = 0.0,
-		UnformattedDescription = "Greenskins are terrorizing the region around %s, burning everything in their path. The ferocity of the attacks have left many unnerved.",
 	},
 	function setObjective( _h )
 	{
@@ -28,14 +27,26 @@ this.marauding_greenskins_contract <- this.inherit("scripts/contracts/contract",
 		this.contract.create();
 		this.m.Type = "contract.marauding_greenskins";
 		this.m.Name = "Marauding Greenskins";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Greenskins are terrorizing the region around %s, burning everything in their path. The ferocity of the attacks have left many unnerved.",
+			"Greenskin raiders have brought a miserable tide of violence and bloodshed to %s.",
+			"Through either bloodlust or sheer stupidity, greenskins raids often continue deep into human territory." ,
+			"Greenskin marauders, while formidable in strength, often fall prey to their own reckless aggression, their impulsive actions leading them into traps and ambushes.",
+			"The cruelty of greenskin raiders knows no bounds, as they delight in inflicting pain and suffering upon their victims.",
+			"The desire for power and dominance over weaker beings drives greenskin marauders, along with a taste for plunder.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Origin.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

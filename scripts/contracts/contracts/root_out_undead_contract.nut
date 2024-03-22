@@ -22,8 +22,13 @@ this.root_out_undead_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.root_out_undead";
 		this.m.Name = "Purge the Undead";
-		this.m.Description = "The fiends must be driven back, lest the dead consume us all.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"The fiends must be driven back, lest the dead consume us all.",
+			"Even reanimated bones can fall, even the dead can die again."	,
+			"Driving out the unholy corruption is an endless battle, but one that must be fought.",
+			"Death cannot be escaped. But with the right actions, it can be postponed.",
+		];
 	}
 
 	function onImportIntro()

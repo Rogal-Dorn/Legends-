@@ -11,8 +11,15 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.legend_preemptive_beasts";
 		this.m.Name = "Taking Action";
-		this.m.Description = "Fell beasts have been spotted roaming the hills. The locals are demanding action before attacks occur.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Fell beasts have been spotted roaming the hills. The frightened locals are demanding action before attacks occur.",
+			"Amidst the rolling hills, fell beasts lurk in the darkness, their eyes glowing like embers in the night.",
+			"The hills are alive with the haunting cries of fell beasts, their sinister forms weaving through the moonlight.",
+			"Fear grips the hearts of villagers as fell beasts are sighted circling ominously on the mist-covered hills.",
+			"Track and exterminate the deadly beasts allegedly prowling the local hills and valleys.",
+			"\'Big as an \'orse! Wit sharp teef! Five eyez! Sp\'licky as a jabber!\' - The peasant reports are nonsense, but something is clearly out there.",
+		];
 	}
 
 	function onImportIntro()

@@ -22,8 +22,15 @@ this.decisive_battle_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.decisive_battle";
 		this.m.Name = "The Battle";
-		this.m.Description = "The nobles are gathering their forces for a decisive battle against a feuding rival house. That includes sellswords. On both sides.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"The nobles are gathering their forces for a decisive battle against a feuding rival house. That includes sellswords. On both sides."
+			"War has ravaged the realm, yet both sides are still eager to spend their coin on a bigger, bloodier battle."
+			"The stage is set for a great battle between the warring noble houses. Mercenaries are being sought on both sides."
+			"Amidst the maelstrom of battle, the destinies of noble houses and mercenary companies alike are forged."
+			"They say the skalds will sing songs about this upcoming great battle. With luck you might just survive it to hear them."
+			"Steel clashes and blood spills as the warring noble houses meet for a final confrontation."
+		];
 	}
 
 	function onImportIntro()

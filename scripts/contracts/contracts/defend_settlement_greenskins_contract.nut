@@ -3,23 +3,34 @@ this.defend_settlement_greenskins_contract <- this.inherit("scripts/contracts/co
 		Reward = 0,
 		Kidnapper = null,
 		Militia = null,
-		UnformattedDescription = "Greenskins are heading this way, murdering and destroying all that stands before them. %s seeks sellsword aid."
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.defend_settlement_greenskins";
 		this.m.Name = "Defend Settlement";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
+		this.m.DescriptionTemplates = [
+			"Greenskins are heading this way, murdering and destroying all that stands before them. %s seeks sellsword aid."
+			"Desperation mounts in %s as the town faces the suddenly very real prospect of a greenskin raid."
+			"Fear grips the townsfolk of %s as they prepare for the imminent onslaught of an orc raid."
+			"Funds have hastily been made available to hire defenders for %s. Orcs do have a nice way of focusing the mind on current matters."
+			"Greenskins thrive on carnage, slaughter and war. You thrive on coin."
+			"The specter of an orc raid looms large over the town, casting a shadow of fear over its inhabitants."
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

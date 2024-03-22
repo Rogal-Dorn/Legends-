@@ -10,8 +10,16 @@ this.deliver_money_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(90, 110) * 0.01;
 		this.m.Type = "contract.deliver_money";
 		this.m.Name = "Treasury Transfer";
-		this.m.Description = "Shipments of coin between settlements can be dangerous, albeit lucrative work.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Shipments of coin between settlements can be dangerous, albeit lucrative work.",
+			"Transport the gold securely, profit from your delivery. Or get murdered along the way.",
+			"Transport a valuable consignment of coin securely, competitive compensation provided.",
+			"Deliver a large shipment of coin to another settlement, with maximum security.",
+			"Express, armed delivery is certainly a specialist service you can provide.",
+			"Nobody wants this job, as the couriers on the last three shipments were all dead before they even made it halfway.",
+			"From pickup to drop-off, secure the coin at all times and be on your guard.",
+		];
 	}
 
 	function onImportIntro()

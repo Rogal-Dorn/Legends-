@@ -17,9 +17,13 @@ this.legend_hunting_rock_unholds_contract <- this.inherit("scripts/contracts/con
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_rock_unholds";
 		this.m.Name = "Hunting a Mountain (Legendary)";
-		this.m.Description = "Blundering mountains of hatred and rage are devastating the area. These are the largest Unholds you have ever seen."
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"Blundering mountains of hatred and rage are devastating the area. These are the largest Unholds you have ever seen.",
+			"Colossal footsteps shake the earth. Buildings have been shattered, the very landscape torn apart by primal fury.",
+			"Rampaging unholds have left a trail of devastation for miles. You can hear their thunderous roars from here.",
+		];
 	}
 
 	function getBanner()
