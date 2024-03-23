@@ -8,7 +8,8 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_spider_abductions";
-		this.m.Name = "Webknecht Abductions";
+		this.m.Name = "Horror In The Woods";
+		this.m.Description = "Few things elicit such horror as the Webknechts, especially when they grow large enough to start abducting fully-grown townsfolk.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"Few things elicit such horror as the Webknechts, especially when they grow large enough to start abducting fully-grown townsfolk.",
@@ -34,7 +35,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 			this.m.SpiderNestTile = this.getTileToSpawnLocation(playerTile, 6, 12, excluded, false);
 		}
 
-		this.m.Payment.Pool = 500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
+		this.m.Payment.Pool = 550 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();
 
 		if (this.Math.rand(1, 100) <= 33)
 		{
@@ -58,7 +59,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 				// TODO: intermediary steps to investigate site before finding the nest
 				// TODO: Special scenarios: Redback / Spider Queen / Kobold Ambush
 				this.Contract.m.BulletpointsObjectives = [
-					"Find the Webknecht Nest where the the abducted townsfolk from " + this.Contract.m.Home.getName() + " have been taken to"
+					"Find the Webknecht Nest where the abducted townsfolk from " + this.Contract.m.Home.getName() + " were taken to"
 				];
 
 				if (this.Math.rand(1, 100) <= this.Const.Contracts.Settings.IntroChance)
@@ -143,8 +144,8 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 					p.Tile = tile;
 					p.CombatID = "SpiderNest";
 					p.PlayerDeploymentType = this.Const.Tactical.DeploymentType.Custom;
-					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;
-					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 80 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
+					p.EnemyDeploymentType = this.Const.Tactical.DeploymentType.Circle;			//Was 80, but this proved to be almost three fold the difficulty expected. Decreased to 30 as a test on 6/3/24 - Luft
+					::Const.World.Common.addUnitsToCombat(p.Entities, ::Const.World.Spawn.Spiders, 20 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult(), ::World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).getID());
 
 					// TODO: Balance the fight
 					// Maybe also add another "ring" of eggs between the player and the surrounding spiders
@@ -348,15 +349,15 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.importScreens(this.Const.Contracts.Overview);
 		this.m.Screens.push({
 			ID = "Task",
-			Title = "Negotiations",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{PLACEHOLDER: Several townsfolk have been abducted by Webknechts and brought to their nest somewhere. Find the nest, rescue the townsfolk, and bring them home safely.}",
+			Title = "Horror In The Woods",
+			Text = "[img]gfx/ui/events/event_62.png[/img]{You enter to find %employer% slumped down in their chair as if the world were crushing down on them. A small spider no bigger than half a crown begins to climb up their cup, only to be detected and sent flying, along with the cup, across the room. The cup bounces off a wall, spilling it\'s contents across the floor as the spider escapes, dazed yet unharmed, from the flood of wine now escaping from the vessel. %employer% locks their gaze with yours, refusing to move any other part of their body except their eyes. You ask about the contract, and are met with a hand wave followed by a grunt. A steward quickly steps in, with rehearsed practice and precision. %SPEECH_ON%You must forgive him, times have been tough with these nightmares scurrying about. I will keep this short for you - there is a nest somewhere nearby. Find it. Destroy it. Then bring anyone there back here ALIVE.%SPEECH_OFF% The steward made a special effort to draw attention to that last part, clearly after making the mistake of not doing so with a previous band of mercenaries... | A steward ushers you into a fine study, where a %employer% sits in an ornate chair facing a crackling fireplace. He doesn/'t seem to notice your arrival, apparently preoccupied with staring vacantly into the flames. You hesitate, unsure whether to approach or not. The steward realises your predicament and pointedly clears his throat. %SPEECH_ON%Ahem! The uhm, sellsword you asked for my Lord?%SPEECH_OFF% %employer% jolts out of his reverie and rises to his feet. As he approaches you recognise an emotion on his face you see far too often with the people you deal with, grief. %SPEECH_ON%A sellsword captain? Yes, yes of course. You are here to deal with the problem. Six... just six days ago sellsword, my precious Imelda was out practice riding her pony when she was taken by the web creatures. We... we never found her and apparently there have been others. Many, many others recently...%SPEECH_OFF% His voice cracks, and he suddenly grabs the front of your shirt. You reflexively reach for your absent sword, which a guard took from you before the meeting. %employer% seems not to notice. %SPEECH_ON%I knew! I knew they were a problem, sellsword! I ignored it... ignored it for far too long, so many other pressing problems you see. Now... this is my punishment.%SPEECH_OFF% A shadow passes over his face and he releases his grip on you. This is just as well as you were thinking of going for the hidden dagger in your boot. He turns away, idly running a hand through his hair to master his emotions. When he faces you once again his eyes and intent are firm. %SPEECH_ON%Find their nest. Burn it. Burn the whole forest for all I care if that/'s what it takes. Return any survivors you find and you will be handsomely rewarded.%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			ShowEmployer = true,
 			ShowDifficulty = true,
 			Options = [
 				{
-					Text = "{Attacking a Webknecht Nest is dangerous. This better pay well. | How much are their lives worth to you? | We will rescue them if the pay is right.}",
+					Text = "{Attacking a Webknecht nest is dangerous. This better pay well. | How much are their lives worth to you? | We will rescue them if the pay is right.}",
 					function getResult()
 					{
 						return "Negotiation";
@@ -382,12 +383,12 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Nest1",
 			Title = "At the Webknecht Nest...",
-			Text = "[img]gfx/ui/events/event_110.png[/img]{PLACEHOLDER: You spot the abductees trapped in webs and surrounded by several pods of Webknecht eggs. You do not see any Webknechts around, but they could return at any moment.}",
+			Text = "[img]gfx/ui/events/event_110.png[/img]{You are drawn to the muffled screams and sobbing prayers of those trapped within the shimmering field of webs. The sticky blanket covering the area is occasionally broken by clusters of eggs and wrapped animals struggling all the same. You pause for a moment, assessing the scene. Aside from the captives, the area seems to be clear of anything with more than four legs.\n\n Now could be your chance...}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "{Everyone, rush in and free the townsfolk!}",
+					Text = "{Rush in!}",
 					function getResult()
 					{
 						// this.TempFlags.set("IsNestEntered", true);
@@ -396,6 +397,9 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 
 				},
 				{
+
+//For result, 'We'll come back later', how about turning it into a night battle, with 50% of victims already dead, and no large spiders?
+//"You wait until nightfall, when the larger creatures are away hunting for prey. It seems quieter now, many of the victims seem to have expired during the day. Regrettable, but you reckon that if can still grab a few survivors and torch the nest you'll likely get paid the same regardless." 					
 					Text = "{We\'ll come back later.}",
 					function getResult()
 					{
@@ -411,7 +415,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Nest2",
 			Title = "At the Webknecht Nest...",
-			Text = "[img]gfx/ui/events/event_110.png[/img]{PLACEHOLDER: You and the %companyname% run straight towards the trapped townsfolk, wading through webs and eggs along the way, some getting caught in the webs themselves.\n\nYour movements must have alerted the Webknechts, for their chittering is soon heard all around you, closing in with each second.}",
+			Text = "[img]gfx/ui/events/event_110.png[/img]{You give the signal and %companyname% start to grimly advance towards the trapped victims, wading through webs and eggs along the way, some getting caught in the webs themselves and jumping over the larger clusters of eggs.\n\n The whole nest reverberates like a silent lyre string. At first this is just your movement, but then something further away pulls a different chord. Once, twice then thrice the smaller, faster notes are plucked. With mounting dread you feel the notes being played from a different direction and quickly draw your weapon. They are all around you now, in silent communion with one another as an excited, frantic song is played.\n\n They know you are here.}",			
 			Image = "",
 			List = [],
 			Options = [
@@ -435,7 +439,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Retreat",
 			Title = "At the Webknecht Nest...",
-			Text = "{PLACEHOLDER: You and the %companyname% abandon the townsfolk to their doom.}",
+			Text = "{%companyname% abandons the townsfolk to their doom.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -455,7 +459,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "NestDestroyed",
 			Title = "After the battle...",
-			Text = "[img]gfx/ui/events/event_123.png[/img]{PLACEHOLDER: You order the %companyname% to clear out any remaining eggs in the nest, and prepare to bring the survivors back to %townname%}",
+			Text = "[img]gfx/ui/events/event_123.png[/img]{As the last little nightmare falls silent, there is a firm calmness over the battlefield. The broken and torn web covering the ground now gently breaks apart and spreads to the winds, succumbing to it\'s wounds the same way as it\'s creators have. A mixture of blood and poison pools under each sticky corpse as crows gather nearby for your departure.\n\n You order the %companyname% to clear out any remaining eggs in the nest, and prepare to bring the survivors back to %townname%}",
 			Image = "",
 			List = [],
 			Options = [
@@ -478,7 +482,7 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Success1",
 			Title = "Upon your return...",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{PLACEHOLDER: The townsfolk of %townname% thank you and %employer% expresses %their_employer% heartfelt thanks.%SPEECH_ON%You\'ve done a wonderful job. Here\'s your payment.%SPEECH_OFF%}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{The townsfolk of %townname% thank you and %employer% expresses no concern. They continue to pace up and down their chambers, dictating in muttered tones to a scribe about some other crisis. The steward pulls you to one side and hands you your payment. No words are exchanged.\n\n Today was one danger, tomorrow will yield another - either way, you can expect to be back here soon with more to say and more to kill.}",
 			Image = "",
 			List = [],
 			Options = [
@@ -528,12 +532,12 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 		this.m.Screens.push({
 			ID = "Failure1",
 			Title = "Upon your return...",
-			Text = "[img]gfx/ui/events/event_43.png[/img]{PLACEHOLDER: %employer% greets you upon your return to %townname%. The hopeful look on %their_employer% face quickly turns concern when %they_employer% notices the lack of rescued townsfolk among the %companyname%.%SPEECH_ON%Wh-where are the people who were abducted? You brought them back with you, yes?%SPEECH_OFF%%randombrother% shifts %their_randombrother% weight comfortably, notably avoiding all eye contact with %employer%.\n\nAs you begin to explain what happened, %employer% cuts you off with a wave of %their_employer% hand.%SPEECH_ON%We hired you to bring those poor folks back. Surely it is not too much to ask for you to have brought at least one person back safely?%SPEECH_OFF%%randombrother% has suddenly taken great interest in the clouds above, %their_randombrother% gaze pointedly fixated towards the sky.}",
+			Text = "[img]gfx/ui/events/event_43.png[/img]{%employer% greets you upon your return to %townname%. The hopeful look on %their_employer% face quickly turns concern when %they_employer% notices the lack of rescued townsfolk among the %companyname%.%SPEECH_ON%Where are the people who were abducted? You brought them back with you, yes?%SPEECH_OFF%%randombrother% shifts %their_randombrother% weight comfortably, notably avoiding all eye contact with %employer%.\n\nAs you begin to explain what happened, %employer% cuts you off with a wave of %their_employer% hand.%SPEECH_ON%We hired you to bring those poor folks back. Surely it is not too much to ask for you to have brought at least one person back safely?%SPEECH_OFF%}",
 			Image = "",
 			List = [],
 			Options = [
 				{
-					Text = "{Next time you try clearing out a Webknecht nest yourself. | It\'s a dangerous world. | At least we made it back alive ourselves. | Whoops.}",
+					Text = "{Next time you try clearing out a Webknecht nest yourself. | It\'s a dangerous world. | At least we made it back alive ourselves.}",
 					function getResult()
 					{
 						::World.Assets.addMoney(::Math.round(this.Contract.m.Payment.getOnCompletion() * this.Contract.m.PaymentModifier));
