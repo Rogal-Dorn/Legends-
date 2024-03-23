@@ -12,9 +12,13 @@ this.legend_hunting_coven_leader_contract <- this.inherit("scripts/contracts/con
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_coven_leader";
 		this.m.Name = "A Cavort with the Coven (Legendary)";
-		this.m.Description = "Dark rituals, flawless beauty, a nobleman\'s ardour. Twisted and maniacal, you must face the coven of witches.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 30.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"Dark rituals, flawless beauty, a nobleman\'s ardor. Twisted and maniacal, you must face the coven of witches.",
+			"The Coven is a cabal of dark souls and twisted minds, their sinister powers spreads their malevolent influence far and wide.",
+			"A Coven is a cesspit of dark magic and corruption. Burn them all, and quickly! Lest they claim your soul.",
+		];
 	}
 
 	function getBanner()

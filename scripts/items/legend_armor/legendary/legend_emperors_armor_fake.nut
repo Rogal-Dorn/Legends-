@@ -23,6 +23,11 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
 	}
 
+	function isDroppedAsLoot()
+	{
+		return this.m.IsDroppedAsLoot;
+	}
+
 	function getTooltip()
 	{
 		local result = this.legend_armor.getTooltip();
@@ -50,6 +55,42 @@ this.legend_emperors_armor_fake <- this.inherit("scripts/items/legend_armor/lege
 			hitInfo.FatalityChanceMult = 0.0;
 			_attacker.onDamageReceived(_attacker, null, hitInfo);
 		}
+	}
+
+	function drop( _tile = null )
+	{
+		this.m.IsDroppedAsLoot = false;
+
+		if (this.getContainer() != null)
+		{
+			if (_tile == null && this.getContainer().getActor() != null && this.getContainer().getActor().isPlacedOnMap())
+				_tile = this.getContainer().getActor().getTile();
+
+			this.getContainer().unequip(this);
+		}
+
+		if (this.Tactical.State.getStrategicProperties() != null && this.Tactical.State.getStrategicProperties().IsArenaMode)
+			return false;
+
+		if (_tile == null) 
+		{
+			if (this.Tactical.State.getStrategicProperties() == null)
+			{
+				this.logWarning("Attempted to drop item, but no tile specified!");
+				return false;
+			}
+
+			this.Tactical.State.getStrategicProperties().Loot.add("scripts/items/legend_armor/legendary/legend_emperors_armor");
+			return true;
+		}
+
+		local real = this.new("scripts/items/legend_armor/legendary/legend_emperors_armor");
+		real.setCondition(this.Math.maxf(this.getCondition(), this.Math.minf(1.0, this.getConditionMax())));
+		_tile.Items.push(real);
+		_tile.IsContainingItems = true;
+		real.m.Tile = _tile;
+		real.onDrop(_tile);
+		return true;
 	}
 
 });
