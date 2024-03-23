@@ -12,9 +12,13 @@ this.legend_hunting_demon_alps_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_demon_alps";
 		this.m.Name = "Ending the Terror Demon (Legendary)";
-		this.m.Description = "Alps are nightmares made flesh, yet they can be beaten. These reports though... sound downright demonic.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"Alps are nightmares made flesh, yet they can be beaten. These reports though... sound downright demonic.",
+			"Beware these souldrinkers, for they are cunning and elusive, wreathed in the flames of hell.",
+			"Flamewalkers are creatures of darkness and despair, their very touch draining the life force from their victims.",
+		];
 	}
 
 	function getBanner()

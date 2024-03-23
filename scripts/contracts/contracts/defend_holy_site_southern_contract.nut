@@ -9,8 +9,13 @@ this.defend_holy_site_southern_contract <- this.inherit("scripts/contracts/contr
 		this.contract.create();
 		this.m.Type = "contract.defend_holy_site_southern";
 		this.m.Name = "Defend Holy Site";
-		this.m.Description = "Northern soldiers are seeking to conquer a place sacred in the Eye of the Gilder. Such heresy cannot be allowed.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Northern soldiers are seeking to conquer a place sacred in the Eye of the Gilder. Such heresy cannot be allowed.",
+			"Northern rats are coming to defile a sacred place with their presence. The South will pay well to defend it.",
+			"The Gilder faithful are edging to mass hysteria at the blasphemy of possibly yielding a revered holy site to the North. This should pay well.",
+			"Southern faith demands the defence of all holy places, even if that means hiring heathen crownlings to do so.",
+		];
 	}
 
 	function onImportIntro()
@@ -438,7 +443,7 @@ this.defend_holy_site_southern_contract <- this.inherit("scripts/contracts/contr
 		this.importScreens(this.Const.Contracts.Overview);
 		this.m.Screens.push({
 			ID = "Task",
-			Title = "Negotiations",
+			Title = "Defend Holy Site",
 			Text = "{[img]gfx/ui/events/event_163.png[/img]%employer% is nowhere to be seen. Instead a man in clerical colors approaches with a lieutenant general at his side. They state that a contingent of northern soldiers is approaching %holysite% with the aim to take it wholly for the North. With the city-state\'s soldiers elsewhere, they will have to lean on you to hurry to the location and defend it. Their heavy-handed manner of speaking combined with a hint of anxiety no doubt makes this a potentially pocket-deepening payday. | [img]gfx/ui/events/event_162.png[/img]You are pushed into %employer%\'s room and the Vizier nods at you and claps.%SPEECH_ON%Finally, the little Crownling is here, ready to do big things for us all. Come, look at this map. Do you see where my men are? And do you see where %holysite% is? And here, the northern rats... They\'re near to the sacred grounds and my men far. You, however, are here, close indeed, no? For %reward% crowns I want you to travel to %holysite% and defend it.%SPEECH_OFF%The Vizier stares at you with a warm smile as though this wasn\'t a question, but a request so weighted with gold it may as well have been an order.}",
 			Image = "",
 			List = [],

@@ -9,8 +9,16 @@ this.obtain_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.obtain_item";
 		this.m.Name = "Obtain Artifact";
-		this.m.Description = "Townsfolk claim that a missing relic belonging to them has turned up in a nearby location. The place is allegedly cursed.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Townsfolk claim that a missing relic belonging to them has turned up in a nearby location. The place is allegedly cursed.",
+			"Rumors of some fancy lost relic being unearthed in nearby ruins has begun to circulate among the local inns.",
+			"Tales of lost treasure have been drawing adventurers and thrill-seekers to these parts for years.",
+			"A blessed local item which went missing years ago has reportedly been sighted in the wilds.",
+			"A shepard claims to have found the burial site of a holy relic. Sounds like a load of hogwash, but you will be paid to investigate.",
+			"Reports of a lost artifact supposedly discovered in an abandoned temple have piqued local interest.",
+			"Whispers of a long-lost relic discovered in the nearby forest have the townsfolk buzzing with excitement.",
+		];
 	}
 
 	function onImportIntro()

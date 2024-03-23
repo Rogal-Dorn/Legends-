@@ -3,21 +3,32 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 		Destination = null,
 		Dude = null,
 		Reward = 0,
-		UnformattedDescription = "A nomadic camp has been preying on roads to %s. Elusive and evasive, the desert tribes have been here for centuries."
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.drive_away_nomads";
 		this.m.Name = "Drive Off Nomads";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A nomadic camp has been preying on roads to %s. Elusive and evasive, the desert tribes have been here for centuries.",
+			"Life among the sand nomads is a constant journey beneath the scorching sun. Help them journey elsewhere.",
+			"Amidst the dunes, the sand nomads carve out a life of resilience and adaptability. Do not underestimate them.",
+			"Among the sand nomads, kinship and tradition are the bedrock of their society. Sounds lovely, but you\'ve seen what they do to unarmed traders on the roads.",
+			"Sand nomads strike swiftly, their raids leaving nothing but dust and despair.",
+			"Nomads haunt the desert around %s, their raids a constant threat to those who traverse the sands.",
+		];
 	}
-	
+
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

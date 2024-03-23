@@ -9,8 +9,15 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.free_greenskin_prisoners";
 		this.m.Name = "Free Prisoners";
-		this.m.Description = "Sometimes the greenskins take prisoners for sport. It is a cruel fate which rarely lasts long, for greenskins are easily bored.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"Sometimes the greenskins take prisoners for cruel sport. Time is of the essence, for greenskins are easily bored.",
+			"The cruelty of greenskins knows no bounds, as they revel in the suffering of their victims, delighting in their agony.",
+			"Those taken captive by greenskins often endure unspeakable horrors, their bodies and spirits broken by relentless cruelty.",
+			"Prisoners of the greenskins are stripped of dignity and humanity, reduced to little more than chattel in their eyes.",
+			"Nobody has volunteered for this noble cause, as nobody wants to die in an orc slave-pit.",
+			"Unwilling to risk their own men on a futile rescue mission, the nobility is more than happy to risk yours instead.",
+		];
 	}
 
 	function onImportIntro()

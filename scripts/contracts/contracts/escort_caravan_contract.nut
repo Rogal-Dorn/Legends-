@@ -6,12 +6,54 @@ this.escort_caravan_contract <- this.inherit("scripts/contracts/contract", {
 		NobleSettlement = null,
 		IsEscortUpdated = false
 	},
+	function onHomeSet()
+	{
+		if (this.m.Home.isSouthern())
+		{
+			this.m.DescriptionTemplates = [
+				"Among the desert caravans, fortunes rise and fall just like the shifting sands.",
+				"Among the desert caravans, diversity thrives as cultures blend along the trade routes.",
+				"Quicksand pits lie hidden beneath the sands, swallowing whole caravans with no hope of escape.",
+				"Scorching heat drains the strength of travelers, leaving them vulnerable to attacks from desert beasts.",
+				"Savage tribes of desert nomads like to raid passing caravans, taking both goods and lives.",
+				"Sandstorms can engulf the desert, sometimes swallowing caravans whole and leaving no trace behind.",
+				"Mirages deceive travelers, leading them astray and into the clutches of desert predators.",
+				"They say dark magic seeps from ancient tombs buried in the desert, making the roads unsafe.",
+				"Ancient ruins dot the desert landscape, ideal ambush locations for unwary caravans.",
+				"Life among the desert merchants is a dance of trade and negotiation, where every stop is a chance for profit and danger.",
+				"Accompanied by a formidable escort, this wealthy merchant/'s travels will be safeguarded.",
+			];
+			return;
+		}
+
+		this.m.DescriptionTemplates = [
+			"The roads these days are dangerous. Merchants are willing to pay good coin for sellsword protection.",
+			"Ensure the safe passage of the caravan, profit from your service.",
+			"Amidst the merchant caravan, camaraderie is forged over shared travels and shared burdens.",
+			"In the merchant caravan, goods are traded and stories exchanged under the open sky.",
+			"Fat merchants are willing to pay good coin to ensure their safety on the roads.",
+			"In these fell times, guarding a caravan is a constant watch for danger.",
+			"The roads are infested with monstrous beasts and men, making travel perilous.",
+			"Mysterious disappearances plague the roads, leaving many a merchant to fear for their lives.",
+			"Corrupt officials often extort merchants, demanding tolls or else facing dire consequences.",
+			"Dark forests border the roads, where malicious creatures often ambush passing caravans.",
+			"Wildmen sightings have made the roads perilous, with merchants falling victim to their savage ambushes.",
+			"Giant spiders sometimes spin their webs across the roads, trapping unwary caravans in their deadly snares.",
+			"Wolves, dire bears and other beasts prowl the forests, preying on travelers.",
+			"Guarding a caravan means standing firm against bandits and beasts, as well as knowing when to abandon your employer to save yourself.",
+			"Our well-armed escort will protect this weasel-faced merchant as he travels perilous roads.",
+			"With stout defenders by her side, this rotund merchant can venture forth unscathed.",
+			"Ensure the safety of this portly merchant and his wares on the road for a tiny cut of his profits.",
+			"Surrounded by vigilant guards, this plump merchant will be able to move more confidently along the road.",
+			"Our dedicated warriors will shield this rotund merchant from any threats on the way. In theory anyway.",
+		];
+	}
+
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.escort_caravan";
 		this.m.Name = "Escort Caravan";
-		this.m.Description = "The roads these days are dangerous. Merchants are willing to pay good coin for sellsword protection.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 	}

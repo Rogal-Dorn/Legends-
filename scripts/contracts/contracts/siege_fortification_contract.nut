@@ -1,7 +1,6 @@
 this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Allies = [],
-		UnformattedDescription = "Sieges often lead to violent, unpredictable outcomes. %s are seeking hardened sellswords to provide a steadying hand should things turn to ratshit.",
 	},
 	function create()
 	{
@@ -21,12 +20,23 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		this.m.Name = "Siege Fortification";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
+		this.m.DescriptionTemplates = [
+			"Sieges often lead to violent, unpredictable outcomes. %s are seeking hardened sellswords to provide a steadying hand should things turn to ratshit.",
+			"Finishing a siege is always a dicey business. %s wants some hardened mercenaries to tip the odds.",
+			"Dying with an arrow in your gut from attacking a fortified position is not exactly high in your list of priorities.",
+			"Siege actions nearly always turn to ratshit in your experience. Probably why %s wants you down there.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Home.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

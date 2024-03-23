@@ -10,8 +10,15 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 		this.contract.create();
 		this.m.Type = "contract.drive_away_barbarians";
 		this.m.Name = "Drive Off Barbarians";
-		this.m.Description = "A northern ice tribe is nearby. Barbaric rage and pagan savagery make for terrible neighbours.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A northern ice tribe has settled nearby. These barbarians and their savage pagan ways are not welcome here.",
+			"Every dawn brings new challenges to a barbarian camp. Today, it\'s your mercenary company cresting the horizon.",
+			"In a barbarian camp, the fire of battle is ever burning. Hopefully just like their camp will be later today.",
+			"Barbarians live by their own code of honor, much like sellswords, whose code can be changed for the right price.",
+			"The shadow of barbarian invasion darkens this town\'s doorstep.",
+			"Not much is known about the northern ice tribes, as they tend to kill everyone they come into contact with.",
+		];
 	}
 
 	function onImportIntro()

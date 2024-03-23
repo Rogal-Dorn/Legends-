@@ -300,7 +300,7 @@ gt.Const.Strings.EntityName <- [
 	"Free Company Ringleader",
 	"Oathbringer",
 	"Manhunter Handgonner",
-	"Manhunter Veteran Handonner",
+	"Manhunter Veteran Handgonner",
 	"Royal Guard",
 	"Veteran Knight",
 	"Basilisk Drone",
@@ -477,7 +477,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Free Company Ringleaders",
 	"Oathbringers",
 	"Manhunter Handgonners",
-	"Manhunter Veteran Handonners",
+	"Manhunter Veteran Handgonners",
 	"Royal Guards",
 	"Veteran Knights",
 	"Basilisk Drones",
@@ -500,16 +500,16 @@ gt.Const.Strings.Tactical.EntityName <- {
 };
 gt.Const.Strings.Tactical.EntityDescription <- {
 	Boulder = "A large stone boulder. Blocks movement and line of sight.",
-	Ruin = "Ruins from an age long past.",
+	Ruin = "Crumbling ruins, an echo from an age long past",
 	Shrubbery = "Very dense shrubbery that blocks movement and line of sight.",
 	Tree = "A large tree with a massive trunk.",
 	TreeSwamp = "This tree is rotten and long dead.",
-	TreeTrunk = "A treetrunk half covered in foul water.",
+	TreeTrunk = "A tree trunk half covered in foul water.",
 	Brush = "Very dense shrubbery that blocks movement and line of sight.",
 	Cartwheel = "The old and broken wheel of an oxcart.",
-	RuinedPillar = "TODO",
+	RuinedPillar = "Sad remains of a once-proud column.",
 	Cart = "A cart full of trading goods.",
-	Donkey = "A donkey used for pulling heavy carts.",
+	Donkey = "A donkey used for pulling heavy carts. Loves carrots.",
 	Plant = "An exotic plant that blocks movement and line of sight."
 };
 gt.Const.Strings.FootprintsType <- [
@@ -1107,7 +1107,7 @@ gt.Const.Strings.Tactical.TerrainName <- [
 gt.Const.Strings.Tactical.TerrainDescription <- [
 	"None",
 	"A dirt road originating from constant use by humans and animals.",
-	"A primitve road consisting of tamped clay.",
+	"A primitive road consisting of tamped clay.",
 	"A cobblestone road used for carriages and larger vehicles.",
 	"Short grass on flat and solid ground.",
 	"Bare and flat earth with barely any vegetation.",
@@ -2389,13 +2389,13 @@ gt.Const.Strings.PerkName <- {
 
 
 	//ANIMAL FORMS - animal forms from older builds. Mostly defunct.
-	LegendSurpressUrges = "Surpress Urges",
+	LegendSurpressUrges = "Suppress Urges",
 	LegendControlInstincts = "Control Instincts",
 	LegendMasterAnger = "Master Anger",
 	LegendWolfform = "Wolf Form",
 	LegendTrueForm = "True Form",
 	LegendBearform = "Bear Form",
-	LegendInfectiousRage = "InfectiousRage",
+	LegendInfectiousRage = "Infectious Rage",
 
 
 	//HORSES - skills for horses, currently unused and/or missing files
@@ -2466,7 +2466,7 @@ gt.Const.Strings.PerkDescription <- {
 	Indomitable = "In the face of insurmountable odds, you stand firm.\n\nUnlocks the \'Indomitable\' skill which grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] damage reduction and immunity to being stunned, knocked back, grabbed or swallowed for one turn.",
 	RallyTheTroops = "\'Get back in there or I\'ll kill you myself!\'\n\nUnlocks the \'Rally\' skill which can rally fleeing allies, and raise morale of all nearby allies to a steady level. The higher the Resolve of the character using the skill, the higher the chance to succeed.",
 	Adrenaline = "Unlocks the \'Adrenaline\' skill which puts you first in the turn order for the next round, to have another turn before your enemies do. Feel the adrenaline rushing through your veins!",
-	FirstAid = "\'Hold still damnit or i'm going to hurt you more!\'\n\nUnlocks the \'First Aid\' skill which can stop bleeding effects, including those from serious injuries, during combat. Does not heal hitpoints.",
+	FirstAid = "\'Hold still dam\'it or i'm going to hurt you more!\'\n\nUnlocks the \'First Aid\' skill which can stop bleeding effects, including those from serious injuries, during combat. Does not heal hitpoints.",
 	Fearsome = "Make them scatter and flee!\n\nAny attack that inflicts at least 1 point of damage to hitpoints triggers a morale check for the opponent with a penalty equal to [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color] of your Resolve, as opposed to with no penalty and only if at or above 15 points of damage. [color=" + this.Const.UI.Color.NegativeValue + "]Does not trigger multiple times from the same attacker on the same target in one attack[/color].",
 	HeadHunter = "Go for the head! Hitting the head of a target will give you a guaranteed hit to the head also with your next attack. Connecting with your hit will reset the effect.",
 	SunderingStrikes = "Knights would do well to fear your heavy blows.\n\nEffectiveness vs. Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] for any weapon used.",
@@ -2539,7 +2539,7 @@ gt.Const.Strings.PerkDescription <- {
 	SpecAxe = "Master combat with axes and destroying shields. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit Shield damage to shields is increased by [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] when used with axes.\n\nRound Swing gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Longaxe no longer has a penalty for attacking targets directly adjacent.",
 	SpecCleaver = "Master cleavers to inflict gruesome wounds. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nBleeding damage inflicted by cleavers and whips is doubled to [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] and [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] per turn, respectively.\n\nDisarm only has half the penalty to hit.",
 	SpecDagger = "Master swift and deadly daggers. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nStab, Puncture and Deathblow  have a reduced Action Point cost to allow for an additional attack each turn.",
-	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\nGash has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries.",
+	SpecSword = "Master the art of swordfighting and using your opponent\'s mistakes to your advantage. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nRiposte no longer has a penalty to hitchance.\n\nSlash has a [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nGash has a [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] lower threshold to inflict injuries.",
 	SpecSpear = "Master fighting with spears and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSpearwall is no longer disabled once an opponent manages to overcome it. Instead, Spearwall can still be used and continues to give free attacks on any further opponent attempting to enter the Zone of Control.\n\nGlaive Slash gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Spetum and Warfork no longer have a penalty for attacking targets directly adjacent.",
 	SpecPolearm = "Master polearms and keeping the enemy at bay. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nPolearm skills have their Action Point cost reduced to [color=" + this.Const.UI.Color.NegativeValue + "]5[/color], and no longer have a penalty for attacking targets directly adjacent.",
 	SpecHammer = "Master hammers and fighting against heavily armored opponents. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nDestroy Armor and Demolish Armor inflict [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] more damage against armor.\n\nShatter gains [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.\n\nThe Polehammer no longer has a penalty for attacking targets directly adjacent.",
@@ -2728,7 +2728,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue costs of Hand to Hand, Kick, Grapple, and Tackle. Increases fatigue damage for Hand to Hand, increases daze and hit chance for Kick, increases damage against already choked or grappled enemies for Choke, increases chance to disarm and chance to hit for grapple, reduces Hand to Hand AP cost with Ambidexterity, and increases chance to hit for Tackle.",
 	LegendKick = "Put all your force into a lunging kick, breaking their balance and inflicting stagger. A well placed kick may also inflict daze. Grants the \'Kick\' ability. A successful kick cancels Shieldwall, Spearwall, Return Favor and Riposte.",
 	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns with a chance of disarming them. Grants the \'Grapple\' ability, which can only be used with at least one hand free.",
-	LegendAmbidextrous = "Unlock the ability to punch with your off hand! Follow up all attacks with the Hand to Hand skill if your offhand is free. You can now use the Hand to Hand skill as long as your off hand is free. Additionally you gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee skill, [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense when both hands are free.",
+	LegendAmbidextrous = "Unlock the ability to punch with your off hand! You can now use the Hand to Hand skill as long as your off hand is free. Additionally you gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee skill, [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense when both hands are free.",
 	LegendTackle = "Tackle an enemy to the ground! Unlocks the Tackle skill, which, on a hit, reduces their melee defense by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] and their initiative by [color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color]",
 	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 20 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied.",
 	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] shield damage when using Split Shield or a Throwing Spear.",
@@ -2846,18 +2846,18 @@ gt.Const.Strings.PerkDescription <- {
 	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three.",
 	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble.",
 	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
-	LegendBackflip = "Extensive training in circus manuevers allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' or \'Leap\' perk, they gain 1 range.",
+	LegendBackflip = "Extensive training in circus manoeuvres allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' or \'Leap\' perk, they gain 1 range.",
 	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
 	LegendKnifeplay = "Unlocks a bound throwing knife skill that does [color=" + this.Const.UI.Color.PositiveValue + "]15-25[/color] damage with poor armour penetration but a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head.\n Can \'Daze\' a target on hit.\n\n Benefits from perks that affect throwing weapons.",
 	LegendOpportunist = "When successfully landing a hit on an enemy who is bleeding or poisoned, apply \'Dazed\' to them. If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill and no penalty to Ranged Skill.",
 	LegendPrepared = "While using a dagger, dealing health damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance of poisoning them. You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery per turn while holding a dagger in your mainhand.",
 	LegendLurker = "When neither ally nor enemy is within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
 	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night.",
-	LegendAdaptive = "Who says you can\'t teach an old dog new tricks?\n\nAdd a new Perk Group to this character\'s Perk Tree based on what is currently equipped in their hands, which is checked in the following order...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to \'Specialist\' Classes before Weapon Perk Groups.\n [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n\n [color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/zolor]",
+	LegendAdaptive = "Who says you can\'t teach an old dog new tricks?\n\nAdd a new Perk Group to this character\'s Perk Tree based on what is currently equipped in their hands, which is checked in the following order...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to \'Specialist\' Classes before Weapon Perk Groups.\n [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n\n [color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/color]",
 	LegendRecuperation = "Heal [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] hitpoints and fatigue at the end of every turn.",
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity."
 	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+100[/color] Melee and Ranged defence. Lose [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] point for every point of armor and health you have. You must be wearing body armor for this perk to work.",
-	LegendFashionable = "Use flowing, billiowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit.\n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
+	LegendFashionable = "Use flowing, billowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit.\n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
 	LegendMeek = "Your unassuming posture leads the enemy to think you are an easy target, making their attacks careless.\n\nAlways evade the first attack made against you in every combat encounter.",
 	LegendHelpful = "Amateurs discuss tactics, the professionals discuss logistics.\n\n Gain the ability to give items from your bag to allies under your control [color=" + this.Const.UI.Color.PositiveValue + "]with no cost or penalty.[/color]\n [color=" + this.Const.UI.Color.NegativeValue + "]Does not work when receiving items.[/color]"
 

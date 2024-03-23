@@ -1,14 +1,59 @@
 this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
-		IsPlayerAttacking = true
+		IsPlayerAttacking = true,
+		StolenItemNames = [
+			"Rare Coin Collection",
+			"Ceremonial Staff",
+			"Idol of Fertility",
+			"Golden Talisman",
+			"Tome of Arcane Knowledge",
+			"Lockbox",
+			"Demonic Statuette",
+			"Crystal Skull",
+			"Golden Goose",
+			"Bronze Bust",
+			"Rune Engraved Chest",
+			"Silver Bracelet",
+			"Moonstone Circlet",
+			"Jewelled Hairbrush",
+			"Erotic Taxidermy Collection",
+			"Luxury Stuffed Hyena",
+			"Stollwurm Scales",
+			"Ancient Crown",
+			"Enchanted Dagger",
+			"Prized Owlcat",
+			"Pedigree Hound",
+			"Exotic Hairless Cat",
+			"Tattered Warbanner",
+			"Fingerbones of St Cicero"
+			"Famed Butterfly Collection",
+			"Necromancy Amulet",
+			"Monkey Paw",
+			"Dragon Orb",
+			"Black Book of Magick",
+			"Sapphire Brooch",
+			"Amber Wristguards",
+			"Glass Warbow",
+			"Mechanical Bird",
+			"Pale Warhorn",
+			"Leviathan Fang",
+			"Exotic Spice Box",
+			"Onyx Lifestone",
+			"Chaos Emerald",
+			"Phoenix Feather",
+			"Ebonwood Harp",
+			"Ice Tribe Flute",
+			"Haunted Vase",
+			"Legendary Brandy",
+			"Bad Tempered Parrot"
+		]
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.return_item";
 		this.m.Name = "Return Item";
-		this.m.Description = "Brigands have stolen a valuable artifact and the townsfolk are outraged. They want the thieves tracked down.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		local orig = this.getDifficultyMult();
 		if (this.getDifficultyMult() >= 1.45 && this.getDifficultyMult() <= 1.65) //lazy man's tweak to make the 4 skull return item contract a bit harder
@@ -16,6 +61,55 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 			local dm = this.Math.rand(155, 175) * 0.01;
 			this.m.DifficultyMult = (dm > orig) ? dm : orig
 		}
+
+		this.m.DescriptionTemplates = [
+			"Brigands have stolen the %s from his lordship. He wants it back.",
+			"Some dastards have stolen the famed %s!",
+			"Follow the tracks, return the stolen %s.",
+			"Thieves have made off with the %s!",
+			"Devious fraudsters have stolen quite the item from a local lord.",
+			"Some thieves have stolen the %s from a noble lord, who is frankly astonished at their audacity.",
+			"A local lord woke up to find his %s display case was emptier than a bard\'s promise.",
+			"A local lord discovered his cherished %s has vanished after hosting a banquet.",
+			"A noble lord is flabbergasted to find his cherished %s missing. He wants it found.",
+			"His wife\'s cherished %s has been stolen. This nobleman needs you to track it down or he\'ll never hear the end of it.",
+			"Enterprising thieves have made off with the %s, seeking to make a fortune.",
+			"Some scoundrels have pulled off quite the daring heist of his lordships private quarters.",
+			"A most urgent matter concerning his lordships private collection has arisen...",
+			"The prized %s has been stolen from his lordship by moonlight. Track down the thief for a reward.",
+			"The %s has been stolen from under the nose of this lordship. Venture forth to reclaim it.",
+			"A noble lord has what he terms a \'fetch\' quest for you to retrieve his missing %s.",
+			"Find the thieves, kill them if you want, just bring back the %s.",
+			"Reclaim the stolen %s before it falls into the wrong hands.",
+			"Hunt down some thieves to claim the reward and gratitude of the local ruler.",
+			"Recover the stolen %s for his lordship and you may earn his gratitude.",
+			"Track down some local thieves and kill them all to set an example to others.",
+			"Stealing from nobility is a crime punishable by death. Today you are the appointed executioner.",
+			"Given his dreadful reputation, you are amazed anyone had the stones to steal from his lordship in the first place.",
+			"In the name of our lordship, pursue the thieves and reclaim what is rightfully his.",
+			"His lordship\'s honor is at stake! Hunt down the thieves and return the stolen %s swiftly.",
+			"Pursue the thieves and recover the stolen %s with utmost haste. Their lives matter not.",
+			"Pursue the footpads and bring back the missing %s directly to his lordship. No-one else.",
+			"Track down the thieves and ensure the stolen %s is returned to its rightful owner.",
+			"Seek out the knaves and restore the stolen %s to the noble lord\'s estate.",
+			"In service to the local ruler, recover a stolen artifact and kill the thieves responsible.",
+			"The %s has been stolen from his lordships chambers!",
+			"The local ruler has taken the theft of his %s rather badly. Find and kill everyone involved.",
+		];
+	}
+
+	// Ran when we actually add the contract
+	function formatDescription()
+	{
+		if (!this.m.Flags.has("Item"))
+			this.m.Flags.set("Item", ::MSU.Array.rand(this.m.StolenItemNames));
+
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(this.m.Flags.get("Item"), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()
@@ -37,18 +131,9 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 			this.m.Payment.Completion = 1.0;
 		}
 
-		local items = [
-			"Rare Coin Collection",
-			"Ceremonial Staff",
-			"Idol of Fertility",
-			"Golden Talisman",
-			"Tome of Arcane Knowledge",
-			"Lockbox",
-			"Demonic Statuette",
-			"Crystal Skull"
-		];
-		local r = this.Math.rand(0, items.len() - 1);
-		this.m.Flags.set("Item", items[r]);
+		if (!this.m.Flags.has("Item"))
+			this.m.Flags.set("Item", ::MSU.Array.rand(this.m.StolenItemNames));
+
 		this.contract.start();
 	}
 
@@ -88,7 +173,7 @@ this.return_item_contract <- this.inherit("scripts/contracts/contract", {
 				else if (r <= 30)
 				{
 					this.Flags.set("IsCounterOffer", true);
-					this.Flags.set("Bribe", this.Contract.beautifyNumber(this.Contract.m.Payment.getOnCompletion() * this.Math.rand(100, 300) * 0.01));
+					this.Flags.set("Bribe", this.Contract.beautifyNumber(this.Contract.m.Payment.getOnCompletion() * this.Math.rand(120, 300) * 0.01));
 				}
 				else
 				{

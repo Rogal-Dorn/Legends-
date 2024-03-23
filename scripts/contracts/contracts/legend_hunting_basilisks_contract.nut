@@ -10,8 +10,16 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_basilisks";
 		this.m.Name = "Basilisk Infestation";
-		this.m.Description = "Basilisks have been rampaging across these lands, eating livestock and trampling crops.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"An ominous clucking floats across the fields at dawn. Locals tell tales of a bloodthirsty beast standing taller than a man.",
+			"Underestimate these giant chickens at your peril. A single one can either kill or feed an entire company.",
+			"With eyes that shine like burning coals and a bawk that chills the blood, a basilisk is not to be trifled with.",
+			"The thick plumage provides formidable protection against weapons and spells, making it a challenging adversary.",
+			"Powerful pecks and thrashing wings create a whirlwind of destruction that can quickly incapacitate unwary adventurers.",
+			"Beware the deceptively agile movements, for its powerful talons can shred armor and flesh alike with ease.",
+			"The reports could be dismissed as a fever dream, if not for the corpses left behind.",
+		];
 	}
 
 	function onImportIntro()

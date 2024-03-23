@@ -1065,8 +1065,8 @@ this.item <- {
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 6)
+					bonus2 = this.Math.rand(3, 6)
 				}
 				break;
 

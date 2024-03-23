@@ -560,10 +560,23 @@ this.getroottable().Const.LegendMod.hookTacticalEntityManager <- function()
 		o.resurrect = function ( _info, _delay = 0 )
 		{
 			if (_info.Type == "")
-			{
 				return;
-			}
+
 			resurrect(_info, _delay);
+		}
+
+		local onResurrect = o.onResurrect;
+		o.onResurrect = function( _info, _force = false )
+		{
+			// holyflame stop the ressurection
+			if (_info.Tile.Properties.Effect != null && _info.Tile.Properties.Effect.Type == "legend_holyflame") {
+				if (_info.Tile.IsVisibleForPlayer)
+					this.Tactical.EventLog.log("The simmering holy flame stops the dead from raising back to life again.");
+
+				return null;
+			}
+
+			return onResurrect(_info, _force);
 		}
 	});
 	delete this.Const.LegendMod.hookTacticalEntityManager;

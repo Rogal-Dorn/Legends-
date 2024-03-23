@@ -6,8 +6,15 @@ this.arena_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = 1.0;
 		this.m.Type = "contract.arena";
 		this.m.Name = "The Arena";
-		this.m.Description = "The buzzing roar of the crowd draw many to the Arena. Gold, glory and death can be found inside.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 1.0;
+		this.m.DescriptionTemplates = [
+			"The buzzing roar of the crowd draw many to the Arena. Gold, glory and death can be found inside.",
+			"Amidst the cheers and jeers, the Arena stands as a testament to the might of the Southern Realms.",
+			"The Imperial Arena, where gold and glory are earned through blood and sweat.",
+			"Legends are made and dreams shattered within the walls of the Imperial Arena.",
+			"Nobles and commoners alike gather to witness the spectacle of the Imperial Arena.",
+			"Glittering under the sun, the sands of the Imperial Arena bear witness to countless contests."
+		];
 	}
 
 	function onImportIntro()
