@@ -12,7 +12,7 @@ this.destroy_orc_camp_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"A brutal greenskin warcamp has settled near %s, becoming the source of much death and strife in the region.",
-			"To greenskins it\'s less of a camp and more of a recreational deathpit." ,
+			"To greenskins it\'s less of a camp and more of a recreational deathpit.",
 			"The looming presence of a greenskin warcamp nearby casts a dark cloud over this town\'s future.",
 			"Residents of %s live in constant dread with a greenskin warcamp lurking dangerously close by.",
 			"Few are brave or stupid enough to walk into an orc camp. You reckon the company can provide plenty of both.",

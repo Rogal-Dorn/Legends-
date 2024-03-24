@@ -14,7 +14,7 @@ this.defend_holy_site_contract <- this.inherit("scripts/contracts/contract", {
 			"Southern soldiers are approaching a place sacred to the Old Gods. A sense of unease ripples through the local populace.",
 			"The faith demands you must defend a revered holy place. You demand you must be paid.",
 			"The Old Gods welcome invaders into their holy sites, as blood is a most pleasing offering to them.",
-			"The faithful are quite literally whipping themselves into a frenzy at the prospect of losing a holy site to the South. This should pay well." ,
+			"The faithful are quite literally whipping themselves into a frenzy at the prospect of losing a holy site to the South. This should pay well.",
 		];
 	}
 

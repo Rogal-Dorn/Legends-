@@ -13,12 +13,12 @@ this.defend_settlement_bandits_contract <- this.inherit("scripts/contracts/contr
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.DescriptionTemplates = [
-			"Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure."
-			"With each passing day, the town's serious brigand problem threatens to worsen, unless action is taken."
-			"At night brigands roam freely, posing a serious threat to the safety and security of the town."
-			"In %s, the makeshift barricades and fire-gutted buildings hint how dangerous the local brigands have become."
-			"Sellswords are being sought in %s to repel a ruthless band of brigands terrorising the town."
-			"Desperation mounts as the town faces a ruthless brigand gang, with no end in sight."
+			"Judging by the fire-gutted outskirts, %s has a serious raider problem. You may just be the cure.",
+			"With each passing day, the town's serious brigand problem threatens to worsen, unless action is taken.",
+			"At night brigands roam freely, posing a serious threat to the safety and security of the town.",
+			"In %s, the makeshift barricades and fire-gutted buildings hint how dangerous the local brigands have become.",
+			"Sellswords are being sought in %s to repel a ruthless band of brigands terrorising the town.",
+			"Desperation mounts as the town faces a ruthless brigand gang, with no end in sight.",
 		];
 	}
 

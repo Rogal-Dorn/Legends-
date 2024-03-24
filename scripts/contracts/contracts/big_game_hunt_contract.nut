@@ -13,12 +13,12 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.MakeAllSpawnsResetOrdersOnceDiscovered = true;
 		this.m.DifficultyMult = 1.0;
 		this.m.DescriptionTemplates = [
-			"Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all."
-			"Seeking fearless hunters! A monster hunt contract of great reward beckons!"
-			"%s is calling all skilled hunters to join an open monster hunt contract for honor and coin."
-			"Daring souls wanted! Take up arms for %s and kill monsters for great rewards."
-			"Fields lay barren, and homes abandoned, as monster attacks ravage a once thriving region."
-			"Life in the region has become a struggle, overshadowed by the constant threat of monster attacks."
+			"Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all.",
+			"Seeking fearless hunters! A monster hunt contract of great reward beckons!",
+			"%s is calling all skilled hunters to join an open monster hunt contract for honor and coin.",
+			"Daring souls wanted! Take up arms for %s and kill monsters for great rewards.",
+			"Fields lay barren, and homes abandoned, as monster attacks ravage a once thriving region.",
+			"Life in the region has become a struggle, overshadowed by the constant threat of monster attacks.",
 		];
 	}
 

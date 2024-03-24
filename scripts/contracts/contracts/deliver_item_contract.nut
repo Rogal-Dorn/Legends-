@@ -16,7 +16,7 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 			"Complete the delivery, claim your payment. Sounds so simple.",
 			"Secure the package, fulfill the contract, collect your fee.",
 			"Get paid for the armed delivery of this crucial item.",
-			"\'Deliver with maximum security.\' You have to wonder what kind of item demands such lengths." ,
+			"\'Deliver with maximum security.\' You have to wonder what kind of item demands such lengths.",
 			"Handle with care, deliver securely, enjoy the payout. Sounds easy enough.",
 			"From pickup to drop-off, prioritize security, earn your pay.",
 			"Make sure the package arrives intact to secure your compensation.",

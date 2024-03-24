@@ -22,12 +22,12 @@ this.confront_warlord_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Name = "Confront Orc Warlord";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplate = [
-			"Amid the slaughter, a fearsome greenskin Warlord has emerged. Goad him into fighting you and put an end to his carnage.";
-			"He\'s big, he\'s mean and he\'s green. Someone needs to kill him."
-			"The time has come to confront the malevolent orc warlord ravaging these lands."
-			"For those with steel in their veins: a mercenary contract to kill the savage greenskin warlord."
-			"Nobody wants to fight him, as nobody wants to die."
-			"He\'s violently killed everyone who has ever faced him, but perhaps you will get lucky."
+			"Amid the slaughter, a fearsome greenskin Warlord has emerged. Goad him into fighting you and put an end to his carnage.",
+			"He\'s big, he\'s mean and he\'s green. Someone needs to kill him.",
+			"The time has come to confront the malevolent orc warlord ravaging these lands.",
+			"For those with steel in their veins: a mercenary contract to kill the savage greenskin warlord.",
+			"Nobody wants to fight him, as nobody wants to die.",
+			"He\'s violently killed everyone who has ever faced him, but perhaps you will get lucky.",
 		];
 	}
 

@@ -17,14 +17,14 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.Name = "Rebuilding Effort";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
-			"The townsfolk of %s are looking to rebuild the %s, ideally with some heartless sellswords to deal with any trouble."
-			"%s seeks to reclaim the %s. Mercenary assistance will be needed to secure the site."
-			"Help %s expel vagrants and thieves from the %s, so the area can be rebuilt."
-			"Rebuilding efforts in %s are ready to get underway, there is just the matter of site security to attend to first."
-			"%s wishes to rebuild the fire-gutted ruins of the %s. First the area must be made safe."
-			"Squatters, thieves and all kinds of miscreants love to lurk in ruins. Drive them out so %s can rebuild."
-			"With the danger now passed, it is time for %s to reclaim and rebuild the %s."
-			"The nobility of %s will not tolerate such unsightly ruins on the city outskirts. Help reclaim the %s."
+			"The townsfolk of %s are looking to rebuild the %s, ideally with some heartless sellswords to deal with any trouble.",
+			"%s seeks to reclaim the %s. Mercenary assistance will be needed to secure the site.",
+			"Help %s expel vagrants and thieves from the %s, so the area can be rebuilt.",
+			"Rebuilding efforts in %s are ready to get underway, there is just the matter of site security to attend to first.",
+			"%s wishes to rebuild the fire-gutted ruins of the %s. First the area must be made safe.",
+			"Squatters, thieves and all kinds of miscreants love to lurk in ruins. Drive them out so %s can rebuild.",
+			"With the danger now passed, it is time for %s to reclaim and rebuild the %s.",
+			"The nobility of %s will not tolerate such unsightly ruins on the city outskirts. Help reclaim the %s.",
 		];
 	}
 
