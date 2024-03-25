@@ -32,17 +32,24 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 	function formatDescription()
 	{
 		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+		local count = 0, find = r.find("%");
 
-		switch (split(r, "%").len())
+		while(find != null)
 		{
-		case 3:
+			find = r.find("%", find + 1);
+			++count;
+		}
+
+		switch (count)
+		{
+		case 2:
 			r = format(r, 
 				::Const.UI.getColorized(this.m.Location.getSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
 				::Const.UI.getColorized(this.m.Location.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue())
 			);
 			break;
 
-		case 2:
+		case 1:
 			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
 			break;
 		}
