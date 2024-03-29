@@ -4,12 +4,12 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 	//add eye skill //use sfx scream from ancient priests - Fowleye: AoE stun based on resolve, has targeting like a warscythe
 	function create()
 	{
-		this.m.ID = "actives.horror";
-		this.m.Name = "Horror";
-		this.m.Description = "";
-		this.m.Icon = "skills/active_102.png";
-		this.m.IconDisabled = "skills/active_102.png";
-		this.m.Overlay = "active_102";
+		this.m.ID = "actives.legend_basilisk_sentry_fowleye";
+		this.m.Name = "Fowl Eye"; //check
+		this.m.Description = "no look at birb";
+		this.m.Icon = "skills/sentry_fowleye.png";
+		this.m.IconDisabled = "sentry_fowleye.png";
+		this.m.Overlay = "active_102"; ///investigate - porobably in actives metadata file
 		this.m.SoundOnUse = [
 			"sounds/enemies/horror_spell_01.wav",
 			"sounds/enemies/horror_spell_02.wav",
@@ -18,7 +18,7 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.UtilityTargeted;
 		this.m.Delay = 0;
-		this.m.IsSerialized = false;
+		this.m.IsSerialized = false; //logic needed for below
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
