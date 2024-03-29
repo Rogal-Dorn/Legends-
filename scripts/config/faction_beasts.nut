@@ -662,3 +662,23 @@ gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
 		90
 	]
 };
+gt.Const.Tactical.Actor.LegendBasiliskSentry <- { 
+	XP = 360,
+	ActionPoints = 8,
+	Hitpoints = 160,
+	Bravery = 80,
+	Stamina = 180,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 5,
+	RangedDefense = 20,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		120,
+		75
+	]
+};
+
