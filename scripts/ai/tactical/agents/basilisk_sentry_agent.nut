@@ -6,7 +6,6 @@ this.basilisk_sentry_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.ID = this.Const.AI.Agent.ID.BasiliskSentry;
 		this.m.Properties.IsRangedUnit = true;
 
-
 		this.m.Properties.TargetPriorityHitchanceMult = 6.00;
 		this.m.Properties.TargetPriorityHitpointsMult = 0.15;
 		this.m.Properties.TargetPriorityRandomMult = 0.0;
@@ -21,10 +20,10 @@ this.basilisk_sentry_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.OverallFormationMult = 1.1;
 
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.35;
-		this.m.Properties.EngageFlankingMult = 5.0;
+		this.m.Properties.EngageFlankingMult = 1.0;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 2.5;
-		
+
 		this.m.Properties.PreferCarefulEngage = true;
 	}
 
