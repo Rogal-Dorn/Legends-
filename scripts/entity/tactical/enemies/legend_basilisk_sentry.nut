@@ -62,14 +62,7 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
 		this.m.SoundVolumeOverall = 1.25;
 
-		if (this.Math.rand(1, 100) <= 70) //CHECK - 
-		{
-			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent"); //normal	
-		}
-		else
-		{
-			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_aggressive_agent"); //aggressive
-		}
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_sentry_agent");
 		this.m.AIAgent.setActor(this);
 
 	}
@@ -259,6 +252,8 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("arrow", this.createVec(0, 10));		
 
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_peck_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_inject_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_fowleye_skill"));
 		//add eye skill //use sfx scream from ancient priests - Fowleye: AoE stun based on resolve, has targeting like a warscythe
 		//add inject skill //also for skill sounds use snake bite - Inject: 1-2 range attack with snake bite stats, inflicts basilisk poison, reduced hit at close range
 
