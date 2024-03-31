@@ -254,8 +254,6 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_peck_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_inject_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_fowleye_skill"));
-		//add eye skill //use sfx scream from ancient priests - Fowleye: AoE stun based on resolve, has targeting like a warscythe
-		//add inject skill //also for skill sounds use snake bite - Inject: 1-2 range attack with snake bite stats, inflicts basilisk poison, reduced hit at close range
 
 		//To review V
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
