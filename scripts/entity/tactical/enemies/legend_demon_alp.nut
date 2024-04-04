@@ -194,7 +194,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local id = this.getID();
 
-		foreach( a in this.Tactical.Entities.getInstancesOfFaction(this.getFaction()) )
+		foreach( a in this.Tactical.Entities.getAllInstancesAsArray() )
 		{
 			if (!a.getFlags().has("living_nightmare"))
 				continue;
