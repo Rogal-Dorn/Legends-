@@ -272,7 +272,7 @@ this.party <- this.inherit("scripts/entity/world/world_entity", {
 				ret.push({
 					id = 51,
 					type = "text",
-					text = "[u]Inventory is empty[/u]"
+					text = "[color=" + this.Const.UI.Color.NegativeValue + "][u]Inventory is empty[/u][/color]"
 				});
 			}
 			else
