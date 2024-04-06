@@ -251,20 +251,21 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_stunned", this.createVec(0, 10));
 		this.setSpriteOffset("arrow", this.createVec(0, 10));		
 
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_peck_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_inject_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_fowleye_skill"));
 
 		//To review V
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind")); //remove
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm")); //remove
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_escape_artist"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
-		b.Threat += 5;
+
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber")); //new
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork")); //new
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace")); //new
+		b.Threat += 5; //remove
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
@@ -272,7 +273,7 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 			b.RangedDefense += 5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage")); //new
 		}
 
 	}
