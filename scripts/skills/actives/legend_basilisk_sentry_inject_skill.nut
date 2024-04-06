@@ -3,7 +3,7 @@ this.legend_basilisk_sentry_inject_skill <- this.inherit("scripts/skills/skill",
 		DamageArmorMult = 1.85,
 	},
 
-//add inject skill //also for skill sounds use snake bite - Inject: 1-2 range attack with snake bite stats, inflicts basilisk poison, reduced hit at close range	
+//add inject skill //also for skill sounds use snake bite - Inject: 1-2 range attack with snake bite stats, inflicts basilisk poison, reduced hit at close range. Melee skill.
 	function create()
 	{
 		this.m.ID = "actives.legend_basilisk_sentry_inject";
