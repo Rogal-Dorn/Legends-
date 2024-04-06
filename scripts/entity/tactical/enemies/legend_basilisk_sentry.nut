@@ -261,7 +261,7 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
-
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber")); //new
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork")); //new
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace")); //new
@@ -272,6 +272,7 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 			b.MeleeDefense += 5;
 			b.RangedDefense += 5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage")); //new
 		}
