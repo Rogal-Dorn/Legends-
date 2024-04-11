@@ -41,7 +41,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
-		this.m.Delay = 500;
+		this.m.Delay = 750;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -125,7 +125,7 @@ this.legend_sling_heavy_stone_skill <- this.inherit("scripts/skills/skill", {
 				User = _user,
 				TargetTile = _targetTile
 			};
-			this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.Delay, this.onPerformAttack, tag);
+			this.Time.scheduleEvent(this.TimeUnit.Virtual, 250, this.onPerformAttack, tag);
 
 			if (!_user.isPlayerControlled() && _targetTile.getEntity().isPlayerControlled())
 			{
