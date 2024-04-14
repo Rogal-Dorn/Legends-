@@ -46,7 +46,7 @@ this.legend_reserve_gets_fat_event <- this.inherit("scripts/events/event", {
 			//If any bros fulfill the below requirements, this event will not apply/trigger to them
 		if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey")
 		{
-			continue;
+			return;
 		}
 
 		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")

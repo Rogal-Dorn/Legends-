@@ -62,7 +62,7 @@ this.good_food_variety_event <- this.inherit("scripts/events/event", {
 			//If any bros fulfill the below requirements, this event will not apply/trigger to them
 		if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey")
 		{
-			continue;
+			return;
 		}
 
 		foreach( bro in brothers )
