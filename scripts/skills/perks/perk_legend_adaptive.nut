@@ -207,6 +207,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			//Healer
 			case "weapon.acid_flask":
 				return this.Const.Perks.HealerClassTree;
+
+			//Healer
+			case "weapon.acid_flask":
+				return this.Const.Perks.HealerClassTree;
 		}
 
 		return null;
@@ -264,10 +268,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			//Shortbow
 				case _item.isItemType(this.Const.Items.ItemType.Shortbow):
 					return this.Const.Perks.ShortbowClassTree;
-
-			//Net
-				case _item.isItemType(this.Const.Items.ItemType.Net):
-					return this.Const.Perks.BeastClassTree;
 
 			//Militia
 				case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
