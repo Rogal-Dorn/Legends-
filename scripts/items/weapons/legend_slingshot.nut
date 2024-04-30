@@ -21,7 +21,7 @@ this.legend_slingshot <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.StaminaModifier = -2;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 4;
-		this.m.RangeIdeal = 3;
+		this.m.RangeIdeal = 4;
 		this.m.Condition = 40.0;
 		this.m.ConditionMax = 40.0;
 		this.m.RegularDamage = 10;
@@ -34,8 +34,7 @@ this.legend_slingshot <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local quick_shot = this.new("scripts/skills/actives/legend_shoot_stone_skill");
-		this.addSkill(quick_shot);
+		this.addSkill(this.new("scripts/skills/actives/legend_shoot_stone_skill"));
 		this.addSkill(this.new("scripts/skills/actives/legend_shoot_precise_stone_skill"));
 	}
 
