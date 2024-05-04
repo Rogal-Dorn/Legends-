@@ -189,9 +189,11 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 
 						entities.extend(_frontline);
 
-						// Spawn player units, abductees and eggs in center
-						::Tactical.Entities.spawnEntitiesAtCenter(eggs);
+						// spawn player units, abductees take priority as it may attempting to remove object
 						::Tactical.Entities.placePlayersAtCenter(entities); // this is from the tactical_entity_manager
+						
+						// Spawn eggs in center
+						::Tactical.Entities.spawnEntitiesAtCenter(eggs);
 
 						// Spawn additional ring of eggs / decorations between center and circle of enemies
 						local limit = ::Math.rand(20,30)
@@ -202,9 +204,8 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 						])
 						for( local i=0; i < limit; i++ )
 						{
-							local x = 0;
-							local y = 0;
-							local tries = 0;
+							local x = 0, y = 0;
+							local tries = 0, tile;
 
 							while (1)
 							{
@@ -212,24 +213,21 @@ this.legend_spider_abductions_contract <- this.inherit("scripts/contracts/contra
 								y = ::Math.rand(9, 23);
 
 								if (x > 13 && x < 19 && y > 13 && y < 19)
-								{
 									continue;
-								}
 
 								if (::Tactical.isValidTileSquare(x, y) && ::Tactical.getTileSquare(x, y).IsEmpty && !::Tactical.Entities.isTileIsolated(::Tactical.getTileSquare(x, y)))
 								{
+									tile = ::Tactical.getTileSquare(x, y);
 									break;
 								}
 
-								tries = ++tries;
-
-								if (tries >= 500)
-								{
+								if (++tries >= 500)
 									break;
-								}
 							}
 
-							local tile = ::Tactical.getTileSquare(x, y);
+							if (tile == null)
+								continue;
+
 							switch(wc.roll())
 							{
 								case "Egg":
