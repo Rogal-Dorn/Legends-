@@ -205,7 +205,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 				return this.Const.Perks.RepairClassTree;
 
 			//Net
-			case "tool.throwing_net"
+			case "tool.throwing_net":
 				return this.Const.Perks.BeastClassTree;        
         
 			//Healer
