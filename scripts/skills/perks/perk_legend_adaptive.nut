@@ -204,10 +204,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			case "weapon.fire_bomb":
 				return this.Const.Perks.RepairClassTree;
 
-			//Healer
-			case "weapon.acid_flask":
-				return this.Const.Perks.HealerClassTree;
-
+			//Net
+			case "tool.throwing_net"
+				return this.Const.Perks.BeastClassTree;        
+        
 			//Healer
 			case "weapon.acid_flask":
 				return this.Const.Perks.HealerClassTree;
@@ -308,4 +308,3 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-
