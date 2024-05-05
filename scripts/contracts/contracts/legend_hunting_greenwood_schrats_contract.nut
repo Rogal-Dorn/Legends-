@@ -12,9 +12,13 @@ this.legend_hunting_greenwood_schrats_contract <- this.inherit("scripts/contract
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_greenwood_schrats";
 		this.m.Name = "The Heart of the Woods (Legendary)";
-		this.m.Description = "They say that Schrats are the lost souls of the forest, yet this contract sounds like something more. Something far older, something far more terrible.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"They say that Schrats are the lost souls of the forest, yet this contract sounds like something more. Something far older, something far more terrible.",
+			"A malevolent presence lurks in the heart of the forest, its dark aura spreading like a poison through the trees and soil.",
+			"Some locals talk about the heart of the forest is if it were alive, or perhaps a deity to be worshiped.",
+		];
 	}
 
 	function getBanner()

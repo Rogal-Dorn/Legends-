@@ -22,9 +22,13 @@ this.legend_hunting_white_direwolf_contract <- this.inherit("scripts/contracts/c
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_white_direwolf";
 		this.m.Name = "Hunting the white wolf (Legendary)";
-		this.m.Description = "Northern tribal folklore speak of the White Wolves, beings of pure malice who will one day devour both men and gods alike. Time to see if there is any truth to these fables.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
+		this.m.DescriptionTemplates = [
+			"Northern tribal folklore speaks of the White Wolves, beings of pure malice who will one day devour both men and gods alike.",
+			"Many consider white wolves to be myth, a campfire tale of the supernatural to scare new travelers with.",
+			"In traditional folklore tales, white wolves are always supernatural beings who herald doom.",
+		];
 	}
 
 	function onImportIntro()

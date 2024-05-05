@@ -1,20 +1,41 @@
 this.getroottable().Const.LegendMod.hookContract <- function()
 {
+	::mods_hookNewObject("contracts/contract_manager", function(o) 
+	{
+		local onDeserialize = o.onDeserialize;
+		o.onDeserialize = function( _in )
+		{
+			onDeserialize(_in);
+
+			foreach( c in this.m.Open )
+			{
+				if (c.getDescription().len() != 0)
+					continue;
+
+				//if (c.m.Flags.has("ContractDescription"))
+				//	c.m.Description = c.m.Flags.get("ContractDescription");
+				//else
+					c.formatDescription();
+			}
+		}
+	});
+
 	::mods_hookDescendants("contracts/contract", function ( o )
 	{
 		local onClear = o.onClear;
 		o.onClear = function()
 		{
 			if (this.isActive())
+			{
+				local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+				local towns = contract_faction.getSettlements()
+				foreach (town in towns)
 				{
-					local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-					local towns = contract_faction.getSettlements()
-					foreach (town in towns)
-					{
-						town.getSprite("selection").Visible = false;
-					}
+					town.getSprite("selection").Visible = false;
 				}
-				onClear()
+			}
+
+			onClear()
 		}
 	})
 
@@ -28,6 +49,7 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.m.Category <- "";
 		o.m.Description <- "";
+		o.m.DescriptionTemplates <- [];
 
 		o.create = function()
 		{
@@ -77,7 +99,21 @@ this.getroottable().Const.LegendMod.hookContract <- function()
 
 		o.formatDescription <- function()
 		{
+			if (this.m.DescriptionTemplates.len() == 0)
+				return;
+
+			this.m.Description = ::MSU.Array.rand(this.m.DescriptionTemplates);
 		}
+
+		/* no need to serialize the contract description
+		local onSerialize = o.onSerialize;
+		o.onSerialize = function(_out)
+		{
+			this.m.Flags.set("ContractDescription", this.m.Description);
+
+			onSerialize(_out);
+		}
+		*/
 
 		local onDeserialize = o.onDeserialize;
 		o.onDeserialize = function(_in)

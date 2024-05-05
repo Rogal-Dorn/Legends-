@@ -44,6 +44,7 @@ this.named_sword_riposte_effect <- this.inherit("scripts/skills/skill", {
         if ( this.getContainer().hasSkill("effects.riposte") ) { return; }
 
         this.getContainer().add(this.new("scripts/skills/effects/riposte_effect"));
+        
         if (!this.getContainer().getActor().isHiddenToPlayer())
         {
             this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " automatically used Riposte");
@@ -52,7 +53,7 @@ this.named_sword_riposte_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if ( _skill.m.IsWeaponSkill == false ) { return; } 
+		if ( _skill == null || _skill.m.IsWeaponSkill == false ) { return; } 
 		
 		local actor = this.getContainer().getActor();
 

@@ -102,7 +102,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID() || !this.isInRange() || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
+		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID() || !this.isInRange() || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
 		{
 			return;
 		}
