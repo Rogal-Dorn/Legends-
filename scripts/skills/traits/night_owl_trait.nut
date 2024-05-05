@@ -53,7 +53,7 @@ return [
 
 	function onUpdate( _properties )
 	{
-		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight == true)
+		if (this.getContainer().hasSkill("special.night") && _properties.IsAffectedByNight)
 		{
 			_properties.Vision += 1;
 			_properties.RangedSkillMult *= 1.15;

@@ -2,24 +2,35 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Size = 0,
 		Dude = null,
-		UnformattedDescription = "Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.big_game_hunt";
 		this.m.Name = "Big Game Hunt";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.MakeAllSpawnsResetOrdersOnceDiscovered = true;
 		this.m.DifficultyMult = 1.0;
+		this.m.DescriptionTemplates = [
+			"Foul beasts, ghouls and other monstrosities are roaming the land with impunity. %s needs someone of your caliber to slay them all.",
+			"Seeking fearless hunters! A monster hunt contract of great reward beckons!",
+			"%s is calling all skilled hunters to join an open monster hunt contract for honor and coin.",
+			"Daring souls wanted! Take up arms for %s and kill monsters for great rewards.",
+			"Fields lay barren, and homes abandoned, as monster attacks ravage a once thriving region.",
+			"Life in the region has become a struggle, overshadowed by the constant threat of monster attacks.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()
@@ -391,7 +402,7 @@ this.big_game_hunt_contract <- this.inherit("scripts/contracts/contract", {
 		this.importScreens(this.Const.Contracts.Overview);
 		this.m.Screens.push({
 			ID = "TaskSmall",
-			Title = "Negotiations",
+			Title = "Big Game Hunt",
 			Text = "[img]gfx/ui/events/event_63.png[/img]{You enter %employer%\'s room. The man is picking his fingers with a peacock feather, wagging its colors around on one end while fishing out grime with the other. He talks rather dismissively to your presence.%SPEECH_ON%My guards have already informed that you are interested in a beast hunt and I\'m quite glad that you are. The pay will be per head. Smaller beasts, webknechts, corpse eating things, the sort I\'m sure are of no trouble to you, but which the fellow locals are too scared to confront. If you\'re as good at your job as folks seem to say, then you shouldn\'t dally jumping on this offer. Rid my lands of these. To start with, there\'s been sightings in the region of %worldmapregion% %distance% %direction% of here.%SPEECH_OFF% | %employer% welcomes you into his room. He takes a scroll the town crier had given you while walking through the markets earlier.%SPEECH_ON%Ah, you\'re here for the beast hunt then. I thought you were entertainment of a...%SPEECH_OFF%He pinches the side of your shirt and tilts a smile.%SPEECH_ON%Different sort. Well, nonetheless, beasts are ravaging the countryside and I\'d happily pay you a tidy sum to take care of them. The pay will be per head, of course, giving you a wealth of riches to earn if you keep that blade of yours slick. If you need a place to start your hunt, travel to the region of %worldmapregion% %distance% %direction% of here. There you\'ll find an assortment of large eight-legged freaks and furry monsters. Whatever it is that would frighten a common farmer, nothing too scary for you though, you big man you.%SPEECH_OFF% | You find %employer% with his bootless feet up on a table, a throng of women pruning them. They thumb plugs of thickened dirt from between his toes like the birth rites of some imago monstrosity. You clear your throat. The man clears his throat in a startled return.%SPEECH_ON%Ah yes, the sellsword. Here, I\'ve a task for you if you are interested.%SPEECH_OFF%He dismissively throws a scroll at your feet which lists a need for beast slaying. Webknechts. Slender wolves. Nothing too frightening. A note on the map points to the nearby region of %worldmapregion% to the %direction%. The man belches.%SPEECH_ON%The pay is per head, hope that suits you well.%SPEECH_OFF% | You find %employer% turning a helve in hand. The demarcation between handle and where the blade should have been is clearly splintered, showing a decisive end to the weapon\'s use. The man throws it on his table and claps sawdust off his palms.%SPEECH_ON%Beasts are roaming these parts and I need someone of your stock to slay them all. What say you, hm? The pay will be by the head. To start your hunt, head to the region of %worldmapregion% to the %direction%. All manner of lesser beasts are being a nuisance there.%SPEECH_OFF% | %employer% welcomes you to his room. His table is covered in scrolls, each with drawings of animals and beasts and possibly even monsters. He\'s jawing on some berries, spitting juice as he talks.%SPEECH_ON%Locals say there are foul things afoot, though not a one will give me a proper description as to what it is the trouble. Something about monstrous wolves or eight-legged monsters. I can hardly stand around and do nothing so that\'s why I\'m requesting your services. Head to the fief of %worldmapregion% %distance% %direction%. If you see any beasts then slay them where they stand and take their heads. I\'ll pay by the scalp.%SPEECH_OFF% | %employer% meets you while in congress with a group of farmers. He states that supposed monsters are tearing the hinterland to pieces. A farmer pipes up.%SPEECH_ON%Beasts, the lot of them. Wolves that walk on their hindlegs, spiders yea big, corpse eating things that stink of scum.%SPEECH_OFF%The nobleman waves his hand.%SPEECH_ON%Yes, yes, that\'s enough. Sellsword, I need you to go to head out and hunt these creatures down. Start by travelling to the region of %worldmapregion% to the %direction% of here and see to it that any beasts afoot are put to the earth. But do be sure to bring back their heads, I\'ll be paying you for each. That is, if you\'re interested of course.%SPEECH_OFF%}",
 			Image = "",
 			List = [],

@@ -1779,7 +1779,7 @@ this.contract <- {
 			this.setScreen(screen);
 		}
 
-		this.formatDescription();
+		//this.formatDescription();
 
 	}
 

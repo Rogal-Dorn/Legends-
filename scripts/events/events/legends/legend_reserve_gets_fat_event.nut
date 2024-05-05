@@ -41,7 +41,6 @@ this.legend_reserve_gets_fat_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-
 		if (this.World.Assets.getOrigin().getID() == "scenario.legend_risen_legion")
 		{
 			return;
@@ -59,6 +58,9 @@ this.legend_reserve_gets_fat_event <- this.inherit("scripts/events/event", {
 		{
 			if (bro.isInReserves())
 			{
+				if(bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey"){
+					continue;
+				}
 				if (!bro.getSkills().hasSkill("trait.gluttonous"))
 				{
 				candidates.push(bro);

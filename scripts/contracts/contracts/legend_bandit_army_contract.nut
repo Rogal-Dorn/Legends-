@@ -24,10 +24,13 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
 		this.m.Name = "Brigand Army (Legendary)";
-		this.m.Description = "Fearful talk abounds that all the brigand gangs have united under a dangerous new leader. Even the nobility seem worried.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
-
+		this.m.DescriptionTemplates = [
+			"Fearful talk abounds that all the brigand gangs have united under a dangerous new leader. Even the farkin\' nobility look worried.",
+			"A new era dawns as brigand gangs across the land swear fealty to the banner of the underworld king, their unified front heralding a dark chapter in the history of the realm.",
+			"A charismatic new crime lord had united all the brigand gangs, marking a dark turning point for the realm.",
+		];
 	}
 
 	function generateName()

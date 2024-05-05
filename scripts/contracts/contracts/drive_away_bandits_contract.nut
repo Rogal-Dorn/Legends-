@@ -10,8 +10,19 @@ this.drive_away_bandits_contract <- this.inherit("scripts/contracts/contract", {
 		this.contract.create();
 		this.m.Type = "contract.drive_away_bandits";
 		this.m.Name = "Drive Off Brigands";
-		this.m.Description = "A brigand stronghold is nearby, attracting all manner of thieves, vagrants and murderers.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A brigand stronghold is nearby, attracting all manner of thieves, vagrants and murderers.",
+			"A delightful group of companions have set-up in a nearby ruin. They attack all who travel the road.",
+			"Tensions are starting to rise as a nearby brigand stronghold grows in power.",
+			"Every soul in a brigand stronghold knows the value of a sharp blade and a quick wit. Be wary.",
+			"In a brigand stronghold, fear reigns supreme and trust is a rare commodity.",
+			"Survival is harsh in a brigand gang, where every day brings new dangers. Today, that danger is you.",
+			"Brigand raiders have been humiliating the region. You are being hired to eradicate them.",
+			"\'Steal from the rich, give to the poor.\' An interesting idea for sure, until the rich inevitably hire a sellsword company to kill you.",
+			"Obliterate the stronghold, earn your pay.",
+			"Crush the stronghold, claim your bounty. What could go wrong?",
+		];
 	}
 
 	function generateName()

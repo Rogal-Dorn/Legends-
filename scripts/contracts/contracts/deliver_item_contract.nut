@@ -10,8 +10,20 @@ this.deliver_item_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(70, 105) * 0.01;
 		this.m.Type = "contract.deliver_item";
 		this.m.Name = "Armed Courier";
-		this.m.Description = "A valuable cargo requires express, armed delivery. Discretion preferred.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"A valuable cargo requires express, armed delivery. Discretion preferred.",
+			"Complete the delivery, claim your payment. Sounds so simple.",
+			"Secure the package, fulfill the contract, collect your fee.",
+			"Get paid for the armed delivery of this crucial item.",
+			"\'Deliver with maximum security.\' You have to wonder what kind of item demands such lengths.",
+			"Handle with care, deliver securely, enjoy the payout. Sounds easy enough.",
+			"From pickup to drop-off, prioritize security, earn your pay.",
+			"Make sure the package arrives intact to secure your compensation.",
+			"Secure the package, ensure safe delivery, earn your reward.",
+			"Guard the item closely, hand only to its intended recipient to fulfill the contract.",
+			"Navigate dangerous roads, fulfill the contract, and get paid.",
+		];
 	}
 
 	function onImportIntro()

@@ -4,23 +4,37 @@ this.patrol_contract <- this.inherit("scripts/contracts/contract", {
 		Location2 = null,
 		NextObjective = null,
 		Dude = null,
-		UnformattedDescription = "Hiring mercenaries to protect the roads is a costly business, but it appears %s has been left with little choice.",
 	},
 	function create()
 	{
 		this.contract.create();
 		this.m.Type = "contract.patrol";
 		this.m.Name = "Patrol";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.MakeAllSpawnsResetOrdersOnceDiscovered = true;
 		this.m.DifficultyMult = 1.0;
+		this.m.DescriptionTemplates = [
+			"Hiring mercenaries to protect the roads is a costly business, but it appears %s has been left with little choice.",
+			"While the presence of sellswords may deter banditry and ensure safe passage along the roads, such services come at a premium.",
+			"Banditry and highway robbery in their lands makes the nobility look weak, thus making fighting patrols a reliable repeat contract.",
+			"As rumors of bandit gangs plundering the trade routes to %s spread, the need for vigilant patrols becomes paramount.",
+			"With merchants hesitant to travel to %s due to the growing threat of banditry, the nobility needs to be seen doing something to restore confidence.",
+			"Amidst escalating reports of bandit attacks and caravan ambushes, the imperative to patrol the roads becomes undeniable.",
+			"Whilst neither glamorous or especially exciting work, it feels undeniably good to be paid for just plodding about.",
+			"Getting paid to walk the lads about for a few days might just be the best deal of the year.",
+		];
 	}
 
+	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+
+		if (r.find("%") != null)
+			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

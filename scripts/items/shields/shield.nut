@@ -303,7 +303,7 @@ this.shield <- this.inherit("scripts/items/item", {
 
 			local actor = this.getContainer().getActor();
 			local isPlayer = this.m.LastEquippedByFaction == this.Const.Faction.Player || actor != null && !actor.isNull() && this.isKindOf(actor.get(), "player");
-			local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && this.World.Assets.m.IsBlacksmithed;
+			local isBlacksmithed = isPlayer && !this.Tactical.State.isScenarioMode() && (this.isNamed() || this.World.Assets.m.IsBlacksmithed);
 			this.m.Container.unequip(this);
 			this.m.Condition = Condition;
 

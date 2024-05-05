@@ -3,7 +3,6 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		Caravan = null,
 		Location = null,
 		IsEscortUpdated = false,
-		UnformattedDescription = "The townsfolk of %s are looking to rebuild the %s, ideally with some heartless sellswords to deal with any trouble."
 	},
 	function setLocation( _l )
 	{
@@ -16,17 +15,46 @@ this.restore_location_contract <- this.inherit("scripts/contracts/contract", {
 		this.m.DifficultyMult = this.Math.rand(70, 90) * 0.01;
 		this.m.Type = "contract.restore_location";
 		this.m.Name = "Rebuilding Effort";
-		this.m.Description = "";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
+		this.m.DescriptionTemplates = [
+			"The townsfolk of %s are looking to rebuild the %s, ideally with some heartless sellswords to deal with any trouble.",
+			"%s seeks to reclaim the %s. Mercenary assistance will be needed to secure the site.",
+			"Help %s expel vagrants and thieves from the %s, so the area can be rebuilt.",
+			"Rebuilding efforts in %s are ready to get underway, there is just the matter of site security to attend to first.",
+			"%s wishes to rebuild the fire-gutted ruins of the %s. First the area must be made safe.",
+			"Squatters, thieves and all kinds of miscreants love to lurk in ruins. Drive them out so %s can rebuild.",
+			"With the danger now passed, it is time for %s to reclaim and rebuild the %s.",
+			"The nobility of %s will not tolerate such unsightly ruins on the city outskirts. Help reclaim the %s.",
+		];
 	}
 
 	// Ran when we actually add the contract
 	function formatDescription()
 	{
-		this.m.Description = format(this.m.UnformattedDescription, 
-			::Const.UI.getColorized(this.m.Location.getSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
-			::Const.UI.getColorized(this.m.Location.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue())
-		);
+		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
+		local count = 0, find = r.find("%");
+
+		while(find != null)
+		{
+			find = r.find("%", find + 1);
+			++count;
+		}
+
+		switch (count)
+		{
+		case 2:
+			r = format(r, 
+				::Const.UI.getColorized(this.m.Location.getSettlement().getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()),
+				::Const.UI.getColorized(this.m.Location.getName(), ::Const.UI.Color.getHighlightLightBackgroundValue())
+			);
+			break;
+
+		case 1:
+			r = format(r, ::Const.UI.getColorized(::World.FactionManager.getFaction(this.getFaction()).getName(), ::Const.UI.Color.getHighlightLightBackgroundValue()));
+			break;
+		}
+		
+		this.m.Description = r;
 	}
 
 	function onImportIntro()

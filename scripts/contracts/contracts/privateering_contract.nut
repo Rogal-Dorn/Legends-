@@ -21,9 +21,15 @@ this.privateering_contract <- this.inherit("scripts/contracts/contract", {
 
 		this.m.Type = "contract.privateering";
 		this.m.Name = "Privateering";
-		this.m.Description = "Privateering is the fancy noble word for sanctioned raiding, pillaging and murder in enemy territory. Dirty work for sure, but sellswords are not exactly known for their honour.";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
+		this.m.DescriptionTemplates = [
+			"Privateering is the fancy noble word for sanctioned raiding, pillaging and murder in enemy territory. Dirty work for sure, but sellswords are not exactly known for their honor.",
+			"Engaging in privateering requires cunning and audacity, as neither side particularly cares for you to make it out alive.",
+			"Privateering presents a lucrative opportunity for plunder and renown, assuming you survive the assignment.",
+			"The art of privateering offers a means to turn the tide of war, as well as the opportunity to die cut-off and surrounded.",
+			"Reave and pillage under a fancy letter of marque, not that it will make any difference should the enemy catch you.",
+		];
 	}
 
 	function onImportIntro()

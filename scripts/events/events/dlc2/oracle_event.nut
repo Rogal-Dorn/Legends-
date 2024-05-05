@@ -59,31 +59,6 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 
 				}
 			],
-
-// function findItem()
-// {
-// 	local itemIDs = [
-// 		"id1",
-// 		"id2",
-// 		"id3",
-// 	];
-
-// 	foreach (bro in this.World.getPlayerRoster().getAll())
-// 	{
-// 		local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
-
-// 		if (item != null && itemIDs.find(item.getID()) != null) return true;
-// 	}
-
-// 	foreach (id in itemIDs)
-// 	{
-// 		if (this.World.Assets.getStash().hasItem(id)) return true;
-// 	}
-
-// 	return false;
-// }
-///-----Will clean up the below with the above later - Luft
-
 			function start( _event )
 			{	//may replace this with a flag on the old man sells event later
 				local brothers = this.World.getPlayerRoster().getAll();				
@@ -125,6 +100,31 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 				}
 			}
 		});
+
+	// function findItem()
+	// {
+	// 	local itemIDs = [
+	// 		"id1",
+	// 		"id2",
+	// 		"id3",
+	// 	];
+
+	// 	foreach (bro in this.World.getPlayerRoster().getAll())
+	// 	{
+	// 		local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+
+	// 		if (item != null && itemIDs.find(item.getID()) != null) return true;
+	// 	}
+
+	// 	foreach (id in itemIDs)
+	// 	{
+	// 		if (this.World.Assets.getStash().hasItem(id)) return true;
+	// 	}
+
+	// 	return false;
+	// }
+	///-----Will clean up the below with the above later - Luft
+		
 		this.m.Screens.push({
 			ID = "Relic_identify",
 			Text = "", //text based on given item, not input here.
@@ -142,13 +142,14 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{
-				local stash = this.World.Assets.getStash().getItems();
+				local stash = this.World.Assets.getStash().getItems(); //we need to check both stash...
+				local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory); //...and the equipped slots of all bros otherwise this event will break.
 
 				foreach( i, item in stash )
 				{
 					if (item != null && item.getID() == "accessory.legend_oms_amphora")
 					{
-						this.Text = "[img]gfx/ui/events/event_52.png[/img]{A hint of weariness enters the woman\'s voice as you ask your question. She offers her hand. %SPEECH_ON%Show me.%SPEECH_OFF% You hand the heavy jug to her, the contents of which slosh this way and that inside the vessel. Her eyes gleam and study the art covering the amphora. She whispers to herself a few things, but you only make out %SPEECH_ON%I thought I had lost you...%SPEECH_OFF% Without warning, she drips her finger into the mulch and sucks on it. You wait for a reaction but none comes, she either has tasted worse or hides her pain very well. She places the jug down and locks eyes with you. %SPEECH_ON%You have a problem, I know of this item and have come across it before - but it is not how I remember it. The mixture inside has spoiled, which I did not think was possible until now. It has long passed it\'s orginal purpose and I cannot guarantee what you will be drinking each time this refills.%SPEECH_OFF% She takes a sip from the vessel, and instantly pales and spits it out with a force that could blind a man. %SPEECH_ONFirst taste honey, second sip poison.%SPEECH_OFF%}";
+						this.Text = "[img]gfx/ui/events/event_52.png[/img]{A hint of weariness enters the woman\'s voice as you ask your question. She offers her hand. %SPEECH_ON%Show me.%SPEECH_OFF% You hand the heavy jug to her, the contents of which slosh this way and that inside the vessel. Her eyes gleam and study the art covering the amphora. She whispers to herself a few things, but you only make out %SPEECH_ON%I thought I had lost you...%SPEECH_OFF% Without warning, she drips her finger into the mulch and sucks on it. You wait for a reaction but none comes, she either has tasted worse or hides her pain very well. She places the jug down and locks eyes with you. %SPEECH_ON%You have a problem, I know of this item and have come across it before - but it is not how I remember it. The mixture inside has spoiled, which I did not think was possible until now. It has long passed it\'s orginal purpose and I cannot guarantee what you will be drinking each time this refills.%SPEECH_OFF% She takes a sip from the vessel, and instantly pales and spits it out with a force that could blind a man.}";
 					}
 					else if (item != null && item.getID() == "accessory.legend_oms_fate")
 					{
@@ -164,7 +165,7 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 					}
 					else (item != null && item.getID() == "accessory.legend_oms_rib")
 					{
-						this.Text = "[img]gfx/ui/events/event_52.png[/img]{You produce the rib from your pack, the woman studies it as it comes out and fixes her gaze at it touches the table. No sooner as your hand is clear does she take it and hold it at either end. She softly bites one end and taps it on the edge of her cooking pot. A jolt of energy runs up your legs as you wnat to move in to stop her mishandling the relic you paid so much for. %SPEECH_ON%It\'s the real thing. I am quite impressed. No sheep bones or plaster as usual, this is the bone of a woman who i feel a burning hatred for. I know a godwhore when I see one, or in this case, part of one.%SPEECH_OFF% She notices how jittery you have become, and places the bone neatly back into your hands. %SPEECH_ON%These fools die for many reasons. Mostly killed by their own kind. This one has a painful energy about it - a mixture of pain and fear. I feel sharpness and hear the whistling of arrows when I hold it.%SPEECH_OFF% She exhales as if to purge the memory from her mind. %SPEECH_ON%Her loss will be your gain, however. These martyrs often protect against what killed them in the first place. But often at a cost of what didn\'t kill them.%SPEECH_OFF% She purses her lips. %SPEECH_ON%Stay away from axes, spears and the like, stranger.%SPEECH_ON%}";
+						this.Text = "[img]gfx/ui/events/event_52.png[/img]{You produce the rib from your pack, the woman studies it as it comes out and fixes her gaze at it touches the table. No sooner as your hand is clear does she take it and hold it at either end. She softly bites one end and taps it on the edge of her cooking pot. A jolt of energy runs up your legs as you wnat to move in to stop her mishandling the relic you paid so much for. %SPEECH_ON%It\'s the real thing. I am quite impressed. No sheep bones or plaster as usual, this is the bone of a woman who i feel a burning hatred for. I know a godwhore when I see one, or in this case, part of one.%SPEECH_OFF% She notices how jittery you have become, and places the bone neatly back into your hands. %SPEECH_ON%These fools die for many reasons. Mostly killed by their own kind. This one has a painful energy about it - a mixture of pain and fear. I feel sharpness and hear the whistling of arrows when I hold it.%SPEECH_OFF% She exhales as if to purge the memory from her mind. %SPEECH_ON%Her loss will be your gain, however. These martyrs often protect against what killed them in the first place. But often at a cost of what didn\'t kill them.%SPEECH_OFF% She purses her lips. %SPEECH_ON%Stay away from axes, spears and the like, stranger.%SPEECH_OFF%}";
 					}
 					this.World.Assets.addMoney(-100);
 					this.List.push({
@@ -173,13 +174,12 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 						text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]100[/color] Crowns"
 					});
 					this.List.push({
-						id = 10,
+						id = 11,
 						icon = "ui/items/" + item.getIcon(),
 						text = item.getName() + " is now identified and its tooltip has now been updated"
 					});
 				}
 			}
-
 		});
 		this.m.Screens.push({
 			ID = "B",

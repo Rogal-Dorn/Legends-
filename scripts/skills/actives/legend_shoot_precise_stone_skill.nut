@@ -1,7 +1,7 @@
 this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 	m = {
-		AdditionalAccuracy = 0,
-		AdditionalHitChance = 0
+		AdditionalAccuracy = 20,
+		AdditionalHitChance = -7
 	},
 	function create()
 	{
@@ -56,7 +56,7 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
 		this.m.DirectDamageMult = 0.3;
 		this.m.ActionPointCost = 4;
-		this.m.FatigueCost = 9;
+		this.m.FatigueCost = 12;
 		this.m.MinRange = 2;
 		this.m.MaxRange = 4;
 		this.m.MaxLevelDifference = 4;
@@ -68,18 +68,21 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = this.getRangedTooltip(this.getDefaultTooltip());
+		
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
-				icon = "ui/icons/vision.png",
-				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground, more if shooting downhill"
-			}
-		]);
-
-		local ret = this.getDefaultTooltip();
-		ret.extend([
+				icon = "ui/icons/special.png",
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + ::Math.round(this.Const.Combat.FatigueReceivedPerHit * 1.5) + "[/color] extra fatigue"
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
+			},
 			{
 				id = 9,
 				type = "text",
@@ -88,24 +91,7 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 			}
 		]);
 
-		if (this.m.AdditionalAccuracy == 0)
-		{
-			local ret = this.getDefaultTooltip();
-			ret.push({
-				id = 6,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] extra fatigue"
-			});
-
-			ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
-			});
-		}
-		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
+		if (this.Tactical.isActive() && this.getContainer().getActor().isEngagedInMelee())
 		{
 			ret.push({
 				id = 9,
@@ -126,7 +112,6 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.MaxRange = this.m.Item.getRangeMax() + (_properties.IsSpecializedInSlings ? 1 : 0);
-		this.m.AdditionalAccuracy = _properties.IsSpecializedInSlings ? this.m.Item.getAdditionalAccuracy() + 5 : this.m.Item.getAdditionalAccuracy();
 		this.m.FatigueCostMult = _properties.IsSpecializedInSlings ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 	}
 
@@ -165,14 +150,24 @@ this.legend_shoot_precise_stone_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
+			this.m.AdditionalAccuracy += this.m.Item.getAdditionalAccuracy();
+
+			if (_properties.IsSpecializedInSlings)
+				this.m.AdditionalAccuracy += 5;
+
+			if (_properties.IsSharpshooter)
+				_properties.DamageDirectMult += 0.05;
+
 			_properties.FatigueDealtPerHitMult += 2.0;
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 			_properties.HitChance[this.Const.BodyPart.Head] += 100.0;
 		}
 	}
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToStun)
+		if (_skill == this && _targetEntity.isAlive() && !_targetEntity.isDying() && !_targetEntity.getCurrentProperties().IsImmuneToDaze)
 		{
 			local targetTile = _targetEntity.getTile();
 			local user = this.getContainer().getActor();
