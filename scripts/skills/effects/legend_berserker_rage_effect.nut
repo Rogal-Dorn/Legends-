@@ -86,11 +86,18 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		this.m.IsHidden = this.m.RageStacks == 0;
-		_properties.DamageReceivedTotalMult *= this.Math.maxf(0.3, 1.0 - 0.02 * this.m.RageStacks);
 		_properties.Bravery += 1 * this.m.RageStacks;
 		_properties.DamageRegularMin += 1 * this.m.RageStacks;
 		_properties.DamageRegularMax += 1 * this.m.RageStacks;
 		_properties.Initiative += 1 * this.m.RageStacks;
+	}
+
+	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
+	{
+		if (_skill == null || !_skill.isAttack())
+			return;
+
+		_properties.DamageReceivedTotalMult *= this.Math.maxf(0.3, 1.0 - 0.02 * this.m.RageStacks);
 	}
 
 	function onTurnStart()
