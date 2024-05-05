@@ -94,7 +94,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_skill == null || !_skill.isAttack())
+		if (::MSU.isNull(_attacker) || _attacker.getID() == this.getContainer().getActor().getID() || _skill == null || !_skill.isAttack())
 			return;
 
 		_properties.DamageReceivedTotalMult *= this.Math.maxf(0.3, 1.0 - 0.02 * this.m.RageStacks);
@@ -107,7 +107,7 @@ this.legend_berserker_rage_effect <- this.inherit("scripts/skills/skill", {
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-	this.addRage(1);
+		this.addRage(1);
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
