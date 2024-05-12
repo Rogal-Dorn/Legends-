@@ -261,13 +261,23 @@ this.legend_basilisk_drone <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_peck_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_escape_artist"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 		b.Threat += 5;
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 35)
+		{
+			b.MeleeDefense += 5;
+			b.RangedDefense += 5;
+		}
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 50)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_escape_artist"));
+		}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
