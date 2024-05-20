@@ -253,19 +253,19 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_inject_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_basilisk_sentry_fowleye_skill"));
-
-		//To review V
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind")); //remove
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm")); //remove
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_escape_artist"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_reach_advantage"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber")); //new
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork")); //new
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace")); //new
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 		b.Threat += 5; //remove
+
+		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 35)
+		{
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
+		}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
@@ -274,7 +274,7 @@ this.legend_basilisk_sentry <- this.inherit("scripts/entity/tactical/actor", {
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage")); //new
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage"));
 		}
 
 	}
