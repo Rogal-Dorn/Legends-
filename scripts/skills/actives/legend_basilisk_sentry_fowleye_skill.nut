@@ -1,7 +1,7 @@
 this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 
-	//add eye skill //use sfx scream from ancient priests - Fowleye: AoE stun based on resolve, has targeting like a warscythe
+// - Fowleye: AoE stun based on resolve, has targeting like a warscythe
 	function create()
 	{
 		this.m.ID = "actives.legend_basilisk_sentry_fowleye";
