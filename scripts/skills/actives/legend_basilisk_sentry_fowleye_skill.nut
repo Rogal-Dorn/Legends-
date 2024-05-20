@@ -23,17 +23,17 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
-		this.m.IsRanged = false;
+		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsShowingProjectile = false;
-		this.m.IsUsingHitchance = false;
-		this.m.IsDoingForwardMove = false;
-		this.m.IsVisibleTileNeeded = false;
-		this.m.ActionPointCost = 6;
-		this.m.FatigueCost = 0;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 7;
-		this.m.MaxLevelDifference = 4;
+        this.m.IsShowingProjectile = false;
+        this.m.IsUsingHitchance = true;
+        this.m.IsDoingForwardMove = false;
+        this.m.IsVisibleTileNeeded = false;
+        this.m.ActionPointCost = 6;
+        this.m.FatigueCost = 25;
+        this.m.MinRange = 1;
+        this.m.MaxRange = 3;
+        this.m.MaxLevelDifference = 4;
 	}
 
 	function isViableTarget( _user, _target )
@@ -53,38 +53,129 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 
 	function onUse( _user, _targetTile )
 	{
-		local targets = [];
+		this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectSwing);
+		local ret = false;
+		local myTile = _user.getTile();
+		local myTile = this.m.Container.getActor().getTile();
+		local d = myTile.getDistanceTo(_targetTile);
+		local result = {
+			Tiles = [],
+			MyTile = myTile,
+			TargetTile = _targetTile,
+			Num = 0
+		};
+		this.Tactical.queryTilesInRange(myTile, d, d, false, [], this.onQueryTilesHit, result);
+		local tiles = [];
 
-		if (_targetTile.IsOccupiedByActor)
+		for( local i = 0; i != result.Tiles.len(); i = ++i )
 		{
-			local entity = _targetTile.getEntity();
-
-			if (this.isViableTarget(_user, entity))
+			if (result.Tiles[i].ID == _targetTile.ID)
 			{
-				targets.push(entity);
-			}
-		}
+				tiles.push(result.Tiles[i]);
+				local idx = i - 1;
 
-		for( local i = 0; i < 6; i = ++i )
-		{
-			if (!_targetTile.hasNextTile(i))
-			{
-			}
-			else
-			{
-				local adjacent = _targetTile.getNextTile(i);
-
-				if (adjacent.IsOccupiedByActor)
+				if (idx < 0)
 				{
-					local entity = adjacent.getEntity();
-
-					if (this.isViableTarget(_user, entity))
-					{
-						targets.push(entity);
-					}
+					idx = idx + result.Tiles.len();
 				}
+
+				tiles.push(result.Tiles[idx]);
+				idx = i - 2;
+
+				if (idx < 0)
+				{
+					idx = idx + result.Tiles.len();
+				}
+
+				tiles.push(result.Tiles[idx]);
+				break;
 			}
 		}
+
+		foreach( t in tiles )
+		{
+			if (!t.IsVisibleForEntity)
+			{
+				continue;
+			}
+
+			if (this.Math.abs(t.Level - myTile.Level) > 1 || this.Math.abs(t.Level - _targetTile.Level) > 1)
+			{
+				continue;
+			}
+
+			if (!t.IsEmpty && t.getEntity().isAttackable())
+			{
+				ret = this.attackEntity(_user, t.getEntity()) || ret;
+			}
+
+			if (!_user.isAlive() || _user.isDying())
+			{
+				break;
+			}
+		}
+
+		return ret;
+	}
+
+	function onQueryTilesHit( _tile, _result )
+	{
+		_result.Tiles.push(_tile);
+	}
+
+	function onTargetSelected( _targetTile )
+	{
+		local myTile = this.m.Container.getActor().getTile();
+		local d = myTile.getDistanceTo(_targetTile);
+		local result = {
+			Tiles = [],
+			MyTile = myTile,
+			TargetTile = _targetTile,
+			Num = 0
+		};
+		this.Tactical.queryTilesInRange(myTile, d, d, false, [], this.onQueryTilesHit, result);
+		local tiles = [];
+
+		for( local i = 0; i != result.Tiles.len(); i = ++i )
+		{
+			if (result.Tiles[i].ID == _targetTile.ID)
+			{
+				tiles.push(result.Tiles[i]);
+				local idx = i - 1;
+
+				if (idx < 0)
+				{
+					idx = idx + result.Tiles.len();
+				}
+
+				tiles.push(result.Tiles[idx]);
+				idx = i - 2;
+
+				if (idx < 0)
+				{
+					idx = idx + result.Tiles.len();
+				}
+
+				tiles.push(result.Tiles[idx]);
+				break;
+			}
+		}
+
+		foreach( t in tiles )
+		{
+			if (!t.IsVisibleForEntity)
+			{
+				continue;
+			}
+
+			if (this.Math.abs(t.Level - myTile.Level) > 1 || this.Math.abs(t.Level - _targetTile.Level) > 1)
+			{
+				continue;
+			}
+
+			this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, t, t.Pos.X, t.Pos.Y);
+		}
+	}
 
 		foreach( target in targets )
 		{
