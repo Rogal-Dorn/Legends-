@@ -48,7 +48,11 @@
 	tooltip.addTitle("TooltipCharacter", "Tooltips - Character");
 	tooltip.addElement(::MSU.Class.BooleanSetting("ShowCharacterBackgroundType", true, "Show Character Background Types", "Show a character's Background Types in Tooltips.\n\nUseful when playing Origins with additional gameplay mechanics based on Background Types"));
 	tooltip.addDivider("TooltipDivider3");
-	tooltip.addTitle("TooltipUI", "UI");	
+	tooltip.addTitle("TooltipWorldMap", "Tooltips - World Map");
+	tooltip.addElement(::MSU.Class.BooleanSetting("ExactEngageNumbers", false, "Exact engagement numbers", "Display exact engagement numbers."));	
+	tooltip.addDivider("TooltipDivider4");
+	tooltip.addTitle("TooltipUI", "UI");
+
 	local cpLight = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightLightBackground", "2,55,189,1", "Highlighted Text (Light Background)", "Customize the color for special highlighted text occurring in light backgrounds, such as in tooltips"));
 	::Const.UI.Color.getHighlightLightBackgroundValue <- function() {return "#" + cpLight.getValueAsHexString().slice(0,6)}
 	local cpDark = tooltip.addElement(::MSU.Class.ColorPickerSetting("HighlightDarkBackground", "111,145,201,1", "Highlighted Text (Dark Background)", "Customize the color of special highlighted text occurring in dark backgrounds, such as in events"));
