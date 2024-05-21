@@ -373,20 +373,39 @@ this.world_entity <- {
 						text = start + this.removeFromBeginningOfText("The ", this.Const.Strings.EntityName[i])
 					});
 				}
-				else
+				else if (::Legends.Mod.ModSettings.getSetting("ExactEngageNumbers").getValue())
 				{
-					local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
 					entities.push({
 						id = 20,
 						type = "text",
 						icon = "ui/orientation/" + this.Const.EntityIcon[i] + ".png",
-						text = num + " " + this.Const.Strings.EntityNamePlural[i]
+						text = entityTypes[i] + " " + this.Const.Strings.EntityNamePlural[i]
+					});
+				}
+				else
+				{	
+					entities.push({
+						id = 20,
+						type = "text",
+						icon = "ui/orientation/" + this.Const.EntityIcon[i] + ".png",
+						text = getEngageNumberNames(entityTypes[i]) + " " + this.Const.Strings.EntityNamePlural[i]
 					});
 				}
 			}
 		}
 
 		return entities;
+	}
+
+	function getEngageNumberNames( _entityType)
+	{
+		foreach (key, value in this.Const.Strings.EngageEnemyNumbers)
+		{
+			if (_entityType >= value[0] && _entityType <= value[1])
+			{
+				return this.Const.Strings.EngageEnemyNumbersNames[key];
+			}
+		}
 	}
 
 	function setOrders( _o )

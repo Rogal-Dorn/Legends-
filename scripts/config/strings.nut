@@ -1991,13 +1991,34 @@ gt.Const.Strings.PartyStrength <- [
 	"Deadly",
 	"Invincible"
 ];
-gt.Const.Strings.EngageEnemyNumbers <- [
-	"A few",
-	"Some",
-	"Many",
-	"Lots of",
-	"A plethora of"
-];
+gt.Const.Strings.EngageEnemyNumbersNames <- {
+	Few = "A few",
+	Some = "Some",
+	Several = "Several",
+	Pack = "Pack of",
+	Many = "Many",
+	Lots = "Lots of",
+	Plethora = "Plethora of",
+	Hordes = "Hordes of",
+	Throng = "Throng of",
+	Swarm = "Swarm of",
+	Legion = "Legion of",
+	Myriad = "Myriad of"
+};
+gt.Const.Strings.EngageEnemyNumbers <- {
+	Few = [2, 3],
+	Some = [4, 5],
+	Several = [6, 9],
+	Pack = [10, 14],
+	Many = [15, 20],
+	Lots = [21, 30],
+	Plethora = [31, 40],
+	Hordes = [41, 50],
+	Throng = [51, 60],
+	Swarm = [61, 80],
+	Legion = [81, 100],
+	Myriad = [101, 1000],
+}
 gt.Const.Strings.InventoryHeader <- [
 	"Donkey",
 	"Cart",
