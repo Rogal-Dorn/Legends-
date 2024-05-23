@@ -39,24 +39,27 @@ this.return_favor_effect <- this.inherit("scripts/skills/skill", {
 	{
 		local user = this.getContainer().getActor();
 
-		if (!_skill.isRanged())
-		{
-			if (this.Math.rand(1, 100) <= 75 && !_attacker.getCurrentProperties().IsImmuneToStun && !_attacker.getSkills().hasSkill("effects.stunned"))
-			{
-				local d = _attacker.getTile().getDistanceTo(user.getTile());
-				local item = user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+		if (::Tactical.TurnSequenceBar.isActiveEntity(user))
+			return;
 
-				if (d <= 1 || item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && d <= item.getRangeMax())
+		if (_skill.isRanged())
+			return;
+
+		if (this.Math.rand(1, 100) <= 75 && !_attacker.getCurrentProperties().IsImmuneToStun && !_attacker.getSkills().hasSkill("effects.stunned"))
+		{
+			local d = _attacker.getTile().getDistanceTo(user.getTile());
+			local item = user.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
+
+			if (d <= 1 || item != null && item.isItemType(this.Const.Items.ItemType.Weapon) && d <= item.getRangeMax())
+			{
+				local stunned_effect = this.new("scripts/skills/effects/stunned_effect");
+				local staggered_effect = this.new("scripts/skills/effects/staggered_effect");
+				stunned_effect.addTurns(1);
+				_attacker.getSkills().add(stunned_effect);
+				_attacker.getSkills().add(staggered_effect);
+				if (!user.isHiddenToPlayer() && !_attacker.isHiddenToPlayer())
 				{
-					local stunned_effect = this.new("scripts/skills/effects/stunned_effect");
-					local staggered_effect = this.new("scripts/skills/effects/staggered_effect");
-					stunned_effect.addTurns(1);
-					_attacker.getSkills().add(stunned_effect);
-					_attacker.getSkills().add(staggered_effect);
-					if (!user.isHiddenToPlayer() && !_attacker.isHiddenToPlayer())
-					{
-						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has stunned and staggered " + this.Const.UI.getColorizedEntityName(_attacker) + " for one turn");
-					}
+					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(user) + " has stunned and staggered " + this.Const.UI.getColorizedEntityName(_attacker) + " for one turn");
 				}
 			}
 		}
