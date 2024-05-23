@@ -52,60 +52,57 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function getTooltip()
 	{
-		if (!this.isHidden())
-		{
-			local regulardamage = this.getDamageBonus();
-			local paybackchance = this.getPayBackChance();
-			local paybackdamage = this.getPayBackDamage();
+		local regulardamage = this.getDamageBonus();
+		local paybackchance = this.getPayBackChance();
+		local paybackdamage = this.getPayBackDamage();
 
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = this.getName()
-				},
-				{
-					id = 1,
-					type = "description",
-					text = this.getDescription()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + regulardamage + "%[/color] damage inflicted"
-				},
-				{
-					id = 11,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + paybackdamage + "%[/color] damage"
-				}
-			];
-		}
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 1,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + regulardamage + "%[/color] damage inflicted"
+			},
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + paybackdamage + "%[/color] damage"
+			}
+		];
 	}
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (this.isInRange())
-		{
-			if (this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != this.getContainer().getActor().getID())
-			{
-				local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-				local paybackdamage = this.getPayBackDamage();
-				
-				_properties.DamageTotalMult *= paybackdamage * 0.01;
-			}
-		}
-	}
+		if (::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
+			return;
 
+		if (!this.checkEntities() || !this.isInRange())
+			return;
+		
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
+		local paybackdamage = this.getPayBackDamage();
+		
+		_properties.DamageTotalMult *= paybackdamage * 0.01;
+	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || this.Tactical.TurnSequenceBar.getActiveEntity() == null || this.Tactical.TurnSequenceBar.getActiveEntity().getID() != _attacker.getID() || !this.isInRange() || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
-		{
+		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()) || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
 			return;
-		}
+
+		if (!this.checkEntities() || !this.isInRange())
+			return;
 		
 		local chance = this.getPayBackChance();
 
