@@ -85,7 +85,7 @@ this.legend_fleshless_trait <- this.inherit("scripts/skills/traits/character_tra
 
 	function onApplyAppearance()
 	{
-		local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor().get();
 		local body = actor.getSprite("body");
 		body.setBrush("bust_skeleton_body_0" + this.Math.rand(1, 2));
 		body.Saturation = 0.8;

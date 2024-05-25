@@ -59,7 +59,7 @@ this.legend_rotten_flesh_trait <- this.inherit("scripts/skills/traits/character_
 
 	function onAdded()
 	{
-		local actor = this.getContainer().getActor();
+		local actor = this.getContainer().getActor().get();
 		actor.m.rawset("InjuryType", this.m.InjuryType);
 		actor.m.BloodType = this.Const.BloodType.Dark;
 		actor.m.MoraleState = this.Const.MoraleState.Ignore;
