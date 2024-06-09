@@ -2394,11 +2394,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 						Overlay = null
 					});
 				}
+				else if (::Legends.Mod.ModSettings.getSetting("ExactEngageNumbers").getValue())
+				{
+					entities.push({
+						Name = entityTypes[i] + " " + this.Const.Strings.EntityNamePlural[i],
+						Icon = this.Const.EntityIcon[i],
+						Overlay = null
+					});
+				}
 				else
 				{
-					local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
 					entities.push({
-						Name = num + " " + this.Const.Strings.EntityNamePlural[i],
+						Name =  getEngageNumberNames(entityTypes[i]) + " " + this.Const.Strings.EntityNamePlural[i],
 						Icon = this.Const.EntityIcon[i],
 						Overlay = null
 					});
@@ -2457,6 +2464,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			return !this.m.CombatDialog.isAnimating();
 		}, _isPlayerInitiated);
+	}
+
+	function getEngageNumberNames( _entityType)
+	{
+		foreach (key, value in this.Const.Strings.EngageEnemyNumbers)
+		{
+			if (_entityType >= value[0] && _entityType <= value[1])
+			{
+				return this.Const.Strings.EngageEnemyNumbersNames[key];
+			}
+		}
 	}
 
 	function combat_dialog_module_onEngagePressed()
