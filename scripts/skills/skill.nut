@@ -1733,6 +1733,7 @@ this.skill <- {
 		local levelDifference = _targetEntity.getTile().Level - user.getTile().Level;
 		local distanceToTarget = user.getTile().getDistanceTo(_targetEntity.getTile());
 		local toHit = skill - defense;
+
 		local minimumHitChance = ::Legends.Mod.ModSettings.getSetting("MinimumChanceToHit").getValue();
 		local maximumHitChance = ::Legends.Mod.ModSettings.getSetting("MaximumChanceToHit").getValue();
 

@@ -9,43 +9,36 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/leg
 
 	function getTooltip()
 	{
-		if (!this.isHidden())
+		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
+		local bonus = (this.m.Vala.getBravery() / 15.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 15.0);
+
+		if (this.isMastered())
 		{
-			local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-			local bonus = (this.m.Vala.getBravery() / 15.0) + ((this.getContainer().getActor().getFatigueMax() - this.getContainer().getActor().getFatigue()) / 15.0);
-
-			if (this.isMastered())
-			{
-				bonus *= 1.1;
-			}
-
-			if (distance == 2)
-			{
-				bonus *= 0.75;
-			}
-			else if (distance == 3)
-			{
-				bonus *= 0.5;
-			}
-
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = this.getName()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(bonus) + "[/color] Melee and Ranged defense."
-				}
-			];
+			bonus *= 1.1;
 		}
-		else
+
+		if (distance == 2)
 		{
-			return;
+			bonus *= 0.75;
 		}
+		else if (distance == 3)
+		{
+			bonus *= 0.5;
+		}
+
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.round(bonus) + "[/color] Melee and Ranged defense."
+			}
+		];
 	}
 
 	function updateEffect( _v)
@@ -65,7 +58,6 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/leg
 			this.m.Overlay = "";
 		}
 	}
-
 
 	function onMovementCompleted( _tile )
 	{
@@ -119,7 +111,7 @@ this.legend_vala_chant_senses_effect <- this.inherit("scripts/skills/effects/leg
 		else if (distance == 3)
 		{
 			bonus *= 0.5;
-	}
+		}
 
 		_properties.MeleeDefense += this.Math.round(bonus);
 		_properties.RangedDefense += this.Math.round(bonus);

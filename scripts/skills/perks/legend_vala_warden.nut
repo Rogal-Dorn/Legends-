@@ -18,23 +18,15 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-
 	function isHidden()
 	{
-		if (this.m.WardenEntity == null)
-		{
-			return true;
-		}
-
-		return false;
-
+		return ::MSU.isNull(this.m.WardenEntity);
 	}
 
 	function getWarden()
 	{
 		return this.m.WardenEntity;
 	}
-
 
 	function getTooltip()
 	{
@@ -88,16 +80,14 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-
 	function onDeath( _fatalityType )
 	{
-		if (this.m.WardenEntity != null)
-		{
-			this.m.WardenEntity.killSilently();
-			this.m.WardenEntity = null;
-		}
-	}
+		if (::MSU.isNull(this.m.WardenEntity))
+			return;
 
+		this.m.WardenEntity.killSilently();
+		this.m.WardenEntity = null;
+	}
 
 	function findTileToSpawnWarden()
 	{
@@ -130,7 +120,7 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 
 	function summonWarden()
 	{
-		if (this.m.WardenSummonSpent == false && this.m.WardenEntity == null)
+		if (this.m.WardenSummonSpent == false && ::MSU.isNull(this.m.WardenEntity))
 		{
 			local WardenSpawnTile = this.findTileToSpawnWarden();
 
@@ -141,8 +131,8 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 				entity.setFaction(this.Const.Faction.PlayerAnimals);
 				entity.setVala(this);
 				entity.setWardenStats(this.getContainer().getActor().getBravery());
+				this.m.WardenEntity = ::MSU.asWeakTableRef(entity);
 				this.m.WardenSummonSpent = true;
-				this.m.WardenEntity = entity;
 
 				if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_vala_spiritual_bond"))
 				{
@@ -232,20 +222,14 @@ this.legend_vala_warden <- this.inherit("scripts/skills/skill", {
 		this.summonWarden();
 	}
 
-
 	function onTurnStart()
 	{
 		this.summonWarden();
 	}
 
-
 	function onCombatFinished()
 	{
 		this.m.WardenEntity = null;
-
-		if (this.getContainer().getActor().getSkills().hasSkill("effects.legend_vala_spiritual_bond_effect"))
-		{
-			this.getContainer().getActor().getSkills().removeByID("effects.legend_vala_spiritual_bond_effect");
-		}
+		//this.getContainer().removeByID("effects.legend_vala_spiritual_bond_effect");
 	}
 });

@@ -53,7 +53,7 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 
 		foreach( item in items )
 		{
-			if (item != null && item.isName())
+			if (item != null && item.isNamed())
 				++n;
 		}
 
@@ -63,7 +63,7 @@ this.bounty_hunter_follower <- this.inherit("scripts/retinue/follower", {
 		{
 			foreach( item in bro.getItems().getAllItems())
 			{
-				if (item.isName())
+				if (item.isNamed())
 					++n;
 			}
 		}
