@@ -5,14 +5,7 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 	},
 	function setVala(_v)
 	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
+		this.m.Vala = ::MSU.asWeakTableRef(_v);
 	}
 
 	function create()
@@ -31,18 +24,11 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 	function isHidden()
 	{
 		if (!this.checkEntities())
-		{
-			this.updateEffect(false);
 			return true;
-		}
 
 		if (!this.isInRange())
-		{
-			this.updateEffect(false);
 			return true;
-		}
 
-		this.updateEffect(true);
 		return false;
 	}
 
@@ -50,75 +36,42 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 	{
 	}
 
-
 	function isMastered()
 	{
-		if (this.m.Vala == null)
-		{
+		if (::MSU.isNull(this.m.Vala))
 			return false;
-		}
 
-		if (this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery"))
-		{
-			return true;
-		}
-
-		return false;
+		return this.m.Vala.getSkills().hasSkill("perk.legend_vala_chanting_mastery");
 	}
-
 
 	function checkEntities()
 	{
-		local actor = this.getContainer().getActor();
-		if (actor == null)
-		{
+		if (("State" in ::Tactical) && ::Tactical.Entities.isCombatFinished())
 			return false;
-		}
+
+		if (::MSU.isNull(this.getContainer()) || ::MSU.isNull(this.getContainer().getActor()))
+			return false;
+
+		local actor = this.getContainer().getActor();
 
 		if (!actor.isPlacedOnMap())
-		{
 			return false;
-		}
 
-		if (("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
-		{
+		if (actor.getTile() == null)
 			return false;
-		}
 
-		local tile = actor.getTile();
-		if (tile == null)
-		{
+		if (::MSU.isNull(this.m.Vala))
 			return false;
-		}
 
-		if (this.m.Vala == null)
-		{
-			return false;
-		}
-
-		if (this.m.Vala.getTile() == null)
-		{
-			return false;
-		}
-
-		return true;
+		return this.m.Vala.getTile() != null;
 	}
 
 	function isInRange()
 	{
-		if (!this.getContainer().getActor().isPlacedOnMap() || this.getContainer().getActor().getFlags().get("Devoured") == true || !this.m.Vala.isPlacedOnMap() || this.m.Vala.getFlags().get("Devoured") == true)
-		{
+		if (!this.m.Vala.isPlacedOnMap() || this.m.Vala.getFlags().get("Devoured") == true)
 			return false;
-		}
-		if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) != null)
-		{
-			if (this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range)
-			{
-				return true;
-			}
-		}
 
-		return false;
+		return this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile()) <= this.m.Range;
 	}
 
 	function onUpdate( _properties )

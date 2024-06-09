@@ -1,19 +1,12 @@
 this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	m = {
-		Vala = null
+		Vala = null,
+		ResolveAtCheck = null,
 	},
 	function setVala(_v)
 	{
-		if (typeof _v == "instance")
-		{
-			this.m.Vala = _v;
-		}
-		else
-		{
-			this.m.Vala = this.WeakTableRef(_v);
-		}
+		this.m.Vala = ::MSU.asWeakTableRef(_v);
 	}
-
 
 	function create()
 	{
@@ -25,100 +18,52 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 		this.m.Overlay = "status_effect_87";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Last;
+		this.m.IsRemovedAfterBattle = true;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
 		this.m.IsHidden = true;
 	}
 
-
-	function isHidden()
+	function isValid( _attacker, _skill )
 	{
+		if (_skill != null && !_skill.isAttack())
+			return false;
+
+		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID())
+			return false;
+
+		if (::MSU.isNull(this.m.Vala) || ::MSU.isNull(this.m.Vala.m.WardenEntity))
+			return false;
+
 		return true;
 	}
 
-
-	function getTooltip()
-	{
-		if (!this.isHidden())
-		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = this.getName()
-				}
-			];
-		}
-		else
-		{
-			return;
-		}
-	}
-
-
-	function onUpdate( _properties )
-	{
-	}
-
-
-	function onCombatFinished()
-	{
-		this.removeSelf();
-	}
-
-
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		if (_attacker != null && _attacker.getID() == this.getContainer().getActor().getID() || _skill != null && !_skill.isAttack())
-		{
+		this.m.ResolveAtCheck = null;
+
+		if (!this.isValid(_attacker, _skill))
 			return;
-		}
 
-		if (this.m.Vala.m.WardenEntity == null)
-		{
-			return;
-		}
-
-		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getBravery() / 400.00));
-
-		if (reduction < 0.5)
-		{
-			reduction = 0.5;
-		}
-
+		this.m.ResolveAtCheck = this.getContainer().getActor().getBravery() / 400.00;
+		local reduction = ::Math.maxf(0.5, 1.0 - (0.1 + this.m.ResolveAtCheck));
 		_properties.DamageReceivedRegularMult *= reduction;
 	}
-
 	
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (this.m.Vala.m.WardenEntity == null)
-		{
-			return;
-		}
+		if (::MSU.isNull(this.m.Vala) || ::MSU.isNull(this.m.Vala.m.WardenEntity))
+			return false;
 
 		if (_damageHitpoints < 1)
-		{
 			return;
-		}
 
-		local reduction = 1.0 - (0.1 + (this.getContainer().getActor().getBravery() / 400.00));
-		local transfer = 0.1 + (this.getContainer().getActor().getBravery() / 400.00);
-
-		if (reduction < 0.5)
-		{
-			reduction = 0.5;
-		}
-
-		if (transfer > 0.5)
-		{
-			transfer = 0.5;
-		}
-
-		local DamageToWarden = (_damageHitpoints / reduction) * transfer;
+		local transfer = ::Math.minf(0.5, 0.1 + this.m.ResolveAtCheck);
+		local reduction = ::Math.maxf(0.5, 1.0 - (0.1 + this.m.ResolveAtCheck));
+		local DamageToWarden = this.Math.ceil((_damageHitpoints / reduction) * transfer);
 
 		local hitInfo = clone this.Const.Tactical.HitInfo;
-		hitInfo.DamageRegular = this.Math.ceil(DamageToWarden);
+		hitInfo.DamageRegular = DamageToWarden;
 		hitInfo.DamageDirect = 1.0;
 		hitInfo.BodyPart = this.Const.BodyPart.Body;
 		hitInfo.BodyDamageMult = 1.0;
