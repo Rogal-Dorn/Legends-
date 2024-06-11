@@ -5,6 +5,7 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		NameList = [],
 		UseRandomName = true,
 
+		BaseProperties = {},
 		PossibleEffects = [],
 		EffectBounds = [],
 		EffectChanceOrBonus = 0,
@@ -95,8 +96,47 @@ this.named_weapon <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.Name = _name;
 	}
 
+	function getTooltip()
+	{
+		local result = this.weapon.getTooltip();
+
+		foreach (k, p in this.m.BaseProperties)
+		{
+			if (this.m[k] == p)
+				continue;
+
+			foreach (tooltip in result)
+			{
+				if (!tooltip.rawin("icon"))
+					continue;
+
+				if (!::Const.HighlightNamedRoll[k].isRightTooltip(tooltip))
+					continue;
+
+				tooltip.icon = ::Const.HighlightNamedRoll[k].Icon;
+				break;
+			}
+		}
+
+		return result;
+	}
+
 	function randomizeValues()
 	{
+		if (this.m.BaseProperties.len() == 0)
+		{
+			this.m.BaseProperties.ConditionMax <- this.m.ConditionMax;
+			this.m.BaseProperties.RegularDamageMax <- this.m.RegularDamageMax;
+			this.m.BaseProperties.ArmorDamageMult <- this.m.ArmorDamageMult;
+			this.m.BaseProperties.ChanceToHitHead <- this.m.ChanceToHitHead;
+			this.m.BaseProperties.DirectDamageAdd <- this.m.DirectDamageAdd;
+			this.m.BaseProperties.StaminaModifier <- this.m.StaminaModifier;
+			this.m.BaseProperties.ShieldDamage <- this.m.ShieldDamage;
+			this.m.BaseProperties.AmmoMax <- this.m.AmmoMax;
+			this.m.BaseProperties.AdditionalAccuracy <- this.m.AdditionalAccuracy;
+			this.m.BaseProperties.FatigueOnSkillUse <- this.m.FatigueOnSkillUse;
+		}
+
 		if (this.m.ConditionMax > 1)
 		{															//Vanilla = 90, 140. I think this is bullshit. - Luft
 			this.m.Condition = this.Math.round(this.m.Condition * this.Math.rand(110, 140) * 0.01) * 1.0;
