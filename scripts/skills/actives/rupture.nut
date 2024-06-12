@@ -95,6 +95,7 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.ActionPointCost = _properties.IsSpecializedInPolearms ? 5 : 6;
 	}
 
 	function onUse( _user, _targetTile )
