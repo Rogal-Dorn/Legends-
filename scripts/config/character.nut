@@ -13,7 +13,7 @@ gt.Const.Movement <- {
 };
 gt.Const.XP <- {
 	XPForKillerPct = 0.2,
-	MaxLevelWithPerkpoints = 11
+	MaxLevelWithPerkpoints = 12
 };
 gt.Const.BusinessReputation <- [
 	-500, //0
