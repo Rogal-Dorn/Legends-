@@ -60,7 +60,9 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [],
+			Enemy = [
+				this.Const.Perks.NoblesTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -75,8 +77,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				4,
-				-1
+				-1,
+				4
 			],
 			Bravery = [
 				15,
@@ -92,19 +94,19 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			RangedSkill = [
 				0,
-				5
+				10
 			],
 			MeleeDefense = [
 				3,
 				8
 			],
 			RangedDefense = [
-				-10,
-				-5
+				-5,
+				-10
 			],
 			Initiative = [
-				-7,
-				-2
+				-2,
+				-7
 			]
 		};
 		return c;
