@@ -98,10 +98,20 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Magic = 1,
 			MagicChance = 0.001
 		},
-		PerkTreeDynamic = {
-			Weapon = [],
-			Defense = [],
-			Traits = [],
+		PerkTreeDynamic = { //ALL recruits get these perks as base
+			Weapon = [
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.MaceTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
 			Enemy = [],
 			Class = [],
 			Magic = []
@@ -1160,35 +1170,35 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			a = {
 				Hitpoints = [
 					50,
-					60
+					50
 				],
 				Bravery = [
-					30,
+					40,
 					40
 				],
 				Stamina = [
-					90,
+					100,
 					100
 				],
 				MeleeSkill = [
-					47,
-					57
+					50,
+					50
 				],
 				RangedSkill = [
-					32,
-					42
+					40,
+					40
 				],
 				MeleeDefense = [
 					0,
-					5
+					0
 				],
 				RangedDefense = [
 					0,
-					5
+					0
 				],
 				Initiative = [
-					100,
-					110
+					85,
+					85
 				]
 			};
 		}
