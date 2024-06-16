@@ -56,6 +56,7 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.HairColors = this.Const.HairColors.SouthernYoung;
 		this.m.Beards = this.Const.Beards.Southern;
 		this.m.Ethnicity = 1;
+		this.m.Level = this.Math.rand(2, 5);
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.BackgroundType = this.Const.BackgroundType.Combat | this.Const.BackgroundType.Outlaw;
@@ -85,11 +86,13 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.CrossbowTree,
+				this.Const.Perks.CleaverTree,
+				this.Const.Perks.BowTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.CalmTree,
@@ -97,12 +100,15 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.CivilizationTree],
-			Class = [this.Const.Perks.KnifeClassTree],
-			Magic = [this.Const.Perks.AssassinMagicTree]
+			Enemy = [
+				this.Const.Perks.CivilizationTree
+			],
+			Class = [],
+			Magic = [
+				this.Const.Perks.AssassinMagicTree
+			]
 		}
 	}
-
 
 	//Default Male
 	function setGender(_gender = -1)
@@ -120,6 +126,20 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 
+	}
+
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/chance_to_hit_head.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
+			}
+		)
+		return ret
 	}
 
 	function onBuildDescription()
@@ -151,24 +171,24 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 				-5
 			],
 			MeleeSkill = [
-				10,
-				10
-			],
-			RangedSkill = [
-				0,
-				0
-			],
-			MeleeDefense = [
-				5,
+				6,
 				8
 			],
+			RangedSkill = [
+				10,
+				14
+			],
+			MeleeDefense = [
+				3,
+				5
+			],
 			RangedDefense = [
-				0,
-				0
+				2,
+				5
 			],
 			Initiative = [
 				20,
-				15
+				30
 			]
 		};
 		return c;
@@ -208,6 +228,12 @@ this.assassin_southern_background <- this.inherit("scripts/skills/backgrounds/ch
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "oriental/assassin_head_wrap"]
 		]))
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.HitChance[this.Const.BodyPart.Head] += 10;
 	}
 });
 
