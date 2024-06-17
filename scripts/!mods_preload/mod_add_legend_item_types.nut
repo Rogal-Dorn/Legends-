@@ -1,8 +1,8 @@
 ::Const.LegendMod.addLegendItemTypes <- function()
 {
-	::Const.Items.addNewItemType("HorseArmor");
-	::Const.Items.ItemFilter.HorseArmor <- ::Const.Items.ItemType.HorseArmor;
-	::Const.Items.addNewItemType("HorseHelmet");
+	// ::Const.Items.addNewItemType("HorseArmor");
+	// ::Const.Items.ItemFilter.HorseArmor <- ::Const.Items.ItemType.HorseArmor;
+	// ::Const.Items.addNewItemType("HorseHelmet");
 	::Const.Items.addNewItemType("Cultist", "Cultist Item");
 	::Const.Items.addNewItemType("Net", "Net Item");
 
@@ -11,6 +11,7 @@
 	// WARNING: due to the limitations of 32-bit signed integers, we can only have up to 31 types, and we are very close to this limit
 	::Const.Items.addNewItemType("Shortbow", "Shortbow Item");
 	::Const.Items.addNewItemType("Pitchfork", "Pitchfork Item");
+	::Const.Items.addNewItemType("FencingSword", "Fencing Sword Item")
 
 	delete ::Const.LegendMod.addLegendItemTypes;
 }
