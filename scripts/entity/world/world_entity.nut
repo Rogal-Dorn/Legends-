@@ -346,7 +346,7 @@ this.world_entity <- {
 		foreach( c in champions )
 		{
 			entities.push({
-				id = 20,
+				id = 21,
 				type = "text",
 				icon = "ui/orientation/" + this.Const.EntityIcon[c.ID] + ".png",
 				text = c.Name
