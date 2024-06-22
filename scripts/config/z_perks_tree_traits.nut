@@ -302,11 +302,9 @@ gt.Const.Perks.DeviousTree <- {
 		]
 	},
 	Tree = [
-		[
-		gt.Const.Perks.PerkDefs.LegendTrueBeliever
-		],
-		[],
-		[ gt.Const.Perks.PerkDefs.LegendBlendIn ],
+		[gt.Const.Perks.PerkDefs.LegendBlendIn],
+		[gt.Const.Perks.PerkDefs.LegendTrueBeliever],
+		[ ],
 		[],
 		[ gt.Const.Perks.PerkDefs.LegendEvasion ],
 		[],
