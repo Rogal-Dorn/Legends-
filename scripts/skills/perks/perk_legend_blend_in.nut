@@ -18,7 +18,7 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 0.1;
+		_properties.TargetAttractionMult *= 0.5;
 		_properties.MeleeDefense += 3;
 		_properties.RangedDefense += 5;
 		this.m.IsHidden = this.m.Stacks == 0;
