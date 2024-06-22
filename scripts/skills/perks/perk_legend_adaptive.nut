@@ -326,7 +326,13 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			armor_weight += actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getStaminaModifier()
 		}
 
-		if (armor_weight >= -15 && armor_weight <= 0)
+		if (armor_weight == 0)
+		{
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.ClothArmorTree);
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+
+		if (armor_weight >= -15 && armor_weight <= -1)
 		{	
 			// Attempt to give light armor tree if in range or naked
 			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.LightArmorTree);
