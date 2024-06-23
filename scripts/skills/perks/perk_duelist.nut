@@ -22,15 +22,17 @@ this.perk_duelist <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local main = getContainer().getActor().getMainhandItem();
-
-		if (main == null)
-			return;
-
 		local off = getContainer().getActor().getOffhandItem();
 
-		if (getContainer().hasSkill("injury.missing_hand") || off == null && !main.isItemType(::Const.Items.ItemType.TwoHanded) || off != null && off.isItemType(::Const.Items.ItemType.Tool))
+		if (main == null && off == null)
+			return;
+
+		if (getContainer().hasSkill("injury.missing_hand") || off == null && !main.isItemType(::Const.Items.ItemType.TwoHanded) || off != null && off.isItemType(::Const.Items.ItemType.Tool)) {
 			_properties.DamageDirectAdd += 0.25;
-		else if (off == null)
+			return;
+		}
+
+		if (off == null)
 			return;
 
 		foreach( valid in m.AllowedWeapons )
