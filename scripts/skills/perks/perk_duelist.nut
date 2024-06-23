@@ -1,5 +1,11 @@
 this.perk_duelist <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		AllowedWeapons = [
+			"_parrying_dagger",
+			"_hand_crossbow",
+			"buckler",
+		],
+	},
 	function create()
 	{
 		this.m.ID = "perk.duelist";
@@ -15,22 +21,26 @@ this.perk_duelist <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		local items = this.getContainer().getActor().getItems();
-		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
+		local main = getContainer().getActor().getMainhandItem();
 
-		if (this.getContainer().hasSkill("injury.missing_hand") || off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) || off != null && off.isItemType(this.Const.Items.ItemType.Tool))
-		{
+		if (main == null)
+			return;
+
+		local off = getContainer().getActor().getOffhandItem();
+
+		if (getContainer().hasSkill("injury.missing_hand") || off == null && !main.isItemType(::Const.Items.ItemType.TwoHanded) || off != null && off.isItemType(::Const.Items.ItemType.Tool))
 			_properties.DamageDirectAdd += 0.25;
-		}
-		
-		if (off != null)
+		else if (off == null)
+			return;
+
+		foreach( valid in m.AllowedWeapons )
 		{
-			if (off.getID() == "weapon.legend_parrying_dagger" || off.getID() == "shield.buckler" || off.getID() == "weapon.legend_hand_crossbow")
-			{
-				_properties.DamageDirectAdd += 0.12;
-			}		
+			if (!::MSU.String.endsWith(off.getID(), valid))
+				continue;
+
+			_properties.DamageDirectAdd += 0.12;
+			break;
 		}
-		
 	}
 
 });
