@@ -80,6 +80,8 @@ this.taunt <- this.inherit("scripts/skills/skill", {
 		target.getAIAgent().setForcedOpponent(_user);
 		target.getSkills().add(this.new("scripts/skills/effects/taunted_effect"));
 		return true;
+		local actor = this.Container.getActor();
+		actor.getSkills().add(this.new("scripts/skills/effects/taunt_effect"));
 	}
 
 });
