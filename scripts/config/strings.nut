@@ -2076,34 +2076,6 @@ gt.Const.Strings.InventoryUpgradeCosts <- [
 	"10,000",
 	"20,000"
 ];
-gt.Const.Strings.SlingNames <- [
-	"Rockwhisper",
-	"Wolfbane",
-	"Flockguard",
-	"Crowstrike",
-	"Northwind",
-	"Fieldfling",
-	"Thornwhip",
-	"Hedgeknocker",
-	"Pebblepelt",
-	"Frostbite Flinger",
-	"Shepards Revenge",
-	"Whispering Wind",
-	"Thunderstrike",
-	"Dragons Breath",
-	"Ironwind",
-	"Furyfling",
-	"Ragnarock",
-	"Icevein",
-	"Rocketeer",
-	"Haymaker",
-	"Rustic Rattler",
-	"Peacemaker",
-	"Heavy Rain",
-	"Rogues End",
-	"Knightbane",
-	"Grimguard"
-];
 gt.Const.Strings.PerkName <- {
 	Bullseye = "Bullseye",
 	Berserk = "Berserk",
