@@ -17,7 +17,7 @@ this.siege_fortification_contract <- this.inherit("scripts/contracts/contract", 
 		}
 
 		this.m.Type = "contract.siege_fortification";
-		this.m.Name = "Siege Fortification";
+		this.m.Name = "Laying Siege";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.DescriptionTemplates = [
