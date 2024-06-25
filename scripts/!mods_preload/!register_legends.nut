@@ -4,8 +4,13 @@
 	Name = "Legends Mod",
 	BuildName = "Chickens & Demons"
 };
-::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
-::mods_queue(null, "mod_msu(>=1.2.6), vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
+
+if (!("MSU" in this.getroottable()) || ::MSU.SemVer.compare(::MSU.SemVer.getTable(::MSU.Version), ::MSU.SemVer.getTable("1.3.0")) >= 0 && !("Hooks" in this.getroottable()))
+	::mods_registerMod(::Legends.ID, 18, ::Legends.Name);
+else
+	::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
+
+::mods_queue(::Legends.ID, "mod_msu(>=1.2.6), vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
 {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 

@@ -1,6 +1,6 @@
 local isNoMSU = false, isNoModernHooks = false;
 
-if (!("MSU" in this.getroottable())
+if (!("MSU" in this.getroottable()))
 	isNoMSU = true;
 else if (::MSU.SemVer.compare(::MSU.SemVer.getTable(::MSU.Version), ::MSU.SemVer.getTable("1.3.0")) >= 0 && !("Hooks" in this.getroottable()))
 	isNoModernHooks = true;
@@ -67,7 +67,7 @@ local text = "";
 if (isNoMSU)
 	text += "ERROR: Legends Requires Modding Standards & Utilities (MSU) to function.<br><a style=\"color: lightblue; text-decoration: underline;\"onclick=\"openURL('https://www.nexusmods.com/battlebrothers/mods/479')\">Get MSU from Nexusmods</a>";
 else if (isNoModernHooks)
-	text += "ERROR: Modding Standards & Utilities (MSU) v" + ::MSU.Version + " Requires Modern Hooks to function.<br><a style=\"color: lightblue; text-decoration: underline;\"onclick=\"openURL('https://www.nexusmods.com/battlebrothers/mods/685')\">Get Modern Hooks from Nexusmods</a>";
+	text += "ERROR: Modding Standards & Utilities v" + ::MSU.Version + " (MSU) Requires Modern Hooks to function.<br><a style=\"color: lightblue; text-decoration: underline;\"onclick=\"openURL('https://www.nexusmods.com/battlebrothers/mods/685')\">Get Modern Hooks from Nexusmods</a>";
 
 ::Legends.Popup.showRawText(text, true);
 
