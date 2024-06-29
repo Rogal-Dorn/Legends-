@@ -41,7 +41,7 @@ this.hate_greenskins_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-if (!this.Const.DLC.Unhold)
+	if (!this.Const.DLC.Unhold)
 		{
 			return;
 		}
