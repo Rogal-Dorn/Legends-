@@ -26,12 +26,11 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.bloodthirsty",
 			"trait.deathwish"
 		];
-		this.m.ExcludedTalents = [
-			this.Const.Attributes.Hitpoints,
-			this.Const.Attributes.Fatigue,
-			this.Const.Attributes.RangedDefense,
-			this.Const.Attributes.Bravery
-		];
+		// this.m.ExcludedTalents = [
+		// 	this.Const.Attributes.Hitpoints,
+		// 	this.Const.Attributes.Fatigue,
+		// 	this.Const.Attributes.Bravery
+		// ];
 		this.m.Bodies = this.Const.Bodies.SouthernFemale;
 		this.m.Faces = this.Const.Faces.SouthernFemale;
 		this.m.Hairs = this.Const.Hair.SouthernFemale;
@@ -50,6 +49,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Defense = [
 				this.Const.Perks.ClothArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
@@ -58,7 +58,9 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.AgileTree,
 				this.Const.Perks.DeviousTree
 			],
-			Enemy = [this.Const.Perks.SwordmastersTree],
+			Enemy = [
+				this.Const.Perks.SwordmastersTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -80,12 +82,12 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 				-5
 			],
 			MeleeSkill = [
-				10,
-				15
+				7,
+				14
 			],
 			RangedSkill = [
 				5,
-				5
+				10
 			],
 			MeleeDefense = [
 				0,
@@ -97,7 +99,7 @@ this.belly_dancer_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Initiative = [
 				10,
-				10
+				20
 			]
 		};
 		return c;

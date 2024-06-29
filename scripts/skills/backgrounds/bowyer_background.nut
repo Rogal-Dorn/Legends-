@@ -57,7 +57,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Weapon = [
 				this.Const.Perks.BowTree,
 				this.Const.Perks.CrossbowTree,
-				this.Const.Perks.StaffTree,
+				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
@@ -66,7 +66,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			Traits = [
 				this.Const.Perks.CalmTree,
 				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.AgileTree,
 				this.Const.Perks.FastTree
 			],
 			Enemy = [],
@@ -84,7 +84,7 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 
 		this.m.Name = "Fletcher";
 		this.m.Icon = "ui/backgrounds/background_fletcher.png";
-		this.m.BackgroundDescription = "Fletchers have a good understanding of how bows and crossbows work, even if they do lack the practice.";
+		this.m.BackgroundDescription = "Fletchers have a good understanding of how bows and crossbows work, even if they do lack practical experience.";
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -116,15 +116,15 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				0
 			],
 			Bravery = [
-				-5,
-				0
+				0,
+				4
 			],
 			Stamina = [
-				-5,
-				0
+				3,
+				5
 			],
 			MeleeSkill = [
-				0,
+				-5,
 				0
 			],
 			RangedSkill = [
@@ -132,12 +132,12 @@ this.bowyer_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				10
 			],
 			MeleeDefense = [
-				0,
+				-2,
 				0
 			],
 			RangedDefense = [
-				0,
-				0
+				2,
+				3
 			],
 			Initiative = [
 				0,

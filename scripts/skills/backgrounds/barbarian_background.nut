@@ -176,24 +176,24 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				5
+				5,
+				10
 			],
 			Bravery = [
-				10,
-				5
+				5,
+				10
 			],
 			Stamina = [
-				10,
-				5
+				5,
+				10
 			],
 			MeleeSkill = [
-				10,
-				5
+				5,
+				10
 			],
 			RangedSkill = [
 				0,
-				0
+				3
 			],
 			MeleeDefense = [
 				0,

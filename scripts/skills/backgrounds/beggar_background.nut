@@ -29,7 +29,6 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.natural"
 		];
 		this.m.ExcludedTalents = [
-			this.Const.Attributes.Hitpoints,
 			this.Const.Attributes.Bravery
 		];
 		this.m.Titles = [
@@ -71,7 +70,9 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = [], //this.Const.Perks.FistsClassTree
+			Class = [
+				this.Const.Perks.FistsClassTree
+			],
 			Magic = []
 		}
 	}
@@ -97,6 +98,20 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 
 	}
 
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/xp_received.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]50% less likely[/color] to be targeted by an enemy."
+			}
+		)
+		return ret
+	}
+
 	function onBuildDescription()
 	{
 		if(this.isBackgroundType(this.Const.BackgroundType.Female))
@@ -113,8 +128,8 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-10
+				-4,
+				-2
 			],
 			Bravery = [
 				-10,
@@ -134,15 +149,15 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			],
 			MeleeDefense = [
 				0,
-				2
+				0
 			],
 			RangedDefense = [
 				0,
-				3
+				0
 			],
 			Initiative = [
-				0,
-				0
+				1,
+				4
 			]
 		};
 		return c;
@@ -181,6 +196,12 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			[1, "hood", 28]
 		])
 		items.equip(item);
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.TargetAttractionMult *= 0.5;
 	}
 
 });
