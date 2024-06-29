@@ -99,16 +99,10 @@ function onUpdateProperties( _properties )
 			return;
 		}
 		
-		switch (item.getID())
+		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow)
 		{
-			case "weapon.light_crossbow":
-			case "weapon.goblin_crossbow":
-			case "weapon.crossbow":
-			case "weapon.heavy_crossbow":
-			case "weapon.named_crossbow":	
-				_properties.DamageDirectMult *= 0.9;
-				_properties.RangedDamageMult *= 1.1;
-					break;
+			_properties.DamageDirectMult *= 0.9;
+			_properties.RangedDamageMult *= 1.1;
 		}
 
 	}
