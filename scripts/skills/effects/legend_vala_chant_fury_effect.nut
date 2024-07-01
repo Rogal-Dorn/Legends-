@@ -84,6 +84,8 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		if (!::Tactical) return;
+
 		if (::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
 			return;
 
