@@ -87,12 +87,9 @@ this.legend_armor_piercing_bolts <- this.inherit("scripts/items/ammo/ammo", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-		if (item == null)
-		{
-			return;
-		}
+		if (item == null) return;
 
-		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow)
+		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow))
 		{
 			_properties.DamageDirectMult *= 1.2;
 			_properties.RangedDamageMult *= 0.9;

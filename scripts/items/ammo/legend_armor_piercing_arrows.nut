@@ -87,12 +87,8 @@ this.legend_armor_piercing_arrows <- this.inherit("scripts/items/ammo/ammo", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-		if (item == null)
-		{
-			return;
-		}
-
-		if (item.isWeaponType(this.Const.Items.WeaponType.Bow)
+		if (item == null) return;
+		if (item.isWeaponType(this.Const.Items.WeaponType.Bow))
 		{
 			_properties.DamageDirectMult *= 1.3;
 			_properties.RangedDamageMult *= 0.9;

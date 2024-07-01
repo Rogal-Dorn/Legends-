@@ -94,12 +94,9 @@ function onUpdateProperties( _properties )
 		this.ammo.onUpdateProperties(_properties);
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
-		if (item == null)
-		{
-			return;
-		}
+		if (item == null) return;
 		
-		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow)
+		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow))
 		{
 			_properties.DamageDirectMult *= 0.9;
 			_properties.RangedDamageMult *= 1.1;
