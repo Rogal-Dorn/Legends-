@@ -101,6 +101,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()) || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
 			return;
 
+		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
+			return;
+
 		if (!this.checkEntities() || !this.isInRange())
 			return;
 		
