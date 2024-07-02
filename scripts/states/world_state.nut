@@ -4122,11 +4122,11 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
 		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix
 
-		handleEscapeArtistRetirement();
+		handleEscapeArtistRetirement(_in);
 		
 	}
 
-	function handleEscapeArtistRetirement()
+	function handleEscapeArtistRetirement(_in)
 	{
 		// Gracefully retire Escape Artist Perk for players (merged into Net Mastery) in 18.2.0
 		// Attempting to handle this in the deserialization of player.nut causes the game to crash
