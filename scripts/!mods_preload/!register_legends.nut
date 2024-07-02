@@ -15,6 +15,8 @@ else
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 
 	::mods_registerJS("legends_assets.js");
+	::mods_registerJS("legends/hooks/character_screen.js");
+	::mods_registerCSS("legends/hooks/character_screen.css");
 	::LegendsMod <- this.new("scripts/mods/legends_mod")
 	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-Bugs");
     ::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
