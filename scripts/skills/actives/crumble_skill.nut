@@ -88,7 +88,7 @@ this.crumble_skill <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.FatigueDealtPerHitMult += 2.0;
+			_properties.FatigueDealtPerHitMult += 1.0;
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInMaces && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
