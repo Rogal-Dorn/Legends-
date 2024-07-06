@@ -7,8 +7,8 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Name = "Companion";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;
-		this.m.DailyCost = 14;
-		this.m.DailyCostMult = 1.0;
+		this.m.DailyCost = 10;
+		this.m.DailyCostMult = 1.0; //basically never increases in daily wage hikes.
 		this.m.Excluded = [
 			"trait.superstitious",
 			"trait.hate_undead",
@@ -107,20 +107,20 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				2,
+				7
 			],
 			Bravery = [
 				10,
-				5
+				14
 			],
 			Stamina = [
 				5,
 				5
 			],
 			MeleeSkill = [
-				10,
-				5
+				5,
+				8
 			],
 			RangedSkill = [
 				5,
@@ -135,7 +135,7 @@ this.companion_1h_background <- this.inherit("scripts/skills/backgrounds/charact
 				5
 			],
 			Initiative = [
-				0,
+				-5,
 				0
 			]
 		};
