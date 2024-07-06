@@ -10,7 +10,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "The cultist, %name%, left the company with a band of cloaked converts. You know not what became of the fanatic, but every so often they appear in your dreams. Often standing alone in a great void and there is always someone, or something, lingering in the black beyond. Every night, this image gets a little more clear, and each night you find yourself staying up later and later just to avoid dreaming at all.";
 		this.m.BadEnding = "You heard that %name%, the cultist, left the company at some juncture and went out to spread the faith. There\'s no telling what became of the fanatic, but there was a recent inquisition against unholy faiths and hundreds of \'folk in dark cloaks with even darker intentions\' were burned at the stake across the realm.";
 		this.m.HiringCost = 50;
-		this.m.DailyCost = 5;
+		this.m.DailyCost = 7;
 		this.m.Excluded = [
 			"trait.teamplayer",
 			"trait.fear_undead",
@@ -69,7 +69,8 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree,
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.MartyrTree,
@@ -122,12 +123,12 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				10
+				-3,
+				5
 			],
 			Bravery = [
-				20,
-				10
+				15,
+				20
 			],
 			Stamina = [
 				-2,
@@ -150,7 +151,7 @@ this.cultist_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				5
 			],
 			Initiative = [
-				-5,
+				0,
 				5
 			]
 		};

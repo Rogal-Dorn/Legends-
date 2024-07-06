@@ -56,8 +56,9 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			Weapon = [
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.ShieldTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.AxeTree,
+				this.Const.Perks.ThrowingTree,
+				this.Const.Perks.ShieldTree
 			],
 			Defense = [
 				this.Const.Perks.HeavyArmorTree
@@ -68,7 +69,9 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.FitTree,
 				this.Const.Perks.LargeTree
 			],
-			Enemy = [this.Const.Perks.BanditTree],
+			Enemy = [
+				this.Const.Perks.OutlandersTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -94,19 +97,19 @@ this.caravan_hand_background <- this.inherit("scripts/skills/backgrounds/charact
 			],
 			Stamina = [
 				5,
-				7
+				10
 			],
 			MeleeSkill = [
-				4,
-				0
+				0,
+				4
 			],
 			RangedSkill = [
-				0,
-				0
+				2,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				1,
+				3
 			],
 			RangedDefense = [
 				0,

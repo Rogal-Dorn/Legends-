@@ -7,7 +7,7 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.Name = "Companion";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;
-		this.m.DailyCost = 14;
+		this.m.DailyCost = 11;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -61,11 +61,11 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.BowTree
+				this.Const.Perks.BowTree,
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
-				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FastTree,
@@ -111,32 +111,32 @@ this.companion_ranged_background <- this.inherit("scripts/skills/backgrounds/cha
 				0
 			],
 			Bravery = [
-				5,
-				5
+				8,
+				10
 			],
 			Stamina = [
 				0,
 				0
 			],
 			MeleeSkill = [
-				5,
-				0
+				0,
+				5
 			],
 			RangedSkill = [
-				16,
-				10
+				10,
+				16
 			],
 			MeleeDefense = [
-				0,
-				0
+				1,
+				2
 			],
 			RangedDefense = [
-				0,
-				0
+				3,
+				6
 			],
 			Initiative = [
-				5,
-				5
+				12,
+				15
 			]
 		};
 		return c;
