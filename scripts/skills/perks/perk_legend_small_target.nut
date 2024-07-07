@@ -83,18 +83,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		}
 
 		local stackTotal = health + headArmor + bodyArmor;
-
-		if (actor.getSkills().hasSkill("perk.legend_unburdened"))
-		{
-			if (bodyItem != null)
-			{
-				local body = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Body);
-				if (body.getStaminaModifier == 0)
-				{
-					stackTotal -= body.getRepair();
-				}
-			}
-		}
+		
 		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
 		{
 	
@@ -114,8 +103,17 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 					local cloakArmor = cloak.getRepair();
 					stackTotal -= cloakArmor;
 				}
+
+				if (actor.getSkills().hasSkill("perk.legend_unburdened"))
+				{
+					local body = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Body);
+					if (body.getStaminaModifier == 0)
+					{
+						stackTotal -= body.getRepair();
+					}
+				}
 			}
-		
+
 			if (headItem != null)
 			{
 				local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
