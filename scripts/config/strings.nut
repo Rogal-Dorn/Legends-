@@ -2261,7 +2261,7 @@ gt.Const.Strings.PerkName <- {
 	LegendClimb = "Climb",
 	LegendSmallTarget = "Small Target",
 	LegendFashionable = "Fashionable",
-	LegendMeek = "Meek",
+	LegendUnburdened = "Unburdened",
 	LegendHelpful = "Helpful",
 
 	//MASTERIES - skills that have a unified effect on their weapon class
@@ -2907,7 +2907,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity."
 	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+100[/color] Melee and Ranged defence. Lose [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] point for every point of armor and health you have. You must be wearing body armor for this perk to work.",
 	LegendFashionable = "Use flowing, billowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit.\n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
-	LegendMeek = "Your unassuming posture leads the enemy to think you are an easy target, making their attacks careless.\n\nAlways evade the first attack made against you in every combat encounter.",
+	LegendUnburdened = "Unencumbered by armor, you are spry and fleet footed.\n\nAllows this character the Unburdened Footwork skill, which allows you to leave a Zone of Control without triggering free attacks once per battle.\n\n\'Blend in\' will recover an evasion stack every 2 turns.\n\nIncreases Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] if this character has more than [color=" + this.Const.UI.Color.PositiveValue + "]50[/color]  bonus from \'Small Target\'.",
 	LegendHelpful = "Amateurs discuss tactics, the professionals discuss logistics.\n\n Gain the ability to give items from your bag to allies under your control [color=" + this.Const.UI.Color.PositiveValue + "]with no cost or penalty.[/color]\n [color=" + this.Const.UI.Color.NegativeValue + "]Does not work when receiving items.[/color]"
 
 };
