@@ -1,6 +1,7 @@
 this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	m = {
-		BonusMin = 0
+		BonusMin = 0,
+		BonusUnburdenedMin = 50
 	},
 	function create()
 	{
@@ -46,6 +47,15 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Ranged Defense"
 			});
 		}
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin)
+		{
+			tooltip.push({
+				id = 6,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "Increase the character\'s action points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]."
+			});
+		}
 
 		return tooltip;
 	}
@@ -61,15 +71,10 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 
 		local stackTotal = 0;
 		local health = 0;
-		health = actor.getBaseProperties().Hitpoints;
-		local bodyArmor = 0;
+		health = actor.getHitpointsMax();
+		local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
 		local headItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local headArmor = 0;
-		
-		if (bodyItem != null)
-		{
-			bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
-		}
 		
 		if (headItem != null)
 		{
@@ -83,19 +88,19 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		
 				if (bodyItem != null)
 				{
-					local tabard = bodyItem .getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
-					local cloak = bodyItem .getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
+					local tabard = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
+					local cloak = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
 					
 					if (tabard != null)
 					{
-					local tabardArmor = tabard.getRepair();
-					stackTotal -= tabardArmor;
+						local tabardArmor = tabard.getRepair();
+						stackTotal -= tabardArmor;
 					}
 					
 					if (cloak != null)
 					{
-					local cloakArmor = cloak.getRepair();
-					stackTotal -= cloakArmor;
+						local cloakArmor = cloak.getRepair();
+						stackTotal -= cloakArmor;
 					}
 				}
 
@@ -108,14 +113,14 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 					
 					if (vanity != null)
 					{
-					local vanityArmor = vanity.getRepair();
-					stackTotal -= vanityArmor;
+						local vanityArmor = vanity.getRepair();
+						stackTotal -= vanityArmor;
 					}
 					
-					if (extra  != null)
+					if (extra != null)
 					{
-					local extraArmor = extra.getRepair();
-					stackTotal -= extraArmor;
+						local extraArmor = extra.getRepair();
+						stackTotal -= extraArmor;
 					}
 				}
 			}
@@ -128,5 +133,9 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local bonus = this.getBonus();
 		_properties.MeleeDefense += bonus;
 		_properties.RangedDefense += bonus;
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin)
+		{
+			_properties.ActionPoints += 1;
+		}
 	}
 });
