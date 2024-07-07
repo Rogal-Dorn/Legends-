@@ -17,6 +17,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 		this.m.Flags.set("type", "human");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_melee_agent");
 		this.m.AIAgent.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_alp_teleport"));
+		this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 		this.m.AIAgent.setActor(this);
 	}
 
