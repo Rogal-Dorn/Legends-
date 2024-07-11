@@ -11,7 +11,9 @@ this.deathblow_skill <- this.inherit("scripts/skills/skill", {
 			"effects.staggered",
 			"effects.chilled",
 			"effects.shellshocked",
-			"effects.grappled"
+			"effects.grappled",
+			"effects.legend_baffled",
+			"effects.debilitated"
 		]
 	},
 	function create()
