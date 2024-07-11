@@ -69,13 +69,14 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
+		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 1) * this.Const.Combat.FatigueReceivedPerHit;
 		
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + ::Math.round(this.Const.Combat.FatigueReceivedPerHit * 1.5) + "[/color] extra fatigue"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
 			},
 			{
 				id = 7,
@@ -152,7 +153,7 @@ this.legend_shoot_stone_skill <- this.inherit("scripts/skills/skill", {
 			if (_properties.IsSharpshooter)
 				_properties.DamageDirectMult += 0.05;
 
-			_properties.FatigueDealtPerHitMult += 1.5;
+			_properties.FatigueDealtPerHitMult += 1.0;
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
 		}

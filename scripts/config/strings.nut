@@ -2040,6 +2040,34 @@ gt.Const.Strings.InventoryUpgradeCosts <- [
 	"10,000",
 	"20,000"
 ];
+gt.Const.Strings.SlingNames <- [
+	"Rockwhisper",
+	"Wolfbane",
+	"Flockguard",
+	"Crowstrike",
+	"Northwind",
+	"Fieldfling",
+	"Thornwhip",
+	"Hedgeknocker",
+	"Pebblepelt",
+	"Frostbite Flinger",
+	"Shepards Revenge",
+	"Whispering Wind",
+	"Thunderstrike",
+	"Dragons Breath",
+	"Ironwind",
+	"Furyfling",
+	"Ragnarock",
+	"Icevein",
+	"Rocketeer",
+	"Haymaker",
+	"Rustic Rattler",
+	"Peacemaker",
+	"Heavy Rain",
+	"Rogues End",
+	"Knightbane",
+	"Grimguard"
+];
 gt.Const.Strings.PerkName <- {
 
 	//VANILLA BASIC - skills from vanilla.
@@ -2233,7 +2261,7 @@ gt.Const.Strings.PerkName <- {
 	LegendClimb = "Climb",
 	LegendSmallTarget = "Small Target",
 	LegendFashionable = "Fashionable",
-	LegendMeek = "Meek",
+	LegendUnburdened = "Unburdened",
 	LegendHelpful = "Helpful",
 
 	//MASTERIES - skills that have a unified effect on their weapon class
@@ -2523,7 +2551,7 @@ gt.Const.Strings.PerkDescription <- {
 	Brawny = "The fatigue and initiative penalty from wearing armor and helmet is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color].",
 	Stalwart = "Grants passive immunity against being knocked back, pulled, grabbed or swallowed. Applies to skills such as Knock Back, Hook and others that change a character\'s position. Does not grant the damage reduction of indomitable, but also doesn\'t require activation.",
 	Steadfast = "The Fatigue cost of getting hit or missed by regular attacks is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]90%[/color]. Attacks that specifically target fatigue are unaffected.",
-	Taunt = "Unlocks the \'Taunt\' skill which makes the targeted opponent take offensive actions instead of defensive ones, and attack the taunting character over another, potentially more vulnerable one.",
+	Taunt = "Unlocks the \'Taunt\' skill which makes the targeted opponent take offensive actions instead of defensive ones, and attack the taunting character over another, potentially more vulnerable one. Will also apply the taunt effect which will make enemies more likely to target that character which will make all enemies more likely to target him by [color=" + this.Const.UI.Color.PositiveValue + "]250%[/color]. This value can increase by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] for every 10 points of resolve above 100.",
 	Colossus = "Bring it on! Hitpoints are increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color], which also reduces the chance to sustain debilitating injuries when being hit.",
 	Deflect = "Learn to better deflect hits to the side instead of blocking them head on. Shield damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] to a minimum of 1.",
 	Evade = "A moving target is an elusive one. On getting hit with a ranged attack, there is a [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] chance to only take a gracing hit and suffer only [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] of the normal damage.",
@@ -2742,7 +2770,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendLithe = "Medium armor provides a sweet spot between movement and protection. \n\n  All incoming damage to your Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the combined weight of head and body armor is between 25 and 35. \n\n Outside this range, the bonus drops exponentially. As your armor takes damage, the bonus drops slowly to half its maximum value",
 	LegendInTheZone = "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you get hit by any attack.\n\n When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor\'s weight above 15.",
 	LegendHidden = "Master the art of concealment. When you are outside enemy vision you can blend in with your surroundings and remain hidden from the enemy for 3 turns, or until your next attack.",
-	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies less likely to attack you instead of an ally, also grants +5 Ranged Defense and +3 Melee Defense.",
+	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies less likely to attack you instead of an ally, also grants +5 Ranged Defense and +3 Melee Defense. Will always dodge the first attack done against you every battle.",
 	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers.",
 	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a pure or mystic staves. 50% of this bonus is applied to other staves and musical instruments.",
 	LegendDrumsOfWar = "Learn powerful rhythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped.",
@@ -2874,12 +2902,12 @@ gt.Const.Strings.PerkDescription <- {
 	LegendPrepared = "While using a dagger, dealing health damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance of poisoning them. You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery per turn while holding a dagger in your mainhand.",
 	LegendLurker = "When neither ally nor enemy is within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
 	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night.",
-	LegendAdaptive = "Who says you can\'t teach an old dog new tricks?\n\nAdd a new Perk Group to this character\'s Perk Tree based on what is currently equipped in their hands or equipped armor weight which is checked in the following order...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to \'Specialist\' Classes before Weapon Perk Groups.\n [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n [color=" + this.Const.UI.Color.PositiveValue + "]Light Armor:[/color] If armor weight is between [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] they will receive Light armor perk group if they do not have it.\n [color=" + this.Const.UI.Color.PositiveValue + "]Medium Armor:[/color] If armor weight is between [color=" + this.Const.UI.Color.NegativeValue + "]16[/color] and [color=" + this.Const.UI.Color.NegativeValue + "]35[/color] they will receive Medium armor perk group if they do not have it\n [color=" + this.Const.UI.Color.PositiveValue + "]Heavy Armor:[/color] If armor weight is over [color=" + this.Const.UI.Color.NegativeValue + "]35[/color] they will receive Heavy armor perk group if they do not have it.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/color]\n\nWhen this character reaches level [color=" + ::Const.UI.Color.PositiveValue + "]18[/color], the perk point spent is refunded.",
+	LegendAdaptive = "Who says you can\'t teach an old dog new tricks?\n\nAdd a new Perk Group to this character\'s Perk Tree based on what is currently equipped in their hands or equipped armor weight which is checked in the following order...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to \'Specialist\' Classes before Weapon Perk Groups.\n [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n [color=" + this.Const.UI.Color.PositiveValue + "]Armor:[/color] Will award the relevant armor perk (Cloth, Light, Medium and Heavy) based on currently equipped armor weight if you don\'t already have it.\n\n[color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/color]\n\nWhen this character reaches level [color=" + ::Const.UI.Color.PositiveValue + "]18[/color], the perk point spent is refunded.",
 	LegendRecuperation = "Heal [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] hitpoints at the end of every turn and recover [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] fatigue every turn. Will enhance the Rebound perk effect.",
 	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity."
 	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+100[/color] Melee and Ranged defence. Lose [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] point for every point of armor and health you have. You must be wearing body armor for this perk to work.",
 	LegendFashionable = "Use flowing, billowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit.\n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
-	LegendMeek = "Your unassuming posture leads the enemy to think you are an easy target, making their attacks careless.\n\nAlways evade the first attack made against you in every combat encounter.",
+	LegendUnburdened = "Unencumbered by armor, you are spry and fleet footed.\n\nAllows this character the Unburdened Footwork skill, which allows you to leave a Zone of Control without triggering free attacks once per battle.\n\n\'Blend in\' will recover an evasion stack every 2 turns.\n\nIncreases Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] if this character has more than [color=" + this.Const.UI.Color.PositiveValue + "]50[/color]  bonus from \'Small Target\'.",
 	LegendHelpful = "Amateurs discuss tactics, the professionals discuss logistics.\n\n Gain the ability to give items from your bag to allies under your control [color=" + this.Const.UI.Color.PositiveValue + "]with no cost or penalty.[/color]\n [color=" + this.Const.UI.Color.NegativeValue + "]Does not work when receiving items.[/color]"
 
 };

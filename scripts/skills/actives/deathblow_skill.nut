@@ -1,5 +1,19 @@
 this.deathblow_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		ApplicableSkills = [
+			"effects.dazed",
+			"effects.stunned",
+			"effects.sleeping",
+			"effects.net",
+			"effects.distracted",
+			"effects.web",
+			"effects.rooted",
+			"effects.staggered",
+			"effects.chilled",
+			"effects.shellshocked",
+			"effects.grappled"
+		]
+	},
 	function create()
 	{
 		this.m.ID = "actives.deathblow";
@@ -46,7 +60,7 @@ this.deathblow_skill <- this.inherit("scripts/skills/skill", {
 			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] more damage against and ignores additional [color=" + this.Const.UI.Color.DamageValue + "]20%[/color] armor of targets that have the Dazed, Stunned or Trapped in Net status effects"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] more damage against and ignores additional [color=" + this.Const.UI.Color.DamageValue + "]20%[/color] armor of targets that have the Dazed, Stunned, Sleeping, Rooted, Distracted, Webbed, Trapped in Net, Staggered, Chilled, Shellshocked or Grappled status effects."
 		});
 		return ret;
 	}
@@ -74,12 +88,17 @@ this.deathblow_skill <- this.inherit("scripts/skills/skill", {
 
 		local targetStatus = _targetEntity.getSkills();
 
-		if (_skill == this && (targetStatus.hasSkill("effects.dazed") || targetStatus.hasSkill("effects.stunned") || targetStatus.hasSkill("effects.sleeping") || targetStatus.hasSkill("effects.net") || targetStatus.hasSkill("effects.distracted") || targetStatus.hasSkill("effects.web") || targetStatus.hasSkill("effects.rooted")))
+		if (_skill != this) return;
+
+		foreach ( skill in this.m.ApplicableSkills)
 		{
-			_properties.DamageTotalMult *= 1.33;
-			_properties.DamageDirectAdd += 0.2;
+			if (targetStatus.hasSkill(skill))
+			{
+				_properties.DamageTotalMult *= 1.33;
+				_properties.DamageDirectAdd += 0.2;
+				break;
+			}
 		}
 	}
 
 });
-
