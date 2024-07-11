@@ -2,7 +2,7 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.rotation";
+		this.m.ID = "actives.rotation"; //for player
 		this.m.Name = "Rotation";
 		this.m.Description = "Switch places with another character directly adjacent, provided neither the target is stunned or rooted, nor the character using the skill is. Rotate the battle line to keep fresh troops in front!";
 		this.m.Icon = "ui/perks/perk_11_active.png";
@@ -78,7 +78,10 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		return this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
+		if (bro.isAlive() && bro.isGuest() && bro.isPlayerControlled())
+		{
+			return this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
+		}
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )

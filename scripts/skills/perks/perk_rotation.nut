@@ -17,14 +17,22 @@ this.perk_rotation <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.rotation"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/rotation"));
+			if (!this.getContainer().getActor().isPlayerControlled())
+			{
+				this.m.Container.add(this.new("scripts/skills/actives/rotation"));
+			}
+
+			else
+			{
+				this.m.Container.add(this.new("scripts/skills/actives/ai_rotation"));
+			}
 		}
 	}
 
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.rotation");
+		this.m.Container.removeByID("actives.ai_rotation");
 	}
 
 });
-
