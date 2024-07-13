@@ -11,14 +11,14 @@ this.perk_legend_unburdened <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk | this.Const.SkillOrder.Any;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = false;
+		this.m.IsHidden = true;
 	}
 
 	function onAdded()
 	{
 		if (!this.m.Container.hasSkill("actives.unburdened_footwork"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/unburdened_footwork"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_unburdened_footwork"));
 		}
 	}
 
