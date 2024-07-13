@@ -1,5 +1,7 @@
 this.legend_piercing_shot <- ::inherit("scripts/skills/actives/aimed_shot", {
-	m = {},
+	m = {
+		IsDoingPiercingShot = false
+	},
 	function create()
 	{
 		this.aimed_shot.create();
