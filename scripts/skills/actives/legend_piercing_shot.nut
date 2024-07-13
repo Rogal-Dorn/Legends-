@@ -40,12 +40,14 @@ this.legend_piercing_shot <- ::inherit("scripts/skills/actives/aimed_shot", {
 		if (find == null)
 			return ret;
 
-		return ret.insert(find, {
+		ret.insert(find, {
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "If the arrow hits its target, it will continue through and damage any target behind, dealing 50% damage."
 		});
+
+		return ret;
 	}
 
 	function isHidden()

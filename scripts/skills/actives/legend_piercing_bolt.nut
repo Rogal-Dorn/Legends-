@@ -40,12 +40,14 @@ this.legend_piercing_bolt <- ::inherit("scripts/skills/actives/shoot_bolt", {
 		if (find == null)
 			return ret;
 
-		return ret.insert(find, {
+		ret.insert(find, {
 			id = 5,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "If the bolt hits its target, it will continue through and damage any target behind, dealing 50% damage."
 		});
+		
+		return ret;
 	}
 
 	function isHidden()
