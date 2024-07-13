@@ -78,10 +78,7 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 
 	function isUsable()
 	{
-		if (bro.isAlive() && bro.isGuest() && bro.isPlayerControlled())
-		{
-			return this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
-		}
+		return this.skill.isUsable() && !this.getContainer().getActor().getCurrentProperties().IsRooted;
 	}
 
 	function onVerifyTarget( _originTile, _targetTile )
@@ -91,7 +88,13 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+
 		local target = _targetTile.getEntity();
+
+		if (target.isAlive() && target.isPlayerControlled())
+		{
+			return false;
+		}
 
 		if (!target.isAlliedWith(this.getContainer().getActor()))
 		{
