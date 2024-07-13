@@ -88,7 +88,7 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && this.m.Stacks = 0)
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && this.m.Stacks == 0)
 		{
 			this.m.Counter += 1;
 		}
@@ -98,6 +98,4 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 			this.m.Counter = 0;
 		}
 	}
-
-});
-
+})
