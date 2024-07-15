@@ -130,10 +130,9 @@ this.legend_vala_chant_disharmony <- this.inherit("scripts/skills/skill", {
 
 	function onDeath( _fatalityType )
 	{
-		if (!this.Tactical.State.isActive())
-			{
-				return;
-			}
+		if (!this.Tactical.State) return;
+		if (!this.Tactical.State.isActive()) return;
+
 		this.endChant();
 	}
 
