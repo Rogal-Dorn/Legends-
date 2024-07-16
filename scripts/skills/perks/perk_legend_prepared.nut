@@ -53,6 +53,10 @@ this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 		if (item == null) return;
 
 		local effect = new("scripts/skills/effects/spider_poison_effect");
+		if (_user.getFaction() == this.Const.Faction.Player )
+		{
+			effect.setActor(this.getContainer().getActor());
+		}
 		if (item.isWeaponType(this.Const.Items.WeaponType.Dagger) && _damageInflictedHitpoints > 0)
 		{
 			if(this.Math.rand(1, 100) < this.m.PoisonChance)
