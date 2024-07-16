@@ -14,6 +14,11 @@ this.legend_redback_spider_poison_effect <- this.inherit("scripts/skills/skill",
 		this.m.Damage = _d;
 	}
 
+	function setActor( _a )
+	{
+		this.m.Actor = ::MSU.asWeakTableRef(_a);
+	}
+
 	function create()
 	{
 		this.m.ID = "effects.legend_redback_spider_poison";

@@ -106,7 +106,7 @@ this.cleave <- this.inherit("scripts/skills/skill", {
 				local effect = this.new("scripts/skills/effects/bleeding_effect");
 					if (_user.getFaction() == this.Const.Faction.Player )
 					{
-					effect.setActor(this.getContainer().getActor());
+						effect.setActor(this.getContainer().getActor());
 					}
 				effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInCleavers ? 10 : 5);
 				target.getSkills().add(effect);
