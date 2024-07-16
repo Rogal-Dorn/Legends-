@@ -108,7 +108,7 @@
 				tooltip.push({
 					id = startID + i,
 					type = "text",
-					icon = prependIcon + item.getIcon(),
+					icon = checkForIcon(prependIcon, item),
 					text = text + " Ammo: " + item.getAmmo() + " / " + item.getAmmoMax()
 				});
 			} else if (title == "Ammo" && !this.isKindOf(_entity, "player"))
@@ -116,7 +116,7 @@
 				tooltip.push({
 					id = startID + i,
 					type = "text",
-					icon = prependIcon + item.getIcon(),
+					icon = checkForIcon(prependIcon, item),
 					text = text + " " + "Ammo: infinite"
 				});
 			}
@@ -124,7 +124,7 @@
 				tooltip.push({
 					id = startID + i,
 					type = "text",
-					icon = prependIcon + item.getIcon(),
+					icon = checkForIcon(prependIcon, item),
 					text = text
 				});
 			}
@@ -383,7 +383,7 @@
 					tooltip.push({
 						id = 401,
 						type = "text",
-						icon = "ui/items/" + mainhand.getIcon(),
+						icon = checkForIcon("ui/items/", mainhand),
 						text = name + " " + mainhand.getAmmo() + " / " + mainhand.getAmmoMax()
 					});
 				} 
@@ -391,7 +391,7 @@
 					tooltip.push({
 						id = 401,
 						type = "text",
-						icon = "ui/items/" + mainhand.getIcon(),
+						icon = checkForIcon("ui/items/", mainhand),
 						text = name + " " + mainhand.getCondition() + " / " + mainhand.getConditionMax()
 					});
 				}
@@ -405,7 +405,7 @@
 					tooltip.push({
 						id = 421,
 						type = "text",
-						icon = "ui/items/" + offhand.getIcon(),
+						icon = checkForIcon("ui/items/", offhand),
 						text = name + " " + offhand.getAmmo() + " / " + offhand.getAmmoMax()
 					});
 				} 
@@ -413,7 +413,7 @@
 					tooltip.push({
 						id = 421,
 						type = "text",
-						icon = "ui/items/" + offhand.getIcon(),
+						icon = checkForIcon("ui/items/", offhand),
 						text = name + " " + offhand.getCondition() + " / " + offhand.getConditionMax()
 					});
 				}
@@ -428,7 +428,7 @@
 					tooltip.push({
 						id = 431,
 						type = "text",
-						icon = "ui/items/" + item.getIcon(),
+						icon = checkForIcon("ui/items/", item),
 						text = name + " " + item.getAmmo() + " / " + item.getAmmoMax()
 					});
 				} 
@@ -436,7 +436,7 @@
 					tooltip.push({
 						id = 431,
 						type = "text",
-						icon = "ui/items/" + item.getIcon(),
+						icon = checkForIcon("ui/items/", item),
 						text = name + " " + item.getCondition() + " / " + item.getConditionMax()
 					});
 				}
@@ -552,7 +552,7 @@ local function colorizeInGreen( _text )
 		local ret = {
 			id = _startID,
 			type = "text",
-			icon = "ui/items/" + _item.getIcon(),
+			icon = checkForIcon("ui/items/", _item),
 			text = _item.getName()
 		};
 
@@ -595,6 +595,22 @@ local function colorizeInGreen( _text )
 	}
 
 	return tooltip;
+}
+
+::ModJimmysTooltips.checkForIcon <- function (toAdd, _item)
+{
+	if(_item.getIcon() == "" && toAdd == "ui/items/"){
+		return "ui/items/supplies/legend_placeholder.png";
+	} else if (_item.getIcon() != "" && toAdd == "ui/items/")
+	{
+		return toAdd + _item.getIcon();
+	}else{
+		if(_item.getIcon() == ""){
+			return "ui/skills/placeholder_circle.png";
+		}else{
+			return toAdd + _item.getIcon();
+		}
+	}
 }
 
 ::ModJimmysTooltips.modGetStandardLootChance <- function( _tooltip, _item, _isArmor = false )
