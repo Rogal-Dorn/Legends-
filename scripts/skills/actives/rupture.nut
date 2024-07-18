@@ -95,8 +95,6 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 	function onAfterUpdate( _properties )
 	{
 		this.m.FatigueCostMult = _properties.IsSpecializedInPolearms ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
-		if (_properties.IsSpecializedInPolearms)
-			this.m.ActionPointCost -= 1;
 	}
 
 	function onUse( _user, _targetTile )
@@ -108,20 +106,36 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isAlive() || _user.isDying())
 		{
-			return success;
+			return;
 		}
 
-		if (success && target.isAlive() && !target.isDying())
+		if (success)
 		{
-			if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
+			if (!target.isAlive() || target.isDying())
 			{
-				local effect = this.new("scripts/skills/effects/bleeding_effect")
+				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				{
+					this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+				else
+				{
+					this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+			}
+			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding )
+			{
+				local effect = this.new("scripts/skills/effects/bleeding_effect");
 					if (_user.getFaction() == this.Const.Faction.Player )
 					{
-					effect.setActor(this.getContainer().getActor());
+						effect.setActor(this.getContainer().getActor());
 					}
+				effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5);
 				target.getSkills().add(effect);
-				this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				this.Sound.play(this.m.SoundsA[this.Math.rand(0, this.m.SoundsA.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
+			else
+			{
+				this.Sound.play(this.m.SoundsB[this.Math.rand(0, this.m.SoundsB.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
 		}
 
