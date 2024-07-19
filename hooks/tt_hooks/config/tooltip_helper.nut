@@ -400,7 +400,7 @@
 			local offhand = _entity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
 			if(offhand != null){
 				local name = offhand.getName();
-				::logInfo(name);
+				// ::logInfo(name);
 				if(offhand.isItemType(this.Const.Items.ItemType.Ammo)){
 					tooltip.push({
 						id = 421,
@@ -422,7 +422,7 @@
 			local items = _entity.getItems().getAllItemsAtSlot(this.Const.ItemSlot.Bag);
 			foreach (item in items){
 				local name = item.getName();
-				::logInfo(name);
+				// ::logInfo(name);
 				pushSectionName(item, "Bags", 430);
 				if(item.isItemType(this.Const.Items.ItemType.Ammo)){
 					tooltip.push({
@@ -515,7 +515,7 @@
 			id = 606,
 			type = "hint",
 			icon = "ui/skin/icon_wait.png",
-			text = "Hold \"Tab\" key to show the chance to loot equipment"		
+			text = "Hold \"L\" key to show the chance to loot equipment"		
 		});
 
 	return tooltip;
