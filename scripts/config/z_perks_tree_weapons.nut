@@ -148,13 +148,14 @@ gt.Const.Perks.HammerTree <- {
 			-3
 		]
 	},
+	// Combined the two hammer perks and potentially looking to add another later.
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendSmackdown],
 		[],
+		[gt.Const.Perks.PerkDefs.LegendSmackdown],
 		[gt.Const.Perks.PerkDefs.SpecHammer],
 		[],
-		[gt.Const.Perks.PerkDefs.SunderingStrikes],
+		[],
 		[]
 	]
 };
