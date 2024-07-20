@@ -1,4 +1,4 @@
-this.legend_unburdened_footwork <- this.inherit("scripts/skills/skill", {
+this.legend_unburdened_footwork <- ::inherit("scripts/skills/skill/actives/footwork", {
 	m = {
 			Stacks = 1
 		},
@@ -7,28 +7,8 @@ this.legend_unburdened_footwork <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "actives.unburdened_footwork";
 		this.m.Name = "Unburdened Footwork";
 		this.m.Description = "Use skillful footwork to leave a Zone of Control without triggering free attacks.";
-		this.m.Icon = "ui/perks/perk_25_active.png";
-		this.m.IconDisabled = "ui/perks/perk_25_active_sw.png";
-		this.m.Overlay = "perk_25_active";
-		this.m.SoundOnUse = [
-			"sounds/combat/footwork_01.wav"
-		];
-		this.m.Type = this.Const.SkillType.Active;
-		this.m.Order = this.Const.SkillOrder.Any;
-		this.m.IsSerialized = false;
-		this.m.IsActive = true;
-		this.m.IsTargeted = true;
-		this.m.IsTargetingActor = false;
-		this.m.IsVisibleTileNeeded = false;
-		this.m.IsStacking = false;
-		this.m.IsAttack = false;
-		this.m.IsIgnoredAsAOO = true;
-		this.m.IsDisengagement = true;
+
 		this.m.ActionPointCost = 0;
-		this.m.FatigueCost = 20;
-		this.m.MinRange = 1;
-		this.m.MaxRange = 1;
-		this.m.MaxLevelDifference = 1;
 	}
 
 	function getTooltip()
@@ -71,12 +51,22 @@ this.legend_unburdened_footwork <- this.inherit("scripts/skills/skill", {
 			});
 		}
 
+		if (this.m.Stacks <= 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "[color=" + this.Const.UI.Color.Negative + "]Skill already used up.[/color]"
+			});
+		}
+
 		return ret;
 	}
 
 	function isUsable()
 	{
-		if (this.m.Stacks > 0) return false;
+		if (this.m.Stacks <= 0) return false;
 		if (this.skill.isUsable() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && !this.getContainer().getActor().getCurrentProperties().IsRooted)
 		{
 			local myTile = this.getContainer().getActor().getTile();
@@ -109,31 +99,6 @@ this.legend_unburdened_footwork <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-	}
-	
-	function onAfterUpdate( _properties )
-	{
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_backflip"))
-		{	
-			this.m.MaxRange = 2;
-		}
-
-		this.m.FatigueCostMult = _properties.IsFleetfooted ? 0.5 : 1.0;
-	}
-
-	function onVerifyTarget( _originTile, _targetTile )
-	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
-			return false;
-		}
-
-		if (!_targetTile.IsEmpty)
-		{
-			return false;
-		}
-
-		return true;
 	}
 
 	function onUse( _user, _targetTile )
