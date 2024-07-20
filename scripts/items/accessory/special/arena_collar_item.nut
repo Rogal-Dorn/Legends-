@@ -102,7 +102,7 @@ this.arena_collar_item <- this.inherit("scripts/items/accessory/accessory", {
 			this.addSkill(this.new("scripts/skills/actives/legend_climb"));
 		}
 		
-		else (this.m.container.hasSkill("mage_legend_magic_levitate"))
+		else (this.m.container.hasSkill("effects.mage_legend_magic_levitate")) //perk appears to be 'to do' ?
 		{
 			this.addSkill(this.new("scripts/skills/effects/legend_levitating_effect"));
 		}
