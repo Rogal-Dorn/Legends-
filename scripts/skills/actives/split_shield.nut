@@ -153,6 +153,7 @@ this.split_shield <- this.inherit("scripts/skills/skill", {
 				{
 					this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Split Shield and destroys " + this.Const.UI.getColorizedEntityName(target) + "\'s shield");
 				}
+				_user.setActionPoints(this.Math.min(_user.getActionPointsMax(), _user.getActionPoints() + 4));
 			}
 			else
 			{
