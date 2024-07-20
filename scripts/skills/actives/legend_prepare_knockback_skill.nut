@@ -84,4 +84,21 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 		return true;
 	}
 
+	function onUpdate( _properties ){
+
+		local actor = this.getContainer().getActor();
+		
+		if(actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null){
+			return;
+		}
+		
+		if(actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded)){
+			this.m.ActionPointCost = 1;
+		} 
+
+		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.OneHanded))
+		{
+			this.m.ActionPointCost = 2;
+		}
+	}
 });
