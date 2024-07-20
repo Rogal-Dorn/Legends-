@@ -53,7 +53,65 @@ this.arena_collar_item <- this.inherit("scripts/items/accessory/accessory", {
 			});
 		}
 
+		result.push({
+			id = 10,
+			type = "text",
+			icon = "ui/icons/bravery.png",
+			text = "Disables specific skills than can be used to scale the arena walls when worn."
+		});
 		return result;
+	}
+
+	function onEquip()
+	{
+		this.accessory.onEquip();
+
+		if (this.m.container.hasSkill("actives.legend_leap"))
+		{
+			this.getContainer().getActor().getSkills().removeByID("scripts/skills/actives/legend_leap");
+		}
+
+		else (this.m.container.hasSkill("actives.legend_climb"))
+		{
+			this.getContainer().getActor().getSkills().removeByID("scripts/skills/actives/legend_climb");
+		}
+		
+		else (this.m.container.hasSkill("effects.legend_levitating"))
+		{
+			this.getContainer().getActor().getSkills().removeByID("scripts/skills/effects/legend_levitating_effect");
+		}
+
+		else
+		{
+			return
+		}
+
+	}
+
+	function onUnequip()
+	{
+		this.accessory.onUnequip();
+
+		if (this.m.container.hasSkill("perk_legend_leap"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_leap"));
+		}
+
+		else (this.m.container.hasSkill("perk.legend_climb"))
+		{
+			this.addSkill(this.new("scripts/skills/actives/legend_climb"));
+		}
+		
+		else (this.m.container.hasSkill("mage_legend_magic_levitate"))
+		{
+			this.addSkill(this.new("scripts/skills/effects/legend_levitating_effect"));
+		}
+
+		else
+		{
+			return
+		}
+
 	}
 
 	function getBuyPrice()
