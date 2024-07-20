@@ -506,7 +506,8 @@
 			id = 605,
 			type = "hint",
 			icon = "ui/icons/bravery.png",
-			text = "[color=" + this.Const.UI.Color.PositiveValue + "]"+_entity.getBravery()+"[/color] Resolve"		
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]"+_entity.getBravery()+"[/color] Resolve"
+			divider = "bottom" // add a diviver	
 		});
 	}
 
@@ -515,7 +516,18 @@
 			id = 606,
 			type = "hint",
 			icon = "ui/skin/icon_wait.png",
-			text = "Hold \"L\" key to show the chance to loot equipment"		
+			text = "Press \""
+			+ ::MSU.System.Keybinds.KeybindsByMod[::ModEquipmentLootChance.ID].rawget("updateTooltip").getKeyCombinations() 
+			+ "\" key to show the chance to loot equipment"		
+		});
+	else
+		tooltip.push({
+			id = 606,
+			type = "hint",
+			icon = "ui/skin/icon_wait.png",
+			text = "Press \""
+			+ ::MSU.System.Keybinds.KeybindsByMod[::ModEquipmentLootChance.ID].rawget("updateTooltip").getKeyCombinations() 
+			+ "\" key to show the default tooltip"		
 		});
 
 	return tooltip;
@@ -599,18 +611,10 @@ local function colorizeInGreen( _text )
 
 ::ModJimmysTooltips.checkForIcon <- function (toAdd, _item)
 {
-	if(_item.getIcon() == "" && toAdd == "ui/items/"){
+	if(_item.getIcon() == "" || ::ModJimmysTooltips.ItemImagePaths.find(toAdd + _item) == null)
 		return "ui/items/supplies/legend_placeholder.png";
-	} else if (_item.getIcon() != "" && toAdd == "ui/items/")
-	{
+	else
 		return toAdd + _item.getIcon();
-	}else{
-		if(_item.getIcon() == ""){
-			return "ui/skills/placeholder_circle.png";
-		}else{
-			return toAdd + _item.getIcon();
-		}
-	}
 }
 
 ::ModJimmysTooltips.modGetStandardLootChance <- function( _tooltip, _item, _isArmor = false )
