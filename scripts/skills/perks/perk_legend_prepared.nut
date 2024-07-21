@@ -1,7 +1,7 @@
 //Author: WNTR Jimmy
 this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 	m  = { 
-		PoisonChance = 25 
+		PoisonChance = 33 
 	},
 
 	function create()
