@@ -259,7 +259,7 @@ this.bandit_raider <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 
 	// 			if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	// 			{
-	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 	// 			}
 	// 		}
 	// 		else if (r == 6)

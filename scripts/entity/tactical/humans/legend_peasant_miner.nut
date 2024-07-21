@@ -40,7 +40,7 @@ this.legend_peasant_miner <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_flow"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_indomitable"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));

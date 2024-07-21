@@ -47,8 +47,8 @@ gt.Const.Perks.MaceTree <- {
 	},
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendOnslaught],
 		[],
+		[gt.Const.Perks.PerkDefs.Relentless],
 		[gt.Const.Perks.PerkDefs.SpecMace],
 		[],
 		[gt.Const.Perks.PerkDefs.ReturnFavor],

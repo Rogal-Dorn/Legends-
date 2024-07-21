@@ -122,7 +122,6 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				// this.Const.Perks.PerkDefs.LegendComposure,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.LegendSmackdown,
-				this.Const.Perks.PerkDefs.LegendOnslaught
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendRoots,
