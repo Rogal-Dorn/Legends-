@@ -114,7 +114,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendOnslaught
+				this.Const.Perks.PerkDefs.Relentless
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecCrossbow,

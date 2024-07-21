@@ -101,7 +101,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendAthlete,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
-				this.Const.Perks.PerkDefs.LegendOnslaught
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,

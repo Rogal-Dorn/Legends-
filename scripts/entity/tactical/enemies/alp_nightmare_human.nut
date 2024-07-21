@@ -176,7 +176,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+						this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 				}
 				else if (r == 8)
 				{
@@ -200,7 +200,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+						this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 				}
 			}
 			else
@@ -260,7 +260,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 			else if (r == 5)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/morning_star"));
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 
 				if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
