@@ -122,7 +122,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 	::mods_hookExactClass("ai/tactical/behaviors/ai_defend_knock_back", function ( o ) 
 	{
 		o.m.PossibleSkills.extend([
-			"actives.legend_kick",
 			"actives.legend_revolt",
 			"actives.legend_push",
 			"actives.legend_chain_hook"
