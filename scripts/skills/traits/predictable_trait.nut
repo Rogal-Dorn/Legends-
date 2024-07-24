@@ -38,7 +38,7 @@ this.predictable_trait <- this.inherit("scripts/skills/traits/character_trait", 
 				id = 13,
 				type = "text",
 				icon = "ui/icons/chance_to_hit_head.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Chance To Hit Head"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Chance To Hit Head"
 			}
 		];
 	}
