@@ -77,7 +77,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		];
 		this.m.CustomPerkTree = [
 			[
-				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendSummonHound,
 				this.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
