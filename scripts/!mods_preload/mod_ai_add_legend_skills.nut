@@ -162,7 +162,7 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 			potentialDestinations.sort(this.onSortByScore);
 			this.m.TargetTile = potentialDestinations[0].Tile;
 			return this.Const.AI.Behavior.Score.AlpTeleport * score;
-		}	
+		}
 	});
 	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_default", function(o) 
 	{
@@ -801,9 +801,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 		}
 
 	});
-
-
-	}
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_disengage", function(o) 
 	{
