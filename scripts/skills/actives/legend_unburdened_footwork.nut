@@ -1,4 +1,4 @@
-this.legend_unburdened_footwork <- ::inherit("scripts/skills/skill/actives/footwork", {
+this.legend_unburdened_footwork <- ::inherit("scripts/skills/actives/footwork", {
 	m = {
 			Stacks = 1
 		},
