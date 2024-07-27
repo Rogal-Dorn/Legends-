@@ -1,5 +1,7 @@
 this.legend_arena_collar_item <- this.inherit("scripts/items/accessory/accessory", {
-	m = {},
+	m = {
+		affectedSkills = ["legend_leap", "legend_climb", "legend_levitating"]
+	},
 	function create()
 	{
 		this.accessory.create();
@@ -64,54 +66,26 @@ this.legend_arena_collar_item <- this.inherit("scripts/items/accessory/accessory
 
 	function onEquip()
 	{
-		this.accessory.onEquip();
-
-		if (this.m.container.hasSkill("actives.legend_leap"))
-		{
-			this.getContainer().getActor().getSkills().removeByID("scripts/skills/actives/legend_leap");
+		local skills = this.getContainer().getActor().getSkills();
+		foreach (skill in this.m.affectedSkills)
+		{	
+			if (skills.hasSkill("actives." + skill))
+			{
+				skills.removeByID("actives." + skill);
+			}
 		}
-
-		else (this.m.container.hasSkill("actives.legend_climb"))
-		{
-			this.getContainer().getActor().getSkills().removeByID("scripts/skills/actives/legend_climb");
-		}
-		
-		else (this.m.container.hasSkill("effects.legend_levitating"))
-		{
-			this.getContainer().getActor().getSkills().removeByID("scripts/skills/effects/legend_levitating_effect");
-		}
-
-		else
-		{
-			return
-		}
-
 	}
 
 	function onUnequip()
 	{
-		this.accessory.onUnequip();
-
-		if (this.m.container.hasSkill("perk_legend_leap"))
-		{
-			this.addSkill(this.new("scripts/skills/actives/legend_leap"));
+		local skills = this.getContainer().getActor().getSkills();
+		foreach (skill in this.m.affectedSkills)
+		{	
+			if (skills.hasSkill("perk." + skill))
+			{
+				skills.add(this.new("scripts/skills/actives/" + skill));
+			}
 		}
-
-		else (this.m.container.hasSkill("perk.legend_climb"))
-		{
-			this.addSkill(this.new("scripts/skills/actives/legend_climb"));
-		}
-		
-		else (this.m.container.hasSkill("effects.mage_legend_magic_levitate")) //perk appears to be 'to do' ?
-		{
-			this.addSkill(this.new("scripts/skills/effects/legend_levitating_effect"));
-		}
-
-		else
-		{
-			return
-		}
-
 	}
 
 	function getBuyPrice()
