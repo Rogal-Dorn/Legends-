@@ -34,6 +34,11 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.Modifiers.ArmorParts = this.Const.LegendMod.ResourceModifiers.ArmorParts[5];
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[4];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[5];
+		this.m.ExcludedTalents = [
+			this.Const.Attributes.RangedSkill
+			this.Const.Attributes.RangedDefense,
+			this.Const.Attributes.MeleeDefense
+		];
 		this.m.Modifiers.Terrain = [
 			0.0, // ?
 			0.0, //ocean
@@ -147,36 +152,36 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				100,
-				120
+				95,
+				125
 			],
 			Bravery = [
-				0,
+				-5,
 				0
 			],
 			Stamina = [
-				40,
-				50
+				50,
+				75
 			],
 			MeleeSkill = [
-				0,
-				0
+				-10,
+				4
 			],
 			RangedSkill = [
-				-20,
-				-20
+				-50,
+				-50
 			],
 			MeleeDefense = [
-				0,
-				0
+				-7,
+				-2
 			],
 			RangedDefense = [
-				0,
-				0
+				-5,
+				-1
 			],
 			Initiative = [
-				0,
-				0
+				-15,
+				-5
 			]
 		};
 		return c;

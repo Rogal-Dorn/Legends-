@@ -147,8 +147,8 @@ this.legend_bladedancer_background <- this.inherit("scripts/skills/backgrounds/c
 				15
 			],
 			MeleeSkill = [
-				20,
-				15
+				15,
+				20
 			],
 			RangedSkill = [
 				-10,
@@ -163,8 +163,8 @@ this.legend_bladedancer_background <- this.inherit("scripts/skills/backgrounds/c
 				1
 			],
 			Initiative = [
-				25,
-				15
+				15,
+				25
 			]
 		};
 		return c;

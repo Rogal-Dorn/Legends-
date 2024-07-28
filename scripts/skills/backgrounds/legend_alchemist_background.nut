@@ -69,28 +69,28 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 				-5
 			],
 			Bravery = [
-				-5,
-				5
+				8,
+				12
 			],
 			Stamina = [
 				-5,
 				-5
 			],
 			MeleeSkill = [
-				-10,
-				3
+				-5,
+				2
 			],
 			RangedSkill = [
-				0,
-				10
+				6,
+				8
 			],
 			MeleeDefense = [
 				0,
 				0
 			],
 			RangedDefense = [
-				-3,
-				6
+				1,
+				3
 			],
 			Initiative = [
 				10,

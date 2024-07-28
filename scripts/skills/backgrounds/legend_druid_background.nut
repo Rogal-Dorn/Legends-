@@ -91,7 +91,7 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.ClothArmorTree
+				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.SturdyTree,
@@ -168,8 +168,8 @@ this.legend_druid_background <- this.inherit("scripts/skills/backgrounds/charact
 				10
 			],
 			MeleeSkill = [
-				0,
-				5
+				-10,
+				0
 			],
 			RangedSkill = [
 				-10,

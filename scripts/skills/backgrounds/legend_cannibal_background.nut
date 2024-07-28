@@ -42,7 +42,9 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.DeviousTree
 			],
-			Enemy = [this.Const.Perks.CaravanTree],
+			Enemy = [
+				this.Const.Perks.CaravanTree
+			],
 			Class = [
 				this.Const.Perks.ButcherClassTree,
 				this.Const.Perks.ChefClassTree
@@ -75,36 +77,36 @@ this.legend_cannibal_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				10
+				2,
+				8
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				7
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				10,
-				20
+				5,
+				10
 			],
 			RangedSkill = [
 				-3,
 				0
 			],
 			MeleeDefense = [
-				-5,
-				0
+				0,
+				4
 			],
 			RangedDefense = [
 				0,
 				4
 			],
 			Initiative = [
-				10,
-				20
+				5,
+				12
 			]
 		};
 		return c;
