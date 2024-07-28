@@ -10,7 +10,7 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.GoodEnding = "%name% the sellsword left the %companyname% and started his own mercenary company. As far as you know, it\'s a very successful venture and he often buddies up with the men of the %companyname% to work together.";
 		this.m.BadEnding = "%name% left the %companyname% and started his own competing company. The two companies clashed on opposite sides of a battle between nobles. The sellsword died when a mercenary from the %companyname% stove his head in with a hedge knight\'s helmet.";
 		this.m.HiringCost = 100;
-		this.m.DailyCost = 35;
+		this.m.DailyCost = 30;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.night_blind",
@@ -55,7 +55,6 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -67,7 +66,8 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 			],
 			Enemy = [
 				this.Const.Perks.BanditTree,
-				this.Const.Perks.BarbarianTree
+				this.Const.Perks.BarbarianTree,
+				this.Const.Perks.NoblesTree
 			],
 			Class = [],
 			Magic = []
@@ -143,36 +143,36 @@ this.sellsword_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				8,
+				12
 			],
 			Bravery = [
 				5,
-				5
+				10
 			],
 			Stamina = [
 				6,
 				12
 			],
 			MeleeSkill = [
-				13,
-				10
+				10,
+				13
 			],
 			RangedSkill = [
-				12,
-				10
+				5,
+				8
 			],
 			MeleeDefense = [
 				5,
 				8
 			],
 			RangedDefense = [
-				5,
-				8
+				0,
+				3
 			],
 			Initiative = [
-				0,
-				0
+				10,
+				15
 			]
 		};
 		return c;

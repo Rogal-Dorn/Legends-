@@ -74,7 +74,7 @@ this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.orc_slayer" || bro.getBackground().getID() == "background.wildman")
+			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.wildman")
 			{
 				continue;
 			}

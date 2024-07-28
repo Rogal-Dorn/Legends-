@@ -172,8 +172,8 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 				13
 			],
 			Stamina = [
-				5,
-				0
+				0,
+				5
 			],
 			MeleeSkill = [
 				0,

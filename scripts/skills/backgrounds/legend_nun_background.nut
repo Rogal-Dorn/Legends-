@@ -63,6 +63,7 @@ this.legend_nun_background <- this.inherit("scripts/skills/backgrounds/character
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [

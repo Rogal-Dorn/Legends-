@@ -57,6 +57,7 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.CleaverTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
@@ -84,12 +85,12 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 				0
 			],
 			Bravery = [
-				5,
-				0
-			],
-			Stamina = [
 				0,
 				5
+			],
+			Stamina = [
+				6,
+				13
 			],
 			MeleeSkill = [
 				0,
@@ -108,8 +109,8 @@ this.shepherd_background <- this.inherit("scripts/skills/backgrounds/character_b
 				0
 			],
 			Initiative = [
-				0,
-				0
+				10,
+				14
 			]
 		};
 		return c;

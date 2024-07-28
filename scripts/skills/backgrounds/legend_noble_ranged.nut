@@ -65,6 +65,7 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.BowTree
 			],
 			Defense = [
+				this.Const.Perks.HeavyArmorTree,
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
@@ -73,7 +74,11 @@ this.legend_noble_ranged <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.FitTree,
 				this.Const.Perks.ViciousTree
 			],
-			Enemy = [this.Const.Perks.ArcherTree],
+			Enemy = [
+				this.Const.Perks.ArcherTree,
+				this.Const.Perks.OutlandersTree,
+				this.Const.Perks.NoblesTree
+			],
 			Class = [],
 			Magic = []
 		}
