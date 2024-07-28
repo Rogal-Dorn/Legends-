@@ -40,7 +40,6 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
-		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 3) * this.Const.Combat.FatigueReceivedPerHit;
 		return [
 			{
 				id = 1,
@@ -61,7 +60,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 4 + "[/color] extra fatigue"
 			},
 			{
 				id = 7,
@@ -93,7 +92,7 @@ this.legend_stunned <- this.inherit("scripts/skills/skill", {
 	{
 		if (_skill == this)
 		{
-			_properties.FatigueDealtPerHitMult += 3.0;
+			_properties.FatigueDealtPerHitMult += 4.0;
 		}
 	}
 

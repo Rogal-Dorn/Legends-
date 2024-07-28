@@ -71,19 +71,12 @@ this.sling_stone_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
-		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 2) * this.Const.Combat.FatigueReceivedPerHit;
 
 		ret.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
-		},
-		{
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
 		});
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
@@ -148,7 +141,6 @@ this.sling_stone_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.RangedSkill += this.m.AdditionalAccuracy;
 			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
-			_properties.FatigueDealtPerHitMult += 2.0;
 		}
 	}
 

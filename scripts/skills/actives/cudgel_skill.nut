@@ -44,12 +44,11 @@ this.cudgel_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 3) * this.Const.Combat.FatigueReceivedPerHit;
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 4 + "[/color] extra fatigue"
 		});
 		ret.push({
 			id = 7,
@@ -95,7 +94,7 @@ this.cudgel_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageRegularMin += 20;
 			_properties.DamageRegularMax += 20;
-			_properties.FatigueDealtPerHitMult += 3.0;
+			_properties.FatigueDealtPerHitMult += 4.0;
 		}
 	}
 

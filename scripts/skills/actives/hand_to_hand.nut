@@ -48,14 +48,14 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		local ret = this.getDefaultTooltip();
 		local actor = this.getContainer().getActor();
 		local fatigueMultiplier = 1;
-		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists) 
+		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists) { 
 			fatigueMultiplier = 2;
-		fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + fatigueMultiplier) * this.Const.Combat.FatigueReceivedPerHit;
+		}
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue on hit"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * fatigueMultiplier + "[/color] extra fatigue on hit"
 		});
 
 		foreach( bg in this.m.Backgrounds )

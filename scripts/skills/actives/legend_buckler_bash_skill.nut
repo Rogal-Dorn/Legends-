@@ -45,12 +45,11 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultTooltip();
-		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 1) * this.Const.Combat.FatigueReceivedPerHit;
 		ret.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + fatPerHit + "[/color] extra fatigue"
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + this.Const.Combat.FatigueReceivedPerHit * 2 + "[/color] extra fatigue"
 		});
 		ret.push({
 			id = 7,
@@ -108,7 +107,7 @@ this.legend_buckler_bash_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.DamageRegularMin = 5;
 			_properties.DamageRegularMax = 10;
-			_properties.FatigueDealtPerHitMult += 1.0;
+			_properties.FatigueDealtPerHitMult += 2.0;
 		}
 	}
 
