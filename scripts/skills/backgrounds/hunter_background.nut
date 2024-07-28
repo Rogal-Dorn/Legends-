@@ -90,11 +90,11 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [
-					this.Const.Perks.DirewolfTree,
-					this.Const.Perks.SpiderTree,
-					this.Const.Perks.SchratTree,
-					this.Const.Perks.ArcherTree
-					],
+				this.Const.Perks.DirewolfTree,
+				this.Const.Perks.SpiderTree,
+				this.Const.Perks.SchratTree,
+				this.Const.Perks.ArcherTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -135,16 +135,16 @@ this.hunter_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				5
 			],
 			Stamina = [
-				7,
-				5
+				5,
+				7
 			],
 			MeleeSkill = [
 				0,
 				0
 			],
 			RangedSkill = [
-				20,
-				17
+				17,
+				20
 			],
 			MeleeDefense = [
 				0,

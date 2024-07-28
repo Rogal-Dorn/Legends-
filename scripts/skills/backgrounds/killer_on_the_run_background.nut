@@ -61,6 +61,7 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
@@ -140,8 +141,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 				0
 			],
 			MeleeSkill = [
-				6,
-				3
+				3,
+				6
 			],
 			RangedSkill = [
 				3,
@@ -152,8 +153,8 @@ this.killer_on_the_run_background <- this.inherit("scripts/skills/backgrounds/ch
 				3
 			],
 			RangedDefense = [
-				0,
-				-3
+				-3,
+				0
 			],
 			Initiative = [
 				0,

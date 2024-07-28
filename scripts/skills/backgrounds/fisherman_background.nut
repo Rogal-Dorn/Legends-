@@ -9,8 +9,8 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.BackgroundDescription = "Fishermen are used to physical labor.";
 		this.m.GoodEnding = "%name% retired from fighting and returned to his fishing ventures. A huge storm ran up the shores, destroying every skiff and drifter - except that wily fisherman\'s! The only boat afloat, %name%\'s business boomed. He lives a comfortable life waking up to a nice beachfront view every morning.";
 		this.m.BadEnding = "With the fighting career going so poorly, %name% decided to retire from the field and return to fishing. He went missing at sea after an enormous storm wrecked the shorelines.";
-		this.m.HiringCost = 65;
-		this.m.DailyCost = 7;
+		this.m.HiringCost = 78;
+		this.m.DailyCost = 9;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -50,7 +50,9 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.FastTree
 			],
-			Enemy = [this.Const.Perks.LindwurmTree],
+			Enemy = [
+				this.Const.Perks.LindwurmTree
+			],
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
@@ -67,36 +69,36 @@ this.fisherman_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				0
-			],
-			Bravery = [
-				5,
-				0
-			],
-			Stamina = [
-				5,
+				3,
 				5
 			],
+			Bravery = [
+				-2,
+				2
+			],
+			Stamina = [
+				2,
+				4
+			],
 			MeleeSkill = [
-				0,
-				0
+				3,
+				6
 			],
 			RangedSkill = [
-				0,
-				0
+				4,
+				9
 			],
 			MeleeDefense = [
 				0,
-				0
+				2
 			],
 			RangedDefense = [
 				0,
-				0
+				1
 			],
 			Initiative = [
-				0,
-				5
+				5,
+				10
 			]
 		};
 		return c;

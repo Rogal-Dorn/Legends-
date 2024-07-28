@@ -54,7 +54,9 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.MartyrTree
 			],
-			Enemy = [this.Const.Perks.NoblesTree],
+			Enemy = [
+				this.Const.Perks.NoblesTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -70,8 +72,8 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		local c = {
 			Hitpoints = [
-				3,
-				-2
+				-2,
+				3
 			],
 			Bravery = [
 				-6,
@@ -87,7 +89,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			RangedSkill = [
 				0,
-				5
+				10
 			],
 			MeleeDefense = [
 				-1,

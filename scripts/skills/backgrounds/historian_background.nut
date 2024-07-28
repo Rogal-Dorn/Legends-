@@ -10,7 +10,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.GoodEnding = "You did not expect the historian, %name%, to stay in the company forever. He eventually left and it is said he took with him a large trove of scrolls. As it turns out, he was compiling a list of the %companyname%\'s achievements. He created a codex of all its accomplishments, enshrining the name of all the mercenaries into the history books for future generations to see. You hope they learn something from your doings.";
 		this.m.BadEnding = "The %companyname% continued its decline and many non-fighters such as %name% the historian saw this as a good time to leave. You tried to keep up with these men, but the historian was particularly easy to find: he left a paper trail. You sought the man out, asking scribes if they had heard of him. They said he was a mere little man writing a tome about how dark, violent, and pointless the life of a sellsword is.";
 		this.m.HiringCost = 100;
-		this.m.DailyCost = 8;
+		this.m.DailyCost = 7;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.hate_beasts",
@@ -66,7 +66,8 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.InspirationalTree
+				this.Const.Perks.InspirationalTree,
+				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
 			Class = [],
@@ -100,36 +101,36 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				-2,
-				-5
+				-5,
+				-2
 			],
 			Bravery = [
-				-5,
-				5
+				15,
+				20
 			],
 			Stamina = [
 				-5,
 				-5
 			],
 			MeleeSkill = [
-				-5,
-				2
+				-3,
+				1
 			],
 			RangedSkill = [
 				-3,
-				-2
+				0
 			],
 			MeleeDefense = [
-				-3,
-				3
+				0,
+				0
 			],
 			RangedDefense = [
-				-6,
-				6
+				0,
+				0
 			],
 			Initiative = [
-				-5,
-				5
+				5,
+				8
 			]
 		};
 		return c;

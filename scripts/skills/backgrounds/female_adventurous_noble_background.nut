@@ -59,7 +59,9 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 				this.Const.Perks.FastTree,
 				this.Const.Perks.InspirationalTree
 			],
-			Enemy = [this.Const.Perks.ArchersTree],
+			Enemy = [
+				this.Const.Perks.ArchersTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -74,8 +76,8 @@ this.female_adventurous_noble_background <- this.inherit("scripts/skills/backgro
 	{
 		local c = {
 			Hitpoints = [
-				4,
-				-1
+				-1,
+				4
 			],
 			Bravery = [
 				15,
