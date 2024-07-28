@@ -160,32 +160,32 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 				0
 			],
 			Bravery = [
-				17,
-				13
+				13,
+				17
 			],
 			Stamina = [
 				0,
-				2
+				5
 			],
 			MeleeSkill = [
 				10,
 				14
 			],
 			RangedSkill = [
-				13,
-				9
+				9,
+				13
 			],
 			MeleeDefense = [
 				3,
-				3
+				4
 			],
 			RangedDefense = [
 				2,
-				2
+				4
 			],
 			Initiative = [
 				5,
-				2
+				10
 			]
 		};
 		return c;

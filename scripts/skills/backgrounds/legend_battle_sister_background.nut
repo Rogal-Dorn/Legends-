@@ -90,8 +90,8 @@ this.legend_battle_sister_background <- this.inherit("scripts/skills/backgrounds
 				7
 			],
 			Bravery = [
-				12,
-				15
+				14,
+				18
 			],
 			Stamina = [
 				5,
@@ -102,16 +102,16 @@ this.legend_battle_sister_background <- this.inherit("scripts/skills/backgrounds
 				10
 			],
 			RangedSkill = [
-				-5,
-				0
+				-10,
+				-5
 			],
 			MeleeDefense = [
 				3,
-				6
+				5
 			],
 			RangedDefense = [
-				0,
-				-5
+				-5,
+				0
 			],
 			Initiative = [
 				5,
