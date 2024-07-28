@@ -10,7 +10,7 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.GoodEnding = "For %name%, some things would just always come up a little short. But that didn\'t stop the eunuch from enjoying himself. Retiring from the %companyname% with a large pile of crowns, and completely devoid of the allures of women, the man went on to live a wonderful, extremely focused life.";
 		this.m.BadEnding = "It\'s said that %name% the eunuch departed from the company shortly after you did. He traveled the lands, broke and broken, wasting his scant crowns on ale and wenches. Insulted by a whore for his cockless nature, the drunken and enraged eunuch stabbed the woman in the eye with a goat horn. Still inebriated when the constable found him, the confused and bewildered eunuch was stripped, hanged, and mutilated by the townspeople before having his body fed to pigs.";
 		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.DailyCost = 8;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.lucky",
@@ -60,7 +60,9 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.MartyrTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.BarterClassTree],
+			Class = [
+				this.Const.Perks.BarterClassTree
+			],
 			Magic = []
 		}
 
@@ -78,15 +80,15 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		local c = {
 			Hitpoints = [
 				0,
-				5
+				0
 			],
 			Bravery = [
-				-5,
-				5
+				5,
+				7
 			],
 			Stamina = [
-				-5,
-				5
+				0,
+				0
 			],
 			MeleeSkill = [
 				0,
@@ -105,8 +107,8 @@ this.eunuch_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				0
 			],
 			Initiative = [
-				0,
-				10
+				-5,
+				-5
 			]
 		};
 		return c;

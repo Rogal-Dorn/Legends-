@@ -55,7 +55,7 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 			],
 			Enemy = [
 				this.Const.Perks.ArchersTree
-				],
+			],
 			Class = [],
 			Magic = []
 		}
@@ -70,8 +70,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 	{
 		local c = {
 			Hitpoints = [
-				3,
-				-2
+				-2,
+				3
 			],
 			Bravery = [
 				-6,
@@ -98,8 +98,8 @@ this.female_disowned_noble_background <- this.inherit("scripts/skills/background
 				5
 			],
 			Initiative = [
-				-5,
-				5
+				5,
+				10
 			]
 		};
 		return c;

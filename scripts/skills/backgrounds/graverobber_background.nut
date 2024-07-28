@@ -54,7 +54,9 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.GhoulTree,
 				this.Const.Perks.SkeletonTree
 			],
-			Class = [this.Const.Perks.ShovelClassTree],
+			Class = [
+				this.Const.Perks.ShovelClassTree
+			],
 			Magic = []
 		}
 	}
@@ -74,16 +76,16 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 				0
 			],
 			Bravery = [
-				8,
-				5
+				5,
+				8
 			],
 			Stamina = [
-				5,
-				5
+				10,
+				15
 			],
 			MeleeSkill = [
-				3,
-				0
+				4,
+				7
 			],
 			RangedSkill = [
 				0,
@@ -98,8 +100,8 @@ this.graverobber_background <- this.inherit("scripts/skills/backgrounds/characte
 				1
 			],
 			Initiative = [
-				0,
-				4
+				5,
+				10
 			]
 		};
 		return c;

@@ -60,7 +60,9 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.CalmTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.JugglerClassTree,],
+			Class = [
+				this.Const.Perks.JugglerClassTree
+			],
 			Magic = []
 		}
 		this.m.Bodies = this.Const.Bodies.Skinny;
@@ -91,36 +93,36 @@ this.juggler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-10
+				-6,
+				3
 			],
 			Bravery = [
-				-3,
+				0,
 				-3
 			],
 			Stamina = [
-				15,
+				5,
 				10
 			],
 			MeleeSkill = [
-				-3,
-				3
+				2,
+				4
 			],
 			RangedSkill = [
-				7,
-				12
+				8,
+				3
 			],
 			MeleeDefense = [
 				-3,
-				-3
+				1
 			],
 			RangedDefense = [
 				3,
-				3
+				5
 			],
 			Initiative = [
-				12,
-				10
+				10,
+				12
 			]
 		};
 		return c;
