@@ -56,7 +56,9 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.AxeTree,
 				this.Const.Perks.MaceTree,
-				this.Const.Perks.ShieldTree	
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.ShieldTree,
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree		
@@ -123,12 +125,12 @@ this.daytaler_background <- this.inherit("scripts/skills/backgrounds/character_b
 				15
 			],
 			MeleeSkill = [
-				0,
-				2
+				1,
+				3
 			],
 			RangedSkill = [
-				0,
-				0
+				1,
+				4
 			],
 			MeleeDefense = [
 				0,

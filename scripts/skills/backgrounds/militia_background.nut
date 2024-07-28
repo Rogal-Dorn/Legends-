@@ -11,7 +11,7 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "A former militia recruit such as %name% eventually left the %companyname%. Traveling the lands, visiting villages and helping them establish credible militias with which to defend themselves. Finding success in an increasingly dangerous world, %name% eventually came to be a known name, called upon as a sort of \'fixer\' to come and ensure these villages would remain safe. Last you heard, %name% had purchased a plot of land and was raising a family far from the strife of the world.";
 		this.m.BadEnding = "%name% left the collapsing company and returned to the village. Back in the militia, it wasn\'t long until {greenskins | raiders} attacked and the militia was called to action. It\'s said that %name% stood tall, rallying the defense while slaying through countless enemies before succumbing to mortal wounds. When you visited the village, you found children playfighting beneath a statue made in the %name%\'s image.";
 		this.m.HiringCost = 85;
-		this.m.DailyCost = 10;
+		this.m.DailyCost = 14;
 		this.m.Excluded = [
 			"trait.hate_undead",
 			"trait.clubfooted",
@@ -39,7 +39,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ShieldTree,				
 				this.Const.Perks.ThrowingTree
 			],
-			Defense = [		
+			Defense = [
+				this.Const.Perks.LightArmorTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -83,8 +84,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				4,
+				8
 			],
 			Bravery = [
 				3,
@@ -96,11 +97,11 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			MeleeSkill = [
 				5,
-				5
+				9
 			],
 			RangedSkill = [
-				6,
-				5
+				5,
+				6
 			],
 			MeleeDefense = [
 				2,
@@ -111,8 +112,8 @@ this.militia_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				2
 			],
 			Initiative = [
-				0,
-				0
+				10,
+				10
 			]
 		};
 		return c;

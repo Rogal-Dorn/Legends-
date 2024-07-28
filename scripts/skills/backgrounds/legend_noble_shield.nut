@@ -6,7 +6,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.ID = "background.legend_noble_shield";
 		this.m.Name = "Foot Soldier";
 		this.m.Icon = "ui/backgrounds/background_nobleshield.png";
-		this.m.HiringCost = 750;
+		this.m.HiringCost = 300;
 		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
@@ -136,7 +136,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			RangedSkill = [
 				-5,
-				-5
+				0
 			],
 			MeleeDefense = [
 				5,
@@ -147,8 +147,8 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 				5
 			],
 			Initiative = [
-				-10,
-				-10
+				-5,
+				-5
 			]
 		};
 		return c;

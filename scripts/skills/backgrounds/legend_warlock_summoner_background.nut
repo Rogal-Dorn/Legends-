@@ -153,31 +153,31 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 		local c = {
 			Hitpoints = [
 				-10,
-				-15
+				-5
 			],
 			Bravery = [
-				0,
-				0
+				5,
+				10
 			],
 			Stamina = [
-				-5,
-				-10
+				-10,
+				-5
 			],
 			MeleeSkill = [
-				0,
+				-2,
 				0
 			],
 			RangedSkill = [
-				0,
-				0
+				-4,
+				-2
 			],
 			MeleeDefense = [
 				4,
-				8
+				6
 			],
 			RangedDefense = [
-				4,
-				10
+				5,
+				7
 			],
 			Initiative = [
 				-15,

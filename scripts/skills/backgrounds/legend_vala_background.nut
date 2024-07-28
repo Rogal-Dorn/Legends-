@@ -122,8 +122,8 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 	{
 		local c = {
 			Hitpoints = [
-				-4,
-				-6
+				-1,
+				2
 			],
 			Bravery = [
 				10,
@@ -134,24 +134,24 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				12
 			],
 			MeleeSkill = [
-				-2,
-				-3
+				0,
+				3
 			],
 			RangedSkill = [
 				0,
 				0
 			],
 			MeleeDefense = [
-				0,
-				0
+				-1,
+				3
 			],
 			RangedDefense = [
-				0,
-				0
+				-2,
+				-4
 			],
 			Initiative = [
-				6,
-				9
+				10,
+				15
 			]
 		};
 		return c;

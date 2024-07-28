@@ -104,8 +104,8 @@ this.swordmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				-12
 			],
 			Bravery = [
-				12,
-				10
+				10,
+				12
 			],
 			Stamina = [
 				-15,

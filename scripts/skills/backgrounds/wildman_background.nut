@@ -136,16 +136,16 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				13,
-				8
+				8,
+				13
 			],
 			Bravery = [
-				12,
-				10
+				10,
+				12
 			],
 			Stamina = [
-				18,
-				23
+				23,
+				25
 			],
 			MeleeSkill = [
 				7,

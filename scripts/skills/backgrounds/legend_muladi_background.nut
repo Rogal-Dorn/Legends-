@@ -10,7 +10,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 		this.m.GoodEnding = "Ever an outcast, %name% returned home and used the crowns gained from their adventures to buy a home far away from those who scorned them in the past. The link between nature and %name% strengthened, acting a safe safe haven for those wronged or on the run.";
 		this.m.BadEnding = "Living on the divide was a dangerous business, in attempting to return home they were driven out by northern militia on a border town with the desert. Alone, hungry and desperate. %name% was easy prey for the wild animals they once called kin.";
 		this.m.HiringCost = 100;
-		this.m.DailyCost = 10;
+		this.m.DailyCost = 16;
 		this.m.Excluded = [
 			"trait.hate_undead",
 			"trait.night_blind",
@@ -77,8 +77,10 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			Enemy = [
 				this.Const.Perks.NomadsTree
 			],
-			Class = [this.Const.Perks.ShortbowClassTree,
-			this.Const.Perks.HoundmasterClassTree],
+			Class = [
+				this.Const.Perks.ShortbowClassTree,
+				this.Const.Perks.HoundmasterClassTree
+			],
 			Magic = []
 		}
 	}
@@ -124,32 +126,32 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 				0
 			],
 			Bravery = [
-				-5,
+				5,
 				5
 			],
 			Stamina = [
-				3,
-				0
+				2,
+				5
 			],
 			MeleeSkill = [
-				2,
+				-3,
 				0
 			],
 			RangedSkill = [
-				15,
-				7
+				12,
+				16
 			],
 			MeleeDefense = [
 				0,
 				0
 			],
 			RangedDefense = [
-				0,
-				0
+				2,
+				5
 			],
 			Initiative = [
-				0,
-				4
+				10,
+				15
 			]
 		};
 		return c;

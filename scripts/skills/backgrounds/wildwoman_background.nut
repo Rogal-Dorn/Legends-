@@ -136,12 +136,12 @@ this.wildwoman_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				8,
-				3
+				3,
+				8
 			],
 			Bravery = [
-				12,
-				10
+				10,
+				12
 			],
 			Stamina = [
 				23,

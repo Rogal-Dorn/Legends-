@@ -50,6 +50,7 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [ //lf 5

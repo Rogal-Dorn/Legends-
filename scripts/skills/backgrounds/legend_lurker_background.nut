@@ -101,6 +101,7 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.SlingTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
@@ -153,16 +154,16 @@ this.legend_lurker_background <- this.inherit("scripts/skills/backgrounds/charac
 	{
 		local c = {
 			Hitpoints = [
-				-3,
-				-5
+				-5,
+				-3
 			],
 			Bravery = [
 				5,
 				10
 			],
 			Stamina = [
-				5,
-				0
+				0,
+				10
 			],
 			MeleeSkill = [
 				2,

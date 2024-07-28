@@ -167,32 +167,32 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 				0
 			],
 			Bravery = [
-				12,
-				10
+				15,
+				20
 			],
 			Stamina = [
+				5,
+				8
+			],
+			MeleeSkill = [
+				2,
+				6
+			],
+			RangedSkill = [
+				10,
+				18
+			],
+			MeleeDefense = [
+				2,
+				5
+			],
+			RangedDefense = [
 				3,
 				6
 			],
-			MeleeSkill = [
-				1,
-				4
-			],
-			RangedSkill = [
-				15,
-				8
-			],
-			MeleeDefense = [
-				0,
-				0
-			],
-			RangedDefense = [
-				2,
-				3
-			],
 			Initiative = [
-				0,
-				0
+				10,
+				15
 			]
 		};
 		return c;

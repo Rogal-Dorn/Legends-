@@ -123,20 +123,20 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				0
+				0,
+				5
 			],
 			Bravery = [
-				-1,
-				-3
+				-3,
+				-1
 			],
 			Stamina = [
-				6,
-				0
+				0,
+				6
 			],
 			MeleeSkill = [
-				5,
-				0
+				0,
+				5
 			],
 			RangedSkill = [
 				0,
@@ -151,8 +151,8 @@ this.legend_leech_peddler_background <- this.inherit("scripts/skills/backgrounds
 				0
 			],
 			Initiative = [
-				5,
-				0
+				0,
+				5
 			]
 		};
 		return c;
