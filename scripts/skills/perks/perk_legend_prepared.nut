@@ -53,7 +53,7 @@ this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 		if (item == null) return;
 
 		local effect = new("scripts/skills/effects/spider_poison_effect");
-		if (_user.getFaction() == this.Const.Faction.Player )
+		if (this.getContainer().getActor().getFaction() == this.Const.Faction.Player )
 		{
 			effect.setActor(this.getContainer().getActor());
 		}
