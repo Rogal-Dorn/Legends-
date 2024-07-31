@@ -29,6 +29,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		];
 		this.m.Type = this.Const.SkillType.Active;
 		this.m.Order = this.Const.SkillOrder.OffensiveTargeted;
+		this.m.Delay = 250;
 		this.m.IsSerialized = false;
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
@@ -37,9 +38,9 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
-		this.m.IsShieldRelevant = false;
+		this.m.IsDoingForwardMove false;
 		this.m.IsShowingProjectile = true;
-		this.m.Delay = 250;
+		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
 		this.m.InjuriesOnHead = this.Const.Injury.PiercingHead;
 		this.m.DirectDamageMult = 0.3;
@@ -51,6 +52,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.ChanceDisembowel = 0;
 		this.m.MaxLevelDifference = 4;
 		this.m.ProjectileType = this.Const.ProjectileType.Arrow;
+		this.m.IsShieldRelevant = false;
 	}
 
 	function getTooltip()
