@@ -2,7 +2,8 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 3,
 		Damage = 5,
-		LastRoundApplied = 0
+		LastRoundApplied = 0,
+		Actor = null
 	},
 	function getDamage()
 	{
