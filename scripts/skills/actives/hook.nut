@@ -113,24 +113,14 @@ this.hook <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
-		if (!this.skill.onVerifyTarget(_originTile, _targetTile))
-		{
+		this.m.IsAttack = false; // work around to allow targeting on allies
+		local result = this.skill.onVerifyTarget(_originTile, _targetTile);
+		this.m.IsAttack = true;
+
+		if (!result || _targetTile.getEntity().getCurrentProperties().IsRooted)
 			return false;
-		}
 
-		if (_targetTile.getEntity().getCurrentProperties().IsRooted)
-		{
-			return false;
-		}
-
-		local pulledTo = this.getPulledToTile(_originTile, _targetTile);
-
-		if (pulledTo == null)
-		{
-			return false;
-		}
-
-		return true;
+		return this.getPulledToTile(_originTile, _targetTile) != null;
 	}
 
 	function onUse( _user, _targetTile )
@@ -223,6 +213,24 @@ this.hook <- this.inherit("scripts/skills/skill", {
 	function onHookingComplete( _entity, _tag )
 	{
 		_tag.Attacker.setDirty(true);
+	}
+
+	function onTargetSelected( _targetTile )
+	{
+		local knockToTile = this.getPulledToTile(getContainer().getActor().getTile(), _targetTile);
+
+		if (knockToTile == null)
+			return;
+		// to show where the target may be knocked back
+		this.Tactical.getHighlighter().addOverlayIcon("mortar_target_02", knockToTile, knockToTile.Pos.X, knockToTile.Pos.Y);
+	}
+
+	function getHitchance( _targetEntity )
+	{
+		if (this.getContainer().hasSkill("trait.teamplayer") && _targetEntity.isAlliedWith(getContainer().getActor()))
+			return 100;
+
+		return this.skill.getHitchance(_targetEntity);
 	}
 
 });
