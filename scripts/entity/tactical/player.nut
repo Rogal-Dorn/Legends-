@@ -481,7 +481,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		];
 
-		if (!this.isPlayerControlled() && _targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
+		if (_targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
 		{
 			local tile = this.getTile();
 
