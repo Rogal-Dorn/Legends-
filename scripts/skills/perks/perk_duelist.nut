@@ -77,12 +77,12 @@ this.perk_duelist <- this.inherit("scripts/skills/skill", {
 
 	function isPartialEffect( _mainhand, _offhand )
 	{
-		if (off == null)
+		if (_offhand == null)
 			return false;
 
 		foreach( valid in m.AllowedWeapons )
 		{
-			if (::MSU.String.endsWith(off.getID(), valid))
+			if (::MSU.String.endsWith(_offhand.getID(), valid))
 				return true;
 		}
 
