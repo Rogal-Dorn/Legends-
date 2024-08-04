@@ -25,6 +25,7 @@ this.legend_eat_porridge_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 5;

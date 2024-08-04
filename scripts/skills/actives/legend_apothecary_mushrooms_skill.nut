@@ -26,6 +26,7 @@ this.legend_apothecary_mushrooms_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = true;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
+		this.m.IsUsingHitchance = false;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 5;
 		this.m.MinRange = 0;

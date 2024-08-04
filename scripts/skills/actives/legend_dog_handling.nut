@@ -20,6 +20,7 @@ this.legend_dog_handling <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 3;
 		this.m.FatigueCost = 0;
