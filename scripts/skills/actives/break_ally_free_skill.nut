@@ -17,7 +17,7 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;
-		this.m.IsUsingHitchance = false;
+		this.m.IsUsingHitchance = true;
 		this.m.IsHidden = true;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 15;
@@ -62,6 +62,11 @@ this.break_ally_free_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return tooltip;
+	}
+
+	function getHitchance( _targetEntity )
+	{
+		return getChance();
 	}
 
 	function getChance()
