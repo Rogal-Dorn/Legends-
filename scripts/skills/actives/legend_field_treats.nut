@@ -20,6 +20,7 @@ this.legend_field_treats <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 16;
