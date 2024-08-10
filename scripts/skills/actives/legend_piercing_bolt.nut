@@ -1,6 +1,7 @@
 this.legend_piercing_bolt <- ::inherit("scripts/skills/actives/shoot_bolt", {
 	m = {
 		IsDoingPiercingShot = false,
+		OriginalDirection = null
 	},
 	function create()
 	{
@@ -55,6 +56,12 @@ this.legend_piercing_bolt <- ::inherit("scripts/skills/actives/shoot_bolt", {
 		return !getContainer().hasSkill("perk.legend_piercing_shot");
 	}
 
+	function onUse( _user, _targetTile )
+	{
+		m.OriginalDirection = _user.getTile().getDirectionTo(_targetTile);
+		return shoot_bolt.onUse(_user, _targetTile);
+	}
+
 	function onScheduledTargetHit( _info )
 	{
 		// save this first lol
@@ -65,9 +72,9 @@ this.legend_piercing_bolt <- ::inherit("scripts/skills/actives/shoot_bolt", {
 		if (_info.Skill.m.IsDoingPiercingShot || ::MSU.isNull(_info.User) || !_info.User.isAlive() || _info.User.isDying())
 			return;
 
-		local forwardTile = _info.Skill.getAffectedTiles(targetTile);
+		local forwardTile = _info.Skill.getAffectedTiles(targetTile, _info.Skill.m.OriginalDirection);
 		// show the effect
-		_info.Skill.onSpawnPiercingEffect(targetTile, _info.User.getTile().getDirectionTo(targetTile));
+		_info.Skill.onSpawnPiercingEffect(targetTile, _info.Skill.m.OriginalDirection);
 
 		if (forwardTile == null || !forwardTile.IsOccupiedByActor || !forwardTile.getEntity().isAttackable())
 			return;
@@ -133,14 +140,15 @@ this.legend_piercing_bolt <- ::inherit("scripts/skills/actives/shoot_bolt", {
 		this.getContainer().removeByID("actives.reload_bolt");
 	}
 
-	function getAffectedTiles( _targetTile )
+	function getAffectedTiles( _targetTile, _direction = null )
 	{
-		local dir = getContainer().getActor().getTile().getDirectionTo(_targetTile);
+		if (_direction == null)
+			_direction = getContainer().getActor().getTile().getDirectionTo(_targetTile);
 
-		if (!_targetTile.hasNextTile(dir))
+		if (!_targetTile.hasNextTile(_direction))
 			return null;
 
-		local forwardTile = _targetTile.getNextTile(dir);
+		local forwardTile = _targetTile.getNextTile(_direction);
 		local diff = _targetTile.Level - forwardTile.Level;
 
 		if (diff < 0 || diff > 1)
