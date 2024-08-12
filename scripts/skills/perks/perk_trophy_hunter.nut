@@ -13,16 +13,16 @@ this.perk_trophy_hunter <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = false;
 	}
 
-	function onTargetKilled( _targetEntity, _skill )
+	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-
-		if (!_targetEntity.isAlliedWith(actor))
+		local kills = actor.getLifetimeStats().Kills;
+		if (kills != null && kills > 0)
 		{
-			actor.setHitpoints(actor.getHitpoints() + 1);
-			actor.getBaseProperties().Hitpoints += 1;
+			local bonus = this.Math.max(10, this.Math.floor(kills / 25));
+			_properties.Bravery += bonus;
+			_properties.Hitpoints += bonus;
 		}
 	}
-
 });
 
