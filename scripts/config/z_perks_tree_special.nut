@@ -1,3 +1,9 @@
+local gt = this.getroottable();
+if (!("Perks" in gt.Const))
+{
+	gt.Const.Perks <- {};
+}
+
 gt.Const.Perks.SpecialTrees <- {
 Tree = [],
 Perks = [],
