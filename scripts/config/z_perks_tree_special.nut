@@ -101,6 +101,10 @@ gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.LegendBatt
 	{
 		return 0;
 	}
+	if (_player.getBaseProperties().Bravery < 50)
+	{
+		return 0;
+	}
 	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
@@ -175,24 +179,28 @@ gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.TrophyHunt
 
 	local talents = _player.getTalents();
 	local tl = talents.len() == 0 ? 0 : this.Math.max(talents[gt.Const.Attributes.MeleeSkill], talents[gt.Const.Attributes.RangedSkill]);
-	if (tl == 0)
+	if (tl == 0 || tl < 3)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
+	}
 
-	return _chance;
+	return 1;
 });
 
 gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.Ironside, 7, "Ironside", function( _player, _chance ) {
 
 	local talents = _player.getTalents();
-	local tl = talents.len() == 0 ? 0 : talents[gt.Const.Attributes.MeleeDefense];
+	local tl = talents.len() == 0 ? 0 : talents[gt.Const.Attributes.Hitpoints];
 	if (tl == 0)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
+	}
+	if (_actor.getBaseProperties.MeleeDefense < 12)
+	{
+		return 0;
+	}
+
+	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
 });
