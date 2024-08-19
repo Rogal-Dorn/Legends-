@@ -1,7 +1,6 @@
 this.deathblow_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		ApplicableSkills = [
-			"effects.chilled",
 			"effects.dazed",
 			"effects.debilitated",
 			"effects.distracted",
@@ -64,7 +63,7 @@ this.deathblow_skill <- this.inherit("scripts/skills/skill", {
 			id = 8,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] more damage against and ignores additional [color=" + this.Const.UI.Color.DamageValue + "]20%[/color] armor of targets that have the Dazed, Stunned, Sleeping, Rooted, Distracted, Webbed, Trapped in Net, Staggered, Chilled, Shellshocked, Tackled, Debilitated or Grappled status effects."
+			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]33%[/color] more damage against and ignores additional [color=" + this.Const.UI.Color.DamageValue + "]20%[/color] armor of targets that have the Dazed, Stunned, Sleeping, Rooted, Distracted, Webbed, Trapped in Net, Staggered, Shellshocked, Tackled, Debilitated or Grappled status effects."
 		});
 		return ret;
 	}
