@@ -14,16 +14,16 @@ this.perk_legend_unburdened <- this.inherit("scripts/skills/skill", {
 		this.m.IsHidden = true;
 	}
 
-	function onAdded()
-	{
-		if (!this.m.Container.hasSkill("actives.unburdened_footwork"))
-		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_unburdened_footwork"));
-		}
-	}
+	// function onAdded()
+	// {
+	// 	if (!this.m.Container.hasSkill("actives.unburdened_footwork"))
+	// 	{
+	// 		this.m.Container.add(this.new("scripts/skills/actives/legend_unburdened_footwork"));
+	// 	}
+	// }
 
-	function onRemoved()
-	{
-		this.m.Container.removeByID("actives.unburdened_footwork");
-	}
+	// function onRemoved()
+	// {
+	// 	this.m.Container.removeByID("actives.unburdened_footwork");
+	// }
 });

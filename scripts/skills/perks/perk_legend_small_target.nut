@@ -1,7 +1,8 @@
 this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	m = {
 		BonusMin = 0,
-		BonusUnburdenedMin = 50
+		BonusUnburdenedMin = 30,
+		bonusPercentage = 1.0
 	},
 	function create()
 	{
@@ -82,58 +83,87 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		}
 
 		local stackTotal = health + headArmor + bodyArmor;
-		
-		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
-			{
-		
-				if (bodyItem != null)
-				{
-					local tabard = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
-					local cloak = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
-					
-					if (tabard != null)
-					{
-						local tabardArmor = tabard.getRepair();
-						stackTotal -= tabardArmor;
-					}
-					
-					if (cloak != null)
-					{
-						local cloakArmor = cloak.getRepair();
-						stackTotal -= cloakArmor;
-					}
-				}
 
-				
-			
-				if (headItem != null)
+		if (actor.getSkills().hasSkill("perk.legend_unburdened"))
+		{
+			if (bodyItem != null)
+			{
+				local body = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Body);
+				if (body.getStaminaModifier == 0)
 				{
-					local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
-					local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
-					
-					if (vanity != null)
-					{
-						local vanityArmor = vanity.getRepair();
-						stackTotal -= vanityArmor;
-					}
-					
-					if (extra != null)
-					{
-						local extraArmor = extra.getRepair();
-						stackTotal -= extraArmor;
-					}
+					stackTotal -= body.getRepair();
 				}
 			}
+		}
+		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
+		{
+	
+			if (bodyItem != null)
+			{
+				local tabard = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
+				local cloak = bodyItem.getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
+				
+				if (tabard != null)
+				{
+					local tabardArmor = tabard.getRepair();
+					stackTotal -= tabardArmor;
+				}
+				
+				if (cloak != null)
+				{
+					local cloakArmor = cloak.getRepair();
+					stackTotal -= cloakArmor;
+				}
+			}
+		
+			if (headItem != null)
+			{
+				local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
+				local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
+				
+				if (vanity != null)
+				{
+					local vanityArmor = vanity.getRepair();
+					stackTotal -= vanityArmor;
+				}
+				
+				if (extra != null)
+				{
+					local extraArmor = extra.getRepair();
+					stackTotal -= extraArmor;
+				}
+			}
+		}
 		local bonus = this.Math.max(5, 100 - stackTotal); 
 		return this.Math.floor(bonus);
+	}
+
+	function onBeingAttacked( _attacker, _skill, _properties )
+	{
+		this.m.bonusPercentage -= 0.1;
+	}
+
+	function onCombatStarted()
+	{
+		this.m.bonusPercentage = 1.0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.bonusPercentage = 1.0;
 	}
 
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus;
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin)
+		_properties.MeleeDefense += this.Math.floor(bonus * this.m.bonusPercentage);
+		_properties.RangedDefense += this.Math.floor(bonus * this.m.bonusPercentage);
+
+		local sourcePerk = this.getContainer().getSkillByID("perk.legend_blend_in");
+		if (sourceperk == null)
+			return;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin && sourcePerk.m.Stacks > 0)
 		{
 			_properties.ActionPoints += 1;
 		}

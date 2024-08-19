@@ -19,7 +19,7 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 0.5;
+		_properties.TargetAttractionMult *= 0.51;
 		_properties.MeleeDefense += 3;
 		_properties.RangedDefense += 5;
 		// this.m.IsHidden = this.m.Stacks == 0;
@@ -72,9 +72,7 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 	function onBeingAttacked( _attacker, _skill, _properties )
 	{
 		if (this.m.Stacks > 0)
-		{
 			_properties.IsEvadingAllAttacks = true;		
-		}
 	}
 
 	function onMissed( _attacker, _skill )
@@ -82,20 +80,40 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 		if (this.m.Stacks > 0)
 		{
 			::Tactical.EventLog.logEx(::Const.UI.getColorizedEntityName(_attacker) + " underestimated " + this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " due to " + ["their","his","her"][this.getContainer().getActor().getGender() + 1] + " meekness!");
-			this.m.Stacks--;	
+			this.m.Stacks -= 1;
 		}
+	}
+
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		if (this.m.Stacks == 0)
+			return;
+		if (_skill.getID() == "actives.legend_leap" || _skill.getID() == "actives.footwork" || _skill.getID() == "actives.legend_evasion" )
+			_skill.m.ActionPointCost = 0;
+			this.m.Stacks -= 1;
 	}
 
 	function onTurnEnd()
 	{
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && this.m.Stacks == 0)
-		{
 			this.m.Counter += 1;
-		}
+
 		if (this.m.Counter == 2)
 		{
-			this.m.Stacks = 1;
+			this.m.Stacks = this.Math.min(2, this.m.Stacks + 1);
 			this.m.Counter = 0;
 		}
+	}
+
+	function onCombatStarted()
+	{
+		this.m.Stacks = 1;
+		this.m.Counter = 0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.Stacks = 1;
+		this.m.Counter = 0;
 	}
 })
