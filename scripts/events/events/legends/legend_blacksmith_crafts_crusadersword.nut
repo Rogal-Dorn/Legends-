@@ -1,6 +1,8 @@
 this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/event", {
 	m = {
-		Blacksmith = null
+		Blacksmith = null,
+		OtherGuy1 = null,
+		OtherGuy2 = null
 	},
 	function create()
 	{
@@ -23,7 +25,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 				},
 				{
-					Text = "We don\'t have time for this.", //D or skip
+					Text = "We don\'t have time for this.",
 					function getResult( _event )
 					{
 						return "D";
@@ -37,7 +39,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 			}
 
 		});
-		this.m.Screens.push({ //succeed
+		this.m.Screens.push({
 			ID = "B",
 			Text = "[img]gfx/ui/events/event_05.png[/img]{The blacksmith hammers the metal with the accuracy of a loom — twisting the metal this way and that while you point and mutter from behind. The hammering is ceaseless until the blade is committed back to the forge, at which point %Blacksmith% takes the lul to get up, stretch and talk with the others.\n\n A few more turns on the anvil and a successful quench later, %Blacksmith% fits and finishes the blade, proud of the masterpiece that has been lost for generations.}",
 			Image = "",
@@ -63,9 +65,9 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 					text = "You spend [color=" + this.Const.UI.Color.NegativeEventValue + "]2000[/color] Crowns"
 				});
 				local stash = this.World.Assets.getStash().getItems();
-
 				local numIngots = ::Math.rand(1, 2);
-				foreach (i, item in stash)
+
+				foreach( i, item in stash )
 				{
 					if (item != null && item.getID() == "misc.iron_ingots")
 					{
@@ -75,12 +77,14 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 							icon = "ui/items/" + item.getIcon(),
 							text = "You lose " + item.getName()
 						});
-						if (--numIngots == 0) break;
+						numIngots -= 1;
+
+						if (numIngots == 0)
+							break;
 					}
 				}
 
 				local item = this.new("scripts/items/weapons/legend_crusader_sword");
-				//item.m.Name = _event.m.Blacksmith.getNameOnly() + "\'s " + item.m.Name;
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,
@@ -98,8 +102,8 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 					});
 				}
 			}
-
 		});
+
 		// this.m.Screens.push({ //Fail
 		// 	ID = "C",
 		// 	Text = "[img]gfx/ui/events/event_05.png[/img]%Blacksmith% begins strong, but gradually loses control of the shape and form of the blade over time. %Blacksmith% squints and attempts to start again. But at this point the blade is already lost. You tell them to finish it as best as they can.\n\n With a tounge stuck out and a pensive look, %Blacksmith% eventually defaults back to their old ways and makes an impressively average looking blade, allbeit functional and sturdy.",
@@ -163,7 +167,8 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 		// 	}
 
 		// });
-		this.m.Screens.push({ //skip
+
+		this.m.Screens.push({
 			ID = "D",
 			Text = "[img]gfx/ui/events/event_05.png[/img]You tell the Blacksmith that that sword is better off lost. They begin to object, but eventually fall silent.",
 			Image = "",
@@ -199,7 +204,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 	function onUpdateScore()
 	{
-		if (this.World.Assets.getOrigin().getID() != "scenario.legends_crusader") //only crusader origin
+		if (this.World.Assets.getOrigin().getID() != "scenario.legends_crusader")
 		{
 			return;
 		}
@@ -239,7 +244,12 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 			if (item != null && item.getID() == "misc.iron_ingots")
 			{
 				numIngots = ++numIngots;
-				if (numIngots >= 2) break;
+				numIngots = numIngots;
+
+				if (numIngots >= 2)
+				{
+					break;
+				}
 			}
 		}
 
