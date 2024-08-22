@@ -271,65 +271,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 	::mods_hookExactClass("ai/tactical/behaviors/ai_charm", function(o) 
 	{
 		o.m.PossibleSkills.push("actives.legend_intensely_charm");
-
-		o.onEvaluate = function( _entity )
-		{
-			// Function is a generator.
-			this.m.Skill = null;
-			this.m.TargetTile = null;
-			this.m.Danger = null;
-			this.m.ScoreBonus = 0.0;
-			local score = this.getProperties().BehaviorMult[this.m.ID];
-
-			if (_entity.getActionPoints() < this.Const.Movement.AutoEndTurnBelowAP)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-
-			if (_entity.getMoraleState() == this.Const.MoraleState.Fleeing)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-
-			if (!this.getAgent().hasKnownOpponent())
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-			if (this.getAgent().getKnownOpponents().len() <= 1)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-			this.m.Skill = this.selectSkill(this.m.PossibleSkills);
-
-			if (this.m.Skill == null)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-
-			score = score * this.getFatigueScoreMult(this.m.Skill);
-			local opponents = this.getAgent().getKnownOpponents();
-			local func = this.calculateDanger(_entity, opponents);
-
-			while (resume func == null)
-			{
-				yield null;
-			}
-
-			local func = this.findBestTarget(_entity, opponents);
-
-			while (resume func == null)
-			{
-				yield null;
-			}
-
-			if (this.m.TargetTile == null)
-			{
-				return this.Const.AI.Behavior.Score.Zero;
-			}
-
-			this.m.Danger = null;
-			return this.Const.AI.Behavior.Score.Charm * score + this.m.ScoreBonus;
-		}
 	});
 
 	// ::mods_hookExactClass("ai/tactical/behaviors/ai_corruption", function(o)
@@ -825,11 +766,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 		o.m.PossibleSkills.push("actives.legend_boar_charge");
 	});
 
-	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_throw_net", function(o) 
-	{
-		o.m.PossibleSkills.push("actives.legend_daze");
-	});
-
 	::mods_hookExactClass("ai/tactical/behaviors/ai_move_tail", function(o) 
 	{
 		o.m.PossibleSkills.push("actives.legend_stollwurm_move_tail");
@@ -837,44 +773,7 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_move_tentacle", function(o) 
 	{
-		o.onExecute = function( _entity )
-		{
-			if (this.m.IsFirstExecuted)
-			{
-				this.m.IsFirstExecuted = false;
-
-				if (this.Const.AI.VerboseMode)
-				{
-					this.logInfo("* " + _entity.getName() + ": Moving to engage.");
-				}
-
-				this.m.Agent.adjustCameraToTarget(this.m.TargetTile);
-				this.m.SelectedSkill.use(this.m.TargetTile);
-
-				if (_entity.isAlive())
-				{
-					local delay = 0;
-
-					if (!_entity.isHiddenToPlayer())
-					{
-						delay = delay + 2000; //Was 800, increased to 2000 in line with ai_move_tail as this lack of delay may be contributing to the game being frozen when these tentacles move - Luft 7/3/23
-					}
-
-					if (this.m.TargetTile.IsVisibleForPlayer)
-					{
-						delay = delay + 2000;
-					}
-
-					this.getAgent().declareEvaluationDelay(delay);
-				}
-			}
-			else if (!_entity.isStoringColor())
-			{
-				return true;
-			}
-
-			return false;
-		}
+		o.m.PossibleSkills.push("actives.legend_stollwurm_move");
 	});
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_attack_puncture", function(o) 
@@ -908,52 +807,6 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 			}
 
 			return true;
-		}
-
-		o.getBestTarget = function( _entity, _skill, _targets )
-		{
-			local bestTarget;
-			local bestScore = 0.0;
-
-			foreach( target in _targets )
-			{
-				if (!_skill.isUsableOn(target.getTile()))
-				{
-					continue;
-				}
-
-				if (target.getArmor(this.Const.BodyPart.Body) <= 25 || target.getArmor(this.Const.BodyPart.Head) <= 15)
-				{
-					continue;
-				}
-
-				if (target.getFatigue() >= (target.getFatigueMax() / 2))
-				{
-					continue;
-				}
-
-				local p = _entity.getCurrentProperties();
-				local armor = target.getArmor(this.Const.BodyPart.Body) * (p.getHitchance(this.Const.BodyPart.Body) / 100.0) + target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0);
-
-				if (armor <= 40 && target.getHitpoints() > _entity.getCurrentProperties().getRegularDamageAverage())
-				{
-					continue;
-				}
-
-				local score = this.queryTargetValue(_entity, target, _skill);
-				score = score * this.Math.pow(armor / 100.0, 1.1);
-
-				if (score > bestScore)
-				{
-					bestTarget = target;
-					bestScore = score;
-				}
-			}
-
-			return {
-				Target = bestTarget,
-				Score = bestScore
-			};
 		}
 	});
 
