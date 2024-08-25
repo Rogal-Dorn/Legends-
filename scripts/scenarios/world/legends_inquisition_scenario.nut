@@ -71,8 +71,8 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		this.addScenarioPerk(bros[1].getBackground(), this.Const.Perks.PerkDefs.LegendMindOverBody);
 
 		bros[2].setStartValuesEx([
-			"legend_nun_background"
-		]);
+			"monk_background"
+		], true, 1);
 		bros[2].m.Talents = [];
 		local talents = bros[2].getTalents();
 		talents.resize(this.Const.Attributes.COUNT, 0);
@@ -257,8 +257,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		local garbage = [];
 		local bros = _roster.getAll();
 		this.addBroToRoster(_roster, "flagellant_background", 4);
-		this.addBroToRoster(_roster, "monk_background", 4);
-		this.addBroToRoster(_roster, "legend_nun_background", 4);
+		this.addBroToRoster(_roster, "monk_background", 6);
 		this.addBroToRoster(_roster, "witchhunter_background", 4);
 		this.addBroToRoster(_roster, "legend_youngblood_background", 4);
 		this.addBroToRoster(_roster, "legend_crusader_background", 8);

@@ -42,7 +42,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[2].setPlaceInFormation(5);
 		
 		bros[3].setStartValuesEx([
-			"legend_nun_background"
+			"monk_background"
 		], true, 1);
 		bros[3].setPlaceInFormation(12);
 		
@@ -151,7 +151,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		this.addBroToRoster(_roster, "legend_shieldmaiden_background", 6);
 		this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
 		this.addBroToRoster(_roster, "female_adventurous_noble_background", 6);
-		this.addBroToRoster(_roster, "legend_nun_background", 6);
+		this.addBroToRoster(_roster, "monk_background", 6);
 
 		foreach( i, bro in bros )
 		{
