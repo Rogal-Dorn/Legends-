@@ -70,7 +70,7 @@ this.giant_tree_in_forest_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant" || bro.getBackground().getID() == "background.legend_nun"  || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.legend_ranger" || bro.getBackground().getID() == "background.legend_ranger_commander" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander") 
+			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant"  || bro.getBackground().getID() == "background.legend_herbalist"  || bro.getBackground().getID() == "background.legend_ranger" || bro.getBackground().getID() == "background.legend_ranger_commander" || bro.getBackground().getID() == "background.legend_vala" || bro.getBackground().getID() == "background.legend_vala_commander") 
 			{
 				monk_candidates.push(bro);
 			}

@@ -148,7 +148,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 
 		this.addBroToRoster(_roster, "flagellant_background", 4);
 		this.addBroToRoster(_roster, "monk_background", 4);
-		this.addBroToRoster(_roster, "legend_nun_background", 4);
+		this.addBroToRoster(_roster, "monk_background", 4);
 		this.addBroToRoster(_roster, "witchhunter_background", 5);
 		this.addBroToRoster(_roster, "legend_pilgrim_background", 4);
 		this.addBroToRoster(_roster, "legend_crusader_background", 8);

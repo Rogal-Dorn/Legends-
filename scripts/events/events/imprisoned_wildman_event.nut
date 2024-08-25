@@ -590,7 +590,7 @@ this.imprisoned_wildman_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_wildman.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			else if (bro.getBackground().getID() == "background.monk")
 			{
 				candidate_monk.push(bro);
 			}

@@ -32,7 +32,7 @@
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_herbalist"] <- "Herbalist / Apothecary";
 ::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
 ::Const.HuntingLoot.RequiredBackgrounds["background.monk"] <- "Monk";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
+// ::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
 ::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
 
 // These backgrounds will contribute to Hunt Level (and hence Hunt Tier)

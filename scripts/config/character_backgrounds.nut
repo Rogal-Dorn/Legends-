@@ -183,7 +183,7 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"legend_herbalist_background",
 	"legend_inventor_background",
 	"legend_ironmonger_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_taxidermist_background",
 	"lumberjack_background",
 	"mason_background",
@@ -215,7 +215,7 @@ gt.Const.CharacterFemaleBackgrounds <- [
 	"legend_witch_background",
 	"female_adventurous_noble_background",
 	"female_disowned_noble_background",
-	"legend_nun_background"
+	// "legend_nun_background"
 ];
 gt.Const.SupposedWitchBackgrounds <- [
 	"legend_shieldmaiden_background",
@@ -223,7 +223,7 @@ gt.Const.SupposedWitchBackgrounds <- [
 	"legend_vala_background",
 	"female_adventurous_noble_background",
 	"female_disowned_noble_background",
-	"legend_nun_background"
+	"legend_monk_background"
 ];
 gt.Const.CharacterPartyBackgrounds <- [
 	"legend_diviner_background",
@@ -241,7 +241,7 @@ gt.Const.CharacterPartyBackgrounds <- [
 	"legend_master_archer_background",
 	"legend_berserker_background",
 	"legend_necrosavant_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_shieldmaiden_background",
 	"assassin_background",
 	"legend_crusader_background",
@@ -314,7 +314,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_herbalist_background",
 	"legend_inventor_background",
 	"legend_ironmonger_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_taxidermist_background",
 	// "legend_necro_background",
 	"lumberjack_background",

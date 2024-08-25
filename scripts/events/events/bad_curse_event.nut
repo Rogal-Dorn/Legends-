@@ -256,7 +256,7 @@ this.bad_curse_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_cursed.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant" || bro.getBackground().getID() == "background.legend_nun")
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.monk_turned_flagellant")
 			{
 				candidates_monk.push(bro);
 			}

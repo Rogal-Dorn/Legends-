@@ -98,7 +98,6 @@ this.legends_free_company_scenario <- this.inherit("scripts/scenarios/world/star
 		bros[4].setVeteranPerks(2);	
 		bros[4].setStartValuesEx([ //non combat 1
 			"monk_background",
-			"legend_nun_background",
 			"bowyer_background",
 			"butcher_background",
 			"minstrel_background",

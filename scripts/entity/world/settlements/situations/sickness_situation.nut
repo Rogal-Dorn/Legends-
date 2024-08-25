@@ -54,8 +54,8 @@ this.sickness_situation <- this.inherit("scripts/entity/world/settlements/situat
 
 		if (_gender)
 		{
-		_draftList.push("legend_nun_background");
-		_draftList.push("legend_herbalist_background");
+			// _draftList.push("legend_nun_background");
+			_draftList.push("legend_herbalist_background");
 		}
 
 		if  (this.World.Assets.getOrigin().getID() == "scenario.legends_necro" || this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro")

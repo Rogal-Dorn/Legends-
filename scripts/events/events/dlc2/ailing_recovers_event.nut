@@ -78,7 +78,7 @@ this.ailing_recovers_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_ailing.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_nun" || bro.getBackground().getID() == "background.legend_herbalist" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" )
+			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.legend_herbalist" || bro.getBackground().getID() == "background.legend_witch" || bro.getBackground().getID() == "background.legend_witch_commander" )
 			{
 				candidates_healer.push(bro);
 			}

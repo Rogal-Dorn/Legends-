@@ -312,7 +312,7 @@ this.pimp_vs_harlot_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_minstrel.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			else if (bro.getBackground().getID() == "background.monk")
 			{
 				candidate_monk.push(bro);
 			}
