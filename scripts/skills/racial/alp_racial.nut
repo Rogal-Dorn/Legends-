@@ -95,7 +95,11 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 					{
 						_properties.DamageReceivedRegularMult *= 0.33;
 					}
-				}				
+					else if (this.getContainer().getActor().getFlags().has("demon"))
+					{
+						_properties.DamageReceivedRegularMult *= 0.9;
+					}
+				}
 				break;
 		}
 	}
@@ -105,27 +109,25 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 
 		if (_damageHitpoints >= actor.getHitpoints())
-		{
 			return;
-		}
 
 		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), this.getContainer().getActor().getFaction());
 	}
 
 	function onDeath( _fatalityType )
 	{
 		this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.Skill);
-		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), null);
+		this.Time.scheduleEvent(this.TimeUnit.Virtual, 30, this.teleport.bindenv(this), this.getContainer().getActor().getFaction());
 	}
 
-	function teleport( _tag )
+	function teleport( _faction )
 	{
 		local allies = this.Tactical.Entities.getAllInstancesAsArray();
 
 		foreach( a in allies )
 		{
-			if (a.getHitpoints() > 0 && (a.getType() == this.Const.EntityType.Alp || a.getType() == this.Const.EntityType.AlpShadow))
+			if (a.getHitpoints() > 0 && a.getFlags().has("alp") && a.getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AlpTeleport) != null)
 			{
 				local b = a.getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AlpTeleport);
 				b.onEvaluate(a);
