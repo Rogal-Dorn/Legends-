@@ -236,8 +236,8 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 	{
 		this.addBroToRoster(_roster, "deserter_background", 3);
 		this.addBroToRoster(_roster, "militia_background", 6);
-		this.addBroToRoster(_roster, "disowned_noble_background", 6);
-		this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
+		this.addBroToRoster(_roster, "disowned_noble_background", 8);
+		// this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
 		this.addBroToRoster(_roster, "retired_soldier_background", 6);
 		this.addBroToRoster(_roster, "swordmaster_background", 6);
 		this.addBroToRoster(_roster, "bastard_background", 6);

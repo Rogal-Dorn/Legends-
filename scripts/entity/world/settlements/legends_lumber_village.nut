@@ -209,7 +209,7 @@ this.legends_lumber_village <- this.inherit("scripts/entity/world/settlements/le
 		// ],[
 			"legend_shieldmaiden_background",
 			// "wildwoman_background",
-			"female_disowned_noble_background"
+			// "female_disowned_noble_background"
 		]];
 
 		this.m.StablesLists = [[

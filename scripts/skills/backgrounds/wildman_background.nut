@@ -239,45 +239,6 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		return c;
 	}
 
-	function onChangeAttributes()
-	{
-		local c = {
-			Hitpoints = [
-				8,
-				13
-			],
-			Bravery = [
-				10,
-				12
-			],
-			Stamina = [
-				23,
-				25
-			],
-			MeleeSkill = [
-				7,
-				10
-			],
-			RangedSkill = [
-				-5,
-				0
-			],
-			MeleeDefense = [
-				-5,
-				0
-			],
-			RangedDefense = [
-				-5,
-				-5
-			],
-			Initiative = [
-				5,
-				12
-			]
-		};
-		return c;
-	}
-
 	function onSetAppearance()
 	{
 		local actor = this.getContainer().getActor();
@@ -369,7 +330,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			}
 			else if (r == 4)
 			{
-				items.equip(this.new("scripts/items/weapons/boar_spear"));
+				items.equip(this.new( "scripts/items/weapons/boar_spear"));
 			}
 			else if (r == 5)
 			{

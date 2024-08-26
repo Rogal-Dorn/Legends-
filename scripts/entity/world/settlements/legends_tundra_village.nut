@@ -205,7 +205,7 @@ this.legends_tundra_village <- this.inherit("scripts/entity/world/settlements/le
 		// ],[
 			"legend_shieldmaiden_background",
 			// "wildwoman_background",
-			"female_disowned_noble_background"
+			// "female_disowned_noble_background"
 		]];
 		this.m.StablesLists = [[],[],[]];
 		this.m.Rumors = this.Const.Strings.RumorsTundraSettlement;
