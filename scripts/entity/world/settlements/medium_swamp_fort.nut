@@ -53,7 +53,7 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"flagellant_background",
 			"ratcatcher_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"witchhunter_background",
 			"witchhunter_background",
 			"adventurous_noble_background",

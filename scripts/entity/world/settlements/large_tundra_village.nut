@@ -60,7 +60,7 @@ this.large_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"female_thief_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"wildman_background",
 			"bastard_background",
 			"female_disowned_noble_background",

@@ -50,7 +50,7 @@ this.small_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"ratcatcher_background",
 			"vagabond_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 						"female_beggar_background",

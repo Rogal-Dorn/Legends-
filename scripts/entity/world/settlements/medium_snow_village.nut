@@ -62,7 +62,7 @@ this.medium_snow_village <- this.inherit("scripts/entity/world/settlement", {
 			"thief_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"disowned_noble_background",
 			"cripple_background",
 			"apprentice_background",

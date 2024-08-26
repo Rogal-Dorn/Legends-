@@ -339,7 +339,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"tailor_background",
 	"vagabond_background",
 	"wildman_background",
-	"wildwoman_background",
+	// "wildwoman_background",
 	"witchhunter_background",
 	// "legend_diviner_background",
 	// "legend_illusionist_background",

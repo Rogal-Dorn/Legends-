@@ -201,8 +201,8 @@ this.legends_berserker_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onUpdateHiringRoster( _roster )
 	{
-		this.addBroToRoster(_roster, "wildwoman_background", 8)
-		this.addBroToRoster(_roster, "wildman_background", 8)
+		// this.addBroToRoster(_roster, "wildwoman_background", 8)
+		this.addBroToRoster(_roster, "wildman_background", 10)
 		this.addBroToRoster(_roster, "barbarian_background", 7)
 		this.addBroToRoster(_roster, "legend_berserker_background", 9)
 	}

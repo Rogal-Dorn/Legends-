@@ -53,7 +53,7 @@ this.large_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"vagabond_background",
 			"vagabond_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",

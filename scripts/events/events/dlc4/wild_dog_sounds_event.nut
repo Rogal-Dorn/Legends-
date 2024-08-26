@@ -92,7 +92,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_commander_berserker")
+					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian" || bro.getBackground().getID() == "background.legend_berserker" || bro.getBackground().getID() == "background.legend_commander_berserker")
 					{
 						continue;
 					}
@@ -183,7 +183,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 						continue;
 					}
 
-					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman" || bro.getBackground().getID() == "background.barbarian")
+					if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.barbarian")
 					{
 						continue;
 					}
@@ -359,7 +359,7 @@ this.wild_dog_sounds_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_hunter.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
+			else if (bro.getBackground().getID() == "background.wildman")
 			{
 				candidates_wildman.push(bro);
 			}

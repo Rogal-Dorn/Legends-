@@ -48,7 +48,7 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"militia_background",
 			"militia_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
