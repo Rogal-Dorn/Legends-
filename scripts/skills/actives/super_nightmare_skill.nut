@@ -1,9 +1,22 @@
 this.super_nightmare_skill <- this.inherit("scripts/skills/actives/nightmare_skill", {
-	m = {},
+	m = {
+		DoNotUseSkill = false
+	},
 	function create()
 	{
 		this.nightmare_skill.create();
 		this.m.ActionPointCost = 6;
+		this.m.MaxRange = 3;
+	}
+
+	function onTurnStart()
+	{
+		this.m.DoNotUseSkill = false;
+	}
+
+	function isUsable()
+	{
+		return !this.m.DoNotUseSkill && this.nightmare_skill.isUsable();
 	}
 
 	function getDamage( _actor )
