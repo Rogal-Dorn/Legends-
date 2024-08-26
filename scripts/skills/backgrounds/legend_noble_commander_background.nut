@@ -121,7 +121,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	function onBuildDescription()
 	{
 		local playerCharacter = "";
-		if (this.getFlags().has("IsPlayerCharacter");)
+		if (this.getFlags().has("IsPlayerCharacter"))
 			playerCharacter = "This is the commander, when they die, it is game over. "
 		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
