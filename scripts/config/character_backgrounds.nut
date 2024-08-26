@@ -221,7 +221,8 @@ gt.Const.SupposedWitchBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"legend_witch_background",
 	"legend_vala_background",
-	"adventurous_noble_background",
+	"adventurous_noble_background", // the event calls for females
+	"disowned_noble_background", // the event calls for females
 	// "female_adventurous_noble_background",
 	// "female_disowned_noble_background",
 	"legend_monk_background"
