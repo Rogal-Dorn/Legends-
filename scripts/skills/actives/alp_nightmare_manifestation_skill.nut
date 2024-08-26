@@ -31,7 +31,7 @@ this.alp_nightmare_manifestation_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 5;
 		this.m.FatigueCost = 10;
-		this.m.MinRange = 1;
+		this.m.MinRange = 3;
 		this.m.MaxRange = 10;
 		this.m.MaxLevelDifference = 4;
 	}
