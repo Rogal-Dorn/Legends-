@@ -38,7 +38,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsRanged = true;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsShowingProjectile = true;
-		this.m.IsDoingForwardMove false;
+		this.m.IsDoingForwardMove = false;
 		this.m.IsShowingProjectile = true;
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.PiercingBody;
