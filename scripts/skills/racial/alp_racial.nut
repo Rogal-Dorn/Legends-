@@ -123,9 +123,7 @@ this.alp_racial <- this.inherit("scripts/skills/skill", {
 
 	function teleport( _faction )
 	{
-		local allies = this.Tactical.Entities.getAllInstancesAsArray();
-
-		foreach( a in allies )
+		foreach( a in this.Tactical.Entities.getInstancesOfFaction(_faction) )
 		{
 			if (a.getHitpoints() > 0 && a.getFlags().has("alp") && a.getAIAgent().getBehavior(this.Const.AI.Behavior.ID.AlpTeleport) != null)
 			{
