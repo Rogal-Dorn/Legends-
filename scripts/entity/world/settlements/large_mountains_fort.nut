@@ -96,7 +96,7 @@ this.large_mountains_fort <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"vagabond_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",

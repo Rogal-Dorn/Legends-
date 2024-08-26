@@ -71,7 +71,7 @@ this.medium_steppe_fort <- this.inherit("scripts/entity/world/settlement", {
 			"refugee_background",
 			"vagabond_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"raider_background",

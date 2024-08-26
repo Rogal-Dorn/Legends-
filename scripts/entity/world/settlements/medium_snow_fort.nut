@@ -57,9 +57,9 @@ this.medium_snow_fort <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"wildman_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"deserter_background",
-			"female_disowned_noble_background",
+			// "female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
 		];

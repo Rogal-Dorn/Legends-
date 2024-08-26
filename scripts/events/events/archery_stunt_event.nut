@@ -317,7 +317,7 @@ this.archery_stunt_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if ((bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.bowyer" || bro.getBackground().getID() == "background.female_adventurous_noble") && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
+			if ((bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.poacher" || bro.getBackground().getID() == "background.sellsword" || bro.getBackground().getID() == "background.bowyer" || (bro.getBackground().getID() == "background.adventurous_noble" && bro.getGender() == 1) && !bro.getSkills().hasSkillOfType(this.Const.SkillType.TemporaryInjury))
 			{
 				archer_candidates.push(bro);
 			}

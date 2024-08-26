@@ -54,10 +54,10 @@ this.safe_roads_situation <- this.inherit("scripts/entity/world/settlements/situ
 		_draftList.push("adventurous_noble_background");
 		_draftList.push("legend_donkey_background");
 
-		if (_gender)
-		{
-			_draftList.push("female_adventurous_noble_background");
-		}
+		// if (_gender)
+		// {
+		// 	_draftList.push("female_adventurous_noble_background");
+		// }
 		
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
 		{

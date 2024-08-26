@@ -277,7 +277,7 @@ this.traveling_troupe_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_entertainer.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_disowned_noble" || bro.getBackground().getID() == "background.female_adventurous_noble" || bro.getBackground().getID() == "background.regent_in_absentia")
+			else if (bro.getBackground().getID() == "background.adventurous_noble" || bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.regent_in_absentia")
 			{
 				candidates_noble.push(bro);
 			}

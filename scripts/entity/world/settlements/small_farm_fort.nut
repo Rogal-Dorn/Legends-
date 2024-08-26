@@ -53,7 +53,7 @@ this.small_farm_fort <- this.inherit("scripts/entity/world/settlement", {
 			"messenger_background",
 			"militia_background",
 			"militia_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"deserter_background",

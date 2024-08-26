@@ -52,8 +52,8 @@ this.medium_forest_fort <- this.inherit("scripts/entity/world/settlement", {
 			"witchhunter_background",
 			"bastard_background",
 			"deserter_background",
-			"female_disowned_noble_background",
-			"female_disowned_noble_background",
+			// "female_disowned_noble_background",
+			// "female_disowned_noble_background",
 			"retired_soldier_background",
 			"squire_background"
 		];

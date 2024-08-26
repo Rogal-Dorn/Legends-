@@ -70,13 +70,13 @@ this.archery_contest_situation <- this.inherit("scripts/entity/world/settlements
 		_draftList.push("sellsword_background");
 		_draftList.push("sellsword_background");
 
-		if (_gender)
-		{
-		_draftList.push("female_adventurous_noble_background");
-		_draftList.push("female_adventurous_noble_background");
-		_draftList.push("female_disowned_noble_background");
+		// if (_gender)
+		// {
+		// 	_draftList.push("female_adventurous_noble_background");
+		// 	_draftList.push("female_adventurous_noble_background");
+		// 	_draftList.push("female_disowned_noble_background");
 
-		}
+		// }
 
 		_draftList.push("legend_master_archer_background");
 		_draftList.push("legend_master_archer_background");

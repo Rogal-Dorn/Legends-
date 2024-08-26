@@ -243,17 +243,18 @@ this.legends_coast_fort <- this.inherit("scripts/entity/world/settlements/legend
 		]];
 
 		this.m.FemaleDraftLists = [
-			[
-			"female_adventurous_noble_background",
-			],
-			[
-			"female_adventurous_noble_background",
-			"female_adventurous_noble_background",
-			],
-			[
-			"female_adventurous_noble_background",
-			"female_adventurous_noble_background",
-		]];
+			// [
+			// "female_adventurous_noble_background",
+			// ],
+			// [
+			// "female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
+			// ],
+			// [
+			// "female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
+		// ]
+		];
 		this.m.StablesLists = [[
 			"legend_donkey_background",
 			"legend_horse_rouncey"

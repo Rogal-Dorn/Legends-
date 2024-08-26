@@ -63,7 +63,7 @@ this.large_farming_village <- this.inherit("scripts/entity/world/settlement", {
 			"shepherd_background",
 			"tailor_background",
 			"vagabond_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"hedge_knight_background",
 			"raider_background",

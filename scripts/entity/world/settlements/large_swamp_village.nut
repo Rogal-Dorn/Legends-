@@ -72,7 +72,7 @@ this.large_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"witchhunter_background",
 			"adventurous_noble_background",
 			"bastard_background",
-			"female_disowned_noble_background",
+			// "female_disowned_noble_background",
 			"hedge_knight_background",
 			"retired_soldier_background",
 			"sellsword_background",
