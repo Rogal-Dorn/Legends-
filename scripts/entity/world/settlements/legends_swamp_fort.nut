@@ -219,13 +219,13 @@ this.legends_swamp_fort <- this.inherit("scripts/entity/world/settlements/legend
 			"retired_soldier_background"
 		]];
 		this.m.FemaleDraftLists = [[
-			"wildwoman_background",
-		],[
-			"wildwoman_background",
+		// 	"wildwoman_background",
+		// ],[
+		// 	"wildwoman_background",
 			"female_adventurous_noble_background",
 			"female_disowned_noble_background"
 		],[
-			"wildwoman_background",
+			// "wildwoman_background",
 			"female_adventurous_noble_background",
 			"female_disowned_noble_background"
 		]];
