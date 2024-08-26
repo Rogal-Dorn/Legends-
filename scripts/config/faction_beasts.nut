@@ -510,7 +510,7 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
 	XP = 700,
 	ActionPoints = 12,
-	Hitpoints = 350,
+	Hitpoints = 400,
 	Bravery = 250,
 	Stamina = 150,
 	MeleeSkill = 75,
