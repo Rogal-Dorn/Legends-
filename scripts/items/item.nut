@@ -236,7 +236,7 @@ this.item <- {
 		return this.m.IsUsable;
 	}
 
-	function setToBeRepaired( _r, _idx )
+	function setToBeRepaired( _r, _idx = 0 )
 	{
 		if (_r && this.getRepair() == this.getRepairMax())
 		{
