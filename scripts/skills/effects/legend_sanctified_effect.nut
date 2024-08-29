@@ -56,7 +56,8 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 	function onNewRound()
 	{
 		local actor = this.getContainer().getActor();
-		if(!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap()){
+		if (!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap())
+		{
 			if (!this.isActorOnTileWithHolyFlame() && this.m.TurnsLeft <= 0)
 			{
 				this.removeSelf();
@@ -72,7 +73,13 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local actor = this.getContainer().getActor();
-		if(!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap()){
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+		{
+			this.removeSelf();
+			return;
+		}
+		if (!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap())
+		{
 			if (!this.isActorOnTileWithHolyFlame() && this.m.TurnsLeft <= 0)
 			{
 				this.removeSelf();
