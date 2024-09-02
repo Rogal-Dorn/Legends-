@@ -1189,13 +1189,17 @@ gt.Const.World.Spawn.BasiliskLOW <-
 			Weight = 100,
 			Types = [
 				{
-					Type = this.Const.World.Spawn.Troops.LegendBasiliskDrone,
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskDroneLow,
 					Cost = 28
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskDrone,
+					Cost = 40
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendBasiliskSentry,
 					MinR = 200,
-					Cost = 42
+					Cost = 50
 				}
 			]
 		}

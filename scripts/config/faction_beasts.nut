@@ -643,6 +643,25 @@ gt.Const.Tactical.Actor.LegendHorse <- {
 		0
 	]
 }; 
+gt.Const.Tactical.Actor.LegendBasiliskDroneLow <- {
+	XP = 220,
+	ActionPoints = 10,
+	Hitpoints = 175,
+	Bravery = 70,
+	Stamina = 160,
+	MeleeSkill = 55,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		110,
+		50
+	]
+};
 gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
 	XP = 320,
 	ActionPoints = 10,
