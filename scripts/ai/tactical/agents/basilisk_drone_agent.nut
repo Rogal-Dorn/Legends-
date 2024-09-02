@@ -15,7 +15,7 @@ this.basilisk_drone_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.m.Properties.TargetPriorityArmorMult = 0.75;
 		this.m.Properties.OverallDefensivenessMult = 2.0;
 		this.m.Properties.OverallFormationMult = 0.1;
-		this.m.Properties.EngageFlankingMult = 5.0;
+		this.m.Properties.EngageFlankingMult = 3.0;
 		this.m.Properties.EngageTargetMultipleOpponentsMult = 1.0;
 		this.m.Properties.EngageTargetAlreadyBeingEngagedMult = 1.0;
 		this.m.Properties.EngageTargetArmedWithRangedWeaponMult = 2.5;
