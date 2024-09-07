@@ -13,10 +13,10 @@ if (!("Actor" in gt.Const.Tactical))
 gt.Const.Tactical.Actor.BarbarianThrall <- {
 	XP = 175,
 	ActionPoints = 9,
-	Hitpoints = 70,
+	Hitpoints = 60,
 	Bravery = 70,
 	Stamina = 120,
-	MeleeSkill = 55,
+	MeleeSkill = 53,
 	RangedSkill = 50,
 	MeleeDefense = 0,
 	RangedDefense = 0,
@@ -29,13 +29,13 @@ gt.Const.Tactical.Actor.BarbarianThrall <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.BarbarianMarauder <- {
+gt.Const.Tactical.Actor.BarbarianMarauder <- { //known as 'Barbarian Reaver'
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 120,
+	Hitpoints = 95,
 	Bravery = 80,
 	Stamina = 130,
-	MeleeSkill = 65,
+	MeleeSkill = 60,
 	RangedSkill = 60,
 	MeleeDefense = 10,
 	RangedDefense = 10,
@@ -108,8 +108,8 @@ gt.Const.Tactical.Actor.BarbarianMadman <- {
 gt.Const.Tactical.Actor.BarbarianDrummer <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 90,
-	Bravery = 80,
+	Hitpoints = 75,
+	Bravery = 60,
 	Stamina = 150,
 	MeleeSkill = 65,
 	RangedSkill = 40,
@@ -127,7 +127,7 @@ gt.Const.Tactical.Actor.BarbarianDrummer <- {
 gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 70,
+	Hitpoints = 65,
 	Bravery = 90,
 	Stamina = 120,
 	MeleeSkill = 65,
