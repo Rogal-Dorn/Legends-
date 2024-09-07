@@ -16,7 +16,7 @@ gt.Const.Tactical.Actor.Footman <- {
 	Hitpoints = 70,
 	Bravery = 60,
 	Stamina = 120,
-	MeleeSkill = 70,
+	MeleeSkill = 60,
 	RangedSkill = 50,
 	MeleeDefense = 10,
 	RangedDefense = 5,
@@ -33,10 +33,10 @@ gt.Const.Tactical.Actor.Footman <- {
 gt.Const.Tactical.Actor.Billman <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 70,
+	Hitpoints = 65,
 	Bravery = 60,
 	Stamina = 120,
-	MeleeSkill = 70,
+	MeleeSkill = 75,
 	RangedSkill = 50,
 	MeleeDefense = 10,
 	RangedDefense = 5,
@@ -72,7 +72,7 @@ gt.Const.Tactical.Actor.Sergeant <- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 100,
-	Bravery = 80,
+	Bravery = 95,
 	Stamina = 130,
 	MeleeSkill = 80,
 	RangedSkill = 60,
@@ -211,14 +211,14 @@ gt.Const.Tactical.Actor.LegendFencer <- {
 	RangedSkill = 40,
 	MeleeDefense = 50,
 	RangedDefense = 40,
-	Initiative = 150,
+	Initiative = 130,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [
 		0,
 		0
 	],
-	FatigueRecoveryRate = 30
+	FatigueRecoveryRate = 35
 };
 gt.Const.Tactical.Actor.LegendCatapult <- {
 	XP = 600,
@@ -243,9 +243,9 @@ gt.Const.Tactical.Actor.LegendNobleGuard<- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 175,
-	Bravery = 80,
+	Bravery = 125,
 	Stamina = 135,
-	MeleeSkill = 80,
+	MeleeSkill = 60,
 	RangedSkill = 50,
 	MeleeDefense = 40,
 	RangedDefense = 25,
