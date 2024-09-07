@@ -12,7 +12,7 @@ if (!("Actor" in gt.Const.Tactical))
 
 gt.Const.Tactical.Actor.OrcYoung <- {
 	XP = 250,
-	ActionPoints = 9,
+	ActionPoints = 8,
 	Hitpoints = 125,
 	Bravery = 65,
 	Stamina = 150,
@@ -28,7 +28,7 @@ gt.Const.Tactical.Actor.OrcYoung <- {
 		0
 	],
 	FatigueRecoveryRate = 25,
-	DamageTotalMult = 1.15
+	DamageTotalMult = 1.00
 };
 gt.Const.Tactical.Actor.OrcBerserker <- {
 	XP = 350,
@@ -48,7 +48,7 @@ gt.Const.Tactical.Actor.OrcBerserker <- {
 		0
 	],
 	FatigueRecoveryRate = 35,
-	DamageTotalMult = 1.2
+	DamageTotalMult = 1.1
 };
 gt.Const.Tactical.Actor.OrcWarrior <- {
 	XP = 400,
@@ -92,7 +92,7 @@ gt.Const.Tactical.Actor.LegendOrcElite <- {
 };
 gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
 	XP = 400,
-	ActionPoints = 9,
+	ActionPoints = 7,
 	Hitpoints = 800,
 	Bravery = 55,
 	Stamina = 500,
@@ -102,13 +102,13 @@ gt.Const.Tactical.Actor.LegendOrcBehemoth <- {
 	RangedDefense = 5,
 	Initiative = 60,
 	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
+	MoraleEffectMult = 1.1,
 	Armor = [
 		0,
 		0
 	],
 	FatigueRecoveryRate = 30,
-	DamageTotalMult = 1.5
+	DamageTotalMult = 1.00
 };
 gt.Const.Tactical.Actor.OrcWarlord <- {
 	XP = 600,
@@ -191,7 +191,7 @@ gt.Const.Tactical.Actor.Wolf <- {
 	XP = 100,
 	ActionPoints = 12,
 	Hitpoints = 40,
-	Bravery = 40,
+	Bravery = 20,
 	Stamina = 150,
 	MeleeSkill = 65,
 	RangedSkill = 0,
