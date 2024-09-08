@@ -27,7 +27,7 @@ gt.Const.Tactical.Actor.BarbarianThrall <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BarbarianMarauder <- { //known as 'Barbarian Reaver'
 	XP = 250,
@@ -46,7 +46,7 @@ gt.Const.Tactical.Actor.BarbarianMarauder <- { //known as 'Barbarian Reaver'
 		0,
 		0
 	],
-	FatigueRecoveryRate = 20
+	FatigueRecoveryRate = 25
 };
 gt.Const.Tactical.Actor.BarbarianChampion <- {
 	XP = 350,
@@ -65,7 +65,7 @@ gt.Const.Tactical.Actor.BarbarianChampion <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 20
+	FatigueRecoveryRate = 25
 };
 gt.Const.Tactical.Actor.BarbarianChosen <- {
 	XP = 500,
@@ -84,7 +84,7 @@ gt.Const.Tactical.Actor.BarbarianChosen <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.BarbarianMadman <- {
 	XP = 500,
@@ -103,7 +103,7 @@ gt.Const.Tactical.Actor.BarbarianMadman <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.BarbarianDrummer <- {
 	XP = 250,
@@ -122,7 +122,7 @@ gt.Const.Tactical.Actor.BarbarianDrummer <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 	XP = 250,
@@ -141,6 +141,6 @@ gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
 
