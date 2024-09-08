@@ -1096,35 +1096,35 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			a = {
 				Hitpoints = [
 					65,
-					75
+					65
 				],
 				Bravery = [
-					30,
-					40
+					100,
+					100
 				],
 				Stamina = [
-					90,
+					100,
 					100
 				],
 				MeleeSkill = [
-					42,
-					52
+					40,
+					40
 				],
 				RangedSkill = [
-					27,
-					37
+					20,
+					20
 				],
 				MeleeDefense = [
-					0,
-					0
+					-5,
+					-5
 				],
 				RangedDefense = [
-					0,
-					0
+					-6,
+					-6
 				],
 				Initiative = [
-					85,
-					95
+					65,
+					65
 				]
 			};
 		}
@@ -1132,40 +1132,40 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 		{
 			a = {
 				Hitpoints = [
-					50,
-					60
-				],
-				Bravery = [
-					30,
+					40,
 					40
 				],
+				Bravery = [
+					100,
+					100
+				],
 				Stamina = [
-					90,
+					100,
 					100
 				],
 				MeleeSkill = [
-					42,
-					52
+					50,
+					50
 				],
 				RangedSkill = [
-					27,
-					37
+					40,
+					40
 				],
 				MeleeDefense = [
-					0,
-					5
+					3,
+					3
 				],
 				RangedDefense = [
-					0,
+					5,
 					5
 				],
 				Initiative = [
-					90,
-					100
+					95,
+					95
 				]
 			};
 		}
-		else
+		else //human bro
 		{
 			a = {
 				Hitpoints = [
