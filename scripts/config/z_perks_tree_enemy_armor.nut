@@ -18,28 +18,28 @@ gt.Const.Perks.ForcefulTree <- {
 			0
 		],
 		Stamina = [
-			1,
-			4
+			0,
+			0
 		],
 		MeleeSkill = [
-			1,
-			5
+			0,
+			0
 		],
 		RangedSkill = [
 			0,
 			0
 		],
 		MeleeDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		RangedDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		Initiative = [
-			-5,
-			-1
+			0,
+			0
 		]
 	},
 	Tree = [
