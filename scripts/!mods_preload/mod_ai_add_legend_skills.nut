@@ -361,6 +361,9 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 
 	::mods_hookExactClass("ai/tactical/behaviors/ai_defend_rotation", function(o)
 	{
+		if (::Legends.Mod.ModSettings.getSetting("DisableAiRotation").getValue())
+			o.m.PossibleSkills = [];
+
 		o.onEvaluate = function( _entity )
 		{
 			// Function is a generator.
