@@ -1,6 +1,6 @@
 this.perk_trophy_hunter <- this.inherit("scripts/skills/skill", {
 	m = {
-		factionKills <- {
+		factionKills = {
 			Bandits = 0,
 			Beasts = 0,
 			Civilization = 0,
@@ -73,7 +73,7 @@ this.perk_trophy_hunter <- this.inherit("scripts/skills/skill", {
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + this.m.factionKills.Civilization + "%[/color] Damage from Human trophies collected"
 			}
 		];
-		foreach
+		return ret;
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
