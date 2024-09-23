@@ -297,7 +297,6 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			switch (bro.getBackground().getID())
 			{
 				case "background.legend_vala":
-				case "background.legend_vala_commander":
 				case "background.legend_herbalist":
 				case "background.legend_alchemist":
 				case "background.legend_druid":
