@@ -48,14 +48,15 @@ this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
-		local item = this.getContainer().getActor().getMainhandItem();
+		local actor = this.getContainer().getActor();
+		local item = actor.getMainhandItem();
 
 		if (item == null) return;
 
 		local effect = new("scripts/skills/effects/spider_poison_effect");
-		if (this.getContainer().getActor().getFaction() == this.Const.Faction.Player )
+		if (actor.getFaction() == this.Const.Faction.Player )
 		{
-			effect.setActor(this.getContainer().getActor());
+			effect.setActor(actor);
 		}
 		if (item.isWeaponType(this.Const.Items.WeaponType.Dagger) && _damageInflictedHitpoints > 0)
 		{

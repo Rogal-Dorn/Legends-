@@ -152,10 +152,13 @@ this.legend_redback_puncture <- this.inherit("scripts/skills/skill", {
 		this.spawnIcon("status_effect_54", _targetEntity.getTile());
 		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_redback_spider_poison");
 		local effect = this.new("scripts/skills/effects/legend_redback_spider_poison_effect");
-		if (_user.getFaction() == this.Const.Faction.Player )
+		local actor = this.getContainer().getActor();
+		if (actor.getFaction() == this.Const.Faction.Player )
 		{
-			effect.setActor(this.getContainer().getActor());
+			effect.setActor(actor);
+			poison.setActor(actor);
 		}
+
 		if (poison == null)
 		{
 			_targetEntity.getSkills().add(effect);
