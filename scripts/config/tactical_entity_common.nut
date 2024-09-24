@@ -309,7 +309,7 @@ gt.Const.Tactical.Common <- {
 		this.onApplyFirefield(_tile, _entity);
 	}
 
-	function onApplyHolyFlame( _tile, _entity )
+	function onApplyHolyFlame( _tile, _entity, _killer = null)
 	{
 		local sounds = [
 			"sounds/combat/fire_01.wav",
@@ -333,6 +333,11 @@ gt.Const.Tactical.Common <- {
 		{
 			if (!_entity.getSkills().hasSkill("effects.legend_consecrated_effect"))
 			{
+				local effect = this.new("scripts/skills/effects/legend_consecrated_effect");
+				if (_killer != null && _killer.getFaction() == this.Const.Faction.Player)
+				{
+					effect.setActor(_killer);
+				}
 				_entity.getSkills().add(this.new("scripts/skills/effects/legend_consecrated_effect"));
 			}
 			return;
