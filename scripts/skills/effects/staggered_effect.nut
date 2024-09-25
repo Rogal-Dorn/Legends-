@@ -47,6 +47,11 @@ this.staggered_effect <- this.inherit("scripts/skills/skill", {
 		local actor = this.getContainer().getActor();
 		local statusResisted = actor.getCurrentProperties().IsResistantToAnyStatuses ? this.Math.rand(1, 100) <= 50 : false;
 		statusResisted = statusResisted || actor.getCurrentProperties().IsResistantToPhysicalStatuses ? this.Math.rand(1, 100) <= 33 : false;
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+		{
+			this.removeSelf();
+			return;
+		}
 
 		if (statusResisted)
 		{
