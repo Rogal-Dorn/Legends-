@@ -284,6 +284,17 @@ this.legend_choke <- this.inherit("scripts/skills/skill", {
 			_properties.DamageRegularMult *= 1.5
 		}
 		_properties.HitChance[this.Const.BodyPart.Head] += 90.0; // copied what was used in lash for flails.
+
+		local items = actor.getAllItems();
+		local hasCestus = false;
+		if (_skill != this)
+			return;
+		foreach (item in items)
+		{
+			if (item.getID() == "accessory.legend_cestus" || item.getID() == "accessory.legend_hand_wraps")
+				_properties.DamageTotalMult *= 1.1;
+				return;
+		}
 	}
 
 
