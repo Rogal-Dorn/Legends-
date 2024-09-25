@@ -191,6 +191,9 @@ this.legend_inventor_prosthetic_eye <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		this.m.Score = 0;
+		return;
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local noeye_candidates = [];
