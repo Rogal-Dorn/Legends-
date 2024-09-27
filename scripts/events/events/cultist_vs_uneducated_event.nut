@@ -72,7 +72,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				
 				
 				
-				_event.m.Uneducated.getBaseProperties().DailyWage -= _event.m.Uneducated.getDailyCost() / 2;
+				// _event.m.Uneducated.getBaseProperties().DailyWage -= this.Math.floor(_event.m.Uneducated.getDailyCost() / 2);
 				_event.m.Uneducated.getSkills().update();
 
 
