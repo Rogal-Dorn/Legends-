@@ -664,10 +664,6 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 				"scripts/skills/traits/fearless_trait"
 			],
 			[
-				"trait.bright",
-				"scripts/skills/traits/bright_trait"
-			],
-			[
 				"trait.determined",
 				"scripts/skills/traits/determined_trait"
 			],
