@@ -310,19 +310,6 @@ this.skill_container <- {
 		return ret;
 	}
 
-	function getSkillByID( _id )
-	{
-		foreach( i, skill in this.m.Skills )
-		{
-			if (!skill.isGarbage() && skill.getID() == _id)
-			{
-				return skill;
-			}
-		}
-
-		return null;
-	}
-
 	function getAllSkillsOfType( _filter )
 	{
 		local ret = [];
@@ -333,38 +320,6 @@ this.skill_container <- {
 			{
 				ret.push(skill);
 			}
-		}
-
-		return ret;
-	}
-
-	function getSkillsSortedByItems( _filter, _notFilter = 0 )
-	{
-		local ret = [];
-
-		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
-		{
-			ret.push([]);
-		}
-
-		foreach( skill in this.m.Skills )
-		{
-			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
-			{
-				if (skill.getItem() != null)
-				{
-					ret[skill.getItem().getCurrentSlotType()].push(skill);
-				}
-				else
-				{
-					ret[this.Const.ItemSlot.Free].push(skill);
-				}
-			}
-		}
-
-		if (ret[this.Const.ItemSlot.Free].len() > 1)
-		{
-			ret[this.Const.ItemSlot.Free].sort(this.compareSkillsByOrder);
 		}
 
 		return ret;
@@ -435,6 +390,51 @@ this.skill_container <- {
 		}
 
 		return false;
+	}
+
+	function getSkillByID( _id )
+	{
+		foreach( i, skill in this.m.Skills )
+		{
+			if (!skill.isGarbage() && skill.getID() == _id)
+			{
+				return skill;
+			}
+		}
+
+		return null;
+	}
+
+	function getSkillsSortedByItems( _filter, _notFilter = 0 )
+	{
+		local ret = [];
+
+		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
+		{
+			ret.push([]);
+		}
+
+		foreach( skill in this.m.Skills )
+		{
+			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
+			{
+				if (skill.getItem() != null)
+				{
+					ret[skill.getItem().getCurrentSlotType()].push(skill);
+				}
+				else
+				{
+					ret[this.Const.ItemSlot.Free].push(skill);
+				}
+			}
+		}
+
+		if (ret[this.Const.ItemSlot.Free].len() > 1)
+		{
+			ret[this.Const.ItemSlot.Free].sort(this.compareSkillsByOrder);
+		}
+
+		return ret;
 	}
 
 	function update()
