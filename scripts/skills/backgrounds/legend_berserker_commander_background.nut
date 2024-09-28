@@ -180,7 +180,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendTumble,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				// this.Const.Perks.PerkDefs.Stalwart,
+				this.Const.Perks.PerkDefs.LegendUnarmedTraining,
 				this.Const.Perks.PerkDefs.LegendBloodbath,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 			]
@@ -330,6 +330,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 
 		if (r == 0)
 		{
+			items.equip(this.new("scripts/items/accessory/legend_hand_wraps_item"));
 		}
 		else if (r == 1)
 		{
