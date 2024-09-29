@@ -5,7 +5,7 @@ this.negotiator_follower <- this.inherit("scripts/retinue/follower", {
 		this.follower.create();
 		this.m.ID = "follower.negotiator";
 		this.m.Name = "Meeting Point";
-		this.m.Description = "Having a dedicated meeting place where negotiators can talk, barter and trade insults with prominant figures or their lackeys can help in finding work.";
+		this.m.Description = "Having a dedicated meeting place where negotiators can talk, barter and trade insults with prominent figures or their lackeys can help in finding work.";
 		this.m.Image = "ui/campfire/legend_negotiator_01";
 		this.m.Cost = 3500;
 		this.m.Effects = [

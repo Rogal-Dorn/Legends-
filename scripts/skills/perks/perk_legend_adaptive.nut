@@ -66,6 +66,7 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 	{
 		local item, itemtype, newTree; // newTree may be a single Tree or an array of Trees
 		local actor = this.getContainer().getActor();
+		
 
 		// First, try to give a new Tree based on the equipped mainhand item
 		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null) 
@@ -91,8 +92,11 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.FistsClassTree);
 			if (newTree != null && newTree.len()>0) return newTree;
 		}
-		
-		// If none of the equipped items (or unarmed) granted any Trees, then consider the following Trees
+
+		newTree = getArmorPerkTree();
+		if (newTree != null && newTree.len()>0) return newTree;
+
+		// If none of the equipped items (or unarmed or armors) granted any Trees, then consider the following Trees
 		if (newTree == null || newTree.len()<1)
 		{
 			newTree = [
@@ -101,7 +105,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.DeviousTree,
-				this.Const.Perks.InspirationalTree,
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.CalmTree,
 				this.Const.Perks.FastTree,
@@ -204,6 +207,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			case "weapon.fire_bomb":
 				return this.Const.Perks.RepairClassTree;
 
+			//Net
+			case "tool.throwing_net":
+				return this.Const.Perks.BeastClassTree;        
+        
 			//Healer
 			case "weapon.acid_flask":
 				return this.Const.Perks.HealerClassTree;
@@ -249,9 +256,10 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 				case _item.getID() == "weapon.knife" || _item.getID() == "weapon.legend_shiv":
 					return this.Const.Perks.KnifeClassTree;
 
-			//Scythe
-				case _item.getID() == "weapon.legend_grisly_scythe" || _item.getID() == "weapon.legend_scythe" || _item.getID() == "weapon.warscythe" || _item.getID() == "weapon.named_warscythe":
-					return this.Const.Perks.ScytheClassTree;
+			//Banner
+				case _item.getID() == "weapon.player_banner":
+					return this.Const.Perks.InspirationalTree;
+
 
 			//Pitchfork
 				case _item.isItemType(this.Const.Items.ItemType.Pitchfork):
@@ -264,10 +272,6 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 			//Shortbow
 				case _item.isItemType(this.Const.Items.ItemType.Shortbow):
 					return this.Const.Perks.ShortbowClassTree;
-
-			//Net
-				case _item.isItemType(this.Const.Items.ItemType.Net):
-					return this.Const.Perks.BeastClassTree;
 
 			//Militia
 				case _item.getID() == "weapon.militia_spear" || _item.getID() == "weapon.legend_wooden_spear" || _item.getID() == "weapon.ancient_spear":
@@ -307,5 +311,56 @@ this.perk_legend_adaptive <- this.inherit("scripts/skills/skill", {
 		return null;
 	}
 
-});
+	function getArmorPerkTree()
+	{
+		local armor_weight = 0
+		local newTree;
+		local actor = this.getContainer().getActor();
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head) != null)
+		{
+			armor_weight += actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head).getStaminaModifier()
+		}
 
+		if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body) != null)
+		{
+			armor_weight += actor.getItems().getItemAtSlot(this.Const.ItemSlot.Body).getStaminaModifier()
+		}
+
+		if (armor_weight == 0)
+		{
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.ClothArmorTree);
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+
+		if (armor_weight >= -15 && armor_weight <= -1)
+		{	
+			// Attempt to give light armor tree if in range or naked
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.LightArmorTree);
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+
+		if (armor_weight >= -35 && armor_weight < -15)
+		{	
+			// Attempt to give medium armor tree
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.MediumArmorTree);
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+
+		if (armor_weight < -35)
+		{	
+			// Attempt to give heavy armor tree
+			newTree = this.getOnlyNonExistingTrees(this.Const.Perks.HeavyArmorTree);
+			if (newTree != null && newTree.len()>0) return newTree;
+		}
+	}
+
+	function onUpdateLevel()
+	{
+		local actor = this.getContainer().getActor();
+		if (actor.m.Level == 15)
+		{
+			actor.m.PerkPoints += 1;
+		}
+	}
+
+});

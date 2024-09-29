@@ -9,26 +9,19 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 
 	function getTooltip()
 	{
-		if (!this.isHidden())
-		{
-			return [
-				{
-					id = 1,
-					type = "title",
-					text = this.getName()
-				},
-				{
-					id = 10,
-					type = "text",
-					icon = "ui/icons/special.png",
-					text = "Unable to enforce Zones of Control."
-				}
-			];
-		}
-		else
-		{
-			return;
-		}
+		return [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Unable to enforce Zones of Control."
+			}
+		];
 	}
 
 	function updateEffect(_v)
@@ -51,7 +44,6 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 		}
 	}
 
-
 	function onMovementCompleted( _tile )
 	{
 		if (!this.checkEntities())
@@ -73,6 +65,7 @@ this.legend_vala_chant_disharmony_effect <- this.inherit("scripts/skills/effects
 	function onRemoved()
 	{
 		this.getContainer().getActor().m.IsUsingZoneOfControl = true;
+		this.getContainer().getActor().onSkillsUpdated();
 	}
 
 	function onDeath( _fatalityType )

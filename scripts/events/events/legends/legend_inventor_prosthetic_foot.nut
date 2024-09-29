@@ -114,6 +114,9 @@ this.legend_inventor_prosthetic_foot <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		this.m.Score = 0;
+		return;
+
 		local brothers = this.World.getPlayerRoster().getAll();
 		local inventor_candidates = [];
 		local nofoot_candidates = [];

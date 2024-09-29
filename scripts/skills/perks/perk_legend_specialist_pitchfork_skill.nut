@@ -30,5 +30,4 @@ this.perk_legend_specialist_pitchfork_skill <- this.inherit("scripts/skills/skil
 			}
 		}
 	}
-
 });

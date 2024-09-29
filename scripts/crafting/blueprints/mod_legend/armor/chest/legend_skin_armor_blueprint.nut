@@ -10,19 +10,17 @@ this.legend_skin_armor_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_skin_ghoul_skin_item",
-				Num = 6
+				Num = 5
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_fabric",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_tools",
+				Num = 1
 			}
 		];
-		ingredients.push({
-			Script = "scripts/items/legend_armor/cloth/legend_padded_surcoat",
-			Num = 1,
-			LegendsArmor = true
-		})
-		ingredients.push({
-			Script = "scripts/items/legend_armor/chain/legend_armor_hauberk",
-			Num = 1,
-			LegendsArmor = true
-		})
 
 	    this.init(ingredients); // uncommented this line to fix it showing up in taxidermist with no ingredients needed. Abyss 3/17/23
 		// local skills = [

@@ -57,41 +57,48 @@ this.legend_prepare_knockback_skill <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "The next attack will push the enemy back and baffle them if it connects"
+				text = "The next attack will push the enemy back and baffle them if it connects, otherwise the effect is wasted."
 			}
 		];
-
-
 		return ret;
 	}
 
 	function isUsable()
 	{
-		local poison = this.getContainer().getSkillByID("effects.legend_knockback_prepared"); 
-
-		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && poison == null;
+		local canUse = this.getContainer().getSkillByID("effects.legend_knockback_prepared");
+		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()) && canUse == null;
 	}
 
 	function onUse( _user, _targetTile )
 	{
-		local poison = _user.getSkills().getSkillByID("effects.legend_knockback_prepared");
+		local buff = _user.getSkills().getSkillByID("effects.legend_knockback_prepared");
 
-		if (poison != null)
-		{
-			poison.resetTime();
-		}
+		if (buff != null)
+			buff.resetTime();
 		else
-		{
 			this.m.Container.add(this.new("scripts/skills/effects/legend_knockback_prepared_effect"));
-		}
 
 		if (this.m.Item != null && !this.m.Item.isNull())
-		{
 			this.m.Item.removeSelf();
-		}
- 	 	
+
 		return true;
 	}
 
-});
+	function onUpdate( _properties ){
 
+		local actor = this.getContainer().getActor();
+		
+		if(actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) == null){
+			return;
+		}
+		
+		if(actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.TwoHanded)){
+			this.m.ActionPointCost = 1;
+		} 
+
+		else if (actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).isItemType(this.Const.Items.ItemType.OneHanded))
+		{
+			this.m.ActionPointCost = 2;
+		}
+	}
+});

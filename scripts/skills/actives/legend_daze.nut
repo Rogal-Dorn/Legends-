@@ -61,44 +61,55 @@ this.legend_daze <- this.inherit("scripts/skills/skill", {
 		return ret;
 	}
 
+	function getHitchance( _targetEntity )
+	{
+		if (!_targetEntity.isAttackable())
+			return 0;
+		
+		local chance = getContainer().getActor().getCurrentProperties().getRangedSkill() - _targetEntity.getCurrentProperties().getRangedDefense();
+
+		if (getContainer().hasSkill("perk.taunt"));
+			chance *= 2;
+		
+		return ::Math.max(0, ::Math.min(100, chance));
+	}
+
 	function onUse( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();
-		local target = _targetTile.getEntity();
 		local r = this.Math.rand(1,100);
-		if (_user.getSkills().hasSkill("perk.taunt"));
-		{
-		 r = this.Math.rand(1,50);
-		}
-		local ourSkill = _user.getCurrentProperties().getRangedSkill();
-		local theirSkill = targetEntity.getCurrentProperties().getRangedDefense();
 
-		if (r < (ourSkill - theirSkill))
+		if (r < this.getHitchance(targetEntity))
 		{
 			if (!targetEntity.getCurrentProperties().IsImmuneToStun)
 			{
 				this.spawnAttackEffect(_targetTile, this.Const.Tactical.AttackEffectBash);
 
-				if (target.isAlive())
+				if (targetEntity.isAlive())
 				{
-					target.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
+					targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_dazed_effect"));
 
 					if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 					{
-						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " dazed " + this.Const.UI.getColorizedEntityName(target) + " leaving them dazed");
+						this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " dazed " + this.Const.UI.getColorizedEntityName(targetEntity) + " leaving them dazed");
 					}
 				}
+
+				return true;
 			}
 			else
 			{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze an immune " + this.Const.UI.getColorizedEntityName(target));
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze an immune " + this.Const.UI.getColorizedEntityName(targetEntity));
+				return false;
 			}
 		}
 		else
 		{
-		this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze " + this.Const.UI.getColorizedEntityName(target));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze " + this.Const.UI.getColorizedEntityName(target));
+			return false;
 		}
 
+		return false;
 	}
 
 });

@@ -144,6 +144,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[1, "tattered_sackcloth"],
 			[1, "leather_wraps"]
 		]));
+		items.equip(this.new("scripts/items/accessory/legend_hand_wraps_item"))
 	}
 
 });

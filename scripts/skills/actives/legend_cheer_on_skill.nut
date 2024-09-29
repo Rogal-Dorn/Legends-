@@ -19,6 +19,7 @@ this.legend_cheer_on_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 30;

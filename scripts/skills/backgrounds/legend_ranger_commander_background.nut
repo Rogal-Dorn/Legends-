@@ -77,7 +77,6 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 		];
 		this.m.CustomPerkTree = [
 			[
-				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendSummonHound,
 				this.Const.Perks.PerkDefs.LegendSpecialistShortbowSkill,
 				this.Const.Perks.PerkDefs.CripplingStrikes,
@@ -114,7 +113,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.DoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
-				this.Const.Perks.PerkDefs.LegendOnslaught
+				this.Const.Perks.PerkDefs.Relentless
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecCrossbow,
@@ -156,6 +155,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyArcher
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,

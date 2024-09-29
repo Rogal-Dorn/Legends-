@@ -86,7 +86,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Lookout,
 				this.Const.Perks.PerkDefs.LegendSummonHound,
-				this.Const.Perks.PerkDefs.LegendMarkTarget,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert
 			],
@@ -101,7 +100,6 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendAthlete,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyDirewolf,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySpider,
-				this.Const.Perks.PerkDefs.LegendOnslaught
 			],
 			[
 				this.Const.Perks.PerkDefs.Backstabber,
@@ -153,7 +151,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat
-
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyArcher
 			],
 			[
 				this.Const.Perks.PerkDefs.KillingFrenzy,

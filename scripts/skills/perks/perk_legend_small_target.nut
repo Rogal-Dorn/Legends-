@@ -1,6 +1,8 @@
 this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	m = {
-		BonusMin = 0
+		BonusMin = 0,
+		BonusUnburdenedMin = 30,
+		bonusPercentage = 1.0
 	},
 	function create()
 	{
@@ -46,6 +48,27 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Ranged Defense"
 			});
 		}
+		else
+		{
+			tooltip.push({
+				id = 6,
+				type = "text",
+				icon = "ui/tooltips/warning.png",
+				text = "This character has too much Hitpoints or Armor to make use of this perk"
+			});
+			return tooltip;
+		}
+
+		local sourceEffect = this.getContainer().getSkillByID("effects.legend_blend_in");
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin && sourceEffect != null && sourceEffect.m.MeekStacks > 0)
+		{
+			tooltip.push({
+				id = 6,
+				type = "hint",
+				icon = "ui/icons/special.png",
+				text = "Increases the character\'s action points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color]."
+			});
+		}
 
 		return tooltip;
 	}
@@ -61,15 +84,10 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 
 		local stackTotal = 0;
 		local health = 0;
-		health = actor.getBaseProperties().Hitpoints;
-		local bodyArmor = 0;
+		health = actor.getHitpointsMax();
+		local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
 		local headItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local headArmor = 0;
-		
-		if (bodyItem != null)
-		{
-			bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
-		}
 		
 		if (headItem != null)
 		{
@@ -79,54 +97,93 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local stackTotal = health + headArmor + bodyArmor;
 		
 		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
+		{
+			if (bodyItem != null)
 			{
-		
-				if (bodyItem != null)
+				foreach (upgrade in bodyItem.m.Upgrades)
 				{
-					local tabard = bodyItem .getUpgrade(this.Const.Items.ArmorUpgrades.Tabbard);
-					local cloak = bodyItem .getUpgrade(this.Const.Items.ArmorUpgrades.Cloak)
-					
-					if (tabard != null)
+					switch (true)
 					{
-					local tabardArmor = tabard.getRepair();
-					stackTotal -= tabardArmor;
-					}
-					
-					if (cloak != null)
-					{
-					local cloakArmor = cloak.getRepair();
-					stackTotal -= cloakArmor;
-					}
-				}
-
-				
-			
-				if (headItem != null)
-				{
-					local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
-					local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
-					
-					if (vanity != null)
-					{
-					local vanityArmor = vanity.getRepair();
-					stackTotal -= vanityArmor;
-					}
-					
-					if (extra  != null)
-					{
-					local extraArmor = extra.getRepair();
-					stackTotal -= extraArmor;
+						case upgrade == null:
+							continue;
+						case upgrade.isItemType(this.Const.Items.ArmorUpgrades.Tabbard):
+						case upgrade.isItemType(this.Const.Items.ArmorUpgrades.Cloak):
+						case upgrade.getID() == "legend_armor_upgrade.body.legend_armor_white_wolf_pelt":
+						case upgrade.getID() == "legend_armor_upgrade.body.legend_hyena_fur":
+						case upgrade.getID() == "legend_armor_upgrade.body.legend_direwolf_pelt":
+						case upgrade.getID() == "legend_armor_upgrade.body.legend_serpent_skin":
+						case upgrade.getID() == "legend_armor_upgrade.body.legend_unhold_fur":
+							stackTotal -= body.getRepair();
+							continue;
 					}
 				}
 			}
-		local bonus = this.Math.max(5, 100 - stackTotal); 
+
+			if (headItem != null)
+			{
+				local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
+				local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
+				
+				if (vanity != null)
+				{
+					local vanityArmor = vanity.getRepair();
+					stackTotal -= vanityArmor;
+				}
+				
+				if (extra != null)
+				{
+					local extraArmor = extra.getRepair();
+					stackTotal -= extraArmor;
+				}
+			}
+		}
+
+		if (actor.getSkills().hasSkill("perk.legend_unburdened"))
+		{
+			local bodyItem = actor.getBodyItem();
+			if (bodyItem != null && bodyItem.m.StaminaModifier == 0)
+			{
+				stackTotal -= bodyItem.m.ConditionMax;
+			}
+
+			local headItem = actor.getHeadItem();
+			if (headItem != null && headItem.m.StaminaModifier == 0)
+			{
+				stackTotal -= headItem.m.ConditionMax;
+			}
+		}
+		local bonus = this.Math.max(0, 100 - stackTotal); 
 		return this.Math.floor(bonus);
+	}
+
+	function onBeingAttacked( _attacker, _skill, _properties )
+	{
+		this.m.bonusPercentage -= 0.1;
+	}
+
+	function onCombatStarted()
+	{
+		this.m.bonusPercentage = 1.0;
+	}
+
+	function onCombatFinished()
+	{
+		this.m.bonusPercentage = 1.0;
 	}
 
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += bonus;
-		_properties.RangedDefense += bonus;
+		_properties.MeleeDefense += this.Math.floor(bonus * this.Math.min(this.m.bonusPercentage, 0));
+		_properties.RangedDefense += this.Math.floor(bonus * this.Math.min(this.m.bonusPercentage, 0));
+
+		local sourceEffect = this.getContainer().getSkillByID("effects.legend_blend_in");
+		if (sourceEffect == null)
+			return;
+
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin && sourceEffect.m.MeekStacks > 0)
+		{
+			_properties.ActionPoints += 1;
+		}
 	}
 });
