@@ -2309,7 +2309,7 @@ gt.Const.Strings.PerkName <- {
 	LegendClimb = "Climb",
 	LegendSmallTarget = "Small Target",
 	LegendFashionable = "Fashionable",
-	LegendMeek = "Meek",
+	LegendUnburdened = "Unburdened",
 	LegendHelpful = "Helpful",
 
 	//MASTERIES - skills that have a unified effect on their weapon class
