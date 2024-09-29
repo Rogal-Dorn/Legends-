@@ -26,4 +26,9 @@ this.perk_legend_mastery_poison <- this.inherit("scripts/skills/skill", {
 		this.m.Container.removeByID("actives.legend_poison_weapon");
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.IsImmuneToPoison = true;
+	}
+
 });

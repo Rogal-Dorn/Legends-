@@ -71,8 +71,5 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 
 		return true;
 		
-	}
-
-	
+	}	
 });
-

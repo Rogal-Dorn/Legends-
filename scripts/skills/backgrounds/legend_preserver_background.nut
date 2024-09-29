@@ -117,7 +117,6 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 					this.Const.Perks.PerkDefs.LegendPotionBrewer,
 					this.Const.Perks.PerkDefs.SpecPolearm,
 					this.Const.Perks.PerkDefs.LegendMasterySlings,
-					this.Const.Perks.PerkDefs.LegendPoisonImmunity,
 					this.Const.Perks.PerkDefs.LegendSpecPoison,
 					this.Const.Perks.PerkDefs.LegendSpecBandage
 				],

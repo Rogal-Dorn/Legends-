@@ -278,7 +278,7 @@ this.enchanter_building <- this.inherit("scripts/entity/world/camp/camp_building
 			}
 
 			local rm = this.m.BaseCraft * bro.getBackground().getModifiers().Enchanting;
-			if (bro.getSkills().hasSkill("perk.legend_vala_inscription_mastery"))
+			if (bro.getLevel() >= 11)
 			{
 				rm += 0.3 * rm;
 			}

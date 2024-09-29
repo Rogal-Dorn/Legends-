@@ -30,7 +30,7 @@
 	addNCSetting(config, ::MSU.Class.BooleanSetting("DistanceScaling", true, "Distance Scaling", "If enabled, enemies will be stronger the further they spawn from civilization. \n\n Detail: Begins at 14 tiles from the nearest town, enemies spawned at 28 tiles will be twice as strong. \n\n This is in addition to other difficulty settings."));
 	addNCSetting(config, ::MSU.Class.BooleanSetting("SkipCamp", true, "Skip Camp Tutorial", "If disabled, you will gradually unlock camping activities by visiting towns. Useful for first playthroughs. \n\n Detail: skips the camp unlock events and ambition, you still need to buy upgrades."));
 	addNCSetting(config, ::MSU.Class.BooleanSetting("RecruitScaling", true, "Recruit Scaling", "If enabled, new recruits will gain levels based on the levels in your party and your renown in the world. \n\n  Details: The maximum level of recruits is increased by half the average level of mercs in your company, averaged with your reputation divided by 1,000. \n\n For example: if your company were all level 10, and your renown was 10,000, new recruits could gain up to 7 levels rounded down. \n\n This in addition to normal recruit level variance."));
-	addNCSetting(config, ::MSU.Class.BooleanSetting("BleedKiller", true, "Bleeds Count As Kills", "If enabled, kills by bleeding out are granted to the actor who caused the bleed."));
+	addNCSetting(config, ::MSU.Class.BooleanSetting("BleedKiller", true, "Effects Count As Kills", "If enabled, kills by bleeding out, poisoned to death or consecrated are granted to the actor who caused the bleed."));
 	addNCSetting(config, ::MSU.Class.BooleanSetting("WorldEconomy", true, "World Economy", "If enabled, Settlements will actively trade items and resources and can grow or decline in value \n\n  Details: The value of a settlement is now a dynamic value that grows and declines with caravan arrivals and departures, contracts fullfilled or failed, good or bad settlement events. \n\n The value of the settlement determines how valuable the caravans it creates are, as well as the strength of local militia. \n\n Very prosperous settlements will continue to grow and potentialy add new locations."));
 
 	addNCSetting(config, ::MSU.Class.SettingsDivider("ConfigDivider2"));
@@ -64,10 +64,11 @@
 	local misc = ::Legends.Mod.ModSettings.addPage("Misc");
 	local myEnumTooltip = "Define how Blueprints are shown: 'All Ingredients Available' is the Vanilla behavior; 'One Ingredient Available' shows recipes when one ingredient is fully satisfied; 'Always' shows all recipes at all time";
 	misc.addElement(::MSU.Class.EnumSetting("ShowBlueprintsWhen", "All Ingredients Available", ["All Ingredients Available", "One Ingredient Available", "Always"], "Show Blueprints when", myEnumTooltip));
-	misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Autorepair Layer", "Any Body or Helmet Layer that you strip from a piece of armor is automatically marked as 'to be repaired'."));	
+	misc.addElement(::MSU.Class.BooleanSetting("AutoRepairLayer", false, "Autorepair Layer", "Any Body or Helmet Layer that you strip from a piece of armor is automatically marked as 'to be repaired'."));
 	misc.addElement(::MSU.Class.BooleanSetting("ClickPresetToSwitch", false, "Faster Camping Preset Switch", "Clicking on the camping preset slot immediately applies the preset"));
 	misc.addElement(::MSU.Class.RangeSetting("MinimumChanceToHit", 5, 0, 100, 1, "Minimum hitchance", "Slider for minimum hitchance percentage. Pushing this slider too far will result in no chance to hit for anyone."));
 	misc.addElement(::MSU.Class.RangeSetting("MaximumChanceToHit", 95, 0, 100, 1, "Maximum hitchance", "Slider for maximum hitchance percentage. Pushing this slider too far back will result in no chance to hit for anyone."));
+	misc.addElement(::MSU.Class.BooleanSetting("DisableAiRotation", false, "Disable AI Rotation", "Toggle this on to disable AI rotation. There is a bug with rotation which is for now unfixable. Use this if you're experiencing the bug or just consider AI rotation annoying."));
 
 
 	local logging = ::Legends.Mod.ModSettings.addPage("Logging");

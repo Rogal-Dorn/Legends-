@@ -84,6 +84,10 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
+		if (!::Tactical) return;
+
+		if (!::Tactical.isActive()) return;
+
 		if (::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()))
 			return;
 
@@ -99,6 +103,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
 		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()) || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
+			return;
+
+		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
 			return;
 
 		if (!this.checkEntities() || !this.isInRange())
