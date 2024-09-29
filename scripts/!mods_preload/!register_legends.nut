@@ -28,7 +28,7 @@ else
 	::Const.LegendMod.addStaticFunctions();
 
 	this.Const.LegendMod.hookActor();
-	this.Const.LegendMod.hookSkillContainer();
+	this.Const.LegendMod.hookSkill();
 	this.Const.LegendMod.hookAISkills();
 	this.Const.LegendMod.hookAIAgent();
 	this.Const.LegendMod.hookAISplitShield();
