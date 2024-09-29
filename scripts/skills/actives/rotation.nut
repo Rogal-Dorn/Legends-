@@ -2,7 +2,7 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "actives.rotation";
+		this.m.ID = "actives.rotation"; //for player
 		this.m.Name = "Rotation";
 		this.m.Description = "Switch places with another character directly adjacent, provided neither the target is stunned or rooted, nor the character using the skill is. Rotate the battle line to keep fresh troops in front!";
 		this.m.Icon = "ui/perks/perk_11_active.png";
@@ -88,7 +88,13 @@ this.rotation <- this.inherit("scripts/skills/skill", {
 			return false;
 		}
 
+
 		local target = _targetTile.getEntity();
+
+		if (target.isAlive() && target.isPlayerControlled())
+		{
+			return false;
+		}
 
 		if (!target.isAlliedWith(this.getContainer().getActor()))
 		{
