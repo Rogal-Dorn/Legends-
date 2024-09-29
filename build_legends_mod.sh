@@ -49,8 +49,6 @@ while read -r line; do
         :
     elif [[ "$line" == unpacked* ]]; then
         :
-    elif [[ "$line" == mod_legends* ]]; then
-        :
     elif [[ "$line" == gfx/*.png ]]; then
         :
     elif [[ "$line" == gfx/*.jpg ]]; then
