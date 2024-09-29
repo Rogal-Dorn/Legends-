@@ -1460,9 +1460,9 @@ this.actor <- this.inherit("scripts/entity/tactical/entity", {
 			this.getTile().addVisibilityForCurrentEntity();
 		}
 
-		if (this.m.Skills.hasSkill("perk.steel_brow"))
-		{
-			_hitInfo.BodyDamageMult = 1.0;
+		if (this.m.Skills.hasSkill("perk.steel_brow") && _hitInfo.BodyPart == this.Const.BodyPart.Head)
+		{	
+			_hitInfo.BodyDamageMult -= this.Math.floor(_hitInfo.BodyDamageMult / 3);
 		}
 
 		local p = this.m.Skills.buildPropertiesForBeingHit(_attacker, _skill, _hitInfo);

@@ -13,13 +13,10 @@ this.legend_stollwurm_helmet_layered_blueprint <- this.inherit("scripts/crafting
 				Num = 2
 			},
 			{
-				Script = "scripts/items/legend_helmets/hood/legend_helmet_chain_hood_full",
-				Num = 1
-			},
-			{
-				Script = "scripts/items/legend_helmets/helm/legend_helmet_great_helm",
+				Script = "scripts/items/misc/legend_masterwork_tools",
 				Num = 1
 			}
+
 		];
 		this.init(ingredients);
 	}

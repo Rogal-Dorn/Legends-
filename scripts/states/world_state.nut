@@ -2394,11 +2394,18 @@ this.world_state <- this.inherit("scripts/states/state", {
 						Overlay = null
 					});
 				}
+				else if (::Legends.Mod.ModSettings.getSetting("ExactEngageNumbers").getValue())
+				{
+					entities.push({
+						Name = entityTypes[i] + " " + this.Const.Strings.EntityNamePlural[i],
+						Icon = this.Const.EntityIcon[i],
+						Overlay = null
+					});
+				}
 				else
 				{
-					local num = this.Const.Strings.EngageEnemyNumbers[this.Math.max(0, this.Math.floor(this.Math.minf(1.0, entityTypes[i] / 14.0) * (this.Const.Strings.EngageEnemyNumbers.len() - 1)))];
 					entities.push({
-						Name = num + " " + this.Const.Strings.EntityNamePlural[i],
+						Name =  getEngageNumberNames(entityTypes[i]) + " " + this.Const.Strings.EntityNamePlural[i],
 						Icon = this.Const.EntityIcon[i],
 						Overlay = null
 					});
@@ -2457,6 +2464,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 		{
 			return !this.m.CombatDialog.isAnimating();
 		}, _isPlayerInitiated);
+	}
+
+	function getEngageNumberNames( _entityType)
+	{
+		foreach (key, value in this.Const.Strings.EngageEnemyNumbers)
+		{
+			if (_entityType >= value[0] && _entityType <= value[1])
+			{
+				return this.Const.Strings.EngageEnemyNumbersNames[key];
+			}
+		}
 	}
 
 	function combat_dialog_module_onEngagePressed()
@@ -3513,17 +3531,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
-		if (this.isInDevScreen())
-		{
-			switch(_key.getKey())
-			{
-			case 41:
-				this.m.WorldScreen.hideDevConsole();
-				break;
-			}
+		//if (this.isInDevScreen())
+		//{
+		//	switch(_key.getKey())
+		//	{
+		//	case 41:
+		//		this.m.WorldScreen.hideDevConsole();
+		//		break;
+		//	}
 
-			return true;
-		}
+		// 	return true;
+		// }
 
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
@@ -3632,13 +3650,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				break;
 
-			case 32:
-				if (!this.m.MenuStack.hasBacksteps())
-				{
-					this.m.WorldScreen.showDevConsole();
-					return true;
-				}
-				break;
+			//case 32:
+			//	if (!this.m.MenuStack.hasBacksteps())
+			//	{
+			//		this.m.WorldScreen.showDevConsole();
+			//		return true;
+			//	}
+			//	break;
 
 			case 26:
 				if (!this.m.MenuStack.hasBacksteps() && !this.m.EventScreen.isVisible() && !this.m.EventScreen.isAnimating())
@@ -4104,9 +4122,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
 		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix
 
+		handleEscapeArtistRetirement(_in);
+		
+	}
+
+	function handleEscapeArtistRetirement(_in)
+	{
 		// Gracefully retire Escape Artist Perk for players (merged into Net Mastery) in 18.2.0
 		// Attempting to handle this in the deserialization of player.nut causes the game to crash
 		// During the deserialization of player.nut, the game doesn't like calling player.getSkills().hasSkill("perk.legend_escape_artist") for some reason
+
+		// moved separately because it makes hooking #onDeserialize very awkward in submods
 		if (!::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0", _in.getMetaData()))
 		{
 			foreach (player in ::World.getPlayerRoster().getAll())
@@ -4134,6 +4160,4 @@ this.world_state <- this.inherit("scripts/states/state", {
 			}
 		}
 	}
-
 });
-

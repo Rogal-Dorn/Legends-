@@ -209,6 +209,11 @@ this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlem
 				R = 70,
 				P = 1.0,
 				S = "helmets/legend_headress_coin"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "accessory/legend_hand_wraps_item"
 			}
 		];
 

@@ -312,8 +312,8 @@ gt.Const.Strings.EntityName <- [
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
-	"Wiedergangers",
-	"Armored Wiedergangers",
+	"Wiedergänger",
+	"Armored Wiedergänger",
 	"Fallen Heroes",
 	"Rachegeists",
 	"Ancient Auxiliaries",
@@ -739,7 +739,7 @@ gt.Const.Strings.FreeCompanyNames.extend([
 	"Unhold Breakers",
 	"Tunnel Snakes, and I\'m not even kidding",
 	"Moronic Plungers"
-])
+]);
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
 	"Weilburg",
@@ -768,7 +768,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Rosenving",
 	"Thurah",
 	"Kaltenborn",
-	"Krieger",
 	"Steinwall",
 	"Harkon",
 	"Osten",
@@ -796,7 +795,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Brandt",
 	"Sauer",
 	"Schult",
-	"Berengar",
 	"Vegman",
 	"Scharnbock",
 	"Osterholz",
@@ -853,7 +851,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Furstenberg",
 	"Glucksburg",
 	"Gutternberg",
-	"Hagen",
 	"Hanover",
 	"Hardenberg",
 	"Hattonid",
@@ -935,7 +932,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Horstmann",
 	"Helbrass",
 	"Niederlitz",
-	"Kruger",
 	"Weiltraub",
 	"Baern",
 	"Oldenhaller",
@@ -968,7 +964,85 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Sierck",
 	"Eggert",
 	"Goetz",
-	"Dieter"
+	"Dieter",
+	"Grimm",
+	"Black",
+	"Eisenhorn",
+	"Gunn",
+	"Drachen",
+	"Talana",
+	"Von Rosen",
+	"Krieger",
+	"Glaw",
+	"Soth",
+	"Blueblood",
+	"Silverhand",
+	"Falken",
+	"Hagen",
+	"Crownguard",
+	"Moon",
+	"Von Schmitt",
+	"Steiner",
+	"Strauss",
+	"Kruger",
+	"Draco",
+	"Helmuth",
+	"Talon",
+	"Von Kanitz",
+	"Morgana",
+	"Blade",
+	"Lance",
+	"Raven",
+	"Wolfe",
+	"Cairn",
+	"Swan",
+	"Everwinter",
+	"Ironcrest",
+	"Montclair",
+	"Blackwood",
+	"Fairchild",
+	"Sterling",
+	"Windermere",
+	"Goldheart",
+	"Cresseau",
+	"Montare",
+	"Chavalet",
+	"Pellellac",
+	"Vellane",
+	"Aguelon",
+	"Amber",
+	"Troyes",
+	"Darkwater",
+	"FitzRoy",
+	"Glotka",
+	"Kingfisher",
+	"Griffin",
+	"Beaumont",
+	"Grey",
+	"Delacroix",
+	"La Fayette",
+	"Winslow",
+	"Fairfax",
+	"van Amstel",
+	"Godwin",
+	"Karlov",
+	"Luci",
+	"Vandermere",
+	"Trante",
+	"Slate",
+	"Mallister",
+	"Cerwyn",
+	"Pyke"
+	"de Frissac",
+	"Redcliff",
+	"Saulx",
+	"Sturm",
+	"Talbot",
+	"Chass",
+	"Sondar",
+	"Steel",
+	"de Avalos",
+	"Mara"
 ];
 gt.Const.Strings.CityStateNames <- [
 	"Dahab",
@@ -1993,13 +2067,70 @@ gt.Const.Strings.PartyStrength <- [
 	"Deadly",
 	"Invincible"
 ];
-gt.Const.Strings.EngageEnemyNumbers <- [
-	"A few",
-	"Some",
-	"Many",
-	"Lots of",
-	"A plethora of"
-];
+gt.Const.Strings.EngageEnemyNumbersNames <- {
+	Few = "A few",
+	Some = "Some",
+	Several = "Several",
+	Pack = "Pack of",
+	Many = "Many",
+	Lots = "Lots of",
+	Plethora = "Plethora of",
+	Hordes = "Hordes of",
+	Throng = "Throng of",
+	Swarm = "Swarm of",
+	Legion = "Legion of",
+	Myriad = "Myriad of"
+};
+gt.Const.Strings.EngageEnemyNumbers <- {
+	Few = [
+		2,
+		3
+	],
+	Some = [
+		4,
+		5
+	],
+	Several = [
+		6,
+		9
+	],
+	Pack = [
+		10,
+		14
+	],
+	Many = [
+		15,
+		20
+	],
+	Lots = [
+		21,
+		30
+	],
+	Plethora = [
+		31,
+		40
+	],
+	Hordes = [
+		41,
+		50
+	],
+	Throng = [
+		51,
+		60
+	],
+	Swarm = [
+		61,
+		80
+	],
+	Legion = [
+		81,
+		100
+	],
+	Myriad = [
+		101,
+		1000
+	]
+};
 gt.Const.Strings.InventoryHeader <- [
 	"Donkey",
 	"Cart",
@@ -2022,8 +2153,6 @@ gt.Const.Strings.InventoryUpgradeCosts <- [
 	"20,000"
 ];
 gt.Const.Strings.PerkName <- {
-
-	//VANILLA BASIC - skills from vanilla.
 	Bullseye = "Bullseye",
 	Berserk = "Berserk",
 	ShieldBash = "Shield Bash",
@@ -2059,9 +2188,6 @@ gt.Const.Strings.PerkName <- {
 	ReachAdvantage = "Reach Advantage",
 	Overwhelm = "Overwhelm",
 	Relentless = "Relentless",
-
-
-	//LEGENDS BASIC - skills introduced by legends, they are not magical, masteries or any other category here.
 	CloseCombatArcher = "Close Combat Archer",
 	Ballistics = "Ballistics",
 	Slaughterer = "Slaughterer",
@@ -2101,8 +2227,8 @@ gt.Const.Strings.PerkName <- {
 	ReturnFavor = "Return Favor",
 	Sprint = "Sprint",
 	Inspire = "Inspire",
-	LegendAthlete = "Athlete"
-	LegendQuickStep = "Quick Step"
+	LegendAthlete = "Athlete",
+	LegendQuickStep = "Quick Step",
 	LegendCascade = "Cascade strikes",
 	LegendEvasion = "Evasion",
 	LegendHoldTheLine = "Hold the line",
@@ -2214,10 +2340,8 @@ gt.Const.Strings.PerkName <- {
 	LegendClimb = "Climb",
 	LegendSmallTarget = "Small Target",
 	LegendFashionable = "Fashionable",
-	LegendMeek = "Meek",
+	LegendUnburdened = "Unburdened",
 	LegendHelpful = "Helpful",
-
-	//MASTERIES - skills that have a unified effect on their weapon class
 	SpecBow = "Bow Mastery",
 	SpecCrossbow = "Crossbow & Firearms Mastery",
 	SpecThrowing = "Throwing Mastery",
@@ -2237,9 +2361,6 @@ gt.Const.Strings.PerkName <- {
 	LegendMasterySlings = "Sling Mastery",
 	LegendSpecGreatSword = "Two Handed Sword Mastery",
 	LegendSpecFists = "Unarmed Mastery",
-
-
-	//VALA SKILLS - skills used only be the Vala
 	LegendValaInscriptionMastery = "Inscription Mastery",
 	LegendValaInscribeWeapon = "Rune Sigils: Weapons",
 	LegendValaInscribeHelmet = "Rune Sigils: Helmets",
@@ -2256,9 +2377,6 @@ gt.Const.Strings.PerkName <- {
 	LegendValaSpiritualBond = "Spiritual Bond",
 	LegendValaThreads = "Threads of Fate",
 	LegendValaPremonition = "Premonition",
-
-
-	//SPECIALIST SKILLS - skills that utilise more basic equipment or playstyles for bigger bonuses.
 	LegendSpecialistButcherDamage = "Butchers Strikes",
 	LegendSpecialistButcherSkill = "Butchers Fillet",
 	LegendSpecialistHammerDamage = "Blacksmiths Heavy Hammer",
@@ -2291,9 +2409,6 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistShieldPush = "Push it",
 	LegendSpecCultHood = "Dedication",
 	LegendSpecCultArmor = "Penance",
-
-
-	//FAVOURED ENEMY - skills that grant bonuses to specfic enemy types
 	LegendFavouredEnemyGhoul = "Favoured Enemy - Nachzehrer",
 	LegendFavouredEnemyHexen = "Favoured Enemy - Hexen",
 	LegendFavouredEnemyAlps = "Favoured Enemy - Alp",
@@ -2316,9 +2431,6 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemyCaravan = "Favoured Enemy - Peasantry",
 	LegendFavouredEnemySoutherner = "Favoured Enemy - Southerner",
 	LegendFavouredEnemyNomad = "Favoured Enemy - Nomad",
-
-
-	//MAGIC - skills that have a magical or mystical element to them.
 	MageLegendMagicBurningHands = "Burning Hands",
 	MageLegendMagicChainLightning = "Chain Lightning",
 	MageLegendMagicCircleOfProtection = "Circle of Protection",
@@ -2387,10 +2499,7 @@ gt.Const.Strings.PerkName <- {
 	LegendTeleport = "Teleport",
 	LegendTerrifyingVisage = "Terrifying Visage",
 	LegendMagicMissile = "Magic Missile",
-	LegendBrinkOfDeath = "Brink of Death", //66% chance to return a fallen bro as a zombie, needs functionality check.
-
-
-	//ANIMAL FORMS - animal forms from older builds. Mostly defunct.
+	LegendBrinkOfDeath = "Brink of Death",
 	LegendSurpressUrges = "Suppress Urges",
 	LegendControlInstincts = "Control Instincts",
 	LegendMasterAnger = "Master Anger",
@@ -2398,9 +2507,6 @@ gt.Const.Strings.PerkName <- {
 	LegendTrueForm = "True Form",
 	LegendBearform = "Bear Form",
 	LegendInfectiousRage = "Infectious Rage",
-
-
-	//HORSES - skills for horses, currently unused and/or missing files
 	LegendHorseCharge = "Mounted Charge",
 	LegendHorsePirouette = "Pirouette",
 	LegendHorseBitting = "Bitting",
@@ -2418,44 +2524,35 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseCollection = "Collection",
 	LegendHorseFlyingChange = "Flying Change",
 	LegendHorsePassage = "Passage",
-
-
-	//AI SKILLS - skills used by AI specfically
-	Bruiser = "Bruiser", //increases armour penetration by 10%, is an AI skill
-	BatteringRam = "Battering Ram", //gives orcs stun immunity, similar to composure skill
-	Captain = "Sergeant", //used by leaders, sergents and other AI to boost resolve as an area effect
-
-
-	//UNUSED - skills otherwise defunct or missing files/functionality
-	LegendRoster = "The Apprentice", //REMOVE
-	LegendRoster1 = "The Apprentice", //REMOVE
-	LegendRoster2 = "The Bodyguards", //REMOVE
-	LegendRoster3 = "The Team", //REMOVE
-	LegendRoster4 = "The Squad", //REMOVE
-	LegendRoster5 = "The Section", //REMOVE
-	LegendRoster6 = "The Platoon", //REMOVE
-	LegendRoster7 = "The Company", //REMOVE
-	TrophyHunter = "Trophy Hunter", //AI skill, currently unused.
-	Crusher = "Crusher", //exists but has no data to provide any affect
-	Deflect = "Deflect", //exists but has no data to provide any affect
-	Evade = "Evade", //file does not exist
-	Ironside = "Ironside", //gives damage reduction based on number of adj. enemies
-	Zweihander = "Zweihander", //old skill to reduce fatigue from 2h weapons. Has no file.
-	ArtfulDodger = "Artful Dodger", //has no file
-	Weaponmaster = "Weaponmaster", //has no file
-	Furor = "Furor", //has no file
-	FirstMove = "First Move", //has no file
-	FirstAid = "First Aid", //overshadowed by legendsspecbandage. Currently unused.
-	LegendBecomeBerserker = "Become Berserker", //converts a background to a berserker, unknown use.
-	LegendPreparedForAnything = "Prepare For Anything", //gives bags and belts for some reason...?
-	LegendStrictSermons = "Strict Sermons", //gives fortified mind for crusader origin. Can probably be removed.
-	LegendCitrinitas = "Citrinitas (Trance)", //alchemist skill, currently not working/implemented
-	LegendAlbedo = "Albedo", //alchemist skill, currently not working/implemented
-	LegendNigredo = "Nigredo", //alchemist skill, currently not working/implemented
-	LegendSummonCatapult = "Summon Catapult" //pulled due to issues with deployment, could work in the future.
-
-//MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN ,
-
+	Bruiser = "Bruiser",
+	BatteringRam = "Battering Ram",
+	Captain = "Sergeant",
+	LegendRoster = "The Apprentice",
+	LegendRoster1 = "The Apprentice",
+	LegendRoster2 = "The Bodyguards",
+	LegendRoster3 = "The Team",
+	LegendRoster4 = "The Squad",
+	LegendRoster5 = "The Section",
+	LegendRoster6 = "The Platoon",
+	LegendRoster7 = "The Company",
+	TrophyHunter = "Trophy Hunter",
+	Crusher = "Crusher",
+	Deflect = "Deflect",
+	Evade = "Evade",
+	Ironside = "Ironside",
+	Zweihander = "Zweihander",
+	ArtfulDodger = "Artful Dodger",
+	Weaponmaster = "Weaponmaster",
+	Furor = "Furor",
+	FirstMove = "First Move",
+	FirstAid = "First Aid",
+	LegendBecomeBerserker = "Become Berserker",
+	LegendPreparedForAnything = "Prepare For Anything",
+	LegendStrictSermons = "Strict Sermons",
+	LegendCitrinitas = "Citrinitas (Trance)",
+	LegendAlbedo = "Albedo",
+	LegendNigredo = "Nigredo",
+	LegendSummonCatapult = "Summon Catapult"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.",
@@ -2701,168 +2798,167 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyGoblin = "Goblins are the most dangerous living thing under five foot tall, and while they prove hard to hit, they still bleed and die all the same.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting goblins.\n Additionally, this bonus increases the more goblins you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Goblin Ambusher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Goblin Fighter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Goblin Wolfrider | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Goblin Shaman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Goblin Overseer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of goblin champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants, Apparitions and Embalmed have developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill, maximum damage and resolve while fighting necrosavants, höllenhounds, geists, winselmutters and embalmed.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Necrosavant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Necrosavant Lord | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Höllenhound | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Geist | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Winselmutter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Embalmed Slave | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Embalmed Soldier | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Embalmed Noble | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Embalmed Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+1.25%[/color]\n Embalmed Queen | [color=" + this.Const.UI.Color.PositiveValue + "]+2%[/color]\n\n Also increases spawn rate of necrosavant champions.\n\n Total bonus capped at 25%.", //No contract
 	//Lich and Emporer not included
-	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting ancient dead.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Ancient Auxiliary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Ancient Legionary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Honor Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Ancient Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Phylactery | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Ancient Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Flying Skull | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n\n Also increases spawn rate of ancient dead champions.\n\n Total bonus capped at 25%.", //No contract
+	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting ancient dead.\n\n• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Ancient Auxiliary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n  - Ancient Legionary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n  - Honor Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Ancient Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Phylactery | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Ancient Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Flying Skull | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n\n• Also increases spawn rate of ancient dead champions.\n\n• Total bonus capped at 25%."
 	//Treasure hunters and betrayers included as knights
-	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting wiedergangers.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Wiederganger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Wiederganger Yeoman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Fallen Hero | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Necromancer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of fallen and necromancer champions.\n\n Total bonus capped at 25%.", //No contract
+	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting wiedergänger.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Wiederganger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Wiederganger Yeoman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Fallen Hero | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Necromancer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of fallen and necromancer champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyNoble = "Soldiers in glittering armor and colourful pennants, they are merely sanctioned brigands. No gods, no masters.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting noble soldiers.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Footman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Zweihander | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Billman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Arbalester | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Standard Bearer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Sergeant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Fencer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Halberdier | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n Elite Footman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Pollaxe | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Sureshot | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Also increases spawn rate of knight and fencer champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyBandit = "They hide in the bridleways and forests of this world and take what they can. The brigands must be purged to restore order in this world.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting brigands.\n Additionally, this bonus increases the more brigands you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Rabble | [color=" + this.Const.UI.Color.PositiveValue + "]+0.025%[/color]\n Thug | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Raider | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Bandit Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Warlord | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n Also increases spawn rate of brigand warlord and brigand leader champions.\n\n [color=" + this.Const.UI.Color.PositiveValue + "] At 15% or more (including the base 5% bonus), you will unlock a difficult legendary contract to stop a brigand army from taking over a settlement.[/color]\n\n Total bonus capped at 25%.", 
 	//Madman is registered as king
-	LegendFavouredEnemyBarbarian = "Civilization must be brought to those godless brutes. They may be strong, but they lack skill.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting barbarians.\n Additionally, this bonus increases the more barbarians you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Warhound | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Thrall | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Reaver | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Chosen | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Drummer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Beastmaster | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n King | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n [color=" + this.Const.UI.Color.PositiveValue + "]\n\n Also increases spawn rate of barbarian king and barbarian chosen champions.\n\n At 15% or more (including the base 5% bonus), you will unlock a very difficult legendary contract to escort an important barbarian prisoner.[/color]\n\n Total bonus capped at 25%.", 
-	LegendFavouredEnemyArcher = "Many claim to be the greatest shot in the land, but none have outshot you yet.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting archer archetypes.\n Additionally, this bonus increases the more archer archetypes you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Master Archer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Bandit Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Rabble Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.025%[/color]\n Bandit Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Militia Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color]\n Arbalist | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n Goblin Ambusher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n Nomad Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n Nomad Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Gunner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Desert Stalker | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n Also increases spawn rate of archer archetype champions.\n\n Reduces the penalty for attacking targets behind cover by [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color].\n\n Total bonus capped at 25%.", 
-	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can stand to be the greatest.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting elite melee combatants.\n Additionally, this bonus increases the more swordmaster archetypes you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Hedge Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Zweihander | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Swordmaster | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Bandit Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Bandit Warlord | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Fencer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Barbarian King | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Sergeant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n Officer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Assassin | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Nomad Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Executioner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Desert Devil | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n Also increases spawn rate of swordmaster archetype champions.\n\n [color=" + this.Const.UI.Color.PositiveValue + "] Unlocks a very difficult repeating event to fight a champion in single combat for a reward.[/color]\n\n Total bonus capped at 25%.",
-	LegendFavouredEnemyMercenary = "Moulded by greed, mercenaries have no cause, no principles and no honour. They seek only coin, so they shall find only death.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting mercenaries.\n Additionally, this bonus increases the more mercenaries you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Wardog | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Mercenary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Bounty Hunter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Total bonus capped at 25%.", 
-	LegendFavouredEnemyCaravan = "The commonfolk of the land are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting militia, peasants and caravans.\n Additionally, this bonus increases the more of any militia, peasants and caravans you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Peasant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n Caravan Hand | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Caravan Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Militia | [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color]\n Militia Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Militia Captain | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Increases loot dropped from all battles by 5% per instance of this perk.[/color]\n\n Total bonus capped at 25%.", 
-	LegendFavouredEnemySoutherner = "The southern city states are horrific, their slavery and conscription are affronts to human dignity.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting southern city states.\n Additionally, this bonus increases the more southerners you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Indebted | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n Conscript | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Gunner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Officer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Engineer | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Assassin | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Manhunter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Manhunter Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n Also increases spawn rate of champion officers, assassins and manhunters.\n\n Total bonus capped at 25%.", 
-	LegendFavouredEnemyNomad = "The nomads are uncivilised heathens, without even towns to their name, they must be brought to heel.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting nomads.\n Additionally, this bonus increases the more nomads you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Indebted | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n Cutthroat | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Outlaw | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Nomad Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Nomad Archer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Nomad Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of champion nomad leaders.\n\n Total bonus capped at 25%.", 
-	LegendSpecGreatSword = "Master the art of fighting with a large unwieldy sword. Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\nSplit, Swing, Overhead Strike, Great Lunge and Great Slash gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
-	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings. AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage.",
-	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature. Spearwall costs [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] less fatigue, becomes [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] Action Points and does [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage. Stacks with Spear Mastery.",
-	LegendSpecSpearThrust = "Poking things where they don\'t belong is just a natural inclination for some. Thrust and Prong do [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage, also removes the hitchance penalty per tile when throwing spears and javelins.",
-	LegendBalance = "Gain increased defense by balancing your armor\'s weight and mobility. \n\n  When your head and body armor have a combined weight of 35, and you have at least 70 initiative, you gain [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Melee Defense and [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Defense.\n\n These bonuses slowly decrease if you aren\'t quite balanced ",
-	LegendPerfectFit = "Well fitting armor lets you strike faster and fight longer. \n\n Reduce the fatigue cost of all your skills by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color], and gain [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] initiative. This bonus decreases if your armor and helmet weigh more than half your maximum fatigue. ",
-	LegendLithe = "Medium armor provides a sweet spot between movement and protection. \n\n  All incoming damage to your Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] when the combined weight of head and body armor is between 25 and 35. \n\n Outside this range, the bonus drops exponentially. As your armor takes damage, the bonus drops slowly to half its maximum value",
-	LegendInTheZone = "Use your armor\'s blend of protection and mobility to punish your foes\' mistakes! Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color]. You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] when you get hit by any attack.\n\n When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\nIf your Initiative is higher than twice your armor\'s weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor\'s weight above 15.",
-	LegendHidden = "Master the art of concealment. When you are outside enemy vision you can blend in with your surroundings and remain hidden from the enemy for 3 turns, or until your next attack.",
-	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies. Makes enemies less likely to attack you instead of an ally, also grants +5 Ranged Defense and +3 Melee Defense.",
-	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force. Any strike with a staff that would normally daze, also stuns and staggers.",
-	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] melee and ranged defense while wielding a pure staffs or magic staffs. 50% of this bonus is applied to other staffs and musical instruments.",
-	LegendDrumsOfWar = "Learn powerful rhythms that drive your allies on. Unlocks the Drums of War skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue to every ally within eight tiles. Can only be used with a Drum or Lute equipped.",
-	LegendSpecFists = "Master the martial arts of unarmed combat. Reduces the fatigue costs of Hand to Hand, Kick, Grapple, and Tackle. Increases fatigue damage for Hand to Hand, increases daze and hit chance for Kick, increases damage against already choked or grappled enemies for Choke, increases chance to disarm and chance to hit for grapple, reduces Hand to Hand AP cost with Ambidexterity, and increases chance to hit for Tackle.",
-	LegendKick = "Put all your force into a lunging kick, breaking their balance and inflicting stagger. A well placed kick may also inflict daze. Grants the \'Kick\' ability. A successful kick cancels Shieldwall, Spearwall, Return Favor and Riposte.",
-	LegendGrapple = "Grab your opponent and manhandle them to the ground, inflicting fatigue and grappling them for two turns with a chance of disarming them. Grants the \'Grapple\' ability, which can only be used with at least one hand free.",
-	LegendAmbidextrous = "Unlock the ability to punch with your off hand! You can now use the Hand to Hand skill as long as your off hand is free. Additionally you gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee skill, [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] melee defense when both hands are free.",
-	LegendTackle = "Tackle an enemy to the ground! Unlocks the Tackle skill, which, on a hit, reduces their melee defense by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] and their initiative by [color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color]",
-	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries. Spend 20 food to take someone from wavering to steady, cannot be applied to someone who has already been rallied.",
-	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields. Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] shield damage when using Split Shield or a Throwing Spear.",
-	LegendSmackdown = "Use your size and strength to bully your way into the prime position. Unlocks the \'Wind Up\' skill that prepares you to knock back and baffle an opponent on your next swing. Baffled opponents have -15% damage, fatigue and initiative.",
-	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of any damage ignores armor.\n Does not work if you are dazed, drunk, hungover, taunted, staggered, horrified, concussed or fleeing.\n\n Doubles the armor ignore bonus if under the effect of the following potions: Iron Will, Lionheart, Cat, Second Wind or Hexen Ichor.",
-	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative.",
-	LegendBloodbath = "Take joy in the suffering of others, gain Fatigue and Resolve for each bleeding character on the field. The percentage gained is equal to the percentage of characters that are bleeding or have temporary injuries, including your own.",
-	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing. Reduce resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color] ",
-	LegendFreedomOfMovement = "If your enemy is slower than you are, their attacks only graze you. When an enemy attacks you, subtract their initiative from your initiative and gain damage reduction proportional to this difference.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]-30%[/color] damage for 10 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-50%[/color] damage for 30 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-60%[/color] damage for 50 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-70%[/color] damage for 70 ini difference\n [color=" + this.Const.UI.Color.PositiveValue + "]-80%[/color] damage for 100+ difference.",
-	LegendOnslaught = "Move with offputting speed, feinting, poking, battering and catching your opponents off guard. Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply baffled on every hit with any weapon, when your Initiative is higher than that of your opponent. Baffled enemies have -15% damage, fatigue and initiative.",
-	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress. When this character takes damage, they will gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] melee defense until the start of their next turn. If they take damage while fleeing, they have a chance to rally. The chance is equal to half their resolve. Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] training speed in camp.",
-	PushTheAdvantage = "Strike hardest where they are weakest. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee and Ranged skill, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head when attacking a sleeping, stunned, netted, dazed, debilitated, staggered or grappled enemy.",
-	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will. Spend less fatigue on skills for each point of Resolve over 60.",
-	LegendEscapeArtist = "Others see it as magic, but your deft hands know better. Grants a baseline 99% chance to break free from rooting effects, such as nets and webs and reduces the Action Point cost of breaking free yourself and your allies by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color].",
-	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp.\n [color=" + this.Const.UI.Color.PositiveValue + "]Doubles the bonus of characters with this perk finding special items while assigned to gathering in camp. [/color]\n\nWhen the total bonus from all characters with or without this perk is above 10% while assigned to gathering in camp, they can find mushrooms, poisons, antidotes and powders without crafting them.", //Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
-	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp. This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apothecary, druid, alchemist or vala must gather the ingredients for the potion brewer. When the total level of all brewers (potion brewer perk) is above 20 and Apothecaries (backgrounds or gathering perk) is above 30, they have a chance to create potions of knowledge. Unlocks alcohol crafting in the crafting tent.",
-	LegendSpecCultHood = "In Pain we find the truth of ourselves. We have no identity beyond servitude, our glory is agony.\n\n While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] of your total resolve as a bonus to melee and ranged defense.\n Also works with cultist leather hood, leather helmet, sack, decayed sack helm, warlock hood or mask of davkul.\n\n Unlocks a crafting recipe to make cultist hoods and sacks.",
-	LegendSpecCultArmor = "Only in suffering can we know truth. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+75%[/color] of your missing health as resolve, while wearing cultist robes, barbarian hide, bone armour or warlock robes. Adds [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] maximum damage for every hostile entity adjacent to you. \n Also unlocks a crafting recipe to make cultist robes.",
-	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field. Grants the active skill Prepare to Bleed that primes your next strike to inflict intense but short lived bleeding.",
-	LegendPrepareGraze = "Long, slow, deep rending scratches that leave many bleeding grazes. Grants the active skill Prepare to Graze that primes your next strike to inflict weak but long lasting bleeding.",
-	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage when attacking a bleeding enemy.",
-	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle. Extends your camouflage by two turns.",
-	LegendAssassinate = "Becoming invisible is impressive, but it is what you do with this power that really counts.  Striking from the shadows allows you to bypass enemy defenses and strike for their undefended weak points. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] maximum and minimum damage while hidden by being within a bush or smoke. Assassins who specialize in the art of stealth gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] instead. Master assassins more deadly in stealth and killing gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color].",
-	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks. Unlocks a chance to get better food rewards when this character is assigned to the Camp Kitchen in camp. The chance and rewards increase as you level up. Includes porridge, pies and puddings.",
-	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together. Unlocks a chance to get alcohol as a reward when this character is assigned to the Camp Kitchen in camp. The rewards increase as you level up. Includes beer, wine and mead. Also allows alcohol crafting in the Crafting Tent.",
-	LegendHorseCharge = "Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy.",
-	LegendHorsePirouette = "Learning to turn quickly allows quick changes in direction required to escape enemies.",
-	LegendHorseBitting = "Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle by 25% of the rider\'s melee defense.",
-	LegendHorseDesensitization = "Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This increases melee attack in battle by 25% of the rider\'s melee attack ",
-	LegendHorseHippology = "Knowledge of horse physiology allows for better diet, exercise and care. Increases hitpoints by 25%",
-	LegendHorseImpulsion = "Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. Increases Initiative by 25%",
-	LegendHorseLeadChange = "A horse\'s lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. Movement costs 25% less fatigue.",
-	LegendHorseLegControl = "it is not possible to hold the reins while firing a bow. Horse and rider must learn to communicate through the rider\'s legs. Increases ranged attack in battle by 25%",
-	LegendHorseLiberty = "Though extensive roundpenning training, the horse gains trust in the movements of the rider. This increases resolve in battle by 25% of the rider\'s resolve  ",
-	LegendHorseLongeing = "Time spent working on a long rope helps build trust between horse and rider. Increases resolve by 25%",
-	LegendHorseParthianShot = "shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. Increases ranged attack by 25%",
-	LegendHorsePiaffe = "Keeping a horse moving can retain their focus and prepare them for an oncoming battle. Increases melee attack in battle by 25% ",
-	LegendHorseTempiChange = "the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful when under fire. Increases ranged defense by 25%",
-	LegendHorseCollection = "By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases fatigue by 25%",
-	LegendHorseFlyingChange = "Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point.",
-	LegendHorsePassage = "Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain.",
-	LegendDrumsOfLife = "Learn powerful rhythms that drive your allies on. Unlocks the Drums of Life skill that restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] health to every ally within eight tiles. Can only be used a Drum or Lute equipped.",
-	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity unmatched. Cause minor but long lasting bleeding on any target you deal direct health damage to with any weapon. This effect stacks.",
-	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. This character gains [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] resolve [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] experience gain, in exchange for [color=" + this.Const.UI.Color.PositiveValue + "]-20[/color] melee skill and ranged skill. Becomes content with being in reserve, and consumes half rations while there. When in combat this character gives [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] resolve and [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color] XP gain to allies.",
-	LegendSummonHound = "Forming close bonds with hounds grants the ability to call to them. Summon a loyal hound to your side in battle.",
-	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. Summon a wolf to aid you in battle.",
-	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. Summon a falcon to guide you in battle.",
-	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. Adds a pet bear to your stash, make sure you have space before taking this perk. Unlocks an event to tame bears in the woods.",
-	LegendSummonCatapult = "Put to use your skill in the creation and maintenance of siege weapons. Unlocks crafting Catapults in the crafting tent.",
-	LegendNetRepair = "Many years spent repairing and packing nets allows you to create nets and wield them more effectively.\n\nUnlocks the Net recipe in the crafting tent.\n\nGrants " + ::Const.UI.getColorized("+10", ::Const.UI.Color.PositiveValue) + " melee defense while holding a net.\n\nIgnore the weight of nets, both when equipped or in your bag.",
-	LegendNetCasting = "Perfect the art of casting nets.\n\nIncreases the throwing range of nets and reinforced nets by " + ::Const.UI.getColorized(2, ::Const.UI.Color.PositiveValue) + ".\n\nAdditionally, equipping a net when the offhand is free always costs " + ::Const.UI.getColorized("0", ::Const.UI.Color.PositiveValue) + " AP. This applies to nets from your bag or on the ground.\n\nNets you throw have a chance to be reusable in battle and can be picked up from the ground.\n\n[u]If the target breaks free[/u]\n- Regular Nets have a " + ::Const.UI.getColorized("25%", ::Const.UI.Color.PositiveValue) + " chance to be reusable.\n- Reinforced Nets have a " + ::Const.UI.getColorized("50%", ::Const.UI.Color.PositiveValue) + " chance to be reusable.\n\n[u]If the target is killed before breaking free[/u]\n- All nets have a " + ::Const.UI.getColorized("100%", ::Const.UI.Color.PositiveValue) + " chance to be reusable.",
-	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of extreme violence.  This character does not count towards your party strength when determining game difficulty. They will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] resolve. They become content with being in reserve, and each battle they are forced to participate in worsens their mood.",
-	LegendMagicMissile = "Release a controlled forceful bolt, leaping towards a foe. Damage based on current initiative, accuracy based on ranged attack skill.",
-	LegendHorseMovement = "Move like a horse, quickly across flat terrain, but slowly through bogs and mountains.",
-	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer. Unlocks food crafting in the crafting tent. Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making.",
-	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack. Unlocks the ability to store additional dog items in your bags and use them in battle.",
-	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength. Grants each dog you unleash the perks Colossus, Fortified Mind and Underdog.",
-	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs. Unlocks a recipe in the crafting tent for breeding dogs.",
-	LegendDogHandling = "You have mastered the art of training dogs. In the heat of battle your hounds will respond and react to your commands. Order them to attack or defend allies.",
-	LegendDogMaster = "Your way with animals extends so far as turning those dogs that would do you harm. By spending one item of food you can make a dog flee from battle. The food item is chosen at random and the perk does not work if you have less than 25 food.",
-	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades. Gain your base Ranged Defence as Initiative, with a minimum bonus of 3.",
-	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions. This is very helpful for dodging arrows, but can also be applied to shooting them as well.  Gain a third of your character\'s base Ranged Defence as Ranged Skill, with a minimum bonus of 3.",
-	LegendChoke = "Once an opponent is fatigued, it may be easier to choke them out than to fight through their armor. Unlocks the Choke ability which becomes available with no weapons equipped. Damage is determined by the difference in fatigue between you and your target. Hit chance determined by your targets fatigue, 0% if they are fresh and 100% if they are exhausted. If your target is dazed or parried hitchance is increased by +10%.  If they are stunned or netted you gain +25%. If they are grappled or sleeping you gain +50%. Unarmed mastery doubles your chance to hit. These bonuses stack up to 100%.",
-	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usury it is possible to drive down mercenary pay. Lowers daily wages for all mercenaries in the company, by a percentage equal to your barter skill. This perk is only counted once per company.",
-	LegendQuartermaster = "Meal planning and preparation is the key to avoiding wastage. By cooking bulk meals, using scraps and saving leftovers you can save food for the company. Reduces food consumption by 1 for every mercenary. This perk is only counted once per company.",
-	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life. \n\n[color=#4f1800][u]Passive:[/u][/color]\nFor every 10,000 crowns you have in your stash... \n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] to Melee Skill and Ranged Skill\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] as Melee Defence and Ranged Defence\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] to Resolve\n• The Bonus gained from Crowns above 80000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color]\n\nAdditionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
-	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of your resolve as hitpoints when used. Inflicts a disintegrating ailment on each adjacent undead. Does not work on cultists.",
-	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead. Adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of your resolve as Melee and Ranged Defense. Adjacent cultists and undead are Baffled. [color=" + this.Const.UI.Color.NegativeValue + "]Will hurt cultists[/color].",
-	LegendHolyFlame = "Invokes a holy blessing that imbues a 1-tile radius with the light of the old gods for " + ::Const.UI.getColorized("2", ::Const.UI.Color.PositiveValue) + " turns.\n\nHuman allies within the area become Sanctified, gaining immunity to injuries, bleeding, poison, and morale checks when taking damage.\n\nCultists and Undead become Consecrated, " + format(" taking %s - %s damage each turn and ", ::Const.UI.getColorized("10", ::Const.UI.Color.NegativeValue), ::Const.UI.getColorized("20", ::Const.UI.Color.NegativeValue)) + "losing any immunity to injuries, bleeding, and poison.\n\nAdditionally, Undead cannot resurrect in the area while the flame is active.",
-	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield. Taking this perk ensures every mercenary with a shield will use shieldwall before the start of each battle.",
-	LegendIncoming = "Direct allies to attack at once, granting [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] ranged skill, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] resolve and [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] ranged defence to all allies within [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] tiles for one turn.",
-	LegendZombieBite = "braaaains",
-	LegendCheerOn = "Use your way with song to cheer on an ally. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Action Points to an ally adjacent to you. Costs 4 Action Points to perform. Can only be used with an Instrument or Banner equipped.",
-	LegendLeap = "Use your athletic skill to leap high and far, covering two tiles distance but at a great fatigue cost. Unlocks the \'Leap\' skill.",
-	LegendTumble = "Make use of your acrobatic skill to improve your movements. Halves the Fatigue Cost of Lunge, Great Lunge, Footwork, Leap and Tumble. The Action Point cost of all these skills is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], except that of Leap which is halved instead.",
-	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium. Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head.",
-	LegendBearform = "Transform into a powerful bear, doubles your hitpoints. Requires free hands.",
-	LegendRoots = "Summon roots and vines to entangle your enemies.",
-	LegendWolfform = "Transform into a nimble wolf, decreasing movement costs. Requires free hands.",
-	LegendTrueForm = "Increases the length of your transformations to 6 turns.",
-	LegendSummonStorm = "Control the elements, calling down the rain. The first cast brings on light rain, the second cast brings a heavy storm and the thrill of being in the heart of the storm boosts your resolve. Must have empty hands.",
-	LegendCallLightning = "Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit within 4 tiles. Must have empty hands and it must be raining.",
-	LegendScryTrance = "Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of 1 turn channel.",
-	LegendReadOmensTrance = "The user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit.",
-	LegendDistantVisions = "This character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town\'s current events and buildings.",
-	LegendScrollIngredients = "Allows the user to identify Ancient Scrolls, when given a Cloth and Dyes. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.",
-	LegendScholar = "Allows the user to be counted as \'educated\' for events, regardless if other conditions are met or they have the \'dumb\' trait.\n\n Increases potential loot gain by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] after battle.\n[color=" + this.Const.UI.Color.NegativeValue + "]Does not work if the character with this perk is not present in battle or dies during battle.[/color]\n[color=" + this.Const.UI.Color.PositiveValue + "]Stacks with itself and effects of a similar nature.[/color]", //Masons, Inventors and Historians and do not need this perk unless they have the dumb trait.
-	LegendCitrinitas = "A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn.",
-	LegendAlbedo = "A concoction of secret materials that allows the user to restore up to 25 armor to a target.",
-	LegendNigredo = "An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to dissolves their armor.",
-	LegendHerbcraft = "Knowledge of the properties of various roots and herbs lets you construct medicines from base ingredients. Allows the creation of medicine, antidotes and poisons in the crafting tent.",
-	LegendWoodworking = "The ability to cut and shape wood is a craft few master. Allows the creation of fine wood from rough wood in the crafting tent.",
-	LegendSurpressUrges = "Allows this character to control shapeshifting to some extent, no longer deliberately striking allies and foes alike while transformed.",
-	LegendControlInstincts = "Gives character self control while transformed.",
-	LegendMasterAnger = "Allows the character to transform at will, no longer randomly transforming during battle.",
-	MageLegendMagicBurningHands = "Unleash a cone of blistering heat from your palms, can hit up to 9 targets for 10-15 damage.",
-	MageLegendMagicChainLightning = "Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
-	MageLegendMagicCircleOfProtection = "A magic circle that protects all allies within casting. Leaving the circle breaks the protection.",
-	MageLegendMagicDaze = "Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too bewildered to fight effectively.\n\n Does no damage.",
-	MageLegendMagicHailstone = "Conjure a heavy ball of ice to crush your enemies.",
-	MageLegendMagicHealingWind = "Restore the health of all allies within 4 tiles. Must be holding a magic staff to use.",
-	MageLegendMagicImbue = "Imbue someone with magical power, temporarily increasing accuracy and damage.",
-	MageLegendMagicLevitate = "Levitate someone off the ground, granting them the ability to move freely across all terrain for a short duration.",
-	MageLegendMagicMissile = "A burst of force, leaping forward into a foe.",
-	MageLegendMagicPsybeam = "Launch a mental attack in the form of a ray at an enemy to stun or daze them. Does no damage.",
-	MageLegendMagicSleep = "Use soothing vapours to lull an enemy to sleep. The chance of success is determined by the resolves of the user and target.",
-	MageLegendMagicSoothingWind = "Restore the fatigue of all allies within 4 tiles. Must be holding a magic staff to use.",
-	MageLegendMagicTeleport = "Teleport a short distance away.",
-	MageLegendMagicWebBolt = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative.",
-	MageLegendMasteryBurningHands = "Increases the intensity of your heat, doubles the damage of burning hands.",
-	MageLegendMasteryChainLightning = "Lightning gains +10% chance to hit and +1 range.",
-	MageLegendMasteryHailstone = "Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
-	MageLegendMasteryMagicMissileFocus = "Reduce AP cost of Magic Missile by 1.",
-	MageLegendMasteryMagicMissileMastery = "Reduce AP and cost of Magic Missile by 1. Reduce the base fatigue cost of Magic Missile by 6.",
-	LegendUnarmedTraining = "Focusing on technique, form and stances has given you greater control over your unarmed strikes. Increases the damage of your unarmed attacks based on your hitpoints and initiative. The damage is hitpoints plus initiative divided by three.",
-	LegendUnarmedLunge = "Unlocks the \'Unarmed Lunge\' skill that lets you move a tile and attack in a single action while unarmed. Does 10-20 damage without Unarmed Training. With Unarmed Training it does damage based on your Initiative and Hitpoints. Costs less fatigue and Action points if you have Unarmed Mastery. Costs less Action Points if you have Tumble.",
-	LegendThrowSand = "Unlocks the \'Throw Dirt\' skill that lets you throw dirt in the eyes of an enemy to distract them. Can be used once per fight.",
-	LegendBackflip = "Extensive training in circus manoeuvres allows you to move out of harms way with astonishing speed. If you have taken the \'Footwork\' or \'Leap\' perk, they gain 1 range.",
-	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement. If you have taken the \'Rotation\' perk, it can now target enemies.",
-	LegendKnifeplay = "Unlocks a bound throwing knife skill that does [color=" + this.Const.UI.Color.PositiveValue + "]15-25[/color] damage with poor armour penetration but a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head.\n Can \'Daze\' a target on hit.\n\n Benefits from perks that affect throwing weapons.",
-	LegendOpportunist = "When successfully landing a hit on an enemy who is bleeding or poisoned, apply \'Dazed\' to them. If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill and no penalty to Ranged Skill.",
-	LegendPrepared = "While using a dagger, dealing health damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] chance of poisoning them. You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue recovery per turn while holding a dagger in your mainhand.",
-	LegendLurker = "When neither ally nor enemy is within 2 tiles, gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] ranged defence, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] initiative and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] action points. If you are under the effects of \'hidden\' gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] ranged skill. If you are within a smoke cloud gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
-	LegendNightRaider = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties. When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] resolve when adjacent to you. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] melee and ranged skill while fighting at night.",
-	LegendAdaptive = "Who says you can\'t teach an old dog new tricks?\n\nAdd a new Perk Group to this character\'s Perk Tree based on what is currently equipped in their hands, which is checked in the following order...\n\n[color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to \'Specialist\' Classes before Weapon Perk Groups.\n [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n\n [color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/color]",
-	LegendRecuperation = "Heal [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] hitpoints and fatigue at the end of every turn.",
-	LegendClimb = "Unlocks the \'Climb\' skill which allows you to climb sheer cliffs up to five levels of height in one action.\n Does not trigger attacks of opportunity."
-	LegendSmallTarget = "Use your thin stature and lack of bulky armor to your advantage by adjusting your stance to create a narrow target area. \n\n Gain [color=" + this.Const.UI.Color.PositiveValue + "]+100[/color] Melee and Ranged defence. Lose [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] point for every point of armor and health you have. You must be wearing body armor for this perk to work.",
-	LegendFashionable = "Use flowing, billowing and distracting clothes to hide where your body is and make it hard for enemies to land a hit.\n\n You can wear tabards, cloaks and helmet vanity layers without negatively impacting \'Small Target\'.",
-	LegendMeek = "Your unassuming posture leads the enemy to think you are an easy target, making their attacks careless.\n\nAlways evade the first attack made against you in every combat encounter.",
-	LegendHelpful = "Amateurs discuss tactics, the professionals discuss logistics.\n\n Gain the ability to give items from your bag to allies under your control [color=" + this.Const.UI.Color.PositiveValue + "]with no cost or penalty.[/color]\n [color=" + this.Const.UI.Color.NegativeValue + "]Does not work when receiving items.[/color]"
-
+	LegendFavouredEnemyBarbarian = "Civilization must be brought to those godless brutes. They may be strong, but they lack skill.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting barbarians.\n\n• Additionally, this bonus increases the more barbarians you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Warhound | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n  - Thrall | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n  - Reaver | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Chosen | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Drummer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Beastmaster | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n  - King | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n• Also increases spawn rate of barbarian king and barbarian chosen champions.\n\n• At 15% or more (including the base 5% bonus), you will unlock a very difficult legendary contract to escort an important barbarian prisoner.\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemyArcher = "Many claim to be the greatest shot in the land, but none have outshot you yet.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting archer archetypes.\n\n• Additionally, this bonus increases the more archer archetypes you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Master Archer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Bandit Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n  - Rabble Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.025%[/color]\n  - Bandit Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n  - Militia Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color]\n  - Arbalist | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n  - Goblin Ambusher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n  - Nomad Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n  - Nomad Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Gunner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Desert Stalker | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n• Also increases spawn rate of archer archetype champions.\n\n• Reduces the penalty for attacking targets behind cover by [color=" + this.Const.UI.Color.NegativeValue + "]33%[/color].\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemySwordmaster = "The path to martial prowess is beset by the fake and the weak. Only one can stand to be the greatest.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting elite melee combatants.\n\n• Additionally, this bonus increases the more swordmaster archetypes you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Hedge Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Zweihander | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Swordmaster | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Bandit Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Bandit Warlord | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Fencer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Barbarian King | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Sergeant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0125%[/color]\n  - Officer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Assassin | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Nomad Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Executioner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Desert Devil | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n• Also increases spawn rate of swordmaster archetype champions.\n\n• Unlocks a very difficult repeating event to fight a champion in single combat for a reward.\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemyMercenary = "Moulded by greed, mercenaries have no cause, no principles and no honour. They seek only coin, so they shall find only death.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting mercenaries.\n\n• Additionally, this bonus increases the more mercenaries you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Wardog | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n  - Mercenary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Bounty Hunter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemyCaravan = "The commonfolk of the land are weak and powerless. Their pitiful lives are pathetic, they should be grateful to behold true might in their dying moments.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting militia, peasants, and caravans.\n\n• Additionally, this bonus increases the more of any militia, peasants, and caravans you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Peasant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n  - Caravan Hand | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n  - Caravan Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n  - Militia | [color=" + this.Const.UI.Color.PositiveValue + "]+0.05%[/color]\n  - Militia Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n  - Militia Captain | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n• Increases loot dropped from all battles by [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] per instance of this perk.\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemySoutherner = "The southern city states are horrific, their slavery and conscription are affronts to human dignity.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting southern city states.\n\n• Additionally, this bonus increases the more southerners you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Indebted | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n  - Conscript | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n  - Gunner | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Officer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Engineer | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Assassin | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Manhunter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n  - Manhunter Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n\n• Also increases spawn rate of champion officers, assassins, and manhunters.\n\n• Total bonus capped at 25%.",
+	LegendFavouredEnemyNomad = "The nomads are uncivilised heathens, without even towns to their name, they must be brought to heel.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting nomads.\n\n• Additionally, this bonus increases the more nomads you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Indebted | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n  - Cutthroat | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n  - Outlaw | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n  - Nomad Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n  - Nomad Archer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n  - Nomad Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n• Also increases spawn rate of champion nomad leaders.\n\n• Total bonus capped at 25%." 
+	LegendSpecGreatSword = "Master the art of fighting with a large unwieldy sword.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Skills build up [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color] less Fatigue.\n\n• [color=#400080]Split[/color], [color=#400080]Swing[/color], [color=#400080]Overhead Strike[/color], [color=#400080]Great Lunge[/color], and [color=#400080]Great Slash[/color] gain [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] chance to hit.",
+	LegendForcefulSwing = "Use the power of your hips and core to imbue more force into your swings.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Melee AOE skills do [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage.",
+	LegendSpecSpearWall = "Endless training in holding the line in a spear wall has made it a second nature.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• [color=#400080]Spearwall[/color] costs [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color] less Fatigue.\n\n• [color=#400080]Spearwall[/color] AP cost is reduced to [color=" + this.Const.UI.Color.NegativeValue + "]3[/color].\n\n• [color=#400080]Spearwall[/color] does [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage.",
+	LegendSpecSpearThrust = "Poking things where they don't belong is just a natural inclination for some.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• [color=#400080]Thrust[/color] and [color=#400080]Prong[/color] do [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] damage.\n\n• Also removes the hitchance penalty per tile when throwing Spears and Javelins.",
+	LegendBalance = "Gain increased defense by balancing your armor's weight and mobility.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When your head and body armor have a combined weight of 35, and you have at least 70 Initiative, gain [color=" + this.Const.UI.Color.PositiveValue + "]+15[/color] Melee Defense and [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Defense.\n\n• For every 2 points of weight away from 35, the bonus to Melee and Ranged defense decreases by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color].",
+	LegendPerfectFit = "Well fitting armor lets you strike faster and fight longer.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduce the Fatigue cost of all your skills by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color], and gain [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color] Initiative.\n\n• The bonus decreases if the combined Fatigue penalties of your body and head armor exceed half of your maximum Fatigue."
+	LegendLithe = "Medium armor provides a sweet spot between movement and protection.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• All incoming damage to your Armor and Hitpoints is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color], when the combined weight of head and body armor is between 25 and 35.\n\n• Outside this range, the bonus drops exponentially.\n\n• As your armor takes damage, the bonus drops slowly to half its maximum value.",
+	LegendInTheZone = "Use your armor's blend of protection and mobility to punish your foes' mistakes!\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain a stacking buff that boosts your Melee Skill and Melee Damage by [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]12.5%[/color].\n\n• You gain [color=" + this.Const.UI.Color.PositiveValue + "]0.5%[/color] when you dodge a Melee attack and lose [color=" + this.Const.UI.Color.NegativeValue + "]1%[/color] when you get hit by any attack.\n\n• When engaged in Melee, the Melee Damage bonus is doubled, up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\n• If your Initiative is higher than twice your armor's weight (penalty to Maximum Fatigue), you start the battle with stacks equal to your armor's weight above 15.",
+	LegendHidden = "Master the art of concealment. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks [color=#400080]Camoflauge[/color] skill which allows you to blend in with your surroundings and remain [color=#731f39]Hidden[/color] from the enemy for three turns, or until your next attack.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]8[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]40[/color] Fatigue. ",
+	LegendBlendIn = "Hold yourself in a way that makes you seem more trouble than its worth, lean into trees, place objects between you and an enemy, and hide behind allies.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Makes enemies [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] less likely to attack you instead of an ally.\n\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Defense and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Melee Defense.\n\n• Additionally, always evade the first attack made against you in every combat encounter. ",
+	LegendSpecStaffStun = "Master the movements required to spin your staff in a great flourish that lands with additional force.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Any strike with a staff that would normally [color=#731f39]Daze[/color], also [color=#731f39]Stuns[/color] and [color=#731f39]Staggers[/color].",
+	LegendSpecStaffSkill = "Twist and thrust with your staff to deflect blows and intercept strikes.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+16[/color] Melee and Ranged Defense while wielding a pure staffs or magic staffs.\n\n• [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of this bonus is applied to other staffs and musical instruments.",
+	LegendDrumsOfWar = "Learn powerful rhythms that drive your allies on. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]War Chant[/color] skill which restores [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Fatigue to every ally within eight tiles.\n\n• Can only be used with a Drum or Lute equipped.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]8[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue. ",
+	LegendSpecFists = "Master the martial arts of unarmed combat.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduces the Fatigue costs of [color=#400080]Hand to Hand[/color], [color=#400080]Kick[/color], [color=#400080]Grapple[/color], [color=#400080]Choke[/color], and [color=#400080]Tackle[/color] by [color=" + this.Const.UI.Color.NegativeValue + "]25%[/color].\n\n• Lowers AP cost for [color=#400080]Hand to Hand[/color] by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] and increases Fatigue inflicted by [color=" + this.Const.UI.Color.PositiveValue + "]5[/color].\n\n• [color=#400080]Kick[/color] has [color=#731f39]Daze[/color] chance increased to [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] and hit chance increased by [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color].\n\n• [color=#400080]Choke[/color] damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] when target is already [color=#731f39]Choked[/color] or [color=#731f39]Grappled[/color].\n\n• [color=#400080]Grapple[/color] now has a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to be disarm on hit and hit chance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color].\n\n• [color=#400080]Tackle[/color] gains [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Kick Skill[/color].",
+	LegendKick = "Put all your force into a lunging kick, breaking their balance.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Kick[/color] skill which on hit [color=#731f39]Staggers[/color] your target and inficts [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] Fatigue.\n\n• Has a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to [color=#731f39]Daze[/color] on hit.\n\n• A successful [color=#400080]Kick[/color] cancels [color=#400080]Shieldwall[/color], [color=#400080]Spearwall[/color], [color=#400080]Return Favor[/color], and [color=#400080]Riposte[/color].\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]14[/color] Fatigue.",
+	LegendGrapple = "Grab your opponent and manhandle them to the ground!\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Grapple[/color] skill which on hit applies the [color=#731f39]Grappled[/color] debuff for two turns.\n\n• [color=#731f39]Grappled[/color] enemies have their Melee Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]12[/color] and Initiative reduced by [color=" + this.Const.UI.Color.NegativeValue + "]30%[/color].\n\n• Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to disarm on hit.\n\n• Requires one free hand to use.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] Fatigue.",
+	LegendAmbidextrous = "Unlock the ability to punch with your off hand!\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When both hands are free using [color=#400080]Hand to Hand[/color] will attack twice. Additionally, gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee Skill and [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Defense.\n\n• Allows you to use the [color=#400080]Hand to Hand[/color] if your offhand is free.",
+	LegendTackle = "Tackle an enemy to the ground!\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Tackle[/color] skill which on a hit knocks over your opponent.\n\n• [color=#731f39]Knocked Over[/color] enemies have their Melee Defense reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-50%[/color], their Initiative reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color], and increases damage they take by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].\n\n• Hit chance determined by how Fatigued the target is.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendFieldTreats = "Make liberal use of alcohol and food to motivate your mercenaries.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Field Treats[/color] skill which allows you to spend [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] food to improve an adjacent allies morale from [color=#731f39]Wavering[/color] to [color=#731f39]Steady[/color].\n\n• Cannot be applied to someone who has already been rallied.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]16[/color] Fatigue.",
+	LegendSmashingShields = "Some folks take joy in the simple pleasures of destroying shields.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+100%[/color] damage to shields when using [color=#400080]Split Shield[/color] or a Throwing Spear.\n• If the shield is destroyed, gain [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] additional AP.",
+	LegendSmackdown = "Use your size and strength to dominate the battlefield, combining the best of both worlds in offense and defense.\n\n[color=#4f1800][u]Active:[/u][/color] \n• Unlocks the [color=#400080]Wind Up[/color] skill which allows you to knock back and [color=#731f39]Baffle[/color] an opponent on your next swing. \n• [color=#731f39]Baffled[/color] enemies suffer [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Damage, Fatigue, and Initiative. \n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue. \n• When wielding a two-handed weapon, reduces AP cost to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color].\n\n[color=#4f1800][u]Passive:[/u][/color] \n• Effectiveness vs Armor is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] for any weapon used.",
+	LegendClarity = "A well honed mind can perceive more in each instant, making time appear slower in key instants of need.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• An additional [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of any damage ignores armor.\n\n• Does not work if you are [color=#731f39]Dazed[/color], drunk, hungover, taunted, [color=#731f39]Staggered[/color], horrified, concussed or [color=#731f39]Fleeing[/color].\n\n• Doubles the armor ignore bonus if under the effect of the following potions: Iron Will, Lionheart, Cat, Second Wind or Hexen Ichor.",
+	LegendAlert = "Pay close attention at all times, surveying the surroundings and assessing every clue for an insight.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Initiative.",
+	LegendBloodbath = "Take joy in the suffering of others.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain Fatigue and Resolve for each [color=#731f39]Bleeding[/color] character on the field.\n\n• The percentage gained is equal to the percentage of characters that are [color=#731f39]Bleeding[/color] or have temporary [color=#731f39]Injuries[/color], including your own.",
+	LegendTerrifyingVisage = "The mere sight of this character sends enemies fleeing.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduces Resolve of adjacent enemies by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color].",
+	LegendFreedomOfMovement = "If your enemy is slower than you are, their attacks only graze you.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When an enemy attacks you, subtract their Initiative from your Initiative and gain damage reduction proportional to this difference.\n\n[color=" + this.Const.UI.Color.PositiveValue + "]-30%[/color] damage for 10 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-50%[/color] damage for 30 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-60%[/color] damage for 50 ini difference\n[color=" + this.Const.UI.Color.PositiveValue + "]-70%[/color] damage for 70 ini difference\n [color=" + this.Const.UI.Color.PositiveValue + "]-80%[/color] damage for 100+ difference.",
+	LegendOnslaught = "Move with offputting speed! Feinting, poking, and battering to catch your opponents off guard.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to apply [color=#731f39]Baffled[/color] on every hit with any weapon, when your Initiative is higher than that of your opponent.\n\n• [color=#731f39]Baffled[/color] enemies have [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] damage, Fatigue, and Initiative.",
+	LegendBackToBasics = "Years of practice lead this character to fall back to their instincts and basic training under extreme stress.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When this character takes damage, they will gain [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Melee Defense until the start of their next turn.\n\n• If they take damage while [color=#731f39]Fleeing[/color], they have a chance to rally. The chance is equal to half their Resolve.\n\n• Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] training speed in camp.",
+	PushTheAdvantage = "Strike hardest where they are weakest.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee and Ranged skill, and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] chance to hit the head when attacking a [color=#731f39]Sleeping[/color], [color=#731f39]Stunned[/color], [color=#731f39]Netted[/color], [color=#731f39]Dazed[/color], [color=#731f39][color=#731f39]Debilitated[/color][/color], [color=#731f39]Staggered[/color] or [color=#731f39]Grappled[/color] enemy.",	
+	LegendMindOverBody = "Push your body beyond what is humanly possible through your sheer force of will.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain scaling Fatigue reduction on skills for each point of Resolve over 60.\n\n70 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]7%[/color] Fatigue reduction\n80 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]10%[/color] Fatigue reduction\n90 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]18%[/color] Fatigue reduction\n100 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]22%[/color] Fatigue reduction\n120 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]29%[/color] Fatigue reduction\n140 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]34%[/color] Fatigue reduction\n160 Resolve: [color=" + this.Const.UI.Color.NegativeValue + "]39%[/color] Fatigue reduction",
+	LegendEscapeArtist = "Others see it as magic, but your deft hands know better.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants a baseline 99% chance to [color=#400080]Break Free[/color] from rooting effects, such as nets and webs.\n\n • Reduces the Action Point cost of [color=#400080]Break Free[/color] by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color].",
+	LegendGatherer = "Knowledge of the landscape and vegetation provides a wealth of opportunities when gathering in camp.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• [color=" + this.Const.UI.Color.PositiveValue + "]Doubles[/color] the bonus of characters with this perk finding special items while assigned to gathering in camp.\n\n• When the total bonus from all characters with or without this perk is above 10% while assigned to gathering in camp, they can find mushrooms, poisons, antidotes and powders without crafting them.", //Characters gain their level as a percentage reduction in hours required to find special items when gathering in camp. This perk doubles that.
+	LegendPotionBrewer = "Expertise in potions and tinctures allows the creation of potions while gathering in camp.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• This skill unlocks the chance to create lionheart, ironwill, recovery and cat potions while gathering. An apothecary, druid, alchemist or vala must gather the ingredients for the potion brewer.\n\n• When the total level of all brewers ([color=#008060]Potion Brewer[/color] perk) is above [color=" + this.Const.UI.Color.PositiveValue + "]35[/color] and Apothecaries (backgrounds or [color=#008060]Gathering[/color] perk) is above [color=" + this.Const.UI.Color.PositiveValue + "]45[/color], gain a chance to create potions of knowledge.\n\n• Unlocks alcohol crafting in the crafting tent.",
+	LegendSpecCultHood = "In Pain we find the truth of ourselves. We have no identity beyond servitude, our glory is agony.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• While your face is obscured by a cultist hood, gain [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] of your total Resolve as a bonus to melee and Ranged Defense.\n\n• Also works with cultist leather hood, leather helmet, sack, decayed sack helm, warlock hood or mask of davkul.\n\n• Unlocks a crafting recipe to make cultist hoods and sacks.",
+	LegendSpecCultArmor = "Only in suffering can we know truth.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+75%[/color] of your missing Hitpoints as Resolve, while wearing cultist robes, barbarian hide, bone armor or warlock robes.\n\n• Adds [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] maximum damage for every hostile entity adjacent to you.\n\n• Unlocks a crafting recipe to make cultist robes.",
+	LegendPrepareBleed = "Time spent assessing an enemy, finding the arteries, will pay off in blood shed on the field.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Prepare to Bleed[/color] skill which primes your next strike to inflict [color=" + this.Const.UI.Color.DamageValue + "]5[/color] [color=#731f39]Bleed[/color] damage for the next two turns.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendPrepareGraze = "Long, slow, deep rending scratches that leave many bleeding grazes.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Prepare to Graze[/color] skill which primes your next strike to inflict [color=" + this.Const.UI.Color.DamageValue + "]2[/color] [color=#731f39]Bleed[/color] damage for the next five turns.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendSlaughter = "If it bleeds, we can kill it. An existing injury can open up avenues of attack for the final slaughter.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] damage when attacking a [color=#731f39]Bleeding[/color] enemy.",
+	LegendUntouchable = "Staying hidden is about more than just clever disguise, one must be prepared to avoid stray blows and arrows in the heat of battle.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Extends your camouflage by two turns.",
+	LegendAssassinate = " Striking from the shadows allows you to bypass enemy defenses and strike for their undefended weak points.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] maximum and minimum damage while [color=#731f39]Hidden[/color] by being within a bush or smoke.\n\n• Assassins who specialize in the art of stealth gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] instead.\n\n• Master assassins more deadly in stealth and killing gain [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color].",
+	LegendMealPreperation = "A good company chef can make a meal from whatever can be scrounged up, and have it in your belly before camp breaks.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Unlocks a chance to get better food rewards when this character is assigned to the Camp Kitchen in camp.\n\n• The chance and rewards increase as you level up. Includes porridge, pies and puddings.",
+	LegendAlcoholBrewing = "Any camp worth its salt will have an alcohol still fashioned out of whatever can be pulled together.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Unlocks a chance to get alcohol as a reward when this character is assigned to the Camp Kitchen in camp.\n\n• The rewards increase as you level up. Includes beer, wine and mead.\n\n• Allows alcohol crafting in the Crafting Tent.",
+	LegendHorseCharge = "[color=#4f1800][u]Active:[/u][/color]\n•Use the great weight and speed of the horse to charge forward. Move up to four spaces and attack an enemy.",
+	LegendHorsePirouette = "[color=#4f1800][u]Passive:[/u][/color]\n•Learning to turn quickly allows quick changes in direction required to escape enemies.",
+	LegendHorseBitting = "[color=#4f1800][u]Passive:[/u][/color]\n•Getting a horse accustomed to the feel of a bit and a bridle, makes it easier to control the movements. This increases defenses in battle by 25% of the rider\'s Melee Defense.",
+	LegendHorseDesensitization = "[color=#4f1800][u]Passive:[/u][/color]\n•Using loud noises and sudden movements, the horse is trained to not react to the sounds of battle until the rider tells it to. This increases melee attack in battle by 25% of the rider\'s melee attack ",
+	LegendHorseHippology = "[color=#4f1800][u]Passive:[/u][/color]\n•Knowledge of horse physiology allows for better diet, exercise and care. Increases Hitpoints by 25%",
+	LegendHorseImpulsion = "[color=#4f1800][u]Passive:[/u][/color]\n•Effective leverage of equestrian physiology relaxes the spinal column and allows the hindquarters to engage effectively. Increases Initiative by 25%",
+	LegendHorseLeadChange = "[color=#4f1800][u]Passive:[/u][/color]\n•A horse\'s lead leg can tire, by training a horse to swap legs it is possible to prevent the horse from tiring. Movement costs 25% less Fatigue.",
+	LegendHorseLegControl = "[color=#4f1800][u]Passive:[/u][/color]\n•it is not possible to hold the reins while firing a bow. Horse and rider must learn to communicate through the rider\'s legs. Increases ranged attack in battle by 25%",
+	LegendHorseLiberty = "[color=#4f1800][u]Passive:[/u][/color]\n•Though extensive roundpenning training, the horse gains trust in the movements of the rider. This increases Resolve in battle by 25% of the rider\'s Resolve  ",
+	LegendHorseLongeing = "[color=#4f1800][u]Passive:[/u][/color]\n•Time spent working on a long rope helps build trust between horse and rider. Increases Resolve by 25%",
+	LegendHorseParthianShot = "[color=#4f1800][u]Passive:[/u][/color]\n•shooting from a moving horse is not easy, extensive practice is required to reliably achieve such a feat. Increases ranged attack by 25%",
+	LegendHorsePiaffe = "[color=#4f1800][u]Passive:[/u][/color]\n•Keeping a horse moving can retain their focus and prepare them for an oncoming battle. Increases melee attack in battle by 25% ",
+	LegendHorseTempiChange = "[color=#4f1800][u]Passive:[/u][/color]\n•the most challenging form of lead change, a tempi change requires shifting back and forth between lead legs. This form of training can allow the horse to change lead leg according to the situation, useful when under fire. Increases Ranged Defense by 25%",
+	LegendHorseCollection = "[color=#4f1800][u]Passive:[/u][/color]\n•By training the horse\'s posture, advanced movements become easier to perform and less draining. Increases Fatigue by 25%",
+	LegendHorseFlyingChange = "[color=#4f1800][u]Passive:[/u][/color]\n•Changing lead legs at high speeds is an advanced move that can allow horses to cover much larger distances. Gain 1 action point.",
+	LegendHorsePassage = "[color=#4f1800][u]Passive:[/u][/color]\n•Training the legs to raise higher and push harder can prepare horses for rough or muddy terrain. Decreases movement costs on rough terrain.",
+	LegendDrumsOfLife = "Learn powerful rhythms that drive your allies on. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Drums of Life[/color] skill which restores [color=" + this.Const.UI.Color.PositiveValue + "]+4[/color] Hitpoints to every ally within eight tiles.\n\n• Can only be used with a Drum or Lute equipped.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]8[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendLacerate = "Lust for blood courses through your veins, each stroke rips and tears with a ferocity unmatched. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Cause minor but long-lasting [color=#731f39]Bleeding[/color] on any target you deal direct Hitpoints damage to with any weapon.\n\n• The [color=#731f39]Bleed[/color] deals [color=" + this.Const.UI.Color.DamageValue + "]2[/color] damage per turn and lasts five turns.\n\n• This effect stacks.",
+	LegendPeaceful = "Not all folks are built for war, some find contentment in contemplation or practicing a trade. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Resolve and [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] experience gain, in exchange for [color=" + this.Const.UI.Color.NegativeValue + "]-20[/color] Melee and Ranged Skill.\n\n• Becomes content with being in reserve, and consumes half rations while there.\n\n• When in combat, this character grants [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Resolve and [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color] XP gain to allies.",
+	LegendSummonHound = "Forming close bonds with hounds grants the ability to call to them. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Summon a loyal hound to your side in battle.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendSummonWolf = "Cultivating a relationship with the wolves allows you to call them to your side. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Summon a wolf to aid you in battle.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]7[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendSummonFalcon = "Years spent feeding and caring for falcons has made them your friends. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Summon a falcon to guide you in battle.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendSummonBear = "Endless communion with the animals has won you the trust of the bears. \n\n[color=#4f1800][u]Active:[/u][/color]\n• Adds a pet bear to your stash, make sure you have space before taking this perk.\n\n• Unlocks an event to tame bears in the woods.",
+	LegendSummonCatapult = "Put to use your skill in the creation and maintenance of siege weapons. \n\n[color=#4f1800][u]Passive:[/u][/color]\n Unlocks crafting Catapults in the crafting tent.",
+	LegendNetRepair = "Many years spent repairing and packing nets allows you to create nets and wield them more effectively. \n\n[color=#4f1800][u]Passive:[/u][/color]\n • Unlocks the Net recipe in the crafting tent.\n\n• Grants[color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Melee Defense while holding a net.\n\n• Ignore the weight of nets, both when equipped or in your bag.",
+	LegendNetCasting = "Perfect the art of casting nets. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases the throwing range of nets and reinforced nets by [color=" + this.Const.UI.Color.PositiveValue + "]2[/color].\n\n• Equipping a net when the offhand is free and always costs no Action Points.\n\n• Nets you throw have a chance to be reusable in battle.\n\n• Regular Nets have a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to be reusable and Reinforced Nets have a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] chance to be reusable.\n\n• All nets have a [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] chance to be reusable if the target is killed before breaking free.",
+	LegendPacifist = "Fighting is a brutal thuggish pastime, most folk prefer a life without frequent bouts of extreme violence. \n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Resolve.\n\n• This character now gains experience from battle while in reserves.\n\n• Additionally, this character does not count towards your party strength when determining game difficulty.\n\n• Become content with being in reserve, and each battle they are forced to participate in worsens their mood.",
+	LegendMagicMissile = "\n\n[color=#4f1800][u]Active:[/u][/color]\n•Release a controlled forceful bolt, leaping towards a foe. Damage based on current Initiative, accuracy based on ranged attack skill.",
+	LegendHorseMovement = "\n\n[color=#4f1800][u]Passive:[/u][/color]\nMove like a horse, quickly across flat terrain, but slowly through bogs and mountains.",
+	LegendCampCook = "There is a fine art to cooking, skills and ingredients that are not obvious but unlock a world of flavor or preserve food for longer.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Unlocks food crafting in the crafting tent.\n\n• Allows the creation of porridge, puddings, pies, meat curing, fruit drying and ration making.",
+	LegendPackleader = "Dogs can instinctively identify a pack leader, knowledge of their habits allows you to become the leader of their pack.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Unlocks the ability to store additional dog items in your bags and use them in battle.",
+	LegendDogWhisperer = "You have a way with dogs, the bond you form with them imbues each dog with more confidence and strength, knowing that you are there gives them strength.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants each dog you unleash the perks: [color=#008060]Colossus[/color], [color=#008060]Fortified Mind[/color], and [color=#008060]Underdog[/color].",
+	LegendDogBreeder = "Intimate knowledge of dog care and conditions required for breeding allows you to successfully breed dogs.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Unlocks a recipe in the crafting tent for breeding dogs.",
+	LegendDogHandling = "You have mastered the art of training dogs.\n\n[color=#4f1800][u]Active:[/u][/color]\n• In the heat of battle your hounds will respond and react to your commands, order them to attack or defend allies.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] Fatigue.",
+	LegendDogMaster = "Your way with animals extends so far as turning those dogs that would do you harm.\n\n[color=#4f1800][u]Active:[/u][/color]\n• By spending [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] item of food you can make a dog flee from battle.\n\n• The food item is chosen at random and the perk does not work if you have less than 25 food.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] Fatigue. ",
+	LegendHeightenedReflexes = "You have trained in avoiding arrows, this skill translates well into dodging blades.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain your base Ranged Defense as Initiative, with a minimum bonus of [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
+	LegendWindReader = "You have learned to read the wind, estimating the path of arrows in uncertain conditions.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain a third of your character's base Ranged Defense as Ranged Skill, with a minimum bonus of [color=" + this.Const.UI.Color.PositiveValue + "]3[/color].",
+	LegendChoke = "Once an opponent is Fatigued, it may be easier to choke them out than to fight through their armor.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Choke[/color] skill when both hands are free.\n\n• [color=#731f39]Choked[/color] enemies have their Fatigue Recovery reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15[/color].\n\n• Damage inflicted is determined by the difference in Fatigue between you and your target.\n\n• Hit chance determined by your target's Fatigue, [color=" + this.Const.UI.Color.NegativeValue + "]0%[/color] if they are fresh and [color=" + this.Const.UI.Color.PositiveValue + "]100%[/color] if they are exhausted.\n\n• Hit chance is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] if your target is [color=#731f39]Dazed[/color] or [color=#731f39]Parried[/color], [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] if they are [color=#731f39]Stunned[/color] or [color=#731f39]Netted[/color], and  [color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] If they are [color=#731f39]Grappled[/color] or [color=#731f39]Sleeping[/color].\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] Fatigue.",
+	LegendPaymaster = "Shifting numbers is a fine art, by negotiating pay terms and usury it is possible to drive down mercenary pay.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Lowers daily wages for all mercenaries in the company by a percentage equal to your barter skill.\n\n• This perk is only counted once per company.",
+	LegendQuartermaster = "By cooking bulk meals, using scraps, and saving leftovers you can save food for the company.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduces food consumption by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] for every mercenary.\n\n• This perk is only counted once per company.",
+	LegendBarterGreed = "This character is keen to guard the horde of gold the company has accumulated — and intends to protect it with their life.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• For every 10,000 crowns you have in your stash:\n- Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] to Melee Skill and Ranged Skill.\n- Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1.5[/color] as Melee Defense and Ranged Defense.\n- Gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] to Resolve.\n\n• The Bonus gained from Crowns above 80000 is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]20%[/color].\n\n• Additionally, your global Barter is divided by [color=" + this.Const.UI.Color.NegativeValue + "](1 + Brothers with this perk)[/color] at all times.",
+	LegendPrayerOfLife = "A prayer of hope and love restores wellbeing to your allies and tears at the undead.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Prayer of Hope[/color] skill.\n\n• When activated adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] of your current Resolve as Hitpoints when used.\n\n• Inflicts a disintegrating ailment on each adjacent undead dealing [color=" + this.Const.UI.Color.DamageValue + "]10[/color] damage per turn for two turns.\n\n• Does not work on cultists.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendPrayerOfFaith = "A prayer of devotion grants strength to your allies and baffles the undead.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Prayer of Faith[/color] skill.\n\n• When activated adjacent allies gain [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] of your current Resolve as a bonus to Melee and Ranged Defense.\n\n• Adjacent cultists and undead are [color=#731f39]Baffled[/color].\n\n• [color=#731f39]Baffled[/color] enemies have their Melee Defense, Initiative, and Max Fatigue reduced by [color=" + this.Const.UI.Color.NegativeValue + "]15%[/color].\n\n•  Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendHolyFlame = "The old gods have allowed you to wield their light.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Holy Flame[/color] skill.\n\n• When activated imbues a tile and its surrounding tiles with the Sanctified Ground effect for two turns.\n\n• Human allies within the area become [color=#731f39]Sanctified[/color], gaining immunity to [color=#731f39]Injuries[/color], [color=#731f39]Bleeding[/color], [color=#731f39]Poisoned[/color], and [color=#731f39]Morale checks[/color] when taking damage.\n\n• Cultists and Undead become [color=#731f39]Consecrated[/color], taking [color=" + this.Const.UI.Color.DamageValue + "]10[/color] to [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage each turn, and lose any immunity to [color=#731f39]Injuries[/color], [color=#731f39]Bleeding[/color], and [color=#731f39]Poison[/color].\n\n• Additionally, Undead cannot resurrect in the area while the flame is active.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]7[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendShieldsUp = "Drilling your troops in a shieldwall prepares their reaction time to avoid early deaths on the battlefield.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Taking this perk ensures every mercenary with a shield will use [color=#400080]shieldwall[/color] before the start of each battle.",
+	LegendIncoming = "Direct allies to attack at once, granting enhanced skills and defense.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Incoming![/color] skill which Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Skill, [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Resolve and [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Ranged Defense to all allies within four tiles for one turn.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] Fatigue.",
+	LegendZombieBite = "[color=#4f1800][u]Active:[/u][/color]\n•braaaains",
+	LegendCheerOn = "Use your way with song to cheer on an ally.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Cheer On[/color] skill which Grants [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Action Points to an ally adjacent to you.\n\n• Can only be used with an Instrument or Banner equipped.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.   ",
+	LegendLeap = "Use your athletic skill to leap high and far.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Leap[/color] skill which allows you to quickly cover two tiles distance.\n\n• Fatigue cost is increased by the weight of your armor.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendTumble = "Make use of your acrobatic skill to improve your movements.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduces Fatigue cost of [color=#400080]Lunge[/color], [color=#400080]Great Lunge[/color], [color=#400080]Footwork[/color], [color=#400080]Leap[/color] and [color=#400080]Tumble[/color] by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color].\n\n• The Action Point cost of all these skills is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color], except that of [color=#400080]Leap[/color] which is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] instead.",
+	LegendHairSplitter = "Years of practice throwing things at apples above heads have granted a magnetic attraction to the cranium.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] chance to hit the head.",
+	LegendBearform = "[color=#4f1800][u]Active:[/u][/color]\n•Transform into a powerful bear, doubles your Hitpoints. Requires free hands.",
+	LegendRoots = "Summon roots and vines to entangle your enemies.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Root[/color] skill which allows you to [color=#731f39]Root[/color] any enemy within eight tiles.\n\n• [color=#731f39]Rooted[/color] enemies have their Melee Defense, Ranged Defense, and Initiative reduced by [color=" + this.Const.UI.Color.NegativeValue + "]35%[/color].\n\n• If affected by rain AP cost is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] and Fatigue cost is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]10[/color].\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] Fatigue.",
+	LegendWolfform = "[color=#4f1800][u]Active:[/u][/color]\n•Transform into a nimble wolf, decreasing movement costs. Requires free hands.",
+	LegendTrueForm = "[color=#4f1800][u]Passive:[/u][/color]\n•Increases the length of your transformations to six turns.",
+	LegendSummonStorm = "Control the elements, calling down the rain.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Summon Storm[/color] skill.\n\n• The first cast brings on light rain, the second cast brings a heavy storm.\n\n• Must have empty hands.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]4[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] Fatigue.",
+	LegendCallLightning = "[color=#4f1800][u]Active:[/u][/color]\n• Call down lightning upon your enemies. Grants a 10% chance to unleash lightning on each unit within 4 tiles. Must have empty hands and it must be raining.",
+	LegendScryTrance = "[color=#4f1800][u]Active:[/u][/color]\n• Scries an area of 12 tiles around the user. The user will be unable to move or act during the trance until cancelled. Minimum of one turn channel.",
+	LegendReadOmensTrance = "[color=#4f1800][u]Active:[/u][/color]\n•T he user enters a trance, telling all allies of their future. Grants [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] chance to have any attacker require two successful attack rolls in order to hit.",
+	LegendDistantVisions = "[color=#4f1800][u]Passive:[/u][/color]\n•T his character spends a lot of time alone outside camp, staring into the distance and smoking strange bark. Allows the user to have distant visions of towns.  Each morning this character is in reserves grants you insight into a specific town\'s current events and buildings.",
+	LegendScrollIngredients = "All those years of studying ancient languages finally has a use.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Allows the user to identify Ancient Scrolls, when given a Cloth and Dyes. These tomes grant a specific effect, whereas an Ancient Scroll gives any random effect.",
+	LegendScholar = "Put your all into your studies.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Allows the user to be counted as \'educated\' for events, regardless if other conditions are met or they have the \'dumb\' trait.\n\n• Increases potential loot gain by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] after battle.\n\n• Does not work if the character with this perk is not present in battle or dies during battle.\n\n• Stacks with itself and effects of a similar nature.", //Masons, Inventors and Historians and do not need this perk unless they have the dumb trait.
+	LegendCitrinitas = "[color=#4f1800][u]Active:[/u][/color]\n•A powerful cocktail of ingredients provides a trance like state, granting the banner effect, and drums of war effects to everyone in the company at the end of the user\'s turn.",
+	LegendAlbedo = "[color=#4f1800][u]Active:[/u][/color]\n•A concoction of secret materials that allows the user to restore up to 25 armor to a target.",
+	LegendNigredo = "[color=#4f1800][u]Active:[/u][/color]\n•An alchemical mixture of acidic vapours, encased in flasks that can be thrown at the enemy to dissolves their armor.",
+	LegendHerbcraft = "The ability to cut and shape wood is a craft few master.\n\n[color=#4f1800][u]Passive:[/u][/color]\n•Allows the creation of medicine, antidotes and poisons in the crafting tent.",
+	LegendWoodworking = "The ability to cut and shape wood is a craft few master.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Allows the creation of fine wood from rough wood in the crafting tent.",
+	LegendSurpressUrges = "[color=#4f1800][u]Passive:[/u][/color]\n•Allows this character to control shapeshifting to some extent, no longer deliberately striking allies and foes alike while transformed.",
+	LegendControlInstincts = "[color=#4f1800][u]Passive:[/u][/color]\n•Gives character self control while transformed.",
+	LegendMasterAnger = "[color=#4f1800][u]Passive:[/u][/color]\n•Allows the character to transform at will, no longer randomly transforming during battle.",
+	MageLegendMagicBurningHands = "[color=#4f1800][u]Active:[/u][/color]\n• Unleash a cone of blistering heat from your palms, can hit up to 9 targets for 10-15 damage.",
+	MageLegendMagicChainLightning = "[color=#4f1800][u]Active:[/u][/color]\n• Fire a bolt of lightning at an enemy that can arc to two adjacent enemies.",
+	MageLegendMagicCircleOfProtection = "[color=#4f1800][u]Active:[/u][/color]\n• A magic circle that protects all allies within casting. Leaving the circle breaks the protection.",
+	MageLegendMagicDaze = "[color=#4f1800][u]Active:[/u][/color]\n• Assault the senses of your target with a conjured flurry of colorful sparks, whirs, and pops. Such an astonishing display is sure to leave anyone too [color=#731f39]Bewildered[/color] to fight effectively.\n\n Does no damage.",
+	MageLegendMagicHailstone = "[color=#4f1800][u]Active:[/u][/color]\n •Conjure a heavy ball of ice to crush your enemies.",
+	MageLegendMagicHealingWind = "[color=#4f1800][u]Active:[/u][/color]\n• Restore the Hitpoints of all allies within 4 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicImbue = "[color=#4f1800][u]Active:[/u][/color]\n• Imbue someone with magical power, temporarily increasing accuracy and damage.",
+	MageLegendMagicLevitate = "[color=#4f1800][u]Active:[/u][/color]\n• Levitate someone off the ground, granting them the ability to move freely across all terrain for a short duration.",
+	MageLegendMagicMissile = "[color=#4f1800][u]Active:[/u][/color]\n• A burst of force, leaping forward into a foe.",
+	MageLegendMagicPsybeam = "[color=#4f1800][u]Active:[/u][/color]\n• Launch a mental attack in the form of a ray at an enemy to [color=#731f39]Stun[/color] or [color=#731f39]Daze[/color] them. Does no damage.",
+	MageLegendMagicSleep = "[color=#4f1800][u]Active:[/u][/color]\n• Use soothing vapours to lull an enemy to sleep. The chance of success is determined by the Resolves of the user and target.",
+	MageLegendMagicSoothingWind = "[color=#4f1800][u]Active:[/u][/color]\n• Restore the Fatigue of all allies within 4 tiles. Must be holding a magic staff to use.",
+	MageLegendMagicTeleport = "[color=#4f1800][u]Active:[/u][/color]\n• Teleport a short distance away.",
+	MageLegendMagicWebBolt = "[color=#4f1800][u]Active:[/u][/color]\n• Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and Initiative.",
+	MageLegendMasteryBurningHands = "[color=#4f1800][u]Active:[/u][/color]\n• Increases the intensity of your heat, doubles the damage of burning hands.",
+	MageLegendMasteryChainLightning = "[color=#4f1800][u]Active:[/u][/color]\n• Lightning gains +10% chance to hit and +1 range.",
+	MageLegendMasteryHailstone = "[color=#4f1800][u]Active:[/u][/color]\n• Hailstone can now ignore 65% of armor and inflicts 125% damage to armor.",
+	MageLegendMasteryMagicMissileFocus = "[color=#4f1800][u]Passive:[/u][/color]\n•Reduce AP cost of Magic Missile by 1.",
+	MageLegendMasteryMagicMissileMastery = "[color=#4f1800][u]Passive:[/u][/color]\n•Reduce AP and cost of Magic Missile by 1. Reduce the base Fatigue cost of Magic Missile by 6.",
+	LegendUnarmedTraining = "Focusing on technique, form, and stances has given you greater control over your unarmed strikes.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Increases damage of [color=#400080]Hand to Hand[/color] attack by max Hitpoints divided by 15.\n\n• This Damage increase is reduced by [color=" + ::Const.UI.Color.NegativeValue + "]50%[/color] (multiplicative) if you have an item in your offhand and is reduced by [color=" + ::Const.UI.Color.NegativeValue + "]80%[/color] (multiplicative) with an item in your mainhand.\n\n• If you have [color=#008060]Unarmed Specialization[/color] gain [color=" + ::Const.UI.Color.PositiveValue + "]+20%[/color] (multiplicative) effectiveness against Armor.\n\n• [color=#400080]Choke[/color] gains [color=" + ::Const.UI.Color.PositiveValue + "]+10%[/color] chance to hit and deals [color=" + ::Const.UI.Color.PositiveValue + "]50%[/color] more damage.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Tackle Skill[/color].",
+	LegendUnarmedLunge = "In one motion take a step forward and land a blow on your enemy.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Unarmed Lunge[/color] skill which lets you move a tile and attack in a single action while unarmed.\n\n• Does [color=" + this.Const.UI.Color.PositiveValue + "]10-20[/color] damage without Unarmed Training.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]6[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.",
+	LegendThrowSand = "Its hard to fight with sand in your eyes.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Throw Dirt[/color] skill which allows you to throw dirt in the eyes of an enemy to distract them.\n\n• [color=#731f39]Distracted[/color] enemies have their Initiative and damage reduced by [color=" + this.Const.UI.Color.NegativeValue + "]35%[/color].\n\n• Can only be used once per fight.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue.",
+	LegendBackflip = "Extensive training in circus maneuvers allows you to move out of harm's way with astonishing speed.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• If you have taken the [color=#008060]Footwork[/color] or [color=#008060]Leap[/color] perk, they gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] range.",
+	LegendTwirl = "Practice in physical movement with a partner has given the ability to take the lead and move someone's body in a twirling movement.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• If you have taken the [color=#008060]Rotation[/color] perk, it can now target enemies.",
+	LegendKnifeplay = "Learn to accurately throw your knives.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks a bound throwing knife skill that does [color=" + this.Const.UI.Color.PositiveValue + "]15-25[/color] damage with poor armor penetration.\n\n• Has a [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] chance to hit the head.\n\n• Has a range of three tiles.\n\n• Has a [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] chance to [color=#731f39]Daze[/color] a target on hit.\n\n• Benefits from perks that affect throwing weapons.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue.",
+	LegendOpportunist = "Make the most of the opportunity's presented to you in battle.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When successfully landing a hit on an enemy who is [color=#731f39]Bleeding[/color] or [color=#731f39]Poisoned[/color], apply [color=#731f39]Dazed[/color] to them.\n\n• If you are within a smoke cloud, you will gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee Skill and no penalty to Ranged Skill.",
+	LegendPrepared = "Coat your blade with posion.\n\n[color=#4f1800][u]Passive:[/u][/color]\n•While using a dagger, dealing Hitpoints damage to an enemy has a [color=" + this.Const.UI.Color.PositiveValue + "]+33%[/color] chance of poisoning them.\n\n• You will also gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] Melee Skill and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Fatigue recovery per turn while holding a dagger in your mainhand.",
+	LegendLurker = "'I work better alone.'\n\n[color=#4f1800][u]Passive:[/u][/color]\n• When neither ally nor enemy is within 2 tiles, gain gain [color=" + this.Const.UI.Color.PositiveValue + "]+30%[/color] Ranged Defense, [color=" + this.Const.UI.Color.PositiveValue + "]+20[/color] Initiative, and [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Action Points.\n\n• If you are under the effects of [color=#731f39]Hidden[/color], gain [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] Fatigue recovery per turn and [color=" + this.Const.UI.Color.PositiveValue + "]+20%[/color] Ranged Skill.\n\n• If you are within a smoke cloud, gain [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] maximum action points.",
+	LegendNightRaider = "Gain enhanced vision and tactical advantages at night.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] vision and become unaffected by night time penalties.\n\n• When attacking at night, adjacent enemies will lose [color=" + this.Const.UI.Color.NegativeValue + "]10[/color] Resolve when adjacent to you.\n\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Melee and Ranged Skill while fighting at night.",
+	LegendAdaptive = "Who says you can't teach an old dog new tricks?\n\n[color=#4f1800][u]Passive:[/u][/color]\n Add a new Perk Group to this character's Perk Tree based on what is currently equipped in their hands, which is checked in the following order...\n\n• [color=" + this.Const.UI.Color.PositiveValue + "]Mainhand items:[/color] always checked first, giving priority to 'Specialist' Classes before Weapon Perk Groups.\n\n• [color=" + this.Const.UI.Color.PositiveValue + "]Hybrid Weapons:[/color] the character will be given the Perk Group they do not have, or be given one randomly from the applicable Weapon Types if they have neither.\n\n• [color=" + this.Const.UI.Color.PositiveValue + "]Offhand items:[/color] same as above.\n\n• [color=" + this.Const.UI.Color.PositiveValue + "]Unarmed:[/color] If no items are equipped, they will gain the Unarmed Perk Group if they do not have it.\n\n•[color=" + this.Const.UI.Color.PositiveValue + "]Armor:[/color] If armor weight is between [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] and [color=" + this.Const.UI.Color.NegativeValue + "]15[/color] they will receive Light armor perk group. If weight is between [color=" + this.Const.UI.Color.NegativeValue + "]16[/color] and [color=" + this.Const.UI.Color.NegativeValue + "]35[/color] they will receive Medium armor perk group. If weight is over [color=" + this.Const.UI.Color.NegativeValue + "]35[/color] they will receive Heavy armor perk group.\n\n• [color=" + this.Const.UI.Color.NegativeValue + "]If the character has all the Perk Groups of their equipped items, they will be given a random Trait Perk Group they do not have.[/color]\n\n• When this character reaches level [color=" + ::Const.UI.Color.PositiveValue + "]18[/color], the perk point spent is refunded.",
+	LegendRecuperation = "Heal more effectively over time.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Heal [color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Hitpoints at the end of every turn and recover [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] fatigue every turn.",
+	LegendClimb = "Learn to scale cliffs with unmatched speed!\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Climb[/color] skill which allows you to climb sheer cliffs up to five levels of height in one action.\n\n• Does not trigger attacks of opportunity.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]20[/color] Fatigue.",
+	LegendSmallTarget = "Use your physique to minimize your hit profile.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Gain [color=" + this.Const.UI.Color.PositiveValue + "]+100[/color] Melee and Ranged Defense.\n\n• Lose [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] point for every point of armor and Hitpoints you have.\n\n• You must be wearing body armor for this perk to work.",
+	LegendFashionable = "Utilize your attire to confuse opponents.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• You can wear tabards, cloaks, and helmet vanity layers without negatively impacting [color=#008060]Small Target[/color].\n\n• Taking [color=#993b00]Unburdened[/color] allows you to wear any body armor, as long as it weighs nothing, without negatively impacting [color=#008060]Small Target[/color].",
+	LegendUnburdened = "Unencumbered by armor, you are spry and fleet footed.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• [color=#993b00]Blend in[/color] will now recover an evasion stack every 2 turns.\n\n• Increases Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] if this character has more than [color=" + this.Const.UI.Color.PositiveValue + "]30[/color] bonus from [color=#993b00]Small Target[/color] and an Evasion stack from [color=#993b00]Blend in[/color].\n\n• You can expend an Evasion stack to use [color=#400080]Footwork[/color], [color=#400080]Evasion[/color] or [color=#400080]Leap[/color].",
+	LegendHelpful = "Enhance your logistical support in battle.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Pass Item[/color] skill which allows you to give the first item in your bag to any adjacent ally.\n\n• Does not work when receiving items.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue. ",
 };
 gt.Const.Strings.Tooltip <- {
 	World = {

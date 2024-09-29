@@ -30,5 +30,4 @@ this.perk_legend_specialist_pitchfork_damage <- this.inherit("scripts/skills/ski
 			}
 		}
 	}
-
 });

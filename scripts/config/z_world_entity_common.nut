@@ -11,7 +11,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 	// weigted container
 	WeightedContainer = null,
 
-	// the table too look up the price of an item, unrecorded one will be filled up automatically when it shows up
+	// the table to look up the price of an item, unrecorded one will be filled up automatically the first time it shows up
 	PriceLookUp = {},
 
 	// the max products should be generated 
@@ -51,7 +51,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 		COUNT = 7,
 	},
 
-	// const for the list possible decisions and to deciding which goods should be gathered, more can be added if you can specify the conditions
+	// const for the list of possible decisions and to deciding which goods should be gathered, more can be added if you can specify the conditions
 	Decisions = [
 		{
 			Weight = 2,
@@ -75,7 +75,8 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 			PreferMax = 20,
 			function IsValid( _item, _shopID )
 			{
-				if (!_item.isItemType(this.Const.Items.ItemType.Food))
+				// must be a food_item and hasn't been bought by player
+				if (!::MSU.isKindOf(_item, "food_item") || _item.m.BestBefore != 0.0)
 					return 0;
 
 				return _item.getValue();
@@ -271,8 +272,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 
 		if (decisions.Potential.len() == 0) return this.addFillerGoods(_settlement, _budget, null, false, "tools/throwing_net");
 		
-		local name = this.getWeightContainer(decisions.Potential).roll();
-		local result;
+		local result, name = this.getWeightContainer(decisions.Potential).roll();
 
 		if (name == "FreshlyProduced") result = this.gatherProduce(_settlement, _budget);
 		else result = this.gatherItems(_settlement, this.DecisionID[name], decisions.ItemList, _budget);
@@ -329,7 +329,7 @@ gt.Const.World.Common.WorldEconomy.Trade <- {
 					local v = ::Math.floor(d.IsValid(_item, shopID));
 
 					if (v < 1 || // check if the item meets the condition of this 'choice of goods'
-					 v >= tooExpensiveLimit) // a single item should not cost a larget portion of the available budget
+					 v >= tooExpensiveLimit) // a single item should not cost a large portion of the available budget
 						continue;
 
 					result.ItemList[this.DecisionID[d.Name]].Total += v;

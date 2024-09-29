@@ -64,6 +64,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1] = 1.0;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_demonalp_agent");
 		this.m.AIAgent.setActor(this);
+		this.m.Flags.add("demon");
 		this.m.Flags.add("alp");
 	}
 
@@ -194,7 +195,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		local id = this.getID();
 
-		foreach( a in this.Tactical.Entities.getInstancesOfFaction(this.getFaction()) )
+		foreach( a in this.Tactical.Entities.getAllInstancesAsArray() )
 		{
 			if (!a.getFlags().has("living_nightmare"))
 				continue;
@@ -267,6 +268,7 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
+			b.Hitpoints -= 100;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}

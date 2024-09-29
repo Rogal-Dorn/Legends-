@@ -87,21 +87,12 @@ this.legend_armor_piercing_bolts <- this.inherit("scripts/items/ammo/ammo", {
 		local actor = this.getContainer().getActor();
 		local item = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
-		if (item == null)
-		{
-			return;
-		}
+		if (item == null) return;
 
-		switch(item.getID())
+		if (item.isWeaponType(this.Const.Items.WeaponType.Crossbow))
 		{
-		case "weapon.light_crossbow":
-		case "weapon.goblin_crossbow":
-		case "weapon.crossbow":
-		case "weapon.heavy_crossbow":
-		case "weapon.named_crossbow":
 			_properties.DamageDirectMult *= 1.2;
-			_properties.RangedDamageMult *= 0.90;
-			break;
+			_properties.RangedDamageMult *= 0.9;
 		}
 	}
 

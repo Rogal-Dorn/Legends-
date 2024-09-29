@@ -179,29 +179,27 @@ this.orc_warlord <- this.inherit("scripts/entity/tactical/actor", {
 				}
 			}
 
-			if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Arrow)
+			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 			{
-				decal = _tile.spawnDetail(appearance.CorpseArmor + "_arrows", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.9;
-			}
-			else if (_skill && _skill.getProjectileType() == this.Const.ProjectileType.Javelin)
-			{
-				decal = _tile.spawnDetail(appearance.CorpseArmor + "_javelin", this.Const.Tactical.DetailFlag.Corpse, flip);
-				decal.Scale = 0.9;
-			}
+				if (this.Math.rand(1, 100) <= 5) //5%
+				{
+					local loot = this.new("scripts/items/misc/legend_masterwork_fabric");
+					loot.drop(_tile);
+				}
 
-			this.spawnTerrainDropdownEffect(_tile);
-			local corpse = clone this.Const.Corpse;
-			corpse.CorpseName = "An Orc Warlord";
-			corpse.Tile = _tile;
-			corpse.IsResurrectable = false;
-			corpse.IsConsumable = true;
-			corpse.Items = this.getItems();
-			corpse.IsHeadAttached = _fatalityType != this.Const.FatalityType.Decapitated;
-			_tile.Properties.set("Corpse", corpse);
-			this.Tactical.Entities.addCorpse(_tile);
+				if (this.Math.rand(1, 100) <= 4) //4%
+				{
+					local loot = this.new("scripts/items/misc/legend_masterwork_metal");
+					loot.drop(_tile);
+				}
+
+				if (this.Math.rand(1, 100) <= 3) //3%
+				{
+					local loot = this.new("scripts/items/misc/legend_masterwork_tools");
+					loot.drop(_tile);
+				}
+			}
 		}
-
 		this.getItems().dropAll(_tile, _killer, flip);
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}

@@ -48,7 +48,24 @@ this.obtain_item_contract <- this.inherit("scripts/contracts/contract", {
 			"Seal of the False King",
 			"Flute of the Debaucher",
 			"Dice of Destiny",
-			"Fetish of Fertility"
+			"Fetish of Fertility",
+			"Everburning Lantern",
+			"Blue Crystal Staff",
+			"Raincaller Amulet",
+			"Grimoire of Fate",
+			"Frogir\'s Hammer",
+			"Tome of the All-Father",
+			"Sunstone Crown",
+			"Silver Sheep Horn",
+			"Elder Lute",
+			"Harvest Horn",
+			"Shin of Saint Gorm",
+			"Horseshoe of Healing",
+			"Lucky Wolf Paw",
+			"Beads of Fortune",
+			"Guardian Totem",
+			"Ancestor\'s Stone",
+			"Dragon Shield"
 		];
 		this.m.Flags.set("ItemName", items[this.Math.rand(0, items.len() - 1)]);
 		this.m.Payment.Pool = 500 * this.getPaymentMult() * this.Math.pow(this.getDifficultyMult(), this.Const.World.Assets.ContractRewardPOW) * this.getReputationToPaymentMult();

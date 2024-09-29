@@ -85,25 +85,31 @@ this.shellshocked_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-		if (this.getContainer().getActor().getCurrentProperties().IsResistantToAnyStatuses && this.Math.rand(1, 100) <= 50)
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
-			if (!this.getContainer().getActor().isHiddenToPlayer())
+			this.removeSelf();
+			return;
+		}
+		if (actor.getCurrentProperties().IsResistantToAnyStatuses && this.Math.rand(1, 100) <= 50)
+		{
+			if (!actor.isHiddenToPlayer())
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this.getContainer().getActor()) + " resists being shellshocked thanks to his unnatural physiology");
+				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " resists being shellshocked thanks to his unnatural physiology");
 			}
 
 			this.removeSelf();
 		}
 		else
 		{
-			this.m.TurnsLeft = this.Math.max(1, 3 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+			this.m.TurnsLeft = this.Math.max(1, 3 + actor.getCurrentProperties().NegativeStatusEffectDuration);
 
 			if (this.m.SoundOnUse.len() != 0)
 			{
-				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.8, this.getContainer().getActor().getPos());
+				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 0.8, actor.getPos());
 			}
 
-			this.getContainer().getActor().checkMorale(-1, 0);
+			actor.checkMorale(-1, 0);
 		}
 	}
 

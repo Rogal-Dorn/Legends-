@@ -13,7 +13,7 @@ this.scavenger_follower <- this.inherit("scripts/retinue/follower", {
 			"Recovers tools and supplies from every armor destroyed by you during battle"
 		];
 
-		this.addSkillRequirement("Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Slave", [
+		this.addSkillRequirement("Have at least one of the following backgrounds: Beggar, Cripple, Refugee, Indebted", [
 			"background.beggar",
 			"background.cripple",
 			"background.refugee",

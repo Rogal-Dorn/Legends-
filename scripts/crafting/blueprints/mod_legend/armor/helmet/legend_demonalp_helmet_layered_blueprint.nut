@@ -17,7 +17,11 @@ this.legend_demonalp_helmet_layered_blueprint <- this.inherit("scripts/crafting/
 				Num = 1
 			},
 			{
-				Script = "scripts/items/legend_helmets/top/legend_helmet_facemask",
+				Script = "scripts/items/misc/legend_masterwork_fabric",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_tools",
 				Num = 1
 			}
 		];

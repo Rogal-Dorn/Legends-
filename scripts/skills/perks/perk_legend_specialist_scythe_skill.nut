@@ -21,7 +21,6 @@ this.perk_legend_specialist_scythe_skill <- this.inherit("scripts/skills/skill",
 			if (item.getID() == "weapon.legend_grisly_scythe" || item.getID() == "weapon.legend_scythe" || item.getID() == "weapon.warscythe" || item.getID() == "weapon.named_warscythe")
 			{
 				_properties.MeleeSkill += 15;
-				_properties.DamageArmorMult += 0.25;
 			}
 		}
 	}

@@ -1,6 +1,23 @@
 this.fear_beasts_event <- this.inherit("scripts/events/event", {
 	m = {
-		Casualty = null
+		Casualty = null,
+		excludedBackgrounds = [
+			"companion",
+			"beast_slayer",
+			"hunter",
+			"witchhunter",
+			"wildman",
+			"wildwoman",
+			"hedge_knight"
+		],
+		excludedTraits = [
+			"fear_beasts",
+			"hate_beasts",
+			"fearless",
+			"brave",
+			"determined",
+			"bloodthirsty"
+		]
 	},
 	function create()
 	{
@@ -73,16 +90,21 @@ this.fear_beasts_event <- this.inherit("scripts/events/event", {
 		local candidates = [];
 
 		foreach( bro in brothers )
-		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.beast_slayer" || bro.getBackground().getID() == "background.hunter" || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.wildman")
+		{	
+			foreach (background in this.m.excludedBackgrounds)
 			{
+				if (bro.getBackground().getID() == "background." + background)
+					continue;
+			}
+			if (bro.getLevel() > 7)
 				continue;
-			}
 
-			if (bro.getLevel() <= 7 && !bro.getSkills().hasSkill("trait.fear_beasts") && !bro.getSkills().hasSkill("trait.hate_beasts") && !bro.getSkills().hasSkill("trait.fearless") && !bro.getSkills().hasSkill("trait.brave") && !bro.getSkills().hasSkill("trait.determined") && !bro.getSkills().hasSkill("trait.bloodthirsty"))
+			foreach (trait in this.m.excludedTraits)
 			{
-				candidates.push(bro);
+				if (bro.getSkills().hasSkill("trait." + trait))
+					continue;
 			}
+			candidates.push(bro);
 		}
 
 		if (candidates.len() == 0)

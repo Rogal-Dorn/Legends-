@@ -19,6 +19,7 @@ this.legend_possess_undead_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsActive = true;
 		this.m.IsTargeted = true;
 		this.m.IsVisibleTileNeeded = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
 		this.m.IsIgnoredAsAOO = true;

@@ -2516,8 +2516,8 @@ local perkDefObjects = [
 		Script = "scripts/skills/perks/perk_trophy_hunter",
 		Name = this.Const.Strings.PerkName.TrophyHunter,
 		Tooltip = this.Const.Strings.PerkDescription.TrophyHunter,
-		Icon = "ui/perks/perk_33.png",
-		IconDisabled = "ui/perks/perk_33_sw.png",
+		Icon = "ui/perks/slaughterer_circle.png",
+		IconDisabled = "ui/perks/slaughterer_circle_bw.png",
 		Const = "TrophyHunter"
 	},
 	{
@@ -2711,13 +2711,13 @@ local perkDefObjects = [
 		Const = "LegendFashionable"
 	},
 	{
-		ID = "perk.legend_meek",
-		Script = "scripts/skills/perks/perk_legend_meek",
-		Name = this.Const.Strings.PerkName.LegendMeek,
-		Tooltip = this.Const.Strings.PerkDescription.LegendMeek,
+		ID = "perk.legend_unburdened",
+		Script = "scripts/skills/perks/perk_legend_unburdened",
+		Name = this.Const.Strings.PerkName.LegendUnburdened,
+		Tooltip = this.Const.Strings.PerkDescription.LegendUnburdened,
 		Icon = "ui/perks/meek.png",
 		IconDisabled = "ui/perks/meek_bw.png",
-		Const = "LegendMeek"
+		Const = "LegendUnburdened"
 	},
 	{
 		ID = "perk.legend_helpful",

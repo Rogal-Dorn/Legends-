@@ -22,7 +22,7 @@ gt.Const.LegendMod.hookMSU <- function()
 	this.Const.Items.addNewWeaponType("Whip", "Whip");
 
 	// DO NOT DO THIS. TEMPORARY FIX SO WE CAN DISCUSS THE PROPER WAY TO SOLVE THESE PROBLEMS (NOT SUPPORTED)
-	::MSU.System.Keybinds.KeybindsByMod[::MSU.VanillaID]["world_toggleCamping"].Function = function ()
+	::MSU.System.Keybinds.KeybindsByMod["vanilla"]["world_toggleCamping"].Function = function ()
 	{
 		if (!this.m.MenuStack.hasBacksteps())
 		{

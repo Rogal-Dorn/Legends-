@@ -2,7 +2,8 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 3,
 		Damage = 5,
-		LastRoundApplied = 0
+		LastRoundApplied = 0,
+		Actor = null
 	},
 	function getDamage()
 	{
@@ -12,6 +13,34 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	function setDamage( _d )
 	{
 		this.m.Damage = _d;
+	}
+
+	function setActor( _a )
+	{
+		this.m.Actor = ::MSU.asWeakTableRef(_a);
+	}
+
+	function getAttacker()
+	{
+		if (!::Legends.Mod.ModSettings.getSetting("BleedKiller").getValue())
+		{
+			return this.getContainer().getActor();
+		}
+
+		if (::MSU.isNull(this.m.Actor))
+		{
+			return this.getContainer().getActor();
+		}
+
+		if (this.m.Actor.getID() != this.getContainer().getActor().getID())
+		{
+			if (this.m.Actor.isAlive() && this.m.Actor.isPlacedOnMap())
+			{
+				return this.m.Actor;
+			}
+		}
+
+		return this.getContainer().getActor();
 	}
 
 	function create()
@@ -54,17 +83,18 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 	{
 		if (this.m.LastRoundApplied != this.Time.getRound())
 		{
+			local actor = this.getContainer().getActor();
 			this.m.LastRoundApplied = this.Time.getRound();
-			this.spawnIcon("status_effect_54", this.getContainer().getActor().getTile());
+			this.spawnIcon("status_effect_54", actor);
 
 			if (this.m.SoundOnUse.len() != 0)
 			{
-				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, this.getContainer().getActor().getPos());
+				this.Sound.play(this.m.SoundOnUse[this.Math.rand(0, this.m.SoundOnUse.len() - 1)], this.Const.Sound.Volume.RacialEffect * 1.0, actor.getPos());
 			}
 
 			local hitInfo = clone this.Const.Tactical.HitInfo;
 			hitInfo.DamageRegular = this.m.Damage;
-			if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
+			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 			{
 				hitInfo.DamageRegular = 2 * this.m.Damage;
 			}
@@ -74,7 +104,7 @@ this.spider_poison_effect <- this.inherit("scripts/skills/skill", {
 			hitInfo.BodyPart = this.Const.BodyPart.Body;
 			hitInfo.BodyDamageMult = 1.0;
 			hitInfo.FatalityChanceMult = 0.0;
-			this.getContainer().getActor().onDamageReceived(this.getContainer().getActor(), this, hitInfo);
+			actor.onDamageReceived(this.getAttacker(), this, hitInfo);
 		}
 	}
 

@@ -18,5 +18,18 @@ this.perk_mastery_fist <- this.inherit("scripts/skills/skill", {
 		_properties.IsSpecializedInFists = true;
 	}
 
+	function onAdded()
+	{
+		if (!this.getContainer().hasSkill("actives.legend_kick") && this.getContainer().getActor().isPlayerControlled())
+		{
+			this.getContainer().add(this.new("scripts/skills/actives/legend_kick"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("actives.legend_kick");
+	}
+
 });
 

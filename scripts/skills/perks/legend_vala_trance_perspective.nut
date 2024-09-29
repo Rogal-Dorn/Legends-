@@ -170,15 +170,9 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 
 			}
 
-			if (expertise > 95)
-			{
-				expertise = 95;
-			}
-
-			if (expertise < 5)
-			{
-				expertise = 5;
-			}
+			local minimumHitChance = ::Legends.Mod.ModSettings.getSetting("MinimumChanceToHit").getValue();
+			local maximumHitChance = ::Legends.Mod.ModSettings.getSetting("MaximumChanceToHit").getValue();
+			expertise = this.Math.max(minimumHitChance, this.Math.min(maximumHitChance, expertise));
 
 			this.logInfo("INCORPOREAL PERSPECTIVE :: expertise is " + expertise);
 
@@ -282,7 +276,8 @@ this.legend_vala_trance_perspective <- this.inherit("scripts/skills/skill", {
 
 	function onDeath( _fatalityType )
 	{
-		if(!::Tactical.State.isActive()) return;
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+			return;
 
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();

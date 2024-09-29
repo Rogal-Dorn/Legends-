@@ -64,7 +64,7 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 				text = "Has [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] chance to hit targets directly adjacent because the weapon is too unwieldy"
 			});
 		}
-		
+
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
 		{
 			ret.push({
@@ -97,7 +97,7 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 
 			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
+				_properties.MeleeSkill -= 15;
 				this.m.HitChanceBonus = -5;
 			}
 			else
@@ -105,12 +105,11 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 				this.m.HitChanceBonus = 10;
 			}
 
-			if (_properties.IsSpecializedInSpearThrust )
+			if (_properties.IsSpecializedInSpearThrust)
 			{
-			_properties.DamageTotalMult *= 1.15;
+				_properties.DamageTotalMult *= 1.15;
 			}
 		}
 	}
 
 });
-

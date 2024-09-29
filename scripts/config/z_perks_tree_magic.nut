@@ -17,8 +17,8 @@ gt.Const.Perks.ValaChantMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendValaChantSenses],
 		[gt.Const.Perks.PerkDefs.LegendValaChantMastery],
 		[gt.Const.Perks.PerkDefs.LegendValaChantDisharmony],
-		[],
-		[]
+		[gt.Const.Perks.PerkDefs.LegendHerbcraft],
+		[gt.Const.Perks.PerkDefs.LegendPotionBrewer]
 	]
 };
 
@@ -33,7 +33,7 @@ gt.Const.Perks.ValaTranceMagicTree <- {
 		[gt.Const.Perks.PerkDefs.LegendValaTranceMalevolent],
 		[],
 		[gt.Const.Perks.PerkDefs.LegendValaTranceMastery],
-		[],
+		[gt.Const.Perks.PerkDefs.LegendGatherer],
 		[gt.Const.Perks.PerkDefs.LegendValaThreads],
 		[]
 	]

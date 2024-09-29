@@ -72,7 +72,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				
 				
 				
-				_event.m.Uneducated.getBaseProperties().DailyWage -= _event.m.Uneducated.getDailyCost() / 2;
+				// _event.m.Uneducated.getBaseProperties().DailyWage -= this.Math.floor(_event.m.Uneducated.getDailyCost() / 2);
 				_event.m.Uneducated.getSkills().update();
 
 
@@ -156,29 +156,34 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.slave")
+			switch (true)
 			{
-				continue;
-			}
+				case bro.getFlags().get("IsSpecial"):
+				case bro.getFlags().get("IsPlayerCharacter"):
+				case bro.getBackground().getID() == "background.slave":
+				case bro.getBackground().getID() == "background.legend_commander_berserker":
+				case bro.getBackground().getID() == "background.legend_berserker":
+				case bro.getBackground().getID() == "background.legend_donkey":
+				case bro.getSkills().hasSkill("trait.bright"):
+					continue;
+				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist):
+				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist):
+				{
+					cultist_candidates.push(bro);
+					continue;
+				}
+				case bro.getSkills().hasSkill("trait.dumb"):
+				case bro.getSkills().hasSkill("injury.brain_damage"):
+				{
+					uneducated_candidates.push(bro);
+					continue;
+				}
 
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist) || bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist))
-			{
-				cultist_candidates.push(bro);
+				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble):
+					continue;
+				default:
+					uneducated_candidates.push(bro);
 			}
-			else if ((bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && !bro.getSkills().hasSkill("trait.bright")) ||
-						(!bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble) && bro.getSkills().hasSkill("trait.dumb")) ||
-						bro.getSkills().hasSkill("injury.brain_damage"))
-					{
-						//this.logInfo("1");
-						if(bro.getBackground().getID() != "background.legend_commander_berserker" &&
-						   bro.getBackground().getID() != "background.legend_berserker" &&
-						   bro.getBackground().getID() != "background.legend_donkey")
-						{
-							//this.logInfo("2");
-							uneducated_candidates.push(bro);
-						}
-					}
-
 		}
 
 		if (cultist_candidates.len() == 0 || uneducated_candidates.len() == 0)

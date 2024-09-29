@@ -32,7 +32,7 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		result.push({
 			id = 14,
 			type = "text",
-			icon = "ui/icons/bravery.png",
+			icon = "ui/icons/initiative.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
 		});		
 		return result;
@@ -49,7 +49,7 @@ this.legend_armor_spiked_collar_upgrade <- this.inherit("scripts/items/legend_ar
 		_result.push({
 			id = 14,
 			type = "text",
-			icon = "ui/icons/bravery.png",
+			icon = "ui/icons/initiative.png",
 			text = "[color=" + this.Const.UI.Color.NegativeValue + "]-6[/color] Initiative"
 		});
 	}	

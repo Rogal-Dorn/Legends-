@@ -4,6 +4,7 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		SuffixList = [],
 		NameList = [],
 		UseRandomName = true
+		BaseProperties = {},
 	},
 	function create()
 	{
@@ -53,30 +54,47 @@ this.named_shield <- this.inherit("scripts/items/shields/shield", {
 		}
 	}
 
-	function onEquip()
-	{
-		this.shield.onEquip();
-
-		if (this.m.Name.len() == 0)
-		{
-			if (this.Math.rand(1, 100) <= 25)
-			{
-				this.setName(this.getContainer().getActor().getName() + "\'s " + this.m.NameList[this.Math.rand(0, this.m.NameList.len() - 1)]);
-			}
-			else
-			{
-				this.setName(this.createRandomName());
-			}
-		}
-	}
-
 	function setName( _name )
 	{
 		this.m.Name = _name;
 	}
 
+	function getTooltip()
+	{
+		local result = this.shield.getTooltip();
+
+		foreach (k, p in this.m.BaseProperties)
+		{
+			if (this.m[k] == p)
+				continue;
+
+			foreach (tooltip in result)
+			{
+				if (!tooltip.rawin("icon"))
+					continue;
+
+				if (!::Const.HighlightNamedRoll[k].isRightTooltip(tooltip))
+					continue;
+
+				tooltip.icon = ::Const.HighlightNamedRoll[k].Icon;
+				break;
+			}
+		}
+
+		return result;
+	}
+
 	function randomizeValues()
 	{
+		if (this.m.BaseProperties.len() == 0)
+		{
+			this.m.BaseProperties.ConditionMax <- this.m.ConditionMax;
+			this.m.BaseProperties.MeleeDefense <- this.m.MeleeDefense;
+			this.m.BaseProperties.RangedDefense <- this.m.RangedDefense;
+			this.m.BaseProperties.StaminaModifier <- this.m.StaminaModifier;
+			this.m.BaseProperties.FatigueOnSkillUse <- this.m.FatigueOnSkillUse;
+		}
+
 		local available = [];
 		available.push(function ( _i )
 		{

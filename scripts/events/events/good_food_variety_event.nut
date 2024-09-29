@@ -61,7 +61,7 @@ this.good_food_variety_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.spartan"))
+			if (bro.getSkills().hasSkill("trait.spartan") || bro.getFlags().get("IsSpecial") || bro.getFlags().get("IsPlayerCharacter") || bro.getBackground().getID() == "background.legend_puppet" || bro.getBackground().getID() == "background.legend_donkey")
 			{
 				continue;
 			}

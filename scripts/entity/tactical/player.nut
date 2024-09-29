@@ -481,7 +481,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 			}
 		];
 
-		if (!this.isPlayerControlled() && _targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
+		if (_targetedWithSkill != null && this.isKindOf(_targetedWithSkill, "skill"))
 		{
 			local tile = this.getTile();
 
@@ -1103,8 +1103,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Skills.add(this.new("scripts/skills/" + potential[this.Math.rand(0, potential.len() - 1)].Script));
 
-
-			if (this.getBackground().getID() != "background.legend_donkey" && this.World.Assets.getOrigin().getID() == "scenario.legends_necro" && this.World.Assets.getOrigin().getID() == "scenario.legends_solo_necro") //deathly spectre for Cabal/solo necro
+			if (this.getBackground().getID() != "background.legend_donkey") //deathly spectre for Cabal/solo necro
 			{
 				// if (this.m.CurrentProperties.SurvivesAsUndead && !this.getFlags().has("PlayerZombie")) //original that we know works but has conflicts - Luft
 				// if (this.m.CurrentProperties.SurvivesAsUndead && this.m.IsDying == true && !this.getFlags().has("PlayerZombie")) //attempt to add 'isdying' into the formula to stop the durgeon retinue from basically not working at all and bros still becoming zombies. But I think isdying is casuing a recursive loop because the bro is 'dying' but then being put back into the roster by the zombie mechanic. - Luft

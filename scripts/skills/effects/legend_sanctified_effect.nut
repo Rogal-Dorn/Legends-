@@ -2,6 +2,7 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		TurnsLeft = 0,
 	},
+
 	function create()
 	{
 		this.m.ID = "effects.legend_sanctified_effect";
@@ -55,27 +56,58 @@ this.legend_sanctified_effect <- this.inherit("scripts/skills/skill", {
 
 	function onNewRound()
 	{
-		if (!this.isActorOnTileWithHolyFlame() && this.m.TurnsLeft <= 0)
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			this.removeSelf();
+			return;
 		}
+		if (!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap())
+		{
+			if (!this.isActorOnTileWithHolyFlame() && this.m.TurnsLeft <= 0)
+			{
+				this.removeSelf();
+			}
+		}
+	}
+
+	function onTurnEnd()
+	{
+		this.m.TurnsLeft -= 1;
+		if (this.m.TurnsLeft == 0)
+			this.removeSelf();
+	}
+
+	function onCombatFinished()
+	{
+		this.removeSelf();
 	}
 
 	function onUpdate( _properties )
 	{
-		if (!this.isActorOnTileWithHolyFlame() && this.m.TurnsLeft <= 0)
+		local actor = this.getContainer().getActor();
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			this.removeSelf();
+			return;
 		}
-		else
+		if (!::Tactical.State.isBattleEnded() && actor.isPlacedOnMap())
 		{
-			_properties.IsAffectedByLosingHitpoints = false;
-			_properties.IsAffectedByInjuries = false;
-			_properties.IsAffectedByFreshInjuries = false;
-			_properties.IsImmuneToBleeding = true;
-			_properties.IsImmuneToPoison = true;	
+			if (!this.isActorOnTileWithHolyFlame() || this.m.TurnsLeft <= 0)
+			{
+				this.removeSelf();
+			}
+			else
+			{
+				_properties.IsAffectedByLosingHitpoints = false;
+				_properties.IsAffectedByInjuries = false;
+				_properties.IsAffectedByFreshInjuries = false;
+				_properties.IsImmuneToBleeding = true;
+				_properties.IsImmuneToPoison = true;	
+			}
 		}
 	}
+
 
 });
 

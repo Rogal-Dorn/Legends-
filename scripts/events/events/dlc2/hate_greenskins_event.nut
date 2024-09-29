@@ -1,7 +1,15 @@
 this.hate_greenskins_event <- this.inherit("scripts/events/event", {
 	m = {
 		Image = "",
-		Casualty = null
+		Casualty = null,
+		excludedTraits = [
+			"fear_greenskins",
+			"hate_greenskins",
+			"dastard",
+			"craven",
+			"fainthearted",
+			"weasel"
+		]
 	},
 	function create()
 	{
@@ -41,7 +49,7 @@ this.hate_greenskins_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-if (!this.Const.DLC.Unhold)
+	if (!this.Const.DLC.Unhold)
 		{
 			return;
 		}
@@ -80,10 +88,14 @@ if (!this.Const.DLC.Unhold)
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && !bro.getSkills().hasSkill("trait.fear_greenskins") && !bro.getSkills().hasSkill("trait.hate_greenskins") && !bro.getSkills().hasSkill("trait.dastard") && !bro.getSkills().hasSkill("trait.craven") && !bro.getSkills().hasSkill("trait.fainthearted") && !bro.getSkills().hasSkill("trait.weasel"))
+			if (bro.getLevel() < 3)
+				return;
+			foreach (trait in this.m.excludedTraits)
 			{
-				candidates.push(bro);
+				if (bro.getSkills().hasSkill("trait." + trait))
+					continue;
 			}
+			candidates.push(bro);
 		}
 
 		if (candidates.len() == 0)

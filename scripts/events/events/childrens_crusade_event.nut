@@ -196,7 +196,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 				this.List.push({
 					id = 16,
 					icon = "ui/icons/bravery.png",
-					text = _event.mDoubter.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + resolve + "[/color] Resolve"
+					text = _event.m.Doubter.getName() + " gains [color=" + this.Const.UI.Color.PositiveEventValue + "]+" + resolve + "[/color] Resolve"
 				});
 				_event.m.Doubter.improveMood(1.0, "Saved some children from certain doom");
 
