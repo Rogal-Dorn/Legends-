@@ -56,10 +56,11 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 			Weapon = [
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.FlailTree,
-				this.Const.Perks.SlingTree
+				this.Const.Perks.SlingTree,
+				this.Const.Perks.GreatSwordTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,
@@ -113,12 +114,12 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				13,
-				8
+				7,
+				10
 			],
 			Bravery = [
-				-2,
-				-3
+				-3,
+				-2
 			],
 			Stamina = [
 				10,
@@ -142,7 +143,7 @@ this.farmhand_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Initiative = [
 				0,
-				0
+				4
 			]
 		};
 		return c;

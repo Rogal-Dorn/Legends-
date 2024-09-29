@@ -10,7 +10,7 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 		this.m.GoodEnding = "While the %companyname% continued on with great success, %name% the hunter eventually saw fit to leave it all behind. They returned to the life of an archer, working for who ever paid the best. %name% rarely showed the grim reality of hunting humans, but you have to imagine they\'d just rather stop doing it. As far as you know, %name% is doing well these days. The archer purchased a bit of land and helps guide nobles on pricey hunting trips.";
 		this.m.BadEnding = "With the decline of the %companyname% readily obvious, %name% the master archer departed from the company and returned to archery contests. Unfortunately, a shoot off went awry while shooting apples off each other\'s heads. The master archer was the better shot, but being better does not help if you\'re dead.";
 		this.m.HiringCost = 885;
-		this.m.DailyCost = 35;
+		this.m.DailyCost = 32;
 		this.m.Excluded = [
 			"trait.fear_undead",
 			"trait.fear_beasts",
@@ -96,7 +96,9 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 				this.Const.Perks.FitTree,
 				this.Const.Perks.DeviousTree
 			],
-			Enemy = [this.Const.Perks.ArcherTree],
+			Enemy = [
+				this.Const.Perks.ArcherTree
+			],
 			Class = [],
 			Magic = [
 				this.Const.Perks.RangerHuntMagicTree
@@ -136,8 +138,8 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 				5
 			],
 			Stamina = [
-				7,
-				5
+				5,
+				7
 			],
 			MeleeSkill = [
 				-5,
@@ -148,8 +150,8 @@ this.legend_master_archer_background <- this.inherit("scripts/skills/backgrounds
 				27
 			],
 			MeleeDefense = [
-				-3,
-				-6
+				-6,
+				-3
 			],
 			RangedDefense = [
 				6,

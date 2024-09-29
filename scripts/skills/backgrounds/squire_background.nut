@@ -10,7 +10,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		this.m.GoodEnding = "%name% the squire eventually left the %companyname%. You\'ve heard that he\'s since been knighted. No doubt he is sitting happy as a plum wherever he is.";
 		this.m.BadEnding = "The squire, %name%, eventually departed the %companyname%. He intended to return home and become knighted, fulfilling his lifelong dream. Cruel politics got in the way and not only was he not knighted, he was stripped of his squire duties. Word has it he hanged himself from a barn\'s rafters.";
 		this.m.HiringCost = 320;
-		this.m.DailyCost = 30;
+		this.m.DailyCost = 26;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -107,41 +107,46 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		local c = {
 			Hitpoints = [
-				0,
-				0
+				2,
+				5
 			],
 			Bravery = [
-				12,
-				12
+				3,
+				7
 			],
 			Stamina = [
-				7,
-				5
+				5,
+				7
 			],
 			MeleeSkill = [
-				7,
-				5
+				5,
+				7
 			],
 			RangedSkill = [
-				7,
-				8
+				0,
+				3
 			],
 			MeleeDefense = [
-				1,
-				3
+				2,
+				4
 			],
 			RangedDefense = [
-				1,
-				3
-			],
-			Initiative = [
 				0,
 				0
+			],
+			Initiative = [
+				1,
+				4
 			]
 		};
 		return c;
 	}
 
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.XPGainMult *= 1.10;
+	}
 
 	function onAddEquipment()
 	{

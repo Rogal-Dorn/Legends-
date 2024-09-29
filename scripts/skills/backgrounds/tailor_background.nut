@@ -112,7 +112,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		local c = {
 			Hitpoints = [
-				-3,
+				-2,
 				2
 			],
 			Bravery = [

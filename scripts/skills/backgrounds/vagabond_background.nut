@@ -10,7 +10,7 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.GoodEnding = "Some men were just intended to wander. While his time with the %companyname% went well, %name% the vagabond eventually departed with the company and set off on the roads once more. You\'ve no idea where he\'s gone, you just know all he\'s interested in is going.";
 		this.m.BadEnding = "As the company fell apart, it\'s little surprise that a vagabond like %name% chose to leave it behind and return to the roads. Unfortunately, with the world in such a dire state, it did not take long for him to find trouble. His body was found hanging outside a small farming village. A sign nailed to his chest read: \'No Free Rangers\'.";
 		this.m.HiringCost = 70;
-		this.m.DailyCost = 6;
+		this.m.DailyCost = 9;
 		this.m.Excluded = [
 			"trait.hate_beasts",
 			"trait.hate_undead",
@@ -77,36 +77,36 @@ this.vagabond_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				-3,
-				0
+				-5,
+				5
 			],
 			Bravery = [
-				-5,
-				-7
+				-2,
+				5
 			],
 			Stamina = [
 				10,
 				15
 			],
 			MeleeSkill = [
-				0,
-				0
+				-2,
+				4
 			],
 			RangedSkill = [
-				0,
-				0
+				-5,
+				5
 			],
 			MeleeDefense = [
-				0,
-				0
+				-2,
+				4
 			],
 			RangedDefense = [
-				0,
-				0
+				-2,
+				5
 			],
 			Initiative = [
-				0,
-				0
+				5,
+				20
 			]
 		};
 		return c;

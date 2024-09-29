@@ -4,7 +4,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 	{
 		this.character_background.create();
 		this.m.ID = "background.legend_commander_noble";
-		this.m.Name = "Noble usurper";
+		this.m.Name = "Noble Usurper";
 		this.m.Icon = "ui/backgrounds/noble_02.png";
 		this.m.BackgroundDescription = "A noble with a birthright claim to authority";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a man like %name%. {Instead of returning to the armed services, he left the %companyname% and headed east in search of rare beasts. Word has it he returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | He departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | He retired from the %companyname% and, instead of returning to his noble family, headed south. Word has it he fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about his travels. | The nobleman left the %companyname% and, preferring the life of adventure to noble boredom, he headed north. Word has it that he\'s currently marching a troop of explorers to the furthest reaches of the world.}";
@@ -69,20 +69,26 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			0.0, //desert
 			0.0 //oasis
 		];
-		this.m.CustomPerkTree = [
-			[
-				this.Const.Perks.PerkDefs.LegendCheerOn,
-				this.Const.Perks.PerkDefs.Adrenaline,
-				this.Const.Perks.PerkDefs.Backstabber,
-				this.Const.Perks.PerkDefs.CripplingStrikes,
-				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.NineLives,
-				this.Const.Perks.PerkDefs.Student,
-				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.BagsAndBelts,
-				this.Const.Perks.PerkDefs.LegendAlert,
-				this.Const.Perks.PerkDefs.LegendBackToBasics
+		this.m.PerkTreeDynamic = {
+			Weapon = [
+				this.Const.Perks.DaggerTree,
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.MaceTree
+				this.Const.Perks.CrossbowTree
 			],
+<<<<<<< HEAD
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.IntelligentTree,
+				this.Const.Perks.ViciousTree,
+				this.Const.Perks.CalmTree,
+				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FitTree,
+				this.Const.Perks.InspirationalTree
+=======
 			[
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -108,64 +114,19 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.Relentless
+>>>>>>> development
 			],
-			[
-
-				this.Const.Perks.PerkDefs.SpecPolearm,
-				this.Const.Perks.PerkDefs.SpecSword,
-				this.Const.Perks.PerkDefs.SpecDagger,
-				this.Const.Perks.PerkDefs.SpecCrossbow,
-				this.Const.Perks.PerkDefs.SpecThrowing,
-				this.Const.Perks.PerkDefs.LegendSpecBandage,
-				this.Const.Perks.PerkDefs.LegendEfficientPacking,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing,
-				this.Const.Perks.PerkDefs.LegendShieldsUp,
+			Enemy = [
+				this.Const.Perks.OutlandersTree,
+				this.Const.Perks.CivilizationTree
 			],
-			[
-				this.Const.Perks.PerkDefs.LegendBarterTrustworthy,
-				this.Const.Perks.PerkDefs.ReachAdvantage,
-				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.Underdog,
-				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendLithe,
-				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
+			Class = [
+				this.Const.Perks.BarterClassTree
 			],
-			[
-				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.LegendDangerPay,
-				this.Const.Perks.PerkDefs.LegendPaymaster,
-				this.Const.Perks.PerkDefs.LegendClarity,
-				this.Const.Perks.PerkDefs.HeadHunter,
-				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LegendPerfectFit,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
-				this.Const.Perks.PerkDefs.LegendForwardPush,
-			],
-			[
-				this.Const.Perks.PerkDefs.Fearsome,
-				this.Const.Perks.PerkDefs.LegendBribe,
-				this.Const.Perks.PerkDefs.LegendBarterGreed,
-				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.Inspire,
-				this.Const.Perks.PerkDefs.LegendMindOverBody,
-				this.Const.Perks.PerkDefs.LegendBribe,
-				this.Const.Perks.PerkDefs.LegendFieldTriage,
-				this.Const.Perks.PerkDefs.LegendBalance,
-				this.Const.Perks.PerkDefs.LegendRelax,
-				this.Const.Perks.PerkDefs.LegendFieldRepairs,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble,
-				//this.Const.Perks.PerkDefs.LegendPreparedForAnything
-			],
-			[],
-			[],
-			[],
-			[]
-		];
+			Magic = [
+				this.Const.Perks.CaptainMagicTree
+			]
+		}
 	}
 
 	//Default Male
@@ -185,22 +146,20 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 
 	}
 
-
-
 	function onBuildDescription()
 	{
-
+		local playerCharacter = "";
+		if (this.getFlags().has("IsPlayerCharacter"))
+			playerCharacter = "This is the commander, when they die, it is game over. "
 		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
-			return "This is the commander, when they die, it is game over. {A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordswoman}, %name%\'s life at court {had grown stale for her | was not exciting enough for her with endless studying of court etiquette and family lineage | felt like wasting the best time of her life | was not half as exciting to her as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of her brother | To the frustration of her mother | Finally making a decision to change things}, %name% rode out to {prove herself | make a name for herself | earn glory on the battlefield | test her skills in battle} and {live life to its fullest as she imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn her place in the world | be knighted for her valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
+			return playerCharacter + "{A viscountess of the realm | As the third in the line of succession | A young and brash noble | A skilled swordswoman}, %name%\'s life at court {had grown stale for her | was not exciting enough for her with endless studying of court etiquette and family lineage | felt like wasting the best time of her life | was not half as exciting to her as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of her brother | To the frustration of her mother | Finally making a decision to change things}, %name% rode out to {prove herself | make a name for herself | earn glory on the battlefield | test her skills in battle} and {live life to its fullest as she imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn her place in the world | be knighted for her valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 		}
 		else
 		{
-			return "This is the commander, when they die, it is game over. {A minor noble | As the third in the line of succession | A young and brash noble | A skilled swordsman}, %name%\'s life at court {had grown stale for him | was not exciting enough for him with endless studying of court etiquette and family lineage | felt like wasting the best time of his life | was not half as exciting to him as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of his brother | To the frustration of his mother | Finally making a decision to change things}, %name% rode out to {prove himself | make a name for himself | earn glory on the battlefield | test his skills in battle} and {live life to its fullest as he imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn his place in the world | be knighted for his valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
+			return playerCharacter + "{A viscount of the realm | As the third in the line of succession | A young and brash noble | A skilled swordsman}, %name%\'s life at court {had grown stale for him | was not exciting enough for him with endless studying of court etiquette and family lineage | felt like wasting the best time of his life | was not half as exciting to him as the tales of adventures, battles, fearsome beasts to vanquish and fair maidens to conquer}. {Wearing the family crest proudly | At the encouragement of his brother | To the frustration of his mother | Finally making a decision to change things}, %name% rode out to {prove himself | make a name for himself | earn glory on the battlefield | test his skills in battle} and {live life to its fullest as he imagined it from behind the castle walls | see all the wonders and exotic places of the world | earn his place in the world | be knighted for his valor | become famous and loved in all the known world | become infamous and feared in all the known world}.";
 		}
 	}
-
-
 
 	function onChangeAttributes()
 	{

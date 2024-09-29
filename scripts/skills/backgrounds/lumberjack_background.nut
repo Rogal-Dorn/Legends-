@@ -9,7 +9,7 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 		this.m.BackgroundDescription = "Lumberjacks are used to hard physical labor. And axes.";
 		this.m.GoodEnding = "%name% the burly lumberjack eventually left the company to return to the woods. He started a woodcutting business and operates every day of the year. Luckily, timing was on his side: the nobility have recently really gotten \'into\' cabins and are paying out crowns left and right to anyone who can build them.";
 		this.m.BadEnding = "%name% the lumberjack had enough of the sellsword\'s life and returned to woodcutting. Last you heard, he was involved in a tree-falling accident and his body could have been rolled up like a rug the bones were so thoroughly squashed.";
-		this.m.HiringCost = 100;
+		this.m.HiringCost = 115;
 		this.m.DailyCost = 13;
 		this.m.Excluded = [
 			"trait.weasel",
@@ -127,7 +127,7 @@ this.lumberjack_background <- this.inherit("scripts/skills/backgrounds/character
 				0
 			],
 			Initiative = [
-				-5,
+				0,
 				0
 			]
 		};

@@ -48,6 +48,7 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
@@ -57,11 +58,11 @@ this.legend_taxidermist_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [
-					this.Const.Perks.GhoulTree,
-					this.Const.Perks.DirewolfTree,
-					this.Const.Perks.UnholdTree,
-					this.Const.Perks.AlpTree
-					],
+				this.Const.Perks.GhoulTree,
+				this.Const.Perks.DirewolfTree,
+				this.Const.Perks.UnholdTree,
+				this.Const.Perks.AlpTree
+			],
 			Class = [],
 			Magic = []
 		}

@@ -194,8 +194,8 @@ this.legend_bounty_hunter_background <- this.inherit("scripts/skills/backgrounds
 				5
 			],
 			Initiative = [
-				12,
-				15
+				20,
+				20
 			]
 		};
 		return c;

@@ -98,16 +98,16 @@ this.miller_background <- this.inherit("scripts/skills/backgrounds/character_bac
 	{
 		local c = {
 			Hitpoints = [
-				4,
-				-1
+				-1,
+				4
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				8,
-				5
+				5,
+				8
 			],
 			MeleeSkill = [
 				0,

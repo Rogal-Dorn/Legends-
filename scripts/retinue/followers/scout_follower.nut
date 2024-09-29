@@ -15,7 +15,7 @@ this.scout_follower <- this.inherit("scripts/retinue/follower", {
 
 		this.addSkillRequirement("Have at least one of the following backgrounds: Wildman/Wildwoman, Hunter, Lumberjack, Ranger, Master Archer", [
 			"background.wildman",
-			"background.wildwoman",
+			// "background.wildwoman",
 			"background.hunter",
 			"background.lumberjack",
 			"background.legend_ranger",

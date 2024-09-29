@@ -29,7 +29,9 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.TrainedTree
 			],
-			Enemy = [this.Const.Perks.ArcherTree],
+			Enemy = [
+				this.Const.Perks.ArcherTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -44,7 +46,7 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 			],
 			Bravery = [
 				6,
-				4
+				2
 			],
 			Stamina = [
 				5,

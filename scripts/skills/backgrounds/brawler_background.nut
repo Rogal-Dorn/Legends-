@@ -9,7 +9,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.BackgroundDescription = "Brawlers are unmatched in unarmed combat, and physical exercise tends to leave them in good shape.";
 		this.m.GoodEnding = "A brawler like %name% is dangerous with just his fists, and proved himself similarly savage with weapons. Before you left the %companyname%, you talked to the fighter about whether or not he\'d stay in the band. He said he had no desire to return to prizefighting, shook your hand, and thanked you for giving him the opportunity. Last you heard, the company chose him for a one-on-one, winner take all fight to settle compensation differences with a competing mercenary band. He won in the first round.";
 		this.m.BadEnding = "%name% the brawler left the company when it became clear it would soon dissolve and probably end up killing everyone who stayed onboard. He returned to prizefighting, grinding out the following years in brutal, weekly bouts. As he got older, his chin disappeared, as did his speed and power. He was left jobbing, intentionally taking falls and losing badly when he didn\'t. Eventually, no one would give him a fight. A nobleman offered him a large sum to wrestle a bear and the desperate %name% took him up on it. When the \'fight\' was over, the brawler lay dead, mangled beyond recognition, being dragged around the mud by a ferocious beast as drunken highborn cheered and clapped.";
-		this.m.HiringCost = 125;
+		this.m.HiringCost = 84;
 		this.m.DailyCost = 13;
 		this.m.Excluded = [
 			"trait.weasel",
@@ -37,7 +37,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.Hairs = this.Const.Hair.UntidyMale;
 		this.m.HairColors = this.Const.HairColors.All;
 		this.m.Beards = this.Const.Beards.Untidy;
-
+		this.m.Level = this.Math.rand(1, 2);
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Dreaded;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.Bodies = this.Const.Bodies.Muscular;
@@ -56,7 +56,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Traits = [
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree,
-				this.Const.Perks.TrainedTree,
+				this.Const.Perks.FastTree,
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
@@ -75,7 +75,7 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] Damage when unarmed"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] Damage when unarmed"
 			}
 		)
 		return ret
@@ -90,36 +90,36 @@ this.brawler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				15
+				6,
+				10
 			],
 			Bravery = [
-				7,
+				2,
 				5
 			],
 			Stamina = [
-				10,
-				5
+				7,
+				10
 			],
 			MeleeSkill = [
-				5,
-				0
+				3,
+				5
 			],
 			RangedSkill = [
-				0,
-				0
+				-6,
+				-6
 			],
 			MeleeDefense = [
-				0,
-				0
+				1,
+				2
 			],
 			RangedDefense = [
-				0,
+				-3,
 				0
 			],
 			Initiative = [
-				15,
-				5
+				5,
+				15
 			]
 		};
 		return c;

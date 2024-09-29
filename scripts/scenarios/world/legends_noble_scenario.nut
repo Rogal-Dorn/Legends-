@@ -35,11 +35,11 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 
 		// Noble Commander Create
 
+		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setStartValuesEx([
 			"legend_noble_commander_background"
 		], false);
 		bros[0].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
-		bros[0].getFlags().set("IsPlayerCharacter", true);
 		bros[0].setPlaceInFormation(13);
 		bros[0].setVeteranPerks(2);		
 		bros[0].getSkills().add(this.new("scripts/skills/traits/drunkard_trait"));
@@ -310,9 +310,10 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.addBroToRoster(_roster, "legend_noble_2h", 4);
 		this.addBroToRoster(_roster, "legend_noble_shield", 4);
 		this.addBroToRoster(_roster, "legend_noble_ranged", 4);
-		this.addBroToRoster(_roster, "adventurous_noble_background", 6);
-		this.addBroToRoster(_roster, "female_adventurous_noble_background", 6);
-		this.addBroToRoster(_roster, "legend_noble_background", 8);
+		this.addBroToRoster(_roster, "adventurous_noble_background", 8);
+		// this.addBroToRoster(_roster, "female_adventurous_noble_background", 6);
+		this.addBroToRoster(_roster, "disowned_noble_background", 8);
+		// this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
 
 		foreach( i, bro in bros )
 		{
@@ -351,4 +352,3 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.addScenarioPerk(_background, this.Const.Perks.PerkDefs.Rotation);
 	}
 });
-

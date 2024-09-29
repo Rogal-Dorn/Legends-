@@ -66,6 +66,7 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
@@ -75,10 +76,10 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.AgileTree
 			],
 			Enemy = [
-					this.Const.Perks.DirewolfTree,
-					this.Const.Perks.SpiderTree,
-					this.Const.Perks.GoblinTree
-					],
+				this.Const.Perks.DirewolfTree,
+				this.Const.Perks.SpiderTree,
+				this.Const.Perks.GoblinTree
+			],
 			Class = [this.Const.Perks.ShortbowClassTree],
 			Magic = []
 		}
@@ -118,20 +119,20 @@ this.poacher_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0
 			],
 			Bravery = [
-				-5,
+				0,
 				5
 			],
 			Stamina = [
-				3,
-				0
+				0,
+				3
 			],
 			MeleeSkill = [
-				2,
-				0
+				0,
+				2
 			],
 			RangedSkill = [
-				15,
-				7
+				7,
+				15
 			],
 			MeleeDefense = [
 				0,

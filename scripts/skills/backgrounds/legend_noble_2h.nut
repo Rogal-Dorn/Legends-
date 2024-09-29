@@ -122,8 +122,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				5
+				5,
+				10
 			],
 			Bravery = [
 				5,
@@ -138,7 +138,7 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				17
 			],
 			RangedSkill = [
-				0,
+				-5,
 				-5
 			],
 			MeleeDefense = [
@@ -150,8 +150,8 @@ this.legend_noble_2h <- this.inherit("scripts/skills/backgrounds/character_backg
 				4
 			],
 			Initiative = [
-				-10,
-				-5
+				-5,
+				-10
 			]
 		};
 		return c;

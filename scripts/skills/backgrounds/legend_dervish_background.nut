@@ -9,8 +9,8 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BackgroundDescription = "The dervish is a religious background that enters an almost trance-like state in combat.";
 		this.m.GoodEnding = "Although the life of excess was not the way of the dervish, %name% took the money given to them and set it aside, accumulating a Vizier\'s fortune of crowns. %name% donated this money to local widows and shelters for the poor before selling what they were wearing and wandering back into the streets, just as they were found.";
 		this.m.BadEnding = "The life of a mercenary sated the brutal needs of %name%, but allowed their spiritual nature to become corrupt and twisted. %name% turned to a life of mercenary work fully, becoming greedy and dining on the pleasures of excess. In turn they made many enemies and disgusted their former peers. Through unknown methods %name% was found poisoned a few seasons later.";
-		this.m.HiringCost = 350;
-		this.m.DailyCost = 8;
+		this.m.HiringCost = 140;
+		this.m.DailyCost = 14;
 		this.m.Excluded = [
 			"trait.bleeder",
 			"trait.ailing",
@@ -41,7 +41,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [ //lf 5
 				this.Const.Perks.IndestructibleTree,
@@ -65,32 +65,32 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 				25
 			],
 			Bravery = [
-				5,
-				10
+				15,
+				20
 			],
 			Stamina = [
-				0,
-				10
+				10,
+				14
 			],
 			MeleeSkill = [
-				-8,
-				8
+				6,
+				10
 			],
 			RangedSkill = [
 				0,
 				3
 			],
 			MeleeDefense = [
-				-10,
-				5
-			],
-			RangedDefense = [
-				-6,
+				-3,
 				2
 			],
+			RangedDefense = [
+				-2,
+				-2
+			],
 			Initiative = [
-				-5,
-				5
+				10,
+				16
 			]
 		};
 		return c;

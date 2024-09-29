@@ -188,8 +188,8 @@ this.legends_rangers_scenario <- this.inherit("scripts/scenarios/world/starting_
 	function onUpdateHiringRoster( _roster )
 	{
 		this.addBroToRoster(_roster, "poacher_background", 6);
-		this.addBroToRoster(_roster, "wildwoman_background", 6);
-		this.addBroToRoster(_roster, "wildman_background", 6);
+		// this.addBroToRoster(_roster, "wildwoman_background", 6);
+		this.addBroToRoster(_roster, "wildman_background", 8);
 		this.addBroToRoster(_roster, "hunter_background", 6);
 		this.addBroToRoster(_roster, "legend_herbalist_background", 8);
 		this.addBroToRoster(_roster, "legend_ranger_background", 9);

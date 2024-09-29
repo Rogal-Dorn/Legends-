@@ -61,7 +61,9 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 				this.Const.Perks.BanditTree,
 				this.Const.Perks.DirewolfTree
 			],
-			Class = [this.Const.Perks.MilitiaClassTree]
+			Class = [
+				this.Const.Perks.MilitiaClassTree
+			],
 			Magic = []
 		}
 	}
@@ -97,32 +99,32 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 				0
 			],
 			Bravery = [
-				15,
-				8
+				8,
+				15
 			],
 			Stamina = [
 				5,
 				10
 			],
 			MeleeSkill = [
-				11,
-				7
+				7,
+				11
 			],
 			RangedSkill = [
 				7,
 				7
 			],
 			MeleeDefense = [
-				8,
-				5
+				5,
+				8
 			],
 			RangedDefense = [
-				6,
-				2
+				2,
+				4
 			],
 			Initiative = [
-				-5,
-				-10
+				-10,
+				-5
 			]
 		};
 		return c;

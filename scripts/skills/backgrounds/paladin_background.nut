@@ -97,6 +97,7 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			Weapon = [
 				this.Const.Perks.GreatSwordTree,
 				this.Const.Perks.AxeTree,
+				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.FlailTree,
@@ -198,8 +199,8 @@ this.paladin_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				16
 			],
 			Stamina = [
-				10,
-				5
+				5,
+				10
 			],
 			MeleeSkill = [
 				5,

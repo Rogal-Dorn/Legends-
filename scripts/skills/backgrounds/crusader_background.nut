@@ -7,7 +7,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.Name = "Crusader";
 		this.m.Icon = "ui/backgrounds/background_54.png";
 		this.m.HiringCost = 200;
-		this.m.DailyCost = 25;
+		this.m.DailyCost = 23;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_undead",
@@ -63,6 +63,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.ShieldTree,
+				this.Const.Perks.GreatSwordTree,			
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.MaceTree,
@@ -81,9 +82,9 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.FitTree
 			],
 			Enemy = [
-					this.Const.Perks.ZombieTree,
-					this.Const.Perks.SkeletonTree
-					],
+				this.Const.Perks.ZombieTree,
+				this.Const.Perks.SkeletonTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -148,12 +149,12 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 				10
 			],
 			RangedSkill = [
-				-10,
-				-5
+				-5,
+				-10
 			],
 			MeleeDefense = [
-				0,
-				0
+				2,
+				4
 			],
 			RangedDefense = [
 				-5,

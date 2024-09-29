@@ -10,7 +10,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 		this.m.GoodEnding = "It\'s shocking that a person of %name%\'s stature survived at all, but the cripple did retire from the %companyname% with a sizeable stack of crowns. He runs an orphanage these days, spending his crowns to help the world\'s broken and abandoned children. That, or it\'s just a front for cheap labor. Can\'t be too sure these days.";
 		this.m.BadEnding = "When you left the %companyname%, there was one thing you were almost certain of: that damned cripple, %name%, wouldn\'t last long. Despite all odds, he did survive. Long enough in fact to retire himself, albeit departing with about as many crowns as he had when he joined up. You\'ve no idea what became of him, but surely he\'s dead by now. Surely, right?";
 		this.m.HiringCost = 30;
-		this.m.DailyCost = 3;
+		this.m.DailyCost = 2;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.weasel",
@@ -68,8 +68,12 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.IndestructibleTree
 			],
-			Enemy = [],
-			Class = [], //this.Const.Perks.FistsClassTree
+			Enemy = [
+				this.Const.Perks.NoblesTree
+			],
+			Class = [
+				this.Const.Perks.FistsClassTree
+			],
 			Magic = []
 		}
 	}
@@ -122,20 +126,20 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 	{
 		local c = {
 			Hitpoints = [
-				-20,
-				-10
+				-10,
+				-7
 			],
 			Bravery = [
 				0,
-				5
+				0
 			],
 			Stamina = [
-				-10,
-				5
+				-5,
+				0
 			],
 			MeleeSkill = [
 				-5,
-				-5
+				0
 			],
 			RangedSkill = [
 				-5,
@@ -150,7 +154,7 @@ this.cripple_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				0
 			],
 			Initiative = [
-				-25,
+				-15,
 				-10
 			]
 		};

@@ -68,6 +68,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.BowTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
@@ -122,8 +123,8 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 	{
 		local c = {
 			Hitpoints = [
-				3,
-				-2
+				-2,
+				-3
 			],
 			Bravery = [
 				5,

@@ -80,8 +80,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.HammerTree
 			],
 			Defense = [
-				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
 				this.Const.Perks.TrainedTree,
@@ -91,7 +90,9 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.FitTree
 			],
-			Enemy = [this.Const.Perks.SwordmastersTree],
+			Enemy = [
+				this.Const.Perks.SwordmastersTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -171,16 +172,16 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 				13
 			],
 			Bravery = [
-				9,
-				4
+				4,
+				9
 			],
 			Stamina = [
-				15,
-				10
+				10,
+				15
 			],
 			MeleeSkill = [
-				11,
-				10
+				10,
+				11
 			],
 			RangedSkill = [
 				0,

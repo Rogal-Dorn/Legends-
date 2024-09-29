@@ -9,8 +9,8 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.BackgroundDescription = "Messengers are used to long and tiring travels.";
 		this.m.GoodEnding = "The oddity of having %name% the messenger in your band did not seem so strange after he showed himself to be a killer sellsword. As far as you know, he\'s still with the company, preferring the march of a mercenary to that of a messenger. You don\'t blame him: an errand boy must bend the knee to every nobleman he comes across, but in the company of sellswords he\'ll no doubt get the occasional chance to kill one of them bastards. Not a hard trade off to accept!";
 		this.m.BadEnding = "%name% the messenger departed the %companyname% and returned to being an errand boy for the letters of lieges. You tried to find out where the man had gone to and eventually tracked him down - or what was left of him. Unfortunately, \'don\'t shoot the messenger\' is not an adage well followed in these fractured lands.";
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.HiringCost = 80;
+		this.m.DailyCost = 9;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.hate_undead",
@@ -100,12 +100,12 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 				0
 			],
 			Bravery = [
-				5,
-				0
+				0,
+				5
 			],
 			Stamina = [
-				15,
-				10
+				10,
+				15
 			],
 			MeleeSkill = [
 				0,
@@ -124,8 +124,8 @@ this.messenger_background <- this.inherit("scripts/skills/backgrounds/character_
 				3
 			],
 			Initiative = [
-				8,
-				10
+				15,
+				21
 			]
 		};
 		return c;

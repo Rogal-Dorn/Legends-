@@ -86,7 +86,8 @@ this.legend_companion_melee_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.FlailTree,
 				this.Const.Perks.SwordTree,
-				this.Const.Perks.HammerTree
+				this.Const.Perks.HammerTree,
+				this.Const.Perks.ShieldTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
