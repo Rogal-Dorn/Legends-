@@ -17,22 +17,29 @@ this.perk_legend_unarmed_training <- this.inherit("scripts/skills/skill", {
 	{
 		local actor = this.getContainer().getActor();
 
-		if (_skill.getID() == "actives.hand_to_hand" || _skill.getID() == "actives.legend_unarmed_lunge")
+		if (_skill.getID() == "actives.hand_to_hand")
 		{
-			_properties.DamageArmorMult = 1.0;
-			local damage = (actor.getInitiative() + actor.getHitpoints()) / 3;
+			if (_properties.IsSpecializedInFists)
+				_properties.DamageArmorMult *= 1.2;
+			if (this.getContainer().hasSkill("perk.sundering_strikes"))
+				_properties.DamageArmorMult *= 1.2;
+
+			local damage = (actor.getHitpointsMax()) / 15;
+
 			if (actor.getOffhandItem() != null)
-			{
-				damage *= 0.5;
-			}
-			_properties.DamageRegularMin += damage - 10 - (_skill.getID() == "actives.hand_to_hand" ? 5 : 10);
-			_properties.DamageRegularMax += damage + 10 - (_skill.getID() == "actives.hand_to_hand" ? 10 : 20);
+				damage = damage * 0.5;
+
+			if (actor.getMainhandItem() != null)
+				damage = damage * 0.2;
+
+			_properties.DamageRegularMin += this.Math.floor(damage);
+			_properties.DamageRegularMax += this.Math.floor(damage);
 		}
 
 		if (_skill.getID() == "actives.legend_choke")
 		{
 			_properties.DamageTotalMult *= 1.5;
-			_properties.MeleeSkill += 15;
+			_properties.MeleeSkill += 10;
 		}
 	}
 
@@ -50,6 +57,19 @@ this.perk_legend_unarmed_training <- this.inherit("scripts/skills/skill", {
 		{
 			lunge.m.FatigueCostMult *= 0.5
 		}
+	}
+
+	function onAdded()
+	{
+		if (!this.getContainer().hasSkill("actives.legend_tackle") && this.getContainer().getActor().isPlayerControlled())
+		{
+			this.getContainer().add(this.new("scripts/skills/actives/legend_tackle"));
+		}
+	}
+
+	function onRemoved()
+	{
+		this.getContainer().removeByID("actives.legend_tackle");
 	}
 
 });

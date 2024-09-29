@@ -304,6 +304,7 @@ gt.Const.Strings.EntityName <- [
 	"Royal Guard",
 	"Veteran Knight",
 	"Basilisk Drone",
+	"Basilisk Sentry",
 	"Caravan Polearm",
 	"Elite Footman",
 	"Pollaxe",
@@ -311,8 +312,8 @@ gt.Const.Strings.EntityName <- [
 ];
 gt.Const.Strings.EntityNamePlural <- [
 	"Necromancers",
-	"Wiedergangers",
-	"Armored Wiedergangers",
+	"Wiedergänger",
+	"Armored Wiedergänger",
 	"Fallen Heroes",
 	"Rachegeists",
 	"Ancient Auxiliaries",
@@ -481,6 +482,7 @@ gt.Const.Strings.EntityNamePlural <- [
 	"Royal Guards",
 	"Veteran Knights",
 	"Basilisk Drones",
+	"Basilisk Sentries",
 	"Caravan Polearms",
 	"Elite Footmen",
 	"Pollaxes",
@@ -737,7 +739,7 @@ gt.Const.Strings.FreeCompanyNames.extend([
 	"Unhold Breakers",
 	"Tunnel Snakes, and I\'m not even kidding",
 	"Moronic Plungers"
-])
+]);
 gt.Const.Strings.NobleHouseNames <- [
 	"Grimmund",
 	"Weilburg",
@@ -766,7 +768,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Rosenving",
 	"Thurah",
 	"Kaltenborn",
-	"Krieger",
 	"Steinwall",
 	"Harkon",
 	"Osten",
@@ -794,7 +795,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Brandt",
 	"Sauer",
 	"Schult",
-	"Berengar",
 	"Vegman",
 	"Scharnbock",
 	"Osterholz",
@@ -851,7 +851,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Furstenberg",
 	"Glucksburg",
 	"Gutternberg",
-	"Hagen",
 	"Hanover",
 	"Hardenberg",
 	"Hattonid",
@@ -933,7 +932,6 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Horstmann",
 	"Helbrass",
 	"Niederlitz",
-	"Kruger",
 	"Weiltraub",
 	"Baern",
 	"Oldenhaller",
@@ -966,7 +964,85 @@ gt.Const.Strings.NobleHouseNames <- [
 	"Sierck",
 	"Eggert",
 	"Goetz",
-	"Dieter"
+	"Dieter",
+	"Grimm",
+	"Black",
+	"Eisenhorn",
+	"Gunn",
+	"Drachen",
+	"Talana",
+	"Von Rosen",
+	"Krieger",
+	"Glaw",
+	"Soth",
+	"Blueblood",
+	"Silverhand",
+	"Falken",
+	"Hagen",
+	"Crownguard",
+	"Moon",
+	"Von Schmitt",
+	"Steiner",
+	"Strauss",
+	"Kruger",
+	"Draco",
+	"Helmuth",
+	"Talon",
+	"Von Kanitz",
+	"Morgana",
+	"Blade",
+	"Lance",
+	"Raven",
+	"Wolfe",
+	"Cairn",
+	"Swan",
+	"Everwinter",
+	"Ironcrest",
+	"Montclair",
+	"Blackwood",
+	"Fairchild",
+	"Sterling",
+	"Windermere",
+	"Goldheart",
+	"Cresseau",
+	"Montare",
+	"Chavalet",
+	"Pellellac",
+	"Vellane",
+	"Aguelon",
+	"Amber",
+	"Troyes",
+	"Darkwater",
+	"FitzRoy",
+	"Glotka",
+	"Kingfisher",
+	"Griffin",
+	"Beaumont",
+	"Grey",
+	"Delacroix",
+	"La Fayette",
+	"Winslow",
+	"Fairfax",
+	"van Amstel",
+	"Godwin",
+	"Karlov",
+	"Luci",
+	"Vandermere",
+	"Trante",
+	"Slate",
+	"Mallister",
+	"Cerwyn",
+	"Pyke"
+	"de Frissac",
+	"Redcliff",
+	"Saulx",
+	"Sturm",
+	"Talbot",
+	"Chass",
+	"Sondar",
+	"Steel",
+	"de Avalos",
+	"Mara"
 ];
 gt.Const.Strings.CityStateNames <- [
 	"Dahab",
@@ -2006,19 +2082,55 @@ gt.Const.Strings.EngageEnemyNumbersNames <- {
 	Myriad = "Myriad of"
 };
 gt.Const.Strings.EngageEnemyNumbers <- {
-	Few = [2, 3],
-	Some = [4, 5],
-	Several = [6, 9],
-	Pack = [10, 14],
-	Many = [15, 20],
-	Lots = [21, 30],
-	Plethora = [31, 40],
-	Hordes = [41, 50],
-	Throng = [51, 60],
-	Swarm = [61, 80],
-	Legion = [81, 100],
-	Myriad = [101, 1000],
-}
+	Few = [
+		2,
+		3
+	],
+	Some = [
+		4,
+		5
+	],
+	Several = [
+		6,
+		9
+	],
+	Pack = [
+		10,
+		14
+	],
+	Many = [
+		15,
+		20
+	],
+	Lots = [
+		21,
+		30
+	],
+	Plethora = [
+		31,
+		40
+	],
+	Hordes = [
+		41,
+		50
+	],
+	Throng = [
+		51,
+		60
+	],
+	Swarm = [
+		61,
+		80
+	],
+	Legion = [
+		81,
+		100
+	],
+	Myriad = [
+		101,
+		1000
+	]
+};
 gt.Const.Strings.InventoryHeader <- [
 	"Donkey",
 	"Cart",
@@ -2069,8 +2181,6 @@ gt.Const.Strings.SlingNames <- [
 	"Grimguard"
 ];
 gt.Const.Strings.PerkName <- {
-
-	//VANILLA BASIC - skills from vanilla.
 	Bullseye = "Bullseye",
 	Berserk = "Berserk",
 	ShieldBash = "Shield Bash",
@@ -2106,9 +2216,6 @@ gt.Const.Strings.PerkName <- {
 	ReachAdvantage = "Reach Advantage",
 	Overwhelm = "Overwhelm",
 	Relentless = "Relentless",
-
-
-	//LEGENDS BASIC - skills introduced by legends, they are not magical, masteries or any other category here.
 	CloseCombatArcher = "Close Combat Archer",
 	Ballistics = "Ballistics",
 	Slaughterer = "Slaughterer",
@@ -2148,8 +2255,8 @@ gt.Const.Strings.PerkName <- {
 	ReturnFavor = "Return Favor",
 	Sprint = "Sprint",
 	Inspire = "Inspire",
-	LegendAthlete = "Athlete"
-	LegendQuickStep = "Quick Step"
+	LegendAthlete = "Athlete",
+	LegendQuickStep = "Quick Step",
 	LegendCascade = "Cascade strikes",
 	LegendEvasion = "Evasion",
 	LegendHoldTheLine = "Hold the line",
@@ -2263,8 +2370,6 @@ gt.Const.Strings.PerkName <- {
 	LegendFashionable = "Fashionable",
 	LegendUnburdened = "Unburdened",
 	LegendHelpful = "Helpful",
-
-	//MASTERIES - skills that have a unified effect on their weapon class
 	SpecBow = "Bow Mastery",
 	SpecCrossbow = "Crossbow & Firearms Mastery",
 	SpecThrowing = "Throwing Mastery",
@@ -2284,9 +2389,6 @@ gt.Const.Strings.PerkName <- {
 	LegendMasterySlings = "Sling Mastery",
 	LegendSpecGreatSword = "Two Handed Sword Mastery",
 	LegendSpecFists = "Unarmed Mastery",
-
-
-	//VALA SKILLS - skills used only be the Vala
 	LegendValaInscriptionMastery = "Inscription Mastery",
 	LegendValaInscribeWeapon = "Rune Sigils: Weapons",
 	LegendValaInscribeHelmet = "Rune Sigils: Helmets",
@@ -2303,9 +2405,6 @@ gt.Const.Strings.PerkName <- {
 	LegendValaSpiritualBond = "Spiritual Bond",
 	LegendValaThreads = "Threads of Fate",
 	LegendValaPremonition = "Premonition",
-
-
-	//SPECIALIST SKILLS - skills that utilise more basic equipment or playstyles for bigger bonuses.
 	LegendSpecialistButcherDamage = "Butchers Strikes",
 	LegendSpecialistButcherSkill = "Butchers Fillet",
 	LegendSpecialistHammerDamage = "Blacksmiths Heavy Hammer",
@@ -2338,9 +2437,6 @@ gt.Const.Strings.PerkName <- {
 	LegendSpecialistShieldPush = "Push it",
 	LegendSpecCultHood = "Dedication",
 	LegendSpecCultArmor = "Penance",
-
-
-	//FAVOURED ENEMY - skills that grant bonuses to specfic enemy types
 	LegendFavouredEnemyGhoul = "Favoured Enemy - Nachzehrer",
 	LegendFavouredEnemyHexen = "Favoured Enemy - Hexen",
 	LegendFavouredEnemyAlps = "Favoured Enemy - Alp",
@@ -2363,9 +2459,6 @@ gt.Const.Strings.PerkName <- {
 	LegendFavouredEnemyCaravan = "Favoured Enemy - Peasantry",
 	LegendFavouredEnemySoutherner = "Favoured Enemy - Southerner",
 	LegendFavouredEnemyNomad = "Favoured Enemy - Nomad",
-
-
-	//MAGIC - skills that have a magical or mystical element to them.
 	MageLegendMagicBurningHands = "Burning Hands",
 	MageLegendMagicChainLightning = "Chain Lightning",
 	MageLegendMagicCircleOfProtection = "Circle of Protection",
@@ -2434,10 +2527,7 @@ gt.Const.Strings.PerkName <- {
 	LegendTeleport = "Teleport",
 	LegendTerrifyingVisage = "Terrifying Visage",
 	LegendMagicMissile = "Magic Missile",
-	LegendBrinkOfDeath = "Brink of Death", //66% chance to return a fallen bro as a zombie, needs functionality check.
-
-
-	//ANIMAL FORMS - animal forms from older builds. Mostly defunct.
+	LegendBrinkOfDeath = "Brink of Death",
 	LegendSurpressUrges = "Suppress Urges",
 	LegendControlInstincts = "Control Instincts",
 	LegendMasterAnger = "Master Anger",
@@ -2445,9 +2535,6 @@ gt.Const.Strings.PerkName <- {
 	LegendTrueForm = "True Form",
 	LegendBearform = "Bear Form",
 	LegendInfectiousRage = "Infectious Rage",
-
-
-	//HORSES - skills for horses, currently unused and/or missing files
 	LegendHorseCharge = "Mounted Charge",
 	LegendHorsePirouette = "Pirouette",
 	LegendHorseBitting = "Bitting",
@@ -2465,44 +2552,35 @@ gt.Const.Strings.PerkName <- {
 	LegendHorseCollection = "Collection",
 	LegendHorseFlyingChange = "Flying Change",
 	LegendHorsePassage = "Passage",
-
-
-	//AI SKILLS - skills used by AI specfically
-	Bruiser = "Bruiser", //increases armour penetration by 10%, is an AI skill
-	BatteringRam = "Battering Ram", //gives orcs stun immunity, similar to composure skill
-	Captain = "Sergeant", //used by leaders, sergents and other AI to boost resolve as an area effect
-
-
-	//UNUSED - skills otherwise defunct or missing files/functionality
-	LegendRoster = "The Apprentice", //REMOVE
-	LegendRoster1 = "The Apprentice", //REMOVE
-	LegendRoster2 = "The Bodyguards", //REMOVE
-	LegendRoster3 = "The Team", //REMOVE
-	LegendRoster4 = "The Squad", //REMOVE
-	LegendRoster5 = "The Section", //REMOVE
-	LegendRoster6 = "The Platoon", //REMOVE
-	LegendRoster7 = "The Company", //REMOVE
-	TrophyHunter = "Trophy Hunter", //AI skill, currently unused.
-	Crusher = "Crusher", //exists but has no data to provide any affect
-	Deflect = "Deflect", //exists but has no data to provide any affect
-	Evade = "Evade", //file does not exist
-	Ironside = "Ironside", //gives damage reduction based on number of adj. enemies
-	Zweihander = "Zweihander", //old skill to reduce fatigue from 2h weapons. Has no file.
-	ArtfulDodger = "Artful Dodger", //has no file
-	Weaponmaster = "Weaponmaster", //has no file
-	Furor = "Furor", //has no file
-	FirstMove = "First Move", //has no file
-	FirstAid = "First Aid", //overshadowed by legendsspecbandage. Currently unused.
-	LegendBecomeBerserker = "Become Berserker", //converts a background to a berserker, unknown use.
-	LegendPreparedForAnything = "Prepare For Anything", //gives bags and belts for some reason...?
-	LegendStrictSermons = "Strict Sermons", //gives fortified mind for crusader origin. Can probably be removed.
-	LegendCitrinitas = "Citrinitas (Trance)", //alchemist skill, currently not working/implemented
-	LegendAlbedo = "Albedo", //alchemist skill, currently not working/implemented
-	LegendNigredo = "Nigredo", //alchemist skill, currently not working/implemented
-	LegendSummonCatapult = "Summon Catapult" //pulled due to issues with deployment, could work in the future.
-
-//MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN , //MUST END WITHOUT AN ,
-
+	Bruiser = "Bruiser",
+	BatteringRam = "Battering Ram",
+	Captain = "Sergeant",
+	LegendRoster = "The Apprentice",
+	LegendRoster1 = "The Apprentice",
+	LegendRoster2 = "The Bodyguards",
+	LegendRoster3 = "The Team",
+	LegendRoster4 = "The Squad",
+	LegendRoster5 = "The Section",
+	LegendRoster6 = "The Platoon",
+	LegendRoster7 = "The Company",
+	TrophyHunter = "Trophy Hunter",
+	Crusher = "Crusher",
+	Deflect = "Deflect",
+	Evade = "Evade",
+	Ironside = "Ironside",
+	Zweihander = "Zweihander",
+	ArtfulDodger = "Artful Dodger",
+	Weaponmaster = "Weaponmaster",
+	Furor = "Furor",
+	FirstMove = "First Move",
+	FirstAid = "First Aid",
+	LegendBecomeBerserker = "Become Berserker",
+	LegendPreparedForAnything = "Prepare For Anything",
+	LegendStrictSermons = "Strict Sermons",
+	LegendCitrinitas = "Citrinitas (Trance)",
+	LegendAlbedo = "Albedo",
+	LegendNigredo = "Nigredo",
+	LegendSummonCatapult = "Summon Catapult"
 };
 gt.Const.Strings.PerkDescription <- {
 	Relentless = "Don\'t slow down! At all times your Initiative is reduced only by [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] of your accumulated Fatigue, instead of all of it. In addition, using the \'Wait\' command will no longer give you a penalty to Initiative in the next round.",
@@ -2524,7 +2602,7 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFullForce = "Knowing what blows you can ignore allows you to focus on the deadly ones.\n\nGain [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] of the combined fatigue modifier from body, head, main hand and off hand as Melee Defense.",
 	Weaponmaster = "All attacks cost [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] Fatigue to use and weapon condition degrades only half as fast. Dance gracefully with your weapon and make every hit count.",
 	CoupDeGrace = "Like a beast of prey, you hunt the weak.\n\nInflict additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] damage against targets that are debilitated or have sustained any injury effects, like a broken arm.\n\nAlso grants [color=" + this.Const.UI.Color.NegativeValue + "]+10%[/color] damage against targets who suffer from any of the following effects: baffled, dazed, distracted, grappled, netted, rooted, shellshocked, sleeping, staggered, stunned, vulnerable, webbed, or withered.",
-	SteelBrow = "Mother always said you had a hard head.\n\nRegular hits to the head no longer cause critical damage and their damage will be reduced to normal, which also lowers the risk of sustaining debilitating head injuries significantly. Any effects or traits that adds to the damage done to head multiplier above that will be reduced to [color=" + this.Const.UI.Color.PositiveValue + "]2/3[/color] of the original value.\n\n Additionally, any attacks that would stun you now daze you.",
+	SteelBrow = "Mother always said you had a hard head.\n\nHits to the head no longer cause critical damage to this character, which also lowers the risk of sustaining debilitating head injuries significantly.\n Additionally, any attacks that would stun you now daze you.",
 	Anticipation = "By watching your opponent\'s aim, you have more time to react.\n\nWhen being attacked with ranged weapons, gain [color=" + this.Const.UI.Color.PositiveValue + "]1 + 10% of your base Ranged Defense[/color] as additional Ranged Defense per tile that the attacker is away, and always at least [color=" + this.Const.UI.Color.PositiveValue + "]+10[/color] to Ranged Defense.",
 	HoldOut = "Keep it together! Any negative status effect with a finite duration (e.g. Bleeding, Charmed) has its duration reduced to [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] turn. Status effects that have their effects grow weaker over several turns (e.g. Goblin Poison) are at their weakest state from the start. Also grants [color=" + this.Const.UI.Color.PositiveValue + "]+8[/color] hitpoints and raises the chance to survive being struck down and not killed from 33% to 66%.",
 	Dodge = "Too fast for you! Gain [color=" + this.Const.UI.Color.PositiveValue + "]15%[/color] of the character\'s current Initiative as a bonus to Melee and Ranged Defense.",
@@ -2561,7 +2639,7 @@ gt.Const.Strings.PerkDescription <- {
 	LastStand = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+1[/color] additional Melee and Ranged Defense for every 2% of missing hitpoints below 66%. When below 33% health this character becomes immune to the effects of fresh injuries, and is not upset by health losses.",
 	Ironside = "All damage received is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] for every opponent adjacent and in melee range, up to a [color=" + this.Const.UI.Color.NegativeValue + "]-30%[/color] total damage reduction.",
 	BagsAndBelts = "Unlock two extra bag slots to carry all your favorite things. Non-two-handed items placed in bags no longer give a penalty to Maximum Fatigue.",
-	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn while over 90% fatigued. If you have the Recuperation perk will instead recover [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn while over 75% fatigued.",
+	Rebound = "Fatigue regeneration is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] per turn while over 90% fatigued.",
 	Feint = "If an attack misses, it costs [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color] less fatigue than normal and you leave your opponent parried, lowering their defenses by 10.",
 	Student = "Everything can be learned if you put your mind to it. Gain additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle. At the eleventh character level, you gain an additional perk point. The bonus experience stays until level 99. \n\nWhen playing the \'Manhunters\' origin, your indebted get the perk point refunded at the seventh character level.",
 	Gifted = "Mercenary life comes easy when you\'re naturally gifted. Instantly gain a levelup to increase this character\'s attributes with maximum rolls, but without talents.",
@@ -2660,16 +2738,16 @@ gt.Const.Strings.PerkDescription <- {
 	LegendValaInscribeArmor = "Allows the Vala to inscribe rocks with armor specific rune sigils while encamped to create powerful rune stones.\n\nPossibilities: endurance, resilience, safety.",
 	LegendValaInscribeShield = "Allows the Vala to inscribe rocks with shield specific rune sigils while encamped to create powerful rune stones.\n\nPossibilities: defense, radiance.",
 	LegendValaChantMastery = "Chants build up 25% less Fatigue and have greater potency.",
-	LegendValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.\n\nRequires [color=" + this.Const.UI.Color.NegativeValue + "]Vala Staff[/color].",
-	LegendValaChantFury = "A chant that really gets the blood boiling, making your allies eager to fight.\n\nAllies within 3 tiles of the Vala, including the Vala herself, receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range.\n\nThe chant becomes less effective if the target is further away from the Vala\n\nThe bonus damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] for every [color=" + this.Const.UI.Color.PositiveValue + "]30[/color] points of resolve and currently available fatigue the Vala has summed up.\n\nThe retaliation chance is increased for every [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] points of resolve the Vala has and every [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] points of health the buff recipient has.\n\nRetaliation damage is increased by 1 point for [color=" + this.Const.UI.Color.PositiveValue + "]4[/color] points of resolve the Vala has and every [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] points of health the buff recipient has.\n\nRequires [color=" + this.Const.UI.Color.NegativeValue + "]Vala Staff[/color].",
-	LegendValaChantSenses = "An intriguing chant that stimulates the senses, increasing all allies\' awareness.\n\nAllies within 3 tiles of the Vala, including the Vala herself, receive a bonus to their melee and ranged defenses. The boost to defenses is reduced if the target is further away from the Vala\n\nThe bonus defense is increased by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] for every [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] points of resolve and currently available fatigue the Vala has summed up.\n\nRequires [color=" + this.Const.UI.Color.NegativeValue + "]Vala Staff[/color].",
+	LegendValaChantDisharmony = "A very disagreeable and cacophonous chant that makes it almost impossible for the Vala\'s enemies to focus and concentrate properly.\n\nEnemies adjacent to the Vala are unable to enforce Zones of Control, making it easy to slip past them.",
+	LegendValaChantFury = "A chant that really gets the blood boiling, making your allies eager to fight.\n\nAllies within 3 tiles of the Vala, including the Vala herself, receive a bonus to their damage output and a chance to retaliate against attackers that hit them in melee range.",
+	LegendValaChantSenses = "An intriguing chant that stimulates the senses, increasing all allies\' awareness.\n\nAllies within 3 tiles of the Vala, including the Vala herself, receive a bonus to their melee and ranged defenses.",
 	LegendValaTranceMastery = "Entering trances builds up 25% less Fatigue. Gain a 50% chance to not drop out of trance when receiving damage. Successful trances are more likely to occur.",
 	LegendValaTrancePerspective = "Incorporeal Perspective.",
-	LegendValaTranceMalevolent = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help.\n\nIf she\'s successful, these spirits will harass, torment and weaken her foes. They may also spread out to affect additional entities.\n\nHer chance of success raises with her resolve up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]95%[/color].\n\nThe spirits increase fatigue use of the victim by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] for every 25 resolve, decrease their stamina by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] for every 5 resolve and decrease the damage they deal by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] for every 10 resolve the Vala has.\n\nRequires [color=" + this.Const.UI.Color.NegativeValue + "]Vala Staff[/color].",
-	LegendValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. It can be beaten, but it never dies.\n\nThe warden\'s stats scale with the Vala\'s resolve.",
+	LegendValaTranceMalevolent = "The spirit world is home to many malevolent beings, and the Vala knows how to contact them. Once her access to their realm has been established, she calls upon these ill-willed spirits in hopes of receiving their help.\n\nIf she\'s successful, these spirits will harass, torment and weaken her foes. They may also spread out to affect additional entities.",
+	LegendValaWarden = "Each individual has a warden spirit that follows their soul from birth to death. The Vala, being spiritually attuned, has a remarkable connection to and relation with her Warden which allows it to manifest itself in a semi-physical form and help her out during battle.\n\nAutomatically summons the Warden at the start of a fight. It can be beaten, but it never dies.",
 	LegendValaSpiritualBond = "The bond between the Vala and her Warden has grown strong with the passing of time. A percentage of the Vala\'s incoming health damage is dealt to the Warden instead. The Warden also gains a scaling damage bonus.\n\nThis perk does nothing unless the Vala has the Warden perk.\n\nThe reduction starts at [color=" + this.Const.UI.Color.PositiveValue + "]10%[/color] and increases by [color=" + this.Const.UI.Color.NegativeValue + "]1%[/color] for every 4 points of resolve up to a maximum of [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] reduction.\n\nThe warden will receive [color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] of the Vala\'s resolve as a scaling damage bonus.",
-	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her [color=" + this.Const.UI.Color.NegativeValue + "]Vala Staff[/color] equipped for this perk to work, and then each attack has a chance, based on resolve, to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken. \n\nThe target\'s hitpoints are lowered and damage taken increased by [color=" + this.Const.UI.Color.PositiveValue + "]1%[/color] for every point of resolve with a minimum of 5% and a maximum of 95% per stack of the debuff.",
-	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage forcing her attacker to have 2 successful attack rolls in order to hit. With a minimum chance of [color=" + this.Const.UI.Color.PositiveValue + "]11%[/color] this bonus can go up to [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] as the Vala becomes more experienced",
+	LegendValaThreads = "As the Vala swings and weaves her staff she spins and twines the threads of fate of those she hits with it.\n\nThe Vala needs her staff equipped for this perk to work, and then each attack has a chance to apply a stacking debuff. Each stack lowers maximum hitpoints and increases amount of damage taken.",
+	LegendValaPremonition = "As if being warned by some higher being, the Vala occasionally gets glimpses of the immediate future and any dangers it may hold, letting her prepare herself accordingly.\n\nHelps the Vala avoid incoming damage. Her understanding of these visions grows stronger as she becomes more experienced.",
 	LegendInventorAnatomy = "Through extensive study of the human form, you learn how to fashion replacement parts from wood and metal. Unlocks a series of events that let you create prosthetic body parts to help your mercenaries resolve their permanent injuries that are presented through random events.",
 	LegendGuideSteps = "Gives you the Guide Steps skill, that lets you grant Pathfinder to all your allies.",
 	LegendBerserkerRage = "Gain rage stacks over the course of a battle. Each stack increases Damage by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], initiative by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color], resolve by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] and reduces damage received by [color=" + this.Const.UI.Color.PositiveValue + "]2%[/color]. Gain [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] stack each time you take damage, and [color=" + this.Const.UI.Color.PositiveValue + "]3[/color] stacks each time you kill. Lose [color=" + this.Const.UI.Color.NegativeValue + "]2[/color] rage stacks per turn.",
@@ -2700,8 +2778,8 @@ gt.Const.Strings.PerkDescription <- {
 	LegendSpecialistMilitiaSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a Militia Spear, Ancient Spear or Wooden Spear. Only 25% of this skill applies to other spears.",
 	LegendSpecialistPickaxeDamage = "Allows this character to mine for minerals while assigned to the Supply Tent in camp. Gain [color=" + this.Const.UI.Color.PositiveValue + "]+4-12[/color] damage while using a Pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]+2-7[/color] damage when wielding Two Handed Hammers.",
 	LegendSpecialistPickaxeSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill while using a Pickaxe, or [color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] melee skill while using Two Handed Hammers.",
-	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+9-24[/color] damage while using a while using a farming tool, such as Pitchfork Item, such as a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warscythe, Warfork or Wooden Flail. 35% of this perk applies to other polearms including banners.",
-	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a farming tool, such as Pitchfork Item, such as a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warscythe, Warfork or Wooden Flail. 25% of this perk applies to other polearms and banners.",
+	LegendSpecialistPitchforkDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+9-24[/color] damage while using a Pitchfork Item, such as a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warfork or Wooden Flail. 35% of this perk applies to other polearms including banners.",
+	LegendSpecialistPitchforkSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] melee skill and [color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] armor damage while using a Pitchfork Item, such as a Pitchfork, Wooden Pitchfork, Hoe, Scythe, Warfork or Wooden Flail. 25% of this perk applies to other polearms and banners.",
 	LegendSpecialistShortbowDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a Shortbow Item, such as a Shortbow, Wonky Bow, Boondock Bow or Reinforced Boondock Bow. Only 35% of this skill applies to other bows.",
 	LegendSpecialistShortbowSkill = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+12[/color] ranged skill and 25% armor penetration while using a Shortbow Item, such as a Shortbow, Wonky Bow, Boondock Bow or Reinforced Boondock Bow. Only 25% of this applies to other bows.",
 	LegendSpecialistShovelDamage = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]+6-16[/color] damage while using a Shovel. 35% of this skill applies to Two Handed Maces.",
@@ -2748,9 +2826,9 @@ gt.Const.Strings.PerkDescription <- {
 	LegendFavouredEnemyGoblin = "Goblins are the most dangerous living thing under five foot tall, and while they prove hard to hit, they still bleed and die all the same.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting goblins.\n Additionally, this bonus increases the more goblins you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Goblin Ambusher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Goblin Fighter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Goblin Wolfrider | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Goblin Shaman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Goblin Overseer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of goblin champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyVampire = "The terrifying abilities of the Necrosavants, Apparitions and Embalmed have developed over time beyond memory. Their techniques are honed to perfection, but that also makes them predictable.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill, maximum damage and resolve while fighting necrosavants, höllenhounds, geists, winselmutters and embalmed.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Necrosavant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Necrosavant Lord | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Höllenhound | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Geist | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Winselmutter | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Embalmed Slave | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Embalmed Soldier | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Embalmed Noble | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Embalmed Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+1.25%[/color]\n Embalmed Queen | [color=" + this.Const.UI.Color.PositiveValue + "]+2%[/color]\n\n Also increases spawn rate of necrosavant champions.\n\n Total bonus capped at 25%.", //No contract
 	//Lich and Emporer not included
-	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting ancient dead.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Ancient Auxiliary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Ancient Legionary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Honor Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Ancient Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Phylactery | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n Ancient Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Flying Skull | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n\n Also increases spawn rate of ancient dead champions.\n\n Total bonus capped at 25%.", //No contract
+	LegendFavouredEnemySkeleton = "The legions from the ancient empire still harass this world, yet their connection to the world of the living can be severed.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to Melee Skill, Ranged Skill, and maximum damage while fighting ancient dead.\n\n• Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n• Increase per kill:\n  - Ancient Auxiliary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n  - Ancient Legionary | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n  - Honor Guard | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Ancient Priest | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Phylactery | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n  - Ancient Gladiator | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n  - Flying Skull | [color=" + this.Const.UI.Color.PositiveValue + "]+0.04%[/color]\n\n• Also increases spawn rate of ancient dead champions.\n\n• Total bonus capped at 25%."
 	//Treasure hunters and betrayers included as knights
-	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting wiedergangers.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Wiederganger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Wiederganger Yeoman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Fallen Hero | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Necromancer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of fallen and necromancer champions.\n\n Total bonus capped at 25%.", //No contract
+	LegendFavouredEnemyZombie = "Shambling corpses come wave on wave, rising sleepless from their graves.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting wiedergänger.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Wiederganger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.01%[/color]\n Wiederganger Yeoman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.1%[/color]\n Fallen Hero | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Necromancer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n\n Also increases spawn rate of fallen and necromancer champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyNoble = "Soldiers in glittering armor and colourful pennants, they are merely sanctioned brigands. No gods, no masters.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting noble soldiers.\n Additionally, this bonus increases the more of these enemy types you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Footman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Zweihander | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Billman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Arbalester | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Standard Bearer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Sergeant | [color=" + this.Const.UI.Color.PositiveValue + "]+0.5%[/color]\n Fencer | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Halberdier | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Slinger | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Knight | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n Elite Footman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Pollaxe | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Sureshot | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Also increases spawn rate of knight and fencer champions.\n\n Total bonus capped at 25%.", //No contract
 	LegendFavouredEnemyBandit = "They hide in the bridleways and forests of this world and take what they can. The brigands must be purged to restore order in this world.\n Grants [color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] base bonus to melee skill, ranged skill and maximum damage while fighting brigands.\n Additionally, this bonus increases the more brigands you kill and counts all kills made previously with this character retroactively.\n\n Increase per kill:-\n Rabble | [color=" + this.Const.UI.Color.PositiveValue + "]+0.025%[/color]\n Thug | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Poacher | [color=" + this.Const.UI.Color.PositiveValue + "]+0.0625%[/color]\n Marksman | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Raider | [color=" + this.Const.UI.Color.PositiveValue + "]+0.125%[/color]\n Veteran | [color=" + this.Const.UI.Color.PositiveValue + "]+0.2%[/color]\n Bandit Leader | [color=" + this.Const.UI.Color.PositiveValue + "]+0.25%[/color]\n Warlord | [color=" + this.Const.UI.Color.PositiveValue + "]+1%[/color]\n\n Also increases spawn rate of brigand warlord and brigand leader champions.\n\n [color=" + this.Const.UI.Color.PositiveValue + "] At 15% or more (including the base 5% bonus), you will unlock a difficult legendary contract to stop a brigand army from taking over a settlement.[/color]\n\n Total bonus capped at 25%.", 
 	//Madman is registered as king

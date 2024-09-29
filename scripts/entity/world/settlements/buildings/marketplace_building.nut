@@ -354,6 +354,11 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				R = 10,
 				P = 1.0,
 				S = "accessory/bandage_item"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "accessory/legend_hand_wraps_item"
 			}
 		];
 

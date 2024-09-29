@@ -13,11 +13,7 @@ this.legend_white_wolf_helmet_layered_blueprint <- this.inherit("scripts/craftin
 				Num = 3
 			},
 			{
-				Script = "scripts/items/legend_helmets/hood/legend_helmet_chain_hood",
-				Num = 1
-			},
-			{
-				Script = "scripts/items/legend_helmets/helm/legend_helmet_basinet",
+				Script = "scripts/items/misc/legend_masterwork_fabric",
 				Num = 1
 			}
 		];

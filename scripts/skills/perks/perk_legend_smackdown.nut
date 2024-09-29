@@ -179,6 +179,12 @@ this.perk_legend_smackdown <- this.inherit("scripts/skills/skill", {
 			_entity.onDamageReceived(_tag.Attacker, _tag.Skill, _tag.HitInfo);
 		}
 	}
+
+	function onUpdate( _properties )
+	{
+		_properties.DamageArmorMult += 0.30;
+	}
+
 	
 });
 

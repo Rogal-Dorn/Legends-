@@ -95,18 +95,19 @@ this.prong_skill <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.MeleeSkill += 10;
 
-			if (_targetEntity != null && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
+			if (_targetEntity != null && !this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears && this.getContainer().getActor().getTile().getDistanceTo(_targetEntity.getTile()) == 1)
 			{
-				_properties.MeleeSkill += -15;
-				if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpears)
-					this.m.HitChanceBonus = 5;
+				_properties.MeleeSkill -= 15;
+				this.m.HitChanceBonus = -5;
 			}
 			else
 			{
 				this.m.HitChanceBonus = 10;
 			}
 			if (_properties.IsSpecializedInSpearThrust)
+			{
 				_properties.DamageTotalMult *= 1.15;
+			}
 		}
 	}
 

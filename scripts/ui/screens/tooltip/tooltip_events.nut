@@ -397,7 +397,7 @@ this.tooltip_events <- {
 	{
 		if (this.Tactical.State != null && this.Tactical.State.getCurrentActionState() == this.Const.Tactical.ActionState.SkillSelected)
 		{
-			if (_activeEntity != null && this.isKindOf(_targetedEntity, "actor") && _activeEntity.isPlayerControlled() && _targetedEntity != null && !_targetedEntity.isPlayerControlled())
+			if (_activeEntity != null && this.isKindOf(_targetedEntity, "actor") && _activeEntity.isPlayerControlled() && _targetedEntity != null)
 			{
 				local skill = _activeEntity.getSkills().getSkillByID(this.Tactical.State.getSelectedSkillID());
 

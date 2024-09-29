@@ -69,7 +69,7 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts additional [color=" + this.Const.UI.Color.DamageValue + "]" + 10 + "[/color] bleeding damage over time if not stopped by armor"
+				text = "Inflicts additional [color=" + this.Const.UI.Color.DamageValue + "]" + this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5 + "[/color] bleeding damage over time if not stopped by armor"
 			}
 		]);
 		ret.push({
@@ -107,20 +107,36 @@ this.rupture <- this.inherit("scripts/skills/skill", {
 
 		if (!_user.isAlive() || _user.isDying())
 		{
-			return success;
+			return;
 		}
 
-		if (success && target.isAlive() && !target.isDying())
+		if (success)
 		{
-			if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding)
+			if (!target.isAlive() || target.isDying())
 			{
-				local effect = this.new("scripts/skills/effects/bleeding_effect")
+				if (this.isKindOf(target, "lindwurm_tail") || !target.getCurrentProperties().IsImmuneToBleeding)
+				{
+					this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+				else
+				{
+					this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+				}
+			}
+			else if (!target.getCurrentProperties().IsImmuneToBleeding && hp - target.getHitpoints() >= this.Const.Combat.MinDamageToApplyBleeding )
+			{
+				local effect = this.new("scripts/skills/effects/bleeding_effect");
 					if (_user.getFaction() == this.Const.Faction.Player )
 					{
-					effect.setActor(this.getContainer().getActor());
+						effect.setActor(this.getContainer().getActor());
 					}
+				effect.setDamage(this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5);
 				target.getSkills().add(effect);
 				this.Sound.play(this.m.BleedingSounds[this.Math.rand(0, this.m.BleedingSounds.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
+			}
+			else
+			{
+				this.Sound.play(this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)], this.Const.Sound.Volume.Skill, _user.getPos());
 			}
 		}
 

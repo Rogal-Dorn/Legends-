@@ -510,7 +510,7 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
 	XP = 700,
 	ActionPoints = 12,
-	Hitpoints = 350,
+	Hitpoints = 400,
 	Bravery = 250,
 	Stamina = 150,
 	MeleeSkill = 75,
@@ -643,6 +643,25 @@ gt.Const.Tactical.Actor.LegendHorse <- {
 		0
 	]
 }; 
+gt.Const.Tactical.Actor.LegendBasiliskDroneLow <- {
+	XP = 220,
+	ActionPoints = 10,
+	Hitpoints = 175,
+	Bravery = 70,
+	Stamina = 160,
+	MeleeSkill = 55,
+	RangedSkill = 0,
+	MeleeDefense = 10,
+	RangedDefense = 5,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		110,
+		50
+	]
+};
 gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
 	XP = 320,
 	ActionPoints = 10,
@@ -651,8 +670,8 @@ gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
 	Stamina = 200,
 	MeleeSkill = 70,
 	RangedSkill = 0,
-	MeleeDefense = 15,
-	RangedDefense = 10,
+	MeleeDefense = 10,
+	RangedDefense = 5,
 	Initiative = 80,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
@@ -662,3 +681,23 @@ gt.Const.Tactical.Actor.LegendBasiliskDrone <- {
 		90
 	]
 };
+gt.Const.Tactical.Actor.LegendBasiliskSentry <- { 
+	XP = 360,
+	ActionPoints = 8,
+	Hitpoints = 160,
+	Bravery = 80,
+	Stamina = 180,
+	MeleeSkill = 75,
+	RangedSkill = 0,
+	MeleeDefense = 5,
+	RangedDefense = 20,
+	Initiative = 75,
+	FatigueEffectMult = 1.0,
+	MoraleEffectMult = 1.0,
+	FatigueRecoveryRate = 25,
+	Armor = [
+		120,
+		75
+	]
+};
+

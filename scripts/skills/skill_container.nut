@@ -49,7 +49,7 @@ this.skill_container <- {
 
 			foreach( i, skill in this.m.SkillsToAdd )
 			{
-				if (skill.getID() == _skill.getID())
+				if (!skill.isGarbage() && skill.getID() == _skill.getID())
 				{
 					return;
 				}
@@ -113,7 +113,7 @@ this.skill_container <- {
 					skill.onRemoved();
 					skill.setContainer(null);
 					this.m.Skills.remove(i);
-					// this.logDebug("Skill [" + skill.getName() + "] removed from [" + this.m.Actor.getName() + "].");
+					this.logDebug("Skill [" + skill.getName() + "] removed from [" + this.m.Actor.getName() + "].");
 					isRemoved = true;
 					break;
 				}
@@ -195,7 +195,7 @@ this.skill_container <- {
 		{
 			this.m.Skills[i].onRemoved();
 			this.m.Skills[i].setContainer(null);
-			// this.logDebug("Skill [" + this.m.Skills[i].getName() + "] removed from [" + this.m.Actor.getName() + "].");
+			this.logDebug("Skill [" + this.m.Skills[i].getName() + "] removed from [" + this.m.Actor.getName() + "].");
 			this.m.Skills.remove(i);
 		}
 
@@ -338,38 +338,6 @@ this.skill_container <- {
 		return ret;
 	}
 
-	function getSkillsSortedByItems( _filter, _notFilter = 0 )
-	{
-		local ret = [];
-
-		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
-		{
-			ret.push([]);
-		}
-
-		foreach( skill in this.m.Skills )
-		{
-			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
-			{
-				if (skill.getItem() != null)
-				{
-					ret[skill.getItem().getCurrentSlotType()].push(skill);
-				}
-				else
-				{
-					ret[this.Const.ItemSlot.Free].push(skill);
-				}
-			}
-		}
-
-		if (ret[this.Const.ItemSlot.Free].len() > 1)
-		{
-			ret[this.Const.ItemSlot.Free].sort(this.compareSkillsByOrder);
-		}
-
-		return ret;
-	}
-
 	function hasSkillOfType( _filter )
 	{
 		foreach( skill in this.m.Skills )
@@ -485,23 +453,9 @@ this.skill_container <- {
 		this.m.Actor.updateOverlay();
 	}
 
-	function MovementCompleted( _tile )
-	{
-		if (!this.m.Actor.isAlive())
-		{
-			return;
-		}
-
-		foreach( skill in this.m.Skills )
-		{
-			skill.onMovementCompleted(_tile);
-		}
-	}
-
 	function buildPropertiesForUse( _caller, _targetEntity )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
-		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -509,14 +463,13 @@ this.skill_container <- {
 			skill.onAnySkillUsed(_caller, _targetEntity, superCurrent);
 		}
 
-		this.m.IsUpdating = updating;
+		this.m.IsUpdating = false;
 		return superCurrent;
 	}
 
 	function buildPropertiesForDefense( _attacker, _skill )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
-		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -524,14 +477,13 @@ this.skill_container <- {
 			skill.onBeingAttacked(_attacker, _skill, superCurrent);
 		}
 
-		this.m.IsUpdating = updating;
+		this.m.IsUpdating = false;
 		return superCurrent;
 	}
 
 	function buildPropertiesForBeingHit( _attacker, _skill, _hitInfo )
 	{
 		local superCurrent = this.m.Actor.getCurrentProperties().getClone();
-		local updating = this.m.IsUpdating;
 		this.m.IsUpdating = true;
 
 		foreach( i, skill in this.m.Skills )
@@ -539,7 +491,7 @@ this.skill_container <- {
 			skill.onBeforeDamageReceived(_attacker, _skill, _hitInfo, superCurrent);
 		}
 
-		this.m.IsUpdating = updating;
+		this.m.IsUpdating = false;
 		return superCurrent;
 	}
 
@@ -611,97 +563,387 @@ this.skill_container <- {
 
 	function onBeforeActivation()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onBeforeActivation();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onTurnStart()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onTurnStart();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onResumeTurn()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onResumeTurn();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onRoundEnd()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onRoundEnd();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onTurnEnd()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onTurnEnd();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onWaitTurn()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onWaitTurn();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onNewRound()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onNewRound();
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onNewDay()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onNewDay();
+
+			if (!this.m.Actor.isAlive())
+			{
+				break;
+			}
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( i, skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onDamageReceived(_attacker, _damageHitpoints, _damageArmor);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onBeforeTargetHit( _caller, _targetEntity, _hitInfo )
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onBeforeTargetHit(_caller, _targetEntity, _hitInfo);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onTargetHit( _caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onTargetHit(_caller, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onTargetMissed( _caller, _targetEntity )
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onTargetMissed(_caller, _targetEntity);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onTargetKilled( _targetEntity, _skill )
 	{
-		//overwritten by MSU
-	}
+		this.m.IsUpdating = true;
 
-	function onMissed( _attacker, _skill )
-	{
-		//overwritten by MSU
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onTargetKilled(_targetEntity, _skill);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onAfterDamageReceived()
 	{
-		//overwritten by MSU
+		this.update();
+	}
+
+	function onMissed( _attacker, _skill )
+	{
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onMissed(_attacker, _skill);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onCombatStarted()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onCombatStarted();
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onCombatFinished()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onCombatFinished();
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onDeath( _fatalityType )
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onDeath(_fatalityType);
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function onDismiss()
 	{
-		//overwritten by MSU
+		this.m.IsUpdating = true;
+		this.m.IsBusy = false;
+		this.m.BusyStack = 0;
+
+		foreach( skill in this.m.Skills )
+		{
+			if (skill.isGarbage())
+			{
+				continue;
+			}
+
+			skill.onDismiss();
+		}
+
+		this.m.IsUpdating = false;
+		this.update();
 	}
 
 	function compareSkillsByOrder( _skill1, _skill2 )
@@ -770,6 +1012,7 @@ this.skill_container <- {
 	{
 		this.m.IsUpdating = true;
 		local numSkills = _in.readU16();
+
 		for( local i = 0; i < numSkills; i = ++i )
 		{
 			local script = this.IO.scriptFilenameByHash(_in.readI32());
@@ -780,12 +1023,10 @@ this.skill_container <- {
 				skill.onDeserialize(_in);
 				this.add(skill);
 			}
-			/*
-			else
+			else if (_in.getMetaData().getVersion() >= 57)
 			{
 				_in.readU8();
 			}
-			*/
 		}
 
 		this.m.IsUpdating = false;

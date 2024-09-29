@@ -37,6 +37,17 @@ this.teamplayer_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Has a [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] lower chance to inflict friendly fire"
+			},
+			{
+				id = 10,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = format("[color=%s]%s[/color], [color=%s]%s[/color] and [color=%s]%s[/color] skills have [color=%s]%s[/color] chance to hit when targeting an allied character"
+					, this.Const.UI.Color.NegativeValue, "Knock Back"
+					, this.Const.UI.Color.NegativeValue, "Repel"
+					, this.Const.UI.Color.NegativeValue, "Hook"
+					, this.Const.UI.Color.PositiveValue, "100%"
+				)
 			}
 		];
 	}

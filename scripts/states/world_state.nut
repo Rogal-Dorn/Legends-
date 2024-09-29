@@ -3531,17 +3531,17 @@ this.world_state <- this.inherit("scripts/states/state", {
 			return true;
 		}
 
-		if (this.isInDevScreen())
-		{
-			switch(_key.getKey())
-			{
-			case 41:
-				this.m.WorldScreen.hideDevConsole();
-				break;
-			}
+		//if (this.isInDevScreen())
+		//{
+		//	switch(_key.getKey())
+		//	{
+		//	case 41:
+		//		this.m.WorldScreen.hideDevConsole();
+		//		break;
+		//	}
 
-			return true;
-		}
+		// 	return true;
+		// }
 
 		if (this.isInCharacterScreen() && _key.getState() == 0)
 		{
@@ -3650,13 +3650,13 @@ this.world_state <- this.inherit("scripts/states/state", {
 
 				break;
 
-			case 32:
-				if (!this.m.MenuStack.hasBacksteps())
-				{
-					this.m.WorldScreen.showDevConsole();
-					return true;
-				}
-				break;
+			//case 32:
+			//	if (!this.m.MenuStack.hasBacksteps())
+			//	{
+			//		this.m.WorldScreen.showDevConsole();
+			//		return true;
+			//	}
+			//	break;
 
 			case 26:
 				if (!this.m.MenuStack.hasBacksteps() && !this.m.EventScreen.isVisible() && !this.m.EventScreen.isAnimating())

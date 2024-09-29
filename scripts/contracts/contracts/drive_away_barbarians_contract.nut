@@ -9,7 +9,7 @@ this.drive_away_barbarians_contract <- this.inherit("scripts/contracts/contract"
 	{
 		this.contract.create();
 		this.m.Type = "contract.drive_away_barbarians";
-		this.m.Name = "Drive Off Barbarians";
+		this.m.Name = "Wildlings at the Gates";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"A northern ice tribe has settled nearby. These barbarians and their savage pagan ways are not welcome here.",

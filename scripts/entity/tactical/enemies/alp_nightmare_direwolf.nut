@@ -58,6 +58,7 @@ this.alp_nightmare_direwolf <- this.inherit("scripts/entity/tactical/enemies/alp
 		this.m.SoundPitch = this.Math.rand(95, 105) * 0.01;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/direwolf_agent");
 		this.m.AIAgent.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_alp_teleport"));
+		this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat);
 		this.m.AIAgent.setActor(this);
 	}
 

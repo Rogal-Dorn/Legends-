@@ -16,12 +16,15 @@ this.legend_marked_target <- this.inherit("scripts/skills/skill", {
 	
 	function getDescription()
 	{
-		return "This character has is a marked target and has [color=" + this.Const.UI.Color.NegativeValue + "] -20 [/color] ranged defense each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
+		return "This character has is a marked target and has [color=" + this.Const.UI.Color.NegativeValue + "] -10 [/color] ranged defense and [color=" + this.Const.UI.Color.NegativeValue + "] -10 [/color] melee defense each turn for [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turn(s).";
 	}
 
 	function onUpdate( _properties )
 	{
-		_properties.RangedDefense -= 20;
+		_properties.RangedDefense -= 10;
+		_properties.MeleeDefense -= 10;
+		bonus = 1.0 + this.Math.min(0.2 , _properties.getHitpoints() * 0.01);
+		_properties.DamageReceivedTotalMult *= bonus;
 	}
 
 

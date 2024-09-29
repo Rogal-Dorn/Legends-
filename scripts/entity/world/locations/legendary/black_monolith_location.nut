@@ -179,7 +179,10 @@ this.black_monolith_location <- this.inherit("scripts/entity/world/location", {
 			"loot/gemstones_item",
 			"loot/golden_chalice_item",
 			"loot/ancient_gold_coins_item",
-			"misc/legend_ancient_scroll_item"
+			"misc/legend_ancient_scroll_item",
+			"misc/legend_masterwork_metal",
+			"misc/legend_masterwork_fabric",
+			"misc/legend_masterwork_tools"
 		], _lootTable);
 
 		_lootTable.push(this.Const.World.Common.pickArmor([

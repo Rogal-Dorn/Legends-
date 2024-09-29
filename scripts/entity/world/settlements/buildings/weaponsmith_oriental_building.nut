@@ -160,6 +160,11 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 				R = 40,
 				P = 1.0,
 				S = "weapons/battle_whip"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "accessory/legend_cestus_item"
 			}
 		];
 

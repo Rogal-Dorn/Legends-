@@ -33,6 +33,7 @@ this.legend_mark_target <- this.inherit("scripts/skills/skill", {
 		this.m.ActionPointCost = 2;
 		this.m.FatigueCost = 10;
 		this.m.MaxLevelDifference = 6;
+		this.m.IsUsingHitchance = false;
 		this.m.MinRange = 1;
 		this.m.MaxRange = 9;
 	}

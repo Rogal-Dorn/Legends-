@@ -68,11 +68,6 @@ this.lose_fear_undead_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getSkills().hasSkill("trait.player"))
-			{
-				continue;
-			}
-
 			if (!bro.getSkills().hasSkill("trait.fear_undead") || bro.getLifetimeStats().Battles < 25 || bro.getLifetimeStats().Kills < 50 || bro.getLifetimeStats().BattlesWithoutMe != 0)
 			{
 				candidates_other.push(bro);

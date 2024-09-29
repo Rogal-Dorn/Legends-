@@ -12,11 +12,21 @@ this.super_sleep_skill <- this.inherit("scripts/skills/actives/sleep_skill", {
 		local _targetTile = _tag.TargetTile;
 		local _user = _tag.User;
 
-		if (_targetTile.IsOccupiedByActor)
+		for( local i = 5; i >= 0; --i )
 		{
-			local entity = _targetTile.getEntity();
-			targets.push(entity);
+			if (!_targetTile.hasNextTile(i))
+				continue;
+
+			local tile = _targetTile.getNextTile(i);
+
+			if (::Math.abs(tile.Level - _targetTile.Level) > 1 || !tile.IsOccupiedByActor || !tile.getEntity().isAttackable() || tile.getEntity().isAlliedWith(_user))
+				continue;
+
+			targets.push(tile.getEntity());
 		}
+
+		if (_targetTile.IsOccupiedByActor && !tile.getEntity().isAlliedWith(_user))
+			targets.push(_targetTile.getEntity());
 
 		local myTile = _user.getTile();
 
@@ -24,7 +34,7 @@ this.super_sleep_skill <- this.inherit("scripts/skills/actives/sleep_skill", {
 		{
 			local bonus = this.m.MaxRange + 1 - myTile.getDistanceTo(target.getTile());
 
-			if (target.checkMorale(0, -75 * bonus, this.Const.MoraleCheckType.MentalAttack))
+			if (target.checkMorale(0, -60 * bonus, this.Const.MoraleCheckType.MentalAttack))
 			{
 				if (!_user.isHiddenToPlayer() && !target.isHiddenToPlayer())
 				{
