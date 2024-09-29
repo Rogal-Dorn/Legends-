@@ -18,15 +18,20 @@
 	page.addBooleanSetting("Skills", true);
 	page.addBooleanSetting("Stats", true);
 
-	foreach (file in ::IO.enumerateFiles("hooks/tt_hooks/config"))
+	foreach (file in ::IO.enumerateFiles("mod_legends/mod_Jimmys_Tooltips/config"))
+	{
+		::include(file);
+	}
+
+	foreach (file in ::IO.enumerateFiles("mod_legends/mod_Jimmys_Tooltips/query"))
 	{
 		::include(file);
 	}
 
 	// load keybinds
-	::include("hooks/tt_hooks/keybinds.nut");
+	::include("mod_legends/mod_Jimmys_Tooltips/keybinds.nut");
 
-	foreach (file in ::IO.enumerateFiles("hooks/tt_hooks/hooks"))
+	foreach (file in ::IO.enumerateFiles("mod_legends/mod_Jimmys_Tooltips/hooks"))
 	{
 		::include(file);
 	}
