@@ -724,6 +724,31 @@ gt.Const.World.Spawn.LegendHexeLeader <-
 			Weight = 5,
 			Types = [
 				{
+					Type = this.Const.World.Spawn.Troops.OrcYoungLOW,
+					Cost = 35
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcYoung,
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarriorLOW,
+					Cost = 50
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.OrcWarrior,
+					Cost = 60
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendOrcElite,
+					Cost = 85
+				}
+			]
+		},
+		{
+			Weight = 5,
+			Types = [
+				{
 					Type = this.Const.World.Spawn.Troops.Unhold,
 					Cost = 50
 				},
