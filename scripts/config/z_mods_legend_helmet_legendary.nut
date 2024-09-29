@@ -13,15 +13,15 @@ if (!("HelmObjs" in gt.Const.LegendMod))
 
 gt.Const.LegendMod.HelmObjs.extend([
 {
-	ID = "legendary/emperors_countenance", //400.0
-	Script = "scripts/items/helmets/legendary/emperors_countenance", //should this just be a script
+	ID = "legendary/legend_emperors_countenance", //400.0
+	Script = "scripts/items/legend_helmets/legendary/legend_emperors_countenance", //should this just be a script
 	Sets = []
 },{
 	ID = "legendary/fangshire", //60
 	Script = "scripts/items/helmets/legendary/fangshire",
 	Sets = []
 },{
-	ID = "legendary/ijirok_helmet", //310.0
+	ID = "legendary/legend_ijirok_helmet", //310.0
 	Script = "scripts/items/legend_helmets/legendary/legend_ijirok_helmet",
 	Sets = []
 },{

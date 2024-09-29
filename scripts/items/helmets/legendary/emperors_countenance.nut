@@ -2,7 +2,7 @@ this.emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
 	m = {},
 	function create()
 	{
-		this.helmet.create();
+		this.legend_helmet_upgrade.create();
 		this.m.ID = "armor.head.emperors_countenance";
 		this.m.Name = "The Emperor\'s Countenance";
 		this.m.Description = "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust.";
@@ -34,6 +34,23 @@ this.emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
 			text = "Reflects [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of damage taken in melee back to the attacker"
 		});
 		return result;
+	}
+
+	function getTooltip()
+	{
+		local result = this.legend_helmet_upgrade.getTooltip();
+		this.onArmorTooltip(result);
+		return result;
+	}
+
+	function onArmorTooltip( _result )
+	{
+		_result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Reflects [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of damage taken in melee back to the attacker"
+		});
 	}
 
 	function onDamageReceived( _damage, _fatalityType, _attacker )
