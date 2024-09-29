@@ -8,7 +8,7 @@ this.drive_away_nomads_contract <- this.inherit("scripts/contracts/contract", {
 	{
 		this.contract.create();
 		this.m.Type = "contract.drive_away_nomads";
-		this.m.Name = "Drive Off Nomads";
+		this.m.Name = "Desert Raiders";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"A nomadic camp has been preying on roads to %s. Elusive and evasive, the desert tribes have been here for centuries.",

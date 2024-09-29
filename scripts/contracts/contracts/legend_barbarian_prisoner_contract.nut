@@ -15,7 +15,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_barbarian_prisoner";
-		this.m.Name = "Escort Barbarian Prisoner (Legendary)";
+		this.m.Name = "Facing Justice (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 120.0;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;
 		this.m.DescriptionTemplates = [

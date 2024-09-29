@@ -130,7 +130,7 @@ this.dog_in_swamp_event <- this.inherit("scripts/events/event", {
 			Characters = [],
 			Options = [
 				{
-					Text = "Well, that was a whorthwile endeavour.",
+					Text = "Well, that was a worthwile endeavour.",
 					function getResult( _event )
 					{
 						return 0;

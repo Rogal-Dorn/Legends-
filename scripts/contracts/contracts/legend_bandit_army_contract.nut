@@ -23,7 +23,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_bandit_army_contract";
-		this.m.Name = "Brigand Army (Legendary)";
+		this.m.Name = "King of Knives (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(175, 195) * 0.01;
 		this.m.DescriptionTemplates = [
