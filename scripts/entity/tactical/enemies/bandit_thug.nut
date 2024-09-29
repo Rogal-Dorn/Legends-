@@ -97,7 +97,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/randomized_unit_abstra
 	// 				this.m.Items.equip(this.new("scripts/items/weapons/goedendag"));
 	// 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	// 						{
-	// 							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+	// 							this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 	// 						}
 	// 			}
 	// 			else if (r == 3)
@@ -155,7 +155,7 @@ this.bandit_thug <- this.inherit("scripts/entity/tactical/randomized_unit_abstra
 	// 			this.m.Items.equip(this.new("scripts/items/weapons/bludgeon"));
 	// 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	// 						{
-	// 							this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+	// 							this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 	// 						}
 	// 		}
 	// 		else if (r == 5)

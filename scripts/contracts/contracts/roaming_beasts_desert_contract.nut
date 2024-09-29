@@ -7,7 +7,7 @@ this.roaming_beasts_desert_contract <- this.inherit("scripts/contracts/contract"
 	{
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts_desert";
-		this.m.Name = "Desert Beasts";
+		this.m.Name = "Desert Fangs";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"Amid the burning sands, the gnawed bones of deceased travelers are starting to pile up.",

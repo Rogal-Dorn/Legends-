@@ -1,5 +1,7 @@
 this.taunt_effect <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		TurnsLeft = 2
+	},
 	function create()
 	{
 		this.m.ID = "effects.taunt";
@@ -14,13 +16,25 @@ this.taunt_effect <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.TargetAttractionMult *= 1.0 + this.Math.minf(1.5, this.getContainer().getActor().getCurrentProperties().Bravery * 0.015);
+		_properties.TargetAttractionMult *= 1.0 + this.Math.minf(4.0, this.getContainer().getActor().getCurrentProperties().Bravery * 0.04);
 	}
 
-	function onTurnStart()
+	function onAdded()
 	{
-		this.removeSelf();
+		this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+	}
+
+	function onRefresh()
+	{
+		this.m.TurnsLeft = this.Math.max(1, 2 + this.getContainer().getActor().getCurrentProperties().NegativeStatusEffectDuration);
+	}
+
+	function onTurnEnd()
+	{
+		if (--this.m.TurnsLeft <= 0)
+		{
+			this.removeSelf();
+		}
 	}
 
 });
-

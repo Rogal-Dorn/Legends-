@@ -68,7 +68,6 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.FortifiedMind,
 				this.Const.Perks.PerkDefs.Gifted,
 				this.Const.Perks.PerkDefs.LegendAthlete,
-				this.Const.Perks.PerkDefs.LegendOnslaught
 				// this.Const.Perks.PerkDefs.LegendComposure
 			],
 			[
@@ -81,7 +80,8 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
+				this.Const.Perks.PerkDefs.Relentless
 			],
 			[
 				this.Const.Perks.PerkDefs.SpecPolearm,

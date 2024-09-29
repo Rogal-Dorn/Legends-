@@ -668,8 +668,8 @@ gt.Const.LegendMod.GetFavoriteEnemyStats <- function ( _actor, _types )
 			str += (mKills * 1.0 / this.Const.LegendMod.GetFavoriteEnemyValue(t));
 		}
 	}
-	local hitChance = 5 + (str >= 20 ? 20 : this.Math.floor(str)); // base bonus of 5 and cap total at 25
-	local hitMult = 1.0 + ((hitChance * 1.0) / 100.0);
+	local hitChance = 5 + this.Math.min(this.Math.floor(str), 20); // base bonus of 5 and cap total at 25
+	local hitMult = 1.0 + (0.01 * hitChance);
 	return {
 		Kills = kills,
 		Strength = str,

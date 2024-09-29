@@ -1,7 +1,15 @@
 this.hate_undead_event <- this.inherit("scripts/events/event", {
 	m = {
 		Image = "",
-		Casualty = null
+		Casualty = null,
+		excludedTraits = [
+			"fear_undead",
+			"hate_undead",
+			"dastard",
+			"craven",
+			"fainthearted",
+			"weasel"
+		]
 	},
 	function create()
 	{
@@ -80,10 +88,14 @@ this.hate_undead_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getLevel() >= 3 && !bro.getSkills().hasSkill("trait.fear_undead") && !bro.getSkills().hasSkill("trait.hate_undead") && !bro.getSkills().hasSkill("trait.dastard") && !bro.getSkills().hasSkill("trait.craven") && !bro.getSkills().hasSkill("trait.fainthearted") && !bro.getSkills().hasSkill("trait.weasel"))
+			if (bro.getLevel() < 3)
+				return;
+			foreach (trait in this.m.excludedTraits)
 			{
-				candidates.push(bro);
+				if (bro.getSkills().hasSkill("trait." + trait))
+					continue;
 			}
+			candidates.push(bro);
 		}
 
 		if (candidates.len() == 0)

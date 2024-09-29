@@ -42,7 +42,7 @@ this.named_shamshir <- this.inherit("scripts/items/weapons/named/named_weapon", 
 				id = 12,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + (100 - this.m.EffectChanceOrBonus) + "%[/color] Lowered Injury Threshold"
+				text = "Lowered Injury Threshold by [color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.EffectChanceOrBonus + "%[/color]"
 			});
 		}
 		return result;

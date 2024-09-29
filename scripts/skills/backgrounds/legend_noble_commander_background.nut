@@ -91,9 +91,9 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendAthlete,
+				this.Const.Perks.PerkDefs.LegendAthlete
 				// this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendOnslaught
+				
 			],
 			[
 				this.Const.Perks.PerkDefs.Brawny,
@@ -106,7 +106,8 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.InspiringPresence,
 				this.Const.Perks.PerkDefs.LegendToolsDrawers,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
+				this.Const.Perks.PerkDefs.Relentless
 			],
 			[
 

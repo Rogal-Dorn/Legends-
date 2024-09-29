@@ -7,7 +7,7 @@ this.roaming_beasts_contract <- this.inherit("scripts/contracts/contract", {
 	{
 		this.contract.create();
 		this.m.Type = "contract.roaming_beasts";
-		this.m.Name = "Hunting Beasts";
+		this.m.Name = "Tooth and Tail";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"Fell beasts have been preying on the citizens of %s. Folk are afraid to leave their homes.",

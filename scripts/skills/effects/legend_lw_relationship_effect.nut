@@ -15,6 +15,7 @@ this.legend_lw_relationship_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		local bonus = getBonus();
 		return [
 			{
 				id = 1,
@@ -30,63 +31,80 @@ this.legend_lw_relationship_effect <- this.inherit("scripts/skills/skill", {
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Melee Skill per ally adjacent"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus * 2 + "[/color] Melee Skill"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+3[/color] Ranged Skill per ally adjacent"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus * 3 + "[/color] Ranged Skill"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Melee Defense per ally adjacent"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus * 2 + "[/color] Melee Defense"
 			},
 			{
 				id = 10,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+2[/color] Ranged Defense per ally adjacent"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + bonus * 2 + "[/color] Ranged Defense"
 			}
 		];
 	}
 
+	function getBonus()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (!actor.isPlacedOnMap())
+		{
+			return 0;
+		}
+
+		local myTile = actor.getTile();
+		local num = 0;
+
+		for( local i = 0; i != 6; i = ++i )
+		{
+			if (!myTile.hasNextTile(i))
+			{
+			}
+			else
+			{
+				local tile = myTile.getNextTile(i);
+
+				if (!tile.IsEmpty && tile.IsOccupiedByActor && this.Math.abs(myTile.Level - tile.Level) <= 1)
+				{
+					local entity = tile.getEntity();
+
+					if (actor.getFaction() == entity.getFaction() || entity.isAlliedWith(actor))
+					{
+						num = ++num;
+					}
+				}
+			}
+		}
+
+		return num;
+	}
+
 	function onUpdate( _properties )
 	{
+		local bonus = getBonus();
 		if (!this.getContainer().getActor().isPlacedOnMap())
 		{
 			this.m.IsHidden = true;
 			return;
 		}
-
-		local actor = this.getContainer().getActor();
-		local myTile = actor.getTile();
-		local allies = this.Tactical.Entities.getInstancesOfFaction(actor.getFaction());
-		local isSupported = true;
-
-		foreach( ally in allies )
-		{
-			if (ally.getID() == actor.getID() || !ally.isPlacedOnMap())
-			{
-				continue;
-			}
-
-			if (ally.getTile().getDistanceTo(myTile) <= 1)
-			{
-				isSupported = true;
-				break;
-			}
-		}
-
-		if (isSupported)
+		if (bonus > 0)
 		{
 			this.m.IsHidden = false;
-			_properties.MeleeSkill += 2;
-			_properties.RangedSkill += 3;
-			_properties.MeleeDefense += 2;
-			_properties.RangedDefense += 2;
+			_properties.MeleeSkill += num * 2;
+			_properties.RangedSkill += num * 3;
+			_properties.MeleeDefense += num * 2;
+			_properties.RangedDefense += num * 2;
 			// _properties.Initiative += 2;
 		}
 		else
@@ -101,4 +119,3 @@ this.legend_lw_relationship_effect <- this.inherit("scripts/skills/skill", {
 	}
 
 });
-

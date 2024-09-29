@@ -121,7 +121,7 @@ this.legend_holyflame_skill <- this.inherit("scripts/skills/skill", {
 				this.Tactical.Entities.addTileEffect(tile, tile.Properties.Effect, particles);
 				if (tile.IsOccupiedByActor)
 				{
-					this.Const.Tactical.Common.onApplyHolyFlame(tile, tile.getEntity());
+					this.Const.Tactical.Common.onApplyHolyFlame(tile, tile.getEntity(), _user);
 				}
 			}
 		}

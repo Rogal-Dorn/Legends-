@@ -11,7 +11,7 @@ this.legend_hunting_skin_ghouls_contract <- this.inherit("scripts/contracts/cont
 	{
 		this.contract.create();
 		this.m.Type = "contract.legend_hunting_skin_ghouls";
-		this.m.Name = "Hunting Skin Ghouls (Legendary)";
+		this.m.Name = "Hunger Pangs (Legendary)";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DifficultyMult = this.Math.rand(145, 175) * 0.01;
 		this.m.DescriptionTemplates = [

@@ -10,16 +10,16 @@ this.legend_hexen_leader_cloak <- this.inherit("scripts/items/legend_armor/legen
 		this.m.Name = "Hexen Leader Silk Cloak";
 		this.m.Description = "This elegant cloak is made from spider web that bolsters its users resolve";
 		this.m.ArmorDescription = "A Hexen cloak able to increase its users resolve";
-		this.m.Icon = "armor_upgrades/upgrade_cloak_purple.png";
+		this.m.Icon = "legend_armor/icon_cloak_hexe.png";
 		this.m.IconLarge = this.m.Icon;
-		this.m.OverlayIcon = "armor_upgrades/icon_upgrade_cloak_purple.png";
-		this.m.OverlayIconLarge = "armor_upgrades/inventory_upgrade_cloak_purple.png";
+		this.m.OverlayIcon = "legend_armor/icon_cloak_hexe.png";
+		this.m.OverlayIconLarge = this.m.Icon;
 		this.m.SpriteFront = null;
-		this.m.SpriteBack = "cloak_purple";
+		this.m.SpriteBack = "bust_cloak_hexe";
 		this.m.SpriteDamagedFront = null;
-		this.m.SpriteDamagedBack = "cloak_purple_damaged";
+		this.m.SpriteDamagedBack = "bust_cloak_hexe_damaged";
 		this.m.SpriteCorpseFront = null;
-		this.m.SpriteCorpseBack = "cloak_purple_dead";
+		this.m.SpriteCorpseBack = "bust_cloak_hexe_dead";
 
 		this.m.Value = 7500;
 		this.m.Condition = 25;
