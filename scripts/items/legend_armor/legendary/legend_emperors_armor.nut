@@ -2,7 +2,7 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_na
 	m = {},
 	function create()
 	{
-		this.legend_named_armor.create();
+		this.legend_armor_upgrade.create();
 		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;
 		this.m.ID = "legend_armor.body.emperors_armor";
 		this.m.Name = "The Emperor\'s Armor";
@@ -11,48 +11,73 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_na
 		this.m.IsDroppedAsLoot = true;
 		this.m.ShowOnCharacter = true;
 		this.m.IsIndestructible = true;
+		this.m.SpriteBack = "bust_named_emperors_armor_01";
+		this.m.SpriteDamagedBack = "bust_named_emperors_armor_01_damaged";
+		this.m.SpriteCorpseBack = "bust_named_emperors_armor_01_dead";
 		this.m.Icon = "legend_armor/icon_named_emperors_armor_01.png";
-		this.m.IconLarge = "legend_armor/inventory_named_emperors_armor_01.png";
-		this.m.Sprite = "bust_named_emperors_armor_01";
-		this.m.SpriteDamaged = "bust_named_emperors_armor_01_damaged";
-		this.m.SpriteCorpse= "bust_named_emperors_armor_01_dead";
+		this.m.IconLarge = "inventory_named_emperors_armor_01";
+		this.m.OverlayIcon = "legend_armor/icon_named_emperors_armor_01.png";
+		this.m.OverlayIconLarge = "inventory_named_emperors_armor_01";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
-		this.m.Condition = 400;
-		this.m.ConditionMax = 400;
-		this.m.StaminaModifier = -30;
+		this.m.Condition = 350;
+		this.m.ConditionMax = 350;
+		this.m.StaminaModifier = -35;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 		this.randomizeValues();
 	}
 
 	function getTooltip()
 	{
-		local result = this.legend_armor.getTooltip();
-		result.push({
-			id = 6,
-			type = "text",
-			icon = "ui/icons/special.png",
-			text = "Reflects [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] of damage taken in melee back to the attacker"
-		});
+		local result = this.legend_armor_upgrade.getTooltip();
+		this.onArmorTooltip(result);
 		return result;
 	}
 
-	function onDamageReceived( _damage, _fatalityType, _attacker )
+	function onArmorTooltip( _result )
 	{
-		this.legend_armor.onDamageReceived(_damage, _fatalityType, _attacker);
+		_result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "At the start of your turn, apply the Dazed status effect to all nearby enemies"
+		});
+	}
 
-		if (_attacker != null && _attacker.isAlive() && _attacker.getHitpoints() > 0 && _attacker.getID() != this.getContainer().getActor().getID() && _attacker.getTile().getDistanceTo(this.getContainer().getActor().getTile()) == 1 && !_attacker.getCurrentProperties().IsImmuneToDamageReflection)
+	function onTurnStart()
+	{
+		local actor = this.getContainer().getActor();
+		local actors = this.Tactical.Entities.getAllInstances();
+		foreach( i in actors )
 		{
-			local hitInfo = clone this.Const.Tactical.HitInfo;
-			hitInfo.DamageRegular = this.Math.maxf(1.0, _damage * 0.25);
-			hitInfo.DamageArmor = this.Math.maxf(1.0, _damage * 0.25);
-			hitInfo.DamageDirect = 0.0;
-			hitInfo.BodyPart = this.Const.BodyPart.Body;
-			hitInfo.BodyDamageMult = 1.0;
-			hitInfo.FatalityChanceMult = 0.0;
-			_attacker.onDamageReceived(_attacker, null, hitInfo);
+			foreach( a in i )
+			{
+				if (a.getID() == actor.getID())
+					continue;
+
+				if (actor.getTile().getDistanceTo(a.getTile()) > 2)
+					continue;
+
+				if (a.isAlliedWith(actor))
+					continue;
+
+				if (!a.getCurrentProperties().IsImmuneToDaze)
+					a.getSkills().add(this.new("scripts/skills/effects/dazed_effect"));
+			}
 		}
+	}
+
+	function updateVariant()
+	{
+		local variant = this.m.Variant > 9 ? this.m.Variant : "0" + this.m.Variant;
+		this.m.SpriteBack = "bust_cr_emperors_armor" + "_" + variant;
+		this.m.SpriteDamagedBack = "bust_cr_emperors_armor" + "_" + variant + "_damaged";
+		this.m.SpriteCorpseBack = "bust_cr_emperors_armor" + "_" + variant + "_dead";
+		this.m.Icon = "legend_armor/icon_cr_emperors_armor" + "_" + variant + ".png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "legend_armor/icon_cr_emperors_armor" + "_" + variant + ".png";
+		this.m.OverlayIconLarge = "legend_armor/inventory_cr_emperors_armor" + "_" + variant + ".png";
 	}
 
 });
