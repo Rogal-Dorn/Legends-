@@ -1,12 +1,12 @@
 ::Legends <- {
 	ID = "mod_legends",
-	Version = "18.2.7",
+	Version = "19.0.0",
 	Name = "Legends Mod",
-	BuildName = "Chickens & Demons"
+	BuildName = "Name Pending"
 };
 
 if (!("MSU" in this.getroottable()) || ::MSU.SemVer.compare(::MSU.SemVer.getTable(::MSU.Version), ::MSU.SemVer.getTable("1.3.0")) >= 0 && !("Hooks" in this.getroottable()))
-	::mods_registerMod(::Legends.ID, 18, ::Legends.Name);
+	::mods_registerMod(::Legends.ID, 19, ::Legends.Name);
 else
 	::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 
