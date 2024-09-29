@@ -49,6 +49,10 @@ this.stab <- this.inherit("scripts/skills/skill", {
 			this.m.FatigueCostMult = this.Const.Combat.WeaponSpecFatigueMult;
 			this.m.ActionPointCost = 3;
 		}
+		else
+		{
+			this.m.FatigueCostMult = 1.0;
+		}
 	}
 
 	function onUse( _user, _targetTile )

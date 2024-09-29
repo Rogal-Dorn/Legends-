@@ -33,11 +33,6 @@ this.witch_being_burned_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
-		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
-		{
-			return;
-		}
-
 		if (!this.World.getTime().IsDaytime)
 		{
 			return;

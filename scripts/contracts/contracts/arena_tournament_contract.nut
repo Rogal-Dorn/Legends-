@@ -1053,6 +1053,10 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 
 			if (item != null && item.getID() == "accessory.arena_collar")
 			{
+				if (bro.isInReserves())
+				{
+					bro.setInReserves(false);
+				}
 				ret.push(bro);
 			}
 		}

@@ -32,12 +32,20 @@ gt.Const.Perks.MediumArmorTree <- {
 	],
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.LegendBalance],
-		[gt.Const.Perks.PerkDefs.LegendPerfectFit],
+		[
+			gt.Const.Perks.PerkDefs.LegendBalance
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendPerfectFit
+		],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.LegendLithe],
-		[gt.Const.Perks.PerkDefs.LegendInTheZone]
+		[
+			gt.Const.Perks.PerkDefs.LegendLithe
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendInTheZone
+		]
 	]
 };
 
@@ -49,12 +57,20 @@ gt.Const.Perks.LightArmorTree <- {
 	],
 	Tree = [
 		[],
-		[gt.Const.Perks.PerkDefs.Dodge],
-		[gt.Const.Perks.PerkDefs.Relentless],
+		[
+			gt.Const.Perks.PerkDefs.Dodge
+		],
+		[
+			gt.Const.Perks.PerkDefs.Relentless
+		],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.Nimble],
-		[gt.Const.Perks.PerkDefs.LegendFreedomOfMovement]
+		[
+			gt.Const.Perks.PerkDefs.Nimble
+		],
+		[
+			gt.Const.Perks.PerkDefs.LegendFreedomOfMovement
+		]
 	]
 };
 
@@ -66,18 +82,20 @@ gt.Const.Perks.ClothArmorTree <- {
 	],
 	Tree = [
 		[
-		gt.Const.Perks.PerkDefs.LegendBlendIn
+			gt.Const.Perks.PerkDefs.LegendBlendIn
 		],
 		[],
 		[
-		gt.Const.Perks.PerkDefs.LegendSmallTarget
+			gt.Const.Perks.PerkDefs.LegendSmallTarget
 		],
 		[],
 		[],
 		[
-		gt.Const.Perks.PerkDefs.LegendFashionable
+			gt.Const.Perks.PerkDefs.LegendFashionable
 		],
-		[]
+		[
+			gt.Const.Perks.PerkDefs.LegendUnburdened
+		]
 	]
 };
 
