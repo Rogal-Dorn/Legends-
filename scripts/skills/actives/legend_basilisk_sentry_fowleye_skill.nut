@@ -175,7 +175,6 @@ this.legend_basilisk_sentry_fowleye_skill <- this.inherit("scripts/skills/skill"
 
 			this.Tactical.getHighlighter().addOverlayIcon(this.Const.Tactical.Settings.AreaOfEffectIcon, t, t.Pos.X, t.Pos.Y);
 		}
-	}
 
 		foreach( target in targets )
 		{

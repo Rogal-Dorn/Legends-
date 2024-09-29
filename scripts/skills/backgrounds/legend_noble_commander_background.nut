@@ -77,7 +77,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.MaceTree
 				this.Const.Perks.CrossbowTree
 			],
-<<<<<<< HEAD
 			Defense = [
 				this.Const.Perks.MediumArmorTree
 			],
@@ -88,33 +87,6 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.TrainedTree,
 				this.Const.Perks.FitTree,
 				this.Const.Perks.InspirationalTree
-=======
-			[
-				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.CoupDeGrace,
-				this.Const.Perks.PerkDefs.Dodge,
-				this.Const.Perks.PerkDefs.HoldOut,
-				this.Const.Perks.PerkDefs.SteelBrow,
-				this.Const.Perks.PerkDefs.QuickHands,
-				this.Const.Perks.PerkDefs.Gifted,
-				this.Const.Perks.PerkDefs.LegendAthlete
-				// this.Const.Perks.PerkDefs.LegendComposure,
-				
-			],
-			[
-				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.LegendBarterConvincing,
-				this.Const.Perks.PerkDefs.Anticipation,
-				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Feint,
-				this.Const.Perks.PerkDefs.RallyTheTroops,
-				this.Const.Perks.PerkDefs.InspiringPresence,
-				this.Const.Perks.PerkDefs.LegendToolsDrawers,
-				this.Const.Perks.PerkDefs.LegendTrueBeliever,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-				this.Const.Perks.PerkDefs.Relentless
->>>>>>> development
 			],
 			Enemy = [
 				this.Const.Perks.OutlandersTree,
