@@ -162,19 +162,6 @@ gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.LegendGuid
 	return _chance;
 });
 
-gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.LegendTasteThePain, 7, "Taste the Pain", function( _player, _chance ) {
-
-	local talents = _player.getTalents();
-	local tl = talents.len() == 0 ? 0 : talents[gt.Const.Attributes.Hitpoints];
-	if (tl == 0)
-	{
-		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
-
-	return _chance;
-});
-
 gt.Const.Perks.SpecialTrees.addSpecialPerk(1, gt.Const.Perks.PerkDefs.TrophyHunter, 7, "Trophy Hunter", function( _player, _chance ) {
 
 	local talents = _player.getTalents();
