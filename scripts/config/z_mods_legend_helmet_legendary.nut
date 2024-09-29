@@ -22,7 +22,7 @@ gt.Const.LegendMod.HelmObjs.extend([
 	Sets = []
 },{
 	ID = "legendary/ijirok_helmet", //310.0
-	Script = "scripts/items/helmets/legendary/ijirok_helmet",
+	Script = "scripts/items/legend_helmets/legendary/legend_ijirok_helmet",
 	Sets = []
 },{
 	ID = "legendary/legend_demonalp_helmet", //160

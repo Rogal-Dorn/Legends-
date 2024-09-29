@@ -35,7 +35,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
+},
+{
 	ID = "legendary/emperors_armor", // 400
 	Script = "scripts/items/legend_armor/legendary/legend_emperors_armor",
 	Sets = [{
@@ -55,7 +56,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
+},
+{
 	ID = "legendary/emperors_armor_fake", // 380
 	Script = "scripts/items/legend_armor/legendary/legend_emperors_armor_fake",
 	Sets = [{
@@ -75,27 +77,28 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
-	ID = "legendary/ijirok_armor", // 320
-	Script = "scripts/items/legend_armor/legendary/legend_ijirok_armor",
-	Sets = [{
-		Cloth = [
-
-		],
-		Chain = [
-
-		],
-		Plate = [
-
-		],
-		Cloak = [
-		],
-		Tabard = [
-		],
-		Attachments =[
-		]
-	}]
-},{
+},
+{
+	ID = "legendary/ijirok_armor", 
+	Script = "",
+	Sets = [
+		{
+			Cloth = [
+				[1, "cloth/legend_sackcloth"],// 10,-0,15				
+			],
+			Chain = [
+				[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],// 45,-7,200				
+			],
+			Plate = [	
+				[1, "plate/cr_ijirok_armor"],					
+			],
+			Cloak = [],
+			Tabard = [],
+			Attachments = []
+		}			
+	]
+},
+{
 	ID = "legendary/legend_mountain_armor", // this.m.ConditionMax
 	Script = "scripts/items/legend_armor/legendary/legend_armor_mountain_named",
 	Sets = [{
@@ -115,7 +118,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
+},
+{
 	ID = "legendary/legend_skin_armor", // 160
 	Script = "scripts/items/legend_armor/legendary/legend_skin_armor",
 	Sets = [{
@@ -135,7 +139,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
+},
+{
 	ID = "named/legend_named_warlock_cloak", // 180
 	Script = "scripts/items/legend_armor/legendary/legend_armor_named_warlock_cloak",
 	Sets = [{
@@ -155,7 +160,8 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-},{
+},
+{
 	ID = "named/lindwurm_armor", // 300
 	Script = "scripts/items/legend_armor/legendary/legend_lindwurm_armor",
 	Sets = [{
@@ -175,5 +181,4 @@ gt.Const.LegendMod.ArmorObjs.extend([
 		Attachments =[
 		]
 	}]
-}
-])
+}]);
