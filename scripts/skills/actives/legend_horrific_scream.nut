@@ -19,6 +19,7 @@ this.legend_horrific_scream <- this.inherit("scripts/skills/skill", {
 		this.m.IsStacking = false;
 		this.m.IsAttack = true;
 		this.m.IsRanged = true;
+		this.m.IsUsingHitchance = false;
 		this.m.IsVisibleTileNeeded = false;
 		this.m.ActionPointCost = 6;
 		this.m.FatigueCost = 30;

@@ -16,7 +16,7 @@ this.perk_sundering_strikes <- this.inherit("scripts/skills/skill", {
 
 	function onUpdate( _properties )
 	{
-		_properties.DamageArmorMult += 0.2;
+		_properties.DamageArmorMult += 0.35;
 	}
 
 });

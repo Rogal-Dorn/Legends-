@@ -21,7 +21,7 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 		this.m.DescriptionTemplates = [
 			"A barbarian prisoner, shackled and guarded, awaits transport to face judgment. His kin will not this make this easy.",
 			"Despite his captivity, the barbarian prisoner remains a formidable threat. Bulging muscles and furious eyes, not to mention the savage kin waiting to ambush you in the forest.",
-			"Wrapped in thick chains, a hulking barbarian prisoner awaits transport. Nobody wants the job, for his savage kin are fiercely loyal and they will come for him.",
+			"Wrapped in thick chains, a hulking barbarian prisoner awaits transport. Nobody wants the job, for his savage kin are fiercely loyal and they will come for him."
 		];
 	}
 
@@ -759,9 +759,8 @@ this.legend_barbarian_prisoner_contract <- this.inherit("scripts/contracts/contr
 			{
 				return true;
 			}
-
-			return false;
 		}
+		return false;
 	}
 
 	function onIsTileUsed( _tile )

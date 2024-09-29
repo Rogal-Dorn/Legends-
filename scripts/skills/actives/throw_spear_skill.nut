@@ -217,6 +217,8 @@ this.throw_spear_skill <- this.inherit("scripts/skills/skill", {
 			{
 				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + "\'s shield");
 			}
+
+			_tag.User.setActionPoints(this.Math.min(_tag.User.getActionPointsMax(), _tag.User.getActionPoints() + 4));
 		}
 		else
 		{

@@ -430,6 +430,11 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.getPlayerRoster().getSize() >= this.World.Assets.getBrothersMax())
+		{
+			return;
+		}
+
 		if (this.World.getTime().Days <= 15)
 		{
 			return;

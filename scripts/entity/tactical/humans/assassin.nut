@@ -120,7 +120,7 @@ this.assassin <- this.inherit("scripts/entity/tactical/human", {
 
 		this.m.BaseProperties.DamageDirectMult *= 1.25;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_escape_artist"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		return true;
 	}
 

@@ -1,7 +1,7 @@
 //Author: WNTR Jimmy
 this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 	m  = { 
-		PoisonChance = 25 
+		PoisonChance = 33 
 	},
 
 	function create()
@@ -48,8 +48,17 @@ this.perk_legend_prepared <- this.inherit("scripts/skills/skill", {
 			return;
 		}
 
+		local actor = this.getContainer().getActor();
+		local item = actor.getMainhandItem();
+
+		if (item == null) return;
+
 		local effect = new("scripts/skills/effects/spider_poison_effect");
-		if(this.getContainer().getActor().getMainhandItem().isWeaponType(this.Const.Items.WeaponType.Dagger) && _damageInflictedHitpoints > 0)
+		if (actor.getFaction() == this.Const.Faction.Player )
+		{
+			effect.setActor(actor);
+		}
+		if (item.isWeaponType(this.Const.Items.WeaponType.Dagger) && _damageInflictedHitpoints > 0)
 		{
 			if(this.Math.rand(1, 100) < this.m.PoisonChance)
 			{

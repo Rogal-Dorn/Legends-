@@ -56,7 +56,7 @@ this.legend_burned_injury <- this.inherit("scripts/skills/injury_permanent/perma
 				id = 8,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-15[/color]"
+				text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-10[/color]"
 			}
 		];
 		this.addTooltipHint(ret);

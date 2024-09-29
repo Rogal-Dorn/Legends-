@@ -325,10 +325,8 @@ this.legend_vala_trance_malevolent <- this.inherit("scripts/skills/skill", {
 
 	function onDeath( _fatalityType )
 	{
-		if (!this.Tactical.State.isActive())
-			{
-				return;
-			}
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+			return;
 
 		local actor = this.getContainer().getActor();
 		local targets = this.Tactical.Entities.getAllInstances();
