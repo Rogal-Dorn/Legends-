@@ -1,59 +1,73 @@
-this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armor", {
+this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
-		this.legend_armor.create();
-		this.m.ID = "legend_armor.body.ijirok_armor";
+		this.legend_armor_upgrade.create();
+		this.m.Type = this.Const.Items.ArmorUpgrades.Plate;		
+		this.m.ID = "armor.body.legend_ijirok_armor";	
 		this.m.Name = "Armor of the Ijirok";
 		this.m.Description = "Once a barbarian armor broken in battle, this piece has been bathed in the blood of the legendary Ijirok. Powers beyond your understanding mended it whole again, and will likewise mend any wounds of the wearer as well.";
-		this.m.SlotType = this.Const.ItemSlot.Body;
-		this.m.IsDroppedAsLoot = true;
-		this.m.ShowOnCharacter = true;
-		this.m.IsIndestructible = true;
-		this.m.Variant = 98;
+		this.m.ArmorDescription = "Once a barbarian armor broken in battle, this piece has been bathed in the blood of the legendary Ijirok. Powers beyond your understanding mended it whole again, and will likewise mend any wounds of the wearer as well.";
+		this.m.Variant = 101;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 12000;
-		this.m.Condition = 350;
-		this.m.ConditionMax = 320;
-		this.m.StaminaModifier = -25;
+		this.m.Condition = 220;
+		this.m.ConditionMax = 220;
+		this.m.StaminaModifier = -20;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
-		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
-
 	}
-
+	
+	function updateVariant()
+	{
+		this.m.SpriteBack = "bust_body_98";
+		this.m.SpriteDamagedBack = "bust_body_98_damaged";
+		this.m.SpriteCorpseBack = "bust_body_98_dead";
+		this.m.Icon = "armor/icon_body_armor_98.png";
+		this.m.IconLarge = this.m.Icon;
+		this.m.OverlayIcon = "armor/icon_body_armor_98.png";
+		this.m.OverlayIconLarge = "armor/inventory_body_armor_98.png";		
+	}	
+	
 	function getTooltip()
 	{
-		local result = this.armor.getTooltip();
+		local result = this.legend_armor_upgrade.getTooltip();
 		result.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/health.png",
-			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]15[/color] hitpoints of the wearer each turn" //was 10
-		});
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/armor_damage.png",
-			text = "Gain [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] damage resistance from ranged and thrown attacks"
-		});
-		result.push({
-			id = 7,
-			type = "text",
-			icon = "ui/icons/armor_damage.png",
-			text = "Receive [color=" + this.Const.UI.Color.NegativeValue + "]50%[/color] more damage from burning attacks"
+			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
 		});
 		return result;
+	}
+	
+	function onArmorTooltip( _result )
+	{
+		_result.push({
+			id = 6,
+			type = "text",
+			icon = "ui/icons/health.png",
+			text = "Heals [color=" + this.Const.UI.Color.PositiveValue + "]10[/color] hitpoints of the wearer each turn"
+		});
+	}	
+
+	function onCombatFinished()
+	{
+		local actor = this.getContainer().getActor();
+
+		if (actor != null && !actor.isNull() && actor.isAlive())
+		{
+			actor.setHitpoints(actor.getHitpointsMax());
+			actor.setDirty(true);
+		}
 	}
 
 	function onTurnStart()
 	{
 		local actor = this.getContainer().getActor();
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
-		local healthAdded = this.Math.min(healthMissing, 15); //was 10
+		local healthAdded = this.Math.min(healthMissing, 10);
 
 		if (healthAdded <= 0)
 		{
@@ -69,46 +83,6 @@ this.legend_ijirok_armor <- this.inherit("scripts/items/legend_armor/legend_armo
 			this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + " heals for " + healthAdded + " points");
 		}
-	}
-
-	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
-	{
-		switch (_hitInfo.DamageType)
-		{
-			case this.Const.Damage.DamageType.Piercing:
-				if (_skill == null)
-				{
-					_properties.DamageReceivedRegularMult *= 1.0; 
-				}
-				else
-				{
-					if (_skill.isRanged())
-					{				
-						local weapon = _skill.getItem();
-						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
-						{
-							if (weapon.isWeaponType(this.Const.Items.WeaponType.Crossbow) || weapon.isWeaponType(this.Const.Items.WeaponType.Bow) || weapon.isWeaponType(this.Const.Items.WeaponType.Firearm))
-							{
-								_properties.DamageReceivedRegularMult *= 0.25;
-							}
-							else if (weapon.isWeaponType(this.Const.Items.WeaponType.Throwing))
-							{
-								_properties.DamageReceivedRegularMult *= 0.25;
-							}
-							else
-							{
-								_properties.DamageReceivedRegularMult *= 1.0;
-							}
-						}
-					}
-				}
-				break;
-
-			case this.Const.Damage.DamageType.Burning:
-				_properties.DamageReceivedRegularMult *= 1.5;
-				break;
-		}
-	}
+	}	
 
 });
-
