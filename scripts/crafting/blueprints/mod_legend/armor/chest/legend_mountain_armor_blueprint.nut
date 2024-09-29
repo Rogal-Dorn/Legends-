@@ -17,20 +17,15 @@ this.legend_mountain_armor_blueprint <- this.inherit("scripts/crafting/blueprint
 				Num = 2
 			},
 			{
-				Script = "scripts/items/misc/unhold_hide_item",
-				Num = 4
+				Script = "scripts/items/misc/legend_masterwork_metal",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_tools",
+				Num = 1
 			}
 		];
-		ingredients.push({
-			Script = "scripts/items/legend_armor/cloth/legend_padded_surcoat",
-			Num = 1,
-			LegendsArmor = true
-		});
-		ingredients.push({
-			Script = "scripts/items/legend_armor/plate/legend_armor_plate_chest",
-			Num = 1,
-			LegendsArmor = true
-		});
+
 		this.init(ingredients);
 	}
 
