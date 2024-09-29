@@ -47,7 +47,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[3].setPlaceInFormation(12);
 		
 		bros[4].setStartValuesEx([
-			"legend_vala_commander_background"
+			"legend_vala_background"
 		], true, 1);
 		bros[4].getSkills().add(this.new("scripts/skills/traits/player_character_trait"));
 		this.addScenarioPerk(bros[4].getBackground(), this.Const.Perks.PerkDefs.LegendValaInscribeShield);
