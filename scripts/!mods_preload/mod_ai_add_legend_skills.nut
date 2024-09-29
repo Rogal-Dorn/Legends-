@@ -270,6 +270,8 @@ this.getroottable().Const.LegendMod.hookAISkills <- function()
 			"actives.lunge",
 			"actives.nightmare_touch",
 			"actives.legend_basilisk_peck",
+			"actives.legend_basilisk_sentry_inject",
+			"actives.legend_basilisk_sentry_fowleye",
 		]);
 	});
 

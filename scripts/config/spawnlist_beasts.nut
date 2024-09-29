@@ -1214,8 +1214,44 @@ gt.Const.World.Spawn.BasiliskLOW <-
 			Weight = 100,
 			Types = [
 				{
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskDroneLow,
+					Cost = 28
+				},
+				{
 					Type = this.Const.World.Spawn.Troops.LegendBasiliskDrone,
-					Cost = 25
+					Cost = 40
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskSentry,
+					MinR = 200,
+					Cost = 50
+				}
+			]
+		}
+	]
+}
+
+gt.Const.World.Spawn.BasiliskMED <-
+{
+	Name = "Basilisks",
+	IsDynamic = true,
+	MovementSpeedMult = 1.0,
+	VisibilityMult = 1.0,
+	VisionMult = 1.0,
+	Body = "figure_basilisk_01",
+	MaxR = 560,
+	Troops = [
+		{
+			Weight = 100,
+			Types = [
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskDrone,
+					Cost = 20
+				},
+				{
+					Type = this.Const.World.Spawn.Troops.LegendBasiliskSentry,
+					MinR = 200,
+					Cost = 40
 				}
 			]
 		}
