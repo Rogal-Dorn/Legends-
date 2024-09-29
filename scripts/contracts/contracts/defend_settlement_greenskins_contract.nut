@@ -8,7 +8,7 @@ this.defend_settlement_greenskins_contract <- this.inherit("scripts/contracts/co
 	{
 		this.contract.create();
 		this.m.Type = "contract.defend_settlement_greenskins";
-		this.m.Name = "Defend Settlement";
+		this.m.Name = "The Green Tide";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 5.0;
 		this.m.MakeAllSpawnsResetOrdersOnContractEnd = false;
 		this.m.MakeAllSpawnsAttackableByAIOnceDiscovered = true;

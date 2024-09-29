@@ -153,6 +153,12 @@ enemies = r"""
 <sprite id="basilisk_drone_01_dead_arrows" offsetX="5" offsetY="20" f="64FB" ic="FF474C4F" width="179" height="154" img="entity\beasts\bear_01_dead_arrows.png" left="-31" right="47" top="-2" bottom="48" />
 <sprite id="basilisk_drone_01_dead_javelin" offsetX="5" offsetY="20" f="64FB" ic="FF141B27" width="179" height="154" img="entity\beasts\bear_01_dead_javelin.png" left="-55" right="41" top="13" bottom="75" />
 
+<sprite id="basilisk_sentry_01" offsetX="-15" offsetY="45" ic="FF24554E" width="104" height="142" img="entity\beasts\basilisk_sentry_01.png" />
+<sprite id="basilisk_sentry_head_01" offsetX="-15" offsetY="45" ic="FF315B61" width="104" height="142" img="entity\beasts\basilisk_sentry_head_01.png" />
+<sprite id="basilisk_sentry_01_injured" offsetX="-15" offsetY="45" ic="FF5E9C89" width="104" height="142" img="entity\beasts\basilisk_sentry_01_injured.png" />
+<sprite id="basilisk_sentry_01_dead" offsetX="5" offsetY="20" f="64FF" ic="FF295850" width="179" height="154" img="entity\beasts\basilisk_sentry_01_dead.png" left="-74" right="76" top="-50" bottom="48" />
+<sprite id="basilisk_sentry_head_01_dead" offsetX="5" offsetY="20" f="64F6" f1="-5" f2="-25" ic="FF315E5F" width="179" height="154" img="entity\beasts\basilisk_sentry_head_01_dead.png" left="-70" right="30" top="-47" bottom="11" />
+
 <sprite id="bust_unhold_rock_02_injured" offsetX="-5" offsetY="35" ic="FF181946" width="174" height="214" img="entity\beasts\bust_unhold_rock_02_injured.png" left="-78" right="50" top="-48" bottom="62" />
 <sprite id="bust_unhold_rock_body_02" offsetX="-5" offsetY="35" ic="FF272C3A" width="174" height="214" img="entity\beasts\bust_unhold_rock_body_02.png" left="-64" right="70" top="-67" bottom="83" />
 <sprite id="bust_unhold_rock_body_02_dead" offsetY="30" f="64FF" ic="FF23283B" width="169" height="139" img="entity\beasts\bust_unhold_rock_body_02_dead.png" left="-83" right="79" top="-70" bottom="62" />

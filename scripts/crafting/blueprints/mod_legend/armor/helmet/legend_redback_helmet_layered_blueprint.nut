@@ -10,14 +10,18 @@ this.legend_redback_helmet_layered_blueprint <- this.inherit("scripts/crafting/b
 		local ingredients = [
 			{
 				Script = "scripts/items/misc/legend_redback_poison_gland_item",
-				Num = 3
+				Num = 2
 			},
 			{
-				Script = "scripts/items/legend_helmets/helm/legend_helmet_barbute",
+				Script = "scripts/items/misc/legend_masterwork_fabric",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/legend_helmets/hood/legend_helmet_simple_hood",
+				Script = "scripts/items/misc/legend_masterwork_tools",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_metal",
 				Num = 1
 			}
 		];

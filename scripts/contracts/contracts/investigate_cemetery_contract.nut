@@ -13,7 +13,7 @@ this.investigate_cemetery_contract <- this.inherit("scripts/contracts/contract",
 	{
 		this.contract.create();
 		this.m.Type = "contract.investigate_cemetery";
-		this.m.Name = "Secure Cemetery";
+		this.m.Name = "Disturbed Rest";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"Something is defiling a local cemetery. Wicked tales of ghosts, ghouls and graverobbers are spreading.",

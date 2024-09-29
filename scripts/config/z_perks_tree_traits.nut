@@ -302,13 +302,11 @@ gt.Const.Perks.DeviousTree <- {
 		]
 	},
 	Tree = [
-		[
-		gt.Const.Perks.PerkDefs.LegendTrueBeliever
-		],
+		[gt.Const.Perks.PerkDefs.LegendBlendIn],
+		[gt.Const.Perks.PerkDefs.LegendTrueBeliever],
 		[],
-		[ gt.Const.Perks.PerkDefs.LegendBlendIn ],
 		[],
-		[ gt.Const.Perks.PerkDefs.LegendEvasion ],
+		[gt.Const.Perks.PerkDefs.LegendEvasion],
 		[],
 		[]
 	]
@@ -689,9 +687,7 @@ gt.Const.Perks.OrganisedTree <- {
 		[
 			gt.Const.Perks.PerkDefs.LegendSkillfulStacking
 		],
-		[
-			
-		],
+		[],
 		[]
 	]
 };
@@ -752,11 +748,11 @@ gt.Const.Perks.SturdyTree <- {
 			gt.Const.Perks.PerkDefs.Steadfast
 		],
 		[],
-		[
-			// gt.Const.Perks.PerkDefs.Stalwart
-		],
 		[],
-		[]
+		[],
+		[
+			gt.Const.Perks.PerkDefs.Rebound
+		]
 	]
 };
 gt.Const.Perks.FitTree <- {
@@ -806,13 +802,16 @@ gt.Const.Perks.FitTree <- {
 	},
 	Tree = [
 		[
-			gt.Const.Perks.PerkDefs.Recover
+			gt.Const.Perks.PerkDefs.Recover,
+			gt.Const.Perks.PerkDefs.LegendRecuperation
 		],
 		[],
 		[],
 		[],
 		[],
-		[gt.Const.Perks.PerkDefs.Overwhelm],
+		[
+			gt.Const.Perks.PerkDefs.Overwhelm
+		],
 		[
 			gt.Const.Perks.PerkDefs.Rebound
 		]

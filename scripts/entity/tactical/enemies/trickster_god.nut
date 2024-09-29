@@ -135,6 +135,14 @@ this.trickster_god <- this.inherit("scripts/entity/tactical/actor", {
 			this.Tactical.spawnParticleEffect(false, effect.Brushes, _tile, effect.Delay, effect.Quantity, effect.LifeTimeQuantity, effect.SpawnRate, effect.Stages, this.createVec(0, 40));
 		}
 
+		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+		{
+			if (this.Math.rand(1, 100) <= 15) //15%
+			{
+				local loot = this.new("scripts/items/misc/legend_masterwork_tools");
+				loot.drop(_tile);
+			}
+		}
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 

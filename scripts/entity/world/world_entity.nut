@@ -273,7 +273,7 @@ this.world_entity <- {
 
 	function isAbleToSee( _entity )
 	{
-		local e = typeof _entity == "instance" ? _entity.get() : this._entity2;
+		local e = typeof _entity == "instance" ? _entity.get() : _entity;
 		return e.isVisibleToEntity(this, this.getVisionRadius());
 	}
 
@@ -346,7 +346,7 @@ this.world_entity <- {
 		foreach( c in champions )
 		{
 			entities.push({
-				id = 20,
+				id = 21,
 				type = "text",
 				icon = "ui/orientation/" + this.Const.EntityIcon[c.ID] + ".png",
 				text = c.Name

@@ -1,6 +1,21 @@
 this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 	m = {
-		Casualty = null
+		Casualty = null,
+		excludedBackgrounds = [
+			"companion",
+			"orc_slayer",
+			"wildman",
+			"wildwoman",
+			"hedge_knight"
+		],
+		excludedTraits = [
+			"fear_greenskins",
+			"hate_greenskins",
+			"fearless",
+			"brave",
+			"determined",
+			"bloodthirsty"
+		]
 	},
 	function create()
 	{
@@ -73,16 +88,21 @@ this.fear_greenskins_event <- this.inherit("scripts/events/event", {
 		local candidates = [];
 
 		foreach( bro in brothers )
-		{
-			if (bro.getBackground().getID() == "background.companion" || bro.getBackground().getID() == "background.wildman")
+		{	
+			foreach (background in this.m.excludedBackgrounds)
 			{
+				if (bro.getBackground().getID() == "background." + background)
+					continue;
+			}
+			if (bro.getLevel() > 7)
 				continue;
-			}
 
-			if (bro.getLevel() <= 7 && !bro.getSkills().hasSkill("trait.fear_greenskins") && !bro.getSkills().hasSkill("trait.hate_greenskins") && !bro.getSkills().hasSkill("trait.fearless") && !bro.getSkills().hasSkill("trait.brave") && !bro.getSkills().hasSkill("trait.determined") && !bro.getSkills().hasSkill("trait.bloodthirsty"))
+			foreach (trait in this.m.excludedTraits)
 			{
-				candidates.push(bro);
+				if (bro.getSkills().hasSkill("trait." + trait))
+					continue;
 			}
+			candidates.push(bro);
 		}
 
 		if (candidates.len() == 0)

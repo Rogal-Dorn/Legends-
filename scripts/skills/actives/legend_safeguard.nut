@@ -24,6 +24,7 @@ this.legend_safeguard <- this.inherit("scripts/skills/skill", {
 		this.m.IsTargeted = true;
 		this.m.IsStacking = false;
 		this.m.IsAttack = false;
+		this.m.IsUsingHitchance = false;
 		this.m.IsIgnoredAsAOO = true;
 		this.m.IsWeaponSkill = false;
 		this.m.ActionPointCost = 4;

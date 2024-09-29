@@ -172,6 +172,32 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			_properties.FatigueDealtPerHitMult += 1.0; // If you have mastery, increase from 10 to 15 fat damage.
 		}
+
+		local items = actor.getItems().getAllItems();
+		local hasCestus = false;
+		local hasWraps = false;
+		foreach (item in items)
+		{
+			if (item.getID() == "accessory.legend_hand_wraps")
+				hasWraps = true;
+			if (item.getID() == "accessory.legend_cestus")
+				hasCestus = true;
+		}
+
+		if (_skill != this)
+			return;
+
+		if (hasCestus)
+		{
+			_properties.DamageRegularMin += 6;
+			_properties.DamageRegularMax += 12;
+			_properties.DamageArmorMult = 0.2;
+		}
+		else if (hasWraps)
+		{
+			_properties.DamageRegularMin += 2;
+			_properties.DamageRegularMax += 6;
+		}
 	}
 
 	function onUse( _user, _targetTile )

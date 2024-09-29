@@ -8,7 +8,7 @@ this.free_greenskin_prisoners_contract <- this.inherit("scripts/contracts/contra
 	{
 		this.contract.create();
 		this.m.Type = "contract.free_greenskin_prisoners";
-		this.m.Name = "Free Prisoners";
+		this.m.Name = "Rescue Mission";
 		this.m.TimeOut = this.Time.getVirtualTimeF() + this.World.getTime().SecondsPerDay * 7.0;
 		this.m.DescriptionTemplates = [
 			"Sometimes the greenskins take prisoners for cruel sport. Time is of the essence, for greenskins are easily bored.",

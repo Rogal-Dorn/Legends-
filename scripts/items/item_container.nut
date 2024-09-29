@@ -474,20 +474,20 @@ this.item_container <- {
 			return false;
 		}
 
-		if (!this.getActor().getFlags().has("IsHorseRider"))
-		{
-			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseArmor && !this.getActor().getFlags().has("IsHorse"))
-				|| (_item.getItemType() != this.Const.Items.ItemType.HorseArmor && this.getActor().getFlags().has("IsHorse")))
-			{
-				return false;
-			}
+		// if (!this.getActor().getFlags().has("IsHorseRider"))
+		// {
+		// 	if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseArmor && !this.getActor().getFlags().has("IsHorse"))
+		// 		|| (_item.getItemType() != this.Const.Items.ItemType.HorseArmor && this.getActor().getFlags().has("IsHorse")))
+		// 	{
+		// 		return false;
+		// 	}
 
-			if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseHelmet && !this.getActor().getFlags().has("IsHorse"))
-				|| (_item.getItemType() != this.Const.Items.ItemType.HorseHelmet && this.getActor().getFlags().has("IsHorse")))
-			{
-				return false;
-			}
-		}
+		// 	if  (  (_item.getItemType() == this.Const.Items.ItemType.HorseHelmet && !this.getActor().getFlags().has("IsHorse"))
+		// 		|| (_item.getItemType() != this.Const.Items.ItemType.HorseHelmet && this.getActor().getFlags().has("IsHorse")))
+		// 	{
+		// 		return false;
+		// 	}
+		// }
 
 		local vacancy = -1;
 

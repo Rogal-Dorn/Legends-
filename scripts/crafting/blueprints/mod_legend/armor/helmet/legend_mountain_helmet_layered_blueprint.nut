@@ -13,16 +13,16 @@ this.legend_mountain_helmet_layered_blueprint <- this.inherit("scripts/crafting/
 				Num = 1
 			},
 			{
-				Script = "scripts/items/legend_helmets/helm/legend_helmet_great_helm",
-				Num = 1,
-			},
-			{
 				Script = "scripts/items/misc/legend_rock_unhold_hide_item",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/misc/unhold_hide_item",
-				Num = 2
+				Script = "scripts/items/misc/legend_masterwork_metal",
+				Num = 1
+			},
+			{
+				Script = "scripts/items/misc/legend_masterwork_tools",
+				Num = 1
 			}
 		];
 		this.init(ingredients);

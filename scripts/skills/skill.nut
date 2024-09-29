@@ -10,7 +10,6 @@ this.skill <- {
 		KilledString = "Killed",
 		Delay = 0,
 		HitChanceBonus = 0,
-		Sound = [],
 		SoundOnUse = [],
 		SoundOnHit = [],
 		SoundOnMiss = [],
@@ -68,8 +67,7 @@ this.skill <- {
 		IsDisengagement = false,
 		IsTooCloseShown = false,
 		IsUsable = true,
-		IsGarbage = false,
-		IsForPerkTooltip = false // Indicate whether the Perk is a dummy that is being used only to generate unactivated perk tooltip hints
+		IsGarbage = false
 	},
 	function getContainer()
 	{
@@ -103,34 +101,7 @@ this.skill <- {
 
 	function getDescription()
 	{
-		local gender = -1;
-		local vars = [];
-		if (this.getContainer() == null || (typeof this.getContainer() == "instance" && this.getContainer().isNull()) || this.getContainer().getActor() == null)
-		{
-			this.logError("Skill: " + this.getName() + " is missing a" + (this.getContainer() == null ? " Container" : "n Actor") + " when getting description");
-			this.MSU.Log.printStackTrace();
-		}
-		else
-		{
-			local actor = this.getContainer().getActor();
-			gender = actor.getGender();
-			vars.extend([
-				[
-					"name",
-					actor.getNameOnly()
-				],
-				[
-					"fullname",
-					actor.getName()
-				],
-				[
-					"title",
-					actor.getTitle()
-				]
-			]);
-		}
-		this.Const.LegendMod.extendVarsWithPronouns(vars, gender);
-		return this.buildTextFromTemplate(this.m.Description, vars);
+		return this.m.Description;
 	}
 
 	function getKilledString()
@@ -338,7 +309,7 @@ this.skill <- {
 		{
 			return 0;
 		}
-		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost && this.m.ActionPointCost != 0)
+		else if (this.m.Container.getActor().getCurrentProperties().IsSkillUseHalfCost)
 		{
 			return this.Math.max(1, this.Math.floor(this.m.ActionPointCost / 2));
 		}
@@ -397,12 +368,6 @@ this.skill <- {
 		];
 	}
 
-	// Allow Perks to push Tooltip elements that will be displayed when the user views the Tooltips of unactivated Perks in the Perk screen
-	function getUnactivatedPerkTooltipHints()
-	{
-		return [];
-	}
-
 	function getDefaultUtilityTooltip()
 	{
 		return [
@@ -426,7 +391,7 @@ this.skill <- {
 
 	function getDefaultTooltip()
 	{
-		local p = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, null));
+		local p = this.m.Container.buildPropertiesForUse(this, null);
 		local ret = [
 			{
 				id = 1,
@@ -475,7 +440,7 @@ this.skill <- {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + "[/color] damage to hitpoints"
+				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_min + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damage_regular_max + " damage to hitpoints[/color]"
 			});
 		}
 
@@ -672,7 +637,6 @@ this.skill <- {
 			}
 		}
 
-		this.onBeforeUse(user, _targetTile);
 		if (!_forFree)
 		{
 			++this.Const.SkillCounter;
@@ -709,13 +673,6 @@ this.skill <- {
 		}
 
 		user.setPreviewSkillID("");
-
-		local recoverSkill = this.getContainer().getSkillByID("actives.recover");
-		if (recoverSkill != null)
-		{
-			recoverSkill.m.CanRecover = false;
-		}
-
 		return this.onUse(user, _targetTile);
 	}
 
@@ -727,7 +684,7 @@ this.skill <- {
 	function getExpectedDamage( _target )
 	{
 		local actor = this.m.Container.getActor();
-		local p = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _target));
+		local p = this.m.Container.buildPropertiesForUse(this, _target);
 		local d = _target.getSkills().buildPropertiesForDefense(actor, this);
 		local critical = 1.0 + p.getHitchance(this.Const.BodyPart.Head) / 100.0 * (p.DamageAgainstMult[this.Const.BodyPart.Head] - 1.0);
 		local armor = _target.getArmor(this.Const.BodyPart.Head) * (p.getHitchance(this.Const.BodyPart.Head) / 100.0) + _target.getArmor(this.Const.BodyPart.Body) * (this.Math.max(0, p.getHitchance(this.Const.BodyPart.Body)) / 100.0);
@@ -807,10 +764,6 @@ this.skill <- {
 	{
 	}
 
-	function onBeforeUse ( _user, _targetEntity)
-	{
-	}
-
 	function onUse( _user, _targetTile )
 	{
 		return false;
@@ -836,19 +789,11 @@ this.skill <- {
 	{
 	}
 
-	function onUnlocked()
-	{
-	}
-
 	function onUpdate( _properties )
 	{
 	}
 
 	function onAfterUpdate( _properties )
-	{
-	}
-
-	function onMovementCompleted( _tile )
 	{
 	}
 
@@ -920,41 +865,6 @@ this.skill <- {
 	{
 	}
 
-	function factoringOffhand( _properties )
-	{
-		if (this.m.Item == null || this.m.Item.isNull()) return _properties;
-
-		if (this.m.Item.getCurrentSlotType() != this.Const.ItemSlot.Offhand) return _properties;
-
-		if (!this.m.Item.isItemType(this.Const.Items.ItemType.Weapon)) return _properties;
-
-		this.removeMainhandBonuses(_properties);
-		this.addOffhandBonuses(this.m.Item, _properties);
-		return _properties;
-	}
-
-	function removeMainhandBonuses( _properties )
-	{
-		local mainhand = this.getContainer().getActor().getMainhandItem();
-
-		if (mainhand == null) return;
-
-		_properties.DamageRegularMin -= mainhand.m.RegularDamage;
-		_properties.DamageRegularMax -= mainhand.m.RegularDamageMax;
-		_properties.DamageArmorMult /= mainhand.m.ArmorDamageMult;
-		_properties.DamageDirectAdd -= mainhand.m.DirectDamageAdd;
-		_properties.HitChance[this.Const.BodyPart.Head] -= mainhand.m.ChanceToHitHead;
-	}
-
-	function addOffhandBonuses( _offhand, _properties )
-	{
-		_properties.DamageRegularMin += _offhand.m.RegularDamage;
-		_properties.DamageRegularMax += _offhand.m.RegularDamageMax;
-		_properties.DamageArmorMult *= _offhand.m.ArmorDamageMult;
-		_properties.DamageDirectAdd += _offhand.m.DirectDamageAdd;
-		_properties.HitChance[this.Const.BodyPart.Head] += _offhand.m.ChanceToHitHead;
-	}
-
 	function onCombatStarted()
 	{
 	}
@@ -973,15 +883,6 @@ this.skill <- {
 		{
 			return false;
 		}
-
-		// if (_targetTile.getEntity().isSupplies() && _originTile.getEntity().isPlayerControlled())
-		// {
-		// 	if (!this.m.IsRanged)
-		// 		return true;
-		// 	else
-		// 		return false;
-		// }
-
 
 		if (this.m.IsAttack && this.m.IsTargetingActor && this.m.Container.getActor().isAlliedWith(_targetTile.getEntity()))
 		{
@@ -1076,7 +977,7 @@ this.skill <- {
 		this.Tactical.spawnAttackEffect(_effect[dir].Brush, _tile, _effect[dir].Offset.X + this.Const.Tactical.Settings.AttackEffectOffsetX, _effect[dir].Offset.Y + this.Const.Tactical.Settings.AttackEffectOffsetY, this.Const.Tactical.Settings.AttackEffectFadeInDuration, this.Const.Tactical.Settings.AttackEffectStayDuration, this.Const.Tactical.Settings.AttackEffectFadeOutDuration, _effect[dir].Movement0, secondMovementDelay, _effect[dir].Movement1, false);
 	}
 
-	function spawnIcon(_brush, _tile)
+	function spawnIcon( _brush, _tile )
 	{
 		if (!_tile.IsVisibleForPlayer)
 		{
@@ -1222,13 +1123,12 @@ this.skill <- {
 			});
 		}
 
-		// if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
-		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange)
+		if (this.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1)
 		{
-			if (_targetTile.IsOccupiedByActor && ("AdditionalHitChance" in this.m))
+			if (_targetTile.IsOccupiedByActor)
 			{
 				ret.push({
-					icon = this.m.AdditionalHitChance > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png",
+					icon = "ui/tooltips/negative.png",
 					text = "Distance of " + _targetTile.getDistanceTo(user.getTile())
 				});
 			}
@@ -1305,421 +1205,18 @@ this.skill <- {
 			});
 		}
 
-		return this.modGetHitFactors(ret, _targetTile)
-	}
-
-	function modGetHitFactors( ret, _targetTile )
-	{
-		if (!ret)
-		{
-			return ret;
-		}
-
-		local retCount = ret.len();
-		local green = function ( text )
-		{
-			if (!text)
-			{
-				return "";
-			}
-
-			return "[color=" + this.Const.UI.Color.PositiveValue + "]" + text + "[/color]";
-		};
-		local red = function ( text )
-		{
-			if (!text)
-			{
-				return "";
-			}
-
-			return "[color=" + this.Const.UI.Color.NegativeValue + "]" + text + "[/color]";
-		};
-		local isIn = function ( pattern, text )
-		{
-			if (!pattern || !text)
-			{
-				return false;
-			}
-
-			return this.regexp(pattern).search(text);
-		};
-		local user = this.m.Container.getActor();
-		local myTile = user.getTile();
-		local targetEntity = _targetTile.IsOccupiedByActor ? _targetTile.getEntity() : null;
-		local getBadTerrainFactor = function ( attributeIcon ) {
-
-			if (!attributeIcon)
-			{
-				return false;
-			}
-
-			local badTerrains = [
-				"terrain.swamp"
-			];
-
-			for( local i = 0; i < badTerrains.len(); i++ )
-			{
-				local terrainEffect = targetEntity.getSkills().getSkillByID(badTerrains[i]);
-
-				if (!(terrainEffect && "getTooltip" in terrainEffect))
-				{
-				}
-				else
-				{
-					local tooltip = terrainEffect.getTooltip();
-
-					foreach( i, r in tooltip )
-					{
-						if (("type" in r) && r.type == "text" && ("icon" in r) && "text" in r)
-						{
-							if (isIn(attributeIcon, r.icon))
-							{
-								return r.text;
-							}
-						}
-					}
-				}
-			}
-
-			return null;
-		};
-		local attackingEntity = user;
-		local thisSkill = this;
-		local modifier = {};
-		local skillName = this.getName();
-		local skillHitChanceBonus = this.m.HitChanceBonus;
-		modifier[skillName] <- function ( row, description )
-		{
-			if (!("icon" in row))
-			{
-				return;
-			}
-
-			local icon = row.icon;
-
-			if (icon == "ui/tooltips/positive.png")
-			{
-				row.text = green("" + skillHitChanceBonus + "%") + " " + description;
-			}
-			else if (icon == "ui/tooltips/negative.png")
-			{
-				row.text = red(-skillHitChanceBonus + "%") + " " + description;
-			}
-		};
-		modifier.Surrounded <- function ( row, description )
-		{
-			if (targetEntity.m.CurrentProperties.IsImmuneToSurrounding)
-			{
-				return;
-			}
-
-			local malus = this.Math.max(0, attackingEntity.getCurrentProperties().SurroundedBonus - targetEntity.getCurrentProperties().SurroundedDefense) * targetEntity.getSurroundedCount();
-
-			if (malus)
-			{
-				row.text = green(malus + "%") + " " + description;
-			}
-		};
-		modifier["Height advantage"] <- function ( row, description )
-		{
-			row.text = green(this.Const.Combat.LevelDifferenceToHitBonus + "%") + " " + description;
-		};
-		modifier["Height disadvantage"] <- function ( row, description )
-		{
-			local levelDifference = myTile.Level - _targetTile.Level;
-			local malus = this.Const.Combat.LevelDifferenceToHitMalus * levelDifference;
-			row.text = red(malus + "%") + " " + description;
-		};
-
-		modifier["Target on bad terrain"] <- function ( row, description )
-		{
-			local defenseIcon = thisSkill.m.IsRanged ? "ranged_defense" : "melee_defense";
-			local terrainFactor = getBadTerrainFactor(defenseIcon);
-
-			if (terrainFactor)
-			{
-				// row.text = green(terrainFactor + "%") + " " + description;
-				row.text = description + " (" + terrainFactor + ")";
-			}
-		};
-		modifier["On bad terrain"] <- function ( row, description )
-		{
-			local attackIcon = thisSkill.m.IsRanged ? "ranged_skill" : "melee_skill";
-			local terrainFactor = getBadTerrainFactor(attackIcon);
-
-			if (terrainFactor)
-			{
-				// row.text = red(terrainFactor + "%") + " " + description;
-				row.text = description + " (" + terrainFactor + ")";
-			}
-		};
-		modifier["Fast Adaption"] <- function ( row, description )
-		{
-			local fast_adaption = thisSkill.m.Container.getSkillByID("perk.fast_adaption");
-			local bonus = 10 * fast_adaption.m.Stacks;
-			row.text = green(bonus + "%") + " " + description;
-		};
-		modifier["Too close"] <- function ( row, description )
-		{
-			row.text = red(-skillHitChanceBonus + "%") + " " + description;
-		};
-		local getShieldBonus = function ()
-		{
-			local shield = targetEntity.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand);
-			local shieldBonus = (thisSkill.m.IsRanged ? shield.getRangedDefense() : shield.getMeleeDefense()) * (targetEntity.getCurrentProperties().IsSpecializedInShields ? 1.25 : 1.0);
-			return this.Math.floor(shieldBonus);
-		};
-		modifier["Armed with shield"] <- function ( row, description )
-		{
-			row.text = red(getShieldBonus() + "%") + " " + description;
-		};
-		modifier.Shieldwall <- function ( row, description )
-		{
-			local shieldwallEffect = targetEntity.getSkills().getSkillByID("effects.shieldwall");
-			local adjacencyBonus = shieldwallEffect.getBonus();
-			row.text = red(getShieldBonus() + adjacencyBonus + "%") + " " + description;
-		};
-		local isRangedRelevant = function ()
-		{
-			// return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > 1 && _targetTile.IsOccupiedByActor;
-			return thisSkill.m.IsRanged && myTile.getDistanceTo(_targetTile) > this.m.MinRange && _targetTile.IsOccupiedByActor;
-		};
-
-		if (isRangedRelevant())
-		{
-			local distanceToTarget = _targetTile.getDistanceTo(user.getTile());
-			local propertiesWithSkill = this.factoringOffhand(thisSkill.m.Container.buildPropertiesForUse(thisSkill, targetEntity));
-			modifier["Distance of " + distanceToTarget] <- function ( row, description )
-			{
-				local hitDistancePenalty = (distanceToTarget - thisSkill.m.MinRange) * propertiesWithSkill.HitChanceAdditionalWithEachTile * propertiesWithSkill.HitChanceWithEachTileMult;				
-				row.text = (hitDistancePenalty > 0 ? green(hitDistancePenalty + "%") : red(-hitDistancePenalty + "%")) + " " + description;
-			};
-			modifier["Line of fire blocked"] <- function ( row, description )
-			{
-				local blockChance = this.Const.Combat.RangedAttackBlockedChance * propertiesWithSkill.RangedAttackBlockedChanceMult;
-				blockChance = this.Math.ceil(blockChance * 100);
-				row.text = description + "\n(" + red("-" + blockChance + "%") + " Total hit chance)";
-			};
-			// [080]  OP_CLOSE          0     17    0    0
-		}
-
-		modifier.Nighttime <- function ( row, description )
-		{
-			local night = user.getSkills().getSkillByID("special.night");
-			local attributeIcon = "ranged_skill";
-
-			if (!(night && "getTooltip" in night))
-			{
-				return;
-			}
-
-			local tooltip = night.getTooltip();
-
-			foreach( _, r in tooltip )
-			{
-				if (("type" in r) && r.type == "text" && ("icon" in r) && "text" in r)
-				{
-					if (isIn(attributeIcon, r.icon))
-					{
-						row.text = description + "\n(" + r.text + ")";
-						return;
-					}
-				}
-			}
-		};
-		local getDamageResistance = function ()
-		{
-			if (!targetEntity)
-			{
-				return null;
-			}
-
-			local racialSkills = [
-				"racial.skeleton",
-				"racial.golem",
-				"racial.serpent",
-				"racial.alp",
-				"racial.schrat"
-			];
-			local racialSkill;
-
-			for( local i = 0; i < racialSkills.len(); i++ )
-			{
-				racialSkill = targetEntity.getSkills().getSkillByID(racialSkills[i]);
-
-				if (racialSkill)
-				{
-					break;
-				}
-			}
-
-			if (!racialSkill)
-			{
-				return null;
-			}
-
-			local propertiesBefore = targetEntity.getCurrentProperties();
-
-			if (!("DamageReceivedRegularMult" in propertiesBefore))
-			{
-				return null;
-			}
-
-			local hitInfo = clone this.Const.Tactical.HitInfo;
-			local propertiesAfter = propertiesBefore.getClone();
-			racialSkill.onBeforeDamageReceived(attackingEntity, thisSkill, hitInfo, propertiesAfter);
-			local diff = propertiesBefore.DamageReceivedRegularMult - propertiesAfter.DamageReceivedRegularMult;
-			return this.Math.ceil(diff * 100);
-		};
-		local flagResistanceExists = false;
-		modifier["Resistance against ranged weapons"] <- function ( row, description )
-		{
-			flagResistanceExists = true;
-			local damageResistance = getDamageResistance();
-
-			if (damageResistance == null)
-			{
-				return;
-			}
-
-			row.text = description + "\n(" + red("-" + damageResistance + "%") + " Total HP damage using " + thisSkill.getName() + ")";
-		};
-		modifier["Resistance against piercing attacks"] <- function ( row, description )
-		{
-			flagResistanceExists = true;
-			local damageResistance = getDamageResistance();
-
-			if (damageResistance == null)
-			{
-				return;
-			}
-
-			row.text = description + "\n(" + red("-" + damageResistance + "%") + " Total HP damage using " + thisSkill.getName() + ")";
-		};
-
-		for( local i = 0; i < retCount; i++ )
-		{
-			local row = ret[i];
-
-			if ("text" in row)
-			{
-				local description = row.text;
-
-				if (description in modifier)
-				{
-					modifier[description](row, description);
-				}
-			}
-		}
-
-		local getDifferenceInProperty = function ( _property, _targetEntity )
-		{
-			local props = user.getCurrentProperties();
-
-			if (!(_property in props))
-			{
-				return null;
-			}
-
-			local propsWithSkill = props.getClone();
-			thisSkill.onAnySkillUsed(thisSkill, _targetEntity, propsWithSkill);
-			return propsWithSkill[_property] - props[_property];
-		};
-
-		if (!thisSkill.m.HitChanceBonus && isRangedRelevant())
-		{
-			local diff = getDifferenceInProperty("RangedSkill", targetEntity);
-
-			if (diff != null)
-			{
-				if (diff > 0)
-				{
-					ret.insert(0, {
-						icon = "ui/tooltips/positive.png",
-						text = green(diff + "%") + " " + thisSkill.getName()
-					});
-				}
-				else if (diff < 0)
-				{
-					ret.insert(0, {
-						icon = "ui/tooltips/negative.png",
-						text = red(diff + "%") + " " + thisSkill.getName()
-					});
-				}
-			}
-		}
-
-		local addDamageResistanceRow = function ()
-		{
-			if (!flagResistanceExists && thisSkill.m.IsAttack && _targetTile.IsOccupiedByActor)
-			{
-				local damageResistance = getDamageResistance();
-
-				if (!damageResistance)
-				{
-					return;
-				}
-
-				local icon = damageResistance > 0 ? "ui/tooltips/negative.png" : "ui/tooltips/positive.png";
-				local desc = damageResistance > 0 ? "Resistance against" : "Susceptible to";
-				local sign = damageResistance > 0 ? "-" : "+";
-				local colorize = damageResistance > 0 ? red : green;
-
-				if (damageResistance < 0)
-				{
-					damageResistance = damageResistance * -1;
-				}
-
-				ret.push({
-					icon = icon,
-					text = desc + " " + thisSkill.getName() + "\n(" + colorize(sign + damageResistance + "%") + " Total HP damage)"
-				});
-			}
-		};
-		local addLungeDamageRow = function ()
-		{
-			if (!thisSkill.m.IsAttack || thisSkill.m.ID != "actives.lunge" || !_targetTile.IsOccupiedByActor)
-			{
-				return;
-			}
-
-			local diff = getDifferenceInProperty("DamageTotalMult", null);
-
-			if (!diff)
-			{
-				return;
-			}
-
-			local icon = diff > 0 ? "ui/tooltips/positive.png" : "ui/tooltips/negative.png";
-			local desc = diff > 0 ? "High initiative" : "Low initiative";
-			local sign = diff > 0 ? "+" : "-";
-			local colorize = diff > 0 ? green : red;
-
-			if (diff < 0)
-			{
-				diff = diff * -1;
-			}
-
-			diff = this.Math.floor(diff * 100);
-			ret.push({
-				icon = icon,
-				text = desc + " " + "\n(" + colorize(sign + diff + "%") + " Lunge damage)"
-			});
-		};
-		addDamageResistanceRow();
-		addLungeDamageRow();
 		return ret;
 	}
 
 	function getHitchance( _targetEntity )
 	{
-		if (!_targetEntity.isAttackable() && !_targetEntity.isRock() && !_targetEntity.isTree() && !_targetEntity.isBush() && !_targetEntity.isSupplies())
+		if (!_targetEntity.isAttackable())
 		{
 			return 0;
 		}
 
 		local user = this.m.Container.getActor();
-		local properties = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _targetEntity));
+		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
 
 		if (!this.isUsingHitchance())
 		{
@@ -1733,9 +1230,6 @@ this.skill <- {
 		local levelDifference = _targetEntity.getTile().Level - user.getTile().Level;
 		local distanceToTarget = user.getTile().getDistanceTo(_targetEntity.getTile());
 		local toHit = skill - defense;
-
-		local minimumHitChance = ::Legends.Mod.ModSettings.getSetting("MinimumChanceToHit").getValue();
-		local maximumHitChance = ::Legends.Mod.ModSettings.getSetting("MaximumChanceToHit").getValue();
 
 		if (this.m.IsRanged)
 		{
@@ -1782,201 +1276,17 @@ this.skill <- {
 			}
 		}
 
-		return this.Math.max(minimumHitChance, this.Math.min(maximumHitChance, toHit));
+		return this.Math.max(5, this.Math.min(95, toHit));
 	}
 
 	function attackEntity( _user, _targetEntity, _allowDiversion = true )
 	{
-		// if (_targetEntity.isRock())
-		// {
-		// 	if (_user.getSkills().hasSkill("perk.legend_specialist_pickaxe_damage"))
-		// 	{
-		// 		local r = this.Math.rand(0, 99);
-		// 		if (r == 99)
-		// 		{
-		// 			local loot = this.new("scripts/items/trade/uncut_gems_item");
-		// 			loot.drop(_targetEntity().getTile());
-		// 		}
-
-		// 		else if (r <= 5 )
-		// 		{
-		// 			local loot = this.new("scripts/items/trade/salt_item");
-		// 			loot.drop(_targetEntity().getTile());
-		// 		}
-
-		// 		else if (r <= 15 && r > 5 )
-		// 		{
-		// 			local loot = this.new("scripts/items/trade/peat_bricks_item");
-		// 			loot.drop(_targetEntity().getTile());
-		// 		}
-
-		// 	}
-		// 	// _targetEntity.getTile().removeObject()
-		// 	if (this.m.SoundOnHit.len() != 0)
-		// 	{
-		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-		// 			Pos = _targetEntity.getPos()
-		// 		});
-		// 	}
-		// 	local tile = _targetEntity.getTile();
-		// 	local x = tile.X;
-		// 	local y = tile.Y;
-		// 	this.Tactical.getTile(x,y).removeObject();
-		// 	return true;
-		// }
-
-		// if (_targetEntity.isSticks())
-		// {
-		// 	local r = this.Math.rand(0, 4);
-		// 	if (r == 1 && _user.getSkills().hasSkill("perk.legend_specialist_woodaxe_damage"))
-		// 	{
-		// 		local loot = this.new("scripts/items/trade/legend_raw_wood_item");
-		// 		loot.drop(_targetEntity.getTile());
-		// 	}
-		// 	if (this.m.SoundOnHit.len() != 0)
-		// 	{
-		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-		// 			Pos = _targetEntity.getPos()
-		// 		});
-		// 	}
-		// 	local tile = _targetEntity.getTile();
-		// 	local x = tile.X;
-		// 	local y = tile.Y;
-		// 	this.Tactical.getTile(x,y).removeObject();
-		// 	return true;
-		// }
-
-		if (_targetEntity.isSupplies())
-		{
-			local r = this.Math.rand(1, 100);
-			if (r == 1)
-			{
-				local loot = this.new("scripts/items/supplies/ammo_small_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 2)
-			{
-				local loot = this.new("scripts/items/supplies/armor_parts_small_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 3)
-			{
-				local loot = this.new("scripts/items/supplies/medicine_small_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r >= 4 && r < 6)
-			{
-				local loot = this.new("scripts/items/supplies/ground_grains_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r >= 7 && r < 9)
-			{
-				if (this.Math.rand(1, 8) == 8)
-				{
-					local loot = this.new("scripts/items/trade/legend_cooking_spices_trade_item");
-					loot.drop(_targetEntity.getTile());
-				}
-			}
-			if (r == 10)
-			{
-				local loot = this.new("scripts/items/supplies/legend_fresh_fruit_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 11)
-			{
-				local loot = this.new("scripts/items/supplies/strange_meat_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 12)
-			{
-				local loot = this.new("scripts/items/supplies/legend_human_parts");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 13)
-			{
-				local loot = this.new("scripts/items/supplies/legend_fresh_meat_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 14)
-			{
-				local loot = this.new("scripts/items/supplies/beer_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (r == 15)
-			{
-				local loot = this.new("scripts/items/supplies/bandage_item");
-				loot.drop(_targetEntity.getTile());
-			}
-			if (this.m.SoundOnHit.len() != 0)
-			{
-				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-					Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-					Pos = _targetEntity.getPos()
-				});
-			}
-			local tile = _targetEntity.getTile();
-			local x = tile.X;
-			local y = tile.Y;
-			this.Tactical.getTile(x,y).removeObject();
-			return false; //if we don't return false it counts as a success for skills like cleave which try to apply bleed etc afterwards ->
-		}
-
-		// if (_targetEntity.isTree())
-		// {
-		// 	if (this.m.SoundOnHit.len() != 0)
-		// 	{
-		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-		// 			Pos = _targetEntity.getPos()
-		// 		});
-		// 	}
-		// 	local tile = _targetEntity.getTile();
-		// 	local x = tile.X;
-		// 	local y = tile.Y;
-		// 	this.Tactical.getTile(x,y).removeObject();
-		// 	this.Tactical.getTile(x,y).spawnObject("entity/tactical/objects/tree_sticks");
-		// 	return true;
-		// }
-
-		// if (_targetEntity.isBush() )
-		// {
-		// 	local r = this.Math.rand(0, 99);
-		// 	if (r <= 25 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
-		// 	{
-		// 		local loot = this.new("scripts/items/supplies/roots_and_berries_item");
-		// 		loot.drop(_targetEntity.getTile());
-		// 	}
-		// 	if (r == 99 && _user.getSkills().hasSkill("perk.legend_specialist_sickle_damage"))
-		// 	{
-		// 		local loot = this.new("scripts/items/misc/mysterious_herbs_item");
-		// 		loot.drop(_targetEntity.getTile());
-		// 	}
-		// 	// _targetEntity.getTile().removeObject()
-
-		// 	if (this.m.SoundOnHit.len() != 0)
-		// 	{
-		// 		this.Time.scheduleEvent(this.TimeUnit.Virtual, this.m.SoundOnHitDelay, this.onPlayHitSound.bindenv(this), {
-		// 			Sound = this.m.SoundOnHit[this.Math.rand(0, this.m.SoundOnHit.len() - 1)],
-		// 			Pos = _targetEntity.getPos()
-		// 		});
-		// 	}
-		// 	local tile = _targetEntity.getTile();
-		// 	local x = tile.X;
-		// 	local y = tile.Y;
-		// 	this.Tactical.getTile(x,y).removeObject();
-		// 	return false;
-		// }
-
-		//lets get on with the rest of the attack
-
 		if (_targetEntity != null && !_targetEntity.isAlive())
 		{
 			return false;
 		}
 
-		local properties = this.factoringOffhand(this.m.Container.buildPropertiesForUse(this, _targetEntity));
+		local properties = this.m.Container.buildPropertiesForUse(this, _targetEntity);
 		local userTile = _user.getTile();
 		local astray = false;
 
@@ -2013,9 +1323,6 @@ this.skill <- {
 		local distanceToTarget = _user.getTile().getDistanceTo(_targetEntity.getTile());
 		local toHit = 0;
 		local skill = this.m.IsRanged ? properties.RangedSkill * properties.RangedSkillMult : properties.MeleeSkill * properties.MeleeSkillMult;
-		local minimumHitChance = ::Legends.Mod.ModSettings.getSetting("MinimumChanceToHit").getValue();
-		local maximumHitChance = ::Legends.Mod.ModSettings.getSetting("MaximumChanceToHit").getValue();
-
 		toHit = toHit + skill;
 		toHit = toHit - defense;
 
@@ -2067,7 +1374,7 @@ this.skill <- {
 
 		if (defense > -100 && skill > -100)
 		{
-			toHit = this.Math.max(minimumHitChance, this.Math.min(maximumHitChance, toHit));
+			toHit = this.Math.max(5, this.Math.min(95, toHit));
 		}
 
 		_targetEntity.onAttacked(_user);
@@ -2116,67 +1423,51 @@ this.skill <- {
 		}
 
 		local isHit = r <= toHit;
-		if (defenderProperties.IsEvadingAllAttacks)
-		{
-			isHit = false;
-		}
 
 		if (!_user.isHiddenToPlayer() && !_targetEntity.isHiddenToPlayer())
 		{
-			if (defenderProperties.IsEvadingAllAttacks)
-			{
-				::Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and " + this.Const.UI.getColorizedEntityName(_targetEntity) + " evades the attack");
-			}
-			else
-			{
-				local rolled = r;
-				this.Tactical.EventLog.log_newline();
+			local rolled = r;
+			this.Tactical.EventLog.log_newline();
 
-				if (astray)
-				{
-					if (this.isUsingHitchance())
-					{
-						if (isHit)
-						{
-							this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and hits " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(maximumHitChance, this.Math.max(minimumHitChance, toHit)) + ", Rolled: " + rolled + ")");
-						}
-						else
-						{
-							this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and misses " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(maximumHitChance, this.Math.max(minimumHitChance, toHit)) + ", Rolled: " + rolled + ")");
-						}
-					}
-					else
-					{
-						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
-					}
-				}
-				else if (this.isUsingHitchance())
+			if (astray)
+			{
+				if (this.isUsingHitchance())
 				{
 					if (isHit)
 					{
-						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(maximumHitChance, this.Math.max(minimumHitChance, toHit)) + ", Rolled: " + rolled + ")");
+						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and hits " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(95, this.Math.max(5, toHit)) + ", Rolled: " + rolled + ")");
 					}
 					else
 					{
-						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and misses " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(maximumHitChance, this.Math.max(minimumHitChance, toHit)) + ", Rolled: " + rolled + ")");
+						this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and misses " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(95, this.Math.max(5, toHit)) + ", Rolled: " + rolled + ")");
 					}
 				}
 				else
 				{
-					this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
+					this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and the shot goes astray and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
 				}
-			}	
+			}
+			else if (this.isUsingHitchance())
+			{
+				if (isHit)
+				{
+					this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(95, this.Math.max(5, toHit)) + ", Rolled: " + rolled + ")");
+				}
+				else
+				{
+					this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and misses " + this.Const.UI.getColorizedEntityName(_targetEntity) + " (Chance: " + this.Math.min(95, this.Math.max(5, toHit)) + ", Rolled: " + rolled + ")");
+				}
+			}
+			else
+			{
+				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_user) + " uses " + this.getName() + " and hits " + this.Const.UI.getColorizedEntityName(_targetEntity));
+			}
 		}
 
 		if (isHit && this.Math.rand(1, 100) <= _targetEntity.getCurrentProperties().RerollDefenseChance)
 		{
 			r = this.Math.rand(1, 100);
 			isHit = r <= toHit;
-			if(!isHit) {
-				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " got lucky.");
-			} else {
-				this.Tactical.EventLog.logEx(this.Const.UI.getColorizedEntityName(_targetEntity) + " wasn\'t lucky enough.");
-			}
 		}
 
 		if (isHit)
@@ -2363,12 +1654,6 @@ this.skill <- {
 		this.Sound.play(_data.Sound, this.Const.Sound.Volume.Skill, _data.Pos);
 	}
 
-	function playSound()
-	{
-		local sound = this.m.Sound[this.Math.rand(0, this.m.Sound.len() - 1)];
-		this.Sound.play(sound, this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
-	}
-
 	function divertAttack( _user, _targetEntity )
 	{
 		local tile = _targetEntity.getTile();
@@ -2468,25 +1753,11 @@ this.skill <- {
 
 		if (this.m.InjuriesOnBody != null && bodyPart == this.Const.BodyPart.Body)
 		{
-			if (_info.TargetEntity.getFlags().has("skeleton"))
-			{
-				injuries = this.Const.Injury.SkeletonBody;
-			}
-			else
-			{
-				injuries = this.m.InjuriesOnBody;
-			}
+			injuries = this.m.InjuriesOnBody;
 		}
 		else if (this.m.InjuriesOnHead != null && bodyPart == this.Const.BodyPart.Head)
 		{
-			if (_info.TargetEntity.getFlags().has("skeleton"))
-			{
-				injuries = this.Const.Injury.SkeletonHead;
-			}
-			else
-			{
-				injuries = this.m.InjuriesOnHead;
-			}
+			injuries = this.m.InjuriesOnHead;
 		}
 
 		local hitInfo = clone this.Const.Tactical.HitInfo;
@@ -2587,7 +1858,14 @@ this.skill <- {
 
 	function onDeserialize( _in )
 	{
-		this.m.IsNew = _in.readBool();
+		if (_in.getMetaData().getVersion() >= 57)
+		{
+			this.m.IsNew = _in.readU8();
+		}
+		else
+		{
+			this.m.IsNew = false;
+		}
 	}
 
 };

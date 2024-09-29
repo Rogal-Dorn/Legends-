@@ -99,6 +99,15 @@ this.witch_hut_location <- this.inherit("scripts/entity/world/location", {
 		}
 	}
 
+	function onDropLootForPlayer( _lootTable )
+	{
+		this.location.onDropLootForPlayer(_lootTable);
+		this.dropTreasure(this.Math.rand(1, 2), [
+			"misc/legend_masterwork_metal",
+			"misc/legend_masterwork_fabric"
+		], _lootTable);
+	}
+
 	function onInit()
 	{
 		this.location.onInit();

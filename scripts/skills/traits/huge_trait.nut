@@ -41,13 +41,13 @@ this.huge_trait <- this.inherit("scripts/skills/traits/character_trait", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Melee Damage"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] Melee Damage increase"
 			},
 			{
 				id = 12,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Ranged Damage"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]5%[/color] Ranged Damage increase"
 			},
 			{
 				id = 10,
