@@ -56,19 +56,13 @@ this.legend_fortify_skill <- this.inherit("scripts/skills/skill", {
 				id = 4,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getMeleeDefense() * mult) + "[/color] Melee Defense for one turn"
+				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getMeleeDefense() * mult + 5) + "[/color] Melee Defense for one turn"
 			},
 			{
 				id = 5,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getRangedDefense() * mult) + "[/color] Ranged Defense for one turn"
-			},
-			{
-				id = 6,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Defense against all attacks."
+				text = "Grants [color=" + this.Const.UI.Color.PositiveValue + "]+" + this.Math.floor(item.getRangedDefense() * mult + 5) + "[/color] Ranged Defense for one turn"
 			}
 		];
 	}
