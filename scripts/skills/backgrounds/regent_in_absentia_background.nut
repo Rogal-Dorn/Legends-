@@ -7,7 +7,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Name = "Regent in Absentia";
 		this.m.Icon = "ui/backgrounds/background_06.png";
 		this.m.HiringCost = 135;
-		this.m.DailyCost = 17;
+		this.m.DailyCost = 30;
 		this.m.Excluded = [
 			"trait.ailing",
 			"trait.clubfooted",
@@ -41,6 +41,16 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		this.m.Modifiers.Salvage = this.Const.LegendMod.ResourceModifiers.Salvage[2];
 		this.m.Modifiers.Stash = this.Const.LegendMod.ResourceModifiers.Stash[2];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[2];
+		this.m.PerkTreeDynamic = {
+			Weapon = [],
+			Defense = [],
+			Traits = [],
+			Enemy = [],
+			Class = [],
+			Magic = [
+				this.Const.Perks.CaptainMagicTree
+			]
+		}
 	}
 
 	function setGender(_gender = -1)
@@ -91,7 +101,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 		}
 	}
 
-		function onChangeAttributes()
+	function onChangeAttributes()
 	{
 		local c = {
 			Hitpoints = [

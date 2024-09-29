@@ -12,7 +12,7 @@ if (!("Actor" in gt.Const.Tactical))
 
 gt.Const.Tactical.Actor.SkeletonLight <- {
 	XP = 150,
-	ActionPoints = 9,
+	ActionPoints = 8,
 	Hitpoints = 45,
 	Bravery = 70,
 	Stamina = 100,
@@ -176,7 +176,7 @@ gt.Const.Tactical.Actor.SkeletonBoss <- {
 };
 gt.Const.Tactical.Actor.Zombie <- {
 	XP = 100,
-	ActionPoints = 6,
+	ActionPoints = 5,
 	Hitpoints = 100,
 	Bravery = 100,
 	Stamina = 100,

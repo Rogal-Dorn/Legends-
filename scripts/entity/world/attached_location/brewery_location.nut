@@ -68,10 +68,10 @@ this.brewery_location <- this.inherit("scripts/entity/world/attached_location", 
 		_list.push("monk_background");
 		_list.push("brawler_background");
 		_list.push("gambler_background");
-		if (_gender)
-		{
-			_list.push("legend_nun_background");
-		}
+		// if (_gender)
+		// {
+		// 	_list.push("legend_nun_background");
+		// }
 	}
 
 	function onUpdateShopList( _id, _list )

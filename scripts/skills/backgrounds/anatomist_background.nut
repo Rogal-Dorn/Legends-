@@ -63,6 +63,7 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.AlignmentMin = this.Const.LegendMod.Alignment.Merciless;
 		this.m.AlignmentMax = this.Const.LegendMod.Alignment.Kind;
 		this.m.BackgroundType = this.Const.BackgroundType.Educated;
+		this.m.Level = this.Math.rand(1, 2);
 		this.m.Modifiers.Meds = this.Const.LegendMod.ResourceModifiers.Meds[3];
 		this.m.Modifiers.Healing = this.Const.LegendMod.ResourceModifiers.Healing[2];
 		this.m.Modifiers.Injury = this.Const.LegendMod.ResourceModifiers.Injury[2];
@@ -94,26 +95,25 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 			Weapon = [
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.DaggerTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.SlingTree,
 				this.Const.Perks.StaffTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree,
+				this.Const.Perks.ClothArmorTree,
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.IntelligentTree,
 				this.Const.Perks.CalmTree,
 				this.Const.Perks.DeviousTree,
-				this.Const.Perks.OrganisedTree,
-				this.Const.Perks.FastTree,
 				this.Const.Perks.InspirationalTree
 			],
 			Enemy = [],
 			Class = [
-				this.Const.Perks.HealerClassTree
+				this.Const.Perks.HealerClassTree,
+				this.Const.Perks.SickleClassTree
+
 			],
 			Magic = [
 				this.Const.Perks.PhilosophyMagicTree
@@ -139,6 +139,20 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 
 	}
 
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 13,
+				type = "text",
+				icon = "ui/icons/xp_received.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color] Experience Gain"
+			}
+		)
+		return ret
+	}
+
 	function onBuildDescription()
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Female))
@@ -155,32 +169,32 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 	{
 		local c = {
 			Hitpoints = [
-				-4,
-				-4
+				-2,
+				0
 			],
 			Bravery = [
-				10,
-				10
+				12,
+				14
 			],
 			Stamina = [
-				0,
-				-5
+				-5,
+				0
 			],
 			MeleeSkill = [
-				7,
+				5,
 				7
 			],
 			RangedSkill = [
-				9,
+				5,
 				9
 			],
 			MeleeDefense = [
-				1,
-				0
+				0,
+				1
 			],
 			RangedDefense = [
-				1,
-				0
+				0,
+				1
 			],
 			Initiative = [
 				0,
@@ -220,6 +234,12 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 			[2, "physician_mask"],
 			[1, "masked_kettle_helmet"]
 		]));
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.XPGainMult *= 1.15;
 	}
 
 });

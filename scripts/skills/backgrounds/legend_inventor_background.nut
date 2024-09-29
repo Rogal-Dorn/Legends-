@@ -47,7 +47,6 @@ this.legend_inventor_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.HammerTree,
 				this.Const.Perks.StaffTree,
 				this.Const.Perks.DaggerTree,
-				this.Const.Perks.SlingTree,
 				this.Const.Perks.CrossbowTree
 			],
 			Defense = [

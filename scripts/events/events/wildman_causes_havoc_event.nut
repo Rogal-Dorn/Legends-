@@ -501,7 +501,7 @@ this.wildman_causes_havoc_event <- this.inherit("scripts/events/event", {
 					thetraders.push(bro);
 					break;
 				case "background.wildman":
-				case "background.wildwoman":
+				// case "background.wildwoman":
 					candidates_wildchars.push(bro);
 					break;
 				case "background.legend_berserker":

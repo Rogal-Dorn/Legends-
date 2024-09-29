@@ -75,10 +75,10 @@ this.witch_burnings_situation <- this.inherit("scripts/entity/world/settlements/
 		_draftList.push("witchhunter_background");
 		_draftList.push("witchhunter_background");
 
-		if (_gender)
-		{
-			_draftList.push("legend_nun_background");
-		}
+		// if (_gender)
+		// {
+		// 	_draftList.push("legend_nun_background");
+		// }
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{

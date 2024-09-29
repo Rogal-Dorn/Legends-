@@ -66,7 +66,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 				id = 7,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+25%[/color] damage from background"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage from background"
 			});
 				break;
 			}
@@ -163,7 +163,7 @@ this.hand_to_hand <- this.inherit("scripts/skills/skill", {
 		{
 			if (actor.getSkills().hasSkill(bg))
 			{
-				_properties.DamageTotalMult *= 1.25;
+				_properties.DamageTotalMult *= 1.50;
 				break;
 			}
 		}

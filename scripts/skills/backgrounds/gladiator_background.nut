@@ -90,8 +90,10 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.DaggerTree
+				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
+				this.Const.Perks.MediumArmorTree
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -101,8 +103,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.LargeTree,
 				this.Const.Perks.FitTree
 			],
-			Enemy = [
-			],
+			Enemy = [],
 			Class = [
 				this.Const.Perks.BeastClassTree
 			],
@@ -201,12 +202,12 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 				8
 			],
 			MeleeSkill = [
-				13,
-				10
+				10,
+				13
 			],
 			RangedSkill = [
-				8,
-				6
+				6,
+				8
 			],
 			MeleeDefense = [
 				5,

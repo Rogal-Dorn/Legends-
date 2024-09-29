@@ -249,8 +249,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				10
 			],
 			MeleeSkill = [
-				0,
-				5
+				-10,
+				0
 			],
 			RangedSkill = [
 				-10,

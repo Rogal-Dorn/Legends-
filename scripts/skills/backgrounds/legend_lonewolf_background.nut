@@ -110,7 +110,9 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.MartyrTree,
 				this.Const.Perks.FitTree
 			],
-			Enemy = [this.Const.Perks.SwordmastersTree],
+			Enemy = [
+				this.Const.Perks.SwordmastersTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -206,16 +208,16 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				16
 			],
 			Bravery = [
-				12,
-				8
-			],
-			Stamina = [
-				18,
+				8,
 				12
 			],
+			Stamina = [
+				12,
+				18
+			],
 			MeleeSkill = [
-				14,
-				10
+				10,
+				14
 			],
 			RangedSkill = [
 				10,
@@ -226,12 +228,12 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 				9 // nice
 			],
 			RangedDefense = [
-				7,
-				6
+				6,
+				7
 			],
 			Initiative = [
-				15,
-				5
+				5,
+				15
 			]
 		};
 		return c;

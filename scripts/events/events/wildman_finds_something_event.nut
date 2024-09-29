@@ -111,7 +111,7 @@ this.wildman_finds_something_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
+			if (bro.getBackground().getID() == "background.wildman")
 			{
 				candidates_wildman.push(bro);
 			}

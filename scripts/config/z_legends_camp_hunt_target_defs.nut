@@ -20,7 +20,7 @@
 ::Const.HuntingLoot.RequiredBackgrounds["background.ratcatcher"] <- "Ratcatcher";
 ::Const.HuntingLoot.RequiredBackgrounds["background.shepherd"] <- "Shepherd";
 ::Const.HuntingLoot.RequiredBackgrounds["background.wildman"] <- "Wildman";
-::Const.HuntingLoot.RequiredBackgrounds["background.wildwoman"] <- "Wildwoman";
+// ::Const.HuntingLoot.RequiredBackgrounds["background.wildwoman"] <- "Wildwoman";
 ::Const.HuntingLoot.RequiredBackgrounds["background.witchhunter"] <- "Witch Hunter";
 // Foragers
 ::Const.HuntingLoot.RequiredBackgrounds["background.anatomist"] <- "Anatomist";
@@ -32,7 +32,7 @@
 ::Const.HuntingLoot.RequiredBackgrounds["background.legend_herbalist"] <- "Herbalist / Apothecary";
 ::Const.HuntingLoot.RequiredBackgrounds["background.miller"] <- "Miller";
 ::Const.HuntingLoot.RequiredBackgrounds["background.monk"] <- "Monk";
-::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
+// ::Const.HuntingLoot.RequiredBackgrounds["background.legend_nun"] <- "Nun";
 ::Const.HuntingLoot.RequiredBackgrounds["background.vagabond"] <- "Vagabond";
 
 // These backgrounds will contribute to Hunt Level (and hence Hunt Tier)
@@ -50,7 +50,7 @@
 	"background.poacher",
 	"background.ratcatcher",
 	"background.wildman",
-	"background.wildwoman",
+	// "background.wildwoman",
 ]
 
 // Cook Backgrounds. No BackgroundType defined at this time
@@ -150,7 +150,7 @@
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -176,7 +176,7 @@
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -208,7 +208,7 @@
 		Backgrounds = [
 			"background.fisherman",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -230,7 +230,7 @@
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -255,7 +255,7 @@
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -273,7 +273,7 @@
 		Backgrounds = [
 			"background.fisherman",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 
@@ -317,7 +317,7 @@
 			"background.legend_ranger",
 			"background.legend_commander_ranger",
 			"background.wildman",
-			"background.wildwoman"
+			// "background.wildwoman"
 		]
 	},
 

@@ -77,7 +77,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.SpearTree,
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.BowTree
+				this.Const.Perks.BowTree,
+				this.Const.Perks.AxeTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree,
@@ -146,32 +147,32 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 				5
 			],
 			Bravery = [
-				13,
+				10,
 				10
 			],
 			Stamina = [
-				5,
-				7
+				7,
+				12
 			],
 			MeleeSkill = [
 				5,
-				5
+				7
 			],
 			RangedSkill = [
-				11,
-				7
+				6,
+				12
 			],
 			MeleeDefense = [
 				1,
 				4
 			],
 			RangedDefense = [
-				0,
-				0
+				1,
+				2
 			],
 			Initiative = [
-				7,
-				5
+				10,
+				15
 			]
 		};
 		return c;
@@ -235,7 +236,8 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 
 		items.equip(this.Const.World.Common.pickHelmet([
 			// [1, "hunters_hat"],
-			[1, "hood"]
+			[1, "hood"],
+			[1, ""]
 		]))
 	}
 });

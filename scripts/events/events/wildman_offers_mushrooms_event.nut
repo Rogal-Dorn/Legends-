@@ -81,7 +81,7 @@ this.wildman_offers_mushrooms_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman")
+			if (bro.getBackground().getID() == "background.wildman")
 			{
 				candidates_wildman.push(bro);
 			}

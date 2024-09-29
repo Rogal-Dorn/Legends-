@@ -9,8 +9,8 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 		this.m.BackgroundDescription = "Houndmasters are used to handle dogs of war.";
 		this.m.GoodEnding = "Dogs were not simply \'hounds\' to %name%, despite his title as \'houndmaster.\' To him, they were the most loyal friends of his life. After leaving the company, he discovered an ingenious way to breed the animals specifically tailored to the desires of the nobility. Wanted a brutish beast for a guard dog? He could do it. Wanted something small and cuddly for the children? He could do that, too. The former mercenary now earns an incredible earning doing what he loves - working with dogs.";
 		this.m.BadEnding = "What\'s merely a hound to one man is a loyal beast to %name%. After leaving the company, the houndmaster went out to work for the nobility. Unfortunately, he refused to let hundreds of his dogs be used as a battle vanguard to be thrown away for some short-lived tactical advantage. He was hanged for his \'traitorous ideals\'.";
-		this.m.HiringCost = 80;
-		this.m.DailyCost = 7;
+		this.m.HiringCost = 85;
+		this.m.DailyCost = 11;
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.fear_beasts",
@@ -43,7 +43,8 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 			Weapon = [
 				this.Const.Perks.StaffTree,
 				this.Const.Perks.ThrowingTree,
-				this.Const.Perks.PolearmTree
+				this.Const.Perks.PolearmTree,
+				this.Const.Perks.SlingTree
 			],
 			Defense = [
 				this.Const.Perks.MediumArmorTree
@@ -55,7 +56,9 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 				this.Const.Perks.IndestructibleTree
 			],
 			Enemy = [],
-			Class = [this.Const.Perks.HoundmasterClassTree],
+			Class = [
+				this.Const.Perks.HoundmasterClassTree
+			],
 			Magic = []
 		}
 	}
@@ -108,36 +111,36 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				0
+				0,
+				5
 			],
 			Bravery = [
 				5,
 				5
 			],
 			Stamina = [
-				5,
-				0
+				0,
+				5
 			],
 			MeleeSkill = [
 				0,
 				0
 			],
 			RangedSkill = [
-				0,
-				0
+				3,
+				6
 			],
 			MeleeDefense = [
 				3,
 				3
 			],
 			RangedDefense = [
-				0,
-				0
+				1,
+				2
 			],
 			Initiative = [
-				5,
-				0
+				12,
+				18
 			]
 		};
 		return c;

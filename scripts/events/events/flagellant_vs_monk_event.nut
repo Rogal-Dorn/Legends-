@@ -159,7 +159,7 @@ this.flagellant_vs_monk_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			if (bro.getBackground().getID() == "background.monk")
 			{
 				monk_candidates.push(bro);
 			}

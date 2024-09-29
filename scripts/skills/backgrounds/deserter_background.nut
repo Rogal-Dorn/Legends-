@@ -61,7 +61,6 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Defense = [	
 				this.Const.Perks.HeavyArmorTree,
-				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,
@@ -70,9 +69,9 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.DeviousTree
 			],
 			Enemy = [
-					this.Const.Perks.BanditTree,
-					this.Const.Perks.NoblesTree
-					],
+				this.Const.Perks.BanditTree,
+				this.Const.Perks.NoblesTree
+			],
 			Class = [],
 			Magic = []
 		}
@@ -142,8 +141,8 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 				5
 			],
 			RangedSkill = [
-				7,
-				0
+				0,
+				7
 			],
 			MeleeDefense = [
 				3,

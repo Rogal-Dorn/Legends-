@@ -69,7 +69,7 @@ this.medium_steppe_village <- this.inherit("scripts/entity/world/settlement", {
 			"refugee_background",
 			"refugee_background",
 			"vagabond_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"cripple_background",
 			"poacher_background"
 		];

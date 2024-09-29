@@ -57,7 +57,7 @@ this.medium_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"ratcatcher_background",
 			"thief_background",
 			"vagabond_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
@@ -82,8 +82,8 @@ this.medium_swamp_village <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
-			"female_disowned_noble_background",
+			// "female_adventurous_noble_background",
+			// "female_disowned_noble_background",
 			"cripple_background"
 		];
 

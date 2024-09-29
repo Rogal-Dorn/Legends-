@@ -212,7 +212,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.mad"))
+					if (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious") || bro.getSkills().hasSkill("trait.mad"))
 					{
 						bro.worsenMood(1.0, "You set free an evil spirit");
 
@@ -278,7 +278,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Witchhunter.getID() && (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious")))
+					if (bro.getID() != _event.m.Witchhunter.getID() && (this.Math.rand(1, 100) <= 25 || bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getSkills().hasSkill("trait.superstitious")))
 					{
 						bro.improveMood(1.0, "Saw an evil spirit meet its end");
 
@@ -337,7 +337,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 
 				foreach( bro in brothers )
 				{
-					if (bro.getID() != _event.m.Monk.getID() && (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious")))
+					if (bro.getID() != _event.m.Monk.getID() && (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk" || bro.getSkills().hasSkill("trait.superstitious")))
 					{
 						bro.improveMood(1.0, "Saw a witch burning at the stake");
 
@@ -409,7 +409,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 							});
 						}
 					}
-					else if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getBackground().getID() == "background.legend_nun" || bro.getSkills().hasSkill("trait.superstitious"))
+					else if (bro.getBackground().getID() == "background.witchhunter" || bro.getBackground().getID() == "background.monk"  || bro.getSkills().hasSkill("trait.superstitious"))
 					{
 						bro.worsenMood(1.0, _event.m.Cultist.getName() + " freed a witch");
 
@@ -468,7 +468,7 @@ this.supposed_witch_event <- this.inherit("scripts/events/event", {
 			{
 				candidate_witchhunter.push(bro);
 			}
-			else if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			else if (bro.getBackground().getID() == "background.monk")
 			{
 				candidate_monk.push(bro);
 			}

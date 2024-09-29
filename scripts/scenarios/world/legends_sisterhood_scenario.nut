@@ -32,7 +32,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[0].setPlaceInFormation(3);
 		
 		bros[1].setStartValuesEx([
-			"wildwoman_background"
+			"wildman_background"
 		], true, 1);
 		bros[1].setPlaceInFormation(4);
 		
@@ -42,7 +42,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[2].setPlaceInFormation(5);
 		
 		bros[3].setStartValuesEx([
-			"legend_nun_background"
+			"monk_background"
 		], true, 1);
 		bros[3].setPlaceInFormation(12);
 		
@@ -57,7 +57,7 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		bros[4].setVeteranPerks(2);
 		
 		bros[5].setStartValuesEx([
-			"female_adventurous_noble_background"
+			"adventurous_noble_background"
 		], true, 1);
 		bros[5].setPlaceInFormation(14);
 		this.World.Flags.set("HasLegendCampGathering", true);
@@ -149,9 +149,9 @@ this.legends_sisterhood_scenario <- this.inherit("scripts/scenarios/world/starti
 		local bros = _roster.getAll();
 
 		this.addBroToRoster(_roster, "legend_shieldmaiden_background", 6);
-		this.addBroToRoster(_roster, "female_disowned_noble_background", 6);
-		this.addBroToRoster(_roster, "female_adventurous_noble_background", 6);
-		this.addBroToRoster(_roster, "legend_nun_background", 6);
+		this.addBroToRoster(_roster, "disowned_noble_background", 6);
+		this.addBroToRoster(_roster, "adventurous_noble_background", 8);
+		this.addBroToRoster(_roster, "monk_background", 6);
 
 		foreach( i, bro in bros )
 		{

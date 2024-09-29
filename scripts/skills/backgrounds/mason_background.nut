@@ -40,7 +40,7 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.LightArmorTree
+				this.Const.Perks.MediumArmorTree
 			],
 			Traits = [
 				this.Const.Perks.AgileTree,
@@ -82,8 +82,8 @@ this.mason_background <- this.inherit("scripts/skills/backgrounds/character_back
 				0
 			],
 			Bravery = [
-				3,
-				3
+				5,
+				7
 			],
 			Stamina = [
 				5,

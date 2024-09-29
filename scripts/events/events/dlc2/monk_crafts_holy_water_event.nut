@@ -55,7 +55,7 @@ this.monk_crafts_holy_water_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			if (bro.getBackground().getID() == "background.monk")
 			{
 				candidates_monk.push(bro);
 			}

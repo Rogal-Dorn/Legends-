@@ -94,8 +94,8 @@ this.retired_soldier_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				-10,
-				-15
+				-15,
+				-10
 			],
 			Bravery = [
 				13,

@@ -167,8 +167,8 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-8
+				-8,
+				-5
 			],
 			Bravery = [
 				-5,

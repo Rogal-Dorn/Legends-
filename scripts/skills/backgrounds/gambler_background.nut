@@ -137,11 +137,11 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			],
 			RangedDefense = [
 				2,
-				8
+				2
 			],
 			Initiative = [
-				12,
-				10
+				10,
+				12
 			]
 		};
 		return c;

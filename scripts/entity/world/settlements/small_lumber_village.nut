@@ -56,7 +56,7 @@ this.small_lumber_village <- this.inherit("scripts/entity/world/settlement", {
 			"poacher_background",
 			"poacher_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"hunter_background",
 			"hunter_background",
 			"tailor_background",

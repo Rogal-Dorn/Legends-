@@ -7,7 +7,7 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 		this.m.Name = "Companion";
 		this.m.Icon = "ui/traits/trait_icon_32.png";
 		this.m.HiringCost = 0;
-		this.m.DailyCost = 14;
+		this.m.DailyCost = 12;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
 			"trait.hate_undead",
@@ -106,32 +106,32 @@ this.companion_2h_background <- this.inherit("scripts/skills/backgrounds/charact
 	{
 		local c = {
 			Hitpoints = [
-				10,
-				5
+				5,
+				10
 			],
 			Bravery = [
 				10,
-				5
+				14
 			],
 			Stamina = [
 				5,
 				5
 			],
 			MeleeSkill = [
-				10,
-				5
+				7,
+				12
 			],
 			RangedSkill = [
 				0,
 				0
 			],
 			MeleeDefense = [
-				2,
-				0
+				5,
+				5
 			],
 			RangedDefense = [
-				2,
-				0
+				0,
+				2
 			],
 			Initiative = [
 				-5,

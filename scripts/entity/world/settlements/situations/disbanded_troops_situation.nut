@@ -112,8 +112,6 @@ this.disbanded_troops_situation <- this.inherit("scripts/entity/world/settlement
 
 		if(this.LegendsMod.Configs().LegendMagicEnabled())
 		{
-		_draftList.push("legend_noble_event_background");
-		_draftList.push("legend_noble_event_background");
 		_draftList.push("legend_crusader_background");
 		}
 	}

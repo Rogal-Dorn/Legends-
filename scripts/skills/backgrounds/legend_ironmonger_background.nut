@@ -56,9 +56,9 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 			],
 			Enemy = [],
 			Class = [
-					this.Const.Perks.HammerClassTree,
-					this.Const.Perks.RepairClassTree
-					],
+				this.Const.Perks.HammerClassTree,
+				this.Const.Perks.RepairClassTree
+			],
 			Magic = []
 		}
 	}
@@ -98,20 +98,20 @@ this.legend_ironmonger_background <- this.inherit("scripts/skills/backgrounds/ch
 	{
 		local c = {
 			Hitpoints = [
-				5,
-				3
+				3,
+				5
 			],
 			Bravery = [
 				0,
 				0
 			],
 			Stamina = [
-				10,
-				5
+				5,
+				10
 			],
 			MeleeSkill = [
-				3,
-				2
+				2,
+				3
 			],
 			RangedSkill = [
 				-5,

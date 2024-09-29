@@ -53,7 +53,7 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"flagellant_background",
 			"ratcatcher_background",
 			"wildman_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"witchhunter_background",
 			"witchhunter_background",
 			"adventurous_noble_background",
@@ -77,10 +77,10 @@ this.medium_swamp_fort <- this.inherit("scripts/entity/world/settlement", {
 			"wildman_background",
 			"witchhunter_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
-			"female_disowned_noble_background",
+			// "female_disowned_noble_background",
 			"raider_background",
 			"retired_soldier_background"
 		];

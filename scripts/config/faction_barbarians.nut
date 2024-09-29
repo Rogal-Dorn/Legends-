@@ -13,10 +13,10 @@ if (!("Actor" in gt.Const.Tactical))
 gt.Const.Tactical.Actor.BarbarianThrall <- {
 	XP = 175,
 	ActionPoints = 9,
-	Hitpoints = 70,
+	Hitpoints = 60,
 	Bravery = 70,
 	Stamina = 120,
-	MeleeSkill = 55,
+	MeleeSkill = 53,
 	RangedSkill = 50,
 	MeleeDefense = 0,
 	RangedDefense = 0,
@@ -27,15 +27,15 @@ gt.Const.Tactical.Actor.BarbarianThrall <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
-gt.Const.Tactical.Actor.BarbarianMarauder <- {
+gt.Const.Tactical.Actor.BarbarianMarauder <- { //known as 'Barbarian Reaver'
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 120,
+	Hitpoints = 95,
 	Bravery = 80,
 	Stamina = 130,
-	MeleeSkill = 65,
+	MeleeSkill = 60,
 	RangedSkill = 60,
 	MeleeDefense = 10,
 	RangedDefense = 10,
@@ -46,7 +46,7 @@ gt.Const.Tactical.Actor.BarbarianMarauder <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 20
+	FatigueRecoveryRate = 25
 };
 gt.Const.Tactical.Actor.BarbarianChampion <- {
 	XP = 350,
@@ -65,7 +65,7 @@ gt.Const.Tactical.Actor.BarbarianChampion <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 20
+	FatigueRecoveryRate = 25
 };
 gt.Const.Tactical.Actor.BarbarianChosen <- {
 	XP = 500,
@@ -84,7 +84,7 @@ gt.Const.Tactical.Actor.BarbarianChosen <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.BarbarianMadman <- {
 	XP = 500,
@@ -103,13 +103,13 @@ gt.Const.Tactical.Actor.BarbarianMadman <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 25
+	FatigueRecoveryRate = 30
 };
 gt.Const.Tactical.Actor.BarbarianDrummer <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 90,
-	Bravery = 80,
+	Hitpoints = 75,
+	Bravery = 60,
 	Stamina = 150,
 	MeleeSkill = 65,
 	RangedSkill = 40,
@@ -122,12 +122,12 @@ gt.Const.Tactical.Actor.BarbarianDrummer <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
 gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 	XP = 250,
 	ActionPoints = 9,
-	Hitpoints = 70,
+	Hitpoints = 65,
 	Bravery = 90,
 	Stamina = 120,
 	MeleeSkill = 65,
@@ -141,6 +141,6 @@ gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
 		0,
 		0
 	],
-	FatigueRecoveryRate = 15
+	FatigueRecoveryRate = 20
 };
 

@@ -13,14 +13,14 @@ if (!("Actor" in gt.Const.Tactical))
 gt.Const.Tactical.Actor.Ghoul <- {
 	XP = 125,
 	ActionPoints = 9,
-	Hitpoints = 80,
+	Hitpoints = 70,
 	Bravery = 50,
 	Stamina = 130,
-	MeleeSkill = 60,
+	MeleeSkill = 55,
 	RangedSkill = 0,
 	MeleeDefense = 10,
 	RangedDefense = 15,
-	Initiative = 125,
+	Initiative = 115,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	Armor = [
@@ -30,15 +30,15 @@ gt.Const.Tactical.Actor.Ghoul <- {
 };
 gt.Const.Tactical.Actor.Direwolf <- {
 	XP = 200,
-	ActionPoints = 12,
+	ActionPoints = 10,
 	Hitpoints = 130,
 	Bravery = 50,
 	Stamina = 180,
 	MeleeSkill = 60,
 	RangedSkill = 0,
-	MeleeDefense = 10,
+	MeleeDefense = 5,
 	RangedDefense = 10,
-	Initiative = 150,
+	Initiative = 135,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 20,
@@ -68,11 +68,11 @@ gt.Const.Tactical.Actor.FrenziedDirewolf <- {
 };
 gt.Const.Tactical.Actor.Hyena <- {
 	XP = 200,
-	ActionPoints = 14,
+	ActionPoints = 12,
 	Hitpoints = 120,
 	Bravery = 50,
 	Stamina = 180,
-	MeleeSkill = 60,
+	MeleeSkill = 50,
 	RangedSkill = 0,
 	MeleeDefense = 10,
 	RangedDefense = 10,
@@ -107,7 +107,7 @@ gt.Const.Tactical.Actor.FrenziedHyena <- {
 gt.Const.Tactical.Actor.Spider <- {
 	XP = 100,
 	ActionPoints = 11,
-	Hitpoints = 60,
+	Hitpoints = 50,
 	Bravery = 45,
 	Stamina = 130,
 	MeleeSkill = 60,
@@ -119,8 +119,8 @@ gt.Const.Tactical.Actor.Spider <- {
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 20,
 	Armor = [
-		20,
-		20
+		10,
+		10
 	]
 };
 gt.Const.Tactical.Actor.SpiderEggs <- {
@@ -132,7 +132,7 @@ gt.Const.Tactical.Actor.SpiderEggs <- {
 	MeleeSkill = 0,
 	RangedSkill = 0,
 	MeleeDefense = -50,
-	RangedDefense = 0,
+	RangedDefense = -10,
 	Initiative = 0,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
@@ -148,9 +148,9 @@ gt.Const.Tactical.Actor.Lindwurm <- {
 	Hitpoints = 1100,
 	Bravery = 180,
 	Stamina = 400,
-	MeleeSkill = 75,
+	MeleeSkill = 70,
 	RangedSkill = 0,
-	MeleeDefense = 10,
+	MeleeDefense = 5,
 	RangedDefense = -10,
 	Initiative = 80,
 	FatigueEffectMult = 1.0,
@@ -416,7 +416,7 @@ gt.Const.Tactical.Actor.SandGolem <- {
 gt.Const.Tactical.Actor.LegendSkinGhoul <- {
 	XP = 250,
 	ActionPoints = 12,
-	Hitpoints = 240,
+	Hitpoints = 210,
 	Bravery = 80,
 	Stamina = 130,
 	MeleeSkill = 80,
@@ -433,11 +433,11 @@ gt.Const.Tactical.Actor.LegendSkinGhoul <- {
 };
 gt.Const.Tactical.Actor.LegendWhiteDirewolf <- {
 	XP = 900,
-	ActionPoints = 16,
-	Hitpoints = 400,
+	ActionPoints = 14,
+	Hitpoints = 325,
 	Bravery = 150,
 	Stamina = 240,
-	MeleeSkill = 80,
+	MeleeSkill = 70,
 	RangedSkill = 0,
 	MeleeDefense = 20,
 	RangedDefense = 20,
@@ -472,7 +472,7 @@ gt.Const.Tactical.Actor.LegendWhiteWarwolf <- {
 gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 	XP = 600,
 	ActionPoints = 16,
-	Hitpoints = 250,
+	Hitpoints = 200,
 	Bravery = 120,
 	Stamina = 180,
 	MeleeSkill = 80,
@@ -491,7 +491,7 @@ gt.Const.Tactical.Actor.LegendRedbackSpider <- {
 gt.Const.Tactical.Actor.LegendRockUnhold <- {
 	XP = 1100,
 	ActionPoints = 12,
-	Hitpoints = 1000,
+	Hitpoints = 780,
 	Bravery = 250,
 	Stamina = 400,
 	MeleeSkill = 75,
@@ -510,7 +510,7 @@ gt.Const.Tactical.Actor.LegendRockUnhold <- {
 gt.Const.Tactical.Actor.LegendDemonAlp <- {
 	XP = 700,
 	ActionPoints = 12,
-	Hitpoints = 400,
+	Hitpoints = 210,
 	Bravery = 250,
 	Stamina = 150,
 	MeleeSkill = 75,
@@ -530,14 +530,14 @@ gt.Const.Tactical.Actor.LegendDemonAlp <- {
 gt.Const.Tactical.Actor.LegendStollwurm <- {
 	XP = 2000,
 	ActionPoints = 15,
-	Hitpoints = 2000,
+	Hitpoints = 1800,
 	Bravery = 180,
 	Stamina = 400,
 	MeleeSkill = 75,
 	RangedSkill = 0,
 	MeleeDefense = 20,
 	RangedDefense = 10,
-	Initiative = 50,
+	Initiative = 35,
 	FatigueEffectMult = 1.0,
 	MoraleEffectMult = 1.0,
 	FatigueRecoveryRate = 30,

@@ -134,8 +134,8 @@ this.ratcatcher_background <- this.inherit("scripts/skills/backgrounds/character
 				0
 			],
 			Initiative = [
-				18,
-				15
+				15,
+				18
 			]
 		};
 		return c;

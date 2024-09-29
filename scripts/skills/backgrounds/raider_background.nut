@@ -62,6 +62,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
+				this.Const.Perks.MediumArmorTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -141,32 +142,32 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 				0
 			],
 			Bravery = [
-				0,
-				-3
+				-3,
+				0
 			],
 			Stamina = [
-				2,
-				0
+				0,
+				2
 			],
 			MeleeSkill = [
-				12,
-				10
+				10,
+				12
 			],
 			RangedSkill = [
-				5,
-				0
+				0,
+				5
 			],
 			MeleeDefense = [
-				6,
-				5
+				5,
+				6
 			],
 			RangedDefense = [
-				6,
-				5
+				5,
+				6
 			],
 			Initiative = [
-				0,
-				0
+				10,
+				15
 			]
 		};
 		return c;

@@ -9,8 +9,8 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 		this.m.BackgroundDescription = "A miner will be used to physical labor, but breathing in the dusty air of the mines may have taken a toll on his health over the years.";
 		this.m.GoodEnding = "%name% the miner never did return to the mines, thankfully. If there\'s one life that could be worse than that of fighting for a living, it very well may be digging into mountains for a living! Apparently, the miner built a home by the sea, spending the rest of his days peacefully fishing for dinner and enjoying sunrises or some such sappy shite.";
 		this.m.BadEnding = "If there\'s one life that\'s more rough than that of being a sellsword, it is that of being a miner. Sadly, %name% returned to that life, going back into the mines to dig out metals and ores to fill some rich man\'s pockets. A recent earthquake collapsed many such mines. You\'re not sure if the ol\' brother survived, but it\'s looking pretty grim.";
-		this.m.HiringCost = 60;
-		this.m.DailyCost = 6;
+		this.m.HiringCost = 75;
+		this.m.DailyCost = 10;
 		this.m.Excluded = [
 			"trait.huge",
 			"trait.hate_undead",
@@ -78,9 +78,9 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 				this.Const.Perks.SturdyTree
 			],
 			Enemy = [
-					this.Const.Perks.OrcTree,
-					this.Const.Perks.UnholdTree
-					],
+				this.Const.Perks.OrcTree,
+				this.Const.Perks.UnholdTree
+			],
 			Class = [this.Const.Perks.PickaxeClassTree],
 			Magic = []
 		}
@@ -101,16 +101,16 @@ this.miner_background <- this.inherit("scripts/skills/backgrounds/character_back
 				10
 			],
 			Bravery = [
-				5,
-				8
+				2,
+				5
 			],
 			Stamina = [
-				-10,
-				-10
+				-14,
+				-8
 			],
 			MeleeSkill = [
-				5,
-				10
+				3,
+				7
 			],
 			RangedSkill = [
 				0,

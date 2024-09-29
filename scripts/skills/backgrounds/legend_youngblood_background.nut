@@ -81,6 +81,7 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 				this.Const.Perks.DaggerTree
 			],
 			Defense = [
+				this.Const.Perks.ClothArmorTree
 				this.Const.Perks.LightArmorTree
 			],
 			Traits = [
@@ -154,8 +155,8 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 				4
 			],
 			Bravery = [
-				5,
-				10
+				10,
+				15
 			],
 			Stamina = [
 				5,
@@ -166,20 +167,20 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 				3
 			],
 			RangedSkill = [
-				10,
-				5
+				5,
+				10
 			],
 			MeleeDefense = [
-				4,
-				0
+				0,
+				4
 			],
 			RangedDefense = [
-				4,
-				0
+				0,
+				4
 			],
 			Initiative = [
-				8,
-				5
+				5,
+				8
 			]
 		};
 		return c;

@@ -27,11 +27,10 @@ this.winery_location <- this.inherit("scripts/entity/world/attached_location", {
 		_list.push("brawler_background");
 		_list.push("caravan_hand_background");
 
-		if (_gender)
-		{
-		_list.push("legend_nun_background");
-
-		}
+		// if (_gender)
+		// {
+		// 	_list.push("legend_nun_background");
+		// }
 
 	}
 

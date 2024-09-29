@@ -54,7 +54,7 @@ this.small_tundra_village <- this.inherit("scripts/entity/world/settlement", {
 			"shepherd_background",
 			"tailor_background",
 			"vagabond_background",
-			"wildwoman_background",
+			// "wildwoman_background",
 			"wildman_background",
 						"brawler_background",
 			"female_daytaler_background",

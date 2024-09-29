@@ -144,7 +144,7 @@ this.wildman_testing_money_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if ((bro.getBackground().getID() == "background.wildman" || bro.getBackground().getID() == "background.wildwoman") && !bro.getFlags().get("IsConceptionOfMoneyTested"))
+			if (bro.getBackground().getID() == "background.wildman" && !bro.getFlags().get("IsConceptionOfMoneyTested"))
 			{
 				candidates.push(bro);
 			}

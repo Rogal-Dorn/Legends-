@@ -60,7 +60,7 @@ this.small_coast_fort <- this.inherit("scripts/entity/world/settlement", {
 			"militia_background",
 			"ratcatcher_background",
 			"witchhunter_background",
-			"female_adventurous_noble_background",
+			// "female_adventurous_noble_background",
 			"bastard_background",
 			"deserter_background",
 			"raider_background",

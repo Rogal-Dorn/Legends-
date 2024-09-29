@@ -584,7 +584,7 @@ this.hedgeknight_vs_hedgeknight_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_other.push(bro);
 
-				if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+				if (bro.getBackground().getID() == "background.monk")
 				{
 					candidates_monk.push(bro);
 				}

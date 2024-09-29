@@ -210,8 +210,8 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				8
 			],
 			MeleeDefense = [
-				12,
-				8
+				8,
+				12
 			],
 			RangedDefense = [
 				8,

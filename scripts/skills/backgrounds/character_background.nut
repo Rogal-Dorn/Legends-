@@ -98,10 +98,20 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			Magic = 1,
 			MagicChance = 0.001
 		},
-		PerkTreeDynamic = {
-			Weapon = [],
-			Defense = [],
-			Traits = [],
+		PerkTreeDynamic = { //ALL recruits get these perks as base
+			Weapon = [
+				this.Const.Perks.SwordTree,
+				this.Const.Perks.SpearTree,
+				this.Const.Perks.MaceTree
+			],
+			Defense = [
+				this.Const.Perks.MediumArmorTree
+			],
+			Traits = [
+				this.Const.Perks.FitTree,
+				this.Const.Perks.FastTree,
+				this.Const.Perks.AgileTree
+			],
 			Enemy = [],
 			Class = [],
 			Magic = []
@@ -1086,23 +1096,97 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 			a = {
 				Hitpoints = [
 					65,
-					75
+					65
 				],
 				Bravery = [
-					30,
-					40
+					100,
+					100
 				],
 				Stamina = [
-					90,
+					100,
 					100
 				],
 				MeleeSkill = [
-					42,
-					52
+					40,
+					40
 				],
 				RangedSkill = [
-					27,
-					37
+					20,
+					20
+				],
+				MeleeDefense = [
+					-5,
+					-5
+				],
+				RangedDefense = [
+					-6,
+					-6
+				],
+				Initiative = [
+					65,
+					65
+				]
+			};
+		}
+		else if (_tag == "skeleton")
+		{
+			a = {
+				Hitpoints = [
+					40,
+					40
+				],
+				Bravery = [
+					100,
+					100
+				],
+				Stamina = [
+					100,
+					100
+				],
+				MeleeSkill = [
+					50,
+					50
+				],
+				RangedSkill = [
+					40,
+					40
+				],
+				MeleeDefense = [
+					3,
+					3
+				],
+				RangedDefense = [
+					5,
+					5
+				],
+				Initiative = [
+					95,
+					95
+				]
+			};
+		}
+		else //human bro
+		{
+			a = {
+				Hitpoints = [
+					50,
+					50
+				],
+				Bravery = [
+					40,
+					40
+				],
+				Stamina = [
+					100,
+					100
+				],
+				MeleeSkill = [
+					50,
+					50
+				],
+				RangedSkill = [
+					40,
+					40
 				],
 				MeleeDefense = [
 					0,
@@ -1114,81 +1198,7 @@ this.character_background <- this.inherit("scripts/skills/skill", {
 				],
 				Initiative = [
 					85,
-					95
-				]
-			};
-		}
-		else if (_tag == "skeleton")
-		{
-			a = {
-				Hitpoints = [
-					50,
-					60
-				],
-				Bravery = [
-					30,
-					40
-				],
-				Stamina = [
-					90,
-					100
-				],
-				MeleeSkill = [
-					42,
-					52
-				],
-				RangedSkill = [
-					27,
-					37
-				],
-				MeleeDefense = [
-					0,
-					5
-				],
-				RangedDefense = [
-					0,
-					5
-				],
-				Initiative = [
-					90,
-					100
-				]
-			};
-		}
-		else
-		{
-			a = {
-				Hitpoints = [
-					50,
-					60
-				],
-				Bravery = [
-					30,
-					40
-				],
-				Stamina = [
-					90,
-					100
-				],
-				MeleeSkill = [
-					47,
-					57
-				],
-				RangedSkill = [
-					32,
-					42
-				],
-				MeleeDefense = [
-					0,
-					5
-				],
-				RangedDefense = [
-					0,
-					5
-				],
-				Initiative = [
-					100,
-					110
+					85
 				]
 			};
 		}

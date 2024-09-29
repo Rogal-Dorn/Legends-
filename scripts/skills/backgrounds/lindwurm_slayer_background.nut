@@ -144,28 +144,28 @@ this.lindwurm_slayer_background <- this.inherit("scripts/skills/backgrounds/char
 	{
 		local c = {
 			Hitpoints = [
-				18,
-				14
+				14,
+				18
 			],
 			Bravery = [
-				12,
-				10
+				10,
+				12
 			],
 			Stamina = [
-				12,
-				6
+				6,
+				12
 			],
 			MeleeSkill = [
 				11,
 				11
 			],
 			RangedSkill = [
-				10,
-				8
+				8,
+				10
 			],
 			MeleeDefense = [
-				7,
-				5
+				5,
+				7
 			],
 			RangedDefense = [
 				-3,

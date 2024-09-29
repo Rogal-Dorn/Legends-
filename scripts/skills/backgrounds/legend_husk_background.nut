@@ -147,12 +147,12 @@ this.legend_husk_background <- this.inherit("scripts/skills/backgrounds/characte
 				14
 			],
 			Bravery = [
-				-5,
-				-8
+				-8,
+				-5
 			],
 			Stamina = [
-				15,
-				10
+				10,
+				15
 			],
 			MeleeSkill = [
 				10,

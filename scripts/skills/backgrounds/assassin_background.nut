@@ -53,7 +53,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,
-			this.Const.Attributes.Fatigue,
 			this.Const.Attributes.RangedDefense,
 			this.Const.Attributes.Bravery
 		];
@@ -71,7 +70,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.HairColors = this.Const.HairColors.Young;
 		this.m.Beards = this.Const.Beards.All;
 		this.m.Bodies = this.Const.Bodies.Skinny;
-		this.m.Level = 5;
+		this.m.Level = this.Math.rand(2, 5);
 		this.m.BackgroundType = this.Const.BackgroundType.Outlaw | this.Const.BackgroundType.Untalented | this.Const.BackgroundType.Combat | this.Const.BackgroundType.Ranger;
 		this.m.Modifiers.Scout = this.Const.LegendMod.ResourceModifiers.Scout[3];
 		this.m.Modifiers.Training = this.Const.LegendMod.ResourceModifiers.Training[1];
@@ -80,25 +79,28 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.DaggerTree,
 				this.Const.Perks.PolearmTree,
-				this.Const.Perks.BowTree,
+				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
+				this.Const.Perks.ClothArmorTree
 			],
 			Traits = [
 				this.Const.Perks.FitTree,
 				this.Const.Perks.CalmTree,
-				this.Const.Perks.LargeTree,
+				this.Const.Perks.AgileTree,
 				this.Const.Perks.ViciousTree
 			],
 			Enemy = [
-					this.Const.Perks.SwordmastersTree,
-					this.Const.Perks.NoblesTree,
-					this.Const.Perks.MercenaryTree
-					],
-			Class = [], //this.Const.Perks.FistsClassTree
-			Magic = [this.Const.Perks.AssassinMagicTree]
+				this.Const.Perks.SwordmastersTree,
+				this.Const.Perks.NoblesTree,
+				this.Const.Perks.MercenaryTree
+			],
+			Class = [],
+			Magic = [
+				this.Const.Perks.AssassinMagicTree
+			]
 		}
 	}
 
@@ -118,6 +120,20 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 		this.addBackgroundType(this.Const.BackgroundType.Female);
 	}
 
+	function getTooltip()
+	{
+		local ret = this.character_background.getTooltip()
+		ret.push(
+			{
+				id = 11,
+				type = "text",
+				icon = "ui/icons/chance_to_hit_head.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] Chance To Hit Head"
+			}
+		)
+		return ret
+	}
+
 	function onBuildDescription()
 	{
 		return "{%name% likes %their% hoods and loose robes, as %they% walks you can make out a barely audible jingle under %their% coat. | %name% occasionally ducks into alleyways, bushes and dark doorways to exchange items with another figure in a flurry of hands as a predator would stash a fresh kill.} {Although shockingly average, %they% is much quieter than the other recruits you have had the displeasure of meeting. | %name% naturally gravitates to dark corners as rats would to grain and insists that %they% is very famous in certain circles, however %they% quickly changes the subject when you ask %them% for details.} {%They% is often lost in the maddening throng of the towns and hamlets dotted around the countryside - never have you met such an average looking mercenary who also doesn’t hesitate to slit the throat of the nearest man if it would so benefit %them%, even if %they% does grumble when travelling during daylight.}";
@@ -127,8 +143,8 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		local c = {
 			Hitpoints = [
-				-5,
-				-5
+				-3,
+				-0
 			],
 			Bravery = [
 				10,
@@ -139,12 +155,12 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 				-5
 			],
 			MeleeSkill = [
-				12,
-				10
+				10,
+				12
 			],
 			RangedSkill = [
-				0,
-				0
+				5,
+				5
 			],
 			MeleeDefense = [
 				5,
@@ -156,7 +172,7 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 			],
 			Initiative = [
 				20,
-				15
+				30
 			]
 		};
 		return c;
@@ -193,7 +209,6 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		//this.m.Container.add(this.new("scripts/skills/perks/perk_legend_hidden"));
 		this.m.Container.add(this.new("scripts/skills/traits/quick_trait"));
 	}
 
@@ -224,6 +239,12 @@ this.assassin_background <- this.inherit("scripts/skills/backgrounds/character_b
 	{
 		this.character_background.onDeserialize(_in);
 		this.m.Tattoo = _in.readU8();
+	}
+
+	function onUpdate( _properties )
+	{
+		this.character_background.onUpdate(_properties);
+		_properties.HitChance[this.Const.BodyPart.Head] += 10;
 	}
 
 });

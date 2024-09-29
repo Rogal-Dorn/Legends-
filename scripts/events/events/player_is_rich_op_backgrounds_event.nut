@@ -286,7 +286,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 				case "background.legend_witch":
 				case "background.legend_trader":
 				case "background.legend_ranger":
-				case "background.legend_noble_event":
+				case "background.regent_in_absentia":
 					candidate_opbackground.push(bro);			
 					break;
 				default:

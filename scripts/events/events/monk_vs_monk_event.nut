@@ -209,7 +209,7 @@ this.monk_vs_monk_event <- this.inherit("scripts/events/event", {
 				continue;
 			}
 
-			if (bro.getBackground().getID() == "background.monk" || bro.getBackground().getID() == "background.legend_nun")
+			if (bro.getBackground().getID() == "background.monk")
 			{
 				monk_candidates.push(bro);
 			}

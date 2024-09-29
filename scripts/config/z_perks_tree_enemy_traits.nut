@@ -10,20 +10,20 @@ gt.Const.Perks.ShadyTree <- {
 	Name =  "Shady",
 	Attributes = {
 		Hitpoints = [
-			-3,
-			-1
+			0,
+			0
 		],
 		Bravery = [
-			-5,
-			-2
+			0,
+			0
 		],
 		Stamina = [
 			0,
 			0
 		],
 		MeleeSkill = [
-			1,
-			4
+			0,
+			0
 		],
 		RangedSkill = [
 			0,
@@ -38,8 +38,8 @@ gt.Const.Perks.ShadyTree <- {
 			0
 		],
 		Initiative = [
-			2,
-			5
+			0,
+			0
 		]
 	},
 	Tree = [
@@ -66,28 +66,28 @@ gt.Const.Perks.AggressiveTree <- {
 			0
 		],
 		Bravery = [
-			1,
-			5
+			0,
+			0
 		],
 		Stamina = [
 			0,
 			0
 		],
 		MeleeSkill = [
-			2,
-			6
+			0,
+			0
 		],
 		RangedSkill = [
 			0,
 			0
 		],
 		MeleeDefense = [
-			-7,
-			-4
+			0,
+			0
 		],
 		RangedDefense = [
-			-7,
-			-4
+			0,
+			0
 		],
 		Initiative = [
 			0,
@@ -114,16 +114,16 @@ gt.Const.Perks.SparringTree <- {
 	Name =  "Sparring",
 	Attributes = {
 		Hitpoints = [
-			1,
-			3
+			0,
+			0
 		],
 		Bravery = [
 			0,
 			0
 		],
 		Stamina = [
-			1,
-			4
+			0,
+			0
 		],
 		MeleeSkill = [
 			0,
@@ -134,12 +134,12 @@ gt.Const.Perks.SparringTree <- {
 			0
 		],
 		MeleeDefense = [
-			2,
-			4
+			0,
+			0
 		],
 		RangedDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		Initiative = [
 			0,
@@ -166,16 +166,16 @@ gt.Const.Perks.RangerTree <- {
 	Name =  "Ranger",
 	Attributes = {
 		Hitpoints = [
-			-6,
-			-2
+			0,
+			0
 		],
 		Bravery = [
-			-3,
-			1
+			0,
+			0
 		],
 		Stamina = [
 			0,
-			2
+			0
 		],
 		MeleeSkill = [
 			0,
@@ -183,15 +183,15 @@ gt.Const.Perks.RangerTree <- {
 		],
 		RangedSkill = [
 			0,
-			3
+			0
 		],
 		MeleeDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		RangedDefense = [
-			1,
-			5
+			0,
+			0
 		],
 		Initiative = [
 			0,
@@ -220,8 +220,8 @@ gt.Const.Perks.GiantTree <- {
 	Name =  "Giant",
 	Attributes = {
 		Hitpoints = [
-			2,
-			4
+			0,
+			0
 		],
 		Bravery = [
 			0,
@@ -229,7 +229,7 @@ gt.Const.Perks.GiantTree <- {
 		],
 		Stamina = [
 			0,
-			2
+			0
 		],
 		MeleeSkill = [
 			0,
@@ -240,16 +240,16 @@ gt.Const.Perks.GiantTree <- {
 			0
 		],
 		MeleeDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		RangedDefense = [
-			-4,
-			-2
+			0,
+			0
 		],
 		Initiative = [
-			-5,
-			-1
+			0,
+			0
 		]
 	},
 	Tree = [

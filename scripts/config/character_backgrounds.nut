@@ -5,9 +5,9 @@ gt.Const.CharacterBackgrounds <- [
 	"farmhand_background",
 	"farmhand_background",
 	"disowned_noble_background",
-	"female_disowned_noble_background",
+	// "female_disowned_noble_background",
 	"adventurous_noble_background",
-	"female_adventurous_noble_background",
+	// "female_adventurous_noble_background",
 	"monk_background",
 	"juggler_background",
 	"sellsword_background",
@@ -95,18 +95,18 @@ gt.Const.CharacterPiracyBackgrounds <- [
 ];
 gt.Const.CharacterVeteranBackgrounds <- [
 	"disowned_noble_background",
-	"female_disowned_noble_background",
+	// "female_disowned_noble_background",
 	"adventurous_noble_background",
-	"female_adventurous_noble_background",
+	// "female_adventurous_noble_background",
 	"sellsword_background",
 	"bastard_background",
 	"raider_background"
 ];
 gt.Const.CharacterCombatBackgrounds <- [
 	"disowned_noble_background",
-	"female_disowned_noble_background",
+	// "female_disowned_noble_background",
 	"adventurous_noble_background",
-	"female_adventurous_noble_background",
+	// "female_adventurous_noble_background",
 	"retired_soldier_background",
 	"swordmaster_background",
 	"sellsword_background",
@@ -125,9 +125,9 @@ gt.Const.CharacterCombatBackgrounds <- [
 ];
 gt.Const.CharacterUndeadBackgrounds <- [
 	"disowned_noble_background",
-	"female_disowned_noble_background",
+	// "female_disowned_noble_background",
 	"adventurous_noble_background",
-	"female_adventurous_noble_background",
+	// "female_adventurous_noble_background",
 	"retired_soldier_background",
 	"swordmaster_background",
 	"sellsword_background",
@@ -167,8 +167,8 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"disowned_noble_background",
 	"eunuch_background",
 	"farmhand_background",
-	"female_adventurous_noble_background",
-	"female_disowned_noble_background",
+	// "female_adventurous_noble_background",
+	// "female_disowned_noble_background",
 	"fisherman_background",
 	"flagellant_background",
 	"gambler_background",
@@ -183,7 +183,7 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"legend_herbalist_background",
 	"legend_inventor_background",
 	"legend_ironmonger_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_taxidermist_background",
 	"lumberjack_background",
 	"mason_background",
@@ -213,16 +213,18 @@ gt.Const.CharacterBackgroundsAnimated <- [
 gt.Const.CharacterFemaleBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"legend_witch_background",
-	"female_adventurous_noble_background",
-	"female_disowned_noble_background",
-	"legend_nun_background"
+	// "female_adventurous_noble_background",
+	// "female_disowned_noble_background",
+	// "legend_nun_background"
 ];
 gt.Const.SupposedWitchBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"legend_vala_background",
-	"female_adventurous_noble_background",
-	"female_disowned_noble_background",
-	"legend_nun_background"
+	"adventurous_noble_background", // the event calls for females
+	"disowned_noble_background", // the event calls for females
+	// "female_adventurous_noble_background",
+	// "female_disowned_noble_background",
+	"legend_monk_background"
 ];
 gt.Const.CharacterPartyBackgrounds <- [
 	"legend_diviner_background",
@@ -240,8 +242,7 @@ gt.Const.CharacterPartyBackgrounds <- [
 	"legend_master_archer_background",
 	"legend_berserker_background",
 	"legend_necrosavant_background",
-	"legend_noble_event_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_shieldmaiden_background",
 	"assassin_background",
 	"legend_crusader_background",
@@ -284,8 +285,8 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"disowned_noble_background",
 	"eunuch_background",
 	"farmhand_background",
-	"female_adventurous_noble_background",
-	"female_disowned_noble_background",
+	// "female_adventurous_noble_background",
+	// "female_disowned_noble_background",
 	"thief_background",
 	"fisherman_background",
 	"fisherman_southern_background",
@@ -304,7 +305,6 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_berserker_background",
 	"legend_blacksmith_background",
 	"legend_donkey_background",
-	"legend_noble_background",
 	"legend_noble_ranged",
 	"legend_noble_2h",
 	"legend_noble_shield",
@@ -315,7 +315,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_herbalist_background",
 	"legend_inventor_background",
 	"legend_ironmonger_background",
-	"legend_nun_background",
+	// "legend_nun_background",
 	"legend_taxidermist_background",
 	// "legend_necro_background",
 	"lumberjack_background",
@@ -340,7 +340,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"tailor_background",
 	"vagabond_background",
 	"wildman_background",
-	"wildwoman_background",
+	// "wildwoman_background",
 	"witchhunter_background",
 	// "legend_diviner_background",
 	// "legend_illusionist_background",
@@ -354,7 +354,6 @@ gt.Const.CharacterBackgroundsRandom <- [
 	// "legend_ancient_summoner_background",
 	"legend_master_archer_background",
 	// "legend_necrosavant_background",
-	// "legend_noble_event_background",
 	// "legend_conjurer_background",
 	"slave_background",
 	"slave_southern_background",

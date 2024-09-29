@@ -271,8 +271,7 @@ this.disowned_noble_welcomed_back_event <- this.inherit("scripts/events/event", 
 
 		foreach( bro in brothers )
 		{
-			// if (bro.getBackground().getID() == "background.disowned_noble" && bro.getLevel() >= 6)
-			if (bro.getBackground().getID() == "background.disowned_noble" || bro.getBackground().getID() == "background.female_disowned_noble" && bro.getLevel() >= 6) //grater than lvl 6 on these backgrounds to trigger
+			if (bro.getBackground().getID() == "background.disowned_noble" && bro.getLevel() >= 6) //greater than lvl 6 on these backgrounds to trigger
 			{
 				disowned_candidates.push(bro);
 			}
