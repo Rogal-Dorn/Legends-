@@ -129,11 +129,10 @@ this.legend_vala_chant_senses <- this.inherit("scripts/skills/skill", {
 	}
 
 	function onDeath( _fatalityType )
-	{
-		if (!this.Tactical.State.isActive())
-			{
-				return;
-			}
+	{	
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+			return;
+
 		this.endChant();
 	}
 
