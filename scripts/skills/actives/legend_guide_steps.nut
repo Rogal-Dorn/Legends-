@@ -70,7 +70,7 @@ this.legend_guide_steps <- this.inherit("scripts/skills/skill", {
 				continue;
 			}
 
-			if (myTile.getDistanceTo(a.getTile()) > 40)
+			if (myTile.getDistanceTo(a.getTile()) > 4)
 			{
 				continue;
 			}
