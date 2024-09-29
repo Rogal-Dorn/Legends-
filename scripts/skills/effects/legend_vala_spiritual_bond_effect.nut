@@ -1,7 +1,7 @@
 this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		Vala = null,
-		ResolveAtCheck = null,
+		ResolveAtCheck = 0,
 	},
 	function setVala(_v)
 	{
@@ -40,7 +40,7 @@ this.legend_vala_spiritual_bond_effect <- this.inherit("scripts/skills/skill", {
 
 	function onBeforeDamageReceived( _attacker, _skill, _hitInfo, _properties )
 	{
-		this.m.ResolveAtCheck = null;
+		this.m.ResolveAtCheck = 0;
 
 		if (!this.isValid(_attacker, _skill))
 			return;

@@ -224,14 +224,6 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 							rune.setRuneVariant(0);
 							rune.drop(_tile);
 						}
-						else
-						{
-							local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
-							token.setRuneVariant(this.Math.rand(21, 22));
-							token.setRuneBonus(true);
-							token.updateRuneSigilToken();
-							token.drop(_tile);
-						}
 
 						if (this.Math.rand(1, 100) <= chance)
 						{
@@ -322,6 +314,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 	{
 		if (this.m.Tail != null && !this.m.Tail.isNull() && this.m.Tail.isAlive())
 		{
+			this.m.Tail.m.IsAlive = false;
 			this.m.Tail.die();
 			this.m.Tail = null;
 		}
@@ -336,6 +329,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 		b.setValues(this.Const.Tactical.Actor.LegendStollwurm);
 		b.IsAffectedByNight = false;
 		b.IsMovable = false;
+		b.IsImmuneToRoot = true;
 		b.IsImmuneToDisarm = true;
 		b.IsAffectedByRain = false;
 

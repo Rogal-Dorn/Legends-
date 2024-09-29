@@ -156,6 +156,10 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 							}
 
 						});
+
+						if (_event.m.Champion.isInReserves())
+							_event.m.Champion.setInReserves(false);
+
 						properties.Players.push(_event.m.Champion);
 						properties.IsUsingSetPlayers = true;
 						properties.IsFleeingProhibited = true;
@@ -258,6 +262,9 @@ this.legend_swordmaster_fav_enemy_event <- this.inherit("scripts/events/event", 
 
 							});
 						}
+
+						if (_event.m.Champion.isInReserves())
+							_event.m.Champion.setInReserves(false);
 
 						properties.Players.push(_event.m.Champion);
 						properties.IsUsingSetPlayers = true;
