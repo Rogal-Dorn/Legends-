@@ -163,7 +163,7 @@ this.bandit_rabble <- this.inherit("scripts/entity/tactical/randomized_unit_abst
 	// 		this.m.Items.equip(this.new("scripts/items/weapons/wooden_stick"));
 	// 			if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	// 			{
-	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_onslaught"));
+	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
 	// 				//this.m.Items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));

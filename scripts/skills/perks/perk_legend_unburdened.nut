@@ -26,4 +26,5 @@ this.perk_legend_unburdened <- this.inherit("scripts/skills/skill", {
 	{
 		this.m.Container.removeByID("actives.unburdened_footwork");
 	}
+  
 });

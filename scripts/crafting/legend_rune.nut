@@ -21,6 +21,12 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 			}
 		];
 		this.init(ingredients);
+		local skills = [
+			{
+				Scripts = ["scripts/skills/backgrounds/legend_vala_background"]
+			}
+		]
+		this.initSkills(skills);
 	}
 
 	function isUpgraded()
@@ -115,19 +121,6 @@ this.legend_rune <- this.inherit("scripts/crafting/blueprint", {
 				return "This item is inscribed with a rune sigil, even though it shouldn't have been: please report this bug.";
 				break;
 		}
-	}
-
-	function isCraftable()
-	{
-		local roster = this.World.getPlayerRoster().getAll();
-		foreach( bro in roster )
-		{
-			if (bro.getSkills().hasSkill(this.m.Skill))
-			{
-				return true
-			}
-		}
-		return false;
 	}
 
 	function onEnchant( _stash, _bonus )
