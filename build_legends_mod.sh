@@ -71,6 +71,8 @@ while read -r line; do
         :
     elif [ "$line" == "scripts/entity/tactical/actor.nut" ]; then
         :
+    elif [ "$line" == "scripts/skills/skill.nut" ]; then
+        :
     elif [ "$line" == "scripts/skills/skill_container.nut" ]; then
         :
     elif [ "$line" == "scripts/entity/tactical/tactical_entity_manager.nut" ]; then
