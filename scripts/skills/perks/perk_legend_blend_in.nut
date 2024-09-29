@@ -1,5 +1,6 @@
 this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 	m = {},
+
 	function create()
 	{
 		this.m.ID = "perk.legend_blend_in";
@@ -24,4 +25,5 @@ this.perk_legend_blend_in <- this.inherit("scripts/skills/skill", {
 	{
 		this.getContainer().removeByID("effects.legend_blend_in");
 	}
+  
 });

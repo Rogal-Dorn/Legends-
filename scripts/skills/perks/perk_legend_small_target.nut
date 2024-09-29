@@ -3,6 +3,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		BonusMin = 0,
 		BonusUnburdenedMin = 30,
 		bonusPercentage = 1.0
+
 	},
 	function create()
 	{
