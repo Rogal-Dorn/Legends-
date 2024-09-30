@@ -259,7 +259,8 @@ gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_crossbow",
 	"weapons/named/named_javelin",
 	"weapons/named/named_throwing_axe",
-	"weapons/named/named_warbow"
+	"weapons/named/named_warbow",
+	"weapons/named/named_northern_sling"
 ];
 gt.Const.Items.NamedWeapons <- clone this.Const.Items.NamedMeleeWeapons;
 gt.Const.Items.NamedWeapons.extend(this.Const.Items.NamedRangedWeapons);
