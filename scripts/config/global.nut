@@ -443,11 +443,12 @@ gt.Const.EntityType <- {
 	LegendNobleGuard = 168,
 	LegendManAtArms = 169,
 	LegendBasiliskDrone = 170,
+	LegendBasiliskDroneLow = 171,
 
-	LegendCaravanPolearm = 171,
-	NobleEliteFootman = 172,
-	NoblePollax = 173,
-	NobleSureshot = 174
+	LegendCaravanPolearm = 172,
+	NobleEliteFootman = 173,
+	NoblePollax = 174,
+	NobleSureshot = 175
 	
 		/**
 	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
@@ -777,6 +778,7 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendWhiteWarwolf:
 		case this.Const.EntityType.LegendBear:
 		case this.Const.EntityType.LegendBasiliskDrone:
+		case this.Const.EntityType.LegendBasiliskDroneLow:
 			return this.Const.FactionType.Beasts;
 
 		case this.Const.EntityType.Wildman:
