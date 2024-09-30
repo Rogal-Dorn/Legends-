@@ -43,7 +43,7 @@ this.named_flail <- this.inherit("scripts/items/weapons/named/named_weapon", {
 				id = 12,
 				type = "text",
 				icon = "ui/icons/armor_head.png",
-				text = "Applies [color=" + this.Const.UI.Color.PositiveValue + "]Daze[/color] to Targets Hit"
+				text = "Has a [color=" + this.Const.UI.Color.NegativeValue + "]100%[/color] chance to daze a target on a hit to the head"
 			});
 		}
 		return result;

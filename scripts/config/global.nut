@@ -779,6 +779,7 @@ gt.Const.EntityType <- {
 		case this.Const.EntityType.LegendBear:
 		case this.Const.EntityType.LegendBasiliskDrone:
 		case this.Const.EntityType.LegendBasiliskDroneLow:
+		case this.Const.EntityType.LegendBasiliskSentry:
 			return this.Const.FactionType.Beasts;
 
 		case this.Const.EntityType.Wildman:

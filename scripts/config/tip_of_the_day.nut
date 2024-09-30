@@ -42,7 +42,7 @@ gt.Const.TipOfTheDay <- [
 	"Use \'CTRL\' + \'Left Click\' to attack allied parties on the worldmap. This only works if you are currently unemployed.",
 	"Stunned characters get no attack of opportunity when someone moves inside their zone of control.",
 	"Try playing a campaign in legendary mode once you\'ve gained some experience - it\'s the recommended difficulty.",
-	"The minimum hit chance for any attack is 5%, and the maximum hit chance for any attack is 95%.",
+	"The minimum hit chance for any attack is 5%, and the maximum hit chance for any attack is 95%. You can change this in mod options",
 	"Characters may sometimes be struck down during combat, but not outright killed, and will survive with a permanent injury.",
 	"If an opponent has better ranged skills than you, try attacking at night.",
 	"Forests, swamps, and mountains can be used to create choke points to defend against greater numbers.",
