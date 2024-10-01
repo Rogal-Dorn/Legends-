@@ -35,6 +35,8 @@ cp -R sounds/. "$BBDir\\sounds"
 handleExit
 echo "Copying gfx to $BBDir\\gfx ..."
 cp -R gfx/. "$BBDir\\gfx"
+echo "Copying mod_legends to $BBDir\\mod_legends ..."
+cp -R mod_legends/. "$BBDir\\mod_legends"
 handleExit
 echo "Copying mod script files to $BBDir\\scripts ..."
 FILES=$(git diff --name-only `git merge-base origin/master HEAD` | grep '.nut\|.txt\|.css\|.js\|.html')
@@ -142,6 +144,7 @@ done <<< "$FILES"
 echo "Compiling all nut files ..."
 cd ../bin
 o=$(./masscompile.bat "$BBDir\\scripts")
+o=$(./masscompile.bat "$BBDir\\mod_legends")
 cd ../"$RepoDir"
 
 checkForCompileError "$o"
