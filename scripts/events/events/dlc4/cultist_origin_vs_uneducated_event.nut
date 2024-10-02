@@ -146,23 +146,26 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 			switch (true)
 			{
 				case bro.getFlags().get("IsSpecial"):
-					continue;
 				case bro.getFlags().get("IsPlayerCharacter"):
 					continue;
-				case bro.getBackground().getID() != "background.legend_commander_berserker":
-					continue;
-				case bro.getBackground().getID() != "background.legend_berserker":
-					continue;
-				case bro.getBackground().getID() != "background.legend_donkey":
-					continue;
-				case bro.getBackground().isCultist():
-					cultist_candidates.push(bro);
+				case bro.getBackground().getID() == "background.slave":
+				case bro.getBackground().getID() == "background.legend_commander_berserker":
+				case bro.getBackground().getID() == "background.legend_berserker":
+				case bro.getBackground().getID() == "background.legend_donkey":
 				case bro.getSkills().hasSkill("trait.bright"):
 					continue;
+				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist):
+				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist):
+				{
+					cultist_candidates.push(bro);
+					continue;
+				}
 				case bro.getSkills().hasSkill("trait.dumb"):
-					uneducated_candidates.push(bro);
 				case bro.getSkills().hasSkill("injury.brain_damage"):
+				{
 					uneducated_candidates.push(bro);
+					continue;
+				}
 
 				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble):
 					continue;

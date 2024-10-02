@@ -160,6 +160,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 			{
 				case bro.getFlags().get("IsSpecial"):
 				case bro.getFlags().get("IsPlayerCharacter"):
+					continue;
 				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist):
 				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Cultist):
 				{
@@ -180,7 +181,7 @@ this.cultist_vs_uneducated_event <- this.inherit("scripts/events/event", {
 				}
 
 				case bro.getBackground().isBackgroundType(this.Const.BackgroundType.Noble):
-					continue;					
+					continue;
 			}
 			uneducated_candidates.push(bro);
 		}
