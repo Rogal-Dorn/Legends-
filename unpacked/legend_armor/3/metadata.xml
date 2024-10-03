@@ -1,4 +1,32 @@
 <brush name="gfx/legend_armor_3.png" version="17">
+<sprite id="bust_cloak_33" offsetY="35" f="64FE" ic="FF243572" width="104" height="142" img="..\entity\legend_armor\bust_cloak_33.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_34" offsetY="35" f="64FE" ic="FF243573" width="104" height="142" img="..\entity\legend_armor\bust_cloak_34.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_08_damaged" offsetY="35" f="64FE" ic="FF243574" width="104" height="142" img="..\entity\legend_armor\bust_cloak_08_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_09_damaged" offsetY="35" f="64FE" ic="FF243575" width="104" height="142" img="..\entity\legend_armor\bust_cloak_09_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_10_damaged" offsetY="35" f="64FE" ic="FF243576" width="104" height="142" img="..\entity\legend_armor\bust_cloak_10_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_11_damaged" offsetY="35" f="64FE" ic="FF243577" width="104" height="142" img="..\entity\legend_armor\bust_cloak_11_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_12_damaged" offsetY="35" f="64FE" ic="FF243578" width="104" height="142" img="..\entity\legend_armor\bust_cloak_12_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_13_damaged" offsetY="35" f="64FE" ic="FF243579" width="104" height="142" img="..\entity\legend_armor\bust_cloak_13_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_14_damaged" offsetY="35" f="64FE" ic="FF24357A" width="104" height="142" img="..\entity\legend_armor\bust_cloak_14_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_21_damaged" offsetY="35" f="64FE" ic="FF24357B" width="104" height="142" img="..\entity\legend_armor\bust_cloak_21_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_22_damaged" offsetY="35" f="64FE" ic="FF24357C" width="104" height="142" img="..\entity\legend_armor\bust_cloak_22_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_23_damaged" offsetY="35" f="64FE" ic="FF24357D" width="104" height="142" img="..\entity\legend_armor\bust_cloak_23_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_32_damaged" offsetY="35" f="64FE" ic="FF24357E" width="104" height="142" img="..\entity\legend_armor\bust_cloak_32_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_33_damaged" offsetY="35" f="64FE" ic="FF24357F" width="104" height="142" img="..\entity\legend_armor\bust_cloak_33_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_34_damaged" offsetY="35" f="64FE" ic="FF243580" width="104" height="142" img="..\entity\legend_armor\bust_cloak_34_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_08_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243581" width="131" height="125" img="..\entity\legend_armor\bust_cloak_08_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_09_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243582" width="131" height="125" img="..\entity\legend_armor\bust_cloak_09_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243583" width="131" height="125" img="..\entity\legend_armor\bust_cloak_10_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_11_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243584" width="131" height="125" img="..\entity\legend_armor\bust_cloak_11_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_12_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243585" width="131" height="125" img="..\entity\legend_armor\bust_cloak_12_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_13_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243586" width="131" height="125" img="..\entity\legend_armor\bust_cloak_13_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_14_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243587" width="131" height="125" img="..\entity\legend_armor\bust_cloak_14_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_21_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243588" width="131" height="125" img="..\entity\legend_armor\bust_cloak_21_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_22_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243589" width="131" height="125" img="..\entity\legend_armor\bust_cloak_22_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_23_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358A" width="131" height="125" img="..\entity\legend_armor\bust_cloak_23_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_32_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_32_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_33_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358C" width="131" height="125" img="..\entity\legend_armor\bust_cloak_33_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_34_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358D" width="131" height="125" img="..\entity\legend_armor\bust_cloak_34_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_decorative_hood_01" offsetY="35" f="64FE" ic="FF24358E" width="104" height="142" img="..\entity\legend_armor\bust_decorative_hood_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_decorative_hood_02" offsetY="35" f="64FE" ic="FF24358F" width="104" height="142" img="..\entity\legend_armor\bust_decorative_hood_02.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_decorative_hood_03" offsetY="35" f="64FE" ic="FF243590" width="104" height="142" img="..\entity\legend_armor\bust_decorative_hood_03.png" left="-44" right="50" top="-53" bottom="13" />
@@ -71,59 +99,24 @@
 <sprite id="bust_relic_hood_08_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435D3" width="131" height="125" img="..\entity\legend_armor\bust_relic_hood_08_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_relic_hood_09_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435D4" width="131" height="125" img="..\entity\legend_armor\bust_relic_hood_09_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_relic_hood_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435D5" width="131" height="125" img="..\entity\legend_armor\bust_relic_hood_10_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_01" offsetY="35" f="64FE" ic="FF24360C" width="104" height="142" img="..\entity\legend_armor\bust_cloak_01.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_02" offsetY="35" f="64FE" ic="FF24360D" width="104" height="142" img="..\entity\legend_armor\bust_cloak_02.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_03" offsetY="35" f="64FE" ic="FF2435D6" width="104" height="142" img="..\entity\legend_armor\bust_cloak_03.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_04" offsetY="35" f="64FE" ic="FF24360E" width="104" height="142" img="..\entity\legend_armor\bust_cloak_04.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_05" offsetY="35" f="64FE" ic="FF24360F" width="104" height="142" img="..\entity\legend_armor\bust_cloak_05.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_06" offsetY="35" f="64FE" ic="FF243610" width="104" height="142" img="..\entity\legend_armor\bust_cloak_06.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_07" offsetY="35" f="64FE" ic="FF243611" width="104" height="142" img="..\entity\legend_armor\bust_cloak_07.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_08" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_08.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_09" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_09.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_10" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_10.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_11" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_11.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_12" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_12.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_13" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_13.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_14" offsetY="35" f="64FE" ic="FF2435D7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_14.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_15" offsetY="35" f="64FE" ic="FF2435D8" width="104" height="142" img="..\entity\legend_armor\bust_cloak_15.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_16" offsetY="35" f="64FE" ic="FF2435D9" width="104" height="142" img="..\entity\legend_armor\bust_cloak_16.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_17" offsetY="35" f="64FE" ic="FF2435DA" width="104" height="142" img="..\entity\legend_armor\bust_cloak_17.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_18" offsetY="35" f="64FE" ic="FF2435DB" width="104" height="142" img="..\entity\legend_armor\bust_cloak_18.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_19" offsetY="35" f="64FE" ic="FF2435DC" width="104" height="142" img="..\entity\legend_armor\bust_cloak_19.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_20" offsetY="35" f="64FE" ic="FF2435DD" width="104" height="142" img="..\entity\legend_armor\bust_cloak_20.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_21" offsetY="35" f="64FE" ic="FF2435DD" width="104" height="142" img="..\entity\legend_armor\bust_cloak_21.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_22" offsetY="35" f="64FE" ic="FF2435DD" width="104" height="142" img="..\entity\legend_armor\bust_cloak_22.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_23" offsetY="35" f="64FE" ic="FF2435DD" width="104" height="142" img="..\entity\legend_armor\bust_cloak_23.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_24" offsetY="35" f="64FE" ic="FF2435DE" width="104" height="142" img="..\entity\legend_armor\bust_cloak_24.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_25" offsetY="35" f="64FE" ic="FF243612" width="104" height="142" img="..\entity\legend_armor\bust_cloak_25.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_26" offsetY="35" f="64FE" ic="FF2435DF" width="104" height="142" img="..\entity\legend_armor\bust_cloak_26.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_27" offsetY="35" f="64FE" ic="FF2435E0" width="104" height="142" img="..\entity\legend_armor\bust_cloak_27.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_28" offsetY="35" f="64FE" ic="FF2435E1" width="104" height="142" img="..\entity\legend_armor\bust_cloak_28.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_29" offsetY="35" f="64FE" ic="FF2435E2" width="104" height="142" img="..\entity\legend_armor\bust_cloak_29.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_30" offsetY="35" f="64FE" ic="FF2435E3" width="104" height="142" img="..\entity\legend_armor\bust_cloak_30.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_31" offsetY="35" f="64FE" ic="FF2435E4" width="104" height="142" img="..\entity\legend_armor\bust_cloak_31.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_32" offsetY="35" f="64FE" ic="FF2435E4" width="104" height="142" img="..\entity\legend_armor\bust_cloak_32.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_33" offsetY="35" f="64FE" ic="FF243572" width="104" height="142" img="..\entity\legend_armor\bust_cloak_33.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_34" offsetY="35" f="64FE" ic="FF243573" width="104" height="142" img="..\entity\legend_armor\bust_cloak_34.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_35" offsetY="35" f="64FE" ic="FF2435E5" width="104" height="142" img="..\entity\legend_armor\bust_cloak_35.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_36" offsetY="35" f="64FE" ic="FF243609" width="104" height="142" img="..\entity\legend_armor\bust_cloak_36.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_01_damaged" offsetY="35" f="64FE" ic="FF243613" width="104" height="142" img="..\entity\legend_armor\bust_cloak_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_02_damaged" offsetY="35" f="64FE" ic="FF243614" width="104" height="142" img="..\entity\legend_armor\bust_cloak_02_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_03_damaged" offsetY="35" f="64FE" ic="FF2435E6" width="104" height="142" img="..\entity\legend_armor\bust_cloak_03_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_04_damaged" offsetY="35" f="64FE" ic="FF243615" width="104" height="142" img="..\entity\legend_armor\bust_cloak_04_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_05_damaged" offsetY="35" f="64FE" ic="FF243616" width="104" height="142" img="..\entity\legend_armor\bust_cloak_05_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_06_damaged" offsetY="35" f="64FE" ic="FF243617" width="104" height="142" img="..\entity\legend_armor\bust_cloak_06_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_07_damaged" offsetY="35" f="64FE" ic="FF243618" width="104" height="142" img="..\entity\legend_armor\bust_cloak_07_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_08_damaged" offsetY="35" f="64FE" ic="FF243574" width="104" height="142" img="..\entity\legend_armor\bust_cloak_08_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_09_damaged" offsetY="35" f="64FE" ic="FF243575" width="104" height="142" img="..\entity\legend_armor\bust_cloak_09_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_10_damaged" offsetY="35" f="64FE" ic="FF243576" width="104" height="142" img="..\entity\legend_armor\bust_cloak_10_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_11_damaged" offsetY="35" f="64FE" ic="FF243577" width="104" height="142" img="..\entity\legend_armor\bust_cloak_11_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_12_damaged" offsetY="35" f="64FE" ic="FF243578" width="104" height="142" img="..\entity\legend_armor\bust_cloak_12_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_13_damaged" offsetY="35" f="64FE" ic="FF243579" width="104" height="142" img="..\entity\legend_armor\bust_cloak_13_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_14_damaged" offsetY="35" f="64FE" ic="FF24357A" width="104" height="142" img="..\entity\legend_armor\bust_cloak_14_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_21_damaged" offsetY="35" f="64FE" ic="FF24357B" width="104" height="142" img="..\entity\legend_armor\bust_cloak_21_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_22_damaged" offsetY="35" f="64FE" ic="FF24357C" width="104" height="142" img="..\entity\legend_armor\bust_cloak_22_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_23_damaged" offsetY="35" f="64FE" ic="FF24357D" width="104" height="142" img="..\entity\legend_armor\bust_cloak_23_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_08_damaged" offsetY="35" f="64FE" ic="FF2435E7" width="104" height="142" img="..\entity\legend_armor\bust_cloak_08_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_15_damaged" offsetY="35" f="64FE" ic="FF2435E8" width="104" height="142" img="..\entity\legend_armor\bust_cloak_15_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_16_damaged" offsetY="35" f="64FE" ic="FF2435E9" width="104" height="142" img="..\entity\legend_armor\bust_cloak_16_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_17_damaged" offsetY="35" f="64FE" ic="FF2435EA" width="104" height="142" img="..\entity\legend_armor\bust_cloak_17_damaged.png" left="-44" right="50" top="-53" bottom="13" />
@@ -131,58 +124,56 @@
 <sprite id="bust_cloak_19_damaged" offsetY="35" f="64FE" ic="FF2435EC" width="104" height="142" img="..\entity\legend_armor\bust_cloak_19_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_20_damaged" offsetY="35" f="64FE" ic="FF2435ED" width="104" height="142" img="..\entity\legend_armor\bust_cloak_20_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_24_damaged" offsetY="35" f="64FE" ic="FF2435EE" width="104" height="142" img="..\entity\legend_armor\bust_cloak_24_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_25_damaged" offsetY="35" f="64FE" ic="FF243619" width="104" height="142" img="..\entity\legend_armor\bust_cloak_25_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_26_damaged" offsetY="35" f="64FE" ic="FF2435EF" width="104" height="142" img="..\entity\legend_armor\bust_cloak_26_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_27_damaged" offsetY="35" f="64FE" ic="FF2435F0" width="104" height="142" img="..\entity\legend_armor\bust_cloak_27_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_28_damaged" offsetY="35" f="64FE" ic="FF2435F1" width="104" height="142" img="..\entity\legend_armor\bust_cloak_28_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_29_damaged" offsetY="35" f="64FE" ic="FF2435F2" width="104" height="142" img="..\entity\legend_armor\bust_cloak_29_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_30_damaged" offsetY="35" f="64FE" ic="FF2435F3" width="104" height="142" img="..\entity\legend_armor\bust_cloak_30_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_31_damaged" offsetY="35" f="64FE" ic="FF2435F4" width="104" height="142" img="..\entity\legend_armor\bust_cloak_31_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_32_damaged" offsetY="35" f="64FE" ic="FF24357E" width="104" height="142" img="..\entity\legend_armor\bust_cloak_32_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_33_damaged" offsetY="35" f="64FE" ic="FF24357F" width="104" height="142" img="..\entity\legend_armor\bust_cloak_33_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_34_damaged" offsetY="35" f="64FE" ic="FF243580" width="104" height="142" img="..\entity\legend_armor\bust_cloak_34_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cloak_35_damaged" offsetY="35" f="64FE" ic="FF2435F5" width="104" height="142" img="..\entity\legend_armor\bust_cloak_35_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_36_damaged" offsetY="35" f="64FE" ic="FF24360A" width="104" height="142" img="..\entity\legend_armor\bust_cloak_36_damaged.png" left="-44" right="50" top="-53" bottom="13" />
-<sprite id="bust_cloak_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361A" width="131" height="125" img="..\entity\legend_armor\bust_cloak_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_03_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435F6" width="131" height="125" img="..\entity\legend_armor\bust_cloak_03_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361C" width="131" height="125" img="..\entity\legend_armor\bust_cloak_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361D" width="131" height="125" img="..\entity\legend_armor\bust_cloak_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361E" width="131" height="125" img="..\entity\legend_armor\bust_cloak_06_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_07_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361F" width="131" height="125" img="..\entity\legend_armor\bust_cloak_07_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_08_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243581" width="131" height="125" img="..\entity\legend_armor\bust_cloak_08_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_09_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243582" width="131" height="125" img="..\entity\legend_armor\bust_cloak_09_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_10_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243583" width="131" height="125" img="..\entity\legend_armor\bust_cloak_10_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_11_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243584" width="131" height="125" img="..\entity\legend_armor\bust_cloak_11_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_12_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243585" width="131" height="125" img="..\entity\legend_armor\bust_cloak_12_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_13_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243586" width="131" height="125" img="..\entity\legend_armor\bust_cloak_13_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_14_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243587" width="131" height="125" img="..\entity\legend_armor\bust_cloak_14_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_08_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435F7" width="131" height="125" img="..\entity\legend_armor\bust_cloak_08_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_15_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435F8" width="131" height="125" img="..\entity\legend_armor\bust_cloak_15_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_16_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435F9" width="131" height="125" img="..\entity\legend_armor\bust_cloak_16_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_17_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FA" width="131" height="125" img="..\entity\legend_armor\bust_cloak_17_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_18_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FB" width="131" height="125" img="..\entity\legend_armor\bust_cloak_18_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_19_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FC" width="131" height="125" img="..\entity\legend_armor\bust_cloak_19_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_20_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FD" width="131" height="125" img="..\entity\legend_armor\bust_cloak_20_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_21_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243588" width="131" height="125" img="..\entity\legend_armor\bust_cloak_21_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_22_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243589" width="131" height="125" img="..\entity\legend_armor\bust_cloak_22_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_23_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358A" width="131" height="125" img="..\entity\legend_armor\bust_cloak_23_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_24_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FE" width="131" height="125" img="..\entity\legend_armor\bust_cloak_24_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_26_dead" offsetX="6" offsetY="10" f="64FE" ic="FF2435FF" width="131" height="125" img="..\entity\legend_armor\bust_cloak_26_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_25_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243620" width="131" height="125" img="..\entity\legend_armor\bust_cloak_25_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_27_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243600" width="131" height="125" img="..\entity\legend_armor\bust_cloak_27_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_28_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243601" width="131" height="125" img="..\entity\legend_armor\bust_cloak_28_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_29_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243602" width="131" height="125" img="..\entity\legend_armor\bust_cloak_29_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_30_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243603" width="131" height="125" img="..\entity\legend_armor\bust_cloak_30_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_31_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243604" width="131" height="125" img="..\entity\legend_armor\bust_cloak_31_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_32_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_32_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_33_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358C" width="131" height="125" img="..\entity\legend_armor\bust_cloak_33_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_34_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24358D" width="131" height="125" img="..\entity\legend_armor\bust_cloak_34_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cloak_35_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243605" width="131" height="125" img="..\entity\legend_armor\bust_cloak_35_dead.png" left="-57" right="59" top="-53" bottom="55" />
-<sprite id="bust_cloak_36_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24360B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_36_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_cursed_cloak_01" offsetY="35" f="64FE" ic="FF243606" width="104" height="142" img="..\entity\legend_armor\bust_cursed_cloak_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cursed_cloak_01_damaged" offsetY="35" f="64FE" ic="FF243607" width="104" height="142" img="..\entity\legend_armor\bust_cursed_cloak_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_cursed_cloak_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243608" width="131" height="125" img="..\entity\legend_armor\bust_cursed_cloak_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
-
+<sprite id="bust_cloak_36" offsetY="35" f="64FE" ic="FF243609" width="104" height="142" img="..\entity\legend_armor\bust_cloak_36.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_36_damaged" offsetY="35" f="64FE" ic="FF24360A" width="104" height="142" img="..\entity\legend_armor\bust_cloak_36_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_36_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24360B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_36_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_01" offsetY="35" f="64FE" ic="FF24360C" width="104" height="142" img="..\entity\legend_armor\bust_cloak_01.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_02" offsetY="35" f="64FE" ic="FF24360D" width="104" height="142" img="..\entity\legend_armor\bust_cloak_02.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_04" offsetY="35" f="64FE" ic="FF24360E" width="104" height="142" img="..\entity\legend_armor\bust_cloak_04.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_05" offsetY="35" f="64FE" ic="FF24360F" width="104" height="142" img="..\entity\legend_armor\bust_cloak_05.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_06" offsetY="35" f="64FE" ic="FF243610" width="104" height="142" img="..\entity\legend_armor\bust_cloak_06.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_07" offsetY="35" f="64FE" ic="FF243611" width="104" height="142" img="..\entity\legend_armor\bust_cloak_07.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_25" offsetY="35" f="64FE" ic="FF243612" width="104" height="142" img="..\entity\legend_armor\bust_cloak_25.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_01_damaged" offsetY="35" f="64FE" ic="FF243613" width="104" height="142" img="..\entity\legend_armor\bust_cloak_01_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_02_damaged" offsetY="35" f="64FE" ic="FF243614" width="104" height="142" img="..\entity\legend_armor\bust_cloak_02_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_04_damaged" offsetY="35" f="64FE" ic="FF243615" width="104" height="142" img="..\entity\legend_armor\bust_cloak_04_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_05_damaged" offsetY="35" f="64FE" ic="FF243616" width="104" height="142" img="..\entity\legend_armor\bust_cloak_05_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_06_damaged" offsetY="35" f="64FE" ic="FF243617" width="104" height="142" img="..\entity\legend_armor\bust_cloak_06_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_07_damaged" offsetY="35" f="64FE" ic="FF243618" width="104" height="142" img="..\entity\legend_armor\bust_cloak_07_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_25_damaged" offsetY="35" f="64FE" ic="FF243619" width="104" height="142" img="..\entity\legend_armor\bust_cloak_25_damaged.png" left="-44" right="50" top="-53" bottom="13" />
+<sprite id="bust_cloak_01_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361A" width="131" height="125" img="..\entity\legend_armor\bust_cloak_01_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_02_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361B" width="131" height="125" img="..\entity\legend_armor\bust_cloak_02_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_04_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361C" width="131" height="125" img="..\entity\legend_armor\bust_cloak_04_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_05_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361D" width="131" height="125" img="..\entity\legend_armor\bust_cloak_05_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_06_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361E" width="131" height="125" img="..\entity\legend_armor\bust_cloak_06_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_07_dead" offsetX="6" offsetY="10" f="64FE" ic="FF24361F" width="131" height="125" img="..\entity\legend_armor\bust_cloak_07_dead.png" left="-57" right="59" top="-53" bottom="55" />
+<sprite id="bust_cloak_25_dead" offsetX="6" offsetY="10" f="64FE" ic="FF243620" width="131" height="125" img="..\entity\legend_armor\bust_cloak_25_dead.png" left="-57" right="59" top="-53" bottom="55" />
 <sprite id="bust_dukes_cloak_01" offsetY="35" f="64FE" ic="FF243621" width="104" height="142" img="..\entity\legend_armor\bust_dukes_cloak_01.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_dukes_cloak_02" offsetY="35" f="64FE" ic="FF243622" width="104" height="142" img="..\entity\legend_armor\bust_dukes_cloak_02.png" left="-44" right="50" top="-53" bottom="13" />
 <sprite id="bust_dukes_cloak_03" offsetY="35" f="64FE" ic="FF243623" width="104" height="142" img="..\entity\legend_armor\bust_dukes_cloak_03.png" left="-44" right="50" top="-53" bottom="13" />

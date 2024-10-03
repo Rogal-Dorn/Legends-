@@ -46,14 +46,5 @@ unpacked/legend_helmets/4/metadata.xml
 
 .vscode
 
-endbrushes.sh
-endcompile.sh
-endstaged_build.sh
-end_todo.txt
-savebreaks.txt
-
-unstaged_build_uber.sh
-bcompile_uber.sh
-bbrushes_uber.sh
-build_compile_midas.sh
-unstaged_build_midas.sh
+build_compile_breaky.sh
+unstaged_build_breaky.sh
