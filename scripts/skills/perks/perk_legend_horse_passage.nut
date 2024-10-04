@@ -1,4 +1,4 @@
-this.perk_legend_horse_passage <- this.inherit("scripts/skills/skill", {
+this.perk_legend_legend_horse_passage <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

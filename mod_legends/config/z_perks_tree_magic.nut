@@ -262,12 +262,12 @@ gt.Const.Perks.DivinationMagicTree <- {
 	],
 	Tree = [
 		[gt.Const.Perks.PerkDefs.LegendPush],
-		[gt.Const.Perks.PerkDefs.MageLegendMagicDaze],
+		[gt.Const.Perks.PerkDefs.LegendMagicDaze],
 		[gt.Const.Perks.PerkDefs.LegendScry],
 		[gt.Const.Perks.PerkDefs.LegendEntice],
-		[gt.Const.Perks.PerkDefs.MageLegendMagicWebBolt],
-		[gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam],
-		[gt.Const.Perks.PerkDefs.MageLegendMagicSleep]
+		[gt.Const.Perks.PerkDefs.LegendMagicWebBolt],
+		[gt.Const.Perks.PerkDefs.LegendMagicPsybeam],
+		[gt.Const.Perks.PerkDefs.LegendMagicSleep]
 	]
 };
 
@@ -351,24 +351,24 @@ gt.Const.Perks.EvocationMagicTree <- {
 		gt.Const.Perks.PerkDefs.LegendMagicMissile
 		],
 		[
-		//gt.Const.Perks.PerkDefs.MageLegendMagicBurningHands
+		//gt.Const.Perks.PerkDefs.LegendMagicBurningHands
 		],
 		[
-		//gt.Const.Perks.PerkDefs.MageLegendMagicHailstone
+		//gt.Const.Perks.PerkDefs.LegendMagicHailstone
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileFocus
+		gt.Const.Perks.PerkDefs.LegendMasteryMagicMissileFocus
 		],
 		[
 		gt.Const.Perks.PerkDefs.LegendChainLightning,
-		//gt.Const.Perks.PerkDefs.MageLegendMasteryBurningHands
+		//gt.Const.Perks.PerkDefs.LegendMasteryBurningHands
 		],
 		[
-		//gt.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
-		//gt.Const.Perks.PerkDefs.MageLegendMasteryHailstone
+		//gt.Const.Perks.PerkDefs.LegendMagicPsybeam,
+		//gt.Const.Perks.PerkDefs.LegendMasteryHailstone
 		],
 		[
-		gt.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileMastery,
+		gt.Const.Perks.PerkDefs.LegendMasteryMagicMissileMastery,
 		gt.Const.Perks.PerkDefs.LegendFirefield
 		]
 	]

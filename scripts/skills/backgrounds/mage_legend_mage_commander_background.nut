@@ -54,9 +54,9 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 		this.m.CustomPerkTree = [
 			// Level 1
 			[
-				this.Const.Perks.PerkDefs.MageLegendMagicMissile,
-				this.Const.Perks.PerkDefs.MageLegendMagicDaze,
-				this.Const.Perks.PerkDefs.MageLegendMagicImbue,
+				this.Const.Perks.PerkDefs.LegendMagicMissile,
+				this.Const.Perks.PerkDefs.LegendMagicDaze,
+				this.Const.Perks.PerkDefs.LegendMagicImbue,
 				this.Const.Perks.PerkDefs.FastAdaption,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.NineLives,
@@ -66,7 +66,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			],
 			// Level 2
 			[
-				this.Const.Perks.PerkDefs.MageLegendMagicBurningHands,
+				this.Const.Perks.PerkDefs.LegendMagicBurningHands,
 				this.Const.Perks.PerkDefs.LegendSummonCat,
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Bullseye,
@@ -77,8 +77,8 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			],
 			// Level 3
 			[
-				this.Const.Perks.PerkDefs.MageLegendMagicHailstone,
-				this.Const.Perks.PerkDefs.MageLegendMagicLevitate,
+				this.Const.Perks.PerkDefs.LegendMagicHailstone,
+				this.Const.Perks.PerkDefs.LegendMagicLevitate,
 				this.Const.Perks.PerkDefs.LegendPush,
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Anticipation,
@@ -89,16 +89,16 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			// Level 4
 			[
 				this.Const.Perks.PerkDefs.LegendEntice,
-				this.Const.Perks.PerkDefs.MageLegendMagicCircleOfProtection,
-				this.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileFocus,
+				this.Const.Perks.PerkDefs.LegendMagicCircleOfProtection,
+				this.Const.Perks.PerkDefs.LegendMasteryMagicMissileFocus,
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
 			],
 			// Level 5
 			[
-				this.Const.Perks.PerkDefs.MageLegendMagicChainLightning,
-				this.Const.Perks.PerkDefs.MageLegendMagicWebBolt,
+				this.Const.Perks.PerkDefs.LegendMagicChainLightning,
+				this.Const.Perks.PerkDefs.LegendMagicWebBolt,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.Footwork,
@@ -108,12 +108,12 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			// Level 6
 			[
 
-				this.Const.Perks.PerkDefs.MageLegendMagicSoothingWind,
-				this.Const.Perks.PerkDefs.MageLegendMagicPsybeam,
+				this.Const.Perks.PerkDefs.LegendMagicSoothingWind,
+				this.Const.Perks.PerkDefs.LegendMagicPsybeam,
 				this.Const.Perks.PerkDefs.LegendScry,
-				this.Const.Perks.PerkDefs.MageLegendMasteryBurningHands,
-				this.Const.Perks.PerkDefs.MageLegendMasteryHailstone,
-				this.Const.Perks.PerkDefs.MageLegendMasteryChainLightning,
+				this.Const.Perks.PerkDefs.LegendMasteryBurningHands,
+				this.Const.Perks.PerkDefs.LegendMasteryHailstone,
+				this.Const.Perks.PerkDefs.LegendMasteryChainLightning,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendRelax,
 				this.Const.Perks.PerkDefs.Rebound,
@@ -123,10 +123,10 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			],
 			// Level 7
 			[
-				this.Const.Perks.PerkDefs.MageLegendMagicSleep,
-				this.Const.Perks.PerkDefs.MageLegendMagicHealingWind,
-				this.Const.Perks.PerkDefs.MageLegendMagicTeleport,
-				this.Const.Perks.PerkDefs.MageLegendMasteryMagicMissileMastery,
+				this.Const.Perks.PerkDefs.LegendMagicSleep,
+				this.Const.Perks.PerkDefs.LegendMagicHealingWind,
+				this.Const.Perks.PerkDefs.LegendMagicTeleport,
+				this.Const.Perks.PerkDefs.LegendMasteryMagicMissileMastery,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,

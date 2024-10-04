@@ -14,11 +14,11 @@ else
 	::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 }
 
-::mods_queue(::Legends.ID, "mod_msu(>=1.2.6), vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
+::mods_queue(::Legends.ID, "mod_msu, vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
 {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 
-	::Legends.Mod <- this.new("scripts/mods/legends_mod")
+	// ::Legends.Mod <- this.new("scripts/mods/legends_mod")
 	::Legends.Mod.Registry.addModSource(::MSU.System.Registry.ModSourceDomain.GitHub, "https://github.com/Battle-Brothers-Legends/Legends-Bugs");
     ::Legends.Mod.Registry.setUpdateSource(::MSU.System.Registry.ModSourceDomain.GitHub);
 
