@@ -1,4 +1,4 @@
-this.perk_trophy_hunter <- this.inherit("scripts/skills/skill", {
+this.perk_legend_trophy_hunter <- this.inherit("scripts/skills/skill", {
 	m = {
 		factionKills = {
 			Bandits = 0,
@@ -11,9 +11,9 @@ this.perk_trophy_hunter <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "perk.trophy_hunter";
-		this.m.Name = this.Const.Strings.PerkName.TrophyHunter;
-		this.m.Description = this.Const.Strings.PerkDescription.TrophyHunter;
+		this.m.ID = "perk.legend_trophy_hunter";
+		this.m.Name = this.Const.Strings.PerkName.LegendTrophyHunter;
+		this.m.Description = this.Const.Strings.PerkDescription.LegendTrophyHunter;
 		this.m.Icon = "skills/passive_03.png";
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;

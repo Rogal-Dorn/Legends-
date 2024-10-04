@@ -3388,335 +3388,335 @@ local perkDefObjects = [
 	{
 		ID = "perk.mage_legend_magic_burning_hands",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_burning_hands",
-		Name = this.Const.Strings.PerkName.MageLegendMagicBurningHands,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicBurningHands,
+		Name = this.Const.Strings.PerkName.LegendMagicBurningHands,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicBurningHands,
 		Icon = "ui/perks/mage_legend_magic_burning_hands_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_burning_hands_circle_bw.png",
-		Const = "MageLegendMagicBurningHands"
+		Const = "LegendMagicBurningHands"
 	},
 	{
 		ID = "perk.mage_legend_magic_chain_lightning",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_chain_lightning",
-		Name = this.Const.Strings.PerkName.MageLegendMagicChainLightning,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicChainLightning,
+		Name = this.Const.Strings.PerkName.LegendMagicChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicChainLightning,
 		Icon = "ui/perks/lightning_circle.png",
 		IconDisabled = "ui/perks/lightning_circle_bw.png",
-		Const = "MageLegendMagicChainLightning"
+		Const = "LegendMagicChainLightning"
 	},
 	{
 		ID = "perk.mage_legend_magic_circle_of_protection",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_circle_of_protection",
-		Name = this.Const.Strings.PerkName.MageLegendMagicCircleOfProtection,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicCircleOfProtection,
+		Name = this.Const.Strings.PerkName.LegendMagicCircleOfProtection,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicCircleOfProtection,
 		Icon = "ui/perks/mage_legend_magic_circle_of_protection_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_circle_of_protection_circle_bw.png",
-		Const = "MageLegendMagicCircleOfProtection"
+		Const = "LegendMagicCircleOfProtection"
 	},
 	{
 		ID = "perk.mage_legend_magic_daze",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_daze",
-		Name = this.Const.Strings.PerkName.MageLegendMagicDaze,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicDaze,
+		Name = this.Const.Strings.PerkName.LegendMagicDaze,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicDaze,
 		Icon = "ui/perks/daze56_circle.png",
 		IconDisabled = "ui/perks/daze56_circle_bw.png",
-		Const = "MageLegendMagicDaze"
+		Const = "LegendMagicDaze"
 	},
 	{
 		ID = "perk.mage_legend_magic_hailstone",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_hailstone",
-		Name = this.Const.Strings.PerkName.MageLegendMagicHailstone,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicHailstone,
+		Name = this.Const.Strings.PerkName.LegendMagicHailstone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicHailstone,
 		Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_hailstone_circle_bw.png",
-		Const = "MageLegendMagicHailstone"
+		Const = "LegendMagicHailstone"
 	},
 	{
 		ID = "perk.mage_legend_magic_healing_wind",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_healing_wind",
-		Name = this.Const.Strings.PerkName.MageLegendMagicHealingWind,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicHealingWind,
+		Name = this.Const.Strings.PerkName.LegendMagicHealingWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicHealingWind,
 		Icon = "ui/perks/magic_mist_circle_01.png",
 		IconDisabled = "ui/perks/magic_mist_circle_01_bw.png",
-		Const = "MageLegendMagicHealingWind"
+		Const = "LegendMagicHealingWind"
 	},
 	{
 		ID = "perk.mage_legend_magic_imbue",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_imbue",
-		Name = this.Const.Strings.PerkName.MageLegendMagicImbue,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicImbue,
+		Name = this.Const.Strings.PerkName.LegendMagicImbue,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicImbue,
 		Icon = "ui/perks/magic_imbue_circle_01.png",
 		IconDisabled = "ui/perks/magic_imbue_circle_01_bw.png",
-		Const = "MageLegendMagicImbue"
+		Const = "LegendMagicImbue"
 	},
 	{
 		ID = "perk.mage_legend_magic_levitate",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_levitate",
-		Name = this.Const.Strings.PerkName.MageLegendMagicLevitate,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicLevitate,
+		Name = this.Const.Strings.PerkName.LegendMagicLevitate,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicLevitate,
 		Icon = "ui/perks/levitate.png",
 		IconDisabled = "ui/perks/levitate_bw.png",
-		Const = "MageLegendMagicLevitate"
+		Const = "LegendMagicLevitate"
 	},
 	{
 		ID = "perk.mage_legend_magic_missile",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_missile",
-		Name = this.Const.Strings.PerkName.MageLegendMagicMissile,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicMissile,
+		Name = this.Const.Strings.PerkName.LegendMagicMissile,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicMissile,
 		Icon = "ui/perks/missile_circle.png",
 		IconDisabled = "ui/perks/missile_circle_bw.png",
-		Const = "MageLegendMagicMissile"
+		Const = "LegendMagicMissile"
 	},
 	{
 		ID = "perk.mage_legend_magic_psybeam",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_psybeam",
-		Name = this.Const.Strings.PerkName.MageLegendMagicPsybeam,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicPsybeam,
+		Name = this.Const.Strings.PerkName.LegendMagicPsybeam,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicPsybeam,
 		Icon = "ui/perks/mage_legend_magic_psybeam_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_psybeam_circle_bw.png",
-		Const = "MageLegendMagicPsybeam"
+		Const = "LegendMagicPsybeam"
 	},
 	{
 		ID = "perk.mage_legend_magic_sleep",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_sleep",
-		Name = this.Const.Strings.PerkName.MageLegendMagicSleep,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicSleep,
+		Name = this.Const.Strings.PerkName.LegendMagicSleep,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicSleep,
 		Icon = "ui/perks/sleep_56.png",
 		IconDisabled = "ui/perks/sleep_56_bw.png",
-		Const = "MageLegendMagicSleep"
+		Const = "LegendMagicSleep"
 	},
 	{
 		ID = "perk.mage_legend_magic_soothing_wind",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_soothing_wind",
-		Name = this.Const.Strings.PerkName.MageLegendMagicSoothingWind,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicSoothingWind,
+		Name = this.Const.Strings.PerkName.LegendMagicSoothingWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicSoothingWind,
 		Icon = "ui/perks/soothing_wind_circle_01.png",
 		IconDisabled = "ui/perks/soothing_wind_circle_01_bw.png",
-		Const = "MageLegendMagicSoothingWind"
+		Const = "LegendMagicSoothingWind"
 	},
 	{
 		ID = "perk.mage_legend_magic_teleport",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_teleport",
-		Name = this.Const.Strings.PerkName.MageLegendMagicTeleport,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicTeleport,
+		Name = this.Const.Strings.PerkName.LegendMagicTeleport,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicTeleport,
 		Icon = "ui/perks/teleport_perk.png",
 		IconDisabled = "ui/perks/teleport_perk_bw.png",
-		Const = "MageLegendMagicTeleport"
+		Const = "LegendMagicTeleport"
 	},
 	{
 		ID = "perk.mage_legend_magic_web_bolt",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_web_bolt",
-		Name = this.Const.Strings.PerkName.MageLegendMagicWebBolt,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicWebBolt,
+		Name = this.Const.Strings.PerkName.LegendMagicWebBolt,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicWebBolt,
 		Icon = "ui/perks/web_bolt_circle_01.png",
 		IconDisabled = "ui/perks/web_bolt_circle_01_bw.png",
-		Const = "MageLegendMagicWebBolt"
+		Const = "LegendMagicWebBolt"
 	},
 	{
 		ID = "perk.mage_legend_mastery_chain_lightning",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_chain_lightning",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryChainLightning,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryChainLightning,
+		Name = this.Const.Strings.PerkName.LegendMasteryChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryChainLightning,
 		Icon = "ui/perks/lightning_circle.png",
 		IconDisabled = "ui/perks/lightning_circle_bw.png",
-		Const = "MageLegendMasteryChainLightning"
+		Const = "LegendMasteryChainLightning"
 	},
 	{
 		ID = "perk.mage_legend_mastery_hailstone",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_hailstone",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryHailstone,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryHailstone,
+		Name = this.Const.Strings.PerkName.LegendMasteryHailstone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryHailstone,
 		Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_hailstone_circle_bw.png",
-		Const = "MageLegendMasteryHailstone"
+		Const = "LegendMasteryHailstone"
 	},
 	{
 		ID = "perk.mage_legend_mastery_magic_missile_focus",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_focus",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryMagicMissileFocus,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryMagicMissileFocus,
+		Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileFocus,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileFocus,
 		Icon = "ui/perks/magic_missile_02.png",
 		IconDisabled = "ui/perks/magic_missile_02_bw.png",
-		Const = "MageLegendMasteryMagicMissileFocus"
+		Const = "LegendMasteryMagicMissileFocus"
 	},
 	{
 		ID = "perk.mage_legend_mastery_magic_missile_mastery",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_mastery",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryMagicMissileMastery,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryMagicMissileMastery,
+		Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileMastery,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileMastery,
 		Icon = "ui/perks/magic_missile_03.png",
 		IconDisabled = "ui/perks/magic_missile_03_bw.png",
-		Const = "MageLegendMasteryMagicMissileMastery"
+		Const = "LegendMasteryMagicMissileMastery"
 	},
 	{
 		ID = "perk.mage_legend_magic_burning_hands",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_burning_hands",
-		Name = this.Const.Strings.PerkName.MageLegendMagicBurningHands,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicBurningHands,
+		Name = this.Const.Strings.PerkName.LegendMagicBurningHands,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicBurningHands,
 		Icon = "ui/perks/burning_hands_circle_01.png",
 		IconDisabled = "ui/perks/burning_hands_circle_01_bw.png",
-		Const = "MageLegendMagicBurningHands"
+		Const = "LegendMagicBurningHands"
 	},
 	{
 		ID = "perk.mage_legend_magic_chain_lightning",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_chain_lightning",
-		Name = this.Const.Strings.PerkName.MageLegendMagicChainLightning,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicChainLightning,
+		Name = this.Const.Strings.PerkName.LegendMagicChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicChainLightning,
 		Icon = "ui/perks/storm_circle.png",
 		IconDisabled = "ui/perks/storm_circle_bw.png",
-		Const = "MageLegendMagicChainLightning"
+		Const = "LegendMagicChainLightning"
 	},
 	{
 		ID = "perk.mage_legend_magic_circle_of_protection",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_circle_of_protection",
-		Name = this.Const.Strings.PerkName.MageLegendMagicCircleOfProtection,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicCircleOfProtection,
+		Name = this.Const.Strings.PerkName.LegendMagicCircleOfProtection,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicCircleOfProtection,
 		Icon = "ui/perks/mage_legend_magic_circle_of_protection_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_circle_of_protection_circle_bw.png",
-		Const = "MageLegendMagicCircleOfProtection"
+		Const = "LegendMagicCircleOfProtection"
 	},
 	{
 		ID = "perk.mage_legend_magic_daze",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_daze",
-		Name = this.Const.Strings.PerkName.MageLegendMagicDaze,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicDaze,
+		Name = this.Const.Strings.PerkName.LegendMagicDaze,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicDaze,
 		Icon = "ui/perks/daze56_circle.png",
 		IconDisabled = "ui/perks/daze56_circle_bw.png",
-		Const = "MageLegendMagicDaze"
+		Const = "LegendMagicDaze"
 	},
 	{
 		ID = "perk.mage_legend_magic_hailstone",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_hailstone",
-		Name = this.Const.Strings.PerkName.MageLegendMagicHailstone,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicHailstone,
+		Name = this.Const.Strings.PerkName.LegendMagicHailstone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicHailstone,
 		Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_hailstone_circle_bw.png",
-		Const = "MageLegendMagicHailstone"
+		Const = "LegendMagicHailstone"
 	},
 	{
 		ID = "perk.mage_legend_magic_healing_wind",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_healing_wind",
-		Name = this.Const.Strings.PerkName.MageLegendMagicHealingWind,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicHealingWind,
+		Name = this.Const.Strings.PerkName.LegendMagicHealingWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicHealingWind,
 		Icon = "ui/perks/magic_mist_circle_01.png",
 		IconDisabled = "ui/perks/magic_mist_circle_01_bw.png",
-		Const = "MageLegendMagicHealingWind"
+		Const = "LegendMagicHealingWind"
 	},
 	{
 		ID = "perk.mage_legend_magic_imbue",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_imbue",
-		Name = this.Const.Strings.PerkName.MageLegendMagicImbue,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicImbue,
+		Name = this.Const.Strings.PerkName.LegendMagicImbue,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicImbue,
 		Icon = "ui/perks/magic_imbue_circle_01.png",
 		IconDisabled = "ui/perks/magic_imbue_circle_01_bw.png",
-		Const = "MageLegendMagicImbue"
+		Const = "LegendMagicImbue"
 	},
 	{
 		ID = "perk.mage_legend_magic_levitate",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_levitate",
-		Name = this.Const.Strings.PerkName.MageLegendMagicLevitate,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicLevitate,
+		Name = this.Const.Strings.PerkName.LegendMagicLevitate,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicLevitate,
 		Icon = "ui/perks/levitate.png",
 		IconDisabled = "ui/perks/levitate_bw.png",
-		Const = "MageLegendMagicLevitate"
+		Const = "LegendMagicLevitate"
 	},
 	{
 		ID = "perk.mage_legend_magic_missile",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_missile",
-		Name = this.Const.Strings.PerkName.MageLegendMagicMissile,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicMissile,
+		Name = this.Const.Strings.PerkName.LegendMagicMissile,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicMissile,
 		Icon = "ui/perks/magic_missile_01.png",
 		IconDisabled = "ui/perks/magic_missile_01_bw.png",
-		Const = "MageLegendMagicMissile"
+		Const = "LegendMagicMissile"
 	},
 	{
 		ID = "perk.mage_legend_magic_psybeam",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_psybeam",
-		Name = this.Const.Strings.PerkName.MageLegendMagicPsybeam,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicPsybeam,
+		Name = this.Const.Strings.PerkName.LegendMagicPsybeam,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicPsybeam,
 		Icon = "ui/perks/psybeam_circle_01.png",
 		IconDisabled = "ui/perks/psybeam_circle_01_bw.png",
-		Const = "MageLegendMagicPsybeam"
+		Const = "LegendMagicPsybeam"
 	},
 	{
 		ID = "perk.mage_legend_magic_sleep",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_sleep",
-		Name = this.Const.Strings.PerkName.MageLegendMagicSleep,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicSleep,
+		Name = this.Const.Strings.PerkName.LegendMagicSleep,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicSleep,
 		Icon = "ui/perks/sleep_56.png",
 		IconDisabled = "ui/perks/sleep_56_bw.png",
-		Const = "MageLegendMagicSleep"
+		Const = "LegendMagicSleep"
 	},
 	{
 		ID = "perk.mage_legend_magic_soothing_wind",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_soothing_wind",
-		Name = this.Const.Strings.PerkName.MageLegendMagicSoothingWind,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicSoothingWind,
+		Name = this.Const.Strings.PerkName.LegendMagicSoothingWind,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicSoothingWind,
 		Icon = "ui/perks/soothing_wind_circle_01.png",
 		IconDisabled = "ui/perks/soothing_wind_circle_01_bw.png",
-		Const = "MageLegendMagicSoothingWind"
+		Const = "LegendMagicSoothingWind"
 	},
 	{
 		ID = "perk.mage_legend_magic_teleport",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_teleport",
-		Name = this.Const.Strings.PerkName.MageLegendMagicTeleport,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicTeleport,
+		Name = this.Const.Strings.PerkName.LegendMagicTeleport,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicTeleport,
 		Icon = "ui/perks/teleport_perk.png",
 		IconDisabled = "ui/perks/teleport_perk_bw.png",
-		Const = "MageLegendMagicTeleport"
+		Const = "LegendMagicTeleport"
 	},
 	{
 		ID = "perk.mage_legend_magic_web_bolt",
 		Script = "scripts/skills/perks/perk_mage_legend_magic_web_bolt",
-		Name = this.Const.Strings.PerkName.MageLegendMagicWebBolt,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMagicWebBolt,
+		Name = this.Const.Strings.PerkName.LegendMagicWebBolt,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMagicWebBolt,
 		Icon = "ui/perks/web_bolt_circle_01.png",
 		IconDisabled = "ui/perks/web_bolt_circle_01_bw.png",
-		Const = "MageLegendMagicWebBolt"
+		Const = "LegendMagicWebBolt"
 	},
 	{
 		ID = "perk.mage_legend_mastery_burning_hands",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_burning_hands",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryBurningHands,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryBurningHands,
+		Name = this.Const.Strings.PerkName.LegendMasteryBurningHands,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryBurningHands,
 		Icon = "ui/perks/burning_hands_circle_02.png",
 		IconDisabled = "ui/perks/burning_hands_circle_02_bw.png",
-		Const = "MageLegendMasteryBurningHands"
+		Const = "LegendMasteryBurningHands"
 	},
 	{
 		ID = "perk.mage_legend_mastery_chain_lightning",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_chain_lightning",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryChainLightning,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryChainLightning,
+		Name = this.Const.Strings.PerkName.LegendMasteryChainLightning,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryChainLightning,
 		Icon = "ui/perks/lightning_cirlce_02.png",
 		IconDisabled = "ui/perks/lightning_cirlce_02_bw.png",
-		Const = "MageLegendMasteryChainLightning"
+		Const = "LegendMasteryChainLightning"
 	},
 	{
 		ID = "perk.mage_legend_mastery_hailstone",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_hailstone",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryHailstone,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryHailstone,
+		Name = this.Const.Strings.PerkName.LegendMasteryHailstone,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryHailstone,
 		Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
 		IconDisabled = "ui/perks/mage_legend_magic_hailstone_circle_bw.png",
-		Const = "MageLegendMasteryHailstone"
+		Const = "LegendMasteryHailstone"
 	},
 	{
 		ID = "perk.mage_legend_mastery_magic_missile_focus",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_focus",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryMagicMissileFocus,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryMagicMissileFocus,
+		Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileFocus,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileFocus,
 		Icon = "ui/perks/missile_circle.png",
 		IconDisabled = "ui/perks/missile_circle_bw.png",
-		Const = "MageLegendMasteryMagicMissileFocus"
+		Const = "LegendMasteryMagicMissileFocus"
 	},
 	{
 		ID = "perk.mage_legend_mastery_magic_missile_mastery",
 		Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_mastery",
-		Name = this.Const.Strings.PerkName.MageLegendMasteryMagicMissileMastery,
-		Tooltip = this.Const.Strings.PerkDescription.MageLegendMasteryMagicMissileMastery,
+		Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileMastery,
+		Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileMastery,
 		Icon = "ui/perks/missile_circle.png",
 		IconDisabled = "ui/perks/missile_circle_bw.png",
-		Const = "MageLegendMasteryMagicMissileMastery"
+		Const = "LegendMasteryMagicMissileMastery"
 	},
 	{
 		ID = "perk.legend_unarmed_training",
