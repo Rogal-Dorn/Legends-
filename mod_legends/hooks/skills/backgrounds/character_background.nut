@@ -45,7 +45,7 @@
 			0.0, //desert
 			0.0 //oasis
 		]
-	},
+	};
 	o.m.PerkTreeDynamicMins <- {
 		Weapon = 8,
 		Defense = 2,
@@ -56,7 +56,7 @@
 		ClassChance = 0.01,
 		Magic = 1,
 		MagicChance = 0
-	},
+	};
 	o.m.PerkTreeDynamicMinsMagic <- {
 		Weapon = 8,
 		Defense = 2,
@@ -67,7 +67,7 @@
 		ClassChance = 0.01,
 		Magic = 1,
 		MagicChance = 0.001
-	},
+	};
 	o.m.PerkTreeDynamicMinsBeast <- {
 		Weapon = 8,
 		Defense = 2,
@@ -78,7 +78,7 @@
 		ClassChance = 0.02,
 		Magic = 1,
 		MagicChance = 0.001
-	},
+	};
 	o.m.PerkTreeDynamic <- { //ALL recruits get these perks as base
 		Weapon = [
 			this.Const.Perks.SwordTree,
@@ -96,13 +96,13 @@
 		Enemy = [],
 		Class = [],
 		Magic = []
-	},
-	o.m.CustomPerkTree <- null,
-	o.m.PerkTreeMap <- null,
-	o.m.PerkTree <- null,
-	o.m.IsGuaranteed <- [],
+	};
+	o.m.CustomPerkTree <- null;
+	o.m.PerkTreeMap <- null;
+	o.m.PerkTree <- null;
+	o.m.IsGuaranteed <- [];
 
-	local create = o.create
+	local create = o.create;
 	o.create = function()
 	{
 		create();
