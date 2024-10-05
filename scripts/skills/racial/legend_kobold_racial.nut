@@ -1,8 +1,8 @@
-this.kobold_racial <- this.inherit("scripts/skills/skill", {
+this.legend_kobold_racial <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "racial.kobold";
+		this.m.ID = "racial.legend_kobold";
 		this.m.Name = "Slippery";
 		this.m.Description = "This character is very hard to spot";
 		this.m.Icon = "";

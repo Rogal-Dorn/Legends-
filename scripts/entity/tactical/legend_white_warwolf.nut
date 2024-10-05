@@ -234,7 +234,7 @@ this.legend_white_warwolf <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
-		this.m.Skills.add(this.new("scripts/skills/racial/werewolf_racial"));
+		this.m.Skills.add(this.new("scripts/skills/racial/legend_werewolf_racial"));
 	}
 
 });

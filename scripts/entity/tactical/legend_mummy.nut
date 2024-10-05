@@ -503,7 +503,7 @@ this.legend_mummy <- this.inherit("scripts/entity/tactical/actor", {
 		body_dirt.Visible = this.Math.rand(1, 100) <= 33;
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
-		this.m.Skills.add(this.new("scripts/skills/racial/mummy_racial"));
+		this.m.Skills.add(this.new("scripts/skills/racial/legend_mummy_racial"));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
