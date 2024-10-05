@@ -6,6 +6,7 @@
 		create();
 		this.m.Icon = "skills/status_effect_doublestrike.png";
 		this.m.IconMini = "mini_doublestrike_circle";
+	}
 
 	o.getDescription = function()
 	{
