@@ -8,7 +8,7 @@
 	o.create = function()
 	{
 		create();
-		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect
+		this.m.Type = ::Const.SkillType.Perk | ::Const.SkillType.StatusEffect;
 	}
 
 	o.onGetHitFactors <- function(_skill, _targetTile, _tooltip){

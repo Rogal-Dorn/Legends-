@@ -1,3 +1,4 @@
+// this isn't currently used so i haven't renamed it
 this.marked_effect <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()

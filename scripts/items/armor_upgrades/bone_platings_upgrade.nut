@@ -51,7 +51,7 @@ this.bone_platings_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_u
 
 	function onCombatStarted()
 	{
-		this.addSkill(this.new("scripts/skills/effects/bone_plating_effect"));
+		this.addSkill(this.new("scripts/skills/effects/legend_bone_plating_effect"));
 	}
 
 });

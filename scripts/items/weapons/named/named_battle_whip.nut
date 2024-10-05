@@ -1,6 +1,6 @@
 this.named_battle_whip <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
-		PossibleEffects = ["scripts/skills/effects/named_whip_bleed_effect", "scripts/skills/effects/named_whip_feint_effect"],
+		PossibleEffects = ["scripts/skills/effects/legend_named_whip_bleed_effect", "scripts/skills/effects/legend_named_whip_feint_effect"],
 		EffectBounds = [ [30, 50], [20, 35] ]
 	},
 	function create()

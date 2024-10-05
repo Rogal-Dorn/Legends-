@@ -1,6 +1,6 @@
 this.named_two_handed_spiked_mace <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
-		PossibleEffects = ["scripts/skills/effects/named_mace_stagger_effect"],
+		PossibleEffects = ["scripts/skills/effects/legend_named_mace_stagger_effect"],
 		EffectBounds = [ [15, 25] ]
 	},
 	function create()

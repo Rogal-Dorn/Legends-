@@ -87,7 +87,7 @@ this.legend_prayer_of_life_skill <- this.inherit("scripts/skills/skill", {
 			{
 				if (!a.getSkills().hasSkill("effects.disintegrating"))
 				{
-					a.getSkills().add(this.new("scripts/skills/effects/disintegrating_effect"));
+					a.getSkills().add(this.new("scripts/skills/effects/legend_disintegrating_effect"));
 				}
 			}
 		}

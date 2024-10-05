@@ -58,7 +58,7 @@ this.legend_rat_bite_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (!target.getCurrentProperties().IsImmuneToPoison)
 				{
-					local effect = this.new("scripts/skills/effects/rat_poison_effect");
+					local effect = this.new("scripts/skills/effects/legend_rat_poison_effect");
 					target.getSkills().add(effect);
 				}
 

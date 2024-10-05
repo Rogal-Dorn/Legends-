@@ -1,3 +1,4 @@
+// left as is to credit sato properly
 this.sato_brothers_in_chains_effect <- this.inherit("scripts/skills/skill", {
 	m = {
 		AttackBonus = 0,

@@ -1,6 +1,6 @@
 this.named_fencing_sword <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
-		PossibleEffects = ["scripts/skills/effects/named_fencing_sword_effect"],
+		PossibleEffects = ["scripts/skills/effects/legend_named_fencing_sword_effect"],
 		EffectBounds = [ [4, 12] ]
 	},
 	function create()

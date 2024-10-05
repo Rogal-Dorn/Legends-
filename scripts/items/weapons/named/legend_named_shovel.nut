@@ -1,7 +1,7 @@
 this.legend_named_shovel <- this.inherit("scripts/items/weapons/named/named_weapon", {
 	m = {
 		StunChance = 10,
-		PossibleEffects = ["scripts/skills/effects/named_mace_stagger_effect"],
+		PossibleEffects = ["scripts/skills/effects/legend_named_mace_stagger_effect"],
 		EffectBounds = [ [25, 40] ]
 	},
 	function create()

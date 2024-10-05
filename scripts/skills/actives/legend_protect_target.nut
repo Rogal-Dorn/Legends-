@@ -149,7 +149,7 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 			local e = this.Tactical.getEntityByID(this.m.LastTarget);
 			if (e != null)
 			{
-				e.getSkills().removeByID("effects.guarded_effect");
+				e.getSkills().removeByID("effects.legend_guarded_effect");
 			}
 		}
 		this.m.LastTarget = null;
@@ -189,7 +189,7 @@ this.legend_protect_target <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		_t.getSkills().add(this.new("scripts/skills/effects/guarded_effect"));
+		_t.getSkills().add(this.new("scripts/skills/effects/legend_guarded_effect"));
 		this.m.LastTarget = _t.getID();
 	}
 

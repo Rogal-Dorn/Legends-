@@ -1419,7 +1419,7 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/special/no_ammo_warning"));
 		this.m.Skills.add(this.new("scripts/skills/effects/battle_standard_effect"));
 		this.m.Skills.add(this.new("scripts/skills/actives/break_ally_free_skill"));
-		this.m.Skills.add(this.new("scripts/skills/effects/realm_of_nightmares_effect"));
+		this.m.Skills.add(this.new("scripts/skills/effects/legend_realm_of_nightmares_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/legend_horserider_skill"));
 		this.m.Skills.add(this.new("scripts/skills/effects/legend_veteran_levels_effect"));
 

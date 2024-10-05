@@ -112,11 +112,11 @@ this.legend_basilisk_sentry_inject_skill <- this.inherit("scripts/skills/skill",
 		}
 
 		this.spawnIcon("status_effect_54", _targetEntity.getTile());
-		local poison = _targetEntity.getSkills().getSkillByID("effects.basilisk_poison");
+		local poison = _targetEntity.getSkills().getSkillByID("effects.legend_basilisk_poison");
 
 		if (poison == null)
 		{
-			_targetEntity.getSkills().add(this.new("scripts/skills/effects/basilisk_poison_effect"));
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_basilisk_poison_effect"));
 		}
 		else
 		{

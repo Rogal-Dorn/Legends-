@@ -63,7 +63,7 @@ this.return_favor <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.IsSpent)
 		{
-			this.m.Container.add(this.new("scripts/skills/effects/return_favor_effect"));
+			this.m.Container.add(this.new("scripts/skills/effects/legend_return_favor_effect"));
 			this.m.IsSpent = true;
 			return true;
 		}
