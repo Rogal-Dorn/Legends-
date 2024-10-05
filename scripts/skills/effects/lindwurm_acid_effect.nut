@@ -141,6 +141,12 @@ this.lindwurm_acid_effect <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
+		local actor = this.getContainer.getActor();
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+		{
+			this.removeSelf();
+			return;
+		}
 		if (this.getContainer().getActor().getCurrentProperties().IsResistantToAnyStatuses && this.Math.rand(1, 100) <= 50)
 		{
 			if (!this.getContainer().getActor().isHiddenToPlayer())
