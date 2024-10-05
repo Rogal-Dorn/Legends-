@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/injury/missing_hand_injury.nut", function(o)
+::mods_hookExactClass("skills/injury_permanent/missing_hand_injury.nut", function(o)
 {
 	local create = o.create;
 	o.create = function()
