@@ -219,7 +219,7 @@ this.kobold <- this.inherit("scripts/entity/tactical/actor", {
 		injury.setBrush("bust_goblin_01_head_injured");
 		local body_blood = this.addSprite("body_blood");
 		body_blood.Visible = false;
-		this.m.Skills.add(this.new("scripts/skills/racial/kobold_racial"));
+		this.m.Skills.add(this.new("scripts/skills/racial/legend_kobold_racial"));
 		this.m.Skills.add(this.new("scripts/skills/effects/captain_effect"));
 		this.m.Skills.add(this.new("scripts/skills/special/double_grip"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hand_to_hand"));
