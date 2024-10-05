@@ -109,7 +109,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 		if (!_entity.getFlags().has("alp") && _entity.getMoraleState == this.Const.MoraleState.Ignore)
 			return;
 
-		if (_entity.getSkills().hasSkill("effects.alp_realm_of_shadow"))
+		if (_entity.getSkills().hasSkill("effects.legend_alp_realm_of_shadow"))
 			return;
 
 		this.Sound.play(::MSU.Array.rand([
@@ -121,7 +121,7 @@ this.alp_realm_of_shadow_skill <- this.inherit("scripts/skills/skill", {
 			"sounds/enemies/dlc2/alp_nightmare_06.wav"
 		]), this.Const.Sound.Volume.Actor, _entity.getPos());
 		
-		_entity.getSkills().add(this.new("scripts/skills/effects/alp_realm_of_shadow_effect"));
+		_entity.getSkills().add(this.new("scripts/skills/effects/legend_alp_realm_of_shadow_effect"));
 	}
 
 });
