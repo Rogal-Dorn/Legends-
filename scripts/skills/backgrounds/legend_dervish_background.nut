@@ -16,10 +16,10 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.ailing",
 			"trait.fragile",
 			"trait.gluttonous",
-			"trait.frail",
-			"trait.light",
+			"trait.legend_frail",
+			"trait.legend_light",
 			"trait.dumb",
-			"trait.seductive"
+			"trait.legend_seductive"
 		];
 		this.m.ExcludedTalents = [];
 		// this.m.IsGuaranteed = ["tough_trait"]

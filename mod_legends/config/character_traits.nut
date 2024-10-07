@@ -193,8 +193,8 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/paranoid_trait"
 	],
 	[
-		"trait.hate_nobles",
-		"scripts/skills/traits/hate_nobles_trait"
+		"trait.legend_hate_nobles",
+		"scripts/skills/traits/legend_hate_nobles_trait"
 	],
 	[
 		"trait.hate_greenskins",
@@ -213,8 +213,8 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/fear_beasts_trait"
 	],
 	[
-		"trait.fear_nobles",
-		"scripts/skills/traits/fear_nobles_trait"
+		"trait.legend_fear_nobles",
+		"scripts/skills/traits/legend_fear_nobles_trait"
 	],
 	[
 		"trait.fear_undead",
@@ -241,72 +241,72 @@ gt.Const.CharacterTraits <- [
 		"scripts/skills/traits/lucky_trait"
 	],
 	[
-		"trait.steady_hands",
-		"scripts/skills/traits/steady_hands_trait"
+		"trait.legend_steady_hands",
+		"scripts/skills/traits/legend_steady_hands_trait"
 	],
 	[
-		"trait.slack",
-		"scripts/skills/traits/slack_trait"
+		"trait.legend_slack",
+		"scripts/skills/traits/legend_slack_trait"
 	],
 	[
-		"trait.frail",
-		"scripts/skills/traits/frail_trait"
+		"trait.legend_frail",
+		"scripts/skills/traits/legend_frail_trait"
 	],
 	[
-		"trait.natural",
-		"scripts/skills/traits/natural_trait"
+		"trait.legend_natural",
+		"scripts/skills/traits/legend_natural_trait"
 	],
 	[
-		"trait.unpredictable",
-		"scripts/skills/traits/unpredictable_trait"
+		"trait.legend_unpredictable",
+		"scripts/skills/traits/legend_unpredictable_trait"
 	],
 	[
-		"trait.predictable",
-		"scripts/skills/traits/predictable_trait"
+		"trait.legend_predictable",
+		"scripts/skills/traits/legend_predictable_trait"
 	],
 	[
-		"trait.pragmatic",
-		"scripts/skills/traits/pragmatic_trait"
+		"trait.legend_pragmatic",
+		"scripts/skills/traits/legend_pragmatic_trait"
 	],
 	[
-		"trait.light",
-		"scripts/skills/traits/light_trait"
+		"trait.legend_light",
+		"scripts/skills/traits/legend_light_trait"
 	],
 	[
-		"trait.heavy",
-		"scripts/skills/traits/heavy_trait"
+		"trait.legend_heavy",
+		"scripts/skills/traits/legend_heavy_trait"
 	],
 	[
-		"trait.firm",
-		"scripts/skills/traits/firm_trait"
+		"trait.legend_firm",
+		"scripts/skills/traits/legend_firm_trait"
 	],
 	[
-		"trait.ambitious",
-		"scripts/skills/traits/ambitious_trait"
+		"trait.legend_ambitious",
+		"scripts/skills/traits/legend_ambitious_trait"
 	],
 	[
-		"trait.aggressive",
-		"scripts/skills/traits/aggressive_trait"
+		"trait.legend_aggressive",
+		"scripts/skills/traits/legend_aggressive_trait"
 	],
 	[
-		"trait.gift_of_people",
-		"scripts/skills/traits/gift_of_people_trait"
+		"trait.legend_gift_of_people",
+		"scripts/skills/traits/legend_gift_of_people_trait"
 	],
 	[
-		"trait.double_tongued",
-		"scripts/skills/traits/double_tongued_trait"
+		"trait.legend_double_tongued",
+		"scripts/skills/traits/legend_double_tongued_trait"
 	],
 	[
-		"trait.seductive",
-		"scripts/skills/traits/seductive_trait"
+		"trait.legend_seductive",
+		"scripts/skills/traits/legend_seductive_trait"
 	],
 	[
 		"trait.legend_fear_dark",
 		"scripts/skills/traits/legend_fear_dark_trait"
 	],
 	[
-		"trait.sureshot",
-		"scripts/skills/traits/sureshot_trait"
+		"trait.legend_sureshot",
+		"scripts/skills/traits/legend_sureshot_trait"
 	]
 ];
 

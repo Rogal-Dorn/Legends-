@@ -23,7 +23,7 @@ this.legend_man_at_arms_background <- this.inherit("scripts/skills/backgrounds/c
 			"trait.bleeder",
 			"trait.hesitant",
 			"trait.bloodthirsty",
-			"trait.slack",
+			"trait.legend_slack",
 			"trait.hate_undead",
 			"trait.fat"
 

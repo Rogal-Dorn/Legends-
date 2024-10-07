@@ -50,8 +50,8 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[1].getBackground().m.RawDescription = "{%name% was acting weird when you met the hooded figure. After some time traveling with your party you found out %name% was hired to assassinate a local lord. %name% wanted to use your company as a temporary disguise but decided to stay.}";
 		bros[1].setPlaceInFormation(4);
 		bros[1].setVeteranPerks(2);
-		bros[1].getSkills().add(this.new("scripts/skills/traits/aggressive_trait"));
-		bros[1].getSkills().add(this.new("scripts/skills/traits/unpredictable_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_aggressive_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_unpredictable_trait"));
 		bros[2].setStartValuesEx([
 			"legend_crusader_background"
 		]);
@@ -82,8 +82,8 @@ this.legends_party_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		bros[5].getBackground().m.RawDescription = "{There is a quiet calm to %name%, with an intense gaze that seems to see more details than anyone else. A person of few words, it is clear the ranger holds a deep affinity with the land and sees orcs as a symbol of all that is wrong with the world.}";
 		bros[5].setPlaceInFormation(14);
 		bros[5].setVeteranPerks(2);
-		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
-		bros[5].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/legend_sureshot_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/legend_pragmatic_trait"));
 		this.World.Assets.m.ChampionChanceAdditional = 5;
 	}
 

@@ -30,7 +30,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 			bro.worsenMood(1.5, "Lost many a friend in battle");
 			bro.improveMood(0.5, "Part of a militia");
 			///---
-			bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait")); //IMPORTANT
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_peasant_trait")); //IMPORTANT
 			bro.getSprite("socket").setBrush("bust_base_militia");
 			///---
 			bro.m.HireTime = this.Time.getVirtualTimeF();
@@ -51,7 +51,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[0].getBackground().m.RawDescription = "%name% is a farmer\'s child, and presumably wishes to have a child of their own at some point. For now, they are with you — which is quite a regrettable clash between dreams and reality.";
 		bros[0].getSprite("accessory_special").setBrush("bust_militia_band_01");	
 		bros[0].improveMood(3.0, "Has recently fallen in love");
-		bros[0].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[0].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		local items = bros[0].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/pitchfork"));
@@ -61,7 +61,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[1].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[1].worsenMood(0.5, "Was involved in a brawl");
 		bros[1].addLightInjury();
-		bros[1].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[1].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		local items = bros[1].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/warfork"));
@@ -73,7 +73,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[2].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[2].worsenMood(0.5, "Was involved in a brawl");
 		bros[2].addLightInjury();
-		bros[2].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[2].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		local items = bros[2].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/legend_sling"));
@@ -86,7 +86,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[3].getBackground().m.RawDescription = "You notice that %name% hides from certain noblemen. It is likely that they are a common criminal at large for some petty crime, but so long as they fight well it is no business to you.";
 		bros[3].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[3].improveMood(1.5, "Stole someone\'s scramasax");
-		bros[3].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		items = bros[3].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/scramasax"));
@@ -100,13 +100,13 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[4].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[4].worsenMood(0.5, "Was involved in a brawl");
 		bros[4].addLightInjury();
-		bros[4].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[4].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 
 		bros[5].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[5].getBackground().m.RawDescription = "Seeking riches, %name% has come to the right place in your newfound mercenary band. Unfortunately, their background is in farming, milling, and laying stone, particularly none of which they were any good at.";
 		bros[5].getSprite("accessory_special").setBrush("bust_militia_band_01");			
 		bros[5].improveMood(1.0, "Looks forward to becoming rich as a sellsword");
-		bros[5].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		local items = bros[5].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/pitchfork"));
@@ -117,7 +117,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[6].getBackground().m.RawDescription = "%name% states they were a sailor prior to coming inland and falling in with the militia and now your mercenary band. They hope to eventually own a boat and put its sails to the open ocean. You hope they can do that someday, truly.";
 		bros[6].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[6].worsenMood(0.25, "Feels somewhat sickly of late");
-		bros[6].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[6].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		
 		bros[7].setStartValuesEx([
 			"militia_background"
@@ -128,14 +128,14 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[7].m.PerkPoints = 0;
 		bros[7].m.LevelUps = 0;
 		bros[7].m.Level = 1;
-		bros[7].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[7].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		
 		bros[8].setStartValuesEx([
 			"minstrel_background"
 		]);
 		bros[8].getBackground().m.RawDescription = "%name% enjoys carousing ladies at the pub and chasing skirt in the church. You get the sense they\'ve only tagged along to spread their sense of \'fun\' around the world.";
 		bros[8].getSprite("accessory_special").setBrush("bust_militia_band_01");		
-		bros[8].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[8].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		local items = bros[8].getItems();
 		items.unequip(items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
 		items.equip(this.new("scripts/items/weapons/lute"));
@@ -144,7 +144,7 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[9].getBackground().m.RawDescription = "Daytaler, laborer, caravan hand, sailor, militia, %name%\'s done a bit of it all. Hopefully this new foray into mercenary work will stick for them.";
 		bros[9].getSprite("accessory_special").setBrush("bust_militia_band_01");		
 		bros[9].worsenMood(1.0, "Had their trusty scramasax stolen");
-		bros[9].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[9].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		
 		bros[10].setStartValuesEx([
 			"militia_background"
@@ -155,11 +155,11 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 		bros[10].m.PerkPoints = 0;
 		bros[10].m.LevelUps = 0;
 		bros[10].m.Level = 1;
-		bros[10].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[10].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 		bros[11].setStartValuesEx(this.Const.CharacterVillageBackgrounds);
 		bros[11].getBackground().m.RawDescription = "%name% is, ostensibly, running away from their other half. You met them once and approve their escape plan entirely, and not just because it affords you another body on the front line — that wench is genuinely crazy.";
 		bros[11].improveMood(1.0, "Managed to get away from their family");
-		bros[11].getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+		bros[11].getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 
 		this.World.Assets.addBusinessReputation(this.m.StartingBusinessReputation);
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/ground_grains_item"));
@@ -249,8 +249,8 @@ this.militia_scenario <- this.inherit("scripts/scenarios/world/starting_scenario
 
 	function onHiredByScenario( bro )
 	{
-		bro.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
-		bro.getSkills().add(this.new("scripts/skills/traits/peasant_trait"));
+		bro.getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
+		bro.getSkills().add(this.new("scripts/skills/traits/legend_peasant_trait"));
 		bro.getSprite("socket").setBrush("bust_base_militia");
 	}
 

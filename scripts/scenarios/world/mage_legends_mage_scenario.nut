@@ -147,7 +147,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 			bro.worsenMood(0.5, "Thinks you are a boring nerd");
 		}
 
-		if (bro.getSkills().hasSkill("trait.pragmatic"))
+		if (bro.getSkills().hasSkill("trait.legend_pragmatic"))
 		{
 			bro.improveMood(0.5, "Thinks magic is pretty useful");
 		}
@@ -163,7 +163,7 @@ this.mage_legends_mage_scenario <- this.inherit("scripts/scenarios/world/startin
 
 	function onGenerateBro(bro)
 	{
-			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.bright") || bro.getSkills().hasSkill("trait.pragmatic"))
+			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.Educated) || bro.getSkills().hasSkill("trait.bright") || bro.getSkills().hasSkill("trait.legend_pragmatic"))
 			{
 				bro.m.HiringCost = this.Math.floor(bro.m.HiringCost * 0.8);
 				bro.getBaseProperties().DailyWage = this.Math.floor(bro.getBaseProperties().DailyWage * 0.8);

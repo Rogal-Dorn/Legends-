@@ -113,9 +113,9 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		items.equip(shield);
 		bros[3].getBackground().m.RawDescription = "%name%\'s parents both served your family, it runs in the blood. While %name% is dependable in a fight and would never dream of leaving you, it also reduces their %name%\'s ambition and drive";
 		bros[3].getBackground().buildDescription(true);
-		bros[3].getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/legend_pragmatic_trait"));
 		bros[3].getSkills().add(this.new("scripts/skills/traits/loyal_trait"));
-		bros[3].getSkills().add(this.new("scripts/skills/traits/slack_trait"));
+		bros[3].getSkills().add(this.new("scripts/skills/traits/legend_slack_trait"));
 		this.addScenarioPerk(bros[3].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		bros[3].setPlaceInFormation(5);
 
@@ -151,9 +151,9 @@ this.legends_noble_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		], false);
 		bros[5].getBackground().m.RawDescription = "%name% has won the house archery contest several years running, but never shuts up about it. The constant stream of narration makes the great aim easy to dodge.";
 		bros[5].getBackground().buildDescription(true);
-		bros[5].getSkills().add(this.new("scripts/skills/traits/sureshot_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/legend_sureshot_trait"));
 		bros[5].getSkills().add(this.new("scripts/skills/traits/teamplayer_trait"));
-		bros[5].getSkills().add(this.new("scripts/skills/traits/predictable_trait"));
+		bros[5].getSkills().add(this.new("scripts/skills/traits/legend_predictable_trait"));
 		this.addScenarioPerk(bros[5].getBackground(), this.Const.Perks.PerkDefs.Rotation);
 		if (bros[5].getBaseProperties().RangedSkill  <= 60) {
 			bros[5].getBaseProperties().RangedSkill  += 5;

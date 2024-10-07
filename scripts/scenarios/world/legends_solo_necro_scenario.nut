@@ -23,7 +23,7 @@ this.legends_solo_necro_scenario <- this.inherit("scripts/scenarios/world/starti
 		{
 			local bro;
 			bro = roster.create("scripts/entity/tactical/player");
-			bro.getSkills().add(this.new("scripts/skills/traits/necromancer_trait")); //IMPORTANT - dictates relationship loss/gain
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_necromancer_trait")); //IMPORTANT - dictates relationship loss/gain
 			bro.m.HireTime = this.Time.getVirtualTimeF();
 
 			while (names.find(bro.getNameOnly()) != null)

@@ -18,7 +18,7 @@ this.legend_puppet_master_background <- this.inherit("scripts/skills/backgrounds
 			"trait.loyal",
 			"trait.brave",
 			"trait.spartan",
-			"trait.light",
+			"trait.legend_light",
 			"trait.greedy"
 		];
 		this.m.Titles = [

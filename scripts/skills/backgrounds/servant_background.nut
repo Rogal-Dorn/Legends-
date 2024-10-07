@@ -16,7 +16,7 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.impatient",
 			"trait.iron_jaw",
 			"trait.brute",
@@ -33,7 +33,7 @@ this.servant_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.greedy",
 			"trait.sure_footing",
 			"trait.bloodthirsty",
-			"trait.aggressive"
+			"trait.legend_aggressive"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;

@@ -18,7 +18,7 @@ this.legend_nightwatch_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.night_blind",
 			"trait.clubfooted",
 			"trait.asthmatic",
-			"trait.unpredictable"
+			"trait.legend_unpredictable"
 		];
 
 		this.m.Faces = this.Const.Faces.AllWhiteMale;

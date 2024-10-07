@@ -12,7 +12,7 @@ this.legend_alchemist_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.HiringCost = 1250;
 		this.m.DailyCost = 20;
 		this.m.Excluded = [
-			"trait.heavy",
+			"trait.legend_heavy",
 			"trait.martial",
 			"trait.strong",
 			"trait.bloodthirsty",

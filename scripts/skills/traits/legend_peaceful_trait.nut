@@ -21,7 +21,7 @@ this.legend_peaceful_trait <- this.inherit("scripts/skills/traits/character_trai
 			"trait.hate_greenskins",
 			"trait.hate_undead",
 			"trait.hate_beasts",
-			"trait.hate_nobles"
+			"trait.legend_hate_nobles"
 		];
 	}
 

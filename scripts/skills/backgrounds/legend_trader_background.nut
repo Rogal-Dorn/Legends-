@@ -29,7 +29,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.dumb",
 			"trait.deathwish",
 			"trait.bloodthirsty",
-			"trait.firm",
+			"trait.legend_firm",
 			"trait.disloyal",
 			"trait.loyal"
 		];

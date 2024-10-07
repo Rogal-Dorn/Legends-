@@ -906,13 +906,13 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		this.World.Assets.getOrigin().onHiredByScenario(this);
 		// this.m.CompanyID = this.World.State.addNewID(this);
 
-		if (this.getSkills().hasSkill("trait.intensive_training_trait") && this.getLevel() > 1 )
+		if (this.getSkills().hasSkill("trait.legend_intensive_training_trait") && this.getLevel() > 1 )
 		{
 			if ( this.getBackground().getNameOnly()=="Donkey" )
 			{
 				return;
 			}
-			local inTraining = this.getSkills().getSkillByID("trait.intensive_training_trait");
+			local inTraining = this.getSkills().getSkillByID("trait.legend_intensive_training_trait");
 
 			local addSkills = this.Math.rand(0, this.getLevel()+2);
 			addSkills = this.Math.min(addSkills, inTraining.getMaxSkillsCanBeAdded() - 1);
@@ -2123,9 +2123,9 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		}
 
 		background.buildDescription();
-		local inTraining = this.new("scripts/skills/traits/intensive_training_trait");
+		local inTraining = this.new("scripts/skills/traits/legend_intensive_training_trait");
 
-		if (!this.getSkills().hasSkill("trait.intensive_training_trait"))
+		if (!this.getSkills().hasSkill("trait.legend_intensive_training_trait"))
 		{
 			this.m.Skills.add(inTraining);
 		}
@@ -2641,8 +2641,8 @@ this.player <- this.inherit("scripts/entity/tactical/human", {
 		local skills = [
 			"perk.legend_barter_trustworthy",
 			"perk.legend_barter_convincing",
-			"perk.legends.off_book_deal",
-			"trait.seductive"
+			"perk.legend_off_book_deal",
+			"trait.legend_seductive"
 		];
 
 		foreach( s in skills )

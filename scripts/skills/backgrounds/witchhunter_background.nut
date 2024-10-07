@@ -17,7 +17,7 @@ this.witchhunter_background <- this.inherit("scripts/skills/backgrounds/characte
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.hate_beasts",
 			"trait.clubfooted",
 			"trait.short_sighted",

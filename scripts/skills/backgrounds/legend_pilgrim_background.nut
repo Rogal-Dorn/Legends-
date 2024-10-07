@@ -38,8 +38,8 @@ this.legend_pilgrim_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.athletic",
 			"trait.hate_beasts",
 			"trait.hate_greenskins",
-			"trait.hate_nobles",
-			"trait.slack"
+			"trait.legend_hate_nobles",
+			"trait.legend_slack"
 		];
 		this.m.IsGuaranteed = ["hate_undead_trait"]
 		this.m.Faces = this.Const.Faces.AllWhiteMale;

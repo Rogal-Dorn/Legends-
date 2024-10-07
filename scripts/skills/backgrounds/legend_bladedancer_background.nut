@@ -27,7 +27,7 @@ this.legend_bladedancer_background <- this.inherit("scripts/skills/backgrounds/c
 			"trait.dastard",
 			"trait.hesitant",
 			"trait.fragile",
-			"trait.slack"
+			"trait.legend_slack"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,

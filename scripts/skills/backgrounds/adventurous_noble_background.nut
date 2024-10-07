@@ -25,8 +25,8 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.insecure",
 			"trait.asthmatic",
 			"trait.spartan",
-			"trait.hate_nobles",
-			"trait.double_tongued"
+			"trait.legend_hate_nobles",
+			"trait.legend_double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;

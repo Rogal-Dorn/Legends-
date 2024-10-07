@@ -269,7 +269,7 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getTrained( bro )
 	{
-		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
+		local inTraining = bro.getSkills().getSkillByID("trait.legend_intensive_training_trait");
 		local XPbonus = this.Math.floor(this.m.Camp.getCampTimeHours() * (this.getUpgraded() ? 10 : 5) * (inTraining == null ? 1 : (1 + inTraining.getBonusXP())));
 		local originalXP = bro.m.XP;
 		bro.addXP(XPbonus);
@@ -360,12 +360,12 @@ this.training_building <- this.inherit("scripts/entity/world/camp/camp_building"
 
 	function getBonus( bro )
 	{
-		if (!bro.getSkills().hasSkill("trait.intensive_training_trait"))
+		if (!bro.getSkills().hasSkill("trait.legend_intensive_training_trait"))
 		{
 			return;
 		}
 
-		local inTraining = bro.getSkills().getSkillByID("trait.intensive_training_trait");
+		local inTraining = bro.getSkills().getSkillByID("trait.legend_intensive_training_trait");
 
 		if (inTraining.isMaxReached())
 		{

@@ -30,7 +30,7 @@ this.historian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.tough",
 			"trait.superstitious",
 			"trait.spartan",
-			"trait.aggressive"
+			"trait.legend_aggressive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Hitpoints,

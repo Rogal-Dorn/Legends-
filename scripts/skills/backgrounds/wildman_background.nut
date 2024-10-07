@@ -17,7 +17,7 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.weasel",
 			"trait.teamplayer",
 			"trait.fear_beasts",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.hate_undead",
 			"trait.paranoid",
 			"trait.night_blind",
@@ -42,8 +42,8 @@ this.wildman_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.cocky",
 			"trait.dastard",
 			"trait.drunkard",
-			"trait.frail",
-			"trait.predictable"
+			"trait.legend_frail",
+			"trait.legend_predictable"
 		];
 		this.m.Titles = [
 			"the Savage",

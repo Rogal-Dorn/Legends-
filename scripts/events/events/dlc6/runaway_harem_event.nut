@@ -139,8 +139,8 @@ this.runaway_harem_event <- this.inherit("scripts/events/event", {
 				talents[this.Const.Attributes.Bravery] = 3;
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_coup_de_grace"));
 				_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_favoured_enemy_southerner"));
-				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/natural_trait"));
-				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/pragmatic_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_natural_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_pragmatic_trait"));
 				_event.m.Dude.worsenMood(1.0, "Got taken captive by manhunters");
 				_event.m.Dude.improveMood(2.0, "Got saved from a life in slavery");
 				this.Characters.push(_event.m.Dude.getImagePath());

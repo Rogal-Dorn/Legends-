@@ -56,7 +56,7 @@ this.civilwar_noble_event <- this.inherit("scripts/events/event", {
 						]);
 					}
 
-				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/hate_nobles_trait"));
+				_event.m.Dude.getSkills().add(this.new("scripts/skills/traits/legend_hate_nobles_trait"));
 				this.Characters.push(_event.m.Dude.getImagePath());
 			}
 

@@ -259,7 +259,7 @@ this.deserters_scenario <- this.inherit("scripts/scenarios/world/starting_scenar
 
 		if (r == 2)
 		{
-			bro.getSkills().add(this.new("scripts/skills/traits/fear_nobles_trait"));
+			bro.getSkills().add(this.new("scripts/skills/traits/legend_fear_nobles_trait"));
 		}
 
 		if (r == 3)

@@ -32,7 +32,7 @@ this.gambler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.strong",
 			"trait.tough",
 			"trait.bloodthirsty",
-			"trait.pragmatic"
+			"trait.legend_pragmatic"
 		];
 		this.m.Titles = [
 			"Deuces",

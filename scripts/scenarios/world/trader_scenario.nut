@@ -230,12 +230,12 @@ this.trader_scenario <- this.inherit("scripts/scenarios/world/starting_scenario"
 
 				if (r == 3)
 				{
-					bro.getSkills().add(this.new("scripts/skills/traits/slack_trait"));
+					bro.getSkills().add(this.new("scripts/skills/traits/legend_slack_trait"));
 				}
 
 				if (r == 4)
 				{
-					bro.getSkills().add(this.new("scripts/skills/traits/double_tongued_trait"));
+					bro.getSkills().add(this.new("scripts/skills/traits/legend_double_tongued_trait"));
 				}
 
 				if (r == 5)

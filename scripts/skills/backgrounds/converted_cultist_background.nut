@@ -15,7 +15,7 @@ this.converted_cultist_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.dastard",
 			"trait.gluttonous",
 			"trait.insecure",
-			"trait.slack",
+			"trait.legend_slack",
 			"trait.disloyal",
 			"trait.hesitant",
 			"trait.fat",

@@ -18,7 +18,7 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.Excluded = [
 			"trait.weasel",
 			"trait.hate_undead",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.night_blind",
 			"trait.ailing",
 			"trait.asthmatic",
@@ -33,10 +33,10 @@ this.barbarian_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.slack",
-			"trait.frail",
-			"trait.gift_of_people",
-			"trait.seductive"
+			"trait.legend_slack",
+			"trait.legend_frail",
+			"trait.legend_gift_of_people",
+			"trait.legend_seductive"
 		];
 		this.m.Titles = this.Const.Strings.BarbarianTitles;
 		this.m.Faces = this.Const.Faces.WildMale;

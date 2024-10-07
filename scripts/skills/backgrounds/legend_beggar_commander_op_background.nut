@@ -19,14 +19,14 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 			"trait.fat",
 			"trait.bright",
 			"trait.fearless",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.brave",
 			"trait.determined",
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic",
-			"trait.aggressive",
-			"trait.natural",
+			"trait.legend_aggressive",
+			"trait.legend_natural",
 			"trait.disloyal",
 			"trait.loyal"
 		];

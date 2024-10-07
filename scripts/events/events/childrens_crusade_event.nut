@@ -423,7 +423,7 @@ this.childrens_crusade_event <- this.inherit("scripts/events/event", {
 			{
 				candidates_traveller.push(bro);
 			}
-			else if (bro.getSkills().hasSkill("trait.double_tongued"))
+			else if (bro.getSkills().hasSkill("trait.legend_double_tongued"))
 			{
 				candidates_doubter.push(bro);
 			}

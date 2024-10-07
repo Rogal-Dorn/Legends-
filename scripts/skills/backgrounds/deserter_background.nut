@@ -25,8 +25,8 @@ this.deserter_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.fragile",
 			"trait.optimist",
 			"trait.bloodthirsty",
-			"trait.firm",
-			"trait.aggressive"
+			"trait.legend_firm",
+			"trait.legend_aggressive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Bravery

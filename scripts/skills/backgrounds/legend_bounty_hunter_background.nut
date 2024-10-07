@@ -12,7 +12,7 @@ this.legend_bounty_hunter_background <- this.inherit("scripts/skills/backgrounds
 		this.m.HiringCost = 500; //Equipment will factor into cost and these guys can be quite well equipped
 		this.m.DailyCost = 55;
 		this.m.Excluded = [
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.clubfooted",
 			"trait.irrational",
 			"trait.legend_fear_dark",
@@ -25,12 +25,12 @@ this.legend_bounty_hunter_background <- this.inherit("scripts/skills/backgrounds
 			"trait.fainthearted",
 			"trait.craven",
 			"trait.insecure",
-			"trait.frail",
-			"trait.seductive"
+			"trait.legend_frail",
+			"trait.legend_seductive"
 			"trait.fainthearted",
 			"trait.optimist",
 			"trait.short_sighted",
-			"trait.gift_of_people"
+			"trait.legend_gift_of_people"
 		];
 		this.m.Titles = [
 			"the Mancatcher",

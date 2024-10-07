@@ -12,7 +12,7 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 		this.m.HiringCost = 130;
 		this.m.DailyCost = 12;
 		this.m.Excluded = [
-			"trait.aggressive",
+			"trait.legend_aggressive",
 			"trait.ailing",
 			"trait.asthmatic",
 			"trait.bleeder",
@@ -23,11 +23,11 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.hate_beasts",
 			"trait.fear_greenskins",
 			"trait.hate_greenskins",
-			"trait.fear_nobles",
-			"trait.hate_nobles",
+			"trait.legend_fear_nobles",
+			"trait.legend_hate_nobles",
 			"trait.fear_undead",
 			"trait.hate_undead",
-			"trait.firm",
+			"trait.legend_firm",
 			"trait.teamplayer",
 			"trait.impatient",
 			"trait.clumsy",
@@ -39,7 +39,7 @@ this.anatomist_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.iron_lungs",
 			"trait.irrational",
 			"trait.cocky",
-			"trait.sureshot",
+			"trait.legend_sureshot",
 			"trait.strong",
 			"trait.tough",
 			"trait.superstitious"

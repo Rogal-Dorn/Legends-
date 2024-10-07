@@ -27,7 +27,7 @@ this.legend_noble_commander_background <- this.inherit("scripts/skills/backgroun
 			"trait.spartan",
 			"trait.disloyal",
 			"trait.loyal",
-			"trait.double_tongued"
+			"trait.legend_double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;

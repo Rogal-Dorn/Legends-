@@ -31,7 +31,7 @@ this.servant_southern_background <- this.inherit("scripts/skills/backgrounds/ser
 			"trait.greedy",
 			"trait.sure_footing",
 			"trait.bloodthirsty",
-			"trait.aggressive"
+			"trait.legend_aggressive"
 		];
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;

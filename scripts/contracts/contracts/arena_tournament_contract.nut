@@ -1103,7 +1103,7 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				else if (bro.getFlags().getAsInt("ArenaFightsWon") == 12)
 				{
 					bro.getSkills().removeByID("trait.arena_fighter");
-					skill = this.new("scripts/skills/traits/arena_veteran_trait");
+					skill = this.new("scripts/skills/traits/legend_arena_veteran_trait");
 					bro.getSkills().add(skill);
 					_list.push({
 						id = 10,
@@ -1111,16 +1111,16 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 						text = bro.getName() + " is now " + this.Const.Strings.getArticle(skill.getName()) + skill.getName()
 					});
 				}
-				else if (bro.getFlags().getAsInt("ArenaFightsWon") > 25 && bro.getSkills().hasSkill("trait.arena_veteran")) //Here to improve save compatibility
+				else if (bro.getFlags().getAsInt("ArenaFightsWon") > 25 && bro.getSkills().hasSkill("trait.legend_arena_veteran")) //Here to improve save compatibility
 				{
-					bro.getSkills().removeByID("trait.arena_veteran");
+					bro.getSkills().removeByID("trait.legend_arena_veteran");
 					if (bro.getFlags().getAsInt("ArenaFightsWon") < 50)
 					{
-						skill = this.new("scripts/skills/traits/arena_champion_trait");
+						skill = this.new("scripts/skills/traits/legend_arena_champion_trait");
 					}
 					else
 					{
-						skill = this.new("scripts/skills/traits/arena_invictus_trait");
+						skill = this.new("scripts/skills/traits/legend_arena_invictus_trait");
 					}
 					bro.getSkills().add(skill);
 					_list.push({
@@ -1131,8 +1131,8 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (bro.getFlags().getAsInt("ArenaFightsWon") == 25)
 				{
-					bro.getSkills().removeByID("trait.arena_veteran");
-					skill = this.new("scripts/skills/traits/arena_champion_trait");
+					bro.getSkills().removeByID("trait.legend_arena_veteran");
+					skill = this.new("scripts/skills/traits/legend_arena_champion_trait");
 					bro.getSkills().add(skill);
 					_list.push({
 						id = 10,
@@ -1142,8 +1142,8 @@ this.arena_tournament_contract <- this.inherit("scripts/contracts/contract", {
 				}
 				else if (bro.getFlags().getAsInt("ArenaFightsWon") == 50)
 				{
-					bro.getSkills().removeByID("trait.arena_champion");
-					skill = this.new("scripts/skills/traits/arena_invictus_trait");
+					bro.getSkills().removeByID("trait.legend_arena_champion_trait");
+					skill = this.new("scripts/skills/traits/legend_arena_invictus_trait");
 					bro.getSkills().add(skill);
 					_list.push({
 						id = 10,

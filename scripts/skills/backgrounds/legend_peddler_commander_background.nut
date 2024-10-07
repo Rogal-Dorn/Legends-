@@ -30,8 +30,8 @@ this.legend_peddler_commander_background <- this.inherit("scripts/skills/backgro
 			"trait.dumb",
 			"trait.deathwish",
 			"trait.bloodthirsty",
-			"trait.aggressive",
-			"trait.firm"
+			"trait.legend_aggressive",
+			"trait.legend_firm"
 		];
 		this.m.Ethnicity = this.Math.rand(0, 2);
 		if (this.m.Ethnicity == 0)

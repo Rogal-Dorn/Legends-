@@ -16,7 +16,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.clubfooted",
 			"trait.irrational",
 			"trait.disloyal",
@@ -31,7 +31,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.pessimist",
 			"trait.greedy",
 			"trait.bleeder",
-			"trait.slack"
+			"trait.legend_slack"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.YoungMale;
