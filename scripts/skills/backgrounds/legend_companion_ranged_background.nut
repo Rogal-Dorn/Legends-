@@ -23,10 +23,10 @@ this.legend_companion_ranged_background <- this.inherit("scripts/skills/backgrou
 			"trait.fear_beasts",
 			"trait.greedy",
 			"trait.weasel",
-			"trait.fear_nobles",
-			"trait.frail",
-			"trait.slack",
-			"trait.double_tongued",
+			"trait.legend_fear_nobles",
+			"trait.legend_frail",
+			"trait.legend_slack",
+			"trait.legend_double_tongued",
 			"trait.clumsy"
 		];
 		this.m.ExcludedTalents = [

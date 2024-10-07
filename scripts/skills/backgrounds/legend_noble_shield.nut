@@ -13,13 +13,13 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.hate_undead",
 			"trait.hate_beasts",
 			"trait.hate_greenskins",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.huge",
 			"trait.weasel",
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.ailing",
@@ -38,7 +38,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.double_tongued"
+			"trait.legend_double_tongued"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill

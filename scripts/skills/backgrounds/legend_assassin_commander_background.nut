@@ -45,7 +45,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.disloyal",
 			"trait.loyal",
 			"trait.dumb",
-			"trait.predictable"
+			"trait.legend_predictable"
 		];
 		this.m.Titles = [
 			"the Assassin",
@@ -257,7 +257,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 	{
 		this.character_background.onAdded();
 		local actor = this.getContainer().getActor();
-		this.m.Container.add(this.new("scripts/skills/traits/aggressive_trait"));
+		this.m.Container.add(this.new("scripts/skills/traits/legend_aggressive_trait"));
 	}
 
 	function onAddEquipment()

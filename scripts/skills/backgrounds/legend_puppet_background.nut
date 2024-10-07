@@ -56,20 +56,20 @@ this.legend_puppet_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.teamplayer",
 			"trait.weasel",
 			//legend traits
-			"trait.ambitious",
-			"trait.fear_nobles",
-			"trait.hate_nobles",
-			"trait.frail",
+			"trait.legend_ambitious",
+			"trait.legend_fear_nobles",
+			"trait.legend_hate_nobles",
+			"trait.legend_frail",
 			//"trait.legend_cannibalistic",
-			"trait.steady_hands",
+			"trait.legend_steady_hands",
 			"trait.talented",
-			"trait.pragmatic",
-			"trait.unpredictable",
-			"trait.slack",
-			"trait.sureshot",
-			"trait.double_tongued",
-			"trait.gift_of_people",
-			"trait.seductive"
+			"trait.legend_pragmatic",
+			"trait.legend_unpredictable",
+			"trait.legend_slack",
+			"trait.legend_sureshot",
+			"trait.legend_double_tongued",
+			"trait.legend_gift_of_people",
+			"trait.legend_seductive"
 		];
 
 		/*this.m.ExcludedTalents = [ //talentless

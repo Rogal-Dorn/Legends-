@@ -20,12 +20,12 @@ this.legend_youngblood_background <- this.inherit("scripts/skills/backgrounds/ch
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.hate_beasts",
 			"trait.clubfooted",
 			"trait.short_sighted",
 			"trait.dastard",
-			"trait.slack",
+			"trait.legend_slack",
 			"trait.drunkard"
 		];
 		this.m.Titles = [

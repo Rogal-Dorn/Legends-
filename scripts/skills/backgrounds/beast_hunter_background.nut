@@ -29,7 +29,7 @@ this.beast_hunter_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.asthmatic",
 			"trait.craven",
 			"trait.dastard",
-			"trait.seductive"
+			"trait.legend_seductive"
 		];
 		this.m.Titles = [
 			"the Beasthunter",

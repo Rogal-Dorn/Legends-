@@ -29,9 +29,9 @@ this.peddler_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			"trait.dumb",
 			"trait.deathwish",
 			"trait.bloodthirsty",
-			"trait.aggressive",
-			"trait.ambitious",
-			"trait.firm"
+			"trait.legend_aggressive",
+			"trait.legend_ambitious",
+			"trait.legend_firm"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.Hairs = this.Const.Hair.TidyMale;

@@ -17,10 +17,10 @@ this.lindwurm_slayer_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.craven",
 			"trait.dastard",
 			"trait.disloyal",
-			"trait.double_tongued",
+			"trait.legend_double_tongued",
 			"trait.fainthearted",
 			"trait.fragile",
-			"trait.frail",
+			"trait.legend_frail",
 			"trait.fear_beasts",
 			"trait.greedy",
 			"trait.hate_greenskins",
@@ -31,7 +31,7 @@ this.lindwurm_slayer_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.irrational",
 			"trait.night_blind",
 			"trait.pessimist",
-			"trait.slack",
+			"trait.legend_slack",
 			"trait.team_player",
 			"trait.weasel"
 		];

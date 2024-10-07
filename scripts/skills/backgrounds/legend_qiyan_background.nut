@@ -20,10 +20,10 @@ this.legend_qiyan_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.asthmatic",
 			"trait.spartan",
 			"trait.athletic",
-			"trait.heavy",
-			"trait.aggressive",
+			"trait.legend_heavy",
+			"trait.legend_aggressive",
 			"trait.huge",
-			"trait.slack",
+			"trait.legend_slack",
 			"trait.craven"
 		];
 		this.m.ExcludedTalents = [

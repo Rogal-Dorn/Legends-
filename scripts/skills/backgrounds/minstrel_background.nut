@@ -28,7 +28,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.asthmatic",
 			"trait.fainthearted",
 			"trait.night_blind",
-			"trait.pragmatic",
+			"trait.legend_pragmatic",
 			"trait.spartan",
 			"trait.short_sighted"
 		];

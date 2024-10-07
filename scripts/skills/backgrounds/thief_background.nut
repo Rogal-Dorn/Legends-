@@ -17,7 +17,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.hate_undead",
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.clubfooted",
@@ -34,7 +34,7 @@ this.thief_background <- this.inherit("scripts/skills/backgrounds/character_back
 			"trait.brute",
 			"trait.strong",
 			"trait.bloodthirsty",
-			"trait.heavy"
+			"trait.legend_heavy"
 		];
 		this.m.Titles = [
 			"the Shadow",

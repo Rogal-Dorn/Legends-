@@ -14,7 +14,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
 			"trait.hate_undead",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.swift",
@@ -37,8 +37,8 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.light",
-			"trait.double_tongued",
+			"trait.legend_light",
+			"trait.legend_double_tongued",
 			"trait.loyal"
 		];
 		this.m.ExcludedTalents = [

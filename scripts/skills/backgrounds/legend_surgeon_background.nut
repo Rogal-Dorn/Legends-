@@ -20,7 +20,7 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.athletic",
 			"trait.brute",
 			"trait.bloodthirsty",
-			"trait.aggressive",
+			"trait.legend_aggressive",
 			"trait.weasel",
 			"trait.hate_beasts",
 			"trait.swift",
@@ -35,8 +35,8 @@ this.legend_surgeon_background <- this.inherit("scripts/skills/backgrounds/chara
 			"trait.iron_lungs",
 			"trait.craven",
 			"trait.greedy",
-			"trait.seductive",
-			"trait.double_tongued"
+			"trait.legend_seductive",
+			"trait.legend_double_tongued"
 		];
 		this.m.Titles = [
 			"the Learner",

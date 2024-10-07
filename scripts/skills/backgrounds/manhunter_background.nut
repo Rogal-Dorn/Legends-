@@ -24,7 +24,7 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 			"trait.craven",
 			"trait.insecure",
 			"trait.short_sighted",
-			"trait.gift_of_people"
+			"trait.legend_gift_of_people"
 		];
 		this.m.Titles = [
 			"the Manhunter",

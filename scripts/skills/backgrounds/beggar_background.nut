@@ -19,14 +19,14 @@ this.beggar_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.fat",
 			"trait.bright",
 			"trait.fearless",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.brave",
 			"trait.determined",
 			"trait.deathwish",
 			"trait.greedy",
 			"trait.athletic",
-			"trait.aggressive",
-			"trait.natural"
+			"trait.legend_aggressive",
+			"trait.legend_natural"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Bravery

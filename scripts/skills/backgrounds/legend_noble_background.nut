@@ -26,7 +26,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.asthmatic",
 			"trait.spartan",
 			"trait.loyal",
-			"trait.double_tongued"
+			"trait.legend_double_tongued"
 		];
 		this.m.Faces = this.Const.Faces.AllWhiteMale;
 		this.m.IsGuaranteed = ["disloyal_trait"];

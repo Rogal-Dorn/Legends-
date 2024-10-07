@@ -28,9 +28,9 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			"trait.craven",
 			"trait.greedy",
 			"trait.bloodthirsty",
-			"trait.aggressive",
-			"trait.seductive",
-			"trait.double_tongued"
+			"trait.legend_aggressive",
+			"trait.legend_seductive",
+			"trait.legend_double_tongued"
 		];
 		this.m.Titles = [
 			"the Pious",

@@ -25,7 +25,7 @@
 // 			"trait.insecure",
 // 			"trait.asthmatic",
 // 			"trait.spartan",
-// 			"trait.hate_nobles"
+// 			"trait.legend_hate_nobles"
 // 		];
 
 // 		this.m.Faces = this.Const.Faces.PrettyFemale;

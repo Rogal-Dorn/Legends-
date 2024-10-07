@@ -35,7 +35,7 @@ this.hate_nobles_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Casualty.getImagePath());
-				local trait = this.new("scripts/skills/traits/hate_nobles_trait");
+				local trait = this.new("scripts/skills/traits/legend_hate_nobles_trait");
 				_event.m.Casualty.getSkills().add(trait);
 				this.List.push({
 					id = 10,

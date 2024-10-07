@@ -14,7 +14,7 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.hate_greenskins",
 			"trait.hate_beasts",
 			"trait.hate_undead",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.paranoid",
 			"trait.night_blind",
 			"trait.swift",
@@ -37,8 +37,8 @@ this.crusader_background <- this.inherit("scripts/skills/backgrounds/character_b
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.light",
-			"trait.double_tongued"
+			"trait.legend_light",
+			"trait.legend_double_tongued"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.RangedSkill,

@@ -13,7 +13,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 		this.m.DailyCost = 35;
 		this.m.DailyCostMult = 1.0;
 		this.m.Excluded = [
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.huge",
 			"trait.weasel",
 			"trait.fear_greenskins",

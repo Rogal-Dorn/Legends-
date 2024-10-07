@@ -32,7 +32,7 @@ this.gambler_southern_background <- this.inherit("scripts/skills/backgrounds/gam
 			"trait.strong",
 			"trait.tough",
 			"trait.bloodthirsty",
-			"trait.pragmatic"
+			"trait.legend_pragmatic"
 		];
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;

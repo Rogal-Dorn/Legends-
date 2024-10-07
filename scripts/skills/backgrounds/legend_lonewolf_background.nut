@@ -17,7 +17,7 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.ailing",
 			"trait.clubfooted",
 			"trait.hesitant",
@@ -33,8 +33,8 @@ this.legend_lonewolf_background <- this.inherit("scripts/skills/backgrounds/char
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.light",
-			"trait.frail"
+			"trait.legend_light",
+			"trait.legend_frail"
 		];
 		this.m.Titles = [ //More
 			"the Lone Wolf",

@@ -27,8 +27,8 @@ this.legend_guildmaster_background <- this.inherit("scripts/skills/backgrounds/c
 			"trait.craven",
 			"trait.hesitant",
 			"trait.dastard",
-			"trait.slack",
-			"trait.seductive"
+			"trait.legend_slack",
+			"trait.legend_seductive"
 		];
 		this.m.Titles = [
 			"the Beasthunter",

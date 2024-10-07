@@ -23,7 +23,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			"trait.dumb",
 			"trait.iron_lungs",
 			"trait.craven",
-			"trait.aggressive",
+			"trait.legend_aggressive",
 			"trait.greedy",
 			"trait.bloodthirsty"
 		];

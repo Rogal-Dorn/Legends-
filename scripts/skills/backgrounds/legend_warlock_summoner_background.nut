@@ -21,7 +21,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 			"trait.craven",
 			"trait.tough",
 			"trait.huge",
-			"trait.firm",
+			"trait.legend_firm",
 			"trait.strong",
 			"trait.spartan",
 			"trait.fat",

@@ -21,7 +21,7 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			"trait.fearless",
 			"trait.brave",
 			"trait.bright",
-			"trait.seductive",
+			"trait.legend_seductive",
 			"trait.fear_beasts",
 			"trait.hate_beasts"
 		];

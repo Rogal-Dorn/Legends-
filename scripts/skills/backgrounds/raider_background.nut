@@ -28,7 +28,7 @@ this.raider_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			"trait.bleeder",
 			"trait.dastard",
 			"trait.insecure",
-			"trait.gift_of_people"
+			"trait.legend_gift_of_people"
 		];
 		this.m.Titles = [
 			"the Raider",

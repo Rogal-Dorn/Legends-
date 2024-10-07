@@ -17,7 +17,7 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.fear_undead",
 			"trait.fear_beasts",
 			"trait.fear_greenskins",
-			"trait.fear_nobles",
+			"trait.legend_fear_nobles",
 			"trait.ailing",
 			"trait.swift",
 			"trait.clubfooted",
@@ -33,9 +33,9 @@ this.hedge_knight_background <- this.inherit("scripts/skills/backgrounds/charact
 			"trait.dastard",
 			"trait.insecure",
 			"trait.asthmatic",
-			"trait.light",
-			"trait.frail",
-			"trait.seductive"
+			"trait.legend_light",
+			"trait.legend_frail",
+			"trait.legend_seductive"
 		];
 		this.m.ExcludedTalents = [
 			this.Const.Attributes.Initiative,

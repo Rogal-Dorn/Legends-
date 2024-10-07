@@ -21,10 +21,10 @@ this.legend_battle_sister_background <- this.inherit("scripts/skills/backgrounds
 			"trait.tiny",
 			"trait.fragile",
 			"trait.fainthearted",
-			"trait.hate_nobles",
+			"trait.legend_hate_nobles",
 			"trait.dastard",
 			"trait.hesitant",
-			"trait.light",
+			"trait.legend_light",
 			"trait.craven"
 		];
 		this.m.ExcludedTalents = [

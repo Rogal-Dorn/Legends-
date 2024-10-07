@@ -28,7 +28,7 @@ this.lose_fear_nobles_event <- this.inherit("scripts/events/event", {
 			function start( _event )
 			{
 				this.Characters.push(_event.m.Casualty.getImagePath());
-				local trait = _event.m.Casualty.getSkills().getSkillByID("trait.fear_nobles");
+				local trait = _event.m.Casualty.getSkills().getSkillByID("trait.legend_fear_nobles");
 				this.List.push({
 					id = 10,
 					icon = trait.getIcon(),
@@ -68,7 +68,7 @@ this.lose_fear_nobles_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (!bro.getSkills().hasSkill("trait.fear_nobles") || bro.getLifetimeStats().Battles < 25 || bro.getLifetimeStats().Kills < 50 || bro.getLifetimeStats().BattlesWithoutMe != 0)
+			if (!bro.getSkills().hasSkill("trait.legend_fear_nobles") || bro.getLifetimeStats().Battles < 25 || bro.getLifetimeStats().Kills < 50 || bro.getLifetimeStats().BattlesWithoutMe != 0)
 			{
 				continue;
 			}

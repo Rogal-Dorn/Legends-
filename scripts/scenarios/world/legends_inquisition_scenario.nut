@@ -85,7 +85,7 @@ this.legends_inquisition_scenario <- this.inherit("scripts/scenarios/world/start
 		bros[2].getBaseProperties().Initiative -= 5;
 		bros[2].getBackground().m.RawDescription = "{%name% is a huge figure, who spent many years in a temple healing and carrying the sick, learning the power of both strength and compassion. It was clear the ills of the world must be sought out and healed at their source. While healing a witch hunter, %name% was convinced to join the hunt to heal the world. }";
 		bros[2].setPlaceInFormation(5);
-		local heavy = this.new("scripts/skills/traits/heavy_trait");
+		local heavy = this.new("scripts/skills/traits/legend_heavy_trait");
 		foreach(skill in heavy.m.Excluded)
 		{
 			bros[2].getSkills().removeByID(skill);
