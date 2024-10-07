@@ -73,7 +73,7 @@ this.legend_white_wolf_item <- this.inherit("scripts/items/accessory/accessory_d
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local unleash = this.new("scripts/skills/actives/legend_unleash_white_wolf");
+		local unleash = this.new("scripts/skills/actives/legend_unleash_white_wolf_skill");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);

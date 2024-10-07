@@ -18,7 +18,7 @@ this.perk_legend_magic_burning_hands <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_magic_burning_hands"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_burning_hands"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_burning_hands_skill"));
 		}
 	}
 

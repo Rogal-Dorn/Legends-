@@ -18,11 +18,11 @@ this.perk_legend_push_forward <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_push_forward"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_push_forward"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_push_forward_skill"));
 		}
 		if (!this.m.Container.hasSkill("actives.legend_coordinated_volleys"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_coordinated_volleys"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_coordinated_volleys_skill"));
 		}
 	}
 		function onRemoved()

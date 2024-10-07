@@ -92,7 +92,7 @@ this.legend_warbear_item <- this.inherit("scripts/items/accessory/accessory", {
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local unleash = this.new("scripts/skills/actives/legend_unleash_warbear");
+		local unleash = this.new("scripts/skills/actives/legend_unleash_warbear_skill");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);

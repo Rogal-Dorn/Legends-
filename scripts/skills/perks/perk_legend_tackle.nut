@@ -18,7 +18,7 @@ this.perk_legend_tackle <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_tackle"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_tackle"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_tackle_skill"));
 		}
 	}
 

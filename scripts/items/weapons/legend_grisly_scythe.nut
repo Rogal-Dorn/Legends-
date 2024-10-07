@@ -46,7 +46,7 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 			local Skills = actor.getSkills();
 			if (Skills.hasSkill("background.legend_commander_necro") || Skills.hasSkill("background.legend_necromancer") || Skills.hasSkill("background.legend_warlock"))
 			{
-				this.addSkill(this.new("scripts/skills/actives/curseofyears_skill"));
+				this.addSkill(this.new("scripts/skills/actives/legend_curseofyears_skill"));
 			}
 		}
 	}

@@ -262,8 +262,8 @@ this.legend_vala_warden_script <- this.inherit("scripts/entity/tactical/actor", 
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(-5, -5));
 
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_vala_warden_pale_touch"));
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_vala_warden_wail"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_vala_warden_pale_touch_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_vala_warden_wail_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));

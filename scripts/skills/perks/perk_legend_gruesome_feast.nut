@@ -18,7 +18,7 @@ this.perk_legend_gruesome_feast <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_gruesome_feast"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_gruesome_feast"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_gruesome_feast_skill"));
 		}
 	}
 	

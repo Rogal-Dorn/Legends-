@@ -84,7 +84,7 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		local stab = this.new("scripts/skills/actives/stab");
 		stab.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
 		this.addSkill(stab);
-		this.addSkill(this.new("scripts/skills/actives/legend_en_garde"));
+		this.addSkill(this.new("scripts/skills/actives/legend_en_garde_skill"));
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
 		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
 		local parrying = this.new("scripts/skills/effects/legend_parrying_effect");

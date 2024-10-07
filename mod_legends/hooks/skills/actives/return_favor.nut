@@ -1,0 +1,51 @@
+::mods_hookExactClass("skills/actives/return_favor", function(o)
+{
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.Icon = "skills/return_favor_square.png";
+		this.m.IconDisabled = "skills/return_favor_square_bw.png";
+		this.m.ActionPointCost = 3;
+	}
+
+	o.getTooltip = function ()
+	{
+		local ret = [
+			{
+				id = 1,
+				type = "title",
+				text = this.getName()
+			},
+			{
+				id = 2,
+				type = "description",
+				text = this.getDescription()
+			},
+			{
+				id = 3,
+				type = "text",
+				text = this.getCostString()
+			},
+			{
+				id = 7,
+				type = "text",
+				icon = "ui/icons/special.png",
+				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun any opponent missing this character with a melee attack (resistances and immunities still apply)."
+			}
+		];
+		return ret;
+	}
+
+	o.onUse = function ( _user, _targetTile )
+	{
+		if (!this.m.IsSpent)
+		{
+			this.m.Container.add(this.new("scripts/skills/effects/legend_return_favor_effect"));
+			this.m.IsSpent = true;
+			return true;
+		}
+
+		return false;
+	}
+});

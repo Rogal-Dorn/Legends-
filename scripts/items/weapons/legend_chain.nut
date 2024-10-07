@@ -41,7 +41,7 @@ this.legend_chain <- this.inherit("scripts/items/weapons/weapon", {
 		flail.m.IconDisabled = "skills/active_62_sw.png";
 		flail.m.Overlay = "active_62";
 		this.addSkill(flail);
-		local thresh = this.new("scripts/skills/actives/legend_chain_thresh");
+		local thresh = this.new("scripts/skills/actives/legend_chain_thresh_skill");
 		this.addSkill(thresh);
 		local lash = this.new("scripts/skills/actives/legend_chain_hook");
 		lash.m.Icon = "skills/active_31.png";

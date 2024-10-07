@@ -41,7 +41,7 @@ this.legend_fan_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(strike_skill);
 		this.addSkill(this.new("scripts/skills/actives/round_swing"));
 		this.addSkill(this.new("scripts/skills/actives/split_man"));
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree_skill"));
 	}
 
 });

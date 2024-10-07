@@ -36,7 +36,7 @@ this.legend_cat_o_nine_tails <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(skill1);
 		local skill2 = this.new("scripts/skills/actives/legend_ninetails_disarm_skill");
 		this.addSkill(skill2);
-		local skill3 = this.new("scripts/skills/actives/legend_flogging");
+		local skill3 = this.new("scripts/skills/actives/legend_flogging_skill");
 		this.addSkill(skill3);
 	}
 

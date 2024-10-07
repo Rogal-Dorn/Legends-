@@ -18,7 +18,7 @@ this.perk_legend_magic_levitate <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_magic_levitate"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_levitate"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_levitate_skill"));
 		}
 	}
 

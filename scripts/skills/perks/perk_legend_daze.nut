@@ -18,7 +18,7 @@ this.perk_legend_daze <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_daze"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_daze"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_daze_skill"));
 		}
 	}
 		function onRemoved()

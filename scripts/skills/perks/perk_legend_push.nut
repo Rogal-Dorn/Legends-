@@ -18,7 +18,7 @@ this.perk_legend_push <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_revolt"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_revolt"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_revolt_skill"));
 		}
 	}
 		function onRemoved()

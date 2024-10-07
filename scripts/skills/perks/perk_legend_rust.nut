@@ -18,7 +18,7 @@ this.perk_legend_rust <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_rust"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_rust"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_rust_skill"));
 		}
 	}
 

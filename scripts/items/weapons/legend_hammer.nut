@@ -34,7 +34,7 @@ this.legend_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/hammer"));
 		this.addSkill(this.new("scripts/skills/actives/crush_armor"));
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock_skill"));
 	}
 
 	function onUpdateProperties( _properties )

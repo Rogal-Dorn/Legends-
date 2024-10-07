@@ -17,7 +17,7 @@ this.perk_legend_magic_soothing_wind <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_magic_soothing_wind"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_soothing_wind"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_soothing_wind_skill"));
 		}
 	}
 

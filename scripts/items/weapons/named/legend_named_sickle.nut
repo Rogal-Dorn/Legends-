@@ -34,7 +34,7 @@ this.legend_named_sickle <- this.inherit("scripts/items/weapons/named/named_weap
 		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/slash"));
 		this.addSkill(this.new("scripts/skills/actives/hook"));
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush_skill"));
 	}
 
 

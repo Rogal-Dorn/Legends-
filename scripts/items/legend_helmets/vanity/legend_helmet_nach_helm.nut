@@ -56,7 +56,7 @@ this.legend_helmet_nach_helm <- this.inherit("scripts/items/legend_helmets/legen
 		this.legend_helmet_upgrade.onEquip();
 		if (!this.getContainer().getActor().getSkills().hasSkill("perk.legend_gruesome_feast"))
 		{
-			this.addSkill(this.new("scripts/skills/actives/legend_gruesome_feast"));
+			this.addSkill(this.new("scripts/skills/actives/legend_gruesome_feast_skill"));
 		}
 	}
 

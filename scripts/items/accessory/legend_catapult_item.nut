@@ -95,7 +95,7 @@ this.legend_catapult_item <- this.inherit("scripts/items/accessory/accessory", {
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local unleash = this.new("scripts/skills/actives/legend_unleash_catapult");
+		local unleash = this.new("scripts/skills/actives/legend_unleash_catapult_skill");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);
 		this.addSkill(unleash);

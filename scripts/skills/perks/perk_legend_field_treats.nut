@@ -18,7 +18,7 @@ this.perk_legend_field_treats <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_field_treats"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_field_treats"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_field_treats_skill"));
 		}
 	}
 		function onRemoved()

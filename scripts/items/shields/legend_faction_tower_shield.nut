@@ -46,7 +46,7 @@ this.legend_faction_tower_shield <- this.inherit("scripts/items/shields/shield",
 	{
 		this.shield.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_fortify_skill"));
-		this.addSkill(this.new("scripts/skills/actives/legend_safeguard"));
+		this.addSkill(this.new("scripts/skills/actives/legend_safeguard_skill"));
 	}
 
 	function setFaction( _f )

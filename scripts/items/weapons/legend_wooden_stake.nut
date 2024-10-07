@@ -29,7 +29,7 @@ this.legend_wooden_stake <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_wooden_stake_stab"));
+		this.addSkill(this.new("scripts/skills/actives/legend_wooden_stake_stab_skill"));
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
 	}
 

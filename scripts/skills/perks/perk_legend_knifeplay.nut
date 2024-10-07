@@ -18,7 +18,7 @@ this.perk_legend_knifeplay <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_throw_knife"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_throw_knife"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_throw_knife_skill"));
 		}
 	}
 	

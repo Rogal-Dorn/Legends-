@@ -1,11 +1,11 @@
-this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract", {
+this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract_skill", {
 	m = {
 		BaseFatigueCost = 30,
 		BaseAPCost = 4,
 	},
 	function create()
 	{
-		this.legend_trance_abstract.create();
+		this.legend_trance_abstract_skill.create();
 		this.m.ID = "actives.legend_read_omens_trance";
 		this.m.Name = "Read Omens (Trance)";
 		this.m.Icon = "skills/omen_active.png";
@@ -38,7 +38,7 @@ this.legend_read_omens_trance_skill <- this.inherit("scripts/skills/actives/lege
 
 	function swapOn()
 	{
-		this.legend_trance_abstract.swapOn();
+		this.legend_trance_abstract_skill.swapOn();
 		local act = this.getContainer().getActor();
 		foreach( bro in this.World.getPlayerRoster().getAll() )
 		{

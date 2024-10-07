@@ -18,7 +18,7 @@ this.perk_legend_choke <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_choke"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_choke"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_choke_skill"));
 		}
 	}
 

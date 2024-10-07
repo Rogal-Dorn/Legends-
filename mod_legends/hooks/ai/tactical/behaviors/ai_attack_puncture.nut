@@ -1,6 +1,6 @@
 ::mods_hookExactClass("ai/tactical/behaviors/ai_attack_puncture", function(o) 
 {
-	o.m.PossibleSkills.push("actives.puncture_parry_dagger");
+	o.m.PossibleSkills.push("actives.legend_puncture_parry_dagger");
 
 	o.onExecute = function ( _entity )
 	{

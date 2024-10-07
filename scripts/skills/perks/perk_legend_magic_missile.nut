@@ -17,7 +17,7 @@ this.perk_legend_magic_missile <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_magic_missile"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_missile_skill"));
 		}
 	}
 

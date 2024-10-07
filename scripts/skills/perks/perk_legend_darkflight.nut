@@ -18,7 +18,7 @@ this.perk_legend_darkflight <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_darkflight"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_darkflight"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_darkflight_skill"));
 		}
 	}
 

@@ -105,7 +105,7 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		local stab = this.new("scripts/skills/actives/stab");
 		stab.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
 		this.addSkill(stab);
-		this.addSkill(this.new("scripts/skills/actives/legend_en_garde"));
+		this.addSkill(this.new("scripts/skills/actives/legend_en_garde_skill"));
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
 		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
 		// Manually add the effect so that it will be ordered after perks in the skill container instead of before background

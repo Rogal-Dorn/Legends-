@@ -18,7 +18,7 @@ this.perk_legend_mastery_poison <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.coat_with_poison_skill"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_poison_weapon"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_poison_weapon_skill"));
 		}
 	}
 		function onRemoved()
