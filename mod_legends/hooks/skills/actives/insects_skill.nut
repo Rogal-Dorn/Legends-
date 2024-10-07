@@ -59,7 +59,7 @@
 		];
 	}
 
-	o.isUsable <- ()
+	o.isUsable <- function ()
 	{
 		return this.skill.isUsable() && !this.getContainer().getActor().isEngagedInMelee();
 	}
