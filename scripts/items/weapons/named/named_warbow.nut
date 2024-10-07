@@ -49,7 +49,7 @@ this.named_warbow <- this.inherit("scripts/items/weapons/named/named_weapon", {
 		this.named_weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/quick_shot"));
 		this.addSkill(this.new("scripts/skills/actives/aimed_shot"));
-		this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot"));
+		this.addSkill(this.new("scripts/skills/actives/legend_piercing_shot_skill"));
 		this.addSkill(this.new("scripts/skills/actives/legend_cascade_skill"));
 	}
 

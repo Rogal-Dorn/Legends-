@@ -18,7 +18,7 @@ this.perk_legend_summon_storm <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_summon_storm"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_summon_storm"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_summon_storm_skill"));
 		}
 	}
 

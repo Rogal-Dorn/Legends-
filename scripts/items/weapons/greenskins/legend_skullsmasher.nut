@@ -51,7 +51,7 @@ this.legend_skullsmasher <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd = this.new("scripts/skills/actives/crush_armor");
 		this.addSkill(skillToAdd);
 
-		// skillToAdd = this.new("scripts/skills/actives/legend_harvest_rock");
+		// skillToAdd = this.new("scripts/skills/actives/legend_harvest_rock_skill");
 		// skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		// this.addSkill(skillToAdd);
 

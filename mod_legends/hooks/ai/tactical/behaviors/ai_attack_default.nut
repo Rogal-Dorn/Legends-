@@ -1,7 +1,7 @@
 ::mods_hookExactClass("ai/tactical/behaviors/ai_attack_default", function(o) 
 {
 	o.m.PossibleSkills.extend([
-		"actives.cat_bite",
+		"actives.legend_cat_bite",
 		"actives.legend_staff_bash",
 		"actives.legend_skin_ghoul_claws",
 		"actives.legend_white_wolf_bite",

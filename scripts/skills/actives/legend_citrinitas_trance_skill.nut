@@ -1,8 +1,8 @@
-this.legend_citrinitas_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract", {
+this.legend_citrinitas_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract_skill", {
 	m = {},
 	function create()
 	{
-		this.legend_trance_abstract.create();
+		this.legend_trance_abstract_skill.create();
 		this.m.ID = "actives.legend_citrinitas_trance";
 		this.m.Name = "Citrinitas (Trance)";
 		this.m.Icon = "skills/omen_active.png"; //todo: change icons, better description, sound on use

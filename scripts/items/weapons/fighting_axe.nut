@@ -36,7 +36,7 @@ this.fighting_axe <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd.setApplyAxeMastery(true);
 		this.addSkill(skillToAdd);
 
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree_skill"));
 
 	}
 

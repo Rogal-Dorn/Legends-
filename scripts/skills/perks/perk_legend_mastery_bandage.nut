@@ -18,7 +18,7 @@ this.perk_legend_mastery_bandage <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_bandage"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_bandage"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_bandage_skill"));
 		}
 	}
 		function onRemoved()

@@ -18,7 +18,7 @@ this.perk_legend_danger_pay <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_danger_pay"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_danger_pay"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_danger_pay_skill"));
 		}
 	}
 		function onRemoved()

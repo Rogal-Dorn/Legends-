@@ -37,15 +37,15 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(behavior);
 
 		behavior = this.new("scripts/ai/tactical/behaviors/ai_attack_default");
-		behavior.m.PossibleSkills.push("actives.alp_nightmare_manifestation");
+		behavior.m.PossibleSkills.push("actives.legend_alp_nightmare_manifestation");
 		this.addBehavior(behavior);
 
 		behavior = this.new("scripts/ai/tactical/behaviors/ai_engage_ranged");
 		behavior.m.PossibleSkills.reverse();
 		behavior.m.PossibleSkills.resize(behavior.m.PossibleSkills.len() - 6); // remove the unneeded ones
 		behavior.m.PossibleSkills.extend([
-			"actives.alp_realm_of_shadow",
-			"actives.alp_nightmare_manifestation"
+			"actives.legend_alp_realm_of_shadow",
+			"actives.legend_alp_nightmare_manifestation"
 		]);
 		this.addBehavior(behavior);
 		
@@ -76,7 +76,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 		if (dangerLevel > 0.1)
 		{ // not really in danger
-			m.Properties.BehaviorMult[::Const.AI.Behavior.ID.AttackDefault] = 1.5; // promote the use of "alp_nightmare_manifestation_skill"
+			m.Properties.BehaviorMult[::Const.AI.Behavior.ID.AttackDefault] = 1.5; // promote the use of "legend_alp_nightmare_manifestation_skill"
 			m.Properties.BehaviorMult[::Const.AI.Behavior.ID.EngageRanged] = 1.0;
 			m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Miasma] = 1.0;
 			m.Properties.BehaviorMult[::Const.AI.Behavior.ID.Sleep] = 1.0;

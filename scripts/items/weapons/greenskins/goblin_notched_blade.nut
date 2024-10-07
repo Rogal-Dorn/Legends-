@@ -35,7 +35,7 @@ this.goblin_notched_blade <- this.inherit("scripts/items/weapons/weapon", {
 		slash.m.Overlay = "active_77";
 		this.addSkill(slash);
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_bush_skill"));
 	}
 
 });

@@ -309,14 +309,14 @@ this.hexe <- this.inherit("scripts/entity/tactical/actor", {
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.m.Skills.add(this.new("scripts/skills/actives/charm_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/hex_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_wither"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_wither_skill"));
 		this.m.Skills.add(this.new("scripts/skills/actives/fake_drink_night_vision_skill"));
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_inspiring_presence"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_anticipation"));
-			this.m.Skills.add(this.new("scripts/skills/actives/legend_magic_missile"));
+			this.m.Skills.add(this.new("scripts/skills/actives/legend_magic_missile_skill"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			b.Initiative += 50;
 			b.RangedSkill += 75;

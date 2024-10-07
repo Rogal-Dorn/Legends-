@@ -214,7 +214,7 @@ this.legend_cat <- this.inherit("scripts/entity/tactical/actor", {
 		this.setSpriteOffset("status_rooted", this.createVec(8, -15));
 		this.setSpriteOffset("status_stunned", this.createVec(0, -25));
 		this.setSpriteOffset("arrow", this.createVec(0, -25));
-		this.m.Skills.add(this.new("scripts/skills/actives/cat_bite"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_cat_bite"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_evasion"));

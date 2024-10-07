@@ -17,7 +17,7 @@ this.perk_legend_magic_web_bolt <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_magic_web_bolt"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_web_bolt"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_magic_web_bolt_skill"));
 		}
 	}
 

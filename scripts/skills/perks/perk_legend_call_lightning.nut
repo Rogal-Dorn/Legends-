@@ -18,7 +18,7 @@ this.perk_legend_call_lightning <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_call_lightning"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_call_lightning"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_call_lightning_skill"));
 		}
 	}
 

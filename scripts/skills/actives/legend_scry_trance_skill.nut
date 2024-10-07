@@ -5,7 +5,7 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 	},
 	function create()
 	{
-		this.legend_trance_abstract.create();
+		this.legend_trance_abstract_skill.create();
 		this.m.ID = "actives.legend_scry_trance";
 		this.m.Name = "Scry Area (Trance)";
 		this.m.Icon = "skills/scry_skill.png";
@@ -28,7 +28,7 @@ this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_tra
 
 	function onUse( _user, _targetTile )
 	{
-		this.legend_trance_abstract.onUse(_user, _targetTile);
+		this.legend_trance_abstract_skill.onUse(_user, _targetTile);
 		this.Tactical.queryTilesInRange( _user.getTile(), 1, 12, false, [], this.onQueryTile, _user.getFaction());
 	}
 

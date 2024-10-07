@@ -17,7 +17,7 @@ this.perk_legend_quick_step <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_quick_step"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_quick_step"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_quick_step_skill"));
 		}
 	}
 

@@ -34,11 +34,11 @@ this.legend_staff_gnarled <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		local s = this.new("scripts/skills/actives/legend_staff_bash");
+		local s = this.new("scripts/skills/actives/legend_staff_bash_skill");
 		s.m.Icon = "skills/staff_bash_gnarled.png";
 		s.m.IconDisabled = "skills/staff_bash_gnarled_bw.png";
 		this.addSkill(s);
-		local t = this.new("scripts/skills/actives/legend_staff_knock_out");
+		local t = this.new("scripts/skills/actives/legend_staff_knock_out_skill");
 		t.m.Icon = "skills/staff_knock_out_gnarled.png";
 		t.m.IconDisabled = "skills/staff_knock_out_gnarled_bw.png";
 		this.addSkill(t);

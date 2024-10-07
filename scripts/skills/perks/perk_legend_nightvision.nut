@@ -18,7 +18,7 @@ this.perk_legend_nightvision <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_nightvision"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_nightvision"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_nightvision_skill"));
 		}
 	}
 	

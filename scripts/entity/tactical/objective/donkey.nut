@@ -116,7 +116,7 @@ this.donkey <- this.inherit("scripts/entity/tactical/actor", {
 		injury.setBrush("donkey_tactical_injured");
 		this.addDefaultStatusSprites();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
-		this.m.Skills.add(this.new("scripts/skills/actives/legend_donkey_kick"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_donkey_kick_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_poison_immunity"));
 

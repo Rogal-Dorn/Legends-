@@ -33,7 +33,7 @@ this.lute <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/lute_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_lute_bash"));
 		local s = this.new("scripts/skills/actives/knock_out");
 		s.m.IsFromLute = true;
 		s.m.Icon = "skills/active_88.png";

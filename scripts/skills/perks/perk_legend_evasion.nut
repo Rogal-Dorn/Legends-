@@ -18,7 +18,7 @@ this.perk_legend_evasion <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_evasion"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_evasion"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_evasion_skill"));
 		}
 	}
 

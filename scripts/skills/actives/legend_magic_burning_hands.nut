@@ -1,4 +1,4 @@
-this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_magic_attack", {
+this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_magic_attack_skill", {
 	m = {
 		AdditionalAccuracy = 0,
 		AdditionalHitChance = 0

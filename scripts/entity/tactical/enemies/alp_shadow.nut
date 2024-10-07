@@ -51,7 +51,7 @@ this.alp_shadow <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.FatigueCosts = this.Const.DefaultMovementFatigueCost;
 		this.m.MaxTraversibleLevels = 3;
 		// basic alp skill
-		this.m.Skills.add(this.new("scripts/skills/actives/shadow_alp_teleport_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_shadow_alp_teleport_skill"));
 		// basic racial skill
 		this.m.Skills.add(this.new("scripts/skills/racial/ghost_racial"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));

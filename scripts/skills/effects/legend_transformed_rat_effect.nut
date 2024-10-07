@@ -39,7 +39,7 @@ this.legend_transformed_rat_effect <- this.inherit("scripts/skills/effects/legen
 		local actor = this.getContainer().getActor();
 		if (!actor.getSkills().hasSkill("actives.legend_rat_claws"))
 		{
-			actor.getSkills().add(this.new("scripts/skills/actives/legend_rat_claws"));
+			actor.getSkills().add(this.new("scripts/skills/actives/legend_rat_claws_skill"));
 		}
 		if (!actor.getSkills().hasSkill("actives.legend_rat_bite"))
 		{

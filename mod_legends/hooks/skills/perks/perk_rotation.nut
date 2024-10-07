@@ -10,7 +10,7 @@
 
 			else
 			{
-				this.m.Container.add(this.new("scripts/skills/actives/ai_rotation"));
+				this.m.Container.add(this.new("scripts/skills/actives/legend_ai_rotation_skill"));
 			}
 		}
 	}
@@ -18,6 +18,6 @@
 	o.onRemoved = function()
 	{
 		this.m.Container.removeByID("actives.rotation");
-		this.m.Container.removeByID("actives.ai_rotation");
+		this.m.Container.removeByID("actives.legend_ai_rotation_skill");
 	}
 });

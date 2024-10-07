@@ -33,13 +33,13 @@ this.legend_transformed_wolf_effect <- this.inherit("scripts/skills/effects/lege
 	{
 		local actor = this.getContainer().getActor();
 
-		if (!actor.getSkills().hasSkill("actives.werewolf_claws"))
+		if (!actor.getSkills().hasSkill("actives.legend_werewolf_claws"))
 		{
-			actor.getSkills().add(this.new("scripts/skills/actives/werewolf_claws"));
+			actor.getSkills().add(this.new("scripts/skills/actives/legend_werewolf_claws_skill"));
 		}
 		if (!actor.getSkills().hasSkill("actives.werewolf_bite"))
 		{
-			actor.getSkills().add(this.new("scripts/skills/actives/werewolf_bite"));
+			actor.getSkills().add(this.new("scripts/skills/actives/legend_werewolf_bite_skill"));
 		}
 		if (!actor.getSkills().hasSkill("actives.footwork"))
 		{

@@ -1,6 +1,6 @@
 this.arena_collar_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {
-		affectedSkills = ["legend_leap", "legend_climb", "legend_levitating"]
+		affectedSkills = ["legend_leap_skill", "legend_climb_skill", "legend_levitating_skill"]
 	},
 	function create()
 	{

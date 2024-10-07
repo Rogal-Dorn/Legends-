@@ -17,7 +17,7 @@ this.perk_legend_raise_undead <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_raise_undead"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_raise_undead"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_raise_undead_skill"));
 		}
 	}
 

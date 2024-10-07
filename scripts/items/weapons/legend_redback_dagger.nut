@@ -42,7 +42,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	{
 		this.weapon.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/stab"));
-		this.addSkill(this.new("scripts/skills/actives/legend_redback_puncture"));
+		this.addSkill(this.new("scripts/skills/actives/legend_redback_puncture_skill"));
 	}
 
 	function onUpdateProperties( _properties )

@@ -48,7 +48,7 @@ this.skull_hammer <- this.inherit("scripts/items/weapons/weapon", {
 		skill.setFatigueCost(skill.getFatigueCostRaw() + 5);
 		this.addSkill(skill);
 
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_rock_skill"));
 	}
 
 });

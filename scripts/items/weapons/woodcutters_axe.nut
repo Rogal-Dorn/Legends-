@@ -40,7 +40,7 @@ this.woodcutters_axe <- this.inherit("scripts/items/weapons/weapon", {
 		skillToAdd.setFatigueCost(skillToAdd.getFatigueCostRaw() + 5);
 		this.addSkill(skillToAdd);
 
-		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree"));
+		//this.addSkill(this.new("scripts/skills/actives/legend_harvest_tree_skill"));
 	}
 
 });

@@ -30,7 +30,7 @@ this.therianthropy_potion_item <- this.inherit("scripts/items/accessory/accessor
 	function onEquip()
 	{
 		this.accessory.onEquip();
-		local skill = this.new("scripts/skills/actives/drink_therianthropy_potion_skill");
+		local skill = this.new("scripts/skills/actives/legend_drink_therianthropy_potion_skill");
 		skill.setItem(this);
 		this.addSkill(skill);
 	}

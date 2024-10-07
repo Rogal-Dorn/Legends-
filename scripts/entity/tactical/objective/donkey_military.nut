@@ -8,7 +8,7 @@ this.donkey_military <- this.inherit("scripts/entity/tactical/objective/donkey",
 	function onInit()
 	{
 		this.donkey.onInit();
-		this.m.Skills.add(this.new("scripts/skills/active/legend_donkey_kick"));
+		this.m.Skills.add(this.new("scripts/skills/active/legend_donkey_kick_skill"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_muscularity"));

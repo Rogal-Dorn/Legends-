@@ -256,11 +256,11 @@ this.legend_demon_alp <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.55;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 10));
-		this.m.Skills.add(this.new("scripts/skills/actives/super_sleep_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/super_nightmare_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/alp_realm_of_shadow_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/alp_summon_nightmare_skill"));
-		this.m.Skills.add(this.new("scripts/skills/actives/alp_nightmare_manifestation_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_super_sleep_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_super_nightmare_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_alp_realm_of_shadow_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_alp_summon_nightmare_skill"));
+		this.m.Skills.add(this.new("scripts/skills/actives/legend_alp_nightmare_manifestation_skill"));
 		this.m.Skills.add(this.new("scripts/skills/racial/alp_racial"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));

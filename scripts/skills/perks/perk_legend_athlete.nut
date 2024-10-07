@@ -17,7 +17,7 @@ this.perk_legend_athlete <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_climb"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_climb"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_climb_skill"));
 		}
 		if (!this.m.Container.hasSkill("actives.sprint"))
 		{
