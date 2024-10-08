@@ -39,9 +39,7 @@ this.legend_named_longsword <- this.inherit("scripts/items/weapons/named/named_w
 	function onEquip()
 	{
 		this.named_weapon.onEquip();
-		local slash = this.new("scripts/skills/actives/slash");
-		slash.m.DirectDamageMult = this.m.DirectDamageMult;
-		this.addSkill(slash);
+		this.addSkill(this.new("scripts/skills/actives/legend_great_slash"));
 		this.addSkill(this.new("scripts/skills/actives/overhead_strike"));
 		this.addSkill(this.new("scripts/skills/actives/riposte"));
 	}
