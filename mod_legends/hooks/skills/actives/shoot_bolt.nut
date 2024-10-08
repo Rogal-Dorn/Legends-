@@ -1,5 +1,8 @@
 ::mods_hookExactClass("skills/actives/shoot_bolt", function(o)
 {
+	o.m.AdditionalAccuracy = 15;
+	o.m.AdditionalHitChance = -3;
+
 	o.getTooltip = function ()
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
@@ -37,5 +40,27 @@
 
 		return ret;
 	}
+
+	o.onAfterUpdate = function ( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
+		this.m.AdditionalAccuracy = 15 + this.m.Item.getAdditionalAccuracy();
+	}
+
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
+	{
+		if (_skill == this)
+		{
+			_properties.RangedSkill += this.m.AdditionalAccuracy;
+			_properties.HitChanceAdditionalWithEachTile += this.m.AdditionalHitChance;
+
+			if (_properties.IsSharpshooter)
+			{
+				_properties.DamageDirectMult += 0.05;
+			}
+		}
+	}
+
 
 });

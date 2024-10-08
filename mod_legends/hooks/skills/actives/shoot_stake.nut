@@ -1,5 +1,7 @@
 ::mods_hookExactClass("skills/actives/shoot_stake", function(o)
 {
+	o.m.AdditionalAccuracy = 10;
+	o.m.AdditionalHitChance = -3;
 
 	local create = o.create;
 	o.create = function ()
@@ -44,6 +46,13 @@
 		}
 
 		return ret;
+	}
+
+	o.onAfterUpdate = function ( _properties )
+	{
+		this.m.FatigueCostMult = _properties.IsSpecializedInCrossbows ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
+		this.m.DirectDamageMult = _properties.IsSpecializedInCrossbows ? 0.7 : 0.5;
+		this.m.AdditionalAccuracy = 10 + this.m.Item.getAdditionalAccuracy();
 	}
 
 	o.findTileToKnockBackTo = function ( _userTile, _targetTile )
