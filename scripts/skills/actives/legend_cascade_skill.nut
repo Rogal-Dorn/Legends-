@@ -144,7 +144,7 @@ this.legend_cascade_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false
 		}
-		return !this.Tactical.isActive() || this.skill.isUsable() && this.getAmmo() > 2 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());	
+		return (!this.Tactical.isActive() || this.skill.isUsable()) && this.getAmmo() > 2 && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());	
 	}
 
 
