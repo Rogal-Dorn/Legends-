@@ -33,7 +33,7 @@ this.warbrand <- this.inherit("scripts/items/weapons/weapon", {
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_great_slash"););
+		this.addSkill(this.new("scripts/skills/actives/legend_great_slash"));
 		this.addSkill(this.new("scripts/skills/actives/split"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));
 	}
