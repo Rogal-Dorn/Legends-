@@ -1,6 +1,6 @@
 ::mods_hookExactClass("skills/actives/hand_to_hand", function(o)
 {
-	o.mBackgrounds = [
+	o.m.Backgrounds = [
 		"background.legend_commander_druid",
 		"background.legend_druid",
 		"background.brawler",
@@ -163,7 +163,7 @@
 		{
 			_properties.DamageRegularMin += 6;
 			_properties.DamageRegularMax += 12;
-			_properties.DamageArmorMult *= 0.2;
+			_properties.DamageArmorMult *= 1.2;
 		}
 		else if (hasWraps)
 		{
