@@ -26,7 +26,7 @@
 			local conditionBefore = shield.getCondition();
 			shield.applyShieldDamage(damage);
 
-			if (shield.getCondition() == 0)
+			if (shield != null && shield.getCondition() == 0 && this.getContainer().hasSkill("perk.legend_smashing_shields"))
 			{
 				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
