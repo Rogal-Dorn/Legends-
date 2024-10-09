@@ -1,67 +1,19 @@
-this.follower <- {
-	m = {
-		ID = "",
-		Name = "",
-		Description = "",
-		Effects = [],
-		Requirements = [],
-		Image = "",
-		Cost = 0,
-		RequiredSkills = [],
-		LinkedBro = null,
-		WasOwned = false
-	},
-	function getID()
-	{
-		return this.m.ID;
-	}
+::mods_hookExactClass("retinue/follower", function(o) {
+	o.m.RequiredSkills = [];
+	o.m.LinkedBro = null;
+	o.m.WasOwned = false;
 
-	function getOrder()
-	{
-		return this.m.Order;
-	}
-
-	function getName()
-	{
-		return this.m.Name;
-	}
-
-	function getDescription()
-	{
-		return this.m.Description;
-	}
-
-	function getImage()
-	{
-		return this.m.Image;
-	}
-
-	function getEffects()
-	{
-		return this.m.Effects;
-	}
-
-	function getLinkedBro()
+	o.getLinkedBro <- function ()
 	{
 		return this.m.LinkedBro;
 	}
 
-	function setOwned()
+	o.setOwned <- function ()
 	{
 		this.m.WasOwned = true;
 	}
 
-	function getCost()
-	{
-		return this.m.WasOwned ? 0 : this.m.Cost;
-	}
-
-	function getRequirements()
-	{
-		return this.m.Requirements;
-	}
-
-	function getRequirementsForUI()
+	o.getRequirementsForUI <- function ()
 	{
 		local ret = [];
 
@@ -74,85 +26,12 @@ this.follower <- {
 		return ret;
 	}
 
-	function isValid()
+	o.getCost = function ()
 	{
-		return true;
+		return this.m.WasOwned ? 0 : this.m.Cost;
 	}
 
-	function isVisible()
-	{
-		return true;
-	}
-
-	function getTooltip()
-	{
-		local ret = [
-			{
-				id = 1,
-				type = "title",
-				text = this.getName()
-			},
-			{
-				id = 4,
-				type = "description",
-				text = this.getDescription()
-			}
-		];
-
-		foreach( i, e in this.m.Effects )
-		{
-			ret.push({
-				id = i,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = e
-			});
-		}
-
-		ret.push({
-			id = 1,
-			type = "hint",
-			icon = "ui/icons/mouse_left_button.png",
-			text = "Open Hiring Screen to replace"
-		});
-		return ret;
-	}
-
-	function create()
-	{
-	}
-
-	function update()
-	{
-		this.onUpdate();
-	}
-
-	function resetLinkedBro()
-	{
-		this.m.LinkedBro = null;
-	}
-
-	function evaluate()
-	{
-		for( local i = 0; i < this.m.Requirements.len(); i = ++i )
-		{
-			this.m.Requirements[i].IsSatisfied = false;
-		}
-
-		this.onEvaluate();
-	}
-
-	function onEvaluate()
-	{
-		foreach (r in this.m.Requirements)
-		{
-			r.IsSatisfied = r.CheckRequirement();
-
-			if ("UpdateText" in r) r.UpdateText();
-		}
-	}
-
-	function isUnlocked()
+	o.isUnlocked = function ()
 	{
 		local hasSecondary = false;
 		local isSecondaryFulfilled = false;
@@ -178,7 +57,43 @@ this.follower <- {
 		return true;
 	}
 
-	function isEnabled()
+	o.onEvaluate = function ()
+	{
+		foreach (r in this.m.Requirements)
+		{
+			r.IsSatisfied = r.CheckRequirement();
+
+			if ("UpdateText" in r) r.UpdateText();
+		}
+	}
+
+	o.isUnlocked = function ()
+	{
+		local hasSecondary = false;
+		local isSecondaryFulfilled = false;
+
+		foreach (r in this.m.Requirements)
+		{
+			if (r.NotImportant)
+			{
+				hasSecondary = true;
+
+				if (isSecondaryFulfilled || !r.IsSatisfied) continue;
+			
+				isSecondaryFulfilled = true;
+				continue;
+			}
+
+			// primary requirement (must fulfill this)
+			if (!r.IsSatisfied) return false;
+		}
+
+		if (hasSecondary) return isSecondaryFulfilled;
+
+		return true;
+	}
+
+	o.isEnabled <- function ()
 	{
 		local hasSecondary = false;
 		local isSecondaryFulfilled = false;
@@ -205,7 +120,7 @@ this.follower <- {
 		return true;
 	}
 
-	function addRequirement( _text, _function, _isNotImportant = false, _afterAddRequirementFunction = null)
+	o.addRequirement <- function ( _text, _function, _isNotImportant = false, _afterAddRequirementFunction = null)
 	{
 		local requirement = {};
 		requirement.Text <- _text;
@@ -218,13 +133,13 @@ this.follower <- {
 		if (typeof _afterAddRequirementFunction == "function") _afterAddRequirementFunction.call(this, requirement);
 	}
 
-	function addSkillRequirement( _text, _requiredSkills, _isNotImportant = false, _afterAddRequirementFunction = null )
+	o.addSkillRequirement <- function ( _text, _requiredSkills, _isNotImportant = false, _afterAddRequirementFunction = null )
 	{
 		this.m.RequiredSkills = _requiredSkills;
 		this.addRequirement(_text, this.checkRequiredSkills, _isNotImportant, _afterAddRequirementFunction);
 	}
 
-	function checkRequiredSkills()
+	o.checkRequiredSkills <- function ()
 	{
 		if (this.m.RequiredSkills.len() == 0)
 		{
@@ -249,29 +164,8 @@ this.follower <- {
 
 		return this.m.LinkedBro != null && this.m.LinkedBro.isAlive();
 	}
-
-	function clear()
-	{
-	}
-
-	function onUpdate()
-	{
-	}
-
-	function onNewDay()
-	{
-	}
-
-	function onSerialize( _out )
-	{
-	}
-
-	function onDeserialize( _in )
-	{
-	}
-
 	// clone the value for the ui, the return table should not contain any function
-	function cloneValue( _r )
+	o.cloneValue <- function ( _r )
 	{
 		local ret = clone _r;
 		local garbage = [];
@@ -293,7 +187,7 @@ this.follower <- {
 	    return ret;
 	}
 
-	function sortByPriority( _a, _b )
+	o.sortByPriority <- function ( _a, _b )
 	{
 		if (!_a.NotImportant && _b.NotImportant)
 		{
@@ -307,5 +201,4 @@ this.follower <- {
 		return 0;
 	}
 
-};
-
+});
