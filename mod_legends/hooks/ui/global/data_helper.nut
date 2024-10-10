@@ -98,7 +98,7 @@
 	}
 
 	local convertAssetsInformationToUIData = o.convertAssetsInformationToUIData;
-	function convertAssetsInformationToUIData = function ()
+	o.convertAssetsInformationToUIData = function ()
 	{
 		local result = convertAssetsInformationToUIData();
 		result.SuppliesMax <- this.World.Assets.getMaxArmorParts();
@@ -109,7 +109,7 @@
 	}
 
 	local convertEntityToUIData = o.convertEntityToUIData;
-	function convertEntityToUIData = function ( _entity, _activeEntity )
+	o.convertEntityToUIData = function ( _entity, _activeEntity )
 	{
 		local result = convertEntityToUIData();
 		result.perkTree <- [];
