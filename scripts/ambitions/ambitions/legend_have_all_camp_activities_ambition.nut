@@ -1,9 +1,9 @@
-this.have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambition", {
+this.legend_have_all_camp_activities_ambition <- this.inherit("scripts/ambitions/ambition", {
 	m = {},
 	function create()
 	{
 		this.ambition.create();
-		this.m.ID = "ambition.have_all_camp_activities";
+		this.m.ID = "ambition.legend_have_all_camp_activities";
 		this.m.Duration = 45.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "We need to enhance our camping skills. Visit the local towns and learn what you can.";
 		this.m.UIText = "Learn all camping skills";

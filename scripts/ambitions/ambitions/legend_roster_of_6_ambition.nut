@@ -1,9 +1,9 @@
-this.roster_of_6_ambition <- this.inherit("scripts/ambitions/ambition", {
+this.legend_roster_of_6_ambition <- this.inherit("scripts/ambitions/ambition", {
 	m = {},
 	function create()
 	{
 		this.ambition.create();
-		this.m.ID = "ambition.roster_of_6";
+		this.m.ID = "ambition.legend_roster_of_6";
 		this.m.Duration = 20.0 * this.World.getTime().SecondsPerDay;
 		this.m.ButtonText = "We shall get the company strength back to a half dozen men! It will make us\na formidable force again and will allow us to take on more profitable work.";
 		this.m.UIText = "Have a roster of at least 6 men";
