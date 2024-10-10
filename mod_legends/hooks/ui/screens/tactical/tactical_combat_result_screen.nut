@@ -1,4 +1,4 @@
-::mods_hookExactClass("ui/screens/tactical/tactical_combat_result_screen.nut", function(o) {
+::mods_hookExactClass("ui/screens/tactical/tactical_combat_result_screen", function(o) {
 
 	o.getStashChangeData <- function ()
 	{
