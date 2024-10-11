@@ -39,6 +39,12 @@ this.polehammer <- this.inherit("scripts/items/weapons/weapon", {
 		this.addSkill(skill);
 		local skill = this.new("scripts/skills/actives/demolish_armor_skill");
 		this.addSkill(skill);
+		local skill = this.new("scripts/skills/actives/impale");
+		skill.m.Icon = "skills/legend_halberd_impale.png";
+		skill.m.IconDisabled = "skills/legend_halberd_impale_bw.png";
+		skill.m.Overlay = "legend_halberd_impale";
+		skill.m.IsIgnoredAsAOO = true;
+		this.addSkill(skill);
 	}
 
 });
