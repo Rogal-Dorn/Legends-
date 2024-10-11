@@ -1,22 +1,3 @@
-::mods_hookDescendants("contracts/contract", function ( o )
-{
-	local onClear = o.onClear;
-	o.onClear = function()
-	{
-		if (this.isActive())
-		{
-			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-			local towns = contract_faction.getSettlements()
-			foreach (town in towns)
-			{
-				town.getSprite("selection").Visible = false;
-			}
-		}
-
-		onClear()
-	}
-})
-
 ::mods_hookExactClass("contracts/contract", function(o) 
 {
 	o.m.Category <- "";
@@ -62,6 +43,22 @@
 		this.m.TempFlags = this.new("scripts/tools/tag_collection");
 		this.createStates();
 		this.createScreens();
+	}
+
+	local onClear = o.onClear;
+	o.onClear = function()
+	{
+		if (this.isActive())
+		{
+			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
+			local towns = contract_faction.getSettlements()
+			foreach (town in towns)
+			{
+				town.getSprite("selection").Visible = false;
+			}
+		}
+
+		onClear();
 	}
 
 	o.getDescription <- function()
