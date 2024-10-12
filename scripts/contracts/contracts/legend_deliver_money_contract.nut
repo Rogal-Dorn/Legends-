@@ -1,4 +1,4 @@
-this.deliver_money_contract <- this.inherit("scripts/contracts/contract", {
+this.legend_deliver_money_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Destination = null,
 		Location = null,

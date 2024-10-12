@@ -47,7 +47,7 @@
 	
 	// Settlement Contracts
 	deliver_item_contract = this.Const.Contracts.Categories.Economy,
-	deliver_money_contract = this.Const.Contracts.Categories.Economy,
+	legend_deliver_money_contract = this.Const.Contracts.Categories.Economy,
 	escort_caravan_contract = this.Const.Contracts.Categories.Economy,
 	obtain_item_contract = this.Const.Contracts.Categories.Economy,
 	restore_location_contract = this.Const.Contracts.Categories.Economy,
