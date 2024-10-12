@@ -1,4 +1,4 @@
-this.hunting_mummies_contract <- this.inherit("scripts/contracts/contract", {
+this.legend_hunting_mummies_contract <- this.inherit("scripts/contracts/contract", {
 	m = {
 		Target = null,
 		Dude = null,

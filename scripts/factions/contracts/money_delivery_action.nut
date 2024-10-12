@@ -11,7 +11,7 @@ this.money_delivery_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onUpdate( _faction )
 	{
-		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.deliver_money_contract))
+		if (!_faction.isReadyForContract(this.Const.Contracts.ContractCategoryMap.legend_deliver_money_contract))
 		{
 			return;
 		}
@@ -82,7 +82,7 @@ this.money_delivery_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local contract = this.new("scripts/contracts/contracts/deliver_money_contract");
+		local contract = this.new("scripts/contracts/contracts/legend_deliver_money_contract");
 		contract.setFaction(_faction.getID());
 		contract.setEmployerID(_faction.getRandomCharacter().getID());
 		contract.setHome(_faction.getSettlements()[0]);

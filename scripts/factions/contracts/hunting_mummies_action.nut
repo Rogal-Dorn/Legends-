@@ -52,7 +52,7 @@ this.hunting_mummies_action <- this.inherit("scripts/factions/faction_action", {
 
 	function onExecute( _faction )
 	{
-		local contract = this.new("scripts/contracts/contracts/hunting_mummies_contract");
+		local contract = this.new("scripts/contracts/contracts/legend_hunting_mummies_contract");
 		contract.setFaction(_faction.getID());
 		contract.setHome(_faction.getSettlements()[0]);
 		contract.setEmployerID(_faction.getRandomCharacter().getID());
