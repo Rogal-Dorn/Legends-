@@ -105,7 +105,7 @@
 
 					}
 				]
-			},
+			}
 			if (s.ID == "Outlaws1")
 			{
 				s.start = function ()

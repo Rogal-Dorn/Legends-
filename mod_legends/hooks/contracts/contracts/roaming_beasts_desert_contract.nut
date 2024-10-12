@@ -13,7 +13,7 @@
 			"Rumor is that a pack of fierce predators have been ambushing caravans in the desert.",
 			"A fierce pack of sand beasts appear to have developed quite a taste for human flesh.",
 			"The Viziers seek crownling warriors to expend on quelling the sand beast threat.",
-			"Some kind of unnatural beasts have been haunting the shifting sands.";
+			"Some kind of unnatural beasts have been haunting the shifting sands.",
 			];
 	}
 
