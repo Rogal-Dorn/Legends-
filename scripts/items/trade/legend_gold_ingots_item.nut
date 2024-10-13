@@ -1,9 +1,9 @@
-this.gold_ingots_item <- this.inherit("scripts/items/trade/trading_good_item", {
+this.legend_gold_ingots_item <- this.inherit("scripts/items/trade/trading_good_item", {
 	m = {},
 	function create()
 	{
 		this.trading_good_item.create();
-		this.m.ID = "misc.gold_ingots";
+		this.m.ID = "misc.legend_gold_ingots";
 		this.m.Name = "Gold Ingots";
 		this.m.Description = "Gold smolten and cast into ingots for easy transportation. Traders will pay good coin for this.";
 		this.m.Icon = "trade/inventory_trade_gold_bars.png";

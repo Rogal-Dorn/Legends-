@@ -13,7 +13,7 @@ this.legend_prosthetic_leg_blueprint <- this.inherit("scripts/crafting/blueprint
 				Num = 2
 			},
 			{
-				Script = "scripts/items/trade/iron_ingots_item",
+				Script = "scripts/items/trade/legend_iron_ingots_item",
 				Num = 1
 			}
 		];
