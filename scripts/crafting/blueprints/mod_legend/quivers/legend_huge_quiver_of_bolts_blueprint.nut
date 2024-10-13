@@ -1,11 +1,11 @@
-this.huge_quiver_of_arrows_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_huge_quiver_of_bolts_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.huge_quiver_of_arrows";
+		this.m.ID = "blueprint.legend_huge_quiver_of_bolts";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("scripts/items/ammo/huge_quiver_of_arrows");
+		this.m.PreviewCraftable = this.new("scripts/items/ammo/legend_huge_quiver_of_bolts");
 		this.m.Cost = 3000;
 		local ingredients = [
 			{
@@ -19,12 +19,12 @@ this.huge_quiver_of_arrows_blueprint <- this.inherit("scripts/crafting/blueprint
 				Scripts = ["scripts/skills/backgrounds/bowyer_background"]
 			}
 		]
-		this.initSkills(skills);
+		this.initSkills(skills);	
 	}
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/ammo/huge_quiver_of_arrows"));
+		_stash.add(this.new("scripts/items/ammo/legend_huge_quiver_of_bolts"));
 	}
 
 });

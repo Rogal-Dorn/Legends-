@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/accessory/arena_collar_item", function(o) {
+::mods_hookExactClass("items/accessory/special/arena_collar_item", function(o) {
 	o.m.affectedSkills <- ["legend_leap_skill", "legend_climb_skill", "legend_levitating_skill"];
 
 	local getTooltip = o.getTooltip;

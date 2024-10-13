@@ -1,4 +1,4 @@
-this.huge_quiver_of_bolts <- this.inherit("scripts/items/ammo/ammo", {
+this.legend_huge_quiver_of_bolts <- this.inherit("scripts/items/ammo/ammo", {
 	m = {},
 	function create()
 	{
