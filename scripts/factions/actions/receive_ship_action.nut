@@ -137,9 +137,9 @@ this.receive_ship_action <- this.inherit("scripts/factions/faction_action", {
 				[3, "trade/quality_wood_item"],
 				[2, "trade/salt_item"],
 				[1, "trade/uncut_gems_item"],
-				[1, "trade/gold_ingots_item"],
-				[1, "trade/tin_ingots_item"],
-				[1, "trade/iron_ingots_item"]
+				[1, "trade/legend_gold_ingots_item"],
+				[1, "trade/legend_tin_ingots_item"],
+				[1, "trade/legend_iron_ingots_item"]
 			]
 
 			local item = this.Const.World.Common.pickItem(items)

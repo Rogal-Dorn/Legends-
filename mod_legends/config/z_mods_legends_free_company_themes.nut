@@ -1,6 +1,6 @@
 local gt = this.getroottable();
 
-gt.Const.FreeCompanyDefaultLootTable <- ["trade/amber_shards_item", "trade/furs_item", "trade/tin_ingots_item", "trade/spices_item", "trade/silk_item", "trade/peat_bricks_item", "trade/cloth_rolls_item"];
+gt.Const.FreeCompanyDefaultLootTable <- ["trade/amber_shards_item", "trade/furs_item", "trade/legend_tin_ingots_item", "trade/spices_item", "trade/silk_item", "trade/peat_bricks_item", "trade/cloth_rolls_item"];
 
 //Anything custom is technically optional, although you'll mostly want to change the UnitOutfits certainly. 
 //Spawnlist highly doubt you'd want to change unless you're creating your own spawnlist

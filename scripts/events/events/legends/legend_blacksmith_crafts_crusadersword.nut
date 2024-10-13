@@ -69,7 +69,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 				foreach( i, item in stash )
 				{
-					if (item != null && item.getID() == "misc.iron_ingots")
+					if (item != null && item.getID() == "misc.legend_iron_ingots")
 					{
 						stash[i] = null;
 						this.List.push({
@@ -134,7 +134,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 		// 		local numIngots = ::Math.rand(1, 2);
 		// 		foreach (i, item in stash)
 		// 		{
-		// 			if (item != null && item.getID() == "misc.iron_ingots")
+		// 			if (item != null && item.getID() == "misc.legend_iron_ingots")
 		// 			{
 		// 				stash[i] = null;
 		// 				this.List.push({
@@ -241,7 +241,7 @@ this.legend_blacksmith_crafts_crusadersword <- this.inherit("scripts/events/even
 
 		foreach( item in stash )
 		{
-			if (item != null && item.getID() == "misc.iron_ingots")
+			if (item != null && item.getID() == "misc.legend_iron_ingots")
 			{
 				numIngots = ++numIngots;
 				numIngots = numIngots;

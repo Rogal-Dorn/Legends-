@@ -52,7 +52,7 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/copper_ingots_item");
-		_list.push("trade/tin_ingots_item");
+		_list.push("trade/legend_tin_ingots_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -80,7 +80,7 @@ this.ore_smelters_location <- this.inherit("scripts/entity/world/attached_locati
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "trade/iron_ingots_item"
+				S = "trade/legend_iron_ingots_item"
 			});
 			_list.push({
 				R = 40,

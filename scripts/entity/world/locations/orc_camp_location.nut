@@ -36,8 +36,8 @@ this.orc_camp_location <- this.inherit("scripts/entity/world/location", {
 		this.dropTreasure(this.Math.rand(0, 1), [
 			"trade/furs_item",
 			"trade/copper_ingots_item",
-			"trade/iron_ingots_item",
-			"trade/tin_ingots_item",
+			"trade/legend_iron_ingots_item",
+			"trade/legend_tin_ingots_item",
 			"trade/legend_gold_nugget_item"
 		], _lootTable);
 
