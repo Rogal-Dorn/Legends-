@@ -59,7 +59,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		local b = m.Behaviors[0], myTile = getActor().getTile(), currentDanger = 0.0;
 		local skill = getActor().getSkills().getSkillByID("actives.nightmare"), someoneIsReallyNearMe = false;
 
-		foreach( t in getPotentialDanger() )
+		foreach( t in queryPotentialDanger() )
 		{
 			if (!someoneIsReallyNearMe && t.getTile().getDistanceTo(myTile) <= 2)
 				someoneIsReallyNearMe = true;
