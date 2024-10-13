@@ -267,12 +267,12 @@ this.lumber_camp_location <- this.inherit("scripts/entity/world/attached_locatio
 			_list.push({
 				R = 85,
 				P = 1.0,
-				S = "ammo/huge_quiver_of_arrows"
+				S = "ammo/legend_huge_quiver_of_arrows"
 			});
 			_list.push({
 				R = 85,
 				P = 1.0,
-				S = "ammo/huge_quiver_of_bolts"
+				S = "ammo/legend_huge_quiver_of_bolts"
 			});
 
 		}

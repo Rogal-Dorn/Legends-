@@ -159,12 +159,12 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 			_list.push({
 				R = 60,
 				P = 1.0,
-				S = "ammo/huge_quiver_of_arrows"
+				S = "ammo/legend_huge_quiver_of_arrows"
 			});
 			_list.push({
 				R = 60,
 				P = 1.0,
-				S = "ammo/huge_quiver_of_bolts"
+				S = "ammo/legend_huge_quiver_of_bolts"
 			});
 			_list.push({
 				R = 40,
