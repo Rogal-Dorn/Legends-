@@ -1,16 +1,16 @@
-this.growth_pearls_item <- this.inherit("scripts/items/item", {
+this.legend_basilisk_talon_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
 		this.item.create();
-		this.m.ID = "misc.growth_pearls";
-		this.m.Name = "Growth Pearls";
-		this.m.Description = "The fast growth of Nachzehrer tissue sometimes engulfs small particles or debris and turns them into shimmering pearls that can be found within the creatures. Should fetch a good price at the next city.";
-		this.m.Icon = "loot/southern_01.png";
+		this.m.ID = "misc.legend_basilisk_talon";
+		this.m.Name = "Basilisk Talon";
+		this.m.Description = "A great, curved claw used to pin down or disembowel prey. Many would pay well for such a curiosity.";
+		this.m.Icon = "loot/basilisk_talon.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Loot;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 200;
+		this.m.Value = 300;
 	}
 
 	function getTooltip()
