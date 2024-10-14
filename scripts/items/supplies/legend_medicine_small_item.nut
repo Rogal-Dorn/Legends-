@@ -1,4 +1,4 @@
-this.medicine_small_item <- this.inherit("scripts/items/item", {
+this.legend_medicine_small_item <- this.inherit("scripts/items/item", {
 	m = {
 		Amount = 0
 	},
@@ -24,7 +24,7 @@ this.medicine_small_item <- this.inherit("scripts/items/item", {
 
 	function create()
 	{
-		this.m.ID = "supplies.medicine_small";
+		this.m.ID = "supplies.legend_medicine_small";
 		this.m.Name = "Small Medical Supplies";
 		this.m.Icon = "supplies/medicine_small.png";
 		this.m.SlotType = this.Const.ItemSlot.None;

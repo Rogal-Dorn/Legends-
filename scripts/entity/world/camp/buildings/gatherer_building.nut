@@ -192,7 +192,7 @@ this.gatherer_building <- this.inherit("scripts/entity/world/camp/camp_building"
 			}
 			else
 			{
-				item = this.new("scripts/items/supplies/medicine_small_item");
+				item = this.new("scripts/items/supplies/legend_medicine_small_item");
 			}
 
 			this.m.Items.push(item);

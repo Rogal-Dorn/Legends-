@@ -1,4 +1,4 @@
-this.armor_parts_small_item <- this.inherit("scripts/items/item", {
+this.legend_armor_parts_small_item <- this.inherit("scripts/items/item", {
 	m = {
 		Amount = 0
 	},
@@ -24,7 +24,7 @@ this.armor_parts_small_item <- this.inherit("scripts/items/item", {
 
 	function create()
 	{
-		this.m.ID = "supplies.armor_parts_small";
+		this.m.ID = "supplies.legend_armor_parts_small";
 		this.m.Name = "Small Tools and Supplies";
 		this.m.Icon = "supplies/armor_parts_small.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
