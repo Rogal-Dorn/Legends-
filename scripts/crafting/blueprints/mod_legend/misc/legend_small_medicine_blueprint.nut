@@ -28,7 +28,7 @@ this.legend_small_medicine_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function onCraft( _stash )
 	{
-		_stash.add(this.new("scripts/items/supplies/medicine_small_item"));
+		_stash.add(this.new("scripts/items/supplies/legend_medicine_small_item"));
 
 	}
 

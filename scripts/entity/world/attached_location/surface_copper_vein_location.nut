@@ -99,7 +99,7 @@ this.surface_copper_vein_location <- this.inherit("scripts/entity/world/attached
 			_list.push({
 				R = 25,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			});
 			_list.push({
 				R = 25,

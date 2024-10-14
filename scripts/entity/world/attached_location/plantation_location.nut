@@ -20,7 +20,7 @@ this.plantation_location <- this.inherit("scripts/entity/world/attached_location
 	function onUpdateProduce( _list )
 	{
 		_list.push("trade/spices_item");
-		_list.push("supplies/medicine_small_item");
+		_list.push("supplies/legend_medicine_small_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -67,7 +67,7 @@ this.plantation_location <- this.inherit("scripts/entity/world/attached_location
 			_list.push({
 				R = 0,
 				P = 1.0,
-				S = "supplies/medicine_small_item"
+				S = "supplies/legend_medicine_small_item"
 			});
 		}
 	}

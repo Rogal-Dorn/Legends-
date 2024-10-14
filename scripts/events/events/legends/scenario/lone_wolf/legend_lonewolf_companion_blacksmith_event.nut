@@ -99,7 +99,7 @@ this.legend_lonewolf_companion_blacksmith_event <- this.inherit("scripts/events/
 					else if (r == 4)
 					{
 						item = this.new("signet_ring_item");
-						item = this.new("medicine_small_item");
+						item = this.new("legend_medicine_small_item");
 						item = this.new("mead_item");
 						item = this.new("pitchfork");
 						item = this.new("smoked_ham_item");

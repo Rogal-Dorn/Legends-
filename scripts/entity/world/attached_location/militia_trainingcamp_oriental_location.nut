@@ -113,7 +113,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 
 	function onUpdateProduce( _list )
 	{
-		_list.push("supplies/ammo_small_item");
+		_list.push("supplies/legend_ammo_small_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -184,7 +184,7 @@ this.militia_trainingcamp_oriental_location <- this.inherit("scripts/entity/worl
 			_list.push({
 				R = 30,
 				P = 1.0,
-				S = "supplies/ammo_small_item"
+				S = "supplies/legend_ammo_small_item"
 			});
 				_list.push({
 				R = 90,

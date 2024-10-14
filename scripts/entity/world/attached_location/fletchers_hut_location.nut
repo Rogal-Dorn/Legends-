@@ -66,9 +66,9 @@ this.fletchers_hut_location <- this.inherit("scripts/entity/world/attached_locat
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/ammo_item");
-		_list.push("supplies/ammo_small_item");
+		_list.push("supplies/legend_ammo_small_item");
 		_list.push("supplies/ammo_item");
-		_list.push("supplies/ammo_small_item");
+		_list.push("supplies/legend_ammo_small_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)

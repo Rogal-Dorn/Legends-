@@ -328,7 +328,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				{
 				R = 0,
 				P = 1.0,
-				S = "supplies/ammo_small_item"
+				S = "supplies/legend_ammo_small_item"
 			},
 			{
 				R = 10,
@@ -338,7 +338,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 			{
 				R = 10,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			},
 			{
 				R = 50,
@@ -348,7 +348,7 @@ this.marketplace_building <- this.inherit("scripts/entity/world/settlements/buil
 				{
 				R = 50,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			},
 			{
 				R = 10,

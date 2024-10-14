@@ -1111,17 +1111,17 @@
 			local r = this.Math.rand(1, 100);
 			if (r == 1)
 			{
-				local loot = this.new("scripts/items/supplies/ammo_small_item");
+				local loot = this.new("scripts/items/supplies/legend_ammo_small_item");
 				loot.drop(_targetEntity.getTile());
 			}
 			if (r == 2)
 			{
-				local loot = this.new("scripts/items/supplies/armor_parts_small_item");
+				local loot = this.new("scripts/items/supplies/legend_armor_parts_small_item");
 				loot.drop(_targetEntity.getTile());
 			}
 			if (r == 3)
 			{
-				local loot = this.new("scripts/items/supplies/medicine_small_item");
+				local loot = this.new("scripts/items/supplies/legend_medicine_small_item");
 				loot.drop(_targetEntity.getTile());
 			}
 			if (r >= 4 && r < 6)

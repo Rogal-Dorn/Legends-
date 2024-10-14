@@ -93,9 +93,9 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 	function onUpdateProduce( _list )
 	{
 		_list.push("supplies/armor_parts_item");
-		_list.push("supplies/armor_parts_small_item");
+		_list.push("supplies/legend_armor_parts_small_item");
 		_list.push("supplies/armor_parts_item");
-		_list.push("supplies/armor_parts_small_item");
+		_list.push("supplies/legend_armor_parts_small_item");
 	}
 
 	function onUpdateDraftList( _list, _gender = null)
@@ -145,12 +145,12 @@ this.workshop_location <- this.inherit("scripts/entity/world/attached_location",
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			});
 			_list.push({
 				R = 20,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			});
 			_list.push({
 				R = 20,

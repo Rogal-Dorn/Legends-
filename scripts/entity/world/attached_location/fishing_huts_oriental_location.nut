@@ -50,7 +50,7 @@ this.fishing_huts_oriental_location <- this.inherit("scripts/entity/world/attach
 			_list.push({
 				R = 0,
 				P = 1.0,
-				S = "supplies/armor_parts_small_item"
+				S = "supplies/legend_armor_parts_small_item"
 			});
 			_list.push({
 				R = 20,
