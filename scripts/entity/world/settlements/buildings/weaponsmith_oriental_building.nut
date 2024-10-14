@@ -169,7 +169,7 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 			{
 				R = 99,
 				P = 2.0,
-				S = "weapons/named/named_nomad_sling"
+				S = "weapons/named/legend_named_nomad_sling"
 			}
 		];
 

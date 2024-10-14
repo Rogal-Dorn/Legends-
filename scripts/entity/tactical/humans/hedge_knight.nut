@@ -187,7 +187,7 @@ this.hedge_knight <- this.inherit("scripts/entity/tactical/human", {
 			"weapons/named/named_greatsword",
 			//"weapons/named/named_mace",
 			//"weapons/named/named_sword",
-			//"weapons/named/named_longsword",
+			//"weapons/named/legend_named_longsword",
 			"weapons/named/named_two_handed_hammer",
 			//"weapons/named/named_warbrand"
 		];

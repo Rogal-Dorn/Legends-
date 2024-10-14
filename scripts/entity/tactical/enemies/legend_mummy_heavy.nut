@@ -107,7 +107,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			[1, "legend_named_gladius"],
 			[1, "named_crypt_cleaver"],
 			[1, "named_khopesh"],
-			[1, "named_legend_great_khopesh"],
+			[1, "legend_named_great_khopesh"],
 			[1, "named_warscythe"],
 			[1, "named_bladed_pike"]
 

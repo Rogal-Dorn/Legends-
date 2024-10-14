@@ -56,7 +56,7 @@ this.legend_peasant_minstrel <- this.inherit("scripts/entity/tactical/human", {
 		r = this.Math.rand(1, 100);
 		if (r == 1)
 		{
-		this.m.Items.equip(this.new("scripts/items/weapons/named/named_lute"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_lute"));
 		}
 		else
 		{

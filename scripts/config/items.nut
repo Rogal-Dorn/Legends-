@@ -211,8 +211,8 @@ gt.Const.Items.NamedOrcShields <- [
 gt.Const.Items.NamedSouthernShields <- [];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
-	"weapons/named/named_orc_axe_2h",
-	"weapons/named/named_orc_flail_2h",
+	"weapons/named/legend_named_orc_axe_2h",
+	"weapons/named/legend_named_orc_flail_2h",
 	"weapons/named/named_orc_cleaver"
 ];
 gt.Const.Items.NamedGoblinWeapons <- [
@@ -233,7 +233,7 @@ gt.Const.Items.NamedMeleeWeapons <- [
 	"weapons/named/named_mace",
 	"weapons/named/named_spear",
 	"weapons/named/named_sword",
-	"weapons/named/named_longsword",
+	"weapons/named/legend_named_longsword",
 	"weapons/named/named_two_handed_hammer",
 	"weapons/named/named_warbrand",
 	"weapons/named/named_warhammer",
@@ -260,7 +260,7 @@ gt.Const.Items.NamedRangedWeapons <- [
 	"weapons/named/named_javelin",
 	"weapons/named/named_throwing_axe",
 	"weapons/named/named_warbow",
-	"weapons/named/named_northern_sling"
+	"weapons/named/legend_named_northern_sling"
 ];
 gt.Const.Items.NamedWeapons <- clone this.Const.Items.NamedMeleeWeapons;
 gt.Const.Items.NamedWeapons.extend(this.Const.Items.NamedRangedWeapons);
@@ -278,7 +278,7 @@ gt.Const.Items.NamedUndeadWeapons <- [
 	"weapons/named/named_crypt_cleaver",
 	"weapons/named/named_warscythe",
 	"weapons/named/named_khopesh",
-	"weapons/named/named_legend_great_khopesh"
+	"weapons/named/legend_named_great_khopesh"
 ];
 gt.Const.Items.ArmorUpgrades <- {
 	Chain = 0,

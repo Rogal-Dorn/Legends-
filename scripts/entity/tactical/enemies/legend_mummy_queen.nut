@@ -81,7 +81,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 	{
 
 
-		this.m.Items.equip(this.new("scripts/items/weapons/named/named_royal_lance"));
+		this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_royal_lance"));
 
 		local armor = [
 			[1, "ancient/legend_mummy_dress"]
