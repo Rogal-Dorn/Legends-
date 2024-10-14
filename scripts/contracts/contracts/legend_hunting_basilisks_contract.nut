@@ -383,7 +383,7 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 			],
 			function start()
 			{
-				local item = this.new("scripts/items/misc/basilisk_feathers_item");
+				local item = this.new("scripts/items/misc/legend_basilisk_feathers_item");
 				this.World.Assets.getStash().add(item);
 				this.List.push({
 					id = 10,

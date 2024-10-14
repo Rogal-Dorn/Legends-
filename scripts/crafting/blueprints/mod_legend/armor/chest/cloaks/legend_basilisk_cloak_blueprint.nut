@@ -9,7 +9,7 @@ this.legend_basilisk_cloak_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.m.Cost = 4000;
 		local ingredients = [
 			{
-				Script = "scripts/items/misc/basilisk_feathers_item",
+				Script = "scripts/items/misc/legend_basilisk_feathers_item",
 				Num = 4
 			}
 		];

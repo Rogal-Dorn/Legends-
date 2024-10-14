@@ -1,16 +1,16 @@
-this.basilisk_eye_item <- this.inherit("scripts/items/item", {
+this.legend_basilisk_feathers_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
 		this.item.create();
-		this.m.ID = "misc.basilisk_eye";
-		this.m.Name = "Fowl Eye";
-		this.m.Description = "The unfaltering, cruel gaze of a Basilisk. Even now it's giving you goosebumps.";
-		this.m.Icon = "misc/inventory_basilisk_eye.png";
+		this.m.ID = "misc.legend_basilisk_feathers";
+		this.m.Name = "Basilisk Feathers";
+		this.m.Description = "Feather-like scales of varying length and thickness. Closer to lamellar than downs.";
+		this.m.Icon = "misc/inventory_basilisk_feathers.png";
 		this.m.SlotType = this.Const.ItemSlot.None;
 		this.m.ItemType = this.Const.Items.ItemType.Misc | this.Const.Items.ItemType.Crafting;
 		this.m.IsDroppedAsLoot = true;
-		this.m.Value = 1000;
+		this.m.Value = 750;
 	}
 
 	function playInventorySound( _eventType )

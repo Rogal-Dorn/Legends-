@@ -9,11 +9,11 @@ this.basilisk_trophy_blueprint <- this.inherit("scripts/crafting/blueprint", {
 		this.m.Cost = 2300;
 		local ingredients = [
 			{
-				Script = "scripts/items/misc/basilisk_eye_item",
+				Script = "scripts/items/misc/legend_basilisk_eye_item",
 				Num = 1
 			},
 			{
-				Script = "scripts/items/misc/basilisk_feathers_item",
+				Script = "scripts/items/misc/legend_basilisk_feathers_item",
 				Num = 2
 			}
 		];
