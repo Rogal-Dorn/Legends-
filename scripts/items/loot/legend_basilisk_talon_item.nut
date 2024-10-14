@@ -1,9 +1,9 @@
-this.basilisk_talon_item <- this.inherit("scripts/items/item", {
+this.legend_basilisk_talon_item <- this.inherit("scripts/items/item", {
 	m = {},
 	function create()
 	{
 		this.item.create();
-		this.m.ID = "misc.basilisk_talon";
+		this.m.ID = "misc.legend_basilisk_talon";
 		this.m.Name = "Basilisk Talon";
 		this.m.Description = "A great, curved claw used to pin down or disembowel prey. Many would pay well for such a curiosity.";
 		this.m.Icon = "loot/basilisk_talon.png";
