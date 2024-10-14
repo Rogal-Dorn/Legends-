@@ -352,7 +352,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		// }
 		// else if (r <= 4)
 		// {
-		// 	this.m.Items.equip(this.new("scripts/items/weapons/named/named_legend_great_khopesh"));
+		// 	this.m.Items.equip(this.new("scripts/items/weapons/named/legend_named_great_khopesh"));
 		// }
 		if (r == 1)
 		{

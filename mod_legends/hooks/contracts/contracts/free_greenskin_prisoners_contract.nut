@@ -213,11 +213,11 @@
 					}
 					else if (r == 9)
 					{
-						item = this.new("scripts/items/weapons/named/named_orc_axe_2h");
+						item = this.new("scripts/items/weapons/named/legend_named_orc_axe_2h");
 					}
 					else if (r == 10)
 					{
-						item = this.new("scripts/items/weapons/named/named_orc_flail_2h");
+						item = this.new("scripts/items/weapons/named/legend_named_orc_flail_2h");
 					}
 
 					this.World.Assets.getStash().makeEmptySlots(1);

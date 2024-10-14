@@ -289,8 +289,8 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 
 		this.getSprite("miniboss").setBrush("bust_miniboss_greenskins");
 		local weapons = [
-			"weapons/named/named_orc_axe_2h",
-			"weapons/named/named_orc_flail_2h"
+			"weapons/named/legend_named_orc_axe_2h",
+			"weapons/named/legend_named_orc_flail_2h"
 		];
 
 		this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
