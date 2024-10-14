@@ -47,7 +47,7 @@ this.undead_necromancers_lair_location <- this.inherit("scripts/entity/world/loc
 		if (this.Const.DLC.Unhold && this.Math.rand(1, 100) <= 10)
 		{
 			local treasure = [];
-			treasure.push("misc/paint_black_item");
+			treasure.push("misc/legend_paint_black_item");
 			this.dropTreasure(1, treasure, _lootTable);
 		}
 	}

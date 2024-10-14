@@ -67,8 +67,8 @@ this.orc_settlement_location <- this.inherit("scripts/entity/world/location", {
 		if (this.Const.DLC.Unhold && this.Math.rand(1, 100) <= 10)
 		{
 			local treasure = [];
-			treasure.push("misc/paint_black_item");
-			treasure.push("misc/paint_red_item");
+			treasure.push("misc/legend_paint_black_item");
+			treasure.push("misc/legend_paint_red_item");
 			this.dropTreasure(1, treasure, _lootTable);
 		}
 	}

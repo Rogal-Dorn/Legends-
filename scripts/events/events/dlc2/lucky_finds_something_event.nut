@@ -167,7 +167,7 @@ this.lucky_finds_something_event <- this.inherit("scripts/events/event", {
 		}
 		else if (r == 19)
 		{
-			item = this.new("scripts/items/misc/paint_black_item");
+			item = this.new("scripts/items/misc/legend_paint_black_item");
 		}
 
 		if (item.getConditionMax() > 1)
