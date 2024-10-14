@@ -1,3 +1,4 @@
+// unused but kept for posterity
 this.legend_white_wolf_pelt_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
 	m = {},
 	function create()

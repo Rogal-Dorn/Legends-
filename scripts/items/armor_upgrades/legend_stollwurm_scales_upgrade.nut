@@ -1,3 +1,4 @@
+// unused but kept for posterity
 this.legend_stollwurm_scales_upgrade <- this.inherit("scripts/items/armor_upgrades/armor_upgrade", {
 	m = {},
 	function create()
