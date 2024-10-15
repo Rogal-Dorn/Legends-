@@ -554,13 +554,30 @@
 		return false;
 	}
 
-	local resurrect = o.resurrect;
 	o.resurrect = function ( _info, _delay = 0 )
 	{
 		if (_info.Type == "")
 			return;
 
-		resurrect(_info, _delay);
+		if (!this.MSU.Tile.canResurrectOnTile(_info.Tile, true))
+		{
+			return;
+		}
+
+		if (_info.Tile.IsVisibleForPlayer)
+		{
+			this.Tactical.CameraDirector.addMoveToTileEvent(_delay, _info.Tile, -1, this.onResurrect.bindenv(this), _info, this.Const.Tactical.Settings.CameraWaitForEventDelay, this.Const.Tactical.Settings.CameraNextEventDelay);
+			this.Tactical.CameraDirector.addDelay(1.5);
+		}
+		else
+		{
+			this.onResurrect(_info);
+
+			if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().isPlayerControlled())
+			{
+				this.Tactical.TurnSequenceBar.getActiveEntity().setDirty(true);
+			}
+		}
 	}
 
 	local onResurrect = o.onResurrect;
@@ -575,5 +592,15 @@
 		}
 
 		return onResurrect(_info, _force);
+	}
+
+	local setupEntity = o.setupEntity;
+	o.setupEntity = function( _e, _t )
+	{
+		setupEntity( _e, _t );
+		if (("Outfits") in _t) //this is mostly only used for free companies currently, I'll admit I just can't think of a better way to do these
+		{
+			_e.m.Outfits = _t.Outfits;
+		}
 	}
 });
