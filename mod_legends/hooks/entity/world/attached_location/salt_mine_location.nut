@@ -1,0 +1,38 @@
+::mods_hookExactClass("entity/world/attached_location/salt_mine_location", function(o) 
+{
+	local create = o.create;
+	o.create = function ()
+	{
+		create();
+		this.m.Description = "A mine in which precious rock salt is extracted and shipped off to only the most trustworthy traders. Contributes salt, pickaxes and miners to the local town";
+	}
+
+	local onUpdateProduce = o.onUpdateProduce;
+	o.onUpdateProduce = function ( _list )
+	{
+		onUpdateProduce(_list);
+		_list.push("trade/salt_item");
+}
+
+	local onUpdateDraftList = o.onUpdateDraftList;
+	o.onUpdateDraftList = function ( _list, _gender = null )
+	{
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		
+		onUpdateDraftList(_list, _gender);
+	}
+
+	local onUpdateShopList = o.onUpdateShopList;
+	o.onUpdateShopList = function ( _id, _list )
+	{
+		onUpdateShopList(_id, _list);
+		if (_id == "building.marketplace")
+		{
+			_list.push({
+				R = 20,
+				P = 1.0,
+				S = "weapons/legend_hammer"
+			});
+		}
+	}
+});
