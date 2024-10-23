@@ -25,7 +25,6 @@ this.legend_motivated_effect <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local bonus = this.m.Difference;
 		return [
 			{
 				id = 1,
