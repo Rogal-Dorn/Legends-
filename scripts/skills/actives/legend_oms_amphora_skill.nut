@@ -30,6 +30,22 @@ this.legend_oms_amphora_skill <- ::inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
+		result = [
+		{
+			id = 1,
+			type = "title",
+			text = this.getName()
+		},
+		{
+			id = 2,
+			type = "description",
+			text = this.getDescription()
+		},
+		{
+			id = 3,
+			type = "text",
+			text = this.getCostString()
+		}];
 		if (!this.World.Flags.get("Item Identified"))
 		{
 			result.push({
