@@ -2933,7 +2933,7 @@
 				{
 					id = 2,
 					type = "description",
-					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, they\'ll level up and be able to increase attributes and pick a perk that grants a unique bonus.\n\nBeyond the 11th character level, main characters gain a perk every two levels, and supporting characters gain a perk every four levels."
+					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, they\'ll level up and be able to increase attributes and pick a perk that grants a unique bonus.\n\nBeyond the 11th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
 				}
 			];
 
@@ -2947,7 +2947,7 @@
 				{
 					id = 2,
 					type = "description",
-					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 11th character level, main characters gain a perk every two levels, and supporting characters gain a perk every four levels."
+					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 11th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
 				}
 			];
 
@@ -3851,6 +3851,20 @@
 					id = 2,
 					type = "description",
 					text = "A lively market offering all sorts of goods common in the region. New wares will be on offer every few days, and when trading caravans reach this settlement."
+				}
+			];
+
+		case "world-town-screen.main-dialog-module.Stables":
+			return [
+				{
+					id = 1,
+					type = "title",
+					text = "Stables"
+				},
+				{
+					id = 2,
+					type = "description",
+					text = "A sturdy and spacious wooden building that will sell you donkeys and seems to care for horses for the local nobility."
 				}
 			];
 
