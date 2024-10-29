@@ -1,21 +1,6 @@
-this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settlements/buildings/armorsmith_building", {
-	m = {
-		Stash = null
-	},
-	function getStash()
-	{
-		return this.m.Stash;
-	}
-
-	function create()
-	{
-		this.armorsmith_building.create();
-		this.m.ID = "building.armorsmith_oriental";
-		this.m.UIImage = "ui/settlements/desert_building_01";
-		this.m.UIImageNight = "ui/settlements/desert_building_01_night";
-	}
-
-	function onUpdateShopList()
+::mods_hookNewObject("entity/world/settlements/buildings/armorsmith_oriental_building", function(o) 
+{
+	o.onUpdateShopList = function ()
 	{
 		local list = [
 			{
@@ -140,6 +125,17 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 			}
 		];
 
+		foreach( i in this.Const.Items.NamedSouthernShields )
+		{
+			if (this.Math.rand(1, 100) <= 33)
+			{
+				list.push({
+					R = 99,
+					P = 2.0,
+					S = i
+				});
+			}
+		}
 
 		foreach( i in this.Const.Items.LegendNamedSouthernArmorLayers )
 		{
@@ -222,6 +218,4 @@ this.armorsmith_oriental_building <- this.inherit("scripts/entity/world/settleme
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);
 		this.fillStash(list, this.m.Stash, 1.25, false);
 	}
-
 });
-

@@ -1,14 +1,6 @@
-this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlements/buildings/weaponsmith_building", {
-	m = {},
-	function create()
-	{
-		this.weaponsmith_building.create();
-		this.m.ID = "building.weaponsmith_oriental";
-		this.m.UIImage = "ui/settlements/desert_building_04";
-		this.m.UIImageNight = "ui/settlements/desert_building_04_night";
-	}
-
-	function onUpdateShopList()
+::mods_hookExactClass("entity/world/settlements/buildings/weaponsmith_oriental_building", function(o)
+{
+	o.onUpdateShopList = function ()
 	{
 		local list = [
 			{
@@ -170,80 +162,63 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 				R = 99,
 				P = 2.0,
 				S = "weapons/named/legend_named_nomad_sling"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "weapons/two_handed_wooden_hammer"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/longsword"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/three_headed_flail"
+			},
+			{
+				R = 95,
+				P = 1.0,
+				S = "weapons/two_handed_flail"
+			},
+			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/two_handed_wooden_flail"
+			},
+			{
+				R = 30,
+				P = 1.0,
+				S = "weapons/spetum"
+			},
+			{
+				R = 60,
+				P = 1.0,
+				S = "weapons/polehammer"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "weapons/two_handed_mace"
+			},
+			{
+				R = 70,
+				P = 1.0,
+				S = "weapons/two_handed_flanged_mace"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/fencing_sword"
+			},
+			{
+				R = 10,
+				P = 1.0,
+				S = "weapons/throwing_spear"
 			}
 		];
-
-		if (this.Const.DLC.Unhold)
-		{
-			list.extend([
-				{
-					R = 60,
-					P = 1.0,
-					S = "weapons/two_handed_wooden_hammer"
-				},
-				{
-					R = 80,
-					P = 1.0,
-					S = "weapons/longsword"
-				},
-				{
-					R = 80,
-					P = 1.0,
-					S = "weapons/three_headed_flail"
-				},
-				{
-					R = 95,
-					P = 1.0,
-					S = "weapons/two_handed_flail"
-				},
-				{
-					R = 90,
-					P = 1.0,
-					S = "weapons/two_handed_wooden_flail"
-				},
-				{
-					R = 30,
-					P = 1.0,
-					S = "weapons/spetum"
-				},
-				{
-					R = 60,
-					P = 1.0,
-					S = "weapons/polehammer"
-				},
-				{
-					R = 70,
-					P = 1.0,
-					S = "weapons/two_handed_mace"
-				},
-				{
-					R = 70,
-					P = 1.0,
-					S = "weapons/two_handed_flanged_mace"
-				},
-				{
-					R = 80,
-					P = 1.0,
-					S = "weapons/fencing_sword"
-				},
-				{
-					R = 10,
-					P = 1.0,
-					S = "weapons/throwing_spear"
-				}
-			]);
-		}
-
-		if (this.Const.DLC.Wildmen)
-		{
-			list.extend([
-				{
-					R = 20,
-					P = 1.0,
-					S = "weapons/warfork"
-				}
-			]);
-		}
 
 		foreach( i in this.Const.Items.NamedMeleeWeapons )
 		{
@@ -260,6 +235,4 @@ this.weaponsmith_oriental_building <- this.inherit("scripts/entity/world/settlem
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);
 		this.fillStash(list, this.m.Stash, 1.25, false);
 	}
-
 });
-

@@ -208,7 +208,9 @@ gt.Const.Items.NamedUndeadShields <- [
 gt.Const.Items.NamedOrcShields <- [
 	"shields/named/named_orc_heavy_shield"
 ];
-gt.Const.Items.NamedSouthernShields <- [];
+gt.Const.Items.NamedSouthernShields <- [
+	"shields/named/named_sipar_shield"
+];
 gt.Const.Items.NamedOrcWeapons <- [
 	"weapons/named/named_orc_axe",
 	"weapons/named/legend_named_orc_axe_2h",

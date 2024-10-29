@@ -1,13 +1,6 @@
-this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlements/buildings/marketplace_building", {
-	m = {},
-	function create()
-	{
-		this.marketplace_building.create();
-		this.m.UIImage = "ui/settlements/desert_building_06";
-		this.m.UIImageNight = "ui/settlements/desert_building_06_night";
-	}
-
-	function onUpdateShopList()
+::mods_hookExactClass("entity/world/settlements/buildings/marketplace_oriental_building", function(o)
+{
+	o.onUpdateShopList = function ()
 	{
 		local list = [
 			{
@@ -214,6 +207,21 @@ this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlem
 				R = 60,
 				P = 1.0,
 				S = "accessory/legend_hand_wraps_item"
+			},
+			{
+				R = 90,
+				P = 1.0,
+				S = "weapons/two_handed_wooden_hammer"
+			},
+			{
+				R = 80,
+				P = 1.0,
+				S = "weapons/throwing_spear"
+			},
+			{
+				R = 50,
+				P = 1.0,
+				S = "weapons/warfork"
 			}
 		];
 
@@ -276,36 +284,7 @@ this.marketplace_oriental_building <- this.inherit("scripts/entity/world/settlem
 			});
 		}
 
-		if (this.Const.DLC.Unhold)
-		{
-			list.extend([
-				{
-					R = 90,
-					P = 1.0,
-					S = "weapons/two_handed_wooden_hammer"
-				},
-				{
-					R = 80,
-					P = 1.0,
-					S = "weapons/throwing_spear"
-				}
-			]);
-		}
-
-		if (this.Const.DLC.Wildmen)
-		{
-			list.extend([
-				{
-					R = 50,
-					P = 1.0,
-					S = "weapons/warfork"
-				}
-			]);
-		}
-
 		this.m.Settlement.onUpdateShopList(this.m.ID, list);
 		this.fillStash(list, this.m.Stash, 1.0, true);
 	}
-
 });
-
