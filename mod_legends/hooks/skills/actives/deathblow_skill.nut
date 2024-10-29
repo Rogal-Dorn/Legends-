@@ -1,6 +1,6 @@
 ::mods_hookExactClass("skills/actives/deathblow_skill", function(o)
 {
-	o.m.ApplicableSkills = 
+	o.m.ApplicableSkills <- 
 	[
 		"effects.dazed",
 		"effects.debilitated",
