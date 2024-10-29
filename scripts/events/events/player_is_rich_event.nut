@@ -153,6 +153,11 @@ this.player_is_rich_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			return;
+		}
+
 		if (this.World.getPlayerRoster().getSize() < 5)
 		{
 			return;

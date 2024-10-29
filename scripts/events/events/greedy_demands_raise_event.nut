@@ -135,6 +135,11 @@ this.greedy_demands_raise_event <- this.inherit("scripts/events/event", {
 
 	function onUpdateScore()
 	{
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			return;
+		}
+
 		if (this.World.Retinue.hasFollower("follower.paymaster"))
 		{
 			return;

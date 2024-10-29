@@ -180,6 +180,11 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
+		if (this.World.Assets.getOrigin().getID() == "scenario.lone_wolf")
+		{
+			return;
+		}
+
 		if (this.World.Retinue.hasFollower("follower.paymaster"))
 		{
 			return;
@@ -218,7 +223,7 @@ this.noble_more_pay_lowborn_event <- this.inherit("scripts/events/event", {
 
 		foreach( bro in brothers )
 		{
-			if (bro.getDailyCost() > lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn))
+			if (bro.getDailyCost() > lowestPay && bro.getBackground().isBackgroundType(this.Const.BackgroundType.Lowborn) && bro.getBackground().getID() != "background.slave")
 			{
 				lowborn_candidates.push(bro);
 			}
