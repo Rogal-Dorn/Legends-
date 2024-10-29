@@ -1,0 +1,56 @@
+::mods_hookExactClass("entity/world/settlements/situations/ceremonial_season_situation", function(o)
+{
+	local onAdded = o.onAdded;
+	o.onAdded = function ( _settlement )
+	{
+		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+		{
+			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.01);
+		}
+		onAdded( _settlement );
+	}
+
+	o.onUpdateDraftList <- function ( _draftList, _gender = null)
+	{
+		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
+		_draftList.push("monk_background");
+		_draftList.push("monk_background");
+		_draftList.push("cultist_background");
+		_draftList.push("flagellant_background");
+		// if (_gender)
+		// 	{
+		// 	_draftList.push("legend_nun_background");
+		// 	_draftList.push("legend_nun_background");
+		// }
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.cultists")
+		{
+			_draftList.push("legend_husk_background");
+			_draftList.push("legend_husk_background");
+			_draftList.push("legend_lurker_background");
+			_draftList.push("legend_lurker_background");
+			_draftList.push("legend_lurker_background");
+			_draftList.push("legend_magister_background");
+		}
+		if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_crusader")
+		{
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+			_draftList.push("legend_pilgrim_background");
+		}
+	}
+});

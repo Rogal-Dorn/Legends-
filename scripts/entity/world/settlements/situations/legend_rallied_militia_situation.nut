@@ -1,9 +1,9 @@
-this.rallied_militia_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
+this.legend_rallied_militia_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
 	m = {},
 	function create()
 	{
 		this.situation.create();
-		this.m.ID = "situation.rallied_militia";
+		this.m.ID = "situation.legend_rallied_militia";
 		this.m.Name = "Rallied Militia";
 		this.m.Description = "The local militia has banded togeather with new recruits to deal with some of the local problems themselves. At a great cost.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_07.png";

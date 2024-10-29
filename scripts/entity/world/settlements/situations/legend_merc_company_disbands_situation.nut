@@ -1,9 +1,9 @@
-this.merc_company_disbands_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
+this.legend_merc_company_disbands_situation <- this.inherit("scripts/entity/world/settlements/situations/situation", {
 	m = {},
 	function create()
 	{
 		this.situation.create();
-		this.m.ID = "situation.merc_company_disbands";
+		this.m.ID = "situation.legend_merc_company_disbands";
 		this.m.Name = "Mercenaries For Hire";
 		this.m.Description = "A mercenary company has recently disbanded, leaving their highly trained fighters to fend for themselves.";
 		this.m.Icon = "ui/settlement_status/settlement_effect_30.png";
