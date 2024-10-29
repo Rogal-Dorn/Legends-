@@ -509,7 +509,7 @@ this.blackmarket_building <- this.inherit("scripts/entity/world/settlements/buil
 				P = 2.0,
 				S = "supplies/fermented_unhold_heart_item"
 			},
-		{
+			{
 				R = 10,
 				P = 2.0,
 				S = "supplies/strange_meat_item"
