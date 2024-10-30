@@ -1,9 +1,9 @@
-this.holy_water_blueprint <- this.inherit("scripts/crafting/blueprint", {
+this.legend_holy_water_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
 	{
 		this.blueprint.create();
-		this.m.ID = "blueprint.holy_water";
+		this.m.ID = "blueprint.legend_holy_water";
 		this.m.Type = this.Const.Items.ItemType.Usable
 		this.m.PreviewCraftable = this.new("scripts/items/tools/holy_water_item");
 		this.m.Cost = 100;
