@@ -32,6 +32,5 @@
 	if (this.World.Assets.getEconomicDifficulty() == this.Const.Difficulty.Legendary)
 	{
 		this.RecruitsMult = 0.5;
-	}		
-
+	}
 };
