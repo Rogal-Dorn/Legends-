@@ -487,7 +487,7 @@ layers = [
 },
 {"name": "legend_southern_mail",                       "layer": "chain", "min": 1, "max": 1, "value" : 1400, "con" : 100, "stam" : -13, "impactSound" : "chain", "invSound" : "chain", "brush" : "southern_mail", \
     "title" :  "Southern Mail", \
-    "desc" :  "A long and heavy mail shirt of southern design made with with slightly thinner and lighter metal rings than those used in the north", \
+    "desc" :  "A long and heavy mail shirt of southern design made with slightly thinner and lighter metal rings than those used in the north", \
     "adesc" : "Includes a long southern mail shirt."
 },
 {"name": "legend_armor_leather_brigandine",               "layer": "plate", "min": 1, "max": 1, "value" : 750, "con" : 65, "stam" : -8, "impactSound" : "leather", "invSound" : "leather", \
@@ -597,7 +597,7 @@ layers = [
 {"name": "legend_armor_leather_riveted_light",            "layer": "plate", "min": 1, "max": 1, "value" : 700, "con" : 80, "stam" : -11, "impactSound" : "chain", "invSound" : "leather", \
     "title" :  "Footman\'s Leather Armor", \
     "desc" :  "A light leather armor reinforced with metal rivets.", \
-    "adesc" : "Includes a leather armor coat rivetted with with metal plates."
+    "adesc" : "Includes a leather armor coat rivetted with metal plates."
 },
 {"name": "legend_armor_leather_scale",                    "layer": "plate", "min": 1, "max": 1, "value" : 600, "con" : 70, "stam" : -9, "impactSound" : "leather", "invSound" : "leather", \
     "title" :  "Leather Scale Armor", \
