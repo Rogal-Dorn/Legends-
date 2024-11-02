@@ -445,7 +445,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 							ID = this.Const.EntityType.CaravanHand,
 							Variant = 0,
 							Row = -1,
-							Script = "scripts/entity/tactical/humans/caravan_hand",
+							Script = "scripts/entity/tactical/humans/legend_caravan_hand",
 							Faction = this.Const.Faction.PlayerAnimals,
 							Callback = null
 						});
@@ -453,7 +453,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 							ID = this.Const.EntityType.CaravanHand,
 							Variant = 0,
 							Row = -1,
-							Script = "scripts/entity/tactical/humans/caravan_hand",
+							Script = "scripts/entity/tactical/humans/legend_caravan_hand",
 							Faction = this.Const.Faction.PlayerAnimals,
 							Callback = null
 						});
@@ -461,7 +461,7 @@ this.legend_hunting_stollwurms_contract <- this.inherit("scripts/contracts/contr
 							ID = this.Const.EntityType.CaravanHand,
 							Variant = 0,
 							Row = -1,
-							Script = "scripts/entity/tactical/humans/caravan_hand",
+							Script = "scripts/entity/tactical/humans/legend_caravan_hand",
 							Faction = this.Const.Faction.PlayerAnimals,
 							Callback = null
 						});

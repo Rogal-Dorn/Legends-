@@ -275,7 +275,7 @@ this.legend_bandit_outrider <- this.inherit("scripts/entity/tactical/human", {
 	function spawnGoblin( _info )
 	{
 		this.Sound.play(this.m.Sound[this.Const.Sound.ActorEvent.Other1][this.Math.rand(0, this.m.Sound[this.Const.Sound.ActorEvent.Other1].len() - 1)], this.Const.Sound.Volume.Actor * this.m.SoundVolume[this.Const.Sound.ActorEvent.Other1], _info.Tile.Pos, 1.0);
-		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_thug", _info.Tile.Coords.X, _info.Tile.Coords.Y);
+		local entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_thug", _info.Tile.Coords.X, _info.Tile.Coords.Y);
 
 		if (entity != null)
 		{

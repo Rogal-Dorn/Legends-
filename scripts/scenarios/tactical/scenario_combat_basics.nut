@@ -68,14 +68,14 @@ this.scenario_combat_basics <- this.inherit("scripts/scenarios/tactical/scenario
 		items.equip(this.new("scripts/items/weapons/noble_sword"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		this.Tactical.getTileSquare(19, 16).removeObject();
-		entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_thug", 19, 16 - 19 / 2);
+		entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_thug", 19, 16 - 19 / 2);
 		entity.getAIAgent().getProperties().OverallDefensivenessMult = 0.25;
 		entity.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Roam] = 0.0;
 		entity.setFaction(this.Const.Faction.Bandits);
 		entity.getBaseProperties().Initiative = 60;
 		entity.assignRandomEquipment();
 		this.Tactical.getTileSquare(19, 14).removeObject();
-		entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/bandit_thug", 19, 14 - 19 / 2);
+		entity = this.Tactical.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_thug", 19, 14 - 19 / 2);
 		entity.getAIAgent().getProperties().OverallDefensivenessMult = 0.25;
 		entity.getAIAgent().getProperties().BehaviorMult[this.Const.AI.Behavior.ID.Roam] = 0.0;
 		entity.setFaction(this.Const.Faction.Bandits);
