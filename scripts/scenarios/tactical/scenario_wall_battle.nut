@@ -118,19 +118,19 @@ this.scenario_wall_battle <- this.inherit("scripts/scenarios/tactical/scenario_t
 
 		for( local i = 0; i < 10; i = ++i )
 		{
-			entity = this.spawnEntity("scripts/entity/tactical/enemies/bandit_thug");
+			entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_thug");
 			entity.setFaction(this.Const.Faction.Undead);
 			entity.assignRandomEquipment();
 		}
 
 		for( local i = 0; i < 5; i = ++i )
 		{
-			entity = this.spawnEntity("scripts/entity/tactical/enemies/bandit_poacher");
+			entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_poacher");
 			entity.setFaction(this.Const.Faction.Undead);
 			entity.assignRandomEquipment();
 		}
 
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/bandit_raider", 15, 23, 15, 23);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_bandit_raider", 15, 23, 15, 23);
 		entity.setFaction(this.Const.Faction.Undead);
 		entity.assignRandomEquipment();
 	}

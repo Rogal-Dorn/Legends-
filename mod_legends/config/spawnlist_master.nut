@@ -623,7 +623,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 4,
 		Cost = 10,
 		Row = -1,
-		Script = "scripts/entity/tactical/humans/peasant"
+		Script = "scripts/entity/tactical/humans/legend_peasant"
 	},
 	SouthernPeasant = {
 		ID = this.Const.EntityType.PeasantSouthern,
@@ -717,7 +717,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 9,
 		Cost = 10,
 		Row = 2,
-		Script = "scripts/entity/tactical/humans/caravan_hand"
+		Script = "scripts/entity/tactical/humans/legend_caravan_hand"
 	},
 	LegendCaravanPolearm = {
 		ID = this.Const.EntityType.LegendCaravanPolearm,
@@ -733,7 +733,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 14,
 		Cost = 14,
 		Row = 2,
-		Script = "scripts/entity/tactical/humans/caravan_guard"
+		Script = "scripts/entity/tactical/humans/legend_caravan_guard"
 	},
 	CaravanDonkey = {
 		ID = this.Const.EntityType.CaravanDonkey,
@@ -834,7 +834,7 @@ gt.Const.World.Spawn.Troops <- {
 		Row = 0,
 		NameList = this.Const.Strings.BanditRabbleNames,
 		TitleList = null,
-		Script = "scripts/entity/tactical/enemies/bandit_rabble"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_rabble"
 	},
 	BanditRabblePoacher = {
 		ID = this.Const.EntityType.BanditRabblePoacher,
@@ -842,7 +842,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 5,
 		Cost = 5,
 		Row = 1,
-		Script = "scripts/entity/tactical/enemies/bandit_rabble_poacher"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_rabble_poacher"
 	},
 	BanditThug = {
 		ID = this.Const.EntityType.BanditThug,
@@ -850,7 +850,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 8,
 		Cost = 8,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/bandit_thug"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_thug"
 	},
 	BanditMarksman = {
 		ID = this.Const.EntityType.BanditMarksman,
@@ -866,7 +866,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 8,
 		Cost = 8,
 		Row = 1,
-		Script = "scripts/entity/tactical/enemies/bandit_poacher"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_poacher"
 	},
 	BanditRaider = {
 		ID = this.Const.EntityType.BanditRaider,
@@ -874,7 +874,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 20,
 		Cost = 20,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/bandit_raider"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_raider"
 	},
 	BanditRaiderLOW = {
 		ID = this.Const.EntityType.BanditRaider,
@@ -882,7 +882,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 15,
 		Cost = 16,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/bandit_raider_low"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_raider_low"
 	},
 	BanditRaiderWolf = {
 		ID = this.Const.EntityType.Direwolf,
@@ -890,7 +890,7 @@ gt.Const.World.Spawn.Troops <- {
 		Strength = 25,
 		Cost = 25,
 		Row = 0,
-		Script = "scripts/entity/tactical/enemies/bandit_raider_wolf"
+		Script = "scripts/entity/tactical/enemies/legend_bandit_raider_wolf"
 	},
 	BanditVeteran = {
 		ID = this.Const.EntityType.BanditVeteran,

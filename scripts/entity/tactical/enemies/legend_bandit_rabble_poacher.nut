@@ -1,4 +1,4 @@
-this.bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
+this.legend_bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
 	m = {},
 	function create()
 	{
