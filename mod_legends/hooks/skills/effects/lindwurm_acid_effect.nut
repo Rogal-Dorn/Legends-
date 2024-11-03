@@ -3,7 +3,7 @@
 	local onAdded = o.onAdded;
 	o.onAdded = function()
 	{
-		local actor = this.getContainer.getActor();
+		local actor = this.getContainer().getActor();
 		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
 		{
 			this.removeSelf();
