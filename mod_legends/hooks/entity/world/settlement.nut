@@ -858,7 +858,7 @@
 		return ret;
 	}
 
-	о.buildAttachedLocation = function ( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
+	o.buildAttachedLocation = function ( _num, _script, _terrain, _nearbyTerrain, _additionalDistance = 0, _mustBeNearRoad = false, _clearTile = true, _force = false )
 	{
 		_num = this.Math.min(_num, this.getAttachedLocationsMax() - this.m.AttachedLocations.len());
 

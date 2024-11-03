@@ -12,14 +12,14 @@
 	o.m.InReserves <- false;
 	o.m.StarWeights <- [50,50,50,50,50,50,50,50];
 	// o.m.Alignment <- null,
-	o.m.CompanyID <- ;
+	o.m.CompanyID <- 0;
 
-	o.getTryoutCost <- function ()
+	o.getTryoutCost = function ()
 	{
 		return this.Math.ceil(this.Math.max(10, this.Math.min(this.m.HiringCost - 25, 25 + this.m.HiringCost * this.Const.Tryouts.CostMult) * this.World.Assets.m.TryoutPriceMult));
 	}
 
-	o.getDailyCost <- function ()
+	o.getDailyCost = function ()
 	{
 		if (!("State" in this.World)) {
 			return 0
@@ -29,7 +29,7 @@
 		return this.Math.max(0, this.m.CurrentProperties.DailyWage * wageMult);
 	}
 
-	o.getDailyFood <- function ()
+	o.getDailyFood = function ()
 	{
 		local food = this.Math.maxf(0.0, this.m.CurrentProperties.DailyFood);
 		if (this.isInReserves() && !this.m.Skills.hasSkill("perk.legend_peaceful"))

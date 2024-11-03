@@ -23,6 +23,7 @@
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		}
+	}
 
 	o.assignRandomEquipment = function ()
 	{

@@ -15,6 +15,7 @@
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
+	}
 
 	o.assignRandomEquipment = function ()
 	{

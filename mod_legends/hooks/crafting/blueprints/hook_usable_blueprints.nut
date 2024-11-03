@@ -28,14 +28,13 @@ foreach (blueprint in blueprints)
 			this.m.Type = this.Const.Items.ItemType.Usable;
 		}
 	});
-};
+}
 
-for (local i = 1; i =< 14; ++i)
+local path = "crafting/blueprints/snake_oil_";
+for( local i = 1; i <= 14; i = ++i )
 {
-	local path = "crafting/blueprints/snake_oil_";
-	if (i < 10)
-		path += "0";
-	::mods_hookExactClass(path + format("%s_blueprint", i), function(o)
+	local variant = i < 10 ? "0" + i : i;
+	::mods_hookExactClass(path + variant, function(o)
 	{
 		local create = o.create;
 		o.create = function ()
@@ -44,4 +43,4 @@ for (local i = 1; i =< 14; ++i)
 			this.m.Type = this.Const.Items.ItemType.Usable;
 		}
 	});
-};
+}
