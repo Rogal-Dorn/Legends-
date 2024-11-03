@@ -28,6 +28,7 @@
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 		}
+	}
 
 	o.assignRandomEquipment = function ()
 	{
