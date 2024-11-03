@@ -3,7 +3,9 @@
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
-		onInit()
+		onInit();
+		local b = this.m.BaseProperties;
+		b.IsAffectedByRain = false;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
