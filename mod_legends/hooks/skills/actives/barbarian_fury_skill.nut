@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/actives/rotation", function(o)
+::mods_hookExactClass("skills/actives/barbarian_fury_skill", function(o)
 {
 	o.onVerifyTarget = function ( _originTile, _targetTile )
 	{
@@ -7,27 +7,12 @@
 			return false;
 		}
 
-
 		local target = _targetTile.getEntity();
-
-		if (target.isAlive() && target.isPlayerControlled())
-		{
-			return false;
-		}
-
 		if (::MSU.isNull(target) || !target.isAlive())
 			return false;
 
 		if (!target.isAlliedWith(this.getContainer().getActor()))
 			return false;
-
-		if (!target.isAlliedWith(this.getContainer().getActor()))
-		{
-			if (target.getCurrentProperties().IsImmuneToKnockBackAndGrab || !this.getContainer().getActor().getSkills().hasSkill("perk.legend_twirl"))
-			{
-				return false;
-			}
-		}
 
 		return this.skill.onVerifyTarget(_originTile, _targetTile) && !target.getCurrentProperties().IsStunned && !target.getCurrentProperties().IsRooted && target.getCurrentProperties().IsMovable && !target.getCurrentProperties().IsImmuneToRotation;
 	}
