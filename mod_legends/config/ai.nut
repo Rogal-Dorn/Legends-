@@ -1,41 +1,37 @@
-::Const.AI.Agent.ID.extend([
-	LegendStollwurm = "agent.legend_stollwurm",
-	LegendWhiteWarwolf = "agent.legend_whitewarwolf",
-	LegendWhiteDirewolf = "agent.legend_whitewolf",
-	LegendDemonAlp = "agent.legend_demonalp",
-	LegendRedbackSpider = "agent.legend_redback",
-	LegendSkinGhoul = "agent.legend_skin_ghoul",
-	LegendBanditRabble = "agent.legend_bandit_rabble",
-	LegendBanshee = "agent.legend_banshee",
-	LegendDemonHound = "agent.legend_demon_hound",
-	LegendVampireLord = "agent.legend_vampire_lord",
-	LegendButcher = "agent.legend_butcher",
-	Bear = "agent.bear",
-	Boar = "agent.boar",
-	BasiliskDrone = "agent.basilisk_drone",
-	BasiliskDroneAggressive = "agent.basilisk_drone_aggressive",
-	KoboldWolfrider = "agent.kobold_wolfrider",
-	LegendMummyQueen = "agent.legend_mummy_queen",
-	LegendMinstrel = "agent.minstrel",
-]);
-::Const.AI.Behavior.ID.extend([
-	Howl = 84,
-	SpawnShadow = 85,
-	Corruption = 86,
-	COUNT = 87,
-]);
+::Const.AI.Agent.ID.LegendStollwurm <- "agent.legend_stollwurm";
+::Const.AI.Agent.ID.LegendWhiteWarwolf <- "agent.legend_whitewarwolf";
+::Const.AI.Agent.ID.LegendWhiteDirewolf <- "agent.legend_whitewolf";
+::Const.AI.Agent.ID.LegendDemonAlp <- "agent.legend_demonalp";
+::Const.AI.Agent.ID.LegendRedbackSpider <- "agent.legend_redback";
+::Const.AI.Agent.ID.LegendSkinGhoul <- "agent.legend_skin_ghoul";
+::Const.AI.Agent.ID.LegendBanditRabble <- "agent.legend_bandit_rabble";
+::Const.AI.Agent.ID.LegendBanshee <- "agent.legend_banshee";
+::Const.AI.Agent.ID.LegendDemonHound <- "agent.legend_demon_hound";
+::Const.AI.Agent.ID.LegendVampireLord <- "agent.legend_vampire_lord";
+::Const.AI.Agent.ID.LegendButcher <- "agent.legend_butcher";
+::Const.AI.Agent.ID.Bear = "agent.bear",
+::Const.AI.Agent.ID.Boar = "agent.boar",
+::Const.AI.Agent.ID.BasiliskDrone <- "agent.basilisk_drone";
+::Const.AI.Agent.ID.BasiliskDroneAggressive <- "agent.basilisk_drone_aggressive";
+::Const.AI.Agent.ID.KoboldWolfrider <- "agent.kobold_wolfrider";
+::Const.AI.Agent.ID.LegendMummyQueen <- "agent.legend_mummy_queen";
+::Const.AI.Agent.ID.LegendMinstrel <- "agent.minstrel";
+
+::Const.AI.Behavior.ID.Howl <- 84;
+::Const.AI.Behavior.ID.SpawnShadow <- 85;
+::Const.AI.Behavior.ID.Corruption <- 86;
+::Const.AI.Behavior.ID.COUNT = 87;
+
 ::Const.AI.Behavior.Name.extend([
 	"Howl",
 	"SpawnShadow",
 	"Corruption"
 ]);
-::Const.AI.Behavior.Order.extend([
-	Corruption = 39,
-	SpawnShadow = 39,
-	Howl = 50,
-]);
-::Const.AI.Behavior.Score.extend([
-	Howl = 60,
-	Corruption = 480,
-	SpawnShadow = 2000,
-]);
+
+::Const.AI.Behavior.Order.Corruption <- 39;
+::Const.AI.Behavior.Order.SpawnShadow <- 39;
+::Const.AI.Behavior.Order.Howl <- 39;
+
+::Const.AI.Behavior.Score.Howl <- 60;
+::Const.AI.Behavior.Score.Howl <- 480;
+::Const.AI.Behavior.Score.Howl <- 2000;
