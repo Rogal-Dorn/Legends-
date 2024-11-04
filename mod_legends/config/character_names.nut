@@ -1,43 +1,9 @@
-local gt = this.getroottable();
+// i'm not hooking this
+::Const.Strings.CharacterNames = ["Abel","Anders","Anund","Asger","Balder","Benedikt","Bjoern","Bo","Christian","Christoffer","Edvard","Einar","Erik","Ernst","Esben","Fredrik","Frej","Frode","Glum","Gnupa","Gorm","Gotfred","Gregers","Grim","Gunnar","Halfdan","Halvor","Hans","Harald","Helge","Hemming","Henrik","Hjalmar","Holger","Ingolf","Jakob","Jens","Joakim","Johann","Karl","Knud","Kristian","Leif","Lennart","Ludvig","Malthe","Mads","Mikkel","Mogens","Niels","Odd","Olav","Oluf","Peder","Poul","Ragnar","Ragnvald","Rolf","Rune","Severin","Sigfred","Sigtryg","Sigurd","Sivard","Steen","Svend","Thorolf","Thorvald","Torben","Torbjoern","Tord","Torfinn","Torgils","Ture","Ubbe","Uffe","Ulf","Valdemar","Valentin","Vilfred","Yngvar","Alv","Arne","Arnfinn","Arnkjell","Arnmod","Arnvid","Aslak","Audun","Eigil","Eilif","Eirik","Erlend","Erling","Eystein","Finn","Gudbrand","Gudleik","Gudmund","Gudroed","Guttorm","Haldor","Halkjell","Inge","Ivar","Jon","Kolbein","Lodin","Magnus","Ogmund","Orm","Ossor","Ottar","Paal","Skjalg","Skofte","Skule","Svein","Sverre","Tore","Torbrand","Torgeir","Torgil","Tormod","Torolf","Torstein","Trond","Tryggve","Ulv","Vigleik","Albrikt","Alf","Algot","Arnfast","Astrad","Azur","Bagge","Bengt","Bertil","Birger","Borkvard","Botulf","Brage","Bror","Brynjolf","Dag","Dan","Dyre","Egil","Emund","Eskild","Faste","Filip","Folke","Georg","Greger","Gustav","Halsten","Helgi","Holmger","Ingemar","Ingvar","Jedvard","Johan","Kettil","Kettilmund","Klas","Knut","Kol","Lars","Markus","Mats","Nils","Niklas","Olaf","Orvar","Sigtrygg","Starkad","Sten","Sune","Sven","Sverker","Thomas","Tjudmund","Toke","Tolir","Torkel","Torsten","Toste","Totil","Tyke","Adalvard","Rodulvard","Jaerpulf","Stenar","Brynolf","Ale","Alfr","Alfgeir","Anlaufr","Anundr","Arngrimr","Arni","Baldr","Barid","Bersi","Botulfr","Bragi","Egill","Einarr","Eirikr","Falki","Frirek","Freyr","Folki","Gandalfr","Geirr","Grimr","Gunnarr","Hakon","Haraldr","Haukr","Hrafn","Hrolfr","Hrane","Hysing","Ingjald","Kjartan","Oddr","Ofeig","Olafr","Ormr","Ottarr","Refr","Refil","Ragnarr","Rikulfr","Skuli","Snorri","Steinn","Sturla","Styrkar","Suni","Sveinn","Ulfr","Vagn","Abo","Adalbero","Adalbert","Adalbrand","Adaldag","Adalgar","Adalgod","Adolf","Aelle","Albrecht","Alebrand","Altfrid","Ansgar","Arnd","Arnold","Asig","Balduin","Balthasar","Banzleib","Beneke","Benno","Bernd","Bernhard","Bertold","Bertram","Boddic","Brun","Bruno","Burchard","Cissa","Claus","Cobbo","Cord","Cyprian","Dago","Dedo","Dethard","Detleff","Detmar","Diederik","Donar","Eggerd","Egilmar","Ekbert","Engelbert","Engelhard","Erp","Esiko","Everd","Ewald","Floribert","Freawine","Frederik","Gehrke","Gelder","Gero","Gerold","Gevert","Ghert","Giselher","Giselmar","Gosschalk","Goswin","Gunzelin","Harthgate","Hartwig","Heideke","Hengest","Henneke","Herberd","Hermann","Hinrik","Hoger","Hulderic","Humfried","Immed","Isidor","Jacob","Jaspar","Jochim","Juries","Kersten","Laurentz","Lembert","Leuderic","Liawizo","Liemar","Liudger","Luder","Ludolf","Ludwig","Marbold","Marquard","Mathias","Meinwerk","Merten","Michael","Norbert","Odo","Ordulf","Peter","Philipp","Radke","Reginbern","Reinbern","Reineke","Reinmar","Rudigar","Rudolf","Sigbert","Sigfrid","Sigward","Simon","Steffen","Thankmar","Theoderic","Theodoric","Theodwin","Thimo","Tobe","Tymmeke","Udu","Otto","Unwan","Viric","Volkwin","Volrad","Walbert","Waldemar","Waldered","Waltard","Warin","Warinechin","Wecta","Wenzel","Werneke","Weybrecht","Wichbert","Wichmann","Wicho","Widukind","Wigebert","Wilbrand","Willichin","Withgils","Witikind","Witta","Wlencing","Wolter","Wulff","Thurgot","Abrahil","Abram","Adalbald","Adalgari","Adalgrim","Aegidius","Ageric","Agilbert","Agiulf","Ailbert","Albric","Aldedramn","Andica","Ansovald","Arcambald","Aregisel","Arnegisel","Arnulf","Ascaric","Audovald","Austregisel","Autbert","Autgari","Autgeri","Avremar","Badegisel","Barnard","Berald","Bernard","Berneri","Bero","Berold","Berthefried","Bertlin","Bertrand","Ceslin","Chararic","Charibert","Childebert","Childeric","Chilperic","Chlodomer","Chlothar","Chramnesind","Clodio","Clodion","Clovis","Creat","Dagaric","Dagobert","Drogo","Eberulf","Ebregisel","Engilbert","Euric","Everard","Faroard","Faroin","Feremund","Feroard","Foroen","Frobert","Frotari","Frothard","Frothari","Frotlaic","Fulcari","Fulcrad","Galteri","Gararic","Garivald","Gaucelm","Gaudulf","Gaujoin","Gausbert","Gausbold","Gautmar","Gauzbert","Gedalbert","Gedalca","Genobaud","Gerbert","Gerhard","Gislari","Gislevert","Gocelm","Godalbert","Godomar","Gozhelm","Grimald","Guadulf","Gualtari","Gualter","Guillabert","Guitard","Gundobad","Gunthar","Guntram","Haldemar","Hartmut","Harduin","Hildebald","Hildebold","Hildegaud","Hildevold","Hildoin","Hucbert","Hugbert","Imnachar","Ingalbert","Ingomer","Ivo","Karloman","Lambert","Lantbert","Leudast","Lothar","Magnachar","Magneric","Mainard","Mallobaudes","Marachar","Marcomer","Marell","Martin","Maurifi","Meginhard","Merogais","Merovech","Munderic","Niebelung","Odelric","Odolric","Otbert","Otgeri","Otker","Pepin","Pharamond","Pippin","Radulf","Ragambald","Ragena","Ragenard","Raginari","Ragnachar","Ragnald","Ragno","Raimbold","Rainald","Ramnulf","Rathar","Raynold","Reginari","Ricchar","Rignomer","Roland","Robert","Rotbert","Segoin","Seguin","Sicbald","Sichar","Sicland","Sicleard","Siclevold","Sigebald","Sigebert","Sigeric","Sigismund","Sigobert","Sinop","Sunnegisil","Sunno","Tancrad","Tancred","Tassilo","Teotbert","Tetbert","Teutbald","Teutbert","Theoric","Theudebald","Theudemeres","Theuderic","Theudoald","Theutbald","Trutgaud","Vuitard","Vulfari","Vulframn","Vulvari","Waltgaud","Werinbert","Wilbert","Willichar","Wolfari","Adalhard","Adam","Ademar","Alarich","Alberich","Alois","Amadeus","Amalrich","Andreas","Anselm","Archembald","Augustin","Baldarich","Baldewin","Baldomar","Baldur","Berard","Berengar","Berthold","Christopher","Dieter","Dietmar","Dietpold","Dietrich","Dietwin","Eberhard","Eginolf","Ehrenfried","Ekkehard","Emelrich","Emich","Emmerich","Erich","Ferdinand","Filibert","Folkhard","Folkmar","Franz","Friedrich","Gautselin","Gebhard","Gerlach","Giselbert","Gottfried","Gotthard","Gottschalk","Gotzelo","Hartmann","Hardwin","Heinrich","Helferich","Heribert","Hesso","Hugo","Humbert","Hupold","Iwo","Karlmann","Kaspar","Konrad","Kuno","Landolf","Leopold","Liudolf","Liutbert","Liutbrand","Liutpold","Lutbert","Manegold","Manfred","Markward","Matthias","Meinhard","Milo","Nikolaus","Poppo","Radbot","Reinhard","Reinhold","Ruprecht","Rutger","Siegfried","Sieghard","Siegmund","Stefan","Theodorich","Thietmar","Udalrich","Ulrich","Viktor","Walram","Walther","Welf","Werner","Wido","Wigerich","Wilhelm","Wolfgang","Wolfram","Adelbrik","Aitet","Aldgisl","Audulf","Auutet","Avin","Avo","Avuko","Avutet","Bavo","Bentet","Blekulf","Blithulf","Brunhard","Bubo","Edulf","Egildeg","Eilbern","Eilherd","Eilulf","Eilward","Eldei","Elderd","Elhard","Engilbald","Enhard","Entet","Esulf","Euitet","Euuerhard","Focko","Folcbald","Folkbern","Folkward","Frethirik","Frethold","Frethuhard","Frethwi","Frithunath","Geldulf","Geltet","Gerbald","Gerbrand","Gerbruht","Gerdeg","Gerulf","Gerwar","Gosse","Habo","Haring","Hathuward","Hebetet","Helibad","Hessel","Hobern","Hoitet","Juw","Liaftet","Liudbad","Liudbald","Liudgod","Liudulf","Liudward","Liuppo","Lubbiko","Meginbraht","Meginulf","Meintet","Menbold","Menfrid","Menger","Menhard","Menhold","Meniko","Mentet","Menward","Merulf","Miginward","Notheri","Occo","Osnath","Popetet","Raeddeg","Rauantet","Redbad","Reginhard","Reinier","Renhard","Renward","Riklef","Rikwi","Rodbern","Saco","Salaco","Sibod","Sibraht","Sidei","Sikke","Silef","Siward","Siwi","Sjoerd","Sytse","Taco","Tadaco","Tado","Thancward","Thankbern","Thiadbold","Thiadbrund","Thiaddi","Thiaderd","Thiadulf","Thiadward","Thiadwi","Thiedold","Thonkrik","Wambald","Wening","Wentet","Wibad","Wibraht","Wibrund","Wiftet","Wigbald","Wigerd","Wihard","Wilco","Wiltet","Wulfnoth","Ygo","Adriaen","Alwin","Ambroos","Antoon","Balderik","Barend","Barnaerd","Bartolomeus","Boudewijn","Claes","Claeuwaert","Daevit","Damaes","Diederick","Dirk","Douwe","Eduard","Egmund","Emmo","Engelbrecht","Filips","Floris","Folbert","Frans","Gerard","Gerolt","Gerrit","Gijsbrecht","Godfried","Godschalk","Gozewijn","Guij","Gwijde","Hendrik","Herman","Hubert","Ijsbrand","Ijsbrecht","Jacco","Jan","Karel","Koenraad","Kristof","Lodewijk","Ludewijn","Luthard","Maertijn","Marquart","Niclaes","Olivier","Otwin","Onno","Pieter","Reinaerd","Reinoud","Reginar","Robrecht","Rodulf","Roelof","Sebastiaen","Sicco","Steven","Steyn","Theodolf","Waelram","Walter","Wicher","Willem","Wolfard","Aldrich","Hilmar","Sigbold","Siegward","Ulfert","Kalle","Espen","Hagen","Ejnar","Gunther","Jannold","Bertel","Wiedekind","Egon","Casimir","Hilderich","Wendel","Hasso","Wilreich","Torhelm","Fritz","Mattis","Birk","Adler","Elmer","Jost","Tostig","Kunold","Donbert","Erwin","Caspar","Edmund","Kunibert","Meinolf","Oskar","Giselherr","Reimar","Wernhard","Vander","Wigald","Willibald","Bjarne","Ruthard","Alrik","Hartbert","Asgeir","Horik","Hanke","Guido","Till","Geralt","Thorben","Gisbert","Wigmar","Guntbert","Eckbert","Roger","Ralf","Bernfried","Leonhard","Helmer","Falk","Diethelm","Alvar","Eberecht","Hildebert","Theudobald","Havard","Kori","Randolf","Rollo","Ingmar","Asbjorn","Steinar","Reynhart","Carsten","Eugen","Anton","Torvald","Leberecht","Ottmar","Balon","Eberold","Bertwin","Oswald","Rabe","Reimund","Wolf","Grimwald","Hallstein","Helfrich","Haribert","Tobjoern","Erland","Horst","Thorismund","Torleif","Erhard","Sorrel","Alfred","Rupert","Heimrad","Sigmar","Friso","Landrich","Lienhard","Sigmund","Reinhardt","Kurt","Bodo","Volmar","Liebwin","Eike","Malte","Raban","Rumold","Witold","Volker","Volkhart","Bertolf","Ortwin","Adelmar","Gernot","Adelbert","Reiner","Burkhard","Winrich","Wilderich","Wilfried","Raimund","Thilmann","Norman","Ludger","Markolf","Hadebrand","Roderick","Rambert","Stanley","Ybel","Clarence","Aloysius","Cosmo","Percy","Sholto","Sidney","Benezer","Absolon","Jonas","Victor","Redway","Noel","Hant","Fremin","Obert","Fray","Burnel","Grifon","Marcel","Orrick","Rodolph","Ulger","Engelard","Freskin","Dolfin","Renost","Cyon","Cicero","Leofric","Leofwin","Leofwine","Osgar","Kenward","Ulric","Harold","Dunstan","Adestan","Thirkell","Pattrik","Larkin","Felix","Donnet","Donatus","Cornelius","Benedict","Bennet","Benedick","George","Denys","Alexander","Gawain","Conan","Nicolas","Isac","Barnabas","Warner","Rowley","Randall","Rand","Maynard","Louve","Ives","Ilbert","Galien","Frank","Degore","Bardol","Arnott","Aldous","Gilbert","Nicholas","Abbo","Adaloald","Agilulf","Ahthari","Aimeric","Alboin","Arbogast","Berin","Bovo","Cleph","Faroald","Garibald","Gisulf","Gumpert","Hilderic","Imbert","Lando","Kyr","Odoin","Pandulf","Taino","Ricimer","Romuald","Vulmar","Waco","Waimar","Abbán","Abner","Abél","Accolon","Achiuir","Áengus","Aethon","Allan","Arthfael","Bedwyr","Beli","Bodfan","Bran","Caradog","Cawne","Dauid","Drust","Gareth","Ranald","Pabo","Sadwr","Urbgen","Uther","Adrien","Aimery","Alain","Aldebert","Alphonse","Amaury","Ancel","Angelbert","Antoine","Archambaud","Arnaud","Arnault","Arnoul","Aubry","Aymar","Baudouin","Bohemond","Boson","Bouchard","Centule","Charles","Clotaire","Ebbon","Enguerrand","Eudes","Eustache","Evrard","Foulques","Gargamel","Gaucher","Gaucelin","Gauthier","Geoffroy","Gelduin","Gilles","Godefroy","Guichard","Guiges","Guilhem","Guillaume","Guy","Hamelin","Henri","Herbert","Hugues","Jacques","Jaspert","Jean","Josselin","Jourdain","Julien","Lothaire","Louis","Loup","Mathieu","Maurice","Ogier","Onfroy","Orson","Othon","Payen","Philippe","Pierre","Raimbaut","Raoul","Raymond","Raynaud","Renaud","Richard","Robin","Rorgon","Rorgues","Roubaud","Savary","Sigismond","Thibault","Thierry","Valeran","Yves","Abelard","Adelard","Alfons","Anfroi","Anquetil","Armand","Arnald","Asclettin","Aubrey","Baldwin","Bertran","Beuves","Blayve","Botolf","Clemence","Errand","Faramond","Ferant","Filbert","Fulk","Fraunk","Frery","Gaillard","Gaufrid","Gerald","Geraud","Gervas","Giffard","Godfrey","Goubert","Guntard","Haimo","Henry","Hugh","Humphrey","Ildebrando","Jordan","Joscelin","Lancelin","Mauger","Nigel","Orderic","Osbern","Osmond","Oswulf","Oswyn","Radolf","Ranulf","Rayner","Rolland","Roscelin","Sayer","Serlo","Serril","Sewal","Silvester","Stefen","Torf","Turold","Turquetil","Turstin","Tybalt","William","Wymund","Acfred","Alberic","Albert","Alias","Amalric","Amaneus","Ancelmes","Archambaut","Arnaut","Artau","Aton","Aymeric","Aznar","Barral","Beneset","Bermond","Bernat","Bernat-Aton","Bernat-Ezi","Blasi","Borel","Carles","Centolh","Dat","Dodon","Doumenge","Duran","Ebles","Enric","Ermengau","Ferrand","Folquet","Frederi","Garcia","Gaston","Gautier","Girard","Girvais","Godafres","Gui","Guigues","Guiraud","Guitart","Jacme","Jaufret","Joan","Jorge","Julian","Leon","Loui","Lop","Matfre","Matias","Miquel","Nicholaus","Odon","Otton","Peranudet","Pol","Pons","Raimond","Rainaut","Rainer","Raolf","Ricard","Rogier","Sancho","Savarics","Tibaud","Toumas","Ubald","Ubert","Uc","Ugues",];
 
-if (!("Strings" in gt.Const))
-{
-	gt.Const.Strings <- {};
-}
+::Const.Strings.CharacterNamesFemale = ["Agnethe","Anna","Asta","Benedikte","Birgitta","Bodil","Cecilie","Christina","Dagmar","Dorothea","Elisabeth","Ellinor","Emilie","Erika","Ester","Estrid","Frederikke","Freja","Grethe","Gudrun","Gunhild","Gyda","Helena","Ida","Ingeborg","Ingegerd","Ingrid","Johanne","Jutta","Karin","Karoline","Katarina","Katrine","Kirsten","Klara","Lise","Luitgard","Lykke","Magdalene","Maren","Margrethe","Maria","Martha","Ragnfrid","Ragnhild","Rikissa","Runa","Sanna","Signe","Sigrid","Silje","Sofie","Svanhild","Thyra","Tora","Thordis","Astrid","Brigida","Cecilia","Eldrid","Gjertrud","Gudrid","Gunnhild","Gyrid","Haldora","Homlaug","Ingjerd","Jorunn","Kristina","Margrete","Ragna","Rannveig","Sunniva","Thora","Thorborg","Aleta","Alfhild","Alfridh","Beata","Bothild","Edla","Elin","Elisabet","Gyla","Gurli","Gytha","Hafrid","Holmfrid","Iliana","Inga","Ingfrid","Linda","Maer","Malmfrid","Margareta","Maerta","Saga","Sara","Sofia","Ulvhilde","Ylva","Alfhildr","Asa","Aslaug","Bothildr","Freyja","Grima","Gunnhildr","Halla","Kraka","Sif","Skuld","Svanhildr","Ulfhildr","Vigdis","Yrsa","Addila","Adelheid","Alof","Agnes","Athela","Beatrix","Bertha","Bertrada","Bia","Bisina","Bithild","Diedke","Eilika","Enda","Frederuna","Geilana","Gerberga","Gertrud","Gisela","Glismod","Hadwig","Hasala","Heilwig","Helene","Hildegard","Hrothwina","Imma","Irmgard","Irminburg","Katharina","Kunigunde","Margarete","Mathilde","Mechthild","Oda","Othelindis","Radegund","Reginlint","Richardis","Rodelinda","Sophia","Suanhilde","Theodrada","Thiedburga","Wienke","Wiltrud","Wulfhild","Adalgardis","Adallinda","Adaltrude","Adaluildis","Adelaidis","Airsenda","Albofleda","Albrada","Alda","Aldegonde","Aliberta","Alitrudis","Ansegudis","Ansegundis","Anstrude","Arsindis","Audofleda","Audovera","Austreberta","Austrechild","Balthild","Begga","Beretrude","Bernegildis","Bertenildis","Berthefled","Berthefried","Berthegund","Berthildis","Bertilla","Bladovildis","Brunhild","Burgundofara","Celsa","Celsovildis","Cesaria","Chlodosind","Chlothsinda","Clotild","Creada","Dagena","Eldesendis","Ermengardis","Ermengildis","Ermensindis","Eustadiola","Faileuba","Faregildis","Fastrada","Framberta","Fredegunde","Frolaica","Frotberga","Frotlildis","Frotlina","Galswinth","Gaudildis","Gautlindis","Genovefa","Gersvinda","Gertrude","Glodesind","Goiswinth","Gotberga","Gundrada","Halderudis","Harildis","Hildegarde","Hildegardis","Hildesendis","Hiltrude","Illegardis","Ingitrude","Ingohildis","Ingunde","Itta","Landina","Lanthechilde","Lantsida","Leubast","Leubovera","Leutberga","Leutgardis","Liutgarde","Madelgarde","Magnatrude","Marcatrude","Marcovefa","Martinga","Monegund","Morberga","Rictrude","Rigunth","Rosamund","Rothaide","Rotrude","Ruothilde","Rusticula","Sadalberga","Siclehildis","Sigalsis","Theodelinda","Theoderada","Ultrogotha","Vuldretrada","Waltrude","Adela","Adelinde","Agathe","Alberade","Amalberga","Amalie","Barbara","Benedicta","Berchte","Berta","Binhilde","Brunhilde","Christine","Cothilda","Emma","Engeltraud","Ermengard","Eufemia","Frida","Friedrica","Gerhild","Gunhilda","Hedwig","Heike","Heilwiva","Helga","Hemma","Henrike","Hildeburg","Ilsa","Ingeltrude","Irmele","Irmeltrud","Isentrude","Karlotte","Klementia","Konstanze","Kriemhild","Osterhild","Richara","Richenza","Richwara","Romilda","Serhilda","Sybille","Trude","Ulrike","Ursula","Ute","Walpurga","Wilhelmina","Winfrida","Wulfhilde","Aleberna","Alena","Aleydis","Alretieren","Amalburga","Amelgeir","Atghardis","Aue","Auesoete","Badeloghen","Baua","Bet","Breghlent","Brundonis","Dieuwke","Douwen","Eingeliadis","Elke","Emgelberna","Erkenradis","Ermegardis","Esa","Femke","Fenna","Folqui","Gerburgis","Ghela","Ghodelde","Hadewigis","Hersewindis","Hodine","Imsoete","Inka","Itsburgis","Jeltsje","Lenildis","Liedelde","Liudburgis","Lutghardis","Lys","Maike","Mareike","Mette","Minke","Nienke","Rengnalda","Volcwiif","Wendelmodis","Wiebke","Wobbe","Yda","Ymmekine","Ada","Aechte","Agaete","Aleid","Alijse","Aliken","Annelies","Badeloge","Bava","Beatrijs","Blanca","Blanceflore","Cecily","Cille","Clara","Clementia","Ellijnore","Ermingarde","Fenne","Filippa","Gheertrude","Gerda","Godila","Haduwijn","Herlinda","Hilligonda","Ide","Imagina","Irene","Isabelle","Iudith","Jacoba","Jaccobijn","Jasminne","Johanna","Jolanda","Juliana","Jutte","Kathrijne","Katrien","Liedwin","Lisebet","Machtelt","Odelt","Olinde","Onna","Pieternelle","Reynilde","Sanne","Sigerda","Sophie","Swanhildis","Thetburga","Waltrud","Wila","Wendelmoet","Wenna","Willemine","Yonefij","Yvonne","Zoete","Irma","Birgit","Blanche","Borghild","Hilda","Judith","Sibyle","Joanna","Mathilda","Agnise","Clare","Ursular","Vronika","Magrit","Eneyde","Elsa","Birgitte","Gissela","Lena","Agness","Athelyna","Alyna","Milisant","Ade","Evett","Hawyse","Emilina","Elia","Auberee","Jenna","Adriana","Mara","Trina","Amy","Amelia","Adelaide","Millicent","Hermesent","Griselda","Giselle","Emmeline","Clarimonde","Alyson","Ricolda","Orielle","Yennefer","Magdalen","Sapphira","Susannah","Masota","Tamasin","Sulley","Mollie","Jaclyn","Esobel","Ysabelon","Osane","Tibota","Elizabeth","Bess","Bershaba","Ismay","Maerwynn","Genevieve","Brangwyne","Agas","Eulalia","Katerin","Margot","Coleta","Filota","Siscella","Clariandra","Cussata","Emily","Francesse","Hilaria","Honora","Juliane","Laura","Monday","Sabyn","Hursell","Viola","Viviana","Adalsinda","Affra","Aleseta","Brida","Elsebeth","Ermengontia","Genefe","Genofeva","Kaetherlen","Adalmode","Alice","Alix","Almodis","Amelie","Anne","Antoinette","Arsinde","Aude","Aurengarde","Belleassez","Berthe","Bonne","Bourgogne","Bourguigne","Charlotte","Constance","Denise","Douce","Echive","Eglantine","Ermengarde","Ermessinde","Esclarmonde","Euphrosine","Eustachie","Eve","Gerberge","Guillaumette","Helvis","Hodierne","Isabeau","Jeanne","Julienne","Mafalda","Mahaut","Marguerite","Marie","Marthe","Mascarose","Pernelle","Perinne","Pernette","Plaisance","Raymonde","Sarrazine","Tiburge","Valence","Yolande","Adeltrudis","Agata","Ana","Arsenda","Assalhida","Ava","Azelma","Beatritz","Berenguela","Brandimena","Bregida","Brunissenda","Camila","Caterina","Clarmonda","Cloutilda","Elena","Elisa","Ermengarda","Ermessentz","Esclarmonda","Estefania","Eufrosina","Faidida","Filipa","Filomena","Francesa","Garcenda","Geneviva","Gersenda","Gisla","Guigone","Guilheumina","Heloise","Ioulanda","Joana","Mabila","Madalena","Margarida","Marquisa","Marta","Matilda","Navar","Patricia","Petronilha","Puelle","Raisenda","Raimonda","Rosa","Sibilla","Tiborg","Verounica","Violent","Adele","Adelin","Adelise","Alberada","Alienora","Aline","Alisce","Alison","Amburga","Aubrey","Aveis","Avelina","Berengaria","Busilla","Clarimond","Clemenza","Cundo","Egelina","Eleanor","Elise","Elysande","Emelenine","Emonie","Eremberga","Ermyntrude","Felicia","Flandina","Fredesende","Fressenda","Fressende","Geva","Gohilde","Gundred","Hadwis","Helewisa","Heria","Herleve","Hermessent","Hermine","Hugolina","Judit","Lesceline","Mabel","Matheode","Maud","Mautild","Maysant","Muriella","Oriel","Richenda","Rosalind","Selova","Stephanie","Sibyl","Sibylla","Umfreda","Valdrade","Wilmot","Yolanda","Yvon",];
 
-
-gt.Const.Strings.CharacterNames <- ["Abel","Anders","Anund","Asger","Balder","Benedikt","Bjoern","Bo","Christian","Christoffer","Edvard","Einar","Erik","Ernst","Esben","Fredrik","Frej","Frode","Glum","Gnupa","Gorm","Gotfred","Gregers","Grim","Gunnar","Halfdan","Halvor","Hans","Harald","Helge","Hemming","Henrik","Hjalmar","Holger","Ingolf","Jakob","Jens","Joakim","Johann","Karl","Knud","Kristian","Leif","Lennart","Ludvig","Malthe","Mads","Mikkel","Mogens","Niels","Odd","Olav","Oluf","Peder","Poul","Ragnar","Ragnvald","Rolf","Rune","Severin","Sigfred","Sigtryg","Sigurd","Sivard","Steen","Svend","Thorolf","Thorvald","Torben","Torbjoern","Tord","Torfinn","Torgils","Ture","Ubbe","Uffe","Ulf","Valdemar","Valentin","Vilfred","Yngvar","Alv","Arne","Arnfinn","Arnkjell","Arnmod","Arnvid","Aslak","Audun","Eigil","Eilif","Eirik","Erlend","Erling","Eystein","Finn","Gudbrand","Gudleik","Gudmund","Gudroed","Guttorm","Haldor","Halkjell","Inge","Ivar","Jon","Kolbein","Lodin","Magnus","Ogmund","Orm","Ossor","Ottar","Paal","Skjalg","Skofte","Skule","Svein","Sverre","Tore","Torbrand","Torgeir","Torgil","Tormod","Torolf","Torstein","Trond","Tryggve","Ulv","Vigleik","Albrikt","Alf","Algot","Arnfast","Astrad","Azur","Bagge","Bengt","Bertil","Birger","Borkvard","Botulf","Brage","Bror","Brynjolf","Dag","Dan","Dyre","Egil","Emund","Eskild","Faste","Filip","Folke","Georg","Greger","Gustav","Halsten","Helgi","Holmger","Ingemar","Ingvar","Jedvard","Johan","Kettil","Kettilmund","Klas","Knut","Kol","Lars","Markus","Mats","Nils","Niklas","Olaf","Orvar","Sigtrygg","Starkad","Sten","Sune","Sven","Sverker","Thomas","Tjudmund","Toke","Tolir","Torkel","Torsten","Toste","Totil","Tyke","Adalvard","Rodulvard","Jaerpulf","Stenar","Brynolf","Ale","Alfr","Alfgeir","Anlaufr","Anundr","Arngrimr","Arni","Baldr","Barid","Bersi","Botulfr","Bragi","Egill","Einarr","Eirikr","Falki","Frirek","Freyr","Folki","Gandalfr","Geirr","Grimr","Gunnarr","Hakon","Haraldr","Haukr","Hrafn","Hrolfr","Hrane","Hysing","Ingjald","Kjartan","Oddr","Ofeig","Olafr","Ormr","Ottarr","Refr","Refil","Ragnarr","Rikulfr","Skuli","Snorri","Steinn","Sturla","Styrkar","Suni","Sveinn","Ulfr","Vagn","Abo","Adalbero","Adalbert","Adalbrand","Adaldag","Adalgar","Adalgod","Adolf","Aelle","Albrecht","Alebrand","Altfrid","Ansgar","Arnd","Arnold","Asig","Balduin","Balthasar","Banzleib","Beneke","Benno","Bernd","Bernhard","Bertold","Bertram","Boddic","Brun","Bruno","Burchard","Cissa","Claus","Cobbo","Cord","Cyprian","Dago","Dedo","Dethard","Detleff","Detmar","Diederik","Donar","Eggerd","Egilmar","Ekbert","Engelbert","Engelhard","Erp","Esiko","Everd","Ewald","Floribert","Freawine","Frederik","Gehrke","Gelder","Gero","Gerold","Gevert","Ghert","Giselher","Giselmar","Gosschalk","Goswin","Gunzelin","Harthgate","Hartwig","Heideke","Hengest","Henneke","Herberd","Hermann","Hinrik","Hoger","Hulderic","Humfried","Immed","Isidor","Jacob","Jaspar","Jochim","Juries","Kersten","Laurentz","Lembert","Leuderic","Liawizo","Liemar","Liudger","Luder","Ludolf","Ludwig","Marbold","Marquard","Mathias","Meinwerk","Merten","Michael","Norbert","Odo","Ordulf","Peter","Philipp","Radke","Reginbern","Reinbern","Reineke","Reinmar","Rudigar","Rudolf","Sigbert","Sigfrid","Sigward","Simon","Steffen","Thankmar","Theoderic","Theodoric","Theodwin","Thimo","Tobe","Tymmeke","Udu","Otto","Unwan","Viric","Volkwin","Volrad","Walbert","Waldemar","Waldered","Waltard","Warin","Warinechin","Wecta","Wenzel","Werneke","Weybrecht","Wichbert","Wichmann","Wicho","Widukind","Wigebert","Wilbrand","Willichin","Withgils","Witikind","Witta","Wlencing","Wolter","Wulff","Thurgot","Abrahil","Abram","Adalbald","Adalgari","Adalgrim","Aegidius","Ageric","Agilbert","Agiulf","Ailbert","Albric","Aldedramn","Andica","Ansovald","Arcambald","Aregisel","Arnegisel","Arnulf","Ascaric","Audovald","Austregisel","Autbert","Autgari","Autgeri","Avremar","Badegisel","Barnard","Berald","Bernard","Berneri","Bero","Berold","Berthefried","Bertlin","Bertrand","Ceslin","Chararic","Charibert","Childebert","Childeric","Chilperic","Chlodomer","Chlothar","Chramnesind","Clodio","Clodion","Clovis","Creat","Dagaric","Dagobert","Drogo","Eberulf","Ebregisel","Engilbert","Euric","Everard","Faroard","Faroin","Feremund","Feroard","Foroen","Frobert","Frotari","Frothard","Frothari","Frotlaic","Fulcari","Fulcrad","Galteri","Gararic","Garivald","Gaucelm","Gaudulf","Gaujoin","Gausbert","Gausbold","Gautmar","Gauzbert","Gedalbert","Gedalca","Genobaud","Gerbert","Gerhard","Gislari","Gislevert","Gocelm","Godalbert","Godomar","Gozhelm","Grimald","Guadulf","Gualtari","Gualter","Guillabert","Guitard","Gundobad","Gunthar","Guntram","Haldemar","Hartmut","Harduin","Hildebald","Hildebold","Hildegaud","Hildevold","Hildoin","Hucbert","Hugbert","Imnachar","Ingalbert","Ingomer","Ivo","Karloman","Lambert","Lantbert","Leudast","Lothar","Magnachar","Magneric","Mainard","Mallobaudes","Marachar","Marcomer","Marell","Martin","Maurifi","Meginhard","Merogais","Merovech","Munderic","Niebelung","Odelric","Odolric","Otbert","Otgeri","Otker","Pepin","Pharamond","Pippin","Radulf","Ragambald","Ragena","Ragenard","Raginari","Ragnachar","Ragnald","Ragno","Raimbold","Rainald","Ramnulf","Rathar","Raynold","Reginari","Ricchar","Rignomer","Roland","Robert","Rotbert","Segoin","Seguin","Sicbald","Sichar","Sicland","Sicleard","Siclevold","Sigebald","Sigebert","Sigeric","Sigismund","Sigobert","Sinop","Sunnegisil","Sunno","Tancrad","Tancred","Tassilo","Teotbert","Tetbert","Teutbald","Teutbert","Theoric","Theudebald","Theudemeres","Theuderic","Theudoald","Theutbald","Trutgaud","Vuitard","Vulfari","Vulframn","Vulvari","Waltgaud","Werinbert","Wilbert","Willichar","Wolfari","Adalhard","Adam","Ademar","Alarich","Alberich","Alois","Amadeus","Amalrich","Andreas","Anselm","Archembald","Augustin","Baldarich","Baldewin","Baldomar","Baldur","Berard","Berengar","Berthold","Christopher","Dieter","Dietmar","Dietpold","Dietrich","Dietwin","Eberhard","Eginolf","Ehrenfried","Ekkehard","Emelrich","Emich","Emmerich","Erich","Ferdinand","Filibert","Folkhard","Folkmar","Franz","Friedrich","Gautselin","Gebhard","Gerlach","Giselbert","Gottfried","Gotthard","Gottschalk","Gotzelo","Hartmann","Hardwin","Heinrich","Helferich","Heribert","Hesso","Hugo","Humbert","Hupold","Iwo","Karlmann","Kaspar","Konrad","Kuno","Landolf","Leopold","Liudolf","Liutbert","Liutbrand","Liutpold","Lutbert","Manegold","Manfred","Markward","Matthias","Meinhard","Milo","Nikolaus","Poppo","Radbot","Reinhard","Reinhold","Ruprecht","Rutger","Siegfried","Sieghard","Siegmund","Stefan","Theodorich","Thietmar","Udalrich","Ulrich","Viktor","Walram","Walther","Welf","Werner","Wido","Wigerich","Wilhelm","Wolfgang","Wolfram","Adelbrik","Aitet","Aldgisl","Audulf","Auutet","Avin","Avo","Avuko","Avutet","Bavo","Bentet","Blekulf","Blithulf","Brunhard","Bubo","Edulf","Egildeg","Eilbern","Eilherd","Eilulf","Eilward","Eldei","Elderd","Elhard","Engilbald","Enhard","Entet","Esulf","Euitet","Euuerhard","Focko","Folcbald","Folkbern","Folkward","Frethirik","Frethold","Frethuhard","Frethwi","Frithunath","Geldulf","Geltet","Gerbald","Gerbrand","Gerbruht","Gerdeg","Gerulf","Gerwar","Gosse","Habo","Haring","Hathuward","Hebetet","Helibad","Hessel","Hobern","Hoitet","Juw","Liaftet","Liudbad","Liudbald","Liudgod","Liudulf","Liudward","Liuppo","Lubbiko","Meginbraht","Meginulf","Meintet","Menbold","Menfrid","Menger","Menhard","Menhold","Meniko","Mentet","Menward","Merulf","Miginward","Notheri","Occo","Osnath","Popetet","Raeddeg","Rauantet","Redbad","Reginhard","Reinier","Renhard","Renward","Riklef","Rikwi","Rodbern","Saco","Salaco","Sibod","Sibraht","Sidei","Sikke","Silef","Siward","Siwi","Sjoerd","Sytse","Taco","Tadaco","Tado","Thancward","Thankbern","Thiadbold","Thiadbrund","Thiaddi","Thiaderd","Thiadulf","Thiadward","Thiadwi","Thiedold","Thonkrik","Wambald","Wening","Wentet","Wibad","Wibraht","Wibrund","Wiftet","Wigbald","Wigerd","Wihard","Wilco","Wiltet","Wulfnoth","Ygo","Adriaen","Alwin","Ambroos","Antoon","Balderik","Barend","Barnaerd","Bartolomeus","Boudewijn","Claes","Claeuwaert","Daevit","Damaes","Diederick","Dirk","Douwe","Eduard","Egmund","Emmo","Engelbrecht","Filips","Floris","Folbert","Frans","Gerard","Gerolt","Gerrit","Gijsbrecht","Godfried","Godschalk","Gozewijn","Guij","Gwijde","Hendrik","Herman","Hubert","Ijsbrand","Ijsbrecht","Jacco","Jan","Karel","Koenraad","Kristof","Lodewijk","Ludewijn","Luthard","Maertijn","Marquart","Niclaes","Olivier","Otwin","Onno","Pieter","Reinaerd","Reinoud","Reginar","Robrecht","Rodulf","Roelof","Sebastiaen","Sicco","Steven","Steyn","Theodolf","Waelram","Walter","Wicher","Willem","Wolfard","Aldrich","Hilmar","Sigbold","Siegward","Ulfert","Kalle","Espen","Hagen","Ejnar","Gunther","Jannold","Bertel","Wiedekind","Egon","Casimir","Hilderich","Wendel","Hasso","Wilreich","Torhelm","Fritz","Mattis","Birk","Adler","Elmer","Jost","Tostig","Kunold","Donbert","Erwin","Caspar","Edmund","Kunibert","Meinolf","Oskar","Giselherr","Reimar","Wernhard","Vander","Wigald","Willibald","Bjarne","Ruthard","Alrik","Hartbert","Asgeir","Horik","Hanke","Guido","Till","Geralt","Thorben","Gisbert","Wigmar","Guntbert","Eckbert","Roger","Ralf","Bernfried","Leonhard","Helmer","Falk","Diethelm","Alvar","Eberecht","Hildebert","Theudobald","Havard","Kori","Randolf","Rollo","Ingmar","Asbjorn","Steinar","Reynhart","Carsten","Eugen","Anton","Torvald","Leberecht","Ottmar","Balon","Eberold","Bertwin","Oswald","Rabe","Reimund","Wolf","Grimwald","Hallstein","Helfrich","Haribert","Tobjoern","Erland","Horst","Thorismund","Torleif","Erhard","Sorrel","Alfred","Rupert","Heimrad","Sigmar","Friso","Landrich","Lienhard","Sigmund","Reinhardt","Kurt","Bodo","Volmar","Liebwin","Eike","Malte","Raban","Rumold","Witold","Volker","Volkhart","Bertolf","Ortwin","Adelmar","Gernot","Adelbert","Reiner","Burkhard","Winrich","Wilderich","Wilfried","Raimund","Thilmann","Norman","Ludger","Markolf","Hadebrand","Roderick","Rambert","Stanley","Ybel","Clarence","Aloysius","Cosmo","Percy","Sholto","Sidney","Benezer","Absolon","Jonas","Victor","Redway","Noel","Hant","Fremin","Obert","Fray","Burnel","Grifon","Marcel","Orrick","Rodolph","Ulger","Engelard","Freskin","Dolfin","Renost","Cyon","Cicero","Leofric","Leofwin","Leofwine","Osgar","Kenward","Ulric","Harold","Dunstan","Adestan","Thirkell","Pattrik","Larkin","Felix","Donnet","Donatus","Cornelius","Benedict","Bennet","Benedick","George","Denys","Alexander","Gawain","Conan","Nicolas","Isac","Barnabas","Warner","Rowley","Randall","Rand","Maynard","Louve","Ives","Ilbert","Galien","Frank","Degore","Bardol","Arnott","Aldous","Gilbert","Nicholas","Abbo","Adaloald","Agilulf","Ahthari","Aimeric","Alboin","Arbogast","Berin","Bovo","Cleph","Faroald","Garibald","Gisulf","Gumpert","Hilderic","Imbert","Lando","Kyr","Odoin","Pandulf","Taino","Ricimer","Romuald","Vulmar","Waco","Waimar","Abbán","Abner","Abél","Accolon","Achiuir","Áengus","Aethon","Allan","Arthfael","Bedwyr","Beli","Bodfan","Bran","Caradog","Cawne","Dauid","Drust","Gareth","Ranald","Pabo","Sadwr","Urbgen","Uther","Adrien","Aimery","Alain","Aldebert","Alphonse","Amaury","Ancel","Angelbert","Antoine","Archambaud","Arnaud","Arnault","Arnoul","Aubry","Aymar","Baudouin","Bohemond","Boson","Bouchard","Centule","Charles","Clotaire","Ebbon","Enguerrand","Eudes","Eustache","Evrard","Foulques","Gargamel","Gaucher","Gaucelin","Gauthier","Geoffroy","Gelduin","Gilles","Godefroy","Guichard","Guiges","Guilhem","Guillaume","Guy","Hamelin","Henri","Herbert","Hugues","Jacques","Jaspert","Jean","Josselin","Jourdain","Julien","Lothaire","Louis","Loup","Mathieu","Maurice","Ogier","Onfroy","Orson","Othon","Payen","Philippe","Pierre","Raimbaut","Raoul","Raymond","Raynaud","Renaud","Richard","Robin","Rorgon","Rorgues","Roubaud","Savary","Sigismond","Thibault","Thierry","Valeran","Yves","Abelard","Adelard","Alfons","Anfroi","Anquetil","Armand","Arnald","Asclettin","Aubrey","Baldwin","Bertran","Beuves","Blayve","Botolf","Clemence","Errand","Faramond","Ferant","Filbert","Fulk","Fraunk","Frery","Gaillard","Gaufrid","Gerald","Geraud","Gervas","Giffard","Godfrey","Goubert","Guntard","Haimo","Henry","Hugh","Humphrey","Ildebrando","Jordan","Joscelin","Lancelin","Mauger","Nigel","Orderic","Osbern","Osmond","Oswulf","Oswyn","Radolf","Ranulf","Rayner","Rolland","Roscelin","Sayer","Serlo","Serril","Sewal","Silvester","Stefen","Torf","Turold","Turquetil","Turstin","Tybalt","William","Wymund","Acfred","Alberic","Albert","Alias","Amalric","Amaneus","Ancelmes","Archambaut","Arnaut","Artau","Aton","Aymeric","Aznar","Barral","Beneset","Bermond","Bernat","Bernat-Aton","Bernat-Ezi","Blasi","Borel","Carles","Centolh","Dat","Dodon","Doumenge","Duran","Ebles","Enric","Ermengau","Ferrand","Folquet","Frederi","Garcia","Gaston","Gautier","Girard","Girvais","Godafres","Gui","Guigues","Guiraud","Guitart","Jacme","Jaufret","Joan","Jorge","Julian","Leon","Loui","Lop","Matfre","Matias","Miquel","Nicholaus","Odon","Otton","Peranudet","Pol","Pons","Raimond","Rainaut","Rainer","Raolf","Ricard","Rogier","Sancho","Savarics","Tibaud","Toumas","Ubald","Ubert","Uc","Ugues",];
-
-gt.Const.Strings.CharacterNamesFemale <- ["Agnethe","Anna","Asta","Benedikte","Birgitta","Bodil","Cecilie","Christina","Dagmar","Dorothea","Elisabeth","Ellinor","Emilie","Erika","Ester","Estrid","Frederikke","Freja","Grethe","Gudrun","Gunhild","Gyda","Helena","Ida","Ingeborg","Ingegerd","Ingrid","Johanne","Jutta","Karin","Karoline","Katarina","Katrine","Kirsten","Klara","Lise","Luitgard","Lykke","Magdalene","Maren","Margrethe","Maria","Martha","Ragnfrid","Ragnhild","Rikissa","Runa","Sanna","Signe","Sigrid","Silje","Sofie","Svanhild","Thyra","Tora","Thordis","Astrid","Brigida","Cecilia","Eldrid","Gjertrud","Gudrid","Gunnhild","Gyrid","Haldora","Homlaug","Ingjerd","Jorunn","Kristina","Margrete","Ragna","Rannveig","Sunniva","Thora","Thorborg","Aleta","Alfhild","Alfridh","Beata","Bothild","Edla","Elin","Elisabet","Gyla","Gurli","Gytha","Hafrid","Holmfrid","Iliana","Inga","Ingfrid","Linda","Maer","Malmfrid","Margareta","Maerta","Saga","Sara","Sofia","Ulvhilde","Ylva","Alfhildr","Asa","Aslaug","Bothildr","Freyja","Grima","Gunnhildr","Halla","Kraka","Sif","Skuld","Svanhildr","Ulfhildr","Vigdis","Yrsa","Addila","Adelheid","Alof","Agnes","Athela","Beatrix","Bertha","Bertrada","Bia","Bisina","Bithild","Diedke","Eilika","Enda","Frederuna","Geilana","Gerberga","Gertrud","Gisela","Glismod","Hadwig","Hasala","Heilwig","Helene","Hildegard","Hrothwina","Imma","Irmgard","Irminburg","Katharina","Kunigunde","Margarete","Mathilde","Mechthild","Oda","Othelindis","Radegund","Reginlint","Richardis","Rodelinda","Sophia","Suanhilde","Theodrada","Thiedburga","Wienke","Wiltrud","Wulfhild","Adalgardis","Adallinda","Adaltrude","Adaluildis","Adelaidis","Airsenda","Albofleda","Albrada","Alda","Aldegonde","Aliberta","Alitrudis","Ansegudis","Ansegundis","Anstrude","Arsindis","Audofleda","Audovera","Austreberta","Austrechild","Balthild","Begga","Beretrude","Bernegildis","Bertenildis","Berthefled","Berthefried","Berthegund","Berthildis","Bertilla","Bladovildis","Brunhild","Burgundofara","Celsa","Celsovildis","Cesaria","Chlodosind","Chlothsinda","Clotild","Creada","Dagena","Eldesendis","Ermengardis","Ermengildis","Ermensindis","Eustadiola","Faileuba","Faregildis","Fastrada","Framberta","Fredegunde","Frolaica","Frotberga","Frotlildis","Frotlina","Galswinth","Gaudildis","Gautlindis","Genovefa","Gersvinda","Gertrude","Glodesind","Goiswinth","Gotberga","Gundrada","Halderudis","Harildis","Hildegarde","Hildegardis","Hildesendis","Hiltrude","Illegardis","Ingitrude","Ingohildis","Ingunde","Itta","Landina","Lanthechilde","Lantsida","Leubast","Leubovera","Leutberga","Leutgardis","Liutgarde","Madelgarde","Magnatrude","Marcatrude","Marcovefa","Martinga","Monegund","Morberga","Rictrude","Rigunth","Rosamund","Rothaide","Rotrude","Ruothilde","Rusticula","Sadalberga","Siclehildis","Sigalsis","Theodelinda","Theoderada","Ultrogotha","Vuldretrada","Waltrude","Adela","Adelinde","Agathe","Alberade","Amalberga","Amalie","Barbara","Benedicta","Berchte","Berta","Binhilde","Brunhilde","Christine","Cothilda","Emma","Engeltraud","Ermengard","Eufemia","Frida","Friedrica","Gerhild","Gunhilda","Hedwig","Heike","Heilwiva","Helga","Hemma","Henrike","Hildeburg","Ilsa","Ingeltrude","Irmele","Irmeltrud","Isentrude","Karlotte","Klementia","Konstanze","Kriemhild","Osterhild","Richara","Richenza","Richwara","Romilda","Serhilda","Sybille","Trude","Ulrike","Ursula","Ute","Walpurga","Wilhelmina","Winfrida","Wulfhilde","Aleberna","Alena","Aleydis","Alretieren","Amalburga","Amelgeir","Atghardis","Aue","Auesoete","Badeloghen","Baua","Bet","Breghlent","Brundonis","Dieuwke","Douwen","Eingeliadis","Elke","Emgelberna","Erkenradis","Ermegardis","Esa","Femke","Fenna","Folqui","Gerburgis","Ghela","Ghodelde","Hadewigis","Hersewindis","Hodine","Imsoete","Inka","Itsburgis","Jeltsje","Lenildis","Liedelde","Liudburgis","Lutghardis","Lys","Maike","Mareike","Mette","Minke","Nienke","Rengnalda","Volcwiif","Wendelmodis","Wiebke","Wobbe","Yda","Ymmekine","Ada","Aechte","Agaete","Aleid","Alijse","Aliken","Annelies","Badeloge","Bava","Beatrijs","Blanca","Blanceflore","Cecily","Cille","Clara","Clementia","Ellijnore","Ermingarde","Fenne","Filippa","Gheertrude","Gerda","Godila","Haduwijn","Herlinda","Hilligonda","Ide","Imagina","Irene","Isabelle","Iudith","Jacoba","Jaccobijn","Jasminne","Johanna","Jolanda","Juliana","Jutte","Kathrijne","Katrien","Liedwin","Lisebet","Machtelt","Odelt","Olinde","Onna","Pieternelle","Reynilde","Sanne","Sigerda","Sophie","Swanhildis","Thetburga","Waltrud","Wila","Wendelmoet","Wenna","Willemine","Yonefij","Yvonne","Zoete","Irma","Birgit","Blanche","Borghild","Hilda","Judith","Sibyle","Joanna","Mathilda","Agnise","Clare","Ursular","Vronika","Magrit","Eneyde","Elsa","Birgitte","Gissela","Lena","Agness","Athelyna","Alyna","Milisant","Ade","Evett","Hawyse","Emilina","Elia","Auberee","Jenna","Adriana","Mara","Trina","Amy","Amelia","Adelaide","Millicent","Hermesent","Griselda","Giselle","Emmeline","Clarimonde","Alyson","Ricolda","Orielle","Yennefer","Magdalen","Sapphira","Susannah","Masota","Tamasin","Sulley","Mollie","Jaclyn","Esobel","Ysabelon","Osane","Tibota","Elizabeth","Bess","Bershaba","Ismay","Maerwynn","Genevieve","Brangwyne","Agas","Eulalia","Katerin","Margot","Coleta","Filota","Siscella","Clariandra","Cussata","Emily","Francesse","Hilaria","Honora","Juliane","Laura","Monday","Sabyn","Hursell","Viola","Viviana","Adalsinda","Affra","Aleseta","Brida","Elsebeth","Ermengontia","Genefe","Genofeva","Kaetherlen","Adalmode","Alice","Alix","Almodis","Amelie","Anne","Antoinette","Arsinde","Aude","Aurengarde","Belleassez","Berthe","Bonne","Bourgogne","Bourguigne","Charlotte","Constance","Denise","Douce","Echive","Eglantine","Ermengarde","Ermessinde","Esclarmonde","Euphrosine","Eustachie","Eve","Gerberge","Guillaumette","Helvis","Hodierne","Isabeau","Jeanne","Julienne","Mafalda","Mahaut","Marguerite","Marie","Marthe","Mascarose","Pernelle","Perinne","Pernette","Plaisance","Raymonde","Sarrazine","Tiburge","Valence","Yolande","Adeltrudis","Agata","Ana","Arsenda","Assalhida","Ava","Azelma","Beatritz","Berenguela","Brandimena","Bregida","Brunissenda","Camila","Caterina","Clarmonda","Cloutilda","Elena","Elisa","Ermengarda","Ermessentz","Esclarmonda","Estefania","Eufrosina","Faidida","Filipa","Filomena","Francesa","Garcenda","Geneviva","Gersenda","Gisla","Guigone","Guilheumina","Heloise","Ioulanda","Joana","Mabila","Madalena","Margarida","Marquisa","Marta","Matilda","Navar","Patricia","Petronilha","Puelle","Raisenda","Raimonda","Rosa","Sibilla","Tiborg","Verounica","Violent","Adele","Adelin","Adelise","Alberada","Alienora","Aline","Alisce","Alison","Amburga","Aubrey","Aveis","Avelina","Berengaria","Busilla","Clarimond","Clemenza","Cundo","Egelina","Eleanor","Elise","Elysande","Emelenine","Emonie","Eremberga","Ermyntrude","Felicia","Flandina","Fredesende","Fressenda","Fressende","Geva","Gohilde","Gundred","Hadwis","Helewisa","Heria","Herleve","Hermessent","Hermine","Hugolina","Judit","Lesceline","Mabel","Matheode","Maud","Mautild","Maysant","Muriella","Oriel","Richenda","Rosalind","Selova","Stephanie","Sibyl","Sibylla","Umfreda","Valdrade","Wilmot","Yolanda","Yvon",];
-
-gt.Const.Strings.BarbarianNames <- [
-	"Smud",
-	"Hirguld",
-	"Braum",
-	"Grimner",
-	"Harif",
-	"Skallag",
-	"Hylle",
-	"Guder",
-	"Asberk",
-	"Iyrd",
-	"Brand",
-	"Obrun",
-	"Jormal",
-	"Joltul",
-	"Jotnar",
-	"Huggur",
-	"Eirik",
-	"Hafgufa",
-	"Vaettir",
-	"Frugar",
-	"Lorki",
-	"Rangvald",
-	"Helheimer",
-	"Brokkr",
-	"Rork",
-	"Hurik",
-	"Skarbrand",
+::Const.Strings.BarbarianNames.extend([
 	"Alfrothul",
 	"Ander",
 	"Arild",
@@ -123,262 +89,43 @@ gt.Const.Strings.BarbarianNames <- [
 	"Engra",
 	"Yrar",
 	"Grenik",
-	"Sigbaal"
-];
-gt.Const.Strings.BarbarianTitles <- [
-	"the Slayer",
-	"the Destroyer",
-	"the Ravager",
-	"the Pillager",
-	"the Conquerer",
-	"the Slayer",
-	"the Defiler",
-	"the Despoiler",
-	"the Menace",
-	"the Headhunter",
-	"the Ravager",
-	"Skullcrusher",
-	"Bonebreaker",
+	"Logen"
+]);
+::Const.Strings.BarbarianTitles.extend([
 	"Deathsword",
-	"Slaughterborne",
-	"the Chosen",
-	"Battleborn",
 	"Steelfist",
 	"Daemonkin",
 	"The Bloody",
 	"Bloodaxe",
-	"Ironside",
-	"the Bloodied",
-	"the Beast",
-	"Beastblood",
 	"Rawmeat",
 	"Hairy Breeches",
 	"Snake in the Eye",
 	"the Mandible",
 	"Winterhorn",
-	"the Wolfclaw",
-	"the Savage",
-	"the Bloodletter",
-	"the Crusher",
-	"the Everlasting"
-];
+	"the Bloody Nine",
+	"Dogman",
+	"Shivers"
+]);
 
-gt.Const.Strings.SouthernNames <- ["Jamil","Uthman","Sayid","Radwan","Thepla","Yazid","Sahir","Wahib","Amira","Aslam","Atiq","Sadan","Ayman","Hakan","Hafas","Sawar","Shuyab","Husan","Hamdun","Ayshun","Jabir","Zuhri","Jifri","Galib","Tamim","Jaquba","Zawahir","Shurayd","Walid","Musa","Ubaid","Harad","Tariq","Wasi","Fariss","Abani","Mutar","Tawid","Zahiri","Milad","Nuh","Abdari","Junaid","Malik","Naser","Jahaf","Yazir","Talha","Sabti","Harun","Firi","Rashid","Hamdin","Rasil","Hayan","Askari","Barkud","Husni","Omar","Aarôn","Abdul-Hazeem","Anisse","Mufawwiz","Ugwistan","Zaia","Relip","Wilen","Abarran","Zorion","Abu-Bakr","Aarif","Abdul-Gafur","Abdul-Jaleel","Abdul-Qadir","Abdul-Wahab","Abdul","Abdullah","Aghlab","Akin","Ali","Alim","Aram","Azam","Bahir","Burhanaddin","Fadil","Fadl","Faruk","Ghalib","Hafiz","Halil","Hasan","Husam","Hussayn","Ibrahim","Idris","Isa","Jalil","Jibril","Khaireddin","Khalil","Mahdi","Mahmud","Mansur","Mirza","Mubarak","Muhammad","Mukhtar","Murad","Muslihiddin","Muzaffaraddin","Najib","Nasr","Nizam","Qawurd","Ramadan","Sadiq","Sami","Samir","Shaiban","Shamir","Shujah","Sulayman","Talib","Ubayd","Uways","Yahya","Youkhanna","Yusuf","Zeyd","Abdul-Azeem","Abdul-Hamid","Abdul-Lateef","Abdul-Razzaq","Abdul-Wahad","Adhid","Adil","Akab","Amir","Ashraf","Aziz","Bashar","Boutros","Faisal","Fayiz","Ghazi","Hakam","Hamdan","Hashmaddin","Imamaddin","Ismat","Jahan","Kamran","Khalid","Khudayar","Majid","Muaddam","Muhsin","Muzaffar","Nasraddin","Nuraddin","Nuri","Radhi","Rasul","Salahaddin","Seyfullah","Sharaf","Sirhan","Taimur","Tawfiq","Umaya","Wahid","Yasar","Zahir","Aaron","Abanoub","Abderahman","Abdul-Aziz","Abdul-Haq","Abdul-Madjid","Abdul-Salaam","Abianos","Abisalom","Ablarion","Abraam","Adnan","Agathon","Agathonikos","Agathos","Ahmad","Akbar","Alam","Amr","Androus","Anthinos","Arsenios","Asim","Athanasios","Badr","Bashir","Biktor","Binyamin","Bishoi","Danyal","Dawlat","Ezra","Farhan","Firuz","Georgios","Ghiyasaddin","Habil","Hammud","Hanri","Haroun","Hisham","Ilyas","Izzaddin","Jalaaladdin","Jawdat","Jerjer","Kemaladdin","Krystafer","Latif","Lot","Matta","Mehtar","Mikail","Mikhael","Mina","Muammar","Murshid","Nabil","Nasir","Nassib","Pamin","Qadir","Rafiq","Ridwan","Sabah","Salim","Sharif","Suhail","Tadros","Tajaddin","Tayyib","Touma","Usama","Yared","Yassir","Youssef","Zakariyah","Abbad","Abbas","Abdallah","Abdul-Hakam","Abdul-Hasan","Abdul-Hazm","Abdul-Rahman","Abu","Adfuns","Ayyub","Balashk","Bilal","Fath","Galind","Garsiya","Hilal","Jyad","Lubb","Mubashir","Mundir","Muyahid","Raf","Rasiq","Sanyo","Siddray","Suleyman","Tifilwit","Umar","Utman","Wannaqo","Yahaff","Aden","Zainuddin","Zulfiqar",];
+::Const.Strings.SouthernNames = ["Jamil","Uthman","Sayid","Radwan","Thepla","Yazid","Sahir","Wahib","Amira","Aslam","Atiq","Sadan","Ayman","Hakan","Hafas","Sawar","Shuyab","Husan","Hamdun","Ayshun","Jabir","Zuhri","Jifri","Galib","Tamim","Jaquba","Zawahir","Shurayd","Walid","Musa","Ubaid","Harad","Tariq","Wasi","Fariss","Abani","Mutar","Tawid","Zahiri","Milad","Nuh","Abdari","Junaid","Malik","Naser","Jahaf","Yazir","Talha","Sabti","Harun","Firi","Rashid","Hamdin","Rasil","Hayan","Askari","Barkud","Husni","Omar","Aarôn","Abdul-Hazeem","Anisse","Mufawwiz","Ugwistan","Zaia","Relip","Wilen","Abarran","Zorion","Abu-Bakr","Aarif","Abdul-Gafur","Abdul-Jaleel","Abdul-Qadir","Abdul-Wahab","Abdul","Abdullah","Aghlab","Akin","Ali","Alim","Aram","Azam","Bahir","Burhanaddin","Fadil","Fadl","Faruk","Ghalib","Hafiz","Halil","Hasan","Husam","Hussayn","Ibrahim","Idris","Isa","Jalil","Jibril","Khaireddin","Khalil","Mahdi","Mahmud","Mansur","Mirza","Mubarak","Muhammad","Mukhtar","Murad","Muslihiddin","Muzaffaraddin","Najib","Nasr","Nizam","Qawurd","Ramadan","Sadiq","Sami","Samir","Shaiban","Shamir","Shujah","Sulayman","Talib","Ubayd","Uways","Yahya","Youkhanna","Yusuf","Zeyd","Abdul-Azeem","Abdul-Hamid","Abdul-Lateef","Abdul-Razzaq","Abdul-Wahad","Adhid","Adil","Akab","Amir","Ashraf","Aziz","Bashar","Boutros","Faisal","Fayiz","Ghazi","Hakam","Hamdan","Hashmaddin","Imamaddin","Ismat","Jahan","Kamran","Khalid","Khudayar","Majid","Muaddam","Muhsin","Muzaffar","Nasraddin","Nuraddin","Nuri","Radhi","Rasul","Salahaddin","Seyfullah","Sharaf","Sirhan","Taimur","Tawfiq","Umaya","Wahid","Yasar","Zahir","Aaron","Abanoub","Abderahman","Abdul-Aziz","Abdul-Haq","Abdul-Madjid","Abdul-Salaam","Abianos","Abisalom","Ablarion","Abraam","Adnan","Agathon","Agathonikos","Agathos","Ahmad","Akbar","Alam","Amr","Androus","Anthinos","Arsenios","Asim","Athanasios","Badr","Bashir","Biktor","Binyamin","Bishoi","Danyal","Dawlat","Ezra","Farhan","Firuz","Georgios","Ghiyasaddin","Habil","Hammud","Hanri","Haroun","Hisham","Ilyas","Izzaddin","Jalaaladdin","Jawdat","Jerjer","Kemaladdin","Krystafer","Latif","Lot","Matta","Mehtar","Mikail","Mikhael","Mina","Muammar","Murshid","Nabil","Nasir","Nassib","Pamin","Qadir","Rafiq","Ridwan","Sabah","Salim","Sharif","Suhail","Tadros","Tajaddin","Tayyib","Touma","Usama","Yared","Yassir","Youssef","Zakariyah","Abbad","Abbas","Abdallah","Abdul-Hakam","Abdul-Hasan","Abdul-Hazm","Abdul-Rahman","Abu","Adfuns","Ayyub","Balashk","Bilal","Fath","Galind","Garsiya","Hilal","Jyad","Lubb","Mubashir","Mundir","Muyahid","Raf","Rasiq","Sanyo","Siddray","Suleyman","Tifilwit","Umar","Utman","Wannaqo","Yahaff","Aden","Zainuddin","Zulfiqar",];
 
-gt.Const.Strings.AncientSouthernNames <- ["Aahotepre","Achillas","Addaya","Agathocies","Ebana","Ahmose","Amenmose","Amenemhat","Ankhkherednefer","Ankhmakis","Ankherfenedjef","Ankhreshet","Amenemhatankh","Ahmose","Sapair","Amenemhat","Amenemopet","Amenhotep","Amunherkhepeshef","Ankhhaf","Meritamon","Nebetta","Tumerisy","Henutemipet","Sitamun","Tasherit","Anen","Pairy","Huy","Aperei","Amethu","Bay Irsu","Bakenkhonsu","Baqet","Babaef","Bebi","Bakenrenef","Charmian","Duaenre","Djau","Dagi","Djaty","Djedefhor","Djedi","Duaenhor","Djediufankh","Dedi","Djehuty","Gemenefkhonsbak","Harkhebi","Harwa","Hui","Hannu","Herihor","Harkhuf","Hapuseneb","Haremakhet","Harsiese","Hori","Hsekiu","Horbaef","Hornakht","Hakor","Hunefer","Hepu","Hewernef","Ineni","Intef","Isesi","Iuput","Ini Menkhepere","Inkaef","Isu","Itisen","Iunre","Iynefer","Ibiaw","Ibi","Iunmin","Iuty","Iymeru","Kaaper","Kagemni","Khabash","Khabekhnet","Mentuherkhopshef","Mentuhotep","Menna","Merneptah","Minmose","Nahkt","Nakhtmin","Nakhtpaaten",];
+::Const.Strings.AncientSouthernNames <- ["Aahotepre","Achillas","Addaya","Agathocies","Ebana","Ahmose","Amenmose","Amenemhat","Ankhkherednefer","Ankhmakis","Ankherfenedjef","Ankhreshet","Amenemhatankh","Ahmose","Sapair","Amenemhat","Amenemopet","Amenhotep","Amunherkhepeshef","Ankhhaf","Meritamon","Nebetta","Tumerisy","Henutemipet","Sitamun","Tasherit","Anen","Pairy","Huy","Aperei","Amethu","Bay Irsu","Bakenkhonsu","Baqet","Babaef","Bebi","Bakenrenef","Charmian","Duaenre","Djau","Dagi","Djaty","Djedefhor","Djedi","Duaenhor","Djediufankh","Dedi","Djehuty","Gemenefkhonsbak","Harkhebi","Harwa","Hui","Hannu","Herihor","Harkhuf","Hapuseneb","Haremakhet","Harsiese","Hori","Hsekiu","Horbaef","Hornakht","Hakor","Hunefer","Hepu","Hewernef","Ineni","Intef","Isesi","Iuput","Ini Menkhepere","Inkaef","Isu","Itisen","Iunre","Iynefer","Ibiaw","Ibi","Iunmin","Iuty","Iymeru","Kaaper","Kagemni","Khabash","Khabekhnet","Mentuherkhopshef","Mentuhotep","Menna","Merneptah","Minmose","Nahkt","Nakhtmin","Nakhtpaaten",];
 
-gt.Const.Strings.EmbalmedNobleNames <- gt.Const.Strings.AncientSouthernNames;
-gt.Const.Strings.EmbalmedNobleNames.push("Von Krolock");
+::Const.Strings.EmbalmedNobleNames <- ::Const.Strings.AncientSouthernNames;
+::Const.Strings.EmbalmedNobleNames.push("Von Krolock");
 
-gt.Const.Strings.SouthernNamesLast <- [
-	"Ibn Sahr",
-	"Al-Dani",
-	"Ibn Tayib",
-	"Al-Sahl",
-	"Ibn Hazam",
-	"Ibn Jalaf",
-	"Ibn Abbad",
-	"Al-Tahir",
-	"Al-Bajani",
-	"Ibn Nusa",
-	"Al-Faris",
-	"Al-Wahiri",
-	"Ibn Nuh",
-	"Al-Kasim",
-	"Ibn Husain",
-	"Ibn Kamal",
-	"Al-Fad",
-	"Al-Baji",
-	"Al-Aban",
-	"Al-Salama",
-	"Al-Haddad",
-	"Al-Affan",
-	"Al-Bakr",
-	"Ibn Tasuf",
-	"Al-Faradi",
-	"Ibn Tayib",
-	"Ibn Azid",
-	"Ibn Wasi",
-	"Al-Abbas",
-	"Ibn Hamdi",
-	"Al-Bahri",
-	"Al-Zahir",
-	"Ibn Salar",
-	"Al-Sawid",
-	"Ibn Hamdin",
-	"Ibn Undi",
-	"Ibn Asili",
-	"Al-Tabar",
-	"Al-Rundi",
-	"Al-Siddiq",
-	"Ibn Sabti",
-	"Al-Fath",
+::Const.Strings.SouthernNamesLast.extend([
 	"Eld-Taro",
 	"Tel-Contar",
-	"Ibn Mansur",
-	"Al-Sabbag",
-	"Al-Benali",
-	"Al-Aziz",
-	"Ibn Jasib"
-];
-gt.Const.Strings.SouthernOfficerTitles <- [
-	"Al-Jawlan",
-	"Al-Talamanki",
-	"Al-Mundir",
-	"Al-Jasur Ibn Tawd",
-	"Al-Jatami",
-	"Al-Harun",
-	"Al-Badir",
-	"Al-Mayuriqi",
-	"Al-Muharib",
-	"Al-Tarabulusi Ibn-Asbat",
-	"Al-Tasufin Ibn Habib",
-	"Ibn Zayid",
-	"Ibn Asmali",
-	"Ibn Ibrahim",
-	"Ibn Suhaliy"
-];
-gt.Const.Strings.GladiatorTitles <- [
-	"the Pit Fighter",
-	"the Arena King",
-	"the Merciless",
-	"the Head-Taker",
-	"the Unmatched",
-	"the Undefeated",
-	"the Brutalizer",
-	"the Underdog",
-	"the Slave",
-	"the Lion",
-	"the Hyena",
-	"the Victorious",
-	"the Volunteer",
-	"the Butcher",
-	"the Champion",
-	"the Gladiator",
-	"the Stallion",
-	"the Beast",
-	"the Marvelous",
-	"the Raging Bull",
-	"the Thunder",
-	"Steelhammer",
-	"the Destroyer",
-	"the Impaler"
-];
-gt.Const.Strings.NomadChampionTitles <- [
-	"the Scorpion",
-	"the Ghost of the Sands",
-	"the Serpent",
-	"the Blight",
-	"the Silver Mace",
-	"the Desert Prince",
-	"the Elusive",
-	"the Shadow",
-	"the Plunderer",
-	"the Robber",
-	"the Nomad King",
-	"the Thief of the Sands",
-	"the Traders\' Bane",
-	"the Desert Rat",
-	"the Black Fang",
-	"the Snake",
-	"the Desert Raider",
-	"the Scourge",
-	"the Cursed",
-	"the Raven",
-	"the Nomad",
-	"the Red",
-	"the Gilder\'s Chosen",
-	"the Sandviper",
-	"the Pilgrim",
-	"the Exiled",
-	"the Vulture",
-	"the Living Mirage",
-	"the Free Prince",
+]);
+::Const.Strings.NomadChampionTitles.extend([
 	"the Midas Lord",
 	"the Gilded",
-	"the Prince of the Sands",
-	"the Dust Dancer",
-	"the Golden Vulture"
-];
-gt.Const.Strings.NomadChampionStandalone <- [
-	"The Scorpion",
-	"The Ghost of the Sands",
-	"The Serpent",
-	"The Blight",
-	"The Silver Mace",
-	"The Desert Prince",
-	"The Elusive",
-	"The Shadow",
-	"The Plunderer",
-	"The Robber",
-	"The Nomad King",
-	"The Thief of the Sands",
-	"The Traders\' Bane",
-	"The Desert Rat",
-	"The Black Fang",
-	"The Snake",
-	"The Desert Raider",
-	"The Scourge",
-	"The Cursed",
-	"The Raven",
-	"The Nomad",
-	"The Red",
-	"The Exiled",
-	"The Vulture",
-	"The Living Mirage",
-	"The Free Prince",
-	"The Prince of the Sands",
-	"The Dust Dancer",
-	"The Golden Vulture"
-];
-gt.Const.Strings.DesertDevilChampionTitles <- [
-	"The Scorpion",
-	"The Ghost of the Sands",
-	"%randomsouthernname% the Viper",
-	"%randomsouthernname% the Blademaster",
-	"%randomsouthernname% the Desert Devil",
-	"%randomsouthernname% the Elusive",
-	"%randomsouthernname% the Shadow",
-	"%randomsouthernname% the Snake",
-	"The Whirlwind",
-	"The Sand Devil",
-	"%randomsouthernname% the Sandviper",
-	"%randomsouthernname% the Exiled",
-	"%randomsouthernname% the Blade Dancer",
-	"%randomsouthernname% the Swift",
-	"%randomsouthernname% the Undefeated",
-	"%randomsouthernname% the Dust Dancer",
-	"%randomsouthernname% the Glistening Edge",
-	"%randomsouthernname% the Crimson Edge",
-	"%randomsouthernname% the Flying Blade",
-	"%randomsouthernname% the Dust Devil",
-	"The Striking Wind",
-	"The Black Hawk"
-];
-gt.Const.Strings.ExecutionerChampionTitles <- [
-	"The Executioner",
-	"The Silver Mace",
-	"The Plunderer",
-	"The Traders\' Bane",
-	"The Scourge",
-	"The Cursed",
-	"The Ikon",
-	"The Sand Giant",
-	"The Gilder\'s Chosen",
-	"The Mountain",
-	"The Scimitar",
-	"%randomsouthernname% the Gilded",
-	"The Raging Nomad",
-	"%randomsouthernname% the Immortal",
-	"The Headcollector",
-	"The Giant",
-	"The Rock",
-	"The Sandstorm",
-	"The Headcrusher",
-	"The Ifrit",
-	"%randomsouthernname% the Lion"
-];
-gt.Const.Strings.DesertStalkerChampionTitles <- [
+]);
+::Const.Strings.ExecutionerChampionTitles.extend([
+	"The Ikon"
+]);
+::Const.Strings.DesertStalkerChampionTitles <- [
 	"the Scorpion",
 	"the Sand Stalker",
 	"the Desert Stalker",
@@ -398,88 +145,22 @@ gt.Const.Strings.DesertStalkerChampionTitles <- [
 	"the Stinger",
 	"the Heartseeker"
 ];
-gt.Const.Strings.NobleTitles <- [
-	"Count",
-	"Count",
-	"Baron",
-	"Baron",
-	"Duke"
+::Const.Strings.NobleTitles.extend([
+	"Markgraf"
+]);
+
+::Const.Strings.NoblewomanTitles <- [
+	"Markgräfin"
 ];
 
-gt.Const.Strings.NoblewomanTitles <- [
-	"Dame",
-	"Lady",
-	"Baroness",
-	"Lady",
-	"Dutchess"
+::Const.Strings.SellswordTitles.extend([
+	"Orcbolg"
 ];
-
-gt.Const.Strings.VizierTitles <- [
-	"the Vizier of War",
-	"the Vizier of Treasury",
-	"the Vizier of Trade",
-	"the Grand Vizier",
-	"the Master Astrologer",
-	"the High Priest"
-];
-gt.Const.Strings.SellswordTitles <- [
-	"the Butcher",
-	"the Berserker",
-	"the Dog",
-	"the Hound",
-	"the Bloody",
-	"the Wolf",
-	"the Blade",
-	"the Impaler",
-	"the Younger",
-	"the Older",
-	"the Merciless",
-	"the Red",
-	"the Black",
-	"Orcbane",
-	"the Knightslayer",
-	"the Falcon"
-];
-gt.Const.Strings.SwordmasterTitles <- [
-	"the Legend",
-	"the Master",
-	"the Fencer",
-	"the Fast",
-	"Quickblade",
-	"the Serpent",
-	"the Swift",
-	"Bladedancer",
-	"the Undefeated",
-	"the Unbeaten",
-	"the Champion",
-	"the Master of the Realm",
-	"the Elder",
-	"the Unmatched",
-	"the Skillful",
-	"the Flying Blade",
-	"the Dancing Blade"
-];
-gt.Const.Strings.HedgeKnightTitles <- [
-	"The Lone Wolf",
-	"The Wolf",
-	"The Hound",
-	"Steelwielder",
-	"The Slayer",
+::Const.Strings.HedgeKnightTitles.extend([
 	"The Jouster",
-	"The Giant",
-	"The Mountain",
 	"Strongwill",
-	"The Defiler",
-	"The Knightslayer",
-	"The Hedge Knight",
 	"the Shrubbery",
 	"Who Says Ni",
-	"The Scourge",
-	"The Fallen Knight",
-	"Mancrusher",
-	"The Exiled",
-	"Warshout",
-	"The Skulltaker",
 	"The Cleaver",
 	"The Sentinel",
 	"The Courageous",
@@ -539,9 +220,9 @@ gt.Const.Strings.HedgeKnightTitles <- [
 	"Of The West",
 	"Of The South",
 	"Of The North"
-];
+]);
 
-gt.Const.Strings.LadyTitles <- [
+::Const.Strings.LadyTitles <- [
 	"The Guardian",
 	"The Ghost",
 	"The Swift",
@@ -616,202 +297,68 @@ gt.Const.Strings.LadyTitles <- [
 	"Of The East",
 	"Of The West",
 	"Of The South",
-	"Of The North"
+	"Of The North",
+	"dan Glokta"
 ];
 
-gt.Const.Strings.MasterArcherNames <- [
-	"%randomname% the Marksman",
-	"Sureshot",
-	"%randomname% the Master Archer",
-	"%randomname% the Hunter",
-	"%randomname% the Sniper",
-	"Hundred Paces",
-	"%randomname% Quick Shot",
+::Const.Strings.MasterArcherNames.extend([
 	"The Headhunter",
 	"Farsight",
 	"Oneshot",
 	"Trueshot",
 	"Quickdraw",
 	"%randomname% the Eliminator"
-	"%randomname% the Headhunter",
-	"Deadeye",
-	"%randomname% the Sharpshooter",
-	"%randomname% the Shooter",
-	"%randomname% Featherdraw",
-	"%randomname% the Whistling Death",
-	"%randomname% the Poker",
-	"The Eagle",
-	"%randomname% Truestrike",
-	"%randomname% the True Shot"
-];
-gt.Const.Strings.OathbringerNames <- [
-	"The Oathkeeper",
-	"%randomname% the Oathbringer",
-	"Anselm\'s Hammer",
-	"Anselm\'s Shield",
-	"Anselm\'s Sword",
-	"Anselm\'s Stolen Valor",
-	"%randomname% the Oathsworn",
-	"%randomname% the Crusader",
-	"%randomname% the Zealot",
-	"%randomname% the Pious",
-	"%randomname% the Devoted",
-	"%randomname% the Paladin",
-	"%randomname% the Righteous"
-];
-gt.Const.Strings.MasonTitles <- [
-	"the Builder",
-	"Bricklayer",
-	"the Architect",
-	"the Artisan",
+]);
+::Const.Strings.MasonTitles.extend([
 	"the Tradesman",
-	"the Maker"
-];
-gt.Const.Strings.MilitiaTitles <- [
-	"the Conscript",
-	"the Militiaman",
-	"the Footman",
+	"the Maker",
+	"the Bricked Up"
+]);
+::Const.Strings.MilitiaTitles.extend([
 	"the Recruit",
 	"the Levyman",
 	"the Trooper"
-];
-gt.Const.Strings.BrawlerTitles <- [
-	"Hamfisted",
-	"the Mauler",
-	"the Rock",
-	"the Stallion",
-	"Ironjaw",
-	"the Brawler",
+]);
+::Const.Strings.BrawlerTitles.extend([
 	"One Punch",
 	"Hammerfist",
 	"Stonehand",
 	"the Hurricane",
 	"the Hitman"
-];
-gt.Const.Strings.PeddlerTitles <- [
-	"the Snake",
-	"the Weasel",
-	"Silver-Tongue",
-	"the Sutler",
-	"the Peddler",
-	"the Merchant"
+]);
+::Const.Strings.PeddlerTitles.extend([
 	"the Mountebank",
 	"the Broker"
-];
-gt.Const.Strings.WitchhunterTitles <- [
-	"the Nighthunter",
-	"the Witchhunter",
-	"the Exorciser",
+]);
+::Const.Strings.WitchhunterTitles.extend([
 	"the Saltzpire",
 	"the Inquisitor",
 	"the Righteous",
-	"the Torturer",
 	"the Witchsmeller"
-];
-gt.Const.Strings.GravediggerTitles <- [
-	"the Gravedigger",
-	"the Shoveler",
-	"Gravespotter",
-	"the Odd",
+]);
+::Const.Strings.GravediggerTitles.extend([
 	"the Lonely",
 	"Blackfinger"
-];
-gt.Const.Strings.RatcatcherTitles <- [
-	"Longnose",
-	"the Rat",
+]);
+::Const.Strings.RatcatcherTitles.extend([
 	"the Fink",
 	"the Ratter",
 	"the Trapper",
-	"the Ratcatcher",
 	"the Ratmancer",
-	"the Tepid",
 	"the Trapper",
 	"the Beagle",
 	"the Scabby"
-];
-gt.Const.Strings.BastardTitles <- [
-	"the Bastard",
-	"the Mistake",
-	"Cuckchild",
-	"the Secret Son",
-	"Whoreson",
-	"the Tarnish",
+]);
+::Const.Strings.BastardTitles.extend([
 	"the Spare",
 	"the Secret"
-];
-gt.Const.Strings.PilgrimTitles <- [
-	"the Believer",
-	"the Seeker",
-	"the Thaumaturge",
-	"the Pure",
-	"the Flagellant",
-	"the Pilgrim",
+]);
+::Const.Strings.PilgrimTitles.extend([
 	"the Barefoot",
 	"the Penitent",
 	"the Ascetic"
-];
-gt.Const.Strings.KnightNames <- [
-	"Sir Roderick",
-	"Sir Egidius",
-	"Sir Henrik",
-	"Sir Dankwart",
-	"Sir Eisenherz",
-	"Sir Geofram",
-	"Sir Baranor",
-	"Sir Wilhelm",
-	"Sir Hildebrand",
-	"Sir Hilmar",
-	"Sir Severin",
-	"Sir Starkwart",
-	"Sir Elgast",
-	"Sir Magnus",
-	"Sir Burkhard",
-	"Sir Silvan",
-	"Sir Lambert",
-	"Sir Kuno",
-	"Sir Wenzel",
-	"Sir Donatus",
-	"Sir Albrecht",
-	"Sir Hilderich",
-	"Sir Sigmund",
-	"Sir Steinhart",
-	"Sir Hermann",
-	"Sir Eckhart",
-	"Sir Guidobald",
-	"Sir Theo",
-	"Sir Eswig",
-	"Sir Walram",
-	"Sir Casimir",
-	"Sir Magnus",
-	"Sir Wighart",
-	"Sir Otto",
-	"Sir Sigismund",
-	"Sir Erland",
-	"Sir Erkenbrand",
-	"Sir Theoderich",
-	"Sir Lothar",
-	"Sir Wolfhart",
-	"Sir Balon",
-	"Sir Valdemar",
-	"Sir Giselherr",
-	"Sir Engelbert",
-	"Sir Lancel",
-	"Sir Humbert",
-	"Sir Emmerich",
-	"Sir Grimm",
-	"Sir Donbert",
-	"Sir Robert",
-	"Sir Wolfgang",
-	"Sir Kettilmund",
-	"Sir Konrad",
-	"Sir Rupert",
-	"Sir Harald",
-	"Sir Roland",
-	"Sir Rabe",
-	"Sir Siegfried",
-	"Sir Kunibert",
-	"Sir Dankrad",
-	"Sir Leberecht",
+]);
+::Const.Strings.KnightNames.extend([
 	"Sir John",
 	"Sir Fenlock",
 	"Sir Andrew",
@@ -868,10 +415,13 @@ gt.Const.Strings.KnightNames <- [
 	"Sir Plouf",
 	"Sir Teamson",
 	"Sir James",
-	"Sir Percy"
-
-];
-gt.Const.Strings.LadyNames <- [
+	"Sir Percy",
+	"Sir Satow",
+	"dan Brock",
+	"dan Gorst",
+	"dan Glokta"
+]);
+::Const.Strings.LadyNames <- [
 	"Lady Jean",
 	"Lady Hatchet",
 	"Lady Matilda",
@@ -967,116 +517,15 @@ gt.Const.Strings.LadyNames <- [
 	"Lady Meg",
 	"Lady Avalon",
 	"Lady Magda",
-	"Lady Eva"
+	"Lady Eva",
+	"Lady Monza"
 ];
 
 
-gt.Const.Strings.OrcWarlordNames <- [
-	"Illska Ghul",
-	"Skabskra",
-	"Urosh",
-	"Kushtrum",
-	"Goth Na Ari",
-	"Obrokk",
-	"Blok Sapat",
-	"Gorash",
-	"Mogtul",
-	"Thraktar",
-	"Gorgash-Ghul",
-	"Maruk",
-	"Warak Na Borash",
-	"Urgat",
-	"Durgash",
-	"Skalleklyfta",
-	"Margash Borash",
-	"Borgash",
-	"Goruk Sapat",
-	"Karosh Urgat",
-	"Horgash Ghul",
-	"Naguk",
-	"Shadok",
-	"Bakh Lob",
-	"Corgat",
-	"Urmuk Ghul",
-	"Mug Nadar",
-	"Vras Ushtar",
-	"Brulk Zogtar",
-	"Sapat Blok",
-	"Mosh Shagit",
-	"Gajit Bukol",
-	"Blot Kakok",
-	"Thrak Talun",
-	"Drod Kazan",
-	"Oxshak",
-	"Urdanog",
-	"Trok Oborr",
-	"Bolvag Shrub",
-	"Ug Shatup",
-	"Shatratog",
-	"Buruk Skag",
-	"Ilska Sapat",
-	"Grug Zartum",
-	"Grommok",
+::Const.Strings.OrcWarlordNames.extend([
 	"Arvius",
-	"Ogrul",
-	"Shura Nak"
-];
-gt.Const.Strings.BanditLeaderNames <- [
-	"The Butcher",
-	"%randomname% the Knife",
-	"%randomname% the Slaughterer",
-	"King %randomname%",
-	"%randomname% the Ox",
-	"The Wolf",
-	"%randomname% the Marauder",
-	"%randomname% the Snake",
-	"%randomname% Four Fingers",
-	"Barabas Brimstone",
-	"Rotor Ravensblack",
-	"Black Crow Balthasar",
-	"The Bull of %randomtown%",
-	"%randomname% Bloodbeard",
-	"Mead Jar %randomname%",
-	"Bloody %randomname%",
-	"Dreaded %randomname%",
-	"The Swine",
-	"%randomname% the Cruel",
-	"%randomname% the Outcast",
-	"The Robber Baron",
-	"Red Viper",
-	"%randomname% the Brigand",
-	"%randomname% the Scourge",
-	"The Raiding Lord",
-	"The Manhunter",
-	"Big %randomname%",
-	"%randomname% the Savage",
-	"Infamous %randomname%",
-	"The Menace of %randomtown%",
-	"%randomname% the Red",
-	"Gunther the Grinning",
-	"%randomname% the Hyena",
-	"%randomname% the Hawk",
-	"%randomname% the Mad",
-	"%randomname% the Brute",
-	"%randomname% the Pillager",
-	"Lars the Lunatic",
-	"%randomname% the Free",
-	"Black Eyes Einhart",
-	"Oswall the Odd",
-	"Brokk Mad Eyes",
-	"%randomname% the Ashen Prince",
-	"The Scourge of %randomtown%",
-	"%randomname% the Bleak",
-	"Bleak Blade Ingram",
-	"%randomname% the Pickpocket",
-	"Mickel Copperheart",
-	"Casper the Cutpurse",
-	"Ottel Bleakheart",
-	"Joost Crowntaker",
-	"Baltasar the Toothless",
-	"Walter the Spider",
-	"August the Gravedigger",
-	"Urban Goodman",
+]);
+::Const.Strings.BanditLeaderNames.extend([
 	"%randomname% the Blade",
 	"Mad %randomname%",
 	"Slithering %randomname%",
@@ -1122,22 +571,11 @@ gt.Const.Strings.BanditLeaderNames <- [
 	"%randomname% the Citrene",
 	"%randomname% Ubermensch",
 	"Furious %randomname%"
-
-];
-gt.Const.Strings.KrakenNames <- [
-	"Ogg-Sattoth the Grand Devourer",
-	"Kha-Athlu the All-Ender",
-	"Shaggaruth the Unending",
-	"Gla-Oth the Endless Maw",
-	"Gu-Shogg the Thousand-Armed Thresher",
-	"Chtan-Nahitil the Gorger of All",
-	"Xa-Shutar the Eater of Worlds",
-	"Thohochoth the All-Ender",
-	"Naccorath the Eternal",
+]);
+::Const.Strings.KrakenNames.extend([
 	"Rap-Stofchri The Deepest One",
-	"Xapocathlu the All-Reaching"
-];
-gt.Const.Strings.CharacterNamesFemaleNorse <- [
+]);
+::Const.Strings.CharacterNamesFemaleNorse <- [
 	"Agata",
 	"Alfhilda",
 	"Arnlaug",
@@ -1271,6 +709,7 @@ gt.Const.Strings.CharacterNamesFemaleNorse <- [
 	"Ragnvor",
 	"Randalin",
 	"Ranka",
+	"Rikke",
 	"Rikvi",
 	"Roskva",
 	"Saga",
@@ -1314,7 +753,7 @@ gt.Const.Strings.CharacterNamesFemaleNorse <- [
 	"Maelmuire",
 	"Lonceta",
 ];
-gt.Const.Strings.InventorTitles <- [
+::Const.Strings.InventorTitles <- [
 	"the Inventor",
 	"the Curious",
 	"the Peculiar",
@@ -1328,25 +767,7 @@ gt.Const.Strings.InventorTitles <- [
 	"the Eccentric"
 
 ];
-gt.Const.Strings.AncientDeadNames <- [
-	"Brasus",
-	"Gudila",
-	"Ostracon",
-	"Dardanos",
-	"Duras",
-	"Mucatra",
-	"Cothelas",
-	"Arzaru",
-	"Decalus",
-	"Akamas",
-	"Kavaros",
-	"Comoscius",
-	"Moskon",
-	"Rholes",
-	"Tarbus",
-	"Apulon",
-	"Napucon",
-	"Barsobis",
+::Const.Strings.AncientDeadNames.extend([
 	"Tibon",
 	"Arakus",
 	"Tyran",
@@ -1378,43 +799,9 @@ gt.Const.Strings.AncientDeadNames <- [
 	"Mucapor",
 	"Oroles",
 	"Asteta"
-	"Sirus",
-	"Marnis",
-	"Burrus",
-	"Telephos",
-	"Terebus",
-	"Damastes",
-	"Megerus",
-	"Ianoton",
-	"Cyrenos",
-	"Haganon",
-	"Neritos",
-	"Seleukus",
-	"Nomion",
-	"Bacenor",
-	"Caston",
-	"Elpidus",
-	"Aristes",
-	"Morsimus",
-	"Athenades",
-	"Bacius"
-];
-gt.Const.Strings.AncientDeadTitles <- [
-	"the Returned",
-	"the Restorator",
-	"the Ancient",
-	"the Destroyer",
-	"the Guardian",
-	"the Hunter",
+]);
+::Const.Strings.AncientDeadTitles.extend([
 	"the Hanter",
-	"the Second",
-	"the Herald",
-	"the Unearthed",
-	"the Forgotten",
-	"the Protector",
-	"the Honored",
-	"the Defender",
-	"of the North",
 	"the Patient",
 	"the Blessed",
 	"the Father",
@@ -1465,24 +852,8 @@ gt.Const.Strings.AncientDeadTitles <- [
 	"the High Judge",
 	"of the High Command",
 	"the Master of Horse"
-	"the Glorious",
-	"the Favored"
-];
-gt.Const.Strings.GoblinNames <- [
-	"Nox",
-	"Grubb",
-	"Sharax",
-	"Zuggut",
-	"Grisnik",
-	"Zatak",
-	"Finex",
-	"Zugtakr",
-	"Velok",
-	"Zatox",
-	"Naxanix",
-	"Vlixix",
-	"Snarf",
-	"Ratox",
+]);
+::Const.Strings.GoblinNames.extend([
 	"Snubb",
 	"Pix",
 	"Zintin",
@@ -1526,9 +897,6 @@ gt.Const.Strings.GoblinNames <- [
 	"Bogzung",
 	"Ignot",
 	"Zinkling"
-	"Skrork",
-	"Wruzak",
-	"Drozub",
 	"Zogrok",
 	"Kulzik",
 	"Xatox",
@@ -1542,20 +910,8 @@ gt.Const.Strings.GoblinNames <- [
 	"Wreek",
 	"Zatush",
 	"Kleklux"
-];
-gt.Const.Strings.GoblinTitles <- [
-	"the Stabber",
-	"the Insidious",
-	"Throatcutter",
-	"Knifelicker",
-	"the Skinner",
-	"the Headhunter",
-	"Eyegouger",
-	"Rotgut",
-	"Longnose",
-	"the Cutter",
-	"Nosebiter",
-	"the Sticker",
+]);
+::Const.Strings.GoblinTitles.extend([
 	"the Talon",
 	"Crookback",
 	"the Man Mincer",
@@ -1592,35 +948,8 @@ gt.Const.Strings.GoblinTitles <- [
 	"the Baby Eater",
 	"the Facewearer",
 	"Catgnasher"
-	"the Elusive",
-	"the Stalker",
-	"the Shadowwalker",
-	"the Fogwalker",
-	"the Cunning",
-	"the Backstabber",
-	"Hooked Blade",
-	"Gutstabber",
-	"Earripper",
-	"Necksnapper",
-	"the Knifejuggler"
-];
-gt.Const.Strings.FallenHeroTitles <- [
-	"the Decayed",
-	"the Unburied",
-	"the Rotten",
-	"the Defiled",
-	"the Returned",
-	"the Undying",
-	"the Cursed",
-	"the Corrupted",
-	"the Unbreakable",
-	"the Oathbreaker",
-	"the Forgotten",
-	"the Lost",
-	"the Fallen Hero",
-	"the Cruel",
-	"the Returned",
-	"the Prince of Rot",
+]);
+::Const.Strings.FallenHeroTitles.extend([
 	"the Hollow",
 	"the Black Hand",
 	"the Damned",
@@ -1654,39 +983,18 @@ gt.Const.Strings.FallenHeroTitles <- [
 	"the Disturbed",
 	"the Hellknight",
 	"the Death Prophet",
-	"the Ghost",
-	"the Soulless",
 	"the Enduring",
-	"the Wraith",
-	"the Vessel"
-];
+	"the Wraith"
+]);
 
 
-gt.Const.Strings.NecromancerNames <- [
-	"King of Worms",
-	"%randomname% the Undying",
-	"%randomname% the Black",
-	"%randomname% the Necromancer",
-	"The Puppeteer",
-	"The Plaguebringer",
-	"The Dark Master",
-	"The Reanimator",
-	"%randomname% the Mad",
-	"%randomname% the Obsessed",
-	"The Pale Duke",
-	"%randomname% Necrofear",
-	"The Master of Undeath",
-	"%randomname% the Apostate",
-	"%randomname% the Knowledgeable",
-	"%randomname% the Wormbitten",
-	"%randomname% the Unholy",
-	"%randomname% the Mad",
-	"%randomname% the Enlightened"
-];
+::Const.Strings.NecromancerNames.extend([
+	"%randomname% Necrofear"
+]);
 
-gt.Const.Strings.SouthernFemaleNames <- ["Adila","Amsha","Asiya","Faghira","Habiba","Hanifa","Isra","Jahaira","Kamala","Layla","Maryam","Munya","Nafisa","Nyawela","Parand","Parween","Paymaneh","Paywand","Qamara","Rafiqa","Rasa","Rashida","Reshawna","Saaman","Sabba","Saghar","Sahba","Sajida","Samira","Semeah","Setara","Shahrbano","Shahzadah","Shameem","Shararah","Sheeftah","Sheeva","Shogofa","Shokouh","Shola","Sholah","Simin","Souzan","Taliba","Tanaz","Taneen","Yagana","Yakta","Yasmin","Zaynab","Abda","Ahu","Aiza","Aliyah","Butayna","Daniyah","Dima","Fahra","Fahriya","Fatima","Gamila","Ghada","Huda","Ibtisam","Karima","Kera","Khadija","Maha","Malika","Mariam","Nadia","Naila","Nur","Rahat","Raisa","Randa","Safiya","Salma","Shakira","Suraya","Tahira","Tarifa","Thashim","Umm","Wahida","Zahida","Zahra","Acenith","Alia","Amunet","Andali","Asanet","Asenath","Asenet","Azenet","Badiat","Cena","Halima","Jamila","Majida","Nabila","Nura","Radiya","Rana","Sacmis","Suhaila","Tawaret","Taweret","Titi","Thuriya","Zara","Aisha","Aziza","Duha","Farida","Golbahar","Gulnar","Gulnaz","Gulpari","Hafsa","Hasti","Huma","Jalila","Khandan","Khaterah","Khatira","Kinah","Lala","Madiha","Mahdokht","Mahsa","Mahwash","Marwa","Mastana","Mehri","Mina","Minoo","Munawwar","Muzhdah","Nahal","Najela","Nasiba","Nastaran","Nazaneen","Nazy","Neelab","Negar","Niki","Nikoo","Noushin","Rabiya","Rajiya","Sadiya","Sitara","Thana","Zuhayra","Nisrin","Nawrah","Habibah","Baysan","Wafa","Nibras","Radeyah","Jihan","Najmah","Anan","Walaa","Baraa","Buthayna","Lam'ah","Mu'azzaz","Shadhiyah","Dahab","Dalal","Aliah","Shuhrah","Salsabil","Wifaq","Hayfa","Is'af","Nadirah","Sawsan","Jawahir","Basheera","Rubadah","Aaliyah","Amira","Kayla","Nyla","Zariah","Aleah","Romina","Yara","Yamileth","Ranim","Sa'dah","Nashita","Salimah","Maladh","Raniya","Jadwa","Atifah","Shadhaa","Bilqees","Humairah","Busr","Sunbul","Capella","Adara","Afaaf","Benazir","Daneen","Dariya","Esita","Fairoz","Fareeda","Ghusan","Haniya","Heena","Kalila","Lakia","Lina","Lulu","Qadira","Rida","Sahara","Soheila","Sufia","Taliha","Ummid","Zoya","Amina","Illi","Leïla","Dene","Keyah","Repila","Abarrane","Abene","Ageda","Aina","Alba","Alberta","Antía","Aurkene","Branca","Carme","Danele","Elizabete","Fronilde","Josune","Lía","Zuriñe",];
+::Const.Strings.SouthernFemaleNames <- ["Adila","Amsha","Asiya","Faghira","Habiba","Hanifa","Isra","Jahaira","Kamala","Layla","Maryam","Munya","Nafisa","Nyawela","Parand","Parween","Paymaneh","Paywand","Qamara","Rafiqa","Rasa","Rashida","Reshawna","Saaman","Sabba","Saghar","Sahba","Sajida","Samira","Semeah","Setara","Shahrbano","Shahzadah","Shameem","Shararah","Sheeftah","Sheeva","Shogofa","Shokouh","Shola","Sholah","Simin","Souzan","Taliba","Tanaz","Taneen","Yagana","Yakta","Yasmin","Zaynab","Abda","Ahu","Aiza","Aliyah","Butayna","Daniyah","Dima","Fahra","Fahriya","Fatima","Gamila","Ghada","Huda","Ibtisam","Karima","Kera","Khadija","Maha","Malika","Mariam","Nadia","Naila","Nur","Rahat","Raisa","Randa","Safiya","Salma","Shakira","Suraya","Tahira","Tarifa","Thashim","Umm","Wahida","Zahida","Zahra","Acenith","Alia","Amunet","Andali","Asanet","Asenath","Asenet","Azenet","Badiat","Cena","Halima","Jamila","Majida","Nabila","Nura","Radiya","Rana","Sacmis","Suhaila","Tawaret","Taweret","Titi","Thuriya","Zara","Aisha","Aziza","Duha","Farida","Golbahar","Gulnar","Gulnaz","Gulpari","Hafsa","Hasti","Huma","Jalila","Khandan","Khaterah","Khatira","Kinah","Lala","Madiha","Mahdokht","Mahsa","Mahwash","Marwa","Mastana","Mehri","Mina","Minoo","Munawwar","Muzhdah","Nahal","Najela","Nasiba","Nastaran","Nazaneen","Nazy","Neelab","Negar","Niki","Nikoo","Noushin","Rabiya","Rajiya","Sadiya","Sitara","Thana","Zuhayra","Nisrin","Nawrah","Habibah","Baysan","Wafa","Nibras","Radeyah","Jihan","Najmah","Anan","Walaa","Baraa","Buthayna","Lam'ah","Mu'azzaz","Shadhiyah","Dahab","Dalal","Aliah","Shuhrah","Salsabil","Wifaq","Hayfa","Is'af","Nadirah","Sawsan","Jawahir","Basheera","Rubadah","Aaliyah","Amira","Kayla","Nyla","Zariah","Aleah","Romina","Yara","Yamileth","Ranim","Sa'dah","Nashita","Salimah","Maladh","Raniya","Jadwa","Atifah","Shadhaa","Bilqees","Humairah","Busr","Sunbul","Capella","Adara","Afaaf","Benazir","Daneen","Dariya","Esita","Fairoz","Fareeda","Ghusan","Haniya","Heena","Kalila","Lakia","Lina","Lulu","Qadira","Rida","Sahara","Soheila","Sufia","Taliha","Ummid","Zoya","Amina","Illi","Leïla","Dene","Keyah","Repila","Abarrane","Abene","Ageda","Aina","Alba","Alberta","Antía","Aurkene","Branca","Carme","Danele","Elizabete","Fronilde","Josune","Lía","Zuriñe",];
 
-gt.Const.Strings.VampireLordNames <- [
+::Const.Strings.VampireLordNames <- [
 	"Brasus",
 	"Khalid",
 	"Lukman",
@@ -1763,7 +1071,7 @@ gt.Const.Strings.VampireLordNames <- [
 	"Abdamelek"
 ]
 
-gt.Const.Strings.SatoManhunterVeteranTitles <- [
+::Const.Strings.SatoManhunterVeteranTitles <- [
 	"the Blight",
 	"the Iron Shackle",
 	"the Steel Shackle",
@@ -1781,7 +1089,7 @@ gt.Const.Strings.SatoManhunterVeteranTitles <- [
 	"the Dog"
 ]
 
-gt.Const.Strings.PeasantButcherNames <- [
+::Const.Strings.PeasantButcherNames <- [
 	"Frederick",
 	"Jason",
 	"Candyman",
@@ -1800,7 +1108,7 @@ gt.Const.Strings.PeasantButcherNames <- [
 	"Cady",
 	"Chapman"
 ]
-gt.Const.Strings.PeasantButcherTitles <- [
+::Const.Strings.PeasantButcherTitles <- [
 	"The Psycho",
 	"The Thirteenth",
 	"The Peeper",
@@ -1820,4 +1128,4 @@ gt.Const.Strings.PeasantButcherTitles <- [
 	"The Hash-Slinging Slasher"
 ]
 
-gt.Const.Strings.BanditRabbleNames <- [ "Poss" ]
+::Const.Strings.BanditRabbleNames <- [ "Poss" ]
