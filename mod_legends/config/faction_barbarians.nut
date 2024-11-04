@@ -1,146 +1,17 @@
-local gt = this.getroottable();
+//known as 'Barbarian Reaver'
+::Const.Tactical.Actor.BarbarianMarauder.Hitpoints = 95;
+::Const.Tactical.Actor.BarbarianMarauder.Bravery = 60;
+::Const.Tactical.Actor.BarbarianMarauder.FatigueRecoveryRate = 25;
 
-if (!("Tactical" in gt.Const))
-{
-	gt.Const.Tactical <- {};
-}
+::Const.Tactical.Actor.BarbarianChampion.FatigueRecoveryRate = 25;
 
-if (!("Actor" in gt.Const.Tactical))
-{
-	gt.Const.Tactical.Actor <- {};
-}
+::Const.Tactical.Actor.BarbarianChosen.FatigueRecoveryRate = 30;
 
-gt.Const.Tactical.Actor.BarbarianThrall <- {
-	XP = 175,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 70,
-	Stamina = 120,
-	MeleeSkill = 53,
-	RangedSkill = 50,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.BarbarianMarauder <- { //known as 'Barbarian Reaver'
-	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 95,
-	Bravery = 80,
-	Stamina = 130,
-	MeleeSkill = 60,
-	RangedSkill = 60,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 25
-};
-gt.Const.Tactical.Actor.BarbarianChampion <- {
-	XP = 350,
-	ActionPoints = 9,
-	Hitpoints = 130,
-	Bravery = 90,
-	Stamina = 140,
-	MeleeSkill = 75,
-	RangedSkill = 60,
-	MeleeDefense = 15,
-	RangedDefense = 10,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 25
-};
-gt.Const.Tactical.Actor.BarbarianChosen <- {
-	XP = 500,
-	ActionPoints = 9,
-	Hitpoints = 150,
-	Bravery = 110,
-	Stamina = 150,
-	MeleeSkill = 80,
-	RangedSkill = 65,
-	MeleeDefense = 15,
-	RangedDefense = 10,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 30
-};
-gt.Const.Tactical.Actor.BarbarianMadman <- {
-	XP = 500,
-	ActionPoints = 9,
-	Hitpoints = 160,
-	Bravery = 100,
-	Stamina = 200,
-	MeleeSkill = 80,
-	RangedSkill = 0,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 30
-};
-gt.Const.Tactical.Actor.BarbarianDrummer <- {
-	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 75,
-	Bravery = 60,
-	Stamina = 150,
-	MeleeSkill = 65,
-	RangedSkill = 40,
-	MeleeDefense = 15,
-	RangedDefense = 5,
-	Initiative = 90,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.BarbarianBeastmaster <- {
-	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 65,
-	Bravery = 90,
-	Stamina = 120,
-	MeleeSkill = 65,
-	RangedSkill = 55,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 110,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
+::Const.Tactical.Actor.BarbarianMadman.FatigueRecoveryRate = 30;
 
+::Const.Tactical.Actor.BarbarianDrummer.Hitpoints = 75;
+::Const.Tactical.Actor.BarbarianDrummer.Bravery = 60;
+::Const.Tactical.Actor.BarbarianDrummer.FatigueRecoveryRate = 20;
+
+::Const.Tactical.Actor.BarbarianBeastmaster.Hitpoints = 65;
+::Const.Tactical.Actor.BarbarianDrummer.FatigueRecoveryRate = 20;
