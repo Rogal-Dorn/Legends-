@@ -42,7 +42,7 @@ this.legend_stollwurm_helmet <- this.inherit("scripts/items/helmets/named/named_
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Immunity from surrounded morale penalties"
+			text = "Being surrounded no longer affects this character's defences at all"
 		});
 		result.push({
 			id = 8,
