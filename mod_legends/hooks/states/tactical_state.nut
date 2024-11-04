@@ -25,10 +25,35 @@
 				if (this.m.StrategicProperties != null && this.m.StrategicProperties.IsAttackingLocation)
 				{
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnVictoryVSLocation);
+					if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves")
+					{
+						this.World.Statistics.getFlags().set("LastBattleWasLocation", true);
+						local findCaptiveChance = 15;
+
+						if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") == this.World.FactionManager.getFactionOfType(this.Const.FactionType.OrientalBandits).getID()) {
+							findCaptiveChance += 10;
+						} else if (this.World.Statistics.getFlags().getAsInt("LastCombatFaction") == this.World.FactionManager.getFactionOfType(this.Const.FactionType.Zombies).getID()) {
+							findCaptiveChance -= 10;
+						}
+
+						if (this.Math.rand(1, 100) <= findCaptiveChance)
+						{
+							this.World.Statistics.getFlags().set("FindCaptivePostBattle", true);
+						}
+						else
+						{
+							this.World.Statistics.getFlags().set("FindCaptivePostBattle", false);
+						}
+					}
 				}
 				else
 				{
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnVictory);
+					if (this.World.Assets.getOrigin().getID() == "scenario.sato_escaped_slaves")
+					{
+						this.World.Statistics.getFlags().set("LastBattleWasLocation", false);
+						this.World.Statistics.getFlags().set("FindCaptivePostBattle", false);
+					}
 				}
 
 				this.World.Contracts.onCombatVictory(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
@@ -498,7 +523,7 @@
 					KilledBy = "Left to die",
 					Expendable = bro.getBackground().getID() == "background.slave"
 				};
-				this.World.Statistics.addFallen(bro);
+				this.World.Statistics.addFallen(bro, "Left to die");
 				bro.getSkills().onDeath(this.Const.FatalityType.None);
 				this.World.getPlayerRoster().remove(bro);
 				bro.die();
