@@ -1,77 +1,7 @@
-local gt = this.getroottable();
-gt.Const.CharacterBackgrounds <- [
-	"deserter_background",
+::Const.CharacterVillageBackgrounds.extend([
 	"beggar_background",
-	"farmhand_background",
-	"farmhand_background",
-	"disowned_noble_background",
-	// "female_disowned_noble_background",
-	"adventurous_noble_background",
-	// "female_adventurous_noble_background",
-	"monk_background",
-	"juggler_background",
-	"sellsword_background",
-	"daytaler_background",
-	"fisherman_background",
-	"retired_soldier_background",
-	"thief_background",
-	"lumberjack_background",
-	"witchhunter_background",
-	"caravan_hand_background",
-	"miller_background",
-	"squire_background",
-	"peddler_background",
-	"servant_background",
-	"poacher_background",
-	"bastard_background",
-	"gravedigger_background",
-	"ratcatcher_background",
-	"brawler_background",
-	"mason_background",
-	"swordmaster_background",
-	"hunter_background",
-	"vagabond_background",
-	"flagellant_background",
-	"militia_background",
-	"hedge_knight_background",
-	"wildman_background",
-	"refugee_background",
-	"apprentice_background",
-	"killer_on_the_run_background",
-	"bowyer_background",
-	"cultist_background",
-	"gambler_background",
-	"minstrel_background",
-	"graverobber_background",
-	"butcher_background",
-	"miner_background",
-	"messenger_background",
-	"raider_background",
-	"historian_background",
-	"tailor_background",
-	"shepherd_background",
-	"houndmaster_background"
-];
-gt.Const.CharacterLaborerBackgrounds <- [
-	"farmhand_background",
-	"daytaler_background",
-	"gravedigger_background",
-	"miner_background",
-	"vagabond_background",
-	"refugee_background"
-];
-gt.Const.CharacterVillageBackgrounds <- [
-	"beggar_background",
-	"farmhand_background",
-	"daytaler_background",
-	"gravedigger_background",
 	"graverobber_background",
 	"houndmaster_background",
-	"miner_background",
-	"tailor_background",
-	"miller_background",
-	"lumberjack_background",
-	"refugee_background",
 	"butcher_background",
 	"ratcatcher_background",
 	"servant_background",
@@ -83,26 +13,8 @@ gt.Const.CharacterVillageBackgrounds <- [
 	"peddler_background",
 	"poacher_background",
 	"vagabond_background"
-];
-gt.Const.CharacterThiefBackgrounds <- [
-	"thief_background",
-	"beggar_background",
-	"vagabond_background",
-	"refugee_background"
-];
-gt.Const.CharacterPiracyBackgrounds <- [
-	"thief_background"
-];
-gt.Const.CharacterVeteranBackgrounds <- [
-	"disowned_noble_background",
-	// "female_disowned_noble_background",
-	"adventurous_noble_background",
-	// "female_adventurous_noble_background",
-	"sellsword_background",
-	"bastard_background",
-	"raider_background"
-];
-gt.Const.CharacterCombatBackgrounds <- [
+]);
+::Const.CharacterCombatBackgrounds <- [
 	"disowned_noble_background",
 	// "female_disowned_noble_background",
 	"adventurous_noble_background",
@@ -123,7 +35,7 @@ gt.Const.CharacterCombatBackgrounds <- [
 	"legend_blacksmith_background",
 	"raider_background"
 ];
-gt.Const.CharacterUndeadBackgrounds <- [
+::Const.CharacterUndeadBackgrounds <- [
 	"disowned_noble_background",
 	// "female_disowned_noble_background",
 	"adventurous_noble_background",
@@ -151,7 +63,7 @@ gt.Const.CharacterUndeadBackgrounds <- [
 	"legend_entrancer_background",
 	"legend_necrosavant_background"
 ];
-gt.Const.CharacterBackgroundsAnimated <- [
+::Const.CharacterBackgroundsAnimated <- [
 	"adventurous_noble_background",
 	"apprentice_background",
 	"bastard_background",
@@ -210,14 +122,14 @@ gt.Const.CharacterBackgroundsAnimated <- [
 	"wildman_background",
 	"witchhunter_background"
 ];
-gt.Const.CharacterFemaleBackgrounds <- [
+::Const.CharacterFemaleBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"legend_witch_background",
 	// "female_adventurous_noble_background",
 	// "female_disowned_noble_background",
 	// "legend_nun_background"
 ];
-gt.Const.SupposedWitchBackgrounds <- [
+::Const.SupposedWitchBackgrounds <- [
 	"legend_shieldmaiden_background",
 	"legend_vala_background",
 	"adventurous_noble_background", // the event calls for females
@@ -226,7 +138,7 @@ gt.Const.SupposedWitchBackgrounds <- [
 	// "female_disowned_noble_background",
 	"legend_monk_background"
 ];
-gt.Const.CharacterPartyBackgrounds <- [
+::Const.CharacterPartyBackgrounds <- [
 	"legend_diviner_background",
 	"legend_illusionist_background",
 	"legend_spiritualist_background",
@@ -249,7 +161,7 @@ gt.Const.CharacterPartyBackgrounds <- [
 	"legend_conjurer_background"
 ];
 
-gt.Const.CharacterMagicBackgrounds <- [
+::Const.CharacterMagicBackgrounds <- [
 	"legend_ancient_summoner_background",
 	"legend_conjurer_background",
 	"legend_death_summoner_background",
@@ -267,7 +179,7 @@ gt.Const.CharacterMagicBackgrounds <- [
 	"legend_warlock_background"
 ];
 
-gt.Const.CharacterBackgroundsRandom <- [
+::Const.CharacterBackgroundsRandom <- [
 	"adventurous_noble_background",
 	"apprentice_background",
 	"assassin_background",
@@ -368,7 +280,7 @@ gt.Const.CharacterBackgroundsRandom <- [
 	"legend_qiyan_background",
 	"shepherd_southern_background"
 ];
-gt.Const.HorseBackgrounds <- [
+::Const.HorseBackgrounds <- [
 	"legend_horse_destrier",
 	"legend_horse_rouncey",
 	"legend_horse_courser"
