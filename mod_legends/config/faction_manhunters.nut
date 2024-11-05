@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("Tactical" in gt.Const))
-{
-	gt.Const.Tactical <- {};
-}
-
-if (!("Actor" in gt.Const.Tactical))
-{
-	gt.Const.Tactical.Actor <- {};
-}
-
-gt.Const.Tactical.Actor.SatoManhunter <- {
+::Const.Tactical.Actor.SatoManhunter <- {
 	XP = 225,
 	ActionPoints = 9,
 	Hitpoints = 80,
@@ -30,7 +18,7 @@ gt.Const.Tactical.Actor.SatoManhunter <- {
 	FatigueRecoveryRate = 18
 };
 
-gt.Const.Tactical.Actor.SatoManhunterVeteran <- {
+::Const.Tactical.Actor.SatoManhunterVeteran <- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 105,
@@ -50,7 +38,7 @@ gt.Const.Tactical.Actor.SatoManhunterVeteran <- {
 	FatigueRecoveryRate = 18
 };
 
-gt.Const.Tactical.Actor.SatoManhunterRanged <- {
+::Const.Tactical.Actor.SatoManhunterRanged <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 60,
@@ -70,7 +58,7 @@ gt.Const.Tactical.Actor.SatoManhunterRanged <- {
 	FatigueRecoveryRate = 18
 };
 
-gt.Const.Tactical.Actor.SatoManhunterVeteranRanged <- {
+::Const.Tactical.Actor.SatoManhunterVeteranRanged <- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 75,
