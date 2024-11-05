@@ -1,15 +1,31 @@
-local gt = this.getroottable();
+::Const.Tactical.Actor.Militia.Bravery = 55;
 
-if (!("Tactical" in gt.Const))
-{
-	gt.Const.Tactical <- {};
-}
+::Const.Tactical.Actor.MilitiaRanged.Bravery = 50;
 
-if (!("Actor" in gt.Const.Tactical))
-{
-	gt.Const.Tactical.Actor <- {};
-}
-gt.Const.Tactical.Actor.LegendCat <- {
+::Const.Tactical.Actor.MilitiaVeteran.Bravery = 70;
+::Const.Tactical.Actor.MilitiaVeteran.MeleeSkill = 60;
+::Const.Tactical.Actor.MilitiaVeteran.MeleeDefense = 10;
+::Const.Tactical.Actor.MilitiaVeteran.RangedDefense = 5;
+::Const.Tactical.Actor.MilitiaVeteran.Initiative = 110;
+
+::Const.Tactical.Actor.MilitiaCaptain.ActionPoints = 11;
+::Const.Tactical.Actor.MilitiaCaptain.Hitpoints = 80;
+::Const.Tactical.Actor.MilitiaCaptain.Bravery = 90;
+::Const.Tactical.Actor.MilitiaCaptain.MeleeSkill = 75;
+::Const.Tactical.Actor.MilitiaCaptain.MeleeDefense = 15;
+::Const.Tactical.Actor.MilitiaCaptain.RangedDefense = 5;
+::Const.Tactical.Actor.MilitiaCaptain.Initiative = 125;
+
+::Const.Tactical.Actor.CaravanHand.MeleeDefense = 5;
+
+::Const.Tactical.Actor.Mercenary.Hitpoints = 110;
+::Const.Tactical.Actor.Mercenary.MeleeDefense = 25;
+
+::Const.Tactical.Actor.Swordmaster.XP = 500;
+
+::Const.Tactical.Actor.HedgeKnight.Hitpoints = 185;
+
+::Const.Tactical.Actor.LegendCat <- {
 	XP = 50,
 	ActionPoints = 12,
 	Hitpoints = 30,
@@ -28,121 +44,7 @@ gt.Const.Tactical.Actor.LegendCat <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.Peasant <- {
-	XP = 50,
-	ActionPoints = 9,
-	Hitpoints = 50,
-	Bravery = 35,
-	Stamina = 100,
-	MeleeSkill = 40,
-	RangedSkill = 30,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 90,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.Militia <- {
-	XP = 100,
-	ActionPoints = 9,
-	Hitpoints = 50,
-	Bravery = 55,
-	Stamina = 100,
-	MeleeSkill = 50,
-	RangedSkill = 35,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 90,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.MilitiaRanged <- {
-	XP = 100,
-	ActionPoints = 9,
-	Hitpoints = 50,
-	Bravery = 50,
-	Stamina = 100,
-	MeleeSkill = 40,
-	RangedSkill = 50,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 100,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.MilitiaVeteran <- {
-	XP = 150,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 70,
-	Stamina = 110,
-	MeleeSkill = 60,
-	RangedSkill = 40,
-	MeleeDefense = 10,
-	RangedDefense = 5,
-	Initiative = 110,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.MilitiaCaptain <- {
-	XP = 200,
-	ActionPoints = 11,
-	Hitpoints = 80,
-	Bravery = 90,
-	Stamina = 120,
-	MeleeSkill = 75,
-	RangedSkill = 50,
-	MeleeDefense = 15,
-	RangedDefense = 5,
-	Initiative = 125,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.CaravanHand <- {
-	XP = 125,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 40,
-	Stamina = 120,
-	MeleeSkill = 50,
-	RangedSkill = 30,
-	MeleeDefense = 5,
-	RangedDefense = 0,
-	Initiative = 100,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.LegendCaravanPolearm <- {
+::Const.Tactical.Actor.LegendCaravanPolearm <- {
 	XP = 125,
 	ActionPoints = 9,
 	Hitpoints = 55,
@@ -161,255 +63,7 @@ gt.Const.Tactical.Actor.LegendCaravanPolearm <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.CaravanGuard <- {
-	XP = 200,
-	ActionPoints = 9,
-	Hitpoints = 70,
-	Bravery = 60,
-	Stamina = 130,
-	MeleeSkill = 70,
-	RangedSkill = 40,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 110,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.Donkey <- {
-	XP = 50,
-	ActionPoints = 1,
-	Hitpoints = 180,
-	Bravery = 100,
-	Stamina = 200,
-	MeleeSkill = 1,
-	RangedSkill = 1,
-	MeleeDefense = -30,
-	RangedDefense = -10,
-	Initiative = 50,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 30
-};
-gt.Const.Tactical.Actor.BountyHunter <- {
-	XP = 300,
-	ActionPoints = 9,
-	Hitpoints = 80,
-	Bravery = 65,
-	Stamina = 125,
-	MeleeSkill = 75,
-	RangedSkill = 60,
-	MeleeDefense = 15,
-	RangedDefense = 8,
-	Initiative = 120,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.BountyHunterRanged <- {
-	XP = 250,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 65,
-	Stamina = 115,
-	MeleeSkill = 50,
-	RangedSkill = 70,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 125,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.Mercenary <- {
-	XP = 350,
-	ActionPoints = 9,
-	Hitpoints = 110,
-	Bravery = 70,
-	Stamina = 135,
-	MeleeSkill = 75,
-	RangedSkill = 65,
-	MeleeDefense = 25,
-	RangedDefense = 10,
-	Initiative = 125,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.MercenaryRanged <- {
-	XP = 300,
-	ActionPoints = 9,
-	Hitpoints = 65,
-	Bravery = 70,
-	Stamina = 135,
-	MeleeSkill = 65,
-	RangedSkill = 75,
-	MeleeDefense = 10,
-	RangedDefense = 15,
-	Initiative = 125,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.Swordmaster <- {
-	XP = 500,
-	ActionPoints = 9,
-	Hitpoints = 70,
-	Bravery = 90,
-	Stamina = 115,
-	MeleeSkill = 100,
-	RangedSkill = 50,
-	MeleeDefense = 80,
-	RangedDefense = 15,
-	Initiative = 115,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.HedgeKnight <- {
-	XP = 450,
-	ActionPoints = 9,
-	Hitpoints = 185,
-	Bravery = 90,
-	Stamina = 160,
-	MeleeSkill = 85,
-	RangedSkill = 50,
-	MeleeDefense = 25,
-	RangedDefense = 15,
-	Initiative = 105,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 25
-};
-gt.Const.Tactical.Actor.MasterArcher <- {
-	XP = 450,
-	ActionPoints = 9,
-	Hitpoints = 80,
-	Bravery = 70,
-	Stamina = 135,
-	MeleeSkill = 65,
-	RangedSkill = 85,
-	MeleeDefense = 15,
-	RangedDefense = 25,
-	Initiative = 140,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 20
-};
-gt.Const.Tactical.Actor.Councilman <- {
-	XP = 150,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 40,
-	Stamina = 120,
-	MeleeSkill = 50,
-	RangedSkill = 30,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 100,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.Envoy <- {
-	XP = 0,
-	ActionPoints = 9,
-	Hitpoints = 50,
-	Bravery = 40,
-	Stamina = 100,
-	MeleeSkill = 40,
-	RangedSkill = 30,
-	MeleeDefense = 0,
-	RangedDefense = 0,
-	Initiative = 100,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.Cultist <- {
-	XP = 150,
-	ActionPoints = 9,
-	Hitpoints = 60,
-	Bravery = 80,
-	Stamina = 110,
-	MeleeSkill = 60,
-	RangedSkill = 40,
-	MeleeDefense = 10,
-	RangedDefense = 10,
-	Initiative = 110,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 15
-};
-gt.Const.Tactical.Actor.Oathbringer <- {
-	XP = 375,
-	ActionPoints = 9,
-	Hitpoints = 125,
-	Bravery = 130,
-	Stamina = 145,
-	MeleeSkill = 80,
-	RangedSkill = 50,
-	MeleeDefense = 20,
-	RangedDefense = 5,
-	Initiative = 135,
-	FatigueEffectMult = 1.0,
-	MoraleEffectMult = 1.0,
-	Armor = [
-		0,
-		0
-	],
-	FatigueRecoveryRate = 25
-};
-
-gt.Const.Tactical.Actor.LegendPeasantButcher <- {
+::Const.Tactical.Actor.LegendPeasantButcher <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -429,7 +83,7 @@ gt.Const.Tactical.Actor.LegendPeasantButcher <- {
 	FatigueRecoveryRate = 15
 };
 
-gt.Const.Tactical.Actor.LegendPeasantMonk <- {
+::Const.Tactical.Actor.LegendPeasantMonk <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 60,
@@ -449,7 +103,7 @@ gt.Const.Tactical.Actor.LegendPeasantMonk <- {
 	FatigueRecoveryRate = 15
 };
 
-gt.Const.Tactical.Actor.LegendPeasantBlacksmith <- {
+::Const.Tactical.Actor.LegendPeasantBlacksmith <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 80,
@@ -469,7 +123,7 @@ gt.Const.Tactical.Actor.LegendPeasantBlacksmith <- {
 	FatigueRecoveryRate = 20
 };
 
-gt.Const.Tactical.Actor.LegendPeasantFarmhand <- {
+::Const.Tactical.Actor.LegendPeasantFarmhand <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -489,7 +143,7 @@ gt.Const.Tactical.Actor.LegendPeasantFarmhand <- {
 	FatigueRecoveryRate = 20
 };
 
-gt.Const.Tactical.Actor.LegendPeasantMinstrel <- {
+::Const.Tactical.Actor.LegendPeasantMinstrel <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -509,7 +163,7 @@ gt.Const.Tactical.Actor.LegendPeasantMinstrel <- {
 	FatigueRecoveryRate = 20
 };
 
-gt.Const.Tactical.Actor.LegendPeasantPoacher <- {
+::Const.Tactical.Actor.LegendPeasantPoacher <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 70,
@@ -529,7 +183,7 @@ gt.Const.Tactical.Actor.LegendPeasantPoacher <- {
 	FatigueRecoveryRate = 15
 };
 
-gt.Const.Tactical.Actor.LegendPeasantWoodsman <- {
+::Const.Tactical.Actor.LegendPeasantWoodsman <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 120,
@@ -549,7 +203,7 @@ gt.Const.Tactical.Actor.LegendPeasantWoodsman <- {
 	FatigueRecoveryRate = 20
 };
 
-gt.Const.Tactical.Actor.LegendPeasantMiner <- {
+::Const.Tactical.Actor.LegendPeasantMiner <- {
 	XP = 150,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -569,7 +223,7 @@ gt.Const.Tactical.Actor.LegendPeasantMiner <- {
 	FatigueRecoveryRate = 15
 };
 
-gt.Const.Tactical.Actor.LegendPeasantSquire <- {
+::Const.Tactical.Actor.LegendPeasantSquire <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 130,
@@ -589,7 +243,7 @@ gt.Const.Tactical.Actor.LegendPeasantSquire <- {
 	FatigueRecoveryRate = 20
 };
 
-gt.Const.Tactical.Actor.LegendPeasantWitchHunter <- {
+::Const.Tactical.Actor.LegendPeasantWitchHunter <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 90,

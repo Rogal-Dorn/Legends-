@@ -1,17 +1,5 @@
-local gt = this.getroottable();
-
-if (!("Tactical" in gt.Const))
-{
-	gt.Const.Tactical <- {};
-}
-
-if (!("Actor" in gt.Const.Tactical))
-{
-	gt.Const.Tactical.Actor <- {};
-}
-
 //the 2 hander powerhouses
-gt.Const.Tactical.Actor.FreeCompanyInfantry <- {
+::Const.Tactical.Actor.FreeCompanyInfantry <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 90,
@@ -30,7 +18,7 @@ gt.Const.Tactical.Actor.FreeCompanyInfantry <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.FreeCompanyLeader <- {
+::Const.Tactical.Actor.FreeCompanyLeader <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 100,
@@ -49,7 +37,7 @@ gt.Const.Tactical.Actor.FreeCompanyLeader <- {
 	],
 	FatigueRecoveryRate = 20
 };
-gt.Const.Tactical.Actor.FreeCompanyLeaderLow <- {
+::Const.Tactical.Actor.FreeCompanyLeaderLow <- {
 	XP = 175,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -70,7 +58,7 @@ gt.Const.Tactical.Actor.FreeCompanyLeaderLow <- {
 };
 
 //3 frontline shield
-gt.Const.Tactical.Actor.FreeCompanyFootman <- {
+::Const.Tactical.Actor.FreeCompanyFootman <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -89,7 +77,7 @@ gt.Const.Tactical.Actor.FreeCompanyFootman <- {
 	],
 	FatigueRecoveryRate = 20
 };
-gt.Const.Tactical.Actor.FreeCompanySpearman <- {
+::Const.Tactical.Actor.FreeCompanySpearman <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 90,
@@ -108,7 +96,7 @@ gt.Const.Tactical.Actor.FreeCompanySpearman <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.FreeCompanySlayer <- {
+::Const.Tactical.Actor.FreeCompanySlayer <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 80,
@@ -129,7 +117,7 @@ gt.Const.Tactical.Actor.FreeCompanySlayer <- {
 };
 
 //2 backline units
-gt.Const.Tactical.Actor.FreeCompanyPikeman <- {
+::Const.Tactical.Actor.FreeCompanyPikeman <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -148,7 +136,7 @@ gt.Const.Tactical.Actor.FreeCompanyPikeman <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.FreeCompanyBillman <- {
+::Const.Tactical.Actor.FreeCompanyBillman <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 75,
@@ -169,7 +157,7 @@ gt.Const.Tactical.Actor.FreeCompanyBillman <- {
 };
 
 //3 ranged units
-gt.Const.Tactical.Actor.FreeCompanyCrossbow <- {
+::Const.Tactical.Actor.FreeCompanyCrossbow <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 40,
@@ -188,7 +176,7 @@ gt.Const.Tactical.Actor.FreeCompanyCrossbow <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.FreeCompanyArcher <- {
+::Const.Tactical.Actor.FreeCompanyArcher <- {
 	XP = 175,
 	ActionPoints = 9,
 	Hitpoints = 55,
@@ -207,7 +195,7 @@ gt.Const.Tactical.Actor.FreeCompanyArcher <- {
 	],
 	FatigueRecoveryRate = 15
 };
-gt.Const.Tactical.Actor.FreeCompanyLongbow <- {
+::Const.Tactical.Actor.FreeCompanyLongbow <- {
 	XP = 200,
 	ActionPoints = 9,
 	Hitpoints = 55,
