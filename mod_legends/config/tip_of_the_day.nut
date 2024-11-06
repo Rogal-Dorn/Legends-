@@ -1,8 +1,6 @@
-local gt = this.getroottable();
-gt.Const.TipOfTheDay <- [
-
-//Shitposts - general chatter or comments. Flavour text.
-	"As brothers we fight, as brothers we die!",
+// technically i can hook these, but the way they're extended in dlcs is really annoying
+::Const.TipOfTheDay.extend([
+	//Shitposts - general chatter or comments. Flavour text.
 	"The arenas in the south do not sate the expectations of some - for that there is another place far, far away from prying eyes...",
 	"If you are having trouble killing trees, try bringing axes.",
 	"You don\'t have to be a hero, you\'re running a business.",
@@ -22,7 +20,7 @@ gt.Const.TipOfTheDay <- [
 	"Learn from your mistakes. Don\'t just repeat them and hope you\'ll get lucky this time.", //im going to get this tattoo'd on my back in old english font.
 	"Do the job. Survive. Get paid.",
 
-//General - non specific helpful advice
+	//General - non specific helpful advice
 	"Shields can be destroyed using axes and some two-handed weapons.",
 	"Different types of shields can be better suited against melee or ranged attacks.",
 	"Bucklers and parry daggers are exceptional against small groups or single targets.",
@@ -110,7 +108,7 @@ gt.Const.TipOfTheDay <- [
 	"You can have your items repaired at the smith for a fee by using \'ALT\' + \'Right Click\'.",
 	"You may find powerful named items far away from civilization by exploring or following tavern rumors.",
 
-//Items - anything roughly relating to items like weapons or food
+	//Items - anything roughly relating to items like weapons or food
 	"Food can be equipped and consumed in battle to restore health and fatigue.",
 	"Ancient Scrolls can have random powerful effects when read. They can be identified by scholars.",
 	"Ranged weapon accuracy drops with distance, unless you are using a northern slingstaff.",
@@ -135,7 +133,7 @@ gt.Const.TipOfTheDay <- [
 	"Cleavers can inflict bleeding wounds.",
 	"Staves and slings are ideal supporting weapons for characters who are not fit for direct combat.",
 
-//Camp - camp specific tips
+	//Camp - camp specific tips
 	"Have you assigned all your characters to camp tasks recently?",
 	"Training in camp will give you raw experience points - the longer you train the bigger the rewards and the risks.",
 	"You can toggle repair twice in your inventory to set items to scrap.",
@@ -145,7 +143,7 @@ gt.Const.TipOfTheDay <- [
 	"Training in camp may result in a temporary injury without the training tent upgrade - but training with a temporary injury could cause a permanent one!",
 
 
-//Perks - perk specific tips
+	//Perks - perk specific tips
 	"The \'Scholar\' perk can allow characters to increase the amount of loot they find after battle.",
 	"Unarmed is good at tiring out enemies who have roughly similar or lower total stamina than you, and puts them at a disadvantage.",
 	"Perks are not exclusive to the group they came with.",
@@ -160,7 +158,7 @@ gt.Const.TipOfTheDay <- [
 	"A character dedicated to unarmed combat may lack damage, but they make up for it with utility.",
 	"Grappling an enemy sets them up to be choked and deal a large amount of damage.",
 
-//Backgrounds - background or recruiting specific tips
+	//Backgrounds - background or recruiting specific tips
 	"Jugglers can leap and tumble, and have a great aim.",
 	"Herbalists can create items and brew potions.",
 	"Peddlers trade bonuses stack, trade runs are possible.",
@@ -191,7 +189,7 @@ gt.Const.TipOfTheDay <- [
 	"Herbalists and Monks can heal in battle...for a steep cost.",
 	"Your mercenaries will interact with each other differently depending on their backgrounds and traits.",
 
-//Enemies - info on specific enemies. Helpful only.
+	//Enemies - info on specific enemies. Helpful only.
 	"Unholds and Rock Unhold regeneration can be countered with spider poison.",
 	"Defeating a Schrat may reward you with an enchanted shield rune.",
 	"Defeating Hexe may reward you with an enchanted helm rune.",
@@ -202,7 +200,7 @@ gt.Const.TipOfTheDay <- [
 	"Wiederganger\'s bite can infect the target, and being killed by it can even cause it to be risen to fight on their side.",
 	"Skeletons are highly resistant to ranged attacks and fire. But less so to throwing axes and crossbows.",
 
-//Trading, Caravans & World eco.
+	//Trading, Caravans & World eco.
 	"Every seven days settlements will increase in wealth naturally.",
 	"Successful contracts and trade caravans will increase a settlement\'s wealth.",
 	"Raiding will decrease a settlement\'s wealth over time, if it falls below 50%, it may decrease in size.",
@@ -213,7 +211,7 @@ gt.Const.TipOfTheDay <- [
 	"Roads are the fastest way to travel over land, but not always the safest.",
 	"Many threats are drawn to roads and will lie in ambush for any who come near.",
 
-//Contracts - or contract haggling.
+	//Contracts - or contract haggling.
 	"Not every contract is worth the risk.",
 	"Try to negotiate better payment for your contracts.",
 	"Try to negotiate payment modalities that guarantee you the most money for contracts.",
@@ -224,16 +222,96 @@ gt.Const.TipOfTheDay <- [
 	"If contract negotiations turn sour, it will damage your relations with your potential employer.",
 	"You can find contract offers in the top left of settlement screens."
 
-///FINAL LINE MUST END WITHOUT AN ,
+	///FINAL LINE MUST END WITHOUT AN ,
 ];
-gt.Const.LoadingScreens <- [
-	"ui/screens/loading_screen_01.jpg",
-	"ui/screens/loading_screen_01.jpg",
-	"ui/screens/loading_screen_02.jpg",
-	"ui/screens/loading_screen_03.jpg",
-	"ui/screens/loading_screen_04.jpg",
-	"ui/screens/loading_screen_04.jpg",
-	"ui/screens/loading_screen_07.jpg",
-	"ui/screens/loading_screen_08.jpg"
+// desert dlc tips
+local tips = [
+	"The southern city states have made unparalleled advancements in medicine, astrology and alchemy.",
+	"The southerners call themselves \'Gilded\' after their god, in whose shine they bask day in and out.",
+	"The \'indebted\' are a social caste of de-facto slaves in the city states, made up of criminals, prisoners of war and violators of religous dogma.",
+	"The southern city states are built on the ruins of the Ancient Empire.",
+	"Nomads are a southern people that are not subject to the rule of a city state.",
+	"Nomads are experts in desert warfare and using the environment to their advantage - including throwing it in your face.",
+	"An Ifrit is a demonic entity possessing rocks, stone and shifting sands.",
+	"A Qatal Dagger is best used in combination with other weapons that can stun or daze opponents.",
+	"The Handgonne takes a whole turn to reload - unless your character has the \'Crossbows & Firearms Mastery\' perk.",
+	"The Handgonne is a ranged weapon that can hit up to 6 targets with a single attack, but has less range than either bows or crossbows.",
+	"The Fire Lance is reloaded after every battle just like throwing weapons are.",
+	"Arena matches offer a quick way to earn coin - but you can\'t retreat during matches or loot afterwards.",
+	"Arena tournaments are special events with different rules. Fight with five men over three consecutive rounds and win a famed item!",
+	"Every fifth arena match offers the chance to win a piece of gladiator equipment that can\'t be bought otherwise.",
+	"Fire Pots can be used not just to inflict damage on your opponents, but also to deny them access to tiles and delay them.",
+	"Smoke Pots can be used for a safe retreat even if your men are already locked in melee.",
+	"Mortars of the city states can only fire if an engineer is next to them to operate them.",
+	"With the \'Manhunters\' origin you can make prisoners after every battle against humans and force them to fight for you.",
+	"With the \'Gladiators\' origin you start with three powerful characters, but losing all three will end your campaign.",
+	"Hire non-combat followers for your retinue to customize your campaign to your playstyle.",
+	"Losing named shields to orcs? Hire a blacksmith for your retinue and repair any item, even if its durability reaches zero.",
+	"Training your new recruits takes too long? Hire a drill sergeant to have them gain experience faster.",
+	"Facing too few enemy champions? Hire a bounty hunter to find more and even earn a bounty for every one you kill.",
+	"Paying too much in wages? Hire a paymaster to reduce the wages you have to pay.",
+	"Wondering who went there? Hire a Lookout and get more information on any footprints on the world map.",
+	"Always out of ammo and tools? Hire a scavenger to reclaim ammo you spent and gather tools from armor you destroyed.",
+	"Inventory full? Buy carts and wagons for your company in the Retinue screen.",
+	"You unlock slots for your retinue of non-combat followers by gaining Renown.",
+	"Ferocious hyenas roam the southern deserts, with strong jaws that can crush even metal armor and inflict bleeding wounds.",
+	"Try out different retinue followers to find those that complement your playstyle and chosen company origin."
+];
+// paladins dlc tips
+
+local tips = [
+	"With the \'Anatomists\' origin, defeating new enemies grants potions that mutate your men and grant them special abilities.",
+	"With the \'Oathtakers\' origin, instead of ambitions you\'ll pick oaths that grant special boons and burdens."
 ];
 
+// unhold dlc tips
+local tips = [
+	"The frozen wasteland of the north is home to a giant beast not seen anywhere else.",
+	"A Lindwurm is a wingless bipedal dragon resembling a large snake.",
+	"There are different regional variants of the Unhold.",
+	"Unholds can heal wounds quickly, even in combat.",
+	"Trees move slowly.",
+	"Alps feed on the fear and agony of people having nightmares.",
+	"Explore the world to find legendary locations with legendary treasure.",
+	"Two-handed maces excel in disabling single opponents.",
+	"Axes are particularly effective against trees.",
+	"A Schrat is a living tree, a being of bark and wood, with a mind truly alien.",
+	"Use armor attachments to further improve and specialize the equipment of your men.",
+	"A Hexe appears as a youthful lady with radiant beauty to those she enthralls.",
+	"Hexen are known to strike ill-omened deals that people come to regret.",
+	"A Hexe can curse one of your men to suffer the same wounds as she does.",
+	"Webknechts inflict additional damage to targets trapped in their webs.",
+	"Webknechts are more confident, the larger the group they are in.",
+	"The Webknecht is a large arachnid that lives in sizable colonies in the dark areas of forests throughout the world.",
+	"Collect trophies from slain beasts and have the taxidermist craft useful items from them.",
+	"Selling trophies from slain beasts can be lucrative. You can always get new ones.",
+	"Fencing swords are most powerful in the hands of characters with high initiative.",
+	"Use throwing spears to destroy the shields of your most dangerous opponents from afar.",
+	"Nachzehrers are found more often in the southern parts of the world.",
+	"Alps are almost exclusively encountered at night.",
+	"The further away from civilization, the more dangerous the beasts that roam the land.",
+	"Potions, despite their colorful descriptions, are essentially drugs, and characters can get addicted to them.",
+	"Overdosing on potions can lead to characters vomiting and getting sick.",
+	"With the \'Beast Slayers\' origin you\'ll have an easier time tracking beasts and get more trophies from any of those you slay."
+];
+
+// dlc wildmen
+local tips = [
+	"The north is inhabited by fierce barbarian tribes.",
+	"Barbarians often overwhelm their opponents at the start of battle, but quickly become fatigued.",
+	"Northern warhounds are sturdier than southern wardogs, but not as quick and agile.",
+	"The rhythmic tribal beats of drummers reduce the fatigue of all barbarians on the field by a small amount each round.",
+	"Beastmasters can not crack the whip to direct their beastly warmachines when adjacent to an enemy.",
+	"Barbarians look forward to meeting their ancestors in the afterlife.",
+	"Try different origins to tailor your campaign to your play style.",
+	"With the \'Lone Wolf\' origin you\'ll have a player character in the world. If you die, the campaign ends.",
+	"With the \'Peasant Militia\' origin you can take up to 16 men into battle at once.",
+	"With the \'Cultists\' origin your god will demand sacrifices from you, but also bestow boons upon those loyal to him.",
+	"With the \'Band of Poachers\' origin you\'ll move faster on the worldmap.",
+	"With the \'Trading Caravan\' origin you\'ll get better prices for both buying and selling.",
+	"Slings inflict the \'Daze\' status effect on a hit to the head.",
+	"With stones abundant everywhere, Slings will never run out of ammunition.",
+	"Battle Whips can temporarily disarm opponents, preventing them from using weapon skills.",
+	"Battle Whips can inflict bleeding wounds, but perform dismally against armor.",
+	"Scimitars and Shamshirs are more likely to inflict debilitating injuries when hitting a target."
+];
