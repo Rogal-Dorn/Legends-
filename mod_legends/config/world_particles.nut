@@ -1,143 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.Tactical <- {};
-}
-
-gt.Const.World.SmokeParticles <- [
-	{
-		Delay = 0,
-		Quantity = 250,
-		LifeTime = 90000,
-		SpawnRate = 25,
-		Brushes = [
-			"ash_01",
-			"ash_02"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.5,
-				LifeTimeMax = 0.7,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.5,
-				ScaleMax = 0.75,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				DirectionMin = this.createVec(-0.4, 0.5),
-				DirectionMax = this.createVec(0.0, 0.5),
-				SpawnOffsetMin = this.createVec(-50, -30),
-				SpawnOffsetMax = this.createVec(50, 15)
-			},
-			{
-				LifeTimeMin = 6.0,
-				LifeTimeMax = 8.0,
-				ColorMin = this.createColor("ffffffff"),
-				ColorMax = this.createColor("ffffffff"),
-				ScaleMin = 1.25,
-				ScaleMax = 1.5,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.3,
-				LifeTimeMax = 0.5,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 1.5,
-				ScaleMax = 2.0,
-				VelocityMin = 0,
-				VelocityMax = 0,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			}
-		]
-	}
-];
-gt.Const.World.FireParticles <- [
-	{
-		Delay = 0,
-		Quantity = 60,
-		LifeTime = 50000,
-		SpawnRate = 60,
-		Brushes = [
-			"effect_fire_01",
-			"effect_fire_02",
-			"effect_fire_03"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.1,
-				ColorMin = this.createColor("ffe7cf00"),
-				ColorMax = this.createColor("ffeacf00"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.5,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				DirectionMin = this.createVec(-0.4, 0.5),
-				DirectionMax = this.createVec(0.4, 0.5),
-				SpawnOffsetMin = this.createVec(-70, -30),
-				SpawnOffsetMax = this.createVec(70, 20),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.5,
-				ColorMin = this.createColor("ff813dff"),
-				ColorMax = this.createColor("fec19fff"),
-				ScaleMin = 0.6,
-				ScaleMax = 0.6,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				DirectionMin = this.createVec(-0.4, 0.6),
-				DirectionMax = this.createVec(0.4, 0.6),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.5,
-				ColorMin = this.createColor("fc6a52f0"),
-				ColorMax = this.createColor("fcaa52f0"),
-				ScaleMin = 0.6,
-				ScaleMax = 0.6,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("d8380000"),
-				ColorMax = this.createColor("d8380000"),
-				ScaleMin = 0.6,
-				ScaleMax = 0.6,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			}
-		]
-	}
-];
-
-gt.Const.World.HolyFlameParticles <- [
+::Const.World.HolyFlameParticles <- [
 	{
 		Delay = 0,
 		Quantity = 60,
@@ -215,7 +76,7 @@ gt.Const.World.HolyFlameParticles <- [
 	}
 ];
 
-gt.Const.World.TransformParticles <- [
+::Const.World.TransformParticles <- [
 	{
 		Delay = 0,
 		Quantity = 60,
@@ -294,7 +155,7 @@ gt.Const.World.TransformParticles <- [
 ];
 
 
-gt.Const.World.CampSmokeParticles <- [
+::Const.World.CampSmokeParticles <- [
 	{
 		Delay = 0,
 		Quantity = 40,
@@ -348,7 +209,7 @@ gt.Const.World.CampSmokeParticles <- [
 		]
 	}
 ];
-gt.Const.World.CampFireParticles <- [
+::Const.World.CampFireParticles <- [
 	{
 		Delay = 0,
 		Quantity = 20,
@@ -425,7 +286,7 @@ gt.Const.World.CampFireParticles <- [
 		]
 	}
 ];
-gt.Const.World.SmelterSmokeParticles <- [
+::Const.World.SmelterSmokeParticles <- [
 	{
 		Delay = 0,
 		Quantity = 40,
@@ -479,7 +340,7 @@ gt.Const.World.SmelterSmokeParticles <- [
 		]
 	}
 ];
-gt.Const.World.BlizzardParticles <- [
+::Const.World.BlizzardParticles <- [
 	{
 		Delay = 0,
 		Quantity = 75,
