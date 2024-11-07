@@ -1,11 +1,5 @@
-local gt = this.getroottable();
-
-if (!("Strings" in gt.Const))
-{
-	gt.Const.Strings <- {};
-}
-
-gt.Const.Strings.PayTavernRoundIntro <- [
+// we almost entirely replace this file to add directions, gender pronouns and such
+::Const.Strings.PayTavernRoundIntro = [
 	"The company cheer your name as they drink.",
 	"The company drink to fallen comrades.",
 	"The company cheer the company name as they drink.",
@@ -20,14 +14,14 @@ gt.Const.Strings.PayTavernRoundIntro <- [
 	"Your company cheer and toast to riches and a long life.",
 	"The beer makes the hardships of the day disappear."
 ];
-gt.Const.Strings.PayTavernRumorsIntro <- [
+::Const.Strings.PayTavernRumorsIntro = [
 	"The patrons shout your name as they clink their cups. The drink loosens their tongues.",
 	"The patrons nod approvingly.",
 	"People raise their mugs in appreciation.",
 	"The people murmur approvingly.",
 	"The innkeeper rings a bell to let everyone know the next round is on you."
 ];
-gt.Const.Strings.RumorsLocation <- [
+::Const.Strings.RumorsLocation = [
 	"There\'s a place called %location% %terrain% to the %direction% of here. Most people know about it, I think, but few would venture there.",
 	"%randomname% told me \'bout %location% the other day. Full of treasure he said, %distance% %direction% of here. Or maybe I\'m remembering it wrong.",
 	"If it\'s adventure you seek, there\'s a place called %location% %terrain% %direction% of here. Don\'t know who lives there nowadays, though.",
@@ -36,8 +30,8 @@ gt.Const.Strings.RumorsLocation <- [
 	"Came across %location% on your way here? Why, it\'s %terrain% to the %direction%. Someone should hire you to burn that thing to the ground. Nothing good\'s coming from there, that\'s for sure.",
 	"We spotted something on our way here, hidden way off the road, %terrain% %distance% %direction% of %townname%. Don\'t know what the locals call it, or if they even know about it, but it might be worth it going back there."
 ];
-gt.Const.Strings.RumorsContract <- [
-	"I\'ve heard the council of %settlement% is looking to hire mercenaries %direction%  of here. Don\'t know what for.",
+::Const.Strings.RumorsContract = [
+	"I\'ve heard the council of %settlement% is looking to hire mercenaries %direction% of here. Don\'t know what for.",
 	"A group of young lads left %direction% for %settlement% some days ago. They\'re looking to hire armed fighters over there, willing to pay real good. I just hope they make it back alive.",
 	"If you lot is looking for work, I\'ve heard that they\'re hiring sellswords over at %settlement% to the %direction%.",
 	"You heard that they\'re looking to hire fighting folk at %settlement%? its %direction% from here",
@@ -46,7 +40,7 @@ gt.Const.Strings.RumorsContract <- [
 	"If it\'s work you\'re looking for, they\'re taking crowns in to the %direction% over at %settlement% to hire strong men.",
 	"Heard that some fancy fat merchant or so from %settlement% is looking to hire armed guards the other day. Well, I ain\'t going %direction% to die to there for him, no thanks. Have me house and wife right here."
 ];
-gt.Const.Strings.RumorsGeneral <- [
+::Const.Strings.RumorsGeneral = [
 	"If you\'re looking to fetch a good price for your trading goods, my friend, you should go to one of the large cities or castles and not some run-down poor village at world\'s ass.",
 	"The drinks over in %randomtown% are way better than the cat piss they serve here!",
 	"A trader came by this morning, claims he saw dead people shuffling through the hills nearby. Won\'t buy that humbug, that\'s for sure!",
@@ -72,7 +66,7 @@ gt.Const.Strings.RumorsGeneral <- [
 	"You heard about them sellswords goin\' south? Somthin\' \'bout a book. Strange fella he was. Stranger ear too...",
 	"I\'d be mindful of all them sellswords about — they say they\'d turn on anyone for the right price."
 ];
-gt.Const.Strings.RumorsCivilian <- [
+::Const.Strings.RumorsCivilian = [
 	"Always be sceptical towards the nobility, my friend. You never know what their real agenda might be.",
 	"You smell that? No? That must mean — oh no...",
 	"You seen a weird fella about? Five foot tall, jar of leeches? No? Alright nevermind then...",
@@ -94,7 +88,7 @@ gt.Const.Strings.RumorsCivilian <- [
 	"We had a murder here. Some bastard from %randomtown% put a knife into the back of one of the merchants. He\'ll see the noose on Sunday, you should come watch!",
 	"They burned %randomfemalename% at the stake last week, some witchhunter did. Just appeared one day, accused her of sorcery and whatnot and had her burned. The council didn\'t object and that man just left soon after. Wish I knew who he was, really. Good thing he saved us from that witch, I suppose..."
 ];
-gt.Const.Strings.RumorsMilitary <- [
+::Const.Strings.RumorsMilitary = [
 	"Ever fought an orc? It\'s said they\'re twice as tall and thrice as strong as a man, and that they can split us clean in half with a single strike!",
 	"Picking up desperate farmers and fishers for your company is all good and well, but you should look for recruits in a castle like this one. Here you\'ll find people who actually know which end of the sword goes where.",
 	"A sturdy shield is a real life-saver, let me tell you. Wouldn\'t have a man fight without one.",
@@ -127,14 +121,14 @@ gt.Const.Strings.RumorsMilitary <- [
 	"I\'ve trained militia before, and let me tell you, spears are the best weapons for when the soldiers don\'t know what they\'re doing yet. Cheap and easy to hit with. Put a few folk together for a spearwall and it\'s hard to even get close to them without a spear in your belly.",
 	"Ever fought goblins? Nastly little buggers, don\'t be fooled by their size. I\'d take large kite shields to protect the fighters from their arrows. And a pack of wardogs to run them down as they scatter, if you can afford it."
 ];
-gt.Const.Strings.RumorsMiningSettlement <- [
+::Const.Strings.RumorsMiningSettlement = [
 	"The other day my pickaxe broke while I was hammering away. Piece of it clipped my cheek. Not much and I\'d be missing an eye!",
 	"The mines are a real deathtrap, we\'re losing folk every week. Even venturing with you might be better for longevity, ha!",
 	"Working the mines has its merits, too, you know. We never get wet from the rain, it\'s just the dust that kills you eventually.",
 	"Hit a rock with my pick once — before you laugh it started movin\' on its own, damn almost killed me!"
 	"In the other mine shaft, %randomname% found a nugget the size of me fist! The overseer got to him before he could hide it, though."
 ];
-gt.Const.Strings.RumorsFarmingSettlement <- [
+::Const.Strings.RumorsFarmingSettlement = [
 	"Even with the bad harvest this year the landlord won\'t give us a rest! The high folks got to have their feasts, you know...",
 	"If a lordling every gives you trouble, see how smart he is on the other end of yer pitchfork!",
 	"You seen those beasts eatin\' corpses? If its grey, you stay — if it\'s pick you better run as far and fast as you can. Town guard won\'t help so don\'t bother \'em.",
@@ -142,13 +136,13 @@ gt.Const.Strings.RumorsFarmingSettlement <- [
 	"I\'ve been a farmhand all my life and sometimes I wish I\'d taken the chance to venture with a company like yours... well, it\'s too late for that now.",
 	"There\'s lots of young and naive lads out there looking for adventure. I hope you take good care of them and return them safely to their families one day."
 ];
-gt.Const.Strings.RumorsFishingSettlement <- [
+::Const.Strings.RumorsFishingSettlement = [
 	"The sea is a fickle mistress. One moment it is as calm as a mirror and the next you find yourself in a tempest fighting for your life.",
 	"Nobody knows what lives in the deep black waters, but you hear the old fishers talk about giant fish larger than any ship, tentacles that crush boats like they were nutshells, and evil, dead eyes under the surface.",
 	"Some of the old fishers will tell you that those lost at sea are cursed to walk the seabed, only to be released if they drag others down to take their place. Priest says it ain\'t true, but I don\'t know. What are the elders telling it for, then?",
 	"The biggest fish of my catch I always place in front of %randomfemalename%\'s door to woo her. Some day I\'m going to reveal myself as her secret admirer and ask for her hand!"
 ];
-gt.Const.Strings.RumorsForestSettlement <- [
+::Const.Strings.RumorsForestSettlement = [
 	"I\'ve been a lumberjack all my life, just like my father before me. But the young folk these days are all \'bout adventure and seeing the lands, you may well find some hanging \'round the market that\'ll have no qualms \'bout coming with you on the road.",
 	"There are things in the forest... in the deep, dark parts, there are things. Nobody dares speak of them but trust me, those are no animals...",
 	"Say, you interested in woodcarvings? The works of %randomname% are true pieces of art and made our town known throughout the realm!",
@@ -159,7 +153,7 @@ gt.Const.Strings.RumorsForestSettlement <- [
 	"I\'ve been hearing folk tell of eyes watching them from the forest\'s edge. Seems to be some vile creatures making their nests in these here woods. Perhaps they\'re sizing up their prey before striking.",
 	"Long as I can remember the woods around here have been full of wildlife. Deer, boar, wolves and bear roam them in great number. Because of this it\'s been tradition for families to teach the art of archery at childhood. Try to outmatch any of our lads with a bow and you\'re sure to be disgraced."
 ];
-gt.Const.Strings.RumorsTundraSettlement <- [
+::Const.Strings.RumorsTundraSettlement = [
 	"You may think our land is barren and scant but once you live here you will learn to love it like no other!",
 	"Saw a woman built like an Ox last season — got into the fight with a few handsy watchmen and ended up turning this whole place upside down. Legendary it was!",
 	"If you\'re up in the mountains and see one of the rocks move, just run, stranger. It ain\'t worth your life to gawk at.",
@@ -167,7 +161,7 @@ gt.Const.Strings.RumorsTundraSettlement <- [
 	"If you\'re looking to make a quick coin with some trades look around for furs. The ones from around here are the best far and wide.",
 	"You came to the right place if you\'re looking for able bodies to bolster your company. Us northern folk are strong, rugged and honest!"
 ];
-gt.Const.Strings.RumorsSnowSettlement <- [
+::Const.Strings.RumorsSnowSettlement = [
 	"The best remedy against biting winds and freezing cold can be found right here: Beer and mead!",
 	"Knew a madman who lived out here. Said somthing about a cave and disappeared...",
 	"You seen that weird woman around? The one with that staff who keeps talkin\' about stones? What is the world comin\' to, eh?",
@@ -177,7 +171,7 @@ gt.Const.Strings.RumorsSnowSettlement <- [
 	"I\'ve been told that a long time ago this land was all green with many proud castles and awe-inspiring towers. Most of them have crumbled to ruins by now and are covered with snow. But they\'ll have to be out there somewhere...",
 	"Four winters. Four winters since I saw a chance for quick coin and raided a roadside chapel. Put the iron to a holy man that tried to hold me back; now no amount of crowns can repay the debt that my spirit owes."
 ];
-gt.Const.Strings.RumorsSteppeSettlement <- [
+::Const.Strings.RumorsSteppeSettlement = [
 	"You folks must be sweating like pigs under all that armor. Maybe you should travel when the moon is out?",
 	"Let me tell you, the southern wine is the best you can find in all the lands. But you better start bashing in some heads or whatever it is you do so you can afford the good stuff, because it doesn\'t come cheap.",
 	"A trader from the north got lost in the steppe the other week. He made it back but did not stop fantasizing about some lake he discovered surrounded by lush plants and strange animals.",
@@ -185,7 +179,7 @@ gt.Const.Strings.RumorsSteppeSettlement <- [
 	"Tell your company to keep their mitts off of the innkeeper\'s daughter. The last lover boy who tried something had his nose cut right off.",
 	"I\'m from up north originally, moved to %townname% just some years ago. Never could stand the cold; snow and wind, day in and out. So one day I just said to myself, %randomname%, I said, go where the sun warms the earth and you\'re not shivering every time you go out to collect fire wood. And so I did. Didn\'t regret it since."
 ];
-gt.Const.Strings.RumorsSwampSettlement <- [
+::Const.Strings.RumorsSwampSettlement = [
 	"You like mushrooms? Well, I most certainly hate them! But there\'s not much else to be found in this stinking swamp besides biting midges and spiders.",
 	"Take care goining into the swamps, friend. There\'s a bunch of nutters out there with bows and slings who are dyin\' to meet their god early.",
 	"Word of advice from a man who\'s lived here all his life — stay outta the water. If someone decides to get the jump on you and you\'re waist high in muck you better have an escape plan.",
@@ -193,7 +187,7 @@ gt.Const.Strings.RumorsSwampSettlement <- [
 	"There once was a stone road leading here bringing traders, customers and all kinds of folk. One day it completely sunk into the swamp and look at this place now...",
 	"Don\'t wander through the swamps at night! You might get lost, yes, but out in the swamp at night there\'s far worse things that can happen to a man. Just ask anyone around here."
 ];
-gt.Const.Strings.RumorsDesertSettlement <- [
+::Const.Strings.RumorsDesertSettlement = [
 	"Those northeners pay good coin for our silk and spices, so we have caravans going up all the time. And caravans need escorts, you know.",
 	"If I can give you one piece of advice, it\'s this: don\'t venture too far out in the desert. There are things far worse than heat and sand at the edge of the world.",
 	"Make sure you fill up on water before you go out into the desert, crownling. The heat will kill any man, big or small.",
@@ -204,7 +198,7 @@ gt.Const.Strings.RumorsDesertSettlement <- [
 	"A friend of mine said something about an ancient temple somewhere in the desert. Sounds like a fool\'s errand for me...",
 	"Those northern dogs have no right to come into our lands, they should stay where they belong!"
 ];
-gt.Const.Strings.RumorsItemsOrcs <- [
+::Const.Strings.RumorsItemsOrcs = [
 	[
 		"A caravan transporting some valuable ceremonial weapon has been raided %direction% of here. Rumor is the victims had every single bone broken, and a terrible stench hangs in the air.",
 		"A patron recently spoke of some weapon called the %item% he wanted to sell. Said he got spooked by some greenskinned beasts on his way to town and abandoned it %terrain% %direction% from here.",
@@ -223,7 +217,7 @@ gt.Const.Strings.RumorsItemsOrcs <- [
 		"Word has it %randomnoble% got forever put to sleep by a band of greenskins %direction% of here. He was well known for abusing all his servants so you won\'t find anyone crying for him \'round here. Just a shame for the mastercrafted armor he used to boast, that one could buy us a lot of pigs and cows. And chickens!"
 	]
 ];
-gt.Const.Strings.RumorsItemsGoblins <- [
+::Const.Strings.RumorsItemsGoblins = [
 	[
 		"A really pissed-off nobleman told me the other day that some stunty greenskins made off with his family heirloom after poisoning his trusted guard dogs. He swears they hid %terrain% somewhere %distance% from here, but I don\'t think he ever convinced anyone to go %direction% to retrieve it for him. Certainly not me.",
 		"Afraid of greenskins? Some real beaten up soldiers passed down through here the other day. Said they wanted to wrestle a well-known weapon from goblins %direction% of here, but it sure looked like it didn\'t go down as planned and they had to pull back. Guess their prize is still up for the taking."
@@ -239,7 +233,7 @@ gt.Const.Strings.RumorsItemsGoblins <- [
 		"You may be interested to learn that our old herbalist outside of town got robbed last night just as a wealthy knight payed him a visit. The assailants, he claims it was small creatures looking like deformed kids, killed the knight and made off to %terrain% in the %direction%."
 	]
 ];
-gt.Const.Strings.RumorsItemsBandits <- [
+::Const.Strings.RumorsItemsBandits = [
 	[
 		"Word has it that a bunch of ne\'er do wells %direction% from here got their hands on something real fancy and sharp through a brash heist.",
 		"Buncha lowlifes tried raiding a caravan %terrain% %distance% from here. They all got slain, but rumor has it that some valuable weapon went missing during the fight. The caravan guards have been searching %direction% for it frantically since.",
@@ -257,7 +251,7 @@ gt.Const.Strings.RumorsItemsBandits <- [
 		"A brash young man came through just the other day, nobility methinks, looking for an old family heirloom called %item%. Last I saw, he was heading %direction% of here."
 	]
 ];
-gt.Const.Strings.RumorsItemsUndead <- [
+::Const.Strings.RumorsItemsUndead = [
 	[
 		"Now, I don\'t want to start any rumors, but I saw a dead man walking around %direction% of here. His rotten hands clutched an extraordinary weapon but I\'d never dare go there again in my life!",
 		"Some drunk scavenger came by last night, told us he\'d tried to wrestle a weapon beset with gems from a dead man\'s hands %distance% to the %direction%. Said his grip was like a vice, and then he made a sound, so he ran off. Such nonsense, but he looked spooked as all hell.",
@@ -272,7 +266,7 @@ gt.Const.Strings.RumorsItemsUndead <- [
 		"You heard of %location%? Ask anyone around here, it\'s been haunting %townname% since before I was born. Folks say some armor from the gods is sealed there for all time, back from when man first settled to the %direction%"
 	]
 ];
-gt.Const.Strings.RumorsItemsBarbarians <- [
+::Const.Strings.RumorsItemsBarbarians = [
 	[
 		"Nothing is holy to those barbarian brutes! A completely naked priest stumbled in here from %direction%. He was on the way to bring a revered relic to the temple but they took it from him.",
 		"A mercenary company came by here hunting barbarians. The leader wielded a weapon unlike anything I ever saw before. They turned %direction% and were never to be seen again.",
@@ -291,7 +285,7 @@ gt.Const.Strings.RumorsItemsBarbarians <- [
 		"Are you also here to look for %item% like all those other fools? It is said to lie somewhere %terrain% %direction%. Nothing but hogwash if you ask me..."
 	]
 ];
-gt.Const.Strings.RumorsItemsNomads <- [
+::Const.Strings.RumorsItemsNomads = [
 	[
 		"The nomads take what they want and hide out in the desert. The guards have been looking for them %terrain% %direction% of here. I think they\'re %distance%.",
 		"The days here in the south are as bright as the nights are dark. I must have stumbled and lost my precious weapon %distance% to the %direction%, but I gave up looking for it.",
@@ -308,7 +302,7 @@ gt.Const.Strings.RumorsItemsNomads <- [
 		"The most skilled armorsmith around, who happens to be a friend of mine, got tricked by those damned nomads and they made off with one of his prize armors. If you come across any nomads %direction% of here, search their bodies thoroughly!"
 	]
 ];
-gt.Const.Strings.RumorsGreaterEvil <- [
+::Const.Strings.RumorsGreaterEvil = [
 	[],
 	[
 		"The nobles are quarreling again like two old hags at the garden fence. They just can\'t get over their pride!",
