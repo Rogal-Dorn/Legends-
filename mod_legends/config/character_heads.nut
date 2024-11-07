@@ -154,14 +154,6 @@
 	"bust_head_female_16"
 ];
 
-::Const.Faces.AllMale.extend([
-	"bust_head_19",
-	"bust_head_20",
-	"bust_head_34",
-	"bust_head_50",
-	"bust_head_51"
-]);
-
 ::Const.Faces.AllFemale <- [
 	"bust_head_female_01",
 	"bust_head_female_02",
@@ -287,12 +279,6 @@
 	"bust_head_southern_female_09"
 ]
 
-
-::Const.Faces.Necromancer.extend([
-	"bust_head_necro_female_01",
-	"bust_head_necro_female_02"
-]);
-
 ::Const.Faces.NecromancerMale <- [
 	"bust_head_necro_01",
 	"bust_head_necro_02"
@@ -310,41 +296,6 @@
 
 ::Const.Faces.Skeleton <- [
 	"bust_skeleton_head"
-];
-
-::Const.Hair.Barber.extend([
-	"22",
-	"23",
-	"24",
-	"25",
-	"26",
-	"27",
-	"28",
-	"29",
-	"31",
-	"32",
-	"southern_01",
-	"southern_02",
-	"southern_03",
-	"southern_04",
-	"southern_05",
-	"southern_06",
-	"southern_07",
-	"southern_08"
-]);
-
-::Const.Hair.AllMale.extend([
-	"22",
-	"31",
-	"32",
-	"southern_01",
-	"southern_02",
-	"southern_03",
-	"southern_04",
-	"southern_05",
-	"southern_06",
-	"southern_07",
-	"southern_08"
 ];
 
 ::Const.Hair.Berserker <- [
@@ -429,11 +380,6 @@
 	"32"
 ];
 
-::Const.Hair.WildMale.extend([
-	"31",
-	"32",
-]);
-
 ::Const.Hair.Horse <- [
 	"horse_hair_black",
 	"horse_hair_brown",
@@ -444,17 +390,6 @@
 	"horse_hair_tan",
 	"horse_hair_white"
 ];
-
-::Const.Beards.Barber.extend([
-	"legends_01",
-	"legends_02",
-	"19"
-]);
-::Const.Beards.All.extend([
-	"legends_01",
-	"legends_02",
-	"19"
-]);
 
 ::Const.Beards.Berserker <- [
 	"legends_02"
@@ -468,42 +403,6 @@
 ::Const.Beards.Female <- [
 	""
 ];
-
-::Const.Beards.Tidy.extend([
-	"legends_01",
-	"legends_02"
-]);
-::Const.Beards.Untidy.extend([
-	"19",
-	"legends_01",
-	"legends_02"
-]);
-::Const.Beards.SouthernUntidy.extend([
-	"legends_01"
-]);
-::Const.Beards.Raider.extend([
-	"legends_01",
-	"legends_02"
-]);
-::Const.Beards.Monk.extend([
-
-	"legends_01"
-]);
-::Const.Beards.Southern.extend([
-	"legends_01"
-]);
-::Const.Beards.Zombie.extend([
-	"legends_01",
-	"legends_02"
-]);
-::Const.Beards.ZombieExtended.extend([
-	"legends_01",
-	"legends_02"
-]);
-::Const.Tattoos.All.extend([
-	"tattoo_07",
-	"tattoo_08"
-]);
 
 ::Const.Hair.HorseBody <- [
 	"horse_body_hair_black",
@@ -604,12 +503,6 @@
 	"bust_female_northern_body_02"
 ];
 
-
-//this is a dummy for dlc
-::Const.Bodies.Barber = [
-
-];
-
 ::Const.Bodies.BarberSouthernFemale <- [
 	"bust_female_southern_body_00",
 	"bust_female_southern_body_01",
@@ -617,23 +510,23 @@
 	"bust_female_southern_body_03",
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05"
-]
+];
 ::Const.Bodies.BarberNorthernFemale <- [
 	"bust_naked_body_03",
 	"bust_female_northern_body_00",
 	"bust_female_northern_body_01",
 	"bust_female_northern_body_02"
-]
+];
 ::Const.Bodies.BarberSouthernMale <- [
 	"bust_naked_body_southern_00",
 	"bust_naked_body_southern_01",
 	"bust_naked_body_southern_02"
-]
+];
 ::Const.Bodies.BarberNorthernMale <- [
 	"bust_naked_body_00",
 	"bust_naked_body_01",
 	"bust_naked_body_02"
-]
+];
 
 ::Const.Bodies.Horses <- [
 	"bust_naked_body_100",
@@ -648,12 +541,11 @@
 
 ::Const.Bodies.Donkeys <- [
 	"bust_naked_body_05"
-]
+];
 
 ::Const.Bodies.LegendTattos <- [
 	"bust_naked_body_04"
-]
-
+];
 
 ::Const.Hair.SouthernFemale <- [
 	"01",
@@ -675,50 +567,50 @@
 	"27",
 	"28",
 	"30"
-]
+];
 
 ::Const.HairColors.African <- [
 	"black",
 	"brown",
 	"grey"
-]
+];
 
 ::Const.Bodies.AfricanFemale <- [
 	"bust_female_southern_body_03",
 	"bust_female_southern_body_04",
 	"bust_female_southern_body_05",
-]
+];
 
 ::Const.Bodies.AfricanMale <- [
 	"bust_naked_body_african_00",
 	"bust_naked_body_african_01",
 	"bust_naked_body_african_02"
-]
+];
 
 ::Const.Bodies.AfricanFemaleSkinny <- [
 	"bust_female_southern_body_03"
-]
+];
 ::Const.Bodies.AfricanFemaleMuscular <- [
 	"bust_female_southern_body_04"
-]
+];
 ::Const.Bodies.AfricanFemaleThick <- [
 	"bust_female_southern_body_05"
-]
+];
 
 ::Const.Bodies.AfricanGladiator <- [
 	"bust_naked_body_african_01",
 	"bust_naked_body_african_02"
-]
+];
 ::Const.Bodies.AfricanSlave <- [
 	"bust_naked_body_african_00"
-]
+];
 
 ::Const.Faces.AfricanFemale <- [
 	"bust_head_southern_female_10",
 	"bust_head_southern_female_11",
 	"bust_head_southern_female_12",
 	"bust_head_southern_female_13"
-]
+];
 
 ::Const.Faces.AfricanMale <- [
 	"bust_head_african_03"
@@ -732,4 +624,4 @@
 	"bust_head_african_15",
 	"bust_head_african_16",
 	"bust_head_african_17"
-]
+];
