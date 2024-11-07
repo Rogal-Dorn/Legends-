@@ -1,118 +1,12 @@
-local gt = this.getroottable();
-
-if (!("Tactical" in gt.Const))
+foreach (particle in ::Const.Tactical.DustParticles)
 {
-	gt.Const.Tactical <- {};
+	particle.Quantity = 60;
+	particle.LifeTimeQuantity = 60;
+	particle.SpawnRate = 1200;
 }
 
-gt.Const.Tactical.DustParticles <- [
-	{
-		Delay = 0,
-		Quantity = 60,
-		LifeTimeQuantity = 60,
-		SpawnRate = 1200,
-		Brushes = [
-			"dust_01",
-			"dust_02"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.75,
-				ScaleMax = 0.75,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				DirectionMin = this.createVec(-0.5, 0.4),
-				DirectionMax = this.createVec(0.5, 0.4),
-				SpawnOffsetMin = this.createVec(-30, -30),
-				SpawnOffsetMax = this.createVec(30, 0)
-			},
-			{
-				LifeTimeMin = 3.0,
-				LifeTimeMax = 4.0,
-				ColorMin = this.createColor("ffffffff"),
-				ColorMax = this.createColor("ffffffff"),
-				ScaleMin = 1.0,
-				ScaleMax = 1.0,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 1.25,
-				ScaleMax = 1.5,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				ForceMin = this.createVec(0, -60),
-				ForceMax = this.createVec(0, -60)
-			}
-		]
-	}
-];
-gt.Const.Tactical.LichParticles <- [
-	{
-		Delay = 0,
-		Quantity = 3,
-		LifeTimeQuantity = 3,
-		SpawnRate = 600,
-		Brushes = [
-			"bust_lich_aura_01"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.75,
-				ScaleMax = 0.75,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				DirectionMin = this.createVec(-0.5, 0.4),
-				DirectionMax = this.createVec(0.5, 0.6),
-				SpawnOffsetMin = this.createVec(-30, -30),
-				SpawnOffsetMax = this.createVec(30, 0)
-			},
-			{
-				LifeTimeMin = 3.0,
-				LifeTimeMax = 4.0,
-				ColorMin = this.createColor("ffffff2f"),
-				ColorMax = this.createColor("ffffff2f"),
-				ScaleMin = 1.0,
-				ScaleMax = 1.0,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 1.25,
-				ScaleMax = 1.5,
-				VelocityMin = 30,
-				VelocityMax = 50,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 0)
-			}
-		]
-	}
-];
-gt.Const.Tactical.BloodEffects <- [
+// i'm not hooking this
+::Const.Tactical.BloodEffects = [
 	[],
 	[
 		{
@@ -521,7 +415,9 @@ gt.Const.Tactical.BloodEffects <- [
 		}
 	]
 ];
-gt.Const.Tactical.BloodSplatters <- [
+
+// or this
+::Const.Tactical.BloodSplatters = [
 	[],
 	[
 		{
@@ -1447,7 +1343,7 @@ gt.Const.Tactical.BloodSplatters <- [
 		}
 	]
 ];
-gt.Const.Tactical.DecapitateSplatters <- [
+::Const.Tactical.DecapitateSplatters = [
 	[],
 	[
 		{
@@ -1672,7 +1568,7 @@ gt.Const.Tactical.DecapitateSplatters <- [
 	this.Const.Tactical.BloodSplatters[6],
 	this.Const.Tactical.BloodSplatters[7]
 ];
-gt.Const.Tactical.SmashSplatters <- [
+::Const.Tactical.SmashSplatters = [
 	[],
 	[
 		{
@@ -1897,7 +1793,7 @@ gt.Const.Tactical.SmashSplatters <- [
 	this.Const.Tactical.BloodSplatters[6],
 	this.Const.Tactical.BloodSplatters[7]
 ];
-gt.Const.Tactical.TerrainDropdownParticles <- [
+::Const.Tactical.TerrainDropdownParticles = [
 	[],
 	[],
 	[],
@@ -2187,7 +2083,7 @@ gt.Const.Tactical.TerrainDropdownParticles <- [
 		}
 	]
 ];
-gt.Const.Tactical.BurnParticles <- [
+::Const.Tactical.BurnParticles = [
 	{
 		Delay = 100,
 		Quantity = 230,
@@ -2315,7 +2211,7 @@ gt.Const.Tactical.BurnParticles <- [
 		]
 	}
 ];
-gt.Const.Tactical.FireParticles <- [
+::Const.Tactical.FireParticles = [
 	{
 		Delay = 0,
 		Quantity = 230,
@@ -2443,60 +2339,7 @@ gt.Const.Tactical.FireParticles <- [
 		]
 	}
 ];
-gt.Const.Tactical.AcidParticles <- [
-	{
-		Delay = 0,
-		Quantity = 40,
-		LifeTimeQuantity = 40,
-		SpawnRate = 40,
-		Brushes = [
-			"ash_01"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.5,
-				ScaleMax = 0.5,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				DirectionMin = this.createVec(-0.4, 0.6),
-				DirectionMax = this.createVec(0.4, 0.6),
-				SpawnOffsetMin = this.createVec(-15, -15),
-				SpawnOffsetMax = this.createVec(15, 0)
-			},
-			{
-				LifeTimeMin = 2.0,
-				LifeTimeMax = 3.0,
-				ColorMin = this.createColor("ffffffff"),
-				ColorMax = this.createColor("ffffffff"),
-				ScaleMin = 0.5,
-				ScaleMax = 0.75,
-				VelocityMin = 60,
-				VelocityMax = 100,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.75,
-				ScaleMax = 1.0,
-				VelocityMin = 0,
-				VelocityMax = 0,
-				ForceMin = this.createVec(0, -80),
-				ForceMax = this.createVec(0, -80)
-			}
-		]
-	}
-];
-gt.Const.Tactical.LightningParticles <- [
+::Const.Tactical.LightningParticles <- [
 	{
 		Delay = 0,
 		Quantity = 10,
@@ -2624,238 +2467,3 @@ gt.Const.Tactical.LightningParticles <- [
 		]
 	}
 ];
-gt.Const.Tactical.SmokeParticles <- [ 
-	{
-		Delay = 0,
-		Quantity = 50,
-		LifeTimeQuantity = 0,
-		SpawnRate = 9,
-		Brushes = [
-			"ash_light_01",
-			"ash_light_02"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.75,
-				LifeTimeMax = 1.25,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.5,
-				ScaleMax = 0.75,
-				RotationMin = 0,
-				RotationMax = 359,
-				TorqueMin = -10,
-				TorqueMax = 10,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				DirectionMin = this.createVec(-0.5, 0.5),
-				DirectionMax = this.createVec(0.5, 0.5),
-				SpawnOffsetMin = this.createVec(-50, -40),
-				SpawnOffsetMax = this.createVec(50, 20),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			},
-			{
-				LifeTimeMin = 4.0,
-				LifeTimeMax = 6.0,
-				ColorMin = this.createColor("ffffffed"),
-				ColorMax = this.createColor("ffffffed"),
-				ScaleMin = 0.75,
-				ScaleMax = 1.25,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				DirectionMin = this.createVec(-0.4, 0.6),
-				DirectionMax = this.createVec(0.4, 0.6),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			},
-			{
-				LifeTimeMin = 0.5,
-				LifeTimeMax = 1.0,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 1.0,
-				ScaleMax = 1.5,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			}
-		]
-	},
-	{
-		Delay = 0,
-		Quantity = 10,
-		LifeTimeQuantity = 0,
-		SpawnRate = 2,
-		Brushes = [
-			"dust_light_01",
-			"dust_light_02"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.5,
-				LifeTimeMax = 1.0,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 0.75,
-				ScaleMax = 1.0,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				DirectionMin = this.createVec(-0.5, 0.5),
-				DirectionMax = this.createVec(0.5, 0.5),
-				SpawnOffsetMin = this.createVec(-50, -40),
-				SpawnOffsetMax = this.createVec(50, 10),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			},
-			{
-				LifeTimeMin = 4.0,
-				LifeTimeMax = 6.0,
-				ColorMin = this.createColor("ffffffef"),
-				ColorMax = this.createColor("ffffffef"),
-				ScaleMin = 1.0,
-				ScaleMax = 1.25,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				DirectionMin = this.createVec(-0.4, 0.6),
-				DirectionMax = this.createVec(0.4, 0.6),
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			},
-			{
-				LifeTimeMin = 0.5,
-				LifeTimeMax = 1.0,
-				ColorMin = this.createColor("ffffff00"),
-				ColorMax = this.createColor("ffffff00"),
-				ScaleMin = 1.0,
-				ScaleMax = 1.25,
-				VelocityMin = 10,
-				VelocityMax = 30,
-				ForceMin = this.createVec(0, 0),
-				ForceMax = this.createVec(0, 10),
-				FlickerEffect = false
-			}
-		]
-	}
-];
-gt.Const.Tactical.ShrapnelLeftParticles <- [
-	{
-		Delay = 0,
-		Quantity = 10,
-		LifeTimeQuantity = 10,
-		SpawnRate = 200,
-		Brushes = [
-			"blood_splatter_bones_01",
-			"blood_splatter_bones_03",
-			"blood_splatter_bones_04",
-			"blood_splatter_bones_05",
-			"blood_splatter_bones_06"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("22222200"),
-				ColorMax = this.createColor("22222200"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 300,
-				VelocityMax = 400,
-				DirectionMin = this.createVec(0.4, -0.5),
-				DirectionMax = this.createVec(0.6, 0.5),
-				SpawnOffsetMin = this.createVec(-80, 20),
-				SpawnOffsetMax = this.createVec(-70, 40)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("222222ff"),
-				ColorMax = this.createColor("222222ff"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				VelocityMin = 300,
-				VelocityMax = 400,
-				ForceMin = this.createVec(0, -10),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("22222200"),
-				ColorMax = this.createColor("22222200"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				VelocityMin = 300,
-				VelocityMax = 400,
-				ForceMin = this.createVec(0, -10),
-				ForceMax = this.createVec(0, 0)
-			}
-		]
-	}
-];
-gt.Const.Tactical.ShrapnelRightParticles <- [
-	{
-		Delay = 0,
-		Quantity = 10,
-		LifeTimeQuantity = 10,
-		SpawnRate = 200,
-		Brushes = [
-			"blood_splatter_bones_01",
-			"blood_splatter_bones_03",
-			"blood_splatter_bones_04",
-			"blood_splatter_bones_05",
-			"blood_splatter_bones_06"
-		],
-		Stages = [
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("22222200"),
-				ColorMax = this.createColor("22222200"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				RotationMin = 0,
-				RotationMax = 359,
-				VelocityMin = 200,
-				VelocityMax = 300,
-				DirectionMin = this.createVec(-0.6, -0.5),
-				DirectionMax = this.createVec(-0.4, 0.5),
-				SpawnOffsetMin = this.createVec(70, 20),
-				SpawnOffsetMax = this.createVec(80, 40)
-			},
-			{
-				LifeTimeMin = 0.2,
-				LifeTimeMax = 0.3,
-				ColorMin = this.createColor("222222ff"),
-				ColorMax = this.createColor("222222ff"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				VelocityMin = 200,
-				VelocityMax = 300,
-				ForceMin = this.createVec(0, -10),
-				ForceMax = this.createVec(0, 0)
-			},
-			{
-				LifeTimeMin = 0.1,
-				LifeTimeMax = 0.2,
-				ColorMin = this.createColor("22222200"),
-				ColorMax = this.createColor("22222200"),
-				ScaleMin = 0.3,
-				ScaleMax = 0.6,
-				VelocityMin = 200,
-				VelocityMax = 300,
-				ForceMin = this.createVec(0, -10),
-				ForceMax = this.createVec(0, 0)
-			}
-		]
-	}
-];
-
