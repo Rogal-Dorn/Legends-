@@ -2339,7 +2339,7 @@ foreach (particle in ::Const.Tactical.DustParticles)
 		]
 	}
 ];
-::Const.Tactical.LightningParticles <- [
+::Const.Tactical.LightningParticles = [
 	{
 		Delay = 0,
 		Quantity = 10,

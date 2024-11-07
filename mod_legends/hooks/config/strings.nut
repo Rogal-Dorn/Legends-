@@ -424,29 +424,6 @@
 	"The Black Mothers",
 	"The Last Men"
 ];
-::Const.Strings.FreeCompanyNames <- clone ::Const.Strings.MercenaryCompanyNames;
-::Const.Strings.FreeCompanyNames.extend([
-	"Iron Brigade",
-	"The Ubermensche",
-	"Bottle Brothers",
-	"Not the Developer Team",
-	"Mordhau Brigands",
-	"Rules of Poss",
-	"The Elder Ones",
-	"Enduring Eels",
-	"Rat Petters",
-	"Placid Hunters",
-	"Vonk\'s Rolocks",
-	"Heartpiercers",
-	"Silver Company",
-	"Kraken Band",
-	"Sons of Talos",
-	"Steel Born",
-	"Stormtaken",
-	"Unhold Breakers",
-	"Tunnel Snakes, and I\'m not even kidding",
-	"Moronic Plungers"
-]);
 ::Const.Strings.NobleHouseNames = [
 	"Grimmund",
 	"Weilburg",

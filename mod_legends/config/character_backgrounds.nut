@@ -1,19 +1,3 @@
-::Const.CharacterVillageBackgrounds.extend([
-	"beggar_background",
-	"graverobber_background",
-	"houndmaster_background",
-	"butcher_background",
-	"ratcatcher_background",
-	"servant_background",
-	"mason_background",
-	"shepherd_background",
-	"brawler_background",
-	"thief_background",
-	"militia_background",
-	"peddler_background",
-	"poacher_background",
-	"vagabond_background"
-]);
 ::Const.CharacterCombatBackgrounds <- [
 	"disowned_noble_background",
 	// "female_disowned_noble_background",
