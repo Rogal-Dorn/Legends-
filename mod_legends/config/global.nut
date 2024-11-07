@@ -1,174 +1,12 @@
-local gt = this.getroottable();
-gt.Const.Serialization <- {
-	Version = 73
-};
-gt.Const.DLC <- {
-	Mask = 0,
-	Info = [],
-	Fangshire = false,
-	Lindwurm = false,
-	Unhold = false,
-	UnholdSupporter = false,
-	Wildmen = false,
-	WildmenSupporter = false,
-	Desert = false,
-	DesertSupporter = false,
-	Paladins = false,
-	function isCompatible( _meta )
-	{
-		local maskInSave = _meta.getInt("dlc");
+::Const.Serialization.Version <- 73;
 
-		for( local i = 0; i != 32; i = ++i )
-		{
-			if ((maskInSave & 1 << i) != 0 && (this.Const.DLC.Mask & 1 << i) == 0)
-			{
-				return false;
-			}
-		}
+::Const.DLC.Info[1].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/732460/Battle_Brothers__Lindwurm/" : "https://www.gog.com/game/battle_brothers"
+::Const.DLC.Info[2].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/961930/Battle_Brothers__Beasts__Exploration/" : "https://www.gog.com/game/battle_brothers_beasts_exploration"
+::Const.DLC.Info[4].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
+::Const.DLC.Info[6].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1361280/Battle_Brothers__Blazing_Deserts" : "https://www.gog.com/game/battle_brothers_blazing_deserts"
+::Const.DLC.Info[8].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1910050/Battle_Brothers__Of_Flesh_and_Faith" : "https://www.gog.com/game/battle_brothers_of_flesh_and_faith"
 
-		return true;
-	}
-
-};
-this.Const.DLC.Info.resize(32, null);
-this.Const.DLC.Info[1] = {
-	Announce = true,
-	Icon = "ui/images/dlc_1.png",
-	IconDisabled = "ui/images/dlc_1_sw.png",
-	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/732460/Battle_Brothers__Lindwurm/" : "https://www.gog.com/game/battle_brothers"
-};
-this.Const.DLC.Info[2] = {
-	Announce = true,
-	Icon = "ui/images/dlc_2.png",
-	IconDisabled = "ui/images/dlc_2_sw.png",
-	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/961930/Battle_Brothers__Beasts__Exploration/" : "https://www.gog.com/game/battle_brothers_beasts_exploration"
-};
-this.Const.DLC.Info[4] = {
-	Announce = true,
-	Icon = "ui/images/dlc_4.png",
-	IconDisabled = "ui/images/dlc_4_sw.png",
-	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
-};
-this.Const.DLC.Info[6] = {
-	Announce = true,
-	Icon = "ui/images/dlc_6.png",
-	IconDisabled = "ui/images/dlc_6_sw.png",
-	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1361280/Battle_Brothers__Blazing_Deserts" : "https://www.gog.com/game/battle_brothers_blazing_deserts"
-};
-this.Const.DLC.Info[8] = {
-	Announce = true,
-	Icon = "ui/images/dlc_8.png",
-	IconDisabled = "ui/images/dlc_8_sw.png",
-	URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1910050/Battle_Brothers__Of_Flesh_and_Faith" : "https://www.gog.com/game/battle_brothers_of_flesh_and_faith"
-};
-gt.Const.Direction <- {
-	N = 0,
-	NE = 1,
-	SE = 2,
-	S = 3,
-	SW = 4,
-	NW = 5,
-	COUNT = 6
-};
-gt.Const.DirectionAsBit <- {
-	N = 1,
-	NE = 2,
-	SE = 4,
-	S = 8,
-	SW = 16,
-	NW = 32
-};
-gt.Const.DirectionBit <- [
-	1,
-	2,
-	4,
-	8,
-	16,
-	32,
-	0
-];
-gt.Const.getNumDirectionBits <- function ( _dir )
-{
-	local n = 0;
-
-	if ((_dir & 1) != 0)
-	{
-		n = ++n;
-	}
-
-	if ((_dir & 2) != 0)
-	{
-		n = ++n;
-	}
-
-	if ((_dir & 4) != 0)
-	{
-		n = ++n;
-	}
-
-	if ((_dir & 8) != 0)
-	{
-		n = ++n;
-	}
-
-	if ((_dir & 16) != 0)
-	{
-		n = ++n;
-	}
-
-	if ((_dir & 32) != 0)
-	{
-		n = ++n;
-	}
-
-	return n;
-};
-gt.Const.DirectionStep <- [
-	[
-		0,
-		1
-	],
-	[
-		1,
-		0
-	],
-	[
-		1,
-		-1
-	],
-	[
-		0,
-		-1
-	],
-	[
-		-1,
-		0
-	],
-	[
-		-1,
-		1
-	]
-];
-gt.Const.DirectionAngle <- [
-	0,
-	315,
-	225,
-	180,
-	135,
-	45
-];
-gt.Const.Direction8 <- {
-	N = 0,
-	NE = 1,
-	E = 2,
-	SE = 3,
-	S = 4,
-	SW = 5,
-	W = 6,
-	NW = 7,
-	COUNT = 8
-};
-gt.Const.Difficulty <- {
+::Const.Difficulty = {
 	Easy = 0,
 	Normal = 1,
 	Hard = 2,
@@ -260,12 +98,8 @@ gt.Const.Difficulty <- {
 		}
 	]
 };
-gt.Const.Camera <- {
-	MouseMoveThreshold = 5,
-	MouseScrollThreshold = 50,
-	MouseScrollFactor = 14
-};
-gt.Const.EntityType <- {
+
+::Const.EntityType = {
 	Player = -1,
 	Necromancer = 0,
 	Zombie = 1,
@@ -824,114 +658,7 @@ gt.Const.EntityType <- {
 	}
 
 };
-gt.Const.EntityIcon <- [
-	"human_01_orientation",
-	"zombie_01_orientation",
-	"zombie_02_orientation",
-	"zombie_03_orientation",
-	"zombie_03_orientation",
-	"skeleton_01_orientation",
-	"skeleton_02_orientation",
-	"skeleton_03_orientation",
-	"skeleton_04_orientation",
-	"skeleton_05_orientation",
-	"vampire_01_orientation",
-	"ghost_01_orientation",
-	"ghoul_01_orientation",
-	"orc_04_orientation",
-	"orc_03_orientation",
-	"orc_02_orientation",
-	"orc_01_orientation",
-	"militia_orientation",
-	"militia_ranged_orientation",
-	"militia_veteran_orientation",
-	"militia_captain_orientation",
-	"bandit_raider_orientation",
-	"peasant_orientation",
-	"caravan_hand_orientation",
-	"caravan_guard_orientation",
-	"donkey_orientation",
-	"footman_veteran_orientation",
-	"greatsword_orientation",
-	"billman_orientation",
-	"arbalester_orientation",
-	"standard_bearer_orientation",
-	"sergeant_orientation",
-	"knight_orientation",
-	"donkey_orientation",
-	"bandit_thug_orientation",
-	"bandit_poacher_orientation",
-	"bandit_marksman_orientation",
-	"bandit_raider_orientation",
-	"bandit_leader_orientation",
-	"goblin_04_orientation",
-	"goblin_01_orientation",
-	"goblin_03_orientation",
-	"goblin_02_orientation",
-	"goblin_05_orientation",
-	"goblin_06_orientation",
-	"dog_01_orientation",
-	"dog_01_orientation",
-	"mercenary_orientation",
-	"mercenary_orientation",
-	"swordmaster_orientation",
-	"hedge_knight_orientation",
-	"mercenary_orientation",
-	"catapult_01_orientation",
-	"cultist_orientation",
-	"direwolf_01_orientation",
-	"lindwurm_orientation",
-	"unhold_01_orientation",
-	"unhold_02_orientation",
-	"unhold_03_orientation",
-	"spider_01_orientation",
-	"spider_02_orientation",
-	"alp_01_orientation",
-	"hexe_01_orientation",
-	"schrat_01_orientation",
-	"schrat_02_orientation",
-	"wildman_01_orientation",
-	"kraken_01_orientation",
-	"kraken_02_orientation",
-	"zombie_03_orientation",
-	"alp_02_orientation",
-	"wildman_01_orientation",
-	"wildman_02_orientation",
-	"wildman_03_orientation",
-	"wildman_05_orientation",
-	"wildman_04_orientation",
-	"unhold_01_orientation",
-	"unhold_02_orientation",
-	"wildman_06_orientation",
-	"dog_02_orientation",
-	"thing_orientation",
-	"wildman_06_orientation",
-	"serpent_orientation",
-	"sand_golem_orientation",
-	"hyena_orientation",
-	"conscript_orientation",
-	"gunner_orientation",
-	"officer_orientation",
-	"orientation_engineer",
-	"assassin_orientation",
-	"slave_orientation",
-	"gladiator_orientation",
-	"mortar_orientation",
-	"nomad_01_orientation",
-	"nomad_02_orientation",
-	"nomad_03_orientation",
-	"nomad_04_orientation",
-	"nomad_05_orientation",
-	"desert_stalker_orientation",
-	"executioner_orientation",
-	"desert_devil_orientation",
-	"peasant_orientation",
-	"skeleton_06_orientation",
-	"skeleton_07_orientation",
-	"phylactery_orientation",
-	"zombie_04_orientation",
-	"skeleton_08_orientation",
-
+::Const.EntityIcon.extend([
 	"rabble_orientation",
 	"cat_orientation",
 	"orc_elite_orientation",
@@ -1008,4 +735,4 @@ gt.Const.EntityIcon <- [
 	"footman_veteran_orientation", //Noble Elite Footman
 	"billman_orientation", //Pollax
 	"arbalester_orientation" //Sureshot
-];
+]);
