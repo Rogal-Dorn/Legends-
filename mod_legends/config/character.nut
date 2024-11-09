@@ -185,12 +185,12 @@
 ::Const.CharacterProperties.FlatOnKillOtherActorModifier <- 0;
 ::Const.CharacterProperties.PercentOnKillOtherActorModifier <- 1.0;
 
-::Const.CharacterProperties[0].getInitiativeMinDamage <- function ()
+::Const.CharacterProperties.getInitiativeMinDamage <- function ()
 {
 	return this.DamageInitiativeMin + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
 };
 
-::Const.CharacterProperties[0].getInitiativeMaxDamage <- function ()
+::Const.CharacterProperties.getInitiativeMaxDamage <- function ()
 {
 	return this.DamageInitiativeMax + this.Math.max(0, this.getInitiative() - this.DamageInitiativeCutoff);
 };
