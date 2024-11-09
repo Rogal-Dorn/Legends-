@@ -395,7 +395,7 @@
 	"Jorisk",
 	"Bogzung",
 	"Ignot",
-	"Zinkling"
+	"Zinkling",
 	"Zogrok",
 	"Kulzik",
 	"Xatox",

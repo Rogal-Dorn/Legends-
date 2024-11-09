@@ -136,13 +136,13 @@ if (!("Perks" in ::Const))
 		[],
 		[::Const.Perks.PerkDefs.LegendBarterConvincing],
 		[],
-		[::Const.Perks.PerkDefs.LegendBarterTrustworthy], 
+		[::Const.Perks.PerkDefs.LegendBarterTrustworthy],
 		[
-			::Const.Perks.PerkDefs.LegendDangerPay, 
-			::Const.Perks.PerkDefs.LegendPaymaster 
+			::Const.Perks.PerkDefs.LegendDangerPay,
+			::Const.Perks.PerkDefs.LegendPaymaster
 		],
 		[
-			::Const.Perks.PerkDefs.LegendOffBookDeal
+			::Const.Perks.PerkDefs.LegendOffBookDeal,
 			::Const.Perks.PerkDefs.LegendBarterGreed
 		]
 	]

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/spider", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/spider", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -24,7 +24,7 @@
 
 		local item = this.Const.World.Common.pickHelmet([
 			[99, "ancient/ancient_priest_diadem"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

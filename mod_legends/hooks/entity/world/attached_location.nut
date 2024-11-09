@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location", function(o)
 {
 	o.m.IsNew <- false;
 	o.m.IsAbandoned <- false;
@@ -122,12 +122,12 @@
 
 	o.updateSprites <- function ()
 	{
-		local s = this.getSprite("body")
+		local s = this.getSprite("body");
 		if (s != null)
 		{
 			s.setBrush(this.m.IsActive ? this.getSpriteName() : this.getSpriteDestroyedName());
 		}
-		s = this.getSprite("lighting")
+		s = this.getSprite("lighting");
 		if (s != null)
 		{
 			s.Visible = this.m.IsActive || this.m.IsNew;

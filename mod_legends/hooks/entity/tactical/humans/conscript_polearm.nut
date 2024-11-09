@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/conscript_polearm", function(o) 
+::mods_hookExactClass("entity/tactical/humans/conscript_polearm", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -47,7 +47,7 @@
 
 		local helm =this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap", variant]
-		])
+		]);
 
 		this.m.Items.equip(helm);
 	}

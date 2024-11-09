@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/return_item_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/return_item_contract", function(o)
 {
 	o.m.IsPlayerAttacking = true;
 	o.m.StolenItemNames = [
@@ -25,7 +25,7 @@
 		"Pedigree Hound",
 		"Exotic Hairless Cat",
 		"Tattered Warbanner",
-		"Fingerbones of St Cicero"
+		"Fingerbones of St Cicero",
 		"Famed Butterfly Collection",
 		"Necromancy Amulet",
 		"Monkey Paw",
@@ -124,7 +124,7 @@
 
 		if (r.find("%") != null)
 			r = format(r, ::Const.UI.getColorized(this.m.Flags.get("Item"), ::Const.UI.Color.getHighlightLightBackgroundValue()));
-		
+
 		this.m.Description = r;
 	}
 

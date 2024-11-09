@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/gladiator", function(o) 
+::mods_hookExactClass("entity/tactical/humans/gladiator", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -92,7 +92,7 @@
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/gladiator_helmet", this.Math.rand(13, 15)],
 			[1, ""]
-		])
+		]);
 		this.m.Items.equip(helm);
 	}
 

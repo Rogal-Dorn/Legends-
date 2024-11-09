@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/bandit_leader", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/bandit_leader", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -183,7 +183,7 @@
 				[1, "padded_nasal_helmet"],
 				[1, "bascinet_with_mail"],
 				[1, "red_bandit_leader_helmet"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

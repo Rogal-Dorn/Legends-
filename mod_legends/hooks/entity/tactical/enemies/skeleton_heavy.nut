@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/skeleton_heavy", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/skeleton_heavy", function(o)
 {
 	// o.onFactionChanged <- function ()
 	// {
@@ -73,7 +73,7 @@
 		{
 			local item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_honorguard_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

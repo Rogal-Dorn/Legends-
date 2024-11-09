@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/mercenary", function(o) 
+::mods_hookExactClass("entity/tactical/humans/mercenary", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -132,9 +132,9 @@
 			// [1, "mail_shirt"],
 			[1, "reinforced_mail_hauberk"],
 			[1, "mail_hauberk"],
-			[1, "traze_northern_mercenary_armor"],	
+			[1, "traze_northern_mercenary_armor"],
 			[1, "northern_mercenary_armor_00"],
-			[1, "northern_mercenary_armor_01"],	
+			[1, "northern_mercenary_armor_01"],
 			[1, "northern_mercenary_armor_02"],
 			[1, "lamellar_harness"],
 			[1, "footman_armor"],
@@ -169,7 +169,7 @@
 			[5, "barbute_helmet"]
 		];
 
-		helm.push([5, "theamson_barbute_helmet"])
+		helm.push([5, "theamson_barbute_helmet"]);
 
 		local outfits = [
 			[1, "northern_mercenary_outfit_00"],
@@ -178,7 +178,7 @@
 			[1, "traze_northern_mercenary_outfit_00"],
 		]
 
-		foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helm) ) 
+		foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helm) )
 		{
 			this.m.Items.equip(item)
 		}

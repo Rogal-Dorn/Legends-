@@ -1,6 +1,6 @@
-::mods_hookExactClass("entity/world/settlements/city_state", function(o) 
+::mods_hookExactClass("entity/world/settlements/city_state", function(o)
 {
-	
+
 	local create = o.create;
 	o.create = function()
 	{
@@ -49,7 +49,7 @@
 			"juggler_southern_background",
 			"assassin_southern_background",
 			"legend_muladi_background",
-			"legend_dervish_background"
+			"legend_dervish_background",
 			"beast_hunter_background"
 		];
 	}
@@ -149,13 +149,13 @@
 		]
 
 		items = this.filterNewLocation(items);
-		local item = this.Const.World.Common.pickItem(items)
+		local item = this.Const.World.Common.pickItem(items);
 		return this.buildAttachedLocation(1, item.Script, item.Terrain, item.NearTerrain, item.Distance, item.Road, item.Clear, item.Force)
 	}
 
 	local onBuild = o.onBuild;
 	o.onBuild = function ( _settings = null)
-	{	
+	{
 		onBuild(_settings);
 	}
 

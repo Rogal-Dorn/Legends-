@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/zombie", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/zombie", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -26,7 +26,7 @@
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));			
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 		}
 	}
@@ -115,7 +115,7 @@
 				[1, "kettle_hat"],
 				[1, "padded_kettle_hat"],
 				[1, "full_leather_cap"]
-			])
+			]);
 			if (item != null)
 			{
 				if (this.Math.rand(1, 100) <= 50)

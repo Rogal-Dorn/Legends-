@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/goblin_fighter_low", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/goblin_fighter_low", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -44,14 +44,14 @@
 		local item = this.Const.World.Common.pickArmor([
 			[1, "greenskins/goblin_light_armor"],
 			[1, "greenskins/goblin_medium_armor"]
-		])
+		]);
 		this.m.Items.equip(item);
 
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "greenskins/goblin_light_helmet"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

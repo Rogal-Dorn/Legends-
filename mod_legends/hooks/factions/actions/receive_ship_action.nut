@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/receive_ship_action", function(o) 
+::mods_hookExactClass("factions/actions/receive_ship_action", function(o)
 {
 	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _faction )
@@ -100,7 +100,7 @@
 				[1, "trade/legend_iron_ingots_item"]
 			]
 
-			local item = this.Const.World.Common.pickItem(items)
+			local item = this.Const.World.Common.pickItem(items);
 			party.addToInventory(item);
 		}
 
@@ -117,12 +117,12 @@
 	}
 
 	local onExecute = o.onExecute;
-	function onExecute( _faction )
+	o.onExecute = function ( _faction )
 	{
 
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
-			local success = this.onLegendExecute( _faction)
+			local success = this.onLegendExecute( _faction);
 			if (success != false)
 			{
 				return success;

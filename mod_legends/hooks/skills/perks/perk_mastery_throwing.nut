@@ -4,7 +4,7 @@
 		"actives.throw_axe",
 		"actives.throw_balls",
 		"actives.throw_javelin",
-		"actives.throw_spear"
+		"actives.throw_spear",
 		"actives.legend_throw_knife",
 
 	];

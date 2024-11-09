@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/zombie_yeoman", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/zombie_yeoman", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -76,7 +76,7 @@
 				[1, "dented_nasal_helmet"],
 				[1, "mail_coif"],
 				[1, "full_leather_cap"]
-			])
+			]);
 			if (item != null)
 			{
 				if (this.Math.rand(1, 100) <= 66)

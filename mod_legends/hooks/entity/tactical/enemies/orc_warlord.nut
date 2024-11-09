@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_warlord", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/orc_warlord", function(o)
 {
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
@@ -110,8 +110,8 @@
 	o.onFactionChanged <- function ()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer()
-		flip = !flip
+		local flip = this.isAlliedWithPlayer();
+		flip = !flip;
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
 			if (!this.hasSprite(a))
@@ -183,7 +183,7 @@
 		{
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "greenskins/orc_warlord_helmet"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

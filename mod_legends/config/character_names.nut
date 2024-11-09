@@ -29,7 +29,7 @@
 	"Lady",
 	"Baroness",
 	"Lady",
-	"Dutchess"
+	"Dutchess",
 	"Markgräfin"
 ];
 
@@ -456,7 +456,7 @@
 	"Ermenihotep",
 	"Astruhotep",
 	"Astennu",
-	"Aptera"
+	"Aptera",
 	"Nechtanebos",
 	"Darius",
 	"Aspalut",

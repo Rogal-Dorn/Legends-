@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/entity", function(o) 
+::mods_hookExactClass("entity/tactical/entity", function(o)
 {
 	o.m.IsRock <- false;
 	o.m.IsTree <- false;
@@ -6,7 +6,7 @@
 	o.m.IsBush <- false;
 	o.m.IsSupplies <- false;
 	o.m.IsSummoned <- false;
-	o.m.IsHidden <- false
+	o.m.IsHidden <- false;
 
 	o.isTree <- function ()
 	{
@@ -32,7 +32,7 @@
 	{
 		return this.m.IsBush;
 	}
-	
+
 	o.isSupplies <- function ()
 	{
 		return this.m.IsSupplies;

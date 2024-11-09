@@ -200,28 +200,28 @@
 	"Curse Lifter",
 	"Jinx Helm",
 	"Decorated",
-	"Ribboned"
+	"Ribboned",
 	"Splinted",
 	"Blazing Dome",
 	"Nomad\'s Crown",
 	"Clan Helmet",
 	"Highland Helm",
 	"Faceguard",
-	"Owl"
+	"Owl",
 	"Ward",
 	"Headguard",
-	"Protector"
+	"Protector",
 	"Sea Raider",
 	"Chieftain",
 	"Engraved",
 	"Face of the North",
 	"Metal Skull",
 	"Tribal Visage",
-	"Pillager Gaze"
+	"Pillager Gaze",
 	"Bladed",
 	"Horned",
 	"Protector",
-	"Steel Countenance"
+	"Steel Countenance",
 	"Lizard",
 	"Dragon\'s Dome",
 	"Ward",

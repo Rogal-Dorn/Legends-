@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/noble_arbalester", function(o) 
+::mods_hookExactClass("entity/tactical/humans/noble_arbalester", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -72,7 +72,7 @@
 				[1, "open_leather_cap"],
 				[1, "headscarf"],
 				[1, ""]
-		])
+		]);
 		if (helmet != null)
 		{
 			if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }

@@ -1,6 +1,6 @@
 ::mods_hookExactClass("ai/world/orders/unload_order", function(o)
 {
-	o.onExecute( _entity, _hasChanged )
+	o.onExecute = function ( _entity, _hasChanged )
 	{
 		foreach (settlement in this.World.getAllEntitiesAndOneLocationAtPos(_entity.getPos(), 1.0))
 		{
@@ -18,7 +18,7 @@
 				{
 					local investment = _entity.getFlags().getAsInt("CaravanInvestment");
 					local profit = _entity.getFlags().getAsInt("CaravanProfit");
-					
+
 					// new functions
 					origin.addWorldEconomyResources(investment + profit);
 
@@ -31,7 +31,7 @@
 					//origin.setResources(origin.getResources() + totalPayment);
 					//settlement.setResources(settlement.getResources() - totalPayment);
 
-					//this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");			
+					//this.logWarning("Unloading caravan with " + inv.len() + " items at " + settlement.getName() + ", the origin town " + origin.getName() + " receives their investment of " + investment + " resources along wiht a profit of " + profit + ", now have " + origin.getResources() + " resources in total");
 
 				}
 
@@ -44,7 +44,7 @@
 
 				local storage = settlement.getImportedGoodsInventory().getItems();
 				local marketplace = settlement.getBuilding("building.marketplace");
-				// if there already too many items in storage, the excess one will be pushed to the marketplace immediately 
+				// if there already too many items in storage, the excess one will be pushed to the marketplace immediately
 				// in order to keep the storage at a certain size
 				// this also lets the settlement to continue shipping these items to another place :)
 				if (marketplace != null && storage.len() > ::Const.World.Common.WorldEconomy.Trade.ImportedGoodsInventorySizeMax)

@@ -72,7 +72,7 @@
 	{
 		if (_skill == this)
 		{
-			local chance = this.getHitChance(_targetEntity)
+			local chance = this.getHitChance(_targetEntity);
 			if (_properties.IsSpecializedInDaggers)
 			{
 				chance += 15;

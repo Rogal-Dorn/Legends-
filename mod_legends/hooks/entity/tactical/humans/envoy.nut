@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/envoy", function(o) 
+::mods_hookExactClass("entity/tactical/humans/envoy", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -15,7 +15,7 @@
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "feathered_hat"],
 			[2, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

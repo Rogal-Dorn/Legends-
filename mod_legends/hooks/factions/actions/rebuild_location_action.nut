@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/rebuild_location_action", function(o) 
+::mods_hookExactClass("factions/actions/rebuild_location_action", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -38,7 +38,7 @@
 
 		local playerTile = this.World.State.getPlayer().getTile();
 		local numInactive = 0;
-		local nogo = false
+		local nogo = false;
 
 		foreach( a in this.m.Settlement.getAttachedLocations() )
 		{

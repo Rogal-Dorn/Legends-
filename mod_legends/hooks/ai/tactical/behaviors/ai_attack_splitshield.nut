@@ -1,4 +1,4 @@
-::mods_hookExactClass("ai/tactical/behaviors/ai_attack_splitshield", function(o) 
+::mods_hookExactClass("ai/tactical/behaviors/ai_attack_splitshield", function(o)
 {
 	local onEvaluate = o.onEvaluate
 
@@ -18,7 +18,7 @@
 		}
 		else if ( item != null && item.m.IsIndestructible )
 		{
-			this.m.TargetTile = null
+			this.m.TargetTile = null;
 			return this.Const.AI.Behavior.Score.Zero;
 		}
 		else

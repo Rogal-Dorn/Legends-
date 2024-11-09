@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/skeleton_light", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/skeleton_light", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -46,7 +46,7 @@
 		item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_household_helmet"],
 			[34, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

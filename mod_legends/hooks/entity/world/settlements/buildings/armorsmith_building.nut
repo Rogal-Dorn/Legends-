@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/settlements/buildings/armorsmith_building", function(o) 
+::mods_hookNewObject("entity/world/settlements/buildings/armorsmith_building", function(o)
 {
 	o.onUpdateShopList = function ()
 	{
@@ -324,7 +324,7 @@
 				R = 80,
 				P = 1.0,
 				S = "legend_armor/armor_upgrades/legend_light_padding_replacement_upgrade"
-			}
+			},
 			{
 				R = 80,
 				P = 1.0,
