@@ -1,5 +1,4 @@
-local gt = getroottable();
-gt.Const.LegendMod.Alignment <- {
+::Const.LegendMod.Alignment <- {
 	Dreaded = 0,
 	Cruel = 1,
 	Merciless = 2,
@@ -12,12 +11,12 @@ gt.Const.LegendMod.Alignment <- {
 	Saintly = 9
 }
 
-gt.Const.LegendMod.AlignmentNames <- ["Dreaded", "Cruel", "Merciless", "Notorious", "Neutral Grumpy", "Neutral Good", "Kind", "Good", "Chivalrous", "Saintly"];
+::Const.LegendMod.AlignmentNames <- ["Dreaded", "Cruel", "Merciless", "Notorious", "Neutral Grumpy", "Neutral Good", "Kind", "Good", "Chivalrous", "Saintly"];
 
 /*
 	if this.m.Alignment < Neutral
 
-gt.Const.Strings.MoralReputation <- [
+::Const.Strings.MoralReputation <- [
 	"Dreaded", 0-10
 	"Cruel", 11-20
 	"Merciless", 21-30

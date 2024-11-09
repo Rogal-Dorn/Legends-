@@ -1,5 +1,4 @@
-local gt = this.getroottable();
-gt.Const.World.CampBuildings <- {
+::Const.World.CampBuildings <- {
 	Commander = "camp.commander",
 	Barber = "camp.barber",
 	Crafting = "camp.crafting",
@@ -15,7 +14,7 @@ gt.Const.World.CampBuildings <- {
 	Workshop = "camp.workshop",
 	Painter = "camp.painter" //PaintingTent
 };
-gt.Const.World.TerrainCampImages <- [
+::Const.World.TerrainCampImages <- [
 	{},
 	{
 		Foreground = null,
