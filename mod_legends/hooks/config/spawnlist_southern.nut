@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.World <- {};
-}
-
-if (!("Spawn" in gt.Const.World))
-{
-	gt.Const.World.Spawn <- {};
-}
-
-gt.Const.World.Spawn.Southern <-
+::Const.World.Spawn.Southern =
 {
 	Name = "Southern",
 	IsDynamic = true,
@@ -98,7 +86,7 @@ gt.Const.World.Spawn.Southern <-
 		},
 	]
 };
-gt.Const.World.Spawn.CaravanSouthern <-
+::Const.World.Spawn.CaravanSouthern =
 {
 	Name = "CaravanSouthern",
 	IsDynamic = true,
@@ -174,7 +162,7 @@ gt.Const.World.Spawn.CaravanSouthern <-
 		},
 	]
 };
-gt.Const.World.Spawn.Slaves <-
+::Const.World.Spawn.Slaves =
 {
 	Name = "Slaves",
 	IsDynamic = true,
@@ -196,7 +184,7 @@ gt.Const.World.Spawn.Slaves <-
 		},
 	]
 };
-gt.Const.World.Spawn.NorthernSlaves <-
+::Const.World.Spawn.NorthernSlaves =
 {
 	Name = "NorthernSlaves",
 	IsDynamic = true,
@@ -218,7 +206,7 @@ gt.Const.World.Spawn.NorthernSlaves <-
 		},
 	]
 };
-gt.Const.World.Spawn.Assassins <-
+::Const.World.Spawn.Assassins =
 {
 	Name = "Assassins",
 	IsDynamic = true,
