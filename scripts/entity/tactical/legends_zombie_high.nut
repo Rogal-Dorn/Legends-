@@ -110,7 +110,7 @@ this.legends_zombie_high <- this.inherit("scripts/entity/tactical/legend_zombie"
 			[1, "decayed_closed_flat_top_with_sack"],
 			[3, "decayed_full_helm"],
 			[3, "decayed_great_helm"]
-		])
+		]);
 
 		if (item != null)
 		{

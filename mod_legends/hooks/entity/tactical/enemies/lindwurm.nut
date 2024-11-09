@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/lindwurm", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/lindwurm", function(o)
 {
 	local onDeath = o.onDeath;
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
@@ -20,7 +20,7 @@
 				if (this.Math.rand(1, 100) <= chance)
 				{
 					local rune;
-					local variant = this.Math.rand(21, 22)
+					local variant = this.Math.rand(21, 22);
 					switch (variant)
 					{
 						case 21:

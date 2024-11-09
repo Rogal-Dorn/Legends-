@@ -24,7 +24,7 @@ this.legend_heartwood_sap_flask_item <- this.inherit("scripts/items/accessory/ac
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Grants perfect focus, halving the action point costs of all skills for three turns"
-			})
+			});
 		return result;
 	}
 

@@ -17,8 +17,8 @@ this.legend_armor_crusader <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.ConditionMax = 160;
 		this.m.StaminaModifier = -10;
 		this.blockUpgrades();
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false
-		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 });

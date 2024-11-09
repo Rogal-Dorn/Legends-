@@ -28,7 +28,7 @@
 
 		this.m.JSHandle.asyncCall("setDLC", dlc);
 		local missingFiles = this.checkForRequiredFiles();
-		local test = false
+		local test = false;
 		if (!this.Const.DLC.Unhold || !this.Const.DLC.Wildmen || !this.Const.DLC.Desert || missingFiles.len() > 0)
 		{
 			local disabledMotdText = "You are missing critical files!"
@@ -36,7 +36,7 @@
 			if(!this.Const.DLC.Unhold) disabledMotdText += "\nMissing 'Beasts and Exploration' DLC";
 			if(!this.Const.DLC.Wildmen) disabledMotdText += "\nMissing 'Warriors of the North' DLC'";
 			if(!this.Const.DLC.Desert) disabledMotdText += "\nMissing 'Blazing Deserts' DLC'";
-			if(missingFiles.len() > 0){
+			if(missingFiles.len() > 0) {
 				foreach (fileType, fileName in missingFiles){
 					disabledMotdText += format("\nMissing %s file %s", fileType, fileName);
 				}

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/conscript", function(o) 
+::mods_hookExactClass("entity/tactical/humans/conscript", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -73,7 +73,7 @@
 			[1, "oriental/southern_head_wrap", variant],
 			[1, "oriental/wrapped_southern_helmet"],
 			[1, "oriental/spiked_skull_cap_with_mail"]
-		])
+		]);
 
 		this.m.Items.equip(helm);
 

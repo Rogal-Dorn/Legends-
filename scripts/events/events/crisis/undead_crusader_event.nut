@@ -84,7 +84,7 @@ this.undead_crusader_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		local roster = this.World.getPlayerRoster().getAll()
+		local roster = this.World.getPlayerRoster().getAll();
 		foreach( bro in roster)
 		{
 			if (bro.getBackground().getID() == "background.legend_commander_crusader")

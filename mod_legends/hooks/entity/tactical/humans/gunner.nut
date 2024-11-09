@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/gunner", function(o) 
+::mods_hookExactClass("entity/tactical/humans/gunner", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -30,7 +30,7 @@
 		]));
 		local helm =this.Const.World.Common.pickHelmet([
 				[1, "oriental/gunner_hat"]
-		]) 
+		]);
 		this.m.Items.equip(helm);
 	}
 });

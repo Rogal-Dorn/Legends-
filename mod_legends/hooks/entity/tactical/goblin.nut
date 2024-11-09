@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/goblin", function(o) 
+::mods_hookExactClass("entity/tactical/goblin", function(o)
 {
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
@@ -93,7 +93,7 @@
 	o.onFactionChanged = function ()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer()
+		local flip = this.isAlliedWithPlayer();
 		// 	flip = !flip
 		// Note from James: I removed the check for unlayered armor from this flip = !flip thing. I have no clue what it would do though.
 		this.getSprite("helmet").setHorizontalFlipping(flip);

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/bandit_marksman", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/bandit_marksman", function(o)
 {
 	o.onInit = function ()
 	{
@@ -109,15 +109,15 @@
 		{
 			this.m.Items.addToBag(this.new("scripts/items/weapons/bludgeon"));
 		}
-		
+
 		local item = this.Const.World.Common.pickArmor([
 			[20, "thick_tunic"],
 			[20, "padded_surcoat"],
 			[20,"leather_wraps"],
 			[20,"blotched_gambeson"]
-		])
+		]);
 		this.m.Items.equip(item);
-		
+
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local item = this.Const.World.Common.pickHelmet([
@@ -126,7 +126,7 @@
 				[20,"headscarf"],
 				[20,"full_leather_cap"],
 				[20,"mouth_piece"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

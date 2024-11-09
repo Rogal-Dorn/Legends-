@@ -1,7 +1,7 @@
-::mods_hookExactClass("entity/tactical/human", function(o) 
-{	
+::mods_hookExactClass("entity/tactical/human", function(o)
+{
 	o.m.Outfits <- [];  //Always overridden if it's used
-	
+
 	o.create = function ()
 	{
 		this.actor.create();
@@ -32,7 +32,7 @@
 			_v = 0;
 		}
 
-		this.m.Gender = _v
+		this.m.Gender = _v;
 		if(this.m.Gender == 1)
 		{
 			this.m.Faces = this.Const.Faces.AllFemale;
@@ -471,7 +471,7 @@
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
-	
+
 	o.onFactionChanged = function ()
 	{
 		this.actor.onFactionChanged();

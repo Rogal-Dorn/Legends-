@@ -15,10 +15,10 @@
 			{
 				if (this.Stash.getItemAtIndex(i).item != null)
 				{
-					ret.deletedNum++;
+					ret.deletedNum += 1;
 				}
 			}
-			ret.popup = ret.deletedNum != 0; 
+			ret.popup = ret.deletedNum != 0;
 		}
 
 		return ret;

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/settlement", function(o) 
+::mods_hookExactClass("entity/world/settlement", function(o)
 {
 	o.m.FemaleDraftList <- [];
 	o.m.StablesList <- [];
@@ -10,7 +10,7 @@
 	o.m.CaravanSentHistory <- array(7,[]); // 7-day rolling window recording all caravans sent
 	o.m.SurroundingTileData <- null;
 	o.m.SurroundingTileDataDefaultRadius <- 10;
-	
+
 	o.setUpgrading <- function ( _v )
 	{
 		this.m.IsUpgrading = _v;
@@ -1816,7 +1816,7 @@
 
 		foreach (building in this.getBuildings())
 		{
-			local stash = building.getStash()
+			local stash = building.getStash();
 			if (stash != null)
 			{
 				foreach (item in stash.getItems())
@@ -2382,7 +2382,7 @@
 			this.m.CaravanReceivedHistory = ::MSU.Utils.deserialize(_in);
 			this.m.CaravanSentHistory = ::MSU.Utils.deserialize(_in);
 		}
-		
+
 		this.updateSprites();
 	}
 });

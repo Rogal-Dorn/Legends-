@@ -38,7 +38,7 @@ this.legend_donkey_kick_skill <- this.inherit("scripts/skills/skill", {
 
 function getTooltip()
 	{
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		local p = actor.getCurrentProperties();
 		local mult = p.MeleeDamageMult;
 		local bodyHealth = actor.getHitpointsMax();
@@ -46,7 +46,7 @@ function getTooltip()
 		local damageMin = 5;
 		local damageMax = 10;
 		local avgMin = average - 100;
-		local avgMax = average - 90;	
+		local avgMax = average - 90;
 
 		if ((average - 100) > 0)
 			{
@@ -57,7 +57,7 @@ function getTooltip()
 			{
 			damageMax += avgMax;
 			}
-			
+
 		local damage_regular_min = this.Math.floor(damageMin * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_regular_max = this.Math.floor(damageMax * p.DamageRegularMult * p.DamageTotalMult);
 		local damage_Armor_min = this.Math.floor(damageMin * p.DamageArmorMult * p.DamageTotalMult);
@@ -70,7 +70,7 @@ function getTooltip()
 			 damage_Armor_max += muscularity;
 			 damage_direct_max += muscularity;
 		}
-		
+
 		if(mult != 1.0)
 		{
 			damage_regular_min = this.Math.floor(damage_regular_min * mult);
@@ -79,7 +79,7 @@ function getTooltip()
 			damage_Armor_max = this.Math.floor(damage_Armor_max * mult);
 			damage_direct_max = this.Math.floor(damage_direct_max * mult);
 		}
-		
+
 		local ret = [
 			{
 				id = 1,
@@ -155,7 +155,7 @@ function onAnySkillUsed( _skill, _targetEntity, _properties )
 			local damageMin = 5;
 			local damageMax = 10;
 			local avgMin = average - 100;
-			local avgMax = average - 90;	
+			local avgMax = average - 90;
 
 			if ((average - 100) > 0)
 				{

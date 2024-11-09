@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/receive_ship_action", function(o) 
+::mods_hookExactClass("factions/actions/receive_ship_action", function(o)
 {
 	o.m.Dest <- null;
 
@@ -69,7 +69,7 @@
 					local town = this.m.Settlement;
 					foreach (building in town.getBuildings())
 					{
-						local stash = building.getStash()
+						local stash = building.getStash();
 						if (stash != null)
 						{
 							foreach (item in stash.getItems())
@@ -83,14 +83,14 @@
 									{
 										item.removeSelf();
 										party.addToInventory(item);
-										
+
 									}
 									else
 									{
 										local r = this.Math.rand(1,10);
 										if (r == 1)
 										{
-										item.removeSelf();								
+										item.removeSelf();
 										party.addToInventory(item);
 										}
 									}
@@ -146,10 +146,10 @@
 						[1, "trade/legend_iron_ingots_item"]
 					]
 
-					local item = this.Const.World.Common.pickItem(items)
+					local item = this.Const.World.Common.pickItem(items);
 					party.addToInventory(item);
 				}
-			
+
 		}
 
 		local c = party.getController();
@@ -166,7 +166,7 @@
 	}
 
 	local onExecute = o.onExecute;
-	function onExecute( _faction )
+	o.onExecute = function ( _faction )
 	{
 		//TODO, I want to have these generated only once a harbor town gets nice and fat and juicy,
 		//have this ship going to another settlement to move goods around the map.

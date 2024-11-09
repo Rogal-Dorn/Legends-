@@ -381,7 +381,7 @@
 
 		foreach( list in this.Const.World.Settlements.LegendsWorldMaster )
 		{
-			local num = Math.ceil(::Legends.Mod.ModSettings.getSetting("Settlements").getValue() * list.Ratio)
+			local num = Math.ceil(::Legends.Mod.ModSettings.getSetting("Settlements").getValue() * list.Ratio);
 			//Add at least one of each
 
 			local additionalSpace = 0
@@ -731,7 +731,7 @@
 			local tries = 0;
 			while (tries++ < 1000)
 			{
-				local index = this.Math.rand(0, settlements.len() - 1)
+				local index = this.Math.rand(0, settlements.len() - 1);
 				settlements[index].buildAttachedLocation(1, v.Script, ALL, [], 2, false, true, true);
 				if (settlements[index].hasAttachedLocation(k)) {
 					//this.logInfo("Added " + k)

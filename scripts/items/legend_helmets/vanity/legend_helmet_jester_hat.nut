@@ -33,7 +33,7 @@ this.legend_helmet_jester_hat <- this.inherit("scripts/items/legend_helmets/lege
 	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
-		this.onArmorTooltip(result)
+		this.onArmorTooltip(result);
 		return result;
 	}
 

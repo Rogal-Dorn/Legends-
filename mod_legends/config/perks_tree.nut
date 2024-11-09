@@ -361,8 +361,8 @@ local VanillaTree = [
 	// local _direction = 1
 	foreach (index, L in _overflows)
 	{
-		local nextIndex = index
-		local foundIndexToSlot = true
+		local nextIndex = index;
+		local foundIndexToSlot = true;
 		for (local i = 0; i < L.len(); i = ++i)
 		{
 			while (nextIndex < 7 && _totals[nextIndex] >= 13 ) { //assume we start index 6, last row

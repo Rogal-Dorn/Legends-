@@ -145,12 +145,12 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.LegendWindReader,
 				this.Const.Perks.PerkDefs.LegendCascade,
-				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,				
+				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendPiercingShot,
 				this.Const.Perks.PerkDefs.LegendPerfectFit,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat
+				this.Const.Perks.PerkDefs.LegendFavouredEnemySchrat,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyArcher
 			],
 			[
@@ -161,7 +161,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
-				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 			],

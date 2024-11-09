@@ -183,7 +183,7 @@ this.squire_background <- this.inherit("scripts/skills/backgrounds/character_bac
 			[1, "leather_tunic"],
 			[1, "padded_surcoat"],
 			[1, "gambeson"]
-		]))
+		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "full_aketon_cap"],

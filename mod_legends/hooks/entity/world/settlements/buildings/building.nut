@@ -109,7 +109,7 @@
 												continue;
 											}
 
-											local upgrade = item.getUpgrade(i)
+											local upgrade = item.getUpgrade(i);
 											upgrade.m.Armor = null;
 											items.push(upgrade);
 											item.m.Upgrades[i] = null;
@@ -122,7 +122,7 @@
 										{
 											if (this.Math.rand(1, 100) <= 50)
 											{
-												local condition = this.Math.rand(it.getConditionMax() * 0.4, it.getConditionMax() * 0.9)
+												local condition = this.Math.rand(it.getConditionMax() * 0.4, it.getConditionMax() * 0.9);
 												it.setCondition(condition);
 											}
 										}

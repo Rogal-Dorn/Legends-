@@ -5,7 +5,7 @@
 	{
 		this.m.Rumors = [
 			"What\'s going on around here you\'re asking? Well, there\'s a fair over in %settlement%. Merchants from far and wide gather to offer their wares.",
-			"Big fairs like the one over in %settlement% atract the worst kinds of people, minstrels and troubadours."
+			"Big fairs like the one over in %settlement% atract the worst kinds of people, minstrels and troubadours.",
 			"Me, I am more of the solitary type. Big fairs like the one over in %settlement% just don\'t appeal to me at all...."
 		];
 	}
@@ -51,7 +51,7 @@
 		_draftList.push("legend_master_archer_background");
 		_draftList.push("legend_master_archer_background");
 		_draftList.push("legend_master_archer_background");
-		
+
 
 		if  ( this.World.Assets.getOrigin().getID() == "scenario.militia")
 		{

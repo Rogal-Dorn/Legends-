@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/effects/spider_poison_coat_effect", function(o) {
-	
+
 	o.resetTime = function ()
 	{
 		if (this.getContainer().getActor().isPlacedOnMap())
@@ -45,12 +45,12 @@
 		}
 
 		local effect = this.new("scripts/skills/effects/spider_poison_effect");
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		if (actor.getFaction() == this.Const.Faction.Player )
 		{
 			effect.setActor(actor);
 		}
-		
+
 		effect.setDamage(10);
 		_targetEntity.getSkills().add(effect);
 	}

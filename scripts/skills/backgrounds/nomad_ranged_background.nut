@@ -44,12 +44,12 @@ this.nomad_ranged_background <- this.inherit("scripts/skills/backgrounds/nomad_b
 		};
 		return c;
 	}
-	
+
 	function onAdded()
 	{
 		this.character_background.onAdded();
 		this.m.Container.add(this.new("scripts/skills/perks/perk_legend_throw_sand"));
-	}	
+	}
 
 	function onAddEquipment()
 	{
@@ -72,7 +72,7 @@ this.nomad_ranged_background <- this.inherit("scripts/skills/backgrounds/nomad_b
 			[1, "oriental/thick_nomad_robe"],
 			[1, "oriental/stitched_nomad_armor"],
 			[1, "oriental/leather_nomad_robe"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/nomad_head_wrap"],

@@ -280,13 +280,13 @@
 		local validSkillToParry = _skill != null && !_skill.isIgnoringRiposte() && _skill.m.IsWeaponSkill;
 
 		if (this.m.CurrentProperties.IsParrying && !this.getCurrentProperties().IsStunned && validAttackerToParry && validSkillToParry && !_attacker.getCurrentProperties().IsImmuneToDisarm && !_attacker.getSkills().hasSkill("effects.legend_parried"))
-		{		
+		{
 			if (this.isHiddenToPlayer())
 			{
 				_attacker.getSkills().add(this.new("scripts/skills/effects/legend_parried_effect"));
-				this.onBeforeRiposte(_attacker,_skill);	
-			} 
-			else 
+				this.onBeforeRiposte(_attacker,_skill);
+			}
+			else
 			{
 				local info = {
 					Actor = this,
@@ -294,7 +294,7 @@
 					Skill = _skill
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay * 1.5, this.onParryVisible.bindenv(this), info);
-				
+
 			}
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(this) + " Parries the attack from " + this.Const.UI.getColorizedEntityName(_attacker));
 		}
@@ -308,7 +308,7 @@
 		{
 			this.m.Fatigue = this.Math.min(this.getFatigueMax(), this.Math.round(this.m.Fatigue + this.Const.Combat.FatigueLossOnBeingMissed * this.m.CurrentProperties.FatigueEffectMult * this.m.CurrentProperties.FatigueLossOnAnyAttackMult * this.m.CurrentProperties.FatigueLossOnBeingMissedMult));
 		}
-		
+
 		this.m.Skills.onMissed(_attacker, _skill);
 	}
 
@@ -1091,10 +1091,10 @@
 
 		this.onAfterDeath(myTile);
 	}
-	
+
 	o.setHitpoints <- function ( _h)
 	{
-		local healGoal = _h + this.m.HealRemainder; 
+		local healGoal = _h + this.m.HealRemainder;
 		local healTick = this.Math.floor(healGoal);
 		this.m.Hitpoints = this.Math.round(healTick);
 		this.m.HealRemainder = healGoal - healTick;
@@ -1210,7 +1210,7 @@
 		}
 
 		if (this.m.Skills.hasSkill("perk.steel_brow") && _hitInfo.BodyPart == this.Const.BodyPart.Head)
-		{	
+		{
 			_hitInfo.BodyDamageMult -= this.Math.floor(_hitInfo.BodyDamageMult / 3);
 		}
 
@@ -1500,17 +1500,17 @@
 		return damage;
 	}
 
-	local szFn = o.onSerialize
+	local szFn = o.onSerialize;
 	o.onSerialize = function( _out )
 	{
-		szFn(_out)
+		szFn(_out);
 		_out.writeString(this.m.RiderID);
 	}
 
-	local dszFn = o.onDeserialize
+	local dszFn = o.onDeserialize;
 	o.onDeserialize = function( _in )
 	{
-		dszFn(_in)
+		dszFn(_in);
 		this.m.RiderID = _in.readString();
 	}
 

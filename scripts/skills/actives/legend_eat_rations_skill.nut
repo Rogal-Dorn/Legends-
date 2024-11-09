@@ -42,10 +42,10 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local amount = this.m.Amount;
-		local rations = null
+		local rations = null;
 		if (this.Tactical.isActive())
 		{
-			rations = this.getContainer().getActor().getSkills().getSkillByID("effects.legend_rations_effect")
+			rations = this.getContainer().getActor().getSkills().getSkillByID("effects.legend_rations_effect");
 			if (rations != null)
 			{
 				amount += rations.getAmount() - (10 - rations.getTurnsLeft());
@@ -212,7 +212,7 @@ this.legend_eat_rations_skill <- this.inherit("scripts/skills/skill", {
 			//this.Const.Tactical.Common.checkDrugEffect(_user);
 			return true;
 		}
-		
+
 
 		//We are satiated and stuffed
 		if (!_user.getSkills().hasSkill("injury.sickness"))

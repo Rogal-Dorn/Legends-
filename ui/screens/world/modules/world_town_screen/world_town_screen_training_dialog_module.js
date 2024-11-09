@@ -358,10 +358,10 @@ WorldTownScreenTrainingDialogModule.prototype.updateDetailsPanel = function(_ele
 	{
 		var currentMoney = this.mAssets.getValues().Money;
 		var data = _element.data('entry');
-		
-		this.mDetailsPanel.CharacterImage.attr('src', Path.PROCEDURAL + data.ImagePath);	 
-		this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0); 
-		   
+
+		this.mDetailsPanel.CharacterImage.attr('src', Path.PROCEDURAL + data.ImagePath);
+		this.mDetailsPanel.CharacterImage.centerImageWithinParent(0, 0, 1.0);
+
 		this.mDetailsPanel.CharacterName.html(data['Name']);
 
 		this.mDetailsPanel.ScrollContainerList.empty();

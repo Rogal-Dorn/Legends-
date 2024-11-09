@@ -17,7 +17,7 @@ this.perk_legend_brink_of_death <- this.inherit("scripts/skills/skill", {
 
 	function onCombatStarted()
 	{
-		local actors = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player)
+		local actors = this.Tactical.Entities.getInstancesOfFaction(this.Const.Faction.Player);
 
 		foreach( a in actors )
 		{
@@ -25,7 +25,7 @@ this.perk_legend_brink_of_death <- this.inherit("scripts/skills/skill", {
 			{
 				a.getSkills().add(this.new("scripts/skills/traits/legend_deathly_spectre_trait"));
 			}
-		}		
+		}
 	}
 
 });

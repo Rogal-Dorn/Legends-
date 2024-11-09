@@ -61,7 +61,7 @@ this.legend_noble_shield <- this.inherit("scripts/skills/backgrounds/character_b
 		this.m.PerkTreeDynamic = {
 			Weapon = [
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.ThrowingTree
+				this.Const.Perks.ThrowingTree,
 				this.Const.Perks.ShieldTree,
 			],
 			Defense = [

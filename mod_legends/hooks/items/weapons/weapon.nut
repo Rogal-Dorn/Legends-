@@ -7,7 +7,7 @@
 		{
 			return this.m.ShieldDamage;
 		}
-		local skill = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_smashing_shields")
+		local skill = this.getContainer().getActor().getSkills().getSkillByID("perk.legend_smashing_shields");
 
 		return skill == null ? this.m.ShieldDamage : this.Math.round(this.m.ShieldDamage * skill.getModifier());
 	}

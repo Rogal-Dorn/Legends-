@@ -44,7 +44,7 @@ this.legend_tackled_effect <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/fatigue.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-70%[/color] Initiative"
-			}
+			},
 			{
 				id = 12,
 				type = "text",

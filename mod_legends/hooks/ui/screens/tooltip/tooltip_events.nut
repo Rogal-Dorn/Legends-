@@ -193,7 +193,7 @@
 			else if (_item.getTradeHistorySettlementIDs().len() > 1)
 			{
 				local arr = _item.getTradeHistorySettlements().map(function(s){return s.getName()});
-				local slice = arr.slice(0,arr.len() - 1)
+				local slice = arr.slice(0,arr.len() - 1);
 				tooltip.push({
 					id = 50,
 					type = "hint",
@@ -1510,7 +1510,7 @@
 					id = 1,
 					type = "title",
 					text = "Fighters in Fighting Line"
-				}
+				},
 				{
 					id = 2,
 					type = "description",

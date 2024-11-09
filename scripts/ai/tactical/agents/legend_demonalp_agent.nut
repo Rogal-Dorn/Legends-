@@ -48,7 +48,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 			"actives.legend_alp_nightmare_manifestation"
 		]);
 		this.addBehavior(behavior);
-		
+
 
 		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_alp_teleport"));
 		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
@@ -72,7 +72,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 			currentDanger += 1.0 - d.Turns;
 		}
 
-		local dangerLevel = ::Math.maxf(0.0, 1.0 - currentDanger / m.PermitedDanger)
+		local dangerLevel = ::Math.maxf(0.0, 1.0 - currentDanger / m.PermitedDanger);
 
 		if (dangerLevel > 0.1)
 		{ // not really in danger
@@ -132,9 +132,9 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 				continue;
 
 			if ( // must have combat capability
-				t.Actor.getMoraleState() == ::Const.MoraleState.Fleeing 
-				|| t.Actor.getCurrentProperties().IsStunned 
-				|| t.Actor.getCurrentProperties().IsRooted 
+				t.Actor.getMoraleState() == ::Const.MoraleState.Fleeing
+				|| t.Actor.getCurrentProperties().IsStunned
+				|| t.Actor.getCurrentProperties().IsRooted
 				|| t.Actor.isNonCombatant()
 			)
 				continue;
@@ -143,7 +143,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 				continue;
 
 			if ( // is consider as a danger
-				t.Actor.getHitpointsPct() < ::Const.AI.Behavior.MinDangerHitpointsPct 
+				t.Actor.getHitpointsPct() < ::Const.AI.Behavior.MinDangerHitpointsPct
 				|| t.Actor.getTile().getZoneOfControlCountOtherThan(t.Actor.getAlliedFactions()) >= ::Const.AI.Behavior.IgnoreDangerMinZones
 			)
 				continue;

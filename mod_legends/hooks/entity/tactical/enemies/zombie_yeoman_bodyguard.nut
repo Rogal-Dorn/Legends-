@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/zombie_yeoman_bodyguard", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/zombie_yeoman_bodyguard", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -69,7 +69,7 @@
 				[1, "dented_nasal_helmet"],
 				[1, "mail_coif"],
 				[1, "full_leather_cap"]
-			])
+			]);
 			if (item != null)
 			{
 				if (this.Math.rand(1, 100) <= 66)

@@ -11,8 +11,8 @@ this.legend_named_armor <- this.inherit("scripts/items/legend_armor/legend_armor
 		this.m.ShowOnCharacter = true;
 		this.m.IsDroppedAsLoot = true;
 		this.blockUpgrades();
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 	function getRandomCharacterName( _list )

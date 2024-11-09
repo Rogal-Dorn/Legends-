@@ -392,7 +392,7 @@
 ];
 
 ::Const.Beards.Berserker <- [
-	"legends_02"
+	"legends_02",
 	"14"
 ];
 
@@ -613,7 +613,7 @@
 ];
 
 ::Const.Faces.AfricanMale <- [
-	"bust_head_african_03"
+	"bust_head_african_03",
 	"bust_head_african_06",
 	"bust_head_african_07",
 	"bust_head_african_10",

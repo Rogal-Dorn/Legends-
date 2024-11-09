@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/goblin_ambusher_low", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/goblin_ambusher_low", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -14,12 +14,12 @@
 		this.m.Items.addToBag(this.new("scripts/items/weapons/greenskins/goblin_notched_blade"));
 		local item = this.Const.World.Common.pickArmor([
 				[1, "greenskins/goblin_skirmisher_armor"]
-			])
+			]);
 			this.m.Items.equip(item);
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "greenskins/goblin_skirmisher_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

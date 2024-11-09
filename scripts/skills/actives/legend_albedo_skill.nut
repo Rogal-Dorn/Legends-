@@ -47,7 +47,7 @@ this.legend_albedo_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false
 		}
-		
+
 		return true
 	}
 
@@ -89,8 +89,8 @@ this.legend_albedo_skill <- this.inherit("scripts/skills/skill", {
 	{
 		local target = _targetTile.getEntity();
 
-		local body = target.getItems().getItemAtSlot(this.Const.ItemSlot.Body)
-		local head = target.getItems().getItemAtSlot(this.Const.ItemSlot.Head)
+		local body = target.getItems().getItemAtSlot(this.Const.ItemSlot.Body);
+		local head = target.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local currentHeadArmor = 0;
 		local maxHeadArmor = 0;
 		if (head != null)
@@ -133,7 +133,7 @@ this.legend_albedo_skill <- this.inherit("scripts/skills/skill", {
 		{
 			maxBodyRepair += this.Math.maxf(0, maxHeadRepair - missingHeadArmor);
 		}
-		else 
+		else
 		{
 			maxBodyRepair += maxHeadRepair;
 		}
@@ -142,7 +142,7 @@ this.legend_albedo_skill <- this.inherit("scripts/skills/skill", {
 		{
 			maxHeadRepair += this.Math.maxf(0, maxBodyRepair - missingBodyArmor);
 		}
-		else 
+		else
 		{
 			maxHeadRepair += maxBodyRepair;
 		}

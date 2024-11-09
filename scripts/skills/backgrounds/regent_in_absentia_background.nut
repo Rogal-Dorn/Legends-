@@ -175,7 +175,7 @@ this.regent_in_absentia_background <- this.inherit("scripts/skills/backgrounds/c
 			[1, "mail_shirt"],
 			[1, "basic_mail_shirt"],
 			[1, "mail_hauberk"]
-		]))
+		]));
 
 		items.equip(this.Const.World.Common.pickHelmet([
 			[2, "nasal_helmet"],

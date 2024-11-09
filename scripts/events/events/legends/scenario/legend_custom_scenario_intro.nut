@@ -147,7 +147,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 				Text = bground.m.Name,
 				Background = fname,
 				function getResult( _event ) {
-					_event.addBro(this.Background)
+					_event.addBro(this.Background);
 					//_event.m.Background = this.Background;
 					return "F"
 				}
@@ -356,7 +356,7 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						_event.m.PreviousScreen = "C0";
 						return "C1";
 					}
-				}
+				},
  				{
 					Text = "Melee Defense",
 					function getResult( _event ) {
@@ -521,10 +521,10 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						if (_event.m.Talent == -1) _event.m.Dude.fillTalentValues(3);
 
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-						_event.m.Dude = null
+						_event.m.Dude = null;
 						return "A";
 					}
-				}
+				},
 				{
 					Text = "Finished",
 					function getResult( _event )
@@ -532,10 +532,10 @@ this.legend_custom_scenario_intro <- this.inherit("scripts/events/event", {
 						if (_event.m.Talent == -1) _event.m.Dude.fillTalentValues(3);
 
 						_event.m.Dude.fillAttributeLevelUpValues(this.Const.XP.MaxLevelWithPerkpoints - 1);
-						_event.m.Dude = null
+						_event.m.Dude = null;
 
 						//_event.m.StartBro.removeActiveRelationship();
-						 this.World.getPlayerRoster().remove(_event.m.StartBro)
+						this.World.getPlayerRoster().remove(_event.m.StartBro);
 
 						return 0;
 					}

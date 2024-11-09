@@ -57,7 +57,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 
 			///---
 		local r = this.Math.rand(1, 2);
-		
+
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -78,7 +78,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 			[2, "butcher_apron"],
 			[1, "cultist_leather_robe"]
 		]));
-		
+
 		local item = this.Const.World.Common.pickHelmet([
 			[67, ""],
 			[7, "hood"],
@@ -91,7 +91,7 @@ this.legends_zombie_low <- this.inherit("scripts/entity/tactical/legend_zombie",
 			[4, "cultist_hood"],
 			[4, "witchhunter_hat"],
 			[1, "cultist_leather_hood"]
-		])
+		]);
 
 		if (item != null)
 		{

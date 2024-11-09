@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/raid_caravan_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/raid_caravan_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
@@ -62,7 +62,7 @@
 					local best_dest = this.World.getEntityByID(this.Flags.get("InterceptDest"));
 
 					local spawnParty = this.Const.World.Spawn.NobleCaravan;
-					local r = this.Math.rand(1, 100)
+					local r = this.Math.rand(1, 100);
 					if (r > 75)
 					{
 						spawnParty = this.Const.World.Spawn.Mercenaries;
