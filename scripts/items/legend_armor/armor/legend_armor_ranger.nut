@@ -17,8 +17,8 @@ this.legend_armor_ranger <- this.inherit("scripts/items/legend_armor/legend_armo
 		this.m.ConditionMax = 110;
 		this.m.StaminaModifier = -6;
 		this.blockUpgrades();
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 });

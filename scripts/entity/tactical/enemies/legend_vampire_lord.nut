@@ -338,7 +338,7 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 		this.m.Items.equip(item);
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "legend_vampire_lord_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

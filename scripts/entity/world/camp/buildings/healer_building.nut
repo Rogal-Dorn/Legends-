@@ -331,7 +331,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 
 	function getHealUpdateText()
 	{
-		local totalTime = this.Math.ceil(this.m.PointsNeeded / this.getRate())
+		local totalTime = this.Math.ceil(this.m.PointsNeeded / this.getRate());
 		local percent = (this.m.Camp.getElapsedHours() / totalTime) * 100.0;
 		if (percent >= 100)
 		{
@@ -373,7 +373,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 			r.setPoints(r.getPoints() + needed);
 			modifiers.Craft -= needed;
 
-			this.World.Assets.addMedicine(-needed)
+			this.World.Assets.addMedicine(-needed);
 
 			if (r.getPoints() >= this.getCost(r))
 			{
@@ -385,7 +385,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				break;
 			}
 		}
-		local text = this.getUpdateText()
+		local text = this.getUpdateText();
 		if (text != "")
 		{
 			text += "</br>"
@@ -422,7 +422,7 @@ this.healer_building <- this.inherit("scripts/entity/world/camp/camp_building", 
 				continue
 			}
 
-			local b = obj.Injury
+			local b = obj.Injury;
 			local r = {
 				ID = b.getID(),
 				Name = b.getName(),

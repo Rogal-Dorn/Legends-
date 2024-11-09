@@ -42,7 +42,7 @@ this.legends_zombie_low_xbow <- this.inherit("scripts/entity/tactical/legend_zom
 			[7, "full_aketon_cap"],
 			[7, "open_leather_cap"],
 			[7, "full_leather_cap"]
-		])
+		]);
 
 		if (item != null)
 		{

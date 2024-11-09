@@ -50,7 +50,7 @@ this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
-		local damageText = format(" Take %s - %s damage at the end of each turn.", ::Const.UI.getColorized(this.m.DamageMin, ::Const.UI.Color.NegativeValue), ::Const.UI.getColorized(this.m.DamageMax, ::Const.UI.Color.NegativeValue))
+		local damageText = format(" Take %s - %s damage at the end of each turn.", ::Const.UI.getColorized(this.m.DamageMin, ::Const.UI.Color.NegativeValue), ::Const.UI.getColorized(this.m.DamageMax, ::Const.UI.Color.NegativeValue));
 		local turnsText = this.m.TurnsLeft > 0 ? (" Lasts [color=" + this.Const.UI.Color.NegativeValue + "]" + this.m.TurnsLeft + "[/color] more turns.") : "";
 		ret.push({
 			id = 12,
@@ -102,7 +102,7 @@ this.legend_consecrated_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTurnEnd()
 	{
-		this.applyDamage();		
+		this.applyDamage();
 	}
 
 	function onNewRound()

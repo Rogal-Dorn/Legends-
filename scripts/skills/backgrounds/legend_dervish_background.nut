@@ -114,7 +114,7 @@ this.legend_dervish_background <- this.inherit("scripts/skills/backgrounds/chara
 		local armor = this.Const.World.Common.pickArmor([
 			[1, "oriental/cloth_sash"]
 		]);
-		items.equip(armor)
+		items.equip(armor);
 		local helm = this.Const.World.Common.pickHelmet([
 			[2, "oriental/southern_head_wrap"],
 			[1, "legend_noble_southern_hat"],

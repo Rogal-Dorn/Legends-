@@ -257,7 +257,7 @@ function onAddEquipment()
 			[1, "mail_coif"],
 			[1, "bascinet_with_mail"],
 			[1, "closed_flat_top_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			item.onPaint(this.Const.Items.Paint.None);

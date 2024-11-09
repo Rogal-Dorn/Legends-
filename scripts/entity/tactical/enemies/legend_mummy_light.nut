@@ -16,8 +16,8 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		else
 		{
 			this.m.AIAgent = this.new("scripts/ai/tactical/agents/bandit_ranged_agent");
-			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat)
-			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Flee)
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Retreat);
+			this.m.AIAgent.removeBehavior(this.Const.AI.Behavior.ID.Flee);
 		}
 		this.m.AIAgent.setActor(this);
 	}
@@ -104,7 +104,7 @@ this.legend_mummy_light <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		item = this.Const.World.Common.pickHelmet([
 			[1, "ancient/legend_mummy_bandages"],
 			[4, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

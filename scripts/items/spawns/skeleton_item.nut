@@ -25,7 +25,7 @@ this.skeleton_item <- this.inherit("scripts/items/spawns/spawn_item", {
 
 	function playInventorySound( _eventType )
 	{
-		local index = this.Math.rand(1, 16)
+		local index = this.Math.rand(1, 16);
 		local variant = "" + index;
 		if (index < 10){
 			variant = "0" + index;

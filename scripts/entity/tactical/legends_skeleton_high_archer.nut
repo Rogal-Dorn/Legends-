@@ -34,11 +34,11 @@ this.legends_skeleton_high_archer <- this.inherit("scripts/entity/tactical/legen
 			[1, "ancient/ancient_mail"],
 			[1, "ancient/ancient_double_layer_mail"]
 		]));
-	
+
 		local item = this.Const.World.Common.pickHelmet([
 			[34, ""],
 			[66, "ancient/ancient_household_helmet"]
-		])
+		]);
 
 		if (item != null)
 		{

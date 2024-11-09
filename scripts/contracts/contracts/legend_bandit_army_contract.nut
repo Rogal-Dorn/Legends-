@@ -684,7 +684,7 @@ this.legend_bandit_army_contract <- this.inherit("scripts/contracts/contract", {
 					function getResult()
 					{
 						this.World.Assets.addMoralReputation(-10);
-						this.Contract.setState("TOBATTLE")
+						this.Contract.setState("TOBATTLE");
 						return 0;
 					}
 

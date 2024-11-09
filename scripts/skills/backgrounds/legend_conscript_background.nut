@@ -88,7 +88,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.ShieldTree
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SlingTree
 			],
@@ -98,7 +98,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.AgileTree,
-				this.Const.Perks.FitTree,			
+				this.Const.Perks.FitTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.TrainedTree
 			],
@@ -203,7 +203,7 @@ this.legend_conscript_background <- this.inherit("scripts/skills/backgrounds/cha
 		items.equip(this.Const.World.Common.pickArmor([
 			[2, "oriental/linothorax"],
 			[1, "oriental/southern_mail_shirt"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"],

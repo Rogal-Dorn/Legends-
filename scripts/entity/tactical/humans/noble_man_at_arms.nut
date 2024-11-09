@@ -131,9 +131,9 @@ this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 			[3, "stag_helm"],
 			[3, "swan_helm"],
 			[1, "heavy_noble_house_helmet_00"]
-		])
-	
-		
+		]);
+
+
 		if (helmet != null)
 			{
 				if ("setPlainVariant" in helmet) { helmet.setPlainVariant(); }

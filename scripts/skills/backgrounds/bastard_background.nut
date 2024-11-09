@@ -44,7 +44,7 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CrossbowTree
 			],
-			Defense = [		
+			Defense = [
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -147,12 +147,12 @@ this.bastard_background <- this.inherit("scripts/skills/backgrounds/character_ba
 			[1, "ragged_surcoat"],
 			[1, "basic_mail_shirt"],
 			[1, "padded_surcoat"]
-		]))
+		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "nasal_helmet"],
 			[1, "padded_nasal_helmet"],
 			[1, "hood"]
-		]))
+		]));
 	}
 });
 

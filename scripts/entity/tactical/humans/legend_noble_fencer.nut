@@ -154,7 +154,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 
 		local armor = [
 			"armor/named/black_leather_armor",
-			"armor/named/named_noble_mail_armor"
+			"armor/named/named_noble_mail_armor",
 			"armor/named/blue_studded_mail_armor"
 		];
 

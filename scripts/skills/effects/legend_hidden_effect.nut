@@ -62,7 +62,7 @@ this.legend_hidden_effect <- this.inherit("scripts/skills/skill", {
 			id = 13,
 			type = "text",
 			text = "Will last for " + this.m.TurnsLeft + " more end of rounds"
-		})
+		});
 
 		return ret;
 

@@ -89,7 +89,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 			[2, "ancient/ancient_wig"],
 			[5, "ancient/legend_mummy_headband"],
 			[1, "ancient/legend_mummy_crown_king"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

@@ -61,8 +61,8 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 			],
 			function start( _event )
 			{	//may replace this with a flag on the old man sells event later
-				local brothers = this.World.getPlayerRoster().getAll();				
-				
+				local brothers = this.World.getPlayerRoster().getAll();
+
 				foreach( bro in brothers )
 				{
 					local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
@@ -81,12 +81,12 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 				}
 
 				local stash = this.World.Assets.getStash().getItems();
-				
+
 				foreach( item in stash )
 				{
 
 					if (item != null && (item.getID() == "accessory.legend_oms_amphora" || item.getID() == "accessory.legend_oms_fate" || item.getID() == "accessory.legend_oms_tome" || item.getID() == "accessory.legend_oms_paw" || item.getID() == "accessory.legend_oms_rib"))
-				
+
 					{
 						this.Options.push({
 							Text = "I\'ll pay you 100 crowns if you can tell me what this relic does.",
@@ -124,7 +124,7 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 	// 	return false;
 	// }
 	///-----Will clean up the below with the above later - Luft
-		
+
 		this.m.Screens.push({
 			ID = "Relic_identify",
 			Text = "", //text based on given item, not input here.
@@ -163,7 +163,7 @@ this.oracle_event <- this.inherit("scripts/events/event", {
 					{
 						this.Text = "[img]gfx/ui/events/event_52.png[/img]{You take the hairy paw from your bag and lay it on the table. The woman barely looks at it. %SPEECH_ON%Manwolf paw. Seen a dozen of them. We like to collect them for sport.%SPEECH_OFF% She flashes another paw of a larger size than yours attached to a belt on her dress. You think you catch the paw twitching, but it could just be her movement making it sway. %SPEECH_ON%Good for vigor, gives you that energy you need to run through the woods...or more.%SPEECH_OFF% She flashes you a wry smile and looks you up and down. A veil of discomfort decends down on you. %SPEECH_ON%be aware that those who pretend to be a beast also think like a beast. They may be big, hairy and strong but they have the bravery of a dog all the same when real danger comes.}";
 					}
-					else (item != null && item.getID() == "accessory.legend_oms_rib")
+					else if (item != null && item.getID() == "accessory.legend_oms_rib")
 					{
 						this.Text = "[img]gfx/ui/events/event_52.png[/img]{You produce the rib from your pack, the woman studies it as it comes out and fixes her gaze at it touches the table. No sooner as your hand is clear does she take it and hold it at either end. She softly bites one end and taps it on the edge of her cooking pot. A jolt of energy runs up your legs as you wnat to move in to stop her mishandling the relic you paid so much for. %SPEECH_ON%It\'s the real thing. I am quite impressed. No sheep bones or plaster as usual, this is the bone of a woman who i feel a burning hatred for. I know a godwhore when I see one, or in this case, part of one.%SPEECH_OFF% She notices how jittery you have become, and places the bone neatly back into your hands. %SPEECH_ON%These fools die for many reasons. Mostly killed by their own kind. This one has a painful energy about it - a mixture of pain and fear. I feel sharpness and hear the whistling of arrows when I hold it.%SPEECH_OFF% She exhales as if to purge the memory from her mind. %SPEECH_ON%Her loss will be your gain, however. These martyrs often protect against what killed them in the first place. But often at a cost of what didn\'t kill them.%SPEECH_OFF% She purses her lips. %SPEECH_ON%Stay away from axes, spears and the like, stranger.%SPEECH_OFF%}";
 					}

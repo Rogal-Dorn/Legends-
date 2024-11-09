@@ -66,7 +66,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/mead_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_curry_item"));
 		this.World.Assets.getStash().add(this.new("scripts/items/supplies/legend_liquor_item"));
-	
+
 		local banner = this.new("scripts/items/tools/player_banner");
 		banner.setVariant(2);
 		this.World.Assets.getStash().add(banner);
@@ -138,7 +138,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"cloth/legend_knightly_robe",
 			"cloth/anatomist_robe",
 			"cloth/wanderers_coat",
-			
+
 			"chain/legend_armor_ancient_double_mail",
 			"chain/legend_armor_ancient_mail",
 			"chain/legend_armor_basic_mail",
@@ -159,7 +159,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"chain/legend_southern_padded_chest",
 			"chain/legend_southern_mail",
 			"chain/wild_scale",
-			
+
 			"plate/legend_armor_leather_brigandine",
 			"plate/legend_armor_leather_brigandine_hardened",
 			"plate/legend_armor_leather_brigandine_hardened_full",
@@ -222,7 +222,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"plate/legend_southern_leather_scale",
 			"plate/legend_southern_scale",
 			"plate/undertakers_apron",
-			
+
 			"cloak/legend_shoulder_cloth",
 			"cloak/legend_noble_shawl",
 			"cloak/legend_dark_wooly_cloak",
@@ -240,7 +240,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"cloak/dukes_cloak",
 			"cloak/relic_hood",
 			"cloak/tabbed_hood",
-			
+
 			"tabard/legend_common_tabard",
 			"tabard/legend_noble_tabard",
 			"tabard/legend_southern_wrap_right",
@@ -740,8 +740,8 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"helm/legend_helmet_rotten_flat_top_face_mask",
 			"helm/legend_helmet_rotten_great_helm",
 			"helm/legend_helmet_barb_metal_cap",
-			
-			
+
+
 			"top/legend_helmet_hood_cloth_round",
 			"top/legend_helmet_hood_cloth_wide",
 			"top/legend_helmet_hood_cloth_square",
@@ -804,7 +804,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"top/legend_helmet_ancient_beard_mask",
 			"top/legend_helmet_ancient_lion_mask",
 			"top/legend_helmet_ancient_mask",
-			
+
 		//	"vanity/legend_helmet_orc_leather_mask",
 			"vanity/legend_helmet_noble_southern_crown",
 			"vanity/legend_helmet_noble_southern_hat",
@@ -863,7 +863,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			"vanity/legend_helmet_thick_braid",
 			"vanity/legend_helmet_physicians_hood",
 			"vanity/legend_helmet_chaperon",
-			"vanity/legend_helmet_felt_chaperon",			
+			"vanity/legend_helmet_felt_chaperon",
 			"vanity/legend_helmet_southern_earings",
 			"vanity/legend_helmet_southern_headress_coin",
 			"vanity/legend_helmet_nun_habit",
@@ -924,7 +924,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 			if (item.m.Variants.len() == 0)
 			{
 				this.logInfo("Adding " + h);
-				local layers = item.getLootLayers()
+				local layers = item.getLootLayers();
 				foreach (l in layers) {
 					this.World.Assets.getStash().add(l);
 				}
@@ -936,7 +936,7 @@ this.legends_debug_scenario <- this.inherit("scripts/scenarios/world/starting_sc
 					this.logInfo("Adding " + h + " :: " + i);
 					local vitem =  this.new("scripts/items/legend_helmets/" + h);
 					vitem.setVariant(item.m.Variants[i]);
-					local layers = vitem.getLootLayers()
+					local layers = vitem.getLootLayers();
 					foreach (l in layers) {
 						this.World.Assets.getStash().add(l);
 					}

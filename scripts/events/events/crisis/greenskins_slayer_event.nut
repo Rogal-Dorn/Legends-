@@ -83,7 +83,7 @@ this.greenskins_slayer_event <- this.inherit("scripts/events/event", {
 		}
 
 
-		local roster = this.World.getPlayerRoster().getAll()
+		local roster = this.World.getPlayerRoster().getAll();
 		foreach( bro in roster)
 		{
 			if (bro.getBackground().getID() == "background.legend_ranger")

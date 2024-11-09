@@ -25,7 +25,7 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 		this.m.TurnsLeft = 10;
 	}
 
-	function getAmount() 
+	function getAmount()
 	{
 		return this.m.Amount;
 	}
@@ -53,7 +53,7 @@ this.legend_rations_effect <- this.inherit("scripts/skills/skill", {
 		local rate = this.Math.max(1, this.Math.floor(this.m.Amount / 10));
 		local turns = this.m.TurnsLeft;
 		local title = this.getName();
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		if (actor != null)
 		{
 			local stuffed = actor.getSkills().getSkillByID("effects.legend_stuffed_effect");

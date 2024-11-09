@@ -55,7 +55,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 				this.Const.Perks.PerkDefs.LegendHorseCollection,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendHorseCharge
-				
+
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,
@@ -69,7 +69,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Underdog,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.LegendHorseLegControl
+				this.Const.Perks.PerkDefs.LegendHorseLegControl,
 				this.Const.Perks.PerkDefs.LegendHorseLeadChange,
 				this.Const.Perks.PerkDefs.LegendHorseParthianShot
 			],
@@ -84,7 +84,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 			],
 			[
 				this.Const.Perks.PerkDefs.Stalwart,
-				this.Const.Perks.PerkDefs.LegendSkillfulStacking
+				this.Const.Perks.PerkDefs.LegendSkillfulStacking,
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
 				this.Const.Perks.PerkDefs.LegendMedIngredients,
 				this.Const.Perks.PerkDefs.LegendToolsSpares,

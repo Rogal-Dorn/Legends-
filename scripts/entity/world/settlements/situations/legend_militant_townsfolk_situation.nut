@@ -32,12 +32,12 @@ this.legend_militant_townsfolk_situation <- this.inherit("scripts/entity/world/s
 			_settlement.removeSituationByID(this.getID());
 			return;
 		}
-		
+
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.addWorldEconomyResources(-5);
 		}
-		_settlement.resetRoster(true); 
+		_settlement.resetRoster(true);
 		_settlement.resetShop();
 
 	}
@@ -77,7 +77,7 @@ this.legend_militant_townsfolk_situation <- this.inherit("scripts/entity/world/s
 				[1,"scripts/items/weapons/hatchet"],
 			]);
 
-			local amt = ::Math.rand(10,15)
+			local amt = ::Math.rand(10,15);
 			for (local i=0; i < amt; i++)
 			{
 				local item = this.new(wc.roll());
@@ -85,7 +85,7 @@ this.legend_militant_townsfolk_situation <- this.inherit("scripts/entity/world/s
 				{
 					if (this.Math.rand(1, 100) <= 50)
 					{
-						local condition = this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax() * 0.9)
+						local condition = this.Math.rand(item.getConditionMax() * 0.4, item.getConditionMax() * 0.9);
 						item.setCondition(condition);
 					}
 				}

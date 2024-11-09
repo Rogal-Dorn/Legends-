@@ -86,7 +86,7 @@ this.legend_noble_slinger <- this.inherit("scripts/entity/tactical/human", {
 				[1, "headscarf"],
 				[1, "mail_coif"],
 				[1, ""]
-			])
+			]);
 
 		if (helmet != null)
 		{
