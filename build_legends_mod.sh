@@ -1,5 +1,6 @@
 BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
 RepoDir="${2-"battlebrothers"}"
+BuildDir="${3-".\\build"}"
 
 function checkForCompileError() {
 code=0
@@ -27,25 +28,27 @@ function handleExit() {
     fi
 }
 
-./build_brushes.sh "$BBDir" "$RepoDir"
+rm "$BuildDir" -r
+
+./build_brushes.sh "$BuildDir" "$RepoDir"
 handleExit
 
-echo "Copying sounds to $BBDir\\sounds ..."
-cp -R sounds/. "$BBDir\\sounds"
+echo "Copying sounds to $BuildDir\\sounds ..."
+cp -R sounds/. "$BuildDir\\sounds"
 handleExit
-echo "Copying gfx to $BBDir\\gfx ..."
-cp -R gfx/. "$BBDir\\gfx"
-echo "Copying mod_legends to $BBDir\\mod_legends ..."
-cp -R mod_legends/. "$BBDir\\mod_legends"
+echo "Copying gfx to $BuildDir\\gfx ..."
+cp -R gfx/. "$BuildDir\\gfx"
+echo "Copying mod_legends to $BuildDir\\mod_legends ..."
+cp -R mod_legends/. "$BuildDir\\mod_legends"
 handleExit
-echo "Copying mod script files to $BBDir\\scripts ..."
-cp -R scripts/. "$BBDir\\scripts"
+echo "Copying mod script files to $BuildDir\\scripts ..."
+cp -R scripts/. "$BuildDir\\scripts"
 handleExit
-echo "Copying mod script files to $BBDir\\ui ..."
-cp -R ui/. "$BBDir\\ui"
+echo "Copying mod script files to $BuildDir\\ui ..."
+cp -R ui/. "$BuildDir\\ui"
 handleExit
-echo "Copying mod preload files to $BBDir\\preload ..."
-cp -R ui/. "$BBDir\\preload"
+echo "Copying mod preload files to $BuildDir\\preload ..."
+cp -R ui/. "$BuildDir\\preload"
 handleExit
 # while read -r line; do
 #     if [[ "$line" == *.sh ]]; then
@@ -141,17 +144,17 @@ handleExit
 #     else
 #         #echo "$line"
 #         path=$( echo ${line%/*} )
-#         mkdir -p "$BBDir\\$path"
+#         mkdir -p "$BuildDir\\$path"
 #         handleExit
-#         cp "$line" "$BBDir\\$line"
+#         cp "$line" "$BuildDir\\$line"
 #         handleExit
 #     fi
 # done <<< "$FILES"
 
 # echo "Compiling all nut files ..."
 # cd ../bin
-# o=$(./masscompile.bat "$BBDir\\scripts")
-# o=$(./masscompile.bat "$BBDir\\mod_legends")
+# o=$(./masscompile.bat "$BuildDir\\scripts")
+# o=$(./masscompile.bat "$BuildDir\\mod_legends")
 # cd ../"$RepoDir"
 
 # checkForCompileError "$o"
@@ -166,3 +169,7 @@ handleExit
 #     exit 0
 # fi
 
+# zip the content of build dir and move file to bb's /data dir
+cd "$BuildDir"
+7z a -tzip mod_legends.zip *
+mv mod_legends.zip "$BBDir"
