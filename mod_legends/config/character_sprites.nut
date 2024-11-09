@@ -1,5 +1,4 @@
-local gt = this.getroottable();
-gt.Const.CharacterSprites <- {
+::Const.CharacterSprites <- {
 	Armor = [
 		"armor",
 		"armor_layer_chain",

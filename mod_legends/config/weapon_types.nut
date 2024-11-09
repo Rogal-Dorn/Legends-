@@ -1,3 +1,3 @@
 // add more weapon types
-this.Const.Items.addNewWeaponType("MagicStaff", "Mystic Staff");
-this.Const.Items.addNewWeaponType("Whip", "Whip");
+::Const.Items.addNewWeaponType("MagicStaff", "Mystic Staff");
+::Const.Items.addNewWeaponType("Whip", "Whip");
