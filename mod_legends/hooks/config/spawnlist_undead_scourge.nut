@@ -1,16 +1,14 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
+if (!("World" in ::Const))
 {
-	gt.Const.World <- {};
+	::Const.World <- {};
 }
 
-if (!("Spawn" in gt.Const.World))
+if (!("Spawn" in ::Const.World))
 {
-	gt.Const.World.Spawn <- {};
+	::Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.UndeadScourge <-
+::Const.World.Spawn.UndeadScourge <-
 {
 	Name = "UndeadScourge",
 	IsDynamic = true,
