@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.World <- {};
-}
-
-if (!("Spawn" in gt.Const.World))
-{
-	gt.Const.World.Spawn <- {};
-}
-
-gt.Const.World.Spawn.FreeCompany <-
+::Const.World.Spawn.FreeCompany <-
 {
 	Name = "FreeCompany",
 	IsDynamic = true,
@@ -118,7 +106,7 @@ gt.Const.World.Spawn.FreeCompany <-
 		}
 	]
 }
-gt.Const.World.Spawn.FreeCompanyLow <-
+::Const.World.Spawn.FreeCompanyLow <-
 {
 	Name = "FreeCompanyLow",
 	IsDynamic = true,
@@ -193,7 +181,7 @@ gt.Const.World.Spawn.FreeCompanyLow <-
 	]
 }
 
-gt.Const.World.Spawn.GildedCompany <-
+::Const.World.Spawn.GildedCompany <-
 {
 	Name = "GildedCompany",
 	IsDynamic = true,
