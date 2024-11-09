@@ -1,4 +1,4 @@
-if (!("LegendMod" in gt.Const))
+if (!("LegendMod" in ::Const))
 {
 	::Const.LegendMod <- {};
 }
