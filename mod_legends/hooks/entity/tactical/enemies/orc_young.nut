@@ -1,10 +1,10 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_young", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/orc_young", function(o)
 {
 	o.onFactionChanged <- function ()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer()
-		flip = !flip
+		local flip = this.isAlliedWithPlayer();
+		flip = !flip;
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
 			if (!this.hasSprite(a))
@@ -23,7 +23,7 @@
 		local v2 = 0;
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
-			this.addSprite(a)
+			this.addSprite(a);
 			this.setSpriteOffset(a, this.createVec(v2, v));
 		}
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
@@ -125,7 +125,7 @@
 			[1, "greenskins/orc_young_light_helmet"],
 			[1, "greenskins/orc_young_medium_helmet"],
 			[1, "greenskins/orc_young_heavy_helmet"]
-		])
+		]);
 
 		if (item != null)
 		{

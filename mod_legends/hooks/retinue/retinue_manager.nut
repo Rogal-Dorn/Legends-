@@ -135,7 +135,7 @@
 			}
 		}
 
-		_out.writeU8(this.m.OwnedFollowerIDs.len())
+		_out.writeU8(this.m.OwnedFollowerIDs.len());
 		foreach (id in this.m.OwnedFollowerIDs)
 		{
 			_out.writeString(id);
@@ -179,7 +179,7 @@
 		}
 		else
 		{
-			local ownedFollowerCount = _in.readU8()
+			local ownedFollowerCount = _in.readU8();
 			for (local i = 0; i < ownedFollowerCount; ++i)
 			{
 				local id = _in.readString();

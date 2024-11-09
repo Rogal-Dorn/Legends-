@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/bounty_hunter", function(o) 
+::mods_hookExactClass("entity/tactical/humans/bounty_hunter", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -130,9 +130,9 @@
 				[1, "nordic_helmet_with_closed_mail"],
 				[1, "barbute_helmet"]
 			];
-			helm.push([1, "theamson_barbute_helmet"])
-			local item = this.Const.World.Common.pickHelmet(helm)
-			
+			helm.push([1, "theamson_barbute_helmet"]);
+			local item = this.Const.World.Common.pickHelmet(helm);
+
 			if (item != null)
 			{
 				this.m.Items.equip(item);

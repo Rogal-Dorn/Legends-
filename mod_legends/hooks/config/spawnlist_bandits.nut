@@ -27,18 +27,18 @@
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					//MinR = 200,
-					MinR = 125,					
+					MinR = 125,
 					Cost = 13
 				},
 				{
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
-					//MinR = 400,					
+					//MinR = 400,
 					MinR = 320,
 					Cost = 18
 				},
 				{
 					//MinR = 800,
-					MinR = 480,					
+					MinR = 480,
 					Type = this.Const.World.Spawn.Troops.BanditVeteran,
 					Cost = 30
 				}
@@ -283,13 +283,13 @@
 					Cost = 8
 				},
 				{
-					//MinR = 200,					
+					//MinR = 200,
 					MinR = 160,
 					Type = this.Const.World.Spawn.Troops.BanditRaiderLOW,
 					Cost = 16
 				},
 				{
-					//MinR = 400,					
+					//MinR = 400,
 					MinR = 320,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
@@ -410,7 +410,7 @@
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 20
-				}
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
 					Cost = 20
@@ -460,7 +460,7 @@
 					Cost = 16
 				},
 				{
-					//MinR = 400,					
+					//MinR = 400,
 					MinR = 320,
 					Type = this.Const.World.Spawn.Troops.BanditRaider,
 					Cost = 20
@@ -558,7 +558,7 @@
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantFarmhand,
 					Cost = 20
-				}
+				},
 				{
 					Type = this.Const.World.Spawn.Troops.LegendPeasantPoacher,
 					Cost = 20

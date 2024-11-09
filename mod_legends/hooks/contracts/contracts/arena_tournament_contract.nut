@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/arena_tournament_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/arena_tournament_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
@@ -60,7 +60,7 @@
 					continue;
 				}
 
-				local u = item.getUpgrade(i)
+				local u = item.getUpgrade(i);
 				if (u != null && u.isItemType(this.Const.Items.ItemType.Named))
 				{
 					nameList.push(u)
@@ -68,7 +68,7 @@
 			}
 			local idx = this.Math.rand(0, nameList.len() - 1);
 			local item = nameList[idx];
-			this.m.Flags.set("PrizeName", item.getName())
+			this.m.Flags.set("PrizeName", item.getName());
 			cnh = item.ClassNameHash;
 		}
 		this.m.Flags.set("PrizeScript", cnh);

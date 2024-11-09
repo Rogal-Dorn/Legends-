@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/world_entity", function(o) 
+::mods_hookExactClass("entity/world/world_entity", function(o)
 {
 	o.m.Resources <- 0;
 
@@ -87,7 +87,7 @@
 					});
 				}
 				else
-				{	
+				{
 					entities.push({
 						id = 20,
 						type = "text",
@@ -139,19 +139,19 @@
 			{
 				_out.writeBool(true);
 				_out.writeU8(t.Outfits.len());
-				
-				foreach (o in t.Outfits) 
+
+				foreach (o in t.Outfits)
 				{
 					_out.writeU8(o.len());
-					_out.writeU8(o[0])
-					_out.writeString(o[1])
+					_out.writeU8(o[0]);
+					_out.writeString(o[1]);
 					if (o.len() == 3)
-						_out.writeString(o[2])
+						_out.writeString(o[2]);
 				}
 			}
 			else
 			{
-				_out.writeBool(false)
+				_out.writeBool(false);
 			}
 			_out.writeI32(this.IO.scriptHashByFilename(t.Script));
 		}

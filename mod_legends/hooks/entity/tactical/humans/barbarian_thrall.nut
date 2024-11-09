@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/barbarian_thrall", function(o) 
+::mods_hookExactClass("entity/tactical/humans/barbarian_thrall", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -20,7 +20,7 @@
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_brawny"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_relentless"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));			
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fist"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 	}
@@ -76,7 +76,7 @@
 			[1, "barbarians/leather_headband"],
 			[1, "barbarians/bear_headpiece"],
 			[2, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

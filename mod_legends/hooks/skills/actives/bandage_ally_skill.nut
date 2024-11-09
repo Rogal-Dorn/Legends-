@@ -112,7 +112,7 @@
 		return false;
 	}
 
-	o.onUse( _user, _targetTile )
+	o.onUse = function ( _user, _targetTile )
 	{
 		local target = _targetTile.getEntity();
 		this.spawnIcon("perk_55", _targetTile);
@@ -121,7 +121,7 @@
 		{
 			target.getSkills().removeByID("effects.bleeding");
 		}
-		
+
 		while (target.getSkills().hasSkill("effects.legend_grazed_effect"))
 		{
 			target.getSkills().removeByID("effects.legend_grazed_effect");

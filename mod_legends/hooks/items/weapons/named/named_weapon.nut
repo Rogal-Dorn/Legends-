@@ -136,7 +136,7 @@
 				_i.m.EffectChanceOrBonus = ::Math.rand( _i.m.EffectBounds[_i.m.PossibleEffectIdx][0], _i.m.EffectBounds[_i.m.PossibleEffectIdx][1] );
 			});
 		}
-		
+
 
 		for( local n = 2; n != 0 && available.len() != 0; n = --n )
 		{
@@ -160,7 +160,7 @@
 		_out.writeF32(this.m.DirectDamageAdd);
 		_out.writeI16(this.m.FatigueOnSkillUse);
 		_out.writeU16(this.m.AmmoMax);
-		_out.writeI8(this.m.PossibleEffectIdx)
+		_out.writeI8(this.m.PossibleEffectIdx);
 		_out.writeI8(this.m.EffectChanceOrBonus);
 		//_out.writeF32(0);
 		this.weapon.onSerialize(_out);

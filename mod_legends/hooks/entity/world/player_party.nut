@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/player_party", function(o) 
+::mods_hookExactClass("entity/world/player_party", function(o)
 {
 	o.m.BarterMultiplier <- 0.0;
 	o.m.WageMultiplier <- 0.0;
@@ -7,7 +7,7 @@
 	o.m.ArmorPartsMultiplier <- 0;
 	o.m.MedsMultiplier <- 0;
 	o.m.StashMultiplier <- 0;
-	
+
 
 	o.updateStrength = function ()
 	{
@@ -225,7 +225,7 @@
 	{
 		if (this.World.Assets.isCamping())
 		{
-			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout)
+			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout);
 			return tent.getVisionRadius();
 		}
 		return this.m.VisionRadius * this.World.Assets.m.VisionRadiusMult * this.World.getGlobalVisibilityMult() * this.Const.World.TerrainTypeVisionRadiusMult[this.getTile().Type] * (this.World.Assets.isCamping() ? 0.75 : 1.0);
@@ -481,7 +481,7 @@
 			{
 				this.Stash.resize(s);
 			}
-			
+
 			return s;
 		}
 	}

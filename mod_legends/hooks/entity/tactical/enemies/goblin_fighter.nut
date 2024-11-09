@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/goblin_fighter", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/goblin_fighter", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -74,7 +74,7 @@
 				[1, "greenskins/goblin_light_armor"],
 				[1, "greenskins/goblin_medium_armor"],
 				[1, "greenskins/goblin_heavy_armor"]
-			])
+			]);
 			this.m.Items.equip(item);
 		}
 
@@ -83,7 +83,7 @@
 			local item = this.Const.World.Common.pickHelmet([
 				[75, "greenskins/goblin_light_helmet"],
 				[25, "greenskins/goblin_heavy_helmet"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

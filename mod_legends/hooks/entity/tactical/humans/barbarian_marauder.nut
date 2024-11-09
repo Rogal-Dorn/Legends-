@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/barbarian_marauder", function(o) 
+::mods_hookExactClass("entity/tactical/humans/barbarian_marauder", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -111,7 +111,7 @@
 			[1, "barbarians/leather_helmet"],
 			[1, "barbarians/crude_metal_helmet"],
 			[1, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

@@ -170,7 +170,7 @@
 			result.brothersMaxInCombat = this.World.Assets.getBrothersMaxInCombat();
 			result.brothersMax = this.World.Assets.getBrothersMax();
 		}
-		
+
 		return result;
 	}
 
@@ -225,7 +225,7 @@
 		{
 			return data;
 		}
-		local upgrade = data.stash.upgrade(data.sourceIndex, data.targetIndex)
+		local upgrade = data.stash.upgrade(data.sourceIndex, data.targetIndex);
 		if (upgrade)
 		{
 			//only remove item if it wasn't switched out for another upgrade
@@ -327,7 +327,7 @@
 	{
 	}
 
-	o.general_onQueryPerkInformation( _data )
+	o.general_onQueryPerkInformation = function ( _data )
 	{
 		return this.UIDataHelper.convertPerkToUIData(_data[0], _data[1]);
 	}
@@ -355,7 +355,7 @@
 
 		if (!this.Tactical.isActive() && data.sourceItem.isUsable())
 		{
-			local result = data.sourceItem.onUse(data.inventory.getActor())
+			local result = data.sourceItem.onUse(data.inventory.getActor());
 			if (result)
 			{
 				if (typeof result == "table"){
@@ -684,7 +684,7 @@
 			foreach (idx, value in _item.getUpgrades())
 			{
 				if (value != 1) continue
-				toRemove.push(idx)	
+				toRemove.push(idx)
 			}
 			if (this.Stash.getNumberOfEmptySlots() < toRemove.len()){
 				return {
@@ -694,9 +694,9 @@
 			}
 			foreach(idx in toRemove)
 			{
-				local upgrade = _item.getUpgrade(idx)
+				local upgrade = _item.getUpgrade(idx);
 				if (upgrade.isDestroyedOnRemove()) continue
-				this.Stash.add(_item.removeUpgrade(idx))	
+				this.Stash.add(_item.removeUpgrade(idx))
 			}
 		}
 		return this.UIDataHelper.convertStashAndEntityToUIData(_entity, null, false, this.m.InventoryFilter);

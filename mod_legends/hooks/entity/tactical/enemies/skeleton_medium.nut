@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/skeleton_medium", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/skeleton_medium", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -21,7 +21,7 @@
 			[2, "weapons/ancient/ancient_sword"],
 			[1, "weapons/ancient/legend_gladius"],
 		];
-		this.m.Items.equip(this.Const.World.Common.pickItem(weapons, "scripts/items/"))
+		this.m.Items.equip(this.Const.World.Common.pickItem(weapons, "scripts/items/"));
 
 		if (this.getItems().getItemAtSlot(this.Const.ItemSlot.Offhand) == null)
 		{
@@ -47,7 +47,7 @@
 		local item = this.Const.World.Common.pickHelmet([
 			[99, "ancient/ancient_honorguard_helmet"],
 			[1, "ancient/legend_ancient_legionary_helmet_restored"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

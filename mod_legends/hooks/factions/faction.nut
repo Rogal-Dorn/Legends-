@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/faction", function(o) 
+::mods_hookExactClass("factions/faction", function(o)
 {
 	o.m.ContractsByCategory <-
 	{
@@ -8,7 +8,7 @@
 		Legendary = [],
 		Wildcard = []
 	};
-	
+
 	o.getPlayerRelationAsText = function ()
 	{
 		if (this.m.PlayerRelation <= 0)
@@ -21,7 +21,7 @@
 	o.addContract = function ( _c )
 	{
 		_c.setFaction(this.getID());
-		
+
 		// Contract Overhaul
 		// For the current phase, we will overhaul the system for Settlement contracts only
 		if (this.getType() == this.Const.FactionType.Settlement)
@@ -51,28 +51,28 @@
 				::Legends.Mod.Debug.printWarning(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
 			}
-			
+
 			// Push to the contract's corresponding category if there's room
 			if (this.m.ContractsByCategory[cat].len() < this.Const.Contracts.CategoryLimits[cat][tier])
 			{
 				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory[cat].push(_c);
-				
+
 				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {" + cat + "}";
 				::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
-			} 
+			}
 			// If not, push to the Wildcard category if there's room
 			else if (this.m.ContractsByCategory["Wildcard"].len() < this.Const.Contracts.CategoryLimits["Wildcard"][tier])
 			{
 				_c.m.Flags.set("StoredAsWildcard", true); // this will be used during deserialization and contract removal to indicate that it should be pushed to/removed from the Wildcard category
 				this.m.Contracts.push(_c);
 				this.m.ContractsByCategory["Wildcard"].push(_c);
-				
+
 				local str = "Contract Overhaul: Settlement {" + s.getName() + "} has added Contract {" + _c.getName() + "} with Category {" + cat + "} to Slot {Wildcard}";
 				::Legends.Mod.Debug.printLog(str,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;
-			} 
+			}
 			// If not, something is wrong (the contract should not have been generated if both its category and Wildcard are full)
 			else
 			{
@@ -114,7 +114,7 @@
 				}
 			}
 			// If not, we will remove it from the contract's corresponding Category
-			else 
+			else
 			{
 				local cat = _c.getCategory();
 
@@ -140,8 +140,8 @@
 			if (j == null)
 			{
 				local error = "";
-				error += "Attempting to remove contract: " + _c.getName()
-				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")" + " from {" + this.getName() + "}"
+				error += "Attempting to remove contract: " + _c.getName();
+				error += " (Category=" + _c.getCategory() + ",StoredAsWildcard=" + _c.m.Flags.get("StoredAsWildcard") + ")" + " from {" + this.getName() + "}";
 				error += " but it could not be found in any Category";
 				::Legends.Mod.Debug.printError(error,::Const.LegendMod.Debug.Flags.ContractCategories);
 				return;

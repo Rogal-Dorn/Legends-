@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/send_beast_roamers_action", function(o) 
+::mods_hookExactClass("factions/actions/send_beast_roamers_action", function(o)
 {
 	o.create = function ()
 	{
@@ -123,27 +123,27 @@
 			else if (r == 3)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
-			}		
+			}
 			else if (r == 4)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-			}			
+			}
 			else if (r == 5)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Farmland, true);
-			}			
+			}
 			else if (r == 6)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Snow, true);
-			}	
+			}
 			else if (r == 7)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Badlands, true);
-			}		
+			}
 			else if (r == 8)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Tundra, true);
-			}	
+			}
 			else if (r == 9)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
@@ -151,7 +151,7 @@
 			party.getController().addOrder(roam);
 			return true;
 		};
-			
+
 		this.m.Options.push(beast);
 		this.m.BeastsLow.push(beast);
 		//Basilisks
@@ -211,19 +211,19 @@
 			else if (r == 3)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
-			}		
+			}
 			else if (r == 4)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-			}			
+			}
 			else if (r == 5)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Farmland, true);
-			}			
+			}
 			else if (r == 6)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Badlands, true);
-			}		
+			}
 			if (r == 7)
 			{
 			roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
@@ -231,7 +231,7 @@
 			party.getController().addOrder(roam);
 			return true;
 		};
-			
+
 		this.m.Options.push(beast);
 		this.m.BeastsLow.push(beast);
 
@@ -291,21 +291,21 @@
 				else if (r == 3)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
-				}		
+				}
 				else if (r == 4)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Badlands, true);
-				}			
+				}
 				else if (r == 5)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Mountains, true);
-				}			
-			
+				}
+
 				party.getController().addOrder(roam);
 				return true;
 			};
 			this.m.Options.push(beast);
-			this.m.BeastsLow.push(beast)
+			this.m.BeastsLow.push(beast);
 			beast = function ( _action, _nearTile = null )
 			{
 				if (this.World.getTime().Days < 15 && _nearTile == null)
@@ -367,31 +367,31 @@
 				else if (r == 3)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Swamp, true);
-				}		
+				}
 				else if (r == 4)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-				}			
+				}
 				else if (r == 5)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Farmland, true);
-				}			
+				}
 				else if (r == 6)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Ocean, true);
-				}	
+				}
 				else if (r == 7)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Badlands, true);
-				}		
+				}
 				else if (r == 8)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
-				}	
+				}
 				else if (r == 9)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Mountains, true);
-				}				
+				}
 				party.getController().addOrder(roam);
 				return true;
 			};
@@ -509,31 +509,31 @@
 				else if (r == 3)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.SnowyForest, true);
-				}		
+				}
 				else if (r == 4)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-				}			
+				}
 				else if (r == 5)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Farmland, true);
-				}			
+				}
 				else if (r == 6)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Steppe, true);
-				}	
+				}
 				else if (r == 7)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.SwampForest, true);
-				}		
+				}
 				else if (r == 8)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
-				}	
+				}
 				else if (r == 9)
 				{
 				roam.setTerrain(this.Const.World.TerrainType.Snow, true);
-				}				
+				}
 				party.getController().addOrder(roam);
 				return true;
 			};

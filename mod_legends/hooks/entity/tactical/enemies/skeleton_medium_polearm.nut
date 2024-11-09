@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/skeleton_medium_polearm", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/skeleton_medium_polearm", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -23,7 +23,7 @@
 		{
 			this.m.Items.equip(this.new("scripts/items/weapons/ancient/bladed_pike"));
 		}
-		
+
 		local armor = [
 			[1, "ancient/ancient_scale_harness"],
 			[1, "ancient/ancient_mail"],
@@ -34,7 +34,7 @@
 
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_legionary_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

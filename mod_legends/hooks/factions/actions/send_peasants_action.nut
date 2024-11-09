@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/send_peasants_action", function(o) 
+::mods_hookExactClass("factions/actions/send_peasants_action", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -59,7 +59,7 @@
 					[1, "supplies/wine_item"]
 				]
 
-				local item = this.Const.World.Common.pickItem(items)
+				local item = this.Const.World.Common.pickItem(items);
 				party.addToInventory(item);
 			}
 		}

@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/backgrounds/character_background", function(o) 
+::mods_hookExactClass("skills/backgrounds/character_background", function(o)
 {
 	o.m.Names = [];
 	o.m.Name <- "";
@@ -115,12 +115,12 @@
 			if (!_type) return
 			this.m.BackgroundType = this.m.BackgroundType == this.Const.BackgroundType.None ? _constType : this.m.BackgroundType | _constType
 		}
-		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario)
-		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented)
-		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence)
-		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat)
-		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble)
-		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn)
+		addToBackgroundType(this.m.IsScenarioOnly, this.Const.BackgroundType.Scenario);
+		addToBackgroundType(this.m.IsUntalented, this.Const.BackgroundType.Untalented);
+		addToBackgroundType(this.m.IsOffendedByViolence, this.Const.BackgroundType.OffendedByViolence);
+		addToBackgroundType(this.m.IsCombatBackground, this.Const.BackgroundType.Combat);
+		addToBackgroundType(this.m.IsNoble, this.Const.BackgroundType.Noble);
+		addToBackgroundType(this.m.IsLowborn, this.Const.BackgroundType.Lowborn);
 	}
 
 	o.isBackgroundType <- function ( _type )
@@ -612,7 +612,7 @@
 				text = this.getDescription()
 			}
 		];
-		if (this.getContainer() != null) ret.extend(this.getAttributesTooltip())
+		if (this.getContainer() != null) ret.extend(this.getAttributesTooltip());
 		return ret;
 	}
 
@@ -624,7 +624,7 @@
 
 		local calculateAttribute = function(attribute, maximum = false)
 		{
-			local bro = this.getContainer().getActor()
+			local bro = this.getContainer().getActor();
 			local attributeMin = this.Const.AttributesLevelUp[attribute].Min + this.Math.min(bro.m.Talents[attribute], 2);
 			local attributeMax = this.Const.AttributesLevelUp[attribute].Max;
 			if (bro.m.Talents[attribute] == 3) attributeMax += 1;
@@ -804,7 +804,7 @@
 			return this.m.PerkTree;
 		}
 
-		local pT = this.Const.Perks.PerksTreeTemplate
+		local pT = this.Const.Perks.PerksTreeTemplate;
 		if (pT == null)
 		{
 			return [];
@@ -820,7 +820,7 @@
 		if (typeof _perk == "string")
 		{
 			id = _perk;
-			local basePerkDefObject = this.Const.Perks.findById(_perk);			
+			local basePerkDefObject = this.Const.Perks.findById(_perk);
 			perkDef = this.Const.Perks.PerkDefs[basePerkDefObject.Const];
 		}
 		else
@@ -828,7 +828,7 @@
 			id = this.Const.Perks.PerkDefObjects[_perk].ID;
 			perkDef = _perk;
 		}
-		
+
 		if (!(id in this.m.PerkTreeMap))
 		{
 			return null;
@@ -900,7 +900,7 @@
 		}
 
 		delete this.m.PerkTreeMap[perkDefObject.ID];
-		
+
 		return true;
 	}
 
@@ -930,7 +930,7 @@
 
 	o.hasPerk <- function ( _perk )
 	{
-		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;		
+		return this.Const.Perks.PerkDefObjects[_perk].ID in this.m.PerkTreeMap;
 	}
 
 	o.buildDescription = function( _isFinal = false )
@@ -1015,7 +1015,7 @@
 			"title",
 			this.getContainer().getActor().getTitle()
 		]);
-		
+
 		this.Const.LegendMod.extendVarsWithPronouns(vars, this.getContainer().getActor().getGender());
 
 		this.m.Description = this.buildTextFromTemplate(this.m.RawDescription, vars);
@@ -1146,7 +1146,7 @@
 				a.Hitpoints[0] -= 10;
 				a.Hitpoints[1] -= 10;
 				a.Stamina[0] += 10;
-				a.Stamina[1] += 10;	
+				a.Stamina[1] += 10;
 			}
 		}
 
@@ -1355,7 +1355,7 @@
 				0
 			]
 		};
-		
+
 		if (this.m.PerkTree != null)
 		{
 			return a;
@@ -1378,7 +1378,7 @@
 		//already have added its perks so we should be ok. This will fail though loading an old save
 		//and we've added new perks to a scenario...
 
-		// THE COMMMENT ABOVE IS PROBABLY WRONG. Scenario doesn't seem to be null here on deserialize. But some weird 
+		// THE COMMMENT ABOVE IS PROBABLY WRONG. Scenario doesn't seem to be null here on deserialize. But some weird
 		// shenanigans are still happening, so I will test some more. -- Midas
 		local origin = this.World.Assets.getOrigin();
 		if (origin != null)
@@ -1691,7 +1691,7 @@
 			actor.m.Level = this.m.Level;
 			actor.m.XP = this.Const.LevelXP[this.m.Level - 1];
 		}
-		
+
 	}
 	o.onCombatStarted <- function()
 	{

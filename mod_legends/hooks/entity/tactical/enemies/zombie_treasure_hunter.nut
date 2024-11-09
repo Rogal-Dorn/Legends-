@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/zombie_treasure_hunter", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/zombie_treasure_hunter", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -30,10 +30,10 @@
 			this.m.Items.equip(this.new("scripts/items/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 		}
 		local aList = [
-			[1 "oriental/stitched_nomad_armor"],
-			[1 "oriental/leather_nomad_robe"],
-			[1 "oriental/nomad_robe"],
-			[1 "oriental/thick_nomad_robe"]
+			[1, "oriental/stitched_nomad_armor"],
+			[1, "oriental/leather_nomad_robe"],
+			[1, "oriental/nomad_robe"],
+			[1, "oriental/thick_nomad_robe"]
 		];
 		local armor = this.Const.World.Common.pickArmor(aList);
 		this.m.Items.equip(armor);

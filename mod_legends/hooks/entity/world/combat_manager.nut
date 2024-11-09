@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/combat_manager", function(o) 
+::mods_hookNewObject("entity/world/combat_manager", function(o)
 {
 	o.startCombat = function( _p1, _p2 )
 	{
@@ -57,12 +57,13 @@
 			Loot = []
 		};
 		local combat = {
-			ID = this.m.NextCombatID++,
+			ID = this.m.NextCombatID,
 			IsResolved = false,
 			Stats = stats,
 			Combatants = [],
 			Factions = []
 		};
+		this.m.NextCombatID += 1;
 		local numFactions = 128;
 		// if (p1.getFaction() >= numFactions) {
 		// 	numFactions = p1.getFaction() + 1;

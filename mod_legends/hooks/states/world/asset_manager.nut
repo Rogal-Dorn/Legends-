@@ -186,7 +186,7 @@
 		{
 			this.m.Stash.add(this.new(item));
 		}
-		this.m.Stash.add(this.new("scripts/items/accessory/legend_pack_small"))
+		this.m.Stash.add(this.new("scripts/items/accessory/legend_pack_small"));
 		// this.m.Stash.add(this.new("scripts/items/trade/cloth_rolls_item"))
 		// this.m.Stash.add(this.new("scripts/items/misc/spider_silk_item"))
 
@@ -687,18 +687,18 @@
 		if (activeContract && this.World.FactionManager.getFaction(activeContract.getFaction()).m.Type == this.Const.FactionType.NobleHouse && excluded_contracts.find(activeContract.m.Type) == null &&
 		(activeContract.getActiveState().ID == "Return" || (activeContract.m.Type == "contract.big_game_hunt" && activeContract.getActiveState().Flags.get("HeadsCollected") != 0)))
 		{
-			local contract_faction = this.World.FactionManager.getFaction(activeContract.getFaction())
-			local towns = contract_faction.getSettlements()
+			local contract_faction = this.World.FactionManager.getFaction(activeContract.getFaction());
+			local towns = contract_faction.getSettlements();
 			if (!activeContract.m.Flags.get("UpdatedBulletpoints"))
 			{
-				activeContract.m.BulletpointsObjectives.pop()
+				activeContract.m.BulletpointsObjectives.pop();
 				if (activeContract.m.Type == "contract.big_game_hunt"){
 					activeContract.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid")
 				}
 				else{
 					activeContract.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName())
 				}
-				activeContract.m.Flags.set("UpdatedBulletpoints", true)
+				activeContract.m.Flags.set("UpdatedBulletpoints", true);
 				foreach (town in towns)
 				{
 					town.getSprite("selection").Visible = true;
@@ -709,7 +709,7 @@
 			{
 				if (activeContract.isPlayerAt(town))
 				{
-					activeContract.m.Home = this.WeakTableRef(town)
+					activeContract.m.Home = this.WeakTableRef(town);
 					break
 				}
 			}
@@ -726,7 +726,7 @@
 		{
 			if (b.getPlaceInFormation() == 255)
 			{
-				this.logError("Bro has invalid place in formation! :: " + b.m.Name)
+				this.logError("Bro has invalid place in formation! :: " + b.m.Name);
 				continue;
 			}
 

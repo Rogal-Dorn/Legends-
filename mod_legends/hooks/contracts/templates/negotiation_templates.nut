@@ -76,7 +76,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 
 			this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance);
 
 			if (this.Math.rand(1, 100) <= failChance)
 			{
@@ -111,7 +111,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Advance < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
+			Text = (this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance."),
 			function getResult()
 			{
 
@@ -125,7 +125,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 				{
@@ -136,8 +136,8 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				{
 					this.Contract.m.Payment.IsFinal = false;
 
-					local p = 1.0 * this.Math.rand(15, 30)
-					p = p / 100.0
+					local p = 1.0 * this.Math.rand(15, 30);
+					p = p / 100.0;
 					if (this.World.Retinue.hasFollower("follower.negotiator"))
 					{
 						p = p * 2
@@ -156,7 +156,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Completion < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
+			Text = (this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -169,7 +169,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance)
 				{
@@ -180,8 +180,8 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				{
 					this.Contract.m.Payment.IsFinal = false;
 
-					local p = 1.0 * this.Math.rand(15, 30)
-					p = p / 100.0
+					local p = 1.0 * this.Math.rand(15, 30);
+					p = p / 100.0;
 					if (this.World.Retinue.hasFollower("follower.negotiator"))
 					{
 						p = p * 2
@@ -240,7 +240,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	}
 };
 ::Const.Contracts.NegotiationDefault[1].Text = "[img]gfx/ui/events/event_74.png[/img]{%SPEECH_START%You act as if you were the only ones to hold a sword for coin. I think I\'ll look elsewhere for the men I need. Good day.%SPEECH_OFF% | %SPEECH_START%My patience has limits, too, and I think I\'m wasting my time here.%SPEECH_OFF% | %SPEECH_START%I\'ve had enough of this! I\'m sure I\'ll find someone else to do the job!%SPEECH_OFF% | %SPEECH_START%Do not insult my intelligence! Forget about this contract. We\'re done.%SPEECH_OFF% | %Their_employer% face turns red with anger.%SPEECH_ON%Get out of here, I\'m not in the habit of making deals with greedy devils!%SPEECH_OFF% | %They_employer% sighs. %SPEECH_ON%Just... forget it. I shouldn\'t have trusted you in the first place. Leave me so I can look for other, more sensible men.%SPEECH_OFF% | %SPEECH_START%I really thought we had a good relationship here. But know that I can only be pushed so far. I don\'t think this is working out. I\'ll take my leave.%SPEECH_OFF% | %SPEECH_ON%This has been an utter waste of time for me. Don\'t bother coming back until you learned some reason.%SPEECH_OFF%}";
-		
+
 ::Const.Contracts.NegotiationPerHead[0].start = function()
 {
 	this.Options = [];
@@ -289,7 +289,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 
 			this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance);
 
 			if (this.Math.rand(1, 100) <= failChance)
 			{
@@ -323,7 +323,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Count < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we return with." : "We need to be paid more per head we return with.",
+			Text = (this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we return with." : "We need to be paid more per head we return with."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -341,7 +341,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance);
 
 				if (this.Math.rand(1, 100) <= failChance)
 				{
@@ -384,7 +384,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Advance < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
+			Text = (this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -397,7 +397,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 				{
@@ -434,7 +434,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Completion < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
+			Text = (this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -447,7 +447,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance)
 				{
@@ -589,7 +589,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 
 			this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+			local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance);
 
 			if (this.Math.rand(1, 100) <= failChance)
 			{
@@ -624,7 +624,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Count < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we arrive with." : "We need to be paid more per head we arrive with.",
+			Text = (this.Contract.m.Payment.Count == 0 ? "We need to be paid per head we arrive with." : "We need to be paid more per head we arrive with."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -643,7 +643,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance);
 
 				if (this.Math.rand(1, 100) <= failChance)
 				{
@@ -686,7 +686,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Advance < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance.",
+			Text = (this.Contract.m.Payment.Advance == 0 ? "We need payment in advance." : "We need more payment in advance."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -699,7 +699,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance || this.Contract.m.Payment.Advance >= this.World.Assets.m.AdvancePaymentCap)
 				{
@@ -736,7 +736,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 	if (this.Contract.m.Payment.Completion < 1.0)
 	{
 		this.Options.push({
-			Text = this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done.",
+			Text = (this.Contract.m.Payment.Completion == 0 ? "We need payment once the work is done." : "We need more payment once the work is done."),
 			function getResult()
 			{
 				if (!this.World.Retinue.hasFollower("follower.negotiator"))
@@ -749,7 +749,7 @@ local OverviewStart = ::Const.Contracts.Overview[0].start;
 				this.Contract.m.Payment.Annoyance += this.Math.maxf(1.0, this.Math.rand(this.Const.Contracts.Settings.NegotiationAnnoyanceGainMin, this.Const.Contracts.Settings.NegotiationAnnoyanceGainMax) * this.World.Assets.m.NegotiationAnnoyanceMult);
 				this.Contract.m.Flags.increment("NegotiatingTries");
 
-				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2)
+				local failChance = this.Math.min(90, this.Const.Contracts.Settings.NegotiationRefuseChance * this.Contract.m.Payment.Annoyance * 2);
 
 				if (this.Math.rand(1, 100) <= failChance)
 				{

@@ -1,8 +1,8 @@
-::mods_hookExactClass("entity/tactical/enemies/spider_eggs", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/spider_eggs", function(o)
 {
 	o.m.SpawnDelay <- 0; // Number of combat rounds before the egg can spawn spiders; 0 = on Round 1 onwards, 1 = only on Round 2 onwards etc.
 	o.m.MaxSpawnCount <- 4; // The maximum number of spider spawns allowed. Vanilla is always 4
-	
+
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
@@ -22,7 +22,7 @@
 
 		local item = this.Const.World.Common.pickHelmet([
 			[99, "ancient/ancient_priest_diadem"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);
@@ -56,14 +56,14 @@
 				}
 				else
 				{
-					// 10% chance to get nothing	
+					// 10% chance to get nothing
 				}
 
 				if (loot != null)
 				{
-					loot.drop(_tile);	
+					loot.drop(_tile);
 				}
-				
+
 			}
 
 		}

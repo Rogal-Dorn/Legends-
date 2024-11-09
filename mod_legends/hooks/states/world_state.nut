@@ -1,10 +1,10 @@
-::mods_hookExactClass("states/world_state", function(o) 
+::mods_hookExactClass("states/world_state", function(o)
 {
 	o.m.CampScreen <- null;
 	o.m.Campaign <- "";
 	o.m.CommanderDied <- null;
 	o.m.Camp <- null;
-	o.m.IDToRef <- array;(27, -1)
+	o.m.IDToRef <- array;(27, -1);
 	o.m.DistantVisionBonus <- false;
 	o.m.AppropriateTimeToRecalc <- 1; //Leonion's fix
 
@@ -54,11 +54,11 @@
 				{
 					local updates = ["(Press Spacebar)"];
 					updates.extend(this.World.Camp.getLastCampingUpdateText());
-					this.World.TopbarDayTimeModule.showMessage("ENCAMPED\n(PAUSED)", updates);		
+					this.World.TopbarDayTimeModule.showMessage("ENCAMPED\n(PAUSED)", updates);
 				}
 				else
 				{
-					this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);	
+					this.World.TopbarDayTimeModule.showMessage("PAUSED", ["(Press Spacebar)"]);
 				}
 			}
 		}
@@ -113,7 +113,7 @@
 	local onInit = o.onInit;
 	o.onInit = function()
 	{
-		
+
 		this.m.CommanderDied = false;
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);
@@ -153,8 +153,8 @@
 	o.onShow = function ()
 	{
 		onShow();
-		::World.setPlayerPos(this.getPlayer().getPos())
-        ::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius())
+		::World.setPlayerPos(this.getPlayer().getPos());
+        ::World.setPlayerVisionRadius(this.getPlayer().getVisionRadius());
 	}
 
 	o.onUpdate = function ()
@@ -504,7 +504,7 @@
 		local minX = worldmap.getMinX();
 		local minY = worldmap.getMinY();
 		this.World.resizeScene(minX, minY);
-		this.logInfo("Generating world with following settings...")
+		this.logInfo("Generating world with following settings...");
 		foreach (k,v in this.Const.World.Settings)
 		{
 			this.logInfo(k + " : " + v);
@@ -1314,7 +1314,7 @@
 	o.showCommanderScreenFromCamp <- function ()
 	{
 		this.m.CampScreen.hideAllDialogs();
-		this.m.CampScreen.showCommanderDialog()
+		this.m.CampScreen.showCommanderDialog();
 		this.m.MenuStack.push(function ()
 		{
 			this.m.CampScreen.showLastReturnDialog();
@@ -1327,7 +1327,7 @@
 	o.showTentScreenFromCamp <- function ( _id )
 	{
 		this.m.CampScreen.hideAllDialogs();
-		this.m.CampScreen.showTentBuildingDialog( _id )
+		this.m.CampScreen.showTentBuildingDialog( _id );
 		this.m.MenuStack.push(function ()
 		{
 			this.m.CampScreen.showLastReturnDialog();
@@ -2084,6 +2084,6 @@
 			this.World.Camp.onDeserialize(_in);
 		}
 		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
-		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix		
+		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix
 	}
 });

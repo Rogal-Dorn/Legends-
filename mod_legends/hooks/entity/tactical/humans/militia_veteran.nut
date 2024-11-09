@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/militia_veteran", function(o) 
+::mods_hookExactClass("entity/tactical/humans/militia_veteran", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -42,7 +42,7 @@
 				"weapons/militia_spear",
 				"weapons/boar_spear",
 				"weapons/falchion",
-				"weapons/shortsword"
+				"weapons/shortsword",
 				"weapons/legend_militia_glaive",
 				"weapons/legend_glaive",
 				"weapons/legend_infantry_axe",
