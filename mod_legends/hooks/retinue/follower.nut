@@ -1,7 +1,7 @@
 ::mods_hookExactClass("retinue/follower", function(o) {
-	o.m.RequiredSkills = [];
-	o.m.LinkedBro = null;
-	o.m.WasOwned = false;
+	o.m.RequiredSkills <- [];
+	o.m.LinkedBro <- null;
+	o.m.WasOwned <- false;
 
 	o.getLinkedBro <- function ()
 	{

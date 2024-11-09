@@ -1,4 +1,4 @@
-this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract", {
+this.legend_scry_trance_skill <- this.inherit("scripts/skills/actives/legend_trance_abstract_skill", {
 	m = {
 		BaseFatigueCost = 15,
 		BaseAPCost = 3,

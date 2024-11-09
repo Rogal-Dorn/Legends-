@@ -100,7 +100,7 @@
 		return ret;
 	}
 
-	o.getHiringTalents = function ()
+	o.getHiringTalents <- function ()
 	{
 		local ret = [];
 

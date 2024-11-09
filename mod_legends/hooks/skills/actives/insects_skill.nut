@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/actives/insect_skill", function(o)
+::mods_hookExactClass("skills/actives/insects_skill", function(o)
 {
 	local create = o.create;
 	o.create = function()

@@ -14,23 +14,6 @@
 		}
 	}
 
-	o.assignRandomEquipment = function ()
-	{
-		local armor = [
-			[1, "ancient/ancient_priest_attire"]
-		];
-		local item = this.Const.World.Common.pickArmor(armor);
-		this.m.Items.equip(item);
-
-		local item = this.Const.World.Common.pickHelmet([
-			[99, "ancient/ancient_priest_diadem"]
-		]);
-		if (item != null)
-		{
-			this.m.Items.equip(item);
-		}
-	}
-
 	// reduced chance to drop webbed valuables and i don't care about doing this better
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{

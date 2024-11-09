@@ -1,6 +1,6 @@
 ::mods_hookExactClass("ui/screens/menu/modules/main_menu_module", function(o) {
 
-	o.m.OnNewLegendCampaignPressedListener = null;
+	o.m.OnNewLegendCampaignPressedListener <- null;
 
 	o.setOnNewLegendCampaignPressedListener <- function( _listener )
 	{
