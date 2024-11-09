@@ -1,4 +1,4 @@
-::mods_hookExactClass("states/tactical_state", function(o) 
+::mods_hookExactClass("states/tactical_state", function(o)
 {
 	o.onBattleEnded = function()
 	{
@@ -175,7 +175,7 @@
 					this.World.Assets.addBusinessReputation(this.Const.World.Assets.ReputationOnLoss);
 					this.World.Contracts.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
 					this.World.Events.onRetreatedFromCombat(this.m.StrategicProperties != null ? this.m.StrategicProperties.CombatID : "");
-					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", 0)
+					this.World.Statistics.getFlags().set("LastEnemiesDefeatedCount", 0);
 					this.World.Statistics.getFlags().set("LastCombatResult", 2);
 				}
 			}
@@ -293,13 +293,13 @@
 
 			if (bro.getSkills().hasSkill("perk.legends_reclamation"))
 			{
-				local skill = bro.getSkills().getSkillByID("perk.legends_reclamation")
+				local skill = bro.getSkills().getSkillByID("perk.legends_reclamation");
 				zombieSalvage += skill.m.LootChance;
 			}
 
 			if (bro.getSkills().hasSkill("perk.legend_resurrectionist"))
 			{
-				local skill = bro.getSkills().getSkillByID("perk.legend_resurrectionist")
+				local skill = bro.getSkills().getSkillByID("perk.legend_resurrectionist");
 				zombieSalvage += skill.m.LootChance;
 			}
 
@@ -549,7 +549,7 @@
 		}
 	};
 
-	local showRetreatScreen = o.showRetreatScreen
+	local showRetreatScreen = o.showRetreatScreen;
 	o.showRetreatScreen = function (_tag = null)
 	{
 		this.m.TacticalScreen.getTopbarOptionsModule().changeFleeButtonToAllowRetreat(true);

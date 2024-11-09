@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/engineer", function(o) 
+::mods_hookExactClass("entity/tactical/humans/engineer", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -31,7 +31,7 @@
 		]));
 		local helm =this.Const.World.Common.pickHelmet([
 				[1, "oriental/engineer_hat"]
-		]) 
+		]);
 		this.m.Items.equip(helm);
 	}
 });

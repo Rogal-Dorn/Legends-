@@ -56,7 +56,7 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 			"tactical.patch.tundra_stony",
 			"tactical.patch.autumn_stony",
 			"tactical.patch.snow_less",
-			"tactical.patch.forest_mushrooms"
+			"tactical.patch.forest_mushrooms",
 			"tactical.patch.stone_circle"
 		]
 		local DryPatch = this.MapGen.get(patch[this.Math.rand(0, patch.len() -1)]);
@@ -70,7 +70,7 @@ this.tactical_legend_tournament <- this.inherit("scripts/mapgen/tactical_templat
 			"tactical.patch.forest_leaves_thick",
 			"tactical.patch.forest_thick",
 			"tactical.patch.swamp_pond",
-			"tactical.patch.tundra_brushes"
+			"tactical.patch.tundra_brushes",
 			"tactical.patch.snow",
 			"tactical.patch.forest_fern_sea"
 		]

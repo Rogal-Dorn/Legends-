@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/councilman", function(o) 
+::mods_hookExactClass("entity/tactical/humans/councilman", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -7,7 +7,7 @@
 		local withDetail = true;
 		local withHelmet = true;
 
-		
+
 		if (r <= 7)
 		{
 			this.m.Items.equip(this.Const.World.Common.pickArmor([
@@ -18,7 +18,7 @@
 			{
 				this.m.Items.equip(this.Const.World.Common.pickHelmet([
 					[1, "feathered_hat"]
-				]))
+				]));
 				withHelmet = false;
 			}
 		}
@@ -47,11 +47,11 @@
 			{
 				this.m.Items.equip(this.Const.World.Common.pickHelmet([
 					[1, "wizard_hat"]
-				]))
+				]));
 				withHelmet = false;
 			}
 		}
-		
+
 
 
 

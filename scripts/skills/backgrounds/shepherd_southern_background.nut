@@ -47,11 +47,11 @@ this.shepherd_southern_background <- this.inherit("scripts/skills/backgrounds/sh
 		{
 			items.equip(this.new("scripts/items/weapons/oriental/nomad_sling"));
 		}
-		
+
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "sackcloth"],
 			[1, "oriental/cloth_sash"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"]

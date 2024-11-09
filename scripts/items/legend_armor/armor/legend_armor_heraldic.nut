@@ -116,10 +116,10 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
 			[0, "chain/legend_armor_short_mail"]
 		]
 
-		local chain = this.Const.World.Common.pickLegendArmor(chains)
+		local chain = this.Const.World.Common.pickLegendArmor(chains);
 		if (chain != null)
 		{
-			this.setUpgrade(chain)
+			this.setUpgrade(chain);
 		}
 
 		local plates = [
@@ -154,10 +154,10 @@ this.legend_armor_heraldic <- this.inherit("scripts/items/legend_armor/cloth/leg
 			[0, "plate/legend_armor_scale_coat_rotten"],
 			[0, "plate/legend_armor_scale_shirt"]
 		]
-		local plate = this.Const.World.Common.pickLegendArmor(plates)
+		local plate = this.Const.World.Common.pickLegendArmor(plates);
 		if (plate != null)
 		{
-			this.setUpgrade(plate)
+			this.setUpgrade(plate);
 		}
 		local tabard = this.new("scripts/items/legend_armor/tabard/legend_noble_tabard");
 		tabard.setVariant(_variant);

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/goblin_ambusher", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/goblin_ambusher", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -35,7 +35,7 @@
 		{
 			local item = this.Const.World.Common.pickArmor([
 				[1, "greenskins/goblin_skirmisher_armor"]
-			])
+			]);
 			this.m.Items.equip(item);
 		}
 
@@ -43,7 +43,7 @@
 		{
 			local item = this.Const.World.Common.pickHelmet([
 				[1, "greenskins/goblin_skirmisher_helmet"]
-			])
+			]);
 			this.m.Items.equip(item);
 		}
 
@@ -52,9 +52,9 @@
 			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
 		}
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-			{
+		{
 			this.m.Items.addToBag(this.new("scripts/items/accessory/poison_item"));
-			}
+		}
 
 	}
 });

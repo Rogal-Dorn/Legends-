@@ -101,7 +101,7 @@ this.legend_rust_skill <- this.inherit("scripts/skills/legend_magic_skill", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties )
+		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties );
 		if (_skill == this)
 		{
 			_properties.DamageMinimum = 10;

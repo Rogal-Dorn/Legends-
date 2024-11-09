@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/knight", function(o) 
+::mods_hookExactClass("entity/tactical/humans/knight", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -115,7 +115,7 @@
 			"weapons/named/named_axe",
 			"weapons/named/named_greatsword",
 			"weapons/named/named_mace",
-			"weapons/named/named_sword"
+			"weapons/named/named_sword",
 			"weapons/named/legend_named_longsword"
 		];
 		local shields = clone this.Const.Items.NamedShields;
@@ -142,7 +142,7 @@
 				this.Const.World.Common.convNameToList(
 					armor
 				)
-			)
+			);
 			this.m.Items.equip(h);
 		}
 		this.m.Items.equip(this.Const.World.Common.pickHelmet([
@@ -153,7 +153,7 @@
 			[3, "named/barbute_named"],
 			[3, "named/italo_norman_helm_named"],
 			[1, "named/legend_helm_full_named"]
-		]))
+		]));
 
 
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));

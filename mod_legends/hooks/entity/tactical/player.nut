@@ -629,7 +629,7 @@
 						continue
 					}
 
-					local isBurned = false
+					local isBurned = false;
 					foreach (b in this.Const.Injury.Burning)
 					{
 						if (this.m.Skills.hasSkill(b.ID))
@@ -672,8 +672,8 @@
 				{
 					this.m.MoraleState = this.Const.MoraleState.Ignore;
 					this.getFlags().add("PlayerZombie");
-					this.getFlags().add("undead"); 
-					this.getFlags().add("zombie_minion"); 
+					this.getFlags().add("undead");
+					this.getFlags().add("zombie_minion");
 					local skill = this.new("scripts/skills/traits/legend_rotten_flesh_trait");
 					this.m.Skills.add(skill);
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_zombie_bite"));
@@ -1225,7 +1225,7 @@
 			[1, "named/norse_helmet"],
 			[1, "named/sallet_green_helmet"],
 			[1, "named/wolf_helmet"]
-		])
+		]);
 
 		if (item != null)
 		{
@@ -1331,7 +1331,7 @@
 			[1, "full_aketon_cap"],
 			[1, "open_leather_cap"],
 			[1, "full_leather_cap"]
-		])
+		]);
 
 		if (item != null)
 		{
@@ -1381,7 +1381,7 @@
 			[1, "hood"],
 			[1, "aketon_cap"],
 			[1, "full_aketon_cap"]
-		])
+		]);
 
 		if (item != null)
 		{
@@ -1939,7 +1939,7 @@
 
 	o.getBarterModifier <- function ()
 	{
-		local bg = this.getBackground()
+		local bg = this.getBackground();
 		if (bg == null)
 		{
 			return 0;

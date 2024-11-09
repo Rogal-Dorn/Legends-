@@ -41,7 +41,7 @@ this.legend_boar_gore_skill <- this.inherit("scripts/skills/skill", {
 
 	function getTooltip()
 	{
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		local p = actor.getCurrentProperties();
 		local mult = p.MeleeDamageMult;
 		local bodyHealth = actor.getHitpointsMax();

@@ -1,10 +1,10 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_warrior", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/orc_warrior", function(o)
 {
 	o.onFactionChanged <- function ()
 	{
 		this.actor.onFactionChanged();
-		local flip = this.isAlliedWithPlayer()
-		flip = !flip
+		local flip = this.isAlliedWithPlayer();
+		flip = !flip;
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
 			if (!this.hasSprite(a))
@@ -28,7 +28,7 @@
 		local v2 = -6;
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
-			this.addSprite(a)
+			this.addSprite(a);
 			this.setSpriteOffset(a, this.createVec(v2, v));
 		}
 

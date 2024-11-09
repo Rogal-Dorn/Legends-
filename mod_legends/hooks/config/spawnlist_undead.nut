@@ -199,7 +199,7 @@ if (!("Spawn" in ::Const.World))
 					Roll = true
 				}
 			]
-		}
+		},
 		{
 			Weight = 5,
 			Types = [

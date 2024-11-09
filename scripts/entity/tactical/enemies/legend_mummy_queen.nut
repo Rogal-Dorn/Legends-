@@ -75,7 +75,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 					}
 				}
 			}
-		}	
+		}
 	}
 	function assignRandomEquipment()
 	{
@@ -91,7 +91,7 @@ this.legend_mummy_queen <- this.inherit("scripts/entity/tactical/legend_mummy", 
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "ancient/legend_mummy_crown"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

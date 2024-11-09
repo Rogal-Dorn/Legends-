@@ -24,7 +24,7 @@
 		{
 			return false;
 		}
-		
+
 		if (_targetEntity.getCurrentProperties().IsImmuneToStun)
 		{
 			return false;
@@ -37,7 +37,7 @@
 
 		local user = this.getContainer().getActor();
 		local ourInit =  user.getInitiative();
-		local targetInit = _targetEntity.getInitiative()
+		local targetInit = _targetEntity.getInitiative();
 
 
 		if (ourInit <= targetInit)
@@ -50,7 +50,7 @@
 		{
 			return false;
 		}
-		
+
 		if (!_targetEntity.getSkills().hasSkill("effects.stunned"))
 		{
 			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
@@ -62,6 +62,6 @@
 		}
 
 		return true;
-		
+
 	}
 });

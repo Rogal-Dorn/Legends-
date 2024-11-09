@@ -52,7 +52,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 		this.m.DirectDamageMult = 0.3;
 		this.m.DamageArmorMult = 0.7;
 		this.m.ResolveScaling = 2;
-		//looks small, but its balanced around fire lance which can do 80-120 if it hits both targets, this can do 90-135 damage to a group. 
+		//looks small, but its balanced around fire lance which can do 80-120 if it hits both targets, this can do 90-135 damage to a group.
 		this.m.BaseDamageRegularMin = 10;
 		this.m.BaseDamageRegularMax = 15;
 	}
@@ -119,7 +119,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 		if (ownTile.hasNextTile(dir))
 		{
 			local adjacentTile = ownTile.getNextTile(dir);
-			local secondTile = adjacentTile.getNextTile(dir)
+			local secondTile = adjacentTile.getNextTile(dir);
 			// Whether the secondTile is the same as the targeted tile
 			local sameTile = ((secondTile.Pos.X == _targetTile.Pos.X) && (secondTile.Pos.Y == _targetTile.Pos.Y));
 			coneType = sameTile ? 1 : 2;
@@ -260,7 +260,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 		{
 			currentTile = _targetTile.getNextTile(left);
 			ret.push(currentTile);
-			
+
 			if (currentTile.hasNextTile(leftTwo))
 			{
 				currentTile = currentTile.getNextTile(leftTwo);
@@ -270,7 +270,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 		if (_targetTile.hasNextTile(_dir)) {
 			currentTile = _targetTile.getNextTile(_dir);
 			ret.push(currentTile);
-			
+
 			if (currentTile.hasNextTile(right))
 			{
 				currentTile = currentTile.getNextTile(right);
@@ -358,7 +358,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 		{
 			return false;
 		}
-	
+
 		return !this.Tactical.isActive() || this.skill.isUsable();
 	}
 
@@ -380,7 +380,7 @@ this.legend_magic_burning_hands <- this.inherit("scripts/skills/actives/legend_m
 	function onDelayedEffect( _tag )
 	{
 		local affectedTiles = this.getAffectedTiles(_tag.TargetTile);
-		
+
 		local tag = {
 			Skill = _tag.Skill,
 			User = _tag.User,

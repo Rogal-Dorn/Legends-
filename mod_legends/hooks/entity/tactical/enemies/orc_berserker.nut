@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_berserker", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/orc_berserker", function(o)
 {
 	o.onFactionChanged <- function ()
 	{
@@ -90,7 +90,7 @@
 		local item = this.Const.World.Common.pickHelmet([
 			[2, ""],
 			[1, "greenskins/orc_berserker_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

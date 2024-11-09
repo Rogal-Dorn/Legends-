@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/bounty_hunter_ranged", function(o) 
+::mods_hookExactClass("entity/tactical/humans/bounty_hunter_ranged", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -62,7 +62,7 @@
 			[1, "ragged_surcoat"],
 			[1, "basic_mail_shirt"]
 		]));
-		
+
 		if (this.Math.rand(1, 100) <= 50)
 		{
 			local item = this.Const.World.Common.pickHelmet([
@@ -72,7 +72,7 @@
 				[1, "mouth_piece"],
 				[1, "full_leather_cap"],
 				[1, "aketon_cap"]
-			])
+			]);
 			if (item != null)
 			{
 				this.m.Items.equip(item);

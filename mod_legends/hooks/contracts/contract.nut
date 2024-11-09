@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contract", function(o) 
+::mods_hookExactClass("contracts/contract", function(o)
 {
 	o.m.Category <- "";
 	o.m.Description <- "";
@@ -50,8 +50,8 @@
 	{
 		if (this.isActive())
 		{
-			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-			local towns = contract_faction.getSettlements()
+			local contract_faction = this.World.FactionManager.getFaction(this.getFaction());
+			local towns = contract_faction.getSettlements();
 			foreach (town in towns)
 			{
 				town.getSprite("selection").Visible = false;
@@ -87,12 +87,12 @@
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function(_in)
 	{
-		onDeserialize( _in )
+		onDeserialize( _in );
 		if (this.m.Flags.get("UpdatedBulletpoints"))
 		{
-			local contract_faction = this.World.FactionManager.getFaction(this.getFaction())
-			local towns = contract_faction.getSettlements()
-			this.m.BulletpointsObjectives.pop()
+			local contract_faction = this.World.FactionManager.getFaction(this.getFaction());
+			local towns = contract_faction.getSettlements();
+			this.m.BulletpointsObjectives.pop();
 			if (this.m.Type == "contract.big_game_hunt"){
 				this.m.BulletpointsObjectives.push("Return to any town of " + contract_faction.getName() + " to get paid")
 			}
@@ -114,7 +114,7 @@
 		return this.Math.max(this.Const.Difficulty.MinPayments[this.World.Assets.getEconomicDifficulty()], val)
 	}
 
-	local getPerCount = o.m.Payment.getPerCount
+	local getPerCount = o.m.Payment.getPerCount;
 	o.m.Payment.getPerCount = function ()
 	{
 		local val = getPerCount();
@@ -458,7 +458,7 @@
 		]);
 		if (this.m.EmployerID != 0)
 		{
-			::Const.LegendMod.extendVarsWithPronouns(vars, this.getEmployer().getGender(), "employer");	
+			::Const.LegendMod.extendVarsWithPronouns(vars, this.getEmployer().getGender(), "employer");
 		}
 		::Const.LegendMod.extendVarsWithPronouns(vars, gender1, "randombrother");
 		::Const.LegendMod.extendVarsWithPronouns(vars, gender2, "randombrother2");

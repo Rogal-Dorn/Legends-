@@ -44,7 +44,7 @@ this.legend_deathtouch_skill <- this.inherit("scripts/skills/legend_magic_skill"
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties )
+		this.legend_magic_skill.onAnySkillUsed(_skill, _targetEntity, _properties );
 		if (_skill == this)
 		{
 			_properties.IsIgnoringArmorOnAttack = true;

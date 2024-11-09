@@ -94,8 +94,8 @@ this.sato_manhunter_veteran_ranged <- this.inherit("scripts/entity/tactical/huma
 			else
 			{
 				local weapons = [
-					"weapons/throwing_axe"
-					"weapons/throwing_axe"
+					"weapons/throwing_axe",
+					"weapons/throwing_axe",
 					"weapons/javelin"
 				];
 

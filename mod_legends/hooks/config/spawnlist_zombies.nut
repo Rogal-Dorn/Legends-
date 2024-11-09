@@ -361,7 +361,7 @@ if (!("Spawn" in ::Const.World))
 					Cost = 40
 				}
 			]
-		}
+		},
 		{
 			Weight = 10,
 			MinR = 800,
@@ -503,7 +503,7 @@ if (!("Spawn" in ::Const.World))
 					Cost = 40
 				}
 			]
-		}
+		},
 		{
 			Weight = 2,
 			MinR = 800,
@@ -556,7 +556,7 @@ if (!("Spawn" in ::Const.World))
 					}
 				}
 			]
-		}	
+		}
 	],
 	Troops = [
 		{
@@ -596,7 +596,7 @@ if (!("Spawn" in ::Const.World))
 					Cost = 30
 				}
 			]
-		}
+		},
 		{
 			Weight = 5,
 			Types = [

@@ -103,7 +103,7 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 	{
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand)
+		local main = items.getItemAtSlot(this.Const.ItemSlot.Mainhand);
 
 		if ((main == null || this.getContainer().hasSkill("effects.disarmed")) && off == null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand))
 		{

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/nomad_leader", function(o) 
+::mods_hookExactClass("entity/tactical/humans/nomad_leader", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -71,7 +71,7 @@
 				[1, "white_nomad_leader_outfit_00"]
 			]
 
-			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) ) 
+			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )
 			{
 				this.m.Items.equip(item)
 			}
@@ -98,8 +98,8 @@
 				[8, "oriental/nomad_reinforced_helmet"]
 			];
 
-			helmet.push([4, "oriental/kamy_southern_helmet"])
-			helmet.push([4, "southern_knight_helmet"])
+			helmet.push([4, "oriental/kamy_southern_helmet"]);
+			helmet.push([4, "southern_knight_helmet"]);
 
 			this.m.Items.equip(this.Const.World.Common.pickHelmet(helmet));
 		}

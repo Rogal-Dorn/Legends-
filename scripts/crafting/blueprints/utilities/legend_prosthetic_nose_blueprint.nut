@@ -13,12 +13,12 @@ this.legend_prosthetic_nose_blueprint <- this.inherit("scripts/crafting/blueprin
 				Num = 3
 			}
 		];
-		this.init(ingredients)
+		this.init(ingredients);
 		local skills = [
 			{
 				Scripts = ["scripts/skills/perks/legend_inventor_anatomy"]
 			}
-		];	
+		];
 		this.initSkills(skills);;
 	}
 

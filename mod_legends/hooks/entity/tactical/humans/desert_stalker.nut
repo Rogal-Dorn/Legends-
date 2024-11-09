@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/desert_stalker", function(o) 
+::mods_hookExactClass("entity/tactical/humans/desert_stalker", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -31,7 +31,7 @@
 		{
 			local helm =this.Const.World.Common.pickHelmet([
 				[1, "oriental/desert_stalker_head_wrap"]
-			]) 
+			]);
 			this.m.Items.equip(helm);
 		}
 	}

@@ -70,14 +70,14 @@ this.legend_bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/rando
 		// {
 		// 	this.m.Skills.add(this.new("scripts/skills/traits/brave_trait"));
 		// }
-		
+
 		//  if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		// {
 		// this.m.Skills.add(this.new("scripts/skills/perks/perk_dodge"));
 		// this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
 		// this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		// this.m.Skills.add(this.new("scripts/skills/traits/determined_trait"));
-		// }		
+		// }
 		this.m.Skills.update();
 	}
 
@@ -91,8 +91,8 @@ this.legend_bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/rando
 	function assignRandomEquipment()
 	{
 		this.randomized_unit_abstract.assignRandomEquipment()
-		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"))
-		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"))
+		this.m.Items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
+		this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 	}
 
 	// function assignRandomEquipment()
@@ -118,7 +118,7 @@ this.legend_bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/rando
 
 	// 	this.m.Items.addToBag(this.new("scripts/items/weapons/knife"));
 
-		
+
 
 	// 	if (this.Math.rand(1, 100) <= 90)
 	// 	{
@@ -132,7 +132,7 @@ this.legend_bandit_rabble_poacher <- this.inherit("scripts/entity/tactical/rando
 	// 		this.m.Items.equip(item);
 
 	// 	}
-		
+
 
 
 	// 	if (this.Math.rand(1, 100) <= 50)

@@ -66,7 +66,7 @@
 		return null;
 	}
 
-	o.convertStablesRosterToUIData <- ( _rosterID )
+	o.convertStablesRosterToUIData <- function ( _rosterID )
 	{
 		local result = [];
 		local roster = this.World.getRoster(_rosterID);
@@ -144,9 +144,9 @@
 		{
 			_target.background <- "";
 		}
-		_target.inReserves <- _entity.isInReserves()
-		_target.stabled <- _entity.isStabled()
-		_target.riderID <- _entity.getRiderID()
+		_target.inReserves <- _entity.isInReserves();
+		_target.stabled <- _entity.isStabled();
+		_target.riderID <- _entity.getRiderID();
 	}
 
 	o.addStatsToUIData = function ( _entity, _target )
@@ -209,8 +209,8 @@
 				break;
 			}
 		}
-		
-		
+
+
 		_target.regularDamage <- damageMin;
 		_target.regularDamageMax <- damageMax;
 		_target.regularDamageLabel <- damageMin + " - " + damageMax;
@@ -265,13 +265,13 @@
 		{
 			if (_items[i] != null && _filter == 99 && _items[i].Bro != null)
 			{
-				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner);
 				r.bro <- _items[i].Bro;
 				_target.push(r);
 			}
 			else if (_items[i] != null && (_items[i].Item.getItemType() & _filter) != 0)
 			{
-				local r = this.convertItemToUIData(_items[i].Item, true, _owner)
+				local r = this.convertItemToUIData(_items[i].Item, true, _owner);
 				r.bro <- _items[i].Bro;
 				_target.push(r);
 			}

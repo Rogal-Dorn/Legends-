@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/orc_young_low", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/orc_young_low", function(o)
 {
 	o.assignRandomEquipment = function ()
 	{
@@ -76,7 +76,7 @@
 			[2, ""],
 			[1, "greenskins/orc_young_light_helmet"],
 			[1, "greenskins/orc_young_medium_helmet"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

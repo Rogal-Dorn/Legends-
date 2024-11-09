@@ -201,7 +201,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.getFlags().add("lindwurm");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
 
-		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent)
+		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent);
 		foreach(k,v in this.m.AIAgent)
 		{
 			this.logInfo("key = " + k + " : " + v)

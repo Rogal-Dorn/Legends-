@@ -42,7 +42,7 @@ this.tailor_southern_background <- this.inherit("scripts/skills/backgrounds/tail
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "linen_tunic"],
 			[1, "oriental/cloth_sash"]
-		]))
+		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, "feathered_hat"],
 			[1, "oriental/southern_head_wrap"]

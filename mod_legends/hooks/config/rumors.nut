@@ -125,7 +125,7 @@
 	"The other day my pickaxe broke while I was hammering away. Piece of it clipped my cheek. Not much and I\'d be missing an eye!",
 	"The mines are a real deathtrap, we\'re losing folk every week. Even venturing with you might be better for longevity, ha!",
 	"Working the mines has its merits, too, you know. We never get wet from the rain, it\'s just the dust that kills you eventually.",
-	"Hit a rock with my pick once — before you laugh it started movin\' on its own, damn almost killed me!"
+	"Hit a rock with my pick once — before you laugh it started movin\' on its own, damn almost killed me!",
 	"In the other mine shaft, %randomname% found a nugget the size of me fist! The overseer got to him before he could hide it, though."
 ];
 ::Const.Strings.RumorsFarmingSettlement = [

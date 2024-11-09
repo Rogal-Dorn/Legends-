@@ -152,7 +152,7 @@ this.tailor_background <- this.inherit("scripts/skills/backgrounds/character_bac
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "linen_tunic"]
-		]))
+		]));
 		items.equip(this.Const.World.Common.pickHelmet([
 			[1, ""],
 			[1, "feathered_hat"]

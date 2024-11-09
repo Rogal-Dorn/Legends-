@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/necromancer", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/necromancer", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -43,7 +43,7 @@
 			[1, "witchhunter_hat"],
 			[1, "dark_cowl"],
 			[1, "hood", 63]
-		])
+		]);
 		this.m.Items.equip(item);
 	}
 
@@ -61,7 +61,7 @@
 
 		local item = this.Const.World.Common.pickHelmet([
 			[1, "named/witchhunter_helm"],
-		])
+		]);
 		this.m.Items.equip(item);
 
 		if (this.Const.DLC.Desert)

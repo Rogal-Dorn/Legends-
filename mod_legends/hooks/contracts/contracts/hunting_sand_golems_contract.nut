@@ -1,11 +1,11 @@
-::mods_hookExactClass("contracts/contracts/hunting_sand_golems_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/hunting_sand_golems_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
 	{
 		create();
 		this.m.DescriptionTemplates = [
-			"Shimmering spirits of air have been sighted in the desert, an ill-omen for the locals."
+			"Shimmering spirits of air have been sighted in the desert, an ill-omen for the locals.",
 			"Beware the desert\'s silent guardians: the sand golems, whose massive forms emerge from the sands to block the path of any travelers who dare to cross their domain.",
 			"The desert holds more than just heat and sun - the sand golems lurk beneath the dunes, their massive fists ready to smash any who stray too close.",
 			"The desert sands hold more than just heat and thirst - they are the domain of the air spirits, whose capricious whims can turn a pile of dusty rocks into a towering sand golem.",

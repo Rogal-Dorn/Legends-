@@ -121,15 +121,15 @@ this.legend_puncture_parry_dagger_skill <- this.inherit("scripts/skills/skill", 
 	{
 		if (_skill == this)
 		{
-			local chance = this.getHitChance(_targetEntity)
+			local chance = this.getHitChance(_targetEntity);
 			if (_properties.IsSpecializedInDaggers)
 			{
 				chance += 15;
 			}
-			
+
 			_properties.DamageRegularMin = 20;
 			_properties.DamageRegularMax = 40;
-			
+
 			_properties.MeleeSkill += chance;
 			_properties.DamageArmorMult *= 0.0;
 			_properties.IsIgnoringArmorOnAttack = true;

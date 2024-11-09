@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/skeleton_boss", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/skeleton_boss", function(o)
 {
 	// o.onFactionChanged <- function ()
 	// {
@@ -45,7 +45,7 @@
 
 		local item = this.Const.World.Common.pickHelmet([
 			[66, "ancient/ancient_laurels"]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

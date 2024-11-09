@@ -716,7 +716,7 @@
 	"Slate",
 	"Mallister",
 	"Cerwyn",
-	"Pyke"
+	"Pyke",
 	"de Frissac",
 	"Redcliff",
 	"Saulx",

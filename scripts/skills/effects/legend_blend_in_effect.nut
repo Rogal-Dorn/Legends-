@@ -81,8 +81,8 @@ this.legend_blend_in_effect <- this.inherit("scripts/skills/skill", {
 		_properties.TargetAttractionMult *= 0.50;
 		_properties.MeleeDefense += 3;
 		_properties.RangedDefense += 5;
-		::logInfo("meek stacks: " + this.m.MeekStacks)
-		::logInfo("meek counter: " + this.m.MeekCounter)
+		::logInfo("meek stacks: " + this.m.MeekStacks);
+		::logInfo("meek counter: " + this.m.MeekCounter);
 	}
 
 	function onBeingAttacked( _attacker, _skill, _properties )

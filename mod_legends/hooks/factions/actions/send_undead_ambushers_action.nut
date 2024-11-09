@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/send_undead_ambushers_action", function(o) 
+::mods_hookExactClass("factions/actions/send_undead_ambushers_action", function(o)
 {
 	o.m.timeBetweenSpawnsPerSettlement <- 150;
 
@@ -41,7 +41,7 @@
 			{
 			 mult = this.World.FactionManager.isUndeadScourge() ? 1.2 : 1.0;
 			}
-		local rand = this.Math.rand(75, 120)
+		local rand = this.Math.rand(75, 120);
 		local distanceToNextSettlement = this.getDistanceToSettlements(settlement.getTile());
 			if (::Legends.Mod.ModSettings.getSetting("DistanceScaling").getValue() && distanceToNextSettlement > 14)
 			{

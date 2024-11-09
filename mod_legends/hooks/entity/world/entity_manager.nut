@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/entity_manager", function(o) 
+::mods_hookNewObject("entity/world/entity_manager", function(o)
 {
 	o.m.FreeCompanies <- [];
 	o.m.NonDefaultFreeCompanies <- [];
@@ -84,17 +84,17 @@
 			local themeTable;
 			local selectedND = false;
 			if (this.Math.rand(0, 199) == 0 && days > 100)
-			{	
+			{
 				do {
 					themeSelect = this.Math.rand(0, this.Const.FreeCompanyOneTimeList.len() - 1);
-				} while ( this.m.NonDefaultFreeCompanies.find(themeSelect) && !( this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() ) )
+				} while ( this.m.NonDefaultFreeCompanies.find(themeSelect) && !( this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() ) );
 				if (this.m.NonDefaultFreeCompanies.len() == this.Const.FreeCompanyOneTimeList.len() - 1) //dude it's like 5am and im writing this
 				{
-					// themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1); //only go i nhere if we can't select any more nondefaults, it'll break that while loop above too 
+					// themeSelect = this.Math.rand(0, this.Const.FreeCompanyCoordinationList.len() - 1); //only go i nhere if we can't select any more nondefaults, it'll break that while loop above too
 				}
-				else 
+				else
 				{
-					this.m.NonDefaultFreeCompanies.push(themeSelect)
+					this.m.NonDefaultFreeCompanies.push(themeSelect);
 					selectedND = true;
 				}
 			}
@@ -119,7 +119,7 @@
 			party.setFootprintType(this.Const.World.FootprintsType[footprints]);
 
 			party.getFlags().set("IsFreeCompany", true);
-			party.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID())
+			party.setFaction(this.World.FactionManager.getFactionOfType(this.Const.FactionType.FreeCompany).getID());
 
 			// local r = this.Math.min(330, 150 + this.World.getTime().Days);
 			local spawntype = ("Spawn" in themeTable) ? themeTable.Spawn : "FreeCompany"
@@ -127,19 +127,19 @@
 			if (days > 100) r += 50;
 			else if (days > 75) r += 30
 			else if (days > 50) r += 10
-			
+
 			local r = this.Math.rand(r * 0.8, r * 1.5);
 			if (days < 25) {
-				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.FreeCompanyLow, r * 0.9); 
+				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn.FreeCompanyLow, r * 0.9);
 			}
 			else
 			{
 				this.Const.World.Common.assignTroops(party, this.Const.World.Spawn[spawntype], r); //change this to freecompany spawn later
 			}
-			
+
 			if ("UnitOutfits" in themeTable) {
 				foreach (troop in party.getTroops()) //this shit is admittedly really slow but I do not care it doesn't get run often enough to need to conserve iterations highly
-				{	
+				{
 					foreach (uo in themeTable.UnitOutfits)
 					{
 						if (troop.ID == uo.Type)
@@ -167,7 +167,7 @@
 			party.getLoot().Ammo = this.Math.rand(10, 50);
 
 			local items =  ("LootTable" in themeTable) ? themeTable.LootTable : this.Const.FreeCompanyDefaultLootTable;
-			
+
 
 			for( local i = 0; i < 2; i = ++i ) //change to some trade goods, and lower money amount if it picks them
 			{
@@ -180,7 +180,7 @@
 			local nameList = clone themeTable.Names;
 
 			while (true)
-			{	
+			{
 				if (nameList.len() == 0)
 				{
 					nameList = clone this.Const.Strings.FreeCompanyNames;
@@ -201,7 +201,7 @@
 				{
 					if (p.getName() == name)
 					{
-						nameList.remove(idx)
+						nameList.remove(idx);
 						abort = true;
 						break;
 					}
@@ -372,7 +372,7 @@
 			for( local i = 0; i < 2; i = ++i )
 			{
 				local r = this.Math.rand(1, 13);
-				
+
 				local loot = [
 					"supplies/bread_item",
 					"supplies/mead_item",
@@ -529,7 +529,7 @@
 				_out.writeU32(merc.getID());
 			}
 		}
-		
+
 		local numMercs = 0;
 		foreach( merc in this.m.FreeCompanies )
 		{
@@ -585,7 +585,7 @@
 			}
 		}
 
-		if (_in.getMetaData().getVersion() >= 72) 
+		if (_in.getMetaData().getVersion() >= 72)
 		{
 			local numFC = _in.readU8();
 			for (local i = 0; i != numFC; i = ++i)

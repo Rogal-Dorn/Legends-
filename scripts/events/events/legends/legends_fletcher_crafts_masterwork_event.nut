@@ -79,7 +79,7 @@ this.legends_fletcher_crafts_masterwork_event <- this.inherit("scripts/events/ev
 						break;
 					}
 				}
-				local r = this.Math.rand(1,2)
+				local r = this.Math.rand(1,2);
 				if (r == 1)
 				{
 				local item = this.new("scripts/items/ammo/legend_huge_quiver_of_arrows");
@@ -150,7 +150,7 @@ this.legends_fletcher_crafts_masterwork_event <- this.inherit("scripts/events/ev
 				}
 
 				local item;
-				local r = this.Math.rand(1,2)
+				local r = this.Math.rand(1,2);
 				if (r == 1)
 				{
 					item = this.new("scripts/items/ammo/quiver_of_arrows");

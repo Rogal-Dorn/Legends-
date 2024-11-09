@@ -273,7 +273,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				{
 					return;
 				}
-				local r = this.Math.rand(0, 6)
+				local r = this.Math.rand(0, 6);
 				actor.getBackground().addPerk(i,r);
 				actor.getSkills().add(this.new(name));
 				break;

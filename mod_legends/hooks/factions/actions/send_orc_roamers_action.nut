@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/send_orc_roamers_action", function(o) 
+::mods_hookExactClass("factions/actions/send_orc_roamers_action", function(o)
 {
 	o.onExecute = function ( _faction )
 	{
@@ -24,7 +24,7 @@
 
 		local settlement = this.pickWeightedRandom(settlements);
 		settlement.setLastSpawnTimeToNow();
-		local rand = this.Math.rand(50, 100)
+		local rand = this.Math.rand(50, 100);
 		//	local nearestOrcs = this.getNearestLocationTo(settlement, this.World.FactionManager.getFactionOfType(this.Const.FactionType.Orcs).getSettlements());
 		//		if (this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary && nearestOrcs > 28)
 		//		{

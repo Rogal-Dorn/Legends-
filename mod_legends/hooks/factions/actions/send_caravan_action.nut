@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/send_caravan_action", function(o) 
+::mods_hookExactClass("factions/actions/send_caravan_action", function(o)
 {
 	o.setFaction <- function ( _f )
 	{
@@ -104,9 +104,9 @@
 		return this.faction_action.getReputationToDifficultyLightMult() * (this.World.FactionManager.isCivilWar() ? 1.1 : 1.0);
 	}
 
-	o.getCaravansRaidedToAdditionalResources <- function ( _faction) 
+	o.getCaravansRaidedToAdditionalResources <- function ( _faction)
 	{
-		return _faction.getFlags().getAsInt("FactionsCaravansRaided") * 3; 	// 1 hand = ~15 troop power, so every 5 caravans raided is 
+		return _faction.getFlags().getAsInt("FactionsCaravansRaided") * 3; 	// 1 hand = ~15 troop power, so every 5 caravans raided is
 	}																		// another hand's worth of party power before multiplier
 
 	o.getResourcesForParty <- function ( _settlement, _faction )
@@ -115,7 +115,7 @@
 
 		if (_faction.hasTrait(this.Const.FactionTrait.OrientalCityState)) return (this.Math.rand(85, 130) + this.Math.round(0.12 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.6
 
-		local extraFromFCR = this.getCaravansRaidedToAdditionalResources(_faction)
+		local extraFromFCR = this.getCaravansRaidedToAdditionalResources(_faction);
 		return (this.Math.rand(45, 95) + this.Math.round(0.1 * ::Math.max(1, _settlement.getResources())) + extraFromFCR) * this.getReputationToDifficultyLightMult(); // this.m.Start.getResources() * 0.5
 	}
 

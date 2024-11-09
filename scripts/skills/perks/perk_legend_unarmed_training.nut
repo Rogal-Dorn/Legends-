@@ -52,7 +52,7 @@ this.perk_legend_unarmed_training <- this.inherit("scripts/skills/skill", {
 			handToHand.m.FatigueCostMult *= this.Const.Combat.WeaponSpecFatigueMult;
 		}
 
-		local lunge = this.getContainer().getSkillByID("actives.legend_unarmed_lunge")
+		local lunge = this.getContainer().getSkillByID("actives.legend_unarmed_lunge");
 		if (lunge != null)
 		{
 			lunge.m.FatigueCostMult *= 0.5

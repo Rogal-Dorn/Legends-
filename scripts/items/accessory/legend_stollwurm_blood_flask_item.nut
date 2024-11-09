@@ -24,7 +24,7 @@ this.legend_stollwurm_blood_flask_item <- this.inherit("scripts/items/accessory/
 				type = "text",
 				icon = "ui/icons/special.png",
 				text = "grants [color=" + this.Const.UI.Color.PositiveValue + "]50%[/color] damage reduction, and immunity to stun, grab and knockback for three turns"
-		})
+		});
 		return result;
 	}
 

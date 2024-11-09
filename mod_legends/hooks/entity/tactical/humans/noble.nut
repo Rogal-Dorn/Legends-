@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/humans/noble", function(o) 
+::mods_hookExactClass("entity/tactical/humans/noble", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -47,7 +47,7 @@
 			{
 				local h = this.Const.World.Common.pickHelmet([
 					[1, "greatsword_faction_helm", this.World.FactionManager.getFaction(this.getFaction()).getBanner()]
-				])
+				]);
 				this.m.Items.equip(h);
 			}
 
@@ -77,7 +77,7 @@
 			{
 				local h = this.Const.World.Common.pickHelmet([
 					[1, "greatsword_faction_helm", this.World.FactionManager.getFaction(this.getFaction()).getBanner()]
-				])
+				]);
 				this.m.Items.equip(h);
 			}
 
