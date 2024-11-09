@@ -1,8 +1,6 @@
-local gt = this.getroottable(); //Also need named varients!
-
-											######## PEASANT TIER ########
+######## PEASANT TIER ########
 //Peasant - low tier weapons - 1 handed
-gt.Const.PeasantMeleeWeapons1h <- [
+::Const.PeasantMeleeWeapons1h <- [
 	"weapon.knife",
 	"weapon.wooden_stick",
 	"weapon.wooden_flail",
@@ -20,7 +18,7 @@ gt.Const.PeasantMeleeWeapons1h <- [
 ];
 
 //Peasant - low tier weapons - 2 handed
-gt.Const.PeasantMeleeWeapons2h <- [
+::Const.PeasantMeleeWeapons2h <- [
 	"weapon.woodcutters_axe",
 	"weapon.warfork",
 	"weapon.legend_ranged_wooden_flail",
@@ -38,19 +36,19 @@ gt.Const.PeasantMeleeWeapons2h <- [
 ];
 
 //Peasant - low tier ranged weapons - 1 handed
-gt.Const.PeasantRangedWeapons1h <- [
+::Const.PeasantRangedWeapons1h <- [
 	"weapon.legend_sling"
 ];
 
 //Peasant - low tier ranged weapons - 2 handed
-gt.Const.PeasantRangedWeapons2h <- [
+::Const.PeasantRangedWeapons2h <- [
 	"weapon.short_bow",
 	"weapon.light_crossbow",
 	"weapon.legend_slingshot"
 ];
 											######## MERCENARY TIER ########
 //mercenary - mid melee tier weapons - 1h
-gt.Const.MercenaryMeleeWeapons1h <- [
+::Const.MercenaryMeleeWeapons1h <- [
 	"weapon.shortsword",
 	"weapon.scramasax",
 	"weapon.morning_star",
@@ -65,7 +63,7 @@ gt.Const.MercenaryMeleeWeapons1h <- [
 ];
 
 //mercenary - mid melee tier weapons - 2h
-gt.Const.MercenaryMeleeWeapons2h <- [
+::Const.MercenaryMeleeWeapons2h <- [
 	"weapon.two_handed_mace",
 	"weapon.warbrand",
 	"weapon.two_handed_wooden_hammer",
@@ -84,20 +82,20 @@ gt.Const.MercenaryMeleeWeapons2h <- [
 ];
 
 //mercenary - mid tier ranged weapons - 1h
-gt.Const.MercenaryRangedWeapons1h <- [
+::Const.MercenaryRangedWeapons1h <- [
 	"weapon.throwing_spear",
 	"weapon.throwing_axe",
 	"weapon.javelin"
 ];
 
 //mercenary - mid tier ranged weapons - 2h
-gt.Const.MercenaryRangedWeapons2h <- [
+::Const.MercenaryRangedWeapons2h <- [
 	"weapon.hunting_bow",
 	"weapon.crossbow"
 ];
 											######## MILITARY TIER ########
 //Military - high tier north melee weapons 1h
-gt.Const.MilitaryMeleeWeapons1h <- [
+::Const.MilitaryMeleeWeapons1h <- [
 	"weapon.winged_mace",
 	"weapon.warhammer",
 	"weapon.three_headed_flail",
@@ -111,7 +109,7 @@ gt.Const.MilitaryMeleeWeapons1h <- [
 ];
 
 //Military - high tier north melee weapons 2h
-gt.Const.MilitaryMeleeWeapons2h <- [
+::Const.MilitaryMeleeWeapons2h <- [
 	"weapon.two_handed_flanged_mace",
 	"weapon.two_handed_flail",
 	"weapon.polehammer",
@@ -128,26 +126,26 @@ gt.Const.MilitaryMeleeWeapons2h <- [
 ];
 
 //Military - high tier north ranged weapons 1h
-gt.Const.MilitaryRangedWeapons1h <- [
+::Const.MilitaryRangedWeapons1h <- [
 	"weapon.rondel_dagger"
 ];
 
 //Military - high tier north ranged weapons 2h
-gt.Const.MilitaryRangedWeapons2h <- [
+::Const.MilitaryRangedWeapons2h <- [
 	"weapon.war_bow",
 	"weapon.legend_slingstaff",
 	"weapon.heavy_crossbow"
 ];
 
 //Military - high tier specials
-gt.Const.MilitarySpecialWeapons2h <- [
+::Const.MilitarySpecialWeapons2h <- [
 	"shield.legend_parrying_dagger"
 ];
 
 
 											######## Ancient Dead ########
 //Ancient dead melee weapons - 1h
-gt.Const.AncientDeadMeleeWeapons1h <- [
+::Const.AncientDeadMeleeWeapons1h <- [
 	"weapon.ancient_spear",
 	"weapon.ancient_sword",
 	"weapon.broken_ancient_sword",
@@ -159,7 +157,7 @@ gt.Const.AncientDeadMeleeWeapons1h <- [
 ];
 
 //Ancient dead melee weapons - 2h
-gt.Const.AncientDeadMeleeWeapons2h <- [
+::Const.AncientDeadMeleeWeapons2h <- [
 	"weapon.bladed_pike",
 	"weapon.broken_bladed_pike",
 	"weapon.crypt_cleaver",
@@ -170,20 +168,20 @@ gt.Const.AncientDeadMeleeWeapons2h <- [
 ];
 
 // //Ancient dead ranged weapons - 1h
-// gt.Const.AncientDeadRangedWeapons1h <- [
+// ::Const.AncientDeadRangedWeapons1h <- [
 // 	"",
 // 	""
 // ];
 
 // //Ancient dead ranged weapons - 2h
-// gt.Const.AncientDeadRangedWeapons2h <- [
+// ::Const.AncientDeadRangedWeapons2h <- [
 // 	"",
 // 	""
 // ];
 
 											######## SOUTHERN ########
 //Southern melee weapons - 1h
-gt.Const.SouthernMeleeWeapons1h <- [
+::Const.SouthernMeleeWeapons1h <- [
 	"weapon.shamshir",
 	"weapon.scimitar",
 	"weapon.legend_katar",
@@ -196,7 +194,7 @@ gt.Const.SouthernMeleeWeapons1h <- [
 ];
 
 //Southern melee weapons - 2h
-gt.Const.SouthernMeleeWeapons2h <- [
+::Const.SouthernMeleeWeapons2h <- [
 	"weapon.polemace",
 	"weapon.swordlance",
 	"weapon.two_handed_saif", 
@@ -204,7 +202,7 @@ gt.Const.SouthernMeleeWeapons2h <- [
 ];
 
 // //Southern ranged weapons - 1h
-// gt.Const.SouthernRangedWeapons1h <- [
+// ::Const.SouthernRangedWeapons1h <- [
 // 	"",
 // 	"",
 // 	"",
@@ -217,7 +215,7 @@ gt.Const.SouthernMeleeWeapons2h <- [
 // ];
 
 //Southern ranged weapons - 2h
-gt.Const.SouthernRangedWeapons2h <- [
+::Const.SouthernRangedWeapons2h <- [
 	"weapon.staff_sling",
 	"weapon.composite_bow",
 	"weapon.handgonne",
@@ -226,7 +224,7 @@ gt.Const.SouthernRangedWeapons2h <- [
 
 											######## ORC ########
 //Orc melee weapons - 1h
-gt.Const.OrcMeleeWeapons1h <- [
+::Const.OrcMeleeWeapons1h <- [
 	"weapon.legend_bone_carver",
 	"weapon.legend_meat_hacker",
 	"weapon.legend_skin_flayer",
@@ -238,7 +236,7 @@ gt.Const.OrcMeleeWeapons1h <- [
 ];
 
 //Orc melee weapons - 2h
-gt.Const.OrcMeleeWeapons2h <- [
+::Const.OrcMeleeWeapons2h <- [
 	"weapon.legend_bough",
 	"weapon.legend_limb_lopper",
 	"weapon.legend_man_mangler",
@@ -248,12 +246,12 @@ gt.Const.OrcMeleeWeapons2h <- [
 ];
 
 //Orc ranged weapons - 1h
-gt.Const.OrcRangedWeapons1h <- [
+::Const.OrcRangedWeapons1h <- [
 	"weapon.orc_javelin"
 ];
 
 // //Orc ranged weapons - 2h
-// gt.Const.OrcRangedWeapons2h <- [
+// ::Const.OrcRangedWeapons2h <- [
 // 	"",
 // 	"",
 // 	"",
@@ -267,7 +265,7 @@ gt.Const.OrcRangedWeapons1h <- [
 
 											######## Goblin ########
 //Goblin melee weapons - 1h
-gt.Const.GoblinMeleeWeapons1h <- [
+::Const.GoblinMeleeWeapons1h <- [
 	"weapon.goblin_falchion",
 	"weapon.goblin_notched_blade",
 	"weapon.goblin_spear",
@@ -275,17 +273,17 @@ gt.Const.GoblinMeleeWeapons1h <- [
 ];
 
 //Goblin melee weapons - 2h
-gt.Const.GoblinMeleeWeapons2h <- [
+::Const.GoblinMeleeWeapons2h <- [
 	"weapon.goblin_pike"
 ];
 
 //Goblin ranged weapons - 1h
-gt.Const.GoblinRangedWeapons1h <- [
+::Const.GoblinRangedWeapons1h <- [
 	"weapon.goblin_spiked_balls"
 ];
 
 //Goblin ranged weapons - 2h
-gt.Const.GoblinRangedWeapons2h <- [
+::Const.GoblinRangedWeapons2h <- [
 	"weapon.goblin_bow",
 	"weapon.goblin_crossbow",
 	"weapon.goblin_heavy_bow",
@@ -294,7 +292,7 @@ gt.Const.GoblinRangedWeapons2h <- [
 
 											######## Barbarian ########
 //Barbarian melee weapons - 1h
-gt.Const.BarbarianMeleeWeapons1h <- [
+::Const.BarbarianMeleeWeapons1h <- [
 	"weapon.antler_cleaver",
 	"weapon.axehammer",
 	"weapon.blunt_cleaver",
@@ -304,7 +302,7 @@ gt.Const.BarbarianMeleeWeapons1h <- [
 ];
 
 //Barbarian melee weapons - 2h
-gt.Const.BarbarianMeleeWeapons2h <- [
+::Const.BarbarianMeleeWeapons2h <- [
 	"weapon.barbarian_drum",
 	"weapon.heavy_rusty_axe",
 	"weapon.rusty_warblade",
@@ -313,13 +311,13 @@ gt.Const.BarbarianMeleeWeapons2h <- [
 ];
 
 //Barbarian ranged weapons - 1h
-gt.Const.BarbarianRangedWeapons1h <- [
+::Const.BarbarianRangedWeapons1h <- [
 	"weapon.heavy_javelin",
 	"weapon.heavy_throwing_axe"
 ];
 
 // //Barbarian ranged weapons - 2h
-// gt.Const.BarbarianRangedWeapons2h <- [
+// ::Const.BarbarianRangedWeapons2h <- [
 // 	"",
 // 	"",
 // 	"",
@@ -335,7 +333,7 @@ gt.Const.BarbarianRangedWeapons1h <- [
 					#(Basically, anything that you can't get normally via shops or need to craft)#
 
 //Special melee weapons - 1h
-gt.Const.SpecialMeleeWeapons1h <- [
+::Const.SpecialMeleeWeapons1h <- [
 	"weapon.legend_wooden_stake",
 	"weapon.legend_redback_dagger",
 	"weapon.legend_cat_o_nine_tails",
@@ -344,7 +342,7 @@ gt.Const.SpecialMeleeWeapons1h <- [
 ];
 
 //Special melee weapons - 2h
-gt.Const.SpecialMeleeWeapons2h <- [
+::Const.SpecialMeleeWeapons2h <- [
 	"weapon.legend_staff_vala",
 	"weapon.legend_staff_gnarled",
 	"weapon.legend_mystic_staff",
@@ -355,7 +353,7 @@ gt.Const.SpecialMeleeWeapons2h <- [
 ];
 
 // //Special ranged weapons - 1h
-// gt.Const.SpecialRangedWeapons1h <- [
+// ::Const.SpecialRangedWeapons1h <- [
 // 	"",
 // 	"",
 // 	"",
@@ -368,13 +366,13 @@ gt.Const.SpecialMeleeWeapons2h <- [
 // ];
 
 //Special ranged weapons - 2h
-gt.Const.SpecialRangedWeapons2h <- [
+::Const.SpecialRangedWeapons2h <- [
 	"weapon.masterwork_bow",
 	"weapon.wonky_bow"
 ];
 
 //Special Offhand
-gt.Const.SpecialOffhand <- [
+::Const.SpecialOffhand <- [
 	"weapon.legend_hand_crossbow"
 ];
 

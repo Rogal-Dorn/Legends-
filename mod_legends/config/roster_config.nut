@@ -1,34 +1,32 @@
-local gt = this.getroottable();
-
-gt.Const.Roster <- {
+::Const.Roster <- {
 	function getSizeForTier( _tier )
 	{
-		return gt.Const.Roster.Size[_tier];
+		return ::Const.Roster.Size[_tier];
 	}
 
 	function getInCombatSizeForTier( _tier )
 	{
-		return gt.Const.Roster.InCombatSize[_tier];
+		return ::Const.Roster.InCombatSize[_tier];
 	}
 
 	function getTierForSize( _size )
 	{
-		foreach (i, size in gt.Const.Roster.Size)
+		foreach (i, size in ::Const.Roster.Size)
 		{
 			if (size >= _size)
 			{
-				return gt.Const.Roster.Tier[i];
+				return ::Const.Roster.Tier[i];
 			}
 		}
 	}
 
 	function getTierForInCombatSize( _size )
 	{
-		foreach (i, size in gt.Const.Roster.InCombatSize)
+		foreach (i, size in ::Const.Roster.InCombatSize)
 		{
 			if (size >= _size)
 			{
-				return gt.Const.Roster.Tier[i];
+				return ::Const.Roster.Tier[i];
 			}
 		}
 	}
@@ -37,9 +35,9 @@ gt.Const.Roster <- {
 	{
 		local tiers = [];
 
-		foreach (rep in gt.Const.BusinessReputation)
+		foreach (rep in ::Const.BusinessReputation)
 		{
-			if (rep > _startingReputation && tiers.len() < gt.Const.Roster.Tier.len())
+			if (rep > _startingReputation && tiers.len() < ::Const.Roster.Tier.len())
 			{
 				tiers.push(rep);
 			}
@@ -47,7 +45,7 @@ gt.Const.Roster <- {
 
 		// If Reputation tiers are fewer in number than Roster Tiers, add more Reputation Tiers 
 		// with steps of half of the last tier until the two arrays are equal in length
-		for (local i = 0; i < gt.Const.Roster.Tier.len() - tiers.len(); i++)
+		for (local i = 0; i < ::Const.Roster.Tier.len() - tiers.len(); i++)
 		{
 			local lastReputation = tiers[tiers.len() - 1];
 			tiers.push(lastReputation + lastReputation/2);
@@ -57,7 +55,7 @@ gt.Const.Roster <- {
 	}
 };
 
-gt.Const.Roster.Tier <- [
+::Const.Roster.Tier <- [
 	0,
 	1,
 	2, // Default starting tier
@@ -71,7 +69,7 @@ gt.Const.Roster.Tier <- [
 	10
 ];
 
-gt.Const.Roster.Size <- [
+::Const.Roster.Size <- [
 	1, 
 	3,  
 	6,  // Default starting size
@@ -85,7 +83,7 @@ gt.Const.Roster.Size <- [
 	27, 
 ];
 
-gt.Const.Roster.InCombatSize <- [
+::Const.Roster.InCombatSize <- [
 	1,
 	3,  
 	6,  // Default starting size
@@ -99,8 +97,8 @@ gt.Const.Roster.InCombatSize <- [
 	22, 
 ];
 
-gt.Const.Roster.DefaultTierMax <- gt.Const.Roster.Tier[gt.Const.Roster.Tier.len() - 2];
-gt.Const.Roster.DefaultTier <- 2;
+::Const.Roster.DefaultTierMax <- ::Const.Roster.Tier[::Const.Roster.Tier.len() - 2];
+::Const.Roster.DefaultTier <- 2;
 
-gt.Const.Roster.DefaultReputationTiers <- gt.Const.Roster.createReputationTiers(250);
+::Const.Roster.DefaultReputationTiers <- ::Const.Roster.createReputationTiers(250);
 
