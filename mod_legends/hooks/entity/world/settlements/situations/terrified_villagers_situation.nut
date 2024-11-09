@@ -11,7 +11,7 @@
 		];
 	}
 
-	o.onAdded = function ( _settlement )
+	o.onAdded <- function ( _settlement )
 	{
 		_settlement.resetRoster(true);
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())

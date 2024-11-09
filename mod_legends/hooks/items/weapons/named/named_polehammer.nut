@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_polehammer", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_hammer_stun_effect"];
-	o.m.EffectBounds = [ [3, 7] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_hammer_stun_effect"];
+	o.m.EffectBounds <- [ [3, 7] ];
 
 	local create = o.create;
 	o.create = function ()

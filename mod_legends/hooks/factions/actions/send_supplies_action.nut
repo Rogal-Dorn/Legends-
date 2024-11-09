@@ -75,7 +75,7 @@
 		this.m.Dest = null;
 	}
 
-	q.getTownNeedHelp <- function ( _faction )
+	o.getTownNeedHelp <- function ( _faction )
 	{
 		local ret = {Poor = [], Forts = []};
 
@@ -98,19 +98,19 @@
 		return ret;
 	}
 
-	q.getReputationToDifficultyLightMult <- function ()
+	o.getReputationToDifficultyLightMult <- function ()
 	{
 		return this.faction_action.getReputationToDifficultyLightMult() * (this.World.FactionManager.isCivilWar() ? 1.1 : 1.0);
 	}
 
-	q.getResourcesForParty <- function ( _settlement, _faction )
+	o.getResourcesForParty <- function ( _settlement, _faction )
 	{
 		if (_settlement == null) return this.Math.rand(100, 200) * this.getReputationToDifficultyLightMult();
 
 		return (this.Math.rand(83, 127) + this.Math.round(0.11 * ::Math.max(1, _settlement.getResources()))) * this.getReputationToDifficultyLightMult();
 	}
 
-	q.convertBudgetToMult <- function ( _budget )
+	o.convertBudgetToMult <- function ( _budget )
 	{
 		if (_budget == 0)
 			return 1.0;
@@ -118,7 +118,7 @@
 		return 1.0 + this.Math.floor(_budget / 900) * 0.01;
 	}
 
-	q.pickSpawnList <- function ( _settlement, _faction )
+	o.pickSpawnList <- function ( _settlement, _faction )
 	{
 		switch(::Math.rand(1, 4))
 		{
@@ -133,7 +133,7 @@
 		}
 	}
 
-	q.addLoot <- function ( _party )
+	o.addLoot <- function ( _party )
 	{
 		switch(::Math.rand(1, 3))
 		{
@@ -152,7 +152,7 @@
 		_party.getLoot().Money = this.Math.floor(this.Math.rand(0, 100) * this.Math.rand(100, 200) * 0.01);
 	}
 
-	q.addToPartyInventory <- function ( _party )
+	o.addToPartyInventory <- function ( _party )
 	{
 		switch(::Math.rand(1, 4))
 		{
@@ -173,7 +173,7 @@
 		}
 	}
 
-	q.afterSpawnCaravan <- function (_party)
+	o.afterSpawnCaravan <- function (_party)
 	{
 	}
 

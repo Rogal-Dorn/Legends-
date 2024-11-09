@@ -34,7 +34,7 @@ local path = "crafting/blueprints/snake_oil_";
 for( local i = 1; i <= 14; i = ++i )
 {
 	local variant = i < 10 ? "0" + i : i;
-	::mods_hookExactClass(path + variant, function(o)
+	::mods_hookExactClass(path + variant + "_blueprint", function(o)
 	{
 		local create = o.create;
 		o.create = function ()

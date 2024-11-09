@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_polemace", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_mace_stagger_effect"];
-	o.m.EffectBounds = [ [15, 25] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_mace_stagger_effect"];
+	o.m.EffectBounds <- [ [15, 25] ];
 
 	local create = o.create;
 	o.create = function ()

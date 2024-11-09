@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_cleaver", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_cleaver_effect"];
-	o.m.EffectBounds = [ [10, 20] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_cleaver_effect"];
+	o.m.EffectBounds <- [ [10, 20] ];
 
 	local create = o.create;
 	o.create = function ()

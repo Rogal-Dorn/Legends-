@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_fencing_sword", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_fencing_sword_effect"];
-	o.m.EffectBounds = [ [4, 12] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_fencing_sword_effect"];
+	o.m.EffectBounds <- [ [4, 12] ];
 
 	local create = o.create;
 	o.create = function ()

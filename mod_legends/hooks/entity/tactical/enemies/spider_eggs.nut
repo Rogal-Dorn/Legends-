@@ -12,7 +12,7 @@
 
 	}
 
-	o.assignRandomEquipment = function ()
+	o.assignRandomEquipment <- function ()
 	{
 		local armor = [
 			[1, "ancient/ancient_priest_attire"]

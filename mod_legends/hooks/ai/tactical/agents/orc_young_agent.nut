@@ -7,10 +7,10 @@
 		this.m.Properties.EngageRangeIdeal = 1;
 	}
 
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
-		addBehaviors();
+		onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_thresh"));
 	}
 });

@@ -1,7 +1,7 @@
 ::mods_hookExactClass("entity/tactical/player_corpse_stub", function(o) 
 {
-	o.m.IsCommander = false;
-	o.m.Gender = -1;
+	o.m.IsCommander <- false;
+	o.m.Gender <- -1;
 
 	o.setCommander <- function ( _f )
 	{

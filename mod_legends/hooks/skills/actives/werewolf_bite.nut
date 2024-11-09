@@ -8,7 +8,7 @@
 		this.m.IconDisabled = "skills/active_71_bw.png";
 	}
 
-	o.getTooltip = function ()
+	o.getTooltip <- function ()
 	{
 		local p = this.getContainer().getActor().getCurrentProperties();
 		return [

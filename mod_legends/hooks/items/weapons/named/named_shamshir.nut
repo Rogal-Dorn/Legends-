@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_shamshir", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_shamshir_effect"];
-	o.m.EffectBounds = [ [20, 35] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_shamshir_effect"];
+	o.m.EffectBounds <- [ [20, 35] ];
 
 	local create = o.create;
 	o.create = function ()

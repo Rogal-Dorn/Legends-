@@ -21,7 +21,7 @@
 	}
 
 	local onExecute = o.onExecute;
-	q.onExecute = function( _faction )
+	o.onExecute = function( _faction )
 	{
 		onExecute(_faction);
 
