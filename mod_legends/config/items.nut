@@ -101,7 +101,7 @@ for (local i = 0; i < ::Const.Items.NamedHelmets.len(); ++i)
 
 ::Const.Items.NamedBanditShields.extend([
 	"weapons/named/legend_named_parrying_dagger"
-];
+]);
 
 ::Const.Items.NamedSouthernShields <- [
 	"shields/named/named_sipar_shield"
@@ -110,7 +110,7 @@ for (local i = 0; i < ::Const.Items.NamedHelmets.len(); ++i)
 ::Const.Items.NamedOrcWeapons.extend([
 	"weapons/named/legend_named_orc_axe_2h",
 	"weapons/named/legend_named_orc_flail_2h"
-];
+]);
 
 ::Const.Items.NamedMeleeWeapons.extend([
 	"weapons/named/named_fencing_sword",
@@ -131,6 +131,7 @@ for (local i = 0; i < ::Const.Items.NamedHelmets.len(); ++i)
 	"weapons/named/legend_named_military_goedendag",
 	"weapons/named/legend_named_parrying_dagger"
 ]);
+
 ::Const.Items.NamedRangedWeapons.extend([
 	"weapons/named/legend_named_northern_sling"
 ]);
@@ -146,7 +147,7 @@ for (local i = 0; i < ::Const.Items.NamedHelmets.len(); ++i)
 ::Const.Items.NamedSouthernArmors <- [];
 ::Const.Items.NamedUndeadWeapons.extend([
 	"weapons/named/legend_named_great_khopesh"
-];
+]);
 
 ::Const.Items.ArmorUpgrades <- {
 	Chain = 0,

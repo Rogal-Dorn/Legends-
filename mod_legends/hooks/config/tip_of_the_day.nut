@@ -1,5 +1,5 @@
 // technically i can hook these, but the way they're extended in dlcs is really annoying
-::Const.TipOfTheDay.extend([
+::Const.TipOfTheDay = [
 	//Shitposts - general chatter or comments. Flavour text.
 	"The arenas in the south do not sate the expectations of some - for that there is another place far, far away from prying eyes...",
 	"If you are having trouble killing trees, try bringing axes.",
@@ -224,6 +224,7 @@
 
 	///FINAL LINE MUST END WITHOUT AN ,
 ];
+
 // desert dlc tips
 local tips = [
 	"The southern city states have made unparalleled advancements in medicine, astrology and alchemy.",
@@ -257,12 +258,14 @@ local tips = [
 	"Ferocious hyenas roam the southern deserts, with strong jaws that can crush even metal armor and inflict bleeding wounds.",
 	"Try out different retinue followers to find those that complement your playstyle and chosen company origin."
 ];
-// paladins dlc tips
+::Const.TipOfTheDay.extend(tips);
 
+// paladins dlc tips
 local tips = [
 	"With the \'Anatomists\' origin, defeating new enemies grants potions that mutate your men and grant them special abilities.",
 	"With the \'Oathtakers\' origin, instead of ambitions you\'ll pick oaths that grant special boons and burdens."
 ];
+::Const.TipOfTheDay.extend(tips);
 
 // unhold dlc tips
 local tips = [
@@ -294,6 +297,7 @@ local tips = [
 	"Overdosing on potions can lead to characters vomiting and getting sick.",
 	"With the \'Beast Slayers\' origin you\'ll have an easier time tracking beasts and get more trophies from any of those you slay."
 ];
+::Const.TipOfTheDay.extend(tips);
 
 // dlc wildmen
 local tips = [
@@ -315,3 +319,4 @@ local tips = [
 	"Battle Whips can inflict bleeding wounds, but perform dismally against armor.",
 	"Scimitars and Shamshirs are more likely to inflict debilitating injuries when hitting a target."
 ];
+::Const.TipOfTheDay.extend(tips);

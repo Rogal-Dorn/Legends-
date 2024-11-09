@@ -23,7 +23,8 @@
 
 ::Const.Strings.SellswordTitles.extend([
 	"Orcbolg"
-];
+]);
+
 ::Const.Strings.HedgeKnightTitles.extend([
 	"The Jouster",
 	"Strongwill",
@@ -484,7 +485,6 @@
 	"the Enduring",
 	"the Wraith"
 ]);
-
 
 ::Const.Strings.NecromancerNames.extend([
 	"%randomname% Necrofear"
