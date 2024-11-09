@@ -14,7 +14,7 @@
 		];
 	}
 
-	o.formatDescription = function ()
+	o.formatDescription <- function ()
 	{
 		local r = ::MSU.Array.rand(this.m.DescriptionTemplates);
 
