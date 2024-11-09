@@ -58,9 +58,6 @@
 
 ::Const.World.Spawn.Troops.Schrat.Variant = 1;
 
-::Const.World.Spawn.Troops <- {
-	
-	
 ::Const.World.Spawn.Troops.SchratSmall <- {
 	ID = this.Const.EntityType.SchratSmall,
 	Variant = 1,
