@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_sword", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_sword_riposte_effect"];
-	o.m.EffectBounds = [ [8, 13] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_sword_riposte_effect"];
+	o.m.EffectBounds <- [ [8, 13] ];
 
 	local create = o.create;
 	o.create = function ()

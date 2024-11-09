@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/actives/berserker_mushroom_skill", function(o)
+::mods_hookExactClass("skills/actives/berserker_mushrooms_skill", function(o)
 {
 	o.onUse = function( _user, _targetTile )
 	{

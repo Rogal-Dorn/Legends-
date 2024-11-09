@@ -8,10 +8,10 @@
 		this.m.Properties.OverallFormationMult = 10.0;
 	}
 
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
-		addBehaviors();
+		onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_flee"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_retreat"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_engage_melee"));

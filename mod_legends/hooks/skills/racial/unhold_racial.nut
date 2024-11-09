@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/racial/serpent_racial", function(o)
+::mods_hookExactClass("skills/racial/unhold_racial", function(o)
 {
 	o.onTurnStart = function ()
 	{

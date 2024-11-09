@@ -1,7 +1,6 @@
 ::mods_hookExactClass("contracts/contracts/return_item_contract", function(o)
 {
-	o.m.IsPlayerAttacking = true;
-	o.m.StolenItemNames = [
+	o.m.StolenItemNames <- [
 		"Rare Coin Collection",
 		"Ceremonial Staff",
 		"Idol of Fertility",

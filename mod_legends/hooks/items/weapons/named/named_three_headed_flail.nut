@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_three_headed_flail", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_flail_effect"];
-	o.m.EffectBounds = [ [100, 100] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_flail_effect"];
+	o.m.EffectBounds <- [ [100, 100] ];
 
 	local create = o.create;
 	o.create = function ()

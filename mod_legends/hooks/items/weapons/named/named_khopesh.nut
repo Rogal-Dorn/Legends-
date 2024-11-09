@@ -1,7 +1,7 @@
 ::mods_hookExactClass("items/weapons/named/named_khopesh", function(o) {
 
-	o.m.PossibleEffects = ["scripts/skills/effects/legend_named_cleaver_effect"];
-	o.m.EffectBounds = [ [10, 20] ];
+	o.m.PossibleEffects <- ["scripts/skills/effects/legend_named_cleaver_effect"];
+	o.m.EffectBounds <- [ [10, 20] ];
 
 	o.getTooltip <- function ()
 	{

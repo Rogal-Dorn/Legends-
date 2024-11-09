@@ -1,5 +1,5 @@
 ::mods_hookExactClass("retinue/retinue_manager", function(o) {
-	o.m.OwnedFollowerIDs = [];
+	o.m.OwnedFollowerIDs <- [];
 
 	o.hasFollower <- function ( _id )
 	{

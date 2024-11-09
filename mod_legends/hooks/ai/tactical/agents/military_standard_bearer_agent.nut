@@ -1,9 +1,9 @@
 ::mods_hookExactClass("ai/tactical/agents/military_standard_bearer_agent", function(o)
 {	
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
-		addBehaviors();
+		onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_boost_stamina"));
 	}
 });

@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/perks/perk_battle_forged", function(o) {
-	o.m.ArmorPercentageAsReduction = 5;
+	o.m.ArmorPercentageAsReduction <- 5;
 
 	o.isHidden = function()
 	{
