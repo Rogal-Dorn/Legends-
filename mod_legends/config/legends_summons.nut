@@ -1,16 +1,14 @@
-local gt = this.getroottable();
-
-if (!("Tactical" in gt.Const))
+if (!("Tactical" in ::Const))
 {
-	gt.Const.Tactical <- {};
+	::Const.Tactical <- {};
 }
 
-if (!("Actor" in gt.Const.Tactical))
+if (!("Actor" in ::Const.Tactical))
 {
-	gt.Const.Tactical.Actor <- {};
+	::Const.Tactical.Actor <- {};
 }
 
-gt.Const.Tactical.Actor.LegendSkeletonLight <- {
+::Const.Tactical.Actor.LegendSkeletonLight <- {
 	XP = 150,
 	ActionPoints = 6,
 	Hitpoints = 45,
@@ -28,7 +26,7 @@ gt.Const.Tactical.Actor.LegendSkeletonLight <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendSkeletonLightArcher <- {
+::Const.Tactical.Actor.LegendSkeletonLightArcher <- {
 	XP = 150,
 	ActionPoints = 6,
 	Hitpoints = 45,
@@ -46,7 +44,7 @@ gt.Const.Tactical.Actor.LegendSkeletonLightArcher <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendSkeletonMedium <- {
+::Const.Tactical.Actor.LegendSkeletonMedium <- {
 	XP = 250,
 	ActionPoints = 8,
 	Hitpoints = 55,
@@ -64,7 +62,7 @@ gt.Const.Tactical.Actor.LegendSkeletonMedium <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendSkeletonMediumArcher <- {
+::Const.Tactical.Actor.LegendSkeletonMediumArcher <- {
 	XP = 250,
 	ActionPoints = 7,
 	Hitpoints = 55,
@@ -82,7 +80,7 @@ gt.Const.Tactical.Actor.LegendSkeletonMediumArcher <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendSkeletonHeavy <- {
+::Const.Tactical.Actor.LegendSkeletonHeavy <- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 65,
@@ -100,7 +98,7 @@ gt.Const.Tactical.Actor.LegendSkeletonHeavy <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendSkeletonHeavyArcher <- {
+::Const.Tactical.Actor.LegendSkeletonHeavyArcher <- {
 	XP = 350,
 	ActionPoints = 9,
 	Hitpoints = 65,
@@ -119,7 +117,7 @@ gt.Const.Tactical.Actor.LegendSkeletonHeavyArcher <- {
 	]
 };
 
-gt.Const.Tactical.Actor.LegendZombieLight <- {
+::Const.Tactical.Actor.LegendZombieLight <- {
 	XP = 100,
 	ActionPoints = 6,
 	Hitpoints = 100,
@@ -137,7 +135,7 @@ gt.Const.Tactical.Actor.LegendZombieLight <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendZombieLightXbow <- {
+::Const.Tactical.Actor.LegendZombieLightXbow <- {
 	XP = 100,
 	ActionPoints = 9,
 	Hitpoints = 100,
@@ -155,7 +153,7 @@ gt.Const.Tactical.Actor.LegendZombieLightXbow <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendZombieMedium <- {
+::Const.Tactical.Actor.LegendZombieMedium <- {
 	XP = 150,
 	ActionPoints = 8,
 	Hitpoints = 130,
@@ -173,7 +171,7 @@ gt.Const.Tactical.Actor.LegendZombieMedium <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendZombieMediumXbow <- {
+::Const.Tactical.Actor.LegendZombieMediumXbow <- {
 	XP = 100,
 	ActionPoints = 9,
 	Hitpoints = 130,
@@ -191,7 +189,7 @@ gt.Const.Tactical.Actor.LegendZombieMediumXbow <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendZombieHeavy <- {
+::Const.Tactical.Actor.LegendZombieHeavy <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 180,
@@ -209,7 +207,7 @@ gt.Const.Tactical.Actor.LegendZombieHeavy <- {
 		0
 	]
 };
-gt.Const.Tactical.Actor.LegendZombieHeavyXbow <- {
+::Const.Tactical.Actor.LegendZombieHeavyXbow <- {
 	XP = 250,
 	ActionPoints = 9,
 	Hitpoints = 180,
