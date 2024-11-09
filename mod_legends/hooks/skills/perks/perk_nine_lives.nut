@@ -1,8 +1,8 @@
 ::mods_hookExactClass("skills/perks/perk_nine_lives", function(o) {
-	o.m <- MinHP = 11;
-	o.m <- MaxHP = 15;
-	o.m <- RemoveDamageOverTime = true;
-	o.m <- DamageOverTimeSkills = [];
+	o.m.MinHP <- 11;
+	o.m.MaxHP <- 15;
+	o.m.RemoveDamageOverTime <- true;
+	o.m.DamageOverTimeSkills <- [];
 
 	local ws_create = o.create;
 	o.create = function ()

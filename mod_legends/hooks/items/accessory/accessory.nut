@@ -1,6 +1,6 @@
 ::mods_hookExactClass("items/accessory/accessory", function(o) {
-	o.m.StashModifier = 0;
-	o.m.InventorySound = "sounds/combat/armor_leather_impact_03.wav";
+	o.m.StashModifier <- 0;
+	o.m.InventorySound <- "sounds/combat/armor_leather_impact_03.wav";
 
 	o.getStashModifier <- function ()
 	{

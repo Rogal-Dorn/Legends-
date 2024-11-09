@@ -1,4 +1,4 @@
-::mods_hookExactClass("ambitions/ambitions/find_and_destroy_undead_ambition", function(o) 
+::mods_hookExactClass("ambitions/ambitions/find_and_destroy_location_ambition", function(o) 
 {
 	local create = o.create;
 	o.create = function ()

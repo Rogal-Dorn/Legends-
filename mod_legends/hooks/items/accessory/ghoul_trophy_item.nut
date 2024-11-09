@@ -1,5 +1,5 @@
 ::mods_hookExactClass("items/accessory/falcon_item", function(o) {
-	local getTooltip = getTooltip;
+	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
 		result = getTooltip();

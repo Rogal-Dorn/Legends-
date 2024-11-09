@@ -128,7 +128,7 @@
 			if (!outOfEarshot3)
 			{
 				this.m.ToRemove = true;
-				effect();
+				this.effect();
 				return;
 			}
 		}
@@ -151,7 +151,7 @@
 			if (!outOfEarshot5)
 			{
 				this.m.ToRemove = true;
-				effect();
+				this.effect();
 				return;
 			}
 		}
@@ -159,7 +159,7 @@
 			if (_tile.hasZoneOfControlOtherThan(actor.getAlliedFactions()))
 			{
 				this.m.ToRemove = true;
-				effect();
+				this.effect();
 				return;
 			}
 		}
@@ -203,27 +203,27 @@
 		//actor.setDirty(true);
 	}
 
-		o.effect = function ()
+	o.effect <- function ()
+	{
+	local actor = this.getContainer().getActor();
+	//actor.setHidden(true);
+	if (actor.getTile().IsVisibleForPlayer && this.m.ToRemove == false)
+	{
+		if (this.Const.Tactical.HideParticles.len() != 0)
 		{
-		local actor = this.getContainer().getActor();
-		//actor.setHidden(true);
-		if (actor.getTile().IsVisibleForPlayer && this.m.ToRemove == false)
-		{
-			if (this.Const.Tactical.HideParticles.len() != 0)
+			for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
 			{
-				for( local i = 0; i < this.Const.Tactical.HideParticles.len(); i = ++i )
-				{
-					this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
-				}
+				this.Tactical.spawnParticleEffect(false, this.Const.Tactical.HideParticles[i].Brushes, actor.getTile(), this.Const.Tactical.HideParticles[i].Delay, this.Const.Tactical.HideParticles[i].Quantity, this.Const.Tactical.HideParticles[i].LifeTimeQuantity, this.Const.Tactical.HideParticles[i].SpawnRate, this.Const.Tactical.HideParticles[i].Stages);
 			}
 		}
+	}
 
-		//actor.setBrushAlpha(10);
-		//actor.getSprite("hair").Visible = false;
-		//actor.getSprite("beard").Visible = false;
-		//actor.setHidden(true);
-		//actor.setDirty(true);
-		}
+	//actor.setBrushAlpha(10);
+	//actor.getSprite("hair").Visible = false;
+	//actor.getSprite("beard").Visible = false;
+	//actor.setHidden(true);
+	//actor.setDirty(true);
+	}
 
 	o.onRemoved <- function ()
 	{

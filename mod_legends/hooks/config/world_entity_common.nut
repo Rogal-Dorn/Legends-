@@ -1,4 +1,4 @@
-::Const.World.Common[0].addTroop = function( _party, _troop, _updateStrength = true, _minibossify = 0 )
+::Const.World.Common.addTroop = function( _party, _troop, _updateStrength = true, _minibossify = 0 )
 {
 	local troop = clone _troop.Type;
 	troop.Party <- this.WeakTableRef(_party);

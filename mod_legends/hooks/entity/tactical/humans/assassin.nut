@@ -35,7 +35,7 @@
 		]));
 	}
 
-	o.makeMiniboss = function ()
+	o.makeMiniboss <- function ()
 	{
 		if (!this.actor.makeMiniboss())
 		{

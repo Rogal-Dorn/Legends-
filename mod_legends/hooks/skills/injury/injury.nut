@@ -1,7 +1,7 @@
 ::mods_hookExactClass("skills/injury/injury", function(o)
 {
-	o.m.Points = 0.0;
-	o.m.Queue = 0;
+	o.m.Points <- 0.0;
+	o.m.Queue <- 0;
 
 	o.getQueue <- function ()
 	{

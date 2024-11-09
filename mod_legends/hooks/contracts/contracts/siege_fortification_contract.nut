@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/siege_fortification_objective", function(o) 
+::mods_hookExactClass("contracts/contracts/siege_fortification_contract", function(o) 
 {
 	local create = o.create;
 	o.create = function()

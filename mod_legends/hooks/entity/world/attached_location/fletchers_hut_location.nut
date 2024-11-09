@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/fletcher_hut_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/fletchers_hut_location", function(o) 
 {
 	local create = o.create;
 	o.create = function ()

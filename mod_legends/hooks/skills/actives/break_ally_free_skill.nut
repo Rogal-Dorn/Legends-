@@ -46,7 +46,7 @@
 		return tooltip;
 	}
 
-	o.getHitchance = function ( _targetEntity )
+	o.getHitchance <- function ( _targetEntity )
 	{
 		return getChance();
 	}

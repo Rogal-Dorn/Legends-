@@ -7,7 +7,7 @@
 		this.m.Description = "Send a web of silk out to ensnare an opponent, rooting them in place halving their damage, defenses and initiative. Does no damage.";
 	}
 
-	o.getTooltip = function ()
+	o.getTooltip <- function ()
 	{
 		local ret = [
 			{

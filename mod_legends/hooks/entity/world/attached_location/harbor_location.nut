@@ -174,10 +174,8 @@
 		return true;
 	}
 
-	local onUpdateProduce = o.onUpdateProduce;
 	o.onUpdateProduce = function ( _list )
 	{
-		onUpdateProduce(_list);
 		_list.push("supplies/legend_fresh_fish_item");
 	}
 

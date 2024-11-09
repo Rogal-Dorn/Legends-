@@ -1,6 +1,6 @@
 ::mods_hookExactClass("skills/actives/hand_to_hand", function(o)
 {
-	o.m.Backgrounds = [
+	o.m.Backgrounds <- [
 		"background.legend_commander_druid",
 		"background.legend_druid",
 		"background.brawler",

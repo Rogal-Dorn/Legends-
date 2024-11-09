@@ -25,6 +25,5 @@ else
     // loading mod files
     ::include("mod_legends/load.nut");
     
-	::Const.LegendMod.registerUI();
 	::Const.Perks.updatePerkGroupTooltips();
 });
