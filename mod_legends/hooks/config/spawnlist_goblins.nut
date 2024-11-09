@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.World <- {};
-}
-
-if (!("Spawn" in gt.Const.World))
-{
-	gt.Const.World.Spawn <- {};
-}
-
-gt.Const.World.Spawn.GoblinRoamers <-
+::Const.World.Spawn.GoblinRoamers =
 {
 	Name = "GoblinRoamers",
 	IsDynamic = true,
@@ -62,7 +50,7 @@ gt.Const.World.Spawn.GoblinRoamers <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinScouts <-
+::Const.World.Spawn.GoblinScouts =
 {
 	Name = "GoblinScouts",
 	IsDynamic = true,
@@ -119,7 +107,7 @@ gt.Const.World.Spawn.GoblinScouts <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinRaiders <-
+::Const.World.Spawn.GoblinRaiders =
 {
 	Name = "GoblinRaiders",
 	IsDynamic = true,
@@ -191,7 +179,7 @@ gt.Const.World.Spawn.GoblinRaiders <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinDefenders <-
+::Const.World.Spawn.GoblinDefenders =
 {
 	Name = "GoblinDefenders",
 	IsDynamic = true,
@@ -263,7 +251,7 @@ gt.Const.World.Spawn.GoblinDefenders <-
 	]
 }
 
-gt.Const.World.Spawn.GoblinBoss <-
+::Const.World.Spawn.GoblinBoss =
 {
 	Name = "GoblinBoss",
 	IsDynamic = true,
