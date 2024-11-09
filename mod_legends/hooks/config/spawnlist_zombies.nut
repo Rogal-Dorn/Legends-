@@ -1,16 +1,14 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
+if (!("World" in ::Const))
 {
-	gt.Const.World <- {};
+	::Const.World <- {};
 }
 
-if (!("Spawn" in gt.Const.World))
+if (!("Spawn" in ::Const.World))
 {
-	gt.Const.World.Spawn <- {};
+	::Const.World.Spawn <- {};
 }
 
-gt.Const.World.Spawn.Zombies <-
+::Const.World.Spawn.Zombies =
 {
 	Name = "Zombies",
 	IsDynamic = true,
@@ -51,9 +49,9 @@ gt.Const.World.Spawn.Zombies <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.ZombiesLight <-
+::Const.World.Spawn.ZombiesLight =
 {
 	Name = "ZombiesLight",
 	IsDynamic = true,
@@ -74,9 +72,9 @@ gt.Const.World.Spawn.ZombiesLight <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.ZombiesAndGhouls <-
+::Const.World.Spawn.ZombiesAndGhouls =
 {
 	Name = "ZombiesAndGhouls",
 	IsDynamic = true,
@@ -131,9 +129,9 @@ gt.Const.World.Spawn.ZombiesAndGhouls <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
+::Const.World.Spawn.ZombiesOrZombiesAndGhouls =
 {
 	Name = "ZombiesOrZombiesAndGhouls",
 	IsDynamic = true,
@@ -188,9 +186,9 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhouls <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.ZombiesAndGhosts <-
+::Const.World.Spawn.ZombiesAndGhosts =
 {
 	Name = "ZombiesAndGhosts",
 	IsDynamic = true,
@@ -260,9 +258,9 @@ gt.Const.World.Spawn.ZombiesAndGhosts <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
+::Const.World.Spawn.ZombiesOrZombiesAndGhosts =
 {
 	Name = "ZombiesOrZombiesAndGhosts",
 	IsDynamic = true,
@@ -332,9 +330,9 @@ gt.Const.World.Spawn.ZombiesOrZombiesAndGhosts <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.Ghosts <-
+::Const.World.Spawn.Ghosts =
 {
 	Name = "Ghosts",
 	IsDynamic = true,
@@ -375,9 +373,9 @@ gt.Const.World.Spawn.Ghosts <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.Necromancer <-
+::Const.World.Spawn.Necromancer =
 {
 	Name = "Necromancer",
 	IsDynamic = true,
@@ -517,10 +515,10 @@ gt.Const.World.Spawn.Necromancer <-
 			]
 		}
 	]
-}
+};
 
 
-gt.Const.World.Spawn.NecromancerSouthern <-
+::Const.World.Spawn.NecromancerSouthern =
 {
 	Name = "NecromancerSouthern",
 	IsDynamic = true,
