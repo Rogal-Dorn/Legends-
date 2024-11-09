@@ -163,7 +163,6 @@
 	24
 ];
 
-::Const.CharacterProperties <- {
 ::Const.CharacterProperties.FatigueLossOnBeingMissedMult <- 1.0;
 ::Const.CharacterProperties.IsParrying <- false;
 ::Const.CharacterProperties.IsEvadingAllAttacks <- false;

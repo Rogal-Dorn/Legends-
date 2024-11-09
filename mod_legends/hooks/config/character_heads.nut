@@ -44,7 +44,7 @@
 	"southern_06",
 	"southern_07",
 	"southern_08"
-];
+]);
 
 ::Const.Hair.WildMale.extend([
 	"31",
