@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.World <- {};
-}
-
-if (!("Spawn" in gt.Const.World))
-{
-	gt.Const.World.Spawn <- {};
-}
-
-gt.Const.World.Spawn.OrcRoamers <-
+::Const.World.Spawn.OrcRoamers =
 {
 	Name = "OrcRoamers",
 	IsDynamic = true,
@@ -59,9 +47,9 @@ gt.Const.World.Spawn.OrcRoamers <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.OrcScouts <-
+::Const.World.Spawn.OrcScouts =
 {
 	Name = "OrcScouts",
 	IsDynamic = true,
@@ -103,9 +91,9 @@ gt.Const.World.Spawn.OrcScouts <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.OrcRaiders <-
+::Const.World.Spawn.OrcRaiders =
 {
 	Name = "OrcRaiders",
 	IsDynamic = true,
@@ -185,9 +173,9 @@ gt.Const.World.Spawn.OrcRaiders <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.OrcDefenders <-
+::Const.World.Spawn.OrcDefenders =
 {
 	Name = "OrcDefenders",
 	IsDynamic = true,
@@ -268,9 +256,9 @@ gt.Const.World.Spawn.OrcDefenders <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.OrcBoss <-
+::Const.World.Spawn.OrcBoss =
 {
 	Name = "OrcBoss",
 	IsDynamic = true,
@@ -344,9 +332,9 @@ gt.Const.World.Spawn.OrcBoss <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.YoungOrcsOnly <-
+::Const.World.Spawn.YoungOrcsOnly =
 {
 	Name = "YoungOrcsOnly",
 	IsDynamic = true,
@@ -372,9 +360,9 @@ gt.Const.World.Spawn.YoungOrcsOnly <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
+::Const.World.Spawn.YoungOrcsAndBerserkers =
 {
 	Name = "YoungOrcsAndBerserkers",
 	IsDynamic = true,
@@ -423,9 +411,9 @@ gt.Const.World.Spawn.YoungOrcsAndBerserkers <-
 			]
 		}
 	]
-}
+};
 
-gt.Const.World.Spawn.BerserkersOnly <-
+::Const.World.Spawn.BerserkersOnly =
 {
 	Name = "BerserkersOnly",
 	IsDynamic = true,
@@ -473,4 +461,4 @@ gt.Const.World.Spawn.BerserkersOnly <-
 			]
 		}
 	]
-}
+};
