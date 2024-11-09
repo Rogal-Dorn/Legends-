@@ -4,6 +4,7 @@
 	o.init = function ()
 	{
 		init();
+		local t = this.createTileTransition();
 		this.Tactical.setTransitions("tile_legend_snow_09", t);
 		this.Tactical.setTransitions("tile_legend_snow_10", t);
 		this.Tactical.setTransitions("tile_legend_snow_11", t);
