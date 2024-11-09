@@ -1,3 +1,4 @@
+build/
 brushes/
 helmet_scripts/
 legend_armor_scripts/
@@ -46,5 +47,5 @@ unpacked/legend_helmets/4/metadata.xml
 
 .vscode
 
-build_compile_breaky.sh
-unstaged_build_breaky.sh
+build_compile_*.sh
+unstaged_build_*.sh
