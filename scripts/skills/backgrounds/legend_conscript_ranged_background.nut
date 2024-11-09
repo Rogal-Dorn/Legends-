@@ -15,7 +15,7 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.MaceTree,
 				this.Const.Perks.CrossbowTree,
 				this.Const.Perks.SpearTree,
-				this.Const.Perks.ShieldTree
+				this.Const.Perks.ShieldTree,
 				this.Const.Perks.CleaverTree,
 				this.Const.Perks.SlingTree
 			],
@@ -25,7 +25,7 @@ this.legend_conscript_ranged_background <- this.inherit("scripts/skills/backgrou
 			Traits = [
 				this.Const.Perks.ViciousTree,
 				this.Const.Perks.AgileTree,
-				this.Const.Perks.FitTree,			
+				this.Const.Perks.FitTree,
 				this.Const.Perks.DeviousTree,
 				this.Const.Perks.TrainedTree
 			],

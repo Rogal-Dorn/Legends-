@@ -89,14 +89,14 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		local bodyArmor = actor.getArmor(this.Const.BodyPart.Body);
 		local headItem = actor.getItems().getItemAtSlot(this.Const.ItemSlot.Head);
 		local headArmor = 0;
-		
+
 		if (headItem != null)
 		{
 			headArmor = actor.getArmor(this.Const.BodyPart.Head);
 		}
 
 		local stackTotal = health + headArmor + bodyArmor;
-		
+
 		if (actor.getSkills().hasSkill("perk.legend_fashionable"))
 		{
 			if (bodyItem != null)
@@ -123,14 +123,14 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 			if (headItem != null)
 			{
 				local vanity = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.Vanity);
-				local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity)
-				
+				local extra = headItem.getUpgrade(this.Const.Items.HelmetUpgrades.ExtraVanity);
+
 				if (vanity != null)
 				{
 					local vanityArmor = vanity.getRepair();
 					stackTotal -= vanityArmor;
 				}
-				
+
 				if (extra != null)
 				{
 					local extraArmor = extra.getRepair();
@@ -153,7 +153,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 				stackTotal -= headItem.m.ConditionMax;
 			}
 		}
-		local bonus = this.Math.max(0, 100 - stackTotal); 
+		local bonus = this.Math.max(0, 100 - stackTotal);
 		return this.Math.floor(bonus);
 	}
 

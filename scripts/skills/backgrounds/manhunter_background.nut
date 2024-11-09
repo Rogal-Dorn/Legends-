@@ -173,7 +173,7 @@ this.manhunter_background <- this.inherit("scripts/skills/backgrounds/character_
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/nomad_robe"],
 			[1, "oriental/thick_nomad_robe"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"],

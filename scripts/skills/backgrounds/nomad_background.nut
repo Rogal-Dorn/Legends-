@@ -135,7 +135,7 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 			this.m.HairColors = this.Const.HairColors.African;
 			this.m.Bodies = this.Const.Bodies.AfricanFemaleMuscular;
 		}
-		
+
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
@@ -242,7 +242,7 @@ this.nomad_background <- this.inherit("scripts/skills/backgrounds/character_back
 			[1, "oriental/thick_nomad_robe"],
 			[1, "oriental/stitched_nomad_armor"],
 			[1, "oriental/leather_nomad_robe"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/nomad_head_wrap"],

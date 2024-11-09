@@ -157,7 +157,7 @@ this.minstrel_background <- this.inherit("scripts/skills/backgrounds/character_b
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "linen_tunic", this.Math.rand(3,4)]
-		]))
+		]));
 		local r;
 
 		items.equip(this.Const.World.Common.pickHelmet([

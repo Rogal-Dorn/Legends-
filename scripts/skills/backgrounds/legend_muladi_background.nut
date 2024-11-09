@@ -212,13 +212,13 @@ this.legend_muladi_background <- this.inherit("scripts/skills/backgrounds/charac
 			items.addToBag(this.new("scripts/items/weapons/militia_spear"));
 		}
 
-		items.equip(this.new("scripts/items/accessory/wardog_item"))
+		items.equip(this.new("scripts/items/accessory/wardog_item"));
 
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "oriental/nomad_robe"],
 			[1, "oriental/thick_nomad_robe"],
 			[1, "oriental/cloth_sash"]
-		]))
+		]));
 
 		local helm = this.Const.World.Common.pickHelmet([
 			[1, "oriental/southern_head_wrap"],

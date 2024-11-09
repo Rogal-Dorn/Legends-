@@ -22,9 +22,9 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 		_properties.MeleeSkill += -20;
 		_properties.RangedSkill += -20;
 		_properties.XPGainMult *= 1.05;
-			
+
 	}
-	
+
 	function onCombatStarted()
 	{
 		local actors = this.Tactical.Entities.getInstancesOfFaction(this.getContainer().getActor().getFaction());
@@ -32,7 +32,7 @@ this.perk_legend_peaceful <- this.inherit("scripts/skills/skill", {
 		{
 			if (a.getFaction() == this.getContainer().getActor().getFaction() && !a.getSkills().hasSkill("effects.legend_peaceful_reassured_effect"))
 			{
-				local effect = this.new("scripts/skills/effects/legend_peaceful_reassured_effect")
+				local effect = this.new("scripts/skills/effects/legend_peaceful_reassured_effect");
 				a.getSkills().add(effect);
 			}
 		}

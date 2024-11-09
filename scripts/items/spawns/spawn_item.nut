@@ -119,7 +119,7 @@ this.spawn_item <- this.inherit("scripts/items/item", {
 				continue
 			}
 
-			local skill = bro.getSkills().getSkillByID("perk.legend_conservation")
+			local skill = bro.getSkills().getSkillByID("perk.legend_conservation");
 			return this.Math.floor(this.m.MedicinePerDay * skill.m.MedicinePerDayMult);
 		}
 		return this.m.MedicinePerDay;

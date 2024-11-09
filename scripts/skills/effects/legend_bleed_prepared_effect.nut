@@ -47,7 +47,7 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
-	
+
 
 		if (this.m.AttacksLeft <= 0)
 		{
@@ -74,11 +74,11 @@ this.legend_bleed_prepared_effect <- this.inherit("scripts/skills/skill", {
 
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_targetEntity) + " is bleeding");
 		}
-		local effect = this.new("scripts/skills/effects/bleeding_effect")
-					if (this.getContainer().getActor().getFaction() == this.Const.Faction.Player )
-					{
-					effect.setActor(this.getContainer().getActor());
-					}
+		local effect = this.new("scripts/skills/effects/bleeding_effect");
+		if (this.getContainer().getActor().getFaction() == this.Const.Faction.Player )
+		{
+			effect.setActor(this.getContainer().getActor());
+		}
 		_targetEntity.getSkills().add(effect);
 		--this.m.AttacksLeft;
 	}

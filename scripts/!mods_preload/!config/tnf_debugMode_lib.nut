@@ -306,9 +306,9 @@ gt.tnf_debug.actors <- {
     //"CaravanDonkey"
     "LegendPeasantWitchHunter",
     "LegendPeasantSquire",
-    "LegendPeasantMiner"
-    "LegendPeasantWoodsman"
-    "LegendPeasantPoacher"
+    "LegendPeasantMiner",
+    "LegendPeasantWoodsman",
+    "LegendPeasantPoacher",
     "LegendPeasantMinstrel",
     "LegendPeasantFarmhand",
     "LegendPeasantMonk",

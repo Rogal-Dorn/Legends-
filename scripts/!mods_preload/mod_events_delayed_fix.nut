@@ -46,7 +46,7 @@ local mod = ::EventsFix <- { //added to Legends codebase 23/11/23 by Luft with t
                 }
             }
         }
-    })
+    });
 
     // selectEvent() may fail or just drop its work for a number of reasons:
     //  - enemies nearby

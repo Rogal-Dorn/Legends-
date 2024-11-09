@@ -27,7 +27,7 @@ this.legend_helmet_witchhunter_helm <- this.inherit("scripts/items/legend_helmet
 	function getTooltip()
 	{
 		local result = this.legend_helmet_upgrade.getTooltip();
-		this.onArmorTooltip(result)
+		this.onArmorTooltip(result);
 		return result;
 	}
 

@@ -33,7 +33,7 @@ this.legend_prosthetic_eye <- this.inherit("scripts/skills/traits/character_trai
 				type = "text",
 				icon = "ui/icons/vision.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] Vision"
-			}
+			},
 			{
 				id = 12,
 				type = "text",

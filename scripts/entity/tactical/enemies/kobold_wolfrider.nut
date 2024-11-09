@@ -344,7 +344,7 @@ this.kobold_wolfrider <- this.inherit("scripts/entity/tactical/kobold", {
 		local item = this.Const.World.Common.pickHelmet([
 			[25, "greenskins/goblin_light_helmet"],
 			[75, ""]
-		])
+		]);
 		if (item != null)
 		{
 			this.m.Items.equip(item);

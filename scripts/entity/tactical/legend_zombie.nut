@@ -204,7 +204,7 @@ this.legend_zombie <- this.inherit("scripts/entity/tactical/enemies/zombie", {
 	{
 		local flip = false;
 		this.m.IsCorpseFlipped = false;
-		local isResurrectable = false
+		local isResurrectable = false;
 		local appearance = this.getItems().getAppearance();
 		local sprite_body = this.getSprite("body");
 		local sprite_head = this.getSprite("head");

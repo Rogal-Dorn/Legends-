@@ -37,7 +37,7 @@ this.legend_banshee_scream <- this.inherit("scripts/skills/skill", {
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " uses Banshee Scream");
 		}
 
-		local target = _targetTile.getEntity()
+		local target = _targetTile.getEntity();
 		local hit = false;
 		hit = hit || target.checkMorale(-1, 0, this.Const.MoraleCheckType.MentalAttack);
 		hit = hit || target.checkMorale(-1, 0, this.Const.MoraleCheckType.MentalAttack);

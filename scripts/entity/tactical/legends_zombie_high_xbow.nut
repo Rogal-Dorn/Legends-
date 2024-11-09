@@ -44,7 +44,7 @@ this.legends_zombie_high_xbow <- this.inherit("scripts/entity/tactical/legend_zo
 			[1, "dented_nasal_helmet"],
 			[1, "mail_coif"],
 			[1, "full_leather_cap"]
-		])
+		]);
 
 		if (item != null)
 		{

@@ -315,7 +315,7 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 					Text = "Good to know.",
 					function getResult()
 					{
-						local xp = this.Math.rand (9, 43) //Query: can the player exploit this to farm xp? I think this event will keep triggering? - Luft
+						local xp = this.Math.rand (9, 43); //Query: can the player exploit this to farm xp? I think this event will keep triggering? - Luft
 						foreach( bro in playerRoster )		//Follow up: now that I think about it, if they are willing to lose gold per day in exchange for rabble-tier xp maybe they deserve it. Plus there's no free beastslayer so they'd need to pay at least this background for this event to MAYBE fire multiple times and drip feed them xp. - Luft
 						{
 							bro.addXP(xp);

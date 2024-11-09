@@ -40,7 +40,7 @@ this.legend_drink_skin_ghoul_blood_skill <- this.inherit("scripts/skills/skill",
 
 		local actor = this.getContainer().getActor();
 		local healthMissing = actor.getHitpointsMax() - actor.getHitpoints();
-		local healthAdded = this.Math.min(healthMissing, this.Math.floor(actor.getHitpointsMax() * 0.10))
+		local healthAdded = this.Math.min(healthMissing, this.Math.floor(actor.getHitpointsMax() * 0.10));
 
 		local ret = [
 			{

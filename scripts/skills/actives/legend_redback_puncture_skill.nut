@@ -175,7 +175,7 @@ this.legend_redback_puncture_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return
 		}
-		local chance = this.getHitChance(_targetEntity)
+		local chance = this.getHitChance(_targetEntity);
 		if (_properties.IsSpecializedInDaggers)
 		{
 			chance += 15

@@ -22,8 +22,8 @@ this.legend_skin_armor <- this.inherit("scripts/items/legend_armor/legend_named_
 		this.m.StaminaModifier = -16;
 		this.randomizeValues();
 		this.blockUpgrades();
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false
-		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Attachment] = false;
+		this.m.Blocked[ this.Const.Items.ArmorUpgrades.Rune] = false;
 	}
 
 	function getTooltip()

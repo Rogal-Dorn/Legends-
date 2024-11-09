@@ -38,7 +38,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return false;
 		}
-		
+
 		local instances = this.Tactical.Entities.getAllInstancesAsArray();
 		local myFaction = this.getContainer().getActor().getFaction();
 
@@ -66,12 +66,12 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		return true; //should only hide/reach here if no entity in the valid type is on the tactical map
-		
+
 	}
 
 	function getTooltip()
 	{
-		local stats = this.getTotalKillStats()
+		local stats = this.getTotalKillStats();
 		local resp =  [
 			{
 				id = 1,
@@ -88,7 +88,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 				type = "text",
 				icon = "ui/icons/melee_skill.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + stats.HitChance + "%[/color] Melee Skill due to being a favored enemy"
-			},			
+			},
 			{
 				id = 11,
 				type = "text",
@@ -116,7 +116,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			type = "hint",
 			icon = "ui/icons/special.png",
 			text = ::Const.UI.getColorized(stats.Kills,::Const.UI.Color.getHighlightLightBackgroundValue()) + " favored enemy kills"
-		})
+		});
 
 		return resp;
 	}
@@ -175,7 +175,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 		{
 			return;
 		}
-		
+
 		if (this.validTarget(_targetEntity.getType()))
 		{
 			local stats = this.getTotalKillStats();
@@ -183,7 +183,7 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 			_properties.RangedSkill += stats.HitChance;
 			_properties.DamageRegularMax *= stats.HitMult;
 		}
-		
+
 		else
 		{
 		 return;
@@ -240,6 +240,6 @@ this.legend_favoured_enemy_skill <- this.inherit("scripts/skills/skill", {
 
 		}
 	}
-	
+
 });
 

@@ -178,7 +178,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 
 					this.Contract.setState("Return");
 				}
-				else if (!this.Flags.get("IsTrackingBeastsShown") && this.Contract.m.Target.isHiddenToPlayer() && this.Math.rand(1, 3000) <= 1)			
+				else if (!this.Flags.get("IsTrackingBeastsShown") && this.Contract.m.Target.isHiddenToPlayer() && this.Math.rand(1, 3000) <= 1)
 				{
 					this.Flags.set("IsTrackingBeastsShown", true);
 					this.Contract.setScreen("TrackingBeasts");
@@ -711,7 +711,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 			{
 				// Pay their price
 				this.World.Assets.addMoney(this.Flags.get("Cut") * -1);
-				
+
 				// Add 2 poachers to the guest roster
 				local numPoachers = 2;
 				for( local i = 0; i != numPoachers; i = ++i )
@@ -1032,7 +1032,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 				local poachers = [];
 				for( local i = 0; i < this.Flags.get("NumPoachers"); i++ )
 				{
-					local p = ::Tactical.getEntityByID(this.Flags.get("Poacher" + i))
+					local p = ::Tactical.getEntityByID(this.Flags.get("Poacher" + i));
 					if (!::MSU.isNull(p)) poachers.push(p.getName());
 				}
 
@@ -1047,7 +1047,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 					});
 				}
 
-				
+
 				this.List.push({
 					id = 11,
 					icon = "ui/icons/asset_brothers_bw.png",
@@ -1130,7 +1130,7 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 			]);
 			::Const.LegendMod.extendVarsWithPronouns(_vars, this.m.ExpertHunter.getGender(), "expert");
 		}
-		
+
 		local beasts;
 		if (this.m.Flags.get("IsHumans"))
 		{

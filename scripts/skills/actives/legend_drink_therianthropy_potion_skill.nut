@@ -118,7 +118,7 @@ this.legend_drink_therianthropy_potion_skill <- this.inherit("scripts/skills/ski
 
 		if (_user.getID() == user.getID())
 		{
-			user.TherianthropeInfectionRandom()
+			user.TherianthropeInfectionRandom();
 
 			if (!user.isHiddenToPlayer())
 			{

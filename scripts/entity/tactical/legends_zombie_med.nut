@@ -70,7 +70,7 @@ this.legends_zombie_med <- this.inherit("scripts/entity/tactical/legend_zombie",
 			[11, "dented_nasal_helmet"],
 			[11, "mail_coif"],
 			[11, "full_leather_cap"]
-		])
+		]);
 
 		if (item != null)
 		{

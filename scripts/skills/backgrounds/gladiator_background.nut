@@ -54,7 +54,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			this.m.Beards = this.Const.Beards.Southern;
 			this.m.BeardChance = 60;
 		}
-		
+
 		this.m.Names = this.Const.Strings.SouthernNames;
 		this.m.LastNames = this.Const.Strings.SouthernNamesLast;
 		this.m.Level = this.Math.rand(2, 5);
@@ -89,11 +89,11 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 				this.Const.Perks.PolearmTree,
 				this.Const.Perks.SwordTree,
 				this.Const.Perks.ShieldTree,
-				this.Const.Perks.DaggerTree
+				this.Const.Perks.DaggerTree,
 				this.Const.Perks.ThrowingTree
 			],
 			Defense = [
-				this.Const.Perks.MediumArmorTree
+				this.Const.Perks.MediumArmorTree,
 				this.Const.Perks.HeavyArmorTree
 			],
 			Traits = [
@@ -131,7 +131,7 @@ this.gladiator_background <- this.inherit("scripts/skills/backgrounds/character_
 			this.m.HairColors = this.Const.HairColors.African;
 			this.m.Bodies = this.Const.Bodies.AfricanFemaleMuscular;
 		}
-		
+
 		this.m.Beards = null;
 		this.m.BeardChance = 0;
 		this.addBackgroundType(this.Const.BackgroundType.Female);
