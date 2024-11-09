@@ -1,16 +1,4 @@
-local gt = this.getroottable();
-
-if (!("World" in gt.Const))
-{
-	gt.Const.World <- {};
-}
-
-if (!("Spawn" in gt.Const.World))
-{
-	gt.Const.World.Spawn <- {};
-}
-
-gt.Const.World.Spawn.Cultists <-
+::Const.World.Spawn.Cultists =
 {
 	Name = "Cultists",
 	IsDynamic = true,
@@ -32,7 +20,7 @@ gt.Const.World.Spawn.Cultists <-
 	]
 }
 
-gt.Const.World.Spawn.Peasants <-
+::Const.World.Spawn.Peasants =
 {
 	Name = "Peasants",
 	IsDynamic = true,
@@ -103,7 +91,7 @@ gt.Const.World.Spawn.Peasants <-
 	]
 }
 
-gt.Const.World.Spawn.PeasantsArmed <-
+::Const.World.Spawn.PeasantsArmed =
 {
 	Name = "PeasantsArmed",
 	IsDynamic = true,
@@ -215,7 +203,7 @@ gt.Const.World.Spawn.PeasantsArmed <-
 	]
 }
 
-gt.Const.World.Spawn.BountyHunters <-
+::Const.World.Spawn.BountyHunters =
 {
 	Name = "BountyHunters",
 	IsDynamic = true,
@@ -256,7 +244,7 @@ gt.Const.World.Spawn.BountyHunters <-
 	]
 }
 
-gt.Const.World.Spawn.Mercenaries <-
+::Const.World.Spawn.Mercenaries =
 {
 	Name = "Mercenaries",
 	IsDynamic = true,
@@ -320,7 +308,7 @@ gt.Const.World.Spawn.Mercenaries <-
 	]
 }
 
-gt.Const.World.Spawn.Militia <-
+::Const.World.Spawn.Militia =
 {
 	Name = "Militia",
 	IsDynamic = true,
@@ -396,7 +384,7 @@ gt.Const.World.Spawn.Militia <-
 	]
 }
 
-gt.Const.World.Spawn.PeasantsSouthern <-
+::Const.World.Spawn.PeasantsSouthern =
 {
 	Name = "PeasantsSouthern",
 	IsDynamic = true,
