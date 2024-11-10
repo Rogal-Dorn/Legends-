@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/deathwish_trait", function(o)
-{	
+{
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
@@ -18,14 +18,14 @@
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-3[/color] Melee Defense"
 			}
 		]);
-		
+
 		return ret;
 	}
 
 	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _properties )
 	{
-		onUpdate();
+		onUpdate(_properties);
 		_properties.MeleeDefense -= 3;
 	}
 });

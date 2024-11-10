@@ -152,6 +152,10 @@
 		}
 	}
 
+	o.getModifiers <- function() {
+		return this.m.Modifiers;
+	}
+
 	o.getIconColored <- function ()
 	{
 		if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {

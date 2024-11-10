@@ -1,9 +1,9 @@
-::mods_hookExactClass("items/item_container", function(o) 
+::mods_hookExactClass("items/item_container", function(o)
 {
 
 	o.m.Appearance.ArmorLayerChain <- "";
 	o.m.Appearance.ArmorLayerPlate<- "";
-	o.m.Appearance.Appearance.ArmorLayerTabbard<- "";
+	o.m.Appearance.ArmorLayerTabbard<- "";
 	o.m.Appearance.ArmorLayerCloakFront <- "";
 	o.m.Appearance.ArmorLayerCloakBack <- "";
 	o.m.Appearance.CorpseArmorLayerChain <- "";
