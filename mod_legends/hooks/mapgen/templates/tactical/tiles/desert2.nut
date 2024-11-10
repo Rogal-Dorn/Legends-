@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/tactical/tiles/desert2", function(o)
+::mods_hookExactClass("mapgen/templates/tactical/tiles/desert2", function(o)
 {
 	local init = o.init;
 	o.init = function ()

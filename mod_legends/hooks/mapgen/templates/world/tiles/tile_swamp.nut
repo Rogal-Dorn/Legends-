@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/world/tiles/tile_swamp", function(o)
+::mods_hookExactClass("mapgen/templates/world/tiles/tile_swamp", function(o)
 {
 	o.m.DetailsGreen <- [
 		"world_detail_swamp_green_01",
