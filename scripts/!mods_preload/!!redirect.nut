@@ -50,7 +50,7 @@ local wrapInstance = function(o)
       if (i < funcs.len() && funcs[i] == func) ++i; // only increment if the hook didn't remove itself
     }
   }
-  
+
   return null;
 }
 
@@ -111,6 +111,7 @@ local wrapInstance = function(o)
 ::mods_hookExactClass <- function(name, func)
 {
   if(g_exactHooks == null) g_exactHooks = { };
+	::logInfo("mods_hookExactClass " + name);
   ::mods_addHookCore(g_exactHooks, "scripts/" + name, func);
 }
 
@@ -337,7 +338,7 @@ callClassHooks = function(baseName, scriptName, obj)
       g_states[name] <- o != null ? o.weakref() : null;
       o = ::mods_callHook("new", scriptName, o) || o;
     }
-  
+
     return o;
   }
 });
@@ -391,12 +392,12 @@ callClassHooks = function(baseName, scriptName, obj)
   }
 });
 
-::mods_registerCSS <- function(path) 
+::mods_registerCSS <- function(path)
 {
   g_cssFiles.append("mods/" + path);
 }
 
-::mods_registerJS <- function(path) 
+::mods_registerJS <- function(path)
 {
   g_jsFiles.append("mods/" + path);
 }
@@ -580,7 +581,7 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
     chain.pop();
     return height;
   };
-  
+
   foreach(q in g_queue) visit(q, [ ]);
   foreach(set in sets)
   {
@@ -605,12 +606,12 @@ local g_exprRe = regexp("^([!<>])?(\\w+)(?:\\(([<>]=?|=|!=)?(\\d+(?:\\.\\d*)?|\\
       y = y ^ (y<<5);
       y = y ^ (y>>>7);
       y = y ^ (y<<22);
-      
+
       local t = z + w + c;
       z  = w;
       c  = t >>> 31; // c = (signed)t < 0 ? 1 : 0
       w  = t & 0x7FFFFFFF;
-      
+
       return (x + y + w) & 0x7FFFFFFF;
     },
     nextFloat = function()

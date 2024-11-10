@@ -49,7 +49,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.Relentless],
 		[::Const.Perks.PerkDefs.SpecMace],
 		[],
-		[::Const.Perks.PerkDefs.ReturnFavor],
+		[::Const.Perks.PerkDefs.LegendReturnFavor],
 		[]
 	]
 };
