@@ -1,7 +1,7 @@
 ::Const.XP.MaxLevelWithPerkpoints = 12;
 
-::Const.LevelXP = []; // reset for the new max level added
-for( local i = 0; i < 88; i = ++i )
+::Const.LevelXP = [0]; // reset for the new max level added
+for( local i = 1; i < 88; i = ++i )
 {
 	::Const.LevelXP.push(this.Const.LevelXP[this.Const.LevelXP.len() - 1] + 4000 + 1000 * i);
 }
@@ -46,7 +46,7 @@ for( local i = 0; i < 88; i = ++i )
 ]);
 ::Const.CharacterProperties.DailyWageMult = 1.0; //Is not serialised in vanilla. But I have serialised it today because Scenarios were not keeping their wage multiplier modifiers between save/load cycles - Luft 29/12/22
 
-::Const.CharacterProperties[0].getMeleeDefense = function ()
+::Const.CharacterProperties.getMeleeDefense = function ()
 {
 	if (this.MeleeDefense >= 0)
 	{
@@ -58,7 +58,7 @@ for( local i = 0; i < 88; i = ++i )
 	}
 };
 
-::Const.CharacterProperties[0].getRangedDefense = function ()
+::Const.CharacterProperties.getRangedDefense = function ()
 {
 	if (this.RangedDefense >= 0)
 	{
@@ -70,30 +70,30 @@ for( local i = 0; i < 88; i = ++i )
 	}
 };
 
-::Const.CharacterProperties[0].getRangedSkill = function ()
+::Const.CharacterProperties.getRangedSkill = function ()
 {
 	return this.Math.floor(this.RangedSkill * (this.RangedSkillMult >= 0 ? this.RangedSkillMult : 1.0 / this.RangedSkillMult));
 };
 
-::Const.CharacterProperties[0].getBravery = function ()
+::Const.CharacterProperties.getBravery = function ()
 {
 	return this.Math.floor(this.Bravery * (this.BraveryMult >= 0 ? this.BraveryMult : 1.0 / this.BraveryMult));
 };
 
-::Const.CharacterProperties[0].getInitiative = function ()
+::Const.CharacterProperties.getInitiative = function ()
 {
 	return this.Math.floor(this.Initiative * (this.InitiativeMult >= 0 ? this.InitiativeMult : 1.0 / this.InitiativeMult));
 };
 
-local onSerialize = ::Const.CharacterProperties[0].onSerialize;
-::Const.CharacterProperties[0].onSerialize = function ( _out )
+local onSerialize = ::Const.CharacterProperties.onSerialize;
+::Const.CharacterProperties.onSerialize = function ( _out )
 {
 	onSerialize( _out );
 	_out.writeF32(this.DailyWageMult);
 };
 
-local onDeserialize = ::Const.CharacterProperties[0].onDeserialize;
-::Const.CharacterProperties[0].onDeserialize = function (_in)
+local onDeserialize = ::Const.CharacterProperties.onDeserialize;
+::Const.CharacterProperties.onDeserialize = function (_in)
 {
 	onDeserialize( _in )
 	this.DailyWageMult = _in.readF32();
