@@ -1,29 +1,29 @@
 ::mods_hookExactClass("items/item_container", function(o) 
 {
 
-	o.m.ArmorLayerChain <- "";
-	o.m.ArmorLayerPlate<- "";
-	o.m.ArmorLayerTabbard<- "";
-	o.m.ArmorLayerCloakFront <- "";
-	o.m.ArmorLayerCloakBack <- "";
-	o.m.CorpseArmorLayerChain <- "";
-	o.m.CorpseArmorLayerPlate<- "";
-	o.m.CorpseArmorLayerTabbard<- "";
-	o.m.CorpseArmorLayerCloakFront <- "";
-	o.m.CorpseArmorLayerCloakBack <- "";
-	o.m.HelmetLayerVanityLower <- "";
-	o.m.HelmetLayerVanity2Lower <- "";
-	o.m.Helmet <- "";
-	o.m.HelmetLayerHelm <- "";
-	o.m.HelmetLayerTop <- "";
-	o.m.HelmetLayerVanity <- "";
-	o.m.HelmetLayerVanity2 <- "";
-	o.m.HelmetLayerVanityLowerCorpse <- "";
-	o.m.HelmetLayerVanity2LowerCorpse <- "";
-	o.m.HelmetLayerHelmCorpse <- "";
-	o.m.HelmetLayerTopCorpse <- "";
-	o.m.HelmetLayerVanityCorpse <- "";
-	o.m.HelmetLayerVanity2Corpse <- "";
+	o.m.Appearance.ArmorLayerChain <- "";
+	o.m.Appearance.ArmorLayerPlate<- "";
+	o.m.Appearance.Appearance.ArmorLayerTabbard<- "";
+	o.m.Appearance.ArmorLayerCloakFront <- "";
+	o.m.Appearance.ArmorLayerCloakBack <- "";
+	o.m.Appearance.CorpseArmorLayerChain <- "";
+	o.m.Appearance.CorpseArmorLayerPlate<- "";
+	o.m.Appearance.CorpseArmorLayerTabbard<- "";
+	o.m.Appearance.CorpseArmorLayerCloakFront <- "";
+	o.m.Appearance.CorpseArmorLayerCloakBack <- "";
+	o.m.Appearance.HelmetLayerVanityLower <- "";
+	o.m.Appearance.HelmetLayerVanity2Lower <- "";
+	o.m.Appearance.Helmet <- "";
+	o.m.Appearance.HelmetLayerHelm <- "";
+	o.m.Appearance.HelmetLayerTop <- "";
+	o.m.Appearance.HelmetLayerVanity <- "";
+	o.m.Appearance.HelmetLayerVanity2 <- "";
+	o.m.Appearance.HelmetLayerVanityLowerCorpse <- "";
+	o.m.Appearance.HelmetLayerVanity2LowerCorpse <- "";
+	o.m.Appearance.HelmetLayerHelmCorpse <- "";
+	o.m.Appearance.HelmetLayerTopCorpse <- "";
+	o.m.Appearance.HelmetLayerVanityCorpse <- "";
+	o.m.Appearance.HelmetLayerVanity2Corpse <- "";
 
 	o.addToBag = function ( _item, _slot = -1, _force = false)
 	{
