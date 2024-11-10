@@ -2431,8 +2431,8 @@ local perkDefObjects = [
 	{
 		ID = "perk.feint",
 		Script = "scripts/skills/perks/perk_feint",
-		Name = this.Const.Strings.PerkName.Feint,
-		Tooltip = this.Const.Strings.PerkDescription.Feint,
+		Name = this.Const.Strings.PerkName.LegendFeint,
+		Tooltip = this.Const.Strings.PerkDescription.LegendFeint,
 		Icon = "ui/perks/feint_circle.png",
 		IconDisabled = "ui/perks/feint_circle_bw.png",
 		Const = "Feint"
@@ -2503,8 +2503,8 @@ local perkDefObjects = [
 	{
 		ID = "perk.push_the_advantage",
 		Script = "scripts/skills/perks/perk_push_the_advantage",
-		Name = this.Const.Strings.PerkName.PushTheAdvantage,
-		Tooltip = this.Const.Strings.PerkDescription.PushTheAdvantage,
+		Name = this.Const.Strings.PerkName.LegendPushTheAdvantage,
+		Tooltip = this.Const.Strings.PerkDescription.LegendPushTheAdvantage,
 		Icon = "ui/perks/perk_32.png",
 		IconDisabled = "ui/perks/perk_32_sw.png",
 		Const = "PushTheAdvantage"
@@ -2512,8 +2512,8 @@ local perkDefObjects = [
 	{
 		ID = "perk.trophy_hunter",
 		Script = "scripts/skills/perks/perk_trophy_hunter",
-		Name = this.Const.Strings.PerkName.TrophyHunter,
-		Tooltip = this.Const.Strings.PerkDescription.TrophyHunter,
+		Name = this.Const.Strings.PerkName.LegendTrophyHunter,
+		Tooltip = this.Const.Strings.PerkDescription.LegendTrophyHunter,
 		Icon = "ui/perks/slaughterer_circle.png",
 		IconDisabled = "ui/perks/slaughterer_circle_bw.png",
 		Const = "TrophyHunter"
@@ -2521,8 +2521,8 @@ local perkDefObjects = [
 	{
 		ID = "perk.bruiser",
 		Script = "scripts/skills/perks/perk_bruiser",
-		Name = this.Const.Strings.PerkName.Bruiser,
-		Tooltip = this.Const.Strings.PerkDescription.Bruiser,
+		Name = this.Const.Strings.PerkName.LegendBruiser,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBruiser,
 		Icon = "ui/perks/perk_40.png",
 		IconDisabled = "ui/perks/perk_40_sw.png",
 		Const = "Bruiser"
@@ -3737,8 +3737,8 @@ local perkDefObjects = [
 	{
 		ID = "perk.boondock_blade",
 		Script = "scripts/skills/perks/perk_boondock_blade",
-		Name = this.Const.Strings.PerkName.BoondockBlade,
-		Tooltip = this.Const.Strings.PerkDescription.BoondockBlade,
+		Name = this.Const.Strings.PerkName.LegendBoondockBlade,
+		Tooltip = this.Const.Strings.PerkDescription.LegendBoondockBlade,
 		Icon = "ui/perks/boondock_01.png", //TODO
 		IconDisabled = "ui/perks/boondock_01_bw.png",
 		Const = "BoondockBlade"
