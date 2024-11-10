@@ -150,7 +150,6 @@
 ::Const.World.SpeedSettings.EscortMult = 4;
 ::Const.World.SpeedSettings.CampMult = 2.5;
 
-::Const.World.Buildings.Stables <- 0;
 local reset = ::Const.World.Buildings.reset;
 ::Const.World.Buildings.reset = function()
 {
