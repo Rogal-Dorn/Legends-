@@ -10,10 +10,8 @@
 		onAdded( _settlement );
 	}
 
-	local onUpdateDraftList = o.onUpdateDraftList;
-	o.onUpdateDraftList = function ( _draftList, _gender = null)
+	o.onUpdateDraftList <- function ( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		onUpdateDraftList(_draftList, _gender);
 	}
 });

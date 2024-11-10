@@ -47,7 +47,7 @@
 		}
 	}
 
-	o.checkForRequiredFiles = function (){
+	o.checkForRequiredFiles <- function (){
 		local missing = {};
 		// local requiredFiles = this.Const.LegendMod.RequiredFiles;
 		// local filesInData = this.IO.enumerateFiles("");

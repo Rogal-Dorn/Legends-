@@ -5,7 +5,7 @@ local blueprints = [
 	"daze_bomb_blueprint",
 	"fire_bomb_blueprint",
 	"happy_powder_blueprint",
-	"iron_will_potion",
+	"iron_will_potion_blueprint",
 	"lionheart_potion_blueprint",
 	"miracle_drug_blueprint",
 	"night_vision_elixir_blueprint",

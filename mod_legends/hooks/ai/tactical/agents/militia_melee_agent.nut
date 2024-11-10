@@ -27,10 +27,10 @@
 		}
 	}
 
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
-		addBehaviors();
+		onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_attack_knock_out"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
 	}

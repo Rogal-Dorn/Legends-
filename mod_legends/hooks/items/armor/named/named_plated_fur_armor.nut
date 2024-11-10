@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/armor/named/named_plate_fur_armor", function(o) {
+::mods_hookExactClass("items/armor/named/named_plated_fur_armor", function(o) {
 	local create = o.create;
 	o.create = function ()
 	{

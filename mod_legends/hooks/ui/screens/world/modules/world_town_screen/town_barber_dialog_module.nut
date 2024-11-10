@@ -1,6 +1,6 @@
 ::mods_hookExactClass("ui/screens/world/modules/world_town_screen/town_barber_dialog_module", function(o) {
 
-	local queryRosterInformation = queryRosterInformation;
+	local queryRosterInformation = o.queryRosterInformation;
 	o.queryRosterInformation = function ()
 	{
 		result = queryRosterInformation();

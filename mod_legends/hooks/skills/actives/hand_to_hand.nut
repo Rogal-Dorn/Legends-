@@ -75,7 +75,7 @@
 		return (main != null && !this.getContainer().hasSkill("effects.disarmed")) || this.skill.isHidden() || this.m.Container.getActor().isStabled();
 	}
 
-	o.onAfterUpdate = function ( _properties )
+	o.onAfterUpdate <- function ( _properties )
 	{
 		if(_properties.IsSpecializedInFists)
 		{

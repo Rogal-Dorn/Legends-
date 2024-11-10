@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/objective/tactical/donkey_military", function(o) 
+::mods_hookExactClass("entity/tactical/objective/donkey_military", function(o) 
 {
 	o.onInit <- function ()
 	{

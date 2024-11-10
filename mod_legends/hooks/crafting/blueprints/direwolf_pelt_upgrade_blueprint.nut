@@ -1,4 +1,4 @@
-::mods_hookExactClass("crafting/blueprints/direwolf_pelt_blueprint", function(o)
+::mods_hookExactClass("crafting/blueprints/direwolf_pelt_upgrade_blueprint", function(o)
 {
 	local create = o.create;
 	o.create = function ()
