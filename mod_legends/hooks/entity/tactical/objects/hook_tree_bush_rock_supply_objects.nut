@@ -13,7 +13,7 @@ local rocks = [
 	"graveyard_wall",
 	"human_camp_wall",
 	"orc_camp_idol",
-	"snow_boulder",
+	"snow_boulder1",
 	"southern_ruins",
 	"southern_ruins_big",
 	"southern_ruins_wall",
