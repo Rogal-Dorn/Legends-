@@ -274,11 +274,11 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 		stash.removeByID("supplies.ground_grains");
 		stash.add(this.new("scripts/items/supplies/rice_item"));
 		stash.add(this.new("scripts/items/supplies/dried_lamb_item"));
-		
+
 		local items = this.getContainer().getActor().getItems();
 		items.equip(this.new("scripts/items/weapons/dagger"));
 		items.addToBag(this.new("scripts/items/weapons/legend_slingshot"));
-		
+
 		items.equip(this.Const.World.Common.pickArmor([
 			[1, "thick_dark_tunic"],
 			[1, "ragged_dark_surcoat"]

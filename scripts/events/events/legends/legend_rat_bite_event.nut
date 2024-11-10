@@ -60,10 +60,11 @@ this.legend_rat_bite_event <- this.inherit("scripts/events/event", {
 			return;
 		}
 
-		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
+		// todo delete it - chopeks
+//		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//		{
 			return;
-		}
+//		}
 
 		local currentTile = this.World.State.getPlayer().getTile();
 

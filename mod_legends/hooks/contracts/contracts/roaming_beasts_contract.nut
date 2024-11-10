@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/roaming_beasts_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/roaming_beasts_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
@@ -35,10 +35,11 @@
 					{
 						this.Flags.set("IsHumans", true);
 					}
-					else if (r == 100 && this.LegendsMod.Configs().LegendTherianthropyEnabled())
-					{
-						this.Flags.set("IsVermes", true);
-					}
+					// todo delete it - chopeks
+//					else if (r == 100 && this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//					{
+//						this.Flags.set("IsVermes", true);
+//					}
 					else
 					{
 						// Use our own settlement-based randomization system because the Vanilla approach was bugged and overly favoured Ghouls

@@ -663,7 +663,7 @@ perkDefObjects.push({
 	Tooltip = this.Const.Strings.PerkDescription.LegendPerfectFocus,
 	Icon = "ui/perks/perfectfocus_circle.png",
 	IconDisabled = "ui/perks/perfectfocus_circle_bw.png",
-	Const = "PerfectFocus"
+	Const = "LegendPerfectFocus"
 });
 perkDefObjects.push({
 	ID = "perk.legend_firefield",
@@ -699,7 +699,7 @@ perkDefObjects.push({
 	Tooltip = this.Const.Strings.PerkDescription.LegendReturnFavor,
 	Icon = "ui/perks/return_favor_circle.png",
 	IconDisabled = "ui/perks/return_favor_circle_bw.png",
-	Const = "ReturnFavor"
+	Const = "LegendReturnFavor"
 });
 perkDefObjects.push({
 	ID = "perk.steadfast",
@@ -1963,7 +1963,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_inventor_anatomy",
-	Script = "scripts/skills/perks/legend_inventor_anatomy",
+	Script = "scripts/skills/perks/perk_legend_inventor_anatomy",
 	Name = this.Const.Strings.PerkName.LegendInventorAnatomy,
 	Tooltip = this.Const.Strings.PerkDescription.LegendInventorAnatomy,
 	Icon = "ui/perks/legend_inventor_anatomy.png",

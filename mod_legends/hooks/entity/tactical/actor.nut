@@ -418,11 +418,12 @@
 		perks -= nonRefundable.len();
 
 		// Witch gets
-		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-			perks = perks - 1;
-		}
+		// todo delete it - chopeks
+//		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
+//		{
+//			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+//			perks = perks - 1;
+//		}
 
 		this.m.PerkPoints = perks;
 

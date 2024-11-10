@@ -496,7 +496,7 @@ if (!("Perks" in ::Const))
 		],
 		[],
 		[
-			::Const.Perks.PerkDefs.PerfectFocus
+			::Const.Perks.PerkDefs.LegendPerfectFocus
 		]
 	]
 };

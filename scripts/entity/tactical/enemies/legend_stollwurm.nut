@@ -196,14 +196,8 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 						}
 
 						loot.drop(_tile);
-						local chance = 50;
 
-						if (this.LegendsMod.Configs().LegendMagicEnabled())
-						{
-							chance = 100;
-						}
-
-						if (this.Math.rand(1, 100) <= chance)
+						if (this.Math.rand(1, 100) <= 50)
 						{
 							local rune;
 							local variant = this.Math.rand(21, 22);

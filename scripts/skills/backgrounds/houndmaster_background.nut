@@ -149,14 +149,6 @@ this.houndmaster_background <- this.inherit("scripts/skills/backgrounds/characte
 	function onAdded()
 	{
 		this.character_background.onAdded();
-
-		// if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		// {
-		// 	if(this.Math.rand(1, 50) == 1)
-		// 	{
-		// 		this.getContainer().add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-		// 	}
-		// }
 	}
 
 	function onAddEquipment()

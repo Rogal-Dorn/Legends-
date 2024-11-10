@@ -1311,11 +1311,6 @@
 		{
 			mins = this.m.PerkTreeDynamicMinsBeast;
 		}
-		else if (this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			mins = this.m.PerkTreeDynamicMinsMagic;
-		}
-
 		return mins;
 	}
 
