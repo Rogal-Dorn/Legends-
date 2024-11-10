@@ -52,6 +52,7 @@ for (local i = 0; i < ::Const.World.TerrainType.COUNT; i++)
 ::Const.World.FootprintsType.COUNT = 27
 
 ::Const.World.Buildings.Stables <- 0;
+::Const.World.Buildings.Blackmarket <- 0;
 
 ::Const.World.settingsUpdate <- function ()
 {
