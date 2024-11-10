@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/alp", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/alp", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -115,13 +115,7 @@
 
 					loot.drop(_tile);
 
-					local chance = 1;
-					if (this.LegendsMod.Configs().LegendMagicEnabled())
-					{
-						chance = 10;
-					}
-
-					if (this.Math.rand(1, 100) <= chance )
+					if (this.Math.rand(1, 100) <= 1)
 					{
 						local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 						token.setRuneVariant(this.Math.rand(1, 3));

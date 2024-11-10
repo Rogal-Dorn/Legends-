@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/hexe", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/hexe", function(o)
 {
 	local onDeath = o.onDeath;
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
@@ -6,13 +6,7 @@
 		onDeath( _killer, _skill, _tile, _fatalityType );
 		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
-			local chance = 1;
-			if (this.LegendsMod.Configs().LegendMagicEnabled())
-			{
-				chance = 10;
-			}
-
-			if (this.Math.rand(1, 100) <= chance)
+			if (this.Math.rand(1, 100) <= 1)
 			{
 				local rune;
 				local selected = this.Math.rand(11,13);

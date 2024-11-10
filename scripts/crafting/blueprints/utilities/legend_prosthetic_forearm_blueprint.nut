@@ -16,9 +16,9 @@ this.legend_prosthetic_forearm_blueprint <- this.inherit("scripts/crafting/bluep
 		this.init(ingredients);
 		local skills = [
 			{
-				Scripts = ["scripts/skills/perks/legend_inventor_anatomy"]
+				Scripts = ["scripts/skills/perks/perk_legend_inventor_anatomy"]
 			}
-		];	
+		];
 		this.initSkills(skills);
 	}
 

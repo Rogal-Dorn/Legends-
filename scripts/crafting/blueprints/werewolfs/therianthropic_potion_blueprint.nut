@@ -1,3 +1,4 @@
+// todo delete it - chopeks
 this.therianthropic_potion_blueprint <- this.inherit("scripts/crafting/blueprint", {
 	m = {},
 	function create()
@@ -44,10 +45,11 @@ this.therianthropic_potion_blueprint <- this.inherit("scripts/crafting/blueprint
 
 	function isQualified()
 	{
-		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
+		// todo delete it - chopeks
+//		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//		{
 			return false;
-		}
+//		}
 		return this.blueprint.isQualified();
 	}
 

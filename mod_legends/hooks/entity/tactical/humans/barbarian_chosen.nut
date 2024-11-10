@@ -1,19 +1,9 @@
-::mods_hookExactClass("entity/tactical/humans/barbarian_chosen", function(o) 
+::mods_hookExactClass("entity/tactical/humans/barbarian_chosen", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
 		onInit();
-		// this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-
-		// if ("LegendsMod" in this.World && this.LegendsMod != null && this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		// {
-		// 	if(this.Math.rand(1, 20) == 1)
-		// 	{
-		// 		this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_ursathropy_injury"));
-		// 	}
-		// }
-
 		if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_overwhelm"));
@@ -73,13 +63,13 @@
 				[1, "barbarian_chosen_outfit_02"]
 			]
 
-			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) ) 
+			foreach( item in this.Const.World.Common.pickOutfit(outfits, armor, helmet) )
 			{
 				this.m.Items.equip(item)
 			}
 			return;
 		}
-		
+
 		if (this.m.Items.hasEmptySlot(this.Const.ItemSlot.Body))
 		{
 			local armor = [

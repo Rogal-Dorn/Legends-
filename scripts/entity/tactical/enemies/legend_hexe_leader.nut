@@ -196,13 +196,7 @@ this.legend_hexe_leader <- this.inherit("scripts/entity/tactical/actor", {
 					}
 				}
 
-				local chance = 20;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					chance = 100;
-				}
-
-				if (this.Math.rand(1, 100) <= chance)
+				if (this.Math.rand(1, 100) <= 20)
 				{
 					local rune;
 					local selected = this.Math.rand(11,13);
