@@ -1,5 +1,5 @@
 ::mods_hookExactClass("items/weapons/weapon", function(o) {
-	o.Variants <- [];
+	o.m.Variants <- [];
 
 	o.getShieldDamage = function ()
 	{
