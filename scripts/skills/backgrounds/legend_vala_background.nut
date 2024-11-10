@@ -43,7 +43,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 
 		this.m.PerkTreeDynamic = {
 			Weapon = [
-				this.Const.Perks.Staff
+				this.Const.Perks.StaffTree
 			],
 			Defense = [
 				this.Const.Perks.LightArmorTree,
@@ -100,7 +100,7 @@ this.legend_vala_background <- this.inherit("scripts/skills/backgrounds/characte
 				text = "The Vala has become a master of the intricate and lost art of inscribing signs and sigils. Increases the speed at which she can craft runes by [color=" + this.Const.UI.Color.PositiveValue + "]30%[/color]"
 			});
 		}
-		
+
 		return ret
 	}
 
