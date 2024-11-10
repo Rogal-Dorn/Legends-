@@ -1,5 +1,5 @@
 ::mods_hookExactClass("ai/tactical/agents/caravan_melee_agent", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -30,7 +30,7 @@
 		}
 	}
 
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
 		addBehaviors();

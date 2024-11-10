@@ -249,7 +249,7 @@
 		return result;
 	}
 
-	o.convertRepairItemsToUIData = function ( _items, _target, _owner = null, _filter = 0 )
+	o.convertRepairItemsToUIData <- function ( _items, _target, _owner = null, _filter = 0 )
 	{
 		if (_filter == 0)
 		{
