@@ -8,15 +8,11 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.addPerkDefObjects <- function( _perkDefObjects )
 {
-	local i = ::Const.Perks.PerkDefObjects.len();
-
 	::Const.Perks.PerkDefObjects.extend(_perkDefObjects);
-
-	foreach (perkDefObject in _perkDefObjects)
+	foreach (i, perkDefObject in _perkDefObjects)
 	{
 		::Const.Perks.PerkDefs[perkDefObject.Const] <- i;
 		::Const.Perks.LookupMap[perkDefObject.ID] <- perkDefObject;
-		i++;
 	}
 }
 
