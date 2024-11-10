@@ -692,7 +692,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
-		o.create();
+		create();
 		this.m.ImportedGoodsInventory = this.new("scripts/items/stash_container");
 		this.m.ImportedGoodsInventory.setID("imported_inventory");
 		this.m.ImportedGoodsInventory.setResizable(true);
