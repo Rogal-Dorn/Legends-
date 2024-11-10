@@ -13,6 +13,16 @@
 	o.m.Type <- -1;
 	o.m.OriginSettlementID <- 0; // the Settlement ID where the item was originally produced
 	o.m.TradeHistorySettlementIDs <- []; // an array of Settlement IDs to track the item's trade history
+	
+	o.isAllowedInBag = function ( _actor = null )
+	{
+		if (!this.m.IsAllowedInBag || this.m.SlotType == this.Const.ItemSlot.Body || this.m.SlotType == this.Const.ItemSlot.Head || this.m.SlotType == this.Const.ItemSlot.None)
+		{
+			return false;
+		}
+
+		return true;
+	}
 
 	o.getOldInstanceID <- function ()
 	{
