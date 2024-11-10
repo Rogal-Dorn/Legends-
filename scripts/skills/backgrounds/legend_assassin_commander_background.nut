@@ -144,7 +144,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Rebound,
 				this.Const.Perks.PerkDefs.BattleFlow,
-				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.LegendAssassinate,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster

@@ -161,7 +161,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.LegendBigGameHunter,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.PerfectFocus,
-				this.Const.Perks.PerkDefs.BattleFlow,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyUnhold,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyLindwurm,
 				this.Const.Perks.PerkDefs.LegendBalance,

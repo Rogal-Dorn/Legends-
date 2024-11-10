@@ -127,7 +127,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendMagicHealingWind,
 				this.Const.Perks.PerkDefs.LegendMagicTeleport,
 				this.Const.Perks.PerkDefs.LegendMasteryMagicMissileMastery,
-				this.Const.Perks.PerkDefs.BattleFlow,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 				this.Const.Perks.PerkDefs.PerfectFocus,

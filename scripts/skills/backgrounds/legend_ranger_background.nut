@@ -155,7 +155,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 			],
 			[
 				this.Const.Perks.PerkDefs.KillingFrenzy,
-				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.BattleFlow,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendBalance,

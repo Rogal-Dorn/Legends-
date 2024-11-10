@@ -139,7 +139,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
-					this.Const.Perks.PerkDefs.PerfectFocus,
+					this.Const.Perks.PerkDefs.LegendPerfectFocus,
 					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.LegendBalance,
 					this.Const.Perks.PerkDefs.Inspire,
