@@ -1,8 +1,15 @@
+// load legends specific folder
+foreach (file in ::IO.enumerateFiles("mod_legends/legend_config"))
+{
+	::include(file);
+}
+
 // load config folder
 foreach (file in ::IO.enumerateFiles("mod_legends/config"))
 {
 	::include(file);
 }
+
 
 // load query folder
 foreach (file in ::IO.enumerateFiles("mod_legends/system"))

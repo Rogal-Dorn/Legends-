@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/settlements/situations/ambushed_trade_routes_location", function(o)
+::mods_hookExactClass("entity/world/settlements/situations/ambushed_trade_routes_situation", function(o)
 {
 	local create = o.create;
 	o.create = function ()
