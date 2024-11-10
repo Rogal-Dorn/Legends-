@@ -153,11 +153,13 @@
 ::Const.Strings.PerkName.LegendSpecFists <- "Unarmed Mastery";
 
 //VALA SKILLS - skills used only be the Vala
-// ::Const.Strings.PerkName.LegendValaInscriptionMastery <- "Inscription Mastery";
-// ::Const.Strings.PerkName.LegendValaInscribeWeapon <- "Rune Sigils: Weapons";
-// ::Const.Strings.PerkName.LegendValaInscribeHelmet <- "Rune Sigils: Helmets";
-// ::Const.Strings.PerkName.LegendValaInscribeArmor <- "Rune Sigils: Armors";
-// ::Const.Strings.PerkName.LegendValaInscribeShield <- "Rune Sigils: Shields";
+//todo, had to uncomment it, otherwise it crashes - chopeks
+::Const.Strings.PerkName.LegendValaInscriptionMastery <- "Inscription Mastery";
+::Const.Strings.PerkName.LegendValaInscribeWeapon <- "Rune Sigils: Weapons";
+::Const.Strings.PerkName.LegendValaInscribeHelmet <- "Rune Sigils: Helmets";
+::Const.Strings.PerkName.LegendValaInscribeArmor <- "Rune Sigils: Armors";
+::Const.Strings.PerkName.LegendValaInscribeShield <- "Rune Sigils: Shields";
+//todo end
 ::Const.Strings.PerkName.LegendValaChantMastery <- "Chanting Mastery";
 ::Const.Strings.PerkName.LegendValaChantDisharmony <- "Disharmony (Chant)";
 ::Const.Strings.PerkName.LegendValaChantFury <- "Fury (Chant)";
