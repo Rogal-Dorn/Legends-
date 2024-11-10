@@ -1,6 +1,6 @@
-::mods_hookExactClass("contracts/contracts/obtain_item_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/obtain_item_contract", function(o)
 {
-	o.m.Items = [
+	o.m.Items <- [
 			"Fingerbone of Sir Gerhardt",
 			"Blood Vial of the Holy Mother",
 			"Shroud of the Founder",
@@ -36,6 +36,7 @@
 			"Ancestor\'s Stone",
 			"Dragon Shield"
 		];
+
 	local create = o.create;
 	o.create = function()
 	{
