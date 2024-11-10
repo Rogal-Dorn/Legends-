@@ -9,7 +9,7 @@
 		this.m.IsUsingHitchance = true;
 	}
 
-	o.isUsable = function ()
+	o.isUsable <- function ()
 	{
 		if (this.getContainer().hasSkill("effects.legend_threw_sand_effect"))
 		{

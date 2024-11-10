@@ -285,7 +285,7 @@
 		}
 	}
 
-	o.onCombatFinished = function ()
+	o.onCombatFinished <- function ()
 	{
 		this.removeSelf();
 		this.m.IsHidden = true;

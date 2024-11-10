@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/greenskins/goblin_spear", function(o) {
+::mods_hookExactClass("items/weapons/greenskins/goblin_spear", function(o) {
 	local create = o.create;
 	o.create = function ()
 	{

@@ -153,7 +153,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyVampire,
 				this.Const.Perks.PerkDefs.LegendFieldRepairs,
 				this.Const.Perks.PerkDefs.LegendHolyFlame,
-				this.Const.Perks.PerkDefs.PerfectFocus
+				this.Const.Perks.PerkDefs.LegendPerfectFocus
 			],
 			[],
 			[],

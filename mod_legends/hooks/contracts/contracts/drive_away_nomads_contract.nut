@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/drive_away_nomads_camp", function(o) 
+::mods_hookExactClass("contracts/contracts/drive_away_nomads_contract", function(o) 
 {
 	local create = o.create;
 	o.create = function()

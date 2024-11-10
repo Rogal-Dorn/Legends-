@@ -167,7 +167,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.Fearsome,
 					this.Const.Perks.PerkDefs.Footwork,
 					this.Const.Perks.PerkDefs.Nimble,
-					this.Const.Perks.PerkDefs.PerfectFocus,
+					this.Const.Perks.PerkDefs.LegendPerfectFocus,
 					this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 					this.Const.Perks.PerkDefs.LegendBalance,
 					this.Const.Perks.PerkDefs.LegendClarity,
