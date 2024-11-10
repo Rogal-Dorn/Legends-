@@ -4,7 +4,7 @@
 	o.m.AdditionalHitChance <- -10;
 
 	local create = o.create;
-	o.create = function ( _user, _targetTile )
+	o.create = function ()
 	{
 		create();
 		this.m.Delay = 750;
