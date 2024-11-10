@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/tactical/tiles/forest2", function(o)
+::mods_hookExactClass("mapgen/templates/tactical/tiles/forest2", function(o)
 {
 	o.onFirstPass = function ( _rect )
 	{

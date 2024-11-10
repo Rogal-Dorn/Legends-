@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/world/worldmap_generator", function(o)
+::mods_hookExactClass("mapgen/templates/world/worldmap_generator", function(o)
 {
 	o.isWorldAcceptable = function (_rect)
 	{

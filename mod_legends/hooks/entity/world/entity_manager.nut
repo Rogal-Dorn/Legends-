@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/entity_manager", function(o)
+::mods_hookExactClass("entity/world/entity_manager", function(o)
 {
 	o.m.FreeCompanies <- [];
 	o.m.NonDefaultFreeCompanies <- [];
