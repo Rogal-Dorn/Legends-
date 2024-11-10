@@ -1,4 +1,4 @@
-::mods_hookNewObject("items/item_container", function(o) 
+::mods_hookExactClass("items/item_container", function(o) 
 {
 	o.drop <- function( item )
 	{

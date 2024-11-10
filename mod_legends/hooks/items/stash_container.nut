@@ -1,4 +1,4 @@
-::mods_hookNewObject("items/stash_container", function(o)
+::mods_hookExactClass("items/stash_container", function(o)
 {
 	o.getItemByInstanceID = function ( _instanceID )
 	{
