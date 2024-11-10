@@ -1,7 +1,7 @@
 // Author: WNTR Jimmy
 // Date: 1/18/23
 // nessesaries to register
-::mods_hookExactClass("skills/perks/perk_close_combat_archer", function(o) {
+::mods_hookExactClass("skills/perks/perk_legend_close_combat_archer", function(o) {
 	
 	//change the perk to have a status effect
 	local create = o.create;

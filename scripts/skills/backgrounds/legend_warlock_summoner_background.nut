@@ -128,7 +128,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 				],
 				[
 					this.Const.Perks.PerkDefs.Fearsome,
-					this.Const.Perks.PerkDefs.PerfectFocus,
+					this.Const.Perks.PerkDefs.LegendPerfectFocus,
 					this.Const.Perks.PerkDefs.LegendPush,
 					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
 					this.Const.Perks.PerkDefs.LegendExtendendAura,

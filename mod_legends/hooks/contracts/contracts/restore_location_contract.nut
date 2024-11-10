@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/restore_attached_location_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/restore_location_contract", function(o) 
 {
 	local create = o.create;
 	o.create = function()

@@ -132,7 +132,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				[
 					this.Const.Perks.PerkDefs.BattleFlow,
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
-					this.Const.Perks.PerkDefs.PerfectFocus,
+					this.Const.Perks.PerkDefs.LegendPerfectFocus,
 					this.Const.Perks.PerkDefs.LegendSleep,
 					//this.Const.Perks.PerkDefs.LegendTeacher,
 					this.Const.Perks.PerkDefs.LegendFieldTriage,

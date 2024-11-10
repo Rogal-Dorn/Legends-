@@ -83,7 +83,7 @@
 // 				this.Const.Perks.PerkDefs.LegendValaChantFury,
 // 				this.Const.Perks.PerkDefs.LegendValaInscribeWeapon,
 // 				this.Const.Perks.PerkDefs.LegendFieldTriage,
-// 				this.Const.Perks.PerkDefs.PerfectFocus
+// 				this.Const.Perks.PerkDefs.LegendPerfectFocus
 // 			],
 // 			[],
 // 			[],

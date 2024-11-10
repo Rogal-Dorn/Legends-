@@ -1,7 +1,7 @@
 ::mods_hookExactClass("skills/actives/throw_net", function(o)
 {
 	local create = o.create;
-	o.create = function ( _user, _targetTile )
+	o.create = function ()
 	{
 		create();
 		this.m.Description = "Throw a net on your target in order to prevent them from moving or defending themself effectively.";

@@ -114,7 +114,7 @@ this.legend_necro_background <- this.inherit("scripts/skills/backgrounds/charact
 			[
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.LegendGruesomeFeast,
-				this.Const.Perks.PerkDefs.PerfectFocus,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.LegendBalance,
 				this.Const.Perks.PerkDefs.LegendMiasma,
 				this.Const.Perks.PerkDefs.LegendDarkflight,
