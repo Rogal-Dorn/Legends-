@@ -9,7 +9,7 @@
 	MaxR = 1,
 	Fixed = [
 		{
-			Type = this.Const.World.Spawn.Troops.BanditWarlord,
+			Type = this.Const.World.Spawn.Troops.BanditVeteran.BanditWarlord,
 			Weight = 100, //100 Weight guarentees this will be added
 			Cost = 1, //dictates cost taken from minR
 			Roll = true
@@ -25,14 +25,14 @@
 		},
 		{
 			Type = this.Const.World.Spawn.Troops.BanditLeader, //no. 2
-			Weight = 100, 
-			Cost = 1, 
+			Weight = 100,
+			Cost = 1,
 			Roll = true
 		},
 		{
 			Type = this.Const.World.Spawn.Troops.LegendPeasantMonk, //stops morale shenanigans
-			Weight = 75, 
-			Cost = 2, 
+			Weight = 75,
+			Cost = 2,
 			//Roll = true
 		},
 		{

@@ -110,7 +110,7 @@ if (!("Perks" in ::Const))
 	}
 }
 
-local perkDefObjects = []
+local perkDefObjects = [];
 perkDefObjects.push({
 	ID = "perk.fast_adaption",
 	Script = "scripts/skills/perks/perk_fast_adaption",
