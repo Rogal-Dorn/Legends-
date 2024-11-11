@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("events/event", function ( o )
 {
-	while(!("buildText" in o.m)) o = o[o.SuperName];
+	while("SuperName" in o) o=o[o.SuperName];
 
 	o.setScreen = function ( _screen )
 	{
@@ -86,19 +86,19 @@
 
 		if (brothers.len() != 0)
 		{
-			bro2 = brothers[this.Math.rand(0, brothers.len() - 1)];			
+			bro2 = brothers[this.Math.rand(0, brothers.len() - 1)];
 		}
 		else if (slaves.len() != 0)
 		{
-			bro2 = slaves[this.Math.rand(0, slaves.len() - 1)];			
+			bro2 = slaves[this.Math.rand(0, slaves.len() - 1)];
 		}
 		else if (notnagel != null)
 		{
-			bro2 = notnagel;			
+			bro2 = notnagel;
 		}
 		else
 		{
-			bro2 = bro1;			
+			bro2 = bro1;
 		}
 
 		brother2 = bro2.getName();
@@ -268,7 +268,7 @@
 			[
 				"themselves1",
 				this.Const.LegendMod.getPronoun(bro1.getGender(), "themselves")
-			],		
+			],
 			[
 				"They1",
 				this.Const.LegendMod.getPronoun(bro1.getGender(), "They")
@@ -332,7 +332,7 @@
 			[
 				"Themselves2",
 				this.Const.LegendMod.getPronoun(bro2.getGender(), "Themselves")
-			],	
+			],
 			[
 				"randomtown",
 				northern[this.Math.rand(0, northern.len() - 1)].getNameOnly()
@@ -381,7 +381,7 @@
 			[
 				"themselves" + _suffix,
 				this.Const.LegendMod.getPronoun(_bro.getGender(), "themselves")
-			],		
+			],
 			[
 				"They" + _suffix,
 				this.Const.LegendMod.getPronoun(_bro.getGender(), "They")

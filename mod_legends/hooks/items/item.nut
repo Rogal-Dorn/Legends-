@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("items/item", function ( o )
 {
-	while(!("setSold" in o)) o = o[o.SuperName];
+	while("SuperName" in o) o=o[o.SuperName];
 
 	// this is part of the loadBuyback mod
 	o.setSold = function (sold)
@@ -38,7 +38,7 @@
 	o.m.Type <- -1;
 	o.m.OriginSettlementID <- 0; // the Settlement ID where the item was originally produced
 	o.m.TradeHistorySettlementIDs <- []; // an array of Settlement IDs to track the item's trade history
-	
+
 	o.isAllowedInBag = function ( _actor = null )
 	{
 		if (!this.m.IsAllowedInBag || this.m.SlotType == this.Const.ItemSlot.Body || this.m.SlotType == this.Const.ItemSlot.Head || this.m.SlotType == this.Const.ItemSlot.None)
@@ -802,7 +802,7 @@
 	{
 		if (_id != this.getOriginSettlementID() && (this.m.TradeHistorySettlementIDs.len() < 1 || _id != this.m.TradeHistorySettlementIDs[this.m.TradeHistorySettlementIDs.len()-1]))
 		{
-			this.m.TradeHistorySettlementIDs.push(_id);	
+			this.m.TradeHistorySettlementIDs.push(_id);
 		}
 	}
 
@@ -893,7 +893,7 @@
 			sellPrice = getBuyPrice();
 			this.m.IsBought = true;
 		}
-		else 
+		else
 		{
 			sellPrice =  getSellPrice();
 		}
@@ -910,13 +910,13 @@
 	o.getBuyPrice <- function ()
 	{
 		if (this.isSold())
-		{				
+		{
 			this.m.IsSold = false;
 			local sellPrice = this.getSellPrice();
 			this.m.IsSold = true;
 			return sellPrice;
 		}
-		else 
+		else
 		{
 			local originalTime;
 			if (::mods_isClass(this, "legend_usable_food") && this.getSpoilInDays() > this.m.GoodForDays)
