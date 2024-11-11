@@ -1,6 +1,6 @@
 ::mods_hookNewObject("ui/global/data_helper", function(o) {
 
-	function convertCampaignStorageToUIData( _meta )
+	o.convertCampaignStorageToUIData = function ( _meta )
 	{
 		local d;
 		d = " (" + this.Const.Strings.Difficulty[_meta.getInt("difficulty2")] + "/" + this.Const.Strings.Difficulty[_meta.getInt("difficulty")];
@@ -35,7 +35,7 @@
 		};
 	}
 
-	function convertHireRosterToUIData( _rosterID )
+	o.convertHireRosterToUIData = function ( _rosterID )
 	{
 		local result = [];
 		local roster = this.World.getRoster(_rosterID);

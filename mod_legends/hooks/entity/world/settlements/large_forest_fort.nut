@@ -91,7 +91,6 @@
 	}
 
 	o.onBuild = function ( _settings )
-	function onBuild( _settings )
 	{
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/crowd_building"), 5);
 		this.addBuilding(this.new("scripts/entity/world/settlements/buildings/marketplace_building"), 2);

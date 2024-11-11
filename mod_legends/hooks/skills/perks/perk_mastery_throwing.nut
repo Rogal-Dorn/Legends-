@@ -9,7 +9,7 @@
 
 	];
 
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )
 	{
 		if (_targetEntity == null)
 		{

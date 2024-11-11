@@ -176,7 +176,7 @@
 	{
 	}
 
-	function onExecute( _faction )
+	o.onExecute = function ( _faction )
 	{
 		local budget = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() ? 0 : ::Const.World.Common.WorldEconomy.Trade.calculateTradingBudget(this.m.Start);
 

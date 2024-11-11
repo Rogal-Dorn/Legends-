@@ -133,7 +133,7 @@
 	}
 
 	local onDestroyUI = o.onDestroyUI;
-	function onDestroyUI()
+	o.onDestroyUI = function ()
 	{
 		onDestroyUI();
 		this.m.CampScreen.destroy();
