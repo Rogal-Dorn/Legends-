@@ -15,6 +15,6 @@
 	o.onEquip = function ()
 	{
 		onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_lute_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_lute_bash_skill"));
 	}
 });
