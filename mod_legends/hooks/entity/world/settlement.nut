@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("entity/world/settlement", function(o)
 {
-	while(!("Owner" in o.m)) o=o[o.SuperName];
+	while(!("ShopSeed" in o.m)) o=o[o.SuperName];
 
 	o.m.FemaleDraftList <- [];
 	o.m.StablesList <- [];
