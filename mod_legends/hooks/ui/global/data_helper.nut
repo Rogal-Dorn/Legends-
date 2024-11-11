@@ -1,4 +1,4 @@
-::mods_hookNewObject("ui/global/data_helper", function(o) {
+::mods_hookExactClass("ui/global/data_helper", function(o) {
 
 	o.convertCampaignStorageToUIData = function ( _meta )
 	{
@@ -111,7 +111,7 @@
 	local convertEntityToUIData = o.convertEntityToUIData;
 	o.convertEntityToUIData = function ( _entity, _activeEntity )
 	{
-		local result = convertEntityToUIData();
+		local result = convertEntityToUIData(_entity, _activeEntity);
 		result.perkTree <- [];
 
 		local bg = _entity.getBackground();
@@ -126,7 +126,7 @@
 	local convertEntityHireInformationToUIData = o.convertEntityHireInformationToUIData;
 	o.convertEntityHireInformationToUIData = function ( _entity )
 	{
-		local result = convertEntityHireInformationToUIData();
+		local result = convertEntityHireInformationToUIData(_entity);
 		result.Traits <- _entity.getHiringTraits();
 
 		return result;
@@ -135,7 +135,7 @@
 	local addCharacterToUIData = o.addCharacterToUIData;
 	o.addCharacterToUIData = function ( _entity, _target )
 	{
-		addCharacterToUIData();
+		addCharacterToUIData(_entity, _target);
 		if (_entity.getBackground() != null)
 		{
 			_target.background <- _entity.getBackground().getID();
@@ -239,7 +239,7 @@
 	local convertItemToUIData = o.convertItemToUIData;
 	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null )
 	{
-		local result = convertItemToUIData();
+		local result = convertItemToUIData(_item, _forceSmallIcon, _owner);
 		result.isChangeableInBattle = _item.isChangeableInBattle(null);
 		result.isAllowedInBag = _item.isAllowedInBag(null);
 
