@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/accessory/falcon_item", function(o) {
+::mods_hookExactClass("items/accessory/ghoul_trophy_item", function(o) {
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{

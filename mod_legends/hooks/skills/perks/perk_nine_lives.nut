@@ -39,7 +39,7 @@
 		this.m.LastFrameUsed = this.Time.getFrame();
 	}
 
-	o.onProc = function ()
+	o.onProc <- function ()
 	{
 	}
 
