@@ -1,6 +1,5 @@
-::mods_hookExactClass("crafting/crafting_manager", function(o)
+::mods_hookNewObject("crafting/crafting_manager", function(o)
 {
-	
 	o.getQualifiedBlueprintsForUI = function ( _filter )
 	{
 		local ret = [];

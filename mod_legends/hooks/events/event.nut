@@ -1,5 +1,7 @@
-::mods_hookExactClass("events/event", function(o)
+::mods_hookBaseClass("events/event", function ( o )
 {
+	while(!("buildText" in o.m)) o = o[o.SuperName];
+
 	o.setScreen = function ( _screen )
 	{
 		if (_screen == null)
@@ -351,7 +353,6 @@
 		this.onPrepareVariables(vars);
 		return this.buildTextFromTemplate(_text, vars);
 	}
-
 	o.addPronounVars <- function ( _vars, _bro, _suffix )
 	{
 		if (_suffix == "1" || _suffix == "2")
