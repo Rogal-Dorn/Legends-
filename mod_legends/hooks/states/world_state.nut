@@ -140,7 +140,7 @@
 		this.m.CampScreen = null;
 	}
 
-	local onInitUI = o.onInitUI;
+	local onFinish = o.onFinish;
 	o.onFinish = function()
 	{
 		this.m.Camp.destroy();
@@ -159,6 +159,7 @@
 
 	o.onUpdate = function ()
 	{
+		::logInfo("world state update");
 		if (!this.m.IsGameOver && (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished()))
 		{
 			this.showGameFinishScreen(false);
@@ -2043,7 +2044,7 @@
 	}
 
 	local onBeforeSerialize = o.onBeforeSerialize;
-	function onBeforeSerialize( _out )
+	o.onBeforeSerialize = function ( _out )
 	{
 		local meta = _out.getMetaData();
 		meta.setString("legendsVersion", ::Legends.Version);
@@ -2051,7 +2052,7 @@
 	}
 
 	local onBeforeDeserialize = o.onBeforeDeserialize;
-	function onBeforeDeserialize( _in )
+	o.onBeforeDeserialize = function ( _in )
 	{
 		onBeforeDeserialize( _in );
 		this.logInfo("Legends version in save: " + _in.getMetaData().getString("legendsVersion"));
@@ -2059,7 +2060,7 @@
 	}
 
 	local onSerialize = o.onSerialize;
-	function onSerialize( _out )
+	o.onSerialize = function ( _out )
 	{
 		_out.writeBool(this.m.IsCampingAllowed);
 		_out.writeI32(this.m.CombatSeed);
@@ -2067,7 +2068,7 @@
 	}
 
 	local onDeserialize = o.onDeserialize;
-	function onDeserialize( _in )
+	o.onDeserialize = function ( _in )
 	{
 		onDeserialize( _in );
 		if (this.m.EscortedEntity == null)

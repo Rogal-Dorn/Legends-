@@ -3,7 +3,6 @@
 	o.m.Dest <- null;
 	o.m.IsSendingAid <- false;
 
-	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _faction )
 	{
 		if (!this.World.getTime().IsDaytime)

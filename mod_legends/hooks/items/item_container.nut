@@ -157,7 +157,6 @@
 		_tile.IsContainingItemsFlipped = _flip;
 	}
 
-	local equip = o.equip
 	o.equip = function (_item)
 	{
 		if (_item == null)
@@ -422,7 +421,7 @@
 
 	o.onDamageDealt = function (_target, _skill, _hitInfo)
 	{
-		this.doOnFunction("onDamageDealt", [_target, _skill, _hitInfo], this.Const.ItemSlot.Mainhand)
+		this.doOnFunction("onDamageDealt", [_target, _skill, _hitInfo], this.Const.ItemSlot.Mainhand);
 		this.collectGarbage(this.Const.ItemSlot.Mainhand);
 	}
 
