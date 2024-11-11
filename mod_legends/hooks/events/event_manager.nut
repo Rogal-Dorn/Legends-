@@ -1,4 +1,4 @@
-::mods_hookNewObject("events/event_manager", function(o)
+::mods_hookExactClass("events/event_manager", function(o)
 {
 	o.create = function ()
 	{

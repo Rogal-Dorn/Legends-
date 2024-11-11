@@ -1,5 +1,7 @@
-::mods_hookExactClass("entity/world/settlement", function(o)
+::mods_hookBaseClass("entity/world/settlement", function(o)
 {
+	while(!("Owner" in o.m)) o=o[o.SuperName];
+
 	o.m.FemaleDraftList <- [];
 	o.m.StablesList <- [];
 	o.m.LastStablesUpdate <- 0.0;
