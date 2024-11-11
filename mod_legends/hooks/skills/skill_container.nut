@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/skill_container", function(o)
+::mods_hookNewObject("skills/skill_container", function ( o )
 {
 	o.removeByID = function( _skillID )
 	{

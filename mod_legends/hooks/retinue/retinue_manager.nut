@@ -1,4 +1,4 @@
-::mods_hookExactClass("retinue/retinue_manager", function(o) {
+::mods_hookNewObject("retinue/retinue_manager", function(o) {
 	o.m.OwnedFollowerIDs <- [];
 
 	o.hasFollower <- function ( _id )

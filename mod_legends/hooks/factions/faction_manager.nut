@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/faction_manager", function(o) 
+::mods_hookNewObject("factions/faction_manager", function(o) 
 {
 	o.setGreaterEvilType <- function ( _type )
 	{

@@ -1,5 +1,7 @@
-::mods_hookExactClass("entity/tactical/entity", function(o)
+::mods_hookBaseClass("entity/tactical/entity", function ( o )
 {
+	while(!("Flags" in o.m)) o = o[o.SuperName];
+	
 	o.m.IsRock <- false;
 	o.m.IsTree <- false;
 	o.m.IsSticks <- false;

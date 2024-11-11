@@ -1,5 +1,7 @@
-::mods_hookExactClass("contracts/contract", function(o)
+::mods_hookBaseClass("contracts/contract", function ( o )
 {
+	while(!("Category" in o.m)) o = o[o.SuperName];
+	
 	o.m.Category <- "";
 	o.m.Description <- "";
 	o.m.DescriptionTemplates <- [];
