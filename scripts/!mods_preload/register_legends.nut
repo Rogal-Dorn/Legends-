@@ -14,7 +14,7 @@ else
 	::mods_registerMod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 }
 
-::mods_queue(::Legends.ID, "mod_msu, vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins", function()
+::mods_queue(::Legends.ID, "mod_msu, vanilla(>=1.5.0-15), dlc_lindwurm, dlc_unhold, dlc_wildmen, dlc_desert, dlc_paladins, mod_events_delayed_fix", function()
 {
 	::Legends.Mod <- ::MSU.Class.Mod(::Legends.ID, ::Legends.Version, ::Legends.Name);
 
