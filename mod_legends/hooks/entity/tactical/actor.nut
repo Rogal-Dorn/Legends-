@@ -1,6 +1,6 @@
-::mods_hookBaseClass("entity/tactical/actor", function(o)
+::mods_hookExactClass("entity/tactical/actor", function(o)
 {
-	while(!("Type" in o.m)) o = o[o.SuperName];
+//	while(!("BloodSaturation" in o.m)) o = o[o.SuperName];
 
 	o.m.BloodSaturation = 1.5;
 	o.m.DeathBloodAmount = 1.5;
