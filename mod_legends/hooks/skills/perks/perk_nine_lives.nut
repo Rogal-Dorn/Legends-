@@ -39,14 +39,14 @@
 		this.m.LastFrameUsed = this.Time.getFrame();
 	}
 
-	function onProc()
+	o.onProc = function ()
 	{
 	}
 
-	local ws_onUpdate = o.onUpdate;
+	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _properties )
 	{
-		ws_onUpdate( _properties );
+		onUpdate( _properties );
 		_properties.SurviveWithInjuryChanceMult *= 1.11;
 	}
 });

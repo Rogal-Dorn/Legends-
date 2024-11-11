@@ -30,7 +30,7 @@
 	}
 
 	local spawnAllies = o.spawnAllies;
-	function spawnAllies()
+	o.spawnAllies = function ()
 	{
 		spawnAllies();
 		party.getLoot().Money = this.Math.rand(100, 300);

@@ -12,7 +12,7 @@
 		return false;
 	}
 
-	function onUpdateProperties( _properties )
+	o.onUpdateProperties = function ( _properties )
 	{
 		this.accessory.onUpdateProperties(_properties);
 		_properties.Bravery += 4;

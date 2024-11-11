@@ -3,7 +3,7 @@
 	o.m.AdditionalAccuracy = 10;
 	o.m.AdditionalHitChance = -10;
 	
-	function getTooltip()
+	o.getTooltip = function ()
 	{
 		local ret = this.getRangedTooltip(this.getDefaultTooltip());
 		ret.push({
