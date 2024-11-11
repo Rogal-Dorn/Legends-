@@ -588,7 +588,7 @@
 	{
 		if (::Legends.Mod.ModSettings.getSetting("AllTradeLocations").getValue())
 		{
-			o.guaranteeAllLocations();
+			this.guaranteeAllLocations();
 		}
 		buildAdditionalRoads(_rect, _properties);
 	}

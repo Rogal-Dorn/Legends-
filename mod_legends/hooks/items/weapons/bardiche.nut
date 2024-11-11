@@ -3,6 +3,6 @@
 	o.create = function ()
 	{
 		create();
-		this.m.isAOE = true;
+		this.m.IsAoE = true;
 	}
 });

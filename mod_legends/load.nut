@@ -15,7 +15,6 @@ foreach (file in ::IO.enumerateFiles("mod_legends/!config")) {
 foreach (file in ::IO.enumerateFiles("mod_legends/config")) {
 	::include(file);
 }
-::logInfo("Legends config loaded");
 
 // load query folder
 foreach (file in ::IO.enumerateFiles("mod_legends/system"))
@@ -34,4 +33,3 @@ foreach (file in ::IO.enumerateFiles("mod_legends/hooks"))
 {
 	::include(file);
 }
-::logInfo("Legends hooks loaded");

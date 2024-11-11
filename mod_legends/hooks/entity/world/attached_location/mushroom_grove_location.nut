@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/mushroom_grove_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/mushroom_grove_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -18,7 +18,7 @@
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
+
 		onUpdateDraftList(_list, _gender);
 	}
 
@@ -53,7 +53,7 @@
 				P = 1.0,
 				S = "accessory/legend_apothecary_mushrooms_item"
 			});
-			list.push({
+			_list.push({
 				R = 30,
 				P = 1.0,
 				S = "weapons/legend_cat_o_nine_tails"
