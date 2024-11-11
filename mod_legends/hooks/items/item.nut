@@ -1,6 +1,31 @@
-// this is part of the loadBuyback mod
-::mods_hookExactClass("items/item", function ( o )
+::mods_hookBaseClass("items/item", function ( o )
 {
+	while(!("setSold" in o)) o = o[o.SuperName];
+
+	// this is part of the loadBuyback mod
+	o.setSold = function (sold)
+	{
+		if(!sold || this.isSold()) this.m.IsSold = false;
+		else if(this.isBought())
+		{
+			this.m.IsBought = false;
+			this.m.IsSold = false;
+		}
+		else this.m.IsSold = true;
+	}
+
+	o.setBought = function (bought)
+	{
+		if(!bought || this.isBought()) this.m.IsBought = false;
+		else if(this.isSold())
+		{
+			this.m.IsSold = false;
+			this.m.IsBought = false;
+		}
+		else this.m.IsBought = true;
+	}
+	//------------------------------------------
+
 	o.m.OldID <- "";
 	o.m.MedicinePerDay <- 0;
 	o.m.IsToBeRepairedQueue <- 0;
@@ -133,28 +158,6 @@
 	{
 		this.setArmor(_a);
 		return 0;
-	}
-
-	o.setSold = function (sold)
-	{
-		if(!sold || this.isSold()) this.m.IsSold = false;
-		else if(this.isBought())
-		{
-			this.m.IsBought = false;
-			this.m.IsSold = false;
-		}
-		else this.m.IsSold = true;
-	}
-
-	o.setBought = function (bought)
-	{
-		if(!bought || this.isBought()) this.m.IsBought = false;
-		else if(this.isSold())
-		{
-			this.m.IsSold = false;
-			this.m.IsBought = false;
-		}
-		else this.m.IsBought = true;
 	}
 
 	o.getBuyPrice = function ()

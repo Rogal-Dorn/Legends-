@@ -1,4 +1,7 @@
-::mods_hookExactClass("retinue/follower", function(o) {
+::mods_hookBaseClass("retinue/follower", function ( o )
+{
+	while(!("ID" in o.m)) o = o[o.SuperName];
+
 	o.m.RequiredSkills <- [];
 	o.m.LinkedBro <- null;
 	o.m.WasOwned <- false;

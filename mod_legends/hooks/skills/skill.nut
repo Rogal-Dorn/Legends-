@@ -1,5 +1,7 @@
-::mods_hookExactClass("skills/skill", function(o)
+::mods_hookBaseClass("skills/skill", function ( o )
 {
+	while(!("ID" in o.m)) o = o[o.SuperName];
+
 	o.m.IsForPerkTooltip <- false; // Indicate whether the Perk is a dummy that is being used only to generate unactivated perk tooltip hints
 	o.m.Sound <- [];
 

@@ -1,4 +1,4 @@
-::mods_hookExactClass("statistics/statistics_manager", function(o) {
+::mods_hookNewObject("statistics/statistics_manager", function(o) {
 
 	o.addFallen = function ( bro, _killedby = "Left to die")
 	{

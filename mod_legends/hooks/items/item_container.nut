@@ -1,6 +1,5 @@
-::mods_hookExactClass("items/item_container", function(o)
+::mods_hookNewObject("items/item_container", function(o)
 {
-
 	o.m.Appearance.ArmorLayerChain <- "";
 	o.m.Appearance.ArmorLayerPlate<- "";
 	o.m.Appearance.ArmorLayerTabbard<- "";
