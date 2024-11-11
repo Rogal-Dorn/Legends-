@@ -1,7 +1,7 @@
-::mods_hookBaseClass("ai/tactical/behavior", function(o) 
+::mods_hookBaseClass("ai/tactical/behavior", function(o)
 {
-	while(!("isRangedUnit" in o.m)) o = o[o.SuperName];
-	
+	while("SuperName" in o) o=o[o.SuperName];
+
 	o.isRangedUnit = function( _entity)
 	{
 		if (_entity == null)
