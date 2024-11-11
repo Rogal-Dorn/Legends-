@@ -159,7 +159,6 @@
 
 	o.onUpdate = function ()
 	{
-		::logInfo("world state update");
 		if (!this.m.IsGameOver && (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished()))
 		{
 			this.showGameFinishScreen(false);

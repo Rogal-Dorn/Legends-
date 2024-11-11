@@ -154,4 +154,37 @@
 		this.m.IsUpdating = updating;
 		return superCurrent;
 	}
+
+	o.getSkillsSortedByItems <- function ( _filter, _notFilter = 0 )
+	{
+		local ret = [];
+
+		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = i )
+		{
+			ret.push([]);
+			i = ++i;
+		}
+
+		foreach( skill in this.m.Skills )
+		{
+			if (!skill.isGarbage() && skill.isType(_filter) && !skill.isType(_notFilter) && !skill.isHidden())
+			{
+				if (skill.getItem() != null)
+				{
+					ret[skill.getItem().getCurrentSlotType()].push(skill);
+				}
+				else
+				{
+					ret[this.Const.ItemSlot.Free].push(skill);
+				}
+			}
+		}
+
+		if (ret[this.Const.ItemSlot.Free].len() > 1)
+		{
+			ret[this.Const.ItemSlot.Free].sort(this.compareSkillsByOrder);
+		}
+
+		return ret;
+	}
 });
