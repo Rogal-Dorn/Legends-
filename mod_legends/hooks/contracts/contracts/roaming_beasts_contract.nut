@@ -103,7 +103,7 @@
 					this.Contract.setScreen("Overview");
 					this.World.Contracts.setActiveContract(this.Contract);
 				}
-				s.update = function ()
+				s.update <- function ()
 				{
 					if (this.Contract.m.Target == null || this.Contract.m.Target.isNull() || !this.Contract.m.Target.isAlive())
 					{

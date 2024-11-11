@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("entity/world/world_entity", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("Flags" in o.m)) o=o[o.SuperName];
 
 	o.m.Resources <- 0;
 

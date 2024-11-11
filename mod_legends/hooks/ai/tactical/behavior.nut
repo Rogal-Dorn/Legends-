@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("ai/tactical/behavior", function(o)
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.isRangedUnit = function( _entity)
 	{

@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("contracts/contract", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.m.Category <- "";
 	o.m.Description <- "";

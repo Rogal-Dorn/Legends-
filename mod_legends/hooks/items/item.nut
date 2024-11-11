@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("items/item", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	// this is part of the loadBuyback mod
 	o.setSold = function (sold)
