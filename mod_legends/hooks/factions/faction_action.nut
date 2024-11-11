@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("factions/faction_action", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.m.DifficultyMult <- 1.0;
 

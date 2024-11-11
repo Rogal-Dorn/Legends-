@@ -1,6 +1,6 @@
-::mods_hookBaseClass("events/event", function ( o )
+::mods_hookBaseClass("events/event", function (o)
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.setScreen = function ( _screen )
 	{

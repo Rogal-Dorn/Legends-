@@ -48,6 +48,19 @@
 		return false;
 	}
 
+	o.getEvent = function( _id ) {
+		foreach (event in this.m.Events) {
+			if (!("getID" in event)) {
+				::logInfo("no getID found " + event.ClassName);
+				continue;
+			}
+			if (event.getID() == _id) {
+				return event;
+			}
+		}
+		return null;
+	}
+
 	o.selectEvent = function ()
 	{
 		// Function is a generator.

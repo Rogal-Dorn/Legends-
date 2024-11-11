@@ -3,7 +3,7 @@ this.perk_legend_throw_sand <- this.inherit("scripts/skills/skill", {
 	function create()
 	{
 		this.m.ID = "perk.legend_throw_sand";
-		this.m.Name = this.Const.Strings.PerkName.Sprint;
+		this.m.Name = this.Const.Strings.PerkName.LegendThrowSand;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendThrowSand;
 		this.m.Icon = "ui/perks/throw_sand_01.png";
 		this.m.Type = this.Const.SkillType.Perk;

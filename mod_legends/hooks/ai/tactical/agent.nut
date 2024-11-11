@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("ai/tactical/agent", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o._mod_legend <- true;// only override the methods once per base instance
 	o.m.PriorityTarget <- null;

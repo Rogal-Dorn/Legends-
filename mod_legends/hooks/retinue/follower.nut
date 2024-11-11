@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("retinue/follower", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.m.RequiredSkills <- [];
 	o.m.LinkedBro <- null;

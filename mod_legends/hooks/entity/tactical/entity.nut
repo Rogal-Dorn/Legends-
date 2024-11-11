@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("entity/tactical/entity", function ( o )
 {
-	while("SuperName" in o) o=o[o.SuperName];
+	while(!("Flags" in o.m)) o=o[o.SuperName];
 
 	o.m.IsRock <- false;
 	o.m.IsTree <- false;
