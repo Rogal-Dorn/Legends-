@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/ore_smelters_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/ore_smelters_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -41,7 +41,7 @@
 			_list.push({
 				R = 60,
 				P = 1.0,
-				S = "trade/tin_ingots_item"
+				S = "trade/legend_tin_ingots_item"
 			});
 			_list.push({
 				R = 80,

@@ -115,7 +115,7 @@
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
-		o.onDeserialize();
+		onDeserialize(_in);
 		if (this.isRuned())
 		{
 			this.updateRuneSigil();

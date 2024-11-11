@@ -67,7 +67,7 @@
 	"Heavy helmets can be hard to breathe in and limit the field of vision.",
 	"You can change gamespeed in the gameplay tab of the \'Options\' menu!",
 	"Different types of enemies require different tactics to beat reliably.",
-	"Every enemy in the can be beaten reliably with the right approach.",
+	"Every enemy in the game can be beaten reliably with the right approach.",
 	"A human is no match for an adult orc physically.",
 	"Orc Berserkers gain rage and get tougher to take down, the more blood they have drawn.",
 	"Geists test the resolve of your mercenaries - the lower, the more likely they are to panic and flee.",

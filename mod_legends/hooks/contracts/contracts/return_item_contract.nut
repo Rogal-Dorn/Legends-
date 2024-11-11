@@ -159,7 +159,7 @@
 			}
 			if (s.ID == "CounterOffer1")
 			{
-				Options = [
+				s.Options = [
 					{
 						Text = "I know a good deal when I see one. Hand over the crowns.",
 						function getResult()
