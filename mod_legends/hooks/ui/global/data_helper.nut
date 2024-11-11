@@ -1,4 +1,4 @@
-::mods_hookExactClass("ui/global/data_helper", function(o) {
+::mods_hookNewObjectOnce("ui/global/data_helper", function(o) {
 
 	o.convertCampaignStorageToUIData = function ( _meta )
 	{
