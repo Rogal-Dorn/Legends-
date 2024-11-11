@@ -1,6 +1,6 @@
-::mods_hookExactClass("ambitions/ambitions/have_all_provisions_ambition", function(o) 
+::mods_hookExactClass("ambitions/ambitions/have_all_provisions_ambition", function(o)
 {
-	function getTooltipText()
+	o.getTooltipText = function ()
 	{
 		if (this.hasAllProvisions())
 		{
@@ -206,7 +206,7 @@
 
 		if (!legend_porridge)
 		{
-			
+
 			ret = ret + "\n- Porridge";
 		}
 		if (!legend_pudding)
@@ -232,7 +232,7 @@
 		return ret;
 	}
 
-	function hasAllProvisions()
+	o.hasAllProvisions = function ()
 	{
 		local beer = false;
 		local bread = false;

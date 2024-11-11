@@ -272,7 +272,7 @@
 	}
 
 	local create = o.create;
-	function create()
+	o.create = function ()
 	{
 		create();
 		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )

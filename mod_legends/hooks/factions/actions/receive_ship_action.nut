@@ -129,6 +129,6 @@
 			}
 		}
 
-		onUpdate(_faction);
+		onExecute(_faction);
 	}
 });

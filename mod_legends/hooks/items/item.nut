@@ -363,139 +363,139 @@
 			case 1:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 2:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 3:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(2, 6)
+					bonus = this.Math.rand(2, 6);
 				}
 				else
 				{
-					bonus = this.Math.rand(2, 4)
+					bonus = this.Math.rand(2, 4);
 				}
 				break;
 
 			case 4:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(1, 3)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(1, 3);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(1, 2)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(1, 2);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				break;
 
 			case 5:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(1, 3)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(1, 3);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(1, 2)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(1, 2);
 				}
 				break;
 
 			case 6:
 				if (_bonus)
 				{
-					bonus2 = this.Math.rand(3, 9)
-					bonus = this.Math.rand(1, 3)
+					bonus2 = this.Math.rand(3, 9);
+					bonus = this.Math.rand(1, 3);
 				}
 				else
 				{
-					bonus2 = this.Math.rand(3, 6)
-					bonus = this.Math.rand(1, 2)
+					bonus2 = this.Math.rand(3, 6);
+					bonus = this.Math.rand(1, 2);
 				}
 				break;
 
 			case 11:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(0, 2)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(0, 2);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(0, 1);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 12:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(1, 5)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(1, 5);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(1, 3)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(1, 3);
 				}
 				break;
 
 			case 13:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 21:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(0, 3)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(0, 3);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(0, 1);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 22:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
@@ -505,26 +505,26 @@
 			case 31:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 32:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
-					bonus2 = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 12);
+					bonus2 = this.Math.rand(3, 12);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				break;
 
