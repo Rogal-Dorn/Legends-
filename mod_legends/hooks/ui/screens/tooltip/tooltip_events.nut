@@ -1,4 +1,4 @@
-::mods_hookExactClass("ui/screens/tooltip/tooltip_events", function(o) {
+::mods_hookNewObject("ui/screens/tooltip/tooltip_events", function(o) {
 
 	o.onQueryFollowerTooltipData = function ( _followerID )
 	{

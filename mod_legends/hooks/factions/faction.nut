@@ -1,5 +1,7 @@
-::mods_hookExactClass("factions/faction", function(o)
+::mods_hookBaseClass("factions/faction", function ( o )
 {
+	while(!("ID" in o.m)) o = o[o.SuperName];
+
 	o.m.ContractsByCategory <-
 	{
 		Economy = [],

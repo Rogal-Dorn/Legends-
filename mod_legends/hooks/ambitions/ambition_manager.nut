@@ -1,4 +1,4 @@
-::mods_hookExactClass("ambitions/ambition_manager", function(o) 
+::mods_hookNewObject("ambitions/ambition_manager", function(o) 
 {
 	o.isAvailable = function ()
 	{

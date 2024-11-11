@@ -1,5 +1,7 @@
-::mods_hookExactClass("entity/world/world_entity", function(o)
+::mods_hookBaseClass("entity/world/world_entity", function ( o )
 {
+	while(!("Flags" in o.m)) o = o[o.SuperName];
+
 	o.m.Resources <- 0;
 
 	o.getDefenderCount <- function ()
