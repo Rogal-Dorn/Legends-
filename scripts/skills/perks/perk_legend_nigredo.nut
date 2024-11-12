@@ -18,7 +18,7 @@ this.perk_legend_nigredo <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_nigredo"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_nigredo"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_nigredo_skill"));
 		}
 	}
 		function onRemoved()

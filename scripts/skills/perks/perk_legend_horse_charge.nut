@@ -17,7 +17,7 @@ this.perk_legend_horse_charge <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.legend_horse_charge"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/legend_horse_charge"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_horse_charge_skill"));
 		}
 	}
 
