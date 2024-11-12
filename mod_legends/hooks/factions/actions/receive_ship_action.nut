@@ -119,15 +119,15 @@
 	local onExecute = o.onExecute;
 	o.onExecute = function ( _faction )
 	{
-
-		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-		{
-			local success = this.onLegendExecute( _faction);
-			if (success != false)
-			{
-				return success;
-			}
-		}
+		//TODO, uncomment when send_ship_action is done
+//		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+//		{
+//			local success = this.onLegendExecute( _faction);
+//			if (success != false)
+//			{
+//				return success; // todo why returning bool, when onExecute does not return anything? - chopeks
+//			}
+//		}
 
 		onExecute(_faction);
 	}
