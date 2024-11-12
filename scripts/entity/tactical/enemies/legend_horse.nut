@@ -128,10 +128,10 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 
 				for( local i = 0; i < n; i = ++i )
 				{
-			
+
 						local loot = this.new("scripts/items/supplies/strange_meat_item");
 						loot.drop(_tile);
-				
+
 				}
 			}
 		}
@@ -155,7 +155,7 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 		local variant = this.Math.rand(0, 7);
 		local horse = this.addSprite("horse");
 		horse.setBrush("bust_naked_body_10" + variant);
-		// horse.setHorizontalFlipping(true); 
+		// horse.setHorizontalFlipping(true);
 		horse.varySaturation(0.15);
 		horse.varyColor(0.07, 0.07, 0.07);
 		local horse = this.addSprite("horse_head");
@@ -169,7 +169,7 @@ this.legend_horse <- this.inherit("scripts/entity/tactical/actor", {
 		this.addDefaultStatusSprites();
 		this.getSprite("status_rooted").Scale = 0.54;
 		this.setSpriteOffset("status_rooted", this.createVec(0, 0));
-		local horse_kick = this.new("scripts/skills/actives/legend_horse_kick");
+		local horse_kick = this.new("scripts/skills/actives/legend_horse_kick_skill");
 		this.m.Skills.add(horse_kick);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_horse_movement"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_horse_charge"))

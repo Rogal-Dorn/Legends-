@@ -28,13 +28,13 @@ this.legend_drum <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.RegularDamageMax = 10;
 		this.m.ArmorDamageMult = 0.5;
 		this.m.DirectDamageMult = 0.4;
-		this.m.DirectDamageAdd = -0.2;	
+		this.m.DirectDamageAdd = -0.2;
 	}
 
 	function onEquip()
 	{
 		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_drum_bash"));
+		this.addSkill(this.new("scripts/skills/actives/legend_drum_bash_skill"));
 		local s = this.new("scripts/skills/actives/knock_out");
 		this.addSkill(s);
 	}
