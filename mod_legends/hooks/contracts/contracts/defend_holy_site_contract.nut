@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/conquer_holy_site_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/defend_holy_site_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()

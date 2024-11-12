@@ -1,5 +1,5 @@
-::mods_hookExactClass("skills/traits/iron_jaw_trait", function(o)
-{	
+::mods_hookExactClass("skills/traits/mad_trait", function(o)
+{
 	local create = o.create;
 	o.create = function ()
 	{

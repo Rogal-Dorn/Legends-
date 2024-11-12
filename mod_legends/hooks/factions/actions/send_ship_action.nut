@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/receive_ship_action", function(o)
+::mods_hookExactClass("factions/actions/send_ship_action", function(o)
 {
 	o.m.Dest <- null;
 

@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/hunting_schrats_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/slave_uprising_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
