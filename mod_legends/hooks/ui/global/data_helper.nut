@@ -239,6 +239,9 @@
 	local convertItemToUIData = o.convertItemToUIData;
 	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null )
 	{
+		if (_item == null)
+			return null;
+
 		local result = convertItemToUIData(_item, _forceSmallIcon, _owner);
 		result.isChangeableInBattle = _item.isChangeableInBattle(null);
 		result.isAllowedInBag = _item.isAllowedInBag(null);
