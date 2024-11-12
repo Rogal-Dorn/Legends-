@@ -41,9 +41,7 @@
 		local roster = this.World.getRoster(_rosterID);
 
 		if (roster == null)
-		{
 			return null;
-		}
 
 		local entities = roster.getAll();
 
@@ -243,6 +241,9 @@
 			return null;
 
 		local result = convertItemToUIData(_item, _forceSmallIcon, _owner);
+		if (result == null)
+			return null;
+
 		result.isChangeableInBattle = _item.isChangeableInBattle(null);
 		result.isAllowedInBag = _item.isAllowedInBag(null);
 
