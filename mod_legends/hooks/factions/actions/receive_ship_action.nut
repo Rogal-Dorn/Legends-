@@ -4,11 +4,10 @@
 	o.onUpdate = function ( _faction )
 	{
 		onUpdate(_faction);
-		if (this.m.Settlement.numShips() > 1)
-		{
-			this.m.Score = 0;
+		if (this.m.Settlement == null)
 			return;
-		}
+		if (this.m.Settlement.numShips() > 1)
+			this.m.Score = 0;
 	}
 
 	o.onLegendExecute <- function ( _faction )
