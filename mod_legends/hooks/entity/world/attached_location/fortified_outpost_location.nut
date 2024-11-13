@@ -30,7 +30,7 @@
 		{
 			_list.push("legend_noble_ranged");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

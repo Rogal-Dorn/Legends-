@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/amber_collector_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/amber_collector_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -18,8 +18,8 @@
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
-		onUpdateDraftList(_list, _gender);
+
+		onUpdateDraftList(_list);
 
 		_list.push("peddler_background");
 		_list.push("caravan_hand_background");

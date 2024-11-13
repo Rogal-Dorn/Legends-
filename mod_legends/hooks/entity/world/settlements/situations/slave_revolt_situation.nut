@@ -22,7 +22,7 @@
 	o.onUpdateDraftList = function ( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		onUpdateDraftList(_draftList, _gender);
+		onUpdateDraftList(_draftList);
 		_draftList.push("legend_muladi_background");
 	}
 });

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/workshop_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/workshop_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -26,7 +26,7 @@
 		_list.push("legend_ironmonger_background");
 		_list.push("legend_blacksmith_background");
 		_list.push("legend_blacksmith_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

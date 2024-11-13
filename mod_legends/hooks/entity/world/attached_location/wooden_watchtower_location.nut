@@ -5,7 +5,7 @@
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

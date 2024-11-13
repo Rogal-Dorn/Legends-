@@ -1,7 +1,5 @@
 ::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o)
 {
-	::logInfo("hooking militia_trainingcamp_oriental_location");
-
 	local create = o.create;
 	o.create = function ()
 	{
@@ -29,7 +27,7 @@
 		{
 			_list.push("legend_conscript_ranged_background");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

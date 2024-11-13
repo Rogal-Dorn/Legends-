@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/fletchers_hut_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/fletchers_hut_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -23,7 +23,7 @@
 
 		_list.push("hunter_background");
 		_list.push("poacher_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

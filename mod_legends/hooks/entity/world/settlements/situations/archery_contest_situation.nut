@@ -16,6 +16,6 @@
 
 		// }
 
-		onUpdateDraftList(_draftList, _gender);
+		onUpdateDraftList(_draftList);
 	}
 });
