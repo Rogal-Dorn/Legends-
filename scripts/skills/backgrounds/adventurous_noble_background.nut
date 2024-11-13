@@ -165,7 +165,7 @@ this.adventurous_noble_background <- this.inherit("scripts/skills/backgrounds/ch
 		}
 		else
 		{
-			local c = {
+			return {
 				Hitpoints = [
 					-1,
 					4

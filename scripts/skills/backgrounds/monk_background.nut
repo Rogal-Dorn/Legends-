@@ -90,14 +90,14 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 			this.m.Titles.push("the Monk");
 			return;
 		}
-		
+
 		this.m.Name = "Nun";
 		this.m.Icon = "ui/backgrounds/nun.png";
 		this.m.Titles.push("the Nun");
 		this.m.BackgroundDescription = "Nuns tend to have a high resolve in what they do, but are not used to hard physical labor or warfare.";
 		this.m.GoodEnding = "%name% the nun retired back into calmer spiritual duties. She is currently out in a mountain convent, enjoying the quiet while reflecting on her time in the mercenary company. The other nuns hate her for fighting and killing, but she\'s penning a world-changing tome on the balance between peace and violence.";
 		this.m.BadEnding = "After having a spiritual breakdown, %name% retired from fighting and found home in a monastery. All her fellow sisters and abbesses ostracized her for taking part in such a violent venture. Word has it she was eventually exiled when a mother superior caught her stealing an offertory.";
-		
+
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -123,7 +123,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
-			local c = {
+			return {
 				Hitpoints = [
 					-10,
 					5
@@ -160,7 +160,7 @@ this.monk_background <- this.inherit("scripts/skills/backgrounds/character_backg
 		}
 		else
 		{
-			local c = {
+			return {
 				Hitpoints = [
 					0,
 					0
