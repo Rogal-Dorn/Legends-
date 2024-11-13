@@ -3,10 +3,10 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		ret = getTooltip();
+		local ret = getTooltip();
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
 		{
-			local ret.push({
+			ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
