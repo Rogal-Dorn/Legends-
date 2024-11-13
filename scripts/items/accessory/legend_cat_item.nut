@@ -10,7 +10,7 @@ this.legend_cat_item <- this.inherit("scripts/items/accessory/accessory", {
 
 		]
 	},
-	function isAllowedInBag(_actor)
+	function isAllowedInBag(_actor = null)
 	{
 		return false;
 	}
