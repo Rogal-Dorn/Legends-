@@ -3,7 +3,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		ret = getTooltip();
+		local ret = getTooltip();
 		ret.extend([
 			{
 				id = 10,
