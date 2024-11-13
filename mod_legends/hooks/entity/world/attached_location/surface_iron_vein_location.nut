@@ -1,9 +1,8 @@
 ::mods_hookExactClass("entity/world/attached_location/surface_iron_vein_location", function(o)
 {
-	local onUpdateProduce = o.onUpdateProduce;
-	o.onUpdateProduce = function ( _list )
+	o.onUpdateProduce <- function ( _list )
 	{
-		onUpdateProduce(_list);
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/legend_iron_ingots_item");
 	}
 

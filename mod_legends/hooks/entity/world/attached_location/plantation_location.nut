@@ -54,7 +54,7 @@
 		}
 	}
 
-	o.getNewResources = function ()
+	o.getNewResources <- function ()
 	{
 		return 2;
 	}

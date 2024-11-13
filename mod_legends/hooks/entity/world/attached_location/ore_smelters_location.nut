@@ -7,10 +7,9 @@
 		this.m.Description = "The burning hot ore smelters produce high quality metal ingots used by able weapon smiths to create the most sophisticated of arms. Contributes blacksmiths, ingots and hammers to the local town.";
 	}
 
-	local onUpdateProduce = o.onUpdateProduce;
-	o.onUpdateProduce = function ( _list )
+	o.onUpdateProduce <- function ( _list )
 	{
-		onUpdateProduce(_list);
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/copper_ingots_item");
 		_list.push("trade/legend_tin_ingots_item");
 	}
