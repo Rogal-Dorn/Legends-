@@ -2,7 +2,7 @@ this.legend_oms_amphora_item <- this.inherit("scripts/items/accessory/accessory"
 	m = {
 		IsConsumed = false
 	},
-	function isAllowedInBag(_actor)
+	function isAllowedInBag(_actor = null)
 	{
 		return false;
 	}
