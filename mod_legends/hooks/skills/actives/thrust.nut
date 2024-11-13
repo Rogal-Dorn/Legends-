@@ -6,7 +6,7 @@
 		ret = getTooltip();
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
 		{
-			ret.push({
+			local ret.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
