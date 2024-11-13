@@ -1,5 +1,7 @@
 ::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o)
 {
+	::logInfo("hooking militia_trainingcamp_oriental_location");
+
 	local create = o.create;
 	o.create = function ()
 	{
