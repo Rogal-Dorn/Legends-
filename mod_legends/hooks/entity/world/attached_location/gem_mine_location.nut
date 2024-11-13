@@ -17,7 +17,7 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

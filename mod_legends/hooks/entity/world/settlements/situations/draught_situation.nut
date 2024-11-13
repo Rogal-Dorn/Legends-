@@ -18,6 +18,6 @@
 		{
 			_draftList.push("legend_puppet_background");
 		}
-		onUpdateDraftList(_draftList, _gender);
+		onUpdateDraftList(_draftList);
 	}
 });

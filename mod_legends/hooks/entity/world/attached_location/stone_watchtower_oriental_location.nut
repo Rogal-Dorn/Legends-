@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/stone_watchtower_oriental_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/stone_watchtower_oriental_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -21,7 +21,7 @@
 		{
 			_list.push("legend_conscript_ranged_background");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

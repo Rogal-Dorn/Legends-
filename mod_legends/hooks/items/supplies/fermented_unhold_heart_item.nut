@@ -1,4 +1,4 @@
-::mods_hookExactClass("items/supplies/fermented_unhold_heart", function(o) {
+::mods_hookExactClass("items/supplies/fermented_unhold_heart_item", function(o) {
 	local create = o.create;
 	o.create = function ()
 	{

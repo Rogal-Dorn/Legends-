@@ -14,7 +14,7 @@
 		_list.push("militia_background");
 		_list.push("militia_background");
 		_list.push("retired_soldier_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;
