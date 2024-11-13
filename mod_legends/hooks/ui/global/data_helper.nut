@@ -235,12 +235,12 @@
 	}
 
 	local convertItemToUIData = o.convertItemToUIData;
-	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null )
+	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null, _filter = 0)
 	{
 		if (_item == null)
 			return null;
 
-		local result = convertItemToUIData(_item, _forceSmallIcon, _owner);
+		local result = convertItemToUIData(_item, _forceSmallIcon, _owner, _filter);
 		if (result == null)
 			return null;
 
