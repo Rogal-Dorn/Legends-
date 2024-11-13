@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/guarded_checkpoint_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/guarded_checkpoint_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -11,7 +11,7 @@
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
+
 		onUpdateDraftList(_list, _gender);
 	}
 
@@ -49,7 +49,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
+	o.getNewResources = function ()
 	{
 		return 0;
 	}

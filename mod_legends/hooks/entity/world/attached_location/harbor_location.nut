@@ -174,8 +174,10 @@
 		return true;
 	}
 
-	o.onUpdateProduce <- function ( _list )
+	local onUpdateProduce = o.onUpdateProduce;
+	o.onUpdateProduce = function ( _list )
 	{
+		onUpdateProduce(_list);
 		_list.push("supplies/legend_fresh_fish_item");
 	}
 
@@ -207,7 +209,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
+	o.getNewResources = function ()
 	{
 		return 2;
 	}

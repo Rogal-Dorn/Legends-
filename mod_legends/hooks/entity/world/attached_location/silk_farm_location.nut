@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/silk_farm_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/silk_farm_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -38,7 +38,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
+	o.getNewResources = function ()
 	{
 		return 2;
 	}

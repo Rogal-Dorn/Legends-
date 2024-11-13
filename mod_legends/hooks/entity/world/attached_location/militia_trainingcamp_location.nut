@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -87,7 +87,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
+	o.getNewResources = function ()
 	{
 		return 0;
 	}

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/gold_mine_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/gold_mine_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -7,8 +7,10 @@
 		this.m.Description = "A deep mine built atop a gold ore vein. This rare metal has a tendency to bring out the worst in people. Contributes gold ingots, miners, caravan hands, sellswords and thieves to the local town";
 	}
 
-	o.onUpdateProduce <- function ( _list )
+	local onUpdateProduce = o.onUpdateProduce;
+	o.onUpdateProduce = function ( _list )
 	{
+		onUpdateProduce(_list);
 		_list.push("trade/legend_gold_dust_item");
 		_list.push("trade/legend_gold_nugget_item");
 	}
@@ -56,7 +58,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
+	o.getNewResources = function ()
 	{
 		return 2;
 	}
