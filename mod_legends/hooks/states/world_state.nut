@@ -113,7 +113,6 @@
 	local onInit = o.onInit;
 	o.onInit = function()
 	{
-
 		this.m.CommanderDied = false;
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);

@@ -142,6 +142,7 @@
 			{
 				continue;
 			}
+			local flip = !this.isAlliedWithPlayer();
 			this.getSprite(a).setHorizontalFlipping(flip);
 		}
 	}

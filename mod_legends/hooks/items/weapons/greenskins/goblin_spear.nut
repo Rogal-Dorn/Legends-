@@ -12,7 +12,7 @@
 
 	o.onEquip = function ()
 	{
-		this.weapon.onEquip();
+		onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_glaive_slash_skill"));
 		local spearwall = this.new("scripts/skills/actives/spearwall");
 		spearwall.m.BaseAttackName = p.getName();

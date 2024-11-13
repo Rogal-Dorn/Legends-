@@ -1,8 +1,8 @@
 ::mods_hookExactClass("skills/perks/perk_steadfast", function(o) {
-	local ws_create = o.create;
+	local create = o.create;
 	o.create = function ()
 	{
-		ws_create();
+		create();
 		this.m.Icon = "ui/perks/steadfast_circle.png";
 		this.m.IconDisabled = "ui/perks/steadfast_circle_bw.png"
 	}

@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Rumors = [
 			"What\'s going on around here you\'re asking? Well, there\'s a fair over in %settlement%. Merchants from far and wide gather to offer their wares.",
 			"Big fairs like the one over in %settlement% atract the worst kinds of people, minstrels and troubadours.",

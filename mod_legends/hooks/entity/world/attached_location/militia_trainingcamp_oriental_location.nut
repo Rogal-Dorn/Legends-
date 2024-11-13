@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -7,8 +7,10 @@
 		this.m.Description = "A large compound of militia barracks. This camp will turn ordinary peasants into somewhat able soldiers that can defend their home and their loved ones. Contributes ammo, conscripts and dervish to the local town.";
 	}
 
-	o.onUpdateProduce <- function ( _list )
+	local onUpdateProduce = o.onUpdateProduce;
+	o.onUpdateProduce = function ( _list )
 	{
+		onUpdateProduce(_list);
 		_list.push("supplies/legend_ammo_small_item");
 	}
 

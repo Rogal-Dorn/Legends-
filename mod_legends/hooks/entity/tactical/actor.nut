@@ -1502,26 +1502,26 @@
 		return damage;
 	}
 
-	local szFn = o.onSerialize;
+	local onSerialize = o.onSerialize;
 	o.onSerialize = function( _out )
 	{
-		szFn(_out);
+		onSerialize(_out);
 		_out.writeString(this.m.RiderID);
 	}
 
-	local dszFn = o.onDeserialize;
+	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function( _in )
 	{
-		dszFn(_in);
+		onDeserialize(_in);
 		this.m.RiderID = _in.readString();
 	}
 
-	local old_onMovementStart = o.onMovementStart;
+	local onMovementStart = o.onMovementStart;
 	o.onMovementStart = function(_tile, _numTiles)
 	{
 		local oldID = ::Const.Movement.HiddenStatusEffectID;
 		::Const.Movement.HiddenStatusEffectID = "effects.lol_nothing"; //necro encouraged this
-		old_onMovementStart(_tile, _numTiles);
+		onMovementStart(_tile, _numTiles);
 		::Const.Movement.HiddenStatusEffectID = oldID;
 	}
 

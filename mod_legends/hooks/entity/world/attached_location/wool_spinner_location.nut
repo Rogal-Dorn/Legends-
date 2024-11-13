@@ -1,17 +1,17 @@
-::mods_hookExactClass("entity/world/attached_location/wool_spinner_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/wool_spinner_location", function(o)
 {
 	local onUpdateProduce = o.onUpdateProduce;
 	o.onUpdateProduce = function ( _list )
 	{
 		onUpdateProduce(_list);
 		_list.push("trade/salt_item");
-}
+	}
 
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
+
 		onUpdateDraftList(_list, _gender);
 	}
 

@@ -5,10 +5,10 @@
 		"_hand_crossbow",
 		"buckler",
 	];
-	local ws_create = o.create;
+	local create = o.create;
 	o.create = function ()
 	{
-		ws_create();
+		create();
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 	}
 
@@ -51,7 +51,7 @@
 				icon = "ui/tooltips/warning.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]You do not have the right equipment to receive Duelist's effect[/color]"
 			});
-	
+
 		return tooltip;
 	}
 

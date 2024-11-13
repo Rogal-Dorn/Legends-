@@ -7,7 +7,7 @@
 	local update = o.update;
 	o.update = function ()
 	{
-		local update = o.update;
+		update();
 		this.manageAIFreeCompanies();
 	}
 

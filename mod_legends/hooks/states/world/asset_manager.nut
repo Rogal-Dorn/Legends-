@@ -1,4 +1,4 @@
-::mods_hookNewObject("states/world/asset_manager", function(o)
+::mods_hookNewObjectOnce("states/world/asset_manager", function(o)
 {
 	o.m.FounderNames <- [];
 	o.m.BusinessReputationMax <- 0;

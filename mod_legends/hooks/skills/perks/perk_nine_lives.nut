@@ -4,10 +4,10 @@
 	o.m.RemoveDamageOverTime <- true;
 	o.m.DamageOverTimeSkills <- [];
 
-	local ws_create = o.create;
+	local create = o.create;
 	o.create = function ()
 	{
-		ws_create();
+		create();
 		this.m.IconMini = "perk_07_mini";
 		this.m.Overlay = "perk_07";
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
