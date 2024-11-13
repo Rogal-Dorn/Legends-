@@ -15,7 +15,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		result = getTooltip();
+		local result = getTooltip();
 		if (this.isRuned())
 		{
 			result.push({
