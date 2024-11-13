@@ -1,7 +1,5 @@
-::mods_hookBaseClass("entity/world/attached_location", function(o)
+::mods_hookExactClass("entity/world/attached_location", function(o)
 {
-	while(!("ID" in o.m)) o=o[o.SuperName];
-
 	o.m.IsNew <- false;
 	o.m.IsAbandoned <- false;
 
