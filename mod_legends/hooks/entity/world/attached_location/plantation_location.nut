@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/plantation_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/plantation_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -12,7 +12,7 @@
 	{
 		onUpdateProduce(_list);
 		_list.push("supplies/legend_medicine_small_item");
-}
+	}
 
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )

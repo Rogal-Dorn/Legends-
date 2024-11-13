@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/player_character_trait", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -13,7 +13,6 @@
 		]);
 	}
 
-	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
 		return [

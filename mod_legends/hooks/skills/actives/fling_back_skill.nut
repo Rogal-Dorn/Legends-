@@ -10,6 +10,6 @@
 			return false;
 		}
 
-		onPerformAttack( _tag ); 
+		return onPerformAttack( _tag );
 	}
 });

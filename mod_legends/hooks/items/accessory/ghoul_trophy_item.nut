@@ -9,7 +9,7 @@
 			icon = "ui/icons/bravery.png",
 			text = "Reduces the Resolve of any opponent engaged in melee by [color=" + this.Const.UI.Color.NegativeValue + "]-3[/color]"
 		});
-		return false;
+		return result;
 	}
 
 	o.onUpdateProperties = function ( _properties )

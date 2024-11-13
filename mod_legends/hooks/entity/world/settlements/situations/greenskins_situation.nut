@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "Greenskins are terrorizing the surrounding lands, and many lives have been lost as orcs or goblins continue to raid outlying farms and raze caravans. Supplies are beginning to run low and people become desperate. Deserters fleeing the carnage are seeking refuge, while mercenaries claiming to be able to protect the locals are seeking coin.";
 		this.m.Rumors = [
 			"I heard rumors that vile greenskins are marauding around %settlement%! Is it true? I hope they don\'t make their way over here...",
@@ -12,18 +13,19 @@
 		];
 	}
 
+	local onAdded = o.onAdded;
 	o.onAdded = function ( _settlement )
 	{
-		_settlement.resetRoster(true);
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
-		
+
 		if (::Math.rand(1,10)==1)
 		{
 			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));
 		}
+		onAdded(_settlement);
 	}
 
 	o.onResolved <- function ( _settlement )

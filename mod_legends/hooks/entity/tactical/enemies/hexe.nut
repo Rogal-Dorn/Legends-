@@ -4,6 +4,7 @@
 	o.onDeath = function ( _killer, _skill, _tile, _fatalityType )
 	{
 		onDeath( _killer, _skill, _tile, _fatalityType );
+
 		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			if (this.Math.rand(1, 100) <= 1)
@@ -47,13 +48,12 @@
 
 			}
 		}
-
-		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}
 
 	local onInit = o.onInit;
 	o.onInit = function()
 	{
+		onInit();
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_wither_skill"));
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

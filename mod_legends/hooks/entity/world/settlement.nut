@@ -706,7 +706,7 @@
 	o.addSituation = function ( _s, _validForDays = 0 )
 	{
 		_s.m.IsSouthern = this.isSouthern();
-		return addSituation( _s, _validForDays = 0 );
+		return addSituation( _s, _validForDays);
 	}
 
 	o.resolveSituationByInstance <- function ( _instanceID )

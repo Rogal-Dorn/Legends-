@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/night_owl_trait", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -7,7 +7,6 @@
 		this.m.Description = "Some characters adapt to low light conditions better than others, and this individual is especially good at it. Halves the usual night penalties";
 	}
 
-	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
 		return [
