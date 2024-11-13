@@ -7,10 +7,9 @@
 		this.m.Description = "A deep mine built atop a gold ore vein. This rare metal has a tendency to bring out the worst in people. Contributes gold ingots, miners, caravan hands, sellswords and thieves to the local town";
 	}
 
-	local onUpdateProduce = o.onUpdateProduce;
-	o.onUpdateProduce = function ( _list )
+	o.onUpdateProduce <- function ( _list )
 	{
-		onUpdateProduce(_list);
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/legend_gold_dust_item");
 		_list.push("trade/legend_gold_nugget_item");
 	}
@@ -58,7 +57,7 @@
 		}
 	}
 
-	o.getNewResources = function ()
+	o.getNewResources <- function ()
 	{
 		return 2;
 	}

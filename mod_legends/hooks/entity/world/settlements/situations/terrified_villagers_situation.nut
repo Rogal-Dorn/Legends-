@@ -12,14 +12,14 @@
 		];
 	}
 
-	local onAdded = o.onAdded;
-	o.onAdded = function ( _settlement )
+	o.onAdded <- function ( _settlement )
 	{
+		_settlement.resetRoster(true);
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
-		onAdded( _settlement );
+		_settlement.resetRoster(true);
 	}
 
 	o.onResolved <- function ( _settlement )
