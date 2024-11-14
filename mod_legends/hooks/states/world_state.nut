@@ -535,20 +535,10 @@
 		this.setupWeather();
 		this.Math.seedRandom(this.Time.getRealTime());
 
-		if (this.Const.DLC.Unhold)
-		{
-			this.World.Flags.set("IsUnholdCampaign", true);
-		}
+		this.World.Flags.set("IsUnholdCampaign", true);
+		this.World.Flags.set("IsWildmenCampaign", true);
+		this.World.Flags.set("IsDesertCampaign", true);
 
-		if (this.Const.DLC.Wildmen)
-		{
-			this.World.Flags.set("IsWildmenCampaign", true);
-		}
-
-		if (this.Const.DLC.Desert)
-		{
-			this.World.Flags.set("IsDesertCampaign", true);
-		}
 
 		this.World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("DebugMap").getValue());
 		this.World.Crafting.resetAllBlueprints();
@@ -1074,7 +1064,7 @@
 				{
 					if (t.Script.len() != "")
 					{
-						if (t.Variant != 0 && this.Const.DLC.Wildmen)
+						if (t.Variant != 0)
 						{
 							champions.push(t);
 						}
@@ -1095,7 +1085,7 @@
 					hasOpponents = true;
 				}
 
-				if (t.Variant != 0 && this.Const.DLC.Wildmen)
+				if (t.Variant != 0)
 				{
 					champions.push(t);
 				}

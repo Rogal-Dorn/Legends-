@@ -335,44 +335,6 @@
 		// }
 	}
 
-	o.collectGarbage = function (_slotType = null)
-	{
-		if (this.m.IsUpdating) return;
-		this.m.IsUpdating = true;
-
-		if (_slotType != null)
-		{
-			this.collectGarbageSlot(this.m.Items[_slotType]);
-		}
-		else
-		{
-			foreach (slot in this.m.Items)
-			{
-				this.collectGarbageSlot(slot);
-			}
-		}
-
-		this.m.IsUpdating = false;
-	}
-
-	o.collectGarbageSlot <- function (_slot)
-	{
-		foreach (item in _slot)
-		{
-			if (item != null && item != -1 && item.isGarbage())
-			{
-				if (item.isEquipped())
-				{
-					this.unequip(item);
-				}
-				else
-				{
-					this.removeFromBag(item);
-				}
-			}
-		}
-	}
-
 	o.doOnFunction <- function (_function, _argsArray = null, _slotType = null)
 	{
 		this.m.IsUpdating = true;
@@ -429,31 +391,6 @@
 	{
 		this.doOnFunction("onShieldHit", [_attacker, _skill], this.Const.ItemSlot.Offhand);
 		this.collectGarbage(this.Const.ItemSlot.Offhand);
-	}
-
-	o.onMovementFinished = function ()
-	{
-		this.doOnFunction("onMovementFinished");
-	}
-
-	o.onCombatStarted = function ()
-	{
-		this.doOnFunction("onCombatStarted");
-	}
-
-	o.onCombatFinished = function ()
-	{
-		this.doOnFunction("onCombatFinished");
-	}
-
-	o.onActorDied = function ( _onTile )
-	{
-		this.doOnFunction("onActorDied", [_onTile]);
-	}
-
-	o.onFactionChanged = function ( _faction )
-	{
-		this.doOnFunction("onFactionChanged", [_faction]);
 	}
 
 	o.onSerialize = function ( _out )
