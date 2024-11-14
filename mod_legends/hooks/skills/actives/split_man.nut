@@ -2,14 +2,14 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.push({
+		local tooltip = this.getDefaultTooltip();
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Hits both head and body for additional damage"
 		});
-		return ret;
+		return tooltip;
 	}
 
 	o.onUse = function ( _user, _targetTile )

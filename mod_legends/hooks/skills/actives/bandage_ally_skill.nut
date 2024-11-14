@@ -9,7 +9,7 @@
 
 	o.getTooltip = function()
 	{
-		local ret = [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
@@ -41,7 +41,7 @@
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
-			ret.push({
+			tooltip.push({
 				id = 5,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -49,7 +49,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.isUsable = function()

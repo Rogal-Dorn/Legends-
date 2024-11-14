@@ -3,7 +3,7 @@
 	o.getTooltip = function ()
 	{
 		local bravery = this.Math.max(0, this.Math.floor(this.getContainer().getActor().getCurrentProperties().getBravery() * 0.4));
-		local ret = [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
@@ -41,7 +41,7 @@
 
 		if (this.getContainer().hasSkill("effects.rallied"))
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -49,7 +49,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onUse = function ( _user, _targetTile )

@@ -5,8 +5,8 @@
 	
 	o.getTooltip = function ()
 	{
-		local ret = this.getRangedTooltip(this.getDefaultTooltip());
-		ret.push({
+		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
+		tooltip.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/special.png",
@@ -17,7 +17,7 @@
 
 		if (ammo > 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
@@ -26,7 +26,7 @@
 		}
 		else
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -36,7 +36,7 @@
 
 		if (!this.getItem().isLoaded())
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -46,7 +46,7 @@
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -57,7 +57,7 @@
 		if (this.getContainer().hasSkill("perk.legend_piercing_shot"))
 		{
 			local s = this.getContainer().getSkillByID("perk.legend_piercing_shot");
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/tooltips/positive.png",
@@ -65,6 +65,6 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 });

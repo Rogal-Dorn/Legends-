@@ -2,9 +2,9 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
+		local tooltip = this.getDefaultTooltip();
 
-		ret.push(
+		tooltip.push(
 			{
 				id = 6,
 				type = "text",
@@ -13,7 +13,7 @@
 			}
 		);
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )

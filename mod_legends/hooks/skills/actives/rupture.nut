@@ -2,8 +2,8 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
+		local tooltip = this.getDefaultTooltip();
+		tooltip.extend([
 			{
 				id = 7,
 				type = "text",
@@ -17,7 +17,7 @@
 				text = "Inflicts additional [color=" + this.Const.UI.Color.DamageValue + "]" + this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms ? 10 : 5 + "[/color] bleeding damage over time if not stopped by armor"
 			}
 		]);
-		ret.push({
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/hitchance.png",
@@ -26,7 +26,7 @@
 
 		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInPolearms)
 		{
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
@@ -34,7 +34,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onUse = function ( _user, _targetTile )

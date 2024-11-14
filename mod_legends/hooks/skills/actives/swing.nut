@@ -2,8 +2,8 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.push({
+		local tooltip = this.getDefaultTooltip();
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
@@ -12,7 +12,7 @@
 
 		if (!this.getContainer().getActor().getCurrentProperties().IsSpecializedInGreatSwords)
 		{
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
@@ -21,7 +21,7 @@
 		}
 		else
 		{
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
@@ -29,7 +29,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAfterUpdate = function ( _properties )
