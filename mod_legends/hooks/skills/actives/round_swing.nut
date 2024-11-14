@@ -2,7 +2,7 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
+		local tooltip = this.getDefaultTooltip();
 		local hitchanceBonus = this.m.HitChanceBonus;
 
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInAxes)
@@ -15,7 +15,7 @@
 
 		if (hitchanceBonus != 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 7,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
@@ -23,14 +23,14 @@
 			});
 		}
 
-		ret.push({
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Can hit up to 6 targets"
 		});
 
-		return ret;
+		return tooltip;
 	}
 
 });

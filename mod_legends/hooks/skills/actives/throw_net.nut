@@ -11,15 +11,15 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local ret = getTooltip();
-		ret.push({
+		local tooltip = getTooltip();
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Some targets can never be caught or ensnared"
 		});
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAfterUpdate = function ( _properties )

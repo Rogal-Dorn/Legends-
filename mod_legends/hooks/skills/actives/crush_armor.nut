@@ -13,11 +13,11 @@
 		local f = p.IsSpecializedInHammers ? 2.0 : 1.5;
 		local damage_armor_min = this.Math.floor(p.DamageRegularMin * p.DamageArmorMult * f * p.DamageTotalMult * p.MeleeDamageMult);
 		local damage_armor_max = this.Math.floor(p.DamageRegularMax * p.DamageArmorMult * f * p.DamageTotalMult * p.MeleeDamageMult);
-		local ret = this.getDefaultUtilityTooltip();
+		local tooltip = this.getDefaultUtilityTooltip();
 
 		if (damage_armor_max > 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 5,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
@@ -25,12 +25,12 @@
 			});
 		}
 
-		ret.push({
+		tooltip.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + 10 + "[/color] damage to hitpoints that ignores armor"
 		});
-		return ret;
+		return tooltip;
 	}
 });

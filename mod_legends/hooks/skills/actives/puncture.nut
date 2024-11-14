@@ -2,8 +2,8 @@
 {
 		o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
+		local tooltip = this.getDefaultTooltip();
+		tooltip.extend([
 			{
 				id = 7,
 				type = "text",
@@ -17,7 +17,7 @@
 				text = "Completely ignores armor"
 			}
 		]);
-		return ret;
+		return tooltip;
 	}
 
 	o.canDoubleGrip = function ()

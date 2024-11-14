@@ -3,7 +3,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local ret = getTooltip();
+		local tooltip = getTooltip();
 		
 		if (this.getContainer().getActor().getSkills().hasSkill("perk.shield_bash"))
 		{
@@ -24,14 +24,14 @@
 				damagemin = this.Math.floor(damagemin * mult);
 				damagemax = this.Math.floor(damagemax * mult);
 			}
-			ret.push({
+			tooltip.push({
 				id = 4,
 				type = "text",
 				icon = "ui/icons/regular_damage.png",
 				text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damagemin + "[/color] - [color=" + this.Const.UI.Color.DamageValue + "]" + damagemax + "[/color] damage to hitpoints"
 			});
 
-			ret.push({
+			tooltip.push({
 				id = 5,
 				type = "text",
 				icon = "ui/icons/armor_damage.png",
@@ -39,7 +39,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onVerifyTarget = function ( _originTile, _targetTile )

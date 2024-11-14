@@ -11,7 +11,7 @@
 
 	o.getTooltip = function ()
 	{
-		local ret = [
+		return = [
 			{
 				id = 1,
 				type = "title",
@@ -34,7 +34,6 @@
 				text = "Gain a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to stun any opponent missing this character with a melee attack (resistances and immunities still apply)."
 			}
 		];
-		return ret;
 	}
 
 	o.onUse = function ( _user, _targetTile )

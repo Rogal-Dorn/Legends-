@@ -9,7 +9,7 @@
 
 	o.getTooltip <- function ()
 	{
-		local ret = [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
@@ -28,7 +28,7 @@
 		];
 		if (this.m.Cooldown != 0)
 		{
-			ret.extend([
+			tooltip.extend([
 				{
 					id = 6,
 					type = "text",
@@ -36,6 +36,6 @@
 				}
 			]);
 		}
-		return ret;
+		return tooltip;
 	}
 });

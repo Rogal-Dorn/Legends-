@@ -3,10 +3,10 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		local ret = getTooltip();
+		local tooltip = getTooltip();
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
 		{
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/hitchance.png",
@@ -14,7 +14,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	local onAnySkillUsed = o.onAnySkillUsed;

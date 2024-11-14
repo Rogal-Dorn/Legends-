@@ -18,13 +18,13 @@
 
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
+		local tooltip = this.getDefaultTooltip();
 		local actor = this.getContainer().getActor();
 		local fatigueMultiplier = 1;
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists) 
 			fatigueMultiplier = 2;
 		fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + fatigueMultiplier) * this.Const.Combat.FatigueReceivedPerHit;
-		ret.push({
+		tooltip.push({
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
@@ -35,17 +35,17 @@
 		{
 			if (actor.getSkills().hasSkill(bg))
 			{
-				ret.push({
-				id = 7,
-				type = "text",
-				icon = "ui/icons/regular_damage.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage from background"
-			});
+				tooltip.push({
+					id = 7,
+					type = "text",
+					icon = "ui/icons/regular_damage.png",
+					text = "[color=" + this.Const.UI.Color.PositiveValue + "]+50%[/color] damage from background"
+				});
 				break;
 			}
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.isUsable = function () // If ambidextrous & offhand free, or mainhand free, or disarmed

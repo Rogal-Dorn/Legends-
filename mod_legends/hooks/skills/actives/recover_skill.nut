@@ -7,7 +7,7 @@
 	{
 		local actor = this.getContainer().getActor();
 		local fatReduc = actor.getActionPoints() * 3.0;
-		local ret = [
+		return = [
 			{
 				id = 1,
 				type = "title",
@@ -30,7 +30,6 @@
 				text = "Current Fatigue is reduced by [color=" + this.Const.UI.Color.PositiveValue + "]" + fatReduc + "%[/color] of maximum fatigue"
 			}
 		];
-		return ret;
 	}
 	
 	o.onTurnStart <- function ()
