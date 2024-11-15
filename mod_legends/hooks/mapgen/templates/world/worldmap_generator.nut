@@ -33,8 +33,7 @@
 
 				if (tile.Type == this.Const.World.TerrainType.Desert || tile.Type == this.Const.World.TerrainType.Oasis || tile.TacticalType == this.Const.World.TerrainTacticalType.DesertHills)
 				{
-					desert = ++desert;
-					desert = desert;
+					desert++;
 				}
 			}
 		}
@@ -42,6 +41,7 @@
 		this.logInfo("Desert tiles " + desert + " >= " + this.Const.World.Settings.MinDesertTiles);
 		return desert >= this.Const.World.Settings.MinDesertTiles;
 	};
+
 	o.refineSettlements = function ( _rect )
 	{
 		local _properties = this.World.State.m.CampaignSettings;
@@ -181,7 +181,7 @@
 			{
 				local hasConnection = false;
 
-				for( local i = settlementTiles.len() - 1; i >= 0; i = i )
+				for( local i = settlementTiles.len() - 1; i >= 0; i--)
 				{
 					local settlement = settlementTiles[i];
 					local navSettings = this.World.getNavigator().createSettings();
@@ -193,8 +193,6 @@
 						hasConnection = true;
 						break;
 					}
-
-					i--;
 				}
 
 				if (!hasConnection)
@@ -264,6 +262,7 @@
 		this.logInfo("Created " + settlementTiles.len() + " settlements.");
 		return settlementTiles.len() >= 19;
 	};
+
 	o.guaranteeAllBuildingsInSettlements = function ()
 	{
 		local settlements = this.World.EntityManager.getSettlements();
