@@ -7,7 +7,7 @@
 	{
 		local actor = this.getContainer().getActor();
 		local fatReduc = actor.getActionPoints() * 3.0;
-		return = [
+		return [
 			{
 				id = 1,
 				type = "title",
@@ -31,24 +31,24 @@
 			}
 		];
 	}
-	
+
 	o.onTurnStart <- function ()
 	{
 		this.m.CanRecover = true;
 		this.m.AP = 0;
 	}
-	
+
 	o.isUsable <- function ()
 	{
 		return this.skill.isUsable() && this.m.CanRecover;
 	}
-	
+
 	o.getActionPointCost <- function ()
 	{
 		local actor = this.getContainer().getActor();
 		return actor.getActionPoints();
 	}
-	
+
 	o.onBeforeUse <- function ( _user, _targetTile )
 	{
 		this.m.AP = _user.getActionPoints();
@@ -60,7 +60,7 @@
 		local fatMult = this.m.AP * 0.055;
 
 		_user.setFatigue(_user.getFatigue() - fatMult * _user.getFatigueMax() );
-		
+
 		if (!_user.isHiddenToPlayer())
 		{
 			_user.playSound(this.Const.Sound.ActorEvent.Fatigue, this.Const.Sound.Volume.Actor * _user.getSoundVolume(this.Const.Sound.ActorEvent.Fatigue));

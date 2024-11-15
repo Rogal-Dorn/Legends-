@@ -739,7 +739,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.lookout",
-	Script = "scripts/skills/perks/perk_lookout",
+	Script = "scripts/skills/perks/perk_legend_lookout",
 	Name = this.Const.Strings.PerkName.LegendLookout,
 	Tooltip = this.Const.Strings.PerkDescription.LegendLookout,
 	Icon = "ui/perks/lookout_circle.png",
@@ -793,7 +793,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.close_combat_archer",
-	Script = "scripts/skills/perks/perk_close_combat_archer",
+	Script = "scripts/skills/perks/perk_legend_close_combat_archer",
 	Name = this.Const.Strings.PerkName.LegendCloseCombatArcher,
 	Tooltip = this.Const.Strings.PerkDescription.LegendCloseCombatArcher,
 	Icon = "ui/perks/closecombat56.png",

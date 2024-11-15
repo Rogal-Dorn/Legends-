@@ -369,6 +369,48 @@
 		}
 	}
 
+	o.collectGarbage = function ( _slotType = null )
+	{
+		if (this.m.IsUpdating)
+		{
+			return;
+		}
+
+		this.m.IsUpdating = true;
+
+		if (_slotType != null)
+		{
+			this.collectGarbageSlot(this.m.Items[_slotType]);
+		}
+		else
+		{
+			foreach( slot in this.m.Items )
+			{
+				this.collectGarbageSlot(slot);
+			}
+		}
+
+		this.m.IsUpdating = false;
+	}
+
+	o.collectGarbageSlot <- function ( _slot )
+	{
+		foreach( item in _slot )
+		{
+			if (item != null && item != -1 && item.isGarbage())
+			{
+				if (item.isEquipped())
+				{
+					this.unequip(item);
+				}
+				else
+				{
+					this.removeFromBag(item);
+				}
+			}
+		}
+	}
+
 	o.onBeforeDamageReceived = function (_attacker, _skill, _hitInfo, _properties)
 	{
 		this.doOnFunction("onBeforeDamageReceived", [_attacker, _skill, _hitInfo, _properties]);

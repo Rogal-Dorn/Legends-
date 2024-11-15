@@ -1918,6 +1918,17 @@
 		return false;
 	}
 
+	o.getBuildings <- function ()
+	{
+		local ret = [];
+		foreach (b in this.m.Buildings) {
+			if (b != null)
+				ret.push(b);
+		}
+		return ret;
+	}
+
+
 	o.getBaseResourceLevel  <- function ()
 	{
 		local minResources = 50;
