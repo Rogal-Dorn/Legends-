@@ -1,4 +1,4 @@
-::mods_hookExactClass("skills/racial/serpent_racial", function(o)
+::mods_hookExactClass("skills/racial/skeleton_racial", function(o)
 {
 	o.onBeforeDamageReceived = function ( _attacker, _skill, _hitInfo, _properties )
 	{
@@ -7,12 +7,12 @@
 			case this.Const.Damage.DamageType.Piercing:
 				if (_skill == null)
 				{
-					_properties.DamageReceivedRegularMult *= 0.2; 
+					_properties.DamageReceivedRegularMult *= 0.2;
 				}
 				else
-				{					
+				{
 					if (_skill.isRanged())
-					{				
+					{
 						local weapon = _skill.getItem();
 						if (weapon != null && weapon.isItemType(this.Const.Items.ItemType.Weapon))
 						{

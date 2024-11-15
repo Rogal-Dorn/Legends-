@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/escort_caravan_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/escort_caravan_contract", function(o)
 {
 	o.onHomeSet <- function ()
 	{
@@ -329,7 +329,7 @@
 					option.Text = "Those should be worth a pretty crown. (Decrease Moral Reputation)"
 				}
 			}
-			if (is.ID == "Prisoner2")
+			if (s.ID == "Prisoner2")
 			{
 				foreach (option in s.Options)
 				{
@@ -490,7 +490,7 @@
 		}
 
 		party.getLoot().Money = this.Math.rand(0, 100);
-		
+
 		local c = party.getController();
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(false);
 		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);

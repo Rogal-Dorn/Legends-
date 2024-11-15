@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("items/item", function ( o )
 {
-	while(!("setSold" in o)) o = o[o.SuperName];
+	while(!("ItemType" in o.m)) o=o[o.SuperName];
 
 	// this is part of the loadBuyback mod
 	o.setSold = function (sold)
@@ -38,6 +38,16 @@
 	o.m.Type <- -1;
 	o.m.OriginSettlementID <- 0; // the Settlement ID where the item was originally produced
 	o.m.TradeHistorySettlementIDs <- []; // an array of Settlement IDs to track the item's trade history
+
+	o.isAllowedInBag = function ( _actor = null )
+	{
+		if (!this.m.IsAllowedInBag || this.m.SlotType == this.Const.ItemSlot.Body || this.m.SlotType == this.Const.ItemSlot.Head || this.m.SlotType == this.Const.ItemSlot.None)
+		{
+			return false;
+		}
+
+		return true;
+	}
 
 	o.getOldInstanceID <- function ()
 	{
@@ -353,139 +363,139 @@
 			case 1:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 2:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 3:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(2, 6)
+					bonus = this.Math.rand(2, 6);
 				}
 				else
 				{
-					bonus = this.Math.rand(2, 4)
+					bonus = this.Math.rand(2, 4);
 				}
 				break;
 
 			case 4:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(1, 3)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(1, 3);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(1, 2)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(1, 2);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				break;
 
 			case 5:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(1, 3)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(1, 3);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(1, 2)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(1, 2);
 				}
 				break;
 
 			case 6:
 				if (_bonus)
 				{
-					bonus2 = this.Math.rand(3, 9)
-					bonus = this.Math.rand(1, 3)
+					bonus2 = this.Math.rand(3, 9);
+					bonus = this.Math.rand(1, 3);
 				}
 				else
 				{
-					bonus2 = this.Math.rand(3, 6)
-					bonus = this.Math.rand(1, 2)
+					bonus2 = this.Math.rand(3, 6);
+					bonus = this.Math.rand(1, 2);
 				}
 				break;
 
 			case 11:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(0, 2)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(0, 2);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(0, 1);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 12:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(1, 5)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(1, 5);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(1, 3)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(1, 3);
 				}
 				break;
 
 			case 13:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 21:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(0, 3)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(0, 3);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(0, 1)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(0, 1);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 22:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
@@ -495,26 +505,26 @@
 			case 31:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 6)
-					bonus2 = this.Math.rand(3, 6)
+					bonus = this.Math.rand(3, 6);
+					bonus2 = this.Math.rand(3, 6);
 				}
 				break;
 
 			case 32:
 				if (_bonus)
 				{
-					bonus = this.Math.rand(3, 12)
-					bonus2 = this.Math.rand(3, 12)
+					bonus = this.Math.rand(3, 12);
+					bonus2 = this.Math.rand(3, 12);
 				}
 				else
 				{
-					bonus = this.Math.rand(3, 9)
-					bonus2 = this.Math.rand(3, 9)
+					bonus = this.Math.rand(3, 9);
+					bonus2 = this.Math.rand(3, 9);
 				}
 				break;
 
@@ -792,7 +802,7 @@
 	{
 		if (_id != this.getOriginSettlementID() && (this.m.TradeHistorySettlementIDs.len() < 1 || _id != this.m.TradeHistorySettlementIDs[this.m.TradeHistorySettlementIDs.len()-1]))
 		{
-			this.m.TradeHistorySettlementIDs.push(_id);	
+			this.m.TradeHistorySettlementIDs.push(_id);
 		}
 	}
 
@@ -883,7 +893,7 @@
 			sellPrice = getBuyPrice();
 			this.m.IsBought = true;
 		}
-		else 
+		else
 		{
 			sellPrice =  getSellPrice();
 		}
@@ -900,13 +910,13 @@
 	o.getBuyPrice <- function ()
 	{
 		if (this.isSold())
-		{				
+		{
 			this.m.IsSold = false;
 			local sellPrice = this.getSellPrice();
 			this.m.IsSold = true;
 			return sellPrice;
 		}
-		else 
+		else
 		{
 			local originalTime;
 			if (::mods_isClass(this, "legend_usable_food") && this.getSpoilInDays() > this.m.GoodForDays)

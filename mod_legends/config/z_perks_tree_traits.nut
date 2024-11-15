@@ -496,7 +496,7 @@ if (!("Perks" in ::Const))
 		],
 		[],
 		[
-			::Const.Perks.PerkDefs.PerfectFocus
+			::Const.Perks.PerkDefs.LegendPerfectFocus
 		]
 	]
 };
@@ -675,7 +675,7 @@ if (!("Perks" in ::Const))
 			::Const.Perks.PerkDefs.BagsAndBelts,
 			::Const.Perks.PerkDefs.LegendPacifist
 		],
-		[  
+		[
 			::Const.Perks.PerkDefs.LegendHelpful
 		],
 		[

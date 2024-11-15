@@ -282,10 +282,12 @@
 	LegendCaravanPolearm = 172,
 	NobleEliteFootman = 173,
 	NoblePollax = 174,
-	NobleSureshot = 175
-	
+	NobleSureshot = 175,
+	LegendBasiliskSentry = 176,
+
+
 		/**
-	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions. 
+	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions.
 	 * Not sure if it's still necessary but we can leave it for now.
 	 */
 	function convertOldToNew( _id )
@@ -511,8 +513,8 @@
 		case this.Const.EntityType.LegendSlinger:
 		case this.Const.EntityType.LegendFencer:
 		case this.Const.EntityType.LegendNobleGuard:
-		case this.Const.EntityType.LegendManAtArms:	
-		case this.Const.EntityType.NobleEliteFootman:	
+		case this.Const.EntityType.LegendManAtArms:
+		case this.Const.EntityType.NobleEliteFootman:
 			return this.Const.FactionType.NobleHouse;
 
 		case this.Const.EntityType.BountyHunter:
@@ -640,7 +642,7 @@
 		case this.Const.EntityType.SatoManhunter:
 		case this.Const.EntityType.SatoManhunterVeteran:
 		case this.Const.EntityType.SatoManhunterRanged:
-		case this.Const.EntityType.SatoManhunterVeteranRanged:	
+		case this.Const.EntityType.SatoManhunterVeteranRanged:
 			return this.Const.FactionType.OrientalCityState;
 
 		case this.Const.EntityType.NomadCutthroat:
@@ -722,12 +724,12 @@
 	"mercenary_orientation",//Infantry
 	"mercenary_orientation",//Leaders
 	"mercenary_orientation", //Managers
-	
+
 	"oathbringer_orientation",
-	
+
 	"nomad_02",
 	"nomad_05",
-	
+
 	"footman_veteran_orientation", //LegendNobleGuard
 	"footman_veteran_orientation", //LegendManAtArms
 	"basilisk_drone_orientation",

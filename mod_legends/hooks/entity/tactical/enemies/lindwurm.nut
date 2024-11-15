@@ -11,13 +11,7 @@
 
 			for( local i = 0; i < n; i = ++i )
 			{
-				local chance = 1;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					chance = 10;
-				}
-
-				if (this.Math.rand(1, 100) <= chance)
+				if (this.Math.rand(1, 100) <= 1)
 				{
 					local rune;
 					local variant = this.Math.rand(21, 22);

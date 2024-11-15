@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "Children have been disappearing from this settlement. Distrust and fear rule the streets and are slowly poisoning the community. The Witch Hunters have come to investigate.";
 		this.m.Rumors = [
 			"Rumor is that children disappear from their cribs in %settlement% into thin air. Imagine the parents\' terror...",
@@ -19,7 +20,7 @@
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
-		
+
 		if (::Math.rand(1,10)==1)
 		{
 			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));

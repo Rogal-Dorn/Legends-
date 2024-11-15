@@ -4,11 +4,10 @@
 	o.onUpdate = function ( _faction )
 	{
 		onUpdate(_faction);
-		if (this.m.Settlement.numShips() > 1)
-		{
-			this.m.Score = 0;
+		if (this.m.Settlement == null)
 			return;
-		}
+		if (this.m.Settlement.numShips() > 1)
+			this.m.Score = 0;
 	}
 
 	o.onLegendExecute <- function ( _faction )
@@ -119,16 +118,16 @@
 	local onExecute = o.onExecute;
 	o.onExecute = function ( _faction )
 	{
+		//TODO, uncomment when send_ship_action is done
+//		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+//		{
+//			local success = this.onLegendExecute( _faction);
+//			if (success != false)
+//			{
+//				return success; // todo why returning bool, when onExecute does not return anything? - chopeks
+//			}
+//		}
 
-		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-		{
-			local success = this.onLegendExecute( _faction);
-			if (success != false)
-			{
-				return success;
-			}
-		}
-
-		onUpdate(_faction);
+		onExecute(_faction);
 	}
 });

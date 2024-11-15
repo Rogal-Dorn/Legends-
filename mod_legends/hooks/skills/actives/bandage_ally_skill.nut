@@ -4,12 +4,12 @@
 	o.create = function()
 	{
 		create();
-		 this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee, unless the character using this skill has Bandage Mastery.";
+		this.m.Description = "Save yourself or another character from bleeding to death by applying pressure and provisional bandaging to any such wound. Does not heal hitpoints. Neither the character using this skill nor the patient may be engaged in melee, unless the character using this skill has Bandage Mastery.";
 	}
 
 	o.getTooltip = function()
 	{
-		local ret = [
+		local tooltip = [
 			{
 				id = 1,
 				type = "title",
@@ -41,7 +41,7 @@
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
-			ret.push({
+			tooltip.push({
 				id = 5,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -49,7 +49,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.isUsable = function()

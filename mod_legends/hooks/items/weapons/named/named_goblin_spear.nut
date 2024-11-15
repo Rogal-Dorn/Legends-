@@ -13,7 +13,7 @@
 	local onEquip = o.onEquip;
 	o.onEquip = function ()
 	{
-		this.named_weapon.onEquip();
+		onEquip();
 		local p = this.new("scripts/skills/actives/legend_glaive_slash_skill");
 		this.addSkill(p);
 		local spearwall = this.new("scripts/skills/actives/spearwall");

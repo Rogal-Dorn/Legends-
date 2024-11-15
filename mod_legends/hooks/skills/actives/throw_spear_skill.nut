@@ -2,13 +2,13 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
+		local tooltip = this.getDefaultTooltip();
 
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
@@ -17,7 +17,7 @@
 		}
 		else
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -26,13 +26,13 @@
 		}
 
 		local damage = this.getContainer().getActor().getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).getShieldDamage();
-		ret.push({
+		tooltip.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/shield_damage.png",
 			text = "Inflicts [color=" + this.Const.UI.Color.DamageValue + "]" + damage + "[/color] damage to shields"
 		});
-		ret.extend([
+		tooltip.extend([
 			{
 				id = 6,
 				type = "text",
@@ -49,7 +49,7 @@
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -57,7 +57,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.isUsable = function ()

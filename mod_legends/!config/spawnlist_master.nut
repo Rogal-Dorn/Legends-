@@ -66,7 +66,7 @@
 	Row = -1,
 	Script = "scripts/entity/tactical/enemies/schrat"
 };
-	
+
 ::Const.World.Spawn.Troops.LegendCaravanPolearm <- {
 	ID = this.Const.EntityType.LegendCaravanPolearm,
 	Variant = 0,
@@ -103,7 +103,7 @@
 	Row = 0,
 	Script = "scripts/entity/tactical/enemies/legend_bandit_veteran"
 };
-	
+
 ::Const.World.Spawn.Troops.BanditVeteran.BanditWarlord <- {
 	ID = this.Const.EntityType.BanditWarlord,
 	Variant = 1,
@@ -757,6 +757,15 @@
 	Cost = 20,
 	Row = 0,
 	Script = "scripts/entity/tactical/enemies/legend_basilisk_drone_low"
+};
+
+::Const.World.Spawn.Troops.LegendBasiliskSentry <- {
+	ID = this.Const.EntityType.LegendBasiliskSentry,
+	Variant = 0,
+	Strength = 20,
+	Cost = 35,
+	Row = 2,
+	Script = "scripts/entity/tactical/enemies/legend_basilisk_sentry"
 };
 
 ::Const.World.Spawn.CaravanFort <-

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/gem_mine_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/gem_mine_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -17,7 +17,7 @@
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

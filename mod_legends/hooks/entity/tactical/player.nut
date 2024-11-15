@@ -2128,12 +2128,13 @@
 	}
 
 
+	// todo delete it - chopeks
 	o.TherianthropeInfection <- function (_killer)
 	{
-		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
+//		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//		{
 			return;
-		}
+//		}
 
 		if (_killer.getSkills().hasSkill("injury.legend_aperthropy") && !this.getSkills().hasSkill("injury.legend_aperthropy"))
 		{
@@ -2175,13 +2176,14 @@
 		}
 	}
 
+	// todo delete it - chopeks
 	o.TherianthropeInfectionRandom <- function ()
 	{
 
-		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
+//		if (!this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//		{
 			return;
-		}
+//		}
 
 		local r = this.Math.rand(1,99);
 

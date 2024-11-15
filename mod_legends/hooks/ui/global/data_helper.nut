@@ -1,6 +1,6 @@
-::mods_hookNewObject("ui/global/data_helper", function(o) {
+::mods_hookNewObjectOnce("ui/global/data_helper", function(o) {
 
-	function convertCampaignStorageToUIData( _meta )
+	o.convertCampaignStorageToUIData = function ( _meta )
 	{
 		local d;
 		d = " (" + this.Const.Strings.Difficulty[_meta.getInt("difficulty2")] + "/" + this.Const.Strings.Difficulty[_meta.getInt("difficulty")];
@@ -35,15 +35,13 @@
 		};
 	}
 
-	function convertHireRosterToUIData( _rosterID )
+	o.convertHireRosterToUIData = function ( _rosterID )
 	{
 		local result = [];
 		local roster = this.World.getRoster(_rosterID);
 
 		if (roster == null)
-		{
 			return null;
-		}
 
 		local entities = roster.getAll();
 
@@ -111,7 +109,7 @@
 	local convertEntityToUIData = o.convertEntityToUIData;
 	o.convertEntityToUIData = function ( _entity, _activeEntity )
 	{
-		local result = convertEntityToUIData();
+		local result = convertEntityToUIData(_entity, _activeEntity);
 		result.perkTree <- [];
 
 		local bg = _entity.getBackground();
@@ -126,7 +124,7 @@
 	local convertEntityHireInformationToUIData = o.convertEntityHireInformationToUIData;
 	o.convertEntityHireInformationToUIData = function ( _entity )
 	{
-		local result = convertEntityHireInformationToUIData();
+		local result = convertEntityHireInformationToUIData(_entity);
 		result.Traits <- _entity.getHiringTraits();
 
 		return result;
@@ -135,7 +133,7 @@
 	local addCharacterToUIData = o.addCharacterToUIData;
 	o.addCharacterToUIData = function ( _entity, _target )
 	{
-		addCharacterToUIData();
+		addCharacterToUIData(_entity, _target);
 		if (_entity.getBackground() != null)
 		{
 			_target.background <- _entity.getBackground().getID();
@@ -237,9 +235,15 @@
 	}
 
 	local convertItemToUIData = o.convertItemToUIData;
-	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null )
+	o.convertItemToUIData = function ( _item, _forceSmallIcon, _owner = null)
 	{
-		local result = convertItemToUIData();
+		if (_item == null)
+			return null;
+
+		local result = convertItemToUIData(_item, _forceSmallIcon, _owner);
+		if (result == null)
+			return null;
+
 		result.isChangeableInBattle = _item.isChangeableInBattle(null);
 		result.isAllowedInBag = _item.isAllowedInBag(null);
 
@@ -249,7 +253,7 @@
 		return result;
 	}
 
-	o.convertRepairItemsToUIData = function ( _items, _target, _owner = null, _filter = 0 )
+	o.convertRepairItemsToUIData <- function ( _items, _target, _owner = null, _filter = 0 )
 	{
 		if (_filter == 0)
 		{

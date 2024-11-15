@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "The villagers here are terrified of unknown horrors. Fewer potential recruits are to be found on the streets, and people deal less favourably with strangers. Those formerly in the business of graves are rightfully seeking new employment. Upon resolution this will refresh the hiring roster in town.";
 		this.m.Rumors = [
 			"The dead ain\'t really dead, sometimes they come back to haunt the living! Don\'t believe me? Just head over to %settlement% and see for yourself!",
@@ -29,7 +30,7 @@
 		}
 
 		_settlement.resetRoster(true);
-		
+
 		if (::Math.rand(1,10)==1)
 		{
 			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));
@@ -39,7 +40,7 @@
 	o.onUpdateDraftList <- function ( _draftList, _gender = null)
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
+
 		_draftList.push("gravedigger_background");
 		_draftList.push("gravedigger_background");
 		_draftList.push("gravedigger_background");

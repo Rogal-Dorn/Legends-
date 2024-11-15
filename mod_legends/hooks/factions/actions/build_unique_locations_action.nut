@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/build_unique_locations_action", function(o) 
+::mods_hookExactClass("factions/actions/build_unique_locations_action", function(o)
 {
 	o.m.BuildMummySite <- true;
 	o.m.BuildTournamentSite <- true;

@@ -12,7 +12,7 @@ if (!("World" in ::Const))
 	// the table to look up the price of an item, unrecorded one will be filled up automatically the first time it shows up
 	PriceLookUp = {},
 
-	// the max products should be generated 
+	// the max products should be generated
 	PreferProduceNumMax = 9,
 
 	// the maximum stash size of 'this.m.ImportedGoodsInventory' of any settlement
@@ -214,7 +214,7 @@ if (!("World" in ::Const))
 
 		if (_min != -1) budget = ::Math.max(_min, budget); // budget shouldn't be smaller than _min
 
-		if (_max != -1) budget = ::Math.min(_max, budget); // budget shouldn't be higher than _max 
+		if (_max != -1) budget = ::Math.min(_max, budget); // budget shouldn't be higher than _max
 
 		return budget;
 	}
@@ -269,7 +269,7 @@ if (!("World" in ::Const))
 		local decisions = this.compileTradingDecision(_settlement, _budget);
 
 		if (decisions.Potential.len() == 0) return this.addFillerGoods(_settlement, _budget, null, false, "tools/throwing_net");
-		
+
 		local result, name = this.getWeightContainer(decisions.Potential).roll();
 
 		if (name == "FreshlyProduced") result = this.gatherProduce(_settlement, _budget);
@@ -311,7 +311,7 @@ if (!("World" in ::Const))
 			local stash = building.getStash();
 			local shopID = building.getID();
 
-			if (stash == null) 
+			if (stash == null)
 				continue;
 
 			foreach(d in this.Decisions)
@@ -321,7 +321,7 @@ if (!("World" in ::Const))
 
 				foreach(_item in stash.getItems())
 				{
-					if (_item == null) 
+					if (_item == null)
 						continue;
 
 					local v = ::Math.floor(d.IsValid(_item, shopID));
@@ -406,11 +406,11 @@ if (!("World" in ::Const))
 			if (p in map)
 			{
 				map[p][0] += 1;
-				continue; 
+				continue;
 			}
 
 			map[p] <- [1, p];
-			
+
 			if (!(p in this.PriceLookUp)) this.PriceLookUp[p] <- ::new("scripts/items/" + p).getValue();
 
 			if (min > this.PriceLookUp[p]) min = this.PriceLookUp[p];
@@ -441,7 +441,7 @@ if (!("World" in ::Const))
 					weight_container.remove(r);
 					continue;
 				}
-				
+
 				// willing to go over budget for a little bit
 				isOverBudget = true;
 				_budget += extra;
@@ -490,12 +490,12 @@ if (!("World" in ::Const))
 					++tries;
 					continue;
 				}
-				
+
 				// willing to go over budget for a little bit
 				isOverBudget = true;
 				_budget += extra;
 			}
-			
+
 			// adds to the list
 			result.Items.push(_i.Item);
 
@@ -792,6 +792,7 @@ if (!("World" in ::Const))
 
 ::Const.World.Common.dynamicSelectTroop <- function (_list, _resources, _scale, _map, _credits)
 {
+	local startingCredits = _credits;
 	local candidates = [];
 	local T = [];
 	local totalWeight = 0;
@@ -1093,17 +1094,19 @@ if (!("World" in ::Const))
 			break;
 		}
 	}
-
+//	if (startingCredits == _credits && T.len() > 0) {
+//		throw "dynamicSelectTroop didn't change credits"
+//	}
 	return _credits
 }
 
 ::Const.World.Common.buildDynamicTroopList <- function( _template, _resources)
 {
-	//this.logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
+	::logInfo("*DynamicTroopList : template = " + _template.Name + " : resources = " + _resources)
 	local credits = _resources;
 	if ("MinR" in _template)
 	{
-		credits = this.Math.max(_template.MinR, credits)
+		credits = this.Math.max(_template.MinR, credits);
 	}
 	local scale = "MaxR" in _template ? (_resources * 1.0) / (_template.MaxR * 1.0) : 1.0;
 	local troopMap = {};
@@ -1111,29 +1114,31 @@ if (!("World" in ::Const))
 
 	if ("Fixed" in _template)
 	{
-		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits)
+		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits);
 	}
 
 	if ("Troops" in _template && _template.Troops.len() > 0)
 	{
-		while (credits > 0)
+		local tries = 200;
+		while (credits > 0 && tries > 0)
 		{
-			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits)
+			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits);
+			tries--;
 		}
 	}
 
 	local T = []
 	foreach ( k, v in troopMap)
 	{
-		T.push(v)
+		T.push(v);
 	}
 
 
 	//TESTING
-	// foreach (t in T)
-	// {
-	// 	this.logInfo(t.Type.Script + " : " + t.Num)
-	// }
+	 foreach (t in T)
+	 {
+	 	::logInfo(t.Type.Script + " : " + t.Num);
+	 }
 
 	return {
 		MovementSpeedMult = _template.MovementSpeedMult,
@@ -1622,92 +1627,6 @@ if (!("LegendMod" in ::Const))
 		return r;
 	}
 }
-
-
-function onCostCompare( _t1, _t2 )
-{
-	if (_t1.Cost < _t2.Cost)
-	{
-		return -1;
-	}
-	else if (_t1.Cost > _t2.Cost)
-	{
-		return 1;
-	}
-
-	return 0;
-}
-
-foreach(k,v in this.Const.World.Spawn)
-{
-	if (k == "Troops" || k == "Unit" || k == "TroopsMap")
-	{
-		continue;
-	}
-
-	if (typeof(v) != "table")
-	{
-		continue;
-	}
-
-	//this.logInfo("Calculating costs for " + k)
-	foreach (i, _t in v.Troops)
-	{
-		local costMap = {}
-		foreach (tt in _t.Types) {
-			if (!(tt.Cost in costMap)) {
-				costMap[tt.Cost] <- []
-			}
-			costMap[tt.Cost].append(tt)
-		}
-
-		_t.SortedTypes <- []
-
-		foreach (k,v in costMap) {
-			_t.SortedTypes.append({
-				Cost = k,
-				Types = v
-			})
-		}
-
-		if (_t.SortedTypes.len() == 1)
-		{
-			continue;
-		}
-
-		_t.SortedTypes.sort(this.onCostCompare)
-
-		//v.Troops[i].SortedTypes.sort(this.onCostCompare)
-
-		local mean = 0;
-		local variance = 0;
-		local deviation = 0;
-
-		foreach (o in v.Troops[i].SortedTypes)
-		{
-			mean += o.Cost;
-		}
-		mean = (mean * 1.0) / ( v.Troops[i].SortedTypes.len() * 1.0)
-
-		foreach (o in v.Troops[i].SortedTypes)
-		{
-			local d = o.Cost - mean;
-			variance += (d * d);
-		}
-		variance = (variance * 1.0) / ( v.Troops[i].SortedTypes.len() * 1.0)
-		deviation = this.Math.pow(variance, 0.5)
-
-
-		v.Troops[i].Mean <- mean;
-		v.Troops[i].Variance <- variance;
-		v.Troops[i].Deviation <- deviation;
-		v.Troops[i].MinMean <- v.Troops[i].SortedTypes[0].Cost - deviation;
-		v.Troops[i].MaxMean <-  v.Troops[i].Types[v.Troops[i].SortedTypes.len() - 1].Cost + deviation;
-		//this.logInfo(" mean  " + mean + " variance " + variance + " deviation " + deviation + " min " + v.Troops[i].MinMean + " max " + v.Troops[i].MaxMean)
-	}
-
-}
-
 
 ::Const.World.Common.addHostileUnitsToCombat <- function ( _into, _partyList, _resources, _faction, _minibossify = 0)
 {

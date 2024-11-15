@@ -1,7 +1,7 @@
 ::mods_hookExactClass("skills/actives/fling_back_skill", function(o)
 {
 	local onPerformAttack = o.onPerformAttack;
-	function onPerformAttack( _tag )
+	o.onPerformAttack = function ( _tag )
 	{
 		local _targetTile = _tag.TargetTile;
 		local target = _targetTile.getEntity();
@@ -10,6 +10,6 @@
 			return false;
 		}
 
-		onPerformAttack( _tag ); 
+		return onPerformAttack( _tag );
 	}
 });

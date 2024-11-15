@@ -47,11 +47,11 @@ this.legend_transformed_bear_effect <- this.inherit("scripts/skills/effects/lege
 
 		if (!actor.getSkills().hasSkill("actives.legend_bear_claws"))
 		{
-			actor.getSkills().add(this.new("scripts/skills/actives/legend_bear_claws"));
+			actor.getSkills().add(this.new("scripts/skills/actives/legend_bear_claws_skill"));
 		}
 		if (!actor.getSkills().hasSkill("actives.legend_bear_bite"))
 		{
-			actor.getSkills().add(this.new("scripts/skills/actives/legend_bear_bite"));
+			actor.getSkills().add(this.new("scripts/skills/actives/legend_bear_bite_skill"));
 		}
 	}
 

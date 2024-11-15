@@ -692,7 +692,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
-		o.create();
+		create();
 		this.m.ImportedGoodsInventory = this.new("scripts/items/stash_container");
 		this.m.ImportedGoodsInventory.setID("imported_inventory");
 		this.m.ImportedGoodsInventory.setResizable(true);
@@ -704,7 +704,7 @@
 	o.addSituation = function ( _s, _validForDays = 0 )
 	{
 		_s.m.IsSouthern = this.isSouthern();
-		return addSituation( _s, _validForDays = 0 );
+		return addSituation( _s, _validForDays);
 	}
 
 	o.resolveSituationByInstance <- function ( _instanceID )
@@ -1917,6 +1917,17 @@
 
 		return false;
 	}
+
+	o.getBuildings <- function ()
+	{
+		local ret = [];
+		foreach (b in this.m.Buildings) {
+			if (b != null)
+				ret.push(b);
+		}
+		return ret;
+	}
+
 
 	o.getBaseResourceLevel  <- function ()
 	{

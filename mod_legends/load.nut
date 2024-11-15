@@ -1,15 +1,20 @@
-// load legends specific folder
-foreach (file in ::IO.enumerateFiles("mod_legends/legend_config"))
-{
-	::include(file);
+if (!("LegendMod" in ::Const)) {
+	::Const.LegendMod <- {}
 }
 
 // load config folder
-foreach (file in ::IO.enumerateFiles("mod_legends/config"))
-{
+foreach (file in ::IO.enumerateFiles("mod_legends/!!!config")) {
 	::include(file);
 }
-
+foreach (file in ::IO.enumerateFiles("mod_legends/!!config")) {
+	::include(file);
+}
+foreach (file in ::IO.enumerateFiles("mod_legends/!config")) {
+	::include(file);
+}
+foreach (file in ::IO.enumerateFiles("mod_legends/config")) {
+	::include(file);
+}
 
 // load query folder
 foreach (file in ::IO.enumerateFiles("mod_legends/system"))

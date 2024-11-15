@@ -12,10 +12,10 @@
 
 	o.getTooltip = function ()
 	{
-		local ret = this.getRangedTooltip(this.getDefaultTooltip());
+		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + 2) * this.Const.Combat.FatigueReceivedPerHit;
 
-		ret.push({
+		tooltip.push({
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
@@ -30,7 +30,7 @@
 
 		if (this.Tactical.isActive() && this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions()))
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -38,7 +38,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAfterUpdate = function ( _properties )

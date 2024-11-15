@@ -10,7 +10,7 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
-		this.m.IsHidden = false; 
+		this.m.IsHidden = false;
 	}
 
 	function isHidden()
@@ -21,6 +21,10 @@ this.perk_legend_specialist_cult_armor <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.skill.getTooltip();
+		if (!("getActor" in this.getContainer())) {
+			// todo something about it? idk what, but tooltip on crafting screen goes here - chopeks
+			return ret;
+		}
 		local damageBonus = this.getDamageBonus();
 		if (damageBonus != 0)
 		{

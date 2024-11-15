@@ -1,5 +1,5 @@
-::mods_hookExactClass("skills/traits/fear_beasts_trait", function(o)
-{	
+::mods_hookExactClass("skills/traits/hate_beasts_trait", function(o)
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -10,7 +10,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		ret = getTooltip();
+		local ret = getTooltip();
 		ret.extend([{
 			id = 10,
 			type = "text",
@@ -23,7 +23,7 @@
 			icon = "ui/icons/ranged_skill.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5%[/color] Ranged Skill when in battle with beasts"
 		}]);
-		
+
 		return ret;
 	}
 

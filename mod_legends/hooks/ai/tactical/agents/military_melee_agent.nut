@@ -1,5 +1,5 @@
 ::mods_hookExactClass("ai/tactical/agents/military_melee_agent", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -22,10 +22,10 @@
 		}
 	}
 
-	local addBehaviors = o.addBehaviors;
+	local onAddBehaviors = o.onAddBehaviors;
 	o.onAddBehaviors = function ()
 	{
-		addBehaviors();
+		onAddBehaviors();
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_boost_stamina"));
 	}
 });

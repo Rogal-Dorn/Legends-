@@ -4,13 +4,14 @@
 	o.onInit = function ()
 	{
 		onInit();
-		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
-		{
-			if(this.Math.rand(1, 20) == 1)
-			{
-				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
-			}
-		}
+		// todo delete it - chopeks
+//		if (this.LegendsMod.Configs().LegendTherianthropyEnabled())
+//		{
+//			if(this.Math.rand(1, 20) == 1)
+//			{
+//				this.m.Skills.add(this.new("scripts/skills/injury_permanent/legend_lycanthropy_injury"));
+//			}
+//		}
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/harbor_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/harbor_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -174,8 +174,9 @@
 		return true;
 	}
 
-	o.onUpdateProduce = function ( _list )
+	o.onUpdateProduce <- function ( _list )
 	{
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("supplies/legend_fresh_fish_item");
 	}
 
@@ -185,7 +186,7 @@
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("fisherman_background");
 		_list.push("fisherman_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;
@@ -198,7 +199,7 @@
 				R = 0,
 				P = 1.0,
 				S = "tools/throwing_net"
-			});			
+			});
 			_list.push({
 				R = 0,
 				P = 1.0,

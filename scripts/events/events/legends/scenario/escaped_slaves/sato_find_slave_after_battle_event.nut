@@ -414,7 +414,7 @@ this.sato_find_slave_after_battle_event <- this.inherit("scripts/events/event", 
 
 						if (r == 2)
 						{
-							_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/legend_inventor_anatomy"));
+							_event.m.Dude.getSkills().add(this.new("scripts/skills/perks/perk_legend_inventor_anatomy"));
 						}
 
 						if (r == 3)

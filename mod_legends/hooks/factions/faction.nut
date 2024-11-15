@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("factions/faction", function ( o )
 {
-	while(!("ID" in o.m)) o = o[o.SuperName];
+	while(!("Flags" in o.m)) o=o[o.SuperName];
 
 	o.m.ContractsByCategory <-
 	{

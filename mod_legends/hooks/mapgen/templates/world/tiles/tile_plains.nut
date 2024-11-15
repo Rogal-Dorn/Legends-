@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/world/tiles/tile_plains", function(o)
+::mods_hookExactClass("mapgen/templates/world/tiles/tile_plains", function(o)
 {
 	o.m.DetailsGrass.extend([
 		"world_grass_07",

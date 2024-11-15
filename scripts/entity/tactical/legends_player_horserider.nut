@@ -154,8 +154,8 @@ this.legends_player_horserider <- this.inherit("scripts/entity/tactical/player",
 		this.m.ActionPointCosts = this.Const.HorseMovementAPCost;
 		this.m.FatigueCosts = clone this.Const.HorseMovementFatigueCost;
 
-		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_kick"));
-		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_charge"));
+		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_kick_skill"));
+		this.getSkills().add(this.new("scripts/skills/actives/legend_horse_charge_skill"));
 
 		if (this.getHorse().getSkills().hasSkill("perk.legend_horse_movement") && !this.getHorse().getSkills().hasSkill("perk.legend_horse_passage"))
 		{

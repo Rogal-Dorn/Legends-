@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/schrat", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/schrat", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -29,13 +29,7 @@
 
 			for( local i = 0; i < n; i = ++i )
 			{
-				local chance = 1;
-				if (this.LegendsMod.Configs().LegendMagicEnabled())
-				{
-					chance = 10;
-				}
-
-				if (this.Math.rand(1, 100) <= chance)
+				if (this.Math.rand(1, 100) <= 1)
 				{
 					local token = this.new("scripts/items/rune_sigils/legend_vala_inscription_token");
 					token.setRuneVariant(this.Math.rand(31, 32));
@@ -44,7 +38,7 @@
 					token.drop(_tile);
 				}
 			}
-		}		
+		}
 	}
 
 	o.makeMiniboss <- function ()

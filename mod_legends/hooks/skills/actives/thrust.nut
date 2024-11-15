@@ -3,10 +3,10 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		ret = getTooltip();
+		local tooltip = getTooltip();
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInSpearThrust)
 		{
-			ret.push({
+			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/damage_dealt.png",
@@ -14,7 +14,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAnySkillUsed = function ( _skill, _targetEntity, _properties )

@@ -24,7 +24,7 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 		this.m.IsChangeableInBattle = true;
 	}
 
-	function isAllowedInBag(_actor)
+	function isAllowedInBag(_actor = null)
 	{
 		//Wierd work around - since player stash queries this in order to enabled drag/drop onto
 		//paperdoll - but there is no actor or container yet so we have to allow
@@ -49,7 +49,7 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 		return false;
 	}
 
-	function isChangeableInBattle(_actor)
+	function isChangeableInBattle(_actor = null)
 	{
 		//Wierd work around - since player stash queries this in order to enabled drag/drop onto
 		//paperdoll - but there is no actor or container yet so we have to allow
@@ -71,7 +71,7 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 		{
 			return false;
 		}
-		
+
 
 		if (_actor.getSkills().hasSkill("perk.legend_packleader"))
 		{

@@ -2,11 +2,12 @@
 {
 	o.m.Outfits <- [];  //Always overridden if it's used
 
+	local create = o.create;
 	o.create = function ()
 	{
-		this.actor.create();
+		create();
 		this.setGender(0);
-		if (this.Math.rand(1, 100) <= 25 && ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() == "Disabled")
+		if (this.Math.rand(1, 100) <= 25 && ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled")
 			this.setGender(1);
 		else
 			this.setGender(0);

@@ -1,8 +1,3 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-
 if (!("ArmorObjs" in ::Const.LegendMod))
 {
 	::Const.LegendMod.ArmorObjs <- [];
@@ -102,7 +97,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 	Script = "",
 	Sets = [{
 		Cloth = [ //60
-			[1, "cloth/legend_gambeson"], //65 
+			[1, "cloth/legend_gambeson"], //65
 			[5, "cloth/legend_padded_surcoat"] //55
 			// [5, "cloth/legend_tunic"]
 		],
@@ -133,7 +128,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		]
 	}]
 },{
-	ID = "coat_of_scales", //300 : new max of 290ish, new avg of 240 ish, 
+	ID = "coat_of_scales", //300 : new max of 290ish, new avg of 240 ish,
 	Script = "",
 	Sets = [{
 		Cloth = [ //60
@@ -1137,16 +1132,16 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "chain/legend_armor_hauberk_full"], // 115
 		],
 		Plate = [
-			[1, "plate/legend_armor_leather_riveted"], // 
-			[1, "plate/legend_armor_leather_riveted_light"], // 
+			[1, "plate/legend_armor_leather_riveted"], //
+			[1, "plate/legend_armor_leather_riveted_light"], //
 		],
 		Cloak = [
-			[1, "cloak/relic_hood"], // 
+			[1, "cloak/relic_hood"], //
 		],
 		Tabard = [
 		],
 		Attachments =[
-			[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
+			[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], //
 			[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
 		]
 	}]
@@ -1393,7 +1388,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[4, "chain/legend_armor_mail_shirt"], // 50
 			[2, "chain/legend_armor_reinforced_mail"], // 50
 			[4, "chain/legend_armor_reinforced_mail_shirt"]
-			
+
 		],
 		Plate = [
 			[4, "plate/legend_armor_leather_riveted_light"],
@@ -1424,7 +1419,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[4, "chain/legend_armor_basic_mail"], // 50
 			[2, "chain/legend_armor_reinforced_mail"], // 50
 			[4, "chain/legend_armor_reinforced_mail_shirt"]
-			
+
 		],
 		Plate = [
 			[4, ""],
@@ -1468,7 +1463,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 	}]
 
 },{
-	ID = "man_at_arms_noble_armor", 
+	ID = "man_at_arms_noble_armor",
 	Script = "",
 	Sets = [{
 		Cloth = [
@@ -1477,7 +1472,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Chain = [
 			[1, "chain/legend_armor_hauberk"],
 			[1, "chain/legend_armor_hauberk_full"]
-			
+
 		],
 		Plate = [
 			[1, "plate/legend_armor_plate_milanese"],
@@ -1507,7 +1502,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Chain = [
 			[1, "chain/legend_armor_basic_mail"]
-			
+
 		],
 		Plate = [
 			[1, "plate/legend_armor_plate_chest"]
@@ -1603,7 +1598,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[2, "cloak/legend_shoulder_cloth", 2]
 		],
 		Tabard = [
-			
+
 		],
 		Attachments =[
 			[0, ""],
@@ -1632,7 +1627,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[2, "cloak/legend_shoulder_cloth"],
 		],
 		Tabard = [
-			
+
 		],
 		Attachments =[
 		]
@@ -1659,7 +1654,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[2, "cloak/legend_shoulder_cloth", 2]
 		],
 		Tabard = [
-			
+
 		],
 		Attachments =[
 			[0, ""],
@@ -1689,7 +1684,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[2, "cloak/legend_shoulder_cloth", 2]
 		],
 		Tabard = [
-			
+
 		],
 		Attachments =[
 			[0, ""],
@@ -1714,7 +1709,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		Cloak = [
 		],
 		Tabard = [
-			
+
 		],
 		Attachments =[
 			[0, ""],
@@ -1822,7 +1817,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Plate = [
 			[5, "plate/legend_armor_leather_lamellar_harness_heavy"],// 130
-			[3, "plate/legend_armor_leather_lamellar_reinforced"],// 150 
+			[3, "plate/legend_armor_leather_lamellar_reinforced"],// 150
 			[1, "plate/legend_armor_leather_lamellar_heavy"],// 165
 		],
 		Cloak = [
@@ -1897,7 +1892,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "chain/legend_southern_mail"],
 		],
 		Plate = [
-			
+
 			[1, "plate/legend_armor_leather_lamellar_harness_heavy"], //130
 			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //150
 			[1, "plate/legend_southern_scale"],// 155
@@ -1976,7 +1971,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Cloak = [
 			[1, ""],
-			
+
 		],
 		Tabard = [
 			[1, "tabard/legend_southern_wrap_left"],
@@ -2043,7 +2038,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		]
 	}]
 },{
-	ID = "adorned_heavy_mail_hauberk", // 
+	ID = "adorned_heavy_mail_hauberk", //
 	Script = "",
 	Sets = [{
 		Cloth = [
@@ -2055,14 +2050,14 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "chain/legend_armor_hauberk_full"], // 115
 		],
 		Plate = [
-			[1, "plate/legend_heavy_mail"], // 
+			[1, "plate/legend_heavy_mail"], //
 		],
 		Cloak = [
 		],
 		Tabard = [
 		],
 		Attachments =[
-		//	[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], // 
+		//	[1, "armor_upgrades/legend_armor_chain_and_mail_upgrade"], //
 		//	[1, "armor_upgrades/legend_armor_sacred_shield_upgrade"], //
 		]
 	}]
@@ -2171,7 +2166,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		]
 	}]
 },{
-	ID = "lonewolf_hammershield_armour", 
+	ID = "lonewolf_hammershield_armour",
 	Script = "scripts/items/armor/lonewolf_hammershield_armour",
 	Sets = [{
 		Cloth = [
@@ -2203,7 +2198,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "chain/legend_armor_mail_shirt_simple"], //25
 		],
 		Plate = [
-			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //55 
+			[1, "plate/legend_armor_leather_lamellar_harness_reinforced"], //55
 		],
 		Cloak = [
 		],
@@ -2298,7 +2293,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Plate = [
 			[1, "plate/legend_armor_leather_padded"], // 40
-			[2, ""], //0			
+			[2, ""], //0
 		],
 		Cloak = [
 		],
@@ -2337,7 +2332,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 		],
 		Cloak = [
 			[1, "cloak/legend_armor_cloak_common"], //10
-			[1, ""], //0			
+			[1, ""], //0
 		],
 		Tabard = [
 			[1, "tabard/legend_common_tabard"], //5
@@ -2370,7 +2365,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[2, "plate/legend_armor_scale_coat_rotten"], //60
 			[1, "plate/legend_armor_scale_coat"], //120
 			[2, "plate/legend_armor_leather_lamellar_harness_heavy"], //130
-			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150 
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150
 		],
 		Cloak = [
 			[1, "cloak/legend_armor_cloak_common"], //10
@@ -2406,7 +2401,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "plate/legend_armor_plate_milanese"], //170
 			[1, "plate/legend_armor_plate_krastenbrust"], //170
 			[1, "plate/legend_armor_plate_triangle"], //170
-			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150 
+			[1, "plate/legend_armor_leather_lamellar_reinforced"], //150
 			[1, "plate/legend_armor_leather_lamellar_heavy"], //165
 		],
 		Cloak = [

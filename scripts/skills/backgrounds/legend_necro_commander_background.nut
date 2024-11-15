@@ -93,9 +93,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				0.0 //oasis
 			];
 
-		if (!this.LegendsMod.Configs().LegendMagicEnabled()) 
-		{
-				this.m.CustomPerkTree = [
+			this.m.CustomPerkTree = [
 				[
 					this.Const.Perks.PerkDefs.NineLives,
 					this.Const.Perks.PerkDefs.LegendAlert,
@@ -178,8 +176,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 				[],
 				[]
 			];
-		}
-	}	
+	}
 
 	function setGender(_gender = -1)
 	{

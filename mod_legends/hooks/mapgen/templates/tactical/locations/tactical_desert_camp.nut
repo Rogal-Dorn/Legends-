@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/tactical/locations/tactical_desert_camp", function(o)
+::mods_hookExactClass("mapgen/templates/tactical/locations/tactical_desert_camp", function(o)
 {
 	o.fill = function ( _rect, _properties, _pass = 1 )
 	{

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/dye_maker_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/dye_maker_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -18,12 +18,11 @@
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		
-		onUpdateDraftList(_list, _gender);
+
+		onUpdateDraftList(_list);
 	}
 
 	# completely replaced due to my dye renaming shennanigans
-	local onUpdateShopList = o.onUpdateShopList;
 	o.onUpdateShopList = function ( _id, _list )
 	{
 		if (_id == "building.marketplace")

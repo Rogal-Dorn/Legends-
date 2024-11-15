@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/incense_dryer_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/incense_dryer_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -13,7 +13,7 @@
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("legend_dervish_background");
 		_list.push("legend_alchemist_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

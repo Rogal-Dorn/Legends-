@@ -71,24 +71,24 @@ this.legend_vampire_lord <- this.inherit("scripts/entity/tactical/actor", {
 			local loot = this.new("scripts/items/misc/vampire_dust_item");
 			loot.drop(_tile);
 
-
-		if (this.LegendsMod.Configs().LegendMagicEnabled()) {
-			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
-			{
-				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
-
-				for( local i = 0; i < n; i = ++i )
-				{
-					local r = this.Math.rand(1, 100);
-					local loot;
-					if (r <= 50)
-					{
-						loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
-						loot.drop(_tile);
-					}
-				}
-			}
-		}
+		// todo delete it - chopeks
+//		if (this.LegendsMod.Configs().LegendMagicEnabled()) {
+//			if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
+//			{
+//				local n = 1 + (!this.Tactical.State.isScenarioMode() && this.Math.rand(1, 100) <= this.World.Assets.getExtraLootChance() ? 1 : 0);
+//
+//				for( local i = 0; i < n; i = ++i )
+//				{
+//					local r = this.Math.rand(1, 100);
+//					local loot;
+//					if (r <= 50)
+//					{
+//						loot = this.new("scripts/items/misc/legend_ancient_scroll_item");
+//						loot.drop(_tile);
+//					}
+//				}
+//			}
+//		}
 
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
 	}

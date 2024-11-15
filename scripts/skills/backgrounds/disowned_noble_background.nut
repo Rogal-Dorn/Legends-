@@ -72,7 +72,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		this.m.BackgroundDescription = "Adventurous Ladies tend to have high resolve and ranged skills, but often neglect melee defense.";
 		this.m.GoodEnding = "Adventurousness never leaves the soul of a woman like %name%. {Instead of returning to her noble family, she left the %companyname% and headed east in search of rare beasts. Word has it she returned to town with the head of what looked like a giant lizard, but you don\'t believe such fantastical tripe. | She departed the %companyname% and ventured west, sailing across the oceans to unseen lands. There\'s no telling where he is these days, but you\'ve little doubt that he\'ll be coming back with stories to tell. | She retired from the %companyname% and, instead of returning to her noble family, headed south. Word has it she fought in a great noble civil war, killed an orc warlord, climbed the highest mountain in the land, and is currently writing an epic about her travels. | The noblewoman left the %companyname% and, preferring the life of adventure to noble boredom, she headed north. Word has it that she\'s currently marching a troop of explorers to the furthest reaches of the world.}";
 		this.m.BadEnding = "%name% departed the %companyname% and continued her adventuring elsewhere. {She headed east, hoping to discover the source of the greenskins, but the noblewoman has not been heard from since. | She headed north into the snowy wastes. Word has it she was seen a week ago, marching south this time, looking rather pale and shuffling moreso than walking. | She headed south into brutal marshlands. Word has it that a mysterious flame appeared in the fog and she walked toward it. The men who saw this said she disappeared into the mist and never returned. | She headed west and sailed the open sea. Despite having no experience at sea, she saw fit to make herself captain of the boat. They say pieces of her ship and dead sailors kept washing ashore for weeks.}";
-		
+
 		this.m.Faces = this.Const.Faces.AllWhiteFemale;
 		this.m.Hairs = this.Const.Hair.AllFemale;
 		this.m.HairColors = this.Const.HairColors.All;
@@ -121,7 +121,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 	{
 		if (this.isBackgroundType(this.Const.BackgroundType.Female))
 		{
-			local c = {
+			return {
 				Hitpoints = [
 					-2,
 					3
@@ -158,7 +158,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 		}
 		else
 		{
-			local c = {
+			return {
 				Hitpoints = [
 					-2,
 					3
@@ -193,7 +193,6 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 				]
 			};
 		}
-		return c;
 	}
 
 	function onAddEquipment()
@@ -282,7 +281,7 @@ this.disowned_noble_background <- this.inherit("scripts/skills/backgrounds/chara
 				[1, "feathered_hat"],
 				[3, ""]
 			]));
-		}	
+		}
 	}
 
 

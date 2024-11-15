@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/militia_trainingcamp_oriental_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -9,6 +9,7 @@
 
 	o.onUpdateProduce <- function ( _list )
 	{
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("supplies/legend_ammo_small_item");
 	}
 
@@ -26,7 +27,7 @@
 		{
 			_list.push("legend_conscript_ranged_background");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

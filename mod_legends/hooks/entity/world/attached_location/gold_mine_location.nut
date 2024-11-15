@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/gold_mine_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/gold_mine_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -9,6 +9,7 @@
 
 	o.onUpdateProduce <- function ( _list )
 	{
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/legend_gold_dust_item");
 		_list.push("trade/legend_gold_nugget_item");
 	}
@@ -19,7 +20,7 @@
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("legend_ironmonger_background");
 		_list.push("peddler_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

@@ -1,4 +1,4 @@
-::mods_hookNewObject("states/world/asset_manager", function(o)
+::mods_hookExactClass("states/world/asset_manager", function(o)
 {
 	o.m.FounderNames <- [];
 	o.m.BusinessReputationMax <- 0;
@@ -272,7 +272,7 @@
 	}
 
 	local create = o.create;
-	function create()
+	o.create = function ()
 	{
 		create();
 		for( local i = 0; i < this.Const.LegendMod.Formations.Count; i = ++i )

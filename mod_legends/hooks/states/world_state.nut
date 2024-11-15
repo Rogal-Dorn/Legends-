@@ -113,7 +113,6 @@
 	local onInit = o.onInit;
 	o.onInit = function()
 	{
-
 		this.m.CommanderDied = false;
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);
@@ -133,14 +132,14 @@
 	}
 
 	local onDestroyUI = o.onDestroyUI;
-	function onDestroyUI()
+	o.onDestroyUI = function ()
 	{
 		onDestroyUI();
 		this.m.CampScreen.destroy();
 		this.m.CampScreen = null;
 	}
 
-	local onInitUI = o.onInitUI;
+	local onFinish = o.onFinish;
 	o.onFinish = function()
 	{
 		this.m.Camp.destroy();
@@ -536,20 +535,10 @@
 		this.setupWeather();
 		this.Math.seedRandom(this.Time.getRealTime());
 
-		if (this.Const.DLC.Unhold)
-		{
-			this.World.Flags.set("IsUnholdCampaign", true);
-		}
+		this.World.Flags.set("IsUnholdCampaign", true);
+		this.World.Flags.set("IsWildmenCampaign", true);
+		this.World.Flags.set("IsDesertCampaign", true);
 
-		if (this.Const.DLC.Wildmen)
-		{
-			this.World.Flags.set("IsWildmenCampaign", true);
-		}
-
-		if (this.Const.DLC.Desert)
-		{
-			this.World.Flags.set("IsDesertCampaign", true);
-		}
 
 		this.World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("DebugMap").getValue());
 		this.World.Crafting.resetAllBlueprints();
@@ -1075,7 +1064,7 @@
 				{
 					if (t.Script.len() != "")
 					{
-						if (t.Variant != 0 && this.Const.DLC.Wildmen)
+						if (t.Variant != 0)
 						{
 							champions.push(t);
 						}
@@ -1096,7 +1085,7 @@
 					hasOpponents = true;
 				}
 
-				if (t.Variant != 0 && this.Const.DLC.Wildmen)
+				if (t.Variant != 0)
 				{
 					champions.push(t);
 				}
@@ -2043,7 +2032,7 @@
 	}
 
 	local onBeforeSerialize = o.onBeforeSerialize;
-	function onBeforeSerialize( _out )
+	o.onBeforeSerialize = function ( _out )
 	{
 		local meta = _out.getMetaData();
 		meta.setString("legendsVersion", ::Legends.Version);
@@ -2051,7 +2040,7 @@
 	}
 
 	local onBeforeDeserialize = o.onBeforeDeserialize;
-	function onBeforeDeserialize( _in )
+	o.onBeforeDeserialize = function ( _in )
 	{
 		onBeforeDeserialize( _in );
 		this.logInfo("Legends version in save: " + _in.getMetaData().getString("legendsVersion"));
@@ -2059,7 +2048,7 @@
 	}
 
 	local onSerialize = o.onSerialize;
-	function onSerialize( _out )
+	o.onSerialize = function ( _out )
 	{
 		_out.writeBool(this.m.IsCampingAllowed);
 		_out.writeI32(this.m.CombatSeed);
@@ -2067,7 +2056,7 @@
 	}
 
 	local onDeserialize = o.onDeserialize;
-	function onDeserialize( _in )
+	o.onDeserialize = function ( _in )
 	{
 		onDeserialize( _in );
 		if (this.m.EscortedEntity == null)

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/hunters_cabin_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/hunters_cabin_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -28,30 +28,31 @@
 			_list.push("legend_master_archer_background");
 		}
 
-		if(this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			local r;
-
-			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
-			{
-				r = this.Math.rand(0, 9);
-				if (r == 1)
-				{
-				_list.push("legend_master_archer_background");
-				_list.push("legend_ranger_background");
-				}
-			}
-			else
-			{
-			r = this.Math.rand(0, 9);
-				if (r == 1)
-				{
-				_list.push("legend_master_archer_background");
-				}
-			}
-
-		}
-		onUpdateDraftList(_list, _gender);
+		// todo delete it - chopeks
+//		if(this.LegendsMod.Configs().LegendMagicEnabled())
+//		{
+//			local r;
+//
+//			if  ( this.World.Assets.getOrigin().getID() == "scenario.legends_rangers")
+//			{
+//				r = this.Math.rand(0, 9);
+//				if (r == 1)
+//				{
+//				_list.push("legend_master_archer_background");
+//				_list.push("legend_ranger_background");
+//				}
+//			}
+//			else
+//			{
+//			r = this.Math.rand(0, 9);
+//				if (r == 1)
+//				{
+//				_list.push("legend_master_archer_background");
+//				}
+//			}
+//
+//		}
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

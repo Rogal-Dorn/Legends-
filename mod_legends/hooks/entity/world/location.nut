@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/location", function(o) 
+::mods_hookExactClass("entity/world/location", function(o) 
 {
 	o.isShowingDefenders = function ()
 	{

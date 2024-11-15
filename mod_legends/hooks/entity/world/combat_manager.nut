@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/combat_manager", function(o)
+::mods_hookExactClass("entity/world/combat_manager", function(o)
 {
 	o.startCombat = function( _p1, _p2 )
 	{

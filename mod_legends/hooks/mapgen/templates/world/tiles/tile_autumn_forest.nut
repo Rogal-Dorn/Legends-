@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/world/tiles/tile_autumn_forest", function(o)
+::mods_hookExactClass("mapgen/templates/world/tiles/tile_autumn_forest", function(o)
 {
 	o.onSecondPass = function ( _rect )
 	{

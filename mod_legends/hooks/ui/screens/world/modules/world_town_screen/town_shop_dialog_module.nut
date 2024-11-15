@@ -1,6 +1,6 @@
 ::mods_hookExactClass("ui/screens/world/modules/world_town_screen/town_shop_dialog_module", function(o) {
 
-	function onRepairItem( _itemIndex )
+	o.onRepairItem = function ( _itemIndex )
 	{
 		if (!this.m.Shop.isRepairOffered())
 		{
@@ -35,7 +35,7 @@
 		return result;
 	}
 
-	function onSwapItem( _data )
+	o.onSwapItem = function ( _data )
 	{
 		local sourceItemIdx = _data[0];
 		local sourceItemOwner = _data[1];
