@@ -1094,9 +1094,9 @@ if (!("World" in ::Const))
 			break;
 		}
 	}
-	if (startingCredits == _credits && T.len() > 0) {
-		throw "dynamicSelectTroop didn't change credits"
-	}
+//	if (startingCredits == _credits && T.len() > 0) {
+//		throw "dynamicSelectTroop didn't change credits"
+//	}
 	return _credits
 }
 
@@ -1106,7 +1106,7 @@ if (!("World" in ::Const))
 	local credits = _resources;
 	if ("MinR" in _template)
 	{
-		credits = this.Math.max(_template.MinR, credits)
+		credits = this.Math.max(_template.MinR, credits);
 	}
 	local scale = "MaxR" in _template ? (_resources * 1.0) / (_template.MaxR * 1.0) : 1.0;
 	local troopMap = {};
@@ -1114,28 +1114,30 @@ if (!("World" in ::Const))
 
 	if ("Fixed" in _template)
 	{
-		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits)
+		credits = this.Const.World.Common.dynamicSelectTroop(_template.Fixed, _resources, scale, troopMap, credits);
 	}
 
 	if ("Troops" in _template && _template.Troops.len() > 0)
 	{
-		while (credits > 0)
+		local tries = 200;
+		while (credits > 0 && tries > 0)
 		{
-			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits)
+			credits = this.Const.World.Common.dynamicSelectTroop(_template.Troops, _resources, scale, troopMap, credits);
+			tries--;
 		}
 	}
 
 	local T = []
 	foreach ( k, v in troopMap)
 	{
-		T.push(v)
+		T.push(v);
 	}
 
 
 	//TESTING
 	 foreach (t in T)
 	 {
-	 	::logInfo(t.Type.Script + " : " + t.Num)
+	 	::logInfo(t.Type.Script + " : " + t.Num);
 	 }
 
 	return {
