@@ -11,7 +11,7 @@
 
 	o.getTooltip = function ()
 	{
-		return = [
+		return [
 			{
 				id = 1,
 				type = "title",
