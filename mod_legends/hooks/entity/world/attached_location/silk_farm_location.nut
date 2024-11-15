@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/silk_farm_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/silk_farm_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -16,7 +16,7 @@
 			_list.push("legend_qiyan_background");
 			_list.push("legend_qiyan_background");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

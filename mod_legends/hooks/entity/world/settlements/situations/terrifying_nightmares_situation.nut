@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "The people of this settlement are terrorized by nightmares. Many prefer to stay awake all night just to be safe. The local townsfolk have called in Witch Hunters and Beast Slayers alike, desperately hoping for either group to put an end to their terrors. Upon resolution this will refresh the hiring roster in town.";
 		this.m.Rumors = [
 			"The other day I came through %settlement%. Something is wrong there. Pale faces, tired eyes and shambling walks. It\'s like they didn\'t sleep in a week!",
@@ -28,7 +29,7 @@
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.125);
 		}
-		_settlement.resetRoster(true); 
+		_settlement.resetRoster(true);
 
 		if (::Math.rand(1,10)==1)
 		{

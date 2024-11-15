@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/conquer_holy_site_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/defend_holy_site_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
@@ -12,7 +12,6 @@
 		];
 	}
 
-	local spawnAlly = o.spawnAlly;
 	o.spawnAlly = function ()
 	{
 		local o = this.m.Destination.getTile().SquareCoords;
@@ -126,7 +125,6 @@
 		return party;
 	}
 
-	local spawnEnemy = o.spawnEnemy;
 	o.spawnEnemy = function ()
 	{
 		local cityState = this.World.FactionManager.getFaction(this.getFaction());

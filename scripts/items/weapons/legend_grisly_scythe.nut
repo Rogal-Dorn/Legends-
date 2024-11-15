@@ -36,19 +36,20 @@ this.legend_grisly_scythe <- this.inherit("scripts/items/weapons/weapon", {
 		cleave.m.FatigueCost = 15;
 		this.addSkill(cleave);
 		this.addSkill(this.new("scripts/skills/actives/reap_skill"));
-		if (this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			local actor = this.getContainer().getActor();
-			if (actor == null || actor.isNull())
-			{
-				return;
-			}
-			local Skills = actor.getSkills();
-			if (Skills.hasSkill("background.legend_commander_necro") || Skills.hasSkill("background.legend_necromancer") || Skills.hasSkill("background.legend_warlock"))
-			{
-				this.addSkill(this.new("scripts/skills/actives/legend_curseofyears_skill"));
-			}
-		}
+		// todo delete it - chopeks
+//		if (this.LegendsMod.Configs().LegendMagicEnabled())
+//		{
+//			local actor = this.getContainer().getActor();
+//			if (actor == null || actor.isNull())
+//			{
+//				return;
+//			}
+//			local Skills = actor.getSkills();
+//			if (Skills.hasSkill("background.legend_commander_necro") || Skills.hasSkill("background.legend_necromancer") || Skills.hasSkill("background.legend_warlock"))
+//			{
+//				this.addSkill(this.new("scripts/skills/actives/legend_curseofyears_skill"));
+//			}
+//		}
 	}
 
 	function onDamageDealt( _target, _skill, _hitInfo )

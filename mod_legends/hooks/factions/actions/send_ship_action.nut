@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/actions/receive_ship_action", function(o)
+::mods_hookExactClass("factions/actions/send_ship_action", function(o)
 {
 	o.m.Dest <- null;
 
@@ -6,11 +6,10 @@
 	o.onUpdate = function ( _faction )
 	{
 		onUpdate(_faction);
-		if (this.m.Settlement.numShips() > 1)
-		{
-			this.m.Score = 0;
+		if (this.m.Settlement == null)
 			return;
-		}
+		if (this.m.Settlement.numShips() > 1)
+			this.m.Score = 0;
 	}
 
 	o.onLegendExecute <- function ( _faction )
@@ -180,6 +179,6 @@
 		// 	}
 		// }
 
-		onUpdate(_faction);
+		onExecute(_faction);
 	}
 });

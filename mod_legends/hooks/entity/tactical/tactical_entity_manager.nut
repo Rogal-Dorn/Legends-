@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/tactical/tactical_entity_manager", function(o) 
+::mods_hookExactClass("entity/tactical/tactical_entity_manager", function(o) 
 {
  	o.spawn = function ( _properties )
 	{

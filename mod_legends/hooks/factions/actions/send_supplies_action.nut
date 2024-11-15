@@ -1,9 +1,8 @@
-::mods_hookExactClass("factions/actions/send_supplies_action", function(o) 
+::mods_hookExactClass("factions/actions/send_supplies_action", function(o)
 {
 	o.m.Dest <- null;
-	o.m.isSendingAid <- false;
+	o.m.IsSendingAid <- false;
 
-	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _faction )
 	{
 		if (!this.World.getTime().IsDaytime)
@@ -57,13 +56,13 @@
 
 		this.m.Start = ::MSU.Array.rand(starts);
 		this.m.Dest = ::MSU.Array.rand(dests);
-	
+
 		if (this.m.Start.isConnectedToByRoads(this.m.Dest))
 		{
 			this.m.Score = 5 + (this.m.IsSendingAid ? 1 : 0);
 			return;
 		}
-		
+
 		this.m.Start = null;
 		this.m.Dest = null;
 	}
@@ -88,7 +87,7 @@
 				ret.Forts.push(s);
 				continue;
 			}
-			
+
 			if (s.getWealth() > 33)
 				continue;
 
@@ -177,10 +176,10 @@
 	{
 	}
 
-	function onExecute( _faction )
+	o.onExecute = function ( _faction )
 	{
 		local budget = !::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() ? 0 : ::Const.World.Common.WorldEconomy.Trade.calculateTradingBudget(this.m.Start);
-		
+
 		if (!this.m.Start.isMilitary() && this.m.Start.getSize() < 3)
 			budget *= 1.5;
 

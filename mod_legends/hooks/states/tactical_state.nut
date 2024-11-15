@@ -553,7 +553,7 @@
 	o.showRetreatScreen = function (_tag = null)
 	{
 		this.m.TacticalScreen.getTopbarOptionsModule().changeFleeButtonToAllowRetreat(true);
-		showRetreatScreen();
+		return showRetreatScreen();
 	}
 
 	o.isEnemyRetreatDialogShown <- function ()

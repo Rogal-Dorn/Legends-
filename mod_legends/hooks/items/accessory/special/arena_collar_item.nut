@@ -4,7 +4,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		result = getTooltip();
+		local result = getTooltip();
 		result.push({
 			id = 10,
 			type = "text",

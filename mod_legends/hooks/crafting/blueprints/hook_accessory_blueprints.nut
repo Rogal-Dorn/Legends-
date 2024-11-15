@@ -1,5 +1,5 @@
 local blueprints = [
-	"alp_trophy_upgrade_blueprint",
+	"alp_trophy_blueprint",
 	"hexen_trophy_blueprint",
 	"ghoul_trophy_blueprint",
 	"large_powder_bag_blueprint",

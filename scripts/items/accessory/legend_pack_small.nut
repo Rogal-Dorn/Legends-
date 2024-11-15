@@ -23,7 +23,7 @@ this.legend_pack_small <- this.inherit("scripts/items/accessory/accessory", {
 		this.Sound.play("sounds/cloth_01.wav", this.Const.Sound.Volume.Inventory);
 	}
 
-	function isAllowedInBag(_actor)
+	function isAllowedInBag(_actor = null)
 	{
 		return false;
 	}

@@ -1,5 +1,5 @@
 ::mods_hookExactClass("skills/traits/craven_trait", function(o)
-{	
+{
 	local create = o.create;
 	o.create = function ()
 	{
@@ -17,21 +17,21 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		ret = getTooltip();
+		local ret = getTooltip();
 		ret.push({
 			id = 10,
 			type = "text",
 			icon = "ui/icons/ranged_defense.png",
 			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+5[/color] Ranged Defense"
 		});
-		
+
 		return ret;
 	}
 
 	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _properties )
 	{
-		onUpdate();
+		onUpdate(_properties);
 		_properties.RangedDefense += 5;
 	}
 });

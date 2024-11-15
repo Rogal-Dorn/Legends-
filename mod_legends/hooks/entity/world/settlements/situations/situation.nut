@@ -1,5 +1,7 @@
-::mods_hookExactClass("entity/world/settlements/situations/situation", function(o)
+::mods_hookBaseClass("entity/world/settlements/situations/situation", function(o)
 {
+	while(!("IsStacking" in o.m)) o=o[o.SuperName]
+
 	o.m.IsSouthern <- false;
 
 	o.onUpdateDraftList = function ( _draftList, _gender = null)

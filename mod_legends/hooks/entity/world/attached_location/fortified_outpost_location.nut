@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/fortified_outpost_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/fortified_outpost_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -30,7 +30,7 @@
 		{
 			_list.push("legend_noble_ranged");
 		}
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;
@@ -98,8 +98,7 @@
 		}
 	}
 
-	o.getNewResources <- function ()
-	{
+	o.getNewResources <- function () {
 		return 0;
 	}
 });

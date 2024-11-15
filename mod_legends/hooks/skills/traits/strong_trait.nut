@@ -1,5 +1,5 @@
-::mods_hookExactClass("skills/traits/superstitious_trait", function(o)
-{	
+::mods_hookExactClass("skills/traits/strong_trait", function(o)
+{
 	local create = o.create;
 	o.create = function ()
 	{

@@ -1,6 +1,6 @@
 ::mods_hookBaseClass("retinue/follower", function ( o )
 {
-	while(!("ID" in o.m)) o = o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
 
 	o.m.RequiredSkills <- [];
 	o.m.LinkedBro <- null;
@@ -46,7 +46,7 @@
 				hasSecondary = true;
 
 				if (isSecondaryFulfilled || !r.IsSatisfied) continue;
-			
+
 				isSecondaryFulfilled = true;
 				continue;
 			}
@@ -82,7 +82,7 @@
 				hasSecondary = true;
 
 				if (isSecondaryFulfilled || !r.IsSatisfied) continue;
-			
+
 				isSecondaryFulfilled = true;
 				continue;
 			}
@@ -109,7 +109,7 @@
 				hasSecondary = true;
 
 				if (isSecondaryFulfilled || !r.CheckRequirement()) continue;
-			
+
 				isSecondaryFulfilled = true;
 				continue;
 			}

@@ -9,7 +9,7 @@
 	local onEquip = o.onEquip;
 	o.onEquip = function ()
 	{
-		this.weapon.onEquip();
+		onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_great_slash"));
 		this.addSkill(this.new("scripts/skills/actives/split"));
 		this.addSkill(this.new("scripts/skills/actives/swing"));

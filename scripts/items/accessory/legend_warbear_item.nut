@@ -8,7 +8,7 @@ this.legend_warbear_item <- this.inherit("scripts/items/accessory/accessory", {
 			"sounds/enemies/bear_idle2.wav"
 		]
 	},
-	function isAllowedInBag(_actor)
+	function isAllowedInBag(_actor = null)
 	{
 		return false;
 	}

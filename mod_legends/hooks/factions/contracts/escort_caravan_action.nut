@@ -1,4 +1,4 @@
-::mods_hookExactClass("factions/contracts/escort_caravan_action", function(o) 
+::mods_hookExactClass("factions/contracts/escort_caravan_action", function(o)
 {
 	local onUpdate = o.onUpdate;
 	o.onUpdate = function ( _faction )
@@ -9,6 +9,6 @@
 			return;
 		}
 
-		onUpdate();
+		onUpdate(_faction);
 	}
 });

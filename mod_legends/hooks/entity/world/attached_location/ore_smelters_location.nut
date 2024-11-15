@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/attached_location/ore_smelters_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/ore_smelters_location", function(o)
 {
 	local create = o.create;
 	o.create = function ()
@@ -9,6 +9,7 @@
 
 	o.onUpdateProduce <- function ( _list )
 	{
+		this.attached_location.onUpdateProduce(_list);
 		_list.push("trade/copper_ingots_item");
 		_list.push("trade/legend_tin_ingots_item");
 	}
@@ -19,7 +20,7 @@
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		_list.push("legend_blacksmith_background");
 		_list.push("legend_ironmonger_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;
@@ -41,7 +42,7 @@
 			_list.push({
 				R = 60,
 				P = 1.0,
-				S = "trade/tin_ingots_item"
+				S = "trade/legend_tin_ingots_item"
 			});
 			_list.push({
 				R = 80,

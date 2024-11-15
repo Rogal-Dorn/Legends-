@@ -5,7 +5,7 @@ this.legend_small_medicine_blueprint <- this.inherit("scripts/crafting/blueprint
 		this.blueprint.create();
 		this.m.ID = "blueprint.legend_small_medicine_blueprint";
 		this.m.Type = this.Const.Items.ItemType.Accessory;
-		this.m.PreviewCraftable = this.new("scripts/items/supplies/medicine_small_item");
+		this.m.PreviewCraftable = this.new("scripts/items/supplies/legend_medicine_small_item");
 		this.m.Cost = 10;
 		local ingredients = [
 			{

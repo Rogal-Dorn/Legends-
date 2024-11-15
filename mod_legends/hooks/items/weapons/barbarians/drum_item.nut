@@ -27,8 +27,8 @@
 	local onEquip = o.onEquip;
 	o.onEquip = function ()
 	{
-		this.weapon.onEquip();
-		this.addSkill(this.new("scripts/skills/actives/legend_drum_bash"));
+		onEquip();
+		this.addSkill(this.new("scripts/skills/actives/legend_drum_bash_skill"));
 		this.addSkill(this.new("scripts/skills/actives/knock_out"));
 	}
 

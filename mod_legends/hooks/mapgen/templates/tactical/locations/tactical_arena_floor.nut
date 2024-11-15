@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/tactical/locations/tactical_arena_floor", function(o)
+::mods_hookExactClass("mapgen/templates/tactical/locations/tactical_arena_floor", function(o)
 {
 	o.fill = function ( _rect, _properties, _pass = 1 )
 	{

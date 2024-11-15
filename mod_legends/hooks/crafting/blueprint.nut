@@ -1,6 +1,7 @@
 ::mods_hookBaseClass("crafting/blueprint", function ( o )
 {
-	while(!("PreviewSkills" in o.m)) o = o[o.SuperName];
+	while(!("ID" in o.m)) o=o[o.SuperName];
+
 	o.m.PreviewSkills <- [];
 	o.m.Enchanter <- false;
 	o.m.Type <- this.Const.Items.ItemType.None;

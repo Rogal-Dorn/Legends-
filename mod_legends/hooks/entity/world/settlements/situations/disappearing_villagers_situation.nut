@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "Villagers have been disappearing from this town, putting everyone on edge. Fewer locals are to be found on the streets, the belongings of the disappeared have somehow appeared in the markets. Enterprising Ratcatchers and Beast Slayers have also turned up, offering to hunt down the beasts plaguing the settlement in exchange for coin.";
 		this.m.Rumors = [
 			"I just cancelled my visit to %settlement% after I heard that people go missing over there. Staying out of trouble served me well so far!",
@@ -20,7 +21,7 @@
 		}
 		_settlement.resetRoster(true);
 		_settlement.resetShop();
-		
+
 		if (::Math.rand(1,10)==1)
 		{
 			_settlement.addSituation(this.new("scripts/entity/world/settlements/situations/legend_militant_townsfolk_situation"), this.getDefaultDays() + ::Math.rand(1,3));

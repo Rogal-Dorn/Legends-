@@ -1,11 +1,11 @@
-::mods_hookExactClass("entity/world/attached_location/surface_copper_vein_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/surface_copper_vein_location", function(o)
 {
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
 		 _list.push("legend_ironmonger_background");
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 	}
 
 	local onUpdateShopList = o.onUpdateShopList;

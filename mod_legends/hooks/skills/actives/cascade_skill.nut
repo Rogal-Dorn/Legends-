@@ -2,8 +2,8 @@
 {
 	o.getTooltip = function ()
 	{
-		local ret = this.getDefaultTooltip();
-		ret.extend([
+		local tooltip = this.getDefaultTooltip();
+		tooltip.extend([
 			{
 				id = 7,
 				type = "text",
@@ -17,7 +17,7 @@
 				text = "Ignores the bonus to Melee Defense granted by shields"
 			}
 		]);
-		return ret;
+		return tooltip;
 	}
 
 	local onUse = o.onUse;

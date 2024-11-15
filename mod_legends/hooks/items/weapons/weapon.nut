@@ -1,5 +1,5 @@
 ::mods_hookExactClass("items/weapons/weapon", function(o) {
-	o.Variants <- [];
+	o.m.Variants <- [];
 
 	o.getShieldDamage = function ()
 	{
@@ -15,7 +15,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		result = getTooltip();
+		local result = getTooltip();
 		if (this.isRuned())
 		{
 			result.push({
@@ -115,7 +115,7 @@
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
-		o.onDeserialize();
+		onDeserialize(_in);
 		if (this.isRuned())
 		{
 			this.updateRuneSigil();

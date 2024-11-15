@@ -10,7 +10,7 @@
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
-		result = getTooltip();
+		local result = getTooltip();
 		if (this.m.StaminaModifier > 0)
 		{
 			result.push({

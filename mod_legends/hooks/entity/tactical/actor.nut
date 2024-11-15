@@ -1,6 +1,7 @@
 ::mods_hookExactClass("entity/tactical/actor", function(o)
 {
-	//while(!("BloodSaturation" in o.m)) o = o[o.SuperName]; // find the base class
+//	while(!("BloodSaturation" in o.m)) o = o[o.SuperName];
+
 	o.m.BloodSaturation = 1.5;
 	o.m.DeathBloodAmount = 1.5;
 	o.m.BloodPoolScale = 1.25;
@@ -418,11 +419,12 @@
 		perks -= nonRefundable.len();
 
 		// Witch gets
-		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
-			perks = perks - 1;
-		}
+		// todo delete it - chopeks
+//		if (this.getBackground().getID() == "background.legend_witch" && this.LegendsMod.Configs().LegendMagicEnabled())
+//		{
+//			this.getSkills().add(this.new("scripts/skills/perks/perk_legend_magic_missile"));
+//			perks = perks - 1;
+//		}
 
 		this.m.PerkPoints = perks;
 
@@ -1500,26 +1502,26 @@
 		return damage;
 	}
 
-	local szFn = o.onSerialize;
+	local onSerialize = o.onSerialize;
 	o.onSerialize = function( _out )
 	{
-		szFn(_out);
+		onSerialize(_out);
 		_out.writeString(this.m.RiderID);
 	}
 
-	local dszFn = o.onDeserialize;
+	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function( _in )
 	{
-		dszFn(_in);
+		onDeserialize(_in);
 		this.m.RiderID = _in.readString();
 	}
 
-	local old_onMovementStart = o.onMovementStart;
+	local onMovementStart = o.onMovementStart;
 	o.onMovementStart = function(_tile, _numTiles)
 	{
 		local oldID = ::Const.Movement.HiddenStatusEffectID;
 		::Const.Movement.HiddenStatusEffectID = "effects.lol_nothing"; //necro encouraged this
-		old_onMovementStart(_tile, _numTiles);
+		onMovementStart(_tile, _numTiles);
 		::Const.Movement.HiddenStatusEffectID = oldID;
 	}
 

@@ -1,8 +1,4 @@
-if (!("LegendMod" in ::Const))
-{
-	::Const.LegendMod <- {};
-}
-::Const.GetFactionArchetypesList <- function () 
+::Const.GetFactionArchetypesList <- function ()
 {
 	local result = [];
 	for ( local i = 0; i < this.Const.FactionArchetypes.len(); i = ++i )

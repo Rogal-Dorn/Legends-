@@ -1,7 +1,7 @@
 ::mods_hookExactClass("factions/noble_faction", function(o) 
 {
 	local onDeserialize = o.onDeserialize;
-	function onDeserialize( _in )
+	o.onDeserialize = function ( _in )
 	{
 		onDeserialize( _in );
 

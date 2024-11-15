@@ -53,19 +53,23 @@ this.legend_prosthetic_ear_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		result.push({
+			id = 64,
+			type = "text",
+			text = "Reduces the penalty of Missing Ear to [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Initiative"
+		});
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_ear"))
 		{
-			result.extend([
-			{
-				id = 64,
-				type = "text",
-				text = "Reduces the penalty of Missing Ear to [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Initiative"
-			},
-			{
+			result.push({
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
-			}]);
+			});
 		}
 		else
 		{

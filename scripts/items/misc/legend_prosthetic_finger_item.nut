@@ -53,22 +53,27 @@ this.legend_prosthetic_finger_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		result.extend([
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/melee_skill.png",
+			text = "Reduces the penalty of Missing Finger to [color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Melee Skill"
+		},
+		{
+			id = 8,
+			type = "text",
+			icon = "ui/icons/ranged_skill.png",
+			text = "Reduces the penalty of Missing Finger to [color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Ranged Skill"
+		}]);
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_finger"))
 		{
-			result.extend([
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "Reduces the penalty of Missing Finger to [color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Melee Skill"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "Reduces the penalty of Missing Finger to [color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Ranged Skill"
-			},
-			{
+			result.extend([{
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."

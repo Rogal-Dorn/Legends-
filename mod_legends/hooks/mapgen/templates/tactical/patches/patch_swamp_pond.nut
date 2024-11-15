@@ -1,4 +1,4 @@
-::mods_hookNewObjectOnce("mapgen/templates/tactical/patches/patch_swamp_pond", function(o)
+::mods_hookExactClass("mapgen/templates/tactical/patches/patch_swamp_pond", function(o)
 {
 	o.fill = function ( _rect, _properties, _pass = 1 )
 	{

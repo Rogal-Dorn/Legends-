@@ -1,4 +1,4 @@
-::mods_hookNewObject("events/event_manager", function(o)
+::mods_hookExactClass("events/event_manager", function(o)
 {
 	o.create = function ()
 	{
@@ -141,55 +141,5 @@
 		this.m.ActiveEvent.fire();
 		this.m.IsEventShown = this.World.State.showEventScreen(this.m.ActiveEvent);
 		return true;
-	}
-
-	o.onSerialize = function ( _out )
-	{
-		_out.writeF32(this.m.LastEventTime);
-		_out.writeU32(this.m.Events.len());
-
-		foreach( event in this.m.Events )
-		{
-			_out.writeString(event.getID());
-			event.onSerialize(_out);
-		}
-
-		_out.writeF32(this.m.LastBattleTime);
-		//_out.writeBool(true);
-		_out.writeString(this.m.LastEventID);
-		//_out.writeBool(false);
-	}
-
-	o.onDeserialize = function ( _in )
-	{
-		this.clear();
-		this.m.LastEventTime = _in.readF32();
-		local numEvents = _in.readU32();
-
-		for( local i = 0; i < numEvents; i = ++i )
-		{
-			local event = this.getEvent(_in.readString());
-
-			if (event != null)
-			{
-				event.onDeserialize(_in);
-			}
-			else
-			{
-				_in.readF32();
-			}
-		}
-
-		this.m.LastBattleTime = _in.readF32();
-		/*local hasLastEvent = _in.readBool();
-
-		if (!hasLastEvent)
-		{
-			return;
-		}
-		*/
-
-		this.m.LastEventID = _in.readString();
-		//_in.readBool();
 	}
 });

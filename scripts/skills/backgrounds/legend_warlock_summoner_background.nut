@@ -5,7 +5,7 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 		this.character_background.create();
 		this.m.ID = "background.legend_warlock_summoner";
 		this.m.Name = "Summoner";
-		this.m.Icon = "ui/backgrounds/background_necromancer_4.png"; 
+		this.m.Icon = "ui/backgrounds/background_necromancer_4.png";
 		this.m.BackgroundDescription = "Summoners practice raising the dead from the earth, what they do after that is anyone's guess...";
 		this.m.GoodEnding = "%name% continued to look for a cure to their ailments after you left the company. A few years later they would wander into the woods and meet a witch who was more than happy to help at the cost of some protection. %name% and the witch lived out most of their lives away from prying eyes, surrounded by ever shifting rings of undead patrolling the perimiter.";
 		this.m.BadEnding = "Seeing their affliction as a permament problem that wouldn\'t go away, %name% split from the company shorting after your departure. They took a differant approach and looked for cures closer to the grave, allowing a puppet of their own correction to bite them. Upon taking their own life shortly after, %name% did not rise as co herant as they intended - instead as a spectator to their own body's actions. They remained trapped and decaying until a mercenary company cut them down outside of a nameless hamlet.";
@@ -71,76 +71,72 @@ this.legend_warlock_summoner_background <- this.inherit("scripts/skills/backgrou
 				0.0 //oasis
 			];
 
-		if (!this.LegendsMod.Configs().LegendMagicEnabled()) //scythe, defence and summoning
-		{
-				this.m.CustomPerkTree = [
-				[
-					this.Const.Perks.PerkDefs.NineLives,
-					this.Const.Perks.PerkDefs.CripplingStrikes,
-					this.Const.Perks.PerkDefs.BagsAndBelts,
-					this.Const.Perks.PerkDefs.Student,
-					this.Const.Perks.PerkDefs.Recover,
-					this.Const.Perks.PerkDefs.LegendBalance,
-					this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieLow
-				],
-				[
-					this.Const.Perks.PerkDefs.CoupDeGrace,
-					this.Const.Perks.PerkDefs.FortifiedMind,
-					this.Const.Perks.PerkDefs.Gifted,
-					this.Const.Perks.PerkDefs.LegendPerfectFit,
-					this.Const.Perks.PerkDefs.LegendTrueBeliever,
-					this.Const.Perks.PerkDefs.LegendPrepareBleed,
-					this.Const.Perks.PerkDefs.LegendPrepareGraze
-				],
-				[
-					this.Const.Perks.PerkDefs.Backstabber,
-					this.Const.Perks.PerkDefs.Debilitate,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-					this.Const.Perks.PerkDefs.Lookout,
-					this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
-					this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
-					this.Const.Perks.PerkDefs.LegendBloodbath
-				],
-				[
-					this.Const.Perks.PerkDefs.SpecDagger,
-					this.Const.Perks.PerkDefs.SpecMace,
-					this.Const.Perks.PerkDefs.SpecCleaver,
-					this.Const.Perks.PerkDefs.SpecPolearm,
-					this.Const.Perks.PerkDefs.LegendMasteryStaves,
-					this.Const.Perks.PerkDefs.LegendSpecPoison,
-					this.Const.Perks.PerkDefs.LegendLacerate,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieMed
-				],
-				[
-					this.Const.Perks.PerkDefs.Underdog,
-					this.Const.Perks.PerkDefs.LegendLithe,
-					this.Const.Perks.PerkDefs.LegendSpecStaffStun,
-					this.Const.Perks.PerkDefs.LegendBlendIn,
-					this.Const.Perks.PerkDefs.LegendReclamation,
-					this.Const.Perks.PerkDefs.LegendSlaughter
-				],
-				[
-					this.Const.Perks.PerkDefs.LegendClarity,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
-					this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
-					this.Const.Perks.PerkDefs.Taunt
-				],
-				[
-					this.Const.Perks.PerkDefs.Fearsome,
-					this.Const.Perks.PerkDefs.LegendPerfectFocus,
-					this.Const.Perks.PerkDefs.LegendPush,
-					this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
-					this.Const.Perks.PerkDefs.LegendExtendendAura,
-					this.Const.Perks.PerkDefs.LegendInTheZone
-				],
-				[],
-				[],
-				[],
-				[]
-			];
-
-		}
+		this.m.CustomPerkTree = [
+			[
+				this.Const.Perks.PerkDefs.NineLives,
+				this.Const.Perks.PerkDefs.CripplingStrikes,
+				this.Const.Perks.PerkDefs.BagsAndBelts,
+				this.Const.Perks.PerkDefs.Student,
+				this.Const.Perks.PerkDefs.Recover,
+				this.Const.Perks.PerkDefs.LegendBalance,
+				this.Const.Perks.PerkDefs.LegendSpecialistScytheSkill,
+				this.Const.Perks.PerkDefs.LegendSpawnZombieLow
+			],
+			[
+				this.Const.Perks.PerkDefs.CoupDeGrace,
+				this.Const.Perks.PerkDefs.FortifiedMind,
+				this.Const.Perks.PerkDefs.Gifted,
+				this.Const.Perks.PerkDefs.LegendPerfectFit,
+				this.Const.Perks.PerkDefs.LegendTrueBeliever,
+				this.Const.Perks.PerkDefs.LegendPrepareBleed,
+				this.Const.Perks.PerkDefs.LegendPrepareGraze
+			],
+			[
+				this.Const.Perks.PerkDefs.Backstabber,
+				this.Const.Perks.PerkDefs.Debilitate,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
+				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
+				this.Const.Perks.PerkDefs.LegendSpecStaffSkill,
+				this.Const.Perks.PerkDefs.LegendBloodbath
+			],
+			[
+				this.Const.Perks.PerkDefs.SpecDagger,
+				this.Const.Perks.PerkDefs.SpecMace,
+				this.Const.Perks.PerkDefs.SpecCleaver,
+				this.Const.Perks.PerkDefs.SpecPolearm,
+				this.Const.Perks.PerkDefs.LegendMasteryStaves,
+				this.Const.Perks.PerkDefs.LegendSpecPoison,
+				this.Const.Perks.PerkDefs.LegendLacerate,
+				this.Const.Perks.PerkDefs.LegendSpawnZombieMed
+			],
+			[
+				this.Const.Perks.PerkDefs.Underdog,
+				this.Const.Perks.PerkDefs.LegendLithe,
+				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
+				this.Const.Perks.PerkDefs.LegendBlendIn,
+				this.Const.Perks.PerkDefs.LegendReclamation,
+				this.Const.Perks.PerkDefs.LegendSlaughter
+			],
+			[
+				this.Const.Perks.PerkDefs.LegendClarity,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
+				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
+				this.Const.Perks.PerkDefs.Taunt
+			],
+			[
+				this.Const.Perks.PerkDefs.Fearsome,
+				this.Const.Perks.PerkDefs.LegendPerfectFocus,
+				this.Const.Perks.PerkDefs.LegendPush,
+				this.Const.Perks.PerkDefs.LegendSpawnZombieHigh,
+				this.Const.Perks.PerkDefs.LegendExtendendAura,
+				this.Const.Perks.PerkDefs.LegendInTheZone
+			],
+			[],
+			[],
+			[],
+			[]
+		];
 	}
 
 	function onBuildDescription()

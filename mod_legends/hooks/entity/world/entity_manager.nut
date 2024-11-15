@@ -1,4 +1,4 @@
-::mods_hookNewObject("entity/world/entity_manager", function(o)
+::mods_hookExactClass("entity/world/entity_manager", function(o)
 {
 	o.m.FreeCompanies <- [];
 	o.m.NonDefaultFreeCompanies <- [];
@@ -7,7 +7,7 @@
 	local update = o.update;
 	o.update = function ()
 	{
-		local update = o.update;
+		update();
 		this.manageAIFreeCompanies();
 	}
 

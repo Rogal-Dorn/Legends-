@@ -12,13 +12,13 @@
 
 	o.getTooltip = function ()
 	{
-		local ret = this.getRangedTooltip(this.getDefaultTooltip());
+		local tooltip = this.getRangedTooltip(this.getDefaultTooltip());
 
 		local ammo = this.getAmmo();
 
 		if (ammo > 0)
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/icons/ammo.png",
@@ -27,7 +27,7 @@
 		}
 		else
 		{
-			ret.push({
+			tooltip.push({
 				id = 8,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -37,7 +37,7 @@
 
 		if (!this.getItem().isLoaded())
 		{
-			ret.push({
+			tooltip.push({
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
@@ -45,7 +45,7 @@
 			});
 		}
 
-		return ret;
+		return tooltip;
 	}
 
 	o.onAfterUpdate = function ( _properties )

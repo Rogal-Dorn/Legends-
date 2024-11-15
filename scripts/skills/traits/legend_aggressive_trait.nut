@@ -5,7 +5,7 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 		this.character_trait.create();
 		this.m.ID = "trait.legend_aggressive";
 		this.m.Name = "Aggressive";
-		this.m.Icon = "ui/traits/legend_aggressive_trait.png";
+		this.m.Icon = "ui/traits/aggressive_trait.png";
 		this.m.Description = "This character is pretty aggressive, even to their own detriment.";
 		this.m.Titles = [
 			"the Boar",
@@ -60,7 +60,7 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 				type = "text",
 				icon = "ui/icons/morale.png",
 				text = "Will never start combat at wavering morale"
-			},			
+			},
 		];
 	}
 
@@ -69,7 +69,7 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 		_properties.MeleeDamageMult *= 1.15;
 		_properties.SurroundedDefense -= 5;
 	}
-	
+
 	function onCombatStarted()
 	{
 		local actor = this.getContainer().getActor();
@@ -78,7 +78,7 @@ this.legend_aggressive_trait <- this.inherit("scripts/skills/traits/character_tr
 		{
 			actor.setMoraleState(this.Const.MoraleState.Steady);
 		}
-	}	
+	}
 
 });
 

@@ -1,10 +1,10 @@
 ::mods_hookExactClass("skills/perks/perk_relentless", function(o) {
 	o.m.TilesUsed <- [];
 
-	local ws_create = o.create;
+	local create = o.create;
 	o.create = function ()
 	{
-		ws_create();
+		create();
 		this.m.SoundOnUse = [
 			"sounds/combat/bash_01.wav",
 			"sounds/combat/bash_02.wav",

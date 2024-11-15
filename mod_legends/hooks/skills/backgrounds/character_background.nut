@@ -152,6 +152,10 @@
 		}
 	}
 
+	o.getModifiers <- function() {
+		return this.m.Modifiers;
+	}
+
 	o.getIconColored <- function ()
 	{
 		if(this.isBackgroundType(this.Const.BackgroundType.ConvertedCultist)) {
@@ -1311,11 +1315,6 @@
 		{
 			mins = this.m.PerkTreeDynamicMinsBeast;
 		}
-		else if (this.LegendsMod.Configs().LegendMagicEnabled())
-		{
-			mins = this.m.PerkTreeDynamicMinsMagic;
-		}
-
 		return mins;
 	}
 

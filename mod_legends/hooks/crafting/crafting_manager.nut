@@ -1,6 +1,6 @@
 ::mods_hookNewObject("crafting/crafting_manager", function(o)
 {
-	o.getQualifiedBlueprintsForUI = function ( _filter )
+	o.getQualifiedBlueprintsForUI = function (_filter = this.Const.Items.ItemFilter.All)
 	{
 		local ret = [];
 

@@ -3,6 +3,7 @@
 	local create = o.create;
 	o.create = function ()
 	{
+		create();
 		this.m.Description = "Large Unholds have been seen and heard in the area. The townsfolk are scared of leaving the vicinity of the settlement. Beast Slayers and Sellswords have shown up offering to slay these giants in exchange for coin.";
 		this.m.Rumors = [
 			"A traveling merchant told me about giant footprints near the road from %settlement%. Sure as hell would not want to meet whatever beast left those!",
@@ -12,14 +13,14 @@
 		];
 	}
 
+	local onAdded = o.onAdded;
 	o.onAdded = function ( _settlement )
 	{
-		_settlement.resetRoster(true);
 		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * -0.025);
 		}
-		_settlement.resetRoster(true);
+		onAdded(_settlement)
 	}
 
 	o.onResolved <- function ( _settlement )
@@ -28,7 +29,7 @@
 		{
 			_settlement.setResources(_settlement.getResources() + _settlement.getResources() * 0.125);
 		}
-		_settlement.resetRoster(true); 
+		_settlement.resetRoster(true);
 
 		if (::Math.rand(1,10)==1)
 		{

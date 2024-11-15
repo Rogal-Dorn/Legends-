@@ -1,10 +1,10 @@
-::mods_hookExactClass("entity/world/attached_location/goat_herd_oriental_location", function(o) 
+::mods_hookExactClass("entity/world/attached_location/goat_herd_oriental_location", function(o)
 {
 	local onUpdateDraftList = o.onUpdateDraftList;
 	o.onUpdateDraftList = function ( _list, _gender = null )
 	{
 		_gender = ::Legends.Mod.ModSettings.getSetting("GenderEquality").getValue() != "Disabled";
-		onUpdateDraftList(_list, _gender);
+		onUpdateDraftList(_list);
 		_list.push("legend_muladi_background");
 		_list.push("legend_muladi_background");
 	}

@@ -1,8 +1,9 @@
-::mods_hookExactClass("factions/contracts/hunting_webknechts_action", function(o) 
+::mods_hookExactClass("factions/contracts/hunting_webknechts_action", function(o)
 {
 	local create = o.create;
 	o.create = function()
 	{
+		create();
 		this.m.Cooldown = this.World.getTime().SecondsPerDay * 7;
 	}
 

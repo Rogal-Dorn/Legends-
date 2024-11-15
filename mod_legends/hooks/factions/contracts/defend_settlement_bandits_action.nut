@@ -1,8 +1,9 @@
-::mods_hookExactClass("factions/contracts/defend_settlement_bandits_action", function(o) 
+::mods_hookExactClass("factions/contracts/defend_settlement_bandits_action", function(o)
 {
 	local create = o.create;
 	o.create = function()
 	{
+		create();
 		this.m.Cooldown = this.World.getTime().SecondsPerDay * 5;
 	}
 
