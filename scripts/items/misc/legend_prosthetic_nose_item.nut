@@ -53,14 +53,23 @@ this.legend_prosthetic_nose_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		result.push({
+			id = 7,
+			type = "text",
+			icon = "ui/icons/fatigue.png",
+			text = "Reduces the penalty of Missing Nose to [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Max Fatigue"
+		});
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_nose"))
 		{
-			result.push(
-			{
-				id = 7,
+			result.push({
+				id = 65,
 				type = "text",
-				icon = "ui/icons/fatigue.png",
-				text = "Reduces the penalty of Missing Nose to [color=" + this.Const.UI.Color.NegativeValue + "]-5%[/color] Max Fatigue"
+				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
 			});
 		}
 		else

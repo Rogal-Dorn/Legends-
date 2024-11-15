@@ -19,6 +19,7 @@ this.legend_prosthetic_ear_blueprint <- this.inherit("scripts/crafting/blueprint
 				Scripts = ["scripts/skills/perks/perk_legend_inventor_anatomy"]
 			}
 		];
+		this.initSkills(skills);
 	}
 
 	function onCraft( _stash )

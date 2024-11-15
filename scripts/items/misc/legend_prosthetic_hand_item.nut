@@ -53,9 +53,7 @@ this.legend_prosthetic_hand_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
-		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_hand"))
-		{
-			result.extend([
+		result.extend([
 			{
 				id = 9,
 				type = "text",
@@ -85,12 +83,20 @@ this.legend_prosthetic_hand_item <- this.inherit("scripts/items/item", {
 				type = "text",
 				icon = "ui/icons/ranged_skill.png",
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Skill when NOT using a shield"
-			},
-			{
+			}
+		]);
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
+		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_hand"))
+		{
+			result.push({
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
-			}]);
+			});
 		}
 		else
 		{

@@ -52,33 +52,38 @@ this.legend_prosthetic_forearm_item <- this.inherit("scripts/items/item", {
 				image = this.getIcon()
 			});
 		}
+		result.extend([
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/melee_skill.png",
+			text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Skill"
+		},
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/ranged_skill.png",
+			text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Skill"
+		},
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/melee_defense.png",
+			text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Defense"
+		}
+		]);
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
 
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.broken_elbow_joint"))
 		{
-			result.extend([
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/melee_skill.png",
-				text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Melee Skill"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/ranged_skill.png",
-				text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Ranged Skill"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/melee_defense.png",
-				text = "Reduces the penalty of Broken Elbow Joint to [color=" + this.Const.UI.Color.NegativeValue + "]-15%[/color] Melee Defense"
-			},
-			{
+			result.push({
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
-			}]);
+			});
 		}
 		else
 		{

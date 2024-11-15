@@ -53,15 +53,19 @@ this.legend_prosthetic_eye_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		result.push({
+			id = 64,
+			type = "text",
+			text = "[color=" + this.Const.UI.Color.PositiveValue + "]+7[/color] Resolve"
+		});
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_eye"))
 		{
-			result.extend([
-			{
-				id = 64,
-				type = "text",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+7[/color] Resolve"
-			},
-			{
+			result.extend([{
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
