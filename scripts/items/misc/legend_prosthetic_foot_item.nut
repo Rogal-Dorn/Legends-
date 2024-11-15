@@ -53,32 +53,38 @@ this.legend_prosthetic_foot_item <- this.inherit("scripts/items/item", {
 			});
 		}
 
+		result.extend([
+		{
+			id = 7,
+			type = "text",
+			icon = "ui/icons/action_points.png",
+			text = "Removes the [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] Additional Action Point per tile moved penalty from Maimed Foot Injury"
+		},
+		{
+			id = 8,
+			type = "text",
+			icon = "ui/icons/initiative.png",
+			text = "Reduces the penalty of Missing Foot to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Initiative"
+		},
+		{
+			id = 9,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Builds up [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] more fatigue for each tile travelled"
+		}
+		]);
+
+		if (!("getActor" in this.getContainer())) {
+			return result;
+		}
+
 		if (this.getContainer().getActor().getSkills().hasSkill("injury.maimed_foot"))
 		{
-			result.extend([
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/action_points.png",
-				text = "Removes the [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] Additional Action Point per tile moved penalty from Maimed Foot Injury"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/initiative.png",
-				text = "Reduces the penalty of Missing Foot to [color=" + this.Const.UI.Color.NegativeValue + "]-10%[/color] Initiative"
-			},
-			{
-				id = 7,
-				type = "text",
-				icon = "ui/icons/special.png",
-				text = "Builds up [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] more fatigue for each tile travelled"
-			},
-			{
+			result.push({
 				id = 65,
 				type = "text",
 				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
-			}]);
+			});
 		}
 		else
 		{
