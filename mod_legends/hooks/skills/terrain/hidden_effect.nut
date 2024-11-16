@@ -1,5 +1,7 @@
 ::mods_hookExactClass("skills/terrain/hidden_effect", function(o)
 {
+	o.m.ToRemove <- false;
+
 	local create = o.create;
 	o.create = function()
 	{
