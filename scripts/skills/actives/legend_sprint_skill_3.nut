@@ -1,4 +1,4 @@
-this.legend_sprint_skill <- this.inherit("scripts/skills/skill", {
+this.legend_sprint_skill_3 <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

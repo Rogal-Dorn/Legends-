@@ -1,4 +1,4 @@
-this.lindwurm_tail_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.legend_stollwurm_tail_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{

@@ -1,4 +1,4 @@
-this.legend_horrify_skill <- this.inherit("scripts/skills/skill", {
+this.legend_horrify_old_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

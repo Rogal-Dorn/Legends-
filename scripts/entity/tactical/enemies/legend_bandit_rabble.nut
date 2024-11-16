@@ -1,4 +1,4 @@
-this.vbandit_rabble <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
+this.legend_bandit_rabble <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", {
 	m = {},
 	function create()
 	{
@@ -281,6 +281,6 @@ this.vbandit_rabble <- this.inherit("scripts/entity/tactical/randomized_unit_abs
 		}
 		local weapons = ["legend_named_blacksmith_hammer", "legend_named_butchers_cleaver", "legend_named_shovel", "legend_named_sickle" ]
 		this.m.Items.unequip(this.m.Items.getItemAtSlot(this.Const.ItemSlot.Mainhand));
-		this.m.Items.equip(this.new("scripts/items/named/" + weapons[this.Math.rand(0, weapons.len() - 1)])); 
+		this.m.Items.equip(this.new("scripts/items/named/" + weapons[this.Math.rand(0, weapons.len() - 1)]));
 	}
 });

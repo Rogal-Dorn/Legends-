@@ -1,4 +1,4 @@
-this.lergend_cart_large <- this.inherit("scripts/entity/tactical/actor", {
+this.legend_cart_large <- this.inherit("scripts/entity/tactical/actor", {
 	m = {},
 	function create()
 	{
