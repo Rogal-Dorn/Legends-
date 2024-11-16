@@ -1,6 +1,6 @@
 ::mods_hookExactClass("mapgen/templates/tactical/tiles/forest2", function(o)
 {
-	o.onFirstPass = function ( _rect )
+	o.onFirstPass = function ( _rect, _objectSpawnChanceMult = 1.0 )
 	{
 		local tile = this.Tactical.getTileSquare(_rect.X, _rect.Y);
 
