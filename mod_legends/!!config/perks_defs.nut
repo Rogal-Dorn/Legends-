@@ -110,6 +110,33 @@ local perkDefObjects = [];
 
 // Vanilla defined perks
 perkDefObjects.push({
+	ID = "perk.relentless",
+	Script = "scripts/skills/perks/perk_relentless",
+	Name = this.Const.Strings.PerkName.Relentless,
+	Tooltip = this.Const.Strings.PerkDescription.Relentless,
+	Icon = "ui/perks/perk_26.png",
+	IconDisabled = "ui/perks/perk_26_sw.png",
+	Const = "Relentless"
+});
+perkDefObjects.push({
+	ID = "perk.devastating_strikes",
+	Script = "scripts/skills/perks/perk_devastating_strikes",
+	Name = this.Const.Strings.PerkName.DevastatingStrikes,
+	Tooltip = this.Const.Strings.PerkDescription.DevastatingStrikes,
+	Icon = "ui/perks/devastating_strikes.png",
+	IconDisabled = "ui/perks/devastating_strikes_bw.png",
+	Const = "DevastatingStrikes"
+});
+perkDefObjects.push({
+	ID = "perk.debilitate",
+	Script = "scripts/skills/perks/perk_debilitate",
+	Name = this.Const.Strings.PerkName.Debilitate,
+	Tooltip = this.Const.Strings.PerkDescription.Debilitate,
+	Icon = "ui/perks/debilitate_circle_56.png",
+	IconDisabled = "ui/perks/debilitate_circle_56_bw.png",
+	Const = "Debilitate"
+});
+perkDefObjects.push({
 	ID = "perk.shield_bash",
 	Script = "scripts/skills/perks/perk_shield_bash",
 	Name = this.Const.Strings.PerkName.ShieldBash,
@@ -569,15 +596,6 @@ perkDefObjects.push({
 	Const = "Ballistics"
 });
 perkDefObjects.push({
-	ID = "perk.return_favor",
-	Script = "scripts/skills/perks/perk_return_favor",
-	Name = this.Const.Strings.PerkName.LegendReturnFavor,
-	Tooltip = this.Const.Strings.PerkDescription.LegendReturnFavor,
-	Icon = "ui/perks/return_favor_circle.png",
-	IconDisabled = "ui/perks/return_favor_circle_bw.png",
-	Const = "LegendReturnFavor"
-});
-perkDefObjects.push({
 	ID = "perk.steadfast",
 	Script = "scripts/skills/perks/perk_steadfast",
 	Name = this.Const.Strings.PerkName.Steadfast,
@@ -624,6 +642,15 @@ perkDefObjects.push({
 });
 
 // Legend defined perks
+perkDefObjects.push({
+	ID = "perk.legend_return_favor",
+	Script = "scripts/skills/perks/perk_legend_return_favor",
+	Name = this.Const.Strings.PerkName.LegendReturnFavor,
+	Tooltip = this.Const.Strings.PerkDescription.LegendReturnFavor,
+	Icon = "ui/perks/return_favor_circle.png",
+	IconDisabled = "ui/perks/return_favor_circle_bw.png",
+	Const = "LegendReturnFavor"
+});
 perkDefObjects.push({
 	ID = "perk.legend_daze",
 	Script = "scripts/skills/perks/perk_legend_daze",
@@ -922,76 +949,58 @@ perkDefObjects.push({
 	Const = "LegendHoldTheLine"
 });
 perkDefObjects.push({
-	ID = "perk.inspire",
-	Script = "scripts/skills/perks/perk_inspire",
+	ID = "perk.legend_inspire",
+	Script = "scripts/skills/perks/perk_legend_inspire",
 	Name = this.Const.Strings.PerkName.LegendInspire,
 	Tooltip = this.Const.Strings.PerkDescription.LegendInspire,
 	Icon = "ui/perks/inspire_circle.png",
 	IconDisabled = "ui/perks/inspire_circle_bw.png",
-	Const = "Inspire"
+	Const = "LegendInspire"
 });
 perkDefObjects.push({
-	ID = "perk.bloody_harvest",
-	Script = "scripts/skills/perks/perk_bloody_harvest",
+	ID = "perk.legend_bloody_harvest",
+	Script = "scripts/skills/perks/perk_legend_bloody_harvest",
 	Name = this.Const.Strings.PerkName.LegendBloodyHarvest,
 	Tooltip = this.Const.Strings.PerkDescription.LegendBloodyHarvest,
 	Icon = "ui/perks/bloody_harvest.png",
 	IconDisabled = "ui/perks/bloody_harvest_bw.png",
-	Const = "BloodyHarvest"
+	Const = "LegendBloodyHarvest"
 });
 perkDefObjects.push({
-	ID = "perk.devastating_strikes",
-	Script = "scripts/skills/perks/perk_devastating_strikes",
-	Name = this.Const.Strings.PerkName.DevastatingStrikes,
-	Tooltip = this.Const.Strings.PerkDescription.DevastatingStrikes,
-	Icon = "ui/perks/devastating_strikes.png",
-	IconDisabled = "ui/perks/devastating_strikes_bw.png",
-	Const = "DevastatingStrikes"
-});
-perkDefObjects.push({
-	ID = "perk.debilitate",
-	Script = "scripts/skills/perks/perk_debilitate",
-	Name = this.Const.Strings.PerkName.Debilitate,
-	Tooltip = this.Const.Strings.PerkDescription.Debilitate,
-	Icon = "ui/perks/debilitate_circle_56.png",
-	IconDisabled = "ui/perks/debilitate_circle_56_bw.png",
-	Const = "Debilitate"
-});
-perkDefObjects.push({
-	ID = "perk.slaughterer",
-	Script = "scripts/skills/perks/perk_slaughterer",
+	ID = "perk.legend_slaughterer",
+	Script = "scripts/skills/perks/perk_legend_slaughterer",
 	Name = this.Const.Strings.PerkName.LegendSlaughterer,
 	Tooltip = this.Const.Strings.PerkDescription.LegendSlaughterer,
 	Icon = "ui/perks/slaughterer_circle.png",
 	IconDisabled = "ui/perks/slaughterer_circle_bw.png",
-	Const = "Slaughterer"
+	Const = "LegendSlaughterer"
 });
 perkDefObjects.push({
-	ID = "perk.vengeance",
-	Script = "scripts/skills/perks/perk_vengeance",
+	ID = "perk.legend_vengeance",
+	Script = "scripts/skills/perks/perk_legend_vengeance",
 	Name = this.Const.Strings.PerkName.LegendVengeance,
 	Tooltip = this.Const.Strings.PerkDescription.LegendVengeance,
 	Icon = "ui/perks/vengeance_circle.png",
 	IconDisabled = "ui/perks/vengeance_circle_bw.png",
-	Const = "Vengeance"
+	Const = "LegendVengeance"
 });
 perkDefObjects.push({
-	ID = "perk.ironside",
-	Script = "scripts/skills/perks/perk_ironside",
+	ID = "perk.legend_ironside",
+	Script = "scripts/skills/perks/perk_legend_ironside",
 	Name = this.Const.Strings.PerkName.LegendIronside,
 	Tooltip = this.Const.Strings.PerkDescription.LegendIronside,
 	Icon = "ui/perks/perk_101.png",
 	IconDisabled = "ui/perks/perk_101_sw.png",
-	Const = "Ironside"
+	Const = "LegendIronside"
 });
 perkDefObjects.push({
-	ID = "perk.last_stand",
-	Script = "scripts/skills/perks/perk_last_stand",
+	ID = "perk.legend_last_stand",
+	Script = "scripts/skills/perks/perk_legend_last_stand",
 	Name = this.Const.Strings.PerkName.LegendLastStand,
 	Tooltip = this.Const.Strings.PerkDescription.LegendLastStand,
 	Icon = "ui/perks/laststand_circle.png",
 	IconDisabled = "ui/perks/laststand_circle_bw.png",
-	Const = "LastStand"
+	Const = "LegendLastStand"
 });
 perkDefObjects.push({
 	ID = "perk.legend_raise_undead",
@@ -1012,13 +1021,13 @@ perkDefObjects.push({
 	Const = "LegendWither"
 });
 perkDefObjects.push({
-	ID = "perk.rebound",
-	Script = "scripts/skills/perks/perk_rebound",
+	ID = "perk.legend_rebound",
+	Script = "scripts/skills/perks/perk_legend_rebound",
 	Name = this.Const.Strings.PerkName.LegendRebound,
 	Tooltip = this.Const.Strings.PerkDescription.LegendRebound,
 	Icon = "ui/perks/rebound_circle.png",
 	IconDisabled = "ui/perks/rebound_circle_bw.png",
-	Const = "Rebound"
+	Const = "LegendRebound"
 });
 perkDefObjects.push({
 	ID = "perk.legend_coordinated_volleys",
@@ -1408,8 +1417,8 @@ perkDefObjects.push({
 	Const = "LegendBribe"
 });
 perkDefObjects.push({
-	ID = "perk.legends.off_book_deal",
-	Script = "scripts/skills/perks/legends/off_book_deal",
+	ID = "perk.legends.legend_off_book_deal",
+	Script = "scripts/skills/perks/legends/perk_legend_off_book_deal",
 	Name = this.Const.Strings.PerkName.LegendOffBookDeal,
 	Tooltip = this.Const.Strings.PerkDescription.LegendOffBookDeal,
 	Icon = "ui/perks/coins_circle.png",
@@ -1688,7 +1697,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_warden",
-	Script = "scripts/skills/perks/legend_vala_warden",
+	Script = "scripts/skills/perks/perk_legend_vala_warden",
 	Name = this.Const.Strings.PerkName.LegendValaWarden,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaWarden,
 	Icon = "ui/perks/legend_vala_warden.png",
@@ -1697,7 +1706,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_threads",
-	Script = "scripts/skills/perks/legend_vala_threads",
+	Script = "scripts/skills/perks/perk_legend_vala_threads",
 	Name = this.Const.Strings.PerkName.LegendValaThreads,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaThreads,
 	Icon = "ui/perks/legend_vala_threads.png",
@@ -1706,7 +1715,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_premonition",
-	Script = "scripts/skills/perks/legend_vala_premonition",
+	Script = "scripts/skills/perks/perk_legend_vala_premonition",
 	Name = this.Const.Strings.PerkName.LegendValaPremonition,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaPremonition,
 	Icon = "ui/perks/legend_vala_premonition.png",
@@ -1715,7 +1724,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_chanting_mastery",
-	Script = "scripts/skills/perks/legend_vala_chanting_mastery",
+	Script = "scripts/skills/perks/perk_legend_vala_chanting_mastery",
 	Name = this.Const.Strings.PerkName.LegendValaChantMastery,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaChantMastery,
 	Icon = "ui/perks/legend_vala_chanting_mastery.png",
@@ -1724,7 +1733,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_trance_mastery",
-	Script = "scripts/skills/perks/legend_vala_trance_mastery",
+	Script = "scripts/skills/perks/perk_legend_vala_trance_mastery",
 	Name = this.Const.Strings.PerkName.LegendValaTranceMastery,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaTranceMastery,
 	Icon = "ui/perks/legend_vala_trance_mastery.png",
@@ -1733,7 +1742,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_chant_disharmony",
-	Script = "scripts/skills/perks/legend_vala_chant_disharmony",
+	Script = "scripts/skills/perks/perk_legend_vala_chant_disharmony",
 	Name = this.Const.Strings.PerkName.LegendValaChantDisharmony,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaChantDisharmony,
 	Icon = "ui/perks/legend_vala_chant_disharmony.png",
@@ -1742,7 +1751,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_spiritual_bond",
-	Script = "scripts/skills/perks/legend_vala_spiritual_bond",
+	Script = "scripts/skills/perks/perk_legend_vala_spiritual_bond",
 	Name = this.Const.Strings.PerkName.LegendValaSpiritualBond,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaSpiritualBond,
 	Icon = "ui/perks/legend_vala_spiritual_bond.png",
@@ -1751,7 +1760,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_trance_perspective",
-	Script = "scripts/skills/perks/legend_vala_trance_perspective",
+	Script = "scripts/skills/perks/perk_legend_vala_trance_perspective",
 	Name = this.Const.Strings.PerkName.LegendValaTrancePerspective,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaTrancePerspective,
 	Icon = "ui/perks/legend_vala_trance_perspective.png",
@@ -1760,7 +1769,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_trance_malevolent",
-	Script = "scripts/skills/perks/legend_vala_trance_malevolent",
+	Script = "scripts/skills/perks/perk_legend_vala_trance_malevolent",
 	Name = this.Const.Strings.PerkName.LegendValaTranceMalevolent,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaTranceMalevolent,
 	Icon = "ui/perks/legend_vala_trance_malevolent.png",
@@ -1886,7 +1895,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_chant_fury",
-	Script = "scripts/skills/perks/legend_vala_chant_fury",
+	Script = "scripts/skills/perks/perk_legend_vala_chant_fury",
 	Name = this.Const.Strings.PerkName.LegendValaChantFury,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaChantFury,
 	Icon = "ui/perks/legend_vala_chant_fury.png",
@@ -1895,7 +1904,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_vala_chant_senses",
-	Script = "scripts/skills/perks/legend_vala_chant_senses",
+	Script = "scripts/skills/perks/perk_legend_vala_chant_senses",
 	Name = this.Const.Strings.PerkName.LegendValaChantSenses,
 	Tooltip = this.Const.Strings.PerkDescription.LegendValaChantSenses,
 	Icon = "ui/perks/legend_vala_chant_senses.png",
@@ -1937,15 +1946,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/sling_03.png",
 	IconDisabled = "ui/perks/sling_bw.png",
 	Const = "LegendMasterySlings"
-});
-perkDefObjects.push({
-	ID = "perk.relentless",
-	Script = "scripts/skills/perks/perk_relentless",
-	Name = this.Const.Strings.PerkName.Relentless,
-	Tooltip = this.Const.Strings.PerkDescription.Relentless,
-	Icon = "ui/perks/perk_26.png",
-	IconDisabled = "ui/perks/perk_26_sw.png",
-	Const = "Relentless"
 });
 perkDefObjects.push({
 	ID = "perk.legend_specialist_ninetails_damage",
@@ -2186,8 +2186,8 @@ perkDefObjects.push({
 	HasUnactivatedPerkTooltipHints = true // Inform general_queryUIPerkTooltipData() in tooltip_events.nut that the Perk has additional hints from getUnactivatedPerkTooltipHints()
 });
 perkDefObjects.push({
-	ID = "perk.mastery.greatsword",
-	Script = "scripts/skills/perks/perk_mastery_greatsword",
+	ID = "perk.legend_mastery_greatsword",
+	Script = "scripts/skills/perks/perk_legend_mastery_greatsword",
 	Name = this.Const.Strings.PerkName.LegendSpecGreatSword,
 	Tooltip = this.Const.Strings.PerkDescription.LegendSpecGreatSword,
 	Icon = "ui/perks/spec_greatsword.png",
@@ -2312,8 +2312,8 @@ perkDefObjects.push({
 	Const = "LegendDrumsOfWar"
 });
 perkDefObjects.push({
-	ID = "perk.mastery_fist",
-	Script = "scripts/skills/perks/perk_mastery_fist",
+	ID = "perk.legend_mastery_fist",
+	Script = "scripts/skills/perks/perk_legend_mastery_fist",
 	Name = this.Const.Strings.PerkName.LegendSpecFists,
 	Tooltip = this.Const.Strings.PerkDescription.LegendSpecFists,
 	Icon = "ui/perks/unarmed_mastery_circle.png",
@@ -2710,7 +2710,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_charge",
-	Script = "scripts/skills/perks/perk_horse_charge",
+	Script = "scripts/skills/perks/perk_legend_horse_charge",
 	Name = this.Const.Strings.PerkName.LegendHorseCharge,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseCharge,
 	Icon = "ui/perks/charge_perk.png",
@@ -2728,7 +2728,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_bitting",
-	Script = "scripts/skills/perks/perk_horse_bitting",
+	Script = "scripts/skills/perks/perk_legend_horse_bitting",
 	Name = this.Const.Strings.PerkName.LegendHorseBitting,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseBitting,
 	Icon = "ui/perks/bitting_perk.png",
@@ -2737,7 +2737,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_desensitization",
-	Script = "scripts/skills/perks/perk_horse_desensitization",
+	Script = "scripts/skills/perks/perk_legend_horse_desensitization",
 	Name = this.Const.Strings.PerkName.LegendHorseDesensitization,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseDesensitization,
 	Icon = "ui/perks/desensitization_perk.png",
@@ -2746,7 +2746,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_hippology",
-	Script = "scripts/skills/perks/perk_horse_hippology",
+	Script = "scripts/skills/perks/perk_legend_horse_hippology",
 	Name = this.Const.Strings.PerkName.LegendHorseHippology,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseHippology,
 	Icon = "ui/perks/hippology_perk.png",
@@ -2755,7 +2755,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_impulsion",
-	Script = "scripts/skills/perks/perk_horse_impulsion",
+	Script = "scripts/skills/perks/perk_legend_horse_impulsion",
 	Name = this.Const.Strings.PerkName.LegendHorseImpulsion,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseImpulsion,
 	Icon = "ui/perks/impulse_perk.png",
@@ -2764,7 +2764,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_lead_change",
-	Script = "scripts/skills/perks/perk_horse_lead_change",
+	Script = "scripts/skills/perks/perk_legend_horse_lead_change",
 	Name = this.Const.Strings.PerkName.LegendHorseLeadChange,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseLeadChange,
 	Icon = "ui/perks/perk_23.png",
@@ -2773,7 +2773,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_leg_control",
-	Script = "scripts/skills/perks/perk_horse_leg_control",
+	Script = "scripts/skills/perks/perk_legend_horse_leg_control",
 	Name = this.Const.Strings.PerkName.LegendHorseLegControl,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseLegControl,
 	Icon = "ui/perks/legcontrol_perk.png",
@@ -2782,7 +2782,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_liberty",
-	Script = "scripts/skills/perks/perk_horse_liberty",
+	Script = "scripts/skills/perks/perk_legend_horse_liberty",
 	Name = this.Const.Strings.PerkName.LegendHorseLiberty,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseLiberty,
 	Icon = "ui/perks/liberty_perk.png",
@@ -2791,7 +2791,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_longeing",
-	Script = "scripts/skills/perks/perk_horse_longeing",
+	Script = "scripts/skills/perks/perk_legend_horse_longeing",
 	Name = this.Const.Strings.PerkName.LegendHorseLongeing,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseLongeing,
 	Icon = "ui/perks/longeing_perk.png",
@@ -2800,7 +2800,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_parthian_shot",
-	Script = "scripts/skills/perks/perk_horse_parthian_shot",
+	Script = "scripts/skills/perks/perk_legend_horse_parthian_shot",
 	Name = this.Const.Strings.PerkName.LegendHorseParthianShot,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseParthianShot,
 	Icon = "ui/perks/partian_shot_perk.png",
@@ -2809,7 +2809,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_piaffe",
-	Script = "scripts/skills/perks/perk_horse_piaffe",
+	Script = "scripts/skills/perks/perk_legend_horse_piaffe",
 	Name = this.Const.Strings.PerkName.LegendHorsePiaffe,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorsePiaffe,
 	Icon = "ui/perks/Piaffe_perk.png",
@@ -2818,7 +2818,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_tempi_change",
-	Script = "scripts/skills/perks/perk_horse_tempi_change",
+	Script = "scripts/skills/perks/perk_legend_horse_tempi_change",
 	Name = this.Const.Strings.PerkName.LegendHorseTempiChange,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseTempiChange,
 	Icon = "ui/perks/perk_23.png",
@@ -2962,7 +2962,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_horse_movement",
-	Script = "scripts/skills/perks/perk_horse_movement",
+	Script = "scripts/skills/perks/perk_legend_horse_movement",
 	Name = this.Const.Strings.PerkName.LegendHorseMovement,
 	Tooltip = this.Const.Strings.PerkDescription.LegendHorseMovement,
 	Icon = "ui/perks/charge_perk.png",
@@ -3339,8 +3339,8 @@ perkDefObjects.push({
 	Const = "LegendMasterAnger"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_burning_hands",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_burning_hands",
+	ID = "perk.legend_magic_burning_hands",
+	Script = "scripts/skills/perks/perk_legend_magic_burning_hands",
 	Name = this.Const.Strings.PerkName.LegendMagicBurningHands,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicBurningHands,
 	Icon = "ui/perks/mage_legend_magic_burning_hands_circle.png",
@@ -3348,8 +3348,8 @@ perkDefObjects.push({
 	Const = "LegendMagicBurningHands"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_chain_lightning",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_chain_lightning",
+	ID = "perk.legend_magic_chain_lightning",
+	Script = "scripts/skills/perks/perk_legend_magic_magic_chain_lightning",
 	Name = this.Const.Strings.PerkName.LegendMagicChainLightning,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicChainLightning,
 	Icon = "ui/perks/lightning_circle.png",
@@ -3357,8 +3357,8 @@ perkDefObjects.push({
 	Const = "LegendMagicChainLightning"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_circle_of_protection",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_circle_of_protection",
+	ID = "perk.legend_magic_circle_of_protection",
+	Script = "scripts/skills/perks/perk_legend_magic_legend_magic_circle_of_protection",
 	Name = this.Const.Strings.PerkName.LegendMagicCircleOfProtection,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicCircleOfProtection,
 	Icon = "ui/perks/mage_legend_magic_circle_of_protection_circle.png",
@@ -3366,8 +3366,8 @@ perkDefObjects.push({
 	Const = "LegendMagicCircleOfProtection"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_daze",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_daze",
+	ID = "perk.legend_magic_daze",
+	Script = "scripts/skills/perks/perk_legend_magic_magic_daze",
 	Name = this.Const.Strings.PerkName.LegendMagicDaze,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicDaze,
 	Icon = "ui/perks/daze56_circle.png",
@@ -3375,8 +3375,8 @@ perkDefObjects.push({
 	Const = "LegendMagicDaze"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_hailstone",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_hailstone",
+	ID = "perk.legend_magic_magic_hailstone",
+	Script = "scripts/skills/perks/perk_legend_magic_hailstone",
 	Name = this.Const.Strings.PerkName.LegendMagicHailstone,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicHailstone,
 	Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
@@ -3384,8 +3384,8 @@ perkDefObjects.push({
 	Const = "LegendMagicHailstone"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_healing_wind",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_healing_wind",
+	ID = "perk.legend_magic_healing_wind",
+	Script = "scripts/skills/perks/perk_legend_magic_magic_healing_wind",
 	Name = this.Const.Strings.PerkName.LegendMagicHealingWind,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicHealingWind,
 	Icon = "ui/perks/magic_mist_circle_01.png",
@@ -3393,8 +3393,8 @@ perkDefObjects.push({
 	Const = "LegendMagicHealingWind"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_imbue",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_imbue",
+	ID = "perk.legend_magic_imbue",
+	Script = "scripts/skills/perks/perk_legend_magic__imbue",
 	Name = this.Const.Strings.PerkName.LegendMagicImbue,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicImbue,
 	Icon = "ui/perks/magic_imbue_circle_01.png",
@@ -3402,8 +3402,8 @@ perkDefObjects.push({
 	Const = "LegendMagicImbue"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_levitate",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_levitate",
+	ID = "perk.legend_magic_levitate",
+	Script = "scripts/skills/perks/perk_legend_magic_levitate",
 	Name = this.Const.Strings.PerkName.LegendMagicLevitate,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicLevitate,
 	Icon = "ui/perks/levitate.png",
@@ -3411,8 +3411,8 @@ perkDefObjects.push({
 	Const = "LegendMagicLevitate"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_missile",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_missile",
+	ID = "perk.legend_magic_missile",
+	Script = "scripts/skills/perks/perk_legend_magic_missile",
 	Name = this.Const.Strings.PerkName.LegendMagicMissile,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicMissile,
 	Icon = "ui/perks/missile_circle.png",
@@ -3420,8 +3420,8 @@ perkDefObjects.push({
 	Const = "LegendMagicMissile"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_psybeam",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_psybeam",
+	ID = "perk.legend_magic_psybeam",
+	Script = "scripts/skills/perks/perk_legend_magic_psybeam",
 	Name = this.Const.Strings.PerkName.LegendMagicPsybeam,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicPsybeam,
 	Icon = "ui/perks/mage_legend_magic_psybeam_circle.png",
@@ -3429,8 +3429,8 @@ perkDefObjects.push({
 	Const = "LegendMagicPsybeam"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_sleep",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_sleep",
+	ID = "perk.legend_magic_sleep",
+	Script = "scripts/skills/perks/perk_legend_magic_sleep",
 	Name = this.Const.Strings.PerkName.LegendMagicSleep,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicSleep,
 	Icon = "ui/perks/sleep_56.png",
@@ -3438,8 +3438,8 @@ perkDefObjects.push({
 	Const = "LegendMagicSleep"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_soothing_wind",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_soothing_wind",
+	ID = "perk.legend_magic_soothing_wind",
+	Script = "scripts/skills/perks/perk_legend_magic_soothing_wind",
 	Name = this.Const.Strings.PerkName.LegendMagicSoothingWind,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicSoothingWind,
 	Icon = "ui/perks/soothing_wind_circle_01.png",
@@ -3447,8 +3447,8 @@ perkDefObjects.push({
 	Const = "LegendMagicSoothingWind"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_teleport",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_teleport",
+	ID = "perk.legend_magic_teleport",
+	Script = "scripts/skills/perks/perk_legend_magic_teleport",
 	Name = this.Const.Strings.PerkName.LegendMagicTeleport,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicTeleport,
 	Icon = "ui/perks/teleport_perk.png",
@@ -3456,8 +3456,8 @@ perkDefObjects.push({
 	Const = "LegendMagicTeleport"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_web_bolt",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_web_bolt",
+	ID = "perk.legend_magic_web_bolt",
+	Script = "scripts/skills/perks/perk_legend_magic_web_bolt",
 	Name = this.Const.Strings.PerkName.LegendMagicWebBolt,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicWebBolt,
 	Icon = "ui/perks/web_bolt_circle_01.png",
@@ -3465,8 +3465,8 @@ perkDefObjects.push({
 	Const = "LegendMagicWebBolt"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_mastery_chain_lightning",
-	Script = "scripts/skills/perks/perk_mage_legend_mastery_chain_lightning",
+	ID = "perk.legend_mastery_chain_lightning",
+	Script = "scripts/skills/perks/perk_legend_mastery_chain_lightning",
 	Name = this.Const.Strings.PerkName.LegendMasteryChainLightning,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMasteryChainLightning,
 	Icon = "ui/perks/lightning_circle.png",
@@ -3474,8 +3474,8 @@ perkDefObjects.push({
 	Const = "LegendMasteryChainLightning"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_mastery_hailstone",
-	Script = "scripts/skills/perks/perk_mage_legend_mastery_hailstone",
+	ID = "perk.legend_mastery_hailstone",
+	Script = "scripts/skills/perks/perk_legend_mastery_hailstone",
 	Name = this.Const.Strings.PerkName.LegendMasteryHailstone,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMasteryHailstone,
 	Icon = "ui/perks/mage_legend_magic_hailstone_circle.png",
@@ -3483,8 +3483,8 @@ perkDefObjects.push({
 	Const = "LegendMasteryHailstone"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_mastery_magic_missile_focus",
-	Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_focus",
+	ID = "perk.legend_mastery_magic_missile_focus",
+	Script = "scripts/skills/perks/perk_legend_mastery_magic_missile_focus",
 	Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileFocus,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileFocus,
 	Icon = "ui/perks/magic_missile_02.png",
@@ -3492,8 +3492,8 @@ perkDefObjects.push({
 	Const = "LegendMasteryMagicMissileFocus"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_mastery_magic_missile_mastery",
-	Script = "scripts/skills/perks/perk_mage_legend_mastery_magic_missile_mastery",
+	ID = "perk.legend_mastery_magic_missile_mastery",
+	Script = "scripts/skills/perks/perk_legend_mastery_magic_missile_mastery",
 	Name = this.Const.Strings.PerkName.LegendMasteryMagicMissileMastery,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMasteryMagicMissileMastery,
 	Icon = "ui/perks/magic_missile_03.png",
@@ -3501,8 +3501,8 @@ perkDefObjects.push({
 	Const = "LegendMasteryMagicMissileMastery"
 });
 perkDefObjects.push({
-	ID = "perk.mage_legend_magic_burning_hands",
-	Script = "scripts/skills/perks/perk_mage_legend_magic_burning_hands",
+	ID = "perk.legend_magic_burning_hands",
+	Script = "scripts/skills/perks/perk_legend_magic_burning_hands",
 	Name = this.Const.Strings.PerkName.LegendMagicBurningHands,
 	Tooltip = this.Const.Strings.PerkDescription.LegendMagicBurningHands,
 	Icon = "ui/perks/burning_hands_circle_01.png",
@@ -3690,7 +3690,7 @@ perkDefObjects.push({
 	Const = "LegendUnarmedLunge"
 });
 perkDefObjects.push({
-	ID = "perk.boondock_blade",
+	ID = "perk.legend_boondock_blade",
 	Script = "scripts/skills/perks/perk_legend_boondock_blade",
 	Name = this.Const.Strings.PerkName.LegendBoondockBlade,
 	Tooltip = this.Const.Strings.PerkDescription.LegendBoondockBlade,
