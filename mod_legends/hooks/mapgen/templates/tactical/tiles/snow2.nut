@@ -12,7 +12,7 @@
 		this.Tactical.setTransitions("tile_legend_snow_13", t);
 	}
 
-	o.onFirstPass = function ( _rect )
+	o.onFirstPass = function ( _rect, _objectSpawnChanceMult = 1.0 )
 	{
 		local tile = this.Tactical.getTileSquare(_rect.X, _rect.Y);
 
@@ -26,8 +26,8 @@
 		tile.Subtype = this.Const.Tactical.TerrainSubtype.Snow;
 		tile.BlendPriority = this.Const.Tactical.TileBlendPriority.Snow2;
 		tile.IsBadTerrain = false;
-	
-		
+
+
 		 local random = this.Math.rand(1, 100);
 		if (random <= 20)
 		{
@@ -40,7 +40,7 @@
 		else if (random >= 31 && random <=40)
 		{
 		tile.setBrush("tile_legend_snow_10");
-		}		
+		}
 		else if (random >= 41 && random <=60)
 		{
 		tile.setBrush("tile_legend_snow_11");
@@ -49,11 +49,11 @@
 		{
 		tile.setBrush("tile_legend_snow_12");
 		}
-		else 
+		else
 		{
 		tile.setBrush("tile_legend_snow_13");
-		}		
-		
+		}
+
 		local n = 0;
 
 		if (isSpawningObjects && this.Math.rand(0, 100) < this.m.ChanceToSpawnObject * _objectSpawnChanceMult)
