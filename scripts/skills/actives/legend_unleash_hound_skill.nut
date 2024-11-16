@@ -1,4 +1,4 @@
-this.legend_unleash_hound <- this.inherit("scripts/skills/actives/legend_unleash_animal_skill", {
+this.legend_unleash_hound_skill <- this.inherit("scripts/skills/actives/legend_unleash_animal_skill", {
 	m = {
 		Entity = null,
 		EntityName = "Hound",

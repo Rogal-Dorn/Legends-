@@ -1,4 +1,4 @@
-this.legend_bribe <- this.inherit("scripts/skills/skill", {
+this.legend_bribe_skill <- this.inherit("scripts/skills/skill", {
 	m = {
 		Cost = null,
 		EntityName = null
@@ -37,7 +37,7 @@ this.legend_bribe <- this.inherit("scripts/skills/skill", {
 	function getTooltip()
 	{
 		local ret = this.getDefaultUtilityTooltip();
-		
+
 		ret.push({
 			id = 6,
 			type = "text",

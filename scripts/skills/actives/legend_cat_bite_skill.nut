@@ -1,4 +1,4 @@
-this.legend_cat_bite <- this.inherit("scripts/skills/skill", {
+this.legend_cat_bite_skill <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{

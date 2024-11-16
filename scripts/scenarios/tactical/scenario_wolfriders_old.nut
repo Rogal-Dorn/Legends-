@@ -1,4 +1,4 @@
-this.scenario_wolfriders <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.scenario_wolfriders_old <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{
