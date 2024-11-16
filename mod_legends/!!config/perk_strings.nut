@@ -692,3 +692,9 @@
 ::Const.Strings.PerkDescription.LegendFashionable <- "Utilize your attire to confuse opponents.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• You can wear tabards, cloaks, and helmet vanity layers without negatively impacting [color=#008060]Small Target[/color].\n\n• Taking [color=#993b00]Unburdened[/color] allows you to wear any body armor, as long as it weighs nothing, without negatively impacting [color=#008060]Small Target[/color].";
 ::Const.Strings.PerkDescription.LegendUnburdened <- "Unencumbered by armor, you are spry and fleet footed.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• [color=#993b00]Blend in[/color] will now recover an evasion stack every 2 turns.\n\n• Increases Action Points by [color=" + this.Const.UI.Color.PositiveValue + "]1[/color] if this character has more than [color=" + this.Const.UI.Color.PositiveValue + "]30[/color] bonus from [color=#993b00]Small Target[/color] and an Evasion stack from [color=#993b00]Blend in[/color].\n\n• You can expend an Evasion stack to use [color=#400080]Footwork[/color], [color=#400080]Evasion[/color] or [color=#400080]Leap[/color].";
 ::Const.Strings.PerkDescription.LegendHelpful <- "Enhance your logistical support in battle.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Pass Item[/color] skill which allows you to give the first item in your bag to any adjacent ally.\n\n• Does not work when receiving items.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]0[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] Fatigue. ";
+// todo, these are missing - chopeks
+::Const.Strings.PerkName.LegendMagicMissileFocus <- "";
+::Const.Strings.PerkDescription.LegendMagicMissileFocus <- "";
+::Const.Strings.PerkName.LegendMagicMissileMastery <- "";
+::Const.Strings.PerkDescription.LegendMagicMissileMastery <- "";
+

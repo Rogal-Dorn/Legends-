@@ -17,7 +17,7 @@ function addSpecialPerk( _chance, _perk, _tier, _desc, _func = null )
 		Func = _func != null ? _func : @(a, b) _chance,
 		Row = _tier - 1
 	});
-	
+
 	local i = 0;
 	while (true)
 	{
@@ -34,10 +34,10 @@ function addSpecialPerk( _chance, _perk, _tier, _desc, _func = null )
 					[], [], [], [], [], [], []
 				]
 			};
-	
+
 			::Const.Perks.SpecialTrees.Tree.push(::Const.Perks[name]);
 		}
-	
+
 		if (::Const.Perks[name].Tree[_tier-1].len() > 1)
 		{
 			local totalPerksInTree = 0;
@@ -51,7 +51,7 @@ function addSpecialPerk( _chance, _perk, _tier, _desc, _func = null )
 				continue;
 			}
 		}
-	
+
 		::Const.Perks[name].Tree[_tier-1].push(_perk);
 		break;
 	}
@@ -108,20 +108,20 @@ function getRandomPerk()
 	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
-});	
+});
 
-::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.Slaughterer, 5, "Slaughterer", function( _player, _chance ) {
+::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.LegendSlaughterer, 5, "Slaughterer", function( _player, _chance ) {
 
 	local talents = _player.getTalents();
 	local tl = talents.len() == 0 ? 0 : talents[::Const.Attributes.MeleeSkill];
 	if (tl == 0)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);		
+	}
+	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
-});	
+});
 
 ::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.LegendRelax, 3, "Relax", function( _player, _chance ) {
 
@@ -130,8 +130,8 @@ function getRandomPerk()
 	if (tl == 0)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
+	}
+	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
 });
@@ -143,8 +143,8 @@ function getRandomPerk()
 	if (tl == 0)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
+	}
+	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
 });
@@ -156,8 +156,8 @@ function getRandomPerk()
 	if (tl == 0)
 	{
 		return 0;
-	}		
-	_chance *= this.Math.pow(2, tl);			
+	}
+	_chance *= this.Math.pow(2, tl);
 
 	return _chance;
 });
@@ -174,7 +174,7 @@ function getRandomPerk()
 	return 1;
 });
 
-::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.Ironside, 7, "Ironside", function( _player, _chance ) {
+::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.LegendIronside, 7, "Ironside", function( _player, _chance ) {
 
 	local talents = _player.getTalents();
 	local tl = talents.len() == 0 ? 0 : talents[::Const.Attributes.Hitpoints];

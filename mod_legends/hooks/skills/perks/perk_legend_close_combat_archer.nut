@@ -1,8 +1,7 @@
-// Author: WNTR Jimmy
-// Date: 1/18/23
-// nessesaries to register
 ::mods_hookExactClass("skills/perks/perk_legend_close_combat_archer", function(o) {
-	
+	// Author: WNTR Jimmy
+	// Date: 1/18/23
+	// nessesaries to register
 	//change the perk to have a status effect
 	local create = o.create;
 	o.create = function()
@@ -18,7 +17,7 @@
 
 		// check if the skill they are using to attack is ranged
 		if(_skill.isRanged()){
-			
+
 			// find how far away the target is from your brother
 			local CharDistFromTarget = _targetTile.getDistanceTo(this.getContainer().getActor().getTile());
 
