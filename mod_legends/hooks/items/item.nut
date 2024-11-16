@@ -826,12 +826,10 @@
 		::MSU.Utils.serialize(this.m.TradeHistorySettlementIDs, _out);
 	}
 
+	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
-		this.m.IsToBeRepaired = _in.readBool();
-		this.m.Variant = _in.readU16();
-		this.m.Condition = _in.readF32();
-		this.m.PriceMult = _in.readF32();
+		onDeserialize(_in);
 		if (_in.getMetaData().getVersion() >= 46)
 		{
 			this.m.OldID = _in.readString();
