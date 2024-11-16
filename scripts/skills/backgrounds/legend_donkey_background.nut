@@ -82,7 +82,7 @@ this.legend_donkey_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.LegendPeaceful,
 				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Sprint
+				this.Const.Perks.PerkDefs.LegendSprint
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,

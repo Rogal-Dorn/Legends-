@@ -121,7 +121,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendLithe,
-				this.Const.Perks.PerkDefs.PushTheAdvantage,
+				this.Const.Perks.PerkDefs.LegendPushTheAdvantage,
 				this.Const.Perks.PerkDefs.LegendBlendIn,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble

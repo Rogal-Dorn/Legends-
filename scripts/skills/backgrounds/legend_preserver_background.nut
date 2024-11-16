@@ -98,7 +98,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			this.Const.Perks.PerkDefs.Backstabber,
 			this.Const.Perks.PerkDefs.Debilitate,
 			this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
-			this.Const.Perks.PerkDefs.Lookout,
+			this.Const.Perks.PerkDefs.LegendLookout,
 			this.Const.Perks.PerkDefs.LegendSpecialistScytheDamage,
 			this.Const.Perks.PerkDefs.RallyTheTroops,
 			this.Const.Perks.PerkDefs.InspiringPresence,
@@ -140,7 +140,7 @@ this.legend_preserver_background <- this.inherit("scripts/skills/backgrounds/cha
 			this.Const.Perks.PerkDefs.LegendPerfectFocus,
 			this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
 			this.Const.Perks.PerkDefs.LegendBalance,
-			this.Const.Perks.PerkDefs.Inspire,
+			this.Const.Perks.PerkDefs.LegendInspire,
 			this.Const.Perks.PerkDefs.LegendFieldTriage
 		],
 		[],

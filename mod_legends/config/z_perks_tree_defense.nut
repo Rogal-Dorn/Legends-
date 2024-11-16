@@ -102,7 +102,7 @@ if (!("Perks" in ::Const))
 	//	"helmets"
 	//],
 	//Tree = [
-	//	[::Const.Perks.PerkDefs.Lookout],
+	//	[::Const.Perks.PerkDefs.LegendLookout],
 	//	[::Const.Perks.PerkDefs.SteelBrow],
 	//	[],//::Const.Perks.PerkDefs.
 	//	[],
