@@ -107,6 +107,17 @@ if (!("Perks" in ::Const))
 }
 
 local perkDefObjects = [];
+
+// Vanilla defined perks
+perkDefObjects.push({
+	ID = "perk.shield_bash",
+	Script = "scripts/skills/perks/perk_shield_bash",
+	Name = this.Const.Strings.PerkName.ShieldBash,
+	Tooltip = this.Const.Strings.PerkDescription.ShieldBash,
+	Icon = "ui/perks/perk_22.png",
+	IconDisabled = "ui/perks/perk_22_sw.png",
+	Const = "ShieldBash"
+});
 perkDefObjects.push({
 	ID = "perk.fast_adaption",
 	Script = "scripts/skills/perks/perk_fast_adaption",
@@ -549,6 +560,71 @@ perkDefObjects.push({
 	Const = "Indomitable"
 });
 perkDefObjects.push({
+	ID = "perk.ballistics",
+	Script = "scripts/skills/perks/perk_ballistics",
+	Name = this.Const.Strings.PerkName.Ballistics,
+	Tooltip = this.Const.Strings.PerkDescription.Ballistics,
+	Icon = "ui/perks/ballistics56_circle.png",
+	IconDisabled = "ui/perks/ballistics56_circle_bw.png",
+	Const = "Ballistics"
+});
+perkDefObjects.push({
+	ID = "perk.return_favor",
+	Script = "scripts/skills/perks/perk_return_favor",
+	Name = this.Const.Strings.PerkName.LegendReturnFavor,
+	Tooltip = this.Const.Strings.PerkDescription.LegendReturnFavor,
+	Icon = "ui/perks/return_favor_circle.png",
+	IconDisabled = "ui/perks/return_favor_circle_bw.png",
+	Const = "LegendReturnFavor"
+});
+perkDefObjects.push({
+	ID = "perk.steadfast",
+	Script = "scripts/skills/perks/perk_steadfast",
+	Name = this.Const.Strings.PerkName.Steadfast,
+	Tooltip = this.Const.Strings.PerkDescription.Steadfast,
+	Icon = "ui/perks/steadfast_circle.png",
+	IconDisabled = "ui/perks/steadfast_circle_bw.png",
+	Const = "Steadfast"
+});
+perkDefObjects.push({
+	ID = "perk.sundering_strikes",
+	Script = "scripts/skills/perks/perk_sundering_strikes",
+	Name = this.Const.Strings.PerkName.SunderingStrikes,
+	Tooltip = this.Const.Strings.PerkDescription.SunderingStrikes,
+	Icon = "ui/perks/sunderingstrikes_circle.png",
+	IconDisabled = "ui/perks/sunderingstrikes_circle_bw.png",
+	Const = "SunderingStrikes"
+});
+perkDefObjects.push({
+	ID = "perk.stalwart",
+	Script = "scripts/skills/perks/perk_stalwart",
+	Name = this.Const.Strings.PerkName.Stalwart,
+	Tooltip = this.Const.Strings.PerkDescription.Stalwart,
+	Icon = "ui/perks/stalwart.png",
+	IconDisabled = "ui/perks/stalwart_bw.png",
+	Const = "Stalwart"
+});
+perkDefObjects.push({
+	ID = "perk.battle_flow",
+	Script = "scripts/skills/perks/perk_battle_flow",
+	Name = this.Const.Strings.PerkName.BattleFlow,
+	Tooltip = this.Const.Strings.PerkDescription.BattleFlow,
+	Icon = "ui/perks/battle_flow56_circle.png",
+	IconDisabled = "ui/perks/battle_flow56_circle_bw.png",
+	Const = "BattleFlow"
+});
+perkDefObjects.push({
+	ID = "perk.inspiring_presence",
+	Script = "scripts/skills/perks/perk_inspiring_presence",
+	Name = this.Const.Strings.PerkName.InspiringPresence,
+	Tooltip = this.Const.Strings.PerkDescription.InspiringPresence,
+	Icon = "ui/perks/perk_28.png",
+	IconDisabled = "ui/perks/perk_28_sw.png",
+	Const = "InspiringPresence"
+});
+
+// Legend defined perks
+perkDefObjects.push({
 	ID = "perk.legend_daze",
 	Script = "scripts/skills/perks/perk_legend_daze",
 	Name = this.Const.Strings.PerkName.LegendDaze,
@@ -693,67 +769,22 @@ perkDefObjects.push({
 	Const = "LegendFullForce"
 });
 perkDefObjects.push({
-	ID = "perk.return_favor",
-	Script = "scripts/skills/perks/perk_return_favor",
-	Name = this.Const.Strings.PerkName.LegendReturnFavor,
-	Tooltip = this.Const.Strings.PerkDescription.LegendReturnFavor,
-	Icon = "ui/perks/return_favor_circle.png",
-	IconDisabled = "ui/perks/return_favor_circle_bw.png",
-	Const = "LegendReturnFavor"
-});
-perkDefObjects.push({
-	ID = "perk.steadfast",
-	Script = "scripts/skills/perks/perk_steadfast",
-	Name = this.Const.Strings.PerkName.Steadfast,
-	Tooltip = this.Const.Strings.PerkDescription.Steadfast,
-	Icon = "ui/perks/steadfast_circle.png",
-	IconDisabled = "ui/perks/steadfast_circle_bw.png",
-	Const = "Steadfast"
-});
-perkDefObjects.push({
-	ID = "perk.sundering_strikes",
-	Script = "scripts/skills/perks/perk_sundering_strikes",
-	Name = this.Const.Strings.PerkName.SunderingStrikes,
-	Tooltip = this.Const.Strings.PerkDescription.SunderingStrikes,
-	Icon = "ui/perks/sunderingstrikes_circle.png",
-	IconDisabled = "ui/perks/sunderingstrikes_circle_bw.png",
-	Const = "SunderingStrikes"
-});
-perkDefObjects.push({
-	ID = "perk.stalwart",
-	Script = "scripts/skills/perks/perk_stalwart",
-	Name = this.Const.Strings.PerkName.Stalwart,
-	Tooltip = this.Const.Strings.PerkDescription.Stalwart,
-	Icon = "ui/perks/stalwart.png",
-	IconDisabled = "ui/perks/stalwart_bw.png",
-	Const = "Stalwart"
-});
-perkDefObjects.push({
-	ID = "perk.battle_flow",
-	Script = "scripts/skills/perks/perk_battle_flow",
-	Name = this.Const.Strings.PerkName.BattleFlow,
-	Tooltip = this.Const.Strings.PerkDescription.BattleFlow,
-	Icon = "ui/perks/battle_flow56_circle.png",
-	IconDisabled = "ui/perks/battle_flow56_circle_bw.png",
-	Const = "BattleFlow"
-});
-perkDefObjects.push({
-	ID = "perk.lookout",
+	ID = "perk.legend_lookout",
 	Script = "scripts/skills/perks/perk_legend_lookout",
 	Name = this.Const.Strings.PerkName.LegendLookout,
 	Tooltip = this.Const.Strings.PerkDescription.LegendLookout,
 	Icon = "ui/perks/lookout_circle.png",
 	IconDisabled = "ui/perks/lookout_circle_bw.png",
-	Const = "Lookout"
+	Const = "LegendLookout"
 });
 perkDefObjects.push({
-	ID = "perk.sprint",
+	ID = "perk.legend_sprint",
 	Script = "scripts/skills/perks/perk_sprint",
 	Name = this.Const.Strings.PerkName.LegendSprint,
 	Tooltip = this.Const.Strings.PerkDescription.LegendSprint,
 	Icon = "ui/perks/perk_sprint.png",
 	IconDisabled = "ui/perks/perk_sprint_sw.png",
-	Const = "Sprint"
+	Const = "LegendSprint"
 });
 perkDefObjects.push({
 	ID = "perk.legend_quick_step",
@@ -774,13 +805,13 @@ perkDefObjects.push({
 	Const = "LegendAthlete"
 });
 perkDefObjects.push({
-	ID = "perk.double_strike",
-	Script = "scripts/skills/perks/perk_double_strike",
+	ID = "perk.legend_double_strike",
+	Script = "scripts/skills/perks/perk_legend_double_strike",
 	Name = this.Const.Strings.PerkName.LegendDoubleStrike,
 	Tooltip = this.Const.Strings.PerkDescription.LegendDoubleStrike,
 	Icon = "ui/perks/doublestrike_circle.png",
 	IconDisabled = "ui/perks/doublestrike_circle_bw.png",
-	Const = "DoubleStrike"
+	Const = "LegendDoubleStrike"
 });
 perkDefObjects.push({
 	ID = "perk.legend_mastery_poison",
@@ -792,22 +823,13 @@ perkDefObjects.push({
 	Const = "LegendSpecPoison"
 });
 perkDefObjects.push({
-	ID = "perk.close_combat_archer",
+	ID = "perk.legend_close_combat_archer",
 	Script = "scripts/skills/perks/perk_legend_close_combat_archer",
 	Name = this.Const.Strings.PerkName.LegendCloseCombatArcher,
 	Tooltip = this.Const.Strings.PerkDescription.LegendCloseCombatArcher,
 	Icon = "ui/perks/closecombat56.png",
 	IconDisabled = "ui/perks/closecombat56_bw.png",
-	Const = "CloseCombatArcher"
-});
-perkDefObjects.push({
-	ID = "perk.ballistics",
-	Script = "scripts/skills/perks/perk_ballistics",
-	Name = this.Const.Strings.PerkName.Ballistics,
-	Tooltip = this.Const.Strings.PerkDescription.Ballistics,
-	Icon = "ui/perks/ballistics56_circle.png",
-	IconDisabled = "ui/perks/ballistics56_circle_bw.png",
-	Const = "Ballistics"
+	Const = "LegendCloseCombatArcher"
 });
 perkDefObjects.push({
 	ID = "perk.legend_cascade",
@@ -880,15 +902,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/darkflight_circle.png",
 	IconDisabled = "ui/perks/darkflight_circle_bw.png",
 	Const = "LegendDarkflight"
-});
-perkDefObjects.push({
-	ID = "perk.inspiring_presence",
-	Script = "scripts/skills/perks/perk_inspiring_presence",
-	Name = this.Const.Strings.PerkName.InspiringPresence,
-	Tooltip = this.Const.Strings.PerkDescription.InspiringPresence,
-	Icon = "ui/perks/perk_28.png",
-	IconDisabled = "ui/perks/perk_28_sw.png",
-	Const = "InspiringPresence"
 });
 perkDefObjects.push({
 	ID = "perk.legend_mastery_bandage",
@@ -1267,42 +1280,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/siphon_circle.png",
 	IconDisabled = "ui/perks/siphon_circle_bw.png",
 	Const = "LegendSiphon"
-});
-perkDefObjects.push({
-	ID = "perk.legend_vala_inscribe_weapon",
-	Script = "scripts/skills/perks/legend_vala_inscribe_weapon",
-	Name = this.Const.Strings.PerkName.LegendValaInscribeWeapon,
-	Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeWeapon,
-	Icon = "ui/perks/legend_vala_inscribe_weapon.png",
-	IconDisabled = "ui/perks/legend_vala_inscribe_weapon_sw.png",
-	Const = "LegendValaInscribeWeapon"
-});
-perkDefObjects.push({
-	ID = "perk.legend_vala_inscribe_helmet",
-	Script = "scripts/skills/perks/legend_vala_inscribe_helmet",
-	Name = this.Const.Strings.PerkName.LegendValaInscribeHelmet,
-	Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeHelmet,
-	Icon = "ui/perks/legend_vala_inscribe_helmet.png",
-	IconDisabled = "ui/perks/legend_vala_inscribe_helmet_sw.png",
-	Const = "LegendValaInscribeHelmet"
-});
-perkDefObjects.push({
-	ID = "perk.legend_vala_inscribe_armor",
-	Script = "scripts/skills/perks/legend_vala_inscribe_armor",
-	Name = this.Const.Strings.PerkName.LegendValaInscribeArmor,
-	Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeArmor,
-	Icon = "ui/perks/legend_vala_inscribe_armor.png",
-	IconDisabled = "ui/perks/legend_vala_inscribe_armor_sw.png",
-	Const = "LegendValaInscribeArmor"
-});
-perkDefObjects.push({
-	ID = "perk.legend_vala_inscribe_shield",
-	Script = "scripts/skills/perks/legend_vala_inscribe_shield",
-	Name = this.Const.Strings.PerkName.LegendValaInscribeShield,
-	Tooltip = this.Const.Strings.PerkDescription.LegendValaInscribeShield,
-	Icon = "ui/perks/legend_vala_inscribe_shield.png",
-	IconDisabled = "ui/perks/legend_vala_inscribe_shield_sw.png",
-	Const = "LegendValaInscribeShield"
 });
 perkDefObjects.push({
 	ID = "perk.legend_guide_steps",
@@ -1710,15 +1687,6 @@ perkDefObjects.push({
 	Const = "LegendDangerPay"
 });
 perkDefObjects.push({
-	ID = "perk.legend_vala_inscription_mastery",
-	Script = "scripts/skills/perks/legend_vala_inscription_mastery",
-	Name = this.Const.Strings.PerkName.LegendValaInscriptionMastery,
-	Tooltip = this.Const.Strings.PerkDescription.LegendValaInscriptionMastery,
-	Icon = "ui/perks/legend_vala_inscription_mastery.png",
-	IconDisabled = "ui/perks/legend_vala_inscription_mastery_sw.png",
-	Const = "LegendValaInscriptionMastery"
-});
-perkDefObjects.push({
 	ID = "perk.legend_vala_warden",
 	Script = "scripts/skills/perks/legend_vala_warden",
 	Name = this.Const.Strings.PerkName.LegendValaWarden,
@@ -1906,15 +1874,6 @@ perkDefObjects.push({
 	Icon = "ui/perks/perk_22.png",
 	IconDisabled = "ui/perks/perk_22_sw.png",
 	Const = "LegendSpecialistShieldPush"
-});
-perkDefObjects.push({
-	ID = "perk.shield_bash",
-	Script = "scripts/skills/perks/perk_shield_bash",
-	Name = this.Const.Strings.PerkName.ShieldBash,
-	Tooltip = this.Const.Strings.PerkDescription.ShieldBash,
-	Icon = "ui/perks/perk_22.png",
-	IconDisabled = "ui/perks/perk_22_sw.png",
-	Const = "ShieldBash"
 });
 perkDefObjects.push({
 	ID = "perk.legend_mastery_nets",
@@ -2425,13 +2384,13 @@ perkDefObjects.push({
 	Const = "LegendSmackdown"
 });
 perkDefObjects.push({
-	ID = "perk.feint",
-	Script = "scripts/skills/perks/perk_feint",
+	ID = "perk.legend_feint",
+	Script = "scripts/skills/perks/perk_legend_feint",
 	Name = this.Const.Strings.PerkName.LegendFeint,
 	Tooltip = this.Const.Strings.PerkDescription.LegendFeint,
 	Icon = "ui/perks/feint_circle.png",
 	IconDisabled = "ui/perks/feint_circle_bw.png",
-	Const = "Feint"
+	Const = "LegendFeint"
 });
 perkDefObjects.push({
 	ID = "perk.legend_clarity",
@@ -2497,31 +2456,31 @@ perkDefObjects.push({
 	Const = "LegendBackToBasics"
 });
 perkDefObjects.push({
-	ID = "perk.push_the_advantage",
-	Script = "scripts/skills/perks/perk_push_the_advantage",
+	ID = "perk.legend_push_the_advantage",
+	Script = "scripts/skills/perks/perk_legend_push_the_advantage",
 	Name = this.Const.Strings.PerkName.LegendPushTheAdvantage,
 	Tooltip = this.Const.Strings.PerkDescription.LegendPushTheAdvantage,
 	Icon = "ui/perks/perk_32.png",
 	IconDisabled = "ui/perks/perk_32_sw.png",
-	Const = "PushTheAdvantage"
+	Const = "LegendPushTheAdvantage"
 });
 perkDefObjects.push({
-	ID = "perk.trophy_hunter",
-	Script = "scripts/skills/perks/perk_trophy_hunter",
+	ID = "perk.legend_trophy_hunter",
+	Script = "scripts/skills/perks/perk_legend_trophy_hunter",
 	Name = this.Const.Strings.PerkName.LegendTrophyHunter,
 	Tooltip = this.Const.Strings.PerkDescription.LegendTrophyHunter,
 	Icon = "ui/perks/slaughterer_circle.png",
 	IconDisabled = "ui/perks/slaughterer_circle_bw.png",
-	Const = "TrophyHunter"
+	Const = "LegendTrophyHunter"
 });
 perkDefObjects.push({
-	ID = "perk.bruiser",
-	Script = "scripts/skills/perks/perk_bruiser",
+	ID = "perk.legend_bruiser",
+	Script = "scripts/skills/perks/perk_legend_bruiser",
 	Name = this.Const.Strings.PerkName.LegendBruiser,
 	Tooltip = this.Const.Strings.PerkDescription.LegendBruiser,
 	Icon = "ui/perks/perk_40.png",
 	IconDisabled = "ui/perks/perk_40_sw.png",
-	Const = "Bruiser"
+	Const = "LegendBruiser"
 });
 perkDefObjects.push({
 	ID = "perk.legend_mind_over_body",
@@ -3732,12 +3691,12 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.boondock_blade",
-	Script = "scripts/skills/perks/perk_boondock_blade",
+	Script = "scripts/skills/perks/perk_legend_boondock_blade",
 	Name = this.Const.Strings.PerkName.LegendBoondockBlade,
 	Tooltip = this.Const.Strings.PerkDescription.LegendBoondockBlade,
 	Icon = "ui/perks/boondock_01.png", //TODO
 	IconDisabled = "ui/perks/boondock_01_bw.png",
-	Const = "BoondockBlade"
+	Const = "LegendBoondockBlade"
 });
 perkDefObjects.push({
 	ID = "perk.legend_throw_sand",
