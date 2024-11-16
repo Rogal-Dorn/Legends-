@@ -84,7 +84,7 @@ this.legend_ranger_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendLookout,
 				this.Const.Perks.PerkDefs.LegendSummonHound,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert

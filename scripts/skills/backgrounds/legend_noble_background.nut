@@ -120,7 +120,7 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.Fearsome,
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.Duelist,
-				this.Const.Perks.PerkDefs.Inspire,
+				this.Const.Perks.PerkDefs.LegendInspire,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.LegendBribe,
 				this.Const.Perks.PerkDefs.LegendBalance,

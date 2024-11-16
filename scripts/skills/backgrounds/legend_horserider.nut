@@ -68,7 +68,7 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Sprint
+				this.Const.Perks.PerkDefs.LegendSprint
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendEfficientPacking,

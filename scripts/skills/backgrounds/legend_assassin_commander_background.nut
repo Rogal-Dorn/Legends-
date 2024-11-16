@@ -115,7 +115,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyMercenary
 			],
 			[
-				this.Const.Perks.PerkDefs.PushTheAdvantage,
+				this.Const.Perks.PerkDefs.LegendPushTheAdvantage,
 				this.Const.Perks.PerkDefs.LegendDoubleStrike,
 				this.Const.Perks.PerkDefs.LegendEvasion,
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,

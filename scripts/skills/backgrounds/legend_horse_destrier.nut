@@ -50,7 +50,7 @@ this.legend_horse_destrier <- this.inherit("scripts/skills/backgrounds/legend_ho
 			[
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Steadfast,
-				this.Const.Perks.PerkDefs.Sprint,
+				this.Const.Perks.PerkDefs.LegendSprint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.LegendHorseCollection,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,

@@ -606,7 +606,7 @@ if (!("Perks" in ::Const))
 		]
 	},
 	Tree = [
-		[::Const.Perks.PerkDefs.Lookout],//::Const.Perks.PerkDefs.BowRange
+		[::Const.Perks.PerkDefs.LegendLookout],//::Const.Perks.PerkDefs.BowRange
 		[::Const.Perks.PerkDefs.Bullseye],
 		[],
 		[::Const.Perks.PerkDefs.SpecBow],
@@ -765,7 +765,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.LegendMasteryStaves],
 		[::Const.Perks.PerkDefs.LegendSpecStaffStun],
 		[],
-		[::Const.Perks.PerkDefs.PushTheAdvantage]
+		[::Const.Perks.PerkDefs.LegendPushTheAdvantage]
 	]
 };
 

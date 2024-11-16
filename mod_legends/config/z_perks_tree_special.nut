@@ -162,7 +162,7 @@ function getRandomPerk()
 	return _chance;
 });
 
-::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.TrophyHunter, 7, "Trophy Hunter", function( _player, _chance ) {
+::Const.Perks.SpecialTrees.addSpecialPerk(1, ::Const.Perks.PerkDefs.LegendTrophyHunter, 7, "Trophy Hunter", function( _player, _chance ) {
 
 	local talents = _player.getTalents();
 	local tl = talents.len() == 0 ? 0 : this.Math.max(talents[::Const.Attributes.MeleeSkill], talents[::Const.Attributes.RangedSkill]);

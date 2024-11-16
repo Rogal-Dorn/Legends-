@@ -83,7 +83,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.BagsAndBelts,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.Pathfinder,
-				this.Const.Perks.PerkDefs.Lookout,
+				this.Const.Perks.PerkDefs.LegendLookout,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert
 			],
