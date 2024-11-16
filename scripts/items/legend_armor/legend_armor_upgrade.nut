@@ -206,7 +206,7 @@ this.legend_armor_upgrade <- this.inherit("scripts/items/item", {
 			{
 				id = 2,
 				type = "description",
-				text = this.m.Description
+				text = getDescription()
 			}
 		];
 		result.push({
