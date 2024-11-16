@@ -28,7 +28,7 @@ this.legends_crusader_scenario <- this.inherit("scripts/scenarios/world/starting
 		]); //skills on start
 		bro.getSkills().add(this.new("scripts/skills/traits/player_character_trait"));		
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.FortifiedMind);
-		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.Rebound);
+		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendRebound);
 		this.addScenarioPerk(bro.getBackground(), this.Const.Perks.PerkDefs.LegendFavouredEnemyZombie);
 		bro.m.PerkPointsSpent += 3;
 		bro.setPlaceInFormation(4);

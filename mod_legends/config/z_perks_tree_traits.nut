@@ -182,10 +182,10 @@ if (!("Perks" in ::Const))
 			::Const.Perks.PerkDefs.LoneWolf
 		],
 		[
-			::Const.Perks.PerkDefs.Vengeance
+			::Const.Perks.PerkDefs.LegendVengeance
 		],
 		[
-			::Const.Perks.PerkDefs.LastStand
+			::Const.Perks.PerkDefs.LegendLastStand
 		]
 	]
 };
@@ -369,7 +369,7 @@ if (!("Perks" in ::Const))
 			::Const.Perks.PerkDefs.InspiringPresence
 		],
 		[
-			::Const.Perks.PerkDefs.Inspire
+			::Const.Perks.PerkDefs.LegendInspire
 		]
 	]
 };
@@ -489,7 +489,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[
-		::Const.Perks.PerkDefs.LegendPeaceful
+			::Const.Perks.PerkDefs.LegendPeaceful
 		],
 		[
 			::Const.Perks.PerkDefs.LegendClarity
@@ -749,7 +749,7 @@ if (!("Perks" in ::Const))
 		[],
 		[],
 		[
-			::Const.Perks.PerkDefs.Rebound
+			::Const.Perks.PerkDefs.LegendRebound
 		]
 	]
 };
@@ -811,7 +811,7 @@ if (!("Perks" in ::Const))
 			::Const.Perks.PerkDefs.Overwhelm
 		],
 		[
-			::Const.Perks.PerkDefs.Rebound
+			::Const.Perks.PerkDefs.LegendRebound
 		]
 	]
 };

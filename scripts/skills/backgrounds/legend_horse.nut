@@ -102,8 +102,8 @@ this.legend_horse <- this.inherit("scripts/skills/backgrounds/character_backgrou
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendLastStand,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.LegendHorsePiaffe,

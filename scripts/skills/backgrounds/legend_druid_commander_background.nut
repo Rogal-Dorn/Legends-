@@ -132,7 +132,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendSpecStaffStun,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
-				this.Const.Perks.PerkDefs.Feint,
+				this.Const.Perks.PerkDefs.LegendFeint,
 				this.Const.Perks.PerkDefs.Relentless,
 				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
@@ -154,7 +154,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.LegendInsects,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
-				this.Const.Perks.PerkDefs.Vengeance,
+				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
@@ -169,8 +169,8 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound
+				this.Const.Perks.PerkDefs.LegendLastStand,
+				this.Const.Perks.PerkDefs.LegendRebound
 			],
 			[
 				this.Const.Perks.PerkDefs.LegendMiasma,

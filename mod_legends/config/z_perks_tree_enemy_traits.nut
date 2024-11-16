@@ -42,7 +42,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[
-			::Const.Perks.PerkDefs.Feint
+			::Const.Perks.PerkDefs.LegendFeint
 		],
 		[
 			::Const.Perks.PerkDefs.Backstabber,
@@ -198,7 +198,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[
-			::Const.Perks.PerkDefs.Lookout,
+			::Const.Perks.PerkDefs.LegendLookout,
             ::Const.Perks.PerkDefs.Pathfinder
 		],
 		[

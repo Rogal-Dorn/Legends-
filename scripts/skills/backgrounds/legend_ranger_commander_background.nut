@@ -110,7 +110,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.DoubleStrike,
+				this.Const.Perks.PerkDefs.LegendDoubleStrike,
 				this.Const.Perks.PerkDefs.LegendAmmoBinding,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
 				this.Const.Perks.PerkDefs.Relentless
@@ -129,7 +129,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.SpecThrowing
 			],
 			[
-				this.Const.Perks.PerkDefs.CloseCombatArcher,
+				this.Const.Perks.PerkDefs.LegendCloseCombatArcher,
 				this.Const.Perks.PerkDefs.LegendDogMaster,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LoneWolf,
@@ -146,7 +146,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Berserk,
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.LegendCoordinatedVolleys,
 				this.Const.Perks.PerkDefs.LegendCascade,
 				this.Const.Perks.PerkDefs.LegendWindReader,

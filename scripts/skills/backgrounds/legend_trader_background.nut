@@ -96,7 +96,7 @@ this.legend_trader_background <- this.inherit("scripts/skills/backgrounds/charac
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.LegendDangerPay,
 				this.Const.Perks.PerkDefs.LegendPaymaster,
 			],

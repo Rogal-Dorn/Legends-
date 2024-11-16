@@ -52,7 +52,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Pathfinder,
 				this.Const.Perks.PerkDefs.Student,
 				this.Const.Perks.PerkDefs.Recover,
-				this.Const.Perks.PerkDefs.Lookout
+				this.Const.Perks.PerkDefs.LegendLookout
 			],
 			[
 				this.Const.Perks.PerkDefs.CoupDeGrace,
@@ -96,7 +96,7 @@ this.legend_trader_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.HeadHunter,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.BattleForged,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.LegendDangerPay,
 				this.Const.Perks.PerkDefs.LegendPaymaster,
 			],

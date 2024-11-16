@@ -121,7 +121,7 @@ this.legend_witch_commander_background <- this.inherit("scripts/skills/backgroun
 				[
 					this.Const.Perks.PerkDefs.Nimble,
 					this.Const.Perks.PerkDefs.LegendRelax,
-					this.Const.Perks.PerkDefs.Rebound,
+					this.Const.Perks.PerkDefs.LegendRebound,
 					this.Const.Perks.PerkDefs.LegendClarity,
 					this.Const.Perks.PerkDefs.Ballistics,
 					this.Const.Perks.PerkDefs.LegendMindOverBody,
