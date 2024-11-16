@@ -353,7 +353,7 @@ if (!("Perks" in ::Const))
 	},
 	Tree = [
 		[],
-		[::Const.Perks.PerkDefs.Feint],
+		[::Const.Perks.PerkDefs.LegendFeint],
 		[],
 		[::Const.Perks.PerkDefs.SpecSword],
 		[],
@@ -407,7 +407,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.Backstabber],
 		[],
 		[::Const.Perks.PerkDefs.SpecDagger],
-		[::Const.Perks.PerkDefs.DoubleStrike],
+		[::Const.Perks.PerkDefs.LegendDoubleStrike],
 		[],
 		[]
 	]
@@ -663,7 +663,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.SpecThrowing],
 		[],
 		[],
-		[::Const.Perks.PerkDefs.CloseCombatArcher]
+		[::Const.Perks.PerkDefs.LegendCloseCombatArcher]
 	]
 };
 
@@ -868,7 +868,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.LegendMasteryStaves],
 		[::Const.Perks.PerkDefs.LegendSpecStaffStun],
 		[],
-		[::Const.Perks.PerkDefs.PushTheAdvantage]
+		[::Const.Perks.PerkDefs.LegendPushTheAdvantage]
 	]
 };
 

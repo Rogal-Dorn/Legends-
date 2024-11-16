@@ -90,7 +90,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 			[
 				this.Const.Perks.PerkDefs.LegendEntice,
 				this.Const.Perks.PerkDefs.LegendMagicCircleOfProtection,
-				this.Const.Perks.PerkDefs.LegendMasteryMagicMissileFocus,
+				this.Const.Perks.PerkDefs.LegendMagicMissileFocus,
 				this.Const.Perks.PerkDefs.SpecDagger,
 				this.Const.Perks.PerkDefs.SpecThrowing,
 				this.Const.Perks.PerkDefs.LegendSpecBandage,
@@ -116,7 +116,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendMasteryChainLightning,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendRelax,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.LegendClarity,
 				this.Const.Perks.PerkDefs.LegendMindOverBody,
 				this.Const.Perks.PerkDefs.Ballistics
@@ -126,7 +126,7 @@ this.mage_legend_mage_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendMagicSleep,
 				this.Const.Perks.PerkDefs.LegendMagicHealingWind,
 				this.Const.Perks.PerkDefs.LegendMagicTeleport,
-				this.Const.Perks.PerkDefs.LegendMasteryMagicMissileMastery,
+				this.Const.Perks.PerkDefs.LegendMagicMissileMastery,
 				this.Const.Perks.PerkDefs.LegendPerfectFocus,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyHexen,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,

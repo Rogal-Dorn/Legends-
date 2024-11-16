@@ -84,8 +84,8 @@ this.legend_horserider <- this.inherit("scripts/skills/backgrounds/character_bac
 			],
 			[
 				this.Const.Perks.PerkDefs.Nimble,
-				this.Const.Perks.PerkDefs.LastStand,
-				this.Const.Perks.PerkDefs.Rebound,
+				this.Const.Perks.PerkDefs.LegendLastStand,
+				this.Const.Perks.PerkDefs.LegendRebound,
 				this.Const.Perks.PerkDefs.LegendMuscularity
 			],
 			[

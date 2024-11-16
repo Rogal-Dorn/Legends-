@@ -156,7 +156,7 @@ this.legend_necro_commander_background <- this.inherit("scripts/skills/backgroun
 					this.Const.Perks.PerkDefs.LegendFavouredEnemyAlps,
 					this.Const.Perks.PerkDefs.LegendGruesomeFeast,
 					this.Const.Perks.PerkDefs.LegendHerbcraft,
-					this.Const.Perks.PerkDefs.Rebound,
+					this.Const.Perks.PerkDefs.LegendRebound,
 					this.Const.Perks.PerkDefs.LegendSpecCultArmor,
 					this.Const.Perks.PerkDefs.Backstabber,
 					this.Const.Perks.PerkDefs.CoupDeGrace

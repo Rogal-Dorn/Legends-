@@ -94,7 +94,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 			[
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.Rotation,
-				this.Const.Perks.PerkDefs.Feint,
+				this.Const.Perks.PerkDefs.LegendFeint,
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.Debilitate,
 				this.Const.Perks.PerkDefs.Relentless,
@@ -119,7 +119,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LegendGrapple,
-				this.Const.Perks.PerkDefs.Vengeance,
+				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.PushTheAdvantage,
 				this.Const.Perks.PerkDefs.LegendBlendIn,

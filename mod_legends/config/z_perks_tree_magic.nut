@@ -231,7 +231,7 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.LegendShieldsUp],
 		[::Const.Perks.PerkDefs.LegendHoldTheLine],
 		[::Const.Perks.PerkDefs.LegendForwardPush],
-		[::Const.Perks.PerkDefs.Inspire]
+		[::Const.Perks.PerkDefs.LegendInspire]
 	]
 };
 
@@ -355,7 +355,7 @@ if (!("Perks" in ::Const))
 		//::Const.Perks.PerkDefs.LegendMagicHailstone
 		],
 		[
-		::Const.Perks.PerkDefs.LegendMasteryMagicMissileFocus
+		::Const.Perks.PerkDefs.LegendMagicMissileFocus
 		],
 		[
 		::Const.Perks.PerkDefs.LegendChainLightning,
@@ -366,7 +366,7 @@ if (!("Perks" in ::Const))
 		//::Const.Perks.PerkDefs.LegendMasteryHailstone
 		],
 		[
-		::Const.Perks.PerkDefs.LegendMasteryMagicMissileMastery,
+		::Const.Perks.PerkDefs.LegendMagicMissileMastery,
 		::Const.Perks.PerkDefs.LegendFirefield
 		]
 	]
