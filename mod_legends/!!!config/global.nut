@@ -1,11 +1,5 @@
 ::Const.Serialization.Version <- 73;
 
-::Const.DLC.Info[1].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/732460/Battle_Brothers__Lindwurm/" : "https://www.gog.com/game/battle_brothers"
-::Const.DLC.Info[2].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/961930/Battle_Brothers__Beasts__Exploration/" : "https://www.gog.com/game/battle_brothers_beasts_exploration"
-::Const.DLC.Info[4].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1067690/Battle_Brothers__Warriors_of_the_North" : "https://www.gog.com/game/battle_brothers_warriors_of_the_north"
-::Const.DLC.Info[6].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1361280/Battle_Brothers__Blazing_Deserts" : "https://www.gog.com/game/battle_brothers_blazing_deserts"
-::Const.DLC.Info[8].URL = this.isSteamBuild() ? "https://store.steampowered.com/app/1910050/Battle_Brothers__Of_Flesh_and_Faith" : "https://www.gog.com/game/battle_brothers_of_flesh_and_faith"
-
 ::Const.Difficulty = {
 	Easy = 0,
 	Normal = 1,
