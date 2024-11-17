@@ -1275,12 +1275,22 @@
 			}
 			return 1
 		}
-
 		ret.Brothers.sort(sortfn);
-
 		return ret;
-
 	}
+
+
+	o.updateLook = function ( _updateTo = -1 )
+	{
+		if (_updateTo != -1)
+			this.m.Look = _updateTo;
+
+		this.World.State.getPlayer().setBaseImage(this.m.Look);
+
+		if ("updateLook" in this.World.Assets.getOrigin())
+			this.World.Assets.getOrigin().updateLook();
+	}
+
 
 	o.onSerialize = function ( _out )
 	{
