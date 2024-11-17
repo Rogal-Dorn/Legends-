@@ -99,7 +99,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Steadfast,
 				this.Const.Perks.PerkDefs.Recover,
 				this.Const.Perks.PerkDefs.BagsAndBelts,
-				this.Const.Perks.PerkDefs.BloodyHarvest,
+				this.Const.Perks.PerkDefs.LegendBloodyHarvest,
 				this.Const.Perks.PerkDefs.LegendBackToBasics,
 				this.Const.Perks.PerkDefs.LegendAlert
 			],

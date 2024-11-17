@@ -83,7 +83,7 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.HoldOut,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.FortifiedMind,
-				this.Const.Perks.PerkDefs.BloodyHarvest,
+				this.Const.Perks.PerkDefs.LegendBloodyHarvest,
 				this.Const.Perks.PerkDefs.SteelBrow,
 				this.Const.Perks.PerkDefs.QuickHands,
 				this.Const.Perks.PerkDefs.ShieldBash,
