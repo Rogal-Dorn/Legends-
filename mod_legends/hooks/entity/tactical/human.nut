@@ -677,7 +677,6 @@
 		_out.writeU8(this.m.Gender);
 		_out.writeU8(this.m.VoiceSet);
 		_out.writeU8(this.m.Body);
-		//_out.writeBool(false);
 	}
 
 	o.onDeserialize = function ( _in )
@@ -695,6 +694,5 @@
 		this.m.VoiceSet = _in.readU8();
 		this.m.Body = _in.readU8();
 		this.setGender(this.m.Gender, false)
-		//_in.readBool();
 	}
 });

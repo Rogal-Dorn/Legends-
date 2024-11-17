@@ -434,36 +434,4 @@
 		this.doOnFunction("onShieldHit", [_attacker, _skill], this.Const.ItemSlot.Offhand);
 		this.collectGarbage(this.Const.ItemSlot.Offhand);
 	}
-
-	o.onSerialize = function ( _out )
-	{
-		_out.writeU8(this.m.UnlockedBagSlots);
-		local numItems = 0;
-
-		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
-		{
-			for( local j = 0; j < this.Const.ItemSlotSpaces[i]; j = ++j )
-			{
-				if (this.m.Items[i][j] != null && this.m.Items[i][j] != -1)
-				{
-					numItems = ++numItems;
-				}
-			}
-		}
-
-		_out.writeU8(numItems);
-
-		for( local i = 0; i < this.Const.ItemSlot.COUNT; i = ++i )
-		{
-			for( local j = 0; j < this.Const.ItemSlotSpaces[i]; j = ++j )
-			{
-				if (this.m.Items[i][j] != null && this.m.Items[i][j] != -1)
-				{
-					_out.writeU8(this.m.Items[i][j].getCurrentSlotType());
-					_out.writeI32(this.m.Items[i][j].ClassNameHash);
-					this.m.Items[i][j].onSerialize(_out);
-				}
-			}
-		}
-	}
 });

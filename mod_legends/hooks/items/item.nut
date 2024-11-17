@@ -814,7 +814,7 @@
 	local onSerialize = o.onSerialize;
 	o.onSerialize = function ( _out )
 	{
-		onSerialize( _out );
+		onSerialize(_out);
 		_out.writeString(this.getInstanceID()); //Need old ID for saved formations
 		_out.writeU8(this.m.RuneVariant);
 		_out.writeBool(this.m.IsToBeSalvaged);
@@ -830,44 +830,15 @@
 	o.onDeserialize = function ( _in )
 	{
 		onDeserialize(_in);
-		if (_in.getMetaData().getVersion() >= 46)
-		{
-			this.m.OldID = _in.readString();
-		}
-
-		if (_in.getMetaData().getVersion() >= 51)
-		{
-			this.m.RuneVariant = _in.readU8();
-		}
-
-		if (_in.getMetaData().getVersion() >= 52)
-		{
-			this.m.IsToBeSalvaged = _in.readBool();
-		}
-
-		if (_in.getMetaData().getVersion() >= 53)
-		{
-			this.m.IsToBeRepairedQueue = _in.readU16();
-			this.m.IsToBeSalvagedQueue = _in.readU16();
-			this.m.RuneBonus1 =  _in.readU8();
-		}
-
-		if (_in.getMetaData().getVersion() >= 54)
-		{
-			this.m.RuneBonus2 =  _in.readU8();
-		}
-
-		if (_in.getMetaData().getVersion() >= 58)
-		{
-			this.m.MagicNumber = _in.readU8();
-		}
-
-		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.2.0-pre-02", _in.getMetaData()))
-		{
-			this.m.OriginSettlementID = _in.readI32();
-			this.m.TradeHistorySettlementIDs = ::MSU.Utils.deserialize(_in);
-		}
-
+		this.m.OldID = _in.readString();
+		this.m.RuneVariant = _in.readU8();
+		this.m.IsToBeSalvaged = _in.readBool();
+		this.m.IsToBeRepairedQueue = _in.readU16();
+		this.m.IsToBeSalvagedQueue = _in.readU16();
+		this.m.RuneBonus1 = _in.readU8();
+		this.m.RuneBonus2 = _in.readU8();
+		this.m.OriginSettlementID = _in.readI32();
+		this.m.TradeHistorySettlementIDs = ::MSU.Utils.deserialize(_in);
 		this.updateVariant();
 	}
 });
