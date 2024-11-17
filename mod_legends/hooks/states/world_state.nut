@@ -2050,15 +2050,14 @@
 	local onSerialize = o.onSerialize;
 	o.onSerialize = function ( _out )
 	{
-		_out.writeBool(this.m.IsCampingAllowed);
-		_out.writeI32(this.m.CombatSeed);
 		onSerialize( _out );
+		this.World.Camp.onSerialize(_out);
 	}
 
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
-		onDeserialize( _in );
+		onDeserialize(_in);
 		if (this.m.EscortedEntity == null)
 		{
 			this.World.State.setCampingAllowed(true);

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/world/settlement/settlement_modifiers", function(o) {
+::mods_hookExactClass("entity/world/settlement_modifiers", function(o) {
 	o.StablesMult <- 1.0;
 
 	local reset = o.reset;

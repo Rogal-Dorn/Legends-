@@ -2232,133 +2232,23 @@
 	}
 
 	// copied entirely because adjustHiringCostBasedOnEquipment is commented out
+	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
-		if (_in.getMetaData().getVersion() >= 59)
+		onDeserialize(_in);
+		if (this.m.Background.isBackgroundType(this.Const.BackgroundType.Female))
 		{
-			this.human.onDeserialize(_in);
+			this.m.Gender = 1;
+			this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
 		}
-		else
-		{
-			this.actor.onDeserialize(_in);
-		}
-
-		this.m.Surcoat = null;
-		this.m.Level = _in.readU8();
-		this.m.PerkPoints = _in.readU8();
-		this.m.PerkPointsSpent = _in.readU8();
-		this.m.LevelUps = _in.readU8();
 		this.m.HiringCost = _in.readF32();
-		this.m.Mood = _in.readF32();
-		local numMoodChanges = _in.readU8();
-		this.m.MoodChanges.resize(numMoodChanges, 0);
-
-		for( local i = 0; i != numMoodChanges; i = ++i )
-		{
-			local moodChange = {};
-			moodChange.Positive <- _in.readBool();
-			moodChange.Text <- _in.readString();
-			moodChange.Time <- _in.readF32();
-			this.m.MoodChanges[i] = moodChange;
-
-		}
-
-		this.m.HireTime = _in.readF32();
-		this.m.LastDrinkTime = _in.readF32();
-		this.m.Talents.resize(this.Const.Attributes.COUNT, 0);
-
-		for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
-		{
-			this.m.Talents[i] = _in.readU8();
-
-		}
-
-		this.m.Attributes.resize(this.Const.Attributes.COUNT);
-
-		for( local i = 0; i != this.Const.Attributes.COUNT; i = ++i )
-		{
-			this.m.Attributes[i] = [];
-			local n = _in.readU8();
-			this.m.Attributes[i].resize(n);
-
-			for( local j = 0; j != n; j = ++j )
-			{
-				this.m.Attributes[i][j] = _in.readU8();
-
-			}
-
-		}
-
-		local ret = this.m.Skills.query(this.Const.SkillType.Background);
-
-		if (ret.len() != 0)
-		{
-			this.m.Background = ret[0];
-			//this.m.Background.adjustHiringCostBasedOnEquipment(); //turned off as this was causing issues with the serialisation of hire cost - Luft + James 7/5/23
-			this.m.Background.buildDescription(true);
-
-			if (this.m.Background.isBackgroundType(this.Const.BackgroundType.Female))
-			{
-				this.m.Gender = 1;
-				this.m.VoiceSet = this.Math.rand(0, this.Const.WomanSounds.len() - 1);
-			}
-		}
-
-		this.m.PlaceInFormation = _in.readU8();
-		this.m.LifetimeStats.Kills = _in.readU32();
-		this.m.LifetimeStats.Battles = _in.readU32();
-		this.m.LifetimeStats.BattlesWithoutMe = _in.readU32();
-
-		if (_in.getMetaData().getVersion() >= 37)
-		{
-			this.m.LifetimeStats.MostPowerfulVanquishedType = _in.readU16();
-		}
-
-		this.m.LifetimeStats.MostPowerfulVanquished = _in.readString();
-		this.m.LifetimeStats.MostPowerfulVanquishedXP = _in.readU16();
-		this.m.LifetimeStats.FavoriteWeapon = _in.readString();
-		this.m.LifetimeStats.FavoriteWeaponUses = _in.readU32();
-		this.m.LifetimeStats.CurrentWeaponUses = _in.readU32();
-
-		if (_in.getMetaData().getVersion() >= 57)
-		{
-			this.m.LifetimeStats.Tags.onDeserialize(_in);
-		}
-
-		this.m.IsTryoutDone = _in.readBool();
-		this.m.Skills.update();
-
-		if (_in.getMetaData().getVersion() >= 46)
-		{
-			this.m.Formations.onDeserialize(_in);
-		}
-
-		if (_in.getMetaData().getVersion() >= 47)
-		{
-			this.m.VeteranPerks = _in.readU8();
-
-			if (this.m.VeteranPerks == 5)
-			{
-				this.m.VeteranPerks = 4;
-			}
-		}
-
-		if (_in.getMetaData().getVersion() >= 48)
-		{
-			this.m.IsCommander = _in.readBool();
-		}
-
-		if (_in.getMetaData().getVersion() >= 52)
-		{
-			this.m.CampAssignment = _in.readString();
-			this.m.LastCampTime = _in.readF32();
-		}
-
-		if (_in.getMetaData().getVersion() >= 54)
-		{
-			this.m.InReserves = _in.readBool();
-		}
-
+		this.m.LifetimeStats.Tags.onDeserialize(_in);
+		this.m.Formations.onDeserialize(_in);
+		this.m.VeteranPerks = ::Math.min(_in.readU8(), 4);
+		this.m.IsCommander = _in.readBool();
+		this.m.CampAssignment = _in.readString();
+		this.m.LastCampTime = _in.readF32();
+		this.m.InReserves = _in.readBool();
 		this.m.CompanyID = _in.readU8();
 	}
 });

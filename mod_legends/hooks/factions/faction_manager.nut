@@ -1,4 +1,4 @@
-::mods_hookNewObject("factions/faction_manager", function(o) 
+::mods_hookNewObject("factions/faction_manager", function(o)
 {
 	o.setGreaterEvilType <- function ( _type )
 	{
@@ -518,7 +518,7 @@
 	o.updateGreaterEvil = function ()
 	{
 		local GE = this.m.GreaterEvil;
-		
+
 
 		if (GE.Type == this.Const.World.GreaterEvilType.None)
 		{
@@ -732,7 +732,6 @@
 		_out.writeF32(this.m.GreaterEvil.NextPhaseTime);
 		_out.writeF32(this.m.GreaterEvil.Strength);
 		_out.writeF32(this.m.GreaterEvil.LastUpdate);
-		//_out.writeBool(false);
 	}
 
 	o.onDeserialize = function ( _in )
@@ -756,18 +755,11 @@
 			f.onDeserialize(_in);
 		}
 
-		// For backwards compatibility
-		if (!::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
-		{
-			this.createDummyFaction();
-		}
+		this.createDummyFaction();
 
 		// Setup the dummy faction's mimic behaviour after all possible factions have been deserialized
-		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
-		{
-			local dummy = this.getDummyFaction();
-			dummy.setMimicValues(dummy.getMimicID());
-		}
+		local dummy = this.getDummyFaction();
+		dummy.setMimicValues(dummy.getMimicID());
 
 		this.m.LastRelationUpdateDay = _in.readU32();
 		this.m.GreaterEvil.Type = _in.readU8();
@@ -777,6 +769,5 @@
 		this.m.GreaterEvil.NextPhaseTime = _in.readF32();
 		this.m.GreaterEvil.Strength = _in.readF32();
 		this.m.GreaterEvil.LastUpdate = _in.readF32();
-		//_in.readBool();
 	}
 });

@@ -1877,4 +1877,19 @@
 			this.getPerk(_in.readU16()).IsRefundable <- false;
 		}
 	}
+
+	// little hack to remove it from onDeserialize() - chopeks
+	local adjustHiringCostBasedOnEquipment = o.adjustHiringCostBasedOnEquipment;
+	o.adjustHiringCostBasedOnEquipment = function () {};
+
+	o.adjustHiringCostBasedOnEquipmentLegends <- function () {
+		adjustHiringCostBasedOnEquipment();
+	}
+
+	local addEquipment = o.addEquipment;
+	o.addEquipment = function () {
+		addEquipment();
+		adjustHiringCostBasedOnEquipmentLegends();
+	}
+	// endhack
 })
