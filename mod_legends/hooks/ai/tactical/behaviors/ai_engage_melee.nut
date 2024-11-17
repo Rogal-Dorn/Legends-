@@ -1,6 +1,7 @@
-::mods_hookExactClass("ai/tactical/behaviors/ai_engage_melee", function(o) 
+::mods_hookExactClass("ai/tactical/behaviors/ai_engage_melee", function(o)
 {
-	o.onEvaluate = function ( _entity )
+	// todo, renamed because it doesn't work properly, hangs battle... - chopeks
+	o.onEvaluate2 <- function ( _entity )
 	{
 		// Function is a generator.
 		local score = 1.0;
