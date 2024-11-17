@@ -160,4 +160,8 @@
 
 		_stash.sort();
 	}
+
+	o.onUpdateStablesList <- function ( _list )
+	{
+	}
 });
