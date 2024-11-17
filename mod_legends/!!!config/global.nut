@@ -99,642 +99,167 @@
 	]
 };
 
-::Const.EntityType = {
-	Player = -1,
-	Necromancer = 0,
-	Zombie = 1,
-	ZombieYeoman = 2,
-	ZombieKnight = 3,
-	ZombieBoss = 4,
-	SkeletonLight = 5,
-	SkeletonMedium = 6,
-	SkeletonHeavy = 7,
-	SkeletonPriest = 8,
-	SkeletonBoss = 9,
-	Vampire = 10,
-	Ghost = 11,
-	Ghoul = 12,
-	OrcYoung = 13,
-	OrcBerserker = 14,
-	OrcWarrior = 15,
-	OrcWarlord = 16,
-	Militia = 17,
-	MilitiaRanged = 18,
-	MilitiaVeteran = 19,
-	MilitiaCaptain = 20,
-	BountyHunter = 21,
-	Peasant = 22,
-	CaravanHand = 23,
-	CaravanGuard = 24,
-	CaravanDonkey = 25,
-	Footman = 26,
-	Greatsword = 27,
-	Billman = 28,
-	Arbalester = 29,
-	StandardBearer = 30,
-	Sergeant = 31,
-	Knight = 32,
-	MilitaryDonkey = 33,
-	BanditThug = 34,
-	BanditPoacher = 35,
-	BanditMarksman = 36,
-	BanditRaider = 37,
-	BanditLeader = 38,
-	GoblinAmbusher = 39,
-	GoblinFighter = 40,
-	GoblinLeader = 41,
-	GoblinShaman = 42,
-	GoblinWolfrider = 43,
-	Wolf = 44,
-	Wardog = 45,
-	ArmoredWardog = 46,
-	Mercenary = 47,
-	MercenaryRanged = 48,
-	Swordmaster = 49,
-	HedgeKnight = 50,
-	MasterArcher = 51,
-	GreenskinCatapult = 52,
-	Cultist = 53,
-	Direwolf = 54,
-	Lindwurm = 55,
-	Unhold = 56,
-	UnholdFrost = 57,
-	UnholdBog = 58,
-	Spider = 59,
-	SpiderEggs = 60,
-	Alp = 61,
-	Hexe = 62,
-	Schrat = 63,
-	SchratSmall = 64,
-	Wildman = 65,
-	Kraken = 66,
-	KrakenTentacle = 67,
-	ZombieBetrayer = 68,
-	AlpShadow = 69,
-	BarbarianThrall = 70,
-	BarbarianMarauder = 71,
-	BarbarianChampion = 72,
-	BarbarianDrummer = 73,
-	BarbarianBeastmaster = 74,
-	BarbarianUnhold = 75,
-	BarbarianUnholdFrost = 76,
-	BarbarianChosen = 77,
-	Warhound = 78,
-	TricksterGod = 79,
-	BarbarianMadman = 80,
-	Serpent = 81,
-	SandGolem = 82,
-	Hyena = 83,
-	Conscript = 84,
-	Gunner = 85,
-	Officer = 86,
-	Engineer = 87,
-	Assassin = 88,
-	Slave = 89,
-	Gladiator = 90,
-	Mortar = 91,
-	NomadCutthroat = 92,
-	NomadOutlaw = 93,
-	NomadSlinger = 94,
-	NomadArcher = 95,
-	NomadLeader = 96,
-	DesertStalker = 97,
-	Executioner = 98,
-	DesertDevil = 99,
-	PeasantSouthern = 100,
-	SkeletonLich = 101,
-	SkeletonLichMirrorImage = 102,
-	SkeletonPhylactery = 103,
-	ZombieTreasureHunter = 104,
-	FlyingSkull = 105,
-	BanditRabble = 106,
-	LegendCat = 107,
-	LegendOrcElite = 108,
-	LegendOrcBehemoth = 109,
-	LegendWhiteDirewolf = 110,
-	LegendSkinGhoul = 111,
-	LegendStollwurm = 112,
-	LegendRockUnhold = 113,
-	LegendRedbackSpider = 114,
-	LegendDemonAlp = 115,
-	LegendHexeLeader = 116,
-	LegendGreenwoodSchrat = 117,
-	LegendGreenwoodSchratSmall = 118,
-	LegendWhiteWarwolf = 119,
-	LegendBanshee = 120,
-	LegendDemonHound = 121,
-	LegendVampireLord = 122,
-	BanditVeteran = 123,
-	BanditWarlord = 124,
-	LegendPeasantButcher = 125,
-	LegendPeasantBlacksmith = 126,
-	LegendPeasantMonk = 127,
-	LegendPeasantFarmhand = 128,
-	LegendPeasantMinstrel = 129,
-	LegendPeasantPoacher = 130,
-	LegendPeasantWoodsman = 131,
-	LegendPeasantMiner = 132,
-	LegendPeasantSquire = 133,
-	LegendPeasantWitchHunter = 134,
-	LegendHalberdier = 135,
-	LegendSlinger = 136,
-	LegendFencer = 137,
-	BanditOutrider = 138,
-	LegendBear = 139,
-	LegendCatapult = 140,
-	LegendHorse = 141,
-	SkeletonGladiator = 142,
+if (!("COUNT" in ::Const.EntityType)) {
+	::Const.EntityType.COUNT <- ::Const.EntityType.Oathbringer;
+} else {
+	::Const.EntityType.COUNT = ::Const.EntityType.Oathbringer;
+}
 
-	BanditRabblePoacher = 143,
-	BanditVermes = 144,
+::Const.EntityType.addNew <- function (_icon, _name, _plural) {
+	::Const.EntityIcon.push(_icon);
+	::Const.Strings.EntityName.push(_name);
+	::Const.Strings.EntityNamePlural.push(_plural);
+	::Const.EntityType.COUNT += 1;
+	return ::Const.EntityType.COUNT;
+}
 
-	SatoManhunter = 145,
-	SatoManhunterVeteran = 146,
-
-	LegendMummyLight = 147,
-	LegendMummyMedium = 148,
-	LegendMummyHeavy = 149,
-	LegendMummyQueen = 150,
-	KoboldFighter = 151,
-	KoboldWolfrider = 152,
-
-	LegendMummyPriest = 153,
-
-	FreeCompanySpearman = 154,
-	FreeCompanySlayer = 155,
-	FreeCompanyFootman = 156,
-	FreeCompanyArcher = 157,
-	FreeCompanyCrossbow = 158,
-	FreeCompanyLongbow = 159,
-	FreeCompanyBillman = 160,
-	FreeCompanyPikeman = 161,
-	FreeCompanyInfantry = 162,
-	FreeCompanyLeader = 163,
-	FreeCompanyLeaderLow = 164,
-	Oathbringer = 165,
-	SatoManhunterRanged = 166,
-	SatoManhunterVeteranRanged = 167,
-	LegendNobleGuard = 168,
-	LegendManAtArms = 169,
-	LegendBasiliskDrone = 170,
-	LegendBasiliskDroneLow = 171,
-
-	LegendCaravanPolearm = 172,
-	NobleEliteFootman = 173,
-	NoblePollax = 174,
-	NobleSureshot = 175,
-	LegendBasiliskSentry = 176,
+::Const.EntityType.BanditRabble <-
+	::Const.EntityType.addNew("rabble_orientation", "Bandit Rabble", "Bandit Rabble");
+::Const.EntityType.LegendCat <-
+	::Const.EntityType.addNew("cat_orientation", "Cat", "Cats");
+::Const.EntityType.LegendOrcElite <-
+	::Const.EntityType.addNew("orc_elite_orientation", "Orc Elite", "Orc Elites");
+::Const.EntityType.LegendOrcBehemoth <-
+	::Const.EntityType.addNew("orc_behemoth_orientation", "Orc Behemoth", "Orc Behemoths");
+::Const.EntityType.LegendWhiteDirewolf <-
+	::Const.EntityType.addNew("white_direwolf_orientation", "White Direwolf", "White Direwolves");
+::Const.EntityType.LegendSkinGhoul <-
+	::Const.EntityType.addNew("skin_ghoul_orientation", "Skin Ghoul", "Skin Ghouls");
+::Const.EntityType.LegendStollwurm <-
+	::Const.EntityType.addNew("stollwurm_orientation", "Stollwurm", "Stollwurmer");
+::Const.EntityType.LegendRockUnhold <-
+	::Const.EntityType.addNew("rock_unhold_orientation", "Rock Unhold", "Rock Unholds");
+::Const.EntityType.LegendRedbackSpider <-
+	::Const.EntityType.addNew("redback_spider_orientation", "Redback Spider", "Redback Spiders");
+::Const.EntityType.LegendDemonAlp <-
+	::Const.EntityType.addNew("demonalp_orientation", "Demon Alp", "Demon Alps");
+::Const.EntityType.LegendHexeLeader <-
+	::Const.EntityType.addNew("hexen_leader_orientation", "Hexe Coven Leader", "Hexe Coven Leaders");
+::Const.EntityType.LegendGreenwoodSchrat <-
+	::Const.EntityType.addNew("greenwood_schrat_orientation", "Heartwood Schrat", "Heartwood Schrats");
+::Const.EntityType.LegendGreenwoodSchratSmall <-
+	::Const.EntityType.addNew("greenwood_schrat_small_orientation", "Heartwood Sapling", "Heartwood Saplings");
+::Const.EntityType.LegendWhiteWarwolf <-
+	::Const.EntityType.addNew("white_direwolf_orientation", "White Warwolf", "White Warwolves");
+::Const.EntityType.LegendBanshee <-
+	::Const.EntityType.addNew("banshee_orientation_2", "Winselmutter", "Winselmutters");
+::Const.EntityType.LegendDemonHound <-
+	::Const.EntityType.addNew("hollenhound_orientation", "Höllenhund", "Höllenhunds");
+::Const.EntityType.LegendVampireLord <-
+	::Const.EntityType.addNew("vampire_lord_orientation", "Necrosavant Lord", "Necrosavant Lords");
+::Const.EntityType.BanditVeteran <-
+	::Const.EntityType.addNew("banditveteran_orientation", "Bandit Veteran", "Bandit Veterans");
+::Const.EntityType.BanditWarlord <-
+	::Const.EntityType.addNew("banditwarlord_orientation", "Bandit Warlord", "Bandit Warlords");
+::Const.EntityType.LegendPeasantButcher <-
+	::Const.EntityType.addNew("butcher_orientation", "Butcher", "Butchers");
+::Const.EntityType.LegendPeasantBlacksmith <-
+	::Const.EntityType.addNew("blacksmith_orientation", "Blacksmith", "Blacksmiths");
+::Const.EntityType.LegendPeasantMonk <-
+	::Const.EntityType.addNew("monk_orientation", "Monk", "Monks");
+::Const.EntityType.LegendPeasantFarmhand <-
+	::Const.EntityType.addNew("farmhand_orientation", "Farmhand", "Farmhands");
+::Const.EntityType.LegendPeasantMinstrel <-
+	::Const.EntityType.addNew("minstrel_orientation", "Minstrel", "Minstrels");
+::Const.EntityType.LegendPeasantPoacher <-
+	::Const.EntityType.addNew("poacher_orientation", "Poacher", "Poachers");
+::Const.EntityType.LegendPeasantWoodsman <-
+	::Const.EntityType.addNew("woodcutter_orientation", "Woodcutter", "Woodsfolk");
+::Const.EntityType.LegendPeasantMiner <-
+	::Const.EntityType.addNew("miner_orientation", "Miner", "Miners");
+::Const.EntityType.LegendPeasantSquire <-
+	::Const.EntityType.addNew("squire_orientation", "Squire", "Squires");
+::Const.EntityType.LegendPeasantWitchHunter <-
+	::Const.EntityType.addNew("witchhunter_orientation", "Witch Hunter", "Witch Hunters");
+::Const.EntityType.LegendHalberdier <-
+	::Const.EntityType.addNew("halberdier_orientation", "Halberdier", "Halberdiers");
+::Const.EntityType.LegendSlinger <-
+	::Const.EntityType.addNew("slinger_orientation", "Slinger", "Slingers");
+::Const.EntityType.LegendFencer <-
+	::Const.EntityType.addNew("fencer_orientation", "Fencer", "Fencers");
+::Const.EntityType.BanditOutrider <-
+	::Const.EntityType.addNew("banditoutrider_orientation", "Bandit Outrider", "Bandit Outriders");
+::Const.EntityType.LegendBear <-
+	::Const.EntityType.addNew("bear_orientation", "Bear", "Bears");
+::Const.EntityType.LegendCatapult <-
+	::Const.EntityType.addNew("catapult_01_orientation", "Catapult", "Catapults");
+::Const.EntityType.LegendHorse <-
+	::Const.EntityType.addNew("horse_orientation", "Horse", "Horses");
+::Const.EntityType.SkeletonGladiator <-
+	::Const.EntityType.addNew("gladiator_orientation", "Ancient Gladiator", "Ancient Gladiators");
+::Const.EntityType.BanditRabblePoacher <-
+	::Const.EntityType.addNew("rabble_poacher_orientation", "Bandit Rabble Poacher", "Bandit Rabble Poachers");
+::Const.EntityType.BanditVermes <-
+	::Const.EntityType.addNew("bandit_raider_orientation", "Infected Bandit", "Bandit Vermes");
+::Const.EntityType.SatoManhunter <-
+	::Const.EntityType.addNew("nomad_02", "Manhunter", "Manhunters");
+::Const.EntityType.SatoManhunterVeteran <-
+	::Const.EntityType.addNew("nomad_05", "Manhunter Veteran", "Manhunter Veterans");
+::Const.EntityType.LegendMummyLight <-
+	::Const.EntityType.addNew("mummy_light_orientation", "Embalmed Slave", "Embalmed Slaves");
+::Const.EntityType.LegendMummyMedium <-
+	::Const.EntityType.addNew("mummy_medium_orientation", "Embalmed Soldier", "Embalmed Soldiers");
+::Const.EntityType.LegendMummyHeavy <-
+	::Const.EntityType.addNew("mummy_heavy_orientation", "Embalmed Noble", "Embalmed Nobles");
+::Const.EntityType.LegendMummyQueen <-
+	::Const.EntityType.addNew("mummy_queen_orientation", "Embalmed Queen", "Embalmed Queens");
+::Const.EntityType.KoboldFighter <-
+	::Const.EntityType.addNew("kobold_fighter_orientation", "Kobold Fighter", "Kobold Fighters");
+::Const.EntityType.KoboldWolfrider <-
+	::Const.EntityType.addNew("kobold_wolfrider_orientation", "Kobold Wolfrider", "Kobold Wolfriders");
+::Const.EntityType.LegendMummyPriest <-
+	::Const.EntityType.addNew("mummy_priest_orientation", "Embalmed Priest", "Embalmed Priests");
+::Const.EntityType.FreeCompanySpearman <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Spearman", "Free Company Spearmen");
+::Const.EntityType.FreeCompanySlayer <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Slayer", "Free Company Slayers");
+::Const.EntityType.FreeCompanyFootman <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Footman", "Free Company Footmen");
+::Const.EntityType.FreeCompanyArcher <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Archer", "Free Company Archers");
+::Const.EntityType.FreeCompanyCrossbow <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Crossbow", "Free Company Crossbows");
+::Const.EntityType.FreeCompanyLongbow <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Longbow", "Free Company Longbows");
+::Const.EntityType.FreeCompanyBillman <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Billman", "Free Company Billmen");
+::Const.EntityType.FreeCompanyPikeman <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Pikeman", "Free Company Pikemen");
+::Const.EntityType.FreeCompanyInfantry <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Infantry", "Free Company Infantry");
+::Const.EntityType.FreeCompanyLeader <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Leader", "Free Company Leaders");
+::Const.EntityType.FreeCompanyLeaderLow <-
+	::Const.EntityType.addNew("mercenary_orientation", "Free Company Ringleader", "Free Company Ringleaders");
+::Const.EntityType.SatoManhunterRanged <-
+	::Const.EntityType.addNew("nomad_02", "Manhunter Handgonner", "Manhunter Handgonners");
+::Const.EntityType.SatoManhunterVeteranRanged <-
+	::Const.EntityType.addNew("nomad_05", "Manhunter Veteran Handgonner", "Manhunter Veteran Handgonners");
+::Const.EntityType.LegendNobleGuard <-
+	::Const.EntityType.addNew("footman_veteran_orientation", "Royal Guard", "Royal Guards");
+::Const.EntityType.LegendManAtArms <-
+	::Const.EntityType.addNew("footman_veteran_orientation", "Veteran Knight", "Veteran Knights");
+::Const.EntityType.LegendBasiliskDrone <-
+	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Drone", "Basilisk Drones");
+::Const.EntityType.LegendBasiliskDroneLow <-
+	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries"); // todo is it ok? same as Sentry
+::Const.EntityType.LegendCaravanPolearm <-
+	::Const.EntityType.addNew("caravan_hand_orientation", "Caravan Polearm", "Caravan Polearms");
+::Const.EntityType.NobleEliteFootman <-
+	::Const.EntityType.addNew("footman_veteran_orientation", "Elite Footman", "Elite Footmen");
+::Const.EntityType.NoblePollax <-
+	::Const.EntityType.addNew("billman_orientation", "Pollaxe", "Pollaxes");
+::Const.EntityType.NobleSureshot <-
+	::Const.EntityType.addNew("arbalester_orientation", "Sureshot", "Sureshots");
+::Const.EntityType.LegendBasiliskSentry <-
+	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries"); // todo is it ok? same as droneLow
 
 
-		/**
-	 * This is used during deserialization of older saves to convert IDs of enemy types to the Legends versions.
-	 * Not sure if it's still necessary but we can leave it for now.
-	 */
-	function convertOldToNew( _id )
-	{
-		switch(_id)
-		{
-		case 4:
-			return this.Const.EntityType.SkeletonLight;
+local originalgetDefaultFaction = ::Const.EntityType.getDefaultFaction
+::Const.EntityType.getDefaultFaction = function (_id) {
+	switch(_id) {
 
-		case 5:
-			return this.Const.EntityType.SkeletonMedium;
-
-		case 6:
-			return this.Const.EntityType.SkeletonHeavy;
-
-		case 7:
-			return this.Const.EntityType.SkeletonPriest;
-
-		case 8:
-			return this.Const.EntityType.Vampire;
-
-		case 9:
-			return this.Const.EntityType.Ghost;
-
-		case 10:
-			return this.Const.EntityType.Ghoul;
-
-		case 11:
-			return this.Const.EntityType.OrcYoung;
-
-		case 12:
-			return this.Const.EntityType.OrcBerserker;
-
-		case 13:
-			return this.Const.EntityType.OrcWarrior;
-
-		case 14:
-			return this.Const.EntityType.OrcWarlord;
-
-		case 15:
-			return this.Const.EntityType.Direwolf;
-
-		case 16:
-			return this.Const.EntityType.Militia;
-
-		case 17:
-			return this.Const.EntityType.MilitiaRanged;
-
-		case 18:
-			return this.Const.EntityType.MilitiaVeteran;
-
-		case 19:
-			return this.Const.EntityType.MilitiaCaptain;
-
-		case 20:
-			return this.Const.EntityType.BountyHunter;
-
-		case 21:
-			return this.Const.EntityType.Peasant;
-
-		case 22:
-			return this.Const.EntityType.CaravanHand;
-
-		case 23:
-			return this.Const.EntityType.CaravanGuard;
-
-		case 24:
-			return this.Const.EntityType.CaravanDonkey;
-
-		case 25:
-			return this.Const.EntityType.Footman;
-
-		case 26:
-			return this.Const.EntityType.Greatsword;
-
-		case 27:
-			return this.Const.EntityType.Billman;
-
-		case 28:
-			return this.Const.EntityType.Arbalester;
-
-		case 29:
-			return this.Const.EntityType.StandardBearer;
-
-		case 30:
-			return this.Const.EntityType.Sergeant;
-
-		case 31:
-			return this.Const.EntityType.Knight;
-
-		case 32:
-			return this.Const.EntityType.MilitaryDonkey;
-
-		case 33:
-			return this.Const.EntityType.BanditThug;
-
-		case 34:
-			return this.Const.EntityType.BanditPoacher;
-
-		case 35:
-			return this.Const.EntityType.BanditMarksman;
-
-		case 36:
-			return this.Const.EntityType.BanditRaider;
-
-		case 37:
-			return this.Const.EntityType.BanditLeader;
-
-		case 38:
-			return this.Const.EntityType.GoblinAmbusher;
-
-		case 39:
-			return this.Const.EntityType.GoblinFighter;
-
-		case 40:
-			return this.Const.EntityType.GoblinLeader;
-
-		case 41:
-			return this.Const.EntityType.GoblinShaman;
-
-		case 42:
-			return this.Const.EntityType.GoblinWolfrider;
-
-		case 43:
-			return this.Const.EntityType.Wolf;
-
-		case 44:
-			return this.Const.EntityType.Wardog;
-
-		case 45:
-			return this.Const.EntityType.ArmoredWardog;
-
-		case 46:
-			return this.Const.EntityType.Mercenary;
-
-		case 47:
-			return this.Const.EntityType.MercenaryRanged;
-
-		case 48:
-			return this.Const.EntityType.Swordmaster;
-
-		case 49:
-			return this.Const.EntityType.HedgeKnight;
-
-		case 50:
-			return this.Const.EntityType.MasterArcher;
-
-		case 51:
-			return this.Const.EntityType.GreenskinCatapult;
-
-		case 52:
-			return this.Const.EntityType.Cultist;
-
-		case 53:
-			return this.Const.EntityType.Lindwurm;
-		}
-
-		return _id;
+		default:
+			return originalgetDefaultFaction(_id);
 	}
-
-	function getDefaultFaction( _id )
-	{
-		switch(_id)
-		{
-		case this.Const.EntityType.Necromancer:
-		case this.Const.EntityType.Zombie:
-		case this.Const.EntityType.ZombieYeoman:
-		case this.Const.EntityType.ZombieKnight:
-		case this.Const.EntityType.ZombieBetrayer:
-		case this.Const.EntityType.ZombieBoss:
-		case this.Const.EntityType.ZombieTreasureHunter:
-			return this.Const.FactionType.Zombies;
-
-		case this.Const.EntityType.SkeletonLight:
-		case this.Const.EntityType.SkeletonMedium:
-		case this.Const.EntityType.SkeletonHeavy:
-		case this.Const.EntityType.SkeletonPriest:
-		case this.Const.EntityType.SkeletonBoss:
-		case this.Const.EntityType.Vampire:
-		case this.Const.EntityType.Ghost:
-		case this.Const.EntityType.SkeletonLich:
-		case this.Const.EntityType.SkeletonLichMirrorImage:
-		case this.Const.EntityType.FlyingSkull:
-		case this.Const.EntityType.LegendBanshee:
-		case this.Const.EntityType.LegendDemonHound:
-		case this.Const.EntityType.LegendVampireLord:
-		case this.Const.EntityType.SkeletonGladiator:
-		case this.Const.EntityType.LegendMummyLight:
-		case this.Const.EntityType.LegendMummyMedium:
-		case this.Const.EntityType.LegendMummyHeavy:
-		case this.Const.EntityType.LegendMummyQueen:
-		case this.Const.EntityType.LegendMummyPriest:
-			return this.Const.FactionType.Undead;
-
-		case this.Const.EntityType.OrcYoung:
-		case this.Const.EntityType.OrcBerserker:
-		case this.Const.EntityType.OrcWarrior:
-		case this.Const.EntityType.OrcWarlord:
-		case this.Const.EntityType.LegendOrcElite:
-		case this.Const.EntityType.LegendOrcBehemoth:
-			return this.Const.FactionType.Orcs;
-
-		case this.Const.EntityType.Militia:
-		case this.Const.EntityType.MilitiaRanged:
-		case this.Const.EntityType.MilitiaVeteran:
-		case this.Const.EntityType.MilitiaCaptain:
-		case this.Const.EntityType.Peasant:
-		case this.Const.EntityType.CaravanHand:
-		case this.Const.EntityType.CaravanGuard:
-		case this.Const.EntityType.CaravanDonkey:
-		case this.Const.EntityType.LegendCaravanPolearm:
-			return this.Const.FactionType.Settlement;
-
-		case this.Const.EntityType.Footman:
-		case this.Const.EntityType.Greatsword:
-		case this.Const.EntityType.Billman:
-		case this.Const.EntityType.Arbalester:
-		case this.Const.EntityType.StandardBearer:
-		case this.Const.EntityType.Sergeant:
-		case this.Const.EntityType.Knight:
-		case this.Const.EntityType.MilitaryDonkey:
-		case this.Const.EntityType.LegendHalberdier:
-		case this.Const.EntityType.LegendSlinger:
-		case this.Const.EntityType.LegendFencer:
-		case this.Const.EntityType.LegendNobleGuard:
-		case this.Const.EntityType.LegendManAtArms:
-		case this.Const.EntityType.NobleEliteFootman:
-			return this.Const.FactionType.NobleHouse;
-
-		case this.Const.EntityType.BountyHunter:
-		case this.Const.EntityType.Wardog:
-		case this.Const.EntityType.ArmoredWardog:
-		case this.Const.EntityType.Mercenary:
-		case this.Const.EntityType.MercenaryRanged:
-		case this.Const.EntityType.Swordmaster:
-		case this.Const.EntityType.HedgeKnight:
-		case this.Const.EntityType.MasterArcher:
-		case this.Const.EntityType.GreenskinCatapult:
-		case this.Const.EntityType.Cultist:
-		case this.Const.EntityType.Warhound:
-		case this.Const.EntityType.SkeletonPhylactery:
-		case this.Const.EntityType.Oathbringer:
-		case this.Const.EntityType.LegendCat:
-		// Not sure what to do with LegendPeasantX yet, so we'll put them in Generic for now
-		case this.Const.EntityType.LegendPeasantButcher:
-		case this.Const.EntityType.LegendPeasantBlacksmith:
-		case this.Const.EntityType.LegendPeasantMonk:
-		case this.Const.EntityType.LegendPeasantFarmhand:
-		case this.Const.EntityType.LegendPeasantMinstrel:
-		case this.Const.EntityType.LegendPeasantPoacher:
-		case this.Const.EntityType.LegendPeasantWoodsman:
-		case this.Const.EntityType.LegendPeasantMiner:
-		case this.Const.EntityType.LegendPeasantSquire:
-		case this.Const.EntityType.LegendPeasantWitchHunter:
-		// Other stuff
-		case this.Const.EntityType.LegendCatapult:
-		case this.Const.EntityType.LegendHorse:
-		// Unused Free Company
-		case this.Const.EntityType.FreeCompanySpearman:
-		case this.Const.EntityType.FreeCompanySlayer:
-		case this.Const.EntityType.FreeCompanyFootman:
-		case this.Const.EntityType.FreeCompanyArcher:
-		case this.Const.EntityType.FreeCompanyCrossbow:
-		case this.Const.EntityType.FreeCompanyLongbow:
-		case this.Const.EntityType.FreeCompanyBillman:
-		case this.Const.EntityType.FreeCompanyPikeman:
-		case this.Const.EntityType.FreeCompanyInfantry:
-		case this.Const.EntityType.FreeCompanyLeader:
-		case this.Const.EntityType.FreeCompanyLeaderLow:
-			return this.Const.FactionType.Generic;
-
-		case this.Const.EntityType.BanditThug:
-		case this.Const.EntityType.BanditPoacher:
-		case this.Const.EntityType.BanditMarksman:
-		case this.Const.EntityType.BanditRaider:
-		case this.Const.EntityType.BanditLeader:
-		case this.Const.EntityType.BanditRabble:
-		case this.Const.EntityType.BanditVeteran:
-		case this.Const.EntityType.BanditWarlord:
-		case this.Const.EntityType.BanditOutrider:
-		case this.Const.EntityType.BanditRabblePoacher:
-		case this.Const.EntityType.BanditVermes:
-			return this.Const.FactionType.Bandits;
-
-		case this.Const.EntityType.GoblinAmbusher:
-		case this.Const.EntityType.GoblinFighter:
-		case this.Const.EntityType.GoblinLeader:
-		case this.Const.EntityType.GoblinShaman:
-		case this.Const.EntityType.GoblinWolfrider:
-		case this.Const.EntityType.Wolf:
-		// Unused, but we'll put it here for now
-		case this.Const.EntityType.KoboldFighter:
-		case this.Const.EntityType.KoboldWolfrider:
-			return this.Const.FactionType.Goblins;
-
-		case this.Const.EntityType.Ghoul:
-		case this.Const.EntityType.Direwolf:
-		case this.Const.EntityType.Lindwurm:
-		case this.Const.EntityType.Unhold:
-		case this.Const.EntityType.UnholdFrost:
-		case this.Const.EntityType.UnholdBog:
-		case this.Const.EntityType.Spider:
-		case this.Const.EntityType.SpiderEggs:
-		case this.Const.EntityType.Alp:
-		case this.Const.EntityType.Hexe:
-		case this.Const.EntityType.Schrat:
-		case this.Const.EntityType.SchratSmall:
-		case this.Const.EntityType.Kraken:
-		case this.Const.EntityType.KrakenTentacle:
-		case this.Const.EntityType.AlpShadow:
-		case this.Const.EntityType.TricksterGod:
-		case this.Const.EntityType.Serpent:
-		case this.Const.EntityType.SandGolem:
-		case this.Const.EntityType.Hyena:
-		case this.Const.EntityType.LegendWhiteDirewolf:
-		case this.Const.EntityType.LegendSkinGhoul:
-		case this.Const.EntityType.LegendStollwurm:
-		case this.Const.EntityType.LegendRockUnhold:
-		case this.Const.EntityType.LegendRedbackSpider:
-		case this.Const.EntityType.LegendDemonAlp:
-		case this.Const.EntityType.LegendHexeLeader:
-		case this.Const.EntityType.LegendGreenwoodSchrat:
-		case this.Const.EntityType.LegendGreenwoodSchratSmall:
-		case this.Const.EntityType.LegendWhiteWarwolf:
-		case this.Const.EntityType.LegendBear:
-		case this.Const.EntityType.LegendBasiliskDrone:
-		case this.Const.EntityType.LegendBasiliskDroneLow:
-		case this.Const.EntityType.LegendBasiliskSentry:
-			return this.Const.FactionType.Beasts;
-
-		case this.Const.EntityType.Wildman:
-		case this.Const.EntityType.BarbarianThrall:
-		case this.Const.EntityType.BarbarianMarauder:
-		case this.Const.EntityType.BarbarianChampion:
-		case this.Const.EntityType.BarbarianDrummer:
-		case this.Const.EntityType.BarbarianBeastmaster:
-		case this.Const.EntityType.BarbarianUnhold:
-		case this.Const.EntityType.BarbarianUnholdFrost:
-		case this.Const.EntityType.BarbarianChosen:
-		case this.Const.EntityType.BarbarianMadman:
-			return this.Const.FactionType.Barbarians;
-
-		case this.Const.EntityType.Conscript:
-		case this.Const.EntityType.Gunner:
-		case this.Const.EntityType.Officer:
-		case this.Const.EntityType.Engineer:
-		case this.Const.EntityType.Assassin:
-		case this.Const.EntityType.Slave:
-		case this.Const.EntityType.Gladiator:
-		case this.Const.EntityType.Mortar:
-		case this.Const.EntityType.PeasantSouthern:
-		case this.Const.EntityType.SatoManhunter:
-		case this.Const.EntityType.SatoManhunterVeteran:
-		case this.Const.EntityType.SatoManhunterRanged:
-		case this.Const.EntityType.SatoManhunterVeteranRanged:
-			return this.Const.FactionType.OrientalCityState;
-
-		case this.Const.EntityType.NomadCutthroat:
-		case this.Const.EntityType.NomadOutlaw:
-		case this.Const.EntityType.NomadSlinger:
-		case this.Const.EntityType.NomadArcher:
-		case this.Const.EntityType.NomadLeader:
-		case this.Const.EntityType.DesertStalker:
-		case this.Const.EntityType.Executioner:
-		case this.Const.EntityType.DesertDevil:
-			return this.Const.FactionType.OrientalBandits;
-		}
-
-		return this.Const.FactionType.Generic;
-	}
-
-};
-::Const.EntityIcon.extend([
-	"rabble_orientation",
-	"cat_orientation",
-	"orc_elite_orientation",
-	"orc_behemoth_orientation",
-	"white_direwolf_orientation",
-	"skin_ghoul_orientation",
-	"stollwurm_orientation",
-	"rock_unhold_orientation",
-	"redback_spider_orientation",
-	"demonalp_orientation",
-	"hexen_leader_orientation",
-	"greenwood_schrat_orientation",
-	"greenwood_schrat_small_orientation",
-	"white_direwolf_orientation",
-	"banshee_orientation_2",
-	"hollenhound_orientation",
-	"vampire_lord_orientation",
-	"banditveteran_orientation",
-	"banditwarlord_orientation",
-	"butcher_orientation",
-	"blacksmith_orientation",
-	"monk_orientation",
-	"farmhand_orientation",
-	"minstrel_orientation",
-	"poacher_orientation",
-	"woodcutter_orientation",
-	"miner_orientation",
-	"squire_orientation",
-	"witchhunter_orientation",
-	"halberdier_orientation",
-	"slinger_orientation",
-	"fencer_orientation",
-	"banditoutrider_orientation",
-	"bear_orientation",
-	"catapult_01_orientation",
-	"horse_orientation",
-	"gladiator_orientation",
-
-	"rabble_poacher_orientation",
-	"bandit_raider_orientation",
-
-	"nomad_02",
-	"nomad_05",
-
-	"mummy_light_orientation",
-	"mummy_medium_orientation",
-	"mummy_heavy_orientation",
-	"mummy_queen_orientation",
-	"kobold_fighter_orientation",
-	"kobold_wolfrider_orientation",
-	"mummy_priest_orientation",
-
-	"mercenary_orientation",//Spearmen
-	"mercenary_orientation",//Slayers
-	"mercenary_orientation",//Footmen
-	"mercenary_orientation",//Archers
-	"mercenary_orientation",//Crossbows
-	"mercenary_orientation",//Longbows
-	"mercenary_orientation",//Billmen
-	"mercenary_orientation",//Pikemen
-	"mercenary_orientation",//Infantry
-	"mercenary_orientation",//Leaders
-	"mercenary_orientation", //Managers
-
-	"oathbringer_orientation",
-
-	"nomad_02",
-	"nomad_05",
-
-	"footman_veteran_orientation", //LegendNobleGuard
-	"footman_veteran_orientation", //LegendManAtArms
-	"basilisk_drone_orientation",
-	"caravan_hand_orientation",     //CaravanPoleArm -> TODO
-	"footman_veteran_orientation", //Noble Elite Footman
-	"billman_orientation", //Pollax
-	"arbalester_orientation" //Sureshot
-]);
+}
