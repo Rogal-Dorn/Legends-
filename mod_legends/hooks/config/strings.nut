@@ -249,7 +249,7 @@
 	"Pollaxes",
 	"Sureshots"
 ];
-::Const.Strings.FootprintsType.push("Basiliks");
+::Const.Strings.FootprintsType.push("Basilisks");
 ::Const.Strings.ShipNames = [
 	"Summer Daze",
 	"Merry Mist",
