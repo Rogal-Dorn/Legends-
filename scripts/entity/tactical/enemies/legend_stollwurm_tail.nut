@@ -199,6 +199,7 @@ this.legend_stollwurm_tail <- this.inherit("scripts/entity/tactical/actor", {
 		this.getFlags().add("body_immune_to_acid");
 		this.getFlags().add("head_immune_to_acid");
 		this.getFlags().add("lindwurm");
+		this.getFlags().add("tail");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/lindwurm_tail_agent");
 
 		this.logInfo("AIAGENT STOLLWURM TAIL = " + this.m.AIAgent);

@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/enemies/lindwurm_tail", function(o) 
+::mods_hookExactClass("entity/tactical/enemies/lindwurm_tail", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
@@ -18,5 +18,6 @@
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_killing_frenzy"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
+		this.getFlags().add("tail");
 	}
 });

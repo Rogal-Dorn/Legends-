@@ -1,3 +1,5 @@
+::Const.Tactical.Actor.Lindwurm.XP = 1600; // compensate for exp lost by making tail not giving exp
+
 ::Const.Tactical.Actor.LegendSkinGhoul <- {
 	XP = 250,
 	ActionPoints = 12,
@@ -113,7 +115,7 @@
 	]
 };
 ::Const.Tactical.Actor.LegendStollwurm <- {
-	XP = 2000,
+	XP = 4000,
 	ActionPoints = 15,
 	Hitpoints = 1800,
 	Bravery = 180,
@@ -227,7 +229,7 @@
 		0,
 		0
 	]
-}; 
+};
 ::Const.Tactical.Actor.LegendBasiliskDroneLow <- {
 	XP = 220,
 	ActionPoints = 10,
@@ -266,7 +268,7 @@
 		90
 	]
 };
-::Const.Tactical.Actor.LegendBasiliskSentry <- { 
+::Const.Tactical.Actor.LegendBasiliskSentry <- {
 	XP = 360,
 	ActionPoints = 8,
 	Hitpoints = 160,
