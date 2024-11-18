@@ -1,4 +1,4 @@
-this.fermented_unhold_heart_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
+this.legend_fermented_unhold_heart_item <- this.inherit("scripts/items/supplies/legend_usable_food", {
 	m = {},
 	function create()
 	{
