@@ -1,4 +1,4 @@
-::mods_hookExactClass("entity/tactical/tactical_entity_manager", function(o) 
+::mods_hookExactClass("entity/tactical/tactical_entity_manager", function(o)
 {
  	o.spawn = function ( _properties )
 	{
@@ -367,7 +367,7 @@
 						foreach(e in this.m.Instances[i])
 						if(e.getType() == this.Const.EntityType.BanditLeader)
 						{
-							hasLeader = true; 
+							hasLeader = true;
 							break;
 						}
 						if(!hasLeader) continue;
@@ -602,5 +602,23 @@
 		{
 			_e.m.Outfits = _t.Outfits;
 		}
+	}
+
+	local getHostilesNum = o.getHostilesNum;
+	o.getHostilesNum = function() {
+		/** Part of lindwurm fix, that makes them count as one enemy in battle by ignoring entities with 'tail' flag */
+		local count = getHostilesNum();
+		if (!::Tactical.State.isScenarioMode()) {
+			for (local i = 0; i != ::World.FactionManager.getFactions().len(); i++) {
+				if (!::World.FactionManager.isAlliedWithPlayer(i)) {
+					for (local j = 0; j != this.m.Instances[i].len(); j++) {
+						if (this.m.Instances[i][j].getFlags().has("tail")) {
+							count -= 1;
+						}
+					}
+				}
+			}
+		}
+		return count;
 	}
 });
