@@ -4,7 +4,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/hedge_knight_less_flanking_less_zoc");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_hedge_knight_less_flanking_less_zoc");
 	}
 
 	local onInit = o.onInit;

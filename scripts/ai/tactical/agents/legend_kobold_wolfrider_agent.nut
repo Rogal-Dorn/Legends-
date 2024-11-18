@@ -1,4 +1,4 @@
-this.kobold_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.legend_kobold_wolfrider_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{

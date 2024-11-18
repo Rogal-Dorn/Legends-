@@ -1,4 +1,4 @@
-this.basilisk_drone_aggressive_agent <- this.inherit("scripts/ai/tactical/agent", {
+this.legend_basilisk_drone_aggressive_agent <- this.inherit("scripts/ai/tactical/agent", {
 	m = {},
 	function create()
 	{

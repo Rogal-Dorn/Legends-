@@ -65,7 +65,7 @@ this.kobold_wolfrider <- this.inherit("scripts/entity/tactical/kobold", {
 			"sounds/enemies/goblin_wolfrider_move_12.wav",
 			"sounds/enemies/goblin_wolfrider_move_13.wav"
 		];
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/kobold_wolfrider_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_kobold_wolfrider_agent");
 		this.m.AIAgent.setActor(this);
 	}
 

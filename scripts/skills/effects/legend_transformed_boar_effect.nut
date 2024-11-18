@@ -8,8 +8,8 @@ this.legend_transformed_boar_effect <- this.inherit("scripts/skills/effects/lege
 		this.m.Description = "This character is currently a boar";
 		this.m.Icon = "ui/perks/bear_circle.png";
 		this.m.IconMini = "status_effect_08_mini";
-		this.m.Agent1 = "boar_agent";
-		this.m.Agent2 = "boar_agent";
+		this.m.Agent1 = "legend_boar_agent";
+		this.m.Agent2 = "legend_boar_agent";
 		this.m.Head = "were_boar_head";
 		this.m.Body = "were_boar_body";
 		this.m.Injury = "were_boar_body_injured";

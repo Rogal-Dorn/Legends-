@@ -30,7 +30,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
 
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_sleep"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_alp_realm_of_shadow"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/legend_ai_alp_realm_of_shadow"));
 
 		local behavior = this.new("scripts/ai/tactical/behaviors/ai_always_use");
 		behavior.m.PossibleSkills.push("actives.alp_summon_nightmare");
@@ -51,7 +51,7 @@ this.legend_demonalp_agent <- this.inherit("scripts/ai/tactical/agent", {
 
 
 		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_alp_teleport"));
-		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_corruption"));
+		//this.addBehavior(this.new("scripts/ai/tactical/behaviors/legend_ai_corruption"));
 	}
 
 	function onUpdate()

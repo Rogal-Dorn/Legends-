@@ -38,7 +38,7 @@ this.legend_white_warwolf_agent <- this.inherit("scripts/ai/tactical/agent", {
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_defend_rotation"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_recover"));
 		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_disengage"));
-		this.addBehavior(this.new("scripts/ai/tactical/behaviors/ai_buff_howl"));
+		this.addBehavior(this.new("scripts/ai/tactical/behaviors/legend_ai_buff_howl"));
 	}
 
 	function onUpdate()

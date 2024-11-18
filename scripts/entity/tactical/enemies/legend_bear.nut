@@ -35,7 +35,7 @@ this.legend_bear <- this.inherit("scripts/entity/tactical/actor", {
 		];
 		this.m.SoundPitch = this.Math.rand(0.9, 1.1);
 		this.m.SoundVolumeOverall = 1.25;
-		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bear_agent");
+		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_bear_agent");
 		this.m.AIAgent.setActor(this);
 	}
 
