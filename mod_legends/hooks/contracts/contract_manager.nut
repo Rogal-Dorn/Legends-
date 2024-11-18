@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contract_manager", function(o) 
+::mods_hookExactClass("contracts/contract_manager", function(o)
 {
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function( _in )
@@ -32,7 +32,7 @@
 			_contract.formatDescription();
 		}
 
-		this.logDebug("contract added: " + _contract.getName());
+//		this.logDebug("contract added: " + _contract.getName());
 
 		if (_contract.getFaction() != 0)
 		{
