@@ -1,4 +1,4 @@
-this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_named_armor", {
+this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_armor_upgrade", {
 	m = {},
 	function create()
 	{
