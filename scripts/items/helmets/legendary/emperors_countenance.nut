@@ -1,4 +1,4 @@
-this.emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
+this.emperors_countenance <- this.inherit("scripts/items/helmets/legend_helmet_upgrade", {
 	m = {},
 	function create()
 	{
