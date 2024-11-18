@@ -23,7 +23,7 @@
 		local fatigueMultiplier = 1;
 		if (this.getContainer().getActor().getCurrentProperties().IsSpecializedInFists) 
 			fatigueMultiplier = 2;
-		fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + fatigueMultiplier) * this.Const.Combat.FatigueReceivedPerHit;
+		local fatPerHit = (this.getContainer().getActor().getCurrentProperties().FatigueDealtPerHitMult + fatigueMultiplier) * this.Const.Combat.FatigueReceivedPerHit;
 		tooltip.push({
 			id = 6,
 			type = "text",
