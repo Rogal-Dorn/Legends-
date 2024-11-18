@@ -19,7 +19,6 @@ this.legend_fan_axe <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.ShowArmamentIcon = true;
 		this.m.ArmamentIcon = "icon_legend_fan_axe_01";
 		this.m.Value = 3000;
-		this.m.ShieldDamage = 30;
 		this.m.Condition = 72.0;
 		this.m.ConditionMax = 72.0;
 		this.m.StaminaModifier = -14;
