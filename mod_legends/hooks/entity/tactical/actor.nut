@@ -1525,6 +1525,22 @@
 		::Const.Movement.HiddenStatusEffectID = oldID;
 	}
 
+	local kill = o.kill;
+	o.kill = function (_killer = null, _skill = null, _fatalityType = this.Const.FatalityType.None, _silent = false) {
+		if (this.m.getFlags.has("tail")) // ignore killer when is tail
+			kill(null, _skill, _fatalityType, _silent);
+		else
+			kill(_killer, _skill, _fatalityType, _silent);
+	}
+
+	local onDeath = o.onDeath;
+	o.onDeath = function(_killer, _skill, _tile, _fatalityType) {
+		if (this.m.getFlags.has("tail")) // ignore killer when is tail
+			onDeath(null, _skill, _tile, _fatalityType);
+		else
+			onDeath(_killer, _skill, _tile, _fatalityType);
+	}
+
 	// local onResurrected = o.onResurrected;
 	// o.onResurrected = function ( _info )
 	// {
