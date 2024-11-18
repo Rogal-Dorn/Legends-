@@ -1,14 +1,24 @@
-##How to build Legends##
+## Prerequisites ##
 
-1. Delete all the .brush files in the brushes directory (it will be recreated)
-2. Delete all the matching brush images in the root of the gfx directory (they will be recreated). Do not delete the subdirectories
-3. Delete all numbered directories under legend_helmets and legendarmor. Do not delete /entity/ or the root XML file
-4. Run build_legends_mod.sh (the poss, mwah and rule versions change the directory and add extra steps)
-5. This will produce both .nut files and compiled .cnut files.  To remove these, go the the output directory and run DEL /S /Q *.nut to remove the duplicates 
-6. zip it up and you've got your build 
+1. Install git bash
+2. Install python3
+3. Install 7zip
+4. Add all above to PATH variable (if you don't know how, check this [webpage](https://www.computerhope.com/issues/ch000549.htm))
+5. Make sure you have microsoft web runtime
+6. Download adam's [modkit](http://www.adammil.net/blog/v133_Battle_Brothers_mod_kit.html#modkit) and unpack it at the same level that legends project is (see screenshot).
+
+![dir_structure.webp](dir_structure.webp)
+
+7. Copy `unpacked/dead_arrows.png` and `unpacked/dead_javelin.png` to `unpacked/legend_characters/entity/bodies`
+8. Copy `build_compile_poss.sh` and name it something like `build_compile_yourname.sh`
+9. Inside the `build_compile_yourname` replace the destination variable with your own
 
 
-##Note when adding brushes## 
+## How to build Legends ##
+
+1. Open git bash in the legends repo and run bash `build_compile_yourname.sh`
+
+## Note when adding brushes ## 
 Adding images to the make_ scripts is not always enough. 
 While it will create a new brush xml automatically when its reached the limit of images per sheet, it won't build those into brushes unless you also add a line to the build_brushes file
 so if you add more images than fit in the current number of sheets,  or if you want to change the size of the sheets,   you can't just change the imagecount and run the whole build script.
@@ -22,7 +32,7 @@ you've got to:
 Only then can you run the whole build script 
 
 
-##Explaination of the python build scripts##
+## Explaination of the python build scripts ##
 These scripts can seem daunting, but they are much easier than maintaining all armor and helmet layers by hand. 
 
 
