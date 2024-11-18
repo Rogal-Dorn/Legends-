@@ -1,4 +1,4 @@
-this.legend_emperors_countenance <- this.inherit("scripts/items/helmets/legend_helmet_upgrade", {
+this.legend_emperors_countenance <- this.inherit("scripts/items/legend_helmets/legend_helmet_upgrade", {
 	m = {},
 	function create()
 	{
@@ -6,13 +6,9 @@ this.legend_emperors_countenance <- this.inherit("scripts/items/helmets/legend_h
 		this.m.ID = "armor.head.legend_emperors_countenance";
 		this.m.Name = "The Emperor\'s Countenance";
 		this.m.Description = "A golden helmet and facemask, showing the visage of an emperor from an age long past, imbued with mystical energies. When you hold it into the light, it almost looks as if the face were moving and making expressions of disgust.";
-		this.m.ShowOnCharacter = true;
-		this.m.IsDroppedAsLoot = true;
-		this.m.HideHair = true;
-		this.m.HideBeard = true;
+		this.m.IsLowerVanity = false;
 		this.m.HideCharacterHead = true;
 		this.m.HideCorpseHead = true;
-		this.m.IsIndestructible = true;
 		this.m.Variant = 84;
 		this.updateVariant();
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
