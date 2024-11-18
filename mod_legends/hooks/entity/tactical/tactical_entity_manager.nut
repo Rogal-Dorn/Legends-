@@ -605,7 +605,7 @@
 	}
 
 	local getHostilesNum = o.getHostilesNum;
-	q.getHostilesNum = function() {
+	o.getHostilesNum = function() {
 		/** Part of lindwurm fix, that makes them count as one enemy in battle by ignoring entities with 'tail' flag */
 		local count = getHostilesNum();
 		if (!::Tactical.State.isScenarioMode()) {
