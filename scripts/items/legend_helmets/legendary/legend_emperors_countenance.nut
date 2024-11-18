@@ -1,4 +1,4 @@
-this.legend_emperors_countenance <- this.inherit("scripts/items/helmets/helmet", {
+this.legend_emperors_countenance <- this.inherit("scripts/items/helmets/legend_helmet_upgrade", {
 	m = {},
 	function create()
 	{
@@ -18,9 +18,9 @@ this.legend_emperors_countenance <- this.inherit("scripts/items/helmets/helmet",
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
-		this.m.Condition = 400.0;
-		this.m.ConditionMax = 400.0;
-		this.m.StaminaModifier = -20;
+		this.m.Condition = 300;
+		this.m.ConditionMax = 300;
+		this.m.StaminaModifier = -18;
 		this.m.ItemType = this.m.ItemType | this.Const.Items.ItemType.Legendary;
 	}
 
