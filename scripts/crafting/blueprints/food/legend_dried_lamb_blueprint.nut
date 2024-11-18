@@ -2,7 +2,7 @@ this.legend_dried_lamb_blueprint <- this.inherit("scripts/crafting/legend_food_b
 	m = {},
 	function create()
 	{
-		this.food_blueprint.create();
+		this.legend_food_blueprint.create();
 		this.m.ID = "blueprint.legend_dried_lamb";
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/dried_lamb_item");
 		local ingredients = [

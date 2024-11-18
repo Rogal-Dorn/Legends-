@@ -2,7 +2,7 @@ this.legend_cheese_blueprint <- this.inherit("scripts/crafting/legend_food_bluep
 	m = {},
 	function create()
 	{
-		this.food_blueprint.create();
+		this.legend_food_blueprint.create();
 		this.m.ID = "blueprint.legend_cheese";
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/goat_cheese_item");
 		local ingredients = [

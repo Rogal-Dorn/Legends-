@@ -2,7 +2,7 @@ this.legend_cured_venison_blueprint <- this.inherit("scripts/crafting/legend_foo
 	m = {},
 	function create()
 	{
-		this.food_blueprint.create();
+		this.legend_food_blueprint.create();
 		this.m.ID = "blueprint.legend_cured_vension";
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/cured_venison_item");
 		local ingredients = [
