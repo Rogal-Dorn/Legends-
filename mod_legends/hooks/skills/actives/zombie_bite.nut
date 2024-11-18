@@ -99,6 +99,7 @@
 
 	o.isUsable = function ()
 	{
+		return this.skill.isUsable();
 	}
 
 	o.onUpdate = function ( _properties )
