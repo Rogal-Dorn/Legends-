@@ -2,7 +2,7 @@ this.legend_smoked_ham_blueprint <- this.inherit("scripts/crafting/legend_food_b
 	m = {},
 	function create()
 	{
-		this.food_blueprint.create();
+		this.legend_food_blueprint.create();
 		this.m.ID = "blueprint.legend_smoked_ham";
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/smoked_ham_item");
 		local ingredients = [

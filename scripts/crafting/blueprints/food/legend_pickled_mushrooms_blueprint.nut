@@ -2,7 +2,7 @@ this.legend_pickled_mushrooms_blueprint <- this.inherit("scripts/crafting/legend
 	m = {},
 	function create()
 	{
-		this.food_blueprint.create();
+		this.legend_food_blueprint.create();
 		this.m.ID = "blueprint.legend_pickled_mushrooms";
 		this.m.PreviewCraftable = this.new("scripts/items/supplies/pickled_mushrooms_item");
 		local ingredients = [
