@@ -1,4 +1,4 @@
-this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/food_blueprint", {
+this.legend_cured_rations_blueprint <- this.inherit("scripts/crafting/legend_food_blueprint", {
 	m = {},
 	function create()
 	{
