@@ -64,11 +64,11 @@ this.legend_basilisk_drone_low <- this.inherit("scripts/entity/tactical/actor", 
 
 		if (this.Math.rand(1, 100) <= 90)
 		{
-			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_agent"); //normal	
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_basilisk_drone_agent"); //normal	
 		}
 		else
 		{
-			this.m.AIAgent = this.new("scripts/ai/tactical/agents/basilisk_drone_aggressive_agent"); //aggressive
+			this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_basilisk_drone_aggressive_agent"); //aggressive
 		}
 		this.m.AIAgent.setActor(this);
 

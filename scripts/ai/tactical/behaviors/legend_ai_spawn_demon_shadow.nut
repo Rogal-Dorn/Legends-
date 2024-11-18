@@ -1,4 +1,4 @@
-this.ai_spawn_demon_shadow <- this.inherit("scripts/ai/tactical/behavior", {
+this.legend_ai_spawn_demon_shadow <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		IsSpent = false,
 		Tiles = []

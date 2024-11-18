@@ -1,9 +1,9 @@
-this.ai_alp_realm_of_shadow <- this.inherit("scripts/ai/tactical/behavior", {
+this.legend_ai_alp_realm_of_shadow <- this.inherit("scripts/ai/tactical/behavior", {
 	m = {
 		TargetTile = null,
 		TargetScore = 0,
 		PossibleSkills = [
-			"actives.alp_realm_of_shadow"
+			"actives.legend_alp_realm_of_shadow"
 		],
 		Skill = null
 	},

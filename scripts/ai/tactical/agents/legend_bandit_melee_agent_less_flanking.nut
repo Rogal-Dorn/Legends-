@@ -1,4 +1,4 @@
-this.bandit_melee_agent_less_flanking <- this.inherit("scripts/ai/tactical/agents/bandit_melee_agent", {
+this.legend_bandit_melee_agent_less_flanking <- this.inherit("scripts/ai/tactical/agents/bandit_melee_agent", {
 	m = {},
 	function create()
 	{
