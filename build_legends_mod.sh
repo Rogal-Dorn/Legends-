@@ -30,6 +30,9 @@ function handleExit() {
 
 rm "$BuildDir" -r
 
+cp unpacked/dead_arrows.png unpacked/legend_characters/entity/bodies
+cp unpacked/dead_javelin.png unpacked/legend_characters/entity/bodies
+
 ./build_brushes.sh "$BuildDir" "$RepoDir"
 handleExit
 
