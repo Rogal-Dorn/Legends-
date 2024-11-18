@@ -236,7 +236,7 @@ if (!("COUNT" in ::Const.EntityType)) {
 ::Const.EntityType.LegendBasiliskDrone <-
 	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Drone", "Basilisk Drones");
 ::Const.EntityType.LegendBasiliskDroneLow <-
-	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries"); // todo is it ok? same as Sentry
+	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Drone", "Basilisk Drones");
 ::Const.EntityType.LegendCaravanPolearm <-
 	::Const.EntityType.addNew("caravan_hand_orientation", "Caravan Polearm", "Caravan Polearms");
 ::Const.EntityType.NobleEliteFootman <-
@@ -246,12 +246,100 @@ if (!("COUNT" in ::Const.EntityType)) {
 ::Const.EntityType.NobleSureshot <-
 	::Const.EntityType.addNew("arbalester_orientation", "Sureshot", "Sureshots");
 ::Const.EntityType.LegendBasiliskSentry <-
-	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries"); // todo is it ok? same as droneLow
+	::Const.EntityType.addNew("basilisk_drone_orientation", "Basilisk Sentries", "Basilisk Sentries");
 
 
 local originalgetDefaultFaction = ::Const.EntityType.getDefaultFaction
 ::Const.EntityType.getDefaultFaction = function (_id) {
 	switch(_id) {
+		case this.Const.EntityType.LegendBanshee:
+		case this.Const.EntityType.LegendDemonHound:
+		case this.Const.EntityType.LegendVampireLord:
+		case this.Const.EntityType.SkeletonGladiator:
+		case this.Const.EntityType.LegendMummyLight:
+		case this.Const.EntityType.LegendMummyMedium:
+		case this.Const.EntityType.LegendMummyHeavy:
+		case this.Const.EntityType.LegendMummyQueen:
+		case this.Const.EntityType.LegendMummyPriest:
+			return this.Const.FactionType.Undead;
+
+		case this.Const.EntityType.LegendOrcElite:
+		case this.Const.EntityType.LegendOrcBehemoth:
+			return this.Const.FactionType.Orcs;
+
+		case this.Const.EntityType.LegendCaravanPolearm:
+			return this.Const.FactionType.Settlement;
+
+		case this.Const.EntityType.LegendHalberdier:
+		case this.Const.EntityType.LegendSlinger:
+		case this.Const.EntityType.LegendFencer:
+		case this.Const.EntityType.LegendNobleGuard:
+		case this.Const.EntityType.LegendManAtArms:
+		case this.Const.EntityType.NobleEliteFootman:
+			return this.Const.FactionType.NobleHouse;
+
+		case this.Const.EntityType.LegendCat:
+	// Not sure what to do with LegendPeasantX yet, so we'll put them in Generic for now
+		case this.Const.EntityType.LegendPeasantButcher:
+		case this.Const.EntityType.LegendPeasantBlacksmith:
+		case this.Const.EntityType.LegendPeasantMonk:
+		case this.Const.EntityType.LegendPeasantFarmhand:
+		case this.Const.EntityType.LegendPeasantMinstrel:
+		case this.Const.EntityType.LegendPeasantPoacher:
+		case this.Const.EntityType.LegendPeasantWoodsman:
+		case this.Const.EntityType.LegendPeasantMiner:
+		case this.Const.EntityType.LegendPeasantSquire:
+		case this.Const.EntityType.LegendPeasantWitchHunter:
+	// Other stuff
+		case this.Const.EntityType.LegendCatapult:
+		case this.Const.EntityType.LegendHorse:
+	// Unused Free Company
+		case this.Const.EntityType.FreeCompanySpearman:
+		case this.Const.EntityType.FreeCompanySlayer:
+		case this.Const.EntityType.FreeCompanyFootman:
+		case this.Const.EntityType.FreeCompanyArcher:
+		case this.Const.EntityType.FreeCompanyCrossbow:
+		case this.Const.EntityType.FreeCompanyLongbow:
+		case this.Const.EntityType.FreeCompanyBillman:
+		case this.Const.EntityType.FreeCompanyPikeman:
+		case this.Const.EntityType.FreeCompanyInfantry:
+		case this.Const.EntityType.FreeCompanyLeader:
+		case this.Const.EntityType.FreeCompanyLeaderLow:
+			return this.Const.FactionType.Generic;
+
+		case this.Const.EntityType.BanditRabble:
+		case this.Const.EntityType.BanditVeteran:
+		case this.Const.EntityType.BanditWarlord:
+		case this.Const.EntityType.BanditOutrider:
+		case this.Const.EntityType.BanditRabblePoacher:
+		case this.Const.EntityType.BanditVermes:
+			return this.Const.FactionType.Bandits;
+
+		case this.Const.EntityType.KoboldFighter:
+		case this.Const.EntityType.KoboldWolfrider:
+			return this.Const.FactionType.Goblins;
+
+		case this.Const.EntityType.LegendWhiteDirewolf:
+		case this.Const.EntityType.LegendSkinGhoul:
+		case this.Const.EntityType.LegendStollwurm:
+		case this.Const.EntityType.LegendRockUnhold:
+		case this.Const.EntityType.LegendRedbackSpider:
+		case this.Const.EntityType.LegendDemonAlp:
+		case this.Const.EntityType.LegendHexeLeader:
+		case this.Const.EntityType.LegendGreenwoodSchrat:
+		case this.Const.EntityType.LegendGreenwoodSchratSmall:
+		case this.Const.EntityType.LegendWhiteWarwolf:
+		case this.Const.EntityType.LegendBear:
+		case this.Const.EntityType.LegendBasiliskDrone:
+		case this.Const.EntityType.LegendBasiliskDroneLow:
+		case this.Const.EntityType.LegendBasiliskSentry:
+			return this.Const.FactionType.Beasts;
+
+		case this.Const.EntityType.SatoManhunter:
+		case this.Const.EntityType.SatoManhunterVeteran:
+		case this.Const.EntityType.SatoManhunterRanged:
+		case this.Const.EntityType.SatoManhunterVeteranRanged:
+			return this.Const.FactionType.OrientalCityState;
 
 		default:
 			return originalgetDefaultFaction(_id);
