@@ -121,7 +121,7 @@ this.legend_assassin_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.Vengeance,
+				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyNoble
 			],
