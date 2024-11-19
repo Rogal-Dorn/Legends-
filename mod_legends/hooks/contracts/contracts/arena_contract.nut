@@ -1,4 +1,4 @@
-::mods_hookExactClass("contracts/contracts/arena_contract", function(o) 
+::mods_hookExactClass("contracts/contracts/arena_contract", function(o)
 {
 	local create = o.create;
 	o.create = function()
@@ -140,7 +140,7 @@
 						P = 150
 					}
 				]);
-			}			
+			}
 		}
 
 		local maxR = 0;
@@ -437,8 +437,7 @@
 	local onPrepareVariables = o.onPrepareVariables;
 	o.onPrepareVariables = function ( _vars )
 	{
-		onPrepareVariables();
-
+		onPrepareVariables(_vars);
 		this.prepareBroVariables(3, _vars)
 	}
 });
