@@ -54,7 +54,7 @@
 		this.m.AdditionalAccuracy = 20 + this.m.Item.getAdditionalAccuracy();
 	}
 
-	o.onAnySkillUsed = function ( _user, _targetTile )
+	o.onAnySkillUsed = function ( _user, _targetTile, _properties )
 	{
 		if (_skill == this)
 		{
