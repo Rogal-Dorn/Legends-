@@ -33,7 +33,7 @@ this.legend_peasant_monk <- this.inherit("scripts/entity/tactical/human", {
 		dirt.Alpha = this.Math.rand(0, 255);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_staff_skill"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_staff_stun"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_push_the_advantage"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_push_the_advantage"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rally_the_troops"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_staves"));
 		this.getSprite("socket").setBrush("bust_base_militia");

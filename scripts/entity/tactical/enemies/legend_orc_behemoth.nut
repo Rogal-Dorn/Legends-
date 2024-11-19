@@ -270,7 +270,7 @@ this.legend_orc_behemoth <- this.inherit("scripts/entity/tactical/actor", {
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_second_wind"));
 		}
 	}

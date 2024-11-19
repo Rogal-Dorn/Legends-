@@ -4,13 +4,13 @@
 	o.onInit = function ()
 	{
 		onInit();
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_last_stand"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_push"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smashing_shields"));
