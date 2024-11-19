@@ -22,6 +22,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 190)
 		{
 			b.DamageTotalMult += 0.2;
@@ -53,7 +54,7 @@
 			this.m.Hitpoints = 2 * b.Hitpoints;
 			b.MeleeSkill += 10;
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_battleheart"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_last_stand"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 	}

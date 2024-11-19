@@ -54,6 +54,7 @@
 	o.onInit = function()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		this.m.Skills.add(this.new("scripts/skills/actives/legend_wither_skill"));
 
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)

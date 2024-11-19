@@ -184,7 +184,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_vengeance"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-						this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 				}
 				else if (r == 9)
 				{
@@ -239,7 +239,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 				this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));
 
 				if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 			}
 			else if (r == 3)
 			{
@@ -276,7 +276,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 			else if (r == 7)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/arming_sword"));
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 
 				if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_duelist"));

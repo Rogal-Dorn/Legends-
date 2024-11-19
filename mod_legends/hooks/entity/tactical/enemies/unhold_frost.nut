@@ -4,6 +4,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		if(this.Math.rand(1, 100) < 1)
 		{
 			head.setBrush("bust_unhold_head_06");
