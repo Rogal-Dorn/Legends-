@@ -201,7 +201,7 @@
 					}
 				});
 
-				s.start = function ()
+				s.start <- function ()
 				{
 					this.Text += "\n\n\n\n\n\n\n\nThe following characters will enter the arena:\n\n%bro1name%\n%bro2name%\n%bro3name%";
 				}
@@ -209,7 +209,7 @@
 
 			if (s.ID == "Success")
 			{
-				s.start = function ()
+				s.start <- function ()
 				{
 					local roster = this.World.getPlayerRoster().getAll();
 					local n = 0;
