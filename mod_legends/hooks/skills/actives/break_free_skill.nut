@@ -2,7 +2,7 @@
 {
 	o.m.DropNet <- false; // Net item will be dropped in battle if it was thrown with Net Mastery
 	o.m.IsReinforcedNet <- false;
-	o.m.IsByNetSpecialist = false
+	o.m.IsByNetSpecialist <- false;
 
 	o.getTooltip = function ()
 	{
