@@ -39,7 +39,7 @@ this.legend_noble_fencer <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_fast_adaption"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));

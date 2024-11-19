@@ -13,7 +13,7 @@ this.legends_zombie_low_xbow <- this.inherit("scripts/entity/tactical/legend_zom
 		this.m.BaseProperties.Hitpoints *= 1.5;
 			this.m.Hitpoints *= 1.5;
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_last_stand"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_last_stand"));
 		}
 		this.m.Skills.update();
 	}
