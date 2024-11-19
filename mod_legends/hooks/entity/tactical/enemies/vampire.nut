@@ -16,6 +16,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		if (this.Math.rand(1, 100) <= 75)
 		{
 			local idx = this.Math.rand(0, this.Const.Hair.Vampire.len());

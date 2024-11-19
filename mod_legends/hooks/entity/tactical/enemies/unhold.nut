@@ -22,6 +22,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		if (!this.Tactical.State.isScenarioMode() && this.World.getTime().Days >= 190)
 		{
 			b.DamageTotalMult += 0.2;

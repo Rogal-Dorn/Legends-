@@ -19,6 +19,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		local v = -7;
 		local v2 = 0;
 		foreach (a in this.Const.CharacterSprites.Helmets)

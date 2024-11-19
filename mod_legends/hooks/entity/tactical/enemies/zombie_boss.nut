@@ -4,6 +4,7 @@
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		b.SurroundedBonus = 5; // resetting from vanilla
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
