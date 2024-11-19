@@ -9,7 +9,7 @@
 		{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_trophy_hunter"));
+			// this.m.Skills.add(this.new("scripts/skills/perks/perk_trophy_hunter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_big_game_hunter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_back_to_basics"));

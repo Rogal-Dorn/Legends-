@@ -42,7 +42,7 @@ this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_footwork"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_steel_brow"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_feint"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_stalwart"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_bags_and_belts"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_specialist_shield_skill"));
