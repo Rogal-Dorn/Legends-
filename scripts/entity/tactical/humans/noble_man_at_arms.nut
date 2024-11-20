@@ -55,9 +55,9 @@ this.noble_man_at_arms <- this.inherit("scripts/entity/tactical/human", {
 
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_full_force"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_bruiser"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bruiser"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_coup_de_grace"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_deflect"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perks/perk_legend_deflect"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 			}
 	}

@@ -21,7 +21,7 @@
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_head_hunter"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_return_favor"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_return_favor"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_battle_forged"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_composure"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));

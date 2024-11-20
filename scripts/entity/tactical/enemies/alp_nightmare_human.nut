@@ -136,7 +136,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 				else if (r == 3)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/warbrand"));
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloody_harvest"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
@@ -192,7 +192,7 @@ this.alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_sh
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
-						this.m.Skills.add(this.new("scripts/skills/perks/perk_bloody_harvest"));
+						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_bloody_harvest"));
 				}
 				else if (r == 10)
 				{
