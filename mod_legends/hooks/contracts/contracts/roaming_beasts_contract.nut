@@ -27,7 +27,7 @@
 		{
 			if (s.ID == "Offer")
 			{
-				s.end = function ()
+				s.end <- function ()
 				{
 					this.World.Assets.addMoney(this.Contract.m.Payment.getInAdvance());
 					local r = this.Math.rand(1, 100);
@@ -35,11 +35,6 @@
 					{
 						this.Flags.set("IsHumans", true);
 					}
-					// todo delete it - chopeks
-//					else if (r == 100 && this.LegendsMod.Configs().LegendTherianthropyEnabled())
-//					{
-//						this.Flags.set("IsVermes", true);
-//					}
 					else
 					{
 						// Use our own settlement-based randomization system because the Vanilla approach was bugged and overly favoured Ghouls
@@ -145,7 +140,7 @@
 			}
 			if (s.ID == "Return")
 			{
-				s.update = function ()
+				s.update <- function ()
 				{
 					if (this.Contract.isPlayerAt(this.Contract.m.Home))
 					{
