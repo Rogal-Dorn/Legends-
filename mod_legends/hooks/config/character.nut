@@ -11,7 +11,8 @@
 	7000,
 	9000,
 	12000,
-	15000
+	15000,
+	20000 // new veterancy
 ]; // reset for the new max level added
 
 for( local i = 1; i < 88; i = ++i )
