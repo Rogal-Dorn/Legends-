@@ -13,9 +13,9 @@
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_nine_lives"));			
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_pathfinder"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_lone_wolf"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_lookout"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_lookout"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_berserk"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_close_combat_archer"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_close_combat_archer"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		}
 	}

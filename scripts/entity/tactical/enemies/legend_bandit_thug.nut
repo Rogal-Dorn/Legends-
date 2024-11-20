@@ -219,7 +219,7 @@ this.legend_bandit_thug <- this.inherit("scripts/entity/tactical/randomized_unit
 	// 			this.m.Items.equip(this.new("scripts/items/weapons/legend_tipstaff"));
 	// 					if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 	// 					{
-	// 						this.m.Skills.add(this.new("scripts/skills/perks/perk_return_favor"));
+	// 						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_return_favor"));
 	// 					}
 	// 		}
 	// 		else if (r == 13)
