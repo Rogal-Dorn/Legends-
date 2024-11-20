@@ -3,7 +3,7 @@
 	local onTreatInjury = o.onTreatInjury; 
 	o.onTreatInjury = function ( _data )
 	{
-		onTreatInjury();
+		onTreatInjury(_data);
 		local entityID = _data[0];
 		local entity = this.Tactical.getEntityByID(entityID);
 		entity.getSkills().add(this.new("scripts/skills/effects_world/legend_well_tended_effect"));
