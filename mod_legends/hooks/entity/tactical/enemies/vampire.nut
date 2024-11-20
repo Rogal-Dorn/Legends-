@@ -102,11 +102,11 @@
 	o.onFactionChanged = function ()
 	{
 		onFactionChanged();
+		local flip = !this.isAlliedWithPlayer();
 		foreach (a in this.Const.CharacterSprites.Helmets)
 		{
 			if (!this.hasSprite(a))
 				continue;
-			local flip = !this.isAlliedWithPlayer();
 			this.getSprite(a).setHorizontalFlipping(flip);
 		}
 	}
