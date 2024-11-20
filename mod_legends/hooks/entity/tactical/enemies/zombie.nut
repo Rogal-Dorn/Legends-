@@ -242,6 +242,7 @@
 	o.onFactionChanged = function ()
 	{
 		onFactionChanged();
+		local flip = !this.isAlliedWithPlayer();
 		this.getSprite("armor_layer_chain").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_plate").setHorizontalFlipping(flip);
 		this.getSprite("armor_layer_tabbard").setHorizontalFlipping(flip);
