@@ -474,7 +474,7 @@
 		{
 			if (s.ID == "Start")
 			{
-				s.start = function ()
+				s.start <- function ()
 				{
 					this.Text += "\n\n\n\n\n\n\n\nThe following characters will enter the arena:\n\n%bro1name%\n%bro2name%\n%bro3name%\n%bro4name%\n%bro5name%";
 				}
