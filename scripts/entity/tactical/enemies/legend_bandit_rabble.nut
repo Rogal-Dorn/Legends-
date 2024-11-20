@@ -168,7 +168,7 @@ this.legend_bandit_rabble <- this.inherit("scripts/entity/tactical/randomized_un
 	// 				//this.m.Items.equip(this.new("scripts/items/armor/legend_maid_apron"));
 	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_colossus"));
 	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
-	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_rebound"));
+	// 				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_rebound"));
 	// 				item = this.Const.World.Common.pickHelmet([[1, "straw_hat"]]);
 	// 			}
 	// 	}
