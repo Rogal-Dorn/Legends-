@@ -1,4 +1,4 @@
-this.free_company_faction <- this.inherit("scripts/factions/faction", {
+this.legend_free_company_faction <- this.inherit("scripts/factions/faction", {
 	m = {},
 	function create()
 	{

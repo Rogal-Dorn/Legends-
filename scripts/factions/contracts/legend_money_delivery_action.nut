@@ -1,8 +1,8 @@
-this.money_delivery_action <- this.inherit("scripts/factions/faction_action", {
+this.legend_money_delivery_action <- this.inherit("scripts/factions/faction_action", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "money_delivery_action";
+		this.m.ID = "legend_money_delivery_action";
 		this.m.Cooldown = this.World.getTime().SecondsPerDay * 5;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;

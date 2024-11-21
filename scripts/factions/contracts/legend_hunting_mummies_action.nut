@@ -1,8 +1,8 @@
-this.hunting_mummies_action <- this.inherit("scripts/factions/faction_action", {
+this.legend_hunting_mummies_action <- this.inherit("scripts/factions/faction_action", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "hunting_mummies_action";
+		this.m.ID = "legend_hunting_mummies_action";
 		this.m.Cooldown = this.World.getTime().SecondsPerDay * 14;
 		this.m.IsStartingOnCooldown = false;
 		this.m.IsSettlementsRequired = true;

@@ -1,4 +1,4 @@
-this.dummy_faction <- this.inherit("scripts/factions/faction", {
+this.legend_dummy_faction <- this.inherit("scripts/factions/faction", {
 	m = {
 		MimicID = ::Const.Faction.None, // the ID of the Faction that the dummy faction is mimicking
 	},
