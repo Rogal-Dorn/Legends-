@@ -1,4 +1,4 @@
-this.relationship_check <- this.inherit("scripts/skills/skill", {
+this.legend_relationship_check <- this.inherit("scripts/skills/skill", {
 	m = {
 		// RCMeleeDefense = 0,
 		// RCRangedDefense = 0,
@@ -7,7 +7,7 @@ this.relationship_check <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "special.relationship_check";
+		this.m.ID = "special.legend_relationship_check";
 		this.m.Name = "Relationship Check";
 		this.m.Icon = "skills/status_effect_01.png";
 		this.m.IconMini = "";
