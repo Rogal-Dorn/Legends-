@@ -215,10 +215,11 @@ this.legends_snow_village <- this.inherit("scripts/entity/world/settlements/lege
 			"legend_inventor_background"
 		]];
 		this.m.FemaleDraftLists = [
-		 [
-		 ],[
-		 ],
 		[
+			// nothing at lvl 1
+		],[
+			// nothing at lvl 2
+		],[
 			"legend_shieldmaiden_background"
 		]];
 

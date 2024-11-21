@@ -174,7 +174,9 @@ this.legends_snow_fort <- this.inherit("scripts/entity/world/settlements/legends
 			"cripple_background",
 		]];
 		this.m.FemaleDraftLists = [[
+			// nothing at lvl 1
 		],[
+			// nothing at lvl 2
 		],[
 			"legend_shieldmaiden_background"
 		]];
