@@ -23,7 +23,7 @@ this.legend_marked_target <- this.inherit("scripts/skills/skill", {
 	{
 		_properties.RangedDefense -= 10;
 		_properties.MeleeDefense -= 10;
-		bonus = 1.0 + this.Math.min(0.2 , _properties.Hitpoints * 0.01);
+		local bonus = 1.0 + this.Math.min(0.2 , _properties.Hitpoints * 0.01);
 		_properties.DamageReceivedTotalMult *= bonus;
 	}
 
