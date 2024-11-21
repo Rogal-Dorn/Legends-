@@ -1,5 +1,6 @@
 // perk names introduced in legends
 
+::Const.Strings.PerkName.LegendDebilitate <- "Debilitate";
 ::Const.Strings.PerkName.LegendCloseCombatArcher <- "Close Combat Archer";
 ::Const.Strings.PerkName.LegendSlaughterer <- "Slaughterer";
 ::Const.Strings.PerkName.LegendBetweenTheEyes <- "Between the Eyes";
@@ -354,6 +355,7 @@
 ::Const.Strings.PerkName.LegendNigredo <- "Nigredo", //alchemist skill, currently not working/implemented
 ::Const.Strings.PerkName.LegendSummonCatapult <- "Summon Catapult" //pulled due to issues with deployment, could work in the future.
 
+::Const.Strings.PerkDescription.LegendDebilitate <- "Ankles, hands, elbows and knees, you've learned how to fight dirty to secure victory.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Debilitate[/color] skill which can prime your next attack to [color=#731f39]Cripple[/color] a target for three turns, reducing their ability to inflict damage by [color=" + this.Const.UI.Color.NegativeValue + "]-25%[/color] and increasing the damage they take by [color=" + this.Const.UI.Color.PositiveValue + "]+15%[/color].\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]10[/color] Fatigue.";
 ::Const.Strings.PerkDescription.LegendReturnFavor <- "Strike back with interest!\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Return Favor[/color] skill which when activated has a [color=" + this.Const.UI.Color.PositiveValue + "]75%[/color] chance to [color=#731f39]Stun[/color] any opponent missing a melee attack against this character in retaliation.\n\n• Immunities and resistances against being [color=#731f39]Stunned[/color] still apply.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]3[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]30[/color] Fatigue.";
 ::Const.Strings.PerkDescription.LegendPerfectFocus <- "Take a deep breath, then get to work.\n\n[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Perfect Focus[/color] skill which allows the use of all other skills at [color=" + this.Const.UI.Color.NegativeValue + "]half[/color] the normal Action Point cost (rounded down), but increases Fatigue cost by [color=" + this.Const.UI.Color.PositiveValue + "]+75%[/color] for one round.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]1[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]10[/color] Fatigue.";
 // ::Const.Strings.PerkDescription.Furor <- "[color=#4f1800][u]Active:[/u][/color]\n• Unlocks the [color=#400080]Furor[/color] skill which allows for an unlimited number of other skill uses for a single turn until the character is completely Fatigued.\n\n• Costs [color=" + this.Const.UI.Color.NegativeValue + "]5[/color] AP and [color=" + this.Const.UI.Color.NegativeValue + "]25[/color] Fatigue.";
