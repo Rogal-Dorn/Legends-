@@ -571,7 +571,7 @@
 		properties.InCombatAlready = false;
 		properties.IsAttackingLocation = false;
 		local factions = [];
-		factions.resize(32, 0); // handled by MSU
+		factions.resize(48, 0); // handled by MSU
 
 		foreach( party in raw_parties )
 		{
