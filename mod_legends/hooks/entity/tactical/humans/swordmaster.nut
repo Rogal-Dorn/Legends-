@@ -1,10 +1,11 @@
-::mods_hookExactClass("entity/tactical/humans/swordmaster", function(o) 
+::mods_hookExactClass("entity/tactical/humans/swordmaster", function(o)
 {
 	local create = o.create;
 	o.create = function ()
 	{
 		create();
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/legend_hedge_knight_less_flanking_less_zoc");
+		this.m.AIAgent.setActor(this);
 	}
 
 	local onInit = o.onInit;
