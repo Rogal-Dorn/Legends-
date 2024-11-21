@@ -1,4 +1,4 @@
-this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.legend_scenario_white_wolf <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{
@@ -15,7 +15,7 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.forest");
+		local testMap = this.MapGen.get("tactical.human_camp");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -121,15 +121,20 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		items.equip(this.new("scripts/items/weapons/greatsword"));
 		local x;
 		x = 19;
-		for (local i = 0; i < 6; i = ++i)
-		{
-			entity = this.spawnEntity("scripts/entity/tactical/enemies/spider", x, x, 12 + i, 12 + i);
-			entity.setFaction(this.Const.Faction.Beasts);
-		}
-
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_redback_spider", x, x, 11, 11);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 11, 11);
+		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 13, 13);
 		 entity.setFaction(this.Const.Faction.Beasts);
-
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf_high", x, x, 14, 14);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_white_direwolf", x, x, 15, 15);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf_high", x, x, 12, 12);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 17, 17);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 18, 18);
+		// entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
@@ -256,9 +261,6 @@ this.scenario_redback_spider <- this.inherit("scripts/scenarios/tactical/scenari
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
-		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
-		this.Stash.add(this.new("scripts/items/accessory/antidote_item"));
 	}
 
 });

@@ -1,4 +1,4 @@
-this.scenario_wall_battle <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.legend_scenario_wall_battle <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{

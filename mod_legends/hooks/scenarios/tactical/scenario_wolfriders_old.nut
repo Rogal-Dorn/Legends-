@@ -1,49 +1,13 @@
-this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_template", {
-	m = {},
-	function generate()
-	{
-		this.logDebug("ScenarioLineBattle::generate()");
-		this.createStash();
-		this.initMap();
-		this.initEntities();
-		this.initStash();
-		this.Tactical.Entities.makeEnemiesKnownToAI();
-		this.m.Music = this.Const.Music.UndeadTracks;
-		this.Tactical.getCamera().Level = 1;
-		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 14 - 15 / 2), 1, null, null, 0, 100);
-	}
-
-	function initMap()
-	{
-		local testMap = this.MapGen.get("tactical.quarry");
-		local minX = testMap.getMinX();
-		local minY = testMap.getMinY();
-		this.Tactical.resizeScene(minX, minY);
-		testMap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
-	}
-
-	function initEntities()
+::mods_hookExactClass("scenarios/tactical/scenario_wolfriders_old", function(o)
+{
+	o.initEntities = function ()
 	{
 		local entity;
 		local items;
-
-		for( local x = 10; x < 20; x = x )
-		{
-			for( local y = 10; y < 20; y = y )
-			{
-				local tile = this.Tactical.getTile(x, y);
-				tile.removeObject();
-				y = ++y;
-			}
-
-			x = ++x;
-		}
-
+		this.Tactical.getTile(9, 15).removeObject();
+		this.Tactical.getTile(9, 14).removeObject();
+		this.Tactical.getTile(9, 13).removeObject();
+		this.spawnEntity("scripts/entity/tactical/objective/donkey", 10, 10, 14, 14);
 		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 15, 15);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -66,8 +30,8 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/armor/thick_tunic"));
-		items.equip(this.new("scripts/items/weapons/hunting_bow"));
+		items.equip(this.new("scripts/items/armor/sackcloth"));
+		items.equip(this.new("scripts/items/weapons/short_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 11, 11, 15, 15);
@@ -85,15 +49,24 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/sallet_green_helmet"]]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "kettle_hat"]]));
 		items.equip(this.new("scripts/items/armor/lamellar_harness"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 12, 12);
+		this.World.getPlayerRoster().add(entity);
+		entity.setName(this.getRandomPlayerName());
+		entity.setScenarioValues();
+		items = entity.getItems();
+		items.equip(this.Const.World.Common.pickHelmet([[1, "nasal_helmet"]]));
+		items.equip(this.new("scripts/items/armor/padded_leather"));
+		items.equip(this.new("scripts/items/weapons/noble_sword"));
+		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 13, 13);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
+		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/hand_axe"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 14, 14);
@@ -101,16 +74,25 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/wolf_helmet"]]));
-		items.equip(this.new("scripts/items/armor/named/black_leather_armor"));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
+		items.equip(this.new("scripts/items/armor/mail_shirt"));
 		items.equip(this.new("scripts/items/weapons/boar_spear"));
+		items.equip(this.new("scripts/items/shields/wooden_shield"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 15, 15);
+		this.World.getPlayerRoster().add(entity);
+		entity.setName(this.getRandomPlayerName());
+		entity.setScenarioValues();
+		items = entity.getItems();
+		items.equip(this.Const.World.Common.pickHelmet([[1, "nasal_helmet"]]));
+		items.equip(this.new("scripts/items/armor/mail_shirt"));
+		items.equip(this.new("scripts/items/weapons/warhammer"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 16, 16);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
 		items = entity.getItems();
-		items.equip(this.Const.World.Common.pickHelmet([[1, "named/norse_helmet"]]));
+		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		items.equip(this.new("scripts/items/weapons/winged_mace"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
@@ -122,84 +104,48 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		items.equip(this.Const.World.Common.pickHelmet([[1, "mail_coif"]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
-		local x;
-		x = 19;
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 17, 17);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 16);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 15);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 14);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_banshee", 19, 19, 11, 13);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 11, 11);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 11, 11);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 12, 12);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 13, 13);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 13, 13);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie", 20, 20, 14, 14);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 14, 14);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight", 20, 20, 15, 15);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 15, 15);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 20, 20, 16, 16);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie", 20, 20, 17, 17);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 19, 19, 17, 17);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/necromancer", 21, 21, 14, 14);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 11, 11);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_yeoman", 21, 21, 15, 15);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight_bodyguard", 21, 21, 16, 16);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 13, 13);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/zombie_knight_bodyguard", 21, 21, 13, 13);
-		entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 17, 17);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/goblin_wolfrider", 20, 20, 18, 18);
+		entity.setFaction(this.Const.Faction.Goblins);
 		entity.assignRandomEquipment();
 	}
 
-	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
-	{
-		local x = 0;
-		local y = 0;
-		local n = 0;
-
-		while (1)
-		{
-			x = this.Math.rand(_minX, _maxX);
-			y = this.Math.rand(_minY, _maxY) - x / 2;
-
-			if (this.Tactical.getTile(x, y).IsOccupiedByActor)
-			{
-				continue;
-			}
-
-			if (!this.Tactical.getTile(x, y).IsEmpty)
-			{
-				this.Tactical.getTile(x, y).removeObject();
-			}
-
-			if (this.Tactical.getTile(x, y).IsEmpty)
-			{
-				break;
-			}
-		}
-
-		return this.Tactical.spawnEntity(_script, x, y);
-	}
-
-	function initStash()
+	o.initStash = function ()
 	{
 		this.Stash.clear();
 		this.Stash.resize(117);
@@ -293,7 +239,11 @@ this.scenario_banshee <- this.inherit("scripts/scenarios/tactical/scenario_templ
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
 	}
-
 });
-

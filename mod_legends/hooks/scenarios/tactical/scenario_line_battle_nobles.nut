@@ -1,21 +1,8 @@
-this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_template", {
-	m = {},
-	function generate()
+::mods_hookExactClass("scenarios/tactical/scenario_line_battle_nobles", function(o)
+{
+	o.initMap = function ()
 	{
-		this.logDebug("ScenarioLineBattle::generate()");
-		this.createStash();
-		this.initMap();
-		this.initEntities();
-		this.initStash();
-		this.Tactical.Entities.makeEnemiesKnownToAI();
-		this.m.Music = this.Const.Music.UndeadTracks;
-		this.Tactical.getCamera().Level = 1;
-		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 14 - 15 / 2), 1, null, null, 0, 100);
-	}
-
-	function initMap()
-	{
-		local testMap = this.MapGen.get("tactical.tundra");
+		local testMap = this.MapGen.get("tactical.hill_camp");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -26,8 +13,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 			H = minY
 		}, null);
 	}
-
-	function initEntities()
+	
+	o.initEntities = function ()
 	{
 		local entity;
 		local items;
@@ -41,7 +28,7 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 			}
 		}
 
-		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 15, 15);
+		entity = this.spawnEntity("scripts/entity/tactical/player", 7, 7, 15, 15);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -49,7 +36,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.Const.World.Common.pickHelmet([[1, "kettle_hat"]]));
 		items.equip(this.new("scripts/items/armor/padded_leather"));
 		items.equip(this.new("scripts/items/weapons/billhook"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 13, 13);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 7, 7, 13, 13);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -58,7 +46,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/weapons/billhook"));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 11, 11, 14, 14);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 6, 6, 14, 14);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -67,7 +56,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 11, 11, 15, 15);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 6, 6, 15, 15);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -77,7 +67,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/weapons/crossbow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 11, 11);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 8, 8, 11, 11);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -85,7 +76,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.Const.World.Common.pickHelmet([[1, "named/sallet_green_helmet"]]));
 		items.equip(this.new("scripts/items/armor/lamellar_harness"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 13, 13);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 8, 8, 13, 13);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -93,7 +85,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/armor/named/blue_studded_mail_armor"));
 		items.equip(this.new("scripts/items/weapons/hand_axe"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 14, 14);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 8, 8, 14, 14);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -102,7 +95,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/armor/named/black_leather_armor"));
 		items.equip(this.new("scripts/items/weapons/boar_spear"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 16, 16);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 8, 8, 16, 16);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -111,7 +105,8 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.new("scripts/items/armor/padded_surcoat"));
 		items.equip(this.new("scripts/items/weapons/winged_mace"));
 		items.equip(this.new("scripts/items/shields/wooden_shield"));
-		entity = this.spawnEntity("scripts/entity/tactical/player", 13, 13, 17, 17);
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/player", 8, 8, 17, 17);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
 		entity.setScenarioValues();
@@ -119,67 +114,62 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		items.equip(this.Const.World.Common.pickHelmet([[1, "mail_coif"]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
+		entity.getSkills().add(this.new("scripts/skills/actives/rally_the_troops"));
+		entity = this.spawnEntity("scripts/entity/tactical/humans/standard_bearer", 12, 12, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_sergeant", 12, 12, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/knight", 11, 11, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/legend_noble_fencer", 13, 13, 15, 15);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_footman", 13, 13, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
 		local x;
 		x = 19;
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 17, 17);
-		 entity.setFaction(this.Const.Faction.Undead);
-		 //entity.setBrushes(1,1)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 16, 16);
-		 entity.setFaction(this.Const.Faction.Undead);
-		// entity.setBrushes(1,2)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 15, 15);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(1,3)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 14, 14);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(2,1)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 13, 13);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(2,2)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 12, 12);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(2,3)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 11, 11);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(3,1)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 10, 10);
-		 entity.setFaction(this.Const.Faction.Undead);
-		//   entity.setBrushes(3,2)
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_hound", 19, 19, 9, 9);
-		 entity.setFaction(this.Const.Faction.Undead);
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_footman", x, x, 11, 11);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_footman", x, x, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_footman_veteran", x, x, 13, 13);
+		//entity.setFaction(this.Const.Faction.Goblins);
+		//entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/knight", x, x, 14, 14);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		//entity = this.spawnEntity("scripts/entity/tactical/humans/noble_man_at_arms", x, x, 15, 15);
+		//entity.setFaction(this.Const.Faction.Goblins);
+		//entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_greatsword", x, x, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		x = x + 1;
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_arbalester", x, x, 12, 12);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_billman", x, x, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_arbalester", x, x, 17, 17);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		x = x + 1;
+		entity = this.spawnEntity("scripts/entity/tactical/humans/standard_bearer", x, x, 16, 16);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
+		entity = this.spawnEntity("scripts/entity/tactical/humans/noble_arbalester", x, x, 18, 18);
+		entity.setFaction(this.Const.Faction.Goblins);
+		entity.assignRandomEquipment();
 	}
 
-	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
-	{
-		local x = 0;
-		local y = 0;
-		local n = 0;
-
-		while (1)
-		{
-			x = this.Math.rand(_minX, _maxX);
-			y = this.Math.rand(_minY, _maxY) - x / 2;
-
-			if (this.Tactical.getTile(x, y).IsOccupiedByActor)
-			{
-				continue;
-			}
-
-			if (!this.Tactical.getTile(x, y).IsEmpty)
-			{
-				this.Tactical.getTile(x, y).removeObject();
-			}
-
-			if (this.Tactical.getTile(x, y).IsEmpty)
-			{
-				break;
-			}
-		}
-
-		return this.Tactical.spawnEntity(_script, x, y);
-	}
-
-	function initStash()
+	o.initStash = function ()
 	{
 		this.Stash.clear();
 		this.Stash.resize(117);
@@ -274,6 +264,4 @@ this.scenario_demon_hound <- this.inherit("scripts/scenarios/tactical/scenario_t
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 	}
-
 });
-

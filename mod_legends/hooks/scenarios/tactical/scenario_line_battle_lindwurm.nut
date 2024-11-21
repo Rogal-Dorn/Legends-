@@ -1,6 +1,6 @@
-this.scenario_rock_unhold <- this.inherit("scripts/scenarios/tactical/scenario_template", {
-	m = {},
-	function generate()
+::mods_hookExactClass("scenarios/tactical/scenario_line_battle_lindwurm", function(o)
+{
+	o.generate = function ()
 	{
 		this.logDebug("ScenarioLineBattle::generate()");
 		this.createStash();
@@ -9,25 +9,24 @@ this.scenario_rock_unhold <- this.inherit("scripts/scenarios/tactical/scenario_t
 		this.initStash();
 		this.Tactical.Entities.makeEnemiesKnownToAI();
 		this.m.Music = this.Const.Music.BeastsTracks;
+		local clouds = this.Tactical.getWeather().createCloudSettings();
+		clouds.Type = this.getconsttable().CloudType.Fog;
+		clouds.MinClouds = 20;
+		clouds.MaxClouds = 20;
+		clouds.MinVelocity = 3.0;
+		clouds.MaxVelocity = 9.0;
+		clouds.MinAlpha = 0.35;
+		clouds.MaxAlpha = 0.45;
+		clouds.MinScale = 2.0;
+		clouds.MaxScale = 3.0;
+		this.Tactical.getWeather().buildCloudCover(clouds);
+		this.Tactical.getWeather().setAmbientLightingPreset(1);
+		this.Tactical.getWeather().setAmbientLightingSaturation(0.9);
 		this.Tactical.getCamera().Level = 1;
 		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 14 - 15 / 2), 1, null, null, 0, 100);
 	}
-
-	function initMap()
-	{
-		local testMap = this.MapGen.get("tactical.mountain");
-		local minX = testMap.getMinX();
-		local minY = testMap.getMinY();
-		this.Tactical.resizeScene(minX, minY);
-		testMap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, null);
-	}
-
-	function initEntities()
+	
+	o.initEntities = function ()
 	{
 		local entity;
 		local items;
@@ -123,8 +122,8 @@ this.scenario_rock_unhold <- this.inherit("scripts/scenarios/tactical/scenario_t
 		x = 19;
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_stollwurm", x, x, 16, 16);
 		// entity.setFaction(this.Const.Faction.Beasts);
-		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
-		 entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
+		// entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_skin_ghoul", x, x, 14, 14);
 		// entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_white_direwolf", x, x, 15, 15);
@@ -133,41 +132,11 @@ this.scenario_rock_unhold <- this.inherit("scripts/scenarios/tactical/scenario_t
 		// entity.setFaction(this.Const.Faction.Beasts);
 		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_demon_alp", x, x, 17, 17);
 		// entity.setFaction(this.Const.Faction.Beasts);
-		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_greenwood_schrat", x, x, 18, 18);
-		// entity.setFaction(this.Const.Faction.Beasts);
+		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_greenwood_schrat", x, x, 18, 18);
+		entity.setFaction(this.Const.Faction.Beasts);
 	}
 
-	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
-	{
-		local x = 0;
-		local y = 0;
-		local n = 0;
-
-		while (1)
-		{
-			x = this.Math.rand(_minX, _maxX);
-			y = this.Math.rand(_minY, _maxY) - x / 2;
-
-			if (this.Tactical.getTile(x, y).IsOccupiedByActor)
-			{
-				continue;
-			}
-
-			if (!this.Tactical.getTile(x, y).IsEmpty)
-			{
-				this.Tactical.getTile(x, y).removeObject();
-			}
-
-			if (this.Tactical.getTile(x, y).IsEmpty)
-			{
-				break;
-			}
-		}
-
-		return this.Tactical.spawnEntity(_script, x, y);
-	}
-
-	function initStash()
+	o.initStash = function ()
 	{
 		this.Stash.clear();
 		this.Stash.resize(117);
@@ -262,6 +231,4 @@ this.scenario_rock_unhold <- this.inherit("scripts/scenarios/tactical/scenario_t
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 	}
-
 });
-

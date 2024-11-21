@@ -1,4 +1,4 @@
-this.scenario_line_battle_stollwurm <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.legend_scenario_line_battle_stollwurm <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{

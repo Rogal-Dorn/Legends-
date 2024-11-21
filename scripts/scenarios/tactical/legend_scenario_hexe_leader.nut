@@ -1,4 +1,4 @@
-this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_template", {
+this.legend_scenario_hexe_leader <- this.inherit("scripts/scenarios/tactical/scenario_template", {
 	m = {},
 	function generate()
 	{
@@ -8,14 +8,14 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		this.initEntities();
 		this.initStash();
 		this.Tactical.Entities.makeEnemiesKnownToAI();
-		this.m.Music = this.Const.Music.UndeadTracks;
+		this.m.Music = this.Const.Music.BeastsTracks;
 		this.Tactical.getCamera().Level = 1;
 		this.Tactical.CameraDirector.addMoveToTileEvent(0, this.Tactical.getTile(15, 14 - 15 / 2), 1, null, null, 0, 100);
 	}
 
 	function initMap()
 	{
-		local testMap = this.MapGen.get("tactical.swamp");
+		local testMap = this.MapGen.get("tactical.forest_leaves");
 		local minX = testMap.getMinX();
 		local minY = testMap.getMinY();
 		this.Tactical.resizeScene(minX, minY);
@@ -41,134 +41,6 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 			}
 		}
 
-		// for (local i = 0; i < 8; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 19, 19);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[i])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.Visible = false
-		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 8; i < 16; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i - 6, i - 6, 17, 17);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[i])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.Visible = false
-		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-
-
-		// for (local i = 0; i < 8; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+2, i+2, 15, 15);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllMale[11+i])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.Visible = false
-		// 	local body = entity.getSprite("body");
-		// 	body.setBrush("bust_naked_body_00");
-		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 8; i < 10; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i-6 i-6, 13, 13);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllMale[12+i])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.Visible = false
-		// 	local body = entity.getSprite("body");
-		// 	body.setBrush("bust_naked_body_01");
-		// 	//hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		//}
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 19, 19);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[12])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[11])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 17, 17);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[13])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_red_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 15, 15);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[14])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_blonde_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 13, 13);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[15])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_grey_" + this.Const.Hair.AllFemale[15 + i])
-		// }
-
-		// for (local i = 0; i < 5; i = ++i)
-		// {
-		// 	local entity = this.spawnEntity("scripts/entity/tactical/player", i+10, i+10, 11, 11);
-		// 	this.World.getPlayerRoster().add(entity);
-		// 	entity.setName(this.getRandomPlayerName());
-		// 	entity.setScenarioValues();
-		// 	local head = entity.getSprite("head")
-		// 	head.setBrush(this.Const.Faces.AllFemale[11])
-		// 	local hair = entity.getSprite("hair")
-		// 	hair.setBrush("hair_black_" + this.Const.Hair.AllFemale[15 + i])
-		// }
 		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 15, 15);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -247,16 +119,24 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		items.equip(this.Const.World.Common.pickHelmet([[1, "mail_coif"]]));
 		items.equip(this.new("scripts/items/armor/coat_of_plates"));
 		items.equip(this.new("scripts/items/weapons/greatsword"));
-
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 12, 12);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 11, 11);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity.assignRandomEquipment();
-		entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_vampire_lord", 19, 19, 13, 13);
-		entity.setFaction(this.Const.Faction.Undead);
-		entity.assignRandomEquipment();
+		local x;
+		x = 19;
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_stollwurm", x, x, 16, 16);
+		// entity.setFaction(this.Const.Faction.Beasts);
+		// entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_rock_unhold", x, x, 13, 13);
+		// entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 14, 14);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 15, 15);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 12, 12);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/direwolf", x, x, 17, 17);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/hexe", x, x, 18, 18);
+		 entity.setFaction(this.Const.Faction.Beasts);
+		 entity = this.spawnEntity("scripts/entity/tactical/enemies/legend_hexe_leader", x, x, 19, 19);
+		 entity.setFaction(this.Const.Faction.Beasts);
 	}
 
 	function spawnEntity( _script, _minX = 10, _maxX = 28, _minY = 3, _maxY = 28 )
@@ -383,16 +263,6 @@ this.scenario_vampire_lord <- this.inherit("scripts/scenarios/tactical/scenario_
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_estoc"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_wooden_stake"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_wooden_stake"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_wooden_stake"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_wooden_stake"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_wooden_stake"));
-		this.Stash.add(this.new("scripts/items/weapons/legend_hand_crossbow"));
-		this.Stash.add(this.new("scripts/items/weapons/greenskins/goblin_crossbow"));
 	}
 
 });
