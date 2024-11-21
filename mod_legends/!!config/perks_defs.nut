@@ -128,15 +128,6 @@ perkDefObjects.push({
 	Const = "DevastatingStrikes"
 });
 perkDefObjects.push({
-	ID = "perk.debilitate",
-	Script = "scripts/skills/perks/perk_debilitate",
-	Name = this.Const.Strings.PerkName.Debilitate,
-	Tooltip = this.Const.Strings.PerkDescription.Debilitate,
-	Icon = "ui/perks/debilitate_circle_56.png",
-	IconDisabled = "ui/perks/debilitate_circle_56_bw.png",
-	Const = "Debilitate"
-});
-perkDefObjects.push({
 	ID = "perk.shield_bash",
 	Script = "scripts/skills/perks/perk_shield_bash",
 	Name = this.Const.Strings.PerkName.ShieldBash,
@@ -642,6 +633,15 @@ perkDefObjects.push({
 });
 
 // Legend defined perks
+perkDefObjects.push({
+	ID = "perk.legend_debilitate",
+	Script = "scripts/skills/perks/perk_legend_debilitate",
+	Name = this.Const.Strings.PerkName.LegendDebilitate,
+	Tooltip = this.Const.Strings.PerkDescription.LegendDebilitate,
+	Icon = "ui/perks/debilitate_circle_56.png",
+	IconDisabled = "ui/perks/debilitate_circle_56_bw.png",
+	Const = "LegendDebilitate"
+});
 perkDefObjects.push({
 	ID = "perk.legend_return_favor",
 	Script = "scripts/skills/perks/perk_legend_return_favor",
