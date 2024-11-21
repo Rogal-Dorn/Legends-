@@ -148,7 +148,7 @@ if (!("Perks" in ::Const))
 	],
 	Tree = [
 		[::Const.Perks.PerkDefs.LegendPrepareBleed],
-		[::Const.Perks.PerkDefs.Debilitate],
+		[::Const.Perks.PerkDefs.LegendDebilitate],
 		[],
 		[::Const.Perks.PerkDefs.LegendBloodbath],
 		[::Const.Perks.PerkDefs.LegendSlaughter],
