@@ -11,7 +11,6 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 			"sounds/combat/unleash_wardog_04.wav"
 		]
 	},
-
 	function create()
 	{
 		this.accessory.create();
@@ -72,7 +71,6 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 			return false;
 		}
 
-
 		if (_actor.getSkills().hasSkill("perk.legend_packleader"))
 		{
 			return true;
@@ -113,7 +111,6 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 
 	function onPutIntoBag()
 	{
-		//this.onEquip();
 	}
 
 	function onCombatFinished()
@@ -123,7 +120,6 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 
 	function onActorDied( _onTile )
 	{
-
 		if (_onTile == null)
 		{
 			return;
@@ -133,7 +129,7 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 		{
 			if (!_onTile.IsEmpty)
 			{
-				for( local i = 0; i < 6; i = ++i )
+				for( local i = 0; i < 6; i++ )
 				{
 					if (!_onTile.hasNextTile(i))
 					{
@@ -156,11 +152,11 @@ this.accessory_dog <- this.inherit("scripts/items/accessory/accessory", {
 				}
 			}
 
-
 			local entity = this.Tactical.spawnEntity(this.getScript(), _onTile.Coords.X, _onTile.Coords.Y);
 			entity.setItem(this);
 			entity.setName(this.getName());
 			entity.setVariant(this.getVariant());
+
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_dogwhisperer"))
 			{
 				entity.getSkills().add(this.new("scripts/skills/perks/perk_fortified_mind"));
