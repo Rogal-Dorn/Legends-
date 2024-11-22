@@ -1,9 +1,9 @@
-this.therianthropy_potion_item <- this.inherit("scripts/items/accessory/accessory", {
+this.legend_therianthropy_potion_item <- this.inherit("scripts/items/accessory/accessory", {
 	m = {},
 	function create()
 	{
 		this.accessory.create();
-		this.m.ID = "accessory.therianthropy_potion";
+		this.m.ID = "accessory.legend_therianthropy_potion";
 		this.m.Name = "Therianthropic Potion";
 		this.m.Description = "A foul concoction that blends the essences of beasts with that of men. Drink at your own peril.";
 		this.m.SlotType = this.Const.ItemSlot.Bag;
