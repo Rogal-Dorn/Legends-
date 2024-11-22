@@ -15,6 +15,12 @@
 		entity.setName(this.m.Item.getName());
 		this.m.Item.setEntity(entity);
 
+		if (this.m.Item.getArmorScript() != null)
+		{
+			local item = this.new(this.m.Item.getArmorScript());
+			entity.getItems().equip(item);
+		}
+
 		if (this.getContainer().hasSkill("background.houndmaster"))
 		{
 			entity.setMoraleState(this.Const.MoraleState.Confident);
