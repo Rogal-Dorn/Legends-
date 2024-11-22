@@ -1,9 +1,9 @@
-this.necromancer_robes <- this.inherit("scripts/items/armor/armor", {
+this.legend_necromancer_robes <- this.inherit("scripts/items/armor/armor", {
 	m = {},
 	function create()
 	{
 		this.armor.create();
-		this.m.ID = "armor.body.necromancer_robes";
+		this.m.ID = "armor.body.legend_necromancer_robes";
 		this.m.Name = "Necromancer\'s Robes";
 		this.m.Description = "Dark robes that have grown darker with ichor";
 		this.m.ShowOnCharacter = true;

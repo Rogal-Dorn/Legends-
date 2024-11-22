@@ -1,10 +1,10 @@
-this.orc_elite_heavy_armor <- this.inherit("scripts/items/armor/armor", {
+this.legend_orc_elite_heavy_armor <- this.inherit("scripts/items/armor/armor", {
 	m = {},
 	function create()
 	{
 		this.armor.create();
 		this.updateVariant();
-		this.m.ID = "armor.body.orc_elite_heavy_armor";
+		this.m.ID = "armor.body.legend_orc_elite_heavy_armor";
 		this.m.Name = "Bloody Looted Plate Armor";
 		this.m.Description = "";
 		this.m.IconLarge = "";
