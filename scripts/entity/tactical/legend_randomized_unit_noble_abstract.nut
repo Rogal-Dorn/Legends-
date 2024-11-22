@@ -1,19 +1,19 @@
-this.randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/randomized_unit_abstract", { 
+this.legend_randomized_unit_noble_abstract <- this.inherit("scripts/entity/tactical/legend_randomized_unit_abstract", { 
 	m = {},
 	function onInit() 
 	{
-		this.randomized_unit_abstract.onInit();
+		this.legend_randomized_unit_abstract.onInit();
         this.getSprite("socket").setBrush("bust_base_military");
 	}
 
     function create()
 	{
-		this.randomized_unit_abstract.create();     
+		this.legend_randomized_unit_abstract.create();     
 	}
 
 	function assignRandomEquipment()
 	{
-        this.randomized_unit_abstract.assignRandomEquipment();
+        this.legend_randomized_unit_abstract.assignRandomEquipment();
 
         local banner;
         if (!this.Tactical.State.isScenarioMode())
