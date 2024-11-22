@@ -6,6 +6,7 @@
 		onInit();
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_rotation"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
+		setGender(0); // todo chopeks, can it be a woman or not?
 	}
 
 	o.assignRandomEquipment = function ()
