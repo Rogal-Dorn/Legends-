@@ -1,12 +1,5 @@
 ::mods_hookExactClass("entity/tactical/humans/officer", function(o)
 {
-	local create = o.create;
-	o.create = function () {
-		create();
-		setGender(0); // todo chopeks, can it be a woman or not?
-	}
-
-
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{

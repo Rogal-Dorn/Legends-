@@ -1,11 +1,5 @@
 ::mods_hookExactClass("entity/tactical/humans/conscript_polearm", function(o)
 {
-	local create = o.create;
-	o.create = function () {
-		create();
-		setGender(0); // todo chopeks, can it be a woman or not?
-	}
-
 	o.assignRandomEquipment = function ()
 	{
 		local r;

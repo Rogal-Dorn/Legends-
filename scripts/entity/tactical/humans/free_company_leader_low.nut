@@ -18,10 +18,6 @@ this.free_company_leader_low <- this.inherit("scripts/entity/tactical/humans/fre
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/military_melee_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()

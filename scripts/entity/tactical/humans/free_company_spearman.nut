@@ -5,7 +5,7 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/free_company
 			// [1, "mercenary_spearman_outfit_01"]
 		]
 		PerkList = this.Const.EnemyPerks.FreeCompanySpearman,
-		PerkPower = 6 
+		PerkPower = 6
 	},
 	function create()
 	{
@@ -19,10 +19,6 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/free_company
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()
@@ -68,12 +64,12 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/free_company
 			this.m.Items.equip(this.new("scripts/items/weapons/boar_spear"));
 		}
 
-			
+
 		r = this.Math.rand(1, 100);
 		if (r <= 30)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-			
+
 		}
 		else if (r <= 60)
 		{
@@ -101,7 +97,7 @@ this.free_company_spearman <- this.inherit("scripts/entity/tactical/free_company
 				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
 			}
 		}
-		
+
 		this.free_company_abstract.assignRandomEquipment();
 	}
 
