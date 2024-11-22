@@ -16,7 +16,10 @@ if (!("Perks" in ::Const))
 		[::Const.Perks.PerkDefs.LegendValaChantMastery],
 		[::Const.Perks.PerkDefs.LegendValaChantDisharmony],
 		[::Const.Perks.PerkDefs.LegendHerbcraft],
-		[::Const.Perks.PerkDefs.LegendPotionBrewer]
+		[
+			::Const.Perks.PerkDefs.LegendPotionBrewer,
+			::Const.Perks.PerkDefs.LegendValaChantFury
+		]
 	]
 };
 
