@@ -18,10 +18,6 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()
@@ -79,12 +75,12 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_
 			this.m.Items.equip(this.new("scripts/items/weapons/winged_mace"));
 		}
 
-			
+
 		r = this.Math.rand(1, 3);
 		if (r == 1)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-			
+
 		}
 		else if (r == 2)
 		{
@@ -108,7 +104,7 @@ this.free_company_footman <- this.inherit("scripts/entity/tactical/free_company_
 				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
 			}
 		}
-		
+
 		this.free_company_abstract.assignRandomEquipment();
 	}
 

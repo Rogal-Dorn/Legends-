@@ -18,10 +18,6 @@ this.free_company_archer <- this.inherit("scripts/entity/tactical/free_company_a
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_ranged_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()

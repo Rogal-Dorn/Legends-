@@ -14,10 +14,6 @@ this.legend_peasant <- this.inherit("scripts/entity/tactical/randomized_unit_abs
 		this.getFlags().add("peasant");
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/militia_melee_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()

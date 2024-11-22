@@ -18,10 +18,6 @@ this.free_company_slayer <- this.inherit("scripts/entity/tactical/free_company_a
 		this.m.Beards = this.Const.Beards.All;
 		this.m.AIAgent = this.new("scripts/ai/tactical/agents/bounty_hunter_melee_agent");
 		this.m.AIAgent.setActor(this);
-		if (this.Math.rand(1, 100) <= 10)
-		{
-			this.setGender(1);
-		}
 	}
 
 	function onInit()
@@ -71,12 +67,12 @@ this.free_company_slayer <- this.inherit("scripts/entity/tactical/free_company_a
 			this.m.Items.equip(this.new("scripts/items/weapons/three_headed_flail"));
 		}
 
-			
+
 		r = this.Math.rand(1, 100);
 		if (r <= 30)
 		{
 			this.m.Items.equip(this.new("scripts/items/shields/kite_shield"));
-			
+
 		}
 		else if (r <= 60)
 		{
