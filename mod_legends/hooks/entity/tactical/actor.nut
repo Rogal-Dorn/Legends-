@@ -1211,7 +1211,7 @@
 			this.getTile().addVisibilityForCurrentEntity();
 		}
 
-		if (this.m.Skills.hasSkill("perk.steel_brow") && _hitInfo.BodyPart == this.Const.BodyPart.Head)
+		if (this.m.Skills.hasSkill("perk.legend_steel_brow") && _hitInfo.BodyPart == this.Const.BodyPart.Head)
 		{
 			_hitInfo.BodyDamageMult -= this.Math.floor(_hitInfo.BodyDamageMult / 3);
 		}
