@@ -537,7 +537,7 @@
         this.Const.Perks.TrainedTree
     ], 
     GuaranteedPerks = [
-        "perks/perk_ballistics",
+        "perks/perk_legend_ballistics",
         "perks/perk_legend_lookout",
         "perks/perk_rotation"
     ],

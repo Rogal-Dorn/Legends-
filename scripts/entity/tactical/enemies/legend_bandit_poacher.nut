@@ -48,7 +48,7 @@ this.legend_bandit_poacher <- this.inherit("scripts/entity/tactical/legend_rando
 		// this.m.Skills.add(this.new("scripts/skills/perks/perk_recover"));
 		// if ("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		// 	{
-		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_ballistics"));
+		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_ballistics"));
 		// 	this.m.Skills.add(this.new("scripts/skills/perks/perk_crippling_strikes"));
 		// 	this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
 		// 	}

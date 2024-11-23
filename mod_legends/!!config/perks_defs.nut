@@ -578,15 +578,6 @@ perkDefObjects.push({
 	Const = "Indomitable"
 });
 perkDefObjects.push({
-	ID = "perk.ballistics",
-	Script = "scripts/skills/perks/perk_ballistics",
-	Name = this.Const.Strings.PerkName.Ballistics,
-	Tooltip = this.Const.Strings.PerkDescription.Ballistics,
-	Icon = "ui/perks/ballistics56_circle.png",
-	IconDisabled = "ui/perks/ballistics56_circle_bw.png",
-	Const = "Ballistics"
-});
-perkDefObjects.push({
 	ID = "perk.steadfast",
 	Script = "scripts/skills/perks/perk_steadfast",
 	Name = this.Const.Strings.PerkName.Steadfast,
@@ -633,6 +624,15 @@ perkDefObjects.push({
 });
 
 // Legend defined perks
+perkDefObjects.push({
+	ID = "perk.legend_ballistics",
+	Script = "scripts/skills/perks/perk_legend_ballistics",
+	Name = this.Const.Strings.PerkName.LegendBallistics,
+	Tooltip = this.Const.Strings.PerkDescription.LegendBallistics,
+	Icon = "ui/perks/ballistics56_circle.png",
+	IconDisabled = "ui/perks/ballistics56_circle_bw.png",
+	Const = "LegendBallistics"
+});
 perkDefObjects.push({
 	ID = "perk.legend_debilitate",
 	Script = "scripts/skills/perks/perk_legend_debilitate",

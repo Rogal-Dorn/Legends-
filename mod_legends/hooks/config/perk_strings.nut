@@ -1,5 +1,6 @@
-::Const.Strings.PerkDescription.Ballistics = "Through familiarity and training with your weapon, you know just how your projectiles will fly.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• The range penalty to hitchance is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] per tile.";
-::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.Ballistics].Tooltip = ::Const.Strings.PerkDescription.Ballistics;
+// ballistics is a legend addition but has vanilla defs, so commenting this out for brevity
+// ::Const.Strings.PerkDescription.Ballistics = "Through familiarity and training with your weapon, you know just how your projectiles will fly.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• The range penalty to hitchance is reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-2[/color] per tile.";
+// ::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.Ballistics].Tooltip = ::Const.Strings.PerkDescription.Ballistics;
 ::Const.Strings.PerkDescription.DevastatingStrikes = "What could stand before you now?\n\n[color=#4f1800][u]Passive:[/u][/color]\n• All damage inflicted is increased by [color=" + this.Const.UI.Color.PositiveValue + "]+10%[/color] for any weapon used, including fists.";
 ::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.DevastatingStrikes].Tooltip = ::Const.Strings.PerkDescription.DevastatingStrikes;
 ::Const.Strings.PerkDescription.FortifiedMind = "An iron will is not swayed from the true path easily.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Resolve is increased by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color].";
