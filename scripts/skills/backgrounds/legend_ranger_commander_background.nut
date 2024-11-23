@@ -134,7 +134,7 @@ this.legend_ranger_commander_background <- this.inherit("scripts/skills/backgrou
 				this.Const.Perks.PerkDefs.Overwhelm,
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.LegendEvasion,
-				this.Const.Perks.PerkDefs.Ballistics,
+				this.Const.Perks.PerkDefs.LegendBallistics,
 				this.Const.Perks.PerkDefs.LegendHeightenedReflexes,
 				this.Const.Perks.PerkDefs.LegendIncoming,
 				this.Const.Perks.PerkDefs.LegendAmmoBundles,
