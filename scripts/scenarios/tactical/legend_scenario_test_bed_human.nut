@@ -61,7 +61,7 @@ this.legend_scenario_test_bed_human <- this.inherit("scripts/scenarios/tactical/
 			items.equip(this.new("scripts/items/armor/werewolf_hide_armor"));
 			items.equip(this.new("scripts/items/ammo/quiver_of_bolts"));
 			items.equip(this.new("scripts/items/weapons/greataxe"));
-			items.equip(this.new("scripts/items/accessory/wardog_item"));
+			items.equip(this.new("scripts/items/accessory/legend_wardog_item"));
 			items.equip(this.new("scripts/items/shields/wooden_shield"));
 			local r = this.Math.rand(0, 2);
 			local items = entity.getItems();

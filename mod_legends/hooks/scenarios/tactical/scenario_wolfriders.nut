@@ -218,11 +218,11 @@
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
 	}
 });

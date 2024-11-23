@@ -39,7 +39,7 @@ this.legend_scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tact
 		items.equip(this.Const.World.Common.pickHelmet([[1, "kettle_hat"]]));
 		items.equip(this.new("scripts/items/armor/padded_leather"));
 		items.equip(this.new("scripts/items/weapons/pike"));
-		items.equip(this.new("scripts/items/accessory/wardog_item"));
+		items.equip(this.new("scripts/items/accessory/legend_wardog_item"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 12, 12, 13, 13);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -49,7 +49,7 @@ this.legend_scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tact
 		items.equip(this.new("scripts/items/weapons/pike"));
 		items.equip(this.Const.World.Common.pickHelmet([[1, "hood"]]));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
-		items.equip(this.new("scripts/items/accessory/armored_wardog_item"));
+		items.equip(this.new("scripts/items/accessory/legend_armored_wardog_item"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 11, 11, 14, 14);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -59,7 +59,7 @@ this.legend_scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tact
 		items.equip(this.new("scripts/items/weapons/hunting_bow"));
 		items.equip(this.new("scripts/items/ammo/quiver_of_arrows"));
 		items.addToBag(this.new("scripts/items/weapons/dagger"));
-		items.equip(this.new("scripts/items/accessory/armored_wardog_item"));
+		items.equip(this.new("scripts/items/accessory/legend_armored_wardog_item"));
 		entity = this.spawnEntity("scripts/entity/tactical/player", 11, 11, 15, 15);
 		this.World.getPlayerRoster().add(entity);
 		entity.setName(this.getRandomPlayerName());
@@ -302,12 +302,12 @@ this.legend_scenario_line_battle_kobolds <- this.inherit("scripts/scenarios/tact
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
 		this.Stash.add(this.new("scripts/items/ammo/quiver_of_bolts"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
-		this.Stash.add(this.new("scripts/items/accessory/wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
+		this.Stash.add(this.new("scripts/items/accessory/legend_wardog_item"));
 	}
 
 });
