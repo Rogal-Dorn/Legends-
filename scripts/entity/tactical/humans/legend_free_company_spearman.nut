@@ -97,13 +97,7 @@ this.legend_free_company_spearman <- this.inherit("scripts/entity/tactical/legen
 				this.m.Items.addToBag(this.new("scripts/items/weapons/javelin"));
 			}
 		}
-<<<<<<< HEAD:scripts/entity/tactical/humans/free_company_spearman.nut
-
-		this.free_company_abstract.assignRandomEquipment();
-=======
-		
 		this.legend_free_company_abstract.assignRandomEquipment();
->>>>>>> 35f2159bd (rename entities and items):scripts/entity/tactical/humans/legend_free_company_spearman.nut
 	}
 
 });

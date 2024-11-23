@@ -1,4 +1,4 @@
-this.legend_skeleton_item <- this.inherit("scripts/items/spawns/spawn_item", {
+this.legend_skeleton_item <- this.inherit("scripts/items/spawns/legend_spawn_item", {
 	m = {
 		UnleashSounds = [
 			"sounds/enemies/geist_idle_10.wav",
