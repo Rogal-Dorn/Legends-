@@ -76,7 +76,7 @@
 
 // removing helms before extending
 local garbage = [];
-for (local i = 0; i < ::Const.Items.NamedHelmets.len(); ++i)
+for (local i = 0; i < ::Const.Items.NamedHelmets.len(); i++)
 {
 	switch (::Const.Items.NamedHelmets[i])
 	{
