@@ -398,7 +398,7 @@
 			{
 				foreach (option in s.Options)
 				{
-					option.getResult <= function()
+					option.getResult <- function()
 					{
 						local money = this.Contract.m.Payment.getOnCompletion() + this.Contract.m.Payment.getPerCount() * this.Flags.get("HeadsCollected");
 						money = this.Math.floor(money / 2);
