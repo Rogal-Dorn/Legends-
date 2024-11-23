@@ -3,7 +3,7 @@ this.legend_armored_wardog_item <- this.inherit("scripts/items/accessory/legend_
 	function create()
 	{
 		this.legend_wardog_item.create();
-		this.m.ID = "accessory.armored_wardog";
+		this.m.ID = "accessory.legend_armored_wardog";
 		this.m.Description = "A strong and loyal dog bred for war. Can be unleashed in battle for scouting, tracking or running down routing enemies. This one wears a leather coat for protection against cutting wounds.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;
 		this.m.IsDroppedAsLoot = true;

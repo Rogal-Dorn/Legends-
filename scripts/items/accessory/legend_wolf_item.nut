@@ -42,7 +42,7 @@ this.legend_wolf_item <- this.inherit("scripts/items/accessory/legend_accessory_
 		]
 		this.m.Variant = this.Math.rand(1, 2);
 		this.updateVariant();
-		this.m.ID = "accessory.warwolf";
+		this.m.ID = "accessory.legend_warwolf";
 		this.m.Name = this.Const.Strings.WardogNames[this.Math.rand(0, this.Const.Strings.WardogNames.len() - 1)] + " the Wolf";
 		this.m.Description = "A strong and wild wolf, tamed to be a loyal companion in battle. Can be unleashed in battle for scouting, tracking or running down routing enemies.";
 		this.m.Value = 600;
