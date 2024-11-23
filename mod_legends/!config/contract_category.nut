@@ -52,7 +52,6 @@
 	escort_envoy_contract = this.Const.Contracts.Categories.Economy,
 	obtain_item_contract = this.Const.Contracts.Categories.Economy,
 	restore_location_contract = this.Const.Contracts.Categories.Economy,
-	return_item_contract = this.Const.Contracts.Categories.Economy,
 
 
 	barbarian_king_contract = this.Const.Contracts.Categories.Battle,
@@ -82,6 +81,7 @@
 	privateering_contract = this.Const.Contracts.Categories.Battle,
 	raid_caravan_contract = this.Const.Contracts.Categories.Battle,
 	raze_attached_location_contract = this.Const.Contracts.Categories.Battle,
+	return_item_contract = this.Const.Contracts.Categories.Battle,
 	root_out_undead_contract = this.Const.Contracts.Categories.Battle,
 	siege_fortification_contract = this.Const.Contracts.Categories.Battle,
 	slave_uprising_contract = this.Const.Contracts.Categories.Battle,
