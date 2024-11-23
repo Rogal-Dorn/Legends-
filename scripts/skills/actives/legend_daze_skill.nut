@@ -105,7 +105,7 @@ this.legend_daze_skill <- this.inherit("scripts/skills/skill", {
 		}
 		else
 		{
-			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze " + this.Const.UI.getColorizedEntityName(target));
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " failed to daze " + this.Const.UI.getColorizedEntityName(targetEntity));
 			return false;
 		}
 
