@@ -6,7 +6,7 @@ this.legend_wardog_item <- this.inherit("scripts/items/accessory/legend_accessor
 
 	function create()
 	{
-		this.accessory_dog.create();
+		this.legend_accessory_dog.create();
 		this.m.Script = "scripts/entity/tactical/wardog",
 		this.m.Variant = this.Math.rand(1, 4);
 		this.updateVariant();
@@ -42,7 +42,7 @@ this.legend_wardog_item <- this.inherit("scripts/items/accessory/legend_accessor
 
 	function onEquip()
 	{
-		this.accessory_dog.onEquip();
+		this.legend_accessory_dog.onEquip();
 		local unleash = this.new("scripts/skills/actives/unleash_wardog");
 		unleash.setItem(this);
 		this.m.Skill = this.WeakTableRef(unleash);

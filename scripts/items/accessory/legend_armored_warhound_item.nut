@@ -2,7 +2,7 @@ this.legend_armored_warhound_item <- this.inherit("scripts/items/accessory/legen
 	m = {},
 	function create()
 	{
-		this.warhound_item.create();
+		this.legend_warhound_item.create();
 		this.m.ID = "accessory.armored_warhound";
 		this.m.Description = "A strong and loyal northern hound bred for war. Can be unleashed in battle for scouting, tracking or running down routing enemies. This one wears a leather coat for protection against cutting wounds.";
 		this.m.SlotType = this.Const.ItemSlot.Accessory;

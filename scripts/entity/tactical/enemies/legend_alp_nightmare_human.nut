@@ -1,4 +1,4 @@
-this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/alp_shadow", {
+this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies/legend_alp_shadow", {
 	m = {},
 	function create()
 	{
