@@ -1,3 +1,4 @@
+// THIS NEEDS TO BE BEFORE PERK STRINGS ELSE IT'LL LEAD TO ERRORS
 ::Const.UI.Color.RuneColor <- "#bf2aac";
 ::Const.UI.Color.Passive <- "#4f1800";
 ::Const.UI.Color.Active <- "#000ec1";
