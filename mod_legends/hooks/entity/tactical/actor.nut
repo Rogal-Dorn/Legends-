@@ -887,6 +887,11 @@
 			}
 		}
 
+		if (!this.Tactical.State.isScenarioMode() && _killer != null && _killer.isPlayerControlled() && _skill != null && _skill.getID() == "actives.deathblow")
+		{
+			this.updateAchievement("Assassin", 1, 1);
+		}
+
 		this.m.IsDying = true;
 		local isReallyDead = this.isReallyKilled(_fatalityType);
 
