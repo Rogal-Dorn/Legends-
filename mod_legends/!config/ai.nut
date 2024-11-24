@@ -17,10 +17,11 @@
 ::Const.AI.Agent.ID.LegendMummyQueen <- "agent.legend_mummy_queen";
 ::Const.AI.Agent.ID.LegendMinstrel <- "agent.minstrel";
 
-::Const.AI.Behavior.ID.Howl <- 84;
-::Const.AI.Behavior.ID.SpawnShadow <- 85;
-::Const.AI.Behavior.ID.Corruption <- 86;
-::Const.AI.Behavior.ID.COUNT = 87;
+local count = ::Const.AI.Behavior.ID.COUNT;
+::Const.AI.Behavior.ID.Howl <- count++;
+::Const.AI.Behavior.ID.SpawnShadow <- count++;
+::Const.AI.Behavior.ID.Corruption <- count++;
+::Const.AI.Behavior.ID.COUNT = count;
 
 ::Const.AI.Behavior.Name.extend([
 	"Howl",
@@ -33,9 +34,10 @@
 ::Const.AI.Behavior.Order.Howl <- 39;
 
 ::Const.AI.Behavior.Score.Howl <- 60;
-::Const.AI.Behavior.Score.Howl <- 480;
-::Const.AI.Behavior.Score.Howl <- 2000;
+::Const.AI.Behavior.Score.Corruption <- 480;
+::Const.AI.Behavior.Score.SpawnShadow <- 2000;
 
+::Const.AI.Behavior.HowlMaxMoraleRatio <- 2.5;
 ::Const.AI.Behavior.HowlMinAlliesInRange <- 1;
 ::Const.AI.Behavior.KnockBackMinOpponentsInMelee <- 2;
 ::Const.AI.Behavior.SleepTurnDoneMult <- 0.1;
