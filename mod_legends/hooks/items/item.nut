@@ -162,6 +162,7 @@
 
 	o.getBuyPrice = function ()
 	{
+		local itemID = this.getID();
 		if (this.isSold())
 		{
 			return this.getSellPrice();
@@ -179,6 +180,7 @@
 
 	o.getSellPrice = function ()
 	{
+		local itemID = this.getID();
 		if (this.isBought())
 		{
 			return this.getBuyPrice();
