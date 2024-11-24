@@ -12,7 +12,7 @@
 		this.m.Order = this.Const.SkillOrder.Any +10;
 	}
 
-	o.onAfterUpdate = function ( _properties )
+	o.onAfterUpdate <- function ( _properties )
 	{
 		if (!this.getContainer().getActor().isPlayerControlled())
 			this.m.MaxRange = 99;
