@@ -11,7 +11,8 @@
 			this.m.IsBought = false;
 			this.m.IsSold = false;
 		}
-		else this.m.IsSold = true;
+		else
+			this.m.IsSold = true;
 	}
 
 	o.setBought = function (bought)
@@ -22,7 +23,8 @@
 			this.m.IsSold = false;
 			this.m.IsBought = false;
 		}
-		else this.m.IsBought = true;
+		else
+			this.m.IsBought = true;
 	}
 	//------------------------------------------
 
@@ -848,6 +850,8 @@
 ::mods_hookDescendants("items/item", function ( o )
 {
 	local getSellPrice = ::mods_getMember(o, "getSellPrice");
+	local getBuyPrice = ::mods_getMember(o, "getBuyPrice");
+
 	o.getSellPrice <- function ()
 	{
 		local originalTime;
@@ -861,12 +865,12 @@
 		if (this.isBought())
 		{
 			this.m.IsBought = false;
-			sellPrice = getBuyPrice();
+			sellPrice = this.getBuyPrice();
 			this.m.IsBought = true;
 		}
 		else
 		{
-			sellPrice =  getSellPrice();
+			sellPrice = getSellPrice();
 		}
 
 		if (originalTime != null)
@@ -877,7 +881,6 @@
 		return sellPrice;
 	}
 
-	local getBuyPrice = ::mods_getMember(o, "getBuyPrice");
 	o.getBuyPrice <- function ()
 	{
 		if (this.isSold())
