@@ -7,7 +7,7 @@ this.legend_knockback_prepared_effect <- this.inherit("scripts/skills/skill", {
 		this.m.ID = "effects.legend_knockback_prepared";
 		this.m.Name = "Prepared to inflict a knockback";
 		this.m.Icon = "ui/perks/smackdown_circle.png";
-		this.m.IconMini = "mini_smackdown_effect";
+		this.m.IconMini = "mini_smackdown_circle";
 		this.m.Type = this.Const.SkillType.StatusEffect;
 		this.m.IsActive = false;
 		this.m.IsStacking = false;
