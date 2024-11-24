@@ -28,7 +28,7 @@ this.legend_wolf_item <- this.inherit("scripts/items/accessory/legend_accessory_
 	function create()
 	{
 		this.legend_accessory_dog.create();
-		this.m.Script = "scripts/entity/tactical/warwolf",
+		this.m.Script = "scripts/entity/tactical/warwolf";
 		this.m.UnleashSounds = [
 			"sounds/enemies/wolf_idle_00.wav",
 			"sounds/enemies/wolf_idle_01.wav",
@@ -39,7 +39,7 @@ this.legend_wolf_item <- this.inherit("scripts/items/accessory/legend_accessory_
 			"sounds/enemies/wolf_idle_07.wav",
 			"sounds/enemies/wolf_idle_08.wav",
 			"sounds/enemies/wolf_idle_09.wav"
-		]
+		];
 		this.m.Variant = this.Math.rand(1, 2);
 		this.updateVariant();
 		this.m.ID = "accessory.legend_warwolf";

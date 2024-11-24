@@ -4,7 +4,7 @@
 	o.m.Campaign <- "";
 	o.m.CommanderDied <- null;
 	o.m.Camp <- null;
-	o.m.IDToRef <- array;(27, -1);
+	o.m.IDToRef <- array(27, -1);
 	o.m.DistantVisionBonus <- false;
 	o.m.AppropriateTimeToRecalc <- 1; //Leonion's fix
 
