@@ -45,7 +45,7 @@
 				id = 9,
 				type = "text",
 				icon = "ui/tooltips/warning.png",
-				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not rally others the same turn as being rallied himself[/color]"
+				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not rally others the same turn as being rallied themself[/color]"
 			});
 		}
 
