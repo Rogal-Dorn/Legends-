@@ -9,8 +9,8 @@
 ::Const.AI.Agent.ID.LegendDemonHound <- "agent.legend_demon_hound";
 ::Const.AI.Agent.ID.LegendVampireLord <- "agent.legend_vampire_lord";
 ::Const.AI.Agent.ID.LegendButcher <- "agent.legend_butcher";
-::Const.AI.Agent.ID.Bear <- "agent.bear",
-::Const.AI.Agent.ID.Boar <- "agent.boar",
+::Const.AI.Agent.ID.Bear <- "agent.bear";
+::Const.AI.Agent.ID.Boar <- "agent.boar";
 ::Const.AI.Agent.ID.BasiliskDrone <- "agent.basilisk_drone";
 ::Const.AI.Agent.ID.BasiliskDroneAggressive <- "agent.basilisk_drone_aggressive";
 ::Const.AI.Agent.ID.KoboldWolfrider <- "agent.kobold_wolfrider";

@@ -1,6 +1,6 @@
-::Const.World.TerrainType.SwampGreen <- 19,
-::Const.World.TerrainType.SwampForest <- 20,
-::Const.World.TerrainType.COUNT = 21
+::Const.World.TerrainType.SwampGreen <- 19;
+::Const.World.TerrainType.SwampForest <- 20;
+::Const.World.TerrainType.COUNT = 21;
 
 ::Const.World.AllTerrainTypes <- []; // Added by Legends
 for (local i = 0; i < ::Const.World.TerrainType.COUNT; i++)
@@ -14,9 +14,7 @@ for (local i = 0; i < ::Const.World.TerrainType.COUNT; i++)
 	local garbage = clone _types;
 	::MSU.Array.sortDescending(garbage);
 	foreach( i in garbage )
-	{
 		ret.remove(i);
-	}
 	return ret;
 }
 

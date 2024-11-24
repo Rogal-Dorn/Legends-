@@ -61,7 +61,7 @@
 				R = 50,
 				P = 1.0,
 				S = "helmets/great_jaw_helmet_00"
-			});;
+			});
 		}
 	}
 });

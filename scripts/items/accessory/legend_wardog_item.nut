@@ -7,7 +7,7 @@ this.legend_wardog_item <- this.inherit("scripts/items/accessory/legend_accessor
 	function create()
 	{
 		this.legend_accessory_dog.create();
-		this.m.Script = "scripts/entity/tactical/wardog",
+		this.m.Script = "scripts/entity/tactical/wardog";
 		this.m.Variant = this.Math.rand(1, 4);
 		this.updateVariant();
 		this.m.ID = "accessory.legend_wardog";

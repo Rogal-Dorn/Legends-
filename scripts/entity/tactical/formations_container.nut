@@ -8,7 +8,6 @@ this.formations_container <- {
 	},
 	function setActor( _a )
 	{
-		;
 	}
 
 	function getActor()
