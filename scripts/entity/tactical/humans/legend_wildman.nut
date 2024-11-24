@@ -65,7 +65,7 @@ this.legend_wildman <- this.inherit("scripts/entity/tactical/human", {
 			{
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_ubernimble"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_muscularity"));
-			this.m.Skills.add(this.new("scripts/skills/perks/perk_mastery_fists"));
+			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_mastery_fists"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_kick_skill"));
 			this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_grapple_skill"));
 			this.m.Skills.add(this.new("scripts/skills/traits/fearless_trait"));
