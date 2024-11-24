@@ -1,9 +1,10 @@
-::mods_hookExactClass("entity/tactical/humans/mercenary_low", function(o) 
+::mods_hookExactClass("entity/tactical/humans/mercenary_low", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		this.m.Skills.removeByID("perk.battle_forged");
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_nimble"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_backstabber"));
