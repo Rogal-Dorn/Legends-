@@ -41,7 +41,7 @@ local count = ::Const.AI.Behavior.ID.COUNT;
 ::Const.AI.Behavior.HowlMinAlliesInRange <- 1;
 ::Const.AI.Behavior.KnockBackMinOpponentsInMelee <- 2;
 ::Const.AI.Behavior.SleepTurnDoneMult <- 0.1;
-::Const.AI.Behavior.KnockoutPriorityMult = 1.35;
+
 //Corruption
 ::Const.AI.Behavior.CorruptionTurnDoneMult <- 1.1;
 ::Const.AI.Behavior.CorruptionAttackingMeBonus <- 7.0;
@@ -50,3 +50,6 @@ local count = ::Const.AI.Behavior.ID.COUNT;
 ::Const.AI.Behavior.CorruptionAtMyTileBonus <- 4.0;
 ::Const.AI.Behavior.CorruptionNearAllyBonus <- 2.0;
 ::Const.AI.Behavior.CorruptionTargetValueMult <- 2.0;
+
+::Const.AI.Behavior.KnockoutPriorityMult = 1.35;
+::Const.AI.Behavior.SplitShieldDestroyBonusMult = 1.25;
