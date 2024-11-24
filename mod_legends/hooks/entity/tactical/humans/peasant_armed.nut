@@ -1,9 +1,10 @@
-::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o) 
+::mods_hookExactClass("entity/tactical/humans/peasant_armed", function(o)
 {
 	local onInit = o.onInit;
 	o.onInit = function ()
 	{
 		onInit();
+		local b = this.m.BaseProperties;
 		if("Assets" in this.World && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 		{
 			this.m.Hitpoints = b.Hitpoints * 1.5;
