@@ -22,6 +22,8 @@
 ::Const.AI.Behavior.ID.Corruption <- 86;
 ::Const.AI.Behavior.ID.COUNT = 87;
 
+this.Const.AI.Behavior.HowlMinAlliesInRange <- 1;
+
 ::Const.AI.Behavior.Name.extend([
 	"Howl",
 	"SpawnShadow",
