@@ -2,7 +2,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 	m = {},
 	function create()
 	{
-		this.alp_shadow.create();
+		this.legend_alp_shadow.create();
 
 		local voice = this.Math.rand(0, this.Const.HumanSounds.len() - 1);
 		this.m.Sound[this.Const.Sound.ActorEvent.NoDamageReceived] = this.Const.HumanSounds[voice].NoDamageReceived;
@@ -23,10 +23,10 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 
 	function onInit()
 	{
-		this.alp_shadow.onInit();
+		this.legend_alp_shadow.onInit();
 		local b = this.m.BaseProperties;
-		b.setValues(this.World.getTime().Days >= 100 
-			? this.Const.Tactical.Actor.BanditVeteran 
+		b.setValues(this.World.getTime().Days >= 100
+			? this.Const.Tactical.Actor.BanditVeteran
 			: this.Const.Tactical.Actor.BanditRaider);
 
 		b.IsSpecializedInSwords = true;
@@ -47,7 +47,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 
 		this.m.ActionPoints = b.ActionPoints;
 		this.addSprite("socket").setBrush("bust_base_shadow");
-		
+
 		local blurAlpha = 110;
 		local body_brush = "bust_alp_human_body_0" + this.Math.rand(1, 2);
 		local head_brush = "bust_alp_human_head_0" + this.Math.rand(1, 3);
@@ -91,7 +91,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 
 	function onFactionChanged()
 	{
-		this.alp_shadow.onFactionChanged();
+		this.legend_alp_shadow.onFactionChanged();
 		local flip = !this.isAlliedWithPlayer();
 		this.getSprite("body").setHorizontalFlipping(flip);
 		this.getSprite("head").setHorizontalFlipping(flip);
@@ -329,6 +329,6 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 			item.m.IsDroppedAsLoot = false;
 		}
 	}
-	
+
 });
 
