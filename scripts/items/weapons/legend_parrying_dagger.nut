@@ -2,7 +2,6 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	m = {
 		Variants = [],
 		WeaponType = ::Const.Items.WeaponType.Dagger, // workaround: hardcode WeaponType since this is actually a shield
-
 		// for offhand weapon
 		RegularDamage = 20,
 		RegularDamageMax = 40,
@@ -97,6 +96,11 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		}
 
 		return result;
+	}
+	
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play(::Const.Sound.DefaultWeaponEquip[this.Math.rand(0, ::Const.Sound.DefaultWeaponEquip.len() - 1)], this.Const.Sound.Volume.Inventory);
 	}
 
 	function onEquip()
