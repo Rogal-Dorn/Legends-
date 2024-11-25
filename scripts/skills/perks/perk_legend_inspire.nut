@@ -18,13 +18,13 @@ this.perk_legend_inspire <- this.inherit("scripts/skills/skill", {
 	{
 		if (!this.m.Container.hasSkill("actives.inspire"))
 		{
-			this.m.Container.add(this.new("scripts/skills/actives/inspire_skill"));
+			this.m.Container.add(this.new("scripts/skills/actives/legend_inspire_skill"));
 		}
 	}
 
 	function onRemoved()
 	{
-		this.m.Container.removeByID("actives.inspire");
+		this.m.Container.removeByID("actives.legend_inspire");
 	}
 
 
