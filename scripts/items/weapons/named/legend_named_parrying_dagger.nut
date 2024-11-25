@@ -21,7 +21,7 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.ShowOnCharacter = true;
 		this.m.Variants = [2]
 		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() -1)];
-		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon;
+		this.m.ItemType = this.Const.Items.ItemType.Defensive | this.Const.Items.ItemType.Weapon | this.Const.Items.ItemType.Named;
 		this.updateVariant();
 		this.m.Value = 1000;
 		this.m.MeleeDefense = 5;
@@ -78,17 +78,28 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 		this.m.Icon = "weapons/melee/legend_parrying_dagger_0" + this.m.Variant + "_70x70.png";
 	}
 
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play(::Const.Sound.DefaultWeaponEquip[this.Math.rand(0, ::Const.Sound.DefaultWeaponEquip.len() - 1)], this.Const.Sound.Volume.Inventory);
+	}
+
 	function onEquip()
 	{
-		this.named_shield.onEquip();
+		this.shield.onEquip();
 		local stab = this.new("scripts/skills/actives/stab");
 		stab.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
 		this.addSkill(stab);
 		this.addSkill(this.new("scripts/skills/actives/legend_en_garde_skill"));
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
-		this.addSkill(this.new("scripts/skills/effects/legend_parrying_dagger_effect"));
+		local parryDaggerEffect = this.new("scripts/skills/effects/legend_parrying_dagger_effect");
+		parryDaggerEffect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
+		this.getContainer().getActor().getSkills().add(parryDaggerEffect);
+		// Manually add the effect so that it will be ordered after perks in the skill container instead of before background
+		// Even though this effect is being granted by equipping this weapon, we are adding it this way because of possible future plans to make legend_parrying_effect available not just by equipping this weapon.
+		// Hence, making ordering it with the other effects/perks instead of the row above background (for item-granted effects) is for consistency
 		local parrying = this.new("scripts/skills/effects/legend_parrying_effect");
 		parrying.m.IsFromItem = true;
+		parrying.m.Order = this.Const.SkillOrder.UtilityTargeted + 2;
 		this.getContainer().getActor().getSkills().add(parrying);
 	}
 
@@ -191,13 +202,10 @@ this.legend_named_parrying_dagger <- this.inherit("scripts/items/shields/named/n
 	function onDeserialize( _in )
 	{
 		this.named_shield.onDeserialize(_in);
-		if(::Legends.Mod.Serialization.isSavedVersionAtLeast("18.1.1", _in.getMetaData()))
-		{
-			this.m.RegularDamage = _in.readU16();
-			this.m.RegularDamageMax = _in.readU16();
-			this.m.ArmorDamageMult = _in.readF32();
-			this.m.DirectDamageAdd = _in.readF32();
-		}
+		this.m.RegularDamage = _in.readU16();
+		this.m.RegularDamageMax = _in.readU16();
+		this.m.ArmorDamageMult = _in.readF32();
+		this.m.DirectDamageAdd = _in.readF32();
 	}
 
 });
