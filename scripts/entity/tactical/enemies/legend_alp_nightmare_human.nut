@@ -181,7 +181,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 				else if (r == 8)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/longsword"));
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_vengeance"));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_vengeance"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_feint"));
