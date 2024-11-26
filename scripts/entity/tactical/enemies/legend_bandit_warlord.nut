@@ -236,6 +236,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 
 	function onDeath( _killer, _skill, _tile, _fatalityType )
 	{
+		local flip = this.Math.rand(1, 100) < 50;
 		if (_killer == null || _killer.getFaction() == this.Const.Faction.Player || _killer.getFaction() == this.Const.Faction.PlayerAnimals)
 		{
 			if (this.Math.rand(1, 100) <= 3) //3%
@@ -252,7 +253,7 @@ this.legend_bandit_warlord <- this.inherit("scripts/entity/tactical/human", {
 		}
 		this.getItems().dropAll(_tile, _killer, flip);
 		this.actor.onDeath(_killer, _skill, _tile, _fatalityType);
-	}	
+	}
 
 	function makeMiniboss()
 	{
