@@ -1025,6 +1025,7 @@ brush_only_layers = [
     {"name": "cloak_hexe", "layer": "cloak"},
     {"name": "cloak_spider", "layer": "cloak"},
     {"name" :"named_emperors_cloak", "min" : 1, "max" : 1, "layer" : "cloak"},
+    {"name" :"named_emperors_armor", "min" : 1, "max" : 1, "layer" : "plate"},
     {"name": "cloak_rich", "min" : 1, "max" : 5, "layer": "cloak"},
     {"name": "tabard_named", "min" : 1, "max" : 26, "layer": "tabard"}
 ]
