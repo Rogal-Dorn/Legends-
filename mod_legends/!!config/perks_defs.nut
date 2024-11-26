@@ -3661,6 +3661,24 @@ perkDefObjects.push({
 	IconDisabled = "ui/perks/twirl_circle_bw.png",
 	Const = "LegendTwirl"
 });
+perkDefObjects.push({
+	ID = "perk.legend_deflect",
+	Script = "scripts/skills/perks/perk_legend_deflect",
+	Name = this.Const.Strings.PerkName.LegendDeflect,
+	Tooltip = this.Const.Strings.PerkDescription.LegendDeflect,
+	Icon = "ui/perks/perk_02.png", // todo icons?
+	IconDisabled = "ui/perks/perk_02_sw.png",
+	Const = "LegendDeflect"
+});
+perkDefObjects.push({
+	ID = "perk.legend_taste_the_pain",
+	Script = "scripts/skills/perks/perk_legend_taste_the_pain",
+	Name = this.Const.Strings.PerkName.LegendTasteThePain,
+	Tooltip = this.Const.Strings.PerkDescription.LegendTasteThePain,
+	Icon = "ui/perks/passive_03.png", // todo icons?
+	IconDisabled = "ui/perks/passive_03_sw.png",
+	Const = "LegendTasteThePain"
+});
 
 ::Const.Perks.addPerkDefObjects(perkDefObjects);
 ::Const.Perks.updatePerkGroupTooltips();
