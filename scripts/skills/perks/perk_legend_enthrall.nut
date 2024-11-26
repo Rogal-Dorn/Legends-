@@ -4,11 +4,7 @@ this.perk_legend_enthrall <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "perk.legend_enthrall";
-		this.m.Name = this.Const.Strings.PerkName.LegendEnthrall;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendEnthrall;
-		this.m.Icon = "ui/perks/possess56.png";
-		this.m.IconDisabled = "ui/perks/possess56_bw.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendEnthrall);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
@@ -23,7 +19,7 @@ this.perk_legend_enthrall <- this.inherit("scripts/skills/skill", {
 			this.m.Container.add(this.new("scripts/skills/actives/legend_enthrall_skill"));
 		}
 	}
-	
+
 	function onRemoved()
 	{
 		this.m.Container.removeByID("actives.legend_enthrall_skill");
