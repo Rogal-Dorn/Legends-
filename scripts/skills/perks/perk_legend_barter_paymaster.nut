@@ -13,11 +13,8 @@ this.perk_legend_barter_paymaster <- this.inherit("scripts/skills/skill", {
 
 	function onAdded()
 	{
-					if (this.World.State.getPlayer() == null)
-			{
-				return;
-			}
-
+		if (this.World.State.getPlayer() == null)
+			return;
 		this.World.State.getPlayer().calculateBarterMult();
 		this.World.State.getPlayer().calculateWageModifier();
 	}
@@ -25,14 +22,8 @@ this.perk_legend_barter_paymaster <- this.inherit("scripts/skills/skill", {
 	function onRemoved()
 	{
 		if (this.World.State.getPlayer() == null)
-		{
 			return;
-		}
-
 		this.World.State.getPlayer().calculateWageModifier();
 		this.World.State.getPlayer().calculateBarterMult();
-
 	}
-
-
 });
