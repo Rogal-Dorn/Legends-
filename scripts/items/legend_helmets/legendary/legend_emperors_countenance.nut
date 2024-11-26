@@ -54,8 +54,7 @@ this.legend_emperors_countenance <- this.inherit("scripts/items/legend_helmets/l
 
 	function onDamageReceived( _damage, _fatalityType, _attacker )
 	{
-		this.legend_helmet_upgrade.onDamageReceived(_damage, _fatalityType, _attacker);
-
+		local ret = this.legend_helmet_upgrade.onDamageReceived(_damage, _fatalityType, _attacker);
 		if (_attacker != null && _attacker.isAlive() && _attacker.getHitpoints() > 0 && _attacker.getID() != this.getContainer().getActor().getID() && _attacker.getTile().getDistanceTo(this.getContainer().getActor().getTile()) == 1 && !_attacker.getCurrentProperties().IsImmuneToDamageReflection)
 		{
 			local hitInfo = clone this.Const.Tactical.HitInfo;
@@ -67,6 +66,7 @@ this.legend_emperors_countenance <- this.inherit("scripts/items/legend_helmets/l
 			hitInfo.FatalityChanceMult = 0.0;
 			_attacker.onDamageReceived(_attacker, null, hitInfo);
 		}
+		return ret;
 	}
 
 });
