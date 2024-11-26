@@ -2,10 +2,7 @@ this.perk_legend_bloodbath <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_bloodbath";
-		this.m.Name = this.Const.Strings.PerkName.LegendBloodbath;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendBloodbath;
-		this.m.Icon = "ui/perks/bloodbath_circle.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendBloodbath);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
