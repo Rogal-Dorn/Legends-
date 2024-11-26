@@ -2,9 +2,7 @@ this.perk_legend_spawn_zombie_med <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_spawn_zombie_med";
-		this.m.Name = this.Const.Strings.PerkName.LegendSpawnZombieMed;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSpawnZombieMed;
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendSpawnZombieMed);
 		this.m.Icon = "ui/perks/possess56.png";
 		this.m.IconDisabled = "ui/perks/possess56_bw.png";
 		this.m.Type = this.Const.SkillType.Perk;
