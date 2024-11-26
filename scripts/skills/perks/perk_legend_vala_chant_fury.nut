@@ -9,11 +9,7 @@ this.perk_legend_vala_chant_fury <- this.inherit("scripts/skills/skill", {
 
 	function create()
 	{
-		this.m.ID = "perk.legend_vala_chant_fury";
-		this.m.Name = this.Const.Strings.PerkName.LegendValaChantFury;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendValaChantFury;
-		this.m.Icon = "ui/perks/legend_vala_chant_fury_active.png";
-		this.m.IconDisabled = "ui/perks/legend_vala_chant_fury_active_sw.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendValaChantFury);
 		this.m.Type = this.Const.SkillType.Active | this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.NonTargeted + 2;
 		this.m.IsSerialized = true;

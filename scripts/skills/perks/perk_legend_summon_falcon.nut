@@ -2,10 +2,7 @@ this.perk_legend_summon_falcon <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_summon_falcon";
-		this.m.Name = this.Const.Strings.PerkName.LegendSummonFalcon;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSummonFalcon;
-		this.m.Icon = "ui/perks/falcon_circle.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendSummonFalcon);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
