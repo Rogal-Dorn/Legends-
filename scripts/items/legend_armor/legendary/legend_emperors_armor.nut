@@ -12,9 +12,9 @@ this.legend_emperors_armor <- this.inherit("scripts/items/legend_armor/legend_ar
 		this.m.SpriteDamagedBack = "bust_named_emperors_armor_01_damaged";
 		this.m.SpriteCorpseBack = "bust_named_emperors_armor_01_dead";
 		this.m.Icon = "legend_armor/icon_named_emperors_armor_01.png";
-		this.m.IconLarge = "inventory_named_emperors_armor_01";
+		this.m.IconLarge = "legend_armor/inventory_named_emperors_armor_01.png";
 		this.m.OverlayIcon = "legend_armor/icon_named_emperors_armor_01.png";
-		this.m.OverlayIconLarge = "inventory_named_emperors_armor_01";
+		this.m.OverlayIconLarge = "legend_armor/inventory_named_emperors_armor_01.png";
 		this.m.ImpactSound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.InventorySound = this.Const.Sound.ArmorHalfplateImpact;
 		this.m.Value = 20000;
