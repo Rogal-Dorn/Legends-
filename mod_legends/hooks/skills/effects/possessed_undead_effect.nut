@@ -12,7 +12,7 @@
 		{
 			local actor = this.getContainer().getActor();
 			if (actor == null || actor.isNull() || !actor.isAlive())
-				break;
+				return;
 
 			if (actor.hasSprite("status_rage"))
 			{
