@@ -2,11 +2,7 @@ this.perk_legend_cheer_on <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_cheer_on";
-		this.m.Name = this.Const.Strings.PerkName.LegendCheerOn;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendCheerOn;
-		this.m.Icon = "ui/perks/cheered_on_circle.png";
-		this.m.IconDisabled = "ui/perks/cheered_on_circle_bw.png"
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendCheerOn);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;
