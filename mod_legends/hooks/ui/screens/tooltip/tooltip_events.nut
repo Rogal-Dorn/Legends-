@@ -733,6 +733,7 @@
 		return null;
 	}
 
+	local general_queryUIElementTooltipData = o.general_queryUIElementTooltipData;
 	o.general_queryUIElementTooltipData = function (_entityId, _elementId, _elementOwner )
 	{
 		local entity;
@@ -4650,6 +4651,6 @@
 			return ret;
 		}
 
-		return null;
+		return general_queryUIElementTooltipData(_entityId, _elementId, _elementOwner);
 	}
 });
