@@ -7,10 +7,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	},
 	function create()
 	{
-		this.m.ID = "perk.legend_small_target";
-		this.m.Name = this.Const.Strings.PerkName.LegendSmallTarget;
-		this.m.Description = "Gains increased Melee and Ranged defense by being small";
-		this.m.Icon = "ui/perks/small_target.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendSmallTarget);
 		this.m.Type = this.Const.SkillType.Perk | this.Const.SkillType.StatusEffect;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

@@ -2,11 +2,7 @@ this.perk_legend_spawn_zombie_high <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.legend_spawn_zombie_high";
-		this.m.Name = this.Const.Strings.PerkName.LegendSpawnZombieHigh;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendSpawnZombieHigh;
-		this.m.Icon = "ui/perks/possess56.png";
-		this.m.IconDisabled = "ui/perks/possess56_bw.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendSpawnZombieHigh);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

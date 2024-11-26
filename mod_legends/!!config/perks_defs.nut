@@ -764,7 +764,7 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_push",
 	Name = this.Const.Strings.PerkName.LegendPush,
 	Tooltip = this.Const.Strings.PerkDescription.LegendPush,
-	Icon = "ui/perks/revolt56_circle.png",
+	Icon = "ui/perks/revolt56_circle.png", // todo wtf is that icon
 	IconDisabled = "ui/perks/revolt56_circle_bw.png",
 	Const = "LegendPush"
 });
@@ -2469,7 +2469,7 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_push_the_advantage",
 	Name = this.Const.Strings.PerkName.LegendPushTheAdvantage,
 	Tooltip = this.Const.Strings.PerkDescription.LegendPushTheAdvantage,
-	Icon = "ui/perks/perk_32.png",
+	Icon = "ui/perks/perk_32.png", // todo is that correct icon?
 	IconDisabled = "ui/perks/perk_32_sw.png",
 	Const = "LegendPushTheAdvantage"
 });

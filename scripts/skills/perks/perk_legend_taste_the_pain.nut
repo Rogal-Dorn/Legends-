@@ -2,6 +2,7 @@ this.perk_legend_taste_the_pain <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
+		// todo looks undefined, is it used? - chopeks
 		this.m.ID = "perk.legend_taste_the_pain";
 		this.m.Name = this.Const.Strings.PerkName.LegendTasteThePain;
 		this.m.Description = this.Const.Strings.PerkDescription.LegendTasteThePain;
