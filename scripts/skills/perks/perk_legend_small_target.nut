@@ -3,7 +3,6 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		BonusMin = 0,
 		BonusUnburdenedMin = 30,
 		bonusPercentage = 1.0
-
 	},
 	function create()
 	{
@@ -137,7 +136,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (actor.getSkills().hasSkill("perk.legend_unburdened"))
+		if (actor.getSkills().hasSkill(::Const.Perks.PerkDefs.LegendUnburdened.ID))
 		{
 			local bodyItem = actor.getBodyItem();
 			if (bodyItem != null && bodyItem.m.StaminaModifier == 0)
@@ -173,14 +172,14 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += this.Math.floor(bonus * this.Math.min(this.m.bonusPercentage, 0));
-		_properties.RangedDefense += this.Math.floor(bonus * this.Math.min(this.m.bonusPercentage, 0));
+		_properties.MeleeDefense += this.Math.floor(bonus * this.Math.max(this.m.bonusPercentage, 0));
+		_properties.RangedDefense += this.Math.floor(bonus * this.Math.max(this.m.bonusPercentage, 0));
 
 		local sourceEffect = this.getContainer().getSkillByID("effects.legend_blend_in");
 		if (sourceEffect == null)
 			return;
 
-		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin && sourceEffect.m.MeekStacks > 0)
+		if (this.getContainer().getActor().getSkills().hasSkill(::Const.Perks.PerkDefs.LegendUnburdened.ID) && bonus >= this.m.BonusUnburdenedMin && sourceEffect.m.MeekStacks > 0)
 		{
 			_properties.ActionPoints += 1;
 		}
