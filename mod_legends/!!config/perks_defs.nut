@@ -17,11 +17,6 @@
  *  Use your name, this will ensure there's not mismatch or typos in ID, Icons etc.
  *  If your perk is an effect or requires to show different icons when used as a skill or whatever other reason, you can still set values you need regardless what helper sets.
  *
- * 	If you need to reference perk in other place, it's best to use reference to the ID instead of raw string literal.
- *  For example, instead of using:
- *  	bro.getSkills().hasSkill("perk.legend_ballistics")
- *  Use:
- *  	bro.getSkills().hasSkill(::Const.Perks.PerkDefs.LegendBallistics.ID)
  */
 
 if (!("Perks" in ::Const))
