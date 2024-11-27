@@ -17,6 +17,11 @@
  *  Use your name, this will ensure there's not mismatch or typos in ID, Icons etc.
  *  If your perk is an effect or requires to show different icons when used as a skill or whatever other reason, you can still set values you need regardless what helper sets.
  *
+ * 	If you need to reference perk in other place, it's best to use reference to the ID instead of raw string literal.
+ *  For example, instead of using:
+ *  	bro.getSkills().hasSkill("perk.legend_ballistics")
+ *  Use:
+ *  	bro.getSkills().hasPerk(::Const.Perks.PerkDefs.LegendBallistics)
  */
 
 if (!("Perks" in ::Const))
@@ -29,10 +34,11 @@ if (!("Perks" in ::Const))
 
 ::Const.Perks.addPerkDefObjects <- function( _perkDefObjects )
 {
+	local size = ::Const.Perks.PerkDefObjects.len();
 	::Const.Perks.PerkDefObjects.extend(_perkDefObjects);
 	foreach (i, perkDefObject in _perkDefObjects)
 	{
-		::Const.Perks.PerkDefs[perkDefObject.Const] <- i;
+		::Const.Perks.PerkDefs[perkDefObject.Const] <- size + i;
 		::Const.Perks.LookupMap[perkDefObject.ID] <- perkDefObject;
 	}
 }
