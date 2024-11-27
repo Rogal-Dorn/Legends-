@@ -67,17 +67,18 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 
 	function onAnySkillExecuted( _skill, _targetTile, _targetEntity, _forFree )
 	{
-		if (!_skill.m.IsAttack || (_skill.getID()=="actives.hand_to_hand" && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null))
+		if (!_skill.m.IsAttack || (_skill.getID() == "actives.hand_to_hand" && this.getContainer().getActor().getItems().getItemAtSlot(::Const.ItemSlot.Mainhand) != null))
 		{
 			// Don't execute a follow up attack if the first skill is not an attack, or if you are using hand to hand while the mainhand is holding a weapon
 			return;
 		}
 		local items = this.getContainer().getActor().getItems();
 		local off = items.getItemAtSlot(this.Const.ItemSlot.Offhand);
-		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && off == null)
+		if (_targetEntity != null && !items.hasBlockedSlot(this.Const.ItemSlot.Offhand) && (off == null || off.getID() == "shield.buckler"))
 		{
 			if (!_forFree)
 			{
+				local skill = off.getID() == "shield.buckler" ? "actives.legend_buckler_bash" : "actives.hand_to_hand";
 				if (_targetTile == null) // Is this necessary?
 				{
 					return;
@@ -85,14 +86,14 @@ this.perk_legend_ambidextrous <- this.inherit("scripts/skills/skill", {
 				local info = {
 					TargetTile = _targetTile
 				};
-				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpHandToHand.bindenv(this), info);
+				::Time.scheduleEvent(::TimeUnit.Virtual, ::Const.Combat.RiposteDelay, this.executeFollowUpAttack(_skillID).bindenv(this), info);
 			}
 		}
 	}
 
-	function executeFollowUpHandToHand( _info )
+	function executeFollowUpAttack( _info, _skillID = "actives.hand_to_hand")
 	{
-		local attack = this.getContainer().getSkillByID("actives.hand_to_hand");
+		local attack = this.getContainer().getSkillByID(_skillID);
 		if (attack != null)
 		{
 			attack.useForFree(_info.TargetTile);
