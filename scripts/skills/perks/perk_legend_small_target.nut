@@ -136,7 +136,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 			}
 		}
 
-		if (actor.getSkills().hasSkill(::Const.Perks.PerkDefs.LegendUnburdened.ID))
+		if (actor.getSkills().hasSkill("perk.legend_unburdened"))
 		{
 			local bodyItem = actor.getBodyItem();
 			if (bodyItem != null && bodyItem.m.StaminaModifier == 0)
@@ -179,7 +179,7 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		if (sourceEffect == null)
 			return;
 
-		if (this.getContainer().getActor().getSkills().hasSkill(::Const.Perks.PerkDefs.LegendUnburdened.ID) && bonus >= this.m.BonusUnburdenedMin && sourceEffect.m.MeekStacks > 0)
+		if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_unburdened") && bonus >= this.m.BonusUnburdenedMin && sourceEffect.m.MeekStacks > 0)
 		{
 			_properties.ActionPoints += 1;
 		}
