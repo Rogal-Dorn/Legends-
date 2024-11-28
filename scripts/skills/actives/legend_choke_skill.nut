@@ -242,7 +242,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		if (success && _targetTile.IsOccupiedByActor)
 		{
 			local target = _targetTile.getEntity();
-			target.getSkills().add(this.new("scripts/skills/effects/legend_choked_effect_skill"));
+			target.getSkills().add(this.new("scripts/skills/effects/legend_choked_effect"));
 			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_user) + " choked " + this.Const.UI.getColorizedEntityName(target) + " ");
 		}
 		return success;
@@ -286,9 +286,6 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		_properties.HitChance[this.Const.BodyPart.Head] += 90.0; // copied what was used in lash for flails.
 
 		local items = actor.getItems().getAllItems();
-		local hasCestus = false;
-		if (_skill != this)
-			return;
 		foreach (item in items)
 		{
 			if (item.getID() == "accessory.legend_cestus" || item.getID() == "accessory.legend_hand_wraps")
