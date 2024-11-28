@@ -224,7 +224,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 			mod = mod + 50;
 		}
 
-		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50; 
+		local chance = (1.0 - _targetEntity.getFatiguePct()) * 50;
 		return mod - this.Math.round(chance);
 	}
 
@@ -257,14 +257,14 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 
 		local chance = this.getHitChance(_targetEntity); // Calculates the hitchance bonus from other status effects
 		local actor = this.getContainer().getActor();
-		
+
 		_properties.DamageRegularMin += 10; // If you change these values, change them in the tooltip above too.
 		_properties.DamageRegularMax += 15;
 		_properties.IsIgnoringArmorOnAttack = true;
 		_properties.DamageArmorMult *= 0.0;
 		_properties.MeleeSkill += chance;
 
-		
+
 		foreach( bg in this.m.Backgrounds )
 		{
 			if (actor.getSkills().hasSkill(bg))
@@ -285,7 +285,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		}
 		_properties.HitChance[this.Const.BodyPart.Head] += 90.0; // copied what was used in lash for flails.
 
-		local items = actor.getAllItems();
+		local items = actor.getItems().getAllItems();
 		local hasCestus = false;
 		if (_skill != this)
 			return;
