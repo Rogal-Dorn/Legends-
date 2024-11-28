@@ -55,8 +55,11 @@ this.legend_knockback_prepared_effect <- this.inherit("scripts/skills/skill", {
 		if (!_targetEntity.isAlive())
 			return;
 
-		_targetEntity.getSkills().getSkillByID("effects.legend_baffled");
-
+		local skill = _targetEntity.getSkills().getSkillByID("effects.legend_baffled");
+		if (skill)
+			skill.onRefresh();
+		else
+			_targetEntity.getSkills().add(this.new("scripts/skills/effects/legend_baffled_effect"));
 	}
 
 	function onTargetMissed( _skill, _targetEntity )
