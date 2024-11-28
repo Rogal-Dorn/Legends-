@@ -1,4 +1,4 @@
-this.legend_named_northern_sling <- this.inherit("scripts/items/weapons/named/named_weapon", {
+this.legend_named_northern_sling <- this.inherit("scripts/items/weapons/named/named_weapon", { // credit to Emo
 	m = {},
 	function create()
 	{
