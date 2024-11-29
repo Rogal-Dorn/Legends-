@@ -290,46 +290,47 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 
 				}
 			],
-			function start( _event )
+			function start()
 			{
-				if (_event.m.Beastslayer != null)
-				{
-					this.Options.push({
-						Text = "%beastslayer% is an expert in these things.",
-						function getResult( _event )
-						{
-							return "beastslayer";
-						}
-					});
-				}
+			// TODO there's no _event in contracts! - chopeks
+//				if (_event.m.Beastslayer != null)
+//				{
+//					this.Options.push({
+//						Text = "%beastslayer% is an expert in these things.",
+//						function getResult( _event )
+//						{
+//							return "beastslayer";
+//						}
+//					});
+//				}
 			}
 		});
-		this.m.Screens.push({ //lore
-			ID = "beastslayer",
-			Title = "The Beastslayer Speaks...",
-			Text = "[img]gfx/ui/events/event_122.png[/img]{%beastslayer% pokes through the remains...} {%SPEECH_ON%These things are pure evil. And I don\'t mean that lightly. I could spin you a yarn \'bout how man is the real monster and such but it\'d be farkin\' nonsense. I\'ve seen \'knechts with better table manners than a noble and farmers with more balls than\' a giant. We\'re as bad as them and they\'re as bad as us. But these \'lisks invade \'wurm nests and eat their eggs, then lay their own in \'em and let the stupid lizard take care of it while it falls off a cliff or eats a child or somethin\'. All I\'m sayin\' is I won\'t hesitate killing these devils when\' we find \'em.%SPEECH_OFF% | %SPEECH_ON%Look at this poor fark here%SPEECH_OFF% The slayer pokes through human remains with their boot, the figure is barely covered in rags and even as a skeleton, looks in unimaginable agony - twisted this way and that like the tree roots around them. %SPEECH_ON%He\'s got egg shell where his stomach should be, looks like he tried to eat one of the eggs. I haven\'t seen it myself but apparently the eggs taste rotten and smell just as bad. Must\'ve been a wildman or maybe a slave on the run to be this desperate. Probably went rotten from the inside himself and had a slow death here.%SPEECH_OFF% | %SPEECH_ON% Back in %randomtownname% I spent time in the tavern with two farmers who saw one of these things hatch on their own farm. Swore it hatched from a rotten egg and within a day it was trying to kill the other hatchlings. Considering the man was eight cups deep before I even sat down I wouldn\'t put much faith in it. Some think they\'re hatched by toads, snakes or even roosters when people aren\'t looking. What I do know is they\'re vermin. Plain and simple.%SPEECH_OFF%}\n\n{With this said, you should get back to the hunt.}",
-			Image = "",
-			List = [],
-			Options = [
-				{
-					Text = "Good to know.",
-					function getResult()
-					{
-						local xp = this.Math.rand (9, 43); //Query: can the player exploit this to farm xp? I think this event will keep triggering? - Luft
-						foreach( bro in playerRoster )		//Follow up: now that I think about it, if they are willing to lose gold per day in exchange for rabble-tier xp maybe they deserve it. Plus there's no free beastslayer so they'd need to pay at least this background for this event to MAYBE fire multiple times and drip feed them xp. - Luft
-						{
-							bro.addXP(xp);
-							bro.updateLevel();
-						}
-						return 0;
-					}
-				}
-			],
-			function start( _event )
-			{
-				this.Characters.push(_event.m.Beastslayer.getImagePath());
-			}
-		});
+//		this.m.Screens.push({ //lore
+//			ID = "beastslayer",
+//			Title = "The Beastslayer Speaks...",
+//			Text = "[img]gfx/ui/events/event_122.png[/img]{%beastslayer% pokes through the remains...} {%SPEECH_ON%These things are pure evil. And I don\'t mean that lightly. I could spin you a yarn \'bout how man is the real monster and such but it\'d be farkin\' nonsense. I\'ve seen \'knechts with better table manners than a noble and farmers with more balls than\' a giant. We\'re as bad as them and they\'re as bad as us. But these \'lisks invade \'wurm nests and eat their eggs, then lay their own in \'em and let the stupid lizard take care of it while it falls off a cliff or eats a child or somethin\'. All I\'m sayin\' is I won\'t hesitate killing these devils when\' we find \'em.%SPEECH_OFF% | %SPEECH_ON%Look at this poor fark here%SPEECH_OFF% The slayer pokes through human remains with their boot, the figure is barely covered in rags and even as a skeleton, looks in unimaginable agony - twisted this way and that like the tree roots around them. %SPEECH_ON%He\'s got egg shell where his stomach should be, looks like he tried to eat one of the eggs. I haven\'t seen it myself but apparently the eggs taste rotten and smell just as bad. Must\'ve been a wildman or maybe a slave on the run to be this desperate. Probably went rotten from the inside himself and had a slow death here.%SPEECH_OFF% | %SPEECH_ON% Back in %randomtownname% I spent time in the tavern with two farmers who saw one of these things hatch on their own farm. Swore it hatched from a rotten egg and within a day it was trying to kill the other hatchlings. Considering the man was eight cups deep before I even sat down I wouldn\'t put much faith in it. Some think they\'re hatched by toads, snakes or even roosters when people aren\'t looking. What I do know is they\'re vermin. Plain and simple.%SPEECH_OFF%}\n\n{With this said, you should get back to the hunt.}",
+//			Image = "",
+//			List = [],
+//			Options = [
+//				{
+//					Text = "Good to know.",
+//					function getResult()
+//					{
+//						local xp = this.Math.rand (9, 43); //Query: can the player exploit this to farm xp? I think this event will keep triggering? - Luft
+//						foreach( bro in playerRoster )		//Follow up: now that I think about it, if they are willing to lose gold per day in exchange for rabble-tier xp maybe they deserve it. Plus there's no free beastslayer so they'd need to pay at least this background for this event to MAYBE fire multiple times and drip feed them xp. - Luft
+//						{
+//							bro.addXP(xp);
+//							bro.updateLevel();
+//						}
+//						return 0;
+//					}
+//				}
+//			],
+//			function start( _event )
+//			{
+//				this.Characters.push(_event.m.Beastslayer.getImagePath());
+//			}
+//		});
 		this.m.Screens.push({ //battle
 			ID = "Encounter",
 			Title = "As you approach...",
