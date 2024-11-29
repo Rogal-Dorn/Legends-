@@ -88,7 +88,7 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 				[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],// 45,-7,200				
 			],
 			Plate = [	
-				[1, "plate/cr_ijirok_armor"],					
+				[1, "plate/legend_ijirok_armor"],					
 			],
 			Cloak = [],
 			Tabard = [],
