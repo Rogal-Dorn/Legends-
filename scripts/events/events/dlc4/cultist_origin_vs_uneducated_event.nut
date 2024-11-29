@@ -149,6 +149,7 @@ this.cultist_origin_vs_uneducated_event <- this.inherit("scripts/events/event", 
 				case bro.getFlags().get("IsPlayerCharacter"):
 					continue;
 				case bro.getBackground().getID() == "background.slave":
+				case bro.getBackground().getID() == "background.legend_puppet":
 				case bro.getBackground().getID() == "background.legend_commander_berserker":
 				case bro.getBackground().getID() == "background.legend_berserker":
 				case bro.getBackground().getID() == "background.legend_donkey":
