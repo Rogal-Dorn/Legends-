@@ -53,6 +53,7 @@
 			{
 				nameList.push(item)
 			}
+
 			foreach(i in item.getUpgrades()) //if upgrade named
 			{
 				if (i != 1)
@@ -429,8 +430,7 @@
 	local onPrepareVariables = o.onPrepareVariables;
 	o.onPrepareVariables = function ( _vars )
 	{
-		onPrepareVariables();
-
+		onPrepareVariables(_vars);
 		this.prepareBroVariables(5, _vars)
 	}
 });
