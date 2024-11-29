@@ -40,22 +40,6 @@ this.perk_legend_unarmed_training <- this.inherit("scripts/skills/skill", {
 		}
 	}
 
-	function onAfterUpdate( _properties )
-	{
-		local handToHand = this.getContainer().getSkillByID("actives.hand_to_hand");
-		if (handToHand != null && handToHand.m.ActionPointCost >= 1) // 0 check should be somewhere else
-		{
-			handToHand.m.ActionPointCost -= 1;
-			handToHand.m.FatigueCostMult *= this.Const.Combat.WeaponSpecFatigueMult;
-		}
-
-		local lunge = this.getContainer().getSkillByID("actives.legend_unarmed_lunge");
-		if (lunge != null)
-		{
-			lunge.m.FatigueCostMult *= 0.5
-		}
-	}
-
 	function onAdded()
 	{
 		if (!this.getContainer().hasSkill("actives.legend_tackle") && this.getContainer().getActor().isPlayerControlled())
