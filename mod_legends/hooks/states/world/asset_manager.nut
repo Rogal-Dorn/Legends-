@@ -76,6 +76,11 @@
 		return this.m.FormationNames[this.m.FormationIndex];
 	}
 
+	o.isCamping = function()
+	{
+		return this.World.Camp.isCamping();
+	}
+
 	o.setAmmo = function( _f )
 	{
 		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.getMaxAmmo());

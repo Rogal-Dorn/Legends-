@@ -225,10 +225,7 @@
 	o.getVisionRadius = function ()
 	{
 		if (this.World.Assets.isCamping())
-		{
-			local tent = this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout)
-			return tent.getVisionRadius();
-		}
+			return this.World.Camp.getBuildingByID(this.Const.World.CampBuildings.Scout).getVisionRadius();
 		return getVisionRadius();
 	}
 
