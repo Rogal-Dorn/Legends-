@@ -133,7 +133,7 @@ this.legend_druid_commander_background <- this.inherit("scripts/skills/backgroun
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.LegendFeint,
-				this.Const.Perks.PerkDefs.Relentless,
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendSecondWind
 			],
 			[

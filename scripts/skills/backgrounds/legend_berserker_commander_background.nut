@@ -124,7 +124,7 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Taunt,
 				this.Const.Perks.PerkDefs.LegendFeint,
 				this.Const.Perks.PerkDefs.LegendDebilitate,
-				this.Const.Perks.PerkDefs.Relentless,
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.LegendAthlete,
 				this.Const.Perks.PerkDefs.LegendSecondWind,
