@@ -433,7 +433,7 @@
 	Strength = 5,
 	Cost = 5,
 	Row = 0,
-	Script = "scripts/entity/tactical/enemies/kobold_fighter"
+	Script = "scripts/entity/tactical/enemies/legend_kobold_fighter"
 };
 
 ::Const.World.Spawn.Troops.KoboldWolfrider <- {
@@ -442,7 +442,7 @@
 	Strength = 20,
 	Cost = 20,
 	Row = 1,
-	Script = "scripts/entity/tactical/enemies/kobold_wolfrider"
+	Script = "scripts/entity/tactical/enemies/legend_kobold_wolfrider"
 };
 
 ::Const.World.Spawn.Troops.LegendMummyLight <- {
