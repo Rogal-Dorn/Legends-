@@ -22,6 +22,12 @@ this.perk_legend_onslaught <- this.inherit("scripts/skills/skill", {
 		];
 	}
 
+	function onUpdate( _properties )
+	{
+		_properties.FatigueToInitiativeRate *= 0.5;
+		_properties.InitiativeAfterWaitMult = 1.0;
+	}
+
 	function onTargetHit( _skill, _targetEntity, _bodyPart, _damageInflictedHitpoints, _damageInflictedArmor )
 	{
 		this.m.TilesUsed = [];

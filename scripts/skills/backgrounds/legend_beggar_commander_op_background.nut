@@ -73,7 +73,7 @@ this.legend_beggar_commander_op_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.Anticipation,
 				this.Const.Perks.PerkDefs.ShieldExpert,
 				this.Const.Perks.PerkDefs.Brawny,
-				this.Const.Perks.PerkDefs.Relentless,
+				this.Const.Perks.PerkDefs.LegendOnslaught,
 				this.Const.Perks.PerkDefs.Rotation,
 				this.Const.Perks.PerkDefs.RallyTheTroops,
 				this.Const.Perks.PerkDefs.Taunt,
