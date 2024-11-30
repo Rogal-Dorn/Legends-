@@ -219,7 +219,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 							rune.drop(_tile);
 						}
 
-						if (this.Math.rand(1, 100) <= chance)
+						if (this.Math.rand(1, 100) <= 50)
 						{
 							local rune;
 							local variant = this.Math.rand(21, 22);
