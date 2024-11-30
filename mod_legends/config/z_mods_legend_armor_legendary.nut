@@ -77,24 +77,9 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 	}]
 },
 {
-	ID = "legendary/ijirok_armor", 
-	Script = "",
-	Sets = [
-		{
-			Cloth = [
-				[1, "cloth/legend_sackcloth"],// 10,-0,15				
-			],
-			Chain = [
-				[1, "chain/legend_armor_reinforced_rotten_mail_shirt"],// 45,-7,200				
-			],
-			Plate = [	
-				[1, "plate/legend_ijirok_armor"],					
-			],
-			Cloak = [],
-			Tabard = [],
-			Attachments = []
-		}			
-	]
+	ID = "legendary/legend_ijirok_armor", //310.0
+	Script = "scripts/items/legend_armor/legendary/legend_ijirok_armor",
+	Sets = []
 },
 {
 	ID = "legendary/legend_mountain_armor", // this.m.ConditionMax
