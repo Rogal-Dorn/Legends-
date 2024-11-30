@@ -50,9 +50,7 @@ this.tundra_elk_destroyed_event <- this.inherit("scripts/events/event", {
 					text = "You gain " + item.getName()
 				});
 
-				item = this.Const.World.Common.pickArmor([
-					[1, "legendary/ijirok_armor"],
-				]);
+				item = this.Const.World.Common.pickArmor([[1, "legendary/legend_ijirok_armor"]]);
 
 				this.World.Assets.getStash().add(item);
 				this.List.push({
