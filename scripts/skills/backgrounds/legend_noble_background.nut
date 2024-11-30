@@ -102,7 +102,6 @@ this.legend_noble_background <- this.inherit("scripts/skills/backgrounds/charact
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBarbarian,
-				this.Const.Perks.PerkDefs.LegendHoldTheLine,
 				this.Const.Perks.PerkDefs.LegendHoldTheLine
 			],
 			[
