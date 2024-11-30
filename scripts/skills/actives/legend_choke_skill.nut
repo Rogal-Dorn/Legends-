@@ -38,7 +38,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		this.m.IsWeaponSkill = true;
 		this.m.InjuriesOnBody = this.Const.Injury.BluntBody;
 		this.m.InjuriesOnHead = this.Const.Injury.BluntHead;
-		//this.m.HitChanceBonus = -50;
+		this.m.HitChanceBonus = -15;
 		this.m.DirectDamageMult = 1.0;
 		this.m.ActionPointCost = 4;
 		this.m.FatigueCost = 20;
@@ -71,8 +71,8 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (actor.getSkills().hasSkill(bg)) // Hopefully there is a better way
 			{
-				damage_min = this.Math.floor(damage_min*1.50);
-				damage_max = this.Math.floor(damage_max*1.50);
+				damage_min = this.Math.floor(damage_min*1.25);
+				damage_max = this.Math.floor(damage_max*1.25);
 				has_unarmed_background = true;
 				break;
 			}
@@ -269,7 +269,7 @@ this.legend_choke_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (actor.getSkills().hasSkill(bg))
 			{
-				_properties.DamageTotalMult *= 1.5;
+				_properties.DamageTotalMult *= 1.25;
 				break;
 			}
 		}
