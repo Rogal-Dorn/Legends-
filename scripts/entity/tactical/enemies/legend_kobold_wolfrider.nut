@@ -8,7 +8,7 @@ this.legend_kobold_wolfrider <- this.inherit("scripts/entity/tactical/legend_kob
 	{
 		this.m.Type = this.Const.EntityType.KoboldWolfrider;
 		this.m.XP = this.Const.Tactical.Actor.KoboldWolfrider.XP;
-		this.kobold.create();
+		this.legend_kobold.create();
 		this.m.ShakeLayers = [
 			[
 				"wolf",
