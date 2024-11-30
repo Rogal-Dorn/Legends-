@@ -160,12 +160,12 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 					loot = this.new("scripts/items/misc/legend_stollwurm_scales_item");
 					loot.drop(_tile);
 
-					if (r <= 35)
+					if (r <= 25)
 					{
 						loot = this.new("scripts/items/misc/legend_stollwurm_blood_item");
 						loot.drop(_tile);
 					}
-					else if (r <= 70)
+					else if (r <= 50)
 					{
 						loot = this.new("scripts/items/misc/legend_stollwurm_scales_item");
 						loot.drop(_tile);
@@ -178,7 +178,7 @@ this.legend_stollwurm <- this.inherit("scripts/entity/tactical/actor", {
 
 					local r = this.Math.rand(1, 100);
 
-					if (r <= 30)
+					if (r <= 20)
 					{
 						loot = this.new("scripts/items/misc/legend_stollwurm_blood_item");
 						loot.drop(_tile);
