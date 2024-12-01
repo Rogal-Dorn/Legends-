@@ -1,10 +1,10 @@
-this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", {
+this.legend_houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", {
 	m = {
 		Houndmaster = null
 	},
 	function create()
 	{
-		this.m.ID = "event.houndmaster_tames_white_wolf";
+		this.m.ID = "event.legend_houndmaster_tames_white_wolf";
 		this.m.Title = "Along the way...";
 		this.m.Cooldown = 99999.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
@@ -59,7 +59,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 					id = 10,
 					icon = this.Const.MoodStateIcon[_event.m.Houndmaster.getMoodState()],
 					text = _event.m.Houndmaster.getName() + this.Const.MoodStateEvent[_event.m.Houndmaster.getMoodState()]
-				});			
+				});
 			}
 		});
 		this.m.Screens.push({
@@ -80,7 +80,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 			],
 			function start( _event )
 			{
-				this.Characters.push(_event.m.Houndmaster.getImagePath());			
+				this.Characters.push(_event.m.Houndmaster.getImagePath());
 				_event.m.Houndmaster.worsenMood(1.0, "Failed to tame the white wolf");
 				if (_event.m.Houndmaster.getMoodState() <= this.Const.MoodState.Neutral)
 				{
@@ -89,7 +89,7 @@ this.houndmaster_tames_white_wolf_event <- this.inherit("scripts/events/event", 
 						icon = this.Const.MoodStateIcon[_event.m.Houndmaster.getMoodState()],
 						text = _event.m.Houndmaster.getName() + this.Const.MoodStateEvent[_event.m.Houndmaster.getMoodState()]
 					});
-				}			
+				}
 			}
 
 		});

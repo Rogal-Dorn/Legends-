@@ -1,5 +1,5 @@
 ::mods_hookExactClass("events/events/dlc6/runaway_harem_event", function(o) {
-	o.m.Dude = null;
+	o.m.Dude <- null;
 
 	local create = o.create;
 	o.create = function() {

@@ -1,4 +1,4 @@
-this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event", {
+this.legends_player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event", {
 	m = {
 		OPBro1 = null,
 		OPBro2 = null,
@@ -9,7 +9,7 @@ this.player_is_rich_op_backgrounds_event <- this.inherit("scripts/events/event",
 	},
 	function create()
 	{
-		this.m.ID = "event.player_is_rich_op_backgrounds_event";
+		this.m.ID = "event.legend_player_is_rich_op_backgrounds_event";
 		this.m.Title = "During camp...";
 		this.m.Cooldown = 100.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({

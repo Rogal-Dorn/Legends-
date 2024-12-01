@@ -1,6 +1,6 @@
 ::mods_hookExactClass("events/events/dlc4/drunk_nobleman_event", function(o) {
-	o.m.Noble = null;
-	o.m.Dude = null;
+	o.m.Noble <- null;
+	o.m.Dude <- null;
 
 	local create = o.create;
 	o.create = function() {

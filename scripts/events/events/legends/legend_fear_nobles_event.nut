@@ -1,4 +1,4 @@
-this.fear_nobles_event <- this.inherit("scripts/events/event", {
+this.legend_fear_nobles_event <- this.inherit("scripts/events/event", {
 	m = {
 		Casualty = null,
 		excludedBackgrounds = [
@@ -16,7 +16,9 @@ this.fear_nobles_event <- this.inherit("scripts/events/event", {
 		],
 		excludedTraits = [
 			"fear_nobles",
+			"legend_fear_nobles",
 			"hate_nobles",
+			"legend_hate_nobles",
 			"fearless",
 			"brave",
 			"determined",
@@ -25,7 +27,7 @@ this.fear_nobles_event <- this.inherit("scripts/events/event", {
 	},
 	function create()
 	{
-		this.m.ID = "event.fear_nobles";
+		this.m.ID = "event.legend_fear_nobles";
 		this.m.Title = "During camp...";
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
@@ -94,7 +96,7 @@ this.fear_nobles_event <- this.inherit("scripts/events/event", {
 		local candidates = [];
 
 		foreach( bro in brothers )
-		{	
+		{
 			foreach (background in this.m.excludedBackgrounds)
 			{
 				if (bro.getBackground().getID() == "background." + background)
