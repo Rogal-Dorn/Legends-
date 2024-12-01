@@ -1,4 +1,4 @@
-this.lose_fear_nobles_event <- this.inherit("scripts/events/event", {
+this.legend_lose_fear_nobles_event <- this.inherit("scripts/events/event", {
 	m = {
 		Casualty = null
 	},

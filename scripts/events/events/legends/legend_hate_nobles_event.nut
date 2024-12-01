@@ -1,10 +1,11 @@
-this.hate_nobles_event <- this.inherit("scripts/events/event", {
+this.legend_hate_nobles_event <- this.inherit("scripts/events/event", {
 	m = {
 		Image = "",
 		Casualty = null,
 		excludedTraits = [
 			"fear_nobles",
 			"hate_nobles",
+			"legend_hate_nobles",
 			"dastard",
 			"craven",
 			"fainthearted",
@@ -13,7 +14,7 @@ this.hate_nobles_event <- this.inherit("scripts/events/event", {
 	},
 	function create()
 	{
-		this.m.ID = "event.hate_nobles";
+		this.m.ID = "event.legend_hate_nobles";
 		this.m.Title = "After the battle...";
 		this.m.Cooldown = 25.0 * this.World.getTime().SecondsPerDay;
 		this.m.Screens.push({
