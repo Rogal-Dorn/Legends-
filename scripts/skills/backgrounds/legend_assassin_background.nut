@@ -85,8 +85,8 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.CoupDeGrace,
 				this.Const.Perks.PerkDefs.Bullseye,
 				this.Const.Perks.PerkDefs.HoldOut,
+				this.Const.Perks.PerkDefs.LegendChoke,
 				// this.Const.Perks.PerkDefs.LegendComposure,
-				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.DevastatingStrikes,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyCaravan,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyBandit
@@ -98,6 +98,7 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Backstabber,
 				this.Const.Perks.PerkDefs.LegendDebilitate,
 				this.Const.Perks.PerkDefs.LegendOnslaught,
+				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendTrueBeliever,
 				this.Const.Perks.PerkDefs.LegendPrepareBleed,
 				this.Const.Perks.PerkDefs.LegendEscapeArtist,
@@ -118,7 +119,6 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.LoneWolf,
 				this.Const.Perks.PerkDefs.Footwork,
 				this.Const.Perks.PerkDefs.Overwhelm,
-				this.Const.Perks.PerkDefs.LegendGrapple,
 				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendLithe,
 				this.Const.Perks.PerkDefs.LegendPushTheAdvantage,
@@ -142,9 +142,9 @@ this.legend_assassin_background <- this.inherit("scripts/skills/backgrounds/char
 				this.Const.Perks.PerkDefs.Duelist,
 				this.Const.Perks.PerkDefs.Nimble,
 				this.Const.Perks.PerkDefs.LegendFreedomOfMovement,
-				this.Const.Perks.PerkDefs.LegendChoke,
 				this.Const.Perks.PerkDefs.LegendAssassinate,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemySwordmaster
+				this.Const.Perks.PerkDefs.LegendUnarmedTraining
 			]
 		];
 	}
