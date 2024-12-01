@@ -116,7 +116,7 @@ this.legend_mummy_heavy <- this.inherit("scripts/entity/tactical/legend_mummy", 
 		local weaponAdd = this.Const.World.Common.pickItem(weapons, "scripts/items/weapons/named/");
 		this.m.Items.equip(weaponAdd);
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_forceful_swing"));
-		this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+		this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 		this.m.Skills.add(this.new("scripts/skills/perks/perk_underdog"));
 
 	}
