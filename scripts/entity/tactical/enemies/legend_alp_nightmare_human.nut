@@ -152,7 +152,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 				else if (r == 5)
 				{
 					this.m.Items.equip(this.new("scripts/items/weapons/two_handed_wooden_hammer"));
-					this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 
 					if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 						this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
@@ -300,7 +300,7 @@ this.legend_alp_nightmare_human <- this.inherit("scripts/entity/tactical/enemies
 			else if (r == 10)
 			{
 				this.m.Items.equip(this.new("scripts/items/weapons/military_pick"));
-				this.m.Skills.add(this.new("scripts/skills/perks/perk_sundering_strikes"));
+				this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));
 
 				if (("Assets" in this.World) && this.World.Assets != null && this.World.Assets.getCombatDifficulty() == this.Const.Difficulty.Legendary)
 					this.m.Skills.add(this.new("scripts/skills/perks/perk_legend_smackdown"));

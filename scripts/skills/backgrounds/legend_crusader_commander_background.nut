@@ -136,7 +136,6 @@ this.legend_crusader_commander_background <- this.inherit("scripts/skills/backgr
 				this.Const.Perks.PerkDefs.KillingFrenzy,
 				this.Const.Perks.PerkDefs.LegendLastStand,
 				this.Const.Perks.PerkDefs.LegendVengeance,
-				this.Const.Perks.PerkDefs.SunderingStrikes,
 				this.Const.Perks.PerkDefs.LegendAssuredConquest,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGhoul,
 				this.Const.Perks.PerkDefs.LegendPrayerOfLife,

@@ -191,9 +191,12 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[::Const.Perks.PerkDefs.LegendSpecialistHammerSkill],
 		[],
-		[::Const.Perks.PerkDefs.LegendSpecialistHammerDamage],
+		[
+			::Const.Perks.PerkDefs.LegendSpecialistHammerDamage,
+			::Const.Perks.PerkDefs.LegendSmackdown
+		],
 		[],
-		[::Const.Perks.PerkDefs.SunderingStrikes],
+		[],
 		[],
 		[]
 	]
@@ -225,9 +228,12 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[::Const.Perks.PerkDefs.LegendSpecialistPickaxeSkill],
 		[],
-		[::Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage],
+		[
+			::Const.Perks.PerkDefs.LegendSpecialistPickaxeDamage,
+			::Const.Perks.PerkDefs.LegendSmackdown
+		],
 		[],
-		[::Const.Perks.PerkDefs.SunderingStrikes],
+		[],
 		[],
 		[]
 	]

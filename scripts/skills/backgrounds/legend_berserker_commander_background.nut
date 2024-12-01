@@ -148,7 +148,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 				this.Const.Perks.PerkDefs.LegendSlaughterer,
 				this.Const.Perks.PerkDefs.LegendVengeance,
 				this.Const.Perks.PerkDefs.LegendBattleheart,
-				this.Const.Perks.PerkDefs.SunderingStrikes,
 				this.Const.Perks.PerkDefs.LegendAmbidextrous,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyOrk,
 				this.Const.Perks.PerkDefs.LegendFavouredEnemyGoblin,
