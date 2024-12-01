@@ -92,7 +92,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			[
 				this.Const.Perks.PerkDefs.CripplingStrikes,
 				this.Const.Perks.PerkDefs.Colossus,
-				this.Const.Perks.PerkDefs.LegendKick,
 				this.Const.Perks.PerkDefs.Adrenaline,
 				this.Const.Perks.PerkDefs.NineLives,
 				this.Const.Perks.PerkDefs.Pathfinder,
@@ -158,7 +157,6 @@ this.legend_berserker_commander_background <- this.inherit("scripts/skills/backg
 			],
 			[
 				this.Const.Perks.PerkDefs.Berserk,
-				this.Const.Perks.PerkDefs.LegendTackle,
 				this.Const.Perks.PerkDefs.LegendLacerate,
 				this.Const.Perks.PerkDefs.LegendMuscularity,
 				this.Const.Perks.PerkDefs.Nimble,
