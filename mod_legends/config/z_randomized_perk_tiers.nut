@@ -327,7 +327,7 @@
         [1, ["two_handed_wooden_hammer", 70], ["perks/perk_sundering_strikes"]],
         [1, ["two_handed_wooden_flail", 70], ["perks/perk_head_hunter"]],
         [1, ["legend_ranged_flail", 70], ["perks/perk_colossus"]],
-        [1, ["legend_reinforced_flail", 70], ["perks/perk_vengeance"]],
+        [1, ["legend_reinforced_flail", 70], ["perks/perk_legend_vengeance"]],
         [1, ["two_handed_mace", 70], ["perks/perk_legend_forceful_swing"]],
         [1, ["longsword", 70], ["perks/perk_colossus"]],
         [1, ["legend_longsword",  70], ["perks/perk_duelist"]],
