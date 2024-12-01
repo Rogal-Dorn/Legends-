@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/desertion_event", function(o) {
+::mods_hookExactClass("events/events/special/desertion_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();
