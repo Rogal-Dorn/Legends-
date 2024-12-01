@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/retinue_slot_event", function(o) {
+::mods_hookExactClass("events/events/special/retinue_slot_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();
