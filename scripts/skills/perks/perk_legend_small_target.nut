@@ -113,8 +113,6 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 						case "legend_armor_upgrade.body.legend_direwolf_pelt":
 						case "legend_armor_upgrade.body.legend_unhold_fur":
 							bodyArmor -= layer.getRepair();
-						default:
-							::logInfo("layer equipped " + layer.getID() + ", condition " + layer.getRepair());
 					}
 
 				if (headItem != null && headItem.m.StaminaModifier == 0)
