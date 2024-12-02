@@ -1,4 +1,4 @@
-this.greenskins_town_razed_event <- this.inherit("scripts/events/event", {
+this.legend_greenskins_town_razed_event <- this.inherit("scripts/events/event", {
 	m = {
 		News = null
 	},
