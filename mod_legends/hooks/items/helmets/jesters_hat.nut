@@ -2,7 +2,7 @@
 	local create = o.create;
 	o.create = function () {
 		create();
-		this.m.Variant = this.m.Variants[this.Math.rand(0, this.m.Variants.len() - 1)];
+		this.m.Variants = this.Math.rand(1,65);
 		this.m.Condition = 35;
 		this.m.ConditionMax = 35;
 	}
