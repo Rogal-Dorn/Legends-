@@ -1,4 +1,4 @@
-this.civilwar_noble_event <- this.inherit("scripts/events/event", {
+this.legend_civilwar_noble_event <- this.inherit("scripts/events/event", {
 	m = {
 		Dude = null
 	},

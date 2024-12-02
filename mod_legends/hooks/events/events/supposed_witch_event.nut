@@ -280,7 +280,7 @@
 
 	local onClear = o.onClear;
 	o.onClear = function  () {
-		this.m.Dute = null;
+		this.m.Dude = null;
 		onClear();
 	}
 
