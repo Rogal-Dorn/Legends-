@@ -39,15 +39,6 @@
 					text = "The company\'s moral reputation increases slightly"
 				})
 			}
-			if (s.ID == "A") {
-				s.
-			}
-			if (s.ID == "A") {
-				s.
-			}
-			if (s.ID == "A") {
-				s.
-			}
 		}
 	}
 })

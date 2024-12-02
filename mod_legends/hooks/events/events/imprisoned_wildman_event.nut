@@ -5,8 +5,39 @@
 		foreach (s in this.m.Screens) {
 			if (s.ID == "B") {
 				s.Text = "[img]gfx/ui/events/event_100.png[/img]The animal tamer leads you to a carriage. You immediately see why his hired hands quit: a frenzied and mercurial feral human is sitting inside the cage. Raw wrists bleed against shackles, signs of attempted escapes. Half-starved, the wild human gnaws on sticks poking out from a tumbleweed of hair. Seeing this sad sight, you grab the stranger by his shirt and slam him against the wagon.%SPEECH_ON%Does that look like an animal to you?%SPEECH_OFF%The animal tamer grins, ivory for teeth. He explains himself.%SPEECH_ON%Cityfolk have gotten wind of the \'uncivilized\' humans and wish to see them up close. I am only fulfilling this new demand as any businessman would. Now, all I need help with is to get that dead body out of the cage.%SPEECH_OFF%He points toward a corpse in the corner of the cage. The wildling rears back, snarling, and goes to protectively sit on the body. The animal tamer shakes his head.%SPEECH_ON%One of my helpers got too close and, well, yeah. I can\'t go into town with that mess in there so I thought maybe you could help me fish it out. I\'ll pay plenty, of course. A pouch of 250 crowns sound good to you? Just reach on in there and yank that garbage out.%SPEECH_OFF%";
-				s.Options[1].Text = "We got our own wildling who could help.";
-				s.Options[2].Text = "Our holy one seems a little disturbed by this.";
+				s.start <- function ( _event ) {
+					this.Options.push({
+						Text = "Alright, I\'ll send a man in.",
+						function getResult( _event ) {
+							return this.Math.rand(1, 100) <= 80 ? "C" : "D";
+						}
+					});
+
+					if (_event.m.Wildman != null) {
+						this.Options.push({
+							Text = "We got our own wildling who could help.",
+							function getResult( _event ) {
+								return "Wildman";
+							}
+						});
+					}
+
+					if (_event.m.Monk != null) {
+						this.Options.push({
+							Text = "Our holy one seems a little disturbed by this.",
+							function getResult( _event ) {
+								return "Monk";
+							}
+						});
+					}
+
+					this.Options.push({
+						Text = "I won\'t put the life of my men at risk for this.",
+						function getResult( _event ) {
+							return "E";
+						}
+					});
+				}
 			}
 			if (s.ID == "C") {
 				s.Text = "[img]gfx/ui/events/event_100.png[/img]%taskedbro% is the one tasked with cleaning out the wildling\'s corpse-featured terrarium. He rolls up his sleeves and approaches the cage with both hands out.%SPEECH_ON%Whoa there, easy now. Easy!%SPEECH_OFF%The wildling gets up off the dead body and goes to the other side of its habitat. The sellsword easily grabs the boot of the corpse and drags it toward the bars. It slips through with sickening ease, already clumped up in the fashion of discarded wet clothes. Guts and limbs dribble off the edge of the wagon\'s platform. The animal tamer cheers happily.%SPEECH_ON%Thank you so much! And you made it look so easy, too!%SPEECH_OFF%%taskedbro% stares at the dead body with the realization that could have easily been their end.%SPEECH_ON%Yeah. You\'re welcome.%SPEECH_OFF%"

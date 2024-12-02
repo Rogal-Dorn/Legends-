@@ -4,14 +4,16 @@
 		create();
 		foreach (s in this.m.Screens) {
 			if (s.ID == "A") {
-				local item = this.Const.World.Common.pickHelmet([[1, "faction_helm"]]);
-				item.setCondition(27.0);
-				this.World.Assets.getStash().add(item);
-				this.List.push({
-					id = 10,
-					icon = "ui/items/" + item.getIcon(),
-					text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
-				});
+				s.start <- function ( _event ) {
+					local item = this.Const.World.Common.pickHelmet([[1, "faction_helm"]]);
+					item.setCondition(27.0);
+					this.World.Assets.getStash().add(item);
+					this.List.push({
+						id = 10,
+						icon = "ui/items/" + item.getIcon(),
+						text = "You gain " + this.Const.Strings.getArticle(item.getName()) + item.getName()
+					});
+				}
 			}
 		}
 	}
