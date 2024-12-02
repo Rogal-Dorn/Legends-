@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/", function(o) {
+::mods_hookExactClass("events/events/deserter_in_forest_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();
