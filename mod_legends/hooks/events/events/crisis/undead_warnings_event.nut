@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/crisis/", function(o) {
+::mods_hookExactClass("events/events/crisis/undead_warnings_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();

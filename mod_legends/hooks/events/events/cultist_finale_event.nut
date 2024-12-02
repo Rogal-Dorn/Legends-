@@ -1,4 +1,4 @@
-::mods_hookExactClass("events/events/", function(o) {
+::mods_hookExactClass("events/events/cultist_finale_event", function(o) {
 	local create = o.create;
 	o.create = function() {
 		create();
