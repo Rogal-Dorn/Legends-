@@ -79,13 +79,14 @@
 		local candidates_cultist = [];
 		local candidates_other = [];
 
-		foreach( bro in brothers )
+		foreach( bro in brothers ) {
 			if (bro.getSkills().hasSkill("trait.player"))
 				continue;
 			if (bro.getBackground().isBackgroundType(this.Const.BackgroundType.ConvertedCultist))
 				candidates_cultist.push(bro);
 			else if (bro.getBackground().getID() != "background.slave")
 				candidates_other.push(bro);
+		}
 
 		if (candidates_other.len() == 0)
 			return;
