@@ -111,7 +111,7 @@ this.legend_sprint_skill_5 <- this.inherit("scripts/skills/skill", {
 				return false;
 			}
 
-			if (this.Math.abs(tile.Level - _originTile.Level) > 1)
+			if (this.Math.abs(tile.Level - _originTile.Level) > 0)
 			{
 				return false;
 			}
