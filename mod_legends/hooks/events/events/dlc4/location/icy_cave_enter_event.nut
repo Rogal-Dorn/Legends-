@@ -32,8 +32,8 @@
 							}
 						});
 					}
-
-					s.Options.push({
+					::logInfo("am i being added again?");
+					this.Options.push({
 						Text = "We should leave this place.",
 						function getResult( _event ) {
 							if (this.World.State.getLastLocation() != null)
