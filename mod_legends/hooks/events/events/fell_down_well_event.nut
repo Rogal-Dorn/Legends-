@@ -29,6 +29,7 @@
 
 	local onUpdateScore = o.onUpdateScore;
 	o.onUpdateScore = function () {
+		local brothers = this.World.getPlayerRoster().getAll();
 		if (brothers.len() == 1)
 			return;
 		onUpdateScore();
