@@ -32,7 +32,6 @@
 							}
 						});
 					}
-					::logInfo("am i being added again?");
 					this.Options.push({
 						Text = "We should leave this place.",
 						function getResult( _event ) {
