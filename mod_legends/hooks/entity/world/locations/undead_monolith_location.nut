@@ -18,8 +18,8 @@
 			"misc/legend_ancient_scroll_item"
 		], _lootTable);
 
-		_lootTable.push(this.Const.World.Common.pickArmor([
-			[1, "legendary/emperors_armor"],
-		]))
+		// _lootTable.push(this.Const.World.Common.pickArmor([
+		// 	[1, "legendary/emperors_armor"],
+		// ]))
 	}
 });
