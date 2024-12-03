@@ -35,8 +35,8 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 	}]
 },
 {
-	ID = "legendary/emperors_armor", // 400
-	Script = "scripts/items/legend_armor/legendary/legend_emperors_armor",
+	ID = "legendary/legend_emperors_armor", // 400
+	Script = "",
 	Sets = [{
 		Cloth = [
 			[1, "cloth/legend_ancient_cloth_restored"], // 35
@@ -45,9 +45,10 @@ if (!("ArmorObjs" in ::Const.LegendMod))
 			[1, "chain/legend_armor_ancient_mail"], // 35
 		],
 		Plate = [
-			[1, "legendary/emperors_armor"],
+			[1, "legendary/legend_emperors_armor"],
 		],
 		Cloak = [
+			[1, "named/legend_armor_cloak_emperors"]
 		],
 		Tabard = [
 		],
