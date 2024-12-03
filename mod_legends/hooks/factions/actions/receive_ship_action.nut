@@ -109,7 +109,7 @@
 		local swim = this.new("scripts/ai/world/orders/swim_order");
 		swim.setDestination(destination);
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
-		local dock = this.new("scripts/ai/world/orders/dock_order");
+		local dock = this.new("scripts/ai/world/orders/legend_dock_order");
 		c.addOrder(swim);
 		c.addOrder(dock);
 		c.addOrder(despawn);
@@ -122,9 +122,9 @@
 //		if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
 //		{
 //			local success = this.onLegendExecute( _faction);
-//			if (success != false)
+//			if (success)
 //			{
-//				return success; // todo why returning bool, when onExecute does not return anything? - chopeks
+//				return; // todo why returning bool, when onExecute does not return anything? - chopeks
 //			}
 //		}
 

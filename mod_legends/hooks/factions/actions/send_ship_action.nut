@@ -158,7 +158,7 @@
 		this.m.Dest = destination;
 		swim.setDestination(destination);
 		local despawn = this.new("scripts/ai/world/orders/despawn_order");
-		local dock = this.new("scripts/ai/world/orders/dock_order");
+		local dock = this.new("scripts/ai/world/orders/legend_dock_order");
 		c.addOrder(swim);
 		c.addOrder(dock);
 		c.addOrder(despawn);
@@ -169,15 +169,12 @@
 	{
 		//TODO, I want to have these generated only once a harbor town gets nice and fat and juicy,
 		//have this ship going to another settlement to move goods around the map.
-
-		// if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-		// {
-		// 	local success = this.onLegendExecute( _faction)
-		// 	if (success != false)
-		// 	{
-		// 		return success;
-		// 	}
-		// }
+//		 if(::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
+//		 {
+//		 	local success = this.onLegendExecute( _faction);
+//		 	if (success)
+//		 		return;
+//		 }
 
 		onExecute(_faction);
 	}
