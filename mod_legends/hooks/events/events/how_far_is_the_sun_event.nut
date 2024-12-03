@@ -143,10 +143,10 @@
 			options++;
 
 		if (candidate_cultist.len() != 0)
-			option++;
+			options++;
 
 		if (candidate_archer.len() != 0)
-			option++;
+			options++;
 
 		if (options < 2)
 			return;
