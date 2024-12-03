@@ -14,7 +14,7 @@
 
 						if (item != null && (item.getID() == "accessory.legend_oms_amphora" || item.getID() == "accessory.legend_oms_fate" || item.getID() == "accessory.legend_oms_tome" || item.getID() == "accessory.legend_oms_paw" || item.getID() == "accessory.legend_oms_rib"))
 						{
-							s.Options.push({
+							this.Options.push({
 								Text = "Can tell me what this relic does?",
 								function getResult( _event )
 								{
