@@ -1,6 +1,6 @@
 ::mods_hookExactClass("entity/world/locations/legendary/sunken_library_location", function(o) 
 {
-	o.onDropLootForPlayer = function ( _lootTable )
+	o.onDropLootForPlayer <- function ( _lootTable )
 	{
 		this.location.onDropLootForPlayer(_lootTable);
 		this.dropArmorParts(this.Math.rand(0, 60), _lootTable);
@@ -15,7 +15,7 @@
 			"misc/legend_masterwork_tools"
 		], _lootTable);
 		local hasHistorian = false;
-		foreach (bro in this.World.getPlayerRoster().getAll();)
+		foreach (bro in this.World.getPlayerRoster().getAll())
 		{
 			if (bro.getSkills().hasSkill("perk.legend_scholar"))
 			{
@@ -26,7 +26,7 @@
 
 		for( local i = 0; i < n; i = ++i )
 		{
-			for (local v = 0; v < 2; ++v)
+			for ( local v = 0; v < 2; ++v )
 			{
 				_lootTable.push(this.new("scripts/items/misc/legend_ancient_scroll_item"));
 			}
