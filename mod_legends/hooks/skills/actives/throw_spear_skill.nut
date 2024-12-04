@@ -149,14 +149,20 @@
 		local conditionBefore = _tag.Shield.getCondition();
 		_tag.Shield.applyShieldDamage(_tag.Damage);
 
-		if (_tag.Shield.getCondition() == 0)
+		if (_tag.Shield != null && _tag.Shield.getCondition() == 0)
 		{
 			if (!_tag.User.isHiddenToPlayer() && _tag.TargetTile.IsVisibleForPlayer)
 			{
-				this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + "\'s shield");
+				local logMessage = this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + "\'s shield"
+				if (this.getContainer().hasSkill("perk.legend_smashing_shields"))
+				{
+					this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
+				}
+				else
+				{
+					this.Tactical.EventLog.log(logMessage);
+				}
 			}
-
-			_tag.User.setActionPoints(this.Math.min(_tag.User.getActionPointsMax(), _tag.User.getActionPoints() + 4));
 		}
 		else
 		{
