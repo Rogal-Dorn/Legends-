@@ -854,6 +854,7 @@
 
 	o.getSellPrice <- function ()
 	{
+		local ID = this.getID();
 		local originalTime;
 		if (::mods_isClass(this, "food_item") && this.getSpoilInDays() > this.m.GoodForDays)
 		{
@@ -883,6 +884,7 @@
 
 	o.getBuyPrice <- function ()
 	{
+		local ID = this.getID();
 		if (this.isSold())
 		{
 			this.m.IsSold = false;
