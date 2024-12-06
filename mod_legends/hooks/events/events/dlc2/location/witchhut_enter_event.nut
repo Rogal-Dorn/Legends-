@@ -10,7 +10,7 @@
 
 					foreach( bro in brothers ) //replicated in oracle_event.nut
 					{
-						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+						local item = this.bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
 						if (item != null && (item.getID() == "accessory.legend_oms_amphora" || item.getID() == "accessory.legend_oms_fate" || item.getID() == "accessory.legend_oms_tome" || item.getID() == "accessory.legend_oms_paw" || item.getID() == "accessory.legend_oms_rib"))
 						{
@@ -61,7 +61,7 @@
 			function start( _event )
 			{
 				local stash = this.World.Assets.getStash().getItems(); //we need to check both stash...
-				local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory); //...and the equipped slots of all bros otherwise this event will break.
+				local item = this.bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory); //...and the equipped slots of all bros otherwise this event will break.
 
 				foreach( i, item in stash )
 				{
