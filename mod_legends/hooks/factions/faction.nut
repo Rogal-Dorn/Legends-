@@ -2,6 +2,9 @@
 {
 	while(!("Flags" in o.m)) o=o[o.SuperName];
 
+	/** Added to provide party in hooks */
+	o.m.SpawnListener <- null;
+
 	o.m.ContractsByCategory <-
 	{
 		Economy = [],
@@ -206,6 +209,19 @@
 		}
 
 		return false;
+	}
+
+	o.setSpawnListener <- function (_listener) {
+		this.m.SpawnListener = _listener;
+	}
+
+	local spawnEntity = o.spawnEntity;
+	o.spawnEntity = function (_tile, _name, _uniqueName, _template, _resources) {
+		local entity = spawnEntity(_tile, _name, _uniqueName, _template, _resources);
+		if (this.m.SpawnListener != null)
+			this.m.SpawnListener(entity);
+		this.m.SpawnListener = null;
+		return entity;
 	}
 
 	o.onDeserialize = function ( _in )
