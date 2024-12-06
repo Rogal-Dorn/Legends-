@@ -31,19 +31,20 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		}
 
 		local bonus = this.getBonus();
+		local currentBonus = this.getCurrentBonus();
 		if (bonus > this.m.BonusMin)
 		{
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/melee_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Melee Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + currentBonus + "[/color] Melee Defense"
 			});
 			tooltip.push({
 				id = 6,
 				type = "text",
 				icon = "ui/icons/ranged_defense.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + bonus + "[/color] Ranged Defense"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]+" + currentBonus + "[/color] Ranged Defense"
 			});
 		}
 		else
@@ -124,6 +125,15 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 		return this.Math.floor(bonus);
 	}
 
+	function getCurrentBonus() {
+		return this.Math.floor(this.getBonus() * this.Math.max(this.m.bonusPercentage, 0));
+	}
+
+	function onAdded()
+	{
+		this.m.bonusPercentage = 1.0;
+	}
+
 	function onBeingAttacked( _attacker, _skill, _properties )
 	{
 		this.m.bonusPercentage -= 0.1;
@@ -142,8 +152,8 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	function onUpdate( _properties )
 	{
 		local bonus = this.getBonus();
-		_properties.MeleeDefense += this.Math.floor(bonus * this.Math.max(this.m.bonusPercentage, 0));
-		_properties.RangedDefense += this.Math.floor(bonus * this.Math.max(this.m.bonusPercentage, 0));
+		_properties.MeleeDefense += this.getCurrentBonus();
+		_properties.RangedDefense += this.getCurrentBonus();
 
 		local sourceEffect = this.getContainer().getSkillByID("effects.legend_blend_in");
 		if (sourceEffect == null)
