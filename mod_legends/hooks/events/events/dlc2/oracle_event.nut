@@ -9,7 +9,7 @@
 					local brothers = this.World.getPlayerRoster().getAll();
 
 					foreach( bro in brothers ) {
-						local item = this.bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
+						local item = bro.getItems().getItemAtSlot(this.Const.ItemSlot.Accessory);
 
 						if (item != null && (item.getID() == "accessory.legend_oms_amphora" || item.getID() == "accessory.legend_oms_fate" || item.getID() == "accessory.legend_oms_tome" || item.getID() == "accessory.legend_oms_paw" || item.getID() == "accessory.legend_oms_rib")) {
 							this.Options.push({
