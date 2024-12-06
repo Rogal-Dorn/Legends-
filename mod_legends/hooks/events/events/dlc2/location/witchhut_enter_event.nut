@@ -4,7 +4,7 @@
 		create();
 		foreach (s in this.m.Screens) {
 			if (s.ID == "C") {
-				s.start <- function () {
+				s.start <- function (_event) {
 					//may replace this with a flag on the old man sells event later
 					local brothers = this.World.getPlayerRoster().getAll();
 
