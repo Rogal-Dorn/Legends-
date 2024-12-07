@@ -82,75 +82,7 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 				}
 
 				this.Flags.set("StartTime", this.Time.getVirtualTimeF());
-				local disallowedTerrain = [];
-
-				for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i )
-				{
-					if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
-					{
-					}
-					else
-					{
-						disallowedTerrain.push(i);
-					}
-				}
-
-				local playerTile = this.World.State.getPlayer().getTile();
-				local mapSize = this.World.getMapSize();
-				local x = this.Math.max(3, playerTile.SquareCoords.X - 9);
-				local x_max = this.Math.min(mapSize.X - 3, playerTile.SquareCoords.X + 9);
-				local y = this.Math.max(3, playerTile.SquareCoords.Y - 9);
-				local y_max = this.Math.min(mapSize.Y - 3, playerTile.SquareCoords.Y + 9);
-				local numWoods = 0;
-
-				while (x <= x_max)
-				{
-					while (y <= y_max)
-					{
-						local tile = this.World.getTileSquare(x, y);
-
-						if (tile.Type == this.Const.World.TerrainType.Forest || tile.Type == this.Const.World.TerrainType.LeaveForest || tile.Type == this.Const.World.TerrainType.AutumnForest)
-						{
-							numWoods = ++numWoods;
-						}
-
-						y = ++y;
-					}
-
-					x = ++x;
-				}
-
-				local tile = this.Contract.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 9, disallowedTerrain);
-				local party;
-				party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Basilisks", false, this.Const.World.Spawn.LegendBasiliskLOW, 110 * this.Contract.getDifficultyMult() * this.Contract.getScaledDifficultyMult());
-				party.setDescription("A stampede of basilisks hunting for food");
-				party.setFootprintType(this.Const.World.FootprintsType.Basilisks);
-				party.setAttackableByAI(false);
-				party.setFootprintSizeOverride(1.10);
-
-				for( local i = 0; i < 2; i = ++i )
-				{
-					local nearTile = this.Contract.getTileToSpawnLocation(playerTile, 4, 5);
-
-					if (nearTile != null)
-					{
-						this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Basilisks, 0.75);
-					}
-				}
-
-				this.Contract.m.Target = this.WeakTableRef(party);
-				party.getSprite("banner").setBrush("banner_beasts_01");
-				local c = party.getController();
-				c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
-				c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
-				local roam = this.new("scripts/ai/world/orders/roam_order");
-				roam.setNoTerrainAvailable();
-				roam.setTerrain(this.Const.World.TerrainType.Forest, true);
-				roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
-				roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
-				roam.setMinRange(1);
-				roam.setMaxRange(1);
-				c.addOrder(roam);
+				this.Contract.spawnEnemies();
 				this.Contract.m.Home.setLastSpawnTimeToNow();
 				this.Contract.setScreen("Overview");
 				this.World.Contracts.setActiveContract(this.Contract);
@@ -563,6 +495,61 @@ this.legend_hunting_basilisks_contract <- this.inherit("scripts/contracts/contra
 		{
 			this.m.SituationID = this.m.Home.addSituation(this.new("scripts/entity/world/settlements/situations/disappearing_villagers_situation"));
 		}
+	}
+
+	function spawnEnemies() {
+		local disallowedTerrain = [];
+		for( local i = 0; i < this.Const.World.TerrainType.COUNT; i = ++i ) {
+			if (i == this.Const.World.TerrainType.Forest || i == this.Const.World.TerrainType.LeaveForest || i == this.Const.World.TerrainType.AutumnForest)
+				continue;
+			disallowedTerrain.push(i);
+		}
+
+		local playerTile = this.World.State.getPlayer().getTile();
+		local mapSize = this.World.getMapSize();
+		local x = this.Math.max(3, playerTile.SquareCoords.X - 9);
+		local x_max = this.Math.min(mapSize.X - 3, playerTile.SquareCoords.X + 9);
+		local y = this.Math.max(3, playerTile.SquareCoords.Y - 9);
+		local y_max = this.Math.min(mapSize.Y - 3, playerTile.SquareCoords.Y + 9);
+		local numWoods = 0;
+
+		while (x <= x_max) {
+			while (y <= y_max) {
+				local tile = this.World.getTileSquare(x, y);
+				if (tile.Type == this.Const.World.TerrainType.Forest || tile.Type == this.Const.World.TerrainType.LeaveForest || tile.Type == this.Const.World.TerrainType.AutumnForest)
+					numWoods++;
+				y++;
+			}
+			x++;
+		}
+
+		local tile = this.getTileToSpawnLocation(playerTile, numWoods >= 12 ? 6 : 3, 9, disallowedTerrain);
+		local party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Basilisks", false, this.Const.World.Spawn.LegendBasiliskLOW, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
+		party.setDescription("A stampede of basilisks hunting for food");
+		party.setFootprintType(this.Const.World.FootprintsType.Basilisks);
+		party.setAttackableByAI(false);
+		party.setFootprintSizeOverride(1.10);
+
+		for( local i = 0; i < 2; i = ++i ) {
+			local nearTile = this.getTileToSpawnLocation(playerTile, 4, 5);
+			if (nearTile != null)
+				this.Const.World.Common.addFootprintsFromTo(nearTile, party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Basilisks, 0.75);
+		}
+
+		this.m.Target = this.WeakTableRef(party);
+		party.getSprite("banner").setBrush("banner_beasts_01");
+		local c = party.getController();
+		c.getBehavior(this.Const.World.AI.Behavior.ID.Flee).setEnabled(false);
+		c.getBehavior(this.Const.World.AI.Behavior.ID.Attack).setEnabled(true);
+		local roam = this.new("scripts/ai/world/orders/roam_order");
+		roam.setNoTerrainAvailable();
+		roam.setTerrain(this.Const.World.TerrainType.Forest, true);
+		roam.setTerrain(this.Const.World.TerrainType.LeaveForest, true);
+		roam.setTerrain(this.Const.World.TerrainType.AutumnForest, true);
+		roam.setMinRange(1);
+		roam.setMaxRange(1);
+		c.addOrder(roam);
+		return party;
 	}
 
 	function onClear()
