@@ -28,9 +28,9 @@
 
 			if (shield != null && shield.getCondition() == 0)
 			{
-				if (!_tag.User.isHiddenToPlayer() && _tag.TargetTile.IsVisibleForPlayer)
+				if (!_user.isHiddenToPlayer() && _user.IsVisibleForPlayer)
 				{
-					local logMessage = this.Const.UI.getColorizedEntityName(_tag.User) + " has destroyed " + this.Const.UI.getColorizedEntityName(_tag.TargetTile.getEntity()) + "\'s shield"
+					local logMessage = this.Const.UI.getColorizedEntityName(_user) + " has destroyed " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + "\'s shield"
 					if (this.getContainer().hasSkill("perk.legend_smashing_shields"))
 					{
 						this.Tactical.EventLog.log(logMessage + " and recovered 4 Action Points");
