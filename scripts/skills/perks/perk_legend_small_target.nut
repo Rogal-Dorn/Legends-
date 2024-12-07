@@ -126,26 +126,26 @@ this.perk_legend_small_target <- this.inherit("scripts/skills/skill", {
 	}
 
 	function getCurrentBonus() {
-		return this.Math.floor(this.getBonus() * this.Math.max(this.m.bonusPercentage, 0));
+		return this.Math.floor(this.Math.max(this.getBonus() * this.m.bonusPercentage, 0));
 	}
 
-	function onAdded()
-	{
+	function onAdded() {
 		this.m.bonusPercentage = 1.0;
 	}
 
-	function onBeingAttacked( _attacker, _skill, _properties )
-	{
+	function onMissed( _attacker, _skill ) {
 		this.m.bonusPercentage -= 0.1;
 	}
 
-	function onCombatStarted()
-	{
+	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor ) {
+		this.m.bonusPercentage -= 0.1;
+	}
+
+	function onCombatStarted() {
 		this.m.bonusPercentage = 1.0;
 	}
 
-	function onCombatFinished()
-	{
+	function onCombatFinished() {
 		this.m.bonusPercentage = 1.0;
 	}
 
