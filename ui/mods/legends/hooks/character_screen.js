@@ -1,8 +1,3 @@
-var legend_character_screen = {
-	ID : "mod_legends.character_screen",
-	Hooks : {},
-}
-
 // add this variable
 Screens.WorldCharacterScreen.mPopupDialog = null;
 
@@ -51,9 +46,9 @@ CharacterScreen.prototype.openPopupDialog = function(_text)
 /**
  * Changes lvl 12 exp bar color as normal
  */
-legend_character_screen.Hooks.setXP = CharacterScreenLeftPanelHeaderModule.prototype.setXP;
+mod_legends.Hooks.CharacterScreenLeftPanelHeaderModule_setXP = CharacterScreenLeftPanelHeaderModule.prototype.setXP;
 CharacterScreenLeftPanelHeaderModule.prototype.setXP = function(_xpValue, _xpValueMax, _level, _hasLevelUp) {
-	legend_character_screen.Hooks.setXP.call(this, _xpValue, _xpValueMax, _level, _hasLevelUp);
+	mod_legends.Hooks.CharacterScreenLeftPanelHeaderModule_setXP.call(this, _xpValue, _xpValueMax, _level, _hasLevelUp);
 	this.mXPProgressbar.removeClass('xp-paragon');
 	if(_level >= 12)
 		this.mXPProgressbar.addClass('xp-paragon');
