@@ -549,7 +549,7 @@
 				{
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 				}
-				else if (::mods_isClass(_data.targetItem, "legend_armor_upgrade") || ::mods_isClass(_data.targetItem, "legend_helmet_upgrade"))
+				else if (::mods_isClass(_data.targetItem, "legend_armor_upgrade") != null || ::mods_isClass(_data.targetItem, "legend_helmet_upgrade") != null)
 				{
 					return this.helper_convertErrorToUIData(this.Const.CharacterScreen.ErrorCode.FailedToRemoveItemFromSourceSlot);
 				}

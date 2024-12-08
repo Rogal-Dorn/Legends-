@@ -856,7 +856,7 @@
 	{
 		local ID = this.getID();
 		local originalTime;
-		if (::mods_isClass(this, "food_item") && this.getSpoilInDays() > this.m.GoodForDays)
+		if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
 		{
 			originalTime = this.m.BestBefore;
 			this.m.BestBefore = 0;
@@ -895,7 +895,7 @@
 		else
 		{
 			local originalTime;
-			if (::mods_isClass(this, "food_item") && this.getSpoilInDays() > this.m.GoodForDays)
+			if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
 			{
 				if (this.getSpoilInDays() > this.m.GoodForDays)
 				{
