@@ -2,32 +2,6 @@
 {
 	while(!("ItemType" in o.m)) o=o[o.SuperName];
 
-	// this is part of the loadBuyback mod
-	o.setSold = function ( sold )
-	{
-		if (!sold || this.isSold())
-			this.m.IsSold = false;
-		else if (this.isBought()) {
-			this.m.IsBought = false;
-			this.m.IsSold = false;
-		}
-		else
-			this.m.IsSold = true;
-	}
-
-	o.setBought = function ( bought )
-	{
-		if (!bought || this.isBought())
-			this.m.IsBought = false;
-		else if (this.isSold()) {
-			this.m.IsSold = false;
-			this.m.IsBought = false;
-		}
-		else
-			this.m.IsBought = true;
-	}
-	//------------------------------------------
-
 	o.m.OldID <- "";
 	o.m.MedicinePerDay <- 0;
 	o.m.IsToBeRepairedQueue <- 0;
