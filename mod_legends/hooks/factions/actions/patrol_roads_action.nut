@@ -15,7 +15,7 @@
 		});
 		onExecute(_faction);
 		foreach (order in party.getController().getOrders()) {
-			if (::mods_isClass(order, "wait_order"))
+			if (::mods_isClass(order, "wait_order") != null)
 				order.setTime(this.Math.rand(5, 40));
 		}
 		this.m.Cooldown = this.World.FactionManager.isGreaterEvil() ? 150.0 : 300.0;

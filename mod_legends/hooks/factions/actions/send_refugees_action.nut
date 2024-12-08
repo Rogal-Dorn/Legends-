@@ -37,7 +37,7 @@
 		}
 		// add unload before despawn
 		foreach (i, order in party.getController().getOrders()) {
-			if (::mods_isClass(order, "despawn_order")) {
+			if (::mods_isClass(order, "despawn_order") != null) {
 				local unload = this.new("scripts/ai/world/orders/unload_order");
 				unload.setController(party.getController());
 				party.getController().m.Orders.insert(i, unload);
