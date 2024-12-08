@@ -1118,7 +1118,7 @@
 		p.onUnlocked();
 		this.m.Skills.update();
 
-		if (this.m.Level >= 11 && _id == "perk.student")
+		if (this.m.Level >= 12 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}

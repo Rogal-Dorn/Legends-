@@ -7,7 +7,7 @@
 ::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.FortifiedMind].Tooltip = ::Const.Strings.PerkDescription.FortifiedMind;
 //::Const.Strings.PerkDescription.Zweihander = "Fatigue costs for all two-handed weapon skills are reduced.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Reduced by [color=" + this.Const.UI.Color.NegativeValue + "]-20%[/color].";
 //::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.Zweihander].Tooltip = ::Const.Strings.PerkDescription.Zweihander;
-::Const.Strings.PerkDescription.Student = "Everything can be learned if you put your mind to it.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle.\n\n• At the eleventh character level, you gain an additional perk point.\n\n• The bonus experience stays until level 99.";
+::Const.Strings.PerkDescription.Student = "Everything can be learned if you put your mind to it.\n\n[color=#4f1800][u]Passive:[/u][/color]\n• Grants an additional [color=" + this.Const.UI.Color.PositiveValue + "]20%[/color] experience from battle.\n\n• At the twelfth character level, you gain an additional perk point.\n\n• The bonus experience stays until level 99.";
 ::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.Student].Tooltip = ::Const.Strings.PerkDescription.Student;
 ::Const.Strings.PerkDescription.KillingFrenzy = "'YOU'RE NEXT!'\n\n[color=#4f1800][u]Passive:[/u][/color]\n• A kill increases all damage by [color=" + this.Const.UI.Color.PositiveValue + "]25%[/color] for two turns.\n\n• Does not stack, but another kill will reset the timer.";
 ::Const.Perks.PerkDefObjects[::Const.Perks.PerkDefs.KillingFrenzy].Tooltip = ::Const.Strings.PerkDescription.KillingFrenzy;

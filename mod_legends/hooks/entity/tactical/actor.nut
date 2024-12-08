@@ -378,7 +378,7 @@
 		local hasGifted = false;
 		local hasAdaptive = false;
 
-		if (this.getLevel() >= 11 && this.getSkills().hasSkill("perk.student"))
+		if (this.getLevel() >= 12 && this.getSkills().hasSkill("perk.student"))
 		{
 			perks = perks - 1;
 			hasStudent = true;
