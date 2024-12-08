@@ -3,11 +3,11 @@
 	while(!("ItemType" in o.m)) o=o[o.SuperName];
 
 	// this is part of the loadBuyback mod
-	o.setSold = function (sold)
+	o.setSold = function ( sold )
 	{
-		if(!sold || this.isSold()) this.m.IsSold = false;
-		else if(this.isBought())
-		{
+		if (!sold || this.isSold())
+			this.m.IsSold = false;
+		else if (this.isBought()) {
 			this.m.IsBought = false;
 			this.m.IsSold = false;
 		}
@@ -15,11 +15,11 @@
 			this.m.IsSold = true;
 	}
 
-	o.setBought = function (bought)
+	o.setBought = function ( bought )
 	{
-		if(!bought || this.isBought()) this.m.IsBought = false;
-		else if(this.isSold())
-		{
+		if (!bought || this.isBought())
+			this.m.IsBought = false;
+		else if (this.isSold()) {
 			this.m.IsSold = false;
 			this.m.IsBought = false;
 		}
@@ -844,71 +844,5 @@
 		this.m.OriginSettlementID = _in.readI32();
 		this.m.TradeHistorySettlementIDs = ::MSU.Utils.deserialize(_in);
 		this.updateVariant();
-	}
-});
-
-::mods_hookDescendants("items/item", function ( o )
-{
-	local getSellPrice = ::mods_getMember(o, "getSellPrice");
-	local getBuyPrice = ::mods_getMember(o, "getBuyPrice");
-
-	o.getSellPrice <- function ()
-	{
-		local ID = this.getID();
-		local originalTime;
-		if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
-		{
-			originalTime = this.m.BestBefore;
-			this.m.BestBefore = 0;
-		}
-		local sellPrice;
-
-		if (this.isBought())
-		{
-			this.m.IsBought = false;
-			sellPrice = this.getBuyPrice();
-			this.m.IsBought = true;
-		}
-		else
-		{
-			sellPrice = getSellPrice();
-		}
-
-		if (originalTime != null)
-		{
-			this.m.BestBefore = originalTime;
-		}
-
-		return sellPrice;
-	}
-
-	o.getBuyPrice <- function ()
-	{
-		local ID = this.getID();
-		if (this.isSold())
-		{
-			this.m.IsSold = false;
-			local sellPrice = this.getSellPrice();
-			this.m.IsSold = true;
-			return sellPrice;
-		}
-		else
-		{
-			local originalTime;
-			if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
-			{
-				if (this.getSpoilInDays() > this.m.GoodForDays)
-				{
-					originalTime = this.m.BestBefore;
-					this.m.BestBefore = 0;
-				}
-			}
-			local buyPrice = getBuyPrice();
-			if (originalTime != null)
-			{
-				this.m.BestBefore = originalTime;
-			}
-			return buyPrice;
-		}
 	}
 });
