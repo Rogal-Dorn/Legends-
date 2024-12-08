@@ -102,10 +102,11 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
 	{
-		if (_attacker == null || _attacker.isAlliedWith(this.getContainer().getActor()) || ::Tactical.TurnSequenceBar.isActiveEntity(this.getContainer().getActor()) || this.getContainer().getActor().getTile().getDistanceTo(_attacker.getTile()) != 1)
+		local actor = this.getContainer().getActor();
+		if (_attacker == null || _attacker.isAlliedWith(actor) || ::Tactical.TurnSequenceBar.isActiveEntity(actor) || actor.getTile().getDistanceTo(_attacker.getTile()) != 1)
 			return;
 
-		if (_damageHitpoints >= this.getContainer().getActor().getHitpoints())
+		if (_damageHitpoints >= actor.getHitpoints())
 			return;
 
 		if (!this.checkEntities() || !this.isInRange())
@@ -115,13 +116,13 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 		if (this.Math.rand(1, 100) <= chance)
 		{
-			local payback = this.getContainer().getActor().getSkills().getAttackOfOpportunity();
+			local payback = this.getContainer().getSkills().getAttackOfOpportunity();
 
 			if (payback != null)
 			{
 				this.getContainer().setBusy(true);
 				local attackinfo = {
-					User = this.getContainer().getActor(),
+					User = actor,
 					Skill = payback,
 					TargetTile = _attacker.getTile(),
 					Container = this.getContainer()
