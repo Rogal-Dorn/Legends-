@@ -2934,7 +2934,7 @@
 				{
 					id = 2,
 					type = "description",
-					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, they\'ll level up and be able to increase attributes and pick a perk that grants a unique bonus.\n\nBeyond the 11th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
+					text = "Characters gain experience as they or their allies slay enemies in battles. If a character has accumulated sufficient experience, they\'ll level up and be able to increase attributes and pick a perk that grants a unique bonus.\n\nBeyond the 12th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
 				}
 			];
 
