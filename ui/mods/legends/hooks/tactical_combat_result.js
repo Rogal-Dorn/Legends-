@@ -1,8 +1,3 @@
-var legend_tactical_combat_result = {
-	ID : "mod_legends.tactical_combat_result",
-	Hooks : {},
-}
-
 /**
  * Adds new css class dynamically
  */
@@ -22,9 +17,9 @@ $('head').append($('<style>').html([
 /**
  * Adds sort button below 'loot all button'
  */
-legend_tactical_combat_result.Hooks.createDIV = TacticalCombatResultScreenLootPanel.prototype.createDIV;
+mod_legends.Hooks.TacticalCombatResultScreenLootPanel_createDIV = TacticalCombatResultScreenLootPanel.prototype.createDIV;
 TacticalCombatResultScreenLootPanel.prototype.createDIV = function (_parentDiv) {
-	legend_tactical_combat_result.Hooks.createDIV.call(this, _parentDiv);
+	mod_legends.Hooks.TacticalCombatResultScreenLootPanel_createDIV.call(this, _parentDiv);
 	var self = this;
 	var contentRow = $('.column.is-middle .row.is-content');
 	var layout = $('<div class="l-button is-sort"/>');

@@ -1,4 +1,5 @@
 ::mods_registerJS("legends_assets.js");
+::mods_registerJS("legends/hooks/!container.js");
 ::mods_registerJS("legends/hooks/character_screen.js");
 ::mods_registerCSS("legends/hooks/character_screen.css");
 ::mods_registerJS("legends/hooks/tactical_combat_result.js");
