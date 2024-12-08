@@ -1050,21 +1050,21 @@ this.legend_preemptive_beasts_contract <- this.inherit("scripts/contracts/contra
 		local tile = this.getTileToSpawnLocation(playerTile, 5, 10);
 		local party;
 
-		if (this.Flags.get("IsHumans"))
+		if (this.m.Flags.get("IsHumans"))
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits).spawnEntity(tile, "Direwolves", false, this.Const.World.Spawn.BanditsDisguisedAsDirewolves, 100 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 			party.setDescription("A pack of ferocious direwolves on the hunt for prey.");
 			party.setFootprintType(this.Const.World.FootprintsType.Direwolves);
 			this.Const.World.Common.addFootprintsFromTo(this.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Direwolves, 0.75);
 		}
-		else if (this.Flags.get("IsGhouls"))
+		else if (this.m.Flags.get("IsGhouls"))
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Nachzehrers", false, this.Const.World.Spawn.Ghouls, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 			party.setDescription("A flock of scavenging nachzehrers.");
 			party.setFootprintType(this.Const.World.FootprintsType.Ghouls);
 			this.Const.World.Common.addFootprintsFromTo(this.m.Home.getTile(), party.getTile(), this.Const.BeastFootprints, this.Const.World.FootprintsType.Ghouls, 0.75);
 		}
-		else if (this.Flags.get("IsSpiders"))
+		else if (this.m.Flags.get("IsSpiders"))
 		{
 			party = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Beasts).spawnEntity(tile, "Webknechts", false, this.Const.World.Spawn.Spiders, 110 * this.getDifficultyMult() * this.getScaledDifficultyMult());
 			party.setDescription("A swarm of webknechts skittering about.");
