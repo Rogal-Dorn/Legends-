@@ -1,4 +1,4 @@
-var mod = {
+var legend_tactical_combat_result = {
 	ID : "mod_legends.tactical_combat_result",
 	Hooks : {},
 }
@@ -22,9 +22,9 @@ $('head').append($('<style>').html([
 /**
  * Adds sort button below 'loot all button'
  */
-mod.Hooks.createDIV = TacticalCombatResultScreenLootPanel.prototype.createDIV;
+legend_tactical_combat_result.Hooks.createDIV = TacticalCombatResultScreenLootPanel.prototype.createDIV;
 TacticalCombatResultScreenLootPanel.prototype.createDIV = function (_parentDiv) {
-	mod.Hooks.createDIV.call(this, _parentDiv);
+	legend_tactical_combat_result.Hooks.createDIV.call(this, _parentDiv);
 	var self = this;
 	var contentRow = $('.column.is-middle .row.is-content');
 	var layout = $('<div class="l-button is-sort"/>');

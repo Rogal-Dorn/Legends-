@@ -2948,7 +2948,7 @@
 				{
 					id = 2,
 					type = "description",
-					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 11th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
+					text = "The character\'s level measures experience in battle. Characters rise in levels as they gain experience and are able to increase their attributes and gain perks that make them better at the mercenary profession.\n\nBeyond the 12th character level, avatars gain a perk every two levels, and normal characters gain a perk every four levels."
 				}
 			];
 
