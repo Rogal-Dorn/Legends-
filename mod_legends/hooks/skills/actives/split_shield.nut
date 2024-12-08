@@ -28,7 +28,7 @@
 
 			if (shield != null && shield.getCondition() == 0)
 			{
-				if (!_user.isHiddenToPlayer() && _user.IsVisibleForPlayer)
+				if (!_user.isHiddenToPlayer() && _targetTile.IsVisibleForPlayer)
 				{
 					local logMessage = this.Const.UI.getColorizedEntityName(_user) + " has destroyed " + this.Const.UI.getColorizedEntityName(_targetTile.getEntity()) + "\'s shield"
 					if (this.getContainer().hasSkill("perk.legend_smashing_shields"))
