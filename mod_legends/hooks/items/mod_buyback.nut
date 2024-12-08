@@ -43,9 +43,10 @@
 	local getSellPrice = ::mods_getMember(o, "getSellPrice");
 	o.getSellPrice <- function ()
 	{
+		local itemID = this.getID();
 		local originalTime;
 
-		if (::mods_isClass(this, "legend_usable_food") && this.getSpoilInDays() > this.m.GoodForDays)
+		if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
 		{
 			originalTime = this.m.BestBefore;
 			this.m.BestBefore = 0;
@@ -74,6 +75,7 @@
 	local getBuyPrice = ::mods_getMember(o, "getBuyPrice");
 	o.getBuyPrice <- function ()
 	{
+		local itemID = this.getID();
 		if (this.isSold())
 		{
 			this.m.IsSold = false;
@@ -85,7 +87,7 @@
 		{
 			local originalTime;
 
-			if (::mods_isClass(this, "legend_usable_food") && this.getSpoilInDays() > this.m.GoodForDays)
+			if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays)
 			{
 				if (this.getSpoilInDays() > this.m.GoodForDays)
 				{
