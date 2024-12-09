@@ -14,6 +14,7 @@
 	o.m.Type <- -1;
 	o.m.OriginSettlementID <- 0; // the Settlement ID where the item was originally produced
 	o.m.TradeHistorySettlementIDs <- []; // an array of Settlement IDs to track the item's trade history
+	o.m.LastTransactionPrice <- null;
 
 	o.isAllowedInBag = function ( _actor = null )
 	{
@@ -134,6 +135,10 @@
 	{
 		this.setArmor(_a);
 		return 0;
+	}
+
+	o.setTransactionPrice <- function (_price) {
+		this.m.LastTransactionPrice = _price;
 	}
 
 	o.getBuyPrice = function ()
