@@ -99,6 +99,8 @@ this.legend_prosthetic_foot_item <- this.inherit("scripts/items/item", {
 
 	function isUsable()
 	{
+		if (this.getContainer() == null || this.getContainer().getActor() == null || this.getContainer().getActor().isNull())
+			return false;
 		return this.getContainer().getActor().getSkills().hasSkill("injury.maimed_foot") && this.m.IsUsable;
 	}
 

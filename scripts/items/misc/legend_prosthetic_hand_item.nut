@@ -111,6 +111,8 @@ this.legend_prosthetic_hand_item <- this.inherit("scripts/items/item", {
 
 	function isUsable()
 	{
+		if (this.getContainer() == null || this.getContainer().getActor() == null || this.getContainer().getActor().isNull())
+			return false;
 		return this.getContainer().getActor().getSkills().hasSkill("injury.missing_hand") && this.m.IsUsable;
 	}
 
