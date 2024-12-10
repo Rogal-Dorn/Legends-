@@ -98,6 +98,8 @@ this.legend_prosthetic_forearm_item <- this.inherit("scripts/items/item", {
 
 	function isUsable()
 	{
+		if (this.getContainer() == null || this.getContainer().getActor() == null || this.getContainer().getActor().isNull())
+			return false;
 		return this.getContainer().getActor().getSkills().hasSkill("injury.broken_elbow_joint") && this.m.IsUsable;
 	}
 
