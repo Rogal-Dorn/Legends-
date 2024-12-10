@@ -42,8 +42,8 @@
 					_event.m.Dude.setStartValuesEx([
 						"lindwurm_slayer_background"
 					]);
-					_event.m.Dude.getBackground().m.RawDescription = "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They say they are the child of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
-					_event.m.Dude.getBackground().buildDescription(true);
+					// _event.m.Dude.getBackground().m.RawDescription = "{%name% is a supposedly famous monster hunter with a particular talent for slaying lindwurms. They say they are the child of Dirk the Dragonslayer, the monster hunter who ostensibly slew the last living dragon.}";
+					// _event.m.Dude.getBackground().buildDescription(true);
 
 					if (_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand) != null)
 						_event.m.Dude.getItems().getItemAtSlot(this.Const.ItemSlot.Mainhand).removeSelf();
