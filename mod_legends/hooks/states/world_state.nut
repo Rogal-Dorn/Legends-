@@ -6,7 +6,7 @@
 	o.m.Camp <- null;
 	o.m.IDToRef <- array(27, -1);
 	o.m.DistantVisionBonus <- false;
-	o.m.AppropriateTimeToRecalc <- 1; //Leonion's fix
+	o.m.AppropriateTimeToRecalc <- 0; //Leonion's fix
 
 	o.getBrothersInReserves <- function ()
 	{
@@ -493,6 +493,7 @@
 
 	o.startNewCampaign = function ()
 	{
+		m.AppropriateTimeToRecalc = 0;
 		this.setAutoPause(true);
 		this.Time.setVirtualTime(0);
 		this.m.IsRunningUpdatesWhilePaused = true;
@@ -542,6 +543,7 @@
 
 		this.World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("DebugMap").getValue());
 		this.World.Crafting.resetAllBlueprints();
+		m.AppropriateTimeToRecalc = 1;
 	}
 
 	o.showIntroductionScreen <- function ( _tag = null )
