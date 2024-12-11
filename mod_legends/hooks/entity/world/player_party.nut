@@ -482,6 +482,8 @@
 
 			return s;
 		}
+
+		return ::Stash.getCapacity();
 	}
 
 	local onInit = o.onInit;
