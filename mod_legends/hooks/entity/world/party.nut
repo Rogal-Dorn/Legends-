@@ -39,16 +39,6 @@
 			}
 		}
 
-		else if (f != null && !f.isAlwaysHidden())
-		{
-			ret.push({
-				id = 50,
-				type = "hint",
-				icon = f.getUIBanner(),
-				text = "From " + f.getName()
-			});
-		}
-
 		if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue() && this.World.Assets.m.IsBrigand && this.m.Flags.get("IsCaravan"))
 		{
 			local inv = this.getStashInventory().getItems();
