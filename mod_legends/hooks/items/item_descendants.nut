@@ -1,8 +1,7 @@
-::mods_hookDescendants("items/item", function ( o ) {
-	local getSellPrice = o.getSellPrice;
+::mods_hookDescendants("items/item", function (o) {
+	local getSellPrice = ::mods_getMember(o, "getSellPrice");
 	o.getSellPrice <- function ()
 	{
-		local itemID = this.getID();
 		local originalTime;
 
 		if (::mods_isClass(this, "food_item") != null && this.getSpoilInDays() > this.m.GoodForDays) {
@@ -21,10 +20,9 @@
 		return sellPrice;
 	};
 
-	local getBuyPrice = o.getBuyPrice;
+	local getBuyPrice = ::mods_getMember(o, "getBuyPrice");
 	o.getBuyPrice <- function ()
 	{
-		local itemID = this.getID();
 		if (this.m.LastTransactionPrice != null) {
 			return this.m.LastTransactionPrice;
 		} else {
