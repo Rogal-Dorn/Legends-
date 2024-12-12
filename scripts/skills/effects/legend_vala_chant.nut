@@ -46,7 +46,7 @@ this.legend_vala_chant <- this.inherit("scripts/skills/skill", {
 
 	function doValaChecks()
 	{
-		if (("State" in ::Tactical) && ::Tactical.Entities.isCombatFinished())
+		if (("Entities" in ::Tactical) && ::Tactical.Entities.isCombatFinished())
 			return false;
 
 		if (::MSU.isNull(this.getContainer()) || ::MSU.isNull(this.getContainer().getActor()))
