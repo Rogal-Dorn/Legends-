@@ -1296,6 +1296,14 @@
 			this.World.Assets.getOrigin().updateLook();
 	}
 
+	local init = o.init;
+	o.init = function()
+	{
+		init();
+
+		if ("World" in this.getroottable() && "State" in ::World)
+			::World.State.m.Camp.init(); //
+	}
 
 	o.onSerialize = function ( _out )
 	{
