@@ -48,7 +48,7 @@
 	}
 
 	local fill = o.fill;
-	o.fill( _rect, _properties, _pass = 1 )
+	o.fill = function ( _rect, _properties, _pass = 1 )
 	{
 		if (::Legends.IsStartingNewCampaign) {
 			::Const.World.settingsUpdate(); //
