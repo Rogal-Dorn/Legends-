@@ -2,7 +2,8 @@
 	ID = "mod_legends",
 	Version = "19.0.0",
 	Name = "Legends Mod",
-	BuildName = "Aspiration and Reality"
+	BuildName = "Aspiration and Reality",
+	IsStartingNewCampaign = false
 };
 
 if (!("MSU" in this.getroottable()) || ::MSU.SemVer.compare(::MSU.SemVer.getTable(::MSU.Version), ::MSU.SemVer.getTable("1.3.0")) >= 0 && !("Hooks" in this.getroottable()))
