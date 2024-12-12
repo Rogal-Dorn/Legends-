@@ -106,7 +106,7 @@
 	}
 
 	local createAlliances = o.createAlliances;
-	q.createAlliances = function()
+	o.createAlliances = function()
 	{
 		if (m.IsCreatingFactions) {
 			createFreeCompany();
