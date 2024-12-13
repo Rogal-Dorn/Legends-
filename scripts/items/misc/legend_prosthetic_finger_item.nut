@@ -17,6 +17,7 @@ this.legend_prosthetic_finger_item <- this.inherit("scripts/items/item", {
 
 	function getTooltip()
 	{
+		::logInfo("usable?" + this.isUsable() )
 		local result = [
 			{
 				id = 1,
@@ -27,14 +28,14 @@ this.legend_prosthetic_finger_item <- this.inherit("scripts/items/item", {
 				id = 2,
 				type = "description",
 				text = this.getDescription()
+			},
+			{
+				id = 66,
+				type = "text",
+				text = this.getValueString()
 			}
 		];
-		result.push({
-			id = 66,
-			type = "text",
-			text = this.getValueString()
-		});
-
+		
 		if (this.getIconLarge() != null)
 		{
 			result.push({
@@ -65,36 +66,20 @@ this.legend_prosthetic_finger_item <- this.inherit("scripts/items/item", {
 			type = "text",
 			icon = "ui/icons/ranged_skill.png",
 			text = "Reduces the penalty of Missing Finger to [color=" + this.Const.UI.Color.NegativeValue + "]-2%[/color] Ranged Skill"
+		},
+		{
+			id = 65,
+			type = "text",
+			icon = "ui/icons/special.png",
+			text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
+		},
+		{
+			id = 65,
+			type = "text",
+			icon = "ui/icons/warning.png",
+			text = "Can only be used if this character has a missing finger"
 		}]);
-
-		if (!("getActor" in this.getContainer())) {
-			return result;
-		}
-
-		if (this.getContainer().getActor().getSkills().hasSkill("injury.missing_finger"))
-		{
-			result.extend([{
-				id = 65,
-				type = "text",
-				text = "Right-click or drag onto the currently selected character in order to apply it. This item will be consumed in the process."
-			}]);
-		}
-		else
-		{
-			result.push({
-				id = 65,
-				type = "text",
-				text = "Item can not be used, because this character still has all his fingers"
-			});
-		}
 		return result;
-	}
-
-	function isUsable()
-	{
-		if (this.getContainer() == null || this.getContainer().getActor() == null || this.getContainer().getActor().isNull())
-			return false;
-		return this.getContainer().getActor().getSkills().hasSkill("injury.missing_finger") && this.m.IsUsable;
 	}
 
 	function playInventorySound( _eventType )
@@ -105,11 +90,13 @@ this.legend_prosthetic_finger_item <- this.inherit("scripts/items/item", {
 	function onUse( _actor, _item = null )
 	{
 		this.Sound.play("sounds/combat/armor_leather_impact_03.wav", this.Const.Sound.Volume.Inventory);
-		local actor = this.getContainer().getActor();
-		actor.getSkills().add(this.new("scripts/skills/traits/legend_prosthetic_finger"));
-		actor.getSkills().removeByID("injury.missing_finger");
-
-		return true;
+		if (_actor.getSkills().hasSkill("injury.missing_finger"))
+		{
+			_actor.getSkills().add(this.new("scripts/skills/traits/legend_prosthetic_finger"));
+			_actor.getSkills().removeByID("injury.missing_finger");
+			return true;
+		}
+		return false;
 	}
 });
 
