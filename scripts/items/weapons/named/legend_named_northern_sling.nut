@@ -16,7 +16,7 @@ this.legend_named_northern_sling <- this.inherit("scripts/items/weapons/named/na
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = true;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_cr_sling_01";
+		this.m.ArmamentIcon = "icon_sling_02";
 		this.m.Value = 4000;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 9;

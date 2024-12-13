@@ -16,7 +16,7 @@ this.legend_slingstaff <- this.inherit("scripts/items/weapons/weapon", {
 		this.m.AddGenericSkill = true;
 		this.m.ShowQuiver = false;
 		this.m.ShowArmamentIcon = true;
-		this.m.ArmamentIcon = "icon_legend_slingstaff_01";
+		this.m.ArmamentIcon = "icon_sling_02";
 		this.m.Value = 1000;
 		this.m.RangeMin = 2;
 		this.m.RangeMax = 9;
