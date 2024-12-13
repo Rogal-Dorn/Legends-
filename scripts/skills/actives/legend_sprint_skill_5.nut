@@ -78,6 +78,11 @@ this.legend_sprint_skill_5 <- this.inherit("scripts/skills/skill", {
 
 	function onVerifyTarget( _originTile, _targetTile )
 	{
+		if (_originTile.getEntity().getCurrentProperties().IsRooted)
+		{
+			return false;
+		}
+
 		if (!_targetTile.IsEmpty)
 		{
 			return false;
