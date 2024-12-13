@@ -1,4 +1,4 @@
-this.perk_legend_favoured_enemy_noble<- this.inherit("scripts/skills/legend_favoured_enemy_skill", {
+this.perk_legend_favoured_enemy_noble <- this.inherit("scripts/skills/legend_favoured_enemy_skill", {
 	m = {},
 	function create()
 	{
