@@ -77,28 +77,9 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 				id = 11,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range, for [color=" + this.Const.UI.Color.PositiveValue + "]" + paybackdamage + "%[/color] damage"
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + paybackchance + "%[/color] chance to retaliate against an attacker that hits you in melee range"
 			}
 		];
-	}
-
-	function onAnySkillUsed( _skill, _targetEntity, _properties )
-	{
-		local actor = this.getContainer().getActor();
-
-		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
-			return;
-
-		if (!this.checkEntities() || !this.isInRange())
-			return;
-
-		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
-			return;
-		
-		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
-		local paybackdamage = this.getPayBackDamage();
-		
-		_properties.DamageTotalMult *= paybackdamage * 0.01;
 	}
 
 	function onDamageReceived( _attacker, _damageHitpoints, _damageArmor )
