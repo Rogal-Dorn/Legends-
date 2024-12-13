@@ -12,6 +12,8 @@
 	{
 		onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_buckler_bash_skill"));
-		this.addSkill(this.new("scripts/skills/effects/legend_buckler_effect"));
+		local effect = this.new("scripts/skills/effects/legend_buckler_effect");
+		effect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
+		this.getContainer().getActor().getSkills().add(effect);
 	}
 });
