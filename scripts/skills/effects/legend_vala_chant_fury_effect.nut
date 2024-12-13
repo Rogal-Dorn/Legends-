@@ -43,7 +43,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		{
 			return 0.75;
 		}
-		
+
 		return 1.0;
 	}
 
@@ -95,21 +95,20 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 
 		if (!this.checkEntities() || !this.isInRange())
 			return;
-		
+
 		local chance = this.getPayBackChance();
 
 		if (this.Math.rand(1, 100) <= chance)
 		{
 			local payback = this.getContainer().getSkills().getAttackOfOpportunity();
 			if (payback != null)
-			{			
+			{
 				this.getContainer().setBusy(true);
 				local attackinfo = {
 					User = actor,
 					Skill = payback,
 					TargetTile = _attacker.getTile(),
 					Container = this.getContainer(),
-					damageMultOriginal = damageMultOriginal
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onPerformPaypack, attackinfo);
 			}
@@ -174,7 +173,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (!this.isInRange())
 		{
 			this.updateEffect(false);
-			return 
+			return
 		}
 
 		if (this.getContainer().getActor().getID() != this.m.Vala.getID())
@@ -197,7 +196,7 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (!this.isInRange())
 		{
 			this.updateEffect(false);
-			return 
+			return
 		}
 
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
