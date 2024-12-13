@@ -87,11 +87,12 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		local actor = this.getContainer().getActor();
 
 		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
-		{
 			return;
-		}
 
 		if (!this.checkEntities() || !this.isInRange())
+			return;
+
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
 			return;
 		
 		local distance = this.getContainer().getActor().getTile().getDistanceTo(this.m.Vala.getTile());
