@@ -1,5 +1,7 @@
 this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legend_vala_chant", {
-	m = {},
+	m = {
+		isPerformingPayback = false
+	},
 	function create()
 	{
 		this.legend_vala_chant.create();
@@ -99,29 +101,47 @@ this.legend_vala_chant_fury_effect <- this.inherit("scripts/skills/effects/legen
 		if (this.Math.rand(1, 100) <= chance)
 		{
 			local payback = this.getContainer().getSkills().getAttackOfOpportunity();
-
 			if (payback != null)
-			{
+			{			
 				this.getContainer().setBusy(true);
 				local attackinfo = {
 					User = actor,
 					Skill = payback,
 					TargetTile = _attacker.getTile(),
-					Container = this.getContainer()
+					Container = this.getContainer(),
+					damageMultOriginal = damageMultOriginal
 				};
 				this.Time.scheduleEvent(this.TimeUnit.Virtual, this.Const.Combat.RiposteDelay, this.onPerformPaypack, attackinfo);
 			}
 		}
 	}
 
+	function onAnySkillUsed( _skill, _targetEntity, _properties )
+	{
+		local actor = this.getContainer().getActor();
+
+		if (!actor.isPlacedOnMap() || ("State" in this.Tactical) && this.Tactical.State.isBattleEnded())
+			return;
+
+		if (!this.checkEntities() || !this.isInRange())
+			return;
+
+		if (this.Tactical.TurnSequenceBar.getActiveEntity() != null && this.Tactical.TurnSequenceBar.getActiveEntity().getID() == this.getContainer().getActor().getID())
+			return;
+
+		if (this.m.isPerformingPayback == true)
+			_properties.DamageTotalMult *= paybackdamage * 0.01;
+	}
+
 	function onPerformPaypack(_attackinfo)
 	{
 		_attackinfo.Container.setBusy(false);
-
+		this.m.isPerformingPayback = true;
 		if (_attackinfo.User.isAlive() && _attackinfo.TargetTile.getEntity().isAlive())
 		{
 			return _attackinfo.Skill.attackEntity(_attackinfo.User, _attackinfo.TargetTile.getEntity());
 		}
+		this.m.isPerformingPayback = false;
 	}
 
 	function updateEffect(_v)
