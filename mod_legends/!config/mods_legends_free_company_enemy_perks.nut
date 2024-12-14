@@ -112,8 +112,8 @@ if (!("EnemyPerks" in ::Const))
 	[3, "perk_battle_forged", 3],
 	[3, "perk_legend_muscularity", 3],
 	[2, "perk_legend_composure", 2],
-	[3, "perk_double_strike", 2],
-	[3, "perk_sundering_strikes", 2],
+	[3, "perk_legend_double_strike", 2],
+	[3, "perk_legend_smackdown", 2],
 	[1, "perk_backstabber", 1],
 	[1, "perk_colossus", 1],
 	[1, "perk_quick_hands", 1],
@@ -123,10 +123,10 @@ if (!("EnemyPerks" in ::Const))
 ]
 ::Const.EnemyPerks.FreeCompanyLeader <- [
 	[4, "perk_berserk", 3],
-	[3, "perk_double_strike", 2],
+	[3, "perk_legend_double_strike", 2],
 	[1, ["perk_footwork", "perk_legend_tumble"], 2],
 	[2, "perk_reach_advantage", 2],
-	[3, "perk_sundering_strikes", 2],
+	[3, "perk_legend_smackdown", 2],
 	[1, "perk_backstabber", 1],
 	[2, "perk_colossus", 1],
 	[1, "perk_fast_adaption", 1],

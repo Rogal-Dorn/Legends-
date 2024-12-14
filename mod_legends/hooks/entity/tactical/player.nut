@@ -1118,7 +1118,7 @@
 		p.onUnlocked();
 		this.m.Skills.update();
 
-		if (this.m.Level >= 11 && _id == "perk.student")
+		if (this.m.Level >= 12 && _id == "perk.student")
 		{
 			++this.m.PerkPoints;
 		}
@@ -1130,6 +1130,39 @@
 		//++this.m.PerkPoints //// DEBUG, UNCOMMENT FOR UNLIMITED UNLOCKS
 
 		return true;
+	}
+
+	o.updateLevel = function() {
+		while (this.m.Level < this.Const.LevelXP.len() && this.m.XP >= this.Const.LevelXP[this.m.Level])
+		{
+			++this.m.Level;
+			++this.m.LevelUps;
+
+			if (this.m.Level <= this.Const.XP.MaxLevelWithPerkpoints)
+			{
+				++this.m.PerkPoints;
+			}
+
+			if (this.m.Level == 12 && this.m.Skills.hasSkill("perk.student"))
+			{
+				++this.m.PerkPoints;
+			}
+
+			if (("State" in this.World) && this.World.State != null && this.World.Assets.getOrigin() != null)
+			{
+				this.World.Assets.getOrigin().onUpdateLevel(this);
+			}
+
+			if (this.m.Level == 12)
+			{
+				this.updateAchievement("OldAndWise", 1, 1);
+			}
+
+			if (this.m.Level == 12 && this.m.Skills.hasSkill("trait.player"))
+			{
+				this.updateAchievement("TooStubbornToDie", 1, 1);
+			}
+		}
 	}
 
 	o.isPerkUnlockable = function ( _id )

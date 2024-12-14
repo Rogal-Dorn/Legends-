@@ -19,7 +19,7 @@
 				this.Sound.play(this.m.SoundOnLightning[this.Math.rand(0, this.m.SoundOnLightning.len() - 1)], this.Const.Sound.Volume.Skill * 2.0, _user.getPos());
 			}
 
-			if (!targetTile.IsEmpty && targetTile.getEntity().isAlive() && !targetTile.getEntity().isNull())
+			if (!targetTile.IsEmpty && !targetTile.getEntity() != null && targetTile.getEntity().isAlive())
 			{
 				target = targetTile.getEntity();
 				selectedTargets.push(target.getID());

@@ -1785,34 +1785,28 @@
 		this.updateSurroundingTileData();
 	}
 
-
 	o.onLeave <- function ()
 	{
-		foreach (item in this.World.Assets.getStash().getItems())
-		{
-			if (item == null) continue;
-			if (item.isBought())
-			{
-				if (item.isItemType(this.Const.Items.ItemType.TradeGood))
-				{
+		foreach (item in this.World.Assets.getStash().getItems()) {
+			if (item == null)
+				continue;
+			if (item.isBought()) {
+				if (item.isItemType(this.Const.Items.ItemType.TradeGood)) {
 					this.World.Statistics.getFlags().increment("TradeGoodsBought");
-
 					if (::Legends.Mod.ModSettings.getSetting("WorldEconomy").getValue())
-					{
 						this.setResources(this.getResources() + item.getResourceValue());
-					}
 				}
 			}
 			item.setBought(false);
+			item.setTransactionPrice(null);
 		}
 
 		foreach (bro in this.World.getPlayerRoster().getAll())
-		{
 			foreach (item in bro.getItems().getAllItems())
-			{
-				item.setBought(false);
-			}
-		}
+				if (item.isBought()) {
+					item.setBought(false);
+					item.setTransactionPrice(null);
+				}
 
 		foreach (building in this.getBuildings())
 		{
@@ -1835,6 +1829,7 @@
 						}
 					}
 					item.setSold(false);
+					item.setTransactionPrice(null);
 				}
 			}
 		}

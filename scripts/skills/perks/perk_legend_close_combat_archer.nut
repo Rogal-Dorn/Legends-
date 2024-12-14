@@ -2,10 +2,7 @@ this.perk_legend_close_combat_archer <- this.inherit("scripts/skills/skill", {
 	m = {},
 	function create()
 	{
-		this.m.ID = "perk.close_combat_archer";
-		this.m.Name = this.Const.Strings.PerkName.LegendCloseCombatArcher;
-		this.m.Description = this.Const.Strings.PerkDescription.LegendCloseCombatArcher;
-		this.m.Icon = "ui/perks/perk_19.png";
+		::Const.Perks.setup(this.m, ::Const.Perks.PerkDefs.LegendCloseCombatArcher);
 		this.m.Type = this.Const.SkillType.Perk;
 		this.m.Order = this.Const.SkillOrder.Perk;
 		this.m.IsActive = false;

@@ -46,7 +46,7 @@ if (!("Perks" in ::Const))
 	Tree = [
 		[],
 		[],
-		[::Const.Perks.PerkDefs.Relentless],
+		[::Const.Perks.PerkDefs.LegendOnslaught],
 		[::Const.Perks.PerkDefs.SpecMace],
 		[],
 		[::Const.Perks.PerkDefs.LegendReturnFavor],

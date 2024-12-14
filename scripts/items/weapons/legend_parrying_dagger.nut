@@ -2,7 +2,6 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 	m = {
 		Variants = [],
 		WeaponType = ::Const.Items.WeaponType.Dagger, // workaround: hardcode WeaponType since this is actually a shield
-
 		// for offhand weapon
 		RegularDamage = 20,
 		RegularDamageMax = 40,
@@ -99,6 +98,11 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		return result;
 	}
 
+	function playInventorySound( _eventType )
+	{
+		this.Sound.play(::Const.Sound.DefaultWeaponEquip[this.Math.rand(0, ::Const.Sound.DefaultWeaponEquip.len() - 1)], this.Const.Sound.Volume.Inventory);
+	}
+
 	function onEquip()
 	{
 		this.shield.onEquip();
@@ -121,11 +125,15 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 
 	function onUnequip()
 	{
-		local skill = this.getContainer().getActor().getSkills().getSkillByID("effects.legend_parrying");
+		local skillContainer = this.getContainer().getActor().getSkills();
+		local skill = skillContainer.getSkillByID("effects.legend_parrying");
 		if (skill != null && skill.m.IsFromItem)
-		{
-			this.getContainer().getActor().getSkills().removeByID("effects.legend_parrying");
-		}
+			skillContainer.removeByID("effects.legend_parrying");
+
+		skill = skillContainer.getSkillByID("effects.legend_parrying_dagger");
+		if (skill != null)
+			skillContainer.removeByID("effects.legend_parrying_dagger");
+
 		this.shield.onUnequip();
 	}
 

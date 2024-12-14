@@ -135,7 +135,7 @@
 		{
 			if (actor.getSkills().hasSkill(bg))
 			{
-				_properties.DamageTotalMult *= 1.50;
+				_properties.DamageTotalMult *= 1.25;
 				break;
 			}
 		}

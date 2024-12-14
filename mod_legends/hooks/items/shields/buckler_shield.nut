@@ -3,7 +3,7 @@
 	o.create = function ()
 	{
 		create();
-		this.m.Description = "A small but sturdy shield gripped in the fist. Offers poor protection against ranged attacks but can be useful in deflecting blows in melee. Gains defense depending on how many enemies are within 1 tile";
+		this.m.Description = "A small but sturdy shield gripped in the fist. Offers poor protection against ranged attacks but can be useful in deflecting blows in melee. Gains defense depending on how many enemies are within 1 tile.";
 		this.m.MeleeDefense = 5;
 	}
 
@@ -12,6 +12,8 @@
 	{
 		onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_buckler_bash_skill"));
-		this.addSkill(this.new("scripts/skills/effects/legend_buckler_effect"));
+		local effect = this.new("scripts/skills/effects/legend_buckler_effect");
+		effect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
+		this.getContainer().getActor().getSkills().add(effect);
 	}
 });

@@ -30,7 +30,7 @@ local VanillaTree = [
 		::Const.Perks.PerkDefs.Anticipation,
 		::Const.Perks.PerkDefs.ShieldExpert,
 		::Const.Perks.PerkDefs.Brawny,
-		::Const.Perks.PerkDefs.Relentless,
+		::Const.Perks.PerkDefs.LegendOnslaught,
 		::Const.Perks.PerkDefs.Rotation,
 		::Const.Perks.PerkDefs.RallyTheTroops,
 		::Const.Perks.PerkDefs.Taunt

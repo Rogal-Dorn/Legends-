@@ -6,7 +6,7 @@
 	o.m.Camp <- null;
 	o.m.IDToRef <- array(27, -1);
 	o.m.DistantVisionBonus <- false;
-	o.m.AppropriateTimeToRecalc <- 1; //Leonion's fix
+	o.m.AppropriateTimeToRecalc <- 0; //Leonion's fix
 
 	o.getBrothersInReserves <- function ()
 	{
@@ -491,57 +491,29 @@
 		return false;
 	}
 
-	o.startNewCampaign = function ()
+	local loadCampaign = o.loadCampaign;
+	o.loadCampaign = function( _campaignFileName )
 	{
-		this.setAutoPause(true);
-		this.Time.setVirtualTime(0);
-		this.m.IsRunningUpdatesWhilePaused = true;
-		this.setPause(true);
-		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
-		this.Const.World.settingsUpdate();
-		local worldmap = this.MapGen.get("world.worldmap_generator");
-		local minX = worldmap.getMinX();
-		local minY = worldmap.getMinY();
-		this.World.resizeScene(minX, minY);
-		this.logInfo("Generating world with following settings...");
-		foreach (k,v in this.Const.World.Settings)
-		{
-			this.logInfo(k + " : " + v);
-		}
-		worldmap.fill({
-			X = 0,
-			Y = 0,
-			W = minX,
-			H = minY
-		}, this.m.CampaignSettings);
-		this.m.Assets.init();
-		this.m.Camp.init();
-		//this.LoadingScreen.updateProgress("Creating Factions ...");
-		this.World.FactionManager.createFactions(this.m.CampaignSettings);
-		this.World.EntityManager.buildRoadAmbushSpots();
-		this.Math.seedRandomString(this.m.CampaignSettings.Seed);
+		if (::Time.getRealTimeF() - m.CampaignLoadTime < 4.0)
+			return;
 
-		if (this.m.CampaignSettings != null)
-		{
-			this.m.Assets.setCampaignSettings(this.m.CampaignSettings);
-			this.m.CampaignSettings.StartingScenario.onSpawnPlayer();
-			this.m.CampaignSettings.StartingScenario.onInit();
-			this.World.uncoverFogOfWar(this.getPlayer().getTile().Pos, 900.0);
-		}
+		m.AppropriateTimeToRecalc = 0;
+		loadCampaign(_campaignFileName);
+		m.AppropriateTimeToRecalc = 1;
+		getPlayer().calculateModifiers(); //Leonion's fix
+	}
 
-		this.World.FactionManager.uncoverSettlements(this.m.CampaignSettings.ExplorationMode);
-		this.World.FactionManager.runSimulation();
-		this.m.CampaignSettings = null;
-		this.setupWeather();
-		this.Math.seedRandom(this.Time.getRealTime());
-
-		this.World.Flags.set("IsUnholdCampaign", true);
-		this.World.Flags.set("IsWildmenCampaign", true);
-		this.World.Flags.set("IsDesertCampaign", true);
-
-
-		this.World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("DebugMap").getValue());
-		this.World.Crafting.resetAllBlueprints();
+	local startNewCampaign = o.startNewCampaign;
+	o.startNewCampaign = function()
+	{
+		m.AppropriateTimeToRecalc = 0; // set to 0 as you don't want it to update those modifiers
+		::Legends.IsStartingNewCampaign = true;
+		startNewCampaign();
+		::World.setFogOfWar(!::Legends.Mod.ModSettings.getSetting("DebugMap").getValue()); //
+		::World.Crafting.resetAllBlueprints(); //
+		m.AppropriateTimeToRecalc = 1;
+		getPlayer().calculateModifiers(); //Leonion's fix
+		::Legends.IsStartingNewCampaign = false;
 	}
 
 	o.showIntroductionScreen <- function ( _tag = null )
@@ -2071,7 +2043,5 @@
 			this.World.Camp.clear();
 			this.World.Camp.onDeserialize(_in);
 		}
-		this.World.State.m.AppropriateTimeToRecalc = 1;	//Leonion's fix
-		this.World.State.getPlayer().calculateModifiers(); //Leonion's fix
 	}
 });
