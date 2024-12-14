@@ -7,6 +7,7 @@
 	o.m.IDToRef <- array(27, -1);
 	o.m.DistantVisionBonus <- false;
 	o.m.AppropriateTimeToRecalc <- 0; //Leonion's fix
+	o.m.Encounters <- null;
 
 	o.getBrothersInReserves <- function ()
 	{
@@ -116,6 +117,9 @@
 		this.m.CommanderDied = false;
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
 		this.World.Camp <- this.WeakTableRef(this.m.Camp);
+		this.m.Encounters = this.new("scripts/states/world/encounter_manager");
+		this.World.Encounters <- this.WeakTableRef(this.m.Encounters);
+		this.m.Encounters.onInit();
 		onInit();
 	}
 
@@ -146,6 +150,9 @@
 		this.m.Camp = null;
 		this.World.Camp = null;
 		onFinish();
+		this.m.Encounters.clear();
+		this.m.Encounters = null;
+		this.World.Encounters = null;
 	}
 
 	local onShow = o.onShow;
@@ -2003,6 +2010,62 @@
 		return this.m.DistantVisionBonus;
 	}
 
+	/**
+	 * Adds convenience method to world state to mimic original
+	 * Shows encouter dialog while in settlement
+	 */
+	o.showEncounterScreenFromTown <- function (_encounter, _playSound = true) {
+		if (!this.m.EventScreen.isVisible() && !this.m.EventScreen.isAnimating())
+		{
+			if (_playSound && this.Const.Events.GlobalSound != "")
+			{
+				this.Sound.play(this.Const.Events.GlobalSound, 1.0);
+			}
+
+			this.m.WorldTownScreen.hideAllDialogs();
+			this.m.EventScreen.setIsEncounter(true);
+			this.m.EventScreen.show(_encounter);
+			this.m.MenuStack.push(function ()
+			{
+				this.m.EventScreen.hide();
+				this.m.WorldTownScreen.showLastActiveDialog();
+				this.m.EventScreen.setIsEncounter(false);
+				this.m.WorldTownScreen.refresh();
+			}, function ()
+			{
+				return false;
+			});
+		}
+	}
+
+	/**
+	 * Adds convenience method to world state to mimic original
+	 * Shows encouter dialog while in camp
+	 */
+	o.showEncounterScreenFromCamp <- function (_encounter, _playSound = true) {
+		if (!this.m.EventScreen.isVisible() && !this.m.EventScreen.isAnimating())
+		{
+			if (_playSound && this.Const.Events.GlobalSound != "")
+			{
+				this.Sound.play(this.Const.Events.GlobalSound, 1.0);
+			}
+
+			this.m.CampScreen.hide();
+			this.m.EventScreen.setIsEncounter(true);
+			this.m.EventScreen.show(_encounter);
+			this.m.MenuStack.push(function ()
+			{
+				this.m.EventScreen.hide();
+				this.m.CampScreen.show();
+				this.m.EventScreen.setIsEncounter(false);
+				this.m.WorldTownScreen.refresh();
+			}, function ()
+			{
+				return false;
+			});
+		}
+	}
+
 	local onBeforeSerialize = o.onBeforeSerialize;
 	o.onBeforeSerialize = function ( _out )
 	{
@@ -2022,6 +2085,7 @@
 	local onSerialize = o.onSerialize;
 	o.onSerialize = function ( _out )
 	{
+		this.m.Encounters.onSerialize(_out);
 		onSerialize( _out );
 		this.World.Camp.onSerialize(_out);
 	}
@@ -2029,6 +2093,9 @@
 	local onDeserialize = o.onDeserialize;
 	o.onDeserialize = function ( _in )
 	{
+		if (::Legends.Mod.Serialization.isSavedVersionAtLeast("19.1.0", _in.getMetaData())) {
+			this.m.Encounters.onDeserialize(_in);
+		}
 		onDeserialize(_in);
 		if (this.m.EscortedEntity == null)
 		{

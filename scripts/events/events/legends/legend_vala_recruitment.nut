@@ -1,7 +1,8 @@
 this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 	m = {
 		Vala = null,
-		Town = null
+		Town = null,
+		isValidForEncounter = false
 	},
 	function create()
 	{
@@ -125,6 +126,9 @@ this.legend_vala_recruitment <- this.inherit("scripts/events/event", {
 
 		this.m.Town = town;
 		this.m.Score = 20.0 + ((brotherlevels / totalbrothers * 10.00) / this.Const.LevelXP.len());
+
+		this.m.isValidForEncounter = this.m.Score > 0 && this.Time.getVirtualTimeF() > this.m.CooldownUntil;
+		this.m.Score = 0; // this disables event from happening normally
 	}
 
 	function onPrepare()
