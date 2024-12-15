@@ -1,6 +1,6 @@
-::mods_hookNewObject("ui/screens/world/world_combat_dialog", function(q) {
-	local show = q.show;
-	q.show = function( _entities, _allyBanners, _enemyBanners, _allowDisengage, _allowFormationPicking, _text, _image, _disengageText = "Cancel" )
+::mods_hookNewObject("ui/screens/world/world_combat_dialog", function(o) {
+	local show = o.show;
+	o.show = function( _entities, _allyBanners, _enemyBanners, _allowDisengage, _allowFormationPicking, _text, _image, _disengageText = "Cancel" )
 	{
 		if (_entities.len() > 0 && ::Legends.Mod.ModSettings.getSetting("ExactEngageNumbers").getValue()) {
 			local stackinfos, count = 0;
@@ -32,7 +32,7 @@
 								Icon = ::Const.EntityIcon[i],
 								Overlay = null
 							});
-							
+
 						else {
 							local start = this.isFirstCharacter(::Const.Strings.EntityName[i], [
 								"A",
@@ -46,7 +46,7 @@
 								Icon = ::Const.EntityIcon[i],
 								Overlay = null
 							});
-						}		
+						}
 					}
 
 					if (_entities.len() != new.len()) {
@@ -61,7 +61,7 @@
 				stackinfos = null;
 			}
 		}
-		
+
 
 		show(_entities, _allyBanners, _enemyBanners, _allowDisengage, _allowFormationPicking, _text, _image, _disengageText);
 	}
