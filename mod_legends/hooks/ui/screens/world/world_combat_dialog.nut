@@ -7,6 +7,8 @@
 			while (stackinfos == null && count <= 20) { // there is no way there is more than 20 mod hook on that same function lol
 				stackinfos = getstackinfos(count);
 
+				if (stackinfos == null) break;
+
 				if (stackinfos.func == "showCombatDialog"
 					&& stackinfos.locals.rawin("entities")
 					&& stackinfos.locals.rawin("entityTypes")
