@@ -52,6 +52,12 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 			{
 				id = 6,
 				type = "text",
+				icon = "ui/icons/vision.png",
+				text = "Has a range of [color=" + this.Const.UI.Color.PositiveValue + "]" + this.getMaxRange() + "[/color] tiles on even ground"
+			},
+			{
+				id = 6,
+				type = "text",
 				icon = "ui/icons/special.png",
 				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]15[/color] - [color=" + this.Const.UI.Color.DamageValue + "]30[/color] damage per turn for three turns across six tiles. Burns allies. Requires a staff"
 			}
@@ -73,9 +79,8 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 	function isUsable()
 	{
 		if (!this.getContainer().getActor().isArmedWithMagicStaff()) 
-		{
 			return false
-		}
+
 		return !this.Tactical.isActive() || this.skill.isUsable() && !this.getContainer().getActor().getTile().hasZoneOfControlOtherThan(this.getContainer().getActor().getAlliedFactions());
 	}
 
