@@ -351,7 +351,6 @@
 				}
 
 				food.remove(i);
-				  // [136]  OP_JMP            0      8    0    0
 			}
 			else
 			{
@@ -365,6 +364,8 @@
 
 	o.update = function ( _worldState )
 	{
+		::World.State.m.Camp.update(_worldState);
+
 		if (this.World.Flags.getAsInt("MandatoryShopRefreshDayMark") + 50 <= this.World.getTime().Days)
 		{
 			this.World.Flags.set("MandatoryShopRefreshDayMark", this.World.getTime().Days);
