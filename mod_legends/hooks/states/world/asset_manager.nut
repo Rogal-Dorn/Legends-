@@ -364,7 +364,8 @@
 
 	o.update = function ( _worldState )
 	{
-		::World.State.m.Camp.update(_worldState);
+		if (isCamping())
+			::World.State.m.Camp.update(_worldState);
 
 		if (this.World.Flags.getAsInt("MandatoryShopRefreshDayMark") + 50 <= this.World.getTime().Days)
 		{
