@@ -1,5 +1,7 @@
 this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
-	m = {},
+	m = {
+		LastForTurns = 3
+	},
 	function create()
 	{
 		this.m.ID = "actives.legend_firefield";
@@ -43,15 +45,15 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		this.m.MaxLevelDifference = 6;
 	}
 
-		function getTooltip()
+	function getTooltip()
 	{
-		local ret = this.getDefaultTooltip();
+		local ret = this.getDefaultUtilityTooltip();
 		ret.extend([
 			{
 				id = 6,
 				type = "text",
 				icon = "ui/icons/special.png",
-				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]10[/color] - [color=" + this.Const.UI.Color.DamageValue + "]20[/color] damage per turn for two turns across six tiles. Burns allies. Requires a staff"
+				text = "Inflicts an additional [color=" + this.Const.UI.Color.DamageValue + "]15[/color] - [color=" + this.Const.UI.Color.DamageValue + "]30[/color] damage per turn for three turns across six tiles. Burns allies. Requires a staff"
 			}
 		]);
 		return ret;
@@ -59,17 +61,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 
 	function isViableTarget( _user, _target )
 	{
-		if (_target.isAlliedWith(_user))
-		{
-			return false;
-		}
-
-		if (_target.getTile().Properties.Effect != null)
-		{
-			return false;
-		}
-
-		return true;
+		return !_target.isAlliedWith(_user) && _target.getTile().Properties.Effect == null;
 	}
 
 	function onAfterUpdate( _properties )
@@ -103,16 +95,16 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		}
 
 		local p = {
-			Type = "legend_firefield",
-			Tooltip = "Fire lingers here, burning all who enter",
+			Type = "fire",
+			Tooltip = "Fire rages here, melting armor and flesh alike",
 			IsPositive = false,
 			IsAppliedAtRoundStart = false,
 			IsAppliedAtTurnEnd = true,
 			IsAppliedOnMovement = false,
 			IsAppliedOnEnter = false,
 			IsByPlayer = _user.isPlayerControlled(),
-			Timeout = this.Time.getRound() + 2,
-			Callback = this.Const.Tactical.Common.onApplyFirefield,
+			Timeout = this.Time.getRound() + m.LastForTurns,
+			Callback = this.Const.Tactical.Common.onApplyFire,
 			function Applicable( _a )
 			{
 				return true;
@@ -123,7 +115,7 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 		{
 			if (tile.Properties.Effect != null && tile.Properties.Effect.Type == "legend_firefield")
 			{
-				tile.Properties.Effect.Timeout = this.Time.getRound() + 2;
+				tile.Properties.Effect.Timeout = this.Time.getRound() + m.LastForTurns;
 			}
 			else
 			{
@@ -136,6 +128,17 @@ this.legend_firefield_skill <- this.inherit("scripts/skills/skill", {
 				}
 
 				this.Tactical.Entities.addTileEffect(tile, tile.Properties.Effect, particles);
+			}
+
+			if (!tile.IsOccupiedByActor)
+				continue;
+
+			local entity = tile.getEntity();
+			
+			for (local i = 0; i < 2; ++i)
+			{
+				if (entity.isAlive() && !entity.isDying())
+					p.Callback.onApplyFire(tile, entity);
 			}
 		}
 
