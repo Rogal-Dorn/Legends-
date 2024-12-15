@@ -11,7 +11,7 @@
 	o.getBrothersInReserves <- function ()
 	{
 		local count = 0;
-		foreach (bro in this.World.getPlayerRoster().getAll())
+		foreach (bro in ::World.getPlayerRoster().getAll())
 		{
 			if (bro.isInReserves())
 			{
@@ -23,7 +23,7 @@
 
 	o.getBrothersInFrontline <- function ()
 	{
-		return this.World.getPlayerRoster().getSize() - this.getBrothersInReserves();
+		return ::World.getPlayerRoster().getSize() - this.getBrothersInReserves();
 	}
 
 	o.getCampScreen <- function ()
@@ -46,7 +46,7 @@
 	{
 		this.m.CommanderDied = false;
 		this.m.Camp = this.new("scripts/states/world/camp_manager");
-		this.World.Camp <- this.WeakTableRef(this.m.Camp);
+		::World.Camp <- this.WeakTableRef(this.m.Camp);
 		onInit();
 	}
 
@@ -75,7 +75,7 @@
 	{
 		this.m.Camp.destroy();
 		this.m.Camp = null;
-		this.World.Camp = null;
+		::World.Camp = null;
 		onFinish();
 	}
 
@@ -115,7 +115,7 @@
 	o.showIntroductionScreen <- function ( _tag = null )
 	{
 		this.Music.setTrackList(this.Const.Music.CivilianTracks, this.Const.Music.CrossFadeTime);
-		this.World.Contracts.update(true);
+		::World.Contracts.update(true);
 	}
 
 	local setNewCampaignSettings = o.setNewCampaignSettings;
@@ -129,141 +129,40 @@
 		setNewCampaignSettings(_settings);
 	}
 
-	o.onCombatFinished = function ()
+	local onCombatFinished = o.onCombatFinished;
+	o.onCombatFinished = function()
 	{
-		this.logDebug("World::onCombatFinished");
-		this.World.FactionManager.onCombatFinished();
-		this.World.Statistics.getFlags().increment("LastCombatID", 1);
-		this.Time.setVirtualTime(this.m.CombatStartTime);
-		this.Math.seedRandom(this.Time.getRealTime());
-		this.m.CombatStartTime = 0;
-		this.m.CombatSeed = 0;
-		this.World.Statistics.getFlags().set("LastCombatSavedCaravan", false);
+		local friendlyCaravanParties = [];
 
-		if (!this.World.Statistics.getFlags().get("LastCombatWasArena"))
+		foreach( party in m.PartiesInCombat )
 		{
-			local nonLocationBattle = true;
+			if (party.getTroops().len() > 0
+				&& party.isAlive()
+				&& party.isAlliedWithPlayer()
+				&& party.getFlags().get("IsCaravan")
+				&& m.EscortedEntity == null
+			) {
+				friendlyCaravanParties.push(party);
+				party.getFlags().set("IsCaravan", false); // set to false so the check in the original 'onCombatFinished' will fail
+				::World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
 
-			foreach( party in this.m.PartiesInCombat )
-			{
-				if (party.isLocation() && !party.isAlliedWithPlayer())
-				{
-					nonLocationBattle = false;
+				if (party.getStashInventory().getItems().len() != 0) {
+					local prefix = "scripts/items/";
+					local script = ::IO.scriptFilenameByHash(::MSU.Array.rand(party.getStashInventory().getItems()).ClassNameHash);
+					::World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", script.slice(prefix.len()));
 				}
-
-				if (party.isAlive() && party.getTroops().len() == 0)
-				{
-					party.onCombatLost();
-				}
-				else if (party.isAlive() && party.isAlliedWithPlayer() && party.getFlags().get("IsCaravan") && this.m.EscortedEntity == null)
-				{
-					this.World.Statistics.getFlags().set("LastCombatSavedCaravan", true);
-
-					if (this.World.Statistics.getFlags().has("LastCombatSavedCaravanProduce") && typeof this.World.Statistics.getFlags().get("LastCombatSavedCaravanProduce") != "string")
-					{
-						this.World.Statistics.getFlags().remove("LastCombatSavedCaravanProduce");
-					}
-
-					if (party.getStashInventory().getItems().len() != 0)
-					{
-						local prefix = "scripts/items/";
-						local script = this.IO.scriptFilenameByHash(::MSU.Array.rand(party.getStashInventory().getItems()).ClassNameHash);
-						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", script.slice(prefix.len()));
-					}
-					else if (party.getInventory().len() != 0)
-					{
-						this.World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", ::MSU.Array.rand(party.getInventory()));
-					}
-				}
-			}
-
-			this.m.PartiesInCombat = [];
-
-			if (nonLocationBattle)
-			{
-				local playerTile = this.getPlayer().getTile();
-				local battlefield;
-
-				if (!playerTile.IsOccupied)
-				{
-					battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", playerTile.Coords);
-				}
-				else
-				{
-					for( local i = 0; i != 6; i = ++i )
-					{
-						if (!playerTile.hasNextTile(i))
-						{
-						}
-						else
-						{
-							local nextTile = playerTile.getNextTile(i);
-
-							if (!nextTile.IsOccupied)
-							{
-								battlefield = this.World.spawnLocation("scripts/entity/world/locations/battlefield_location", nextTile.Coords);
-								break;
-							}
-						}
-					}
-				}
-
-				if (battlefield != null)
-				{
-					battlefield.setSize(2);
+				else if (party.getInventory().len() != 0) {
+					::World.Statistics.getFlags().set("LastCombatSavedCaravanProduce", ::MSU.Array.rand(party.getInventory()));
 				}
 			}
 		}
 
-		if (this.World.getPlayerRoster().getSize() == 0 || !this.World.Assets.getOrigin().onCombatFinished() || this.commanderDied())
+		onCombatFinished();
+
+		foreach( party in friendlyCaravanParties )
 		{
-			if (this.World.Assets.isIronman())
-			{
-				this.autosave();
-			}
-
-			this.show();
-			this.showGameFinishScreen(false);
-			return;
+			party.getFlags().set("IsCaravan", true); // reverse the change
 		}
-
-		local playerRoster = this.World.getPlayerRoster().getAll();
-
-		foreach( bro in playerRoster )
-		{
-			bro.onCombatFinished();
-		}
-
-		this.Stash.setLocked(false);
-		this.Sound.stopAmbience();
-		this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
-		this.Sound.setAmbience(1, this.getSurroundingLocationSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceOutsideSettlement, this.Const.Sound.AmbienceOutsideDelay);
-
-		if (this.Settings.getGameplaySettings().RestoreEquipment)
-		{
-			this.World.Assets.restoreEquipment();
-		}
-
-		this.World.Assets.consumeItems();
-		this.World.Assets.refillAmmo();
-		this.World.Assets.updateAchievements();
-		this.World.Assets.checkAmbitionItems();
-		this.updateTopbarAssets();
-		this.World.State.getPlayer().updateStrength();
-		this.World.Events.updateBattleTime();
-		this.World.Ambitions.resetTime();
-		this.stunPartiesNearPlayer();
-		this.setWorldmapMusic(true);
-
-		if (this.World.Assets.isIronman())
-		{
-			this.autosave();
-		}
-
-		this.show();
-		this.setAutoPause(false);
-		this.setPause(true);
-		this.m.IsTriggeringContractUpdatesOnce = true;
 	}
 
 	o.onCamp = function ()
@@ -273,9 +172,9 @@
 			return;
 		}
 
-		this.World.Camp.onCamp();
+		::World.Camp.onCamp();
 
-		if (this.World.Camp.isCamping())
+		if (::World.Camp.isCamping())
 		{
 			this.m.Player.setDestination(null);
 			this.m.Player.setPath(null);
@@ -283,35 +182,35 @@
 			this.m.AutoAttack = null;
 		}
 
-		if (this.World.Camp.isCamping())
+		if (::World.Camp.isCamping())
 		{
 			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
-			this.World.TopbarDayTimeModule.enableNormalTimeButton(false);
+			::World.TopbarDayTimeModule.enableNormalTimeButton(false);
 
 			if (!this.isPaused())
 			{
-				this.World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-				this.World.TopbarDayTimeModule.updateTimeButtons(2);
+				::World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
+				::World.TopbarDayTimeModule.updateTimeButtons(2);
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+				::World.TopbarDayTimeModule.updateTimeButtons(0);
 			}
 			this.setPause(false);
 		}
 		else
 		{
 			this.m.LastWorldSpeedMult = 1.0;
-			this.World.TopbarDayTimeModule.enableNormalTimeButton(true);
+			::World.TopbarDayTimeModule.enableNormalTimeButton(true);
 
 			if (!this.isPaused())
 			{
-				this.World.setSpeedMult(1.0);
-				this.World.TopbarDayTimeModule.updateTimeButtons(1);
+				::World.setSpeedMult(1.0);
+				::World.TopbarDayTimeModule.updateTimeButtons(1);
 			}
 			else
 			{
-				this.World.TopbarDayTimeModule.updateTimeButtons(0);
+				::World.TopbarDayTimeModule.updateTimeButtons(0);
 			}
 			this.setPause(true);
 		}
@@ -319,10 +218,10 @@
 
 	o.getLocalCombatProperties = function ( _pos, _ignoreNoEnemies = false )
 	{
-		local raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
+		local raw_parties = ::World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
 		local parties = [];
 		local properties = this.Const.Tactical.CombatInfo.getClone();
-		local tile = this.World.getTile(this.World.worldToTile(_pos));
+		local tile = ::World.getTile(::World.worldToTile(_pos));
 		local isAtUniqueLocation = false;
 		properties.TerrainTemplate = this.Const.World.TerrainTacticalTemplate[tile.TacticalType];
 		properties.Tile = tile;
@@ -351,7 +250,7 @@
 
 			if (party.isInCombat())
 			{
-				raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
+				raw_parties = ::World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
 				break;
 			}
 		}
@@ -412,7 +311,7 @@
 				properties.LocationTemplate.OwnedByFaction = party.getFaction();
 			}
 
-			this.World.Combat.abortCombatWithParty(party);
+			::World.Combat.abortCombatWithParty(party);
 			party.onBeforeCombatStarted();
 			local troops = party.getTroops();
 
@@ -424,7 +323,7 @@
 					t.Party <- this.WeakTableRef(party);
 					properties.Entities.push(t);
 
-					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
+					if (!::World.FactionManager.isAlliedWithPlayer(party.getFaction()))
 					{
 						++factions[party.getFaction()];
 					}
@@ -460,9 +359,9 @@
 			}
 		}
 
-		if (this.World.FactionManager.getFaction(highest_faction) != null)
+		if (::World.FactionManager.getFaction(highest_faction) != null)
 		{
-			properties.Music = this.World.FactionManager.getFaction(highest_faction).getCombatMusic();
+			properties.Music = ::World.FactionManager.getFaction(highest_faction).getCombatMusic();
 		}
 
 		return properties;
@@ -474,7 +373,7 @@
 		local allyBanners = [];
 		local enemyBanners = [];
 		local hasOpponents = false;
-		local listEntities = _isCombatantsVisible && (_isPlayerInitiated || this.World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && this.World.getTime().IsDaytime);
+		local listEntities = _isCombatantsVisible && (_isPlayerInitiated || ::World.Assets.getOrigin().getID() == "scenario.rangers" || this.Const.World.TerrainTypeLineBattle[this.m.Player.getTile().Type] && ::World.getTime().IsDaytime);
 
 		if (_pos == null)
 		{
@@ -489,10 +388,10 @@
 
 		if (allyBanners.len() == 0)
 		{
-			allyBanners.push(this.World.Assets.getBanner());
+			allyBanners.push(::World.Assets.getBanner());
 		}
 
-		if (!_isPlayerInitiated && this.World.Camp.isCamping())
+		if (!_isPlayerInitiated && ::World.Camp.isCamping())
 		{
 			_allowFormationPicking = false;
 		}
@@ -513,7 +412,7 @@
 
 		if (_properties == null)
 		{
-			local parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
+			local parties = ::World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
 			local isAtUniqueLocation = false;
 
 			if (parties.len() <= 1)
@@ -551,7 +450,7 @@
 
 				if (party.isInCombat())
 				{
-					parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
+					parties = ::World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
 					break;
 				}
 			}
@@ -624,7 +523,7 @@
 		{
 			foreach( t in _properties.Entities )
 			{
-				if (!hasOpponents && (!this.World.FactionManager.isAlliedWithPlayer(t.Faction) || _properties.TemporaryEnemies.find(t.Faction) != null))
+				if (!hasOpponents && (!::World.FactionManager.isAlliedWithPlayer(t.Faction) || _properties.TemporaryEnemies.find(t.Faction) != null))
 				{
 					hasOpponents = true;
 				}
@@ -711,10 +610,10 @@
 			}
 		}
 
-		local tile = this.World.getTile(this.World.worldToTile(_pos));
+		local tile = ::World.getTile(::World.worldToTile(_pos));
 		local image = this.Const.World.TerrainTacticalImage[tile.TacticalType];
 
-		if (!this.World.getTime().IsDaytime)
+		if (!::World.getTime().IsDaytime)
 		{
 			image = image + "_night";
 		}
@@ -758,7 +657,7 @@
 			return;
 		}
 
-		if (this.World.Camp.isCamping())
+		if (::World.Camp.isCamping())
 		{
 			this.onCamp();
 			return
@@ -771,26 +670,26 @@
 		//this.m.WorldTownScreen.setTown(this.m.LastEnteredTown);
 		this.m.CampScreen.show();
 		this.Cursor.setCursor(this.Const.UI.Cursor.Hand);
-		this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrainInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
-		//this.Sound.setAmbience(1, this.m.LastEnteredTown.getSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceInSettlement, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrainInSettlement, ::World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+		//this.Sound.setAmbience(1, this.m.LastEnteredTown.getSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceInSettlement, ::World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
 		this.m.MenuStack.push(function ()
 		{
-			this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, this.World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
+			this.Sound.setAmbience(0, this.getSurroundingAmbienceSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceTerrain, ::World.getTime().IsDaytime ? this.Const.Sound.AmbienceMinDelay : this.Const.Sound.AmbienceMinDelayAtNight);
 			this.Sound.setAmbience(1, this.getSurroundingLocationSounds(), this.Const.Sound.Volume.Ambience * this.Const.Sound.Volume.AmbienceOutsideSettlement, this.Const.Sound.AmbienceOutsideDelay);
-			this.World.getCamera().zoomTo(this.m.CustomZoom, 4.0);
-			// this.World.Assets.consumeItems();
-			// this.World.Assets.refillAmmo();
-			// this.World.Assets.updateAchievements();
-			// this.World.Assets.checkAmbitionItems();
-			// this.World.Ambitions.resetTime(false, 2.0);
+			::World.getCamera().zoomTo(this.m.CustomZoom, 4.0);
+			// ::World.Assets.consumeItems();
+			// ::World.Assets.refillAmmo();
+			// ::World.Assets.updateAchievements();
+			// ::World.Assets.checkAmbitionItems();
+			// ::World.Ambitions.resetTime(false, 2.0);
 			// this.updateTopbarAssets();
-			// this.World.State.getPlayer().updateStrength();
+			// ::World.State.getPlayer().updateStrength();
 			this.m.CampScreen.clear();
 			this.m.CampScreen.hide();
 			this.m.WorldScreen.show();
-			this.Music.setTrackList(this.World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
+			this.Music.setTrackList(::World.FactionManager.isGreaterEvil() ? this.Const.Music.WorldmapTracksGreaterEvil : this.Const.Music.WorldmapTracks, this.Const.Music.CrossFadeTime);
 
-			if (this.World.Assets.isIronman())
+			if (::World.Assets.isIronman())
 			{
 				this.autosave();
 			}
@@ -831,7 +730,7 @@
 
 	o.showCharacterScreenFromCamp <- function ()
 	{
-		this.World.Assets.updateFormation();
+		::World.Assets.updateFormation();
 		this.m.CampScreen.hideAllDialogs();
 		this.m.CharacterScreen.show();
 		this.m.MenuStack.push(function ()
@@ -895,7 +794,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(3.0);
+			::World.setSpeedMult(3.0);
 			this.logDebug("World Speed set to x3.0");
 			return true;
 
@@ -910,7 +809,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(4.0);
+			::World.setSpeedMult(4.0);
 			this.logDebug("World Speed set to x4.0");
 			return true;
 
@@ -925,7 +824,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(5.0);
+			::World.setSpeedMult(5.0);
 			this.logDebug("World Speed set to x5.0");
 			return true;
 
@@ -940,7 +839,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(6.0);
+			::World.setSpeedMult(6.0);
 			this.logDebug("World Speed set to x6.0");
 			return true;
 
@@ -955,7 +854,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(7.0);
+			::World.setSpeedMult(7.0);
 			this.logDebug("World Speed set to x7.0");
 			return true;
 
@@ -970,7 +869,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(8.0);
+			::World.setSpeedMult(8.0);
 			this.logDebug("World Speed set to x8.0");
 			return true;
 
@@ -985,7 +884,7 @@
 				break;
 			}
 
-			this.World.setSpeedMult(9.0);
+			::World.setSpeedMult(9.0);
 			this.logDebug("World Speed set to x9.0");
 			return true;
 
@@ -1014,9 +913,9 @@
 				break;
 			}
 
-			this.World.Assets.setConsumingAssets(!this.World.Assets.isConsumingAssets());
+			::World.Assets.setConsumingAssets(!::World.Assets.isConsumingAssets());
 
-			if (this.World.Assets.isConsumingAssets())
+			if (::World.Assets.isConsumingAssets())
 			{
 				this.logDebug("Player is consuming assets.");
 			}
@@ -1033,9 +932,9 @@
 				break;
 			}
 
-			this.World.setFogOfWar(!this.World.isUsingFogOfWar());
+			::World.setFogOfWar(!::World.isUsingFogOfWar());
 
-			if (this.World.isUsingFogOfWar())
+			if (::World.isUsingFogOfWar())
 			{
 				this.logDebug("Fog Of War activated.");
 			}
@@ -1107,7 +1006,7 @@
 
 			if (this.m.LastTileHovered != null)
 			{
-				local faction = this.World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
+				local faction = ::World.FactionManager.getFactionOfType(this.Const.FactionType.Bandits);
 				local party = faction.spawnEntity(this.m.LastTileHovered, "TEST GROUP", false, this.Const.World.Spawn.BanditRoamers, 200);
 				party.getSprite("banner").setBrush("banner_orcs_04");
 				party.setDescription("A band of menacing orcs, greenskinned and towering any man.");
@@ -1125,7 +1024,7 @@
 				break;
 			}
 
-			this.World.Assets.addMoney(10000);
+			::World.Assets.addMoney(10000);
 			this.updateTopbarAssets();
 			break;
 
@@ -1135,7 +1034,7 @@
 				break;
 			}
 
-			local playerRoster = this.World.getPlayerRoster().getAll();
+			local playerRoster = ::World.getPlayerRoster().getAll();
 
 			foreach( bro in playerRoster )
 			{
@@ -1151,7 +1050,7 @@
 				break;
 			}
 
-			this.World.Assets.addBusinessReputation(500);
+			::World.Assets.addBusinessReputation(500);
 			break;
 
 		case 81:
@@ -1366,7 +1265,7 @@
 				break;
 
 			case 75:
-				if (!this.m.MenuStack.hasBacksteps() && !this.World.Assets.isIronman())
+				if (!this.m.MenuStack.hasBacksteps() && !::World.Assets.isIronman())
 				{
 					this.saveCampaign("quicksave");
 				}
@@ -1374,7 +1273,7 @@
 				break;
 
 			case 79:
-				if (!this.m.MenuStack.hasBacksteps() && !this.World.Assets.isIronman() && this.World.canLoad("quicksave"))
+				if (!this.m.MenuStack.hasBacksteps() && !::World.Assets.isIronman() && ::World.canLoad("quicksave"))
 				{
 					this.loadCampaign("quicksave");
 				}
@@ -1454,7 +1353,7 @@
 						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
 					}
 
-					this.World.getCamera().move(-1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, this.World.getCamera().Zoom * 0.66), 0);
+					::World.getCamera().move(-1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, ::World.getCamera().Zoom * 0.66), 0);
 					return true;
 				}
 
@@ -1469,7 +1368,7 @@
 						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
 					}
 
-					this.World.getCamera().move(1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, this.World.getCamera().Zoom * 0.66), 0);
+					::World.getCamera().move(1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, ::World.getCamera().Zoom * 0.66), 0);
 					return true;
 				}
 
@@ -1485,7 +1384,7 @@
 						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
 					}
 
-					this.World.getCamera().move(0, 1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, this.World.getCamera().Zoom * 0.66));
+					::World.getCamera().move(0, 1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, ::World.getCamera().Zoom * 0.66));
 					return true;
 				}
 
@@ -1500,7 +1399,7 @@
 						this.m.WorldScreen.getTopbarOptionsModule().onCameraLockButtonPressed();
 					}
 
-					this.World.getCamera().move(0, -1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, this.World.getCamera().Zoom * 0.66));
+					::World.getCamera().move(0, -1500.0 * this.Time.getDelta() * this.Math.maxf(1.0, ::World.getCamera().Zoom * 0.66));
 					return true;
 				}
 
@@ -1508,18 +1407,18 @@
 
 			case 67:
 			case 46:
-				this.World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				::World.getCamera().zoomBy(-this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 68:
 			case 47:
-				this.World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
+				::World.getCamera().zoomBy(this.Time.getDelta() * this.Math.max(60, this.Time.getFPS()) * 0.15);
 				break;
 
 			case 96:
 			case 39:
-				this.World.getCamera().Zoom = 1.0;
-				this.World.getCamera().setPos(this.World.State.getPlayer().getPos());
+				::World.getCamera().Zoom = 1.0;
+				::World.getCamera().setPos(::World.State.getPlayer().getPos());
 				break;
 
 			case 95:
@@ -1595,7 +1494,7 @@
 	o.onSerialize = function ( _out )
 	{
 		onSerialize( _out );
-		this.World.Camp.onSerialize(_out);
+		::World.Camp.onSerialize(_out);
 	}
 
 	local onDeserialize = o.onDeserialize;
@@ -1603,13 +1502,13 @@
 	{
 		onDeserialize(_in);
 		if (this.m.EscortedEntity == null) {
-			this.World.State.setCampingAllowed(true);
-			this.World.State.setEscortedEntity(null);
-			this.World.State.getPlayer().setVisible(true);
-			this.World.Assets.setUseProvisions(true);
+			::World.State.setCampingAllowed(true);
+			::World.State.setEscortedEntity(null);
+			::World.State.getPlayer().setVisible(true);
+			::World.Assets.setUseProvisions(true);
 		}
 		
-		this.World.Camp.clear();
-		this.World.Camp.onDeserialize(_in);
+		::World.Camp.clear();
+		::World.Camp.onDeserialize(_in);
 	}
 });
