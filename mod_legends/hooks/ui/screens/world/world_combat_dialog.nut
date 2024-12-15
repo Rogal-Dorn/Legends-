@@ -3,9 +3,9 @@
 	q.show = function( _entities, _allyBanners, _enemyBanners, _allowDisengage, _allowFormationPicking, _text, _image, _disengageText = "Cancel" )
 	{
 		if (_entities.len() > 0 && ::Legends.Mod.ModSettings.getSetting("ExactEngageNumbers").getValue()) {
-			local stackinfos, count = 1;
+			local stackinfos, count = 0;
 			while (stackinfos == null && count <= 20) { // there is no way there is more than 20 mod hook on that same function lol
-				stackinfos = getstackinfos(count);
+				stackinfos = getstackinfos(++count);
 
 				if (stackinfos == null) break;
 
@@ -39,7 +39,6 @@
 				}
 
 				stackinfos = null;
-				++count;
 			}
 		}
 		
