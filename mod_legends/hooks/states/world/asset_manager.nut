@@ -81,6 +81,11 @@
 		return this.World.Camp.isCamping();
 	}
 
+	o.setCamping = function( _c )
+	{
+		::World.Camp.onCamp();
+	}
+
 	o.setAmmo = function( _f )
 	{
 		this.m.Ammo = this.Math.min(this.Math.max(0, _f), this.getMaxAmmo());

@@ -1,4 +1,6 @@
 ::mods_hookExactClass("ui/screens/world/modules/topbar/world_screen_topbar_daytime_module", function(q) {
+	q.m.IsAutoUpdateTimeButtonState <- false;
+
 	local showMessage = q.showMessage;
 	q.showMessage = function( _primary, _secondary )
 	{
@@ -18,16 +20,18 @@
 	local updateTimeButtons = q.updateTimeButtons;
 	q.updateTimeButtons( _state )
 	{
-		if (::World.State.m.IsGamePaused)
-			_state = 0;
-		else if (::World.getSpeedMult() == 1.0)
-			_state = 1;
-		else if (::World.getSpeedMult() == 4.0)
-			_state = 3;
-		else if (::World.getSpeedMult() == 8.0)
-			_state = 4;
-		else
-			_state = 2;
+		if (m.IsAutoUpdateTimeButtonState) {
+			if (::World.State.m.IsGamePaused)
+				_state = 0;
+			else if (::World.getSpeedMult() == 1.0)
+				_state = 1;
+			else if (::World.getSpeedMult() == 4.0)
+				_state = 3;
+			else if (::World.getSpeedMult() == 8.0)
+				_state = 4;
+			else
+				_state = 2;
+		}
 
 		updateTimeButtons(_state);
 	}

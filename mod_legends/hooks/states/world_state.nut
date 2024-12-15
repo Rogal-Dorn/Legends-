@@ -129,6 +129,20 @@
 		setNewCampaignSettings(_settings);
 	}
 
+	local setPause = o.setPause;
+	o.setPause = function( _f )
+	{
+		local TopbarDayTimeModuleExist = ("TopbarDayTimeModule" in ::World) && ::World.TopbarDayTimeModule != null;
+
+		if (TopbarDayTimeModuleExist)
+			::World.TopbarDayTimeModule.m.IsAutoUpdateTimeButtonState = true;
+
+		setPause(_f);
+
+		if (TopbarDayTimeModuleExist)
+			::World.TopbarDayTimeModule.m.IsAutoUpdateTimeButtonState = false;
+	}
+
 	local onCombatFinished = o.onCombatFinished;
 	o.onCombatFinished = function()
 	{
@@ -162,57 +176,6 @@
 		foreach( party in friendlyCaravanParties )
 		{
 			party.getFlags().set("IsCaravan", true); // reverse the change
-		}
-	}
-
-	o.onCamp = function ()
-	{
-		if (!this.isCampingAllowed())
-		{
-			return;
-		}
-
-		::World.Camp.onCamp();
-
-		if (::World.Camp.isCamping())
-		{
-			this.m.Player.setDestination(null);
-			this.m.Player.setPath(null);
-			this.m.AutoEnterLocation = null;
-			this.m.AutoAttack = null;
-		}
-
-		if (::World.Camp.isCamping())
-		{
-			this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.CampMult;
-			::World.TopbarDayTimeModule.enableNormalTimeButton(false);
-
-			if (!this.isPaused())
-			{
-				::World.setSpeedMult(this.Const.World.SpeedSettings.CampMult);
-				::World.TopbarDayTimeModule.updateTimeButtons(2);
-			}
-			else
-			{
-				::World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
-			this.setPause(false);
-		}
-		else
-		{
-			this.m.LastWorldSpeedMult = 1.0;
-			::World.TopbarDayTimeModule.enableNormalTimeButton(true);
-
-			if (!this.isPaused())
-			{
-				::World.setSpeedMult(1.0);
-				::World.TopbarDayTimeModule.updateTimeButtons(1);
-			}
-			else
-			{
-				::World.TopbarDayTimeModule.updateTimeButtons(0);
-			}
-			this.setPause(true);
 		}
 	}
 
