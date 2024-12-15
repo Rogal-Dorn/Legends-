@@ -118,164 +118,15 @@
 		this.World.Contracts.update(true);
 	}
 
+	local setNewCampaignSettings = o.setNewCampaignSettings;
 	o.setNewCampaignSettings = function ( _settings )
 	{
 		foreach(k,v in _settings)
 		{
-			this.logInfo(k + " = " + v);
-		}
-		this.m.CampaignSettings = _settings;
-	}
-
-	o.getLocalCombatProperties = function ( _pos, _ignoreNoEnemies = false )
-	{
-		local raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
-		local parties = [];
-		local properties = this.Const.Tactical.CombatInfo.getClone();
-		local tile = this.World.getTile(this.World.worldToTile(_pos));
-		local isAtUniqueLocation = false;
-		properties.TerrainTemplate = this.Const.World.TerrainTacticalTemplate[tile.TacticalType];
-		properties.Tile = tile;
-		properties.InCombatAlready = false;
-		properties.IsAttackingLocation = false;
-		local factions = [];
-		factions.resize(48, 0); // handled by MSU
-
-		foreach( party in raw_parties )
-		{
-			if (!party.isAlive() || party.isPlayerControlled())
-			{
-				continue;
-			}
-
-			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
-			{
-				continue;
-			}
-
-			if (party.isLocation() && party.isLocationType(this.Const.World.LocationType.Unique))
-			{
-				isAtUniqueLocation = true;
-				break;
-			}
-
-			if (party.isInCombat())
-			{
-				raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
-				break;
-			}
+			::logInfo(k + " = " + v);
 		}
 
-		foreach( party in raw_parties )
-		{
-			if (!party.isAlive() || party.isPlayerControlled())
-			{
-				continue;
-			}
-
-			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
-			{
-				continue;
-			}
-
-			if (isAtUniqueLocation && (!party.isLocation() || !party.isLocationType(this.Const.World.LocationType.Unique)))
-			{
-				continue;
-			}
-
-			if (!_ignoreNoEnemies)
-			{
-				local hasOpponent = false;
-
-				foreach( other in raw_parties )
-				{
-					if (other.isAlive() && !party.isAlliedWith(other))
-					{
-						hasOpponent = true;
-						break;
-					}
-				}
-
-				if (hasOpponent)
-				{
-					parties.push(party);
-				}
-			}
-			else
-			{
-				parties.push(party);
-			}
-		}
-
-		foreach( party in parties )
-		{
-			if (party.isInCombat())
-			{
-				properties.InCombatAlready = true;
-			}
-
-			if (party.isLocation())
-			{
-				properties.IsAttackingLocation = true;
-				properties.CombatID = "LocationBattle";
-				properties.LocationTemplate = party.getCombatLocation();
-				properties.LocationTemplate.OwnedByFaction = party.getFaction();
-			}
-
-			this.World.Combat.abortCombatWithParty(party);
-			party.onBeforeCombatStarted();
-			local troops = party.getTroops();
-
-			foreach( t in troops )
-			{
-				if (t.Script != "")
-				{
-					t.Faction <- party.getFaction();
-					t.Party <- this.WeakTableRef(party);
-					properties.Entities.push(t);
-
-					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
-					{
-						++factions[party.getFaction()];
-					}
-				}
-			}
-
-			if (troops.len() != 0)
-			{
-				party.onCombatStarted();
-				properties.Parties.push(party);
-				this.m.PartiesInCombat.push(party);
-
-				if (party.isAlliedWithPlayer())
-				{
-					properties.AllyBanners.push(party.getBanner());
-				}
-				else
-				{
-					properties.EnemyBanners.push(party.getBanner());
-				}
-			}
-		}
-
-		local highest_faction = 0;
-		local best = 0;
-
-		foreach( i, f in factions )
-		{
-			if (f > best)
-			{
-				best = f;
-				highest_faction = i;
-			}
-		}
-
-		if (this.World.FactionManager.getFaction(highest_faction) != null)
-		{
-			properties.Music = this.World.FactionManager.getFaction(highest_faction).getCombatMusic();
-		}
-
-		return properties;
+		setNewCampaignSettings(_settings);
 	}
 
 	o.onCombatFinished = function ()
@@ -466,30 +317,155 @@
 		}
 	}
 
-	o.setNormalTime = function ()
+	o.getLocalCombatProperties = function ( _pos, _ignoreNoEnemies = false )
 	{
-		if (!this.m.MenuStack.hasBacksteps())
+		local raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance);
+		local parties = [];
+		local properties = this.Const.Tactical.CombatInfo.getClone();
+		local tile = this.World.getTile(this.World.worldToTile(_pos));
+		local isAtUniqueLocation = false;
+		properties.TerrainTemplate = this.Const.World.TerrainTacticalTemplate[tile.TacticalType];
+		properties.Tile = tile;
+		properties.InCombatAlready = false;
+		properties.IsAttackingLocation = false;
+		local factions = [];
+		factions.resize(48, 0); // handled by MSU
+
+		foreach( party in raw_parties )
 		{
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
+			if (!party.isAlive() || party.isPlayerControlled())
 			{
-				this.m.LastWorldSpeedMult = 1.0;
+				continue;
 			}
 
-			this.setPause(false);
-		}
-	}
-
-	o.setFastTime = function ()
-	{
-		if (!this.m.MenuStack.hasBacksteps())
-		{
-			if (!this.World.Camp.isCamping() && this.m.EscortedEntity == null)
+			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
 			{
-				this.m.LastWorldSpeedMult = this.Const.World.SpeedSettings.FastMult;
+				continue;
 			}
 
-			this.setPause(false);
+			if (party.isLocation() && party.isLocationType(this.Const.World.LocationType.Unique))
+			{
+				isAtUniqueLocation = true;
+				break;
+			}
+
+			if (party.isInCombat())
+			{
+				raw_parties = this.World.getAllEntitiesAtPos(_pos, this.Const.World.CombatSettings.CombatPlayerDistance * 2.0);
+				break;
+			}
 		}
+
+		foreach( party in raw_parties )
+		{
+			if (!party.isAlive() || party.isPlayerControlled())
+			{
+				continue;
+			}
+
+			if (!party.isAttackable() || party.getFaction() == 0 || party.getVisibilityMult() == 0)
+			{
+				continue;
+			}
+
+			if (isAtUniqueLocation && (!party.isLocation() || !party.isLocationType(this.Const.World.LocationType.Unique)))
+			{
+				continue;
+			}
+
+			if (!_ignoreNoEnemies)
+			{
+				local hasOpponent = false;
+
+				foreach( other in raw_parties )
+				{
+					if (other.isAlive() && !party.isAlliedWith(other))
+					{
+						hasOpponent = true;
+						break;
+					}
+				}
+
+				if (hasOpponent)
+				{
+					parties.push(party);
+				}
+			}
+			else
+			{
+				parties.push(party);
+			}
+		}
+
+		foreach( party in parties )
+		{
+			if (party.isInCombat())
+			{
+				properties.InCombatAlready = true;
+			}
+
+			if (party.isLocation())
+			{
+				properties.IsAttackingLocation = true;
+				properties.CombatID = "LocationBattle";
+				properties.LocationTemplate = party.getCombatLocation();
+				properties.LocationTemplate.OwnedByFaction = party.getFaction();
+			}
+
+			this.World.Combat.abortCombatWithParty(party);
+			party.onBeforeCombatStarted();
+			local troops = party.getTroops();
+
+			foreach( t in troops )
+			{
+				if (t.Script != "")
+				{
+					t.Faction <- party.getFaction();
+					t.Party <- this.WeakTableRef(party);
+					properties.Entities.push(t);
+
+					if (!this.World.FactionManager.isAlliedWithPlayer(party.getFaction()))
+					{
+						++factions[party.getFaction()];
+					}
+				}
+			}
+
+			if (troops.len() != 0)
+			{
+				party.onCombatStarted();
+				properties.Parties.push(party);
+				this.m.PartiesInCombat.push(party);
+
+				if (party.isAlliedWithPlayer())
+				{
+					properties.AllyBanners.push(party.getBanner());
+				}
+				else
+				{
+					properties.EnemyBanners.push(party.getBanner());
+				}
+			}
+		}
+
+		local highest_faction = 0;
+		local best = 0;
+
+		foreach( i, f in factions )
+		{
+			if (f > best)
+			{
+				best = f;
+				highest_faction = i;
+			}
+		}
+
+		if (this.World.FactionManager.getFaction(highest_faction) != null)
+		{
+			properties.Music = this.World.FactionManager.getFaction(highest_faction).getCombatMusic();
+		}
+
+		return properties;
 	}
 
 	o.showCombatDialog = function ( _isPlayerInitiated = true, _isCombatantsVisible = true, _allowFormationPicking = true, _properties = null, _pos = null )
@@ -1626,18 +1602,14 @@
 	o.onDeserialize = function ( _in )
 	{
 		onDeserialize(_in);
-		if (this.m.EscortedEntity == null)
-		{
+		if (this.m.EscortedEntity == null) {
 			this.World.State.setCampingAllowed(true);
 			this.World.State.setEscortedEntity(null);
 			this.World.State.getPlayer().setVisible(true);
 			this.World.Assets.setUseProvisions(true);
 		}
-
-		if (_in.getMetaData().getVersion() >= 52)
-		{
-			this.World.Camp.clear();
-			this.World.Camp.onDeserialize(_in);
-		}
+		
+		this.World.Camp.clear();
+		this.World.Camp.onDeserialize(_in);
 	}
 });
