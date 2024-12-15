@@ -26,12 +26,32 @@
 					{
 						if (stackinfos.locals.entityTypes[i] <= 0)
 							continue;
+						else if (stackinfos.locals.entityTypes[i] > 1)
+							new.push({
+								Name = format("%i %s", stackinfos.locals.entityTypes[i], ::Const.Strings.EntityNamePlural[i]),
+								Icon = ::Const.EntityIcon[i],
+								Overlay = null
+							});
+							
+						else {
+							local start = this.isFirstCharacter(::Const.Strings.EntityName[i], [
+								"A",
+								"E",
+								"I",
+								"O",
+								"U"
+							]) ? "An " : "A ";
+							new.push({
+								Name = start + this.removeFromBeginningOfText("The ", ::Const.Strings.EntityName[i]),
+								Icon = ::Const.EntityIcon[i],
+								Overlay = null
+							});
+						}		
+					}
 
-						new.push({
-							Name = format("%i %s", stackinfos.locals.entityTypes[i], ::Const.Strings.EntityNamePlural[i]),
-							Icon = ::Const.EntityIcon[i],
-							Overlay = null
-						});
+					if (_entities.len() != new.len()) {
+						::logError("Mismatch length between _entities array and new array");
+						break;
 					}
 
 					_entities = new;
