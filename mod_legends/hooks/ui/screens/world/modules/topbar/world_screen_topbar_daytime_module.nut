@@ -1,8 +1,8 @@
-::mods_hookExactClass("ui/screens/world/modules/topbar/world_screen_topbar_daytime_module", function(q) {
-	q.m.IsAutoUpdateTimeButtonState <- false;
+::mods_hookExactClass("ui/screens/world/modules/topbar/world_screen_topbar_daytime_module", function(o) {
+	o.m.IsAutoUpdateTimeButtonState <- false;
 
-	local showMessage = q.showMessage;
-	q.showMessage = function( _primary, _secondary )
+	local showMessage = o.showMessage;
+	o.showMessage = function( _primary, _secondary )
 	{
 		if (_primary == "ENCAMPED" && _secondary.len() == 0)
 			_secondary = [];
@@ -17,8 +17,8 @@
 		showMessage(_primary, _secondary);
 	}
 
-	local updateTimeButtons = q.updateTimeButtons;
-	q.updateTimeButtons( _state )
+	local updateTimeButtons = o.updateTimeButtons;
+	o.updateTimeButtons = function ( _state )
 	{
 		if (m.IsAutoUpdateTimeButtonState) {
 			if (::World.State.m.IsGamePaused)
