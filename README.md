@@ -20,6 +20,8 @@
 - *Luftwaffle* - programming, writing, balance, art
 - *Breaky* - programming
 - *chopeks* - programming
+- *Emo Used HM01* - art
+- *Evie Nekomancer* ꜀(^. .^꜀ )꜆੭ - art
 
 #### Previous Contributors
 - *Vazl* - vala, backgrounds, rune system, events
