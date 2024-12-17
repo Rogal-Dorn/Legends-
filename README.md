@@ -1,5 +1,5 @@
 # Legends
-## [Download here](https://github.com/Battle-Brothers-Legends/Legends-public/releases/latest])
+## [Download here](https://github.com/Battle-Brothers-Legends/Legends-public/releases/latest)
 
 ## Contributors
 
