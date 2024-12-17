@@ -842,7 +842,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legend_sprint",
-	Script = "scripts/skills/perks/perk_sprint",
+	Script = "scripts/skills/perks/perk_legend_sprint",
 	Name = this.Const.Strings.PerkName.LegendSprint,
 	Tooltip = this.Const.Strings.PerkDescription.LegendSprint,
 	Icon = "ui/perks/perk_sprint.png",
