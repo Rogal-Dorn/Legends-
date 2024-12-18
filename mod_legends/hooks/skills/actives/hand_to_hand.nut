@@ -148,16 +148,29 @@
 		local items = actor.getItems().getAllItems();
 		local hasCestus = false;
 		local hasWraps = false;
+		local hasGauntlets = false;
 		foreach (item in items)
 		{
 			if (item.getID() == "accessory.legend_hand_wraps")
 				hasWraps = true;
 			if (item.getID() == "accessory.legend_cestus")
 				hasCestus = true;
+			if (item.getID() == "accessory.legend_spiked_gauntlets_item")
+				hasGauntlets = true;
 		}
+
+		if (hasGauntlets)
+			_properties.MeleeDefense += 2;
 
 		if (_skill != this)
 			return;
+
+		if (hasGauntlets)
+		{
+			_properties.DamageRegularMin += 6;
+			_properties.DamageRegularMax += 12;
+			_properties.DamageArmorMult += 0.3;
+		}
 
 		if (hasCestus)
 		{
