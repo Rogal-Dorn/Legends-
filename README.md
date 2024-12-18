@@ -60,4 +60,5 @@
 - *Adam* - for making the mod tools, making bbrusher for us and fixing decompiler bugs for us
 - *Overhype* - for allowing modding, answering our bugs, and for reviewing our design document and giving us the ok to go ahead with all planned features
 
-### How to build ([Here](documentation/how_to_build_legends.md))
+## Legends Discord
+If you enjoy chatting about Battle Brothers and the Legends Mod, receive fast bug support and have access to our collection of submods - join the [Official Legends Mod Discord](https://discord.gg/a9MmzEDhE8).
