@@ -10,6 +10,12 @@
 		this.m.FatigueCost = 15;
 	}
 
+	o.setDamage <- function (_extraShieldDamageMin, _extraShieldDamageMax)
+	{
+		this.m.ExtraShieldDamageMin = _extraShieldDamageMin;
+		this.m.ExtraShieldDamageMax = _extraShieldDamageMax;
+	}
+
 	local getTooltip = o.getTooltip;
 	o.getTooltip = function ()
 	{
