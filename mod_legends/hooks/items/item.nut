@@ -26,6 +26,18 @@
 		return true;
 	}
 
+	local setSold = o.setSold;
+	o.setSold = function (_f) {
+		setSold(_f);
+		this.m.IsSold = _f;
+	}
+
+	local setBought = o.setBought;
+	o.setBought = function (_f) {
+		setBought(_f);
+		this.m.IsBought = _f;
+	}
+
 	o.getOldInstanceID <- function ()
 	{
 		return this.m.OldID;
