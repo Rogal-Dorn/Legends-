@@ -20,7 +20,7 @@
 - *Luftwaffle* - programming, writing, balance, art
 - *Breaky* - programming
 - *chopeks* - programming
-- *Emo Used HM01* - art
+- *Emo Used HM01* - programming, art
 - *Evie Nekomancer* ꜀(^. .^꜀ )꜆੭ - art
 
 #### Previous Contributors
