@@ -87,6 +87,17 @@
 		}
 	}
 
+	local onAfterUpdate = o.onAfterUpdate;
+	o.onAfterUpdate = function ( _properties )
+	{
+		onAfterUpdate(_properties);
+		if (this.getContainer().hasSkill("perk.legend_close_combat_archer"))
+		{
+			this.m.MinRange = 1;
+			this.m.MaxRange = 3;
+		}
+	}
+
 	o.onUse = function ( _user, _targetTile )
 	{
 		local targetEntity = _targetTile.getEntity();

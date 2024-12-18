@@ -50,6 +50,11 @@
 
 	o.onAfterUpdate = function ( _properties )
 	{
+		if (this.getContainer().hasSkill("perk.legend_close_combat_archer"))
+		{
+			this.m.MinRange = 1;
+			this.m.MaxRange = 3;
+		}
 		this.m.FatigueCostMult = _properties.IsSpecializedInThrowing ? this.Const.Combat.WeaponSpecFatigueMult : 1.0;
 		this.m.AdditionalAccuracy = 20 + this.m.Item.getAdditionalAccuracy();
 	}
