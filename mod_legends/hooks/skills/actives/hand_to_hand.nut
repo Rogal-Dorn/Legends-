@@ -159,9 +159,6 @@
 				hasGauntlets = true;
 		}
 
-		if (hasGauntlets)
-			_properties.MeleeDefense += 2;
-
 		if (_skill != this)
 			return;
 

@@ -91,6 +91,12 @@ this.legend_spiked_gauntlets_item <- this.inherit("scripts/items/accessory/acces
 		return result;
 	}
 
+	function onUpdateProperties ( _properties )
+	{
+		this.accessory.onUpdateProperties(_properties);
+		_properties.MeleeDefense += 2;
+	}
+
 	function onPutIntoBag()
 	{
 		this.onEquip();
