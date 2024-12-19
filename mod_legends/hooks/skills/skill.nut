@@ -133,6 +133,33 @@
 				text = "[color=" + this.Const.UI.Color.NegativeValue + "]Can not be used because this character has taken an oath precluding the use of ranged weapons or tools[/color]"
 			});
 		}
+		if (this.m.ChanceSmash > 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/tooltips/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceSmash + "%[/color] chance to smash the target on hits to the head that are killing blows"
+			});
+		}
+		if (this.m.ChanceDecapitate > 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/tooltips/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceDecapitate + "%[/color] chance to decapitate the target on hits to the head that are killing blows"
+			});
+		}
+		if (this.m.ChanceDisembowel > 0)
+		{
+			ret.push({
+				id = 10,
+				type = "text",
+				icon = "ui/tooltips/special.png",
+				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceDisembowel + "%[/color] chance to disembowel the target on hits to the body that are killing blows"
+			});
+		}
 
 		return ret;
 	}
