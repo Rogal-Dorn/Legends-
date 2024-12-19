@@ -1454,7 +1454,7 @@ perkDefObjects.push({
 });
 perkDefObjects.push({
 	ID = "perk.legends.legend_off_book_deal",
-	Script = "scripts/skills/perks/legends/perk_legend_off_book_deal",
+	Script = "scripts/skills/perks/perk_legend_off_book_deal",
 	Name = this.Const.Strings.PerkName.LegendOffBookDeal,
 	Tooltip = this.Const.Strings.PerkDescription.LegendOffBookDeal,
 	Icon = "ui/perks/coins_circle.png",
