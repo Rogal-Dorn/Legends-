@@ -16,4 +16,11 @@
 		effect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
 		this.getContainer().getActor().getSkills().add(effect);
 	}
+
+	local onUnequip = ::mods_getMember(o, "onUnequip");
+	o.onUnequip <- function () {
+		onUnequip();
+		this.getContainer().getActor().getSkills().removeByID("effects.legend_buckler");
+	}
+
 });
