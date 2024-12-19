@@ -15,9 +15,7 @@ this.legend_buckler_effect <- this.inherit("scripts/skills/skill", {
 
 	function isHidden()
 	{
-		if (::Tactical.isActive())
-			return this.getBonus() == 0
-		return false;
+		return this.getBonus() == 0;
 	}
 
 	function getBonus()
