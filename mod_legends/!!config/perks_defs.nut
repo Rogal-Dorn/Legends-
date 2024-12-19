@@ -3676,8 +3676,8 @@ perkDefObjects.push({
 	Script = "scripts/skills/perks/perk_legend_taste_the_pain",
 	Name = this.Const.Strings.PerkName.LegendTasteThePain,
 	Tooltip = this.Const.Strings.PerkDescription.LegendTasteThePain,
-	Icon = "ui/perks/passive_03.png", // todo icons?
-	IconDisabled = "ui/perks/passive_03_sw.png",
+	Icon = "ui/skills/passive_03.png", // todo icons?
+	IconDisabled = "ui/skills/passive_03_sw.png",
 	Const = "LegendTasteThePain"
 });
 
