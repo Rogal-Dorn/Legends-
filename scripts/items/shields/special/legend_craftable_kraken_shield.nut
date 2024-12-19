@@ -1,7 +1,7 @@
 this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named/named_shield", {
 	m = {
-		this.m.RegularDamageMin = 10,
-		this.m.RegularDamageMax = 15,
+		RegularDamageMin = 10,
+		RegularDamageMax = 15,
 	},
 	function create()
 	{
@@ -41,7 +41,7 @@ this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 
-	o.randomizeValues <- function ()
+	function randomizeValues()
 	{
 		if (this.m.BaseProperties.len() == 0)
 		{
