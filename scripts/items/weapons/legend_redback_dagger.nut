@@ -3,12 +3,12 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	function create()
 	{
 		this.weapon.create();
-		this.m.SoundOnUse = [
+		this.m.SoundOnUse <- [
 			"sounds/combat/puncture_01.wav",
 			"sounds/combat/puncture_02.wav",
 			"sounds/combat/puncture_03.wav"
 		];
-		this.m.SoundOnHit = [
+		this.m.SoundOnHit <- [
 			"sounds/combat/puncture_hit_01.wav",
 			"sounds/combat/puncture_hit_02.wav",
 			"sounds/combat/puncture_hit_03.wav"
@@ -48,7 +48,7 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 			id = 7,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Puncture damage is doubled vs targets in a web"
+			text = "Puncture damage is increased by [color=" + this.Const.UI.Color.PositiveValue + "]33%[/color] vs rooted targets"
 		});
 		return result;
 	}
@@ -68,9 +68,9 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 
 	function onAnySkillUsed( _skill, _targetEntity, _properties )
 	{
-		if (_skill != null && _skill.getID() == "actives.puncture" && _targetEntity != null && _targetEntity.getSkills().hasSkill("effects.web"))
+		if (_skill != null && _skill.getID() == "actives.puncture" && _targetEntity != null && _targetEntity.getCurrentProperties().IsRooted)
 		{
-			_properties.DamageDirectMult *= 2.0;
+			_properties.DamageRegularMult *= 1.33;
 		}
 	}
 
