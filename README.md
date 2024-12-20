@@ -9,30 +9,32 @@
 - *Poss* - Lead experience designer, art, sound, perks, backgrounds, skills, events, effects, writing
 
 #### Key contributors
-- *Hanter* - programming
-- *NhGH707* - programming, support
-- *James Luong* - programming
+- *Mercury* - programing
+- *Luftwaffle* - programming, writing, balance, art
+- *NgGH707* - programming, support
+- *Sato* - programming
 - *Abysscrane* - programming
 - *WNTR Jimmy* - programming
+- *Emo Used HM01* - programming, art
 - *Koltira* - programming
+- *Breaky* - programming, support
+- *Chopeks* - programming, support
+- *Son of Satan* - programming
 - *Olve* - art
 - *Shiro* - art
-- *Luftwaffle* - programming, writing, balance, art
-- *Breaky* - programming
-- *chopeks* - programming
-- *Emo Used HM01* - programming, art
 - *Evie Nekomancer* ꜀(^. .^꜀ )꜆੭ - art
 
 #### Previous Contributors
+- *Hanter* - programming
+- *James Luong* - programming
 - *Vazl* - vala, backgrounds, rune system, events
 - *Karl* - Character art, enemies, armor, weapons, items
 - *Von Krolok* - Enemy Art, skills, effects and Items
-- *Mercury* - programing
 - *Pixel Profligate* - Armor art
 - *Wuxiangjinxing* - Programming and testing
 - *SoSaltySalt* - programming
-- *Sato* - programming
 - *Forest/Gilded Wraith* - art
+- *Barcode* - programming
 - *Freykin* - programming
 - *Nive* - concept design, writing
 - *Kvothe* - programming
