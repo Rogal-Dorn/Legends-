@@ -3,12 +3,12 @@ this.legend_redback_dagger <- this.inherit("scripts/items/weapons/weapon", {
 	function create()
 	{
 		this.weapon.create();
-		this.m.SoundOnUse = [
+		this.m.SoundOnUse <- [
 			"sounds/combat/puncture_01.wav",
 			"sounds/combat/puncture_02.wav",
 			"sounds/combat/puncture_03.wav"
 		];
-		this.m.SoundOnHit = [
+		this.m.SoundOnHit <- [
 			"sounds/combat/puncture_hit_01.wav",
 			"sounds/combat/puncture_hit_02.wav",
 			"sounds/combat/puncture_hit_03.wav"
