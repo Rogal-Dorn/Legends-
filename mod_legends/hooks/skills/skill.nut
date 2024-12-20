@@ -1724,7 +1724,9 @@
 	local setItem = o.setItem;
 	o.setItem = function (_i) {
 		setItem(_i);
-		this.m.IsSerialized = false;
+
+		if (this.m.Item != null)
+			this.m.IsSerialized = false;
 	}
 
 	o.onDeserialize = function( _in )
