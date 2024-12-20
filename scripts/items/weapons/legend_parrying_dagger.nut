@@ -111,30 +111,22 @@ this.legend_parrying_dagger <- this.inherit("scripts/items/shields/shield", {
 		this.addSkill(stab);
 		this.addSkill(this.new("scripts/skills/actives/legend_en_garde_skill"));
 		this.addSkill(this.new("scripts/skills/actives/puncture"));
+
 		local parryDaggerEffect = this.new("scripts/skills/effects/legend_parrying_dagger_effect");
 		parryDaggerEffect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
+		parryDaggerEffect.setItem(this);
+		this.m.SkillPtrs.push(parryDaggerEffect);
 		this.getContainer().getActor().getSkills().add(parryDaggerEffect);
+
 		// Manually add the effect so that it will be ordered after perks in the skill container instead of before background
 		// Even though this effect is being granted by equipping this weapon, we are adding it this way because of possible future plans to make legend_parrying_effect available not just by equipping this weapon.
 		// Hence, making ordering it with the other effects/perks instead of the row above background (for item-granted effects) is for consistency
 		local parrying = this.new("scripts/skills/effects/legend_parrying_effect");
 		parrying.m.IsFromItem = true;
 		parrying.m.Order = this.Const.SkillOrder.UtilityTargeted + 2;
+		parrying.setItem(this);
+		this.m.SkillPtrs.push(parrying);
 		this.getContainer().getActor().getSkills().add(parrying);
-	}
-
-	function onUnequip()
-	{
-		local skillContainer = this.getContainer().getActor().getSkills();
-		local skill = skillContainer.getSkillByID("effects.legend_parrying");
-		if (skill != null && skill.m.IsFromItem)
-			skillContainer.removeByID("effects.legend_parrying");
-
-		skill = skillContainer.getSkillByID("effects.legend_parrying_dagger");
-		if (skill != null)
-			skillContainer.removeByID("effects.legend_parrying_dagger");
-
-		this.shield.onUnequip();
 	}
 
 	function getAmmoMax()

@@ -12,15 +12,12 @@
 	{
 		onEquip();
 		this.addSkill(this.new("scripts/skills/actives/legend_buckler_bash_skill"));
+		
 		local effect = this.new("scripts/skills/effects/legend_buckler_effect");
 		effect.m.Order = this.Const.SkillOrder.UtilityTargeted + 1;
+		effect.setItem(this);
+		this.m.SkillPtrs.push(effect);
 		this.getContainer().getActor().getSkills().add(effect);
-	}
-
-	local onUnequip = ::mods_getMember(o, "onUnequip");
-	o.onUnequip <- function () {
-		onUnequip();
-		this.getContainer().getActor().getSkills().removeByID("effects.legend_buckler");
 	}
 
 });
