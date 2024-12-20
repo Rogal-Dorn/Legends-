@@ -1721,6 +1721,12 @@
 		this.Sound.play(sound, this.Const.Sound.Volume.Skill, this.getContainer().getActor().getPos());
 	}
 
+	local setItem = o.setItem;
+	o.setItem = function (_i) {
+		setItem(_i);
+		this.m.IsSerialized = false;
+	}
+
 	o.onDeserialize = function( _in )
 	{
 		this.m.IsNew = _in.readBool();
