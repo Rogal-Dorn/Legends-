@@ -1,6 +1,6 @@
 this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named/named_shield", {
 	m = {
-		RegularDamageMin = 10,
+		RegularDamage = 10,
 		RegularDamageMax = 15,
 	},
 	function create()
@@ -37,7 +37,7 @@ this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named
 		this.shield.onEquip();
 		this.addSkill(this.new("scripts/skills/actives/shieldwall"));
 		local shieldBash = this.new("scripts/skills/actives/knock_back");
-		shieldBash.setDamage(this.m.ExtraShieldDamageMin, this.m.ExtraShieldDamageMax)
+		shieldBash.setDamage(this.m.RegularDamage, this.m.RegularDamageMax)
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 
@@ -50,6 +50,8 @@ this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named
 			this.m.BaseProperties.RangedDefense <- this.m.RangedDefense;
 			this.m.BaseProperties.StaminaModifier <- this.m.StaminaModifier;
 			this.m.BaseProperties.FatigueOnSkillUse <- this.m.FatigueOnSkillUse;
+			this.m.BaseProperties.DamageRegularMin <- this.m.DamageRegularMin;
+			this.m.BaseProperties.DamageRegularMax <- this.m.DamageRegularMax;
 		}
 
 		local available = [];
@@ -78,7 +80,7 @@ this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named
 		available.push(function ( _i )
 		{
 			local f = this.Math.rand(130, 180) * 0.01;
-			_i.m.RegularDamageMin = this.Math.round(_i.m.RegularDamageMin * f);
+			_i.m.RegularDamage = this.Math.round(_i.m.RegularDamage * f);
 			_i.m.RegularDamageMax = this.Math.round(_i.m.RegularDamageMax * f);
 		});
 
@@ -88,6 +90,20 @@ this.legend_craftable_kraken_shield <- this.inherit("scripts/items/shields/named
 			available[r](this);
 			available.remove(r);
 		}
+	}
+
+	function onSerialize( _out )
+	{
+		this.named_shield.onSerialize(_out);
+		_out.writeU16(this.m.RegularDamage);
+		_out.writeU16(this.m.RegularDamageMax);
+	}
+
+	function onDeserialize( _in )
+	{
+		this.named_shield.onDeserialize(_in);
+		this.m.RegularDamage = _in.readU16();
+		this.m.RegularDamageMax = _in.readU16();
 	}
 
 });

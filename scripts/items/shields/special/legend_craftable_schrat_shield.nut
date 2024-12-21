@@ -36,7 +36,7 @@ this.legend_craftable_schrat_shield <- this.inherit("scripts/items/shields/named
 			id = 6,
 			type = "text",
 			icon = "ui/icons/special.png",
-			text = "Regenerates itself by [color=" + this.Const.UI.Color.PositiveValue + "]20[/color] points of durability each turn."
+			text = "Regenerates itself by up to [color=" + this.Const.UI.Color.PositiveValue + "]" + this.Math.floor(this.getConditionMax() * 0.2) + "[/color] of maximum durability each turn."
 		});
 		return result;
 	}
@@ -48,16 +48,31 @@ this.legend_craftable_schrat_shield <- this.inherit("scripts/items/shields/named
 		this.addSkill(this.new("scripts/skills/actives/knock_back"));
 	}
 
-	function onTurnStart()
-	{
-		this.m.Condition = this.Math.min(this.m.ConditionMax, this.m.Condition + 20);
-		this.updateAppearance();
-	}
-
 	function onCombatFinished()
 	{
-		this.m.Condition = this.m.ConditionMax;
-		this.updateAppearance();
+		this.setCondition(shield.getConditionMax());	// To discourage the player stalling battles to fully repair this shield
+	}
+
+	function onTurnStart()
+	{
+		local shieldMissing = this.getConditionMax() - this.getCondition();
+		local shieldAdded = this.Math.min(shieldMissing, this.Math.floor(this.getConditionMax() * 0.2));
+
+		if (shieldAdded <= 0)
+		{
+			return;
+		}
+
+		this.setCondition(shield.getCondition() + shieldAdded);
+		local actor = this.getContainer().getActor();
+		actor.setDirty(true);
+
+		if (!actor.isHiddenToPlayer())
+		{
+			this.Tactical.spawnIconEffect("status_effect_79", actor.getTile(), this.Const.Tactical.Settings.SkillIconOffsetX, this.Const.Tactical.Settings.SkillIconOffsetY, this.Const.Tactical.Settings.SkillIconScale, this.Const.Tactical.Settings.SkillIconFadeInDuration, this.Const.Tactical.Settings.SkillIconStayDuration, this.Const.Tactical.Settings.SkillIconFadeOutDuration, this.Const.Tactical.Settings.SkillIconMovement);
+			this.Sound.play("sounds/enemies/unhold_regenerate_01.wav", this.Const.Sound.Volume.RacialEffect * 1.25, actor.getPos());
+			this.Tactical.EventLog.log(this.Const.UI.getColorizedEntityName(actor) + "\'s shield restores " + shieldAdded + " durability");
+		}
 	}
 
 });
