@@ -3,12 +3,13 @@
 source "./lib.sh"
 
 latest_tag=$(getBaseVersion)
-echo "using tag $latest_tag"
-commit_hash=$(git rev-list -n 1 "$latest_tag")
+
+commit_hash=$(git rev-parse "$latest_tag")
 
 Source="${1-"$commit_hash"}" # commit hash o branch if you wanna overwrite
 
 zip_archive=$(artifactNameMod)
+
 7z a -tzip "$zip_archive" mod_legends preload scripts ui
 # Get a list of all files modified since that commit hash
 modified_files=$(git diff --name-only "$Source" HEAD)
