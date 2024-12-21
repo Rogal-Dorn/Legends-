@@ -19,5 +19,4 @@
 		this.m.SkillPtrs.push(effect);
 		this.getContainer().getActor().getSkills().add(effect);
 	}
-
 });
