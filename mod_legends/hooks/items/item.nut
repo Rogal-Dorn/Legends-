@@ -15,6 +15,8 @@
 	o.m.OriginSettlementID <- 0; // the Settlement ID where the item was originally produced
 	o.m.TradeHistorySettlementIDs <- []; // an array of Settlement IDs to track the item's trade history
 	o.m.LastTransactionPrice <- null;
+	o.m.IsQueryingSellPrice <- 0;
+	o.m.IsQueryingBuyPrice <- 0;
 
 	o.isAllowedInBag = function ( _actor = null )
 	{
