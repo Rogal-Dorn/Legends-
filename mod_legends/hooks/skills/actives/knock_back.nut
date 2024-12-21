@@ -1,7 +1,7 @@
 ::mods_hookExactClass("skills/actives/knock_back", function(o)
 {
-	o.m.ExtraShieldDamageMin <- 0;
-	o.m.ExtraShieldDamageMax <- 0;
+	o.m.RegularDamage <- 10;
+	o.m.RegularDamageMax <- 25;
 
 	local create = o.create;
 	o.create = function()
@@ -12,8 +12,8 @@
 
 	o.setDamage <- function (_extraShieldDamageMin, _extraShieldDamageMax)
 	{
-		this.m.ExtraShieldDamageMin = _extraShieldDamageMin;
-		this.m.ExtraShieldDamageMax = _extraShieldDamageMax;
+		this.m.RegularDamage += _extraShieldDamageMin;
+		this.m.RegularDamageMax += _extraShieldDamageMax;
 	}
 
 	local getTooltip = o.getTooltip;
@@ -27,8 +27,8 @@
 			local p = this.getContainer().getActor().getCurrentProperties();
 			local bodyHealth = actor.getHitpointsMax();
 			local mult = p.MeleeDamageMult;
-			local damagemin = this.Math.abs(10 * p.DamageTotalMult);
-			local damagemax = this.Math.abs(25 * p.DamageTotalMult);
+			local damagemin = this.Math.abs(this.m.RegularDamage * p.DamageTotalMult);
+			local damagemax = this.Math.abs(this.m.RegularDamageMax * p.DamageTotalMult);
 			if (this.getContainer().getActor().getSkills().hasSkill("perk.legend_muscularity"))
 			{
 				local muscularity = this.Math.floor(bodyHealth * 0.1);
@@ -149,8 +149,8 @@
 				local p = actor.getCurrentProperties();
 				local bodyHealth = actor.getHitpointsMax();
 				local shieldBonus = this.Math.min(10, this.Math.floor(actor.getOffhandItem().m.ConditionMax * 0.05));
-				local damagemin = this.Math.abs((10 + shieldBonus + this.m.ExtraShieldDamageMin) * p.DamageTotalMult);
-				local damagemax = this.Math.abs((25 + shieldBonus + this.m.ExtraShieldDamageMax) * p.DamageTotalMult);
+				local damagemin = this.Math.abs((this.m.RegularDamage + shieldBonus) * p.DamageTotalMult);
+				local damagemax = this.Math.abs((this.m.RegularDamageMax + shieldBonus) * p.DamageTotalMult);
 
 				if (actor.getSkills().hasSkill("perk.legend_muscularity"))
 				{
