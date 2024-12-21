@@ -1,32 +1,10 @@
+#!/bin/bash
+
 BBDir="${1-"c:\\Steam\\steamapps\\common\\Battle Brothers\\data"}"
 RepoDir="${2-"battlebrothers"}"
 BuildDir="${3-".\\build"}"
 
-function checkForCompileError() {
-code=0
-while read -r line; do
-    if [[ $line == *" error"* ]]; then
-        #echo "$line"
-        code=1
-    fi
-done <<< "$1"
-if [ $code == 1 ]
-then
-    return 1
-else
-    return 0
-fi
-}
-
-function handleExit() {
-    # Get exit code of the previous command, instead of echo
-    exitCode=$?
-    if [ $exitCode -ne "0" ]
-    then
-        echo "Failed to build Legends!"
-        exit 1
-    fi
-}
+source "./lib.sh"
 
 rm "$BuildDir" -r
 
@@ -56,8 +34,17 @@ handleExit
 
 # zip the content of build dir and move file to bb's /data dir
 cd "$BuildDir"
-7z a -tzip mod_legends_assets.zip brushes gfx sounds
-7z a -tzip mod_legends_build.zip mod_legends preload scripts ui
+zipNameAssets=$(artifactNameAssets)
+zipNameMod=$(artifactNameMod)
+7z a -tzip $zipNameAssets brushes gfx sounds preload
+7z a -tzip $zipNameMod mod_legends scripts ui
 
-mv mod_legends_assets.zip "$BBDir"
-mv mod_legends_build.zip "$BBDir"
+buildAssetsScript > mod_legends_assets.nut
+rm "scripts" -r
+mkdir "scripts"
+mkdir "scripts\\!mods_preload"
+mv mod_legends_assets.nut "scripts\\!mods_preload"
+7z a $zipNameAssets scripts
+
+mv $zipNameAssets "$BBDir"
+mv $zipNameMod "$BBDir"
