@@ -120,7 +120,7 @@
 	"disowned_noble_background", // the event calls for females
 	// "female_adventurous_noble_background",
 	// "female_disowned_noble_background",
-	"legend_monk_background"
+	"monk_background"
 ];
 ::Const.CharacterPartyBackgrounds <- [
 	"legend_diviner_background",
