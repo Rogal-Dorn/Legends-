@@ -41,7 +41,7 @@ this.perk_legend_close_combat_archer <- this.inherit("scripts/skills/skill", {
 
 	function getBonus(_properties)
 	{
-		local actor = this.getContainer().getActor()
+		local actor = this.getContainer().getActor();
 		local mskillBonus = 0;
 		local rdefBonus = 0;
 
@@ -67,8 +67,11 @@ this.perk_legend_close_combat_archer <- this.inherit("scripts/skills/skill", {
 		if (!_skill.isRanged())
 			return;
 
-		local bonus = this.getBonus() / 100;
+		local bonus = this.getBonus(_properties) / 100;
 		local actor = this.getContainer().getActor();
+
+		if (actor == null)
+			return;
 
 		if (!actor.getMainhandItem().isWeaponType(this.Const.Items.WeaponType.Throwing) || actor.getTile().getDistanceTo(_targetEntity.getTile()) > 4)
 			return;
