@@ -138,7 +138,7 @@
 			ret.push({
 				id = 10,
 				type = "text",
-				icon = "ui/tooltips/special.png",
+				icon = "ui/icons/special.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceSmash + "%[/color] chance to smash the target on hits to the head that are killing blows"
 			});
 		}
@@ -147,7 +147,7 @@
 			ret.push({
 				id = 10,
 				type = "text",
-				icon = "ui/tooltips/special.png",
+				icon = "ui/icons/special.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceDecapitate + "%[/color] chance to decapitate the target on hits to the head that are killing blows"
 			});
 		}
@@ -156,7 +156,7 @@
 			ret.push({
 				id = 10,
 				type = "text",
-				icon = "ui/tooltips/special.png",
+				icon = "ui/icons/special.png",
 				text = "[color=" + this.Const.UI.Color.PositiveValue + "]" + this.m.ChanceDisembowel + "%[/color] chance to disembowel the target on hits to the body that are killing blows"
 			});
 		}
