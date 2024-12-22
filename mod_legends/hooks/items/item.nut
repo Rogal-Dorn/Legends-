@@ -18,6 +18,18 @@
 	o.m.IsQueryingSellPrice <- 0;
 	o.m.IsQueryingBuyPrice <- 0;
 
+	local setSold = o.setSold;
+	o.setSold = function (_f) {
+		setSold(_f);
+		this.m.IsSold = _f;
+	}
+
+	local setBought = o.setBought;
+	o.setBought = function (_f) {
+		setBought(_f);
+		this.m.IsBought = _f;
+	}
+
 	o.isAllowedInBag = function ( _actor = null )
 	{
 		if (!this.m.IsAllowedInBag || this.m.SlotType == this.Const.ItemSlot.Body || this.m.SlotType == this.Const.ItemSlot.Head || this.m.SlotType == this.Const.ItemSlot.None)
